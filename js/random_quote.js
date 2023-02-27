@@ -64,7 +64,7 @@ function redraw(index){
 
   document.getElementById('id_emoji').innerHTML = selectedEmoji;
   document.getElementById('id_name').innerHTML = selectedName;
-  document.getElementById('id_stats').innerHTML =  "❤️ ◽◽◽◻ " + "\n" +"🗡 1";
+  document.getElementById('id_stats').innerHTML =  "❤️ ▰▰▰▱ " + "\n" +"🗡 ▴";
   document.getElementById('id_desc').innerHTML = selectedDesc;
   document.getElementById('id_type').innerHTML = "»  " + selectedType + " «";
 
@@ -153,23 +153,27 @@ function celebrateSeeingItAll(){
 }
 
 function actionAttack(){
+  vibrateButtonPress();
   alert("༼ ಠ_ಠ ༽ Welp, seems like you hit a wall.");
 }
 
 function actionBlock(){
+  vibrateButtonPress();
   die();
 }
 
 function actionMagic(){
+  vibrateButtonPress();
   alert("༼ つ ◕_◕ ༽つ Oh, you don't know any spells.");
 }
 
 function actionHeal(){
+  vibrateButtonPress();
   die();
 }
 
 function actionSleep(){
-  alert("༼ ಠ_ಠ ༽ You cannot rest. There are monsters nearby!");
+  alert("༼ ಠ_ಠ ༽ Cannot rest, there are monsters nearby!");
 }
 
 function die(){
