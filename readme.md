@@ -15,6 +15,6 @@ Propose your changes for integration by submitting [pull requests](https://githu
 
 ----
 
-<sup>🙈 Don't judge the code or 0% decomposition, this is just for fun.<br></sup>
+<sup>🙈 Don't judge the "code", this is just for fun.<br></sup>
 <sup>⭐️ <strong>Hit the star button to support!</strong><br></sup>
-<sup>📱 <strong>Visit also my [mobile toolkit](https://github.com/IGPenguin/mobile-toolkit)</strong> project.<br></sup>
+<sup>📱 Visit also my [mobile toolkit](https://github.com/IGPenguin/mobile-toolkit) project.<br></sup>
