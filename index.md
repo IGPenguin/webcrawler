@@ -39,4 +39,5 @@ layout: default
 
 <button type = "button" id = "button_heal">❤️&nbsp;&nbsp;Heal</button>&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Sleep</button>&nbsp;
+<button type = "button" id = "button_cheese">🧀&nbsp;&nbsp;Cheese</button>&nbsp;
 </center>

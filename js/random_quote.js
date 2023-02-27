@@ -1,18 +1,18 @@
 //Init
 var redrawnTimes = 0;
-var seenIDsString = JSON.parse(localStorage.getItem("seenIDs"));
-var seenIDs;
+var seenEnemiesString = JSON.parse(localStorage.getItem("seenEnemies"));
+var seenEnemies;
 var quoteCount;
 var quoteIndex;
 
-if (seenIDsString == null){
-  seenIDs = [];
+if (seenEnemiesString == null){
+  seenEnemies = [];
 } else {
-  seenIDs = Array.from(seenIDsString);
+  seenEnemies = Array.from(seenEnemiesString);
 }
 
 //Uncomment and change the int for testing ids higher than that
-//seenIDs = Array.from(Array(1).keys())
+//seenEnemies = Array.from(Array(1).keys())
 
 var tweet;
 var lines;
@@ -72,7 +72,7 @@ function redraw(index){
   setQuest();
   celebrateSeeingItAll();
 
-  var itemsLeft = quoteCount-seenIDs.length;
+  var itemsLeft = quoteCount-seenEnemies.length;
   document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " enemies waiting for defeat.";
 }
 
@@ -104,19 +104,19 @@ function getUnseenTopicIndex() {
   var max = quoteCount;
     do {
       randomTopicIndex = Math.floor(Math.random() * max);
-      if (seenIDs.length >= quoteCount){
+      if (seenEnemies.length >= quoteCount){
         celebrateSeeingItAll();
         break;
       }
-    } while (seenIDs.includes(randomTopicIndex));
+    } while (seenEnemies.includes(randomTopicIndex));
     return randomTopicIndex;
 }
 
 function markAsSeen(seenID){
-  if (!seenIDs.includes(seenID)){
-    seenIDs.push(seenID);
-    localStorage.setItem("seenIDs", JSON.stringify(seenIDs));
-    console.log("Already seen IDs: " + seenIDs);
+  if (!seenEnemies.includes(seenID)){
+    seenEnemies.push(seenID);
+    localStorage.setItem("seenEnemies", JSON.stringify(seenEnemies));
+    console.log("Already seen IDs: " + seenEnemies);
   }
 }
 
@@ -145,10 +145,10 @@ function vibrateButtonPress(){
 }
 
 function celebrateSeeingItAll(){
-  if (seenIDs.length >= quoteCount){
+  if (seenEnemies.length >= quoteCount){
     alert("ʕつ•ᴥ•ʔつ  Congratulations! You saved the princess.")
-    localStorage.setItem("seenIDs", JSON.stringify(""));
-    seenIDs = [];
+    localStorage.setItem("seenEnemies", JSON.stringify(""));
+    seenEnemies = [];
   }
 }
 
@@ -173,13 +173,15 @@ function actionHeal(){
 }
 
 function actionSleep(){
+  vibrateButtonPress();
   alert("༼ ಠ_ಠ ༽ Cannot rest, there are monsters nearby!");
 }
 
 function die(){
+  vibrateButtonPress();
   alert("༼ >_< ༽ You died of being killed!");
-  localStorage.setItem("seenIDs", JSON.stringify(""));
-  seenIDs = [];
+  localStorage.setItem("seenEnemies", JSON.stringify(""));
+  seenEnemies = [];
 }
 
 function registerClickListeners(){
@@ -197,4 +199,5 @@ function registerClickListeners(){
   document.getElementById('button_magic').addEventListener(eventType, actionMagic);
   document.getElementById('button_heal').addEventListener(eventType, actionHeal);
   document.getElementById('button_sleep').addEventListener(eventType, actionSleep);
+  document.getElementById('button_cheese').addEventListener(eventType, nextItem);
 }
