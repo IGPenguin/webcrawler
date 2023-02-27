@@ -12,8 +12,7 @@ layout: default
 <center>
 <h2>👋&nbsp;&nbsp;Welcome back, adventurer!</h2>
 <h4 id = "id_subtitle"> </h4>
-<p style="margin-bottom:28px;"></p>
-
+<p style="margin:18px;"></p>
 
 <div class="card">
 <h1 id = "id_emoji"/>
