@@ -146,7 +146,7 @@ function vibrateButtonPress(){
 
 function celebrateSeeingItAll(){
   if (seenEnemies.length >= quoteCount){
-    alert("ʕつ•ᴥ•ʔつ  Congratulations! You saved the princess.")
+    alert("ʕつ•ᴥ•ʔつ  Congratulations! You saved the princess.");
     localStorage.setItem("seenEnemies", JSON.stringify(""));
     seenEnemies = [];
   }
@@ -159,7 +159,9 @@ function actionAttack(){
 
 function actionBlock(){
   vibrateButtonPress();
-  die();
+  alert("༼ >_< ༽ You died of being killed!");
+  localStorage.setItem("seenEnemies", JSON.stringify(""));
+  seenEnemies = [];
 }
 
 function actionMagic(){
@@ -167,21 +169,9 @@ function actionMagic(){
   alert("༼ つ ◕_◕ ༽つ Oh, you don't know any spells.");
 }
 
-function actionHeal(){
-  vibrateButtonPress();
-  die();
-}
-
 function actionSleep(){
   vibrateButtonPress();
   alert("༼ ಠ_ಠ ༽ Cannot rest, there are monsters nearby!");
-}
-
-function die(){
-  vibrateButtonPress();
-  alert("༼ >_< ༽ You died of being killed!");
-  localStorage.setItem("seenEnemies", JSON.stringify(""));
-  seenEnemies = [];
 }
 
 function registerClickListeners(){
@@ -197,7 +187,6 @@ function registerClickListeners(){
   document.getElementById('button_attack').addEventListener(eventType, actionAttack);
   document.getElementById('button_block').addEventListener(eventType, actionBlock);
   document.getElementById('button_magic').addEventListener(eventType, actionMagic);
-  document.getElementById('button_heal').addEventListener(eventType, actionHeal);
   document.getElementById('button_sleep').addEventListener(eventType, actionSleep);
   document.getElementById('button_cheese').addEventListener(eventType, nextItem);
 }
