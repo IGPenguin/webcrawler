@@ -73,7 +73,7 @@ function redraw(index){
   celebrateSeeingItAll();
 
   var itemsLeft = quoteCount-seenEnemies.length;
-  document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " enemies waiting for defeat.";
+  //document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " enemies waiting for defeat.";
 }
 
 function randomItem(){

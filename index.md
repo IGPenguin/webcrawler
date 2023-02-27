@@ -7,7 +7,7 @@ layout: default
 <meta name="twitter:image" content="{{ page.title_image }}" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/random_quote.js"></script>
+<script src="js/game_loop.js"></script>
 
 <center>
 <h2>👋&nbsp;&nbsp;Welcome back, adventurer!</h2>
