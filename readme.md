@@ -7,14 +7,14 @@ Fight your way against the foes and unlock knowledge.</b><br>
 ----
 
 ### 🏗 Contributing and development
-Feel free to request changes/fixes or submit potential new data sources by creating [issues](https://github.com/IGPenguin/webcrawler/issues).
+Feel free to request changes/fixes or submit new data by creating [issues](https://github.com/IGPenguin/webcrawler/issues).
 <br>
 <br>
-Deploy to localhost ```bundle exec jekyll serve``` and test via web browser at http://127.0.0.1:4000<br>
+Deploy to localhost ```bundle exec jekyll serve``` and test via web browser at http://127.0.0.1:4000<br><br>
 Propose your changes for integration by submitting [pull requests](https://github.com/IGPenguin/webcrawler/pulls) that follow [the contribution rules](https://github.com/IGPenguin/webcrawler/blob/live/.github/CONTRIBUTING.md "the contribution rules").
 
 ----
 
-<sup>🙈 Don't judge the <strong>shady code</strong> or <strong>0% decomposition</strong>, this is just for <strong>fun.</strong><br></sup>
+<sup>🙈 Don't judge the code or 0% decomposition, this is just for fun.<br></sup>
 <sup>⭐️ <strong>Hit the star button to support!</strong><br></sup>
 <sup>📱 <strong>Visit also my [mobile toolkit](https://github.com/IGPenguin/mobile-toolkit)</strong> project.<br></sup>
