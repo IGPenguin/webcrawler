@@ -7,7 +7,6 @@ Fight your way against the foes and unlock knowledge.</b><br>
 ----
 
 ### 🏗 Contributing and development
-See the [development plan](https://github.com/IGPenguin/webcrawler/projects/1) to gain insight into the upcoming features.<br>
 Feel free to request changes/fixes or submit potential new data sources by creating [issues](https://github.com/IGPenguin/webcrawler/issues).
 <br>
 <br>
@@ -17,6 +16,5 @@ Propose your changes for integration by submitting [pull requests](https://githu
 ----
 
 <sup>🙈 Don't judge the <strong>shady code</strong> or <strong>0% decomposition</strong>, this is just for <strong>fun.</strong><br></sup>
-<sup>⭐️ Hit the <strong>star</strong> button to <strong>share some love!</strong><br></sup>
-<sup>📱 Also <strong>visit my [mobile toolkit](https://github.com/IGPenguin/mobile-toolkit)</strong> project.<br></sup>
-<sup>✉️ Let's <strong>chat</strong> on [LinkedIn](https://www.linkedin.com/in/intergalacticpenguin/)!</sup>
+<sup>⭐️ <strong>Hit the star button to support!</strong><br></sup>
+<sup>📱 <strong>Visit also my [mobile toolkit](https://github.com/IGPenguin/mobile-toolkit)</strong> project.<br></sup>
