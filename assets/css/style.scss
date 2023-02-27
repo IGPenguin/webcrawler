@@ -1,0 +1,33 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+header {
+  display: none;
+}
+
+@media  (min-width: 420px) {
+  body {
+    padding-top: 64px;
+    }
+
+  h1 {
+    font-size:76px;
+    margin: 0px 0 20px;
+    }
+
+  h2 {
+    font-size:18px;
+    margin: 0 0 12px;
+    }
+
+  h4 {
+    font-size:15px;
+    }
+
+  button {
+    height: 36px;
+    font-size: 15px;
+  }
+}
