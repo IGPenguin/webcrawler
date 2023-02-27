@@ -152,8 +152,12 @@ function celebrateSeeingItAll(){
   }
 }
 
-function actionAttack(){
+async function actionAttack(){
   vibrateButtonPress();
+  var initialButtonText = document.getElementById('button_attack').innerText;
+  document.getElementById('button_attack').innerText = "♻️ Working...";
+  await new Promise(resolve => setTimeout(resolve, 1000)); // muhehe
+  document.getElementById('button_attack').innerText = initialButtonText;
   alert("༼ ಠ_ಠ ༽ Welp, seems like you hit a wall.");
 }
 
