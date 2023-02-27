@@ -91,7 +91,7 @@ function previousItem(){
 }
 
 function nextItem(){
-  vibrateButtonPress();
+  //vibrateButtonPress();
   var nextItemIndex = quoteIndex+1;
   if (nextItemIndex > quoteCount-1){
     nextItemIndex = 0;
@@ -152,30 +152,34 @@ function celebrateSeeingItAll(){
   }
 }
 
-async function actionAttack(){
+async function performAction(buttonID, message){
   vibrateButtonPress();
-  var initialButtonText = document.getElementById('button_attack').innerText;
-  document.getElementById('button_attack').innerText = "♻️ Working...";
-  await new Promise(resolve => setTimeout(resolve, 1000)); // muhehe
-  document.getElementById('button_attack').innerText = initialButtonText;
-  alert("༼ ಠ_ಠ ༽ Welp, seems like you hit a wall.");
+  var initialButtonText = document.getElementById(buttonID).innerText;
+  document.getElementById(buttonID).innerText = "♻️ Working...";
+  await new Promise(resolve => setTimeout(resolve, 500)); // muhehe
+  document.getElementById(buttonID).innerText = initialButtonText;
+  alert(message);
+}
+
+async function actionAttack(){
+  performAction('button_attack',"(╯°□°)╯ Welp, seems like you missed.");
 }
 
 function actionBlock(){
-  vibrateButtonPress();
-  alert("༼ >_< ༽ You died of being killed!");
-  localStorage.setItem("seenEnemies", JSON.stringify(""));
-  seenEnemies = [];
+  performAction('button_block',"༼ >_< ༽ You blocked a killing blow!");
 }
 
 function actionMagic(){
-  vibrateButtonPress();
-  alert("༼ つ ◕_◕ ༽つ Oh, you don't know any spells.");
+  performAction('button_magic',"༼ つ ◕_◕ ༽つ Oh, you don't know any spells.");
 }
 
 function actionSleep(){
-  vibrateButtonPress();
-  alert("༼ ಠ_ಠ ༽ Cannot rest, there are monsters nearby!");
+  performAction('button_sleep',"༼ ಠ_ಠ ༽ Cannot rest, there are monsters nearby!");
+}
+
+function actionCheese(){
+  performAction('button_cheese',"(ง •̀_•́)ง You scared them away!");
+  nextItem();
 }
 
 function registerClickListeners(){
@@ -192,5 +196,5 @@ function registerClickListeners(){
   document.getElementById('button_block').addEventListener(eventType, actionBlock);
   document.getElementById('button_magic').addEventListener(eventType, actionMagic);
   document.getElementById('button_sleep').addEventListener(eventType, actionSleep);
-  document.getElementById('button_cheese').addEventListener(eventType, nextItem);
+  document.getElementById('button_cheese').addEventListener(eventType, actionCheese);
 }
