@@ -130,7 +130,7 @@ function generateTweet(){
 function setQuest(){
   var questTarget = 4;
   var remainingcards = questTarget-redrawnTimes;
-  var questText = "🔴"+"&nbsp;&nbsp;"+"<b>Daily Goal:</b> Vanquish another " + remainingcards + " monsters."
+  var questText = "🔴"+"&nbsp;&nbsp;"+"<b>Quest:</b> Vanquish some more enemies." // + remainingcards
   if (remainingcards <= 0) {questText = "🟢"+"&nbsp;&nbsp;"+"<b>Well done! </b> You've made this world a safer place."}
   document.getElementById('id_quest_text').innerHTML = questText;
 }
