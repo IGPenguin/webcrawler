@@ -11,6 +11,14 @@ if (seenEnemiesString == null){
   seenEnemies = Array.from(seenEnemiesString);
 }
 
+//Player stats
+var playerHp = 2;
+var playerSta = 2;
+var playerAtk = 1;
+
+//Enemy stats
+var enemyCurrentHp;
+
 //Uncomment and change the int for testing ids higher than that
 //seenEnemies = Array.from(Array(1).keys())
 
@@ -55,18 +63,30 @@ function redraw(index){
   quoteIndex = index;
   selectedLine = String(lines[index]);
 
-  var selectedEmoji = String(selectedLine.split(",")[1].split(":")[1]);
-  var selectedName = String(selectedLine.split(",")[2].split(":")[1]);
-  var selectedType = String(selectedLine.split(",")[3].split(":")[1]);
-  var selectedDesc = String(selectedLine.split(",")[9].split(":")[1]);
+  // id;emoji;name;type;hp;atk;sta;def;desc
+  var enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
+  var enemyName = String(selectedLine.split(",")[2].split(":")[1]);
+  var enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  var enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
+  var enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
+  var enemySta = String(selectedLine.split(",")[5].split(":")[1]);
+  var enemyDef = String(selectedLine.split(",")[5].split(":")[1]);
+  var selectedDesc = String(selectedLine.split(",")[8].split(":")[1]);
 
-  //tweet = String(selectedEmoji + " " + selectedTitle + "\n\n").replaceAll("<br>"," ") + String(selectedText).replaceAll("<br>","\n") + "\n\n" + selectedTopic + " at:";
+  //tweet = String(enemyEmoji + " " + selectedTitle + "\n\n").replaceAll("<br>"," ") + String(selectedText).replaceAll("<br>","\n") + "\n\n" + selectedTopic + " at:";
 
-  document.getElementById('id_emoji').innerHTML = selectedEmoji;
-  document.getElementById('id_name').innerHTML = selectedName;
-  document.getElementById('id_stats').innerHTML =  "❤️ ▰▰▰▱ " + "\n" +"🗡 ▴";
+  document.getElementById('id_emoji').innerHTML = enemyEmoji;
+  document.getElementById('id_name').innerHTML = enemyName;
   document.getElementById('id_desc').innerHTML = selectedDesc;
-  document.getElementById('id_type').innerHTML = "»  " + selectedType + " «";
+  document.getElementById('id_type').innerHTML = "»  " + enemyType + " «";
+
+  enemyCurrentHp = enemyHp; //TODO
+  enemyLostHp = enemyHp-enemyCurrentHp;
+  
+  enemyCurrentHpString = "❤️ " + "▰".repeat(enemyCurrentHp)
+  if (enemyLostHp > 0) { enemyCurrentHpString = enemyCurrentHpString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
+
+  document.getElementById('id_stats').innerHTML = enemyCurrentHpString;
 
   markAsSeen(quoteIndex);
   setQuest();
@@ -163,7 +183,11 @@ async function performAction(buttonID, message){
   alert(message);
 }
 
-async function actionAttack(){
+function resolveAction(){
+
+}
+
+function actionAttack(){
   performAction('button_attack',"༼ ╯°o° ༽╯ Welp, seems like you missed.");
 }
 
@@ -171,8 +195,8 @@ function actionBlock(){
   performAction('button_block',"༼  >_<  ༽ You blocked a killing blow!");
 }
 
-function actionMagic(){
-  performAction('button_magic',"༼ つ ◕_◕ ༽つ Oh, you don't know any spells.");
+function actionRoll(){
+  performAction('button_roll',"༼ つ ◕_◕ ༽つ Oh, you don't know any spells.");
 }
 
 function actionSleep(){
@@ -196,7 +220,7 @@ function registerClickListeners(){
   }
   document.getElementById('button_attack').addEventListener(eventType, actionAttack);
   document.getElementById('button_block').addEventListener(eventType, actionBlock);
-  document.getElementById('button_magic').addEventListener(eventType, actionMagic);
+  document.getElementById('button_roll').addEventListener(eventType, actionRoll);
   document.getElementById('button_sleep').addEventListener(eventType, actionSleep);
   document.getElementById('button_cheese').addEventListener(eventType, actionCheese);
 }

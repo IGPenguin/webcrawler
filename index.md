@@ -31,8 +31,8 @@ layout: default
 <p style="margin:22px;"></p>
 
 <button type = "button" id = "button_attack">🗡&nbsp;&nbsp;Attack</button>&nbsp;
+<button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;
 <button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>&nbsp;
-<button type = "button" id = "button_magic">🪄&nbsp;&nbsp;Magic</button>&nbsp;
 
 <p style="margin:10px;"></p>
 
