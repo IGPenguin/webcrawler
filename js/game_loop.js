@@ -82,7 +82,7 @@ function redraw(index){
 
   enemyCurrentHp = enemyHp; //TODO
   enemyLostHp = enemyHp-enemyCurrentHp;
-  
+
   enemyCurrentHpString = "❤️ " + "▰".repeat(enemyCurrentHp)
   if (enemyLostHp > 0) { enemyCurrentHpString = enemyCurrentHpString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
 
@@ -172,7 +172,7 @@ function celebrateSeeingItAll(){
   }
 }
 
-async function performAction(buttonID, message){
+async function actionFeedback(buttonID){
   vibrateButtonPress();
   var button = document.getElementById(buttonID);
   var initialButtonText = button.innerText;
@@ -180,32 +180,32 @@ async function performAction(buttonID, message){
 
   await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
   button.innerText = initialButtonText;
-  alert(message);
 }
 
-function resolveAction(){
+function resolveAction(button){
+  return function(){ //Well, stackoverflow comes to the rescue
+    actionFeedback(button);
 
-}
-
-function actionAttack(){
-  performAction('button_attack',"༼ ╯°o° ༽╯ Welp, seems like you missed.");
-}
-
-function actionBlock(){
-  performAction('button_block',"༼  >_<  ༽ You blocked a killing blow!");
-}
-
-function actionRoll(){
-  performAction('button_roll',"༼ つ ◕_◕ ༽つ Oh, you don't know any spells.");
-}
-
-function actionSleep(){
-  performAction('button_sleep',"༼  ಠ_ಠ  ༽ Cannot rest, there are monsters nearby!");
-}
-
-function actionCheese(){
-  performAction('button_cheese',"༼ง •̀_•́ ༽ง You scared them away!");
-  nextItem();
+    switch(button){
+      case 'button_attack':
+        console.log("Attack")
+        break;
+      case 'button_block':
+        console.log("Block")
+        break;
+      case 'button_roll':
+        console.log("Roll")
+        break;
+      case 'button_sleep':
+        console.log("Sleep")
+        break;
+      case 'button_cheese':
+        console.log("Cheese")
+        nextItem();
+        break;
+      default:
+        console.log("Huh, something is wrong.");
+  };};
 }
 
 function registerClickListeners(){
@@ -218,9 +218,9 @@ function registerClickListeners(){
   } else {
     eventType = 'touchend';
   }
-  document.getElementById('button_attack').addEventListener(eventType, actionAttack);
-  document.getElementById('button_block').addEventListener(eventType, actionBlock);
-  document.getElementById('button_roll').addEventListener(eventType, actionRoll);
-  document.getElementById('button_sleep').addEventListener(eventType, actionSleep);
-  document.getElementById('button_cheese').addEventListener(eventType, actionCheese);
+  document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
+  document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
+  document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
+  document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
+  document.getElementById('button_cheese').addEventListener(eventType, resolveAction('button_cheese'));
 }
