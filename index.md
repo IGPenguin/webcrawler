@@ -17,7 +17,7 @@ layout: default
 <div class="card">
 <h1 id = "id_emoji"/>
 <h2 id = "id_name"/>
-<h3 id = "id_stats"/>
+<h3 id = "id_stats" style="line-height:24px; margin-bottom:12px;"/>
 <h4 id = "id_desc"/>
 <h5 id = "id_type"/>
 </div>

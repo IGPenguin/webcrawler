@@ -15,10 +15,12 @@ var playerHpDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
-initPlayer();
+renewPlayer();
 
 //Enemy stats
 var enemyLostHp = 0;
+var enemyLostSta = 0;
+var enemyHp;
 var enemySta;
 var enemyAtk;
 var enemyType;
@@ -74,7 +76,7 @@ function redraw(index){
   var enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   var enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
-  var enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
+  enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
   enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   var enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
@@ -87,8 +89,9 @@ function redraw(index){
 
   enemyStatusString = "❤️ " + "▰".repeat(enemyHp);
     if (enemyLostHp > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
-  enemyStatusString = enemyStatusString + "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);
-
+  enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);
+    if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
+  enemyStatusString += "<br>🗡 " + "×".repeat(enemyAtk);
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEnemies.length;
@@ -119,7 +122,7 @@ function getUnseenEnemyIndex() {
     do {
       randomEnemyIndex = Math.floor(Math.random() * max);
       if (seenEnemies.length >= encountersTotal){
-        gameEnd("This shouldn't happen."); //Hmm, unsure if this ever happens
+        gameEnd(); //Hmm, unsure if this ever happens
         break;
       }
     } while (seenEnemies.includes(randomEnemyIndex));
@@ -134,16 +137,14 @@ function markAsSeen(seenID){
   }
 }
 
-function resolveAction(button){
+function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
     actionFeedback(button);
 
     switch (button) {
       case 'button_attack':
-        if (enemySta < 1) {
-           enemyLostHp = enemyLostHp + playerAtk
-           console.log("Succesful attack, enemyHp: " + enemyHp);
-           if (enemyHp <= 0) { console.log("Enemy killed"); }
+        if (enemySta-enemyLostSta < 1) {
+           enemyHit(playerAtk);
         } else {
            console.log("Enemy counter-attacks.")
            playerHit(enemyAtk);
@@ -152,9 +153,11 @@ function resolveAction(button){
 
       case 'button_block':
         switch (enemyType){
+          case "Standard":
+            enemyStaminaChange(-1);
+            break;
           case "Swift":
-            enemySta -= 1;
-            console.log("Succesful block, enemySta: "+enemySta);
+            enemyStaminaChange(-1);
             break;
           case "Heavy":
             playerHit(enemyAtk);
@@ -166,11 +169,15 @@ function resolveAction(button){
 
       case 'button_roll':
         switch (enemyType){
+          case "Standard":
+            enemyStaminaChange(-1);
+            break;
           case "Swift":
             playerHit(enemyAtk);
             break;
           case "Heavy":
-            console.log("Successful dodge.")
+            enemyStaminaChange(-1);
+            console.log("Succesful roll, enemySta: "+enemySta);
             break;
           default:
             console.log("Unspecified reaction for enemy type.");
@@ -192,8 +199,29 @@ function resolveAction(button){
   };
 }
 
+//Enemy
+function renewEnemy(){
+  enemyLostSta = 0;
+  enemyLostHp = 0;
+}
+
+function enemyStaminaChange(stamina){
+  enemyLostSta -= stamina;
+  console.log("Succesful block, enemySta: " + (enemySta-enemyLostSta));
+}
+
+function enemyHit(damage){
+  enemyLostHp = enemyLostHp + damage
+  console.log("Succesful attack, enemyHp: " + (enemyHp-enemyLostHp));
+  if (enemyLostHp >= enemyHp) {
+    console.log("Enemy killed!");
+    encounterIndex = getUnseenEnemyIndex();
+    renewEnemy();
+  }
+}
+
 //Player
-function initPlayer(){
+function renewPlayer(){
   playerHp = playerHpDefault;
   playerSta = 2;
   playerAtk = 1;
@@ -218,7 +246,7 @@ function gameEnd(){
   localStorage.setItem("seenEnemies", JSON.stringify(""));
   seenEnemies = [];
   encounterIndex = getUnseenEnemyIndex();
-  initPlayer();
+  renewPlayer();
 }
 
 //TECH SECTION
