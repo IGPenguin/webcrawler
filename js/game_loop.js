@@ -15,6 +15,7 @@ var playerHpDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
+var gameLog = "";
 renewPlayer();
 
 //Enemy stats
@@ -70,9 +71,8 @@ function redraw(index){
   playerStatusString += "🗡 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
 
-  //Enemy - id;emoji;name;type;hp;atk;sta;def;desc
   selectedLine = String(lines[index]);
-
+  //Enemy - id;emoji;name;type;hp;atk;sta;def;team;desc
   var enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   var enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
@@ -98,6 +98,7 @@ function redraw(index){
   var itemsLeft = encountersTotal-seenEnemies.length;
   document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " enemies awaiting defeat.";
 
+  document.getElementById('id_log').innerHTML = gameLog;
   console.log("Redrawing... ("+enemyName+")")
 }
 
@@ -145,9 +146,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (enemySta-enemyLostSta < 1) {
-           enemyHit(playerAtk);
+          enemyStaminaChange(+1);
+          logAction("Enemy regained some energy.")
+          enemyHit(playerAtk);
         } else {
-           console.log("Enemy counter-attacks.")
+           logAction("Enemy counter-attacked, hitting you for: "+enemyAtk)
            playerHit(enemyAtk);
         }
         break;
@@ -156,12 +159,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
+            logAction("Succesful block, enemy lost energy.");
             break;
           case "Swift":
             enemyStaminaChange(-1);
+            logAction("Succesful block, enemy lost energy.");
             break;
           case "Heavy":
             playerHit(enemyAtk);
+            logAction("You failed to block heavy blow, hit for: "+enemyAtk)
             break;
           default:
             console.log("Unspecified reaction for enemy type.");
@@ -172,13 +178,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
+            logAction("Succesful roll, enemy lost energy.");
             break;
           case "Swift":
             playerHit(enemyAtk);
+            logAction("You rolled into enemy attack, hit for: "+enemyAtk);
             break;
           case "Heavy":
             enemyStaminaChange(-1);
-            console.log("Succesful roll, enemySta: "+enemySta);
+            logAction("Succesful roll, enemy lost energy.");
             break;
           default:
             console.log("Unspecified reaction for enemy type.");
@@ -207,17 +215,17 @@ function renewEnemy(){
 }
 
 function enemyStaminaChange(stamina){
-  if (enemyLostSta < enemySta) {
-    enemyLostSta -= stamina;
-    console.log("Succesful block, enemySta: " + (enemySta-enemyLostSta));
+  enemyLostSta -= stamina;
+  if (enemyLostSta >= enemySta) {
+    enemyLostSta == enemySta;
   }
 }
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  console.log("Succesful attack, enemyHp: " + (enemyHp-enemyLostHp));
+  logAction("Succesful attack, hit for:" + damage + ".");
   if (enemyLostHp >= enemyHp) {
-    console.log("Enemy killed!");
+    logAction("Enemy killed!");
     encounterIndex = getUnseenEnemyIndex();
     renewEnemy();
   }
@@ -232,27 +240,33 @@ function renewPlayer(){
 
 function playerHit(incomingDamage){
   playerHp = playerHp - incomingDamage;
-  console.log("Ouch, you were hit for: " + incomingDamage + " currentHp: " + playerHp);
-
   if (playerHp <= 0){
-    console.log("Game end: DEAD");
+    logAction("Game Over: YOU ARE DEAD!");
     alert("༼  x_x  ༽  Welp, you are dead.");
+    gameLog = "";
+    renewPlayer();
     gameEnd();
   }
 }
 
 function gameEnd(){
   if (seenEnemies.length >= encountersTotal){
-    console.log("Game end: WIN");
+    logAction("Unbelievable, you finished the game!");
     alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
   }
   localStorage.setItem("seenEnemies", JSON.stringify(""));
   seenEnemies = [];
   encounterIndex = getUnseenEnemyIndex();
-  renewPlayer();
 }
 
 //TECH SECTION
+function logAction(message){
+  gameLog = message + "<br>" + gameLog;
+  if (gameLog.split("<br>").length > 3) {
+    gameLog = gameLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
+  }
+}
+
 function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
     console.log("Vibrate not supported!");
