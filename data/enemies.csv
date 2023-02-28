@@ -1,5 +1,13 @@
 id;emoji;name;type;hp;atk;sta;def;team;desc
 0;🐀;Suspicious Rat;Swift;2;1;1;0;Wild Animal;*sniffs around maniacally*<br>...could this be Jerry?
-1;🕷;Eight-legged Menace;Standard;3;2;2;0;Wild Animal;Always appears out of nowhere.<br>A bit scary at night.
-2;🦍;Silverback Gorilla;Heavy;5;3;3;0;Wild Animal;Be careful around this one!<br> It carries the mighty "Unga Bunga".
-3;🤺;Nimble Knight;Swift;3;2;3;3;Human Being;They used to be an adventurer like you.<br>Then they took an arrow to the knee.
+1;🦂;Scorpion;Swift;2;4;3;0;Pesky Insect;You'd better check your pockets.<br>These guys like to hide.
+2;🐗;Momma Boar;Heavy;4;2;1;0;Wild Animal;It follows you around.<br>No matter what you do.
+3;🧟‍♀️;Tired Zombie;Swift;3;2;1;0;Unholy Monster;Usually spreads some disease.<br>Don't stand too close.
+4;🕷;Eight-legged Menace;Standard;3;2;2;0;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.
+5;🦍;Silverback Gorilla;Heavy;5;3;3;0;Wild Animal;Be careful around this one!<br>Especially about its "Unga Bunga".
+6;🐊;Swamp Gator;Heavy;5;3;4;0;Wild Animal;So it wasn't a floating log after all.<br>This is making you a little uncomfortable.
+7;🐊🐊;Gator Duo;Heavy;8;6;4;0;Wild Animal;It is getting out of hand.<br>Now there are two of them.
+8;🤺;Nimble Knight;Swift;3;2;3;3;Human Being;They used to be an adventurer like you.<br>Then they took an arrow to the knee.
+9;🔥;Fire Elemental;Swift;1;4;4;3;Magical Creature;It seems to be sentient.<br>Protect your elder scrolls.
+10;🦠;Floating Germs;Swift;1;1;4;3;Unfortunate Event;Feels uncomfortable on your skin.<br>And now it's too late to be sorry.
+11;🪰;Swarm of Flies;Swift;6;1;1;3;Pesky Insect;It seems to be sentient.<br>Protect your elder scrolls.
