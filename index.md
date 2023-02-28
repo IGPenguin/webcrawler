@@ -25,7 +25,7 @@ layout: default
 <p style="margin:18px;"></p>
 
 <div class="toolbar">
-<h4 id = "id_player_status" style="margin-bottom:0px;"/>
+<h4 style="display:inline; font-weight:bold;">Nameless Hero:&nbsp;&nbsp;</h4><h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
 </div>
 
 <p style="margin:14px;"></p>
