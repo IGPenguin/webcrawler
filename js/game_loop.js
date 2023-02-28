@@ -1,5 +1,4 @@
 //Init
-var redrawnTimes = 0;
 var seenEnemiesString = JSON.parse(localStorage.getItem("seenEnemies"));
 var seenEnemies;
 var quoteCount;
@@ -22,7 +21,6 @@ var enemyCurrentHp;
 //Uncomment and change the int for testing ids higher than that
 //seenEnemies = Array.from(Array(1).keys())
 
-var tweet;
 var lines;
 var randomTopicIndex;
 
@@ -58,8 +56,6 @@ function processData(allText) {
 }
 
 function redraw(index){
-  redrawnTimes++;
-
   quoteIndex = index;
   selectedLine = String(lines[index]);
 
@@ -72,8 +68,6 @@ function redraw(index){
   var enemySta = String(selectedLine.split(",")[5].split(":")[1]);
   var enemyDef = String(selectedLine.split(",")[5].split(":")[1]);
   var selectedDesc = String(selectedLine.split(",")[8].split(":")[1]);
-
-  //tweet = String(enemyEmoji + " " + selectedTitle + "\n\n").replaceAll("<br>"," ") + String(selectedText).replaceAll("<br>","\n") + "\n\n" + selectedTopic + " at:";
 
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
   document.getElementById('id_name').innerHTML = enemyName;
@@ -97,12 +91,10 @@ function redraw(index){
 }
 
 function randomItem(){
-  vibrateButtonPress();
   redraw(getUnseenTopicIndex());
 }
 
 function previousItem(){
-  vibrateButtonPress();
   var previousItemIndex = quoteIndex-1;
   if (previousItemIndex < 0){
     previousItemIndex = quoteCount-1;
@@ -111,7 +103,6 @@ function previousItem(){
 }
 
 function nextItem(){
-  //vibrateButtonPress();
   var nextItemIndex = quoteIndex+1;
   if (nextItemIndex > quoteCount-1){
     nextItemIndex = 0;
@@ -148,20 +139,8 @@ function generateTweet(){
 }
 
 function setQuest(){
-  var questTarget = 4;
-  var remainingcards = questTarget-redrawnTimes;
-  var questText = "🔴"+"&nbsp;&nbsp;"+"<b>Quest:</b> Vanquish some more enemies." // + remainingcards
-  if (remainingcards <= 0) {questText = "🟢"+"&nbsp;&nbsp;"+"<b>Well done! </b> You've made this world a safer place."}
+  var questText = "🔴"+"&nbsp;&nbsp;"+"<b>Quest:</b> Vanquish some more enemies."
   document.getElementById('id_quest_text').innerHTML = questText;
-}
-
-function vibrateButtonPress(){
-  //Vibrate on button press on Android devices
-  if (!("vibrate" in window.navigator)){
-    console.log("Vibrate not supported!");
-    return;
-  }
-  window.navigator.vibrate([5,20,10]);
 }
 
 function celebrateSeeingItAll(){
@@ -170,16 +149,6 @@ function celebrateSeeingItAll(){
     localStorage.setItem("seenEnemies", JSON.stringify(""));
     seenEnemies = [];
   }
-}
-
-async function actionFeedback(buttonID){
-  vibrateButtonPress();
-  var button = document.getElementById(buttonID);
-  var initialButtonText = button.innerText;
-  button.innerText = "♻️ Working...";
-
-  await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
-  button.innerText = initialButtonText;
 }
 
 function resolveAction(button){
@@ -205,13 +174,34 @@ function resolveAction(button){
         break;
       default:
         console.log("Huh, something is wrong.");
-  };};
+        
+    };
+  };
+}
+
+
+//TECH SECTION
+function vibrateButtonPress(){
+  if (!("vibrate" in window.navigator)){
+    console.log("Vibrate not supported!");
+    return;
+  }
+  window.navigator.vibrate([5,20,10]);
+}
+
+async function actionFeedback(buttonID){
+  vibrateButtonPress();
+  var button = document.getElementById(buttonID);
+  var initialButtonText = button.innerText;
+  button.innerText = "♻️ Working...";
+
+  await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
+  button.innerText = initialButtonText;
 }
 
 function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
-
   var eventType;
   if (!(navigator.userAgentData.mobile)){
     eventType = 'click';
