@@ -146,7 +146,7 @@ function vibrateButtonPress(){
 
 function celebrateSeeingItAll(){
   if (seenEnemies.length >= quoteCount){
-    alert("ʕつ•ᴥ•ʔつ  Congratulations! You saved the princess.");
+    //alert("ʕつ•ᴥ•ʔつ  Congratulations! You saved the princess.");
     localStorage.setItem("seenEnemies", JSON.stringify(""));
     seenEnemies = [];
   }
@@ -154,10 +154,12 @@ function celebrateSeeingItAll(){
 
 async function performAction(buttonID, message){
   vibrateButtonPress();
-  var initialButtonText = document.getElementById(buttonID).innerText;
-  document.getElementById(buttonID).innerText = "♻️ Working...";
-  await new Promise(resolve => setTimeout(resolve, 500)); // muhehe
-  document.getElementById(buttonID).innerText = initialButtonText;
+  var button = document.getElementById(buttonID);
+  var initialButtonText = button.innerText;
+  button.innerText = "♻️ Working...";
+
+  await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
+  button.innerText = initialButtonText;
   alert(message);
 }
 
