@@ -10,7 +10,7 @@ layout: default
 <script src="js/game_loop.js"></script>
 
 <center>
-<h2>👋&nbsp;&nbsp;Welcome back, legendary adventurer!</h2>
+<h2>Welcome back, adventurer!</h2>
 <h4 id = "id_subtitle"> </h4>
 <p style="margin:18px;"></p>
 
@@ -19,13 +19,16 @@ layout: default
 <h2 id = "id_name"/>
 <h3 id = "id_stats" style="line-height:24px; margin-bottom:12px;"/>
 <h4 id = "id_desc"/>
-<h5 id = "id_type"/>
+<h5 id = "id_team"/>
 </div>
 
-<p style="margin:18px;"></p>
+<p style="margin:9px;"></p>
+<h3 style="margin:-2px">· VS ·</h3>
+<p style="margin:9px;"></p>
 
 <div class="toolbar">
 <h4 style="display:inline; font-weight:bold;">Nameless Hero:&nbsp;&nbsp;</h4><h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
+<h4 id = "id_log" style="margin:0px;"/>
 </div>
 
 <p style="margin:14px;"></p>

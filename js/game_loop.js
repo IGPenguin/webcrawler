@@ -80,18 +80,19 @@ function redraw(index){
   enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   var enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
-  var selectedDesc = String(selectedLine.split(",")[8].split(":")[1]);
+  var enemyTeam = String(selectedLine.split(",")[8].split(":")[1]);
+  var enemyDesc = String(selectedLine.split(",")[9].split(":")[1]);
 
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
   document.getElementById('id_name').innerHTML = enemyName;
-  document.getElementById('id_desc').innerHTML = selectedDesc;
-  document.getElementById('id_type').innerHTML = "»  " + enemyType + " «";
+  document.getElementById('id_desc').innerHTML = enemyDesc;
+  document.getElementById('id_team').innerHTML = "»&nbsp;&nbsp;" + enemyTeam + "&nbsp;&nbsp;«";
 
   enemyStatusString = "❤️ " + "▰".repeat(enemyHp);
     if (enemyLostHp > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
   enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
-  enemyStatusString += "<br>🗡 " + "×".repeat(enemyAtk);
+  enemyStatusString += "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEnemies.length;
@@ -206,8 +207,10 @@ function renewEnemy(){
 }
 
 function enemyStaminaChange(stamina){
-  enemyLostSta -= stamina;
-  console.log("Succesful block, enemySta: " + (enemySta-enemyLostSta));
+  if (enemyLostSta < enemySta) {
+    enemyLostSta -= stamina;
+    console.log("Succesful block, enemySta: " + (enemySta-enemyLostSta));
+  }
 }
 
 function enemyHit(damage){
