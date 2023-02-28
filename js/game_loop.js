@@ -164,11 +164,11 @@ async function performAction(buttonID, message){
 }
 
 async function actionAttack(){
-  performAction('button_attack',"(╯°□°)╯ Welp, seems like you missed.");
+  performAction('button_attack',"༼ ╯°o° ༽╯ Welp, seems like you missed.");
 }
 
 function actionBlock(){
-  performAction('button_block',"༼ >_< ༽ You blocked a killing blow!");
+  performAction('button_block',"༼  >_<  ༽ You blocked a killing blow!");
 }
 
 function actionMagic(){
@@ -176,11 +176,11 @@ function actionMagic(){
 }
 
 function actionSleep(){
-  performAction('button_sleep',"༼ ಠ_ಠ ༽ Cannot rest, there are monsters nearby!");
+  performAction('button_sleep',"༼  ಠ_ಠ  ༽ Cannot rest, there are monsters nearby!");
 }
 
 function actionCheese(){
-  performAction('button_cheese',"(ง •̀_•́)ง You scared them away!");
+  performAction('button_cheese',"༼ง •̀_•́ ༽ง You scared them away!");
   nextItem();
 }
 
