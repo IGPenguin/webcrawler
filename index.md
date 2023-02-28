@@ -22,13 +22,13 @@ layout: default
 <h5 id = "id_type"/>
 </div>
 
-<p style="margin:28px;"></p>
+<p style="margin:18px;"></p>
 
-<div class="quest">
-<h4 id = "id_quest_text" style="margin-bottom:0px;"/>
+<div class="toolbar">
+<h4 id = "id_player_status" style="margin-bottom:0px;"/>
 </div>
 
-<p style="margin:22px;"></p>
+<p style="margin:14px;"></p>
 
 <button type = "button" id = "button_attack">🗡&nbsp;&nbsp;Attack</button>&nbsp;
 <button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;
