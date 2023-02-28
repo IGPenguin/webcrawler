@@ -1,28 +1,33 @@
 //Init
 var seenEnemiesString = JSON.parse(localStorage.getItem("seenEnemies"));
 var seenEnemies;
-var quoteCount;
-var quoteIndex;
+var encountersTotal;
+var encounterIndex;
 
 if (seenEnemiesString == null){
   seenEnemies = [];
 } else {
-  seenEnemies = Array.from(seenEnemiesString);
+  seenEnemies = Array.from(seenEnemiesString); //load seen enemies
 }
 
 //Player stats
-var playerHp = 2;
-var playerSta = 2;
-var playerAtk = 1;
+var playerHpDefault = 3;
+var playerHp;
+var playerSta;
+var playerAtk;
+initPlayer();
 
 //Enemy stats
-var enemyCurrentHp;
+var enemyLostHp = 0;
+var enemySta;
+var enemyAtk;
+var enemyType;
 
 //Uncomment and change the int for testing ids higher than that
 //seenEnemies = Array.from(Array(1).keys())
 
 var lines;
-var randomTopicIndex;
+var randomEnemyIndex;
 
 $(document).ready(function() {
     $.ajax({
@@ -51,22 +56,28 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(getUnseenTopicIndex());
+  redraw(getUnseenEnemyIndex());
   registerClickListeners();
 }
 
 function redraw(index){
-  quoteIndex = index;
+  encounterIndex = index; //Prediction: This will cause trouble.
+
+  //Player
+  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpDefault)) + "&nbsp;&nbsp;"
+  playerStatusString += "🗡 " + "×".repeat(playerAtk);
+  document.getElementById('id_player_status').innerHTML = playerStatusString;
+
+  //Enemy - id;emoji;name;type;hp;atk;sta;def;desc
   selectedLine = String(lines[index]);
 
-  // id;emoji;name;type;hp;atk;sta;def;desc
   var enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   var enemyName = String(selectedLine.split(",")[2].split(":")[1]);
-  var enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   var enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
-  var enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
-  var enemySta = String(selectedLine.split(",")[5].split(":")[1]);
-  var enemyDef = String(selectedLine.split(",")[5].split(":")[1]);
+  enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
+  enemySta = String(selectedLine.split(",")[6].split(":")[1]);
+  var enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
   var selectedDesc = String(selectedLine.split(",")[8].split(":")[1]);
 
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
@@ -74,53 +85,45 @@ function redraw(index){
   document.getElementById('id_desc').innerHTML = selectedDesc;
   document.getElementById('id_type').innerHTML = "»  " + enemyType + " «";
 
-  enemyCurrentHp = enemyHp; //TODO
-  enemyLostHp = enemyHp-enemyCurrentHp;
+  enemyStatusString = "❤️ " + "▰".repeat(enemyHp);
+    if (enemyLostHp > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
+  enemyStatusString = enemyStatusString + "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);
 
-  enemyCurrentHpString = "❤️ " + "▰".repeat(enemyCurrentHp)
-  if (enemyLostHp > 0) { enemyCurrentHpString = enemyCurrentHpString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
+  document.getElementById('id_stats').innerHTML = enemyStatusString;
 
-  document.getElementById('id_stats').innerHTML = enemyCurrentHpString;
-
-  markAsSeen(quoteIndex);
-  setQuest();
-  celebrateSeeingItAll();
-
-  var itemsLeft = quoteCount-seenEnemies.length;
+  var itemsLeft = encountersTotal-seenEnemies.length;
   document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " enemies awaiting defeat.";
+
+  console.log("Redrawing... ("+enemyName+")")
 }
 
-function randomItem(){
-  redraw(getUnseenTopicIndex());
-}
-
-function previousItem(){
-  var previousItemIndex = quoteIndex-1;
+function previousItem(){ //Unused
+  var previousItemIndex = encounterIndex-1;
   if (previousItemIndex < 0){
-    previousItemIndex = quoteCount-1;
+    previousItemIndex = encountersTotal-1;
   }
   redraw(previousItemIndex);
 }
 
-function nextItem(){
-  var nextItemIndex = quoteIndex+1;
-  if (nextItemIndex > quoteCount-1){
+function nextItem(){ //Unused
+  var nextItemIndex = encounterIndex+1;
+  if (nextItemIndex > encountersTotal-1){
     nextItemIndex = 0;
   }
   redraw(nextItemIndex);
 }
 
-function getUnseenTopicIndex() {
-  quoteCount = lines.length;
-  var max = quoteCount;
+function getUnseenEnemyIndex() {
+  encountersTotal = lines.length;
+  var max = encountersTotal;
     do {
-      randomTopicIndex = Math.floor(Math.random() * max);
-      if (seenEnemies.length >= quoteCount){
-        celebrateSeeingItAll();
+      randomEnemyIndex = Math.floor(Math.random() * max);
+      if (seenEnemies.length >= encountersTotal){
+        gameEnd("This shouldn't happen."); //Hmm, unsure if this ever happens
         break;
       }
-    } while (seenEnemies.includes(randomTopicIndex));
-    return randomTopicIndex;
+    } while (seenEnemies.includes(randomEnemyIndex));
+    return randomEnemyIndex;
 }
 
 function markAsSeen(seenID){
@@ -131,54 +134,92 @@ function markAsSeen(seenID){
   }
 }
 
-function generateTweet(){
-  vibrateButtonPress();
-  var url = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/nomo&text=";
-  var noTagsTweet=tweet.replace("<b>","").replace("</b>","");
-  window.open(url+encodeURIComponent(noTagsTweet));
-}
-
-function setQuest(){
-  var questText = "🔴"+"&nbsp;&nbsp;"+"<b>Quest:</b> Vanquish some more enemies."
-  document.getElementById('id_quest_text').innerHTML = questText;
-}
-
-function celebrateSeeingItAll(){
-  if (seenEnemies.length >= quoteCount){
-    //alert("ʕつ•ᴥ•ʔつ  Congratulations! You saved the princess.");
-    localStorage.setItem("seenEnemies", JSON.stringify(""));
-    seenEnemies = [];
-  }
-}
-
 function resolveAction(button){
   return function(){ //Well, stackoverflow comes to the rescue
     actionFeedback(button);
 
-    switch(button){
+    switch (button) {
       case 'button_attack':
-        console.log("Attack")
+        if (enemySta < 1) {
+           enemyLostHp = enemyLostHp + playerAtk
+           console.log("Succesful attack, enemyHp: " + enemyHp);
+           if (enemyHp <= 0) { console.log("Enemy killed"); }
+        } else {
+           console.log("Enemy counter-attacks.")
+           playerHit(enemyAtk);
+        }
         break;
+
       case 'button_block':
-        console.log("Block")
+        switch (enemyType){
+          case "Swift":
+            enemySta -= 1;
+            console.log("Succesful block, enemySta: "+enemySta);
+            break;
+          case "Heavy":
+            playerHit(enemyAtk);
+            break;
+          default:
+            console.log("Unspecified reaction for enemy type.");
+        }
         break;
+
       case 'button_roll':
-        console.log("Roll")
+        switch (enemyType){
+          case "Swift":
+            playerHit(enemyAtk);
+            break;
+          case "Heavy":
+            console.log("Successful dodge.")
+            break;
+          default:
+            console.log("Unspecified reaction for enemy type.");
+        }
         break;
-      case 'button_sleep':
-        console.log("Sleep")
+
+      case 'button_sleep': //TODO
+        alert("༼  ಠ_ಠ  ༽ Cannot rest, there are monsters nearby!");
         break;
-      case 'button_cheese':
-        console.log("Cheese")
-        nextItem();
+
+      case 'button_cheese': //DEBUG
+        encounterIndex = getUnseenEnemyIndex();
         break;
+
       default:
-        console.log("Huh, something is wrong.");
-        
+        console.log("Huh, button does not exist.");
     };
+    redraw(encounterIndex);
   };
 }
 
+//Player
+function initPlayer(){
+  playerHp = playerHpDefault;
+  playerSta = 2;
+  playerAtk = 1;
+}
+
+function playerHit(incomingDamage){
+  playerHp = playerHp - incomingDamage;
+  console.log("Ouch, you were hit for: " + incomingDamage + " currentHp: " + playerHp);
+
+  if (playerHp <= 0){
+    console.log("Game end: DEAD");
+    alert("༼  x_x  ༽  Welp, you are dead.");
+    gameEnd();
+  }
+}
+
+function gameEnd(){
+  if (seenEnemies.length >= encountersTotal){
+    console.log("Game end: WIN");
+    alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
+  }
+  localStorage.setItem("seenEnemies", JSON.stringify(""));
+  seenEnemies = [];
+  encounterIndex = getUnseenEnemyIndex();
+  initPlayer();
+}
 
 //TECH SECTION
 function vibrateButtonPress(){
