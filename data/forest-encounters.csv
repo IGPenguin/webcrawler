@@ -14,7 +14,7 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 112;🪶;Stormbird Feather;Item;0;1;0;0;0;Trash;Nobody will miss it.<br>Right?;
 113;🐿;Curious Chipmunk;Trap;2;1;0;0;0;Wild Animal;A little cute boy.<br>What if ...?;You shouldn't have done it
 114;🏹;Bow and Arrows;Trap;0;3;0;0;0;Weapon;There must be a huntsman around.<br>He probably won't miss it.;You shoot yourself by mistake.
-115;🐍;Extra Long Snake;Trap;5;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe I could use it as a rope.;
+115;🐍;Extra Big Snake;Heavy;5;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe I could use it as a rope.;
 116;🦉;Smart Owl;Item-Speak;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>I should investigate.;
 117;⛺️;Abandoned Tent;Trap;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>I could use a break.;The tent was riddled with fleas.
 118;🍄;Suspicious Fungi;Item;1;0;0;0;0;Wild Animal;Looks really tasty.<br>Could be eaten raw.;

@@ -25,7 +25,7 @@ var playerAtk;
 var playerDef;
 var playerInt;
 var actionString;
-var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You are waking up from what seemed<br>like an eternal slumber. Not aware of where you are.<br>Now it's time to find out.\"";
+var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You are waking up from seemingly<br>eternal slumber. Not knowing where you are.<br>Now it's time to find out.\"";
 renewPlayer();
 
 //Enemy stats init
@@ -234,7 +234,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Trap":
-            logPlayerAction(actionString,"You rolled past that. Better safe than sorry.");
+            logPlayerAction(actionString,"Well... Better safe than sorry.");
             nextEncounter();
             break;
           default:
@@ -392,7 +392,8 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  actionLog="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unbelievable, you are feel alive once again.<br>Something powerful must've brought you back.<br>Hopefully not necromancy or a devil's deal.\"";
+  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unbelievable, you feel alive once again.<br>Something powerful must've brought you back.\"";
+  logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
   nextEncounter();
