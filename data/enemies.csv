@@ -13,10 +13,10 @@ id;emoji;name;type;hp;atk;sta;def;team;desc
 11;🪰;Swarm of Flies;Swift;6;1;1;3;Pesky Insect;No matter what you do.<br>You stay totally surrounded.
 12;💍;Ring of Love;Item;1;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.
 13;🦾;Prosthetic Arm;Item;0;1;0;0;Abandoned Item;Could this be a weapon?<br>There's only one way to find out.
-14;🌮;Ancient Taco;Trap;2;0;0;0;Temptation;Looks fresh and tasty.<br>What could go wrong?
+14;🌮;Ancient Taco;Trap;2;0;0;0;Questionable Food;Looks fresh and tasty.<br>What could go wrong?
 15;📦;Mysterious Box;Trap;0;0;0;0;Temptation;Do you wonder what's inside?<br>There's only one way to find out.
-16;🔨;Stable Hammer;Item;0;2;0;0;Tool;Have you heard about it?<br>It always works.
-17;🌪;Unpredictable Tornado;Trap;0;2;0;0;Weather Condition;Got damn not this again.<br>I wonder how to avoid it.
+16;🔨;Sturdy Hammer;Item;0;2;0;0;Building Tool;Have you heard about it?<br>It always works.
+17;🌪;Unpredictable Tornado;Trap;0;0;0;0;Weather Condition;Got damn not this again.<br>I wonder how to avoid it.
 18;🪃;Cursed Boomerang;Item;0;-1;0;0;Weapon;This looks really handy.<br>Could help keeping a distance.
 19;🗿;Animated Statute;Heavy;9;5;2;0;Huge Decoration;Is this really a threat?<br>I need to find out.
-20;🍪;Cinnamon Cookie;Item;1;0;0;0;Simple Food;Oh yeah... finally.<br>Give me a cookie!
+20;🍪;Cinnamon Cookie;Item;1;0;0;0;Simple Food;Oh yeah... finally.<br>Give me that cookie!
