@@ -27,18 +27,18 @@ layout: default
 <p style="margin:9px;"></p>
 
 <div class="toolbar">
-<h4 style="display:inline; font-weight:bold;">Nameless Hero:&nbsp;&nbsp;</h4><h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
+<h4 id = "id_player_name" style="display:inline; font-weight:bold;"/><h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
 <h4 id = "id_log" style="margin:0px;"/>
 </div>
 
 <p style="margin:14px;"></p>
-
 <button type = "button" id = "button_attack">🗡&nbsp;&nbsp;Attack</button>&nbsp;
 <button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;
 <button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>&nbsp;
-
 <p style="margin:10px;"></p>
-
+<button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Sleep</button>&nbsp;
+<p style="margin:10px;"></p>
 <button type = "button" id = "button_cheese">🧀&nbsp;&nbsp;Cheese</button>&nbsp;
+
 </center>

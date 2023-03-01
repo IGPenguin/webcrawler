@@ -11,6 +11,8 @@ if (seenEnemiesString == null){
 }
 
 //Player stats
+//var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
+var playerName = "Nameless Hero:&nbsp;&nbsp;"
 var playerHpDefault = 3;
 var playerHp;
 var playerSta;
@@ -66,13 +68,14 @@ function processData(allText) {
 function redraw(index){
   encounterIndex = index; //Prediction: This will cause trouble.
 
-  //Player
+  //Player UI
+  document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpDefault)) + "&nbsp;&nbsp;"
   playerStatusString += "🗡 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
 
   selectedLine = String(lines[index]);
-  //Enemy - id;emoji;name;type;hp;atk;sta;def;team;desc
+  //Enemy UI - id;emoji;name;type;hp;atk;sta;def;team;desc
   var enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   var enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
@@ -88,11 +91,12 @@ function redraw(index){
   document.getElementById('id_desc').innerHTML = enemyDesc;
   document.getElementById('id_team').innerHTML = "»&nbsp;&nbsp;" + enemyTeam + "&nbsp;&nbsp;«";
 
-  enemyStatusString = "❤️ " + "▰".repeat(enemyHp);
+  var enemyStatusString = ""
+  if (enemyHp > 0) { enemyStatusString = "❤️ " + "▰".repeat(enemyHp);}
     if (enemyLostHp > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
-  enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);
+  if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
-  enemyStatusString += "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);
+  if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);}
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEnemies.length;
@@ -145,15 +149,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     switch (button) {
       case 'button_attack':
-        if (enemySta-enemyLostSta < 1) {
-          enemyStaminaChange(+1);
-          logAction("Enemy regained some energy.")
-          enemyHit(playerAtk);
-        } else {
-           logAction("Enemy counter-attacked, hitting you for: "+enemyAtk)
-           playerHit(enemyAtk);
-        }
-        break;
+        switch (enemyType){
+          case "Item":
+            itemLost();
+            logAction("Bonk! Now the item is completely worthless.");
+            break;
+          default:
+            if (enemySta-enemyLostSta < 1) {
+              enemyStaminaChange(+1); //TODO CHANCE?
+              enemyHit(playerAtk);
+              logAction("The pain energized them.")
+            } else {
+              logAction("Enemy counter-attacked, hitting you for: "+enemyAtk)
+              playerHit(enemyAtk);
+            };
+      }
+      break;
 
       case 'button_block':
         switch (enemyType){
@@ -170,7 +181,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logAction("You failed to block heavy blow, hit for: "+enemyAtk)
             break;
           default:
-            console.log("Unspecified reaction for enemy type.");
+            logAction("Suprisingly, nothing happened.");
         }
         break;
 
@@ -188,17 +199,47 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyStaminaChange(-1);
             logAction("Succesful roll, enemy lost energy.");
             break;
+          case "Item":
+            itemLost();
+            logAction("You rolled away. The item has been lost.");
+            break;
+          case "Trap":
+            skipEncounter();
+            logAction("You ignored that. Better safe than sorry.");
+            break;
           default:
-            console.log("Unspecified reaction for enemy type.");
+            logAction("It didn't feel right, so you changed your mind.");
         }
         break;
 
+      case 'button_grab':
+        switch (enemyType){
+          case "Standard":
+          case "Swift":
+          case "Heavy":
+            playerHit(enemyAtk*2);
+            logAction("You touched them and got hit extra hard: "+enemyAtk*2);
+            break;
+          case "Trap":
+            playerHit(100);
+            logAction("You died instantenously!");//TODO
+            break;
+          case "Item": //TODO
+            itemLost();
+            //itemGained();
+            logAction("You obtained something new. (TODO)");
+            break;
+          default:
+            logAction("No, you cannot touch that!");
+          }
+          break;
+
       case 'button_sleep': //TODO
-        alert("༼  ಠ_ಠ  ༽ Cannot rest, there are monsters nearby!");
+        logAction("༼  ಠ_ಠ  ༽ Cannot rest, there are monsters nearby!");
         break;
 
       case 'button_cheese': //DEBUG
-        encounterIndex = getUnseenEnemyIndex();
+          skipEncounter();
         break;
 
       default:
@@ -217,18 +258,23 @@ function renewEnemy(){
 function enemyStaminaChange(stamina){
   enemyLostSta -= stamina;
   if (enemyLostSta >= enemySta) {
-    enemyLostSta == enemySta;
+    enemyLostSta = enemySta;
   }
 }
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  logAction("Succesful attack, hit for:" + damage + ".");
+  logAction("Succesful attack, hit them for:" + damage + ".");
   if (enemyLostHp >= enemyHp) {
     logAction("Enemy killed!");
     encounterIndex = getUnseenEnemyIndex();
     renewEnemy();
   }
+}
+
+function itemLost(){
+  encounterIndex = getUnseenEnemyIndex();
+  renewEnemy();
 }
 
 //Player
@@ -238,10 +284,15 @@ function renewPlayer(){
   playerAtk = 1;
 }
 
+function skipEncounter(){
+  encounterIndex = getUnseenEnemyIndex();
+  renewEnemy();
+}
+
 function playerHit(incomingDamage){
   playerHp = playerHp - incomingDamage;
   if (playerHp <= 0){
-    logAction("Game Over: YOU ARE DEAD!");
+    logAction("Game Over: YOU ARE DEAD!"); //Does not work :( due to the alert
     alert("༼  x_x  ༽  Welp, you are dead.");
     gameLog = "";
     renewPlayer();
@@ -251,7 +302,7 @@ function playerHit(incomingDamage){
 
 function gameEnd(){
   if (seenEnemies.length >= encountersTotal){
-    logAction("Unbelievable, you finished the game!");
+    logAction("Unbelievable, you finished the game!"); //Does not work :( due to the alert
     alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
   }
   localStorage.setItem("seenEnemies", JSON.stringify(""));
@@ -297,6 +348,7 @@ function registerClickListeners(){
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
   document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
+  document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
   document.getElementById('button_cheese').addEventListener(eventType, resolveAction('button_cheese'));
 }
