@@ -37,6 +37,7 @@ var enemySta;
 var enemyDef;
 var enemyInt;
 var enemyType;
+var enemyMsg;
 
 var enemyLostHp = 0;
 var enemyLostSta = 0;
@@ -95,6 +96,7 @@ function nextItem(){ //Unused
 }
 
 function getUnseenEncounterIndex() {
+  console.log("Already seen IDs: " + seenEncounters);
   encountersTotal = lines.length;
   var max = encountersTotal;
     do {
@@ -111,7 +113,6 @@ function markAsSeen(seenID){
   if (!seenEncounters.includes(seenID)){
     seenEncounters.push(seenID);
     localStorage.setItem("seenEncounters", JSON.stringify(seenEncounters));
-    console.log("Already seen IDs: " + seenEncounters);
   }
 }
 
@@ -143,6 +144,7 @@ function redraw(index){
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
   var enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
   var enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
+  enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
 
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
   document.getElementById('id_name').innerHTML = enemyName;
@@ -155,7 +157,7 @@ function redraw(index){
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);}
-  if ((enemyType == "Item") || (enemyType == "Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🗡 ??"} //Blah, nasty hack
+  if ((enemyType == "Item") || (enemyType == "Consumable") || (enemyType == "Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🗡 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEncounters.length;
@@ -173,7 +175,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         switch (enemyType){
+          case "Trap":
+            logPlayerAction(actionString,enemyMsg);
+            playerHit(enemyAtk);
+            break;
           case "Item":
+          case "Consumable":
             logPlayerAction(actionString,"Bonk! The item was destroyed.");
             nextEncounter();
             break;
@@ -218,6 +225,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyStaminaChange(-1,"You dodged a heavy attack.","Your roll was pointless.");
             break;
           case "Item":
+          case "Consumable":
             logPlayerAction(actionString,"You rolled away. The item has been lost.");
             nextEncounter();
             break;
@@ -226,7 +234,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"It didn't feel right, so you changed your mind.");
+            logPlayerAction(actionString,"Feels like nothing really happened.");
         }
         break;
 
@@ -235,16 +243,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
           case "Swift":
           case "Heavy":
-            logPlayerAction(actionString,"You touched them, they hit you extra hard:&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
+            logPlayerAction(actionString,"They hit you extra hard:&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
             playerHit(enemyAtk*2);
             break;
           case "Trap":
-            playerHit(100);
-            logPlayerAction(actionString,"You died instantenously of some mischief!");
+            logPlayerAction(actionString,enemyMsg);
+            playerHit(enemyAtk);
             break;
           case "Item":
-            playerGained(enemyHp, enemyAtk);
-            logPlayerAction(actionString,"You gained "+ enemyHp + " ❤️ and " + enemyAtk +" 🗡");
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
+            break;
+          case "Consumable":
+            playerConsumed(enemyHp);
+            var consumedString = "That was refreshing: " + enemyHp + " ❤️"
+            logPlayerAction(actionString,consumedString);
             break;
           default:
             logPlayerAction(actionString,"No, you cannot touch that!");
@@ -264,9 +276,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           case "Trap":
-            logPlayerAction(actionString,"Your words have no effect.");
+            logPlayerAction(actionString,"Your speaking has no effect.");
             break;
           case "Item":
+          case "Consumable":
             logPlayerAction(actionString,"Seems like nobody is listening.");
             break;
           default:
@@ -295,9 +308,6 @@ function enemyStaminaChange(stamina,successMessage,failMessage){
   } else {
     logPlayerAction(actionString,failMessage);
     enemyLostSta += stamina
-
-    //Avoid spamming log?
-    //logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "⚡️&nbsp;&nbsp;They regained some energy.");
   }
 }
 
@@ -317,10 +327,40 @@ function nextEncounter(){
 
 //Player
 
-function playerGained(bonusHp,bonusAtk){
-  playerHpDefault = playerHpDefault + parseInt(bonusHp);
-  playerHp = playerHp + parseInt(bonusHp);
-  playerAtk = playerAtk + parseInt(bonusAtk);
+function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
+  var gainedString = "You feel stronger: "
+  if (bonusHp > 0) {
+    playerHpDefault += parseInt(bonusHp);
+    playerHp += parseInt(bonusHp);
+    gainedString += bonusHp + " ❤️";
+  }
+  if (bonusAtk > 0){
+    playerAtk += parseInt(bonusAtk);
+    gainedString += bonusAtk + " 🗡";
+  }
+  if (bonusSta > 0){
+    playerSta += parseInt(bonusSta);
+    gainedString += bonusSta + " 🟢";
+  }
+  if (bonusDef > 0){
+    playerDef += parseInt(bonusDef);
+    gainedString += bonusDef + " 🛡";
+  }
+  if (bonusInt > 0){
+    playerInt += parseInt(bonusInt);
+    gainedString += bonusInt + " 🧠";
+  }
+  logPlayerAction(actionString,gainedString);
+  nextEncounter();
+}
+
+function playerConsumed(bonusHp){
+  if (playerHp > playerHpDefault){
+    playerHp += bonusHp;
+  }
+  if (playerHp > playerHpDefault){
+    playerHp = playerHpDefault;
+  }
   nextEncounter();
 }
 
@@ -357,10 +397,11 @@ function gameEnd(){
 //Environment
 function incrementLightLevel(){
   //Incr or Decr light level
-  lighLevelString = "∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;☀️&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙" //Placeholder
+  //lighLevelString = "∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;☀️&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙" //Placeholder
+  lighLevelString = "∙&nbsp;&nbsp;🌲 🌲 🌲&nbsp;&nbsp;∙"
 }
 
-//TECH SECTION
+//Logging
 function logPlayerAction(actionString,message){
   actionString = actionString.substring(0,actionString.indexOf("&nbsp;")) + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + enemyEmoji + "&nbsp;&nbsp;" + message + "<br>";
   adventureLog += actionString;
@@ -377,6 +418,7 @@ function logAction(message){
   }
 }
 
+//UI Tech
 function vibrateButtonPress(){ //FIXME Samsung?
   if (!("vibrate" in window.navigator)){
     console.log("Vibrate not supported!");
