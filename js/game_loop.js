@@ -97,6 +97,7 @@ function redraw(index){
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);}
+  if (enemyType == "Item")  {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🗡 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEnemies.length;
@@ -151,8 +152,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_attack':
         switch (enemyType){
           case "Item":
-            itemLost();
-            logAction("Bonk! Now the item is completely worthless.");
+            nextEncounter();
+            logAction("Bonk! The item was completely destroyed.");
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
@@ -160,7 +161,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyHit(playerAtk);
               logAction("The pain energized them.")
             } else {
-              logAction("Enemy counter-attacked, hitting you for: "+enemyAtk)
+              logAction("Enemy counter-attacked, hitting you for -"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
             };
       }
@@ -178,7 +179,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             playerHit(enemyAtk);
-            logAction("You failed to block heavy blow, hit for: "+enemyAtk)
+            logAction("You failed to block heavy blow, hit for -"+enemyAtk+" ❤️")
             break;
           default:
             logAction("Suprisingly, nothing happened.");
@@ -193,18 +194,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift":
             playerHit(enemyAtk);
-            logAction("You rolled into enemy attack, hit for: "+enemyAtk);
+            logAction("You rolled into enemy attack, hit for -"+enemyAtk+" ❤️");
             break;
           case "Heavy":
             enemyStaminaChange(-1);
             logAction("Succesful roll, enemy lost energy.");
             break;
           case "Item":
-            itemLost();
+            nextEncounter();
             logAction("You rolled away. The item has been lost.");
             break;
           case "Trap":
-            skipEncounter();
+            nextEncounter();
             logAction("You ignored that. Better safe than sorry.");
             break;
           default:
@@ -218,16 +219,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
             playerHit(enemyAtk*2);
-            logAction("You touched them and got hit extra hard: "+enemyAtk*2);
+            logAction("You touched them and got hit extra hard: -"+enemyAtk*2+" ❤️");
             break;
           case "Trap":
             playerHit(100);
             logAction("You died instantenously!");//TODO
             break;
-          case "Item": //TODO
-            itemLost();
-            //itemGained();
-            logAction("You obtained something new. (TODO)");
+          case "Item":
+            playerGained(enemyHp, enemyAtk);
+            logAction("You gained "+ enemyHp + " ❤️ and " + enemyAtk +" 🗡.");
             break;
           default:
             logAction("No, you cannot touch that!");
@@ -239,7 +239,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_cheese': //DEBUG
-          skipEncounter();
+          nextEncounter();
         break;
 
       default:
@@ -266,13 +266,12 @@ function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
   logAction("Succesful attack, hit them for:" + damage + ".");
   if (enemyLostHp >= enemyHp) {
-    logAction("Enemy killed!");
-    encounterIndex = getUnseenEnemyIndex();
-    renewEnemy();
+    logAction("You eliminated an enemy!");
+    nextEncounter();
   }
 }
 
-function itemLost(){
+function nextEncounter(){
   encounterIndex = getUnseenEnemyIndex();
   renewEnemy();
 }
@@ -284,9 +283,11 @@ function renewPlayer(){
   playerAtk = 1;
 }
 
-function skipEncounter(){
-  encounterIndex = getUnseenEnemyIndex();
-  renewEnemy();
+function playerGained(bonusHp,bonusAtk){
+  playerHpDefault = playerHpDefault + parseInt(bonusHp);
+  playerHp = playerHp + parseInt(bonusHp);
+  playerAtk = playerAtk + parseInt(bonusAtk);
+  nextEncounter();
 }
 
 function playerHit(incomingDamage){

@@ -6,7 +6,7 @@ id;emoji;name;type;hp;atk;sta;def;team;desc
 4;🕷;Eight-legged Menace;Standard;3;2;2;0;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.
 5;🦍;Silverback Gorilla;Heavy;5;3;3;0;Wild Animal;Be careful around this one!<br>Especially about its "Unga Bunga".
 6;🐊;Swamp Gator;Heavy;5;3;4;0;Wild Animal;So it wasn't a floating log after all.<br>This is making you a little uncomfortable.
-7;🐊🐊;Gator Duo;Heavy;8;6;4;0;Wild Animal;It is getting out of hand.<br>Now there are two of them.
+7;🐊🐊;Gator Duo;Heavy;8;6;4;0;Wild Animals;It is getting out of hand.<br>Now there are two of them.
 8;🤺;Nimble Knight;Swift;3;2;3;3;Human Being;They used to be an adventurer like you.<br>Then they took an arrow to the knee.
 9;🔥;Fire Elemental;Swift;1;4;4;3;Magical Creature;It seems to be sentient.<br>Protect your elder scrolls.
 10;🦠;Floating Germs;Swift;1;1;4;3;Unfortunate Event;Feels uncomfortable on your skin.<br>And now it's too late to be sorry.
@@ -14,4 +14,9 @@ id;emoji;name;type;hp;atk;sta;def;team;desc
 12;💍;Ring of Love;Item;1;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.
 13;🦾;Prosthetic Arm;Item;0;1;0;0;Abandoned Item;Could this be a weapon?<br>There's only one way to find out.
 14;🌮;Ancient Taco;Trap;2;0;0;0;Temptation;Looks fresh and tasty.<br>What could go wrong?
-15;📦;Mysterious Box;Trap;0;0;0;0;Temptation;You wonder what's inside?<br>There's only one way to find out.
+15;📦;Mysterious Box;Trap;0;0;0;0;Temptation;Do you wonder what's inside?<br>There's only one way to find out.
+16;🔨;Stable Hammer;Item;0;2;0;0;Tool;Have you heard about it?<br>It always works.
+17;🌪;Unpredictable Tornado;Trap;0;2;0;0;Weather Condition;Got damn not this again.<br>I wonder how to avoid it.
+18;🪃;Cursed Boomerang;Item;0;-1;0;0;Weapon;This looks really handy.<br>Could help keeping a distance.
+19;🗿;Animated Statute;Heavy;9;5;2;0;Huge Decoration;Is this really a threat?.<br>I need to find out.
+20;🍪;Cinnamon Cookie;Item;1;0;0;0;Food;Oh yeah... finally.<br>Give me a cookie!
