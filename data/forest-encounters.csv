@@ -8,5 +8,8 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 106;💍;Ring of Love;Item;1;0;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.;
 107;🍪;Cinnamon Cookie;Consumable;1;0;0;0;0;Simple Food;Oh yeah... finally.<br>Give me that cookie!;
 108;🐺;Old Wolf;Standard;3;3;2;0;15;Elusive Creature;I feel like something is crawling around.<br>Hopefully not some hungry beast.;
-109;🕸;Giant Web;Trap;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>Seems quite sturdy.;Spider-Mom caught you in her web.;
-110;🪵;Pile of Wood;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;A lumberjack hit you with his axe.
+109;🕸;Giant Web;Trap;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>Seems quite sturdy.;Spider-Mom caught you in her web;
+110;🪵;Pile of Wood;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;A lumberjack hit you with his axe
+111;📜;Elder Scroll;Item;0;0;0;0;1;Item of Interest;Some say these will make you blind.<br>There's only one way to find out.;
+112;🪃;Boomerang;Item;0;1;0;0;0;Weapon;Nobody will miss it.<br>Right?;
+112;🐿;Curious Chipmunk;Trap;2;1;0;0;0;Wild Animal;A little cute boy.<br>What if ...?;You shouldn't have done it

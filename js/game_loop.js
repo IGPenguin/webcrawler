@@ -176,7 +176,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_attack':
         switch (enemyType){
           case "Trap":
-            logPlayerAction(actionString,enemyMsg);
+            logPlayerAction(actionString,enemyMsg +"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
           case "Item":
@@ -186,10 +186,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
-              enemyStaminaChange(-1,"n/a","You hit them with an attack:&nbsp;&nbsp;-"+playerAtk+" ❤️");
+              enemyStaminaChange(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
               enemyHit(playerAtk);
             } else {
-              enemyStaminaChange(-1,"A sudden counter-attack hit you:&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChange(-1,"A sudden counter-attack hit you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             };
       }
@@ -204,7 +204,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyStaminaChange(-1,"You blocked a light attack.","Your blocking was pointless.");
             break;
           case "Heavy":
-            logPlayerAction(actionString,"You failed to block a heavy blow:&nbsp;&nbsp;-"+enemyAtk+" ❤️")
+            logPlayerAction(actionString,"You failed to block a heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️")
             playerHit(enemyAtk);
             break;
           default:
@@ -218,7 +218,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyStaminaChange(-1,"You dodged an attack.","Your roll was pointless.");
             break;
           case "Swift":
-            enemyStaminaChange(-1,"You rolled right into an attack:&nbsp;&nbsp;-"+enemyAtk+" ❤️","Your roll was pointless.");
+            enemyStaminaChange(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
             playerHit(enemyAtk);
             break;
           case "Heavy":
@@ -243,11 +243,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
           case "Swift":
           case "Heavy":
-            logPlayerAction(actionString,"They hit you extra hard:&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
+            logPlayerAction(actionString,"What? They hit you extra hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
             playerHit(enemyAtk*2);
             break;
           case "Trap":
-            logPlayerAction(actionString,enemyMsg);
+            logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
           case "Item":
@@ -255,7 +255,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Consumable":
             playerConsumed(enemyHp);
-            var consumedString = "That was refreshing: " + enemyHp + " ❤️"
+            var consumedString = "That was refreshing: +" + enemyHp + " ❤️"
             logPlayerAction(actionString,consumedString);
             break;
           default:
@@ -332,23 +332,23 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
   if (bonusHp > 0) {
     playerHpDefault += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
-    gainedString += bonusHp + " ❤️";
+    gainedString += "+"+bonusHp + " ❤️";
   }
   if (bonusAtk > 0){
     playerAtk += parseInt(bonusAtk);
-    gainedString += bonusAtk + " 🗡";
+    gainedString += "+"+bonusAtk + " 🗡";
   }
   if (bonusSta > 0){
     playerSta += parseInt(bonusSta);
-    gainedString += bonusSta + " 🟢";
+    gainedString += "+"+bonusSta + " 🟢";
   }
   if (bonusDef > 0){
     playerDef += parseInt(bonusDef);
-    gainedString += bonusDef + " 🛡";
+    gainedString += "+"+bonusDef + " 🛡";
   }
   if (bonusInt > 0){
     playerInt += parseInt(bonusInt);
-    gainedString += bonusInt + " 🧠";
+    gainedString += "+"+bonusInt + " 🧠";
   }
   logPlayerAction(actionString,gainedString);
   nextEncounter();
@@ -391,7 +391,7 @@ function gameOver(){
 function gameEnd(){
   resetSeenEncounters();
   nextEncounter();
-  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
+  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik and Stackoverflow");
 }
 
 //Environment
