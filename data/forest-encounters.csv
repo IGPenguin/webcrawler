@@ -1,6 +1,6 @@
 id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 100;🪱;Small Worm;Standard;1;1;1;0;0;Pesky Insect;Mindin' its own business.<br>Shall I interfere?;
-101;🐀;Suspicious Rat;Swift;2;1;1;0;5;Wild Animal;*sniffs around maniacally*<br>...could this be Jerry?;
+101;🐀;Stinky Rat;Swift;2;1;1;0;5;Wild Animal;*sniffs around maniacally*<br>...could this be Jerry?;
 102;🐀🐀;Rat Duo;Swift;4;2;2;0;10;Wild Animals;It is getting out of hand.<br>Now there are two of them.;
 103;🐗;Momma Boar;Heavy;4;2;1;0;10;Wild Animal;It follows you around.<br>No matter what you do.;
 104;🕷;Eight-legged Menace;Standard;3;2;2;0;6;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.;
@@ -11,5 +11,11 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 109;🕸;Giant Web;Trap;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>Seems quite sturdy.;Spider-Mom caught you in her web;
 110;🪵;Pile of Wood;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;A lumberjack hit you with his axe
 111;📜;Elder Scroll;Item;0;0;0;0;1;Item of Interest;Some say these will make you blind.<br>There's only one way to find out.;
-112;🪃;Boomerang;Item;0;1;0;0;0;Weapon;Nobody will miss it.<br>Right?;
-112;🐿;Curious Chipmunk;Trap;2;1;0;0;0;Wild Animal;A little cute boy.<br>What if ...?;You shouldn't have done it
+112;🪶;Stormbird Feather;Item;0;1;0;0;0;Trash;Nobody will miss it.<br>Right?;
+113;🐿;Curious Chipmunk;Trap;2;1;0;0;0;Wild Animal;A little cute boy.<br>What if ...?;You shouldn't have done it
+114;🏹;Bow and Arrows;Trap;0;3;0;0;0;Weapon;There must be a huntsman around.<br>He probably won't miss it.;You shoot yourself by mistake.
+115;🐍;Extra Long Snake;Trap;5;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe I could use it as a rope.;
+116;🦉;Smart Owl;Item-Speak;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>I should investigate.;
+117;⛺️;Abandoned Tent;Trap;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>I could use a break.;The tent was riddled with fleas.
+118;🍄;Suspicious Fungi;Item;1;0;0;0;0;Wild Animal;Looks really tasty.<br>Could be eaten raw.;
+119;🥷🏿;Hidden Ninja;Swift;2;2;4;0;3;Human Being;He thinks he's well hidden.<br>But it's not the case.;

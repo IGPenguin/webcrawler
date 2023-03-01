@@ -184,6 +184,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Bonk! The item was destroyed.");
             nextEncounter();
             break;
+          case "Item-Speak":
+            logPlayerAction(actionString,"You scared them away!");
+            nextEncounter();
+            break;
           default:
             if (enemySta-enemyLostSta < 1) {
               enemyStaminaChange(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
@@ -253,6 +257,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
+          case "Item-Speak":
+            logPlayerAction(actionString,"It slipped through your fingers.");
+            nextEncounter();
+            break;
           case "Consumable":
             playerConsumed(enemyHp);
             var consumedString = "That was refreshing: +" + enemyHp + " ❤️"
@@ -281,6 +289,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
             logPlayerAction(actionString,"Seems like nobody is listening.");
+            break;
+          case "Item-Speak":
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           default:
             logPlayerAction(actionString,"No, you cannot speak to this...");
