@@ -172,14 +172,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             logPlayerAction(actionString,"Bonk! The item was completely destroyed.");
             break;
-          case "Trap-Grab":
-            playerHit(100);
-            logPlayerAction(actionString,"You regretted your previous choice.");
-            break;
           default:
             if (enemySta-enemyLostSta < 1) {
               enemyHit(playerAtk);
-              logPlayerAction(actionString," Successfully hit them for -"+playerAtk+" ❤️");
+              logPlayerAction(actionString,"You hit them for -"+playerAtk+" ❤️");
             } else {
               logPlayerAction(actionString,"Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
@@ -191,19 +187,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logPlayerAction(actionString,"You successfully blocked an attack.");
+            logPlayerAction(actionString,"You blocked an attack.");
             break;
           case "Swift":
             enemyStaminaChange(-1);
-            logPlayerAction(actionString,"You successfully blocked a light attack.");
+            logPlayerAction(actionString,"You blocked a light attack.");
             break;
           case "Heavy":
             playerHit(enemyAtk);
-            logPlayerAction(actionString,"You tried to block a heavy blow -"+enemyAtk+" ❤️")
-            break;
-          case "Trap-Grab":
-            playerHit(100);
-            logPlayerAction(actionString,"There's no hiding from "+enemyName+".");
+            logPlayerAction(actionString,"You failed to block a heavy blow -"+enemyAtk+" ❤️")
             break;
           default:
             logPlayerAction(actionString,"Suprisingly, nothing happened.");
@@ -214,15 +206,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logPlayerAction(actionString,"You successfully avoided an attack.");
+            logPlayerAction(actionString,"You dodged an attack.");
             break;
           case "Swift":
             playerHit(enemyAtk);
-            logPlayerAction(actionString,"You rolled into an attack and got hit -"+enemyAtk+" ❤️");
+            logPlayerAction(actionString,"You rolled right into an attack -"+enemyAtk+" ❤️");
             break;
           case "Heavy":
             enemyStaminaChange(-1);
-            logPlayerAction(actionString,"You successfully avoided a heavy attack.");
+            logPlayerAction(actionString,"You dodged a heavy attack.");
             break;
           case "Item":
             nextEncounter();
@@ -230,11 +222,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap":
             nextEncounter();
-            logPlayerAction(actionString,"You ignored that. Better safe than sorry.");
-            break;
-          case "Trap-Grab":
-            playerHit(100);
-            logPlayerAction(actionString,"You slipped into bottomless abyss.");
+            logPlayerAction(actionString,"You rolled past that. Better safe than sorry.");
             break;
           default:
             logPlayerAction(actionString,"It didn't feel right, so you changed your mind.");
@@ -252,10 +240,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
             playerHit(100);
             logPlayerAction(actionString,"You died instantenously of some mischief!");
-            break;
-          case "Trap-Grab":
-            nextEncounter();
-            logPlayerAction(actionString,"It suddenly dissappeared after you touched it.");
             break;
           case "Item":
             playerGained(enemyHp, enemyAtk);
