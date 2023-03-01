@@ -101,7 +101,7 @@ function redraw(index){
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEnemies.length;
-  document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " enemies awaiting defeat.";
+  document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " encounters waiting for you.";
 
   document.getElementById('id_log').innerHTML = gameLog;
   console.log("Redrawing... ("+enemyName+")")
