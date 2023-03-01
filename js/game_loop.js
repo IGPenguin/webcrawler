@@ -174,8 +174,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
-              enemyHit(playerAtk);
               logPlayerAction(actionString,"You hit them for -"+playerAtk+" ❤️");
+              enemyHit(playerAtk);
             } else {
               logPlayerAction(actionString,"Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
@@ -283,7 +283,7 @@ function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
   enemyStaminaChange(+1); //TODO RANDOM CHANCE?
   if (enemyLostHp >= enemyHp) {
-    logAction("You eliminated an enemy!");
+    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated an enemy!");
     nextEncounter();
   }
 }
@@ -339,7 +339,7 @@ function incrementLightLevel(){
 //TECH SECTION
 function logPlayerAction(actionString,message){
   actionString = actionString.substring(0,actionString.indexOf("&nbsp;"));
-  gameLog = actionString + " ▸ " + enemyEmoji + "&nbsp;&nbsp;" + message + "<br>" + gameLog;
+  gameLog = actionString + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + enemyEmoji + "&nbsp;&nbsp;" + message + "<br>" + gameLog;
   if (gameLog.split("<br>").length > 3) {
     gameLog = gameLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
   }
