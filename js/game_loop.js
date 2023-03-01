@@ -164,9 +164,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
-              enemyStaminaChange(+1); //TODO CHANCE?
               enemyHit(playerAtk);
-              logAction("The pain seems to have energized them.")
             } else {
               logAction("Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
@@ -197,7 +195,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logAction("You successfully avoided a standard attack.");
+            logAction("You successfully avoided an attack.");
             break;
           case "Swift":
             playerHit(enemyAtk);
@@ -226,7 +224,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
             playerHit(enemyAtk*2);
-            logAction("You touched them. They hit you extra hard: -"+enemyAtk*2+" ❤️");
+            logAction("You touched them. They hit you extra hard -"+enemyAtk*2+" ❤️");
             break;
           case "Trap":
             playerHit(100);
@@ -272,7 +270,10 @@ function enemyStaminaChange(stamina){
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  logAction("Successfully hit them for: -" + damage + "❤️");
+  logAction("Successfully hit them for -" + damage + "❤️");
+
+  enemyStaminaChange(+1); //TODO RANDOM CHANCE?
+  logAction("The pain seems to have energized them.")
   if (enemyLostHp >= enemyHp) {
     logAction("You eliminated an enemy!");
     nextEncounter();
