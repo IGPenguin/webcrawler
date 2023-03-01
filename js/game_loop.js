@@ -22,7 +22,7 @@ var playerHpDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
-var gameLog = "You are slowly waking up<br>from what seemed like<br>an eternal slumber.<br>...";
+var actionLog = "You are slowly waking up<br>from what seemed like<br>an eternal slumber.<br>...";
 renewPlayer();
 
 //Enemy stats init
@@ -155,7 +155,7 @@ function redraw(index){
   var itemsLeft = encountersTotal-seenEncounters.length;
   document.getElementById('id_subtitle').innerHTML = lighLevelString;
 
-  document.getElementById('id_log').innerHTML = gameLog;
+  document.getElementById('id_log').innerHTML = actionLog;
   markAsSeen(encounterIndex); //LOL THIS WAS MISSING
   console.log("Redrawing... ("+enemyName+")")
 }
@@ -169,15 +169,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_attack':
         switch (enemyType){
           case "Item":
+            logPlayerAction(actionString,"Bonk! The item was destroyed.");
             nextEncounter();
-            logPlayerAction(actionString,"Bonk! The item was completely destroyed.");
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
-              logPlayerAction(actionString,"You hit them for -"+playerAtk+" ❤️");
+              logPlayerAction(actionString,"You hit them with an attack:&nbsp;&nbsp;-"+playerAtk+" ❤️");
               enemyHit(playerAtk);
             } else {
-              logPlayerAction(actionString,"Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
+              logPlayerAction(actionString,"Sudden counter-attack hit you:&nbsp;&nbsp;-"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
             };
       }
@@ -186,16 +186,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_block':
         switch (enemyType){
           case "Standard":
-            enemyStaminaChange(-1);
             logPlayerAction(actionString,"You blocked an attack.");
+            enemyStaminaChange(-1);
             break;
           case "Swift":
-            enemyStaminaChange(-1);
             logPlayerAction(actionString,"You blocked a light attack.");
+            enemyStaminaChange(-1);
             break;
           case "Heavy":
+            logPlayerAction(actionString,"You failed to block a heavy blow:&nbsp;&nbsp;-"+enemyAtk+" ❤️")
             playerHit(enemyAtk);
-            logPlayerAction(actionString,"You failed to block a heavy blow -"+enemyAtk+" ❤️")
             break;
           default:
             logPlayerAction(actionString,"Suprisingly, nothing happened.");
@@ -205,24 +205,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_roll':
         switch (enemyType){
           case "Standard":
-            enemyStaminaChange(-1);
             logPlayerAction(actionString,"You dodged an attack.");
+            enemyStaminaChange(-1);
             break;
           case "Swift":
+            logPlayerAction(actionString,"You rolled right into an attack:&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
-            logPlayerAction(actionString,"You rolled right into an attack -"+enemyAtk+" ❤️");
             break;
           case "Heavy":
-            enemyStaminaChange(-1);
             logPlayerAction(actionString,"You dodged a heavy attack.");
+            enemyStaminaChange(-1);
             break;
           case "Item":
-            nextEncounter();
             logPlayerAction(actionString,"You rolled away. The item has been lost.");
+            nextEncounter();
             break;
           case "Trap":
-            nextEncounter();
             logPlayerAction(actionString,"You rolled past that. Better safe than sorry.");
+            nextEncounter();
             break;
           default:
             logPlayerAction(actionString,"It didn't feel right, so you changed your mind.");
@@ -234,8 +234,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
           case "Swift":
           case "Heavy":
+            logPlayerAction(actionString,"You touched them, they hit you extra hard:&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
             playerHit(enemyAtk*2);
-            logPlayerAction(actionString,"You touched them. They hit you extra hard -"+enemyAtk*2+" ❤️");
             break;
           case "Trap":
             playerHit(100);
@@ -317,7 +317,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  gameLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
+  actionLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
   renewPlayer();
   resetSeenEncounters();
   nextEncounter();
@@ -338,17 +338,18 @@ function incrementLightLevel(){
 
 //TECH SECTION
 function logPlayerAction(actionString,message){
-  actionString = actionString.substring(0,actionString.indexOf("&nbsp;"));
-  gameLog = actionString + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + enemyEmoji + "&nbsp;&nbsp;" + message + "<br>" + gameLog;
-  if (gameLog.split("<br>").length > 3) {
-    gameLog = gameLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
+  actionString = actionString.substring(0,actionString.indexOf("&nbsp;")) + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + enemyEmoji + "&nbsp;&nbsp;" + message + "<br>";
+  adventureLog += actionString;
+  actionLog = actionString + actionLog;
+  if (actionLog.split("<br>").length > 3) {
+    actionLog = actionLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
   }
 }
 
 function logAction(message){
-  gameLog = message + "<br>" + gameLog;
-  if (gameLog.split("<br>").length > 3) {
-    gameLog = gameLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
+  actionLog = message + "<br>" + actionLog;
+  if (actionLog.split("<br>").length > 3) {
+    actionLog = actionLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
   }
 }
 
