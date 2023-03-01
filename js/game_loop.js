@@ -140,7 +140,7 @@ function redraw(index){
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🗡 " + "×".repeat(enemyAtk);}
-  if (enemyType == "Item")  {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🗡 ??"} //Blah, nasty hack
+  if ((enemyType == "Item") || (enemyType == "Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🗡 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEncounters.length;
