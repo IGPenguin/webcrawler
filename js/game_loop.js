@@ -25,7 +25,7 @@ var playerAtk;
 var playerDef;
 var playerInt;
 var actionString;
-var actionLog = "\"You are slowly waking up<br>from what seemed like<br>an eternal slumber.\"<br>...";
+var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You are slowly waking up from what seemed<br>like an eternal slumber.&nbsp;&nbsp;Not aware of what happened<br>or where you are.&nbsp;&nbsp;Now it's time to find out.\"";
 renewPlayer();
 
 //Enemy stats init
@@ -218,7 +218,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyStaminaChange(-1,"You dodged an attack.","Your roll was pointless.");
             break;
           case "Swift":
-            enemyStaminaChange(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+            enemyStaminaChange(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
           case "Heavy":
@@ -272,7 +272,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You convinced them to leave.");
               nextEncounter();
             } else {
-              enemyStaminaChange(+1,"They didn't listen.","n/a");
+              enemyStaminaChange(+1,"They didn't listen.","The conversation went wrong.");
             }
             break;
           case "Trap":
@@ -381,7 +381,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  actionLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
+  actionLog="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unbelievable, you are feel alive once again.<br>Something very powerful must've brought you back.<br>Hopefully not necromancy or some devil's deal.\"";
   renewPlayer();
   resetSeenEncounters();
   nextEncounter();
@@ -407,14 +407,14 @@ function logPlayerAction(actionString,message){
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
-    actionLog = actionLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
+    actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
   }
 }
 
 function logAction(message){
   actionLog = message + "<br>" + actionLog;
   if (actionLog.split("<br>").length > 3) {
-    actionLog = actionLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
+    actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
   }
 }
 
