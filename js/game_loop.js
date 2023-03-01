@@ -1,13 +1,13 @@
 //Init
-var seenEnemiesString = JSON.parse(localStorage.getItem("seenEnemies"));
-var seenEnemies;
+var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
+var seenEncounters;
 var encountersTotal;
 var encounterIndex;
 
-if (seenEnemiesString == null){
-  seenEnemies = [];
+if (seenEncountersString == null){
+  seenEncounters = [];
 } else {
-  seenEnemies = Array.from(seenEnemiesString); //load seen enemies
+  seenEncounters = Array.from(seenEncountersString); //load seen enemies
 }
 
 //Player stats
@@ -17,7 +17,7 @@ var playerHpDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
-var gameLog = "";
+var gameLog = "You are slowly waking up<br>from what seemed like<br>an eternal slumber.<br>...";
 renewPlayer();
 
 //Enemy stats
@@ -29,10 +29,10 @@ var enemyAtk;
 var enemyType;
 
 //Uncomment and change the int for testing ids higher than that
-//seenEnemies = Array.from(Array(1).keys())
+//seenEncounters = Array.from(Array(1).keys())
 
 var lines;
-var randomEnemyIndex;
+var randomEncounterIndex;
 
 $(document).ready(function() {
     $.ajax({
@@ -61,8 +61,51 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(getUnseenEnemyIndex());
+  redraw(getUnseenEncounterIndex());
   registerClickListeners();
+}
+
+function previousItem(){ //Unused
+  var previousItemIndex = encounterIndex-1;
+  if (previousItemIndex < 0){
+    previousItemIndex = encountersTotal-1;
+  }
+  redraw(previousItemIndex);
+}
+
+function nextItem(){ //Unused
+  var nextItemIndex = encounterIndex+1;
+  if (nextItemIndex > encountersTotal-1){
+    nextItemIndex = 0;
+  }
+  redraw(nextItemIndex);
+}
+
+function getUnseenEncounterIndex() {
+  encountersTotal = lines.length;
+  var max = encountersTotal;
+    do {
+      randomEncounterIndex = Math.floor(Math.random() * max);
+      if (seenEncounters.length >= encountersTotal){
+        gameEnd(); //Hmm, unsure if this ever happens
+        break;
+      }
+    } while (seenEncounters.includes(randomEncounterIndex));
+    return randomEncounterIndex;
+}
+
+function markAsSeen(seenID){
+  if (!seenEncounters.includes(seenID)){
+    seenEncounters.push(seenID);
+    localStorage.setItem("seenEncounters", JSON.stringify(seenEncounters));
+    console.log("Already seen IDs: " + seenEncounters);
+  }
+}
+
+function resetSeenEncounters(){
+  localStorage.setItem("seenEncounters", JSON.stringify(""));
+  seenEncounters = [];
+  encounterIndex = getUnseenEncounterIndex();
 }
 
 function redraw(index){
@@ -100,48 +143,12 @@ function redraw(index){
   if (enemyType == "Item")  {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🗡 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
-  var itemsLeft = encountersTotal-seenEnemies.length;
-  document.getElementById('id_subtitle').innerHTML = "There are " + itemsLeft + " encounters waiting for you.";
+  var itemsLeft = encountersTotal-seenEncounters.length;
+  document.getElementById('id_subtitle').innerHTML = "Another " + itemsLeft + " unique encounters await you.";
 
   document.getElementById('id_log').innerHTML = gameLog;
+  markAsSeen(encounterIndex); //LOL THIS WAS MISSING
   console.log("Redrawing... ("+enemyName+")")
-}
-
-function previousItem(){ //Unused
-  var previousItemIndex = encounterIndex-1;
-  if (previousItemIndex < 0){
-    previousItemIndex = encountersTotal-1;
-  }
-  redraw(previousItemIndex);
-}
-
-function nextItem(){ //Unused
-  var nextItemIndex = encounterIndex+1;
-  if (nextItemIndex > encountersTotal-1){
-    nextItemIndex = 0;
-  }
-  redraw(nextItemIndex);
-}
-
-function getUnseenEnemyIndex() {
-  encountersTotal = lines.length;
-  var max = encountersTotal;
-    do {
-      randomEnemyIndex = Math.floor(Math.random() * max);
-      if (seenEnemies.length >= encountersTotal){
-        gameEnd(); //Hmm, unsure if this ever happens
-        break;
-      }
-    } while (seenEnemies.includes(randomEnemyIndex));
-    return randomEnemyIndex;
-}
-
-function markAsSeen(seenID){
-  if (!seenEnemies.includes(seenID)){
-    seenEnemies.push(seenID);
-    localStorage.setItem("seenEnemies", JSON.stringify(seenEnemies));
-    console.log("Already seen IDs: " + seenEnemies);
-  }
 }
 
 function resolveAction(button){ //Yeah, this is bad, like really bad
@@ -161,7 +168,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyHit(playerAtk);
               logAction("The pain energized them.")
             } else {
-              logAction("Enemy counter-attacked, hitting you for -"+enemyAtk+" ❤️")
+              logAction("Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
             };
       }
@@ -194,7 +201,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift":
             playerHit(enemyAtk);
-            logAction("You rolled into enemy attack, hit for -"+enemyAtk+" ❤️");
+            logAction("You rolled into an attack and got hit for -"+enemyAtk+" ❤️");
             break;
           case "Heavy":
             enemyStaminaChange(-1);
@@ -239,6 +246,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_cheese': //DEBUG
+        logAction("Shame on you, cheesy bastard!");
           nextEncounter();
         break;
 
@@ -272,7 +280,7 @@ function enemyHit(damage){
 }
 
 function nextEncounter(){
-  encounterIndex = getUnseenEnemyIndex();
+  encounterIndex = getUnseenEncounterIndex();
   renewEnemy();
 }
 
@@ -295,20 +303,16 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     logAction("Game Over: YOU ARE DEAD!"); //Does not work :( due to the alert
     alert("༼  x_x  ༽  Welp, you are dead.");
-    gameLog = "";
     renewPlayer();
-    gameEnd();
+    resetSeenEncounters();
+    gameLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
   }
 }
 
 function gameEnd(){
-  if (seenEnemies.length >= encountersTotal){
-    logAction("Unbelievable, you finished the game!"); //Does not work :( due to the alert
-    alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
-  }
-  localStorage.setItem("seenEnemies", JSON.stringify(""));
-  seenEnemies = [];
-  encounterIndex = getUnseenEnemyIndex();
+  logAction("Unbelievable, you finished the game!"); //Does not work :( due to the alert
+  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
+  resetSeenEncounters();
 }
 
 //TECH SECTION
