@@ -25,7 +25,7 @@ var playerAtk;
 var playerDef;
 var playerInt;
 var actionString;
-var actionLog = "You are slowly waking up<br>from what seemed like<br>an eternal slumber.<br>...";
+var actionLog = "\"You are slowly waking up<br>from what seemed like<br>an eternal slumber.\"<br>...";
 renewPlayer();
 
 //Enemy stats init
@@ -398,7 +398,7 @@ function gameEnd(){
 function incrementLightLevel(){
   //Incr or Decr light level
   //lighLevelString = "∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;☀️&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙" //Placeholder
-  lighLevelString = "∙&nbsp;&nbsp;🌲 🌲 🌲&nbsp;&nbsp;∙"
+  lighLevelString = "∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙"
 }
 
 //Logging
