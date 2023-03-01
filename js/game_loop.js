@@ -25,7 +25,7 @@ var playerAtk;
 var playerDef;
 var playerInt;
 var actionString;
-var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You are slowly waking up from what seemed<br>like an eternal slumber.&nbsp;&nbsp;Not aware of what happened<br>or where you are.&nbsp;&nbsp;Now it's time to find out.\"";
+var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You are waking up from what seemed<br>like an eternal slumber. Not aware of where you are.<br>Now it's time to find out.\"";
 renewPlayer();
 
 //Enemy stats init
@@ -392,7 +392,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  actionLog="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unbelievable, you are feel alive once again.<br>Something very powerful must've brought you back.<br>Hopefully not necromancy or some devil's deal.\"";
+  actionLog="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unbelievable, you are feel alive once again.<br>Something powerful must've brought you back.<br>Hopefully not necromancy or a devil's deal.\"";
   renewPlayer();
   resetSeenEncounters();
   nextEncounter();
