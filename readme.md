@@ -1,8 +1,8 @@
 ### ⚔️ About this project
 This repository hosts an experimental interactive experience.<br>
-Fight your way against the foes and unlock knowledge.</b><br>
+Make your way through various unique encounters to reach the ultimate truth.</b><br>
 <br>
-<b>→ Visit the [live page](https://igpenguin.github.io/webcrawler) to try it yourself.</b><br>
+<b>→ Visit [the live page](https://igpenguin.github.io/webcrawler) to try it yourself.</b> (best on mobile)<br>
 
 ----
 
