@@ -178,11 +178,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logAction("You succesful blocked an attack.");
+            logAction("You successfully blocked an attack.");
             break;
           case "Swift":
             enemyStaminaChange(-1);
-            logAction("You succesfull blocked a light attack.");
+            logAction("You successfully blocked a light attack.");
             break;
           case "Heavy":
             playerHit(enemyAtk);
@@ -197,7 +197,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logAction("You succesfully avoided a standard attack.");
+            logAction("You successfully avoided a standard attack.");
             break;
           case "Swift":
             playerHit(enemyAtk);
@@ -205,7 +205,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             enemyStaminaChange(-1);
-            logAction("You succesfully avoided a heavy attack.");
+            logAction("You successfully avoided a heavy attack.");
             break;
           case "Item":
             nextEncounter();
@@ -272,7 +272,7 @@ function enemyStaminaChange(stamina){
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  logAction("Succesfully hit them for:" + damage + ".");
+  logAction("Successfully hit them for:" + damage + ".");
   if (enemyLostHp >= enemyHp) {
     logAction("You eliminated an enemy!");
     nextEncounter();
