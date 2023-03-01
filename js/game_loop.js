@@ -23,6 +23,7 @@ renewPlayer();
 //Enemy stats init
 var enemyLostHp = 0;
 var enemyLostSta = 0;
+var enemyName;
 var enemyHp;
 var enemySta;
 var enemyAtk;
@@ -120,7 +121,7 @@ function redraw(index){
   selectedLine = String(lines[index]);
   //Enemy UI - id;emoji;name;type;hp;atk;sta;def;team;desc
   var enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
-  var enemyName = String(selectedLine.split(",")[2].split(":")[1]);
+  enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
   enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
@@ -164,7 +165,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap-Grab":
             playerHit(100);
-            logAction("You regretted that as you were crushed to death.");
+            logAction("You regretted your previous choice.");
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
@@ -192,7 +193,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap-Grab":
             playerHit(100);
-            logAction("There's no hiding from ."+enemyName);
+            logAction("There's no hiding from "+enemyName+".");
             break;
           default:
             logAction("Suprisingly, nothing happened.");
