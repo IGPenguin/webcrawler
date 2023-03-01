@@ -37,10 +37,7 @@ layout: default
 <button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>&nbsp;
 <p style="margin:10px;"></p>
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;
-<button type = "button" id = "button_grab">💬&nbsp;&nbsp;Speak</button>&nbsp;
+<button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;
 <p style="margin:10px;"></p>
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Wait</button>&nbsp;
-<p style="margin:10px;"></p>
-<!--<button type = "button" id = "button_cheese">🧀&nbsp;&nbsp;Cheese</button>&nbsp; -->
-
 </center>

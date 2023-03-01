@@ -1,9 +1,10 @@
-id;emoji;name;type;hp;atk;sta;def;team;desc
-100;🐀;Suspicious Rat;Swift;2;1;1;0;Wild Animal;*sniffs around maniacally*<br>...could this be Jerry?
-101;🐀🐀;Rat Duo;Swift;4;2;2;0;Wild Animals;It is getting out of hand.<br>Now there are two of them.
-102;🐗;Momma Boar;Heavy;4;2;1;0;Wild Animal;It follows you around.<br>No matter what you do.
-103;🕷;Eight-legged Menace;Standard;3;2;2;0;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.
-104;🐝;Swarm of Bees;Swift;6;1;1;3;Pesky Insect;No matter what you do.<br>You stay totally surrounded.
-105;💍;Ring of Love;Item;1;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.
-106;🍪;Cinnamon Cookie;Item;1;0;0;0;Simple Food;Oh yeah... finally.<br>Give me that cookie!
-107;🐺;Old Wolf;Standard;3;2;2;0;Elusive Creature;I feel like something is crawling around.<br>Hopefully not some hungry beast.
+id;emoji;name;type;hp;atk;sta;def;int;team;desc
+100;🪱;Small Worm;Standard;1;1;1;0;0;Pesky Insect;It is minding its own business.<br>Shall I interfere?
+101;🐀;Suspicious Rat;Swift;2;1;1;0;5;Wild Animal;*sniffs around maniacally*<br>...could this be Jerry?
+102;🐀🐀;Rat Duo;Swift;4;2;2;0;10;Wild Animals;It is getting out of hand.<br>Now there are two of them.
+103;🐗;Momma Boar;Heavy;4;2;1;0;10;Wild Animal;It follows you around.<br>No matter what you do.
+104;🕷;Eight-legged Menace;Standard;3;2;2;0;6;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.
+105;🐝;Swarm of Bees;Swift;6;1;1;3;Pesky Insect;No matter what you do.<br>You stay totally surrounded.
+106;💍;Ring of Love;Item;1;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.
+107;🍪;Cinnamon Cookie;Item;1;0;0;0;Simple Food;Oh yeah... finally.<br>Give me that cookie!
+108;🐺;Old Wolf;Standard;3;2;2;0;Elusive Creature;I feel like something is crawling around.<br>Hopefully not some hungry beast.

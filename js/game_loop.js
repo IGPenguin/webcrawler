@@ -22,6 +22,8 @@ var playerHpDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
+var playerDef;
+var playerInt;
 var actionString;
 var actionLog = "You are slowly waking up<br>from what seemed like<br>an eternal slumber.<br>...";
 renewPlayer();
@@ -30,8 +32,10 @@ renewPlayer();
 var enemyEmoji;
 var enemyName;
 var enemyHp;
-var enemySta;
 var enemyAtk;
+var enemySta;
+var enemyDef;
+var enemyInt;
 var enemyType;
 
 var enemyLostHp = 0;
@@ -136,8 +140,9 @@ function redraw(index){
   enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   var enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
-  var enemyTeam = String(selectedLine.split(",")[8].split(":")[1]);
-  var enemyDesc = String(selectedLine.split(",")[9].split(":")[1]);
+  enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
+  var enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
+  var enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
 
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
   document.getElementById('id_name').innerHTML = enemyName;
@@ -247,17 +252,32 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
           break;
 
+      case 'button_speak':
+        switch (enemyType){
+          case "Standard":
+          case "Swift":
+          case "Heavy":
+            if (enemyInt < playerInt){
+              logPlayerAction(actionString,"You convinced them to leave.");
+              nextEncounter();
+            } else {
+              enemyStaminaChange(+1,"They didn't listen.","n/a");
+            }
+            break;
+          case "Trap":
+            logPlayerAction(actionString,"Your words have no effect.");
+            break;
+          case "Item":
+            logPlayerAction(actionString,"Seems like nobody is listening.");
+            break;
+          default:
+            logPlayerAction(actionString,"No, you cannot speak to this...");
+        }
+        break;
+
       case 'button_sleep': //TODO
         logPlayerAction(actionString,"You cannot rest, there are monsters nearby!");
         break;
-
-      case 'button_cheese': //DEBUG
-        logPlayerAction(actionString,"Shame on you, cheesy bastard!");
-          nextEncounter();
-        break;
-
-      default:
-        console.log("Huh, that button does not exist.");
     };
     redraw(encounterIndex);
   };
@@ -315,6 +335,8 @@ function renewPlayer(){
   playerHp = playerHpDefault;
   playerSta = 2;
   playerAtk = 1;
+  playerDef = 0;
+  playerInt = 1;
 }
 
 //End Game
@@ -387,5 +409,5 @@ function registerClickListeners(){
   document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
-  //document.getElementById('button_cheese').addEventListener(eventType, resolveAction('button_cheese'));
+  document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
 }
