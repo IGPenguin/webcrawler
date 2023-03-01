@@ -297,11 +297,7 @@ function playerGained(bonusHp,bonusAtk){
 function playerHit(incomingDamage){
   playerHp = playerHp - incomingDamage;
   if (playerHp <= 0){
-    logAction("Game Over: YOU ARE DEAD!"); //Does not work :( due to the alert
-    alert("༼  x_x  ༽  Welp, you are dead.");
-    renewPlayer();
-    resetSeenEncounters();
-    gameLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
+    gameOver();
   }
 }
 
@@ -311,10 +307,18 @@ function renewPlayer(){
   playerAtk = 1;
 }
 
-function gameEnd(){
-  logAction("Unbelievable, you finished the game!"); //Does not work :( due to the alert
-  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
+function gameOver(){
+  gameLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
+  renewPlayer();
   resetSeenEncounters();
+  nextEncounter();
+  alert("༼  x_x  ༽  Welp, you are dead.");
+}
+
+function gameEnd(){
+  resetSeenEncounters();
+  nextEncounter();
+  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
 }
 
 //TECH SECTION
