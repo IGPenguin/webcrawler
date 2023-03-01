@@ -1,4 +1,4 @@
-//Init
+//Tech init
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
 var seenEncounters;
 var encountersTotal;
@@ -7,10 +7,10 @@ var encounterIndex;
 if (seenEncountersString == null){
   seenEncounters = [];
 } else {
-  seenEncounters = Array.from(seenEncountersString); //load seen enemies
+  seenEncounters = Array.from(seenEncountersString); //Load seen encounters
 }
 
-//Player stats
+//Player stats init
 //var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
 var playerName = "Nameless Hero:&nbsp;&nbsp;"
 var playerHpDefault = 3;
@@ -20,7 +20,7 @@ var playerAtk;
 var gameLog = "You are slowly waking up<br>from what seemed like<br>an eternal slumber.<br>...";
 renewPlayer();
 
-//Enemy stats
+//Enemy stats init
 var enemyLostHp = 0;
 var enemyLostSta = 0;
 var enemyHp;
@@ -234,7 +234,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
             playerGained(enemyHp, enemyAtk);
-            logAction("You gained "+ enemyHp + " ❤️ and " + enemyAtk +" 🗡.");
+            logAction("You gained "+ enemyHp + " ❤️ and " + enemyAtk +" 🗡");
             break;
           default:
             logAction("No, you cannot touch that!");
@@ -272,7 +272,7 @@ function enemyStaminaChange(stamina){
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  logAction("Successfully hit them for:" + damage + ".");
+  logAction("Successfully hit them for: -" + damage + "❤️");
   if (enemyLostHp >= enemyHp) {
     logAction("You eliminated an enemy!");
     nextEncounter();
@@ -285,11 +285,6 @@ function nextEncounter(){
 }
 
 //Player
-function renewPlayer(){
-  playerHp = playerHpDefault;
-  playerSta = 2;
-  playerAtk = 1;
-}
 
 function playerGained(bonusHp,bonusAtk){
   playerHpDefault = playerHpDefault + parseInt(bonusHp);
@@ -307,6 +302,12 @@ function playerHit(incomingDamage){
     resetSeenEncounters();
     gameLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
   }
+}
+
+function renewPlayer(){
+  playerHp = playerHpDefault;
+  playerSta = 2;
+  playerAtk = 1;
 }
 
 function gameEnd(){
