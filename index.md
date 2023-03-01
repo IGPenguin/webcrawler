@@ -10,8 +10,8 @@ layout: default
 <script src="js/game_loop.js"></script>
 
 <center>
-<h2 style="margin-top:-8px;">Welcome back, adventurer!</h2>
-<h4 id = "id_subtitle" style="margin:-8px"> </h4>
+<h2 style="margin-top:-8px;">Deep Forest</h2>
+<h2 id = "id_subtitle" style="margin:-12px; font-size:24px;"> </h2>
 <p style="margin:18px;"></p>
 
 <div class="card">
@@ -37,7 +37,9 @@ layout: default
 <button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>&nbsp;
 <p style="margin:10px;"></p>
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;
-<button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Sleep</button>&nbsp;
+<button type = "button" id = "button_grab">💬&nbsp;&nbsp;Speak</button>&nbsp;
+<p style="margin:10px;"></p>
+<button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Wait</button>&nbsp;
 <p style="margin:10px;"></p>
 <!--<button type = "button" id = "button_cheese">🧀&nbsp;&nbsp;Cheese</button>&nbsp; -->
 

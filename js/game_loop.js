@@ -10,6 +10,11 @@ if (seenEncountersString == null){
   seenEncounters = Array.from(seenEncountersString); //Load seen encounters
 }
 
+//Environment init
+var lightLevel = 1; //Light 1,2,3/4/3,2,1   Dark -1,-2,-3/-4/-3,-2,-1
+var lighLevelString = "";
+var adventureLog = "";
+
 //Player stats init
 //var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
 var playerName = "Nameless Hero:&nbsp;&nbsp;"
@@ -21,13 +26,15 @@ var gameLog = "You are slowly waking up<br>from what seemed like<br>an eternal s
 renewPlayer();
 
 //Enemy stats init
-var enemyLostHp = 0;
-var enemyLostSta = 0;
+var enemyEmoji;
 var enemyName;
 var enemyHp;
 var enemySta;
 var enemyAtk;
 var enemyType;
+
+var enemyLostHp = 0;
+var enemyLostSta = 0;
 
 //Uncomment and change the int for testing ids higher than that
 //seenEncounters = Array.from(Array(1).keys())
@@ -110,6 +117,7 @@ function resetSeenEncounters(){
 }
 
 function redraw(index){
+  incrementLightLevel();
   encounterIndex = index; //Prediction: This will cause trouble.
 
   //Player UI
@@ -120,7 +128,7 @@ function redraw(index){
 
   selectedLine = String(lines[index]);
   //Enemy UI - id;emoji;name;type;hp;atk;sta;def;team;desc
-  var enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
+  enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
@@ -145,7 +153,7 @@ function redraw(index){
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEncounters.length;
-  document.getElementById('id_subtitle').innerHTML = "Another " + itemsLeft + " unique encounters await you.";
+  document.getElementById('id_subtitle').innerHTML = lighLevelString;
 
   document.getElementById('id_log').innerHTML = gameLog;
   markAsSeen(encounterIndex); //LOL THIS WAS MISSING
@@ -154,6 +162,7 @@ function redraw(index){
 
 function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
+    var actionString = document.getElementById(button).innerHTML;
     actionFeedback(button);
 
     switch (button) {
@@ -161,17 +170,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Item":
             nextEncounter();
-            logAction("Bonk! The item was completely destroyed.");
+            logPlayerAction(actionString,"Bonk! The item was completely destroyed.");
             break;
           case "Trap-Grab":
             playerHit(100);
-            logAction("You regretted your previous choice.");
+            logPlayerAction(actionString,"You regretted your previous choice.");
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
               enemyHit(playerAtk);
+              logPlayerAction(actionString," Successfully hit them for -"+playerAtk+" ❤️");
             } else {
-              logAction("Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
+              logPlayerAction(actionString,"Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
             };
       }
@@ -181,22 +191,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logAction("You successfully blocked an attack.");
+            logPlayerAction(actionString,"You successfully blocked an attack.");
             break;
           case "Swift":
             enemyStaminaChange(-1);
-            logAction("You successfully blocked a light attack.");
+            logPlayerAction(actionString,"You successfully blocked a light attack.");
             break;
           case "Heavy":
             playerHit(enemyAtk);
-            logAction("You tried to block a heavy blow and got hit for -"+enemyAtk+" ❤️")
+            logPlayerAction(actionString,"You tried to block a heavy blow -"+enemyAtk+" ❤️")
             break;
           case "Trap-Grab":
             playerHit(100);
-            logAction("There's no hiding from "+enemyName+".");
+            logPlayerAction(actionString,"There's no hiding from "+enemyName+".");
             break;
           default:
-            logAction("Suprisingly, nothing happened.");
+            logPlayerAction(actionString,"Suprisingly, nothing happened.");
         }
         break;
 
@@ -204,30 +214,30 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logAction("You successfully avoided an attack.");
+            logPlayerAction(actionString,"You successfully avoided an attack.");
             break;
           case "Swift":
             playerHit(enemyAtk);
-            logAction("You rolled into an attack and got hit for -"+enemyAtk+" ❤️");
+            logPlayerAction(actionString,"You rolled into an attack and got hit -"+enemyAtk+" ❤️");
             break;
           case "Heavy":
             enemyStaminaChange(-1);
-            logAction("You successfully avoided a heavy attack.");
+            logPlayerAction(actionString,"You successfully avoided a heavy attack.");
             break;
           case "Item":
             nextEncounter();
-            logAction("You rolled away. The item has been lost.");
+            logPlayerAction(actionString,"You rolled away. The item has been lost.");
             break;
           case "Trap":
             nextEncounter();
-            logAction("You ignored that. Better safe than sorry.");
+            logPlayerAction(actionString,"You ignored that. Better safe than sorry.");
             break;
           case "Trap-Grab":
             playerHit(100);
-            logAction("You slipped into bottomless abyss.");
+            logPlayerAction(actionString,"You slipped into bottomless abyss.");
             break;
           default:
-            logAction("It didn't feel right, so you changed your mind.");
+            logPlayerAction(actionString,"It didn't feel right, so you changed your mind.");
         }
         break;
 
@@ -237,31 +247,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
             playerHit(enemyAtk*2);
-            logAction("You touched them. They hit you extra hard -"+enemyAtk*2+" ❤️");
+            logPlayerAction(actionString,"You touched them. They hit you extra hard -"+enemyAtk*2+" ❤️");
             break;
           case "Trap":
             playerHit(100);
-            logAction("You died instantenously of some mischief!");
+            logPlayerAction(actionString,"You died instantenously of some mischief!");
             break;
           case "Trap-Grab":
             nextEncounter();
-            logAction("It suddenly dissappeared after you touched it.");
+            logPlayerAction(actionString,"It suddenly dissappeared after you touched it.");
             break;
           case "Item":
             playerGained(enemyHp, enemyAtk);
-            logAction("You gained "+ enemyHp + " ❤️ and " + enemyAtk +" 🗡");
+            logPlayerAction(actionString,"You gained "+ enemyHp + " ❤️ and " + enemyAtk +" 🗡");
             break;
           default:
-            logAction("No, you cannot touch that!");
+            logPlayerAction(actionString,"No, you cannot touch that!");
           }
           break;
 
       case 'button_sleep': //TODO
-        logAction("You cannot rest, there are monsters nearby!");
+        logPlayerAction(actionString,"You cannot rest, there are monsters nearby!");
         break;
 
       case 'button_cheese': //DEBUG
-        logAction("Shame on you, cheesy bastard!");
+        logPlayerAction(actionString,"Shame on you, cheesy bastard!");
           nextEncounter();
         break;
 
@@ -287,10 +297,7 @@ function enemyStaminaChange(stamina){
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  logAction("Successfully hit them for -" + damage + "❤️");
-
   enemyStaminaChange(+1); //TODO RANDOM CHANCE?
-  logAction("The pain seems to have energized them.")
   if (enemyLostHp >= enemyHp) {
     logAction("You eliminated an enemy!");
     nextEncounter();
@@ -324,6 +331,7 @@ function renewPlayer(){
   playerAtk = 1;
 }
 
+//End Game
 function gameOver(){
   gameLog="Unbelievable, you rise again.<br>Something brought you back alive.<br>Hopefully not necromancy.<br>...";
   renewPlayer();
@@ -338,7 +346,21 @@ function gameEnd(){
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!");
 }
 
+//Environment
+function incrementLightLevel(){
+  //Incr or Decr light level
+  lighLevelString = "∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;☀️&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙" //Placeholder
+}
+
 //TECH SECTION
+function logPlayerAction(actionString,message){
+  actionString = actionString.substring(0,actionString.indexOf("&nbsp;"));
+  gameLog = actionString + " ▸ " + enemyEmoji + "&nbsp;&nbsp;" + message + "<br>" + gameLog;
+  if (gameLog.split("<br>").length > 3) {
+    gameLog = gameLog.split("<br>").slice(0,3).join("<br>") + "<br>...";
+  }
+}
+
 function logAction(message){
   gameLog = message + "<br>" + gameLog;
   if (gameLog.split("<br>").length > 3) {
@@ -346,7 +368,7 @@ function logAction(message){
   }
 }
 
-function vibrateButtonPress(){
+function vibrateButtonPress(){ //FIXME Samsung?
   if (!("vibrate" in window.navigator)){
     console.log("Vibrate not supported!");
     return;
