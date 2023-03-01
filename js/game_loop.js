@@ -22,6 +22,7 @@ var playerHpDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
+var actionString;
 var actionLog = "You are slowly waking up<br>from what seemed like<br>an eternal slumber.<br>...";
 renewPlayer();
 
@@ -45,7 +46,7 @@ var randomEncounterIndex;
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "data/enemies.csv",
+        url: "data/forest-encounters.csv",
         dataType: "text",
         success: function(data) {processData(data);}
      });
@@ -162,7 +163,7 @@ function redraw(index){
 
 function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
-    var actionString = document.getElementById(button).innerHTML;
+    actionString = document.getElementById(button).innerHTML;
     actionFeedback(button);
 
     switch (button) {
@@ -174,10 +175,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           default:
             if (enemySta-enemyLostSta < 1) {
-              logPlayerAction(actionString,"You hit them with an attack:&nbsp;&nbsp;-"+playerAtk+" ❤️");
+              enemyStaminaChange(-1,"n/a","You hit them with an attack:&nbsp;&nbsp;-"+playerAtk+" ❤️");
               enemyHit(playerAtk);
             } else {
-              logPlayerAction(actionString,"Sudden counter-attack hit you:&nbsp;&nbsp;-"+enemyAtk+" ❤️")
+              enemyStaminaChange(-1,"A sudden counter-attack hit you:&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             };
       }
@@ -186,12 +187,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_block':
         switch (enemyType){
           case "Standard":
-            logPlayerAction(actionString,"You blocked an attack.");
-            enemyStaminaChange(-1);
+            enemyStaminaChange(-1,"You blocked an attack.","Your blocking was pointless.");
             break;
           case "Swift":
-            logPlayerAction(actionString,"You blocked a light attack.");
-            enemyStaminaChange(-1);
+            enemyStaminaChange(-1,"You blocked a light attack.","Your blocking was pointless.");
             break;
           case "Heavy":
             logPlayerAction(actionString,"You failed to block a heavy blow:&nbsp;&nbsp;-"+enemyAtk+" ❤️")
@@ -205,16 +204,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_roll':
         switch (enemyType){
           case "Standard":
-            logPlayerAction(actionString,"You dodged an attack.");
-            enemyStaminaChange(-1);
+            enemyStaminaChange(-1,"You dodged an attack.","Your roll was pointless.");
             break;
           case "Swift":
-            logPlayerAction(actionString,"You rolled right into an attack:&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+            enemyStaminaChange(-1,"You rolled right into an attack:&nbsp;&nbsp;-"+enemyAtk+" ❤️","Your roll was pointless.");
             playerHit(enemyAtk);
             break;
           case "Heavy":
-            logPlayerAction(actionString,"You dodged a heavy attack.");
-            enemyStaminaChange(-1);
+            enemyStaminaChange(-1,"You dodged a heavy attack.","Your roll was pointless.");
             break;
           case "Item":
             logPlayerAction(actionString,"You rolled away. The item has been lost.");
@@ -272,16 +269,21 @@ function renewEnemy(){
   enemyLostHp = 0;
 }
 
-function enemyStaminaChange(stamina){
-  enemyLostSta -= stamina;
-  if (enemyLostSta >= enemySta) {
-    enemyLostSta = enemySta;
+function enemyStaminaChange(stamina,successMessage,failMessage){
+  if (enemyLostSta < enemySta) {
+    logPlayerAction(actionString,successMessage);
+    enemyLostSta -= stamina;
+  } else {
+    logPlayerAction(actionString,failMessage);
+    enemyLostSta += stamina
+
+    //Avoid spamming log?
+    //logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "⚡️&nbsp;&nbsp;They regained some energy.");
   }
 }
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  enemyStaminaChange(+1); //TODO RANDOM CHANCE?
   if (enemyLostHp >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated an enemy!");
     nextEncounter();
