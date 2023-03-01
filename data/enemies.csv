@@ -6,7 +6,7 @@ id;emoji;name;type;hp;atk;sta;def;team;desc
 4;🕷;Eight-legged Menace;Standard;3;2;2;0;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.
 5;🦍;Silverback Gorilla;Heavy;5;3;3;0;Wild Animal;Be careful around this one!<br>Especially about its "Unga Bunga".
 6;🐊;Swamp Gator;Heavy;6;3;3;0;Wild Animal;So it wasn't a floating log after all.<br>This is making you a little uncomfortable.
-7;🐊🐊;Gator Duo;Heavy;6;6;3;0;Wild Animals;It is getting out of hand.<br>Now there are two of them.
+7;🐀🐀;Rat Duo;Swift;4;2;1;0;Wild Animals;It is getting out of hand.<br>Now there are two of them.
 8;🤺;Nimble Knight;Swift;3;2;3;3;Human Being;They used to be an adventurer like you.<br>Then they took an arrow to the knee.
 9;🔥;Fire Elemental;Swift;1;4;4;3;Magical Creature;It seems to be sentient.<br>Protect your elder scrolls.
 10;🦠;Floating Germs;Swift;1;1;4;3;Unfortunate Event;Feels uncomfortable on your skin.<br>And now it's too late to be sorry.
@@ -20,3 +20,7 @@ id;emoji;name;type;hp;atk;sta;def;team;desc
 18;🪃;Cursed Boomerang;Item;0;-1;0;0;Weapon;This looks really handy.<br>Could help keeping a distance.
 19;🗿;Animated Statue;Heavy;5;5;1;0;Huge Decoration;Is this really a threat?<br>I need to find out.
 20;🍪;Cinnamon Cookie;Item;1;0;0;0;Simple Food;Oh yeah... finally.<br>Give me that cookie!
+21;🦖;Legendary T-Rex;Heavy;5;4;2;0;Wild Animal;I thought these went extinct.<br>Never mind. Let's make it so.
+22;👀;The Watcher;Trap-Grab;0;0;0;0;Elusive Creature;The eyes seem to follow you around.<br>This is very disturbing.
+23;💣;Sparkling Explosive;Item;0;3;0;0;Suspicious Object;It looks almost beautiful.<br>Maybe it is pleasant to touch?
+24;🐾;Invisible Werewolf;Swift;4;4;4;0;Elusive Creature;I feel like something is crawling around.<br>Hopefully not some hungry beast.

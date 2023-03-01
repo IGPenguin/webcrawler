@@ -230,6 +230,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHit(100);
             logAction("You died instantenously of some mischief!");
             break;
+          case "Trap-Grab":
+            nextEncounter();
+            logAction("It dissappeared after touching.");
+            break;
           case "Item":
             playerGained(enemyHp, enemyAtk);
             logAction("You gained "+ enemyHp + " ❤️ and " + enemyAtk +" 🗡");
@@ -361,5 +365,5 @@ function registerClickListeners(){
   document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
-  document.getElementById('button_cheese').addEventListener(eventType, resolveAction('button_cheese'));
+  //document.getElementById('button_cheese').addEventListener(eventType, resolveAction('button_cheese'));
 }

@@ -39,6 +39,6 @@ layout: default
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Sleep</button>&nbsp;
 <p style="margin:10px;"></p>
-<button type = "button" id = "button_cheese">🧀&nbsp;&nbsp;Cheese</button>&nbsp;
+<!--<button type = "button" id = "button_cheese">🧀&nbsp;&nbsp;Cheese</button>&nbsp; -->
 
 </center>
