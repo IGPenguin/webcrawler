@@ -166,7 +166,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemySta-enemyLostSta < 1) {
               enemyStaminaChange(+1); //TODO CHANCE?
               enemyHit(playerAtk);
-              logAction("The pain energized them.")
+              logAction("The pain seems to have energized them.")
             } else {
               logAction("Enemy counter-attack hit you for -"+enemyAtk+" ❤️")
               playerHit(enemyAtk);
@@ -178,15 +178,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logAction("Succesful block, enemy lost energy.");
+            logAction("You succesful blocked an attack.");
             break;
           case "Swift":
             enemyStaminaChange(-1);
-            logAction("Succesful block, enemy lost energy.");
+            logAction("You succesfull blocked a light attack.");
             break;
           case "Heavy":
             playerHit(enemyAtk);
-            logAction("You failed to block heavy blow, hit for -"+enemyAtk+" ❤️")
+            logAction("You tried to block a heavy blow and got hit for -"+enemyAtk+" ❤️")
             break;
           default:
             logAction("Suprisingly, nothing happened.");
@@ -197,7 +197,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             enemyStaminaChange(-1);
-            logAction("Succesful roll, enemy lost energy.");
+            logAction("You succesfully avoided a standard attack.");
             break;
           case "Swift":
             playerHit(enemyAtk);
@@ -205,7 +205,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             enemyStaminaChange(-1);
-            logAction("Succesful roll, enemy lost energy.");
+            logAction("You succesfully avoided a heavy attack.");
             break;
           case "Item":
             nextEncounter();
@@ -226,11 +226,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
             playerHit(enemyAtk*2);
-            logAction("You touched them and got hit extra hard: -"+enemyAtk*2+" ❤️");
+            logAction("You touched them. They hit you extra hard: -"+enemyAtk*2+" ❤️");
             break;
           case "Trap":
             playerHit(100);
-            logAction("You died instantenously!");//TODO
+            logAction("You died instantenously of some mischief!");
             break;
           case "Item":
             playerGained(enemyHp, enemyAtk);
@@ -242,7 +242,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
       case 'button_sleep': //TODO
-        logAction("༼  ಠ_ಠ  ༽ Cannot rest, there are monsters nearby!");
+        logAction("You cannot rest, there are monsters nearby!");
         break;
 
       case 'button_cheese': //DEBUG
@@ -251,7 +251,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       default:
-        console.log("Huh, button does not exist.");
+        console.log("Huh, that button does not exist.");
     };
     redraw(encounterIndex);
   };
@@ -272,7 +272,7 @@ function enemyStaminaChange(stamina){
 
 function enemyHit(damage){
   enemyLostHp = enemyLostHp + damage
-  logAction("Succesful attack, hit them for:" + damage + ".");
+  logAction("Succesfully hit them for:" + damage + ".");
   if (enemyLostHp >= enemyHp) {
     logAction("You eliminated an enemy!");
     nextEncounter();
