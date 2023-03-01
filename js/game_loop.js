@@ -162,7 +162,6 @@ function redraw(index){
   document.getElementById('id_subtitle').innerHTML = lighLevelString;
 
   document.getElementById('id_log').innerHTML = actionLog;
-  markAsSeen(encounterIndex); //LOL THIS WAS MISSING
   console.log("Redrawing... ("+enemyName+")")
 }
 
@@ -311,6 +310,7 @@ function enemyHit(damage){
 }
 
 function nextEncounter(){
+  markAsSeen(encounterIndex);
   encounterIndex = getUnseenEncounterIndex();
   renewEnemy();
 }
