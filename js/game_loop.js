@@ -162,6 +162,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             logAction("Bonk! The item was completely destroyed.");
             break;
+          case "Trap-Grab":
+            playerHit(100);
+            logAction("You regretted that as you were crushed to death.");
+            break;
           default:
             if (enemySta-enemyLostSta < 1) {
               enemyHit(playerAtk);
@@ -185,6 +189,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
             playerHit(enemyAtk);
             logAction("You tried to block a heavy blow and got hit for -"+enemyAtk+" ❤️")
+            break;
+          case "Trap-Grab":
+            playerHit(100);
+            logAction("There's no hiding from ."+enemyName);
             break;
           default:
             logAction("Suprisingly, nothing happened.");
@@ -213,6 +221,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             logAction("You ignored that. Better safe than sorry.");
             break;
+          case "Trap-Grab":
+            playerHit(100);
+            logAction("You slipped into bottomless abyss.");
+            break;
           default:
             logAction("It didn't feel right, so you changed your mind.");
         }
@@ -232,7 +244,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap-Grab":
             nextEncounter();
-            logAction("It dissappeared after touching.");
+            logAction("It suddenly dissappeared after you touched it.");
             break;
           case "Item":
             playerGained(enemyHp, enemyAtk);
