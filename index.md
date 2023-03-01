@@ -11,7 +11,7 @@ layout: default
 
 <center>
 <h2>Welcome back, adventurer!</h2>
-<h4 id = "id_subtitle"> </h4>
+<h4 id = "id_subtitle" style="margin:-8px"> </h4>
 <p style="margin:18px;"></p>
 
 <div class="card">
@@ -28,7 +28,7 @@ layout: default
 
 <div class="toolbar">
 <h4 id = "id_player_name" style="display:inline; font-weight:bold;"/><h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
-<h4 id = "id_log" style="margin:0px;"/>
+<h4 id = "id_log" style="margin-top:6px; margin-bottom:2px"/>
 </div>
 
 <p style="margin:14px;"></p>
@@ -39,6 +39,6 @@ layout: default
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Sleep</button>&nbsp;
 <p style="margin:10px;"></p>
-<button type = "button" id = "button_cheese">🧀&nbsp;&nbsp;Cheese</button>&nbsp;
+<button type = "button" id = "button_cheese" style="margin-bottom:-12px">🧀&nbsp;&nbsp;Cheese</button>&nbsp;
 
 </center>
