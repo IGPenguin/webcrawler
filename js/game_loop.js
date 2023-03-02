@@ -41,6 +41,7 @@ var enemyMsg;
 
 var enemyLostHp = 0;
 var enemyLostSta = 0;
+var enemyAtkBonus = 0;
 
 //Uncomment and change the int for testing ids higher than that
 //seenEncounters = Array.from(Array(1).keys())
@@ -138,7 +139,7 @@ function redraw(index){
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
-  enemyAtk = String(selectedLine.split(",")[5].split(":")[1]);
+  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   var enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
@@ -279,8 +280,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to leave.");
               nextEncounter();
+            } else if ((enemyInt > 2*playerInt) && enemyAtkBonus < 2) {
+              logPlayerAction(actionString,"That made them extra angry!");
+              enemyAtkBonus+=1;
             } else {
-              enemyStaminaChange(+1,"They didn't listen.","The conversation went wrong.");
+              enemyStaminaChange(-1,"They didn't listen.","The conversation went wrong.");
             }
             break;
           case "Trap":
@@ -299,7 +303,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_sleep': //TODO
-        logPlayerAction(actionString,"You cannot rest, there are monsters nearby!");
+        logPlayerAction(actionString,"You cannot rest, monsters are nearby!");
         break;
     };
     redraw(encounterIndex);
@@ -310,6 +314,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 function renewEnemy(){
   enemyLostSta = 0;
   enemyLostHp = 0;
+  enemyAtkBonus = 0;
 }
 
 function enemyStaminaChange(stamina,successMessage,failMessage){
@@ -453,7 +458,7 @@ function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
   var eventType;
-  if (!(navigator.userAgentData.mobile)){
+  if (!(navigator.userAgentData.mobile) || navigator.userAgent.match(/SAMSUNG/)){
     eventType = 'click';
   } else {
     eventType = 'touchend';
