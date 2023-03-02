@@ -18,7 +18,7 @@ layout: default
 <h1 id = "id_emoji" style="margin-top:8px;"/>
 <h2 id = "id_name"/>
 <h3 id = "id_stats" style="line-height:24px; margin-bottom:12px;"/>
-<h4 id = "id_desc"/>
+<h4 id = "id_desc" style="padding-right:24px; padding-left:24px;"/>
 <h5 id = "id_team"/>
 </div>
 
