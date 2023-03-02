@@ -196,10 +196,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
             if (enemySta-enemyLostSta < 1) {
-              enemyStaminaChange(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
+              enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
               enemyHit(playerAtk);
             } else {
-              enemyStaminaChange(-1,"A sudden counter-attack hit you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"A sudden counter-attack hit you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             };
             break;
@@ -211,10 +211,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_block':
         switch (enemyType){
           case "Standard":
-            enemyStaminaChange(-1,"You blocked an attack.","Your blocking was pointless.");
+            enemyStaminaChangeMessage(-1,"You blocked an attack.","Your blocking was pointless.");
             break;
           case "Swift":
-            enemyStaminaChange(-1,"You blocked a light attack.","Your blocking was pointless.");
+            enemyStaminaChangeMessage(-1,"You blocked a light attack.","Your blocking was pointless.");
             break;
           case "Heavy":
             logPlayerAction(actionString,"You failed to block a heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️")
@@ -228,14 +228,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_roll':
         switch (enemyType){
           case "Standard":
-            enemyStaminaChange(-1,"You dodged an attack.","Your roll was pointless.");
+            enemyStaminaChangeMessage(-1,"You dodged an attack.","Your roll was pointless.");
             break;
           case "Swift":
-            enemyStaminaChange(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+            enemyStaminaChangeMessage(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
           case "Heavy":
-            enemyStaminaChange(-1,"You dodged a heavy attack.","Your roll was pointless.");
+            enemyStaminaChangeMessage(-1,"You dodged a heavy attack.","Your roll was pointless.");
             break;
           case "Item":
           case "Consumable":
@@ -295,12 +295,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to leave.");
               nextEncounter();
-            } else if ((enemyInt > 2*playerInt) && enemyAtkBonus < 2) {
+            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
               logPlayerAction(actionString,"That made them extra angry!");
               enemyAtkBonus+=1;
             } else {
-              enemyStaminaChange(-1,"They didn't listen.","The conversation went wrong.");
+              logPlayerAction(actionString,"They ignored what you said.");
             }
+            enemyRest(1);
             break;
           case "Friend":
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
@@ -319,13 +320,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 }
 
 //Enemy
-function renewEnemy(){
+function enemyRenew(){
   enemyLostSta = 0;
   enemyLostHp = 0;
   enemyAtkBonus = 0;
 }
 
-function enemyStaminaChange(stamina,successMessage,failMessage){
+function enemyRest(stamina){
+  enemyLostSta-=stamina;
+  if (enemyLostSta < 0) {
+    enemyLostSta = 0;
+  }
+}
+
+function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   if (enemyLostSta < enemySta) {
     logPlayerAction(actionString,successMessage);
     enemyLostSta -= stamina;
@@ -346,7 +354,7 @@ function enemyHit(damage){
 function nextEncounter(){
   markAsSeen(encounterIndex);
   encounterIndex = getUnseenEncounterIndex();
-  renewEnemy();
+  enemyRenew();
 }
 
 //Player
