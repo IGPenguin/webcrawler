@@ -29,7 +29,7 @@ layout: default
 <div class="toolbar">
 <h4 id = "id_player_name" style="font-weight:bold; margin-bottom:4px;"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
-<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:8px; padding-right:8px;" align="left"/><h4 style="margin-bottom:0px;">...</h4>
+<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:14px; padding-right:14px;" align="left"/><h4 style="margin-bottom:0px;">...</h4>
 </div>
 
 <p style="margin:14px;"></p>
