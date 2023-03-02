@@ -12,7 +12,7 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 110;🪓;Lumberjack Axe;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner jumped out of nowhere
 111;📜;Elder Scroll;Item;0;0;0;0;1;Item of Interest;Some say these will make you blind.<br>There's only one way to find out.;
 112;🧪;Strange Potion;Item;0;1;0;0;0;Trash;Nobody will miss it.<br>Right?;
-113;🦝;Curious Raccoon;Trap;2;1;0;0;0;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;It panicked and bit you
+113;🦝;Curious Raccoon;Standard;2;1;3;0;2;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;
 114;🏹;Bow and Arrows;Trap;0;3;0;0;0;Weapon;There must be a huntsman around.<br>He probably won't miss it.;You shot yourself by mistake
 115;🐍;Extra Big Snake;Heavy;5;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe I could use it as a rope.;
 116;🦉;Smart Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>I should investigate.;
@@ -23,4 +23,5 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 121;🦌;Nervous Deer;Heavy;4;3;2;0;5;Wild Animal;Something is not right.<br>I must be very careful.;
 122;🥕;Wild Carrot;Consumable;1;0;0;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
 122;🌲;Very Nice Tree;Prop;0;0;0;0;0;Forest Flora;Wow! What a nice tree we have here<br>Is there something I should do?;
-133;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
+123;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
+124;🦔;Spiky Hedgehog;Standard;2;2;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
