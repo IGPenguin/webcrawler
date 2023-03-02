@@ -7,9 +7,9 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 105;🐝;Swarm of Bees;Swift;5;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
 106;💍;Ring of Love;Item;1;0;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.;
 107;🍪;Cinnamon Cookie;Consumable;1;0;0;0;0;Simple Food;Oh yeah... finally.<br>Give me that cookie!;
-108;🐺;Old Wolf;Standard;3;3;2;0;15;Elusive Creature;I feel like something is crawling around.<br>Hopefully not some hungry beast.;
+108;🐺;Old Wolf;Standard;3;3;2;0;15;Wild Animal;It slowly walked towards you.<br>Hopefully it's not hungry.;
 109;🕸;Giant Web;Trap;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>Seems quite sturdy.;Spider-Mom caught you in her web;
-110;🪓;Lumberjack Axe;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner appeard and hit you
+110;🪓;Lumberjack Axe;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner jumped out of nowhere
 111;📜;Elder Scroll;Item;0;0;0;0;1;Item of Interest;Some say these will make you blind.<br>There's only one way to find out.;
 112;🧪;Strange Potion;Item;0;1;0;0;0;Trash;Nobody will miss it.<br>Right?;
 113;🦝;Curious Raccoon;Trap;2;1;0;0;0;Wild Animal;A little cute boy.<br>What if ...?;You shouldn't have done it
@@ -19,3 +19,4 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 117;⛺️;Abandoned Tent;Trap;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>I could use a break.;The tent was riddled with fleas
 118;🍄;Suspicious Fungi;Item;1;0;0;0;0;Wild Animal;Looks really tasty.<br>Could be eaten raw.;
 119;🐱‍👤;Hidden Ninja;Swift;2;2;4;0;3;Human Being;He thinks he's well hidden.<br>But it's not the case.;
+120;💍;Ring of Damage;Trap;0;1;0;0;0;Shiny Object;Does something with damage.<br>Hopefully in a good way;The ring is too tight
