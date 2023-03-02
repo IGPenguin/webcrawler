@@ -11,10 +11,10 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 109;🕸;Giant Web;Trap-Roll;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;Spider-Mom caught you in her web
 110;🪓;Lumberjack Axe;Trap-Roll;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner jumped out and hit you
 111;📜;Elder Scroll;Item;0;0;0;0;1;Item of Interest;Some say these will make you blind.<br>There's only one way to find out.;
-112;🧪;Strange Potion;Item;0;1;0;0;0;Trash;Nobody will miss it.<br>Right?;
+112;🧪;Glowing Potion;Item;0;1;0;0;0;Trash;It has a sinister aura.<br>You probably shouldn't drink it.;
 113;🦝;Curious Raccoon;Standard;2;1;3;0;2;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;
 114;🏹;Bow and Arrows;Trap-Roll;0;3;0;0;0;Weapon;There must be a huntsman around.<br>He probably won't miss it.;You shot yourself by mistake
-115;🐍;Extra Big Snake;Heavy;5;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
+115;🐍;Extra Big Snake;Heavy;4;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
 116;🦉;Smart Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;
 117;⛺️;Abandoned Tent;Trap-Roll;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;You landed in a swarm of fleas
 118;🍄;Suspicious Fungi;Item;1;0;0;0;0;Wild Animal;Looks really tasty.<br>Could be eaten raw.;
@@ -22,7 +22,9 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 120;💍;Ring of Damage;Trap-Roll;0;1;0;0;0;Shiny Object;Does something with damage.<br>Hopefully in a good way.;Ouch! The ring is too tight
 121;🦌;Nervous Deer;Heavy;4;3;2;0;5;Wild Animal;Something is not right.<br>You must be very careful.;
 122;🥕;Wild Carrot;Consumable;1;0;0;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
-122;🌲;Very Nice Tree;Prop;0;0;0;0;0;Forest Flora;Wow! A tree in a forest.<br>You never noticed it before.;
+122;🌲;Spruce Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
+122;🌳;Oak Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>Who would have thought?;
+122;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
 123;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
 124;🦔;Spiky Hedgehog;Standard;2;2;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 125;🌹;Rose Flower Bush;Trap-Attack;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
