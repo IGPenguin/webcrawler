@@ -27,7 +27,8 @@ layout: default
 <p style="margin:9px;"></p>
 
 <div class="toolbar">
-<h4 id = "id_player_name" style="display:inline; font-weight:bold;"/><h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
+<h4 id = "id_player_name" style="font-weight:bold; margin-bottom:4px;"/>
+<h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
 <h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:8px; padding-right:8px;" align="left"/><h4 style="margin-bottom:0px;">...</h4>
 </div>
 
@@ -38,6 +39,5 @@ layout: default
 <p style="margin:10px;"></p>
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;
 <button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;
-<p style="margin:10px;"></p>
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Wait</button>&nbsp;
 </center>

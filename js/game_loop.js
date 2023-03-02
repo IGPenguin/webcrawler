@@ -17,13 +17,16 @@ var adventureLog = "";
 
 //Player stats init
 //var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
-var playerName = "Nameless Hero:&nbsp;&nbsp;"
+var playerName = "Nameless Hero"
 var playerHpDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
 var playerDef;
 var playerInt;
+
+var playerStaLost = 0;
+
 var actionString;
 var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You are waking up from seemingly<br>eternal slumber. Not knowing where you are.<br>Now it's time to find out.\"";
 renewPlayer();
@@ -41,8 +44,8 @@ var enemyTeam;
 var enemyDesc;
 var enemyMsg;
 
-var enemyLostHp = 0;
-var enemyLostSta = 0;
+var enemyHpLost = 0;
+var enemyStaLost = 0;
 var enemyAtkBonus = 0;
 
 //Uncomment and change the int for testing ids higher than that
@@ -133,8 +136,10 @@ function redraw(index){
 
   //Player UI
   document.getElementById('id_player_name').innerHTML = playerName;
-  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpDefault)) + "&nbsp;&nbsp;"
-  playerStatusString += "🎯 " + "×".repeat(playerAtk);
+  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpDefault))
+  if (playerSta > 0) { playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta);}
+    if (playerStaLost > 0) { playerStatusString = playerStatusString.slice(0,-1*playerStaLost) + "▱".repeat(playerStaLost); } //YOLO
+  playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
 
   selectedLine = String(lines[index]);
@@ -158,9 +163,9 @@ function redraw(index){
 
   var enemyStatusString = ""
   if (enemyHp > 0) { enemyStatusString = "❤️ " + "▰".repeat(enemyHp);}
-    if (enemyLostHp > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
+    if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "▱".repeat(enemyHpLost); } //YOLO
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
-    if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
+    if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "▱".repeat(enemyStaLost); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
   if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap") || enemyType.includes("Friend") || enemyType.includes("Prop")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
@@ -196,7 +201,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
           case "Swift":
           case "Heavy":
-            if (enemySta-enemyLostSta < 1) {
+            if (enemySta-enemyStaLost < 1) {
               enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
               enemyHit(playerAtk);
             } else {
@@ -322,31 +327,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
 //Enemy
 function enemyRenew(){
-  enemyLostSta = 0;
-  enemyLostHp = 0;
+  enemyStaLost = 0;
+  enemyHpLost = 0;
   enemyAtkBonus = 0;
 }
 
 function enemyRest(stamina){
-  enemyLostSta-=stamina;
-  if (enemyLostSta < 0) {
-    enemyLostSta = 0;
+  enemyStaLost-=stamina;
+  if (enemyStaLost < 0) {
+    enemyStaLost = 0;
   }
 }
 
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
-  if (enemyLostSta < enemySta) {
+  if (enemyStaLost < enemySta) {
     logPlayerAction(actionString,successMessage);
-    enemyLostSta -= stamina;
+    enemyStaLost -= stamina;
   } else {
     logPlayerAction(actionString,failMessage);
-    enemyLostSta += stamina
+    enemyStaLost += stamina
   }
 }
 
 function enemyHit(damage){
-  enemyLostHp = enemyLostHp + damage
-  if (enemyLostHp >= enemyHp) {
+  enemyHpLost = enemyHpLost + damage
+  if (enemyHpLost >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated an enemy!");
     nextEncounter();
   }
