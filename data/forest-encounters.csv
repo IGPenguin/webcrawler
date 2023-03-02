@@ -1,15 +1,15 @@
 id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 100;🐛;Small Worm;Standard;1;1;1;0;0;Pesky Insect;Mindin' its own business.<br>Sould you interfere?;
 101;🐀;Stinky Rat;Swift;2;1;1;0;5;Wild Animal;*sniffs around maniacally*<br>...could this be Jerry?;
-102;🐀🐀;Rat Duo;Swift;4;2;2;0;10;Wild Animals;It is getting out of hand.<br>Now there are two of them.;
+102;🐀🐀;Rat Duo;Swift;4;1;2;0;10;Wild Animals;It is getting out of hand.<br>Now there are two of them.;
 103;🐗;Momma Boar;Heavy;4;2;1;0;10;Wild Animal;It follows you around.<br>No matter what you do.;
 104;🕷;Eight-legged Menace;Swift;3;2;1;0;6;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.;
 105;🐝;Swarm of Bees;Swift;3;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
 106;💍;Ring of Love;Item;1;0;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.;
 107;🍪;Cinnamon Cookie;Consumable;2;0;0;0;0;Fancy Food;This cookie looks super tasty.<br>Give me that!;
 108;🐺;Old Wolf;Standard;3;3;2;0;15;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
-109;🕸;Giant Web;Trap-Roll;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>Seems quite sturdy.;Spider-Mom caught you in her web
-110;🪓;Lumberjack Axe;Trap-Roll;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner jumped out of nowhere
+109;🕸;Giant Web;Trap-Roll;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;Spider-Mom caught you in her web
+110;🪓;Lumberjack Axe;Trap-Roll;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner jumped out and hit you
 111;📜;Elder Scroll;Item;0;0;0;0;1;Item of Interest;Some say these will make you blind.<br>There's only one way to find out.;
 112;🧪;Strange Potion;Item;0;1;0;0;0;Trash;Nobody will miss it.<br>Right?;
 113;🦝;Curious Raccoon;Standard;2;1;3;0;2;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;

@@ -19,6 +19,7 @@ var adventureLog = "";
 //var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
 var playerName = "Nameless Hero"
 var playerHpDefault = 3;
+var playerStaDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
@@ -311,7 +312,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"You touched that and nothing happened.");
+            logPlayerAction(actionString,"You touched it and nothing happened.");
           }
           break;
 
@@ -463,15 +464,27 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
   nextEncounter();
 }
 
-function playerConsumed(refreshHp){
-  var consumedString = "";
+function playerConsumed(refreshHp,refreshSta){
+  var consumedString = "Mmm, that was refreshing"
+
   var playerMissingHp = Math.abs(playerHp-playerHpDefault);
   var wastedHp=refreshHp-playerMissingHp;
   var healedAmount = refreshHp - wastedHp;
 
-  if (playerMissingHp > 0){
-    playerHp += healedAmount;
-    consumedString = "Mmm, that was refreshing: +" + healedAmount + " ❤️";
+  var wastedSta=refreshSta-playerStaLost;
+  var refreshedAmount = refreshSta - wastedSta;
+
+  if ((playerMissingHp > 0) || (playerStaLost > 0)){
+
+    if (healedAmount > 0){
+      playerHp += healedAmount;
+      consumedString += "+"+healedAmount + " ❤️";
+    }
+
+    if (refreshedAmount > 0){
+      playerSta += refreshedAmount;
+      consumedString += "+"+refreshedAmount + " 🟢";
+    }
   } else {
     consumedString="Ugh, you ate a little too much.";
     playerUseStamina(1);
@@ -488,7 +501,7 @@ function playerHit(incomingDamage){
 
 function renewPlayer(){
   playerHp = playerHpDefault;
-  playerSta = 2;
+  playerSta = playerStaDefault;
   playerAtk = 1;
   playerDef = 0;
   playerInt = 1;
@@ -497,7 +510,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Strange, you came back alive again.<br>Something powerful brought you back.\"";
+  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Some strange power brought you back from the dead. Hopefully not necromancy.\"";
   logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
