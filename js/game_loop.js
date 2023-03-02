@@ -56,7 +56,10 @@ $(document).ready(function() {
         type: "GET",
         url: "data/forest-encounters.csv",
         dataType: "text",
-        success: function(data) {processData(data);}
+        success: function(data) {
+          processData(data);
+          registerClickListeners();
+        }
      });
 });
 
@@ -79,7 +82,6 @@ function processData(allText) {
   }
   }
   redraw(getUnseenEncounterIndex());
-  registerClickListeners();
 }
 
 function previousItem(){ //Unused
@@ -422,6 +424,8 @@ function gameOver(){
   logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
+  nextEncounter();
+  resetSeenEncounters();
   alert("༼  x_x  ༽  Welp, you are dead.");
 }
 
@@ -457,7 +461,7 @@ function logAction(message){
 }
 
 //UI Tech
-function vibrateButtonPress(){ //FIXME Samsung?
+function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
     console.log("Vibrate not supported!");
     return;
@@ -482,12 +486,10 @@ function registerClickListeners(){
   if (navigator.userAgentData.mobile){
     eventType = 'touchend';
   }
-  window.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
-    document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
-    document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
-    document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
-    document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
-    document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
- });
+  document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
+  document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
+  document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
+  document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
+  document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
+  document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
 }
