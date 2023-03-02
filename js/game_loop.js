@@ -461,7 +461,7 @@ function registerClickListeners(){
   if (!(navigator.userAgentData.mobile)){
     eventType = 'click';
   } else {
-    eventType = 'click';
+    eventType = 'touchend';
   }
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
