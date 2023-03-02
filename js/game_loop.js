@@ -458,10 +458,10 @@ function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
   var eventType;
-  if (!(navigator.userAgentData.mobile) || navigator.userAgent.match(/SAMSUNG/)){
+  if (!(navigator.userAgentData.mobile)){
     eventType = 'click';
   } else {
-    eventType = 'touchend';
+    eventType = 'click';
   }
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
