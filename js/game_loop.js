@@ -483,7 +483,7 @@ function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
   var eventType = 'click';
-  if (String(navigator.userAnentData) != "undefined"){ //SAFARI NEEDS THIS, it took me only 3 hours to realize
+  if (String(navigator.userAgentData) != "undefined"){ //Any browser except Chrome needs this, it took only 3 hours to realize
     if (navigator.userAgentData.mobile){
       eventType = 'touchend';
     }
