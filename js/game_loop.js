@@ -120,9 +120,9 @@ function markAsSeen(seenID){
 }
 
 function resetSeenEncounters(){
+  console.log("Seen line indexes reset.");
   localStorage.setItem("seenEncounters", JSON.stringify(""));
   seenEncounters = [];
-  encounterIndex = getUnseenEncounterIndex();
 }
 
 function redraw(index){
@@ -167,7 +167,6 @@ function redraw(index){
   document.getElementById('id_subtitle').innerHTML = lighLevelString;
 
   document.getElementById('id_log').innerHTML = actionLog;
-  console.log("Redrawing... ("+enemyName+")")
 }
 
 function resolveAction(button){ //Yeah, this is bad, like really bad
@@ -296,7 +295,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You convinced them to leave.");
               nextEncounter();
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
-              logPlayerAction(actionString,"That made them extra angry!");
+              logPlayerAction(actionString,"That made them more angry!");
               enemyAtkBonus+=1;
             } else {
               logPlayerAction(actionString,"They ignored what you said.");
@@ -423,13 +422,13 @@ function gameOver(){
   logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
-  nextEncounter();
   alert("༼  x_x  ༽  Welp, you are dead.");
 }
 
 function gameEnd(){
+  var winMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You just had a deja vu, didn't you?<br>It feels like you already did this. (NG+)\"";
+  logAction(winMessage);
   resetSeenEncounters();
-  nextEncounter();
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik and Stackoverflow");
 }
 
@@ -483,10 +482,12 @@ function registerClickListeners(){
   if (navigator.userAgentData.mobile){
     eventType = 'touchend';
   }
-  document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
-  document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
-  document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
-  document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
-  document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
-  document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
+    document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
+    document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
+    document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
+    document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
+    document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+ });
 }
