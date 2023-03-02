@@ -168,7 +168,7 @@ function redraw(index){
     if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "▱".repeat(enemyStaLost); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
   if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap") || enemyType.includes("Prop")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
-    else if (enemyType.includes("Friend") {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Im just too tired today
+  if (enemyType.includes("Friend")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🎯 ??";} //Im just too tired today
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEncounters.length;
@@ -185,9 +185,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         switch (enemyType){
-          case "Trap":
-            logPlayerAction(actionString,"You smashed it into pieces!");
-            //playerHit(enemyAtk);
+          case "Trap-Attack":
+          case "Trap-Roll":
+            logPlayerAction(actionString,"You smashed it into tiny pieces!");
             nextEncounter();
             break;
           case "Item":
@@ -196,7 +196,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"You scared them away!");
+            logPlayerAction(actionString,"Well, you scared them away!");
             nextEncounter();
             break;
           case "Standard":
@@ -211,7 +211,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             };
             break;
           default:
-            logPlayerAction(actionString,"You hit it and nothing happened.");
+            logPlayerAction(actionString,"You hit it, but nothing happened.");
       }
       break;
 
@@ -257,7 +257,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You rolled away from them.");
             nextEncounter();
             break;
-          case "Trap":
+          case "Trap-Attack":
+            logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+            playerHit(enemyAtk);
+            break;
+          case "Trap-Roll":
             logPlayerAction(actionString,"You just moved away from that.");
             nextEncounter();
             break;
@@ -269,12 +273,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab':
         switch (enemyType){
           case "Standard":
-          case "Swift":
-          case "Heavy":
-            logPlayerAction(actionString,"What? They hit you extra hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
-            playerHit(enemyAtk*2);
+            logPlayerAction(actionString,"They moved out of your reach.");
             break;
-          case "Trap":
+          case "Swift":
+            logPlayerAction(actionString,"They easily evaded your grasp.");
+            enemyRest(1);
+            break;
+          case "Heavy":
+            logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
+            playerHit(enemyAtk+2);
+            break;
+          case "Trap-Attack":
+          case "Trap-Roll":
             logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
@@ -290,7 +300,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"Well, you touched that.");
+            logPlayerAction(actionString,"You touched that and nothing happened.");
           }
           break;
 
@@ -367,7 +377,7 @@ function nextEncounter(){
 //Player
 
 function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
-  var gainedString = "You feel stronger: "
+  var gainedString = "You feel a bit stronger: "
   if (bonusHp > 0) {
     playerHpDefault += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
