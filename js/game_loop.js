@@ -99,7 +99,7 @@ function nextItem(){ //Unused
 }
 
 function getUnseenEncounterIndex() {
-  console.log("Already seen IDs: " + seenEncounters);
+  console.log("Already seen line indexes: " + seenEncounters);
   encountersTotal = lines.length;
   var max = encountersTotal;
     do {
@@ -160,7 +160,7 @@ function redraw(index){
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
-  if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??"} //Blah, nasty hack
+  if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap") || enemyType.includes("Friend") || enemyType.includes("Prop")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEncounters.length;
@@ -179,19 +179,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_attack':
         switch (enemyType){
           case "Trap":
-            logPlayerAction(actionString,enemyMsg +"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
-            playerHit(enemyAtk);
+            logPlayerAction(actionString,"You smashed it into pieces!");
+            //playerHit(enemyAtk);
+            nextEncounter();
             break;
           case "Item":
           case "Consumable":
             logPlayerAction(actionString,"Bonk! The item was destroyed.");
             nextEncounter();
             break;
-          case "Item-Speak":
+          case "Friend":
             logPlayerAction(actionString,"You scared them away!");
             nextEncounter();
             break;
-          default:
+          case "Standard":
+          case "Swift":
+          case "Heavy":
             if (enemySta-enemyLostSta < 1) {
               enemyStaminaChange(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
               enemyHit(playerAtk);
@@ -199,6 +202,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChange(-1,"A sudden counter-attack hit you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             };
+            break;
+          default:
+            logPlayerAction(actionString,"You hit it and nothing happened.");
       }
       break;
 
@@ -233,11 +239,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-            logPlayerAction(actionString,"You rolled away. The item has been lost.");
+            logPlayerAction(actionString,"You rolled away, the item has been lost.");
+            nextEncounter();
+            break;
+          case "Prop":
+            logPlayerAction(actionString,"You continued on your way.");
+            nextEncounter();
+            break;
+          case "Friend":
+            logPlayerAction(actionString,"You rolled away from them.");
             nextEncounter();
             break;
           case "Trap":
-            logPlayerAction(actionString,"Well... Better safe than sorry.");
+            logPlayerAction(actionString,"You just moved away from that.");
             nextEncounter();
             break;
           default:
@@ -260,17 +274,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
-          case "Item-Speak":
+          case "Friend":
             logPlayerAction(actionString,"It slipped through your fingers.");
             nextEncounter();
             break;
           case "Consumable":
             playerConsumed(enemyHp);
-            var consumedString = "That was refreshing: +" + enemyHp + " ❤️"
-            logPlayerAction(actionString,consumedString);
+            nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"No, you cannot touch that!");
+            logPlayerAction(actionString,"Well, you touched that.");
           }
           break;
 
@@ -289,18 +302,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChange(-1,"They didn't listen.","The conversation went wrong.");
             }
             break;
-          case "Trap":
-            logPlayerAction(actionString,"Your speaking has no effect.");
-            break;
-          case "Item":
-          case "Consumable":
-            logPlayerAction(actionString,"Seems like nobody is listening.");
-            break;
-          case "Item-Speak":
+          case "Friend":
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           default:
-            logPlayerAction(actionString,"No, you cannot speak to this...");
+            logPlayerAction(actionString,"Seems like nobody is listening.");
         }
         break;
 
@@ -373,13 +379,19 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
 }
 
 function playerConsumed(bonusHp){
-  if (playerHp > playerHpDefault){
-    playerHp += bonusHp;
+  var consumedString = "";
+  var playerMissingHp = Math.abs(playerHp-playerHpDefault);
+  var wastedHp=bonusHp-playerMissingHp;
+  var healedAmount = bonusHp - wastedHp;
+
+  if (playerMissingHp > 0){
+    playerHp += healedAmount;
+    consumedString = "Mmm, that was refreshing: +" + healedAmount + " ❤️";
+  } else {
+    consumedString="You were full, but you ate it anyway.";
+    playerSta -= 1; //Overate
   }
-  if (playerHp > playerHpDefault){
-    playerHp = playerHpDefault;
-  }
-  nextEncounter();
+  logPlayerAction(actionString,consumedString);
 }
 
 function playerHit(incomingDamage){
