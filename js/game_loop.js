@@ -37,6 +37,8 @@ var enemySta;
 var enemyDef;
 var enemyInt;
 var enemyType;
+var enemyTeam;
+var enemyDesc;
 var enemyMsg;
 
 var enemyLostHp = 0;
@@ -141,10 +143,10 @@ function redraw(index){
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
   enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
-  var enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
+  enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
-  var enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
-  var enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
+  enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
+  enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
   enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
 
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
@@ -158,7 +160,7 @@ function redraw(index){
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
-  if ((enemyType == "Item") || (enemyType == "Consumable") || (enemyType == "Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??"} //Blah, nasty hack
+  if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEncounters.length;
@@ -457,10 +459,8 @@ async function actionFeedback(buttonID){
 function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
-  var eventType;
-  if (!(navigator.userAgentData.mobile)){
-    eventType = 'click';
-  } else {
+  var eventType = 'click';
+  if (navigator.userAgentData.mobile){
     eventType = 'touchend';
   }
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
