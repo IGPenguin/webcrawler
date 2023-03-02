@@ -66,7 +66,7 @@ $(document).ready(function() {
      });
 });
 
-//Functions
+//Data logic
 
 function processData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
@@ -130,6 +130,7 @@ function resetSeenEncounters(){
   seenEncounters = [];
 }
 
+//UI Logic
 function redraw(index){
   incrementLightLevel();
   encounterIndex = index; //Prediction: This will cause trouble.
@@ -137,7 +138,7 @@ function redraw(index){
   //Player UI
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpDefault))
-  if (playerSta > 0) { playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta);}
+  if (playerSta > 0) { playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta-playerStaLost) + "▱".repeat(playerStaLost);}
     if (playerStaLost > 0) { playerStatusString = playerStatusString.slice(0,-1*playerStaLost) + "▱".repeat(playerStaLost); } //YOLO
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
@@ -177,6 +178,7 @@ function redraw(index){
   document.getElementById('id_log').innerHTML = actionLog;
 }
 
+//Game logic
 function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
     actionString = document.getElementById(button).innerHTML;
@@ -184,6 +186,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     switch (button) {
       case 'button_attack':
+        if (!playerUseStamina(1)){
+            logPlayerAction(actionString,"You are too much tired to attack.");
+            break;
+          }
         switch (enemyType){
           case "Trap-Attack":
           case "Trap-Roll":
@@ -192,11 +198,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-            logPlayerAction(actionString,"Bonk! The item was destroyed.");
+            logPlayerAction(actionString,"It was irreversibly destroyed.");
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"Well, you scared them away!");
+            logPlayerAction(actionString,"Congratulations, you scared them away!");
             nextEncounter();
             break;
           case "Standard":
@@ -216,6 +222,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       break;
 
       case 'button_block':
+        if (!playerUseStamina(1)){
+          logPlayerAction(actionString,"You are too much tired to block anything.");
+          break;
+        }
         switch (enemyType){
           case "Standard":
             enemyStaminaChangeMessage(-1,"You blocked an attack.","Your blocking was pointless.");
@@ -233,6 +243,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_roll':
+        if (!playerUseStamina(1)){
+          logPlayerAction(actionString,"You are too much tired to roll away.");
+          break;
+        }
         switch (enemyType){
           case "Standard":
             enemyStaminaChangeMessage(-1,"You dodged an attack.","Your roll was pointless.");
@@ -246,11 +260,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-            logPlayerAction(actionString,"You rolled away, the item has been lost.");
-            nextEncounter();
-            break;
           case "Prop":
-            logPlayerAction(actionString,"You continued on your way.");
+            logPlayerAction(actionString,"You rolled away leaving it behind.");
             nextEncounter();
             break;
           case "Friend":
@@ -323,14 +334,30 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
+          case "Trap-Roll":
+            logPlayerAction(actionString,"Nobody replied, but you heard a strange sound.");
           default:
             logPlayerAction(actionString,"Seems like nobody is listening.");
         }
         break;
 
-      case 'button_sleep': //TODO
-        logPlayerAction(actionString,"You cannot rest, monsters are nearby!");
-        break;
+      case 'button_sleep':
+        switch (enemyType){
+          case "Standard":
+          case "Swift":
+          case "Heavy":
+            //Opportunity to attack player
+            enemyAttackIfPossible();
+            enemyRest(1);
+            break;
+        case "Trap-Attack":
+        case "Trap-Roll":
+        case "Item":
+        case "Consumable":
+        case "Friend":
+          logPlayerAction(actionString,"Nobody replied, but you heard a strange sound.");
+        default:
+          logPlayerAction(actionString,"You cannot rest, monsters are nearby!");      }
     };
     redraw(encounterIndex);
   };
@@ -368,6 +395,13 @@ function enemyHit(damage){
   }
 }
 
+function enemyAttackIfPossible(){
+  if (enemySta-enemyStaLost > 0) {
+    enemyStaminaChangeMessage(-1,"The enemy attacked you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+    playerHit(enemyAtk);
+  }
+}
+
 function nextEncounter(){
   markAsSeen(encounterIndex);
   encounterIndex = getUnseenEncounterIndex();
@@ -375,9 +409,28 @@ function nextEncounter(){
 }
 
 //Player
+function playerGetStamina(stamina){
+  if (playerStaLost < 1) { //Cannot get more
+    logPlayerAction(actionString,"You just wasted a moment of your time.");
+    return false;
+  } else {
+    logPlayerAction(actionString,"You regained some energy.");
+    playerStaLost -= 1;
+    return true;
+  }
+}
+
+function playerUseStamina(stamina){
+  if (playerStaLost >= playerSta) { //Cannot lose more
+    return false;
+  } else {
+    playerStaLost += 1;
+    return true;
+  }
+}
 
 function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
-  var gainedString = "You feel a bit stronger: "
+  var gainedString = "You feel somehow stronger "
   if (bonusHp > 0) {
     playerHpDefault += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
@@ -403,18 +456,18 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
   nextEncounter();
 }
 
-function playerConsumed(bonusHp){
+function playerConsumed(refreshHp){
   var consumedString = "";
   var playerMissingHp = Math.abs(playerHp-playerHpDefault);
-  var wastedHp=bonusHp-playerMissingHp;
-  var healedAmount = bonusHp - wastedHp;
+  var wastedHp=refreshHp-playerMissingHp;
+  var healedAmount = refreshHp - wastedHp;
 
   if (playerMissingHp > 0){
     playerHp += healedAmount;
     consumedString = "Mmm, that was refreshing: +" + healedAmount + " ❤️";
   } else {
-    consumedString="You were full, but you ate it anyway.";
-    playerSta -= 1; //Overate
+    consumedString="Ugh, you ate a little too much.";
+    playerUseStamina(1);
   }
   logPlayerAction(actionString,consumedString);
 }
@@ -432,11 +485,12 @@ function renewPlayer(){
   playerAtk = 1;
   playerDef = 0;
   playerInt = 1;
+  playerStaLost = 0;
 }
 
 //End Game
 function gameOver(){
-  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unbelievable, you feel alive once again.<br>Something powerful must've brought you back.\"";
+  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Strange, you came back alive again.<br>Something powerful brought you back.\"";
   logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
