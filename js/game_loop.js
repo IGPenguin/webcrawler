@@ -130,7 +130,7 @@ function redraw(index){
   //Player UI
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpDefault)) + "&nbsp;&nbsp;"
-  playerStatusString += "🗡 " + "×".repeat(playerAtk);
+  playerStatusString += "🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
 
   selectedLine = String(lines[index]);
@@ -157,8 +157,8 @@ function redraw(index){
     if (enemyLostHp > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostHp) + "▱".repeat(enemyLostHp); } //YOLO
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyLostSta > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyLostSta) + "▱".repeat(enemyLostSta); } //YOLO
-  if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;⚔ " + "×".repeat(enemyAtk);}
-  if ((enemyType == "Item") || (enemyType == "Consumable") || (enemyType == "Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;⚔ ??"} //Blah, nasty hack
+  if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
+  if ((enemyType == "Item") || (enemyType == "Consumable") || (enemyType == "Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??"} //Blah, nasty hack
   document.getElementById('id_stats').innerHTML = enemyStatusString;
 
   var itemsLeft = encountersTotal-seenEncounters.length;
@@ -352,7 +352,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
   }
   if (bonusAtk > 0){
     playerAtk += parseInt(bonusAtk);
-    gainedString += "+"+bonusAtk + " ⚔";
+    gainedString += "+"+bonusAtk + " 🎯";
   }
   if (bonusSta > 0){
     playerSta += parseInt(bonusSta);
