@@ -187,7 +187,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too much tired to attack.");
+            logPlayerAction(actionString,"You are too tired to attack.");
             break;
           }
         switch (enemyType){
@@ -223,7 +223,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too much tired to block anything.");
+          logPlayerAction(actionString,"You are too tired to block anything.");
           break;
         }
         switch (enemyType){
@@ -244,7 +244,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_roll':
         if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too much tired to roll away.");
+          logPlayerAction(actionString,"You are too tired to make a move.");
           break;
         }
         switch (enemyType){
@@ -335,13 +335,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           case "Trap-Roll":
-            logPlayerAction(actionString,"Nobody replied, but you heard a strange sound.");
+            logPlayerAction(actionString,"No one replied, but you heard something.");
+            break;
           default:
-            logPlayerAction(actionString,"Seems like nobody is listening.");
+            logPlayerAction(actionString,"Seems like nobody is around.");
         }
         break;
 
       case 'button_sleep':
+        playerGetStamina(1);
         switch (enemyType){
           case "Standard":
           case "Swift":
@@ -354,8 +356,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Trap-Roll":
         case "Item":
         case "Consumable":
+        case "Prop":
+          break;
         case "Friend":
-          logPlayerAction(actionString,"Nobody replied, but you heard a strange sound.");
+          logPlayerAction(actionString,"They got tired of your inactivity and left.");
+          nextEncounter();
+          break;
         default:
           logPlayerAction(actionString,"You cannot rest, monsters are nearby!");      }
     };
@@ -398,6 +404,7 @@ function enemyHit(damage){
 function enemyAttackIfPossible(){
   if (enemySta-enemyStaLost > 0) {
     enemyStaminaChangeMessage(-1,"The enemy attacked you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+    enemyStaLost+=1;
     playerHit(enemyAtk);
   }
 }
@@ -414,7 +421,7 @@ function playerGetStamina(stamina){
     logPlayerAction(actionString,"You just wasted a moment of your time.");
     return false;
   } else {
-    logPlayerAction(actionString,"You regained some energy.");
+    logPlayerAction(actionString,"You regained some extra energy.");
     playerStaLost -= 1;
     return true;
   }
