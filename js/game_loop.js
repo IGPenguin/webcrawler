@@ -188,13 +188,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to strike an attack.");
+            logPlayerAction(actionString,"You are too tired to strike them.");
             break;
           }
         switch (enemyType){
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into tiny pieces!");
+            logPlayerAction(actionString,"You smashed it into thousand pieces!");
             nextEncounter();
             break;
           case "Trap-Attack":
@@ -203,23 +203,34 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-            logPlayerAction(actionString,"It was irreversibly destroyed.");
+            logPlayerAction(actionString,"You irreversibly destroyed it.");
             nextEncounter();
             break;
           case "Friend":
             logPlayerAction(actionString,"Congratulations, you scared them away!");
             nextEncounter();
             break;
-          case "Standard":
-          case "Swift":
           case "Heavy":
-            if (enemySta-enemyStaLost < 1) {
+          case "Standard": //You hit first, they hit back if they have stamina
+            logPlayerAction(actionString,"You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️")
+            var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
+            console.log("enemyPostHitHp: "+enemyPostHitHp)
+            enemyHit(playerAtk);
+            if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
+              enemyStaminaChangeMessage(-1,"They hit you with a counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              playerHit(enemyAtk);
+            } else {
+              enemyStaminaChange(-1,"n/a");
+            }
+            break;
+          case "Swift": //They hit you if they have stamina
+            if (enemySta-enemyStaLost > 0) {
+              enemyStaminaChangeMessage(-1,"Their suddenly counter-attacked&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              playerHit(enemyAtk);
+            } else {
               enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
               enemyHit(playerAtk);
-            } else {
-              enemyStaminaChangeMessage(-1,"A sudden counter-attack hit you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
-              playerHit(enemyAtk);
-            };
+            }
             break;
           default:
             logPlayerAction(actionString,"You hit it and nothing happened.");
@@ -233,21 +244,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked a standard attack.","Your blocking was pointless.");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","Your blocking was pointless.");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked a light attack.","Your blocking was pointless.");
+            enemyStaminaChangeMessage(-1,"You blocked their light attack.","Your blocking was pointless.");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
-              enemyStaminaChangeMessage(-1,"You failed to block a heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"You failed to block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","Your blocking was pointless.");
+              enemyStaminaChangeMessage(-1,"n/a","Your blocking was totally pointless.");
             }
             break;
           default:
-            logPlayerAction(actionString,"You just wasted your energy.");
+            logPlayerAction(actionString,"You just wasted some of your energy.");
         }
         break;
 
@@ -255,7 +266,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged a standard attack.","Your roll was pointless.");
+              enemyStaminaChangeMessage(-1,"You dodged a standard attack.","Your roll was totally pointless.");
             } else {
               logPlayerAction(actionString,"You are too tired to make a move.");
             }
@@ -286,8 +297,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Trap-Roll":
-            logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
+            logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             break;
           case "Trap":
           case "Trap-Attack":
@@ -303,7 +314,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
-              logPlayerAction(actionString,"You choked them to their death.");
+              logPlayerAction(actionString,"You choked them out of consciousness.");
               playerGetStamina(2); //Is this too much?
               nextEncounter();
             }else {
@@ -318,8 +329,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
             playerHit(enemyAtk+2);
             break;
-          case "Trap-Attack":
           case "Trap":
+          case "Trap-Roll":
+          case "Trap-Attack":
             logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
@@ -351,7 +363,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"That made them more angry!");
               enemyAtkBonus+=1;
             } else {
-              logPlayerAction(actionString,"They ignored what you said.");
+              logPlayerAction(actionString,"They ignored whatever you said.");
             }
             enemyRest(1);
             break;
@@ -362,16 +374,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"No one replied, but you heard something.");
             break;
           default:
-            logPlayerAction(actionString,"Your words echo into the surroundings.");
+            logPlayerAction(actionString,"Your voice echoes around the area.");
         }
         break;
 
       case 'button_sleep':
+        var playerPostHitHp;
         switch (enemyType){
           case "Standard":
           case "Swift":
           case "Heavy":
             //Opportunity to attack player
+            playerPostHitHp=playerHp-enemyAtk;
             enemyAttackIfPossible();
             break;
           case "Trap-Attack":
@@ -387,8 +401,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             default:
             logPlayerAction(actionString,"You cannot rest, monsters are nearby!");
         }
-        //Only after everything else happenning
-        playerGetStamina(1);
+        if (playerPostHitHp > 0) { //Rest if alive after everything else happened
+          playerGetStamina(1);
+        }
     };
     redraw(encounterIndex);
   };
@@ -408,6 +423,14 @@ function enemyRest(stamina){
   }
 }
 
+function enemyStaminaChange(stamina){
+  if (enemyStaLost < enemySta) {
+    enemyStaLost -= stamina;
+  } else {
+    enemyStaLost += stamina
+  }
+}
+
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   if (enemyStaLost < enemySta) {
     logPlayerAction(actionString,successMessage);
@@ -421,8 +444,8 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 function enemyHit(damage){
   enemyHpLost = enemyHpLost + damage
   if (enemyHpLost >= enemyHp) {
-    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated an enemy!");
     playerGetStamina(2); //Is this too much?
+    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated an enemy!");
     nextEncounter();
   }
 }
