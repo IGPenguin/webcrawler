@@ -280,7 +280,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged a heavy attack.","Your roll was pointless.");
+              enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your roll was pointless.");
             } else {
               logPlayerAction(actionString,"You are too tired to make a move.");
             }
@@ -374,7 +374,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           case "Trap-Roll":
-            logPlayerAction(actionString,"No one replied, but you heard something.");
+            logPlayerAction(actionString,"No one replied. Total silence...");
             break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
@@ -457,7 +457,7 @@ function enemyHit(damage){
 
 function enemyAttackIfPossible(){
   if (enemySta-enemyStaLost > 0) {
-    enemyStaminaChangeMessage(-1,"The enemy attacked you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+    enemyStaminaChangeMessage(-1,"The enemy attacked you for&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
     playerHit(enemyAtk);
   } else {
     enemyRest(1);
