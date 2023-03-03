@@ -218,7 +218,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             };
             break;
           default:
-            logPlayerAction(actionString,"You hit it, but nothing happened.");
+            logPlayerAction(actionString,"You hit it and nothing happened.");
       }
       break;
 
@@ -344,7 +344,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"No one replied, but you heard something.");
             break;
           default:
-            logPlayerAction(actionString,"Seems like nobody is around.");
+            logPlayerAction(actionString,"Nobody seems to be around.");
         }
         break;
 
@@ -355,20 +355,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
             //Opportunity to attack player
             enemyAttackIfPossible();
-            //Didnť make sense? enemyRest(1);
             break;
-        case "Trap-Attack":
-        case "Trap-Roll":
-        case "Item":
-        case "Consumable":
-        case "Prop":
-          break;
-        case "Friend":
-          logPlayerAction(actionString,"They got tired of your inactivity and left.");
-          nextEncounter();
-          break;
-        default:
-          logPlayerAction(actionString,"You cannot rest, monsters are nearby!");
+          case "Trap-Attack":
+          case "Trap-Roll":
+          case "Item":
+          case "Consumable":
+          case "Prop":
+            break;
+          case "Friend":
+            logPlayerAction(actionString,"They got tired of waiting and left.");
+            nextEncounter();
+            break;
+            default:
+            logPlayerAction(actionString,"You cannot rest, monsters are nearby!");
         }
         //Only after everything else happenning
         playerGetStamina(1);
@@ -412,8 +411,9 @@ function enemyHit(damage){
 function enemyAttackIfPossible(){
   if (enemySta-enemyStaLost > 0) {
     enemyStaminaChangeMessage(-1,"The enemy attacked you&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
-    enemyStaLost+=1;
     playerHit(enemyAtk);
+  } else {
+    enemyRest(1);
   }
 }
 
@@ -517,7 +517,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Some strange power brought you back from the dead. Hopefully not necromancy.\"";
+  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Some strange power brought you back<br>from the dead. Hopefully not necromancy.\"";
   logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
