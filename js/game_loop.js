@@ -244,20 +244,28 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_roll':
-        if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too tired to make a move.");
-          break;
-        }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You dodged an attack.","Your roll was pointless.");
+            if (playerUseStamina(1)){
+              enemyStaminaChangeMessage(-1,"You dodged an attack.","Your roll was pointless.");
+            } else {
+              logPlayerAction(actionString,"You are too tired to make a move.");
+            }
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
-            playerHit(enemyAtk);
+            if (playerUseStamina(1)){
+              enemyStaminaChangeMessage(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+              playerHit(enemyAtk);
+            } else {
+              logPlayerAction(actionString,"You are too tired to make a move.");
+            }
             break;
           case "Heavy":
-            enemyStaminaChangeMessage(-1,"You dodged a heavy attack.","Your roll was pointless.");
+            if (playerUseStamina(1)){
+              enemyStaminaChangeMessage(-1,"You dodged a heavy attack.","Your roll was pointless.");
+            } else {
+              logPlayerAction(actionString,"You are too tired to make a move.");
+            }
             break;
           case "Item":
           case "Consumable":
@@ -287,6 +295,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
             if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
               logPlayerAction(actionString,"You choked them to their death.");
+              playerGetStamina(2); //Is this too much?
               nextEncounter();
             }else {
               logPlayerAction(actionString,"They moved out of your reach.");
@@ -404,6 +413,7 @@ function enemyHit(damage){
   enemyHpLost = enemyHpLost + damage
   if (enemyHpLost >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated an enemy!");
+    playerGetStamina(2); //Is this too much?
     nextEncounter();
   }
 }
@@ -429,8 +439,8 @@ function playerGetStamina(stamina){
     logPlayerAction(actionString,"You just wasted a moment of your live.");
     return false;
   } else {
-    logPlayerAction(actionString,"You regained some extra energy.");
-    playerStaLost -= 1;
+    logPlayerAction(actionString,"You regained some energy +" + stamina + " 🟢");
+    playerStaLost -= stamina;
     return true;
   }
 }
@@ -445,7 +455,12 @@ function playerUseStamina(stamina){
 }
 
 function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
-  var gainedString = "You feel somehow stronger "
+  var gainedString;
+  if (enemyMsg != "") {
+    gainedString = enemyMsg;
+  } else {
+    gainedString="You feel somehow stronger ";
+  }
   if (bonusHp > 0) {
     playerHpDefault += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
@@ -472,7 +487,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
 }
 
 function playerConsumed(refreshHp,refreshSta){
-  var consumedString = "Mmm, that was refreshing"
+  var consumedString = "Mmm, that was refreshing "
 
   var playerMissingHp = Math.abs(playerHp-playerHpDefault);
   var wastedHp=refreshHp-playerMissingHp;
@@ -517,7 +532,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Some strange power brought you back<br>from the dead. Hopefully not necromancy.\"";
+  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unknown power brought you back<br>from the dead. Hopefully it wasn't necromancy.\"";
   logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
