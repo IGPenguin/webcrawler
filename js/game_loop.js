@@ -349,14 +349,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_sleep':
-        playerGetStamina(1);
         switch (enemyType){
           case "Standard":
           case "Swift":
           case "Heavy":
             //Opportunity to attack player
             enemyAttackIfPossible();
-            enemyRest(1);
+            //Didnť make sense? enemyRest(1);
             break;
         case "Trap-Attack":
         case "Trap-Roll":
@@ -369,7 +368,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           nextEncounter();
           break;
         default:
-          logPlayerAction(actionString,"You cannot rest, monsters are nearby!");      }
+          logPlayerAction(actionString,"You cannot rest, monsters are nearby!");
+        }
+        //Only after everything else happenning
+        playerGetStamina(1);
     };
     redraw(encounterIndex);
   };
@@ -424,7 +426,7 @@ function nextEncounter(){
 //Player
 function playerGetStamina(stamina){
   if (playerStaLost < 1) { //Cannot get more
-    logPlayerAction(actionString,"You just wasted a moment of your time.");
+    logPlayerAction(actionString,"You just wasted a moment of your live.");
     return false;
   } else {
     logPlayerAction(actionString,"You regained some extra energy.");
@@ -566,12 +568,7 @@ function vibrateButtonPress(){
 
 async function actionFeedback(buttonID){
   vibrateButtonPress();
-  var button = document.getElementById(buttonID);
-  var initialButtonText = button.innerText;
-  button.innerText = "♻️ Working...";
-
   await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
-  button.innerText = initialButtonText;
 }
 
 function registerClickListeners(){
