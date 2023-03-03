@@ -592,7 +592,6 @@ function gameOver(){
   var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unknown power brought you back<br>from the dead. Hopefully it wasn't necromancy.\"";
   logAction(deathMessage);
   renewPlayer();
-  resetSeenEncounters();
   nextEncounter();
   resetSeenEncounters();
   alert("༼  x_x  ༽  Welp, you are dead.");
