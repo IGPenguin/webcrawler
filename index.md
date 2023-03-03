@@ -11,8 +11,8 @@ layout: default
 
 <center>
 <h2 style="margin-top:-8px;">Forgotten Forest</h2>
-<h2 id = "id_subtitle" style="margin:-12px; font-size:24px;"> </h2>
-<p style="margin:18px;"></p>
+<h2 id = "id_subtitle" style="margin:-14px; font-size:24px;"> </h2>
+<p style="margin:14px;"></p>
 
 <div class="card">
 <h1 id = "id_emoji" style="margin-top:8px;"/>
@@ -23,8 +23,8 @@ layout: default
 </div>
 
 <p style="margin:9px;"></p>
-<h3 style="margin:-2px; font-size:14px">· VS ·</h3>
-<p style="margin:9px;"></p>
+<h3 style="margin:-0px; font-size:14px">· VS ·</h3>
+<p style="margin:6px;"></p>
 
 <div class="toolbar">
 <h3 id = "id_player_name" style="font-weight:bold; margin-bottom:4px; margin-top:4px;"/>
