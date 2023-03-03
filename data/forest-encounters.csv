@@ -21,7 +21,7 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 119;🐑;Lost Sheep;Heavy;3;2;3;0;3;Wild Animal;He thinks he's well hidden.<br>But it's not the case.;
 120;💍;Ring of Damage;Trap-Roll;0;1;0;0;0;Shiny Object;Does something with damage.<br>Hopefully in a good way.;Ouch! The ring is too tight
 121;🦌;Nervous Deer;Heavy;4;3;2;0;5;Wild Animal;Something is not right.<br>You must be very careful.;
-122;🥕;Wild Carrot;Consumable;1;0;0;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
+122;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
 122;🌲;Spruce Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
 122;🌳;Oak Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>Who would have thought?;
 122;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
@@ -29,3 +29,4 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 124;🦔;Spiky Hedgehog;Standard;2;2;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 125;🌹;Rose Flower Bush;Trap-Attack;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
 126;🕳;Bottomless Hole;Trap-Attack;0;10;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;Ouch! It was deeper than expected
+126;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;
