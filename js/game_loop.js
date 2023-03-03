@@ -214,7 +214,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard": //You hit first, they hit back if they have stamina
             logPlayerAction(actionString,"You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️")
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
-            console.log("enemyPostHitHp: "+enemyPostHitHp)
             enemyHit(playerAtk);
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
               enemyStaminaChangeMessage(-1,"They hit you with a counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
@@ -314,8 +313,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
-              logPlayerAction(actionString,"You choked them out of consciousness.");
-              playerGetStamina(2); //Is this too much?
+              logPlayerAction(actionString,"You choked them to sleep and rested +2 🟢");
+              playerGetStaminaSilent(2); //Is this too much?
               nextEncounter();
             }else {
               logPlayerAction(actionString,"They moved out of your reach.");
@@ -383,13 +382,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_sleep':
-        var playerPostHitHp;
+        var playerPostHitHp = 1; //You can rest by default
         switch (enemyType){
           case "Standard":
           case "Swift":
           case "Heavy":
             //Opportunity to attack player
-            playerPostHitHp=playerHp-enemyAtk;
+            if (enemySta - enemyStaLost > 0){
+              playerPostHitHp=playerHp-enemyAtk;
+            }
             enemyAttackIfPossible();
             break;
           case "Trap-Attack":
