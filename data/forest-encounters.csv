@@ -18,7 +18,7 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 116;🦉;Smart Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
 117;⛺️;Abandoned Tent;Trap;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;You landed in a swarm of fleas
 118;🍄;Suspicious Fungi;Item;1;0;0;0;0;Wild Animal;Looks really tasty.<br>Could be eaten raw.;
-119;🐑;Lost Sheep;Heavy;2;2;3;0;3;Wild Animal;Oooh. It must've lost its herd.<br>I should try to lead it back.;
+119;🐑;Lost Sheep;Heavy;2;1;3;0;3;Wild Animal;Oooh. It must've lost its herd.<br>I should try to lead it back.;
 120;💍;Ring of Damage;Trap;0;1;0;0;0;Shiny Object;Does something with damage.<br>Hopefully in a good way.;Ouch! The ring is too tight
 121;🦌;Nervous Deer;Heavy;3;2;2;0;10;Wild Animal;Something is not right.<br>You must be very careful.;
 122;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
