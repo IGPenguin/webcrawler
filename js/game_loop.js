@@ -188,14 +188,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to attack.");
+            logPlayerAction(actionString,"You are too tired to strike an attack.");
             break;
           }
         switch (enemyType){
-          case "Trap-Attack":
+          case "Trap":
           case "Trap-Roll":
             logPlayerAction(actionString,"You smashed it into tiny pieces!");
             nextEncounter();
+            break;
+          case "Trap-Attack":
+            playerHit(enemyAtk);
+            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
             break;
           case "Item":
           case "Consumable":
@@ -229,17 +233,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked an attack.","Your blocking was pointless.");
+            enemyStaminaChangeMessage(-1,"You blocked a standard attack.","Your blocking was pointless.");
             break;
           case "Swift":
             enemyStaminaChangeMessage(-1,"You blocked a light attack.","Your blocking was pointless.");
             break;
           case "Heavy":
-            logPlayerAction(actionString,"You failed to block a heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️")
-            playerHit(enemyAtk);
+            if (enemySta-enemyStaLost > 0){
+              enemyStaminaChangeMessage(-1,"You failed to block a heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              playerHit(enemyAtk);
+            } else {
+              enemyStaminaChangeMessage(-1,"n/a","Your blocking was pointless.");
+            }
             break;
           default:
-            logPlayerAction(actionString,"Suprisingly, nothing happened.");
+            logPlayerAction(actionString,"You just wasted your energy.");
         }
         break;
 
@@ -247,7 +255,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged an attack.","Your roll was pointless.");
+              enemyStaminaChangeMessage(-1,"You dodged a standard attack.","Your roll was pointless.");
             } else {
               logPlayerAction(actionString,"You are too tired to make a move.");
             }
@@ -277,11 +285,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You rolled away from them.");
             nextEncounter();
             break;
-          case "Trap-Attack":
+          case "Trap-Roll":
             logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
-          case "Trap-Roll":
+          case "Trap":
+          case "Trap-Attack":
             logPlayerAction(actionString,"You just moved away from that.");
             nextEncounter();
             break;
@@ -310,7 +319,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHit(enemyAtk+2);
             break;
           case "Trap-Attack":
-          case "Trap-Roll":
+          case "Trap":
             logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
@@ -353,7 +362,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"No one replied, but you heard something.");
             break;
           default:
-            logPlayerAction(actionString,"Nobody seems to be around.");
+            logPlayerAction(actionString,"Your words echo into the surroundings.");
         }
         break;
 
@@ -459,28 +468,28 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
   if (enemyMsg != "") {
     gainedString = enemyMsg;
   } else {
-    gainedString="You feel somehow stronger ";
+    gainedString="You feel somehow stronger";
   }
   if (bonusHp > 0) {
     playerHpDefault += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
-    gainedString += "+"+bonusHp + " ❤️";
+    gainedString += " +"+bonusHp + " ❤️";
   }
   if (bonusAtk > 0){
     playerAtk += parseInt(bonusAtk);
-    gainedString += "+"+bonusAtk + " 🎯";
+    gainedString += " +"+bonusAtk + " 🎯";
   }
   if (bonusSta > 0){
     playerSta += parseInt(bonusSta);
-    gainedString += "+"+bonusSta + " 🟢";
+    gainedString += " +"+bonusSta + " 🟢";
   }
   if (bonusDef > 0){
     playerDef += parseInt(bonusDef);
-    gainedString += "+"+bonusDef + " 🛡";
+    gainedString += " +"+bonusDef + " 🛡";
   }
   if (bonusInt > 0){
     playerInt += parseInt(bonusInt);
-    gainedString += "+"+bonusInt + " 🧠";
+    gainedString += " +"+bonusInt + " 🧠";
   }
   logPlayerAction(actionString,gainedString);
   nextEncounter();
