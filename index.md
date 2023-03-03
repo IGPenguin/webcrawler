@@ -23,11 +23,11 @@ layout: default
 </div>
 
 <p style="margin:9px;"></p>
-<h3 style="margin:-2px">· VS ·</h3>
+<h3 style="margin:-2px; font-size:14px">· VS ·</h3>
 <p style="margin:9px;"></p>
 
 <div class="toolbar">
-<h4 id = "id_player_name" style="font-weight:bold; margin-bottom:4px;"/>
+<h3 id = "id_player_name" style="font-weight:bold; margin-bottom:4px; margin-top:4px;"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
 <h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:12px; padding-right:12px;" align="left"/><h4 style="margin-bottom:0px;">...</h4>
 </div>
