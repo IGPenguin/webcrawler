@@ -23,12 +23,10 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 121;🦌;Nervous Deer;Heavy;3;2;2;0;10;Wild Animal;Something is not right.<br>You must be very careful.;
 122;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
 123;🌲;Spruce Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
-124;🌳;Oak Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>Who would have thought?;
-125;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
-126;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
-127;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
-128;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
-129;🕳;Bottomless Hole;Trap-Attack;0;9;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;Ouch! It was deeper than expected
-130;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you an agility training
-131;🗺;Wrinkled Map;Item;0;0;1;0;0;Artefact;You stumbled upon an old map.<br>There are some notes around the edges.;You gained some area awareness
-132;🐦;Little Bird;Prop;0;0;0;0;0;Harmless Critter;It doesn't look any dangerous.<br>But you can never know.;
+124;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
+125;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
+126;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
+127;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
+128;🕳;Bottomless Hole;Trap-Attack;0;9;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;Ouch! It was deeper than expected
+129;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you an agility training
+130;🗺;Wrinkled Map;Item;0;0;1;0;0;Artefact;You stumbled upon an old map.<br>There are some notes around the edges.;You gained some area awareness
