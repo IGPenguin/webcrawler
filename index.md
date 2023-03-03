@@ -32,12 +32,12 @@ layout: default
 <h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:12px; padding-right:12px;" align="left"/><h4 style="margin-bottom:0px;">...</h4>
 </div>
 
-<p style="margin:14px;"></p>
-<button type = "button" id = "button_attack">🎯&nbsp;&nbsp;Attack</button>&nbsp;
-<button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;
-<button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>&nbsp;
-<p style="margin:10px;"></p>
-<button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;
-<button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;
-<button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Wait</button>&nbsp;
+<p style="margin:24px;"></p>
+<button type = "button" id = "button_attack">🎯&nbsp;&nbsp;Attack</button>&nbsp;&nbsp;
+<button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;&nbsp;
+<button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>
+<p style="margin:12px;"></p>
+<button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;
+<button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;
+<button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Rest</button>
 </center>
