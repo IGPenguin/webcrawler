@@ -313,7 +313,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
-              logPlayerAction(actionString,"You choked them to sleep and rested +2 🟢");
+              logPlayerAction(actionString,"You choked them and rested +2 🟢");
               playerGetStaminaSilent(2); //Is this too much?
               nextEncounter();
             }else {
