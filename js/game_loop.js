@@ -29,7 +29,7 @@ var playerInt;
 var playerStaLost = 0;
 
 var actionString;
-var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You are waking up from seemingly<br>eternal slumber. Not knowing where you are.<br>Now it's time to find out.\"";
+var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You have awaken from a seemingly<br>eternal slumber, not knowing where you are.<br>So get yourself together and go find out.\"";
 renewPlayer();
 
 //Enemy stats init
