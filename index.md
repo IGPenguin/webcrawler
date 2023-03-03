@@ -43,5 +43,4 @@ layout: default
 
 <p style="margin:24px"></p>
 <h4 style="font-size:12px; opacity:0.85;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 style="font-size:10px; margin-top:-12px; opacity:0.6;">ver. 3/3/23</h4>
-
 </center>
