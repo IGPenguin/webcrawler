@@ -285,7 +285,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab':
         switch (enemyType){
           case "Standard":
-            logPlayerAction(actionString,"They moved out of your reach.");
+            if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
+              logPlayerAction(actionString,"You choked them to their death.");
+              nextEncounter();
+            }else {
+              logPlayerAction(actionString,"They moved out of your reach.");
+            }
             break;
           case "Swift":
             logPlayerAction(actionString,"They easily evaded your grasp.");
@@ -486,7 +491,7 @@ function playerConsumed(refreshHp,refreshSta){
       consumedString += "+"+refreshedAmount + " 🟢";
     }
   } else {
-    consumedString="Ugh, you ate a little too much.";
+    consumedString="You feel tired of eating too much.";
     playerUseStamina(1);
   }
   logPlayerAction(actionString,consumedString);
