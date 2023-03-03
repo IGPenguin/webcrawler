@@ -40,4 +40,8 @@ layout: default
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;
 <button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Rest</button>
+
+<p style="margin:24px"></p>
+<h4 style="font-size:12px; opacity:0.85;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 style="font-size:10px; margin-top:-12px; opacity:0.6;">ver. 3/3/23</h4>
+
 </center>
