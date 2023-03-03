@@ -326,8 +326,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyRest(1);
             break;
           case "Heavy":
-            logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
-            playerHit(enemyAtk+2);
+            if (enemySta - enemyStaLost > 0){
+              logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
+              playerHit(enemyAtk+2);
+            } else {
+              playerPushAndGetStamina(1);
+            }
             break;
           case "Trap":
           case "Trap-Roll":
@@ -444,8 +448,8 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 function enemyHit(damage){
   enemyHpLost = enemyHpLost + damage
   if (enemyHpLost >= enemyHp) {
-    playerGetStamina(2); //Is this too much?
-    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated an enemy!");
+    playerGetStaminaSilent(2); //Is this too much?
+    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated them and rested +2 🟢");
     nextEncounter();
   }
 }
@@ -472,6 +476,26 @@ function playerGetStamina(stamina){
     return false;
   } else {
     logPlayerAction(actionString,"You regained some energy +" + stamina + " 🟢");
+    playerStaLost -= stamina;
+    return true;
+  }
+}
+
+function playerGetStaminaSilent(stamina){
+  if (playerStaLost < 1) { //Cannot get more
+    logPlayerAction(actionString,"n/a");
+    return false;
+  } else {
+    playerStaLost -= stamina;
+    return true;
+  }
+}
+
+function playerPushAndGetStamina(stamina){
+  if (playerStaLost < 1) { //Cannot get more
+    return false;
+  } else {
+    logPlayerAction(actionString,"You pushed them out of balance +" + stamina + " 🟢");
     playerStaLost -= stamina;
     return true;
   }

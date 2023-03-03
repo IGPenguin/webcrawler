@@ -8,7 +8,7 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 106;💍;Ring of Love;Item;1;0;0;0;0;Shiny Object;Keeps your heart warm.<br>Could bring back lost memories.;You felt a surge in your chest
 107;🍪;Cinnamon Cookie;Consumable;2;0;1;0;0;Fancy Food;This cookie looks super tasty.<br>Give me that!;
 108;🐺;Old Wolf;Standard;3;2;2;0;15;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
-109;🕸;Giant Web;Trap-Attack;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;You entangled yourself and spider bit you
+109;🕸;Giant Web;Trap-Attack;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;You entangled yourself with a spider
 110;🪓;Lumberjack Axe;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner jumped out and hit you
 111;📜;Old Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You learned the power of the elders
 112;🧪;Glowing Potion;Item;0;1;0;0;0;Someone's Trash;It has a sinister aura.<br>You probably shouldn't drink it.;It left funny taste in your mouth
