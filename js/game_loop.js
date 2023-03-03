@@ -216,7 +216,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
-              enemyStaminaChangeMessage(-1,"They hit you with a counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"They hit you with counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             } else {
               enemyStaminaChange(-1,"n/a");
