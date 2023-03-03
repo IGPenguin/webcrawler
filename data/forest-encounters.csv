@@ -1,7 +1,7 @@
 id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 100;🐛;Small Worm;Standard;1;1;1;0;0;Pesky Insect;Mindin' its own business.<br>Sould you interfere?;
-101;🐀;Stinky Rat;Swift;2;1;1;0;5;Wild Animal;*sniffs around maniacally*<br>*runs towards you*;
-102;🐀🐀;Rat Duo;Swift;4;1;2;0;10;Wild Animals;It is getting out of hand.<br>Now there are two of them.;
+101;🐀;Stinky Rat;Swift;2;1;1;0;3;Wild Animal;*sniffs around maniacally*<br>*runs towards you*;
+102;🐀🐀;Rat Duo;Swift;4;1;2;0;3;Wild Animals;It is getting out of hand.<br>Now there are two of them.;
 103;🐗;Momma Boar;Heavy;3;2;1;0;10;Wild Animal;It follows you around.<br>No matter what you do.;
 104;🕷;Eight-legged Menace;Swift;3;2;1;0;6;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.;
 105;🐝;Swarm of Bees;Swift;3;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
@@ -10,24 +10,25 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 108;🐺;Old Wolf;Standard;3;2;2;0;15;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
 109;🕸;Giant Web;Trap-Attack;0;3;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;You entangled yourself and spider bit you
 110;🪓;Lumberjack Axe;Trap;0;2;0;0;0;Somebody's Property;The owner is probably nearby.<br>I'd rather not mess with it.;The owner jumped out and hit you
-111;📜;Old Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed the power of the elders
-112;🧪;Glowing Potion;Item;0;1;0;0;0;Trash;It has a sinister aura.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
+111;📜;Old Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You learned the power of the elders
+112;🧪;Glowing Potion;Item;0;1;0;0;0;Someone's Trash;It has a sinister aura.<br>You probably shouldn't drink it.;It left funny taste in your mouth
 113;🦝;Curious Raccoon;Standard;2;1;2;0;2;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;
 114;🏹;Bow and Arrows;Trap;0;3;0;0;0;Dangerous Weapon;There must be a huntsman around.<br>He probably won't miss it.;You shot yourself by mistake
 115;🐍;Extra Big Snake;Heavy;3;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
 116;🦉;Smart Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
 117;⛺️;Abandoned Tent;Trap;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;You landed in a swarm of fleas
 118;🍄;Suspicious Fungi;Item;1;0;0;0;0;Wild Animal;Looks really tasty.<br>Could be eaten raw.;
-119;🐑;Lost Sheep;Heavy;2;2;3;0;3;Wild Animal;He thinks he's well hidden.<br>But it's not the case.;
+119;🐑;Lost Sheep;Heavy;2;2;3;0;3;Wild Animal;Oooh. It must've lost its herd.<br>I should try to lead it back.;
 120;💍;Ring of Damage;Trap;0;1;0;0;0;Shiny Object;Does something with damage.<br>Hopefully in a good way.;Ouch! The ring is too tight
-121;🦌;Nervous Deer;Heavy;3;2;2;0;5;Wild Animal;Something is not right.<br>You must be very careful.;
+121;🦌;Nervous Deer;Heavy;3;2;2;0;10;Wild Animal;Something is not right.<br>You must be very careful.;
 122;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
 123;🌲;Spruce Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
 124;🌳;Oak Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>Who would have thought?;
 125;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
 126;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
 127;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
-128;🌹;Rose Flower Bush;Trap-Attack;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
-129;🕳;Bottomless Hole;Trap-Roll;0;9;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;Ouch! It was deeper than expected
+128;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
+129;🕳;Bottomless Hole;Trap-Attack;0;9;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;Ouch! It was deeper than expected
 130;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you an agility training
-131;🗺;Wrinkled Map;Item;0;0;1;0;0;Artefact;You stumbled upon an old map.<br>There are some notes around the edges.;You are more aware about the surroundings
+131;🗺;Wrinkled Map;Item;0;0;1;0;0;Artefact;You stumbled upon an old map.<br>There are some notes around the edges.;You gained some area awareness
+132;🐦;Little Bird;Prop;0;0;0;0;0;Harmless Critter;It doesn't look any dangerous.<br>But you can never know.;
