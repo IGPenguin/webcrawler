@@ -14,7 +14,7 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 112;🧪;Glowing Potion;Item;0;1;0;0;0;Someone's Trash;It has a sinister aura.<br>You probably shouldn't drink it.;It left funny taste in your mouth
 113;🦝;Curious Raccoon;Standard;2;1;2;0;1;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;
 114;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;I lays besides a dead hunter.<br>He probably won't miss it.;You shot yourself by mistake
-115;🐍;Gigantic Snake;Heavy;3;2;2;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
+115;🐍;Gigantic Snake;Heavy;3;2;1;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
 116;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
 117;⛺️;Abandoned Tent;Trap;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;You landed in a swarm of fleas
 118;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Fungi;Looks really tasty.<br>Could be eaten raw.;
@@ -30,6 +30,5 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 128;🕳;Bottomless Hole;Trap-Attack;0;9;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;Ouch! It was deeper than expected
 129;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you an agility training
 130;🗺;Wrinkled Map;Item;0;0;1;0;0;Artefact;You stumbled upon an old map.<br>There are some notes around the edges.;You gained some area awareness
-131;🐻;Grizzly Cub;Standard;2;1;2;0;0;Apex Animal;It l<br>There are some notes around the edges.;You gained some area awareness
-132;🐐;Irritated Goat;Heavy;2;1;2;0;3;It looks packed with anger.<br>Better avoid it's attacks. ;
-133;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
+131;🐕;Stray Dog;Standard;2;1;2;0;2;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
+132;🐐;Irritated Goat;Heavy;2;1;2;0;3;Wild Animal;It looks packed with anger.<br>Better avoid it's attacks.;
