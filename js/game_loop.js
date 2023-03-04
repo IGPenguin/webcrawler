@@ -167,6 +167,7 @@ function redraw(index){
   if (enemyHp > 0) { enemyStatusString = "❤️ " + "▰".repeat(enemyHp);}
     if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "▱".repeat(enemyHpLost); } //YOLO
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
+    console.log("enemyStaLost:"+enemyStaLost+" "+"enemysta:"+enemySta);
     if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "▱".repeat(enemyStaLost); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
   if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap") || enemyType.includes("Prop")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
@@ -346,7 +347,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Consumable":
-            playerConsumed(enemyHp);
+            playerConsumed(enemyHp,enemySta);
             nextEncounter();
             break;
           default:
@@ -543,17 +544,23 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
   nextEncounter();
 }
 
-function playerConsumed(refreshHp,refreshSta){
+function playerConsumed(refreshHp,refreshSta){ //FUCK MY FUCKING LIFE
   var consumedString = "Mmm, that was refreshing "
 
-  var playerMissingHp = Math.abs(playerHp-playerHpDefault);
-  var wastedHp=refreshHp-playerMissingHp;
+  var wastedHp=(playerHpDefault-playerHp)-refreshHp;
+  console.log("wastedhp:"+wastedHp);
   var healedAmount = refreshHp - wastedHp;
+  console.log("healedAmount:"+wastedHp);
 
+  console.log("playerSta:"+playerSta);
+  console.log("playerStaLost:"+playerStaLost);
+  console.log("refreshSta:"+refreshSta);
   var wastedSta=refreshSta-playerStaLost;
+  console.log("wastedsta:"+wastedSta);
   var refreshedAmount = refreshSta - wastedSta;
+  console.log("refreshamount:"+refreshedAmount);
 
-  if ((playerMissingHp > 0) || (playerStaLost > 0)){
+  if ((playerHpDefault-playerHp > 0) || (playerStaLost > 0)){
 
     if (healedAmount > 0){
       playerHp += healedAmount;
@@ -561,7 +568,7 @@ function playerConsumed(refreshHp,refreshSta){
     }
 
     if (refreshedAmount > 0){
-      playerSta += refreshedAmount;
+      playerGetStaminaSilent(refreshedAmount);
       consumedString += "+"+refreshedAmount + " 🟢";
     }
   } else {
