@@ -467,8 +467,7 @@ function enemyAttackIfPossible(){
 function nextEncounter(){
   markAsSeen(encounterIndex);
   encounterIndex = getUnseenEncounterIndex();
-  enemyRenew();
-  playerStaLost=0; //Let's be generous 
+  enemyRenew(); 
 }
 
 //Player
