@@ -18,8 +18,8 @@ var adventureLog = "";
 //Player stats init
 //var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
 var playerName = "Nameless Hero"
-var playerHpDefault = 4;
-var playerStaDefault = 4;
+var playerHpDefault = 3;
+var playerStaDefault = 3;
 var playerHp;
 var playerSta;
 var playerAtk;
@@ -468,6 +468,7 @@ function nextEncounter(){
   markAsSeen(encounterIndex);
   encounterIndex = getUnseenEncounterIndex();
   enemyRenew();
+  playerStaLost=0; //Let's be generous 
 }
 
 //Player
