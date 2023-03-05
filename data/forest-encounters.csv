@@ -9,8 +9,8 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 107;🍪;Cinnamon Cookie;Consumable;2;0;1;0;0;Fancy Food;This cookie looks super tasty.<br>Give me that!;
 108;🐺;Old Wolf;Standard;3;2;2;0;3;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
 109;🕸;Giant Web;Trap-Attack;0;2;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;Angry spider jumped at your face
-110;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;
-111;📜;Old Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed the elder power
+110;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it with yourself
+111;📜;Old Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
 112;🧪;Glowing Potion;Item;0;1;0;0;0;Someone's Trash;It has a sinister aura.<br>You probably shouldn't drink it.;It left funny taste in your mouth
 113;🦝;Curious Raccoon;Standard;2;1;2;0;1;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;
 114;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;I lays besides a dead hunter.<br>He probably won't miss it.;You shot yourself by mistake
