@@ -135,6 +135,7 @@ function resetSeenEncounters(){
 function redraw(index){
   incrementLightLevel();
   encounterIndex = index; //Prediction: This will cause trouble.
+  selectedLine = String(lines[index]);
 
   //Player UI
   document.getElementById('id_player_name').innerHTML = playerName;
@@ -144,7 +145,6 @@ function redraw(index){
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
 
-  selectedLine = String(lines[index]);
   //Enemy UI - id;emoji;name;type;hp;atk;sta;def;team;desc
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
@@ -198,8 +198,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Trap-Attack":
-            playerHit(enemyAtk);
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
+            playerHit(enemyAtk);
             break;
           case "Item":
           case "Consumable":
@@ -219,7 +219,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"They hit you with counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChange(-1,"n/a");
+              enemyRest(1);
             }
             break;
           case "Swift": //They hit you if they have stamina
@@ -296,8 +296,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Trap-Roll":
-            playerHit(enemyAtk);
             logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+            playerHit(enemyAtk);
             break;
           case "Trap":
           case "Trap-Attack":
@@ -313,11 +313,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
+
               logPlayerAction(actionString,"You choked them and rested +2 🟢");
               playerGetStaminaSilent(2); //Is this too much?
               nextEncounter();
             }else {
-              logPlayerAction(actionString,"They moved out of your reach.");
+              logPlayerAction(actionString,"They moved out of your reach."); // Not enough stamina to choke
             }
             break;
           case "Swift":
@@ -346,7 +347,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Consumable":
-            playerConsumed(enemyHp);
+            playerConsumed(enemyHp,enemySta);
             nextEncounter();
             break;
           default:
@@ -465,9 +466,10 @@ function enemyAttackIfPossible(){
 }
 
 function nextEncounter(){
+  console.log("Starting new encounter...");
   markAsSeen(encounterIndex);
   encounterIndex = getUnseenEncounterIndex();
-  enemyRenew(); 
+  enemyRenew();
 }
 
 //Player
@@ -546,26 +548,24 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
 function playerConsumed(refreshHp,refreshSta){
   var consumedString = "Mmm, that was refreshing "
 
-  var playerMissingHp = Math.abs(playerHp-playerHpDefault);
-  var wastedHp=refreshHp-playerMissingHp;
+  var wastedHp=(-1)*((playerHpDefault-playerHp)-refreshHp);
   var healedAmount = refreshHp - wastedHp;
-
   var wastedSta=refreshSta-playerStaLost;
   var refreshedAmount = refreshSta - wastedSta;
 
-  if ((playerMissingHp > 0) || (playerStaLost > 0)){
+  if ((playerHpDefault-playerHp > 0) || (playerStaLost > 0)){
 
     if (healedAmount > 0){
       playerHp += healedAmount;
-      consumedString += "+"+healedAmount + " ❤️";
+      consumedString += "+"+healedAmount + " ❤️ ";
     }
 
     if (refreshedAmount > 0){
-      playerSta += refreshedAmount;
+      playerGetStaminaSilent(refreshedAmount);
       consumedString += "+"+refreshedAmount + " 🟢";
     }
   } else {
-    consumedString="You feel tired of eating too much.";
+    consumedString="You feel tired of eating while being full.";
     playerUseStamina(1);
   }
   logPlayerAction(actionString,consumedString);
