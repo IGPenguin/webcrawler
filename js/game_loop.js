@@ -18,8 +18,11 @@ var adventureLog = "";
 //Player stats init
 //var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
 var playerName = "Nameless Hero"
-var playerHpDefault = 3;
+var playerHpDefault = 3
 var playerStaDefault = 3;
+
+var playerHpMax = playerHpDefault;
+var playerStaMax = playerStaDefault;
 var playerHp;
 var playerSta;
 var playerAtk;
@@ -139,7 +142,7 @@ function redraw(index){
 
   //Player UI
   document.getElementById('id_player_name').innerHTML = playerName;
-  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpDefault))
+  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpMax))
   if (playerSta > 0) { playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta-playerStaLost) + "▱".repeat(playerStaLost);}
     if (playerStaLost > 0) { playerStatusString = playerStatusString.slice(0,-1*playerStaLost) + "▱".repeat(playerStaLost); } //YOLO
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
@@ -265,7 +268,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged a standard attack.","Your roll was totally pointless.");
+              enemyStaminaChangeMessage(-1,"You dodged their standard attack.","Your roll was totally pointless.");
             } else {
               logPlayerAction(actionString,"You are too tired to make a move.");
             }
@@ -313,19 +316,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
-
-              logPlayerAction(actionString,"You choked them and rested +2 🟢");
-              playerGetStaminaSilent(2); //Is this too much?
-              nextEncounter();
-            }else {
-              logPlayerAction(actionString,"They moved out of your reach."); // Not enough stamina to choke
+              logPlayerAction(actionString,"You grabbed them into stranglehold.");
+              enemyKnockedOut();
+            } else {
+              logPlayerAction(actionString,"You were too slow, they dodged that."); // Not enough stamina to choke
             }
             break;
           case "Swift":
             logPlayerAction(actionString,"They easily evaded your grasp.");
             enemyRest(1);
             break;
-          case "Heavy":
+          case "Heavy": // FIXME endless push on tired heavy enemies
             if (enemySta - enemyStaLost > 0){
               logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
               playerHit(enemyAtk+2);
@@ -456,6 +457,12 @@ function enemyHit(damage){
   }
 }
 
+function enemyKnockedOut(){
+  playerGetStaminaSilent(2); //Is this too much?
+  logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You knocked them out and rested +2 🟢");
+  nextEncounter();
+}
+
 function enemyAttackIfPossible(){
   if (enemySta-enemyStaLost > 0) {
     enemyStaminaChangeMessage(-1,"The enemy attacked you for&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
@@ -521,7 +528,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
     gainedString="You feel somehow stronger";
   }
   if (bonusHp > 0) {
-    playerHpDefault += parseInt(bonusHp);
+    playerHpMax += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
     gainedString += " +"+bonusHp + " ❤️";
   }
@@ -548,12 +555,12 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
 function playerConsumed(refreshHp,refreshSta){
   var consumedString = "Mmm, that was refreshing "
 
-  var wastedHp=(-1)*((playerHpDefault-playerHp)-refreshHp);
+  var wastedHp=(-1)*((playerHpMax-playerHp)-refreshHp);
   var healedAmount = refreshHp - wastedHp;
   var wastedSta=refreshSta-playerStaLost;
   var refreshedAmount = refreshSta - wastedSta;
 
-  if ((playerHpDefault-playerHp > 0) || (playerStaLost > 0)){
+  if ((playerHpMax-playerHp > 0) || (playerStaLost > 0)){
 
     if (healedAmount > 0){
       playerHp += healedAmount;
@@ -579,12 +586,15 @@ function playerHit(incomingDamage){
 }
 
 function renewPlayer(){
+  console.log("Resetting player stats");
+  console.log("player hp:" +playerHp+" > "+playerHpDefault);
+  console.log("player sta:" +playerSta+" > "+playerStaDefault);
   playerHp = playerHpDefault;
   playerSta = playerStaDefault;
+  playerStaLost = 0;
   playerAtk = 1;
   playerDef = 0;
   playerInt = 1;
-  playerStaLost = 0;
 }
 
 //End Game
