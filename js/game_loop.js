@@ -175,13 +175,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to strike an attack&nbsp;&nbsp;0 🟢");
+            logPlayerAction(actionString,"You are too tired to strike an attack 0 🟢");
             break;
           }
         switch (enemyType){
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into many little pieces -1 🟢");
+            logPlayerAction(actionString,"You smashed it into little pieces -1 🟢");
             nextEncounter();
             break;
           case "Trap-Attack":
@@ -226,7 +226,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too tired to raise your shield&nbsp;&nbsp;0 🟢");
+          logPlayerAction(actionString,"You are too tired to raise your shield 0 🟢");
           break;
         }
         switch (enemyType){
@@ -245,7 +245,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           case "Dream":
-              logPlayerAction(actionString,"You grew weaker after <b>raising shield</b> -1 🟢");
+              logPlayerAction(actionString,"You grew weaker with <b>raising shield</b> -1 🟢");
               break;
           default:
             logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
@@ -258,7 +258,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerUseStamina(1)){
               enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your roll was totally pointless -1 🟢");
             } else {
-              logPlayerAction(actionString,"You are now too tired to make a move&nbsp;&nbsp;0 🟢");
+              logPlayerAction(actionString,"You are now too tired to make a move 0 🟢");
             }
             break;
           case "Swift":
@@ -266,14 +266,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"They hit you while you were rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             } else {
-              logPlayerAction(actionString,"You are now too tired to make a move&nbsp;&nbsp;0 🟢");
+              logPlayerAction(actionString,"You are now too tired to make a move 0 🟢");
             }
             break;
           case "Heavy":
             if (playerUseStamina(1)){
               enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your roll was pointless.");
             } else {
-              logPlayerAction(actionString,"You are too tired to make a move&nbsp;&nbsp;0 🟢");
+              logPlayerAction(actionString,"You are too tired to make a move 0 🟢");
             }
             break;
           case "Item":
@@ -296,7 +296,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"<b>Combat actions</b> always drain <b>energy</b> -1 🟢");
+            logPlayerAction(actionString,"<b>Combat actions</b> drain your<b>energy</b> -1 🟢");
             nextEncounter();
           break;
           default:
