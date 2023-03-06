@@ -12,18 +12,18 @@ id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 11;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
 12;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it to use it as a weapon
 13;🦝;Curious Raccoon;Standard;2;1;2;0;1;Wild Animal;Aaaaw. Look at him.<br>A little cute boy.;
-14;🐑;Lost Sheep;Standard;3;1;1;0;3;Wild Animal;It must have lost its herd.<br>And it's not happy about it.;
+14;🐑;Angry Ram;Standard;3;1;1;0;3;Wild Animal;It must have lost its herd.<br>And it's not happy about it.;
 15;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
 16;🦔;Spiky Hedgehog;Standard;2;1;1;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 17;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
-18;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
-19;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you a forest agility training
-20;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;It lays besides a dead hunter.<br>He probably won't miss it.;You shot yourself by mistake
-21;🐕;Stray Dog;Standard;2;1;2;0;2;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
-22;🐐;Irritated Ram;Heavy;2;1;2;0;5;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
-23;🦨;Forest Skunk;Standard;2;1;2;0;3;Wild Animal;This one stinks.<br>Eww...;
-24;🍪;Cinnamon Cookie;Consumable;2;0;1;0;0;Fancy Food;Maybe someone from the camp lost it.<br>It looks unspoiled and tasty.;
-25;🦌;Massive Deer;Heavy;3;1;2;0;10;Wild Animal;It must be really strong.<br>Better be very careful.;
+18;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you a forest agility training
+19;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;It lays besides a dead hunter.<br>He probably won't miss it.;You shot yourself by mistake
+20;🐕;Stray Dog;Standard;2;1;2;0;2;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
+21;🐐;Irritable Goat;Heavy;2;1;2;0;5;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
+22;🦨;Forest Skunk;Swift;2;1;2;0;3;Wild Animal;This one is fast and stinky.<br>Eww...;
+23;🍪;Cinnamon Cookie;Consumable;2;0;1;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
+24;🦌;Massive Deer;Heavy;3;1;2;0;10;Wild Animal;It must be really strong.<br>Better be very careful.;
+25;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
 26;🐍;Gigantic Snake;Heavy;3;2;1;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
 //Forest Boss
 27;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
