@@ -48,10 +48,6 @@ var enemyMsg;
 var enemyHpLost = 0;
 var enemyStaLost = 0;
 var enemyAtkBonus = 0;
-
-//Uncomment and change the int for testing ids higher than that
-//seenEncounters = Array.from(Array(1).keys())
-
 var lines;
 var randomEncounterIndex;
 
@@ -126,7 +122,7 @@ function resetSeenEncounters(){
 
 //UI Logic
 function redraw(index){
-  encounterIndex = index; //Prediction: This will cause trouble.
+  encounterIndex = index;
   selectedLine = String(lines[index]);
 
   //Player UI
@@ -382,12 +378,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             enemyAttackIfPossible();
             break;
+          case "Trap":
           case "Trap-Attack":
           case "Trap-Roll":
           case "Item":
           case "Consumable":
           case "Prop":
-            break;
+            break; //Just rest
           case "Friend":
             logPlayerAction(actionString,"They got tired of waiting and left.");
             nextEncounter();
