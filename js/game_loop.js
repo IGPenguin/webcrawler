@@ -28,7 +28,7 @@ var playerDef;
 var playerInt;
 
 var actionString;
-var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;👺&nbsp;&nbsp;You feel that something <b>hurt you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;There is nothing around to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
+var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;👺&nbsp;&nbsp;You felt that something <b>hurt you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, nothing to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
 
 //Enemy stats init
 var enemyEmoji;
@@ -175,7 +175,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to strike an attack 0 🟢");
+            logPlayerAction(actionString,"You are too tired to strike anything 0 🟢");
             break;
           }
         switch (enemyType){
