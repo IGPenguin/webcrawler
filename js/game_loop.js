@@ -176,7 +176,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to strike them.");
+            logPlayerAction(actionString,"You are too tired to strike an attack.");
             break;
           }
         switch (enemyType){
@@ -195,7 +195,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"Congratulations, you scared them away!");
+            logPlayerAction(actionString,"You scared them to run away.");
             nextEncounter();
             break;
           case "Heavy":
@@ -472,7 +472,7 @@ function playerGetStamina(stamina){
     logPlayerAction(actionString,"You just wasted a moment of your live.");
     return false;
   } else {
-    logPlayerAction(actionString,"You regained some energy +" + stamina + " 🟢");
+    logPlayerAction(actionString,"You regained some lost energy +" + stamina + " 🟢");
     playerStaLost -= stamina;
     return true;
   }
@@ -592,8 +592,9 @@ function gameOver(){
   var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unknown power brought you back<br>from the dead. Hopefully it wasn't necromancy.\"";
   logAction(deathMessage);
   renewPlayer();
-  nextEncounter();
   resetSeenEncounters();
+  encounterIndex=-1; //Reset progress
+  nextEncounter();
   alert("༼  x_x  ༽  Welp, you are dead.");
 }
 
