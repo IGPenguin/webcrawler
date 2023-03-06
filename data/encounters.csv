@@ -1,52 +1,55 @@
-id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
-//Tutorial Dream
-TBD
-//Forgotten Forest
-0;🌳;Oak Tree;Prop;0;0;0;0;0;Forest Flora;Hmm. A tree in a forest.<br>Who would have thought.;
-1;🐛;Tiny Worm;Standard;1;1;1;0;0;Harmless Insect;Mindin' its own business.<br>Should you interfere?;
-2;🐀;Dire Rat;Standard;2;1;1;0;3;Wild Animal;*sniffs around maniacally*<br>*runs towards you*;
-3;🐗;Alpha Boar;Heavy;3;1;1;0;10;Wild Animal;It follows you around.<br>No matter what you do.;
-4;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;That raw meat made you really sick
-5;🐝;Swarm of Bees;Swift;3;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
-6;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Huh. It was surprisingly tasty
-7;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
-8;⛺️;Abandoned Tent;Prop;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
-9;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
-10;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it to use it as a weapon
-11;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;A little cute drooling boy.<br>Aaaw. Look at him.;
-12;🐑;Angry Ram;Standard;4;1;1;0;3;Wild Animal;It must have lost its herd.<br>And it's not happy about it.;
-13;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
-14;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
-15;🦨;Forest Skunk;Swift;2;1;2;0;3;Wild Animal;This one is fast and stinky.<br>Eww...;
-16;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
-17;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
-18;🐕;Rabid Dog;Standard;3;2;3;0;2;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
-19;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
-20;🐐;Irritable Goat;Heavy;2;1;2;0;5;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
-21;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you a forest agility training
-22;🦌;Mighty Deer;Heavy;3;1;2;0;10;Wild Animal;It must be really strong.<br>Better be very careful.;
-23;🍪;Cinnamon Cookie;Consumable;2;0;1;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
-24;🐺;Old Wolf;Standard;3;2;2;0;3;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
-25;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;It lays besides a dead hunter.<br>He probably won't miss it.;You shot yourself by mistake
-26;🐍;Gigantic Snake;Heavy;3;2;1;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
-//Forest Boss
-27;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
-28;🐾;Invisible Creature;Swift;1;0;4;5;10;???;You feel like something is crawling around.<br>Hopefully not some hungry beast.;You were ripped apart.
-29;🐺;Fuzzy Wolf;Heavy;3;4;4;0;10;Apex Predator;It winds up for fatal strike.<br>You'd better avoid it.;You were ripped apart.
-30;🐾;Invisible Creature;Swift;1;4;4;5;10;Apex Predator;Something is crawling around again.<br>Could it be that wolf?;You were ripped apart.
-31;🐺;Fuzzy Wolf;Heavy;3;4;4;0;10;Apex Predator;It winds up for fatal strike.<br>You'd better avoid it.;You were ripped apart.
-32;🧙;Tired Old Man;Standard;1;1;1;0;1;Cursed Human Being;What? It was a man all along?<br>How is that even possible?;You were ripped apart.
-33;🧪;Unknown Potion;Item;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
-//Ancient Crypt
-34;🕸;Giant Web;Trap-Roll;0;2;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;You struggled and hit your head
-35;🕷;Eight-legged Menace;Swift;2;2;1;0;4;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.;
-36;🗺;Wrinkled Map;Item;0;0;1;0;0;Artefact;You stumbled upon an old map.<br>There are some notes around the edges.;You gained some area awareness
-37;🧟;Animated Dead;Standard;4;2;1;0;4;Restless Body;Always appears out of nowhere.<br>A little bit more scary at night.;
-41;💍;Engraved Ring;Trap;0;1;0;0;0;Shiny Object;It says "My Precious" on the inside.<br>That sounds promising.;Ouch! The ring is too tight
-39;🕳;Bottomless Hole;Trap-Attack;0;9;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;Ouch! It was deeper than expected
-40;💀;Rattling Skeleton;Standard;4;2;1;0;4;Restless Body;Always appears out of nowhere.<br>A little bit more scary at night.;
-38;💍;Engagement Ring;Item;1;0;0;0;0;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;You felt a surge in your chest
-42;🦇;Screaming Bat;Swift;2;2;1;0;4;Flying Mammal;Always appears out of nowhere.<br>A little bit more scary at night.;
-43;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
-44;🦂;Massive Scorpion;Heavy;6;3;3;0;3;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
-44;👑;King's Crown;Prop;0;0;0;0;0;Legendary Artefact;This is where it ends for now.<br>Don't be sad. A lot more is to come.;
+area;emoji;name;type;hp;atk;sta;def;int;team;desc;message
+Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;Some shady monsters are after you.<br>Try to<b>🌀 Roll</b> to avoid their attacks.;
+Restless Nightmare;👺;A demon approached.;Trap-Roll;1;1;0;0;0;Hazy Thought;Use <b>🎯 Attack</b> or they will strike first.<br>Others often react to your actions.;They got too close and <b>attacked you</b>
+Restless Nightmare;🧠;Always think first.;Dream;0;0;0;0;0;Hazy Thought;Do not <b>🌀 Roll</b> to dodge swift attacks.<br>Avoid <b>🛡 Blocking</b> the heavy blows.;
+Restless Nightmare;🦐;Eat and pick up loot.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> loot and <b>💤 Rest</b> whenever possible.<br>Beware! Some items may trick you.;
+Forgotten Forest;🥱;You are awake.;Prop;0;0;0;0;0;Hazy Thought;You don't recognise your surroundings.<br>It almost felt like an eternal slumber.;
+Forgotten Forest;🐛;Tiny Worm;Standard;1;1;1;0;0;Harmless Insect;Mindin' its own business.<br>Should you interfere?;
+Forgotten Forest;🐀;Dire Rat;Standard;2;1;1;0;3;Wild Animal;*sniffs around maniacally*<br>*runs towards you*;
+Forgotten Forest;🐗;Alpha Boar;Heavy;3;1;1;0;10;Wild Animal;Its loud stomps follow you around.<br>No matter what you do.;
+Forgotten Forest;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;That raw meat made you really sick
+Forgotten Forest;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
+Forgotten Forest;🍯;Unguarded Honeypot;Consumable;2;0;0;0;0;Natural Food;Yum. This would finely refresh you.<br>You wonder where it came from.;
+Forgotten Forest;🐝;Swarm of Bees;Swift;3;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
+Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Huh. It was surprisingly tasty
+Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
+Forgotten Forest;⛺️;Abandoned Tent;Prop;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
+Forgotten Forest;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
+Forgotten Forest;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it to use it as a weapon
+Forgotten Forest;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;A little cute drooling boy.<br>Aaaw. Look at him.;
+Forgotten Forest;🐑;Angry Ram;Standard;4;1;1;0;3;Wild Animal;It must have lost its herd.<br>And it's not happy about it.;
+Forgotten Forest;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;
+Forgotten Forest;🦨;Forest Skunk;Swift;2;1;2;0;3;Wild Animal;This one is fast and stinky.<br>Eww...;
+Forgotten Forest;🦡;Honey Badger;Heavy;3;1;3;0;3;Wild Animal;It looks fairly angry.<br>Maybe it was its honey.;
+Forgotten Forest;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Hmm. A tree in a forest.<br>You never noticed it before.;
+Forgotten Forest;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
+Forgotten Forest;🐕;Rabid Dog;Standard;3;2;3;0;2;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
+Forgotten Forest;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
+Forgotten Forest;🐐;Irritable Goat;Heavy;2;1;2;0;5;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
+Forgotten Forest;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you a forest agility training
+Forgotten Forest;🦌;Mighty Deer;Heavy;3;1;2;0;10;Wild Animal;It must be really strong.<br>Better be very careful.;
+Forgotten Forest;🍪;Cinnamon Cookie;Consumable;2;0;1;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
+Forgotten Forest;🐺;Old Wolf;Standard;3;2;2;0;3;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
+Forgotten Forest;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;It lays besides a dead hunter.<br>He probably won't miss it.;You shot yourself by mistake
+Forgotten Forest;🌳;Oak Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>Who would have thought.;
+Forgotten Forest;🐍;Gigantic Snake;Heavy;3;2;1;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
+Forgotten Forest;🕳;Bottomless Hole;Prop;0;9;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?.;
+Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
+Forest Cavern;🐾;Invisible Creature;Swift;1;0;4;5;10;???;You feel like something is crawling around.<br>Hopefully not some hungry beast.;You were ripped apart.
+Forest Cavern;🐺;Fuzzy Wolf;Heavy;3;4;4;0;10;Apex Predator;It winds up for fatal strike.<br>You'd better avoid it.;You were ripped apart.
+Forest Cavern;🐾;Invisible Creature;Swift;1;4;4;5;10;Apex Predator;Something is crawling around again.<br>Could it be that wolf?;You were ripped apart.
+Forest Cavern;🐺;Fuzzy Wolf;Heavy;3;4;4;0;10;Apex Predator;It winds up for fatal strike.<br>You'd better avoid it.;You were ripped apart.
+Forest Cavern;🧙;Tired Old Man;Standard;1;1;1;0;1;Cursed Human Being;What? It was a man all along?<br>How is that even possible?;You were ripped apart.
+Forest Cavern;🧪;Unknown Potion;Item;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
+Ancient Crypt;🕸;Giant Web;Trap-Roll;0;2;0;0;0;Sticky Situation;Hopefully nobody's home.<br>It seems quite sturdy.;You struggled and hit your head
+Ancient Crypt;🕷;Eight-legged Menace;Swift;2;2;1;0;4;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.;
+Ancient Crypt;👻;Spooky Spirit;Swift;2;2;1;0;4;Pesky Insect;Always appears out of nowhere.<br>A little bit more scary at night.;
+Ancient Crypt;🗺;Wrinkled Map;Item;0;0;1;0;0;Artefact;You stumbled upon an old map.<br>There are some notes around the edges.;You gained some area awareness
+Ancient Crypt;🧟;Animated Dead;Standard;4;2;1;0;4;Restless Body;Always appears out of nowhere.<br>A little bit more scary at night.;
+Ancient Crypt;💍;Engraved Ring;Trap;0;1;0;0;0;Shiny Object;It says "My Precious" on the inside.<br>That sounds promising.;Ouch! The ring is too tight
+Ancient Crypt;💀;Rattling Skeleton;Standard;4;2;1;0;4;Restless Body;Always appears out of nowhere.<br>A little bit more scary at night.;
+Ancient Crypt;💍;Engagement Ring;Item;1;0;0;0;0;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;You felt a surge in your chest
+Ancient Crypt;🦇;Screaming Bat;Swift;2;2;1;0;4;Flying Mammal;Always appears out of nowhere.<br>A little bit more scary at night.;
+Ancient Crypt;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
+Ancient Crypt;🦂;Massive Scorpion;Heavy;6;3;3;0;3;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
+Ancient Crypt;👑;King's Crown;Prop;0;0;0;0;0;Legendary Artefact;This is where it ends for now.<br>Don't be sad. A lot more is to come.;

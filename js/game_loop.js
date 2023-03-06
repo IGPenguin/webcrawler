@@ -20,17 +20,15 @@ var playerStaDefault = 3;
 
 var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
-var playerHp = playerHpMax;
+var playerHp = playerHpMax-1; //Starting in a dream
 var playerSta = playerStaMax;
+var playerStaLost = 1; //Starting in a dream
 var playerAtk;
 var playerDef;
 var playerInt;
 
-var playerStaLost = 0;
-
 var actionString;
-var actionLog = "🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You have awaken from a seemingly<br>eternal slumber, not knowing where you are.<br>So get yourself together and go find out.\"";
-renewPlayer();
+var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Being so hopeless <b>really hurts you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;There is nothing around to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
 
 //Enemy stats init
 var enemyEmoji;
@@ -133,7 +131,8 @@ function redraw(index){
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
 
-  //Enemy UI - id;emoji;name;type;hp;atk;sta;def;team;desc
+  //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
+  areaName = String(selectedLine.split(",")[0].split(":")[1]);
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
@@ -145,6 +144,9 @@ function redraw(index){
   enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
   enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
+
+  //Encounter UI
+  document.getElementById('id_area').innerHTML = areaName;
 
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
   document.getElementById('id_name').innerHTML = enemyName;
@@ -159,6 +161,7 @@ function redraw(index){
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
   if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap") || enemyType.includes("Prop")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
   if (enemyType.includes("Friend")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🎯 ??";} //Im just too tired today
+  if (enemyType.includes("Dream")) {enemyStatusString = "💤 💤 💤";} //Im just too tired today, again
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
 }
@@ -172,13 +175,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to strike an attack.");
+            logPlayerAction(actionString,"You are too tired to strike an attack&nbsp;&nbsp;0 🟢");
             break;
           }
         switch (enemyType){
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into little pieces.");
+            logPlayerAction(actionString,"You smashed it into many little pieces -1 🟢");
             nextEncounter();
             break;
           case "Trap-Attack":
@@ -187,20 +190,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-            logPlayerAction(actionString,"You irreversibly destroyed it.");
+            logPlayerAction(actionString,"You irreversibly destroyed that thing -1 🟢");
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"You scared them to run away.");
+            logPlayerAction(actionString,"You scared them to run away -1 🟢");
             nextEncounter();
             break;
           case "Heavy":
           case "Standard": //You hit first, they hit back if they have stamina
-            logPlayerAction(actionString,"You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️")
+            logPlayerAction(actionString,"You hit them with an attack -"+playerAtk+" 💔")
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
-              enemyStaminaChangeMessage(-1,"They hit you with a counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"They hit you with a counter-attack -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
               enemyRest(1);
@@ -208,40 +211,44 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift": //They hit you if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"They suddenly counter-attacked&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"They stopped you with a counter-attack -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
+              enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack -"+playerAtk+" 💔");
               enemyHit(playerAtk);
             }
             break;
           default:
-            logPlayerAction(actionString,"You hit it and nothing happened.");
+            logPlayerAction(actionString,"Your attack hit absolutely nothing -1 🟢");
+            break;
       }
       break;
 
       case 'button_block':
         if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too tired to block anything.");
+          logPlayerAction(actionString,"You are too tired to raise your shield&nbsp;&nbsp;0 🟢");
           break;
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy blocking nothing.");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy blocking nothing -1 🟢");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their light attack.","You wasted energy blocking nothing.");
+            enemyStaminaChangeMessage(-1,"You blocked their light attack.","You wasted energy blocking nothing -1 🟢");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
-              enemyStaminaChangeMessage(-1,"You couldn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"You couldn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You wasted energy blocking nothing.");
+              enemyStaminaChangeMessage(-1,"n/a","You wasted energy blocking nothing -1 🟢");
             }
             break;
+          case "Dream":
+              logPlayerAction(actionString,"You grew weaker after <b>raising shield</b> -1 🟢");
+              break;
           default:
-            logPlayerAction(actionString,"You just wasted some of your energy.");
+            logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
         }
         break;
 
@@ -249,45 +256,49 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Standard":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged their standard attack.","Your roll was totally pointless.");
+              enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your roll was totally pointless -1 🟢");
             } else {
-              logPlayerAction(actionString,"You are too tired to make a move.");
+              logPlayerAction(actionString,"You are now too tired to make a move&nbsp;&nbsp;0 🟢");
             }
             break;
           case "Swift":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"They hit you while you were rolling&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+              enemyStaminaChangeMessage(-1,"They hit you while you were rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             } else {
-              logPlayerAction(actionString,"You are too tired to make a move.");
+              logPlayerAction(actionString,"You are now too tired to make a move&nbsp;&nbsp;0 🟢");
             }
             break;
           case "Heavy":
             if (playerUseStamina(1)){
               enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your roll was pointless.");
             } else {
-              logPlayerAction(actionString,"You are too tired to make a move.");
+              logPlayerAction(actionString,"You are too tired to make a move&nbsp;&nbsp;0 🟢");
             }
             break;
           case "Item":
           case "Consumable":
           case "Prop":
-            logPlayerAction(actionString,"You rolled away leaving it behind.");
+            logPlayerAction(actionString,"You rolled away leaving it all behind.");
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"You rolled away from them.");
+            logPlayerAction(actionString,"You rolled far away from them.");
             nextEncounter();
             break;
           case "Trap-Roll":
-            logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             break;
           case "Trap":
           case "Trap-Attack":
-            logPlayerAction(actionString,"You just moved away from that.");
+            logPlayerAction(actionString,"You continued onwards, away from that.");
             nextEncounter();
             break;
+          case "Dream":
+            logPlayerAction(actionString,"<b>Combat actions</b> always drain <b>energy</b> -1 🟢");
+            nextEncounter();
+          break;
           default:
             logPlayerAction(actionString,"Feels like nothing really happened.");
         }
@@ -305,12 +316,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           case "Swift":
-            logPlayerAction(actionString,"They easily evaded your grasp.");
+            logPlayerAction(actionString,"They swiftly evaded your grasp.");
             enemyRest(1);
             break;
           case "Heavy":
             if (enemySta - enemyStaLost > 0){
-              logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
+              logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else {
               playerPushAndGetStamina(2);
@@ -320,7 +331,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
           case "Trap-Roll":
           case "Trap-Attack":
-            logPlayerAction(actionString,enemyMsg+"&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             break;
           case "Item":
@@ -334,8 +345,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerConsumed(enemyHp,enemySta);
             nextEncounter();
             break;
+          case "Dream":
+              logPlayerAction(actionString,"You just <b>reached</b> out into an endless void.");
+              break;
           default:
-            logPlayerAction(actionString,"You touched it and nothing happened.");
+            logPlayerAction(actionString,"You reached out and nothing happened.");
           }
           break;
 
@@ -361,6 +375,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
             logPlayerAction(actionString,"No one replied. Total silence...");
             break;
+          case "Dream":
+            logPlayerAction(actionString,"Your lips are shut thight, you can not <b>speak</b>.");
+            break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
         }
@@ -377,6 +394,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerPostHitHp=playerHp-enemyAtk;
             }
             enemyAttackIfPossible();
+            if (playerPostHitHp > 0) { //Rest if alive
+              playerGetStamina(1);
+            }
             break;
           case "Trap":
           case "Trap-Attack":
@@ -384,16 +404,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Prop":
-            break; //Just rest
+            playerGetStamina(1);
+            break; //Just rest to full if anything above
           case "Friend":
-            logPlayerAction(actionString,"They got tired of waiting and left.");
+            logPlayerAction(actionString,"They got tired of waiting for you and left.");
             nextEncounter();
             break;
-            default:
-            logPlayerAction(actionString,"You cannot rest, monsters are nearby!");
-        }
-        if (playerPostHitHp > 0) { //Rest if alive after everything else happened
-          playerGetStamina(1);
+          default:
+            logPlayerAction(actionString,"You <b>cannot rest</b> due to monsters nearby.");
+            break
         }
     };
     redraw(encounterIndex);
@@ -469,7 +488,7 @@ function playerGetStamina(stamina){
     logPlayerAction(actionString,"You just wasted a moment of your live.");
     return false;
   } else {
-    logPlayerAction(actionString,"You regained some lost energy +" + stamina + " 🟢");
+    logPlayerAction(actionString,"You rested and regained lost energy +" + stamina + " 🟢");
     playerStaLost -= stamina;
     return true;
   }
@@ -544,7 +563,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
 }
 
 function playerConsumed(refreshHp,refreshSta){
-  var consumedString = "Mmm, that was refreshing "
+  var consumedString = "Mmm, that felt quite refreshing "
 
   var wastedHp=(-1)*((playerHpMax-playerHp)-refreshHp);
   console.log("refreshHp:"+refreshHp);
@@ -593,7 +612,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"Unknown power brought you back<br>from the dead. Hopefully it wasn't necromancy.\"";
+  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Unknown power ressurected your body.<br>🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
   logAction(deathMessage);
   renewPlayer();
   resetSeenEncounters();
@@ -603,7 +622,7 @@ function gameOver(){
 }
 
 function gameEnd(){
-  var winMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;\"You just had a deja vu, didn't you?<br>It feels like you already did this. (NG+)\"";
+  var winMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You just had a deja vu, didn't you?<br>🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It feels like you already did this. (NG+)";
   logAction(winMessage);
   resetSeenEncounters();
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik and Stackoverflow");

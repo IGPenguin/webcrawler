@@ -10,7 +10,7 @@ layout: default
 <script src="js/game_loop.js"></script>
 
 <center>
-<h2 style="margin-top:-8px;">Forgotten Forest</h2>
+<h2 id = "id_area" style="margin-top:-8px;">Forgotten Forest</h2>
 <h2 id = "id_subtitle" style="margin:-14px; font-size:24px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2>
 <p style="margin:14px;"></p>
 
