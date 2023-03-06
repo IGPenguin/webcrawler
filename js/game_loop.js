@@ -200,7 +200,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
-              enemyStaminaChangeMessage(-1,"They hit you with counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"They hit you with a counter-attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             } else {
               enemyRest(1);
@@ -296,7 +296,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab':
         switch (enemyType){
           case "Standard":
-            if ((enemySta - enemyStaLost) == 0 && playerStaLost < playerStaMax){ //If they are tired and player has stamina
+            if ((enemySta - enemyStaLost) == 0 && playerStaLost < playerSta){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
             } else {
@@ -505,7 +505,8 @@ function playerUseStamina(stamina){
   if (playerStaLost >= playerSta) { //Cannot lose more
     return false;
   } else {
-    playerStaLost += 1;
+    playerStaLost += stamina;
+    if (playerStaLost > playerStaMax) {playerStaLost = playerStaMax;}
     return true;
   }
 }
@@ -567,8 +568,9 @@ function playerConsumed(refreshHp,refreshSta){
       consumedString += "+"+refreshedAmount + " 🟢";
     }
   } else {
-    consumedString="You feel tired of eating while being full.";
-    playerUseStamina(2);
+    var tooFullStaLost = 2;
+    consumedString="You lost energy due to overeating -"+tooFullStaLost+" 🟢";
+    playerUseStamina(tooFullStaLost);
   }
   logPlayerAction(actionString,consumedString);
 }
