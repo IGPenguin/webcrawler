@@ -28,7 +28,7 @@ var playerDef;
 var playerInt;
 
 var actionString;
-var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Being so hopeless <b>really hurts you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;There is nothing around to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
+var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;👺&nbsp;&nbsp;You feel that something <b>hurt you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;There is nothing around to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
 
 //Enemy stats init
 var enemyEmoji;
