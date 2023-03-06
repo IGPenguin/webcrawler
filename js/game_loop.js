@@ -58,7 +58,7 @@ var randomEncounterIndex;
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "data/forest-encounters.csv",
+        url: "data/encounters.csv",
         dataType: "text",
         success: function(data) {
           processData(data);
@@ -314,7 +314,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             if (enemySta - enemyStaLost > 0){
-              logPlayerAction(actionString,"You struggled and got hit extra hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
+              logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
               playerHit(enemyAtk+2);
             } else {
               playerPushAndGetStamina(2);
@@ -549,8 +549,13 @@ function playerConsumed(refreshHp,refreshSta){
   var consumedString = "Mmm, that was refreshing "
 
   var wastedHp=(-1)*((playerHpMax-playerHp)-refreshHp);
+  console.log("refreshHp:"+refreshHp);
+  console.log("wastedHp"+wastedHp);
   var healedAmount = refreshHp - wastedHp;
+
   var wastedSta=refreshSta-playerStaLost;
+  console.log("refreshSta"+refreshSta);
+  console.log("wastedSta:"+wastedSta);
   var refreshedAmount = refreshSta - wastedSta;
 
   if ((playerHpMax-playerHp > 0) || (playerStaLost > 0)){
@@ -566,7 +571,7 @@ function playerConsumed(refreshHp,refreshSta){
     }
   } else {
     consumedString="You feel tired of eating while being full.";
-    playerUseStamina(1);
+    playerUseStamina(2);
   }
   logPlayerAction(actionString,consumedString);
 }
