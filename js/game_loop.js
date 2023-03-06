@@ -11,20 +11,17 @@ if (seenEncountersString == null){
 }
 
 //Environment init
-var lightLevel = 1; //Light 1,2,3/4/3,2,1   Dark -1,-2,-3/-4/-3,-2,-1
-var lighLevelString = "";
 var adventureLog = "";
 
 //Player stats init
-//var playerName = prompt("Enter your character's name: ","Nameless Hero") + ":&nbsp;&nbsp;";
 var playerName = "Nameless Hero"
 var playerHpDefault = 3
 var playerStaDefault = 3;
 
 var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
-var playerHp;
-var playerSta;
+var playerHp = playerHpMax;
+var playerSta = playerStaMax;
 var playerAtk;
 var playerDef;
 var playerInt;
@@ -88,33 +85,26 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(getUnseenEncounterIndex());
+  redraw(0); //Start from first encounter
 }
 
-function previousItem(){ //Unused
-  var previousItemIndex = encounterIndex-1;
-  if (previousItemIndex < 0){
-    previousItemIndex = encountersTotal-1;
-  }
-  redraw(previousItemIndex);
-}
-
-function nextItem(){ //Unused
+function getNextEncounterIndex(){
+  console.log("Already seen line indexes: " + seenEncounters);
   var nextItemIndex = encounterIndex+1;
   if (nextItemIndex > encountersTotal-1){
-    nextItemIndex = 0;
+    gameEnd();
   }
-  redraw(nextItemIndex);
+  return nextItemIndex;
 }
 
-function getUnseenEncounterIndex() {
+function getUnseenEncounterIndex() { //Unused
   console.log("Already seen line indexes: " + seenEncounters);
   encountersTotal = lines.length;
   var max = encountersTotal;
     do {
       randomEncounterIndex = Math.floor(Math.random() * max);
       if (seenEncounters.length >= encountersTotal){
-        gameEnd(); //Hmm, unsure if this ever happens
+        gameEnd();
         break;
       }
     } while (seenEncounters.includes(randomEncounterIndex));
@@ -136,7 +126,6 @@ function resetSeenEncounters(){
 
 //UI Logic
 function redraw(index){
-  incrementLightLevel();
   encounterIndex = index; //Prediction: This will cause trouble.
   selectedLine = String(lines[index]);
 
@@ -175,10 +164,6 @@ function redraw(index){
   if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap") || enemyType.includes("Prop")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
   if (enemyType.includes("Friend")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🎯 ??";} //Im just too tired today
   document.getElementById('id_stats').innerHTML = enemyStatusString;
-
-  var itemsLeft = encountersTotal-seenEncounters.length;
-  document.getElementById('id_subtitle').innerHTML = lighLevelString;
-
   document.getElementById('id_log').innerHTML = actionLog;
 }
 
@@ -197,7 +182,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into thousand pieces!");
+            logPlayerAction(actionString,"You smashed it into little pieces.");
             nextEncounter();
             break;
           case "Trap-Attack":
@@ -227,7 +212,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift": //They hit you if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"Their suddenly counter-attacked&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"They suddenly counter-attacked&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack&nbsp;&nbsp;-"+playerAtk+" ❤️");
@@ -246,17 +231,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","Your blocking was pointless.");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy blocking nothing.");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their light attack.","Your blocking was pointless.");
+            enemyStaminaChangeMessage(-1,"You blocked their light attack.","You wasted energy blocking nothing.");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
-              enemyStaminaChangeMessage(-1,"You failed to block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+              enemyStaminaChangeMessage(-1,"You couldn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","Your blocking was totally pointless.");
+              enemyStaminaChangeMessage(-1,"n/a","You wasted energy blocking nothing.");
             }
             break;
           default:
@@ -275,7 +260,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You rolled right into an attack&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
+              enemyStaminaChangeMessage(-1,"They hit you while you were rolling&nbsp;&nbsp;-"+enemyAtk+" ❤️","You rolled into a surprise attack&nbsp;&nbsp;-"+enemyAtk+" ❤️");
               playerHit(enemyAtk);
             } else {
               logPlayerAction(actionString,"You are too tired to make a move.");
@@ -315,23 +300,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab':
         switch (enemyType){
           case "Standard":
-            if (((enemySta - enemyStaLost) < (playerSta - playerStaLost)) && playerUseStamina(1)){
+            if ((enemySta - enemyStaLost) == 0 && playerStaLost < playerStaMax){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
             } else {
               logPlayerAction(actionString,"You were too slow, they dodged that."); // Not enough stamina to choke
+              enemyRest(1);
             }
             break;
           case "Swift":
             logPlayerAction(actionString,"They easily evaded your grasp.");
             enemyRest(1);
             break;
-          case "Heavy": // FIXME endless push on tired heavy enemies
+          case "Heavy":
             if (enemySta - enemyStaLost > 0){
-              logPlayerAction(actionString,"You struggled and got hit hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
+              logPlayerAction(actionString,"You struggled and got hit extra hard&nbsp;&nbsp;-"+enemyAtk*2+" ❤️");
               playerHit(enemyAtk+2);
             } else {
-              playerPushAndGetStamina(1);
+              playerPushAndGetStamina(2);
+              enemyRest(1);
             }
             break;
           case "Trap":
@@ -362,7 +349,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
             if (enemyInt < playerInt){
-              logPlayerAction(actionString,"You convinced them to leave.");
+              logPlayerAction(actionString,"You convinced them to leave you alone.");
               nextEncounter();
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
               logPlayerAction(actionString,"That made them more angry!");
@@ -475,7 +462,7 @@ function enemyAttackIfPossible(){
 function nextEncounter(){
   console.log("Starting new encounter...");
   markAsSeen(encounterIndex);
-  encounterIndex = getUnseenEncounterIndex();
+  encounterIndex = getNextEncounterIndex();
   enemyRenew();
 }
 
@@ -497,6 +484,9 @@ function playerGetStaminaSilent(stamina){
     return false;
   } else {
     playerStaLost -= stamina;
+    if (playerStaLost < 0){
+      playerStaLost = 0;
+    }
     return true;
   }
 }
@@ -505,8 +495,11 @@ function playerPushAndGetStamina(stamina){
   if (playerStaLost < 1) { //Cannot get more
     return false;
   } else {
-    logPlayerAction(actionString,"You pushed them out of balance +" + stamina + " 🟢");
+    logPlayerAction(actionString,"You pushed them away and rested +" + stamina + " 🟢");
     playerStaLost -= stamina;
+    if (playerStaLost<0){
+      playerStaLost = 0;
+    }
     return true;
   }
 }
@@ -586,9 +579,6 @@ function playerHit(incomingDamage){
 }
 
 function renewPlayer(){
-  console.log("Resetting player stats");
-  console.log("player hp:" +playerHp+" > "+playerHpDefault);
-  console.log("player sta:" +playerSta+" > "+playerStaDefault);
   playerHp = playerHpDefault;
   playerSta = playerStaDefault;
   playerStaLost = 0;
@@ -612,13 +602,6 @@ function gameEnd(){
   logAction(winMessage);
   resetSeenEncounters();
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik and Stackoverflow");
-}
-
-//Environment
-function incrementLightLevel(){
-  //Incr or Decr light level
-  //lighLevelString = "∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;☀️&nbsp;&nbsp;∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙" //Placeholder
-  lighLevelString = "∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙"
 }
 
 //Logging
