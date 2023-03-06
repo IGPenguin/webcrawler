@@ -1,8 +1,9 @@
 id;emoji;name;type;hp;atk;sta;def;int;team;desc;message
-1;🐛;Harmless Worm;Standard;1;1;1;0;0;Small Insect;Mindin' its own business.<br>Should you interfere?;
+0;🌳;Oak Tree;Prop;0;0;0;0;0;Forest Flora;Hmm. A tree in a forest.<br>Who would have thought.;
+1;🐛;Tiny Worm;Standard;1;1;1;0;0;Harmless Insect;Mindin' its own business.<br>Should you interfere?;
 2;🐀;Stinky Rat;Standard;2;1;1;0;3;Wild Animal;*sniffs around maniacally*<br>*runs towards you*;
-3;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
-4;🌲;Spruce Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
+3;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
+4;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
 5;🐗;Momma Boar;Heavy;3;1;1;0;10;Wild Animal;It follows you around.<br>No matter what you do.;
 6;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe I could make use of it.<br>Sadly there's no fire around.;That raw meat made you really sick
 7;🐝;Swarm of Bees;Swift;3;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
