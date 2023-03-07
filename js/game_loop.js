@@ -212,7 +212,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift": //They hit you if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"They parried your attack and hit you -"+enemyAtk+" 💔","n/a");
+              enemyStaminaChangeMessage(-1,"They parried and counter-attacked -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack -"+playerAtk+" 💔");
@@ -235,7 +235,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy by blocking -1 🟢");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their light attack.","You wasted energy by blocking -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You wasted energy by blocking -1 🟢");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
