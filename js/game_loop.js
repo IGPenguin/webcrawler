@@ -24,11 +24,11 @@ var playerHp = playerHpMax;
 var playerSta = playerStaMax;
 var playerStaLost = 0;
 var playerAtk = 1;
-var playerDef;
-var playerInt;
+var playerDef = 0;
+var playerInt = 1;
 
 var actionString;
-var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You felt that something <b>hurt you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, nothing to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
+var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
 
 //Enemy stats init
 var enemyEmoji;
@@ -239,7 +239,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
-              enemyStaminaChangeMessage(-1,"You couldn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
+              enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","You wasted energy by blocking -1 🟢");
@@ -409,6 +409,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Prop":
+          case "Dream":
             playerGetStamina(1);
             break; //Just rest to full if anything above
           case "Friend":
@@ -618,7 +619,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Unknown power ressurected your body.<br>🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
+  var deathMessage="💤&nbsp;▸&nbsp;💭&nbsp;Unknown power ressurected your body.<br>💤&nbsp;▸&nbsp;💭&nbsp;Hopefully it wasn't some tainted spell.";
   logAction(deathMessage);
   renewPlayer();
 
