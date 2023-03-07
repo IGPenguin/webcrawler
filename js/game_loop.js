@@ -79,14 +79,15 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(0); //Start from first encounter
+  redraw(0); //Start from the first encounter
 }
 
 function getNextEncounterIndex(){
-  console.log("Already seen line indexes: " + seenEncounters);
+  encountersTotal = lines.length-1;
   var nextItemIndex = encounterIndex+1;
-  if (nextItemIndex > encountersTotal-1){
+  if (nextItemIndex >= encountersTotal){ //Game Completed
     gameEnd();
+    return 4; //Skip tutorial
   }
   return nextItemIndex;
 }
@@ -476,9 +477,9 @@ function enemyAttackIfPossible(){
 }
 
 function nextEncounter(){
-  console.log("Starting new encounter...");
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
+  console.log("Starting new encounter:"+ encounterIndex);
   enemyRenew();
 }
 
@@ -615,8 +616,10 @@ function gameOver(){
   var deathMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Unknown power ressurected your body.<br>🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
   logAction(deathMessage);
   renewPlayer();
+
+  //Reset progress to mid-tutorial
   resetSeenEncounters();
-  encounterIndex=-1; //Reset progress
+  encounterIndex=1;
   nextEncounter();
   alert("༼  x_x  ༽  Welp, you are dead.");
 }
@@ -624,6 +627,8 @@ function gameOver(){
 function gameEnd(){
   var winMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You just had a deja vu, didn't you?<br>🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It feels like you already did this. (NG+)";
   logAction(winMessage);
+
+  //Reset progress to game start
   resetSeenEncounters();
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik and Stackoverflow");
 }
