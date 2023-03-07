@@ -23,7 +23,7 @@ var playerStaMax = playerStaDefault;
 var playerHp = playerHpMax-1; //Starting in a dream
 var playerSta = playerStaMax;
 var playerStaLost = 1; //Starting in a dream
-var playerAtk;
+var playerAtk = 1;
 var playerDef;
 var playerInt;
 
