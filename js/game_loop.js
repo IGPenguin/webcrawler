@@ -176,7 +176,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired for attacking 0 🟢");
+            logPlayerAction(actionString,"You are too tired for attacking.");
             break;
           }
         switch (enemyType){
@@ -227,7 +227,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too tired to raise shield 0 🟢");
+          logPlayerAction(actionString,"You are too tired to raise your shield.");
           break;
         }
         switch (enemyType){
@@ -259,7 +259,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerUseStamina(1)){
               enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your roll was totally pointless -1 🟢");
             } else {
-              logPlayerAction(actionString,"You are too tired to make a move 0 🟢");
+              logPlayerAction(actionString,"You are too tired to make any move.");
             }
             break;
           case "Swift":
@@ -267,14 +267,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"They hit you while you were rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             } else {
-              logPlayerAction(actionString,"You are too tired to make a move 0 🟢");
+              logPlayerAction(actionString,"You are too tired to make any move.");
             }
             break;
           case "Heavy":
             if (playerUseStamina(1)){
               enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your roll was pointless.");
             } else {
-              logPlayerAction(actionString,"You are too tired to make a move 0 🟢");
+              logPlayerAction(actionString,"You are too tired to make any move.");
             }
             break;
           case "Item":
