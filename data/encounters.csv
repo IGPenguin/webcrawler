@@ -1,8 +1,8 @@
 area;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;Some fierce monsters are after you.<br>Use <b>🌀 Roll</b> to avoid their attacks.;
-Restless Nightmare;👺;A demon approached.;Trap-Roll;1;1;0;0;0;Hazy Thought;Use <b>🎯 Attack</b> or they will strike first.<br>Others often react to your actions.;They got too close and <b>attacked you</b>
+Restless Nightmare;👺;A demon approached.;Trap-Roll;1;1;0;0;0;Hazy Thought;Use <b>🎯 Attack</b> or they will strike first.<br>Others often react to your actions.;They got closer and <b>attacked you</b>
 Restless Nightmare;🧠;Always think first.;Dream;0;0;0;0;0;Hazy Thought;Do not <b>🌀 Roll</b> to dodge swift attacks.<br>Avoid <b>🛡 Blocking</b> the heavy blows.;
-Restless Nightmare;🦐;Eat and pick up loot.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> loot and <b>💤 Rest</b> whenever possible.<br>Beware! Some items may trick you.;
+Restless Nightmare;🦐;Eat and pick up loot.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> loot and <b>💤 Rest</b> frequently.<br>Beware! Some items may trick you.;
 Forgotten Forest;🥱;You are awake.;Prop;0;0;0;0;0;Hazy Thought;You don't recognise your surroundings.<br>It almost felt like an eternal slumber.;
 Forgotten Forest;🐛;Tiny Worm;Standard;1;1;1;0;0;Harmless Insect;Mindin' its own business.<br>Should you interfere?;
 Forgotten Forest;🐀;Dire Rat;Standard;2;1;1;0;3;Wild Animal;*sniffs around maniacally*<br>*runs towards you*;

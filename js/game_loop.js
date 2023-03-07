@@ -175,7 +175,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to strike anything 0 🟢");
+            logPlayerAction(actionString,"You are too tired to strike 0 🟢");
             break;
           }
         switch (enemyType){
@@ -226,7 +226,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too tired to raise your shield 0 🟢");
+          logPlayerAction(actionString,"You are too tired to raise shield 0 🟢");
           break;
         }
         switch (enemyType){
@@ -245,7 +245,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           case "Dream":
-              logPlayerAction(actionString,"You grew weaker with <b>raising shield</b> -1 🟢");
+              logPlayerAction(actionString,"You tried to <b>raise your shield</b> -1 🟢");
               break;
           default:
             logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
@@ -296,7 +296,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"<b>Combat actions</b> drain your<b>energy</b> -1 🟢");
+            logPlayerAction(actionString,"<b>Combat actions</b> drain <b>energy</b> -1 🟢");
             nextEncounter();
           break;
           default:
@@ -346,7 +346,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-              logPlayerAction(actionString,"You just <b>reached</b> out into an endless void.");
+              logPlayerAction(actionString,"You <b>reached</b> out into the endless void.");
               break;
           default:
             logPlayerAction(actionString,"You reached out and nothing happened.");
@@ -411,7 +411,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"You <b>cannot rest</b> due to monsters nearby.");
+            logPlayerAction(actionString,"You <b>cannot rest</b>, monsters are nearby.");
             break
         }
     };
@@ -488,7 +488,7 @@ function playerGetStamina(stamina){
     logPlayerAction(actionString,"You just wasted a moment of your live.");
     return false;
   } else {
-    logPlayerAction(actionString,"You rested and regained lost energy +" + stamina + " 🟢");
+    logPlayerAction(actionString,"You rested and regained energy +" + stamina + " 🟢");
     playerStaLost -= stamina;
     return true;
   }
