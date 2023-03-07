@@ -381,7 +381,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"No one replied, you only heard yourself.");
             break;
           case "Dream":
-            logPlayerAction(actionString,"Your face is frozen, you can not <b>speak</b>.");
+            logPlayerAction(actionString,"Your face is frozen, you can not speak.");
             break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
@@ -417,7 +417,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"You <b>cannot rest</b>, monsters are nearby.");
+            logPlayerAction(actionString,"You cannot rest, monsters are nearby.");
             break
         }
     };
