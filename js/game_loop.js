@@ -182,7 +182,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into thousand pieces -1 🟢");
+            logPlayerAction(actionString,"You smashed it into small pieces -1 🟢");
             nextEncounter();
             break;
           case "Trap-Attack":
@@ -232,10 +232,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy blocking nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted some energy by blocking -1 🟢");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You wasted energy blocking nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You wasted some energy by blocking -1 🟢");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
@@ -298,7 +298,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Dream":
             if (playerUseStamina(1)){
-              logPlayerAction(actionString,"Rolling forward drained your energy -1 🟢");
+              logPlayerAction(actionString,"You rolled forward and lost -1 🟢");
               nextEncounter();
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");

@@ -1,7 +1,7 @@
 area;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;Frightening monsters are chasing you.<br>Use <b>🌀 Roll</b> to move out of their reach.;
 Restless Nightmare;👺;A demon appeared.;Trap-Roll;1;1;0;0;0;Hazy Thought;Anything you face reacts to your actions.<br>Use <b>🎯 Attack</b> or it will strike first.;It got too close and attacked you
-Restless Nightmare;🟢;Always watch the energy.;Dream;0;0;0;0;0;Hazy Thought;Monsters cannot attack you without it.<br><b>🛡 Block</b> or <b>🌀 Roll</b> first and then <b>🎯 Attack</b>.;
+Restless Nightmare;🟢;Always watch the energy.;Dream;0;0;0;0;0;Hazy Thought;Monsters cannot attack you without it.<br><b>🛡 Block</b> or <b>🌀 Roll</b> first. Then <b>🎯 Attack</b>.;
 Restless Nightmare;🦐;Eat and pick up loot.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> loot and <b>💤 Rest</b> frequently.<br>Some items might actually be traps.;
 Forgotten Forest;🥱;You are now awake.;Prop;0;0;0;0;0;Hazy Thought;It almost felt like an eternal slumber.<br>You don't remember where you are.;
 Forgotten Forest;🐛;Tiny Worm;Standard;1;1;1;0;3;Harmless Insect;Mindin' its own business.<br>Should you interfere?;
