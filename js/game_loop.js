@@ -298,7 +298,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Dream":
             if (playerUseStamina(1)){
-              logPlayerAction(actionString,"You rolled forward and lost -1 🟢");
+              logPlayerAction(actionString,"You rolled forward and lost energy -1 🟢");
               nextEncounter();
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
