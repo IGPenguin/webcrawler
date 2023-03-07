@@ -176,7 +176,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to strike 0 🟢");
+            logPlayerAction(actionString,"You are too tired to attack 0 🟢");
             break;
           }
         switch (enemyType){
