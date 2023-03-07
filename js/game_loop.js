@@ -232,24 +232,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted some energy by blocking -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You blocked absolutely nothing -1 🟢");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You wasted some energy by blocking -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You blocked absolutely nothing -1 🟢");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
               enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You wasted energy blocking nothing -1 🟢");
+              enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
             }
             break;
           case "Dream":
-              logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
+              logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
               break;
           default:
-            logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
+            logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
         }
         break;
 
