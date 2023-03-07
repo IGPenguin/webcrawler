@@ -300,7 +300,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerUseStamina(1)){
               logPlayerAction(actionString,"<b>Combat actions</b> drain <b>energy</b> -1 🟢");
               nextEncounter();
-            else {
+            } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
             }
           break;
