@@ -28,7 +28,7 @@ var playerDef;
 var playerInt;
 
 var actionString;
-var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;👺&nbsp;&nbsp;You felt that something <b>hurt you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, nothing to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
+var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You felt that something <b>hurt you</b> -1 💔<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, nothing to see or hear.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You are wondering where you could be.";
 
 //Enemy stats init
 var enemyEmoji;
@@ -232,24 +232,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy blocking nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy by blocking -1 🟢");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their light attack.","You wasted energy blocking nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their light attack.","You wasted energy by blocking -1 🟢");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
               enemyStaminaChangeMessage(-1,"You couldn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You wasted energy blocking nothing -1 🟢");
+              enemyStaminaChangeMessage(-1,"n/a","You wasted energy by blocking -1 🟢");
             }
             break;
           case "Dream":
               logPlayerAction(actionString,"You tried to <b>raise your shield</b> -1 🟢");
               break;
           default:
-            logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
+            logPlayerAction(actionString,"You wasted energy by blocking -1 🟢");
         }
         break;
 
