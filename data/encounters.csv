@@ -6,16 +6,16 @@ Restless Nightmare;🦐;Eat and pick up loot.;Consumable;0;0;0;0;0;Hazy Thought;
 Forgotten Forest;🥱;You are awake.;Prop;0;0;0;0;0;Hazy Thought;You don't recognise your surroundings.<br>It almost felt like an eternal slumber.;
 Forgotten Forest;🐛;Tiny Worm;Standard;1;1;1;0;0;Harmless Insect;Mindin' its own business.<br>Should you interfere?;
 Forgotten Forest;🐀;Dire Rat;Standard;2;1;1;0;3;Wild Animal;*sniffs around maniacally*<br>*runs towards you*;
+Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
+Forgotten Forest;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
+Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Huh. It was surprisingly tasty
 Forgotten Forest;🐗;Alpha Boar;Heavy;3;1;1;0;10;Wild Animal;Its loud stomps follow you around.<br>No matter what you do.;
 Forgotten Forest;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;That raw meat made you really sick
-Forgotten Forest;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
-Forgotten Forest;🍯;Unguarded Honeypot;Consumable;2;0;0;0;0;Natural Food;Yum. This would finely refresh you.<br>You wonder where it came from.;
-Forgotten Forest;🐝;Swarm of Bees;Swift;3;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
-Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Huh. It was surprisingly tasty
-Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 Forgotten Forest;⛺️;Abandoned Tent;Prop;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
 Forgotten Forest;🍗;Roasted Chicken;Consumable;3;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
 Forgotten Forest;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it to use it as a weapon
+Forgotten Forest;🐝;Swarm of Bees;Swift;3;1;1;3;100;Pesky Insect;No matter what you do.<br>You stay totally surrounded.;
+Forgotten Forest;🍯;Sweet Honeypot;Consumable;2;0;0;0;0;Natural Food;Yum. This would finely refresh you.<br>You wonder where it came from.;
 Forgotten Forest;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;A little cute drooling boy.<br>Aaaw. Look at him.;
 Forgotten Forest;🐑;Angry Ram;Standard;4;1;1;0;3;Wild Animal;It must have lost its herd.<br>And it's not happy about it.;
 Forgotten Forest;🥕;Wild Carrot;Consumable;1;0;1;0;0;Raw Food;Sometimes even the simplest things<br>can heal your body and soul.;

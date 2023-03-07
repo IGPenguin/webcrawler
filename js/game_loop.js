@@ -603,7 +603,8 @@ function playerHit(incomingDamage){
 }
 
 function renewPlayer(){
-  playerHp = playerHpDefault;
+  playerHpMax=playerHpDefault;
+  playerHp = playerHpMax;
   playerSta = playerStaDefault;
   playerStaLost = 0;
   playerAtk = 1;
