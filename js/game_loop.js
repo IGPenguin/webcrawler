@@ -619,7 +619,7 @@ function gameOver(){
 
   //Reset progress to post-tutorial
   resetSeenEncounters();
-  encounterIndex=3;
+  encounterIndex=2;
   nextEncounter();
   alert("༼  x_x  ༽  Welp, you are dead.");
 }
