@@ -527,7 +527,7 @@ function playerPushAndGetStamina(stamina){
 }
 
 function playerUseStamina(stamina){
-  if (playerStaLost >= playerSta) { //Cannot lose more
+  if (playerStaLost >= playerStaMax) { //Cannot lose more
     return false;
   } else {
     playerStaLost += stamina;
