@@ -191,7 +191,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-            logPlayerAction(actionString,"You irreversibly destroyed that thing -1 🟢");
+            logPlayerAction(actionString,"You attacked and destroyed it -1 🟢");
             nextEncounter();
             break;
           case "Friend":
@@ -200,7 +200,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
           case "Standard": //You hit first, they hit back if they have stamina
-            logPlayerAction(actionString,"You hit them with an attack -"+playerAtk+" 💔")
+            logPlayerAction(actionString,"You hit them with your attack -"+playerAtk+" 💔")
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
@@ -232,10 +232,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack -1 🟢","You blocked absolutely nothing -1 🟢");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
@@ -280,6 +280,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Prop":
+          case "Dream":
             logPlayerAction(actionString,"You rolled away leaving it all behind.");
             nextEncounter();
             break;
@@ -296,13 +297,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You continued onwards, away from that.");
             nextEncounter();
             break;
-          case "Dream":
-            if (playerUseStamina(1)){
-              logPlayerAction(actionString,"You rolled forward and lost energy -1 🟢");
-              nextEncounter();
-            } else {
-              logPlayerAction(actionString,"You are too tired to make any move.");
-            }
           break;
           default:
             logPlayerAction(actionString,"Feels like nothing really happened.");
@@ -312,7 +306,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab':
         switch (enemyType){
           case "Standard":
-            if ((enemySta - enemyStaLost) == 0 && playerStaLost < playerSta){ //If they are tired and player has stamina
+            if ((enemySta - enemyStaLost) <= 0 && playerStaLost < playerSta){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
             } else {
