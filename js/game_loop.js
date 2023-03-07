@@ -20,9 +20,9 @@ var playerStaDefault = 3;
 
 var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
-var playerHp = playerHpMax-1; //Starting in a dream
+var playerHp = playerHpMax;
 var playerSta = playerStaMax;
-var playerStaLost = 1; //Starting in a dream
+var playerStaLost = 0;
 var playerAtk = 1;
 var playerDef;
 var playerInt;
@@ -297,8 +297,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"<b>Combat actions</b> drain <b>energy</b> -1 🟢");
-            nextEncounter();
+            if (playerUseStamina(1)){
+              logPlayerAction(actionString,"<b>Combat actions</b> drain <b>energy</b> -1 🟢");
+              nextEncounter();
+            else {
+              logPlayerAction(actionString,"You are too tired to make any move.");
+            }
           break;
           default:
             logPlayerAction(actionString,"Feels like nothing really happened.");
@@ -618,9 +622,9 @@ function gameOver(){
   logAction(deathMessage);
   renewPlayer();
 
-  //Reset progress to mid-tutorial
+  //Reset progress to post-tutorial
   resetSeenEncounters();
-  encounterIndex=1;
+  encounterIndex=3;
   nextEncounter();
   alert("༼  x_x  ༽  Welp, you are dead.");
 }
