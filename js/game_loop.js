@@ -28,7 +28,7 @@ var playerDef = 0;
 var playerInt = 1;
 
 var actionString;
-var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;You are wondering where you could be.";
+var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.";
 
 //Enemy stats init
 var enemyEmoji;
@@ -176,13 +176,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired for attacking.");
+            logPlayerAction(actionString,"You are too tired to attack anything.");
             break;
           }
         switch (enemyType){
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into little pieces -1 🟢");
+            logPlayerAction(actionString,"You smashed it into thousand pieces -1 🟢");
             nextEncounter();
             break;
           case "Trap-Attack":
@@ -232,24 +232,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy by blocking -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack.","You wasted energy blocking nothing -1 🟢");
             break;
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You wasted energy by blocking -1 🟢");
+            enemyStaminaChangeMessage(-1,"You blocked their swift attack.","You wasted energy blocking nothing -1 🟢");
             break;
           case "Heavy":
             if (enemySta-enemyStaLost > 0){
               enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You wasted energy by blocking -1 🟢");
+              enemyStaminaChangeMessage(-1,"n/a","You wasted energy blocking nothing -1 🟢");
             }
             break;
           case "Dream":
-              logPlayerAction(actionString,"You tried to <b>raise your shield</b> -1 🟢");
+              logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
               break;
           default:
-            logPlayerAction(actionString,"You wasted energy by blocking -1 🟢");
+            logPlayerAction(actionString,"You wasted energy blocking nothing -1 🟢");
         }
         break;
 
@@ -298,7 +298,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Dream":
             if (playerUseStamina(1)){
-              logPlayerAction(actionString,"<b>Combat actions</b> drain <b>energy</b> -1 🟢");
+              logPlayerAction(actionString,"Rolling forward drained your energy -1 🟢");
               nextEncounter();
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
@@ -351,7 +351,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-              logPlayerAction(actionString,"You <b>reached</b> out into the endless void.");
+              logPlayerAction(actionString,"You reached out into the endless void.");
               break;
           default:
             logPlayerAction(actionString,"You reached out and nothing happened.");
@@ -378,7 +378,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           case "Trap-Roll":
-            logPlayerAction(actionString,"No one replied. Total silence...");
+            logPlayerAction(actionString,"No one replied, you only heard yourself.");
             break;
           case "Dream":
             logPlayerAction(actionString,"Your face is frozen, you can not <b>speak</b>.");
@@ -619,7 +619,7 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  var deathMessage="💤&nbsp;▸&nbsp;💭&nbsp;Unknown power ressurected your body.<br>💤&nbsp;▸&nbsp;💭&nbsp;Hopefully it wasn't some tainted spell.";
+  var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Unknown power ressurected your body.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
   logAction(deathMessage);
   renewPlayer();
 
