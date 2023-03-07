@@ -212,7 +212,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift": //They hit you if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"They stopped you with a counter-attack -"+enemyAtk+" 💔","n/a");
+              enemyStaminaChangeMessage(-1,"They parried your attack and hit you -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack -"+playerAtk+" 💔");
