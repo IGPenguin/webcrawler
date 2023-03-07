@@ -564,7 +564,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
 }
 
 function playerConsumed(refreshHp,refreshSta){
-  var consumedString = "Mmm, that felt quite refreshing "
+  var consumedString = "Mmm, that felt refreshing "
 
   var wastedHp=(-1)*((playerHpMax-playerHp)-refreshHp);
   console.log("refreshHp:"+refreshHp);
