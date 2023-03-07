@@ -376,7 +376,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"No one replied. Total silence...");
             break;
           case "Dream":
-            logPlayerAction(actionString,"Your lips are shut thight, you can not <b>speak</b>.");
+            logPlayerAction(actionString,"Your face is frozen, you can not <b>speak</b>.");
             break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
