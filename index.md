@@ -42,5 +42,5 @@ layout: default
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Rest</button>
 
 <p style="margin:20px"></p>
-<h4 style="font-size:12px; opacity:0.85;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 style="font-size:10px; margin-top:-12px; opacity:0.6;">work-in-progress, ver. 3/7/23 (3)</h4>
+<h4 style="font-size:12px; opacity:0.85;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 style="font-size:10px; margin-top:-12px; opacity:0.6;">work-in-progress, ver. 3/8/23</h4>
 </center>
