@@ -21,8 +21,8 @@ function renewPlayer(){
   playerAtk = 1;
   playerDef = 0;
   playerInt = 1;
-  var playerLootString = "";
-  var playerPartyString = "";
+  playerLootString = "";
+  playerPartyString = "";
 }
 
 var playerName = "Nameless Hero";
@@ -220,6 +220,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
           case "Standard": //You hit first, they hit back if they have stamina
+          case "Recruit":
+          case "Pet":
             logPlayerAction(actionString,"You hit them with your attack -"+playerAtk+" 💔")
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
@@ -252,6 +254,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         switch (enemyType){
           case "Standard":
+          case "Recruit":
+          case "Pet":
             enemyStaminaChangeMessage(-1,"You blocked their standard attack -1 🟢","You blocked absolutely nothing -1 🟢");
             break;
           case "Swift":
@@ -276,6 +280,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_roll':
         switch (enemyType){
           case "Standard":
+          case "Recruit":
+          case "Pet":
             if (playerUseStamina(1)){
               enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your roll was totally pointless -1 🟢");
             } else {
@@ -331,6 +337,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_grab':
         switch (enemyType){
+          case "Pet":
+            if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
+              logPlayerAction(actionString,"You rubbed it's belly and it joined your party!");
+              playerPartyString+=" "+enemyEmoji
+              playerAtk+=enemyAtk;
+              nextEncounter();
+              break;
+            }
+          case "Recruit":
           case "Standard":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
@@ -429,6 +444,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
           case "Swift":
           case "Heavy":
+          case "Recruit":
+          case "Pet":
             //Opportunity to attack player
             if (enemySta - enemyStaLost > 0){
               playerPostHitHp=playerHp-enemyAtk;

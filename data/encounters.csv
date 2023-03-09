@@ -8,6 +8,7 @@ Forgotten Forest;🌳;Oak Alley;Prop;0;0;0;0;0;Forest Area;You see just endless 
 Forgotten Forest;🐀;Dire Rat;Swift;1;1;1;0;3;Wild Animal;It jumped out of nowhere really fast.<br>Better raise your shield.;
 Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>You should make use of it.;
+Forgotten Forest;🐕;Stray Dog;Pet;3;1;2;0;1;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
 Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Eating it made you more resilient
 Forgotten Forest;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;Cute on the outside.<br>Corrupted inside;
 Forgotten Forest;⛺️;Abandoned Tent;Prop;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
@@ -25,7 +26,6 @@ Forgotten Forest;🗺;Lost Map;Item;0;0;1;0;0;Adventure Guide;You stumbled upon 
 Forgotten Forest;🐍;Gigantic Snake;Standard;3;2;1;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
 Forgotten Forest;🥚;Snake Egg;Consumable;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
 Forgotten Forest;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
-Forgotten Forest;🐕;Stray Dog;Recruit;3;2;3;0;1;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
 Forgotten Forest;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
 Forgotten Forest;🐐;Irritable Goat;Heavy;3;1;2;0;10;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
 Forgotten Forest;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you a forest agility training
@@ -42,7 +42,7 @@ Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled o
 Forest Cavern;🐺;Fuzzy Wolf;Heavy;3;4;2;0;10;Apex Predator;It winds up for a fatal strike.<br>You'd better avoid it.;They ripped you apart
 Forest Cavern;💀;Pile of Skeletons;Prop;0;0;0;0;0;Disturbing Object;Oh. A lot of adventures ended here.<br>Better catch your breath.;
 Forest Cavern;🐾;Invisible Creature;Swift;1;2;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
-Forest Cavern;🧙;Tired Old Man;Standard;1;1;1;0;1;Cursed Human Being;What? It was a man all along?<br>How is that even possible?;They ripped you apart
+Forest Cavern;🧙;Tired Old Man;Recruit;1;1;1;0;1;Cursed Human Being;What? It was a man all along?<br>Will you show mercy?;They ripped you apart
 Forest Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
 Forest Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
 Ancient Crypt;🕷;Eight-legged Menace;Swift;2;2;1;0;4;Pesky Insect;It looks like it's waiting for you.<br>There is no turning back now.;
