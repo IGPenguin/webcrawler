@@ -91,7 +91,7 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(0); //Start from the first encounter
+  redraw(1); //Start from the first encounter (0 is dead)
 }
 
 function getNextEncounterIndex(){
@@ -179,8 +179,9 @@ function redraw(index){
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
   if (enemyType.includes("Item") || enemyType.includes("Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
   if (enemyType.includes("Friend")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🎯 ??";} //Im just too tired today
-  if (enemyType.includes("Dream")||enemyType.includes("Prop")) {enemyStatusString = "∙  ∙  ∙";} //Im just too tired today, again
+  if (enemyType.includes("Dream")||enemyType.includes("Prop")||enemyType.includes("Container")) {enemyStatusString = "∙  ∙  ∙";} //Im just too tired today, again
   if (enemyType.includes("Consumable")) {enemyStatusString = "+ ❤️&nbsp;&nbsp;+ 🟢";} //Im just too tired today, again and again
+  if (enemyType.includes("Death")) {enemyStatusString = "🦴&nbsp;&nbsp;🦴&nbsp;&nbsp;🦴";} //Im just too tired today, for the last time
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
@@ -240,6 +241,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyHit(playerAtk);
             }
             break;
+          case "Death":
+              logPlayerAction(actionString,"There is nothing to attack anymore.");
+              break;
           default:
             logPlayerAction(actionString,"Your attacking had no effect -1 🟢");
       }
@@ -269,6 +273,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Dream":
               logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
+              break;
+          case "Death":
+              logPlayerAction(actionString,"There is nothing to block anymore.");
               break;
           default:
             logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
@@ -306,6 +313,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You rolled away leaving it behind.");
             nextEncounter();
             break;
+          case "Container":
+            logPlayerAction(actionString,"You rolled away leaving it behind.");
+            encounterIndex+=1; //Skip loot
+            nextEncounter();
+            break;
           case "Dream":
             logPlayerAction(actionString,"You moved on to another thought.");
             nextEncounter();
@@ -327,7 +339,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You continued onwards, away from that.");
             nextEncounter();
             break;
-          break;
+          case "Death":
+            logPlayerAction(actionString,"There is nothing to avoid anymore.");
+            break;
           default:
             logPlayerAction(actionString,"Feels like nothing really happened.");
         }
@@ -377,6 +391,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             break;
+          case "Container":
+            logPlayerAction(actionString,"There was something hidden inside.")
+            nextEncounter();
+            break;
           case "Item":
             playerLootString+=" "+enemyEmoji;
             logPlayerAction(actionString,"You took it with yourself on an advenure!");
@@ -391,8 +409,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-              logPlayerAction(actionString,"You reached out into the endless void.");
-              break;
+            logPlayerAction(actionString,"You reached out into the endless void.");
+            break;
+          case "Death":
+            logPlayerAction(actionString,"Your body reconnected with your soul.");
+            var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power ressurected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
+            logAction(deathMessage);
+            renewPlayer();
+            encounterIndex=5;
+            nextEncounter();
+            break;
           default:
             logPlayerAction(actionString,"You reached out and nothing happened.");
           }
@@ -428,8 +454,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
             logPlayerAction(actionString,"No one replied, you only heard yourself.");
             break;
+          case "Death":
           case "Dream":
-            logPlayerAction(actionString,"Your face is frozen, you can not speak.");
+            logPlayerAction(actionString,"You can not move your lips to speak.");
             break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
@@ -460,6 +487,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Prop":
           case "Dream":
+          case "Container":
             playerGetStamina(1);
             break; //Just rest to full if anything above
           case "Friend":
@@ -630,15 +658,10 @@ function playerHit(incomingDamage){
 
 //End Game
 function gameOver(){
-  var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power ressurected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
-  logAction(deathMessage);
-  renewPlayer();
-
-  //Reset progress to post-tutorial
+  //Reset progress to death
   resetSeenEncounters();
-  encounterIndex=3;
+  encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
-  alert("༼  x_x  ༽  Welp, you are dead.");
 }
 
 function gameEnd(){
