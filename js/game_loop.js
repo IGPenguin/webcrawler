@@ -304,24 +304,28 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab':
         switch (enemyType){
           case "Standard":
-            if ((enemySta - enemyStaLost) <= 0 && playerSta > 0){ //If they are tired and player has stamina
+            if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
-            } else {
-              logPlayerAction(actionString,"You were too slow, they dodged that."); // Not enough stamina to choke
+            } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
+              logPlayerAction(actionString,"You were too slow, they dodged that.");
+              enemyRest(1);
+            } else { //Player and enemy have no stamina - asymetrical rest
+              logPlayerAction(actionString,"You pushed them away and regained +2 🟢");
+              playerGetStamina(2,true);
               enemyRest(1);
             }
             break;
-          case "Swift":
+          case "Swift": //Player cannot grab swift enemies
             logPlayerAction(actionString,"They swiftly evaded your grasp.");
             enemyRest(1);
             break;
           case "Heavy":
-            if (enemySta - enemyStaLost > 0){
+            if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
-            } else {
-              logPlayerAction(actionString,"You pushed them away and regained +2 🟢");
+            } else { //Enemy has no stamina - asymetrical rest
+              logPlayerAction(actionString,"You pushed them afar and rested +2 🟢");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -491,6 +495,9 @@ function playerGetStamina(stamina,silent = false){
       logPlayerAction(actionString,"You rested and regained energy +" + stamina + " 🟢");
     }
     playerSta += stamina;
+    if (playerSta > playerStaMax){
+      playerSta = playerStaMax;
+    }
     return true;
   }
 }
