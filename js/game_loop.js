@@ -1,4 +1,6 @@
 //Tech init
+var versionCode = "work-in-progress, ver. 3/9/23 (2)"
+
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
 var seenEncounters;
 var encountersTotal;
@@ -10,9 +12,6 @@ if (seenEncountersString == null){
   seenEncounters = Array.from(seenEncountersString); //Load seen encounters
 }
 
-//Environment init
-var adventureLog = "";
-
 //Player stats init
 function renewPlayer(){
   playerHpMax=playerHpDefault;
@@ -23,6 +22,7 @@ function renewPlayer(){
   playerInt = 1;
   playerLootString = "";
   playerPartyString = "";
+  adventureLog = "";
 }
 
 var playerName = "Nameless Hero";
@@ -40,7 +40,9 @@ var playerDef = 0;
 var playerInt = 1;
 
 var actionString;
-var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.";
+var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.\n";
+var adventureLog = actionLog;
+
 
 //Enemy stats init
 var enemyEmoji;
@@ -133,6 +135,7 @@ function resetSeenEncounters(){
 
 //UI Logic
 function redraw(index){
+  document.getElementById('id_version').innerHTML = versionCode;
   encounterIndex = index;
   selectedLine = String(lines[index]);
 
@@ -412,11 +415,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You reached out into the endless void.");
             break;
           case "Death":
+            renewPlayer();
             logPlayerAction(actionString,"Your body reconnected with your soul.");
             var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power ressurected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
-            renewPlayer();
-            encounterIndex=5;
+            encounterIndex=4;
             nextEncounter();
             break;
           default:
@@ -455,6 +458,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"No one replied, you only heard yourself.");
             break;
           case "Death":
+            logPlayerAction(actionString,"Your legend was copied into clipboard.");
+            adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
+            adventureLog += "\nCharacter: "+playerName +"\n"+"Party: "+playerPartyString+ "  Loot: "+playerLootString+"\n"+"❤️ "+"▰".repeat(playerHpMax)+"  🟢 "+"▰".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk)+"\n";
+            adventureLog += "\nhttps://igpenguin.github.io/webcrawler\n"+ versionCode;
+            navigator.clipboard.writeText(adventureLog);
+            break;
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
             break;
@@ -493,6 +502,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
             logPlayerAction(actionString,"They got tired of waiting for you and left.");
             nextEncounter();
+            break;
+          case "Death":
+            logPlayerAction(actionString,"You can rest as long as you please.");
             break;
           default:
             logPlayerAction(actionString,"You cannot rest, monsters are nearby.");
@@ -660,6 +672,7 @@ function playerHit(incomingDamage){
 function gameOver(){
   //Reset progress to death
   resetSeenEncounters();
+  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;☠️&nbsp;&nbsp;You were killed by their attack.")
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
 }
@@ -685,6 +698,7 @@ function logPlayerAction(actionString,message){
 
 function logAction(message){
   actionLog = message + "<br>" + actionLog;
+  adventureLog += message+"<br>";
   if (actionLog.split("<br>").length > 3) {
     actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
   }
