@@ -1,5 +1,5 @@
 //Tech init
-var versionCode = "work-in-progress, ver. 3/9/23 (2)"
+var versionCode = "work-in-progress, ver. 3/10/23"
 
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
 var seenEncounters;
