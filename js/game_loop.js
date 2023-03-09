@@ -22,7 +22,6 @@ var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
 var playerHp = playerHpMax;
 var playerSta = playerStaMax;
-var playerStaLost = 0;
 var playerAtk = 1;
 var playerDef = 0;
 var playerInt = 1;
@@ -126,9 +125,8 @@ function redraw(index){
 
   //Player UI
   document.getElementById('id_player_name').innerHTML = playerName;
-  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpMax))
-  if (playerSta > 0) { playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta-playerStaLost) + "▱".repeat(playerStaLost);}
-    if (playerStaLost > 0) { playerStatusString = playerStatusString.slice(0,-1*playerStaLost) + "▱".repeat(playerStaLost); } //YOLO
+  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpMax));
+  playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta) + "▱".repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
 
@@ -220,7 +218,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           default:
-            logPlayerAction(actionString,"Your attack hit had no effect -1 🟢");
+            logPlayerAction(actionString,"Your attacking had no effect -1 🟢");
             break;
       }
       break;
@@ -306,7 +304,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab':
         switch (enemyType){
           case "Standard":
-            if ((enemySta - enemyStaLost) <= 0 && playerStaLost < playerSta){ //If they are tired and player has stamina
+            if ((enemySta - enemyStaLost) <= 0 && playerSta > 0){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
             } else {
@@ -323,7 +321,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else {
-              playerPushAndGetStamina(2);
+              logPlayerAction(actionString,"You pushed them away and regained +2 🟢");
+              playerGetStamina(2,true);
               enemyRest(1);
             }
             break;
@@ -341,7 +340,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Consumable":
-            playerConsumed(enemyHp,enemySta);
+            playerConsumed();
             nextEncounter();
             break;
           case "Dream":
@@ -482,7 +481,7 @@ function nextEncounter(){
 
 //Player
 function playerGetStamina(stamina,silent = false){
-  if (playerStaLost < 1) { //Cannot get more
+  if (playerSta >= playerStaMax) { //Cannot get more
     if (!silent){
       logPlayerAction(actionString,"You just wasted a moment of your life.");
     }
@@ -491,30 +490,16 @@ function playerGetStamina(stamina,silent = false){
     if (!silent){
       logPlayerAction(actionString,"You rested and regained energy +" + stamina + " 🟢");
     }
-    playerStaLost -= stamina;
-    return true;
-  }
-}
-
-function playerPushAndGetStamina(stamina){
-  if (playerStaLost < 1) { //Cannot get more
-    return false;
-  } else {
-    logPlayerAction(actionString,"You pushed them away and regained +" + stamina + " 🟢");
-    playerStaLost -= stamina;
-    if (playerStaLost<0){
-      playerStaLost = 0;
-    }
+    playerSta += stamina;
     return true;
   }
 }
 
 function playerUseStamina(stamina){
-  if (playerStaLost >= playerStaMax) { //Cannot lose more
+  if (playerSta <= 0) { //Cannot lose more
     return false;
   } else {
-    playerStaLost += stamina;
-    if (playerStaLost > playerStaMax) {playerStaLost = playerStaMax;}
+    playerSta -= stamina;
     return true;
   }
 }
@@ -551,29 +536,22 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
   nextEncounter();
 }
 
-function playerConsumed(refreshHp,refreshSta){
+function playerConsumed(){
   var consumedString = "Mmm, that felt refreshing "
 
-  var wastedHp=(-1)*((playerHpMax-playerHp)-refreshHp);
-  console.log("refreshHp:"+refreshHp);
-  console.log("wastedHp"+wastedHp);
-  var healedAmount = refreshHp - wastedHp;
+  var missingHp=playerHpMax-playerHp;
+  var missingSta=(playerStaMax-playerSta);
 
-  var wastedSta=refreshSta-playerStaLost;
-  console.log("refreshSta"+refreshSta);
-  console.log("wastedSta:"+wastedSta);
-  var refreshedAmount = refreshSta - wastedSta;
+  if ((missingHp > 0) || (missingSta > 0)){
 
-  if ((playerHpMax-playerHp > 0) || (playerStaLost > 0)){
-
-    if (healedAmount > 0){
-      playerHp += healedAmount;
-      consumedString += "+"+healedAmount + " ❤️ ";
+    if (missingHp > 0){
+      playerHp += missingHp;
+      consumedString += "+"+missingHp + " ❤️ ";
     }
 
-    if (refreshedAmount > 0){
-      playerGetStamina(refreshedAmount,true);
-      consumedString += "+"+refreshedAmount + " 🟢";
+    if (missingSta > 0){
+      playerGetStamina(missingSta,true);
+      consumedString += "+"+missingSta + " 🟢";
     }
   } else {
     var tooFullStaLost = 2;
@@ -594,7 +572,6 @@ function renewPlayer(){
   playerHpMax=playerHpDefault;
   playerHp = playerHpMax;
   playerSta = playerStaDefault;
-  playerStaLost = 0;
   playerAtk = 1;
   playerDef = 0;
   playerInt = 1;
