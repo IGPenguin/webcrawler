@@ -212,7 +212,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift": //They hit you if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"They parried and counter-attacked -"+enemyAtk+" 💔","n/a");
+              enemyStaminaChangeMessage(-1,"They dodged and counter-attacked -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack -"+playerAtk+" 💔");
@@ -220,7 +220,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           default:
-            logPlayerAction(actionString,"Your attack hit absolutely nothing -1 🟢");
+            logPlayerAction(actionString,"Your attack hit had no effect -1 🟢");
             break;
       }
       break;
@@ -272,7 +272,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your roll was pointless.");
+              enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your roll was totally pointless  -1 🟢");
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
             }
@@ -281,7 +281,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Prop":
           case "Dream":
-            logPlayerAction(actionString,"You rolled away leaving it all behind.");
+            logPlayerAction(actionString,"You rolled away leaving it behind.");
             nextEncounter();
             break;
           case "Friend":
@@ -454,21 +454,19 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 function enemyHit(damage){
   enemyHpLost = enemyHpLost + damage
   if (enemyHpLost >= enemyHp) {
-    playerGetStaminaSilent(2); //Is this too much?
-    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You eliminated them and rested +2 🟢");
+    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
     nextEncounter();
   }
 }
 
 function enemyKnockedOut(){
-  playerGetStaminaSilent(2); //Is this too much?
-  logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You knocked them out and rested +2 🟢");
+  logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You knocked them out of conscioussnes.");
   nextEncounter();
 }
 
 function enemyAttackIfPossible(){
   if (enemySta-enemyStaLost > 0) {
-    enemyStaminaChangeMessage(-1,"The enemy attacked you for&nbsp;&nbsp;-"+enemyAtk+" ❤️","n/a");
+    enemyStaminaChangeMessage(-1,"The enemy attacked you for&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
     playerHit(enemyAtk);
   } else {
     enemyRest(1);
@@ -483,26 +481,17 @@ function nextEncounter(){
 }
 
 //Player
-function playerGetStamina(stamina){
+function playerGetStamina(stamina,silent = false){
   if (playerStaLost < 1) { //Cannot get more
-    logPlayerAction(actionString,"You just wasted a moment of your live.");
-    return false;
-  } else {
-    logPlayerAction(actionString,"You rested and regained energy +" + stamina + " 🟢");
-    playerStaLost -= stamina;
-    return true;
-  }
-}
-
-function playerGetStaminaSilent(stamina){
-  if (playerStaLost < 1) { //Cannot get more
-    logPlayerAction(actionString,"n/a");
-    return false;
-  } else {
-    playerStaLost -= stamina;
-    if (playerStaLost < 0){
-      playerStaLost = 0;
+    if (!silent){
+      logPlayerAction(actionString,"You just wasted a moment of your life.");
     }
+    return false;
+  } else {
+    if (!silent){
+      logPlayerAction(actionString,"You rested and regained energy +" + stamina + " 🟢");
+    }
+    playerStaLost -= stamina;
     return true;
   }
 }
@@ -511,7 +500,7 @@ function playerPushAndGetStamina(stamina){
   if (playerStaLost < 1) { //Cannot get more
     return false;
   } else {
-    logPlayerAction(actionString,"You pushed them away and rested +" + stamina + " 🟢");
+    logPlayerAction(actionString,"You pushed them away and regained +" + stamina + " 🟢");
     playerStaLost -= stamina;
     if (playerStaLost<0){
       playerStaLost = 0;
@@ -583,7 +572,7 @@ function playerConsumed(refreshHp,refreshSta){
     }
 
     if (refreshedAmount > 0){
-      playerGetStaminaSilent(refreshedAmount);
+      playerGetStamina(refreshedAmount,true);
       consumedString += "+"+refreshedAmount + " 🟢";
     }
   } else {
@@ -613,13 +602,13 @@ function renewPlayer(){
 
 //End Game
 function gameOver(){
-  var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Unknown power ressurected your body.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
+  var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power ressurected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
   logAction(deathMessage);
   renewPlayer();
 
   //Reset progress to post-tutorial
   resetSeenEncounters();
-  encounterIndex=2;
+  encounterIndex=3;
   nextEncounter();
   alert("༼  x_x  ༽  Welp, you are dead.");
 }

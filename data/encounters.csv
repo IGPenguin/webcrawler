@@ -1,10 +1,10 @@
 area;emoji;name;type;hp;atk;sta;def;int;team;desc;message
-Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;<b>Nightmare monsters</b> are chasing you.<br>Move out of their reach using <b>🌀 Roll</b>.;
-Restless Nightmare;👺;A demon appeared.;Standard;2;1;1;0;0;Hazy Thought;<b>🎯 Attacked</b> enemies always retaliate.<br><b>🛡 Block</b> or <b>🌀 Roll</b> to defend first.;It got too close and attacked you
-Restless Nightmare;🟢;Always watch the energy.;Dream;0;0;0;0;0;Hazy Thought;You cannot move when you don't have any.<br>Monsters cannot attack without it either.
-Restless Nightmare;🦐;Void-walking Shrimp;Consumable;0;0;0;0;0;Hazy Thought;<b>💤 Rest</b> frequently and <b>🖐 Grab</b> any loot.<br>Beware of possible traps.;
-Forgotten Forest;🥱;You are now awake.;Prop;0;0;0;0;0;Hazy Thought;It almost felt like an eternal slumber.<br>You don't remember where you are.;
-Forgotten Forest;🐀;Dire Rat;Swift;1;1;1;0;3;Wild Animal;It runs around really fast.<br>You'd better raise your shield.;
+Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;<b>Nightmare monsters</b> are chasing you.<br>Try to escape by using <b>🌀 Roll</b>.;
+Restless Nightmare;👺;A demon appeared.;Standard;2;1;2;0;0;Hazy Thought;<b>🎯 Attacked</b> enemies usually fight back.<br><b>🛡 Block</b> or <b>🌀 Roll</b> to defend first.;It got too close and attacked you
+Restless Nightmare;🤔;Stay focused.;Dream;0;0;0;0;0;Hazy Thought;<b>🟢 Energy</b> is essential for winning combat.<br>Use <b>💤 Rest</b> whenever possible.;
+Restless Nightmare;🦐;You see a shrimp.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> any food and loot you encounter.<br>It can make a huge difference.;
+Forgotten Forest;🥱;You are now awake.;Dream;0;0;0;0;0;Hazy Thought;It almost felt like an eternal slumber.<br>Let's find out where you are.;
+Forgotten Forest;🐀;Dire Rat;Swift;1;1;1;0;3;Wild Animal;It's aggressive and really fast.<br>Better raise your shield.;
 Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 Forgotten Forest;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
 Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Huh. It was surprisingly tasty
