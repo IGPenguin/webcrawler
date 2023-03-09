@@ -151,7 +151,7 @@ function redraw(index){
   }
 
   //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
-  areaName = String(selectedLine.split(",")[0].split(":")[1]);
+  var areaName = String(selectedLine.split(",")[0].split(":")[1]);
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
@@ -166,7 +166,6 @@ function redraw(index){
 
   //Encounter UI
   document.getElementById('id_area').innerHTML = areaName;
-
   document.getElementById('id_emoji').innerHTML = enemyEmoji;
   document.getElementById('id_name').innerHTML = enemyName;
   document.getElementById('id_desc').innerHTML = enemyDesc;
@@ -243,7 +242,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           default:
             logPlayerAction(actionString,"Your attacking had no effect -1 🟢");
-            break;
       }
       break;
 
