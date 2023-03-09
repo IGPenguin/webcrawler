@@ -15,7 +15,7 @@ layout: default
 <p style="margin:14px;"></p>
 
 <div class="card">
-<h1 id = "id_emoji" style="margin-top:8px; margin-bottom:8px;"/>
+<h1 id = "id_emoji" style="margin-top:4px; margin-bottom:8px;"/>
 <h2 id = "id_name"/>
 <h3 id = "id_stats" style="line-height:24px; margin-bottom:8px;"/>
 <h4 id = "id_desc" style="padding-right:24px; padding-left:24px; margin-bottom:12px; line-height:165%"/>
@@ -29,8 +29,8 @@ layout: default
 <div class="toolbar">
 <h3 id = "id_player_name" style="font-weight:bold; margin-bottom:8px; margin-top:4px;"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
-<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:8px; padding-right:6px; margin-bottom:8px; text-align:left;"/>
-<h3 id = "id_player_party_loot" style="margin-bottom:0px; display:inline;"/>
+<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:8px; padding-right:6px; margin-bottom:4px; text-align:left;"/>
+<h4 id = "id_player_party_loot" style="margin-bottom:0px; display:inline;"/>
 </div>
 
 <p style="margin:16px;"></p>

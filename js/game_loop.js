@@ -14,7 +14,20 @@ if (seenEncountersString == null){
 var adventureLog = "";
 
 //Player stats init
-var playerName = "Nameless Hero"
+function renewPlayer(){
+  playerHpMax=playerHpDefault;
+  playerHp = playerHpMax;
+  playerSta = playerStaDefault;
+  playerAtk = 1;
+  playerDef = 0;
+  playerInt = 1;
+  var playerLootString = "";
+  var playerPartyString = "";
+}
+
+var playerName = "Nameless Hero";
+var playerLootString = "";
+var playerPartyString = "";
 var playerHpDefault = 3
 var playerStaDefault = 3;
 
@@ -129,6 +142,13 @@ function redraw(index){
   playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta) + "▱".repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
+  document.getElementById('id_player_party_loot').innerHTML = "";
+  if (playerPartyString.length > 0) {
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString;
+  }
+  if (playerLootString.length > 0) {
+    document.getElementById('id_player_party_loot').innerHTML += "&nbsp;&nbsp;<b>Loot:</b> "+playerLootString;
+  }
 
   //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
   areaName = String(selectedLine.split(",")[0].split(":")[1]);
@@ -158,9 +178,11 @@ function redraw(index){
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "▱".repeat(enemyStaLost); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
-  if (enemyType.includes("Item") || enemyType.includes("Consumable") || enemyType.includes("Trap") || enemyType.includes("Prop")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
+  if (enemyType.includes("Item") || enemyType.includes("Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
   if (enemyType.includes("Friend")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🎯 ??";} //Im just too tired today
-  if (enemyType.includes("Dream")) {enemyStatusString = "💤 💤 💤";} //Im just too tired today, again
+  if (enemyType.includes("Dream")||enemyType.includes("Prop")) {enemyStatusString = "∙  ∙  ∙";} //Im just too tired today, again
+  if (enemyType.includes("Consumable")) {enemyStatusString = "+ ❤️&nbsp;&nbsp;+ 🟢";} //Im just too tired today, again and again
+
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
 }
@@ -277,9 +299,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-          case "Prop":
-          case "Dream":
             logPlayerAction(actionString,"You rolled away leaving it behind.");
+            nextEncounter();
+            break;
+          case "Dream":
+            logPlayerAction(actionString,"You moved on to another thought.");
+            nextEncounter();
+            break;
+          case "Prop":
+            logPlayerAction(actionString,"You continued on your adventure.");
             nextEncounter();
             break;
           case "Friend":
@@ -337,6 +365,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHit(enemyAtk);
             break;
           case "Item":
+            playerLootString+=" "+enemyEmoji;
+            logPlayerAction(actionString,"You took it with yourself on an advenure!");
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           case "Friend":
@@ -357,6 +387,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_speak':
         switch (enemyType){
+          case "Recruit":
+            if (enemyInt < playerInt){
+              logPlayerAction(actionString,"You convinced them to join your party!");
+              playerPartyString+=" "+enemyEmoji
+              playerAtk+=enemyAtk;
+              nextEncounter();
+              break;
+            }
           case "Standard":
           case "Swift":
           case "Heavy":
@@ -544,10 +582,10 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
 }
 
 function playerConsumed(){
-  var consumedString = "Mmm, that felt refreshing "
+  var consumedString = "Mmm, quite refreshing "
 
   var missingHp=playerHpMax-playerHp;
-  var missingSta=(playerStaMax-playerSta);
+  var missingSta=playerStaMax-playerSta;
 
   if ((missingHp > 0) || (missingSta > 0)){
 
@@ -573,15 +611,6 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     gameOver();
   }
-}
-
-function renewPlayer(){
-  playerHpMax=playerHpDefault;
-  playerHp = playerHpMax;
-  playerSta = playerStaDefault;
-  playerAtk = 1;
-  playerDef = 0;
-  playerInt = 1;
 }
 
 //End Game
