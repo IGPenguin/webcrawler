@@ -291,7 +291,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your roll was totally pointless -1 🟢");
+              enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your rolling was a waste of energy -1 🟢");
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
             }
@@ -306,7 +306,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             if (playerUseStamina(1)){
-              enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your roll was totally pointless  -1 🟢");
+              enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your rolling was a waste of energy  -1 🟢");
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
             }
