@@ -214,6 +214,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
+          case "Container":
             logPlayerAction(actionString,"You attacked and destroyed it -1 🟢");
             nextEncounter();
             break;
@@ -354,7 +355,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Pet":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
-              logPlayerAction(actionString,"You rubbed it's belly and it joined your party!");
+              logPlayerAction(actionString,"You petted it and become friends!");
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
               nextEncounter();
@@ -400,7 +401,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
             playerLootString+=" "+enemyEmoji;
-            logPlayerAction(actionString,"You took it with yourself on an advenure!");
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           case "Friend":
