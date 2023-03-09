@@ -1,12 +1,12 @@
 area;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;<b>Nightmare monsters</b> are chasing you.<br>Try to escape by using <b>🌀 Roll</b>.;
-Restless Nightmare;👺;A demon appeared.;Standard;2;1;2;0;0;Hazy Thought;<b>🎯 Attacked</b> enemies usually fight back.<br><b>🛡 Block</b> or <b>🌀 Roll</b> to defend first.;It got too close and attacked you
+Restless Nightmare;👺;A demon appeared.;Recruit;2;1;2;0;0;Hazy Thought;<b>🎯 Attacked</b> enemies usually fight back.<br><b>🛡 Block</b> or <b>🌀 Roll</b> to defend first.;It got too close and attacked you
 Restless Nightmare;🤔;Stay focused.;Dream;0;0;0;0;0;Hazy Thought;<b>🟢 Energy</b> is essential for winning combat.<br>Use <b>💤 Rest</b> whenever possible.;
 Restless Nightmare;🦐;You see a shrimp.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> any food and loot you encounter.<br>It can make a huge difference.;
 Forgotten Forest;🥱;You are now awake.;Dream;0;0;0;0;0;Hazy Thought;It almost felt like an eternal slumber.<br>Let's find out where you are.;
 Forgotten Forest;🐀;Dire Rat;Swift;1;1;1;0;3;Wild Animal;It's aggressive and really fast.<br>Better raise your shield.;
 Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
-Forgotten Forest;🌿;Fern Bush;Prop;0;0;0;0;0;Forest Flora;It is covered with an interesting pattern.<br>Hopefully it's not toxic.;
+Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>I should make use of it.;
 Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Eating it made you more resilient
 Forgotten Forest;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;A little cute drooling boy.<br>Aaaw. Look at him.;
 Forgotten Forest;⛺️;Abandoned Tent;Prop;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
@@ -23,7 +23,7 @@ Forgotten Forest;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Hmm. A tree in a for
 Forgotten Forest;🐍;Gigantic Snake;Heavy;3;2;1;0;5;Wild Animal;Wow! This guy has been eatin' a lot.<br>Maybe you could use it as a rope.;
 Forgotten Forest;🥚;Snake Egg;Consumable;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
 Forgotten Forest;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;Why is there an owl during daytime?<br>You should investigate.;It revealed you a powerful secret
-Forgotten Forest;🐕;Stray Dog;Standard;3;2;3;0;1;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
+Forgotten Forest;🐕;Stray Dog;Recruit;3;2;3;0;1;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
 Forgotten Forest;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
 Forgotten Forest;🐐;Irritable Goat;Heavy;3;1;2;0;10;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
 Forgotten Forest;🦊;Sentient Fox;Friend;0;0;1;0;0;Wild Animal;It doesn't seem scared of you.<br>Could it be friend?;It gave you a forest agility training
