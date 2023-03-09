@@ -621,6 +621,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
     gainedString += " +"+bonusAtk + " 🎯";
   }
   if (bonusSta > 0){
+    playerStaMax += parseInt(bonusSta);
     playerSta += parseInt(bonusSta);
     gainedString += " +"+bonusSta + " 🟢";
   }
