@@ -369,7 +369,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You were too slow, they dodged that.");
               enemyRest(1);
             } else { //Player and enemy have no stamina - asymetrical rest
-              logPlayerAction(actionString,"You pushed them away and regained +2 🟢");
+              logPlayerAction(actionString,"You pushed them away and gained +2 🟢");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -430,7 +430,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_speak':
         switch (enemyType){
           case "Recruit":
-            if (enemyInt < playerInt){
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
               logPlayerAction(actionString,"You convinced them to join your party!");
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
