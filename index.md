@@ -26,7 +26,7 @@ layout: default
 <h3 style="margin:-0px; font-size:14px">· VS ·</h3>
 <p style="margin:6px;"></p>
 
-<div class="toolbar">
+<div class="toolbar" style="padding-bottom:10px;">
 <h3 id = "id_player_name" style="font-weight:bold; margin-bottom:8px; margin-top:4px;"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
 <h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:8px; padding-right:6px; margin-bottom:4px; text-align:left;"/>
