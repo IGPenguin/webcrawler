@@ -671,7 +671,7 @@ function playerHit(incomingDamage){
 
 //End Game
 function gameOver(){
-  //Reset progress to death
+  //Reset progress to death encounter
   resetSeenEncounters();
   logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;☠️&nbsp;&nbsp;You were killed by their attack.")
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function

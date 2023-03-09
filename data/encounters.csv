@@ -39,11 +39,11 @@ Forgotten Forest;🧺;Picnic Basket;Container;0;0;0;0;0;Container;Someone must h
 Forgotten Forest;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
 Forgotten Forest;🦡;Honey Badger;Heavy;3;1;3;0;3;Wild Animal;It looks fairly angry.<br>Maybe it was its cookie.;
 Forgotten Forest;🕳;Bottomless Hole;Prop;0;6;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?;
-Forest Cavern;🐾;Invisible Creature;Swift;1;2;4;5;10;???;You feel like something is crawling around.<br>Hopefully not some hungry beast.;They ripped you apart
+Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel like something is crawling around.<br>Hopefully not some hungry beast.;They ripped you apart
 Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
-Forest Cavern;🐺;Fuzzy Wolf;Heavy;3;4;2;0;10;Apex Predator;It winds up for a fatal strike.<br>You'd better avoid it.;They ripped you apart
+Forest Cavern;🐺;Fuzzy Wolf;Heavy;3;4;1;0;10;Apex Predator;It winds up for a fatal strike.<br>You'd better avoid it.;They ripped you apart
 Forest Cavern;💀;Pile of Skeletons;Prop;0;0;0;0;0;Disturbing Object;Oh. A lot of adventures ended here.<br>Better catch your breath.;
-Forest Cavern;🐾;Invisible Creature;Swift;1;2;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
+Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
 Forest Cavern;🧙;Tired Old Man;Recruit;1;1;1;0;1;Cursed Human Being;What? It was a man all along?<br>Will you show mercy?;They ripped you apart
 Forest Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
 Forest Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
