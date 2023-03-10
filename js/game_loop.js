@@ -1,5 +1,9 @@
 //Tech init
-var versionCode = "work-in-progress, ver. 3/10/23"
+var versionCode = "work-in-progress, ver. 3/10/23 (2)"
+var cardUIElement;
+var emojiUIElement;
+var enemyInfoUIElement;
+var playerInfoUIElement;
 
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
 var seenEncounters;
@@ -16,6 +20,7 @@ if (seenEncountersString == null){
 function renewPlayer(){
   playerHpMax=playerHpDefault;
   playerHp = playerHpMax;
+  playerStaMax = playerStaDefault;
   playerSta = playerStaDefault;
   playerAtk = 1;
   playerDef = 0;
@@ -140,6 +145,7 @@ function redraw(index){
   selectedLine = String(lines[index]);
 
   //Player UI
+  playerInfoUIElement= document.getElementById('id_player_info');
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta) + "▱".repeat(playerStaMax-playerSta);
@@ -151,6 +157,9 @@ function redraw(index){
   }
   if (playerLootString.length > 0) {
     document.getElementById('id_player_party_loot').innerHTML += "&nbsp;&nbsp;<b>Loot:</b> "+playerLootString;
+  }
+  if (playerPartyString.length+playerLootString.length == 0) {
+    document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
   }
 
   //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
@@ -168,8 +177,12 @@ function redraw(index){
   enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
 
   //Encounter UI
+  cardUIElement = document.getElementById('id_card');
+  enemyInfoUIElement = document.getElementById('id_enemy_info');
+  emojiUIElement = document.getElementById('id_emoji');
+
+  emojiUIElement.innerHTML = enemyEmoji;
   document.getElementById('id_area').innerHTML = areaName;
-  document.getElementById('id_emoji').innerHTML = enemyEmoji;
   document.getElementById('id_name').innerHTML = enemyName;
   document.getElementById('id_desc').innerHTML = enemyDesc;
   document.getElementById('id_team').innerHTML = "»&nbsp;&nbsp;" + enemyTeam + "&nbsp;&nbsp;«";
@@ -193,13 +206,15 @@ function redraw(index){
 //Game logic
 function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
-    actionString = document.getElementById(button).innerHTML;
-    actionFeedback(button);
+    var buttonUIElement = document.getElementById(button);
+    actionString = buttonUIElement.innerHTML;
+    actionVibrateFeedback(button);
 
     switch (button) {
       case 'button_attack':
         if (!playerUseStamina(1)){
             logPlayerAction(actionString,"You are too tired to attack anything.");
+            animateUIElement(buttonUIElement,"animate__headShake","0.7");
             break;
           }
         switch (enemyType){
@@ -256,6 +271,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_block':
         if (!playerUseStamina(1)){
           logPlayerAction(actionString,"You are too tired to raise your shield.");
+          animateUIElement(buttonUIElement,"animate__headShake","0.7");
           break;
         }
         switch (enemyType){
@@ -295,6 +311,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your rolling was a waste of energy -1 🟢");
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
+              animateUIElement(buttonUIElement,"animate__headShake","0.7");
             }
             break;
           case "Swift":
@@ -303,6 +320,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerHit(enemyAtk);
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
+              animateUIElement(buttonUIElement,"animate__headShake","0.7");
             }
             break;
           case "Heavy":
@@ -310,6 +328,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your rolling was a waste of energy  -1 🟢");
             } else {
               logPlayerAction(actionString,"You are too tired to make any move.");
+              animateUIElement(buttonUIElement,"animate__headShake","0.7");
             }
             break;
           case "Item":
@@ -345,6 +364,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Death":
             logPlayerAction(actionString,"There is nothing to avoid anymore.");
+            animateUIElement(buttonUIElement,"animate__headShake","0.7");
             break;
           default:
             logPlayerAction(actionString,"Feels like nothing really happened.");
@@ -432,6 +452,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
             if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
               logPlayerAction(actionString,"You convinced them to join your party!");
+              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
               nextEncounter();
@@ -440,6 +461,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
           case "Swift":
           case "Heavy":
+          case "Pet":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to leave you alone.");
               nextEncounter();
@@ -523,26 +545,21 @@ function enemyRenew(){
 }
 
 function enemyRest(stamina){
+  animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
   enemyStaLost-=stamina;
   if (enemyStaLost < 0) {
     enemyStaLost = 0;
   }
 }
 
-function enemyStaminaChange(stamina){
-  if (enemyStaLost < enemySta) {
-    enemyStaLost -= stamina;
-  } else {
-    enemyStaLost += stamina
-  }
-}
-
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   if (enemyStaLost < enemySta) {
     logPlayerAction(actionString,successMessage);
+    animateUIElement(emojiUIElement,"animate__headShake","0.7"); //Play attack animation
     enemyStaLost -= stamina;
   } else {
     logPlayerAction(actionString,failMessage);
+    animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
     enemyStaLost += stamina
   }
 }
@@ -552,6 +569,8 @@ function enemyHit(damage){
   if (enemyHpLost >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
     nextEncounter();
+  } else {
+    animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
 }
 
@@ -562,7 +581,7 @@ function enemyKnockedOut(){
 
 function enemyAttackIfPossible(){
   if (enemySta-enemyStaLost > 0) {
-    enemyStaminaChangeMessage(-1,"The enemy attacked you for&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
+    enemyStaminaChangeMessage(-1,"The enemy attacked you for -"+enemyAtk+" 💔","n/a");
     playerHit(enemyAtk);
   } else {
     enemyRest(1);
@@ -572,8 +591,8 @@ function enemyAttackIfPossible(){
 function nextEncounter(){
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
-  console.log("Starting new encounter:"+ encounterIndex);
   enemyRenew();
+  animateUIElement(cardUIElement,"animate__fadeIn","0.7");
 }
 
 //Player
@@ -591,6 +610,7 @@ function playerGetStamina(stamina,silent = false){
     if (playerSta > playerStaMax){
       playerSta = playerStaMax;
     }
+    animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
     return true;
   }
 }
@@ -633,12 +653,13 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
     playerInt += parseInt(bonusInt);
     gainedString += " +"+bonusInt + " 🧠";
   }
+  animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
   logPlayerAction(actionString,gainedString);
   nextEncounter();
 }
 
 function playerConsumed(){
-  var consumedString = "Mmm, quite refreshing "
+  var consumedString = "Mmm, that was refreshing "
 
   var missingHp=playerHpMax-playerHp;
   var missingSta=playerStaMax-playerSta;
@@ -654,9 +675,11 @@ function playerConsumed(){
       playerGetStamina(missingSta,true);
       consumedString += "+"+missingSta + " 🟢";
     }
+    animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
     var tooFullStaLost = 2;
     consumedString="You lost energy due to overeating -"+tooFullStaLost+" 🟢";
+    animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
     playerUseStamina(tooFullStaLost);
   }
   logPlayerAction(actionString,consumedString);
@@ -664,6 +687,7 @@ function playerConsumed(){
 
 function playerHit(incomingDamage){
   playerHp = playerHp - incomingDamage;
+  animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     gameOver();
@@ -686,7 +710,7 @@ function gameEnd(){
   //Reset progress to game start
   resetSeenEncounters();
   encnounterIndex=4;
-  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik and Stackoverflow");
+  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
 }
 
 //Logging
@@ -716,9 +740,20 @@ function vibrateButtonPress(){
   window.navigator.vibrate([5,20,10]);
 }
 
-async function actionFeedback(buttonID){
+async function actionVibrateFeedback(buttonID){
   vibrateButtonPress();
   await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
+}
+
+function animateUIElement(documentElement,animation,time="0s"){
+  //Wow, this is nice - https://animate.styles
+  documentElement.classList.add("animate__animated",animation);
+  if (time !="0s"){
+    documentElement.style.setProperty("--animate-duration",time+"s");
+  }
+  documentElement.addEventListener('animationend', () => {
+    documentElement.classList.remove("animate__animated",animation);
+  });
 }
 
 function registerClickListeners(){

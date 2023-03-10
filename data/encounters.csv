@@ -7,9 +7,9 @@ Restless Nightmare;🦐;You see a shrimp.;Consumable;0;0;0;0;0;Hazy Thought;<b>�
 Forgotten Forest;🥱;You are now awake.;Prop;0;0;0;0;0;Hazy Thought;It almost felt like an eternal slumber.<br><b>🌀 Roll</b> to find out where you are.;
 Forgotten Forest;🌳;Oak Alley;Prop;0;0;0;0;0;Forest Area;You see just endless lines of trees.<br>Rolling forward is the only way ahead.;
 Forgotten Forest;🐀;Dire Rat;Swift;1;1;1;0;3;Wild Animal;It jumped out of nowhere really fast.<br>Better raise your shield.;
-Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;2;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
+Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;1;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>You should make use of it.;
-Forgotten Forest;🐕;Stray Dog;Pet;3;1;2;0;1;Wild Animal;It doesn't look too friendly.<br>Maybe don't pet it.;
+Forgotten Forest;🐕;Stray Dog;Pet;1;1;2;0;1;Wild Animal;It doesn't look too friendly.<br>Maybe you could pet it?;
 Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Eating it made you more resilient
 Forgotten Forest;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;Cute on the outside.<br>Corrupted inside;
 Forgotten Forest;⛺️;Abandoned Tent;Container;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
