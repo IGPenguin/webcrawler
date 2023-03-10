@@ -665,6 +665,7 @@ function playerConsumed(){
 function playerHit(incomingDamage){
   playerHp = playerHp - incomingDamage;
   if (playerHp <= 0){
+    playerHp=0; //Prevent redraw issues post-overkill
     gameOver();
   }
 }
