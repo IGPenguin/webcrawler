@@ -355,7 +355,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Pet":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
-              logPlayerAction(actionString,"You petted it and become friends!");
+              logPlayerAction(actionString,"You petted it and became friends!");
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
               nextEncounter();
