@@ -370,7 +370,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You were too slow, they dodged that.");
               enemyRest(1);
             } else { //Player and enemy have no stamina - asymetrical rest
-              logPlayerAction(actionString,"You pushed them away and gained +2 🟢");
+              logPlayerAction(actionString,"You pushed them afar and gained +2 🟢");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -384,7 +384,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
-              logPlayerAction(actionString,"You pushed them afar and rested +2 🟢");
+              logPlayerAction(actionString,"You pushed them afar and gained +2 🟢");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -497,8 +497,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Prop":
           case "Dream":
           case "Container":
-            playerGetStamina(1);
-            break; //Just rest to full if anything above
+            playerGetStamina(playerStaMax-playerSta);//Rest to full if nout of combat
+            break;
           case "Friend":
             logPlayerAction(actionString,"They got tired of waiting for you and left.");
             nextEncounter();
@@ -684,6 +684,7 @@ function gameEnd(){
 
   //Reset progress to game start
   resetSeenEncounters();
+  encnounterIndex=4;
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik and Stackoverflow");
 }
 
