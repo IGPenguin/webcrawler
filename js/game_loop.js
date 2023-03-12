@@ -1,5 +1,5 @@
 //Tech init
-var versionCode = "work-in-progress, ver. 3/10/23 (2)"
+var versionCode = "work-in-progress, ver. 3/12/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
