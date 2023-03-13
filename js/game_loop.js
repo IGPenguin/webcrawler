@@ -98,7 +98,7 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(1); //Start from the first encounter (0 is dead)
+  redraw(27); //Start from the first encounter (0 is dead)
 }
 
 function getNextEncounterIndex(){
@@ -228,7 +228,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Container":
-            logPlayerAction(actionString,"You attacked and destroyed it -1 🟢");
+            var openMessage = "You attacked and destroyed it -1 🟢";
+            if (enemyMsg != ""){
+              openMessage = enemyMsg.replace("."," -1 🟢");
+            }
+            logPlayerAction(actionString,openMessage);
             nextEncounter();
             break;
           case "Friend":
@@ -408,7 +412,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHit(enemyAtk);
             break;
           case "Container":
-            logPlayerAction(actionString,"There was something hidden inside.")
+            var openMessage = "There was something hidden inside.";
+            if (enemyMsg != ""){
+              openMessage = enemyMsg;
+            }
+            logPlayerAction(actionString,openMessage);
             nextEncounter();
             break;
           case "Item":
