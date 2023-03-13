@@ -369,7 +369,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"You need higher intelligence to befriend them.");
+                logPlayerAction(actionString,"You need to be wiser to befriend them.");
                 break;
               }
               logPlayerAction(actionString,"You petted it and became friends!");
