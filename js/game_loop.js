@@ -568,12 +568,11 @@ function enemyHit(damage){
   enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
-    displayEnemyEffect("💀");
     nextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
-    displayEnemyEffect("💢");
   }
+  displayEnemyEffect("💢");
 }
 
 function enemyKnockedOut(){
