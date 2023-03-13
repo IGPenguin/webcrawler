@@ -1,5 +1,5 @@
 //Tech init
-var versionCode = "work-in-progress, ver. 3/12/23"
+var versionCode = "work-in-progress, ver. 3/13/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -359,10 +359,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-      case 'button_grab': //Player vs encnounter stamina decides the success
+      case 'button_grab': //Player vs encounter stamina decides the success
         switch (enemyType){
-          case "Pet": //Can become friends when the player has higher current stamina
+          case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
+              if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
+                logPlayerAction(actionString,"You need higher intelligence to befriend them.");
+                break;
+              }
               logPlayerAction(actionString,"You petted it and became friends!");
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
