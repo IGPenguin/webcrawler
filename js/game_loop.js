@@ -98,7 +98,7 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(27); //Start from the first encounter (0 is dead)
+  redraw(1); //Start from the first encounter (0 is dead)
 }
 
 function getNextEncounterIndex(){
