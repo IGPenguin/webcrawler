@@ -211,10 +211,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     actionVibrateFeedback(button);
 
     switch (button) {
-      case 'button_attack':
-        if (!playerUseStamina(1)){
-            logPlayerAction(actionString,"You are too tired to attack anything.");
-            animateUIElement(buttonUIElement,"animate__headShake","0.7");
+      case 'button_attack': //Attacking always needs stamina
+        if (!playerUseStamina(1,"You are too tired to attack anything.")){
             break;
           }
         switch (enemyType){
@@ -269,11 +267,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       break;
 
       case 'button_block':
-        if (!playerUseStamina(1)){
-          logPlayerAction(actionString,"You are too tired to raise your shield.");
-          animateUIElement(buttonUIElement,"animate__headShake","0.7");
-          break;
-        }
+        if (!playerUseStamina(1,"You are too tired to raise your shield.")){
+            break;
+          }
         switch (enemyType){
           case "Standard":
           case "Recruit":
@@ -302,33 +298,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-      case 'button_roll':
+      case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
+        const noStaForRollMessage = "You are too tired to make any move.";
         switch (enemyType){
           case "Standard":
           case "Recruit":
           case "Pet":
-            if (playerUseStamina(1)){
+            if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your rolling was a waste of energy -1 🟢");
-            } else {
-              logPlayerAction(actionString,"You are too tired to make any move.");
-              animateUIElement(buttonUIElement,"animate__headShake","0.7");
             }
             break;
           case "Swift":
-            if (playerUseStamina(1)){
+            if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"They hit you while you were rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
-            } else {
-              logPlayerAction(actionString,"You are too tired to make any move.");
-              animateUIElement(buttonUIElement,"animate__headShake","0.7");
             }
             break;
           case "Heavy":
-            if (playerUseStamina(1)){
+            if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your rolling was a waste of energy  -1 🟢");
-            } else {
-              logPlayerAction(actionString,"You are too tired to make any move.");
-              animateUIElement(buttonUIElement,"animate__headShake","0.7");
             }
             break;
           case "Item":
@@ -337,7 +325,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container":
-            logPlayerAction(actionString,"You rolled away leaving it behind.");
+            logPlayerAction(actionString,"You rolled away without looking inside.");
             encounterIndex+=1; //Skip loot
             nextEncounter();
             break;
@@ -353,7 +341,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You rolled far away from them.");
             nextEncounter();
             break;
-          case "Trap-Roll":
+          case "Trap-Roll": //You get damage rolling into "Trap-Roll" type encounters
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             break;
@@ -364,17 +352,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Death":
             logPlayerAction(actionString,"There is nothing to avoid anymore.");
-            animateUIElement(buttonUIElement,"animate__headShake","0.7");
+            animateUIElement(playerInfoUIElement,"animate__headShake","0.7");
             break;
           default:
             logPlayerAction(actionString,"Feels like nothing really happened.");
         }
         break;
 
-      case 'button_grab':
+      case 'button_grab': //Player vs encnounter stamina decides the success
         switch (enemyType){
-          case "Pet":
-            if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
+          case "Pet": //Can become friends when the player has higher current stamina
+            if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               logPlayerAction(actionString,"You petted it and became friends!");
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
@@ -382,7 +370,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
           case "Recruit":
-          case "Standard":
+          case "Standard": //Player vs encnounter stamina - knockout, dodge or asymmetrical rest
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
@@ -445,7 +433,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             logPlayerAction(actionString,"You reached out and nothing happened.");
           }
-          break;
+        break;
 
       case 'button_speak':
         switch (enemyType){
@@ -615,8 +603,12 @@ function playerGetStamina(stamina,silent = false){
   }
 }
 
-function playerUseStamina(stamina){
+function playerUseStamina(stamina, message = ""){
   if (playerSta <= 0) { //Cannot lose more
+    if (message != ""){ //Display specific "too tired message"
+      logPlayerAction(actionString,message);
+    }
+    animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
     return false;
   } else {
     playerSta -= stamina;
