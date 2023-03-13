@@ -504,8 +504,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Recruit":
           case "Pet":
-            //Opportunity to attack player
-            if (enemySta - enemyStaLost > 0){
+            if (playerHp-enemyAtk>0){
               playerGetStamina(1);
             }
             enemyAttackIfPossible();
