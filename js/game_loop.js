@@ -504,7 +504,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Recruit":
           case "Pet":
-            if (playerHp-enemyAtk>0){
+            if ((playerHp-enemyAtk>0)||(enemySta-enemyStaLost==0)){
               playerGetStamina(1);
             }
             enemyAttackIfPossible();
@@ -568,11 +568,12 @@ function enemyHit(damage){
   enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
+    displayEnemyEffect("💀");
     nextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
+    displayEnemyEffect("💢");
   }
-  displayEnemyEffect("💢");
 }
 
 function enemyKnockedOut(){
@@ -756,7 +757,7 @@ function displayEffect(message,effectOverlayUIElement){
   effectOverlayUIElement.style.display = "block";
 
   effectOverlayUIElement.classList.add("animate__animated","animate__fadeOut");
-  effectOverlayUIElement.style.setProperty("--animate-duration","1.2s");
+  effectOverlayUIElement.style.setProperty("--animate-duration","1s");
   effectOverlayUIElement.addEventListener('animationend', () => {
     effectOverlayUIElement.style.display = "none";
     effectOverlayUIElement.classList.remove("animate__animated","animate__fadeOut");
