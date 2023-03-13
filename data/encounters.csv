@@ -24,7 +24,7 @@ Forgotten Forest;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;It stares suspic
 Forgotten Forest;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
 Forgotten Forest;🐐;Irritable Goat;Heavy;3;1;2;0;10;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
 Forgotten Forest;🦊;Friendly Fox;Friend;0;0;1;0;0;Wild Animal;It came to sit right in front of you.<br>Maybe you could speak with it.;It gave you a forest agility training
-Forgotten Forest;🌱;Familiar Plant;Container;0;0;0;0;0;Potential Food;Something familiar is growing here.<br>Could it be some vegetable?;You dug something out of the ground.
+Forgotten Forest;🌱;Familiar Plant;Container;0;0;0;0;0;Potential Food;You noticed a distinctive plant nearby.<br>Could it be something edible?;You dug it out of the ground.
 Forgotten Forest;🥕;Wild Carrot;Consumable;0;0;0;0;0;Fresh Vegetable;A carrot was hiding below the ground.<br>This seems like time for a snack.;
 Forgotten Forest;🐺;Old Wolf;Pet;5;2;2;0;2;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
 Forgotten Forest;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;It lays besides a dead hunter body.<br>He probably won't miss it.;You shot yourself by a mistake
@@ -36,7 +36,7 @@ Forgotten Forest;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;Fancy Food;You wonder
 Forgotten Forest;🦡;Honey Badger;Heavy;3;1;3;0;3;Wild Animal;It looks fairly angry over your presence.<br>Make sure to dodge its furious attacks.;
 Forgotten Forest;🕳;Bottomless Hole;Prop;0;6;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
-Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's scattered remains.<br>This doesn't look like an accident.;
+Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
 Forest Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for an imminent powerful attack.<br>You'd better avoid it.;They ripped you apart
 Forest Cavern;💀;Pile of Skeletons;Prop;0;0;0;0;0;Disturbing Object;Oh. A lot of adventures ended here.<br>Better catch your breath.;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
