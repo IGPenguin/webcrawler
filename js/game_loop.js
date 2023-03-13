@@ -263,8 +263,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           case "Death":
-              logPlayerAction(actionString,"There is nothing to attack anymore.");
-              break;
+            logPlayerAction(actionString,"There is nothing to attack anymore.");
+            break;
           default:
             logPlayerAction(actionString,"Your attacking had no effect -1 🟢");
       }
@@ -279,26 +279,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
             enemyStaminaChangeMessage(-1,"You blocked their standard attack -1 🟢","You blocked absolutely nothing -1 🟢");
+            displayPlayerEffect("🛡");
             break;
           case "Swift":
             enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
+            displayPlayerEffect("🛡");
             break;
           case "Heavy":
-            if (enemySta-enemyStaLost > 0){
-              enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a");
+            if (enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
             }
             break;
-          case "Dream":
-              logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
-              break;
           case "Death":
               logPlayerAction(actionString,"There is nothing to block anymore.");
               break;
           default:
             logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
+            displayPlayerEffect("🛡");
         }
         break;
 
@@ -310,6 +309,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
             if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your rolling was a waste of energy -1 🟢");
+              displayPlayerEffect("🌀");
             }
             break;
           case "Swift":
@@ -321,6 +321,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
             if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your rolling was a waste of energy  -1 🟢");
+              displayPlayerEffect("🌀");
             }
             break;
           case "Item":
@@ -372,7 +373,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               logPlayerAction(actionString,"You petted it and became friends!");
-              playerPartyString+=" "+enemyEmoji
+              displayPlayerEffect("💞");
+              playerPartyString+=" "+enemyEmoji;
               playerAtk+=enemyAtk;
               nextEncounter();
               break;
@@ -452,6 +454,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
             if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
               logPlayerAction(actionString,"You convinced them to join your party!");
+              displayPlayerEffect("💬");
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
@@ -471,13 +474,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"They ignored whatever you said.");
             }
+            displayPlayerEffect("💬");
             enemyRest(1);
             break;
           case "Friend":
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
-            break;
-          case "Trap-Roll":
-            logPlayerAction(actionString,"No one replied, you only heard yourself.");
+            displayPlayerEffect("💬");
             break;
           case "Death":
             logPlayerAction(actionString,"Your legend was copied into clipboard.");
@@ -491,11 +493,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
+            displayPlayerEffect("💬");
         }
         break;
 
       case 'button_sleep':
-        var playerPostHitHp = 1; //You can rest by default
         switch (enemyType){
           case "Standard":
           case "Swift":
@@ -504,12 +506,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
             //Opportunity to attack player
             if (enemySta - enemyStaLost > 0){
-              playerPostHitHp=playerHp-enemyAtk;
-            }
-            enemyAttackIfPossible();
-            if (playerPostHitHp > 0) { //Rest if alive
               playerGetStamina(1);
             }
+            enemyAttackIfPossible();
             break;
           case "Trap":
           case "Trap-Attack":
@@ -557,26 +556,30 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
     logPlayerAction(actionString,successMessage);
     animateUIElement(emojiUIElement,"animate__headShake","0.7"); //Play attack animation
     enemyStaLost -= stamina;
+    return true;
   } else {
     logPlayerAction(actionString,failMessage);
     animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
     enemyStaLost += stamina
+    return false;
   }
 }
 
 function enemyHit(damage){
-  enemyHpLost = enemyHpLost + damage
+  enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
     nextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
+  displayEnemyEffect("💢");
 }
 
 function enemyKnockedOut(){
   logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You knocked them out of conscioussnes.");
   nextEncounter();
+  displayEnemyEffect("💤");
 }
 
 function enemyAttackIfPossible(){
@@ -601,6 +604,7 @@ function playerGetStamina(stamina,silent = false){
     if (!silent){
       logPlayerAction(actionString,"You just wasted a moment of your life.");
     }
+    displayPlayerEffect("💤");
     return false;
   } else {
     if (!silent){
@@ -611,6 +615,7 @@ function playerGetStamina(stamina,silent = false){
       playerSta = playerStaMax;
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
+    displayPlayerEffect("💤");
     return true;
   }
 }
@@ -695,7 +700,10 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     gameOver();
+    displayPlayerEffect("☠️");
+    return;
   }
+  displayPlayerEffect("💢");
 }
 
 //End Game
@@ -736,6 +744,27 @@ function logAction(message){
 }
 
 //UI Tech
+function displayEnemyEffect(message){
+  displayEffect(message,document.getElementById('id_enemy_overlay'));
+}
+
+function displayPlayerEffect(message){
+  displayEffect(message,document.getElementById('id_player_overlay'));
+}
+
+function displayEffect(message,effectOverlayUIElement){
+  effectOverlayUIElement.innerHTML = message;
+  effectOverlayUIElement.style.display = "block";
+
+  effectOverlayUIElement.classList.add("animate__animated","animate__fadeOut");
+  effectOverlayUIElement.style.setProperty("--animate-duration","1.2s");
+  effectOverlayUIElement.addEventListener('animationend', () => {
+    effectOverlayUIElement.style.display = "none";
+    effectOverlayUIElement.classList.remove("animate__animated","animate__fadeOut");
+    return;
+  });
+}
+
 function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
     console.log("Vibrate not supported!");

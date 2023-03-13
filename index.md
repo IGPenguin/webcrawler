@@ -15,6 +15,7 @@ layout: default
 <h2 id = "id_subtitle" style="margin:-12px; font-size:20px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2>
 <p style="margin:14px;"></p>
 
+<div class= "enemyOverlay" id="id_enemy_overlay"></div>
 <div class="card" id="id_card">
 <div id = "id_enemy_info">
 <h1 id = "id_emoji" style="margin-top:4px; margin-bottom:8px;"/>
@@ -29,6 +30,7 @@ layout: default
 <h3 style="margin:-0px; font-size:14px">· VS ·</h3>
 <p style="margin:6px;"></p>
 
+<div class= "playerOverlay" id="id_player_overlay"></div>
 <div class="toolbar" style="padding-bottom:10px;">
 <div id = "id_player_info">
 <h3 id = "id_player_name" style="font-weight:bold; margin-bottom:8px; margin-top:4px;"/>
