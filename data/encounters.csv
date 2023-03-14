@@ -37,10 +37,10 @@ Forgotten Forest;🦡;Honey Badger;Heavy;3;1;3;0;3;Wild Animal;It looks fairly a
 Forgotten Forest;🕳;Bottomless Hole;Prop;0;6;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
 Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
-Forest Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for an imminent powerful attack.<br>You'd better avoid it.;They ripped you apart
-Forest Cavern;💀;Pile of Skeletons;Prop;0;0;0;0;0;Disturbing Object;Oh. A lot of adventures ended here.<br>Better catch your breath.;
+Forest Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for a powerful attack.<br>You should better avoid it.;They ripped you apart
+Forest Cavern;💀;Pile of Skeletons;Prop;0;0;0;0;0;Disturbing Object;A lot of adventures ended here.<br>Better catch your breath.;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
-Forest Cavern;🧙;Tired Old Man;Recruit;1;1;1;0;1;Cursed Human Being;The silhouette transformed into a humanoid shape.<br>They are begging for your mercy.;They ripped you apart
+Forest Cavern;🧙;Tired Old Man;Recruit;1;1;1;0;1;Cursed Human Being;The silhouette changed into a human being.<br>They are begging for your mercy.;They ripped you apart
 Forest Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
 Forest Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
 Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;Sticky Obstacle;Hopefully nobody's home.<br>It seems quite sturdy.;Eww. It's gross having webs on you
@@ -48,12 +48,12 @@ Ancient Crypt;🕷;Eight-legged Menace;Swift;4;2;1;0;4;Pesky Insect;It looks lik
 Ancient Crypt;🐍;Cavern Snake;Standard;3;3;3;0;5;Wild Animal;It perfectly blends with the surroundings.<br>You almost stumbled over it.;
 Ancient Crypt;🥚;Snake Egg;Consumable;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
 Ancient Crypt;👻;Spooky Spirit;Swift;3;2;2;0;2;Weightless Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
-Ancient Crypt;🪦;Desolate Gave;Container;0;0;0;0;0;Final Resting Place;The whole text is all faded.<br>Something seems to be on the ground;You dug out a shiny ring.
+Ancient Crypt;🪦;Desolate Gave;Container;0;0;0;0;0;Final Resting Place;The whole text is all faded.<br>Something seems to be on the ground.;You dug out some shiny ring.
 Ancient Crypt;💍;Engagement Ring;Item;1;0;0;0;0;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;You felt a surge in your chest
 Ancient Crypt;🧟;Animated Dead;Standard;4;2;2;0;4;Restless Body;It surely carries lot of diseases.<br>You'd better keep your distance.;
 Ancient Crypt;💍;Engraved Ring;Trap;0;1;0;0;0;Shiny Object;It says "My Precious" on the inside.<br>That sounds promising.;Ouch! The ring is too tight
 Ancient Crypt;🦇;Screaming Bat;Standard;4;2;2;0;5;Flying Mammal;Its screams echo around the crypt.<br>You got goosebumps.;
 Ancient Crypt;🥔;Old Potato;Consumable;0;0;0;0;0;Eternal Vegetable;It looks suspiciously too fresh.<br>Maybe it was brought here recently.;
-Ancient Crypt;🧛;Thirsty Vampire;Swift;4;3;1;0;3;Undead;It seems to have just awaken.<br>Better avoid its fangs.;
-Ancient Crypt;🐉;Massive Dragon;Heavy;6;4;3;0;4;Final Boss;Dude! Is this the final challenge?<br>You surely must take it down.;
-Ancient Crypt;👑;Scorpion King Crown;Item;1;1;0;0;0;Legendary Artefact;This is where it ends now.<br><b>Stay tuned for updates!</b>;
+Ancient Crypt;🧛;Thirsty Vampire;Swift;4;3;1;0;3;Undead;It seems to have just awoken.<br>Better avoid its fangs.;
+Ancient Crypt;🐉;Massive Dragon;Heavy;6;4;3;0;4;Final Boss;Dude! Is this the final challenge?<br>You surely must take it down.;Their flame burned you alive
+Ancient Crypt;👑;King's Crown;Item;1;1;0;0;0;Legendary Artefact;This is where it ends now.<br><b>Stay tuned for updates!</b>;

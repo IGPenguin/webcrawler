@@ -104,7 +104,7 @@ function processData(allText) {
 function getNextEncounterIndex(){
   encountersTotal = lines.length-1;
   var nextItemIndex = encounterIndex+1;
-  if (nextItemIndex >= encountersTotal){ //Game Completed
+  if (nextItemIndex > encountersTotal){ //Game Completed
     gameEnd();
     return 4; //Skip tutorial
   }
