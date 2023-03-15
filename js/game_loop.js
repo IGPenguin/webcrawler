@@ -724,7 +724,7 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     gameOver();
-    displayPlayerEffect("☠️");
+    displayPlayerEffect("💀");
     return;
   }
   displayPlayerEffect("💢");
