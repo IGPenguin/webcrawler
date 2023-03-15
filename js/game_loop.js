@@ -751,17 +751,8 @@ function displayPlayerEffect(message){
   displayEffect(message,document.getElementById('id_player_overlay'));
 }
 
-function displayEffect(message,effectOverlayUIElement){
-  effectOverlayUIElement.innerHTML = message;
-  effectOverlayUIElement.style.display = "block";
-
-  effectOverlayUIElement.classList.add("animate__animated","animate__fadeOut");
-  effectOverlayUIElement.style.setProperty("--animate-duration","1s");
-  effectOverlayUIElement.addEventListener('animationend', () => {
-    effectOverlayUIElement.style.display = "none";
-    effectOverlayUIElement.classList.remove("animate__animated","animate__fadeOut");
-    return;
-  });
+function displayEffect(message,documentElement){
+  animateUIElement(documentElement,"animate__fadeOut",1.75,true,message)
 }
 
 function vibrateButtonPress(){
@@ -777,13 +768,24 @@ async function actionVibrateFeedback(buttonID){
   await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
 }
 
-function animateUIElement(documentElement,animation,time="0s"){
+function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
+  if (hidden){
+    documentElement.innerHTML = message;
+    documentElement.style.display = "block";
+  }
+documentElement.classList.remove(animation);
+void documentElement.offsetWidth; // trigger a DOM reflow
+
+  documentElement.style.setProperty("--animate-duration","0.0001s");
   //Wow, this is nice - https://animate.styles
   documentElement.classList.add("animate__animated",animation);
   if (time !="0s"){
     documentElement.style.setProperty("--animate-duration",time+"s");
   }
   documentElement.addEventListener('animationend', () => {
+    if (hidden){
+      documentElement.style.display = "none";
+    }
     documentElement.classList.remove("animate__animated",animation);
   });
 }

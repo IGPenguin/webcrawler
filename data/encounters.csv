@@ -1,7 +1,7 @@
 area;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 Eternal Realm;☠️;You are dead!;Death;0;0;0;0;0;Spirit Form;<b>💬 Speak</b> to share your adventure.<br><b>🖐 Grab</b> your soul to ressurect.;
 Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;<b>Nightmare monsters</b> are chasing you.<br>Try to escape by using <b>🌀 Roll</b>.;
-Restless Nightmare;👺;A demon appeared.;Recruit;2;1;1;0;0;Hazy Thought;Enemies fight back if they have <b>🟢 Energy</b>.<br><b>🛡 Block</b> or <b>🌀 Roll</b> before <b>🎯 Attacking</b>.;
+Restless Nightmare;👿;A demon appeared.;Recruit;2;1;1;0;0;Hazy Thought;Enemies fight back if they have <b>🟢 Energy</b>.<br><b>🛡 Block</b> or <b>🌀 Roll</b> before <b>🎯 Attacking</b>.;
 Restless Nightmare;🦐;You see a shrimp.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> any food and loot you encounter.<br>You can also <b>💤 Rest</b> to gain <b>🟢 Energy</b>.;
 Forgotten Forest;🌳;You have awoken.;Prop;0;0;0;0;0;Hazy Thought;You see nothing but trees all around.<br><b>🌀 Roll</b> to explore further ahead.;
 Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;1;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;

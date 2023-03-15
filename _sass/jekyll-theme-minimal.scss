@@ -95,17 +95,15 @@ a:active, a:hover, a:focus {
   left:50%;
   transform: translatex(-50%);
   margin-top:8px;
-  color: rgba(0,0,0,0.9);
 }
 
 .playerOverlay {
-  font-size:48px;
+  font-size:56px;
   position: absolute;
   z-index: 1;
   left:50%;
   transform: translatex(-50%);
-  margin-top:0px;
-  color: rgba(0,0,0,0.9);
+  margin-top:-8px;
 }
 
 blockquote {
