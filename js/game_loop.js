@@ -1,5 +1,5 @@
 //Tech init
-var versionCode = "work-in-progress, ver. 3/13/23"
+var versionCode = "work-in-progress, ver. 3/15/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -201,6 +201,7 @@ function redraw(index){
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
+  adjustEncnounterButtons();
 }
 
 //Game logic
@@ -240,10 +241,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Heavy":
+            if (enemySta - enemyStaLost <=0){
+              logPlayerAction(actionString,"You hit them with a critical attack -"+playerAtk+2+" 💔");
+              enemyHit(playerAtk+2); //Critical attack if they are exhausted
+              break;
+            }
           case "Standard": //You hit first, they hit back if they have stamina
           case "Recruit":
           case "Pet":
-            logPlayerAction(actionString,"You hit them with your attack -"+playerAtk+" 💔")
+            logPlayerAction(actionString,"Your attack successfully hit them -"+playerAtk+" 💔")
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
@@ -266,7 +272,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"There is nothing to attack anymore.");
             break;
           default:
-            logPlayerAction(actionString,"Your attacking had no effect -1 🟢");
+            logPlayerAction(actionString,"Your attempt to attack had no effect -1 🟢");
       }
       break;
 
@@ -335,7 +341,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"You moved on to another thought.");
+            logPlayerAction(actionString,"You walked further along the road.");
             nextEncounter();
             break;
           case "Prop":
@@ -373,7 +379,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               logPlayerAction(actionString,"You petted it and became friends!");
-              displayPlayerEffect("💞");
+              displayPlayerEffect("💖");
               playerPartyString+=" "+enemyEmoji;
               playerAtk+=enemyAtk;
               nextEncounter();
@@ -388,7 +394,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You were too slow, they dodged that.");
               enemyRest(1);
             } else { //Player and enemy have no stamina - asymetrical rest
-              logPlayerAction(actionString,"You pushed them afar and gained +2 🟢");
+              logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -402,7 +408,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
-              logPlayerAction(actionString,"You pushed them afar and gained +2 🟢");
+              logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -565,6 +571,7 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage){
+  displayEnemyEffect("💢");
   enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
@@ -572,7 +579,6 @@ function enemyHit(damage){
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
-  displayEnemyEffect("💢");
 }
 
 function enemyKnockedOut(){
@@ -743,6 +749,50 @@ function logAction(message){
 }
 
 //UI Tech
+function resetEncounterButtons(){
+  document.getElementById('button_attack').innerHTML="🎯&nbsp;&nbsp;Attack";
+  document.getElementById('button_block').innerHTML="🛡&nbsp;&nbsp;Block";
+  document.getElementById('button_roll').innerHTML="🌀&nbsp;&nbsp;Roll";
+  document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Grab";
+  document.getElementById('button_sleep').innerHTML="💤&nbsp;&nbsp;Sleep";
+  document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Speak";
+}
+
+function adjustEncnounterButtons(){
+  resetEncounterButtons();
+  switch (enemyType){
+    case "Item":
+    case "Consumable":
+      document.getElementById('button_grab').innerHTML="🍽&nbsp;&nbsp;Refresh";
+    case "Trap":
+    case "Trap-Roll":
+      document.getElementById('button_attack').innerHTML="🎯&nbsp;&nbsp;Smash";
+    case "Trap-Attack":
+    case "Prop":
+    case "Dream":
+      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
+      break;
+    case "Pet":
+      if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
+        document.getElementById('button_grab').innerHTML="💖&nbsp;&nbsp;Adopt";
+      }
+    case "Recruit":
+      if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
+        document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Recruit";
+      }
+    case "Standard":
+    case "Swift":
+    case "Heavy":
+      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
+        document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
+      }
+      document.getElementById('button_sleep').innerHTML="💤&nbsp;&nbsp;Rest";
+    case "Container":
+    case "Death":
+    default:
+  }
+}
+
 function displayEnemyEffect(message){
   displayEffect(message,document.getElementById('id_enemy_overlay'));
 }
