@@ -1,3 +1,6 @@
+//Having all this in a one file is truly shameful
+//...submit pull request if you dare
+
 //Tech init
 var versionCode = "work-in-progress, ver. 3/15/23"
 var cardUIElement;
@@ -594,7 +597,6 @@ function enemyHit(damage){
   displayEnemyEffect("💢");
   enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
-    console.log("enemyHpLost: "+enemyHpLost+" enemyHp: "+enemyHp);
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
     enemyAnimateDeathNextEncounter();
   } else {
@@ -734,7 +736,7 @@ function playerHit(incomingDamage){
 function gameOver(){
   //Reset progress to death encounter
   resetSeenEncounters();
-  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;☠️&nbsp;&nbsp;You were killed by their attack.")
+  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed by their attack.")
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
 }
@@ -824,7 +826,7 @@ function displayPlayerEffect(message){
 }
 
 function displayEffect(message,documentElement){
-  animateUIElement(documentElement,"animate__fadeOut",1.75,true,message)
+  animateUIElement(documentElement,"animate__fadeOut",1.6,true,message)
 }
 
 function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
@@ -864,6 +866,14 @@ function registerClickListeners(){
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
   document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+
+  document.getElementById('id_player_name').addEventListener(eventType, ()=>{
+    playerName=prompt("Name your character: ");
+    if (!playerName.replace(/\s/g, '').length){
+      playerName="Nameless Character";
+    }
+    redraw(encounterIndex);
+  });
 }
 
 //Mobile specific
