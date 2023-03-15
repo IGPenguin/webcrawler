@@ -255,7 +255,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
               enemyStaminaChangeMessage(-1,"They hit you with a counter-attack -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
-            } else {
+            } else if (enemyPostHitHp > 0) {
               enemyRest(1);
             }
             break;
@@ -272,7 +272,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"There is nothing to attack anymore.");
             break;
           default:
-            logPlayerAction(actionString,"Your attempt to attack had no effect -1 🟢");
+            logPlayerAction(actionString,"Your attack attempt had no effect -1 🟢");
       }
       break;
 
@@ -332,24 +332,29 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
-            logPlayerAction(actionString,"You rolled away leaving it behind.");
+            logPlayerAction(actionString,"You walked away leaving it behind.");
+            displayPlayerEffect("👣");
             nextEncounter();
             break;
           case "Container":
-            logPlayerAction(actionString,"You rolled away without looking inside.");
+            logPlayerAction(actionString,"You walked away without looking inside.");
+            displayPlayerEffect("👣");
             encounterIndex+=1; //Skip loot
             nextEncounter();
             break;
           case "Dream":
             logPlayerAction(actionString,"You walked further along the road.");
+            displayPlayerEffect("👣");
             nextEncounter();
             break;
           case "Prop":
             logPlayerAction(actionString,"You continued on your adventure.");
+            displayPlayerEffect("👣");
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"You rolled far away from them.");
+            logPlayerAction(actionString,"You walked far away from them.");
+            displayPlayerEffect("👣");
             nextEncounter();
             break;
           case "Trap-Roll": //You get damage rolling into "Trap-Roll" type encounters
@@ -358,7 +363,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap":
           case "Trap-Attack":
-            logPlayerAction(actionString,"You continued onwards, away from that.");
+            logPlayerAction(actionString,"You continued onwards away from that.");
+            displayPlayerEffect("👣");
             nextEncounter();
             break;
           case "Death":
@@ -395,12 +401,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyRest(1);
             } else { //Player and enemy have no stamina - asymetrical rest
               logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
+              displayPlayerEffect("🦶");
               playerGetStamina(2,true);
               enemyRest(1);
             }
             break;
           case "Swift": //Player cannot grab swift enemies
             logPlayerAction(actionString,"They swiftly evaded your grasp.");
+            displayEnemyEffect("🌀");
             enemyRest(1);
             break;
           case "Heavy":
@@ -408,7 +416,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
-              logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
+              logPlayerAction(actionString,"You kicked out of balance and gained +2 🟢");
+              displayPlayerEffect("🦶");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -421,6 +430,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Container":
             var openMessage = "There was something hidden inside.";
+            displayPlayerEffect("👋");
             if (enemyMsg != ""){
               openMessage = enemyMsg;
             }
@@ -574,8 +584,17 @@ function enemyHit(damage){
   displayEnemyEffect("💢");
   enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
+    console.log("enemyHpLost: "+enemyHpLost+" enemyHp: "+enemyHp);
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
-    nextEncounter();
+
+    //Animate death
+    animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
+    var animationHandler = function(){
+      nextEncounter();
+      redraw(encounterIndex);
+      emojiUIElement.removeEventListener("animationend",animationHandler);
+    }
+    emojiUIElement.addEventListener('animationend',animationHandler);
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
@@ -609,7 +628,6 @@ function playerGetStamina(stamina,silent = false){
     if (!silent){
       logPlayerAction(actionString,"You just wasted a moment of your life.");
     }
-    displayPlayerEffect("💤");
     return false;
   } else {
     if (!silent){
@@ -620,7 +638,6 @@ function playerGetStamina(stamina,silent = false){
       playerSta = playerStaMax;
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
-    displayPlayerEffect("💤");
     return true;
   }
 }
@@ -761,12 +778,16 @@ function resetEncounterButtons(){
 function adjustEncnounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
+    case "Prop":
+      document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Touch";
+    case "Container":
+      document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Search";
     case "Item":
     case "Consumable":
-      document.getElementById('button_grab').innerHTML="🍽&nbsp;&nbsp;Refresh";
+      document.getElementById('button_grab').innerHTML="🍽&nbsp;&nbsp;Snack";
     case "Trap":
     case "Trap-Roll":
-      document.getElementById('button_attack').innerHTML="🎯&nbsp;&nbsp;Smash";
+      document.getElementById('button_attack').innerHTML="🎯&nbsp;&nbsp;Attack";
     case "Trap-Attack":
     case "Prop":
     case "Dream":
@@ -787,7 +808,6 @@ function adjustEncnounterButtons(){
         document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
       }
       document.getElementById('button_sleep').innerHTML="💤&nbsp;&nbsp;Rest";
-    case "Container":
     case "Death":
     default:
   }

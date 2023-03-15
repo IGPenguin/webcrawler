@@ -2,8 +2,8 @@ area;emoji;name;type;hp;atk;sta;def;int;team;desc;message
 Eternal Realm;☠️;You are dead!;Death;0;0;0;0;0;Spirit Form;<b>💬 Speak</b> to share your adventure.<br><b>🖐 Grab</b> your soul to ressurect.;
 Restless Nightmare;😴;You are sleeping.;Dream;0;0;0;0;0;Hazy Thought;You are dreaming about an endless road.<br>Move forward using <b>👣 Walk</b>;
 Restless Nightmare;👿;A demon appeared.;Recruit;2;1;1;0;0;Hazy Thought;Enemies fight back if they have <b>🟢 Energy</b>.<br><b>🛡 Block</b> or <b>🌀 Roll</b> before <b>🎯 Attacking</b>.;
-Restless Nightmare;🦐;You see a shrimp.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> any food and loot you encounter.<br>You can also <b>💤 Rest</b> to gain <b>🟢 Energy</b>.;
-Forgotten Forest;🌳;You have awoken.;Prop;0;0;0;0;0;Hazy Thought;You see nothing but trees all around.<br><b>🌀 Roll</b> to explore further ahead.;
+Restless Nightmare;🦐;You see a shrimp.;Consumable;0;0;0;0;0;Hazy Thought;<b>🖐 Grab</b> any food and loot you encounter.<br><b>💤 Sleep</b> regularly to regain <b>🟢 Energy</b>.;
+Forgotten Forest;🌳;You have awoken.;Prop;0;0;0;0;0;Hazy Thought;You see nothing but trees all around.<br><b>👣 Walk</b> to explore further ahead.;
 Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;1;0;2;Wild Animal;At first it looked like a stone.<br>Then it started moving.;
 Forgotten Forest;🐀;Dire Rat;Swift;1;1;1;0;3;Wild Animal;It jumped out of nowhere really fast.<br>Better raise your shield.;
 Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>You should make use of it.;
