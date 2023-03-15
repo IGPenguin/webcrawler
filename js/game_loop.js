@@ -580,21 +580,23 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   }
 }
 
+function enemyAnimateDeathNextEncounter(){
+  animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
+  var animationHandler = function(){
+    nextEncounter();
+    redraw(encounterIndex);
+    emojiUIElement.removeEventListener("animationend",animationHandler);
+  }
+  emojiUIElement.addEventListener('animationend',animationHandler);
+}
+
 function enemyHit(damage){
   displayEnemyEffect("💢");
   enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
     console.log("enemyHpLost: "+enemyHpLost+" enemyHp: "+enemyHp);
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
-
-    //Animate death
-    animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
-    var animationHandler = function(){
-      nextEncounter();
-      redraw(encounterIndex);
-      emojiUIElement.removeEventListener("animationend",animationHandler);
-    }
-    emojiUIElement.addEventListener('animationend',animationHandler);
+    enemyAnimateDeathNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
@@ -602,8 +604,8 @@ function enemyHit(damage){
 
 function enemyKnockedOut(){
   logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You knocked them out of conscioussnes.");
-  nextEncounter();
   displayEnemyEffect("💤");
+  enemyAnimateDeathNextEncounter();
 }
 
 function enemyAttackIfPossible(){
