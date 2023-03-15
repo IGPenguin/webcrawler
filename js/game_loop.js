@@ -201,7 +201,7 @@ function redraw(index){
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
-  adjustEncnounterButtons();
+  adjustEncounterButtons();
 }
 
 //Game logic
@@ -392,7 +392,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
           case "Recruit":
-          case "Standard": //Player vs encnounter stamina - knockout, dodge or asymmetrical rest
+          case "Standard": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
@@ -745,7 +745,7 @@ function gameEnd(){
 
   //Reset progress to game start
   resetSeenEncounters();
-  encnounterIndex=4;
+  encounterIndex=4;
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
 }
 
@@ -777,7 +777,7 @@ function resetEncounterButtons(){
   document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Speak";
 }
 
-function adjustEncnounterButtons(){
+function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Prop":
@@ -827,19 +827,6 @@ function displayEffect(message,documentElement){
   animateUIElement(documentElement,"animate__fadeOut",1.75,true,message)
 }
 
-function vibrateButtonPress(){
-  if (!("vibrate" in window.navigator)){
-    console.log("Vibrate not supported!");
-    return;
-  }
-  window.navigator.vibrate([5,20,10]);
-}
-
-async function actionVibrateFeedback(buttonID){
-  vibrateButtonPress();
-  await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
-}
-
 function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
   if (hidden){
     documentElement.innerHTML = message;
@@ -877,4 +864,18 @@ function registerClickListeners(){
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
   document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+}
+
+//Mobile specific
+function vibrateButtonPress(){
+  if (!("vibrate" in window.navigator)){
+    console.log("Vibrate not supported!");
+    return;
+  }
+  window.navigator.vibrate([5,20,10]);
+}
+
+async function actionVibrateFeedback(buttonID){
+  vibrateButtonPress();
+  await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
 }
