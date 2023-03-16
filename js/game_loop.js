@@ -467,7 +467,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Death":
             renewPlayer();
             logPlayerAction(actionString,"Your body reconnected with your soul.");
-            var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power ressurected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
+            var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power resurrected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
             encounterIndex=4; //Skip tutorial
             displayEnemyEffect("✋");
@@ -763,6 +763,7 @@ function gameOver(){
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
   animateUIElement(emojiUIElement,"animate__flip","1");
+  playerSta=0;
 }
 
 function gameEnd(){
