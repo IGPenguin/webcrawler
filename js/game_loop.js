@@ -245,7 +245,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             if (enemySta - enemyStaLost <=0){
-              logPlayerAction(actionString,"You hit them with a critical attack -"+playerAtk+2+" 💔");
+              logPlayerAction(actionString,"You hit them with a critical attack -"+(playerAtk+2)+" 💔");
               enemyHit(playerAtk+2); //Critical attack if they are exhausted
               break;
             }
@@ -267,8 +267,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"They dodged and counter-attacked -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack -"+playerAtk+" 💔");
               enemyHit(playerAtk);
+              enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack -"+playerAtk+" 💔");
             }
             break;
           case "Death":
@@ -563,10 +563,12 @@ function enemyRenew(){
 }
 
 function enemyRest(stamina){
-  animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
-  enemyStaLost-=stamina;
-  if (enemyStaLost < 0) {
-    enemyStaLost = 0;
+  if (enemyHp - enemyHpLost > 0){
+    animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
+    enemyStaLost-=stamina;
+    if (enemyStaLost < 0) {
+      enemyStaLost = 0;
+    }
   }
 }
 
@@ -576,10 +578,12 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
     animateUIElement(emojiUIElement,"animate__headShake","0.7"); //Play attack animation
     enemyStaLost -= stamina;
     return true;
-  } else {
+  } else if (enemyHp - enemyHpLost > 0) { //Enemy rest if not dead
     logPlayerAction(actionString,failMessage);
     animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
     enemyStaLost += stamina
+    return false;
+  } else { //Enemy dead
     return false;
   }
 }
@@ -787,13 +791,13 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Search";
       document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
       break;
-    case "Item":
     case "Consumable":
       document.getElementById('button_grab').innerHTML="🍽&nbsp;&nbsp;Snack";
       document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
       break;
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Touch";
+    case "Item":
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
