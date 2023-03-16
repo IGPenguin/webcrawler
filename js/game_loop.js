@@ -237,10 +237,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               openMessage = enemyMsg.replace("."," -1 🟢");
             }
             logPlayerAction(actionString,openMessage);
-            nextEncounter();
+            displayEnemyEffect("〽️");
+            enemyAnimateDeathNextEncounter();
             break;
           case "Friend":
             logPlayerAction(actionString,"You scared them to run away -1 🟢");
+            displayEnemyEffect("〽️");
             nextEncounter();
             break;
           case "Heavy":
@@ -276,6 +278,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           default:
             logPlayerAction(actionString,"Your attack attempt had no effect -1 🟢");
+            displayEnemyEffect("〽️");
       }
       break;
 
@@ -401,6 +404,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               logPlayerAction(actionString,"You were too slow, they dodged that.");
+              displayPlayerCannotEffect();
               enemyRest(1);
             } else { //Player and enemy have no stamina - asymetrical rest
               logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
@@ -430,10 +434,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Attack":
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
+            displayEnemyEffect("✋");
             break;
           case "Container":
             var openMessage = "There was something hidden inside.";
-            displayPlayerEffect("👋");
+            displayEnemyEffect("👋");
             if (enemyMsg != ""){
               openMessage = enemyMsg;
             }
@@ -442,10 +447,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
             playerLootString+=" "+enemyEmoji;
+            displayEnemyEffect("✋");
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
             break;
           case "Friend":
             logPlayerAction(actionString,"It slipped through your fingers.");
+            displayEnemyEffect("✋");
             nextEncounter();
             break;
           case "Consumable":
@@ -455,17 +462,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Dream":
             logPlayerAction(actionString,"You reached out into the endless void.");
+            displayEnemyEffect("✋");
             break;
           case "Death":
             renewPlayer();
             logPlayerAction(actionString,"Your body reconnected with your soul.");
             var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power ressurected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
-            encounterIndex=4;
+            encounterIndex=4; //Skip tutorial
+            displayEnemyEffect("✋");
             nextEncounter();
             break;
           default:
             logPlayerAction(actionString,"You touched it and nothing happened.");
+            displayEnemyEffect("✋");
           }
         break;
 
@@ -510,6 +520,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
+            displayPlayerCannotEffect();
             break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
@@ -525,6 +536,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
             if ((playerHp-enemyAtk>0)||(enemySta-enemyStaLost==0)){
+              displayPlayerEffect("💤");
               playerGetStamina(1);
             }
             enemyAttackIfPossible();
@@ -537,17 +549,23 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Prop":
           case "Dream":
           case "Container":
-            playerGetStamina(playerStaMax-playerSta);//Rest to full if nout of combat
+            displayPlayerEffect("💤");
+            playerGetStamina(playerStaMax-playerSta);//Rest to full if out of combat
             break;
           case "Friend":
+            displayPlayerEffect("💤");
+            playerGetStamina(playerStaMax-playerSta);//Rest to full if out of combat
             logPlayerAction(actionString,"They got tired of waiting for you and left.");
             nextEncounter();
             break;
           case "Death":
             logPlayerAction(actionString,"You can rest as long as you please.");
+            displayPlayerEffect("💤");
             break;
           default:
             logPlayerAction(actionString,"You cannot rest, monsters are nearby.");
+            displayPlayerCannotEffect();
+            displayPlayerEffect("👀");
             break
         }
     };
@@ -602,6 +620,7 @@ function enemyHit(damage){
   displayEnemyEffect("💢");
   enemyHpLost = enemyHpLost + damage;
   if (enemyHpLost >= enemyHp) {
+    enemyHpLost=enemyHp; //Negate overkill damage
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
     enemyAnimateDeathNextEncounter();
   } else {
@@ -656,7 +675,7 @@ function playerUseStamina(stamina, message = ""){
     if (message != ""){ //Display specific "too tired message"
       logPlayerAction(actionString,message);
     }
-    animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
+    displayPlayerCannotEffect();
     return false;
   } else {
     playerSta -= stamina;
@@ -731,7 +750,6 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     gameOver();
-    displayPlayerEffect("💀");
     return;
   }
   displayPlayerEffect("💢");
@@ -741,9 +759,10 @@ function playerHit(incomingDamage){
 function gameOver(){
   //Reset progress to death encounter
   resetSeenEncounters();
-  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed by their attack.")
+  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed, your adventure ends here. ")
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
+  animateUIElement(emojiUIElement,"animate__flip","1");
 }
 
 function gameEnd(){
@@ -792,7 +811,6 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
       break;
     case "Consumable":
-      document.getElementById('button_grab').innerHTML="🍽&nbsp;&nbsp;Snack";
       document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
       break;
     case "Prop":
@@ -819,7 +837,9 @@ function adjustEncounterButtons(){
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
       }
+      break;
     case "Death":
+      document.getElementById('button_speak').innerHTML="💌&nbsp;&nbsp;Share";
     default:
   }
 }
@@ -832,8 +852,12 @@ function displayPlayerEffect(message){
   displayEffect(message,document.getElementById('id_player_overlay'));
 }
 
+function displayPlayerCannotEffect(){
+  animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
+}
+
 function displayEffect(message,documentElement){
-  animateUIElement(documentElement,"animate__fadeOut",1.6,true,message)
+  animateUIElement(documentElement,"animate__fadeOut",1.3,true,message)
 }
 
 function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
