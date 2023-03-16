@@ -513,6 +513,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Death":
             logPlayerAction(actionString,"Your legend was copied into clipboard.");
+            displayPlayerEffect("💌");
             adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
             adventureLog += "\nCharacter: "+playerName +"\n"+"Party: "+playerPartyString+ "  Loot: "+playerLootString+"\n"+"❤️ "+"▰".repeat(playerHpMax)+"  🟢 "+"▰".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk)+"\n";
             adventureLog += "\nhttps://igpenguin.github.io/webcrawler\n"+ versionCode;
