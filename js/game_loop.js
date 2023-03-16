@@ -404,7 +404,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyRest(1);
             } else { //Player and enemy have no stamina - asymetrical rest
               logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
-              displayPlayerEffect("🦶");
+              displayEnemyEffect("🦶");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -420,7 +420,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               logPlayerAction(actionString,"You kicked out of balance and gained +2 🟢");
-              displayPlayerEffect("🦶");
+              displayEnemyEffect("🦶");
               playerGetStamina(2,true);
               enemyRest(1);
             }
@@ -450,6 +450,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Consumable":
             playerConsumed();
+            displayPlayerEffect("🍽");
             nextEncounter();
             break;
           case "Dream":
@@ -464,7 +465,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"You reached out and nothing happened.");
+            logPlayerAction(actionString,"You touched it and nothing happened.");
           }
         break;
 
@@ -775,23 +776,26 @@ function resetEncounterButtons(){
   document.getElementById('button_block').innerHTML="🛡&nbsp;&nbsp;Block";
   document.getElementById('button_roll').innerHTML="🌀&nbsp;&nbsp;Roll";
   document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Grab";
-  document.getElementById('button_sleep').innerHTML="💤&nbsp;&nbsp;Sleep";
+  document.getElementById('button_sleep').innerHTML="💤&nbsp;&nbsp;Rest";
   document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Speak";
 }
 
 function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
-    case "Prop":
-      document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Touch";
     case "Container":
       document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Search";
+      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
+      break;
     case "Item":
     case "Consumable":
       document.getElementById('button_grab').innerHTML="🍽&nbsp;&nbsp;Snack";
+      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
+      break;
+    case "Prop":
+      document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Touch";
     case "Trap":
     case "Trap-Roll":
-      document.getElementById('button_attack').innerHTML="🎯&nbsp;&nbsp;Attack";
     case "Trap-Attack":
     case "Prop":
     case "Dream":
@@ -808,10 +812,9 @@ function adjustEncounterButtons(){
     case "Standard":
     case "Swift":
     case "Heavy":
-      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
+      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
       }
-      document.getElementById('button_sleep').innerHTML="💤&nbsp;&nbsp;Rest";
     case "Death":
     default:
   }

@@ -261,11 +261,11 @@ button {
   font-size: 15px;
   z-index: 999;
   min-height: 48px;
-  margin:0px;
+  min-width: 104px;
   background-color: rgb(40,40,40);
   color: #fff;
-  padding-right: 18px;
-  padding-left: 18px;
+  padding-right: 12px;
+  padding-left: 12px;
   font-weight: bold;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }

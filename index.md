@@ -33,7 +33,7 @@ layout: default
 <div class= "playerOverlay" id="id_player_overlay"></div>
 <div class="toolbar" style="padding-bottom:10px;">
 <div id = "id_player_info">
-<h3 id = "id_player_name" style="font-weight:bold; margin-bottom:8px; margin-top:4px;"/>
+<h3 id = "id_player_name" style="font-weight:bold; margin-bottom:8px; margin-top:4px; cursor:pointer;"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
 </div>
 <h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:8px; padding-right:6px; margin-bottom:4px; text-align:left;"/>
