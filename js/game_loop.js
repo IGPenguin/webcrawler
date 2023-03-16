@@ -759,7 +759,7 @@ function playerHit(incomingDamage){
 function gameOver(){
   //Reset progress to death encounter
   resetSeenEncounters();
-  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed, the adventure ends here. ")
+  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed, the adventure ends. ")
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
   animateUIElement(emojiUIElement,"animate__flip","1");
