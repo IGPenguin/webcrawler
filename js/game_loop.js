@@ -204,7 +204,7 @@ function redraw(index){
     case "Pet":
     case "Swift":
     case "Heavy":
-      break; //Show default - HP and Stamina
+      break; //Show default - HP, Sta + dmg
     case "Item":
     case "Trap":
     case "Friend":
@@ -619,7 +619,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💤");
             break;
           case "Upgrade":
-            logPlayerAction(actionString,"You skipped empowering your character.");
+            logPlayerAction(actionString,"You skipped boosting your character.");
             nextEncounter();
             break;
           default:
