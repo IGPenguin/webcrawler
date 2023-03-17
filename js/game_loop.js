@@ -451,9 +451,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
-              logPlayerAction(actionString,"You were too slow, they dodged that.");
-              displayPlayerCannotEffect();
-              enemyAttackOrRest();
+              var touchChance = Math.floor(Math.random() * 10);
+              console.log("touchChance: "+touchChance+"/10 lck: "+playerLck) //Generous chance to make enemy uncomfortable
+              if ( touchChance <= playerLck ){
+                logAction("✋&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily they were scared off by your touch.");
+                displayPlayerEffect("💬");
+                nextEncounter();
+                break;
+              }
+              else {
+                displayPlayerCannotEffect();
+                enemyAttackOrRest();
+                logPlayerAction(actionString,"You were too slow, they dodged that.");
+              }
             } else { //Player and enemy have no stamina - asymetrical rest
               logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
               displayEnemyEffect("🦶");
@@ -471,7 +481,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
-              logPlayerAction(actionString,"You kicked out of balance and gained +2 🟢");
+              logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
               displayEnemyEffect("🦶");
               playerGetStamina(2,true);
               enemyRest(1);
