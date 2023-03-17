@@ -551,22 +551,26 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to leave you alone.");
+              displayPlayerEffect("💬");
               nextEncounter();
+              break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
               logPlayerAction(actionString,"That made them more angry!");
+              displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
               var speechChance = Math.floor(Math.random() * 10);
               console.log("speechChance: "+speechChance+"/10 lck: "+playerLck) //Generous chance to lie
               if ( speechChance <= playerLck ){
                 logAction("💬&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily they believed your lies.");
+                displayPlayerEffect("💬");
                 nextEncounter();
+                break;
               }
               else {
                 logPlayerAction(actionString,"They ignored whatever you said.");
               }
             }
-            displayPlayerEffect("💬");
             enemyAttackOrRest();
             break;
           case "Friend":
