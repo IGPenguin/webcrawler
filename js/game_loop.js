@@ -2,7 +2,7 @@
 //...submit pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 3/16/23"
+var versionCode = "work-in-progress, ver. 3/17/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -36,16 +36,17 @@ function renewPlayer(){
 var playerName = "Nameless Hero";
 var playerLootString = "";
 var playerPartyString = "";
-var playerHpDefault = 3
-var playerStaDefault = 3;
+var playerHpDefault = 2;
+var playerStaDefault = 2;
+var playerLckDefault = 0;
 
 var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
 var playerHp = playerHpMax;
 var playerSta = playerStaMax;
-var playerAtk = 1;
-var playerDef = 0;
+var playerLck = playerLckDefault;
 var playerInt = 1;
+var playerAtk = 1;
 
 var actionString;
 var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.\n";
@@ -190,17 +191,36 @@ function redraw(index){
   document.getElementById('id_desc').innerHTML = enemyDesc;
   document.getElementById('id_team').innerHTML = "»&nbsp;&nbsp;" + enemyTeam + "&nbsp;&nbsp;«";
 
+  //Encounter Statusbar UI
   var enemyStatusString = ""
   if (enemyHp > 0) { enemyStatusString = "❤️ " + "▰".repeat(enemyHp);}
     if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "▱".repeat(enemyHpLost); } //YOLO
   if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
     if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "▱".repeat(enemyStaLost); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
-  if (enemyType.includes("Item") || enemyType.includes("Trap")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";} //Blah, nasty hack
-  if (enemyType.includes("Friend")) {enemyStatusString = "❤️ ??&nbsp;&nbsp;🟢 ??&nbsp;&nbsp;🎯 ??";} //Im just too tired today
-  if (enemyType.includes("Dream")||enemyType.includes("Prop")||enemyType.includes("Container")) {enemyStatusString = "∙  ∙  ∙";} //Im just too tired today, again
-  if (enemyType.includes("Consumable")) {enemyStatusString = "+ ❤️&nbsp;&nbsp;+ 🟢";} //Im just too tired today, again and again
-  if (enemyType.includes("Death")) {enemyStatusString = "🦴&nbsp;&nbsp;🦴&nbsp;&nbsp;🦴";} //Im just too tired today, for the last time
+
+  switch(enemyType){
+    case "Standard":
+    case "Recruit":
+    case "Pet":
+    case "Swift":
+    case "Heavy":
+      break; //Show default - HP and Stamina
+    case "Item":
+    case "Trap":
+    case "Friend":
+      enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";
+      break;
+    case "Consumable":
+      enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
+      break;
+    case "Death":
+      enemyStatusString = "🦴&nbsp;&nbsp;🦴&nbsp;&nbsp;🦴";
+      break;
+    default:
+      enemyStatusString = "∙  ∙  ∙"; //Dream, Prop, Upgrade etc.
+      break;
+  }
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
@@ -275,43 +295,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Death":
             logPlayerAction(actionString,"There is nothing to attack anymore.");
+            break
+          case "Upgrade":
+          logPlayerAction(actionString,"Your felt your body become stronger.");
+          displayPlayerEffect("✨");
+            playerHpMax+=1;
+            playerHp+=1;
+            playerSta+=1; //Restore lost stamina from initial attack
+            nextEncounter();
             break;
           default:
             logPlayerAction(actionString,"Your attack attempt had no effect -1 🟢");
             displayEnemyEffect("〽️");
       }
       break;
-
-      case 'button_block':
-        if (!playerUseStamina(1,"You are too tired to raise your shield.")){
-            break;
-          }
-        switch (enemyType){
-          case "Standard":
-          case "Recruit":
-          case "Pet":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack -1 🟢","You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
-            break;
-          case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
-            break;
-          case "Heavy":
-            if (enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a")){
-              playerHit(enemyAtk);
-            } else {
-              enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
-            }
-            break;
-          case "Death":
-              logPlayerAction(actionString,"There is nothing to block anymore.");
-              break;
-          default:
-            logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
-        }
-        break;
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
         const noStaForRollMessage = "You are too tired to make any move.";
@@ -377,8 +374,54 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"There is nothing to avoid anymore.");
             animateUIElement(playerInfoUIElement,"animate__headShake","0.7");
             break;
+            nextEncounter();
+          case "Upgrade":
+            logPlayerAction(actionString,"Your felt your body become faster.");
+            displayPlayerEffect("✨");
+            playerStaMax+=1;
+            playerSta+=1;
+            nextEncounter();
+            break;
           default:
             logPlayerAction(actionString,"Feels like nothing really happened.");
+        }
+        break;
+
+      case 'button_block':
+        if (!playerUseStamina(1,"You are too tired to raise your shield.")){
+            break;
+          }
+        switch (enemyType){
+          case "Standard":
+          case "Recruit":
+          case "Pet":
+            enemyStaminaChangeMessage(-1,"You blocked their standard attack -1 🟢","You blocked absolutely nothing -1 🟢");
+            displayPlayerEffect("🛡");
+            break;
+          case "Swift":
+            enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
+            displayPlayerEffect("🛡");
+            break;
+          case "Heavy":
+            if (enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a")){
+              playerHit(enemyAtk);
+            } else {
+              enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
+            }
+            break;
+          case "Death":
+              logPlayerAction(actionString,"There is nothing to block anymore.");
+              break;
+          case "Upgrade":
+              logPlayerAction(actionString,"Your felt your brain grow wiser.");
+              displayPlayerEffect("🧠");
+              playerInt+=1;
+              playerSta+=1; //Hehe, restore default lost stamina on "block_button"
+              nextEncounter();
+              break;
+          default:
+            logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
+            displayPlayerEffect("🛡");
         }
         break;
 
@@ -388,10 +431,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
                 logPlayerAction(actionString,"You need to be wiser to befriend them.");
+                enemyRest(1);
                 break;
               }
               logPlayerAction(actionString,"You petted it and became friends!");
-              displayPlayerEffect("💖");
+              displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
               playerAtk+=enemyAtk;
               nextEncounter();
@@ -469,10 +513,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Your body reconnected with your soul.");
             var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power resurrected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
-            encounterIndex=4; //Skip tutorial
+            encounterIndex=3; //Skip tutorial
             displayEnemyEffect("✋");
             nextEncounter();
             break;
+          case "Upgrade":
+          logPlayerAction(actionString,"You felt your chances improve.");
+          displayPlayerEffect("🍀");
+          playerLck+=1;
+          nextEncounter();
+          break;
           default:
             logPlayerAction(actionString,"You touched it and nothing happened.");
             displayEnemyEffect("✋");
@@ -484,7 +534,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
             if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
               logPlayerAction(actionString,"You convinced them to join your party!");
-              displayPlayerEffect("💬");
+              displayPlayerEffect(enemyEmoji);
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
@@ -522,6 +572,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
             displayPlayerCannotEffect();
+            break;
+          case "Upgrade":
+            logPlayerAction(actionString,"You chose to get <b> cursed forever -1</b> 💔");
+            playerHpMax-=1;
+            playerHit(1);
+            nextEncounter();
             break;
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
@@ -563,11 +619,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You can rest as long as you please.");
             displayPlayerEffect("💤");
             break;
+          case "Upgrade":
+            logPlayerAction(actionString,"You skipped empowering your character.");
+            nextEncounter();
+            break;
           default:
             logPlayerAction(actionString,"You cannot rest, monsters are nearby.");
             displayPlayerCannotEffect();
             displayPlayerEffect("👀");
-            break
+            break;
         }
     };
     redraw(encounterIndex);
@@ -746,6 +806,14 @@ function playerConsumed(){
 }
 
 function playerHit(incomingDamage){
+  var hitChance = Math.floor(Math.random() * 10);
+  console.log("hitChance: "+hitChance+" lck: "+playerLck)
+  if ( hitChance <= playerLck ){
+    logAction("💢&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you avoided receiving damage.");
+    displayPlayerEffect("🍀");
+    return;
+  }
+
   playerHp = playerHp - incomingDamage;
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
@@ -808,6 +876,14 @@ function resetEncounterButtons(){
 function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
+    case "Upgrade":
+      document.getElementById('button_attack').innerHTML="❤️&nbsp;&nbsp;Health";
+      document.getElementById('button_roll').innerHTML="🟢&nbsp;&nbsp;Energy";
+      document.getElementById('button_block').innerHTML="🧠&nbsp;&nbsp;Mind";
+      document.getElementById('button_grab').innerHTML="🍀&nbsp;&nbsp;Luck";
+      document.getElementById('button_speak').innerHTML="👁‍🗨&nbsp;&nbsp;Curse";
+      document.getElementById('button_sleep').innerHTML="↪️&nbsp;&nbsp;Skip";
+      break;
     case "Container":
       document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Search";
       document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
@@ -827,7 +903,7 @@ function adjustEncounterButtons(){
       break;
     case "Pet":
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
-        document.getElementById('button_grab').innerHTML="💖&nbsp;&nbsp;Adopt";
+        document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Pet";
       }
     case "Recruit":
       if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
