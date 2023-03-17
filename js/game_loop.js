@@ -591,11 +591,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Recruit":
           case "Pet":
-            if ((playerHp-enemyAtk>0)||(enemySta-enemyStaLost==0)){
+            enemyAttackIfPossible();
+            if (playerHp>0){
               displayPlayerEffect("💤");
               playerGetStamina(1);
             }
-            enemyAttackIfPossible();
             break;
           case "Trap":
           case "Trap-Attack":
