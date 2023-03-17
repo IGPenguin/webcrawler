@@ -35,7 +35,7 @@ Forgotten Forest;🦡;Honey Badger;Heavy;3;1;3;0;3;Wild Animal;It looks fairly a
 Forgotten Forest;🧺;Picnic Basket;Container;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
 Forgotten Forest;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
 Forgotten Forest;🐺;Old Wolf;Pet;5;2;2;0;2;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
-Forgotten Forest;⛰;Cavern Entrnace;Prop;0;6;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?;
+Forgotten Forest;⛰;Cavern Entrance;Prop;0;6;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
 Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
 Forest Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for a powerful attack.<br>You should better avoid it.;They ripped you apart
@@ -44,7 +44,7 @@ Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;Apex Predator;Something i
 Forest Cavern;🧙;Tired Old Man;Recruit;1;1;1;0;1;Cursed Human Being;The silhouette changed into a human being.<br>They are begging for your mercy.;They ripped you apart
 Forest Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
 Forest Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
-Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;Sticky Obstacle;Hopefully nobody's home.<br>It seems quite sturdy.;Eww. It's gross having webs on you
+Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;Sticky Trap;Hopefully nobody's home.<br>It seems quite sturdy.;Eww. It's gross having webs on you
 Ancient Crypt;🕷;Eight-legged Menace;Swift;4;2;1;0;4;Pesky Insect;It looks like it was waiting for a prey.<br>There is no turning back now.;
 Ancient Crypt;🐍;Cavern Snake;Standard;3;3;3;0;5;Wild Animal;It perfectly blends with the surroundings.<br>You almost stumbled over it.;
 Ancient Crypt;🥚;Snake Egg;Consumable;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
