@@ -333,7 +333,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Heavy":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"You dodged their heavy attack.","Your rolling was a waste of energy  -1 🟢");
+              enemyStaminaChangeMessage(-1,"You dodged their heavy attack -1 🟢","Your rolling was a waste of energy  -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -530,7 +530,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Upgrade":
-          logPlayerAction(actionString,"You felt your chances improve.");
+          logPlayerAction(actionString,"You felt your chances increase.");
           displayPlayerEffect("🍀");
           playerLck+=1;
           nextEncounter();
