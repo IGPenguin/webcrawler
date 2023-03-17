@@ -137,7 +137,6 @@ function markAsSeen(seenID){
 }
 
 function resetSeenEncounters(){
-  console.log("Seen line indexes reset.");
   localStorage.setItem("seenEncounters", JSON.stringify(""));
   seenEncounters = [];
 }
@@ -744,7 +743,7 @@ function playerUseStamina(stamina, message = ""){
   }
 }
 
-function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
+function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt){
   var gainedString;
   if (enemyMsg != "") {
     gainedString = enemyMsg;
@@ -755,23 +754,28 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusDef,bonusInt){
     playerHpMax += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
     gainedString += " +"+bonusHp + " ❤️";
+    displayPlayerEffect("✨");
   }
   if (bonusAtk > 0){
     playerAtk += parseInt(bonusAtk);
     gainedString += " +"+bonusAtk + " 🎯";
+    displayPlayerEffect("✨");
   }
   if (bonusSta > 0){
     playerStaMax += parseInt(bonusSta);
     playerSta += parseInt(bonusSta);
     gainedString += " +"+bonusSta + " 🟢";
+    displayPlayerEffect("✨");
   }
-  if (bonusDef > 0){
-    playerDef += parseInt(bonusDef);
-    gainedString += " +"+bonusDef + " 🛡";
+  if (bonusLck > 0){
+    playerLck += parseInt(bonusLck);
+    gainedString += " +"+bonusLck + " 🍀";
+    displayPlayerEffect("🍀");
   }
   if (bonusInt > 0){
     playerInt += parseInt(bonusInt);
     gainedString += " +"+bonusInt + " 🧠";
+    displayPlayerEffect("🧠");
   }
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
   logPlayerAction(actionString,gainedString);
@@ -818,9 +822,10 @@ function playerHit(incomingDamage){
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
-    var hitChance = Math.floor(Math.random() * 100); //Small chance to not die
-    console.log("hitChance: "+hitChance+"/100 lck: "+playerLck)
-    if ( hitChance <= playerLck ){
+    var deathChance = Math.floor(Math.random() * 100); //Small chance to not die
+    console.log("deathChance: "+hitChance+"/100 lck: "+playerLck)
+    if ( deathChance <= playerLck ){
+      playerHp+=1;
       logAction("💀&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you got a second chance to live.");
       displayPlayerEffect("🍀");
       return;

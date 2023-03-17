@@ -5,3 +5,4 @@ Gemfile
 Gemfile.lock
 _site/
 assets/img/background-large.png
+data/ideas.csv
