@@ -556,7 +556,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"That made them more angry!");
               enemyAtkBonus+=1;
             } else {
-              logPlayerAction(actionString,"They ignored whatever you said.");
+              var speechChance = Math.floor(Math.random() * 10);
+              console.log("speechChance: "+speechChance+"/10 lck: "+playerLck) //Generous chance to lie
+              if ( speechChance <= playerLck ){
+                logAction("💬&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily they believed your lies.");
+                nextEncounter();
+              }
+              else {
+                logPlayerAction(actionString,"They ignored whatever you said.");
+              }
             }
             displayPlayerEffect("💬");
             enemyRest(1);
@@ -828,7 +836,7 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     var deathChance = Math.floor(Math.random() * 100); //Small chance to not die
-    console.log("deathChance: "+hitChance+"/100 lck: "+playerLck)
+    console.log("deathChance: "+deathChance+"/100 lck: "+playerLck)
     if ( deathChance <= playerLck ){
       playerHp+=1;
       logAction("💀&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you got a second chance to live.");
