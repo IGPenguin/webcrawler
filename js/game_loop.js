@@ -59,7 +59,7 @@ var enemyName;
 var enemyHp;
 var enemyAtk;
 var enemySta;
-var enemyDef;
+var enemyLck;
 var enemyInt;
 var enemyType;
 var enemyTeam;
@@ -173,7 +173,7 @@ function redraw(index){
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
   enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
-  enemyDef = String(selectedLine.split(",")[7].split(":")[1]);
+  enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
@@ -208,7 +208,12 @@ function redraw(index){
     case "Item":
     case "Trap":
     case "Friend":
-      enemyStatusString = "❤️ ??&nbsp;&nbsp;🎯 ??";
+      enemyStatusString = "";
+      if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
+      if (enemyAtk>0) {enemyStatusString += "🎯 ??&nbsp;&nbsp;";}
+      if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
+      if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
+      if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
       break;
     case "Consumable":
       enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
@@ -491,7 +496,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("✋");
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
             break;
           case "Friend":
             logPlayerAction(actionString,"It slipped through your fingers.");
