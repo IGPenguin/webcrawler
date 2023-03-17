@@ -465,13 +465,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString,"You were too slow, they dodged that.");
               }
             } else { //Player and enemy have no stamina - asymetrical rest
-              logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
-              displayEnemyEffect("🦶");
-              playerGetStamina(2,true);
-              enemyRest(1);
+              enemyKicked();
             }
             break;
-          case "Swift": //Player cannot grab swift enemies
+          case "Swift": //Player can only kick tired swift enemies
+            if (enemySta-enemyStaLost == 0){
+              enemyKicked();
+              break;
+            }
             logPlayerAction(actionString,"They swiftly evaded your grasp.");
             displayEnemyEffect("🌀");
             enemyAttackOrRest();
@@ -481,10 +482,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
-              logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
-              displayEnemyEffect("🦶");
-              playerGetStamina(2,true);
-              enemyRest(1);
+              enemyKicked();
             }
             break;
           case "Trap":
@@ -713,6 +711,13 @@ function enemyHit(damage){
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
+}
+
+function enemyKicked(){
+  logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
+  displayEnemyEffect("🦶");
+  playerGetStamina(2,true);
+  enemyRest(1);
 }
 
 function enemyKnockedOut(){
