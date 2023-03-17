@@ -807,7 +807,7 @@ function playerConsumed(){
 
 function playerHit(incomingDamage){
   var hitChance = Math.floor(Math.random() * 10);
-  console.log("hitChance: "+hitChance+" lck: "+playerLck)
+  console.log("hitChance: "+hitChance+"/10 lck: "+playerLck) //Generous chance to not get hit
   if ( hitChance <= playerLck ){
     logAction("💢&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you avoided receiving damage.");
     displayPlayerEffect("🍀");
@@ -818,6 +818,13 @@ function playerHit(incomingDamage){
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
+    var hitChance = Math.floor(Math.random() * 100); //Small chance to not die
+    console.log("hitChance: "+hitChance+"/100 lck: "+playerLck)
+    if ( hitChance <= playerLck ){
+      logAction("💀&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you got a second chance to live.");
+      displayPlayerEffect("🍀");
+      return;
+    }
     gameOver();
     return;
   }
