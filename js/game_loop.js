@@ -689,7 +689,7 @@ function enemyHit(damage){
 }
 
 function enemyKnockedOut(){
-  logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You knocked them out of conscioussnes.");
+  logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You knocked them out of conscioussness.");
   displayEnemyEffect("💤");
   enemyAnimateDeathNextEncounter();
 }
