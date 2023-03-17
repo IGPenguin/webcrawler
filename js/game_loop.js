@@ -572,7 +572,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var speechChance = Math.floor(Math.random() * 10);
               console.log("speechChance: "+speechChance+"/10 lck: "+playerLck) //Generous chance to lie
               if ( speechChance <= playerLck ){
-                logAction("💬&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily they believed your lies.");
+                logAction("💬&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily they believed your lies and left.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
