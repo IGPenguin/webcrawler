@@ -278,7 +278,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard": //You hit first, they hit back if they have stamina
           case "Recruit":
           case "Pet":
-            logPlayerAction(actionString,"Your attack successfully hit them -"+playerAtk+" 💔")
+            logPlayerAction(actionString,"You hit them with your attack -"+playerAtk+" 💔")
             var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
             if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
@@ -582,7 +582,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAttackOrRest();
             break;
           case "Friend":
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
             displayPlayerEffect("💬");
             break;
           case "Death":
@@ -842,8 +842,8 @@ function playerConsumed(){
 }
 
 function playerHit(incomingDamage){
-  var hitChance = Math.floor(Math.random() * 10);
-  console.log("hitChance: "+hitChance+"/10 lck: "+playerLck) //Generous chance to not get hit
+  var hitChance = Math.floor(Math.random() * 20);
+  console.log("hitChance: "+hitChance+"/20 lck: "+playerLck) //Generous chance to not get hit
   if ( hitChance <= playerLck ){
     logAction("💢&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you avoided receiving damage.");
     displayPlayerEffect("🍀");
@@ -954,9 +954,13 @@ function adjustEncounterButtons(){
         document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Recruit";
       }
     case "Standard":
-    case "Swift":
     case "Heavy":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
+        document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
+      }
+      break;
+    case "Swift":
+      if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
       }
       break;
