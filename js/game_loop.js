@@ -435,7 +435,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
                 logPlayerAction(actionString,"You need to be wiser to befriend them.");
-                enemyRest(1);
+                enemyAttackOrRest();
                 break;
               }
               logPlayerAction(actionString,"You petted it and became friends!");
@@ -453,7 +453,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               logPlayerAction(actionString,"You were too slow, they dodged that.");
               displayPlayerCannotEffect();
-              enemyRest(1);
+              enemyAttackOrRest();
             } else { //Player and enemy have no stamina - asymetrical rest
               logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
               displayEnemyEffect("🦶");
@@ -464,7 +464,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift": //Player cannot grab swift enemies
             logPlayerAction(actionString,"They swiftly evaded your grasp.");
             displayEnemyEffect("🌀");
-            enemyRest(1);
+            enemyAttackOrRest();
             break;
           case "Heavy":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
@@ -567,7 +567,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
             }
             displayPlayerEffect("💬");
-            enemyRest(1);
+            enemyAttackOrRest();
             break;
           case "Friend":
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyDef, enemyInt);
@@ -604,7 +604,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Recruit":
           case "Pet":
-            enemyAttackIfPossible();
+            enemyAttackOrRest();
             if (playerHp>0){
               displayPlayerEffect("💤");
               playerGetStamina(1);
@@ -707,7 +707,7 @@ function enemyKnockedOut(){
   enemyAnimateDeathNextEncounter();
 }
 
-function enemyAttackIfPossible(){
+function enemyAttackOrRest(){
   if (enemySta-enemyStaLost > 0) {
     enemyStaminaChangeMessage(-1,"The enemy attacked you for -"+enemyAtk+" 💔","n/a");
     playerHit(enemyAtk);
