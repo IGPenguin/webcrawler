@@ -384,6 +384,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_block':
+        if (enemyType == "Upgrade"){
+          logPlayerAction(actionString,"Your felt your brain grow wiser.");
+          displayPlayerEffect("🧠");
+          playerInt+=1;
+          nextEncounter();
+          break;
+        }
         if (!playerUseStamina(1,"You are too tired to raise your shield.")){
             break;
           }
@@ -407,13 +414,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Death":
               logPlayerAction(actionString,"There is nothing to block anymore.");
-              break;
-          case "Upgrade":
-              logPlayerAction(actionString,"Your felt your brain grow wiser.");
-              displayPlayerEffect("🧠");
-              playerInt+=1;
-              playerSta+=1; //Hehe, restore default lost stamina on "block_button"
-              nextEncounter();
               break;
           default:
             logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
@@ -949,13 +949,17 @@ function adjustEncounterButtons(){
     case "Dream":
       document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
       break;
+    case "Recruit":
+        if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
+          document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Recruit";
+        }
+        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
+          document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
+        }
+        break;
     case "Pet":
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
         document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Pet";
-      }
-    case "Recruit":
-      if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
-        document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Recruit";
       }
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
