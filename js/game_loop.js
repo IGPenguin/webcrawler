@@ -36,8 +36,8 @@ function renewPlayer(){
 var playerName = "Nameless Hero";
 var playerLootString = "";
 var playerPartyString = "";
-var playerHpDefault = 2;
-var playerStaDefault = 2;
+var playerHpDefault = 3;
+var playerStaDefault = 3;
 var playerLckDefault = 0;
 
 var playerHpMax = playerHpDefault;
@@ -454,7 +454,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random() * 10);
               console.log("touchChance: "+touchChance+"/10 lck: "+playerLck) //Generous chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){
-                logAction("✋&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily they were scared off by your touch.");
+                logAction("✋&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;They were scared off by your touch.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
@@ -570,7 +570,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var speechChance = Math.floor(Math.random() * 10);
               console.log("speechChance: "+speechChance+"/10 lck: "+playerLck) //Generous chance to lie
               if ( speechChance <= playerLck ){
-                logAction("💬&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily they believed your lies and left.");
+                logAction("💬&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;They believed your lies and left.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
@@ -845,7 +845,7 @@ function playerHit(incomingDamage){
   var hitChance = Math.floor(Math.random() * 20);
   console.log("hitChance: "+hitChance+"/20 lck: "+playerLck) //Generous chance to not get hit
   if ( hitChance <= playerLck ){
-    logAction("💢&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you avoided receiving damage.");
+    logAction("💢&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;You somehow avoided receiving damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -954,13 +954,13 @@ function adjustEncounterButtons(){
         document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Recruit";
       }
     case "Standard":
-    case "Heavy":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
       }
       break;
+    case "Heavy":
     case "Swift":
-      if (enemySta-enemyStaLost==0) {
+      if ((enemySta-enemyStaLost)==0) {
         document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
       }
       break;

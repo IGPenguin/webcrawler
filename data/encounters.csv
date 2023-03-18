@@ -36,11 +36,11 @@ Forgotten Forest;🍀;Four-leaf Clover;Item;0;0;0;1;0;Wild Flora;You noticed som
 Forgotten Forest;🧺;Picnic Basket;Container;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
 Forgotten Forest;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
 Forgotten Forest;🐺;Old Wolf;Pet;5;2;2;0;2;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
-Forgotten Forest;⛰;Cavern Entrance;Prop;0;6;0;0;0;Unfortunate Obstacle;You wonder whats in there.<br>Maybe some treasure?;
+Forgotten Forest;⛰;Cavern Entrance;Prop;0;6;0;0;0;Landmark;You wonder whats in there.<br>Maybe some treasure?;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
 Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
 Forest Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for a powerful attack.<br>You should better avoid it.;They ripped you apart
-Forest Cavern;💀;Pile of Skeletons;Prop;0;0;0;0;0;Disturbing Object;A lot of adventures ended here.<br>Better catch your breath.;
+Forest Cavern;💀;Pile of Skulls;Prop;0;0;0;0;0;Disturbing Object;A lot of adventures ended here.<br>Better catch your breath.;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
 Forest Cavern;🧙;Tired Old Man;Recruit;1;1;1;0;1;Cursed Human Being;The silhouette changed into a human being.<br>They are begging for your mercy.;They ripped you apart
 Forest Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
