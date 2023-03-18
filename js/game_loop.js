@@ -2,7 +2,7 @@
 //...submit pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 3/17/23"
+var versionCode = "work-in-progress, ver. 3/18/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -10,8 +10,10 @@ var playerInfoUIElement;
 
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
 var seenEncounters;
+var randomEncounterIndex;
 var encountersTotal;
 var encounterIndex;
+var lines;
 
 if (seenEncountersString == null){
   seenEncounters = [];
@@ -48,6 +50,8 @@ var playerLck = playerLckDefault;
 var playerInt = 1;
 var playerAtk = 1;
 
+var luckInterval = 15; //Lower to increase chances
+
 var actionString;
 var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.\n";
 var adventureLog = actionLog;
@@ -69,8 +73,6 @@ var enemyMsg;
 var enemyHpLost = 0;
 var enemyStaLost = 0;
 var enemyAtkBonus = 0;
-var lines;
-var randomEncounterIndex;
 
 $(document).ready(function() {
     $.ajax({
@@ -270,31 +272,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Heavy":
-            if (enemySta - enemyStaLost <=0){
-              logPlayerAction(actionString,"You hit them with a critical attack -"+(playerAtk+2)+" 💔");
-              enemyHit(playerAtk+2); //Critical attack if they are exhausted
-              break;
-            }
           case "Standard": //You hit first, they hit back if they have stamina
           case "Recruit":
           case "Pet":
-            logPlayerAction(actionString,"You hit them with your attack -"+playerAtk+" 💔")
-            var enemyPostHitHp = enemyHp-enemyHpLost-playerAtk;
             enemyHit(playerAtk);
-            if ((enemySta-enemyStaLost > 0) && (enemyPostHitHp > 0)) { //They counterattack or regain stamina
-              enemyStaminaChangeMessage(-1,"They hit you with a counter-attack -"+enemyAtk+" 💔","n/a");
-              playerHit(enemyAtk);
-            } else if (enemyPostHitHp > 0) {
-              enemyRest(1);
+            if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
+              enemyAttackOrRest();
             }
             break;
-          case "Swift": //They hit you if they have stamina
+          case "Swift": //They hit you first if they have stamina
             if (enemySta-enemyStaLost > 0) {
               enemyStaminaChangeMessage(-1,"They dodged and counter-attacked -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
               enemyHit(playerAtk);
-              enemyStaminaChangeMessage(-1,"n/a","You hit them with an attack -"+playerAtk+" 💔");
+              enemyAttackOrRest();
             }
             break;
           case "Death":
@@ -344,7 +336,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container":
-            logPlayerAction(actionString,"You walked away without looking inside.");
+            logPlayerAction(actionString,"You walked away without investigating.");
             displayPlayerEffect("👣");
             encounterIndex+=1; //Skip loot
             nextEncounter();
@@ -451,10 +443,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
-              var touchChance = Math.floor(Math.random() * 10);
-              console.log("touchChance: "+touchChance+"/10 lck: "+playerLck) //Generous chance to make enemy uncomfortable
+              var touchChance = Math.floor(Math.random() * luckInterval);
+              console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){
-                logAction("✋&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;They were scared off by your touch.");
+                logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;✋&nbsp;&nbsp;They were scared off by your touch.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
@@ -567,10 +559,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
-              var speechChance = Math.floor(Math.random() * 10);
-              console.log("speechChance: "+speechChance+"/10 lck: "+playerLck) //Generous chance to lie
+              var speechChance = Math.floor(Math.random() * luckInterval);
+              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
               if ( speechChance <= playerLck ){
-                logAction("💬&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;They believed your lies and left.");
+                logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;💬&nbsp;&nbsp;They believed your lies and left.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
@@ -702,8 +694,20 @@ function enemyAnimateDeathNextEncounter(){
 }
 
 function enemyHit(damage){
+  var hitMsg = "You hit them with an attack -"+damage+" 💔";
+
   displayEnemyEffect("💢");
+  var critChance = Math.floor(Math.random() * luckInterval);
+  console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
+  if ( critChance <= playerLck ){
+    logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;🎯&nbsp;&nbsp;Your strike was blessed with extra punch.");
+    hitMsg="You hit them with a critical attack -"+(damage+2)+" 💔";
+    damage+=2;
+  }
+
+  logPlayerAction(actionString,hitMsg);
   enemyHpLost = enemyHpLost + damage;
+
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
     logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
@@ -780,7 +784,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt){
   if (enemyMsg != "") {
     gainedString = enemyMsg;
   } else {
-    gainedString="You feel somehow stronger";
+    gainedString="You felt becoming stronger";
   }
   if (bonusHp > 0) {
     playerHpMax += parseInt(bonusHp);
@@ -842,10 +846,10 @@ function playerConsumed(){
 }
 
 function playerHit(incomingDamage){
-  var hitChance = Math.floor(Math.random() * 20);
-  console.log("hitChance: "+hitChance+"/20 lck: "+playerLck) //Generous chance to not get hit
+  var hitChance = Math.floor(Math.random() * luckInterval);
+  console.log("hitChance: "+hitChance+"/"+luckInterval+" lck: "+playerLck) //Chance to not get hit
   if ( hitChance <= playerLck ){
-    logAction("💢&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;You somehow avoided receiving damage.");
+    logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;💢&nbsp;&nbsp;You avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -854,11 +858,11 @@ function playerHit(incomingDamage){
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
-    var deathChance = Math.floor(Math.random() * 100); //Small chance to not die
-    console.log("deathChance: "+deathChance+"/100 lck: "+playerLck)
+    var deathChance = Math.floor(Math.random() * luckInterval * 3); //Small chance to not die
+    console.log("deathChance: "+deathChance+"/"+(luckInterval*3)+" lck: "+playerLck)
     if ( deathChance <= playerLck ){
       playerHp+=1;
-      logAction("💀&nbsp;&nbsp;▸&nbsp;&nbsp;🍀&nbsp;&nbsp;Luckily you got a second chance to live.");
+      logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;Luckily you got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
