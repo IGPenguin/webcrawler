@@ -700,7 +700,7 @@ function enemyHit(damage){
   var critChance = Math.floor(Math.random() * luckInterval);
   console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
-    logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;🎯&nbsp;&nbsp;Your strike was blessed with extra punch.");
+    logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;🎯&nbsp;&nbsp;Your strike was blessed with luck.");
     hitMsg="You hit them with a critical attack -"+(damage+2)+" 💔";
     damage+=2;
   }
