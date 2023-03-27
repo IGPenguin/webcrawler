@@ -1059,7 +1059,7 @@ function copyAdventureToClipboard(){
   displayPlayerEffect("💌");
   logPlayerAction(actionString,"Your legend was copied into clipboard.");
   adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
-  adventureLog += "\n"+generateCharacterShareString();
+  adventureLog += generateCharacterShareString();
   adventureLog += "\nhttps://igpenguin.github.io/webcrawler\n"+ versionCode;
   navigator.clipboard.writeText(adventureLog);
 }
