@@ -152,8 +152,8 @@ function redraw(index){
   //Player UI
   playerInfoUIElement= document.getElementById('id_player_info');
   document.getElementById('id_player_name').innerHTML = playerName;
-  var playerStatusString = "❤️ " + "▰".repeat(playerHp) + "▱".repeat((-1)*(playerHp-playerHpMax));
-  playerStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(playerSta) + "▱".repeat(playerStaMax-playerSta);
+  var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
+  playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
@@ -194,10 +194,10 @@ function redraw(index){
 
   //Encounter Statusbar UI
   var enemyStatusString = ""
-  if (enemyHp > 0) { enemyStatusString = "❤️ " + "▰".repeat(enemyHp);}
-    if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "▱".repeat(enemyHpLost); } //YOLO
-  if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "▰".repeat(enemySta);}
-    if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "▱".repeat(enemyStaLost); } //YOLO
+  if (enemyHp > 0) { enemyStatusString = "❤️ " + "◆".repeat(enemyHp);}
+    if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "◇".repeat(enemyHpLost); } //YOLO
+  if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(enemySta);}
+    if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "◇".repeat(enemyStaLost); } //YOLO
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
 
   switch(enemyType){
@@ -581,7 +581,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Your legend was copied into clipboard.");
             displayPlayerEffect("💌");
             adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
-            adventureLog += "\nCharacter: "+playerName +"\n"+"Party: "+playerPartyString+ "  Loot: "+playerLootString+"\n"+"❤️ "+"▰".repeat(playerHpMax)+"  🟢 "+"▰".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk)+"\n";
+            adventureLog += "\nCharacter: "+playerName +"\n"+"Party: "+playerPartyString+ "  Loot: "+playerLootString+"\n"+"❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk)+"\n";
             adventureLog += "\nhttps://igpenguin.github.io/webcrawler\n"+ versionCode;
             navigator.clipboard.writeText(adventureLog);
             break;
