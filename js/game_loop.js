@@ -872,7 +872,7 @@ function playerHit(incomingDamage){
 function gameOver(){
   //Reset progress to death encounter
   logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;The adventure ended, you were killed. ");
-  adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName+"\n";
+  adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
   animateUIElement(emojiUIElement,"animate__flip","1");
@@ -1066,7 +1066,7 @@ function copyAdventureToClipboard(){
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to encounter #"+adventureEncounterCount+" in WebCrawler!\n"+generateCharacterShareString()+adventureEndReason));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to stage #"+adventureEncounterCount+" in WebCrawler!\n"+generateCharacterShareString()+adventureEndReason));
 }
 
 //Mobile specific
