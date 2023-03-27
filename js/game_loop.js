@@ -1052,6 +1052,8 @@ function generateCharacterShareString(){
     characterShareString += "\nLoot: "+playerLootString;
   }
 
+  characterShareString+="\n"+ versionCode;
+
   return characterShareString;
 }
 
@@ -1060,13 +1062,13 @@ function copyAdventureToClipboard(){
   logPlayerAction(actionString,"Your legend was copied into clipboard.");
   adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
   adventureLog += generateCharacterShareString();
-  adventureLog += "\nhttps://igpenguin.github.io/webcrawler\n"+ versionCode;
+  adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
   navigator.clipboard.writeText(adventureLog);
 }
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to stage #"+adventureEncounterCount+" in WebCrawler!\n"+generateCharacterShareString()+adventureEndReason));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to stage #"+adventureEncounterCount+" in WebCrawler!"+adventureEndReason+"\n"+generateCharacterShareString()));
 }
 
 //Mobile specific
