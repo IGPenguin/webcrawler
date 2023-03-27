@@ -55,7 +55,8 @@ var luckInterval = 15; //Lower to increase chances
 var actionString;
 var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.\n";
 var adventureLog = actionLog;
-
+var adventureEncounterCount = 0;
+var adventureEndReason = "";
 
 //Enemy stats init
 var enemyEmoji;
@@ -219,9 +220,6 @@ function redraw(index){
       break;
     case "Consumable":
       enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
-      break;
-    case "Death":
-      enemyStatusString = "🦴&nbsp;&nbsp;🦴&nbsp;&nbsp;🦴";
       break;
     default:
       enemyStatusString = "∙  ∙  ∙"; //Dream, Prop, Upgrade etc.
@@ -519,6 +517,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logAction(deathMessage);
             encounterIndex=3; //Skip tutorial
             displayEnemyEffect("✋");
+            adventureEncounterCount = 0;
             nextEncounter();
             break;
           case "Upgrade":
@@ -578,12 +577,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💬");
             break;
           case "Death":
-            logPlayerAction(actionString,"Your legend was copied into clipboard.");
-            displayPlayerEffect("💌");
-            adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
-            adventureLog += "\nCharacter: "+playerName +"\n"+"Party: "+playerPartyString+ "  Loot: "+playerLootString+"\n"+"❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk)+"\n";
-            adventureLog += "\nhttps://igpenguin.github.io/webcrawler\n"+ versionCode;
-            navigator.clipboard.writeText(adventureLog);
+            copyAdventureToClipboard();
             break;
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
@@ -632,8 +626,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Death":
-            logPlayerAction(actionString,"You can rest as long as you please.");
-            displayPlayerEffect("💤");
+            redirectToTweet();
             break;
           case "Upgrade":
             logPlayerAction(actionString,"You skipped boosting your character.");
@@ -683,16 +676,6 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   }
 }
 
-function enemyAnimateDeathNextEncounter(){
-  animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
-  var animationHandler = function(){
-    nextEncounter();
-    redraw(encounterIndex);
-    emojiUIElement.removeEventListener("animationend",animationHandler);
-  }
-  emojiUIElement.addEventListener('animationend',animationHandler);
-}
-
 function enemyHit(damage){
   var hitMsg = "You hit them with an attack -"+damage+" 💔";
 
@@ -740,10 +723,21 @@ function enemyAttackOrRest(){
 }
 
 function nextEncounter(){
+  adventureEncounterCount+=1;
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
   enemyRenew();
   animateUIElement(cardUIElement,"animate__fadeIn","0.7");
+}
+
+function enemyAnimateDeathNextEncounter(){
+  animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
+  var animationHandler = function(){
+    nextEncounter();
+    redraw(encounterIndex);
+    emojiUIElement.removeEventListener("animationend",animationHandler);
+  }
+  emojiUIElement.addEventListener('animationend',animationHandler);
 }
 
 //Player
@@ -875,12 +869,13 @@ function playerHit(incomingDamage){
 //End Game
 function gameOver(){
   //Reset progress to death encounter
-  resetSeenEncounters();
-  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed, the adventure ends. ")
+  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;The adventure ended, you were killed. ");
+  adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName+"\n";
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
   animateUIElement(emojiUIElement,"animate__flip","1");
-  playerSta=0;
+  playerSta=0; //You are just tired when dead :)
+  resetSeenEncounters();
 }
 
 function gameEnd(){
@@ -974,6 +969,7 @@ function adjustEncounterButtons(){
       break;
     case "Death":
       document.getElementById('button_speak').innerHTML="💌&nbsp;&nbsp;Share";
+      document.getElementById('button_sleep').innerHTML="🦆&nbsp;&nbsp;Tweet";
     default:
   }
 }
@@ -1039,6 +1035,36 @@ function registerClickListeners(){
     }
     redraw(encounterIndex);
   });
+}
+
+//Social
+function generateCharacterShareString(){
+  var characterShareString="";
+  characterShareString+="\nCharacter: "+playerName;
+  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk)+"\n";
+
+  if (playerPartyString.length > 0) {
+    characterShareString += "\nParty: " +playerPartyString;
+  }
+  if (playerLootString.length > 0) {
+    characterShareString += "\nLoot: "+playerLootString;
+  }
+
+  return characterShareString;
+}
+
+function copyAdventureToClipboard(){
+  displayPlayerEffect("💌");
+  logPlayerAction(actionString,"Your legend was copied into clipboard.");
+  adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
+  adventureLog += "\n"+generateCharacterShareString();
+  adventureLog += "\nhttps://igpenguin.github.io/webcrawler\n"+ versionCode;
+  navigator.clipboard.writeText(adventureLog);
+}
+
+function redirectToTweet(){
+  var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to encounter #"+adventureEncounterCount+" in WebCrawler!\n"+generateCharacterShareString()+adventureEndReason));
 }
 
 //Mobile specific
