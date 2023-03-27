@@ -55,7 +55,7 @@ var luckInterval = 15; //Lower to increase chances
 var actionString;
 var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.\n";
 var adventureLog = actionLog;
-var adventureEncounterCount = 0;
+var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
 
 //Enemy stats init
@@ -513,11 +513,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Death":
             renewPlayer();
             logPlayerAction(actionString,"Your body reconnected with your soul.");
+            displayEnemyEffect("✋");
             var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power resurrected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
             encounterIndex=3; //Skip tutorial
-            displayEnemyEffect("✋");
-            adventureEncounterCount = 0;
+            adventureEncounterCount = -1; //For death
             nextEncounter();
             break;
           case "Upgrade":
@@ -584,9 +584,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             break;
           case "Upgrade":
-            logPlayerAction(actionString,"You chose to get <b> cursed forever -1</b> 💔");
+            logPlayerAction(actionString,"You chose to become <b> cursed -1 💔 -1 🟢</b>");
             playerHpMax-=1;
             playerHit(1);
+            playerStaMax-=1;
+            playerSta-=1;
             nextEncounter();
             break;
           default:
