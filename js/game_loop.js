@@ -2,7 +2,7 @@
 //...submit pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 3/18/23"
+var versionCode = "work-in-progress, ver. 3/27/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -505,8 +505,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Consumable":
             playerConsumed();
-            displayPlayerEffect("🍽");
-            nextEncounter();
+            displayEnemyEffect("🍽");
+            enemyAnimateDeathNextEncounter();
             break;
           case "Dream":
             logPlayerAction(actionString,"You reached out into the endless void.");
