@@ -23,6 +23,7 @@ Forgotten Forest;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe you could mak
 Forgotten Forest;🦨;Forest Skunk;Swift;2;1;2;0;3;Wild Animal;This one is fast and stinky.<br>You cannot avoid its attacks.;
 Forgotten Forest;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
 Forgotten Forest;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;It stares suspiciously into your eyes.<br>Almost like it's about to say something.;It revealed you a powerful secret
+Forgotten Forest;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Resurrection Point;Place of immense power.<br>Warms your soul.;
 Forgotten Forest;🐐;Irritable Goat;Standard;3;1;2;0;10;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
 Forgotten Forest;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
 Forgotten Forest;🦊;Cunning Fox;Pet;2;1;3;0;3;Wild Animal;It came to sit right in front of you.<br>Perhaps its up to something.;
@@ -38,6 +39,7 @@ Forgotten Forest;🧺;Picnic Basket;Container;0;0;0;0;0;Container;Someone must h
 Forgotten Forest;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
 Forgotten Forest;🐺;Old Wolf;Pet;5;2;2;0;2;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
 Forgotten Forest;🏔;Cavern Entrance;Prop;0;6;0;0;0;Landmark;You wonder whats in there.<br>Maybe some treasure?;
+Forest Cavern;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Resurrection Point;Place of immense power.<br>Warms your soul.;
 Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
 Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
 Forest Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for a powerful attack.<br>You should better avoid it.;They ripped you apart
@@ -50,6 +52,7 @@ Forest Cavern;🐍;Giant Cavern Snake;Heavy;5;3;3;0;5;Wild Animal;It perfectly b
 Forest Cavern;🥚;Snake Egg;Consumable;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
 Forest Cavern;🚪;Strange Door;Prop;0;0;0;0;0;Unexpected Object;You discovered an ornate carved door.<br>Where could it lead?;
 Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;Sticky Trap;Hopefully nobody's home.<br>It seems quite sturdy.;Eww. It's gross having webs on you
+Ancient Crypt;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Resurrection Point;Place of immense power.<br>Warms your soul.;
 Ancient Crypt;🕷;Eight-legged Menace;Swift;4;2;1;0;4;Pesky Insect;It looks like it was waiting for a prey.<br>There is no turning back now.;
 Ancient Crypt;🦇;Screaming Bat;Standard;3;2;2;0;5;Flying Mammal;Its scream echoes around the crypt.<br>You got goosebumps.;
 Ancient Crypt;🪦;Desolate Gave;Container;0;0;0;0;0;Final Resting Place;The text is all faded.<br>Something is on the ground.;You dug out some shiny ring.

@@ -59,6 +59,7 @@ var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
 
 //Area init
+var checkpointEncounter;
 var previousArea;
 var areaName;
 
@@ -338,6 +339,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Item":
           case "Consumable":
+          case "Checkpoint":
             logPlayerAction(actionString,"You walked away leaving it behind.");
             displayEnemyEffect("👣");
             nextEncounter();
@@ -525,16 +527,27 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("✋");
             var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power resurrected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
-            encounterIndex=3; //Skip tutorial
+            if (checkpointEncounter == null){
+              encounterIndex=3; //Skip tutorial
+            } else {
+              encounterIndex=checkpointEncounter-1; //Start from checkpoint
+            }
             adventureEncounterCount = -1; //For death
             nextEncounter();
             break;
           case "Upgrade":
-          logPlayerAction(actionString,"You felt your chances increase.");
-          displayPlayerEffect("🍀");
-          playerLck+=1;
-          nextEncounter();
-          break;
+            logPlayerAction(actionString,"You felt your chances increase.");
+            displayPlayerEffect("🍀");
+            playerLck+=1;
+            nextEncounter();
+            break;
+          case "Checkpoint": //Save and rest to full HP and Sta
+            displayPlayerEffect("💾");
+            logPlayerAction(actionString,"You embraced the eternal flame.");
+            playerGetStamina(playerStaMax-playerSta,true);
+            playerHp=playerHpMax;
+            checkpointEncounter=encounterIndex;
+            break;
           default:
             logPlayerAction(actionString,"You touched it and nothing happened.");
             displayEnemyEffect("✋");
@@ -627,6 +640,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Prop":
           case "Dream":
           case "Container":
+          case "Checkpoint":
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta);//Rest to full if out of combat
             break;
@@ -990,6 +1004,10 @@ function adjustEncounterButtons(){
     case "Death":
       document.getElementById('button_speak').innerHTML="💌&nbsp;&nbsp;Share";
       document.getElementById('button_sleep').innerHTML="🦆&nbsp;&nbsp;Tweet";
+      break;
+    case "Checkpoint":
+      document.getElementById('button_grab').innerHTML="💾&nbsp;&nbsp;Save";
+      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
     default:
   }
 }
@@ -1003,8 +1021,8 @@ function curtainFadeInAndOut(message=""){
   animateUIElement(curtainUIElement,"animate__fadeIn",1.5,true);
 
   var animationHandler = function(){
-    animateUIElement(curtainUIElement,"animate__fadeOut",,true);
-    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",3.5,true,message);
+    animateUIElement(curtainUIElement,"animate__fadeOut",2.5,true);
+    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",2.5,true,message);
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
   curtainUIElement.addEventListener('animationend',animationHandler);
