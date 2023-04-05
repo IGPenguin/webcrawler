@@ -107,7 +107,6 @@ function processData(allText) {
   }
   }
   redraw(1); //Start from the first encounter (0 is dead)
-  curtainFadeInAndOut();
 }
 
 function getNextEncounterIndex(){
@@ -187,7 +186,7 @@ function redraw(index){
   enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
 
   //Fullscreen Curtain
-  if (previousArea != areaName){
+  if ((previousArea!=undefined) && (previousArea != areaName)){
     curtainFadeInAndOut(areaName);
   }
 
@@ -987,8 +986,17 @@ function adjustEncounterButtons(){
 
 //UI Effects
 function curtainFadeInAndOut(message=""){
-  animateUIElement(document.getElementById('id_fullscreen_curtain'),"animate__fadeOut",2.5,true);
-  animateUIElement(document.getElementById('id_fullscreen_text'),"animate__fadeOut",2.5,true,message);
+  var curtainUIElement = document.getElementById('id_fullscreen_curtain');
+
+  animateUIElement(curtainUIElement,"animate__fadeIn",1,true);
+  animateUIElement(document.getElementById('id_fullscreen_text'),"animate__fadeIn",1,true,message);
+
+  var animationHandler = function(){
+    animateUIElement(curtainUIElement,"animate__fadeOut",2,true);
+    animateUIElement(document.getElementById('id_fullscreen_text'),"animate__fadeOut",2,true,message);
+    curtainUIElement.removeEventListener("animationend",animationHandler);
+  }
+  curtainUIElement.addEventListener('animationend',animationHandler);
 }
 
 function displayEnemyEffect(message){
