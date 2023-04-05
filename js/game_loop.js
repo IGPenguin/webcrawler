@@ -59,6 +59,7 @@ var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
 
 //Enemy stats init
+var areaName;
 var enemyEmoji;
 var enemyName;
 var enemyHp;
@@ -106,6 +107,7 @@ function processData(allText) {
   }
   }
   redraw(1); //Start from the first encounter (0 is dead)
+  curtainFadeInAndOut();
 }
 
 function getNextEncounterIndex(){
@@ -146,6 +148,8 @@ function resetSeenEncounters(){
 
 //UI Logic
 function redraw(index){
+  var previousArea=areaName;
+
   document.getElementById('id_version').innerHTML = versionCode;
   encounterIndex = index;
   selectedLine = String(lines[index]);
@@ -169,7 +173,7 @@ function redraw(index){
   }
 
   //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
-  var areaName = String(selectedLine.split(",")[0].split(":")[1]);
+  areaName = String(selectedLine.split(",")[0].split(":")[1]);
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
@@ -181,6 +185,11 @@ function redraw(index){
   enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
   enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
+
+  //Fullscreen Curtain
+  if (previousArea != areaName){
+    curtainFadeInAndOut(areaName);
+  }
 
   //Encounter UI
   cardUIElement = document.getElementById('id_card');
@@ -330,28 +339,28 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
             logPlayerAction(actionString,"You walked away leaving it behind.");
-            displayPlayerEffect("👣");
+            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Container":
             logPlayerAction(actionString,"You walked away without investigating.");
-            displayPlayerEffect("👣");
+            displayEnemyEffect("👣");
             encounterIndex+=1; //Skip loot
             nextEncounter();
             break;
           case "Dream":
             logPlayerAction(actionString,"You walked further along the road.");
-            displayPlayerEffect("👣");
+            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Prop":
             logPlayerAction(actionString,"You continued on your adventure.");
-            displayPlayerEffect("👣");
+            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Friend":
             logPlayerAction(actionString,"You walked far away from them.");
-            displayPlayerEffect("👣");
+            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Trap-Roll": //You get damage rolling into "Trap-Roll" type encounters
@@ -361,7 +370,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
           case "Trap-Attack":
             logPlayerAction(actionString,"You continued onwards away from that.");
-            displayPlayerEffect("👣");
+            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Death":
@@ -908,7 +917,7 @@ function logAction(message){
   }
 }
 
-//UI Tech
+//UI Buttons
 function resetEncounterButtons(){
   document.getElementById('button_attack').innerHTML="🎯&nbsp;&nbsp;Attack";
   document.getElementById('button_block').innerHTML="🛡&nbsp;&nbsp;Block";
@@ -974,6 +983,12 @@ function adjustEncounterButtons(){
       document.getElementById('button_sleep').innerHTML="🦆&nbsp;&nbsp;Tweet";
     default:
   }
+}
+
+//UI Effects
+function curtainFadeInAndOut(message=""){
+  animateUIElement(document.getElementById('id_fullscreen_curtain'),"animate__fadeOut",2.5,true);
+  animateUIElement(document.getElementById('id_fullscreen_text'),"animate__fadeOut",2.5,true,message);
 }
 
 function displayEnemyEffect(message){
