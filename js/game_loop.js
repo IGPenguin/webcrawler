@@ -58,8 +58,11 @@ var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
 
-//Enemy stats init
+//Area init
+var previousArea;
 var areaName;
+
+//Enemy stats init
 var enemyEmoji;
 var enemyName;
 var enemyHp;
@@ -106,7 +109,8 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  redraw(1); //Start from the first encounter (0 is dead)
+  loadEncounter(1);//Start from the first encounter (0 is dead)
+  redraw();
 }
 
 function getNextEncounterIndex(){
@@ -145,13 +149,29 @@ function resetSeenEncounters(){
   seenEncounters = [];
 }
 
-//UI Logic
-function redraw(index){
-  var previousArea=areaName;
-
-  document.getElementById('id_version').innerHTML = versionCode;
+function loadEncounter(index){
   encounterIndex = index;
   selectedLine = String(lines[index]);
+
+  //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
+  areaName = String(selectedLine.split(",")[0].split(":")[1]);
+  enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
+  enemyName = String(selectedLine.split(",")[2].split(":")[1]);
+  enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
+  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
+  enemySta = String(selectedLine.split(",")[6].split(":")[1]);
+  enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
+  enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
+  enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
+  enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
+  enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
+}
+
+//UI Logic
+function redraw(){
+  //Version
+  document.getElementById('id_version').innerHTML = versionCode;
 
   //Player UI
   playerInfoUIElement= document.getElementById('id_player_info');
@@ -169,25 +189,6 @@ function redraw(index){
   }
   if (playerPartyString.length+playerLootString.length == 0) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
-  }
-
-  //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
-  areaName = String(selectedLine.split(",")[0].split(":")[1]);
-  enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
-  enemyName = String(selectedLine.split(",")[2].split(":")[1]);
-  enemyType = String(selectedLine.split(",")[3].split(":")[1]);
-  enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
-  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
-  enemySta = String(selectedLine.split(",")[6].split(":")[1]);
-  enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
-  enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
-  enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
-  enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
-  enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
-
-  //Fullscreen Curtain
-  if ((previousArea!=undefined) && (previousArea != areaName)){
-    curtainFadeInAndOut(areaName);
   }
 
   //Encounter UI
@@ -649,7 +650,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
     };
-    redraw(encounterIndex);
+    loadEncounter(encounterIndex);
+    redraw();
   };
 }
 
@@ -736,6 +738,14 @@ function nextEncounter(){
   adventureEncounterCount+=1;
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
+
+  //Fullscreen Curtain
+  previousArea = areaName;
+  loadEncounter(encounterIndex);
+  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName!= "Eternal Realm")){ //Does not animate new area when killed
+    curtainFadeInAndOut(areaName);
+  }
+
   enemyRenew();
   animateUIElement(cardUIElement,"animate__fadeIn","0.7");
 }
@@ -744,7 +754,7 @@ function enemyAnimateDeathNextEncounter(){
   animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
   var animationHandler = function(){
     nextEncounter();
-    redraw(encounterIndex);
+    redraw();
     emojiUIElement.removeEventListener("animationend",animationHandler);
   }
   emojiUIElement.addEventListener('animationend',animationHandler);
@@ -987,13 +997,14 @@ function adjustEncounterButtons(){
 //UI Effects
 function curtainFadeInAndOut(message=""){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
+  var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
 
-  animateUIElement(curtainUIElement,"animate__fadeIn",1,true);
-  animateUIElement(document.getElementById('id_fullscreen_text'),"animate__fadeIn",1,true,message);
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",1.6,true,message);
+  animateUIElement(curtainUIElement,"animate__fadeIn",1.5,true);
 
   var animationHandler = function(){
-    animateUIElement(curtainUIElement,"animate__fadeOut",2,true);
-    animateUIElement(document.getElementById('id_fullscreen_text'),"animate__fadeOut",2,true,message);
+    animateUIElement(curtainUIElement,"animate__fadeOut",,true);
+    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",3.5,true,message);
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
   curtainUIElement.addEventListener('animationend',animationHandler);
@@ -1058,7 +1069,7 @@ function registerClickListeners(){
     if (!playerName.replace(/\s/g, '').length){
       playerName="Nameless Character";
     }
-    redraw(encounterIndex);
+    redraw();
   });
 }
 
