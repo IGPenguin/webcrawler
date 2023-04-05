@@ -7,7 +7,6 @@ body {
   padding-top:24px;
   font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:400;
-
   background-image: url('../../assets/img/background.png');
   background-repeat: repeat-x repeat-y;
 }
@@ -104,6 +103,28 @@ a:active, a:hover, a:focus {
   left:50%;
   transform: translatex(-50%);
   margin-top:-8px;
+}
+
+.curtain {
+  left:50%;
+  position: absolute;
+  z-index: 2;
+  height: 120%;
+  width:100%;
+  bottom:0%;
+  transform: translatex(-50%);
+  background-color: black;
+}
+
+.fullScreenText {
+  font-size:42px;
+  position: absolute;
+  z-index: 2;
+  left:50%;
+  top:30%;
+  text-align: center;
+  transform: translatex(-50%);
+  color: white;
 }
 
 blockquote {
