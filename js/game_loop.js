@@ -1017,8 +1017,8 @@ function curtainFadeInAndOut(message=""){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
   var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
 
-  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",1.6,true,message);
-  animateUIElement(curtainUIElement,"animate__fadeIn",1.5,true);
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",1.1,true,message);
+  animateUIElement(curtainUIElement,"animate__fadeIn",1,true);
 
   var animationHandler = function(){
     animateUIElement(curtainUIElement,"animate__fadeOut",2.5,true);
