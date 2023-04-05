@@ -522,14 +522,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("✋");
             break;
           case "Death":
-            renewPlayer();
             logPlayerAction(actionString,"Your body reconnected with your soul.");
             displayEnemyEffect("✋");
             var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power resurrected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
             if (checkpointEncounter == null){
+              renewPlayer();
               encounterIndex=3; //Skip tutorial
             } else {
+              //TODO load playerStats to prevent stacking via resurrecting on checkpoints
               encounterIndex=checkpointEncounter-1; //Start from checkpoint
             }
             adventureEncounterCount = -1; //For death
@@ -1095,7 +1096,7 @@ function registerClickListeners(){
 function generateCharacterShareString(){
   var characterShareString="";
   characterShareString+="\nCharacter: "+playerName;
-  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk)+"\n";
+  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk);
 
   if (playerPartyString.length > 0) {
     characterShareString += "\nParty: " +playerPartyString;
@@ -1104,7 +1105,7 @@ function generateCharacterShareString(){
     characterShareString += "\nLoot: "+playerLootString;
   }
 
-  characterShareString+="\n"+ versionCode;
+  characterShareString+="\n\n"+ versionCode;
 
   return characterShareString;
 }
