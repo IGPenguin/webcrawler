@@ -21,38 +21,38 @@ Forgotten Forest;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner cou
 Forgotten Forest;🐗;Alpha Boar;Heavy;3;1;1;0;10;Wild Animal;Its loud stomps follow you around.<br>You'd better dodge its attacks.;
 Forgotten Forest;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;That raw meat made you really sick
 Forgotten Forest;🦨;Forest Skunk;Swift;2;1;2;0;3;Wild Animal;This one is fast and stinky.<br>You cannot avoid its attacks.;
-Forgotten Forest;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
 Forgotten Forest;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;It stares suspiciously into your eyes.<br>Almost like it's about to say something.;It revealed you a powerful secret
-Forgotten Forest;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Resurrection Point;Place of immense power.<br>Warms your soul.;
-Forgotten Forest;🐐;Irritable Goat;Standard;3;1;2;0;10;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
-Forgotten Forest;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
-Forgotten Forest;🦊;Cunning Fox;Pet;2;1;3;0;3;Wild Animal;It came to sit right in front of you.<br>Perhaps its up to something.;
-Forgotten Forest;🌱;Familiar Plant;Container;0;0;0;0;0;Potential Food;You noticed a distinctive plant nearby.<br>Could it be something edible?;You dug it out of the ground.
-Forgotten Forest;🥕;Wild Carrot;Consumable;0;0;0;0;0;Fresh Vegetable;A carrot was hiding below the ground.<br>This seems like time for a snack.;
-Forgotten Forest;🦌;Mighty Deer;Heavy;4;1;2;0;10;Wild Animal;Huge deer jumped out of the bush.<br>Better be very careful.;
-Forgotten Forest;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;It lays besides a dead hunter body.<br>He probably won't miss it.;You shot yourself by a mistake
-Forgotten Forest;🌳;Apple Tree;Container;0;0;0;0;0;Source of Food;A fruit tree in a forest.<br>Who would have thought.;
-Forgotten Forest;🍎;Ripe Apple;Consumable;0;0;0;0;0;Fresh Fruit;It looks extra shiny and tasty.<br>You might recover some lost health.;
-Forgotten Forest;🦡;Honey Badger;Heavy;3;1;3;0;3;Wild Animal;It looks fairly angry over your presence.<br>Make sure to dodge its furious attacks.;
-Forgotten Forest;🍀;Four-leaf Clover;Item;0;0;0;1;0;Wild Flora;You noticed some interesting growth.<br>Maybe it could bring you luck.;
-Forgotten Forest;🧺;Picnic Basket;Container;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
-Forgotten Forest;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
-Forgotten Forest;🐺;Old Wolf;Pet;5;2;2;0;2;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
-Forgotten Forest;🏔;Cavern Entrance;Prop;0;6;0;0;0;Landmark;You wonder whats in there.<br>Maybe some treasure?;
-Forest Cavern;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Resurrection Point;Place of immense power.<br>Warms your soul.;
-Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
-Forest Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
-Forest Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for a powerful attack.<br>You should better avoid it.;They ripped you apart
-Forest Cavern;💀;Pile of Skulls;Prop;0;0;0;0;0;Disturbing Object;A lot of adventures ended here.<br>Better catch your breath.;
-Forest Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
-Forest Cavern;🧙;Tired Old Man;Upgrade;0;0;0;0;0;Cursed Human Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;They ripped you apart
-Forest Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
-Forest Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
-Forest Cavern;🐍;Giant Cavern Snake;Heavy;5;3;3;0;5;Wild Animal;It perfectly blends with the surroundings.<br>You almost stumbled over it.;
-Forest Cavern;🥚;Snake Egg;Consumable;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
-Forest Cavern;🚪;Strange Door;Prop;0;0;0;0;0;Unexpected Object;You discovered an ornate carved door.<br>Where could it lead?;
+Forgotten Forest;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
+Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
+Forest Depths;🐐;Irritable Goat;Standard;3;1;2;0;10;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
+Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
+Forest Depths;🦊;Cunning Fox;Pet;2;1;3;0;3;Wild Animal;It came to sit right in front of you.<br>Perhaps its up to something.;
+Forest Depths;🌱;Familiar Plant;Container;0;0;0;0;0;Potential Food;You noticed a distinctive plant nearby.<br>Could it be something edible?;You dug it out of the ground.
+Forest Depths;🥕;Wild Carrot;Consumable;0;0;0;0;0;Fresh Vegetable;A carrot was hiding below the ground.<br>This seems like time for a snack.;
+Forest Depths;🦌;Mighty Deer;Heavy;4;1;2;0;10;Wild Animal;Huge deer jumped out of the bush.<br>Better be very careful.;
+Forest Depths;🏹;Cursed Bow;Trap;0;2;0;0;0;Dangerous Weapon;It lays besides a dead hunter body.<br>He probably won't miss it.;You shot yourself by a mistake
+Forest Depths;🌳;Apple Tree;Container;0;0;0;0;0;Source of Food;A fruit tree in a forest.<br>Who would have thought.;
+Forest Depths;🍎;Ripe Apple;Consumable;0;0;0;0;0;Fresh Fruit;It looks extra shiny and tasty.<br>You might recover some lost health.;
+Forest Depths;🦡;Honey Badger;Heavy;3;1;3;0;3;Wild Animal;It looks fairly angry over your presence.<br>Make sure to dodge its furious attacks.;
+Forest Depths;🍀;Four-leaf Clover;Item;0;0;0;1;0;Wild Flora;You noticed some interesting growth.<br>Maybe it could bring you luck.;
+Forest Depths;🧺;Picnic Basket;Container;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
+Forest Depths;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
+Forest Depths;🐺;Old Wolf;Pet;5;2;2;0;2;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
+Forest Depths;🏔;Cavern Entrance;Prop;0;6;0;0;0;Landmark;You wonder whats in there.<br>Maybe some treasure?;
+Gloomy Cavern;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
+Gloomy Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
+Gloomy Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
+Gloomy Cavern;🐺;Ghostly Wolf;Heavy;3;4;1;0;10;Apex Predator;Its winding up for a powerful attack.<br>You should better avoid it.;They ripped you apart
+Gloomy Cavern;💀;Pile of Skulls;Prop;0;0;0;0;0;Disturbing Object;A lot of adventures ended here.<br>Better catch your breath.;
+Gloomy Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
+Gloomy Cavern;🧙;Tired Old Man;Upgrade;0;0;0;0;0;Cursed Human Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;They ripped you apart
+Gloomy Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
+Gloomy Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
+Gloomy Cavern;🐍;Giant Cavern Snake;Heavy;5;3;3;0;5;Wild Animal;It perfectly blends with the surroundings.<br>You almost stumbled over it.;
+Gloomy Cavern;🥚;Snake Egg;Consumable;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
+Gloomy Cavern;🚪;Strange Door;Prop;0;0;0;0;0;Unexpected Object;You discovered an ornate carved door.<br>Where could it lead?;
 Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;Sticky Trap;Hopefully nobody's home.<br>It seems quite sturdy.;Eww. It's gross having webs on you
-Ancient Crypt;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Resurrection Point;Place of immense power.<br>Warms your soul.;
+Ancient Crypt;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
 Ancient Crypt;🕷;Eight-legged Menace;Swift;4;2;1;0;4;Pesky Insect;It looks like it was waiting for a prey.<br>There is no turning back now.;
 Ancient Crypt;🦇;Screaming Bat;Standard;3;2;2;0;5;Flying Mammal;Its scream echoes around the crypt.<br>You got goosebumps.;
 Ancient Crypt;🪦;Desolate Gave;Container;0;0;0;0;0;Final Resting Place;The text is all faded.<br>Something is on the ground.;You dug out some shiny ring.
