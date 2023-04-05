@@ -1,8 +1,8 @@
 //Having all this in a one file is truly shameful
-//...submit pull request if you dare
+//...submit a pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 3/27/23"
+var versionCode = "work-in-progress, ver. 4/5/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -543,7 +543,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Checkpoint": //Save and rest to full HP and Sta
             displayPlayerEffect("💾");
-            logPlayerAction(actionString,"You embraced the eternal flame.");
+            logPlayerAction(actionString,"You embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
             checkpointEncounter=encounterIndex;
