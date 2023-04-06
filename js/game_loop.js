@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 4/5/23"
+var versionCode = "work-in-progress, ver. 4/6/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -341,28 +341,23 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Checkpoint":
             logPlayerAction(actionString,"You walked away leaving it behind.");
-            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Container":
             logPlayerAction(actionString,"You walked away without investigating.");
-            displayEnemyEffect("👣");
             encounterIndex+=1; //Skip loot
             nextEncounter();
             break;
           case "Dream":
             logPlayerAction(actionString,"You walked further along the road.");
-            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Prop":
             logPlayerAction(actionString,"You continued on your adventure.");
-            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Friend":
             logPlayerAction(actionString,"You walked far away from them.");
-            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Trap-Roll": //You get damage rolling into "Trap-Roll" type encounters
@@ -372,7 +367,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
           case "Trap-Attack":
             logPlayerAction(actionString,"You continued onwards away from that.");
-            displayEnemyEffect("👣");
             nextEncounter();
             break;
           case "Death":
@@ -443,7 +437,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
               playerAtk+=enemyAtk;
-              nextEncounter();
+              enemyAnimateDeathNextEncounter();
               break;
             }
           case "Recruit":
@@ -455,8 +449,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random() * luckInterval);
               console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){
-                logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;✋&nbsp;&nbsp;They were scared off by your touch.");
-                displayPlayerEffect("💬");
+                logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;✋&nbsp;&nbsp;They were scared away by your touch.");
+                displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
               }
@@ -532,6 +526,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               //TODO load playerStats to prevent stacking via resurrecting on checkpoints
               encounterIndex=checkpointEncounter-1; //Start from checkpoint
+              playerHp=playerHpMax;
+              playerSta=playerStaMax;
             }
             adventureEncounterCount = -1; //For death
             nextEncounter();
@@ -564,7 +560,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
               playerPartyString+=" "+enemyEmoji
               playerAtk+=enemyAtk;
-              nextEncounter();
+              enemyAnimateDeathNextEncounter();
               break;
             }
           case "Standard":
@@ -712,6 +708,7 @@ function enemyHit(damage){
   if ( critChance <= playerLck ){
     logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;🎯&nbsp;&nbsp;Your strike was blessed with luck.");
     hitMsg="You hit them with a critical attack -"+(damage+2)+" 💔";
+    displayPlayerEffect("🍀");
     damage+=2;
   }
 
@@ -757,7 +754,7 @@ function nextEncounter(){
   //Fullscreen Curtain
   previousArea = areaName;
   loadEncounter(encounterIndex);
-  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName!= "Eternal Realm")){ //Does not animate new area when killed
+  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut(areaName);
   }
 
@@ -904,7 +901,7 @@ function playerHit(incomingDamage){
 //End Game
 function gameOver(){
   //Reset progress to death encounter
-  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;The adventure ended, you were killed. ");
+  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed, the adventure ends. ");
   adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
