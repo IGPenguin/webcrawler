@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="{{ page.title }}" />
 <meta name="twitter:title" content="{{ page.title }}" />
