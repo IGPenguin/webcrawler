@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 4/6/23"
+var versionCode = "work-in-progress, ver. 5/1/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -1068,11 +1068,11 @@ function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
   var eventType = 'click';
-  //if (String(navigator.userAgentData) != "undefined"){ //Any browser except Chrome needs this, it took only 3 hours to realize
-  //  if (navigator.userAgentData.mobile){
-  //    eventType = 'touchend';
-  //  }
-  //}
+  if (String(navigator.userAgentData) != "undefined"){ //Any browser except Chrome needs this, it took only 3 hours to realize
+    if (navigator.userAgentData.mobile){
+      eventType = 'touchend';
+    }
+  }
   console.log("platform interaction event type="+eventType);
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
