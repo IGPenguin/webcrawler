@@ -22,11 +22,11 @@ layout: default
 <div class= "enemyOverlay" id="id_enemy_overlay"></div>
 <div class="card" id="id_card">
 <div id = "id_enemy_info">
-<h1 id = "id_emoji" style="margin-top:4px; margin-bottom:8px;"/>
+<h1 id = "id_emoji" style="margin-top:4px; margin-bottom:0px;"/>
 <h2 id = "id_name"/>
 <h3 id = "id_stats" style="line-height:24px; margin-bottom:8px;"/>
 </div>
-<h4 id = "id_desc" style="padding-right:24px; padding-left:24px; margin-bottom:12px; line-height:165%"/>
+<h4 id = "id_desc" style="padding-right:8px; padding-left:8px; margin-bottom:12px; line-height:165%"/>
 <h5 id = "id_team"/>
 </div>
 
@@ -40,7 +40,7 @@ layout: default
 <h3 id = "id_player_name" style="font-weight:bold; margin-bottom:8px; margin-top:4px; cursor:pointer;"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline;"/>
 </div>
-<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:8px; padding-right:6px; margin-bottom:4px; text-align:left;"/>
+<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:6px; padding-right:4px; margin-bottom:4px; text-align:left;"/>
 <h4 id = "id_player_party_loot" style="margin-bottom:0px; display:inline;"/>
 </div>
 
