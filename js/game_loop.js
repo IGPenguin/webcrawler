@@ -309,7 +309,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"Your attack attempt had no effect -1 🟢");
+            logPlayerAction(actionString,"Your attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
       }
       break;
