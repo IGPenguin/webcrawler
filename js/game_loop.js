@@ -53,7 +53,7 @@ var playerAtk = 1;
 var luckInterval = 15; //Lower to increase chances
 
 var actionString;
-var actionLog = "💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You hear some faint echoing screams.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You feel a strange presence nearby.\n";
+var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;You feel a strange presence nearby.\n";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -178,15 +178,15 @@ function redraw(){
   playerInfoUIElement= document.getElementById('id_player_info');
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
-  playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
-  playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
+  playerStatusString += "&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
+  playerStatusString += "&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
     document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString;
   }
   if (playerLootString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "&nbsp;&nbsp;<b>Loot:</b> "+playerLootString;
+    document.getElementById('id_player_party_loot').innerHTML += "&nbsp;<b>Loot:</b> "+playerLootString;
   }
   if (playerPartyString.length+playerLootString.length == 0) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
@@ -201,15 +201,15 @@ function redraw(){
   document.getElementById('id_area').innerHTML = areaName;
   document.getElementById('id_name').innerHTML = enemyName;
   document.getElementById('id_desc').innerHTML = enemyDesc;
-  document.getElementById('id_team').innerHTML = "»&nbsp;&nbsp;" + enemyTeam + "&nbsp;&nbsp;«";
+  document.getElementById('id_team').innerHTML = "»&nbsp;" + enemyTeam + "&nbsp;«";
 
   //Encounter Statusbar UI
   var enemyStatusString = ""
   if (enemyHp > 0) { enemyStatusString = "❤️ " + "◆".repeat(enemyHp);}
     if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "◇".repeat(enemyHpLost); } //YOLO
-  if (enemySta > 0) { enemyStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(enemySta);}
+  if (enemySta > 0) { enemyStatusString += "&nbsp;🟢 " + "◆".repeat(enemySta);}
     if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "◇".repeat(enemyStaLost); } //YOLO
-  if (enemyAtk > 0) {enemyStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(enemyAtk);}
+  if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "×".repeat(enemyAtk);}
 
   switch(enemyType){
     case "Standard":
@@ -222,14 +222,14 @@ function redraw(){
     case "Trap":
     case "Friend":
       enemyStatusString = "";
-      if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
-      if (enemyAtk>0) {enemyStatusString += "🎯 ??&nbsp;&nbsp;";}
-      if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
-      if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
-      if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
+      if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;";}
+      if (enemyAtk>0) {enemyStatusString += "🎯 ??&nbsp;";}
+      if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;";}
+      if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;";}
+      if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;";}
       break;
     case "Consumable":
-      enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
+      enemyStatusString = "❤️ +&nbsp;🟢 +";
       break;
     default:
       enemyStatusString = "∙  ∙  ∙"; //Dream, Prop, Upgrade etc.
@@ -409,7 +409,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🛡");
             break;
           case "Heavy":
-            if (enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;&nbsp;-"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;-"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
@@ -449,7 +449,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random() * luckInterval);
               console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){
-                logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;✋&nbsp;&nbsp;They were scared away by your touch.");
+                logAction("🍀&nbsp;▸&nbsp;✋&nbsp;They were scared away by your touch.");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
@@ -518,7 +518,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Death":
             logPlayerAction(actionString,"Your body reconnected with your soul.");
             displayEnemyEffect("✋");
-            var deathMessage="💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;An unknown power resurrected you.<br>💤&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;Hopefully it wasn't some tainted spell.";
+            var deathMessage="💤&nbsp;▸&nbsp;💭&nbsp;An unknown power resurrected you.<br>💤&nbsp;▸&nbsp;💭&nbsp;Hopefully it wasn't some tainted spell.";
             logAction(deathMessage);
             if (checkpointEncounter == null){
               renewPlayer();
@@ -580,7 +580,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var speechChance = Math.floor(Math.random() * luckInterval);
               console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
               if ( speechChance <= playerLck ){
-                logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;💬&nbsp;&nbsp;They believed your lies and left.");
+                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
@@ -706,7 +706,7 @@ function enemyHit(damage){
   var critChance = Math.floor(Math.random() * luckInterval);
   console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
-    logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;🎯&nbsp;&nbsp;Your strike was blessed with luck.");
+    logAction("🍀&nbsp;▸&nbsp;🎯&nbsp;Your strike was blessed with luck.");
     hitMsg="You hit them with a critical attack -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
@@ -717,7 +717,7 @@ function enemyHit(damage){
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💀&nbsp;&nbsp;You successfully eliminated them.");
+    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀&nbsp;You successfully eliminated them.");
     enemyAnimateDeathNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
@@ -732,7 +732,7 @@ function enemyKicked(){
 }
 
 function enemyKnockedOut(){
-  logAction(enemyEmoji + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + "💤&nbsp;&nbsp;You harmlessly knocked them out.");
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤&nbsp;You harmlessly knocked them out.");
   displayEnemyEffect("💤");
   enemyAnimateDeathNextEncounter();
 }
@@ -875,7 +875,7 @@ function playerHit(incomingDamage){
   var hitChance = Math.floor(Math.random() * luckInterval);
   console.log("hitChance: "+hitChance+"/"+luckInterval+" lck: "+playerLck) //Chance to not get hit
   if ( hitChance <= playerLck ){
-    logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;💢&nbsp;&nbsp;You avoided receiving the damage.");
+    logAction("🍀&nbsp;▸&nbsp;💢&nbsp;You avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -888,7 +888,7 @@ function playerHit(incomingDamage){
     console.log("deathChance: "+deathChance+"/"+(luckInterval*3)+" lck: "+playerLck)
     if ( deathChance <= playerLck ){
       playerHp+=1;
-      logAction("🍀&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;Luckily you got a second chance to live.");
+      logAction("🍀&nbsp;▸&nbsp;💀&nbsp;Luckily you got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
@@ -901,7 +901,7 @@ function playerHit(incomingDamage){
 //End Game
 function gameOver(){
   //Reset progress to death encounter
-  logAction(enemyEmoji+"&nbsp;&nbsp;▸&nbsp;&nbsp;💀&nbsp;&nbsp;You were killed, the adventure ends. ");
+  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀&nbsp;You were killed, the adventure ends. ");
   adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
@@ -911,7 +911,7 @@ function gameOver(){
 }
 
 function gameEnd(){
-  var winMessage="🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;You just had a deja vu, didn't you?<br>🧠&nbsp;&nbsp;▸&nbsp;&nbsp;💭&nbsp;&nbsp;It feels like you already did this. (NG+)";
+  var winMessage="🧠&nbsp;▸&nbsp;💭&nbsp;You just had a deja vu, didn't you?<br>🧠&nbsp;▸&nbsp;💭&nbsp;It feels like you already did this. (NG+)";
   logAction(winMessage);
 
   //Reset progress to game start
@@ -922,7 +922,7 @@ function gameEnd(){
 
 //Logging
 function logPlayerAction(actionString,message){
-  actionString = actionString.substring(0,actionString.indexOf("&nbsp;")) + "&nbsp;&nbsp;▸&nbsp;&nbsp;" + enemyEmoji + "&nbsp;&nbsp;" + message + "<br>";
+  actionString = actionString.substring(0,actionString.indexOf("&nbsp;")) + "&nbsp;▸&nbsp;" + enemyEmoji + "&nbsp;" + message + "<br>";
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
@@ -940,72 +940,72 @@ function logAction(message){
 
 //UI Buttons
 function resetEncounterButtons(){
-  document.getElementById('button_attack').innerHTML="🎯&nbsp;&nbsp;Attack";
-  document.getElementById('button_block').innerHTML="🛡&nbsp;&nbsp;Block";
-  document.getElementById('button_roll').innerHTML="🌀&nbsp;&nbsp;Roll";
-  document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Grab";
-  document.getElementById('button_sleep').innerHTML="💤&nbsp;&nbsp;Rest";
-  document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Speak";
+  document.getElementById('button_attack').innerHTML="🎯&nbsp;Attack";
+  document.getElementById('button_block').innerHTML="🛡&nbsp;Block";
+  document.getElementById('button_roll').innerHTML="🌀&nbsp;Roll";
+  document.getElementById('button_grab').innerHTML="✋&nbsp;Grab";
+  document.getElementById('button_sleep').innerHTML="💤&nbsp;Rest";
+  document.getElementById('button_speak').innerHTML="💬&nbsp;Speak";
 }
 
 function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      document.getElementById('button_attack').innerHTML="❤️&nbsp;&nbsp;Health";
-      document.getElementById('button_roll').innerHTML="🟢&nbsp;&nbsp;Energy";
-      document.getElementById('button_block').innerHTML="🧠&nbsp;&nbsp;Mind";
-      document.getElementById('button_grab').innerHTML="🍀&nbsp;&nbsp;Luck";
-      document.getElementById('button_speak').innerHTML="👁‍🗨&nbsp;&nbsp;Curse";
-      document.getElementById('button_sleep').innerHTML="↪️&nbsp;&nbsp;Skip";
+      document.getElementById('button_attack').innerHTML="❤️&nbsp;Health";
+      document.getElementById('button_roll').innerHTML="🟢&nbsp;Energy";
+      document.getElementById('button_block').innerHTML="🧠&nbsp;Mind";
+      document.getElementById('button_grab').innerHTML="🍀&nbsp;Luck";
+      document.getElementById('button_speak').innerHTML="👁‍🗨&nbsp;Curse";
+      document.getElementById('button_sleep').innerHTML="↪️&nbsp;Skip";
       break;
     case "Container":
-      document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Search";
-      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
+      document.getElementById('button_grab').innerHTML="👋&nbsp;Search";
+      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
       break;
     case "Consumable":
-      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
+      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
       break;
     case "Prop":
-      document.getElementById('button_grab').innerHTML="✋&nbsp;&nbsp;Touch";
+      document.getElementById('button_grab').innerHTML="✋&nbsp;Touch";
     case "Item":
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
     case "Prop":
     case "Dream":
-      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
+      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
       break;
     case "Recruit":
         if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
-          document.getElementById('button_speak').innerHTML="💬&nbsp;&nbsp;Recruit";
+          document.getElementById('button_speak').innerHTML="💬&nbsp;Recruit";
         }
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
-          document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
+          document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
         }
         break;
     case "Pet":
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
-        document.getElementById('button_grab').innerHTML="👋&nbsp;&nbsp;Pet";
+        document.getElementById('button_grab').innerHTML="👋&nbsp;Pet";
       }
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
-        document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
+        document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
       }
       break;
     case "Heavy":
     case "Swift":
       if ((enemySta-enemyStaLost)==0) {
-        document.getElementById('button_grab').innerHTML="🦶&nbsp;&nbsp;Kick";
+        document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
       }
       break;
     case "Death":
-      document.getElementById('button_speak').innerHTML="💌&nbsp;&nbsp;Share";
-      document.getElementById('button_sleep').innerHTML="🦆&nbsp;&nbsp;Tweet";
+      document.getElementById('button_speak').innerHTML="💌&nbsp;Share";
+      document.getElementById('button_sleep').innerHTML="🦆&nbsp;Tweet";
       break;
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="💾&nbsp;&nbsp;Save";
-      document.getElementById('button_roll').innerHTML="👣&nbsp;&nbsp;Walk";
+      document.getElementById('button_grab').innerHTML="💾&nbsp;Save";
+      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
     default:
   }
 }
@@ -1115,7 +1115,7 @@ function generateCharacterShareString(){
 function copyAdventureToClipboard(){
   displayPlayerEffect("💌");
   logPlayerAction(actionString,"Your legend was copied into clipboard.");
-  adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;&nbsp;"," ");
+  adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;"," ");
   adventureLog += generateCharacterShareString();
   adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
   navigator.clipboard.writeText(adventureLog);
