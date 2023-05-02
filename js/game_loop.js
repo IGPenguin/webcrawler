@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 5/1/23"
+var versionCode = "work-in-progress, ver. 5/2/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
