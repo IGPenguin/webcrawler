@@ -449,7 +449,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random() * luckInterval);
               console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;✋&nbsp;They were scared away by your touch.");
+                logAction("🍀&nbsp;▸&nbsp;✋&nbsp;They were spooked by your touch.");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
