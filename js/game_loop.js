@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 5/2/23"
+var versionCode = "work-in-progress, ver. 5/4/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -178,8 +178,8 @@ function redraw(){
   playerInfoUIElement= document.getElementById('id_player_info');
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
-  playerStatusString += "&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
-  playerStatusString += "&nbsp;🎯 " + "×".repeat(playerAtk);
+  playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
+  playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
@@ -222,14 +222,14 @@ function redraw(){
     case "Trap":
     case "Friend":
       enemyStatusString = "";
-      if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;";}
-      if (enemyAtk>0) {enemyStatusString += "🎯 ??&nbsp;";}
-      if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;";}
-      if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;";}
-      if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;";}
+      if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
+      if (enemyAtk>0) {enemyStatusString += "🎯 ??&nbsp;&nbsp;";}
+      if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
+      if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
+      if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
       break;
     case "Consumable":
-      enemyStatusString = "❤️ +&nbsp;🟢 +";
+      enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
       break;
     default:
       enemyStatusString = "∙  ∙  ∙"; //Dream, Prop, Upgrade etc.
