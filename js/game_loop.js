@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 5/4/23"
+var versionCode = "work-in-progress, ver. 5/5/23"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -50,7 +50,7 @@ var playerLck = playerLckDefault;
 var playerInt = 1;
 var playerAtk = 1;
 
-var luckInterval = 15; //Lower to increase chances
+var luckInterval = 24; //Lower to increase chances
 
 var actionString;
 var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;You feel a strange presence nearby.\n";
@@ -275,7 +275,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAnimateDeathNextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"You scared them to run away -1 🟢");
+            logPlayerAction(actionString,"Your attack spooked them -1 🟢");
             displayEnemyEffect("〽️");
             nextEncounter();
             break;
