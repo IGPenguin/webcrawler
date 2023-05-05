@@ -10,20 +10,23 @@ Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;Forest Area;This looks like a ni
 Forgotten Forest;🐕;Stray Dog;Pet;2;1;2;0;1;Wild Animal;It is looks kind of aggressive.<br>Try exhausting it and then petting it.;
 Forgotten Forest;⛺️;Abandoned Tent;Container;0;1;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
 Forgotten Forest;🗺;Lost Map;Item;0;0;1;0;0;Adventure Guide;You stumbled upon an old map.<br>There are some notes around the edges.;You enhanced your awareness
-Forgotten Forest;🧑‍🌾;Forest Person;Recruit;3;1;3;0;1;Heathen;Did you just poke around my camp?<br>You should better have a good reason.;
 Forgotten Forest;🍗;Roasted Chicken;Consumable;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
-Forgotten Forest;🐀;Dire Rat;Swift;2;1;1;0;3;Wild Animal;It jumped out of nowhere really fast.<br>Better raise your shield.;
-Forgotten Forest;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;Cute on the outside.<br>Corrupted inside;
-Forgotten Forest;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Eating it made you more resilient
-Forgotten Forest;🍯;Sweet Honeypot;Container;0;0;0;0;0;Suspicious Container;Yum. This would finely refresh you.<br>You wonder where it came from.;The honeypot was filled with bees.
-Forgotten Forest;🐝;Swarm of Bees;Swift;2;1;2;3;100;Pesky Insect;The bees totally surrounded you.<br>Blocking seems like the best option.;
-Forgotten Forest;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it to use it as a weapon
-Forgotten Forest;🐗;Alpha Boar;Heavy;3;1;1;0;10;Wild Animal;Its loud stomps follow you around.<br>You'd better dodge its attacks.;
-Forgotten Forest;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;That raw meat made you really sick
-Forgotten Forest;🦨;Forest Skunk;Swift;2;1;2;0;3;Wild Animal;This one is fast and stinky.<br>You cannot avoid its attacks.;
-Forgotten Forest;🦉;Friendly Owl;Friend;0;0;0;0;1;Wild Animal;It stares suspiciously into your eyes.<br>Almost like it's about to say something.;It revealed you a powerful secret
-Forgotten Forest;🌲;Pine Tree;Prop;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
-Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
+Forgotten Forest;🧑‍🌾;Forest Person;Recruit;3;1;3;0;1;Hostile Stranger;Did you just poke around my camp?<br>You should better have a good reason.;
+Forgotten Forest;🌲;Pine Tree;Container;0;0;0;0;0;Forest Flora;Another tree in a forest.<br>You never noticed it before.;
+Forgotten Forest;🦉;Engaing Owl;Friend;0;0;0;0;1;Wild Animal;It stares at you without blinking an eye.<br>Almost feels like it's about to speak.;It revealed you a powerful secret
+Forgotten Forest;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
+Flourishing Grove;🐀;Dire Rat;Swift;2;1;1;0;3;Wild Animal;It jumped out of nowhere really fast.<br>Better raise your shield.;
+Flourishing Grove;🦝;Rabid Raccoon;Standard;2;1;2;0;1;Wild Animal;Cute on the outside.<br>Corrupted inside;
+Flourishing Grove;🍄;Suspicious Mushroom;Item;1;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Eating it made you more resilient
+Flourishing Grove;🍯;Sweet Honeypot;Container;0;0;0;0;0;Suspicious Container;Yum. This would finely refresh you.<br>You wonder where it came from.;The honeypot was filled with bees.
+Flourishing Grove;🐝;Swarm of Bees;Swift;2;1;2;3;100;Pesky Insect;The bees totally surrounded you.<br>Blocking seems like the best option.;
+Flourishing Grove;🪓;Sharp Axe;Item;0;1;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it to use it as a weapon
+Flourishing Grove;🐗;Alpha Boar;Heavy;3;1;1;0;10;Wild Animal;Its loud stomps follow you around.<br>You'd better dodge its attacks.;
+Flourishing Grove;🥩;Boar Meat;Trap;0;2;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;That raw meat made you really sick
+Flourishing Grove;🦨;Forest Skunk;Swift;2;1;2;0;3;Wild Animal;This one is fast and stinky.<br>You cannot avoid its attacks.;
+Flourishing Grove;🌾;Overgrown Reeds;Prop;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
+Flourishing Grove;🐸;Frog-faced Giant;Heavy;5;1;3;0;5;Horrible Monstrosity;*notices your presence*<br>*prepares to strike*;
+Flourishing Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
 Forest Depths;🐐;Irritable Goat;Standard;3;1;2;0;10;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
 Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
 Forest Depths;🦊;Cunning Fox;Pet;2;1;3;0;3;Wild Animal;It came to sit right in front of you.<br>Perhaps its up to something.;
