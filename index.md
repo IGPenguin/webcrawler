@@ -40,19 +40,19 @@ layout: default
 <h3 id = "id_player_name" style="font-weight:bold; margin-bottom:8px; margin-top:4px; cursor:pointer;"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline; font-family:sans;"/>
 </div>
-<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:4px; margin-bottom:4px; text-align:left;"/>
+<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:6px; margin-bottom:4px; text-align:left;"/>
 <h4 id = "id_player_party_loot" style="margin-bottom:0px; display:inline;"/>
 </div>
 
-<p style="margin:16px;"></p>
-<button type = "button" id = "button_attack">🎯&nbsp;&nbsp;Attack</button>&nbsp;&nbsp;
-<button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;&nbsp;
+<p style="margin:18px;"></p>
+<button type = "button" id = "button_attack">🎯&nbsp;&nbsp;Attack</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;&nbsp;&nbsp;&nbsp;
 <button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>
-<p style="margin:12px;"></p>
-<button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;
-<button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;
+<p style="margin:16px;"></p>
+<button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;&nbsp;&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Rest</button>
 
-<p style="margin:24px"></p>
+<p style="margin:26px"></p>
 <h4 style="font-size:12px; opacity:0.85;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 id="id_version" style="font-size:10px; margin-top:-12px; opacity:0.6;"/>
 </center>
