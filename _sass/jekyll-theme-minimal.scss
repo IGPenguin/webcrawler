@@ -120,11 +120,15 @@ a:active, a:hover, a:focus {
 }
 
 .fullScreenText {
-  font-size:42px;
+  font-size:38px;
+  letter-spacing: 0.1px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
   position: absolute;
   z-index: 2;
   left:50%;
   top:30%;
+  width: 333px;
   text-align: center;
   transform: translatex(-50%);
   color: white;

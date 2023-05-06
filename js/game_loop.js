@@ -755,7 +755,7 @@ function nextEncounter(){
   previousArea = areaName;
   loadEncounter(encounterIndex);
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut(areaName);
+    curtainFadeInAndOut("&nbsp;&nbsp;"+areaName+"&nbsp;&nbsp;");
   }
 
   enemyRenew();
