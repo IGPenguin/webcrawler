@@ -290,7 +290,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Swift": //They hit you first if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"They dodged and counter-attacked -"+enemyAtk+" 💔","n/a");
+              enemyStaminaChangeMessage(-1,"They dodged and hit you back -"+enemyAtk+" 💔","n/a");
               playerHit(enemyAtk);
             } else {
               enemyHit(playerAtk);
@@ -321,7 +321,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your rolling was a waste of energy -1 🟢");
+              enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -344,7 +344,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container":
-            logPlayerAction(actionString,"You walked away without investigating.");
+            logPlayerAction(actionString,"You left without investigating it.");
             encounterIndex+=1; //Skip loot
             nextEncounter();
             break;
@@ -568,7 +568,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Pet":
             if (enemyInt < playerInt){
-              logPlayerAction(actionString,"You convinced them to leave you alone.");
+              logPlayerAction(actionString,"You convinced them to walk away.");
               displayPlayerEffect("💬");
               nextEncounter();
               break;
@@ -707,7 +707,7 @@ function enemyHit(damage){
   console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
     logAction("🍀&nbsp;▸&nbsp;🎯&nbsp;Your strike was blessed with luck.");
-    hitMsg="You hit them with a critical attack -"+(damage+2)+" 💔";
+    hitMsg="Your attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
   }
@@ -755,7 +755,7 @@ function nextEncounter(){
   previousArea = areaName;
   loadEncounter(encounterIndex);
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut("&nbsp;&nbsp;"+areaName+"&nbsp;&nbsp;");
+    curtainFadeInAndOut("&nbsp;"+areaName+"&nbsp;");
   }
 
   enemyRenew();
@@ -965,6 +965,7 @@ function adjustEncounterButtons(){
       break;
     case "Consumable":
       document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+      document.getElementById('button_grab').innerHTML="✋&nbsp;Eat it";
       break;
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋&nbsp;Touch";

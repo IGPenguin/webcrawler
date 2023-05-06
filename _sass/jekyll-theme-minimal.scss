@@ -7,7 +7,7 @@ body {
   padding-top:24px;
   font: 13px serif;
   font-weight:500;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.15px;
   background-image: url('../../assets/img/background.png');
   background-repeat: repeat-x repeat-y;
 }
@@ -128,7 +128,7 @@ a:active, a:hover, a:focus {
   z-index: 2;
   left:50%;
   top:30%;
-  width: 360px;
+  width: 380px;
   text-align: center;
   transform: translatex(-50%);
   color: white;
