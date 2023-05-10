@@ -544,6 +544,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
             checkpointEncounter=encounterIndex;
+            enemyAnimateDeathNextEncounter();
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D;\">&nbsp;Flame Embraced&nbsp;");
             break;
           default:
             logPlayerAction(actionString,"You touched it and nothing happened.");
@@ -755,7 +757,8 @@ function nextEncounter(){
   previousArea = areaName;
   loadEncounter(encounterIndex);
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut("&nbsp;"+areaName+"&nbsp;");
+    curtainFadeInAndOut("<p style=\"text-decoration:underline solid white 2px;\">&nbsp;"+areaName+"&nbsp;</p>");
+
   }
 
   enemyRenew();
