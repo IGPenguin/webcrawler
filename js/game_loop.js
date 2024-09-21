@@ -30,6 +30,8 @@ function renewPlayer(){
   playerAtk = 1;
   playerDef = 0;
   playerInt = 1;
+  playerMkgMax = playerMkgDefault;
+  playerMkg = playerMkgDefault;
   playerLootString = "";
   playerPartyString = "";
   adventureLog = "";
@@ -45,6 +47,7 @@ var playerMgkDefault = 0;
 
 var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
+var palyerMgkMax = playerMgkDefault;
 var playerHp = playerHpMax;
 var playerSta = playerStaMax;
 var playerLck = playerLckDefault;
@@ -184,6 +187,7 @@ function redraw(){
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
+  if playerMgk > 0 {playerStatusString += "&nbsp;&nbsp;🟦 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);}
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
@@ -447,6 +451,231 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
+        case 'button_cast': //TODO: You should be faster when you have Mgk > them
+        switch (enemyType){
+          case "Recruit": //If they are tired and you are smarter they join you
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ 
+              logPlayerAction(actionString,"You convinced them to join your party!");
+              displayPlayerEffect(enemyEmoji);
+              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
+              playerPartyString+=" "+enemyEmoji
+              playerAtk+=enemyAtk;
+              enemyAnimateDeathNextEncounter();
+              break;
+            }
+          
+          case "Standard": //If they are dumber they will walk away
+          case "Swift":
+          case "Heavy":
+          case "Pet":
+          case "Ethereal":
+            if (enemyInt < playerInt){
+              logPlayerAction(actionString,"You convinced them to walk away.");
+              displayPlayerEffect("💬");
+              nextEncounter();
+              break;
+            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
+              logPlayerAction(actionString,"That made them more angry!");
+              displayPlayerEffect("💬");
+              enemyAtkBonus+=1;
+            } else {
+              var speechChance = Math.floor(Math.random() * luckInterval);
+              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
+              if ( speechChance <= playerLck ){
+                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
+                displayPlayerEffect("💬");
+                nextEncounter();
+                break;
+              }
+              else {
+                logPlayerAction(actionString,"They ignored whatever you said.");
+              }
+            }
+            enemyAttackOrRest();
+            break;
+            
+          case "Undead": //They don't care
+            logPlayerAction(actionString,"They ignored whatever you said.");
+            break;
+            
+          case "Friend": //They'll boost your stats
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+            displayPlayerEffect("💬");
+            break;
+          
+          case "Death":
+            copyAdventureToClipboard();
+            break;
+          
+          case "Dream":
+            logPlayerAction(actionString,"You can not move your lips to speak.");
+            displayPlayerCannotEffect();
+            break;
+          
+          case "Upgrade":
+            logPlayerAction(actionString,"You gained magic powers.</b>");
+            playerMgkMax=+1;
+            playerMgk+=1;
+            displayPlayerEffect("🪬");
+            nextEncounter();
+            break;
+          
+          default:
+            logPlayerAction(actionString,"Your voice echoes around the area.");
+            displayPlayerEffect("💬");
+        }
+        break;
+
+        case 'button_curse': //TODO: Boosts undead, curse basic enemies if Mkg > them, what else?
+        switch (enemyType){
+          case "Recruit": //If they are tired and you are smarter they join you
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ 
+              logPlayerAction(actionString,"You convinced them to join your party!");
+              displayPlayerEffect(enemyEmoji);
+              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
+              playerPartyString+=" "+enemyEmoji
+              playerAtk+=enemyAtk;
+              enemyAnimateDeathNextEncounter();
+              break;
+            }
+          
+          case "Standard": //If they are dumber they will walk away
+          case "Swift":
+          case "Heavy":
+          case "Pet":
+          case "Ethereal":
+            if (enemyInt < playerInt){
+              logPlayerAction(actionString,"You convinced them to walk away.");
+              displayPlayerEffect("💬");
+              nextEncounter();
+              break;
+            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
+              logPlayerAction(actionString,"That made them more angry!");
+              displayPlayerEffect("💬");
+              enemyAtkBonus+=1;
+            } else {
+              var speechChance = Math.floor(Math.random() * luckInterval);
+              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
+              if ( speechChance <= playerLck ){
+                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
+                displayPlayerEffect("💬");
+                nextEncounter();
+                break;
+              }
+              else {
+                logPlayerAction(actionString,"They ignored whatever you said.");
+              }
+            }
+            enemyAttackOrRest();
+            break;
+            
+          case "Undead": //They don't care
+            logPlayerAction(actionString,"They ignored whatever you said.");
+            break;
+            
+          case "Friend": //They'll boost your stats
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+            displayPlayerEffect("💬");
+            break;
+          
+          case "Death":
+            copyAdventureToClipboard();
+            break;
+          
+          case "Dream":
+            logPlayerAction(actionString,"You can not move your lips to speak.");
+            displayPlayerCannotEffect();
+            break;
+          
+          case "Upgrade":
+            logPlayerAction(actionString,"You gained magic powers.</b>");
+            playerMgkMax=+1;
+            playerMgk+=1;
+            displayPlayerEffect("🪬");
+            nextEncounter();
+            break;
+          
+          default:
+            logPlayerAction(actionString,"Your voice echoes around the area.");
+            displayPlayerEffect("💬");
+        }
+        break;
+
+        case 'button_pray': //TODO:Banish unded, heal in combat, lift curse from artefacts
+        switch (enemyType){
+          case "Recruit": //If they are tired and you are smarter they join you
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ 
+              logPlayerAction(actionString,"You convinced them to join your party!");
+              displayPlayerEffect(enemyEmoji);
+              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
+              playerPartyString+=" "+enemyEmoji
+              playerAtk+=enemyAtk;
+              enemyAnimateDeathNextEncounter();
+              break;
+            }
+          
+          case "Standard": //If they are dumber they will walk away
+          case "Swift":
+          case "Heavy":
+          case "Pet":
+          case "Ethereal":
+            if (enemyInt < playerInt){
+              logPlayerAction(actionString,"You convinced them to walk away.");
+              displayPlayerEffect("💬");
+              nextEncounter();
+              break;
+            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
+              logPlayerAction(actionString,"That made them more angry!");
+              displayPlayerEffect("💬");
+              enemyAtkBonus+=1;
+            } else {
+              var speechChance = Math.floor(Math.random() * luckInterval);
+              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
+              if ( speechChance <= playerLck ){
+                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
+                displayPlayerEffect("💬");
+                nextEncounter();
+                break;
+              }
+              else {
+                logPlayerAction(actionString,"They ignored whatever you said.");
+              }
+            }
+            enemyAttackOrRest();
+            break;
+            
+          case "Undead": //They don't care
+            logPlayerAction(actionString,"They ignored whatever you said.");
+            break;
+            
+          case "Friend": //They'll boost your stats
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+            displayPlayerEffect("💬");
+            break;
+          
+          case "Death":
+            copyAdventureToClipboard();
+            break;
+          
+          case "Dream":
+            logPlayerAction(actionString,"You can not move your lips to speak.");
+            displayPlayerCannotEffect();
+            break;
+          
+          case "Upgrade":
+            logPlayerAction(actionString,"You gained magic powers.</b>");
+            playerMgkMax=+1;
+            playerMgk+=1;
+            displayPlayerEffect("🪬");
+            nextEncounter();
+            break;
+          
+          default:
+            logPlayerAction(actionString,"Your voice echoes around the area.");
+            displayPlayerEffect("💬");
+        }
+        break;
+        
       case 'button_grab': //Player vs encounter stamina decides the success
         switch (enemyType){
           case "Pet": //Can become pet it when the player has higher current stamina
@@ -652,11 +881,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           
           case "Upgrade":
-            logPlayerAction(actionString,"You chose to become <b> cursed -1 💔 -1 🟢</b>");
-            playerHpMax-=1;
-            playerHit(1);
-            playerStaMax-=1;
-            playerSta-=1;
+            logPlayerAction(actionString,"You gained magic powers.</b>");
+            playerMgkMax=+1;
+            playerMgk+=1;
+            displayPlayerEffect("🪬");
             nextEncounter();
             break;
           
