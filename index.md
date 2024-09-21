@@ -49,9 +49,9 @@ layout: default
 <button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;&nbsp;
 <button type = "button" id = "button_block">🔰&nbsp;&nbsp;Block</button>
 <p style="margin:14px;"></p>
-<button type = "button" id = "button_grab">🪄&nbsp;&nbsp;Cast</button>&nbsp;&nbsp;
-<button type = "button" id = "button_speak">🪬&nbsp;&nbsp;Curse</button>&nbsp;&nbsp;
-<button type = "button" id = "button_sleep">🙏&nbsp;&nbsp;Pray</button>
+<button type = "button" id = "button_cast">🪄&nbsp;&nbsp;Cast</button>&nbsp;&nbsp;
+<button type = "button" id = "button_curse">🪬&nbsp;&nbsp;Curse</button>&nbsp;&nbsp;
+<button type = "button" id = "button_pray">🙏&nbsp;&nbsp;Pray</button>
 <p style="margin:14px;"></p>
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;
 <button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;
