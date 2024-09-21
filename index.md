@@ -15,8 +15,8 @@ layout: default
 <div class= "fullScreenText" id="id_fullscreen_text"></div>
 
 <center class="animate__animated animate__fadeIn animate__fast">
-<h2 id = "id_area" style="margin-top:-12px; margin-bottom:8px;">Forgotten Forest</h2>
-<h2 id = "id_subtitle" style="margin:-12px; font-size:20px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2>
+<h2 id = "id_area" style="margin-top:-14px; margin-bottom:8px;">Forgotten Forest</h2>
+<!-- <h2 id = "id_subtitle" style="margin:-12px; font-size:20px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2> -->
 <p style="margin:14px;"></p>
 
 <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans;"></div>
@@ -47,8 +47,12 @@ layout: default
 <p style="margin:18px;"></p>
 <button type = "button" id = "button_attack">🎯&nbsp;&nbsp;Attack</button>&nbsp;&nbsp;
 <button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;&nbsp;
-<button type = "button" id = "button_block">🛡&nbsp;&nbsp;Block</button>
-<p style="margin:16px;"></p>
+<button type = "button" id = "button_block">🔰&nbsp;&nbsp;Block</button>
+<p style="margin:14px;"></p>
+<button type = "button" id = "button_grab">🪄&nbsp;&nbsp;Cast</button>&nbsp;&nbsp;
+<button type = "button" id = "button_speak">🪬&nbsp;&nbsp;Curse</button>&nbsp;&nbsp;
+<button type = "button" id = "button_sleep">🙏&nbsp;&nbsp;Pray</button>
+<p style="margin:14px;"></p>
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;
 <button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Rest</button>
