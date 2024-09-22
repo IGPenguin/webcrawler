@@ -34,7 +34,7 @@ layout: default
                             text-align:left;
                             padding-top:0px;
                             padding-left:12px;
-                            padding-bottom:0px;
+                            padding-bottom:1px;
                             line-height:24px;
                             margin-bottom:0px;
                             font-family:sans;
@@ -98,7 +98,7 @@ layout: default
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:12px;
                                     padding-top:4px;
-                                    padding-bottom:2px;
+                                    padding-bottom:4px;
                                     margin-bottom:4px;
                                     margin-top:4px;
                                     font-family:sans;"/>
