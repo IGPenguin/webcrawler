@@ -68,7 +68,7 @@ layout: default
   overflow: auto;"/>
 <h5 id = "id_team" style="float:right;
   margin-top:24px;
-  padding-right:6px;
+  padding-right:8px;
   overflow: auto;"/>
 </div>
 </div>
