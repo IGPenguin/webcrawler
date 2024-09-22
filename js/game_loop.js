@@ -458,58 +458,41 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-        case 'button_cast': //TODO: You should be faster when you have Mgk > them
-          if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
+        case 'button_cast':
+          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magical power.")) { break; }
+          displayPlayerEffect("🪄");
         switch (enemyType){
-          case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
-              logPlayerAction(actionString,"You convinced them to join your party!");
-              displayPlayerEffect(enemyEmoji);
-              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
-              playerPartyString+=" "+enemyEmoji
-              playerAtk+=enemyAtk;
-              enemyAnimateDeathNextEncounter();
-              break;
-            }
-
-          case "Standard": //If they are dumber they will walk away
+          case "Recruit": //You should be faster if you have Mgk >= them
+          case "Standard":
           case "Swift":
           case "Heavy":
           case "Pet":
+          case "Swift":
           case "Spirit":
           case "Demon":
-            if (enemyInt < playerInt){
-              logPlayerAction(actionString,"You convinced them to walk away.");
-              displayPlayerEffect("💬");
-              nextEncounter();
-              break;
-            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
-              logPlayerAction(actionString,"That made them more angry!");
-              displayPlayerEffect("💬");
-              enemyAtkBonus+=1;
-            } else {
-              var speechChance = Math.floor(Math.random() * luckInterval);
-              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
-              if ( speechChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
-                displayPlayerEffect("💬");
-                nextEncounter();
-                break;
-              }
-              else {
-                logPlayerAction(actionString,"They ignored whatever you said.");
-              }
+          case "Undead":
+          case "Friend":
+            if (enemyMgk<=playerMgk){
+              enemyHit(playerMgk);
             }
-            enemyAttackOrRest();
+            if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
+              enemyAttackOrRest();
+            }
             break;
 
-          case "Undead": //They don't care
-            logPlayerAction(actionString,"They ignored whatever you said.");
+          case "Friend": //They'll be hit (above) and then get angry
+            logPlayerAction(actionString,"You've made them your adversary -1 🟦");
+            displayEnemyEffect("❗️");
+            enemyType="Standard";
             break;
 
-          case "Friend": //They'll boost your stats
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
-            displayPlayerEffect("💬");
+          case "Item":
+          case "Consumable":
+          case "Container":
+            var openMessage = "Your magical power anihilated it -1 🟦";
+            logPlayerAction(actionString,openMessage);
+            displayEnemyEffect("〽️");
+            enemyAnimateDeathNextEncounter();
             break;
 
           case "Death":
@@ -517,25 +500,29 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You spent your power on sweet dreams.");
+            logPlayerAction(actionString,"You spent your power on sweet dreams -1 🟦");
+            break;
+
+          case "Altar":
+            logPlayerAction(actionString,"Your magical power trashed the place -1 🟦");
+            nextEncounter();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You have gained magic power!");
-            playerMgkMax=+1;
+            logPlayerAction(actionString,"You increased your magical power!");
+            playerMgkMax+=1;
             playerMgk+=1;
-            displayPlayerEffect("🪬");
             nextEncounter();
             break;
 
           default:
-            logPlayerAction(actionString,"Your voice echoes around the area.");
+            logPlayerAction(actionString,"Your voice echoes around the area -1 🟦");
             displayPlayerEffect("💬");
         }
         break;
 
         case 'button_curse': //TODO: Boosts undead and deamon, curse basic enemies if Mgk > them, what else?
-        if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
+        if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magical power.")) { break; }
         displayPlayerEffect("🪬");
         switch (enemyType){
           case "Undead":
@@ -581,10 +568,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You have gained magic power!");
-            playerMgkMax=+1;
-            playerMgk+=1;
-            displayPlayerEffect("🪬");
+            logPlayerAction(actionString,"You sacrificed health -1 💔 for power +2 🟦");
+            playerHit(1);
+            playerHpMax-=1;
+            playerMgkMax+=2;
+            playerMgk+=2;
             nextEncounter();
             break;
 
@@ -595,7 +583,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
-          if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
+          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magical power.")) { break; }
           displayPlayerEffect("🙏");
         switch (enemyType){
           case "Spirit":
@@ -648,15 +636,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You have gained magic power!");
+            logPlayerAction(actionString,"The gods have granted you extra power +1 🟦");
             playerMgkMax=+1;
             playerMgk+=1;
-            displayPlayerEffect("🪬");
             nextEncounter();
             break;
 
           default:
-            logPlayerAction(actionString,"Your prayer had no effect.");
+            logPlayerAction(actionString,"Your prayer had no visible effect.");
         }
         break;
 
@@ -866,10 +853,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You have gained magic power!");
-            playerMgkMax=+1;
-            playerMgk+=1;
-            displayPlayerEffect("🪬");
+            logPlayerAction(actionString,"You sacrificed -1 🟢 for power +2 🟦");
+            //playerUseStamina(1); //This does not seem necessary, why not sacrifice exhausted stamina?
+            playerStaMax-=1;
+            playerMgkMax+=2;
+            playerMgk+=2;
+            displayPlayerEffect("🩸");
             nextEncounter();
             break;
 
@@ -905,6 +894,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Dream":
           case "Container":
           case "Checkpoint":
+          case "Altar":
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
@@ -1252,7 +1242,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="🟢&nbsp;Energy";
       document.getElementById('button_block').innerHTML="🧠&nbsp;Mind";
       document.getElementById('button_grab').innerHTML="🍀&nbsp;Luck";
-      document.getElementById('button_speak').innerHTML="👁‍🗨&nbsp;Curse";
+      document.getElementById('button_speak').innerHTML="🩸&nbsp;Sacrifice";
       document.getElementById('button_sleep').innerHTML="↪️&nbsp;Skip";
       break;
     case "Container":
