@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "work-in-progress, ver. 5/10/23"
+var versionCode = "protoype, ver. 9/22/24"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -537,6 +537,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Pet":
             if ((enemyAtkBonus+enemyAtk)>0){ enemyAtkBonus-=1;}
+            logPlayerAction(actionString,"Your curse made them weak!");
             enemyAttackOrRest();
             break;
 
@@ -635,7 +636,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             logPlayerAction(actionString,"The gods have granted you extra power +1 🟦");
-            playerMgkMax=+1;
+            playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
             break;
@@ -851,7 +852,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You sacrificed -1 🟢 for power +2 🟦");
+            logPlayerAction(actionString,"You sacrificed energy -1 🟢 for power +2 🟦");
             playerUseStamina(1);
             playerStaMax-=1;
             playerMgkMax+=2;
@@ -1006,8 +1007,12 @@ function enemyAttackOrRest(){
         staminaChangeMsg = "The enemy siphoned your health -"+enemyAtk+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
+    if (enemyAtk+enemyAtkBonus<=0){
+      staminaChangeMsg="The enemy is to weak to attack."
+    } else {
+      playerHit(enemyAtk+enemyAtkBonus);
+    }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
-    playerHit(enemyAtk);
   } else {
     enemyRest(1);
   }
