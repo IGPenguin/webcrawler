@@ -509,15 +509,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You increased your magical power!");
+            logPlayerAction(actionString,"You increased your magical power +1 🟦");
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
             break;
 
           default:
-            logPlayerAction(actionString,"Your voice echoes around the area -1 🟦");
-            displayPlayerEffect("💬");
+            logPlayerAction(actionString,"You wasted your magical power -1 🟦");
         }
         break;
 
@@ -577,8 +576,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"Your voice echoes around the area.");
-            displayPlayerEffect("💬");
+            logPlayerAction(actionString,"The curse dispersed around the area -1 🟦");
         }
         break;
 
@@ -643,7 +641,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"Your prayer had no visible effect.");
+            logPlayerAction(actionString,"Your prayer had no visible effect -1 🟦");
         }
         break;
 
