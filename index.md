@@ -16,12 +16,11 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-28px;
-  margin-bottom:4px;
-    font-size:22px;
-    text-shadow: 0 2px 1px #000;
-      letter-spacing: 1.5px;">Forgotten Forest</h2>
-<!-- <h2 id = "id_subtitle" style="margin:-12px; font-size:20px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2> -->
+<h2 id = "id_area" style="margin-top:-30px;
+    margin-bottom:-12px;
+    font-size:28px;
+    text-shadow: 0 3px 2px #000;
+    letter-spacing: 1.5px;">Forgotten Forest</h2>
 
 <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans;"></div>
 <div class="card" id="id_card">
@@ -50,18 +49,18 @@ layout: default
 <h1 id = "id_emoji" style="margin-bottom:0px;
                             box-shadow:
                               0px 0px 0px 3px rgb(5,5,5);
-                            padding-bottom:4px;
+                            padding-bottom:0px;
                             padding-top:10px;
                             margin-top:2px"/>
 </div>
 </div>
-<div class="box-border">
+<div class="box-border" style="margin-top:14px;">
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:8px;
   padding-left:12px;
   padding-right:8px;
-  margin-bottom:-10px;
+  margin-bottom:-16px;
   line-height:165%;
   width:95%;
   overflow: auto;"/>
@@ -73,7 +72,7 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 style="margin:-18px; font-size:34px">· VS ·</h3>
+<h3 style="margin:-18px; font-size:34px; text-shadow: 0 3px 2px #000;">· VS ·</h3>
 
 <div class="toolbar-card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans;"></div>
@@ -92,8 +91,11 @@ layout: default
                                   font-size:16px;
                                   margin-bottom:0px;"/>
 </div>
+
 <div class="box-border-dynamic" style="margin-left:3px;
-                                        margin-right:3px;">
+                                        margin-right:3px;
+                                        margin-bottom:14px;">
+
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:12px;
                                     padding-top:4px;
@@ -107,7 +109,12 @@ layout: default
                                         margin-top:2px;
                                         padding-top:2px;
                                         padding-bottom:0px;">
-<h4 id = "id_log" style="margin-top:Opx; margin-bottom:0px; padding-left:6px; margin-bottom:4px; text-align:left;"/>
+
+<h4 id = "id_log" style="margin-top:0px;
+                          margin-bottom:0px;
+                          padding-left:6px;
+                          margin-bottom:4px;
+                          text-align:left;"/>
 </div>
 <h3 id = "id_player_party_loot" style="text-align:left;
                                         float:left;
@@ -122,15 +129,15 @@ layout: default
 </div>
 </div>
 
-<p style="margin:12px;"></p>
+<p style="margin:8px;"></p>
 <button type = "button" id = "button_attack">🎯&nbsp;&nbsp;Attack</button>&nbsp;&nbsp;
 <button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;&nbsp;
 <button type = "button" id = "button_block">🔰&nbsp;&nbsp;Block</button>
-<p style="margin:12px;"></p>
+<p style="margin:8px;"></p>
 <button type = "button" id = "button_cast">🪄&nbsp;&nbsp;Cast</button>&nbsp;&nbsp;
 <button type = "button" id = "button_curse">🪬&nbsp;&nbsp;Curse</button>&nbsp;&nbsp;
 <button type = "button" id = "button_pray">🙏&nbsp;&nbsp;Pray</button>
-<p style="margin:12px;"></p>
+<p style="margin:8px;"></p>
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;
 <button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Rest</button>

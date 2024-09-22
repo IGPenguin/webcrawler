@@ -96,7 +96,7 @@ a:active, a:hover, a:focus {
 
 .box-border{
   margin-top:20px;
-  height:90px;
+  height:82px;
   box-shadow:
     0px 0px 0px 3px $color-border;
 }
@@ -328,7 +328,7 @@ button {
   font-size: 15px;
   z-index: 999;
   padding-bottom: 2px;
-  min-height: 38px;
+  min-height: 44px;
   min-width: 108px;
   background-color: rgb(40,40,40);
   color: #fff;
@@ -338,7 +338,7 @@ button {
   border: none;
   //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   box-shadow:
-    inset 0px 0px 0px 3px rgba(0,0,0,0.5);
+    inset 0px 0px 0px 3px $color-border;
   user-select: none;
 }
 
