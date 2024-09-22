@@ -43,11 +43,11 @@ var playerPartyString = "";
 var playerHpDefault = 3;
 var playerStaDefault = 3;
 var playerLckDefault = 0;
-var playerMgkDefault = 0;
+var playerMgkDefault = 1;
 
 var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
-var palyerMgkMax = playerMgkDefault;
+var playerMgkMax = playerMgkDefault;
 var playerHp = playerHpMax;
 var playerSta = playerStaMax;
 var playerLck = playerLckDefault;
@@ -620,25 +620,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish unded, heal in combat, lift curse from artefacts
-        if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
         switch (enemyType){
-          case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
-              logPlayerAction(actionString,"You convinced them to join your party!");
-              displayPlayerEffect(enemyEmoji);
-              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
-              playerPartyString+=" "+enemyEmoji
-              playerAtk+=enemyAtk;
+          case "Spirit":
+          case "Demon":
+            if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
+            if (enemyMgk <= playerMgk){
+              logPlayerAction(actionString,"You banished them from this world!");
+              displayPlayerEffect("🪬");
               enemyAnimateDeathNextEncounter();
               break;
             }
 
-          case "Standard": //If they are dumber they will walk away
+          case "Standard": //TODO: Heal self
+          case "Recruit":
           case "Swift":
           case "Heavy":
           case "Pet":
-          case "Spirit":
-          case "Demon":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to walk away.");
               displayPlayerEffect("💬");
