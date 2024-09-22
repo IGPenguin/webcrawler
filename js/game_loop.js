@@ -430,6 +430,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Recruit":
           case "Pet":
+          case "Demon":
             enemyStaminaChangeMessage(-1,"You blocked their normal attack -1 🟢","You blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -439,8 +440,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🔰");
             break;
 
-          case "Heavy": //Too heavy or ethereal attack
-          case "Ethereal":
+          case "Heavy": //Too heavy or spirit attack
+          case "Spirit":
             if (enemyStaminaChangeMessage(-1,"You couldn't block their blow&nbsp;-"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
@@ -475,7 +476,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
-          case "Ethereal":
+          case "Spirit":
+          case "Demon":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to walk away.");
               displayPlayerEffect("💬");
@@ -551,7 +553,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
-          case "Ethereal":
+          case "Spirit":
+          case "Demon":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to walk away.");
               displayPlayerEffect("💬");
@@ -634,7 +637,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
-          case "Ethereal":
+          case "Spirit":
+          case "Demon":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to walk away.");
               displayPlayerEffect("💬");
@@ -798,7 +802,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-          case "Ethereal":
+          case "Spirit":
             logPlayerAction(actionString,"Your hand grasped through empty void.");
             displayEnemyEffect("✋");
             break;
@@ -860,7 +864,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
-          case "Ethereal":
+          case "Spirit":
+          case "Demon":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"You convinced them to walk away.");
               displayPlayerEffect("💬");
@@ -925,7 +930,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Recruit":
           case "Pet":
-          case "Ethereal":
+          case "Spirit":
+          case "Demon":
           case "Undead":
             enemyAttackOrRest();
             if (playerHp>0){
@@ -1047,8 +1053,14 @@ function enemyKnockedOut(){
 }
 
 function enemyAttackOrRest(){
+  var staminaChangeMsg;
   if (enemySta-enemyStaLost > 0) {
-    enemyStaminaChangeMessage(-1,"The enemy attacked you for -"+enemyAtk+" 💔","n/a");
+    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked you for -"+enemyAtk+" 💔"}
+    else {
+        staminaChangeMsg = "The enemy siphoned your health -"+enemyAtk+" 💔";
+        if (enemyHpLost >0) {enemyHpLost-=1;}
+      }
+    enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
     playerHit(enemyAtk);
   } else {
     enemyRest(1);
