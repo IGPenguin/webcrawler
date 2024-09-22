@@ -41,7 +41,7 @@ var playerName = "Nameless Hero";
 var playerLootString = "";
 var playerPartyString = "";
 var playerHpDefault = 3;
-var playerStaDefault = 3;
+var playerStaDefault = 2;
 var playerLckDefault = 0;
 var playerMgkDefault = 1;
 
