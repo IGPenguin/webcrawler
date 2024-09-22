@@ -7,7 +7,7 @@ body {
   padding-top:24px;
   font: 13px serif;
   font-weight:500;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.5px;
   background-image: url('../../assets/img/background.png');
   background-repeat: repeat-x repeat-y;
 }
@@ -44,11 +44,13 @@ h4 {
   line-height:1.5;
   font-size:14px;
   font-weight: 200;
-  margin-bottom: 14px
+  margin-bottom: 14px;
+  width: 100%;
+  padding: 4px;
 }
 
 h5 {
-  font-size:14px;
+  font-size:12px;
   font-style: italic;
   font-weight: 100;
   color: lightgrey;
@@ -76,11 +78,37 @@ a:active, a:hover, a:focus {
   float: center;
   padding: 16px;
   background-color: rgb(40,40,40);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0px 0px 0px 3px rgba(0,0,0,0.5),
+    0 4px 8px 0 rgba(0,0,0,0.5);
   width: 332px;
   height: 200px;
   display: table-cell;
   vertical-align: middle;
+}
+
+.shadow-box{
+  margin-top:22px;
+  height:90px;
+  box-shadow:
+    0px 0px 0px 3px rgba(0,0,0,0.5);
+}
+
+.toolbar {
+  float: center;
+  width: 340px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: rgb(40,40,40);
+  box-shadow:
+    inset 0px 0px 0px 3px rgba(0,0,0,0.5),
+    0 4px 8px 0 rgba(0,0,0,0.5);
+  vertical-align: middle;
+  font-weight: 200;
+  text-align: center;
+  display: table-cell;
 }
 
 .wrapper {
@@ -290,13 +318,16 @@ button {
   z-index: 999;
   padding-bottom: 2px;
   min-height: 38px;
-  min-width: 104px;
+  min-width: 114px;
   background-color: rgb(40,40,40);
   color: #fff;
   padding-right: 12px;
   padding-left: 12px;
   font-weight: bold;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  border: none;
+  //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0px 0px 0px 3px rgba(0,0,0,0.5);
   user-select: none;
 }
 
@@ -313,21 +344,6 @@ select {
   min-height: 36px;
   font-size: 15px;
   text-align: center;
-}
-
-.toolbar {
-  float: center;
-  width: 340px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: rgb(40,40,40);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-  vertical-align: middle;
-  font-weight: 200;
-  text-align: center;
-  display: table-cell;
 }
 
 // Small screen width overrides

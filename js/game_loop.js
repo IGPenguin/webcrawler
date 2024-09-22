@@ -210,7 +210,7 @@ function redraw(){
   document.getElementById('id_area').innerHTML = areaName;
   document.getElementById('id_name').innerHTML = enemyName;
   document.getElementById('id_desc').innerHTML = enemyDesc;
-  document.getElementById('id_team').innerHTML = "»&nbsp;" + enemyTeam + "&nbsp;«";
+  document.getElementById('id_team').innerHTML = "—&nbsp;"+enemyTeam;
 
   //Encounter Statusbar UI
   var enemyStatusString = ""
@@ -243,7 +243,7 @@ function redraw(){
       enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
       break;
     default:
-      enemyStatusString = "∙  ∙  ∙"; //Dream, Prop, Upgrade etc.
+      enemyStatusString = "<i>Details unknown...</i>"; //Dream, Prop, Upgrade etc.
       break;
   }
 
