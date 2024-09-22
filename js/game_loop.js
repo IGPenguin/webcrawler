@@ -251,7 +251,7 @@ function redraw(){
       if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
       break;
     case "Consumable":
-      enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
+      enemyStatusString = "❤️ ++&nbsp;&nbsp;🟢 ++";
       break;
     default:
       enemyStatusString = "⁉️"; //Dream, Prop, Upgrade etc.

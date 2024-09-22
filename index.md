@@ -45,7 +45,7 @@ layout: default
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
                             padding-top:1px;
-                            padding-left:12px;
+                            padding-left:10px;
                             padding-bottom:0px;
                             line-height:24px;
                             margin-top:4px;
@@ -84,7 +84,7 @@ layout: default
                                         padding-top:4px;
                                         padding-bottom:2px;">
 <h3 id = "id_player_name" style="text-align:left;
-                                  padding-left:12px;
+                                  padding-left:10px;
                                   font-weight:bold;
                                   margin-top:0px;
                                   cursor:pointer;
@@ -98,7 +98,7 @@ layout: default
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:100px;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
-                                    padding-left:12px;
+                                    padding-left:8px;
                                     padding-top:5px;
                                     padding-bottom:3px;
                                     margin-bottom:-11px;
