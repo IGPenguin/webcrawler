@@ -15,9 +15,9 @@ layout: default
 <div class= "fullScreenText" id="id_fullscreen_text"></div>
 
 <center class="animate__animated animate__fadeIn animate__fast">
-<h2 id = "id_area" style="margin-top:-14px; margin-bottom:8px;">Forgotten Forest</h2>
+<h2 id = "id_area" style="margin-top:-22px; margin-bottom:8px;">Forgotten Forest</h2>
 <!-- <h2 id = "id_subtitle" style="margin:-12px; font-size:20px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2> -->
-<p style="margin:14px;"></p>
+<p style="margin:6px;"></p>
 
 <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans;"></div>
 <div class="card" id="id_card">
