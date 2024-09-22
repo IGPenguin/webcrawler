@@ -16,13 +16,12 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-22px;
-  margin-bottom:8px;
+<h2 id = "id_area" style="margin-top:-28px;
+  margin-bottom:4px;
     font-size:22px;
     text-shadow: 0 2px 1px #000;
       letter-spacing: 1.5px;">Forgotten Forest</h2>
 <!-- <h2 id = "id_subtitle" style="margin:-12px; font-size:20px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2> -->
-<p style="margin:4px;"></p>
 
 <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans;"></div>
 <div class="card" id="id_card">
@@ -72,12 +71,37 @@ layout: default
 <h3 style="margin:-18px; font-size:34px">· VS ·</h3>
 <p style="margin:4px;"></p>
 
-<div class="toolbar-card" style="padding-bottom:0px;">
+<div class="toolbar-card" style="padding-bottom:0px; margin-top:8px;">
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans;"></div>
-<div class="toolbar" id = "id_player_info" style="padding-bottom:10px;">
-<h3 id = "id_player_name" style="font-weight:bold; margin-bottom:6px; margin-top:4px; cursor:pointer; font-size:16px"/>
-<h3 id = "id_player_status" style="margin-bottom:0px; display:inline; font-family:sans;"/>
-<h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:6px; margin-bottom:4px; text-align:left;"/>
+
+<div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
+
+<div class="box-border-dynamic" style="margin-left:3px;
+                                        margin-right:3px;
+                                        padding-top:4px;
+                                        padding-bottom:2px;">
+<h3 id = "id_player_name" style="text-align:left;
+                                  padding-left:12px;
+                                  font-weight:bold;
+                                  margin-top:0px;
+                                  cursor:pointer;
+                                  font-size:16px;
+                                  margin-bottom:0px;"/>
+</div>
+<div class="box-border-dynamic" style="margin-left:3px;
+                                        margin-right:3px;">
+<h3 id = "id_player_status" style="text-align:left;
+                                    padding-left:12px;
+                                    margin-bottom:6px;
+                                    margin-top:6px;
+                                    font-family:sans;"/>
+</div>
+<div class="box-border-dynamic" style="margin-left:3px;
+                                        margin-right:3px;
+                                        padding-top:2px;
+                                        padding-bottom:0px;">
+<h4 id = "id_log" style="margin-top:Opx; margin-bottom:0px; padding-left:6px; margin-bottom:4px; text-align:left;"/>
+</div>
 <h4 id = "id_player_party_loot" style="margin-bottom:0px; display:inline; box-shadow:none;"/>
 </div>
 </div>

@@ -243,7 +243,7 @@ function redraw(){
       enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
       break;
     default:
-      enemyStatusString = "<i>Details unknown...</i>"; //Dream, Prop, Upgrade etc.
+      enemyStatusString = "<i># # #</i>"; //Dream, Prop, Upgrade etc.
       break;
   }
 
