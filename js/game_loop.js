@@ -1254,7 +1254,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="🟢&nbsp;Energy";
       document.getElementById('button_block').innerHTML="🧠&nbsp;Mind";
       document.getElementById('button_grab').innerHTML="🍀&nbsp;Luck";
-      document.getElementById('button_speak').innerHTML="🩸&nbsp;Sacrifice";
+      document.getElementById('button_speak').innerHTML="🩸&nbsp;Offering";
       document.getElementById('button_sleep').innerHTML="↪️&nbsp;Skip";
       break;
     case "Container":

@@ -26,17 +26,29 @@ layout: default
 <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans;"></div>
 <div class="card" id="id_card">
 <div id = "id_enemy_info">
+  <div class="box-border-dynamic">
   <h2 id = "id_name" style="text-align:left;
-    padding-left:10px;"/>
-<h1 id = "id_emoji" style="margin-top:4px; margin-bottom:4px;"/>
+    padding-left:10px;
+    box-shadow:
+      0px 0px 0px 3px rgba(0,0,0,0.5);"/>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
-                            padding-top:6px;
+                            padding-top:0px;
                             padding-left:12px;
+                            padding-bottom:4px;
                             line-height:24px;
                             margin-bottom:0px;
-                            font-family:sans;"/>
-<br>
+                            font-family:sans;
+                            display:inline;"/>
+  </div>
+<br style="clear:both" />
+<div class="box-border-dynamic">
+<h1 id = "id_emoji" style="margin-bottom:0px;
+                            box-shadow:
+                              0px 0px 0px 3px rgba(0,0,0,0.5);
+                            padding-bottom:4px;
+                            padding-top:10px;"/>
+</div>
 </div>
 <div class="box-border">
 <h4 id = "id_desc" style="float:left;
