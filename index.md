@@ -15,13 +15,14 @@ layout: default
 <div class= "fullScreenText" id="id_fullscreen_text"></div>
 
 <center class="animate__animated animate__fadeIn animate__fast">
+
 <h2 id = "id_area" style="margin-top:-22px;
   margin-bottom:8px;
     font-size:22px;
     text-shadow: 0 2px 1px #000;
       letter-spacing: 1.5px;">Forgotten Forest</h2>
 <!-- <h2 id = "id_subtitle" style="margin:-12px; font-size:20px;">∙&nbsp;&nbsp;∙&nbsp;&nbsp;∙</h2> -->
-<p style="margin:6px;"></p>
+<p style="margin:4px;"></p>
 
 <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans;"></div>
 <div class="card" id="id_card">
@@ -67,29 +68,29 @@ layout: default
 </div>
 </div>
 
-<p style="margin:9px;"></p>
-<h3 style="margin:-0px; font-size:14px">· VS ·</h3>
-<p style="margin:6px;"></p>
+<p style="margin:4px;"></p>
+<h3 style="margin:-18px; font-size:34px">· VS ·</h3>
+<p style="margin:4px;"></p>
 
+<div class="toolbar-card" style="padding-bottom:0px;">
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans;"></div>
-<div class="toolbar" style="padding-bottom:10px;">
-<div id = "id_player_info">
+<div class="toolbar" id = "id_player_info" style="padding-bottom:10px;">
 <h3 id = "id_player_name" style="font-weight:bold; margin-bottom:6px; margin-top:4px; cursor:pointer; font-size:16px"/>
 <h3 id = "id_player_status" style="margin-bottom:0px; display:inline; font-family:sans;"/>
-</div>
 <h4 id = "id_log" style="margin-top:6px; margin-bottom:0px; padding-left:6px; margin-bottom:4px; text-align:left;"/>
 <h4 id = "id_player_party_loot" style="margin-bottom:0px; display:inline; box-shadow:none;"/>
 </div>
+</div>
 
-<p style="margin:18px;"></p>
+<p style="margin:12px;"></p>
 <button type = "button" id = "button_attack">🎯&nbsp;&nbsp;Attack</button>&nbsp;&nbsp;
 <button type = "button" id = "button_roll">🌀&nbsp;&nbsp;Roll</button>&nbsp;&nbsp;
 <button type = "button" id = "button_block">🔰&nbsp;&nbsp;Block</button>
-<p style="margin:14px;"></p>
+<p style="margin:12px;"></p>
 <button type = "button" id = "button_cast">🪄&nbsp;&nbsp;Cast</button>&nbsp;&nbsp;
 <button type = "button" id = "button_curse">🪬&nbsp;&nbsp;Curse</button>&nbsp;&nbsp;
 <button type = "button" id = "button_pray">🙏&nbsp;&nbsp;Pray</button>
-<p style="margin:14px;"></p>
+<p style="margin:12px;"></p>
 <button type = "button" id = "button_grab">✋&nbsp;&nbsp;Grab</button>&nbsp;&nbsp;
 <button type = "button" id = "button_speak">💬&nbsp;&nbsp;Speak</button>&nbsp;&nbsp;
 <button type = "button" id = "button_sleep">💤&nbsp;&nbsp;Rest</button>
