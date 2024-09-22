@@ -7,6 +7,7 @@ var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
 var playerInfoUIElement;
+var toolbarCardUIElement;
 
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
 var seenEncounters;
@@ -183,7 +184,8 @@ function redraw(){
   document.getElementById('id_version').innerHTML = versionCode;
 
   //Player UI
-  playerInfoUIElement= document.getElementById('id_player_info');
+  playerInfoUIElement = document.getElementById('id_player_info');
+  toolbarCardUIElement = document.getElementById('id_toolbar_card');
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;"
@@ -961,7 +963,7 @@ function enemyRest(stamina){
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   if (enemyStaLost < enemySta) {
     logPlayerAction(actionString,successMessage);
-    animateUIElement(emojiUIElement,"animate__headShake","0.7"); //Play attack animation
+    animateUIElement(enemyInfoUIElement,"animate__headShake","0.7"); //Play attack animation
     enemyStaLost -= stamina;
     return true;
   } else if (enemyHp - enemyHpLost > 0) { //Enemy rest if not dead
@@ -1050,7 +1052,7 @@ function nextEncounter(){
 }
 
 function enemyAnimateDeathNextEncounter(){
-  animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
+  animateUIElement(cardUIElement,"animate__fadeOutDown","0.75");
   var animationHandler = function(){
     nextEncounter();
     redraw();
@@ -1169,7 +1171,7 @@ function playerConsumed(){
   } else {
     var tooFullStaLost = 2;
     consumedString="You lost energy due to overeating -"+tooFullStaLost+" 🟢";
-    animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
+    animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
     playerUseStamina(tooFullStaLost);
   }
   logPlayerAction(actionString,consumedString);
@@ -1209,7 +1211,7 @@ function gameOver(){
   adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
-  animateUIElement(emojiUIElement,"animate__flip","1");
+  animateUIElement(cardUIElement,"animate__flip","1");
   playerSta=0; //You are just tired when dead :)
   resetSeenEncounters();
 }

@@ -22,7 +22,6 @@ layout: default
     text-shadow: 0 3px 2px #000;
     letter-spacing: 1.5px;">Forgotten Forest</h2>
 
-<div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans;"></div>
 <div class="card" id="id_card">
 <div id = "id_enemy_info">
   <div class="box-border-dynamic">
@@ -44,6 +43,7 @@ layout: default
                             box-shadow:
                               0px 0px 0px 3px rgb(5,5,5);"/>
   </div>
+  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:100px;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <h1 id = "id_emoji" style="margin-bottom:0px;
@@ -74,9 +74,7 @@ layout: default
 <p style="margin:4px;"></p>
 <h3 style="margin:-18px; font-size:34px; text-shadow: 0 3px 2px #000;">· VS ·</h3>
 
-<div class="toolbar-card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
-<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans;"></div>
-
+<div class="toolbar-card" id = "id_toolbar_card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
 
 <div class="box-border-dynamic" style="margin-left:3px;
@@ -95,6 +93,7 @@ layout: default
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                         margin-bottom:14px;">
+<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:100px;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:12px;
