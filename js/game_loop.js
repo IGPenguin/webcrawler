@@ -161,7 +161,7 @@ function loadEncounter(index){
   encounterIndex = index;
   selectedLine = String(lines[index]);
 
-  //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
+  //Encounter data initialization, details in encounters.csv
   areaName = String(selectedLine.split(",")[0].split(":")[1]);
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
@@ -187,7 +187,7 @@ function redraw(){
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
-  if (playerMgk > 0) { playerStatusString += "&nbsp;&nbsp;🟦 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk); }
+  playerStatusString += "&nbsp;&nbsp;🟦 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
@@ -517,7 +517,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You can not move your lips to speak.");
+            logPlayerAction(actionString,"You wasted your magic on nothing.");
             displayPlayerCannotEffect();
             break;
 
@@ -535,53 +535,28 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-        case 'button_curse': //TODO: Boosts undead, curse basic enemies if Mgk > them, what else?
+        case 'button_curse': //TODO: Boosts undead and deamon, curse basic enemies if Mgk > them, what else?
         if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
+        displayPlayerEffect("🪬");
         switch (enemyType){
-          case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
-              logPlayerAction(actionString,"You convinced them to join your party!");
-              displayPlayerEffect(enemyEmoji);
-              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
-              playerPartyString+=" "+enemyEmoji
-              playerAtk+=enemyAtk;
-              enemyAnimateDeathNextEncounter();
+          case "Undead":
+          case "Demon":
+              logPlayerAction(actionString,"They liked that and grew stronger!");
+              animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
+              enemyAtkBonus+=1;
               break;
-            }
 
-          case "Standard": //If they are dumber they will walk away
+          case "Standard": //Reduce enemy atk if possible
+          case "Recruit":
           case "Swift":
           case "Heavy":
           case "Pet":
-          case "Spirit":
-          case "Demon":
-            if (enemyInt < playerInt){
-              logPlayerAction(actionString,"You convinced them to walk away.");
-              displayPlayerEffect("💬");
-              nextEncounter();
-              break;
-            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
-              logPlayerAction(actionString,"That made them more angry!");
-              displayPlayerEffect("💬");
-              enemyAtkBonus+=1;
-            } else {
-              var speechChance = Math.floor(Math.random() * luckInterval);
-              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
-              if ( speechChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
-                displayPlayerEffect("💬");
-                nextEncounter();
-                break;
-              }
-              else {
-                logPlayerAction(actionString,"They ignored whatever you said.");
-              }
-            }
+            if ((enemyAtkBonus+enemyAtk)>0){ enemyAtkBonus-=1;}
             enemyAttackOrRest();
             break;
 
-          case "Undead": //They don't care
-            logPlayerAction(actionString,"They ignored whatever you said.");
+          case "Spirit": //They don't care
+            logPlayerAction(actionString,"They ignored whatever you tried.");
             break;
 
           case "Friend": //They'll boost your stats
@@ -619,10 +594,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-        case 'button_pray': //TODO:Banish unded, heal in combat, lift curse from artefacts
+        case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
         switch (enemyType){
           case "Spirit":
-          case "Demon":
+          case "Demon": //TODO WTF THIS DOES NOT WORK!!
+            console.log("player mgk: "+playerMgk+" vs enemy mgk: "+enemyMgk)
             if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
             if (enemyMgk <= playerMgk){
               logPlayerAction(actionString,"You banished them from this world!");
@@ -630,43 +606,26 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAnimateDeathNextEncounter();
               break;
             }
+            enemyAttackOrRest();
+            break;
 
           case "Standard": //TODO: Heal self
           case "Recruit":
           case "Swift":
           case "Heavy":
           case "Pet":
-            if (enemyInt < playerInt){
-              logPlayerAction(actionString,"You convinced them to walk away.");
-              displayPlayerEffect("💬");
-              nextEncounter();
-              break;
-            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
-              logPlayerAction(actionString,"That made them more angry!");
-              displayPlayerEffect("💬");
-              enemyAtkBonus+=1;
-            } else {
-              var speechChance = Math.floor(Math.random() * luckInterval);
-              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
-              if ( speechChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
-                displayPlayerEffect("💬");
-                nextEncounter();
-                break;
-              }
-              else {
-                logPlayerAction(actionString,"They ignored whatever you said.");
-              }
-            }
+            if (playerHp>playerHpMax) {playerHp++}
+            else {logPlayerAction(actionString,"You are already at full health.");}
             enemyAttackOrRest();
             break;
 
-          case "Undead": //They don't care
-            logPlayerAction(actionString,"They ignored whatever you said.");
+          case "Undead": //Reduce attack if possible
+            if ((enemyAtkBonus+enemyAtk)>0){ enemyAtkBonus-=1;}
+            enemyAttackOrRest();
             break;
 
           case "Friend": //They'll boost your stats
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMkg);
             displayPlayerEffect("💬");
             break;
 
@@ -1137,7 +1096,7 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt){
+function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg=0){
   var gainedString;
   if (enemyMsg != "") {
     gainedString = enemyMsg;
