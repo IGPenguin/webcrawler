@@ -30,7 +30,8 @@ layout: default
   <h2 id = "id_name" style="text-align:left;
     padding-left:10px;
     box-shadow:
-      0px 0px 0px 3px rgba(0,0,0,0.5);"/>
+      0px 0px 0px 3px rgb(5,5,5);"/>
+
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
                             padding-top:0px;
@@ -39,13 +40,16 @@ layout: default
                             line-height:24px;
                             margin-bottom:0px;
                             font-family:sans;
-                            display:inline;"/>
+                            display:inline;
+                            width:96.4%;
+                            box-shadow:
+                              0px 0px 0px 3px rgb(5,5,5);"/>
   </div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <h1 id = "id_emoji" style="margin-bottom:0px;
                             box-shadow:
-                              0px 0px 0px 3px rgba(0,0,0,0.5);
+                              0px 0px 0px 3px rgb(5,5,5);
                             padding-bottom:4px;
                             padding-top:10px;"/>
 </div>
@@ -102,7 +106,14 @@ layout: default
                                         padding-bottom:0px;">
 <h4 id = "id_log" style="margin-top:Opx; margin-bottom:0px; padding-left:6px; margin-bottom:4px; text-align:left;"/>
 </div>
-<h4 id = "id_player_party_loot" style="margin-bottom:0px; display:inline; box-shadow:none;"/>
+<h4 id = "id_player_party_loot" style="text-align:left;
+                                        float:left;
+                                        padding-left:12px;
+                                        margin-left:3.2px;
+                                        margin-bottom:0px;
+                                        display:inline;                      
+                                        width:93.4%;
+                                        box-shadow:0px 0px 0px 3px rgb(5,5,5);"/>
 </div>
 </div>
 

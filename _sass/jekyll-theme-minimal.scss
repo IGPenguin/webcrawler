@@ -1,6 +1,8 @@
 @import "fonts";
 @import "rouge-github";
 
+$color-border: rgb(0,0,0);
+
 body {
   background-color: rgb(45,45,45);
   padding: 12px;
@@ -79,7 +81,7 @@ a:active, a:hover, a:focus {
   padding: 16px;
   background-color: rgb(40,40,40);
   box-shadow:
-    inset 0px 0px 0px 3px rgba(0,0,0,0.5),
+    inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
   width: 332px;
   height: 200px;
@@ -89,21 +91,21 @@ a:active, a:hover, a:focus {
 
 .box-border-dynamic{
   box-shadow:
-    0px 0px 0px 3px rgba(0,0,0,0.5);
+    0px 0px 0px 3px $color-border;
 }
 
 .box-border{
   margin-top:20px;
   height:90px;
   box-shadow:
-    0px 0px 0px 3px rgba(0,0,0,0.5);
+    0px 0px 0px 3px $color-border;
 }
 
 .toolbar-card{
   max-width: 364px;
   background-color: rgb(40,40,40);
   box-shadow:
-    inset 0px 0px 0px 3px rgba(0,0,0,0.5),
+    inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
 }
 
