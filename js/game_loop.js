@@ -425,12 +425,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
             enemyStaminaChangeMessage(-1,"You blocked their normal attack -1 🟢","You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
+            displayPlayerEffect("🔰");
             break;
 
           case "Swift":
             enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
+            displayPlayerEffect("🔰");
             break;
 
           case "Heavy": //Too heavy or ethereal attack
@@ -447,7 +447,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
           default:
             logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
+            displayPlayerEffect("🔰");
         }
         break;
 
