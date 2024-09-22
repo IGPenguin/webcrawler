@@ -226,6 +226,8 @@ function redraw(){
     case "Pet":
     case "Swift":
     case "Heavy":
+    case "Demon":
+    case "Spirit":
       break; //Show default - HP, Sta + dmg
     case "Item":
     case "Trap":
@@ -269,7 +271,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Trap-Attack": //Attacking causes you damage
-          case "Etheral":
+          case "Spirit":
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
@@ -292,6 +294,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Standard": //You hit first, they hit back if they have stamina
           case "Undead":
+          case "Demon":
           case "Heavy":
           case "Recruit":
           case "Pet":
@@ -331,11 +334,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
         const noStaForRollMessage = "You are too tired to make any move.";
-        switch (enemyType){
+        switch (enemyType){ //Dodge attack
           case "Standard":
           case "Undead":
           case "Recruit":
           case "Pet":
+          case "Demon":
+          case "Spirit":
             if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"You dodged their normal attack -1 🟢","Your roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
@@ -363,6 +368,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container":
+          case "Altar":
             logPlayerAction(actionString,"You left without investigating it.");
             encounterIndex+=1; //Skip loot
             nextEncounter();
@@ -514,7 +520,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You gained magic powers.</b>");
+            logPlayerAction(actionString,"You have gained magic power!");
             playerMgkMax=+1;
             playerMgk+=1;
             displayPlayerEffect("🪬");
@@ -589,8 +595,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             break;
 
+          case "Altar":
+            logPlayerAction(actionString,"You have despised the gods!");
+            playerMgkMax=-1;
+            displayPlayerEffect("🪬");
+            nextEncounter();
+            break;
+
           case "Upgrade":
-            logPlayerAction(actionString,"You gained magic powers.</b>");
+            logPlayerAction(actionString,"You have gained magic power!");
             playerMgkMax=+1;
             playerMgk+=1;
             displayPlayerEffect("🪬");
@@ -665,8 +678,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             break;
 
+          case "Altar":
+            logPlayerAction(actionString,"The gods have granted you power!");
+            playerMgkMax=+1;
+            playerMgk+=1;
+            displayPlayerEffect("🪬");
+            nextEncounter();
+            break;
+
           case "Upgrade":
-            logPlayerAction(actionString,"You gained magic powers.</b>");
+            logPlayerAction(actionString,"You have gained magic power!");
             playerMgkMax=+1;
             playerMgk+=1;
             displayPlayerEffect("🪬");
@@ -884,7 +905,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You gained magic powers.</b>");
+            logPlayerAction(actionString,"You have gained magic power!");
             playerMgkMax=+1;
             playerMgk+=1;
             displayPlayerEffect("🪬");
