@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "protoype, ver. 9/22/24"
+var versionCode = "fpm, ver. 9/23/24"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
