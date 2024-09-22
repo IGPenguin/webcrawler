@@ -16,7 +16,7 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-30px;
+<h2 id = "id_area" style="margin-top:-32px;
     margin-bottom:-14px;
     font-size:28px;
     text-shadow: 0 3px 2px #000;
@@ -67,7 +67,7 @@ layout: default
   width:95%;
   overflow: auto;"/>
 <h5 id = "id_team" style="float:right;
-  margin-top:22px;
+  margin-top:24px;
   padding-right:6px;
   overflow: auto;"/>
 </div>
