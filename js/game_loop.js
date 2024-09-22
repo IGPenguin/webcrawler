@@ -186,8 +186,11 @@ function redraw(){
   playerInfoUIElement= document.getElementById('id_player_info');
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
+  playerStatusString += "&nbsp;&nbsp;"
   playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
+  playerStatusString += "&nbsp;&nbsp;"
   playerStatusString += "&nbsp;&nbsp;🔵 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);
+  playerStatusString += "&nbsp;&nbsp;"
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
@@ -216,8 +219,14 @@ function redraw(){
   var enemyStatusString = ""
   if (enemyHp > 0) { enemyStatusString = "❤️ " + "◆".repeat(enemyHp);}
     if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "◇".repeat(enemyHpLost); } //YOLO
+
+  enemyStatusString += "&nbsp;&nbsp;"
+
   if (enemySta > 0) { enemyStatusString += "&nbsp;🟢 " + "◆".repeat(enemySta);}
     if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "◇".repeat(enemyStaLost); } //YOLO
+
+  enemyStatusString += "&nbsp;&nbsp;"
+
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "×".repeat(enemyAtk);}
 
   switch(enemyType){
