@@ -30,8 +30,8 @@ function renewPlayer(){
   playerAtk = 1;
   playerDef = 0;
   playerInt = 1;
-  playerMkgMax = playerMkgDefault;
-  playerMkg = playerMkgDefault;
+  playerMgkMax = playerMgkDefault;
+  playerMgk = playerMgkDefault;
   playerLootString = "";
   playerPartyString = "";
   adventureLog = "";
@@ -77,7 +77,7 @@ var enemyAtk;
 var enemySta;
 var enemyLck;
 var enemyInt;
-var enemyMkg;
+var enemyMgk;
 var enemyType;
 var enemyTeam;
 var enemyDesc;
@@ -171,7 +171,7 @@ function loadEncounter(index){
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
-  enemyMkg = String(selectedLine.split(",")[9].split(":")[1]);
+  enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
@@ -289,7 +289,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("〽️");
             nextEncounter();
             break;
-          
+
           case "Standard": //You hit first, they hit back if they have stamina
           case "Undead":
           case "Heavy":
@@ -300,7 +300,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAttackOrRest();
             }
             break;
-          
+
           case "Swift": //They hit you first if they have stamina
             if (enemySta-enemyStaLost > 0) {
               enemyStaminaChangeMessage(-1,"They dodged and hit you back -"+enemyAtk+" 💔","n/a");
@@ -310,11 +310,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAttackOrRest();
             }
             break;
-          
+
           case "Death":
             logPlayerAction(actionString,"There is nothing to attack anymore.");
             break
-          
+
           case "Upgrade":
           logPlayerAction(actionString,"Your felt your body become stronger.");
           displayPlayerEffect("✨");
@@ -341,21 +341,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect("🌀");
             }
             break;
-            
+
           case "Swift":
             if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"They hit you while you were rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             }
             break;
-            
+
           case "Heavy":
             if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"You dodged their heavy attack -1 🟢","Your rolling was a waste of energy  -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
-            
+
           case "Item": //You'll simply skip ahead
           case "Consumable":
           case "Checkpoint":
@@ -379,7 +379,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You walked far away from them.");
             nextEncounter();
             break;
-          
+
           case "Trap-Roll": //You get damage rolling into "Trap-Roll" type encounters
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
@@ -389,13 +389,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You continued onwards away from that.");
             nextEncounter();
             break;
-          
+
           case "Death":
             logPlayerAction(actionString,"There is nothing to avoid anymore.");
             animateUIElement(playerInfoUIElement,"animate__headShake","0.7");
             break;
             nextEncounter();
-          
+
           case "Upgrade":
             logPlayerAction(actionString,"Your felt your body become faster.");
             displayPlayerEffect("✨");
@@ -427,12 +427,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyStaminaChangeMessage(-1,"You blocked their normal attack -1 🟢","You blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🛡");
             break;
-            
+
           case "Swift":
             enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🛡");
             break;
-          
+
           case "Heavy": //Too heavy or ethereal attack
           case "Ethereal":
             if (enemyStaminaChangeMessage(-1,"You couldn't block their blow&nbsp;-"+enemyAtk+" 💔","n/a")){
@@ -441,7 +441,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
             }
             break;
-            
+
           case "Death":
               logPlayerAction(actionString,"There is nothing to block anymore.");
               break;
@@ -454,7 +454,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case 'button_cast': //TODO: You should be faster when you have Mgk > them
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ 
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
               logPlayerAction(actionString,"You convinced them to join your party!");
               displayPlayerEffect(enemyEmoji);
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
@@ -463,7 +463,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAnimateDeathNextEncounter();
               break;
             }
-          
+
           case "Standard": //If they are dumber they will walk away
           case "Swift":
           case "Heavy":
@@ -493,25 +493,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             enemyAttackOrRest();
             break;
-            
+
           case "Undead": //They don't care
             logPlayerAction(actionString,"They ignored whatever you said.");
             break;
-            
+
           case "Friend": //They'll boost your stats
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
             displayPlayerEffect("💬");
             break;
-          
+
           case "Death":
             copyAdventureToClipboard();
             break;
-          
+
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
             displayPlayerCannotEffect();
             break;
-          
+
           case "Upgrade":
             logPlayerAction(actionString,"You gained magic powers.</b>");
             playerMgkMax=+1;
@@ -519,17 +519,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🪬");
             nextEncounter();
             break;
-          
+
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
             displayPlayerEffect("💬");
         }
         break;
 
-        case 'button_curse': //TODO: Boosts undead, curse basic enemies if Mkg > them, what else?
+        case 'button_curse': //TODO: Boosts undead, curse basic enemies if Mgk > them, what else?
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ 
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
               logPlayerAction(actionString,"You convinced them to join your party!");
               displayPlayerEffect(enemyEmoji);
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
@@ -538,7 +538,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAnimateDeathNextEncounter();
               break;
             }
-          
+
           case "Standard": //If they are dumber they will walk away
           case "Swift":
           case "Heavy":
@@ -568,25 +568,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             enemyAttackOrRest();
             break;
-            
+
           case "Undead": //They don't care
             logPlayerAction(actionString,"They ignored whatever you said.");
             break;
-            
+
           case "Friend": //They'll boost your stats
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
             displayPlayerEffect("💬");
             break;
-          
+
           case "Death":
             copyAdventureToClipboard();
             break;
-          
+
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
             displayPlayerCannotEffect();
             break;
-          
+
           case "Upgrade":
             logPlayerAction(actionString,"You gained magic powers.</b>");
             playerMgkMax=+1;
@@ -594,7 +594,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🪬");
             nextEncounter();
             break;
-          
+
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
             displayPlayerEffect("💬");
@@ -604,7 +604,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case 'button_pray': //TODO:Banish unded, heal in combat, lift curse from artefacts
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ 
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
               logPlayerAction(actionString,"You convinced them to join your party!");
               displayPlayerEffect(enemyEmoji);
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
@@ -613,7 +613,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAnimateDeathNextEncounter();
               break;
             }
-          
+
           case "Standard": //If they are dumber they will walk away
           case "Swift":
           case "Heavy":
@@ -643,25 +643,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             enemyAttackOrRest();
             break;
-            
+
           case "Undead": //They don't care
             logPlayerAction(actionString,"They ignored whatever you said.");
             break;
-            
+
           case "Friend": //They'll boost your stats
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
             displayPlayerEffect("💬");
             break;
-          
+
           case "Death":
             copyAdventureToClipboard();
             break;
-          
+
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
             displayPlayerCannotEffect();
             break;
-          
+
           case "Upgrade":
             logPlayerAction(actionString,"You gained magic powers.</b>");
             playerMgkMax=+1;
@@ -669,13 +669,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🪬");
             nextEncounter();
             break;
-          
+
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
             displayPlayerEffect("💬");
         }
         break;
-        
+
       case 'button_grab': //Player vs encounter stamina decides the success
         switch (enemyType){
           case "Pet": //Can become pet it when the player has higher current stamina
@@ -692,9 +692,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAnimateDeathNextEncounter();
               break;
             }
-         
+
           case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
-          case "Standard": 
+          case "Standard":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"You grabbed them into stranglehold.");
               enemyKnockedOut();
@@ -716,7 +716,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
             }
             break;
-            
+
           case "Swift": //Player can only kick tired swift enemies
             if (enemySta-enemyStaLost == 0){
               enemyKicked();
@@ -726,7 +726,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("🌀");
             enemyAttackOrRest();
             break;
-            
+
           case "Heavy":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
               logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
@@ -735,7 +735,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
             }
             break;
-          
+
           case "Trap": //Grabbing is not safe
           case "Trap-Roll":
           case "Trap-Attack":
@@ -744,7 +744,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHit(enemyAtk);
             displayEnemyEffect("✋");
             break;
-          
+
           case "Container":
             var openMessage = "There was something hidden inside.";
             displayEnemyEffect("👋");
@@ -754,31 +754,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,openMessage);
             nextEncounter();
             break;
-            
+
           case "Item":
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("✋");
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
             break;
-            
+
           case "Friend":
             logPlayerAction(actionString,"It slipped through your fingers.");
             displayEnemyEffect("✋");
             nextEncounter();
             break;
-            
+
           case "Consumable":
             playerConsumed();
             displayEnemyEffect("🍽");
             enemyAnimateDeathNextEncounter();
             break;
-            
+
           case "Dream":
           case "Ethereal":
             logPlayerAction(actionString,"Your hand grasped through empty void.");
             displayEnemyEffect("✋");
             break;
-            
+
           case "Death":
             logPlayerAction(actionString,"Your body reconnected with your soul.");
             displayEnemyEffect("✋");
@@ -796,14 +796,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             adventureEncounterCount = -1; //For death
             nextEncounter();
             break;
-          
+
           case "Upgrade":
             logPlayerAction(actionString,"You felt your chances increase.");
             displayPlayerEffect("🍀");
             playerLck+=1;
             nextEncounter();
             break;
-         
+
           case "Checkpoint": //Save and rest to full HP and Sta
             displayPlayerEffect("💾");
             logPlayerAction(actionString,"You embraced the "+enemyName+".");
@@ -822,7 +822,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_speak':
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ 
+            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
               logPlayerAction(actionString,"You convinced them to join your party!");
               displayPlayerEffect(enemyEmoji);
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
@@ -831,7 +831,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAnimateDeathNextEncounter();
               break;
             }
-          
+
           case "Standard": //If they are dumber they will walk away
           case "Swift":
           case "Heavy":
@@ -861,25 +861,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             enemyAttackOrRest();
             break;
-            
+
           case "Undead": //They don't care
             logPlayerAction(actionString,"They ignored whatever you said.");
             break;
-            
+
           case "Friend": //They'll boost your stats
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
             displayPlayerEffect("💬");
             break;
-          
+
           case "Death":
             copyAdventureToClipboard();
             break;
-          
+
           case "Dream":
             logPlayerAction(actionString,"You can not move your lips to speak.");
             displayPlayerCannotEffect();
             break;
-          
+
           case "Upgrade":
             logPlayerAction(actionString,"You gained magic powers.</b>");
             playerMgkMax=+1;
@@ -887,7 +887,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🪬");
             nextEncounter();
             break;
-          
+
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
             displayPlayerEffect("💬");
@@ -909,7 +909,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerGetStamina(1);
             }
             break;
-          
+
           case "Trap": //Rest to full if out of combat
           case "Trap-Attack":
           case "Trap-Roll":
@@ -922,23 +922,23 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta);
             break;
-         
+
           case "Friend": //They'll leave if you'll rest
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta);
             logPlayerAction(actionString,"They got tired of waiting for you and left.");
             nextEncounter();
             break;
-          
+
           case "Death":
             redirectToTweet();
             break;
-          
+
           case "Upgrade":
             logPlayerAction(actionString,"You skipped boosting your character.");
             nextEncounter();
             break;
-          
+
           default:
             logPlayerAction(actionString,"You cannot rest, monsters are nearby.");
             displayPlayerCannotEffect();

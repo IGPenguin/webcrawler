@@ -1,4 +1,4 @@
-area;emoji;name;type;hp;atk;sta;lck;int;mkg;team;desc;message
+area;emoji;name;type;hp;atk;sta;lck;int;mgk;team;desc;message
 Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;Spirit Form;<b>🦆 Tweet</b> this attempt to appear in credits.<br><b>✋ Grab</b> your soul to give it another try.;
 Restless Dream;😴;You are sleeping.;Dream;0;0;0;0;0;0;Hazy Thought;You are dreaming of an endless road.<br>Continue forward using <b>👣 Walk</b>;
 Restless Dream;👿;Internal Demon;Ethereal;2;1;1;0;0;1;Imaginary Creature;Enemies fight back if they have <b>🟢 Energy</b>.<br><b>🛡 Block</b> or <b>🌀 Roll</b> before <b>🎯 Attacking</b>.;
