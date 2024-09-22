@@ -531,13 +531,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAtkBonus+=1;
               break;
 
-          case "Standard": //Reduce enemy atk if possible
+          case "Standard": //Reduce enemy atk if mgk stronger then them
           case "Recruit":
           case "Swift":
           case "Heavy":
           case "Pet":
-            if ((enemyAtkBonus+enemyAtk)>0){ enemyAtkBonus-=1;}
-            logPlayerAction(actionString,"Your curse made them weak!");
+            if ((playerMgkMax > enemyMgk && enemyAtkBonus+enemyAtk)>0) {
+              enemyAtkBonus-=1;
+              logPlayerAction(actionString,"Your curse made them weak -1 🟦");
+            } else {
+              logPlayerAction(actionString,"Your curse had no effect on them -1 🟦");
+            }
             enemyAttackOrRest();
             break;
 
@@ -603,11 +607,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
-            if (playerHp>playerHpMax) {
+            if (playerHp<playerHpMax) {
               playerHp++
               logPlayerAction(actionString,"The gods heard your prayers +1 ❤️‍🩹");
             }
-            else {logPlayerAction(actionString,"You are already at full health.");}
+            else {logPlayerAction(actionString,"You are already at full health -1 🟦");}
             enemyAttackOrRest();
             break;
 
@@ -728,7 +732,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("✋");
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt,enemyMgk);
             break;
 
           case "Friend":
@@ -838,7 +842,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             displayPlayerEffect("💬");
             break;
 
@@ -1008,7 +1012,7 @@ function enemyAttackOrRest(){
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
     if (enemyAtk+enemyAtkBonus<=0){
-      staminaChangeMsg="The enemy is to weak to attack."
+      staminaChangeMsg="The enemy is to weak to harm you."
     } else {
       playerHit(enemyAtk+enemyAtkBonus);
     }
@@ -1091,7 +1095,7 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg=0){
+function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg){
   var gainedString;
   if (enemyMsg != "") {
     gainedString = enemyMsg;
@@ -1124,6 +1128,10 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg=0
     playerInt += parseInt(bonusInt);
     gainedString += " +"+bonusInt + " 🧠";
     displayPlayerEffect("🧠");
+  }
+  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMkg)<=0){
+    displayPlayerEffect("🪬");
+    gainedString="You were cursed "+bonusMkg+" 🟦";
   }
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
   logPlayerAction(actionString,gainedString);
