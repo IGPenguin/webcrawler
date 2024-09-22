@@ -595,16 +595,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
+          if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
+          displayPlayerEffect("🙏");
         switch (enemyType){
           case "Spirit":
-          case "Demon": //TODO WTF THIS DOES NOT WORK!!
+          case "Demon":
             console.log("player mgk: "+playerMgk+" vs enemy mgk: "+enemyMgk)
-            if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
-            if (enemyMgk <= playerMgk){
+            if ( enemyMgk <= playerMgk+1 ){ // +1 cause player already used mana
               logPlayerAction(actionString,"You banished them from this world!");
-              displayPlayerEffect("🪬");
               enemyAnimateDeathNextEncounter();
               break;
+            } else {
+              logPlayerAction(actionString,"You cannot overpower this entity!");
             }
             enemyAttackOrRest();
             break;
