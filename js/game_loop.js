@@ -511,16 +511,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You spent your power on sweet dreams -1 🔵");
+            logPlayerAction(actionString,"You spent your power dreaming -1 🔵");
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"Your magical power trashed the place -1 🔵");
+            logPlayerAction(actionString,"You magically trashed the place -1 🔵");
             nextEncounter();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You increased your magical power +1 🔵");
+            logPlayerAction(actionString,"You increased the magical power +1 🔵");
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
