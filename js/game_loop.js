@@ -452,6 +452,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast': //TODO: You should be faster when you have Mgk > them
+          if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
             if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
@@ -527,6 +528,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_curse': //TODO: Boosts undead, curse basic enemies if Mgk > them, what else?
+        if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
             if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
@@ -602,6 +604,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish unded, heal in combat, lift curse from artefacts
+        if (!playerUseMagic(1,"You don't have enough magic power.")) { break; }
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
             if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
@@ -1087,6 +1090,19 @@ function playerUseStamina(stamina, message = ""){
     return false;
   } else {
     playerSta -= stamina;
+    return true;
+  }
+}
+
+function playerUseMagic(magic, message = ""){
+  if (playerMgk <= 0) { //Cannot lose more
+    if (message != ""){ //Display specific "too tired message"
+      logPlayerAction(actionString,message);
+    }
+    displayPlayerCannotEffect();
+    return false;
+  } else {
+    playerMgk -= magic;
     return true;
   }
 }
