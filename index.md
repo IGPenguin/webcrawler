@@ -17,7 +17,7 @@ layout: default
 <center class="animate__animated animate__fadeIn animate__fast">
 
 <h2 id = "id_area" style="margin-top:-30px;
-    margin-bottom:-12px;
+    margin-bottom:-16px;
     font-size:28px;
     text-shadow: 0 3px 2px #000;
     letter-spacing: 1.5px;">Forgotten Forest</h2>
@@ -28,8 +28,20 @@ layout: default
   <h2 id = "id_name" style="text-align:left;
     padding-left:10px;
     box-shadow:
-      0px 0px 0px 3px rgb(5,5,5);"/>
+      0px 0px 0px 3px rgb(5,5,5);
+    margin-bottom:0px;"/>
 
+  </div>
+  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:100px;"></div>
+<br style="clear:both" />
+<div class="box-border-dynamic">
+<h1 id = "id_emoji" style="margin-bottom:10px;
+                            box-shadow:
+                              0px 0px 0px 3px rgb(5,5,5);
+                            padding-bottom:0px;
+                            padding-top:10px;
+                            margin-top:2px"/>
+</div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
                             padding-top:0px;
@@ -42,19 +54,8 @@ layout: default
                             width:96.4%;
                             box-shadow:
                               0px 0px 0px 3px rgb(5,5,5);"/>
-  </div>
-  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:100px;"></div>
-<br style="clear:both" />
-<div class="box-border-dynamic">
-<h1 id = "id_emoji" style="margin-bottom:0px;
-                            box-shadow:
-                              0px 0px 0px 3px rgb(5,5,5);
-                            padding-bottom:0px;
-                            padding-top:10px;
-                            margin-top:2px"/>
 </div>
-</div>
-<div class="box-border" style="margin-top:14px;">
+<div class="box-border" style="margin-top:29px;">
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:8px;
@@ -99,13 +100,12 @@ layout: default
                                     padding-left:12px;
                                     padding-top:4px;
                                     padding-bottom:4px;
-                                    margin-bottom:4px;
-                                    margin-top:4px;
+                                    margin-bottom:-10px;
+                                    margin-top:14px;
                                     font-family:sans;"/>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
-                                        margin-top:2px;
                                         padding-top:2px;
                                         padding-bottom:0px;">
 
