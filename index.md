@@ -36,7 +36,7 @@ layout: default
                             text-align:left;
                             padding-top:0px;
                             padding-left:12px;
-                            padding-bottom:4px;
+                            padding-bottom:0px;
                             line-height:24px;
                             margin-bottom:0px;
                             font-family:sans;
@@ -51,7 +51,8 @@ layout: default
                             box-shadow:
                               0px 0px 0px 3px rgb(5,5,5);
                             padding-bottom:4px;
-                            padding-top:10px;"/>
+                            padding-top:10px;
+                            margin-top:2px"/>
 </div>
 </div>
 <div class="box-border">
@@ -73,9 +74,8 @@ layout: default
 
 <p style="margin:4px;"></p>
 <h3 style="margin:-18px; font-size:34px">· VS ·</h3>
-<p style="margin:4px;"></p>
 
-<div class="toolbar-card" style="padding-bottom:0px; margin-top:8px;">
+<div class="toolbar-card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans;"></div>
 
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
@@ -96,23 +96,28 @@ layout: default
                                         margin-right:3px;">
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:12px;
-                                    margin-bottom:6px;
-                                    margin-top:6px;
+                                    padding-top:4px;
+                                    padding-bottom:2px;
+                                    margin-bottom:4px;
+                                    margin-top:4px;
                                     font-family:sans;"/>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
+                                        margin-top:2px;
                                         padding-top:2px;
                                         padding-bottom:0px;">
 <h4 id = "id_log" style="margin-top:Opx; margin-bottom:0px; padding-left:6px; margin-bottom:4px; text-align:left;"/>
 </div>
-<h4 id = "id_player_party_loot" style="text-align:left;
+<h3 id = "id_player_party_loot" style="text-align:left;
                                         float:left;
+                                        padding-top:0px;
                                         padding-left:12px;
                                         margin-left:3.2px;
                                         margin-bottom:0px;
+                                        margin-top:0px;
                                         display:inline;                      
-                                        width:93.4%;
+                                        width:94.6%;
                                         box-shadow:0px 0px 0px 3px rgb(5,5,5);"/>
 </div>
 </div>
