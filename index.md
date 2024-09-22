@@ -29,22 +29,27 @@ layout: default
   <h2 id = "id_name" style="text-align:left;
     padding-left:10px;"/>
 <h1 id = "id_emoji" style="margin-top:4px; margin-bottom:4px;"/>
-<h3 id = "id_stats" style="float:left; text-align:left; padding-left:12px; line-height:24px; margin-bottom:4px; font-family:sans;"/>
+<h3 id = "id_stats" style="float:left;
+                            text-align:left;
+                            padding-top:6px;
+                            padding-left:12px;
+                            line-height:24px;
+                            margin-bottom:0px;
+                            font-family:sans;"/>
 <br>
 </div>
-<div class="shadow-box" style="box-shadow:
-      inset 0px 0px 0px 3px rgba(0,0,0,0.5);">
+<div class="box-border">
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:8px;
-  padding-left:14px;
+  padding-left:12px;
   padding-right:8px;
-  margin-bottom:2px;
+  margin-bottom:-10px;
   line-height:165%;
   width:95%;
   overflow: auto;"/>
 <h5 id = "id_team" style="float:right;
-  margin-top:2px;
+  margin-top:16px;
   padding-right:10px;
   overflow: auto;"/>
 </div>

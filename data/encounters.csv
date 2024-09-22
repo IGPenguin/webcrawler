@@ -1,6 +1,6 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;team;desc;message
 Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;Spirit Form;<b>🦆 Tweet</b> this attempt to appear in credits.<br><b>✋ Grab</b> your soul to give it another try.;
-Restless Dream;😴;You are sleeping.;Dream;0;0;0;0;0;0;Hazy Thought;You are dreaming of an endless road.<br>Continue forward using <b>👣 Walk</b>;
+Restless Dream;😴;Sleepy Night;Dream;0;0;0;0;0;0;Hazy Thought;You are dreaming of an endless road.<br>Continue forward using <b>👣 Walk</b>;
 Restless Dream;👿;Imaginary Demon;Demon;1;1;1;0;0;1;Imaginary Creature;Enemies fight back if they have <b>🟢 Energy</b>.<br><b>🛡 Block</b> or <b>🌀 Roll</b> before <b>🎯 Attacking</b>.;
 Restless Dream;🦐;You dream of a shrimp.;Consumable;0;0;0;0;0;0;Spectral Food;<b>🖐 Grab</b> any food and loot you encounter.<br><b>💤 Rest</b> regularly to regain <b>🟢 Energy</b>.;
 Restless Dream;👤;Decide who you are.;Upgrade;0;0;0;0;0;0;Lifetime Decision;<b>Choose your character perk.</b><br>Tailor your own experience.;
