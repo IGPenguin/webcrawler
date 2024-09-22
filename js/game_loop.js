@@ -1056,9 +1056,9 @@ function enemyAnimateDeathNextEncounter(){
   var animationHandler = function(){
     nextEncounter();
     redraw();
-    emojiUIElement.removeEventListener("animationend",animationHandler);
+    cardUIElement.removeEventListener("animationend",animationHandler);
   }
-  emojiUIElement.addEventListener('animationend',animationHandler);
+  cardUIElement.addEventListener('animationend',animationHandler);
 }
 
 //Player
