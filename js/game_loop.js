@@ -473,7 +473,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Friend":
             if (enemyMgk<=playerMgk){
-              enemyHit(playerMgk);
+              enemyHit(playerMgk+1,true); //Deal damage equal to your power before using it
             }
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
@@ -965,8 +965,9 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   }
 }
 
-function enemyHit(damage){
+function enemyHit(damage,magic=false){
   var hitMsg = "You hit them with an attack -"+damage+" 💔";
+  if (magic=true) {hitMsg="You scorched them with a spell -"+damage+" 💔";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
