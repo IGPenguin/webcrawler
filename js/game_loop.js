@@ -517,8 +517,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You wasted your magic on nothing.");
-            displayPlayerCannotEffect();
+            logPlayerAction(actionString,"You spent your power on sweet dreams.");
             break;
 
           case "Upgrade":
@@ -569,7 +568,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You can not move your lips to speak.");
+            logPlayerAction(actionString,"You brought yourself a nightmare -1 💔");
+            playerHit(1);
             displayPlayerCannotEffect();
             break;
 
@@ -616,7 +616,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
-            if (playerHp>playerHpMax) {playerHp++}
+            if (playerHp>playerHpMax) {
+              playerHp++
+              logPlayerAction(actionString,"The gods heard your prayers +1 ❤️‍🩹");
+            }
             else {logPlayerAction(actionString,"You are already at full health.");}
             enemyAttackOrRest();
             break;
@@ -628,16 +631,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll boost your stats
             playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMkg);
-            displayPlayerEffect("💬");
-            break;
-
-          case "Death":
-            copyAdventureToClipboard();
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You can not move your lips to speak.");
-            displayPlayerCannotEffect();
+            logPlayerAction(actionString,"Your deep prayer was appreciated +1 🍀");
+            playerLck++
+            nextEncounter();
             break;
 
           case "Altar":
@@ -657,8 +656,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"Your voice echoes around the area.");
-            displayPlayerEffect("💬");
+            logPlayerAction(actionString,"Your prayer had no effect.");
         }
         break;
 
@@ -898,7 +896,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Trap": //Rest to full if out of combat
+          case "Trap": //Rest to full if out of combat + mana
           case "Trap-Attack":
           case "Trap-Roll":
           case "Item":
@@ -908,7 +906,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container":
           case "Checkpoint":
             displayPlayerEffect("💤");
-            playerGetStamina(playerStaMax-playerSta);
+            playerGetStamina(playerStaMax-playerSta,true);
+            playerMgk=playerMgkMax;
+            logPlayerAction(actionString,"You rested well, recovering all power!");
             break;
 
           case "Friend": //They'll leave if you'll rest
