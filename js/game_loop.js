@@ -187,7 +187,7 @@ function redraw(){
   document.getElementById('id_player_name').innerHTML = playerName;
   var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
-  if playerMgk > 0 {playerStatusString += "&nbsp;&nbsp;🟦 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);}
+  if (playerMgk > 0) { playerStatusString += "&nbsp;&nbsp;🟦 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk); }
   playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
@@ -1227,8 +1227,11 @@ function logAction(message){
 //UI Buttons
 function resetEncounterButtons(){
   document.getElementById('button_attack').innerHTML="🎯&nbsp;Attack";
-  document.getElementById('button_block').innerHTML="🛡&nbsp;Block";
+  document.getElementById('button_block').innerHTML="🔰&nbsp;Block";
   document.getElementById('button_roll').innerHTML="🌀&nbsp;Roll";
+  document.getElementById('button_cast').innerHTML="🪄&nbsp;Cast";
+  document.getElementById('button_curse').innerHTML="🪬&nbsp;Curse";
+  document.getElementById('button_pray').innerHTML="🙏&nbsp;Pray";
   document.getElementById('button_grab').innerHTML="✋&nbsp;Grab";
   document.getElementById('button_sleep').innerHTML="💤&nbsp;Rest";
   document.getElementById('button_speak').innerHTML="💬&nbsp;Speak";
@@ -1368,6 +1371,9 @@ function registerClickListeners(){
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
   document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
+  document.getElementById('button_cast').addEventListener(eventType, resolveAction('button_cast'));
+  document.getElementById('button_curse').addEventListener(eventType, resolveAction('button_curse'));
+  document.getElementById('button_pray').addEventListener(eventType, resolveAction('button_pray'));
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
   document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
