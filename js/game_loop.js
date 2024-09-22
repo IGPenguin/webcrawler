@@ -854,7 +854,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             logPlayerAction(actionString,"You sacrificed -1 🟢 for power +2 🟦");
-            //playerUseStamina(1); //This does not seem necessary, why not sacrifice exhausted stamina?
+            playerUseStamina(1);
             playerStaMax-=1;
             playerMgkMax+=2;
             playerMgk+=2;
