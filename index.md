@@ -17,7 +17,7 @@ layout: default
 <center class="animate__animated animate__fadeIn animate__fast">
 
 <h2 id = "id_area" style="margin-top:-30px;
-    margin-bottom:-16px;
+    margin-bottom:-14px;
     font-size:28px;
     text-shadow: 0 3px 2px #000;
     letter-spacing: 1.5px;">Forgotten Forest</h2>
@@ -29,7 +29,7 @@ layout: default
     padding-left:10px;
     box-shadow:
       0px 0px 0px 3px rgb(5,5,5);
-    margin-bottom:0px;"/>
+    margin-bottom:-2px;"/>
 
   </div>
   <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:100px;"></div>
@@ -40,7 +40,7 @@ layout: default
                               0px 0px 0px 3px rgb(5,5,5);
                             padding-bottom:0px;
                             padding-top:10px;
-                            margin-top:2px"/>
+                            margin-top:0px"/>
 </div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
@@ -48,6 +48,7 @@ layout: default
                             padding-left:12px;
                             padding-bottom:0px;
                             line-height:24px;
+                            margin-top:4px;
                             margin-bottom:0px;
                             font-family:sans;
                             display:inline;
@@ -55,19 +56,19 @@ layout: default
                             box-shadow:
                               0px 0px 0px 3px rgb(5,5,5);"/>
 </div>
-<div class="box-border" style="margin-top:29px;">
+<div class="box-border" style="margin-top:42px;">
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:8px;
   padding-left:12px;
   padding-right:8px;
-  margin-bottom:-16px;
+  margin-bottom:-23px;
   line-height:165%;
   width:95%;
   overflow: auto;"/>
 <h5 id = "id_team" style="float:right;
-  margin-top:16px;
-  padding-right:10px;
+  margin-top:22px;
+  padding-right:6px;
   overflow: auto;"/>
 </div>
 </div>
@@ -100,7 +101,7 @@ layout: default
                                     padding-left:12px;
                                     padding-top:5px;
                                     padding-bottom:3px;
-                                    margin-bottom:-10px;
+                                    margin-bottom:-11px;
                                     margin-top:14px;
                                     font-family:sans;"/>
 </div>
