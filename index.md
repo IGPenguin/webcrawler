@@ -44,9 +44,9 @@ layout: default
 </div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
-                            padding-top:0px;
+                            padding-top:1px;
                             padding-left:12px;
-                            padding-bottom:1px;
+                            padding-bottom:0px;
                             line-height:24px;
                             margin-bottom:0px;
                             font-family:sans;
@@ -98,8 +98,8 @@ layout: default
 
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:12px;
-                                    padding-top:4px;
-                                    padding-bottom:4px;
+                                    padding-top:5px;
+                                    padding-bottom:3px;
                                     margin-bottom:-10px;
                                     margin-top:14px;
                                     font-family:sans;"/>

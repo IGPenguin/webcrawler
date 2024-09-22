@@ -254,7 +254,7 @@ function redraw(){
       enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
       break;
     default:
-      enemyStatusString = "❓❓❓"; //Dream, Prop, Upgrade etc.
+      enemyStatusString = "⁉️"; //Dream, Prop, Upgrade etc.
       break;
   }
 
