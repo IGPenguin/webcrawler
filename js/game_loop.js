@@ -235,8 +235,8 @@ function redraw(){
 
   enemyStatusString += "&nbsp;&nbsp;"
 
-  if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "◆".repeat(enemyAtk);}
-    else { enemyStatusString += "&nbsp;🎯 " + "〜";}
+  if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "◆".repeat(enemyAtk);} //else { enemyStatusString += "&nbsp;🎯 " + "〜";}
+    if (enemyAtkBonus < 0) { enemyStatusString += "&nbsp;🎯 " + "◇".repeat(-1*enemyAtkBonus); } //YOLO
 
   enemyStatusString += "&nbsp;&nbsp;"
 
@@ -284,7 +284,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
-        if (!playerUseStamina(1,"You are too tired to attack anything.")){
+        if (enemyType!="Upgrade" && !playerUseStamina(1,"You are too tired to attack anything.")){
             break;
           }
         switch (enemyType){
