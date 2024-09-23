@@ -1312,7 +1312,7 @@ function adjustEncounterButtons(){
       break;
     case "Consumable":
       document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
-      document.getElementById('button_grab').innerHTML="✋&nbsp;Consume";
+      document.getElementById('button_grab').innerHTML="👄&nbsp;Eat it";
       break;
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋&nbsp;Touch";
