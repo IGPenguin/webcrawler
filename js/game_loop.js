@@ -595,7 +595,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You sacrificed health -1 💔 for power +2 🔵");
+            logPlayerAction(actionString,"You sacrificed -1 💔 for power +2 🔵");
             playerHit(1);
             playerHpMax-=1;
             playerMgkMax+=2;
