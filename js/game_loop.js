@@ -663,9 +663,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"A ray from heaven healed your wounds ❤️++.");
-            playerMgkMax+=1;
-            playerMgk+=1;
+            var hpDiff= playerHpMax-playerHp;
+            if (hpDiff>0) {
+              logPlayerAction(actionString,"Heavenly ray healed your wounds +"+hpDiff+" ❤️");
+              playerHp=playerHpMax;
+            } else {
+              logPlayerAction(actionString,"Heavens geve you their blessing +1 🍀");
+              playerLck+=1;
+            }
             nextEncounter();
             break;
 
