@@ -214,7 +214,7 @@ function redraw(){
 
   //Encounter UI
   cardUIElement = document.getElementById('id_card');
-  enemyInfoUIElement = document.getElementById('id_enemy_info');
+  enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
 
   emojiUIElement.innerHTML = enemyEmoji;
@@ -279,6 +279,8 @@ function redraw(){
 function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
     var buttonUIElement = document.getElementById(button);
+    animateUIElement(buttonUIElement,"animate__pulse","0.15");
+
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
 
@@ -1431,7 +1433,8 @@ function registerClickListeners(){
   //    eventType = 'touchend';
   //  }
   //}
-  console.log("platform interaction event type="+eventType);
+
+  //console.log("platform interaction event type="+eventType); //This was for troubleshooting various platforms
 
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));

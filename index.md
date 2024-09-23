@@ -23,6 +23,7 @@ layout: default
     letter-spacing: 1.5px;">Forgotten Forest</h2>
 
 <div class="card" id="id_card">
+<div id="id_enemy_card_contents">
 <div id = "id_enemy_info">
   <div class="box-border-dynamic">
   <h2 id = "id_name" style="text-align:left;
@@ -70,6 +71,7 @@ layout: default
   margin-top:24px;
   padding-right:8px;
   overflow: auto;"/>
+</div>
 </div>
 </div>
 
