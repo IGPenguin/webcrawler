@@ -12,7 +12,6 @@ Forgotten Forest;🐦‍⬛;Worried Crow;Swift;1;1;1;0;1;0;Wild Animal;Another c
 Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>You should make use of it.;
 Forgotten Forest;🦌;Frantic Deer;Standard;2;2;1;0;2;0;Wild Animal;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
 Forgotten Forest;⛺️;Abandoned Tent;Container;0;0;0;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
-Forgotten Forest;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
 Forgotten Forest;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;You stumbled upon an old map.<br>There are some notes around the edges.;You enhanced your awareness
 Forgotten Forest;🍗;Roasted Chicken;Consumable;0;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
 Forgotten Forest;🧑‍🌾;Disturbed Druid;Recruit;3;1;3;0;1;2;Hostile Stranger;Were you just sniffing around my tent?<br>You never should have come here!;
@@ -27,7 +26,8 @@ Flourishing Grove;🗿;Megalithic Statue;Altar;0;0;0;0;0;1;Ancient Monument;You 
 Flourishing Grove;🦝;Rabid Raccoon;Standard;2;1;2;0;1;0;Wild Animal;Cute on the outside.<br>Corrupted inside;
 Flourishing Grove;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Yum. This would finely refresh you.<br>You wonder where it came from.;The honeypot was filled with bees.
 Flourishing Grove;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insect;The bees totally surrounded you.<br>Blocking seems like the best option.;
-Flourishing Grove;🪓;Sharp Axe;Item;0;1;0;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took it to use it as a weapon
+Flourishing Grove;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
+Flourishing Grove;🔪;Sharp Knife;Item;0;1;0;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took for yourself
 Flourishing Grove;🐗;Alpha Boar;Heavy;3;1;1;0;10;0;Wild Animal;Its loud stomps follow you around.<br>You'd better dodge its attacks.;
 Flourishing Grove;🥩;Boar Meat;Trap;0;2;0;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;The raw meat made you sick
 Flourishing Grove;🏚️;Abandoned House;Container;0;0;0;0;0;0;Deserted Building;This house has been long neglected.<br>Maybe there's something valuable left?;
