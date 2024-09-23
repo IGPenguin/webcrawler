@@ -984,7 +984,6 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 
 function enemyHit(damage,magic=false){
   var hitMsg = "You hit them with an attack -"+damage+" 💔";
-  if (magic=true) {actionString="🪄";hitMsg="You scorched them with a spell -"+damage+" 💔";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
@@ -996,6 +995,7 @@ function enemyHit(damage,magic=false){
     damage+=2;
   }
 
+  if (magic=true) {actionString="🪄&nbsp;"; hitMsg="You scorched them with a spell -"+damage+" 💔";}
   logPlayerAction(actionString,hitMsg);
   enemyHpLost = enemyHpLost + damage;
 
