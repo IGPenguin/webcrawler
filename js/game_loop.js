@@ -532,9 +532,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Your magic power has increased +1 🔵");
-            playerMgkMax+=1;
-            playerMgk+=1;
+            logPlayerAction(actionString,"You chose magic +2 🔵 over agility -1 🟢");
+            playerMgkMax+=2;
+            playerMgk+=2;
+            playerMax-=1;
+            playerSta-=1;
             nextEncounter();
             break;
 
@@ -939,7 +941,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You skipped boosting your character.");
+            logPlayerAction(actionString,"You decided against gaining a perk.");
             nextEncounter();
             break;
 
@@ -1273,12 +1275,15 @@ function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      document.getElementById('button_attack').innerHTML="❤️&nbsp;Health";
-      document.getElementById('button_roll').innerHTML="🟢&nbsp;Energy";
-      document.getElementById('button_block').innerHTML="🧠&nbsp;Mind";
-      document.getElementById('button_grab').innerHTML="🍀&nbsp;Luck";
-      document.getElementById('button_speak').innerHTML="🩸&nbsp;Offering";
-      document.getElementById('button_sleep').innerHTML="↪️&nbsp;Skip";
+      document.getElementById('button_attack').innerHTML="❤️&nbsp;Vitality";
+      document.getElementById('button_roll').innerHTML="🟢&nbsp;Stamina";
+      document.getElementById('button_block').innerHTML="🧠&nbsp;Wisdom";
+      document.getElementById('button_cast').innerHTML="🔮&nbsp;Sorcery";
+      document.getElementById('button_curse').innerHTML="👁️‍🗨️&nbsp;Voodoo";
+      document.getElementById('button_pray').innerHTML="📿&nbsp;Faith";
+      document.getElementById('button_grab').innerHTML="🍀&nbsp;Fortune";
+      document.getElementById('button_speak').innerHTML="🩸Scourge&nbsp;";
+      document.getElementById('button_sleep').innerHTML="⚫️&nbsp;Hardship";
       break;
     case "Container":
       document.getElementById('button_grab').innerHTML="👋&nbsp;Search";
@@ -1286,7 +1291,7 @@ function adjustEncounterButtons(){
       break;
     case "Consumable":
       document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
-      document.getElementById('button_grab').innerHTML="✋&nbsp;Eat it";
+      document.getElementById('button_grab').innerHTML="✋&nbsp;Consume";
       break;
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋&nbsp;Touch";
