@@ -482,7 +482,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast':
-          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magical power.")) { break; }
+          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magic power.")) { break; }
           displayPlayerEffect("🪄");
         switch (enemyType){
           case "Recruit": //You should be faster if you have Mgk >= them
@@ -512,7 +512,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Container":
-            var openMessage = "Your magical power anihilated it -1 🔵";
+            var openMessage = "Your magic power anihilated it -1 🔵";
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
             enemyAnimateDeathNextEncounter();
@@ -523,28 +523,28 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You spent your power dreaming -1 🔵");
+            logPlayerAction(actionString,"You spent magic power on dreaming -1 🔵");
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"You magically trashed the place -1 🔵");
+            logPlayerAction(actionString,"Your spell has trashed the place -1 🔵");
             nextEncounter();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You increased the magical power +1 🔵");
+            logPlayerAction(actionString,"Your magic power has increased +1 🔵");
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
             break;
 
           default:
-            logPlayerAction(actionString,"You wasted your magical power -1 🔵");
+            logPlayerAction(actionString,"You wasted your magic power -1 🔵");
         }
         break;
 
         case 'button_curse': //TODO: Boosts undead and deamon, curse basic enemies if Mgk > them, what else?
-        if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magical power.")) { break; }
+        if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magic power.")) { break; }
         displayPlayerEffect("🪬");
         switch (enemyType){
           case "Undead":
@@ -609,7 +609,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
-          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magical power.")) { break; }
+          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magic power.")) { break; }
           displayPlayerEffect("🙏");
         switch (enemyType){
           case "Spirit":
