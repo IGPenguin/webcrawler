@@ -423,7 +423,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"There is nothing to avoid anymore.");
             animateUIElement(playerInfoUIElement,"animate__headShake","0.7");
             break;
-            nextEncounter();
 
           case "Upgrade":
             logPlayerAction(actionString,"Your felt your body become faster.");
@@ -540,6 +539,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
+          case "Death": //TODO: Maybe I'll come up with something later
+            logPlayerAction(actionString,"Your magic powers have faded away.");
+            break;
+
           default:
             logPlayerAction(actionString,"You wasted your magic power -1 🔵");
         }
@@ -605,6 +608,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
+          case "Death": //TODO: Maybe I'll come up with something later
+            logPlayerAction(actionString,"Curse all you want, it won't help.");
+            break;
+
           default:
             logPlayerAction(actionString,"The curse dispersed into the area -1 🔵");
         }
@@ -667,6 +674,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
+            break;
+
+          case "Death": //TODO: Maybe I'll come up with something later
+            logPlayerAction(actionString,"It's way too late for prayers.");
             break;
 
           default:
@@ -1062,11 +1073,12 @@ function nextEncounter(){
   }
 
   enemyRenew();
-  animateUIElement(cardUIElement,"animate__fadeIn","0.7");
+  animateUIElement(cardUIElement,"animate__fadeIn","0.8");
 }
 
 function enemyAnimateDeathNextEncounter(){
-  animateUIElement(cardUIElement,"animate__fadeOutDown","0.75");
+  animateUIElement(cardUIElement,"animate__flipOutY","1"); //Maybe this will look better?
+  //animateUIElement(cardUIElement,"animate__fadeOutDown","0.75");
   var animationHandler = function(){
     nextEncounter();
     redraw();
@@ -1378,7 +1390,7 @@ documentElement.classList.remove(animation);
 void documentElement.offsetWidth; // trigger a DOM reflow
 
   documentElement.style.setProperty("--animate-duration","0.0001s");
-  //Wow, this is nice - https://animate.styles
+  //Wow, this is nice - https://animate.style
   documentElement.classList.add("animate__animated",animation);
   if (time !="0s"){
     documentElement.style.setProperty("--animate-duration",time+"s");
