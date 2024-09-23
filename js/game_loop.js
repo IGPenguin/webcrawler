@@ -996,7 +996,7 @@ function enemyHit(damage,magicType=false){
   var critChance = Math.floor(Math.random() * luckInterval);
   console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
-    logAction("🍀&nbsp;▸&nbsp;🎯&nbsp;Your strike was blessed with luck.");
+    logAction("🍀&nbsp;▸&nbsp;⚔️&nbsp;Your strike was blessed with luck.");
     hitMsg="Your attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
@@ -1258,7 +1258,7 @@ function logAction(message){
 
 //UI Buttons
 function resetEncounterButtons(){
-  document.getElementById('button_attack').innerHTML="🎯&nbsp;Attack";
+  document.getElementById('button_attack').innerHTML="⚔️&nbsp;Attack";
   document.getElementById('button_block').innerHTML="🔰&nbsp;Block";
   document.getElementById('button_roll').innerHTML="🌀&nbsp;Roll";
   document.getElementById('button_cast').innerHTML="🪄&nbsp;Cast";
