@@ -598,7 +598,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"The curse dispersed around the area -1 🔵");
+            logPlayerAction(actionString,"The curse dispersed into the area -1 🔵");
         }
         break;
 
@@ -984,7 +984,7 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 
 function enemyHit(damage,magic=false){
   var hitMsg = "You hit them with an attack -"+damage+" 💔";
-  if (magic=true) {hitMsg="You scorched them with a spell -"+damage+" 💔";}
+  if (magic=true) {actionString="🪄";hitMsg="You scorched them with a spell -"+damage+" 💔";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
