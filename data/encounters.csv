@@ -2,12 +2,12 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;team;desc;message
 Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;Spirit Form;<b>🦆 Tweet</b> this attempt to appear in credits.<br><b>✋ Grab</b> your soul to give it another try.;
 Deep Sleep;😴;Restless Dream;Dream;0;0;0;0;0;0;Hazy Thought;You found yourself wandering an endless road.<br>Continue forward using <b>👣 Walk</b>.;
 Deep Sleep;👿;Personal Demon;Demon;1;1;1;0;0;1;Imaginary Creature;Enemies fight back if they have <b>🟢 Energy</b>.<br>Use <b>🔰 Block</b> or <b>🌀 Roll</b> before <b>🎯 Attacking</b>.;
-Deep Sleep;🦐;Dream Shrimps;Consumable;0;0;0;0;0;0;Spectral Food;Ensure to <b>🖐 Grab</b> the loot you stumble upon.<br>Use <b>💤 Rest</b> to regain <b>🟢</b> and <b>🔵</b> resources.;
+Deep Sleep;🦐;Dream Shrimp;Consumable;0;0;0;0;0;0;Spectral Food;Ensure to <b>🖐 Grab</b> the loot you stumble upon.<br>Use <b>💤 Rest</b> to regain <b>🟢</b> and <b>🔵</b> resources.;
 Deep Sleep;👤;Decide who you are.;Upgrade;0;0;0;0;0;0;Lifetime Decision;<b>Choose one character perk from the selection.</b><br>Tailor your own strategy and experience.;
-Forgotten Forest;🌳;Tree Alley;Prop;0;0;0;0;0;0;Unfamiliar Area;There is nothing but endless trees all around.<br>Use <b>👣  Walk</b> to explore further ahead.;
-Forgotten Forest;🦔;Spiky Hedgehog;Standard;2;1;1;0;2;0;Wild Animal;At first glance it looked like a stone.<br>Then it started running towards you.;
+Forgotten Forest;🌳;Maple Alley;Prop;0;0;0;0;0;0;Unfamiliar Area;There is nothing but endless trees all around.<br>Use <b>👣  Walk</b> to explore further ahead.;
+Forgotten Forest;🪨;Animated Pebble;Standard;2;1;1;0;2;0;Enchanted Entity;At first glance it looked like a regular stone.<br>But it moved closer as you looked away.;
 Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>You should make use of it.;
-Forgotten Forest;🐕;Stray Dog;Pet;3;1;1;0;1;0;Wild Animal;It is looks kind of aggressive.<br>Try exhausting it and then petting it.;
+Forgotten Forest;🐕;Stray Dog;Pet;3;1;1;0;1;0;Wild Animal;The creature looks kind of aggressive.<br>Try exhausting it and then petting it.;
 Forgotten Forest;⛺️;Abandoned Tent;Container;0;1;0;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
 Forgotten Forest;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;You stumbled upon an old map.<br>There are some notes around the edges.;You enhanced your awareness
 Forgotten Forest;🍗;Roasted Chicken;Consumable;0;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;

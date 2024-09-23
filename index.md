@@ -39,7 +39,7 @@ layout: default
                             box-shadow:
                               0px 0px 0px 3px rgb(5,5,5);
                             padding-bottom:0px;
-                            padding-top:10px;
+                            padding-top:9px;
                             margin-top:0px"/>
 </div>
 <h3 id = "id_stats" style="float:left;

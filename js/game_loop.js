@@ -648,7 +648,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"The gods have granted you power!");
+            logPlayerAction(actionString,"The gods lent you their power +1 🔵");
             playerMgkMax=+1;
             playerMgk+=1;
             displayPlayerEffect("🪬");
@@ -656,7 +656,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"The gods have granted you extra power +1 🔵");
+            logPlayerAction(actionString,"Your prayer has been heard above +1 🔵");
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
