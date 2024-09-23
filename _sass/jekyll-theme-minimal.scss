@@ -2,6 +2,7 @@
 @import "rouge-github";
 
 $color-border: rgb(0,0,0);
+$color-inner-border: #121212;
 
 body {
   background-color: rgb(45,45,45);
@@ -325,9 +326,9 @@ footer {
 
 button {
   font-family: serif;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.2px;
   cursor:pointer;
-  font-size: 15px;
+  font-size: 16px;
   z-index: 999;
   padding-bottom: 2px;
   min-height: 42px;
@@ -338,6 +339,8 @@ button {
   padding-left: 12px;
   font-weight: bold;
   border: none;
+  -webkit-text-stroke:3px #121212;
+  paint-order: stroke fill;
   //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   box-shadow:
     inset 0px 0px 0px 3px $color-border;

@@ -30,7 +30,7 @@ layout: default
   <h2 id = "id_name" style="text-align:left;
     padding-left:10px;
     letter-spacing:0.8px;
-    -webkit-text-stroke: 5px black;
+    -webkit-text-stroke: 5px #121212;
       paint-order: stroke fill;
     margin-bottom:-2px;"/>
 
@@ -40,13 +40,14 @@ layout: default
 <div class="box-border-dynamic">
 <h1 id = "id_emoji" style="margin-bottom:10px;
                             box-shadow:
-                              0px 0px 0px 3px rgb(5,5,5);
+                              0px 0px 0px 3px #121212;
                             padding-bottom:0px;
                             padding-top:7px;
                             margin-top:0px"/>
 </div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
+                            font-size:12px;
                             padding-top:1px;
                             padding-left:10px;
                             padding-bottom:0px;
@@ -57,9 +58,11 @@ layout: default
                             display:inline;
                             width:97%;
                             box-shadow:
-                              0px 0px 0px 3px rgb(5,5,5);"/>
+                              0px 0px 0px 3px #121212;"/>
 </div>
-<div class="box-border" style="margin-top:42px;">
+<div class="box-border" style="margin-top:42px;
+  box-shadow:
+    0px 0px 0px 3px #121212;">
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:8px;
@@ -69,7 +72,9 @@ layout: default
   line-height:165%;
   width:95%;
   overflow: auto;"/>
+
 <h5 id = "id_team" style="float:right;
+  font-weight:300;
   margin-top:24px;
   padding-right:8px;
   overflow: auto;"/>
@@ -93,6 +98,7 @@ layout: default
                                         margin-right:3px;
                                         padding-top:4px;
                                         padding-bottom:4px;">
+
 <h3 id = "id_player_name" style="text-align:left;
                                   padding-left:10px;
                                   letter-spacing:0.8px;
@@ -101,17 +107,20 @@ layout: default
                                   cursor:pointer;
                                   font-size:17px;
                                   margin-bottom:0px;
-                                  -webkit-text-stroke: 5px black;
+                                  -webkit-text-stroke: 5px #121212;
                                     paint-order: stroke fill;"/>
 </div>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
-                                        margin-bottom:14px;">
+                                          margin-bottom:14px;  box-shadow:
+                                              0px 0px 0px 3px #121212;">
+
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:8px;
+                                    font-size:12px;
                                     padding-top:5px;
                                     padding-bottom:3px;
                                     margin-bottom:-11px;
@@ -121,7 +130,9 @@ layout: default
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                         padding-top:2px;
-                                        padding-bottom:0px;">
+                                        padding-bottom:0px;
+                                          box-shadow:
+                                            0px 0px 0px 3px #121212;">
 
 <h4 id = "id_log" style="margin-top:0px;
                           margin-bottom:0px;
@@ -139,7 +150,8 @@ layout: default
                                         margin-top:0px;
                                         display:inline;                      
                                         width:95.8%;
-                                        box-shadow:0px 0px 0px 3px rgb(5,5,5);"/>
+                                        box-shadow:
+                                          0px 0px 0px 3px #121212;"/>
 </div>
 </div>
 
