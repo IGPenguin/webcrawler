@@ -74,7 +74,7 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 style="margin:-18px; font-size:34px; text-shadow: 0 3px 2px #000;">· VS ·</h3>
+<h3 style="margin-top:-20px;margin-bottom:-18px; font-size:34px; text-shadow: 0 3px 2px #000;">· VS ·</h3>
 
 <div class="toolbar-card" id = "id_toolbar_card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
@@ -118,13 +118,14 @@ layout: default
 </div>
 <h3 id = "id_player_party_loot" style="text-align:left;
                                         float:left;
-                                        padding-top:0px;
-                                        padding-left:12px;
-                                        margin-left:3.2px;
+                                        padding-top:2px;
+                                        padding-bottom:2px;
+                                        padding-left:8px;
+                                        margin-left:3px;
                                         margin-bottom:0px;
                                         margin-top:0px;
                                         display:inline;                      
-                                        width:94.6%;
+                                        width:95.7%;
                                         box-shadow:0px 0px 0px 3px rgb(5,5,5);"/>
 </div>
 </div>
