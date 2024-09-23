@@ -632,7 +632,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
             if (playerHp<playerHpMax) {
               playerHp++
-              logPlayerAction(actionString,"The gods heard your prayers +1 ❤️‍🩹");
+              logPlayerAction(actionString,"The gods fulfiled your prayer +1 ❤️‍🩹");
             }
             else {logPlayerAction(actionString,"You are already at full health -1 🔵");}
             enemyAttackOrRest();
@@ -661,14 +661,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Your prayer has been heard above +1 🔵");
+            logPlayerAction(actionString,"The prayer has been heard above +1 🔵");
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
             break;
 
           default:
-            logPlayerAction(actionString,"Your prayer had no visible effect -1 🔵");
+            logPlayerAction(actionString,"The prayer had no visible effect -1 🔵");
         }
         break;
 
