@@ -331,6 +331,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Swift": //They hit you first if they have stamina
             if (enemySta-enemyStaLost > 0) {
+              displayEnemyEffect("🌀");
               if ((enemyAtk+enemyAtkBonus)>0){
                 enemyStaminaChangeMessage(-1,"They dodged and hit you back -"+enemyAtk+" 💔","n/a");
                 playerHit(enemyAtk);
@@ -1078,6 +1079,7 @@ function enemyAttackOrRest(){
 }
 
 function nextEncounter(){
+  animateVersus(1);
   adventureEncounterCount+=1;
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
@@ -1103,6 +1105,11 @@ function enemyAnimateDeathNextEncounter(){
     cardUIElement.removeEventListener("animationend",animationHandler);
   }
   cardUIElement.addEventListener('animationend',animationHandler);
+}
+
+function animateVersus(time = "1"){
+  var versusText = document.getElementById('id_versus');
+  animateUIElement(versusText,"animate__fadeIn",time);
 }
 
 //Player
@@ -1313,7 +1320,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_pray').innerHTML="📿&nbsp;Faith";
       document.getElementById('button_grab').innerHTML="🍀&nbsp;Fortune";
       document.getElementById('button_speak').innerHTML="🪙&nbsp;Greed"; //Lose HP but gain luck +3
-      document.getElementById('button_sleep').innerHTML="⚫️&nbsp;Hardship";
+      document.getElementById('button_sleep').innerHTML="💀&nbsp;Pain";
       break;
     case "Container":
       document.getElementById('button_grab').innerHTML="👋&nbsp;Search";

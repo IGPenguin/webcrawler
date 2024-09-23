@@ -45,7 +45,7 @@ h3 {
 h4 {
   line-height:1.5;
   font-size:14px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 14px;
   width: 100%;
   padding: 4px;
@@ -170,6 +170,7 @@ a:active, a:hover, a:focus {
   transform: translatex(-50%);
   color: white;
   -webkit-text-decoration-line: underline;
+  text-decoration-thickness: 1;
 }
 
 blockquote {

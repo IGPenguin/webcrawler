@@ -17,10 +17,11 @@ layout: default
 <center class="animate__animated animate__fadeIn animate__fast">
 
 <h2 id = "id_area" style="margin-top:-32px;
-    margin-bottom:-14px;
+    margin-bottom:-12px;
     font-size:28px;
-    text-shadow: 0 3px 2px #000;
-    letter-spacing: 1.5px;">Forgotten Forest</h2>
+    letter-spacing: 1.5px;
+    -webkit-text-stroke: 6.5px black;
+      paint-order: stroke fill;">Forgotten Forest</h2>
 
 <div class="card" id="id_card">
 <div id="id_enemy_card_contents">
@@ -76,7 +77,13 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 style="margin-top:-20px;margin-bottom:-18px; font-size:34px; text-shadow: 0 3px 2px #000;">· VS ·</h3>
+<h3 id = "id_versus" style="margin-top:-20px;
+  margin-bottom:-18px;
+    color:black;
+    font-size:33px;
+      letter-spacing:2px;
+      -webkit-text-stroke: 2px white;
+        paint-order: stroke fill;">VS</h3>
 
 <div class="toolbar-card" id = "id_toolbar_card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
@@ -84,13 +91,13 @@ layout: default
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                         padding-top:4px;
-                                        padding-bottom:2px;">
+                                        padding-bottom:4px;">
 <h3 id = "id_player_name" style="text-align:left;
                                   padding-left:10px;
-                                  font-weight:bold;
+                                  font-weight:5OO;
                                   margin-top:0px;
                                   cursor:pointer;
-                                  font-size:16px;
+                                  font-size:17px;
                                   margin-bottom:0px;"/>
 </div>
 
