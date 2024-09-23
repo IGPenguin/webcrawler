@@ -199,7 +199,7 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;"
   playerStatusString += "&nbsp;&nbsp;🔵 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);
   playerStatusString += "&nbsp;&nbsp;"
-  playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
+  playerStatusString += "&nbsp;&nbsp;🎯 " + "◆".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
@@ -235,7 +235,13 @@ function redraw(){
 
   enemyStatusString += "&nbsp;&nbsp;"
 
-  if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "×".repeat(enemyAtk);}
+  if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "◆".repeat(enemyAtk);}
+    else { enemyStatusString += "&nbsp;🎯 " + "〜";}
+
+  enemyStatusString += "&nbsp;&nbsp;"
+
+  if (enemyMgk > 0) {enemyStatusString += "&nbsp;🔵 " + "◆".repeat(enemyAtk);}
+      //else { enemyStatusString += "&nbsp;🔵 " + "〜";} //TODO: Maybe show 0 magic?
 
   switch(enemyType){
     case "Standard":
@@ -257,10 +263,10 @@ function redraw(){
       if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
       break;
     case "Consumable":
-      enemyStatusString = "❤️ <b>++</b>&nbsp;&nbsp;🟢 <b>++</b>";
+      enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
       break;
     default:
-      enemyStatusString = "⁉️ ∙∙∙"; //Dream, Prop, Upgrade etc.
+      enemyStatusString = "⚫️ 〜"; //Dream, Prop, Upgrade etc.
       break;
   }
 
@@ -499,7 +505,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll be hit (above) and then get angry
             logPlayerAction(actionString,"You've made them your adversary -1 🔵");
-            displayEnemyEffect("❗️");
+            displayEnemyEffect("‼️");
             enemyType="Standard";
             break;
 
@@ -582,8 +588,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"You have despised the gods!");
-            playerMgkMax=-1;
+            logPlayerAction(actionString,"You have despised the gods -1 🍀");
+            playerLck=-1;
             displayPlayerEffect("🪬");
             nextEncounter();
             break;
@@ -648,10 +654,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"The gods lent you their power +1 🔵");
-            playerMgkMax=+1;
+            logPlayerAction(actionString,"A ray from heaven healed your wounds ❤️++.");
+            playerMgkMax+=1;
             playerMgk+=1;
-            displayPlayerEffect("🪬");
             nextEncounter();
             break;
 
@@ -709,6 +714,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Swift": //Player can only kick tired swift enemies
+          case "Demon":
             if (enemySta-enemyStaLost == 0){
               enemyKicked();
               break;
