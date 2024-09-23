@@ -35,7 +35,7 @@ layout: default
     margin-bottom:-2px;"/>
 
   </div>
-  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:100px;"></div>
+  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <h1 id = "id_emoji" style="margin-bottom:10px;
