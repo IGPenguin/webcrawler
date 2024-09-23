@@ -29,8 +29,9 @@ layout: default
   <div class="box-border-dynamic">
   <h2 id = "id_name" style="text-align:left;
     padding-left:10px;
-    box-shadow:
-      0px 0px 0px 3px rgb(5,5,5);
+    letter-spacing:0.8px;
+    -webkit-text-stroke: 6px black;
+      paint-order: stroke fill;
     margin-bottom:-2px;"/>
 
   </div>
@@ -77,11 +78,11 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-20px;
-  margin-bottom:-18px;
+<h3 id = "id_versus" style="margin-top:-17px;
+  margin-bottom:-16px;
     color:black;
-    font-size:33px;
-      letter-spacing:2px;
+    font-size:30px;
+      letter-spacing:1.5px;
       -webkit-text-stroke: 2px white;
         paint-order: stroke fill;">VS</h3>
 
@@ -94,11 +95,14 @@ layout: default
                                         padding-bottom:4px;">
 <h3 id = "id_player_name" style="text-align:left;
                                   padding-left:10px;
+                                  letter-spacing:0.8px;
                                   font-weight:5OO;
                                   margin-top:0px;
                                   cursor:pointer;
                                   font-size:17px;
-                                  margin-bottom:0px;"/>
+                                  margin-bottom:0px;
+                                  -webkit-text-stroke: 6px black;
+                                    paint-order: stroke fill;"/>
 </div>
 
 <div class="box-border-dynamic" style="margin-left:3px;

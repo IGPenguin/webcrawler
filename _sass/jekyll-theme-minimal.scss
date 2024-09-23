@@ -170,7 +170,7 @@ a:active, a:hover, a:focus {
   transform: translatex(-50%);
   color: white;
   -webkit-text-decoration-line: underline;
-  text-decoration-thickness: 1;
+  text-decoration-thickness: 1px;
 }
 
 blockquote {
@@ -330,7 +330,7 @@ button {
   font-size: 15px;
   z-index: 999;
   padding-bottom: 2px;
-  min-height: 44px;
+  min-height: 42px;
   min-width: 108px;
   background-color: rgb(40,40,40);
   color: #fff;
