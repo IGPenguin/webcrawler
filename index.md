@@ -52,7 +52,7 @@ layout: default
                             margin-bottom:0px;
                             font-family:sans;
                             display:inline;
-                            width:96.4%;
+                            width:97%;
                             box-shadow:
                               0px 0px 0px 3px rgb(5,5,5);"/>
 </div>
@@ -125,7 +125,7 @@ layout: default
                                         margin-bottom:0px;
                                         margin-top:0px;
                                         display:inline;                      
-                                        width:95.7%;
+                                        width:95.9%;
                                         box-shadow:0px 0px 0px 3px rgb(5,5,5);"/>
 </div>
 </div>
