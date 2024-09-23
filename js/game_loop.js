@@ -40,7 +40,7 @@ function renewPlayer(){
 
 //Generators
 function getCharacterName(){
-  const random_names = ["Nameless Hero", "Leopold I.", "Jindřich III.", "Mad Alchemist", "Dirty Bandit", "Promising Beggar", "Undead Lumberjack", "Emperor Penguin IV.","Jesus H. Christus","Anthropomorphic Lizard","Unknown Soldier"];
+  const random_names = ["Nameless Hero", "Worthless Peasant", "Reincarnated Soul", "Wannabe Villain", "Promising Beggar", "Undead Lumberjack", "Penguin IV/XX.","Jesus H. Christ","Anthropomorphic Lizard","Unknown Soldier"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
