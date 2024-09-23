@@ -235,8 +235,8 @@ function redraw(){
 
   enemyStatusString += "&nbsp;&nbsp;"
 
-  if (enemyAtk > 0) {enemyStatusString += "&nbsp;⚔️ " + "◆".repeat(enemyAtk);} //else { enemyStatusString += "&nbsp;⚔️ " + "〜";}
-    if (enemyAtkBonus < 0) { enemyStatusString = enemyStatusString.slice(0,enemyAtkBonus) + "◇".repeat(-1*enemyAtkBonus); } //FUCK THIS SHIT
+  enemyStatusString += "&nbsp;⚔️ " + "◆".repeat(enemyAtk)
+  if (enemyAtkBonus<0) { enemyStatusString += "◇".repeat(-1*enemyAtkBonus); }
 
   enemyStatusString += "&nbsp;&nbsp;"
 
