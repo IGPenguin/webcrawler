@@ -113,7 +113,7 @@ layout: default
 <h4 id = "id_log" style="margin-top:0px;
                           margin-bottom:0px;
                           padding-left:6px;
-                          margin-bottom:4px;
+                          margin-bottom:3px;
                           text-align:left;"/>
 </div>
 <h3 id = "id_player_party_loot" style="text-align:left;
@@ -125,7 +125,7 @@ layout: default
                                         margin-bottom:0px;
                                         margin-top:0px;
                                         display:inline;                      
-                                        width:95.9%;
+                                        width:95.8%;
                                         box-shadow:0px 0px 0px 3px rgb(5,5,5);"/>
 </div>
 </div>
