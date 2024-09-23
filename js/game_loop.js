@@ -199,7 +199,7 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;"
   playerStatusString += "&nbsp;&nbsp;🔵 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);
   playerStatusString += "&nbsp;&nbsp;"
-  playerStatusString += "&nbsp;&nbsp;🎯 " + "◆".repeat(playerAtk);
+  playerStatusString += "&nbsp;&nbsp;⚔️ " + "◆".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
@@ -235,8 +235,8 @@ function redraw(){
 
   enemyStatusString += "&nbsp;&nbsp;"
 
-  if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "◆".repeat(enemyAtk);} //else { enemyStatusString += "&nbsp;🎯 " + "〜";}
-    if (enemyAtkBonus < 0) { enemyStatusString += "&nbsp;🎯 " + "◇".repeat(-1*enemyAtkBonus); } //YOLO
+  if (enemyAtk > 0) {enemyStatusString += "&nbsp;⚔️ " + "◆".repeat(enemyAtk);} //else { enemyStatusString += "&nbsp;⚔️ " + "〜";}
+    if (enemyAtkBonus < 0) { enemyStatusString += "&nbsp;⚔️ " + "◇".repeat(-1*enemyAtkBonus); } //YOLO
 
   enemyStatusString += "&nbsp;&nbsp;"
 
@@ -257,7 +257,7 @@ function redraw(){
     case "Friend":
       enemyStatusString = "";
       if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
-      if (enemyAtk>0) {enemyStatusString += "🎯 ??&nbsp;&nbsp;";}
+      if (enemyAtk>0) {enemyStatusString += "⚔️ ??&nbsp;&nbsp;";}
       if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
       if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
       if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
@@ -372,7 +372,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Swift":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"They hit you while you were rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
+              enemyStaminaChangeMessage(-1,"They hit you while rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             }
             break;
@@ -1134,7 +1134,7 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg){
   }
   if (bonusAtk > 0){
     playerAtk += parseInt(bonusAtk);
-    gainedString += " +"+bonusAtk + " 🎯";
+    gainedString += " +"+bonusAtk + " ⚔️";
     displayPlayerEffect("✨");
   }
   if (bonusSta > 0){
@@ -1423,7 +1423,7 @@ function registerClickListeners(){
 function generateCharacterShareString(){
   var characterShareString="";
   characterShareString+="\nCharacter: "+playerName;
-  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk);
+  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  ⚔️ " + "×".repeat(playerAtk);
 
   if (playerPartyString.length > 0) {
     characterShareString += "\nParty: " +playerPartyString;
