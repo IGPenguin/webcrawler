@@ -38,7 +38,13 @@ function renewPlayer(){
   adventureLog = "";
 }
 
-var playerName = "Nameless Hero";
+//Generators
+function getCharacterName(){
+  const random_names = ["Nameless Hero", "Leopold I.", "Jindřich III.", "Mad Alchemist", "Dirty Bandit", "Promising Beggar", "Undead Lumberjack", "Emperor Penguin IV.","Jesus H. Christus","Anthropomorphic Lizard","Unknown Soldier"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+var playerName = getCharacterName();
 var playerLootString = "";
 var playerPartyString = "";
 var playerHpDefault = 2;
@@ -251,7 +257,7 @@ function redraw(){
       if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
       break;
     case "Consumable":
-      enemyStatusString = "❤️ ++&nbsp;&nbsp;🟢 ++";
+      enemyStatusString = "❤️ <b>++</b>&nbsp;&nbsp;🟢 <b>++</b>";
       break;
     default:
       enemyStatusString = "⁉️ ∙∙∙"; //Dream, Prop, Upgrade etc.
