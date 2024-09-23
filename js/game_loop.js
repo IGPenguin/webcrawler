@@ -329,8 +329,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Swift": //They hit you first if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"They dodged and hit you back -"+enemyAtk+" 💔","n/a");
-              playerHit(enemyAtk);
+              if ((enemyAtk+enemyAtkBonus)>0){
+                enemyStaminaChangeMessage(-1,"They dodged and hit you back -"+enemyAtk+" 💔","n/a");
+                playerHit(enemyAtk);
+              } else {
+                enemyStaminaChangeMessage(-1,"They barely dodged your attack.","n/a");
+              }
             } else {
               enemyHit(playerAtk);
               enemyAttackOrRest();
