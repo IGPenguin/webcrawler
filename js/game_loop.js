@@ -1036,7 +1036,7 @@ function enemyAttackOrRest(){
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
     if (enemyAtk+enemyAtkBonus<=0){
-      staminaChangeMsg="The enemy is to weak to harm you."
+      staminaChangeMsg="The enemy is too weak to harm you."
     } else {
       playerHit(enemyAtk+enemyAtkBonus);
     }
