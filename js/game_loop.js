@@ -236,7 +236,7 @@ function redraw(){
   enemyStatusString += "&nbsp;&nbsp;"
 
   if (enemyAtk > 0) {enemyStatusString += "&nbsp;⚔️ " + "◆".repeat(enemyAtk);} //else { enemyStatusString += "&nbsp;⚔️ " + "〜";}
-    if (enemyAtkBonus < 0) { enemyStatusString += "&nbsp;⚔️ " + "◇".repeat(-1*enemyAtkBonus); } //YOLO
+    if (enemyAtkBonus < 0) { enemyStatusString = enemyStatusString.slice(0,enemyAtkBonus) + "◇".repeat(-1*enemyAtkBonus); } //FUCK THIS SHIT
 
   enemyStatusString += "&nbsp;&nbsp;"
 
@@ -554,7 +554,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-        case 'button_curse': //TODO: Boosts undead and deamon, curse basic enemies if Mgk > them, what else?
+        case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
         if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magic power.")) { break; }
         displayPlayerEffect("🪬");
         switch (enemyType){
@@ -571,7 +571,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Pet":
             if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+              console.log("Enemy Atk: "+enemyAtk+" Enemy Atk Bonus: "+enemyAtkBonus)
               enemyAtkBonus-=1;
+              console.log("Enemy Atk: "+enemyAtk+" Enemy Atk Bonus: "+enemyAtkBonus)
               logPlayerAction(actionString,"Your curse made them weaker -1 🔵");
             } else if (playerMgkMax <= enemyMgk) {
               logPlayerAction(actionString,"They resisted your curse -1 🔵");
@@ -906,12 +908,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You sacrificed energy -1 🟢 for power +2 🔵");
+            logPlayerAction(actionString,"You sacrificed -1 💔 to get lucky +3 🍀");
             playerUseStamina(1);
-            playerStaMax-=1;
-            playerMgkMax+=2;
-            playerMgk+=2;
-            displayPlayerEffect("🩸");
+            playerHpMax-=1;
+            playerHp-=1
+            playerLck+=3;
+            displayPlayerEffect("🪙");
             nextEncounter();
             break;
 
@@ -1305,10 +1307,10 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="🟢&nbsp;Stamina";
       document.getElementById('button_block').innerHTML="🧠&nbsp;Wisdom";
       document.getElementById('button_cast').innerHTML="🔮&nbsp;Sorcery";
-      document.getElementById('button_curse').innerHTML="👁️‍🗨️&nbsp;Voodoo";
+      document.getElementById('button_curse').innerHTML="🩸&nbsp;Scourge";
       document.getElementById('button_pray').innerHTML="📿&nbsp;Faith";
       document.getElementById('button_grab').innerHTML="🍀&nbsp;Fortune";
-      document.getElementById('button_speak').innerHTML="🩸Scourge&nbsp;";
+      document.getElementById('button_speak').innerHTML="🪙&nbsp;Greed"; //Lose HP but gain luck +3
       document.getElementById('button_sleep').innerHTML="⚫️&nbsp;Hardship";
       break;
     case "Container":
