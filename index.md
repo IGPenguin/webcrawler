@@ -30,7 +30,7 @@ layout: default
   <h2 id = "id_name" style="text-align:left;
     padding-left:10px;
     letter-spacing:0.8px;
-    -webkit-text-stroke: 6px black;
+    -webkit-text-stroke: 5px black;
       paint-order: stroke fill;
     margin-bottom:-2px;"/>
 
@@ -80,10 +80,10 @@ layout: default
 <p style="margin:4px;"></p>
 <h3 id = "id_versus" style="margin-top:-17px;
   margin-bottom:-16px;
-    color:black;
+    color:red;
     font-size:30px;
       letter-spacing:1.5px;
-      -webkit-text-stroke: 2px white;
+      -webkit-text-stroke: 5px black;
         paint-order: stroke fill;">VS</h3>
 
 <div class="toolbar-card" id = "id_toolbar_card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
@@ -101,14 +101,14 @@ layout: default
                                   cursor:pointer;
                                   font-size:17px;
                                   margin-bottom:0px;
-                                  -webkit-text-stroke: 6px black;
+                                  -webkit-text-stroke: 5px black;
                                     paint-order: stroke fill;"/>
 </div>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                         margin-bottom:14px;">
-<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:100px;"></div>
+<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:8px;
