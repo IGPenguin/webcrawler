@@ -500,6 +500,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
             if (enemyMgk<=playerMgk){
               enemyHit(playerMgk+1,true); //Deal damage equal to your power before using it
+            } else {
+              logPlayerAction(actionString,"They resisted your spell -1 🔵");
             }
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
@@ -538,7 +540,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"You chose magic +2 🔵 over agility -1 🟢");
             playerMgkMax+=2;
             playerMgk+=2;
-            playerMax-=1;
+            playerStaMax-=1;
             playerSta-=1;
             nextEncounter();
             break;
@@ -568,9 +570,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
-            if ((playerMgkMax > enemyMgk && enemyAtkBonus+enemyAtk)>0) {
+            if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
-              logPlayerAction(actionString,"Your curse made them weak -1 🔵");
+              logPlayerAction(actionString,"Your curse made them weaker -1 🔵");
+            } else if (playerMgkMax <= enemyMgk) {
+              logPlayerAction(actionString,"They resisted your curse -1 🔵");
             } else {
               logPlayerAction(actionString,"Your curse had no effect on them -1 🔵");
             }
@@ -646,8 +650,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerHp<playerHpMax) {
               playerHp++
               logPlayerAction(actionString,"The gods fulfiled your prayer +1 ❤️‍🩹");
+            } else {
+              logPlayerAction(actionString,"You wasted magic on a healing prayer -1 🔵");
             }
-            else {logPlayerAction(actionString,"You are already at full health -1 🔵");}
             enemyAttackOrRest();
             break;
 
@@ -946,7 +951,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
-            logPlayerAction(actionString,"You rested well, recovering all power!");
+            logPlayerAction(actionString,"You rested well, recovering all powers.");
             break;
 
           case "Friend": //They'll leave if you'll rest
