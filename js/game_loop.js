@@ -287,13 +287,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
-        if (enemyType!="Upgrade" && !playerUseStamina(1,"You are too tired to attack anything.")){
+        if (enemyType!="Upgrade" && !playerUseStamina(1,"Too tired to attack anything.")){
             break;
           }
         switch (enemyType){
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into small pieces -1 🟢");
+            logPlayerAction(actionString,"Smashed it into tiny pieces -1 🟢.");
             nextEncounter();
             break;
           case "Trap-Attack": //Attacking causes you damage
@@ -304,16 +304,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Container":
-            var openMessage = "You attacked and destroyed it -1 🟢";
+            var openMessage = "Smashed it open -1 🟢.";
             if (enemyMsg != ""){
-              openMessage = enemyMsg.replace("."," -1 🟢");
+              openMessage = enemyMsg.replace("."," -1 🟢.");
             }
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
             enemyAnimateDeathNextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"Your attack spooked them -1 🟢");
+            logPlayerAction(actionString,"Attacked and spooked them -1 🟢.");
             displayEnemyEffect("〽️");
             nextEncounter();
             break;
@@ -334,10 +334,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemySta-enemyStaLost > 0) {
               displayEnemyEffect("🌀");
               if ((enemyAtk+enemyAtkBonus)>0){
-                enemyStaminaChangeMessage(-1,"They dodged and hit you back -"+enemyAtk+" 💔","n/a");
+                enemyStaminaChangeMessage(-1,"They dodged the attack and retailated -"+enemyAtk+" 💔.","n/a");
                 playerHit(enemyAtk);
               } else {
-                enemyStaminaChangeMessage(-1,"They barely dodged your attack.","n/a");
+                enemyStaminaChangeMessage(-1,"They barely dodged the attack.","n/a");
               }
             } else {
               enemyHit(playerAtk);
@@ -350,7 +350,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break
 
           case "Upgrade":
-          logPlayerAction(actionString,"Your felt your body become stronger.");
+          logPlayerAction(actionString,"Felt becoming a bit stronger.");
           displayPlayerEffect("✨");
             playerHpMax+=1;
             playerHp+=1;
@@ -358,13 +358,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"Your attack had no effect on that -1 🟢");
+            logPlayerAction(actionString,"The attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
       }
       break;
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
-        const noStaForRollMessage = "You are too tired to make any move.";
+        const noStaForRollMessage = "Too tired to make any move.";
         switch (enemyType){ //Dodge attack
           case "Standard":
           case "Undead":
@@ -373,21 +373,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Spirit":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"You dodged their normal attack -1 🟢","Your roll was a waste of energy -1 🟢");
+              enemyStaminaChangeMessage(-1,"Dodged their standard attack -1 🟢","The roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
 
           case "Swift":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"They hit you while rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
+              enemyStaminaChangeMessage(-1,"Failed to dodge the attack -"+enemyAtk+" 💔","Rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             }
             break;
 
           case "Heavy":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"You dodged their heavy attack -1 🟢","Your rolling was a waste of energy  -1 🟢");
+              enemyStaminaChangeMessage(-1,"Dodged their heavy attack -1 🟢","Rolled around wasting energy  -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -395,25 +395,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item": //You'll simply skip ahead
           case "Consumable":
           case "Checkpoint":
-            logPlayerAction(actionString,"You walked away leaving it behind.");
+            logPlayerAction(actionString,"Walked away leaving it behind.");
             nextEncounter();
             break;
           case "Container":
           case "Altar":
-            logPlayerAction(actionString,"You left without investigating it.");
+            logPlayerAction(actionString,"Left without investigating it.");
             encounterIndex+=1; //Skip loot
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"You moved onwards feeling anxious.");
+            logPlayerAction(actionString,"Continued onwards, feeling anxious.");
             nextEncounter();
             break;
           case "Prop":
-            logPlayerAction(actionString,"You continued on your adventure.");
+            logPlayerAction(actionString,"Continued on their adventure.");
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"You walked far away from them.");
+            logPlayerAction(actionString,"Walked away leaving them behind.");
             nextEncounter();
             break;
 
@@ -423,36 +423,36 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap":
           case "Trap-Attack":
-            logPlayerAction(actionString,"You continued onwards away from that.");
+            logPlayerAction(actionString,"Continued onwards, away from that.");
             nextEncounter();
             break;
 
           case "Death":
-            logPlayerAction(actionString,"There is nothing to avoid anymore.");
+            logPlayerAction(actionString,"There is nothing to dodge anymore.");
             animateUIElement(playerInfoUIElement,"animate__headShake","0.7");
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Your felt your body become faster.");
+            logPlayerAction(actionString,"Felt their body become faster.");
             displayPlayerEffect("✨");
             playerStaMax+=1;
             playerSta+=1;
             nextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"Feels like nothing really happened.");
+            logPlayerAction(actionString,"Felt like nothing really happened.");
         }
         break;
 
       case 'button_block':
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"Your felt your brain grow wiser.");
+          logPlayerAction(actionString,"Felt getting somewhat wiser.");
           displayPlayerEffect("🧠");
           playerInt+=1;
           nextEncounter();
           break;
         }
-        if (!playerUseStamina(1,"You are too tired to raise your shield.")){
+        if (!playerUseStamina(1,"Was too tired to raise the shield.")){
             break;
           }
         switch (enemyType){
@@ -461,21 +461,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
           case "Demon":
-            enemyStaminaChangeMessage(-1,"You blocked their normal attack -1 🟢","You blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"Blocked their normal attack -1 🟢.","Blocked absolutely nothing -1 🟢.");
             displayPlayerEffect("🔰");
             break;
 
           case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"Blocked their swift attack -1 🟢.","Blocked absolutely nothing -1 🟢.");
             displayPlayerEffect("🔰");
             break;
 
           case "Heavy": //Too heavy or spirit attack
           case "Spirit":
-            if (enemyStaminaChangeMessage(-1,"You couldn't block their blow&nbsp;-"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block their blow&nbsp;-"+enemyAtk+" 💔.","n/a")){
               playerHit(enemyAtk);
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
+              enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢.");
             }
             break;
 
@@ -483,13 +483,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"There is nothing to block anymore.");
               break;
           default:
-            logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
+            logPlayerAction(actionString,"Blocked just for the sake of it -1 🟢.");
             displayPlayerEffect("🔰");
         }
         break;
 
         case 'button_cast':
-          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magic power.")) { break; }
+          if (enemyType!="Upgrade" && !playerUseMagic(1,"Not enough magic power.")) { break; }
           displayPlayerEffect("🪄");
         switch (enemyType){
           case "Recruit": //You should be faster if you have Mgk >= them
@@ -505,15 +505,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyMgk<=playerMgk){
               enemyHit(playerMgk+1,true); //Deal damage equal to your power before using it
             } else {
-              logPlayerAction(actionString,"They resisted your spell -1 🔵");
+              logPlayerAction(actionString,"They resisted the spell -1 🔵.");
             }
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
             }
             break;
 
-          case "Friend": //They'll be hit (above) and then get angry
-            logPlayerAction(actionString,"You've made them your adversary -1 🔵");
+          case "Friend": //They'll be hit (above) and then get angry //TODO: Check this, they might not get hit
+            logPlayerAction(actionString,"The spell turned them adversary -1 🔵.");
             displayEnemyEffect("‼️");
             enemyType="Standard";
             break;
@@ -521,7 +521,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Container":
-            var openMessage = "Your magic power anihilated it -1 🔵";
+            var openMessage = "The magic power anihilated it -1 🔵.";
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
             enemyAnimateDeathNextEncounter();
@@ -532,16 +532,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You spent magic power on dreaming -1 🔵");
+            logPlayerAction(actionString,"Spent magic power on dreaming -1 🔵.");
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"Your spell has trashed the place -1 🔵");
+            logPlayerAction(actionString,"The spell has trashed the place -1 🔵.");
             nextEncounter();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You chose magic +2 🔵 over agility -1 🟢");
+            logPlayerAction(actionString,"Chose magic +2 🔵 over agility -1 🟢.");
             playerMgkMax+=2;
             playerMgk+=2;
             playerStaMax-=1;
@@ -550,21 +550,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death": //TODO: Maybe I'll come up with something later
-            logPlayerAction(actionString,"Your magic powers have faded away.");
+            logPlayerAction(actionString,"Magic powers already faded away.");
             break;
 
           default:
-            logPlayerAction(actionString,"You wasted your magic power -1 🔵");
+            logPlayerAction(actionString,"Wasted magic power on nothing -1 🔵.");
         }
         break;
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
-        if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magic power.")) { break; }
+        if (enemyType!="Upgrade" && !playerUseMagic(1,"Not enough magic power.")) { break; }
         displayPlayerEffect("🪬");
         switch (enemyType){
           case "Undead":
           case "Demon":
-              logPlayerAction(actionString,"They liked that and grew stronger!");
+              logPlayerAction(actionString,"The curse made them even stronger!");
               animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
               enemyAtkBonus+=1;
               break;
@@ -575,20 +575,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Pet":
             if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
-              console.log("Enemy Atk: "+enemyAtk+" Enemy Atk Bonus: "+enemyAtkBonus)
               enemyAtkBonus-=1;
-              console.log("Enemy Atk: "+enemyAtk+" Enemy Atk Bonus: "+enemyAtkBonus)
-              logPlayerAction(actionString,"Your curse made them weaker -1 🔵");
+              logPlayerAction(actionString,"The curse made them weaker -1 🔵.");
             } else if (playerMgkMax <= enemyMgk) {
-              logPlayerAction(actionString,"They resisted your curse -1 🔵");
+              logPlayerAction(actionString,"They resisted the curse -1 🔵.");
             } else {
-              logPlayerAction(actionString,"Your curse had no effect on them -1 🔵");
+              logPlayerAction(actionString,"The curse had no effect on them -1 🔵.");
             }
             enemyAttackOrRest();
             break;
 
           case "Spirit": //They don't care
-            logPlayerAction(actionString,"They ignored whatever you tried.");
+            logPlayerAction(actionString,"The curse had no effect on it -1 🔵.");
             break;
 
           case "Friend": //They'll boost your stats
@@ -601,20 +599,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You brought yourself a nightmare -1 💔");
+            logPlayerAction(actionString,"Conjured themselves an extra nightmare -1 💔.");
             playerHit(1);
             displayPlayerCannotEffect();
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"You have despised the gods -1 🍀");
+            logPlayerAction(actionString,"The curse has angered the gods -1 🍀.");
             playerLck=-1;
             displayPlayerEffect("🪬");
             nextEncounter();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You sacrificed -1 💔 for power +2 🔵");
+            logPlayerAction(actionString,"Sacrificed health -1 💔 for power +2 🔵.");
             playerHit(1);
             playerHpMax-=1;
             playerMgkMax+=2;
@@ -623,47 +621,54 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death": //TODO: Maybe I'll come up with something later
-            logPlayerAction(actionString,"Curse all you want, it won't help.");
+            logPlayerAction(actionString,"Cannot move the lips to curse anymore.");
             break;
 
           default:
-            logPlayerAction(actionString,"The curse dispersed into the area -1 🔵");
+            logPlayerAction(actionString,"The curse dispersed into the area -1 🔵.");
         }
         break;
 
         case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
-          if (enemyType!="Upgrade" && !playerUseMagic(1,"You don't have enough magic power.")) { break; }
+          if (enemyType!="Upgrade" && !playerUseMagic(1,"Not enough magic power.")) { break; }
           displayPlayerEffect("🙏");
         switch (enemyType){
           case "Spirit":
           case "Demon":
             console.log("player mgk: "+playerMgk+" vs enemy mgk: "+enemyMgk)
             if ( enemyMgk <= playerMgk+1 ){ // +1 cause player already used mana
-              logPlayerAction(actionString,"You banished them from this world!");
+              logPlayerAction(actionString,"Banished them from this world!");
               enemyAnimateDeathNextEncounter();
               break;
             } else {
-              logPlayerAction(actionString,"You cannot overpower this entity!");
+              logPlayerAction(actionString,"Could not overpower this entity!");
             }
             enemyAttackOrRest();
             break;
 
-          case "Standard": //TODO: Heal self
+          case "Standard":
           case "Recruit":
           case "Swift":
           case "Heavy":
           case "Pet":
             if (playerHp<playerHpMax) {
               playerHp++
-              logPlayerAction(actionString,"The gods fulfiled your prayer +1 ❤️‍🩹");
+              logPlayerAction(actionString,"The gods fulfiled the prayer +1 ❤️‍🩹.");
             } else {
-              logPlayerAction(actionString,"You wasted magic on a healing prayer -1 🔵");
+              logPlayerAction(actionString,"Wasted magic on a healing prayer -1 🔵.");
             }
             enemyAttackOrRest();
             break;
 
           case "Undead": //Reduce attack if possible
-            if ((enemyAtkBonus+enemyAtk)>0){ enemyAtkBonus-=1;}
+            if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+              enemyAtkBonus-=1;
+              logPlayerAction(actionString,"The prayer made them weaker -1 🔵.");
+            } else if (playerMgkMax <= enemyMgk) {
+              logPlayerAction(actionString,"They resisted the prayer -1 🔵.");
+            } else {
+              logPlayerAction(actionString,"The prayer had no effect on them -1 🔵.");
+            }
             enemyAttackOrRest();
             break;
 
@@ -672,25 +677,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Your deep prayer was appreciated +1 🍀");
-            playerLck++
+            logPlayerAction(actionString,"The deep sleep prayer was appreciated +1 🍀.");
+            playerLck++;
             nextEncounter();
             break;
 
           case "Altar":
             var hpDiff= playerHpMax-playerHp;
             if (hpDiff>0) {
-              logPlayerAction(actionString,"Heavenly ray healed your wounds +"+hpDiff+" ❤️");
+              logPlayerAction(actionString,"A heavenly ray healed all wounds +"+hpDiff+" ❤️.");
               playerHp=playerHpMax;
             } else {
-              logPlayerAction(actionString,"Heavens geve you their blessing +1 🍀");
+              logPlayerAction(actionString,"The heavens granted a blessing +1 🍀.");
               playerLck+=1;
             }
             nextEncounter();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"The prayer has been heard above +1 🔵");
+            logPlayerAction(actionString,"The prayer has been heard above +1 🔵.");
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
@@ -701,7 +706,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"The prayer had no visible effect -1 🔵");
+            logPlayerAction(actionString,"The prayer had no visible effect -1 🔵.");
         }
         break;
 
@@ -710,11 +715,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"You need to be wiser to befriend them.");
+                logPlayerAction(actionString,"They got scared due to lack of empathy.");
                 enemyAttackOrRest();
                 break;
               }
-              logPlayerAction(actionString,"You petted it and became friends!");
+              logPlayerAction(actionString,"They agreed to join the adventure!");
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
               playerAtk+=enemyAtk;
@@ -725,13 +730,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
           case "Standard":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
-              logPlayerAction(actionString,"You grabbed them into stranglehold.");
+              logPlayerAction(actionString,"Knocked them out harmlessly.");
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random() * luckInterval);
               console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;✋&nbsp;They were spooked by your touch.");
+                logAction("🍀&nbsp;▸&nbsp;✋&nbsp;They were spooked by the touch.");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
@@ -739,7 +744,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               else {
                 displayPlayerCannotEffect();
                 enemyAttackOrRest();
-                logPlayerAction(actionString,"You were too slow, they dodged that.");
+                logPlayerAction(actionString,"Reached out too slowly, they dodged that.");
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
@@ -752,14 +757,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
-            logPlayerAction(actionString,"They swiftly evaded your grasp.");
+            logPlayerAction(actionString,"They effortlessly evaded the grasp.");
             displayEnemyEffect("🌀");
             enemyAttackOrRest();
             break;
 
           case "Heavy":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
-              logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
+              logPlayerAction(actionString,"Got overpowered and hit extra hard -"+enemyAtk*2+" 💔.");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
@@ -770,13 +775,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Trap-Attack":
           case "Undead":
-            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
+            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔.");
             playerHit(enemyAtk);
             displayEnemyEffect("✋");
             break;
 
           case "Container":
-            var openMessage = "There was something hidden inside.";
+            var openMessage = "Sucesfully found something.";
             displayEnemyEffect("👋");
             if (enemyMsg != ""){
               openMessage = enemyMsg;
@@ -792,7 +797,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"It slipped through your fingers.");
+            logPlayerAction(actionString,"The touch was not appreciated.");
             displayEnemyEffect("✋");
             nextEncounter();
             break;
@@ -805,15 +810,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Dream":
           case "Spirit":
-            logPlayerAction(actionString,"Your hand grasped through empty void.");
+            logPlayerAction(actionString,"Grasped right through them.");
             displayEnemyEffect("✋");
             break;
 
           case "Death":
-            logPlayerAction(actionString,"Your body reconnected with your soul.");
+            logPlayerAction(actionString,"Got reconnected with the soul.");
             displayEnemyEffect("✋");
-            var deathMessage="💤&nbsp;▸&nbsp;💭&nbsp;An unknown power resurrected you.<br>💤&nbsp;▸&nbsp;💭&nbsp;Hopefully it wasn't some tainted spell.";
-            logAction(deathMessage);
+
+            // Avoid log spam
+            // var deathMessage="💤&nbsp;▸&nbsp;💭&nbsp;An unknown power resurrected you.<br>💤&nbsp;▸&nbsp;💭&nbsp;Hopefully it wasn't some tainted spell.";
+            // logAction(deathMessage);
+
             if (checkpointEncounter == null){
               renewPlayer();
               encounterIndex=3; //Skip tutorial
@@ -828,7 +836,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You felt your chances increase.");
+            logPlayerAction(actionString,"Felt the chances increased +1 🍀.");
             displayPlayerEffect("🍀");
             playerLck+=1;
             nextEncounter();
@@ -836,7 +844,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Checkpoint": //Save and rest to full HP and Sta
             displayPlayerEffect("💾");
-            logPlayerAction(actionString,"You embraced the "+enemyName+".");
+            logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
             checkpointEncounter=encounterIndex;
@@ -844,7 +852,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             curtainFadeInAndOut("<p style=\"color:#EEBC1D;\">&nbsp;Flame Embraced&nbsp;");
             break;
           default:
-            logPlayerAction(actionString,"You touched it and nothing happened.");
+            logPlayerAction(actionString,"Touched it, nothing happened.");
             displayEnemyEffect("✋");
           }
         break;
@@ -853,7 +861,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Recruit": //If they are tired and you are smarter they join you
             if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
-              logPlayerAction(actionString,"You convinced them to join your party!");
+              logPlayerAction(actionString,"Convinced them to join the adventure!");
               displayPlayerEffect(enemyEmoji);
               animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
               playerPartyString+=" "+enemyEmoji
@@ -869,32 +877,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Demon":
             if (enemyInt < playerInt){
-              logPlayerAction(actionString,"You convinced them to walk away.");
+              logPlayerAction(actionString,"Convinced them to disengage.");
               displayPlayerEffect("💬");
               nextEncounter();
               break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
-              logPlayerAction(actionString,"That made them more angry!");
+              logPlayerAction(actionString,"They strongly despised the remarks!");
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
               var speechChance = Math.floor(Math.random() * luckInterval);
-              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
               if ( speechChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
+                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed the lies and left.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
               }
               else {
-                logPlayerAction(actionString,"They ignored whatever you said.");
+                logPlayerAction(actionString,"They ignored whatever has been said.");
               }
             }
             enemyAttackOrRest();
             break;
 
           case "Undead": //They don't care
-            logPlayerAction(actionString,"They ignored whatever you said.");
+            logPlayerAction(actionString,"They ignored whatever has been said.");
             break;
 
           case "Friend": //They'll boost your stats
@@ -907,12 +914,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"You can not move your lips to speak.");
+            logPlayerAction(actionString,"Cannot move the lips to speak.");
             displayPlayerCannotEffect();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You sacrificed -1 💔 to get lucky +3 🍀");
+            logPlayerAction(actionString,"Sacrificed health -1 💔 to get lucky +3 🍀.");
             playerUseStamina(1);
             playerHpMax-=1;
             playerHp-=1
@@ -922,7 +929,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"Your voice echoes around the area.");
+            logPlayerAction(actionString,"The voice echoed around the area.");
             displayPlayerEffect("💬");
         }
         break;
@@ -957,13 +964,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
-            logPlayerAction(actionString,"You rested well, recovering all powers.");
+            logPlayerAction(actionString,"Rested well, recovering all powers.");
             break;
 
           case "Friend": //They'll leave if you'll rest
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta);
-            logPlayerAction(actionString,"They got tired of waiting for you and left.");
+            logPlayerAction(actionString,"They got tired of waiting and left.");
             nextEncounter();
             break;
 
@@ -972,12 +979,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"You decided against gaining a perk.");
+            logPlayerAction(actionString,"Decided against gaining a perk.");
             nextEncounter();
             break;
 
           default:
-            logPlayerAction(actionString,"You cannot rest, monsters are nearby.");
+            logPlayerAction(actionString,"Cannot rest, monsters are nearby.");
             displayPlayerCannotEffect();
             displayPlayerEffect("👀");
             break;
@@ -1022,15 +1029,15 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage,magicType=false){
-  var hitMsg = "You hit them with an attack -"+damage+" 💔";
-  if (magicType==true) {actionString="🪄&nbsp;"; hitMsg="You scorched them with a spell -"+damage+" 💔";}
+  var hitMsg = "Hit them with an attack -"+damage+" 💔";
+  if (magicType==true) {actionString="🪄&nbsp;"; hitMsg="Scorched them with a spell -"+damage+" 💔.";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
   console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
-    logAction("🍀&nbsp;▸&nbsp;⚔️&nbsp;Your strike was blessed with luck.");
-    hitMsg="Your attack hit them critically -"+(damage+2)+" 💔";
+    logAction("🍀&nbsp;▸&nbsp;⚔️&nbsp;The strike was blessed with luck.");
+    hitMsg="The attack hit them critically -"+(damage+2)+" 💔.";
     displayPlayerEffect("🍀");
     damage+=2;
   }
@@ -1040,7 +1047,7 @@ function enemyHit(damage,magicType=false){
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀&nbsp;You successfully eliminated them.");
+    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀&nbsp;Successfully eliminated them.");
     enemyAnimateDeathNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
@@ -1048,14 +1055,14 @@ function enemyHit(damage,magicType=false){
 }
 
 function enemyKicked(){
-  logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
+  logPlayerAction(actionString,"Kicked them afar regaining +2 🟢.");
   displayEnemyEffect("🦶");
   playerGetStamina(2,true);
   enemyRest(1);
 }
 
 function enemyKnockedOut(){
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤&nbsp;You harmlessly knocked them out.");
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤&nbsp;Harmlessly knocked them out.");
   displayEnemyEffect("💤");
   enemyAnimateDeathNextEncounter();
 }
@@ -1063,13 +1070,13 @@ function enemyKnockedOut(){
 function enemyAttackOrRest(){
   var staminaChangeMsg;
   if (enemySta-enemyStaLost > 0) {
-    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked you -"+enemyAtk+" 💔"}
+    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked -"+enemyAtk+" 💔."}
     else {
-        staminaChangeMsg = "The enemy siphoned your health -"+enemyAtk+" 💔";
+        staminaChangeMsg = "The enemy siphoned health -"+enemyAtk+" 💔.";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
     if (enemyAtk+enemyAtkBonus<=0){
-      staminaChangeMsg="The enemy is too weak to harm you."
+      staminaChangeMsg="The enemy is too weak to do any harm."
     } else {
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
       playerHit(enemyAtk+enemyAtkBonus);
@@ -1119,12 +1126,12 @@ function animateVersus(time = "1"){
 function playerGetStamina(stamina,silent = false){
   if (playerSta >= playerStaMax) { //Cannot get more
     if (!silent){
-      logPlayerAction(actionString,"You just wasted a moment of your life.");
+      logPlayerAction(actionString,"Wasted a moment of their life.");
     }
     return false;
   } else {
     if (!silent){
-      logPlayerAction(actionString,"You rested and regained energy +" + stamina + " 🟢");
+      logPlayerAction(actionString,"Rested and regained energy +" + stamina + " 🟢.");
     }
     playerSta += stamina;
     if (playerSta > playerStaMax){
@@ -1166,8 +1173,14 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg){
   if (enemyMsg != "") {
     gainedString = enemyMsg;
   } else {
-    gainedString="You felt becoming stronger";
+    gainedString="Felt becoming stronger";
   }
+
+  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMkg)<=0){ //TODO: Properly support negative gains = curses
+    displayPlayerEffect("🪬");
+    gainedString="Got cursed by the gods"+bonusMkg+" 🔵.";
+  }
+
   if (bonusHp > 0) {
     playerHpMax += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
@@ -1195,10 +1208,9 @@ function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg){
     gainedString += " +"+bonusInt + " 🧠";
     displayPlayerEffect("🧠");
   }
-  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMkg)<=0){
-    displayPlayerEffect("🪬");
-    gainedString="You were cursed "+bonusMkg+" 🔵";
-  }
+
+  gainedString+="."
+
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
   logPlayerAction(actionString,gainedString);
   nextEncounter();
@@ -1221,10 +1233,11 @@ function playerConsumed(){
       playerGetStamina(missingSta,true);
       consumedString += "+"+missingSta + " 🟢";
     }
+    consumedString+="."
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
     var tooFullStaLost = 2;
-    consumedString="You lost energy due to overeating -"+tooFullStaLost+" 🟢";
+    consumedString="Lost energy due to overeating -"+tooFullStaLost+" 🟢.";
     animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
     playerUseStamina(tooFullStaLost);
   }
@@ -1235,7 +1248,7 @@ function playerHit(incomingDamage){
   var hitChance = Math.floor(Math.random() * luckInterval);
   console.log("hitChance: "+hitChance+"/"+luckInterval+" lck: "+playerLck) //Chance to not get hit
   if ( hitChance <= playerLck ){
-    logAction("🍀&nbsp;▸&nbsp;💢&nbsp;You avoided receiving the damage.");
+    logAction("🍀&nbsp;▸&nbsp;💢&nbsp;Luckily avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -1248,7 +1261,7 @@ function playerHit(incomingDamage){
     console.log("deathChance: "+deathChance+"/"+(luckInterval*3)+" lck: "+playerLck)
     if ( deathChance <= playerLck ){
       playerHp+=1;
-      logAction("🍀&nbsp;▸&nbsp;💀&nbsp;Luckily you got a second chance to live.");
+      logAction("🍀&nbsp;▸&nbsp;💀&nbsp;Luckily got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
@@ -1261,7 +1274,7 @@ function playerHit(incomingDamage){
 //End Game
 function gameOver(){
   //Reset progress to death encounter
-  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀&nbsp;You were killed, the adventure ends. ");
+  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀&nbsp;Got killed, ending the adventure. ");
   adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
@@ -1271,12 +1284,14 @@ function gameOver(){
 }
 
 function gameEnd(){
-  var winMessage="🧠&nbsp;▸&nbsp;💭&nbsp;You just had a deja vu, didn't you?<br>🧠&nbsp;▸&nbsp;💭&nbsp;It feels like you already did this. (NG+)";
+  var winMessage="🧠&nbsp;▸&nbsp;💭&nbsp;Just had a deja vu, feels really familiar (NG+).";
   logAction(winMessage);
 
   //Reset progress to game start
   resetSeenEncounters();
   encounterIndex=4;
+
+  //TODO: Proper credits!!!
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
 }
 
@@ -1319,7 +1334,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="🟢&nbsp;Stamina";
       document.getElementById('button_block').innerHTML="🧠&nbsp;Wisdom";
       document.getElementById('button_cast').innerHTML="🔮&nbsp;Sorcery";
-      document.getElementById('button_curse').innerHTML="🩸&nbsp;Scourge";
+      document.getElementById('button_curse').innerHTML="🩸&nbsp;Hatred";
       document.getElementById('button_pray').innerHTML="📿&nbsp;Faith";
       document.getElementById('button_grab').innerHTML="🍀&nbsp;Fortune";
       document.getElementById('button_speak').innerHTML="🪙&nbsp;Greed"; //Lose HP but gain luck +3
@@ -1485,7 +1500,7 @@ function generateCharacterShareString(){
 
 function copyAdventureToClipboard(){
   displayPlayerEffect("💌");
-  logPlayerAction(actionString,"Your legend was copied into clipboard.");
+  logPlayerAction(actionString,"The legend was copied into clipboard.");
   adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;"," ");
   adventureLog += generateCharacterShareString();
   adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
