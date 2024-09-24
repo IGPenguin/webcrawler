@@ -770,7 +770,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               else {
                 displayPlayerCannotEffect();
                 enemyAttackOrRest();
-                logPlayerAction(actionString,"Reached out too slowly, they dodged that.");
+                logPlayerAction(actionString,"Almost grabbed them.");
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
