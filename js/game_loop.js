@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "fpm, ver. 9/23/24"
+var versionCode = "fpm, ver. 9/24/24"
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -66,7 +66,8 @@ var luckInterval = 24; //Lower to increase chances
 
 var actionString;
 //Initial action log below
-var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
+//var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
+var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;The mind dreams, the body still sleeps.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -1062,7 +1063,7 @@ function enemyKnockedOut(){
 function enemyAttackOrRest(){
   var staminaChangeMsg;
   if (enemySta-enemyStaLost > 0) {
-    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked you for -"+enemyAtk+" 💔"}
+    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked you -"+enemyAtk+" 💔"}
     else {
         staminaChangeMsg = "The enemy siphoned your health -"+enemyAtk+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
@@ -1070,7 +1071,9 @@ function enemyAttackOrRest(){
     if (enemyAtk+enemyAtkBonus<=0){
       staminaChangeMsg="The enemy is too weak to harm you."
     } else {
+      enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
       playerHit(enemyAtk+enemyAtkBonus);
+      return;
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
   } else {
