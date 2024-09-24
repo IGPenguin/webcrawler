@@ -1337,13 +1337,16 @@ function adjustEncounterButtons(){
     case "Container":
       document.getElementById('button_grab').innerHTML="👋 Search";
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
     case "Consumable":
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_grab').innerHTML="🍴 Consume";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
     case "Item":
     case "Trap":
     case "Trap-Roll":
@@ -1351,6 +1354,7 @@ function adjustEncounterButtons(){
     case "Prop":
     case "Dream":
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
     case "Recruit":
         if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
@@ -1382,6 +1386,7 @@ function adjustEncounterButtons(){
     case "Checkpoint":
       document.getElementById('button_grab').innerHTML="💾 Save";
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
   }
 }
