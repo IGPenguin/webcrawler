@@ -559,7 +559,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
         if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
-        if (enemyType!="Death") {ddisplayPlayerEffect("🪬");}
+        if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
         switch (enemyType){
           case "Undead":
@@ -1095,12 +1095,11 @@ function nextEncounter(){
 
   //Fullscreen Curtain
   previousArea = areaName;
+  enemyRenew();
   loadEncounter(encounterIndex);
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("&nbsp;"+areaName+"&nbsp;");
   }
-
-  enemyRenew();
   animateUIElement(cardUIElement,"animate__fadeIn","0.8");
 }
 
