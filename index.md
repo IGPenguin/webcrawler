@@ -21,7 +21,8 @@ layout: default
     font-size:28px;
     letter-spacing: 1.5px;
     -webkit-text-stroke: 6.5px black;
-      paint-order: stroke fill;">Forgotten Forest</h2>
+      paint-order: stroke fill;
+        position:relative; z-index:2;">Forgotten Forest</h2>
 
 <div class="card" id="id_card" style="background-color:#202020;">
 
@@ -99,7 +100,8 @@ layout: default
     font-size:30px;
       letter-spacing:1.5px;
       -webkit-text-stroke: 5px black;
-        paint-order: stroke fill;">VS</h3>
+        paint-order: stroke fill;
+          position:relative; z-index:2;">VS</h3>
 
 <div class="toolbar-card" id = "id_toolbar_card" style="padding-bottom:6px;
   margin-top:4px;
