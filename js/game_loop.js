@@ -67,7 +67,7 @@ var luckInterval = 24; //Lower to increase chances
 var actionString;
 //Initial action log below
 //var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
-var actionLog = "💤▸ 💭 The mind dreams, the body sleeps.<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤&nbsp;▸&nbsp;💭 The mind dreams, the body sleeps.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -1046,7 +1046,7 @@ function enemyHit(damage,magicType=false){
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "▸ " + "💀 Successfully eliminated them.");
+    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 Successfully eliminated them.");
     enemyAnimateDeathNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
@@ -1061,7 +1061,7 @@ function enemyKicked(){
 }
 
 function enemyKnockedOut(){
-  logAction(enemyEmoji + " ▸ " + "💤 Harmlessly knocked them out.");
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out.");
   displayEnemyEffect("💤");
   enemyAnimateDeathNextEncounter();
 }
@@ -1243,7 +1243,7 @@ function playerHit(incomingDamage){
   var hitChance = Math.floor(Math.random() * luckInterval);
   console.log("hitChance: "+hitChance+"/"+luckInterval+" lck: "+playerLck) //Chance to not get hit
   if ( hitChance <= playerLck ){
-    logAction("🍀 ▸ 💢 Luckily avoided receiving the damage.");
+    logAction("🍀&nbsp;▸&nbsp;💢 Luckily avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -1256,7 +1256,7 @@ function playerHit(incomingDamage){
     console.log("deathChance: "+deathChance+"/"+(luckInterval*3)+" lck: "+playerLck)
     if ( deathChance <= playerLck ){
       playerHp+=1;
-      logAction("🍀 ▸ 💀 Luckily got a second chance to live.");
+      logAction("🍀&nbsp;▸&nbsp;💀 Luckily got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
@@ -1269,7 +1269,7 @@ function playerHit(incomingDamage){
 //End Game
 function gameOver(){
   //Reset progress to death encounter
-  logAction(enemyEmoji+" ▸ 💀 Got killed, ending the adventure. ");
+  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 Got killed, ending the adventure. ");
   adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
@@ -1292,7 +1292,7 @@ function gameEnd(){
 
 //Logging
 function logPlayerAction(actionString,message){
-  actionString = actionString.substring(0,actionString.indexOf(" ")) + "▸ " + enemyEmoji + " " + message + "<br>";
+  actionString = actionString.substring(0,actionString.indexOf(" ")) + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
