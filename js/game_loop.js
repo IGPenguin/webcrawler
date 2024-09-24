@@ -53,7 +53,7 @@ var playerPartyString = "";
 var playerHpDefault = 3;
 var playerStaDefault = 2;
 var playerLckDefault = 0;
-var playerMgkDefault = 1;
+var playerMgkDefault = 0;
 
 var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
@@ -201,8 +201,7 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;"
   playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;"
-  playerStatusString += "&nbsp;&nbsp;🔵 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);
-  playerStatusString += "&nbsp;&nbsp;"
+  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
   playerStatusString += "&nbsp;&nbsp;⚔️ " + "◆".repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
