@@ -1266,6 +1266,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   if (bonusMgk != 0){
+    playerMgkMax += parseInt(bonusMgk);
     playerMgk += parseInt(bonusMgk);
     gainedString += changeSign+bonusMgk + " 🔵";
     displayPlayerEffect("🪬");
