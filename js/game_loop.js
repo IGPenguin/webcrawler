@@ -41,11 +41,13 @@ function renewPlayer(){
 
 //Generators
 function getCharacterName(){
-  const random_names = ["Nameless Hero", "Worthless Peasant", "Reincarnated Soul", "Wannabe Villain", "Promising Beggar", "Undead Lumberjack", "Penguin IV./XX.","Jesus H. Christ","Anthropomorphic Lizard","Unknown Soldier"];
+  const random_names = ["Nameless Hero", "Worthless Peasant", "Reincarnated Soul", "Promising Villain","Unknown Soldier"];
+  //"Penguin IV./XX.","Jesus H. Christ","Anthropomorphic Lizard"
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 var playerName = getCharacterName();
+var playerNumber = 1;
 var playerLootString = "";
 var playerPartyString = "";
 var playerHpDefault = 3;
@@ -404,6 +406,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item": //You'll simply skip ahead
           case "Consumable":
           case "Checkpoint":
+          case "Fishing":
             logPlayerAction(actionString,"Walked away leaving it behind.");
             nextEncounter();
             break;
@@ -602,7 +605,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             displayPlayerEffect("💬");
             break;
 
@@ -643,6 +646,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (enemyType!="Death") {displayPlayerEffect("🙏");}
 
         switch (enemyType){
+          case "Curse":
+            logPlayerAction(actionString,"Broken the curse by a prayer!");
+            enemyAnimateDeathNextEncounter();
+            break;
+
           case "Spirit":
           case "Demon":
             if ( enemyMgk <= playerMgk+1 ){ // +1 cause player already used mana
@@ -682,7 +690,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMkg);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMkg);
             break;
 
           case "Dream":
@@ -722,6 +730,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_grab': //Player vs encounter stamina decides the success
         switch (enemyType){
+          case "Curse":
+            logPlayerAction(actionString,"Reached forward with their hands.");
+            break;
+
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
@@ -804,7 +816,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("✋");
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             break;
 
           case "Friend":
@@ -822,7 +834,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Fishing":
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("🪝");
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             break;
 
           case "Dream":
@@ -833,6 +845,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Death":
             logPlayerAction(actionString,"Got reconnected with the soul.");
+            playerNumber++;
+            playerName = playerName+" "+playerNumber+"."
             displayEnemyEffect("✋");
 
             // Avoid log spam
@@ -922,7 +936,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             displayPlayerEffect("💬");
             break;
 
@@ -953,6 +967,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_sleep':
         switch (enemyType){
+
+          case "Curse": //Waiting triggers the curse
+            playerChangeStats();
+            //logPlayerAction(actionString,"Negative effects faded away.");
+            break;
+
           case "Standard": //You get hit if they have stamina
           case "Swift":
           case "Heavy":
@@ -976,12 +996,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Prop":
           case "Dream":
           case "Container":
+          case "Container-Consume":
           case "Checkpoint":
           case "Altar":
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
-            logPlayerAction(actionString,"Rested well, recovering all powers.");
+            logPlayerAction(actionString,"Rested well, recovering all resources.");
             break;
 
           case "Friend": //They'll leave if you'll rest
@@ -1197,19 +1218,19 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMgk){  //TODO: Properly support negative gains = curses
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk){  //TODO: Properly support negative gains = curses
   var gainedString;
   var changeSign=" +";
 
-  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk)<=0){
+  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk) >= 0){
+    gainedString="Felt becoming stronger";
+  } else {
     gainedString="Got cursed by it";
     changeSign=" "
-  } else {
-    gainedString="Felt becoming stronger";
   }
 
   if (enemyMsg != "") {
-    gainedString = enemyMsg;
+    gainedString = enemyMsg.replace("."," ");
   }
 
   if (bonusHp != 0) {
@@ -1360,7 +1381,7 @@ function resetEncounterButtons(){
   document.getElementById('button_curse').innerHTML="🪬 Curse";
   document.getElementById('button_pray').innerHTML="🙏 Pray";
   document.getElementById('button_grab').innerHTML="✋ Grab";
-  document.getElementById('button_sleep').innerHTML="💤 Rest";
+  document.getElementById('button_sleep').innerHTML="💤 Wait";
   document.getElementById('button_speak').innerHTML="💬 Speak";
 }
 
@@ -1392,18 +1413,26 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+    case "Curse":
+      document.getElementById('button_grab').innerHTML="✋ Reach";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
     case "Item":
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
     case "Prop":
     case "Dream":
+      document.getElementById('button_roll').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
     case "Fishing":
+      document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_grab').innerHTML="🎣 Fishing";
       break;
+
     case "Recruit":
         if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
           document.getElementById('button_speak').innerHTML="💬 Recruit";
@@ -1411,18 +1440,21 @@ function adjustEncounterButtons(){
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
           document.getElementById('button_grab').innerHTML="🦶 Kick";
         }
+        document.getElementById('button_roll').innerHTML="❤️‍🩹 Heal";
         break;
     case "Pet":
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
         document.getElementById('button_grab').innerHTML="👋 Pet";
       }
     case "Standard":
+      document.getElementById('button_roll').innerHTML="❤️‍🩹 Heal";
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
     case "Heavy":
     case "Swift":
+      document.getElementById('button_roll').innerHTML="❤️‍🩹 Heal";
       if ((enemySta-enemyStaLost)==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
