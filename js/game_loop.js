@@ -408,6 +408,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container":
+          case "Container-Consume":
           case "Altar":
             logPlayerAction(actionString,"Left without investigating it.");
             encounterIndex+=1; //Skip loot
@@ -790,6 +791,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Container":
+          case "Container-Consume":
             var openMessage = "Sucesfully found something.";
             displayEnemyEffect("👋");
             if (enemyMsg != ""){
@@ -815,6 +817,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerConsumed();
             displayEnemyEffect("🍽");
             enemyAnimateDeathNextEncounter();
+            break;
+
+          case "Fishing":
+            playerLootString+=" "+enemyEmoji;
+            displayEnemyEffect("🪝");
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             break;
 
           case "Dream":
@@ -1191,7 +1199,7 @@ function playerUseMagic(magic, message = ""){
 
 function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMgk){  //TODO: Properly support negative gains = curses
   var gainedString;
-  var changeSign=" ";
+  var changeSign=" +";
 
   if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk)<=0){
     gainedString="Got cursed by it";
@@ -1348,7 +1356,7 @@ function resetEncounterButtons(){
   document.getElementById('button_attack').innerHTML="⚔️ Attack";
   document.getElementById('button_block').innerHTML="🔰 Block";
   document.getElementById('button_roll').innerHTML="🌀 Roll";
-  document.getElementById('button_cast').innerHTML="🪄 Cast";
+  document.getElementById('button_cast').innerHTML="🪄 Spell";
   document.getElementById('button_curse').innerHTML="🪬 Curse";
   document.getElementById('button_pray').innerHTML="🙏 Pray";
   document.getElementById('button_grab').innerHTML="✋ Grab";
@@ -1376,6 +1384,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
     case "Consumable":
+    case "Container-Consume":
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_grab').innerHTML="🍴 Consume";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
@@ -1391,6 +1400,9 @@ function adjustEncounterButtons(){
     case "Dream":
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
+    case "Fishing":
+      document.getElementById('button_grab').innerHTML="🎣 Fishing";
       break;
     case "Recruit":
         if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
