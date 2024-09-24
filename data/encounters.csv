@@ -1,45 +1,12 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;team;desc;message
 Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;Failed Destiny;<b>🦆 Tweet</b> this attempt to appear in credits.<br><b>✋ Grab</b> the soul to start another adventure.;
-Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Hazy Thought;The hero is wandering an endless road.<br>Continue ahead using <b>👣 Walk</b>.;
-Depths of Slumber;👿;Internal Demon;Demon;1;1;1;0;0;0;Imaginary Entity;<b>🌀 Roll</b> or <b>🔰 Block</b> to avoid getting hit.<br>Enemies spend <b>🟢 Energy</b> to attack.;
-Depths of Slumber;🦐;Dream Shrimp;Consumable;0;0;0;0;0;0;Spectral Food;<b>🖐 Grab</b> any helpful items along the way.<br><b>💤 Rest</b> to regain <b>🟢 Energy</b> and <b>🔵 Mana</b>.;
-Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a character perk</b> to shape the skills.<br>Some may come with a sacrifice.;
-Forgotten Forest;🌳;Silent Grove;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees all around.<br><b>👣  Walk</b> to explore further ahead.;
-Forgotten Forest;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for the eyes.<br>Quickly cover before the impact.;Both eyes were pecked
-Forgotten Forest;🪨;Suspicious Boulder;Container;0;0;0;0;0;0;Natural Resource;Just a piece of rock laying on the ground.<br>No reason to bother stopping here.;Lifted the boulder.
-Forgotten Forest;🪱;Raving Earthworm;Standard;1;2;1;0;2;0;Disturbed Arthropod;The poor thing has a sunlight shock.<br>Looks like it got a burst of energy.;Caught a deadly disease
-Forgotten Forest;🦝;Rabid Raccoon;Standard;1;1;2;0;1;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;
-Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>Perhaps make use of it.;
-Forgotten Forest;🦌;Frantic Deer;Standard;2;2;1;0;2;0;Wild Animal;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
-Forgotten Forest;⛺️;Abandoned Tent;Container;0;0;0;0;0;0;Shelter;Cozy place of rest for whoever set it up.<br>Chance to loot for someone else.;
-Forgotten Forest;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>There are notes around the edges.;Awareness was enhanced
-Forgotten Forest;🍗;Roasted Chicken;Consumable;0;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
-Forgotten Forest;🧑‍🌾;Disturbed Druid;Recruit;3;1;3;0;1;2;Hostile Stranger;Noticed suspicious activity in their camp.<br><i><b>\"Never should have come here!\"</b></i>;
-Forgotten Forest;🌲;Pine Grove;Container;0;0;0;0;0;0;Suspense Area;Another bunch of trees in the forest.<br>A chance to catch a breath.;
-Forgotten Forest;🦉;Engaging Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares ahead without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
-Forgotten Forest;🐕;Stray Dog;Pet;2;1;1;0;1;0;Wild Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
-Forgotten Forest;⛪️;Deserted Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br>Better not stick around.;
-Forgotten Forest;🐻;Mangy Bear;Heavy;4;1;2;0;3;0;Sick Animal;It appears to be very upset.<br>Beware its mighty attack.;Was torn to pieces
-Flourishing Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
-Flourishing Grove;🐀;Dire Rat;Swift;2;1;1;0;3;0;Wild Animal;It jumped out of nowhere really fast.<br>Better raise the shield.;
-Flourishing Grove;🗿;Megalithic Statue;Altar;0;0;0;0;0;1;Ancient Monument;A giant stone facing the heavens.<br>Must be thousands years old.;
-Flourishing Grove;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Both eyes were pecked
-Flourishing Grove;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
-Flourishing Grove;🔪;Sharp Knife;Item;0;1;0;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;Took it for later use
-Flourishing Grove;🦡;Honey Badger;Standard;3;1;2;0;1;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
-Flourishing Grove;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
-Flourishing Grove;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insect;The bees instantly swarmed the area.<br>There's nowhere to run;
-Flourishing Grove;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
-Flourishing Grove;🥩;Boar Meat;Trap;0;2;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat
-Flourishing Grove;🏚️;Abandoned House;Container;0;0;0;0;0;0;Deserted Building;This house has been long neglected.<br>Maybe there's something valuable left?;
-Flourishing Grove;🫙;Empty Jar;Item;1;0;0;0;0;0;Trash;Appears to be clean and empty.<br>Might come in handy later.;A cold breeze escaped the jar
-Flourishing Grove;🍄;Suspicious Mushroom;Container;0;0;0;0;0;0;Fungal Growth;Fruiting body of an unrecognisable species.<br>Could it be poisonous?;Resilience filled the veins
-Flourishing Grove;🎭;Psychotic Episode;Altar;0;0;0;0;2;0;Mind State;Cannot tell up either up from down.<br>Nor left from right.;What just happened?
+Flourishing Grove;🍄;Suspicious Mushroom;Container;0;0;0;0;0;0;Fungal Growth;Exuisite exemplar of an unrecognisable species.<br>Could it be poisonous?;Was absolutely desoriented.
+Flourishing Grove;🎭;Psychotic Episode;Friend;-1;0;0;0;2;0;Mind State;Cannot tell up either up from down.<br>Nor left from right.;What just happened?
+Flourishing Grove;🌊;Wavy Pond;Container;0;0;0;0;0;0;Fishing Spot;The water has a strange glow.<br>Something sparkles at the bottom.;Grabbed something from the bottom.
+Flourishing Grove;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Flourishing Grove;🦨;Forest Skunk;Swift;2;1;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
 Flourishing Grove;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
 Flourishing Grove;🐸;Frog-faced Giant;Heavy;5;1;3;0;5;0;Terrible Monstrosity;Foul stench reeks from it's mouth.<br>Bloodshot eyes blink slowly.;Got squashed like a bug
-Flourishing Grove;🌊;Wavy Pond;Container;5;1;3;0;5;1;Fishing Spot;The water has a strange glow.<br>Something sparkles at the bottom.;
-Flourishing Grove;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Flourishing Grove;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;
 Flourishing Grove;🦄;Rainbow Unicorn;Friend;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
 Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;

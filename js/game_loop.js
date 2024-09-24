@@ -3,6 +3,7 @@
 
 //Tech init
 var versionCode = "fpm, ver. 9/24/24"
+var areaUIElement;
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -47,7 +48,7 @@ function getCharacterName(){
 var playerName = getCharacterName();
 var playerLootString = "";
 var playerPartyString = "";
-var playerHpDefault = 2;
+var playerHpDefault = 3;
 var playerStaDefault = 2;
 var playerLckDefault = 0;
 var playerMgkDefault = 1;
@@ -214,6 +215,7 @@ function redraw(){
   }
 
   //Encounter UI
+  areaUIElement = document.getElementById('id_area');
   cardUIElement = document.getElementById('id_card');
   enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
@@ -242,7 +244,7 @@ function redraw(){
   enemyStatusString += "&nbsp;&nbsp;"
 
   if (enemyMgk > 0) {enemyStatusString += "&nbsp;🔵 " + "◆".repeat(enemyAtk);}
-      //else { enemyStatusString += "&nbsp;🔵 " + "〜";} //TODO: Maybe show 0 magic?
+      else { enemyStatusString += "&nbsp;🔵 " + "〜";} //TODO: Maybe show 0 magic?
 
   switch(enemyType){
     case "Standard":
@@ -257,17 +259,18 @@ function redraw(){
     case "Trap":
     case "Friend":
       enemyStatusString = "";
-      if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
-      if (enemyAtk>0) {enemyStatusString += "⚔️ ??&nbsp;&nbsp;";}
-      if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
-      if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
-      if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
+      if (enemyHp!=0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
+      if (enemyAtk!=0) {enemyStatusString += "⚔️ ??&nbsp;&nbsp;";}
+      if (enemySta!=0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
+      if (enemyLck!=0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
+      if (enemyInt!=0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
+      if (enemyMgk!=0) {enemyStatusString += "🔵 ??&nbsp;&nbsp;";}
       break;
     case "Consumable":
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
       break;
     default:
-      enemyStatusString = "⁉️ 〜"; //Dream, Prop, Upgrade etc.
+      enemyStatusString = "⁉️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">No details</i>"; //Dream, Prop, Upgrade etc.
       break;
   }
 
@@ -855,7 +858,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHp=playerHpMax;
             checkpointEncounter=encounterIndex;
             enemyAnimateDeathNextEncounter();
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D; -webkit-text-stroke: 6.5px black;\">&nbsp;Flame Embraced&nbsp;");
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;Flame Embraced&nbsp;");
             break;
           default:
             logPlayerAction(actionString,"Touched it, nothing happened.");
@@ -1094,10 +1097,16 @@ function enemyAttackOrRest(){
   }
 }
 
-function nextEncounter(){
-  animateVersus(1);
+function nextEncounter(animateArea=true){
   var versusText = document.getElementById('id_versus');
-  toogleUIElement(versusText,"block");
+  toogleUIElement(versusText,"block"); animateVersus();
+  console.log(areaUIElement)
+
+  if (animateArea) {
+    animateUIElement(areaUIElement,"animate__flipInX","1");
+    toogleUIElement(areaUIElement,"block");
+  }
+
   adventureEncounterCount+=1;
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
@@ -1107,16 +1116,19 @@ function nextEncounter(){
   enemyRenew();
   loadEncounter(encounterIndex);
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut("&nbsp;"+areaName+"&nbsp;");
+    curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","0.8");
 }
 
 function enemyAnimateDeathNextEncounter(){
+  //animateUIElement(areaUIElement,"animate__flipInX","1");
+  toogleUIElement(areaUIElement);
+
   var versusText = document.getElementById('id_versus');
   toogleUIElement(versusText);
   animateUIElement(cardUIElement,"animate__flipOutY","1"); //Maybe this will look better?
-  //animateUIElement(cardUIElement,"animate__fadeOutDown","0.75");
+
   var animationHandler = function(){
     nextEncounter();
     redraw();
@@ -1125,7 +1137,7 @@ function enemyAnimateDeathNextEncounter(){
   cardUIElement.addEventListener('animationend',animationHandler);
 }
 
-function animateVersus(time = "1"){
+function animateVersus(time = "1.4"){
   var versusText = document.getElementById('id_versus');
   toogleUIElement(versusText,"absolute");
   animateUIElement(versusText,"animate__flash",time);
