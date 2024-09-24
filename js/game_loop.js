@@ -383,7 +383,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Spirit":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"Dodged their standard attack -1 🟢","The roll was a waste of energy -1 🟢");
+              enemyStaminaChangeMessage(-1,"Dodged a standard attack -1 🟢","The roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -397,7 +397,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Heavy":
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"Dodged their heavy attack -1 🟢","Rolled around wasting energy  -1 🟢");
+              enemyStaminaChangeMessage(-1,"Dodged a heavy attack -1 🟢","Rolled around wasting energy  -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -421,7 +421,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Prop":
-            logPlayerAction(actionString,"Continued on their adventure.");
+            logPlayerAction(actionString,"Continued on the adventure.");
             nextEncounter();
             break;
           case "Friend":
@@ -445,7 +445,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt their body become faster.");
+            logPlayerAction(actionString,"Felt the body becoming faster.");
             displayPlayerEffect("✨");
             playerStaMax+=1;
             playerSta+=1;
@@ -473,18 +473,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
           case "Demon":
-            enemyStaminaChangeMessage(-1,"Blocked their normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🔰");
             break;
 
           case "Swift":
-            enemyStaminaChangeMessage(-1,"Blocked their swift attack -1 🟢","Blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"Blocked a swift attack -1 🟢","Blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🔰");
             break;
 
           case "Heavy": //Too heavy or spirit attack
           case "Spirit":
-            if (enemyStaminaChangeMessage(-1,"Could not block their blow -"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block the incoming blow -"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
@@ -730,7 +730,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
         switch (enemyType){
           case "Curse":
-            logPlayerAction(actionString,"Reached forward with their hands.");
+            logPlayerAction(actionString,"Reached forward with the hands.");
+            break;
+
+          case "Dream":
+            logPlayerAction(actionString,"Could not move the hands.");
+            displayPlayerCannotEffect();
             break;
 
           case "Pet": //Can become pet it when the player has higher current stamina
@@ -836,7 +841,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             break;
 
-          case "Dream":
           case "Spirit":
             logPlayerAction(actionString,"Grasped right through them.");
             displayEnemyEffect("✋");
@@ -1175,7 +1179,7 @@ function animateVersus(time = "1.4"){
 function playerGetStamina(stamina,silent = false){
   if (playerSta >= playerStaMax) { //Cannot get more
     if (!silent){
-      logPlayerAction(actionString,"Wasted a moment of their life.");
+      logPlayerAction(actionString,"Wasted a moment of life.");
     }
     return false;
   } else {
