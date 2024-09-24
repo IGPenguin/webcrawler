@@ -291,27 +291,32 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
         switch (enemyType){
+          case "Item":
+          case "Consumable":
           case "Trap":
           case "Trap-Roll":
             logPlayerAction(actionString,"Smashed it into tiny pieces -1 🟢");
+            displayEnemyEffect("〽️");
             nextEncounter();
             break;
+
           case "Trap-Attack": //Attacking causes you damage
           case "Spirit":
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
+            if (enemyType=="Spirit"){displayEnemyEffect("💨");}
             playerHit(enemyAtk);
             break;
-          case "Item":
-          case "Consumable":
+
           case "Container":
-            var openMessage = "Smashed it open -1 🟢";
+            var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
-              openMessage = enemyMsg.replace("."," -1 🟢");
+              openMessage = enemyMsg+" -1 🟢";
             }
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
             enemyAnimateDeathNextEncounter();
             break;
+
           case "Friend":
             logPlayerAction(actionString,"Attacked and spooked them -1 🟢");
             displayEnemyEffect("〽️");
@@ -493,6 +498,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case 'button_cast':
           if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
+
         switch (enemyType){
           case "Recruit": //You should be faster if you have Mgk >= them
           case "Standard":
@@ -520,6 +526,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyType="Standard";
             break;
 
+          case "Trap":
+          case "Trap-Roll":
           case "Item":
           case "Consumable":
           case "Container":
@@ -633,7 +641,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Spirit":
           case "Demon":
-            console.log("player mgk: "+playerMgk+" vs enemy mgk: "+enemyMgk)
             if ( enemyMgk <= playerMgk+1 ){ // +1 cause player already used mana
               logPlayerAction(actionString,"Banished them from this world!");
               enemyAnimateDeathNextEncounter();
@@ -792,7 +799,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("✋");
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt,enemyMgk);
+            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             break;
 
           case "Friend":
@@ -1165,45 +1172,57 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMkg){
+function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt,bonusMgk){  //TODO: Properly support negative gains = curses
   var gainedString;
-  if (enemyMsg != "") {
-    gainedString = enemyMsg;
+  var changeSign=" ";
+
+  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk)<=0){
+    gainedString="Got cursed by it";
+    changeSign=" "
   } else {
     gainedString="Felt becoming stronger";
   }
 
-  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMkg)<=0){ //TODO: Properly support negative gains = curses
-    displayPlayerEffect("🪬");
-    gainedString="Got cursed by the gods"+bonusMkg+" 🔵";
+  if (enemyMsg != "") {
+    gainedString = enemyMsg;
   }
 
-  if (bonusHp > 0) {
+  if (bonusHp != 0) {
     playerHpMax += parseInt(bonusHp);
     playerHp += parseInt(bonusHp);
-    gainedString += " +"+bonusHp + " ❤️";
+    gainedString += changeSign+bonusHp + " ❤️";
     displayPlayerEffect("✨");
   }
-  if (bonusAtk > 0){
+
+  if (bonusAtk != 0){
     playerAtk += parseInt(bonusAtk);
-    gainedString += " +"+bonusAtk + " ⚔️";
+    gainedString += changeSign+bonusAtk + " ⚔️";
     displayPlayerEffect("✨");
   }
-  if (bonusSta > 0){
+
+  if (bonusSta != 0){
     playerStaMax += parseInt(bonusSta);
     playerSta += parseInt(bonusSta);
-    gainedString += " +"+bonusSta + " 🟢";
+    gainedString += changeSign+bonusSta + " 🟢";
     displayPlayerEffect("✨");
   }
-  if (bonusLck > 0){
+
+  if (bonusLck != 0){
     playerLck += parseInt(bonusLck);
-    gainedString += " +"+bonusLck + " 🍀";
+    gainedString += changeSign+bonusLck + " 🍀";
     displayPlayerEffect("🍀");
   }
-  if (bonusInt > 0){
+
+  if (bonusInt != 0){
     playerInt += parseInt(bonusInt);
-    gainedString += " +"+bonusInt + " 🧠";
+    gainedString += changeSign+bonusInt + " 🧠";
     displayPlayerEffect("🧠");
+  }
+
+  if (bonusMgk != 0){
+    playerInt += parseInt(bonusMgk);
+    gainedString += changeSign+bonusMgk + " 🔵";
+    displayPlayerEffect("🪬");
   }
 
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
