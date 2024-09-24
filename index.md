@@ -27,7 +27,7 @@ layout: default
 
 <div id="id_enemy_card_contents">
 <div id = "id_enemy_info">
-  <div class="box-border-dynamic" style="position:relative; z-index:10;">
+  <div class="box-border-dynamic" style="position:relative; z-index:1;">
   <h2 id = "id_name" style="text-align:left;
     padding-left:8px;
     letter-spacing:0.8px;
@@ -39,7 +39,7 @@ layout: default
     background-color:#202020;"/>
   </div>
 
-  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px;"></div>
+  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:2;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <h1 id = "id_emoji" style="margin-bottom:10px;
@@ -65,7 +65,7 @@ layout: default
                             width:97.8%;
                             box-shadow:
                               0px 0px 0px 3px #000000;
-                              position:relative; z-index:10;"/>
+                              position:relative; z-index:1;"/>
 </div>
 <div class="box-border" style="margin-top:42px;
   background-color:#272727;
@@ -132,7 +132,7 @@ layout: default
                                             box-shadow:
                                               0px 0px 0px 3px #121212;">
 
-<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px;"></div>
+<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:2;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:8px;
@@ -144,7 +144,7 @@ layout: default
                                     font-family:sans;
                                     box-shadow:
                                       0px 0px 0px 3px #000000;
-                                      position:relative; z-index:10;"/>
+                                      position:relative; z-index:1;"/>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;

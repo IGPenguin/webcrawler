@@ -67,7 +67,7 @@ var luckInterval = 24; //Lower to increase chances
 var actionString;
 //Initial action log below
 //var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
-var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;The mind dreams, the body sleeps.<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤▸ 💭 The mind dreams, the body sleeps.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -472,7 +472,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Heavy": //Too heavy or spirit attack
           case "Spirit":
-            if (enemyStaminaChangeMessage(-1,"Could not block their blow&nbsp;-"+enemyAtk+" 💔.","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block their blow -"+enemyAtk+" 💔.","n/a")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢.");
@@ -605,14 +605,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"The curse has angered the gods -1 🍀.");
+            logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
             playerLck=-1;
             displayPlayerEffect("🪬");
             nextEncounter();
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Sacrificed health -1 💔 for power +2 🔵.");
+            logPlayerAction(actionString,"Sacrificed health -1 💔 for power +2 🔵");
             playerHit(1);
             playerHpMax-=1;
             playerMgkMax+=2;
@@ -677,7 +677,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"The deep sleep prayer was appreciated +1 🍀.");
+            logPlayerAction(actionString,"Appreciated a deep sleep prayer +1 🍀.");
             playerLck++;
             nextEncounter();
             break;
@@ -695,7 +695,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"The prayer has been heard above +1 🔵.");
+            logPlayerAction(actionString,"The prayer has been heard +1 🔵.");
             playerMgkMax+=1;
             playerMgk+=1;
             nextEncounter();
@@ -736,7 +736,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random() * luckInterval);
               console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;✋&nbsp;They were spooked by the touch.");
+                logAction("🍀 ▸ ✋ They were spooked by the touch.");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
@@ -888,7 +888,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               var speechChance = Math.floor(Math.random() * luckInterval);
               if ( speechChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed the lies and left.");
+                logAction("🍀 ▸ 💬 They believed the lies and left.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
@@ -1029,14 +1029,14 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage,magicType=false){
-  var hitMsg = "Hit them with an attack -"+damage+" 💔";
-  if (magicType==true) {actionString="🪄&nbsp;"; hitMsg="Scorched them with a spell -"+damage+" 💔.";}
+  var hitMsg = "Hit them with an attack -"+damage+" 💔.";
+  if (magicType==true) {actionString="🪄 "; hitMsg="Scorched them with a spell -"+damage+" 💔.";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
   console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
-    logAction("🍀&nbsp;▸&nbsp;⚔️&nbsp;The strike was blessed with luck.");
+    logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
     hitMsg="The attack hit them critically -"+(damage+2)+" 💔.";
     displayPlayerEffect("🍀");
     damage+=2;
@@ -1047,7 +1047,7 @@ function enemyHit(damage,magicType=false){
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀&nbsp;Successfully eliminated them.");
+    logAction(enemyEmoji + "▸ " + "💀 Successfully eliminated them.");
     enemyAnimateDeathNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
@@ -1062,7 +1062,7 @@ function enemyKicked(){
 }
 
 function enemyKnockedOut(){
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤&nbsp;Harmlessly knocked them out.");
+  logAction(enemyEmoji + " ▸ " + "💤 Harmlessly knocked them out.");
   displayEnemyEffect("💤");
   enemyAnimateDeathNextEncounter();
 }
@@ -1098,8 +1098,7 @@ function nextEncounter(){
   previousArea = areaName;
   loadEncounter(encounterIndex);
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut("<p style=\"text-decoration:underline solid white 2px;\">&nbsp;"+areaName+"&nbsp;</p>");
-
+    curtainFadeInAndOut("&nbsp;"+areaName+"&nbsp;");
   }
 
   enemyRenew();
@@ -1248,7 +1247,7 @@ function playerHit(incomingDamage){
   var hitChance = Math.floor(Math.random() * luckInterval);
   console.log("hitChance: "+hitChance+"/"+luckInterval+" lck: "+playerLck) //Chance to not get hit
   if ( hitChance <= playerLck ){
-    logAction("🍀&nbsp;▸&nbsp;💢&nbsp;Luckily avoided receiving the damage.");
+    logAction("🍀 ▸ 💢 Luckily avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -1261,7 +1260,7 @@ function playerHit(incomingDamage){
     console.log("deathChance: "+deathChance+"/"+(luckInterval*3)+" lck: "+playerLck)
     if ( deathChance <= playerLck ){
       playerHp+=1;
-      logAction("🍀&nbsp;▸&nbsp;💀&nbsp;Luckily got a second chance to live.");
+      logAction("🍀 ▸ 💀 Luckily got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
@@ -1274,7 +1273,7 @@ function playerHit(incomingDamage){
 //End Game
 function gameOver(){
   //Reset progress to death encounter
-  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀&nbsp;Got killed, ending the adventure. ");
+  logAction(enemyEmoji+" ▸ 💀 Got killed, ending the adventure. ");
   adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
@@ -1284,7 +1283,7 @@ function gameOver(){
 }
 
 function gameEnd(){
-  var winMessage="🧠&nbsp;▸&nbsp;💭&nbsp;Just had a deja vu, feels really familiar (NG+).";
+  var winMessage="🧠 ▸ 💭 Just had a deja vu, feels really familiar (NG+).";
   logAction(winMessage);
 
   //Reset progress to game start
@@ -1297,7 +1296,7 @@ function gameEnd(){
 
 //Logging
 function logPlayerAction(actionString,message){
-  actionString = actionString.substring(0,actionString.indexOf("&nbsp;")) + "&nbsp;▸&nbsp;" + enemyEmoji + "&nbsp;" + message + "<br>";
+  actionString = actionString.substring(0,actionString.indexOf(" ")) + "▸ " + enemyEmoji + " " + message + "<br>";
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
@@ -1387,7 +1386,7 @@ function adjustEncounterButtons(){
       break;
     case "Checkpoint":
       document.getElementById('button_grab').innerHTML="💾 Save";
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
     default:
   }
 }
@@ -1501,7 +1500,7 @@ function generateCharacterShareString(){
 function copyAdventureToClipboard(){
   displayPlayerEffect("💌");
   logPlayerAction(actionString,"The legend was copied into clipboard.");
-  adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;"," ");
+  adventureLog = adventureLog.replaceAll("<br>","\n");
   adventureLog += generateCharacterShareString();
   adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
   navigator.clipboard.writeText(adventureLog);
