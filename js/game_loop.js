@@ -1315,78 +1315,78 @@ function logAction(message){
 
 //UI Buttons
 function resetEncounterButtons(){
-  document.getElementById('button_attack').innerHTML="⚔️&nbsp;Attack";
-  document.getElementById('button_block').innerHTML="🔰&nbsp;Block";
-  document.getElementById('button_roll').innerHTML="🌀&nbsp;Roll";
-  document.getElementById('button_cast').innerHTML="🪄&nbsp;Cast";
-  document.getElementById('button_curse').innerHTML="🪬&nbsp;Curse";
-  document.getElementById('button_pray').innerHTML="🙏&nbsp;Pray";
-  document.getElementById('button_grab').innerHTML="✋&nbsp;Grab";
-  document.getElementById('button_sleep').innerHTML="💤&nbsp;Rest";
-  document.getElementById('button_speak').innerHTML="💬&nbsp;Speak";
+  document.getElementById('button_attack').innerHTML="⚔️ Attack";
+  document.getElementById('button_block').innerHTML="🔰 Block";
+  document.getElementById('button_roll').innerHTML="🌀 Roll";
+  document.getElementById('button_cast').innerHTML="🪄 Cast";
+  document.getElementById('button_curse').innerHTML="🪬 Curse";
+  document.getElementById('button_pray').innerHTML="🙏 Pray";
+  document.getElementById('button_grab').innerHTML="✋ Grab";
+  document.getElementById('button_sleep').innerHTML="💤 Rest";
+  document.getElementById('button_speak').innerHTML="💬 Speak";
 }
 
 function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      document.getElementById('button_attack').innerHTML="❤️&nbsp;Vitality";
-      document.getElementById('button_roll').innerHTML="🟢&nbsp;Agility";
-      document.getElementById('button_block').innerHTML="🧠&nbsp;Wisdom";
-      document.getElementById('button_cast').innerHTML="🔮&nbsp;Sorcery";
-      document.getElementById('button_curse').innerHTML="🩸&nbsp;Hatred";
-      document.getElementById('button_pray').innerHTML="📿&nbsp;Faith";
-      document.getElementById('button_grab').innerHTML="🍀&nbsp;Fortune";
-      document.getElementById('button_speak').innerHTML="🪙&nbsp;Greed"; //Lose HP but gain luck +3
-      document.getElementById('button_sleep').innerHTML="💀&nbsp;Pain";
+      document.getElementById('button_attack').innerHTML="❤️ Vitality";
+      document.getElementById('button_roll').innerHTML="🟢 Agility";
+      document.getElementById('button_block').innerHTML="🧠 Wisdom";
+      document.getElementById('button_cast').innerHTML="🔮 Sorcery";
+      document.getElementById('button_curse').innerHTML="🩸 Hatred";
+      document.getElementById('button_pray').innerHTML="📿 Faith";
+      document.getElementById('button_grab').innerHTML="🍀 Fortune";
+      document.getElementById('button_speak').innerHTML="🪙 Greed"; //Lose HP but gain luck +3
+      document.getElementById('button_sleep').innerHTML="💀 Pain";
       break;
     case "Container":
-      document.getElementById('button_grab').innerHTML="👋&nbsp;Search";
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+      document.getElementById('button_grab').innerHTML="👋 Search";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
       break;
     case "Consumable":
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_grab').innerHTML="👄Consume";
       break;
     case "Prop":
-      document.getElementById('button_grab').innerHTML="✋&nbsp;Touch";
+      document.getElementById('button_grab').innerHTML="✋ Touch";
     case "Item":
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
     case "Prop":
     case "Dream":
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
       break;
     case "Recruit":
         if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
-          document.getElementById('button_speak').innerHTML="💬&nbsp;Recruit";
+          document.getElementById('button_speak').innerHTML="💬 Recruit";
         }
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
-          document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
+          document.getElementById('button_grab').innerHTML="🦶 Kick";
         }
         break;
     case "Pet":
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
-        document.getElementById('button_grab').innerHTML="👋&nbsp;Pet";
+        document.getElementById('button_grab').innerHTML="👋 Pet";
       }
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
-        document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
+        document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
     case "Heavy":
     case "Swift":
       if ((enemySta-enemyStaLost)==0) {
-        document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
+        document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
     case "Death":
-      document.getElementById('button_speak').innerHTML="💌&nbsp;Share";
-      document.getElementById('button_sleep').innerHTML="🦆&nbsp;Tweet";
+      document.getElementById('button_speak').innerHTML="💌 Share";
+      document.getElementById('button_sleep').innerHTML="🦆 Tweet";
       break;
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="💾&nbsp;Save";
+      document.getElementById('button_grab').innerHTML="💾 Save";
       document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
     default:
   }
