@@ -848,7 +848,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHp=playerHpMax;
             checkpointEncounter=encounterIndex;
             enemyAnimateDeathNextEncounter();
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D;\">&nbsp;Flame Embraced&nbsp;");
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D; -webkit-text-stroke: 6.5px black;\">&nbsp;Flame Embraced&nbsp;");
             break;
           default:
             logPlayerAction(actionString,"Touched it, nothing happened.");
@@ -1341,7 +1341,7 @@ function adjustEncounterButtons(){
       break;
     case "Consumable":
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_grab').innerHTML="👄Consume";
+      document.getElementById('button_grab').innerHTML="🍴 Consume";
       break;
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
