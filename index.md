@@ -23,7 +23,7 @@ layout: default
     -webkit-text-stroke: 6.5px black;
       paint-order: stroke fill;">Forgotten Forest</h2>
 
-<div class="card" id="id_card">
+<div class="card" id="id_card" style="background-color:#202020;">
 
 <div id="id_enemy_card_contents">
 <div id = "id_enemy_info">
@@ -47,7 +47,7 @@ layout: default
                             padding-bottom:0px;
                             padding-top:7px;
                             margin-top:0px;
-                            background-color:#202020;"/>
+                            background-color:#272727;"/>
 </div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
@@ -62,11 +62,14 @@ layout: default
                             display:inline;
                             width:97%;
                             box-shadow:
-                              0px 0px 0px 3px #121212;"/>
+                              0px 0px 0px 3px #000000;
+                              position:relative; z-index:10;"/>
 </div>
 <div class="box-border" style="margin-top:42px;
+  background-color:#272727;
   box-shadow:
     0px 0px 0px 3px #121212;">
+
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:8px;
@@ -95,13 +98,18 @@ layout: default
       -webkit-text-stroke: 5px black;
         paint-order: stroke fill;">VS</h3>
 
-<div class="toolbar-card" id = "id_toolbar_card" style="padding-bottom:6px; margin-top:4px; padding-top:6px;">
+<div class="toolbar-card" id = "id_toolbar_card" style="padding-bottom:6px;
+  margin-top:4px;
+    padding-top:6px;
+      background-color:#202020;">
+
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                         padding-top:4px;
-                                        padding-bottom:4px;">
+                                        padding-bottom:4px;
+                                              background-color:#202020;">
 
 <h3 id = "id_player_name" style="text-align:left;
                                   padding-left:10px;
@@ -117,7 +125,8 @@ layout: default
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
-                                          margin-bottom:14px;  box-shadow:
+                                          margin-bottom:14px;
+                                            box-shadow:
                                               0px 0px 0px 3px #121212;">
 
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px;"></div>
@@ -129,14 +138,18 @@ layout: default
                                     padding-bottom:3px;
                                     margin-bottom:-11px;
                                     margin-top:14px;
-                                    font-family:sans;"/>
+                                    font-family:sans;
+                                    box-shadow:
+                                      0px 0px 0px 3px #000000;
+                                      position:relative; z-index:10;"/>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                         padding-top:2px;
                                         padding-bottom:0px;
                                           box-shadow:
-                                            0px 0px 0px 3px #121212;">
+                                            0px 0px 0px 3px #121212;
+                                              background-color:#272727;">
 
 <h4 id = "id_log" style="margin-top:0px;
                           padding-left:8px;
@@ -154,7 +167,8 @@ layout: default
                                         display:inline;                      
                                         width:95.8%;
                                         box-shadow:
-                                          0px 0px 0px 3px #121212;"/>
+                                          0px 0px 0px 3px #121212;
+                                          background-color:#272727;"/>
 </div>
 </div>
 
