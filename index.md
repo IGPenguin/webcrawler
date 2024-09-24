@@ -47,7 +47,7 @@ layout: default
                             padding-bottom:0px;
                             padding-top:7px;
                             margin-top:0px;
-                            background-color:#252525;"/>
+                            background-color:#272727;"/>
 </div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
@@ -67,7 +67,7 @@ layout: default
                               position:relative; z-index:10;"/>
 </div>
 <div class="box-border" style="margin-top:42px;
-  background-color:#252525;
+  background-color:#272727;
   box-shadow:
     0px 0px 0px 3px #121212;
       margin-right:0px;">
@@ -151,7 +151,7 @@ layout: default
                                         padding-bottom:0px;
                                           box-shadow:
                                             0px 0px 0px 3px #121212;
-                                              background-color:#252525;">
+                                              background-color:#272727;">
 
 <h4 id = "id_log" style="margin-top:0px;
                           padding-left:8px;
@@ -170,7 +170,7 @@ layout: default
                                         width:95.8%;
                                         box-shadow:
                                           0px 0px 0px 3px #121212;
-                                          background-color:#252525;"/>
+                                          background-color:#272727;"/>
 </div>
 </div>
 
