@@ -1096,6 +1096,8 @@ function enemyAttackOrRest(){
 
 function nextEncounter(){
   animateVersus(1);
+  var versusText = document.getElementById('id_versus');
+  toogleUIElement(versusText,"block");
   adventureEncounterCount+=1;
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
@@ -1111,6 +1113,8 @@ function nextEncounter(){
 }
 
 function enemyAnimateDeathNextEncounter(){
+  var versusText = document.getElementById('id_versus');
+  toogleUIElement(versusText);
   animateUIElement(cardUIElement,"animate__flipOutY","1"); //Maybe this will look better?
   //animateUIElement(cardUIElement,"animate__fadeOutDown","0.75");
   var animationHandler = function(){
@@ -1123,7 +1127,8 @@ function enemyAnimateDeathNextEncounter(){
 
 function animateVersus(time = "1"){
   var versusText = document.getElementById('id_versus');
-  animateUIElement(versusText,"animate__fadeIn",time);
+  toogleUIElement(versusText,"absolute");
+  animateUIElement(versusText,"animate__flash",time);
 }
 
 //Player
@@ -1411,6 +1416,15 @@ function adjustEncounterButtons(){
 }
 
 //UI Effects
+function toogleUIElement(UIElement,desiredState = "none"){
+  var elementDisplayState = UIElement.style.display;
+  if (elementDisplayState != "none"){
+    UIElement.style.display=desiredState;
+  } else {
+    UIElement.style.display=desiredState;
+  }
+}
+
 function curtainFadeInAndOut(message=""){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
   var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
