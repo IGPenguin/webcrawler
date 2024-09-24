@@ -647,7 +647,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Curse":
-            logPlayerAction(actionString,"Broken the curse by a prayer!");
+            logPlayerAction(actionString,"Broke the curse by the prayer!");
             enemyAnimateDeathNextEncounter();
             break;
 
@@ -690,7 +690,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMkg);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             break;
 
           case "Dream":
@@ -1266,7 +1266,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   if (bonusMgk != 0){
-    playerInt += parseInt(bonusMgk);
+    playerMgk += parseInt(bonusMgk);
     gainedString += changeSign+bonusMgk + " 🔵";
     displayPlayerEffect("🪬");
   }
