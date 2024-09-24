@@ -24,17 +24,20 @@ layout: default
       paint-order: stroke fill;">Forgotten Forest</h2>
 
 <div class="card" id="id_card">
+
 <div id="id_enemy_card_contents">
 <div id = "id_enemy_info">
-  <div class="box-border-dynamic">
+  <div class="box-border-dynamic" style="position:relative; z-index:10;">
   <h2 id = "id_name" style="text-align:left;
     padding-left:10px;
     letter-spacing:0.8px;
     -webkit-text-stroke: 5px #121212;
       paint-order: stroke fill;
-    margin-bottom:-2px;"/>
-
+    margin-bottom:-13px;
+    margin-top:2px;
+    background-color:#202020;"/>
   </div>
+
   <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
@@ -43,7 +46,8 @@ layout: default
                               0px 0px 0px 3px #121212;
                             padding-bottom:0px;
                             padding-top:7px;
-                            margin-top:0px"/>
+                            margin-top:0px;
+                            background-color:#202020;"/>
 </div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
