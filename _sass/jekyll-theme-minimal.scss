@@ -45,7 +45,8 @@ h3 {
 
 h4 {
   line-height:1.5;
-  font-size:14px;
+  letter-spacing: 0.5px;
+  font-size:14.6px;
   font-weight: 500;
   margin-bottom: 14px;
   width: 100%;
@@ -337,9 +338,9 @@ button {
   color: #fff;
   padding-right: 8px;
   padding-left: 8px;
-  font-weight: bold;
+  font-weight: 1000;
   border: none;
-  -webkit-text-stroke:3px #121212;
+  -webkit-text-stroke:4px #121212;
   paint-order: stroke fill;
   //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   box-shadow:

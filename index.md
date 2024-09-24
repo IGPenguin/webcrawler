@@ -29,7 +29,7 @@ layout: default
 <div id = "id_enemy_info">
   <div class="box-border-dynamic" style="position:relative; z-index:10;">
   <h2 id = "id_name" style="text-align:left;
-    padding-left:10px;
+    padding-left:8px;
     letter-spacing:0.8px;
     -webkit-text-stroke: 5px #121212;
       paint-order: stroke fill;
@@ -47,13 +47,13 @@ layout: default
                             padding-bottom:0px;
                             padding-top:7px;
                             margin-top:0px;
-                            background-color:#272727;"/>
+                            background-color:#252525;"/>
 </div>
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
                             font-size:12px;
                             padding-top:1px;
-                            padding-left:10px;
+                            padding-left:8px;
                             padding-bottom:0px;
                             line-height:24px;
                             margin-top:4px;
@@ -66,14 +66,15 @@ layout: default
                               position:relative; z-index:10;"/>
 </div>
 <div class="box-border" style="margin-top:42px;
-  background-color:#272727;
+  background-color:#252525;
   box-shadow:
-    0px 0px 0px 3px #121212;">
+    0px 0px 0px 3px #121212;
+      margin-right:2px;">
 
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:8px;
-  padding-left:12px;
+  padding-left:10px;
   padding-right:8px;
   margin-bottom:-23px;
   line-height:165%;
@@ -112,7 +113,7 @@ layout: default
                                               background-color:#202020;">
 
 <h3 id = "id_player_name" style="text-align:left;
-                                  padding-left:10px;
+                                  padding-left:8px;
                                   letter-spacing:0.8px;
                                   font-weight:5OO;
                                   margin-top:0px;
@@ -149,7 +150,7 @@ layout: default
                                         padding-bottom:0px;
                                           box-shadow:
                                             0px 0px 0px 3px #121212;
-                                              background-color:#272727;">
+                                              background-color:#252525;">
 
 <h4 id = "id_log" style="margin-top:0px;
                           padding-left:8px;
@@ -168,7 +169,7 @@ layout: default
                                         width:95.8%;
                                         box-shadow:
                                           0px 0px 0px 3px #121212;
-                                          background-color:#272727;"/>
+                                          background-color:#252525;"/>
 </div>
 </div>
 
