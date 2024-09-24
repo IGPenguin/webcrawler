@@ -346,6 +346,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
+            displayPlayerCannotEffect();
             logPlayerAction(actionString,"There is nothing to attack anymore.");
             break
 
@@ -428,8 +429,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
+            displayPlayerCannotEffect();
             logPlayerAction(actionString,"There is nothing to dodge anymore.");
-            animateUIElement(playerInfoUIElement,"animate__headShake","0.7");
             break;
 
           case "Upgrade":
@@ -480,6 +481,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
+              displayPlayerCannotEffect();
               logPlayerAction(actionString,"There is nothing to block anymore.");
               break;
           default:
@@ -489,8 +491,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast':
-          if (enemyType!="Upgrade" && !playerUseMagic(1,"Not enough magic power.")) { break; }
-          displayPlayerEffect("🪄");
+          if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
         switch (enemyType){
           case "Recruit": //You should be faster if you have Mgk >= them
           case "Standard":
@@ -527,10 +529,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAnimateDeathNextEncounter();
             break;
 
-          case "Death":
-            copyAdventureToClipboard();
-            break;
-
           case "Dream":
             logPlayerAction(actionString,"Spent magic power on dreaming -1 🔵");
             break;
@@ -550,6 +548,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death": //TODO: Maybe I'll come up with something later
+            displayPlayerCannotEffect();
             logPlayerAction(actionString,"Magic powers already faded away.");
             break;
 
@@ -559,8 +558,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
-        if (enemyType!="Upgrade" && !playerUseMagic(1,"Not enough magic power.")) { break; }
-        displayPlayerEffect("🪬");
+        if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
+        if (enemyType!="Death") {ddisplayPlayerEffect("🪬");}
+
         switch (enemyType){
           case "Undead":
           case "Demon":
@@ -594,10 +594,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💬");
             break;
 
-          case "Death":
-            copyAdventureToClipboard();
-            break;
-
           case "Dream":
             logPlayerAction(actionString,"Conjured themselves an extra nightmare -1 💔");
             playerHit(1);
@@ -621,6 +617,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death": //TODO: Maybe I'll come up with something later
+            displayPlayerCannotEffect();
             logPlayerAction(actionString,"Cannot move the lips to curse anymore.");
             break;
 
@@ -630,8 +627,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
-          if (enemyType!="Upgrade" && !playerUseMagic(1,"Not enough magic power.")) { break; }
-          displayPlayerEffect("🙏");
+          if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (enemyType!="Death") {displayPlayerEffect("🙏");}
+
         switch (enemyType){
           case "Spirit":
           case "Demon":
@@ -703,6 +701,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Death": //TODO: Maybe I'll come up with something later
             logPlayerAction(actionString,"It's way too late for prayers.");
+            displayPlayerCannotEffect();
             break;
 
           default:
