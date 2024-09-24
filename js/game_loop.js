@@ -67,7 +67,7 @@ var luckInterval = 24; //Lower to increase chances
 var actionString;
 //Initial action log below
 //var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
-var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;The mind dreams, the body still sleeps.<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;The mind dreams, the body sleeps.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -334,7 +334,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemySta-enemyStaLost > 0) {
               displayEnemyEffect("🌀");
               if ((enemyAtk+enemyAtkBonus)>0){
-                enemyStaminaChangeMessage(-1,"They dodged the attack and retailated -"+enemyAtk+" 💔.","n/a");
+                enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+enemyAtk+" 💔.","n/a");
                 playerHit(enemyAtk);
               } else {
                 enemyStaminaChangeMessage(-1,"They barely dodged the attack.","n/a");
@@ -1331,7 +1331,7 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       document.getElementById('button_attack').innerHTML="❤️&nbsp;Vitality";
-      document.getElementById('button_roll').innerHTML="🟢&nbsp;Stamina";
+      document.getElementById('button_roll').innerHTML="🟢&nbsp;Agility";
       document.getElementById('button_block').innerHTML="🧠&nbsp;Wisdom";
       document.getElementById('button_cast').innerHTML="🔮&nbsp;Sorcery";
       document.getElementById('button_curse').innerHTML="🩸&nbsp;Hatred";
@@ -1346,7 +1346,7 @@ function adjustEncounterButtons(){
       break;
     case "Consumable":
       document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
-      document.getElementById('button_grab').innerHTML="👄&nbsp;Eat it";
+      document.getElementById('button_grab').innerHTML="👄&nbsp;Consume";
       break;
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋&nbsp;Touch";

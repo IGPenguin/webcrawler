@@ -1,91 +1,94 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;team;desc;message
-Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;Failed Destiny;<b>🦆 Tweet</b> this attempt to appear in credits.<br><b>✋ Grab</b> your soul to give it another try.;
-Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Hazy Thought;You found yourself wandering an endless road.<br>Continue forward using <b>👣 Walk</b>.;
-Depths of Slumber;👿;Internal Demon;Demon;1;1;1;0;0;0;Imaginary Entity;Use <b>🌀 Roll</b> or <b>🔰 Block</b> to avoid getting hit.<br>Enemies attack if they have <b>🟢 Energy</b>.;
-Depths of Slumber;🦐;Dream Shrimp;Consumable;0;0;0;0;0;0;Spectral Food;Ensure to <b>🖐 Grab</b> the loot you stumble upon.<br>Use <b>💤 Rest</b> to regain <b>🟢</b> and <b>🔵</b> resources.;
-Depths of Slumber;👤;Turning Point;Upgrade;0;0;0;0;0;0;Lifetime Decision;<b>Choose a character perk</b> from the selection.<br>Decide your own strategy and experience.;
-Forgotten Forest;🌳;Quiet Grove;Prop;0;0;0;0;0;0;Suspense Area;There is nothing but endless trees all around.<br>Use <b>👣  Walk</b> to explore further ahead.;
-Forgotten Forest;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for your head.<br>Brace yourself before it hits you.;
-Forgotten Forest;🪨;Suspicious Boulder;Container;0;0;0;0;0;0;Natural Resource;Just a piece of rock laying on the ground.<br>No reason to bother stopping here.;
-Forgotten Forest;🪱;Raving Earthworm;Standard;1;2;1;0;2;0;Disturbed Arthropod;The poor thing has a sunlight shock.<br>Looks like it got a burst of energy.;
-Forgotten Forest;🐦‍⬛;Worried Crow;Swift;1;1;1;0;1;0;Wild Animal;Another crow appeared before your eyes.<br>It seems to be looking for its mate.;
-Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>You should make use of it.;
+Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;Failed Destiny;<b>🦆 Tweet</b> this attempt to appear in credits.<br><b>✋ Grab</b> the soul to start another adventure.;
+Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Hazy Thought;The hero is wandering an endless road.<br>Continue ahead using <b>👣 Walk</b>.;
+Depths of Slumber;👿;Internal Demon;Demon;1;1;1;0;0;0;Imaginary Entity;<b>🌀 Roll</b> or <b>🔰 Block</b> to avoid getting hit.<br>Enemies spend <b>Energy 🟢</b> to attack.;
+Depths of Slumber;🦐;Dream Shrimp;Consumable;0;0;0;0;0;0;Spectral Food;<b>🖐 Grab</b> any helpful items along the way.<br><b>💤 Rest</b> to regain <b>🟢</b> and <b>🔵</b> resources.;
+Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a character perk</b> to shape the skills.<br>Some may come with a sacrifice.;
+Forgotten Forest;🌳;Silent Grove;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees all around.<br><b>👣  Walk</b> to explore further ahead.;
+Forgotten Forest;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for the eyes.<br>Quickly cover before the impact.;Both eyes were pecked
+Forgotten Forest;🪨;Suspicious Boulder;Container;0;0;0;0;0;0;Natural Resource;Just a piece of rock laying on the ground.<br>No reason to bother stopping here.;Lifted the boulder.
+Forgotten Forest;🪱;Raving Earthworm;Standard;1;2;1;0;2;0;Disturbed Arthropod;The poor thing has a sunlight shock.<br>Looks like it got a burst of energy.;Caught a deadly disease
+Forgotten Forest;🦝;Rabid Raccoon;Standard;2;1;2;0;1;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;
+Forgotten Forest;🌿;Fern Glade;Prop;0;0;0;0;0;0;Forest Area;This looks like a nice place to rest.<br>Perhaps make use of it.;
 Forgotten Forest;🦌;Frantic Deer;Standard;2;2;1;0;2;0;Wild Animal;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
-Forgotten Forest;⛺️;Abandoned Tent;Container;0;0;0;0;0;0;Shelter;Nice and cozy place to rest.<br>You could use a break.;
-Forgotten Forest;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;You stumbled upon an old map.<br>There are some notes around the edges.;You enhanced your awareness
+Forgotten Forest;⛺️;Abandoned Tent;Container;0;0;0;0;0;0;Shelter;Cozy place of rest for whoever set it up.<br>Chance to loot for someone else.;
+Forgotten Forest;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>There are notes around the edges.;Awareness was enhanced
 Forgotten Forest;🍗;Roasted Chicken;Consumable;0;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
-Forgotten Forest;🧑‍🌾;Disturbed Druid;Recruit;3;1;3;0;1;2;Hostile Stranger;Were you just sniffing around my tent?<br>You never should have come here!;
+Forgotten Forest;🧑‍🌾;Disturbed Druid;Recruit;3;1;3;0;1;2;Hostile Stranger;Noticed suspicious activity in their camp.<br><i><b>\"Never should have come here!\"</b></i>;
 Forgotten Forest;🌲;Pine Grove;Container;0;0;0;0;0;0;Suspense Area;Another bunch of trees in the forest.<br>A chance to catch a breath.;
-Forgotten Forest;🦉;Engaging Owl;Friend;0;0;0;0;1;0;Wild Animal;It stares at you without blinking an eye.<br>Almost feels like it's about to speak.;It revealed you a powerful secret
+Forgotten Forest;🦉;Engaging Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares ahead without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
 Forgotten Forest;🐕;Stray Dog;Pet;2;1;1;0;1;0;Wild Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Forgotten Forest;⛪️;Deserted Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br>Better not stick around.;
-Forgotten Forest;🐻;Mangy Bear;Heavy;4;1;2;0;3;0;Sick Animal;It appears to be very upset.<br>Beware its mighty attack.;You were torn to pieces
-Flourishing Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
-Flourishing Grove;🐀;Dire Rat;Swift;2;1;1;0;3;0;Wild Animal;It jumped out of nowhere really fast.<br>Better raise your shield.;
-Flourishing Grove;🗿;Megalithic Statue;Altar;0;0;0;0;0;1;Ancient Monument;You see giant stone face ahead.<br>Seems like a good place to rest.;
-Flourishing Grove;🦝;Rabid Raccoon;Standard;2;1;2;0;1;0;Wild Animal;Cute on the outside.<br>Corrupted inside;
-Flourishing Grove;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Yum. This would finely refresh you.<br>You wonder where it came from.;The honeypot was filled with bees.
-Flourishing Grove;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insect;The bees totally surrounded you.<br>Blocking seems like the best option.;
+Forgotten Forest;🐻;Mangy Bear;Heavy;4;1;2;0;3;0;Sick Animal;It appears to be very upset.<br>Beware its mighty attack.;Was torn to pieces
+Flourishing Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
+Flourishing Grove;🐀;Dire Rat;Swift;2;1;1;0;3;0;Wild Animal;It jumped out of nowhere really fast.<br>Better raise the shield.;
+Flourishing Grove;🗿;Megalithic Statue;Altar;0;0;0;0;0;1;Ancient Monument;A giant stone facing the heavens.<br>Must be thousands years old.;
+Flourishing Grove;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Both eyes were pecked
 Flourishing Grove;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
-Flourishing Grove;🔪;Sharp Knife;Item;0;1;0;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;You took for yourself
-Flourishing Grove;🐗;Alpha Boar;Heavy;3;1;1;0;10;0;Wild Animal;Its loud stomps follow you around.<br>You'd better dodge its attacks.;
-Flourishing Grove;🥩;Boar Meat;Trap;0;2;0;0;0;0;Raw Food;Hmm. Maybe you could make use of it.<br>Sadly there's no fire around.;The raw meat made you sick
+Flourishing Grove;🔪;Sharp Knife;Item;0;1;0;0;0;0;Somebody's Property;The owner could be nearby.<br>I'd rather not mess with it.;Took it for later use
+Flourishing Grove;🦡;Honey Badger;Standard;3;1;2;0;1;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
+Flourishing Grove;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
+Flourishing Grove;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insect;The bees instantly swarmed the area.<br>There's nowhere to run;
+Flourishing Grove;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
+Flourishing Grove;🥩;Boar Meat;Trap;0;2;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat
 Flourishing Grove;🏚️;Abandoned House;Container;0;0;0;0;0;0;Deserted Building;This house has been long neglected.<br>Maybe there's something valuable left?;
-Flourishing Grove;🍄;Suspicious Mushroom;Item;1;0;0;0;0;0;Small Fungi;You don't recognise this species.<br>Could it be poisonous?;Eating it made you more resilient
-Flourishing Grove;🦨;Forest Skunk;Swift;2;1;2;0;3;0;Wild Animal;This one is fast and stinky.<br>You cannot avoid its attacks.;
+Flourishing Grove;🫙;Empty Jar;Item;1;0;0;0;0;0;Trash;Appears to be clean and empty.<br>Might come in handy later.;A cold breeze escaped the jar
+Flourishing Grove;🍄;Suspicious Mushroom;Container;0;0;0;0;0;0;Fungal Growth;Fruiting body of an unrecognisable species.<br>Could it be poisonous?;Resilience filled the veins
+Flourishing Grove;🎭;Psychotic Episode;Altar;0;0;0;0;2;0;Mind State;Cannot tell up either up from down.<br>Nor left from right.;What just happened?
+Flourishing Grove;🦨;Forest Skunk;Swift;2;1;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
 Flourishing Grove;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
-Flourishing Grove;🐸;Frog-faced Giant;Heavy;5;1;3;0;5;0;Horrible Monstrosity;*notices your presence*<br>*prepares to strike*;
-Flourishing Grove;🌊;Glowing Pond;Container;5;1;3;0;5;1;Fishing Spot;The water has a strange glow.<br>You wonder what's at the bottom.;
-Flourishing Grove;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>You feel its sinister aura.;
-Flourishing Grove;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't you pick some?;
-Flourishing Grove;🦄;Rainbow Unicorn;Pet;2;0;2;2;0;0;Mythical Creature;Strange horse approaches you.<br>You're unsure of it's intentions;It gave you a blessing
-Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
+Flourishing Grove;🐸;Frog-faced Giant;Heavy;5;1;3;0;5;0;Terrible Monstrosity;Foul stench reeks from it's mouth.<br>Bloodshot eyes blink slowly.;Got squashed like a bug
+Flourishing Grove;🌊;Wavy Pond;Container;5;1;3;0;5;1;Fishing Spot;The water has a strange glow.<br>Something sparkles at the bottom.;
+Flourishing Grove;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
+Flourishing Grove;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;
+Flourishing Grove;🦄;Rainbow Unicorn;Friend;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
+Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
 Forest Depths;🐐;Irritable Goat;Standard;3;1;2;0;10;0;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
-Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>You should grab some.;Ouch! It has a lot of thorns
-Forest Depths;🦊;Cunning Fox;Pet;2;1;3;0;3;0;Wild Animal;It came to sit right in front of you.<br>Perhaps it's up to something.;
-Forest Depths;🌱;Familiar Plant;Container;0;0;0;0;0;0;Potential Food;You noticed a distinctive plant nearby.<br>Could it be something edible?;You dug it out of the ground.
+Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
+Forest Depths;🦊;Cunning Fox;Pet;2;1;3;0;3;0;Wild Animal;Sits around waving its furry tail.<br>Perhaps it's up to something.;
+Forest Depths;🌱;Familiar Plant;Container;0;0;0;0;0;0;Potential Food;Probably packs a ton of nutrients.<br>Give it a shot?;Dug it out of the ground.
 Forest Depths;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Fresh Vegetable;A carrot was hiding below the ground.<br>This seems like a time for a snack.;
 Forest Depths;🦌;Mighty Deer;Heavy;4;1;2;0;10;0;Wild Animal;Huge deer jumped out of the bush.<br>Better be very careful.;
 Forest Depths;🌳;Apple Tree;Container;0;0;0;0;0;0;Source of Food;A fruit tree in a forest.<br>Who would have thought.;
-Forest Depths;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;It looks extra shiny and tasty.<br>You might recover some lost health.;
+Forest Depths;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and tasty.<br>May recover some health.;
 Forest Depths;🎯;Practice Target;Container;0;0;0;0;0;0;Training Tool;There isn't a scratch on it.<br>Someone hanged it but never used it.;
-Forest Depths;🏹;Radiating Bow;Trap;0;2;0;0;0;2;Dangerous Weapon;It lays besides a dead hunter body.<br>He probably won't miss it.;You shot yourself by a mistake
-Forest Depths;🦡;Honey Badger;Heavy;3;1;3;0;3;0;Wild Animal;It looks fairly angry over your presence.<br>Make sure to dodge its furious attacks.;
-Forest Depths;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Wild Flora;You noticed some interesting growth.<br>Maybe it could bring you luck.;
+Forest Depths;🏹;Radiating Bow;Trap;0;2;0;0;0;2;Dangerous Weapon;Lays beside a dead hunter.<br>Probably won't miss it.;Shot an arrow in the knee
+Forest Depths;🐂;Agitated Bull;Heavy;4;1;3;0;3;0;Wild Animal;Looks fairly angry over something.<br>Better avoid the horns.;
+Forest Depths;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Wild Flora;Fairly interesting growth.<br>Maybe brings luck.;
 Forest Depths;🛖;Simple Hut;Container;0;0;0;1;0;0;Deserted Building;Whoever lived here seems have left.<br>What if the left something behind?;
-Forest Depths;🪆;Suspicious Idol;Item;0;0;0;0;0;-1;Dirty Object;You are not sure what that is.<br>But it might come in handy.;
+Forest Depths;🪆;Suspicious Idol;Item;0;0;0;0;0;-1;Dirty Object;Unfamiliar peace of ancient art.<br>Might come in handy.;
 Forest Depths;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
-Forest Depths;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;0;Fancy Food;You wonder who could have lost it.<br>It looks unspoiled and tasty.;
+Forest Depths;🍪;Cinnamon Cookie;Consumable;0;0;0;0;0;0;Fancy Food;Smells absolutely amazing.<br>Likely packs a burst of energy.;
 Forest Depths;💩;Steaming Pile;Container;0;0;0;0;0;0;Questionable Object;Looks like somethings shining in it.<br>Not sure if it's worth it.;
 Forest Depths;💍;Engraved Ring;Trap;0;1;0;0;0;1;Shiny Object;It says "My Precious" on the inside.<br>That sounds promising.;Ouch! The ring is too tight
-Forest Depths;🐺;Old Wolf;Pet;5;2;2;0;2;0;Wild Animal;It walks slowly towards you.<br>Hopefully it's not hungry.;
-Forest Depths;🏔;Cavern Entrance;Prop;0;0;0;0;0;0;Landmark;You wonder whats in there.<br>Maybe some treasure?;
-Gloomy Cavern;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
-Gloomy Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;3;???;You feel something crawling around.<br>It seems to be fast as a wind.;They ripped you apart
-Gloomy Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Object;You stumbled over someone's remains.<br>This doesn't look like an accident.;
-Gloomy Cavern;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Its winding up for a powerful attack.<br>You should better avoid it.;They ripped you apart
-Gloomy Cavern;💀;Pile of Skulls;Container;0;0;0;0;0;0;Disturbing Scenery;A lot of adventures ended here.<br>Better stay alert!;
-Gloomy Cavern;🎗️;Golden Trinket;Item;0;2;0;0;0;-1;Mysterious Artifact;You feel like picking it up.<br>It's almost irresistable.;It got stuck to your skin -1 🔵
-Gloomy Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;1;Apex Predator;Something is crawling around again.<br>What is happening here?;They ripped you apart
+Forest Depths;🐺;Old Wolf;Pet;5;2;2;0;2;0;Wild Animal;Walking in circles slowly.<br>Hopefully not too hungry.;
+Forest Depths;🏔;Cavern Entrance;Prop;0;0;0;0;0;0;Landmark;Huge crack leading inside the mountain.<br>Faint light is coming out.;
+Gloomy Cavern;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
+Gloomy Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;3;???;Something is crawling around.<br>It seems to be fast as a wind.;Got ripped apart
+Gloomy Cavern;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Mound built of someone's remains.<br>Doesn't look like an accident.;
+Gloomy Cavern;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got ripped apart
+Gloomy Cavern;💀;Pile of Skulls;Container;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>Better stay alert.;
+Gloomy Cavern;🎗️;Golden Trinket;Item;0;2;0;0;0;-1;Mysterious Artifact;Forcefully draws the eyesight.<br>Almost irresistible.;It got stuck to the skin
+Gloomy Cavern;🐾;Invisible Creature;Swift;1;1;4;5;10;1;Apex Predator;Something is crawling around again.<br>What is happening here?;Got ripped apart
 Gloomy Cavern;🧙;Tired Old Man;Upgrade;0;0;0;0;0;0;Cursed Human Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
-Gloomy Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;0;Artefact;Some say these will make you blind.<br>There's only one way to find out.;You absorbed some elder power
-Gloomy Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>You probably shouldn't drink it.;It left a funny taste in your mouth
-Gloomy Cavern;🐍;Enormous Snake;Heavy;5;3;3;0;5;4;Mythical Creature;It perfectly blends with the surroundings.<br>You almost stumbled over it.;
-Gloomy Cavern;🥚;Snake Egg;Consumable;0;0;0;0;0;0;Raw Food;You wonder how it tastes.<br>There's only one way to find out.;
-Gloomy Cavern;🚪;Strange Door;Prop;0;0;0;0;0;1;Unexpected Object;You discovered some ornate door.<br>Where could it lead to?;
-Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;0;Sticky Trap;Hopefully nobody's home.<br>It seems quite sturdy.;Eww it's gross having webs on you
+Gloomy Cavern;📜;Ancient Scroll;Item;0;0;0;0;1;0;Artefact;Some say these make you blind.<br>Only one way to find out.;Absorbed an elder power
+Gloomy Cavern;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
+Gloomy Cavern;🐍;Enormous Snake;Heavy;5;3;3;0;5;4;Mythical Creature;It perfectly blends with the surroundings.<br>Almost stumbled over it.;
+Gloomy Cavern;🥚;Snake Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>You only live once.;
+Gloomy Cavern;🚪;Strange Door;Prop;0;0;0;0;0;1;Unexpected Object;Ornate door shimmering at the back wall.<br>Where could it lead to?;
+Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;0;Sticky Trap;Hopefully nobody's home.<br>It seems quite sturdy.;Grossed out by sticky webs.
 Ancient Crypt;🕷;Eight-legged Menace;Swift;4;2;1;0;4;0;Pesky Insect;It looks like it was waiting for a prey.<br>There is no turning back now.;
-Ancient Crypt;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
-Ancient Crypt;🏺;Faded Amphora;Container;0;0;0;0;0;1;Sanctuary;Strange warmth fills your soul.<br>As if this was a special place.;
-Ancient Crypt;🧞;Evil Genie;Spirit;4;4;1;0;0;4;Eerie Being;How dare you disturb me?<br>Prepare to die!;
-Ancient Crypt;🦇;Screaming Bat;Standard;3;2;2;0;5;0;Flying Mammal;Its scream echoes around the crypt.<br>You got goosebumps.;
-Ancient Crypt;🪦;Desolate Gave;Container;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>Something is on the ground.;You dug out some shiny ring.
-Ancient Crypt;💍;Engagement Ring;Item;1;0;0;0;0;1;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;You felt a surge in your chest
+Ancient Crypt;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
+Ancient Crypt;🏺;Faded Amphora;Container;0;0;0;0;0;1;Sanctuary;Strangely warm on touch.<br>Something quivers inside.;
+Ancient Crypt;🧞;Evil Genie;Spirit;4;4;1;0;0;4;Eerie Being;<i><b>\"How dare you disturb me?<br>Prepare to die!\"</b></i>";
+Ancient Crypt;🦇;Screaming Bat;Standard;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>Goosebumps.;
+Ancient Crypt;🪦;Desolate Gave;Container;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>Something is on the ground.;Dug out a shiny ring.
+Ancient Crypt;💍;Engagement Ring;Item;1;0;0;0;0;1;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;Felt a surge in your chest
 Ancient Crypt;⚰️;Burial Coffin;Container;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>There are fingerprints all over.;
-Ancient Crypt;🧟;Animated Dead;Undead;5;2;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>You'd better keep your distance.;Your hands start to rot
+Ancient Crypt;🧟;Animated Dead;Undead;5;2;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
 Ancient Crypt;👻;Spooky Spirit;Spirit;4;2;3;0;3;4;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
 Ancient Crypt;🥔;Old Potato;Consumable;0;0;0;0;0;0;Eternal Vegetable;It looks suspiciously too fresh.<br>Maybe it was brought here recently.;
 Ancient Crypt;🧛;Thirsty Vampire;Undead;4;3;3;0;4;2;Undead;It seems to have just awoken.<br>Better avoid its fangs.;You were bitten into neck
-Ancient Crypt;⚖️;The Scales of Honor;Trap;0;4;0;0;0;2;Ancient Artifact;You've heard about it before.<br>It's the final trial.;
-Ancient Crypt;🐉;Massive Dragon;Heavy;6;4;3;0;4;4;Final Boss;Dude! Is this the final challenge?<br>You surely must take it down.;Their flame burned you alive
-Ancient Crypt;👑;King's Crown;Death;1;1;0;0;0;1;Legendary Artifact;This is where it ends for now.<br>Tweet your adventure to appear in credits!;
+Ancient Crypt;⚖️;The Scales of Honor;Trap;0;4;0;0;0;2;Ancient Artifact;Resembles the mythical legend.<br>Stay alert.;
+Ancient Crypt;🐉;Massive Dragon;Heavy;6;4;3;0;4;4;Final Boss;Is this the final challenge?<br>Take it down!;Got burned alive
+Ancient Crypt;👑;King's Crown;Death;1;1;0;0;0;1;Legendary Artifact;This is where it ends for now.<br>Tweet this to appear in credits!;
