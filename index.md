@@ -58,9 +58,10 @@ layout: default
                             line-height:24px;
                             margin-top:4px;
                             margin-bottom:0px;
+                            margin-right:0px;
                             font-family:sans;
                             display:inline;
-                            width:97%;
+                            width:97.8%;
                             box-shadow:
                               0px 0px 0px 3px #000000;
                               position:relative; z-index:10;"/>
@@ -69,7 +70,7 @@ layout: default
   background-color:#252525;
   box-shadow:
     0px 0px 0px 3px #121212;
-      margin-right:2px;">
+      margin-right:0px;">
 
 <h4 id = "id_desc" style="float:left;
   text-align:left;
