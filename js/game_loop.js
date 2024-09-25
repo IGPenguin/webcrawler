@@ -146,7 +146,7 @@ function getNextEncounterIndex(){
 }
 
 function getUnseenEncounterIndex() { //Unused
-  console.log("Already seen line indexes: " + seenEncounters);
+  //console.log("Already seen line indexes: " + seenEncounters);
   encountersTotal = lines.length;
   var max = encountersTotal;
     do {
@@ -508,12 +508,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast':
-          if (playerMgkMax<=0){
+          if (playerMgkMax<=0 && enemyType!="Upgrade"){
             logPlayerAction(actionString,"Does not know any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
-          if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (!isfreePrayEncounter() && !playerUseMagic(1,"Not enough magic power.")) { break; }
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
 
         switch (enemyType){
@@ -583,12 +583,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
-          if (playerMgkMax<=0){
+          if (playerMgkMax<=0 && enemyType!="Upgrade"){
             logPlayerAction(actionString,"Does not know any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
-          if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (isfreePrayEncounter() && !playerUseMagic(1,"Not enough magic power.")) { break; }
           if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
         switch (enemyType){
@@ -663,7 +663,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (!isfreePrayEncounter() && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (isfreePrayEncounter() || !playerUseMagic(1,"Not enough magic power.")) { break; }
           if (enemyType!="Death") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
         switch (enemyType){
@@ -786,10 +786,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Harmlessly knocked them out.");
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
-              var touchChance = Math.floor(Math.random() * luckInterval);
-              console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
-              if ( touchChance <= playerLck ){
-                logAction("🍀 ▸ ✋ They were spooked by the touch.");
+              var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
+              console.log("touch chance: "+touchChance+" luck: "+playerLck)
+              if ( touchChance <= playerLck ){ //Generous
+                logAction("🍀 ▸ ✋ Touched them, they ran away spooked.");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
@@ -1104,7 +1104,6 @@ function enemyHit(damage,magicType=false){
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
-  console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
     logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
     hitMsg="The attack hit them critically -"+(damage+2)+" 💔";
@@ -1323,7 +1322,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 }
 
 function playerConsumed(){
-  var consumedString = "Mmm, that was refreshing "
+  var consumedString = "Replenished the resources "
 
   var missingHp=playerHpMax-playerHp;
   var missingSta=playerStaMax-playerSta;
@@ -1351,7 +1350,6 @@ function playerConsumed(){
 
 function playerHit(incomingDamage){
   var hitChance = Math.floor(Math.random() * luckInterval);
-  console.log("hitChance: "+hitChance+"/"+luckInterval+" lck: "+playerLck) //Chance to not get hit
   if ( hitChance <= playerLck ){
     logAction("🍀&nbsp;▸&nbsp;💢 Luckily avoided receiving the damage.");
     displayPlayerEffect("🍀");
@@ -1363,7 +1361,6 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     var deathChance = Math.floor(Math.random() * luckInterval * 3); //Small chance to not die
-    console.log("deathChance: "+deathChance+"/"+(luckInterval*3)+" lck: "+playerLck)
     if ( deathChance <= playerLck ){
       playerHp+=1;
       logAction("🍀&nbsp;▸&nbsp;💀 Luckily got a second chance to live.");
@@ -1668,7 +1665,7 @@ function redirectToTweet(){
 //Mobile specific
 function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
-    console.log("Vibrate not supported!");
+    console.log("WARNING: Vibrate not supported!");
     return;
   }
   window.navigator.vibrate([5,20,10]);
