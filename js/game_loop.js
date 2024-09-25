@@ -280,6 +280,13 @@ function redraw(){
     case "Upgrade":
       enemyStatusString = "✨&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Level up</i>";
       break;
+    case "Container":
+    case "Prop":
+      enemyStatusString = "✖️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Unremarkable</i>";
+      break;
+    case "Altar":
+      enemyStatusString = "🌙&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Place of power</i>";
+      break;
     default:
       enemyStatusString = "⁉️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">No details</i>"; //Prop etc.
       break;
