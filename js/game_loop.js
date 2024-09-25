@@ -406,7 +406,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHpMax+=1;
             playerHp+=1;
             playerSta+=1; //Restore lost stamina from initial attack
-            nextEncounter();
+            enemyAnimateDeathNextEncounter();
             break;
           default:
             logPlayerAction(actionString,"The attack had no effect -1 🟢");
@@ -504,10 +504,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             logPlayerAction(actionString,"Felt the body becoming faster.");
-            displayPlayerEffect("✨");
+            displayPlayerEffect("💨");
             playerStaMax+=1;
             playerSta+=1;
-            nextEncounter();
+            enemyAnimateDeathNextEncounter();
             break;
           default:
             logPlayerAction(actionString,"Felt like nothing really happened.");
@@ -982,7 +982,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Felt the chances increase +1 🍀");
             displayPlayerEffect("🍀");
             playerLck+=1;
-            nextEncounter();
+            enemyAnimateDeathNextEncounter();
             break;
 
           case "Checkpoint": //Save and rest to full HP and Sta
@@ -1071,7 +1071,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHp-=1
             playerLck+=3;
             displayPlayerEffect("🪙");
-            nextEncounter();
+            enemyAnimateDeathNextEncounter();
             break;
 
           default:
@@ -1143,7 +1143,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             logPlayerAction(actionString,"Decided against gaining a perk.");
-            nextEncounter();
+            enemyAnimateDeathNextEncounter();
             break;
 
           default:
@@ -1544,8 +1544,8 @@ function adjustEncounterButtons(){
       setButton('button_curse',"🩸 Hatred");
       setButton('button_pray',"📿 Faith");
       setButton('button_grab',"🍀 Fortune");
-      setButton('button_sleep',"🪙 Greed");
-      setButton('button_speak',"💀 Pain");
+      setButton('button_speak',"🪙 Greed");
+      setButton('button_sleep',"💀 Pain");
       break;
     case "Container":
     case "Container-Double":

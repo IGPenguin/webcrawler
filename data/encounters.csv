@@ -1,9 +1,9 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;team;desc;message
 Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;Failed Destiny;<b>🦆 Tweet</b> this attempt to appear in credits.<br><b>✋ Grab</b> the soul to start another adventure.;
-Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Hazy Thought;<b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.<br>Might also stay <b>💭 Dreaming</b>.;
+Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Hazy Thought;<b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.<br>Might also keep <b>💭 Dreaming</b>.;
 Depths of Slumber;👿;Internal Demon;Demon;1;0;1;0;0;0;Imaginary Entity;<b>🌀 Roll</b> or <b>🔰 Block</b> to avoid getting hit.<br>Enemies spend <b>🟢 Energy</b> to attack.;
 Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Consume</b> food to refresh resources.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a character perk</b> to shape the skills.<br>Some may come with a sacrifice.;
+Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a character perk</b> to shape the abilities.<br>Some may come with a sacrifice.;
 Depths of Slumber;🥱;Awakening Moment;Dream;0;0;0;0;0;0;Realization;<b>👣  Walk</b> to explore the surroundings.<br>It is finally time to move ahead.;
 Abandoned Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Mess;Rocks and wood laying on the ground.<br>Nothing of particular interest.;Lifted the nearest boulder.
 Abandoned Village;🪱;Raving Earthworm;Standard;1;1;1;0;2;0;Disturbed Arthropod;The poor thing has a sunlight shock.<br>It got a burst of energy.;Caught a deadly disease
