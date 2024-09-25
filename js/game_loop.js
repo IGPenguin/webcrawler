@@ -292,9 +292,12 @@ function redraw(){
     case "Upgrade":
       enemyStatusString = "⭐️&nbsp;<i><b style=\"font-weight:50; color:#FFD940;font-size:14px\">Upgrade</b></i>";
       break;
+    case "Container-Locked":
+      enemyStatusString = "🗝️&nbsp;<i><b style=\"font-weight:50; color:#DDDDDD;font-size:12px\">Locked</b></i>";
+      break;
     case "Container":
     case "Container-Double":
-    case "Container-Locked":
+    case "Container-Triple":
     case "Prop":
       enemyStatusString = "⚪️&nbsp;<i><b style=\"font-weight:50; color:#FFFFFF;font-size:12px\">Unremarkable</b></i>";
       break;
@@ -347,6 +350,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container":
           case "Container-Double":
+          case "Container-Triple":
           case "Container-Locked": //Allow unlock by attacking
             var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
@@ -462,8 +466,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container-Double":
+          case "Container-Triple":
             logPlayerAction(actionString,"Left without investigating it.");
             encounterIndex+=2; //Skip two encounters
+            if (enemyType=="Container-Triple"){
+              encounterIndex++;
+            }
             nextEncounter();
             break;
           case "Dream":
@@ -605,9 +613,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Container":
           case "Container-Double":
+          case "Container-Triple":
             var openMessage = "The magic power anihilated it -1 🔵";
             logPlayerAction(actionString,openMessage);
-            displayEnemyEffect("〽️");
+            displayEnemyEffect("🔥");
             enemyAnimateDeathNextEncounter();
             break;
 
@@ -889,6 +898,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container":
           case "Container-Consume":
           case "Container-Double":
+          case "Container-Triple":
             var openMessage = "Sucessfully found something.";
             displayEnemyEffect("👋");
             if (enemyMsg != ""){
@@ -1109,6 +1119,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container":
           case "Container-Consume":
           case "Container-Double":
+          case "Container-Triple":
           case "Container-Locked":
           case "Checkpoint":
           case "Altar":
@@ -1538,6 +1549,7 @@ function adjustEncounterButtons(){
       break;
     case "Container":
     case "Container-Double":
+    case "Container-Triple":
       document.getElementById('button_grab').innerHTML="👋 Search";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
