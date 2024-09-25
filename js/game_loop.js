@@ -272,6 +272,9 @@ function redraw(){
       if (enemyLck!=0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
       if (enemyInt!=0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
       if (enemyMgk!=0) {enemyStatusString += "🔵 ??&nbsp;&nbsp;";}
+      if (enemyStatusString==""){
+        enemyStatusString = "✖️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Unremarkable</i>"; //Prop etc.
+      }
       break;
     case "Consumable":
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
@@ -705,7 +708,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=-1*enemyInt){
-              logPlayerAction(actionString,"Broke the curse using mind!");
+              logPlayerAction(actionString,"Strong mind has broken the curse!");
               enemyAnimateDeathNextEncounter();
             } else {
               logPlayerAction(actionString,"Giving the best, but no effect.");
@@ -1305,17 +1308,23 @@ function playerUseMagic(magic, message = ""){
 
 function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk){  //TODO: Properly support negative gains = curses
   var gainedString;
+  var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
-  if ((bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk) >= 0){
-    gainedString="Felt becoming stronger";
+  if ((totalBonus >= 0)){
+    if (totalBonus !=0){
+      gainedString="Felt becoming stronger";
+    }
   } else {
     gainedString="Got cursed by it";
     changeSign=" "
   }
 
   if (enemyMsg != "") {
-    gainedString = enemyMsg.replace("."," ");
+    gainedString = enemyMsg;
+    if (totalBonus!=0){
+      gainedString = gainedString.replace("."," ");
+    }
   }
 
   if (bonusHp != 0) {
