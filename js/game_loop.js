@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "fpm, ver. 9/24/24"
+var versionCode = "semi-fpm, ver. 9/25/24"
 var areaUIElement;
 var cardUIElement;
 var emojiUIElement;
