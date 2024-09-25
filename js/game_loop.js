@@ -1752,6 +1752,11 @@ function redirectToTweet(){
   window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to stage #"+adventureEncounterCount+" in WebCrawler!"+adventureEndReason+"\n"+generateCharacterShareString()));
 }
 
+//Prevent data loss
+window.onbeforeunload = function() {
+    return true;
+};
+
 //Mobile specific
 function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
