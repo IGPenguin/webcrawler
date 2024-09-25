@@ -252,7 +252,7 @@ function redraw(){
     if (enemyMgk > 0) { enemyStatusString += "&nbsp;🔵 " + "〜";} //Magic is obscured on purpose
 
   if (enemyType=="Boss"){
-    enemyStatusString+="💀&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Boss</i>";
+    enemyStatusString+=decorateStatusText("💀","Boss","gray");
   }
 
   switch(enemyType){ //TODO: Add more custom headers for encounters
@@ -265,47 +265,37 @@ function redraw(){
     case "Spirit":
     case "Friend":
       if (enemyStatusString==""){
-        enemyStatusString = "♣️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Mysterious</i>";
+        enemyStatusString=decorateStatusText("♣️","Mysterious","gray");
       }
       break;
 
     case "Item":
     case "Trap":
-    //case "Friend": //Show default - HP, Sta + dmg
-      enemyStatusString = "";
-      if (enemyHp!=0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
-      if (enemyAtk!=0) {enemyStatusString += "⚔️ ??&nbsp;&nbsp;";}
-      if (enemySta!=0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
-      if (enemyLck!=0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
-      if (enemyInt!=0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
-      if (enemyMgk!=0) {enemyStatusString += "🔵 ??&nbsp;&nbsp;";}
-      if (enemyStatusString==""){
-        enemyStatusString = "⚪️&nbsp;<i><b style=\"font-weight:50; color:#808080;font-size:12px\">Unremarkable</b></i>";
-      }
+      enemyStatusString=decorateStatusText("⚜️","Equipment","#FFD940");
       break;
     case "Consumable":
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
       break;
     case "Dream":
-      enemyStatusString = "⚪️&nbsp;<i><b style=\"font-weight:50; color:#FFFFFF;font-size:14px\">Guidance</b></i>";
+      enemyStatusString=decorateStatusText("⚪️","Guidance","#FFFFFF");
       break;
     case "Upgrade":
-      enemyStatusString = "⭐️&nbsp;<i><b style=\"font-weight:50; color:#FFD940;font-size:14px\">Upgrade</b></i>";
+      enemyStatusString=decorateStatusText("⭐️","Advancement","#FFD940");
       break;
     case "Container-Locked":
-      enemyStatusString = "🗝️&nbsp;<i><b style=\"font-weight:50; color:#DDDDDD;font-size:12px\">Locked</b></i>";
+      enemyStatusString=decorateStatusText("🗝️","Locked","#DDDDDD");
       break;
     case "Container":
     case "Container-Double":
     case "Container-Triple":
     case "Prop":
-      enemyStatusString = "⚪️&nbsp;<i><b style=\"font-weight:50; color:#FFFFFF;font-size:12px\">Unremarkable</b></i>";
+      enemyStatusString=decorateStatusText("⚪️","Unremarkable","#FFFFFF");
       break;
     case "Altar":
-      enemyStatusString = "🔹&nbsp;<i><b style=\"font-weight:50; color:#0041C2;font-size:12px\">Place of worship</b></i>";
+      enemyStatusString=decorateStatusText("🔹","Worshipping place","#0041C2");
       break;
     default:
-      enemyStatusString = "⁉️&nbsp;<i><b style=\"font-weight:50; color:red;font-size:12px\">No details</b></i>"; //Prop etc.
+      enemyStatusString=decorateStatusText("⁉️","No details","#0041C2");
       break;
   }
 
@@ -315,6 +305,10 @@ function redraw(){
   versusText = document.getElementById('id_versus');
   buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
+}
+
+function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
+  return emoji+"&nbsp;<i style=\"font-weight:50;color:"+color+";font-size:"+size+"px\">"+text+"</i>";
 }
 
 //Game logic
@@ -350,8 +344,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container":
           case "Container-Double":
-          case "Container-Triple":
-          case "Container-Locked": //Allow unlock by attacking
+          case "Container-Triple": //Allow unlock by attacking
             var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
               openMessage = enemyMsg+" -1 🟢";
@@ -611,6 +604,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Item":
           case "Consumable":
+
+          case "Container-Locked":
+            logPlayerAction(actionString,"Unlocked using a spell -1 🔵");
+            enemyAnimateDeathNextEncounter()
+            break;
           case "Container":
           case "Container-Double":
           case "Container-Triple":
@@ -917,9 +915,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerLootString=playerLootString.replace("🗝️","");
 
               logPlayerAction(actionString,openMessage);
-              nextEncounter();
+              enemyAnimateDeathNextEncounter();
             } else {
-              logPlayerAction(actionString,"It is securely locked.");
+              logPlayerAction(actionString,"The lock is tightly secured.");
               displayPlayerCannotEffect();
             }
             break;
@@ -1555,10 +1553,13 @@ function adjustEncounterButtons(){
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
     case "Container-Locked":
+      if (playerMgkMax>0){
+        document.getElementById('button_cast').innerHTML="🪄 Unlock";
+      }
       if (playerLootString.includes("🗝️")){
         document.getElementById('button_grab').innerHTML="🗝️ Unlock";
       } else {
-        document.getElementById('button_grab').innerHTML="👋 Search";
+        document.getElementById('button_grab').innerHTML="👋 Grab";
       }
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
@@ -1585,7 +1586,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Item":
-      document.getElementById('button_grab').innerHTML="✋ Grab";
+      document.getElementById('button_grab').innerHTML="👋 Grab";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
