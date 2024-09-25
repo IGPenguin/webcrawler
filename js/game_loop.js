@@ -295,7 +295,7 @@ function redraw(){
       enemyStatusString = "✖️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Unremarkable</i>";
       break;
     case "Altar":
-      enemyStatusString = "🌙&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Place of power</i>";
+      enemyStatusString = "🌙&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Place of worship</i>";
       break;
     default:
       enemyStatusString = "⁉️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">No details</i>"; //Prop etc.
@@ -414,8 +414,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Demon":
           case "Spirit":
+            var rollMessage;
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"Dodged a standard attack -1 🟢","The roll was a waste of energy -1 🟢");
+              if (enemyAtk!=0){
+                rollMessage="Dodged a standard attack -1 🟢";
+              } else {
+                rollMessage="They do not mean no harm -1 🟢";
+              }
+              enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -768,8 +774,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAttackOrRest();
             break;
 
-          case "Friend": //They'll boost your stats
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+          case "Friend":
+            //Think of something better, this is for talking
+            //playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            logPlayerAction(actionString,"Prayer had no effect here.")
+            displayPlayerCannotEffect();
             break;
 
           case "Dream":
@@ -779,14 +788,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            var hpDiff= playerHpMax-playerHp;
-            if (hpDiff>0) {
-              logPlayerAction(actionString,"A heavenly ray healed all wounds +"+hpDiff+" ❤️");
-              playerHp=playerHpMax;
-            } else {
-              logPlayerAction(actionString,"The heavens granted a blessing +1 🍀");
-              playerLck+=1;
-            }
+            // var hpDiff= playerHpMax-playerHp;
+            // if (hpDiff>0) {
+            //   logPlayerAction(actionString,"A heavenly ray healed all wounds +"+hpDiff+" ❤️");
+            //   playerHp=playerHpMax;
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             nextEncounter();
             break;
 
@@ -823,7 +829,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"New pet has joined the party!");
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
-              playerAtk+=enemyAtk;
+              playerChangeStats(0, enemyAtk, 0, enemyLck, enemyInt, enemyMgk); //Cannot get health or stamina from a pet
               enemyAnimateDeathNextEncounter();
               break;
             }
@@ -1078,7 +1084,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Demon":
           case "Undead":
-            enemyAttackOrRest();
+
+            if (enemyAtk!=0){
+              enemyAttackOrRest();
+            } else {
+              //logPlayerAction(actionString,"They do not pose a threat.");
+            }
+
             if (playerHp>0){
               displayPlayerEffect("💤");
               playerGetStamina(1);
@@ -1183,7 +1195,7 @@ function enemyHit(damage,magicType=false){
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 Successfully eliminated them.");
+    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 That was the final blow.");
     enemyAnimateDeathNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
@@ -1537,9 +1549,13 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="🍴 Consume";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
+    case "Altar":
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
     case "Curse":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
@@ -1752,10 +1768,12 @@ function redirectToTweet(){
   window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to stage #"+adventureEncounterCount+" in WebCrawler!"+adventureEndReason+"\n"+generateCharacterShareString()));
 }
 
-//Prevent data loss
-window.onbeforeunload = function() {
-    return true;
-};
+//Prevent data loss if not running on localhost
+if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1"){
+  window.onbeforeunload = function() {
+      return true;
+  };
+}
 
 //Mobile specific
 function vibrateButtonPress(){
