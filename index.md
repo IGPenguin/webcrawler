@@ -177,18 +177,20 @@ layout: default
 </div>
 </div>
 
-<p style="margin:8px;"></p>
-<button type = "button" id = "button_attack">🎯 Attack</button>&nbsp;&nbsp;
-<button type = "button" id = "button_roll">🌀 Roll</button>&nbsp;&nbsp;
-<button type = "button" id = "button_block">🔰 Block</button>
-<p style="margin:8px;"></p>
-<button type = "button" id = "button_cast">🪄 Cast</button>&nbsp;&nbsp;
-<button type = "button" id = "button_curse">🪬 Curse</button>&nbsp;&nbsp;
-<button type = "button" id = "button_pray">🙏 Pray</button>
-<p style="margin:8px;"></p>
-<button type = "button" id = "button_grab">✋ Grab</button>&nbsp;&nbsp;
-<button type = "button" id = "button_speak">💬 Speak</button>&nbsp;&nbsp;
-<button type = "button" id = "button_sleep">💤 Rest</button>
+<div id="id_buttons">
+  <p style="margin:8px;"></p>
+  <button type = "button" id = "button_attack">🎯 Attack</button>&nbsp;&nbsp;
+  <button type = "button" id = "button_roll">🌀 Roll</button>&nbsp;&nbsp;
+  <button type = "button" id = "button_block">🔰 Block</button>
+  <p style="margin:8px;"></p>
+  <button type = "button" id = "button_cast">🪄 Cast</button>&nbsp;&nbsp;
+  <button type = "button" id = "button_curse">🪬 Curse</button>&nbsp;&nbsp;
+  <button type = "button" id = "button_pray">🙏 Pray</button>
+  <p style="margin:8px;"></p>
+  <button type = "button" id = "button_grab">✋ Grab</button>&nbsp;&nbsp;
+  <button type = "button" id = "button_speak">💬 Speak</button>&nbsp;&nbsp;
+  <button type = "button" id = "button_sleep">💤 Rest</button>
+</div>
 
 <p style="margin:26px"></p>
 <h4 style="font-size:12px; opacity:0.85; box-shadow:none;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 id="id_version" style="font-size:10px; margin-top:-12px; opacity:0.6; box-shadow:none;"/>

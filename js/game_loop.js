@@ -9,6 +9,9 @@ var emojiUIElement;
 var enemyInfoUIElement;
 var playerInfoUIElement;
 var toolbarCardUIElement;
+var versusText;
+var buttonsContainer;
+
 
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
 var seenEncounters;
@@ -277,6 +280,9 @@ function redraw(){
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
+
+  versusText = document.getElementById('id_versus');
+  buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
 }
 
@@ -1130,9 +1136,7 @@ function enemyAttackOrRest(){
 }
 
 function nextEncounter(animateArea=true){
-  var versusText = document.getElementById('id_versus');
   toogleUIElement(versusText,"block"); animateVersus();
-  console.log(areaUIElement)
 
   if (animateArea) {
     animateUIElement(areaUIElement,"animate__flipInX","1");
@@ -1154,8 +1158,8 @@ function nextEncounter(animateArea=true){
 }
 
 function enemyAnimateDeathNextEncounter(){
-  //animateUIElement(areaUIElement,"animate__flipInX","1");
-  toogleUIElement(areaUIElement);
+  animateUIElement(areaUIElement,"animate__flipOutX","1"); //Uuuu nice!
+  //toogleUIElement(areaUIElement);
 
   var versusText = document.getElementById('id_versus');
   toogleUIElement(versusText);
@@ -1517,6 +1521,12 @@ function displayEffect(message,documentElement){
 }
 
 function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
+  var typeOfTime = typeof time; //To not forget anymore
+  if (typeof time != "string"){
+    time = String(time)
+    typeOfTime = typeof time
+  }
+
   if (hidden){
     documentElement.innerHTML = message;
     documentElement.style.display = "block";
