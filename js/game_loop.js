@@ -281,6 +281,7 @@ function redraw(){
       enemyStatusString = "✨&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Level up</i>";
       break;
     case "Container":
+    case "Container-Double":
     case "Prop":
       enemyStatusString = "✖️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Unremarkable</i>";
       break;
@@ -332,6 +333,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Container":
+          case "Container-Double":
             var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
               openMessage = enemyMsg+" -1 🟢";
@@ -433,7 +435,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Consume":
           case "Altar":
             logPlayerAction(actionString,"Left without investigating it.");
-            encounterIndex+=1; //Skip loot
+            encounterIndex+=1; //Skip next encounter
+            nextEncounter();
+            break;
+          case "Container-Double":
+            logPlayerAction(actionString,"Left without investigating it.");
+            encounterIndex+=2; //Skip two encounters
             nextEncounter();
             break;
           case "Dream":
@@ -574,6 +581,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Container":
+          case "Container-Double":
             var openMessage = "The magic power anihilated it -1 🔵";
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
@@ -863,6 +871,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container":
           case "Container-Consume":
+          case "Container-Double":
             var openMessage = "Sucessfully found something.";
             displayEnemyEffect("👋");
             if (enemyMsg != ""){
@@ -1057,6 +1066,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Dream":
           case "Container":
           case "Container-Consume":
+          case "Container-Double":
           case "Checkpoint":
           case "Altar":
             displayPlayerEffect("💤");
@@ -1472,6 +1482,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_sleep').innerHTML="💀 Pain";
       break;
     case "Container":
+    case "Container-Double":
       document.getElementById('button_grab').innerHTML="👋 Search";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
