@@ -73,7 +73,7 @@ var luckInterval = 24; //Lower to increase chances
 var actionString;
 //Initial action log below
 //var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
-var actionLog = "💤&nbsp;▸&nbsp;💭 The mind dreams, the body sleeps.<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤&nbsp;▸&nbsp;💭 Resting the mind and the body...<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -423,7 +423,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"Continued onwards, feeling anxious.");
+            logPlayerAction(actionString,"Continued walking the dreamy road.");
             nextEncounter();
             break;
           case "Prop":
@@ -508,6 +508,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast':
+          if (playerMgkMax<=0){
+            logPlayerAction(actionString,"Does not know any spells yet.");
+            displayPlayerCannotEffect();
+            break;
+          }
           if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
 
@@ -578,8 +583,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
-        if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
-        if (enemyType!="Death") {displayPlayerEffect("🪬");}
+          if (playerMgkMax<=0){
+            logPlayerAction(actionString,"Does not know any spells yet.");
+            displayPlayerCannotEffect();
+            break;
+          }
+          if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
         switch (enemyType){
           case "Undead":
@@ -647,13 +657,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
-          if ((enemyType!="Upgrade" && enemyType!="Death") && !playerUseMagic(1,"Not enough magic power.")) { break; }
-          if (enemyType!="Death") {displayPlayerEffect("🙏");}
+          if (playerMgkMax<=0 && !isfreePrayEncounter()){
+            logPlayerAction(actionString,"Does not know any spells yet.");
+            displayPlayerCannotEffect();
+            break;
+          }
+
+          if (!isfreePrayEncounter() && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (enemyType!="Death") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
         switch (enemyType){
-          case "Curse":
-            logPlayerAction(actionString,"Broke the curse by the prayer!");
-            enemyAnimateDeathNextEncounter();
+          case "Curse": //Breaks only if mind is stronger
+            if (playerInt>=-1*enemyInt){
+              logPlayerAction(actionString,"Broke the curse using mind!");
+              enemyAnimateDeathNextEncounter();
+            } else {
+              logPlayerAction(actionString,"Giving the best, but no effect.");
+              displayPlayerCannotEffect();
+            }
             break;
 
           case "Spirit":
@@ -699,7 +720,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Appreciated a deep sleep prayer +1 🍀");
+            logPlayerAction(actionString,"Appreciated the internal prayer +1 🍀");
             playerLck++;
             nextEncounter();
             break;
@@ -853,6 +874,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
+            logAction("<br>");
+            logAction("<br>");
             logPlayerAction(actionString,"Got reconnected with the soul.");
             playerNumber++;
             playerName = playerName+" "+playerNumber+"."
@@ -876,7 +899,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt the chances increased +1 🍀");
+            logPlayerAction(actionString,"Felt the chances increase +1 🍀");
             displayPlayerEffect("🍀");
             playerLck+=1;
             nextEncounter();
@@ -1133,6 +1156,21 @@ function enemyAttackOrRest(){
   } else {
     enemyRest(1);
   }
+}
+
+function isfreePrayEncounter(){
+  var returnValue = false;
+    switch (enemyType){
+      case "Upgrade":
+      case "Death":
+      case "Altar":
+      case "Curse":
+      case "Dream":
+        returnValue=true;
+      default:
+        //Nothing
+    }
+  return returnValue;
 }
 
 function nextEncounter(animateArea=true){
@@ -1424,15 +1462,22 @@ function adjustEncounterButtons(){
     case "Curse":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      document.getElementById('button_pray').innerHTML="🧠 Focus";
+      document.getElementById('button_sleep').innerHTML="💤 Faint";
+      break;
+
     case "Item":
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
     case "Prop":
-    case "Dream":
       document.getElementById('button_roll').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
+    case "Dream":
+      document.getElementById('button_roll').innerHTML="✋ Reach";
+      document.getElementById('button_roll').innerHTML="💭 Dream";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
 
@@ -1467,10 +1512,16 @@ function adjustEncounterButtons(){
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
+
+    case "Demon":
+      document.getElementById('button_pray').innerHTML="🔥 Banish";
+      break;
+
     case "Death":
       document.getElementById('button_speak').innerHTML="💌 Share";
       document.getElementById('button_sleep').innerHTML="🦆 Tweet";
       break;
+
     case "Checkpoint":
       document.getElementById('button_grab').innerHTML="💾 Save";
       document.getElementById('button_roll').innerHTML="👣 Walk";
