@@ -757,7 +757,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
         switch (enemyType){
           case "Curse":
-            logPlayerAction(actionString,"Reached forward with the hands.");
+            logPlayerAction(actionString,"Hands reached forward to no effect.");
             break;
 
           case "Dream":
@@ -768,11 +768,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"They got scared due to lack of empathy.");
+                logPlayerAction(actionString,"Touched improperly, it got scared.");
                 enemyAttackOrRest();
                 break;
               }
-              logPlayerAction(actionString,"They agreed to join the adventure!");
+              logPlayerAction(actionString,"Petted its head, it has joined the party!");
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
               playerAtk+=enemyAtk;
@@ -783,7 +783,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
           case "Standard":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
-              logPlayerAction(actionString,"Knocked them out harmlessly.");
+              logPlayerAction(actionString,"Harmlessly knocked them out.");
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random() * luckInterval);
@@ -797,7 +797,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               else {
                 displayPlayerCannotEffect();
                 enemyAttackOrRest();
-                logPlayerAction(actionString,"Almost grabbed them.");
+                logPlayerAction(actionString,"Almost grabbed them, but not quite.");
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
@@ -810,14 +810,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
-            logPlayerAction(actionString,"They effortlessly evaded the grasp.");
+            logPlayerAction(actionString,"Missed, they evaded the grasp.");
             displayEnemyEffect("🌀");
             enemyAttackOrRest();
             break;
 
           case "Heavy":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
-              logPlayerAction(actionString,"Got overpowered and hit extra hard -"+enemyAtk*2+" 💔");
+              logPlayerAction(actionString,"Grasp overpowered, got hit hit extra hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
@@ -835,7 +835,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container":
           case "Container-Consume":
-            var openMessage = "Sucesfully found something.";
+            var openMessage = "Sucessfully found something.";
             displayEnemyEffect("👋");
             if (enemyMsg != ""){
               openMessage = enemyMsg;
@@ -851,7 +851,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"The touch was not appreciated.");
+            logPlayerAction(actionString,"Touched them - not appreciated, they left.");
             displayEnemyEffect("✋");
             nextEncounter();
             break;
@@ -869,14 +869,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Spirit":
-            logPlayerAction(actionString,"Grasped right through them.");
+            logPlayerAction(actionString,"Hands passed right through them.");
             displayEnemyEffect("✋");
             break;
 
           case "Death":
             logAction("<br>");
             logAction("<br>");
-            logPlayerAction(actionString,"Got reconnected with the soul.");
+            logPlayerAction(actionString,"Reconnected with their soul.");
             playerNumber++;
             playerName = playerName+" "+playerNumber+"."
             displayEnemyEffect("✋");
