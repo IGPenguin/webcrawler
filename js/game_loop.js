@@ -242,13 +242,14 @@ function redraw(){
 
   enemyStatusString += "&nbsp;&nbsp;"
 
-  enemyStatusString += "&nbsp;⚔️ " + "◆".repeat(enemyAtk)
-  if (enemyAtkBonus<0) { enemyStatusString += "◇".repeat(-1*enemyAtkBonus); }
-
-  enemyStatusString += "&nbsp;&nbsp;"
+  if (enemyAtk>0) {
+    enemyStatusString += "&nbsp;⚔️ " + "◆".repeat(enemyAtk);
+    if (enemyAtkBonus<0) { enemyStatusString += "◇".repeat(-1*enemyAtkBonus); }
+    enemyStatusString += "&nbsp;&nbsp;"
+  }
 
   if (enemyMgk > 0) {enemyStatusString += "&nbsp;🔵 " + "◆".repeat(enemyAtk);}
-      else { enemyStatusString += "&nbsp;🔵 " + "〜";} //TODO: Maybe show 0 magic?
+      //else { enemyStatusString += "&nbsp;🔵 " + "〜";} //TODO: Maybe show 0 magic?
 
   switch(enemyType){
     case "Standard":
@@ -1155,11 +1156,11 @@ function enemyAttackOrRest(){
   if (enemySta-enemyStaLost > 0) {
     if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked -"+enemyAtk+" 💔"}
     else {
-        staminaChangeMsg = "The enemy siphoned health -"+enemyAtk+" 💔";
+        staminaChangeMsg = "The enemy siphoned some health -"+enemyAtk+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
     if (enemyAtk+enemyAtkBonus<=0){
-      staminaChangeMsg="The enemy is too weak to do any harm."
+      staminaChangeMsg="They are too weak to do any harm."
     } else {
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
       playerHit(enemyAtk+enemyAtkBonus);
