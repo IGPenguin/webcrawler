@@ -73,7 +73,7 @@ var luckInterval = 24; //Lower to increase chances
 var actionString;
 //Initial action log below
 //var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
-var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago...<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -423,7 +423,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"Continued walking the dreamy road.");
+            playerGetStamina(playerStaMax-playerSta,true);
+            playerMgk=playerMgkMax;
+            logPlayerAction(actionString,"Rested well, recovering all resources.");
             nextEncounter();
             break;
           case "Prop":
@@ -508,12 +510,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast':
-          if (playerMgkMax<=0 && enemyType!="Upgrade"){
+          if (enemyType=="Upgrade"){
+            logPlayerAction(actionString,"Chose magic +2 🔵 over agility -1 🟢");
+            playerMgkMax+=2;
+            playerMgk+=2;
+            playerStaMax-=1;
+            playerSta-=1;
+            nextEncounter();
+            break;
+          }
+
+          if (playerMgkMax<=0){
             logPlayerAction(actionString,"Does not know any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
-          if (!isfreePrayEncounter() && !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (!playerUseMagic(1,"Not enough magic power.")) { break; } //Casting is never free, upgrd handled above
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
 
         switch (enemyType){
@@ -563,15 +575,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Upgrade":
-            logPlayerAction(actionString,"Chose magic +2 🔵 over agility -1 🟢");
-            playerMgkMax+=2;
-            playerMgk+=2;
-            playerStaMax-=1;
-            playerSta-=1;
-            nextEncounter();
-            break;
-
           case "Death": //TODO: Maybe I'll come up with something later
             displayPlayerCannotEffect();
             logPlayerAction(actionString,"Magic powers already faded away.");
@@ -583,12 +586,26 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
-          if (playerMgkMax<=0 && enemyType!="Upgrade"){
+          if (enemyType=="Upgrade"){
+              logPlayerAction(actionString,"Offered blood -1 💔 for power +2 🔵");
+              playerHit(1);
+              playerHpMax-=1;
+              playerMgkMax+=2;
+              playerMgk+=2;
+              nextEncounter();
+              break;
+          }
+
+          if (playerMgkMax<=0){
             logPlayerAction(actionString,"Does not know any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
-          if (isfreePrayEncounter() && !playerUseMagic(1,"Not enough magic power.")) { break; }
+
+          if (!playerUseMagic(1,"Not enough magic power.")) { //Curse is never free, upgrd handled above
+              break;
+            }
+
           if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
         switch (enemyType){
@@ -625,7 +642,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Conjured themselves an extra nightmare -1 💔");
+            logPlayerAction(actionString,"Conjured a terrible nightmare -1 💔");
             playerHit(1);
             displayPlayerCannotEffect();
             break;
@@ -634,15 +651,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
             playerLck=-1;
             displayPlayerEffect("🪬");
-            nextEncounter();
-            break;
-
-          case "Upgrade":
-            logPlayerAction(actionString,"Sacrificed health -1 💔 for power +2 🔵");
-            playerHit(1);
-            playerHpMax-=1;
-            playerMgkMax+=2;
-            playerMgk+=2;
             nextEncounter();
             break;
 
@@ -663,7 +671,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (isfreePrayEncounter() || !playerUseMagic(1,"Not enough magic power.")) { break; }
+          if (!isfreePrayEncounter()) {
+            if (!playerUseMagic(1,"Not enough magic power.")) {
+              break;
+            }
+          }
           if (enemyType!="Death") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
         switch (enemyType){
@@ -750,7 +762,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"The prayer had no visible effect -1 🔵");
+            var prayLogMessage="The prayer had no visible effect."
+            if (!isfreePrayEncounter){prayLogMessage.replace("."," -1 🔵");}
+            logPlayerAction(actionString,prayLogMessage);
         }
         break;
 
@@ -1160,11 +1174,12 @@ function enemyAttackOrRest(){
 function isfreePrayEncounter(){
   var returnValue = false;
     switch (enemyType){
-      case "Upgrade":
       case "Death":
       case "Altar":
       case "Curse":
       case "Dream":
+      case "Item":
+      case "Consumable":
         returnValue=true;
       default:
         //Nothing
