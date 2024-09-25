@@ -98,10 +98,10 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-17px;
-  margin-bottom:-16px;
+<h3 id = "id_versus" style="margin-top:-20px;
+  margin-bottom:-18px;
     color:red;
-    font-size:30px;
+    font-size:36px;
       letter-spacing:1.5px;
       -webkit-text-stroke: 5px black;
         paint-order: stroke fill;
@@ -116,8 +116,8 @@ layout: default
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
-                                        padding-top:4px;
-                                        padding-bottom:4px;
+                                        padding-top:2px;
+                                        padding-bottom:2px;
                                               background-color:#202020;">
 
 <h3 id = "id_player_name" style="text-align:left;
@@ -162,7 +162,7 @@ layout: default
 
 <h4 id = "id_log" style="margin-top:0px;
                           padding-left:8px;
-                          margin-bottom:14px;
+                          margin-bottom:12px;
                           text-align:left;"/>
 </div>
 <h3 id = "id_player_party_loot" style="text-align:left;
@@ -179,22 +179,22 @@ layout: default
                                           0px 0px 0px 3px #121212;
                                           background-color:#272727;"/>
 </div>
+<div id="id_buttons" style="margin:6px; margin-top:1px;">
+  <button type = "button" id = "button_attack">🎯</button>&nbsp;
+  <button type = "button" id = "button_roll">🌀</button>&nbsp;
+  <button type = "button" id = "button_block">🔰</button>
+  <p style="margin:8px;"></p>
+  <button type = "button" id = "button_cast">🪄</button>&nbsp;
+  <button type = "button" id = "button_curse">🪬</button>&nbsp;
+  <button type = "button" id = "button_pray">🙏</button>
+  <p style="margin:8px;"></p>
+  <button type = "button" id = "button_grab">✋</button>&nbsp;
+  <button type = "button" id = "button_speak">💬</button>&nbsp;
+  <button type = "button" id = "button_sleep">💤</button>
+</div>
 </div>
 
-<div id="id_buttons">
-  <p style="margin:8px;"></p>
-  <button type = "button" id = "button_attack">🎯 Attack</button>&nbsp;&nbsp;
-  <button type = "button" id = "button_roll">🌀 Roll</button>&nbsp;&nbsp;
-  <button type = "button" id = "button_block">🔰 Block</button>
-  <p style="margin:8px;"></p>
-  <button type = "button" id = "button_cast">🪄 Cast</button>&nbsp;&nbsp;
-  <button type = "button" id = "button_curse">🪬 Curse</button>&nbsp;&nbsp;
-  <button type = "button" id = "button_pray">🙏 Pray</button>
-  <p style="margin:8px;"></p>
-  <button type = "button" id = "button_grab">✋ Grab</button>&nbsp;&nbsp;
-  <button type = "button" id = "button_speak">💬 Speak</button>&nbsp;&nbsp;
-  <button type = "button" id = "button_sleep">💤 Rest</button>
-</div>
+
 
 <p style="margin:26px"></p>
 <h4 style="font-size:12px; opacity:0.85; box-shadow:none;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 id="id_version" style="font-size:10px; margin-top:-12px; opacity:0.6; box-shadow:none;"/>

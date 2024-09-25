@@ -283,10 +283,10 @@ function redraw(){
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
       break;
     case "Dream":
-      enemyStatusString = "❔&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Guidance</i>";
+      enemyStatusString = "❔&nbsp;<i style=\"font-weight:50; color:#FFFFFF;font-size:13px\">Guidance</i>";
       break;
     case "Upgrade":
-      enemyStatusString = "✨&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Level up</i>";
+      enemyStatusString = "✨&nbsp;<i style=\"font-weight:50;text-color:yellow;font-size:12px\">Level up</i>";
       break;
     case "Container":
     case "Container-Double":
@@ -1243,11 +1243,12 @@ function isfreePrayEncounter(){
 }
 
 function nextEncounter(animateArea=true){
-  toogleUIElement(versusText,"block"); animateVersus();
+  toggleUIElement(versusText,1);
+  animateVersus();
 
   if (animateArea) {
     animateUIElement(areaUIElement,"animate__flipInX","1");
-    toogleUIElement(areaUIElement,"block");
+    toggleUIElement(areaUIElement,1);
   }
 
   adventureEncounterCount+=1;
@@ -1266,10 +1267,10 @@ function nextEncounter(animateArea=true){
 
 function enemyAnimateDeathNextEncounter(){
   animateUIElement(areaUIElement,"animate__flipOutX","1"); //Uuuu nice!
-  //toogleUIElement(areaUIElement);
+  //toggleUIElement(areaUIElement);
 
   var versusText = document.getElementById('id_versus');
-  toogleUIElement(versusText);
+  toggleUIElement(versusText);
   animateUIElement(cardUIElement,"animate__flipOutY","1"); //Maybe this will look better?
 
   var animationHandler = function(){
@@ -1280,9 +1281,8 @@ function enemyAnimateDeathNextEncounter(){
   cardUIElement.addEventListener('animationend',animationHandler);
 }
 
-function animateVersus(time = "1.4"){
+function animateVersus(time = "0.8"){
   var versusText = document.getElementById('id_versus');
-  toogleUIElement(versusText,"absolute");
   animateUIElement(versusText,"animate__flash",time);
 }
 
@@ -1475,7 +1475,7 @@ function gameEnd(){
 
 //Logging
 function logPlayerAction(actionString,message){
-  actionString = actionString.substring(0,actionString.indexOf(" ")) + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
+  actionString = actionString.split(" ")[0] + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
@@ -1492,31 +1492,36 @@ function logAction(message){
 }
 
 //UI Buttons
+function setButton(elementID,text){
+  //document.getElementById(elementID).innerHTML=text.split(" ")[0]; //NO TEXT
+  document.getElementById(elementID).innerHTML=text;
+}
+
 function resetEncounterButtons(){
-  document.getElementById('button_attack').innerHTML="⚔️ Attack";
-  document.getElementById('button_block').innerHTML="🔰 Block";
-  document.getElementById('button_roll').innerHTML="🌀 Roll";
-  document.getElementById('button_cast').innerHTML="🪄 Spell";
-  document.getElementById('button_curse').innerHTML="🪬 Curse";
-  document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
-  document.getElementById('button_grab').innerHTML="✋ Grab";
-  document.getElementById('button_sleep').innerHTML="💤 Rest";
-  document.getElementById('button_speak').innerHTML="💬 Speak";
+  setButton('button_attack',"⚔️ Attack");
+  setButton('button_block',"🔰 Block");
+  setButton('button_roll',"🌀 Roll");
+  setButton('button_cast',"🪄 Spell");
+  setButton('button_curse',"🪬 Curse");
+  setButton('button_pray',"❤️‍🩹 Heal");
+  setButton('button_grab',"✋ Grab");
+  setButton('button_sleep',"💤 Rest");
+  setButton('button_speak',"💬 Speak");
 }
 
 function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      document.getElementById('button_attack').innerHTML="❤️ Vitality";
-      document.getElementById('button_roll').innerHTML="🟢 Agility";
-      document.getElementById('button_block').innerHTML="🧠 Wisdom";
-      document.getElementById('button_cast').innerHTML="🔮 Sorcery";
-      document.getElementById('button_curse').innerHTML="🩸 Hatred";
-      document.getElementById('button_pray').innerHTML="📿 Faith";
-      document.getElementById('button_grab').innerHTML="🍀 Fortune";
-      document.getElementById('button_speak').innerHTML="🪙 Greed"; //Lose HP but gain luck +3
-      document.getElementById('button_sleep').innerHTML="💀 Pain";
+      setButton('button_attack',"❤️ Vitality");
+      setButton('button_block',"🟢 Agility");
+      setButton('button_roll',"🧠 Wisdom");
+      setButton('button_cast',"🔮 Sorcery");
+      setButton('button_curse',"🩸 Hatred");
+      setButton('button_pray',"📿 Faith");
+      setButton('button_grab',"🍀 Fortune");
+      setButton('button_sleep',"🪙 Greed");
+      setButton('button_speak',"💀 Pain");
       break;
     case "Container":
     case "Container-Double":
@@ -1536,7 +1541,7 @@ function adjustEncounterButtons(){
     case "Consumable":
     case "Container-Consume":
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_grab').innerHTML="🍴 Consume";
+      document.getElementById('button_grab').innerHTML="🍴 Eat";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
 
@@ -1572,7 +1577,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="💭 Dream";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      document.getElementById('button_pray').innerHTML="🙏 Meditate";
+      document.getElementById('button_pray').innerHTML="🙏 Focus";
       break;
 
     case "Fishing":
@@ -1632,12 +1637,12 @@ function adjustEncounterButtons(){
 }
 
 //UI Effects
-function toogleUIElement(UIElement,desiredState = "none"){
-  var elementDisplayState = UIElement.style.display;
-  if (elementDisplayState != "none"){
-    UIElement.style.display=desiredState;
+function toggleUIElement(UIElement,opacity = "0"){
+  var elementDisplayState = UIElement.style.opacity;
+  if (elementDisplayState != "0"){
+    UIElement.style.opacity=opacity;
   } else {
-    UIElement.style.display=desiredState;
+    UIElement.style.opacity=opacity;
   }
 }
 
