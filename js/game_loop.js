@@ -260,6 +260,9 @@ function redraw(){
     case "Demon":
     case "Spirit":
     case "Friend":
+      if (enemyStatusString==""){
+        enemyStatusString = "♣️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Mysterious</i>";
+      }
       break;
 
     case "Item":
@@ -550,7 +553,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (playerMgkMax<=0){
-            logPlayerAction(actionString,"Does not know any spells yet.");
+            logPlayerAction(actionString,"Cannot cast any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
@@ -816,7 +819,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyAttackOrRest();
                 break;
               }
-              logPlayerAction(actionString,"Petted its head, it has joined the party!");
+              logPlayerAction(actionString,"New pet has joined the party!");
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
               playerAtk+=enemyAtk;
