@@ -16,7 +16,7 @@ Abandoned Village;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Fishing Spot;Waves are danc
 Abandoned Village;🫙;Empty Jar;Item;0;0;0;0;0;0;Junk;Appears to be clean and empty.<br>No traces of previous contents.;
 Abandoned Village;🏚️;Another House;Container-Double;0;0;0;0;0;0;Deserted Building;This house has been neglected long time.<br>Perhaps there's something of value.;Kicked the door open.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still good condition.;
-Abandoned Village;🐈‍⬛;Black Cat;Pet;0;0;0;1;0;0;Wild Animal;These usually bring bad luck.<br><i><b>"Meow... meow... MEOW!"</b></i>;
+Abandoned Village;🐈‍⬛;Black Cat;Pet;2;0;2;1;0;0;Wild Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
 Abandoned Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Shaking around vigorously.;Somethings likely inside.<br>Ugh.;There was a creature inside!
 Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;1;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;
@@ -28,7 +28,7 @@ Abandoned Village;⛺️;Simple Tent;Container-Double;0;0;0;0;0;0;Shelter;Cozy p
 Abandoned Village;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
 Abandoned Village;📘;Spellbook;Item;0;0;0;0;0;1;Precious Artifact;Radiates magic energy on touch.<br>Should you risk it?;Mastered the basics of magic.
 Abandoned Village;🍗;Roasted Chicken;Consumable;0;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
-Abandoned Village;🧑‍🌾;Disturbed Druid;Recruit;2;1;1;0;1;2;Hermit;Noticed suspicious activity in their camp.<br><i><b>"Never should have come here!"</b></i>;
+Abandoned Village;🧑‍🌾;Disturbed Druid;Recruit;2;1;1;0;1;2;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Abandoned Village;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;Another bunch of trees in the forest.<br>A chance to catch a breath.;
 Abandoned Village;🦉;Engaging Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares ahead without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
 Abandoned Village;🏠;Preserved House;Container-Locked;0;0;0;0;0;0;Building;Locked doors and closed windows.<br>There must be something valuable.;Unlocked it with the key.
@@ -51,7 +51,7 @@ Forgotten Grove;🦨;Forest Skunk;Swift;2;1;2;0;3;0;Wild Animal;Seems having lig
 Forgotten Grove;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
 Forgotten Grove;🐸;Frog-faced Giant;Heavy;5;1;3;0;5;0;Terrible Monstrosity;Foul stench reeks from it's mouth.<br>Bloodshot eyes blink slowly.;Got squashed like a bug
 Forgotten Grove;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;
-Forgotten Grove;🦄;Rainbow Unicorn;Pet;0;0;0;2;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
+Forgotten Grove;🦄;Rainbow Unicorn;Pet;3;1;3;1;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
 Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
 Forest Depths;🐐;Irritable Goat;Standard;3;1;2;0;10;0;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
 Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
@@ -90,7 +90,7 @@ Ancient Crypt;🕸;Giant Web;Container;0;2;0;0;0;0;Sticky Trap;Hopefully nobody'
 Ancient Crypt;🕷;Eight-legged Menace;Swift;4;2;1;0;4;0;Pesky Insect;It looks like it was waiting for a prey.<br>There is no turning back now.;
 Ancient Crypt;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
 Ancient Crypt;🏺;Faded Amphora;Container;0;0;0;0;0;1;Sanctuary;Strangely warm on touch.<br>Something quivers inside.;
-Ancient Crypt;🧞;Evil Genie;Spirit;4;4;1;0;0;4;Eerie Being;<i><b>\"How dare you disturb me?<br>Prepare to die!\"</b></i>";
+Ancient Crypt;🧞;Evil Genie;Spirit;4;4;1;0;0;4;Eerie Being;<i>"How dare you disturb me?<br>Prepare to die!"</i>";
 Ancient Crypt;🦇;Screaming Bat;Standard;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>Goosebumps.;
 Ancient Crypt;🪦;Desolate Gave;Container;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>Something is on the ground.;Dug out a shiny ring.
 Ancient Crypt;💍;Engagement Ring;Item;1;0;0;0;0;1;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;Felt a surge in your chest

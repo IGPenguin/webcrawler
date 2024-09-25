@@ -703,9 +703,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-        case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
+        case 'button_pray':
           if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"The prayer has been heard +1 🔵");
+              logPlayerAction(actionString,"The gods granted you power +1 🔵");
               playerMgkMax+=1;
               playerMgk+=1;
               nextEncounter();
@@ -753,11 +753,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
+          case "Friend":
             if (playerHp<playerHpMax) {
               playerHp++
-              logPlayerAction(actionString,"The gods fulfiled the prayer +1 ❤️‍🩹");
+              logPlayerAction(actionString,"Cast a healing spell +1 ❤️‍🩹");
             } else {
-              logPlayerAction(actionString,"Wasted magic on a healing prayer -1 🔵");
+              logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
             }
             enemyAttackOrRest();
             break;
@@ -774,24 +775,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAttackOrRest();
             break;
 
-          case "Friend":
-            //Think of something better, this is for talking
-            //playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
-            logPlayerAction(actionString,"Prayer had no effect here.")
-            displayPlayerCannotEffect();
-            break;
-
           case "Dream":
-            logPlayerAction(actionString,"Appreciated the internal prayer +1 🍀");
+            logPlayerAction(actionString,"Reinforced the beliefs +1 🍀");
             playerLck++;
             nextEncounter();
             break;
 
           case "Altar":
-            // var hpDiff= playerHpMax-playerHp;
-            // if (hpDiff>0) {
-            //   logPlayerAction(actionString,"A heavenly ray healed all wounds +"+hpDiff+" ❤️");
-            //   playerHp=playerHpMax;
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             nextEncounter();
             break;
@@ -1508,7 +1498,7 @@ function resetEncounterButtons(){
   document.getElementById('button_roll').innerHTML="🌀 Roll";
   document.getElementById('button_cast').innerHTML="🪄 Spell";
   document.getElementById('button_curse').innerHTML="🪬 Curse";
-  document.getElementById('button_pray').innerHTML="🙏 Pray";
+  document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
   document.getElementById('button_grab').innerHTML="✋ Grab";
   document.getElementById('button_sleep').innerHTML="💤 Rest";
   document.getElementById('button_speak').innerHTML="💬 Speak";
@@ -1551,6 +1541,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Altar":
+      document.getElementById('button_pray').innerHTML="🙏 Pray";
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
@@ -1576,10 +1567,12 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
     case "Dream":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="💭 Dream";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      document.getElementById('button_pray').innerHTML="🙏 Meditate";
       break;
 
     case "Fishing":
@@ -1616,8 +1609,13 @@ function adjustEncounterButtons(){
       }
       break;
 
+    case "Spirit":
     case "Demon":
-      document.getElementById('button_pray').innerHTML="🔥 Banish";
+      document.getElementById('button_pray').innerHTML="💫 Banish";
+      break;
+
+    case "Undead":
+      document.getElementById('button_pray').innerHTML="💫 Weaken";
       break;
 
     case "Death":
