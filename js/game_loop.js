@@ -287,6 +287,7 @@ function redraw(){
       break;
     case "Container":
     case "Container-Double":
+    case "Container-Locked":
     case "Prop":
       enemyStatusString = "✖️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Unremarkable</i>";
       break;
@@ -339,6 +340,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container":
           case "Container-Double":
+          case "Container-Locked": //Allow unlock by attacking
             var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
               openMessage = enemyMsg+" -1 🟢";
@@ -438,6 +440,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Container":
           case "Container-Consume":
+          case "Container-Locked":
           case "Altar":
             logPlayerAction(actionString,"Left without investigating it.");
             encounterIndex+=1; //Skip next encounter
@@ -885,6 +888,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,openMessage);
             nextEncounter();
             break;
+          case "Container-Locked":
+            if (playerLootString.includes("🗝️")){
+              var openMessage = "Unlocked it with the key.";
+              displayEnemyEffect("🗝️");
+              if (enemyMsg != ""){
+                openMessage = enemyMsg;
+              }
+              playerLootString=playerLootString.replace("🗝️","");
+
+              logPlayerAction(actionString,openMessage);
+              nextEncounter();
+            } else {
+              logPlayerAction(actionString,"It is securely locked.");
+              displayPlayerCannotEffect();
+            }
+            break;
 
           case "Item":
             playerLootString+=" "+enemyEmoji;
@@ -1072,6 +1091,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container":
           case "Container-Consume":
           case "Container-Double":
+          case "Container-Locked":
           case "Checkpoint":
           case "Altar":
             displayPlayerEffect("💤");
@@ -1307,7 +1327,7 @@ function playerUseMagic(magic, message = ""){
 }
 
 function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk){  //TODO: Properly support negative gains = curses
-  var gainedString;
+  var gainedString = "Might come in handy later.";
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
@@ -1498,6 +1518,15 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+    case "Container-Locked":
+      if (playerLootString.includes("🗝️")){
+        document.getElementById('button_grab').innerHTML="🗝️ Unlock";
+      } else {
+        document.getElementById('button_grab').innerHTML="👋 Search";
+      }
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
     case "Consumable":
     case "Container-Consume":
       document.getElementById('button_roll').innerHTML="👣 Walk";
@@ -1515,6 +1544,10 @@ function adjustEncounterButtons(){
       break;
 
     case "Item":
+      document.getElementById('button_grab').innerHTML="✋ Grab";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
