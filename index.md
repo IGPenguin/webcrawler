@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+<!--Prevent auto-refresh on phone on resume-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="{{ page.title }}" />

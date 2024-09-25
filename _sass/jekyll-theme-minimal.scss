@@ -4,6 +4,11 @@
 $color-border: rgb(0,0,0);
 $color-inner-border: #121212;
 
+:root {
+  touch-action: pan-x pan-y;
+  height: 100%
+}
+
 body {
   background-color: rgb(45,45,45);
   padding: 12px;
