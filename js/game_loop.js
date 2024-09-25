@@ -698,6 +698,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_pray': //TODO:Banish demons, weaken undead, heal in combat, lift curse from artefacts
+          if (enemyType=="Upgrade"){
+              logPlayerAction(actionString,"The prayer has been heard +1 🔵");
+              playerMgkMax+=1;
+              playerMgk+=1;
+              nextEncounter();
+              break;
+          }
+
           if (playerMgkMax<=0 && !isfreePrayEncounter()){
             logPlayerAction(actionString,"Does not know any spells yet.");
             displayPlayerCannotEffect();
@@ -779,13 +787,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"The heavens granted a blessing +1 🍀");
               playerLck+=1;
             }
-            nextEncounter();
-            break;
-
-          case "Upgrade":
-            logPlayerAction(actionString,"The prayer has been heard +1 🔵");
-            playerMgkMax+=1;
-            playerMgk+=1;
             nextEncounter();
             break;
 
