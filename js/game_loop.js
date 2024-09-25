@@ -252,17 +252,19 @@ function redraw(){
       //else { enemyStatusString += "&nbsp;🔵 " + "〜";} //TODO: Maybe show 0 magic?
 
   switch(enemyType){
-    case "Standard":
+    case "Standard": //Show default - HP, Sta + dmg
     case "Recruit":
     case "Pet":
     case "Swift":
     case "Heavy":
     case "Demon":
     case "Spirit":
-      break; //Show default - HP, Sta + dmg
+    case "Friend":
+      break;
+
     case "Item":
     case "Trap":
-    case "Friend":
+    //case "Friend": //Show default - HP, Sta + dmg
       enemyStatusString = "";
       if (enemyHp!=0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
       if (enemyAtk!=0) {enemyStatusString += "⚔️ ??&nbsp;&nbsp;";}
@@ -1530,21 +1532,23 @@ function adjustEncounterButtons(){
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
           document.getElementById('button_grab').innerHTML="🦶 Kick";
         }
-        document.getElementById('button_roll').innerHTML="❤️‍🩹 Heal";
+        document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
         break;
+
     case "Pet":
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
         document.getElementById('button_grab').innerHTML="👋 Pet";
       }
     case "Standard":
-      document.getElementById('button_roll').innerHTML="❤️‍🩹 Heal";
+      document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
+
     case "Heavy":
     case "Swift":
-      document.getElementById('button_roll').innerHTML="❤️‍🩹 Heal";
+      document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
       if ((enemySta-enemyStaLost)==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
