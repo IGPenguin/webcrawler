@@ -11,23 +11,28 @@ Abandoned Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The cro
 Abandoned Village;🏚️;Abandoned House;Container-Double;0;0;0;0;0;0;Deserted Building;This house has been neglected long time.<br>Perhaps there's something of value.;Entered through the window.
 Abandoned Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>Coming from all directions.;Suffered mental damage.
 Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Perhaps it could do some service.<br>The blade is still sharp a bit.;Took it with themselves just in case.
+Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;1;0;Wild Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
+Abandoned Village;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Fishing Spot;Waves are dancing on the surface.<br>Something sparkles at the bottom.;Fished out something.
+Abandoned Village;🫙;Empty Jar;Item;0;0;0;0;0;0;Junk;Appears to be clean and empty.<br>No traces of previous contents.;
 Abandoned Village;🏚️;Another House;Container-Double;0;0;0;0;0;0;Deserted Building;This house has been neglected long time.<br>Perhaps there's something of value.;Kicked the door open.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still good condition.;
 Abandoned Village;🐈‍⬛;Black Cat;Friend;2;1;1;1;0;0;Wild Animal;These usually bring bad luck.<br><i><b>"Meow... meow... MEOW!"</b></i>;
 Abandoned Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Shaking around vigorously.;Somethings likely inside.<br>Ugh.;There was a creature inside!
 Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;1;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;
-Abandoned Village;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Fishing Spot;The water has a strange glow.<br>Something sparkles at the bottom.;Fished out something from the bottom.
-Abandoned Village;🫙;Empty Jar;Item;0;0;0;0;0;0;Junk;Appears to be clean and empty.<br>Might come in handy later.;
+Abandoned Village;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Perhapsthere's a pond behind.;
+Abandoned Village;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Fishing Spot;Waves are dancing on the surface.<br>Something sparkles at the bottom.;Fished out something.
+Abandoned Village;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>There's a small crack.;
 Abandoned Village;🦌;Frantic Deer;Standard;2;2;1;0;2;0;Wild Animal;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
 Abandoned Village;⛺️;Simple Tent;Container-Double;0;0;0;0;0;0;Shelter;Cozy place of rest for whoever set it up.<br>Chance to loot for someone else.;
-Forgotten Grove;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
+Abandoned Village;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
 Abandoned Village;📘;Spellbook;Item;0;0;0;0;0;1;Precious Artifact;Radiates magic energy on touch.<br>Should you risk it?;Mastered the basics of magic.
 Abandoned Village;🍗;Roasted Chicken;Consumable;0;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
 Abandoned Village;🧑‍🌾;Disturbed Druid;Recruit;3;1;3;0;1;2;Hostile Stranger;Noticed suspicious activity in their camp.<br><i><b>"Never should have come here!"</b></i>;
 Abandoned Village;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;Another bunch of trees in the forest.<br>A chance to catch a breath.;
 Abandoned Village;🦉;Engaging Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares ahead without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
-Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;1;0;Wild Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
+Abandoned Village;🏠;Preserved House;Container-Locked;0;0;0;0;0;0;Building;Locked doors and closed windows.<br>There must be something valuable.;Unlocked it with the key.
+Abandoned Village;🗺;Strange Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>There are notes around the edges.;Got awareness enhanced.
 Abandoned Village;⛪️;Deserted Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br>Better not stick around.;
 Abandoned Village;🐻;Mangy Bear;Heavy;4;1;2;0;3;0;Sick Animal;It appears to be very upset.<br>Beware its mighty attack.;Was torn to pieces
 Forgotten Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
@@ -42,8 +47,6 @@ Forgotten Grove;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follo
 Forgotten Grove;🥩;Boar Meat;Trap;0;2;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat
 Forgotten Grove;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
 Forgotten Grove;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Cannot tell left from right.<br>Also not up from down.;Suffered mental damage.
-Forgotten Grove;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Fishing Spot;The winds blows waves across.<br>Something sparkles at the bottom.;Fished out something from the bottom.
-Forgotten Grove;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;Ancient key made from copper.<br>Might come in handy later.;
 Forgotten Grove;🦨;Forest Skunk;Swift;2;1;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
 Forgotten Grove;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
 Forgotten Grove;🐸;Frog-faced Giant;Heavy;5;1;3;0;5;0;Terrible Monstrosity;Foul stench reeks from it's mouth.<br>Bloodshot eyes blink slowly.;Got squashed like a bug
