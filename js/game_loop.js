@@ -248,10 +248,14 @@ function redraw(){
     enemyStatusString += "&nbsp;&nbsp;"
   }
 
-  if (enemyMgk > 0) {enemyStatusString += "&nbsp;🔵 " + "◆".repeat(enemyAtk);}
-      //else { enemyStatusString += "&nbsp;🔵 " + "〜";} //TODO: Maybe show 0 magic?
+  //if (enemyMgk > 0) {enemyStatusString += "&nbsp;🔵 " + "◆".repeat(enemyAtk);}
+    if (enemyMgk > 0) { enemyStatusString += "&nbsp;🔵 " + "〜";} //Magic is obscured on purpose
 
-  switch(enemyType){
+  if (enemyType=="Boss"){
+    enemyStatusString+="💀&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Boss</i>";
+  }
+
+  switch(enemyType){ //TODO: Add more custom headers for encounters
     case "Standard": //Show default - HP, Sta + dmg
     case "Recruit":
     case "Pet":
@@ -276,29 +280,29 @@ function redraw(){
       if (enemyInt!=0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
       if (enemyMgk!=0) {enemyStatusString += "🔵 ??&nbsp;&nbsp;";}
       if (enemyStatusString==""){
-        enemyStatusString = "✖️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Unremarkable</i>"; //Prop etc.
+        enemyStatusString = "⚪️&nbsp;<i><b style=\"font-weight:50; color:#808080;font-size:12px\">Unremarkable</b></i>";
       }
       break;
     case "Consumable":
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
       break;
     case "Dream":
-      enemyStatusString = "❔&nbsp;<i style=\"font-weight:50; color:#FFFFFF;font-size:13px\">Guidance</i>";
+      enemyStatusString = "⚪️&nbsp;<i><b style=\"font-weight:50; color:#FFFFFF;font-size:14px\">Guidance</b></i>";
       break;
     case "Upgrade":
-      enemyStatusString = "✨&nbsp;<i style=\"font-weight:50;text-color:yellow;font-size:12px\">Level up</i>";
+      enemyStatusString = "⭐️&nbsp;<i><b style=\"font-weight:50; color:#FFD940;font-size:14px\">Upgrade</b></i>";
       break;
     case "Container":
     case "Container-Double":
     case "Container-Locked":
     case "Prop":
-      enemyStatusString = "✖️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Unremarkable</i>";
+      enemyStatusString = "⚪️&nbsp;<i><b style=\"font-weight:50; color:#FFFFFF;font-size:12px\">Unremarkable</b></i>";
       break;
     case "Altar":
-      enemyStatusString = "🌙&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Place of worship</i>";
+      enemyStatusString = "🔹&nbsp;<i><b style=\"font-weight:50; color:#0041C2;font-size:12px\">Place of worship</b></i>";
       break;
     default:
-      enemyStatusString = "⁉️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">No details</i>"; //Prop etc.
+      enemyStatusString = "⁉️&nbsp;<i><b style=\"font-weight:50; color:red;font-size:12px\">No details</b></i>"; //Prop etc.
       break;
   }
 
@@ -365,6 +369,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Recruit":
           case "Pet":
+          case "Boss":
             enemyHit(playerAtk);
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
@@ -414,10 +419,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Demon":
           case "Spirit":
+          case "Boss":
             var rollMessage;
             if (playerUseStamina(1,noStaForRollMessage)){
               if (enemyAtk!=0){
-                rollMessage="Dodged a standard attack -1 🟢";
+                rollMessage="Dodged their attack -1 🟢";
               } else {
                 rollMessage="They do not mean no harm -1 🟢";
               }
@@ -461,10 +467,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            playerGetStamina(playerStaMax-playerSta,true);
-            playerMgk=playerMgkMax;
-            logPlayerAction(actionString,"Rested well, recovering all resources.");
-            nextEncounter();
+            logPlayerAction(actionString,"Cannot walk while asleep.");
+            displayPlayerCannotEffect();
             break;
           case "Prop":
             logPlayerAction(actionString,"Continued on the adventure.");
@@ -510,7 +514,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           nextEncounter();
           break;
         }
-        if (!playerUseStamina(1,"Was too tired to raise the shield.")){
+        if (!playerUseStamina(1,"Too tired to raise the shield.")){
             break;
           }
         switch (enemyType){
@@ -530,6 +534,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Heavy": //Too heavy or spirit attack
           case "Spirit":
+          case "Boss":
             if (enemyStaminaChangeMessage(-1,"Could not block the incoming blow -"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
@@ -577,8 +582,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Undead":
           case "Friend":
+          case "Boss":
             if (enemyMgk<=playerMgk){
-              enemyHit(playerMgk+1,true); //Deal damage equal to your power before using it
+              enemyHit(1,true); //Deal just 1 Mgk dmg to not overpower shit
             } else {
               logPlayerAction(actionString,"They resisted the spell -1 🔵");
             }
@@ -636,7 +642,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (playerMgkMax<=0){
-            logPlayerAction(actionString,"Does not know any spells yet.");
+            logPlayerAction(actionString,"Cannot cast any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
@@ -648,7 +654,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
         switch (enemyType){
-          case "Undead":
           case "Demon":
               logPlayerAction(actionString,"The curse made them even stronger!");
               animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
@@ -660,6 +665,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Swift":
           case "Heavy":
           case "Pet":
+          case "Undead":
+          case "Boss":
             if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
               logPlayerAction(actionString,"The curse made them weaker -1 🔵");
@@ -713,7 +720,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (playerMgkMax<=0 && !isfreePrayEncounter()){
-            logPlayerAction(actionString,"Does not know any spells yet.");
+            logPlayerAction(actionString,"Cannot cast know any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
@@ -754,9 +761,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Pet":
           case "Friend":
+          case "Boss":
             if (playerHp<playerHpMax) {
-              playerHp++
-              logPlayerAction(actionString,"Cast a healing spell +1 ❤️‍🩹");
+              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+"1 ❤️‍🩹");
+              playerHp=playerHpMax; //Lay on hands
             } else {
               logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
             }
@@ -776,7 +784,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Reinforced the beliefs +1 🍀");
+            logPlayerAction(actionString,"Reinforced essential beliefs +1 🍀");
             playerLck++;
             nextEncounter();
             break;
@@ -860,8 +868,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Heavy":
+          case "Boss":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
-              logPlayerAction(actionString,"Grasp overpowered, got hit hit extra hard -"+enemyAtk*2+" 💔");
+              logPlayerAction(actionString,"Got overpowered and hit extra hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
@@ -1000,6 +1009,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Spirit":
           case "Demon":
+          case "Boss":
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"Convinced them to disengage.");
               displayPlayerEffect("💬");
@@ -1038,8 +1048,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Cannot move the lips to speak.");
-            displayPlayerCannotEffect();
+            playerGetStamina(playerStaMax-playerSta,true);
+            playerMgk=playerMgkMax;
+            logPlayerAction(actionString,"Rested well, recovering all resources.");
+            nextEncounter();
             break;
 
           case "Upgrade":
@@ -1074,7 +1086,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Demon":
           case "Undead":
-
+          case "Boss":
             if (enemyAtk!=0){
               enemyAttackOrRest();
             } else {
@@ -1104,6 +1116,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
             logPlayerAction(actionString,"Rested well, recovering all resources.");
+            if (enemyType=="Dream"){nextEncounter();}
             break;
 
           case "Friend": //They'll leave if you'll rest
@@ -1515,7 +1528,7 @@ function adjustEncounterButtons(){
     case "Upgrade":
       setButton('button_attack',"❤️ Vitality");
       setButton('button_block',"🟢 Agility");
-      setButton('button_roll',"🧠 Wisdom");
+      setButton('button_roll',"🧠 Mind");
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_curse',"🩸 Hatred");
       setButton('button_pray',"📿 Faith");
@@ -1575,7 +1588,8 @@ function adjustEncounterButtons(){
 
     case "Dream":
       document.getElementById('button_grab').innerHTML="✋ Reach";
-      document.getElementById('button_roll').innerHTML="💭 Dream";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_speak').innerHTML="💭 Dream";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       document.getElementById('button_pray').innerHTML="🙏 Focus";
       break;
