@@ -12,7 +12,8 @@ layout: default
 <script src="js/game_loop.js"></script>
 
 <div class= "curtain" id="id_fullscreen_curtain"></div>
-<div class= "fullScreenText" id="id_fullscreen_text"></div>
+<div class= "fullScreenText" id="id_fullscreen_text" style="-webkit-text-stroke: 6.5px black;
+      paint-order: stroke fill;"></div>
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
