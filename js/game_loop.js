@@ -44,7 +44,7 @@ function renewPlayer(){
 
 //Generators
 function getCharacterName(){
-  const random_names = ["Nameless Hero", "Worthless Peasant", "Reincarnated Soul", "Promising Villain","Unknown Soldier"];
+  const random_names = ["Nameless Hero", "Worthless Peasant", "Naked Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal"];
   //"Penguin IV./XX.","Jesus H. Christ","Anthropomorphic Lizard"
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
@@ -62,7 +62,7 @@ var playerHpMax = playerHpDefault;
 var playerStaMax = playerStaDefault;
 var playerMgkMax = playerMgkDefault;
 var playerHp = playerHpMax;
-var playerSta = playerStaMax;
+var playerSta = 0; //Start tired in a dream (was playerStaMax;)
 var playerLck = playerLckDefault;
 var playerMgk = playerMgkDefault;
 var playerInt = 1;
@@ -73,7 +73,7 @@ var luckInterval = 24; //Lower to increase chances
 var actionString;
 //Initial action log below
 //var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
-var actionLog = "💤&nbsp;▸&nbsp;💭 Resting the mind and the body...<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago...<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
 var adventureEncounterCount = -1; // -1 for death
 var adventureEndReason = "";
@@ -761,7 +761,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Could not move the hands.");
+            logPlayerAction(actionString,"Trying hard but cannot move.");
             displayPlayerCannotEffect();
             break;
 
@@ -1427,7 +1427,7 @@ function resetEncounterButtons(){
   document.getElementById('button_curse').innerHTML="🪬 Curse";
   document.getElementById('button_pray').innerHTML="🙏 Pray";
   document.getElementById('button_grab').innerHTML="✋ Grab";
-  document.getElementById('button_sleep').innerHTML="💤 Wait";
+  document.getElementById('button_sleep').innerHTML="💤 Rest";
   document.getElementById('button_speak').innerHTML="💬 Speak";
 }
 
@@ -1471,12 +1471,12 @@ function adjustEncounterButtons(){
     case "Trap-Roll":
     case "Trap-Attack":
     case "Prop":
-      document.getElementById('button_roll').innerHTML="✋ Reach";
+      document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
     case "Dream":
-      document.getElementById('button_roll').innerHTML="✋ Reach";
+      document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="💭 Dream";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
