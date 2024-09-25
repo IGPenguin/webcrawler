@@ -274,8 +274,14 @@ function redraw(){
     case "Consumable":
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
       break;
+    case "Dream":
+      enemyStatusString = "❔&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Guidance</i>";
+      break;
+    case "Upgrade":
+      enemyStatusString = "✨&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">Level up</i>";
+      break;
     default:
-      enemyStatusString = "⁉️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">No details</i>"; //Dream, Prop, Upgrade etc.
+      enemyStatusString = "⁉️&nbsp;<i style=\"font-weight:50;text-color:gray;font-size:12px\">No details</i>"; //Prop etc.
       break;
   }
 
