@@ -606,12 +606,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (playerMgkMax<=0){
-            logPlayerAction(actionString,"Cannot cast any spells yet.");
+          if (playerMgkMax<1){
+            logPlayerAction(actionString,"Not enough mana, requires 1 🔵");
             displayPlayerCannotEffect();
             break;
           }
-          if (!playerUseMagic(1,"Not enough magic power.")) { break; } //Casting is never free, upgrd handled above
+          if (!playerUseMagic(1,"Not enough mana, requires 1 🔵")) { break; } //Casting is never free, upgrd handled above
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
 
         switch (enemyType){
@@ -693,13 +693,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
           }
 
-          if (playerMgkMax<=0){
-            logPlayerAction(actionString,"Cannot cast any spells yet.");
+          if (playerMgkMax<2){
+            logPlayerAction(actionString,"Not enough mana, requires 2 🔵");
             displayPlayerCannotEffect();
             break;
           }
 
-          if (!playerUseMagic(1,"Not enough magic power.")) { //Curse is never free, upgrd handled above
+          if (!playerUseMagic(2,"Not enough magic power.")) { //Curse is never free, upgrd handled above
               break;
             }
 
@@ -722,17 +722,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Small":
             if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
-              logPlayerAction(actionString,"The curse made them weaker -1 🔵");
+              logPlayerAction(actionString,"The curse made them weaker -2 🔵");
             } else if (playerMgkMax <= enemyMgk) {
-              logPlayerAction(actionString,"They resisted the curse -1 🔵");
+              logPlayerAction(actionString,"They resisted the curse -2 🔵");
             } else {
-              logPlayerAction(actionString,"The curse had no effect on them -1 🔵");
+              logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
             }
             enemyAttackOrRest();
             break;
 
           case "Spirit": //They don't care
-            logPlayerAction(actionString,"The curse had no effect on it -1 🔵");
+            logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
             break;
 
           case "Friend": //They'll boost your stats
@@ -740,7 +740,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💬");
             break;
 
-          case "Dream":
+          case "Dream": //Likely never happens, not sure if I should fix that
             logPlayerAction(actionString,"Conjured a terrible nightmare -1 💔");
             playerHit(1);
             displayPlayerCannotEffect();
@@ -754,7 +754,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"The curse dispersed into the area -1 🔵");
+            logPlayerAction(actionString,"The curse dispersed into the area -2 🔵");
         }
         break;
 
@@ -774,8 +774,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
           }
 
-          if (playerMgkMax<=0 && !isfreePrayEncounter()){
-            logPlayerAction(actionString,"Cannot cast any spells yet.");
+          if (playerMgkMax<1 && !isfreePrayEncounter()){
+            logPlayerAction(actionString,"Not enough mana, requires 1 🔵");
             displayPlayerCannotEffect();
             break;
           }
