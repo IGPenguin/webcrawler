@@ -20,7 +20,7 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-30px;
+<h2 id = "id_area" style="margin-top:-32px;
     margin-bottom:-12px;
     font-size:28px;
     letter-spacing: 1.5px;
@@ -181,8 +181,8 @@ layout: default
 </div>
 <h3 id = "id_player_party_loot" style="text-align:left;
                                         float:left;
-                                        padding-top:2px;
-                                        padding-bottom:2px;
+                                        padding-top:3px;
+                                        padding-bottom:3px;
                                         padding-left:8px;
                                         margin-left:3px;
                                         margin-bottom:0px;

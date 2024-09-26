@@ -864,11 +864,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyAttackOrRest();
                 break;
               }
-              logPlayerAction(actionString,"New pet has joined the party!");
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
-              playerChangeStats(0, enemyAtk, 0, enemyLck, enemyInt, enemyMgk); //Cannot get health or stamina from a pet
-              enemyAnimateDeathNextEncounter();
+              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"New pet has joined the party"); //Cannot get health/sta/int from a pet
               break;
             }
 
@@ -1388,16 +1386,15 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk){  //TODO: Properly support negative gains = curses
-  var gainedString = "Might come in handy later.";
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later."){  //TODO: Properly support negative gains = curses
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
-  if ((totalBonus >= 0)){
+  if ((totalBonus >= 0) && gainedString=="Might come in handy later."){
     if (totalBonus !=0){
       gainedString="Felt becoming stronger";
     }
-  } else {
+  } else if (gainedString=="Might come in handy later.") {
     gainedString="Got cursed by it";
     changeSign=" "
   }
