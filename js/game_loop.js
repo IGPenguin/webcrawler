@@ -38,10 +38,10 @@ function renewPlayer(){
   playerDef = 0;
   playerInt = 1;
   playerMgkMax = playerMgkDefault;
-  playerMgk = playerMgkDefault;
+  playerMgk = playerMgkMax;
   playerLootString = "";
   playerPartyString = "";
-  adventureLog = "";
+  //adventureLog = ""; //Keep of all characters
 }
 
 //Generators
