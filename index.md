@@ -86,7 +86,6 @@ layout: default
                                 display:inline;
                                 overflow:auto;"/>
 </div>
-</div>
 <div class="box-border-dynamic" style="margin-top:2px;
   margin-right:0px;
     margin-bottom:12px;
@@ -107,6 +106,7 @@ layout: default
   line-height:165%;
   width:95%;
   position:relative;"/>
+</div>
 </div>
 </div>
 </div>
