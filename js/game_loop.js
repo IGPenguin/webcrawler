@@ -534,10 +534,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"Felt getting somewhat wiser.");
-          displayPlayerEffect("🧠");
-          playerInt+=1;
+          logPlayerAction(actionString,"The gods granted you power +1 🔵");
+          playerMgkMax+=1;
+          playerMgk+=1;
           nextEncounter();
+          displayPlayerEffect("🙏");
           break;
         }
         if (!playerUseStamina(1,"Too tired to raise the shield.")){
@@ -747,9 +748,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_pray':
           if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"The gods granted you power +1 🔵");
-              playerMgkMax+=1;
-              playerMgk+=1;
+              logPlayerAction(actionString,"Felt getting somewhat wiser.");
+              displayPlayerEffect("🧠");
+              playerInt+=1;
               nextEncounter();
               break;
           }
@@ -824,7 +825,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             //logPlayerAction(actionString,"Reinforced essential beliefs +1 🍀");
             //playerLck++;
             //nextEncounter();
-            logPlayerAction(actionString,"Cannot recall what happened.");
+            logPlayerAction(actionString,"Cannot recall any memory.");
             displayPlayerCannotEffect();
             break;
 
@@ -1591,10 +1592,10 @@ function adjustEncounterButtons(){
     case "Upgrade":
       setButton('button_attack',"❤️ Vitality");
       setButton('button_roll',"🟢 Agility");
-      setButton('button_block',"🧠 Mind");
+      setButton('button_block',"📿 Faith");
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_curse',"🩸 Hatred");
-      setButton('button_pray',"📿 Faith");
+      setButton('button_pray',"🧠 Psyche");
       setButton('button_grab',"🍀 Fortune");
       setButton('button_speak',"🪙 Greed");
       setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
@@ -1658,7 +1659,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_speak').innerHTML="💭 Dream";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      document.getElementById('button_pray').innerHTML="🙏 Focus";
+      document.getElementById('button_pray').innerHTML="🧠 Think";
       break;
 
     case "Fishing":
