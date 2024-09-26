@@ -264,6 +264,7 @@ function redraw(){
     case "Demon":
     case "Spirit":
     case "Friend":
+    case "Small":
       if (enemyStatusString==""){
         enemyStatusString=decorateStatusText("♣️","Mysterious","gray");
       }
@@ -271,7 +272,7 @@ function redraw(){
 
     case "Item":
     case "Trap":
-      enemyStatusString=decorateStatusText("⚜️","Equipment","#FFD940");
+      enemyStatusString=decorateStatusText("⚜️","Valuable","#FFD940");
       break;
     case "Consumable":
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
@@ -292,10 +293,13 @@ function redraw(){
       enemyStatusString=decorateStatusText("⚪️","Unremarkable","#FFFFFF");
       break;
     case "Altar":
-      enemyStatusString=decorateStatusText("🔹","Worshipping place","#0041C2");
+      enemyStatusString=decorateStatusText("🔹","Place of Worship","#0041C2");
+      break;
+    case "Fishing":
+      enemyStatusString=decorateStatusText("🪝","Fishing Spot","#FFD940");
       break;
     default:
-      enemyStatusString=decorateStatusText("⁉️","No details","#0041C2");
+      enemyStatusString=decorateStatusText("⁉️","No Details","red");
       break;
   }
 
@@ -367,6 +371,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
           case "Boss":
+          case "Small":
             enemyHit(playerAtk);
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
@@ -417,6 +422,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Spirit":
           case "Boss":
+          case "Small":
             var rollMessage;
             if (playerUseStamina(1,noStaForRollMessage)){
               if (enemyAtk!=0){
@@ -448,6 +454,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Checkpoint":
           case "Fishing":
             logPlayerAction(actionString,"Walked away leaving it behind.");
+            encounterIndex+=1;
             nextEncounter();
             break;
           case "Container":
@@ -524,6 +531,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Pet":
           case "Demon":
+          case "Small":
             enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -584,6 +592,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Friend":
           case "Boss":
+          case "Small":
             if (enemyMgk<=playerMgk){
               enemyHit(1,true); //Deal just 1 Mgk dmg to not overpower shit
             } else {
@@ -674,6 +683,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Undead":
           case "Boss":
+          case "Small":
             if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
               logPlayerAction(actionString,"The curse made them weaker -1 🔵");
@@ -769,6 +779,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Friend":
           case "Boss":
+          case "Small":
             if (playerHp<playerHpMax) {
               logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+"1 ❤️‍🩹");
               playerHp=playerHpMax; //Lay on hands
@@ -909,26 +920,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container-Locked":
-            if (playerLootString.includes("🗝️")){
-              var openMessage = "Unlocked it with the key.";
-              displayEnemyEffect("🗝️");
-              if (enemyMsg != ""){
-                openMessage = enemyMsg;
-              }
-              playerLootString=playerLootString.replace("🗝️","");
-
-              logPlayerAction(actionString,openMessage);
+            if (playerUseItem("🗝️","Unlocked it with the key.","The lock is tightly secured.",false)){
               enemyAnimateDeathNextEncounter();
             } else {
-              logPlayerAction(actionString,"The lock is tightly secured.");
               displayPlayerCannotEffect();
             }
             break;
 
           case "Item":
             playerLootString+=" "+enemyEmoji;
-            displayEnemyEffect("✋");
+            displayEnemyEffect("👋");
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            break;
+
+          case "Small":
+            logPlayerAction(actionString,"Grabbed it into pocket.");
+            playerLootString+=" "+enemyEmoji;
+            displayEnemyEffect("👋");
+            nextEncounter();
             break;
 
           case "Friend":
@@ -944,9 +953,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
-            playerLootString+=" "+enemyEmoji;
+            if (playerUseItem("🪱","Successfully fished out something.","Missing some fishing bait.")){
+              nextEncounter();
+            } else {
+              displayPlayerCannotEffect();
+            }
             displayEnemyEffect("🪝");
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             break;
 
           case "Spirit":
@@ -961,10 +973,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerNumber++;
             playerName = playerName+" "+playerNumber+"."
             displayEnemyEffect("✋");
-
-            // Avoid log spam
-            // var deathMessage="💤&nbsp;▸&nbsp;💭&nbsp;An unknown power resurrected you.<br>💤&nbsp;▸&nbsp;💭&nbsp;Hopefully it wasn't some tainted spell.";
-            // logAction(deathMessage);
 
             if (checkpointEncounter == null){
               renewPlayer();
@@ -1066,7 +1074,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Sacrificed health -1 💔 to get lucky +3 🍀");
+            logPlayerAction(actionString,"Sacrificed health -1 💔 for luck +3 🍀");
             playerUseStamina(1);
             playerHpMax-=1;
             playerHp-=1
@@ -1098,6 +1106,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Undead":
           case "Boss":
+          case "Small":
             if (enemyAtk!=0){
               enemyAttackOrRest();
             } else {
@@ -1250,6 +1259,8 @@ function enemyAttackOrRest(){
     enemyRest(1);
   }
 }
+
+//Encounters
 
 function isfreePrayEncounter(){
   var returnValue = false;
@@ -1474,6 +1485,20 @@ function playerHit(incomingDamage){
   displayPlayerEffect("💢");
 }
 
+function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true){
+  if (playerLootString.includes(item)){
+    if (effect) displayEnemyEffect(item);
+    playerLootString=playerLootString.replace(item,"");
+    displayPlayerEffect(item);
+    logPlayerAction(actionString,messageSuccess);
+    return true;
+  } else {
+    logPlayerAction(actionString,messageFail);
+    displayPlayerCannotEffect();
+    return false;
+  }
+}
+
 //End Game
 function gameOver(){
   //Reset progress to death encounter
@@ -1529,7 +1554,7 @@ function resetEncounterButtons(){
   setButton('button_cast',"💫 Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
-  setButton('button_grab',"✋ Grab");
+  setButton('button_grab',"👋 Grab");
   setButton('button_sleep',"💤 Rest");
   setButton('button_speak',"💬 Speak");
 }
