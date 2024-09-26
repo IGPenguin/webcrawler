@@ -242,19 +242,33 @@ function redraw(){
   switch(enemyType){ //TODO: Add more custom headers for encounters
     case "Pet":
       enemyStatusString=decorateStatusText("🔸","Buddy","orange");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      break;
     case "Swift":
       enemyStatusString=decorateStatusText("⚡️","Swift","yellow");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      break;
     case "Heavy":
       enemyStatusString=decorateStatusText("🔺","Strong","yellow");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      break;
     case "Spirit":
       enemyStatusString=decorateStatusText("👻","Spirit","white");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      break;
     case "Friend":
       enemyStatusString=decorateStatusText("▫️","Neutral","orange");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      break;
     case "Small":
       enemyStatusString=decorateStatusText("🔻","Small","orange");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      break;
     case "Recruit":
     case "Standard":
       enemyStatusString=decorateStatusText("▪️","Standard","green");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      break;
     case "Demon":
       enemyStatusString=decorateStatusText("👺","Demon","red");
       enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
@@ -461,7 +475,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         const noStaForRollMessage = "Too tired to make any move.";
-        switch (enemyType){ //Dodge attack
+        switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Standard":
           case "Undead":
           case "Recruit":
@@ -504,8 +518,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item": //You'll simply skip ahead
           case "Consumable":
           case "Checkpoint":
-          case "Fishing":
             logPlayerAction(actionString,"Walked away leaving it behind.");
+            nextEncounter();
+            break;
+          case "Fishing":
+            logPlayerAction(actionString,"Walked away missing an opportunity.");
             encounterIndex+=1;
             nextEncounter();
             break;
@@ -1626,7 +1643,7 @@ function resetEncounterButtons(){
   setButton('button_attack',"⚔️ Attack");
   setButton('button_block',"🔰 Block");
   setButton('button_roll',"🌀 Roll");
-  if (enemyAtk<=0)  setButton('button_roll',"👣 Walk");
+  if (enemyAtk<=0)  setButton('button_roll',"👣 Leave");
   setButton('button_cast',"💫 Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
