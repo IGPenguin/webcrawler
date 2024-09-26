@@ -29,16 +29,18 @@ if (seenEncountersString == null){
 }
 
 //Player stats init
-function renewPlayer(){
-  playerHpMax=playerHpDefault;
+function renewPlayer(){ //Default values
+  if (playerNumber>1) playerName = getCharacterName();
+  playerHpMax=2;
   playerHp = playerHpMax;
-  playerStaMax = playerStaDefault;
-  playerSta = playerStaDefault;
+  playerStaMax = 2;
+  playerSta = 0; //Start tired in a dream (was playerStaMax;)
+  playerMgkMax = 0;
   playerAtk = 1;
-  playerDef = 0;
+  playerDef = 0; //TODO: Make use of when getting hit not by magic
+  playerLck = 1;
   playerInt = 1;
-  playerMgkMax = playerMgkDefault;
-  playerMgk = playerMgkMax;
+  playerMgk = 0;
   playerLootString = "";
   playerPartyString = "";
   //adventureLog = ""; //Keep of all characters
@@ -51,24 +53,20 @@ function getCharacterName(){
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-var playerName = getCharacterName();
-var playerNumber = 1;
-var playerLootString = "";
-var playerPartyString = "";
-var playerHpDefault = 2;
-var playerStaDefault = 2;
-var playerLckDefault = 0;
-var playerMgkDefault = 0;
+var playerName = getCharacterName(); //Stays unchanged unless dead before checkpoint
+var playerNumber = 1; //Increments on death if at least once saved
+var playerLootString;
+var playerPartyString;
 
-var playerHpMax = playerHpDefault;
-var playerStaMax = playerStaDefault;
-var playerMgkMax = playerMgkDefault;
-var playerHp = playerHpMax;
-var playerSta = 0; //Start tired in a dream (was playerStaMax;)
-var playerLck = playerLckDefault;
-var playerMgk = playerMgkDefault;
-var playerInt = 1;
-var playerAtk = 1;
+var playerHpMax;
+var playerStaMax;
+var playerMgkMax;
+var playerHp;
+var playerSta;
+var playerLck;
+var playerInt;
+var playerAtk;
+renewPlayer();
 
 var luckInterval = 24; //Lower to increase chances
 
@@ -202,12 +200,12 @@ function redraw(){
   playerInfoUIElement = document.getElementById('id_player_info');
   toolbarCardUIElement = document.getElementById('id_toolbar_card');
   document.getElementById('id_player_name').innerHTML = playerName;
-  var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
+  var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp) + emptySymbol.repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;"
-  playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
+  playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta) + emptySymbol.repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;"
-  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + "◆".repeat(playerMgk) + "◇".repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
-  playerStatusString += "&nbsp;&nbsp;⚔️ " + "◆".repeat(playerAtk);
+  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
+  playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
@@ -230,46 +228,36 @@ function redraw(){
   document.getElementById('id_area').innerHTML = areaName;
   document.getElementById('id_name').innerHTML = enemyName;
   document.getElementById('id_desc').innerHTML = enemyDesc;
-  document.getElementById('id_team').innerHTML = "—&nbsp;"+enemyTeam;
+  document.getElementById('id_team').innerHTML = enemyTeam;
 
   //Encounter Statusbar UI
+
   var enemyStatusString = ""
-  if (enemyHp > 0) { enemyStatusString = "❤️ " + "◆".repeat(enemyHp);}
-    if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "◇".repeat(enemyHpLost); } //YOLO
 
-  enemyStatusString += "&nbsp;&nbsp;"
-
-  if (enemySta > 0) { enemyStatusString += "&nbsp;🟢 " + "◆".repeat(enemySta);}
-    if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "◇".repeat(enemyStaLost); } //YOLO
-
-  enemyStatusString += "&nbsp;&nbsp;"
-
-  if (enemyAtk>0) {
-    enemyStatusString += "&nbsp;⚔️ " + "◆".repeat(enemyAtk);
-    if (enemyAtkBonus<0) { enemyStatusString += "◇".repeat(-1*enemyAtkBonus); }
-    enemyStatusString += "&nbsp;&nbsp;"
-  }
-
-  //if (enemyMgk > 0) {enemyStatusString += "&nbsp;🔵 " + "◆".repeat(enemyAtk);}
-    if (enemyMgk > 0) { enemyStatusString += "&nbsp;🔵 " + "〜";} //Magic is obscured on purpose
 
   if (enemyType=="Boss"){
     enemyStatusString+=decorateStatusText("💀","Boss","red");
   }
 
   switch(enemyType){ //TODO: Add more custom headers for encounters
-    case "Standard": //Show default - HP, Sta + dmg
-    case "Recruit":
     case "Pet":
+      enemyStatusString=decorateStatusText("🔸","Buddy","orange");
     case "Swift":
+      enemyStatusString=decorateStatusText("⚡️","Swift","yellow");
     case "Heavy":
-    case "Demon":
+      enemyStatusString=decorateStatusText("🔺","Strong","yellow");
     case "Spirit":
+      enemyStatusString=decorateStatusText("👻","Spirit","white");
     case "Friend":
+      enemyStatusString=decorateStatusText("▫️","Neutral","orange");
     case "Small":
-      if (enemyStatusString==""){
-        enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
-      }
+      enemyStatusString=decorateStatusText("🔻","Small","orange");
+    case "Recruit":
+    case "Standard":
+      enemyStatusString=decorateStatusText("▪️","Standard","green");
+    case "Demon":
+      enemyStatusString=decorateStatusText("👺","Demon","red");
+      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
       break;
 
     case "Item":
@@ -284,10 +272,10 @@ function redraw(){
       }
       break;
     case "Consumable":
-      enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
+      enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
       break;
     case "Dream":
-      enemyStatusString=decorateStatusText("⚪️","Guidance","#FFFFFF");
+      enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       break;
     case "Upgrade":
       enemyStatusString=decorateStatusText("⭐️","Advancement","#FFD940");
@@ -321,12 +309,44 @@ function redraw(){
       break;
   }
 
+  if (enemyStatusString==""){
+    enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
+  }
+
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
 
   versusText = document.getElementById('id_versus');
   buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
+}
+
+var fullSymbol = "●";
+var emptySymbol = "○";
+
+function appendEnemyStats(){
+  var enemyStats;
+  enemyStats="&nbsp;";
+  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
+  if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
+
+  enemyStats += "&nbsp;&nbsp;"
+
+  if (enemySta > 0) { enemyStats += "&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
+    if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyStaLost) + emptySymbol.repeat(enemyStaLost); } //YOLO
+
+  enemyStats += "&nbsp;&nbsp;"
+
+  if (enemyAtk>0) {
+    enemyStats += "&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk);
+    if (enemyAtkBonus<0) { enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
+    }
+    enemyStats += "&nbsp;&nbsp;"
+
+  }
+  if (enemyMgk > 0) {enemyStats += "&nbsp;🔵 " + fullSymbol.repeat(enemyAtk);}
+
+  return enemyStats;
 }
 
 function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
@@ -360,7 +380,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
             logPlayerAction(actionString,"Smashed it into tiny pieces -1 🟢");
             displayEnemyEffect("〽️");
-            nextEncounter();
+            enemyAnimateDeathNextEncounter();
             break;
 
           case "Trap-Attack": //Attacking causes you damage
@@ -450,14 +470,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Boss":
           case "Small":
+            if (enemyAtk<=0){
+              logPlayerAction(actionString,"Walked away leaving them behind.");
+              nextEncounter();
+              break;
+            }
+
             var rollMessage;
             if (playerUseStamina(1,noStaForRollMessage)){
               if (enemyAtk!=0){
                 rollMessage="Dodged their attack -1 🟢";
               } else {
                 rollMessage="They do not mean no harm -1 🟢";
-              }
-              enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
+              }              enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -536,7 +561,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Felt like nothing really happened.");
         }
         break;
-
       case 'button_block':
         if (enemyType=="Death"){
           displayPlayerCannotEffect();
@@ -562,6 +586,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Demon":
           case "Small":
+            if (enemyAtk<=0){
+              logPlayerAction(actionString,"They mean absolutely no harm.")
+              playerSta++ //Regain lost stamina
+              displayEnemyCannotEffect();
+              break;
+            }
             enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -1596,6 +1626,7 @@ function resetEncounterButtons(){
   setButton('button_attack',"⚔️ Attack");
   setButton('button_block',"🔰 Block");
   setButton('button_roll',"🌀 Roll");
+  if (enemyAtk<=0)  setButton('button_roll',"👣 Walk");
   setButton('button_cast',"💫 Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
@@ -1776,6 +1807,10 @@ function displayPlayerCannotEffect(){
   animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
 }
 
+function displayEnemyCannotEffect(){
+  animateUIElement(document.getElementById('id_enemy_info'),"animate__headShake","0.7"); //Animate enemy not enough stamina
+}
+
 function displayPlayerGainedEffect(){
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
 }
@@ -1850,8 +1885,8 @@ function registerClickListeners(){
 function generateCharacterShareString(){
   var characterShareString="";
     characterShareString+="\nCharacter: "+playerName;
-    characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  ⚔️ " + "◆".repeat(playerAtk);
-    if (playerMgkMax>0) characterShareString+="  🔵 " + "◆".repeat(playerMgkMax);
+    characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
+    if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
     if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
     characterShareString += "\nDeceased: "+adventureEndTime;
