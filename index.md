@@ -20,8 +20,8 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-26px;
-    margin-bottom:4px;
+<h2 id = "id_area" style="margin-top:-30px;
+    margin-bottom:-12px;
     font-size:28px;
     letter-spacing: 1.5px;
     -webkit-text-stroke: 6.5px black;
@@ -101,7 +101,8 @@ layout: default
   padding-top:6px;
   padding-left:10px;
   padding-right:8px;
-  padding-bottom:6px;
+  padding-bottom:4px;
+  min-height:64px;
   margin-bottom:0px;
   line-height:165%;
   width:95%;
