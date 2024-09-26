@@ -3,6 +3,8 @@
 
 //Tech init
 var versionCode = "pre-fpm build: 9/26/24"
+var adventureEndTime;
+
 var areaUIElement;
 var cardUIElement;
 var emojiUIElement;
@@ -75,7 +77,7 @@ var actionString;
 //var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
 var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
-var adventureEncounterCount = -1; // -1 for death
+var adventureEncounterCount = 0; // -1 for death
 var adventureEndReason = "";
 
 //Area init
@@ -1515,10 +1517,20 @@ function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory."
 }
 
 //End Game
+function setAdventureEndTime(){
+  var currentDate = new Date();
+  adventureEndTime = currentDate.getDate() + "-"
+                  + currentDate.getMonth() + "-"
+                  + currentDate.getFullYear() + " at "
+                  + currentDate.getHours() + ":"
+                  + currentDate.getMinutes();
+}
+
 function gameOver(){
   //Reset progress to death encounter
   logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 Got killed, ending the adventure. ");
-  adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
+  setAdventureEndTime();
+  adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
   animateUIElement(cardUIElement,"animate__flip","1");
@@ -1526,15 +1538,14 @@ function gameOver(){
   resetSeenEncounters();
 }
 
-function gameEnd(){
+function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   var winMessage="🧠 ▸ 💭 Just had a deja vu, feels really familiar (NG+).";
   logAction(winMessage);
+  setAdventureEndTime();
 
   //Reset progress to game start
   resetSeenEncounters();
   encounterIndex=4;
-
-  //TODO: Proper credits!!!
   alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
 }
 
@@ -1815,52 +1826,39 @@ function registerClickListeners(){
 //Social
 function generateCharacterShareString(){
   var characterShareString="";
-  characterShareString+="\nCharacter: "+playerName;
-  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  ⚔️ " + "◆".repeat(playerAtk);
-  if (playerMgkMax>0) characterShareString+="  🔵 " + "◆".repeat(playerMgkMax);
-
-  if (playerPartyString.length > 0) {
-    characterShareString += "\nParty: " +playerPartyString;
-  }
-  if (playerLootString.length > 0) {
-    characterShareString += "\nLoot: "+playerLootString;
-  }
-
-  characterShareString+="\n\n"+ versionCode;
+    characterShareString+="\nCharacter: "+playerName;
+    characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  ⚔️ " + "◆".repeat(playerAtk);
+    if (playerMgkMax>0) characterShareString+="  🔵 " + "◆".repeat(playerMgkMax);
+    if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
+    if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
+    characterShareString += "\nDeceased: "+adventureEndTime;
+    characterShareString += adventureEndReason+" (Encounter #"+adventureEncounterCount+")";
 
   return characterShareString;
 }
 
 function copyAdventureToClipboard(){
   displayPlayerEffect("📜");
-  logPlayerAction(actionString,"The legend was written into clipboard.");
+  logPlayerAction(actionString,"The legend was written to hard drive.");
 
-  var currentDate = new Date();
-  var dateTime = currentDate.getDate() + "-"
-                  + currentDate.getMonth() + "-"
-                  + currentDate.getFullYear() + "-"
-                  + currentDate.getHours() + "-"
-                  + currentDate.getMinutes();
+  var adventureLogClipboard = "";
 
-  adventureLog = adventureLog.replaceAll("<br>","\n");
-  var tempString = adventureLog.split("\n").slice(2);
-  adventureLog = tempString.join("\n");
-  adventureLog = adventureLog.replaceAll("&nbsp;"," ").substring(1);
+  adventureLogClipboard = adventureLog.replaceAll("<br>","\n");
+  var tempString = adventureLogClipboard.split("\n").slice(2);
+  adventureLogClipboard = tempString.join("\n");
+  adventureLogClipboard = adventureLogClipboard.replaceAll("&nbsp;"," ").substring(1);
 
-if (!adventureLog.includes("Character:")){
-    adventureLog += generateCharacterShareString();
-    adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
-    adventureLog += "\n"+dateTime;
-  }
-  navigator.clipboard.writeText(adventureLog);
+  adventureLogClipboard=generateCharacterShareString()+"\n\n"+adventureLogClipboard;
+  adventureLogClipboard += "\nhttps://igpenguin.github.io/webcrawler";
+  adventureLogClipboard +=  "\n"+ versionCode;
+
+  navigator.clipboard.writeText(adventureLogClipboard);
 
   //Download as .txt
-  var element = document.createElement('xy');
-
-  var filename = playerName.replaceAll(" ","-")+"-"+dateTime;
-
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(adventureLog));
-  element.setAttribute('download', filename);
+  var fileName = "WebCrawler-"+playerName.replaceAll(" ","-")+"-"+adventureEndTime.replaceAll(" at ","-").replaceAll(":","-")+".txt";
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(adventureLogClipboard));
+  element.setAttribute('download', fileName);
   element.style.display = 'none';
   document.body.appendChild(element);
   element.click();
@@ -1869,7 +1867,7 @@ if (!adventureLog.includes("Character:")){
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to stage #"+adventureEncounterCount+" in WebCrawler!"+adventureEndReason+"\n"+generateCharacterShareString()));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI just finished a WebCrawler adventure!"+"\n"+generateCharacterShareString()));
 }
 
 //Prevent data loss if not running on localhost
