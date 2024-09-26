@@ -266,13 +266,20 @@ function redraw(){
     case "Friend":
     case "Small":
       if (enemyStatusString==""){
-        enemyStatusString=decorateStatusText("♣️","Mysterious","lightgrey");
+        enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
       }
       break;
 
     case "Item":
     case "Trap":
-      enemyStatusString=decorateStatusText("⚜️","Valuable","#FFD940");
+      var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
+      if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
+        enemyStatusString=decorateStatusText("⚜️","Valuable","#FFD940");
+      } else if (totalEffect < 0 ) {
+          enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
+      } else {
+        enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
+      }
       break;
     case "Consumable":
       enemyStatusString = "❤️ <b>+</b>&nbsp;&nbsp;🟢 <b>+</b>";
@@ -753,7 +760,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
           }
-          if (enemyType!="Death") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
+          if (enemyType!="Death" && enemyType!="Dream") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
@@ -837,6 +844,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Curse":
             logPlayerAction(actionString,"Hands reached forward to no effect.");
+            displayPlayerCannotEffect();
             break;
 
           case "Dream":
@@ -875,8 +883,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               else {
                 displayPlayerCannotEffect();
-                enemyAttackOrRest();
                 logPlayerAction(actionString,"Almost grabbed them, but not quite.");
+                enemyAttackOrRest();
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
@@ -973,9 +981,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            logAction("<br>");
-            logAction("<br>");
-            logPlayerAction(actionString,"Reconnected with their soul.");
+            logPlayerAction("⭐️","Reaincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
             playerNumber++;
             playerName = playerName+" "+playerNumber+"."
             displayEnemyEffect("✋");
@@ -984,7 +990,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               renewPlayer();
               encounterIndex=3; //Skip tutorial
             } else {
-              //TODO load playerStats to prevent stacking via resurrecting on checkpoints
+              //TODO load playerStats & Loot to prevent stacking via resurrecting on checkpoints
               encounterIndex=checkpointEncounter-1; //Start from checkpoint
               playerHp=playerHpMax;
               playerSta=playerStaMax;
@@ -1076,6 +1082,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
             logPlayerAction(actionString,"Rested well, recovering all resources.");
+            displayPlayerEffect("💤");
             nextEncounter();
             break;
 
@@ -1091,6 +1098,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           default:
             logPlayerAction(actionString,"The voice echoed around the area.");
+            displayPlayerCannotEffect();
             displayPlayerEffect("💬");
         }
         break;
@@ -1139,6 +1147,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Locked":
           case "Checkpoint":
           case "Altar":
+          case "Fishing":
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
@@ -1615,7 +1624,7 @@ function adjustEncounterButtons(){
     case "Curse":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_pray').innerHTML="🧠 Focus";
+      document.getElementById('button_pray').innerHTML="🙏 Pray";
       document.getElementById('button_sleep').innerHTML="💤 Faint";
       break;
 
@@ -1688,7 +1697,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Death":
-      document.getElementById('button_speak').innerHTML="💌 Share";
+      document.getElementById('button_speak').innerHTML="📜 Legend";
       document.getElementById('button_sleep').innerHTML="🦆 Tweet";
       break;
 
@@ -1807,7 +1816,8 @@ function registerClickListeners(){
 function generateCharacterShareString(){
   var characterShareString="";
   characterShareString+="\nCharacter: "+playerName;
-  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  ⚔️ " + "×".repeat(playerAtk);
+  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  ⚔️ " + "◆".repeat(playerAtk);
+  if (playerMgkMax>0) characterShareString+="  🔵 " + "◆".repeat(playerMgkMax);
 
   if (playerPartyString.length > 0) {
     characterShareString += "\nParty: " +playerPartyString;
@@ -1822,15 +1832,34 @@ function generateCharacterShareString(){
 }
 
 function copyAdventureToClipboard(){
-  displayPlayerEffect("💌");
+  displayPlayerEffect("📜");
   logPlayerAction(actionString,"The legend was written into clipboard.");
+
+  var currentDate = new Date();
+  var dateTime = currentDate.getDate() + "-"
+                  + currentDate.getMonth() + "-"
+                  + currentDate.getFullYear() + "-"
+                  + currentDate.getHours() + "-"
+                  + currentDate.getMinutes();
+
   adventureLog = adventureLog.replaceAll("<br>","\n");
-  adventureLog += generateCharacterShareString();
-  adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
+  var tempString = adventureLog.split("\n").slice(2);
+  adventureLog = tempString.join("\n");
+  adventureLog = adventureLog.replaceAll("&nbsp;"," ").substring(1);
+
+if (!adventureLog.includes("Character:")){
+    adventureLog += generateCharacterShareString();
+    adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
+    adventureLog += "\n"+dateTime;
+  }
   navigator.clipboard.writeText(adventureLog);
 
   //Download as .txt
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  var element = document.createElement('xy');
+
+  var filename = playerName.replaceAll(" ","-")+"-"+dateTime;
+
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(adventureLog));
   element.setAttribute('download', filename);
   element.style.display = 'none';
   document.body.appendChild(element);
