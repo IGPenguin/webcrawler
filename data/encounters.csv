@@ -14,7 +14,7 @@ Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still lo
 Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;1;0;Wild Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Abandoned Village;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the surface.<br>Something sparkles at the bottom.;Fished out something.
 Abandoned Village;🫙;Empty Jar;Item;0;0;0;0;0;0;Junk;Appears to be clean and empty.<br>No traces of previous contents.;
-Abandoned Village;🏚️;Another House;Container-Double;0;0;0;0;0;0;Deserted Building;This house has been neglected long time.<br>Perhaps there's something of value.;Kicked the door open.
+Abandoned Village;🏚️;Deserted House;Container-Double;0;0;0;0;0;0;Deserted Building;This house has been neglected long time.<br>Perhaps there's something of value.;Kicked the door open.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still good condition.;
 Abandoned Village;🐈‍⬛;Black Cat;Pet;2;0;2;1;0;0;Wild Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
 Abandoned Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;
@@ -34,9 +34,9 @@ Abandoned Village;🦉;Engaging Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares ahead 
 Abandoned Village;🪵;Pile of Timber;Container;0;0;0;0;0;0;Material;Wooden logs laying on the ground.<br>Nothing of particular interest.;Lifted the nearest log.
 Abandoned Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;The poor thing has a sunlight shock.<br>Perfect fishing bait.;Contracted a deadly disease
 Abandoned Village;🐐;Starving Goat;Standard;1;1;3;0;10;0;Domestic Animal;Would eat anything at this point.<br>Emaciated to the bone.;Devoured by Starving Goat
-Abandoned Village;⛪️;Deserted Church;Container-Locked;0;0;0;0;0;0;Ruined Building;There is a huge chain on the front door.<br>As if something is kept inside.;
-Abandoned Village;⛪️;Deserted Church;Container-Triple;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
-Abandoned Village;⛪️;Deserted Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
+Abandoned Village;⛪️;Barricaded Church;Container-Locked;0;0;0;0;0;0;Ruined Building;There is a huge chain on the front door.<br>As if something is kept inside.;
+Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
+Abandoned Village;⛪️;Barricaded Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
 Abandoned Village;🐻;Undead Bear;Boss;5;2;2;0;3;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
 Abandoned Village;🪓;Bloody Axe;Item;1;0;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.<br>;Took it with themselves just in case.
 Forgotten Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
