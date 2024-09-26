@@ -857,6 +857,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAttackOrRest();
             break;
 
+          case "Consumable":
+          case "Item":
           case "Standard":
           case "Recruit":
           case "Swift":
