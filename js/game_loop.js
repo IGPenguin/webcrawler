@@ -727,7 +727,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (playerMgkMax<=0 && !isfreePrayEncounter()){
-            logPlayerAction(actionString,"Cannot cast know any spells yet.");
+            logPlayerAction(actionString,"Cannot cast any spells yet.");
             displayPlayerCannotEffect();
             break;
           }
@@ -1523,7 +1523,7 @@ function resetEncounterButtons(){
   setButton('button_attack',"⚔️ Attack");
   setButton('button_block',"🔰 Block");
   setButton('button_roll',"🌀 Roll");
-  setButton('button_cast',"🪄 Spell");
+  setButton('button_cast',"💫 Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
   setButton('button_grab',"✋ Grab");
@@ -1643,7 +1643,10 @@ function adjustEncounterButtons(){
 
     case "Spirit":
     case "Demon":
-      document.getElementById('button_pray').innerHTML="💫 Banish";
+      document.getElementById('button_pray').innerHTML="🔥 Banish";
+      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
+        document.getElementById('button_grab').innerHTML="🦶 Kick";
+      }
       break;
 
     case "Undead":
