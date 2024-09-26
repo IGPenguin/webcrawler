@@ -607,11 +607,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (playerMgkMax<1){
-            logPlayerAction(actionString,"Not enough mana, requires 1 🔵");
+            logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
             break;
           }
-          if (!playerUseMagic(1,"Not enough mana, requires 1 🔵")) { break; } //Casting is never free, upgrd handled above
+          if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { break; } //Casting is never free, upgrd handled above
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
 
         switch (enemyType){
@@ -694,12 +694,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (playerMgkMax<2){
-            logPlayerAction(actionString,"Not enough mana, requires 2 🔵");
+            logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
             displayPlayerCannotEffect();
             break;
           }
 
-          if (!playerUseMagic(2,"Not enough magic power.")) { //Curse is never free, upgrd handled above
+          if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
               break;
             }
 
@@ -775,13 +775,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (playerMgkMax<1 && !isfreePrayEncounter()){
-            logPlayerAction(actionString,"Not enough mana, requires 1 🔵");
+            logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
             break;
           }
 
           if (!isfreePrayEncounter()) {
-            if (!playerUseMagic(1,"Not enough magic power.")) {
+            if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) {
               break;
             }
           }
