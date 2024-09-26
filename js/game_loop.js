@@ -266,7 +266,7 @@ function redraw(){
     case "Friend":
     case "Small":
       if (enemyStatusString==""){
-        enemyStatusString=decorateStatusText("♣️","Mysterious","gray");
+        enemyStatusString=decorateStatusText("♣️","Mysterious","lightgrey");
       }
       break;
 
@@ -297,6 +297,12 @@ function redraw(){
       break;
     case "Fishing":
       enemyStatusString=decorateStatusText("🪝","Fishing Spot","#FFD940");
+      break;
+    case "Curse":
+      enemyStatusString=decorateStatusText("⁉️","Hazard","red");
+      break;
+    case "Death":
+      enemyStatusString=decorateStatusText("⚰️","Permanent Status","lightgrey");
       break;
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
@@ -752,7 +758,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=-1*enemyInt){
-              logPlayerAction(actionString,"Strong mind has broken the curse!");
+              logPlayerAction(actionString,"Kept it together thanks to resilience.");
               enemyAnimateDeathNextEncounter();
             } else {
               logPlayerAction(actionString,"Giving the best, but no effect.");
