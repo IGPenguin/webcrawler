@@ -112,8 +112,8 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-18px;
-  margin-bottom:-16px;
+<h3 id = "id_versus" style="margin-top:-20px;
+  margin-bottom:-17px;
     color:red;
     font-size:36px;
       letter-spacing:1.5px;
