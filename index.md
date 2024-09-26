@@ -20,15 +20,15 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-32px;
-    margin-bottom:-12px;
+<h2 id = "id_area" style="margin-top:-26px;
+    margin-bottom:4px;
     font-size:28px;
     letter-spacing: 1.5px;
     -webkit-text-stroke: 6.5px black;
       paint-order: stroke fill;
         position:relative; z-index:2;">Forgotten Forest</h2>
 
-<div class="card" id="id_card" style="background-color:#202020;">
+<div class="card" id="id_card" style="background-color:#202020;padding-bottom:4px">
 
 <div id="id_enemy_card_contents">
 <div id = "id_enemy_info">
@@ -47,7 +47,7 @@ layout: default
   <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:2;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
-<h1 id = "id_emoji" style="margin-bottom:10px;
+<h1 id = "id_emoji" style="margin-bottom:14px;
                             box-shadow:
                               0px 0px 0px 3px #121212;
                             padding-bottom:0px;
@@ -55,51 +55,65 @@ layout: default
                             margin-top:0px;
                             background-color:#272727;"/>
 </div>
+
+<div class="box-border-dynamic" style="margin-top:0px;
+        box-shadow:
+          0px 0px 0px 3px #000000;
+            position:relative; z-index:2;
+            overflow:auto;">
+
+
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
                             font-size:12px;
-                            padding-top:1px;
                             padding-left:8px;
                             padding-bottom:0px;
                             line-height:24px;
-                            margin-top:4px;
+                            margin-top:0px;
                             margin-bottom:0px;
                             margin-right:0px;
                             font-family:sans;
                             display:inline;
-                            width:97.8%;
-                            box-shadow:
-                              0px 0px 0px 3px #000000;
-                              position:relative; z-index:1;"/>
+                            width:60%;"/>
+
+<h5 id = "id_team" style="float:right;
+                                text-align:right;
+                                font-weight:300;
+                                padding-bottom:0px;
+                                padding-top:5px;
+                                padding-right:8px;
+                                margin-bottom:4px;
+                                display:inline;
+                                overflow:auto;"/>
 </div>
-<div class="box-border" style="margin-top:42px;
+</div>
+<div class="box-border-dynamic" style="margin-top:2px;
+  margin-right:0px;
+    margin-bottom:12px;
   background-color:#272727;
   box-shadow:
     0px 0px 0px 3px #121212;
-      margin-right:0px;">
+      position:relative; z-index:1;
+      overflow:auto;">
 
 <h4 id = "id_desc" style="float:left;
   text-align:left;
-  padding-top:8px;
+  padding-top:6px;
   padding-left:10px;
   padding-right:8px;
-  margin-bottom:-23px;
+  padding-bottom:4px;
+  margin-bottom:0px;
   line-height:165%;
   width:95%;
-  overflow: auto;"/>
-
-<h5 id = "id_team" style="float:right;
-  font-weight:300;
-  margin-top:24px;
-  padding-right:8px;
-  overflow: auto;"/>
+  overflow: auto;
+  position:relative;"/>
 </div>
 </div>
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-20px;
-  margin-bottom:-18px;
+<h3 id = "id_versus" style="margin-top:-16px;
+  margin-bottom:-16px;
     color:red;
     font-size:36px;
       letter-spacing:1.5px;
