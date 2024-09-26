@@ -210,6 +210,10 @@ layout: default
 
 
 
-<p style="margin:26px"></p>
-<h4 style="font-size:12px; opacity:0.85; box-shadow:none;">Made with 💚 by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4><h4 id="id_version" style="font-size:10px; margin-top:-12px; opacity:0.6; box-shadow:none;"/>
+<p style="margin:8px"></p>
+
+<div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/webcrawler/';">
+<h4 style="font-size:12px; opacity:0.9; letter-spacing:1px;box-shadow:none;">🔗 Made with love by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4>
+<h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.6; box-shadow:none;"/>
+</div>
 </center>

@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Tech init
-var versionCode = "preview, 9/26/24"
+var versionCode = "pre-fpm build: 9/26/24"
 var areaUIElement;
 var cardUIElement;
 var emojiUIElement;
