@@ -11,6 +11,7 @@ var emojiUIElement;
 var enemyInfoUIElement;
 var playerInfoUIElement;
 var toolbarCardUIElement;
+var enemyTeamUIElement;
 var versusText;
 var buttonsContainer;
 
@@ -228,50 +229,50 @@ function redraw(){
   document.getElementById('id_area').innerHTML = areaName;
   document.getElementById('id_name').innerHTML = enemyName;
   document.getElementById('id_desc').innerHTML = enemyDesc;
-  document.getElementById('id_team').innerHTML = enemyTeam;
+  enemyTeamUIElement = document.getElementById('id_team');
+  enemyTeamUIElement.innerHTML=enemyTeam;
+  //document.getElementById('id_team').innerHTML = enemyTeam;
 
   //Encounter Statusbar UI
 
   var enemyStatusString = ""
 
-
-  if (enemyType=="Boss"){
-    enemyStatusString+=decorateStatusText("💀","Boss","red");
-  }
-
   switch(enemyType){ //TODO: Add more custom headers for encounters
+    case "Boss":
+      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss","red");
+      enemyStatusString=appendEnemyStats()
     case "Pet":
-      enemyStatusString=decorateStatusText("🔸","Buddy","orange");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Buddy","orange");
+      enemyStatusString=appendEnemyStats()
       break;
     case "Swift":
-      enemyStatusString=decorateStatusText("⚡️","Swift","yellow");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("⚡️","Swift","yellow");
+      enemyStatusString=appendEnemyStats()
       break;
     case "Heavy":
-      enemyStatusString=decorateStatusText("🔺","Strong","yellow");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔺","Strong","yellow");
+      enemyStatusString=appendEnemyStats()
       break;
     case "Spirit":
-      enemyStatusString=decorateStatusText("👻","Spirit","white");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("👻","Spirit","white");
+      enemyStatusString=appendEnemyStats()
       break;
     case "Friend":
-      enemyStatusString=decorateStatusText("▫️","Neutral","orange");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Neutral","orange");
+      enemyStatusString=appendEnemyStats()
       break;
     case "Small":
-      enemyStatusString=decorateStatusText("🔻","Small","orange");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small","orange");
+      enemyStatusString=appendEnemyStats()
       break;
     case "Recruit":
     case "Standard":
-      enemyStatusString=decorateStatusText("▪️","Standard","green");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("▪️","Standard","green");
+      enemyStatusString=appendEnemyStats()
       break;
     case "Demon":
-      enemyStatusString=decorateStatusText("👺","Demon","red");
-      enemyStatusString+="&nbsp;&nbsp;"+appendEnemyStats()
+      enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon","red");
+      enemyStatusString=appendEnemyStats()
       break;
 
     case "Item":
