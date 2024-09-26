@@ -417,13 +417,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break
 
           case "Upgrade":
-          logPlayerAction(actionString,"Felt becoming a bit stronger.");
-          displayPlayerEffect("✨");
+            logPlayerAction(actionString,"Felt becoming a bit stronger +1 ❤️");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("✨");
             playerHpMax+=1;
             playerHp+=1;
             playerSta+=1; //Restore lost stamina from initial attack
             enemyAnimateDeathNextEncounter();
             break;
+
           default:
             logPlayerAction(actionString,"The attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
@@ -521,7 +523,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt the body becoming faster.");
+            logPlayerAction(actionString,"Felt the body becoming faster +1 🟢");
+            displayPlayerGainedEffect();
             displayPlayerEffect("💨");
             playerStaMax+=1;
             playerSta+=1;
@@ -534,11 +537,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"The gods granted you power +1 🔵");
-          playerMgkMax+=1;
-          playerMgk+=1;
-          nextEncounter();
+          logPlayerAction(actionString,"The gods granted you blessing +1 🍀");
+          displayPlayerGainedEffect();
           displayPlayerEffect("🙏");
+          playerLck+=1;
+          enemyAnimateDeathNextEncounter();
           break;
         }
         if (!playerUseStamina(1,"Too tired to raise the shield.")){
@@ -582,12 +585,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_cast':
           if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Chose magic +2 🔵 over agility -1 🟢");
-            playerMgkMax+=2;
-            playerMgk+=2;
+            logPlayerAction(actionString,"Chose magic +1 🔵 over agility -1 🟢");
+            displayPlayerCannotEffect();
+            displayPlayerEffect("✨");
+            playerMgkMax+=1;
+            playerMgk+=1;
             playerStaMax-=1;
             playerSta-=1;
-            nextEncounter();
+            enemyAnimateDeathNextEncounter();
             break;
           }
 
@@ -667,12 +672,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
           if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"Offered blood -1 💔 for power +2 🔵");
+              logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
+              displayPlayerCannotEffect();
               playerHit(1);
               playerHpMax-=1;
-              playerMgkMax+=2;
-              playerMgk+=2;
-              nextEncounter();
+              playerMgkMax+=1;
+              playerMgk+=1;
+              enemyAnimateDeathNextEncounter();
               break;
           }
 
@@ -748,10 +754,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_pray':
           if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"Felt getting somewhat wiser.");
+              logPlayerAction(actionString,"Felt getting somewhat wiser +1 🧠");
+              displayPlayerGainedEffect();
               displayPlayerEffect("🧠");
               playerInt+=1;
-              nextEncounter();
+              enemyAnimateDeathNextEncounter();
               break;
           }
 
@@ -973,10 +980,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Fishing":
             if (playerUseItem("🪱","Successfully fished out something.","Missing some fishing bait.")){
               nextEncounter();
+              displayEnemyEffect("🪝");
             } else {
               displayPlayerCannotEffect();
             }
-            displayEnemyEffect("🪝");
             break;
 
           case "Spirit":
@@ -1004,9 +1011,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt the chances increase +1 🍀");
+            logPlayerAction(actionString,"Chose luck +2 🍀 over intellect -1 🧠");
+            displayPlayerCannotEffect();
             displayPlayerEffect("🍀");
-            playerLck+=1;
+            playerLck+=2;
+            playerInt-=1;
             enemyAnimateDeathNextEncounter();
             break;
 
@@ -1092,11 +1101,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             logPlayerAction(actionString,"Sacrificed health -1 💔 for luck +3 🍀");
+            displayPlayerCannotEffect();
+            displayPlayerEffect("🪙");
             playerUseStamina(1);
             playerHpMax-=1;
             playerHp-=1
             playerLck+=3;
-            displayPlayerEffect("🪙");
             enemyAnimateDeathNextEncounter();
             break;
 
@@ -1172,6 +1182,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             logPlayerAction(actionString,"Decided against gaining a perk.");
+            displayPlayerCannotEffect();
             enemyAnimateDeathNextEncounter();
             break;
 
@@ -1756,6 +1767,10 @@ function displayPlayerEffect(message){
 
 function displayPlayerCannotEffect(){
   animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
+}
+
+function displayPlayerGainedEffect(){
+  animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
 }
 
 function displayEffect(message,documentElement){
