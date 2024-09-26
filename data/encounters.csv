@@ -26,16 +26,19 @@ Abandoned Village;🗝️;Iron Key;Item;0;0;0;0;0;0;Accessory;Covered in rust an
 Abandoned Village;🦌;Frantic Deer;Heavy;2;2;1;0;2;0;Wild Animal;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
 Abandoned Village;⛺️;Simple Tent;Container-Double;0;0;0;0;0;0;Shelter;Cozy place of rest for whoever set it up.<br>Chance to loot for someone else.;
 Abandoned Village;👝;Leather Pouch;Container;0;0;0;0;0;0;Worn Gear;The pouch was covered by the blanket.<br>Looks like there's something inside.;
-Abandoned Village;📘;Spellbook;Item;0;0;0;0;0;1;Precious Artifact;Radiates magic energy on touch.<br>Should you risk it?;Mastered the basics of magic.
+Abandoned Village;📘;Book of Spells;Item;0;0;0;0;0;1;Precious Artifact;Radiates magic energy on touch.<br>Should you risk it?;Mastered the basics of magic.
 Abandoned Village;🍗;Roasted Chicken;Consumable;0;0;0;0;0;0;Someone's Food;It is still hot and untouched.<br>Who would leave it like that?;
 Abandoned Village;🧑‍🌾;Disturbed Druid;Recruit;2;1;1;0;1;2;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Abandoned Village;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;Another bunch of trees in the forest.<br>A chance to catch a breath.;
 Abandoned Village;🦉;Engaging Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares ahead without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
+Abandoned Village;🪵;Pile of Timber;Container;0;0;0;0;0;0;Material;Wooden logs laying on the ground.<br>Nothing of particular interest.;Lifted the nearest log.
+Abandoned Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;The poor thing has a sunlight shock.<br>Perfect fishing bait.;Contracted a deadly disease
+Abandoned Village;🐐;Starving Goat;Standard;1;1;3;0;10;0;Domestic Animal;Would eat anything at this point.<br>Emaciated to the bone.;Devoured by Starving Goat
 Abandoned Village;⛪️;Deserted Church;Container-Locked;0;0;0;0;0;0;Ruined Building;There is a huge chain on the front door.<br>As if something is kept inside.;
 Abandoned Village;⛪️;Deserted Church;Container-Triple;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
 Abandoned Village;⛪️;Deserted Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
-Abandoned Village;🐻;Undead Bear;Boss;5;2;2;0;3;1;Reanimated;Not concerned about half of it's body missing.<br>Still packs a punch.;Was torn to pieces
-Abandoned Village;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
+Abandoned Village;🐻;Undead Bear;Boss;5;2;2;0;3;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
+Abandoned Village;🪓;Bloody Axe;Item;1;0;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.<br>;Took it with themselves just in case.
 Forgotten Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
 Forgotten Grove;🐀;Dire Rat;Swift;2;1;1;0;3;0;Wild Animal;It jumped out of nowhere really fast.<br>Better raise the shield.;
 Forgotten Grove;🌳;Dark Wood;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees all around.<br>Looks like a quiet place to rest.;
