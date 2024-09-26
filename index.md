@@ -101,8 +101,8 @@ layout: default
   padding-top:6px;
   padding-left:8px;
   padding-right:8px;
-  padding-bottom:4px;
-  min-height:64px;
+  padding-bottom:2px;
+  min-height:74px;
   margin-bottom:0px;
   line-height:165%;
   width:95%;
