@@ -254,7 +254,7 @@ function redraw(){
     if (enemyMgk > 0) { enemyStatusString += "&nbsp;🔵 " + "〜";} //Magic is obscured on purpose
 
   if (enemyType=="Boss"){
-    enemyStatusString+=decorateStatusText("💀","Boss","gray");
+    enemyStatusString+=decorateStatusText("💀","Boss","red");
   }
 
   switch(enemyType){ //TODO: Add more custom headers for encounters
@@ -312,6 +312,9 @@ function redraw(){
       break;
     case "Death":
       enemyStatusString=decorateStatusText("⚰️","Permanent Status","lightgrey");
+      break;
+    case "Checkpoint":
+      enemyStatusString=decorateStatusText("🌙","Place of Power","#FFD940");
       break;
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
