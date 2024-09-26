@@ -99,7 +99,7 @@ layout: default
 <h4 id = "id_desc" style="float:left;
   text-align:left;
   padding-top:6px;
-  padding-left:10px;
+  padding-left:8px;
   padding-right:8px;
   padding-bottom:4px;
   min-height:64px;
