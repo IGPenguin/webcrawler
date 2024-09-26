@@ -101,18 +101,17 @@ layout: default
   padding-top:6px;
   padding-left:10px;
   padding-right:8px;
-  padding-bottom:4px;
+  padding-bottom:6px;
   margin-bottom:0px;
   line-height:165%;
   width:95%;
-  overflow: auto;
   position:relative;"/>
 </div>
 </div>
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-16px;
+<h3 id = "id_versus" style="margin-top:-18px;
   margin-bottom:-16px;
     color:red;
     font-size:36px;
