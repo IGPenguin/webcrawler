@@ -791,9 +791,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Reinforced essential beliefs +1 🍀");
-            playerLck++;
-            nextEncounter();
+            //TODO: Was kinda OP, perhaps re-enable later?
+            //logPlayerAction(actionString,"Reinforced essential beliefs +1 🍀");
+            //playerLck++;
+            //nextEncounter();
+            logPlayerAction(actionString,"Cannot recall what happened.");
+            displayPlayerCannotEffect();
             break;
 
           case "Altar":
@@ -1536,14 +1539,14 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Vitality");
-      setButton('button_block',"🟢 Agility");
-      setButton('button_roll',"🧠 Mind");
+      setButton('button_roll',"🟢 Agility");
+      setButton('button_block',"🧠 Mind");
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_curse',"🩸 Hatred");
       setButton('button_pray',"📿 Faith");
       setButton('button_grab',"🍀 Fortune");
       setButton('button_speak',"🪙 Greed");
-      setButton('button_sleep',"💀 Pain");
+      setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
       break;
     case "Container":
     case "Container-Double":
@@ -1789,11 +1792,19 @@ function generateCharacterShareString(){
 
 function copyAdventureToClipboard(){
   displayPlayerEffect("💌");
-  logPlayerAction(actionString,"The legend was copied into clipboard.");
+  logPlayerAction(actionString,"The legend was written into clipboard.");
   adventureLog = adventureLog.replaceAll("<br>","\n");
   adventureLog += generateCharacterShareString();
   adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
   navigator.clipboard.writeText(adventureLog);
+
+  //Download as .txt
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
 }
 
 function redirectToTweet(){
