@@ -16,7 +16,8 @@ Abandoned Village;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are danci
 Abandoned Village;🫙;Empty Jar;Item;0;0;0;0;0;0;Junk;Appears to be clean and empty.<br>No traces of previous contents.;
 Abandoned Village;🏚️;Deserted House;Container-Double;0;0;0;0;0;0;Deserted Building;This house has been neglected long time.<br>Perhaps there's something of value.;Kicked the door open.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still good condition.;
-Abandoned Village;🐈‍⬛;Black Cat;Pet;2;0;2;1;0;0;Wild Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
+Abandoned Village;🐈‍⬛;Black Cat;Pet;2;0;2;1;0;0;Companion;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
+Abandoned Village;🐀;Dire Rat;Swift;2;1;1;0;3;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Abandoned Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Trap;Shaking around vigorously.<br>Somethings likely inside.;There was a creature inside!
 Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;1;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;
@@ -37,22 +38,21 @@ Abandoned Village;🐐;Starving Goat;Standard;1;1;3;0;10;0;Domestic Animal;Would
 Abandoned Village;⛪️;Barricaded Church;Container-Locked;0;0;0;0;0;0;Ruined Building;There is a huge chain on the front door.<br>As if something is kept inside.;
 Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
 Abandoned Village;⛪️;Barricaded Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
-Abandoned Village;🐻;Undead Bear;Boss;5;2;2;0;3;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
+Abandoned Village;🐻;Undead Grizzly;Boss;5;2;2;0;3;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
 Abandoned Village;🪓;Bloody Axe;Item;1;0;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.<br>;Took it with themselves just in case.
-Forgotten Grove;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
-Forgotten Grove;🐀;Dire Rat;Swift;2;1;1;0;3;0;Wild Animal;It jumped out of nowhere really fast.<br>Better raise the shield.;
-Forgotten Grove;🌳;Dark Wood;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees all around.<br>Looks like a quiet place to rest.;
-Forgotten Grove;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Both eyes were pecked
-Forgotten Grove;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
-Forgotten Grove;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insect;The bees instantly swarmed the area.<br>There's nowhere to run;
-Forgotten Grove;🦡;Honey Badger;Standard;3;1;2;0;1;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
-Forgotten Grove;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
-Forgotten Grove;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Cannot tell left from right.<br>Also not up from down.;Suffered mental damage.
-Forgotten Grove;🦨;Forest Skunk;Swift;2;1;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
-Forgotten Grove;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;
-Forgotten Grove;🦄;Rainbow Unicorn;Pet;3;1;3;1;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
-Forgotten Grove;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
-Forgotten Grove;🥩;Boar Meat;Trap;0;2;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat
-Forgotten Grove;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
-Forgotten Grove;🐸;Frog-faced Giant;Heavy;5;1;3;0;5;0;Terrible Monstrosity;Foul stench reeks from it's mouth.<br>Bloodshot eyes blink slowly.;Got squashed like a bug
-Ancient Crypt;👑;King's Crown;Death;1;1;0;0;0;1;Legendary Artifact;This is where it ends for now.<br>Tweet this to appear in credits!;
+Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
+Depriving Fairyland;🌳;Dark Grove;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees all around.<br>Looks like a quiet place to rest.;
+Depriving Fairyland;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Both eyes were pecked
+Depriving Fairyland;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
+Depriving Fairyland;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insect;The bees instantly swarmed the area.<br>There's nowhere to run;
+Depriving Fairyland;🦡;Honey Badger;Standard;3;1;2;0;1;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
+Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
+Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Cannot tell left from right.<br>Also not up from down.;Suffered mental damage.
+Depriving Fairyland;🦨;Forest Skunk;Swift;2;1;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
+Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;3;1;3;1;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
+Depriving Fairyland;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
+Depriving Fairyland;🥩;Boar Meat;Trap;0;2;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat
+Depriving Fairyland;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
+Depriving Fairyland;🐸;Frog-faced Giant;Boss;5;1;3;0;5;0;Monstrosity;Foul stench reeks from it's mouth.<br>Bloodshot eyes blink slowly.;Got squashed like a bug
+Depriving Fairyland;👑;King's Crown;Death;1;1;0;0;0;1;Endgame;This is where it ends for now.<br>Tweet this to appear in credits!;
