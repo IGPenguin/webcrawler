@@ -330,7 +330,7 @@ function redraw(){
 }
 
 function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
-  return emoji+"&nbsp;<i style=\"font-weight:50;color:"+color+";font-size:"+size+"px\">"+text+"</i>";
+  return emoji+"&nbsp;<i style=\"font-weight:50;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
 }
 
 //Game logic
