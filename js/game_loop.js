@@ -344,6 +344,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
+        if (enemyType=="Death") {
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"There is nothing to attack anymore.");
+          break;
+        }
+
         if (enemyType!="Upgrade" && !playerUseStamina(1,"Too tired to attack anything.")){
             break;
           }
@@ -411,11 +417,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Death":
-            displayPlayerCannotEffect();
-            logPlayerAction(actionString,"There is nothing to attack anymore.");
-            break
-
           case "Upgrade":
             logPlayerAction(actionString,"Felt becoming a bit stronger +1 ❤️");
             displayPlayerGainedEffect();
@@ -433,6 +434,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       break;
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
+        if (enemyType=="Death"){
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"There is nothing to dodge anymore.");
+          break;
+        }
+
         const noStaForRollMessage = "Too tired to make any move.";
         switch (enemyType){ //Dodge attack
           case "Standard":
@@ -517,11 +524,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Death":
-            displayPlayerCannotEffect();
-            logPlayerAction(actionString,"There is nothing to dodge anymore.");
-            break;
-
           case "Upgrade":
             logPlayerAction(actionString,"Felt the body becoming faster +1 🟢");
             displayPlayerGainedEffect();
@@ -536,6 +538,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_block':
+        if (enemyType=="Death"){
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"There is nothing to block anymore.");
+          break;
+        }
+
         if (enemyType == "Upgrade"){
           logPlayerAction(actionString,"The gods granted you blessing +1 🍀");
           displayPlayerGainedEffect();
@@ -573,10 +581,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Death":
-              displayPlayerCannotEffect();
-              logPlayerAction(actionString,"There is nothing to block anymore.");
-              break;
           default:
             logPlayerAction(actionString,"Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
@@ -584,6 +588,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast':
+          if (enemyType=="Death"){
+            displayPlayerCannotEffect();
+            logPlayerAction(actionString,"Magic powers already faded away.");
+            break;
+          }
+
           if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Chose magic +1 🔵 over agility -1 🟢");
             displayPlayerCannotEffect();
@@ -660,17 +670,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Death": //TODO: Maybe I'll come up with something later
-            displayPlayerCannotEffect();
-            logPlayerAction(actionString,"Magic powers already faded away.");
-            break;
-
           default:
             logPlayerAction(actionString,"Wasted magic power on nothing -1 🔵");
         }
         break;
 
         case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
+          if (enemyType=="Death"){
+            displayPlayerCannotEffect();
+            logPlayerAction(actionString,"The lips cannot curse anymore.");
+            break;
+          }
+
           if (enemyType=="Upgrade"){
               logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
               displayPlayerCannotEffect();
@@ -742,17 +753,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Death": //TODO: Maybe I'll come up with something later
-            displayPlayerCannotEffect();
-            logPlayerAction(actionString,"Cannot move the lips to curse anymore.");
-            break;
-
           default:
             logPlayerAction(actionString,"The curse dispersed into the area -1 🔵");
         }
         break;
 
         case 'button_pray':
+          if (enemyType=="Death"){
+            logPlayerAction(actionString,"It's way too late for healing.");
+            displayPlayerCannotEffect();
+            break;
+          }
+
           if (enemyType=="Upgrade"){
               logPlayerAction(actionString,"Felt getting somewhat wiser +1 🧠");
               displayPlayerGainedEffect();
@@ -839,11 +851,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Altar":
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
             nextEncounter();
-            break;
-
-          case "Death": //TODO: Maybe I'll come up with something later
-            logPlayerAction(actionString,"It's way too late for prayers.");
-            displayPlayerCannotEffect();
             break;
 
           default:
