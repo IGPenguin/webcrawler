@@ -690,7 +690,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerMgkMax+=1;
             playerMgk+=1;
             playerStaMax-=1;
-            playerSta-=1;
+            if (playerSta>0) playerSta-=1;
             enemyAnimateDeathNextEncounter();
             break;
           }
