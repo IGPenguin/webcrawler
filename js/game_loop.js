@@ -1,10 +1,35 @@
 //Having all this in a one file is truly shameful
 //...submit a pull request if you dare
 
-//Tech init
+//Colors
+var colorWhite = "#FFFFFF";
+var colorGold = "#FFD940";
+var colorGreen = "#22BF22";
+var colorRed = "#FF0000";
+var colorGrey = "#DDDDDD";
+var colorOrange = "orange";
+
+//Globar vars
 var versionCode = "pre-fpm build: 9/26/24"
 var adventureEndTime;
 
+//Global vars - Encounters
+var lines;
+var encounterIndex;
+var encountersTotal;
+var randomEncounterIndex;
+
+//Unused now I believe
+var seenEncounters;
+var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
+if (seenEncountersString == null){
+  seenEncounters = [];
+} else {
+  //Load seen encounters
+  seenEncounters = Array.from(seenEncountersString);
+}
+
+//Globar vars - UIElements
 var areaUIElement;
 var cardUIElement;
 var emojiUIElement;
@@ -12,24 +37,30 @@ var enemyInfoUIElement;
 var playerInfoUIElement;
 var toolbarCardUIElement;
 var enemyTeamUIElement;
-var versusText;
+var versusTextUIElement;
 var buttonsContainer;
 
-
-var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
-var seenEncounters;
-var randomEncounterIndex;
-var encountersTotal;
-var encounterIndex;
-var lines;
-
-if (seenEncountersString == null){
-  seenEncounters = [];
-} else {
-  seenEncounters = Array.from(seenEncountersString); //Load seen encounters
-}
-
 //Player stats init
+function getCharacterName(){
+  const random_names = ["Nameless Hero", "Worthless Peasant", "Naked Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal"];
+  //"Penguin IV./XX.","Jesus H. Christ","Anthropomorphic Lizard"
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+var playerName = getCharacterName(); //Stays unchanged unless dead before checkpoint
+var playerNumber = 1; //Increments on death if at least once saved
+var playerLootString;
+var playerPartyString;
+
+var playerHpMax;
+var playerStaMax;
+var playerMgkMax;
+var playerHp;
+var playerSta;
+var playerLck;
+var luckInterval = 24; //Lower to increase chances
+var playerInt;
+var playerAtk;
+renewPlayer();
 function renewPlayer(){ //Default values
   if (playerNumber>1) playerName = getCharacterName();
   playerHpMax=2;
@@ -47,36 +78,11 @@ function renewPlayer(){ //Default values
   //adventureLog = ""; //Keep of all characters
 }
 
-//Generators
-function getCharacterName(){
-  const random_names = ["Nameless Hero", "Worthless Peasant", "Naked Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal"];
-  //"Penguin IV./XX.","Jesus H. Christ","Anthropomorphic Lizard"
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
-
-var playerName = getCharacterName(); //Stays unchanged unless dead before checkpoint
-var playerNumber = 1; //Increments on death if at least once saved
-var playerLootString;
-var playerPartyString;
-
-var playerHpMax;
-var playerStaMax;
-var playerMgkMax;
-var playerHp;
-var playerSta;
-var playerLck;
-var playerInt;
-var playerAtk;
-renewPlayer();
-
-var luckInterval = 24; //Lower to increase chances
-
-var actionString;
-//Initial action log below
-//var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
+//Adveenture logging
+var actionString; //Initial action log below
 var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
-var adventureEncounterCount = 0; // -1 for death
+var adventureEncounterCount = 0;
 var adventureEndReason = "";
 
 //Area init
@@ -101,7 +107,15 @@ var enemyMsg;
 var enemyHpLost = 0;
 var enemyStaLost = 0;
 var enemyAtkBonus = 0;
+function enemyRenew(){
+  enemyStaLost = 0;
+  enemyHpLost = 0;
+  enemyAtkBonus = 0;
+}
 
+
+//Data logic
+//Load encounter data .csv on page ready
 $(document).ready(function() {
     $.ajax({
         type: "GET",
@@ -113,8 +127,6 @@ $(document).ready(function() {
         }
      });
 });
-
-//Data logic
 
 function processData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
@@ -146,7 +158,7 @@ function getNextEncounterIndex(){
   return nextItemIndex;
 }
 
-function getUnseenEncounterIndex() { //Unused
+function getUnseenEncounterIndex() { //Unused I believe
   //console.log("Already seen line indexes: " + seenEncounters);
   encountersTotal = lines.length;
   var max = encountersTotal;
@@ -182,7 +194,10 @@ function loadEncounter(index){
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
+
+  //Caution for whatever reason this is manipulated onload
   enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
+
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
@@ -192,7 +207,7 @@ function loadEncounter(index){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
-//UI Logic
+//UI DRAW FUNCTIONS
 function redraw(){
   //Version
   document.getElementById('id_version').innerHTML = versionCode;
@@ -201,6 +216,7 @@ function redraw(){
   playerInfoUIElement = document.getElementById('id_player_info');
   toolbarCardUIElement = document.getElementById('id_toolbar_card');
   document.getElementById('id_player_name').innerHTML = playerName;
+
   var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp) + emptySymbol.repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;"
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta) + emptySymbol.repeat(playerStaMax-playerSta);
@@ -218,6 +234,9 @@ function redraw(){
   if (playerPartyString.length+playerLootString.length == 0) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
   }
+
+  //Versus UI
+  versusTextUIElement = document.getElementById('id_versus');
 
   //Encounter UI
   areaUIElement = document.getElementById('id_area');
@@ -239,39 +258,39 @@ function redraw(){
 
   switch(enemyType){ //TODO: Add more custom headers for encounters
     case "Boss":
-      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss","red");
+      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
       enemyStatusString=appendEnemyStats()
     case "Pet":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Buddy","orange");
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Companion",colorOrange);
       enemyStatusString=appendEnemyStats()
       break;
-    case "Swift":
-      enemyTeamUIElement.innerHTML=decorateStatusText("⚡️","Swift","yellow");
+    case "Swift": //TODO: Perhaps there should also be "Flying"??
+      enemyTeamUIElement.innerHTML=decorateStatusText("💨","Hasty",colorGreen);
       enemyStatusString=appendEnemyStats()
       break;
     case "Heavy":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔺","Strong","yellow");
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔺","Strong",colorRed);
       enemyStatusString=appendEnemyStats()
       break;
     case "Spirit":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👻","Spirit","white");
+      enemyTeamUIElement.innerHTML=decorateStatusText("👻","Spirit",colorWhite);
       enemyStatusString=appendEnemyStats()
       break;
     case "Friend":
-      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Neutral","orange");
+      enemyTeamUIElement.innerHTML=decorateStatusText("▪️","Neutral",colorGrey);
       enemyStatusString=appendEnemyStats()
       break;
     case "Small":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small","orange");
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small",colorWhite);
       enemyStatusString=appendEnemyStats()
       break;
     case "Recruit":
     case "Standard":
-      enemyTeamUIElement.innerHTML=decorateStatusText("▪️","Standard","green");
+      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Normal",colorWhite);
       enemyStatusString=appendEnemyStats()
       break;
     case "Demon":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon","red");
+      enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed);
       enemyStatusString=appendEnemyStats()
       break;
 
@@ -279,7 +298,7 @@ function redraw(){
     case "Trap":
       var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
       if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
-        enemyStatusString=decorateStatusText("⚜️","Valuable","#FFD940");
+        enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
       } else if (totalEffect < 0 ) {
           enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
       } else {
@@ -293,7 +312,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       break;
     case "Upgrade":
-      enemyStatusString=decorateStatusText("⭐️","Advancement","#FFD940");
+      enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
       break;
     case "Container-Locked":
       enemyStatusString=decorateStatusText("🗝️","Locked","#DDDDDD");
@@ -308,7 +327,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("🔹","Place of Worship","#0041C2");
       break;
     case "Fishing":
-      enemyStatusString=decorateStatusText("🪝","Fishing Spot","#FFD940");
+      enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
       break;
     case "Curse":
       enemyStatusString=decorateStatusText("⁉️","Hazard","red");
@@ -317,7 +336,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("⚰️","Permanent Status","lightgrey");
       break;
     case "Checkpoint":
-      enemyStatusString=decorateStatusText("🌙","Place of Power","#FFD940");
+      enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
       break;
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
@@ -331,7 +350,7 @@ function redraw(){
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
 
-  versusText = document.getElementById('id_versus');
+  versusTextUIElementUIElement = document.getElementById('id_versus');
   buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
 }
@@ -620,9 +639,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Heavy": //Too heavy or spirit attack
-          case "Spirit":
           case "Boss":
-            if (enemyStaminaChangeMessage(-1,"Could not block the incoming blow -"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block the heavy attack -"+enemyAtk+" 💔","n/a")){
+              playerHit(enemyAtk);
+            } else {
+              enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
+            }
+            break;
+
+          case "Spirit":
+            if (enemyStaminaChangeMessage(-1,"Could not block the spectral attack -"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
@@ -1168,7 +1194,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"The voice echoed around the area.");
+            logPlayerAction(actionString,"The voice echoes around the area.");
             displayPlayerCannotEffect();
             displayPlayerEffect("💬");
         }
@@ -1256,12 +1282,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 }
 
 //Enemy
-function enemyRenew(){
-  enemyStaLost = 0;
-  enemyHpLost = 0;
-  enemyAtkBonus = 0;
-}
-
 function enemyRest(stamina){
   if (enemyHp - enemyHpLost > 0){
     animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
@@ -1366,7 +1386,7 @@ function isfreePrayEncounter(){
 }
 
 function nextEncounter(animateArea=true){
-  toggleUIElement(versusText,1);
+  toggleUIElement(versusTextUIElement,1);
   animateVersus();
 
   if (animateArea) {
@@ -1392,8 +1412,8 @@ function enemyAnimateDeathNextEncounter(){
   animateUIElement(areaUIElement,"animate__flipOutX","1"); //Uuuu nice!
   //toggleUIElement(areaUIElement);
 
-  var versusText = document.getElementById('id_versus');
-  toggleUIElement(versusText);
+  var versusTextUIElement = document.getElementById('id_versus');
+  toggleUIElement(versusTextUIElement);
   animateUIElement(cardUIElement,"animate__flipOutY","1"); //Maybe this will look better?
 
   var animationHandler = function(){
@@ -1405,8 +1425,7 @@ function enemyAnimateDeathNextEncounter(){
 }
 
 function animateVersus(time = "0.8"){
-  var versusText = document.getElementById('id_versus');
-  animateUIElement(versusText,"animate__flash",time);
+  animateUIElement(versusTextUIElement,"animate__flash",time);
 }
 
 //Player
@@ -1733,7 +1752,7 @@ function adjustEncounterButtons(){
 
     case "Fishing":
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_grab').innerHTML="🎣 Fishing";
+      document.getElementById('button_grab').innerHTML="🎣 Fish";
       break;
 
     case "Recruit":
@@ -1816,7 +1835,7 @@ function curtainFadeInAndOut(message=""){
 }
 
 function displayEnemyEffect(message){
-  displayEffect(message,document.getElementById('id_enemy_overlay'));
+  displayEffect(message,document.getElementById('id_enemy_overlay'),1.5);
 }
 
 function displayPlayerEffect(message){
@@ -1835,8 +1854,8 @@ function displayPlayerGainedEffect(){
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
 }
 
-function displayEffect(message,documentElement){
-  animateUIElement(documentElement,"animate__fadeOut",1.3,true,message)
+function displayEffect(message,documentElement,time=1.3){
+  animateUIElement(documentElement,"animate__fadeOut",time,true,message)
 }
 
 function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
