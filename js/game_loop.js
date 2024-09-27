@@ -252,16 +252,19 @@ function redraw(){
   cardUIElement = document.getElementById('id_card');
   enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
+  enemyTeamUIElement = document.getElementById('id_team');
 
   emojiUIElement.innerHTML = enemyEmoji;
   document.getElementById('id_area').innerHTML = areaName;
   document.getElementById('id_name').innerHTML = enemyName;
-  document.getElementById('id_desc').innerHTML = enemyDesc;
-  enemyTeamUIElement = document.getElementById('id_team');
-  enemyTeamUIElement.innerHTML=enemyTeam;
+  var enemyDescUIElement = document.getElementById('id_desc')
+  enemyDescUIElement.innerHTML = enemyDesc;
+  //Hacky hacky hacky hack hack hack, hacky hacky hacky, yeah yeah
+  enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:12px\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
-  switch(enemyType){ //TODO: Add more custom headers for encounters
+  enemyTeamUIElement.innerHTML="";
+  switch(enemyType){
     case "Boss":
       enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
       enemyStatusString=appendEnemyStats()
