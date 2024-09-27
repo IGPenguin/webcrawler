@@ -81,7 +81,7 @@ function renewPlayer(){ //Default values
   playerDef = 0; //TODO: Make use of when getting hit not by magic
   playerLck = 1;
   playerInt = 1;
-  playerMgk = 0;
+  playerMgk = playerMgkMax;
   playerLootString = "";
   playerPartyString = "";
   //adventureLog = ""; //Keep of all characters
@@ -203,10 +203,7 @@ function loadEncounter(index){
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
-
-  //Caution for whatever reason this is manipulated onload
-  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
-
+  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]));
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
@@ -382,12 +379,11 @@ function appendEnemyStats(){
 
   enemyStats += "&nbsp;&nbsp;"
 
-  if (enemyAtk>0) {
-    enemyStats += "&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk);
+  if ((enemyAtk)>0) {
+    enemyStats += "&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
     if (enemyAtkBonus<0) { enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
     }
     enemyStats += "&nbsp;&nbsp;"
-
   }
   if (enemyMgk > 0) {enemyStats += "&nbsp;🔵 " + fullSymbol.repeat(enemyAtk);}
 
@@ -1153,13 +1149,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Demon":
           case "Boss":
+            var maxEnemyAngryBoost=3;
+
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"Convinced them to disengage.");
               displayPlayerEffect("💬");
               nextEncounter();
               break;
-            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
-              logPlayerAction(actionString,"They strongly despised the remarks!");
+            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
+              logPlayerAction(actionString,"Speaking made them more upset +1 ⚔️");
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
@@ -1362,18 +1360,20 @@ function enemyKnockedOut(){
 }
 
 function enemyAttackOrRest(){
+  var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
   if (enemySta-enemyStaLost > 0) {
-    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked -"+enemyAtk+" 💔"}
+    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked -"+damageReceived+" 💔"}
     else {
-        staminaChangeMsg = "The enemy siphoned some health -"+enemyAtk+" 💔";
+        staminaChangeMsg = "The enemy siphoned some health -"+damageReceived+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
-    if (enemyAtk+enemyAtkBonus<=0){
+    if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
+      if (enemyAtk==0) staminaChangeMsg="They do not mean any harm."
     } else {
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
-      playerHit(enemyAtk+enemyAtkBonus);
+      playerHit(damageReceived);
       return;
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
