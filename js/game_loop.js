@@ -9,6 +9,11 @@ var colorRed = "#FF0000";
 var colorGrey = "#DDDDDD";
 var colorOrange = "orange";
 
+//Symbols
+var fullSymbol = "●";
+var emptySymbol = "○";
+var enemyStatusString = ""
+
 //Globar vars
 var versionCode = "pre-fpm build: 9/26/24"
 var adventureEndTime;
@@ -250,12 +255,8 @@ function redraw(){
   document.getElementById('id_desc').innerHTML = enemyDesc;
   enemyTeamUIElement = document.getElementById('id_team');
   enemyTeamUIElement.innerHTML=enemyTeam;
-  //document.getElementById('id_team').innerHTML = enemyTeam;
 
   //Encounter Statusbar UI
-
-  var enemyStatusString = ""
-
   switch(enemyType){ //TODO: Add more custom headers for encounters
     case "Boss":
       enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
@@ -277,8 +278,9 @@ function redraw(){
       enemyStatusString=appendEnemyStats()
       break;
     case "Friend":
-      enemyTeamUIElement.innerHTML=decorateStatusText("▪️","Neutral",colorGrey);
+      var neutralType=decorateStatusText("▪️","Neutral",colorGrey);
       enemyStatusString=appendEnemyStats()
+      displayEnemyType(neutralType);
       break;
     case "Small":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small",colorWhite);
@@ -355,8 +357,13 @@ function redraw(){
   adjustEncounterButtons();
 }
 
-var fullSymbol = "●";
-var emptySymbol = "○";
+function displayEnemyType(type){
+  if (enemyStatusString.replaceAll("&nbsp;","")!=""){
+    enemyTeamUIElement.innerHTML=type;
+  } else {
+    enemyStatusString=type;
+  }
+}
 
 function appendEnemyStats(){
   var enemyStats;
@@ -1326,7 +1333,7 @@ function enemyHit(damage,magicType=false){
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 That was the final blow.");
+    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
     enemyAnimateDeathNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
