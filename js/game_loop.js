@@ -755,89 +755,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-        case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
-          if (enemyType=="Death"){
-            displayPlayerCannotEffect();
-            logPlayerAction(actionString,"The lips cannot curse anymore.");
-            break;
-          }
-
-          if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
-              displayPlayerCannotEffect();
-              playerHit(1);
-              playerHpMax-=1;
-              playerMgkMax+=1;
-              playerMgk+=1;
-              enemyAnimateDeathNextEncounter();
-              break;
-          }
-
-          if (playerMgkMax<2){
-            logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
-            displayPlayerCannotEffect();
-            break;
-          }
-
-          if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
-              break;
-            }
-
-          if (enemyType!="Death") {displayPlayerEffect("🪬");}
-
-        switch (enemyType){
-          case "Demon":
-              logPlayerAction(actionString,"The curse made them even stronger!");
-              animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
-              enemyAtkBonus+=1;
-              break;
-
-          case "Standard": //Reduce enemy atk if mgk stronger then them
-          case "Recruit":
-          case "Swift":
-          case "Heavy":
-          case "Pet":
-          case "Undead":
-          case "Boss":
-          case "Small":
-            if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
-              enemyAtkBonus-=1;
-              logPlayerAction(actionString,"The curse made them weaker -2 🔵");
-            } else if (playerMgkMax <= enemyMgk) {
-              logPlayerAction(actionString,"They resisted the curse -2 🔵");
-            } else {
-              logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
-            }
-            enemyAttackOrRest();
-            break;
-
-          case "Spirit": //They don't care
-            logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
-            break;
-
-          case "Friend": //They'll boost your stats
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
-            displayPlayerEffect("💬");
-            break;
-
-          case "Dream": //Likely never happens, not sure if I should fix that
-            logPlayerAction(actionString,"Conjured a terrible nightmare -1 💔");
-            playerHit(1);
-            displayPlayerCannotEffect();
-            break;
-
-          case "Altar":
-            logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
-            playerLck=-1;
-            displayPlayerEffect("🪬");
-            nextEncounter();
-            break;
-
-          default:
-            logPlayerAction(actionString,"The curse dispersed into the area -2 🔵");
-        }
-        break;
-
         case 'button_pray':
           if (enemyType=="Death"){
             logPlayerAction(actionString,"It's way too late for healing.");
@@ -945,6 +862,89 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,prayLogMessage);
         }
         break;
+
+      case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
+        if (enemyType=="Death"){
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"The lips cannot curse anymore.");
+          break;
+        }
+
+        if (enemyType=="Upgrade"){
+            logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
+            displayPlayerCannotEffect();
+            playerHit(1);
+            playerHpMax-=1;
+            playerMgkMax+=1;
+            playerMgk+=1;
+            enemyAnimateDeathNextEncounter();
+            break;
+        }
+
+        if (playerMgkMax<2){
+          logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
+          displayPlayerCannotEffect();
+          break;
+        }
+
+        if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
+            break;
+          }
+
+        if (enemyType!="Death") {displayPlayerEffect("🪬");}
+
+      switch (enemyType){
+        case "Demon":
+            logPlayerAction(actionString,"The curse made them even stronger!");
+            animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
+            enemyAtkBonus+=1;
+            break;
+
+        case "Standard": //Reduce enemy atk if mgk stronger then them
+        case "Recruit":
+        case "Swift":
+        case "Heavy":
+        case "Pet":
+        case "Undead":
+        case "Boss":
+        case "Small":
+          if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+            enemyAtkBonus-=1;
+            logPlayerAction(actionString,"The curse made them weaker -2 🔵");
+          } else if (playerMgkMax <= enemyMgk) {
+            logPlayerAction(actionString,"They resisted the curse -2 🔵");
+          } else {
+            logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
+          }
+          enemyAttackOrRest();
+          break;
+
+        case "Spirit": //They don't care
+          logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
+          break;
+
+        case "Friend": //They'll boost your stats
+          playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+          displayPlayerEffect("💬");
+          break;
+
+        case "Dream": //Likely never happens, not sure if I should fix that
+          logPlayerAction(actionString,"Conjured a terrible nightmare -1 💔");
+          playerHit(1);
+          displayPlayerCannotEffect();
+          break;
+
+        case "Altar":
+          logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
+          playerLck=-1;
+          displayPlayerEffect("🪬");
+          nextEncounter();
+          break;
+
+        default:
+          logPlayerAction(actionString,"The curse dispersed into the area -2 🔵");
+      }
+      break;
 
       case 'button_grab': //Player vs encounter stamina decides the success
         switch (enemyType){
