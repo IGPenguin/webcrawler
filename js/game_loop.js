@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var initialEncounterOverride=30;
+var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -87,7 +87,7 @@ function renewPlayer(){ //Default values
   //adventureLog = ""; //Keep of all characters
 }
 
-//Adveenture logging
+//Adventure logging
 var actionString; //Initial action log below
 var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
@@ -283,7 +283,8 @@ function redraw(){
       break;
     case "Friend":
       var neutralType=decorateStatusText("▪️","Neutral",colorGrey);
-      enemyStatusString=appendEnemyStats()
+      //enemyStatusString=appendEnemyStats() //Do not display stats = reward hidden
+      console.log(appendEnemyStats())
       displayEnemyType(neutralType);
       break;
     case "Small":
@@ -358,7 +359,9 @@ function redraw(){
 }
 
 function displayEnemyType(type){
-  if (enemyStatusString.replaceAll("&nbsp;","")!=""){
+  if ((enemyStatusString.replaceAll("&nbsp;","")!="")&&(!enemyStatusString.includes("</i>"))){
+    console.log(true)
+    console.log(enemyStatusString)
     enemyTeamUIElement.innerHTML=type;
   } else {
     enemyStatusString=type;
@@ -414,6 +417,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType!="Upgrade" && !playerUseStamina(1,"Too tired to attack anything.")){
             break;
           }
+
         switch (enemyType){
           case "Item":
           case "Consumable":
