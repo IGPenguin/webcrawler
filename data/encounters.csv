@@ -14,11 +14,11 @@ Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still lo
 Abandoned Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Trap;Shaking around vigorously.<br>Somethings likely inside.;There was a creature inside!
 Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;1;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;
-Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;1;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
+Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Abandoned Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted Building;Appears being neglected long time.<br>Strange noises is coming out.;Entered through the window.
 Abandoned Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>Coming from all directions.;Suffered mental damage.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still in a good condition.;A wild cat appeared.
-Abandoned Village;🐈‍⬛;Black Cat;Pet;2;0;2;1;0;0;Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
+Abandoned Village;🐈‍⬛;Black Cat;Pet;2;0;2;1;1;0;Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
 Abandoned Village;🐀;Dire Rat;Swift;2;1;1;0;3;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Abandoned Village;⛺️;Simple Tent;Container-Double;0;0;0;0;0;0;Shelter;Cozy place of rest for whoever set it up.<br>Chance to loot for someone else.;
 Abandoned Village;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
