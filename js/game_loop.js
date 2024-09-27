@@ -1,6 +1,9 @@
 //Having all this in a one file is truly shameful
 //...submit a pull request if you dare
 
+//Debug
+var initialEncounterOverride=0;
+
 //Colors
 var colorWhite = "#FFFFFF";
 var colorGold = "#FFD940";
@@ -149,7 +152,7 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  loadEncounter(1);//Start from the first encounter (0 is dead)
+  loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
   redraw();
 }
 
@@ -302,7 +305,7 @@ function redraw(){
       if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
       } else if (totalEffect < 0 ) {
-          enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
+          enemyStatusString=decorateStatusText("♣️","Mysterious","lightgrey");
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
@@ -343,10 +346,6 @@ function redraw(){
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       break;
-  }
-
-  if (enemyStatusString==""){
-    enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
   }
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
@@ -892,6 +891,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Consumable":
+          case "Container":
+          case "Container-Locked":
+          case "Container-Double":
+          case "Container-Triple":
           case "Item":
           case "Standard":
           case "Recruit":
@@ -1709,7 +1712,7 @@ function adjustEncounterButtons(){
       if (playerLootString.includes("🗝️")){
         document.getElementById('button_grab').innerHTML="🗝️ Unlock";
       } else {
-        document.getElementById('button_grab').innerHTML="👋 Grab";
+        document.getElementById('button_grab').innerHTML="👋 Search";
       }
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
@@ -1893,6 +1896,7 @@ void documentElement.offsetWidth; // trigger a DOM reflow
   });
 }
 
+//Button click listeners
 function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
@@ -1927,7 +1931,7 @@ function registerClickListeners(){
   });
 }
 
-//Social
+//Social features
 function generateCharacterShareString(){
   var characterShareString="";
     characterShareString+="\nCharacter: "+playerName;
@@ -1974,14 +1978,14 @@ function redirectToTweet(){
   window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI just finished a WebCrawler adventure!"+"\n"+generateCharacterShareString()));
 }
 
-//Prevent data loss if not running on localhost
+//Prevent data loss warning if not running on localhost
 if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1"){
   window.onbeforeunload = function() {
       return true;
   };
 }
 
-//Mobile specific
+//Mobile specific - vibrate
 function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
     console.log("WARNING: Vibrate not supported!");
