@@ -10,7 +10,7 @@ Abandoned Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;The poor 
 Abandoned Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for the eyes.<br>Quickly cover before the impact.;Both eyes were pecked
 Abandoned Village;🏚️;Ruined House;Container-Double;0;0;0;0;0;0;Deserted Building;Looks very much abandoned.<br>No signs of recent activity.;Kicked the door open.
 Abandoned Village;🫙;Empty Jar;Item;0;0;0;0;0;0;Junk;Appears to be clean and empty.<br>No traces of previous contents.;
-Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.<br>;Took it with themselves just in case.
+Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Took it with themselves just in case.
 Abandoned Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Trap;Shaking around vigorously.<br>Somethings likely inside.;There was a creature inside!
 Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;1;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;
@@ -39,7 +39,7 @@ Abandoned Village;⛪️;Barricaded Church;Container-Locked;0;0;0;0;0;0;Ruined B
 Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
 Abandoned Village;⛪️;Barricaded Church;Altar;0;0;0;0;0;1;Ruined Building;Eerie atmosphere is in the air.<br> xx.;
 Abandoned Village;🐻;Undead Grizzly;Boss;5;2;2;0;3;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
-Abandoned Village;🪓;Bloody Axe;Item;1;0;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.<br>;Took it with themselves just in case.
+Abandoned Village;🪓;Bloody Axe;Item;1;0;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Took it with themselves just in case.
 Abandoned Village;🌳;Dark Grove;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;

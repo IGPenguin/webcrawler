@@ -258,7 +258,7 @@ function redraw(){
   var enemyDescUIElement = document.getElementById('id_desc')
   enemyDescUIElement.innerHTML = enemyDesc;
   //Hacky hacky hacky hack hack hack, hacky hacky hacky, yeah yeah
-  enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:12px\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
+  enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
   enemyTeamUIElement.innerHTML="";
@@ -391,7 +391,7 @@ function appendEnemyStats(){
 }
 
 function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
-  return emoji+"&nbsp;<i style=\"font-weight:50;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
+  return emoji+"&nbsp;<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
 }
 
 //Game logic
