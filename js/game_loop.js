@@ -441,7 +441,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Triple": //Allow unlock by attacking
             var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
-              openMessage = enemyMsg+" -1 🟢";
+              openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
             }
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
