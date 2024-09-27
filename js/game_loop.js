@@ -3,6 +3,7 @@
 
 //Debug
 var initialEncounterOverride=0;
+initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
 var colorWhite = "#FFFFFF";

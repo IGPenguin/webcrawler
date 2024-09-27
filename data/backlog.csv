@@ -1,4 +1,4 @@
-area;emoji;name;type;hp;atk;sta;lck;int;mgk;team;desc;message
+area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
 Forest Depths;🐐;Irritable Goat;Standard;3;1;2;0;10;0;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
 Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
