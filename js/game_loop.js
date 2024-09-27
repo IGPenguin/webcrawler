@@ -628,7 +628,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard":
           case "Undead":
           case "Recruit":
-          case "Pet":
+          case "Pet": //TODO: Add play
           case "Demon":
           case "Small":
             if (enemyAtk<=0){
@@ -1782,9 +1782,8 @@ function adjustEncounterButtons(){
         break;
 
     case "Pet":
-      if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
-        document.getElementById('button_grab').innerHTML="👋 Pet";
-      }
+      if ((enemyAtk+enemyAtkBonus)<=0) document.getElementById('button_block').innerHTML="🫶 Play";
+      if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
     case "Standard":
       document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
