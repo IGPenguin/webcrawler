@@ -116,10 +116,12 @@ var enemyMsg;
 var enemyHpLost = 0;
 var enemyStaLost = 0;
 var enemyAtkBonus = 0;
+var enemyIntBonus = 0;
 function enemyRenew(){
   enemyStaLost = 0;
   enemyHpLost = 0;
   enemyAtkBonus = 0;
+  enemyIntBonus = 0;
 }
 
 
@@ -168,7 +170,6 @@ function getNextEncounterIndex(){
 }
 
 function getUnseenEncounterIndex() { //Unused I believe
-  //console.log("Already seen line indexes: " + seenEncounters);
   encountersTotal = lines.length;
   var max = encountersTotal;
     do {
@@ -284,7 +285,6 @@ function redraw(){
     case "Friend":
       var neutralType=decorateStatusText("▪️","Neutral",colorGrey);
       //enemyStatusString=appendEnemyStats() //Do not display stats = reward hidden
-      console.log(appendEnemyStats())
       displayEnemyType(neutralType);
       break;
     case "Small":
@@ -572,8 +572,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"Cannot walk while asleep.");
-            displayPlayerCannotEffect();
+            if (playerSta<=0){
+              logPlayerAction(actionString,"Cannot walk while asleep.");
+              displayPlayerCannotEffect();
+            } else {
+              logPlayerAction(actionString,"Embarked on the adventure.");
+              nextEncounter();
+            }
             break;
           case "Prop":
             logPlayerAction(actionString,"Continued on the adventure.");
@@ -621,14 +626,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           enemyAnimateDeathNextEncounter();
           break;
         }
-        if (!playerUseStamina(1,"Too tired to raise the shield.")){
+        if (!playerUseStamina(1,"Too tired to do that.")){
             break;
           }
         switch (enemyType){
           case "Standard":
           case "Undead":
           case "Recruit":
-          case "Pet": //TODO: Add play
+          case "Pet":
+            enemyStaminaChangeMessage(-1,"Enjoyed a good moment together -1 🟢","They needed to catch a breath -1🟢");
+            break;
           case "Demon":
           case "Small":
             if (enemyAtk<=0){
@@ -962,7 +969,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
-              if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
+              if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
                 logPlayerAction(actionString,"Touched improperly, it got scared.");
                 enemyAttackOrRest();
                 break;
@@ -980,7 +987,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
-              console.log("touch chance: "+touchChance+" luck: "+playerLck)
               if ( touchChance <= playerLck ){ //Generous
                 logAction("🍀 ▸ ✋ Touched them, they ran away spooked.");
                 displayPlayerEffect("🍀");
@@ -994,6 +1000,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
+              if (enemyType=="Pet"){
+                logAction(enemyEmoji+" ▸ 😱 They got spooked and fled!");
+                nextEncounter();
+              }
             }
             break;
 
@@ -1231,11 +1241,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
-            if (enemyAtk!=0){
-              enemyAttackOrRest();
-            } else {
-              //logPlayerAction(actionString,"They do not pose a threat.");
-            }
+            enemyAttackOrRest();
 
             if (playerHp>0){
               displayPlayerEffect("💤");
@@ -1370,13 +1376,21 @@ function enemyAttackOrRest(){
       }
     if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
-      if (enemyAtk==0) staminaChangeMsg="They do not mean any harm."
+      if (enemyAtk==0) {
+        staminaChangeMsg="They do not mean any harm."
+        if (enemyType=="Pet"){
+          logAction(enemyEmoji+" ▸ 😡 They now seem more concerned.");
+          enemyIntBonus++; //Harder to befriend
+          enemyRest(1);
+          return;
+        }
+      }
     } else {
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
       playerHit(damageReceived);
       return;
     }
-    enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
+    enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a",logMessage);
   } else {
     enemyRest(1);
   }
@@ -1489,7 +1503,7 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later."){  //TODO: Properly support negative gains = curses
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later."){
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
