@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var initialEncounterOverride=0;
-initialEncounterOverride-=3; //To handle notes and death in .csv
+var initialEncounterOverride=30;
+if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
 var colorWhite = "#FFFFFF";
@@ -1049,7 +1049,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("👋");
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            playerChangeStats();
             break;
 
           case "Small":
@@ -1177,7 +1177,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            playerChangeStats();
             displayPlayerEffect("💬");
             break;
 
@@ -1216,7 +1216,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Curse": //Waiting triggers the curse
             playerChangeStats();
-            //logPlayerAction(actionString,"Negative effects faded away.");
             break;
 
           case "Standard": //You get hit if they have stamina
@@ -1500,9 +1499,10 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
   if (enemyMsg != "") {
     gainedString = enemyMsg;
-    if (totalBonus!=0){
-      gainedString = gainedString.replace("."," ");
-    }
+  }
+
+  if (totalBonus!=0){
+    gainedString = gainedString.replace("."," ");
   }
 
   if (bonusHp != 0) {
