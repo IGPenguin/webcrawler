@@ -576,7 +576,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Cannot walk while asleep.");
               displayPlayerCannotEffect();
             } else {
-              logPlayerAction(actionString,"Embarked on the adventure.");
+              logPlayerAction(actionString,"Embarked on a new adventure.");
               nextEncounter();
             }
             break;
