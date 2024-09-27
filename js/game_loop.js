@@ -360,8 +360,6 @@ function redraw(){
 
 function displayEnemyType(type){
   if ((enemyStatusString.replaceAll("&nbsp;","")!="")&&(!enemyStatusString.includes("</i>"))){
-    console.log(true)
-    console.log(enemyStatusString)
     enemyTeamUIElement.innerHTML=type;
   } else {
     enemyStatusString=type;

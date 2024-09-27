@@ -65,7 +65,7 @@ layout: default
 
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
-                            font-size:12px;
+                            font-size:14px;
                             padding-left:8px;
                             padding-bottom:0px;
                             line-height:24px;
@@ -79,12 +79,13 @@ layout: default
 <h5 id = "id_team" style="float:right;
                                 text-align:right;
                                 font-weight:300;
+                                font-size:14px;
                                 padding-bottom:0px;
-                                padding-top:5px;
                                 padding-right:8px;
-                                margin-bottom:4px;
+                                margin-bottom:0px;
                                 display:inline;
-                                overflow:auto;"/>
+                                overflow:auto;
+                                line-height:24px"/>
 </div>
 <div class="box-border-dynamic" style="margin-top:2px;
   margin-right:0px;
