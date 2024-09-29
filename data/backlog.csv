@@ -1,15 +1,16 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
-Forest Depths;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates all around.<br>Chance for a breather.;
-Forest Depths;🐐;Irritable Goat;Standard;3;1;2;0;10;0;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
-Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
 Forest Depths;🦊;Cunning Fox;Pet;2;1;3;0;3;0;Wild Animal;Sits around waving its furry tail.<br>Perhaps it's up to something.;
 
+xxx Forest Depths;🐐;Irritable Goat;Standard;3;1;2;0;10;0;Wild Animal;It looks bursting with anger.<br>Better avoid it's attacks.;
+xxx Forest Depths;🌹;Rose Flower Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
 xxx Forest Depths;🌱;Familiar Plant;Container;0;0;0;0;0;0;Potential Food;Probably packs a ton of nutrients.<br>Give it a shot?;Dug it out of the ground.
 xxx Forest Depths;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Fresh Vegetable;A carrot was hiding below the ground.<br>This seems like a time for a snack.;
 
-Forest Depths;🦌;Mighty Deer;Heavy;4;1;2;0;10;0;Wild Animal;Huge deer jumped out of the bush.<br>Better be very careful.;
-Forest Depths;🌳;Apple Tree;Container;0;0;0;0;0;0;Source of Food;A fruit tree in a forest.<br>Who would have thought.;
-Forest Depths;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and tasty.<br>May recover some health.;
+xxx Forest Depths;🦌;Mighty Deer;Heavy;4;1;2;0;10;0;Wild Animal;Huge deer jumped out of the bush.<br>Better be very careful.;
+
+xxx Forest Depths;🌳;Apple Tree;Container;0;0;0;0;0;0;Source of Food;A fruit tree in a forest.<br>Who would have thought.;
+xxx Forest Depths;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and tasty.<br>May recover some health.;
+
 Forest Depths;🎯;Practice Target;Container;0;0;0;0;0;0;Training Tool;There isn't a scratch on it.<br>Someone hanged it but never used it.;
 Forest Depths;🏹;Radiating Bow;Trap;0;2;0;0;0;2;Dangerous Weapon;Lays beside a dead hunter.<br>Probably won't miss it.;Shot an arrow in the knee
 Forest Depths;🐂;Agitated Bull;Heavy;4;1;3;0;3;0;Wild Animal;Looks fairly angry over something.<br>Better avoid the horns.;
