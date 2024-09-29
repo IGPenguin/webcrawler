@@ -6,4 +6,5 @@ Gemfile.lock
 _site/
 assets/img/background-large.png
 data/ideas.csv
+data/backlog.csv
 data/local-backup.csv
