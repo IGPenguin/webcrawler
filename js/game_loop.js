@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var initialEncounterOverride=11;
+var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
