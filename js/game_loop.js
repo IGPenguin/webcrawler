@@ -1517,7 +1517,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
-  if ((totalBonus > 0) && gainedString=="Might come in handy later."){
+  if ((totalBonus >= 0) && gainedString=="Might come in handy later."){
     if (totalBonus !=0){
       gainedString="Felt becoming stronger";
     }
