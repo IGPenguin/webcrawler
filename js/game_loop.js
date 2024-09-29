@@ -632,21 +632,23 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (!playerUseStamina(1,"Too tired to do that.")){
             break;
           }
+
+          if (enemyAtk<=0 && enemyType!="Pet"){
+            logPlayerAction(actionString,"They mean absolutely no harm.")
+            playerSta++ //Regain lost stamina
+            displayEnemyCannotEffect();
+            break;
+          }
+
         switch (enemyType){
+          case "Pet":
+            enemyStaminaChangeMessage(-1,"Enjoyed a good moment together -1 🟢","They needed to catch a breath -1 🟢");
+            break;
           case "Standard":
           case "Undead":
           case "Recruit":
-          case "Pet":
-            enemyStaminaChangeMessage(-1,"Enjoyed a good moment together -1 🟢","They needed to catch a breath -1🟢");
-            break;
           case "Demon":
           case "Small":
-            if (enemyAtk<=0){
-              logPlayerAction(actionString,"They mean absolutely no harm.")
-              playerSta++ //Regain lost stamina
-              displayEnemyCannotEffect();
-              break;
-            }
             enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -658,7 +660,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Heavy": //Too heavy or spirit attack
           case "Boss":
-            if (enemyStaminaChangeMessage(-1,"Could not block the heavy attack -"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block a heavy attack -"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
@@ -666,7 +668,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Spirit":
-            if (enemyStaminaChangeMessage(-1,"Could not block the spectral attack -"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block a spectral attack -"+enemyAtk+" 💔","n/a")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
@@ -994,7 +996,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
           case "Standard":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
-              logPlayerAction(actionString,"Harmlessly knocked them out.");
+              logPlayerAction(actionString,"Grabbed them into stranglehold.");
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
