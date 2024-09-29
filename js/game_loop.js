@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var initialEncounterOverride=0;
+var initialEncounterOverride=11;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -12,6 +12,7 @@ var colorGreen = "#22BF22";
 var colorRed = "#FF0000";
 var colorGrey = "#DDDDDD";
 var colorOrange = "orange";
+var colorBlue = "#1059AA";
 
 //Symbols
 var fullSymbol = "●";
@@ -266,6 +267,7 @@ function redraw(){
     case "Boss":
       enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
       enemyStatusString=appendEnemyStats()
+      break;
     case "Pet":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Companion",colorOrange);
       enemyStatusString=appendEnemyStats()
@@ -312,6 +314,7 @@ function redraw(){
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
       break;
+    case "Container-Consume":
     case "Consumable":
       enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
       break;
@@ -331,7 +334,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("⚪️","Unremarkable","#FFFFFF");
       break;
     case "Altar":
-      enemyStatusString=decorateStatusText("🔹","Place of Worship","#0041C2");
+      enemyStatusString=decorateStatusText("♦️","Place of Worship",colorRed);
       break;
     case "Fishing":
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
@@ -830,6 +833,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
           case "Boss":
           case "Small":
+          case "Trap":
+          case "Trap-Roll":
             if (playerHp<playerHpMax) {
               logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+"1 ❤️‍🩹");
               playerHp=playerHpMax; //Lay on hands
@@ -861,8 +866,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
-            nextEncounter();
+            if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
+              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false);
+              displayPlayerCannotEffect();
+              playerHit(1);
+              playerHpMax-=1;
+            } else {
+              displayPlayerCannotEffect();
+            }
             break;
 
           default:
@@ -1071,7 +1082,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"Touched them - not appreciated, they left.");
+            logPlayerAction(actionString,"Touch not appreciated, they left.");
             displayEnemyEffect("✋");
             nextEncounter();
             break;
@@ -1105,6 +1116,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (checkpointEncounter == null){
               renewPlayer();
               encounterIndex=3; //Skip tutorial
+              playerSta=playerStaMax; //Renew stamina
             } else {
               //TODO load playerStats & Loot to prevent stacking via resurrecting on checkpoints
               encounterIndex=checkpointEncounter-1; //Start from checkpoint
@@ -1405,8 +1417,6 @@ function isfreePrayEncounter(){
       case "Altar":
       case "Curse":
       case "Dream":
-      case "Item":
-      case "Consumable":
         returnValue=true;
       default:
         //Nothing
@@ -1503,17 +1513,17 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later."){
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true){
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
-  if ((totalBonus >= 0) && gainedString=="Might come in handy later."){
+  if ((totalBonus > 0) && gainedString=="Might come in handy later."){
     if (totalBonus !=0){
       gainedString="Felt becoming stronger";
     }
   } else if (gainedString=="Might come in handy later.") {
     gainedString="Got cursed by it";
-    changeSign=" "
+    changeSign=" -"
   }
 
   if (enemyMsg != "") {
@@ -1564,7 +1574,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
-  logPlayerAction(actionString,gainedString);
+  if (logMessage) logPlayerAction(actionString,gainedString);
   nextEncounter();
 }
 
@@ -1746,6 +1756,9 @@ function adjustEncounterButtons(){
 
     case "Altar":
       document.getElementById('button_pray').innerHTML="🙏 Pray";
+      if (playerLootString.includes("🔪")){
+        document.getElementById('button_pray').innerHTML="🩸 Offering";
+      }
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
