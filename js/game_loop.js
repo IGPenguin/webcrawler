@@ -265,7 +265,7 @@ function redraw(){
   enemyTeamUIElement.innerHTML="";
   switch(enemyType){
     case "Boss":
-      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
+      enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorRed);
       enemyStatusString=appendEnemyStats()
       break;
     case "Pet":
@@ -300,6 +300,10 @@ function redraw(){
       break;
     case "Demon":
       enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed);
+      enemyStatusString=appendEnemyStats()
+      break;
+    case "Undead":
+      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Undead",colorGrey);
       enemyStatusString=appendEnemyStats()
       break;
 
@@ -642,7 +646,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Pet":
-            enemyStaminaChangeMessage(-1,"Enjoyed a good moment together -1 🟢","They needed to catch a breath -1 🟢");
+            if (enemyAtk<=0) {
+              enemyStaminaChangeMessage(-1,"Enjoyed a good moment -1 🟢","They needed to catch a breath -1 🟢");
+            } else {
+              enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
+            }
             break;
           case "Standard":
           case "Undead":
@@ -850,7 +858,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
               logPlayerAction(actionString,"The prayer made them weaker -1 🔵");
-            } else if (playerMgkMax <= enemyMgk) {
+            } else if (playerMgkMax < enemyMgk) {
               logPlayerAction(actionString,"They resisted the prayer -1 🔵");
             } else {
               logPlayerAction(actionString,"The prayer had no effect on them -1 🔵");
@@ -1758,9 +1766,7 @@ function adjustEncounterButtons(){
 
     case "Altar":
       document.getElementById('button_pray').innerHTML="🙏 Pray";
-      if (playerLootString.includes("🔪")){
-        document.getElementById('button_pray').innerHTML="🩸 Offering";
-      }
+      if (playerLootString.includes("🔪")) document.getElementById('button_pray').innerHTML="🩸 Offer";
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
@@ -1837,7 +1843,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Undead":
-      document.getElementById('button_pray').innerHTML="💫 Weaken";
+      document.getElementById('button_pray').innerHTML="🙏 Pray";
       break;
 
     case "Death":

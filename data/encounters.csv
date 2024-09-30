@@ -66,7 +66,7 @@ Abandoned Village;⛲️;Sparkling Fountain;Item;0;0;1;0;0;0;Holy Place;Fileed w
 Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Place of Power;Eerie atmosphere is in the air.<br> xx.;
 Abandoned Village;🚪;Church Entrance;Container-Locked;0;0;0;0;0;0;Ruined Building;There is a huge chain on the front door.<br>No.;
 Abandoned Village;🐻;Undead Grizzly;Boss;5;2;2;0;10;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
-Abandoned Village;🪓;Bloody Axe;Item;1;0;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Took it with themselves just in case.
+Abandoned Village;🪓;Bloody Axe;Item;0;0;1;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Equipped as a makeshift weapon.
 
 //Fairlyland - hp:+0 atk:+0 sta:+2 lck:+1 int:+0 mgk:+1
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
