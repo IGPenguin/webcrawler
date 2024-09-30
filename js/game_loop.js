@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var initialEncounterOverride=21;
+var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -347,7 +347,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("⁉️","Hazard","red");
       break;
     case "Death":
-      enemyStatusString=decorateStatusText("⚰️","Permanent Status","lightgrey");
+      enemyStatusString=decorateStatusText("⚰️","End of the Line","lightgrey");
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
@@ -819,7 +819,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Spirit":
           case "Demon":
-            if ( enemyMgk <= playerMgk+1 ){ // +1 cause player already used mana
+            if ( enemyMgk <= playerMgkMax ){
               logPlayerAction(actionString,"Banished them from this world!");
               displayEnemyEffect("🔥");
               enemyAnimateDeathNextEncounter();
@@ -993,7 +993,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
                 logPlayerAction(actionString,"Touched improperly, it got scared.");
-                enemyAttackOrRest();
+                nextEncounter();
                 break;
               }
               displayPlayerEffect(enemyEmoji);
@@ -1010,7 +1010,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
-                logAction("🍀 ▸ ✋ Touched them, they ran away spooked.");
+                logAction("🍀 ▸ ✋ Touched them, they were spooked.");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
@@ -1121,7 +1121,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Death":
             logPlayerAction("⭐️","Reaincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
             playerNumber++;
-            playerName = playerName+" "+playerNumber+"."
             displayEnemyEffect("✋");
 
             if (checkpointEncounter == null){
@@ -1288,10 +1287,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Altar":
           case "Fishing":
             displayPlayerEffect("💤");
-            playerGetStamina(playerStaMax-playerSta,true);
-            playerMgk=playerMgkMax;
-            logPlayerAction(actionString,"Rested well, recovering all resources.");
-            if (enemyType=="Dream"){nextEncounter();}
+            if (enemyType=="Dream"){
+              nextEncounter();
+              break;
+            }
+            if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
+              logPlayerAction(actionString,"Rested well, recovering all resources.");
+              playerGetStamina(playerStaMax-playerSta,true);
+              playerMgk=playerMgkMax;
+            } else {
+              logPlayerAction(actionString,"Wasted a moment their of life.");
+            }
             break;
 
           case "Friend": //They'll leave if you'll rest
@@ -1402,9 +1408,16 @@ function enemyAttackOrRest(){
       if (enemyAtk==0) {
         staminaChangeMsg="They do not mean any harm."
         if (enemyType=="Pet"){
-          logAction(enemyEmoji+" ▸ 😡 They now seem more concerned.");
           enemyIntBonus++; //Harder to befriend
-          enemyRest(1);
+
+          if ((enemyInt+enemyIntBonus)<=playerInt){
+            logAction(enemyEmoji+" ▸ ⁉️ They now seem more concerned.");
+            displayEnemyEffect("⁉️")
+            enemyRest(1);
+          } else {
+            logAction(enemyEmoji+" ▸ ‼️ They got bored and left.");
+            nextEncounter();
+          }
           return;
         }
       }
@@ -1673,7 +1686,8 @@ function setAdventureEndTime(){
 
 function gameOver(){
   //Reset progress to death encounter
-  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 Got killed, ending the adventure. ");
+  if ((enemyMsg=="")||(enemyType=="Trap")) enemyMsg="Got killed, ending the adventure.";
+  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   setAdventureEndTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
@@ -1850,7 +1864,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Undead":
-      document.getElementById('button_pray').innerHTML="🙏 Pray";
+      document.getElementById('button_pray').innerHTML="🔥 Banish";
       break;
 
     case "Death":
