@@ -53,15 +53,15 @@ Depriving Fairyland;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are 
 Depriving Fairyland;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Depriving Fairyland;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;1;Precious Artifact;Radiates magic energy on touch.<br>Should you risk it?;Mastered the basics of magic.
-Depriving Fairyland;🧙;Angry Druid;Recruit;2;0;1;0;1;2;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Depriving Fairyland;🧙;Angry Druid;Recruit;2;0;1;0;1;1;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
 Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Cannot tell left from right.<br>Also not up from down.;Suffered mental damage.
 Depriving Fairyland;🦨;Forest Skunk;Swift;2;1;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
 Depriving Fairyland;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
 Depriving Fairyland;🍪;Wheat Cookie;Consumable;0;0;0;0;0;0;Fancy Food;Smells absolutely amazing.<br>Likely packs a burst of energy.;
 Depriving Fairyland;🛖;Simple Hut;Container-Triple;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>No one seems to be around.;
-Depriving Fairyland;💀;Pile of Skulls;Container;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>Better stay alert.;
-Depriving Fairyland;🧌;Recruit;2;1;0;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
+Depriving Fairyland;💀;Pile of Skulls;Prop;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>Better stay alert.;
+Depriving Fairyland;🧌;Old Troll;Recruit;2;0;1;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
 Depriving Fairyland;🎗️;Golden Trinket;Item;0;2;0;0;0;-1;Mysterious Artifact;Forcefully draws the eyesight.<br>Almost irresistible.;Got stuck onto the skin
 Depriving Fairyland;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 Depriving Fairyland;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run;
