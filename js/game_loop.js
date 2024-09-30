@@ -392,7 +392,7 @@ function appendEnemyStats(){
     }
     enemyStats += "&nbsp;&nbsp;"
   }
-  if (enemyMgk > 0) {enemyStats += "&nbsp;🔵 " + fullSymbol.repeat(enemyAtk);}
+  if (enemyMgk > 0) {enemyStats += "&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
 
   return enemyStats;
 }
@@ -519,7 +519,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Boss":
           case "Small":
-            if (enemyAtk<=0){
+            if ((enemyAtk<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
               break;
@@ -1721,7 +1721,7 @@ function resetEncounterButtons(){
   setButton('button_attack',"⚔️ Attack");
   setButton('button_block',"🔰 Block");
   setButton('button_roll',"🌀 Roll");
-  if (enemyAtk<=0)  setButton('button_roll',"👣 Leave");
+  if ((enemyAtk<=0)&&(enemyMgk<=0))  setButton('button_roll',"👣 Leave");
   setButton('button_cast',"💫 Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
