@@ -43,7 +43,7 @@ Abandoned Village;⛲️;Sparkling Fountain;Item;0;0;1;0;0;0;Holy Place;Fileed w
 Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>Eerie atmosphere is in the air.;
 Abandoned Village;🚪;Church Entrance;Container-Locked;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>As if something was locked inside.;
 Abandoned Village;🐻;Undead Grizzly;Boss;5;2;2;0;10;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
-Abandoned Village;🪓;Bloody Axe;Item;0;0;1;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Equipped as a makeshift weapon.
+Abandoned Village;🪓;Bloody Axe;Item;0;1;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Equipped as a makeshift weapon.
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;
 Depriving Fairyland;🦄;Rainbow Unicorn;Friend;0;0;0;1;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
@@ -53,7 +53,7 @@ Depriving Fairyland;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are 
 Depriving Fairyland;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Depriving Fairyland;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;1;Precious Artifact;Radiates magic energy on touch.<br>Should you risk it?;Mastered the basics of magic.
-Depriving Fairyland;🧙;Angry Druid;Recruit;2;1;0;0;1;2;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Depriving Fairyland;🧙;Angry Druid;Recruit;2;0;1;0;1;2;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
 Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Cannot tell left from right.<br>Also not up from down.;Suffered mental damage.
 Depriving Fairyland;🦨;Forest Skunk;Swift;2;1;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
