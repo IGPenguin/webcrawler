@@ -638,7 +638,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyAtk<=0 && enemyType!="Pet"){
-            logPlayerAction(actionString,"They mean absolutely no harm.")
+            logPlayerAction(actionString,"Means absolutely no harm.")
             playerSta++ //Regain lost stamina
             displayEnemyCannotEffect();
             break;
@@ -855,7 +855,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Undead": //Reduce attack if possible
-            if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+            if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
               logPlayerAction(actionString,"The prayer made them weaker -1 🔵");
             } else if (playerMgkMax < enemyMgk) {
@@ -878,6 +878,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Altar":
             if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
               playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false);
+              displayPlayerEffect("💢")
               displayPlayerCannotEffect();
             } else {
               displayPlayerCannotEffect();
@@ -1410,7 +1411,7 @@ function enemyAttackOrRest(){
       playerHit(damageReceived);
       return;
     }
-    enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a",logMessage);
+    enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");
   } else {
     enemyRest(1);
   }
