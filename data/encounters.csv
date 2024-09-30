@@ -49,6 +49,10 @@ Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorf
 Depriving Fairyland;🦄;Rainbow Unicorn;Pet;0;0;0;1;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
 Depriving Fairyland;🌳;Dark Grove;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;
 Depriving Fairyland;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Both eyes were pecked.
+Depriving Fairyland;🌿;Tall Weeds;Container-Triple;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
+Depriving Fairyland;🦆;Angry Duck;Standard;2;2;2;0;2;0;Animal;Peace was never an option.<br>;Honked to death.
+Depriving Fairyland;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the surface.<br>Something sparkles at the bottom.;Fished out something.
+Depriving Fairyland;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Depriving Fairyland;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns.
 Depriving Fairyland;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Depriving Fairyland;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
@@ -66,10 +70,6 @@ Depriving Fairyland;🎗️;Golden Trinket;Item;0;2;0;0;0;-1;Mysterious Artifact
 Depriving Fairyland;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 Depriving Fairyland;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run;
 Depriving Fairyland;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
-Depriving Fairyland;🌿;Tall Weeds;Container-Triple;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
-Depriving Fairyland;🦆;Angry Duck;Swift;2;2;2;0;2;0;Animal;Peace was never an option.<br>;Honked to death.
-Depriving Fairyland;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the surface.<br>Something sparkles at the bottom.;Fished out something.
-Depriving Fairyland;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Depriving Fairyland;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
 Depriving Fairyland;🥩;Boar Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat.
 Depriving Fairyland;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;

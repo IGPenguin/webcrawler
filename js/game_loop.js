@@ -1163,14 +1163,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_speak':
         switch (enemyType){
-          case "Recruit": //If they are tired and you are smarter they join you
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){
-              logPlayerAction(actionString,"Convinced them to join the adventure!");
+          case "Recruit": //If you are smarter they join you
+            if (enemyInt < playerInt){
               displayPlayerEffect(enemyEmoji);
-              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
               playerPartyString+=" "+enemyEmoji
-              playerAtk+=enemyAtk;
-              enemyAnimateDeathNextEncounter();
+              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join the adventure"); //Cannot get health/sta/int from a pet
               break;
             }
 
