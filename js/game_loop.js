@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var initialEncounterOverride=0;
+var initialEncounterOverride=21;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -626,7 +626,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"The gods granted you blessing +1 🍀");
+          logPlayerAction(actionString,"Granted gods blessing +1 🍀");
           displayPlayerGainedEffect();
           displayPlayerEffect("🙏");
           playerLck+=1;
@@ -647,7 +647,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Pet":
             if (enemyAtk<=0) {
-              enemyStaminaChangeMessage(-1,"Enjoyed a good moment -1 🟢","They needed to catch a breath -1 🟢");
+              enemyStaminaChangeMessage(-1,"Enjoyed a moment together -1 🟢","They needed to catch a breath -1 🟢");
             } else {
               enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
             }
@@ -879,8 +879,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
               playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false);
               displayPlayerCannotEffect();
-              playerHit(1);
-              playerHpMax-=1;
             } else {
               displayPlayerCannotEffect();
             }
