@@ -821,6 +821,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
             if ( enemyMgk <= playerMgk+1 ){ // +1 cause player already used mana
               logPlayerAction(actionString,"Banished them from this world!");
+              displayEnemyEffect("🔥");
               enemyAnimateDeathNextEncounter();
               break;
             } else {
@@ -858,6 +859,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
               logPlayerAction(actionString,"The prayer made them weaker -1 🔵");
+              displayEnemyEffect("🔥");
             } else if (playerMgkMax < enemyMgk) {
               logPlayerAction(actionString,"They resisted the prayer -1 🔵");
             } else {
