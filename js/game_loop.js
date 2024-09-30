@@ -1100,7 +1100,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
             playerConsumed();
             displayEnemyEffect("🍽");
-            enemyAnimateDeathNextEncounter();
+            if (playerHp>0) enemyAnimateDeathNextEncounter();
             break;
 
           case "Fishing":
@@ -1592,8 +1592,8 @@ function playerConsumed(){
   var consumedString = "Replenished the resources "
 
   if (enemyHp<0){
-    playerHit(-1*enemyHp);
     logPlayerAction(actionString,"That did not taste good "+enemyHp+" 💔");
+    playerHit(-1*enemyHp);
     return;
   }
 
