@@ -846,7 +846,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
           case "Trap-Roll":
             if (playerHp<playerHpMax) {
-              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+"1 ❤️‍🩹");
+              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
               playerHp=playerHpMax; //Lay on hands
             } else {
               logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
@@ -1590,6 +1590,12 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
 function playerConsumed(){
   var consumedString = "Replenished the resources "
+
+  if (enemyHp<0){
+    playerHit(enemyHp);
+    logPlayerAction(actionString,"That did not taste good -"+enemyHp+" 💔");
+    return;
+  }
 
   var missingHp=playerHpMax-playerHp;
   var missingSta=playerStaMax-playerSta;

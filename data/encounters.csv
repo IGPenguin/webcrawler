@@ -1,111 +1,77 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
-
-//Death
 Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;Deceased;<b>👋 Grab</b> the soul to start a new adventure.<br><b>🦆 Tweet</b> this to appear in credits.;
-
-//Tutorial
 Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Hazy Thought;<b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.<br>Might also keep <b>💭 Dreaming</b>.;
 Depths of Slumber;👿;Bad Thought;Demon;1;1;1;0;0;0;Imaginary Threat;<b>🌀 Roll</b> or <b>🔰 Block</b> to avoid getting hit.<br>Enemies spend <b>🟢 Energy</b> to attack.;
 Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;Food restores <b>❤️ Health</b> and <b>🟢 Energy</b><br>🍴 Consume</b> food to refresh resources.;
 Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a perk</b> to shape the character.<br>Some may come with a sacrifice.;
 Depths of Slumber;🥱;Awakening Moment;Dream;0;0;0;0;0;0;Realization;<b>👣  Walk</b> to explore the surroundings.<br>It is finally time to move ahead.;
-
-//Village - hp:+1 atk:+1 sta:+1 lck:+1 int:+1 mgk:+1
-//Fishing Bait 1
 Abandoned Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Rocks and wood laying on the ground.<br>Nothing of particular interest.;Lifted the nearest boulder.
 Abandoned Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;The poor thing has a sunlight shock.<br>Perfect fishing bait.;Caught a deadly disease
-//Crow
 Abandoned Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for the eyes.<br>Quickly cover before the impact.;Both eyes were pecked
-//House Cat
 Abandoned Village;🏚️;Ruined House;Container-Triple;0;0;0;0;0;0;Deserted Building;Appears being neglected long time.<br>Strange noises is coming out.;Entered through the window.
 Abandoned Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>Coming from all directions.;Suffered mental damage.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still in a good condition.;A wild cat appeared.
 Abandoned Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
-//Grass Dog
 Abandoned Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
 Abandoned Village;🦴;Human Femur;Container;0;0;0;0;0;0;Unsettling Evidence;Remains of one of the villagers.<br>No other clues around.;A wild animal appeared.
 Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
-//Untitled Goose
 Abandoned Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Animal;Peace was never an option.<br>;Honked to death.
-//Refreshmant
 Abandoned Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
 Abandoned Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and tasty.<br>;
-//House Voodoo
 Abandoned Village;🏚️;Unsettling House;Container-Double;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>But otherwise looks abandoned.;Kicked the door open.
 Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Took it with themselves just in case.
 Abandoned Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
-//Grave
 Abandoned Village;🪦;Desolate Gave;Container-Double;0;0;0;0;0;0;Place of Rest;The text reads <i>"No rest for the wicked."</i> <br>Ground seems tampered with.;A corpse has risen from the ground.
 Abandoned Village;🧟;Reanimated Dead;Undead;2;2;2;0;10;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Contracted a terminal disease.
 Abandoned Village;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;Shines bright on the dead hand.<br>There's a red gem on it.;Felt a surge in your chest
-//Trees
 Abandoned Village;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A bunch of trees in the forest.<br>Chance to catch a breath.;
 Abandoned Village;🦉;Curious Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
 Abandoned Village;🐀;Dire Rat;Swift;2;1;1;0;10;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
-//Trapped Racoon
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Trap;Shaking around vigorously.<br>Somethings likely inside.;There was a creature inside!
 Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;2;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;Gone mad from contracting rabies.
-//Fishing Bait 2
 Abandoned Village;🪵;Pile of Timber;Container;0;0;0;0;0;0;Material;Wooden logs laying on the ground.<br>Nothing of particular interest.;Lifted the nearest log.
 Abandoned Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;The poor thing has a sunlight shock.<br>Perfect fishing bait.;Contracted a deadly disease
-//Cursed Archery Range
 Abandoned Village;🎯;Practice Target;Container-Double;0;0;0;0;0;0;Training Spot;There is not a scratch on it.<br>Someone hanged it but never used it.;Found something nearby.
 Abandoned Village;🦴;Human Skeleton;Container;0;0;0;0;0;0;Disturbing Scenery;There are bones scattered all around.<br>Doesn't look like an accident.;
 Abandoned Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Lays beside a dead hunter.<br>Probably won't miss it.;Shot an arrow in the knee
-//Deer
 Abandoned Village;🦌;Frantic Deer;Heavy;2;2;1;0;5;0;Wild Animal;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
-//Fishing Spot
 Abandoned Village;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
 Abandoned Village;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the surface.<br>Something sparkles at the bottom.;
 Abandoned Village;🗝️;Iron Key;Item;0;0;0;0;0;0;Accessory;Covered in rust and dirt.<br>There's a small crack.;
-//Starved Goat
 Abandoned Village;🐐;Starved Goat;Standard;1;1;3;0;10;0;Domestic Animal;Would eat anything at this point.<br>Emaciated to the bone.;Devoured by Starving Goat
-//Hp++ Fountain
 Abandoned Village;⛲️;Sparkling Fountain;Item;0;0;1;0;0;0;Holy Place;Fileed with pristine cold water<br>.There's a small cross at the top.;Refreshed with holy water.
-//Optional Boss (Locked) - Atk +1
-Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Place of Power;Eerie atmosphere is in the air.<br> xx.;
-Abandoned Village;🚪;Church Entrance;Container-Locked;0;0;0;0;0;0;Ruined Building;There is a huge chain on the front door.<br>No.;
+Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>Eerie atmosphere is in the air.;
+Abandoned Village;🚪;Church Entrance;Container-Locked;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>As if something was locked inside.;
 Abandoned Village;🐻;Undead Grizzly;Boss;5;2;2;0;10;1;Reanimated;Unconcerned about the axe sticking from its back.<br>Still packs a punch.;Was torn to pieces
 Abandoned Village;🪓;Bloody Axe;Item;0;0;1;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Equipped as a makeshift weapon.
-
-//Fairlyland - hp:+0 atk:+0 sta:+2 lck:+1 int:+0 mgk:+1
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
-//Unicorn Glade
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;There are tulips literally everywhere.<br>Why don't not pick some?;
 Depriving Fairyland;🦄;Rainbow Unicorn;Friend;0;0;0;1;0;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received a blessing
 Depriving Fairyland;🌳;Dark Grove;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;
 Depriving Fairyland;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Both eyes were pecked
 Depriving Fairyland;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns.
-//Camp - Mgk:+1
 Depriving Fairyland;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Depriving Fairyland;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;1;Precious Artifact;Radiates magic energy on touch.<br>Should you risk it?;Mastered the basics of magic.
 Depriving Fairyland;🧙;Angry Druid;Recruit;2;1;0;0;1;2;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-//Psycho Shroom
 Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
 Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Cannot tell left from right.<br>Also not up from down.;Suffered mental damage.
 Depriving Fairyland;🦨;Forest Skunk;Swift;2;1;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
-//Refreshment
 Depriving Fairyland;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
 Depriving Fairyland;🍪;Wheat Cookie;Consumable;0;0;0;0;0;0;Fancy Food;Smells absolutely amazing.<br>Likely packs a burst of energy.;
-//Troll Hut
 Depriving Fairyland;🛖;Simple Hut;Container-Triple;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>No one seems to be around.;
 Depriving Fairyland;💀;Pile of Skulls;Container;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>Better stay alert.;
 Depriving Fairyland;🧌;Recruit;2;1;0;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
 Depriving Fairyland;🎗️;Golden Trinket;Item;0;2;0;0;0;-1;Mysterious Artifact;Forcefully draws the eyesight.<br>Almost irresistible.;Got stuck onto the skin
-//Honey
 Depriving Fairyland;🍯;Sweet Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 Depriving Fairyland;🐝;Swarm of Bees;Swift;2;1;2;3;100;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run;
 Depriving Fairyland;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
-//Fishing Spot
 Depriving Fairyland;🌿;Tall Weeds;Container-Triple;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
 Depriving Fairyland;🦆;Angry Duck;Swift;2;2;2;0;2;0;Animal;Peace was never an option.<br>;Honked to death.
 Depriving Fairyland;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the surface.<br>Something sparkles at the bottom.;Fished out something.
 Depriving Fairyland;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
-//Huge Boar
 Depriving Fairyland;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
-Depriving Fairyland;🥩;Boar Meat;Consumable;0;-2;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat
-//Final Boss
+Depriving Fairyland;🥩;Boar Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat
 Depriving Fairyland;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
 Depriving Fairyland;🐸;Frog-faced Giant;Boss;5;1;3;0;10;0;Monstrosity;Foul stench reeks from it's mouth.<br>Bloodshot eyes blink slowly.;Got squashed like a bug
 Depriving Fairyland;👑;King's Crown;Death;1;1;0;0;0;1;Endgame;This is where it ends for now.<br>Tweet this to appear in credits!;
