@@ -1592,8 +1592,8 @@ function playerConsumed(){
   var consumedString = "Replenished the resources "
 
   if (enemyHp<0){
-    playerHit(enemyHp);
-    logPlayerAction(actionString,"That did not taste good -"+enemyHp+" 💔");
+    playerHit(-1*enemyHp);
+    logPlayerAction(actionString,"That did not taste good "+enemyHp+" 💔");
     return;
   }
 
