@@ -808,7 +808,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
-            if (playerInt>=-1*enemyInt){
+            if (playerInt>=(-1*enemyInt)){
               logPlayerAction(actionString,"Kept it together thanks to resilience.");
               enemyAnimateDeathNextEncounter();
             } else {
@@ -858,7 +858,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead": //Reduce attack if possible
             if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
-              logPlayerAction(actionString,"The prayer made them weaker -1 🔵");
+              logPlayerAction(actionString,"The spell made them weaker -1 🔵");
               displayEnemyEffect("🔥");
             } else if (playerMgkMax < enemyMgk) {
               logPlayerAction(actionString,"They resisted the prayer -1 🔵");
@@ -1050,7 +1050,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Boss":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
-              logPlayerAction(actionString,"Got overpowered and hit extra hard -"+enemyAtk*2+" 💔");
+              logPlayerAction(actionString,"Overpowered, got hit extra hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
@@ -1300,7 +1300,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerGetStamina(playerStaMax-playerSta,true);
               playerMgk=playerMgkMax;
             } else {
-              logPlayerAction(actionString,"Wasted a moment their of life.");
+              logPlayerAction(actionString,"Wasted a moment of their life.");
             }
             break;
 
@@ -1499,7 +1499,7 @@ function animateVersus(time = "0.8"){
 function playerGetStamina(stamina,silent = false){
   if (playerSta >= playerStaMax) { //Cannot get more
     if (!silent){
-      logPlayerAction(actionString,"Wasted a moment of life.");
+      logPlayerAction(actionString,"Wasted a moment of their life.");
     }
     return false;
   } else {
@@ -1854,7 +1854,7 @@ function adjustEncounterButtons(){
     case "Heavy":
     case "Swift":
       document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
-      if ((enemySta-enemyStaLost)==0) {
+      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
