@@ -22,19 +22,30 @@ var enemyStatusString = ""
 
 //Global vars
 var adventureEndTime;
-
 var lines;
+var linesLoot;
 var encounterIndex;
+var lastEncounterIndex;
 var encountersTotal;
+var lootTotal;
 var randomEncounterIndex;
+var lootEncounterIndex;
+var isLooting = false;
 
-//Unused now I believe
-var seenEncounters;
-var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
-if (seenEncountersString == null){
-  seenEncounters = [];
+var seenLoot;
+var seenLootString = JSON.parse(localStorage.getItem("seenLoot"));
+if (seenLootString == null){
+  seenLoot = [];
 } else {
   //Load seen encounters
+  seenLoot = Array.from(seenLootString);
+}
+
+var seenEncounters;
+var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
+if (seenEncountersString == null) {
+  seenEncounters = [];
+} else {
   seenEncounters = Array.from(seenEncountersString);
 }
 
@@ -137,6 +148,16 @@ $(document).ready(function() {
           registerClickListeners();
         }
      });
+
+     $.ajax({
+         type: "GET",
+         url: "data/loot-fishing.csv",
+         dataType: "text",
+         success: function(data) {
+           processLoot(data);
+           resetSeenLoot();
+         }
+      });
 });
 
 function processData(allText) {
@@ -159,6 +180,24 @@ function processData(allText) {
   redraw();
 }
 
+function processLoot(lootText){
+  var allTextLines = lootText.split(/\r\n|\n/);
+  var headers = allTextLines[0].split(';');
+  linesLoot = [];
+
+  for (var i=1; i<allTextLines.length; i++) {
+      var data = allTextLines[i].split(';');
+      if (data.length == headers.length) {
+
+          var tarr = [];
+          for (var j=0; j<headers.length; j++) {
+              tarr.push(headers[j]+":"+data[j]);
+          }
+        linesLoot.push(tarr);
+  }
+  }
+}
+
 function getNextEncounterIndex(){
   encountersTotal = lines.length-1;
   var nextItemIndex = encounterIndex+1;
@@ -169,17 +208,17 @@ function getNextEncounterIndex(){
   return nextItemIndex;
 }
 
-function getUnseenEncounterIndex() { //Unused I believe
-  encountersTotal = lines.length;
-  var max = encountersTotal;
+function getUnseenLootIndex() {
+  lootTotal = linesLoot.length;
+  var max = lootTotal;
     do {
-      randomEncounterIndex = Math.floor(Math.random() * max);
-      if (seenEncounters.length >= encountersTotal){
-        gameEnd();
+      randomLootIndex = Math.floor(Math.random() * max);
+      if (seenLoot.length >= lootTotal){
+        console.log("ERROR: No more loot left.")
         break;
       }
-    } while (seenEncounters.includes(randomEncounterIndex));
-    return randomEncounterIndex;
+    } while (seenLoot.includes(randomLootIndex));
+    return randomLootIndex;
 }
 
 function markAsSeen(seenID){
@@ -189,17 +228,30 @@ function markAsSeen(seenID){
   }
 }
 
+function markAsSeenLoot(seenID){
+  if (!seenLoot.includes(seenID)){
+    seenLoot.push(seenID);
+    localStorage.setItem("seenLoot", JSON.stringify(seenLoot));
+  }
+}
+
 function resetSeenEncounters(){
   localStorage.setItem("seenEncounters", JSON.stringify(""));
   seenEncounters = [];
 }
 
-function loadEncounter(index){
+function resetSeenLoot(){
+  localStorage.setItem("seenLoot", JSON.stringify(""));
+  seenLoot = [];
+}
+
+function loadEncounter(index, fileLines = lines){
   encounterIndex = index;
-  selectedLine = String(lines[index]);
+  selectedLine = String(fileLines[index]);
 
   //Encounter data initialization, details in encounters.csv
   areaName = String(selectedLine.split(",")[0].split(":")[1]);
+  if (fileLines!=lines) areaName = previousArea
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
@@ -1112,7 +1164,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Fishing":
             if (playerUseItem("🪱","Successfully fished out something.","Missing some fishing bait.")){
-              nextEncounter();
+              getRandomLoot();
               displayEnemyEffect("🪝");
             } else {
               displayPlayerCannotEffect();
@@ -1327,7 +1379,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
     };
-    loadEncounter(encounterIndex);
+    if (!isLooting) {
+      loadEncounter(encounterIndex);
+    } else {
+      loadEncounter(lootEncounterIndex,linesLoot);
+      encounterIndex=lastEncounterIndex;
+      isLooting=false;
+    }
     redraw();
   };
 }
@@ -1451,9 +1509,23 @@ function isfreePrayEncounter(){
   return returnValue;
 }
 
+function getRandomLoot(){
+  isLooting=true;
+  toggleUIElement(versusTextUIElement,1); animateVersus();
+  previousArea = areaName;
+  adventureEncounterCount+=1;
+
+  lastEncounterIndex = encounterIndex-1;
+  lootEncounterIndex = getUnseenLootIndex();
+  markAsSeenLoot(lootEncounterIndex);
+
+  animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  enemyRenew();
+  return
+}
+
 function nextEncounter(animateArea=true){
-  toggleUIElement(versusTextUIElement,1);
-  animateVersus();
+  toggleUIElement(versusTextUIElement,1); animateVersus();
 
   if (animateArea) {
     animateUIElement(areaUIElement,"animate__flipInX","1");
