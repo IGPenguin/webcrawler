@@ -2,6 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
+var versionCode = "pre-fpm build: 10/01/24"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -19,11 +20,9 @@ var fullSymbol = "●";
 var emptySymbol = "○";
 var enemyStatusString = ""
 
-//Globar vars
-var versionCode = "pre-fpm build: 9/26/24"
+//Global vars
 var adventureEndTime;
 
-//Global vars - Encounters
 var lines;
 var encounterIndex;
 var encountersTotal;
