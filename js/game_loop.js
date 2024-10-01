@@ -878,13 +878,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
-              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false);
-              displayPlayerEffect("💢")
-              displayPlayerCannotEffect();
-            } else {
-              displayPlayerCannotEffect();
-            }
+            var isSacrifice = (enemyHp<0)
+
+            if (isSacrifice) {
+                if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
+                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false);
+                  displayPlayerEffect("💢")
+                  displayPlayerCannotEffect();
+                }
+                displayPlayerCannotEffect();
+              } else {
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"Received a blessing from gods.",true);
+                displayPlayerEffect("✨")
+                displayPlayerGainedEffect();
+              }
             break;
 
           default:
