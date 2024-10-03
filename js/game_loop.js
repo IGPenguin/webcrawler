@@ -380,6 +380,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
       break;
     case "Container-Locked":
+    case "Container-Locked-Double":
       enemyStatusString=decorateStatusText("🗝️","Locked","#DDDDDD");
       break;
     case "Container":
@@ -492,7 +493,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container":
           case "Container-Double":
-          case "Container-Triple": //Allow unlock by attacking
+          case "Container-Triple":
             var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
               openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
@@ -621,10 +622,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container-Double":
+          case "Container-Locked-Double":
           case "Container-Triple":
             logPlayerAction(actionString,"Left without investigating it.");
             encounterIndex+=2; //Skip two encounters
-            if (enemyType=="Container-Triple"){
+            if (enemyType=="Container-Triple"){ //Skip three encounters
               encounterIndex++;
             }
             nextEncounter();
@@ -802,6 +804,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
 
           case "Container-Locked":
+          case "Container-Locked-Double":
             logPlayerAction(actionString,"Unlocked using a spell -1 🔵");
             enemyAnimateDeathNextEncounter()
             break;
@@ -884,6 +887,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Container":
           case "Container-Locked":
+          case "Container-Locked-Double":
           case "Container-Double":
           case "Container-Triple":
           case "Item":
@@ -1130,6 +1134,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container-Locked":
+          case "Container-Locked-Double":
             if (playerUseItem("🗝️","Unlocked it with the key.","The lock is tightly secured.",false)){
               enemyAnimateDeathNextEncounter();
             } else {
@@ -1338,6 +1343,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Double":
           case "Container-Triple":
           case "Container-Locked":
+          case "Container-Locked-Double":
           case "Checkpoint":
           case "Altar":
           case "Fishing":
@@ -1839,6 +1845,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
     case "Container-Locked":
+    case "Container-Locked-Double":
       if (playerMgkMax>0){
         document.getElementById('button_cast').innerHTML="🪄 Unlock";
       }
