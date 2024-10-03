@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/01/24"
+var versionCode = "pre-fpm build: 10/03/24"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -933,8 +933,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (isSacrifice) {
                 if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
-                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false);
-                  displayPlayerEffect("💢")
+                  playerHit(-1*enemyHp);
+                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false,false);
                   displayPlayerCannotEffect();
                 }
                 displayPlayerCannotEffect();
@@ -1342,10 +1342,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Altar":
           case "Fishing":
             displayPlayerEffect("💤");
-            if (enemyType=="Dream"){
-              nextEncounter();
-              break;
-            }
             if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
               logPlayerAction(actionString,"Rested well, recovering all resources.");
               playerGetStamina(playerStaMax-playerSta,true);
@@ -1353,6 +1349,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"Wasted a moment of their life.");
             }
+            if (enemyType=="Dream") nextEncounter();
             break;
 
           case "Friend": //They'll leave if you'll rest
@@ -1612,7 +1609,7 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true){
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true){
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
@@ -1674,7 +1671,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
   if (logMessage) logPlayerAction(actionString,gainedString);
-  nextEncounter();
+  if (moveForward) nextEncounter();
 }
 
 function playerConsumed(){
