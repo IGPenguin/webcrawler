@@ -11,28 +11,31 @@ Abandoned Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The cro
 Abandoned Village;🏚️;Ruined House;Container-Triple;0;0;0;0;0;0;Deserted Building;Appears being neglected long time.<br>Strange noises is coming out.;Entered through the window.
 Abandoned Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>Coming from all directions.;Suffered mental damage.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still in a good condition.;A wild cat appeared.
-Abandoned Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
+Abandoned Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
+Abandoned Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Vicious Animal;Peace was never an option.<br>;Honked to death!
 Abandoned Village;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Chance to catch a breath.;
 Abandoned Village;🦉;Curious Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
-Abandoned Village;🏚️;Unsettling House;Container-Double;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>But otherwise looks abandoned.;Kicked the door open.
+Abandoned Village;🐏;Alpha Ram;Heavy;2;1;0;0;5;0;Enraged Animal;Getting ready for ramming.<br>Better dodge the horns.;
+Abandoned Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>But otherwise looks abandoned.;Kicked the door open.
 Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Took it with themselves just in case.
+Abandoned Village;🐀;Dire Rat;Swift;2;1;1;0;10;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Abandoned Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
-Abandoned Village;🍖;Fleshy Bone;Container;0;0;0;0;0;0;Unsettling Evidence;Remains of one of the villagers.<br>No other clues around.;A wild animal appeared.
+Abandoned Village;🍖;Fleshy Bone;Prop;0;0;0;0;0;0;Unsettling Evidence;Remains of one of the villagers.<br>No other clues around.;A wild animal appeared.
 Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Abandoned Village;🪦;Desolate Gave;Container-Triple;0;0;0;0;0;0;Place of Rest;The text reads <i>"No rest for the wicked."</i> <br>Ground seems tampered with.;A corpse has risen from the ground.
-Abandoned Village;🧟;Reanimated Dead;Undead;1;1;2;0;10;1;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
+Abandoned Village;🧟;Animated Dead;Undead;1;1;2;0;10;1;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
 Abandoned Village;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Viable fishing bait.;Contracted a deadly disease.
 Abandoned Village;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;Shines bright on the dead hand.<br>There's a glowing gem on it.;Felt a surge in the chest
 Abandoned Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
-Abandoned Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Animal;Peace was never an option.<br>;Honked to death!
+Abandoned Village;🐍;Poisonous Snake;Swift;1;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Abandoned Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Filed with pristine cold water.<br>There's a small cross at the top.;Refreshed with holy water.
-Abandoned Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
-Abandoned Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and tasty.<br>;
-Abandoned Village;🐀;Dire Rat;Swift;2;1;1;0;10;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
+Abandoned Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Fierce Animal;Peace was never an option.<br>;Honked to death!
+Abandoned Village;🌳;Apple Tree;Container-Double;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
+Abandoned Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
+Abandoned Village;🪱;Fruit Worm;Small;1;0;1;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Trap;Shaking around vigorously.<br>Somethings likely inside.;There was a creature inside!
-Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;2;0;Wild Animal;Cute on the first glance.<br>Ferocious on the second.;Gone mad from contracting rabies.
-Abandoned Village;🪵;Pile of Timber;Container;0;0;0;0;0;0;Material;Wooden logs laying on the ground.<br>Nothing of particular interest.;Lifted the nearest log.
-Abandoned Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;The poor thing has a sunlight shock.<br>Perfect fishing bait.;Contracted a deadly disease
+Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;2;0;Infected Animal;Cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
+Abandoned Village;🧀;Old Cheese;Consumable;0;0;0;0;0;0;Delicacy;Actually smells terrible.<br>Still tempting though.;
 Abandoned Village;🎯;Practice Target;Container-Double;0;0;0;0;0;0;Training Spot;There is not a scratch on the target.<br>Seems to be never used.;Spot some clues nearby.
 Abandoned Village;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;There are bones scattered all around.<br>Doesn't look like an accident.;
 Abandoned Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Looks about ready for battle.<br>The pile of bones won't miss it.;Shot an arrow in the knee.
@@ -49,6 +52,8 @@ Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorf
 Depriving Fairyland;🦄;Rainbow Unicorn;Pet;0;0;0;1;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
 Depriving Fairyland;🌳;Dark Grove;Prop;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;
 Depriving Fairyland;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Both eyes were pecked.
+Depriving Fairyland;🪵;Pile of Timber;Container;0;0;0;0;0;0;Material;Wooden logs laying on the ground.<br>Nothing of particular interest.;Lifted the nearest log.
+Depriving Fairyland;🪱;Disturbed Earthworm;Small;1;0;1;0;10;0;Arthropod;Seems angry of the disturbance.<br>Perfect fishing bait.;Contracted a deadly disease
 Depriving Fairyland;🌿;Tall Weeds;Container-Triple;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
 Depriving Fairyland;🦆;Angry Duck;Standard;2;2;2;0;2;0;Animal;Peace was never an option.<br>;Honked to death.
 Depriving Fairyland;🌊;Tiny Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the surface.<br>Something sparkles at the bottom.;Fished out something.
