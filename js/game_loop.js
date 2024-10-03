@@ -1758,7 +1758,7 @@ function setAdventureEndTime(){
 
 function gameOver(){
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Trap")) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")) enemyMsg="Got killed, ending the adventure.";
   logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   setAdventureEndTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;

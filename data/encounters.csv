@@ -15,7 +15,7 @@ Abandoned Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually
 Abandoned Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Vicious Animal;Peace was never an option.<br>;Honked to death!
 Abandoned Village;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Chance to catch a breath.;
 Abandoned Village;🦉;Curious Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
-Abandoned Village;🐏;Alpha Ram;Heavy;2;1;0;0;5;0;Enraged Animal;Getting ready for ramming.<br>Better dodge the horns.;
+Abandoned Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready for ramming.<br>Better dodge the horns.;
 Abandoned Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>But otherwise looks abandoned.;Kicked the door open.
 Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Took it with themselves just in case.
 Abandoned Village;🐀;Dire Rat;Swift;2;1;1;0;10;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
@@ -34,7 +34,7 @@ Abandoned Village;🌳;Apple Tree;Container-Double;0;0;0;0;0;0;Natural Resource;
 Abandoned Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Abandoned Village;🪱;Fruit Worm;Small;1;0;1;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Abandoned Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Trap;Shaking around vigorously.<br>Somethings likely inside.;There was a creature inside!
-Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;2;0;Infected Animal;Cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
+Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;10;0;Infected Animal;Cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
 Abandoned Village;🧀;Old Cheese;Consumable;0;0;0;0;0;0;Delicacy;Actually smells terrible.<br>Still tempting though.;
 Abandoned Village;🎯;Practice Target;Container-Double;0;0;0;0;0;0;Training Spot;There is not a scratch on the target.<br>Seems to be never used.;Spot some clues nearby.
 Abandoned Village;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;There are bones scattered all around.<br>Doesn't look like an accident.;
