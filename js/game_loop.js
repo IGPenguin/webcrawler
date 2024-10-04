@@ -2124,6 +2124,7 @@ function copyAdventureToClipboard(){
   adventureLogClipboard += "\nhttps://igpenguin.github.io/webcrawler";
   adventureLogClipboard +=  "\n"+ versionCode;
 
+  //Copy to clipboard
   navigator.clipboard.writeText(adventureLogClipboard);
 
   //Download as .txt
@@ -2135,6 +2136,11 @@ function copyAdventureToClipboard(){
   document.body.appendChild(element);
   element.click();
   document.body.removeChild(element);
+
+  //Open in new window
+  var legendTab = window.open('about:blank','data:text/plain;charset=utf-8,');
+  legendTab.document.write(adventureLogClipboard.replaceAll("\n","<br>"));
+  legendTab.document.close();
 }
 
 function redirectToTweet(){
