@@ -12,8 +12,8 @@ Abandoned Village;🏚️;Ruined House;Container-Triple;0;0;0;0;0;0;Deserted Bui
 Abandoned Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>Coming from all directions.;Suffered mental damage.
 Abandoned Village;🧶;Cotton Ball;Container;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>Still in a good condition.;A wild cat appeared.
 Abandoned Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br><i>"Meow... meow..."</i>;Received a purrfect blessing.
-Abandoned Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Vicious Animal;Peace was never an option.<br>;Honked to death!
-Abandoned Village;🌳;Apple Tree;Container-Double;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
+Abandoned Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Vicious Animal;Peace was never an option.<br>;Absolutely honked to death!
+Abandoned Village;🌳;Apple Tree;Container-Triple;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
 Abandoned Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Abandoned Village;🪱;Fruit Worm;Small;1;0;1;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Abandoned Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready for ramming.<br>Better dodge the horns.;
@@ -21,7 +21,7 @@ Abandoned Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted
 Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Took it with themselves just in case.
 Abandoned Village;🐀;Dire Rat;Swift;1;1;1;0;10;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Abandoned Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
-Abandoned Village;🍖;Fleshy Bone;Prop;0;0;0;0;0;0;Unsettling Evidence;Remains of one of the villagers.<br>No other clues around.;A wild animal appeared.
+Abandoned Village;🍖;Fleshy Bone;Consumable;0;0;0;0;0;0;Unsettling Evidence;Remains of one of the villagers.<br>No other clues around.;That was just disgusting.
 Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Abandoned Village;🪦;Desolate Gave;Container-Triple;0;0;0;0;0;0;Place of Rest;The text reads <i>"No rest for the wicked."</i> <br>Ground seems tampered with.;A corpse has risen from the ground.
 Abandoned Village;🧟;Animated Dead;Undead;1;1;2;0;10;1;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
