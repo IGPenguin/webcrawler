@@ -904,8 +904,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerHp<playerHpMax) {
               logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
               playerHp=playerHpMax; //Lay on hands
+              displayPlayerGainedEffect();
             } else {
               logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
+              displayPlayerCannotEffect();
             }
             enemyAttackOrRest();
             break;
@@ -1182,7 +1184,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            logPlayerAction("⭐️","Reaincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
+            logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
             playerNumber++;
             displayEnemyEffect("✋");
 
