@@ -62,10 +62,10 @@ var buttonsContainer;
 
 //Player stats init
 function getCharacterName(){
-  const random_names = ["Nameless Hero", "Worthless Peasant", "Naked Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal"];
-  //"Penguin IV./XX.","Jesus H. Christ","Anthropomorphic Lizard"
+  const random_names = ["Nameless Hero", "Worthless Peasant", "Naked Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal", "Bipedal Lizard"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
+
 var playerName = getCharacterName(); //Stays unchanged unless dead before checkpoint
 var playerNumber = 1; //Increments on death if at least once saved
 var playerLootString;
@@ -80,6 +80,8 @@ var playerLck;
 var luckInterval = 24; //Lower to increase chances
 var playerInt;
 var playerAtk;
+var playerRested = false;
+
 renewPlayer();
 function renewPlayer(){ //Default values
   if (playerNumber>1) playerName = getCharacterName();
@@ -93,6 +95,7 @@ function renewPlayer(){ //Default values
   playerLck = 1;
   playerInt = 1;
   playerMgk = playerMgkMax;
+  playerRested = false;
   playerLootString = "";
   playerPartyString = "";
   //adventureLog = ""; //Keep of all characters
@@ -939,7 +942,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (isSacrifice) {
                 if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
-                  playerHit(-1*enemyHp);
+                  playerHit(-1*enemyHp,false);
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false,false);
                   displayPlayerCannotEffect();
                 }
@@ -968,7 +971,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
             displayPlayerCannotEffect();
-            playerHit(1);
+            playerHit(1,false);
             playerHpMax-=1;
             playerMgkMax+=1;
             playerMgk+=1;
@@ -1349,13 +1352,23 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Checkpoint":
           case "Altar":
           case "Fishing":
-            displayPlayerEffect("💤");
-            if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
-              logPlayerAction(actionString,"Rested well, recovering all resources.");
-              playerGetStamina(playerStaMax-playerSta,true);
-              playerMgk=playerMgkMax;
+            if (!playerRested){
+              if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
+                playerGetStamina(playerStaMax-playerSta,true);
+                playerMgk=playerMgkMax;
+                playerRested=true;
+
+                logPlayerAction(actionString,"Rested well, recovering all resources.");
+                displayPlayerEffect("💤");
+              } else {
+                playerRested=true;
+
+                logPlayerAction(actionString,"Wasted a precious moment of life.");
+                displayPlayerEffect("💤");
+              }
             } else {
-              logPlayerAction(actionString,"Wasted a moment of their life.");
+              logPlayerAction(actionString,"Already rested at this spot.");
+              displayPlayerCannotEffect();
             }
             if (enemyType=="Dream") nextEncounter();
             break;
@@ -1541,10 +1554,12 @@ function nextEncounter(animateArea=true){
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
 
-  //Fullscreen Curtain
-  previousArea = areaName;
+  playerRested=false;
   enemyRenew();
   loadEncounter(encounterIndex);
+
+  //Fullscreen Curtain
+  previousArea = areaName;
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
   }
@@ -1715,9 +1730,10 @@ function playerConsumed(){
   logPlayerAction(actionString,consumedString);
 }
 
-function playerHit(incomingDamage){
+function playerHit(incomingDamage,applyLuck=true){
   var hitChance = Math.floor(Math.random() * luckInterval);
-  if ( hitChance <= playerLck ){
+
+  if (applyLuck && ( hitChance <= playerLck )){
     logAction("🍀&nbsp;▸&nbsp;💢 Luckily avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
@@ -1728,7 +1744,7 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     var deathChance = Math.floor(Math.random() * luckInterval * 3); //Small chance to not die
-    if ( deathChance <= playerLck ){
+    if (applyLuck && ( deathChance <= playerLck )){
       playerHp+=1;
       logAction("🍀&nbsp;▸&nbsp;💀 Luckily got a second chance to live.");
       displayPlayerEffect("🍀");
@@ -1839,13 +1855,15 @@ function adjustEncounterButtons(){
       setButton('button_speak',"🪙 Greed");
       setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
       break;
+
     case "Container":
     case "Container-Double":
     case "Container-Triple":
-      document.getElementById('button_grab').innerHTML="👋 Search";
-      document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      setButton('button_grab',"👋 Search");
+      setButton('button_roll',"👣 Walk");
+      setButton('button_sleep',"💤 Sleep");
       break;
+
     case "Container-Locked":
     case "Container-Locked-Double":
       if (playerMgkMax>0){
@@ -1859,6 +1877,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
     case "Consumable":
     case "Container-Consume":
       document.getElementById('button_roll').innerHTML="👣 Walk";
@@ -1874,6 +1893,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
     case "Curse":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
@@ -1886,6 +1906,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
@@ -1930,8 +1951,9 @@ function adjustEncounterButtons(){
 
     case "Heavy":
     case "Swift":
+    case "Boss":
       document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
-      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
+      if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
