@@ -893,7 +893,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Locked-Double":
           case "Container-Double":
           case "Container-Triple":
+          case "Trap":
+          case "Trap-Roll":
           case "Item":
+          case "Fishing"
+            if (playerHp<playerHpMax) {
+              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
+              playerHp=playerHpMax; //Lay on hands
+              displayPlayerGainedEffect();
+            } else {
+              logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
+              displayPlayerCannotEffect();
+            }
+            break;
           case "Standard":
           case "Recruit":
           case "Swift":
@@ -902,8 +914,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
           case "Boss":
           case "Small":
-          case "Trap":
-          case "Trap-Roll":
             if (playerHp<playerHpMax) {
               logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
               playerHp=playerHpMax; //Lay on hands
