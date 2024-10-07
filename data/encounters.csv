@@ -6,7 +6,7 @@ Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;Foo
 Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a perk</b> to shape the character.<br>Some may come with a sacrifice.;
 Depths of Slumber;🥱;Awakening Moment;Dream;0;0;0;0;0;0;Realization;<b>👣  Walk</b> to explore the surroundings.<br>It is finally time to move ahead.;
 Abandoned Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Rocks and wood laying on the ground.<br>Nothing of particular interest.;Lifted the nearest boulder.
-Abandoned Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;The poor thing has a sunlight shock.<br>Perfect fishing bait.;Contracted a deadly disease.
+Abandoned Village;🪱;Confused Earthworm;Small;1;1;1;0;10;0;Arthropod;The poor thing has a sunlight shock.<br>Perfect fishing bait.;Contracted a deadly disease.
 Abandoned Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for the eyes.<br>Quickly cover before the impact.;Got both eyes pecked out.
 Abandoned Village;🏚️;Ruined House;Container-Triple;0;0;0;0;0;0;Deserted Building;Appears being neglected long time.<br>Strange noises is coming out.;Entered through the window.
 Abandoned Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>Coming from all directions.;Suffered mental damage.
@@ -15,7 +15,7 @@ Abandoned Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually
 Abandoned Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Vicious Animal;Peace was never an option.<br>;Absolutely honked to death!
 Abandoned Village;🌳;Apple Tree;Container-Triple;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
 Abandoned Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
-Abandoned Village;🪱;Fruit Worm;Small;1;0;1;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
+Abandoned Village;🪱;Fruit Worm;Small;1;1;1;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Abandoned Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready for ramming.<br>Better dodge the horns.;
 Abandoned Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Filed with pristine cold water.<br>There's a small cross at the top.;
 Abandoned Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Fierce Animal;Peace was never an option.<br>;Honked to death!
@@ -78,7 +78,7 @@ Depriving Fairyland;🧌;Old Troll;Recruit;2;0;1;0;1;2;Creature;Noticed suspicio
 Depriving Fairyland;🎗️;Golden Trinket;Item;0;2;0;0;0;-1;Mysterious Artifact;Forcefully draws the eyesight.<br>Almost irresistible.;Got stuck onto the skin.
 Depriving Fairyland;🍯;Sweet Honeypot;Container-Double;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 Depriving Fairyland;🐝;Swarm of Bees;Swift;2;1;2;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run;
-Depriving Fairyland;🪱;Bee Larva;Small;1;0;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
+Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 Depriving Fairyland;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🐗;Alpha Boar;Heavy;3;1;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
 Depriving Fairyland;🥩;Boar Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat.
