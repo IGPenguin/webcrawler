@@ -31,6 +31,10 @@ Abandoned Village;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried in
 Abandoned Village;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;Shines bright on the dead hand.<br>There's a glowing gem on it.;Felt a surge in the chest
 Abandoned Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
 Abandoned Village;🐍;Poisonous Snake;Swift;1;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Abandoned Village;🎯;Practice Target;Container-Triple;0;0;0;0;0;0;Training Spot;There is not a scratch on the target.<br>Seems totally unused.;Spot some clues nearby.
+Abandoned Village;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;There are bones scattered all around.<br>Doesn't look like an accident.;
+Abandoned Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Looks all about ready for battle.<br>The pile of bones won't miss it.;Shot an arrow in the knee
+Abandoned Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but still usable.<br>Perhaps unlocks a secret.;
 Abandoned Village;🕰️;Clock Tower;Container-Locked;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
 Abandoned Village;👒;Strange Hat;Item;0;0;1;0;0;0;Fashion Souls (Not);A radical piece of clothing.<br>Kinda tempting.;Fits like a ...hat?
 Abandoned Village;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Got both eyes pecked out.
@@ -40,10 +44,6 @@ Abandoned Village;🪤;Animal Trap;Container-Triple;0;0;0;0;0;0;Trap;Something i
 Abandoned Village;🦝;Rabid Raccoon;Standard;1;1;2;0;10;0;Infected Animal;Kinda cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
 Abandoned Village;🧀;Spoiled Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;
 Abandoned Village;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of the spoiled cheese.<br>Likely a good fishing bait.;Contracted a deadly disease.
-Abandoned Village;🎯;Practice Target;Container-Triple;0;0;0;0;0;0;Training Spot;There is not a scratch on the target.<br>Seems totally unused.;Spot some clues nearby.
-Abandoned Village;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;There are bones scattered all around.<br>Doesn't look like an accident.;
-Abandoned Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Looks all about ready for battle.<br>The pile of bones won't miss it.;Shot an arrow in the knee
-Abandoned Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but still usable.<br>Perhaps unlocks a secret.;
 Abandoned Village;🦌;Frantic Deer;Heavy;2;2;1;0;5;0;Wild Animal;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
 Abandoned Village;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
 Abandoned Village;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the water surface.<br>Something sparkles at the bottom.;
