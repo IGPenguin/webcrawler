@@ -183,7 +183,7 @@ function processData(allText) {
   redraw();
 }
 
-function processLoot(lootText){
+function processLoot(lootText){ //TODO: remove and reuse the fn above
   var allTextLines = lootText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
   linesLoot = [];
@@ -231,7 +231,7 @@ function markAsSeen(seenID){
   }
 }
 
-function markAsSeenLoot(seenID){
+function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
   if (!seenLoot.includes(seenID)){
     seenLoot.push(seenID);
     localStorage.setItem("seenLoot", JSON.stringify(seenLoot));
@@ -243,7 +243,7 @@ function resetSeenEncounters(){
   seenEncounters = [];
 }
 
-function resetSeenLoot(){
+function resetSeenLoot(){ //TODO: remove and reuse the fn above?
   localStorage.setItem("seenLoot", JSON.stringify(""));
   seenLoot = [];
 }
