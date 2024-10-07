@@ -942,7 +942,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (isSacrifice) {
                 if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
-                  playerHit(-1*enemyHp,false);
+                  playerHit(0,false);
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false,false);
                   displayPlayerCannotEffect();
                 }
@@ -971,7 +971,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
             displayPlayerCannotEffect();
-            playerHit(1,false);
+            playerHit(0,false);
             playerHpMax-=1;
             playerMgkMax+=1;
             playerMgk+=1;
@@ -1083,9 +1083,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               else {
-                displayPlayerCannotEffect();
-                logPlayerAction(actionString,"Almost grabbed them, but not quite.");
-                enemyAttackOrRest();
+                enemyDodged("Missed, it evaded the grasp.");
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
@@ -1102,9 +1100,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
-            logPlayerAction(actionString,"Missed, they evaded the grasp.");
-            displayEnemyEffect("🌀");
-            enemyAttackOrRest();
+            enemyDodged("Missed, it evaded the grasp.");
             break;
 
           case "Heavy":
@@ -1154,10 +1150,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Small":
-            logPlayerAction(actionString,"Grabbed it into pocket.");
-            playerLootString+=" "+enemyEmoji;
-            displayEnemyEffect("👋");
-            nextEncounter();
+            if ((enemySta-enemyStaLost)==0) {
+              logPlayerAction(actionString,"Grabbed it into pocket.");
+              playerLootString+=" "+enemyEmoji;
+              displayEnemyEffect("👋");
+              nextEncounter();
+            } else {
+              enemyDodged("Missed, it evaded the grasp.");
+            }
             break;
 
           case "Friend":
@@ -1421,7 +1421,7 @@ function enemyRest(stamina){
 
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   if (enemyStaLost < enemySta) {
-    logPlayerAction(actionString,successMessage);
+    logPlayerAction(actionString,successMessage); //TODO: switch emojis around >> 🐅 > ⚔️
     animateUIElement(enemyInfoUIElement,"animate__headShake","0.7"); //Play attack animation
     enemyStaLost -= stamina;
     return true;
@@ -1485,7 +1485,7 @@ function enemyAttackOrRest(){
     if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
-        staminaChangeMsg="They do not mean any harm."
+        staminaChangeMsg="They cannot cause any harm."
         if (enemyType=="Pet"){
           enemyIntBonus++; //Harder to befriend
 
@@ -1509,6 +1509,13 @@ function enemyAttackOrRest(){
   } else {
     enemyRest(1);
   }
+}
+
+function enemyDodged(message="Missed, it evaded the grasp."){
+  displayPlayerCannotEffect();
+  logPlayerAction(actionString,message);
+  displayEnemyEffect("🌀");
+  enemyAttackOrRest();
 }
 
 //Encounters
@@ -1880,7 +1887,8 @@ function adjustEncounterButtons(){
 
     case "Consumable":
     case "Container-Consume":
-      document.getElementById('button_roll').innerHTML="👣 Walk";
+      setButton('button_roll',"❌ Ditch");
+
       document.getElementById('button_grab').innerHTML="🍴 Eat";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
@@ -1903,7 +1911,7 @@ function adjustEncounterButtons(){
 
     case "Item":
       document.getElementById('button_grab').innerHTML="👋 Grab";
-      document.getElementById('button_roll').innerHTML="👣 Walk";
+      setButton('button_roll',"❌ Ditch");
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
 
