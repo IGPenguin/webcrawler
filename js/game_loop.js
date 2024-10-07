@@ -896,7 +896,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
           case "Trap-Roll":
           case "Item":
-          case "Fishing"
+          case "Fishing":
             if (playerHp<playerHpMax) {
               logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
               playerHp=playerHpMax; //Lay on hands
