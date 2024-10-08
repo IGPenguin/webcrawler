@@ -63,11 +63,11 @@ var buttonsContainer;
 
 //Player stats init
 function getCharacterName(){
-  const random_names = ["Nameless Hero", "Worthless Peasant", "Naked Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal", "Bipedal Lizard"];
+  const random_names = ["Nameless Hero", "Indigent Peasant", "Barely Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal", "Bipedal Lizard", "Resolute Mercenary", "Amnesic Hero", "Worthless Survivor", "Downfall Prophet", "Tired Drifter", "Dirty Vagabond", "Casual Straggler"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-var playerName = getCharacterName(); //Stays unchanged unless dead before checkpoint
+var playerName = getCharacterName();
 var playerNumber = 1; //Increments on death if at least once saved
 var playerLootString;
 var playerPartyString;
@@ -549,10 +549,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Upgrade":
             logPlayerAction(actionString,"Felt becoming a bit stronger +1 ❤️");
             displayPlayerGainedEffect();
-            displayPlayerEffect("✨");
+            displayPlayerEffect("❤️");
+            playerName="Resilient "+playerName;
             playerHpMax+=1;
             playerHp+=1;
-            playerSta+=1; //Restore lost stamina from initial attack
             animateFlipNextEncounter();
             break;
 
@@ -671,6 +671,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Felt the body becoming faster +1 🟢");
             displayPlayerGainedEffect();
             displayPlayerEffect("💨");
+            playerName="Hasty "+playerName;
             playerStaMax+=1;
             playerSta+=1;
             animateFlipNextEncounter();
@@ -690,6 +691,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           logPlayerAction(actionString,"Granted gods blessing +1 🍀");
           displayPlayerGainedEffect();
           displayPlayerEffect("🙏");
+          playerName=playerName+" the Believer";
           playerLck+=1;
           animateFlipNextEncounter();
           break;
@@ -761,6 +763,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Chose magic +1 🔵 over agility -1 🟢");
             displayPlayerCannotEffect();
             displayPlayerEffect("✨");
+            playerName=playerName+" the Magician";
             playerMgkMax+=1;
             playerMgk+=1;
             playerStaMax-=1;
@@ -850,6 +853,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Felt getting somewhat wiser +1 🧠");
               displayPlayerGainedEffect();
               displayPlayerEffect("🧠");
+              playerName="Intelligent "+playerName;
               playerInt+=1;
               animateFlipNextEncounter();
               break;
@@ -985,6 +989,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
             displayPlayerCannotEffect();
+            playerName="Ruthless "+playerName;
             playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
             playerHit(0,false);
             animateFlipNextEncounter();
@@ -1221,6 +1226,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Chose luck +2 🍀 over intellect -1 🧠");
             displayPlayerCannotEffect();
             displayPlayerEffect("🍀");
+            playerName="Lucky "+playerName;
             playerLck+=2;
             playerInt-=1;
             animateFlipNextEncounter();
@@ -1310,6 +1316,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             displayPlayerEffect("🪙");
             playerUseStamina(1);
+            playerName="Greedy "+playerName;
             playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
             playerHit(0,false);
             animateFlipNextEncounter();
@@ -1397,6 +1404,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             logPlayerAction(actionString,"Decided against gaining a perk.");
+            playerName="Hardcore "+playerName;
             displayPlayerCannotEffect();
             animateFlipNextEncounter();
             break;
