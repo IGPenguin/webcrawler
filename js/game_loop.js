@@ -51,6 +51,7 @@ if (seenEncountersString == null) {
 
 //Globar vars - UIElements
 var areaUIElement;
+var nameUIElement;
 var cardUIElement;
 var emojiUIElement;
 var enemyInfoUIElement;
@@ -181,6 +182,7 @@ function processData(allText) {
   }
   loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
   redraw();
+  animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
 }
 
 function processLoot(lootText){ //TODO: remove and reuse the fn above
@@ -302,14 +304,17 @@ function redraw(){
 
   //Encounter UI
   areaUIElement = document.getElementById('id_area');
+  nameUIElement = document.getElementById('id_name');
   cardUIElement = document.getElementById('id_card');
   enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
   enemyTeamUIElement = document.getElementById('id_team');
 
   emojiUIElement.innerHTML = enemyEmoji;
-  document.getElementById('id_area').innerHTML = areaName;
-  document.getElementById('id_name').innerHTML = enemyName;
+  areaUIElement.innerHTML = areaName;
+  nameUIElement.innerHTML = enemyName;
+
+
   var enemyDescUIElement = document.getElementById('id_desc')
   enemyDescUIElement.innerHTML = enemyDesc;
   //Hacky hacky hacky hack hack hack, hacky hacky hacky, yeah yeah
@@ -402,7 +407,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("⁉️","Hazard","red");
       break;
     case "Death":
-      enemyStatusString=decorateStatusText("⚰️","End of the Line","lightgrey");
+      enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
@@ -694,7 +699,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyAtk<=0 && enemyType!="Pet"){
-            logPlayerAction(actionString,"Means absolutely no harm.")
+            //logPlayerAction(actionString,"Means absolutely no harm.")
+            enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
             playerSta++ //Regain lost stamina
             displayEnemyCannotEffect();
             break;
@@ -705,7 +711,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyAtk<=0) {
               enemyStaminaChangeMessage(-1,"Enjoyed a moment together -1 🟢","They needed to catch a breath -1 🟢");
             } else {
-              enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
+              enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
             }
             break;
           case "Standard":
@@ -713,12 +719,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit":
           case "Demon":
           case "Small":
-            enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
 
           case "Swift":
-            enemyStaminaChangeMessage(-1,"Blocked a swift attack -1 🟢","Blocked absolutely nothing -1 🟢");
+            enemyStaminaChangeMessage(-1,"Blocked a swift attack -1 🟢","Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
 
@@ -1655,7 +1661,6 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     }
   } else if (gainedString=="Might come in handy later.") {
     gainedString="Got cursed by it";
-    changeSign=" -"
   }
 
   if (enemyMsg != "") {
@@ -1667,6 +1672,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   if (bonusHp != 0) {
+    if (bonusHp<0) {changeSign=" "} else {changeSign=" +";}
     playerHpMax += parseInt(bonusHp);
     if (playerHp>playerHpMax) playerHp = playerHpMax
     gainedString += changeSign+bonusHp + " ❤️";
@@ -1674,12 +1680,14 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   if (bonusAtk != 0){
+    if (bonusAtk<0) {changeSign=" "} else {changeSign=" +";}
     playerAtk += parseInt(bonusAtk);
     gainedString += changeSign+bonusAtk + " ⚔️";
     displayPlayerEffect("✨");
   }
 
   if (bonusSta != 0){
+    if (bonusSta<0) {changeSign=" "} else {changeSign=" +";}
     playerStaMax += parseInt(bonusSta);
     playerSta += parseInt(bonusSta);
     gainedString += changeSign+bonusSta + " 🟢";
@@ -1687,18 +1695,21 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   if (bonusLck != 0){
+    if (bonusLck<0) {changeSign=" "} else {changeSign=" +";}
     playerLck += parseInt(bonusLck);
     gainedString += changeSign+bonusLck + " 🍀";
     displayPlayerEffect("🍀");
   }
 
   if (bonusInt != 0){
+    if (bonusInt<0) {changeSign=" "} else {changeSign=" +";}
     playerInt += parseInt(bonusInt);
     gainedString += changeSign+bonusInt + " 🧠";
     displayPlayerEffect("🧠");
   }
 
   if (bonusMgk != 0){
+    if (bonusMgk<0) {changeSign=" "} else {changeSign=" +";}
     playerMgkMax += parseInt(bonusMgk);
     playerMgk += parseInt(bonusMgk);
     gainedString += changeSign+bonusMgk + " 🔵";
@@ -2046,7 +2057,7 @@ function displayEffect(message,documentElement,time=2.2){
   animateUIElement(documentElement,"animate__fadeOut",time,true,message)
 }
 
-function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
+function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false){
   var typeOfTime = typeof time; //To not forget anymore
   if (typeof time != "string"){
     time = String(time)
@@ -2060,6 +2071,7 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
 documentElement.classList.remove(animation);
 void documentElement.offsetWidth; // trigger a DOM reflow
 
+  if (animateInfinite) documentElement.classList.add("animate__infinite");
   documentElement.style.setProperty("--animate-duration","0.0001s");
   //Wow, this is nice - https://animate.style
   documentElement.classList.add("animate__animated",animation);
