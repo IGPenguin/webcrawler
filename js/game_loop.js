@@ -63,7 +63,16 @@ var buttonsContainer;
 
 //Player stats init
 function getCharacterName(){
-  const random_names = ["Nameless Hero", "Indigent Peasant", "Barely Humanoid", "Promising Villain","Unknown Soldier", "Mere Mortal", "Bipedal Lizard", "Resolute Mercenary", "Amnesic Hero", "Worthless Survivor", "Downfall Prophet", "Tired Drifter", "Dirty Vagabond", "Casual Straggler"];
+  return getCharacterFirstName() +" "+getCharacterLastName();
+}
+
+function getCharacterFirstName(){
+  const random_names = ["Nameless", "Indigent", "Disgusting", "Promising","Unknown", "Resolute", "Amnesic", "Worthless", "Downfall", "Tired", "Dirty", "Casual", "Hateful", "Spiteful", "Withering", "Wholesome", "Ambitious", "Reckless", "Curious", "Gloomy"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getCharacterLastName(){
+  const random_names = ["Hero", "Peasant", "Human", "Humanbeing", "Villain", "Soldier", "Militia", "Mortal", "Guerilla", "Lizard", "Man", "Woman", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
