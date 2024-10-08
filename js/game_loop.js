@@ -1295,7 +1295,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Dream":
             playerGetStamina(playerStaMax-playerSta,true);
             playerMgk=playerMgkMax;
-            logPlayerAction(actionString,"Rested well, recovering all resources.");
+            logPlayerAction(actionString,"Rested well, recovered lost resources.");
             displayPlayerEffect("💤");
             nextEncounter();
             break;
@@ -1580,12 +1580,12 @@ function nextEncounter(animateArea=true){
 }
 
 function animateFlipNextEncounter(){
-  animateUIElement(areaUIElement,"animate__flipOutX","1.5"); //Uuuu nice!
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2"); //Uuuu nice!
   //toggleUIElement(areaUIElement);
 
   var versusTextUIElement = document.getElementById('id_versus');
   toggleUIElement(versusTextUIElement);
-  animateUIElement(cardUIElement,"animate__flipOutY","1.5"); //Maybe this will look better?
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2"); //Maybe this will look better?
 
   var animationHandler = function(){
     nextEncounter();
@@ -1711,7 +1711,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 }
 
 function playerConsumed(){
-  var consumedString = "Replenished the resources "
+  var consumedString = "Replenished lost resources "
 
   if (enemyHp<0){
     logPlayerAction(actionString,"That did not taste good "+enemyHp+" 💔");
