@@ -484,7 +484,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
             logPlayerAction(actionString,"Smashed it into tiny pieces -1 🟢");
             displayEnemyEffect("〽️");
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
 
           case "Trap-Attack": //Attacking causes you damage
@@ -503,7 +503,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
 
           case "Friend":
@@ -548,7 +548,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHpMax+=1;
             playerHp+=1;
             playerSta+=1; //Restore lost stamina from initial attack
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
 
           default:
@@ -668,7 +668,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("💨");
             playerStaMax+=1;
             playerSta+=1;
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
           default:
             logPlayerAction(actionString,"Felt like nothing really happened.");
@@ -686,7 +686,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           displayPlayerGainedEffect();
           displayPlayerEffect("🙏");
           playerLck+=1;
-          enemyAnimateDeathNextEncounter();
+          animateFlipNextEncounter();
           break;
         }
         if (!playerUseStamina(1,"Too tired to do that.")){
@@ -760,7 +760,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerMgk+=1;
             playerStaMax-=1;
             if (playerSta>0) playerSta-=1;
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
           }
 
@@ -809,7 +809,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Locked":
           case "Container-Locked-Double":
             logPlayerAction(actionString,"Unlocked using a spell -1 🔵");
-            enemyAnimateDeathNextEncounter()
+            animateFlipNextEncounter()
             break;
           case "Container":
           case "Container-Double":
@@ -817,7 +817,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var openMessage = "The magic power anihilated it -1 🔵";
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("🔥");
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
 
           case "Dream":
@@ -846,7 +846,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerGainedEffect();
               displayPlayerEffect("🧠");
               playerInt+=1;
-              enemyAnimateDeathNextEncounter();
+              animateFlipNextEncounter();
               break;
           }
 
@@ -867,7 +867,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=(-1*enemyInt)){
               logPlayerAction(actionString,"Kept it together thanks to resilience.");
-              enemyAnimateDeathNextEncounter();
+              animateFlipNextEncounter();
             } else {
               logPlayerAction(actionString,"Giving the best, but no effect.");
               displayPlayerCannotEffect();
@@ -879,7 +879,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ( enemyMgk <= playerMgkMax ){
               logPlayerAction(actionString,"Banished them from this world!");
               displayEnemyEffect("🔥");
-              enemyAnimateDeathNextEncounter();
+              animateFlipNextEncounter();
               break;
             } else {
               logPlayerAction(actionString,"Could not overpower this entity!");
@@ -985,7 +985,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHpMax-=1;
             playerMgkMax+=1;
             playerMgk+=1;
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
         }
 
@@ -1147,7 +1147,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Locked":
           case "Container-Locked-Double":
             if (playerUseItem("🗝️","Unlocked it with the key.","The lock is tightly secured.",false)){
-              enemyAnimateDeathNextEncounter();
+              animateFlipNextEncounter();
             } else {
               displayPlayerCannotEffect();
             }
@@ -1179,7 +1179,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
             playerConsumed();
             displayEnemyEffect("🍽");
-            if (playerHp>0) enemyAnimateDeathNextEncounter();
+            if (playerHp>0) animateFlipNextEncounter();
             break;
 
           case "Fishing":
@@ -1221,7 +1221,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🍀");
             playerLck+=2;
             playerInt-=1;
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
 
           case "Checkpoint": //Save and rest to full HP and Sta
@@ -1230,7 +1230,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
             checkpointEncounter=encounterIndex;
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;Flame Embraced&nbsp;");
             break;
           default:
@@ -1311,7 +1311,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHpMax-=1;
             playerHp-=1
             playerLck+=3;
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
 
           default:
@@ -1397,7 +1397,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Upgrade":
             logPlayerAction(actionString,"Decided against gaining a perk.");
             displayPlayerCannotEffect();
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
 
           default:
@@ -1464,7 +1464,7 @@ function enemyHit(damage,magicType=false){
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
     logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
-    enemyAnimateDeathNextEncounter();
+    animateFlipNextEncounter();
   } else {
     animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
@@ -1480,7 +1480,7 @@ function enemyKicked(){
 function enemyKnockedOut(){
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out.");
   displayEnemyEffect("💤");
-  enemyAnimateDeathNextEncounter();
+  animateFlipNextEncounter();
 }
 
 function enemyAttackOrRest(){
@@ -1576,14 +1576,14 @@ function nextEncounter(animateArea=true){
   loadEncounter(encounterIndex);
 
   //Fullscreen Curtain
-  previousArea = areaName;
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  previousArea = areaName;
 }
 
-function enemyAnimateDeathNextEncounter(){
+function animateFlipNextEncounter(){
   animateUIElement(areaUIElement,"animate__flipOutX","1"); //Uuuu nice!
   //toggleUIElement(areaUIElement);
 
@@ -1599,7 +1599,7 @@ function enemyAnimateDeathNextEncounter(){
   cardUIElement.addEventListener('animationend',animationHandler);
 }
 
-function animateVersus(time = "0.8"){
+function animateVersus(time = "1"){
   animateUIElement(versusTextUIElement,"animate__flash",time);
 }
 
@@ -2027,7 +2027,7 @@ function curtainFadeInAndOut(message=""){
 }
 
 function displayEnemyEffect(message){
-  displayEffect(message,document.getElementById('id_enemy_overlay'),1.5);
+  displayEffect(message,document.getElementById('id_enemy_overlay'));
 }
 
 function displayPlayerEffect(message){
@@ -2046,7 +2046,7 @@ function displayPlayerGainedEffect(){
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
 }
 
-function displayEffect(message,documentElement,time=1.3){
+function displayEffect(message,documentElement,time=2.2){
   animateUIElement(documentElement,"animate__fadeOut",time,true,message)
 }
 
