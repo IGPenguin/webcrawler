@@ -24,19 +24,19 @@ Abandoned Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still lo
 Abandoned Village;🐀;Dire Rat;Swift;1;1;1;0;10;0;Rabid Animal;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Abandoned Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
 Abandoned Village;🍖;Fleshy Bone;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>No other clues around.;That was just disgusting.
-Abandoned Village;🐕;Stray Dog;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
-Abandoned Village;🪦;Desolate Grave;Container-Triple;0;0;0;0;0;0;Place of Rest;The text reads <i>"No rest for the wicked."</i> <br>Ground seems tampered with.;A corpse has risen from the ground.
-Abandoned Village;🧟;Animated Dead;Undead;1;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
-Abandoned Village;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
-Abandoned Village;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;Shines bright on the dead hand.<br>There's a glowing gem on it.;Felt a surge in the chest
+Abandoned Village;🐕;Skinny Dog;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Abandoned Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
 Abandoned Village;🐍;Poisonous Snake;Swift;1;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Abandoned Village;🎯;Practice Target;Container-Triple;0;0;0;0;0;0;Training Spot;There is not a scratch on the target.<br>Seems totally unused.;Spot some clues nearby.
 Abandoned Village;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;There are bones scattered all around.<br>Doesn't look like an accident.;
 Abandoned Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Looks all about ready for battle.<br>The pile of bones won't miss it.;Shot an arrow in the knee
 Abandoned Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but still usable.<br>Perhaps unlocks a secret.;
-Abandoned Village;🕰️;Clock Tower;Container-Locked;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
-Abandoned Village;👒;Strange Hat;Item;0;0;1;0;0;0;Fashion Souls (Not);A radical piece of clothing.<br>Kinda tempting.;Fits like a ...hat?
+Abandoned Village;🪦;Desolate Grave;Container-Triple;0;0;0;0;0;0;Place of Rest;The text reads <i>"No rest for the wicked."</i> <br>Ground seems tampered with.;A corpse has risen from the ground.
+Abandoned Village;🧟;Animated Dead;Undead;1;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
+Abandoned Village;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
+Abandoned Village;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
+Abandoned Village;⛪️;Barricaded Church;Container-Locked;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>Eerie atmosphere is in the air.;
+Abandoned Village;🧤;Strange Glove;Item;0;0;1;0;0;0;Advanced Gear;Improves grip and agility.<br>;Fits like a glove.
 Abandoned Village;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Got both eyes pecked out.
 Abandoned Village;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Finally chance to rest.;
 Abandoned Village;🦉;Curious Owl;Friend;0;0;0;0;1;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
@@ -48,8 +48,8 @@ Abandoned Village;🦌;Frantic Deer;Heavy;2;2;1;0;5;0;Wild Animal;Its majestic a
 Abandoned Village;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
 Abandoned Village;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the water surface.<br>Something sparkles at the bottom.;
 Abandoned Village;🐐;Starved Goat;Standard;1;1;3;0;10;0;Domestic Animal;Would eat anything at this point.<br>Emaciated to the bone.;Devoured by the Starved Goat.
-Abandoned Village;⛪️;Barricaded Church;Container-Triple;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>Eerie atmosphere is in the air.;
-Abandoned Village;🚪;Church Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>As if something was locked inside.;
+Abandoned Village;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
+Abandoned Village;🚪;Tower Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>As if something was locked inside.;
 Abandoned Village;🐻;Undead Grizzly;Boss;4;2;2;0;10;0;Reanimated;There's an axe sticked into its head.<br>Still packs a punch.;Got torn to tiny pieces.
 Abandoned Village;🪓;Bloody Axe;Item;0;1;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Obtained a new weapon.
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
