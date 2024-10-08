@@ -1855,8 +1855,8 @@ function setButton(elementID,text){
 function resetEncounterButtons(){
   setButton('button_attack',"⚔️ Attack");
   setButton('button_block',"🔰 Block");
-  setButton('button_roll',"🌀 Roll");
-  if ((enemyAtk<=0)&&(enemyMgk<=0))  setButton('button_roll',"👣 Leave");
+  setButton('button_roll',"🌀 Dodge");
+  if ((enemyAtk<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))  setButton('button_roll',"👣 Leave");
   setButton('button_cast',"💫 Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
