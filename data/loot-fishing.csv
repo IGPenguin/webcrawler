@@ -10,19 +10,19 @@ Loot;🪱;Drowned Earthworm;Item;0;0;0;0;0;0;Arthropod;Could still be a viable b
 Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;.Someone must be missing it.<br>;
 Loot;🏹;Wet Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Perhaps needs a bit of drying.<br>Otherwise looks good to go.;Shot an arrow in the knee
 Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Looks about ready for battle.<br>The pile of bones won't miss it.;Inflated inside the throat.
-Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Rarity;Covered in rust and dirt.<br>There's a small crack.;
-Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Rarity;Bliding glare reflects off the finish.<br>;
-Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Well worn but still reliable.;
+Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Rarity;Covered in rust and dirt.<br>;
+Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Rarity;Blinding glare reflects off the finish.<br>;
+Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Well worn but looks reliable.<br>;
 Loot;🪓;Steel Axe;Item;0;1;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Obtained a makeshift weapon.
-Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Inconspicuous backup armament.<br>;
+Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
 Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Loot;💎;Diamond;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;1;Precious Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
-Loot;🎗️;Golden Trinket;Item;-1;0;1;0;0;0;Mysterious Artifact;Forcefully draws the eyesight.<br>Almost irresistible.;Got stuck onto the skin.
+Loot;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rare Plant;Usually grings extra luck.<br>;Feels good to have it.
 Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
-Loot;🪞;Soul Mirror;Item;-1;0;0;0;0;1;Mystical Relic;The surface is all scratched.<br>Better not look directly into it.;
-Loot;🃏;Tarot Card;Altar;-1;0;0;0;0;1;The Fool;There are traces of blood on the surface.<br>;
+Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
+Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny;Get blinded by trust.<br>;
+Loot;🃏;Tarot Card — Love;Item;2;0;0;0;-2;0;Destiny;Get seized by romance.<br>;
 Loot;🏺;Amphora;Item;0;0;0;0;0;0;Ancient Relic;Water is splashing inside.<br>;
-Loot;⚱️;Burial Urn;Item;0;0;0;-2;0;0;Ancient Relic;Water is splashing inside.<br>;
-Loot;⚓️;Steel Anchor;Item;0;0;0;0;0;0;Common Junk;There's a blood on the surface.<br>;
-Loot;🪘;Tribal Drum;Item;0;0;0;0;0;0;Musical Instrument;Water is splashing inside.<br>;
+Loot;⚱️;Burial Urn;Item;0;0;0;-2;0;0;Ancient Relic;Water is splashing inside.<br>;Malvolent spirit lurks nearby.
+Loot;⚓️;Steel Anchor;Item;0;0;0;0;0;0;Common Junk;Traces of blood on the surface.<br>;
