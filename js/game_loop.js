@@ -701,7 +701,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (enemyAtk<=0 && enemyType!="Pet"){
             //logPlayerAction(actionString,"Means absolutely no harm.")
             enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
-            playerSta++ //Regain lost stamina
             displayEnemyCannotEffect();
             break;
           }
