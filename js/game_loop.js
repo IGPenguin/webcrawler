@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/07/24"
+var versionCode = "pre-fpm build: 10/08/24"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -620,7 +620,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Consume":
           case "Container-Locked":
           case "Altar":
-            logPlayerAction(actionString,"Left without investigating it.");
+            logPlayerAction(actionString,"Continued towards the next encounter.");
             encounterIndex+=1; //Skip next encounter
             nextEncounter();
             break;
@@ -952,9 +952,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (isSacrifice) {
                 if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
-                  playerHit(0,false);
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false,false);
-                  displayPlayerCannotEffect();
+                  playerHit(0,false);
                 }
                 displayPlayerCannotEffect();
               } else {
@@ -981,10 +980,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
             displayPlayerCannotEffect();
+            playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
             playerHit(0,false);
-            playerHpMax-=1;
-            playerMgkMax+=1;
-            playerMgk+=1;
             animateFlipNextEncounter();
             break;
         }
@@ -1308,9 +1305,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             displayPlayerEffect("🪙");
             playerUseStamina(1);
-            playerHpMax-=1;
-            playerHp-=1
-            playerLck+=3;
+            playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
+            playerHit(0,false);
             animateFlipNextEncounter();
             break;
 
@@ -1584,12 +1580,12 @@ function nextEncounter(animateArea=true){
 }
 
 function animateFlipNextEncounter(){
-  animateUIElement(areaUIElement,"animate__flipOutX","1"); //Uuuu nice!
+  animateUIElement(areaUIElement,"animate__flipOutX","1.5"); //Uuuu nice!
   //toggleUIElement(areaUIElement);
 
   var versusTextUIElement = document.getElementById('id_versus');
   toggleUIElement(versusTextUIElement);
-  animateUIElement(cardUIElement,"animate__flipOutY","1"); //Maybe this will look better?
+  animateUIElement(cardUIElement,"animate__flipOutY","1.5"); //Maybe this will look better?
 
   var animationHandler = function(){
     nextEncounter();
@@ -1672,7 +1668,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
   if (bonusHp != 0) {
     playerHpMax += parseInt(bonusHp);
-    playerHp += parseInt(bonusHp);
+    if (playerHp>playerHpMax) playerHp = playerHpMax
     gainedString += changeSign+bonusHp + " ❤️";
     displayPlayerEffect("✨");
   }
