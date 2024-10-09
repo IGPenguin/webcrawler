@@ -72,7 +72,7 @@ function getCharacterFirstName(){
 }
 
 function getCharacterLastName(){
-  const random_names = ["Hero", "Peasant", "Human", "Humanbeing", "Villain", "Soldier", "Militia", "Mortal", "Guerilla", "Lizard", "Man", "Woman", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  const random_names = ["Hero", "Peasant", "Human", "Scum", "Villain", "Soldier", "Militia", "Mortal", "Guerilla", "Lizard", "Man", "Woman", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 

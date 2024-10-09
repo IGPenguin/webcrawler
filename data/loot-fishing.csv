@@ -7,9 +7,9 @@ Loot;🐚;Abandoned Shell;Item;0;0;0;0;0;0;Calcium Source;The previous inhabitan
 Loot;👞;Old Shoe;Item;0;0;0;0;0;0;Junk;Thoroughly wet right shoe.<br>;
 Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;Shines bright like a diamond.<br>;Felt a surge in the chest
 Loot;🪱;Drowned Earthworm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;.Someone must be missing it.<br>;
+Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Loot;🏹;Wet Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Perhaps needs a bit of drying.<br>Otherwise looks good to go.;Shot an arrow in the knee
-Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Looks about ready for battle.<br>The pile of bones won't miss it.;Inflated inside the throat.
+Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated when reaching the throat.
 Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Rarity;Covered in rust and dirt.<br>;
 Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Rarity;Blinding glare reflects off the finish.<br>;
 Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Well worn but looks reliable.<br>;
@@ -18,7 +18,7 @@ Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
 Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Loot;💎;Diamond;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;1;Precious Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
-Loot;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rare Plant;Usually grings extra luck.<br>;Feels good to have it.
+Loot;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rare Plant;Usually brings extra luck.<br>;Feels good to have it.
 Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny;Get blinded by trust.<br>;
