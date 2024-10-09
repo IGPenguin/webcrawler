@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/08/24"
+var versionCode = "pre-fpm build: 10/09/24"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -67,7 +67,7 @@ function getCharacterName(){
 }
 
 function getCharacterFirstName(){
-  const random_names = ["Nameless", "Indigent", "Disgusting", "Promising","Unknown", "Resolute", "Amnesic", "Worthless", "Downfall", "Tired", "Dirty", "Casual", "Hateful", "Spiteful", "Withering", "Wholesome", "Ambitious", "Reckless", "Curious", "Gloomy"];
+  const random_names = ["Nameless", "Indigent", "Disgusting", "Promising","Unknown", "Resolute", "Amnesic", "Worthless", "Tired", "Dirty", "Casual", "Spiteful", "Withering", "Wholesome", "Ambitious", "Reckless", "Curious", "Mystic"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -97,7 +97,7 @@ function renewPlayer(){ //Default values
   if (playerNumber>1) playerName = getCharacterName();
   playerHpMax=2;
   playerHp = playerHpMax;
-  playerStaMax = 2;
+  playerStaMax = 3;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
   playerMgkMax = 0;
   playerAtk = 1;
@@ -493,6 +493,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Item":
+            isLooting=false;
           case "Consumable":
           case "Trap":
           case "Trap-Roll":
@@ -620,14 +621,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Item": //You'll simply skip ahead
+            isLooting=false;
           case "Consumable":
           case "Checkpoint":
             logPlayerAction(actionString,"Walked away leaving it behind.");
             nextEncounter();
             break;
           case "Fishing":
-            logPlayerAction(actionString,"Walked away missing an opportunity.");
-            encounterIndex+=1;
+            logPlayerAction(actionString,"Walked away from the water body.");
             nextEncounter();
             break;
           case "Container":
@@ -689,6 +690,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Felt like nothing really happened.");
         }
         break;
+
       case 'button_block':
         if (enemyType=="Death"){
           displayPlayerCannotEffect();
@@ -758,6 +760,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             logPlayerAction(actionString,"Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
+            break;
         }
         break;
 
@@ -1173,6 +1176,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerLootString+=" "+enemyEmoji;
             displayEnemyEffect("👋");
             playerChangeStats();
+            isLooting=false;
             break;
 
           case "Small":
@@ -1430,7 +1434,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     } else {
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
-      isLooting=false;
     }
     redraw();
   };
@@ -2069,7 +2072,7 @@ function displayPlayerGainedEffect(){
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
 }
 
-function displayEffect(message,documentElement,time=2.2){
+function displayEffect(message,documentElement,time=2){
   animateUIElement(documentElement,"animate__fadeOut",time,true,message)
 }
 
@@ -2140,7 +2143,7 @@ function registerClickListeners(){
 //Social features
 function generateCharacterShareString(){
   var characterShareString="";
-    characterShareString+="\nCharacter: "+playerName;
+    characterShareString+="<b>\n"+playerName+"</b>";
     characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
@@ -2181,7 +2184,7 @@ function copyAdventureToClipboard(){
 
   //Open in new window
   var legendTab = window.open('about:blank','data:text/plain;charset=utf-8,');
-  legendTab.document.write(adventureLogClipboard.replaceAll("\n","<br>"));
+  legendTab.document.write("<p style=\"background-color:#272727;padding:8px;padding-left:24px;height:100%;margin:-8px;color:"+colorWhite+"\">" + adventureLogClipboard.replaceAll("\n","<br>")+"</p>");
   legendTab.document.close();
 }
 
