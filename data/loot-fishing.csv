@@ -21,8 +21,8 @@ Loot;📘;Wet Book;Item;0;0;0;0;0;1;Precious Artifact;Radiates with magic energy
 Loot;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rare Plant;Usually brings extra luck.<br>;Feels good to have it.
 Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
-Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny;Get blinded by trust.<br>;
-Loot;🃏;Tarot Card — Love;Item;2;0;0;0;-2;0;Destiny;Get seized by romance.<br>;
+Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny;Get blinded by trust.<br>;Got affected by destiny.
+Loot;🃏;Tarot Card — Love;Item;2;0;0;0;-2;0;Destiny;Get seized by romance.<br>;Got affected by destiny.
 Loot;🏺;Amphora;Item;0;0;0;0;0;0;Ancient Relic;Water is splashing inside.<br>;
 Loot;⚱️;Burial Urn;Item;0;0;0;-2;0;0;Ancient Relic;Water is splashing inside.<br>;Malvolent spirit lurks nearby.
 Loot;⚓️;Steel Anchor;Item;0;0;0;0;0;0;Common Junk;Traces of blood on the surface.<br>;
