@@ -292,7 +292,9 @@ function redraw(){
 
   var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp) + emptySymbol.repeat((-1)*(playerHp-playerHpMax));
   playerStatusString += "&nbsp;&nbsp;"
-  playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta) + emptySymbol.repeat(playerStaMax-playerSta);
+
+  playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
+  if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;"
   if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
   playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
@@ -628,7 +630,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Fishing":
-            logPlayerAction(actionString,"Walked away from the water body.");
+            logPlayerAction(actionString,"Continued alongside the shore.");
             nextEncounter();
             break;
           case "Container":

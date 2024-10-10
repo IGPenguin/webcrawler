@@ -27,11 +27,11 @@ Forsaken Village;🍖;Fleshy Bone;Consumable;0;0;0;0;0;0;Questionable Food;Could
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
 Forsaken Village;🐍;Poisonous Snake;Swift;1;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
+Forsaken Village;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;3;0;2;2;1;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;1;0;2;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🪤;Animal Trap;Container-Triple;0;0;0;0;0;0;Trap;Something is likely captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Depriving Fairyland;🦝;Velvet Bandit;Swift;2;1;2;0;10;0;Infected Beast;Kinda cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
@@ -68,12 +68,13 @@ Somber Backwoods;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creatur
 Somber Backwoods;🌾;Overgrown Reeds;Container;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
 Somber Backwoods;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Opportunity;Smells absolutely terrible.<br>;Fished out something.
 Somber Backwoods;🐗;Unstoppable Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
-Somber Backwoods;🐗;Warthog Corpse;Container-Triple;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
+Somber Backwoods;🐗;Beast Corpse;Container-Triple;0;0;0;0;0;0;Dead Animal;Massive body laying on the ground.<br>;Cut its skin open.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat.
 Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Organ;Disgusting sight .<br>;Got sick of the raw meat.
 Somber Backwoods;🪱;Wiggling Parasite;Small;1;2;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>;Took control over the body.
 Somber Backwoods;🌊;Swamp of Sorrows;Fishing;0;0;0;0;0;0;Impassable Terrain;Murky water bubbles all around.<br>;Fished out something.
 Somber Backwoods;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled into the darkness.
+Somber Backwoods;🥀;Tainted Rose;Trap-Roll;0;2;0;0;0;0;Forest Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin.
 Bleak Necropolis;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Bleak Necropolis;🎯;Practice Target;Container-Triple;0;0;0;0;0;0;Training Spot;There is not a scratch on the target.<br>Seems totally unused.;Spot some clues nearby.
 Bleak Necropolis;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;There are bones scattered all around.<br>Doesn't look like an accident.;
@@ -83,7 +84,7 @@ Bleak Necropolis;🪦;Desolate Grave;Container-Triple;0;0;0;0;0;0;Place of Rest;
 Bleak Necropolis;🧟;Animated Dead;Undead;1;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
 Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
-Bleak Necropolis;⛪️;Barricaded Church;Container-Locked;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>Eerie atmosphere is in the air.;
+Bleak Necropolis;⛪️;Barred Church;Container-Locked;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>Eerie atmosphere is in the air.;
 Bleak Necropolis;🧤;Strange Glove;Item;0;0;1;0;0;0;Advanced Gear;Improves grip and agility.<br>;Fits like a glove.
 Bleak Necropolis;🐦‍⬛;Worried Crow;Swift;1;1;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Got both eyes pecked out.
 Bleak Necropolis;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
