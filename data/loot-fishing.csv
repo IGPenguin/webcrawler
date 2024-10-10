@@ -5,11 +5,11 @@ Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straigh
 Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Could be of service.;Took it with themselves just in case.
 Loot;🐚;Abandoned Shell;Item;0;0;0;0;0;0;Calcium Source;The previous inhabitant had moved away.<br>;
 Loot;👞;Old Shoe;Item;0;0;0;0;0;0;Junk;Thoroughly wet right shoe.<br>;
-Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;Shines bright like a diamond.<br>;Felt a surge in the chest
+Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;Shines bright like a diamond.<br>;Felt a surge in the chest.
 Loot;🪱;Drowned Earthworm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Loot;🏹;Wet Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Perhaps needs a bit of drying.<br>Otherwise looks good to go.;Shot an arrow in the knee
-Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated when reaching the throat.
+Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated on reaching the throat.
 Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Rarity;Covered in rust and dirt.<br>;
 Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Rarity;Blinding glare reflects off the finish.<br>;
 Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Well worn but looks reliable.<br>;
@@ -25,4 +25,5 @@ Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny;Get blinded by trust.<br
 Loot;🃏;Tarot Card — Love;Item;2;0;0;0;-2;0;Destiny;Get seized by romance.<br>;Got affected by destiny.
 Loot;🏺;Amphora;Item;0;0;0;0;0;0;Ancient Relic;Water is splashing inside.<br>;
 Loot;⚱️;Burial Urn;Item;0;0;0;-2;0;0;Ancient Relic;Water is splashing inside.<br>;Malvolent spirit lurks nearby.
-Loot;⚓️;Steel Anchor;Item;0;0;0;0;0;0;Common Junk;Traces of blood on the surface.<br>;
+Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Common Junk;Traces of blood on the surface.<br>;
+Loot;🎀;Silly Bowtie;Item;0;0;1;0;0;0;Cringe Accessory;Should be <b>+1 🟢 Energy</b>.<br>;
