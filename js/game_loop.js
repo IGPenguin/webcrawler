@@ -62,21 +62,52 @@ var versusTextUIElement;
 var buttonsContainer;
 
 //Player stats init
-function getCharacterName(){
-  return getCharacterFirstName() +" "+getCharacterLastName();
-}
-
-function getCharacterFirstName(){
-  const random_names = ["Nameless", "Indigent", "Disgusting", "Promising","Unknown", "Resolute", "Amnesic", "Worthless", "Tired", "Dirty", "Casual", "Spiteful", "Withering", "Wholesome", "Ambitious", "Reckless", "Curious", "Mystic"];
+function getFirstName(){
+  const random_names = ["Nameless", "Hero", "Peasant", "Human", "Scum", "Villain", "Soldier", "Militia", "Mortal", "Guerilla", "Lizard", "Casual", "Mister", "Woman", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-function getCharacterLastName(){
-  const random_names = ["Hero", "Peasant", "Human", "Scum", "Villain", "Soldier", "Militia", "Mortal", "Guerilla", "Lizard", "Man", "Woman", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+function getVitalName(name=playerName){
+  const random_names = ["Resilient "+name,"Strong "+name, "Vigorous "+name, "Muscular "+name, "Huge "+name, "Giant "+name, "Massive "+name, "Healthy "+name,name+" the Beast", name+" the Mighty"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-var playerName = getCharacterName();
+function getSwiftName(name=playerName){
+  const random_names = ["Swift "+name, "Speedy "+name, "Fast "+name, "Athletic "+name, "Rushing "+name, "Reckless "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getFaithName(name=playerName){
+  const random_names = ["Holy "+name, "Promising "+name, "Humble "+name, name+" the Believer"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getSorceryName(name=playerName){
+  const random_names = ["Mystic "+name, name+" the Magician"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getCleverName(name=playerName){
+  const random_names = ["Intelligent "+name,"Resolute "+name, "Overthinking "+name, "Clever "+name, "Ambitious "+name, "Curious "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getHatredName(name=playerName){
+  const random_names = ["Mischievous "+name,"Bloody "+name, name+" the Warlock", "Spiteful "+name, "Withering "+name, "Ruthless "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getLuckyName(name=playerName){
+  const random_names = ["Lucky "+name, "Indigent "+name,"Wholesome "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getGreedyName(name=playerName){
+  const random_names = ["Disgusting "+name, "Worthless "+name, "Dirty "+name, "Greedy "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+var playerName = getFirstName();
 var playerNumber = 1; //Increments on death if at least once saved
 var playerLootString;
 var playerPartyString;
@@ -94,7 +125,7 @@ var playerRested = false;
 
 renewPlayer();
 function renewPlayer(){ //Default values
-  if (playerNumber>1) playerName = getCharacterName();
+  playerName = getFirstName();
   playerHpMax=2;
   playerHp = playerHpMax;
   playerStaMax = 3;
@@ -562,7 +593,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Felt becoming a bit stronger +1 ❤️");
             displayPlayerGainedEffect();
             displayPlayerEffect("❤️");
-            playerName="Resilient "+playerName;
+            playerName=getVitalName();
             playerHpMax+=1;
             playerHp+=1;
             animateFlipNextEncounter();
@@ -683,7 +714,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Felt the body becoming faster +1 🟢");
             displayPlayerGainedEffect();
             displayPlayerEffect("💨");
-            playerName="Hasty "+playerName;
+            playerName=getSwiftName();
             playerStaMax+=1;
             playerSta+=1;
             animateFlipNextEncounter();
@@ -704,7 +735,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           logPlayerAction(actionString,"Granted gods blessing +1 🍀");
           displayPlayerGainedEffect();
           displayPlayerEffect("🙏");
-          playerName=playerName+" the Believer";
+          playerName=getFaithName();
           playerLck+=1;
           animateFlipNextEncounter();
           break;
@@ -777,7 +808,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Chose magic +1 🔵 over agility -1 🟢");
             displayPlayerCannotEffect();
             displayPlayerEffect("✨");
-            playerName=playerName+" the Magician";
+            playerName=getSorceryName();
             playerMgkMax+=1;
             playerMgk+=1;
             playerStaMax-=1;
@@ -867,7 +898,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Felt getting somewhat wiser +1 🧠");
               displayPlayerGainedEffect();
               displayPlayerEffect("🧠");
-              playerName="Intelligent "+playerName;
+              playerName=getCleverName();
               playerInt+=1;
               animateFlipNextEncounter();
               break;
@@ -1003,7 +1034,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
             displayPlayerCannotEffect();
-            playerName="Ruthless "+playerName;
+            playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
             playerHit(0,false);
             animateFlipNextEncounter();
@@ -1241,7 +1272,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Chose luck +2 🍀 over intellect -1 🧠");
             displayPlayerCannotEffect();
             displayPlayerEffect("🍀");
-            playerName="Lucky "+playerName;
+            playerName=getLuckyName();
             playerLck+=2;
             playerInt-=1;
             animateFlipNextEncounter();
@@ -1332,7 +1363,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             displayPlayerEffect("🪙");
             playerUseStamina(1);
-            playerName="Greedy "+playerName;
+            playerName=getGreedyName();
             playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
             playerHit(0,false);
             animateFlipNextEncounter();
