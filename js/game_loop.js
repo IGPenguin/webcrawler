@@ -1250,9 +1250,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
+            playerMgk=playerMgkMax;
             checkpointEncounter=encounterIndex;
             animateFlipNextEncounter();
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;Flame Embraced&nbsp;");
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;⏄&nbsp;");
             break;
           default:
             logPlayerAction(actionString,"Touched it, nothing happened.");
@@ -1765,10 +1766,11 @@ function playerConsumed(){
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
-    var tooFullStaLost = 2;
-    consumedString="Lost energy due to overeating -"+tooFullStaLost+" 🟢";
-    animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
-    playerUseStamina(tooFullStaLost);
+    playerSta+=1; //Gain bonus stamina
+    consumedString="Gained temporary energy rush +1 🟢";
+    //consumedString="Actively digesting the food -1 🟢";
+    //animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
+    //playerUseStamina(1);
   }
   logPlayerAction(actionString,consumedString);
 }
@@ -2020,7 +2022,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="💾 Save";
+      document.getElementById('button_grab').innerHTML="🤲 Embrace";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
