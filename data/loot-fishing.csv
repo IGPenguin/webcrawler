@@ -13,7 +13,8 @@ Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look pa
 Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Rarity;Covered in rust and dirt.<br>;
 Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Rarity;Blinding glare reflects off the finish.<br>;
 Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Well worn but looks reliable.<br>;
-Loot;🪓;Steel Axe;Item;0;1;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Obtained a makeshift weapon.
+Loot;🪓;Steel Axe;Item;0;1;0;0;0;0;Sharp Tool;Definitely could be of service.;Obtained a makeshift weapon.
+Loot;🪚;Rusty Saw;Item;0;1;0;0;0;0;Junk;Battle-proven makeshift weapon.<br>;Obtained a makeshift weapon.
 Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
 Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Strange Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Loot;📘;Wet Book;Item;0;0;0;0;0;1;Precious Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.

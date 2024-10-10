@@ -20,17 +20,18 @@ Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready f
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
 Forsaken Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>But otherwise looks abandoned.;Kicked the door open.
-Forsaken Village;🔪;Rusty Knife;Item;1;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
+Forsaken Village;🔪;Rusty Knife;Item;0;1;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
 Forsaken Village;🐀;Dire Rat;Swift;1;1;1;0;10;0;Creature;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;1;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
 Forsaken Village;🍖;Fleshy Bone;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>No other clues around.;That was just disgusting.
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
-Forsaken Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
+Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
 Forsaken Village;🐍;Poisonous Snake;Swift;1;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
-Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hidden among them.;
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;3;0;2;1;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
+Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;3;0;2;2;1;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🪤;Animal Trap;Container-Triple;0;0;0;0;0;0;Trap;Something is likely captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Depriving Fairyland;🦝;Velvet Bandit;Swift;2;1;2;0;10;0;Infected Beast;Kinda cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
@@ -95,4 +96,6 @@ Bleak Necropolis;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Build
 Bleak Necropolis;🚪;Tower Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>As if something was locked inside.;
 Bleak Necropolis;🐻;Undead Grizzly;Boss;4;2;2;0;10;0;Reanimated;There's an axe sticked into its head.<br>Still packs a punch.;Got torn to tiny pieces.
 Bleak Necropolis;🪓;Bloody Axe;Item;0;1;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Obtained a new weapon.
-Bleak Necropolis;👑;King's Crown;Death;1;1;0;0;0;1;Endgame;This is where it ends for now.<br>Tweet this to appear in credits!;
+Bleak Necropolis;🕋;Mystery Box;Container-Locked;0;0;0;0;0;0;Container;Seems locked tight.;
+Bleak Necropolis;👑;King's Crown;Death;0;0;0;0;0;0;Endgame;This is the happy ending!<br>Tweet this to appear in credits!;
+Bleak Necropolis;👾;Stack Overflow;Death;0;0;0;0;0;0;Endgame;This game exists thanks to stackoverflow.com<br>Tweet this to appear in credits!;
