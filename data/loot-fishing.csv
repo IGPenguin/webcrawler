@@ -2,7 +2,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
-Loot;🔪;Rusty Knife;Item;0;1;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Could be of service.;Took it with themselves just in case.
+Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Could be of service.;Took it with themselves just in case.
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant had moved away.<br>;Gained the powers of the sea.
 Loot;👞;Old Shoe;Item;0;0;0;0;0;0;Trash;Thoroughly wet right shoe.<br>;
 Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>;Felt a surge in the chest.
@@ -20,13 +20,13 @@ Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
 Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
 Loot;📘;Wet Book;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
-Loot;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
-Loot;🧲;Unlucky Horseshoe;Item;-1;0;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
+Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
+Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
 Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny;Get blinded by trust.<br>;Got affected by destiny.
 Loot;🃏;Tarot Card — Love;Item;2;0;0;0;-2;0;Destiny;Get seized by romance.<br>;Got affected by destiny.
-Loot;🏺;Amphora;Item;0;0;0;0;0;0;Ancient Container;Water is splashing inside.<br>;
-Loot;⚱️;Burial Urn;Item;0;0;0;-2;0;0;Ancient Relic;Water is splashing inside.<br>;Malvolent spirit lurks nearby.
+Loot;🏺;Painted Amphora;Item;0;0;0;0;1;0;Ancient Container;Water is splashing inside.<br>;
+Loot;⚱️;Burial Urn;Item;0;0;0;-2;0;0;Ancient Relic;Water is splashing inside.<br>;Malvolent energy escaped the urn
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;No way this would come in handy.<br>;
 Loot;🎀;Silly Bowtie;Item;0;0;1;0;0;0;Cringe Accessory;Should be <b>+1 🟢 Energy</b>.<br>;

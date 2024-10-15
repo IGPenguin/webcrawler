@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/09/24"
-var initialEncounterOverride=0;
+var versionCode = "pre-fpm build: 10/15/24"
+var initialEncounterOverride=16;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -54,6 +54,7 @@ var areaUIElement;
 var nameUIElement;
 var cardUIElement;
 var emojiUIElement;
+var emojiWrapperUIElement;
 var enemyInfoUIElement;
 var playerInfoUIElement;
 var toolbarCardUIElement;
@@ -63,7 +64,7 @@ var buttonsContainer;
 
 //Player stats init
 function getFirstName(){
-  const random_names = ["Nameless", "Hero", "Peasant", "Human", "Scum", "Villain", "Soldier", "Militia", "Mortal", "Guerilla", "Lizard", "Casual", "Mister", "Woman", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  const random_names = ["Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizard-person", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -128,7 +129,7 @@ function renewPlayer(){ //Default values
   playerName = getFirstName();
   playerHpMax=2;
   playerHp = playerHpMax;
-  playerStaMax = 3;
+  playerStaMax = 2;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
   playerMgkMax = 0;
   playerAtk = 1;
@@ -350,6 +351,7 @@ function redraw(){
   cardUIElement = document.getElementById('id_card');
   enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
+  emojiWrapperUIElement = document.getElementById('id_emoji_wrapper');
   enemyTeamUIElement = document.getElementById('id_team');
 
   emojiUIElement.innerHTML = enemyEmoji;
@@ -555,7 +557,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"Attacked and spooked them -1 🟢");
+            logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
             displayEnemyEffect("〽️");
             nextEncounter();
             break;
@@ -846,8 +848,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
             }
-            break;
-
           case "Friend": //They'll be hit (above) and then get angry //TODO: Check this, they might not get hit
             logPlayerAction(actionString,"The spell turned them adversary -1 🔵");
             displayEnemyEffect("‼️");
@@ -1084,8 +1084,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case "Friend": //They'll boost your stats
-          playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
-          displayPlayerEffect("💬");
+          if (playerMgk >= enemyMgk){
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+          } else {
+            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
+            displayPlayerCannotEffect();
+          }
           break;
 
         case "Dream": //Likely never happens, not sure if I should fix that
@@ -1232,7 +1237,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
             playerConsumed();
             displayEnemyEffect("🍽");
-            if (playerHp>0) animateFlipNextEncounter();
+            if (playerHp>0) nextEncounter();
+            isLooting=false;
             break;
 
           case "Fishing":
@@ -1342,8 +1348,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            playerChangeStats();
-            displayPlayerEffect("💬");
+            if (playerInt >= enemyInt){
+              playerChangeStats();
+              displayPlayerEffect("💬");
+            } else {
+              logPlayerAction(actionString,"Unable to initiate a conversation.");
+              displayPlayerCannotEffect();
+            }
+
             break;
 
           case "Death":
@@ -1501,6 +1513,7 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage,magicType=false){
+  animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
   if (magicType==true) {actionString="🪄 "; hitMsg="Scorched them with a spell -"+damage+" 💔";}
 
@@ -1520,8 +1533,6 @@ function enemyHit(damage,magicType=false){
     enemyHpLost=enemyHp; //Negate overkill damage
     logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
     animateFlipNextEncounter();
-  } else {
-    animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
 }
 
@@ -1725,7 +1736,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   if (bonusHp != 0) {
-    if (bonusHp<0) {changeSign=" "} else {changeSign=" +";}
+    if (bonusHp<0) {changeSign=" "} else {changeSign=" +"; playerHp+=bonusHp;}
     playerHpMax += parseInt(bonusHp);
     if (playerHp>playerHpMax) playerHp = playerHpMax
     gainedString += changeSign+bonusHp + " ❤️";
@@ -1740,9 +1751,8 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   if (bonusSta != 0){
-    if (bonusSta<0) {changeSign=" "} else {changeSign=" +";}
+    if (bonusSta<0) {changeSign=" "} else {changeSign=" +"; playerSta += parseInt(bonusSta);}
     playerStaMax += parseInt(bonusSta);
-    playerSta += parseInt(bonusSta);
     gainedString += changeSign+bonusSta + " 🟢";
     displayPlayerEffect("✨");
   }
@@ -1800,7 +1810,7 @@ function playerConsumed(){
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
     playerSta+=1; //Gain bonus stamina
-    consumedString="Gained temporary energy rush +1 🟢";
+    consumedString="Gained temporary energy bonus +1 🟢";
     //consumedString="Actively digesting the food -1 🟢";
     //animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
     //playerUseStamina(1);
@@ -2055,7 +2065,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="🤲 Embrace";
+      document.getElementById('button_grab').innerHTML="💾 Save";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
@@ -2125,7 +2135,11 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
 documentElement.classList.remove(animation);
 void documentElement.offsetWidth; // trigger a DOM reflow
 
-  if (animateInfinite) documentElement.classList.add("animate__infinite");
+  if (animateInfinite) {
+    documentElement.classList.add("animate__infinite");
+    } else {
+      documentElement.classList.remove("animate__infinite");
+    }
   documentElement.style.setProperty("--animate-duration","0.0001s");
   //Wow, this is nice - https://animate.style
   documentElement.classList.add("animate__animated",animation);

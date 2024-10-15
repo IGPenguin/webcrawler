@@ -54,8 +54,9 @@ layout: default
                               padding-top:7px;
                               margin-top:0px;
                               background-color:#272727;">
-
+<div id = "id_emoji_wrapper">
 <h1 id = "id_emoji" style="position:relative; z-index:3"/>
+</div>
 </div>
 </div>
 

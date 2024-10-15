@@ -20,14 +20,14 @@ Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready f
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
 Forsaken Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>But otherwise looks abandoned.;Kicked the door open.
-Forsaken Village;🔪;Rusty Knife;Item;0;1;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
+Forsaken Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
 Forsaken Village;🐀;Dire Rat;Swift;1;1;1;0;10;0;Creature;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;1;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
 Forsaken Village;🍖;Fleshy Bone;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>No other clues around.;That was just disgusting.
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
 Forsaken Village;🐍;Poisonous Snake;Swift;1;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Forsaken Village;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
+Forsaken Village;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
@@ -92,7 +92,7 @@ Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying am
 Bleak Necropolis;📘;Book of Spells;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
 Bleak Necropolis;🧙;Necromancer;Recruit;2;0;1;0;1;1;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Bleak Necropolis;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Finally chance to rest.;
-Bleak Necropolis;🦉;Night Eye;Friend;0;0;0;0;1;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
+Bleak Necropolis;🦉;Night Eye;Friend;0;0;1;0;0;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
 Bleak Necropolis;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
 Bleak Necropolis;🚪;Tower Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>As if something was locked inside.;
 Bleak Necropolis;🐻;Undead Grizzly;Boss;4;2;2;0;10;0;Reanimated;There's an axe sticked into its head.<br>Still packs a punch.;Got torn to tiny pieces.
