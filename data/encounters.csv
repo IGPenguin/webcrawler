@@ -6,7 +6,7 @@ Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>
 Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a perk</b> to shape your character.<br>Some may come with a sacrifice.;
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Awakening;<b>👣  Walk</b> to explore the surroundings.<br>;
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Nothing of particular interest.<br>Just a bunch of rocks.;Lifted the nearest boulder.
-Forsaken Village;🪱;Confused Earthworm;Small;1;0;1;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;Contracted a deadly disease.
+Forsaken Village;🪱;Confused Earthworm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;Contracted a deadly disease.
 Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for the eyes.<br>Quickly cover before the impact.;Got both eyes pecked out.
 Forsaken Village;🏚️;Ruined House;Container-Triple;0;0;0;0;0;0;Deserted Building;Appears being neglected long time.<br>Strange noises is coming out.;Entered through the window.
 Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>Coming from all directions.;Suffered mental damage.
@@ -15,7 +15,7 @@ Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually 
 Forsaken Village;🪿;Angry Goose;Standard;2;1;1;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 Forsaken Village;🌳;Apple Tree;Container-Double;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
-Forsaken Village;🪱;Fruit Worm;Small;1;0;1;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
+Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready for ramming.<br>Better dodge the horns.;
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
@@ -26,41 +26,41 @@ Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;1;1;Ritual Place;There's a 
 Forsaken Village;🍖;Fleshy Bone;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>No other clues around.;That was just disgusting.
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
-Forsaken Village;🐍;Poisonous Snake;Swift;1;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
-Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;1;0;2;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
+Depriving Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely embrace.<br>;Shared a lasting moment.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🪤;Animal Trap;Container-Triple;0;0;0;0;0;0;Trap;Something is likely captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Depriving Fairyland;🦝;Velvet Bandit;Swift;2;1;2;0;10;0;Infected Beast;Kinda cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
 Depriving Fairyland;🧀;Spoiled Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;
 Depriving Fairyland;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of the spoiled cheese.<br>Likely a good fishing bait.;Contracted a deadly disease.
 Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
-Depriving Fairyland;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
-Depriving Fairyland;🦆;Stubborn Drake;Standard;1;1;3;0;2;0;Beast;Uhh. Peace was an option?<br>;Honked to death.
-Depriving Fairyland;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the water surface.<br>Something sparkles at the bottom.;
-Depriving Fairyland;🐐;Wandering Goat;Swift;1;1;3;0;10;0;Wild Beast;Would eat anything at this point.<br>Emaciated to the bone.;Devoured by the Starved Goat.
+Depriving Fairyland;🌿;Tall Weeds;Container-Double;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
+Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented.
+Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange words are filling the mind.<br>;Suffered changes.
+Depriving Fairyland;🐐;Screaming Goat;Standard;2;1;3;0;10;0;Wild Beast;Producing various unpleasant noises.<br>;Devoured to the bone.
 Depriving Fairyland;🌳;Dark Grove;Container;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;A knife was stuck into it.
 Depriving Fairyland;🔪;Twisted Knife;Item;1;0;0;0;0;0;Artifact;The sacrifical blade demands blood.<br>;Got a good grip on it.
 Depriving Fairyland;🏛️;Ancient Temple;Container-Triple;-1;0;1;0;1;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
 Depriving Fairyland;🤺;Mystic Adversary;Swift;1;2;2;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;1;0;1;0;Ritual Place;There's some blood on the floor.<br>;Embraced ancient gods.
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
-Depriving Fairyland;🪻;Lavender Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
-Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for lovely embrace.<br>;Shared a lasting moment together.
+Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;1;0;2;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
 Depriving Fairyland;🧱;Brick Ruins;Container;0;0;0;0;0;0;Material;Long abandoned ruins all around.<br>Nothing of particular interest.;Lifted the nearest brick.
 Depriving Fairyland;🪱;Tiny Earthworm;Small;1;0;0;0;10;0;Arthropod;Seems angry of the disturbance.<br>Handy fishing bait.;Contracted a deadly disease
-Depriving Fairyland;🌿;Tall Weeds;Container-Double;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
-Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
-Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange words are filling the mind.<br>;Suffered permanent changes.
+Depriving Fairyland;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
+Depriving Fairyland;🦆;Stubborn Drake;Swift;1;1;3;0;2;0;Beast;Uhh. Peace was an option?<br>;Honked to death.
+Depriving Fairyland;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the water surface.<br>Something sparkles at the bottom.;
 Somber Backwoods;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Somber Backwoods;🦨;Forest Skunk;Swift;2;1;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
 Somber Backwoods;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
-Somber Backwoods;🍪;Wheat Cookie;Consumable;0;0;0;0;0;0;Fancy Food;Smells absolutely amazing.<br>Likely packs a burst of energy.;
-Somber Backwoods;🛖;Simple Hut;Container-Triple;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>No one seems to be around.;
-Somber Backwoods;💀;Pile of Skulls;Prop;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>Better stay alert.;
+Somber Backwoods;🍪;Wheat Cookie;Consumable;0;0;0;0;0;0;Fancy Food;Smells absolutely amazing.<br>;
+Somber Backwoods;🛖;Simple Hut;Container-Triple;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>
+Somber Backwoods;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>;
 Somber Backwoods;🧌;Old Troll;Recruit;2;0;1;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
 Somber Backwoods;🎗️;Golden Trinket;Item;-1;0;0;0;0;1;Artifact;Forcefully draws the eyesight.<br>;Stuck deep into the skin.
 Somber Backwoods;🍯;Sweet Honeypot;Container-Double;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
@@ -68,7 +68,7 @@ Somber Backwoods;🐝;Swarm of Bees;Swift;2;1;2;3;10;0;Pesky Insects;The bees in
 Somber Backwoods;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 Somber Backwoods;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Somber Backwoods;🌾;Overgrown Reeds;Container;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
-Somber Backwoods;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Opportunity;Smells absolutely terrible.<br>;Fished out something.
+Somber Backwoods;🪈;Ratcatcher Flute;Item;0;0;0;-2;0;0;Malvolent Instrument;Decorated magical equipment.<br>;Grabbing it seems bad luck.
 Somber Backwoods;🐗;Unstoppable Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
 Somber Backwoods;🐗;Beast Corpse;Container-Triple;0;0;0;0;0;0;Dead Animal;Massive body laying on the ground.<br>;Cut its skin open.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat.

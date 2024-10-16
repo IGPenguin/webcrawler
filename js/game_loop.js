@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/15/24"
+var versionCode = "pre-fpm build: 10/16/24"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -849,7 +849,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAttackOrRest();
             }
             break;
-            
+
           case "Friend": //They'll be hit (above) and then get angry //TODO: Check this, they might not get hit
             logPlayerAction(actionString,"The spell turned them adversary -1 🔵");
             displayEnemyEffect("‼️");
@@ -1294,7 +1294,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerMgk=playerMgkMax;
             checkpointEncounter=encounterIndex;
             animateFlipNextEncounter();
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;⏄&nbsp;");
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;&nbsp;Flame Embraced&nbsp;⏀&nbsp;");
             break;
           default:
             logPlayerAction(actionString,"Touched it, nothing happened.");
