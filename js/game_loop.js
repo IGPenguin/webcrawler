@@ -676,6 +676,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container":
           case "Container-Consume":
           case "Container-Locked":
+          case "Container-Friend":
           case "Altar":
             logPlayerAction(actionString,"Continued towards the next encounter.");
             encounterIndex+=1; //Skip next encounter
@@ -1259,6 +1260,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Container-Friend":
+            logPlayerAction(actionString,"Touch not appreciated, they left.");
+            encounterIndex+=1; //Skip next encounter
+            displayEnemyEffect("✋");
+            nextEncounter();
+            break;
           case "Friend":
             logPlayerAction(actionString,"Touch not appreciated, they left.");
             displayEnemyEffect("✋");

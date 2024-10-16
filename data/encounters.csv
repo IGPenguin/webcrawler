@@ -65,7 +65,7 @@ Somber Backwoods;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Adventur
 Somber Backwoods;🧌;Old Troll;Recruit;3;0;1;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
 Somber Backwoods;🎗️;Golden Trinket;Item;-1;0;0;0;0;1;Artifact;Forcefully draws the eyesight.<br>;Stuck deep into the skin.
 Somber Backwoods;🍯;Sweet Honeypot;Container-Double;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
-Somber Backwoods;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run;
+Somber Backwoods;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run.;
 Somber Backwoods;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 Somber Backwoods;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Somber Backwoods;🌾;Overgrown Reeds;Container;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
@@ -73,7 +73,7 @@ Somber Backwoods;🪈;Ratcatcher Flute;Item;0;0;0;-2;0;0;Malvolent Instrument;De
 Somber Backwoods;🐗;Unstoppable Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
 Somber Backwoods;🐗;Beast Corpse;Container-Triple;0;0;0;0;0;0;Dead Animal;Massive body laying on the ground.<br>;Cut its skin open.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat.
-Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Organ;Disgusting on sight.<br>;Got sick of the raw meat.
+Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Organ;Disgusting on sight.<br>;Dug out a hefty worm.
 Somber Backwoods;🪱;Wiggling Parasite;Small;1;2;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>;Took control over the body.
 Somber Backwoods;🌻;Sunflower Growth;Container-Double;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
 Somber Backwoods;🧞;Genie;Container-Friend;0;0;0;0;2;0;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
