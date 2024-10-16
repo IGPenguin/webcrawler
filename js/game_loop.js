@@ -750,7 +750,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           animateFlipNextEncounter();
           break;
         }
-        if (!playerUseStamina(1,"Too tired to do that.")){
+        if (!playerUseStamina(1,"Not enough energy for that.")){
             break;
           }
 
@@ -1193,7 +1193,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Swift": //Player can only kick tired swift enemies
-          case "Demon":
             if (enemySta-enemyStaLost == 0){
               enemyKicked();
               break;
@@ -1282,6 +1281,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
+          case "Demon":
           case "Spirit":
             logPlayerAction(actionString,"Hands passed right through them.");
             displayEnemyEffect("✋");
