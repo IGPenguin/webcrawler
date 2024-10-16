@@ -4,6 +4,7 @@ Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straig
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
 Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Could be of service.;Took it with themselves just in case.
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant had moved away.<br>;Gained the powers of the sea.
+Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinekt;Specially crafted for survival.<br>;Gained the powers of the forest.
 Loot;👞;Old Shoe;Item;0;0;0;0;0;0;Trash;Thoroughly wet right shoe.<br>;
 Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>;Felt a surge in the chest.
 Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Shines bright like a diamond.<br>;Felt a surge in the chest.
@@ -17,8 +18,8 @@ Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks reliable.<br>;
 Loot;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.;Obtained a makeshift weapon.
 Loot;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Battle-proven makeshift weapon.<br>;Obtained a makeshift weapon.
 Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
-Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
-Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>A bit warm on touch.;
+Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
+Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.

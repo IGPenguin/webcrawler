@@ -1157,7 +1157,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"Unable to initiate a bond ?? 🧠");
+                logPlayerAction(actionString,"Unable to initiate a bond <? 🧠");
                 nextEncounter();
                 break;
               }
@@ -1324,7 +1324,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerMgk=playerMgkMax;
             checkpointEncounter=encounterIndex;
             animateFlipNextEncounter();
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;&nbsp;Flame Embraced&nbsp;⏀&nbsp;");
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
             break;
           default:
             logPlayerAction(actionString,"Touched it, nothing happened.");
@@ -1384,7 +1384,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerChangeStats();
               displayPlayerEffect("💬");
             } else {
-              logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
+              logPlayerAction(actionString,"Unable to initiate a conversation <? 🧠");
               displayPlayerCannotEffect();
             }
             break;
@@ -1399,7 +1399,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,openMessage);
               nextEncounter();
             } else {
-             logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
+             logPlayerAction(actionString,"Unable to initiate a conversation <? 🧠");
              displayPlayerCannotEffect();
            }
            break;

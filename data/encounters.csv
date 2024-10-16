@@ -40,13 +40,13 @@ Depriving Fairyland;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of th
 Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
 Depriving Fairyland;🌿;Tall Weeds;Container-Double;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a strange growth.
 Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented in time.
-Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange thoughts filling the mind.<br>;Suffered permanent changes.
-Depriving Fairyland;🐐;Screaming Goat;Standard;2;1;3;0;10;0;Wild Beast;Producing various unpleasant noises.<br>;Devoured to the bone.
+Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
+Depriving Fairyland;🐐;Screaming Goat;Standard;1;1;3;0;10;0;Wild Beast;Producing various unpleasant noises.<br>;Devoured to the bone.
 Depriving Fairyland;🌳;Dark Grove;Container-Double;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;A knife was stuck into it.
 Depriving Fairyland;🔪;Twisted Knife;Item;1;0;0;0;0;0;Artifact;The sacrifical blade demands blood.<br>;Got a good grip on it.
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;2;0;0;0;Ritual Remnants;Escaped from the trunk insides.<br>;No mercy for the wicked.
 Depriving Fairyland;🏛️;Ancient Temple;Container-Triple;-1;0;1;0;1;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
-Depriving Fairyland;🤺;Mystic Adversary;Swift;1;2;2;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
+Depriving Fairyland;🤺;Mystic Adversary;Swift;1;2;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;1;0;1;0;Ritual Place;There's some blood on the floor.<br>;Embraced ancient gods.
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
@@ -62,10 +62,10 @@ Somber Backwoods;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must
 Somber Backwoods;🍪;Wheat Cookie;Consumable;0;0;0;0;0;0;Fancy Food;Smells absolutely amazing.<br>;
 Somber Backwoods;🛖;Simple Hut;Container-Triple;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>;
 Somber Backwoods;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>;
-Somber Backwoods;🧌;Old Troll;Recruit;2;0;1;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
+Somber Backwoods;🧌;Old Troll;Recruit;3;0;1;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
 Somber Backwoods;🎗️;Golden Trinket;Item;-1;0;0;0;0;1;Artifact;Forcefully draws the eyesight.<br>;Stuck deep into the skin.
 Somber Backwoods;🍯;Sweet Honeypot;Container-Double;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
-Somber Backwoods;🐝;Swarm of Bees;Swift;2;1;2;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run;
+Somber Backwoods;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run;
 Somber Backwoods;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 Somber Backwoods;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Somber Backwoods;🌾;Overgrown Reeds;Container;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
@@ -78,6 +78,8 @@ Somber Backwoods;🪱;Wiggling Parasite;Small;1;2;1;0;10;0;Harmless Insect;Seems
 Somber Backwoods;🌻;Sunflower Growth;Container-Double;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
 Somber Backwoods;🧞;Genie;Container-Friend;0;0;0;0;2;0;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
 Somber Backwoods;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
+Somber Backwoods;🌊;Swamp Shore;Prop;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
+Somber Backwoods;🦟;Oversize Mosqito;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Somber Backwoods;🌊;Swamp of Sorrows;Fishing;0;0;0;0;0;0;Impassable Terrain;Murky water bubbles all around.<br>;Fished out something.
 Somber Backwoods;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled into the darkness.
 Somber Backwoods;🥀;Tainted Rose;Trap-Roll;0;2;0;0;0;0;Forest Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin.
@@ -87,16 +89,16 @@ Bleak Necropolis;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scen
 Bleak Necropolis;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Looks all about ready for battle.<br>The pile of bones won't miss it.;Shot an arrow in the knee
 Bleak Necropolis;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but still usable.<br>Perhaps unlocks a secret.;
 Bleak Necropolis;🪦;Desolate Grave;Container-Triple;0;0;0;0;0;0;Place of Rest;The text reads <i>"No rest for the wicked."</i> <br>Ground seems tampered with.;A corpse has risen from the ground.
-Bleak Necropolis;🧟;Animated Dead;Undead;1;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
+Bleak Necropolis;🧟;Animated Dead;Undead;3;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>Better to keep distance.;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
 Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
 Bleak Necropolis;⛪️;Barred Church;Container-Locked;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>Eerie atmosphere is in the air.;
 Bleak Necropolis;🧤;Strange Glove;Item;0;0;1;0;0;0;Advanced Gear;Improves grip and agility.<br>;Fits like a glove.
-Bleak Necropolis;🐦‍⬛;Worried Crow;Swift;1;3;2;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Got both eyes pecked out.
+Bleak Necropolis;🐦‍⬛;Worried Crow;Swift;1;2;3;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Got both eyes pecked out.
 Bleak Necropolis;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Bleak Necropolis;📘;Book of Spells;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
-Bleak Necropolis;🧙;Necromancer;Recruit;2;0;1;0;1;1;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Bleak Necropolis;🧙;Necromancer;Recruit;2;1;1;0;2;1;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Bleak Necropolis;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Finally chance to rest.;
 Bleak Necropolis;🦉;Night Eye;Friend;0;0;1;0;0;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
 Bleak Necropolis;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
