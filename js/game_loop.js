@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "pre-fpm build: 10/15/24"
-var initialEncounterOverride=16;
+var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -848,6 +848,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
             }
+            break;
+            
           case "Friend": //They'll be hit (above) and then get angry //TODO: Check this, they might not get hit
             logPlayerAction(actionString,"The spell turned them adversary -1 🔵");
             displayEnemyEffect("‼️");

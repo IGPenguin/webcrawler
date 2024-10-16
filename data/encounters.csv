@@ -48,11 +48,13 @@ Depriving Fairyland;🏛️;Ancient Temple;Container-Triple;-1;0;1;0;1;0;Ritual 
 Depriving Fairyland;🤺;Mystic Adversary;Swift;1;2;2;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;1;0;1;0;Ritual Place;There's some blood on the floor.<br>;Embraced ancient gods.
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
+Depriving Fairyland;🪻;Lavender Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for lovely embrace.<br>;Shared a lasting moment together.
 Depriving Fairyland;🧱;Brick Ruins;Container;0;0;0;0;0;0;Material;Long abandoned ruins all around.<br>Nothing of particular interest.;Lifted the nearest brick.
 Depriving Fairyland;🪱;Tiny Earthworm;Small;1;0;0;0;10;0;Arthropod;Seems angry of the disturbance.<br>Handy fishing bait.;Contracted a deadly disease
 Depriving Fairyland;🌿;Tall Weeds;Container-Double;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a disgusting sight.
-Somber Backwoods;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
-Somber Backwoods;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange words are filling the mind.<br>;Suffered permanent changes.
+Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>Consumable at least once.;Got terribly desoriented.
+Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange words are filling the mind.<br>;Suffered permanent changes.
 Somber Backwoods;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Somber Backwoods;🦨;Forest Skunk;Swift;2;1;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
 Somber Backwoods;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
@@ -70,7 +72,7 @@ Somber Backwoods;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Opportunity;Smells absolu
 Somber Backwoods;🐗;Unstoppable Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
 Somber Backwoods;🐗;Beast Corpse;Container-Triple;0;0;0;0;0;0;Dead Animal;Massive body laying on the ground.<br>;Cut its skin open.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>Sadly there's no fire around.;Got sick of the raw meat.
-Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Organ;Disgusting sight .<br>;Got sick of the raw meat.
+Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Organ;Disgusting on sight.<br>;Got sick of the raw meat.
 Somber Backwoods;🪱;Wiggling Parasite;Small;1;2;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>;Took control over the body.
 Somber Backwoods;🌊;Swamp of Sorrows;Fishing;0;0;0;0;0;0;Impassable Terrain;Murky water bubbles all around.<br>;Fished out something.
 Somber Backwoods;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled into the darkness.
