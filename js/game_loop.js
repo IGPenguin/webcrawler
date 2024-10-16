@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "pre-fpm build: 10/16/24"
-var initialEncounterOverride=0;
+var initialEncounterOverride=33;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -388,6 +388,7 @@ function redraw(){
       enemyStatusString=appendEnemyStats()
       break;
     case "Friend":
+    case "Container-Friend":
       var neutralType=decorateStatusText("▪️","Neutral",colorGrey);
       //enemyStatusString=appendEnemyStats() //Do not display stats = reward hidden
       displayEnemyType(neutralType);
@@ -557,10 +558,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
-            displayEnemyEffect("〽️");
-            nextEncounter();
-            break;
+          case "Container-Friend":
+            if (enemyAtk>0){
+              logPlayerAction(actionString,"Turned them adversary -1 🟢");
+              enemyType="Standard";
+            } else {
+              logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
+              displayEnemyEffect("〽️");
+              nextEncounter();
+              break;
+            }
 
           case "Standard": //You hit first, they hit back if they have stamina
           case "Undead":
@@ -697,6 +704,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Continued on the adventure.");
             nextEncounter();
             break;
+          case "Container-Friend":
           case "Friend":
             logPlayerAction(actionString,"Walked away leaving them behind.");
             nextEncounter();
@@ -828,6 +836,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
 
         switch (enemyType){
+          case "Friend":
+          case "Container-Friend":
+            if (enemyAtk>0){
+              logPlayerAction(actionString,"Turned them adversary -1 🔵");
+              enemyType="Standard";
+            } else {
+              logPlayerAction(actionString,"Magic spooked them away -1 🔵");
+              nextEncounter();
+              break;
+            }
+
           case "Recruit": //You should be faster if you have Mgk >= them
           case "Standard":
           case "Swift":
@@ -837,7 +856,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Demon":
           case "Undead":
-          case "Friend":
           case "Boss":
           case "Small":
             if (enemyMgk<=playerMgk){
@@ -968,6 +986,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Pet":
           case "Friend":
+          case "Container-Friend":
           case "Boss":
           case "Small":
             if (playerHp<playerHpMax) {
@@ -1085,6 +1104,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
           break;
 
+        case "Container-Friend":
+          if (playerMgk >= enemyMgk){
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
+            nextEncounter();
+          } else {
+            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
+            displayPlayerCannotEffect();
+          }
+          break;
+
         case "Friend": //They'll boost your stats
           if (playerMgk >= enemyMgk){
             logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
@@ -1128,7 +1157,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"Touched improperly, it got scared.");
+                logPlayerAction(actionString,"Unable to initiate a bond ?? 🧠");
                 nextEncounter();
                 break;
               }
@@ -1230,6 +1259,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
+          case "Container-Friend":
           case "Friend":
             logPlayerAction(actionString,"Touch not appreciated, they left.");
             displayEnemyEffect("✋");
@@ -1354,11 +1384,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerChangeStats();
               displayPlayerEffect("💬");
             } else {
-              logPlayerAction(actionString,"Unable to initiate a conversation.");
+              logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
               displayPlayerCannotEffect();
             }
-
             break;
+
+          case "Container-Friend":
+            if (playerInt >= enemyInt){
+              var openMessage = "Sucessfully found something.";
+              displayPlayerEffect("💬");
+              if (enemyMsg != ""){
+                openMessage = enemyMsg;
+              }
+              logPlayerAction(actionString,openMessage);
+              nextEncounter();
+            } else {
+             logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
+             displayPlayerCannotEffect();
+           }
+           break;
 
           case "Death":
             copyAdventureToClipboard();
@@ -1452,6 +1496,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyType=="Dream") nextEncounter();
             break;
 
+          case "Container-Friend":
           case "Friend": //They'll leave if you'll rest
             displayPlayerEffect("💤");
             playerGetStamina(playerStaMax-playerSta);
