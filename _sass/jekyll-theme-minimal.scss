@@ -1,13 +1,21 @@
 @import "fonts";
 @import "rouge-github";
 
+$color-border: rgb(0,0,0);
+$color-inner-border: #121212;
+
+:root {
+  touch-action: pan-x pan-y;
+  height: 100%
+}
+
 body {
   background-color: rgb(45,45,45);
   padding: 12px;
   padding-top:24px;
   font: 13px serif;
   font-weight:500;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.5px;
   background-image: url('../../assets/img/background.png');
   background-repeat: repeat-x repeat-y;
 }
@@ -42,15 +50,18 @@ h3 {
 
 h4 {
   line-height:1.5;
-  font-size:14px;
-  font-weight: 200;
-  margin-bottom: 14px
+  letter-spacing: 0.5px;
+  font-size:14.6px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  width: 100%;
+  padding: 4px;
 }
 
 h5 {
-  font-size:14px;
+  font-size:12px;
   font-style: italic;
-  font-weight: 100;
+  font-weight: 200;
   color: lightgrey;
   margin:0px;
   }
@@ -76,11 +87,46 @@ a:active, a:hover, a:focus {
   float: center;
   padding: 16px;
   background-color: rgb(40,40,40);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0px 0px 0px 3px $color-border,
+    0 4px 8px 0 rgba(0,0,0,0.5);
   width: 332px;
   height: 200px;
   display: table-cell;
   vertical-align: middle;
+}
+
+.box-border-dynamic{
+  box-shadow:
+    0px 0px 0px 3px $color-border;
+}
+
+.box-border{
+  margin-top:20px;
+  height:82px;
+  box-shadow:
+    0px 0px 0px 3px $color-border;
+}
+
+.toolbar-card{
+  max-width: 364px;
+  background-color: rgb(40,40,40);
+  box-shadow:
+    inset 0px 0px 0px 3px $color-border,
+    0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.toolbar {
+  float: center;
+  width: 340px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  vertical-align: middle;
+  font-weight: 200;
+  text-align: center;
+  display: table-cell;
 }
 
 .wrapper {
@@ -115,7 +161,7 @@ a:active, a:hover, a:focus {
   width:100%;
   bottom:0%;
   transform: translatex(-50%);
-  background-color: black;
+  background-color: rgba(0,0,0,0.95);
   display:none;
 }
 
@@ -130,6 +176,8 @@ a:active, a:hover, a:focus {
   text-align: center;
   transform: translatex(-50%);
   color: white;
+  //text-decoration-line: underline;
+  //text-decoration-thickness: 0.1px;
 }
 
 blockquote {
@@ -284,18 +332,24 @@ footer {
 
 button {
   font-family: serif;
-  letter-spacing: 0.35px;
+  letter-spacing: 0.5px;
   cursor:pointer;
-  font-size: 15px;
+  font-size: 18px;
   z-index: 999;
-  min-height: 48px;
-  min-width: 104px;
+  padding-bottom: 2px;
+  min-height: 44px;
+  width: 103.6px;
   background-color: rgb(40,40,40);
   color: #fff;
-  padding-right: 12px;
-  padding-left: 12px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  padding-right: 4px;
+  padding-left: 2px;
+  font-weight: 1000;
+  border: none;
+  -webkit-text-stroke:4px #121212;
+  paint-order: stroke fill;
+  //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0px 0px 0px 3px $color-border;
   user-select: none;
 }
 
@@ -312,21 +366,6 @@ select {
   min-height: 36px;
   font-size: 15px;
   text-align: center;
-}
-
-.toolbar {
-  float: center;
-  width: 340px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: rgb(40,40,40);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-  vertical-align: middle;
-  font-weight: 200;
-  text-align: center;
-  display: table-cell;
 }
 
 // Small screen width overrides
