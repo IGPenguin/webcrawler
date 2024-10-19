@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/16/24"
+var versionCode = "pre-fpm build: 10/19/24"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -702,6 +702,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           case "Prop":
+            isLooting=false;
             logPlayerAction(actionString,"Continued on the adventure.");
             nextEncounter();
             break;
@@ -717,6 +718,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap":
           case "Trap-Attack":
+            isLooting=false;
             logPlayerAction(actionString,"Continued onwards, away from that.");
             nextEncounter();
             break;
@@ -751,16 +753,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           animateFlipNextEncounter();
           break;
         }
+
         if (!playerUseStamina(1,"Not enough energy for that.")){
             break;
-          }
+        }
 
-          if (enemyAtk<=0 && enemyType!="Pet"){
-            //logPlayerAction(actionString,"Means absolutely no harm.")
-            enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
-            displayEnemyCannotEffect();
-            break;
-          }
+        if (enemyAtk<=0 && enemyType!="Pet"){
+          enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
+          displayEnemyCannotEffect();
+          break;
+        }
 
         switch (enemyType){
           case "Pet":
@@ -828,11 +830,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
+          if ((enemyType=="Container-Locked") || (enemyType=="Container-Locked-Double")){
+            if (playerMgkMax<2){
+              logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
+              displayPlayerCannotEffect();
+              break;
+            }
+          }
+
           if (playerMgkMax<1){
             logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
             break;
           }
+
           if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { break; } //Casting is never free, upgrd handled above
           if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
 
@@ -875,21 +886,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyType="Standard";
             break;
 
+          case "Container-Locked":
+          case "Container-Locked-Double":
+            playerMgk-- //Unlocking cost 1 extra mgk
+            logPlayerAction(actionString,"Unlocked using a spell -2 🔵");
+            animateFlipNextEncounter();
+            break;
+
           case "Trap":
           case "Trap-Roll":
           case "Item":
           case "Consumable":
-
-          case "Container-Locked":
-          case "Container-Locked-Double":
-            logPlayerAction(actionString,"Unlocked using a spell -1 🔵");
-            animateFlipNextEncounter()
-            break;
           case "Container":
           case "Container-Double":
           case "Container-Triple":
-            var openMessage = "The magic power anihilated it -1 🔵";
-            logPlayerAction(actionString,openMessage);
+            logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
             displayEnemyEffect("🔥");
             animateFlipNextEncounter();
             break;
@@ -1004,7 +1015,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead": //Reduce attack if possible
             if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
-              logPlayerAction(actionString,"The spell made them weaker -1 🔵");
+              logPlayerAction(actionString,"Made them -1 ⚔️ weaker for -1 🔵");
               displayEnemyEffect("🔥");
             } else if (playerMgkMax < enemyMgk) {
               logPlayerAction(actionString,"They resisted the prayer -1 🔵");
@@ -1092,7 +1103,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Small":
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
             enemyAtkBonus-=1;
-            logPlayerAction(actionString,"The curse made them weaker -2 🔵");
+            logPlayerAction(actionString,"Cursed them -1 ⚔️ weaker for -2 🔵");
           } else if (playerMgkMax <= enemyMgk) {
             logPlayerAction(actionString,"They resisted the curse -2 🔵");
           } else {
@@ -1135,7 +1146,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
           playerLck=-1;
           displayPlayerEffect("🪬");
-          nextEncounter();
           break;
 
         default:
@@ -1158,7 +1168,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"Unable to initiate a bond <? 🧠");
+                logPlayerAction(actionString,"Unable to initiate a bond ?? 🧠");
                 nextEncounter();
                 break;
               }
@@ -1242,7 +1252,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Item":
-            playerLootString+=" "+enemyEmoji;
+            playerLootString+=enemyEmoji;
             displayEnemyEffect("👋");
             playerChangeStats();
             isLooting=false;
@@ -1343,7 +1353,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit": //If you are smarter they join you
             if (enemyInt < playerInt){
               displayPlayerEffect(enemyEmoji);
-              playerPartyString+=" "+enemyEmoji
+              playerPartyString+=enemyEmoji
               playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join the adventure"); //Cannot get health/sta/int from a pet
               break;
             }
@@ -1390,7 +1400,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerChangeStats();
               displayPlayerEffect("💬");
             } else {
-              logPlayerAction(actionString,"Unable to initiate a conversation <? 🧠");
+              logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
               displayPlayerCannotEffect();
             }
             break;
@@ -1405,7 +1415,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,openMessage);
               nextEncounter();
             } else {
-             logPlayerAction(actionString,"Unable to initiate a conversation <? 🧠");
+             logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
              displayPlayerCannotEffect();
            }
            break;
@@ -1606,7 +1616,7 @@ function enemyAttackOrRest(){
   var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
   if (enemySta-enemyStaLost > 0) {
-    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked -"+damageReceived+" 💔"}
+    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"}
     else {
         staminaChangeMsg = "The enemy siphoned some health -"+damageReceived+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
