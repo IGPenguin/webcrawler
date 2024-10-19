@@ -64,7 +64,7 @@ var buttonsContainer;
 
 //Player stats init
 function getFirstName(){
-  const random_names = ["Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizard-person", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizard", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -79,12 +79,12 @@ function getSwiftName(name=playerName){
 }
 
 function getFaithName(name=playerName){
-  const random_names = ["Holy "+name, "Promising "+name, "Humble "+name, name+" the Believer"];
+  const random_names = ["Holy "+name, "Promising "+name, "Humble "+name, name+" the Believer",name+" Worshipper"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getSorceryName(name=playerName){
-  const random_names = ["Mystic "+name, name+" the Magician"];
+  const random_names = [name+" Acolyte","Mystic "+name, name+" the Magician"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -533,8 +533,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Item":
-            isLooting=false;
           case "Consumable":
+            isLooting=false;
           case "Trap":
           case "Trap-Roll":
             logPlayerAction(actionString,"Smashed it into tiny pieces -1 🟢");
@@ -670,10 +670,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Item": //You'll simply skip ahead
-            isLooting=false;
           case "Consumable":
           case "Checkpoint":
-            logPlayerAction(actionString,"Walked away leaving it behind.");
+            if (isLooting){
+              isLooting=false;
+              logPlayerAction(actionString,"Threw it far away.");
+            } else {
+              logPlayerAction(actionString,"Walked away leaving it behind.");
+            }
             nextEncounter();
             break;
           case "Fishing":
