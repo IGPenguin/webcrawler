@@ -96,8 +96,11 @@ Bleak Necropolis;🪦;Desolate Grave;Container-Triple;0;0;0;0;0;0;Place of Rest;
 Bleak Necropolis;🧟;Animated Dead;Undead;3;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
 Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
-Bleak Necropolis;⛪️;Barred Church;Container-Locked;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>;
-Bleak Necropolis;🧤;Strange Glove;Item;0;0;1;0;0;0;Advanced Gear;Improves grip and agility.<br>;Fits like a glove.
+Bleak Necropolis;⛪️;Barred Church;Container-Locked-Double;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>;
+Bleak Necropolis;🧛;Thirsty Vampire;Demon;3;2;2;0;3;0;Evil Being;Sharp teeth getting ready to bite.<br>;Got all blood sucked out.
+Bleak Necropolis;🧤;Strange Gloves;Item;0;0;1;0;0;0;Enchanted Gear;Improves grip and agility.<br>;Fits like a umm... glove.
+Bleak Necropolis;🌱;Strange Plant;Container;0;0;0;0;0;0;Potential Food;Probably packs a ton of nutrients.<br>Give it a shot?;Dug it out of the ground.
+Bleak Necropolis;🥔;Old Potato;Consumable;0;0;0;0;0;0;Eternal Vegetable;Looks suspiciously fresh.<br>;Actually tasted quite good.
 Bleak Necropolis;🐦‍⬛;Worried Crow;Swift;1;2;3;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Got both eyes pecked out.
 Bleak Necropolis;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
@@ -107,7 +110,7 @@ Bleak Necropolis;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A small gro
 Bleak Necropolis;🦉;Night Eye;Friend;0;0;1;0;0;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
 Bleak Necropolis;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
 Bleak Necropolis;🚪;Tower Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>;
-Bleak Necropolis;🐻;Undead Grizzly;Boss;4;2;2;0;10;0;Reanimated;There's an axe sticked into its head.<br>Still packs a punch.;Got torn to tiny pieces.
+Bleak Necropolis;🐻;Undead Grizzly;Boss;4;2;3;0;10;0;Reanimated;There's an axe sticked into its head.<br>Still packs a punch.;Got torn to tiny pieces.
 Bleak Necropolis;🪓;Bloody Axe;Item;0;1;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Obtained a new weapon.
 The Singularity;🕋;Mystery Box;Container-Locked;0;0;0;0;0;0;Container;Seems locked tight.;
 The Singularity;👑;King's Crown;Death;0;0;0;0;0;0;Endgame;This is the happy ending!<br>Tweet this to appear in credits!;
