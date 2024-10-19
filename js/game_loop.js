@@ -684,14 +684,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Continued alongside the shore.");
             nextEncounter();
             break;
+          case "Altar":
+            logPlayerAction(actionString,"Continued the adventure.");
+            nextEncounter();
+            break;
           case "Container":
           case "Container-Consume":
           case "Container-Locked":
           case "Container-Friend":
-          case "Altar":
-            logPlayerAction(actionString,"Continued towards the next encounter.");
+            logPlayerAction(actionString,"Left without investigating it.");
+            encounterIndex++;
             nextEncounter();
-            break;
           case "Container-Double":
           case "Container-Locked-Double":
           case "Container-Triple":
@@ -1109,7 +1112,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Demon":
             logPlayerAction(actionString,"The curse made them even stronger!");
             animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
-            enemyAtkBonus+=1;
+            enemyMgk+=1;
             break;
 
         case "Standard": //Reduce enemy atk if mgk stronger then them
