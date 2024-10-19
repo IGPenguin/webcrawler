@@ -35,7 +35,7 @@ Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No r
 Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
-Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
+Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Depriving Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
@@ -52,7 +52,7 @@ Depriving Fairyland;🌳;Dark Grove;Container-Double;0;0;0;0;0;0;Suspense Area;N
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;0;Artifact;The sacrifical blade demands blood.<br>;Released strange energy from the inside.
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;2;0;0;0;Ritual Remnants;Escaped from the trunk insides.<br>;No mercy for the wicked.
 Depriving Fairyland;🏛️;Ancient Temple;Container-Triple;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
-Depriving Fairyland;🤺;Mystic Adversary;Swift;1;2;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
+Depriving Fairyland;🤺;Mystic Adversary;Swift;1;2;2;0;2;1;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Depriving Fairyland;🏛️;Ancient Temple;Altar;0;0;1;0;0;0;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
@@ -64,7 +64,7 @@ Depriving Fairyland;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The crea
 Depriving Fairyland;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
 Depriving Fairyland;🦆;Stubborn Drake;Swift;1;1;3;0;2;0;Beast;Uhh. Peace was an option?<br>;Honked to death.
 Depriving Fairyland;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the water surface.<br>Something sparkles at the bottom.;
-Somber Backwoods;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
+Somber Backwoods;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Somber Backwoods;🐐;Screaming Goat;Standard;1;2;2;0;10;0;Wild Beast;Producing various unpleasant noises.<br>;Devoured to the bone.
 Somber Backwoods;🪤;Animal Trap;Container-Triple;0;0;0;0;0;0;Trap;Something is likely captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Somber Backwoods;🦝;Velvet Bandit;Swift;2;1;2;0;10;0;Infected Beast;Kinda cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
@@ -93,7 +93,7 @@ Somber Backwoods;🌊;Swamp of Sorrows;Fishing;0;0;0;0;0;0;Impassable Terrain;Mu
 Somber Backwoods;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled into the darkness.
 Somber Backwoods;🌊;Bleak Shore;Prop;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
 Somber Backwoods;🥀;Tainted Rosebush;Trap-Roll;0;2;0;0;0;0;Dying Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin
-Bleak Necropolis;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
+Bleak Necropolis;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Bleak Necropolis;🪦;Silent Graveyard;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
 Bleak Necropolis;⚰️;Burial Coffin;Container-Triple;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
 Bleak Necropolis;🫀;Human Heart;Curse;0;0;0;0;-1;0;Disturbing Sight;Disgusting on sight.<br>;
