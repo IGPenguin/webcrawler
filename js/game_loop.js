@@ -1361,6 +1361,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Checkpoint": //Save and rest to full HP and Sta
+            isLooting=false;
             displayPlayerEffect("💾");
             logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
