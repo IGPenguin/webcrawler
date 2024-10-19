@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/19/24"
-var initialEncounterOverride=0;
+var versionCode = "pre-fpm build: 10/20/24"
+var initialEncounterOverride=67;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -173,11 +173,13 @@ var enemyHpLost = 0;
 var enemyStaLost = 0;
 var enemyAtkBonus = 0;
 var enemyIntBonus = 0;
+var enemyMgkLost = 0;
 function enemyRenew(){
   enemyStaLost = 0;
   enemyHpLost = 0;
   enemyAtkBonus = 0;
   enemyIntBonus = 0;
+  enemyMgkLost = 0;
 }
 
 
@@ -497,7 +499,9 @@ function appendEnemyStats(){
     }
     enemyStats += "&nbsp;&nbsp;"
   }
+
   if (enemyMgk > 0) {enemyStats += "&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
+  if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   return enemyStats;
 }
@@ -1577,7 +1581,7 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   }
 }
 
-function enemyHit(damage,magicType=false){
+function enemyHit(damage,magicType=false) {
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
   if (magicType==true) {actionString="🪄 "; hitMsg="Scorched them with a spell -"+damage+" 💔";}
@@ -1618,7 +1622,14 @@ function enemyAttackOrRest(message=""){
   var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
 
-  if (enemySta-enemyStaLost > 0) {
+  if (enemyMgk>enemyMgkLost) {
+    enemyMgkLost++
+    logAction(enemyEmoji+" ▸ 🪄 Enemy cast a quick spell -1 💔");
+    playerHit(1);
+    return;
+  }
+
+  if (enemySta>enemyStaLost) {
     if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"}
     else {
         staminaChangeMsg = "The enemy siphoned some health -"+damageReceived+" 💔";
