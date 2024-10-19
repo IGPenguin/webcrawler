@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "pre-fpm build: 10/20/24"
-var initialEncounterOverride=67;
+var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
