@@ -22,7 +22,7 @@ Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace w
 Forsaken Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>But otherwise looks abandoned.;Kicked the door open.
 Forsaken Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
 Forsaken Village;🐀;Dire Rat;Swift;1;1;2;0;10;0;Creature;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
-Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;1;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
+Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
 Forsaken Village;🍖;Fleshy Bone;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Forsaken Village;🧱;Brick Ruins;Container;0;0;0;0;0;0;Material;Nothing of particular interest.<br>;Lifted the nearest brick.
@@ -30,6 +30,7 @@ Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but 
 Forsaken Village;🎯;Archery Range;Container-Double;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 Forsaken Village;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Forsaken Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
+Forsaken Village;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
 Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
@@ -49,9 +50,9 @@ Depriving Fairyland;🦋;Sapphire Moth;Item;0;0;0;0;0;1;Artifact;Pearlescent and
 Depriving Fairyland;🦨;Forest Skunk;Swift;2;2;1;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
 Depriving Fairyland;🌳;Dark Grove;Container-Double;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;A knife was stuck into it.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;0;Artifact;The sacrifical blade demands blood.<br>;Released strange energy from the inside.
-Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;2;0;0;0;Ritual Remnants;Escaped from the trunk insides.<br>;No mercy for the wicked.
+Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;0;0;0;2;Ritual Remnants;Escaped from the trunk insides.<br>;No mercy for the wicked.
 Depriving Fairyland;🏛️;Ancient Temple;Container-Triple;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
-Depriving Fairyland;🤺;Mystic Adversary;Swift;1;2;2;0;2;1;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
+Depriving Fairyland;🐉;Green Dragon;Heavy;1;2;1;0;10;1;Mythical Beast;Eyes are glowing blue.<br>;Devoured by the mythical dragon.
 Depriving Fairyland;🏛️;Ancient Temple;Altar;0;0;1;0;0;0;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
@@ -102,6 +103,7 @@ Bleak Necropolis;🕳️;Suspicious Hole;Container-Triple;0;0;0;0;0;0;Disturbed 
 Bleak Necropolis;🧟;Animated Dead;Undead;3;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
 Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
+Bleak Necropolis;🗿;Massive Statue;Altar;-1;0;0;0;0;1;Ritual Place;There's dry blood under its eyes.<br>;
 Bleak Necropolis;⚱️;Burial Urn;Container;0;0;0;0;0;0;Ancient Relic;These shall not be disturbed.<br>;Malvolent energy escaped the urn
 Bleak Necropolis;👻;Untangible Ghost;Spirit;1;1;2;0;10;2;Soul Remains;Energy of a long gone warrior.<br>;Got taken to Vallhala.
 Bleak Necropolis;⛪️;Barred Church;Container-Locked-Double;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>;
