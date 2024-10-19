@@ -384,7 +384,7 @@ function redraw(){
       enemyStatusString=appendEnemyStats()
       break;
     case "Spirit":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👻","Spirit",colorWhite);
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔘","Spirit",colorWhite);
       enemyStatusString=appendEnemyStats()
       break;
     case "Friend":
@@ -539,10 +539,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Attack": //Attacking causes you damage
-          case "Spirit":
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
-            if (enemyType=="Spirit"){displayEnemyEffect("💨");}
             playerHit(enemyAtk);
+            break;
+
+          case "Spirit":
+            displayEnemyEffect("💨");
+            enemyAttackOrRest("Cannot hit, eerie limbs retaliated -"+enemyAtk+" 💔");
             break;
 
           case "Container":
@@ -758,7 +761,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (enemyAtk<=0 && enemyType!="Pet"){
+        if (enemyAtk<=0 && enemyType!="Pet" && enemySta > 0){
           enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
           displayEnemyCannotEffect();
           break;
@@ -1612,9 +1615,10 @@ function enemyKnockedOut(){
   animateFlipNextEncounter();
 }
 
-function enemyAttackOrRest(){
+function enemyAttackOrRest(message=""){
   var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
+
   if (enemySta-enemyStaLost > 0) {
     if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"}
     else {
@@ -1640,6 +1644,7 @@ function enemyAttackOrRest(){
         }
       }
     } else {
+      if (message!="") staminaChangeMsg=message;
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
       playerHit(damageReceived);
       return;
