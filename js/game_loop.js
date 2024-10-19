@@ -887,6 +887,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"They resisted the spell -1 🔵");
             }
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
+              enemyCastIfMgk();
               enemyAttackOrRest();
             }
             break;
@@ -981,6 +982,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"Could not overpower this entity!");
             }
+            enemyCastIfMgk();
             enemyAttackOrRest();
             break;
 
@@ -1020,6 +1022,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
               displayPlayerCannotEffect();
             }
+            enemyCastIfMgk();
             enemyAttackOrRest();
             break;
 
@@ -1120,11 +1123,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           } else {
             logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
           }
+          enemyCastIfMgk();
           enemyAttackOrRest();
           break;
 
         case "Spirit": //They don't care
           logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
+          enemyCastIfMgk();
           break;
 
         case "Container-Friend":
@@ -1203,6 +1208,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               else {
+                enemyCastIfMgk();
                 enemyDodged("Missed, it evaded the grasp.");
               }
             } else { //Player and enemy have no stamina - asymetrical rest
@@ -1219,6 +1225,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
+            enemyCastIfMgk();
             enemyDodged("Missed, it evaded the grasp.");
             break;
 
@@ -1226,6 +1233,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Boss":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
               logPlayerAction(actionString,"Overpowered, got hit extra hard -"+enemyAtk*2+" 💔");
+              enemyCastIfMgk();
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
@@ -1236,6 +1244,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Trap-Attack":
           case "Undead":
+            enemyCastIfMgk();
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             displayEnemyEffect("✋");
@@ -1276,6 +1285,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyEffect("👋");
               nextEncounter();
             } else {
+              enemyCastIfMgk();
               enemyDodged("Missed, it evaded the grasp.");
             }
             break;
@@ -1286,6 +1296,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("✋");
             nextEncounter();
             break;
+
           case "Friend":
             logPlayerAction(actionString,"Touch not appreciated, they left.");
             displayEnemyEffect("✋");
@@ -1312,6 +1323,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
             logPlayerAction(actionString,"Hands passed right through them.");
             displayEnemyEffect("✋");
+            enemyCastIfMgk();
+            enemyAttackOrRest();
             break;
 
           case "Death":
@@ -1399,11 +1412,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString,"They ignored whatever has been said.");
               }
             }
+            enemyCastIfMgk();
             enemyAttackOrRest();
             break;
 
           case "Undead": //They don't care
             logPlayerAction(actionString,"They ignored whatever has been said.");
+            enemyCastIfMgk();
+            enemyAttackOrRest();
             break;
 
           case "Friend": //They'll boost your stats
@@ -1478,6 +1494,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
+            enemyCastIfMgk();
             enemyAttackOrRest();
 
             if (playerHp>0){
