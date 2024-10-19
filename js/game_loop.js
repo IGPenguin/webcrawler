@@ -695,6 +695,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Left without investigating it.");
             encounterIndex++;
             nextEncounter();
+            break;
           case "Container-Double":
           case "Container-Locked-Double":
           case "Container-Triple":
