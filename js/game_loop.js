@@ -770,6 +770,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
+        if (enemyCastIfMgk()){
+          logPlayerAction(actionString,"Could not block it -1 🟢");
+          break;
+        }
+
         switch (enemyType){
           case "Pet":
             if (enemyAtk<=0) {
@@ -1622,12 +1627,7 @@ function enemyAttackOrRest(message=""){
   var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
 
-  if (enemyMgk>enemyMgkLost) {
-    enemyMgkLost++
-    logAction(enemyEmoji+" ▸ 🪄 Enemy cast a quick spell -1 💔");
-    playerHit(1);
-    return;
-  }
+  enemyCastIfMgk();
 
   if (enemySta>enemyStaLost) {
     if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"}
@@ -1670,6 +1670,15 @@ function enemyDodged(message="Missed, it evaded the grasp."){
   logPlayerAction(actionString,message);
   displayEnemyEffect("🌀");
   enemyAttackOrRest();
+}
+
+function enemyCastIfMgk(){
+  if (enemyMgk>enemyMgkLost) {
+    enemyMgkLost++
+    logAction(enemyEmoji+" ▸ 🪄 Enemy cast a quick spell -1 💔");
+    playerHit(1);
+    return true;
+  }
 }
 
 //Encounters
