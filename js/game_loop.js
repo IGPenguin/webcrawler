@@ -682,7 +682,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Friend":
           case "Altar":
             logPlayerAction(actionString,"Continued towards the next encounter.");
-            encounterIndex+=1; //Skip next encounter
             nextEncounter();
             break;
           case "Container-Double":
@@ -1853,10 +1852,12 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 }
 
 function playerConsumed(){
-  var consumedString = "Replenished lost resources "
+  var consumedString="Replenished lost resources"
+  if (enemyMsg!="") consumedString=enemyMsg;
 
   if (enemyHp<0){
-    logPlayerAction(actionString,"That did not taste good "+enemyHp+" 💔");
+    if (enemyMsg=="") consumedString="That did not taste good ";
+    logPlayerAction(actionString,consumedString+" "+enemyHp+" 💔");
     playerHit(-1*enemyHp);
     return;
   }
@@ -1868,12 +1869,12 @@ function playerConsumed(){
 
     if (missingHp > 0){
       playerHp += missingHp;
-      consumedString += "+"+missingHp + " ❤️ ";
+      consumedString += " +"+missingHp + " ❤️ ";
     }
 
     if (missingSta > 0){
       playerGetStamina(missingSta,true);
-      consumedString += "+"+missingSta + " 🟢";
+      consumedString += " +"+missingSta + " 🟢";
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {

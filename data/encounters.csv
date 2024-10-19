@@ -23,8 +23,12 @@ Forsaken Village;🏚️;Unsettling House;Container-Triple;0;0;0;0;0;0;Deserted 
 Forsaken Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
 Forsaken Village;🐀;Dire Rat;Swift;1;1;1;0;10;0;Creature;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;1;1;Ritual Place;There's a blood on the surface.<br>Eerie atmosphere is in the air.;
-Forsaken Village;🍖;Fleshy Bone;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>No other clues around.;That was just disgusting.
+Forsaken Village;🍖;Fleshy Bone;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
+Forsaken Village;🎯;Practice Target;Container-Triple;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
+Forsaken Village;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
+Forsaken Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
+Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but still usable.<br>Perhaps unlocks a secret.;
 Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
 Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
@@ -35,7 +39,7 @@ Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🪤;Animal Trap;Container-Triple;0;0;0;0;0;0;Trap;Something is likely captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Depriving Fairyland;🦝;Velvet Bandit;Swift;2;1;2;0;10;0;Infected Beast;Kinda cute on the first glance.<br>Ferocious on the second.;Died by contracting rabies.
-Depriving Fairyland;🧀;Spoiled Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;
+Depriving Fairyland;🧀;Spoiled Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;Barely held it inside
 Depriving Fairyland;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of the spoiled cheese.<br>Likely a good fishing bait.;Contracted a deadly disease.
 Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
 Depriving Fairyland;🌿;Tall Weeds;Container-Double;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a strange growth.
@@ -73,7 +77,7 @@ Somber Backwoods;🪈;Ratcatcher Flute;Item;0;0;0;-2;0;0;Malvolent Instrument;De
 Somber Backwoods;🐗;Unstoppable Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
 Somber Backwoods;🐗;Beast Corpse;Container-Triple;0;0;0;0;0;0;Dead Animal;Massive body laying on the ground.<br>;Cut its skin open.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>;Got sick of the raw meat.
-Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Organ;Disgusting on sight.<br>;Dug out a hefty worm.
+Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Disgusting on sight.<br>;Dug out a hefty worm.
 Somber Backwoods;🪱;Wiggling Parasite;Small;1;2;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>;Took control over the body.
 Somber Backwoods;🌻;Sunflower Growth;Container-Double;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
 Somber Backwoods;🧞;Genie;Container-Friend;0;0;0;0;2;0;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
@@ -84,29 +88,30 @@ Somber Backwoods;🦟;Oversize Mosqito;Swift;2;2;1;0;10;0;Reptile;Perfectly blen
 Somber Backwoods;🌊;Swamp of Sorrows;Fishing;0;0;0;0;0;0;Impassable Terrain;Murky water bubbles all around.<br>;Fished out something.
 Somber Backwoods;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled into the darkness.
 Somber Backwoods;🌊;Bleak Shore;Prop;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
-Somber Backwoods;🥀;Tainted Rosebush;Trap-Roll;0;2;0;0;0;0;Dying Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin.
+Somber Backwoods;🥀;Tainted Rosebush;Trap-Roll;0;2;0;0;0;0;Dying Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin
 Bleak Necropolis;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
-Bleak Necropolis;⚱️;Burial Urn;Container;0;0;0;0;0;0;Ancient Relic;These shall not be disturbed.<br>;Malvolent energy escaped the urn
-Bleak Necropolis;👻;Untangible Ghost;Spirit;1;1;2;0;10;2;Soul Remains;Energy of a long gone warrior.<br>;Got taken to Vallhala.
-Bleak Necropolis;🎯;Practice Target;Container-Triple;0;0;0;0;0;0;Training Spot;There is not a scratch on the target.<br>Seems totally unused.;Spot some clues nearby.
-Bleak Necropolis;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
-Bleak Necropolis;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Looks all about ready for battle.<br>The pile of bones won't miss it.;Shot an arrow in the knee
-Bleak Necropolis;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but still usable.<br>Perhaps unlocks a secret.;
-Bleak Necropolis;🪦;Desolate Grave;Container-Triple;0;0;0;0;0;0;Place of Rest;The text reads <i>"No rest for the wicked."</i> <br>Ground seems tampered with.;A corpse has risen from the ground.
+Bleak Necropolis;🪦;Silent Graveyard;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
+Bleak Necropolis;⚰️;Burial Coffin;Container-Triple;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
+Bleak Necropolis;🫀;Human Heart;Curse;0;0;0;0;-1;0;Disturbing Sight;Disgusting on sight.<br>;Dug out a hefty worm.
+Bleak Necropolis;🦷;Luck Tooth;Item;0;0;0;1;0;0;Disturbing Sight;Disgusting on sight.<br>;Dug out a hefty worm.
+Bleak Necropolis;🫁;Collapsed Lungs;Curse;0;0;0;-1;0;0;Disturbing Sight;Disgusting on sight.<br>;Dug out a hefty worm.
+Bleak Necropolis;🕳️;Suspicious Hole;Container-Triple;0;0;0;0;0;0;Disturbed Ground;Seems recently tampered with.<br>;A corpse has risen from the ground.
 Bleak Necropolis;🧟;Animated Dead;Undead;3;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
 Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
+Bleak Necropolis;⚱️;Burial Urn;Container;0;0;0;0;0;0;Ancient Relic;These shall not be disturbed.<br>;Malvolent energy escaped the urn
+Bleak Necropolis;👻;Untangible Ghost;Spirit;1;1;2;0;10;2;Soul Remains;Energy of a long gone warrior.<br>;Got taken to Vallhala.
 Bleak Necropolis;⛪️;Barred Church;Container-Locked-Double;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>;
 Bleak Necropolis;🧛;Thirsty Vampire;Demon;3;2;2;0;3;0;Evil Being;Sharp teeth getting ready to bite.<br>;Got all blood sucked out.
 Bleak Necropolis;🧤;Strange Gloves;Item;0;0;1;0;0;0;Enchanted Gear;Improves grip and agility.<br>;Fits like a umm... glove.
 Bleak Necropolis;🌱;Strange Plant;Container;0;0;0;0;0;0;Potential Food;Probably packs a ton of nutrients.<br>Give it a shot?;Dug it out of the ground.
 Bleak Necropolis;🥔;Old Potato;Consumable;0;0;0;0;0;0;Eternal Vegetable;Looks suspiciously fresh.<br>;Actually tasted quite good.
 Bleak Necropolis;🐦‍⬛;Worried Crow;Swift;1;2;3;0;1;0;Wild Animal;Another crow appeared from somewhere.<br>Seems to be looking for its mate.;Got both eyes pecked out.
-Bleak Necropolis;⛺️;Campsite;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
+Bleak Necropolis;⛺️;Worn Tent;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Bleak Necropolis;📘;Book of Spells;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
 Bleak Necropolis;🧙;Necromancer;Recruit;2;1;1;0;2;1;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Bleak Necropolis;🌲;Pine Trees;Container;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Finally chance to rest.;
+Bleak Necropolis;🌲;Spruce Trees;Container;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Finally chance to rest.;
 Bleak Necropolis;🦉;Night Eye;Friend;0;0;1;0;0;0;Wild Animal;Stares back without blinking an eye.<br>Almost feels like about to speak.;It revealed a powerful secret
 Bleak Necropolis;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
 Bleak Necropolis;🚪;Tower Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>;
