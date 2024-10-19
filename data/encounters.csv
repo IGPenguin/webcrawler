@@ -62,8 +62,8 @@ Depriving Fairyland;🦆;Stubborn Drake;Swift;1;1;3;0;2;0;Beast;Uhh. Peace was a
 Depriving Fairyland;🌊;Obscured Pond;Fishing;0;0;0;0;0;0;Opportunity;Waves are dancing on the water surface.<br>Something sparkles at the bottom.;
 Somber Backwoods;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Somber Backwoods;🦨;Forest Skunk;Swift;2;1;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
-Somber Backwoods;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>Maybe there is still something inside;
-Somber Backwoods;🍪;Wheat Cookie;Consumable;0;0;0;0;0;0;Fancy Food;Smells absolutely amazing.<br>;
+Somber Backwoods;🧺;Primitive Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Somber Backwoods;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
 Somber Backwoods;🛖;Simple Hut;Container-Triple;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>;
 Somber Backwoods;🦴;Pile of Bones;Item;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>;
 Somber Backwoods;🧌;Old Troll;Recruit;3;0;1;0;1;2;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
@@ -72,8 +72,10 @@ Somber Backwoods;🍯;Sweet Honeypot;Container-Double;0;0;0;0;0;0;Suspicious Con
 Somber Backwoods;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run.;
 Somber Backwoods;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 Somber Backwoods;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
-Somber Backwoods;🌾;Overgrown Reeds;Container;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
+Somber Backwoods;🌾;Overgrown Reeds;Container-Triple;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
 Somber Backwoods;🪈;Ratcatcher Flute;Item;0;0;0;-2;0;0;Malvolent Instrument;Decorated magical equipment.<br>;Grabbing it seems bad luck.
+Somber Backwoods;🕋;Strange Box;Container-Locked;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
+Somber Backwoods;🦋;Sapphire Moth;Item;0;0;0;0;0;1;Artifact;Pearlescent and classy accessory.<br>;Felt a surge of energy
 Somber Backwoods;🐗;Unstoppable Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
 Somber Backwoods;🐗;Beast Corpse;Container-Triple;0;0;0;0;0;0;Dead Animal;Massive body laying on the ground.<br>;Cut its skin open.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>;Got sick of the raw meat.
