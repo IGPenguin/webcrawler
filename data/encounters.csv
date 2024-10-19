@@ -78,7 +78,7 @@ Somber Backwoods;🧌;Old Troll;Recruit;3;0;1;0;1;2;Creature;Noticed suspicious 
 Somber Backwoods;🎗️;Golden Trinket;Item;-1;0;0;0;0;1;Artifact;Forcefully draws the eyesight.<br>;Stuck deep into the skin.
 Somber Backwoods;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
 Somber Backwoods;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
-Somber Backwoods;🐗;Unstoppable Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;
+Somber Backwoods;🐗;Furious Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;Got torn apart.
 Somber Backwoods;🐗;Beast Corpse;Container-Triple;0;0;0;0;0;0;Dead Animal;Massive body laying on the ground.<br>;Cut its skin open.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>;Got sick of the raw meat.
 Somber Backwoods;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Disgusting on sight.<br>;Dug out a hefty worm.
@@ -96,9 +96,9 @@ Somber Backwoods;🥀;Tainted Rosebush;Trap-Roll;0;2;0;0;0;0;Dying Flora;Foul st
 Bleak Necropolis;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>Chance for a breather.;
 Bleak Necropolis;🪦;Silent Graveyard;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
 Bleak Necropolis;⚰️;Burial Coffin;Container-Triple;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
-Bleak Necropolis;🫀;Human Heart;Curse;0;0;0;0;-1;0;Disturbing Sight;Disgusting on sight.<br>;Dug out a hefty worm.
-Bleak Necropolis;🦷;Luck Tooth;Item;0;0;0;1;0;0;Disturbing Sight;Disgusting on sight.<br>;Dug out a hefty worm.
-Bleak Necropolis;🫁;Collapsed Lungs;Curse;0;0;0;-1;0;0;Disturbing Sight;Disgusting on sight.<br>;Dug out a hefty worm.
+Bleak Necropolis;🫀;Human Heart;Curse;0;0;0;0;-1;0;Disturbing Sight;Disgusting on sight.<br>;
+Bleak Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Disturbing Sight;Disgusting on sight.<br>;Another disgusting item in pocket.
+Bleak Necropolis;🫁;Collapsed Lungs;Curse;0;0;0;-1;0;0;Disturbing Sight;Disgusting on sight.<br>;
 Bleak Necropolis;🕳️;Suspicious Hole;Container-Triple;0;0;0;0;0;0;Disturbed Ground;Seems recently tampered with.<br>;A corpse has risen from the ground.
 Bleak Necropolis;🧟;Animated Dead;Undead;3;1;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
