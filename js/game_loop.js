@@ -132,7 +132,7 @@ function renewPlayer(){ //Default values
   playerHp = playerHpMax;
   playerStaMax = 2;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
-  playerMgkMax = 1;
+  playerMgkMax = 0;
   playerAtk = 1;
   playerDef = 0; //TODO: Make use of when getting hit not by magic
   playerLck = 1;
