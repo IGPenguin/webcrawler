@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/20/24 @ 8:04 PM"
-var initialEncounterOverride=0;
+var versionCode = "pre-fpm build: 10/20/24 @ 9:30 PM"
+var initialEncounterOverride=53;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -131,7 +131,7 @@ function renewPlayer(){ //Default values
   playerHp = playerHpMax;
   playerStaMax = 2;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
-  playerMgkMax = 0;
+  playerMgkMax = 1;
   playerAtk = 1;
   playerDef = 0; //TODO: Make use of when getting hit not by magic
   playerLck = 1;
@@ -914,7 +914,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"They resisted the spell -1 🔵");
             }
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
-              enemyCastIfMgk();
+              if (enemyCastIfMgk()) break;
               enemyAttackOrRest();
             }
             break;
@@ -985,7 +985,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) {
               break;
             }
-          } else if (enemyType=="Spirit" || enemyType=="Demon"){
+          }
+
+          if (enemyType=="Spirit" || enemyType=="Demon"){
             if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) {
               break;
             }
@@ -1014,7 +1016,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"Could not overpower this entity!");
             }
-            enemyCastIfMgk();
+            if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
 
@@ -1054,7 +1056,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
               displayPlayerCannotEffect();
             }
-            enemyCastIfMgk();
+            if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
 
@@ -1156,13 +1158,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           } else {
             logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
           }
-          enemyCastIfMgk();
+          if (enemyCastIfMgk()) break;
           enemyAttackOrRest();
           break;
 
         case "Spirit": //They don't care
           logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
-          enemyCastIfMgk();
+          if (enemyCastIfMgk()) break;
+          enemyAttackOrRest();
           break;
 
         case "Container-Friend":
@@ -1241,8 +1244,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               else {
-                enemyCastIfMgk();
                 enemyDodged("Missed, it evaded the grasp.");
+                if (enemyCastIfMgk()) break;
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
@@ -1258,15 +1261,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
-            enemyCastIfMgk();
             enemyDodged("Missed, it evaded the grasp.");
+            if (enemyCastIfMgk()) break;
             break;
 
           case "Heavy":
           case "Boss":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
+              if (enemyCastIfMgk()) break;
               logPlayerAction(actionString,"Overpowered, got hit extra hard -"+enemyAtk*2+" 💔");
-              enemyCastIfMgk();
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
@@ -1277,7 +1280,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Trap-Attack":
           case "Undead":
-            enemyCastIfMgk();
+            if (enemyCastIfMgk()) break;
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             displayEnemyEffect("✋");
@@ -1318,8 +1321,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyEffect("👋");
               nextEncounter();
             } else {
-              enemyCastIfMgk();
               enemyDodged("Missed, it evaded the grasp.");
+              if (enemyCastIfMgk()) break;
             }
             break;
 
@@ -1356,7 +1359,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
             logPlayerAction(actionString,"Hands passed right through them.");
             displayEnemyEffect("✋");
-            enemyCastIfMgk();
+            if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
 
@@ -1446,13 +1449,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString,"They ignored whatever has been said.");
               }
             }
-            enemyCastIfMgk();
+            if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
 
           case "Undead": //They don't care
             logPlayerAction(actionString,"They ignored whatever has been said.");
-            enemyCastIfMgk();
+            if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
 
@@ -1528,8 +1531,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
-            enemyCastIfMgk();
-            enemyAttackOrRest();
+            if (enemyCastIfMgk()){
+              //
+            } else {
+              enemyAttackOrRest();
+            }
 
             if (playerHp>0){
               displayPlayerEffect("💤");
