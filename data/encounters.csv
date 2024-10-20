@@ -51,7 +51,6 @@ Depriving Fairyland;🦨;Forest Skunk;Swift;2;2;1;0;10;0;Wild Animal;Seems havin
 Depriving Fairyland;🌳;Dark Grove;Container-Double;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;A knife was stuck into it.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;0;Artifact;The sacrifical blade demands blood.<br>;Released strange energy from the inside.
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;0;1;Ritual Remnants;Escaped from the trunk insides.<br>;No mercy for the wicked.
-Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
 Depriving Fairyland;🦄;Rainbow Unicorn;Pet;0;0;0;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
 Depriving Fairyland;🍯;Sweet Honeypot;Container-Double;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
@@ -59,7 +58,8 @@ Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees
 Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 Depriving Fairyland;🦡;Honey Badger;Standard;3;1;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🏛️;Ancient Temple;Container-Triple;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
-Depriving Fairyland;🦎;Komodo Dragon;Heavy;1;2;1;0;10;1;Mythical Beast;Eyes are glowing blue.<br>;Devoured by the mythical dragon.
+Depriving Fairyland;🧙‍♂️;Priest of the Nature;Standard;1;1;1;0;3;2;Mythical Beast;Eyes are glowing blue.<br>;Devoured by the mythical dragon.
+Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🏛️;Ancient Temple;Altar;0;0;1;0;0;0;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
 Depriving Fairyland;🌾;Tall Reeds;Container-Double;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
 Depriving Fairyland;🦆;Stubborn Drake;Swift;1;1;3;0;2;0;Beast;Uhh. Peace was an option?<br>;Honked to death.
@@ -87,6 +87,8 @@ Somber Backwoods;🌻;Sunflower Growth;Container-Double;0;0;0;0;0;0;Wild Flora;M
 Somber Backwoods;🧞;Genie;Container-Friend;0;0;0;0;2;0;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
 Somber Backwoods;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
 Somber Backwoods;⛩️;Oriental Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merficul.<br>;Recived a powerful blessing.
+Somber Backwoods;🦎;Komodo Dragon;Heavy;3;2;2;0;10;0;Alpha Lizard;Eyes are glowing blue.<br>;Devoured by the mythical dragon.
+Somber Backwoods;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>;
 Somber Backwoods;🌊;Swamp Shore;Prop;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
 Somber Backwoods;🦟;Oversized Mosqito;Swift;2;2;1;0;10;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
 Somber Backwoods;🌊;Swamp of Sorrows;Fishing;0;0;0;0;0;0;Impassable Terrain;Murky water bubbles all around.<br>;Fished out something.
@@ -117,7 +119,7 @@ Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying am
 Bleak Necropolis;📘;Book of Spells;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
 Bleak Necropolis;🧙;Necromancer;Recruit;2;1;1;0;2;1;Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Bleak Necropolis;🌲;Spruce Trees;Container-Double;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>Finally chance to rest.;
-Somber Backwoods;🕳️;Velied Chasm;Fishing;0;0;0;0;0;0;Impassable Terrain;Murky water bubbles all around.<br>;Fished out something.
+Bleak Necropolis;🕳️;Velied Chasm;Fishing;0;0;0;0;0;0;Impassable Terrain;Murky water bubbles all around.<br>;Fished out something.
 Bleak Necropolis;🦉;Night Eye;Friend;0;0;1;0;0;0;Wild Animal;Landed on the edge of the pit..<br>;It revealed a powerful secret
 Bleak Necropolis;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
 Bleak Necropolis;🚪;Tower Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>;
