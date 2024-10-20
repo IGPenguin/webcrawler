@@ -70,7 +70,7 @@ function getFirstName(){
 }
 
 function getVitalName(name=playerName){
-  const random_names = ["Resilient "+name,"Strong "+name, "Vigorous "+name, "Muscular "+name, "Huge "+name, "Giant "+name, "Massive "+name, "Healthy "+name,name+" the Beast", name+" the Mighty"];
+  const random_names = ["Big "+name,"Vital "+name,"Resilient "+name,"Strong "+name, "Vigorous "+name, "Muscular "+name, "Huge "+name, "Giant "+name, "Massive "+name, "Healthy "+name,name+" the Beast", name+" the Mighty"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
