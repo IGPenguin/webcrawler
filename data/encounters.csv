@@ -82,6 +82,7 @@ Somber Backwoods;🪻;Hyacinth Thicket;Container-Double;0;0;0;0;0;0;Wild Flora;C
 Somber Backwoods;🦎;Komodo Dragon;Standard;2;3;1;0;10;0;Alpha Lizard;Eyes are glowing blue.<br>;Devoured by the mythical dragon.
 Somber Backwoods;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>;
 Somber Backwoods;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merficul.<br>;Recived a powerful blessing.
+Somber Backwoods;🐆;Sabre Essence;Spirit;2;1;1;0;3;1;Soul Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 Somber Backwoods;🌾;Rice Field;Container-Triple;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
 Somber Backwoods;🐗;Mud Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;Got torn apart.
 Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>;Got sick of the raw meat.
@@ -94,14 +95,14 @@ Somber Backwoods;🌊;Bleak Shore;Prop;0;0;0;0;0;0;Edge of the World;Murky water
 Somber Backwoods;🥀;Tainted Rosebush;Trap-Roll;0;2;0;0;0;0;Dying Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin
 Bleak Necropolis;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Bleak Necropolis;🐦‍⬛;Undead Crow;Demon;1;2;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
+Bleak Necropolis;⚰️;Burial Coffin;Container-Triple;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
+Bleak Necropolis;🫀;Rotten Heart;Container;0;0;0;0;-1;0;Disgusting Sight;xyxy.<br>;
+Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
+Bleak Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Human Remains;Disgusting on sight.<br>;Another disgusting item in pocket.
 Bleak Necropolis;⛺️;Worn Tent;Container-Triple;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
 Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Bleak Necropolis;📘;Book of Spells;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
-Bleak Necropolis;🧙;Necromancer;Recruit;4;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Bleak Necropolis;⚰️;Burial Coffin;Container-Triple;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
-Bleak Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Human Remains;Disgusting on sight.<br>;Another disgusting item in pocket.
-Bleak Necropolis;🫀;Rotten Heart;Container;0;0;0;0;-1;0;Disgusting Sight;xyxy.<br>;
-Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
+Bleak Necropolis;🧙;Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Bleak Necropolis;🪦;Silent Graveyard;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
 Bleak Necropolis;🕳️;Suspicious Hole;Container-Triple;0;0;0;0;0;0;Disturbed Ground;Seems recently tampered with.<br>;Corpse has risen from the ground.
 Bleak Necropolis;🧟;Animated Dead;Undead;3;2;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
@@ -117,7 +118,7 @@ Bleak Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Impassable Terrain;Murk
 Bleak Necropolis;🦉;Night Eye;Friend;0;0;1;0;0;0;Wild Animal;Landed on the edge of the pit..<br>;It revealed a powerful secret
 Bleak Necropolis;⛪️;Barred Church;Container-Locked-Double;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>;
 Bleak Necropolis;🧛;Thirsty Vampire;Demon;3;2;2;0;3;1;Evil Being;Sharp teeth getting ready to bite.<br>;Got all blood sucked out.
-Bleak Necropolis;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Deal with the devil.<br>;Granted the Death's touch.
+Bleak Necropolis;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Deal with the prime evil.<br>;Granted the Death's touch.
 Bleak Necropolis;🕰️;Clock Tower;Container-Triple;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
 Bleak Necropolis;🚪;Tower Entrance;Container-Locked-Double;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>;
 Bleak Necropolis;🐻;Undead Grizzly;Boss;6;2;3;0;10;0;Reanimated;There's an axe sticked into its head.<br>Still packs a punch.;Got torn to tiny pieces.
