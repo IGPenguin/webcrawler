@@ -21,6 +21,7 @@ var emptySymbol = "○";
 var enemyStatusString = ""
 
 //Global vars
+var adventureStartTime = getTime();
 var adventureEndTime;
 var lines;
 var linesLoot;
@@ -2009,20 +2010,21 @@ function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory."
 }
 
 //End Game
-function setAdventureEndTime(){
+function getTime(){
   var currentDate = new Date();
-  adventureEndTime = currentDate.getDate() + "-"
+  var time = currentDate.getDate() + "-"
                   + currentDate.getMonth() + "-"
                   + currentDate.getFullYear() + " at "
                   + currentDate.getHours() + ":"
                   + currentDate.getMinutes();
+  return time;
 }
 
 function gameOver(){
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")) enemyMsg="Got killed, ending the adventure.";
   logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
-  setAdventureEndTime();
+  adventureEndTime=getTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
@@ -2034,7 +2036,7 @@ function gameOver(){
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   var winMessage="🧠 ▸ 💭 Just had a deja vu, feels really familiar (NG+).";
   logAction(winMessage);
-  setAdventureEndTime();
+  adventureEndTime=getTime();
 
   //Reset progress to game start
   resetSeenEncounters();
@@ -2347,6 +2349,7 @@ function generateCharacterShareString(){
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
     if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
+    characterShareString += "\nBorn: "+adventureEndTime;
     characterShareString += "\nDeceased: "+adventureEndTime;
     characterShareString += adventureEndReason+" (Encounter #"+adventureEncounterCount+")";
 
@@ -2389,7 +2392,7 @@ function copyAdventureToClipboard(){
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI just finished a WebCrawler adventure!"+"\n"+generateCharacterShareString()));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI just finished a WebCrawler adventure!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")));
 }
 
 //Prevent data loss warning if not running on localhost
