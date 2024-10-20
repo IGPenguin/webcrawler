@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "pre-fpm build: 10/20/24 @ 9:30 PM"
-var initialEncounterOverride=53;
+var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -646,25 +646,27 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (enemyCastIfMgk(false)){
-              logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
-              displayPlayerEffect("🌀");
-              break;
-            }
-
             if (playerUseStamina(1,noStaForRollMessage)){
+
+              if (enemyCastIfMgk(false)){
+                logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+                displayPlayerEffect("🌀");
+                break;
+              }
+
               if (enemyAtk!=0){
-                rollMessage="Dodged their attack -1 🟢";
+                rollMessage="Successfully dodged their attack -1 🟢";
               } else {
                 rollMessage="They do not mean no harm -1 🟢";
               }
+
               enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
 
           case "Swift":
-            if (enemyCastIfMgk(false)){
+            if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
               logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
               break;
             }
@@ -676,7 +678,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Heavy":
-            if (enemyCastIfMgk(false)){
+            if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
               logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
               break;
             }
