@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/20/24 @ 9:30 PM"
+var versionCode = "pre-fpm build: 10/20/24 @ 11:55 PM"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -994,7 +994,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Spirit" || enemyType=="Demon"){
-            if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) {
+            if (!playerUseMagic(1,"Not enough mana, requires +2 🔵")) {
               break;
             }
           }
@@ -1014,7 +1014,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Spirit":
           case "Demon":
-            if ( enemyMgk <= playerMgkMax ){
+            if ( (enemyMgk-enemyMgkLost) <= playerMgkMax ){
               logPlayerAction(actionString,"Banished them from this world!");
               displayEnemyEffect("🔥");
               animateFlipNextEncounter();
@@ -1655,7 +1655,7 @@ function enemyHit(damage,magicType=false) {
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
     logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
-    adventureKills++;
+    playerKills++;
     animateFlipNextEncounter();
   }
 }
