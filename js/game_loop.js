@@ -2016,7 +2016,8 @@ function getTime(){
                   + currentDate.getMonth() + "-"
                   + currentDate.getFullYear() + " at "
                   + currentDate.getHours() + ":"
-                  + currentDate.getMinutes();
+                  + currentDate.getMinutes()+ ":"
+                  + currentDate.getSeconds();
   return time;
 }
 
@@ -2349,7 +2350,7 @@ function generateCharacterShareString(){
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
     if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
-    characterShareString += "\nBorn: "+adventureEndTime;
+    characterShareString += "\nBorn: "+adventureStartTime;
     characterShareString += "\nDeceased: "+adventureEndTime;
     characterShareString += adventureEndReason+" (Encounter #"+adventureEncounterCount+")";
 
