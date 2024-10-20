@@ -119,7 +119,7 @@ var playerMgkMax;
 var playerHp;
 var playerSta;
 var playerLck;
-var luckInterval = 24; //Lower to increase chances
+var luckInterval = 30; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerRested = false;

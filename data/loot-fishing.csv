@@ -6,6 +6,7 @@ Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Cou
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant had moved away.<br>;Gained the powers of the sea.
 Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>;Gained powers of the wilds.
 Loot;👞;Old Shoe;Item;0;0;0;0;0;0;Trash;Thoroughly wet right shoe.<br>;
+Loot;🎓;Graduate Hat;Item;0;0;0;0;2;0;Trash;Proof of previously obtained knowledge.<br>;
 Loot;💍;King's Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>;Felt a surge in the chest.
 Loot;💍;Engraved Ring;Trap;-1;0;0;0;0;1;Isildur's Bane;Says "My Precious" on the inside.<br>;The One Ring is too tight.
 Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>;Felt a surge in the chest.
@@ -19,7 +20,7 @@ Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
 Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br>;
 Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks reliable.<br>;
 Loot;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
-Loot;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Battle-proven makeshift weapon.<br>;Obtained a makeshift weapon.
+Loot;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
 Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
 Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
