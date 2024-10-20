@@ -183,7 +183,6 @@ function enemyRenew(){
   enemyMgkLost = 0;
 }
 
-
 //Data logic
 //Load encounter data .csv on page ready
 $(document).ready(function() {
@@ -853,8 +852,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_cast':
           if (enemyType=="Death"){
-            displayPlayerCannotEffect();
-            logPlayerAction(actionString,"Magic powers already faded away.");
+            logPlayerAction(actionString,"Cast a strong message.");
+            redirectToFeedback();
             break;
           }
 
@@ -963,8 +962,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_pray':
           if (enemyType=="Death"){
-            logPlayerAction(actionString,"It's way too late for healing.");
-            displayPlayerCannotEffect();
+            logPlayerAction(actionString,"Sent a message to the universe.");
+            redirectToFeedback();
             break;
           }
 
@@ -1111,8 +1110,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
         if (enemyType=="Death"){
-          displayPlayerCannotEffect();
-          logPlayerAction(actionString,"The lips cannot curse anymore.");
+          logPlayerAction(actionString,"Decided to make a complaint.");
+          redirectToFeedback();
           break;
         }
 
@@ -1488,7 +1487,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
            break;
 
           case "Death":
-            copyAdventureToClipboard();
+            redirectToTweet();
             break;
 
           case "Dream":
@@ -1592,7 +1591,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            redirectToTweet();
+            copyAdventureToClipboard();
             break;
 
           case "Upgrade":
@@ -2213,8 +2212,8 @@ function adjustEncounterButtons(){
       break;
 
     case "Death":
-      document.getElementById('button_speak').innerHTML="📜 Legend";
-      document.getElementById('button_sleep').innerHTML="🦆 Tweet";
+      document.getElementById('button_speak').innerHTML="🦆 Tweet";
+      document.getElementById('button_sleep').innerHTML="📜 Legend";
       break;
 
     case "Checkpoint":
@@ -2359,7 +2358,7 @@ function generateCharacterShareString(){
 
 function copyAdventureToClipboard(){
   displayPlayerEffect("📜");
-  logPlayerAction(actionString,"The legend was written to hard drive.");
+  logPlayerAction(actionString,"Written the legend to hard drive.");
 
   var adventureLogClipboard = "";
 
@@ -2394,6 +2393,11 @@ function copyAdventureToClipboard(){
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
   window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI just finished a WebCrawler adventure!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")));
+}
+
+function redirectToFeedback(){
+  var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
+  window.open(googleFormUrl);
 }
 
 //Prevent data loss warning if not running on localhost
