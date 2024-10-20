@@ -1,0 +1,37 @@
+area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
+Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
+Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
+Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
+Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Could be of service.;Took it with themselves just in case.
+Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant had moved away.<br>;Gained the powers of the sea.
+Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>;Gained powers of the wilds.
+Loot;👞;Old Shoe;Item;0;0;0;0;0;0;Trash;Thoroughly wet right shoe.<br>;
+Loot;🎓;Graduate Hat;Item;0;0;0;0;2;0;Trash;Proof of previously obtained knowledge.<br>;
+Loot;💍;King's Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>;Felt a surge in the chest.
+Loot;💍;Engraved Ring;Trap;-1;0;0;0;0;1;Isildur's Bane;Says "My Precious" on the inside.<br>;The One Ring is too tight.
+Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>;Felt a surge in the chest.
+Loot;🪱;Drowned worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Loot;🪱;Tired Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Loot;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
+Loot;🏹;Wet Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;Perhaps needs a bit of drying.<br>;Shot an arrow in the knee
+Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated upon reaching throat.
+Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
+Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br>;
+Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks reliable.<br>;
+Loot;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
+Loot;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
+Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
+Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
+Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
+Loot;📘;Wet Book;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
+Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
+Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
+Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
+Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
+Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny;Easily blinded by trust.<br>;Got affected by destiny.
+Loot;🃏;Tarot Card — Lover;Item;2;0;0;0;-2;0;Destiny;Voluntarily seized by romance.<br>;Got affected by destiny.
+Loot;🏺;Painted Amphora;Item;0;0;0;0;0;0;Ancient Container;Water is splashing inside.<br>;
+Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;No way this would come in handy.<br>;
+Loot;🎀;Silly Bowtie;Item;0;0;1;0;0;0;Cringe Accessory;Hopfully has some purpose.<br>;
+Loot;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;Portable Sanctuary;Provides a personal safespace.<br>;

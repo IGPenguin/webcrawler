@@ -1,61 +1,159 @@
 //Having all this in a one file is truly shameful
 //...submit a pull request if you dare
 
-//Tech init
-var versionCode = "work-in-progress, ver. 5/10/23"
-var cardUIElement;
-var emojiUIElement;
-var enemyInfoUIElement;
-var playerInfoUIElement;
+//Debug
+var versionCode = "pre-fpm build: 10/21/24 @ 00:06 AM"
+var initialEncounterOverride=0;
+if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
-var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
-var seenEncounters;
-var randomEncounterIndex;
-var encountersTotal;
-var encounterIndex;
+//Colors
+var colorWhite = "#FFFFFF";
+var colorGold = "#FFD940";
+var colorGreen = "#22BF22";
+var colorRed = "#FF0000";
+var colorGrey = "#DDDDDD";
+var colorOrange = "orange";
+var colorBlue = "#1059AA";
+
+//Symbols
+var fullSymbol = "●";
+var emptySymbol = "○";
+var enemyStatusString = ""
+
+//Stats
+var adventureStartTime = getTime();
+var adventureEndTime;
+
+//Global vars
 var lines;
+var linesLoot;
+var encounterIndex;
+var lastEncounterIndex;
+var encountersTotal;
+var lootTotal;
+var randomEncounterIndex;
+var lootEncounterIndex;
+var isLooting = false;
 
-if (seenEncountersString == null){
+var seenLoot;
+var seenLootString = JSON.parse(localStorage.getItem("seenLoot"));
+if (seenLootString == null){
+  seenLoot = [];
+} else {
+  //Load seen encounters
+  seenLoot = Array.from(seenLootString);
+}
+
+var seenEncounters;
+var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
+if (seenEncountersString == null) {
   seenEncounters = [];
 } else {
-  seenEncounters = Array.from(seenEncountersString); //Load seen encounters
+  seenEncounters = Array.from(seenEncountersString);
 }
+
+//Globar vars - UIElements
+var areaUIElement;
+var nameUIElement;
+var cardUIElement;
+var emojiUIElement;
+var emojiWrapperUIElement;
+var enemyInfoUIElement;
+var playerInfoUIElement;
+var toolbarCardUIElement;
+var enemyTeamUIElement;
+var versusTextUIElement;
+var buttonsContainer;
 
 //Player stats init
-function renewPlayer(){
-  playerHpMax=playerHpDefault;
-  playerHp = playerHpMax;
-  playerStaMax = playerStaDefault;
-  playerSta = playerStaDefault;
-  playerAtk = 1;
-  playerDef = 0;
-  playerInt = 1;
-  playerLootString = "";
-  playerPartyString = "";
-  adventureLog = "";
+function getFirstName(){
+  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizard", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-var playerName = "Nameless Hero";
-var playerLootString = "";
-var playerPartyString = "";
-var playerHpDefault = 3;
-var playerStaDefault = 3;
-var playerLckDefault = 0;
+function getVitalName(name=playerName){
+  const random_names = ["Big "+name,"Vital "+name,"Resilient "+name,"Strong "+name, "Vigorous "+name, "Muscular "+name, "Huge "+name, "Giant "+name, "Massive "+name, "Healthy "+name,name+" the Beast", name+" the Mighty"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
 
-var playerHpMax = playerHpDefault;
-var playerStaMax = playerStaDefault;
-var playerHp = playerHpMax;
-var playerSta = playerStaMax;
-var playerLck = playerLckDefault;
-var playerInt = 1;
-var playerAtk = 1;
+function getSwiftName(name=playerName){
+  const random_names = ["Swift "+name, "Speedy "+name, "Fast "+name, "Athletic "+name, "Rushing "+name, "Reckless "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
 
-var luckInterval = 24; //Lower to increase chances
+function getFaithName(name=playerName){
+  const random_names = ["Holy "+name, "Promising "+name, "Humble "+name, name+" the Believer",name+" Worshipper"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
 
-var actionString;
-var actionLog = "💤&nbsp;▸&nbsp;💭&nbsp;You hear some faint echoing screams.<br>💤&nbsp;▸&nbsp;💭&nbsp;It's pitch black, you can't see anything.<br>💤&nbsp;▸&nbsp;💭&nbsp;Some strange presence lurkes nearby.\n";
+function getSorceryName(name=playerName){
+  const random_names = [name+" Acolyte","Mystic "+name, name+" the Magician"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getCleverName(name=playerName){
+  const random_names = ["Intelligent "+name,"Resolute "+name, "Overthinking "+name, "Clever "+name, "Ambitious "+name, "Curious "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getHatredName(name=playerName){
+  const random_names = ["Mischievous "+name,"Bloody "+name, name+" the Warlock", "Spiteful "+name, "Withering "+name, "Ruthless "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getLuckyName(name=playerName){
+  const random_names = ["Lucky "+name, "Indigent "+name,"Wholesome "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getGreedyName(name=playerName){
+  const random_names = ["Disgusting "+name, "Worthless "+name, "Dirty "+name, "Greedy "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+var playerName = getFirstName();
+var playerNumber = 1; //Increments on death if at least once saved
+var playerKills = 0;
+var playerLootString;
+var playerPartyString;
+
+var playerHpMax;
+var playerStaMax;
+var playerMgkMax;
+var playerHp;
+var playerSta;
+var playerLck;
+var luckInterval = 30; //Lower to increase chances
+var playerInt;
+var playerAtk;
+var playerRested = false;
+
+renewPlayer();
+function renewPlayer(){ //Default values
+  playerName = getFirstName();
+  playerHpMax=2;
+  playerHp = playerHpMax;
+  playerStaMax = 2;
+  playerSta = 0; //Start tired in a dream (was playerStaMax;)
+  playerMgkMax = 0;
+  playerAtk = 1;
+  playerDef = 0; //TODO: Make use of when getting hit not by magic
+  playerLck = 1;
+  playerInt = 1;
+  playerMgk = playerMgkMax;
+  playerRested = false;
+  playerLootString = "";
+  playerPartyString = "";
+
+  playerKills = 0;
+  //adventureLog = ""; //Keep for all characters
+}
+
+//Adventure logging
+var actionString; //Initial action log below
+var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
-var adventureEncounterCount = -1; // -1 for death
+var adventureEncounterCount = 0;
 var adventureEndReason = "";
 
 //Area init
@@ -71,6 +169,7 @@ var enemyAtk;
 var enemySta;
 var enemyLck;
 var enemyInt;
+var enemyMgk;
 var enemyType;
 var enemyTeam;
 var enemyDesc;
@@ -79,7 +178,18 @@ var enemyMsg;
 var enemyHpLost = 0;
 var enemyStaLost = 0;
 var enemyAtkBonus = 0;
+var enemyIntBonus = 0;
+var enemyMgkLost = 0;
+function enemyRenew(){
+  enemyStaLost = 0;
+  enemyHpLost = 0;
+  enemyAtkBonus = 0;
+  enemyIntBonus = 0;
+  enemyMgkLost = 0;
+}
 
+//Data logic
+//Load encounter data .csv on page ready
 $(document).ready(function() {
     $.ajax({
         type: "GET",
@@ -90,9 +200,17 @@ $(document).ready(function() {
           registerClickListeners();
         }
      });
-});
 
-//Data logic
+     $.ajax({
+         type: "GET",
+         url: "data/loot-fishing.csv",
+         dataType: "text",
+         success: function(data) {
+           processLoot(data);
+           resetSeenLoot();
+         }
+      });
+});
 
 function processData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
@@ -110,8 +228,27 @@ function processData(allText) {
         lines.push(tarr);
   }
   }
-  loadEncounter(1);//Start from the first encounter (0 is dead)
+  loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
   redraw();
+  animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
+}
+
+function processLoot(lootText){ //TODO: remove and reuse the fn above
+  var allTextLines = lootText.split(/\r\n|\n/);
+  var headers = allTextLines[0].split(';');
+  linesLoot = [];
+
+  for (var i=1; i<allTextLines.length; i++) {
+      var data = allTextLines[i].split(';');
+      if (data.length == headers.length) {
+
+          var tarr = [];
+          for (var j=0; j<headers.length; j++) {
+              tarr.push(headers[j]+":"+data[j]);
+          }
+        linesLoot.push(tarr);
+  }
+  }
 }
 
 function getNextEncounterIndex(){
@@ -124,18 +261,17 @@ function getNextEncounterIndex(){
   return nextItemIndex;
 }
 
-function getUnseenEncounterIndex() { //Unused
-  console.log("Already seen line indexes: " + seenEncounters);
-  encountersTotal = lines.length;
-  var max = encountersTotal;
+function getUnseenLootIndex() {
+  lootTotal = linesLoot.length;
+  var max = lootTotal;
     do {
-      randomEncounterIndex = Math.floor(Math.random() * max);
-      if (seenEncounters.length >= encountersTotal){
-        gameEnd();
+      randomLootIndex = Math.floor(Math.random() * max);
+      if (seenLoot.length >= lootTotal){
+        console.log("ERROR: No more loot left.")
         break;
       }
-    } while (seenEncounters.includes(randomEncounterIndex));
-    return randomEncounterIndex;
+    } while (seenLoot.includes(randomLootIndex));
+    return randomLootIndex;
 }
 
 function markAsSeen(seenID){
@@ -145,41 +281,62 @@ function markAsSeen(seenID){
   }
 }
 
+function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
+  if (!seenLoot.includes(seenID)){
+    seenLoot.push(seenID);
+    localStorage.setItem("seenLoot", JSON.stringify(seenLoot));
+  }
+}
+
 function resetSeenEncounters(){
   localStorage.setItem("seenEncounters", JSON.stringify(""));
   seenEncounters = [];
 }
 
-function loadEncounter(index){
-  encounterIndex = index;
-  selectedLine = String(lines[index]);
+function resetSeenLoot(){ //TODO: remove and reuse the fn above?
+  localStorage.setItem("seenLoot", JSON.stringify(""));
+  seenLoot = [];
+}
 
-  //Encounter data - area;emoji;name;type;hp;atk;sta;def;team;desc
+function loadEncounter(index, fileLines = lines){
+  encounterIndex = index;
+  selectedLine = String(fileLines[index]);
+
+  //Encounter data initialization, details in encounters.csv
   areaName = String(selectedLine.split(",")[0].split(":")[1]);
+  if (fileLines!=lines) areaName = previousArea
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
-  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]))+enemyAtkBonus;
+  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]));
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
   enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
-  enemyTeam = String(selectedLine.split(",")[9].split(":")[1]);
-  enemyDesc = String(selectedLine.split(",")[10].split(":")[1]);
-  enemyMsg = String(selectedLine.split(",")[11].split(":")[1]);
+  enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
+  enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
+  enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
+  enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
-//UI Logic
+//UI DRAW FUNCTIONS
 function redraw(){
   //Version
   document.getElementById('id_version').innerHTML = versionCode;
 
   //Player UI
-  playerInfoUIElement= document.getElementById('id_player_info');
+  playerInfoUIElement = document.getElementById('id_player_info');
+  toolbarCardUIElement = document.getElementById('id_toolbar_card');
   document.getElementById('id_player_name').innerHTML = playerName;
-  var playerStatusString = "❤️ " + "◆".repeat(playerHp) + "◇".repeat((-1)*(playerHp-playerHpMax));
-  playerStatusString += "&nbsp;&nbsp;🟢 " + "◆".repeat(playerSta) + "◇".repeat(playerStaMax-playerSta);
-  playerStatusString += "&nbsp;&nbsp;🎯 " + "×".repeat(playerAtk);
+
+  var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp) + emptySymbol.repeat((-1)*(playerHp-playerHpMax));
+  playerStatusString += "&nbsp;&nbsp;"
+
+  playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
+  if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
+  playerStatusString += "&nbsp;&nbsp;"
+  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
+  playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
@@ -192,303 +349,954 @@ function redraw(){
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
   }
 
+  //Versus UI
+  versusTextUIElement = document.getElementById('id_versus');
+
   //Encounter UI
+  areaUIElement = document.getElementById('id_area');
+  nameUIElement = document.getElementById('id_name');
   cardUIElement = document.getElementById('id_card');
-  enemyInfoUIElement = document.getElementById('id_enemy_info');
+  enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
+  emojiWrapperUIElement = document.getElementById('id_emoji_wrapper');
+  enemyTeamUIElement = document.getElementById('id_team');
 
   emojiUIElement.innerHTML = enemyEmoji;
-  document.getElementById('id_area').innerHTML = areaName;
-  document.getElementById('id_name').innerHTML = enemyName;
-  document.getElementById('id_desc').innerHTML = enemyDesc;
-  document.getElementById('id_team').innerHTML = "»&nbsp;" + enemyTeam + "&nbsp;«";
+  areaUIElement.innerHTML = areaName;
+  nameUIElement.innerHTML = enemyName;
+
+
+  var enemyDescUIElement = document.getElementById('id_desc')
+  enemyDescUIElement.innerHTML = enemyDesc;
+  //Hacky hacky hacky hack hack hack, hacky hacky hacky, yeah yeah
+  enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
-  var enemyStatusString = ""
-  if (enemyHp > 0) { enemyStatusString = "❤️ " + "◆".repeat(enemyHp);}
-    if (enemyHpLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyHpLost) + "◇".repeat(enemyHpLost); } //YOLO
-  if (enemySta > 0) { enemyStatusString += "&nbsp;🟢 " + "◆".repeat(enemySta);}
-    if (enemyStaLost > 0) { enemyStatusString = enemyStatusString.slice(0,-1*enemyStaLost) + "◇".repeat(enemyStaLost); } //YOLO
-  if (enemyAtk > 0) {enemyStatusString += "&nbsp;🎯 " + "×".repeat(enemyAtk);}
-
+  enemyTeamUIElement.innerHTML="";
   switch(enemyType){
-    case "Standard":
-    case "Recruit":
+    case "Boss":
+      enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorRed);
+      enemyStatusString=appendEnemyStats()
+      break;
     case "Pet":
-    case "Swift":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Companion",colorOrange);
+      enemyStatusString=appendEnemyStats()
+      break;
+    case "Swift": //TODO: Perhaps there should also be "Flying"??
+      enemyTeamUIElement.innerHTML=decorateStatusText("💨","Hasty",colorGreen);
+      enemyStatusString=appendEnemyStats()
+      break;
     case "Heavy":
-      break; //Show default - HP, Sta + dmg
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔺","Strong",colorRed);
+      enemyStatusString=appendEnemyStats()
+      break;
+    case "Spirit":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔘","Spirit",colorWhite);
+      enemyStatusString=appendEnemyStats()
+      break;
+    case "Friend":
+    case "Container-Friend":
+      var neutralType=decorateStatusText("▪️","Neutral",colorGrey);
+      //enemyStatusString=appendEnemyStats() //Do not display stats = reward hidden
+      displayEnemyType(neutralType);
+      break;
+    case "Small":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small",colorWhite);
+      enemyStatusString=appendEnemyStats()
+      break;
+    case "Recruit":
+    case "Standard":
+      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Normal",colorWhite);
+      enemyStatusString=appendEnemyStats()
+      break;
+    case "Demon":
+      enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed);
+      enemyStatusString=appendEnemyStats()
+      break;
+    case "Undead":
+      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Undead",colorGrey);
+      enemyStatusString=appendEnemyStats()
+      break;
+
     case "Item":
     case "Trap":
-    case "Friend":
-      enemyStatusString = "";
-      if (enemyHp>0) {enemyStatusString += "❤️ ??&nbsp;&nbsp;";}
-      if (enemyAtk>0) {enemyStatusString += "🎯 ??&nbsp;&nbsp;";}
-      if (enemySta>0) {enemyStatusString += "🟢 ??&nbsp;&nbsp;";}
-      if (enemyLck>0) {enemyStatusString += "🍀 ??&nbsp;&nbsp;";}
-      if (enemyInt>0) {enemyStatusString += "🧠 ??&nbsp;&nbsp;";}
+      var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
+      if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
+        enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
+      } else if (totalEffect < 0 ) {
+          enemyStatusString=decorateStatusText("♣️","Mysterious","lightgrey");
+      } else {
+        enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
+      }
       break;
+    case "Container-Consume":
     case "Consumable":
-      enemyStatusString = "❤️ +&nbsp;&nbsp;🟢 +";
+      enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
+      break;
+    case "Dream":
+      enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
+      break;
+    case "Upgrade":
+      enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
+      break;
+    case "Container-Locked":
+    case "Container-Locked-Double":
+      enemyStatusString=decorateStatusText("🗝️","Locked","#DDDDDD");
+      break;
+    case "Container":
+    case "Container-Double":
+    case "Container-Triple":
+    case "Prop":
+      enemyStatusString=decorateStatusText("⚪️","Unremarkable","#FFFFFF");
+      break;
+    case "Altar":
+      enemyStatusString=decorateStatusText("♦️","Place of Worship",colorRed);
+      break;
+    case "Fishing":
+      enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
+      break;
+    case "Curse":
+      enemyStatusString=decorateStatusText("⁉️","Hazard","red");
+      break;
+    case "Death":
+      enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
+      break;
+    case "Checkpoint":
+      enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
       break;
     default:
-      enemyStatusString = "∙  ∙  ∙"; //Dream, Prop, Upgrade etc.
+      enemyStatusString=decorateStatusText("⁉️","No Details","red");
       break;
   }
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
+
+  versusTextUIElementUIElement = document.getElementById('id_versus');
+  buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
+}
+
+function displayEnemyType(type){
+  if ((enemyStatusString.replaceAll("&nbsp;","")!="")&&(!enemyStatusString.includes("</i>"))){
+    enemyTeamUIElement.innerHTML=type;
+  } else {
+    enemyStatusString=type;
+  }
+}
+
+function appendEnemyStats(){
+  var enemyStats;
+  enemyStats="&nbsp;";
+  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
+  if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
+
+  enemyStats += "&nbsp;&nbsp;"
+
+  if (enemySta > 0) { enemyStats += "&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
+    if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyStaLost) + emptySymbol.repeat(enemyStaLost); } //YOLO
+
+  enemyStats += "&nbsp;&nbsp;"
+
+  if ((enemyAtk)>0) {
+    enemyStats += "&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
+    if (enemyAtkBonus<0) { enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
+    }
+    enemyStats += "&nbsp;&nbsp;"
+  }
+
+  if (enemyMgk > 0) {enemyStats += "&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
+  if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
+
+  return enemyStats;
+}
+
+function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
+  return emoji+"&nbsp;<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
 }
 
 //Game logic
 function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
     var buttonUIElement = document.getElementById(button);
+    animateUIElement(buttonUIElement,"animate__pulse","0.15");
+
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
-        if (!playerUseStamina(1,"You are too tired to attack anything.")){
+        if (enemyType=="Death") {
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"There is nothing to attack anymore.");
+          break;
+        }
+
+        if (enemyType!="Upgrade" && !playerUseStamina(1,"Too tired to attack anything.")){
             break;
           }
+
         switch (enemyType){
+          case "Item":
+          case "Consumable":
+            isLooting=false;
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"You smashed it into small pieces -1 🟢");
-            nextEncounter();
+            logPlayerAction(actionString,"Smashed it into tiny pieces -1 🟢");
+            displayEnemyEffect("〽️");
+            animateFlipNextEncounter();
             break;
-          case "Trap-Attack":
+
+          case "Trap-Attack": //Attacking causes you damage
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
             playerHit(enemyAtk);
             break;
-          case "Item":
-          case "Consumable":
+
+          case "Spirit":
+            displayEnemyEffect("💨");
+            enemyAttackOrRest("Cannot hit, eerie limbs retaliated -"+enemyAtk+" 💔");
+            break;
+
           case "Container":
-            var openMessage = "You attacked and destroyed it -1 🟢";
+          case "Container-Double":
+          case "Container-Triple":
+            var openMessage = "Smashed it wide open -1 🟢";
             if (enemyMsg != ""){
-              openMessage = enemyMsg.replace("."," -1 🟢");
+              openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
             }
             logPlayerAction(actionString,openMessage);
             displayEnemyEffect("〽️");
-            enemyAnimateDeathNextEncounter();
+            animateFlipNextEncounter();
             break;
+
           case "Friend":
-            logPlayerAction(actionString,"Your attack spooked them -1 🟢");
-            displayEnemyEffect("〽️");
-            nextEncounter();
-            break;
-          case "Heavy":
+          case "Container-Friend":
+            if (enemyAtk>0){
+              logPlayerAction(actionString,"Turned them adversary -1 🟢");
+              enemyType="Standard";
+            } else {
+              logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
+              displayEnemyEffect("〽️");
+              nextEncounter();
+              break;
+            }
+
           case "Standard": //You hit first, they hit back if they have stamina
+          case "Undead":
+          case "Demon":
+          case "Heavy":
           case "Recruit":
           case "Pet":
+          case "Boss":
+          case "Small":
             enemyHit(playerAtk);
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
             }
             break;
+
           case "Swift": //They hit you first if they have stamina
             if (enemySta-enemyStaLost > 0) {
-              enemyStaminaChangeMessage(-1,"They dodged and hit you back -"+enemyAtk+" 💔","n/a");
-              playerHit(enemyAtk);
+              displayEnemyEffect("🌀");
+              if ((enemyAtk+enemyAtkBonus)>0){
+                enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+enemyAtk+" 💔","n/a");
+                playerHit(enemyAtk);
+              } else {
+                enemyStaminaChangeMessage(-1,"They barely dodged the attack.","n/a");
+              }
             } else {
               enemyHit(playerAtk);
               enemyAttackOrRest();
             }
             break;
-          case "Death":
-            logPlayerAction(actionString,"There is nothing to attack anymore.");
-            break
+
           case "Upgrade":
-          logPlayerAction(actionString,"Your felt your body become stronger.");
-          displayPlayerEffect("✨");
+            logPlayerAction(actionString,"Felt becoming a bit stronger +1 ❤️");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("❤️");
+            playerName=getVitalName();
             playerHpMax+=1;
             playerHp+=1;
-            playerSta+=1; //Restore lost stamina from initial attack
-            nextEncounter();
+            animateFlipNextEncounter();
             break;
+
           default:
-            logPlayerAction(actionString,"Your attack had no effect on that -1 🟢");
+            logPlayerAction(actionString,"The attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
       }
       break;
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
-        const noStaForRollMessage = "You are too tired to make any move.";
-        switch (enemyType){
+        if (enemyType=="Death"){
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"There is nothing to dodge anymore.");
+          break;
+        }
+
+        const noStaForRollMessage = "Too tired to make any move.";
+        var rollMessage;
+
+        switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Standard":
+          case "Undead":
           case "Recruit":
           case "Pet":
+          case "Demon":
+          case "Spirit":
+          case "Boss":
+          case "Small":
+            if ((enemyAtk<=0) && (enemyMgk<=0)){
+              logPlayerAction(actionString,"Walked away leaving them behind.");
+              nextEncounter();
+              break;
+            }
+
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"You dodged their standard attack -1 🟢","Your roll was a waste of energy -1 🟢");
+
+              if (enemyCastIfMgk(false)){
+                logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+                displayPlayerEffect("🌀");
+                break;
+              }
+
+              if (enemyAtk!=0){
+                rollMessage="Successfully dodged their attack -1 🟢";
+              } else {
+                rollMessage="They do not mean no harm -1 🟢";
+              }
+
+              enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
+
           case "Swift":
+            if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
+              logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+              break;
+            }
+
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"They hit you while you were rolling -"+enemyAtk+" 💔","You rolled into a surprise attack -"+enemyAtk+" 💔");
+              enemyStaminaChangeMessage(-1,"Failed to dodge the attack -"+enemyAtk+" 💔","Rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             }
             break;
+
           case "Heavy":
+            if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
+              logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+              break;
+            }
+
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"You dodged their heavy attack -1 🟢","Your rolling was a waste of energy  -1 🟢");
+              enemyStaminaChangeMessage(-1,"Dodged a heavy attack -1 🟢","Rolled around wasting energy  -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
-          case "Item":
+
+          case "Item": //You'll simply skip ahead
           case "Consumable":
           case "Checkpoint":
-            logPlayerAction(actionString,"You walked away leaving it behind.");
+            if (isLooting){
+              isLooting=false;
+              logPlayerAction(actionString,"Threw it far away.");
+            } else {
+              logPlayerAction(actionString,"Walked away leaving it behind.");
+            }
+            nextEncounter();
+            break;
+          case "Fishing":
+            logPlayerAction(actionString,"Continued alongside the shore.");
+            nextEncounter();
+            break;
+          case "Altar":
+            logPlayerAction(actionString,"Continued the adventure.");
             nextEncounter();
             break;
           case "Container":
-            logPlayerAction(actionString,"You left without investigating it.");
-            encounterIndex+=1; //Skip loot
+          case "Container-Consume":
+          case "Container-Locked":
+          case "Container-Friend":
+            logPlayerAction(actionString,"Left without investigating it.");
+            encounterIndex++;
+            nextEncounter();
+            break;
+          case "Container-Double":
+          case "Container-Locked-Double":
+          case "Container-Triple":
+            logPlayerAction(actionString,"Left without investigating it.");
+            encounterIndex+=2; //Skip two encounters
+            if (enemyType=="Container-Triple"){ //Skip three encounters
+              encounterIndex++;
+            }
             nextEncounter();
             break;
           case "Dream":
-            logPlayerAction(actionString,"You moved onwards feeling anxious.");
-            nextEncounter();
+            if (playerSta<=0){
+              logPlayerAction(actionString,"Cannot walk while asleep.");
+              displayPlayerCannotEffect();
+            } else {
+              logPlayerAction(actionString,"Embarked on a new adventure.");
+              nextEncounter();
+            }
             break;
           case "Prop":
-            logPlayerAction(actionString,"You continued on your adventure.");
+            isLooting=false;
+            logPlayerAction(actionString,"Continued on the adventure.");
             nextEncounter();
             break;
+          case "Container-Friend":
           case "Friend":
-            logPlayerAction(actionString,"You walked far away from them.");
+            logPlayerAction(actionString,"Walked away leaving them behind.");
             nextEncounter();
             break;
+
           case "Trap-Roll": //You get damage rolling into "Trap-Roll" type encounters
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             break;
           case "Trap":
           case "Trap-Attack":
-            logPlayerAction(actionString,"You continued onwards away from that.");
+            isLooting=false;
+            logPlayerAction(actionString,"Continued onwards, away from that.");
             nextEncounter();
             break;
-          case "Death":
-            logPlayerAction(actionString,"There is nothing to avoid anymore.");
-            animateUIElement(playerInfoUIElement,"animate__headShake","0.7");
-            break;
-            nextEncounter();
+
           case "Upgrade":
-            logPlayerAction(actionString,"Your felt your body become faster.");
-            displayPlayerEffect("✨");
+            logPlayerAction(actionString,"Felt the body becoming faster +1 🟢");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("💨");
+            playerName=getSwiftName();
             playerStaMax+=1;
             playerSta+=1;
-            nextEncounter();
+            animateFlipNextEncounter();
             break;
           default:
-            logPlayerAction(actionString,"Feels like nothing really happened.");
+            logPlayerAction(actionString,"Felt like nothing really happened.");
         }
         break;
 
       case 'button_block':
-        if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"Your felt your brain grow wiser.");
-          displayPlayerEffect("🧠");
-          playerInt+=1;
-          nextEncounter();
+        if (enemyType=="Death"){
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"There is nothing to block anymore.");
           break;
         }
-        if (!playerUseStamina(1,"You are too tired to raise your shield.")){
+
+        if (enemyType == "Upgrade"){
+          logPlayerAction(actionString,"Granted gods blessing +1 🍀");
+          displayPlayerGainedEffect();
+          displayPlayerEffect("🙏");
+          playerName=getFaithName();
+          playerLck+=1;
+          animateFlipNextEncounter();
+          break;
+        }
+
+        if (!playerUseStamina(1,"Not enough energy for that.")){
             break;
-          }
+        }
+
+        if (enemyAtk<=0 && enemyType!="Pet" && enemySta > 0){
+          enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
+          displayEnemyCannotEffect();
+          break;
+        }
+
+        if (enemyCastIfMgk(false)){
+          logPlayerAction(actionString,"Could not block their spell -1 💔");
+          playerHit(1);
+          break;
+        }
+
         switch (enemyType){
-          case "Standard":
-          case "Recruit":
           case "Pet":
-            enemyStaminaChangeMessage(-1,"You blocked their standard attack -1 🟢","You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
-            break;
-          case "Swift":
-            enemyStaminaChangeMessage(-1,"You blocked their swift attack -1 🟢","You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
-            break;
-          case "Heavy":
-            if (enemyStaminaChangeMessage(-1,"You didn't block their heavy blow&nbsp;-"+enemyAtk+" 💔","n/a")){
-              playerHit(enemyAtk);
+            if (enemyAtk<=0) {
+              enemyStaminaChangeMessage(-1,"Enjoyed a moment together -1 🟢","They needed to catch a breath -1 🟢");
             } else {
-              enemyStaminaChangeMessage(-1,"n/a","You blocked absolutely nothing -1 🟢");
+              enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
             }
             break;
-          case "Death":
-              logPlayerAction(actionString,"There is nothing to block anymore.");
-              break;
+          case "Standard":
+          case "Undead":
+          case "Recruit":
+          case "Demon":
+          case "Small":
+            enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
+            displayPlayerEffect("🔰");
+            break;
+
+          case "Swift":
+            enemyStaminaChangeMessage(-1,"Blocked a swift attack -1 🟢","Blocked just for the sake of it -1 🟢");
+            displayPlayerEffect("🔰");
+            break;
+
+          case "Heavy": //Too heavy or spirit attack
+          case "Boss":
+            if (enemyStaminaChangeMessage(-1,"Could not block a heavy attack -"+enemyAtk+" 💔","n/a")){
+              playerHit(enemyAtk);
+            } else {
+              enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
+            }
+            break;
+
+          case "Spirit":
+            if (enemyStaminaChangeMessage(-1,"Could not block a spectral attack -"+enemyAtk+" 💔","n/a")){
+              playerHit(enemyAtk);
+            } else {
+              enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
+            }
+            break;
+
           default:
-            logPlayerAction(actionString,"You blocked absolutely nothing -1 🟢");
-            displayPlayerEffect("🛡");
+            logPlayerAction(actionString,"Blocked just for the sake of it -1 🟢");
+            displayPlayerEffect("🔰");
+            break;
         }
         break;
 
-      case 'button_grab': //Player vs encounter stamina decides the success
-        switch (enemyType){
-          case "Pet": //Can become pet it when the player has higher current stamina
-            if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
-              if (enemyInt > playerInt ) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"You need to be wiser to befriend them.");
-                enemyAttackOrRest();
-                break;
-              }
-              logPlayerAction(actionString,"You petted it and became friends!");
-              displayPlayerEffect(enemyEmoji);
-              playerPartyString+=" "+enemyEmoji;
-              playerAtk+=enemyAtk;
-              enemyAnimateDeathNextEncounter();
+        case 'button_cast':
+          if (enemyType=="Death"){
+            logPlayerAction(actionString,"Cast out a powerful message.");
+            redirectToFeedback();
+            break;
+          }
+
+          if (enemyType=="Upgrade"){
+            logPlayerAction(actionString,"Chose magic +1 🔵 over agility -1 🟢");
+            displayPlayerCannotEffect();
+            displayPlayerEffect("✨");
+            playerName=getSorceryName();
+            playerMgkMax+=1;
+            playerMgk+=1;
+            playerStaMax-=1;
+            if (playerSta>0) playerSta-=1;
+            animateFlipNextEncounter();
+            break;
+          }
+
+          if ((enemyType=="Container-Locked") || (enemyType=="Container-Locked-Double")){
+            if (playerMgkMax<2){
+              logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
+              displayPlayerCannotEffect();
               break;
             }
+          }
+
+          if (playerMgkMax<1){
+            logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
+            displayPlayerCannotEffect();
+            break;
+          }
+
+          if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { break; } //Casting is never free, upgrd handled above
+          if (enemyType!="Death") {displayPlayerEffect("🪄");} //I'm lazy
+
+        switch (enemyType){
+          case "Friend":
+          case "Container-Friend":
+            if (enemyAtk>0){
+              logPlayerAction(actionString,"Turned them adversary -1 🔵");
+              enemyType="Standard";
+            } else {
+              logPlayerAction(actionString,"Magic spooked them away -1 🔵");
+              nextEncounter();
+              break;
+            }
+
+          case "Recruit": //You should be faster if you have Mgk >= them
+          case "Standard":
+          case "Swift":
+          case "Heavy":
+          case "Pet":
+          case "Swift":
+          case "Spirit":
+          case "Demon":
+          case "Undead":
+          case "Boss":
+          case "Small":
+            if (enemyMgk<=playerMgk){
+              enemyHit(1,true); //Deal just 1 Mgk dmg to not overpower shit
+            } else {
+              logPlayerAction(actionString,"They resisted the spell -1 🔵");
+            }
+            if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
+              if (enemyCastIfMgk()) break;
+              enemyAttackOrRest();
+            }
+            break;
+
+          case "Friend": //They'll be hit (above) and then get angry //TODO: Check this, they might not get hit
+            logPlayerAction(actionString,"The spell turned them adversary -1 🔵");
+            displayEnemyEffect("‼️");
+            enemyType="Standard";
+            break;
+
+          case "Container-Locked":
+          case "Container-Locked-Double":
+            playerMgk-- //Unlocking cost 1 extra mgk
+            logPlayerAction(actionString,"Unlocked using a spell -2 🔵");
+            animateFlipNextEncounter();
+            break;
+
+          case "Trap":
+          case "Trap-Roll":
+          case "Item":
+          case "Consumable":
+          case "Container":
+          case "Container-Double":
+          case "Container-Triple":
+            logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
+            displayEnemyEffect("🔥");
+            animateFlipNextEncounter();
+            break;
+
+          case "Dream":
+            logPlayerAction(actionString,"Spent magic power on dreaming -1 🔵");
+            break;
+
+          case "Altar":
+            logPlayerAction(actionString,"The spell has trashed the place -1 🔵");
+            nextEncounter();
+            break;
+
+          default:
+            logPlayerAction(actionString,"Wasted magic power on nothing -1 🔵");
+        }
+        break;
+
+        case 'button_pray':
+          if (enemyType=="Death"){
+            playerReincarnate();
+            break;
+          }
+
+          if (enemyType=="Upgrade"){
+              logPlayerAction(actionString,"Felt getting somewhat wiser +1 🧠");
+              displayPlayerGainedEffect();
+              displayPlayerEffect("🧠");
+              playerName=getCleverName();
+              playerInt+=1;
+              animateFlipNextEncounter();
+              break;
+          }
+
+          if (playerMgkMax<1 && !isfreePrayEncounter()){
+            logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
+            displayPlayerCannotEffect();
+            break;
+          }
+
+          if (!isfreePrayEncounter()) {
+            if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) {
+              break;
+            }
+          }
+
+          if (enemyType=="Spirit" || enemyType=="Demon"){
+            if (!playerUseMagic(1,"Not enough mana, requires +2 🔵")) {
+              break;
+            }
+          }
+
+          if (enemyType!="Death" && enemyType!="Dream") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
+
+        switch (enemyType){
+          case "Curse": //Breaks only if mind is stronger
+            if (playerInt>=(-1*enemyInt)){
+              logPlayerAction(actionString,"Kept it together thanks to resilience.");
+              animateFlipNextEncounter();
+            } else {
+              logPlayerAction(actionString,"Giving the best, but no effect.");
+              displayPlayerCannotEffect();
+            }
+            break;
+
+          case "Spirit":
+          case "Demon":
+            if ( (enemyMgk-enemyMgkLost) <= playerMgkMax ){
+              logPlayerAction(actionString,"Banished them from this world!");
+              displayEnemyEffect("🔥");
+              animateFlipNextEncounter();
+              break;
+            } else {
+              logPlayerAction(actionString,"Could not overpower this entity!");
+            }
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+
+          case "Consumable":
+          case "Container":
+          case "Container-Locked":
+          case "Container-Locked-Double":
+          case "Container-Double":
+          case "Container-Triple":
+          case "Trap":
+          case "Trap-Roll":
+          case "Item":
+          case "Fishing":
+            if (playerHp<playerHpMax) {
+              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
+              playerHp=playerHpMax; //Lay on hands
+              displayPlayerGainedEffect();
+            } else {
+              logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
+              displayPlayerCannotEffect();
+            }
+            break;
+          case "Standard":
           case "Recruit":
-          case "Standard": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
+          case "Swift":
+          case "Heavy":
+          case "Pet":
+          case "Friend":
+          case "Container-Friend":
+          case "Boss":
+          case "Small":
+            if (playerHp<playerHpMax) {
+              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
+              playerHp=playerHpMax; //Lay on hands
+              displayPlayerGainedEffect();
+            } else {
+              logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
+              displayPlayerCannotEffect();
+            }
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+
+          case "Undead": //Reduce attack if possible
+            if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+              enemyAtkBonus-=1;
+              logPlayerAction(actionString,"Made them -1 ⚔️ weaker for -1 🔵");
+              displayEnemyEffect("🔥");
+            } else if (playerMgkMax < enemyMgk) {
+              logPlayerAction(actionString,"They resisted the prayer -1 🔵");
+            } else {
+              logPlayerAction(actionString,"The prayer had no effect on them -1 🔵");
+            }
+            enemyAttackOrRest();
+            break;
+
+          case "Dream":
+            //TODO: Was kinda OP, perhaps re-enable later?
+            //logPlayerAction(actionString,"Reinforced essential beliefs +1 🍀");
+            //playerLck++;
+            //nextEncounter();
+            logPlayerAction(actionString,"Cannot recall any memory.");
+            displayPlayerCannotEffect();
+            break;
+
+          case "Altar":
+            var isSacrifice = (enemyHp<0)
+
+            if (isSacrifice) {
+                if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
+                  displayEnemyEffect("🩸");
+                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false,false);
+                  playerHit(0,false);
+                }
+                displayPlayerCannotEffect();
+              } else {
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"Received a blessing from gods.",true);
+                displayPlayerEffect("✨")
+                displayPlayerGainedEffect();
+              }
+            break;
+
+          default:
+            var prayLogMessage="The prayer had no visible effect."
+            if (!isfreePrayEncounter){prayLogMessage.replace("."," -1 🔵");}
+            logPlayerAction(actionString,prayLogMessage);
+        }
+        break;
+
+      case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
+        if (enemyType=="Death"){
+          logPlayerAction(actionString,"Decided to make a complaint.");
+          redirectToFeedback();
+          break;
+        }
+
+        if (enemyType=="Upgrade"){
+            logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
+            displayPlayerCannotEffect();
+            playerName=getHatredName();
+            playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
+            playerHit(0,false);
+            animateFlipNextEncounter();
+            break;
+        }
+
+        if (playerMgkMax<2){
+          logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
+          displayPlayerCannotEffect();
+          break;
+        }
+
+        if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
+            break;
+          }
+
+        if (enemyType!="Death") {displayPlayerEffect("🪬");}
+
+      switch (enemyType){
+        case "Demon":
+            logPlayerAction(actionString,"The curse made them even stronger!");
+            animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
+            enemyMgk+=1;
+            break;
+
+        case "Standard": //Reduce enemy atk if mgk stronger then them
+        case "Recruit":
+        case "Swift":
+        case "Heavy":
+        case "Pet":
+        case "Undead":
+        case "Boss":
+        case "Small":
+          if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+            enemyAtkBonus-=1;
+            logPlayerAction(actionString,"Cursed them -1 ⚔️ weaker for -2 🔵");
+          } else if (playerMgkMax <= enemyMgk) {
+            logPlayerAction(actionString,"They resisted the curse -2 🔵");
+          } else {
+            logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
+          }
+          if (enemyCastIfMgk()) break;
+          enemyAttackOrRest();
+          break;
+
+        case "Spirit": //They don't care
+          logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
+          if (enemyCastIfMgk()) break;
+          enemyAttackOrRest();
+          break;
+
+        case "Container-Friend":
+          if (playerMgk >= enemyMgk){
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
+            nextEncounter();
+          } else {
+            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
+            displayPlayerCannotEffect();
+          }
+          break;
+
+        case "Friend": //They'll boost your stats
+          if (playerMgk >= enemyMgk){
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+          } else {
+            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
+            displayPlayerCannotEffect();
+          }
+          break;
+
+        case "Dream": //Likely never happens, not sure if I should fix that
+          logPlayerAction(actionString,"Conjured a terrible nightmare -1 💔");
+          playerHit(1);
+          displayPlayerCannotEffect();
+          break;
+
+        case "Altar":
+          logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
+          playerLck=-1;
+          displayPlayerEffect("🪬");
+          break;
+
+        default:
+          logPlayerAction(actionString,"The curse dispersed into the area -2 🔵");
+      }
+      break;
+
+      case 'button_grab': //Player vs encounter stamina decides the success
+        switch (enemyType){
+          case "Curse":
+            logPlayerAction(actionString,"Hands reached forward to no effect.");
+            displayPlayerCannotEffect();
+            break;
+
+          case "Dream":
+            logPlayerAction(actionString,"Trying hard but cannot move.");
+            displayPlayerCannotEffect();
+            break;
+
+          case "Pet": //Can become pet it when the player has higher current stamina
+            if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
+              if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
+                logPlayerAction(actionString,"Unable to initiate a bond ?? 🧠");
+                nextEncounter();
+                break;
+              }
+              displayPlayerEffect(enemyEmoji);
+              playerPartyString+=" "+enemyEmoji;
+              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"New pet has joined the party"); //Cannot get health/sta/int from a pet
+              break;
+            }
+
+          case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
+          case "Standard":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
-              logPlayerAction(actionString,"You grabbed them into stranglehold.");
+              logPlayerAction(actionString,"Grabbed them into stranglehold.");
               enemyKnockedOut();
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
-              var touchChance = Math.floor(Math.random() * luckInterval);
-              console.log("touchChance: "+touchChance+"/"+luckInterval+" lck: "+playerLck) //Generous chance to make enemy uncomfortable
-              if ( touchChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;✋&nbsp;They were spooked by your touch.");
+              var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
+              if ( touchChance <= playerLck ){ //Generous
+                logAction("🍀 ▸ ✋ Touched them, they were spooked.");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
               }
               else {
-                displayPlayerCannotEffect();
-                enemyAttackOrRest();
-                logPlayerAction(actionString,"You were too slow, they dodged that.");
+                enemyDodged("Missed, it evaded the grasp.");
+                if (enemyCastIfMgk()) break;
               }
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
+              if (enemyType=="Pet"){
+                logAction(enemyEmoji+" ▸ 😱 They got spooked and fled!");
+                nextEncounter();
+              }
             }
             break;
+
           case "Swift": //Player can only kick tired swift enemies
             if (enemySta-enemyStaLost == 0){
               enemyKicked();
               break;
             }
-            logPlayerAction(actionString,"They swiftly evaded your grasp.");
-            displayEnemyEffect("🌀");
-            enemyAttackOrRest();
+            enemyDodged("Missed, it evaded the grasp.");
+            if (enemyCastIfMgk()) break;
             break;
+
           case "Heavy":
+          case "Boss":
             if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
-              logPlayerAction(actionString,"You struggled and got hit hard -"+enemyAtk*2+" 💔");
+              if (enemyCastIfMgk()) break;
+              logPlayerAction(actionString,"Overpowered, got hit extra hard -"+enemyAtk*2+" 💔");
               playerHit(enemyAtk+2);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
             }
             break;
-          case "Trap":
+
+          case "Trap": //Grabbing is not safe
           case "Trap-Roll":
           case "Trap-Attack":
+          case "Undead":
+            if (enemyCastIfMgk()) break;
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
             displayEnemyEffect("✋");
             break;
+
           case "Container":
-            var openMessage = "There was something hidden inside.";
+          case "Container-Consume":
+          case "Container-Double":
+          case "Container-Triple":
+            var openMessage = "Sucessfully found something.";
             displayEnemyEffect("👋");
             if (enemyMsg != ""){
               openMessage = enemyMsg;
@@ -496,142 +1304,238 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,openMessage);
             nextEncounter();
             break;
-          case "Item":
-            playerLootString+=" "+enemyEmoji;
-            displayEnemyEffect("✋");
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
+          case "Container-Locked":
+          case "Container-Locked-Double":
+            if (playerUseItem("🗝️","Unlocked it with the key.","The lock is tightly secured.",false)){
+              animateFlipNextEncounter();
+            } else {
+              displayPlayerCannotEffect();
+            }
             break;
-          case "Friend":
-            logPlayerAction(actionString,"It slipped through your fingers.");
+
+          case "Item":
+            playerLootString+=enemyEmoji;
+            displayEnemyEffect("👋");
+            playerChangeStats();
+            isLooting=false;
+            break;
+
+          case "Small":
+            if ((enemySta-enemyStaLost)==0) {
+              logPlayerAction(actionString,"Grabbed it into pocket.");
+              playerLootString+=" "+enemyEmoji;
+              displayEnemyEffect("👋");
+              nextEncounter();
+            } else {
+              enemyDodged("Missed, it evaded the grasp.");
+              if (enemyCastIfMgk()) break;
+            }
+            break;
+
+          case "Container-Friend":
+            logPlayerAction(actionString,"Touch not appreciated, they left.");
+            encounterIndex+=1; //Skip next encounter
             displayEnemyEffect("✋");
             nextEncounter();
             break;
+
+          case "Friend":
+            logPlayerAction(actionString,"Touch not appreciated, they left.");
+            displayEnemyEffect("✋");
+            nextEncounter();
+            break;
+
           case "Consumable":
             playerConsumed();
             displayEnemyEffect("🍽");
-            enemyAnimateDeathNextEncounter();
+            if (playerHp>0) nextEncounter();
+            isLooting=false;
             break;
-          case "Dream":
-            logPlayerAction(actionString,"You reached out into the endless void.");
-            displayEnemyEffect("✋");
-            break;
-          case "Death":
-            logPlayerAction(actionString,"Your body reconnected with your soul.");
-            displayEnemyEffect("✋");
-            var deathMessage="💤&nbsp;▸&nbsp;💭&nbsp;An unknown power resurrected you.<br>💤&nbsp;▸&nbsp;💭&nbsp;Hopefully it wasn't some tainted spell.";
-            logAction(deathMessage);
-            if (checkpointEncounter == null){
-              renewPlayer();
-              encounterIndex=3; //Skip tutorial
+
+          case "Fishing":
+            if (playerUseItem("🪱","Successfully fished out something.","Missing some fishing bait.")){
+              getRandomLoot();
+              displayEnemyEffect("🪝");
             } else {
-              //TODO load playerStats to prevent stacking via resurrecting on checkpoints
-              encounterIndex=checkpointEncounter-1; //Start from checkpoint
-              playerHp=playerHpMax;
-              playerSta=playerStaMax;
+              displayPlayerCannotEffect();
             }
-            adventureEncounterCount = -1; //For death
-            nextEncounter();
             break;
+
+          case "Demon":
+          case "Spirit":
+            logPlayerAction(actionString,"Hands passed right through them.");
+            displayEnemyEffect("✋");
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+
+          case "Death":
+            logPlayerAction(actionString,"Sent a message to the universe.");
+            redirectToFeedback();
+            break;
+
           case "Upgrade":
-            logPlayerAction(actionString,"You felt your chances increase.");
+            logPlayerAction(actionString,"Chose luck +2 🍀 over intellect -1 🧠");
+            displayPlayerCannotEffect();
             displayPlayerEffect("🍀");
-            playerLck+=1;
-            nextEncounter();
+            playerName=getLuckyName();
+            playerLck+=2;
+            playerInt-=1;
+            animateFlipNextEncounter();
             break;
+
           case "Checkpoint": //Save and rest to full HP and Sta
+            isLooting=false;
             displayPlayerEffect("💾");
-            logPlayerAction(actionString,"You embraced the "+enemyName+".");
+            logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
+            playerMgk=playerMgkMax;
             checkpointEncounter=encounterIndex;
-            enemyAnimateDeathNextEncounter();
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D;\">&nbsp;Flame Embraced&nbsp;");
+            animateFlipNextEncounter();
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
             break;
           default:
-            logPlayerAction(actionString,"You touched it and nothing happened.");
+            logPlayerAction(actionString,"Touched it, nothing happened.");
             displayEnemyEffect("✋");
           }
         break;
 
       case 'button_speak':
         switch (enemyType){
-          case "Recruit":
-            if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
-              logPlayerAction(actionString,"You convinced them to join your party!");
+          case "Recruit": //If you are smarter they join you
+            if (enemyInt < playerInt){
               displayPlayerEffect(enemyEmoji);
-              animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
-              playerPartyString+=" "+enemyEmoji
-              playerAtk+=enemyAtk;
-              enemyAnimateDeathNextEncounter();
+              playerPartyString+=enemyEmoji
+              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join the adventure"); //Cannot get health/sta/int from a pet
               break;
             }
-          case "Standard":
+
+          case "Standard": //If they are dumber they will walk away
           case "Swift":
           case "Heavy":
           case "Pet":
+          case "Spirit":
+          case "Demon":
+          case "Boss":
+            var maxEnemyAngryBoost=3;
+
             if (enemyInt < playerInt){
-              logPlayerAction(actionString,"You convinced them to walk away.");
+              logPlayerAction(actionString,"Convinced them to disengage.");
               displayPlayerEffect("💬");
               nextEncounter();
               break;
-            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus < 2) {
-              logPlayerAction(actionString,"That made them more angry!");
+            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
+              logPlayerAction(actionString,"Speaking made them more upset +1 ⚔️");
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
               var speechChance = Math.floor(Math.random() * luckInterval);
-              console.log("speechChance: "+speechChance+"/"+luckInterval+" lck: "+playerLck) //Chance to lie
               if ( speechChance <= playerLck ){
-                logAction("🍀&nbsp;▸&nbsp;💬&nbsp;They believed your lies and left.");
+                logAction("🍀 ▸ 💬 They believed the lies and left.");
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
               }
               else {
-                logPlayerAction(actionString,"They ignored whatever you said.");
+                logPlayerAction(actionString,"They ignored whatever has been said.");
               }
             }
+            if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
-          case "Friend":
-            playerGainedItem(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt);
-            displayPlayerEffect("💬");
+
+          case "Undead": //They don't care
+            logPlayerAction(actionString,"They ignored whatever has been said.");
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
             break;
+
+          case "Friend": //They'll boost your stats
+            if (playerInt >= enemyInt){
+              playerChangeStats();
+              displayPlayerEffect("💬");
+            } else {
+              logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
+              displayPlayerCannotEffect();
+            }
+            break;
+
+          case "Container-Friend":
+            if (playerInt >= enemyInt){
+              var openMessage = "Sucessfully found something.";
+              displayPlayerEffect("💬");
+              if (enemyMsg != ""){
+                openMessage = enemyMsg;
+              }
+              logPlayerAction(actionString,openMessage);
+              nextEncounter();
+            } else {
+             logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
+             displayPlayerCannotEffect();
+           }
+           break;
+
           case "Death":
-            copyAdventureToClipboard();
+            redirectToTweet();
             break;
+
           case "Dream":
-            logPlayerAction(actionString,"You can not move your lips to speak.");
-            displayPlayerCannotEffect();
-            break;
-          case "Upgrade":
-            logPlayerAction(actionString,"You chose to become <b> cursed -1 💔 -1 🟢</b>");
-            playerHpMax-=1;
-            playerHit(1);
-            playerStaMax-=1;
-            playerSta-=1;
+            playerGetStamina(playerStaMax-playerSta,true);
+            playerMgk=playerMgkMax;
+            logPlayerAction(actionString,"Rested well, recovered lost resources.");
+            displayPlayerEffect("💤");
             nextEncounter();
             break;
+
+          case "Upgrade":
+            logPlayerAction(actionString,"Sacrificed health -1 💔 for luck +3 🍀");
+            displayPlayerCannotEffect();
+            displayPlayerEffect("🪙");
+            playerUseStamina(1);
+            playerName=getGreedyName();
+            playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
+            playerHit(0,false);
+            animateFlipNextEncounter();
+            break;
+
           default:
-            logPlayerAction(actionString,"Your voice echoes around the area.");
+            logPlayerAction(actionString,"The voice echoes around the area.");
+            displayPlayerCannotEffect();
             displayPlayerEffect("💬");
         }
         break;
 
       case 'button_sleep':
         switch (enemyType){
-          case "Standard":
+
+          case "Curse": //Waiting triggers the curse
+            playerChangeStats();
+            break;
+
+          case "Standard": //You get hit if they have stamina
           case "Swift":
           case "Heavy":
           case "Recruit":
           case "Pet":
-            enemyAttackOrRest();
+          case "Spirit":
+          case "Demon":
+          case "Undead":
+          case "Boss":
+          case "Small":
+            if (enemyCastIfMgk()){
+              //
+            } else {
+              enemyAttackOrRest();
+            }
+
             if (playerHp>0){
               displayPlayerEffect("💤");
               playerGetStamina(1);
             }
             break;
-          case "Trap":
+
+          case "Trap": //Rest to full if out of combat + mana
           case "Trap-Attack":
           case "Trap-Roll":
           case "Item":
@@ -639,42 +1543,72 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Prop":
           case "Dream":
           case "Container":
+          case "Container-Consume":
+          case "Container-Double":
+          case "Container-Triple":
+          case "Container-Locked":
+          case "Container-Locked-Double":
           case "Checkpoint":
-            displayPlayerEffect("💤");
-            playerGetStamina(playerStaMax-playerSta);//Rest to full if out of combat
+          case "Altar":
+          case "Fishing":
+            if (!playerRested){
+              if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
+                playerGetStamina(playerStaMax-playerSta,true);
+                playerMgk=playerMgkMax;
+                playerRested=true;
+
+                logPlayerAction(actionString,"Rested well, recovering all resources.");
+                displayPlayerEffect("💤");
+              } else {
+                playerRested=true;
+
+                logPlayerAction(actionString,"Wasted a precious moment of life.");
+                displayPlayerEffect("💤");
+              }
+            } else {
+              logPlayerAction(actionString,"Already rested at this spot.");
+              displayPlayerCannotEffect();
+            }
+            if (enemyType=="Dream") nextEncounter();
             break;
-          case "Friend":
+
+          case "Container-Friend":
+          case "Friend": //They'll leave if you'll rest
             displayPlayerEffect("💤");
-            playerGetStamina(playerStaMax-playerSta);//Rest to full if out of combat
-            logPlayerAction(actionString,"They got tired of waiting for you and left.");
+            playerGetStamina(playerStaMax-playerSta);
+            logPlayerAction(actionString,"They got tired of waiting and left.");
             nextEncounter();
             break;
+
           case "Death":
-            redirectToTweet();
+            copyAdventureToClipboard();
             break;
+
           case "Upgrade":
-            logPlayerAction(actionString,"You skipped boosting your character.");
-            nextEncounter();
+            logPlayerAction(actionString,"Decided against gaining a perk.");
+            playerName="Hardcore "+playerName;
+            displayPlayerCannotEffect();
+            animateFlipNextEncounter();
             break;
+
           default:
-            logPlayerAction(actionString,"You cannot rest, monsters are nearby.");
+            logPlayerAction(actionString,"Cannot rest, monsters are nearby.");
             displayPlayerCannotEffect();
             displayPlayerEffect("👀");
             break;
         }
     };
-    loadEncounter(encounterIndex);
+    if (!isLooting) {
+      loadEncounter(encounterIndex);
+    } else {
+      loadEncounter(lootEncounterIndex,linesLoot);
+      encounterIndex=lastEncounterIndex;
+    }
     redraw();
   };
 }
 
 //Enemy
-function enemyRenew(){
-  enemyStaLost = 0;
-  enemyHpLost = 0;
-  enemyAtkBonus = 0;
-}
-
 function enemyRest(stamina){
   if (enemyHp - enemyHpLost > 0){
     animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
@@ -687,8 +1621,8 @@ function enemyRest(stamina){
 
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   if (enemyStaLost < enemySta) {
-    logPlayerAction(actionString,successMessage);
-    animateUIElement(emojiUIElement,"animate__headShake","0.7"); //Play attack animation
+    logPlayerAction(actionString,successMessage); //TODO: switch emojis around >> 🐅 > ⚔️
+    animateUIElement(enemyInfoUIElement,"animate__headShake","0.7"); //Play attack animation
     enemyStaLost -= stamina;
     return true;
   } else if (enemyHp - enemyHpLost > 0) { //Enemy rest if not dead
@@ -701,15 +1635,16 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   }
 }
 
-function enemyHit(damage){
-  var hitMsg = "You hit them with an attack -"+damage+" 💔";
+function enemyHit(damage,magicType=false) {
+  animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
+  var hitMsg = "Hit them with an attack -"+damage+" 💔";
+  if (magicType==true) {actionString="🪄 "; hitMsg="Scorched them with a spell -"+damage+" 💔";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
-  console.log("critChance: "+critChance+"/"+luckInterval+" lck: "+playerLck) //Chance to crit
   if ( critChance <= playerLck ){
-    logAction("🍀&nbsp;▸&nbsp;🎯&nbsp;Your strike was blessed with luck.");
-    hitMsg="Your attack hit them critically -"+(damage+2)+" 💔";
+    logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
+    hitMsg="Attacked hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
   }
@@ -719,72 +1654,170 @@ function enemyHit(damage){
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀&nbsp;You successfully eliminated them.");
-    enemyAnimateDeathNextEncounter();
-  } else {
-    animateUIElement(enemyInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
+    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
+    playerKills++;
+    animateFlipNextEncounter();
   }
 }
 
 function enemyKicked(){
-  logPlayerAction(actionString,"You kicked them afar and gained +2 🟢");
+  logPlayerAction(actionString,"Kicked them afar regaining +2 🟢");
   displayEnemyEffect("🦶");
   playerGetStamina(2,true);
   enemyRest(1);
 }
 
 function enemyKnockedOut(){
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤&nbsp;You harmlessly knocked them out.");
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out.");
   displayEnemyEffect("💤");
-  enemyAnimateDeathNextEncounter();
+  animateFlipNextEncounter();
 }
 
-function enemyAttackOrRest(){
-  if (enemySta-enemyStaLost > 0) {
-    enemyStaminaChangeMessage(-1,"The enemy attacked you for -"+enemyAtk+" 💔","n/a");
-    playerHit(enemyAtk);
+function enemyAttackOrRest(message=""){
+  var damageReceived=enemyAtk+enemyAtkBonus;
+  var staminaChangeMsg;
+
+  enemyCastIfMgk();
+
+  if (enemySta>enemyStaLost) {
+    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"}
+    else {
+        staminaChangeMsg = "The enemy siphoned some health -"+damageReceived+" 💔";
+        if (enemyHpLost >0) {enemyHpLost-=1;}
+      }
+    if (damageReceived<=0){
+      staminaChangeMsg="They are too weak to do any harm."
+      if (enemyAtk==0) {
+        staminaChangeMsg="They cannot cause any harm."
+        if (enemyType=="Pet"){
+          enemyIntBonus++; //Harder to befriend
+
+          if ((enemyInt+enemyIntBonus)<=playerInt){
+            logAction(enemyEmoji+" ▸ ⁉️ They now seem more concerned.");
+            displayEnemyEffect("⁉️")
+            enemyRest(1);
+          } else {
+            logAction(enemyEmoji+" ▸ ‼️ They got bored and left.");
+            nextEncounter();
+          }
+          return;
+        }
+      }
+    } else {
+      if (message!="") staminaChangeMsg=message;
+      enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
+      playerHit(damageReceived);
+      return;
+    }
+    enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");
   } else {
     enemyRest(1);
   }
 }
 
-function nextEncounter(){
+function enemyDodged(message="Missed, it evaded the grasp."){
+  displayPlayerCannotEffect();
+  logPlayerAction(actionString,message);
+  displayEnemyEffect("🌀");
+  enemyAttackOrRest();
+}
+
+function enemyCastIfMgk(hit=true){
+  if (enemyMgk>enemyMgkLost) {
+    enemyMgkLost++
+    if (hit) {
+      logAction(enemyEmoji+" ▸ 🪄 Got hit by the enemy spell -1 💔");
+      playerHit(1);
+    }
+    return true;
+  }
+}
+
+//Encounters
+
+function isfreePrayEncounter(){
+  var returnValue = false;
+    switch (enemyType){
+      case "Death":
+      case "Altar":
+      case "Curse":
+      case "Dream":
+        returnValue=true;
+      default:
+        //Nothing
+    }
+  return returnValue;
+}
+
+function getRandomLoot(){
+  isLooting=true;
+  toggleUIElement(versusTextUIElement,1); animateVersus();
+  previousArea = areaName;
+  adventureEncounterCount+=1;
+
+  lastEncounterIndex = encounterIndex-1;
+  lootEncounterIndex = getUnseenLootIndex();
+  markAsSeenLoot(lootEncounterIndex);
+
+  animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  enemyRenew();
+  return
+}
+
+function nextEncounter(animateArea=true){
+  toggleUIElement(versusTextUIElement,1); animateVersus();
+
+  if (animateArea) {
+    animateUIElement(areaUIElement,"animate__flipInX","1");
+    toggleUIElement(areaUIElement,1);
+  }
+
   adventureEncounterCount+=1;
   markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
 
-  //Fullscreen Curtain
-  previousArea = areaName;
-  loadEncounter(encounterIndex);
-  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut("<p style=\"text-decoration:underline solid white 2px;\">&nbsp;"+areaName+"&nbsp;</p>");
-
-  }
-
+  playerRested=false;
   enemyRenew();
-  animateUIElement(cardUIElement,"animate__fadeIn","0.7");
+  loadEncounter(encounterIndex);
+
+  //Fullscreen Curtain
+  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
+    curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
+  }
+  animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  previousArea = areaName;
 }
 
-function enemyAnimateDeathNextEncounter(){
-  animateUIElement(emojiUIElement,"animate__fadeOutDown","0.75");
+function animateFlipNextEncounter(){
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2"); //Uuuu nice!
+  //toggleUIElement(areaUIElement);
+
+  var versusTextUIElement = document.getElementById('id_versus');
+  toggleUIElement(versusTextUIElement);
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2"); //Maybe this will look better?
+
   var animationHandler = function(){
     nextEncounter();
     redraw();
-    emojiUIElement.removeEventListener("animationend",animationHandler);
+    cardUIElement.removeEventListener("animationend",animationHandler);
   }
-  emojiUIElement.addEventListener('animationend',animationHandler);
+  cardUIElement.addEventListener('animationend',animationHandler);
+}
+
+function animateVersus(time = "1"){
+  animateUIElement(versusTextUIElement,"animate__flash",time);
 }
 
 //Player
 function playerGetStamina(stamina,silent = false){
   if (playerSta >= playerStaMax) { //Cannot get more
     if (!silent){
-      logPlayerAction(actionString,"You just wasted a moment of your life.");
+      logPlayerAction(actionString,"Wasted a moment of their life.");
     }
     return false;
   } else {
     if (!silent){
-      logPlayerAction(actionString,"You rested and regained energy +" + stamina + " 🟢");
+      logPlayerAction(actionString,"Rested and regained energy +" + stamina + " 🟢");
     }
     playerSta += stamina;
     if (playerSta > playerStaMax){
@@ -808,47 +1841,98 @@ function playerUseStamina(stamina, message = ""){
   }
 }
 
-function playerGainedItem(bonusHp,bonusAtk,bonusSta,bonusLck,bonusInt){
-  var gainedString;
+function playerUseMagic(magic, message = ""){
+  if (playerMgk <= 0) { //Cannot lose more
+    if (message != ""){ //Display specific "too tired message"
+      logPlayerAction(actionString,message);
+    }
+    displayPlayerCannotEffect();
+    return false;
+  } else {
+    playerMgk -= magic;
+    return true;
+  }
+}
+
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true){
+  var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
+  var changeSign=" +";
+
+  if ((totalBonus >= 0) && gainedString=="Might come in handy later."){
+    if (totalBonus !=0){
+      gainedString="Felt becoming stronger";
+    }
+  } else if (gainedString=="Might come in handy later.") {
+    gainedString="Got cursed by it";
+  }
+
   if (enemyMsg != "") {
     gainedString = enemyMsg;
-  } else {
-    gainedString="You felt becoming stronger";
   }
-  if (bonusHp > 0) {
+
+  if (totalBonus!=0){
+    gainedString = gainedString.replace("."," ");
+  }
+
+  if (bonusHp != 0) {
+    if (bonusHp<0) {changeSign=" "} else {changeSign=" +"; playerHp+=bonusHp;}
     playerHpMax += parseInt(bonusHp);
-    playerHp += parseInt(bonusHp);
-    gainedString += " +"+bonusHp + " ❤️";
+    if (playerHp>playerHpMax) playerHp = playerHpMax
+    gainedString += changeSign+bonusHp + " ❤️";
     displayPlayerEffect("✨");
   }
-  if (bonusAtk > 0){
+
+  if (bonusAtk != 0){
+    if (bonusAtk<0) {changeSign=" "} else {changeSign=" +";}
     playerAtk += parseInt(bonusAtk);
-    gainedString += " +"+bonusAtk + " 🎯";
+    gainedString += changeSign+bonusAtk + " ⚔️";
     displayPlayerEffect("✨");
   }
-  if (bonusSta > 0){
+
+  if (bonusSta != 0){
+    if (bonusSta<0) {changeSign=" "} else {changeSign=" +"; playerSta += parseInt(bonusSta);}
     playerStaMax += parseInt(bonusSta);
-    playerSta += parseInt(bonusSta);
-    gainedString += " +"+bonusSta + " 🟢";
+    gainedString += changeSign+bonusSta + " 🟢";
     displayPlayerEffect("✨");
   }
-  if (bonusLck > 0){
+
+  if (bonusLck != 0){
+    if (bonusLck<0) {changeSign=" "} else {changeSign=" +";}
     playerLck += parseInt(bonusLck);
-    gainedString += " +"+bonusLck + " 🍀";
+    gainedString += changeSign+bonusLck + " 🍀";
     displayPlayerEffect("🍀");
   }
-  if (bonusInt > 0){
+
+  if (bonusInt != 0){
+    if (bonusInt<0) {changeSign=" "} else {changeSign=" +";}
     playerInt += parseInt(bonusInt);
-    gainedString += " +"+bonusInt + " 🧠";
+    gainedString += changeSign+bonusInt + " 🧠";
     displayPlayerEffect("🧠");
   }
+
+  if (bonusMgk != 0){
+    if (bonusMgk<0) {changeSign=" "} else {changeSign=" +";}
+    playerMgkMax += parseInt(bonusMgk);
+    playerMgk += parseInt(bonusMgk);
+    gainedString += changeSign+bonusMgk + " 🔵";
+    displayPlayerEffect("🪬");
+  }
+
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
-  logPlayerAction(actionString,gainedString);
-  nextEncounter();
+  if (logMessage) logPlayerAction(actionString,gainedString);
+  if (moveForward) nextEncounter();
 }
 
 function playerConsumed(){
-  var consumedString = "Mmm, that was refreshing "
+  var consumedString="Replenished resources"
+  if (enemyMsg!="") consumedString=enemyMsg;
+
+  if (enemyHp<0){
+    if (enemyMsg=="") consumedString="That did not taste good ";
+    logPlayerAction(actionString,consumedString+" "+enemyHp+" 💔");
+    playerHit(-1*enemyHp);
+    return;
+  }
 
   var missingHp=playerHpMax-playerHp;
   var missingSta=playerStaMax-playerSta;
@@ -857,28 +1941,29 @@ function playerConsumed(){
 
     if (missingHp > 0){
       playerHp += missingHp;
-      consumedString += "+"+missingHp + " ❤️ ";
+      consumedString += " +"+missingHp + " ❤️ ";
     }
 
     if (missingSta > 0){
       playerGetStamina(missingSta,true);
-      consumedString += "+"+missingSta + " 🟢";
+      consumedString += " +"+missingSta + " 🟢";
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
-    var tooFullStaLost = 2;
-    consumedString="You lost energy due to overeating -"+tooFullStaLost+" 🟢";
-    animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
-    playerUseStamina(tooFullStaLost);
+    playerSta+=1; //Gain bonus stamina
+    consumedString="Gained temporary energy bonus +1 🟢";
+    //consumedString="Actively digesting the food -1 🟢";
+    //animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
+    //playerUseStamina(1);
   }
   logPlayerAction(actionString,consumedString);
 }
 
-function playerHit(incomingDamage){
+function playerHit(incomingDamage,applyLuck=true){
   var hitChance = Math.floor(Math.random() * luckInterval);
-  console.log("hitChance: "+hitChance+"/"+luckInterval+" lck: "+playerLck) //Chance to not get hit
-  if ( hitChance <= playerLck ){
-    logAction("🍀&nbsp;▸&nbsp;💢&nbsp;You avoided receiving the damage.");
+
+  if (applyLuck && ( hitChance <= playerLck )){
+    logAction("🍀&nbsp;▸&nbsp;💢 Luckily avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -888,10 +1973,9 @@ function playerHit(incomingDamage){
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
     var deathChance = Math.floor(Math.random() * luckInterval * 3); //Small chance to not die
-    console.log("deathChance: "+deathChance+"/"+(luckInterval*3)+" lck: "+playerLck)
-    if ( deathChance <= playerLck ){
+    if (applyLuck && ( deathChance <= playerLck )){
       playerHp+=1;
-      logAction("🍀&nbsp;▸&nbsp;💀&nbsp;Luckily you got a second chance to live.");
+      logAction("🍀&nbsp;▸&nbsp;💀 Luckily got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
@@ -901,21 +1985,68 @@ function playerHit(incomingDamage){
   displayPlayerEffect("💢");
 }
 
+function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true){
+  if (playerLootString.includes(item)){
+    if (effect) displayEnemyEffect(item);
+    playerLootString=playerLootString.replace(item,"");
+    displayPlayerEffect(item);
+    logPlayerAction(actionString,messageSuccess);
+    return true;
+  } else {
+    logPlayerAction(actionString,messageFail);
+    displayPlayerCannotEffect();
+    return false;
+  }
+}
+
+function playerReincarnate(){
+  logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
+  playerNumber++;
+  displayEnemyEffect("❤️‍🩹");
+
+  if (checkpointEncounter == null){
+    renewPlayer();
+    encounterIndex=3; //Skip tutorial
+    playerSta=playerStaMax; //Renew stamina
+  } else {
+    //TODO load playerStats & Loot to prevent stacking via resurrecting on checkpoints
+    encounterIndex=checkpointEncounter-1; //Start from checkpoint
+    playerHp=playerHpMax;
+    playerSta=playerStaMax;
+  }
+  adventureEncounterCount = -1; //For death
+  nextEncounter();
+}
+
 //End Game
+function getTime(){
+  var currentDate = new Date();
+  var time = currentDate.getDate() + "-"
+                  + currentDate.getMonth() + "-"
+                  + currentDate.getFullYear() + " at "
+                  + currentDate.getHours() + ":"
+                  + currentDate.getMinutes()+ ":"
+                  + currentDate.getSeconds();
+  return time;
+}
+
 function gameOver(){
   //Reset progress to death encounter
-  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀&nbsp;You were killed, the adventure ends. ");
-  adventureEndReason="\nDefeated by: "+enemyEmoji+" "+enemyName;
+  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")) enemyMsg="Got killed, ending the adventure.";
+  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
+  adventureEndTime=getTime();
+  adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
-  animateUIElement(emojiUIElement,"animate__flip","1");
+  animateUIElement(cardUIElement,"animate__flip","1");
   playerSta=0; //You are just tired when dead :)
   resetSeenEncounters();
 }
 
-function gameEnd(){
-  var winMessage="🧠&nbsp;▸&nbsp;💭&nbsp;You just had a deja vu, didn't you?<br>🧠&nbsp;▸&nbsp;💭&nbsp;It feels like you already did this. (NG+)";
+function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
+  var winMessage="🧠 ▸ 💭 Just had a deja vu, feels really familiar (NG+).";
   logAction(winMessage);
+  adventureEndTime=getTime();
 
   //Reset progress to game start
   resetSeenEncounters();
@@ -925,7 +2056,7 @@ function gameEnd(){
 
 //Logging
 function logPlayerAction(actionString,message){
-  actionString = actionString.substring(0,actionString.indexOf("&nbsp;")) + "&nbsp;▸&nbsp;" + enemyEmoji + "&nbsp;" + message + "<br>";
+  actionString = actionString.split(" ")[0] + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
@@ -942,89 +2073,189 @@ function logAction(message){
 }
 
 //UI Buttons
+function setButton(elementID,text){
+  //document.getElementById(elementID).innerHTML=text.split(" ")[0]; //NO TEXT
+  document.getElementById(elementID).innerHTML=text;
+}
+
 function resetEncounterButtons(){
-  document.getElementById('button_attack').innerHTML="🎯&nbsp;Attack";
-  document.getElementById('button_block').innerHTML="🛡&nbsp;Block";
-  document.getElementById('button_roll').innerHTML="🌀&nbsp;Roll";
-  document.getElementById('button_grab').innerHTML="✋&nbsp;Grab";
-  document.getElementById('button_sleep').innerHTML="💤&nbsp;Rest";
-  document.getElementById('button_speak').innerHTML="💬&nbsp;Speak";
+  setButton('button_attack',"⚔️ Attack");
+  setButton('button_block',"🔰 Block");
+  setButton('button_roll',"🌀 Dodge");
+  if ((enemyAtk<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))  setButton('button_roll',"👣 Leave");
+  setButton('button_cast',"💫 Cast");
+  setButton('button_curse',"🪬 Curse");
+  setButton('button_pray',"❤️‍🩹 Heal");
+  setButton('button_grab',"👋 Grab");
+  setButton('button_sleep',"💤 Rest");
+  setButton('button_speak',"💬 Speak");
 }
 
 function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      document.getElementById('button_attack').innerHTML="❤️&nbsp;Health";
-      document.getElementById('button_roll').innerHTML="🟢&nbsp;Energy";
-      document.getElementById('button_block').innerHTML="🧠&nbsp;Mind";
-      document.getElementById('button_grab').innerHTML="🍀&nbsp;Luck";
-      document.getElementById('button_speak').innerHTML="👁‍🗨&nbsp;Curse";
-      document.getElementById('button_sleep').innerHTML="↪️&nbsp;Skip";
+      setButton('button_attack',"❤️ Vitality");
+      setButton('button_roll',"🟢 Agility");
+      setButton('button_block',"📿 Faith");
+      setButton('button_cast',"🔮 Sorcery");
+      setButton('button_curse',"🩸 Hatred");
+      setButton('button_pray',"🧠 Psyche");
+      setButton('button_grab',"🍀 Fortune");
+      setButton('button_speak',"🪙 Greed");
+      setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
       break;
+
     case "Container":
-      document.getElementById('button_grab').innerHTML="👋&nbsp;Search";
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+    case "Container-Double":
+    case "Container-Triple":
+      setButton('button_grab',"👋 Search");
+      setButton('button_roll',"👣 Walk");
+      setButton('button_sleep',"💤 Sleep");
       break;
+
+    case "Container-Locked":
+    case "Container-Locked-Double":
+      if (playerMgkMax>0){
+        document.getElementById('button_cast').innerHTML="🪄 Unlock";
+      }
+      if (playerLootString.includes("🗝️")){
+        document.getElementById('button_grab').innerHTML="🗝️ Unlock";
+      } else {
+        document.getElementById('button_grab').innerHTML="👋 Search";
+      }
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
+
     case "Consumable":
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
-      document.getElementById('button_grab').innerHTML="✋&nbsp;Eat it";
+    case "Container-Consume":
+      setButton('button_roll',"❌ Ditch");
+
+      document.getElementById('button_grab').innerHTML="🍴 Eat";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
+    case "Altar":
+      document.getElementById('button_pray').innerHTML="🙏 Pray";
+      if (playerLootString.includes("🔪")) document.getElementById('button_pray').innerHTML="🩸 Offer";
     case "Prop":
-      document.getElementById('button_grab').innerHTML="✋&nbsp;Touch";
+      document.getElementById('button_grab').innerHTML="✋ Touch";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
+
+    case "Curse":
+      document.getElementById('button_grab').innerHTML="✋ Reach";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_pray').innerHTML="🙏 Pray";
+      document.getElementById('button_sleep').innerHTML="💤 Faint";
+      break;
+
     case "Item":
+      document.getElementById('button_grab').innerHTML="👋 Grab";
+      setButton('button_roll',"❌ Ditch");
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      break;
+
     case "Trap":
     case "Trap-Roll":
     case "Trap-Attack":
     case "Prop":
-    case "Dream":
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+      document.getElementById('button_grab').innerHTML="✋ Reach";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
+
+    case "Dream":
+      document.getElementById('button_grab').innerHTML="✋ Reach";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_speak').innerHTML="💭 Dream";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      document.getElementById('button_pray').innerHTML="🧠 Think";
+      break;
+
+    case "Fishing":
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_grab').innerHTML="🎣 Fish";
+      break;
+
     case "Recruit":
         if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
-          document.getElementById('button_speak').innerHTML="💬&nbsp;Recruit";
+          document.getElementById('button_speak').innerHTML="💬 Recruit";
         }
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
-          document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
+          document.getElementById('button_grab').innerHTML="🦶 Kick";
         }
+        document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
         break;
+
     case "Pet":
-      if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
-        document.getElementById('button_grab').innerHTML="👋&nbsp;Pet";
-      }
+      if ((enemyAtk+enemyAtkBonus)<=0) document.getElementById('button_block').innerHTML="🫶 Play";
+      if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
     case "Standard":
+      document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
-        document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
+        document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
+
     case "Heavy":
     case "Swift":
-      if ((enemySta-enemyStaLost)==0) {
-        document.getElementById('button_grab').innerHTML="🦶&nbsp;Kick";
+    case "Boss":
+      document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
+      if (enemySta-enemyStaLost==0) {
+        document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       break;
-    case "Death":
-      document.getElementById('button_speak').innerHTML="💌&nbsp;Share";
-      document.getElementById('button_sleep').innerHTML="🦆&nbsp;Tweet";
+
+    case "Spirit":
+    case "Demon":
+      document.getElementById('button_pray').innerHTML="🔥 Banish";
+      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
+        document.getElementById('button_grab').innerHTML="🦶 Kick";
+      }
       break;
+
+    case "Undead":
+      document.getElementById('button_pray').innerHTML="🔥 Banish";
+      break;
+
+    case "Death":
+      document.getElementById('button_cast').innerHTML="🫶 Praise";
+      document.getElementById('button_grab').innerHTML="✏️ Report";
+      document.getElementById('button_speak').innerHTML="🦆 Tweet";
+      document.getElementById('button_sleep').innerHTML="📜 Legend";
+      break;
+
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="💾&nbsp;Save";
-      document.getElementById('button_roll').innerHTML="👣&nbsp;Walk";
+      document.getElementById('button_grab').innerHTML="💾 Save";
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
   }
 }
 
 //UI Effects
+function toggleUIElement(UIElement,opacity = "0"){
+  var elementDisplayState = UIElement.style.opacity;
+  if (elementDisplayState != "0"){
+    UIElement.style.opacity=opacity;
+  } else {
+    UIElement.style.opacity=opacity;
+  }
+}
+
 function curtainFadeInAndOut(message=""){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
   var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
 
-  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",1.1,true,message);
-  animateUIElement(curtainUIElement,"animate__fadeIn",1,true);
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",1.6,true,message);
+  animateUIElement(curtainUIElement,"animate__fadeIn",1.5,true);
 
   var animationHandler = function(){
-    animateUIElement(curtainUIElement,"animate__fadeOut",2.5,true);
-    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",2.5,true,message);
+    animateUIElement(curtainUIElement,"animate__fadeOut",2.2,true);
+    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",2.2,true,message);
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
   curtainUIElement.addEventListener('animationend',animationHandler);
@@ -1042,11 +2273,25 @@ function displayPlayerCannotEffect(){
   animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
 }
 
-function displayEffect(message,documentElement){
-  animateUIElement(documentElement,"animate__fadeOut",1.3,true,message)
+function displayEnemyCannotEffect(){
+  animateUIElement(document.getElementById('id_enemy_info'),"animate__headShake","0.7"); //Animate enemy not enough stamina
 }
 
-function animateUIElement(documentElement,animation,time="0s",hidden = false,message=""){
+function displayPlayerGainedEffect(){
+  animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
+}
+
+function displayEffect(message,documentElement,time=2){
+  animateUIElement(documentElement,"animate__fadeOut",time,true,message)
+}
+
+function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false){
+  var typeOfTime = typeof time; //To not forget anymore
+  if (typeof time != "string"){
+    time = String(time)
+    typeOfTime = typeof time
+  }
+
   if (hidden){
     documentElement.innerHTML = message;
     documentElement.style.display = "block";
@@ -1054,8 +2299,13 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
 documentElement.classList.remove(animation);
 void documentElement.offsetWidth; // trigger a DOM reflow
 
+  if (animateInfinite) {
+    documentElement.classList.add("animate__infinite");
+    } else {
+      documentElement.classList.remove("animate__infinite");
+    }
   documentElement.style.setProperty("--animate-duration","0.0001s");
-  //Wow, this is nice - https://animate.styles
+  //Wow, this is nice - https://animate.style
   documentElement.classList.add("animate__animated",animation);
   if (time !="0s"){
     documentElement.style.setProperty("--animate-duration",time+"s");
@@ -1068,6 +2318,7 @@ void documentElement.offsetWidth; // trigger a DOM reflow
   });
 }
 
+//Button click listeners
 function registerClickListeners(){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
@@ -1080,11 +2331,15 @@ function registerClickListeners(){
   //    eventType = 'touchend';
   //  }
   //}
-  console.log("platform interaction event type="+eventType);
+
+  //console.log("platform interaction event type="+eventType); //This was for troubleshooting various platforms
 
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
   document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
+  document.getElementById('button_cast').addEventListener(eventType, resolveAction('button_cast'));
+  document.getElementById('button_curse').addEventListener(eventType, resolveAction('button_curse'));
+  document.getElementById('button_pray').addEventListener(eventType, resolveAction('button_pray'));
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
   document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
@@ -1098,42 +2353,77 @@ function registerClickListeners(){
   });
 }
 
-//Social
+//Social features
 function generateCharacterShareString(){
   var characterShareString="";
-  characterShareString+="\nCharacter: "+playerName;
-  characterShareString+="\n❤️ "+"◆".repeat(playerHpMax)+"  🟢 "+"◆".repeat(playerStaMax)+"  🎯 " + "×".repeat(playerAtk);
-
-  if (playerPartyString.length > 0) {
-    characterShareString += "\nParty: " +playerPartyString;
-  }
-  if (playerLootString.length > 0) {
-    characterShareString += "\nLoot: "+playerLootString;
-  }
-
-  characterShareString+="\n\n"+ versionCode;
+    characterShareString+="<b>\n"+playerName+"</b>";
+    characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
+    if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
+    characterShareString += "\nAwoken: "+adventureStartTime;
+    if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
+    if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
+    characterShareString += "\nKillcount: "+playerKills;
+    characterShareString += "\n\nDeceased: "+adventureEndTime;
+    characterShareString += adventureEndReason+" (#"+adventureEncounterCount+")";
 
   return characterShareString;
 }
 
 function copyAdventureToClipboard(){
-  displayPlayerEffect("💌");
-  logPlayerAction(actionString,"Your legend was copied into clipboard.");
-  adventureLog = adventureLog.replaceAll("<br>","\n").replaceAll("&nbsp;"," ");
-  adventureLog += generateCharacterShareString();
-  adventureLog += "\nhttps://igpenguin.github.io/webcrawler";
-  navigator.clipboard.writeText(adventureLog);
+  displayPlayerEffect("📜");
+  logPlayerAction(actionString,"Written the legend to hard drive.");
+
+  var adventureLogClipboard = "";
+
+  adventureLogClipboard = adventureLog.replaceAll("<br>","\n");
+  var tempString = adventureLogClipboard.split("\n").slice(2);
+  adventureLogClipboard = tempString.join("\n");
+  adventureLogClipboard = adventureLogClipboard.replaceAll("&nbsp;"," ").substring(1);
+
+  adventureLogClipboard=generateCharacterShareString()+"\n\n"+adventureLogClipboard;
+  adventureLogClipboard += "\nhttps://igpenguin.github.io/webcrawler";
+  adventureLogClipboard +=  "\n"+ versionCode;
+
+  //Copy to clipboard
+  navigator.clipboard.writeText(adventureLogClipboard);
+
+  //Download as .txt
+  var fileName = "WebCrawler-"+playerName.replaceAll(" ","-")+"-"+adventureEndTime.replaceAll(" at ","-").replaceAll(":","-")+".txt";
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(adventureLogClipboard));
+  element.setAttribute('download', fileName);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+
+  //Open in new window
+  var legendTab = window.open('about:blank','data:text/plain;charset=utf-8,');
+  legendTab.document.write("<p style=\"background-color:#272727;padding:8px;padding-left:24px;height:100%;margin:-8px;color:"+colorWhite+"\">" + adventureLogClipboard.replaceAll("\n","<br>")+"</p>");
+  legendTab.document.close();
 }
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI made it to stage #"+adventureEncounterCount+" in WebCrawler!"+adventureEndReason+"\n"+generateCharacterShareString()));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, I just finished a WebCrawler run!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")));
 }
 
-//Mobile specific
+function redirectToFeedback(){
+  var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
+  window.open(googleFormUrl);
+}
+
+//Prevent data loss warning if not running on localhost
+if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1"){
+  window.onbeforeunload = function() {
+      return true;
+  };
+}
+
+//Mobile specific - vibrate
 function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
-    console.log("Vibrate not supported!");
+    console.log("WARNING: Vibrate not supported!");
     return;
   }
   window.navigator.vibrate([5,20,10]);
