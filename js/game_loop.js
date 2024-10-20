@@ -985,7 +985,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) {
               break;
             }
+          } else if (enemyType=="Spirit" || enemyType=="Demon"){
+            if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) {
+              break;
+            }
           }
+
           if (enemyType!="Death" && enemyType!="Dream") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
         switch (enemyType){
