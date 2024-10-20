@@ -1641,7 +1641,7 @@ function enemyHit(damage,magicType=false) {
   var critChance = Math.floor(Math.random() * luckInterval);
   if ( critChance <= playerLck ){
     logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
-    hitMsg="The attack hit them critically -"+(damage+2)+" 💔";
+    hitMsg="Attacked hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
   }
@@ -1920,7 +1920,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 }
 
 function playerConsumed(){
-  var consumedString="Replenished lost resources"
+  var consumedString="Replenished resources"
   if (enemyMsg!="") consumedString=enemyMsg;
 
   if (enemyHp<0){

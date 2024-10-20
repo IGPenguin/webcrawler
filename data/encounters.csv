@@ -27,8 +27,8 @@ Forsaken Village;🍖;Fleshy Bone;Consumable;-1;0;0;0;0;0;Questionable Food;Coul
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
 Forsaken Village;🧱;Brick Ruins;Container;0;0;0;0;0;0;Material;Nothing of particular interest.<br>;Lifted the nearest brick.
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Rarity;Looks well worn but still usable.<br>Perhaps unlocks a secret.;
-Forsaken Village;🎯;Archery Range;Container-Double;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
-Forsaken Village;🦴;Pile of Bones;Container-Double;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
+Forsaken Village;🎯;Archery Range;Container-Triple;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
+Forsaken Village;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Forsaken Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
 Forsaken Village;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Forsaken Village;🌿;Grass Patch;Container-Double;0;0;0;0;0;0;Soft Surface;No reason to bother stopping here.<br>Unless to catch a breath.;A wild animal was hidden there!
@@ -42,7 +42,7 @@ Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peac
 Depriving Fairyland;🌿;Tall Weeds;Container-Double;0;0;0;0;0;0;Wild Flora;No reason to bother stopping here.<br>Unless to catch a breath.;Revealed a strange growth.
 Depriving Fairyland;🍄;Suspicious Mushroom;Container-Consume;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented in time.
 Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
-Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>Better not underestimate it.;
+Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
 Depriving Fairyland;🌾;Overgrown Reeds;Container-Triple;0;0;0;0;0;0;Dense Flora;This seems like the only way forward.<br>But anything could be hiding there.;
 Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;0;0;Malvolent Instrument;Decorated magical equipment.<br>;Grabbing it seems bad luck.
 Depriving Fairyland;🕋;Strange Box;Container-Locked;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
@@ -52,11 +52,11 @@ Depriving Fairyland;🌳;Dark Grove;Container-Double;0;0;0;0;0;0;Suspense Area;N
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;0;Artifact;The sacrifical blade demands blood.<br>;Released strange energy from the inside.
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;0;1;Ritual Remnants;Escaped from the trunk insides.<br>;No mercy for the wicked.
 Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;0;0;0;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
 Depriving Fairyland;🍯;Sweet Honeypot;Container-Double;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run.;
 Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
-Depriving Fairyland;🦡;Honey Badger;Standard;3;2;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
+Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🏛️;Ancient Temple;Container-Triple;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
 Depriving Fairyland;🧙‍♂️;Bloody Cultist;Standard;2;1;1;0;2;2;Mythical Beast;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 Depriving Fairyland;🎗️;Golden Trinket;Item;1;0;0;0;0;0;Artifact;Reflected sunlight draws the eyesight.<br>;Stuck deep into the skin.
