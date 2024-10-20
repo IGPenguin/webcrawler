@@ -2350,7 +2350,7 @@ function generateCharacterShareString(){
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
     if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
-    characterShareString += "\nBorn: "+adventureStartTime;
+    characterShareString += "\nAwoken: "+adventureStartTime;
     characterShareString += "\nDeceased: "+adventureEndTime;
     characterShareString += adventureEndReason+" (Encounter #"+adventureEncounterCount+")";
 
