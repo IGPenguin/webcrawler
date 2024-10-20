@@ -2364,7 +2364,7 @@ function generateCharacterShareString(){
     if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
     characterShareString += "\nKillcount: "+playerKills;
     characterShareString += "\n\nDeceased: "+adventureEndTime;
-    characterShareString += adventureEndReason+" (Encounter #"+adventureEncounterCount+")";
+    characterShareString += adventureEndReason+" (#"+adventureEncounterCount+")";
 
   return characterShareString;
 }
@@ -2405,7 +2405,7 @@ function copyAdventureToClipboard(){
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin,\nI just finished a WebCrawler adventure!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, I just finished a WebCrawler run!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")));
 }
 
 function redirectToFeedback(){
