@@ -20,9 +20,11 @@ var fullSymbol = "●";
 var emptySymbol = "○";
 var enemyStatusString = ""
 
-//Global vars
+//Stats
 var adventureStartTime = getTime();
 var adventureEndTime;
+
+//Global vars
 var lines;
 var linesLoot;
 var encounterIndex;
@@ -111,6 +113,7 @@ function getGreedyName(name=playerName){
 
 var playerName = getFirstName();
 var playerNumber = 1; //Increments on death if at least once saved
+var playerKills = 0;
 var playerLootString;
 var playerPartyString;
 
@@ -141,7 +144,9 @@ function renewPlayer(){ //Default values
   playerRested = false;
   playerLootString = "";
   playerPartyString = "";
-  //adventureLog = ""; //Keep of all characters
+
+  playerKills = 0;
+  //adventureLog = ""; //Keep for all characters
 }
 
 //Adventure logging
@@ -852,7 +857,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_cast':
           if (enemyType=="Death"){
-            logPlayerAction(actionString,"Cast a strong message.");
+            logPlayerAction(actionString,"Cast out a powerful message.");
             redirectToFeedback();
             break;
           }
@@ -962,8 +967,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_pray':
           if (enemyType=="Death"){
-            logPlayerAction(actionString,"Sent a message to the universe.");
-            redirectToFeedback();
+            playerReincarnate();
             break;
           }
 
@@ -1366,22 +1370,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-            playerNumber++;
-            displayEnemyEffect("✋");
-
-            if (checkpointEncounter == null){
-              renewPlayer();
-              encounterIndex=3; //Skip tutorial
-              playerSta=playerStaMax; //Renew stamina
-            } else {
-              //TODO load playerStats & Loot to prevent stacking via resurrecting on checkpoints
-              encounterIndex=checkpointEncounter-1; //Start from checkpoint
-              playerHp=playerHpMax;
-              playerSta=playerStaMax;
-            }
-            adventureEncounterCount = -1; //For death
-            nextEncounter();
+            logPlayerAction(actionString,"Sent a message to the universe.");
+            redirectToFeedback();
             break;
 
           case "Upgrade":
@@ -1665,6 +1655,7 @@ function enemyHit(damage,magicType=false) {
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
     logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
+    adventureKills++;
     animateFlipNextEncounter();
   }
 }
@@ -2008,6 +1999,25 @@ function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory."
   }
 }
 
+function playerReincarnate(){
+  logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
+  playerNumber++;
+  displayEnemyEffect("❤️‍🩹");
+
+  if (checkpointEncounter == null){
+    renewPlayer();
+    encounterIndex=3; //Skip tutorial
+    playerSta=playerStaMax; //Renew stamina
+  } else {
+    //TODO load playerStats & Loot to prevent stacking via resurrecting on checkpoints
+    encounterIndex=checkpointEncounter-1; //Start from checkpoint
+    playerHp=playerHpMax;
+    playerSta=playerStaMax;
+  }
+  adventureEncounterCount = -1; //For death
+  nextEncounter();
+}
+
 //End Game
 function getTime(){
   var currentDate = new Date();
@@ -2212,6 +2222,8 @@ function adjustEncounterButtons(){
       break;
 
     case "Death":
+      document.getElementById('button_cast').innerHTML="🫶 Praise";
+      document.getElementById('button_grab').innerHTML="✏️ Report";
       document.getElementById('button_speak').innerHTML="🦆 Tweet";
       document.getElementById('button_sleep').innerHTML="📜 Legend";
       break;
@@ -2347,10 +2359,11 @@ function generateCharacterShareString(){
     characterShareString+="<b>\n"+playerName+"</b>";
     characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
+    characterShareString += "\nAwoken: "+adventureStartTime;
     if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
     if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
-    characterShareString += "\nAwoken: "+adventureStartTime;
-    characterShareString += "\nDeceased: "+adventureEndTime;
+    characterShareString += "\nKillcount: "+playerKills;
+    characterShareString += "\n\nDeceased: "+adventureEndTime;
     characterShareString += adventureEndReason+" (Encounter #"+adventureEncounterCount+")";
 
   return characterShareString;
