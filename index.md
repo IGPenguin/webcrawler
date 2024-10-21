@@ -117,10 +117,10 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-17px;
-  margin-bottom:-16px;
+<h3 id = "id_versus" style="margin-top:-13px;
+  margin-bottom:-14px;
     color:red;
-    font-size:30px;
+    font-size:24px;
       letter-spacing:1.5px;
       -webkit-text-stroke: 5px black;
         paint-order: stroke fill;
