@@ -1723,6 +1723,28 @@ function enemyDodged(message="Missed, it evaded the grasp."){
 }
 
 function enemyCastIfMgk(hit=true){
+  switch (enemyType){
+    case "Trap": //Rest to full if out of combat + mana
+    case "Trap-Attack":
+    case "Trap-Roll":
+    case "Item":
+    case "Consumable":
+    case "Prop":
+    case "Dream":
+    case "Container":
+    case "Container-Consume":
+    case "Container-Double":
+    case "Container-Triple":
+    case "Container-Locked":
+    case "Container-Locked-Double":
+    case "Checkpoint":
+    case "Altar":
+    case "Curse":
+    case "Fishing":
+      return false;
+      break;
+  }
+
   if (enemyMgk>enemyMgkLost) {
     enemyMgkLost++
     if (hit) {
