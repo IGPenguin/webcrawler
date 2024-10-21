@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/21/24 @ 00:06 AM"
+var versionCode = "pre-fpm build: 10/21/24 @ 22:51 PM"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -11,7 +11,7 @@ var colorWhite = "#FFFFFF";
 var colorGold = "#FFD940";
 var colorGreen = "#22BF22";
 var colorRed = "#FF0000";
-var colorGrey = "#DDDDDD";
+var colorGrey = "#CCCCCC";
 var colorOrange = "orange";
 var colorBlue = "#1059AA";
 
@@ -463,7 +463,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
       if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
-      if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked","#DDDDDD");
+      if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
       break;
   }
