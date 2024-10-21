@@ -20,7 +20,7 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-32px;
+<h2 id = "id_area" style="margin-top:-30px;
     margin-bottom:-12px;
     font-size:28px;
     letter-spacing: 1.5px;
@@ -117,10 +117,10 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-20px;
-  margin-bottom:-17px;
+<h3 id = "id_versus" style="margin-top:-17px;
+  margin-bottom:-16px;
     color:red;
-    font-size:36px;
+    font-size:30px;
       letter-spacing:1.5px;
       -webkit-text-stroke: 5px black;
         paint-order: stroke fill;
@@ -219,7 +219,7 @@ layout: default
 <p style="margin:8px"></p>
 
 <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/webcrawler/';">
-<h4 style="font-size:12px; opacity:0.9; letter-spacing:1px;box-shadow:none;">🔗 Made with love by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4>
-<h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.6; box-shadow:none;"/>
+<h4 style="font-size:11px; opacity:0.9; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4>
+<h4 id="id_version" style="font-size:10px; margin-top:-22px; margin-bottom:-8px; opacity:0.6; box-shadow:none;"/>
 </div>
 </center>

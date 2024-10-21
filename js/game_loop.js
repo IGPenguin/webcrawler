@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "pre-fpm build: 10/21/24 @ 22:51 PM"
+var versionCode = "ver. 10/21/24 • 11:04 PM"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
