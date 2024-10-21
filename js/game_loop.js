@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 10/21/24 • 11:04 PM"
-var initialEncounterOverride=0;
+var initialEncounterOverride=8;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -23,6 +23,45 @@ var enemyStatusString = ""
 //Stats
 var adventureStartTime = getTime();
 var adventureEndTime;
+
+//Player stats init
+var playerName = getFirstName();
+var playerNumber = 1; //Increments on death if at least once saved
+var playerKills = 0;
+var playerLootString;
+var playerPartyString;
+
+var playerHpMax;
+var playerStaMax;
+var playerMgkMax;
+var playerHp;
+var playerSta;
+var playerLck;
+var luckInterval = 30; //Lower to increase chances
+var playerInt;
+var playerAtk;
+var playerRested = false;
+
+renewPlayer();
+function renewPlayer(){ //Default values
+  playerName = getFirstName();
+  playerHpMax=3;
+  playerHp = playerHpMax;
+  playerStaMax = 3;
+  playerSta = 0; //Start tired in a dream (was playerStaMax;)
+  playerMgkMax = 0;
+  playerAtk = 1;
+  playerDef = 0; //TODO: Make use of when getting hit not by magic
+  playerLck = 1;
+  playerInt = 1;
+  playerMgk = playerMgkMax;
+  playerRested = false;
+  playerLootString = "";
+  playerPartyString = "";
+
+  playerKills = 0;
+  //adventureLog = ""; //Keep for all characters
+}
 
 //Global vars
 var lines;
@@ -65,7 +104,7 @@ var enemyTeamUIElement;
 var versusTextUIElement;
 var buttonsContainer;
 
-//Player stats init
+//String generators
 function getFirstName(){
   const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizard", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
@@ -111,42 +150,9 @@ function getGreedyName(name=playerName){
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-var playerName = getFirstName();
-var playerNumber = 1; //Increments on death if at least once saved
-var playerKills = 0;
-var playerLootString;
-var playerPartyString;
-
-var playerHpMax;
-var playerStaMax;
-var playerMgkMax;
-var playerHp;
-var playerSta;
-var playerLck;
-var luckInterval = 30; //Lower to increase chances
-var playerInt;
-var playerAtk;
-var playerRested = false;
-
-renewPlayer();
-function renewPlayer(){ //Default values
-  playerName = getFirstName();
-  playerHpMax=3;
-  playerHp = playerHpMax;
-  playerStaMax = 3;
-  playerSta = 0; //Start tired in a dream (was playerStaMax;)
-  playerMgkMax = 0;
-  playerAtk = 1;
-  playerDef = 0; //TODO: Make use of when getting hit not by magic
-  playerLck = 1;
-  playerInt = 1;
-  playerMgk = playerMgkMax;
-  playerRested = false;
-  playerLootString = "";
-  playerPartyString = "";
-
-  playerKills = 0;
-  //adventureLog = ""; //Keep for all characters
+function getProphecy(newline="<br>"){
+  const random_quotes = ["Appreciate the beauty of imperfection."+newline];
+  return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
 
 //Adventure logging
@@ -171,7 +177,7 @@ var enemyLck;
 var enemyInt;
 var enemyMgk;
 var enemyType;
-var enemyContainerNumber;
+var enemyContainerNumber = 0;
 var enemyTeam;
 var enemyDesc;
 var enemyMsg;
@@ -322,6 +328,8 @@ function loadEncounter(index, fileLines = lines){
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
+  if (enemyName.includes("Prophecy")) enemyDesc=getProphecy();
+
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
@@ -442,7 +450,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
       break;
     case "Prop":
-      enemyStatusString=decorateStatusText("⚪️","Unremarkable","#FFFFFF");
+      enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
       break;
     case "Altar":
       enemyStatusString=decorateStatusText("♦️","Place of Worship",colorRed);
@@ -462,7 +470,8 @@ function redraw(){
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
-      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
+      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
+      if (enemyContainerNumber>2) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
       break;
@@ -1357,7 +1366,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
-                if (playerUseItem("🗝️","Unlocked it with the key.","The lock is tightly secured.",false)){
+                if (playerUseItem("🗝️","Unlocked it with the key.","Cannot open, it is locked tight.",false)){
                   animateFlipNextEncounter();
                 } else {
                   displayPlayerCannotEffect();
@@ -2216,15 +2225,15 @@ function adjustEncounterButtons(){
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
       if (enemyType.includes("Container")){
-        setButton('button_grab',"👋 Search");
+        setButton('button_grab',"👀 Search");
         setButton('button_roll',"👣 Walk");
         setButton('button_sleep',"💤 Sleep");
         if (enemyType.includes("Locked")){
-          if (playerMgkMax>0){
-            document.getElementById('button_cast').innerHTML="🪄 Unlock";
-          }
+          document.getElementById('button_cast').innerHTML="🪄 Unlock";
           if (playerLootString.includes("🗝️")){
             document.getElementById('button_grab').innerHTML="🗝️ Unlock";
+          } else {
+            document.getElementById('button_grab').innerHTML="👋 Reach";
           }
         }
       }
