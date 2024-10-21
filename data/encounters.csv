@@ -25,7 +25,7 @@ Forsaken Village;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still loo
 Forsaken Village;🐀;Dire Rat;Swift;1;1;2;0;10;0;Creature;Appeared out of nowhere.<br>Probably carries diseases.;Contracted a deadly disease.
 Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
-Forsaken Village;🧱;Brick Ruins;Container;0;0;0;0;0;0;Material;Nothing of particular interest.<br>;Lifted the nearest brick.
+Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Pulled out the loose brick.
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-6;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
@@ -109,8 +109,8 @@ Bleak Necropolis;⛺️;Worn Tent;Container-3;0;0;0;0;0;0;Place of Rest;There is
 Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Bleak Necropolis;📘;Book of Spells;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
 Bleak Necropolis;🧙;Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Bleak Necropolis;🪦;Silent Graveyard;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
-Bleak Necropolis;🕳️;Suspicious Hole;Container-3;0;0;0;0;0;0;Disturbed Ground;Seems recently tampered with.<br>;Corpse has risen from the ground.
+Bleak Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
+Bleak Necropolis;🪦;Desolate Grave;Container-3;0;0;0;0;0;0;Disturbed Ground;Seems recently tampered with.<br>;Corpse has risen from the ground.
 Bleak Necropolis;🧟;Animated Dead;Undead;3;2;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
 Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
