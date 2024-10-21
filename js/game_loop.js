@@ -171,6 +171,7 @@ var enemyLck;
 var enemyInt;
 var enemyMgk;
 var enemyType;
+var enemyContainerNumber;
 var enemyTeam;
 var enemyDesc;
 var enemyMsg;
@@ -308,6 +309,11 @@ function loadEncounter(index, fileLines = lines){
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  if (enemyType.includes("Container")) {
+    var number = enemyType.match(/\d+$/);
+    if (number) enemyContainerNumber = parseInt(number[0],10);
+  }
+
   enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
   enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]));
   enemySta = String(selectedLine.split(",")[6].split(":")[1]);
@@ -429,23 +435,12 @@ function redraw(){
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
       break;
-    case "Container-Consume":
-    case "Consumable":
-      enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
-      break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       break;
     case "Upgrade":
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
       break;
-    case "Container-Locked":
-    case "Container-Locked-Double":
-      enemyStatusString=decorateStatusText("🗝️","Locked","#DDDDDD");
-      break;
-    case "Container":
-    case "Container-Double":
-    case "Container-Triple":
     case "Prop":
       enemyStatusString=decorateStatusText("⚪️","Unremarkable","#FFFFFF");
       break;
@@ -466,6 +461,10 @@ function redraw(){
       break;
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
+      //Multi-match
+      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
+      if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked","#DDDDDD");
+      if (enemyType.includes("Consumable")) enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
       break;
   }
 
@@ -539,6 +538,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Item":
           case "Consumable":
+          case "Container-Consume":
             isLooting=false;
           case "Trap":
           case "Trap-Roll":
@@ -555,18 +555,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
             displayEnemyEffect("💨");
             enemyAttackOrRest("Cannot hit, eerie limbs retaliated -"+enemyAtk+" 💔");
-            break;
-
-          case "Container":
-          case "Container-Double":
-          case "Container-Triple":
-            var openMessage = "Smashed it wide open -1 🟢";
-            if (enemyMsg != ""){
-              openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
-            }
-            logPlayerAction(actionString,openMessage);
-            displayEnemyEffect("〽️");
-            animateFlipNextEncounter();
             break;
 
           case "Friend":
@@ -621,6 +609,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
+            if (enemyType.includes("Container")){
+              var openMessage = "Smashed it wide open -1 🟢";
+              if (enemyMsg != ""){
+                openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
+              }
+              logPlayerAction(actionString,openMessage);
+              displayEnemyEffect("〽️");
+              animateFlipNextEncounter();
+              break;
+            }
             logPlayerAction(actionString,"The attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
       }
@@ -714,21 +712,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Container":
-          case "Container-Consume":
-          case "Container-Locked":
+          case "Consumable-Container":
+          case "Locked-Container":
           case "Container-Friend":
             logPlayerAction(actionString,"Left without investigating it.");
             encounterIndex++;
-            nextEncounter();
-            break;
-          case "Container-Double":
-          case "Container-Locked-Double":
-          case "Container-Triple":
-            logPlayerAction(actionString,"Left without investigating it.");
-            encounterIndex+=2; //Skip two encounters
-            if (enemyType=="Container-Triple"){ //Skip three encounters
-              encounterIndex++;
-            }
             nextEncounter();
             break;
           case "Dream":
@@ -772,6 +760,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             animateFlipNextEncounter();
             break;
           default:
+            if (enemyType.includes("Container")){
+              logPlayerAction(actionString,"Left without investigating it.");
+              encounterIndex+=enemyContainerNumber;
+              nextEncounter();
+              break;
+            }
             logPlayerAction(actionString,"Felt like nothing really happened.");
         }
         break;
@@ -784,11 +778,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"Granted gods blessing +1 🍀");
+          logPlayerAction(actionString,"Granted gods blessing +1 🧠 +1 🍀");
           displayPlayerGainedEffect();
           displayPlayerEffect("🙏");
           playerName=getFaithName();
-          playerLck+=1;
+          playerLck++;
+          playerInt++;
           animateFlipNextEncounter();
           break;
         }
@@ -875,10 +870,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if ((enemyType=="Container-Locked") || (enemyType=="Container-Locked-Double")){
+          if (enemyType.includes("Locked")){
             if (playerMgkMax<2){
               logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
               displayPlayerCannotEffect();
+              break;
+            } else {
+              playerMgk-=2;
+              logPlayerAction(actionString,"Unlocked using a spell -2 🔵");
+              animateFlipNextEncounter();
               break;
             }
           }
@@ -932,20 +932,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyType="Standard";
             break;
 
-          case "Container-Locked":
-          case "Container-Locked-Double":
-            playerMgk-- //Unlocking cost 1 extra mgk
-            logPlayerAction(actionString,"Unlocked using a spell -2 🔵");
-            animateFlipNextEncounter();
-            break;
-
           case "Trap":
           case "Trap-Roll":
           case "Item":
           case "Consumable":
-          case "Container":
-          case "Container-Double":
-          case "Container-Triple":
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
             displayEnemyEffect("🔥");
             animateFlipNextEncounter();
@@ -961,8 +951,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            logPlayerAction(actionString,"Wasted magic power on nothing -1 🔵");
-        }
+            if (enemyType.includes("Container") && !enemyType.includes("Locked")){
+              logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
+              displayEnemyEffect("🔥");
+              animateFlipNextEncounter();
+              }
+            logPlayerAction(actionString,"The spell had no effect on that -1 🔵");
+            displayEnemyEffect("✨");        }
         break;
 
         case 'button_pray':
@@ -1027,23 +1022,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Consumable":
-          case "Container":
-          case "Container-Locked":
-          case "Container-Locked-Double":
-          case "Container-Double":
-          case "Container-Triple":
           case "Trap":
           case "Trap-Roll":
           case "Item":
           case "Fishing":
-            if (playerHp<playerHpMax) {
-              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
-              playerHp=playerHpMax; //Lay on hands
-              displayPlayerGainedEffect();
-            } else {
-              logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
-              displayPlayerCannotEffect();
-            }
+            playerHeal();
             break;
           case "Standard":
           case "Recruit":
@@ -1054,14 +1037,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Friend":
           case "Boss":
           case "Small":
-            if (playerHp<playerHpMax) {
-              logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
-              playerHp=playerHpMax; //Lay on hands
-              displayPlayerGainedEffect();
-            } else {
-              logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
-              displayPlayerCannotEffect();
-            }
+            playerHeal();
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
@@ -1107,7 +1083,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           default:
             var prayLogMessage="The prayer had no visible effect."
-            if (!isfreePrayEncounter){prayLogMessage.replace("."," -1 🔵");}
+            if (!isfreePrayEncounter){
+              prayLogMessage.replace("."," -1 🔵");
+            } else {
+              playerHeal();
+              break;
+            }
             logPlayerAction(actionString,prayLogMessage);
         }
         break;
@@ -1292,27 +1273,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("✋");
             break;
 
-          case "Container":
-          case "Container-Consume":
-          case "Container-Double":
-          case "Container-Triple":
-            var openMessage = "Sucessfully found something.";
-            displayEnemyEffect("👋");
-            if (enemyMsg != ""){
-              openMessage = enemyMsg;
-            }
-            logPlayerAction(actionString,openMessage);
-            nextEncounter();
-            break;
-          case "Container-Locked":
-          case "Container-Locked-Double":
-            if (playerUseItem("🗝️","Unlocked it with the key.","The lock is tightly secured.",false)){
-              animateFlipNextEncounter();
-            } else {
-              displayPlayerCannotEffect();
-            }
-            break;
-
           case "Item":
             playerLootString+=enemyEmoji;
             displayEnemyEffect("👋");
@@ -1363,7 +1323,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Demon":
           case "Spirit":
-            logPlayerAction(actionString,"Hands passed right through them.");
+            logPlayerAction(actionString,"Hands seemed to pass through them.");
             displayEnemyEffect("✋");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
@@ -1375,12 +1335,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Chose luck +2 🍀 over intellect -1 🧠");
+            logPlayerAction(actionString,"Born to get lucky +2 🍀");
             displayPlayerCannotEffect();
             displayPlayerEffect("🍀");
             playerName=getLuckyName();
             playerLck+=2;
-            playerInt-=1;
             animateFlipNextEncounter();
             break;
 
@@ -1396,6 +1355,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
             break;
           default:
+            if (enemyType.includes("Container")){
+              if (enemyType.includes("Locked")){
+                if (playerUseItem("🗝️","Unlocked it with the key.","The lock is tightly secured.",false)){
+                  animateFlipNextEncounter();
+                } else {
+                  displayPlayerCannotEffect();
+                }
+                break;
+              }
+              var openMessage = "Sucessfully found something.";
+              displayEnemyEffect("👋");
+              if (enemyMsg != ""){
+                openMessage = enemyMsg;
+              }
+              logPlayerAction(actionString,openMessage);
+              nextEncounter();
+              break;
+            }
+
             logPlayerAction(actionString,"Touched it, nothing happened.");
             displayEnemyEffect("✋");
           }
@@ -1541,41 +1519,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Prop":
-          case "Dream":
-          case "Container":
-          case "Container-Consume":
-          case "Container-Double":
-          case "Container-Triple":
-          case "Container-Locked":
-          case "Container-Locked-Double":
           case "Checkpoint":
           case "Altar":
           case "Fishing":
-            if (!playerRested){
-              if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
-                playerGetStamina(playerStaMax-playerSta,true);
-                playerMgk=playerMgkMax;
-                playerRested=true;
-
-                logPlayerAction(actionString,"Rested well, recovering all resources.");
-                displayPlayerEffect("💤");
-              } else {
-                playerRested=true;
-
-                logPlayerAction(actionString,"Wasted a precious moment of life.");
-                displayPlayerEffect("💤");
-              }
-            } else {
-              logPlayerAction(actionString,"Already rested at this spot.");
-              displayPlayerCannotEffect();
-            }
-            if (enemyType=="Dream") nextEncounter();
+            playerRest();
+          case "Dream":
+            nextEncounter();
             break;
 
           case "Container-Friend":
           case "Friend": //They'll leave if you'll rest
-            displayPlayerEffect("💤");
-            playerGetStamina(playerStaMax-playerSta);
+            playerRest();
             logPlayerAction(actionString,"They got tired of waiting and left.");
             nextEncounter();
             break;
@@ -1592,6 +1546,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
+            if (enemyType.includes("Container")){
+              playerRest();
+              break;
+            }
             logPlayerAction(actionString,"Cannot rest, monsters are nearby.");
             displayPlayerCannotEffect();
             displayPlayerEffect("👀");
@@ -1729,15 +1687,6 @@ function enemyCastIfMgk(hit=true){
     case "Trap-Roll":
     case "Item":
     case "Consumable":
-    case "Prop":
-    case "Dream":
-    case "Container":
-    case "Container-Consume":
-    case "Container-Double":
-    case "Container-Triple":
-    case "Container-Locked":
-    case "Container-Locked-Double":
-    case "Checkpoint":
     case "Altar":
     case "Curse":
     case "Fishing":
@@ -1831,6 +1780,38 @@ function animateVersus(time = "1"){
 }
 
 //Player
+function playerRest(){
+  if (!playerRested){
+    if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
+      playerGetStamina(playerStaMax-playerSta,true);
+      playerMgk=playerMgkMax;
+      playerRested=true;
+
+      logPlayerAction(actionString,"Rested well, recovering all resources.");
+      displayPlayerEffect("💤");
+    } else {
+      playerRested=true;
+
+      logPlayerAction(actionString,"Wasted a precious moment of life.");
+      displayPlayerEffect("💤");
+    }
+  } else {
+    logPlayerAction(actionString,"Already rested at this spot.");
+    displayPlayerCannotEffect();
+  }
+}
+
+function playerHeal(){
+  if (playerHp<playerHpMax) {
+    logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
+    playerHp=playerHpMax; //Lay on hands
+    displayPlayerGainedEffect();
+  } else {
+    logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
+    displayPlayerCannotEffect();
+  }
+}
+
 function playerGetStamina(stamina,silent = false){
   if (playerSta >= playerStaMax) { //Cannot get more
     if (!silent){
@@ -1973,7 +1954,7 @@ function playerConsumed(){
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
     playerSta+=1; //Gain bonus stamina
-    consumedString="Gained temporary energy bonus +1 🟢";
+    consumedString="Got temporary energy bonus +1 🟢";
     //consumedString="Actively digesting the food -1 🟢";
     //animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
     //playerUseStamina(1);
@@ -2128,30 +2109,8 @@ function adjustEncounterButtons(){
       setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
       break;
 
-    case "Container":
-    case "Container-Double":
-    case "Container-Triple":
-      setButton('button_grab',"👋 Search");
-      setButton('button_roll',"👣 Walk");
-      setButton('button_sleep',"💤 Sleep");
-      break;
-
-    case "Container-Locked":
-    case "Container-Locked-Double":
-      if (playerMgkMax>0){
-        document.getElementById('button_cast').innerHTML="🪄 Unlock";
-      }
-      if (playerLootString.includes("🗝️")){
-        document.getElementById('button_grab').innerHTML="🗝️ Unlock";
-      } else {
-        document.getElementById('button_grab').innerHTML="👋 Search";
-      }
-      document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      break;
-
     case "Consumable":
-    case "Container-Consume":
+    case "Consumable-Container":
       setButton('button_roll',"❌ Ditch");
 
       document.getElementById('button_grab').innerHTML="🍴 Eat";
@@ -2165,6 +2124,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      if (enemyEmoji=="🛶") setButton("button_walk","🛶 Sail");
       break;
 
     case "Curse":
@@ -2255,6 +2215,20 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
+      if (enemyType.includes("Container")){
+        setButton('button_grab',"👋 Search");
+        setButton('button_roll',"👣 Walk");
+        setButton('button_sleep',"💤 Sleep");
+        if (enemyType.includes("Locked")){
+          if (playerMgkMax>0){
+            document.getElementById('button_cast').innerHTML="🪄 Unlock";
+          }
+          if (playerLootString.includes("🗝️")){
+            document.getElementById('button_grab').innerHTML="🗝️ Unlock";
+          }
+        }
+      }
+      break;
   }
 }
 
