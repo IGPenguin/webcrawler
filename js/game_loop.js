@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 10/21/24 • 11:04 PM"
-var initialEncounterOverride=8;
+var versionCode = "ver. 10/22/24 • 1:41 AM"
+var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -18,7 +18,9 @@ var colorBlue = "#1059AA";
 //Symbols
 var fullSymbol = "●";
 var emptySymbol = "○";
-var enemyStatusString = ""
+var enemyStatusString = "";
+var newline="<br>";
+var emptySpace="&nbsp";
 
 //Stats
 var adventureStartTime = getTime();
@@ -150,8 +152,9 @@ function getGreedyName(name=playerName){
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-function getProphecy(newline="<br>"){
-  const random_quotes = ["Appreciate the beauty of imperfection."+newline];
+function getProphecy(){
+  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> is needed for getting companions."+newline,"<b>💫 Cast</b> a spell to hit before retaliation.","<b>🍴 Eating</b> when rested provides a bonus."];
+
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
 
@@ -187,12 +190,16 @@ var enemyStaLost = 0;
 var enemyAtkBonus = 0;
 var enemyIntBonus = 0;
 var enemyMgkLost = 0;
+var currentProphercy = getProphecy();
+
+enemyRenew()
 function enemyRenew(){
   enemyStaLost = 0;
   enemyHpLost = 0;
   enemyAtkBonus = 0;
   enemyIntBonus = 0;
   enemyMgkLost = 0;
+  currentProphercy = getProphecy();
 }
 
 //Data logic
@@ -328,8 +335,7 @@ function loadEncounter(index, fileLines = lines){
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
-  if (enemyName.includes("Prophecy")) enemyDesc=getProphecy();
-
+  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Epiphany")) enemyDesc=currentProphercy;
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
@@ -378,7 +384,6 @@ function redraw(){
   emojiUIElement.innerHTML = enemyEmoji;
   areaUIElement.innerHTML = areaName;
   nameUIElement.innerHTML = enemyName;
-
 
   var enemyDescUIElement = document.getElementById('id_desc')
   enemyDescUIElement.innerHTML = enemyDesc;
@@ -480,7 +485,19 @@ function redraw(){
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   document.getElementById('id_log').innerHTML = actionLog;
 
-  versusTextUIElementUIElement = document.getElementById('id_versus');
+  versusTextUIElement = document.getElementById('id_versus');
+
+  if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)){
+    versusTextUIElement.innerHTML = "<div style=\"color:red;\">Combat</div>"
+    animateUIElement(versusTextUIElement,"animate__pulse","1",false,"",true);
+  } else if (enemyType=="Upgrade") {
+      versusTextUIElement.innerHTML = "<div style=\"color:"+colorGold+";\">Level Up</div>"
+      animateUIElement(versusTextUIElement,"animate__pulse","3",false,"",true);
+  } else {
+    versusTextUIElement.innerHTML = "<div style=\"color:"+colorGrey+";\">"+emptySpace+"</div>"
+    animateUIElement(versusTextUIElement,"animate__headShake","0",false,"",false);
+  }
+
   buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
 }
@@ -1065,12 +1082,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            //TODO: Was kinda OP, perhaps re-enable later?
-            //logPlayerAction(actionString,"Reinforced essential beliefs +1 🍀");
-            //playerLck++;
-            //nextEncounter();
-            logPlayerAction(actionString,"Cannot recall any memory.");
-            displayPlayerCannotEffect();
+            playerHeal();
             break;
 
           case "Altar":
@@ -1468,10 +1480,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            playerGetStamina(playerStaMax-playerSta,true);
-            playerMgk=playerMgkMax;
-            logPlayerAction(actionString,"Rested well, recovered lost resources.");
-            displayPlayerEffect("💤");
+            playerRest();
             nextEncounter();
             break;
 
@@ -1532,7 +1541,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Altar":
           case "Fishing":
             playerRest();
+            break;
+
           case "Dream":
+            playerRest();
             nextEncounter();
             break;
 
@@ -1721,7 +1733,6 @@ function isfreePrayEncounter(){
       case "Death":
       case "Altar":
       case "Curse":
-      case "Dream":
         returnValue=true;
       default:
         //Nothing
@@ -2163,7 +2174,6 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_speak').innerHTML="💭 Dream";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      document.getElementById('button_pray').innerHTML="🧠 Think";
       break;
 
     case "Fishing":
