@@ -444,7 +444,7 @@ function redraw(){
       if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
       } else if (totalEffect < 0 ) {
-          enemyStatusString=decorateStatusText("♣️","Mysterious","lightgrey");
+          enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
@@ -466,7 +466,7 @@ function redraw(){
       break;
     case "Curse":
       //enemyStatusString=decorateStatusText("⁉️","Hazard","red");
-      enemyStatusString=decorateStatusText("♣️","Mysterious","lightgrey");
+      enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
@@ -506,7 +506,7 @@ function redraw(){
         displayPlayerState(); //Default values do just fine
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
         if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("Danger",colorRed,"1");
+        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("Combat",colorRed,"1");
         break;
     }
   }
