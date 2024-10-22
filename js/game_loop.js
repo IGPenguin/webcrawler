@@ -180,6 +180,7 @@ var enemyLck;
 var enemyInt;
 var enemyMgk;
 var enemyType;
+var previousEnemyType;
 var enemyContainerNumber = 0;
 var enemyTeam;
 var enemyDesc;
@@ -464,7 +465,8 @@ function redraw(){
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
       break;
     case "Curse":
-      enemyStatusString=decorateStatusText("⁉️","Hazard","red");
+      //enemyStatusString=decorateStatusText("⁉️","Hazard","red");
+      enemyStatusString=decorateStatusText("♣️","Mysterious","lightgrey");
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
@@ -486,44 +488,32 @@ function redraw(){
   document.getElementById('id_log').innerHTML = actionLog;
 
   versusTextUIElement = document.getElementById('id_versus');
+  if (enemyType!=previousEnemyType){
+    switch (enemyType){
+      case "Dream":
+        displayPlayerState("Sleeping",colorBlue,"2.5")
+        break;
 
-  switch (enemyType){
-    case "Dream":
-      versusTextUIElement.innerHTML = "<div style=\"color:"+colorBlue+";\">Sleeping</div>"
-      animateUIElement(versusTextUIElement,"animate__pulse","2.5",false,"",true);
-      break;
+      case "Curse":
+        displayPlayerState("Suspicious",colorOrange,"1")
+        break;
 
-    case "Upgrade":
-      versusTextUIElement.innerHTML = "<div style=\"color:"+colorGold+";\">Level Up</div>"
-      animateUIElement(versusTextUIElement,"animate__pulse","0.5",false,"",true);
-      break;
-
-    case "Curse":
-      versusTextUIElement.innerHTML = "<div style=\"color:"+colorRed+";\">In Danger</div>"
-      animateUIElement(versusTextUIElement,"animate__pulse","1",false,"",true);
-      break;
-
-    default:
-      versusTextUIElement.innerHTML = "<div style=\"color:"+colorGrey+";\">"+"Cautious"+"</div>"
-      animateUIElement(versusTextUIElement,"animate__pulse","3",false,"",true);
-      //animateUIElement(versusTextUIElement,"animate__headShake","0",false,"",false);
-
-      if (enemyTeam.includes("Imaginary")){ //Yeah I know...
-        versusTextUIElement.innerHTML = "<div style=\"color:"+colorBlue+";\">Sleeping</div>"
-        animateUIElement(versusTextUIElement,"animate__pulse","2.5",false,"",true);
-      }
-
-      if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)){
-        versusTextUIElement.innerHTML = "<div style=\"color:red;\">In Combat</div>"
-        animateUIElement(versusTextUIElement,"animate__pulse","1",false,"",true);
-      }
-      break;
+      default:
+        displayPlayerState(); //Default values do just fine
+        if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
+        if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
+        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("Danger",colorRed,"1");
+        break;
+    }
   }
-
-
 
   buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
+}
+
+function displayPlayerState(stateString="Cautious",color=colorGrey,time="3"){
+  versusTextUIElement.innerHTML = "<div style=\"color:"+color+";\">"+stateString+"</div>"
+  animateUIElement(versusTextUIElement,"animate__pulse",time,false,"",true);
 }
 
 function displayEnemyType(type){
@@ -1380,7 +1370,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Born to get lucky +2 🍀");
+            logPlayerAction(actionString,"Born to get extra lucky +2 🍀");
             displayPlayerCannotEffect();
             displayPlayerEffect("🍀");
             playerName=getLuckyName();
@@ -1780,8 +1770,7 @@ function getRandomLoot(){
 }
 
 function nextEncounter(animateArea=true){
-  //toggleUIElement(versusTextUIElement,1); animateVersus();
-
+  previousEnemyType = enemyType;
   if (animateArea) {
     animateUIElement(areaUIElement,"animate__flipInX","1");
     toggleUIElement(areaUIElement,1);
