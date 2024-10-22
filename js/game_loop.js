@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 10/22/24 • 1:41 AM"
+var versionCode = "ver. 10/22/24 • 12:49 pm"
 var initialEncounterOverride=0;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -2438,7 +2438,7 @@ function copyAdventureToClipboard(){
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, I just finished a WebCrawler run!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, I just finished a WebCrawler run!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")+"\n"));
 }
 
 function redirectToFeedback(){
