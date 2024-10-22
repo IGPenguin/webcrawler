@@ -62,7 +62,7 @@ function renewPlayer(){ //Default values
   playerPartyString = "";
 
   playerKills = 0;
-  //adventureLog = ""; //Keep for all characters
+  adventureLog = "";
 }
 
 //Global vars
@@ -153,7 +153,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> is needed for getting companions."+newline,"<b>💫 Cast</b> a spell to hit before retaliation.","<b>🍴 Eating</b> when rested provides a bonus."];
+  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> is needed for getting companions."+newline,"<b>💫 Cast</b> a spell to hit before retaliation.","<b>🍴 Eating</b> when rested provides a bonus."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -2392,9 +2392,10 @@ function generateCharacterShareString(){
     characterShareString+="<b>\n"+playerName+"</b>";
     characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
-    characterShareString += "\nAwoken: "+adventureStartTime;
+    if ((playerPartyString.length+playerLootString.length)>0) characterShareString+="\n";
     if (playerPartyString.length > 0) characterShareString += playerPartyString;
     if (playerLootString.length > 0) characterShareString += playerLootString;
+    characterShareString += "\nAwoken: "+adventureStartTime;
     characterShareString += "\nKillcount: "+playerKills;
     characterShareString += "\n\nDeceased: "+adventureEndTime;
     characterShareString += adventureEndReason+" (#"+adventureEncounterCount+")";
@@ -2432,7 +2433,7 @@ function copyAdventureToClipboard(){
 
   //Open in new window
   var legendTab = window.open('about:blank','data:text/plain;charset=utf-8,');
-  legendTab.document.write("<p style=\"background-color:#272727;padding:8px;padding-left:24px;height:100%;margin:-8px;color:"+colorWhite+"\">" + adventureLogClipboard.replaceAll("\n","<br>")+"</p>");
+  legendTab.document.write("<p style=\"background-color:#272727;padding:8px;padding-left:24px;overflow:auto;height:100%;margin:-8px;color:"+colorWhite+"\">" + adventureLogClipboard.replaceAll("\n","<br>")+"</p>");
   legendTab.document.close();
 }
 
