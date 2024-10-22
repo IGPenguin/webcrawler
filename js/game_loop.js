@@ -498,6 +498,10 @@ function redraw(){
         displayPlayerState("Suspicious",colorOrange,"1")
         break;
 
+      case "Death":
+        displayPlayerState(emptySpace,colorGrey,"0")
+        break;
+
       default:
         displayPlayerState(); //Default values do just fine
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
@@ -1039,7 +1043,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=(-1*enemyInt)){
-              logPlayerAction(actionString,"Kept it together thanks to resilience.");
+              logPlayerAction(actionString,"Managed to keep it together.");
               animateFlipNextEncounter();
             } else {
               logPlayerAction(actionString,"Giving the best, but no effect.");
@@ -2060,7 +2064,7 @@ function getTime(){
   var currentDate = new Date();
   var time = currentDate.getDate() + "-"
                   + currentDate.getMonth() + "-"
-                  + currentDate.getFullYear() + " at "
+                  + String(currentDate.getFullYear()).substr(-2) + " @ "
                   + currentDate.getHours() + ":"
                   + currentDate.getMinutes()+ ":"
                   + currentDate.getSeconds();
@@ -2075,13 +2079,13 @@ function gameOver(){
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   nextEncounter();
-  animateUIElement(cardUIElement,"animate__flip","1");
+  animateUIElement(cardUIElement,"animate__flipInY","1");
   playerSta=0; //You are just tired when dead :)
   resetSeenEncounters();
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
-  var winMessage="🧠 ▸ 💭 Just had a deja vu, feels really familiar (NG+).";
+  var winMessage="🧠 ▸ 💭 Is this deja vu? Feels familiar. (NG+)";
   logAction(winMessage);
   adventureEndTime=getTime();
 
@@ -2389,8 +2393,8 @@ function generateCharacterShareString(){
     characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     characterShareString += "\nAwoken: "+adventureStartTime;
-    if (playerPartyString.length > 0) characterShareString += "\nParty: " +playerPartyString;
-    if (playerLootString.length > 0) characterShareString += "\nLoot: "+playerLootString;
+    if (playerPartyString.length > 0) characterShareString += playerPartyString;
+    if (playerLootString.length > 0) characterShareString += playerLootString;
     characterShareString += "\nKillcount: "+playerKills;
     characterShareString += "\n\nDeceased: "+adventureEndTime;
     characterShareString += adventureEndReason+" (#"+adventureEncounterCount+")";
