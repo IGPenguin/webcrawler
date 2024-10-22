@@ -487,16 +487,40 @@ function redraw(){
 
   versusTextUIElement = document.getElementById('id_versus');
 
-  if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)){
-    versusTextUIElement.innerHTML = "<div style=\"color:red;\">Combat</div>"
-    animateUIElement(versusTextUIElement,"animate__pulse","1",false,"",true);
-  } else if (enemyType=="Upgrade") {
+  switch (enemyType){
+    case "Dream":
+      versusTextUIElement.innerHTML = "<div style=\"color:"+colorBlue+";\">Sleeping</div>"
+      animateUIElement(versusTextUIElement,"animate__pulse","2.5",false,"",true);
+      break;
+
+    case "Upgrade":
       versusTextUIElement.innerHTML = "<div style=\"color:"+colorGold+";\">Level Up</div>"
+      animateUIElement(versusTextUIElement,"animate__pulse","0.5",false,"",true);
+      break;
+
+    case "Curse":
+      versusTextUIElement.innerHTML = "<div style=\"color:"+colorRed+";\">In Danger</div>"
+      animateUIElement(versusTextUIElement,"animate__pulse","1",false,"",true);
+      break;
+
+    default:
+      versusTextUIElement.innerHTML = "<div style=\"color:"+colorGrey+";\">"+"Cautious"+"</div>"
       animateUIElement(versusTextUIElement,"animate__pulse","3",false,"",true);
-  } else {
-    versusTextUIElement.innerHTML = "<div style=\"color:"+colorGrey+";\">"+emptySpace+"</div>"
-    animateUIElement(versusTextUIElement,"animate__headShake","0",false,"",false);
+      //animateUIElement(versusTextUIElement,"animate__headShake","0",false,"",false);
+
+      if (enemyTeam.includes("Imaginary")){ //Yeah I know...
+        versusTextUIElement.innerHTML = "<div style=\"color:"+colorBlue+";\">Sleeping</div>"
+        animateUIElement(versusTextUIElement,"animate__pulse","2.5",false,"",true);
+      }
+
+      if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)){
+        versusTextUIElement.innerHTML = "<div style=\"color:red;\">In Combat</div>"
+        animateUIElement(versusTextUIElement,"animate__pulse","1",false,"",true);
+      }
+      break;
   }
+
+
 
   buttonsContainer = document.getElementById('id_buttons');
   adjustEncounterButtons();
@@ -1742,7 +1766,7 @@ function isfreePrayEncounter(){
 
 function getRandomLoot(){
   isLooting=true;
-  toggleUIElement(versusTextUIElement,1); animateVersus();
+  //toggleUIElement(versusTextUIElement,1); animateVersus();
   previousArea = areaName;
   adventureEncounterCount+=1;
 
@@ -1756,7 +1780,7 @@ function getRandomLoot(){
 }
 
 function nextEncounter(animateArea=true){
-  toggleUIElement(versusTextUIElement,1); animateVersus();
+  //toggleUIElement(versusTextUIElement,1); animateVersus();
 
   if (animateArea) {
     animateUIElement(areaUIElement,"animate__flipInX","1");
@@ -1784,7 +1808,7 @@ function animateFlipNextEncounter(){
   //toggleUIElement(areaUIElement);
 
   var versusTextUIElement = document.getElementById('id_versus');
-  toggleUIElement(versusTextUIElement);
+  //toggleUIElement(versusTextUIElement);
   animateUIElement(cardUIElement,"animate__flipOutY","1.2"); //Maybe this will look better?
 
   var animationHandler = function(){
@@ -1795,8 +1819,9 @@ function animateFlipNextEncounter(){
   cardUIElement.addEventListener('animationend',animationHandler);
 }
 
-function animateVersus(time = "1"){
-  animateUIElement(versusTextUIElement,"animate__flash",time);
+function animateVersus(time = "1"){ //TODO: Remove this and all commented out calls?
+  animateUIElement(versusTextUIElement,"animate__flipInX","1.2");
+  //animateUIElement(versusTextUIElement,"animate__flash",time);
 }
 
 //Player
