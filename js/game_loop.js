@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 10/24/24 • 00:11 am"
+var versionCode = "ver. 10/24/24 • 00:17 am"
 var initialEncounterOverride=7;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -392,9 +392,17 @@ function loadEncounter(index, fileLines = linesStory){
 
 function generateNextEncounters(count=1){
   switch (count) {
+    case 0: //Prop
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Prop"));
+      break;
+
     case 1: //Easy Enemy
-      console.log("Easy enemy");
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Small","Standard"])));
+      break;
+
+    case 11: //Container Small
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
       break;
 
     case 10: //Mid Enemy + Consumable
@@ -407,7 +415,7 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
       break;
 
-    case 20: //Consumable Consumable
+    case 20: //Container Consumable
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;

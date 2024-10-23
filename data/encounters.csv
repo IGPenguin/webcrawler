@@ -1,6 +1,7 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Forsaken Village
+Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the grass.
 Forsaken Village;🪨;Building Stone;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Two Bricks;Prop;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;
 Forsaken Village;🦴;Human Femur;Prop;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
