@@ -13,13 +13,10 @@ Loot;🪱;Drowned worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viabl
 Loot;🪱;Tired Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
-Loot;🏹;Cursed Bow;Trap;-1;1;0;0;0;0;Malevolent Weapon;Perhaps needs a bit of drying.<br>;Shot an arrow in knee
 Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated upon reaching throat.
 Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
 Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br>;
 Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks reliable.<br>;
-Loot;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
-Loot;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
 Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
 Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
@@ -33,4 +30,8 @@ Loot;🃏;Tarot Card — Lover;Item;2;0;0;0;-2;0;Destiny;Voluntarily seized by r
 Loot;🏺;Painted Amphora;Item;0;0;0;0;0;0;Ancient Container;Water is splashing inside.<br>;
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;No way this would come in handy.<br>;
 Loot;🎀;Silly Bowtie;Item;0;0;1;0;0;0;Cringe Accessory;Hopfully has some purpose.<br>;
+Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
+Loot;🔖;Wet Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
+Loot;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
+Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>;Felt a surge in the chest.
 //; Loot;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;Portable Sanctuary;Provides a personal safespace.<br>;
