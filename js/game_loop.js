@@ -15,6 +15,10 @@ var colorGrey = "#CCCCCC";
 var colorOrange = "orange";
 var colorBlue = "#1059AA";
 
+//Generator encounter types
+var encounterTypesEnemy=["Small","Standard","Swift","Heavy","Pet"] //TODO: add all enemies
+var encounterTypesLoot=["Item","Consumable","Consumable"] //TODO: setup the chances in a better way, hehe
+
 //Symbols
 var fullSymbol = "●";
 var emptySymbol = "○";
@@ -71,7 +75,6 @@ function renewPlayer(){ //Default values
 var linesStory;
 var linesLoot;
 var linesGenerator;
-var linesGeneratorTotal;
 
 var encounterIndex;
 var lastEncounterIndex;
@@ -198,7 +201,7 @@ $(document).ready(function() {
         url: "data/story.csv",
         dataType: "text",
         success: function(data) {
-          processData(data);
+          processStoryData(data);
           registerClickListeners();
         }
      });
@@ -214,16 +217,16 @@ $(document).ready(function() {
 
      $.ajax({
          type: "GET",
-         url: "data/backup.csv",
+         url: "data/encounters.csv",
          dataType: "text",
          success: function(data) {
-           processGenerateData(data);
+           processEncounterData(data);
          }
      });
 });
 
 //Process csv into lines of encounters
-function processData(allText) {
+function processStoryData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
   linesStory = [];
@@ -264,7 +267,7 @@ function processLoot(allText){ //TODO: remove and reuse the fn above
 }
 
 //Process csv into lines of encounters for generator
-function processGenerateData(allText){ //TODO: remove and reuse the fn above
+function processEncounterData(allText){ //TODO: remove and reuse the fn above
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
   linesGenerator = [];
@@ -305,18 +308,30 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function getUnseenRandomEncounterIndex() {
-  linesGeneratorTotal = linesGenerator.length;
-  var max = linesGeneratorTotal;
-    do {
-      randomEncounterIndex = Math.floor(Math.random() * max);
-      if (seenEncounters.length >= linesGeneratorTotal){
-        console.log("ERROR: No more random encounters left.")
-        break;
-      }
-    } while (seenEncounters.includes(randomEncounterIndex));
-    console.log("Random encounter index: "+randomEncounterIndex)
-    return randomEncounterIndex;
+function getUnseenRandomEncounter(type="") {   //TODO: drop all seen lines
+  var tempLinesGenerator = linesGenerator;
+
+  //TODO: drop all seen lines
+
+  //drop anything but areaName
+  tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+areaName) === 0; });
+
+  //drop anything but type
+  if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
+
+  var tempLinesGeneratorTotal = tempLinesGenerator.length;
+  console.log("Number of filtered encounters: "+tempLinesGeneratorTotal);
+
+  var max = tempLinesGeneratorTotal;
+  randomEncounterIndex = Math.floor(Math.random() * max);
+  console.log("Random encounter index: "+randomEncounterIndex)
+
+  //markAsSeen(randomEncounterIndex);
+
+  var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
+  console.log("Random encounter:\n\n"+randomEncounter)
+
+  return randomEncounter;
 }
 
 function markAsSeen(seenID){
@@ -338,7 +353,7 @@ function resetSeenEncounters(){
   seenEncounters = [];
 }
 
-//Load or generate encounters
+//Load or generate encounter
 function loadEncounter(index, fileLines = linesStory){
   encounterIndex = index;
   selectedLine = String(fileLines[index]);
@@ -350,9 +365,11 @@ function loadEncounter(index, fileLines = linesStory){
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Generator")) {
-    console.log("Stepped into the generator")
-    encounterIndex++
-    generateNextEncounters();
+    var number = enemyType.match(/\d+$/);
+    if (number) number = parseInt(number[0],10);
+
+    generateNextEncounters(number);
+
     nextEncounter();
     return;
   }
@@ -376,17 +393,29 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(count=1){
-  //Count 1 = Enemy/Consumable
-  //Count 3 = Container-2 >> Enemy >> Loot
+  var randomEnemyType = encounterTypesEnemy[Math.floor(Math.random() * encounterTypesEnemy.length)];
+  var randomLootType = encounterTypesLoot[Math.floor(Math.random() * encounterTypesLoot.length)];
 
-  //Get unseen encounter, mark as seen
-  var pendingEncounterIndex = getUnseenRandomEncounterIndex();
-  var pendingEncounter=String(linesGenerator[pendingEncounterIndex])
-  console.log("Pending encounter: "+pendingEncounter)
-  markAsSeen(pendingEncounterIndex);
+  switch (count) {
+    case 1: //= add Enemy
+      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter(randomEnemyType));
+      break;
 
-  //Push new line after linesStory[encounterIndex]
-  linesStory.splice(encounterIndex+1,0,pendingEncounter)
+    case 2: //= add Container >> Enemy
+      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter(randomEnemyType));
+      break;
+
+    case 3: //= add Container-2 >> Enemy >> Loot
+      console.log("Adding 3 random encounters");
+      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter("Container-2"));
+      linesStory.splice(encounterIndex+2,0,getUnseenRandomEncounter(randomEnemyType));
+      linesStory.splice(encounterIndex+3,0,getUnseenRandomEncounter(randomLootType));
+      break;
+
+    default:
+
+  }
 }
 
 //UI DRAW FUNCTIONS
@@ -1842,12 +1871,8 @@ function nextEncounter(animateArea=true){
 }
 
 function animateFlipNextEncounter(){
-  animateUIElement(areaUIElement,"animate__flipOutX","1.2"); //Uuuu nice!
-  //toggleUIElement(areaUIElement);
-
-  var versusTextUIElement = document.getElementById('id_versus');
-  //toggleUIElement(versusTextUIElement);
-  animateUIElement(cardUIElement,"animate__flipOutY","1.2"); //Maybe this will look better?
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
 
   var animationHandler = function(){
     nextEncounter();
