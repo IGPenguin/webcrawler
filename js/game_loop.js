@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 10/23/24 • 2:57 pm"
-var initialEncounterOverride=8;
+var versionCode = "ver. 10/23/24 • 8:09 pm"
+var initialEncounterOverride=7;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -14,10 +14,6 @@ var colorRed = "#FF0000";
 var colorGrey = "#CCCCCC";
 var colorOrange = "orange";
 var colorBlue = "#1059AA";
-
-//Generator encounter types
-var encounterTypesEnemy=["Small","Standard","Swift","Heavy","Pet"] //TODO: add all enemies
-var encounterTypesLoot=["Item","Consumable","Consumable"] //TODO: setup the chances in a better way, hehe
 
 //Symbols
 var fullSymbol = "●";
@@ -308,7 +304,7 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function getUnseenRandomEncounter(type="") {   //TODO: drop all seen lines
+function getRandomEncounter(type="") {   //TODO: drop all seen lines
   var tempLinesGenerator = linesGenerator;
 
   //TODO: drop all seen lines
@@ -317,19 +313,20 @@ function getUnseenRandomEncounter(type="") {   //TODO: drop all seen lines
   tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+areaName) === 0; });
 
   //drop anything but type
+  console.log("Encounter type: "+type);
   if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
-  console.log("Number of filtered encounters: "+tempLinesGeneratorTotal);
+  //console.log("Number of filtered encounters: "+tempLinesGeneratorTotal);
 
   var max = tempLinesGeneratorTotal;
   randomEncounterIndex = Math.floor(Math.random() * max);
-  console.log("Random encounter index: "+randomEncounterIndex)
+  //console.log("Random encounter index: "+randomEncounterIndex)
 
   //markAsSeen(randomEncounterIndex);
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
-  console.log("Random encounter:\n\n"+randomEncounter)
+  console.log("Options:"+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter)
 
   return randomEncounter;
 }
@@ -366,6 +363,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
+    console.log("Generator type: "+number);
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
@@ -388,34 +386,56 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
-  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Epiphany")) enemyDesc=currentProphercy;
+  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Knowledge")) enemyDesc=currentProphercy;
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
 function generateNextEncounters(count=1){
-  var randomEnemyType = encounterTypesEnemy[Math.floor(Math.random() * encounterTypesEnemy.length)];
-  var randomLootType = encounterTypesLoot[Math.floor(Math.random() * encounterTypesLoot.length)];
-
   switch (count) {
-    case 1: //= add Enemy
-      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter(randomEnemyType));
+    case 1: //Easy Enemy
+      console.log("Easy enemy");
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Small","Standard"])));
       break;
 
-    case 2: //= add Container >> Enemy
-      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter(randomEnemyType));
+    case 10: //Mid Enemy + Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
-    case 3: //= add Container-2 >> Enemy >> Loot
-      console.log("Adding 3 random encounters");
-      linesStory.splice(encounterIndex+1,0,getUnseenRandomEncounter("Container-2"));
-      linesStory.splice(encounterIndex+2,0,getUnseenRandomEncounter(randomEnemyType));
-      linesStory.splice(encounterIndex+3,0,getUnseenRandomEncounter(randomLootType));
+    case 21: //Skippable Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
+      break;
+
+    case 20: //Consumable Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      break;
+
+    case 31: //Container-2 >> Mid Enemy >> Loot
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
+      break;
+
+    case 41: //Container-3 >> Mid Enemy >> Loot >> Altar
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
+      linesStory.splice(encounterIndex+4,0,getRandomEncounter("Altar"));
       break;
 
     default:
-
+      console.log("ERROR: Missing generator definition!");
   }
+}
+
+function chooseFrom(array=[]){
+  console.log("Choices: "+array);
+  var options = array.length
+  var choice = array[Math.floor(Math.random() * options)];
+  console.log("Chosen: "+choice+"\nFrom: "+array);
+  return choice;
 }
 
 //UI DRAW FUNCTIONS
