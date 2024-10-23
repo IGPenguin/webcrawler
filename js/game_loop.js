@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 10/23/24 • 2:57 pm"
-var initialEncounterOverride=0;
+var initialEncounterOverride=8;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -68,23 +68,19 @@ function renewPlayer(){ //Default values
 }
 
 //Global vars
-var lines;
+var linesStory;
 var linesLoot;
+var linesGenerator;
+var linesGeneratorTotal;
+
 var encounterIndex;
 var lastEncounterIndex;
-var encountersTotal;
 var lootTotal;
 var randomEncounterIndex;
 var lootEncounterIndex;
 var isLooting = false;
 
-var seenEncounters;
-var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
-if (seenEncountersString == null) {
-  seenEncounters = [];
-} else {
-  seenEncounters = Array.from(seenEncountersString);
-}
+var seenEncounters = [];
 
 //Globar vars - UIElements
 var areaUIElement;
@@ -195,12 +191,11 @@ function enemyRenew(){
   currentProphercy = getProphecy();
 }
 
-//Data logic
-//Load encounter data .csv on page ready
+//Load encounter data .csv file on page ready
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "data/encounters.csv",
+        url: "data/story.csv",
         dataType: "text",
         success: function(data) {
           processData(data);
@@ -215,13 +210,23 @@ $(document).ready(function() {
          success: function(data) {
            processLoot(data);
          }
-      });
+     });
+
+     $.ajax({
+         type: "GET",
+         url: "data/backup.csv",
+         dataType: "text",
+         success: function(data) {
+           processGenerateData(data);
+         }
+     });
 });
 
+//Process csv into lines of encounters
 function processData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
-  lines = [];
+  linesStory = [];
 
   for (var i=1; i<allTextLines.length; i++) {
       var data = allTextLines[i].split(';');
@@ -231,7 +236,7 @@ function processData(allText) {
           for (var j=0; j<headers.length; j++) {
               tarr.push(headers[j]+":"+data[j]);
           }
-        lines.push(tarr);
+        linesStory.push(tarr);
   }
   }
   loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
@@ -239,8 +244,9 @@ function processData(allText) {
   animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
 }
 
-function processLoot(lootText){ //TODO: remove and reuse the fn above
-  var allTextLines = lootText.split(/\r\n|\n/);
+//Process csv into lines of loot
+function processLoot(allText){ //TODO: remove and reuse the fn above
+  var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
   linesLoot = [];
 
@@ -257,8 +263,27 @@ function processLoot(lootText){ //TODO: remove and reuse the fn above
   }
 }
 
+//Process csv into lines of encounters for generator
+function processGenerateData(allText){ //TODO: remove and reuse the fn above
+  var allTextLines = allText.split(/\r\n|\n/);
+  var headers = allTextLines[0].split(';');
+  linesGenerator = [];
+
+  for (var i=1; i<allTextLines.length; i++) {
+      var data = allTextLines[i].split(';');
+      if (data.length == headers.length) {
+
+          var tarr = [];
+          for (var j=0; j<headers.length; j++) {
+              tarr.push(headers[j]+":"+data[j]);
+          }
+        linesGenerator.push(tarr);
+  }
+  }
+}
+
 function getNextEncounterIndex(){
-  encountersTotal = lines.length-1;
+  encountersTotal = linesStory.length-1;
   var nextItemIndex = encounterIndex+1;
   if (nextItemIndex > encountersTotal){ //Game Completed
     gameEnd();
@@ -280,6 +305,20 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
+function getUnseenRandomEncounterIndex() {
+  linesGeneratorTotal = linesGenerator.length;
+  var max = linesGeneratorTotal;
+    do {
+      randomEncounterIndex = Math.floor(Math.random() * max);
+      if (seenEncounters.length >= linesGeneratorTotal){
+        console.log("ERROR: No more random encounters left.")
+        break;
+      }
+    } while (seenEncounters.includes(randomEncounterIndex));
+    console.log("Random encounter index: "+randomEncounterIndex)
+    return randomEncounterIndex;
+}
+
 function markAsSeen(seenID){
   if (!seenEncounters.includes(seenID)){
     seenEncounters.push(seenID);
@@ -299,16 +338,26 @@ function resetSeenEncounters(){
   seenEncounters = [];
 }
 
-function loadEncounter(index, fileLines = lines){
+//Load or generate encounters
+function loadEncounter(index, fileLines = linesStory){
   encounterIndex = index;
   selectedLine = String(fileLines[index]);
 
   //Encounter data initialization, details in encounters.csv
   areaName = String(selectedLine.split(",")[0].split(":")[1]);
-  if (fileLines!=lines) areaName = previousArea
+  if (fileLines!=linesStory) areaName = previousArea
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  if (enemyType.includes("Generator")) {
+    console.log("Stepped into the generator")
+    encounterIndex++
+    generateNextEncounters();
+    nextEncounter();
+    return;
+  }
+
+  //Handle container depth (for skipping it)
   if (enemyType.includes("Container")) {
     var number = enemyType.match(/\d+$/);
     if (number) enemyContainerNumber = parseInt(number[0],10);
@@ -324,6 +373,20 @@ function loadEncounter(index, fileLines = lines){
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
   if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Epiphany")) enemyDesc=currentProphercy;
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
+}
+
+function generateNextEncounters(count=1){
+  //Count 1 = Enemy/Consumable
+  //Count 3 = Container-2 >> Enemy >> Loot
+
+  //Get unseen encounter, mark as seen
+  var pendingEncounterIndex = getUnseenRandomEncounterIndex();
+  var pendingEncounter=String(linesGenerator[pendingEncounterIndex])
+  console.log("Pending encounter: "+pendingEncounter)
+  markAsSeen(pendingEncounterIndex);
+
+  //Push new line after linesStory[encounterIndex]
+  linesStory.splice(encounterIndex+1,0,pendingEncounter)
 }
 
 //UI DRAW FUNCTIONS
@@ -1581,9 +1644,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
     };
-    if (!isLooting) {
-      loadEncounter(encounterIndex);
-    } else {
+    if (isLooting) {
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
@@ -1730,7 +1791,6 @@ function enemyCastIfMgk(hit=true){
 }
 
 //Encounters
-
 function isfreePrayEncounter(){
   var returnValue = false;
     switch (enemyType){
@@ -1767,7 +1827,6 @@ function nextEncounter(animateArea=true){
   }
 
   adventureEncounterCount+=1;
-  markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
 
   playerRested=false;
@@ -2038,17 +2097,6 @@ function playerReincarnate(){
 }
 
 //End Game
-function getTime(){
-  var currentDate = new Date();
-  var time = currentDate.getDate() + "-"
-                  + currentDate.getMonth() + "-"
-                  + String(currentDate.getFullYear()).substr(-2) + " @ "
-                  + currentDate.getHours() + ":"
-                  + currentDate.getMinutes()+ ":"
-                  + currentDate.getSeconds();
-  return time;
-}
-
 function gameOver(){
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")) enemyMsg="Got killed, ending the adventure.";
@@ -2089,6 +2137,17 @@ function logAction(message){
   if (actionLog.split("<br>").length > 3) {
     actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
   }
+}
+
+function getTime(){
+  var currentDate = new Date();
+  var time = currentDate.getDate() + "-"
+                  + currentDate.getMonth() + "-"
+                  + String(currentDate.getFullYear()).substr(-2) + " @ "
+                  + currentDate.getHours() + ":"
+                  + currentDate.getMinutes()+ ":"
+                  + currentDate.getSeconds();
+  return time;
 }
 
 //UI Buttons
