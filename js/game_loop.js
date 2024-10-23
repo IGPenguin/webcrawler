@@ -43,6 +43,7 @@ var luckInterval = 30; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerRested = false;
+var seenLoot;
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -62,6 +63,7 @@ function renewPlayer(){ //Default values
   playerPartyString = "";
 
   playerKills = 0;
+  seenLoot = [];
   adventureLog = "";
 }
 
@@ -75,15 +77,6 @@ var lootTotal;
 var randomEncounterIndex;
 var lootEncounterIndex;
 var isLooting = false;
-
-var seenLoot;
-var seenLootString = JSON.parse(localStorage.getItem("seenLoot"));
-if (seenLootString == null){
-  seenLoot = [];
-} else {
-  //Load seen encounters
-  seenLoot = Array.from(seenLootString);
-}
 
 var seenEncounters;
 var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
@@ -166,7 +159,6 @@ var adventureEncounterCount = 0;
 var adventureEndReason = "";
 
 //Area init
-var checkpointEncounter;
 var previousArea;
 var areaName;
 
@@ -222,7 +214,6 @@ $(document).ready(function() {
          dataType: "text",
          success: function(data) {
            processLoot(data);
-           resetSeenLoot();
          }
       });
 });
@@ -306,11 +297,6 @@ function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
 function resetSeenEncounters(){
   localStorage.setItem("seenEncounters", JSON.stringify(""));
   seenEncounters = [];
-}
-
-function resetSeenLoot(){ //TODO: remove and reuse the fn above?
-  localStorage.setItem("seenLoot", JSON.stringify(""));
-  seenLoot = [];
 }
 
 function loadEncounter(index, fileLines = lines){
@@ -743,7 +729,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               isLooting=false;
               logPlayerAction(actionString,"Threw it far away.");
             } else {
-              logPlayerAction(actionString,"Walked away leaving it behind.");
+              logPlayerAction(actionString,"Walked away wasting the potential.");
+              encounterIndex++;
             }
             nextEncounter();
             break;
@@ -1382,15 +1369,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             animateFlipNextEncounter();
             break;
 
-          case "Checkpoint": //Save and rest to full HP and Sta
+          case "Checkpoint": //Move to upgrade
             isLooting=false;
-            displayPlayerEffect("💾");
+            displayPlayerEffect("✨");
             logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
             playerMgk=playerMgkMax;
-            checkpointEncounter=encounterIndex;
-            animateFlipNextEncounter();
+            nextEncounter();
             curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
             break;
           default:
@@ -2044,18 +2030,10 @@ function playerReincarnate(){
   logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
   playerNumber++;
   displayEnemyEffect("❤️‍🩹");
-
-  if (checkpointEncounter == null){
-    renewPlayer();
-    encounterIndex=3; //Skip tutorial
-    playerSta=playerStaMax; //Renew stamina
-  } else {
-    //TODO load playerStats & Loot to prevent stacking via resurrecting on checkpoints
-    encounterIndex=checkpointEncounter-1; //Start from checkpoint
-    playerHp=playerHpMax;
-    playerSta=playerStaMax;
-  }
-  adventureEncounterCount = -1; //For death
+  renewPlayer();
+  encounterIndex=3; //Skip tutorial
+  playerSta=playerStaMax; //Renew stamina (its empty initially)
+  adventureEncounterCount = -6; //Death + tutorial
   nextEncounter();
 }
 
@@ -2248,7 +2226,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="💾 Save";
+      document.getElementById('button_grab').innerHTML="✨ Embrace";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
