@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/25/24 • 0:57 pm"
+var versionCode = "fpm 10/25/24 • 1:14 pm"
 var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -2122,12 +2122,22 @@ function playerConsumed(){
   var consumedString="Replenished resources"
   if (enemyMsg!="") consumedString=enemyMsg;
 
-  if (enemyHp<0 || enemySta<0){
-    if (enemyMsg=="") consumedString="That did not taste good ";
-    if (enemyHp<0) consumedString+=" "+enemyHp+" 💔 "
-    if (enemySta<0) consumedString+=" "+enemySta+" 🟢"
-    playerHit(-1*enemyHp);
-    playerSta+=enemySta;
+  if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0){
+    if (enemyMsg=="") consumedString="That did not taste good";
+
+    if (enemyHp!=0) {
+      consumedString+=" "+enemyHp+" 💔"
+      playerHit(-1*enemyHp);
+      }
+
+    if (enemySta!=0){
+      consumedString+=" "+enemySta+" 🟢"
+      playerSta+=enemySta;
+    }
+
+    //function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true){
+    playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyInt,"n/a",false,false);
+
     logPlayerAction("🤮",consumedString);
     return;
   }
