@@ -1,6 +1,12 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Forsaken Village
+
+Forsaken Village;🦴;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Forsaken Village;🫙;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Forsaken Village;🏺;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+
+
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🌿;Grass Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;
@@ -10,7 +16,6 @@ Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of st
 Forsaken Village;🧱;Two Bricks;Prop;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;
 Forsaken Village;🧱;Brick Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Forsaken Village;🦴;Human Femur;Prop;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;
 Forsaken Village;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
@@ -32,20 +37,21 @@ Forsaken Village;🌿;Grass Patch;Container-2;0;0;0;0;0;0;Soft Surface;Good plac
 Forsaken Village;🌿;Fern Leaves;Container-2;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container-2;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>Shaking around vigorously.;There was a creature inside!
-Forsaken Village;🏚️;Ruined House;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Unsettling House;Container-2;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
+Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 
-Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Unsettling House;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🏚️;Building Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Unsettling House;Container-4;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined House;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏚️;Ruined Building;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
-Forsaken Village;🏚️;Ruined House;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Unsettling House;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🏚️;Ruined Mansion;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏚️;Abandoned Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
-Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
-Forsaken Village;🏚️;Locked House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
+Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
@@ -67,7 +73,9 @@ Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was n
 Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Animal;Seems starving for a long time.<br>;
 Forsaken Village;🐐;Screaming Goat;Standard;1;1;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
 Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;10;0;Wild Robber;Kinda cute on the first glance.<br>;Died by contracting rabies.
-Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;2;0;Animal;Peace was never an option.<br>;Pecked to death.
+Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Peace was never an option.<br>;Pecked to death.
+Forsaken Village;🦂;Fierce Scorpion;Standard;1;2;1;0;10;0;Animal;Peace was never an option.<br>;Pecked to death.
+
 //;Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
 🐖🐢🦃
 
@@ -92,7 +100,9 @@ Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings ex
 Forsaken Village;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
-Forsaken Village;🔪;Small Knife;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
+Forsaken Village;🔪;Small Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
+Forsaken Village;🧹;Crippling Broom;Item;0;1;-1;0;-1;0;Cursed Tool;Looks ridiculous and slows movement.<br>;Awkward to hold
+Forsaken Village;⛏;Hefty Pickaxe;Item;0;1;-1;0;-1;0;Heavy;Must weight quite a lot.<br>;Daaaamn. Thats heavy
 Forsaken Village;📗;Survival Manual;Item;0;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
 Forsaken Village;📕;First Aid;Item;1;0;0;0;0;0;Instructions Book;How to save a life?<br>;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.;Embraced the knowledge.
@@ -102,7 +112,7 @@ Forsaken Village;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the kn
 Forsaken Village;🔖;Ancient Knowledge;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
 //;Forsaken Village;🍄;Amanita Muscaria;Item;-1;0;0;0;2;0;Suspicious Growth;It's beautiful. What could go wrong?<br>;
-📯💠🔔🎴🀄️🪶⚜️🎖⛏💛
+📯💠🔔🎴🀄️🪶⚜️🎖💛
 
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍏;Bitten Apple;Consumable;0;0;-2;0;0;0;Fresh Fruit;There is a huge bite mark.<br>;Nausea took over
@@ -113,7 +123,7 @@ Forsaken Village;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all sh
 Forsaken Village;🍄;Strange Shroom;Consumable;-1;0;0;0;2;0;Suspicious Growth;It's beautiful. What could go wrong?<br>;
 Forsaken Village;🍗;Fresh Meat;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
-Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;Barely held it inside
+Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Smells terrible... still tempting though.<br>;Barely held it inside
 Forsaken Village;💩;Steaming Pile;Consumable;-2;0;0;0;0;0;Trace of Life;No interaction recommended.<br>;That was super disgusting
 🥟🍌🍊🥕🍅🥦🫐🍐🧅🧄🥖🍞🥐🥨🪺
 

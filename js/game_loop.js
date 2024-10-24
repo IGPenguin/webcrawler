@@ -321,8 +321,8 @@ function getRandomEncounter(type="") {
   //drop all seen names
   console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
-    //console.log("Dropping: "+seenEncounterName);
-    tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf(seenEncounterName) !== 0; });
+    console.log("Dropping: "+seenEncounterName);
+    tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("name:"+seenEncounterName) !== 0; });
   });
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
@@ -367,7 +367,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
-    //console.log("Generator type: "+number);
+    console.log("Generator type: "+number);
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
@@ -396,6 +396,7 @@ function loadEncounter(index, fileLines = linesStory){
 
 function generateNextEncounters(count=1){
   switch (count) {
+
     case 0: //Prop
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Prop"));
       break;
@@ -409,7 +410,7 @@ function generateNextEncounters(count=1){
       break;
 
     case 3: //Mid Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
       break;
 
     case 4: //Swift Enemy
@@ -439,6 +440,11 @@ function generateNextEncounters(count=1){
     case 10: //Container Consumable
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      break;
+
+    case 17: //Container Pet/Friend
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Pet","Friend"])));
       break;
 
     case 31: //Container >> Mid Enemy >> Loot
