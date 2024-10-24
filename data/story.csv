@@ -8,27 +8,30 @@ Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;n/a<br>;
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Mid Enemy;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Loot House;Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Enemy;Generator-21;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Mid Enemy Loot;Generator-21;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Altar House;Generator-41;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🌳;Apple Tree;Container-3;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
-Forsaken Village;❓;Swift Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Swift Enemy;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
-Forsaken Village;❓;Altar House;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🧱;Brick Rubble;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Pulled out the loose brick.
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
+Forsaken Village;❓;Mid Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-6;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🎯;Archery Range;Prop;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
-Forsaken Village;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
+Forsaken Village;🦴;Pile of Bones;Container-2;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
+Forsaken Village;❓;Small Enemy;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏹;Radiating Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
-Forsaken Village;❓;Container Mid Enemy Loot;Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Mid Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;

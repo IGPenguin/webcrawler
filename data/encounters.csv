@@ -1,16 +1,20 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Forsaken Village
-Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the grass.
-Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
+Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
+Forsaken Village;🌿;Grass Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;
+Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Forsaken Village;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;
 Forsaken Village;🧱;Two Bricks;Prop;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;
 Forsaken Village;🧱;Brick Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🦴;Human Femur;Prop;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Lifted one of the logs.
-Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Lifted one of the logs.
+Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;
+Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;
 Forsaken Village;💩;Steaming Pile;Prop;0;0;0;0;0;0;Traces of Life;Any interaction not recommended.<br>;
-🪹
+Forsaken Village;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
@@ -29,6 +33,8 @@ Forsaken Village;🌿;Grass Patch;Container-2;0;0;0;0;0;0;Soft Surface;Good plac
 Forsaken Village;🌿;Fern Leaves;Container-2;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container-2;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>Shaking around vigorously.;There was a creature inside!
+Forsaken Village;🏚️;Ruined House;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏚️;Unsettling House;Container-2;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏚️;Unsettling House;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
@@ -54,13 +60,13 @@ Forsaken Village;🪱;Earthworm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fis
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;10;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Forsaken Village;🐀;Tiny Mouse;Small;1;1;2;0;10;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦎;Green Gecko;Small;1;1;3;0;10;0;Lizard;Eyes are glowing blue.<br>;Insides devoured by fierce
+Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;10;0;Lizard;Eyes are glowing blue.<br>;Insides devoured by fierce
 🐛🐌🦟🐜🦗🦋🪰
 
 ;//8-10
 Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Animal;Seems starving for a long time.<br>;
-Forsaken Village;🐐;Screaming Goat;Standard;1;2;2;0;10;0;Wild Beast;Produces variety of unpleasant noises.<br>;Devoured to the bone.
+Forsaken Village;🐐;Screaming Goat;Standard;1;1;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
 Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;10;0;Wild Robber;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;2;0;Animal;Peace was never an option.<br>;Pecked to death.
 ;//Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
@@ -88,15 +94,16 @@ Forsaken Village;🔪;Small Knife;Item;0;0;0;0;0;0;Multi-tool;The blade still lo
 Forsaken Village;📗;Survival Manual;Item;0;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
 Forsaken Village;📕;First Aid;Item;1;0;0;0;0;0;Instructions Book;How to save a life?<br>;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.;Embraced the knowledge.
-Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
+Forsaken Village;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of gibberish.<br>;Eternal presence noticed that.
+Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🔖;Ancient Knowledge;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
-📯💠🔔🎴🀄️🪶
+📯💠🔔🎴🀄️🪶⚜️🎖⛏💛
 
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍏;Bitten Apple;Consumable;0;0;-2;0;0;0;Fresh Fruit;There is a huge bite mark.<br>;Nausea took over
-Forsaken Village;🍓;Raspberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
+Forsaken Village;🍓;Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍑;Juicy Peach;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
@@ -109,8 +116,8 @@ Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a 
 Forsaken Village;🔱;Altar of Haste;Altar;-1;0;1;0;0;0;Ritual Place;There's a blood on the surface.<br>;
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Deal with the prime evil.<br>;Dealt with the Devil
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
-Forsaken Village;📓;Book of Worship;Altar;0;0;0;2;0;0;Holy Book;Contains endless pages of prayers.<br>;Read few lines out loud
-Forsaken Village;📓;Cultist Notes;Altar;0;0;0;3;0;1;Ritual Book;Contains endless pages of <br>;Dealt with the Devil
+Forsaken Village;🇻🇦;Altar of Worship;Item;0;0;0;2;0;0;Holy Book;Contains endless pages of prayers.<br>;Prayed to the greater good
+Forsaken Village;☠️;Cult Altar;Item;0;0;0;-3;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 
@@ -157,6 +164,7 @@ Depriving Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunl
 Depriving Fairyland;🦆;Stubborn Drake;Swift;3;1;2;0;2;0;Beast;Uhh. Peace was an option?<br>;Honked to death.
 
 //Somber Backwoods
+Forsaken Village;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;There's a blood on the surface.<br>;
 🦬
 Forgotten Grove;🗿;Megalithic Statue;Altar;0;0;0;1;0;0;Ancient Monument;A giant stone facing the heavens.<br>Must be thousands years old.;
 Somber Backwoods;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of the spoiled cheese.<br>;Contracted a deadly disease.
@@ -196,7 +204,7 @@ Bleak Necropolis;🪦;Desolate Grave;Container-3;0;0;0;0;0;0;Disturbed Ground;Se
 Bleak Necropolis;🧟;Animated Dead;Undead;3;2;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
 Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
 Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
-Bleak Necropolis;🌱;Strange Plant;Container;0;0;0;0;0;0;Potential Food;Probably packs a ton of nutrients.<br>Give it a shot?;Dug it out of the ground.
+Bleak Necropolis;🌱;Strange Plant;Container;0;0;0;0;0;0;Potential Food;Probably packs a ton of nutrients.<br>;Dug it out of the ground.
 Bleak Necropolis;🥔;Old Potato;Consumable;0;0;0;0;0;0;Eternal Vegetable;Looks suspiciously fresh.<br>;Actually tasted quite good.
 Bleak Necropolis;🗿;Massive Statue;Altar;-1;0;0;0;0;1;Ritual Place;There's dry blood under its eyes.<br>;
 Bleak Necropolis;⚱️;Burial Urn;Container;0;0;0;0;0;0;Ancient Relic;These shall not be disturbed.<br>;Malvolent energy escaped the urn
