@@ -322,9 +322,14 @@ function getRandomEncounter(type="") {
   //drop all seen names
   console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
-    //console.log("Dropping: "+seenEncounterName);
-    var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf(seenEncounterName))
-    if (index !== -1) tempLinesGenerator.splice(index, 1);
+    console.log("Dropping: "+seenEncounterName);
+
+    //Hopefully this finally works, backups below 🤣
+    tempLinesGenerator = tempLinesGenerator.filter(a => a !== seenEncounterName)
+    //tempLinesGenerator = tempLinesGenerator.filter(function(a){return a !== seenEncounterName})
+
+    //var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf("name:"+seenEncounterName))
+    //if (index !== -1) tempLinesGenerator.splice(index, 1);
   });
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
@@ -2203,7 +2208,7 @@ function playerReincarnate(){
 //End Game
 function gameOver(){
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")) enemyMsg="Got killed, ending the adventure.";
   logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
