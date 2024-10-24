@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/24/24 • 10:42 pm"
-var initialEncounterOverride=7;
+var versionCode = "fpm 10/25/24 • 0:03 pm"
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -654,9 +654,10 @@ function redraw(){
 
       default:
         displayPlayerState(); //Default values do just fine
+        if (enemyStatusString.includes("Unremarkable")) displayPlayerState("Relaxed","#509920","2.5"); //I need this to be overwritable by the below
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
         if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("Combat",colorRed,"1");
+        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
         break;
     }
   }
@@ -1834,6 +1835,7 @@ function enemyAttackOrRest(message=""){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
         staminaChangeMsg="They cannot cause any harm."
+        displayEnemyEffect("⏳")
         if (enemyType=="Pet"){
           enemyIntBonus++; //Harder to befriend
 
@@ -1923,7 +1925,6 @@ function getRandomLoot(){
 function nextEncounter(animateArea=true){
   //console.log("EnemyType: \n"+enemyType); //Note: Even generator encounters go through here :)
   if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
-
   previousEnemyType = enemyType;
 
   if (animateArea) {
