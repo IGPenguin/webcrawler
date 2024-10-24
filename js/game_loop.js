@@ -68,6 +68,7 @@ function renewPlayer(){ //Default values
 }
 
 //Global vars
+var storyData;
 var linesStory;
 var linesLoot;
 var linesGenerator;
@@ -96,7 +97,7 @@ var buttonsContainer;
 
 //String generators
 function getFirstName(){
-  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizard", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -197,7 +198,8 @@ $(document).ready(function() {
         url: "data/story.csv",
         dataType: "text",
         success: function(data) {
-          processStoryData(data);
+          storyData = data;
+          processStoryData(storyData);
           registerClickListeners();
         }
      });
@@ -222,7 +224,7 @@ $(document).ready(function() {
 });
 
 //Process csv into lines of encounters
-function processStoryData(allText) {
+function processStoryData(allText, initNextEncounter=true) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
   linesStory = [];
@@ -238,9 +240,11 @@ function processStoryData(allText) {
         linesStory.push(tarr);
   }
   }
-  loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
-  redraw();
-  animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
+  if (initNextEncounter){
+    loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
+    redraw();
+    animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
+  }
 }
 
 //Process csv into lines of loot
@@ -400,14 +404,23 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Small","Standard"])));
       break;
 
+    case 2: //Standard Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
+      break;
+
     case 11: //Container Small
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
       break;
 
-    case 10: //Mid Enemy + Consumable
+    case 20: //Mid Enemy + Consumable
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      break;
+
+    case 22: //Mid Enemy + Loot
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Item"));
       break;
 
     case 21: //Skippable Enemy
@@ -415,18 +428,18 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
       break;
 
-    case 20: //Container Consumable
+    case 10: //Container Consumable
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
-    case 31: //Container-2 >> Mid Enemy >> Loot
+    case 31: //Container >> Mid Enemy >> Loot
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
       linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
       break;
 
-    case 41: //Container-3 >> Mid Enemy >> Loot >> Altar
+    case 41: //Container >> Mid Enemy >> Loot >> Altar
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
       linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
@@ -501,7 +514,7 @@ function redraw(){
   enemyTeamUIElement.innerHTML="";
   switch(enemyType){
     case "Boss":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorRed);
+      enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorGold);
       enemyStatusString=appendEnemyStats()
       break;
     case "Pet":
@@ -583,10 +596,9 @@ function redraw(){
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
-      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
-      if (enemyContainerNumber>2) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
+      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
-      if (enemyType.includes("Consumable")) enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
+      if (enemyType.includes("Consumable")) enemyStatusString=decorateStatusText("❤️","Refreshment","#FFFFFF")
       break;
   }
 
@@ -1459,7 +1471,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
-            if (playerUseItem("🪱","Successfully fished out something.","Missing some fishing bait.")){
+            if (playerUseItem("🪱","Successfully fished out something.","Missing a viable fishing bait.")){
               getRandomLoot();
               displayEnemyEffect("🪝");
             } else {
@@ -1745,7 +1757,7 @@ function enemyHit(damage,magicType=false) {
   var critChance = Math.floor(Math.random() * luckInterval);
   if ( critChance <= playerLck ){
     logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
-    hitMsg="Attacked hit them critically -"+(damage+2)+" 💔";
+    hitMsg="Attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
   }
@@ -2157,10 +2169,13 @@ function gameOver(){
   adventureEndTime=getTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
-  nextEncounter();
-  animateUIElement(cardUIElement,"animate__flipInY","1");
   playerSta=0; //You are just tired when dead :)
+  nextEncounter();
+  animateUIElement(cardUIElement,"animate__flipInY","1.2");
+
+  //Reset generated data
   resetSeenEncounters();
+  processStoryData(storyData,false);
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
