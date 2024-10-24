@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/25/24 • 0:03 pm"
+var versionCode = "fpm 10/25/24 • 0:57 pm"
 var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -514,10 +514,10 @@ function redraw(){
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString;
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;";
   }
   if (playerLootString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "&nbsp;<b>Loot:</b> "+playerLootString;
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Bag: </b> "+playerLootString;
   }
   if (playerPartyString.length+playerLootString.length == 0) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
@@ -1481,7 +1481,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Small":
             if ((enemySta-enemyStaLost)==0) {
-              logPlayerAction(actionString,"Grabbed it into pocket.");
+              logPlayerAction(actionString,"Grabbed it into their bag.");
               playerLootString+=" "+enemyEmoji;
               displayEnemyEffect("👋");
               nextEncounter();
@@ -1766,6 +1766,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 function enemyRest(stamina){
   if (enemyHp - enemyHpLost > 0){
     animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
+    if (document.getElementById('id_enemy_overlay').innerHTML!= "💢") displayEnemyEffect("⏳")
     enemyStaLost-=stamina;
     if (enemyStaLost < 0) {
       enemyStaLost = 0;
@@ -1843,7 +1844,6 @@ function enemyAttackOrRest(message=""){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
         staminaChangeMsg="They cannot cause any harm."
-        displayEnemyEffect("⏳")
         if (enemyType=="Pet"){
           enemyIntBonus++; //Harder to befriend
 
@@ -2122,10 +2122,13 @@ function playerConsumed(){
   var consumedString="Replenished resources"
   if (enemyMsg!="") consumedString=enemyMsg;
 
-  if (enemyHp<0){
+  if (enemyHp<0 || enemySta<0){
     if (enemyMsg=="") consumedString="That did not taste good ";
-    logPlayerAction(actionString,consumedString+" "+enemyHp+" 💔");
+    if (enemyHp<0) consumedString+=" "+enemyHp+" 💔 "
+    if (enemySta<0) consumedString+=" "+enemySta+" 🟢"
     playerHit(-1*enemyHp);
+    playerSta+=enemySta;
+    logPlayerAction("🤮",consumedString);
     return;
   }
 
