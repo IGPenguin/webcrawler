@@ -7,17 +7,19 @@ Forsaken Village;🫙;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Send
 Forsaken Village;🏺;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Forsaken Village;🪹;Empty Nest;Prop-Small;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
-Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
-Forsaken Village;🌿;Grass Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;
+Forsaken Village;🚪;Exit Door;Prop-Exit;0;0;0;0;0;0;Way Out;It is finally over.<br>;Closed the door behind.
+
+Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌿;Grass Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;
+Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Moved around the rocks.
 Forsaken Village;🧱;Two Bricks;Prop;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;
 Forsaken Village;🧱;Brick Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;
-Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;
+Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
+Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
 Forsaken Village;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.

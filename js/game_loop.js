@@ -926,7 +926,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Prop":
             isLooting=false;
-            logPlayerAction(actionString,"Continued on the adventure.");
+            if (enemyMsg!=""){
+              logPlayerAction(actionString,enemyMsg)
+            } else {logPlayerAction(actionString,"Continued on the adventure.");}
             nextEncounter();
             break;
           case "Container-Friend":
@@ -1514,14 +1516,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Demon":
           case "Spirit":
-            logPlayerAction(actionString,"Hands seemed to pass through them.");
+            logPlayerAction(actionString,"Could not get a handle of it.");
             displayEnemyEffect("✋");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
 
           case "Death":
-            logPlayerAction(actionString,"Sent a message to the universe.");
+            logPlayerAction(actionString,"Echoed a message to the universe.");
             redirectToFeedback();
             break;
 
