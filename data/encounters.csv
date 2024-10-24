@@ -54,8 +54,12 @@ Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Bui
 Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
+Forsaken Village;🐈;Strange Cat;Friend;0;0;0;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
+
+Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Animal;These are super rare.<br>;
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
-Forsaken Village;🐩;Lost Doge;Pet;2;1;1;0;0;0;Animal;Looks cute as hell.<br>;Became best friends!
+Forsaken Village;🐩;Lost Doggo;Pet;2;1;1;0;0;0;Animal;Looks cute as hell.<br>;Became best friends!
 Forsaken Village;🐶;Good Boy;Pet;2;1;1;0;0;0;Animal;Playfully bites around itself.<br>;Became best friends!
 Forsaken Village;🦝;Cute Coon;Pet;2;1;2;0;10;0;Smart Beast;Probably has a heart of gold.<br>;Died by contracting rabies.
 🫏🐥🐇🐈
@@ -63,30 +67,34 @@ Forsaken Village;🦝;Cute Coon;Pet;2;1;2;0;10;0;Smart Beast;Probably has a hear
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Earthworm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪰;Pesky Fly;Small;1;0;3;0;10;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Forsaken Village;🦋;Skyblue Butterfly;Small;1;0;2;0;10;0;Stunning Insect;Flies from one flower to another.<br>;How could this happen?
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;10;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Forsaken Village;🐀;Tiny Mouse;Small;1;1;2;0;10;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;10;0;Lizard;Eyes are glowing blue.<br>;Insides devoured by fierce
-🐛🐌🦟🐜🦗🦋🪰
+Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;10;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
+Forsaken Village;🐜;Forest Ant;Small;1;1;2;0;10;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
+Forsaken Village;🐌;Trailing Snail;Small;1;0;1;0;10;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
+🐛🦟🦗
 
 ;//8-10
 Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Animal;Seems starving for a long time.<br>;
+Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Lost Animal;Seems starving for a long time.<br>;
 Forsaken Village;🐐;Screaming Goat;Standard;1;1;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
 Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;10;0;Wild Robber;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Peace was never an option.<br>;Pecked to death.
-Forsaken Village;🦂;Fierce Scorpion;Standard;1;2;1;0;10;0;Animal;Peace was never an option.<br>;Pecked to death.
-
+Forsaken Village;🦂;Fierce Scorpion;Standard;1;2;1;0;10;0;Animal;Usually goes for the ankles.<br>;Pinched to death.
+Forsaken Village;🦃;Frenzied Turkey;Standard;1;1;3;0;10;0;Domestic Animal;Usually goes for the ankles.<br>;Pinched to death.
 //;Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
-🐖🐢🦃
+🐖🐢
 
 Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Forsaken Village;🐒;Tricky Monkey;Swift;1;1;3;0;10;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
-Forsaken Village;🐈‍⬛;Wild Cat;Swift;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
+Forsaken Village;🐈‍⬛;Wild Cat;Swift;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bled out bitten into neck artery.
 Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
+Forsaken Village;🦅;Bald Eagle;Swift;1;3;1;0;1;0;Wild Animal;Attacks from high altitude.<br>;Got their brains pecked out.
 Forsaken Village;🐀;Dire Rat;Swift;1;1;2;0;10;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🐿️;Greedy Chipmunk;Swift;1;1;2;0;10;0;Wild Animal;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-🦅
 
 Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
 Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
@@ -111,8 +119,11 @@ Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced t
 Forsaken Village;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🔖;Ancient Knowledge;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
+Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes a sound anytime it moves.<br>;Hopefully this works.
+Forsaken Village;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Nice. Whatever purpose it has.<br>;Felt strange power surge.
+Forsaken Village;️🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
 //;Forsaken Village;🍄;Amanita Muscaria;Item;-1;0;0;0;2;0;Suspicious Growth;It's beautiful. What could go wrong?<br>;
-📯💠🔔🎴🀄️🪶⚜️🎖💛
+📯💠🎴🀄⚜️💛
 
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍏;Bitten Apple;Consumable;0;0;-2;0;0;0;Fresh Fruit;There is a huge bite mark.<br>;Nausea took over

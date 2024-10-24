@@ -9,7 +9,7 @@ Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Mid Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Loot House;Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Enemy;Generator-21;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
@@ -25,10 +25,10 @@ Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full o
 Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
 Forsaken Village;🧱;Brick Rubble;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Pulled out the loose brick.
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
-Forsaken Village;❓;Mid Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-6;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;🎯;Archery Range;Prop;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
+Forsaken Village;🎯;Archery Range;Container-4;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 Forsaken Village;🦴;Pile of Bones;Container-2;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Forsaken Village;❓;Small Enemy;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏹;Radiating Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
