@@ -2,6 +2,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
+Loot;🪸;Toxic Coral;Consumable;-1;0;0;0;0;1;Rare Fish;Convenient snack straight out of water.<br>;
 Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Could be of service.;Took it with themselves just in case.
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant had moved away.<br>;Gained powers of the sea.
 Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>;Gained powers of the wilds.
