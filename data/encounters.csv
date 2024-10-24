@@ -2,21 +2,27 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Forsaken Village
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the grass.
-Forsaken Village;🪨;Building Stone;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
+Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Two Bricks;Prop;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;
-Forsaken Village;🦴;Human Femur;Prop;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
-Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
-Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
+Forsaken Village;🧱;Brick Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Forsaken Village;🦴;Human Femur;Prop;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Lifted one of the logs.
+Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Lifted one of the logs.
 
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
-Forsaken Village;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
-Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
-Forsaken Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the grass.
+Forsaken Village;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
+Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
+Forsaken Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the grass.
+Forsaken Village;🌿;Fern Leaves;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
+Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was a creature inside!
 
 Forsaken Village;🌿;Grass Patch;Container-2;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the grass.
+Forsaken Village;🌿;Fern Leaves;Container-2;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container-2;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
+Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>Shaking around vigorously.;There was a creature inside!
 
 Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏚️;Unsettling House;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
@@ -31,6 +37,38 @@ Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;Deserted Bui
 Forsaken Village;🏚️;Locked House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
+Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
+Forsaken Village;🐩;Lost Doge;Pet;2;1;1;0;0;0;Animal;Looks cute as hell.<br>;Became best friends!
+Forsaken Village;🐶;Good Boy;Pet;2;1;1;0;0;0;Animal;Playfully bites around itself.<br>;Became best friends!
+Forsaken Village;🦝;Cute Coon;Pet;2;1;2;0;10;0;Smart Beast;Probably has a heart of gold.<br>;Died by contracting rabies.
+
+Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Earthworm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;10;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Forsaken Village;🐀;Tiny Mouse;Small;1;1;2;0;10;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🦎;Green Gecko;Small;1;1;3;0;10;0;Lizard;Eyes are glowing blue.<br>;Insides devoured by fierce
+
+;//8-10
+Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
+Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Animal;Seems starving for a long time.<br>;
+Forsaken Village;🐐;Screaming Goat;Standard;1;2;2;0;10;0;Wild Beast;Produces variety of unpleasant noises.<br>;Devoured to the bone.
+Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;10;0;Infected Beast;Kinda cute on the first glance.<br>;Died by contracting rabies.
+;//Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
+
+Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
+Forsaken Village;🐒;Tricky Monkey;Swift;1;1;3;0;10;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
+Forsaken Village;🐈‍⬛;Wild Cat;Swift;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
+Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
+Forsaken Village;🐀;Dire Rat;Swift;1;1;2;0;10;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
+Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Forsaken Village;🐿️;Greedy Chipmunk;Swift;1;1;2;0;10;0;Wild Animal;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+
+Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Somber Backwoods;🐗;Old Warthog;Heavy;2;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
+
+Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 Forsaken Village;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
@@ -48,7 +86,7 @@ Forsaken Village;🍓;Raspberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shi
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍑;Juicy Peach;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
-Forsaken Village;🍄;Amanita Muscaria;Consumable;-1;0;0;0;2;0;Fresh Fruit;Looks all shiny and juicy.<br>;
+Forsaken Village;🍄;Amanita Muscaria;Consumable;-1;0;0;0;2;0;Fresh Fruit;It's beautiful. What could go wrong?<br>;
 Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;
@@ -60,41 +98,16 @@ Forsaken Village;📓;Cultist Notes;Altar;0;0;0;3;0;1;Ritual Book;Contains endle
 
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 
-Forsaken Village;🐈‍⬛;Black Kitty;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
-Forsaken Village;🐕;Stray Hound;Pet;2;1;1;0;0;0;Animal;Looks cute as hell.<br>;Became best friends!
-Forsaken Village;🐕;Good Boy;Pet;2;1;1;0;0;0;Animal;Playfully bites around itself.<br>;Became best friends!
-
-Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Earthworm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪳;Overgown Cockroach;Small;2;1;1;0;10;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Forsaken Village;🐀;Tiny Mouse;Small;1;1;1;0;10;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-
-Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
-Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Animal;The creature looks kind of aggressive.<br>But its eyes say otherwise.;
-
-Forsaken Village;🐈‍⬛;Wild Cat;Swift;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
-Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
-Forsaken Village;🐀;Dire Rat;Swift;1;1;2;0;10;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
-Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-
-Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Enraged Animal;Getting ready for ramming.<br>Better dodge the horns.;
-Forsaken Village;🐈‍⬛;Possesed Cat;Demon;2;1;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
-
 Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
 
 Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
 //Depriving Fairyland
-
+Depriving Fairyland;🐈‍⬛;Possesed Cat;Demon;2;1;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
 Depriving Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>;
 Depriving Fairyland;🧀;Old Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;Barely held it inside
 Depriving Fairyland;🥔;Dirty Potato;Consumable;0;0;0;0;0;0;Vegetable;Looks suspiciously fresh.<br>;Actually tasted quite good.
 Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
-
-
 Depriving Fairyland;🌻;Sunflower Growth;Container;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
@@ -128,7 +141,6 @@ Somber Backwoods;🦝;Velvet Bandit;Swift;2;1;2;0;10;0;Infected Beast;Kinda cute
 Somber Backwoods;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;Barely held it inside
 Somber Backwoods;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of the spoiled cheese.<br>;Contracted a deadly disease.
 Somber Backwoods;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
-Somber Backwoods;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Somber Backwoods;🧺;Primitive Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Somber Backwoods;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
 Somber Backwoods;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>;
