@@ -486,8 +486,10 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;"
+
   if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
-  playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
+  if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
+
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
@@ -782,7 +784,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            if (enemyType.includes("Container")){
+            if (enemyType.includes("Container") && !enemyType.includes("Locked")){
               var openMessage = "Smashed it wide open -1 🟢";
               if (enemyMsg != ""){
                 openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
