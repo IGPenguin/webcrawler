@@ -142,7 +142,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps with befreinding companions."+newline,"<b>💫 Cast</b> a spell to hit before retaliation.","<b>🍴 Eating</b> when rested provides a bonus."+newline];
+  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when rested provides a bonus."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -1904,8 +1904,8 @@ function getRandomLoot(){
 function nextEncounter(animateArea=true){
   previousEnemyType = enemyType;
   if (animateArea) {
-    animateUIElement(areaUIElement,"animate__flipInX","1.5");
     toggleUIElement(areaUIElement,1);
+    animateUIElement(areaUIElement,"animate__flipInX","1");
   }
 
   adventureEncounterCount+=1;
@@ -1919,7 +1919,7 @@ function nextEncounter(animateArea=true){
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
   }
-  animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  animateUIElement(cardUIElement,"animate__fadeIn","1");
   previousArea = areaName;
 }
 
