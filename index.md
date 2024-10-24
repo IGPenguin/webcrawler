@@ -220,6 +220,9 @@ layout: default
 
 <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/webcrawler/';">
 <h4 style="font-size:11px; opacity:0.9; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4>
-<h4 id="id_version" style="font-size:10px; margin-top:-22px; margin-bottom:-8px; opacity:0.6; box-shadow:none;"/>
+</div>
+
+<div id="id_bug" style="cursor: pointer;">
+<h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.6; box-shadow:none;"/>
 </div>
 </center>

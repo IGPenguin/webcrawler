@@ -151,7 +151,7 @@ function getProphecy(){
 var actionString; //Initial action log below
 var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
-var adventureEncounterCount = 0;
+var adventureEncounterCount = 1;
 var adventureEndReason = "";
 
 //Area init
@@ -292,6 +292,7 @@ function getNextEncounterIndex(){
     gameEnd();
     return encounterIndex+1; //Skip tutorial
   }
+  adventureEncounterCount+=1;
   return nextItemIndex;
 }
 
@@ -372,6 +373,7 @@ function loadEncounter(index, fileLines = linesStory){
 
     generateNextEncounters(number);
 
+    adventureEncounterCount-- //Remove the generator from the counter
     nextEncounter();
     return;
   }
@@ -485,7 +487,8 @@ function chooseFrom(array=[]){
 //UI DRAW FUNCTIONS
 function redraw(){
   //Version
-  document.getElementById('id_version').innerHTML = versionCode;
+  versionIDUIElement = document.getElementById('id_version')
+  versionIDUIElement.innerHTML = versionCode+" <br>(#"+adventureEncounterCount+")";
 
   //Player UI
   playerInfoUIElement = document.getElementById('id_player_info');
@@ -1928,7 +1931,6 @@ function nextEncounter(animateArea=true){
     animateUIElement(areaUIElement,"animate__flipInX","1");
   }
 
-  adventureEncounterCount+=1;
   encounterIndex = getNextEncounterIndex();
 
   playerRested=false;
@@ -2514,6 +2516,14 @@ function registerClickListeners(){
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
   document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+
+  versionIDUIElement.addEventListener(eventType, ()=> {
+    actionString="⚙️"
+    adventureEndTime=getTime();
+    copyAdventureToClipboard();
+    redraw();
+  });
+
 
   document.getElementById('id_player_name').addEventListener(eventType, ()=>{
     playerName=prompt("Name your character: ");
