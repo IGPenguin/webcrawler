@@ -1902,7 +1902,7 @@ function getRandomLoot(){
 function nextEncounter(animateArea=true){
   previousEnemyType = enemyType;
   if (animateArea) {
-    animateUIElement(areaUIElement,"animate__flipInX","1");
+    animateUIElement(areaUIElement,"animate__flipInX","1.5");
     toggleUIElement(areaUIElement,1);
   }
 
@@ -2411,7 +2411,7 @@ function curtainFadeInAndOut(message=""){
 }
 
 function displayEnemyEffect(message){
-  displayEffect(message,document.getElementById('id_enemy_overlay'));
+  displayEffect(message,document.getElementById('id_enemy_overlay'),"1.5");
 }
 
 function displayPlayerEffect(message){
