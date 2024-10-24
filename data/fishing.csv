@@ -22,12 +22,12 @@ Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent 
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
-Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
+Loot;🧲;Unlucky "Horseshoe";Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
 Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny Echo;Means: Easily blinded by trust.<br>;Embraced foretold destiny
 Loot;🃏;Tarot Card — Lover;Item;2;0;0;0;-2;0;Destiny Echo;Means: Voluntarily seized by romance.<br>;Embraced foretold destiny
-Loot;🏺;Painted Amphora;Item;0;0;0;0;0;0;Ancient Container;Water is splashing inside.<br>;
+Loot;🏺;Burial Amphora;Item;0;0;0;-1;0;0;Ancient Container;Water is splashing inside.<br>;Got wet ashes all over.
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
 Loot;🎀;Silly Bowtie;Item;0;0;1;0;-1;0;Cringe Accessory;The extra speed is what counts.<br>;Tied over the right arm
 Loot;🔖;Wet Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
