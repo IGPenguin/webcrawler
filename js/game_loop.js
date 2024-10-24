@@ -206,7 +206,7 @@ $(document).ready(function() {
 
      $.ajax({
          type: "GET",
-         url: "data/loot-fishing.csv",
+         url: "data/fishing.csv",
          dataType: "text",
          success: function(data) {
            processLoot(data);
@@ -422,8 +422,8 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
       break;
 
-    case 20: //Mid Enemy + Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+    case 20: //Standard Enemy + Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
@@ -468,7 +468,7 @@ function generateNextEncounters(count=1){
 }
 
 function chooseFrom(array=[]){
-  console.log("Choices: "+array);
+  //console.log("Choices: "+array);
   var options = array.length
   var choice = array[Math.floor(Math.random() * options)];
   console.log("Chosen: "+choice+"\nFrom: "+array);
