@@ -308,38 +308,38 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function getRandomEncounter(type="") {   //TODO: drop all seen lines
+function getRandomEncounter(type="") {
   var tempLinesGenerator = linesGenerator;
-
-  //TODO: drop all seen lines
-  ///IMPLEMENT THIS
 
   //drop anything but areaName
   tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+areaName) === 0; });
 
   //drop anything but type
-  console.log("Encounter type: "+type);
+  //console.log("Encounter type: "+type);
   if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
 
-  var tempLinesGeneratorTotal = tempLinesGenerator.length;
-  //console.log("Number of filtered encounters: "+tempLinesGeneratorTotal);
+  //drop all seen names
+  console.log("Seen: "+seenEncounters);
+  seenEncounters.forEach(seenEncounterName => {
+    //console.log("Dropping: "+seenEncounterName);
+    tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf(seenEncounterName) !== 0; });
+  });
 
+  var tempLinesGeneratorTotal = tempLinesGenerator.length;
   var max = tempLinesGeneratorTotal;
   randomEncounterIndex = Math.floor(Math.random() * max);
   //console.log("Random encounter index: "+randomEncounterIndex)
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
-  console.log("Options:"+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter)
+  console.log("Options:"+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter.split(",h")[0])
 
   //mark as seen (by name)
-  var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
-  console.log("Marking as seen: \n"+seenEncounterName);
-  markAsSeen(seenEncounterName)
-
+  //var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
   return randomEncounter;
 }
 
 function markAsSeen(seenName){
+  //console.log("Marking as seen: \n"+seenName);
   if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
 }
 
@@ -367,7 +367,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
-    console.log("Generator type: "+number);
+    //console.log("Generator type: "+number);
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
@@ -1905,7 +1905,11 @@ function getRandomLoot(){
 }
 
 function nextEncounter(animateArea=true){
+  //console.log("EnemyType: \n"+enemyType); //Note: Even generator encounters go through here :)
+  if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
+
   previousEnemyType = enemyType;
+
   if (animateArea) {
     toggleUIElement(areaUIElement,1);
     animateUIElement(areaUIElement,"animate__flipInX","1");
