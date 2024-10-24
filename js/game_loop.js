@@ -142,7 +142,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> is needed for getting companions."+newline,"<b>💫 Cast</b> a spell to hit before retaliation.","<b>🍴 Eating</b> when rested provides a bonus."+newline];
+  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps with befreinding companions."+newline,"<b>💫 Cast</b> a spell to hit before retaliation.","<b>🍴 Eating</b> when rested provides a bonus."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -408,7 +408,11 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
       break;
 
-    case 3: //Swift Enemy
+    case 3: //Mid Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      break;
+
+    case 4: //Swift Enemy
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Swift"));
       break;
 
@@ -439,13 +443,16 @@ function generateNextEncounters(count=1){
 
     case 31: //Container >> Mid Enemy >> Loot
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
+      //Smallprop?
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      //Smallprop?
       linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
       break;
 
     case 41: //Container >> Mid Enemy >> Loot >> Altar
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Swift","Heavy","Demon"])));
+      //Smallprop?
       linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
       linesStory.splice(encounterIndex+4,0,getRandomEncounter("Altar"));
       break;
