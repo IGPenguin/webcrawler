@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 10/24/24 • 00:17 am"
+var versionCode = "ver. 10/24/24 • 5:01 pm"
 var initialEncounterOverride=7;
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -288,9 +288,9 @@ function processEncounterData(allText){ //TODO: remove and reuse the fn above
 function getNextEncounterIndex(){
   encountersTotal = linesStory.length-1;
   var nextItemIndex = encounterIndex+1;
-  if (nextItemIndex > encountersTotal){ //Game Completed
+  if (nextItemIndex >= encountersTotal){ //Game Completed
     gameEnd();
-    return 4; //Skip tutorial
+    return encounterIndex+1; //Skip tutorial
   }
   return nextItemIndex;
 }
@@ -442,17 +442,16 @@ function generateNextEncounters(count=1){
       break;
 
     case 31: //Container >> Mid Enemy >> Loot
+      //Add Smallprop?
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
-      //Smallprop?
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
-      //Smallprop?
       linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
       break;
 
     case 41: //Container >> Mid Enemy >> Loot >> Altar
+      //Add Smallprop?
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Swift","Heavy","Demon"])));
-      //Smallprop?
       linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
       linesStory.splice(encounterIndex+4,0,getRandomEncounter("Altar"));
       break;
@@ -524,6 +523,7 @@ function redraw(){
   enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
+  var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
   enemyTeamUIElement.innerHTML="";
   switch(enemyType){
     case "Boss":
@@ -572,7 +572,6 @@ function redraw(){
 
     case "Item":
     case "Trap":
-      var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
       if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
       } else if (totalEffect < 0 ) {
@@ -591,7 +590,11 @@ function redraw(){
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
       break;
     case "Altar":
-      enemyStatusString=decorateStatusText("♦️","Place of Worship",colorRed);
+      if (totalEffect>0){
+        enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
+      } else {
+        enemyStatusString=decorateStatusText("♦️","Place of Worship",colorRed);
+      }
       break;
     case "Fishing":
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
@@ -2192,14 +2195,14 @@ function gameOver(){
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
-  var winMessage="🧠 ▸ 💭 Is this deja vu? Feels familiar. (NG+)";
+  //alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
+  var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
 
   //Reset progress to game start
   resetSeenEncounters();
-  encounterIndex=4;
-  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
+  processStoryData(storyData,false);
 }
 
 //Logging
@@ -2366,7 +2369,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="✨ Embrace";
+      document.getElementById('button_grab').innerHTML="✨ Praise";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
