@@ -323,7 +323,8 @@ function getRandomEncounter(type="") {
   console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
     //console.log("Dropping: "+seenEncounterName);
-    tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("name:"+seenEncounterName) !== 0; });
+    var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf(seenEncounterName))
+    if (index !== -1) tempLinesGenerator.splice(index, 1);
   });
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
@@ -332,7 +333,7 @@ function getRandomEncounter(type="") {
   //console.log("Random encounter index: "+randomEncounterIndex)
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
-  console.log("Options:"+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter.split(",h")[0])
+  console.log("Options: "+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter.split(",h")[0])
 
   //mark as seen (by name)
   //var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
