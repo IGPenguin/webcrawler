@@ -312,6 +312,7 @@ function getRandomEncounter(type="") {   //TODO: drop all seen lines
   var tempLinesGenerator = linesGenerator;
 
   //TODO: drop all seen lines
+  ///IMPLEMENT THIS
 
   //drop anything but areaName
   tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+areaName) === 0; });
@@ -327,19 +328,19 @@ function getRandomEncounter(type="") {   //TODO: drop all seen lines
   randomEncounterIndex = Math.floor(Math.random() * max);
   //console.log("Random encounter index: "+randomEncounterIndex)
 
-  //markAsSeen(randomEncounterIndex);
-
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
   console.log("Options:"+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter)
+
+  //mark as seen (by name)
+  var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
+  console.log("Marking as seen: \n"+seenEncounterName);
+  markAsSeen(seenEncounterName)
 
   return randomEncounter;
 }
 
-function markAsSeen(seenID){
-  if (!seenEncounters.includes(seenID)){
-    seenEncounters.push(seenID);
-    localStorage.setItem("seenEncounters", JSON.stringify(seenEncounters));
-  }
+function markAsSeen(seenName){
+  if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
 }
 
 function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
@@ -350,7 +351,6 @@ function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
 }
 
 function resetSeenEncounters(){
-  localStorage.setItem("seenEncounters", JSON.stringify(""));
   seenEncounters = [];
 }
 
