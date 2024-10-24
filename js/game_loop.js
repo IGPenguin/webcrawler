@@ -408,6 +408,10 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
       break;
 
+    case 3: //Swift Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Swift"));
+      break;
+
     case 11: //Container Small
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
@@ -418,14 +422,14 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
-    case 22: //Mid Enemy + Loot
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Item"));
-      break;
-
     case 21: //Skippable Enemy
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
+      break;
+
+    case 22: //Mid Enemy + Loot
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Item"));
       break;
 
     case 10: //Container Consumable

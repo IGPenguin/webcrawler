@@ -15,7 +15,7 @@ Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Mid Enemy Loot;Generator-21;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🌳;Apple Tree;Container-3;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
-Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;The crow appears to be going for the eyes.<br>Quickly cover before the impact.;Got both eyes pecked out.
+Forsaken Village;❓;Swift Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
@@ -25,15 +25,13 @@ Forsaken Village;🧱;Brick Rubble;Container;0;0;0;0;0;0;Material;One of the bri
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-6;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
-Forsaken Village;🔖;Ancient Knowledge;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
-Forsaken Village;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
-Forsaken Village;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
-Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;
-Forsaken Village;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>;
 Forsaken Village;🎯;Archery Range;Prop;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 Forsaken Village;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
-Forsaken Village;🏹;Radiating Bow;Trap;0;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
+Forsaken Village;🏹;Radiating Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
 Forsaken Village;❓;Container Mid Enemy Loot;Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
+Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
+Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
+Depriving Fairyland;🌻;Sunflower Growth;Container;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
+Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 The Singularity;👾;Stack Overflow;Death;0;0;0;0;0;0;Endgame;This game exists thanks to the internet.<br>;
