@@ -5,7 +5,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Forsaken Village;🦴;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Forsaken Village;🫙;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Forsaken Village;🏺;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-
+Forsaken Village;🪹;Empty Nest;Prop-Small;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🌿;Grass Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
@@ -29,13 +29,10 @@ Forsaken Village;🌿;Fern Leaves;Container;0;0;0;0;0;0;Soft Surface;Looks like 
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
 Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed!
 Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;There was a creature inside!
-Forsaken Village;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
 Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
 Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
 
-Forsaken Village;🌿;Grass Patch;Container-2;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the grass.
-Forsaken Village;🌿;Fern Leaves;Container-2;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Searched through the fern.
-Forsaken Village;🌳;Apple Tree;Container-2;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
+Forsaken Village;🧳;Abandoned Trunk;Container-2;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
 Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.

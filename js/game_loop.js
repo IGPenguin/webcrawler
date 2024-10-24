@@ -321,7 +321,7 @@ function getRandomEncounter(type="") {
   //drop all seen names
   console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
-    console.log("Dropping: "+seenEncounterName);
+    //console.log("Dropping: "+seenEncounterName);
     tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("name:"+seenEncounterName) !== 0; });
   });
 
@@ -442,9 +442,9 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
-    case 17: //Container Pet/Friend
+    case 17: //Container Standard/Pet/Friend
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Pet","Friend"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Pet","Friend"])));
       break;
 
     case 31: //Container >> Mid Enemy >> Loot
@@ -452,6 +452,13 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
       linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
+      break;
+
+    case 36: //Cursed house: Curse >> Consumable
+      //Add Smallprop?
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Curse"));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter("Consumable"));
       break;
 
     case 41: //Container >> Mid Enemy >> Loot >> Altar
