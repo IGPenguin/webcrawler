@@ -5,6 +5,7 @@ Depths of Slumber;👿;Bad Thought;Demon;1;1;1;0;0;0;Imaginary Threat;<b>🔰 Bl
 Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>;
 Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a perk</b> to shape your character.<br>;
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;n/a<br>;
+
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
@@ -35,8 +36,11 @@ Forsaken Village;❓;Mid Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-6;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
+
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
 Depriving Fairyland;🌻;Sunflower Growth;Container;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
+//TODO: Missing whole another area
+
 The Singularity;👾;Stack Overflow;Death;0;0;0;0;0;0;Endgame;This game exists thanks to the internet.<br>;
