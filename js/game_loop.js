@@ -654,7 +654,7 @@ function redraw(){
 
       default:
         displayPlayerState(); //Default values do just fine
-        if (enemyStatusString.includes("Unremarkable")) displayPlayerState("Relaxed","#509920","2.5"); //I need this to be overwritable by the below
+        if (enemyStatusString.includes("Unremarkable")||enemyType=="Container") displayPlayerState("Relaxed","#509920","2.5"); //I need this to be overwritable by the below
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
         if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
         if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
