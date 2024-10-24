@@ -1,0 +1,49 @@
+area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
+Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;End of the Line;<b>❤️‍🩹 Heal</b> the soul to start a new adventure.<br><b>🦆 Tweet</b> this to appear in credits.;
+Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Snoring;<b>💤 Sleep</b> to recover depleted <b>🟢 Energy</b>.<br>;
+Depths of Slumber;👿;Bad Thought;Demon;1;1;1;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> when they have no <b>🟢 Energy</b>;
+Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>;
+Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a perk</b> to shape your character.<br>;
+Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;n/a<br>;
+
+Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Loot House;Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Container Enemy;Generator-21;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Container Standard/Pet/Friend;Generator-17;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Altar House;Generator-41;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🌳;Apple Tree;Container-3;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
+Forsaken Village;❓;Swift Enemy;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
+Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
+Forsaken Village;❓;Cursed House;Generator-36;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
+Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
+Forsaken Village;🧱;Brick Rubble;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Pulled out the loose brick.
+Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
+Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🎯;Archery Range;Container-4;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
+Forsaken Village;🦴;Pile of Bones;Container-2;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
+Forsaken Village;❓;Small Enemy;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🏹;Radiating Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;The pile of bones won't miss it.<br>;Shot an arrow in the knee
+Forsaken Village;❓;Mid Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
+Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX
+//Consumable
+//Boss
+Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
+
+Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
+Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
+Depriving Fairyland;🌻;Sunflower Growth;Container;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
+Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
+//TODO: Missing whole another area
+
+The Singularity;👾;Stack Overflow;Death;0;0;0;0;0;0;Endgame;This game exists thanks to the internet.<br>;

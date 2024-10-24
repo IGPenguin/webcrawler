@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 10/23/24 • 2:57 pm"
-var initialEncounterOverride=0;
+var versionCode = "fpm 10/25/24 • 1:22 pm"
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -68,23 +68,19 @@ function renewPlayer(){ //Default values
 }
 
 //Global vars
-var lines;
+var storyData;
+var linesStory;
 var linesLoot;
+var linesGenerator;
+
 var encounterIndex;
 var lastEncounterIndex;
-var encountersTotal;
 var lootTotal;
 var randomEncounterIndex;
 var lootEncounterIndex;
 var isLooting = false;
 
-var seenEncounters;
-var seenEncountersString = JSON.parse(localStorage.getItem("seenEncounters"));
-if (seenEncountersString == null) {
-  seenEncounters = [];
-} else {
-  seenEncounters = Array.from(seenEncountersString);
-}
+var seenEncounters = [];
 
 //Globar vars - UIElements
 var areaUIElement;
@@ -101,7 +97,7 @@ var buttonsContainer;
 
 //String generators
 function getFirstName(){
-  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizard", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -146,7 +142,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> is needed for getting companions."+newline,"<b>💫 Cast</b> a spell to hit before retaliation.","<b>🍴 Eating</b> when rested provides a bonus."+newline];
+  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when rested provides a bonus."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -155,7 +151,7 @@ function getProphecy(){
 var actionString; //Initial action log below
 var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
 var adventureLog = actionLog;
-var adventureEncounterCount = 0;
+var adventureEncounterCount = 1;
 var adventureEndReason = "";
 
 //Area init
@@ -195,33 +191,43 @@ function enemyRenew(){
   currentProphercy = getProphecy();
 }
 
-//Data logic
-//Load encounter data .csv on page ready
+//Load encounter data .csv file on page ready
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "data/encounters.csv",
+        url: "data/story.csv",
         dataType: "text",
         success: function(data) {
-          processData(data);
+          storyData = data;
+          processStoryData(storyData);
           registerClickListeners();
         }
      });
 
      $.ajax({
          type: "GET",
-         url: "data/loot-fishing.csv",
+         url: "data/fishing.csv",
          dataType: "text",
          success: function(data) {
            processLoot(data);
          }
-      });
+     });
+
+     $.ajax({
+         type: "GET",
+         url: "data/encounters.csv",
+         dataType: "text",
+         success: function(data) {
+           processEncounterData(data);
+         }
+     });
 });
 
-function processData(allText) {
+//Process csv into lines of encounters
+function processStoryData(allText, initNextEncounter=true) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
-  lines = [];
+  linesStory = [];
 
   for (var i=1; i<allTextLines.length; i++) {
       var data = allTextLines[i].split(';');
@@ -231,16 +237,19 @@ function processData(allText) {
           for (var j=0; j<headers.length; j++) {
               tarr.push(headers[j]+":"+data[j]);
           }
-        lines.push(tarr);
+        linesStory.push(tarr);
   }
   }
-  loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
-  redraw();
-  animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
+  if (initNextEncounter){
+    loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
+    redraw();
+    animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
+  }
 }
 
-function processLoot(lootText){ //TODO: remove and reuse the fn above
-  var allTextLines = lootText.split(/\r\n|\n/);
+//Process csv into lines of loot
+function processLoot(allText){ //TODO: remove and reuse the fn above
+  var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
   linesLoot = [];
 
@@ -257,13 +266,33 @@ function processLoot(lootText){ //TODO: remove and reuse the fn above
   }
 }
 
-function getNextEncounterIndex(){
-  encountersTotal = lines.length-1;
-  var nextItemIndex = encounterIndex+1;
-  if (nextItemIndex > encountersTotal){ //Game Completed
-    gameEnd();
-    return 4; //Skip tutorial
+//Process csv into lines of encounters for generator
+function processEncounterData(allText){ //TODO: remove and reuse the fn above
+  var allTextLines = allText.split(/\r\n|\n/);
+  var headers = allTextLines[0].split(';');
+  linesGenerator = [];
+
+  for (var i=1; i<allTextLines.length; i++) {
+      var data = allTextLines[i].split(';');
+      if (data.length == headers.length) {
+
+          var tarr = [];
+          for (var j=0; j<headers.length; j++) {
+              tarr.push(headers[j]+":"+data[j]);
+          }
+        linesGenerator.push(tarr);
   }
+  }
+}
+
+function getNextEncounterIndex(){
+  encountersTotal = linesStory.length-1;
+  var nextItemIndex = encounterIndex+1;
+  if (nextItemIndex >= encountersTotal){ //Game Completed
+    gameEnd();
+    return encounterIndex+1; //Skip tutorial
+  }
+  adventureEncounterCount+=1;
   return nextItemIndex;
 }
 
@@ -280,11 +309,45 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function markAsSeen(seenID){
-  if (!seenEncounters.includes(seenID)){
-    seenEncounters.push(seenID);
-    localStorage.setItem("seenEncounters", JSON.stringify(seenEncounters));
-  }
+function getRandomEncounter(type="") {
+  var tempLinesGenerator = linesGenerator;
+
+  //drop anything but areaName
+  tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+areaName) === 0; });
+
+  //drop anything but type
+  //console.log("Encounter type: "+type);
+  if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
+
+  //drop all seen names
+  console.log("Seen: "+seenEncounters);
+  seenEncounters.forEach(seenEncounterName => {
+    console.log("Dropping: "+seenEncounterName);
+
+    //Hopefully this finally works, backups below 🤣
+    tempLinesGenerator = tempLinesGenerator.filter(a => a !== seenEncounterName)
+    //tempLinesGenerator = tempLinesGenerator.filter(function(a){return a !== seenEncounterName})
+
+    //var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf("name:"+seenEncounterName))
+    //if (index !== -1) tempLinesGenerator.splice(index, 1);
+  });
+
+  var tempLinesGeneratorTotal = tempLinesGenerator.length;
+  var max = tempLinesGeneratorTotal;
+  randomEncounterIndex = Math.floor(Math.random() * max);
+  //console.log("Random encounter index: "+randomEncounterIndex)
+
+  var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
+  console.log("Options: "+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter.split(",h")[0])
+
+  //mark as seen (by name)
+  //var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
+  return randomEncounter;
+}
+
+function markAsSeen(seenName){
+  //console.log("Marking as seen: \n"+seenName);
+  if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
 }
 
 function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
@@ -295,20 +358,33 @@ function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
 }
 
 function resetSeenEncounters(){
-  localStorage.setItem("seenEncounters", JSON.stringify(""));
   seenEncounters = [];
 }
 
-function loadEncounter(index, fileLines = lines){
+//Load or generate encounter
+function loadEncounter(index, fileLines = linesStory){
   encounterIndex = index;
   selectedLine = String(fileLines[index]);
 
   //Encounter data initialization, details in encounters.csv
   areaName = String(selectedLine.split(",")[0].split(":")[1]);
-  if (fileLines!=lines) areaName = previousArea
+  if (fileLines!=linesStory) areaName = previousArea
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  if (enemyType.includes("Generator")) {
+    var number = enemyType.match(/\d+$/);
+    console.log("Generator type: "+number);
+    if (number) number = parseInt(number[0],10);
+
+    generateNextEncounters(number);
+
+    adventureEncounterCount-- //Remove the generator from the counter
+    nextEncounter();
+    return;
+  }
+
+  //Handle container depth (for skipping it)
   if (enemyType.includes("Container")) {
     var number = enemyType.match(/\d+$/);
     if (number) enemyContainerNumber = parseInt(number[0],10);
@@ -322,14 +398,103 @@ function loadEncounter(index, fileLines = lines){
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
-  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Epiphany")) enemyDesc=currentProphercy;
+  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Knowledge")) enemyDesc=currentProphercy;
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
+}
+
+function generateNextEncounters(count=1){
+  switch (count) {
+
+    case 0: //Prop
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Prop"));
+      break;
+
+    case 1: //Easy Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Small","Standard"])));
+      break;
+
+    case 2: //Standard Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
+      break;
+
+    case 3: //Mid Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
+      break;
+
+    case 4: //Swift Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Swift"));
+      break;
+
+    case 11: //Container Small
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
+      break;
+
+    case 20: //Standard Enemy + Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      break;
+
+    case 21: //Skippable Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
+      break;
+
+    case 22: //Mid Enemy + Loot
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Item"));
+      break;
+
+    case 10: //Container Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      break;
+
+    case 17: //Container Standard/Pet/Friend
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Pet","Friend"])));
+      break;
+
+    case 31: //Container >> Mid Enemy >> Loot
+      //Add Smallprop?
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
+      break;
+
+    case 36: //Cursed house: Curse >> Consumable
+      //Add Smallprop?
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Curse"));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter("Consumable"));
+      break;
+
+    case 41: //Container >> Mid Enemy >> Loot >> Altar
+      //Add Smallprop?
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
+      linesStory.splice(encounterIndex+4,0,getRandomEncounter("Altar"));
+      break;
+
+    default:
+      console.log("ERROR: Missing generator definition!");
+  }
+}
+
+function chooseFrom(array=[]){
+  //console.log("Choices: "+array);
+  var options = array.length
+  var choice = array[Math.floor(Math.random() * options)];
+  console.log("Chosen: "+choice+"\nFrom: "+array);
+  return choice;
 }
 
 //UI DRAW FUNCTIONS
 function redraw(){
   //Version
-  document.getElementById('id_version').innerHTML = versionCode;
+  versionIDUIElement = document.getElementById('id_version')
+  versionIDUIElement.innerHTML = versionCode+" <br>(#"+adventureEncounterCount+")";
 
   //Player UI
   playerInfoUIElement = document.getElementById('id_player_info');
@@ -342,15 +507,17 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
   playerStatusString += "&nbsp;&nbsp;"
+
   if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
-  playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
+  if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
+
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString;
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;";
   }
   if (playerLootString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "&nbsp;<b>Loot:</b> "+playerLootString;
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Bag: </b> "+playerLootString;
   }
   if (playerPartyString.length+playerLootString.length == 0) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
@@ -378,10 +545,11 @@ function redraw(){
   enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
+  var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
   enemyTeamUIElement.innerHTML="";
   switch(enemyType){
     case "Boss":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorRed);
+      enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorGold);
       enemyStatusString=appendEnemyStats()
       break;
     case "Pet":
@@ -426,7 +594,6 @@ function redraw(){
 
     case "Item":
     case "Trap":
-      var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
       if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
       } else if (totalEffect < 0 ) {
@@ -445,7 +612,11 @@ function redraw(){
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
       break;
     case "Altar":
-      enemyStatusString=decorateStatusText("♦️","Place of Worship",colorRed);
+      if (totalEffect>0){
+        enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
+      } else {
+        enemyStatusString=decorateStatusText("♦️","Place of Worship",colorRed);
+      }
       break;
     case "Fishing":
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
@@ -463,10 +634,9 @@ function redraw(){
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
-      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
-      if (enemyContainerNumber>2) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
+      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
-      if (enemyType.includes("Consumable")) enemyStatusString =decorateStatusText("❤️","Refreshment","#FFFFFF")
+      if (enemyType.includes("Consumable")) enemyStatusString=decorateStatusText("❤️","Refreshment","#FFFFFF")
       break;
   }
 
@@ -490,9 +660,10 @@ function redraw(){
 
       default:
         displayPlayerState(); //Default values do just fine
+        if (enemyStatusString.includes("Unremarkable")||enemyType=="Container") displayPlayerState("Relaxed","#509920","2.5"); //I need this to be overwritable by the below
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
         if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("Combat",colorRed,"1");
+        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
         break;
     }
   }
@@ -639,7 +810,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            if (enemyType.includes("Container")){
+            if (enemyType.includes("Container") && !enemyType.includes("Locked")){
               var openMessage = "Smashed it wide open -1 🟢";
               if (enemyMsg != ""){
                 openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
@@ -761,7 +932,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Prop":
             isLooting=false;
-            logPlayerAction(actionString,"Continued on the adventure.");
+            if (enemyMsg!=""){
+              logPlayerAction(actionString,enemyMsg)
+            } else {logPlayerAction(actionString,"Continued on the adventure.");}
             nextEncounter();
             break;
           case "Container-Friend":
@@ -1308,7 +1481,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Small":
             if ((enemySta-enemyStaLost)==0) {
-              logPlayerAction(actionString,"Grabbed it into pocket.");
+              logPlayerAction(actionString,"Grabbed it into their bag.");
               playerLootString+=" "+enemyEmoji;
               displayEnemyEffect("👋");
               nextEncounter();
@@ -1339,7 +1512,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
-            if (playerUseItem("🪱","Successfully fished out something.","Missing some fishing bait.")){
+            if (playerUseItem("🪱","Successfully fished out something.","Missing a viable fishing bait.")){
               getRandomLoot();
               displayEnemyEffect("🪝");
             } else {
@@ -1349,14 +1522,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Demon":
           case "Spirit":
-            logPlayerAction(actionString,"Hands seemed to pass through them.");
+            logPlayerAction(actionString,"Could not get a handle of it.");
             displayEnemyEffect("✋");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
 
           case "Death":
-            logPlayerAction(actionString,"Sent a message to the universe.");
+            logPlayerAction(actionString,"Echoed a message to the universe.");
             redirectToFeedback();
             break;
 
@@ -1581,9 +1754,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
     };
-    if (!isLooting) {
-      loadEncounter(encounterIndex);
-    } else {
+    if (isLooting) {
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
@@ -1595,6 +1766,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 function enemyRest(stamina){
   if (enemyHp - enemyHpLost > 0){
     animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
+    if (document.getElementById('id_enemy_overlay').innerHTML!= "💢") displayEnemyEffect("⏳")
     enemyStaLost-=stamina;
     if (enemyStaLost < 0) {
       enemyStaLost = 0;
@@ -1627,7 +1799,7 @@ function enemyHit(damage,magicType=false) {
   var critChance = Math.floor(Math.random() * luckInterval);
   if ( critChance <= playerLck ){
     logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
-    hitMsg="Attacked hit them critically -"+(damage+2)+" 💔";
+    hitMsg="Attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
   }
@@ -1730,7 +1902,6 @@ function enemyCastIfMgk(hit=true){
 }
 
 //Encounters
-
 function isfreePrayEncounter(){
   var returnValue = false;
     switch (enemyType){
@@ -1760,14 +1931,15 @@ function getRandomLoot(){
 }
 
 function nextEncounter(animateArea=true){
+  //console.log("EnemyType: \n"+enemyType); //Note: Even generator encounters go through here :)
+  if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
   previousEnemyType = enemyType;
+
   if (animateArea) {
-    animateUIElement(areaUIElement,"animate__flipInX","1");
     toggleUIElement(areaUIElement,1);
+    animateUIElement(areaUIElement,"animate__flipInX","1");
   }
 
-  adventureEncounterCount+=1;
-  markAsSeen(encounterIndex);
   encounterIndex = getNextEncounterIndex();
 
   playerRested=false;
@@ -1778,17 +1950,13 @@ function nextEncounter(animateArea=true){
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
   }
-  animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  animateUIElement(cardUIElement,"animate__fadeIn","1");
   previousArea = areaName;
 }
 
 function animateFlipNextEncounter(){
-  animateUIElement(areaUIElement,"animate__flipOutX","1.2"); //Uuuu nice!
-  //toggleUIElement(areaUIElement);
-
-  var versusTextUIElement = document.getElementById('id_versus');
-  //toggleUIElement(versusTextUIElement);
-  animateUIElement(cardUIElement,"animate__flipOutY","1.2"); //Maybe this will look better?
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
 
   var animationHandler = function(){
     nextEncounter();
@@ -1954,10 +2122,23 @@ function playerConsumed(){
   var consumedString="Replenished resources"
   if (enemyMsg!="") consumedString=enemyMsg;
 
-  if (enemyHp<0){
-    if (enemyMsg=="") consumedString="That did not taste good ";
-    logPlayerAction(actionString,consumedString+" "+enemyHp+" 💔");
-    playerHit(-1*enemyHp);
+  if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0){
+    if (enemyMsg=="") consumedString="That did not taste good";
+
+    if (enemyHp!=0) {
+      consumedString+=" "+enemyHp+" 💔"
+      playerHit(-1*enemyHp);
+      }
+
+    if (enemySta!=0){
+      consumedString+=" "+enemySta+" 🟢"
+      playerSta+=enemySta;
+    }
+
+    //function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true){
+    playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyInt,"n/a",false,false);
+
+    logPlayerAction("🤮",consumedString);
     return;
   }
 
@@ -2038,39 +2219,31 @@ function playerReincarnate(){
 }
 
 //End Game
-function getTime(){
-  var currentDate = new Date();
-  var time = currentDate.getDate() + "-"
-                  + currentDate.getMonth() + "-"
-                  + String(currentDate.getFullYear()).substr(-2) + " @ "
-                  + currentDate.getHours() + ":"
-                  + currentDate.getMinutes()+ ":"
-                  + currentDate.getSeconds();
-  return time;
-}
-
 function gameOver(){
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")) enemyMsg="Got killed, ending the adventure.";
   logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
-  nextEncounter();
-  animateUIElement(cardUIElement,"animate__flipInY","1");
   playerSta=0; //You are just tired when dead :)
+  nextEncounter();
+  animateUIElement(cardUIElement,"animate__flipInY","1.2");
+
+  //Reset generated data
   resetSeenEncounters();
+  processStoryData(storyData,false);
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
-  var winMessage="🧠 ▸ 💭 Is this deja vu? Feels familiar. (NG+)";
+  //alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
+  var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
 
   //Reset progress to game start
   resetSeenEncounters();
-  encounterIndex=4;
-  alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
+  processStoryData(storyData,false);
 }
 
 //Logging
@@ -2089,6 +2262,17 @@ function logAction(message){
   if (actionLog.split("<br>").length > 3) {
     actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
   }
+}
+
+function getTime(){
+  var currentDate = new Date();
+  var time = currentDate.getDate() + "-"
+                  + currentDate.getMonth() + "-"
+                  + String(currentDate.getFullYear()).substr(-2) + " @ "
+                  + currentDate.getHours() + ":"
+                  + currentDate.getMinutes()+ ":"
+                  + currentDate.getSeconds();
+  return time;
 }
 
 //UI Buttons
@@ -2226,7 +2410,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="✨ Embrace";
+      document.getElementById('button_grab').innerHTML="✨ Praise";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
@@ -2273,7 +2457,7 @@ function curtainFadeInAndOut(message=""){
 }
 
 function displayEnemyEffect(message){
-  displayEffect(message,document.getElementById('id_enemy_overlay'));
+  displayEffect(message,document.getElementById('id_enemy_overlay'),"1.5");
 }
 
 function displayPlayerEffect(message){
@@ -2354,6 +2538,14 @@ function registerClickListeners(){
   document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
   document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
   document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+
+  versionIDUIElement.addEventListener(eventType, ()=> {
+    actionString="⚙️"
+    adventureEndTime=getTime();
+    copyAdventureToClipboard();
+    redraw();
+  });
+
 
   document.getElementById('id_player_name').addEventListener(eventType, ()=>{
     playerName=prompt("Name your character: ");
