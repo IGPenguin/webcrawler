@@ -2312,8 +2312,8 @@ function logAction(message){
 
 function getTime(){
   var currentDate = new Date();
-  var time = currentDate.getDate() + "-"
-                  + currentDate.getMonth() + "-"
+  var time = currentDate.getDate() + "/"
+                  + currentDate.getMonth() + "/"
                   + String(currentDate.getFullYear()).substr(-2) + " • "
                   + currentDate.getHours() + ":"
                   + currentDate.getMinutes()+ ":"
