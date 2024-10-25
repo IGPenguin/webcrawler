@@ -433,6 +433,14 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Demon"));
       break;
 
+    case 7: //Friend
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Friend"));
+      break;
+
+    case 8: //Pet
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Pet"));
+      break;
+
     case 9: //Item
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Item"));
       break;
