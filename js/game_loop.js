@@ -2314,7 +2314,7 @@ function getTime(){
   var currentDate = new Date();
   var time = currentDate.getDate() + "-"
                   + currentDate.getMonth() + "-"
-                  + String(currentDate.getFullYear()).substr(-2) + " @ "
+                  + String(currentDate.getFullYear()).substr(-2) + " • "
                   + currentDate.getHours() + ":"
                   + currentDate.getMinutes()+ ":"
                   + currentDate.getSeconds();
