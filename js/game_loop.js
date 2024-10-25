@@ -2260,7 +2260,7 @@ function playerReincarnate(){
   renewPlayer();
   encounterIndex=3; //Skip tutorial
   playerSta=playerStaMax; //Renew stamina (its empty initially)
-  adventureEncounterCount = -6; //Death + tutorial
+  adventureEncounterCount = -1; //Death + tutorial
   nextEncounter();
 }
 
