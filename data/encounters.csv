@@ -136,7 +136,7 @@ Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Cou
 Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Smells terrible... still tempting though.<br>;Barely held it inside
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;1;0;-1;0;Stale Delicacy;Wonder how it tastes?<br>;That was not worth it
 Forsaken Village;💩;Steaming Pile;Consumable;-2;0;-2;0;-2;0;Trace of Life;No interaction recommended.<br>;That was disgusting
-🥟🍌🍊🥕🍅🥦🫐🍐🧅🧄🥖🍞🥐🥨🪺
+🥟🍌🍊🥕🍅🥦🧅🧄🥖🍞🥐🥨🪺
 
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;
 Forsaken Village;🔱;Altar of Haste;Altar;-1;0;1;0;0;0;Ritual Place;There's a blood on the surface.<br>;
@@ -153,7 +153,7 @@ Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange th
 Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
 //Depriving Fairyland
-🦒🦓🐫🦜🐆🐅🦧🦍, 🥢🥜🫘🏺
+🦜🐆🐅,🥢🏺
 
 Depriving Fairyland;💭;Random Thought;Prop;0;0;0;0;0;0;Epiphany;n/a<br>;
 Depriving Fairyland;🏺;Painted Amphora;Prop;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
@@ -186,19 +186,30 @@ Depriving Fairyland;🦆;Stubborn Drake;Swift;3;1;2;0;2;0;Beast;Uhh. Peace was a
 Depriving Fairyland;🦟;Oversized Mosqito;Swift;2;2;2;0;10;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
 
 Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
+Depriving Fairyland;🦧;Ginger Ape;Heavy;2;2;2;0;5;0;Wild Beast;Probably has no soul.<br>;
+Depriving Fairyland;🦍;Native Ape;Heavy;3;2;1;0;5;0;Wild Beast;Buffed and ready to fight.<br>;
+Depriving Fairyland;🦏;Massive Rhino;Heavy;3;3;1;0;5;0;Wild Beast;Its majestic horn looks rather deadly.<br>;
 
-Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Laughs out loud minacally.<br>;No mercy for the wicked.
-Depriving Fairyland;🧙‍♂️;Bloody Cultist;Demon;2;1;1;0;2;2;Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Depriving Fairyland;👿;Laughing Devil;Demon;2;1;1;0;0;1;Imminent Threat;Laughs out loud maniacally.<br>;
+Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
+Depriving Fairyland;🧙‍♂️;Bloody Cultist;Demon;2;1;1;0;2;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
+Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>;Received their blessing.
+Depriving Fairyland;🐫;Bumpy Horse;Pet;2;0;1;0;2;0;Mythical Creature;Strange horse approached.<br>;Survival instincts increased.
+🦒
 
 Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
 
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
 
+Depriving Fairyland;🍐;Ripe Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
+Depriving Fairyland;🫐;Berries;Consumable;0;0;0;0;0;0;Forest Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>;
 Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
+Depriving Fairyland;🥜;Sweet Peanuts;Consumable;0;0;0;0;0;0;Crunchy Food;Seems like a good snack.<br>;
+Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>;
 Depriving Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>;That was delicious
 Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented.
 

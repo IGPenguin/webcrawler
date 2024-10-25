@@ -1300,7 +1300,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
                 displayPlayerCannotEffect();
               } else {
-                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"Received a blessing from gods.",true);
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"Received a god's blessing.",true);
                 displayPlayerEffect("✨")
                 displayPlayerGainedEffect();
               }
@@ -1501,7 +1501,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             playerLootString+=enemyEmoji;
             displayEnemyEffect("👋");
-            playerChangeStats();
+            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             isLooting=false;
             break;
 
@@ -2078,6 +2078,7 @@ function playerUseMagic(magic, message = ""){
 function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true,actionIcon=actionString){
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
+  if (gainedString=="") gainedString="Might come in handy later."
 
   if ((totalBonus >= 0) && gainedString=="Might come in handy later."){
     if (totalBonus !=0){
