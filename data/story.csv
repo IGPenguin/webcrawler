@@ -36,13 +36,14 @@ Forsaken Village;🏹;Radiating Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;The pile
 Forsaken Village;❓;Mid Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX
-//Consumable
-//Boss
-Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
-
+Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
+//TODO: Randomize boss
+Forsaken Village;🐻;Fearsome Grizzly;Boss;5;2;2;0;5;0;Reanimated;Packs a painful punch.;Got torn to tiny pieces.
+Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>;Ouch! There are sharp thorns
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
 Depriving Fairyland;🌻;Sunflower Growth;Container;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
+Depriving Fairyland;🎶;Lovely Song;Prop;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;Continued towards the source.
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 //TODO: Missing whole another area
 

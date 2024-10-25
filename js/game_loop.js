@@ -401,7 +401,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
   if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Knowledge")) enemyDesc=getProphecy();
-  if (enemyTeam.includes("Epiphany")) enemyDesc="<i>This thought came to mind:</i><br>"+getProphecy().replace("<br>","");
+  if (enemyTeam.includes("Epiphany")) enemyDesc="<i>Thought came to mind:</i><br>"+getProphecy().replace("<br>","");
   if (enemyTeam.includes("Prophet")) enemyDesc="<i>Has something to say:</i><br>"+getProphecy().replace("<br>","");
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
