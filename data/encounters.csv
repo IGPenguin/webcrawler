@@ -53,6 +53,7 @@ Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Bui
 Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
+Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion
 Forsaken Village;🐈;Strange Cat;Friend;0;0;0;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
 
@@ -125,7 +126,7 @@ Forsaken Village;️🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pear
 ⏳📯💠🎴🀄⚜️💛📣
 
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
-Forsaken Village;🍏;Bitten Apple;Consumable;0;0;-2;0;0;0;Fresh Fruit;There is a huge bite mark.<br>;Nausea took over
+Forsaken Village;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
 Forsaken Village;🍓;Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍑;Juicy Peach;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
@@ -134,7 +135,8 @@ Forsaken Village;🍄;Strange Shroom;Consumable;-1;0;0;0;2;0;Suspicious Growth;I
 Forsaken Village;🍗;Fresh Meat;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Smells terrible... still tempting though.<br>;Barely held it inside
-Forsaken Village;💩;Steaming Pile;Consumable;-2;0;-2;0;-2;0;Trace of Life;No interaction recommended.<br>;Ugh. Super disgusting
+Forsaken Village;🍷;Sour Wine;Consumable;0;0;1;0;-1;0;Stale Delicacy;Wonder how it tastes?<br>;That was not worth it
+Forsaken Village;💩;Steaming Pile;Consumable;-2;0;-2;0;-2;0;Trace of Life;No interaction recommended.<br>;That was disgusting
 🥟🍌🍊🥕🍅🥦🫐🍐🧅🧄🥖🍞🥐🥨🪺
 
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;

@@ -10,8 +10,10 @@ if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes 
 var colorWhite = "#FFFFFF";
 var colorGold = "#FFD940";
 var colorGreen = "#22BF22";
+var colorDarkGreen = "#509920";
 var colorRed = "#FF0000";
 var colorGrey = "#CCCCCC";
+var colorDarkGrey = "#888888";
 var colorOrange = "orange";
 var colorBlue = "#1059AA";
 
@@ -398,7 +400,9 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
-  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Knowledge")) enemyDesc=currentProphercy;
+  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Knowledge")) enemyDesc=getProphecy();
+  if (enemyTeam.includes("Epiphany")) enemyDesc="<i>This thought came to mind:</i><br>"+getProphecy().replace("<br>","");
+  if (enemyTeam.includes("Prophet")) enemyDesc="<i>Has something to say:</i><br>"+getProphecy().replace("<br>","");
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
@@ -651,6 +655,9 @@ function redraw(){
         break;
 
       case "Curse":
+      case "Trap":
+      case "Trap-Roll":
+      case "Trap-Attack":
         displayPlayerState("Suspicious",colorOrange,"1")
         break;
 
@@ -660,7 +667,9 @@ function redraw(){
 
       default:
         displayPlayerState(); //Default values do just fine
-        if (enemyStatusString.includes("Unremarkable")||enemyType=="Container") displayPlayerState("Relaxed","#509920","2.5"); //I need this to be overwritable by the below
+        if (enemyStatusString.includes("Unremarkable")||enemyType=="Container") displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
+        if (playerSta==1) displayPlayerState("Fatigued",colorDarkGrey,"2"); //I need this to be overwritable by the below
+        if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
         if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
         if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
@@ -1367,7 +1376,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Friend": //They'll boost your stats
           if (playerMgk >= enemyMgk){
             logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyMsg);
           } else {
             logPlayerAction(actionString,"Could not overpower their will -2 🔵");
             displayPlayerCannotEffect();
@@ -1629,10 +1638,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll boost your stats
             if (playerInt >= enemyInt){
-              playerChangeStats();
+              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
               displayPlayerEffect("💬");
             } else {
-              logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
+              logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
               displayPlayerCannotEffect();
             }
             break;
@@ -2049,7 +2058,7 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true){
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true,actionIcon=actionString){
   var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
   var changeSign=" +";
 
@@ -2061,7 +2070,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     gainedString="Got cursed by it";
   }
 
-  if (enemyMsg != "") {
+  if (enemyMsg != "" && gainedString == "") {
     gainedString = enemyMsg;
   }
 
@@ -2113,32 +2122,43 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     displayPlayerEffect("🪬");
   }
 
+
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
-  if (logMessage) logPlayerAction(actionString,gainedString);
+  if (logMessage) {
+    logPlayerAction(actionIcon,gainedString);
+  }
   if (moveForward) nextEncounter();
 }
 
 function playerConsumed(){
   var consumedString="Replenished resources"
+  var sign = "";
+
   if (enemyMsg!="") consumedString=enemyMsg;
 
   if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0){
     if (enemyMsg=="") consumedString="That did not taste good";
 
+    //Just sets up the consumed string
     if (enemyHp!=0) {
+      if (enemyHp > 0) sign="+"
       consumedString+=" "+enemyHp+" 💔"
-      playerHit(-1*enemyHp);
-      }
+    }
 
     if (enemySta!=0){
-      consumedString+=" "+enemySta+" 🟢"
-      playerSta+=enemySta;
+      if (enemySta > 0) sign="+"
+      consumedString+=" "+sign+enemySta+" 🟢"
+      playerUseStamina(-1*enemySta);
     }
 
     //function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true){
-    playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyInt,"n/a",false,false);
-
-    logPlayerAction("🤮",consumedString);
+    playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,"🤮");
+    //Actually danages here, to log potential lucky dmg avoidance at the right  time
+    if (enemyHp<0){
+      playerHit(-1*enemyHp);
+    } else if (enemyHp>0) {
+      playerHp+=enemyHp;
+    }
     return;
   }
 
@@ -2159,7 +2179,7 @@ function playerConsumed(){
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
     playerSta+=1; //Gain bonus stamina
-    consumedString="Got temporary energy bonus +1 🟢";
+    consumedString="Got a temporary energy bonus +1 🟢";
     //consumedString="Actively digesting the food -1 🟢";
     //animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
     //playerUseStamina(1);
