@@ -324,15 +324,15 @@ function getRandomEncounter(type="") {
   //drop all seen names
   console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
-    console.log("Dropping: "+seenEncounterName);
+    //console.log("Dropping: "+seenEncounterName);
 
     //Hopefully this finally works, backups below 🤣
     tempLinesGenerator = tempLinesGenerator.filter(a => a !== seenEncounterName)
     //tempLinesGenerator = tempLinesGenerator.filter(function(a){return a !== seenEncounterName})
-
     //var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf("name:"+seenEncounterName))
     //if (index !== -1) tempLinesGenerator.splice(index, 1);
   });
+  console.log("Options post-dropping:\n"+tempLinesGenerator);
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
   var max = tempLinesGeneratorTotal;
