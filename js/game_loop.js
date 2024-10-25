@@ -429,6 +429,14 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Swift"));
       break;
 
+    case 6: //Demon Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Demon"));
+      break;
+
+    case 9: //Item
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Item"));
+      break;
+
     case 11: //Container Small
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
@@ -449,6 +457,11 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Item"));
       break;
 
+    case 23: //Mid Enemy + Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      break;
+
     case 10: //Container Consumable
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
@@ -457,6 +470,10 @@ function generateNextEncounters(count=1){
     case 17: //Container Standard/Pet/Friend
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Pet","Friend"])));
+      break;
+
+    case 30: //Container-3 Empty
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
       break;
 
     case 31: //Container >> Mid Enemy >> Loot

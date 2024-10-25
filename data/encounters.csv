@@ -1,10 +1,9 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Forsaken Village
-
 Forsaken Village;🦴;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Forsaken Village;🫙;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-Forsaken Village;🏺;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Forsaken Village;🏺;Painted Amphora;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Forsaken Village;🪹;Empty Nest;Prop-Small;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
 Forsaken Village;🚪;Exit Door;Prop-Exit;0;0;0;0;0;0;Way Out;It is finally over.<br>;Closed the door behind.
@@ -155,39 +154,58 @@ Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Pla
 
 //Depriving Fairyland
 🦒🦓🐫🦜🐆🐅🦧🦍, 🥢🥜🫘🏺
+
 Depriving Fairyland;💭;Random Thought;Prop;0;0;0;0;0;0;Epiphany;n/a<br>;
-Forsaken Village;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
-Depriving Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>;
-Depriving Fairyland;🧀;Old Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Actually smells terrible.<br>Still tempting though.;Barely held it inside
-Depriving Fairyland;🥔;Dirty Potato;Consumable;0;0;0;0;0;0;Vegetable;Looks suspiciously fresh.<br>;Actually tasted quite good.
-Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
-Depriving Fairyland;🌻;Sunflower Growth;Container;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
-Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
-Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
-Depriving Fairyland;🌿;Fern Weeds;Container-2;0;0;0;0;0;0;Wild Flora;Chance to catch a breath.<br>;Revealed a strange growth.
-Depriving Fairyland;🍄;Suspicious Mushroom;Consumable-Container;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented in time.
-Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
-Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
+Depriving Fairyland;🏺;Painted Amphora;Prop;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Depriving Fairyland;🌻;Lonely Sunflower;Prop;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
+
+Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hiding there.
+
+Depriving Fairyland;🌾;Tall Grass;Container-2;0;0;0;0;0;0;Dense Flora;Thick growth obscuring something.<br>;
+Depriving Fairyland;🌻;Bunch of Sunflowers;Container-2;0;0;0;0;0;0;Wild Flora;Something seems hidden in there.<br>;
+Depriving Fairyland;🌿;Fern Weeds;Container-2;0;0;0;0;0;0;Wild Flora;Chance to catch a breath.<br>;Revealed a strange sight.
+Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
+//;Depriving Fairyland;🍯;Sweet Honeypot;Container-2;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
+
+Depriving Fairyland;🌾;Owergrown Reeds;Container-3;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
+Depriving Fairyland;🌾;Thick Grass;Container-3;0;0;0;0;0;0;Dense Flora;Thick growth obscuring something.<br>;
 Depriving Fairyland;🌾;Tall Grass;Container-3;0;0;0;0;0;0;Dense Flora;Thick growth obscuring something.<br>;
-Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;0;0;Malvolent Instrument;Decorated magical equipment.<br>;Grabbing it seems bad luck.
-Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
-Depriving Fairyland;🦋;Sapphire Moth;Item;0;0;0;0;0;1;Artifact;Pearlescent and classy accessory.<br>;Felt a surge of energy
-Depriving Fairyland;🦨;Forest Skunk;Swift;2;2;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
-Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;A knife was stuck into it.
-Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;0;Magic Artifact;The sacrifical blade demands blood.<br>;Released some energy from the inside.
-Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Laughs out loud minacally.<br>;No mercy for the wicked.
-Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>Something seems hiding among them.;
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
-Depriving Fairyland;🍯;Sweet Honeypot;Container-2;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
-Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run.;
-Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
-Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🏛️;Ancient Temple;Container-3;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
-Depriving Fairyland;🧙‍♂️;Bloody Cultist;Standard;2;1;1;0;2;2;Mythical Beast;Eyes are glowing blue.<br>;Sacrificed to the great evil.
-Depriving Fairyland;🎗️;Golden Trinket;Item;1;0;0;0;0;0;Artifact;Reflected sunlight draws the eyesight.<br>;Stuck deep into the skin.
-Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
-Depriving Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
+
+Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
+
+Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
+
+Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
+Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
+
+Depriving Fairyland;🦨;Forest Skunk;Swift;2;2;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>Fight or flight.;
+Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
+Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;Ton of bees swarmed the area.<br>;There was nowhere to run.
 Depriving Fairyland;🦆;Stubborn Drake;Swift;3;1;2;0;2;0;Beast;Uhh. Peace was an option?<br>;Honked to death.
+Depriving Fairyland;🦟;Oversized Mosqito;Swift;2;2;2;0;10;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
+
+Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
+
+Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Laughs out loud minacally.<br>;No mercy for the wicked.
+Depriving Fairyland;🧙‍♂️;Bloody Cultist;Demon;2;1;1;0;2;2;Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;2;0;Mythical Creature;Strange horse approached.<br>Intentions are unclear.;Received their blessing.
+Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
+
+Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
+
+Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
+
+Depriving Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>;
+Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
+Depriving Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>;That was delicious
+Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented.
+
+Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Magic Artifact;The sacrifical blade demands blood.<br>;Released some energy from the inside.
+Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;1;0;0;-2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds
+Depriving Fairyland;🦋;Sapphire Moth;Item;0;0;0;0;0;1;Artifact;Pearlescent and classy accessory.<br>;Felt a surge of energy
+Depriving Fairyland;🎗️;Golden Trinket;Item;1;0;0;0;0;0;Artifact;Reflected sunlight draws the eyesight.<br>;Stuck deep into the skin.
 
 //Somber Backwoods
 Somber Backwoods;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;There's a blood on the surface.<br>;
