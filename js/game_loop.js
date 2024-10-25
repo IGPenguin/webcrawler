@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/25/24 • 2:41 pm"
+var versionCode = "fpm 10/25/24 • 5:55 pm"
 var initialEncounterOverride=0; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -327,7 +327,8 @@ function getRandomEncounter(type="") {
     //console.log("Dropping: "+seenEncounterName);
 
     //Hopefully this finally works, backups below 🤣
-    tempLinesGenerator = tempLinesGenerator.filter(a => a !== seenEncounterName)
+    //TODO: FIX (maybe check fishing loot seen?) - tempLinesGenerator = tempLinesGenerator.filter(a => a !== seenEncounterName)
+
     //tempLinesGenerator = tempLinesGenerator.filter(function(a){return a !== seenEncounterName})
     //var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf("name:"+seenEncounterName))
     //if (index !== -1) tempLinesGenerator.splice(index, 1);
