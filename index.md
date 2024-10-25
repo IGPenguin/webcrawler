@@ -218,8 +218,8 @@ layout: default
 
 <p style="margin:8px"></p>
 
-<div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/webcrawler/';">
-<h4 style="font-size:11px; opacity:0.9; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/webcrawler/">IGPenguin</a></h4>
+<div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/webcrawler/pulls?q=is%3Apr+is%3Aclosed';">
+<h4 style="font-size:11px; opacity:0.9; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/webcrawler/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
 </div>
 
 <div id="id_bug" style="cursor: pointer;">
