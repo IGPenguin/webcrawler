@@ -1988,6 +1988,9 @@ function getRandomLoot(){
 }
 
 function nextEncounter(animateArea=true){
+  //Visual variety ++
+  emojiUIElement.style.transform=chooseFrom("scaleX (-1)","scaleX (1)");
+
   //console.log("EnemyType: \n"+enemyType); //Note: Even generator encounters go through here :)
   if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
   previousEnemyType = enemyType;

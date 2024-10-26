@@ -62,16 +62,16 @@ Forsaken Village;🐶;Good Boy;Pet;2;1;1;0;0;0;Animal;Playfully bites around its
 Forsaken Village;🦝;Cute Coon;Pet;2;1;2;0;10;0;Smart Beast;Probably has a heart of gold.<br>;Died by contracting rabies.
 🫏🐥🐇🐈
 
-Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Earthworm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪰;Pesky Fly;Small;1;0;3;0;10;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Forsaken Village;🦋;Skyblue Butterfly;Small;1;0;2;0;10;0;Stunning Insect;Flies from one flower to another.<br>;How could this happen?
-Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;10;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Forsaken Village;🐀;Tiny Mouse;Small;1;1;2;0;10;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;10;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
-Forsaken Village;🐜;Forest Ant;Small;1;1;2;0;10;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
-Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;10;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
+Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪰;Pesky Fly;Small;1;0;3;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Forsaken Village;🦋;Skyblue Butterfly;Small;1;0;2;0;-1;0;Stunning Insect;Flies from one flower to another.<br>;How could this happen?
+Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Forsaken Village;🐀;Tiny Mouse;Small;1;1;2;0;-1;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;-1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
+Forsaken Village;🐜;Forest Ant;Small;1;1;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
+Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
 🐛🦟🦗
 
 ;//8-10
@@ -80,7 +80,6 @@ Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Lost Animal;Seems starvin
 Forsaken Village;🐐;Screaming Goat;Standard;1;1;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
 Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;10;0;Wild Robber;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Peace was never an option.<br>;Pecked to death.
-Forsaken Village;🦂;Fierce Scorpion;Standard;1;2;1;0;10;0;Animal;Usually goes for the ankles.<br>;Pinched to death.
 Forsaken Village;🦃;Frenzied Turkey;Standard;1;1;3;0;10;0;Domestic Animal;Usually goes for the ankles.<br>;Pinched to death.
 //;Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
 🐖🐢
@@ -93,6 +92,7 @@ Forsaken Village;🦅;Bald Eagle;Swift;1;3;1;0;1;0;Wild Animal;Attacks from high
 Forsaken Village;🐀;Dire Rat;Swift;1;1;2;0;10;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🐿️;Greedy Chipmunk;Swift;1;1;2;0;10;0;Wild Animal;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;Venomous Insect;Usually goes for the ankles.<br>;Pinched to death.
 
 Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
 Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
