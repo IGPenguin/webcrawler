@@ -497,9 +497,9 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
-    case 17: //Container Standard/Pet/Friend
+    case 17: //Container Pet/Friend
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Pet","Friend"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Pet","Friend"])));
       break;
 
     case 30: //Container-3 Empty
