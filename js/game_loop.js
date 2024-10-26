@@ -350,7 +350,7 @@ function getRandomEncounter(type="") {
     //var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf("name:"+seenEncounterName))
     //if (index !== -1) tempLinesGenerator.splice(index, 1);
   });
-  console.log("Options post-dropping:\n"+tempLinesGenerator);
+  //console.log("Options post-dropping:\n"+tempLinesGenerator);
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
   var max = tempLinesGeneratorTotal;
@@ -537,7 +537,7 @@ function chooseFrom(array=[]){
   //console.log("Choices: "+array);
   var options = array.length
   var choice = array[Math.floor(Math.random() * options)];
-  console.log("Chosen: "+choice+"\nFrom: "+array);
+  //console.log("Chosen: "+choice+"\nFrom: "+array);
   return choice;
 }
 
@@ -715,10 +715,12 @@ function redraw(){
         break;
 
       default:
-        displayPlayerState(); //Default values do just fine
-        if (enemyStatusString.includes("Unremarkable")||enemyType=="Container") displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
-        if (playerSta==1) displayPlayerState("Fatigued",colorDarkGrey,"2"); //I need this to be overwritable by the below
-        if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
+        displayPlayerState(); //Cautious by default
+        if (enemyType.includes("Container") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"){
+          if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
+          if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorDarkGrey,"2"); //I need this to be overwritable by the below
+          if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
+        }
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
         if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
         if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
@@ -1605,7 +1607,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Checkpoint": //Move to upgrade
             isLooting=false;
-            displayPlayerEffect("✨");
             logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
@@ -2404,6 +2405,7 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (isLooting) setButton('button_roll',"❌ Ditch");
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       if (enemyEmoji=="🛶") setButton("button_walk","🛶 Sail");
       break;
