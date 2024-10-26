@@ -54,7 +54,7 @@ function renewPlayer(){ //Default values
   playerHp = playerHpMax;
   playerStaMax = 3;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
-  playerMgkMax = 0;
+  playerMgkMax = 3;
   playerAtk = 1;
   playerDef = 0; //TODO: Make use of when getting hit not by magic
   playerLck = 1;
@@ -813,7 +813,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Spirit":
             displayEnemyEffect("💨");
-            enemyAttackOrRest("Cannot hit, eerie limbs retaliated -"+enemyAtk+" 💔");
+            enemyAttackOrRest("Impossible to hit, they retaliated -"+enemyAtk+" 💔");
             break;
 
           case "Friend":
@@ -823,7 +823,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyType="Standard";
             } else {
               logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
-              displayEnemyEffect("〽️");
+              displayEnemyEffect("💨");
               nextEncounter();
               break;
             }
@@ -1162,6 +1162,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyType="Standard";
             } else {
               logPlayerAction(actionString,"Magic spooked them away -1 🔵");
+              displayEnemyEffect("💨");
               nextEncounter();
               break;
             }
@@ -1464,7 +1465,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"Unable to initiate a bond ?? 🧠");
+                logPlayerAction(actionString,"Unable to initiate relationship ?? 🧠");
                 nextEncounter();
                 break;
               }
@@ -1483,6 +1484,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
                 logAction("🍀 ▸ ✋ Touched them, they were spooked.");
+                displayEnemyEffect("💨");
                 displayPlayerEffect("🍀");
                 nextEncounter();
                 break;
@@ -1495,6 +1497,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               if (enemyType=="Pet"){
                 logAction(enemyEmoji+" ▸ 😱 They got spooked and fled!");
+                displayEnemyEffect("💨");
                 nextEncounter();
               }
             }
@@ -1580,8 +1583,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Demon":
           case "Spirit":
-            logPlayerAction(actionString,"Could not get a handle of it.");
-            displayEnemyEffect("✋");
+            logPlayerAction(actionString,"Missed, they are untouchable.");
+            displayEnemyEffect("🌀");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
