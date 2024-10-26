@@ -90,6 +90,7 @@ var nameUIElement;
 var cardUIElement;
 var emojiUIElement;
 var emojiWrapperUIElement;
+var emojiFlipperUIElement;
 var enemyInfoUIElement;
 var playerInfoUIElement;
 var toolbarCardUIElement;
@@ -583,7 +584,8 @@ function redraw(){
   enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
   emojiWrapperUIElement = document.getElementById('id_emoji_wrapper');
-  emojiWrapperUIElement.style.transform=enemyEmojiScaleX; //Visual variety ++
+  emojiFlipperUIElement = document.getElementById('id_emoji_flipper');
+  emojiFlipperUIElement.style.transform=enemyEmojiScaleX; //Visual variety ++
   enemyTeamUIElement = document.getElementById('id_team');
 
   emojiUIElement.innerHTML = enemyEmoji;
@@ -2627,9 +2629,7 @@ function registerClickListeners(){
 
   document.getElementById('id_player_name').addEventListener(eventType, ()=>{
     playerName=prompt("Name your character: ");
-    if (!playerName.replace(/\s/g, '').length){
-      playerName="Nameless Character";
-    }
+    if (playerName.length<=0 || playerName==null) playerName="Nameless Character";
     redraw();
   });
 }

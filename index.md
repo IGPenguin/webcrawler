@@ -47,7 +47,7 @@ layout: default
   <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
-<div style="margin-bottom:14px;
+<div id = "id_emoji_flipper" style="margin-bottom:14px;
                               box-shadow:
                                 0px 0px 0px 3px #121212;
                               padding-bottom:0px;
