@@ -26,16 +26,16 @@ Forsaken Village;❓;Swift Enemy;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
 Forsaken Village;❓;Cursed House;Generator-36;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🎯;Archery Range;Prop;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
+Forsaken Village;🦴;Pile of Bones;Container-2;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
+Forsaken Village;❓;Small Enemy;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;❓;Advanced Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
 Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;🎯;Archery Range;Container-4;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
-Forsaken Village;🦴;Pile of Bones;Container-2;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
-Forsaken Village;❓;Small Enemy;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Advanced Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX

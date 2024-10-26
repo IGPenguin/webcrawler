@@ -97,6 +97,7 @@ Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;Venomous;Dangerous tail
 
 Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
 Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
+Forsaken Village;🧹;Possesed Broom;Demon;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Forsaken Village;🐗;Old Warthog;Heavy;2;2;1;0;5;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
@@ -109,7 +110,7 @@ Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of s
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
 Forsaken Village;🔪;Small Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
 Forsaken Village;🧹;Crippling Broom;Item;0;1;-1;0;-1;0;Cursed Tool;Looks ridiculous and slows movement.<br>;Awkward to hold
-Forsaken Village;⛏;Hefty Pickaxe;Item;0;1;-1;0;-1;0;Heavy;Must weight quite a lot.<br>;Daaaamn. Thats heavy
+Forsaken Village;⛏;Hefty Pickaxe;Item;0;1;-1;0;0;0;Heavy;Must weight quite a lot.<br>;Daaaamn. Thats heavy
 Forsaken Village;📗;Survival Manual;Item;0;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
 Forsaken Village;📕;First Aid;Item;1;0;0;0;0;0;Instructions Book;How to save a life?<br>;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.;Embraced the knowledge.
@@ -203,6 +204,7 @@ Depriving Fairyland;🦏;Massive Rhino;Heavy;3;3;1;0;5;0;Wild Beast;Its majestic
 Depriving Fairyland;👿;Laughing Devil;Demon;2;1;1;0;3;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 Depriving Fairyland;🧙‍♂️;Bloody Cultist;Demon;2;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Depriving Fairyland;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;2;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
 
 Depriving Fairyland;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion
 Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
