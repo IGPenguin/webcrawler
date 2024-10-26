@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "fpm 10/25/24 • 5:55 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -104,41 +104,55 @@ function getFirstName(){
 }
 
 function getVitalName(name=playerName){
+  if (name.includes(" ")) return name;
   const random_names = ["Big "+name,"Vital "+name,"Resilient "+name,"Strong "+name, "Vigorous "+name, "Muscular "+name, "Huge "+name, "Giant "+name, "Massive "+name, "Healthy "+name,name+" the Beast", name+" the Mighty"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getSwiftName(name=playerName){
+  if (name.includes(" ")) return name;
   const random_names = ["Swift "+name, "Speedy "+name, "Fast "+name, "Athletic "+name, "Rushing "+name, "Reckless "+name];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getFaithName(name=playerName){
+  if (name.includes(" ")) return name;
+
   const random_names = ["Holy "+name, "Promising "+name, "Humble "+name, name+" the Believer",name+" Worshipper"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getSorceryName(name=playerName){
+  if (name.includes(" ")) return name;
+
   const random_names = [name+" Acolyte","Mystic "+name, name+" the Magician"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getCleverName(name=playerName){
+  if (name.includes(" ")) return name;
+
   const random_names = ["Intelligent "+name,"Resolute "+name, "Overthinking "+name, "Clever "+name, "Ambitious "+name, "Curious "+name];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getHatredName(name=playerName){
+  if (name.includes(" ")) return name;
+
   const random_names = ["Mischievous "+name,"Bloody "+name, name+" the Warlock", "Spiteful "+name, "Withering "+name, "Ruthless "+name];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getLuckyName(name=playerName){
+  if (name.includes(" ")) return name;
+
   const random_names = ["Lucky "+name, "Indigent "+name,"Wholesome "+name];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
 function getGreedyName(name=playerName){
+  if (name.includes(" ")) return name;
+
   const random_names = ["Disgusting "+name, "Worthless "+name, "Dirty "+name, "Greedy "+name];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
@@ -1613,6 +1627,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_speak':
+
         switch (enemyType){
           case "Recruit": //If you are smarter they join you
             if (enemyInt < playerInt){
@@ -1631,6 +1646,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Boss":
             var maxEnemyAngryBoost=3;
 
+            if (enemyInt==-1) {
+              logPlayerAction(actionString,"They cannot comprehend any words.");
+              displayPlayerEffect("💬");
+              if (enemyCastIfMgk()) break;
+              enemyAttackOrRest();
+              break;
+            }
+
             if (enemyInt < playerInt){
               logPlayerAction(actionString,"Convinced them to disengage.");
               displayPlayerEffect("💬");
@@ -1647,8 +1670,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerEffect("💬");
                 nextEncounter();
                 break;
-              }
-              else {
+              } else {
                 logPlayerAction(actionString,"They ignored whatever has been said.");
               }
             }
@@ -1657,7 +1679,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Undead": //They don't care
-            logPlayerAction(actionString,"They ignored whatever has been said.");
+            logPlayerAction(actionString,"They cannot comprehend any words.");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
@@ -2274,6 +2296,7 @@ function gameOver(){
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
+  playerMgk=0;
   nextEncounter();
   animateUIElement(cardUIElement,"animate__flipInY","1.2");
 
