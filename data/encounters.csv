@@ -20,7 +20,7 @@ Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular in
 Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
 Forsaken Village;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
-Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
+Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;No signs of any decay.<br>;
 //;Forsaken Village;🛏️;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
@@ -30,13 +30,12 @@ Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;There see
 Forsaken Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the grass.
 Forsaken Village;🌿;Fern Leaves;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
-Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed!
-Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;There was a creature inside!
-Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
-Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
-Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
+Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
+Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
+//;Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+//;Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;No signs of any decay.<br>;
 
-Forsaken Village;🧳;Abandoned Trunk;Container-2;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
 Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
