@@ -20,6 +20,8 @@ Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular in
 Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
 Forsaken Village;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
+Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
+//;Forsaken Village;🛏️;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
@@ -28,12 +30,13 @@ Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;There see
 Forsaken Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the grass.
 Forsaken Village;🌿;Fern Leaves;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
-Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed!
-Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;There was a creature inside!
-Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
-Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
+Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed!
+Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;There was a creature inside!
+Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
+Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
+Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
-Forsaken Village;🧳;Abandoned Trunk;Container-2;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
+Forsaken Village;🧳;Abandoned Trunk;Container-2;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;There was a creature inside!
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
 Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
@@ -51,6 +54,12 @@ Forsaken Village;🏚️;Abandoned Villa;Container-5;0;0;0;0;0;0;Deserted Buildi
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+
+Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;Fished out something.
+Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;Fished out something.
+Forsaken Village;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;Fished out something.
+Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;Fished out something.
+Forsaken Village;🕳️;Endless Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep below.<br>;Fished out something.
 
 Forsaken Village;🐈;Strange Cat;Friend;0;0;0;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;2;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
@@ -181,6 +190,11 @@ Depriving Fairyland;🏛️;Ancient Temple;Container-3;0;0;0;0;0;0;Ritual Place;
 
 Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 
+Forsaken Village;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;Fished out something.
+Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;Fished out something.
+Forsaken Village;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;Fished out something.
+Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;Fished out something.
+
 Depriving Fairyland;🍌;Banana Peel;Trap-Roll;0;2;0;0;0;0;Forest Flora;Slippery when stepped on.<br>;Slipped and hit head.
 
 Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
@@ -188,6 +202,8 @@ Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angr
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
+Depriving Fairyland;🧙‍♂️;Bloody Cultist;Standard;2;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Depriving Fairyland;🧌;Old Troll;Standard;3;1;1;0;2;1;Creature;Not happy about having a company.<br>;Turned into goulash.
 
 Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
 Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;3;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
@@ -203,7 +219,6 @@ Depriving Fairyland;🦏;Massive Rhino;Heavy;3;3;1;0;5;0;Wild Beast;Its majestic
 
 Depriving Fairyland;👿;Laughing Devil;Demon;2;1;1;0;3;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
-Depriving Fairyland;🧙‍♂️;Bloody Cultist;Demon;2;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 Depriving Fairyland;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;2;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
 
 Depriving Fairyland;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion

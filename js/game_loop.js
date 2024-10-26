@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/25/24 • 5:55 pm"
+var versionCode = "fpm 10/27/24 • 0:58 am"
 var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -425,6 +425,7 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(count=1){
+  //TODO: Add: Recruit
   switch (count) {
 
     case 0: //Prop
@@ -465,6 +466,10 @@ function generateNextEncounters(count=1){
 
     case 10: //Container
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      break;
+
+    case 69: //Fishing
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Fishing"));
       break;
 
     case 11: //Container Small
