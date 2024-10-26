@@ -195,7 +195,8 @@ var enemyStaLost = 0;
 var enemyAtkBonus = 0;
 var enemyIntBonus = 0;
 var enemyMgkLost = 0;
-var currentProphercy = getProphecy();
+var currentProphercy;
+var enemyEmojiScaleX;
 
 enemyRenew()
 function enemyRenew(){
@@ -205,6 +206,7 @@ function enemyRenew(){
   enemyIntBonus = 0;
   enemyMgkLost = 0;
   currentProphercy = getProphecy();
+  enemyEmojiScaleX = chooseFrom(['scaleX(-1)','scaleX(1)']);
 }
 
 //Load encounter data .csv file on page ready
@@ -436,8 +438,8 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
       break;
 
-    case 3: //Mid Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
+    case 3: //Advanced Enemy
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Swift","Heavy"])));
       break;
 
     case 4: //Swift Enemy
@@ -458,6 +460,10 @@ function generateNextEncounters(count=1){
 
     case 9: //Item
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Item"));
+      break;
+
+    case 10: //Container
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       break;
 
     case 11: //Container Small
@@ -577,6 +583,7 @@ function redraw(){
   enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
   emojiUIElement = document.getElementById('id_emoji');
   emojiWrapperUIElement = document.getElementById('id_emoji_wrapper');
+  emojiWrapperUIElement.style.transform=enemyEmojiScaleX; //Visual variety ++
   enemyTeamUIElement = document.getElementById('id_team');
 
   emojiUIElement.innerHTML = enemyEmoji;
@@ -1644,6 +1651,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Demon":
           case "Boss":
+          case "Small":
             var maxEnemyAngryBoost=3;
 
             if (enemyInt==-1) {
@@ -1988,9 +1996,6 @@ function getRandomLoot(){
 }
 
 function nextEncounter(animateArea=true){
-  //Visual variety ++
-  emojiUIElement.style.transform=chooseFrom("scaleX (-1)","scaleX (1)");
-
   //console.log("EnemyType: \n"+enemyType); //Note: Even generator encounters go through here :)
   if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
   previousEnemyType = enemyType;

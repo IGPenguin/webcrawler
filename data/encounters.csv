@@ -53,13 +53,14 @@ Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted B
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
 Forsaken Village;🐈;Strange Cat;Friend;0;0;0;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
-Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;2;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
+🐢
 
-Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Animal;These are super rare.<br>;
+Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Animal;These are super rare.<br>;Doge joined your party!
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
-Forsaken Village;🐩;Lost Doggo;Pet;2;1;1;0;0;0;Animal;Looks cute as hell.<br>;Became best friends!
+Forsaken Village;🐩;Lost Doggo;Pet;2;1;1;0;1;0;Animal;Looks cute as hell.<br>;Became best friends!
 Forsaken Village;🐶;Good Boy;Pet;2;1;1;0;0;0;Animal;Playfully bites around itself.<br>;Became best friends!
-Forsaken Village;🦝;Cute Coon;Pet;2;1;2;0;10;0;Smart Beast;Probably has a heart of gold.<br>;Died by contracting rabies.
+Forsaken Village;🦝;Cute Coon;Pet;2;1;2;0;1;0;Smart Beast;Probably has a heart of gold.<br>;Died by contracting rabies.
 🫏🐥🐇🐈
 
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -72,34 +73,34 @@ Forsaken Village;🐀;Tiny Mouse;Small;1;1;2;0;-1;0;Critter;Probably carries som
 Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;-1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
 Forsaken Village;🐜;Forest Ant;Small;1;1;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
 Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
+Forsaken Village;🦂;Baby Scorpion;Swift;1;2;1;0;-1;0;Venomous;Too small to be a real threat.<br>;Pinched to death.
 🐛🦟🦗
 
-;//8-10
-Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Lost Animal;Seems starving for a long time.<br>;
-Forsaken Village;🐐;Screaming Goat;Standard;1;1;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
-Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;10;0;Wild Robber;Kinda cute on the first glance.<br>;Died by contracting rabies.
-Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Peace was never an option.<br>;Pecked to death.
-Forsaken Village;🦃;Frenzied Turkey;Standard;1;1;3;0;10;0;Domestic Animal;Usually goes for the ankles.<br>;Pinched to death.
-//;Forsaken Village;🦢;Possesive Swan;Standard;2;1;2;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
-🐖🐢
+Forsaken Village;🪿;Angry Goose;Standard;1;1;3;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
+Forsaken Village;🐕;Stray Hound;Standard;2;1;2;0;0;0;Lost Animal;Seems starving for a long time.<br>;
+Forsaken Village;🐐;Screaming Goat;Standard;1;2;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
+Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;2;0;Wild Robber;Kinda cute on the first glance.<br>;Died by contracting rabies.
+Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to underestimate.<br>;Pecked to death.
+Forsaken Village;🦃;Frenzied Turkey;Standard;1;1;3;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Pinched to death.
+Forsaken Village;🦢;Possesive Swan;Standard;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
++3 missing
 
-Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;10;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
-Forsaken Village;🐒;Tricky Monkey;Swift;1;1;3;0;10;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
+Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
+Forsaken Village;🐒;Tricky Monkey;Swift;1;1;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
 Forsaken Village;🐈‍⬛;Wild Cat;Swift;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bled out bitten into neck artery.
-Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;1;0;1;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
-Forsaken Village;🦅;Bald Eagle;Swift;1;3;1;0;1;0;Wild Animal;Attacks from high altitude.<br>;Got their brains pecked out.
-Forsaken Village;🐀;Dire Rat;Swift;1;1;2;0;10;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;10;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Forsaken Village;🐿️;Greedy Chipmunk;Swift;1;1;2;0;10;0;Wild Animal;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;Venomous Insect;Usually goes for the ankles.<br>;Pinched to death.
+Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
+Forsaken Village;🦅;Bald Eagle;Swift;1;3;1;0;-1;0;Wild Animal;Attacks from high altitude.<br>;Got their brains pecked out.
+Forsaken Village;🐀;Dire Rat;Swift;2;1;1;0;-1;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Forsaken Village;🐿️;Greedy Chipmunk;Swift;1;1;2;0;2;0;Wild Animal;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;Venomous;Dangerous tail ready for action..<br>;Pinched to death.
 
-Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
-Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
+Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
+Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Forsaken Village;🐗;Old Warthog;Heavy;2;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
-Forsaken Village;🦌;Prime Deer;Heavy;1;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
+Forsaken Village;🐗;Old Warthog;Heavy;2;2;1;0;5;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
+Forsaken Village;🦌;Prime Deer;Heavy;1;2;1;0;5;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
 
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
@@ -122,8 +123,11 @@ Forsaken Village;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Nice. Whatever p
 Forsaken Village;️🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
 ⏳📯💠🎴🀄⚜️💛📣
 
+Forsaken Village;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
+Forsaken Village;🧅;Spicy Onion;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
+Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
+Forsaken Village;🍅;Sweet Tomato;Consumable;0;0;0;0;0;0;Actually a Fruit;Packs a ton of vitamins.<br>;
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
-Forsaken Village;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
 Forsaken Village;🍓;Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍑;Juicy Peach;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
@@ -134,7 +138,7 @@ Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Cou
 Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Smells terrible... still tempting though.<br>;Barely held it inside
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;1;0;-1;0;Stale Delicacy;Wonder how it tastes?<br>;That was not worth it
 Forsaken Village;💩;Steaming Pile;Consumable;-2;0;-2;0;-2;0;Trace of Life;No interaction recommended.<br>;That was disgusting
-🥟🍌🍊🥕🍅🥦🧅🧄🥖🍞🥐🥨🪺
+🧄🥖🍞🥐🥨🪺
 
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;
 Forsaken Village;🔱;Altar of Haste;Altar;-1;0;1;0;0;0;Ritual Place;There's a blood on the surface.<br>;
@@ -176,27 +180,29 @@ Depriving Fairyland;🏛️;Ancient Temple;Container-3;0;0;0;0;0;0;Ritual Place;
 
 Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 
+Depriving Fairyland;🍌;Banana Peel;Trap-Roll;0;2;0;0;0;0;Forest Flora;Slippery when stepped on.<br>;Slipped and hit head.
+
 Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
-Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;10;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
+Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
 
-Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;10;0;Wild Animal;Seems having lightning reflexes.<br>;
-Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;2;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
-Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;Ton of bees swarmed the area.<br>;There was nowhere to run.
-Depriving Fairyland;🐆;Daunting Panther;Swift;3;2;2;0;2;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
-Depriving Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;2;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
-Depriving Fairyland;🦟;Oversize Mosqito;Swift;2;2;2;0;10;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
+Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
+Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;3;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
+Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;-1;0;Pesky Insects;Ton of bees swarmed the area.<br>;There was nowhere to run.
+Depriving Fairyland;🐆;Daunting Panther;Swift;3;2;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
+Depriving Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
+Depriving Fairyland;🦟;Oversize Mosqito;Swift;2;2;2;0;-1;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
 
 Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
-Depriving Fairyland;🦧;Ginger Ape;Heavy;2;2;2;0;5;0;Wild Beast;Probably has no soul.<br>;
-Depriving Fairyland;🦍;Native Ape;Heavy;3;2;1;0;5;0;Wild Beast;Buffed and ready to fight.<br>;
+Depriving Fairyland;🦧;Ginger Ape;Heavy;2;2;2;0;3;0;Wild Beast;Probably has no soul.<br>;
+Depriving Fairyland;🦍;Native Ape;Heavy;3;2;1;0;3;0;Wild Beast;Buffed and ready to fight.<br>;
 Depriving Fairyland;🦏;Massive Rhino;Heavy;3;3;1;0;5;0;Wild Beast;Its majestic horn looks rather deadly.<br>;
 
-Depriving Fairyland;👿;Laughing Devil;Demon;2;1;1;0;0;1;Imminent Threat;Laughs out loud maniacally.<br>;
+Depriving Fairyland;👿;Laughing Devil;Demon;2;1;1;0;3;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
-Depriving Fairyland;🧙‍♂️;Bloody Cultist;Demon;2;1;1;0;2;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Depriving Fairyland;🧙‍♂️;Bloody Cultist;Demon;2;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
 Depriving Fairyland;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion
 Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
@@ -212,6 +218,8 @@ Depriving Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggesti
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
 Depriving Fairyland;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;Eerie voice asks for blood.<br>;Offered their blood.
 
+Depriving Fairyland;🍌;Ripe Banana;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
+Depriving Fairyland;🍊;Orange Citrus;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍐;Ripe Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🫐;Berries;Consumable;0;0;0;0;0;0;Forest Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>;
@@ -220,6 +228,8 @@ Depriving Fairyland;🥜;Sweet Peanuts;Consumable;0;0;0;0;0;0;Crunchy Food;Seems
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>;
 Depriving Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>;That was delicious
 Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented.
+Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
+🥟
 
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Magic Artifact;The sacrifical blade demands blood.<br>;Released energy from the inside.
 Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Artifact;Glows with strong energy.<br>;Embraced the energy surge.
@@ -227,8 +237,7 @@ Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;1;0;0;-2;0;Malvolent Instrument
 Depriving Fairyland;🦋;Sapphire Moth;Item;0;0;0;0;0;1;Artifact;Pearlescent and classy accessory.<br>;Felt a surge of energy
 Depriving Fairyland;🎗️;Golden Trinket;Item;1;0;0;0;0;0;Artifact;Reflected sunlight draws the eyesight.<br>;Stuck deep into the skin.
 
-//Somber Backwoods
-🦬
+//Somber Backwoods (needs int pass -1)
 Somber Backwoods;🗿;Megalithic Statue;Altar;0;0;0;1;0;0;Ancient Monument;A giant stone facing the heavens.<br>Must be thousands years old.;
 Somber Backwoods;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of the spoiled cheese.<br>;Contracted a deadly disease.
 Somber Backwoods;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
@@ -250,8 +259,9 @@ Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm
 Somber Backwoods;🪱;Wiggling Parasite;Small;1;2;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>;Took control over the body.
 Somber Backwoods;🦟;Oversized Mosqito;Swift;2;2;2;0;10;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
 Somber Backwoods;🥀;Tainted Rosebush;Trap-Roll;0;2;0;0;0;0;Dying Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin
+🦬
 
-//Bleak Necropolis
+//Bleak Necropolis (needs int pass -1)
 🧛🦇🦷🫀🫁👁️🎃🤺
 Bleak Necropolis;🐦‍⬛;Undead Crow;Demon;1;2;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
 Bleak Necropolis;⚰️;Burial Coffin;Container-3;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
