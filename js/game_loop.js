@@ -1377,12 +1377,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (isSacrifice) {
                 if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
                   displayEnemyEffect("🩸");
-                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"n/a",false,false);
+                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,false,false);
                   playerHit(0,false);
                 }
                 displayPlayerCannotEffect();
               } else {
-                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,"Received a god's blessing.",true);
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true);
                 displayPlayerEffect("✨")
                 displayPlayerGainedEffect();
               }
@@ -1729,7 +1729,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               nextEncounter();
               break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
-              logPlayerAction(actionString,"Speaking made them more upset +1 ⚔️");
+              logPlayerAction(actionString,"The words made them more upset +1 ⚔️");
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
@@ -2376,6 +2376,7 @@ function playerHit(incomingDamage,applyLuck=true){
 
 function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true){
   if (playerLootString.includes(item)){
+    if (enemyMsg!="") messageSuccess=enemyMsg;
     if (effect) displayEnemyEffect(item);
     playerLootString=playerLootString.replace(item,"");
     displayPlayerEffect(item);
