@@ -2,8 +2,8 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
-Loot;🪸;Toxic Coral;Consumable;-1;0;0;0;0;1;Rare Fish;Convenient snack straight out of water.<br>;
-Loot;🔪;Rusty Knife;Item;0;0;0;0;0;0;Worn Tool;Still looks sharp a bit.<br>Could be of service.;Took it with themselves just in case.
+Loot;🪸;Radiating Coral;Consumable;-1;0;0;0;0;1;Rare Fish;Convenient snack straight out of water.<br>;
+Loot;🔪;Dull Knife;Item;0;0;0;0;0;0;Worn Tool;Useless in combat.<br>;Took it with themselves just in case.
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant had moved away.<br>;Gained powers of the sea.
 Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>;Gained powers of the wilds.
 Loot;👞;Old Shoes;Item;0;0;-1;2;0;0;Trash;Thoroughly wet leather shoes.<br>;Disgusting but kinda cool.
@@ -21,9 +21,8 @@ Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks reliable.<br>;
 Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;
 Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
-Loot;📘;Wet Book;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
+Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;Unreadable. All letters are faded.<br>;Pocketed a piece of trash.
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
-Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
 Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny Echo;Means: Easily blinded by trust.<br>;Embraced foretold destiny
@@ -34,5 +33,8 @@ Loot;🎀;Silly Bowtie;Item;0;0;1;0;-1;0;Cringe Accessory;The extra speed is wha
 Loot;🔖;Wet Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Loot;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
 Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>;Felt a surge in the chest.
-Loot;‍🦈;Hungry Shark;Swift;1;3;1;0;3;0;Aquatic;Goes straight for neck.<br>;Devoured by unexpected shark!
+Loot;‍🦈;Hungry Shark;Standard;1;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
+Loot;‍🦑;Depths Squid;Heavy;2;2;1;0;-1;0;Aquatic Threat;Giant octopus from deep waters.<br>;Swallowed in one slurp!
+Loot;‍🪼;Box Jelly;Swift;1;3;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
+//;Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
 //;Loot;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;Portable Sanctuary;Provides a personal safespace.<br>;

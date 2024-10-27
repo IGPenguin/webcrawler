@@ -9,16 +9,13 @@ Forsaken Village;🪹;Empty Nest;Prop-Small;0;0;0;0;0;0;Deserted Home;Looks long
 Forsaken Village;🚪;Exit Door;Prop-Exit;0;0;0;0;0;0;Way Out;It is finally over.<br>;Closed the door behind.
 
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
-Forsaken Village;🌿;Grass Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Moved around the rocks.
-Forsaken Village;🧱;Two Bricks;Prop;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;
-Forsaken Village;🧱;Brick Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Material;Nothing but junk.<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Forsaken Village;🪵;Wooden Logs;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
-Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Bunch of wood lying around.<br>;Moved around the pile.
 Forsaken Village;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;No signs of any decay.<br>;
 //;Forsaken Village;🛏️;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
@@ -27,14 +24,14 @@ Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
 Forsaken Village;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
 Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
-Forsaken Village;🌿;Grass Patch;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the grass.
-Forsaken Village;🌿;Fern Leaves;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
+Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
 Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
-Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
+Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;No signs of any decay.<br>;
+
 //;Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 //;Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
-Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;No signs of any decay.<br>;
+//;Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
 
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>Shaking around vigorously.;There was a creature inside!
 Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
@@ -60,16 +57,22 @@ Forsaken Village;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolut
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;Fished out something.
 Forsaken Village;🕳️;Endless Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep below.<br>;Fished out something.
 
-Forsaken Village;🐈;Strange Cat;Friend;0;0;0;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
-Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;2;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
-🐢
+Forsaken Village;🫙;Fart in a Jar;Trap;0;2;0;0;0;0;Garbage;Better not release the contents.<br>;The lid came off.
+Forsaken Village;🍌;Banana Peel;Trap-Roll;0;2;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head.
+Forsaken Village;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 
-Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Animal;These are super rare.<br>;Doge joined your party!
+Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
+Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
+
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;2;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
+Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts unthinkable abilities.<br>;Felt something change inside.
+
+Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
-Forsaken Village;🐩;Lost Doggo;Pet;2;1;1;0;1;0;Animal;Looks cute as hell.<br>;Became best friends!
-Forsaken Village;🐶;Good Boy;Pet;2;1;1;0;0;0;Animal;Playfully bites around itself.<br>;Became best friends!
-Forsaken Village;🦝;Cute Coon;Pet;2;1;2;0;1;0;Smart Beast;Probably has a heart of gold.<br>;Died by contracting rabies.
-🫏🐥🐇🐈
+Forsaken Village;🐩;Lost Doggo;Pet;2;1;1;0;1;0;Good Boy;Looks cute as hell.<br>;Became best friends!
+Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;Died by contracting rabies.
+Forsaken Village;🐈;Strange Cat;Pet;0;0;0;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
+🐥🐇
 
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -77,31 +80,28 @@ Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fi
 Forsaken Village;🪰;Pesky Fly;Small;1;0;3;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🦋;Skyblue Butterfly;Small;1;0;2;0;-1;0;Stunning Insect;Flies from one flower to another.<br>;How could this happen?
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Forsaken Village;🐀;Tiny Mouse;Small;1;1;2;0;-1;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🐀;Dire Rat;Small;1;1;2;0;-1;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;-1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
 Forsaken Village;🐜;Forest Ant;Small;1;1;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
 Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
-Forsaken Village;🦂;Baby Scorpion;Swift;1;2;1;0;-1;0;Venomous;Too small to be a real threat.<br>;Pinched to death.
 🐛🦟🦗
 
 Forsaken Village;🪿;Angry Goose;Standard;1;1;3;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 Forsaken Village;🐕;Stray Hound;Standard;2;1;2;0;0;0;Lost Animal;Seems starving for a long time.<br>;
 Forsaken Village;🐐;Screaming Goat;Standard;1;2;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
-Forsaken Village;🦝;Velvet Bandit;Standard;2;1;2;0;2;0;Wild Robber;Kinda cute on the first glance.<br>;Died by contracting rabies.
+Forsaken Village;🦝;Ferocious Coon;Standard;2;1;2;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to underestimate.<br>;Pecked to death.
-Forsaken Village;🦃;Frenzied Turkey;Standard;1;1;3;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Pinched to death.
+Forsaken Village;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Pinched to death.
 Forsaken Village;🦢;Possesive Swan;Standard;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
 +3 missing
 
 Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Forsaken Village;🐒;Tricky Monkey;Swift;1;1;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
-Forsaken Village;🐈‍⬛;Wild Cat;Swift;1;2;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Bled out bitten into neck artery.
 Forsaken Village;🐦‍⬛;Startled Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Forsaken Village;🦅;Bald Eagle;Swift;1;3;1;0;-1;0;Wild Animal;Attacks from high altitude.<br>;Got their brains pecked out.
-Forsaken Village;🐀;Dire Rat;Swift;2;1;1;0;-1;0;Creature;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🐿️;Greedy Chipmunk;Swift;1;1;2;0;2;0;Wild Animal;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;Venomous;Dangerous tail ready for action..<br>;Pinched to death.
+Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;2;0;-1;0;Extremely Venomous;Dangerous tail ready for action..<br>;Pinched to death.
 
 Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
 Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
@@ -116,21 +116,18 @@ Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings ex
 Forsaken Village;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
-Forsaken Village;🔪;Small Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp a bit.<br>Perhaps it could be of service.;Could still make a bloody mess.
-Forsaken Village;🧹;Crippling Broom;Item;0;1;-1;0;-1;0;Cursed Tool;Looks ridiculous and slows movement.<br>;Awkward to hold
-Forsaken Village;⛏;Hefty Pickaxe;Item;0;1;-1;0;0;0;Heavy;Must weight quite a lot.<br>;Daaaamn. Thats heavy
+Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
+Forsaken Village;🧹;Crippling Broom;Item;0;1;0;0;-3;0;Cursed Object;The handle has a strange glow.<br>;Intrusive thoughts took over
+Forsaken Village;⛏;Hefty Pickaxe;Item;0;1;-1;0;0;0;Makeshift Weapon;Carrying this costs <b>-1 🟢 Energy</b>.<br>;Tiring to carry.
 Forsaken Village;📗;Survival Manual;Item;0;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
 Forsaken Village;📕;First Aid;Item;1;0;0;0;0;0;Instructions Book;How to save a life?<br>;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.;Embraced the knowledge.
-Forsaken Village;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of gibberish.<br>;Eternal presence noticed that.
-Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
-Forsaken Village;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
-Forsaken Village;🔖;Ancient Knowledge;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
+Forsaken Village;🔖;Strange Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
-Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes a sound anytime it moves.<br>;Hopefully this works.
-Forsaken Village;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Nice. Whatever purpose it has.<br>;Felt strange power surge.
+Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>;Hopefully this somehow works.
 Forsaken Village;️🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
-⏳📯💠🎴🀄⚜️💛📣
+Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;1;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
+Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
 
 Forsaken Village;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
 Forsaken Village;🧅;Spicy Onion;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
@@ -146,63 +143,90 @@ Forsaken Village;🍗;Fresh Meat;Consumable;0;0;0;0;0;0;Questionable Food;Could 
 Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Smells terrible... still tempting though.<br>;Barely held it inside
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;1;0;-1;0;Stale Delicacy;Wonder how it tastes?<br>;That was not worth it
-Forsaken Village;💩;Steaming Pile;Consumable;-2;0;-2;0;-2;0;Trace of Life;No interaction recommended.<br>;That was disgusting
+Forsaken Village;💩;Steaming Pile;Consumable;-1;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;That was extremely disgusting
+🌶️🌽🥚🥩🍤
 🧄🥖🍞🥐🥨🪺
 
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;
 Forsaken Village;🔱;Altar of Haste;Altar;-1;0;1;0;0;0;Ritual Place;There's a blood on the surface.<br>;
-Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a recent evil ritual.<br>;Dealt with the Devil
+Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
-Forsaken Village;🇻🇦;Altar of Worship;Item;0;0;0;2;0;0;Holy Book;Contains endless pages of prayers.<br>;Prayed to the greater good
+Forsaken Village;🇻🇦;Altar of Worship;Item;0;0;0;2;0;0;Holy Book;Contains endless pages of prayers.<br>;Prayed to the Greater Good
 Forsaken Village;☠️;Cult Altar;Item;0;0;0;-3;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
-
-Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
-
-Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
-Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
 
 Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
 //Depriving Fairyland
 Depriving Fairyland;💭;Random Thought;Prop;0;0;0;0;0;0;Epiphany;n/a<br>;
-Depriving Fairyland;🏺;Painted Amphora;Prop;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Depriving Fairyland;☘️;Common Clover;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Depriving Fairyland;🌻;Lonely Sunflower;Prop;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
-Depriving Fairyland;🌿;Fern Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
+Depriving Fairyland;🪻;Hyacinth Patch;Prop;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 
-Depriving Fairyland;🌷;Tulip Glade;Container;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hiding there.
+Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Depriving Fairyland;🌿;Fern Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
 Depriving Fairyland;🌿;Grass Thicket;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Depriving Fairyland;🌾;Tall Grass;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Depriving Fairyland;🌱;Fresh Growth;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Depriving Fairyland;☘️;Common Clover;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Depriving Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Depriving Fairyland;🌻;Lonely Sunflower;Container;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 
-
-Depriving Fairyland;🌾;Tall Grass;Container-2;0;0;0;0;0;0;Dense Flora;Thick growth obscuring something.<br>;
+Depriving Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
+Depriving Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;Tough Terrain;Farmland of the natives.<br>;
 Depriving Fairyland;🌻;Bunch of Sunflowers;Container-2;0;0;0;0;0;0;Wild Flora;Something seems hidden in there.<br>;
-Depriving Fairyland;🌿;Fern Weeds;Container-2;0;0;0;0;0;0;Wild Flora;Chance to catch a breath.<br>;Revealed a strange sight.
-Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
+Depriving Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Depriving Fairyland;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hiding there.
+Depriving Fairyland;⛺️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
 //;Depriving Fairyland;🍯;Sweet Honeypot;Container-2;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 
-Depriving Fairyland;🌾;Owergrown Reeds;Container-3;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
-Depriving Fairyland;🌾;Thick Grass;Container-3;0;0;0;0;0;0;Dense Flora;Thick growth obscuring something.<br>;
-Depriving Fairyland;🌾;Tall Grass;Container-3;0;0;0;0;0;0;Dense Flora;Thick growth obscuring something.<br>;
-Depriving Fairyland;🏛️;Ancient Temple;Container-3;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Moved into the main area.
+Depriving Fairyland;🌲;Dark Wood;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
+Depriving Fairyland;🗻;Rocky Hill;Container-3;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
+Depriving Fairyland;🏔️;Snowy Mountain;Container-3;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
+Depriving Fairyland;⛰️;Forest Mountaintop;Container-3;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
+Depriving Fairyland;🌋;Volcano Throat;Container-3;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
+
+Depriving Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
+Depriving Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
+Depriving Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
+Depriving Fairyland;🌋;Volcano Throat;Container-4;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
 
 Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 
-Forsaken Village;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;Fished out something.
-Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;Fished out something.
-Forsaken Village;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;Fished out something.
-Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;Fished out something.
+Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
+Depriving Fairyland;👁️‍🗨️;Haunting Voices;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
+Depriving Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 
-Depriving Fairyland;🍌;Banana Peel;Trap-Roll;0;2;0;0;0;0;Forest Flora;Slippery when stepped on.<br>;Slipped and hit head.
+Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
+Depriving Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing.
+Depriving Fairyland;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;Eerie voice asks for blood.<br>;Offered their blood.
 
-Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
+Depriving Fairyland;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
+Depriving Fairyland;🍌;Banana Peel;Trap-Roll;0;2;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head.
+Depriving Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 
+Depriving Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;Fished out something.
+Depriving Fairyland;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;Fished out something.
+Depriving Fairyland;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;Fished out something.
+Depriving Fairyland;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;Fished out something.
+
+Depriving Fairyland;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion
+Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
+Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>;Received their blessing.
+Depriving Fairyland;🐫;Bumpy Horse;Pet;2;0;1;0;2;0;Mythical Creature;Strange horse approached.<br>;Survival instincts increased.
+🦙🦒
+
+Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
+Depriving Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;Dangerous Insect;<br>;
+Depriving Fairyland;🪱;Fly Larva;Small;1;0;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
+Depriving Fairyland;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.;There was nowhere to run.
+Depriving Fairyland;🕷️;Black Widow;Small;1;5;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
+
+Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;3;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
-Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;10;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
+Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;4;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
 Depriving Fairyland;🧙‍♂️;Bloody Cultist;Standard;2;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 Depriving Fairyland;🧌;Old Troll;Standard;3;1;1;0;2;1;Creature;Not happy about having a company.<br>;Turned into goulash.
+Depriving Fairyland;🕷️;Huge Tarantula;Small;1;3;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
 
 Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
 Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;3;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
@@ -220,20 +244,7 @@ Depriving Fairyland;👿;Laughing Devil;Demon;2;1;1;0;3;1;Imminent Threat;Laughs
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 Depriving Fairyland;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;2;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
 
-Depriving Fairyland;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion
-Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
-Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>;Received their blessing.
-Depriving Fairyland;🐫;Bumpy Horse;Pet;2;0;1;0;2;0;Mythical Creature;Strange horse approached.<br>;Survival instincts increased.
-🦒
-
-Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
-Depriving Fairyland;👁️‍🗨️;Haunting Voices;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
-Depriving Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
-
-Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
-Depriving Fairyland;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;Eerie voice asks for blood.<br>;Offered their blood.
-
+Depriving Fairyland;🥭;Sweet Mango;Consumable;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>;
 Depriving Fairyland;🍌;Ripe Banana;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍊;Orange Citrus;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍐;Ripe Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
@@ -250,60 +261,9 @@ Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obv
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Magic Artifact;The sacrifical blade demands blood.<br>;Released energy from the inside.
 Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Artifact;Glows with strong energy.<br>;Embraced the energy surge.
 Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;1;0;0;-2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds
-Depriving Fairyland;🦋;Sapphire Moth;Item;0;0;0;0;0;1;Artifact;Pearlescent and classy accessory.<br>;Felt a surge of energy
-Depriving Fairyland;🎗️;Golden Trinket;Item;1;0;0;0;0;0;Artifact;Reflected sunlight draws the eyesight.<br>;Stuck deep into the skin.
-
-//Somber Backwoods (needs int pass -1)
-Somber Backwoods;🗿;Megalithic Statue;Altar;0;0;0;1;0;0;Ancient Monument;A giant stone facing the heavens.<br>Must be thousands years old.;
-Somber Backwoods;🪱;Cheese Worm;Small;1;1;1;0;10;0;Arthropod;Fell out of the spoiled cheese.<br>;Contracted a deadly disease.
-Somber Backwoods;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;Forcefully draws the eyesight.<br>;Lifted one of the logs.
-Somber Backwoods;🧺;Primitive Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
-Somber Backwoods;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
-Somber Backwoods;🛖;Simple Hut;Container-4;0;0;0;0;0;0;Primitve Housing;A simple tent and a campfire.<br>;
-Somber Backwoods;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Adventures seem to usually end here.<br>;
-Somber Backwoods;🧌;Old Troll;Recruit;3;1;1;0;1;3;Creature;Noticed suspicious activity in their hut.<br><i>"Human no walk here!"</i>;
-Somber Backwoods;🪘;Tribal Drum;Item;0;0;0;0;0;0;Musical Instrument;Water is splashing inside.<br>;
-Somber Backwoods;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
-Somber Backwoods;🪻;Hyacinth Thicket;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
-Somber Backwoods;🦎;Komodo Dragon;Standard;2;3;1;0;10;0;Alpha Lizard;Eyes are glowing blue.<br>;Devoured by the mythical dragon.
-Somber Backwoods;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>;
-Somber Backwoods;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merficul.<br>;Recived a powerful blessing.
-Somber Backwoods;🐆;Sabre Essence;Spirit;2;1;1;0;3;1;Soul Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
-Somber Backwoods;🌾;Rice Field;Container-3;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>Suggesting a hidden pond.;
-Somber Backwoods;🐗;Mud Warthog;Heavy;3;2;2;0;10;0;Wild Animal;Loud stomps follow its steps.<br>Must weight a ton.;Got torn apart.
-Somber Backwoods;🥩;Fresh Meat;Consumable;-2;0;0;0;0;0;Raw Food;Still all warm and bloody.<br>;Got sick of the raw meat.
-Somber Backwoods;🪱;Wiggling Parasite;Small;1;2;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>;Took control over the body.
-Somber Backwoods;🦟;Oversized Mosqito;Swift;2;2;2;0;10;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
-Somber Backwoods;🥀;Tainted Rosebush;Trap-Roll;0;2;0;0;0;0;Dying Flora;Foul stench reeks all around.<br>;Sharp thorns pierced the skin
-🦬
-
-//Bleak Necropolis (needs int pass -1)
-🧛🦇🦷🫀🫁👁️🎃🤺
-Bleak Necropolis;🐦‍⬛;Undead Crow;Demon;1;2;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
-Bleak Necropolis;⚰️;Burial Coffin;Container-3;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
-Bleak Necropolis;🫀;Rotten Heart;Container;0;0;0;0;-1;0;Disgusting Sight;xyxy.<br>;
-Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
-Bleak Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Human Remains;Disgusting on sight.<br>;Another disgusting item in pocket.
-Bleak Necropolis;⛺️;Worn Tent;Container-3;0;0;0;0;0;0;Place of Rest;There is a tent and a campfire.<br>No one seems to be around.;
-Bleak Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
-Bleak Necropolis;📘;Book of Spells;Item;0;0;0;0;0;1;Artifact;Radiates with magic energy.<br>Holds immense power.;Mastered the basics of magic.
-Bleak Necropolis;🧙;Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Bleak Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
-Bleak Necropolis;🪦;Desolate Grave;Container-3;0;0;0;0;0;0;Disturbed Ground;Seems recently tampered with.<br>;Corpse has risen from the ground.
-Bleak Necropolis;🧟;Animated Dead;Undead;3;2;2;0;10;0;Restless Body;Surely carries a lot of diseases.<br>;Contracted a terminal disease.
-Bleak Necropolis;🪱;Meatfly Worm;Small;1;1;1;0;10;0;Arthropod;Found buried inside the undead meat.<br>Unsettling fishing bait.;Contracted a deadly disease.
-Bleak Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;0;Shiny Object;The glowing gem shines bright.<br>;Felt a surge of power
-Bleak Necropolis;🌱;Strange Plant;Container;0;0;0;0;0;0;Potential Food;Probably packs a ton of nutrients.<br>;Dug it out of the ground.
-Bleak Necropolis;🥔;Old Potato;Consumable;0;0;0;0;0;0;Eternal Vegetable;Looks suspiciously fresh.<br>;Actually tasted quite good.
-Bleak Necropolis;🗿;Massive Statue;Altar;-1;0;0;0;0;1;Ritual Place;There's dry blood under its eyes.<br>;
-Bleak Necropolis;⚱️;Burial Urn;Container;0;0;0;0;0;0;Ancient Relic;These shall not be disturbed.<br>;Malvolent energy escaped the urn
-Bleak Necropolis;👻;Untangible Ghost;Spirit;1;1;2;0;10;2;Soul Remains;Energy of a long gone warrior.<br>;Got taken to Vallhala.
-Bleak Necropolis;🌲;Spruce Trees;Container-2;0;0;0;0;0;0;Suspense Area;A small group of trees.<br>;
-Bleak Necropolis;🦉;Night Eye;Friend;0;0;1;0;0;0;Wild Animal;Landed on the edge of the pit.<br>;It revealed a powerful secret
-Bleak Necropolis;⛪️;Barred Church;Locked-Container-2;0;0;0;0;0;1;Place of Power;Strange sounds are coming from the inside.<br>;
-Bleak Necropolis;🧛;Thirsty Vampire;Demon;3;2;2;0;3;1;Evil Being;Sharp teeth getting ready to bite.<br>;Got all blood sucked out.
-Bleak Necropolis;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Deal with the prime evil.<br>;Granted the Death's touch.
-Bleak Necropolis;🕰️;Clock Tower;Container-3;0;0;0;0;0;0;Deserted Building;The clock has stopped moving.<br>Looks long time abandoned.;
-Bleak Necropolis;🚪;Tower Entrance;Locked-Container-2;0;0;0;0;0;0;Ruined Building;A huge chain holds the door closed.<br>;
-Bleak Necropolis;🐻;Undead Grizzly;Boss;6;2;3;0;10;0;Reanimated;There's an axe sticked into its head.<br>Still packs a punch.;Got torn to tiny pieces.
-Bleak Necropolis;🪓;Bloody Axe;Item;0;1;0;0;0;0;Sharp Tool;Battle-proven makeshift weapon.<br>Definitely could be of service.;Obtained a new weapon.
+Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Nice. Whatever purpose it has.<br>;Felt strange power surge.
+Depriving Fairyland;📘;Glowing Book;Item;0;0;0;0;0;1;Legendary Artifact;Radiates with magic energy.<br>;Mastered the basics of magic.
+Depriving Fairyland;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of gibberish.<br>;Eternal presence noticed that.
+Depriving Fairyland;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
+Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
+Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Artifact;Express empathy with the terminally ill.<br>;

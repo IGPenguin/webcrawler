@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/27/24 • 1:16 am"
-var initialEncounterOverride=0; //7 skips tutorial
+var versionCode = "fpm 10/27/24 • 7:21 pm"
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -448,6 +448,10 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Swift"));
       break;
 
+    case 5: //Random Trap Type
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Trap","Trap-Attack","Trap-Roll"])));
+      break;
+
     case 6: //Demon Enemy
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Demon"));
       break;
@@ -651,15 +655,17 @@ function redraw(){
       break;
 
     case "Item":
-    case "Trap":
-      if ((totalEffect > 0)||(enemyEmoji=="🗝️")){
+      if ((totalEffect > 0) || (enemyEmoji=="🗝️") || (enemyHp>0) || (enemyAtk>0) || (enemySta>0) || (enemyInt>0) || (enemyLck>0) || (enemyMgk>0)){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
-      } else if (totalEffect < 0 ) {
-          enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
       break;
+
+    case "Trap":
+    case "Trap-Attack":
+    case "Trap-Roll":
+      enemyStatusString=decorateStatusText("‼️","Hazard",colorRed);
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       break;
@@ -680,7 +686,6 @@ function redraw(){
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
       break;
     case "Curse":
-      //enemyStatusString=decorateStatusText("⁉️","Hazard","red");
       enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
       break;
     case "Death":

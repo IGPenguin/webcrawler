@@ -9,6 +9,7 @@ Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Cho
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;n/a<br>;
 
 //TODO Balance and finalize this area
+Forsaken Village;❓;Random Trap;Generator-5;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
@@ -42,7 +43,6 @@ Forsaken Village;❓;Mid Enemy Loot;Generator-22;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 //TODO Randomize boss
 Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.;Got torn to tiny pieces.
-Forsaken Village;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>;Ouch! There are sharp thorns
 
 //TODO Balance and finalize this area
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
