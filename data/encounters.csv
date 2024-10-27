@@ -57,9 +57,13 @@ Forsaken Village;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolut
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;Fished out something.
 Forsaken Village;🕳️;Endless Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep below.<br>;Fished out something.
 
-Forsaken Village;🫙;Fart in a Jar;Trap;0;2;0;0;0;0;Garbage;Better not release the contents.<br>;The lid came off.
-Forsaken Village;🍌;Banana Peel;Trap-Roll;0;2;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head.
-Forsaken Village;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
+Forsaken Village;🦔️;Scared Hedgehog;Trap;-1;0;0;0;0;0;Innocent Critter;Just let him be!<br>;Ouch! That was painful
+Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
+Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
+Forsaken Village;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Element;It's spreading all around.<br>;Burned alive screaming
+
+Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-3;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
+Forsaken Village;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 
 Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
 Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
@@ -128,6 +132,8 @@ Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying 
 Forsaken Village;️🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
 Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;1;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
 Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
+Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
+Forsaken Village;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
 Forsaken Village;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
 Forsaken Village;🧅;Spicy Onion;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;

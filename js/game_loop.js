@@ -448,8 +448,14 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Swift"));
       break;
 
-    case 5: //Random Trap Type
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Trap","Trap-Attack","Trap-Roll"])));
+    case 5: //Random Trap Type (same chances for all)
+      var trapsArray=[]
+      trapsArray.push(getRandomEncounter("Trap"));
+      trapsArray.push(getRandomEncounter("Trap-Attack"));
+      trapsArray.push(getRandomEncounter("Trap-Roll"));
+      var chosenTrap=chooseFrom(trapsArray)
+
+      linesStory.splice(encounterIndex+1,0,chosenTrap);
       break;
 
     case 6: //Demon Enemy
@@ -666,6 +672,7 @@ function redraw(){
     case "Trap-Attack":
     case "Trap-Roll":
       enemyStatusString=decorateStatusText("‼️","Hazard",colorRed);
+      break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       break;
@@ -699,7 +706,10 @@ function redraw(){
       //Multi-match
       if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
-      if (enemyType.includes("Consumable")) enemyStatusString=decorateStatusText("❤️","Refreshment","#FFFFFF")
+      if (enemyType.includes("Consumable")) {
+        enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
+        if (enemyHp<0) enemyStatusString=decorateStatusText("🦠","Risky",colorRed)
+        }
       break;
   }
 
@@ -813,14 +823,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isLooting=false;
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString,"Smashed it into tiny pieces -1 🟢");
+            logPlayerAction(actionString,"Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
             animateFlipNextEncounter();
             break;
 
           case "Trap-Attack": //Attacking causes you damage
-            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
-            playerHit(enemyAtk);
+            //logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
+            //playerHit(enemyAtk);
+
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerHpMax+=(enemyHp*(-1)); playerHp+=(enemyHp*(-1));
+            if (enemyHp<0) playerHit(enemyHp*(-1));
             break;
 
           case "Spirit":
@@ -1013,9 +1027,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Trap-Roll": //You get damage rolling into "Trap-Roll" type encounters
-            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
-            playerHit(enemyAtk);
+          case "Trap-Roll": //Triggers when rolling into it
+            //logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
+            //playerHit(enemyAtk);
+
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerHpMax+=(enemyHp*(-1)); playerHp+=(enemyHp*(-1));
+            if (enemyHp<0) playerHit(enemyHp*(-1));
             break;
           case "Trap":
           case "Trap-Attack":
@@ -1209,6 +1227,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Trap":
           case "Trap-Roll":
+          case "Trap-Attack":
           case "Item":
           case "Consumable":
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
@@ -1298,6 +1317,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
           case "Trap":
+          case "Trap-Attack":
           case "Trap-Roll":
           case "Item":
           case "Fishing":
@@ -1535,10 +1555,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Trap": //Grabbing is not safe
+          case "Trap": //Grabbing triggers the effect
           case "Trap-Roll":
           case "Trap-Attack":
-          case "Undead":
+            //logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
+            //playerHit(enemyAtk);
+
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerHpMax+=(enemyHp*(-1)); playerHp+=(enemyHp*(-1));
+            if (enemyHp<0) playerHit(enemyHp*(-1));
+            break;
+
+          case "Undead": //Grabbing is not safe
             if (enemyCastIfMgk()) break;
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk);
@@ -2133,12 +2161,13 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   var changeSign=" +";
   if (gainedString=="") gainedString="Might come in handy later."
 
-  if ((totalBonus >= 0) && gainedString=="Might come in handy later."){
+  if ((totalBonus >= 0) && (gainedString=="Might come in handy later.")) {
     if (totalBonus !=0){
       gainedString="Felt becoming stronger";
     }
   } else if (gainedString=="Might come in handy later.") {
     gainedString="Got cursed by it";
+    if (enemyType.includes("Trap")) gainedString="That was a mistake"
   }
 
   if (enemyMsg != "" && gainedString == "") {
@@ -2149,52 +2178,97 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     gainedString = gainedString.replace("."," ");
   }
 
-  if (bonusHp != 0) {
-    if (bonusHp<0) {changeSign=" "} else {changeSign=" +"; playerHp+=bonusHp;}
-    playerHpMax += parseInt(bonusHp);
-    if (playerHp>playerHpMax) playerHp = playerHpMax
-    gainedString += changeSign+bonusHp + " ❤️";
-    displayPlayerEffect("✨");
-  }
-
-  if (bonusAtk != 0){
-    if (bonusAtk<0) {changeSign=" "} else {changeSign=" +";}
-    playerAtk += parseInt(bonusAtk);
-    gainedString += changeSign+bonusAtk + " ⚔️";
-    displayPlayerEffect("✨");
-  }
-
-  if (bonusSta != 0){
-    if (bonusSta<0) {changeSign=" "} else {changeSign=" +"; playerSta += parseInt(bonusSta);}
-    playerStaMax += parseInt(bonusSta);
-    gainedString += changeSign+bonusSta + " 🟢";
-    displayPlayerEffect("✨");
-  }
-
   if (bonusLck != 0){
-    if (bonusLck<0) {changeSign=" "} else {changeSign=" +";}
+    if (bonusLck<0) {
+      changeSign=" "
+      displayPlayerCannotEffect();
+    } else {
+      changeSign=" +";
+      displayPlayerGainedEffect();
+    }
     playerLck += parseInt(bonusLck);
     gainedString += changeSign+bonusLck + " 🍀";
     displayPlayerEffect("🍀");
+    displayPlayerGainedEffect();
   }
 
   if (bonusInt != 0){
-    if (bonusInt<0) {changeSign=" "} else {changeSign=" +";}
+    if (bonusInt<0) {
+      changeSign=" "
+      displayPlayerCannotEffect();
+    } else {
+      changeSign=" +";
+      displayPlayerGainedEffect();
+    }
     playerInt += parseInt(bonusInt);
     gainedString += changeSign+bonusInt + " 🧠";
     displayPlayerEffect("🧠");
+    displayPlayerGainedEffect();
   }
 
   if (bonusMgk != 0){
-    if (bonusMgk<0) {changeSign=" "} else {changeSign=" +";}
+    if (bonusMgk<0) {
+      changeSign=" "
+      displayPlayerCannotEffect();
+    } else {
+      changeSign=" +";
+      displayPlayerGainedEffect();
+    }
     playerMgkMax += parseInt(bonusMgk);
     playerMgk += parseInt(bonusMgk);
     gainedString += changeSign+bonusMgk + " 🔵";
     displayPlayerEffect("🪬");
+    displayPlayerGainedEffect();
   }
 
+  if (bonusSta != 0){
+    if (bonusSta<0) {
+      changeSign=" "
+      displayPlayerEffect("🐢");
+      displayPlayerCannotEffect();
+    } else {
+      changeSign=" +";
+      playerSta += parseInt(bonusSta);
+      displayPlayerEffect("💨");
+      displayPlayerGainedEffect();
+    }
+    playerStaMax += parseInt(bonusSta);
+    gainedString += changeSign+bonusSta + " 🟢";
+  }
 
-  animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
+  if (bonusAtk != 0){
+    if (bonusAtk<0) {
+      changeSign=" ";
+      displayPlayerEffect("🪬");
+      displayPlayerCannotEffect();
+    } else {
+      changeSign=" +";
+      displayPlayerEffect("⚔️");
+      displayPlayerGainedEffect();
+    }
+    playerAtk += parseInt(bonusAtk);
+    gainedString += changeSign+bonusAtk + " ⚔️";
+  }
+
+  if (bonusHp != 0) {
+    var hpEmoji = "❤️"
+
+    if (bonusHp<0) {
+      changeSign=" ";
+      displayPlayerEffect("💢");
+      hpEmoji = "💔"
+      displayPlayerCannotEffect();
+    } else {
+      changeSign=" +";
+      playerHp+=bonusHp;
+      isplayPlayerEffect("❤️");
+      displayPlayerGainedEffect();
+    }
+    playerHpMax += parseInt(bonusHp);
+    if (playerHp>playerHpMax) playerHp = playerHpMax
+    gainedString += changeSign+bonusHp + " "+hpEmoji;
+  }
+
   if (logMessage) {
     logPlayerAction(actionIcon,gainedString);
   }
@@ -2222,7 +2296,6 @@ function playerConsumed(){
       playerUseStamina(-1*enemySta);
     }
 
-    //function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true){
     playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,"🤮");
     //Actually danages here, to log potential lucky dmg avoidance at the right  time
     if (enemyHp<0){
