@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/27/24 • 7:21 pm"
-var initialEncounterOverride=7; //7 skips tutorial
+var versionCode = "fpm 10/27/24 • 10:58 pm"
+var initialEncounterOverride=0; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -449,6 +449,7 @@ function generateNextEncounters(count=1){
       break;
 
     case 5: //Random Trap Type (same chances for all)
+      //TODO: Apply this approach to all generators (=same change to pick any of all matching types)
       var trapsArray=[]
       trapsArray.push(getRandomEncounter("Trap"));
       trapsArray.push(getRandomEncounter("Trap-Attack"));
@@ -482,6 +483,10 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Fishing"));
       break;
 
+    case 666: //Altar
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Altar"));
+      break;
+
     case 11: //Container Small
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
@@ -507,14 +512,15 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
-    case 10: //Container Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
-      break;
 
     case 17: //Container Pet/Friend
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Pet","Friend"])));
+      break;
+
+    case 18: //Container Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
     case 30: //Container-3 Empty
@@ -522,21 +528,32 @@ function generateNextEncounters(count=1){
       break;
 
     case 31: //Container >> Mid Enemy >> Loot
-      //Add Smallprop?
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
       linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
       break;
 
     case 36: //Cursed house: Curse >> Consumable
-      //Add Smallprop?
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter("Curse"));
       linesStory.splice(encounterIndex+3,0,getRandomEncounter("Consumable"));
       break;
 
-    case 41: //Container >> Mid Enemy >> Loot >> Altar
-      //Add Smallprop?
+    case 45: //Trapped House: Container >> Trap >> Mid Enemy >> Loot/Consumable
+      //TODO: RM below when solving Case: 5
+      var trapsArray=[]
+      trapsArray.push(getRandomEncounter("Trap"));
+      trapsArray.push(getRandomEncounter("Trap-Attack"));
+      trapsArray.push(getRandomEncounter("Trap-Roll"));
+      var chosenTrap=chooseFrom(trapsArray)
+
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
+      linesStory.splice(encounterIndex+1,0,chosenTrap);
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Swift","Heavy","Demon"])));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
+      break;
+
+    case 4666: //Altar House: Container >> Mid Enemy >> Loot >> Altar
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Swift","Heavy","Demon"])));
       linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));

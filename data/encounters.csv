@@ -27,7 +27,8 @@ Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;There see
 Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
 Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
-Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;No signs of any decay.<br>;
+Forsaken Village;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;No signs of any decay.<br>;
 
 //;Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 //;Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
@@ -58,10 +59,9 @@ Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are da
 Forsaken Village;🕳️;Endless Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep below.<br>;Fished out something.
 
 Forsaken Village;🦔️;Scared Hedgehog;Trap;-1;0;0;0;0;0;Innocent Critter;Just let him be!<br>;Ouch! That was painful
-Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
-Forsaken Village;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Element;It's spreading all around.<br>;Burned alive screaming
-
+Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;It's spreading all around.<br>;Burned alive screaming
+Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
 Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-3;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 Forsaken Village;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 
@@ -112,8 +112,9 @@ Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;-1;0;Deadly Tool;Whatever th
 Forsaken Village;🧹;Possesed Broom;Demon;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Forsaken Village;🐗;Old Warthog;Heavy;2;2;1;0;5;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
-Forsaken Village;🦌;Prime Deer;Heavy;1;2;1;0;5;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
+Forsaken Village;🐗;Old Warthog;Heavy;2;2;1;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
+Forsaken Village;🦌;Alpha Deer;Heavy;1;2;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Forsaken Village;🦬;Enraged Bison;Heavy;1;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
 
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
@@ -164,13 +165,13 @@ Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Pla
 
 //Depriving Fairyland
 Depriving Fairyland;💭;Random Thought;Prop;0;0;0;0;0;0;Epiphany;n/a<br>;
-Depriving Fairyland;☘️;Common Clover;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Depriving Fairyland;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Depriving Fairyland;🌻;Lonely Sunflower;Prop;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 Depriving Fairyland;🪻;Hyacinth Patch;Prop;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 
 Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-Depriving Fairyland;🌿;Fern Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
-Depriving Fairyland;🌿;Grass Thicket;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Depriving Fairyland;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
+Depriving Fairyland;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Depriving Fairyland;🌾;Tall Grass;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Depriving Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🌻;Lonely Sunflower;Container;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
@@ -181,6 +182,7 @@ Depriving Fairyland;🌻;Bunch of Sunflowers;Container-2;0;0;0;0;0;0;Wild Flora;
 Depriving Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hiding there.
 Depriving Fairyland;⛺️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
+Depriving Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 //;Depriving Fairyland;🍯;Sweet Honeypot;Container-2;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 
 Depriving Fairyland;🌲;Dark Wood;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
@@ -188,11 +190,13 @@ Depriving Fairyland;🗻;Rocky Hill;Container-3;0;0;0;0;0;0;Mountaintop;Tough to
 Depriving Fairyland;🏔️;Snowy Mountain;Container-3;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Depriving Fairyland;⛰️;Forest Mountaintop;Container-3;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Depriving Fairyland;🌋;Volcano Throat;Container-3;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
+Depriving Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
 Depriving Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
 Depriving Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Depriving Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Depriving Fairyland;🌋;Volcano Throat;Container-4;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
+Depriving Fairyland;🛖;Chief's Hut;Container-4;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
 Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 
@@ -200,13 +204,19 @@ Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange
 Depriving Fairyland;👁️‍🗨️;Haunting Voices;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
 Depriving Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 
-Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods.
-Depriving Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing.
-Depriving Fairyland;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;Eerie voice asks for blood.<br>;Offered their blood.
+Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods
+Depriving Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
+Depriving Fairyland;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;Eerie voice asks for blood.<br>;Offered their blood
+Depriving Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
+Depriving Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
 
-Depriving Fairyland;🌹;Rose Bush;Trap-Roll;0;1;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
-Depriving Fairyland;🍌;Banana Peel;Trap-Roll;0;2;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head.
+Depriving Fairyland;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
+Depriving Fairyland;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
+Depriving Fairyland;🌹;Rose Bush;Trap-Roll;-1;0;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 Depriving Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
+Depriving Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
+Depriving Fairyland;🪲;Smelly Bug;Trap;-1;0;0;0;0;0;Insect;Its colour suggests against touching.<br>;Horrendous smell filled the air
+Depriving Fairyland;🦀;Tiny Crab;Trap;-1;0;0;0;0;0;Insect;Its colour suggests against touching.<br>;Horrendous smell filled the air
 
 Depriving Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;Fished out something.
 Depriving Fairyland;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;Fished out something.
@@ -218,7 +228,7 @@ Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Stran
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>;Received their blessing.
 Depriving Fairyland;🐫;Bumpy Horse;Pet;2;0;1;0;2;0;Mythical Creature;Strange horse approached.<br>;Survival instincts increased.
-🦙🦒
+🦙🦒🦭
 
 Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
 Depriving Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;Dangerous Insect;<br>;
@@ -232,7 +242,7 @@ Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;4;0;Wild Animal;The creat
 Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
 Depriving Fairyland;🧙‍♂️;Bloody Cultist;Standard;2;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 Depriving Fairyland;🧌;Old Troll;Standard;3;1;1;0;2;1;Creature;Not happy about having a company.<br>;Turned into goulash.
-Depriving Fairyland;🕷️;Huge Tarantula;Small;1;3;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
+Depriving Fairyland;🕷️;Huge Tarantula;Standard;1;3;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
 
 Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
 Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;3;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
@@ -244,7 +254,8 @@ Depriving Fairyland;🦟;Oversize Mosqito;Swift;2;2;2;0;-1;0;Pesky Insect;Never 
 Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
 Depriving Fairyland;🦧;Ginger Ape;Heavy;2;2;2;0;3;0;Wild Beast;Probably has no soul.<br>;
 Depriving Fairyland;🦍;Native Ape;Heavy;3;2;1;0;3;0;Wild Beast;Buffed and ready to fight.<br>;
-Depriving Fairyland;🦏;Massive Rhino;Heavy;3;3;1;0;5;0;Wild Beast;Its majestic horn looks rather deadly.<br>;
+Depriving Fairyland;🦏;Bulky Rhino;Heavy;3;3;1;0;5;0;Wild Beast;Its majestic horn looks rather deadly.<br>;
+Depriving Fairyland;🐆;Massive Sabertooth;Heavy;3;3;2;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
 
 Depriving Fairyland;👿;Laughing Devil;Demon;2;1;1;0;3;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
@@ -262,8 +273,10 @@ Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surro
 Depriving Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>;That was delicious
 Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented.
 Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
-🥟
+Depriving Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>;
 
+Depriving Fairyland;🪘;Tribal Drum;Item;0;0;0;0;0;0;Musical Instrument;The leather on top is torn.<br>;
+Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Magic Artifact;The sacrifical blade demands blood.<br>;Released energy from the inside.
 Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Artifact;Glows with strong energy.<br>;Embraced the energy surge.
 Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;1;0;0;-2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds

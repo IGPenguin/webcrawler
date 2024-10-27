@@ -1,5 +1,6 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
+Loot;🦞;Unlucky Lobster;Trap;0;0;0;0;0;0;Crustacean;Handle with care.<br>;Cooked would taste better
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
 Loot;🪸;Radiating Coral;Consumable;-1;0;0;0;0;1;Rare Fish;Convenient snack straight out of water.<br>;
