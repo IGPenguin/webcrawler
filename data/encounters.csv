@@ -71,6 +71,7 @@ Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange th
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;2;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
 Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts unthinkable abilities.<br>;Felt something change inside.
 
+Forsaken Village;🦊;Cunning Fox;Pet;2;1;3;0;3;0;Wild Animal;Sits around waving its furry tail.<br>;
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
 Forsaken Village;🐩;Lost Doggo;Pet;2;1;1;0;1;0;Good Boy;Looks cute as hell.<br>;Became best friends!
@@ -111,10 +112,11 @@ Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;3;0;Cute Animal;These usu
 Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 Forsaken Village;🧹;Possesed Broom;Demon;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 
-Forsaken Village;🐏;Alpha Ram;Heavy;2;1;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Forsaken Village;🐏;Alpha Ram;Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Forsaken Village;🐗;Old Warthog;Heavy;2;2;1;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
-Forsaken Village;🦌;Alpha Deer;Heavy;1;2;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Forsaken Village;🦬;Enraged Bison;Heavy;1;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
+Forsaken Village;🦌;Alpha Deer;Heavy;2;2;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Forsaken Village;🦬;Enraged Bison;Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got totally torn apart.
+Forsaken Village;🐂;Horny Bull;Heavy;3;3;1;0;3;0;Wild Animal;Looks fairly angry over something.<br>Better avoid the horns.;
 
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
@@ -286,3 +288,4 @@ Depriving Fairyland;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains en
 Depriving Fairyland;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
 Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Artifact;Express empathy with the terminally ill.<br>;
+Depriving Fairyland;🪆;Suspicious Idol;Item;0;0;0;-3;0;1;Cursed Object;Unfamiliar peace of ancient art.<br>;
