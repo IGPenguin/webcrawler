@@ -2741,7 +2741,7 @@ function registerClickListeners(){
 //Social features
 function generateCharacterShareString(){
   var characterShareString="";
-    characterShareString+="<b>\n"+playerName+"</b>";
+    characterShareString+="<b>"+playerName+"</b>";
     characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     if ((playerPartyString.length+playerLootString.length)>0) characterShareString+="\n";
@@ -2755,20 +2755,24 @@ function generateCharacterShareString(){
   return characterShareString;
 }
 
+function generateCharacterLegend() {
+  var characterLegend="";
+  characterLegend = adventureLog.replaceAll("<br>","\n");
+  var tempString = characterLegend.split("\n").slice(2);
+  characterLegend = tempString.join("\n");
+  characterLegend = characterLegend.replaceAll("&nbsp;"," ").substring(1);
+
+  characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
+  characterLegend += "\nhttps://igpenguin.github.io/webcrawler";
+  characterLegend +=  "\n"+ versionCode;
+
+  return characterLegend;
+}
+
 function copyAdventureToClipboard(){
+  var adventureLogClipboard = generateCharacterLegend();
   displayPlayerEffect("📜");
   logPlayerAction(actionString,"Written the legend to hard drive.");
-
-  var adventureLogClipboard = "";
-
-  adventureLogClipboard = adventureLog.replaceAll("<br>","\n");
-  var tempString = adventureLogClipboard.split("\n").slice(2);
-  adventureLogClipboard = tempString.join("\n");
-  adventureLogClipboard = adventureLogClipboard.replaceAll("&nbsp;"," ").substring(1);
-
-  adventureLogClipboard=generateCharacterShareString()+"\n\n"+adventureLogClipboard;
-  adventureLogClipboard += "\nhttps://igpenguin.github.io/webcrawler";
-  adventureLogClipboard +=  "\n"+ versionCode;
 
   //Copy to clipboard
   navigator.clipboard.writeText(adventureLogClipboard);
@@ -2791,11 +2795,12 @@ function copyAdventureToClipboard(){
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, I just finished a WebCrawler run!"+"\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")+"\n"));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, check out my WebCrawler run!"+"\n\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")+"\n"));
 }
 
-function redirectToFeedback(){
-  var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
+function redirectToFeedback(prefillLog=""){
+  //var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
+  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend().replaceAll("<b>","").replaceAll("</b>",""));
   window.open(googleFormUrl);
 }
 
