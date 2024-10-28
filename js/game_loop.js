@@ -52,9 +52,9 @@ var seenLoot;
 renewPlayer();
 function renewPlayer(){ //Default values
   playerName = getFirstName();
-  playerHpMax=2;
+  playerHpMax=3;
   playerHp = playerHpMax;
-  playerStaMax = 1;
+  playerStaMax = 3;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
   playerMgkMax = 0;
   playerAtk = 1;
