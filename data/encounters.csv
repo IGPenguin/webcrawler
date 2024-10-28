@@ -122,10 +122,13 @@ Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides
 Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Forsaken Village;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>🖤 Unbreakable</b>.<br><b>Resist +1 physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>
-Forsaken Village;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>
-Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>
-Forsaken Village;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserker</b>
+Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>.
+Forsaken Village;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
+Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
+Forsaken Village;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserker</b>.
+Forsaken Village;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
+Forsaken Village;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for that much <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
+Depriving Fairyland;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
 
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
@@ -294,16 +297,19 @@ Depriving Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provi
 Depriving Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Depriving Fairyland;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>🖤 Unbreakable</b>.<br><b>Resist +1 physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Depriving Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Depriving Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>
-Depriving Fairyland;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>
-Depriving Fairyland;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.<br>;Embraced destiny&nbsp<b>🃏 Mage</b>
-Depriving Fairyland;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.<br>;Embraced destiny&nbsp<b>🃏 Berserker</b>
+Depriving Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>.
+Depriving Fairyland;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
+Depriving Fairyland;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.<br>;Embraced destiny&nbsp<b>🃏 Mage</b>.
+Depriving Fairyland;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.<br>;Embraced destiny&nbsp<b>🃏 Berserker</b>.
+Depriving Fairyland;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
+Depriving Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for that much <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
+Depriving Fairyland;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
 
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Magic Artifact;The sacrifical blade demands blood.<br>;Released energy from the inside.
 Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Artifact;Glows with strong energy.<br>;Embraced the energy surge.
 Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;1;0;0;-2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds
-Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Nice. Whatever purpose it has.<br>;Felt strange power surge.
+Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>;Felt strange power surge.
 Depriving Fairyland;📘;Glowing Book;Item;0;0;0;0;0;1;Legendary Artifact;Radiates with magic energy.<br>;Mastered the basics of magic.
 Depriving Fairyland;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of gibberish.<br>;Eternal presence noticed that.
 Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.

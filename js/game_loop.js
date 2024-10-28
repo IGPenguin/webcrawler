@@ -1597,6 +1597,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Item":
             displayEnemyEffect("👋");
+
             if (enemyEmoji=="⚖️"){
               var halfHp = Math.floor(playerHp/2);
               if (halfHp == 0) {
@@ -1628,6 +1629,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerLootString+=enemyEmoji;
             }
 
+            if (enemyEmoji=="🎲"){
+              var halfHp = Math.floor(playerHp/2);
+              if (halfHp == 0) {
+                logPlayerAction(actionString,"Not enough <b>❤️ Health</b> available.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              playerHpMax-=halfHp;
+              playerHit(halfHp);
+
+              isLooting=false;
+              playerLootString+=enemyEmoji;
+            }
 
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             isLooting=false;
@@ -1996,6 +2010,13 @@ function enemyAttackOrRest(message=""){
   var staminaChangeMsg;
 
   if (enemySta>enemyStaLost) {
+
+    if (procAbilityChance("🎲",33)){
+      logAction("🪄 ▸ 🎲 Attack resisted by <b>🎲 Pure Chance</b>.");
+      displayPlayerEffect("🎲");
+      return false;
+    }
+
     if (playerLootString.includes("🖤") && (enemyAtk+enemyAtkBonus)>0) {
       logAction("⚔️ ▸ 🖤 Resisted -1 💔 due to <b>🖤 Unbreakable</b>.");
       damageReceived--;
@@ -2124,6 +2145,10 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
     if (abilityEmoji=="💠"){
       return true;
       }
+
+    if (abilityEmoji=="🎲"){
+      return true;
+    }
 
   }
 }
