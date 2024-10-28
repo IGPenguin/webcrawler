@@ -1537,7 +1537,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
-                logAction("🍀 ▸ ✋ Touched them, they were spooked.");
+                logAction("🍀 ▸ ✋ Touched them. <b>Luckily</b>, they were spooked.");
                 displayEnemyEffect("💨");
                 displayPlayerEffect("🍀");
                 nextEncounter();
@@ -2396,7 +2396,7 @@ function playerHit(incomingDamage,applyLuck=true){
   var hitChance = Math.floor(Math.random() * luckInterval);
 
   if (applyLuck && ( hitChance <= playerLck )){
-    logAction("🍀&nbsp;▸&nbsp;💢 Luckily avoided receiving the damage.");
+    logAction("🍀&nbsp;▸&nbsp;💢 <b>Luckily</b> avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -2405,29 +2405,39 @@ function playerHit(incomingDamage,applyLuck=true){
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
+
     var deathChance = Math.floor(Math.random() * luckInterval * 3); //Small chance to not die
     if (applyLuck && ( deathChance <= playerLck )){
       playerHp+=1;
-      logAction("🍀&nbsp;▸&nbsp;💀 Luckily got a second chance to live.");
+      logAction("🍀&nbsp;▸&nbsp;💀 <b>Luckily</b> got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
+
+    if (playerLootString.includes("🫀")) {
+      playerUseItem("🫀","n/a","n/a",true,true)
+      logAction("💀 ▸ 🫀 Still allive thanks to <b>💀 Cheat Death</b>.");
+      displayPlayerGainedEffect();
+      playerHp+=1;
+      return;
+    }
+
     gameOver();
     return;
   }
   displayPlayerEffect("💢");
 }
 
-function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true){
+function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true,silent=false){
   if (playerLootString.includes(item)){
     if (enemyMsg!="") messageSuccess=enemyMsg;
     if (effect) displayEnemyEffect(item);
     playerLootString=playerLootString.replace(item,"");
     displayPlayerEffect(item);
-    logPlayerAction(actionString,messageSuccess);
+    if (!silent) logPlayerAction(actionString,messageSuccess);
     return true;
   } else {
-    logPlayerAction(actionString,messageFail);
+    if (!silent) logPlayerAction(actionString,messageFail);
     displayPlayerCannotEffect();
     return false;
   }
