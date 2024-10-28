@@ -2022,6 +2022,13 @@ function enemyCastIfMgk(hit=true){
 
   if (enemyMgk>enemyMgkLost) {
     enemyMgkLost++
+
+    if (procAbilityChance("💠",33)){
+      logAction("🪄 ▸ 💠 Enemy spell resisted by <b>💠 Reflect Magic</b>.");
+      displayPlayerEffect("💠");
+      return false;
+    }
+
     if (hit) {
       logAction(enemyEmoji+" ▸ 🪄 Got hit by the enemy spell -1 💔");
       playerHit(1);
@@ -2066,8 +2073,15 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
     if (abilityEmoji=="🥻"){
       var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Random Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:n/a<br>","message:"]
       linesStory.splice(encounterIndex+1,0,philosopherThoughts);
-      console.log(philosopherThoughts)
-      console.log(linesStory);
+      //console.log(philosopherThoughts)
+      //console.log(linesStory);
+
+      logPlayerAction(abilityEmoji,"Got stuck in a <b>💭 Random Thought</b>.")
+      return true;
+      }
+
+    if (abilityEmoji=="💠"){
+      return true;
       }
 
   }
