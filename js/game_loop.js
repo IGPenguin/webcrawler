@@ -1964,11 +1964,20 @@ function enemyAttackOrRest(message=""){
   var staminaChangeMsg;
 
   if (enemySta>enemyStaLost) {
-    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"}
-    else {
+    if (playerLootString.includes("🖤") && (enemyAtk+enemyAtkBonus)>0) {
+      logAction("⚔️ ▸ 🖤 Resisted -1 💔 due to <b>🖤 Unbreakable</b>.");
+      damageReceived--;
+      displayPlayerEffect("🖤");
+      if (damageReceived<=0) return false;
+    }
+
+    if (enemyType!="Demon"){
+      staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"
+    } else {
         staminaChangeMsg = "The enemy siphoned some health -"+damageReceived+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
+
     if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
