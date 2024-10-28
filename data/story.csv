@@ -48,7 +48,7 @@ Forsaken Village;❓;Random Trap;Generator-5;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-18;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO Randomize boss
-Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.;Got torn to tiny pieces.
+Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO Balance and finalize this area

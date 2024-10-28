@@ -552,9 +552,9 @@ function generateNextEncounters(count=1){
       var chosenTrap=chooseFrom(trapsArray)
 
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
-      linesStory.splice(encounterIndex+1,0,chosenTrap);
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Swift","Heavy","Demon"])));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
+      linesStory.splice(encounterIndex+2,0,chosenTrap);
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Heavy","Demon"])));
+      linesStory.splice(encounterIndex+4,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
       break;
 
     case 4666: //Altar House: Container >> Mid Enemy >> Loot >> Altar
@@ -730,7 +730,7 @@ function redraw(){
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
-        if (enemyHp<0) enemyStatusString=decorateStatusText("🦠","Risky",colorRed)
+        if (enemyHp<0) enemyStatusString=decorateStatusText("🦠","Hazardous",colorRed)
         }
       break;
   }
