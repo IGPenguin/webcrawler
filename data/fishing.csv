@@ -1,4 +1,16 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
+Loot;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thoughts</b>.
+Loot;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
+Loot;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>🖤 Unbreakable</b>.<br><b>Resist +1 physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
+Loot;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>.
+Loot;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
+Loot;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
+Loot;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserker</b>.
+Loot;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
+Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for that much <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
+Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
+
 Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🦞;Unlucky Lobster;Trap;0;0;0;0;0;0;Crustacean;Handle with care.<br>;Cooked would taste better
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
@@ -26,8 +38,6 @@ Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;Unreadable. All letters are f
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;
-Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;Destiny Echo;Means: Easily blinded by trust.<br>;Embraced foretold destiny
-Loot;🃏;Tarot Card — Lover;Item;2;0;0;0;-2;0;Destiny Echo;Means: Voluntarily seized by romance.<br>;Embraced foretold destiny
 Loot;🏺;Burial Amphora;Item;0;0;0;-1;0;0;Ancient Container;Water is splashing inside.<br>;Got wet ashes all over.
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
 Loot;🎀;Silly Bowtie;Item;0;0;1;0;-1;0;Cringe Accessory;The extra speed is what counts.<br>;Tied over the right arm

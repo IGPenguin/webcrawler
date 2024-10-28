@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/27/24 • 11:28 pm"
-var initialEncounterOverride=7; //7 skips tutorial
+var versionCode = "fpm 10/28/24 • 4:37 am"
+var initialEncounterOverride=0; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -1007,7 +1007,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Threw it far away.");
             } else {
               logPlayerAction(actionString,"Walked away wasting the potential.");
-              encounterIndex++;
+              if (enemyType=="Checkpoint") encounterIndex++;
             }
             nextEncounter();
             break;
@@ -1596,10 +1596,56 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Item":
-            playerLootString+=enemyEmoji;
             displayEnemyEffect("👋");
+
+            if (enemyEmoji=="⚖️"){
+              var halfHp = Math.floor(playerHp/2);
+              if (halfHp == 0) {
+                logPlayerAction(actionString,"Not enough <b>❤️ Health</b> available.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              playerHpMax-=halfHp;
+              playerAtk+=halfHp;
+              playerHit(halfHp);
+
+              isLooting=false;
+              playerLootString+=enemyEmoji;
+            }
+
+            if (enemyEmoji=="🍭"){
+              var halfSta = Math.floor(playerSta/2);
+              if (halfSta == 0) {
+                logPlayerAction(actionString,"Not enough <b>🟢 Stamina</b> available.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              playerSta-=halfSta;
+              playerStaMax-=halfSta;
+              playerMgkMax+=halfSta;
+              playerMgk+=halfSta;
+
+              isLooting=false;
+              playerLootString+=enemyEmoji;
+            }
+
+            if (enemyEmoji=="🎲"){
+              var halfHp = Math.floor(playerHp/2);
+              if (halfHp == 0) {
+                logPlayerAction(actionString,"Not enough <b>❤️ Health</b> available.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              playerHpMax-=halfHp;
+              playerHit(halfHp);
+
+              isLooting=false;
+              playerLootString+=enemyEmoji;
+            }
+
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             isLooting=false;
+            playerLootString+=enemyEmoji;
             break;
 
           case "Small":
@@ -1964,6 +2010,13 @@ function enemyAttackOrRest(message=""){
   var staminaChangeMsg;
 
   if (enemySta>enemyStaLost) {
+
+    if (procAbilityChance("🎲",33)){
+      logAction("🪄 ▸ 🎲 Attack resisted by <b>🎲 Pure Chance</b>.");
+      displayPlayerEffect("🎲");
+      return false;
+    }
+
     if (playerLootString.includes("🖤") && (enemyAtk+enemyAtkBonus)>0) {
       logAction("⚔️ ▸ 🖤 Resisted -1 💔 due to <b>🖤 Unbreakable</b>.");
       damageReceived--;
@@ -2092,6 +2145,10 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
     if (abilityEmoji=="💠"){
       return true;
       }
+
+    if (abilityEmoji=="🎲"){
+      return true;
+    }
 
   }
 }

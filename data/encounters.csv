@@ -122,9 +122,15 @@ Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides
 Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Forsaken Village;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>🖤 Unbreakable</b>.<br><b>Resist +1 physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>.
+Forsaken Village;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
+Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
+Forsaken Village;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserker</b>.
+Forsaken Village;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
+Forsaken Village;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for that much <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
+Forsaken Village;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
 
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
-Forsaken Village;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 Forsaken Village;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
@@ -137,12 +143,13 @@ Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes var
 Forsaken Village;🔖;Strange Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
 Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>;Hopefully this somehow works.
-Forsaken Village;️🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
 Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;1;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! It has sharp thorns
 Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
 Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
-Forsaken Village;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
+Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+Forsaken Village;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;
+Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
 
 Forsaken Village;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
 Forsaken Village;🧅;Spicy Onion;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
@@ -158,7 +165,7 @@ Forsaken Village;🍗;Fresh Meat;Consumable;0;0;0;0;0;0;Questionable Food;Could 
 Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Smells terrible... still tempting though.<br>;Barely held it inside
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;1;0;-1;0;Stale Delicacy;Wonder how it tastes?<br>;That was not worth it
-Forsaken Village;💩;Steaming Pile;Consumable;-1;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;That was extremely disgusting
+Forsaken Village;💩;Steaming Pile;Consumable;-1;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Extremely disgusting
 🌶️🌽🥚🥩🍤
 🧄🥖🍞🥐🥨🪺
 
@@ -283,20 +290,33 @@ Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Grow
 Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
 Depriving Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>;
 
-Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thoughts</b>.
-Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
-Forsaken Village;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>🖤 Unbreakable</b>.<br><b>Resist +1 physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
-Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Depriving Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thoughts</b>.
+Depriving Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
+Depriving Fairyland;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>🖤 Unbreakable</b>.<br><b>Resist +1 physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
+Depriving Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Depriving Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>.
+Depriving Fairyland;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
+Depriving Fairyland;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.<br>;Embraced destiny&nbsp<b>🃏 Mage</b>.
+Depriving Fairyland;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.<br>;Embraced destiny&nbsp<b>🃏 Berserker</b>.
+Depriving Fairyland;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
+Depriving Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for that much <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
+Depriving Fairyland;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
+Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Artifact;Provides <b>+2 🔵 Mana when read.</b><br>;Mastered the basics of magic.
 
-Depriving Fairyland;🪘;Tribal Drum;Item;0;0;0;0;0;0;Musical Instrument;The leather on top is torn.<br>;
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
-Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Magic Artifact;The sacrifical blade demands blood.<br>;Released energy from the inside.
-Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Artifact;Glows with strong energy.<br>;Embraced the energy surge.
+Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Ritual Tool;The sacrifical blade demands blood.<br>;Released energy from the inside.
+Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>;Embraced the energy surge.
 Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;1;0;0;-2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds
-Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Nice. Whatever purpose it has.<br>;Felt strange power surge.
-Depriving Fairyland;📘;Glowing Book;Item;0;0;0;0;0;1;Legendary Artifact;Radiates with magic energy.<br>;Mastered the basics of magic.
+Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>;Felt strange power surge.
 Depriving Fairyland;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of gibberish.<br>;Eternal presence noticed that.
 Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
-Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Artifact;Express empathy with the terminally ill.<br>;
+Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>;
 Depriving Fairyland;🪆;Suspicious Idol;Item;0;0;0;-3;0;1;Cursed Object;Unfamiliar peace of ancient art.<br>;
-Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Artifact;Unfamiliar peace of ancient art.<br>;
+Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
+Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>;
+Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Seems heavy and quite useless.<br>;Put it on their back
+Depriving Fairyland;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+Depriving Fairyland;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;
+Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
+Depriving Fairyland;🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
+Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
