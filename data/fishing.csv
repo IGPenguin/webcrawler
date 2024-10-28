@@ -8,7 +8,7 @@ Loot;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<
 Loot;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
 Loot;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserker</b>.
 Loot;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
-Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for that much <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
+Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
 Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
 
 Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
@@ -17,7 +17,7 @@ Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straig
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
 Loot;🪸;Radiating Coral;Consumable;-1;0;0;0;0;1;Rare Fish;Convenient snack straight out of water.<br>;
 Loot;🔪;Dull Knife;Item;0;0;0;0;0;0;Worn Tool;Useless in combat.<br>;Took it with themselves just in case.
-Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant had moved away.<br>;Gained powers of the sea.
+Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>;Gained powers of the sea.
 Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>;Gained powers of the wilds.
 Loot;👞;Old Shoes;Item;0;0;-1;2;0;0;Trash;Thoroughly wet leather shoes.<br>;Disgusting but kinda cool.
 Loot;🎓;Graduate Hat;Item;0;0;0;0;2;0;Trash;Proof of previously obtained knowledge.<br>;
