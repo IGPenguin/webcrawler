@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/28/24 • 6:55 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var versionCode = "fpm 10/28/24 • 11:35 pm"
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -161,7 +161,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> to recover <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> worms to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for blood sacrifice."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -758,10 +758,11 @@ function redraw(){
 
       default:
         displayPlayerState(); //Cautious by default
-        if (enemyType.includes("Container") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"){
+        if (enemyType.includes("Container") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"||enemyType=="Fishing"){
           if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
           if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
           if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
+          if (playerLootString.includes("🪱") && enemyType=="Fishing") displayPlayerState("Bait Ready",colorDarkGreen,"0.8");
         }
         if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
         if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
@@ -1012,7 +1013,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Fishing":
-            logPlayerAction(actionString,"Continued alongside the shore.");
+            logPlayerAction(actionString,"Continued alongside the edge.");
             nextEncounter();
             break;
           case "Altar":
@@ -1608,9 +1609,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerHpMax-=halfHp;
               playerAtk+=halfHp;
               playerHit(halfHp);
-
-              isLooting=false;
-              playerLootString+=enemyEmoji;
             }
 
             if (enemyEmoji=="🍭"){
@@ -1624,9 +1622,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerStaMax-=halfSta;
               playerMgkMax+=halfSta;
               playerMgk+=halfSta;
-
-              isLooting=false;
-              playerLootString+=enemyEmoji;
             }
 
             if (enemyEmoji=="🎲"){
@@ -1638,9 +1633,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               playerHpMax-=halfHp;
               playerHit(halfHp);
-
-              isLooting=false;
-              playerLootString+=enemyEmoji;
             }
 
             playerLootString+=enemyEmoji;
@@ -1989,6 +1981,7 @@ function enemyHit(damage,magicType=false) {
     logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
     playerKills++;
     animateFlipNextEncounter();
+    isLooting=false;
   }
 }
 

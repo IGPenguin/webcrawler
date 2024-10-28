@@ -6,7 +6,7 @@ Loot;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbs
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>.
 Loot;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
 Loot;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
-Loot;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserker</b>.
+Loot;🃏;Tarot Card — Berserk;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserk</b>.
 Loot;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
 Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
@@ -36,16 +36,16 @@ Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent 
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;Unreadable. All letters are faded.<br>;Pocketed a piece of trash.
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
-Loot;🧪;Unknown Potion;Item;0;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>Probably shouldn't risk it.;Left a funny taste in the mouth
+Loot;🧪;Unknown Potion;Consumable;-2;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>;Left a funny taste in the mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;Realized the dark truth
-Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside.<br>;Got wet human ashes all over themselves.
+Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside.<br>;Spilled the ashes all over themselves.
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
 Loot;🎀;Silly Bowtie;Item;0;0;1;0;-1;0;Cringe Accessory;The extra speed is what counts.<br>;Tied over the right arm
 Loot;🔖;Wet Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Loot;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
 Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>;Felt a surge in the chest.
 Loot;‍🦈;Hungry Shark;Standard;1;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-Loot;‍🦑;Depths Squid;Heavy;2;2;1;0;-1;0;Aquatic Threat;Giant octopus from deep waters.<br>;Swallowed in one slurp!
+Loot;‍🦑;Depths Squid;Heavy;2;2;1;0;-1;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Swallowed in one slurp!
 Loot;‍🪼;Box Jelly;Swift;1;3;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 //;Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
 //;Loot;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;Portable Sanctuary;Provides a personal safespace.<br>;
