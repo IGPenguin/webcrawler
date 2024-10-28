@@ -1,12 +1,12 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Forsaken Village
-Forsaken Village;🦴;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-Forsaken Village;🫙;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-Forsaken Village;🏺;Painted Amphora;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-Forsaken Village;🪹;Empty Nest;Prop-Small;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
+//;Forsaken Village;🦴;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+//;Forsaken Village;🫙;Human Femur;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+//;Forsaken Village;🏺;Painted Amphora;Prop-Small;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+//;Forsaken Village;🪹;Empty Nest;Prop-Small;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 
-Forsaken Village;🚪;Exit Door;Prop-Exit;0;0;0;0;0;0;Way Out;It is finally over.<br>;Closed the door behind.
+//;Forsaken Village;🚪;Exit Door;Prop-Exit;0;0;0;0;0;0;Way Out;It is finally over.<br>;Closed the door behind.
 
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
@@ -82,8 +82,9 @@ Forsaken Village;🐈;Strange Cat;Pet;0;0;0;1;0;0;Cute Animal;Wants to initiate 
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Fly Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Overgrown Worm;Small;2;1;1;0;-1;0;Arthropod;Oh no. It fights back!<br>;
 Forsaken Village;🪰;Pesky Fly;Small;1;0;3;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Forsaken Village;🦋;Skyblue Butterfly;Small;1;0;2;0;-1;0;Stunning Insect;Flies from one flower to another.<br>;How could this happen?
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Forsaken Village;🐀;Dire Rat;Small;1;1;2;0;-1;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;-1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
@@ -173,8 +174,8 @@ Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a 
 Forsaken Village;🔱;Altar of Haste;Altar;-1;0;1;0;0;0;Ritual Place;There's a blood on the surface.<br>;
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
-Forsaken Village;🇻🇦;Altar of Worship;Item;0;0;0;2;0;0;Holy Book;Contains endless pages of prayers.<br>;Prayed to the Greater Good
-Forsaken Village;☠️;Cult Altar;Item;0;0;0;-3;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
+Forsaken Village;🇻🇦;Altar of Worship;Altar;0;0;0;2;0;0;Holy Book;Place of thoughts and prayers.<br>;Prayed to the Greater Good
+Forsaken Village;☠️;Cult Altar;Altar;0;0;0;-3;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
@@ -251,6 +252,7 @@ Depriving Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;Dangerous Insect;<
 Depriving Fairyland;🪱;Fly Larva;Small;1;0;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
 Depriving Fairyland;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.;There was nowhere to run.
 Depriving Fairyland;🕷️;Black Widow;Small;1;5;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
+Depriving Fairyland;🦋;Skyblue Butterfly;Small;1;1;1;0;-1;1;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
 
 Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;3;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
