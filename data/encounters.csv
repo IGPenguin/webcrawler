@@ -92,10 +92,10 @@ Forsaken Village;🐜;Forest Ant;Small;1;1;2;0;-1;0;Tireless Worker;Able to carr
 Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
 🐛🦟🦗
 
-Forsaken Village;🪿;Angry Goose;Standard;1;1;3;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Forsaken Village;🐕;Stray Hound;Standard;2;1;2;0;0;0;Lost Animal;Seems starving for a long time.<br>;
-Forsaken Village;🐐;Screaming Goat;Standard;1;2;2;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
-Forsaken Village;🦝;Ferocious Coon;Standard;2;1;2;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
+Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
+Forsaken Village;🐕;Stray Hound;Standard;2;2;1;0;0;0;Lost Animal;Seems starving for a long time.<br>;
+Forsaken Village;🐐;Screaming Goat;Standard;3;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured to the bone.
+Forsaken Village;🦝;Ferocious Coon;Standard;2;2;2;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to underestimate.<br>;Pecked to death.
 Forsaken Village;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Pinched to death.
 Forsaken Village;🦢;Possesive Swan;Standard;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Honked to death!
@@ -127,9 +127,6 @@ Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacr
 Forsaken Village;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
 Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
 Forsaken Village;🃏;Tarot Card — Berserker;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserker</b>.
-Forsaken Village;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
-Forsaken Village;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for that much <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
-Forsaken Village;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice&nbsp<b>1/2 ❤️ Health</b> for&nbsp<b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
 
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Forsaken Village;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
@@ -148,8 +145,8 @@ Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;1;0;Forest Flora;These are just be
 Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
 Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
-Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
-Forsaken Village;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;
+//;Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+//;Forsaken Village;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
 
 Forsaken Village;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
@@ -258,12 +255,12 @@ Depriving Fairyland;🕷️;Black Widow;Small;1;5;1;0;-1;0;Imminent Danger;Venom
 Depriving Fairyland;🦋;Skyblue Butterfly;Small;1;1;1;0;-1;1;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
 
 Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;3;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
-Depriving Fairyland;🦚;Pearlescent Bird;Standard;2;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
-Depriving Fairyland;🦡;Honey Badger;Standard;2;2;2;0;4;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
+Depriving Fairyland;🦚;Pearlescent Bird;Standard;3;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
+Depriving Fairyland;🦡;Honey Badger;Standard;3;2;2;0;4;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
-Depriving Fairyland;🧙‍♂️;Bloody Cultist;Standard;2;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
-Depriving Fairyland;🧌;Old Troll;Standard;3;1;1;0;2;1;Creature;Not happy about having a company.<br>;Turned into goulash.
-Depriving Fairyland;🕷️;Huge Tarantula;Standard;1;3;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
+Depriving Fairyland;🧙‍♂️;Bloody Cultist;Standard;3;1;1;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Depriving Fairyland;🧌;Old Troll;Standard;4;1;1;0;2;1;Creature;Not happy about having a company.<br>;Turned into goulash.
+Depriving Fairyland;🕷️;Huge Tarantula;Standard;3;3;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
 
 Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
 Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;3;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
@@ -321,8 +318,8 @@ Depriving Fairyland;🪆;Suspicious Idol;Item;0;0;0;-3;0;1;Cursed Object;Unfamil
 Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>;
 Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Seems heavy and quite useless.<br>;Put it on their back
-Depriving Fairyland;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
-Depriving Fairyland;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;
+//;Depriving Fairyland;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+//;Depriving Fairyland;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;
 Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
 Depriving Fairyland;🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
