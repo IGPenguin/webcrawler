@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/27/24 • 10:58 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var versionCode = "fpm 10/27/24 • 11:28 pm"
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -15,7 +15,9 @@ var colorRed = "#FF0000";
 var colorGrey = "#CCCCCC";
 var colorDarkGrey = "#888888";
 var colorOrange = "orange";
+var colorYellow = "#EDD93B";
 var colorBlue = "#1059AA";
+var colorPurple = "#BF40BF";
 
 //Symbols
 var fullSymbol = "●";
@@ -513,9 +515,12 @@ function generateNextEncounters(count=1){
       break;
 
 
-    case 17: //Container Pet/Friend
+    case 17: //Container Pet/Friend/Container Friend
+      var typeDetail = chooseFrom(["Pet","Friend","Container-Friend"])
+
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Pet","Friend"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
+      if (typeDetail=="Container-Friend") linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
       break;
 
     case 18: //Container Consumable
@@ -683,6 +688,7 @@ function redraw(){
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
+      if (enemyTeam.includes("Artifact")) enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
       break;
 
     case "Trap":
@@ -721,7 +727,7 @@ function redraw(){
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
-      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
+      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
