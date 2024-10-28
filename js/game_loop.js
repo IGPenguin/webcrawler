@@ -52,9 +52,9 @@ var seenLoot;
 renewPlayer();
 function renewPlayer(){ //Default values
   playerName = getFirstName();
-  playerHpMax=3;
+  playerHpMax=2;
   playerHp = playerHpMax;
-  playerStaMax = 3;
+  playerStaMax = 1;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
   playerMgkMax = 0;
   playerAtk = 1;
@@ -1007,7 +1007,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Threw it far away.");
             } else {
               logPlayerAction(actionString,"Walked away wasting the potential.");
-              encounterIndex++;
+              if (enemyType=="Checkpoint") encounterIndex++;
             }
             nextEncounter();
             break;
@@ -1596,10 +1596,42 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Item":
-            playerLootString+=enemyEmoji;
             displayEnemyEffect("👋");
+            if (enemyEmoji=="⚖️"){
+              var halfHp = Math.floor(playerHp/2);
+              if (halfHp == 0) {
+                logPlayerAction(actionString,"Not enough <b>❤️ Health</b> available.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              playerHpMax-=halfHp;
+              playerAtk+=halfHp;
+              playerHit(halfHp);
+
+              isLooting=false;
+              playerLootString+=enemyEmoji;
+            }
+
+            if (enemyEmoji=="🍭"){
+              var halfSta = Math.floor(playerSta/2);
+              if (halfSta == 0) {
+                logPlayerAction(actionString,"Not enough <b>🟢 Stamina</b> available.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              playerSta-=halfSta;
+              playerStaMax-=halfSta;
+              playerMgkMax+=halfSta;
+              playerMgk+=halfSta;
+
+              isLooting=false;
+              playerLootString+=enemyEmoji;
+            }
+
+
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             isLooting=false;
+            playerLootString+=enemyEmoji;
             break;
 
           case "Small":
