@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/28/24 • 1:09 pm"
+var versionCode = "fpm 10/28/24 • 1:19 pm"
 var initialEncounterOverride=0; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -1643,9 +1643,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerLootString+=enemyEmoji;
             }
 
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
-            isLooting=false;
             playerLootString+=enemyEmoji;
+            isLooting=false;
+            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             break;
 
           case "Small":
@@ -2379,7 +2379,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     } else {
       changeSign=" +";
       playerHp+=bonusHp;
-      isplayPlayerEffect("❤️");
+      displayPlayerEffect("❤️");
       displayPlayerGainedEffect();
     }
     playerHpMax += parseInt(bonusHp);
