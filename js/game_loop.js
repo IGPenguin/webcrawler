@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/27/24 • 10:58 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var versionCode = "fpm 10/27/24 • 11:28 pm"
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -15,7 +15,9 @@ var colorRed = "#FF0000";
 var colorGrey = "#CCCCCC";
 var colorDarkGrey = "#888888";
 var colorOrange = "orange";
+var colorYellow = "#EDD93B";
 var colorBlue = "#1059AA";
+var colorPurple = "#BF40BF";
 
 //Symbols
 var fullSymbol = "●";
@@ -398,7 +400,6 @@ function loadEncounter(index, fileLines = linesStory){
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
-
     adventureEncounterCount-- //Remove the generator from the counter
     nextEncounter();
     return;
@@ -513,9 +514,12 @@ function generateNextEncounters(count=1){
       break;
 
 
-    case 17: //Container Pet/Friend
+    case 17: //Container Pet/Friend/Container Friend
+      var typeDetail = chooseFrom(["Pet","Friend","Container-Friend"])
+
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Pet","Friend"])));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
+      if (typeDetail=="Container-Friend") linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
       break;
 
     case 18: //Container Consumable
@@ -683,6 +687,7 @@ function redraw(){
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
+      if (enemyTeam.includes("Artifact")) enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
       break;
 
     case "Trap":
@@ -721,7 +726,7 @@ function redraw(){
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
-      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟠","Interesting",colorOrange);
+      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
@@ -1532,7 +1537,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
-                logAction("🍀 ▸ ✋ Touched them, they were spooked.");
+                logAction("🍀 ▸ ✋ Touched them. <b>Luckily</b>, they were spooked.");
                 displayEnemyEffect("💨");
                 displayPlayerEffect("🍀");
                 nextEncounter();
@@ -1959,11 +1964,20 @@ function enemyAttackOrRest(message=""){
   var staminaChangeMsg;
 
   if (enemySta>enemyStaLost) {
-    if (enemyType!="Demon"){staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"}
-    else {
+    if (playerLootString.includes("🖤") && (enemyAtk+enemyAtkBonus)>0) {
+      logAction("⚔️ ▸ 🖤 Resisted -1 💔 due to <b>🖤 Unbreakable</b>.");
+      damageReceived--;
+      displayPlayerEffect("🖤");
+      if (damageReceived<=0) return false;
+    }
+
+    if (enemyType!="Demon"){
+      staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"
+    } else {
         staminaChangeMsg = "The enemy siphoned some health -"+damageReceived+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
+
     if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
@@ -2017,6 +2031,13 @@ function enemyCastIfMgk(hit=true){
 
   if (enemyMgk>enemyMgkLost) {
     enemyMgkLost++
+
+    if (procAbilityChance("💠",33)){
+      logAction("🪄 ▸ 💠 Enemy spell resisted by <b>💠 Reflect Magic</b>.");
+      displayPlayerEffect("💠");
+      return false;
+    }
+
     if (hit) {
       logAction(enemyEmoji+" ▸ 🪄 Got hit by the enemy spell -1 💔");
       playerHit(1);
@@ -2054,8 +2075,31 @@ function getRandomLoot(){
   return
 }
 
-function nextEncounter(animateArea=true){
-  //console.log("EnemyType: \n"+enemyType); //Note: Even generator encounters go through here :)
+function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
+  var success = Math.floor(((Math.random() * 100))<=abilityChance)
+  if (success && playerLootString.includes(abilityEmoji)) {
+
+    if (abilityEmoji=="🥻"){
+      var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Random Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:n/a<br>","message:"]
+      linesStory.splice(encounterIndex+1,0,philosopherThoughts);
+      //console.log(philosopherThoughts)
+      //console.log(linesStory);
+
+      logPlayerAction(abilityEmoji,"Got stuck in a <b>💭 Random Thought</b>.")
+      return true;
+      }
+
+    if (abilityEmoji=="💠"){
+      return true;
+      }
+
+  }
+}
+
+function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
+  //console.log("EnemyType: \n"+enemyType);
+  procAbilityChance("🥻",5);
+
   if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
   previousEnemyType = enemyType;
 
@@ -2352,7 +2396,7 @@ function playerHit(incomingDamage,applyLuck=true){
   var hitChance = Math.floor(Math.random() * luckInterval);
 
   if (applyLuck && ( hitChance <= playerLck )){
-    logAction("🍀&nbsp;▸&nbsp;💢 Luckily avoided receiving the damage.");
+    logAction("🍀&nbsp;▸&nbsp;💢 <b>Luckily</b> avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -2361,29 +2405,39 @@ function playerHit(incomingDamage,applyLuck=true){
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
+
     var deathChance = Math.floor(Math.random() * luckInterval * 3); //Small chance to not die
     if (applyLuck && ( deathChance <= playerLck )){
       playerHp+=1;
-      logAction("🍀&nbsp;▸&nbsp;💀 Luckily got a second chance to live.");
+      logAction("🍀&nbsp;▸&nbsp;💀 <b>Luckily</b> got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
+
+    if (playerLootString.includes("🫀")) {
+      playerUseItem("🫀","n/a","n/a",true,true)
+      logAction("💀 ▸ 🫀 Still allive thanks to <b>💀 Cheat Death</b>.");
+      displayPlayerGainedEffect();
+      playerHp+=1;
+      return;
+    }
+
     gameOver();
     return;
   }
   displayPlayerEffect("💢");
 }
 
-function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true){
+function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true,silent=false){
   if (playerLootString.includes(item)){
     if (enemyMsg!="") messageSuccess=enemyMsg;
     if (effect) displayEnemyEffect(item);
     playerLootString=playerLootString.replace(item,"");
     displayPlayerEffect(item);
-    logPlayerAction(actionString,messageSuccess);
+    if (!silent) logPlayerAction(actionString,messageSuccess);
     return true;
   } else {
-    logPlayerAction(actionString,messageFail);
+    if (!silent) logPlayerAction(actionString,messageFail);
     displayPlayerCannotEffect();
     return false;
   }
