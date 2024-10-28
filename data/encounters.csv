@@ -191,6 +191,7 @@ Depriving Fairyland;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone m
 Depriving Fairyland;🌾;Tall Grass;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Depriving Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🌻;Lonely Sunflower;Container;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
+Depriving Fairyland;🕸;Small Cocoon;Container;0;0;0;0;0;0;Someone's Lunch;Seems to have something inside.<br>;Grossed out by the sticky webs.
 
 Depriving Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
 Depriving Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;Tough Terrain;Farmland of the natives.<br>;
@@ -199,9 +200,11 @@ Depriving Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compe
 Depriving Fairyland;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hiding there.
 Depriving Fairyland;⛺️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
 Depriving Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Depriving Fairyland;🕸;Spider Cocoon;Container-2;0;0;0;0;0;0;Disturbing Lump;Seems to have something inside.<br>;Cut it open to reveal insides.
+
 //;Depriving Fairyland;🍯;Sweet Honeypot;Container-2;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>The lid is trembling though.;The honeypot was full of bees.
 
-Depriving Fairyland;🌲;Dark Wood;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
+Depriving Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
 Depriving Fairyland;🗻;Rocky Hill;Container-3;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
 Depriving Fairyland;🏔️;Snowy Mountain;Container-3;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Depriving Fairyland;⛰️;Forest Mountaintop;Container-3;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
@@ -228,7 +231,7 @@ Depriving Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Mu
 Depriving Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
 
 Depriving Fairyland;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
-Depriving Fairyland;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
+Depriving Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
 Depriving Fairyland;🌹;Rose Bush;Trap-Roll;-1;0;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
 Depriving Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 Depriving Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris

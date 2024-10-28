@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/28/24 • 1:19 pm"
+var versionCode = "fpm 10/28/24 • 1:59 pm"
 var initialEncounterOverride=0; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -161,7 +161,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> all places of interest for loot."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> to recover <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> worms to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -1860,7 +1860,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
 
           case "Curse": //Waiting triggers the curse
-            playerChangeStats();
+            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             break;
 
           case "Standard": //You get hit if they have stamina
