@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/28/24 • 4:37 am"
+var versionCode = "fpm 10/28/24 • 1:09 pm"
 var initialEncounterOverride=0; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -15,7 +15,7 @@ var colorRed = "#FF0000";
 var colorGrey = "#CCCCCC";
 var colorDarkGrey = "#888888";
 var colorOrange = "orange";
-var colorYellow = "#EDD93B";
+var colorYellow = "#F7D147";
 var colorBlue = "#1059AA";
 var colorPurple = "#BF40BF";
 
