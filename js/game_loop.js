@@ -400,7 +400,6 @@ function loadEncounter(index, fileLines = linesStory){
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
-
     adventureEncounterCount-- //Remove the generator from the counter
     nextEncounter();
     return;
@@ -2060,8 +2059,24 @@ function getRandomLoot(){
   return
 }
 
-function nextEncounter(animateArea=true){
-  //console.log("EnemyType: \n"+enemyType); //Note: Even generator encounters go through here :)
+function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
+  var success = Math.floor(((Math.random() * 100))<=abilityChance)
+  if (success && playerLootString.includes(abilityEmoji)) {
+
+    if (abilityEmoji=="🥻"){
+      var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Random Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:n/a<br>","message:"]
+      linesStory.splice(encounterIndex+1,0,philosopherThoughts);
+      console.log(philosopherThoughts)
+      console.log(linesStory);
+      }
+
+  }
+}
+
+function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
+  //console.log("EnemyType: \n"+enemyType);
+  procAbilityChance("🥻",5);
+
   if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
   previousEnemyType = enemyType;
 
