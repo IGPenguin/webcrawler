@@ -2,9 +2,11 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/29/24 • 7:54 pm"
-var initialEncounterOverride=7; //7 skips tutorial
-if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
+var versionCode = "fpm 10/30/24 • 0:40 am"
+var initialEncounterOverride=0; //7 skips tutorial
+
+//To handle notes and death in .csv
+if (initialEncounterOverride!=0) initialEncounterOverride-=3;
 
 //Colors
 var colorWhite = "#FFFFFF";
