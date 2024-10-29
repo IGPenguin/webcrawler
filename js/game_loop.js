@@ -161,7 +161,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>"+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Prioritize <b>🔰 Block</b>/<b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>"+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -1462,8 +1462,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Boss":
         case "Small":
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
-            enemyAtkBonus-=1;
-            logPlayerAction(actionString,"Cursed them -1 ⚔️ weaker for -2 🔵");
+            var enemyAtkChange=enemyAtk/2
+            enemyAtkBonus-=enemyAtkChange;
+            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
           } else if (playerMgkMax <= enemyMgk) {
             logPlayerAction(actionString,"They resisted the curse -2 🔵");
           } else {
@@ -1685,6 +1686,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Fishing":
             if (playerUseItem("🪱","Successfully fished out something.","Missing a viable fishing bait.")){
+
+              if (procAbilityChance("🧵",33)) {
+                logAction("🧵 ▸ 🪱 Luckily the bait remained hooked.");
+                displayPlayerEffect("🧵");
+                playerLootString+="🪱";
+              }
+
               getRandomLoot();
               displayEnemyEffect("🪝");
             } else {
@@ -2150,17 +2158,9 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
       //console.log(linesStory);
 
       logPlayerAction(abilityEmoji,"Got stuck in a <b>💭 Random Thought</b>.")
-      return true;
       }
 
-    if (abilityEmoji=="💠"){
-      return true;
-      }
-
-    if (abilityEmoji=="🎲"){
-      return true;
-    }
-
+    return true;
   }
 }
 

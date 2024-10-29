@@ -27,10 +27,10 @@ Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Pet/Friend;Generator-17;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Advanced Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Altar House;Generator-4666;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;🌳;Apple Tree;Container-3;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>Who would have thought.;
+Forsaken Village;🌳;Apple Tree;Container-3;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
 Forsaken Village;❓;Swift Enemy;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
-Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Must have fallen off the apple.<br>Perfect fishing bait.;Crawled into the brain.
+Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;10;0;Arthropod;Must have fallen off the apple.<br>;Crawled into the brain.
 Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Cursed House;Generator-36;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🎯;Archery Range;Prop;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
@@ -62,7 +62,7 @@ Depriving Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for
 Depriving Fairyland;❓;Friend;Generator-7;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;A knife was stuck into it.
+Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;A quiet place to rest.<br>;A knife was stuck into it.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Enchanted Artifact;The sacrifical blade demands blood.<br>;Released some energy from the trunk.
 Depriving Fairyland;❓;Demon Enemy;Generator-6;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
@@ -81,7 +81,7 @@ Depriving Fairyland;🌿;Weeds Thicket;Container-2;0;0;0;0;0;0;Wild Flora;Chance
 Depriving Fairyland;🍄;Strange Shroom;Consumable-Container;0;0;0;0;0;0;Fungal Growth;Exemplar of an unrecognisable species.<br>;Got terribly disoriented in time.
 Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-2;1;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
 Depriving Fairyland;❓;Container Pet/Friend;Generator-17;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;🍯;Shaking Honeypot;Container-2;0;0;0;0;0;0;Suspicious Container;The lid is somewhat trembling.;The honeypot was full of bees.
+Depriving Fairyland;🍯;Shaking Honeypot;Container-2;0;0;0;0;0;0;Suspicious Container;The lid is somewhat trembling.<br>;The honeypot was full of bees.
 Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;10;0;Pesky Insects;The bees instantly swarmed the area.<br>There's nowhere to run.;
 Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;10;0;Harmless Insect;Seems angry of the disturbance.<br>Handy fishing bait.;
 Depriving Fairyland;❓;Mid Enemy Consumable;Generator-23;0;0;0;0;0;0;XXX;XXX;XXX
@@ -89,10 +89,10 @@ Depriving Fairyland;❓;Altar House;Generator-4666;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Container-3 Empty;Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Mid Enemy Consumable;Generator-23;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Random Trap;Generator-5;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;🌊;Swamp Shore;Fishing;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;Fished out something stinky.
+Depriving Fairyland;🌊;Swamp Shore;Fishing;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
 
 //TODO Randomize boss
-Depriving Fairyland;🦀;Titan Crab;Boss;6;4;3;0;-1;0;Overgrown Crustacean;Packs a painful pinch.;Got ripped to pieces.
+Depriving Fairyland;🦀;Titan Crab;Boss;6;4;3;0;-1;0;Overgrown Crustacean;Packs a painful pinch.;Got ripped in two halves.
 //;Depriving Fairyland;🐉;Massive Dragon;Boss;6;4;3;0;4;4;Legendary Creature;Is this the final challenge?<br>Take it down!;Got burned alive
 //;Depriving Fairyland;🧞;Evil Genie;Boss;0;0;0;0;2;3;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
 
