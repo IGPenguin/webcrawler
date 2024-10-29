@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "fpm 10/28/24 • 11:35 pm"
-var initialEncounterOverride=7; //7 skips tutorial
+var initialEncounterOverride=0; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -2859,12 +2859,13 @@ function generateCharacterShareString(){
   return characterShareString;
 }
 
-function generateCharacterLegend() {
+function generateCharacterLegend(logLength=0) {
   var characterLegend="";
   characterLegend = adventureLog.replaceAll("<br>","\n");
   var tempString = characterLegend.split("\n").slice(2);
   characterLegend = tempString.join("\n");
   characterLegend = characterLegend.replaceAll("&nbsp;"," ").substring(1);
+  if (logLength!=0) characterLegend = characterLegend.split("\n").slice(-logLength);
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
   characterLegend += "\nhttps://igpenguin.github.io/webcrawler";
@@ -2904,7 +2905,7 @@ function redirectToTweet(){
 
 function redirectToFeedback(prefillLog=""){
   //var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
-  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend().replaceAll("<b>","").replaceAll("</b>",""));
+  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend(50).replaceAll("<b>","").replaceAll("</b>",""));
   window.open(googleFormUrl);
 }
 
