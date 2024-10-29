@@ -5,7 +5,7 @@ Loot;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&n
 Loot;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill&nbsp<b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced destiny&nbsp<b>🃏 Fool</b>.
 Loot;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice&nbsp<b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced destiny&nbsp<b>🃏 Lover</b>.
-Loot;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
+Loot;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced destiny&nbsp<b>🃏 Mage</b>.
 Loot;🃏;Tarot Card — Berserk;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice&nbsp<b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced destiny&nbsp<b>🃏 Berserk</b>.
 Loot;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade&nbsp<b>1/2 🟢 Stamina</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
@@ -15,14 +15,14 @@ Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straigh
 Loot;🦞;Unlucky Lobster;Trap;0;0;0;0;0;0;Crustacean;Handle with care.<br>;Cooked would taste better
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
-Loot;🪸;Radiating Coral;Consumable;-1;0;0;0;0;1;Rare Fish;Convenient snack straight out of water.<br>;
+Loot;🪸;Radiating Coral;Consumable;-3;0;0;0;0;1;Questionable Snack;Its surface has an eerie glow.<br>;Brutal spasm took a toll
 Loot;🔪;Dull Knife;Item;0;0;0;0;0;0;Worn Tool;Useless in combat.<br>;Took it with themselves just in case.
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>;Gained powers of the sea.
 Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>;Gained powers of the wilds.
 Loot;👞;Old Shoes;Item;0;0;-1;2;0;0;Trash;Thoroughly wet leather shoes.<br>;Disgusting but kinda cool.
 Loot;🎓;Graduate Hat;Item;0;0;0;0;2;0;Trash;Proof of previously obtained knowledge.<br>;
 Loot;💍;King's Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>;Felt a surge in the chest.
-Loot;💍;Engraved Ring;Item;0;0;0;0;-5;1;Isildur's Bane;Says "My Precious" on the inside.<br>;The ring took a toll
+Loot;💍;Engraved Ring;Item;0;0;0;0;-5;1;Isildur's Bane;Says "My Precious" on the inside.<br>;The ring took its toll
 Loot;🪱;Drowned worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🪱;Tired Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
@@ -36,7 +36,7 @@ Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent 
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Artifact;The surface has a pearlescent finish.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;Unreadable. All letters are faded.<br>;Pocketed a piece of trash.
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
-Loot;🧪;Unknown Potion;Consumable;-2;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>;Left a funny taste in the mouth
+Loot;🧪;Unknown Potion;Consumable;-2;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>;Left a funny taste in mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;Realized the dark truth
 Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside.<br>;Spilled the ashes all over themselves.
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
