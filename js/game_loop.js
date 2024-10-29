@@ -1389,9 +1389,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var isSacrifice = (enemyHp<0)
 
             if (isSacrifice) {
-                if (playerUseItem("🔪","Offered blood -1 💔 for power +1 🔵","The prayer had no effect.",true)){
+                if (playerUseItem("🔪","overwritten","overwritten",true,false)){
                   displayEnemyEffect("🩸");
-                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,false,false);
+
+                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true);
                   playerHit(0,false);
                 }
                 displayPlayerCannotEffect();
