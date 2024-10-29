@@ -57,13 +57,13 @@ Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 //TODO Balance and finalize this area
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
-Depriving Fairyland;🌻;Sunflower Growth;Prop;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
+Depriving Fairyland;🌻;Sunflower Growth;Container-2;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
 Depriving Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
 Depriving Fairyland;❓;Friend;Generator-7;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>A quiet place to rest.;A knife was stuck into it.
-Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;1;Enchanted Artifact;The sacrifical blade demands blood.<br>;Released strange energy from the trunk.
+Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Enchanted Artifact;The sacrifical blade demands blood.<br>;Released some energy from the trunk.
 Depriving Fairyland;❓;Demon Enemy;Generator-6;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX

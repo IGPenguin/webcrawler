@@ -1968,21 +1968,21 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
   }
 }
 
-function enemyHit(damage,magicType=false) {
+function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
   if (magicType==true) {actionString="🪄 "; hitMsg="Scorched them with a spell -"+damage+" 💔";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
-  if ( critChance <= playerLck ){
+  if ( (critChance <= playerLck) && applyLuck){
     logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
     hitMsg="Attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
   }
 
-  logPlayerAction(actionString,hitMsg);
+  if (!silent) logPlayerAction(actionString,hitMsg);
   enemyHpLost = enemyHpLost + damage;
 
   if (enemyHpLost >= enemyHp) {
@@ -2020,7 +2020,7 @@ function enemyAttackOrRest(message=""){
     }
 
     if (playerLootString.includes("🖤") && (enemyAtk+enemyAtkBonus)>0) {
-      logAction("⚔️ ▸ 🖤 Resisted -1 💔 due to <b>🖤 Unbreakable</b>.");
+      logAction("⚔️ ▸ 🖤 Resisted -1 💔 by <b>🖤 Unbreakable</b>.");
       damageReceived--;
       displayPlayerEffect("🖤");
       if (damageReceived<=0) return false;
@@ -2055,6 +2055,13 @@ function enemyAttackOrRest(message=""){
       if (message!="") staminaChangeMsg=message;
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
       playerHit(damageReceived);
+
+      if (playerLootString.includes("🥀") && (enemyHp>enemyHpLost) && (enemyAtk+enemyAtkBonus)>0) {
+        logAction("⚔️ ▸ 🥀 Dealt -1 💔 by <b>🥀 Thorns Payback</b>.");
+        enemyHit(1,false,false,true);
+        displayEnemyEffect("🥀");
+      }
+
       return;
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");
