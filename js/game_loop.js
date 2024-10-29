@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "fpm 10/29/24 • 7:54 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var initialEncounterOverride=7; //7 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors
@@ -161,7 +161,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for blood sacrifice."+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for <b>Sacrifice<b>"+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -344,9 +344,18 @@ function getRandomEncounter(type="") {
   console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
     //console.log("Dropping: "+seenEncounterName);
-
+    tempLinesGenerator= tempLinesGenerator.filter(function(line) {
+      //console.log(a);
+      var lineEnemyName= line[2].split("name:")[1]
+      if (lineEnemyName!==seenEncounterName) {
+        console.log(lineEnemyName+" vs "+seenEncounterName);
+        return line
+      }
+    })
+    console.log(tempLinesGenerator);
     //Hopefully this finally works, backups below 🤣
     //TODO: FIX (maybe check fishing loot seen?) - tempLinesGenerator = tempLinesGenerator.filter(a => a !== seenEncounterName)
+
 
     //tempLinesGenerator = tempLinesGenerator.filter(function(a){return a !== seenEncounterName})
     //var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf("name:"+seenEncounterName))
@@ -419,9 +428,8 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
-  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Knowledge")) enemyDesc=getProphecy();
-  if (enemyTeam.includes("Epiphany")) enemyDesc="<i>Thought came to mind:</i><br>"+getProphecy().replace("<br>","");
-  if (enemyTeam.includes("Prophet")) enemyDesc="<i>Has something to say:</i><br>"+getProphecy().replace("<br>","");
+  if (enemyTeam.includes("Prophecy") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany")) enemyDesc=getProphecy();
+  if (enemyTeam.includes("Prophet")) enemyDesc="<i>Says:</i><br>"+getProphecy().replace("<br>","");
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
@@ -693,7 +701,7 @@ function redraw(){
     case "Trap":
     case "Trap-Attack":
     case "Trap-Roll":
-      enemyStatusString=decorateStatusText("‼️","Hazard",colorRed);
+      enemyStatusString=decorateStatusText("‼️","Dangerous",colorRed);
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
@@ -730,7 +738,7 @@ function redraw(){
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
-        if (enemyHp<0) enemyStatusString=decorateStatusText("🦠","Hazardous",colorRed)
+        if (enemyHp<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed)
         }
       break;
   }
@@ -1667,7 +1675,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
             playerConsumed();
-            displayEnemyEffect("🍽");
+            displayEnemyEffect("🍴");
             if (playerHp>0) nextEncounter();
             isLooting=false;
             break;
@@ -2606,7 +2614,7 @@ function adjustEncounterButtons(){
 
     case "Altar":
       document.getElementById('button_pray').innerHTML="🙏 Pray";
-      if (playerLootString.includes("🔪")) document.getElementById('button_pray').innerHTML="🩸 Offer";
+      if (playerLootString.includes("🔪")&&enemyHp<0) document.getElementById('button_pray').innerHTML="🩸 Offer";
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
@@ -2617,9 +2625,9 @@ function adjustEncounterButtons(){
 
     case "Curse":
       document.getElementById('button_grab').innerHTML="✋ Reach";
-      document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_pray').innerHTML="🙏 Pray";
-      document.getElementById('button_sleep').innerHTML="💤 Faint";
+      document.getElementById('button_roll').innerHTML="👣 Ignore";
+      document.getElementById('button_pray').innerHTML="🧠 Endure";
+      document.getElementById('button_sleep').innerHTML="😱 Faint";
       break;
 
     case "Item":
@@ -2865,7 +2873,7 @@ function generateCharacterLegend(logLength=0) {
   var tempString = characterLegend.split("\n").slice(2);
   characterLegend = tempString.join("\n");
   characterLegend = characterLegend.replaceAll("&nbsp;"," ").substring(1);
-  if (logLength!=0) characterLegend = characterLegend.split("\n").slice(-logLength);
+  if (logLength>0) characterLegend = characterLegend.slice(-logLength);
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
   characterLegend += "\nhttps://igpenguin.github.io/webcrawler";
