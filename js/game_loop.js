@@ -161,7 +161,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for <b>Sacrifice<b>"+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Focus on <b>🔰 Block</b> / <b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>"+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -1276,14 +1276,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            if (enemyType.includes("Container") && !enemyType.includes("Locked")){
+            if (enemyType.includes("Container") && !enemyType.includes("Locked")) {
               logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
               displayEnemyEffect("🔥");
               animateFlipNextEncounter();
+              break;
               }
             logPlayerAction(actionString,"The spell had no effect on that -1 🔵");
-            displayEnemyEffect("✨");        }
-        break;
+            displayEnemyEffect("✨");
+          }
+          break;
 
         case 'button_pray':
           if (enemyType=="Death"){
@@ -2881,7 +2883,7 @@ function generateCharacterLegend(logLength=0) {
   var tempString = characterLegend.split("\n").slice(2);
   characterLegend = tempString.join("\n");
   characterLegend = characterLegend.replaceAll("&nbsp;"," ").substring(1);
-  if (logLength>0) characterLegend = characterLegend.slice(-logLength);
+  if (logLength>0) characterLegend = "Showing last "+logLength+" lines...\n"+characterLegend.split("\n").splice(0,characterLegend.length-logLength).join("\n");
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
   characterLegend += "\nhttps://igpenguin.github.io/webcrawler";
@@ -2921,7 +2923,7 @@ function redirectToTweet(){
 
 function redirectToFeedback(prefillLog=""){
   //var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
-  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend(50).replaceAll("<b>","").replaceAll("</b>",""));
+  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend(200).replaceAll("<b>","").replaceAll("</b>",""));
   window.open(googleFormUrl);
 }
 
