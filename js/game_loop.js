@@ -519,9 +519,14 @@ function generateNextEncounters(count=1){
     case 17: //Container Pet/Friend/Container Friend
       var typeDetail = chooseFrom(["Pet","Friend","Container-Friend"])
 
+      if (typeDetail=="Container-Friend"){
+        linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
+        linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
+        linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
+      }
+
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
-      if (typeDetail=="Container-Friend") linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
       break;
 
     case 18: //Container Consumable
