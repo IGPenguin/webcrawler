@@ -91,7 +91,7 @@ layout: default
                                 overflow:auto;
                                 line-height:24px"/>
 </div>
-<div class="box-border-dynamic" style="margin-top:2px;
+<div class="box-border-dynamic" style="margin-top:3px;
   margin-right:0px;
     margin-bottom:12px;
   background-color:#272727;
