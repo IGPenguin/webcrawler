@@ -21,9 +21,9 @@ var colorDarkOrange = "#523501";
 var colorYellow = "#F7D147";
 var colorBlue = "#1059AA";
 var colorLightBlue = "#487bb5"
-var colorDarkBlue = "#093566";
+var colorDarkBlue = "#072a52";
 var colorPurple = "#BF40BF";
-var colorDarkPurple = "#4a194a";
+var colorDarkPurple = "#381338";
 
 var colorCardBackground = "#202020"
 
@@ -648,6 +648,7 @@ function redraw(){
   var EffectArrayMalus=effectArray.filter(function(x){ return x < 0 });
   var totalBonus=EffectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
   var totalMalus=EffectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
+  //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
 
   enemyTeamUIElement.innerHTML="";
   cardUIElement.style.background=colorCardBackground;
@@ -699,11 +700,11 @@ function redraw(){
     case "Item":
       if ((totalBonus > 0) || (enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
-        if (totalBonus>=2||enemyMgk>0){
+        if (enemyMgk>0 || (totalBonus+totalMalus)>0){
           enemyStatusString=decorateStatusText("🔷","Magnificient",colorLightBlue);
           cardUIElement.style.background=colorDarkBlue;
         }
-        if (totalBonus>=3){
+        if (totalBonus>=2){
           enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
           cardUIElement.style.background=colorDarkPurple;
         }
