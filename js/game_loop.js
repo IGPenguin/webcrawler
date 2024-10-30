@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "fpm 10/30/24 • 8:08 am"
-var initialEncounterOverride=7; //7 skips tutorial
+var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -595,11 +595,9 @@ function redraw(){
   document.getElementById('id_player_name').innerHTML = playerName;
 
   var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp) + emptySymbol.repeat((-1)*(playerHp-playerHpMax));
-  playerStatusString += "&nbsp;&nbsp;"
 
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
-  playerStatusString += "&nbsp;&nbsp;"
 
   if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
   if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
@@ -804,21 +802,15 @@ function appendEnemyStats(){
   if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
   if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
 
-  enemyStats += "&nbsp;&nbsp;"
-
-  if (enemySta > 0) { enemyStats += "&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
+  if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
     if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyStaLost) + emptySymbol.repeat(enemyStaLost); } //YOLO
 
-  enemyStats += "&nbsp;&nbsp;"
-
   if ((enemyAtk)>0) {
-    enemyStats += "&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
-    if (enemyAtkBonus<0) { enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
-    }
-    enemyStats += "&nbsp;&nbsp;"
+    enemyStats += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
+    if (enemyAtkBonus<0) enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
   }
 
-  if (enemyMgk > 0) {enemyStats += "&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
+  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
   if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   return enemyStats;
@@ -1675,7 +1667,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Small":
             if ((enemySta-enemyStaLost)==0) {
               logPlayerAction(actionString,"Grabbed it into their bag.");
-              playerLootString+=" "+enemyEmoji;
+              playerLootString+=enemyEmoji;
               displayEnemyEffect("👋");
               nextEncounter();
             } else {
