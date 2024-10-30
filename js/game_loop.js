@@ -1617,11 +1617,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap": //Grabbing triggers the effect
           case "Trap-Roll":
           case "Trap-Attack":
-            //logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
-            //playerHit(enemyAtk);
-
             playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            if (enemyHp<0) playerHit(enemyHp*(-1));
+            playerHit(enemyHp*(-1));
             break;
 
           case "Undead": //Grabbing is not safe
@@ -2529,7 +2526,9 @@ function playerHit(incomingDamage,applyLuck=true){
       playerHp+=enemyAtk+enemyAtkBonus;
       if (playerHp>playerHpMax) playerHp=playerHpMax;
       return;
-    } else {
+    }
+
+    if (playerLootString.includes("📦")) {
       logAction("📦 ▸ 💀 Turned out <b>📦 Dead or <s>Alive</s></b>.");
       displayPlayerCannotEffect();
       displayPlayerEffect("📦");
