@@ -64,7 +64,8 @@ layout: default
         box-shadow:
           0px 0px 0px 3px #000000;
             position:relative; z-index:2;
-            overflow:auto;">
+            overflow:auto;
+            background-color:#202020;">
 
 
 <h3 id = "id_stats" style="float:left;
