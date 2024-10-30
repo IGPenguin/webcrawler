@@ -766,36 +766,35 @@ function redraw(){
   document.getElementById('id_log').innerHTML = actionLog;
 
   versusTextUIElement = document.getElementById('id_versus');
-  if (enemyType!=previousEnemyType){
-    switch (enemyType){
-      case "Dream":
-        displayPlayerState("Sleeping",colorBlue,"2.5")
-        break;
+  switch (enemyType){
+    case "Dream":
+      displayPlayerState("Sleeping",colorBlue,"2.5")
+      break;
 
-      case "Curse":
-      case "Trap":
-      case "Trap-Roll":
-      case "Trap-Attack":
-        displayPlayerState("Suspicious",colorOrange,"1")
-        break;
+    case "Curse":
+    case "Trap":
+    case "Trap-Roll":
+    case "Trap-Attack":
+      displayPlayerState("Suspicious",colorOrange,"1")
+      break;
 
-      case "Death":
-        displayPlayerState(emptySpace,colorGrey,"0")
-        break;
+    case "Death":
+      displayPlayerState(emptySpace,colorGrey,"0")
+      break;
 
-      default:
-        displayPlayerState(); //Cautious by default
-        if (enemyType.includes("Container") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"||enemyType=="Fishing"){
-          if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
-          if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
-          if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
-          if (playerLootString.includes("🪱") && enemyType=="Fishing") displayPlayerState("Bait Ready",colorDarkGreen,"0.8");
-        }
-        if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
-        if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-        if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
-        break;
-    }
+    default:
+      displayPlayerState(); //Cautious by default
+      if (enemyType.includes("Container") || enemyType.includes("Friend") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"||enemyType=="Fishing"){
+        if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
+        if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
+        if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
+        if (playerLootString.includes("🪱") && enemyType==="Fishing") displayPlayerState("Bait Ready",colorBlue,"0.8");
+        if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorGold,"0.4");
+      }
+      if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
+      if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
+      if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
+      break;
   }
 
   buttonsContainer = document.getElementById('id_buttons');
