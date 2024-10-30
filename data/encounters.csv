@@ -70,10 +70,9 @@ Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-2;0;Mind State;Strange th
 
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;2;0;Curious Animal;Keeps direct eye contact.<br>;Felt something change inside.
 Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Pope.
-Forsaken Village;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from galaxy far far away.<br>;Received a special treat.
-Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Boasts glorious magical abilities.<br>;Willingly shared some loot.
+Forsaken Village;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
+Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
 
-Forsaken Village;🦊;Cunning Fox;Pet;1;1;3;0;1;0;Wild Animal;Sits around waving its furry tail.<br>;
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
 Forsaken Village;🐿️;Greedy Chipmunk;Pet;1;0;2;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;Got a little helper.
@@ -255,12 +254,16 @@ Depriving Fairyland;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are
 
 Depriving Fairyland;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion
 Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
-Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magic Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
+Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Depriving Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could provide some agaility lessons.<br>;Got through their training.
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
-Depriving Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;0;0;Mythical Creature;Looks like a cloud with four legs.<br>;Received their blessing.
-//;Depriving Fairyland;🐫;Dromedarius;Pet;2;0;1;0;2;0;Mythical Creature;Strange horse approached.<br>;Survival instincts increased.
-//;Depriving Fairyland;🦒;Longneck Whatever;Pet;2;0;2;2;0;0;Mythical Creature;Strange horse approached.<br>;Received their blessing.
+Depriving Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
+Depriving Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;2;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
+Depriving Fairyland;🧞‍♀️;Generous Genie;Container-Friend;0;0;0;0;0;0;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
+Depriving Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
+Depriving Fairyland;🐫;Desert Inhabitant;Pet;2;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
+Depriving Fairyland;🐝;Friendly Bee;Pet;1;1;1;0;-1;0;Bodyguard;Keeps a close distance.<br>;Became best friends.
+Depriving Fairyland;🦊;Cunning Fox;Pet;1;1;3;0;1;0;Wild Animal;Sits around waving its furry tail.<br>;
 
 Depriving Fairyland;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Depriving Fairyland;🪱;Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
