@@ -2021,6 +2021,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
 function enemyKicked(){
   logPlayerAction(actionString,"Kicked them afar regaining +2 🟢");
+  displayEnemyCannotEffect();
   displayEnemyEffect("🦶");
   playerGetStamina(2,true);
   enemyRest(1);
