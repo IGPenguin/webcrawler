@@ -1996,12 +1996,12 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
-  if (magicType==true) {actionString="🪄 "; hitMsg="Scorched them with a spell -"+damage+" 💔";}
+  if (magicType==true) {actionString="🪄"; hitMsg="Scorched them with a spell -"+damage+" 💔";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
   if ( (critChance <= playerLck) && applyLuck){
-    logAction("🍀 ▸ ⚔️ The strike was blessed with luck.");
+    logAction("🍀 ▸ "+actionString+" The strike was blessed with luck.");
     hitMsg="Attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
