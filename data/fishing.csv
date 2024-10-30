@@ -13,6 +13,9 @@ Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️
 Loot;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Loot;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
 
+Loot;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides a very special gift (for a price).<br>;Let them go back to the water.
+Loot;🪔;Floating Flame;Altar;1;0;0;0;1;0;Light Source;Warms your body and soul.<br>;Warms the body and soul
+
 Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
@@ -40,8 +43,7 @@ Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br
 Loot;🧪;Unknown Potion;Consumable;-2;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>;Left a funny taste in mouth
 Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;Realized the dark truth
 Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside.<br>;Spilled the ashes all around.
-Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
-Loot;🎀;Silly Bowtie;Item;0;0;1;0;-1;0;Cringe Accessory;The extra speed is what counts.<br>;Tied over the right arm
+Loot;🎀;Silly Bowtie;Item;0;0;1;0;-1;0;Cringe Accessory;Gives extra stamina but takes a toll.<br>;That looks ridiculous
 Loot;🔖;Wet Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Loot;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
 Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>;Felt a surge in the chest.
@@ -50,4 +52,4 @@ Loot;‍🦑;Depths Squid;Heavy;2;2;1;0;-1;0;Aquatic Threat;Giant octopus from t
 Loot;🦞;Unlucky Lobster;Small;1;1;1;0;0;0;Crustacean;Handle with care.<br>;Cooked would taste better
 Loot;‍🪼;Box Jelly;Swift;1;3;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 //;Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
-Loot;🪔;Floating Flame;Altar;1;0;0;0;1;0;Light Source;Warms your body and soul.<br>;
+Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
