@@ -2482,6 +2482,13 @@ function playerHit(incomingDamage,applyLuck=true){
     return;
   }
 
+  if (procAbilityChance("🛡️",50)) {
+    logAction("🛡️ ▸ 💢 Attack deflected by <b>🛡 Random Block</b>.");
+    displayPlayerCannotEffect();
+    displayPlayerEffect("🛡️");
+    return;
+  }
+
   playerHp = playerHp - incomingDamage;
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   if (playerHp <= 0){
@@ -2500,6 +2507,20 @@ function playerHit(incomingDamage,applyLuck=true){
       logAction("💀 ▸ 🫀 Still allive thanks to <b>💀 Cheat Death</b>.");
       displayPlayerGainedEffect();
       playerHp+=1;
+      return;
+    }
+
+    if (procAbilityChance("📦",50)) {
+      logAction("📦 ▸ ❤️‍🩹 Turned out <b>📦 <s>Dead</s> or Alive</b>.");
+      displayPlayerGainedEffect();
+      playerHp+=enemyAtk+enemyAtkBonus;
+      if (playerHp>playerHpMax) playerHp=playerHpMax;
+      return;
+    } else {
+      logAction("📦 ▸ 💀 Turned out <b>📦 Dead or <s>Alive</s></b>.");
+      displayPlayerCannotEffect();
+      displayPlayerEffect("📦");
+      gameOver(true);
       return;
     }
 
@@ -2536,10 +2557,10 @@ function playerReincarnate(){
 }
 
 //End Game
-function gameOver(){
+function gameOver(silent=false){
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")) enemyMsg="Got killed, ending the adventure.";
-  logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
+  if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
