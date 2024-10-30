@@ -862,12 +862,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Attack": //Attacking causes you damage
-            //logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" ❤️");
-            //playerHit(enemyAtk);
-
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            playerHpMax+=(enemyHp*(-1)); playerHp+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(enemyHp*(-1));
+            playerHpMax+=(enemyHp*(-1));
+            if (enemyHp<0) playerHit(0);
             break;
 
           case "Spirit":
@@ -1066,12 +1063,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Roll": //Triggers when rolling into it
-            //logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
-            //playerHit(enemyAtk);
-
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            playerHpMax+=(enemyHp*(-1)); playerHp+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(enemyHp*(-1));
+            playerHpMax+=(enemyHp*(-1));
+            if (enemyHp<0) playerHit(0);
             break;
           case "Trap":
           case "Trap-Attack":
@@ -1617,8 +1611,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap": //Grabbing triggers the effect
           case "Trap-Roll":
           case "Trap-Attack":
-            playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            playerHit(enemyHp*(-1));
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerHpMax+=(enemyHp*(-1));
+            if (enemyHp<0) playerHit(0);
             break;
 
           case "Undead": //Grabbing is not safe
@@ -2173,23 +2168,18 @@ function getRandomLoot(){
 function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
   var success = Math.floor(((Math.random() * 100))<=abilityChance)
   if (success && playerLootString.includes(abilityEmoji)) {
-
-    if (abilityEmoji=="🥻"){
-      var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Random Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:n/a<br>","message:"]
-      linesStory.splice(encounterIndex+1,0,philosopherThoughts);
-      //console.log(philosopherThoughts)
-      //console.log(linesStory);
-
-      logPlayerAction(abilityEmoji,"Got stuck in a <b>💭 Random Thought</b>.")
-      }
-
     return true;
   }
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
   //console.log("EnemyType: \n"+enemyType);
-  procAbilityChance("🥻",5);
+
+  if (procAbilityChance("🥻",5)){
+    var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Random Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:n/a<br>","message:"]
+    linesStory.splice(encounterIndex+1,0,philosopherThoughts);
+    logPlayerAction("🥻","Got stuck in a <b>💭 Random Thought</b>.")
+  }
 
   if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
   previousEnemyType = enemyType;
@@ -2412,10 +2402,10 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       displayPlayerCannotEffect();
     } else {
       changeSign=" +";
-      playerHp+=bonusHp;
       displayPlayerEffect("❤️");
       displayPlayerGainedEffect();
     }
+    playerHp+=parseInt(bonusHp);
     playerHpMax += parseInt(bonusHp);
     if (playerHp>playerHpMax) playerHp = playerHpMax
     gainedString += changeSign+bonusHp + " "+hpEmoji;
