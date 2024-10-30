@@ -51,11 +51,11 @@ layout: default
                               box-shadow:
                                 0px 0px 0px 3px #121212;
                               padding-bottom:0px;
-                              padding-top:7px;
+                              padding-top:8px;
                               margin-top:0px;
                               background-color:#272727;">
 <div id = "id_emoji_wrapper">
-<h1 id = "id_emoji" style="position:relative; z-index:3"/>
+<h1 id = "id_emoji" style="position:relative; z-index:3 padding:4px"/>
 </div>
 </div>
 </div>
