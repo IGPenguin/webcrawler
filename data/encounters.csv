@@ -138,6 +138,8 @@ Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sac
 Forsaken Village;🃏;Tarot Card — Berserk;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice <b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced <b>🃏 Berserk</b>.
 Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Forsaken Village;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
+Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
+Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
 Forsaken Village;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
@@ -333,6 +335,9 @@ Depriving Fairyland;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrific
 Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Artifact;Provides <b>+2 🔵 Mana when read.</b><br>;Mastered the basics of magic.
 Depriving Fairyland;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Depriving Fairyland;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
+Depriving Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
+Depriving Fairyland;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
+
 
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Ritual Tool;The sacrifical blade demands blood.<br>;Released energy from the inside.

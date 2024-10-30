@@ -2482,7 +2482,7 @@ function playerHit(incomingDamage,applyLuck=true){
     return;
   }
 
-  if (procAbilityChance("🛡️",50)) {
+  if (procAbilityChance("🛡️",33)) {
     logAction("🛡️ ▸ 💢 Attack deflected by <b>🛡 Random Block</b>.");
     displayPlayerCannotEffect();
     displayPlayerEffect("🛡️");
