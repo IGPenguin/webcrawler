@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "fpm 10/30/24 • 8:08 am"
-var initialEncounterOverride=0; //7 skips tutorial
+var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -17,10 +17,15 @@ var colorRed = "#FF0000";
 var colorGrey = "#CCCCCC";
 var colorDarkGrey = "#888888";
 var colorOrange = "orange";
+var colorDarkOrange = "#523501";
 var colorYellow = "#F7D147";
 var colorBlue = "#1059AA";
 var colorLightBlue = "#487bb5"
+var colorDarkBlue = "#093566";
 var colorPurple = "#BF40BF";
+var colorDarkPurple = "#4a194a";
+
+var colorCardBackground = "#202020"
 
 //Symbols
 var fullSymbol = "●";
@@ -645,6 +650,7 @@ function redraw(){
   var totalMalus=EffectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
 
   enemyTeamUIElement.innerHTML="";
+  cardUIElement.style.background=colorCardBackground;
   switch(enemyType){
     case "Boss":
       enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorGold);
@@ -693,12 +699,21 @@ function redraw(){
     case "Item":
       if ((totalBonus > 0) || (enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
-        if (totalBonus>=2) enemyStatusString=decorateStatusText("🔷","Magnificient",colorLightBlue);
-        if (totalBonus>=3) enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
+        if (totalBonus>=2||enemyMgk>0){
+          enemyStatusString=decorateStatusText("🔷","Magnificient",colorLightBlue);
+          cardUIElement.style.background=colorDarkBlue;
+        }
+        if (totalBonus>=3){
+          enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
+          cardUIElement.style.background=colorDarkPurple;
+        }
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
-      if (enemyTeam.includes("Artifact")) enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
+      if (enemyTeam.includes("Artifact")) {
+        enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
+        cardUIElement.style.background=colorDarkOrange;
+      }
       break;
 
     case "Trap":
