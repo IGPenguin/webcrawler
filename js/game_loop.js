@@ -19,6 +19,7 @@ var colorDarkGrey = "#888888";
 var colorOrange = "orange";
 var colorYellow = "#F7D147";
 var colorBlue = "#1059AA";
+var colorLightBlue = "#487bb5"
 var colorPurple = "#BF40BF";
 
 //Symbols
@@ -634,7 +635,12 @@ function redraw(){
   enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
-  var totalEffect=enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk;
+  var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk];
+  var EffectArrayBonus=effectArray.filter(function(x){ return x > 0 });
+  var EffectArrayMalus=effectArray.filter(function(x){ return x < 0 });
+  var totalBonus=EffectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
+  var totalMalus=EffectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
+
   enemyTeamUIElement.innerHTML="";
   switch(enemyType){
     case "Boss":
@@ -682,8 +688,10 @@ function redraw(){
       break;
 
     case "Item":
-      if ((totalEffect > 0) || (enemyEmoji=="🗝️") || (enemyHp>0) || (enemyAtk>0) || (enemySta>0) || (enemyInt>0) || (enemyLck>0) || (enemyMgk>0)){
+      if ((totalBonus > 0) || (enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
+        if (totalBonus>=2) enemyStatusString=decorateStatusText("🔷","Magnificient",colorLightBlue);
+        if (totalBonus>=3) enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
@@ -705,11 +713,8 @@ function redraw(){
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
       break;
     case "Altar":
-      if (totalEffect>0){
-        enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
-      } else {
-        enemyStatusString=decorateStatusText("♦️","Sacrificial Altar",colorRed);
-      }
+      if (totalBonus>0) enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
+      if (totalMalus<0) enemyStatusString=decorateStatusText("♦️","Sacrificial Altar",colorRed);
       break;
     case "Fishing":
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
@@ -1401,16 +1406,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var isSacrifice = (enemyHp<0)
 
             if (isSacrifice) {
-                if (playerUseItem("🔪","overwritten","The prayer had no effect.",true,false)){
+                if (playerUseItem("🔪","overwritten","The prayer had no effect.",true,true)){
                   displayEnemyEffect("🩸");
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
                   playerHit(0,false);
+                  isLooting=false
+                  nextEncounter();
                 }
                 displayPlayerCannotEffect();
               } else {
                 playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
                 displayPlayerEffect("✨")
                 displayPlayerGainedEffect();
+                isLooting=false
+                nextEncounter();
               }
             break;
 
