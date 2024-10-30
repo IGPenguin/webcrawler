@@ -523,8 +523,8 @@ function generateNextEncounters(count=1){
         linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
         linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
         linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
+        break;
       }
-
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
       break;
@@ -2769,7 +2769,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
       if (enemyType.includes("Container")){
-        setButton('button_grab',"👀 Search");
+        if (!enemyType.includes("Friend"))setButton('button_grab',"👀 Search");
         setButton('button_roll',"👣 Walk");
         setButton('button_sleep',"💤 Sleep");
         if (enemyType.includes("Locked")){
