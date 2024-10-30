@@ -1539,6 +1539,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"Grabbed them into stranglehold.");
               enemyKnockedOut();
+              isLooting=false;
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
