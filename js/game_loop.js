@@ -952,6 +952,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         var rollMessage;
 
         switch (enemyType){ //Dodge attack or walk if they are harmless
+          case "Curse":
+            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+            nextEncounter();
+            break;
+
           case "Standard":
           case "Undead":
           case "Recruit":
