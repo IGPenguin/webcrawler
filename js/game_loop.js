@@ -350,20 +350,11 @@ function getRandomEncounter(type="") {
       //console.log(a);
       var lineEnemyName= line[2].split("name:")[1]
       if (lineEnemyName!==seenEncounterName) {
-        console.log(lineEnemyName+" vs "+seenEncounterName);
+        //console.log(lineEnemyName+" vs "+seenEncounterName);
         return line
       }
     })
-    console.log(tempLinesGenerator);
-    //Hopefully this finally works, backups below 🤣
-    //TODO: FIX (maybe check fishing loot seen?) - tempLinesGenerator = tempLinesGenerator.filter(a => a !== seenEncounterName)
-
-
-    //tempLinesGenerator = tempLinesGenerator.filter(function(a){return a !== seenEncounterName})
-    //var index = tempLinesGenerator.splice(tempLinesGenerator.indexOf("name:"+seenEncounterName))
-    //if (index !== -1) tempLinesGenerator.splice(index, 1);
   });
-  //console.log("Options post-dropping:\n"+tempLinesGenerator);
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
   var max = tempLinesGeneratorTotal;
@@ -559,10 +550,9 @@ function generateNextEncounters(count=1){
       trapsArray.push(getRandomEncounter("Trap"));
       trapsArray.push(getRandomEncounter("Trap-Attack"));
       trapsArray.push(getRandomEncounter("Trap-Roll"));
-      var chosenTrap=chooseFrom(trapsArray)
 
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
-      linesStory.splice(encounterIndex+2,0,chosenTrap);
+      linesStory.splice(encounterIndex+2,0,chooseFrom(trapsArray));
       linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Heavy","Demon"])));
       linesStory.splice(encounterIndex+4,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
       break;
@@ -1393,7 +1383,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var isSacrifice = (enemyHp<0)
 
             if (isSacrifice) {
-                if (playerUseItem("🔪","overwritten","overwritten",true,false)){
+                if (playerUseItem("🔪","overwritten","The prayer had no effect.",true,false)){
                   displayEnemyEffect("🩸");
 
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true);
