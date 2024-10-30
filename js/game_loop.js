@@ -343,7 +343,7 @@ function getRandomEncounter(type="") {
   if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
 
   //drop all seen names
-  console.log("Seen: "+seenEncounters);
+  //console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
     //console.log("Dropping: "+seenEncounterName);
     tempLinesGenerator= tempLinesGenerator.filter(function(line) {
@@ -398,7 +398,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
-    console.log("Generator type: "+number);
+    console.log("Generator: "+number);
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
@@ -2916,7 +2916,7 @@ function redirectToTweet(){
 
 function redirectToFeedback(prefillLog=""){
   //var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
-  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend(200).replaceAll("<b>","").replaceAll("</b>",""));
+  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend(50).replaceAll("<b>","").replaceAll("</b>",""));
   window.open(googleFormUrl);
 }
 
