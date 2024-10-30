@@ -1620,8 +1620,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             //logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
             //playerHit(enemyAtk);
 
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            playerHpMax+=(enemyHp*(-1)); playerHp+=(enemyHp*(-1));
+            playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             if (enemyHp<0) playerHit(enemyHp*(-1));
             break;
 
