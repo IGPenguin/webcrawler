@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 10/31/24 • 1:13 am"
-var initialEncounterOverride=7; //7 skips tutorial
+var versionCode = "fpm 10/31/24 • 1:22 am"
+var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
