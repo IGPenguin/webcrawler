@@ -2287,8 +2287,10 @@ function playerRest(){
 
 function playerHeal(){
   if (playerHp<playerHpMax) {
-    logPlayerAction(actionString,"Cast a healing spell +"+(playerHpMax-playerHp)+" ❤️‍🩹");
-    playerHp=playerHpMax; //Lay on hands
+    var healAmount=Math.floor((1+playerHpMax)/2);
+    logPlayerAction(actionString,"Cast a healing spell +"+(healAmount)+" ❤️‍🩹");
+    playerHp+=healAmount; //Lay on hands
+    if (playerHp>playerHpMax) playerHp=playerHpMax;
     displayPlayerGainedEffect();
   } else {
     logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
