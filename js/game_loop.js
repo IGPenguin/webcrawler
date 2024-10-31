@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "fpm 10/31/24 • 1:22 am"
-var initialEncounterOverride=0; //7 skips tutorial
+var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -20,11 +20,13 @@ var colorDarkGrey = "#888888";
 var colorOrange = "orange";
 var colorDarkOrange = "#523501";
 var colorYellow = "#F7D147";
+var colorDarkYellow = "#d6b53c";
 var colorBlue = "#1059AA";
 var colorLightBlue = "#487bb5"
 var colorDarkBlue = "#072a52";
 var colorPurple = "#BF40BF";
 var colorDarkPurple = "#381338";
+var colorPink = "#c9594f";
 
 var colorCardBackground = "#202020"
 
@@ -65,7 +67,7 @@ function renewPlayer(){ //Default values
   playerHp = playerHpMax;
   playerStaMax = 3;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
-  playerMgkMax = 0;
+  playerMgkMax = 4;
   playerAtk = 1;
   playerDef = 0; //TODO: Make use of when getting hit not by magic
   playerLck = 1;
@@ -170,7 +172,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Prioritize <b>🔰 Block</b>/<b>🌀 Dodge</b> over <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>"+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attacking</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>"+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -788,8 +790,8 @@ function redraw(){
         if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
         if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
-        if (playerLootString.includes("🪱") && enemyType==="Fishing") displayPlayerState("Bait Ready",colorBlue,"0.8");
-        if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorGold,"0.4");
+        if (playerLootString.includes("🪱") && enemyType==="Fishing") displayPlayerState("Bait Ready",colorPink,"0.8");
+        if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorDarkYellow,"0.4");
       }
       if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
@@ -815,8 +817,7 @@ function displayEnemyType(type){
 }
 
 function appendEnemyStats(){
-  var enemyStats;
-  enemyStats="&nbsp;";
+  var enemyStats = "";
   if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
   if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
 
@@ -975,7 +976,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Boss":
           case "Small":
-            if ((enemyAtk<=0) && (enemyMgk<=0)){
+            if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
               break;
@@ -1001,6 +1002,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Swift":
+            if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
+              logPlayerAction(actionString,"Walked away leaving them behind.");
+              nextEncounter();
+              break;
+            }
+
             if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
               logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
               break;
@@ -1013,6 +1020,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Heavy":
+            if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
+              logPlayerAction(actionString,"Walked away leaving them behind.");
+              nextEncounter();
+              break;
+            }
+
             if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
               logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
               break;
@@ -1425,7 +1438,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
                   playerHit(0,false);
                   isLooting=false
-                  nextEncounter();
+                  if (playerHp>0) nextEncounter();
                 }
                 displayPlayerCannotEffect();
               } else {
@@ -1494,8 +1507,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Boss":
         case "Small":
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
-            var enemyAtkChange=enemyAtk/2
+
+            if (procAbilityChance("🪆",33)){
+              var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪱","🪱","🪱","🪱"]); //50% for worm
+              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
+              displayEnemyCannotEffect();
+              displayEnemyEffect("🧬");
+              enemyEmoji=animalEmoji; enemyHp=1; enemyAtk=0; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
+              break;
+            }
+
+            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2);
             enemyAtkBonus-=enemyAtkChange;
+            if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
           } else if (playerMgkMax <= enemyMgk) {
             logPlayerAction(actionString,"They resisted the curse -2 🔵");
@@ -1570,7 +1594,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=" "+enemyEmoji;
-              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"New pet has joined the party"); //Cannot get health/sta/int from a pet
+              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg); //Cannot get health/sta/int from a pet
               break;
             }
 
@@ -1583,7 +1607,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
-                logAction("🍀 ▸ ✋ Touched them. <b>Luckily</b>, they were spooked.");
+                logAction("🍀 ▸ ✋ <b>Luckily</b>, they were spooked.");
                 displayEnemyEffect("💨");
                 displayPlayerEffect("🍀");
                 nextEncounter();
@@ -2577,7 +2601,7 @@ function playerReincarnate(){
 //End Game
 function gameOver(silent=false){
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")) enemyMsg="Got killed, ending the adventure.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
@@ -2642,7 +2666,7 @@ function resetEncounterButtons(){
   setButton('button_attack',"⚔️ Attack");
   setButton('button_block',"🔰 Block");
   setButton('button_roll',"🌀 Dodge");
-  if (((enemyAtk<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
+  if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
   setButton('button_cast',"💫 Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
