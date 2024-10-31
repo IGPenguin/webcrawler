@@ -141,24 +141,27 @@ Forsaken Village;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chanc
 Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 
+Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various forest growth species.<br>;Embraced the knowledge.
+Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
+
+Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has sharp thorns.<br>;Ouch! It has sharp thorns
+Forsaken Village;🪈;Ratcatcher Flute;Item;0;0;0;-1;2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes captivating sounds
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
-Forsaken Village;🪓;Steel Axe;Item;0;1;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
-Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
-Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
 Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
-Forsaken Village;⛏;Hefty Pickaxe;Item;0;1;-1;0;0;0;Makeshift Weapon;Carrying this costs <b>-1 🟢 Energy</b>.<br>;Tiring to carry.
+Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
 Forsaken Village;📗;Survival Manual;Item;0;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
 Forsaken Village;📕;First Aid;Item;1;0;0;0;0;0;Instructions Book;How to save a life?<br>;Embraced the knowledge.
-Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.;Embraced the knowledge.
 Forsaken Village;🔖;Strange Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
+
+Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
+Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Limits stamina due to its weight.<br>;Tiring to carry.
 Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>;Hopefully this works
-Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;1;0;Forest Flora;These are just beautiful.<br>;Ouch! It has sharp thorns
 Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
-Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
-//;Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
+Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 
 Forsaken Village;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
 Forsaken Village;🧅;Spicy Onion;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
@@ -336,23 +339,23 @@ Depriving Fairyland;🃏;Tarot Card — Berserk;Item;-1;1;0;0;-1;0;<b>Artifact</
 Depriving Fairyland;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Depriving Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Stamina</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
 Depriving Fairyland;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
-Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Artifact;Provides <b>+2 🔵 Mana when read.</b><br>;Mastered the basics of magic.
 Depriving Fairyland;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Depriving Fairyland;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
 Depriving Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Depriving Fairyland;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 
+Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 
+Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Provides <b>+2 🔵 Mana when read.</b><br>;Mastered the basics of magic.
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Ritual Tool;The sacrifical blade demands blood.<br>;Released energy from the inside.
 Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>;Embraced the energy surge.
-Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;1;0;0;-2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds
+Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;3;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds
 Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>;Felt strange power surge.
 Depriving Fairyland;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of gibberish.<br>;Eternal presence noticed that.
 Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
 Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>;
 Depriving Fairyland;🪆;Suspicious Idol;Item;0;0;0;-3;0;1;Cursed Object;Unfamiliar peace of ancient art.<br>;
-Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>;
 Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Seems heavy and quite useless.<br>;Put it on their back
 Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;

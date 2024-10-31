@@ -702,7 +702,7 @@ function redraw(){
     case "Item":
       if ((totalBonus > 0) || (enemyEmoji=="🗝️")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
-        if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || parseInt(totalMalus)>=0){
+        if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
           enemyStatusString=decorateStatusText("🔷","Magnificient",colorLightBlue);
           cardUIElement.style.background=colorDarkBlue;
         }
