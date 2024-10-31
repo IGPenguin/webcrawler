@@ -24,7 +24,7 @@ Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Random Container;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🔪;Camping Knife;Item;0;0;0;0;0;0;Multi-tool;Too small to use in a fight.<br>;Might be useful sometime later.
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Container Pet/Friend;Generator-17;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Container Pet/Friend(Item);Generator-17;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Advanced Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Altar House;Generator-4666;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🌳;Apple Tree;Container-3;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
@@ -39,8 +39,7 @@ Forsaken Village;❓;Small Enemy;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Random Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Advanced Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-18;0;0;0;0;0;0;XXX;XXX;XXX
-TODO Fix Below
-;//Forsaken Village;❓;Trapped House;Generator-45;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Trapped House;Generator-45;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
 Forsaken Village;❓;Random Container;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
@@ -64,7 +63,7 @@ Depriving Fairyland;❓;Friend;Generator-7;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;A quiet place to rest.<br>;A knife was stuck into it.
-Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Enchanted Artifact;The sacrifical blade demands blood.<br>;Released some energy from the trunk.
+Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Ritual Tool;The sacrifical blade demands blood.<br>;Released energy from the trunk.
 Depriving Fairyland;❓;Demon Enemy;Generator-6;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
