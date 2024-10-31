@@ -1516,7 +1516,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
-              enemyEmoji=animalEmoji; enemyType="Small"; enemyHp=1; enemyAtk=0; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
+
+              enemyEmoji=animalEmoji; enemyType="Small"; enemyRenew();
+              enemyHp=1; enemyAtk=0; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
               break;
             }
 
