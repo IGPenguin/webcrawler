@@ -15,6 +15,7 @@ var colorDarkGold = "#4d4112";
 var colorGreen = "#22BF22";
 var colorDarkGreen = "#509920";
 var colorRed = "#FF0000";
+var colorDarkRed = "#690000";
 var colorGrey = "#CCCCCC";
 var colorDarkGrey = "#888888";
 var colorOrange = "orange";
@@ -659,46 +660,47 @@ function redraw(){
   switch(enemyType){
     case "Boss":
       enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorGold);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
+      cardUIElement.style.background=colorDarkRed;
       break;
     case "Pet":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Companion",colorOrange);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
     case "Swift": //TODO: Perhaps there should also be "Flying"??
       enemyTeamUIElement.innerHTML=decorateStatusText("💨","Hasty",colorGreen);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
     case "Heavy":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔺","Strong",colorRed);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
     case "Spirit":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔘","Spirit",colorWhite);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
     case "Friend":
     case "Container-Friend":
       var neutralType=decorateStatusText("▪️","Neutral",colorGrey);
-      //enemyStatusString=appendEnemyStats() //Do not display stats = reward hidden
+      //enemyStatusString=appendEnemyStats(); //Do not display stats = reward hidden
       displayEnemyType(neutralType);
       break;
     case "Small":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small",colorWhite);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
     case "Recruit":
     case "Standard":
       enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Normal",colorWhite);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
     case "Demon":
       enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
     case "Undead":
       enemyTeamUIElement.innerHTML=decorateStatusText("💀","Undead",colorGrey);
-      enemyStatusString=appendEnemyStats()
+      enemyStatusString=appendEnemyStats();
       break;
 
     case "Item":
