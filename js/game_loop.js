@@ -80,7 +80,7 @@ function renewPlayer(){ //Default values
 
   playerKills = 0;
   seenLoot = [];
-  adventureLog = "";
+  adventureLog = [];
 }
 
 //Global vars
@@ -659,7 +659,7 @@ function redraw(){
   cardUIElement.style.background=colorCardBackground;
   switch(enemyType){
     case "Boss":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👑","Boss",colorGold);
+      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
       enemyStatusString=appendEnemyStats();
       cardUIElement.style.background=colorDarkRed;
       break;
@@ -2597,7 +2597,6 @@ function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory."
 }
 
 function playerReincarnate(){
-  logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
   playerNumber++;
   displayEnemyEffect("❤️‍🩹");
   renewPlayer();
@@ -2605,6 +2604,7 @@ function playerReincarnate(){
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   nextEncounter();
+  logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
 }
 
 //End Game
@@ -2968,7 +2968,7 @@ function generateCharacterLegend(logLength=0) {
   var tempString = characterLegend.split("\n").slice(2);
   characterLegend = tempString.join("\n");
   characterLegend = characterLegend.replaceAll("&nbsp;"," ").substring(1);
-  if (logLength>0) characterLegend = "Showing last "+logLength+" lines...\n"+characterLegend.split("\n").splice(0,characterLegend.length-logLength).join("\n");
+  if (logLength>0) characterLegend = "Limited to last "+logLength+" events...\n"+characterLegend.split("\n").splice(0,characterLegend.length-logLength).join("\n");
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
   characterLegend += "\nhttps://igpenguin.github.io/webcrawler";
@@ -3006,9 +3006,12 @@ function redirectToTweet(){
   window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, check out my WebCrawler run!"+"\n\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")+"\n"));
 }
 
-function redirectToFeedback(prefillLog=""){
+function redirectToFeedback(){
   //var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
-  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+encodeURIComponent(generateCharacterLegend(50).replaceAll("<b>","").replaceAll("</b>",""));
+  var characterLegend=generateCharacterLegend(50);
+  console.log(characterLegend);
+  var gameLog=encodeURIComponent(characterLegend.replaceAll("<b>","").replaceAll("</b>",""));
+  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+gameLog;
   window.open(googleFormUrl);
 }
 
