@@ -11,7 +11,7 @@ if (initialEncounterOverride!=0) initialEncounterOverride-=3;
 //Colors
 var colorWhite = "#FFFFFF";
 var colorGold = "#FFD940";
-var colorDarkGold = "#73621c";
+var colorDarkGold = "#4d4112";
 var colorGreen = "#22BF22";
 var colorDarkGreen = "#509920";
 var colorRed = "#FF0000";
