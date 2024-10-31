@@ -607,7 +607,7 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
 
-  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);playerStatusString += "&nbsp;&nbsp;"}
+  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);}
   if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
 
   document.getElementById('id_player_status').innerHTML = playerStatusString;
@@ -819,18 +819,18 @@ function displayEnemyType(type){
 function appendEnemyStats(){
   var enemyStats = "";
   if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
-  if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
+    if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
 
   if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
     if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyStaLost) + emptySymbol.repeat(enemyStaLost); } //YOLO
+
+  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
+    if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   if ((enemyAtk)>0) {
     enemyStats += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
     if (enemyAtkBonus<0) enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
   }
-
-  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
-  if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   return enemyStats;
 }
@@ -979,6 +979,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
+              isLooting=false;
               break;
             }
 
@@ -1005,6 +1006,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
+              isLooting=false;
               break;
             }
 
@@ -1023,6 +1025,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
+              isLooting=false;
               break;
             }
 
@@ -1513,7 +1516,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
-              enemyEmoji=animalEmoji; enemyHp=1; enemyAtk=0; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
+              enemyEmoji=animalEmoji; enemyType="Small"; enemyHp=1; enemyAtk=0; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
               break;
             }
 
