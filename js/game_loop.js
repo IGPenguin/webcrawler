@@ -1258,7 +1258,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
-            var magicDamage = playerMgk;
+            var magicDamage = playerMgk+1;
             if (magicDamage > 2) {
               magicDamage=2;
               playerMgk--;
