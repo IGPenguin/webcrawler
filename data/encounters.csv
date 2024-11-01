@@ -26,7 +26,6 @@ Forsaken Village;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you w
 //;Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
 //;Forsaken Village;🪑;Scratched Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 
-Forsaken Village;🎯;Archery Range;Container;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
 Forsaken Village;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
@@ -45,7 +44,9 @@ Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;B
 Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Tool Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🎯;Archery Range;Container-2;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 
+Forsaken Village;🎯;Archery Range;Container-3;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 Forsaken Village;🏚️;Building Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
 Forsaken Village;🏚️;Unsettling House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
@@ -333,10 +334,10 @@ Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;3;Apex Predator;Hunti
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;3;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🦡;Honey Badger;Standard;3;2;2;0;4;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
-Depriving Fairyland;🧌;Old Troll;Standard;4;1;1;0;2;1;Creature;Not happy about having a company.<br>;Turned into goulash.
+Depriving Fairyland;🧌;Old Troll;Recruit;4;1;1;0;2;1;Creature;Not happy about having a company.<br>;Turned into goulash.
 Depriving Fairyland;🕷️;Huge Tarantula;Standard;3;3;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
-Depriving Fairyland;🧝‍♀️;Cultist Priestess;Standard;2;2;2;0;-1;1;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
-Depriving Fairyland;🧙‍♂️;Cultist Elder;Standard;1;1;1;0;4;4;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Depriving Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;2;2;0;-1;1;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
+Depriving Fairyland;🧙‍♂️;Cultist Elder;Recruit;1;1;1;0;4;4;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
 Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
 Depriving Fairyland;🥷;Cultist Elite;Swift;2;3;3;0;5;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.

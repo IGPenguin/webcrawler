@@ -443,7 +443,6 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(count=1){
-  //TODO: Add: Recruit
   switch (count) {
 
     case 0: //Prop
@@ -732,7 +731,7 @@ function redraw(){
     case "Trap":
     case "Trap-Attack":
     case "Trap-Roll":
-      enemyStatusString=decorateStatusText("‼️","Dangerous",colorRed);
+      enemyStatusString=decorateStatusText("‼️","Hazardous",colorRed);
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
