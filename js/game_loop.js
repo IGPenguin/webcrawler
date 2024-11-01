@@ -61,6 +61,8 @@ var playerAtk;
 var playerRested = false;
 var seenLoot;
 
+var playerKarma=1; //Does not reset during the session
+
 renewPlayer();
 function renewPlayer(){ //Default values
   playerName = getFirstName();
@@ -173,7 +175,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>"+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>."+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -372,7 +374,7 @@ function getRandomEncounter(type="") {
   //console.log("Random encounter index: "+randomEncounterIndex)
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
-  console.log("Options: "+tempLinesGeneratorTotal+"\nChosen #"+randomEncounterIndex+":\n"+randomEncounter.split(",h")[0])
+  console.log("Opts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",h")[0])
 
   //mark as seen (by name)
   //var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
@@ -408,7 +410,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
-    console.log("Generator: "+number);
+    console.log("Gen-type:"+number);
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
@@ -478,16 +480,21 @@ function generateNextEncounters(count=1){
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Friend"));
       break;
 
-    case 8: //Pet
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Pet"));
+    case 8: //Standard or Pet or Recruit or Friend
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Pet","Recruit","Friend"])));
       break;
 
     case 9: //Item
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Item"));
+      pushEncounter(getRandomEncounter("Item"));
       break;
 
     case 10: //Container
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      break;
+
+    case 18: //Container Consumable
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
     case 69: //Fishing
@@ -535,11 +542,6 @@ function generateNextEncounters(count=1){
       }
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
       linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
-      break;
-
-    case 18: //Container Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
       break;
 
     case 30: //Container-3 Empty
@@ -2218,6 +2220,11 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
   }
 }
 
+function pushEncounter(encounterStringArray=[],index=encounterIndex+1){
+  if (encounterStringArray == []) encounterStringArray = ["area:"+areaName,"emoji:⚠️","name:Missing Push","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing next encounter data.","message:"]
+  linesStory.splice(index,0,philosopherThoughts);
+}
+
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
   //console.log("EnemyType: \n"+enemyType);
 
@@ -2525,7 +2532,7 @@ function playerHit(incomingDamage,applyLuck=true){
   var hitChance = Math.floor(Math.random() * luckInterval);
 
   if (applyLuck && ( hitChance <= playerLck )){
-    logAction("🍀&nbsp;▸&nbsp;💢 <b>Luckily</b> avoided receiving the damage.");
+    logAction("🍀 ▸ 💢 <b>Luckily</b> avoided receiving the damage.");
     displayPlayerEffect("🍀");
     return;
   }
@@ -2545,7 +2552,7 @@ function playerHit(incomingDamage,applyLuck=true){
     var deathChance = Math.floor(Math.random() * luckInterval * 3); //Small chance to not die
     if (applyLuck && ( deathChance <= playerLck )){
       playerHp+=1;
-      logAction("🍀&nbsp;▸&nbsp;💀 <b>Luckily</b> got a second chance to live.");
+      logAction("🍀 ▸ 💀 <b>Luckily</b> got a second chance to live.");
       displayPlayerEffect("🍀");
       return;
     }
@@ -2604,6 +2611,11 @@ function playerReincarnate(){
   adventureEncounterCount = -1; //Death + tutorial
   nextEncounter();
   logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
+
+  if (playerKarma>0){
+    pushEncounter(getRandomEncounter("Item"));
+    logAction("🪽 ▸ 🎁","Received a good boy's bonus!<br>&nbsp;<br>&nbsp;");
+  }
 }
 
 //End Game
