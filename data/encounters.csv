@@ -176,7 +176,6 @@ Forsaken Village;👢;Riding Boots;Item;0;0;2;0;0;0;Specialized Gear;Gives bette
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Definitely could be of service.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 
 Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch! It has sharp thorns
-Forsaken Village;🪈;Ratcatcher Flute;Item;0;0;0;-1;2;0;Malvolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;Makes captivating sounds
 Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>Provides <b>+1 🍀 Luck</b>.;Got a new travel buddy.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
@@ -186,7 +185,6 @@ Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still 
 Forsaken Village;🥾;Heavy Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boot fit just perfectly.
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Should help to remember.
-Forsaken Village;📔;Philosopher Journal;Item;0;0;0;0;1;0;Notes;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Embraced the knowledge.
 
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
 Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Drains -1 <b>🟢 Energy</b> due to its weight.<br>;Tiring to carry.
@@ -395,23 +393,28 @@ Depriving Fairyland;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;S
 Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;Usually brings extra luck.<br>Provides <b>+2 🍀 Luck</b>.;Feels good to have it.
 Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
-Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy;n/a;Embraced the knowledge.
+Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy;Provides insight and <b>+3 🧠 Intellect</b>.<br>n/a;Embraced the knowledge.
 Depriving Fairyland;🧣;Vigor Scarf;Item;2;0;0;0;0;0;Accessory;Soft silk warms both body and soul.<br>Provides <b>+2 ❤️ Health.</b>;Feels soft to touch.
+Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;Malvolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
+Depriving Fairyland;🧭;Cursed Compass;Item;0;0;2;-1;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-1 🍀 Luck</b>.;
+Depriving Fairyland;🧧;Crimson Medailon;Item;2;0;0;-1;0;0;Rare Trinket;Something feels off about this.<br>Provides <b>+2 ❤️ Health”</b> for <b>-1 🍀 Luck</b>.;
+🪇
 
-Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
-Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>;Embraced the energy surge.
-Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-1;3;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes annoying sounds
-Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>;Felt strange power surge.
-Depriving Fairyland;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of gibberish.<br>;Eternal presence noticed that.
+Depriving Fairyland;🪃;Tribal Boomerang;Item;0;1;0;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+1 ⚔️ Damage</b>.;
+Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;The polished surface reflects energy.<br>Provides <b>+1 🔵 Mana</b>.;Irradiated with magic energy.
+Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>Provides <b>+1 🔵 Mana</b>.;Embraced the energy surge.
+Depriving Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>Provides <b>+1 🔵 Mana</b>.;Felt strange power surge.
+Depriving Fairyland;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of nonsense gibberish.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🍀 Luck</b>.;Eternal presence seen that.
+Depriving Fairyland;📔;Philosopher Journal;Item;0;0;0;0;1;0;Notes;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Embraced the knowledge.
+Depriving Fairyland;🏷️;Remembrance Tag;Item;0;0;0;0;1;0;Scribbled Note;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Should help to remember.
+Depriving Fairyland;👒;Silly Hat;Item;0;0;0;-1;2;0;Cringe Accessory;Silly hat for adventuous people.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;
+Depriving Fairyland;🥋;Reinforced Kimono;Item;1;0;0;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b>.;
+Depriving Fairyland;🎎;Lucky Trinket;Item;1;0;0;0;0;0;Accessory;Traditional protection againts bad luck.<br>Provides <b>+1 🍀 Luck</b>.;
+Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>Provides <b>+1 ❤️ Health</b>.;
 
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;0;Ritual Tool;The sacrifical blade demands blood.<br>;
-Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>;
-Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Seems heavy and quite useless.<br>;Put it on their back
+Depriving Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;Mystical Relic;No one should ever not look directly into it.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth
+Depriving Fairyland;🎀;Silly Bowtie;Item;0;0;0;1;-1;0;Accessory;Gives extra luck but looks cringe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;That looks ridiculous
+Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under their arm
 Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-Depriving Fairyland;🏷️;Remembrance Tag;Item;0;0;0;0;1;0;Scribbled Note;n/a<br>;Should help to remember.
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
-xx
-xx
-xx
-//;Depriving Fairyland;🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
-//;Depriving Fairyland;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;

@@ -175,7 +175,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code."]; //Add unlock key, unlock spell, explain heal, explain curse, explain legendary
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code."]; //Add unlock key, unlock spell, explain heal, explain curse, explain legendary
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -2634,13 +2634,13 @@ function playerReincarnate(){
 
   if (playerKarma>0){
     var bonusItem=getRandomEncounter("Item","Forsaken Village");
-    var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Nice Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
+    var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     console.log("Bonus:\n"+bonusItem);
 
-    pushEncounter(bonusWrapper,encounterIndex+1);
-    pushEncounter(bonusItem,encounterIndex+2);
+    pushEncounter(bonusWrapper,encounterIndex+2);
+    pushEncounter(bonusItem,encounterIndex+3);
   }
 }
 
