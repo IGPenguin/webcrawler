@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 11/01/24 • 11:59 am"
-var initialEncounterOverride=0; //7 skips tutorial
+var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -175,7 +175,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance for a critical hit."+newline,"<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>."+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline, "<b>✏️ Rename</b> the hero by clicking their name."+newline,"<b>🐞 Report</b> issues by clicking the version code."+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance for a critical hit."+newline,"<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>."+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline, "<b>✏️ Rename</b> the hero by clicking their name."+newline,"<b>🐞 Report</b> issues by clicking the version code."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -1691,7 +1691,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyEmoji=="🍭"){
               var halfSta = Math.floor(playerSta/2);
               if (halfSta == 0) {
-                logPlayerAction(actionString,"Not enough <b>🟢 Stamina</b> available.");
+                logPlayerAction(actionString,"Not enough <b>🟢 Energy</b> available.");
                 displayPlayerCannotEffect();
                 break;
               }
@@ -2240,7 +2240,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   if (procAbilityChance("🥻",5)){
     var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Random Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:n/a<br>","message:"]
     linesStory.splice(encounterIndex+1,0,philosopherThoughts);
-    logPlayerAction("🥻","Got stuck in a <b>💭 Random Thought</b>.")
+    logAction("🥻 ▸ <b>💭 Random Thought</b> came into the mind.")
   }
 
   if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
@@ -2302,6 +2302,10 @@ function playerRest(){
     logPlayerAction(actionString,"Already rested at this spot.");
     displayPlayerCannotEffect();
   }
+  if (procAbilityChance("🔮",33)){
+    logPlayerAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided +1 🔵 <b>Mana</b> bonus.")
+    playerMgk++;
+  }
 }
 
 function playerHeal(){
@@ -2325,7 +2329,7 @@ function playerGetStamina(stamina,silent = false){
     return false;
   } else {
     if (!silent){
-      logPlayerAction(actionString,"Rested and regained energy +" + stamina + " 🟢");
+      logPlayerAction(actionString,"Rested and regained +" + stamina + " 🟢<b>Energy</b>");
     }
     playerSta += stamina;
     if (playerSta > playerStaMax){
@@ -2345,6 +2349,10 @@ function playerUseStamina(stamina, message = ""){
     return false;
   } else {
     playerSta -= stamina;
+    if (procAbilityChance("",33)){
+      logAction("🪶  ▸ <b>⚡️ Quick Reflex</b> recovered 🟢 <b>Energy</b> from action.")
+      playerSta+=stamina;
+    }
     return true;
   }
 }
