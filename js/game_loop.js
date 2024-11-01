@@ -1342,11 +1342,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"Felt getting somewhat wiser +1 🧠");
+              logPlayerAction(actionString,"Became considerably wiser +2 🧠");
               displayPlayerGainedEffect();
               displayPlayerEffect("🧠");
               playerName=getCleverName();
-              playerInt+=1;
+              playerInt+=2;
               animateFlipNextEncounter();
               break;
           }
