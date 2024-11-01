@@ -6,19 +6,15 @@ Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Snoring;<b>💤 Sleep</b
 Depths of Slumber;👿;Bad Thought;Demon;1;1;1;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> when they have no <b>🟢 Energy</b>.;
 Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>;
 Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Choose a perk</b> to shape your character.<br>;
-Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;n/a<br>;
+Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Observe the details to <b>increase your chances.</b><br>n/a;
 
-//TEST Block
-Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Forsaken Village;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Forsaken Village;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
+//TEST Block 🎃
 
 //;Forsaken Village;🪽;Angel Wing;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflex</b>.<br>33% chance to recover <b>🟢 Energy</b> on use.;Gained skill <b>⚡️ Quick Reflex</b>.
 //;Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-📙⚗️🪃🧭👒🧤👢🧣📃
-🎨🖌️🖼️🥋🥣🦦🎃👡🎎
-🪭🧧🧂🛷🥾🎩🪇🥁
+📙⚗️🪃🧭👒
+🎨🖌️🖼️🥋🥣🦦👡🎎
+🪭🧧🧂🛷🎩🪇🥁
 
 //TODO Balance and finalize this area
 Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX

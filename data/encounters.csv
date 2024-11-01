@@ -169,32 +169,34 @@ Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifi
 Forsaken Village;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
 Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
 Forsaken Village;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
-
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
-Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various forest growth species.<br>;Embraced the knowledge.
-Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>;Obtained a makeshift weapon.
-xx
-xx
+Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various forest growth species.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
+Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained a makeshift weapon.
+Forsaken Village;👢;Riding Boots;Item;0;0;2;0;0;0;Specialized Gear;Gives better stability in action.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
+Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Definitely could be of service.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 
-Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has sharp thorns.<br>;Ouch! It has sharp thorns
-Forsaken Village;🪈;Ratcatcher Flute;Item;0;0;0;-1;2;0;Malvolent Instrument;Decorated magical equipment.<br>;Makes captivating sounds
-Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>;Got a travel buddy.
-Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>;Obtained a makeshift weapon.
-Forsaken Village;📗;Camping Manual;Item;0;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
-Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;How to save a life?<br>;Embraced the knowledge.
-Forsaken Village;🔖;Strange Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
-Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
-Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
-xx
+Forsaken Village;🌹;Rose Bush;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch! It has sharp thorns
+Forsaken Village;🪈;Ratcatcher Flute;Item;0;0;0;-1;2;0;Malvolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;Makes captivating sounds
+Forsaken Village;🐞;Cute Ladybug;Item;0;0;0;1;0;0;Tiny Insect;Looks absolutely innocent.<br>Provides <b>+1 🍀 Luck</b>.;Got a new travel buddy.
+Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
+Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
+Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
+Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced their awareness.
+Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Could still make a bloody mess.
+Forsaken Village;🥾;Heavy Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boot fit just perfectly.
+Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
+Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Should help to remember.
+Forsaken Village;📔;Philosopher Journal;Item;0;0;0;0;1;0;Notes;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Embraced the knowledge.
 
-Forsaken Village;🔪;Small Blade;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
 Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Drains -1 <b>🟢 Energy</b> due to its weight.<br>;Tiring to carry.
 Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>;Hopefully this works
-Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
-Forsaken Village;📔;Philosopher Notes;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
+Forsaken Village;🔪;Small Blade;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
 Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
+Forsaken Village;🗝️;Blood Key;Item;0;0;0;0;0;0;Junk;The surface is covered in blood and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
+Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
+Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
 Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 
 Forsaken Village;🥕;Wild Carrot;Consumable;0;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>;
@@ -338,7 +340,7 @@ Depriving Fairyland;🧝‍♀️;Cultist Priestess;Standard;2;2;2;0;-1;1;Humano
 Depriving Fairyland;🧙‍♂️;Cultist Elder;Standard;1;1;1;0;4;4;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
 Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
-//;Depriving Fairyland;🥷;Mystic Adversary;Swift;1;1;3;0;3;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
+Depriving Fairyland;🥷;Cultist Elite;Swift;2;3;3;0;5;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;-1;0;Pesky Insects;Ton of bees swarmed the area.<br>;There was nowhere to run.
 Depriving Fairyland;🐆;Daunting Panther;Swift;3;2;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
 Depriving Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
@@ -390,12 +392,11 @@ Depriving Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacr
 Depriving Fairyland;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
 Depriving Fairyland;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
 Depriving Fairyland;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
-
-Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
-Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Provides <b>+2 🔵 Mana when read.</b><br>;Mastered the basics of magic.
-Depriving Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;1;1;Prophecy Source;n/a;Embraced the vision
-Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>;
-Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;2;0;Prophecy;n/a;Embraced the knowledge.
+Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;Usually brings extra luck.<br>Provides <b>+2 🍀 Luck</b>.;Feels good to have it.
+Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
+Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
+Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy;n/a;Embraced the knowledge.
+Depriving Fairyland;🧣;Vigor Scarf;Item;2;0;0;0;0;0;Accessory;Soft silk warms both body and soul.<br>Provides <b>+2 ❤️ Health.</b>;Feels soft to touch.
 
 Depriving Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;Polished to perfection.<br>;Irradiated with magic energy.
 Depriving Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>;Embraced the energy surge.
@@ -407,11 +408,10 @@ Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;0;0;Ritual Tool;The sacrific
 Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>;
 Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Seems heavy and quite useless.<br>;Put it on their back
 Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-Depriving Fairyland;🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
+Depriving Fairyland;🏷️;Remembrance Tag;Item;0;0;0;0;1;0;Scribbled Note;n/a<br>;Should help to remember.
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 xx
 xx
 xx
-xx
-//;Depriving Fairyland;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+//;Depriving Fairyland;🪶;Lightning Feather;Item;0;0;1;0;0;0;Fancy Quill;Has pearlescent finish.<br>;Felt swift power surge.
 //;Depriving Fairyland;🧵;Cotton Thread;Item;0;0;0;0;0;0;Junk;Might come in handy at some point.<br>;

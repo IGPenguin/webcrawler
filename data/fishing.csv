@@ -40,9 +40,9 @@ Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly 
 Loot;🎀;Silly Bowtie;Item;0;0;0;1;-1;0;Accessory;Gives extra luck but looks cringe.<br>;That looks ridiculous
 Loot;👞;Old Shoes;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoes.<br>;Disgusting but kinda cool.
 Loot;🔪;Dull Knife;Item;0;0;0;0;0;0;Worn Tool;Useless in combat.<br>;Took it with themselves just in case.
-Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
-Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br>;
-Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks reliable.<br>;
+Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
+Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
+Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks still reliable.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
 
 Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
