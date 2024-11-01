@@ -8,19 +8,23 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //;Forsaken Village;🚪;Exit Door;Prop-Exit;0;0;0;0;0;0;Way Out;It is finally over.<br>;Closed the door behind.
 
-Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌿;Thicket Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Forsaken Village;🌾;Thick Grass;Prop;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Forsaken Village;🌱;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🪨;Pile of Rocks;Prop;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Moved around the rocks.
-Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Material;Nothing but junk.<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
-Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Tool;Dropped in the middle of nowhere.<br>;Moved past that.
+Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;Moved past that.
 Forsaken Village;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 Forsaken Village;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
+Forsaken Village;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;Moved past that.
+//;Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
+//;Forsaken Village;🪑;Scratched Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 
 Forsaken Village;🎯;Archery Range;Container;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
@@ -32,7 +36,6 @@ Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit 
 Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Forsaken Village;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.br>;
-
 //;Forsaken Village;👝;Lost Bag;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 //;Forsaken Village;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 //;Forsaken Village;🧳;Lost Baggage;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
@@ -40,16 +43,26 @@ Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this plac
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was a creature inside!
 Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
 Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏚️;Tool Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Building Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
+Forsaken Village;🏚️;Unsettling House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏡;Garden House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Unsettling House;Container-4;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🏚️;Ruined House;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Ruined Building;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🕰️;Clock Tower;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏫;Town Hall;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏘️;Backalley;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
-Forsaken Village;🏚️;Ruined Mansion;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Abandoned Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🕌;Cult Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏯️;Abandoned Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;️🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🛕;Cult Temple;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
@@ -79,6 +92,7 @@ Forsaken Village;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal 
 Forsaken Village;🐇;Curious Bunny;Friend;0;0;0;1;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Pope.
 Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
 Forsaken Village;🦝;Raccoon Ambassador;Container-Friend;0;0;0;0;1;0;Unusal Critter;Brings a special gift.<br>;Strenghtened the interspecies bond.
+‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural;Has understanding for all beings.<br>;Received a precious gift.
 
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
@@ -194,7 +208,7 @@ Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all s
 Forsaken Village;🍑;Juicy Peach;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>;
 Forsaken Village;🍄;Strange Shroom;Consumable;-1;0;0;0;2;0;Suspicious Growth;It's beautiful. What could go wrong?<br>;
-Forsaken Village;🍗;Fresh Meat;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
+Forsaken Village;🍗;Fresh Meat;Consumable;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
 Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;0;0;0;Rare Delicacy;Smells terrible... still tempting though.<br>;Barely held it inside
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;1;0;-1;0;Stale Delicacy;Wonder how it tastes?<br>;Was it worth?
@@ -215,6 +229,7 @@ Depriving Fairyland;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place 
 Depriving Fairyland;🌻;Lonely Sunflower;Prop;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 Depriving Fairyland;🪻;Hyacinth Patch;Prop;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
+🗼🎋🌵🌴🪐⛳️⛺️🏕️
 
 Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Depriving Fairyland;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
@@ -282,6 +297,8 @@ Depriving Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could p
 Depriving Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Depriving Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;2;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
 Depriving Fairyland;🧞‍♀️;Generous Genie;Container-Friend;0;0;0;0;0;0;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
+👰🏻‍♀️👸🫅🧙‍♀️🧙🧙
+
 Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
 Depriving Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
 Depriving Fairyland;🐫;Desert Inhabitant;Pet;2;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
