@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "fpm 11/01/24 • 9:5S am"
-var initialEncounterOverride=0; //7 skips tutorial
+var versionCode = "ver. 11/01/24 • 10:01 am"
+var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -175,7 +175,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance on a critical hit."+newline,"<b>👋 Grab</b> 🪱 to do some <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>."+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest."+newline,"<b>💤 Sleep</b> whenever you get a chance."+newline,"<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>."+newline,"<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>."+newline,"<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>."+newline,"<b>👋 Grab</b> tired enemies to knock them out."+newline,"<b>🧠 Intellect</b> helps befreinding companions."+newline,"<b>💫 Cast</b> spells always hit before retaliation.<br>","<b>🍴 Eating</b> when relaxed provides a bonus."+newline,"Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>."+newline,"<b>💤 Sleep</b> recovers <b>🟢 Stamina</b> and <b>🔵 Mana</b>."+newline,"<b>🍀 Luck</b> provides a chance for a critical hit."+newline,"<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>."+newline,"<b>✏️ Report</b> any issues to make a difference."+newline,"<b>💬 Speaking</b> can sometimes stop the fight."+newline,"<b>🍀 Luck</b> may help to  survive a fatal hit."+newline, "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>."+newline,"<b>🎣 Fishing </b> provides a variety of unique items."+newline, "<b>✏️ Rename</b> the hero by clicking their name."+newline,"<b>🐞 Report</b> issues by clicking the version code."+newline];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -2948,10 +2948,16 @@ function registerClickListeners(){
     redraw();
   });
 
-
   document.getElementById('id_player_name').addEventListener(eventType, ()=>{
-    playerName=prompt("Name your character: ");
-    if (playerName.length<=0 || playerName==null) playerName="Nameless Character";
+    var newPlayerName = prompt("Rename your character: ", playerName);
+    if (newPlayerName==="") {
+      newPlayerName="Nameless";
+    } else if (newPlayerName) {
+      //Name changed
+    } else {
+      newPlayerName=playerName;
+    }
+    playerName=newPlayerName;
     redraw();
   });
 }
