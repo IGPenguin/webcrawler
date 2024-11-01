@@ -1720,6 +1720,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerLootString+=enemyEmoji;
               displayEnemyEffect("👋");
               nextEncounter();
+              isLooting=false;
             } else {
               enemyDodged("Missed, it evaded the grasp.");
               if (enemyCastIfMgk()) break;
