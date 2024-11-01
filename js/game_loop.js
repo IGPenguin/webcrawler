@@ -70,7 +70,7 @@ function renewPlayer(){ //Default values
   playerHp = playerHpMax;
   playerStaMax = 3;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
-  playerMgkMax = 0;
+  playerMgkMax = 2;
   playerAtk = 1;
   playerLck = 1;
   playerInt = 1;
@@ -1318,10 +1318,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
           case "Consumable-Container":
-            logPlayerAction(actionString,"Cooked it with a spell -1 🔵");
+            if (enemyHp<0){
+              logPlayerAction(actionString,"Cooked it with a spell -1 🔵");
+              enemyHp=0;
+              enemyMsg="Actually tasted good";
+            } else {
+              logPlayerAction(actionString,"Roasted a crunchy crust -1 🔵");
+              enemySta+=1;
+              enemyMsg="Tasted better than usual";
+            }
             displayEnemyEffect("🔥");
-            enemyHp=0;
-            enemyMsg="Actually tasted good";
             break;
 
           case "Dream":
@@ -2358,8 +2364,8 @@ function playerUseStamina(stamina, message = ""){
     return false;
   } else {
     playerSta -= stamina;
-    if (procAbilityChance("",33)){
-      logAction("🪶  ▸ <b>⚡️ Quick Reflex</b> recovered 🟢 <b>Energy</b> from action.")
+    if (procAbilityChance("🪶",33)){
+      logAction("🪶  ▸ <b>⚡️ Quick Reflex</b> recovered the 🟢 <b>Energy</b>.")
       playerSta+=stamina;
     }
     return true;
@@ -2545,11 +2551,9 @@ function playerConsumed(){
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   } else {
-    playerSta+=1; //Gain bonus stamina
-    consumedString="Got a temporary energy bonus +1 🟢";
-    //consumedString="Actively digesting the food -1 🟢";
-    //animateUIElement(toolbarCardUIElement,"animate__shakeX","0.5"); //Animate hitreact
-    //playerUseStamina(1);
+    var bonusSta=parseInt(enemySta)+1;
+    playerSta+=bonusSta; //Gain bonus stamina
+    consumedString="Got a temporary energy bonus +"+bonusSta+" 🟢";
   }
   logPlayerAction(actionString,consumedString);
 }
