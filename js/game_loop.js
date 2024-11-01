@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/01/24 • 10:01 am"
-var initialEncounterOverride=7; //7 skips tutorial
+var versionCode = "ver. 11/01/24 • 11:28 am"
+var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -344,11 +344,14 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function getRandomEncounter(type="") {
+function getRandomEncounter(type="",areaNameOverride="") {
   var tempLinesGenerator = linesGenerator;
+  var generatorAreaName=areaName;
+  console.log("Area override:"+areaNameOverride);
 
   //drop anything but areaName
-  tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+areaName) === 0; });
+  if (areaNameOverride!="") generatorAreaName = areaNameOverride;
+  tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+generatorAreaName) === 0; });
 
   //drop anything but type
   //console.log("Encounter type: "+type);
@@ -2221,9 +2224,14 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
   }
 }
 
-function pushEncounter(encounterStringArray=[],index=encounterIndex+1){
-  if (encounterStringArray == []) encounterStringArray = ["area:"+areaName,"emoji:⚠️","name:Missing Push","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing next encounter data.","message:"]
-  linesStory.splice(index,0,philosopherThoughts);
+function pushEncounter(encounterStringArray=[],index=encounterIndex+1,areaNameOverride=""){
+  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Push","type:Warning","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing next encounter data.","message:"]
+
+  if (areaNameOverride!=""){
+    linesStory.splice(index,0,encounterStringArray,areaNameOverride);
+  } else {
+    linesStory.splice(index,0,encounterStringArray);
+  }
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
@@ -2567,7 +2575,7 @@ function playerHit(incomingDamage,applyLuck=true){
     }
 
     if (procAbilityChance("📦",50)) {
-      logAction("📦 ▸ ❤️‍🩹 Turned out <b>📦 <s>Dead</s> or Alive</b>.");
+      logAction("📦 ▸ ❤️‍🩹 Turned out <b>📦 <s>Dead or</s> Alive</b>.");
       displayPlayerGainedEffect();
       playerHp+=enemyAtk+enemyAtkBonus;
       if (playerHp>playerHpMax) playerHp=playerHpMax;
@@ -2575,7 +2583,7 @@ function playerHit(incomingDamage,applyLuck=true){
     }
 
     if (playerLootString.includes("📦")) {
-      logAction("📦 ▸ 💀 Turned out <b>📦 Dead or <s>Alive</s></b>.");
+      logAction("📦 ▸ 💀 Turned out <b>📦 Dead <s>or Alive</s></b>.");
       displayPlayerCannotEffect();
       displayPlayerEffect("📦");
       gameOver(true);
@@ -2610,12 +2618,14 @@ function playerReincarnate(){
   encounterIndex=3; //Skip tutorial
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
-  nextEncounter();
   logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
+  nextEncounter();
 
   if (playerKarma>0){
-    pushEncounter(getRandomEncounter("Item"));
-    logAction("🪽 ▸ 🎁","Received a good boy's bonus!<br>&nbsp;<br>&nbsp;");
+    logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
+    var bonusItem=getRandomEncounter("Item","Forsaken Village");
+    console.log("Bonus:\n"+bonusItem);
+    pushEncounter(bonusItem,encounterIndex+2);
   }
 }
 
