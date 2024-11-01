@@ -2748,7 +2748,7 @@ function adjustEncounterButtons(){
 
     case "Consumable":
     case "Consumable-Container":
-      if (enemyHp<0 && playerMgk>0) setButton('button_cast',"🔥 Heat");
+      if (playerMgk>0) setButton('button_cast',"🔥 Heat");
       setButton('button_roll',"❌ Ditch");
 
       document.getElementById('button_grab').innerHTML="🍴 Eat";
