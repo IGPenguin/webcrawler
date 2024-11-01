@@ -76,6 +76,7 @@ Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glori
 Forsaken Village;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Forsaken Village;🐇;Curious Bunny;Friend;0;0;0;1;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Pope.
 Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
+Forsaken Village;🦝;Raccoon Ambassador;Container-Friend;0;0;0;0;1;0;Unusal Critter;Brings a special gift.<br>;Strenghtened the interspecies bond.
 
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
@@ -131,10 +132,10 @@ Forsaken Village;🦌;Alpha Deer;Heavy;2;2;1;0;5;0;Wild Animal;Getting ready for
 Forsaken Village;🦬;Enraged Bison;Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
 Forsaken Village;🐂;Horny Bull;Heavy;2;3;1;0;3;0;Wild Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
 
-Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained a skill <b>💭 Philosopher Thoughts</b>.
-Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained a skill <b>💠 Reflect Magic</b>.
-Forsaken Village;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained a skill <b>🖤 Unbreakable</b>.
-Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained a skill <b>💀 Cheat Death</b>.
+Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thoughts</b>.
+Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
+Forsaken Village;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
+Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice <b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;<b>Fool</b> card embraced
 Forsaken Village;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;<b>Lover</b> card embraced
 Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice <b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>to gain <b>+2 🔵 Mana</b>.;<b>Mage</b> card embraced
@@ -142,11 +143,11 @@ Forsaken Village;🃏;Tarot Card — Berserk;Item;-1;1;0;0;-1;0;<b>Artifact</b>;
 Forsaken Village;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Forsaken Village;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Stamina</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
 Forsaken Village;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
-Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained a skill <b>🥀 Thorns Payback</b>.
+Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Forsaken Village;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
-Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained a skill <b>📦 Dead or Alive</b>.
-Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained a skill <b>🛡 Random Block</b>.
-Forsaken Village;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to polymorph<br> an enemy to a random wild critter.;Gained a skill <b>🧬 Polymorph</b>.
+Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
+Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
+Forsaken Village;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to polymorph<br> an enemy to a random wild critter.;Gained skill <b>🧬 Polymorph</b>.
 
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;n/a;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various forest growth species.<br>;Embraced the knowledge.
@@ -160,8 +161,9 @@ Forsaken Village;📗;Camping Manual;Item;0;0;1;0;0;0;Knowledge Book;n/a;Embrace
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;How to save a life?<br>;Embraced the knowledge.
 Forsaken Village;🔖;Strange Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
 Forsaken Village;🗺;Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>;Enhanced the overall awareness.
+Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
 
-Forsaken Village;🔪;Kitchen Knife;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
+Forsaken Village;🔪;Small Blade;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
 Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Limits stamina due to its weight.<br>;Tiring to carry.
 Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>;Hopefully this works
@@ -342,10 +344,10 @@ Depriving Fairyland;💩;Steaming Pile;Consumable;-1;0;0;0;-3;0;Trace of Life;Ra
 Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Growth;Exemplar of a pelicular species.<br>;Got terribly disoriented.
 Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
 
-Depriving Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained a skill <b>💭 Philosopher Thoughts</b>.
-Depriving Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained a skill <b>💠 Reflect Magic</b>.
-Depriving Fairyland;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained a skill <b>🖤 Unbreakable</b>.
-Depriving Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained a skill <b>💀 Cheat Death</b>.
+Depriving Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thoughts</b>.
+Depriving Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
+Depriving Fairyland;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
+Depriving Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Depriving Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice <b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;<b>Fool</b> card embraced
 Depriving Fairyland;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;<b>Lover</b> card embraced
 Depriving Fairyland;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice <b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>to gain <b>+2 🔵 Mana</b>.;<b>Mage</b> card embraced
@@ -353,11 +355,11 @@ Depriving Fairyland;🃏;Tarot Card — Berserk;Item;-1;1;0;0;-1;0;<b>Artifact</
 Depriving Fairyland;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Depriving Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Stamina</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
 Depriving Fairyland;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
-Depriving Fairyland;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained a skill <b>🥀 Thorns Payback</b>.
+Depriving Fairyland;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Depriving Fairyland;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
-Depriving Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained a skill <b>📦 Dead or Alive</b>.
-Depriving Fairyland;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained a skill <b>🛡 Random Block</b>.
-Depriving Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to polymorph<br> an enemy to a random wild critter.;Gained a skill <b>🧬 Polymorph</b>.
+Depriving Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
+Depriving Fairyland;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
+Depriving Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to polymorph<br> an enemy to a random wild critter.;Gained skill <b>🧬 Polymorph</b>.
 
 Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
 Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Provides <b>+2 🔵 Mana when read.</b><br>;Mastered the basics of magic.
