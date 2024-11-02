@@ -95,7 +95,7 @@ var lastEncounterIndex;
 var lootTotal;
 var randomEncounterIndex;
 var lootEncounterIndex;
-var isLooting = false;
+var isFishing = false;
 
 var seenEncounters = [];
 
@@ -874,7 +874,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
           case "Consumable":
           case "Container-Consume":
-            isLooting=false;
+            isFishing=false;
           case "Trap":
           case "Trap-Roll":
             logPlayerAction(actionString,"Smashed it into tiny bits -1 🟢");
@@ -901,7 +901,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
               displayEnemyEffect("💨");
-              isLooting=false;
+              isFishing=false;
               nextEncounter();
               break;
             }
@@ -942,7 +942,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerName=getVitalName();
             playerHpMax+=1;
             playerHp+=1;
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
 
@@ -989,7 +989,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
-              isLooting=false;
+              isFishing=false;
               break;
             }
 
@@ -1016,7 +1016,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
-              isLooting=false;
+              isFishing=false;
               break;
             }
 
@@ -1035,7 +1035,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
               logPlayerAction(actionString,"Walked away leaving them behind.");
               nextEncounter();
-              isLooting=false;
+              isFishing=false;
               break;
             }
 
@@ -1053,8 +1053,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item": //You'll simply skip ahead
           case "Consumable":
           case "Checkpoint":
-            if (isLooting){
-              isLooting=false;
+            if (isFishing){
+              isFishing=false;
               logPlayerAction(actionString,"Threw it far away.");
             } else {
               logPlayerAction(actionString,"Walked away wasting the potential.");
@@ -1068,7 +1068,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Altar":
             logPlayerAction(actionString,"Continued the adventure.");
-            isLooting=false
+            isFishing=false
             nextEncounter();
             break;
           case "Container":
@@ -1077,7 +1077,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Friend":
             logPlayerAction(actionString,"Walked away wasting the potential.");
             encounterIndex++;
-            isLooting=false;
+            isFishing=false;
             nextEncounter();
             break;
           case "Dream":
@@ -1090,7 +1090,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
           case "Prop":
-            isLooting=false;
+            isFishing=false;
             if (enemyMsg!=""){
               logPlayerAction(actionString,enemyMsg)
             } else {logPlayerAction(actionString,"Continued on the adventure.");}
@@ -1099,7 +1099,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Friend":
           case "Friend":
             logPlayerAction(actionString,"Walked away leaving them behind.");
-            isLooting=false;
+            isFishing=false;
             nextEncounter();
             break;
 
@@ -1110,7 +1110,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap":
           case "Trap-Attack":
-            isLooting=false;
+            isFishing=false;
             logPlayerAction(actionString,"Continued onwards, away from that.");
             nextEncounter();
             break;
@@ -1122,7 +1122,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerName=getSwiftName();
             playerStaMax+=1;
             playerSta+=1;
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
           default:
@@ -1150,7 +1150,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           playerName=getFaithName();
           playerLck++;
           playerInt++;
-          isLooting=false;
+          isFishing=false;
           animateFlipNextEncounter();
           break;
         }
@@ -1233,7 +1233,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerMgk+=1;
             playerStaMax-=1;
             if (playerSta>0) playerSta-=1;
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
           }
@@ -1269,7 +1269,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"Magic spooked them away -1 🔵");
               displayEnemyEffect("💨");
-              isLooting=false;
+              isFishing=false;
               nextEncounter();
               break;
             }
@@ -1315,7 +1315,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item":
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
             displayEnemyEffect("🔥");
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
 
@@ -1339,7 +1339,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Altar":
             logPlayerAction(actionString,"The spell has totally trashed it -1 🔵");
-            isLooting=false;
+            isFishing=false;
             nextEncounter();
             break;
 
@@ -1347,7 +1347,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyType.includes("Container") && !enemyType.includes("Locked")) {
               logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
               displayEnemyEffect("🔥");
-              isLooting=false;
+              isFishing=false;
               animateFlipNextEncounter();
               break;
               }
@@ -1368,7 +1368,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect("🧠");
               playerName=getCleverName();
               playerInt+=2;
-              isLooting=false;
+              isFishing=false;
               animateFlipNextEncounter();
               break;
           }
@@ -1465,7 +1465,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   displayEnemyEffect("🩸");
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
                   playerHit(0,false);
-                  isLooting=false
+                  isFishing=false
                   if (playerHp>0) nextEncounter();
                 }
                 displayPlayerCannotEffect();
@@ -1473,7 +1473,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
                 displayPlayerEffect("✨")
                 displayPlayerGainedEffect();
-                isLooting=false
+                isFishing=false
                 nextEncounter();
               }
             break;
@@ -1503,7 +1503,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
             playerHit(0,false);
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
         }
@@ -1628,7 +1628,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"Grabbed them into stranglehold.");
               enemyKnockedOut();
-              isLooting=false;
+              isFishing=false;
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
@@ -1727,7 +1727,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             playerLootString+=enemyEmoji;
-            isLooting=false;
+            isFishing=false;
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             break;
 
@@ -1737,7 +1737,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerLootString+=enemyEmoji;
               displayEnemyEffect("👋");
               nextEncounter();
-              isLooting=false;
+              isFishing=false;
             } else {
               enemyDodged("Missed, it evaded the grasp.");
               if (enemyCastIfMgk()) break;
@@ -1761,7 +1761,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerConsumed();
             displayEnemyEffect("🍴");
             if (playerHp>0) nextEncounter();
-            isLooting=false;
+            isFishing=false;
             break;
 
           case "Fishing":
@@ -1773,7 +1773,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerLootString+="🪱";
               }
 
-              getRandomLoot();
+              getRandomFish();
               displayEnemyEffect("🪝");
             } else {
               displayPlayerCannotEffect();
@@ -1799,12 +1799,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🍀");
             playerName=getLuckyName();
             playerLck+=2;
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
 
           case "Checkpoint": //Move to upgrade
-            isLooting=false;
+            isFishing=false;
             logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
@@ -1938,7 +1938,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerName=getGreedyName();
             playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
             playerHit(0,false);
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
 
@@ -2010,7 +2010,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Decided against gaining a perk.");
             playerName="Hardcore "+playerName;
             displayPlayerCannotEffect();
-            isLooting=false;
+            isFishing=false;
             animateFlipNextEncounter();
             break;
 
@@ -2025,7 +2025,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
     };
-    if (isLooting) {
+    if (isFishing) {
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
@@ -2084,7 +2084,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
     logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow.");
     playerKills++;
     animateFlipNextEncounter();
-    isLooting=false;
+    isFishing=false;
   }
 }
 
@@ -2217,8 +2217,8 @@ function isfreePrayEncounter(){
   return returnValue;
 }
 
-function getRandomLoot(){
-  isLooting=true;
+function getRandomFish(){
+  isFishing=true;
   //toggleUIElement(versusTextUIElement,1); animateVersus();
   previousArea = areaName;
   adventureEncounterCount+=1;
@@ -2761,7 +2761,7 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      if (isLooting) setButton('button_roll',"❌ Ditch");
+      if (isFishing) setButton('button_roll',"❌ Ditch");
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       if (enemyEmoji=="🛶") setButton("button_walk","🛶 Sail");
       break;
