@@ -376,10 +376,11 @@ function getRandomEncounter(type="",areaNameOverride="") {
   //console.log("Random encounter index: "+randomEncounterIndex)
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
-  console.log("Type:"+type+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
+  if (randomEncounter == "undefined") {
+    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Warning","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for type \""+type+"\"<br>","message:"]);
+  }
 
-  //mark as seen (by name)
-  //var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
+  console.log("Type:"+type+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
   return randomEncounter;
 }
 
@@ -472,6 +473,7 @@ function generateNextEncounters(count=1){
     case 5: //Random Trap Type (same chances for all)
       //TODO: Apply this approach to all generators (=same change to pick any of all matching types)
       var trapsArray=[]
+      //TODO: The below should only push if not === undefined
       trapsArray.push(getRandomEncounter("Trap"));
       trapsArray.push(getRandomEncounter("Trap-Attack"));
       trapsArray.push(getRandomEncounter("Trap-Roll"));
@@ -2244,7 +2246,7 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 }
 
 function pushEncounter(encounterStringArray=[],index=encounterIndex+1,areaNameOverride=""){
-  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Push","type:Warning","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing next encounter data.","message:"]
+  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Warning","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing data for pushing encounter.","message:"]
 
   if (areaNameOverride!=""){
     linesStory.splice(index,0,encounterStringArray,areaNameOverride);
