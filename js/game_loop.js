@@ -377,7 +377,7 @@ function getRandomEncounter(type="",areaNameOverride="") {
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
   if (randomEncounter == "undefined") {
-    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Warning","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for type \""+type+"\"<br>","message:"]);
+    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for type \""+type+"\"<br>","message:"]);
   }
 
   console.log("Type:"+type+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
@@ -443,12 +443,12 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
-function generateNextEncounters(count=1){
+function generateNextEncounters(generatorID=1){
   //TODO refactor chances to be same for all items of all types combined
-  //TODO random encounter= container size 1-5, contents enemy/curse/friend.. + loot/consumable +??
+  //TODO "general random encounter" = container size 1-5, contents enemy/curse/friend.. + loot/consumable +??
   //TODO chance on push loot after enemy (procAbility "", 15%+playerlck), luck increases chance (log chance on loot + luck)
 
-  switch (count) {
+  switch (generatorID) {
 
     case 0: //Prop
       linesStory.splice(encounterIndex+1,0,getRandomEncounter("Prop"));
@@ -1131,6 +1131,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             animateFlipNextEncounter();
             break;
+
+          case "Error":
+            logPlayerAction(actionString,"Skipping to next encounter.");
+            nextEncounter();
+            break;
+
           default:
             if (enemyType.includes("Container")){
               logPlayerAction(actionString,"Left without investigating it.");
@@ -2246,7 +2252,7 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 }
 
 function pushEncounter(encounterStringArray=[],index=encounterIndex+1,areaNameOverride=""){
-  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Warning","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing data for pushing encounter.","message:"]
+  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing data for pushing new encounter.","message:"]
 
   if (areaNameOverride!=""){
     linesStory.splice(index,0,encounterStringArray,areaNameOverride);
