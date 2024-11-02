@@ -360,8 +360,7 @@ function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
       matchingTypeLines.push(line);
     });
   });
-
-  console.log(matchingTypeLines);
+  //console.log(matchingTypeLines);
   tempLinesGenerator=matchingTypeLines;
 
   //drop all seen names
@@ -2648,7 +2647,7 @@ function playerReincarnate(){
   nextEncounter();
 
   if (playerKarma>0){
-    var bonusItem=getRandomEncounter("Item","Forsaken Village");
+    var bonusItem=getRandomEncounter(["Item"],"Forsaken Village");
     var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
