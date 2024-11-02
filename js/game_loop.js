@@ -443,6 +443,9 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(count=1){
+  //TODO random encounter= container size 1-5, contents enemy/curse/friend.. + loot/consumable +??
+  //TODO chance on push loot after enemy (procability ""), luck increases chance
+
   switch (count) {
 
     case 0: //Prop
@@ -2321,7 +2324,7 @@ function playerRest(){
     displayPlayerCannotEffect();
   }
   if (procAbilityChance("🔮",33)){
-    logPlayerAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided +1 🔵 <b>Mana</b> bonus.")
+    logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided +1 🔵 <b>Mana</b> bonus.")
     playerMgk++;
   }
 }
