@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 11/02/24 • 1:48 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -174,7 +174,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Remember pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects."];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -1694,7 +1694,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("👋");
 
             if (enemyEmoji=="⚖️"){
-              var halfHp = Math.floor(playerHp/2);
+              var halfHp = Math.floor(playerHpMax/2);
               if (halfHp == 0) {
                 logPlayerAction(actionString,"Not enough <b>❤️ Health</b> available.");
                 displayPlayerCannotEffect();
@@ -1706,20 +1706,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyEmoji=="🍭"){
-              var halfSta = Math.floor(playerSta/2);
+              var halfSta = Math.floor(playerStaMax/2);
               if (halfSta == 0) {
                 logPlayerAction(actionString,"Not enough <b>🟢 Energy</b> available.");
                 displayPlayerCannotEffect();
                 break;
               }
               playerSta=parseInt(playerSta)-halfSta;
-              playerStaMax=parseInt(playerMaxSta)-halfSta;
+              playerStaMax=parseInt(playerStaMax)-halfSta;
               playerMgkMax=parseInt(playerMgkMax)+halfSta;
               playerMgk=parseInt(playerMgk)+halfSta;
             }
 
             if (enemyEmoji=="🎲"){
-              var halfHp = Math.floor(playerHp/2);
+              var halfHp = Math.floor(playerHpMax/2);
               if (halfHp == 0) {
                 logPlayerAction(actionString,"Not enough <b>❤️ Health</b> available.");
                 displayPlayerCannotEffect();
