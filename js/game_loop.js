@@ -612,7 +612,8 @@ function redraw(){
   toolbarCardUIElement = document.getElementById('id_toolbar_card');
   document.getElementById('id_player_name').innerHTML = playerName;
 
-  var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp) + emptySymbol.repeat((-1)*(playerHp-playerHpMax));
+  var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp);
+  if ((playerHpMax-playerHp)>0) playerStatusString+=emptySymbol.repeat(playerHpMax-playerHp);
 
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
