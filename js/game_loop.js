@@ -353,21 +353,16 @@ function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
   tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+generatorAreaName) === 0; });
 
   //drop anything but type
-  //console.log("Encounter type: "+type);
-  //if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
-
-  //drop all other types
-  //console.log("Seen: "+seenEncounters);
-  encounterTypes.forEach(encounterType => {
-    console.log("Type: "+encounterType);
-    tempLinesGenerator= tempLinesGenerator.filter(function(line) {
-      var lineEnemyType=line[3].split("type:")[1]
-      if (lineEnemyType===encounterType) {
-        //console.log(lineEnemyName+" vs "+seenEncounterName);
-        return line
-      }
-    })
+  var matchingTypeLines = [];
+  encounterTypes.forEach((type) => {
+    $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3 }).forEach((line) => {
+      //console.log(line);
+      matchingTypeLines.push(line);
+    });
   });
+
+  console.log(matchingTypeLines);
+  tempLinesGenerator=matchingTypeLines;
 
   //drop all seen names
   //console.log("Seen: "+seenEncounters);
@@ -389,7 +384,7 @@ function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
   if (randomEncounter == "undefined") {
-    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for types \""+encounterTypes+"\"<br>","message:"]);
+    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for types "+encounterTypes+"<br>","message:"]);
   }
 
   console.log("Types:"+encounterTypes+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
