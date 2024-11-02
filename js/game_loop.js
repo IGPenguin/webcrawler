@@ -343,7 +343,7 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function getRandomEncounter(type="",areaNameOverride="") {
+function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
   var tempLinesGenerator = linesGenerator;
   var generatorAreaName=areaName;
   //console.log("Area override:"+areaNameOverride);
@@ -354,14 +354,26 @@ function getRandomEncounter(type="",areaNameOverride="") {
 
   //drop anything but type
   //console.log("Encounter type: "+type);
-  if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
+  //if (type != "") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3; });
+
+  //drop all other types
+  //console.log("Seen: "+seenEncounters);
+  encounterTypes.forEach(encounterType => {
+    console.log("Type: "+encounterType);
+    tempLinesGenerator= tempLinesGenerator.filter(function(line) {
+      var lineEnemyType=line[3].split("type:")[1]
+      if (lineEnemyType===encounterType) {
+        //console.log(lineEnemyName+" vs "+seenEncounterName);
+        return line
+      }
+    })
+  });
 
   //drop all seen names
   //console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
     //console.log("Dropping: "+seenEncounterName);
     tempLinesGenerator= tempLinesGenerator.filter(function(line) {
-      //console.log(a);
       var lineEnemyName= line[2].split("name:")[1]
       if (lineEnemyName!==seenEncounterName) {
         //console.log(lineEnemyName+" vs "+seenEncounterName);
@@ -377,10 +389,10 @@ function getRandomEncounter(type="",areaNameOverride="") {
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
   if (randomEncounter == "undefined") {
-    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for type \""+type+"\"<br>","message:"]);
+    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for types \""+encounterTypes+"\"<br>","message:"]);
   }
 
-  console.log("Type:"+type+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
+  console.log("Types:"+encounterTypes+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
   return randomEncounter;
 }
 
@@ -451,143 +463,129 @@ function generateNextEncounters(generatorID=1){
   switch (generatorID) {
 
     case 0: //Prop
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Prop"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Prop"]));
       break;
 
     case 1: //Easy Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Small","Standard"])));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Small","Standard"]));
       break;
 
     case 2: //Standard Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard"]));
       break;
 
     case 3: //Advanced Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Swift","Heavy"])));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Swift","Heavy"]));
       break;
 
     case 4: //Swift Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Swift"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Swift"]));
       break;
 
     case 5: //Random Trap Type (same chances for all)
-      //TODO: Apply this approach to all generators (=same change to pick any of all matching types)
-      var trapsArray=[]
-      //TODO: The below should only push if not === undefined
-      trapsArray.push(getRandomEncounter("Trap"));
-      trapsArray.push(getRandomEncounter("Trap-Attack"));
-      trapsArray.push(getRandomEncounter("Trap-Roll"));
-      var chosenTrap=chooseFrom(trapsArray)
-
-      linesStory.splice(encounterIndex+1,0,chosenTrap);
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Trap","Trap-Attack","Trap-Roll"]));
       break;
 
     case 6: //Demon Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Demon"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Demon"]));
       break;
 
     case 7: //Friend
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Friend"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Friend"]));
       break;
 
     case 8: //Standard or Pet or Recruit or Friend
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Pet","Recruit","Friend"])));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard","Pet","Recruit","Friend"]));
       break;
 
     case 9: //Item
-      pushEncounter(getRandomEncounter("Item"));
+      pushEncounter(getRandomEncounter(["Item"]));
       break;
 
     case 10: //Container
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
       break;
 
     case 18: //Container Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Consumable"]));
       break;
 
     case 69: //Fishing
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Fishing"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Fishing"]));
       break;
 
     case 666: //Altar
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Altar"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Altar"]));
       break;
 
     case 11: //Container Small
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Small"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Small"]));
       break;
 
     case 20: //Standard Enemy + Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Consumable"]));
       break;
 
     case 21: //Skippable Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy"])));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Standard","Swift","Heavy"]));
       break;
 
     case 22: //Mid Enemy + Loot
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Item"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard","Swift","Heavy","Demon"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Item"]));
       break;
 
     case 23: //Mid Enemy + Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Standard"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Consumable"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Consumable"]));
       break;
 
 
     case 17: //Container Pet/Friend/Container Friend
-      var typeDetail = chooseFrom(["Pet","Friend","Container-Friend"])
+      var friendEncounter = getRandomEncounter(["Pet","Friend","Container-Friend"]);
 
-      if (typeDetail=="Container-Friend"){
-        linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
-        linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
-        linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
+      if (friendEncounter.includes("Container-Friend")){
+        linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-2"]));
+        linesStory.splice(encounterIndex+2,0,friendEncounter);
+        linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Item"]));
         break;
       }
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(typeDetail));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
+      linesStory.splice(encounterIndex+2,0,friendEncounter);
       break;
 
     case 30: //Container-3 Empty
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
       break;
 
     case 31: //Container >> Mid Enemy >> Loot
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-2"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Standard","Swift","Heavy","Demon"])));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter("Item"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-2"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Standard","Swift","Heavy","Demon"]));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Item"]));
       break;
 
     case 36: //Cursed house: Curse >> Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter("Curse"));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter("Consumable"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Curse"]));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Consumable"]));
       break;
 
     case 45: //Trapped House: Container >> Trap >> Mid Enemy >> Loot/Consumable
-      //TODO: RM below when solving Case: 5
-      var trapsArray=[]
-      trapsArray.push(getRandomEncounter("Trap"));
-      trapsArray.push(getRandomEncounter("Trap-Attack"));
-      trapsArray.push(getRandomEncounter("Trap-Roll"));
-
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
-      linesStory.splice(encounterIndex+2,0,chooseFrom(trapsArray));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Heavy","Demon"])));
-      linesStory.splice(encounterIndex+4,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Trap","Trap-Attack","Trap-Roll"]));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Heavy","Demon"]));
+      linesStory.splice(encounterIndex+4,0,getRandomEncounter(["Item","Consumable"]));
       break;
 
     case 4666: //Altar House: Container >> Mid Enemy >> Loot >> Altar
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter("Container-3"));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(chooseFrom(["Swift","Heavy","Demon"])));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter(chooseFrom(["Item","Consumable"])));
-      linesStory.splice(encounterIndex+4,0,getRandomEncounter("Altar"));
+      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
+      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Swift","Heavy","Demon"]));
+      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Item","Consumable"]));
+      linesStory.splice(encounterIndex+4,0,getRandomEncounter(["Altar"]));
       break;
 
     default:
