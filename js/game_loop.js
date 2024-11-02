@@ -885,7 +885,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Attack": //Attacking causes you damage
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(0);
+            if (enemyHp<0) playerHit(0,false);
             break;
 
           case "Spirit":
@@ -1106,7 +1106,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll": //Triggers when rolling into it
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(0);
+            if (enemyHp<0) playerHit(0,false);
             break;
           case "Trap":
           case "Trap-Attack":
@@ -1165,7 +1165,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (enemyCastIfMgk(false)){
+        if (!enemyType.includes("Friend") && enemyCastIfMgk(false)){
           logPlayerAction(actionString,"Could not block their spell -1 💔");
           playerHit(1);
           break;
@@ -1587,12 +1587,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
           break;
 
-        case "Dream": //Likely never happens, not sure if I should fix that
-          logPlayerAction(actionString,"Conjured a terrible nightmare -1 💔");
-          playerHit(1);
-          displayPlayerCannotEffect();
-          break;
-
         case "Altar":
           logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
           playerLck=-1;
@@ -1683,7 +1677,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Attack":
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(0);
+            if (enemyHp<0) playerHit(0,false);
             break;
 
           case "Undead": //Grabbing is not safe
@@ -1705,7 +1699,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               playerHpMax-=halfHp;
               playerAtk+=halfHp;
-              playerHit(halfHp);
+              playerHit(halfHp,false);
             }
 
             if (enemyEmoji=="🍭"){
@@ -1729,7 +1723,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               playerHpMax-=halfHp;
-              playerHit(halfHp);
+              playerHit(halfHp,false);
             }
 
             playerLootString+=enemyEmoji;
@@ -2532,7 +2526,7 @@ function playerConsumed(){
     }
 
     playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,"🤮");
-    //Actually danages here, to log potential lucky dmg avoidance at the right  time
+    //Actually damages here, to log potential lucky dmg avoidance at the right time
     if (enemyHp<0){
       playerHit(-1*enemyHp);
     } else if (enemyHp>0) {
