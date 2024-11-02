@@ -1712,10 +1712,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerCannotEffect();
                 break;
               }
-              playerSta-=halfSta;
-              playerStaMax-=halfSta;
-              playerMgkMax+=halfSta;
-              playerMgk+=halfSta;
+              playerSta=parseInt(playerSta)-halfSta;
+              playerStaMax=parseInt(playerMaxSta)-halfSta;
+              playerMgkMax=parseInt(playerMgkMax)+halfSta;
+              playerMgk=parseInt(playerMgk)+halfSta;
             }
 
             if (enemyEmoji=="🎲"){
@@ -1725,7 +1725,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerCannotEffect();
                 break;
               }
-              playerHpMax-=halfHp;
+              playerHpMax=parseInt(playerHpMax)-halfHp;
               playerHit(halfHp,false);
             }
 
