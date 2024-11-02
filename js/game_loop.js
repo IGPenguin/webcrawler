@@ -70,7 +70,7 @@ function renewPlayer(){ //Default values
   playerHp = playerHpMax;
   playerStaMax = 3;
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
-  playerMgkMax = 2;
+  playerMgkMax = 0;
   playerAtk = 1;
   playerLck = 1;
   playerInt = 1;
@@ -1330,7 +1330,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyMsg="Actually tasted good";
             } else {
               logPlayerAction(actionString,"Roasted a crunchy crust -1 🔵");
-              enemySta+=1;
+              enemySta=parseInt(enemySta)+1;
               enemyMsg="Tasted better than usual";
             }
             displayEnemyEffect("🔥");
@@ -2650,7 +2650,7 @@ function playerReincarnate(){
     var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
-    console.log("Bonus:\n"+bonusItem);
+    //console.log("Bonus:\n"+bonusItem);
 
     pushEncounter(bonusWrapper,encounterIndex+2);
     pushEncounter(bonusItem,encounterIndex+3);
