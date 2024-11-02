@@ -616,7 +616,9 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
 
-  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk) + emptySymbol.repeat(playerMgkMax-playerMgk);}
+  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk);}
+  if ((playerMgkMax-playerMgk)>0) playerStatusString += emptySymbol.repeat(playerMgkMax-playerMgk);
+
   if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
 
   document.getElementById('id_player_status').innerHTML = playerStatusString;
@@ -2318,7 +2320,7 @@ function playerRest(){
     displayPlayerCannotEffect();
   }
   if (procAbilityChance("🔮",33)){
-    logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided +1 🔵 <b>Mana</b> bonus.")
+    logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided bonus +1 🔵")
     playerMgk++;
   }
 }
