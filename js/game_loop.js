@@ -384,7 +384,7 @@ function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
   if (randomEncounter == "undefined") {
-    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters available for types "+encounterTypes+"<br>","message:"]);
+    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"]);
   }
 
   console.log("Types:"+encounterTypes+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
