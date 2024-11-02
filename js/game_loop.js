@@ -346,7 +346,7 @@ function getUnseenLootIndex() {
 function getRandomEncounter(type="",areaNameOverride="") {
   var tempLinesGenerator = linesGenerator;
   var generatorAreaName=areaName;
-  console.log("Area override:"+areaNameOverride);
+  //console.log("Area override:"+areaNameOverride);
 
   //drop anything but areaName
   if (areaNameOverride!="") generatorAreaName = areaNameOverride;
@@ -376,7 +376,7 @@ function getRandomEncounter(type="",areaNameOverride="") {
   //console.log("Random encounter index: "+randomEncounterIndex)
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
-  console.log("Opts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",h")[0])
+  console.log("Type:"+type+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
 
   //mark as seen (by name)
   //var seenEncounterName = randomEncounter.split("name:").pop().split(',')[0]
@@ -2068,6 +2068,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
   if (magicType==true) {actionString="🪄"; hitMsg="Scorched them with a spell -"+damage+" 💔";}
+    else {actionString="⚔️";}
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
@@ -2083,7 +2084,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
   if (enemyHpLost >= enemyHp) {
     enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💀 They received a fatal blow.");
+    logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow.");
     playerKills++;
     animateFlipNextEncounter();
     isLooting=false;
