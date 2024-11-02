@@ -1147,6 +1147,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           playerName=getFaithName();
           playerLck++;
           playerInt++;
+          isLooting=false;
           animateFlipNextEncounter();
           break;
         }
@@ -1364,6 +1365,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect("🧠");
               playerName=getCleverName();
               playerInt+=2;
+              isLooting=false;
               animateFlipNextEncounter();
               break;
           }
@@ -1498,6 +1500,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
             playerHit(0,false);
+            isLooting=false;
             animateFlipNextEncounter();
             break;
         }
@@ -2010,8 +2013,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Decided against gaining a perk.");
             playerName="Hardcore "+playerName;
             displayPlayerCannotEffect();
-            animateFlipNextEncounter();
             isLooting=false;
+            animateFlipNextEncounter();
             break;
 
           default:
@@ -2325,7 +2328,7 @@ function playerRest(){
 function playerHeal(){
   if (playerHp<playerHpMax) {
     var healAmount=Math.floor((1+playerHpMax)/2);
-    logPlayerAction(actionString,"Cast a healing spell +"+(healAmount)+" ❤️‍🩹");
+    logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell -1 🔵");
     playerHp+=healAmount; //Lay on hands
     if (playerHp>playerHpMax) playerHp=playerHpMax;
     displayPlayerGainedEffect();
@@ -2343,7 +2346,7 @@ function playerGetStamina(stamina,silent = false){
     return false;
   } else {
     if (!silent){
-      logPlayerAction(actionString,"Rested and regained +" + stamina + " 🟢<b>Energy</b>");
+      logPlayerAction(actionString,"Rested and regained +" + stamina + " 🟢");
     }
     playerSta += stamina;
     if (playerSta > playerStaMax){
