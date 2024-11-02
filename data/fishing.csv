@@ -11,7 +11,7 @@ Loot;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep
 Loot;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Loot;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Loot;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to polymorph<br> an enemy to a random wild critter.;Gained skill <b>🧬 Polymorph</b>.
-Loot;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflex</b>.<br>33% chance to not spend <b>🟢 Energy</b> on action.;Gained skill <b>⚡️ Quick Reflex</b>.
+Loot;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to not spend <b>🟢 Energy</b> on action.;Gained skill <b>⚡️ Quick Reflexes</b>.
 Loot;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance to get +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
@@ -65,3 +65,4 @@ Loot;‍🪼;Box Jelly;Swift;1;3;1;0;-1;0;Aquatic Threat;Must be dangerous to to
 Loot;🪱;Drowned worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🪱;Tired Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Quick Reflexes

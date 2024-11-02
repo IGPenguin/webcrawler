@@ -443,8 +443,9 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(count=1){
+  //TODO refactor chances to be same for all items of all types combined
   //TODO random encounter= container size 1-5, contents enemy/curse/friend.. + loot/consumable +??
-  //TODO chance on push loot after enemy (procability ""), luck increases chance
+  //TODO chance on push loot after enemy (procAbility "", 15%+playerlck), luck increases chance (log chance on loot + luck)
 
   switch (count) {
 
@@ -2367,7 +2368,7 @@ function playerUseStamina(stamina, message = ""){
   } else {
     playerSta -= stamina;
     if (procAbilityChance("🪶",33)){
-      logAction("🪶  ▸ <b>⚡️ Quick Reflex</b> recovered the 🟢 <b>Energy</b>.")
+      logAction("🪶  ▸ <b>⚡️ Quick Reflexes</b> kicked in +"+stamina+" 🟢");
       playerSta+=stamina;
     }
     return true;
