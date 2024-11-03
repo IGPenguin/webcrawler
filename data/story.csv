@@ -26,18 +26,22 @@ Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Hard House (Optional);Generator-40;0;0;0;0;0;0;XXX;XXX;XXX
+//;Forsaken Village;❓;Hard House (Optional);Generator-40;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Big House (Optional);Generator-50;0;0;0;0;0;0;XXX;XXX;XXX
+//;Forsaken Village;❓;Big House (Optional);Generator-50;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+//;Forsaken Village;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
+//;Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Consumable (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO Randomize boss
@@ -47,7 +51,7 @@ Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painf
 //;Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 Forsaken Village;❓;Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 
-//TODO REDO this area
+//TODO REDO this area (target midgame)
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
 Depriving Fairyland;🌻;Sunflower Growth;Container-2;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
