@@ -39,7 +39,7 @@ Forsaken Village;🏚️;Building Ruins;Container-3;0;0;0;0;0;0;Deserted Buildin
 Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
 Forsaken Village;🏚️;Unsettling House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🎯;Archery Range;Container-3;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
+Forsaken Village;🏚️;Unsettling Building;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏡;Garden House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
@@ -47,7 +47,7 @@ Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted B
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Unlocked the entrance.
 Forsaken Village;🏡;Garden Shed;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Unlocked the front door.
 
-Forsaken Village;🏚️;Unsettling Building;Container-4;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🎯;Archery Range;Container-4;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
 Forsaken Village;🕰️;Clock Tower;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏫;Town Hall;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
@@ -143,7 +143,7 @@ Forsaken Village;🦬;Enraged Bison;Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps f
 Forsaken Village;🐂;Horny Bull;Heavy;2;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Forsaken Village;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 
-Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Philosopher Thought</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thought</b>.
+Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Mind</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Mind</b>.
 Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Forsaken Village;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -366,7 +366,7 @@ Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Grow
 Depriving Fairyland;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
 Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
 
-Depriving Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Philosopher Thought</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thought</b>.
+Depriving Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Mind</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Mind</b>.
 Depriving Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Depriving Fairyland;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Depriving Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
