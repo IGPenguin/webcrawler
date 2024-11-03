@@ -768,7 +768,18 @@ function redraw(){
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
-        if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed)
+        if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
+          enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed)
+          cardUIElement.style.background=colorDarkRed;
+        }
+        if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
+          enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
+          cardUIElement.style.background=colorDarkBlue;
+        }
+        if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=2){
+          enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
+          cardUIElement.style.background=colorDarkPurple;
+        }
         }
       break;
   }
