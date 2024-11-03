@@ -195,12 +195,12 @@ Forsaken Village;🧂;Salt Shaker;Item;0;0;0;0;0;0;Seasoning;Usually used to imp
 Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
 Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 
+Forsaken Village;🍄;Magical Mushroom;Consumable;-1;0;0;0;0;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health.;
 Forsaken Village;🧅;Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs a ton of vitamins.<br>Provides <b>+1 ❤️ Health</b> temporarily.;
 Forsaken Village;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Forsaken Village;🥕;Wild Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides extra <b>+1 🟢 Energy</b>.;
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>;
 Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a ton of vitamins.<br>Provides extra <b>+1 🧠 Intelect</b>.;Felt an actual difference
-Forsaken Village;🍄;Strange Shroom;Consumable;-1;0;0;0;2;0;Suspicious Growth;It's beautiful. What could go wrong?<br>Provides <b>+2 🧠 Intelect</b> for <b>-1 💔 Health.;
 Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Provides <b>+3 🍀 Energy</b> for <b>-1 💔 Health.</b>;Burned down the throat
 Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;-1;0;0;Rare Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks meters away
 Forsaken Village;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
