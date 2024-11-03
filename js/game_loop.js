@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/03/24 • 12:52 pm"
+var versionCode = "ver. 11/03/24 • 9:16 pm"
 var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
@@ -465,8 +465,14 @@ function generateNextEncounters(generatorID=1){
 
   switch (generatorID) {
 
-    case 0: //Prop
-      pushEncounter(getRandomEncounter(["Prop"]));
+    case 0: //Prop or Small in container
+      var type=chooseFrom(["Prop","Prop","Small"])
+      if (type=="Prop") {
+        pushEncounter(getRandomEncounter(["Prop"]));
+      } else {
+        pushEncounter(getRandomEncounter(["Container"]));
+        pushEncounter(getRandomEncounter(["Small"]),2);
+      }
       break;
 
     case 1: //Consumable - Optional
@@ -474,9 +480,8 @@ function generateNextEncounters(generatorID=1){
       pushEncounter(getRandomEncounter(["Consumable"]),2);
       break;
 
-    case 2: //Easy Encounter - Optional
-      pushEncounter(getRandomEncounter(["Container"]));
-      pushEncounter(getRandomEncounter(["Small","Standard"]),2);
+    case 2: //Easy Encounter
+      pushEncounter(getRandomEncounter(["Standard"]));
       break;
 
     case 3: //Mid Encounter - 20% item / 80% consumable
@@ -770,7 +775,6 @@ function redraw(){
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
         if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
           enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed)
-          cardUIElement.style.background=colorDarkRed;
         }
         if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
           enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
