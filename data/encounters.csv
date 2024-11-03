@@ -54,11 +54,11 @@ Forsaken Village;🏫;Town Hall;Container-4;0;0;0;0;0;0;Deserted Building;Strang
 Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏘️;Shady Backalley;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
-Forsaken Village;🕌;Cult Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏯️;Abandoned Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;️🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🛕;Cult Temple;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🛕;Cult Tower;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🕌;Cult Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
@@ -263,23 +263,25 @@ Depriving Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compe
 Depriving Fairyland;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hidden there.
 Depriving Fairyland;⛺️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Depriving Fairyland;⛺️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
-Depriving Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
-Depriving Fairyland;🛖;Lone Hut;Container-2;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
+Depriving Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Depriving Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
-Depriving Fairyland;🗻;Rocky Hill;Container-3;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
-Depriving Fairyland;🏔️;Snowy Mountain;Container-3;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
-Depriving Fairyland;⛰️;Forest Mountaintop;Container-3;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
-Depriving Fairyland;🌋;Volcano Throat;Container-3;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
-Depriving Fairyland;🛖;Spacious Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Depriving Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Depriving Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Depriving Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
 Depriving Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
+Depriving Fairyland;🗻;Rocky Mountain;Container-4;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
 Depriving Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Depriving Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
-Depriving Fairyland;🌋;Volcano Throat;Container-4;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
 Depriving Fairyland;🛖;Chief's Hut;Container-4;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
-Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
+Depriving Fairyland;⛰️;Rocky Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
+Depriving Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
+Depriving Fairyland;🌋;Volcano Throat;Container-5;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
+
+Depriving Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Depriving Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
 Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
 Depriving Fairyland;👁️‍🗨️;Haunting Voices;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
