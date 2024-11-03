@@ -460,9 +460,7 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(generatorID=1){
-  //TODO Unused for now: "Container-Friend",
-  //console.log("playerLck:"+playerLck); //Influence loot chances by luck
-
+  
   switch (generatorID) {
 
     case 0: //Prop or Small in container
@@ -597,6 +595,10 @@ function generateNextEncounters(generatorID=1){
 
     case 69: //Fishing
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Fishing"]));
+      break;
+
+    case 99: //Random house
+      generateNextEncounters(chooseFrom([20,30,31,40,50,60]))
       break;
 
     default:
