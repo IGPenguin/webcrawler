@@ -11,7 +11,7 @@ Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Observe t
 //TEST Block 🎃
 //;Forsaken Village;🪽;Angel Wing;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to recover <b>🟢 Energy</b> on use.;Gained skill <b>⚡️ Quick Reflexes</b>.
 //;Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-📙⚗️🪇 - 🎨🖌️🖼️🦦👡 -
+📙🪇 - 🎨🖌️🖼️🦦👡 -
 
 //Forsaken Village
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
@@ -36,6 +36,7 @@ Forsaken Village;❓;Locked Trapped House (Optional);Generator-30;0;0;0;0;0;0;XX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
+Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Consumable (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 
