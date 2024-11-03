@@ -2528,9 +2528,10 @@ function playerConsumed(){
 
   console.log("bonusSta:"+bonusSta);
   var gainStamina=parseInt(missingSta)+parseInt(enemySta);
+  if (bonusSta>0) gainStamina=1;
   if (gainStamina<0) sign=" "
-  if (gainStamina>=0) sign=" +"
-  if (gainStamina!=0 || bonusSta>0) consumedString +=" "+sign+(parseInt(gainStamina)+parseInt(bonusSta)) + " 🟢";
+  if (gainStamina>=0 || bonusSta>0) sign=" +"
+  if (gainStamina!=0 || bonusSta>0) consumedString +=" "+sign+(parseInt(gainStamina)) + " 🟢";
   console.log("gainStamina:"+gainStamina);
   playerGetStamina(parseInt(gainStamina),true);
   playerSta+=parseInt(bonusSta); //Get stamina does not go over max
@@ -2547,8 +2548,6 @@ function playerConsumed(){
 
   //Actually damages here, to log potential lucky dmg avoidance at the right time
   if (enemyHp<0) playerHit(-1*enemyHp);
-
-  animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
 }
 
 function playerHit(incomingDamage,applyLuck=true){
