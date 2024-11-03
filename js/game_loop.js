@@ -2506,51 +2506,48 @@ function playerConsumed(){
 
   var missingHp=0
   if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
-  console.log(missingHp);
   var missingSta=parseInt(playerStaMax)-parseInt(playerSta);
   var bonusSta=0;
 
   if (enemyMsg!="") consumedString=enemyMsg;
 
-  if (enemyMsg=="") {
-    if (enemyHp>0 || enemySta>0 || enemyAtk>0  || enemyLck>0  || enemyInt>0  || enemyMgk>0) {
-      consumedString="That was actually tasty";
-    }
-    if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0) {
-      consumedString="That did not taste good";
-      eatEmoji="🤮";
-    }
+  if (enemyHp>0 || enemySta>0 || enemyAtk>0  || enemyLck>0  || enemyInt>0  || enemyMgk>0) {
+    if (enemyMsg=="") consumedString="That was actually tasty";
   }
 
-  //Recover depleted resources
-  if (parseInt(missingSta)<=0) {
+  //Gain stamina bonus if not bad food
+  if ((parseInt(missingSta)<=0) && (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0)) {
     bonusSta=1;
-    sign="+"
-
-    if (enemyMsg=="") consumedString="Received an energy bonus";
+    if (enemyMsg=="") consumedString="Got energy bonus";
   }
 
-  var gainStamina=parseInt(missingSta)+parseInt(enemySta)+parseInt(bonusSta);
+  if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0) {
+    if (enemyMsg=="") consumedString="That did not taste good";
+    eatEmoji="🤮";
+  }
+
+  console.log("bonusSta:"+bonusSta);
+  var gainStamina=parseInt(missingSta)+parseInt(enemySta);
   if (gainStamina<0) sign=" "
   if (gainStamina>=0) sign=" +"
-
-  playerGetStamina(gainStamina,true);
-  consumedString +=" "+sign+parseInt(gainStamina) + " 🟢";
+  if (gainStamina!=0 || bonusSta>0) consumedString +=" "+sign+(parseInt(gainStamina)+parseInt(bonusSta)) + " 🟢";
+  console.log("gainStamina:"+gainStamina);
+  playerGetStamina(parseInt(gainStamina),true);
+  playerSta+=parseInt(bonusSta); //Get stamina does not go over max
 
   if (missingHp > 0 || parseInt(enemyHp)!=0){
     var hpChange=parseInt(missingHp)+parseInt(enemyHp)
     if (hpChange<0) sign=""
-    if (enemyHp>0) playerHp += hpChange;
+    if (hpChange>0) playerHp += hpChange;
     consumedString += " "+sign+parseInt(hpChange) + " ❤️ ";
   }
 
+  //Apply stat changes (except hp & sta)
   playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,eatEmoji);
 
-
   //Actually damages here, to log potential lucky dmg avoidance at the right time
-  if (enemyHp<0){
-    playerHit(-1*enemyHp);
-  }
+  if (enemyHp<0) playerHit(-1*enemyHp);
+
   animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
 }
 
