@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/03/24 • 9:16 pm"
-var initialEncounterOverride=7; //7 skips tutorial
+var versionCode = "ver. 11/04/24 • 0:55 am"
+var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -460,7 +460,6 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(generatorID=1){
-  
   switch (generatorID) {
 
     case 0: //Prop or Small in container
