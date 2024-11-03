@@ -533,11 +533,22 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 31: //Locked Traped House - 100% item/pet/friend, 100% consumable
+      var type=chooseFrom(["Item","Pet","Friend","Container-Friend"]);
+
+      if (type=="Container-Friend") {
+        var adjustedSizeContainer=getRandomEncounter(["Locked-Container-3"]).replace("3","4"); //Change container size to 4
+        pushEncounter(adjustedSizeContainer);
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
+        pushEncounter(getRandomEncounter([type]),3)
+        pushEncounter(getRandomEncounter(["Item"]),4)
+        pushEncounter(getRandomEncounter(["Consumable"]),5);
+        break;
+      }
+
       pushEncounter(getRandomEncounter(["Locked-Container-3"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
-
-      pushEncounter(getRandomEncounter(["Item","Pet","Friend"]),2)
-      pushEncounter(getRandomEncounter(["Consumable"]),3);
+      pushEncounter(getRandomEncounter([type]),3)
+      pushEncounter(getRandomEncounter(["Consumable"]),4);
       break;
 
 
@@ -693,7 +704,7 @@ function redraw(){
       break;
     case "Friend":
     case "Container-Friend":
-      var neutralType=decorateStatusText("▪️","Neutral",colorGrey);
+      var neutralType=decorateStatusText("💬","Friendly",colorDarkGreen);
       //enemyStatusString=appendEnemyStats(); //Do not display stats = reward hidden
       displayEnemyType(neutralType);
       break;
@@ -989,7 +1000,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Curse":
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
-            nextEncounter();
             break;
 
           case "Standard":
@@ -1125,7 +1135,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
           case "Trap-Attack":
             isFishing=false;
-            logPlayerAction(actionString,"Continued onwards, away from that.");
+            logPlayerAction(actionString,"Continued on their adventure.");
             nextEncounter();
             break;
 
@@ -2558,6 +2568,7 @@ function playerConsumed(){
     if (hpChange<0) sign=""
     if (hpChange>0) playerHp += hpChange;
     consumedString += " "+sign+parseInt(hpChange) + " ❤️ ";
+    animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   }
 
   //Apply stat changes (except hp & sta)
