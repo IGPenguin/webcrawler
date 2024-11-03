@@ -72,7 +72,7 @@ function renewPlayer(){ //Default values
   playerSta = 0; //Start tired in a dream (was playerStaMax;)
   playerMgkMax = 0;
   playerAtk = 1;
-  playerLck = 1;
+  playerLck = 0;
   playerInt = 1;
   playerMgk = playerMgkMax;
   playerRested = false;
@@ -390,6 +390,16 @@ function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
   return randomEncounter;
 }
 
+function pushEncounter(encounterStringArray=[],index=1,areaNameOverride=""){
+  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing data for pushing new encounter.","message:"]
+
+  if (areaNameOverride!=""){
+    linesStory.splice(encounterIndex+index,0,encounterStringArray,areaNameOverride);
+  } else {
+    linesStory.splice(encounterIndex+index,0,encounterStringArray);
+  }
+}
+
 function markAsSeen(seenName){
   //console.log("Marking as seen: \n"+seenName);
   if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
@@ -450,136 +460,127 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateNextEncounters(generatorID=1){
-  //TODO refactor chances to be same for all items of all types combined
-  //TODO "general random encounter" = container size 1-5, contents enemy/curse/friend.. + loot/consumable +??
-  //TODO chance on push loot after enemy (procAbility "", 15%+playerlck), luck increases chance (log chance on loot + luck)
+  //TODO Unused for now: "Container-Friend",
+  //console.log("playerLck:"+playerLck); //Influence loot chances by luck
 
   switch (generatorID) {
 
     case 0: //Prop
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Prop"]));
+      pushEncounter(getRandomEncounter(["Prop"]));
       break;
 
-    case 1: //Easy Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Small","Standard"]));
+    case 1: //Consumable - Optional
+      pushEncounter(getRandomEncounter(["Container"]));
+      pushEncounter(getRandomEncounter(["Consumable"]),2);
       break;
 
-    case 2: //Standard Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard"]));
+    case 2: //Easy Encounter - Optional
+      pushEncounter(getRandomEncounter(["Container"]));
+      pushEncounter(getRandomEncounter(["Small","Standard"]),2);
       break;
 
-    case 3: //Advanced Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Swift","Heavy"]));
+    case 3: //Mid Encounter - 20% item / 80% consumable
+      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      if (procAbilityChance("",20+playerLck)) {
+        pushEncounter(getRandomEncounter(["Item"]),2)
+      } else {
+        pushEncounter(getRandomEncounter(["Consumable"]),2);
+      }
       break;
 
-    case 4: //Swift Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Swift"]));
+    case 4: //Hard Encounter - 50% item / 100% consumable
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
+      if (procAbilityChance("",50+playerLck)) {
+        pushEncounter(getRandomEncounter(["Item"]),2)
+        pushEncounter(getRandomEncounter(["Consumable"]),3);
+      } else {
+        pushEncounter(getRandomEncounter(["Consumable"]),2);
+      }
       break;
 
-    case 5: //Random Trap Type (same chances for all)
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Trap","Trap-Attack","Trap-Roll"]));
+    case 20: //Optional Small House - 20% item / 80% consumable
+      pushEncounter(getRandomEncounter(["Container-2"]));
+      pushEncounter(getRandomEncounter(["Small","Standard"]),2);
+
+      if (procAbilityChance("",20+playerLck)) {
+        pushEncounter(getRandomEncounter(["Item"]),2)
+      } else {
+        pushEncounter(getRandomEncounter(["Consumable"]),2);
+      }
       break;
 
-    case 6: //Demon Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Demon"]));
+    case 30: //Optional Mid House - 40% item / 60% consumable + 100% small
+      pushEncounter(getRandomEncounter(["Container-3"]));
+
+      if (procAbilityChance("",80)) { //80% chance - enemy/trap
+        pushEncounter(getRandomEncounter(["Standard","Recruit"]),2);
+      } else {
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"],2));
+      }
+
+      if (procAbilityChance("",40+playerLck)) { //
+        pushEncounter(getRandomEncounter(["Item"]),3)
+      } else {
+        pushEncounter(getRandomEncounter(["Consumable"]),3);
+      }
+
+      pushEncounter(getRandomEncounter(["Small"]),4);
       break;
 
-    case 7: //Friend
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Friend"]));
+    case 31: //Locked Traped House - 100% item/pet/friend, 100% consumable
+      pushEncounter(getRandomEncounter(["Locked-Container-3"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
+
+      pushEncounter(getRandomEncounter(["Item","Pet","Friend"]),2)
+      pushEncounter(getRandomEncounter(["Consumable"]),3);
       break;
 
-    case 8: //Standard or Pet or Recruit or Friend
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard","Pet","Recruit","Friend"]));
+
+    case 40: //Optional Hard House - 100% consumable, 60% item or maybe altar
+      pushEncounter(getRandomEncounter(["Container-3"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Curse","Trap","Trap-Attack","Trap-Roll"]),2);
+
+      if (procAbilityChance("",60+playerLck)) {
+        pushEncounter(getRandomEncounter(["Item"]),3)
+        pushEncounter(getRandomEncounter(["Consumable"]),4);
+      } else {
+        pushEncounter(getRandomEncounter(["Consumable"]),3);
+        pushEncounter(getRandomEncounter(["Prop","Altar"]),4);
+      }
       break;
 
-    case 9: //Item
-      pushEncounter(getRandomEncounter(["Item"]));
+    case 50: //Optional Big House - 100% consumable, 80% item or maybe altar
+      pushEncounter(getRandomEncounter(["Container-4"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),3);
+
+      if (procAbilityChance("",80+playerLck)) {
+        pushEncounter(getRandomEncounter(["Item"]),4)
+        pushEncounter(getRandomEncounter(["Consumable"]),5);
+      } else {
+        pushEncounter(getRandomEncounter(["Consumable"]),4);
+        pushEncounter(getRandomEncounter(["Prop","Altar"]),5);
+      }
       break;
 
-    case 10: //Container
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
-      break;
 
-    case 18: //Container Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Consumable"]));
+    case 60: //Optional Huge House - 100% consumable, 90% item or maybe altar
+      pushEncounter(getRandomEncounter(["Container-5"]));
+      pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]),2);
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),3);
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),4);
+
+      if (procAbilityChance("",90+playerLck)) {
+        pushEncounter(getRandomEncounter(["Item"]),5)
+        pushEncounter(getRandomEncounter(["Consumable"]),6);
+      } else {
+        pushEncounter(getRandomEncounter(["Consumable"]),5);
+        pushEncounter(getRandomEncounter(["Prop","Altar"]),6);
+      }
       break;
 
     case 69: //Fishing
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Fishing"]));
-      break;
-
-    case 666: //Altar
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Altar"]));
-      break;
-
-    case 11: //Container Small
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Small"]));
-      break;
-
-    case 20: //Standard Enemy + Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Consumable"]));
-      break;
-
-    case 21: //Skippable Enemy
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Standard","Swift","Heavy"]));
-      break;
-
-    case 22: //Mid Enemy + Loot
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard","Swift","Heavy","Demon"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Item"]));
-      break;
-
-    case 23: //Mid Enemy + Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Standard"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Consumable"]));
-      break;
-
-
-    case 17: //Container Pet/Friend/Container Friend
-      var friendEncounter = getRandomEncounter(["Pet","Friend","Container-Friend"]);
-
-      if (friendEncounter.includes("Container-Friend")){
-        linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-2"]));
-        linesStory.splice(encounterIndex+2,0,friendEncounter);
-        linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Item"]));
-        break;
-      }
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container"]));
-      linesStory.splice(encounterIndex+2,0,friendEncounter);
-      break;
-
-    case 30: //Container-3 Empty
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
-      break;
-
-    case 31: //Container >> Mid Enemy >> Loot
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-2"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Standard","Swift","Heavy","Demon"]));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Item"]));
-      break;
-
-    case 36: //Cursed house: Curse >> Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Curse"]));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Consumable"]));
-      break;
-
-    case 45: //Trapped House: Container >> Trap >> Mid Enemy >> Loot/Consumable
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Trap","Trap-Attack","Trap-Roll"]));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Heavy","Demon"]));
-      linesStory.splice(encounterIndex+4,0,getRandomEncounter(["Item","Consumable"]));
-      break;
-
-    case 4666: //Altar House: Container >> Mid Enemy >> Loot >> Altar
-      linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Container-3"]));
-      linesStory.splice(encounterIndex+2,0,getRandomEncounter(["Swift","Heavy","Demon"]));
-      linesStory.splice(encounterIndex+3,0,getRandomEncounter(["Item","Consumable"]));
-      linesStory.splice(encounterIndex+4,0,getRandomEncounter(["Altar"]));
       break;
 
     default:
@@ -612,7 +613,7 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
 
-  if (playerMgkMax>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk);}
+  if (playerMgkMax>0 || playerMgk>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk);}
   if ((playerMgkMax-playerMgk)>0) playerStatusString += emptySymbol.repeat(playerMgkMax-playerMgk);
 
   if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
@@ -1848,7 +1849,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyInt < playerInt){
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=enemyEmoji
-              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join the adventure"); //Cannot get health/sta/int from a pet
+              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join the party"); //Cannot get health/sta/int from a recruit
               break;
             }
 
@@ -2240,16 +2241,6 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
   var success = Math.floor(((Math.random() * 100))<=abilityChance)
   if (success && playerLootString.includes(abilityEmoji)) {
     return true;
-  }
-}
-
-function pushEncounter(encounterStringArray=[],index=encounterIndex+1,areaNameOverride=""){
-  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing data for pushing new encounter.","message:"]
-
-  if (areaNameOverride!=""){
-    linesStory.splice(index,0,encounterStringArray,areaNameOverride);
-  } else {
-    linesStory.splice(index,0,encounterStringArray);
   }
 }
 
@@ -2653,8 +2644,8 @@ function playerReincarnate(){
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     //console.log("Bonus:\n"+bonusItem);
 
-    pushEncounter(bonusWrapper,encounterIndex+2);
-    pushEncounter(bonusItem,encounterIndex+3);
+    pushEncounter(bonusWrapper,2);
+    pushEncounter(bonusItem,3);
   }
 }
 

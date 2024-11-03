@@ -9,6 +9,11 @@ Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Cho
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Observe the details to <b>increase your chances.</b><br>n/a;
 
 //TEST Block 🎃
+Forsaken Village;❓;Easy Encounter (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Mid Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Hard Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Optional Small House;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Optional Mid House;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX //TODO
 //;Forsaken Village;🪽;Angel Wing;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to recover <b>🟢 Energy</b> on use.;Gained skill <b>⚡️ Quick Reflexes</b>.
 //;Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
 
@@ -17,9 +22,10 @@ Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Observe t
 🪭🧂🛷🥁
 
 //TODO Balance and finalize this area
-Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Easy Encounter (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Mid Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
+
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Standard Enemy;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Loot House;Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
@@ -29,7 +35,6 @@ Forsaken Village;❓;Standard/Pet/Recruit/Friend;Generator-8;0;0;0;0;0;0;XXX;XXX
 Forsaken Village;❓;Random Trap;Generator-5;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-18;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random Container;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🔪;Camping Knife;Item;0;0;0;0;0;0;Multi-tool;Too small to use in a fight.<br>;Might be useful sometime later.
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Pet/Friend(Item);Generator-17;0;0;0;0;0;0;XXX;XXX;XXX
@@ -44,13 +49,10 @@ Forsaken Village;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;XXX;
 Forsaken Village;❓;Cursed House;Generator-36;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🦴;Pile of Bones;Container-2;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Forsaken Village;❓;Small Enemy;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Advanced Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Container Consumable;Generator-18;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Trapped House;Generator-45;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Container;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🗝️;Bronze Key;Item;0;0;0;0;0;0;Promising Item;Looks well worn but still usable.<br>;
-Forsaken Village;❓;Random Container;Generator-10;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Advanced Enemy;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
@@ -76,16 +78,14 @@ Depriving Fairyland;❓;Standard Enemy Consumable;Generator-20;0;0;0;0;0;0;XXX;X
 Depriving Fairyland;🌳;Dark Grove;Container-2;0;0;0;0;0;0;Suspense Area;A quiet place to rest.<br>;A knife was stuck into it.
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;-1;0;0;Ritual Tool;The sacrifical blade demands blood.<br>;Released energy from the trunk.
 Depriving Fairyland;❓;Demon Enemy;Generator-6;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Container Small Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Depriving Fairyland;❓;Easy Encounter (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Random Trap;Generator-5;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Mid Enemy Loot;Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Cursed House;Generator-36;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Mid Enemy Consumable;Generator-23;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Container-3 Empty;Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Random Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🕋;Strange Box;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
-Depriving Fairyland;❓;Random Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Swift Enemy;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Container Consumable;Generator-18;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🌿;Weeds Thicket;Container-2;0;0;0;0;0;0;Wild Flora;Chance to catch a breath.<br>;Revealed a strange growth.
