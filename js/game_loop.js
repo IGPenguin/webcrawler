@@ -733,7 +733,7 @@ function redraw(){
     case "Trap":
     case "Trap-Attack":
     case "Trap-Roll":
-      enemyStatusString=decorateStatusText("‼️","Hazardous",colorRed);
+      enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
@@ -768,7 +768,7 @@ function redraw(){
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
-        if (enemyHp<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed)
+        if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed)
         }
       break;
   }
@@ -2529,6 +2529,7 @@ function playerConsumed(){
   if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0) {
     if (enemyMsg=="") consumedString="That did not taste good";
     eatEmoji="🤮";
+    animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
 
   gainStamina+=parseInt(enemySta);
