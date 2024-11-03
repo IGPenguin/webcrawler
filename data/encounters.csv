@@ -64,35 +64,37 @@ Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full o
 Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Forsaken Village;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
-Forsaken Village;🕳️;Endless Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep below.<br>;
 
-Forsaken Village;🦔️;Scared Hedgehog;Trap;-1;0;0;0;0;0;Innocent Critter;Just let him be!<br>;Ouch! That was painful
+Forsaken Village;🦔️;Scared Hedgehog;Trap;-1;0;0;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Ouch! That was painful
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
-Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;It's spreading all around.<br>;Burned alive screaming
+Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
 Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
-Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-3;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
+Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 Forsaken Village;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
+Forsaken Village;🕳️;Endless Pit;Trap;-10;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;Got both legs broken.
 
-Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
-Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
-Forsaken Village;🎶;Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Suffered mental damage.
+Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams are echoing around.<br>;Suffered mental damage.
+Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
+Forsaken Village;🎶;Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
 Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
 
-Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Bird;Keeps direct eye contact.<br>;Felt something change inside.
-Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope.
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Bird;Keeps direct eye contact.<br>;Felt something change inside
+Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Forsaken Village;🐇;Curious Bunny;Friend;0;0;1;1;0;0;Friendly Critter;Has quick reflexes and swift paws.<br>;Gained a rabbit's insight
+Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;Wise words are coming from its mouth.<br>n/a;Well... better than being alone
+
 Forsaken Village;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
 Forsaken Village;🦝;Raccoon Ambassador;Container-Friend;0;0;0;0;1;0;Representative;Brings a special gift.<br>;Strenghtened the interspecies bond.
 ‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
 
-Forsaken Village;🐕;Shiba Doge;Pet;1;1;1;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
-Forsaken Village;🐈‍⬛;Black Cat;Pet;1;0;1;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
+Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
+Forsaken Village;🐈‍⬛;Black Cat;Pet;1;1;2;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
 Forsaken Village;🐿️;Greedy Chipmunk;Pet;1;0;2;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;Got a little helper.
-Forsaken Village;🐩;Lost Doggo;Pet;2;1;1;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
+Forsaken Village;🐩;Lost Doggo;Pet;2;1;2;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;Cute buddy joined the gang.
-Forsaken Village;🐈;Strange Cat;Pet;1;1;1;0;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
-Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Wants to initiate a contact.<br>;Needs constant attention
+Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;0;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
+Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore.
 
 Forsaken Village;🪱;Meatfly Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
 Forsaken Village;🪱;Stimulated Earthworm;Small;1;0;3;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
@@ -163,7 +165,7 @@ Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifi
 Forsaken Village;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
 Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
 Forsaken Village;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
-Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;n/a<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.
+Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.<br>n/a;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various forest growth species.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
 Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a makeshift weapon.
 Forsaken Village;👢;Riding Boots;Item;0;0;2;0;0;0;Specialized Gear;Gives better stability in action.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
@@ -187,9 +189,9 @@ Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires ha
 Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Drains -1 <b>🟢 Energy</b> due to its weight.<br>;Tiring to carry.
 Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>;Hopefully this works
 Forsaken Village;🔪;Small Blade;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
-Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;The surface is covered in blood and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
-Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
-Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
+Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;The surface is covered in blood and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
+Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
+Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
 Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a warrior.<br>;
 Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
 Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
@@ -302,7 +304,6 @@ Depriving Fairyland;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beaut
 Depriving Fairyland;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Depriving Fairyland;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
-Depriving Fairyland;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;n/a<br>;Had a refreshing converstion
 Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Depriving Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could provide some agaility lessons.<br>;Got through their training.
@@ -418,9 +419,9 @@ Depriving Fairyland;👒;Silly Hat;Item;0;0;0;-1;2;0;Cringe Accessory;Silly hat 
 Depriving Fairyland;🥋;Reinforced Kimono;Item;1;0;0;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b>.;
 Depriving Fairyland;🎎;Lucky Trinket;Item;1;0;0;0;0;0;Accessory;Traditional protection againts bad luck.<br>Provides <b>+1 🍀 Luck</b>.;
 Depriving Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>Provides <b>+1 ❤️ Health</b>.;
-Depriving Fairyland;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
-Depriving Fairyland;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
-Depriving Fairyland;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;Well worn but looks still reliable.<br>Use to <b>🗝️ Unlock</b> doors and containers.;
+Depriving Fairyland;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
+Depriving Fairyland;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br><b>🗝️ Unlocks</b> doors and containers.;
+Depriving Fairyland;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;Well worn but looks still reliable.<br><b>🗝️ Unlocks</b> doors and containers.;
 
 Depriving Fairyland;🔪;Twisted Blade;Item;0;0;0;0;-2;0;Ritual Tool;The sacrifical blade demands offering.<br>Steals <b>-2 🧠 Intellect</b>.;
 Depriving Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;Mystical Relic;No one should ever not look directly into it.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth

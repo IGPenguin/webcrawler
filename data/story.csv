@@ -9,7 +9,12 @@ Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Cho
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Observe the details to <b>increase your chances.</b><br>n/a;
 
 //TEST Block 🎃
-Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
+Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
+Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br><b>🗝️ Unlocks</b> doors and containers.;
+Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks still reliable.<br><b>🗝️ Unlocks</b> doors and containers.;
+Forsaken Village;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
 
 //;Forsaken Village;🪽;Angel Wing;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to recover <b>🟢 Energy</b> on use.;Gained skill <b>⚡️ Quick Reflexes</b>.
 //;Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
@@ -34,7 +39,7 @@ Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Big House (Optional);Generator-50;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Locked Trapped House (Optional);Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
