@@ -515,7 +515,7 @@ function generateNextEncounters(generatorID=1){
       if (procAbilityChance("",80)) { //80% chance - enemy/trap
         pushEncounter(getRandomEncounter(["Standard","Recruit"]),2);
       } else {
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"],2));
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
       }
 
       if (procAbilityChance("",40+playerLck)) { //
