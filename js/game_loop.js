@@ -2507,7 +2507,7 @@ function playerConsumed(){
   var missingHp=0
   if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
   var missingSta=parseInt(playerStaMax)-parseInt(playerSta);
-  var bonusSta=0;
+  var gainStamina=0
 
   if (enemyMsg!="") consumedString=enemyMsg;
 
@@ -2515,10 +2515,15 @@ function playerConsumed(){
     if (enemyMsg=="") consumedString="That was actually tasty";
   }
 
-  //Gain stamina bonus if not bad food
-  if ((parseInt(missingSta)<=0) && (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0)) {
-    bonusSta=1;
-    if (enemyMsg=="") consumedString="Got energy bonus";
+  //Gain stamina only if not bad food and not hurt
+  if ((playerHp>=playerHpMax)&&enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
+    if (parseInt(missingSta)<=0) {
+      gainStamina+=1;
+      if (enemyMsg=="") consumedString="Got energy bonus";
+    } else {
+      gainStamina+=parseInt(missingSta);
+    }
+    animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   }
 
   if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0) {
@@ -2526,15 +2531,11 @@ function playerConsumed(){
     eatEmoji="🤮";
   }
 
-  console.log("bonusSta:"+bonusSta);
-  var gainStamina=parseInt(missingSta)+parseInt(enemySta);
-  if (bonusSta>0) gainStamina=1;
+  gainStamina+=parseInt(enemySta);
   if (gainStamina<0) sign=" "
-  if (gainStamina>=0 || bonusSta>0) sign=" +"
-  if (gainStamina!=0 || bonusSta>0) consumedString +=" "+sign+(parseInt(gainStamina)) + " 🟢";
-  console.log("gainStamina:"+gainStamina);
-  playerGetStamina(parseInt(gainStamina),true);
-  playerSta+=parseInt(bonusSta); //Get stamina does not go over max
+  if (gainStamina>=0) sign=" +"
+  if (gainStamina!=0) consumedString +=" "+sign+(parseInt(gainStamina)) + " 🟢";
+  playerSta+=parseInt(gainStamina);
 
   if (missingHp > 0 || parseInt(enemyHp)!=0){
     var hpChange=parseInt(missingHp)+parseInt(enemyHp)
