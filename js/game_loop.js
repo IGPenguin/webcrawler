@@ -2504,64 +2504,54 @@ function playerConsumed(){
   var sign = "";
   var eatEmoji= "🍴"
 
+  var missingHp=0
+  if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
+  console.log(missingHp);
+  var missingSta=parseInt(playerStaMax)-parseInt(playerSta);
+  var bonusSta=0;
+
   if (enemyMsg!="") consumedString=enemyMsg;
 
+  if (enemyMsg=="") {
+    if (enemyHp>0 || enemySta>0 || enemyAtk>0  || enemyLck>0  || enemyInt>0  || enemyMgk>0) {
+      consumedString="That was actually tasty";
+    }
+    if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0) {
+      consumedString="That did not taste good";
+      eatEmoji="🤮";
+    }
+  }
+
   //Recover depleted resources
-  var missingHp=playerHpMax-playerHp;
-  var missingSta=playerStaMax-playerSta;
+  if (parseInt(missingSta)<=0) {
+    bonusSta=1;
+    sign="+"
 
-  if ((missingHp > 0) || (missingSta > 0)){
-
-    if (missingHp > 0 && parseInt(enemyHp)>=0){
-      playerHp += missingHp;
-      consumedString += " +"+missingHp + " ❤️ ";
-    }
-
-    if (missingSta > 0 && parseInt(enemySta)>=0){
-      playerGetStamina(missingSta,true);
-      consumedString += " +"+missingSta + " 🟢";
-    }
-  } else {
-    var bonusSta=parseInt(enemySta)+1;
-    playerSta+=bonusSta; //Gain bonus stamina
-    consumedString="Received an energy bonus +"+bonusSta+" 🟢";
+    if (enemyMsg=="") consumedString="Received an energy bonus";
   }
 
-  if (enemyHp!=0 || enemySta!=0 || enemyAtk!=0  || enemyLck!=0  || enemyInt!=0  || enemyMgk!=0){
+  var gainStamina=parseInt(missingSta)+parseInt(enemySta)+parseInt(bonusSta);
+  if (gainStamina<0) sign=" "
+  if (gainStamina>=0) sign=" +"
 
-    if (enemyMsg=="") {
-      if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0) {
-        consumedString="That did not taste good";
-        eatEmoji="🤮";
-      }
-      if (enemyHp>0 || enemySta>0 || enemyAtk>0  || enemyLck>0  || enemyInt>0  || enemyMgk>0) {
-        consumedString="That was actually tasty";
-      }
-    }
+  playerGetStamina(gainStamina,true);
+  consumedString +=" "+sign+parseInt(gainStamina) + " 🟢";
 
-    //Just sets up the consumed string
-    if (enemyHp!=0) {
-      if (enemyHp > 0) sign="+"
-      consumedString+=" "+sign+enemyHp+" ❤️"
-    }
-
-    if (enemySta!=0){
-      if (enemySta > 0) sign="+"
-      consumedString+=" "+sign+enemySta+" 🟢"
-      playerUseStamina(-1*enemySta);
-    }
-
-    playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,eatEmoji);
-    //Actually damages here, to log potential lucky dmg avoidance at the right time
-    if (enemyHp<0){
-      playerHit(-1*enemyHp);
-    } else {
-      playerHp+=parseInt(enemyHp);
-    }
+  if (missingHp > 0 || parseInt(enemyHp)!=0){
+    var hpChange=parseInt(missingHp)+parseInt(enemyHp)
+    if (hpChange<0) sign=""
+    if (enemyHp>0) playerHp += hpChange;
+    consumedString += " "+sign+parseInt(hpChange) + " ❤️ ";
   }
 
+  playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,eatEmoji);
+
+
+  //Actually damages here, to log potential lucky dmg avoidance at the right time
+  if (enemyHp<0){
+    playerHit(-1*enemyHp);
+  }
   animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
-  //logPlayerAction(actionString,consumedString);
 }
 
 function playerHit(incomingDamage,applyLuck=true){
