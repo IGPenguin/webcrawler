@@ -59,6 +59,7 @@ var luckInterval = 30; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerRested = false;
+var playerCooked = false;
 var seenLoot;
 
 var playerKarma=1; //Does not reset during the session
@@ -1356,16 +1357,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
           case "Consumable-Container":
-            if (enemyHp<0){
-              logPlayerAction(actionString,"Cooked it with a spell -1 🔵");
-              enemyHp=0;
-              enemyMsg="Actually tasted good";
-            } else {
-              logPlayerAction(actionString,"Roasted a crunchy crust -1 🔵");
-              enemySta=parseInt(enemySta)+1;
-              enemyMsg="Tasted better than usual";
+            if (!playerCooked) {
+              if (enemyHp<0){
+                logPlayerAction(actionString,"Cooked it with a spell -1 🔵");
+                enemyHp=0;
+                enemyMsg="Actually tasted good";
+              } else {
+                logPlayerAction(actionString,"Roasted a crunchy crust -1 🔵");
+                enemySta=parseInt(enemySta)+1;
+                enemyMsg="Tasted better than usual";
+              }
+              playerCooked=true;
+              displayEnemyEffect("🔥");
+              animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
             }
-            displayEnemyEffect("🔥");
             break;
 
           case "Dream":
@@ -2294,6 +2299,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   encounterIndex = getNextEncounterIndex();
 
   playerRested=false;
+  playerCooked=false;
   enemyRenew();
   loadEncounter(encounterIndex);
 
@@ -2338,13 +2344,13 @@ function playerRest(){
       logPlayerAction(actionString,"Wasted a precious moment of life.");
       displayPlayerEffect("💤");
     }
+    if (procAbilityChance("🔮",33)){
+      logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided bonus +1 🔵")
+      playerMgk++;
+    }
   } else {
     logPlayerAction(actionString,"Already rested at this spot.");
     displayPlayerCannotEffect();
-  }
-  if (procAbilityChance("🔮",33)){
-    logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided bonus +1 🔵")
-    playerMgk++;
   }
 }
 
