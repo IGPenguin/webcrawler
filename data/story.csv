@@ -16,12 +16,10 @@ Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Observe t
 //Forsaken Village
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Consumable (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Mid House (Optional);Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
@@ -30,7 +28,6 @@ Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 //;Forsaken Village;❓;Big House (Optional);Generator-50;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
@@ -41,7 +38,6 @@ Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Consumable (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO Randomize boss
 Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
@@ -53,17 +49,13 @@ Forsaken Village;❓;Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 //TODO REDO this area (target midgame)
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
-Depriving Fairyland;🌻;Sunflower Growth;Container-2;0;0;0;0;0;0;Wild Flora;Most are taller than head-level.<br>;
-Depriving Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
+Depriving Fairyland;🎶;Lovely Song;Prop;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
 //IMPORT FROM VILLAGE - START
-Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Consumable (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 
 Depriving Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Mid House (Optional);Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 
 Depriving Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
@@ -72,7 +64,6 @@ Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
 Depriving Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 //;Depriving Fairyland;❓;Big House (Optional);Generator-50;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
@@ -83,7 +74,6 @@ Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Depriving Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Consumable (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 //IMPORT FROM VILLAGE - END
 Depriving Fairyland;🌊;Swamp Shore;Fishing;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
 
