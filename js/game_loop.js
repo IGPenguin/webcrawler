@@ -1293,7 +1293,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { break; } //Casting is never free, upgrd handled above
-          if (enemyType!="Death") displayPlayerEffect("🪄"); //I'm lazy
+          if (enemyType!="Death" && playerCooked!=true) displayPlayerEffect("🪄"); //I'm lazy
 
         switch (enemyType){
           case "Friend":
@@ -1370,6 +1370,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerCooked=true;
               displayEnemyEffect("🔥");
               animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
+            } else {
+              playerMgk++ //Regain the lost mana
+              displayPlayerCannotEffect();
+              logPlayerAction(actionString, "Already cooked this food!")
             }
             break;
 
@@ -2779,7 +2783,7 @@ function adjustEncounterButtons(){
 
     case "Consumable":
     case "Consumable-Container":
-      if (playerMgk>0) setButton('button_cast',"🔥 Heat");
+      if (playerMgk>0) setButton('button_cast',"🔥 Cook");
       setButton('button_roll',"❌ Ditch");
 
       document.getElementById('button_grab').innerHTML="🍴 Eat";
