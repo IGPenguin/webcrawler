@@ -1279,7 +1279,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType.includes("Locked")){
-            if (playerMgkMax<2){
+            if (playerMgk<2){
               logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
               displayPlayerCannotEffect();
               break;
@@ -1543,7 +1543,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (playerMgkMax<2){
+        if (playerMgk<2){
           logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
           displayPlayerCannotEffect();
           break;
