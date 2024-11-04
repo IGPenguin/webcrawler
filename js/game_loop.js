@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/04/24 • 8:04 pm"
-var initialEncounterOverride=7; //7 skips tutorial
+var versionCode = "ver. 11/04/24 • 10:42 pm"
+var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -2586,7 +2586,8 @@ function playerConsumed(){
   playerSta+=parseInt(gainStamina);
 
   if (missingHp > 0 || parseInt(enemyHp)!=0){
-    var hpChange=parseInt(missingHp)+parseInt(enemyHp)
+    var hpChange=parseInt(enemyHp);
+    if (enemyHp>0) hpChange+=parseInt(missingHp); //Another nasty hack, why is this so spaghetti
     if (hpChange<0) sign=""
     if (hpChange>0) playerHp += hpChange;
     consumedString += " "+sign+parseInt(hpChange) + " ❤️ ";
