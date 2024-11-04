@@ -89,11 +89,11 @@ Forsaken Village;🦝;Raccoon Ambassador;Container-Friend;0;0;0;0;1;0;Representa
 ‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
 
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;Good Boy;These are super rare.<br>;Doge joined your party!
-Forsaken Village;🐈‍⬛;Black Cat;Pet;1;1;2;1;0;0;Cute Animal;These usually bring bad luck.<br>;Received a purrfect blessing.
+Forsaken Village;🐈‍⬛;Black Cat;Pet;1;1;2;-1;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck.
 Forsaken Village;🐿️;Greedy Chipmunk;Pet;1;0;2;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;Got a little helper.
 Forsaken Village;🐩;Lost Doggo;Pet;2;1;2;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;Cute buddy joined the gang.
-Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;0;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
+Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
 Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore.
 
 Forsaken Village;🪱;Meatfly Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
@@ -121,9 +121,9 @@ Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to under
 Forsaken Village;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Forsaken Village;🦢;Possesive Swan;Standard;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Defeated by an angry bird.
 
-Forsaken Village;🧝;Cultist Initiate;Recruit;1;1;2;0;1;0;Humanoid;Trying to prove themselves.<br>;Got their heart ripped out!
-Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;1;0;2;0;Humanoid;On their way to exaltation.<br>;Got their heart ripped out!
-Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;1;1;1;0;0;0;Humanoid;Does not really have a choice.<br>;Got their heart ripped out!
+Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got their heart ripped out!
+Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;Humanoid;Trying to prove themselves.<br>;Got their heart ripped out!
+Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;2;2;0;3;0;Humanoid;On their way to exaltation.<br>;Got their heart ripped out!
 
 Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
 Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
@@ -186,8 +186,8 @@ Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides insight an
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Should help to remember.
 
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
-Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Drains -1 <b>🟢 Energy</b> due to its weight.<br>;Tiring to carry.
-Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>;Hopefully this works
+Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Very heavy to carry around and swing with.<br>Provides <b>+1 ⚔️ Damage</b> but drains <b>-1 🟢 Energy</b>.;Tiring to carry.
+Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+1 🍀 Luck</b> but drains <b>-1 🧠 Intellect</b>.;Hopefully this works
 Forsaken Village;🔪;Small Blade;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
 Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;The surface is covered in blood and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
@@ -199,20 +199,14 @@ Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a be
 Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Forsaken Village;🧂;Salt Shaker;Item;0;0;0;0;0;0;Seasoning;Usually used to improve food taste.<br>;
 Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
-Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 
-Forsaken Village;🍄;Magical Mushroom;Consumable;-2;0;0;0;0;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health.;
-Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides <b>+1 🍀 Luck</b> alongside a note.<br>n/a;Spit out the paper
+Forsaken Village;🍄;Magical Mushroom;Consumable;-2;0;0;0;0;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> but does <b>-2 💔 Damage</b>.;
+Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a ton of vitamins.<br>Provides <b>+1 🧠 Intelect</b>.;Felt an actual difference
-Forsaken Village;🧅;Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Temporary bonus <b>+1 ❤️ Health</b>.;Increased immunity
-Forsaken Village;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Temporary bonus <b>+1 ❤️ Health</b>.;Increased immunity
-Forsaken Village;🥕;Wild Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Temporarily bonus <b>+1 🟢 Energy</b>.;Got extra energy
+Forsaken Village;🧅;Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Feels blessed
-Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes?<br><br>Bonus <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect.;Was it worth it?
-Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Bonus <b>+3 🟢 Energy</b> for <b>-1 💔 Health.</b>;Burned down the throat
-Forsaken Village;🧀;Smelly Cheese;Consumable;0;0;0;-1;0;0;Rare Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks meters away
-Forsaken Village;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
-Forsaken Village;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
+Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary bonus <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect.;Was it worth it?
+Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary bonus <b>+3 🟢 Energy</b> but does <b>-1 💔 Damage.</b>;Burned down the throat
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
 Forsaken Village;🐟;Smelly Tuna;Consumable;-1;0;0;0;0;0;Rotten Fish;Does not look appealing at all.<br>;
 Forsaken Village;🥣;Unfinished Bowl;Consumable;0;0;-3;0;0;0;Someone's Breakfast;Must have been here for weeks.<br>;Ugh. That tasted terrible.
@@ -366,21 +360,24 @@ Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Ap
 Depriving Fairyland;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;2;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
 Depriving Fairyland;🧹;Cursed Broom;Item;1;2;1;0;-1;0;Cursed Object;The handle has a strange glow.<br>;Got stuck with it
 
+Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.>;
+Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Depriving Fairyland;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Depriving Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides extra <b>+1 🟢 Energy</b> temporarily.;Got extra energy
+Depriving Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
+Depriving Fairyland;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
+Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
+Depriving Fairyland;🧀;Smelly Cheese;Consumable;0;0;0;-1;0;0;Rare Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+
 Depriving Fairyland;🥭;Sweet Mango;Consumable;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>;
 Depriving Fairyland;🍌;Ripe Banana;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍊;Orange Citrus;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍐;Ripe Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🫐;Berries;Consumable;0;0;0;0;0;0;Forest Fruit;Seems like a sweet snack.<br>;
 Depriving Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>;
-Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>;
 Depriving Fairyland;🥜;Sweet Peanuts;Consumable;0;0;0;0;0;0;Crunchy Food;Seems like a good snack.<br>;
-Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>;
 Depriving Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>;That was delicious
 Depriving Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>;
-Depriving Fairyland;💩;Steaming Pile;Consumable;-1;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Extremely disgusting
-Depriving Fairyland;🍄;Suspicious Mushroom;Consumable;-1;0;0;0;2;0;Fungal Growth;Exemplar of a pelicular species.<br>;Got terribly disoriented.
-Depriving Fairyland;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
-Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
 
 Depriving Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Mind</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Mind</b>.
 Depriving Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
