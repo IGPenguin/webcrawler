@@ -2359,11 +2359,16 @@ function playerRest(){
 }
 
 function playerHeal(){
-  if (playerHp<playerHpMax) {
-    var healAmount=Math.floor((1+playerHpMax)/2);
-    logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell -1 🔵");
-    playerHp+=healAmount; //Lay on hands
-    if (playerHp>playerHpMax) playerHp=playerHpMax;
+  var missingHp=playerHpMax-playerHp;
+  if (missingHp<0) missingHp=0;
+
+  if (missingHp>0) {
+    var healAmount=missingHp;
+    if (healAmount>(playerMgk+1)) healAmount=(playerMgk+1);
+    playerHp+=healAmount;
+    playerMgk-=(healAmount-1);
+
+    logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell -"+healAmount+" 🔵");
     displayPlayerGainedEffect();
   } else {
     logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
