@@ -186,8 +186,8 @@ Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides insight an
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Should help to remember.
 
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>;Shot an arrow in the knee
-Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Very heavy to carry around and swing with.<br>Provides <b>+1 ⚔️ Damage</b> but drains <b>-1 🟢 Energy</b>.;Tiring to carry.
-Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+1 🍀 Luck</b> but drains <b>-1 🧠 Intellect</b>.;Hopefully this works
+Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Very heavy to carry around and swing with.<br>Provides <b>+1 ⚔️ Damage</b> drains <b>-1 🟢 Energy</b>.;Tiring to carry.
+Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+1 🍀 Luck</b> drains <b>-1 🧠 Intellect</b>.;Hopefully this works
 Forsaken Village;🔪;Small Blade;Item;0;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>;Could still make a bloody mess.
 Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;The surface is covered in blood and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
