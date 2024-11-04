@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 11/04/24 • 8:04 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -913,9 +913,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Attack": //Attacking causes you damage
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(0,false);
+            playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Spirit":
@@ -1005,6 +1004,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Curse":
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Standard":
@@ -1135,7 +1135,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll": //Triggers when rolling into it
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(0,false);
+            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
           case "Trap":
           case "Trap-Attack":
@@ -1202,7 +1202,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (!enemyType.includes("Friend") && enemyCastIfMgk(false)){
           logPlayerAction(actionString,"Could not block their spell -1 💔");
-          playerHit(1);
+          playerHit(1,true,true);
           break;
         }
 
@@ -1239,7 +1239,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Spirit":
             if (enemyStaminaChangeMessage(-1,"Could not block a spectral attack -"+enemyAtk+" 💔","n/a")){
-              playerHit(enemyAtk);
+              playerHit(enemyAtk,true,true);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
             }
@@ -1508,7 +1508,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 if (playerUseItem("🔪","overwritten","The prayer had no effect.",true,true)){
                   displayEnemyEffect("🩸");
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-                  playerHit(0,false);
+                  playerHit(0,false,true);
                   isFishing=false
                   if (playerHp>0) nextEncounter();
                 }
@@ -1546,7 +1546,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
-            playerHit(0,false);
+            playerHit(0,false,true);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -1721,13 +1721,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Attack":
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0) playerHit(0,false);
+            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Undead": //Grabbing is not safe
             if (enemyCastIfMgk()) break;
             logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
-            playerHit(enemyAtk);
+            playerHit(enemyAtk,true,true);
             displayEnemyEffect("✋");
             break;
 
@@ -1743,7 +1743,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               playerHpMax-=halfHp;
               playerAtk+=halfHp;
-              playerHit(halfHp,false);
+              playerHit(halfHp,false,true);
             }
 
             if (enemyEmoji=="🍭"){
@@ -1767,7 +1767,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               playerHpMax=parseInt(playerHpMax)-halfHp;
-              playerHit(halfHp,false);
+              playerHit(halfHp,false,true);
             }
 
             playerLootString+=enemyEmoji;
@@ -1981,7 +1981,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerUseStamina(1);
             playerName=getGreedyName();
             playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
-            playerHit(0,false);
+            playerHit(0,false,true);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -1998,6 +1998,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Curse": //Waiting triggers the curse
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Standard": //You get hit if they have stamina
@@ -2193,7 +2194,7 @@ function enemyAttackOrRest(message=""){
     } else {
       if (message!="") staminaChangeMsg=message;
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
-      playerHit(damageReceived);
+      playerHit(damageReceived,true,false);
 
       if (playerLootString.includes("🥀") && (enemyHp>enemyHpLost) && (enemyAtk+enemyAtkBonus)>0) {
         logAction("⚔️ ▸ 🥀 Dealt -1 💔 by <b>🥀 Thorns Payback</b>.");
@@ -2232,6 +2233,7 @@ function enemyCastIfMgk(hit=true){
 
   if (enemyMgk>enemyMgkLost) {
     enemyMgkLost++
+    displayEnemyCannotEffect();
 
     if (procAbilityChance("💠",33)){
       logAction("🪄 ▸ 💠 Enemy spell resisted by <b>💠 Reflect Magic</b>.");
@@ -2241,7 +2243,7 @@ function enemyCastIfMgk(hit=true){
 
     if (hit) {
       logAction(enemyEmoji+" ▸ 🪄 Got hit by the enemy spell -1 💔");
-      playerHit(1);
+      playerHit(1,true,true);
     }
     return true;
   }
@@ -2595,10 +2597,10 @@ function playerConsumed(){
   playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,eatEmoji);
 
   //Actually damages here, to log potential lucky dmg avoidance at the right time
-  if (enemyHp<0) playerHit(-1*enemyHp);
+  if (enemyHp<0) playerHit(-1*enemyHp,true,true);
 }
 
-function playerHit(incomingDamage,applyLuck=true){
+function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
   var hitChance = Math.floor(Math.random() * luckInterval);
 
   if (applyLuck && ( hitChance <= playerLck )){
@@ -2607,7 +2609,7 @@ function playerHit(incomingDamage,applyLuck=true){
     return;
   }
 
-  if (procAbilityChance("🛡️",33)) {
+  if (procAbilityChance("🛡️",33) && !typeMagic) {
     logAction("🛡️ ▸ 💢 Attack deflected by <b>🛡 Random Block</b>.");
     displayPlayerCannotEffect();
     displayPlayerEffect("🛡️");
