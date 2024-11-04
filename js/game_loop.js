@@ -2169,7 +2169,7 @@ function enemyAttackOrRest(message=""){
   if (enemySta>enemyStaLost) {
 
     if (procAbilityChance("🎲",33)){
-      logAction("⚔️ ▸ <b>🎲 Pure Chance</b> prevented receiving damage.");
+      logAction("⚔️ ▸ <b>🎲 Pure Chance</b> averted enemy attack.");
       displayPlayerEffect("🎲");
       return false;
     }
