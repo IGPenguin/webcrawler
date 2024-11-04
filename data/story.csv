@@ -40,8 +40,7 @@ Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
-//;Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Consumable (Optional);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO Randomize boss
@@ -69,13 +68,16 @@ Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Hard House (Optional);Generator-40;0;0;0;0;0;0;XXX;XXX;XXX
+//;Depriving Fairyland;❓;Hard House (Optional);Generator-40;0;0;0;0;0;0;XXX;XXX;XXX
+Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
 Depriving Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Big House (Optional);Generator-50;0;0;0;0;0;0;XXX;XXX;XXX
+//;Depriving Fairyland;❓;Big House (Optional);Generator-50;0;0;0;0;0;0;XXX;XXX;XXX
+Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 
-Depriving Fairyland;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+//;Depriving Fairyland;❓;Locked Trapped House (Optional);Generator-31;0;0;0;0;0;0;XXX;XXX;XXX
+Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 

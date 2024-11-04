@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/04/24 • 0:55 am"
+var versionCode = "ver. 11/04/24 • 1:13 am"
 var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
