@@ -1,53 +1,50 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
-Loot;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Philosopher Thoughts</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Philosopher Thoughts</b>.
+Loot;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Mind</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Mind</b>.
 Loot;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Loot;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Loot;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Loot;🃏;Tarot Card — Fool;Item;0;0;0;2;-2;0;<b>Artifact</b>;Sacrifice <b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b><br>;Embraced <b>🃏 Fool</b>.
-Loot;🃏;Tarot Card — Lover;Item;1;0;0;0;-2;0;<b>Artifact</b>;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b><br>;Embraced <b>🃏 Lover</b>.
-Loot;🃏;Tarot Card — Mage;Item;0;-1;-1;0;0;2;<b>Artifact</b>;Sacrifice <b>-1 ⚔️ Attack</b> and <b>-1 🟢 Stamina</b><br>for gaining <b>+2 🔵 Mana</b>.;Embraced <b>🃏 Mage</b>.
-Loot;🃏;Tarot Card — Berserk;Item;-1;1;0;0;-1;0;<b>Artifact</b>;Sacrifice <b>-1 ❤️ Health</b> and <b>-1 🧠 Intellect</b><br>for gaining <b>+1 ⚔️ Attack</b>.;Embraced <b>🃏 Berserk</b>.
 Loot;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
-Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Stamina</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Stamina</b> for <b>🔵 Mana</b>.
+Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Energy</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
 Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Lost <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.
 Loot;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Loot;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
 Loot;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Loot;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Loot;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to polymorph<br> an enemy to a random wild critter.;Gained skill <b>🧬 Polymorph</b>.
+Loot;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to not spend <b>🟢 Energy</b> on action.;Gained skill <b>⚡️ Quick Reflexes</b>.
+Loot;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance to get +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 
-Loot;🔮;Radiating Oracle;Item;0;0;0;0;1;1;Prophecy Source;n/a;Embraced the vision
-Loot;🎓;Graduate Hat;Item;0;0;0;0;2;0;Accessory;Proof of previously obtained knowledge.<br>;
-Loot;💍;Queen's Ring;Item;2;0;0;0;0;0;Accessory;Held by true lead.<br>;Felt a surge in the chest.
-Loot;💍;King's Ring;Item;0;1;1;0;0;0;Accessory;Held by true lead.<br>;Felt a surge in the chest.
+Loot;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
+Loot;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
+Loot;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
+Loot;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
+Loot;🎓;Graduate Hat;Item;0;0;0;0;2;0;Accessory;Proof of previously obtained knowledge.<br>Provides <b>+2 🧠 Intellect</b>.;
+Loot;💍;Queen's Ring;Item;2;0;0;0;0;0;Accessory;Previously held by a noble lady.<br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
+Loot;💍;King's Ring;Item;0;1;1;0;0;0;Accessory;Previously held by a true leader<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Felt a surge in the chest.
 
-Loot;🔖;Wet Note;Item;0;0;0;0;1;0;Prophecy;n/a;Embraced the knowledge.
-Loot;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>;Felt a surge of power
-Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>;Felt a surge in the chest.
-Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>;Gained the power of the sea.
-Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>;Gained the power of the wild.
-Loot;🧿;Shiny Trinket;Item;0;0;0;0;0;1;Accessory;The surface has a pearlescent finish.<br>;
-Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Accessory;The surface has a pearlescent finish.<br>;
-Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>;Feels good to have it.
-Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>;Felt a surge in the chest.
-Loot;💍;Engraved Ring;Item;0;0;0;0;-3;1;Isildur's Bane;Says "My Precious" on the inside.<br>;The ring took its toll
-Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle backup armament.<br>;Became armed and dangerous.
+Loot;🗡️;Silver Dagger;Item;0;1;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+1 ⚔️ Damage</b>.;Became armed and dangerous.
+Loot;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
+Loot;🪲;Scarab Pin;Item;0;0;1;0;0;0;Shiny Object;Fancy pearlescent ornament.<br>Provides <b>+1 🟢 Energy</b>.;Felt a surge of power
+Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
+Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
+Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
+Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
+Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>Provides<b>+1 🍀 Luck</b>.;Feels good to have it.
+Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>Provides<b>+1 ❤️ Health</b>;Felt a surge in the chest.
+Loot;💍;Engraved Ring;Item;0;0;0;0;-3;1;Isildur's Bane;Says "My Precious" on the inside.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The ring took its toll
 
-Loot;🪞;Soul Mirror;Item;0;0;0;0;-2;1;Mystical Relic;Better not look directly into it.<br>;Realized the dark truth
-Loot;🎀;Silly Bowtie;Item;0;0;0;1;-1;0;Accessory;Gives extra luck but looks cringe.<br>;That looks ridiculous
-Loot;👞;Old Shoes;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoes.<br>;Disgusting but kinda cool.
+Loot;👞;Old Shoes;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoes.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Disgusting but kinda cool.
 Loot;🔪;Dull Knife;Item;0;0;0;0;0;0;Worn Tool;Useless in combat.<br>;Took it with themselves just in case.
-Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;Covered in rust and dirt.<br>;
-Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br>;
-Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks reliable.<br>;
-
+Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
+Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br><b>🗝️ Unlocks</b> doors and containers.;
+Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks still reliable.<br><b>🗝️ Unlocks</b> doors and containers.;
 Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
-Loot;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
-Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>;Stuck onto the tip of the weapon.
-Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside.<br>;Spilled the ashes all around.
+Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>Or maybe not?;Stuck onto the tip of the weapon.
+Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside the sacred container.<br>Better not mess with it.;Spilled the ashes all around.
 
 Loot;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
-Loot;🦐;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
+Loot;🦐;Fresh Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
+Loot;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
 Loot;🧪;Unknown Potion;Consumable;-2;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>;Left a funny taste in mouth
