@@ -73,7 +73,7 @@ Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-2;0;0;0;0;0;Garbage;Better not 
 Forsaken Village;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 Forsaken Village;🕳️;Endless Pit;Trap;-10;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;Got both legs broken.
 
-Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams are echoing around.<br>;Suffered mental damage.
+Forsaken Village;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
 Forsaken Village;🎶;Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
 Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
@@ -283,10 +283,10 @@ Depriving Fairyland;🌋;Volcano Throat;Container-5;0;0;0;0;0;0;Mountaintop;Lava
 Depriving Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Depriving Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
-Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Strange thoughts filling the mind.<br>;Suffered lasting changes.
-Depriving Fairyland;👁️‍🗨️;Haunting Voices;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers and screams echoing around.<br>;Suffered mental damage.
+Depriving Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
+Depriving Fairyland;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Depriving Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
-Depriving Fairyland;🗯️;Unknown Voice;Curse;0;0;0;0;0;0;Misfortune;Its words make no sense.<br>;Suffered mental damage.
+Depriving Fairyland;🗯️;Unknown Voice;Curse;-1;0;0;0;-1;0;Misfortune;Its words make no sense.<br>;Suffered a nasty curse
 
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods
 Depriving Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
@@ -337,7 +337,7 @@ Depriving Fairyland;🦀;Tiny Crab;Trap;1;2;1;0;-1;0;Crustacean;Boasts painful p
 Depriving Fairyland;🐜;Bullet Ant;Small;1;3;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
 🐛🦟🦗
 
-Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;3;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
+Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;3;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Depriving Fairyland;🦡;Honey Badger;Standard;3;2;2;0;4;0;Wild Animal;The creature boasts sinister energy.<br>Better to not underestimate.;
 Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.

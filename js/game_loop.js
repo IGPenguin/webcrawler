@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/04/24 • 1:13 am"
+var versionCode = "ver. 11/04/24 • 8:28 am"
 var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
@@ -478,10 +478,12 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 2: //Easy Encounter
+      pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Standard"]));
       break;
 
     case 3: //Mid Encounter - 20% item / 80% consumable
+      pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Standard","Recruit"]));
       if (procAbilityChance("",20+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),2)
@@ -491,6 +493,7 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 4: //Hard Encounter - 50% item / 100% consumable
+      pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
       if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),2)
@@ -1317,6 +1320,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Boss":
           case "Small":
             var magicDamage = playerMgk+1;
+            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
             if (magicDamage > 2) {
               magicDamage=2;
               playerMgk--;
@@ -1875,7 +1879,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyInt < playerInt){
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=enemyEmoji
-              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join the party"); //Cannot get health/sta/int from a recruit
+              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join forces"); //Cannot get health/sta/int from a recruit
               break;
             }
 
@@ -2784,7 +2788,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       if (isFishing) setButton('button_roll',"❌ Ditch");
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      if (enemyEmoji=="🛶") setButton("button_walk","🛶 Sail");
+      if (enemyEmoji=="🛶") setButton("button_roll","🛶 Sail");
       break;
 
     case "Curse":
