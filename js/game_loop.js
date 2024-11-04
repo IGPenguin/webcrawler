@@ -2359,6 +2359,7 @@ function playerRest(){
 
       logPlayerAction(actionString,"Rested well, recovering all resources.");
       displayPlayerEffect("💤");
+      displayPlayerRestedEffect();
     } else {
       playerRested=true;
 
@@ -2368,6 +2369,7 @@ function playerRest(){
     if (procAbilityChance("🔮",33)){
       logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided bonus +1 🔵")
       playerMgk++;
+      displayPlayerRestedEffect();
     }
   } else {
     logPlayerAction(actionString,"Already rested at this spot.");
@@ -2971,6 +2973,10 @@ function displayEnemyCannotEffect(){
 
 function displayPlayerGainedEffect(){
   animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
+}
+
+function displayPlayerRestedEffect(){
+  animateUIElement(playerInfoUIElement,"animate__pulse","0.5"); //Animate player gain
 }
 
 function displayEffect(message,documentElement,time=2){
