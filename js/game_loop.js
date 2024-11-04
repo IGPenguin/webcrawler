@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/04/24 • 10:42 pm"
+var versionCode = "ver. 11/04/24 • 11:20 pm"
 var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
@@ -2169,7 +2169,7 @@ function enemyAttackOrRest(message=""){
   if (enemySta>enemyStaLost) {
 
     if (procAbilityChance("🎲",33)){
-      logAction("🪄 ▸ 🎲 Attack resisted by <b>🎲 Pure Chance</b>.");
+      logAction("⚔️ ▸ <b>🎲 Pure Chance</b> prevented receiving damage.");
       displayPlayerEffect("🎲");
       return false;
     }
