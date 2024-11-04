@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/04/24 • 11:20 pm"
+var versionCode = "ver. 11/04/24 • 11:56 pm"
 var initialEncounterOverride=0; //7 skips tutorial
 
 //To handle notes and death in .csv
@@ -93,6 +93,7 @@ var linesGenerator;
 
 var encounterIndex;
 var lastEncounterIndex;
+var lastGeneratorName = "none";
 var lootTotal;
 var randomEncounterIndex;
 var lootEncounterIndex;
@@ -175,7 +176,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> incrases the chances for getting loot."];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> some bait 🪱 to do <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> incrases the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -430,7 +431,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
-    console.log("Gen-type:"+number);
+    //console.log("Gen-type:"+number);
     if (number) number = parseInt(number[0],10);
 
     generateNextEncounters(number);
@@ -464,6 +465,7 @@ function generateNextEncounters(generatorID=1){
   switch (generatorID) {
 
     case 0: //Prop or Small in container
+      logGenerator("prop/small");
       var type=chooseFrom(["Prop","Prop","Small"])
       if (type=="Prop") {
         pushEncounter(getRandomEncounter(["Prop"]));
@@ -474,16 +476,19 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 1: //Consumable - Optional
+      logGenerator("cons");
       pushEncounter(getRandomEncounter(["Container"]));
       pushEncounter(getRandomEncounter(["Consumable"]),2);
       break;
 
     case 2: //Easy Encounter
+      logGenerator("easy");
       pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Standard"]));
       break;
 
     case 3: //Mid Encounter - 20% item
+      logGenerator("mid");
       pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Standard","Recruit"]));
 
@@ -496,6 +501,7 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 4: //Hard Encounter - 50% item / 100% consumable
+      logGenerator("hard");
       pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
 
@@ -508,7 +514,8 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 20: //Optional Small House - 20% item
+    case 20: //House Small - 20% item
+      logGenerator("h-small");
       pushEncounter(getRandomEncounter(["Container-2"]));
       pushEncounter(getRandomEncounter(["Small","Standard"]),2);
 
@@ -524,7 +531,8 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 30: //Optional Mid House - 40% item / 60% consumable + 100% small
+    case 30: //House Mid - 40% item + 100% small
+      logGenerator("h-mid");
       pushEncounter(getRandomEncounter(["Container-3"]));
 
       if (procAbilityChance("",80)) { //80% chance - enemy/trap
@@ -547,7 +555,8 @@ function generateNextEncounters(generatorID=1){
       pushEncounter(getRandomEncounter(["Small"]),4);
       break;
 
-    case 31: //Locked Traped House - 100% item/pet/friend, 100% consumable
+    case 31: //House Locked - 100% item/pet/friend, 100% consumable
+      logGenerator("h-lock");
       var type=chooseFrom(["Item","Pet","Friend","Container-Friend"]);
 
       if (type=="Container-Friend") {
@@ -570,6 +579,7 @@ function generateNextEncounters(generatorID=1){
 
 
     case 40: //Optional Hard House - 100% consumable, 50% item or maybe altar
+      logGenerator("h-hard");
       pushEncounter(getRandomEncounter(["Container-3"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Curse","Trap","Trap-Attack","Trap-Roll"]),2);
 
@@ -582,7 +592,8 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 50: //Optional Big House - 100% consumable, 80% item or maybe altar
+    case 50: //Optional Big House - 100% consumable, 60% item or maybe altar
+      logGenerator("h-big");
       pushEncounter(getRandomEncounter(["Container-4"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),3);
@@ -596,7 +607,8 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 60: //Optional Huge House - 100% consumable, 90% item or maybe altar
+    case 60: //Optional Huge House - 100% consumable, 70% item or maybe altar
+      logGenerator("h-huge");
       pushEncounter(getRandomEncounter(["Container-5"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]),2);
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),3);
@@ -612,6 +624,7 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 69: //Fishing
+      logGenerator("fish");
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Fishing"]));
       break;
 
@@ -636,7 +649,7 @@ function chooseFrom(array=[]){
 function redraw(){
   //Version
   versionIDUIElement = document.getElementById('id_version')
-  versionIDUIElement.innerHTML = versionCode+" <br>(#"+adventureEncounterCount+")";
+  versionIDUIElement.innerHTML = versionCode+"<br>"+lastGeneratorName+" (#"+adventureEncounterCount+")";
 
   //Player UI
   playerInfoUIElement = document.getElementById('id_player_info');
@@ -1603,7 +1616,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyEffect("🧬");
 
               enemyEmoji=animalEmoji; enemyType="Small"; enemyRenew();
-              enemyHp=1; enemyAtk=0; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
+              enemyHp=1; enemyAtk=1; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
+              enemyMsg="They avenged getting polymorphed!";
               break;
             }
 
@@ -1611,6 +1625,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
+            break; //Enemy does not attack if getting cursed
           } else if (playerMgkMax <= enemyMgk) {
             logPlayerAction(actionString,"They resisted the curse -2 🔵");
           } else {
@@ -3014,6 +3029,11 @@ void documentElement.offsetWidth; // trigger a DOM reflow
     }
     documentElement.classList.remove("animate__animated",animation);
   });
+}
+
+function logGenerator(generatorName="none"){
+  console.log("Gen-name:"+generatorName);
+  lastGeneratorName=generatorName;
 }
 
 //Button click listeners
