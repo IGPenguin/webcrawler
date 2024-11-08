@@ -7,6 +7,7 @@ Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth cover
 Forsaken Village;🌾;Thick Grass;Prop;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🌱;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
+Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
 Forsaken Village;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
@@ -96,20 +97,20 @@ Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a h
 Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
 Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore.
 
-Forsaken Village;🪱;Meatfly Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
-Forsaken Village;🪱;Stimulated Earthworm;Small;1;0;3;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
+Forsaken Village;🪱;Stimulated Earthworm;Small;1;0;2;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Meatfly Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
 Forsaken Village;🪱;Fly Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Tapeworm;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Persistant Leech;Small;1;1;2;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪰;Pesky Fly;Small;1;0;3;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Forsaken Village;🐀;Dire Rat;Small;1;1;2;0;-1;0;Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦎;Green Gecko;Small;1;1;2;0;-1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
+Forsaken Village;🦎;Green Gecko;Small;1;0;2;0;-1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
 Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
 
 Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
