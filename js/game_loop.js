@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/05/24 • 00:01 am"
-var initialEncounterOverride=0; //7 skips tutorial
+var versionCode = "ver. 11/08/24 • 09:48 am"
+var initialEncounterOverride=7; //7 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -345,7 +345,7 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
+function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverride="") {
   var tempLinesGenerator = linesGenerator;
   var generatorAreaName=areaName;
   //console.log("Area override:"+areaNameOverride);
@@ -364,6 +364,19 @@ function getRandomEncounter(encounterTypes=[],areaNameOverride="") {
   });
   //console.log(matchingTypeLines);
   tempLinesGenerator=matchingTypeLines;
+
+  //drop anything but includesStrings (any of array)
+  var includesStringLines = [];
+  if (includeStrings.length!=0){
+    includeStrings.forEach((string) => {
+      $.grep(tempLinesGenerator, function (item) {
+        return String(item).includes(string)}).forEach((line) => {
+        includesStringLines.push(line);
+      });
+    });
+    //console.log(includesStringLines);
+    tempLinesGenerator=includesStringLines;
+  }
 
   //drop all seen names
   //console.log("Seen: "+seenEncounters);
@@ -630,6 +643,11 @@ function generateNextEncounters(generatorID=1){
 
     case 99: //Random house
       generateNextEncounters(chooseFrom([20,30,31,40,50,60]))
+      break;
+
+    case 777: //Legendary item
+      logGenerator("legend");
+      pushEncounter(getRandomEncounter(["Item"],["Artifact"]))
       break;
 
     default:
@@ -2718,7 +2736,7 @@ function playerReincarnate(){
   nextEncounter();
 
   if (playerKarma>0){
-    var bonusItem=getRandomEncounter(["Item"],"Forsaken Village");
+    var bonusItem=getRandomEncounter(["Item"],"","Forsaken Village");
     var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
