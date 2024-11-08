@@ -937,6 +937,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
+        var enemyAttacked=false;
+
         if (enemyType=="Death") {
           displayPlayerCannotEffect();
           logPlayerAction(actionString,"There is nothing to attack anymore.");
@@ -990,14 +992,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Boss":
           case "Small":
+            if (enemyCastIfMgk(true)) enemyAttacked=true;
+
             enemyHit(playerAtk);
-            if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
+
+            if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
             }
             break;
 
           case "Swift": //They hit you first if they have stamina
-            if (enemySta-enemyStaLost > 0) {
+            if (enemyCastIfMgk(true)) enemyAttacked=true;
+
+            if ((parseInt(enemySta)-parseInt(enemyStaLost) > 0) && !enemyAttacked) {
               displayEnemyEffect("🌀");
               if ((enemyAtk+enemyAtkBonus)>0){
                 enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+enemyAtk+" 💔","n/a");
@@ -1247,9 +1254,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (!enemyType.includes("Friend") && enemyCastIfMgk(false)){
-          logPlayerAction(actionString,"Could not block their spell -1 💔");
-          playerHit(1,true,true);
+        if (!enemyType.includes("Friend") && enemyCastIfMgk(true,"Could not block their spell")){
           break;
         }
 
@@ -1379,6 +1384,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"They resisted the spell -"+magicDamage+" 🔵");
             }
+
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
               if (enemyCastIfMgk()) break;
               enemyAttackOrRest();
@@ -2266,7 +2272,7 @@ function enemyDodged(message="Missed, it evaded the grasp."){
   enemyAttackOrRest();
 }
 
-function enemyCastIfMgk(hit=true){
+function enemyCastIfMgk(hit=true,customHitMessage=""){
   switch (enemyType){
     case "Trap": //Rest to full if out of combat + mana
     case "Trap-Attack":
@@ -2280,9 +2286,12 @@ function enemyCastIfMgk(hit=true){
       break;
   }
 
-  if (enemyMgk>enemyMgkLost) {
-    enemyMgkLost++
-    displayEnemyCannotEffect();
+  if (parseInt(enemyMgk)>parseInt(enemyMgkLost)) {
+    var damageAndCost=1;
+    if (parseInt(enemyMgk)>(parseInt(enemyMgkLost)+1)) damageAndCost=2;
+
+    enemyMgkLost+=damageAndCost;
+    displayEnemyCannotEffect(); //Actually can, but this is just for effect
 
     if (procAbilityChance("💠",33)){
       logAction("🪄 ▸ 💠 Enemy spell resisted by <b>💠 Reflect Magic</b>.");
@@ -2290,10 +2299,14 @@ function enemyCastIfMgk(hit=true){
       return false;
     }
 
-    if (hit) {
-      logAction(enemyEmoji+" ▸ 🪄 Got hit by the enemy spell -1 💔");
-      playerHit(1,true,true);
+    if (hit && (customHitMessage=="")) {
+      logAction(enemyEmoji+" ▸ 🪄 Got hit by the enemy spell -"+damageAndCost+" 💔");
+    } else if (hit) {
+      logPlayerAction(actionString,customHitMessage+" -"+damageAndCost+" 💔");
     }
+
+    if (hit) playerHit(damageAndCost,true,true);
+
     return true;
   }
 }
