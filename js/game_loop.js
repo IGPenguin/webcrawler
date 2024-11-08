@@ -479,7 +479,7 @@ function generateNextEncounters(generatorID=1){
 
     case 0: //Prop or Small in container
       logGenerator("prop/small");
-      var type=chooseFrom(["Prop","Prop","Small"])
+      var type=chooseFrom(["Prop","Small"])
       if (type=="Prop") {
         pushEncounter(getRandomEncounter(["Prop"]));
       } else {
@@ -525,6 +525,12 @@ function generateNextEncounters(generatorID=1){
         //70% consumable
         if (procAbilityChance("",70+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
       }
+      break;
+
+    case 9: //Boss
+      logGenerator("boss");
+      pushEncounter(getRandomEncounter(["Boss"]));
+      pushEncounter(getRandomEncounter(["Item"],["Artifact"]),2)
       break;
 
     case 20: //House Small - 20% item
@@ -643,11 +649,6 @@ function generateNextEncounters(generatorID=1){
 
     case 99: //Random house
       generateNextEncounters(chooseFrom([20,30,31,40,50,60]))
-      break;
-
-    case 777: //Legendary item
-      logGenerator("legend");
-      pushEncounter(getRandomEncounter(["Item"],["Artifact"]))
       break;
 
     default:
@@ -2736,12 +2737,10 @@ function playerReincarnate(){
   nextEncounter();
 
   if (playerKarma>0){
-    var bonusItem=getRandomEncounter(["Item"],"","Forsaken Village");
+    var bonusItem=getRandomEncounter(["Item"],["Artifact"],"Forsaken Village");
     var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
-    //console.log("Bonus:\n"+bonusItem);
-
     pushEncounter(bonusWrapper,2);
     pushEncounter(bonusItem,3);
   }

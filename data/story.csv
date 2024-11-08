@@ -9,10 +9,9 @@ Depths of Slumber;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Turning Point;<b>Cho
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Focus on the details to <b>increase your chances.</b><br>n/a;
 
 //TEST Block 🎃
-Forsaken Village;❓;Legendary Item;Generator-777;0;0;0;0;0;0;XXX;XXX;XXX
 //;Forsaken Village;🪽;Angel Wing;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to recover <b>🟢 Energy</b> on use.;Gained skill <b>⚡️ Quick Reflexes</b>.
 //;Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-🪅📙🎨🖌️🖼️🦦👡
+🪅📙🎨🖌️🖼️🦦👡 🍰🥧🍚🍪🥟🍍🍆💐
 
 //Forsaken Village
 Forsaken Village;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
@@ -41,11 +40,7 @@ Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO Randomize boss
-Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-//;Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-//;Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-//;Forsaken Village;🐻;Fearsome Grizzly;Boss;4;3;2;0;5;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;❓;Item;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO REDO this area (target midgame)
 Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
