@@ -2638,7 +2638,7 @@ function playerConsumed(){
 
   if (missingHp > 0 || parseInt(enemyHp)!=0){
     var hpChange=parseInt(enemyHp);
-    if (enemyHp>0) hpChange+=parseInt(missingHp); //Another nasty hack, why is this so spaghetti
+    if (enemyHp>=0) hpChange+=parseInt(missingHp); //Another nasty hack, why is this so spaghetti
     if (hpChange<0) sign=""
     if (hpChange>0) playerHp += hpChange;
     consumedString += " "+sign+parseInt(hpChange) + " ❤️ ";
