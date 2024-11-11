@@ -2211,7 +2211,7 @@ function enemyKilled(){
 }
 
 function enemyKnockedOut(){
-  var enemyXP=parseInt(getEnemyXP());
+  var enemyXP=parseInt(getEnemyXP(1.25));
 
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out +"+enemyXP+" 🟡");
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
