@@ -34,17 +34,18 @@ layout: default
 <div id = "id_enemy_info">
   <div class="box-border-dynamic" style="position:relative; z-index:1;">
   <h2 id = "id_name" style="text-align:left;
+    font-size:18px;
     padding-left:8px;
     letter-spacing:0.8px;
     -webkit-text-stroke: 5px #121212;
       paint-order: stroke fill;
     margin-bottom:-13px;
-    margin-top:2px;
-    padding-top:2px;
+    padding-top:1px;
+    padding-bottom:1px;
     background-color:#202020;"/>
   </div>
 
-  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
+<div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <div id = "id_emoji_flipper" style="margin-bottom:14px;
@@ -155,7 +156,7 @@ layout: default
 
 </div>
 
-<div id="id_xp_progress" style="width:0%; height:1px; background:yellow; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
+<div id="id_xp_progress" style="width:0%; height:1px; background:#FFD940; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
@@ -171,7 +172,7 @@ layout: default
                                     padding-top:5px;
                                     padding-bottom:3px;
                                     margin-bottom:-11px;
-                                    margin-top:14px;
+                                    margin-top:12px;
                                     font-family:sans;
                                     box-shadow:
                                       0px 0px 0px 3px #000000;
