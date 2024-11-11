@@ -1447,7 +1447,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
 
               if (playerLootString.includes("🧂")){
-                logMessage="Added a tiny bit of salt.";
+                logMessage="Added a tiny pinch of salt.";
                 displayEnemyEffect("✨");
                 playerMgk++; //Regain lost mgk
               }
@@ -2136,12 +2136,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             copyAdventureToClipboard();
             break;
 
-          case "Upgrade":
-            logPlayerAction(actionString,"Decided against gaining a perk.");
-            playerName="Hardcore "+playerName;
+          case "Upgrade": //TODO refactor to something else
             displayPlayerCannotEffect();
-            isFishing=false;
-            animateFlipNextEncounter();
+            //logPlayerAction(actionString,"Decided against gaining a perk.");
+            //playerName="Hardcore "+playerName;
+            //isFishing=false;
             break;
 
           default:
