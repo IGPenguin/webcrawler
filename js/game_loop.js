@@ -58,6 +58,7 @@ var playerLck;
 var luckInterval = 30; //Lower to increase chances
 var playerInt;
 var playerAtk;
+var playerXP;
 var playerRested = false;
 var playerCooked = false;
 var seenLoot;
@@ -75,6 +76,7 @@ function renewPlayer(){ //Default values
   playerAtk = 1;
   playerLck = 0;
   playerInt = 1;
+  playerXP=0;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerLootString = "";
@@ -1966,9 +1968,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyInt < playerInt){
-              logPlayerAction(actionString,"Convinced them to disengage.");
-              displayPlayerEffect("💬");
-              nextEncounter();
+              enemyDisengage();
               break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
               logPlayerAction(actionString,"The words made them more upset +1 ⚔️");
@@ -2180,12 +2180,38 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   enemyHpLost = enemyHpLost + damage;
 
   if (enemyHpLost >= enemyHp) {
-    enemyHpLost=enemyHp; //Negate overkill damage
-    logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow.");
-    playerKills++;
-    animateFlipNextEncounter();
-    isFishing=false;
+    enemyKilled();
   }
+}
+
+function enemyKilled(){
+  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow.");
+  enemyHpLost=enemyHp; //Negate overkill damage
+
+  playerKarma-=1; console.log("playerKarma-- "+playerKarma);
+  playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
+  playerKills++;
+  isFishing=false;
+
+  animateFlipNextEncounter();
+}
+
+function enemyKnockedOut(){
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out.");
+  playerKarma+=1; console.log("playerKarma++ "+playerKarma);
+  playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
+
+  displayEnemyEffect("💤");
+  animateFlipNextEncounter();
+}
+
+function enemyDisengage(){
+  logPlayerAction(actionString,"Convinced them to disengage.");
+  playerKarma+=1; console.log("playerKarma++ "+playerKarma);
+  playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
+
+  displayPlayerEffect("💬");
+  nextEncounter();
 }
 
 function enemyKicked(){
@@ -2196,10 +2222,20 @@ function enemyKicked(){
   enemyRest(1);
 }
 
-function enemyKnockedOut(){
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out.");
-  displayEnemyEffect("💤");
-  animateFlipNextEncounter();
+function getEnemyXP(){
+  var enemyXP=0;
+  var statSum=0;
+
+  statSum+=parseInt(enemyHp);
+  statSum+=parseInt(enemySta);
+  statSum+=parseInt(enemyAtk);
+  //statSum+=enemyLck; - Does not make diff now.
+  //statSum+=enemyInt; - This might be OP
+  statSum+=parseInt(enemyMgk);
+
+  enemyXP=(parseInt(statSum)*10)/2;
+
+  return parseInt(enemyXP);
 }
 
 function enemyAttackOrRest(message=""){
