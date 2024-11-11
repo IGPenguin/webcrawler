@@ -119,7 +119,7 @@ layout: default
 
 <p style="margin:4px;"></p>
 <h3 id = "id_versus" style="margin-top:-13px;
-  margin-bottom:-14px;
+  margin-bottom:-13px;
     color:red;
     font-size:24px;
       letter-spacing:1.5px;
@@ -133,6 +133,8 @@ layout: default
       background-color:#202020;">
 
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
+
+<h3 id="id_player_level" style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:9px">Level</h3>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
@@ -150,6 +152,7 @@ layout: default
                                   margin-bottom:0px;
                                   -webkit-text-stroke: 5px #121212;
                                     paint-order: stroke fill;"/>
+
 </div>
 
 <div id="id_xp_progress" style="width:0%; height:1px; background:yellow; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>

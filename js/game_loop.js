@@ -681,6 +681,9 @@ function redraw(){
   toolbarCardUIElement = document.getElementById('id_toolbar_card');
   document.getElementById('id_player_name').innerHTML = playerName;
 
+  playerLevelUIELement = document.getElementById('id_player_level');
+  playerLevelUIELement.innerHTML = decorateStatusText("","Level "+playerLevel,colorGold);
+
   var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp);
   if ((playerHpMax-playerHp)>0) playerStatusString+=emptySymbol.repeat(playerHpMax-playerHp);
 
@@ -2954,6 +2957,8 @@ function adjustEncounterButtons(){
 
       document.getElementById('button_grab').innerHTML="🍴 Eat";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      if (playerLootString.includes("⛺️")) setButton('button_sleep',"⛺️ Camp");
+
       break;
 
     case "Altar":
