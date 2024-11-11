@@ -120,7 +120,6 @@ Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to under
 Forsaken Village;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Forsaken Village;🦢;Possesive Swan;Standard;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Defeated by an angry bird.
 Forsaken Village;🐁;Albino Rat;Standard;2;1;2;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-//;Forsaken Village;🐕;Stray Hound;Standard;2;1;1;0;0;0;Lost Animal;This is not a good boy.<br>;Devoured to the bone.
 🦫
 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got their heart ripped out!
@@ -151,6 +150,7 @@ Forsaken Village;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not car
 
 Forsaken Village;🐻;Fearsome Grizzly;Boss;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 Forsaken Village;🤡;Cultist Fanatic;Boss;4;2;3;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got devoured alive.
+//TODO Add 2 more boss variants
 
 Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
@@ -312,7 +312,6 @@ Depriving Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could p
 Depriving Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Depriving Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;2;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
 Depriving Fairyland;🧞‍♀️;Generous Genie;Container-Friend;0;0;0;0;0;0;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
-👰🏻‍♀️👸🫅🧙‍♀️🧙🧙
 
 Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
 Depriving Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
@@ -335,7 +334,6 @@ Depriving Fairyland;🕷️;Black Widow;Small;1;5;1;0;-1;0;Imminent Danger;Venom
 Depriving Fairyland;🦋;Skyblue Butterfly;Small;1;1;1;0;-1;1;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
 Depriving Fairyland;🦀;Tiny Crab;Trap;1;2;1;0;-1;0;Crustacean;Boasts painful pinchers.<br>;Got pinched to death.
 Depriving Fairyland;🐜;Bullet Ant;Small;1;3;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
-🐛🦟🦗
 
 Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
 Depriving Fairyland;🦚;Pearlescent Bird;Standard;3;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
@@ -365,6 +363,11 @@ Depriving Fairyland;👹;Sinister Devil;Demon;2;1;1;0;-1;1;Imminent Threat;Laugh
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 Depriving Fairyland;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;2;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
 Depriving Fairyland;🧹;Cursed Broom;Item;1;2;1;0;-1;0;Cursed Object;The handle has a strange glow.<br>;Got stuck with it
+
+Depriving Fairyland;🦀;Titan Crab;Boss;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
+Depriving Fairyland;🐉;Massive Dragon;Boss;6;3;1;0;-1;2;Legendary Creature;Hungry maw full of magical teeth.;Got their head chewed off.
+Depriving Fairyland;🦕;Ancient Lizard;Boss;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
+Depriving Fairyland;🦖;Ferocious Raptor;Boss;5;5;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.;Got chewed with dozens of teeth.
 
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.>;
 Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
@@ -437,3 +440,16 @@ Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excess
 Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
 Depriving Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
+
+🧟🧟‍♀️🧟‍♂️🧛🏼‍♂️🧛🏼🧛🏼‍‍👰🏻‍♀️🤴🏻👸🏻🦟🦗🧙🏻🧙🏻‍♀️🧙🏻‍♂️
+Bleak Necropolis;🕋;Burial Chamber;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
+Bleak Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+Bleak Necropolis;🚪;Strange Door;Prop;0;0;0;0;0;1;Unexpected Object;Ornate door shimmering at the back wall.<br>Where could it lead to?;
+Bleak Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Disgusting on sight.<br>;Dug out a hefty worm.
+Bleak Necropolis;🫁;Collapsed Lungs;Curse;0;0;0;-1;0;0;Disturbing Sight;Disgusting on sight.<br>;
+Bleak Necropolis;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
+Bleak Necropolis;🪑;Scratched Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
+Bleak Necropolis;🦇;Screaming Bat;Standard;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>Goosebumps.;Gloomy Cavern;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got ripped apart
+Bleak Necropolis;🧙;Tired Old Man;Recruit;0;0;0;0;0;0;Cursed Human Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
+Bleak Necropolis;🎃;Overgrown Pumpkin;Boss;0;0;0;0;0;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
+Bleak Necropolis;🧞;Evil Genie;Boss;0;0;0;0;2;3;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
