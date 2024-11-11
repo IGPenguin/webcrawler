@@ -972,7 +972,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
             logPlayerAction(actionString,"Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
-            animateFlipNextEncounter();
+            nextEncounter();
             break;
 
           case "Trap-Attack": //Attacking causes you damage
@@ -1051,7 +1051,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               logPlayerAction(actionString,openMessage);
               displayEnemyEffect("〽️");
-              animateFlipNextEncounter();
+              nextEncounter();
               break;
             }
             logPlayerAction(actionString,"The attack had no effect -1 🟢");
@@ -1358,7 +1358,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               playerMgk-=2;
               logPlayerAction(actionString,"Unlocked using a spell -2 🔵");
-              animateFlipNextEncounter();
+              nextEncounter();
               break;
             }
           }
@@ -1423,7 +1423,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
             displayEnemyEffect("🔥");
             isFishing=false;
-            animateFlipNextEncounter();
+            nextEncounter();
             break;
 
           case "Consumable":
@@ -1474,7 +1474,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
               displayEnemyEffect("🔥");
               isFishing=false;
-              animateFlipNextEncounter();
+              nextEncounter();
               break;
               }
             logPlayerAction(actionString,"The spell had no effect on that -1 🔵");
@@ -1523,7 +1523,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=(-1*enemyInt)){
               logPlayerAction(actionString,"Managed to keep it together.");
-              animateFlipNextEncounter();
+              nextEncounter();
             } else {
               logPlayerAction(actionString,"Giving the best, but no effect.");
               displayPlayerCannotEffect();
@@ -1535,7 +1535,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ( (enemyMgk-enemyMgkLost) <= playerMgkMax ){
               logPlayerAction(actionString,"Banished them from this world!");
               displayEnemyEffect("🔥");
-              animateFlipNextEncounter();
+              nextEncounter();
               break;
             } else {
               logPlayerAction(actionString,"Could not overpower this entity!");
@@ -1944,7 +1944,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
                 if (playerUseItem("🗝️","Unlocked it with the key.","Cannot open, it is locked tight.",false)){
-                  animateFlipNextEncounter();
+                  nextEncounter();
                 } else {
                   displayPlayerCannotEffect();
                 }
@@ -2222,7 +2222,7 @@ function enemyKilled(){
   playerKills++;
   isFishing=false;
 
-  animateFlipNextEncounter();
+  nextEncounter();
 }
 
 function enemyKnockedOut(){
@@ -2233,7 +2233,7 @@ function enemyKnockedOut(){
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
   displayEnemyEffect("💤");
-  animateFlipNextEncounter();
+  nextEncounter();
 }
 
 function enemyDisengage(){
