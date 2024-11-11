@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/11/24 • 5:35 pm"
-var initialEncounterOverride=0; //7 skips tutorial
+var versionCode = "ver. 11/11/24 • 5:54 pm"
+var initialEncounterOverride=0; //6 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -1094,6 +1094,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (enemyCastIfMgk(false)){
                 logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+                displayEnemyCannotEffect();
                 displayPlayerEffect("🌀");
                 break;
               }
@@ -1105,6 +1106,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
 
               enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
+              displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
             }
             break;
@@ -1138,11 +1140,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
               logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+              displayEnemyCannotEffect();
+              displayPlayerEffect("🌀");
               break;
             }
 
             if (playerUseStamina(1,noStaForRollMessage)){
               enemyStaminaChangeMessage(-1,"Dodged a heavy attack -1 🟢","Rolled around wasting energy  -1 🟢");
+              displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
             }
             break;
