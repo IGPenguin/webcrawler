@@ -936,6 +936,7 @@ function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
 function updateXPProgress(){
   var playerXpProgressUIElement = document.getElementById('id_xp_progress');
   var progressbarWidth=(100/playerXPThreshold)*playerXP;
+  if (progressbarWidth>99) progressbarWidth=99;
   console.log("progressbarwidth:"+progressbarWidth);
   playerXpProgressUIElement.style.width=progressbarWidth+"%";
 }
@@ -2672,6 +2673,11 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     playerHpMax += parseInt(bonusHp);
     if (playerHp>playerHpMax) playerHp = playerHpMax
     gainedString += changeSign+bonusHp + " "+hpEmoji;
+    if (playerHp<=0) {
+      enemyMsg=gainedString;
+      playerHit(0,false,true);
+      return;
+    }
   }
 
   if (logMessage) {
