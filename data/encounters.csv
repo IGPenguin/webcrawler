@@ -447,7 +447,8 @@ Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a
 Depriving Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
-🧟🧟‍♀️🧟‍♂️🧛🏼‍♂️🧛🏼🧛🏼‍‍👰🏻‍♀️🤴🏻👸🏻🧙🏻🧙🏻‍♀️🧙🏻‍♂️
+
+//Afflicted Necropolis
 🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
 
 Afflicted Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;Moved past that.
@@ -464,7 +465,13 @@ Afflicted Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Dis
 
 Afflicted Necropolis;🕋;Burial Chamber;Locked-Container-3;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 
+Depriving Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
+
 Afflicted Necropolis;🫁;Collapsed Lungs;Curse;0;0;0;-1;0;0;Disturbing Sight;Disgusting on sight.<br>;
+
+Traps
+
+Altar
 
 Afflicted Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
 Afflicted Necropolis;🪱;Bloodsucking Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -481,7 +488,11 @@ Afflicted Necropolis;🦟;Pesky Mosqito;Small;3;2;2;0;5;0;Insect;Screams echo ar
 Afflicted Necropolis;🦗;Ferocious Cricket;Small;3;2;2;0;5;0;Insect;Screams echo around the crypt.<br>Goosebumps.;Gloomy Cavern;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got ripped apart
 Afflicted Necropolis;🪳;Glowing Cockroach;Small;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 
-Standard
+Pet
+
+Friend 👰🏻‍♀️🤴🏻👸🏻
+
+Standard 🧟🧟‍♀️🧟‍♂️🧛🏼‍♂️🧛🏼🧛🏼‍‍🧙🏻🧙🏻‍♀️🧙🏻‍♂️
 
 Afflicted Necropolis;🧙;Tired Old Man;Recruit;0;0;0;0;0;0;Cursed Human Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
 
@@ -489,5 +500,5 @@ Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams 
 
 Heavy
 
-Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss;0;0;0;0;0;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
-Afflicted Necropolis;🧞;Evil Genie;Boss;0;0;0;0;2;3;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
+Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss;10;8;3;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
+Afflicted Necropolis;🧞;Evil Genie;Boss;6;0;0;0;2;6;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
