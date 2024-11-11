@@ -1344,7 +1344,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (playerMgkMax<1){
+          if ((!playerLootString.includes("🧂")) && (playerMgk<1)){
             logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
             break;
@@ -1363,7 +1363,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
           }
 
-          if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { break; } //Casting is never free, upgrd handled above
           if (enemyType!="Death" && playerCooked!=true) displayPlayerEffect("🪄"); //I'm lazy
 
         switch (enemyType){
@@ -1430,22 +1429,33 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Consumable-Container":
             if (!playerCooked) {
+              var logMessage="";
+
               if (enemyHp<0){
-                logPlayerAction(actionString,"Cooked it with a spell -1 🔵");
+                logMessage="Cooked it with a spell -1 🔵";
                 enemyHp=0;
                 enemyMsg="Actually tasted good";
+                displayEnemyEffect("🔥");
               } else {
-                logPlayerAction(actionString,"Roasted a crunchy crust -1 🔵");
+                logMessage="Roasted a crunchy crust -1 🔵";
                 enemySta=parseInt(enemySta)+1;
                 enemyMsg="Tasted better than usual";
+                displayEnemyEffect("🔥");
               }
+
+              if (playerLootString.includes("🧂")){
+                logMessage="Added a tiny bit of salt.";
+                displayEnemyEffect("✨");
+                playerMgk++; //Regain lost mgk
+              }
+
               playerCooked=true;
-              displayEnemyEffect("🔥");
+              logPlayerAction(actionString,logMessage);
               animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
             } else {
               playerMgk++ //Regain the lost mana
               displayPlayerCannotEffect();
-              logPlayerAction(actionString, "Already cooked this food!")
+              logPlayerAction(actionString, "Already improved this food!")
             }
             break;
 
@@ -2939,6 +2949,7 @@ function adjustEncounterButtons(){
     case "Consumable":
     case "Consumable-Container":
       if (playerMgk>0) setButton('button_cast',"🔥 Cook");
+      if (playerLootString.includes("🧂")) setButton('button_cast',"🧂 Salt");
       setButton('button_roll',"❌ Ditch");
 
       document.getElementById('button_grab').innerHTML="🍴 Eat";
