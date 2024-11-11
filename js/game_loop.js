@@ -2187,7 +2187,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 function enemyKilled(){
   var enemyXP=parseInt(getEnemyXP());
 
-  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow."); //TODO display XP gain
+  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow +"+enemyXP+" 🟡");
   enemyHpLost=enemyHp; //Negate overkill damage
 
   playerKarma-=1; console.log("playerKarma-- ("+playerKarma+")");
@@ -2199,18 +2199,22 @@ function enemyKilled(){
 }
 
 function enemyKnockedOut(){
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out.");
+  var enemyXP=parseInt(getEnemyXP());
+
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out +"+enemyXP+" 🟡");
   playerKarma+=1; console.log("playerKarma++ ("+playerKarma+")");
-  playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
+  playerXP+=enemyXP; console.log("XP gained: "+ enemyXP + " ("+playerXP+")");
 
   displayEnemyEffect("💤");
   animateFlipNextEncounter();
 }
 
 function enemyDisengage(){
-  logPlayerAction(actionString,"Convinced them to disengage.");
+  var enemyXP=parseInt(getEnemyXP(1.5));
+
+  logPlayerAction(actionString,"Convinced them to disengage +"+enemyXP+" 🟡");
   playerKarma+=1; console.log("playerKarma++ ("+playerKarma+")");
-  playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
+  playerXP+=enemyXP; console.log("XP gained: "+ enemyXP + " ("+playerXP+")");
 
   displayPlayerEffect("💬");
   nextEncounter();
@@ -2224,7 +2228,7 @@ function enemyKicked(){
   enemyRest(1);
 }
 
-function getEnemyXP(){
+function getEnemyXP(multiplier=1){
   var enemyXP=0;
   var statSum=0;
 
@@ -2235,7 +2239,7 @@ function getEnemyXP(){
   //statSum+=enemyInt; - This might be OP
   statSum+=parseInt(enemyMgk);
 
-  enemyXP=(parseInt(statSum)*10)/2;
+  enemyXP=(((parseInt(statSum)*10)/2)*multiplier);
 
   return parseInt(enemyXP);
 }
