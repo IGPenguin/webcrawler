@@ -1614,7 +1614,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Offered blood -1 💔 for power +1 🔵");
+            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+1 🔵 Mana</b>");
             displayPlayerCannotEffect();
             playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
