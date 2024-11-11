@@ -937,7 +937,6 @@ function updateXPProgress(){
   var playerXpProgressUIElement = document.getElementById('id_xp_progress');
   var progressbarWidth=(100/playerXPThreshold)*playerXP;
   if (progressbarWidth>97) progressbarWidth=97;
-  console.log("progressbarwidth:"+progressbarWidth);
   playerXpProgressUIElement.style.width=progressbarWidth+"%";
 }
 
@@ -2456,7 +2455,7 @@ function animateVersus(time = "1"){ //TODO: Remove this and all commented out ca
 
 //Player
 function playerCheckLevelUp(){
-  var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:Select a <b>character perk</b> from the options below.<br>","message:"]
+  var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
     playerLevel++;
