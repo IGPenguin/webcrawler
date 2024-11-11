@@ -135,8 +135,8 @@ Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blend
 Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
 Forsaken Village;🐀;Dire Rat;Swift;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 
-Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
-Forsaken Village;🪡;Possesed Needle;Demon;1;1;2;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
+Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;3;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
+Forsaken Village;🪡;Possesed Needle;Demon;1;2;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 Forsaken Village;🧹;Possesed Broom;Demon;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 Forsaken Village;👘;Haunted Robe;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Suffocated by floating clothing.
 
@@ -231,11 +231,11 @@ Forsaken Village;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all sh
 Forsaken Village;🍉;Sweet Melon;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>+❤️ Health</b> and <b>🟢 Energy</b>.;
 Forsaken Village;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>+❤️ Health</b> and <b>🟢 Energy</b>.;
 
+//TODO add explanations
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
-;//Forsaken Village;🔱;Altar of Haste;Altar;-1;0;1;0;0;0;Ritual Place;There's a blood on the surface.<br>;
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
-Forsaken Village;🇻🇦;Altar of Worship;Altar;0;0;0;2;0;0;Holy Book;Place of thoughts and prayers.<br>;Prayed to the Greater Good
+Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacret texts.<br>;Gained deeper insight
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 //Depriving Fairyland
@@ -248,7 +248,9 @@ Depriving Fairyland;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place 
 Depriving Fairyland;🌻;Lonely Sunflower;Prop;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 Depriving Fairyland;🪻;Hyacinth Patch;Prop;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
-🗼🪐⛳️⛺️🏕️
+Depriving Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;Weather Condition;Time for well deserved rest.<br>;
+Depriving Fairyland;☀️;Sunny Morning;Prop;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
+🗼⛳️⛺️🏕️
 
 Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Depriving Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
@@ -280,9 +282,10 @@ Depriving Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and host
 Depriving Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Depriving Fairyland;🛖;Chief's Hut;Container-4;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
-Depriving Fairyland;⛰️;Rocky Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
+Depriving Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Depriving Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Depriving Fairyland;🌋;Volcano Throat;Container-5;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
+Depriving Fairyland;🏛️;Ancient Temple;Container-5;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
 
 Depriving Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Depriving Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
@@ -292,9 +295,10 @@ Depriving Fairyland;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortu
 Depriving Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 Depriving Fairyland;🗯️;Unknown Voice;Curse;-1;0;0;0;-1;0;Misfortune;Its words make no sense.<br>;Suffered a nasty curse
 
+//TODO add explanations
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods
 Depriving Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
-Depriving Fairyland;🌕;Full Moon;Altar;-1;0;0;0;0;1;Ritual Time;Eerie voice asks for blood.<br>;Offered their blood
+Depriving Fairyland;🌕;Full Moon;Altar;-2;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;
 Depriving Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
 Depriving Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
 
@@ -340,15 +344,16 @@ Depriving Fairyland;🦋;Skyblue Butterfly;Small;1;0;1;0;-1;2;Stunning Insect;Do
 Depriving Fairyland;🦀;Tiny Crab;Trap;1;2;1;0;-1;0;Crustacean;Boasts painful pinchers.<br>;Got pinched to death.
 Depriving Fairyland;🐜;Bullet Ant;Small;1;3;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
 
-Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;1;0;10;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
-Depriving Fairyland;🦚;Pearlescent Bird;Standard;3;1;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
-Depriving Fairyland;🦡;Honey Badger;Standard;3;2;2;0;4;0;Wild Animal;The creature boasts sinister energy.<br>;
-Depriving Fairyland;🦎;Komodo Dragon;Standard;3;2;2;0;5;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
-Depriving Fairyland;🕷️;Huge Tarantula;Standard;3;3;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
+Depriving Fairyland;🐺;Prowling Wolf;Standard;3;4;2;0;10;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
+Depriving Fairyland;🦚;Pearlescent Bird;Standard;3;2;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
+Depriving Fairyland;🦡;Honey Badger;Standard;4;3;2;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;
+Depriving Fairyland;🦎;Komodo Dragon;Standard;3;3;2;0;-1;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
+Depriving Fairyland;🕷️;Huge Tarantula;Standard;3;3;2;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
+Depriving Fairyland;🦘;Vengeful 'Roo;Standard;4;3;3;0;4;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
 
-Depriving Fairyland;🧌;Old Troll;Recruit;4;1;1;0;2;2;Creature;Not happy about having a company.<br>;Turned into goulash.
-Depriving Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;2;2;0;-1;1;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
-Depriving Fairyland;🧙‍♂️;Cultist Elder;Recruit;1;1;1;0;4;4;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Depriving Fairyland;🧌;Old Troll;Recruit;4;2;2;0;2;2;Creature;Not happy about having a company.<br>;Turned into goulash.
+Depriving Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;2;2;0;-1;3;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
+Depriving Fairyland;🧙‍♂️;Cultist Elder;Recruit;1;2;1;0;4;4;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
 Depriving Fairyland;🦜;Annoying Parrot;Swift;2;2;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
 Depriving Fairyland;🥷;Cultist Elite;Swift;2;3;3;0;5;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
@@ -357,7 +362,7 @@ Depriving Fairyland;🐆;Daunting Panther;Swift;3;2;2;0;5;0;Wild Beast;Seems hav
 Depriving Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
 Depriving Fairyland;🦟;Oversize Mosqito;Swift;2;2;2;0;-1;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
 
-Depriving Fairyland;🦌;Frantic Hooves;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
+Depriving Fairyland;🐃;Frantic Horns;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
 Depriving Fairyland;🦧;Ginger Ape;Heavy;2;2;2;0;3;0;Wild Beast;Probably has no soul.<br>;
 Depriving Fairyland;🦍;Native Ape;Heavy;3;2;1;0;3;0;Wild Beast;Buffed and ready to fight.<br>;
 Depriving Fairyland;🦏;Bulky Rhino;Heavy;3;3;1;0;5;0;Wild Beast;Its majestic horn looks rather deadly.<br>;
@@ -367,7 +372,6 @@ Depriving Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Bewar
 Depriving Fairyland;👹;Sinister Devil;Demon;2;1;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 Depriving Fairyland;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;2;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
-Depriving Fairyland;🧹;Cursed Broom;Item;1;2;1;0;-1;0;Cursed Object;The handle has a strange glow.<br>;Got stuck with it
 
 Depriving Fairyland;🦀;Titan Crab;Boss;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
 Depriving Fairyland;🐉;Massive Dragon;Boss;6;3;1;0;-1;2;Legendary Creature;Hungry maw full of magical teeth.;Got their head chewed off.
@@ -447,6 +451,8 @@ Depriving Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is l
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
 🧟🧟‍♀️🧟‍♂️🧛🏼‍♂️🧛🏼🧛🏼‍‍👰🏻‍♀️🤴🏻👸🏻🦟🦗🧙🏻🧙🏻‍♀️🧙🏻‍♂️
+🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
+
 Bleak Necropolis;🕋;Burial Chamber;Locked-Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 Bleak Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 Bleak Necropolis;🚪;Strange Door;Prop;0;0;0;0;0;1;Unexpected Object;Ornate door shimmering at the back wall.<br>Where could it lead to?;
