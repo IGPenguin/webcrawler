@@ -48,8 +48,7 @@ Loot;🦐;Fresh Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight 
 Loot;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
-Loot;🧪;Unknown Potion;Consumable;-2;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>;Left a funny taste in mouth
-Loot;🪸;Radiating Coral;Consumable;-3;0;0;0;0;1;Questionable Snack;Its surface has an eerie glow.<br>;Brutal spasms took a toll
+Loot;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Its surface has an eerie glow.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Brutal spasms took a toll
 Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated upon reaching the throat
 
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;

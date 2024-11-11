@@ -49,9 +49,8 @@ Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 
 //TODO REDO this area (target midgame)
-Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
-Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
-Depriving Fairyland;🎶;Lovely Song;Prop;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
+//;Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
+//;Depriving Fairyland;👤;Shaping Decision;Upgrade;0;0;0;0;0;0;Upgrade Time;<b>Choose a perk</b> to shape your character.<br>;
 //IMPORT FROM VILLAGE - START
 Depriving Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 

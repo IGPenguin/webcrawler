@@ -142,8 +142,8 @@ Forsaken Village;👘;Haunted Robe;Demon;1;1;1;0;-1;0;Animated Object;Probably a
 
 Forsaken Village;🦹‍♀️;Cultist Rager;Heavy;2;2;1;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Forsaken Village;🐗;Old Warthog;Heavy;2;2;1;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
-Forsaken Village;🦌;Alpha Deer;Heavy;2;2;1;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Forsaken Village;🐗;Old Warthog;Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
+Forsaken Village;🦌;Alpha Deer;Heavy;2;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Forsaken Village;🦬;Enraged Bison;Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
 Forsaken Village;🐂;Horny Bull;Heavy;2;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Forsaken Village;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
@@ -239,6 +239,8 @@ Forsaken Village;🇻🇦;Altar of Worship;Altar;0;0;0;2;0;0;Holy Book;Place of 
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 //Depriving Fairyland
+Depriving Fairyland;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Depriving Fairyland;🌿;Thick Growth;Container;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
 Depriving Fairyland;🎶;Distant Humming;Prop;0;0;0;0;0;0;Familiar Melody;Impossible to tell the source direction.<br>;
 Depriving Fairyland;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Depriving Fairyland;🌻;Lonely Sunflower;Prop;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
@@ -247,11 +249,10 @@ Depriving Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long ti
 🗼🎋🌵🌴🪐⛳️⛺️🏕️
 
 Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
+Depriving Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
 Depriving Fairyland;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
 Depriving Fairyland;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
-Depriving Fairyland;🌾;Tall Grass;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Depriving Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
-Depriving Fairyland;🌻;Lonely Sunflower;Container;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 Depriving Fairyland;🕸;Spider Cocoon;Container;0;0;0;0;0;0;Someone's Lunch;Seems to have something inside.<br>;Grossed out by the sticky webs.
 Depriving Fairyland;🪺;Unguarded Nest;Container;0;0;0;0;0;0;Opportunity;Whatever built this isn't far.<br>;
 Depriving Fairyland;🍯;Sticky Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>;Something has been revealed.
