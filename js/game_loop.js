@@ -1456,7 +1456,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,logMessage);
               animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
             } else {
-              playerMgk++ //Regain the lost mana
+              if (!playerPartyString.includes("🧂") playerMgk++ //Regain the lost mana if no salt shaker
               displayPlayerCannotEffect();
               logPlayerAction(actionString, "Already improved this food!")
             }
@@ -2489,7 +2489,7 @@ function playerRest(){
   if (!playerRested){
     if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
       playerGetStamina(playerStaMax-playerSta,true);
-      playerMgk=playerMgkMax;
+      if (playerMgk<playerMgkMax) playerMgk=playerMgkMax;
       playerRested=true;
 
       logPlayerAction(actionString,"Rested well, recovering all resources.");
