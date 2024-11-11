@@ -935,9 +935,9 @@ function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
 
 function updateXPProgress(){
   var playerXpProgressUIElement = document.getElementById('id_xp_progress');
-  var progressbarWidth=(playerXPThreshold/100)*playerXP
+  var progressbarWidth=(100/playerXPThreshold)*playerXP;
   console.log("progressbarwidth:"+progressbarWidth);
-  playerXpProgressUIElement.style.width=progressbarWidth+"%"; //Visual variety ++
+  playerXpProgressUIElement.style.width=progressbarWidth+"%";
 }
 
 //Game logic
@@ -2460,6 +2460,8 @@ function playerCheckLevelUp(){
   if (playerXP>=playerXPThreshold){
     playerLevel++;
     playerXPThreshold=playerLevel*100;
+    updateXPProgress();
+    console.log("playerXPThreshold:"+playerXPThreshold);
     linesStory.splice(encounterIndex+1,0,levelUp);
     logAction("🟡 ▸ <b>🎉 Level Up!</b> Select a character perk.")
   }
