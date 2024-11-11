@@ -152,6 +152,8 @@ layout: default
                                     paint-order: stroke fill;"/>
 </div>
 
+<div id="id_xp_progress" style="width:98%; height:1px; background:yellow; margin-top:-2px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
+
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                           margin-bottom:14px;
