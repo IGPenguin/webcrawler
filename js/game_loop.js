@@ -3217,7 +3217,7 @@ function registerClickListeners(){
 //Social features
 function generateCharacterShareString(){
   var characterShareString="";
-    characterShareString+="<b>"+playerName+"</b>";
+    characterShareString+="<b>"+playerName+"</b> "+"•  Lvl "+playerLevel;
     characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
     if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
     if ((playerPartyString.length+playerLootString.length)>0) characterShareString+="\n";
@@ -3225,7 +3225,7 @@ function generateCharacterShareString(){
     if (playerLootString.length > 0) characterShareString += playerLootString;
     characterShareString += "\nAwoken: "+adventureStartTime;
     characterShareString += "\nKillcount: "+playerKills;
-    characterShareString += "\n\nDeceased: "+adventureEndTime;
+    characterShareString += "\nDeceased: "+adventureEndTime;
     characterShareString += adventureEndReason+" (#"+adventureEncounterCount+")";
 
   return characterShareString;
