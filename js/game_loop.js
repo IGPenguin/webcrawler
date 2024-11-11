@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/11/24 • 7:44 pm"
+var versionCode = "ver. 11/11/24 • 10:20 pm"
 var initialEncounterOverride=0; //6 skips tutorial
 
 //To handle notes and death in .csv
@@ -1366,7 +1366,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
           }
 
-          if (enemyType!="Death" && playerCooked!=true) displayPlayerEffect("🪄"); //I'm lazy
+          if (enemyType!="Death" && playerCooked!=true && (enemyType=="Consumable" && !playerLootString.includes("🧂"))) displayPlayerEffect("🪄"); //I'm lazy
 
         switch (enemyType){
           case "Friend":
@@ -1863,7 +1863,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Small":
-            if ((enemySta-enemyStaLost)==0) {
+            if ((enemySta-enemyStaLost)==0 && (enemyMgk-enemyMgkLost)==0) {
               logPlayerAction(actionString,"Grabbed it into their bag.");
               playerLootString+=enemyEmoji;
               displayEnemyEffect("👋");
