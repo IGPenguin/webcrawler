@@ -3236,7 +3236,9 @@ function generateCharacterLegend(logLength=0) {
   var tempString = characterLegend.split("\n").slice(2);
   characterLegend = tempString.join("\n");
   characterLegend = characterLegend.replaceAll("&nbsp;"," ").substring(1);
-  if (logLength>0) characterLegend = "Limited to last "+logLength+" events...\n"+characterLegend.split("\n").splice(0,characterLegend.length-logLength).join("\n");
+  if (parseInt(logLength)>0) {
+    characterLegend="Limited to last "+logLength+" events...\n"+characterLegend.split("\n").slice(-logLength-1).join("\n");
+  }
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
   characterLegend += "\nhttps://igpenguin.github.io/webcrawler";
