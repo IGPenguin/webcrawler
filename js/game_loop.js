@@ -2185,11 +2185,13 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 }
 
 function enemyKilled(){
-  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow.");
+  var enemyXP=parseInt(getEnemyXP());
+
+  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow."); //TODO display XP gain
   enemyHpLost=enemyHp; //Negate overkill damage
 
-  playerKarma-=1; console.log("playerKarma-- "+playerKarma);
-  playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
+  playerKarma-=1; console.log("playerKarma-- ("+playerKarma+")");
+  playerXP+=enemyXP; console.log("XP gained: "+ enemyXP + " ("+playerXP+")");
   playerKills++;
   isFishing=false;
 
@@ -2198,7 +2200,7 @@ function enemyKilled(){
 
 function enemyKnockedOut(){
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out.");
-  playerKarma+=1; console.log("playerKarma++ "+playerKarma);
+  playerKarma+=1; console.log("playerKarma++ ("+playerKarma+")");
   playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
 
   displayEnemyEffect("💤");
@@ -2207,7 +2209,7 @@ function enemyKnockedOut(){
 
 function enemyDisengage(){
   logPlayerAction(actionString,"Convinced them to disengage.");
-  playerKarma+=1; console.log("playerKarma++ "+playerKarma);
+  playerKarma+=1; console.log("playerKarma++ ("+playerKarma+")");
   playerXP+=getEnemyXP(); console.log("XP gained: "+ getEnemyXP() + " ("+playerXP+")");
 
   displayPlayerEffect("💬");
