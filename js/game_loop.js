@@ -701,7 +701,7 @@ function redraw(){
     document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;";
   }
   if (playerLootString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "<b>Bag: </b> "+playerLootString;
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Bag:</b> "+playerLootString;
   }
   if (playerPartyString.length+playerLootString.length == 0) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
