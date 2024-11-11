@@ -893,6 +893,7 @@ function redraw(){
   }
 
   buttonsContainer = document.getElementById('id_buttons');
+  updateXPProgress();
   adjustEncounterButtons();
 }
 
@@ -930,6 +931,13 @@ function appendEnemyStats(){
 
 function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
   return emoji+"&nbsp;<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
+}
+
+function updateXPProgress(){
+  var playerXpProgressUIElement = document.getElementById('id_xp_progress');
+  var progressbarWidth=(playerXPThreshold/100)*playerXP
+  console.log("progressbarwidth:"+progressbarWidth);
+  playerXpProgressUIElement.style.width=progressbarWidth+"%"; //Visual variety ++
 }
 
 //Game logic
