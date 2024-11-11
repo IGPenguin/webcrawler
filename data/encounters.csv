@@ -4,22 +4,23 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Forsaken Village;🌿;Thicket Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Forsaken Village;🌾;Thick Grass;Prop;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🌱;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
 Forsaken Village;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
-Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
-Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;Moved past that.
 Forsaken Village;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 Forsaken Village;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+//;Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
+//;Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;Moved past that
 //;Forsaken Village;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;Moved past that.
+//;Forsaken Village;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
-Forsaken Village;🪵;Chopped Timber;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
+Forsaken Village;🌾;Thick Grass;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
 Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
@@ -27,7 +28,6 @@ Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something
 Forsaken Village;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Forsaken Village;🪺;Bird Nest;Container;0;0;0;0;0;0;Container;Unattended nest with something inside.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
-Forsaken Village;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Forsaken Village;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
 
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was a creature inside!
