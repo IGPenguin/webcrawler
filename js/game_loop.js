@@ -1442,7 +1442,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else {
                 logMessage="Roasted a crunchy crust -1 🔵";
                 enemySta=parseInt(enemySta)+1;
-                enemyMsg="Tasted better than usual";
+                enemyMsg="That was tasty";
                 displayEnemyEffect("🔥");
               }
 
@@ -1456,7 +1456,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,logMessage);
               animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
             } else {
-              if (!playerPartyString.includes("🧂") playerMgk++ //Regain the lost mana if no salt shaker
+              if (!playerPartyString.includes("🧂")) playerMgk++ //Regain the lost mana if no salt shaker
               displayPlayerCannotEffect();
               logPlayerAction(actionString, "Already improved this food!")
             }
