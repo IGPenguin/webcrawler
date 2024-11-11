@@ -59,6 +59,8 @@ var luckInterval = 30; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerXP;
+var playerLevel;
+var playerXPThreshold;
 var playerRested = false;
 var playerCooked = false;
 var seenLoot;
@@ -77,6 +79,8 @@ function renewPlayer(){ //Default values
   playerLck = 0;
   playerInt = 1;
   playerXP=0;
+  playerLevel=1;
+  playerXPThreshold=playerLevel*100;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerLootString = "";
@@ -2190,8 +2194,8 @@ function enemyKilled(){
   logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow +"+enemyXP+" 🟡");
   enemyHpLost=enemyHp; //Negate overkill damage
 
-  playerKarma-=1; console.log("playerKarma-- ("+playerKarma+")");
-  playerXP+=enemyXP; console.log("XP gained: "+ enemyXP + " ("+playerXP+")");
+  playerKarma-=1; console.log("karma-- ("+playerKarma+")");
+  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
   playerKills++;
   isFishing=false;
 
@@ -2202,8 +2206,8 @@ function enemyKnockedOut(){
   var enemyXP=parseInt(getEnemyXP());
 
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out +"+enemyXP+" 🟡");
-  playerKarma+=1; console.log("playerKarma++ ("+playerKarma+")");
-  playerXP+=enemyXP; console.log("XP gained: "+ enemyXP + " ("+playerXP+")");
+  playerKarma+=1; console.log("karma++ ("+playerKarma+")");
+  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
   displayEnemyEffect("💤");
   animateFlipNextEncounter();
@@ -2213,8 +2217,8 @@ function enemyDisengage(){
   var enemyXP=parseInt(getEnemyXP(1.5));
 
   logPlayerAction(actionString,"Convinced them to disengage +"+enemyXP+" 🟡");
-  playerKarma+=1; console.log("playerKarma++ ("+playerKarma+")");
-  playerXP+=enemyXP; console.log("XP gained: "+ enemyXP + " ("+playerXP+")");
+  playerKarma+=1; console.log("karma++ ("+playerKarma+")");
+  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
   displayPlayerEffect("💬");
   nextEncounter();
@@ -2367,9 +2371,8 @@ function isfreePrayEncounter(){
   return returnValue;
 }
 
-function getRandomFish(){
+function getRandomFish(){ //TODO refactor into encounters.csv
   isFishing=true;
-  //toggleUIElement(versusTextUIElement,1); animateVersus();
   previousArea = areaName;
   adventureEncounterCount+=1;
 
@@ -2391,6 +2394,10 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
   //console.log("EnemyType: \n"+enemyType);
+
+  if (playerCheckLevelUp()){
+    return true;
+  }
 
   if (procAbilityChance("🥻",5)){
     var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Curious Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:Stopped to think about the universe.<br>n/a","message:"]
@@ -2439,6 +2446,17 @@ function animateVersus(time = "1"){ //TODO: Remove this and all commented out ca
 }
 
 //Player
+function playerCheckLevelUp(){
+  var levelUp = ["area:"+areaName,"emoji:🎉","name:Perk Selection","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:Select a character upgrade.<br>","message:"]
+
+  if (playerXP>=playerXPThreshold){
+    playerLevel++;
+    playerXPThreshold=playerLevel*100;
+    linesStory.splice(encounterIndex+1,0,levelUp);
+    logAction("🟡 ▸ <b>🎉 Level Up!</b> Select a character perk.")
+  }
+}
+
 function playerRest(){
   if (!playerRested){
     if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
