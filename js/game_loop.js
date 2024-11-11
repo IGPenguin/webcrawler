@@ -182,7 +182,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> incrases the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","<b>🍀 Luck</b> affects chance to get loot.","<b>🟡 Experience</b> is obtained upon defeating foes.","More <b>🟡 Experience</b> is granted on non-deadly takedowns.","New perk is granted on gaining enough <b>🟡 Experience</b>."];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪 for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to<b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> incrases the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","<b>🍀 Luck</b> affects chance to get loot.","<b>🟡 Experience</b> is obtained upon defeating foes.","More <b>🟡 Experience</b> is granted on non-deadly takedowns.","New perk is granted on gaining enough <b>🟡 Experience</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -936,7 +936,7 @@ function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
 function updateXPProgress(){
   var playerXpProgressUIElement = document.getElementById('id_xp_progress');
   var progressbarWidth=(100/playerXPThreshold)*playerXP;
-  if (progressbarWidth>99) progressbarWidth=99;
+  if (progressbarWidth>97) progressbarWidth=97;
   console.log("progressbarwidth:"+progressbarWidth);
   playerXpProgressUIElement.style.width=progressbarWidth+"%";
 }
@@ -2456,10 +2456,11 @@ function animateVersus(time = "1"){ //TODO: Remove this and all commented out ca
 
 //Player
 function playerCheckLevelUp(){
-  var levelUp = ["area:"+areaName,"emoji:🎉","name:Perk Selection","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:Select a character upgrade.<br>","message:"]
+  var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:Select a <b>character perk</b> from the options below.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
     playerLevel++;
+    playerXP=playerXP-playerXPThreshold;
     playerXPThreshold=playerLevel*100;
     updateXPProgress();
     console.log("playerXPThreshold:"+playerXPThreshold);
@@ -2726,11 +2727,15 @@ function playerConsumed(){
   playerSta+=parseInt(gainStamina);
 
   if (missingHp > 0 || parseInt(enemyHp)!=0){
+    var heart = "❤️"
     var hpChange=parseInt(enemyHp);
     if (enemyHp>=0) hpChange+=parseInt(missingHp); //Another nasty hack, why is this so spaghetti
-    if (hpChange<0) sign=""
+    if (hpChange<0) {
+      sign="";
+      heart="💔";
+    }
     if (hpChange>0) playerHp += hpChange;
-    consumedString += " "+sign+parseInt(hpChange) + " ❤️ ";
+    consumedString += " "+sign+parseInt(hpChange) + " "+heart+" ";
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   }
 
@@ -2830,8 +2835,8 @@ function playerReincarnate(){
     var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
-    pushEncounter(bonusWrapper,2);
-    pushEncounter(bonusItem,3);
+    pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well)
+    pushEncounter(bonusItem,2);
   }
 }
 
