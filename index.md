@@ -14,7 +14,7 @@ layout: default
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <script src="js/game_loop.js"></script>
 
-<div class= "curtain" id="id_fullscreen_curtain"></div>
+<div class= "curtain" id="id_fullscreen_curtain" style="height:200%;"></div>
 <div class= "fullScreenText" id="id_fullscreen_text" style="-webkit-text-stroke: 6.5px black;
       paint-order: stroke fill;"></div>
 
@@ -34,17 +34,18 @@ layout: default
 <div id = "id_enemy_info">
   <div class="box-border-dynamic" style="position:relative; z-index:1;">
   <h2 id = "id_name" style="text-align:left;
+    font-size:18px;
     padding-left:8px;
     letter-spacing:0.8px;
     -webkit-text-stroke: 5px #121212;
       paint-order: stroke fill;
     margin-bottom:-13px;
-    margin-top:2px;
-    padding-top:2px;
+    padding-top:1px;
+    padding-bottom:1px;
     background-color:#202020;"/>
   </div>
 
-  <div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
+<div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <div id = "id_emoji_flipper" style="margin-bottom:14px;
@@ -119,7 +120,7 @@ layout: default
 
 <p style="margin:4px;"></p>
 <h3 id = "id_versus" style="margin-top:-13px;
-  margin-bottom:-14px;
+  margin-bottom:-13px;
     color:red;
     font-size:24px;
       letter-spacing:1.5px;
@@ -133,6 +134,8 @@ layout: default
       background-color:#202020;">
 
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
+
+<h3 id="id_player_level" style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:9px">Level</h3>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
@@ -150,7 +153,10 @@ layout: default
                                   margin-bottom:0px;
                                   -webkit-text-stroke: 5px #121212;
                                     paint-order: stroke fill;"/>
+
 </div>
+
+<div id="id_xp_progress" style="width:0%; height:1px; background:#FFD940; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
@@ -166,7 +172,7 @@ layout: default
                                     padding-top:5px;
                                     padding-bottom:3px;
                                     margin-bottom:-11px;
-                                    margin-top:14px;
+                                    margin-top:12px;
                                     font-family:sans;
                                     box-shadow:
                                       0px 0px 0px 3px #000000;

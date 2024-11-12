@@ -10,9 +10,10 @@ Loot;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for
 Loot;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
 Loot;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Loot;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
-Loot;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>The enemy will transform to a random critter.;Gained skill <b>🧬 Polymorph</b>.
+Loot;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.
 Loot;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to generate <b>🟢 Energy</b> during combat.;Gained skill <b>⚡️ Quick Reflexes</b>.
 Loot;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance to get +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
+Loot;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Add a new option to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
 
 Loot;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
 Loot;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
@@ -35,27 +36,26 @@ Loot;💍;Engraved Ring;Item;0;0;0;0;-3;1;Isildur's Bane;Says "My Precious" on t
 
 Loot;👞;Old Shoes;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoes.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Disgusting but kinda cool.
 Loot;🔪;Dull Knife;Item;0;0;0;0;0;0;Worn Tool;Useless in combat.<br>;Took it with themselves just in case.
-Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;The surface is covered in rust and dirt.<br><b>🗝️ Unlocks</b> doors and containers.;
-Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;Blinding glare reflects off the finish.<br><b>🗝️ Unlocks</b> doors and containers.;
-Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;Well worn but looks still reliable.<br><b>🗝️ Unlocks</b> doors and containers.;
+Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
-Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Perhaps could bring some luck.<br>Or maybe not?;Stuck onto the tip of the weapon.
-Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside the sacred container.<br>Better not mess with it.;Spilled the ashes all around.
+Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Does not look like it brings luck.<br>;Stuck onto the tip of the weapon.
+Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.
 
 Loot;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🦐;Fresh Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
 Loot;🐟;Tiny Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
 Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
-Loot;🧪;Unknown Potion;Consumable;-2;0;1;0;0;0;Questionable Drink;It is glowing in the dark.<br>;Left a funny taste in mouth
-Loot;🪸;Radiating Coral;Consumable;-3;0;0;0;0;1;Questionable Snack;Its surface has an eerie glow.<br>;Brutal spasms took a toll
+Loot;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Its surface has an eerie glow.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Brutal spasms took a toll
 Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated upon reaching the throat
 
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
 
 Loot;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides a very special gift (for a price).<br>;Let them go back to the water.
 
-Loot;🪔;Floating Flame;Altar;1;0;0;0;1;0;Light Source;Warms your body and soul.<br>;Warms the body and soul
+Loot;🪔;Floating Flame;Altar;1;0;0;0;1;0;Light Source;Warms your body and soul.<br>;Warms their soul
 
 Loot;‍🦈;Hungry Shark;Standard;1;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
 Loot;‍🦑;Depths Squid;Heavy;2;2;1;0;-1;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Swallowed in one slurp!
