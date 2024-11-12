@@ -2220,7 +2220,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 function enemyKilled(){
   var enemyXP=parseInt(getEnemyXP());
 
-  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow" + decorateStatusText(""," +"+enemyXP+"XP",colorGold));
+  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow" + decorateStatusText(""," +"+enemyXP+" XP",colorGold));
   enemyHpLost=enemyHp; //Negate overkill damage
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
@@ -2234,7 +2234,7 @@ function enemyKilled(){
 function enemyKnockedOut(){
   var enemyXP=parseInt(getEnemyXP(1.25));
 
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out" + decorateStatusText(""," +"+enemyXP+"XP",colorGold));
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out" + decorateStatusText(""," +"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
@@ -2245,7 +2245,7 @@ function enemyKnockedOut(){
 function enemyDisengage(){
   var enemyXP=parseInt(getEnemyXP(1.5));
 
-  logPlayerAction(actionString,"Convinced them to disengage" + decorateStatusText(""," +"+enemyXP+"XP",colorGold));
+  logPlayerAction(actionString,"Convinced them to disengage" + decorateStatusText(""," +"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
