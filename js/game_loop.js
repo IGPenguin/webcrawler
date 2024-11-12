@@ -182,7 +182,7 @@ function getGreedyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to<b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> incrases the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","<b>🍀 Luck</b> affects chance to get loot.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more "+decorateStatusText("","XP",colorGold)+" by non-deadly takedowns.","New perk is granted on gaining enough "+decorateStatusText("","XP",colorGold)];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to<b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> incrases the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","<b>🍀 Luck</b> affects chance to get loot.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more"+decorateStatusText("","XP",colorGold)+" by non-deadly solutions.","New perk is granted on gaining enough"+decorateStatusText("","XP",colorGold),"<b>🧠 Intellect</b> affects"+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects affects karma <b>negatively</b>.","Positive karma provides an early game <b>bonus item</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -892,7 +892,7 @@ function redraw(){
         if (playerLootString.includes("🪱") && enemyType==="Fishing") displayPlayerState("Bait Ready",colorPink,"0.8");
         if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorDarkYellow,"0.4");
       }
-      if (enemyType=="Upgrade") displayPlayerState("Level Up",colorGold,"0.5"); //I need this to be overwritable by the below
+      if (enemyType=="Upgrade") displayPlayerState("Contemplating",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
       if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
       break;
@@ -1375,9 +1375,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
           case "Container-Friend":
             if (enemyAtk>0){
+              playerMgk--;
               logPlayerAction(actionString,"Turned them adversary -1 🔵");
               enemyType="Standard";
             } else {
+              playerMgk--;
               logPlayerAction(actionString,"Magic spooked them away -1 🔵");
               displayEnemyEffect("💨");
               isFishing=false;
@@ -1397,17 +1399,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Boss":
           case "Small":
             var magicDamage = playerMgk;
-            playerMgk--;
             if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
             if (magicDamage > 2) {
               magicDamage=2;
-              playerMgk--;
             }
+            playerMgk-=magicDamage;
 
-            if (enemyMgk<=playerMgk){
+            if (enemyMgk<magicDamage){
               enemyHit(magicDamage,true);
             } else {
               logPlayerAction(actionString,"They resisted the spell -"+magicDamage+" 🔵");
+              enemyMgk-=magicDamage;
+              if (enemyMgk<0) enemyMgk=0;
             }
 
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
@@ -1418,6 +1421,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container-Friend":
           case "Friend": //They'll be hit (above) and then get angry //TODO: Check this, they might not get hit
+            playerMgk--;
             logPlayerAction(actionString,"The spell turned them adversary -1 🔵");
             displayEnemyEffect("‼️");
             enemyType="Standard";
@@ -1427,6 +1431,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Trap-Attack":
           case "Item":
+            playerMgk--;
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
             displayEnemyEffect("🔥");
             isFishing=false;
@@ -1440,11 +1445,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (enemyHp<0){
                 logMessage="Cooked it with a spell -1 🔵";
+                playerMgk--;
                 enemyHp=0;
                 enemyMsg="Actually tasted good";
                 displayEnemyEffect("🔥");
               } else {
                 logMessage="Roasted a crunchy crust -1 🔵";
+                playerMgk--;
                 enemySta=parseInt(enemySta)+1;
                 enemyMsg="That was tasty";
                 displayEnemyEffect("🔥");
@@ -1453,32 +1460,30 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerLootString.includes("🧂")){
                 logMessage="Added a tiny pinch of salt.";
                 displayEnemyEffect("✨");
-                playerMgk++; //Regain lost mgk
               }
 
               playerCooked=true;
               logPlayerAction(actionString,logMessage);
               animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
             } else {
-              if (!playerPartyString.includes("🧂")) playerMgk++ //Regain the lost mana if no salt shaker
+              if (!playerPartyString.includes("🧂"))//Regain the lost mana if no salt shaker
               displayPlayerCannotEffect();
               logPlayerAction(actionString, "Already improved this food!")
             }
             break;
 
-          case "Dream":
-            logPlayerAction(actionString,"Spent magic power on dreaming -1 🔵");
-            break;
-
           case "Altar":
-            logPlayerAction(actionString,"The spell has totally trashed it -1 🔵");
+            logPlayerAction(actionString,"Trashed it with a spell -1 🔵");
+            playerMgk--;
             isFishing=false;
+            displayEnemyEffect("🔥");
             nextEncounter();
             break;
 
           default:
             if (enemyType.includes("Container") && !enemyType.includes("Locked")) {
               logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
+              playerMgk--;
               displayEnemyEffect("🔥");
               isFishing=false;
               nextEncounter();
@@ -1506,16 +1511,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
           }
 
-          if (playerMgkMax<1 && !isfreePrayEncounter()){
+          if (playerMgk<1 && !isfreePrayEncounter()){
             logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
             break;
-          }
-
-          if (!isfreePrayEncounter()) {
-            if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) {
-              break;
-            }
           }
 
           if (enemyType=="Spirit" || enemyType=="Demon"){
@@ -2219,7 +2218,8 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 }
 
 function enemyKilled(){
-  var enemyXP=parseInt(getEnemyXP());
+  var intBonus=1+playerInt/5;
+  var enemyXP=parseInt(getEnemyXP(1*intBonus));
 
   logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow" + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   enemyHpLost=enemyHp; //Negate overkill damage
@@ -2233,7 +2233,8 @@ function enemyKilled(){
 }
 
 function enemyKnockedOut(){
-  var enemyXP=parseInt(getEnemyXP(1.25));
+  var intBonus=1+playerInt/5;
+  var enemyXP=parseInt(getEnemyXP(1.25*intBonus));
 
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out" + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
@@ -2244,7 +2245,8 @@ function enemyKnockedOut(){
 }
 
 function enemyDisengage(){
-  var enemyXP=parseInt(getEnemyXP(1.5));
+  var intBonus=1+playerInt/5;
+  var enemyXP=parseInt(getEnemyXP(1.5*intBonus));
 
   logPlayerAction(actionString,"Convinced them to disengage" + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
@@ -2480,6 +2482,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
+    curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;&nbsp;Level Up&nbsp;&nbsp;");
     playerRest(true);
     playerLevel++;
     playerXP=playerXP-playerXPThreshold;
@@ -2487,7 +2490,7 @@ function playerCheckLevelUp(){
     updateXPProgress();
     console.log("playerXPThreshold:"+playerXPThreshold);
     linesStory.splice(encounterIndex+1,0,levelUp);
-    logAction("🟡 ▸ <b>🎉 Level Up!</b> Select a character perk.")
+    logAction("✨ ▸ <b>🎉 Level Up!</b> Select a character perk.")
   }
 }
 
