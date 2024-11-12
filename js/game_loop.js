@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/12/24 • 08:02 am"
+var versionCode = "ver. 11/12/24 • 11:40 am"
 var initialEncounterOverride=0; //6 skips tutorial
 
 //To handle notes and death in .csv
@@ -1938,14 +1938,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             animateFlipNextEncounter();
             break;
 
-          case "Checkpoint": //Move to upgrade
+          case "Checkpoint": //LVL UP
+            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
+            playerXP+=playerXPThreshold;
             isFishing=false;
             logPlayerAction(actionString,"Embraced the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
             playerMgk=playerMgkMax;
-            nextEncounter();
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
+            animateFlipNextEncounter();
             break;
           default:
             if (enemyType.includes("Container")){
@@ -2479,6 +2480,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
+    playerRest(true);
     playerLevel++;
     playerXP=playerXP-playerXPThreshold;
     playerXPThreshold=playerLevel*100;
@@ -2489,29 +2491,33 @@ function playerCheckLevelUp(){
   }
 }
 
-function playerRest(){
+function playerRest(silent=false){
   if (!playerRested){
     if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
       playerGetStamina(playerStaMax-playerSta,true);
       if (playerMgk<playerMgkMax) playerMgk=playerMgkMax;
       playerRested=true;
 
-      logPlayerAction(actionString,"Rested well, recovering all resources.");
-      displayPlayerEffect("💤");
-      displayPlayerRestedEffect();
+      if (!silent) {
+        logPlayerAction(actionString,"Rested well, recovering all resources.");
+        displayPlayerEffect("💤");
+        displayPlayerRestedEffect();
+      }
     } else {
       playerRested=true;
 
-      logPlayerAction(actionString,"Wasted a precious moment of life.");
-      displayPlayerEffect("💤");
+      if (!silent) {
+        logPlayerAction(actionString,"Wasted a precious moment of life.");
+        displayPlayerEffect("💤");
+      }
     }
-    if (procAbilityChance("🔮",33)){
+    if (!silent && procAbilityChance("🔮",33)){
       logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided bonus +1 🔵")
       playerMgk++;
       displayPlayerRestedEffect();
     }
   } else {
-    logPlayerAction(actionString,"Already rested at this spot.");
+    if (!silent) logPlayerAction(actionString,"Already rested at this spot.");
     displayPlayerCannotEffect();
   }
 }
@@ -3058,7 +3064,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="✨ Praise";
+      document.getElementById('button_grab').innerHTML="✨ Embrace";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
