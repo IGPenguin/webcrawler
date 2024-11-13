@@ -491,6 +491,7 @@ function generateNextEncounters(generatorID=1){
       } else {
         pushEncounter(getRandomEncounter(["Container"]));
         pushEncounter(getRandomEncounter(["Small"]),2);
+        pushEncounter(getRandomEncounter(["Prop"]),3);
       }
       break;
 
