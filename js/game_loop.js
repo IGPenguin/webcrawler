@@ -2483,7 +2483,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased<br>"+decorateStatusText("","Perk point available.",colorWhite))+"</p>";
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased"+decorateStatusText("","New perk point available.",colorWhite))+"</p>";
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
