@@ -2484,6 +2484,7 @@ function playerCheckLevelUp(){
 
   if (playerXP>=playerXPThreshold){
     curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;&nbsp;Level Up&nbsp;&nbsp;");
+    if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
     playerXP=playerXP-playerXPThreshold;
