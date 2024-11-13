@@ -892,7 +892,7 @@ function redraw(){
         if (playerLootString.includes("🪱") && enemyType==="Fishing") displayPlayerState("Bait Ready",colorPink,"0.8");
         if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorDarkYellow,"0.4");
       }
-      if (enemyType=="Upgrade") displayPlayerState("Contemplating",colorGold,"0.5"); //I need this to be overwritable by the below
+      if (enemyType=="Upgrade") displayPlayerState("Deciding",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
       if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
       break;
