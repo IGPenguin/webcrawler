@@ -123,7 +123,7 @@ var buttonsContainer;
 
 //String generators
 function getFirstName(){
-  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  const random_names = ["Scum","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit", "Deserter"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -1038,7 +1038,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt becoming a bit stronger +1 ❤️");
+            logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
             displayPlayerGainedEffect();
             displayPlayerEffect("❤️");
             playerName=getVitalName();
@@ -1223,7 +1223,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt the body becoming faster +1 🟢");
+            logPlayerAction(actionString,"Felt becoming faster <b>+1 🟢 Stamina</b>.");
             displayPlayerGainedEffect();
             displayPlayerEffect("💨");
             playerName=getSwiftName();
@@ -1257,12 +1257,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"Granted gods blessing +1 🧠 +1 🍀");
-          displayPlayerGainedEffect();
-          displayPlayerEffect("🙏");
-          playerName=getFaithName();
-          playerLck++;
-          playerInt++;
+          logPlayerAction(actionString,"Gained <b>+1 🔵 Mana</b> permanently.");
+          displayPlayerCannotEffect();
+          displayPlayerEffect("✨");
+          playerName=getSorceryName();
+          playerMgk+=1;
+          playerMgkMax+=1;
           isFishing=false;
           animateFlipNextEncounter();
           break;
@@ -1336,12 +1336,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Chose magic +1 🔵 over agility -1 🟢");
+            logPlayerAction(actionString,"Gained <b>+2 Mana</b> 🔵 for <b>-1 🟢 Stamina</b>.");
             displayPlayerCannotEffect();
             displayPlayerEffect("✨");
             playerName=getSorceryName();
-            playerMgkMax+=1;
-            playerMgk+=1;
+            playerMgkMax+=2;
+            playerMgk+=2;
             playerStaMax-=1;
             if (playerSta>0) playerSta-=1;
             isFishing=false;
@@ -1500,14 +1500,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"Became considerably wiser +2 🧠");
-              displayPlayerGainedEffect();
-              displayPlayerEffect("🧠");
-              playerName=getCleverName();
-              playerInt+=2;
-              isFishing=false;
-              animateFlipNextEncounter();
-              break;
+            logPlayerAction(actionString,"Granted gods blessing +1 🧠 +1 🍀");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("🙏");
+            playerName=getFaithName();
+            playerLck++;
+            playerInt++;
+            //playerKarma++; //Hmmm
+            animateFlipNextEncounter();
+            break;
           }
 
           if (playerMgk<1 && !isfreePrayEncounter()){
@@ -1629,11 +1630,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+1 🔵</b>");
+            logPlayerAction(actionString,"Gained permanent bonus <b>+2 🍀 Luck</b>.");
             displayPlayerCannotEffect();
-            playerName=getHatredName();
-            playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
-            playerHit(0,false,true);
+            playerName=getLuckyName();
+            playerChangeStats(0, 0, 0, 2, 0, 0,"n/a",false,false);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -1927,11 +1927,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Born to get extra lucky +2 🍀");
+            //grab (hatred)
+            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
             displayPlayerCannotEffect();
-            displayPlayerEffect("🍀");
-            playerName=getLuckyName();
-            playerLck+=2;
+            playerName=getHatredName();
+            playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
+            playerHit(0,false,true);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -2063,13 +2064,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Sacrificed health -1 💔 for luck +3 🍀");
-            displayPlayerCannotEffect();
-            displayPlayerEffect("🪙");
-            playerUseStamina(1);
-            playerName=getGreedyName();
-            playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
-            playerHit(0,false,true);
+            //Greed (speak)
+            logPlayerAction(actionString,"Became considerably wiser +2 🧠");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("🧠");
+            playerName=getCleverName();
+            playerInt+=2;
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -2141,9 +2141,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade": //TODO refactor to something else
             displayPlayerCannotEffect();
-            //logPlayerAction(actionString,"Decided against gaining a perk.");
-            //playerName="Hardcore "+playerName;
-            //isFishing=false;
+            logPlayerAction(actionString,"Decided against gaining a perk.");
+            playerName="Hardcore "+playerName;
+            isFishing=false;
+            animateFlipNextEncounter();
             break;
 
           default:
@@ -2239,7 +2240,7 @@ function enemyKnockedOut(){
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
-  //displayEnemyEffect("💤");
+  displayEnemyEffect("💤");
   animateFlipNextEncounter();
 }
 
@@ -2460,13 +2461,15 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 }
 
 function animateFlipNextEncounter(){
-  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
-  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
-
   var animationHandler = function(){
     nextEncounter();
     cardUIElement.removeEventListener("animationend",animationHandler);
   }
+  cardUIElement.removeEventListener("animationend",animationHandler);
+
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
+
   cardUIElement.addEventListener('animationend',animationHandler);
 }
 
@@ -2475,7 +2478,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased"+decorateStatusText("","<br>New perk point available."+emptySpace,colorWhite))+"</p>";
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased"+decorateStatusText("","<br>New perk point available.",colorWhite))+"</p>";
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
@@ -2524,9 +2527,10 @@ function playerHeal(){
 
   if (missingHp>0) {
     var healAmount=missingHp;
-    if (healAmount>(playerMgk+1)) healAmount=(playerMgk+1);
+    if (healAmount>(playerMgk)) healAmount=(playerMgk);
+    if (healAmount>2) healAmount=2;
     playerHp+=healAmount;
-    playerMgk-=(healAmount-1);
+    playerMgk-=(healAmount);
 
     logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell -"+healAmount+" 🔵");
     displayPlayerGainedEffect();
@@ -2941,14 +2945,14 @@ function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      setButton('button_attack',"❤️ Vitality");
-      setButton('button_roll',"🟢 Agility");
-      setButton('button_block',"📿 Faith");
+      setButton('button_attack',"❤️ Health");
+      setButton('button_roll',"🟢 Stamina");
+      setButton('button_block',"🔵 Mana");
       setButton('button_cast',"🔮 Sorcery");
-      setButton('button_curse',"🩸 Hatred");
-      setButton('button_pray',"🧠 Psyche");
-      setButton('button_grab',"🍀 Fortune");
-      setButton('button_speak',"🪙 Greed");
+      setButton('button_grab',"🩸 Hatred");
+      setButton('button_curse',"🍀 Fortune");
+      setButton('button_speak',"🧠 Psyche");
+      setButton('button_pray',"📿 Faith");
       setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
       break;
 
