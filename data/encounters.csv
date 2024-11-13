@@ -93,13 +93,13 @@ Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a h
 Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing.
 Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore.
 
-Forsaken Village;🪱;Stimulated Earthworm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
+Forsaken Village;🪱;Worm;Small;1;0;0;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Fly Larva;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Meatfly Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
-Forsaken Village;🪱;Fly Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Tapeworm;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -109,14 +109,15 @@ Forsaken Village;🦎;Green Gecko;Small;1;0;2;0;-1;0;Beautiful Lizard;Eyes are g
 Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
 Forsaken Village;🦔️;Scared Hedgehog;Small;2;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Ouch! That was painful
 
+Forsaken Village;🐁;Albino Rat;Standard;1;1;2;0;10;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
+Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to underestimate.<br>;Defeated by an angry bird.
 Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Forsaken Village;🐐;Annoying Goat;Standard;3;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
-Forsaken Village;🦝;Ferocious Coon;Standard;2;1;2;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
-Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
 Forsaken Village;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
-Forsaken Village;🦢;Possesive Swan;Standard;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Defeated by an angry bird.
-Forsaken Village;🐁;Albino Rat;Standard;2;1;2;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🐐;Annoying Goat;Standard;3;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
+Forsaken Village;🦝;Ferocious Coon;Standard;1;1;3;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
+Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
 //;Forsaken Village;🐺;Lone Wolf;Standard;2;2;2;0;0;0;Wild Animal;Seems starving for a long time.<br>;
 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got their heart ripped out!
@@ -137,6 +138,7 @@ Forsaken Village;🪡;Possesed Needle;Demon;1;2;1;1;-1;0;Deadly Tool;Whatever th
 Forsaken Village;🧹;Possesed Broom;Demon;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 Forsaken Village;👘;Haunted Robe;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Suffocated by floating clothing.
 
+Forsaken Village;🦢;Possesive Swan;Heavy;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Defeated by an angry bird.
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Forsaken Village;🐗;Old Warthog;Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 Forsaken Village;🦌;Alpha Deer;Heavy;2;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
