@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/13/24 • 4:46 pm"
+var versionCode = "ver. 11/13/24 • 11:26 pm"
 var initialEncounterOverride=0; //6 skips tutorial
 
 //To handle notes and death in .csv
@@ -29,7 +29,7 @@ var colorPurple = "#BF40BF";
 var colorDarkPurple = "#381338";
 var colorPink = "#c9594f";
 
-var colorCardBackground = "#202020"
+var colorCardBackground = "#202020";
 
 //Symbols
 var fullSymbol = "●";
@@ -123,7 +123,7 @@ var buttonsContainer;
 
 //String generators
 function getFirstName(){
-  const random_names = ["Straggler","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit"];
+  const random_names = ["Scum","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit", "Deserter"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -174,15 +174,8 @@ function getLuckyName(name=playerName){
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
-function getGreedyName(name=playerName){
-  if (name.includes(" ")) return name;
-
-  const random_names = ["Disgusting "+name, "Worthless "+name, "Dirty "+name, "Greedy "+name];
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
-
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to<b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting valuables.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more"+decorateStatusText("","XP",colorGold)+" by non-deadly solutions.","New perk is granted on gaining enough"+decorateStatusText("","XP",colorGold),"<b>🧠 Intellect</b> affects"+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects karma <b>negatively</b>.","<b>Good karma</b> provides early game <b>bonus</b>."];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting valuables.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more"+decorateStatusText("","XP",colorGold)+" by non-deadly solutions.","New perk is granted on gaining enough"+decorateStatusText("","XP",colorGold),"<b>🧠 Intellect</b> affects"+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects karma <b>negatively</b>.","<b>Good karma</b> provides early game <b>bonus</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -422,11 +415,10 @@ function pushEncounter(encounterStringArray=[],index=1,areaNameOverride=""){
 }
 
 function markAsSeen(seenName){
-  //console.log("Marking as seen: \n"+seenName);
   if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
 }
 
-function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
+function markAsSeenFishing(seenID){  //TODO: remove and reuse the fn above?
   if (!seenLoot.includes(seenID)){
     seenLoot.push(seenID);
     localStorage.setItem("seenLoot", JSON.stringify(seenLoot));
@@ -667,10 +659,8 @@ function generateNextEncounters(generatorID=1){
 }
 
 function chooseFrom(array=[]){
-  //console.log("Choices: "+array);
   var options = array.length
   var choice = array[Math.floor(Math.random() * options)];
-  //console.log("Chosen: "+choice+"\nFrom: "+array);
   return choice;
 }
 
@@ -937,6 +927,7 @@ function appendEnemyStats(){
 }
 
 function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
+  if (emoji=="") return emoji+"<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
   return emoji+"&nbsp;<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
 }
 
@@ -1040,7 +1031,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt becoming a bit stronger +1 ❤️");
+            logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
             displayPlayerGainedEffect();
             displayPlayerEffect("❤️");
             playerName=getVitalName();
@@ -1225,7 +1216,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Felt the body becoming faster +1 🟢");
+            logPlayerAction(actionString,"Felt becoming faster <b>+1 🟢 Stamina</b>.");
             displayPlayerGainedEffect();
             displayPlayerEffect("💨");
             playerName=getSwiftName();
@@ -1259,12 +1250,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"Granted gods blessing +1 🧠 +1 🍀");
-          displayPlayerGainedEffect();
-          displayPlayerEffect("🙏");
-          playerName=getFaithName();
-          playerLck++;
-          playerInt++;
+          logPlayerAction(actionString,"Gained <b>+1 🔵 Mana</b> permanently.");
+          displayPlayerCannotEffect();
+          displayPlayerEffect("✨");
+          playerName=getSorceryName();
+          playerMgk+=1;
+          playerMgkMax+=1;
           isFishing=false;
           animateFlipNextEncounter();
           break;
@@ -1338,12 +1329,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Chose magic +1 🔵 over agility -1 🟢");
+            logPlayerAction(actionString,"Gained <b>+2 Mana</b> 🔵 for <b>-1 🟢 Stamina</b>.");
             displayPlayerCannotEffect();
             displayPlayerEffect("✨");
             playerName=getSorceryName();
-            playerMgkMax+=1;
-            playerMgk+=1;
+            playerMgkMax+=2;
+            playerMgk+=2;
             playerStaMax-=1;
             if (playerSta>0) playerSta-=1;
             isFishing=false;
@@ -1502,14 +1493,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-              logPlayerAction(actionString,"Became considerably wiser +2 🧠");
-              displayPlayerGainedEffect();
-              displayPlayerEffect("🧠");
-              playerName=getCleverName();
-              playerInt+=2;
-              isFishing=false;
-              animateFlipNextEncounter();
-              break;
+            logPlayerAction(actionString,"Granted gods blessing +1 🧠 +1 🍀");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("🙏");
+            playerName=getFaithName();
+            playerLck++;
+            playerInt++;
+            //playerKarma++; //Hmmm
+            animateFlipNextEncounter();
+            break;
           }
 
           if (playerMgk<1 && !isfreePrayEncounter()){
@@ -1631,11 +1623,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+1 🔵</b>");
+            logPlayerAction(actionString,"Gained permanent bonus <b>+2 🍀 Luck</b>.");
             displayPlayerCannotEffect();
-            playerName=getHatredName();
-            playerChangeStats(-1, 0, 0, 0, 0, 1,"n/a",false,false);
-            playerHit(0,false,true);
+            playerName=getLuckyName();
+            playerChangeStats(0, 0, 0, 2, 0, 0,"n/a",false,false);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -1929,11 +1920,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Born to get extra lucky +2 🍀");
+            //grab (hatred)
+            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
             displayPlayerCannotEffect();
-            displayPlayerEffect("🍀");
-            playerName=getLuckyName();
-            playerLck+=2;
+            playerName=getHatredName();
+            playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
+            playerHit(0,false,true);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -2065,13 +2057,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Sacrificed health -1 💔 for luck +3 🍀");
-            displayPlayerCannotEffect();
-            displayPlayerEffect("🪙");
-            playerUseStamina(1);
-            playerName=getGreedyName();
-            playerChangeStats(-1, 0, 0, 3, 0, 0,"n/a",false,false);
-            playerHit(0,false,true);
+            //Greed (speak)
+            logPlayerAction(actionString,"Became considerably wiser +2 🧠");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("🧠");
+            playerName=getCleverName();
+            playerInt+=2;
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -2143,9 +2134,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade": //TODO refactor to something else
             displayPlayerCannotEffect();
-            //logPlayerAction(actionString,"Decided against gaining a perk.");
-            //playerName="Hardcore "+playerName;
-            //isFishing=false;
+            logPlayerAction(actionString,"Decided against gaining a perk.");
+            playerName="Hardcore "+playerName;
+            isFishing=false;
+            animateFlipNextEncounter();
             break;
 
           default:
@@ -2222,7 +2214,7 @@ function enemyKilled(){
   var intBonus=1+playerInt/5;
   var enemyXP=parseInt(getEnemyXP(1*intBonus));
 
-  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow" + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   enemyHpLost=enemyHp; //Negate overkill damage
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
@@ -2237,7 +2229,7 @@ function enemyKnockedOut(){
   var intBonus=1+playerInt/5;
   var enemyXP=parseInt(getEnemyXP(1.25*intBonus));
 
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out" + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
@@ -2249,7 +2241,7 @@ function enemyDisengage(){
   var intBonus=1+playerInt/5;
   var enemyXP=parseInt(getEnemyXP(1.5*intBonus));
 
-  logPlayerAction(actionString,"Convinced them to disengage" + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  logPlayerAction(actionString,"Convinced them to disengage " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
@@ -2411,7 +2403,7 @@ function getRandomFish(){ //TODO refactor into encounters.csv
 
   lastEncounterIndex = encounterIndex-1;
   lootEncounterIndex = getUnseenLootIndex();
-  markAsSeenLoot(lootEncounterIndex);
+  markAsSeenFishing(lootEncounterIndex);
 
   animateUIElement(cardUIElement,"animate__fadeIn","0.8");
   enemyRenew();
@@ -2426,7 +2418,6 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
-  //console.log("EnemyType: \n"+enemyType);
 
   if (playerCheckLevelUp()){
     return true;
@@ -2463,34 +2454,30 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 }
 
 function animateFlipNextEncounter(){
-  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
-  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
-
   var animationHandler = function(){
     nextEncounter();
     cardUIElement.removeEventListener("animationend",animationHandler);
   }
-  cardUIElement.addEventListener('animationend',animationHandler);
-}
+  cardUIElement.removeEventListener("animationend",animationHandler);
 
-function animateVersus(time = "1"){ //TODO: Remove this and all commented out calls?
-  animateUIElement(versusTextUIElement,"animate__flipInX","1.2");
-  //animateUIElement(versusTextUIElement,"animate__flash",time);
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
+
+  cardUIElement.addEventListener('animationend',animationHandler);
 }
 
 //Player
 function playerCheckLevelUp(){
-  var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
+  var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased<br>"+decorateStatusText("","New perk point available."+emptySpace,colorWhite))+"</p>";
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased"+decorateStatusText("","<br>New perk point available.",colorWhite))+"</p>";
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
     playerXP=playerXP-playerXPThreshold;
     playerXPThreshold=playerLevel*100;
     updateXPProgress();
-    console.log("playerXPThreshold:"+playerXPThreshold);
     linesStory.splice(encounterIndex+1,0,levelUp);
     logAction("✨ ▸ <b>🎉 Level Up!</b> Select a character perk.")
   }
@@ -2533,9 +2520,10 @@ function playerHeal(){
 
   if (missingHp>0) {
     var healAmount=missingHp;
-    if (healAmount>(playerMgk+1)) healAmount=(playerMgk+1);
+    if (healAmount>(playerMgk)) healAmount=(playerMgk);
+    if (healAmount>2) healAmount=2;
     playerHp+=healAmount;
-    playerMgk-=(healAmount-1);
+    playerMgk-=(healAmount);
 
     logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell -"+healAmount+" 🔵");
     displayPlayerGainedEffect();
@@ -2890,7 +2878,6 @@ function gameOver(silent=false){
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
-  //alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
   var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
@@ -2931,7 +2918,6 @@ function getTime(){
 
 //UI Buttons
 function setButton(elementID,text){
-  //document.getElementById(elementID).innerHTML=text.split(" ")[0]; //NO TEXT
   document.getElementById(elementID).innerHTML=text;
 }
 
@@ -2952,14 +2938,14 @@ function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      setButton('button_attack',"❤️ Vitality");
-      setButton('button_roll',"🟢 Agility");
-      setButton('button_block',"📿 Faith");
+      setButton('button_attack',"❤️ Health");
+      setButton('button_roll',"🟢 Stamina");
+      setButton('button_block',"🔵 Mana");
       setButton('button_cast',"🔮 Sorcery");
-      setButton('button_curse',"🩸 Hatred");
-      setButton('button_pray',"🧠 Psyche");
-      setButton('button_grab',"🍀 Fortune");
-      setButton('button_speak',"🪙 Greed");
+      setButton('button_grab',"🩸 Hatred");
+      setButton('button_curse',"🍀 Fortune");
+      setButton('button_speak',"🧠 Psyche");
+      setButton('button_pray',"📿 Faith");
       setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
       break;
 
@@ -3194,8 +3180,6 @@ function registerClickListeners(){
   //    eventType = 'touchend';
   //  }
   //}
-
-  //console.log("platform interaction event type="+eventType); //This was for troubleshooting various platforms
 
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));

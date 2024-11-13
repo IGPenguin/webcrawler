@@ -5,7 +5,7 @@ Loot;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <
 Loot;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Loot;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Loot;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Energy</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
-Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;Got <b>🎲 Pure Chance</b> for <b>1/2 ❤️ Health</b>.
+Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;<b>Pure Chance</b> added for <b>1/2 ❤️ Health</b>.
 Loot;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Gained skill <b>🥀 Thorns Payback</b>.
 Loot;🧵;Reinforced Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
 Loot;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
@@ -31,7 +31,7 @@ Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant ha
 Loot;🪢;Magical Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings extra luck.<br>Provides<b>+1 🍀 Luck</b>.;Feels good to have it.
-Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>Provides<b>+1 ❤️ Health</b>;Felt a surge in the chest.
+Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Shines bright like a diamond.<br>Provides <b>+1 ❤️ Health</b>;Felt a surge in the chest.
 Loot;💍;Engraved Ring;Item;0;0;0;0;-3;1;Isildur's Bane;Says "My Precious" on the inside.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The ring took its toll
 
 Loot;👞;Old Shoes;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoes.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Disgusting but kinda cool.

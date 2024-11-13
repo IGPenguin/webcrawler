@@ -135,7 +135,7 @@ layout: default
 
 <div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
 
-<h3 id="id_player_level" style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:9px">Level</h3>
+<h3 id="id_player_level" style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px">Level</h3>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
