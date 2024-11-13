@@ -1446,13 +1446,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (enemyHp<0){
                 logMessage="Cooked it with a spell -1 🔵";
-                playerMgk--;
+                if (!playerLootString.includes("🧂")) playerMgk--;
                 enemyHp=0;
                 enemyMsg="Actually tasted good";
                 displayEnemyEffect("🔥");
               } else {
                 logMessage="Roasted a crunchy crust -1 🔵";
-                playerMgk--;
+                if (!playerLootString.includes("🧂")) playerMgk--;
                 enemySta=parseInt(enemySta)+1;
                 enemyMsg="That was tasty";
                 displayEnemyEffect("🔥");
