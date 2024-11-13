@@ -29,7 +29,7 @@ var colorPurple = "#BF40BF";
 var colorDarkPurple = "#381338";
 var colorPink = "#c9594f";
 
-var colorCardBackground = "#202020"
+var colorCardBackground = "#202020";
 
 //Symbols
 var fullSymbol = "●";
@@ -422,11 +422,10 @@ function pushEncounter(encounterStringArray=[],index=1,areaNameOverride=""){
 }
 
 function markAsSeen(seenName){
-  //console.log("Marking as seen: \n"+seenName);
   if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
 }
 
-function markAsSeenLoot(seenID){  //TODO: remove and reuse the fn above?
+function markAsSeenFishing(seenID){  //TODO: remove and reuse the fn above?
   if (!seenLoot.includes(seenID)){
     seenLoot.push(seenID);
     localStorage.setItem("seenLoot", JSON.stringify(seenLoot));
@@ -667,10 +666,8 @@ function generateNextEncounters(generatorID=1){
 }
 
 function chooseFrom(array=[]){
-  //console.log("Choices: "+array);
   var options = array.length
   var choice = array[Math.floor(Math.random() * options)];
-  //console.log("Chosen: "+choice+"\nFrom: "+array);
   return choice;
 }
 
@@ -2411,7 +2408,7 @@ function getRandomFish(){ //TODO refactor into encounters.csv
 
   lastEncounterIndex = encounterIndex-1;
   lootEncounterIndex = getUnseenLootIndex();
-  markAsSeenLoot(lootEncounterIndex);
+  markAsSeenFishing(lootEncounterIndex);
 
   animateUIElement(cardUIElement,"animate__fadeIn","0.8");
   enemyRenew();
@@ -2426,7 +2423,6 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
-  //console.log("EnemyType: \n"+enemyType);
 
   if (playerCheckLevelUp()){
     return true;
@@ -2473,11 +2469,6 @@ function animateFlipNextEncounter(){
   cardUIElement.addEventListener('animationend',animationHandler);
 }
 
-function animateVersus(time = "1"){ //TODO: Remove this and all commented out calls?
-  animateUIElement(versusTextUIElement,"animate__flipInX","1.2");
-  //animateUIElement(versusTextUIElement,"animate__flash",time);
-}
-
 //Player
 function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Congratulations!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
@@ -2490,7 +2481,6 @@ function playerCheckLevelUp(){
     playerXP=playerXP-playerXPThreshold;
     playerXPThreshold=playerLevel*100;
     updateXPProgress();
-    console.log("playerXPThreshold:"+playerXPThreshold);
     linesStory.splice(encounterIndex+1,0,levelUp);
     logAction("✨ ▸ <b>🎉 Level Up!</b> Select a character perk.")
   }
@@ -2890,7 +2880,6 @@ function gameOver(silent=false){
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
-  //alert("༼ つ ◕_◕ ༽つ Unbelievable, you finished the game!\nSpecial thanks: 0melapics on Freepik.com, https://animate.style and Stackoverflow.com");
   var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
@@ -2931,7 +2920,6 @@ function getTime(){
 
 //UI Buttons
 function setButton(elementID,text){
-  //document.getElementById(elementID).innerHTML=text.split(" ")[0]; //NO TEXT
   document.getElementById(elementID).innerHTML=text;
 }
 
@@ -3194,8 +3182,6 @@ function registerClickListeners(){
   //    eventType = 'touchend';
   //  }
   //}
-
-  //console.log("platform interaction event type="+eventType); //This was for troubleshooting various platforms
 
   document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
   document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
