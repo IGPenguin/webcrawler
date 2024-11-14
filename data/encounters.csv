@@ -14,6 +14,8 @@ Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 //;Forsaken Village;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 //;Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 
+//;Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
+
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
 Forsaken Village;🌾;Thick Grass;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
@@ -123,7 +125,6 @@ Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not
 Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;Humanoid;Trying to prove themselves.<br>;Got their heart ripped out!
 Forsaken Village;🧝‍♂️;Cultist Adept;Standard;2;2;2;0;3;0;Humanoid;On their way to exaltation.<br>;Got their heart ripped out!
 Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
-Forsaken Village;🦹‍♀️;Cultist Rager;Heavy;2;2;1;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 
 Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;3;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Forsaken Village;🐦‍⬛;Scared Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
@@ -136,7 +137,6 @@ Forsaken Village;🪡;Possesed Needle;Swift;1;2;1;1;-1;0;Deadly Tool;Whatever th
 Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;3;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
 Forsaken Village;👘;Haunted Robe;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Suffocated by floating clothing.
 
-Forsaken Village;🦢;Possesive Swan;Heavy;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Defeated by an angry bird.
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Forsaken Village;🐗;Old Warthog;Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 Forsaken Village;🦌;Alpha Deer;Heavy;2;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
@@ -144,9 +144,10 @@ Forsaken Village;🦬;Enraged Bison;Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps f
 Forsaken Village;🐂;Horny Bull;Heavy;2;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Forsaken Village;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 
-Forsaken Village;🐻;Fearsome Grizzly;Boss;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;🤡;Cultist Fanatic;Boss;4;2;3;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got devoured alive.
-//TODO Add 2 more boss variants
+Forsaken Village;🦢;Fearsome Swan;Boss-Swift;4;2;4;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
+Forsaken Village;🐻;Terrifying Grizzly;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Demon;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
+//;Forsaken Village;🤡;Cultist Fanatic;Boss-Swift;4;2;3;0;-1;2;Crazed Humanoid;Screams and laughs maniacally.<br>;Got devoured alive.
 
 Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 Forsaken Village;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
@@ -199,9 +200,10 @@ Forsaken Village;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> d
 Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a warrior.<br>;
 Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
 Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
 Forsaken Village;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no higher purpose.<br>;
+//;Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
 
 Forsaken Village;🍄;Magical Mushroom;Consumable;-2;0;0;0;0;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> does <b>-2 💔 Damage</b>.;
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
@@ -371,10 +373,11 @@ Depriving Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Bewar
 Depriving Fairyland;👹;Sinister Devil;Demon;2;1;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 
-Depriving Fairyland;🦀;Titan Crab;Boss;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
-Depriving Fairyland;🐉;Massive Dragon;Boss;6;3;1;0;-1;2;Legendary Creature;Hungry maw full of magical teeth.;Got their head chewed off.
-Depriving Fairyland;🦕;Ancient Lizard;Boss;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
-Depriving Fairyland;🦖;Ferocious Raptor;Boss;5;5;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
+Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;2;1;1;0;3;1;Soul Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+Depriving Fairyland;🦀;Titan Crab;Boss-Heavy;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
+Depriving Fairyland;🐉;Massive Dragon;Boss-Heavy;6;3;1;0;-1;2;Legendary Creature;Hungry maw full of magical teeth.;Got their head chewed off.
+Depriving Fairyland;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
+Depriving Fairyland;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
 Depriving Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
@@ -448,14 +451,13 @@ Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a
 Depriving Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
-
-//Afflicted Necropolis
-🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
-
+//Afflicted Necropolis 🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
+Afflicted Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>Something is on the ground.;Dug out a shiny ring.
 Afflicted Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;Moved past that.
-Afflicted Necropolis;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
+Afflicted Necropolis;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Afflicted Necropolis;🪨;Stone Mound;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Afflicted Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Afflicted Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Afflicted Necropolis;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
 Afflicted Necropolis;🪑;Scratched Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 Afflicted Necropolis;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;Moved past that
@@ -466,7 +468,7 @@ Afflicted Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Dis
 
 Afflicted Necropolis;🕋;Burial Chamber;Locked-Container-3;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 
-Depriving Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
+Afflicted Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 
 Afflicted Necropolis;🫁;Collapsed Lungs;Curse;0;0;0;-1;0;0;Disturbing Sight;Disgusting on sight.<br>;
 
@@ -501,5 +503,23 @@ Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams 
 
 Heavy
 
+Afflicted Necropolis;🧟;Animated Dead;Undead;5;2;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
+
+Afflicted Necropolis;🐦‍⬛;Undead Crow;Demon;1;2;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
+Afflicted Necropolis;🧛🏼;Thirsty Vampire;Demon;5;2;1;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
+
+Afflicted Necropolis;👻;Spooky Spirit;Spirit;4;2;3;0;3;4;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
+
 Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss;10;8;3;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
 Afflicted Necropolis;🧞;Evil Genie;Boss;6;0;0;0;2;6;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
+🤺
+
+Afflicted Necropolis;⚰️;Burial Coffin;Container-3;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
+
+Afflicted Necropolis;🧙;Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
+
+Afflicted Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Human Remains;Disgusting on sight.<br>;Another disgusting item in pocket.
+Afflicted Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;1;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;Felt a surge in your chest
+
+Afflicted Necropolis;🫀;Rotten Heart;Consumable;0;0;0;0;-1;0;Disgusting Sight;xyxy.<br>;
