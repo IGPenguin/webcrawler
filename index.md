@@ -80,7 +80,7 @@ layout: default
                             margin-right:0px;
                             font-family:sans;
                             display:inline;
-                            width:60%;"/>
+                            width:70%;"/>
 
 <h5 id = "id_team" style="float:right;
                                 text-align:right;
