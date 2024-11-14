@@ -533,7 +533,7 @@ function generateNextEncounters(generatorID=0){
 
     case 9: //Boss
       logGenerator("boss");
-      pushEncounter(getRandomEncounter(["Boss-Swift","Boss-Demon","Boss-Heavy"]));
+      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       pushEncounter(getRandomEncounter(["Item"],["Artifact"]),2)
       break;
 
