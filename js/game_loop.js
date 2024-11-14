@@ -957,7 +957,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     if (enemyType.includes("Boss")){
       enemyType=enemyType.replaceAll("Boss-","");
     }
-    console.log(enemyType);
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
@@ -2227,8 +2226,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 }
 
 function enemyKilled(){
-  var intBonus=1+playerInt/5;
-  var enemyXP=parseInt(getEnemyXP(1*intBonus));
+  var enemyXP=parseInt(getEnemyXP(1));
 
   logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   enemyHpLost=enemyHp; //Negate overkill damage
@@ -2242,8 +2240,7 @@ function enemyKilled(){
 }
 
 function enemyKnockedOut(){
-  var intBonus=1+playerInt/5;
-  var enemyXP=parseInt(getEnemyXP(1.25*intBonus));
+  var enemyXP=parseInt(getEnemyXP(1.25));
 
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
@@ -2254,11 +2251,10 @@ function enemyKnockedOut(){
 }
 
 function enemyDisengage(){
-  var intBonus=1+playerInt/5;
-  var enemyXP=parseInt(getEnemyXP(1.5*intBonus));
+  var enemyXP=parseInt(getEnemyXP(1.5));
 
   logPlayerAction(actionString,"Convinced them to disengage " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
-  playerKarma+=1; console.log("karma++ ("+playerKarma+")");
+  playerKarma+=1; //console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
   displayPlayerEffect("💬");
@@ -2274,8 +2270,17 @@ function enemyKicked(){
 }
 
 function getEnemyXP(multiplier=1){
+  var intBonus=1+playerInt/20;
   var enemyXP=0;
   var statSum=0;
+  var typeMultiplier=1;
+
+  if (enemyType=="Swift"||enemyType=="Heavy") typeMultiplier=1.2;
+  if (enemyType=="Demon"||enemyType=="Spirit"||enemyType=="Undead") typeMultiplier=1.3;
+  if (enemyBossType.includes("Boss")) typeMultiplier=2;
+  console.log("actionXP x"+multiplier);
+  console.log("typeXP x" +typeMultiplier);
+  console.log("intXP x" +intBonus);
 
   statSum+=parseInt(enemyHp);
   statSum+=parseInt(enemySta);
@@ -2284,8 +2289,7 @@ function getEnemyXP(multiplier=1){
   //statSum+=enemyInt; - This might be OP
   statSum+=parseInt(enemyMgk);
 
-  enemyXP=(((parseInt(statSum)*10)/2)*multiplier);
-
+  enemyXP=(((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus;
   return parseInt(enemyXP);
 }
 
