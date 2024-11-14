@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/14/24 • 10:57 pm"
+var versionCode = "ver. 11/14/24 • 11:30 pm"
 var initialEncounterOverride=0; //6 skips tutorial
 
 //To handle notes and death in .csv
@@ -175,7 +175,7 @@ function getLuckyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting valuables.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more "+decorateStatusText("","XP",colorGold)+" by non-deadly solutions.","New perk is granted on gaining enough "+decorateStatusText("","XP",colorGold),"<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects karma <b>negatively</b>.","<b>Good karma</b> provides early game <b>🎁 Bonus</b>."];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting valuables.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more "+decorateStatusText("","XP",colorGold)+" by non-deadly resolutions.","New perk is granted on gaining enough "+decorateStatusText("","XP",colorGold),"<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects karma <b>negatively</b>.","<b>Good karma</b> provides early game <b>🎁 Bonus</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -1873,11 +1873,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Small":
             if ((enemySta-enemyStaLost)==0 && (enemyMgk-enemyMgkLost)==0) {
-              logPlayerAction(actionString,"Grabbed it into their bag.");
-              playerLootString+=enemyEmoji;
-              displayEnemyEffect("👋");
-              nextEncounter();
-              isFishing=false;
+              enemyGrabbedIntoLoot();
             } else {
               enemyDodged("Missed, it evaded the grasp.");
               if (enemyCastIfMgk()) break;
@@ -2234,8 +2230,8 @@ function enemyKilled(){
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
   playerKills++;
-  isFishing=false;
 
+  isFishing=false;
   animateFlipNextEncounter();
 }
 
@@ -2246,6 +2242,7 @@ function enemyKnockedOut(){
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
+  isFishing=false;
   displayEnemyEffect("💤");
   animateFlipNextEncounter();
 }
@@ -2257,8 +2254,22 @@ function enemyDisengage(){
   playerKarma+=1; //console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
+  isFishing=false;
   displayPlayerEffect("💬");
   animateFlipNextEncounter();
+}
+
+function enemyGrabbedIntoLoot(){
+  var enemyXP=parseInt(getEnemyXP(1.25));
+
+  logPlayerAction(actionString,"Grabbed it into their bag " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  playerLootString+=enemyEmoji;
+  //playerKarma+=1; //I guess not?
+  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
+
+  isFishing=false;
+  displayEnemyEffect("👋");
+  nextEncounter();
 }
 
 function enemyKicked(){
