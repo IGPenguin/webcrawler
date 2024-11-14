@@ -2955,7 +2955,7 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health");
-      setButton('button_roll',"🟢 Stamina");
+      setButton('button_roll',"🟢 Energy");
       setButton('button_block',"🔵 Mana");
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_grab',"🩸 Hatred");
