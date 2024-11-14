@@ -472,7 +472,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
-function generateNextEncounters(generatorID=1){
+function generateNextEncounters(generatorID=0){
   switch (generatorID) {
 
     case 0: //Prop or Small in container
@@ -512,17 +512,17 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 4: //Hard Encounter - 50% item / 100% consumable
+    case 4: //Hard Encounter - 40% item / 100% consumable
       logGenerator("hard");
       pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
 
-      if (procAbilityChance("",50+playerLck)) {
+      if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),2)
         pushEncounter(getRandomEncounter(["Consumable"]),3);
       } else {
-        //70% consumable
-        if (procAbilityChance("",70+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
+        //60% consumable
+        if (procAbilityChance("",60+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
       }
       break;
 
@@ -552,7 +552,7 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 30: //House Mid - 40% item + 100% small
+    case 30: //House Mid - 30% item + 100% small
       logGenerator("h-mid");
       pushEncounter(getRandomEncounter(["Container-3"]));
 
@@ -562,7 +562,7 @@ function generateNextEncounters(generatorID=1){
         pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
       }
 
-      if (procAbilityChance("",40+playerLck)) { //
+      if (procAbilityChance("",30+playerLck)) { //
         pushEncounter(getRandomEncounter(["Item"]),3)
       } else {
         //50% consumable or prop (cause this is container)
@@ -599,12 +599,12 @@ function generateNextEncounters(generatorID=1){
       break;
 
 
-    case 40: //Optional Hard House - 100% consumable, 50% item or maybe altar
+    case 40: //Optional Hard House - 100% consumable, 40% item or maybe altar
       logGenerator("h-hard");
       pushEncounter(getRandomEncounter(["Container-3"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Curse","Trap","Trap-Attack","Trap-Roll"]),2);
 
-      if (procAbilityChance("",50+playerLck)) {
+      if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),3)
         pushEncounter(getRandomEncounter(["Consumable"]),4);
       } else {
@@ -613,34 +613,34 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 50: //Optional Big House - 100% consumable, 60% item or maybe altar
+    case 50: //Optional Big House - 100% consumable, 50% item or maybe altar
       logGenerator("h-big");
       pushEncounter(getRandomEncounter(["Container-4"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),3);
 
-      if (procAbilityChance("",60+playerLck)) {
+      if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),4)
         pushEncounter(getRandomEncounter(["Consumable"]),5);
       } else {
-        pushEncounter(getRandomEncounter(["Prop","Consumable"]),4);
-        pushEncounter(getRandomEncounter(["Altar"]),5);
+        pushEncounter(getRandomEncounter(["Consumable"]),4);
+        pushEncounter(getRandomEncounter(["Prop","Altar"]),5);
       }
       break;
 
-    case 60: //Optional Huge House - 100% consumable, 70% item or maybe altar
+    case 60: //Optional Huge House - 100% consumable, 60% item or altar
       logGenerator("h-huge");
       pushEncounter(getRandomEncounter(["Container-5"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]),2);
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),3);
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),4);
 
-      if (procAbilityChance("",70+playerLck)) {
+      if (procAbilityChance("",60+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),5)
         pushEncounter(getRandomEncounter(["Consumable"]),6);
       } else {
         pushEncounter(getRandomEncounter(["Consumable"]),5);
-        pushEncounter(getRandomEncounter(["Prop","Altar"]),6);
+        pushEncounter(getRandomEncounter(["Altar"]),6);
       }
       break;
 
@@ -650,7 +650,7 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 99: //Random house
-      generateNextEncounters(chooseFrom([20,30,31,40,50,60]))
+      generateNextEncounters(chooseFrom([20,30,31,40,50,60]));
       break;
 
     default:
