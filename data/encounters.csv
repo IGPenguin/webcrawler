@@ -452,6 +452,7 @@ Depriving Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is l
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
 //Afflicted Necropolis 🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
+Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
 Afflicted Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>Something is on the ground.;Dug out a shiny ring.
 Afflicted Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;Moved past that.
 Afflicted Necropolis;🦴;Pile of Bones;Prop;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
@@ -462,9 +463,10 @@ Afflicted Necropolis;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furnitur
 Afflicted Necropolis;🪑;Scratched Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 Afflicted Necropolis;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;Moved past that
 
-Afflicted Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+Afflicted Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
 Afflicted Necropolis;🚪;Strange Door;Container;0;0;0;0;0;1;Unknown;Ornate door shimmering at the back wall.<br>Where could it lead to?;
 Afflicted Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Disgusting on sight.<br>;Dug out a hefty worm.
+//;Afflicted Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 
 Afflicted Necropolis;🕋;Burial Chamber;Locked-Container-3;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 
@@ -497,7 +499,7 @@ Friend 👰🏻‍♀️🤴🏻👸🏻
 
 Standard 🧟🧟‍♀️🧟‍♂️🧛🏼‍♂️🧛🏼🧛🏼‍‍🧙🏻🧙🏻‍♀️🧙🏻‍♂️
 
-Afflicted Necropolis;🧙;Tired Old Man;Recruit;0;0;0;0;0;0;Cursed Human Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
+Afflicted Necropolis;🧙;Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 
 Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>Goosebumps.;Gloomy Cavern;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got ripped apart
 
@@ -510,14 +512,9 @@ Afflicted Necropolis;🧛🏼;Thirsty Vampire;Demon;5;2;1;0;10;0;Humanoid;Furiou
 
 Afflicted Necropolis;👻;Spooky Spirit;Spirit;4;2;3;0;3;4;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
 
-Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss;10;8;3;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
-Afflicted Necropolis;🧞;Evil Genie;Boss;6;0;0;0;2;6;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
+Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss-Heavy;10;8;3;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
+Afflicted Necropolis;🧞;Evil Genie;Boss-Spirit;6;0;0;0;2;6;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.
 🤺
-
-Afflicted Necropolis;⚰️;Burial Coffin;Container-3;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
-
-Afflicted Necropolis;🧙;Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
 
 Afflicted Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Human Remains;Disgusting on sight.<br>;Another disgusting item in pocket.
 Afflicted Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;1;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;Felt a surge in your chest
