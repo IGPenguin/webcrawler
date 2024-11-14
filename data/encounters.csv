@@ -7,7 +7,6 @@ Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth cover
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🌱;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
-Forsaken Village;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
@@ -60,7 +59,7 @@ Forsaken Village;🕌;Cult Temple;Container-5;0;0;0;0;0;0;Deserted Building;Stra
 
 Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
-Forsaken Village;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
+Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
@@ -109,7 +108,7 @@ Forsaken Village;🦎;Green Gecko;Small;1;0;2;0;-1;0;Beautiful Lizard;Eyes are g
 Forsaken Village;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Pelicular Insect;Eyes are glowing blue.<br>;Choked on snail ooze.
 Forsaken Village;🦔️;Scared Hedgehog;Small;2;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Ouch! That was painful
 
-Forsaken Village;🐁;Albino Rat;Standard;1;1;2;0;10;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
+Forsaken Village;🧹;Possesed Broom;Standard;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to underestimate.<br>;Defeated by an angry bird.
@@ -130,12 +129,11 @@ Forsaken Village;🦨;Forest Skunk;Swift;1;2;2;0;3;0;Wild Animal;Seems having li
 Forsaken Village;🐦‍⬛;Scared Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Forsaken Village;🐍;Poisonous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
-Forsaken Village;🐀;Dire Rat;Swift;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦅;Bald Eagle;Swift;1;3;1;0;-1;0;Wild Animal;Attacks from high altitude.<br>;Got their brain pecked out.
+Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
+Forsaken Village;🗡️;Possesed Dagger;Swift;1;3;1;0;-1;0;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
+Forsaken Village;🪡;Possesed Needle;Swift;1;2;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 
 Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;3;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
-Forsaken Village;🪡;Possesed Needle;Demon;1;2;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
-Forsaken Village;🧹;Possesed Broom;Demon;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 Forsaken Village;👘;Haunted Robe;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Suffocated by floating clothing.
 
 Forsaken Village;🦢;Possesive Swan;Heavy;2;2;1;0;10;0;Resolute Bird;Peace was never an option.<br>;Defeated by an angry bird.
@@ -202,8 +200,8 @@ Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a war
 Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
 Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
+Forsaken Village;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no higher purpose.<br>;
 
 Forsaken Village;🍄;Magical Mushroom;Consumable;-2;0;0;0;0;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> does <b>-2 💔 Damage</b>.;
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
@@ -348,7 +346,7 @@ Depriving Fairyland;🦚;Pearlescent Bird;Standard;3;2;2;0;2;0;Fancy Animal;Peac
 Depriving Fairyland;🦡;Honey Badger;Standard;4;3;2;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;
 Depriving Fairyland;🦎;Komodo Dragon;Standard;3;3;2;0;-1;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
 Depriving Fairyland;🕷️;Huge Tarantula;Standard;3;3;2;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
-Depriving Fairyland;🦘;Vengeful 'Roo;Standard;4;3;3;0;4;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
+Depriving Fairyland;🦘;Vengeful 'Roo;Standard;4;3;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
 
 Depriving Fairyland;🧌;Old Troll;Recruit;4;2;2;0;2;2;Creature;Not happy about having a company.<br>;Turned into goulash.
 Depriving Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;-1;3;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
@@ -360,7 +358,8 @@ Depriving Fairyland;🥷;Cultist Elite;Swift;2;3;3;0;5;0;Humanoid;Uncanny figure
 Depriving Fairyland;🐝;Swarm of Bees;Swift;1;1;3;3;-1;0;Pesky Insects;Ton of bees swarmed the area.<br>;There was nowhere to run.
 Depriving Fairyland;🐆;Daunting Panther;Swift;3;2;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
 Depriving Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
-Depriving Fairyland;🦟;Oversize Mosqito;Swift;2;2;2;0;-1;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
+Depriving Fairyland;🦟;Oversized Mosqito;Swift;2;2;2;0;-1;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
+Depriving Fairyland;🦅;Bald Eagle;Swift;1;4;1;0;-1;0;Wild Animal;Attacks from high altitude.<br>;Got their brain pecked out.
 
 Depriving Fairyland;🐃;Frantic Horns;Heavy;2;2;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
 Depriving Fairyland;🦧;Ginger Ape;Heavy;2;2;2;0;3;0;Wild Beast;Probably has no soul.<br>;
@@ -371,15 +370,14 @@ Depriving Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Bewar
 
 Depriving Fairyland;👹;Sinister Devil;Demon;2;1;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Depriving Fairyland;👹;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
-Depriving Fairyland;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;2;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
 
 Depriving Fairyland;🦀;Titan Crab;Boss;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
 Depriving Fairyland;🐉;Massive Dragon;Boss;6;3;1;0;-1;2;Legendary Creature;Hungry maw full of magical teeth.;Got their head chewed off.
 Depriving Fairyland;🦕;Ancient Lizard;Boss;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
-Depriving Fairyland;🦖;Ferocious Raptor;Boss;5;5;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.;Got chewed with dozens of teeth.
+Depriving Fairyland;🦖;Ferocious Raptor;Boss;5;5;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
-Depriving Fairyland;🫚;Ginger Root;Consumable;0;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Depriving Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Depriving Fairyland;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Depriving Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides extra <b>+1 🟢 Energy</b> temporarily.;Got extra energy
 Depriving Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting

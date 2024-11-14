@@ -1445,7 +1445,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logMessage="Roasted a crunchy crust -1 🔵";
                 if (!playerLootString.includes("🧂")) playerMgk--;
                 enemySta=parseInt(enemySta)+1;
-                enemyMsg="That was tasty";
+                enemyMsg="That was very tasty";
                 displayEnemyEffect("🔥");
               }
 
