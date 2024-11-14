@@ -1660,6 +1660,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Boss":
         case "Small":
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+            displayEnemyCannotEffect();
+            displayEnemyEffect("🪬");
 
             if (procAbilityChance("🪆",33)){
               var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪱","🪱","🪱","🪱"]); //50% for worm
@@ -1677,12 +1679,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
-            break; //Enemy does not attack if getting cursed
+            break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
             logPlayerAction(actionString,"They resisted the curse -2 🔵");
           } else {
             logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
           }
+
           if (enemyCastIfMgk()) break;
           enemyAttackOrRest();
           break;
