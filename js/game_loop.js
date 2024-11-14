@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 11/13/24 • 11:26 pm"
-var initialEncounterOverride=0; //6 skips tutorial
+var initialEncounterOverride=6; //6 skips tutorial
 
 //To handle notes and death in .csv
 if (initialEncounterOverride!=0) initialEncounterOverride-=3;
@@ -214,6 +214,7 @@ var enemyIntBonus = 0;
 var enemyMgkLost = 0;
 var currentProphercy;
 var enemyEmojiScaleX;
+var enemyBossType = "";
 
 enemyRenew()
 function enemyRenew(){
@@ -440,6 +441,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  enemyBossType = enemyType; //I'll end up in hell for these hacks
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
     //console.log("Gen-type:"+number);
@@ -531,7 +533,7 @@ function generateNextEncounters(generatorID=0){
 
     case 9: //Boss
       logGenerator("boss");
-      pushEncounter(getRandomEncounter(["Boss"]));
+      pushEncounter(getRandomEncounter(["Boss-Swift","Boss-Demon","Boss-Heavy"]));
       pushEncounter(getRandomEncounter(["Item"],["Artifact"]),2)
       break;
 
@@ -735,12 +737,8 @@ function redraw(){
 
   enemyTeamUIElement.innerHTML="";
   cardUIElement.style.background=colorCardBackground;
-  switch(enemyType){
-    case "Boss":
-      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
-      enemyStatusString=appendEnemyStats();
-      cardUIElement.style.background=colorDarkRed;
-      break;
+
+  switch(enemyType) {
     case "Pet":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Companion",colorOrange);
       enemyStatusString=appendEnemyStats();
@@ -832,11 +830,13 @@ function redraw(){
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
       break;
+
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
       if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
+
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
         if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
@@ -850,7 +850,13 @@ function redraw(){
           enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
           cardUIElement.style.background=colorDarkPurple;
         }
-        }
+      }
+
+      if (enemyBossType.includes("Boss-")){
+        enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
+        enemyStatusString=appendEnemyStats();
+        cardUIElement.style.background=colorDarkRed;
+      }
       break;
   }
 
@@ -946,6 +952,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
+
+    //Override boss type for action
+    if (enemyType.includes("Boss")){
+      enemyType=enemyType.replaceAll("Boss-","");
+    }
+    console.log(enemyType);
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
@@ -2158,6 +2170,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
+    enemyType=enemyBossType;
     redraw();
   };
 }
