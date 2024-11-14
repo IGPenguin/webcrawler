@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/13/24 • 11:26 pm"
+var versionCode = "ver. 11/14/24 • 11:46 pm"
 var initialEncounterOverride=0; //6 skips tutorial
 
 //To handle notes and death in .csv
@@ -175,7 +175,7 @@ function getLuckyName(name=playerName){
 }
 
 function getProphecy(){
-  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting valuables.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more "+decorateStatusText("","XP",colorGold)+" by non-deadly solutions.","New perk is granted on gaining enough "+decorateStatusText("","XP",colorGold),"<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects karma <b>negatively</b>.","<b>Good karma</b> provides early game <b>🎁 Bonus</b>."];
+  const random_quotes = ["<b>👀 Search</b> for valuables in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique skills.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting valuables.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.",decorateStatusText("","XP",colorGold)+" is obtained upon defeating foes.","Gain more "+decorateStatusText("","XP",colorGold)+" by non-deadly resolutions.","New perk is granted on gaining enough "+decorateStatusText("","XP",colorGold),"<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects karma <b>negatively</b>.","<b>Good karma</b> provides early game <b>🎁 Bonus</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -214,6 +214,7 @@ var enemyIntBonus = 0;
 var enemyMgkLost = 0;
 var currentProphercy;
 var enemyEmojiScaleX;
+var enemyBossType = "";
 
 enemyRenew()
 function enemyRenew(){
@@ -440,6 +441,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  enemyBossType = enemyType; //I'll end up in hell for these hacks
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
     //console.log("Gen-type:"+number);
@@ -472,7 +474,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
-function generateNextEncounters(generatorID=1){
+function generateNextEncounters(generatorID=0){
   switch (generatorID) {
 
     case 0: //Prop or Small in container
@@ -512,17 +514,17 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 4: //Hard Encounter - 50% item / 100% consumable
+    case 4: //Hard Encounter - 40% item / 100% consumable
       logGenerator("hard");
       pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
 
-      if (procAbilityChance("",50+playerLck)) {
+      if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),2)
         pushEncounter(getRandomEncounter(["Consumable"]),3);
       } else {
-        //70% consumable
-        if (procAbilityChance("",70+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
+        //60% consumable
+        if (procAbilityChance("",60+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
       }
       break;
 
@@ -531,7 +533,7 @@ function generateNextEncounters(generatorID=1){
 
     case 9: //Boss
       logGenerator("boss");
-      pushEncounter(getRandomEncounter(["Boss"]));
+      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       pushEncounter(getRandomEncounter(["Item"],["Artifact"]),2)
       break;
 
@@ -552,7 +554,7 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 30: //House Mid - 40% item + 100% small
+    case 30: //House Mid - 30% item + 100% small
       logGenerator("h-mid");
       pushEncounter(getRandomEncounter(["Container-3"]));
 
@@ -562,7 +564,7 @@ function generateNextEncounters(generatorID=1){
         pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
       }
 
-      if (procAbilityChance("",40+playerLck)) { //
+      if (procAbilityChance("",30+playerLck)) { //
         pushEncounter(getRandomEncounter(["Item"]),3)
       } else {
         //50% consumable or prop (cause this is container)
@@ -599,12 +601,12 @@ function generateNextEncounters(generatorID=1){
       break;
 
 
-    case 40: //Optional Hard House - 100% consumable, 50% item or maybe altar
+    case 40: //Optional Hard House - 100% consumable, 40% item or maybe altar
       logGenerator("h-hard");
       pushEncounter(getRandomEncounter(["Container-3"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Curse","Trap","Trap-Attack","Trap-Roll"]),2);
 
-      if (procAbilityChance("",50+playerLck)) {
+      if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),3)
         pushEncounter(getRandomEncounter(["Consumable"]),4);
       } else {
@@ -613,34 +615,34 @@ function generateNextEncounters(generatorID=1){
       }
       break;
 
-    case 50: //Optional Big House - 100% consumable, 60% item or maybe altar
+    case 50: //Optional Big House - 100% consumable, 50% item or maybe altar
       logGenerator("h-big");
       pushEncounter(getRandomEncounter(["Container-4"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),3);
 
-      if (procAbilityChance("",60+playerLck)) {
+      if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),4)
         pushEncounter(getRandomEncounter(["Consumable"]),5);
       } else {
-        pushEncounter(getRandomEncounter(["Prop","Consumable"]),4);
-        pushEncounter(getRandomEncounter(["Altar"]),5);
+        pushEncounter(getRandomEncounter(["Consumable"]),4);
+        pushEncounter(getRandomEncounter(["Prop","Altar"]),5);
       }
       break;
 
-    case 60: //Optional Huge House - 100% consumable, 70% item or maybe altar
+    case 60: //Optional Huge House - 100% consumable, 60% item or altar
       logGenerator("h-huge");
       pushEncounter(getRandomEncounter(["Container-5"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]),2);
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),3);
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),4);
 
-      if (procAbilityChance("",70+playerLck)) {
+      if (procAbilityChance("",60+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),5)
         pushEncounter(getRandomEncounter(["Consumable"]),6);
       } else {
         pushEncounter(getRandomEncounter(["Consumable"]),5);
-        pushEncounter(getRandomEncounter(["Prop","Altar"]),6);
+        pushEncounter(getRandomEncounter(["Altar"]),6);
       }
       break;
 
@@ -650,7 +652,7 @@ function generateNextEncounters(generatorID=1){
       break;
 
     case 99: //Random house
-      generateNextEncounters(chooseFrom([20,30,31,40,50,60]))
+      generateNextEncounters(chooseFrom([20,30,31,40,50,60]));
       break;
 
     default:
@@ -735,12 +737,8 @@ function redraw(){
 
   enemyTeamUIElement.innerHTML="";
   cardUIElement.style.background=colorCardBackground;
-  switch(enemyType){
-    case "Boss":
-      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
-      enemyStatusString=appendEnemyStats();
-      cardUIElement.style.background=colorDarkRed;
-      break;
+
+  switch(enemyType) {
     case "Pet":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Companion",colorOrange);
       enemyStatusString=appendEnemyStats();
@@ -832,11 +830,13 @@ function redraw(){
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
       break;
+
     default:
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
       if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
+
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
         if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
@@ -850,7 +850,13 @@ function redraw(){
           enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
           cardUIElement.style.background=colorDarkPurple;
         }
-        }
+      }
+
+      if (enemyBossType.includes("Boss-")){
+        enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
+        enemyStatusString=appendEnemyStats();
+        cardUIElement.style.background=colorDarkRed;
+      }
       break;
   }
 
@@ -928,7 +934,7 @@ function appendEnemyStats(){
 
 function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
   if (emoji=="") return emoji+"<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
-  return emoji+"&nbsp;<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
+  return emoji+" <i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
 }
 
 function updateXPProgress(){
@@ -946,6 +952,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
+
+    //Override boss type for action
+    if (enemyType.includes("Boss")){
+      enemyType=enemyType.replaceAll("Boss-","");
+    }
 
     switch (button) {
       case 'button_attack': //Attacking always needs stamina
@@ -1445,7 +1456,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logMessage="Roasted a crunchy crust -1 🔵";
                 if (!playerLootString.includes("🧂")) playerMgk--;
                 enemySta=parseInt(enemySta)+1;
-                enemyMsg="That was tasty";
+                enemyMsg="That was very tasty";
                 displayEnemyEffect("🔥");
               }
 
@@ -1660,6 +1671,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Boss":
         case "Small":
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+            displayEnemyCannotEffect();
+            displayEnemyEffect("🪬");
 
             if (procAbilityChance("🪆",33)){
               var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪱","🪱","🪱","🪱"]); //50% for worm
@@ -1677,12 +1690,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
-            break; //Enemy does not attack if getting cursed
+            break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
             logPlayerAction(actionString,"They resisted the curse -2 🔵");
           } else {
             logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
           }
+
           if (enemyCastIfMgk()) break;
           enemyAttackOrRest();
           break;
@@ -1859,11 +1873,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Small":
             if ((enemySta-enemyStaLost)==0 && (enemyMgk-enemyMgkLost)==0) {
-              logPlayerAction(actionString,"Grabbed it into their bag.");
-              playerLootString+=enemyEmoji;
-              displayEnemyEffect("👋");
-              nextEncounter();
-              isFishing=false;
+              enemyGrabbedIntoLoot();
             } else {
               enemyDodged("Missed, it evaded the grasp.");
               if (enemyCastIfMgk()) break;
@@ -2155,6 +2165,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
+    enemyType=enemyBossType;
     redraw();
   };
 }
@@ -2211,8 +2222,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 }
 
 function enemyKilled(){
-  var intBonus=1+playerInt/5;
-  var enemyXP=parseInt(getEnemyXP(1*intBonus));
+  var enemyXP=parseInt(getEnemyXP(1));
 
   logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   enemyHpLost=enemyHp; //Negate overkill damage
@@ -2220,33 +2230,46 @@ function enemyKilled(){
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
   playerKills++;
-  isFishing=false;
 
+  isFishing=false;
   animateFlipNextEncounter();
 }
 
 function enemyKnockedOut(){
-  var intBonus=1+playerInt/5;
-  var enemyXP=parseInt(getEnemyXP(1.25*intBonus));
+  var enemyXP=parseInt(getEnemyXP(1.25));
 
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
+  isFishing=false;
   displayEnemyEffect("💤");
   animateFlipNextEncounter();
 }
 
 function enemyDisengage(){
-  var intBonus=1+playerInt/5;
-  var enemyXP=parseInt(getEnemyXP(1.5*intBonus));
+  var enemyXP=parseInt(getEnemyXP(1.5));
 
   logPlayerAction(actionString,"Convinced them to disengage " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
-  playerKarma+=1; console.log("karma++ ("+playerKarma+")");
+  playerKarma+=1; //console.log("karma++ ("+playerKarma+")");
   playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
+  isFishing=false;
   displayPlayerEffect("💬");
   animateFlipNextEncounter();
+}
+
+function enemyGrabbedIntoLoot(){
+  var enemyXP=parseInt(getEnemyXP(1.25));
+
+  logPlayerAction(actionString,"Grabbed it into their bag " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  playerLootString+=enemyEmoji;
+  //playerKarma+=1; //I guess not?
+  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
+
+  isFishing=false;
+  displayEnemyEffect("👋");
+  nextEncounter();
 }
 
 function enemyKicked(){
@@ -2258,8 +2281,17 @@ function enemyKicked(){
 }
 
 function getEnemyXP(multiplier=1){
+  var intBonus=1+playerInt/20;
   var enemyXP=0;
   var statSum=0;
+  var typeMultiplier=1;
+
+  if (enemyType=="Swift"||enemyType=="Heavy") typeMultiplier=1.2;
+  if (enemyType=="Demon"||enemyType=="Spirit"||enemyType=="Undead") typeMultiplier=1.3;
+  if (enemyBossType.includes("Boss")) typeMultiplier=2;
+  console.log("actionXP x"+multiplier);
+  console.log("typeXP x" +typeMultiplier);
+  console.log("intXP x" +intBonus);
 
   statSum+=parseInt(enemyHp);
   statSum+=parseInt(enemySta);
@@ -2268,8 +2300,7 @@ function getEnemyXP(multiplier=1){
   //statSum+=enemyInt; - This might be OP
   statSum+=parseInt(enemyMgk);
 
-  enemyXP=(((parseInt(statSum)*10)/2)*multiplier);
-
+  enemyXP=(((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus;
   return parseInt(enemyXP);
 }
 
@@ -2939,7 +2970,7 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health");
-      setButton('button_roll',"🟢 Stamina");
+      setButton('button_roll',"🟢 Energy");
       setButton('button_block',"🔵 Mana");
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_grab',"🩸 Hatred");
