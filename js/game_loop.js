@@ -740,7 +740,7 @@ function redraw(){
 
   switch(enemyType) {
     case "Pet":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Follower",colorOrange);
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Minion",colorOrange);
       enemyStatusString=appendEnemyStats();
       break;
     case "Swift": //TODO: Perhaps there should also be "Flying"??
