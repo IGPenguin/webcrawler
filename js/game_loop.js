@@ -740,7 +740,7 @@ function redraw(){
 
   switch(enemyType) {
     case "Pet":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Companion",colorOrange);
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Follower",colorOrange);
       enemyStatusString=appendEnemyStats();
       break;
     case "Swift": //TODO: Perhaps there should also be "Flying"??
@@ -1408,12 +1408,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             playerMgk-=magicDamage;
 
-            if (enemyMgk<magicDamage){
+            if ((enemyMgk+enemyMgkLost)<magicDamage){
               enemyHit(magicDamage,true);
             } else {
               logPlayerAction(actionString,"They resisted the spell -"+magicDamage+" 🔵");
-              enemyMgk-=magicDamage;
-              if (enemyMgk<0) enemyMgk=0;
+              enemyMgkLost+=magicDamage;
+              if (enemyMgkLost>enemyMgk) enemyMgkLost=enemyMgk;
             }
 
             if (enemyHp-enemyHpLost > 0) { //If they survive, they counterattack or regain stamina
