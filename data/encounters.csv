@@ -4,15 +4,20 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Forsaken Village;🌿;Thicket Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Forsaken Village;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🌱;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
-Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
+Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;
+Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Forsaken Village;🪨;Pile of Stone;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
+Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
+Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
+Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 //;Forsaken Village;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 //;Forsaken Village;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-//;Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 
 //;Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
@@ -238,17 +243,22 @@ Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of 
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 //Depriving Fairyland
-Depriving Fairyland;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Depriving Fairyland;🌿;Thick Growth;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
+Depriving Fairyland;🌾;Tall Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Depriving Fairyland;🌾;Dense Reeds;Prop;0;0;0;0;0;0;Wild Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Depriving Fairyland;🌿;Thick Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Depriving Fairyland;🌿;Fern Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Depriving Fairyland;🌴;Palm Tree;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Depriving Fairyland;🎋;Wild Bamboo;Prop;0;0;0;0;0;0;Jungle Flora;Good place to catch a breath.<br>;
-Depriving Fairyland;🎶;Distant Humming;Prop;0;0;0;0;0;0;Familiar Melody;Impossible to tell the source direction.<br>;
+Depriving Fairyland;🎋;Dense Growth;Prop;0;0;0;0;0;0;Jungle Flora;Good place to catch a breath.<br>;
 Depriving Fairyland;☘️;Common Clover;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Depriving Fairyland;☘️;Wild Clover;Prop;0;0;0;0;0;0;Common Flora;Good place to catch a breath.<br>;
 Depriving Fairyland;🌻;Lonely Sunflower;Prop;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 Depriving Fairyland;🪻;Hyacinth Patch;Prop;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Depriving Fairyland;🪻;Flower Growth;Prop;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 Depriving Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;Weather Condition;Time for well deserved rest.<br>;
-Depriving Fairyland;☀️;Sunny Morning;Prop;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
+Depriving Fairyland;☀️;Warming Sunrise;Prop;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
+//;Depriving Fairyland;🎶;Distant Humming;Prop;0;0;0;0;0;0;Familiar Melody;Impossible to tell the source direction.<br>;
 🗼⛳️⛺️🏕️
 
 Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
@@ -460,8 +470,7 @@ Afflicted Necropolis;🪨;Stone Mound;Prop;0;0;0;0;0;0;Ruins;Nothing of particul
 Afflicted Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Afflicted Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 Afflicted Necropolis;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
-Afflicted Necropolis;🪑;Scratched Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
-Afflicted Necropolis;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;Moved past that
+Afflicted Necropolis;🪑;Burnt Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 
 Afflicted Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;Revealed a horrific sight!
 Afflicted Necropolis;🚪;Strange Door;Container;0;0;0;0;0;1;Unknown;Ornate door shimmering at the back wall.<br>Where could it lead to?;
