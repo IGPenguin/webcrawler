@@ -133,7 +133,7 @@ layout: default
     padding-top:6px;
       background-color:#202020;">
 
-<div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px">
+<div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px; max-width:340px;">
 
 <h3 id="id_player_level" style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px">Level</h3>
 
@@ -192,6 +192,9 @@ layout: default
                           text-align:left;"/>
 </div>
 <h3 id = "id_player_party_loot" style="text-align:left;
+                                        text-overflow: cut;
+                                        overflow: hidden;
+                                        white-space: nowrap;
                                         float:left;
                                         padding-top:3px;
                                         padding-bottom:3px;
@@ -199,7 +202,7 @@ layout: default
                                         margin-left:3px;
                                         margin-bottom:0px;
                                         margin-top:0px;
-                                        display:inline;                      
+                                        display:inline-block;                      
                                         width:95.8%;
                                         box-shadow:
                                           0px 0px 0px 3px #121212;
