@@ -80,7 +80,7 @@ function renewPlayer(){ //Default values
   playerInt = 1;
   playerXP=0;
   playerLevel=1;
-  playerXPThreshold=playerLevel*100;
+  playerXPThreshold=playerLevel*150;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerLootString = "";
@@ -2342,7 +2342,10 @@ function enemyAttackOrRest(message=""){
       logAction("⚔️ ▸ 🖤 Resisted -1 💔 by <b>🖤 Unbreakable</b>.");
       damageReceived--;
       displayPlayerEffect("🖤");
-      if (damageReceived<=0) return false;
+      if (damageReceived<=0) {
+        if (enemyStaLost<enemySta) enemyStaLost++;
+        return false;
+      }
     }
 
     if (enemyType!="Demon"){
@@ -2529,7 +2532,7 @@ function playerCheckLevelUp(){
     playerRest(true);
     playerLevel++;
     playerXP=playerXP-playerXPThreshold;
-    playerXPThreshold=playerLevel*100;
+    playerXPThreshold=playerLevel*150;
     updateXPProgress();
     linesStory.splice(encounterIndex+1,0,levelUp);
     logAction("✨ ▸ <b>🎉 Level Up!</b> Select a character perk.")
