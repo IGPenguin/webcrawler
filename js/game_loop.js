@@ -498,7 +498,7 @@ function generateNextEncounters(generatorID=0){
     case 2: //Easy Encounter
       logGenerator("easy");
       pushEncounter(getRandomEncounter(["Prop"]));
-      pushEncounter(getRandomEncounter(["Standard"]));
+      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
       break;
 
     case 3: //Mid Encounter - 20% item
@@ -506,11 +506,12 @@ function generateNextEncounters(generatorID=0){
       pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Standard","Recruit"]));
 
+      //20% item
       if (procAbilityChance("",20+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),2)
       } else {
-        //50% consumable
-        if(procAbilityChance("",50+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
+        //30% consumable
+        if(procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
       }
       break;
 
@@ -519,16 +520,32 @@ function generateNextEncounters(generatorID=0){
       pushEncounter(getRandomEncounter(["Prop"]));
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
 
-      if (procAbilityChance("",40+playerLck)) {
+      //30% item & consumable
+      if (procAbilityChance("",30+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),2)
         pushEncounter(getRandomEncounter(["Consumable"]),3);
       } else {
-        //60% consumable
-        if (procAbilityChance("",60+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
+        //40% consumable
+        if (procAbilityChance("",40+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
       }
       break;
 
-    //TODO add case small altar with easy enemy and other small random enc
+    case 5: //Small|Demon + Altar or Trap
+      logGenerator("altar|trap");
+
+      if (procAbilityChance("",50)) {
+        pushEncounter(getRandomEncounter(["Prop"]))
+        pushEncounter(getRandomEncounter(["Altar"]));
+        pushEncounter(getRandomEncounter(["Standard","Recruit","Demon","Pet"]));
+        pushEncounter(getRandomEncounter(["Container-3"]))
+      } else {
+        pushEncounter(getRandomEncounter(["Prop"]))
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+        pushEncounter(getRandomEncounter(["Standard","Recruit","Demon","Pet"]));
+        pushEncounter(getRandomEncounter(["Container-3"]))
+      }
+      break;
+
     //TODO add choose random enc (similar as house) + add to story.csv
 
     case 9: //Boss
@@ -575,7 +592,7 @@ function generateNextEncounters(generatorID=0){
         }
       }
 
-      pushEncounter(getRandomEncounter(["Small"]),4);
+      pushEncounter(getRandomEncounter(["Small","Recruit","Standard","Swift","Heavy","Demon"]),4);
       break;
 
     case 31: //House Locked - 100% item/pet/friend, 100% consumable
@@ -615,13 +632,13 @@ function generateNextEncounters(generatorID=0){
       }
       break;
 
-    case 50: //Optional Big House - 100% consumable, 50% item or maybe altar
+    case 50: //Optional Big House - 100% consumable, 40% item or maybe altar
       logGenerator("h-big");
       pushEncounter(getRandomEncounter(["Container-4"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),3);
 
-      if (procAbilityChance("",50+playerLck)) {
+      if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),4)
         pushEncounter(getRandomEncounter(["Consumable"]),5);
       } else {
@@ -630,14 +647,14 @@ function generateNextEncounters(generatorID=0){
       }
       break;
 
-    case 60: //Optional Huge House - 100% consumable, 60% item or altar
+    case 60: //Optional Huge House - 100% consumable, 50% item or altar
       logGenerator("h-huge");
       pushEncounter(getRandomEncounter(["Container-5"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]),2);
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),3);
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),4);
 
-      if (procAbilityChance("",60+playerLck)) {
+      if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]),5)
         pushEncounter(getRandomEncounter(["Consumable"]),6);
       } else {
@@ -1408,7 +1425,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             playerMgk-=magicDamage;
 
-            if ((enemyMgk+enemyMgkLost)<magicDamage){
+            if ((enemyMgk+enemyMgkLost)<=magicDamage){
               enemyHit(magicDamage,true);
             } else {
               logPlayerAction(actionString,"They resisted the spell -"+magicDamage+" 🔵");
@@ -1597,14 +1614,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var isSacrifice = (enemyHp<0)
 
             if (isSacrifice) {
-                if (playerUseItem("🔪","overwritten","The prayer had no effect.",true,true,false)){
+                if (playerUseItem("🔪","overwritten","overwritten",true,true,false)){
                   displayEnemyEffect("🩸");
                   playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
                   playerHit(0,false,true);
                   isFishing=false
                   if (playerHp>0) nextEncounter();
                 }
-                logPlayerAction("Missing a sacrificial blade 🔪")
+                logPlayerAction(actionString,"No effect, missing <b>🔪 Sacrifical Blade</b>.")
                 displayPlayerEffect("🤲");
                 displayPlayerCannotEffect();
               } else {
