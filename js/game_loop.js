@@ -2056,8 +2056,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll boost your stats
             if (playerInt >= enemyInt){
-              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
               displayPlayerEffect("💬");
+              if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
+                var xpGain = 25+playerLevel*25;
+                playerXP+=xpGain; console.log("XP++ "+ xpGain + " ("+playerXP+"/"+playerXPThreshold+")");
+                logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+xpGain+" XP",colorGold));
+                nextEncounter();
+              } else {
+                playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+              }
             } else {
               logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
               displayPlayerCannotEffect();
