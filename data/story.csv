@@ -23,11 +23,11 @@ Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Focus on 
 //Forsaken Village
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Altar|Trap House (Optional);Generator-5;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Mid House (Optional);Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Mid House;Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Altar|Trap House;Generator-19;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
@@ -37,28 +37,29 @@ Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Depriving Fairyland
 Depriving Fairyland;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 
-Depriving Fairyland;❓;Mid House (Optional);Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
+Depriving Fairyland;❓;Mid House;Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Depriving Fairyland;❓;Altar|Trap House;Generator-19;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Huge House (Optional);Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
+Depriving Fairyland;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🌊;Swamp Shore;Fishing;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
 
 Depriving Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🌊;Bleak Shore;Prop;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
-Depriving Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled into the darkness.
+Depriving Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled towards the opposite shore.
 
 Mournful Barrens;🏜️;Barren Shore;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
 Mournful Barrens;👾;The Singularity;Death;0;0;0;0;0;0;Endgame;<b>👑 Congrats! You just finished the game.</b><br>Send feedback via the buttons below.;

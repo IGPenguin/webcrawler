@@ -530,7 +530,15 @@ function generateNextEncounters(generatorID=0){
       }
       break;
 
-    case 5: //Small|Demon + Altar or Trap
+    //TODO add choose random enc (similar as house) + add to story.csv
+
+    case 9: //Boss
+      logGenerator("boss");
+      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
+      pushEncounter(getRandomEncounter(["Item"],["Artifact"]),2)
+      break;
+
+    case 19: //Small|Demon + Altar or Trap
       logGenerator("altar|trap");
 
       if (procAbilityChance("",50)) {
@@ -546,27 +554,19 @@ function generateNextEncounters(generatorID=0){
       }
       break;
 
-    //TODO add choose random enc (similar as house) + add to story.csv
-
-    case 9: //Boss
-      logGenerator("boss");
-      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
-      pushEncounter(getRandomEncounter(["Item"],["Artifact"]),2)
-      break;
-
     case 20: //House Small - 20% item
       logGenerator("h-small");
       pushEncounter(getRandomEncounter(["Container-2"]));
-      pushEncounter(getRandomEncounter(["Small","Standard"]),2);
+      pushEncounter(getRandomEncounter(["Small","Standard","Recruit"]),2);
 
       if (procAbilityChance("",20+playerLck)) {
-        pushEncounter(getRandomEncounter(["Item"]),2)
+        pushEncounter(getRandomEncounter(["Item"]),3)
       } else {
         //20% consumable or prop (cause this is container)
         if(procAbilityChance("",20+playerLck)) {
-          pushEncounter(getRandomEncounter(["Consumable"]),2);
+          pushEncounter(getRandomEncounter(["Consumable"]),3);
         } else {
-          pushEncounter(getRandomEncounter(["Prop"]),2);
+          pushEncounter(getRandomEncounter(["Prop"]),3);
         }
       }
       break;
