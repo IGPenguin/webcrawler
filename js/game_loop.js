@@ -548,7 +548,7 @@ function generateNextEncounters(generatorID=0){
         pushEncounter(getRandomEncounter(["Container-3"]))
       } else {
         pushEncounter(getRandomEncounter(["Prop"]))
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Friend"]));
         pushEncounter(getRandomEncounter(["Standard","Recruit","Demon","Pet"]));
         pushEncounter(getRandomEncounter(["Container-3"]))
       }
@@ -1467,18 +1467,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logMessage="Cooked it with a spell -1 🔵";
                 if (!playerLootString.includes("🧂")) playerMgk--;
                 enemyHp=0;
+                enemyName="Cooked "+enemyName;
                 enemyMsg="Actually tasted good";
                 displayEnemyEffect("🔥");
               } else {
                 logMessage="Roasted a crunchy crust -1 🔵";
                 if (!playerLootString.includes("🧂")) playerMgk--;
                 enemySta=parseInt(enemySta)+1;
+                enemyName="Crunchy "+enemyName;
                 enemyMsg="That was very tasty";
                 displayEnemyEffect("🔥");
               }
 
               if (playerLootString.includes("🧂")){
                 logMessage="Added a tiny pinch of salt.";
+                enemyName="Salted "+enemyName;
                 displayEnemyEffect("✨");
               }
 
