@@ -1383,7 +1383,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             } else {
               playerMgk-=2;
-              var gainedXP=playerGainXP(1.5,25*playerLevel,"");
+              var gainedXP=playerGainXP(1,25*playerLevel,"");
               logPlayerAction(actionString,"Unlocked using a spell -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
               break;
@@ -1426,7 +1426,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             playerMgk-=magicDamage;
 
-            if ((enemyMgk+enemyMgkLost)<=magicDamage){
+            if ((enemyMgk-enemyMgkLost)<=magicDamage){
               enemyHit(magicDamage,true);
             } else {
               logPlayerAction(actionString,"They resisted the spell -"+magicDamage+" 🔵");
@@ -1923,8 +1923,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Fishing":
 
-            if (playerUseItem("🪱","Fished out something "+decorateStatusText("","+"+fishingXP+" XP",colorGold),"Missing a viable fishing bait.")){
-              playerGainXP(1.5,10*playerLevel,"");
+            if (playerUseItem("🪱","Fished out something "+decorateStatusText("","+"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
+              playerGainXP(1,10*playerLevel,"");
 
               if (procAbilityChance("🧵",33)) {
                 logAction("🧵 ▸ 🪱 Luckily the bait remained hooked.");
@@ -1977,7 +1977,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
                 if (playerUseItem("🗝️","Unlocked it with the key "+decorateStatusText("","+"+(25*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
-                  playerGainXP(1.5,25*playerLevel,"");
+                  playerGainXP(1,25*playerLevel,"");
                   nextEncounter();
                 } else {
                   displayPlayerCannotEffect();
