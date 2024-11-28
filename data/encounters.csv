@@ -21,8 +21,8 @@ Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kin
 
 //;Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
-Forsaken Village;🍂;Leaf Pile;Container;0;0;0;0;0;0;Hidden Stash;The fire is spreading all around.<br>;Burned alive screaming
-Forsaken Village;🍁;Pile of Leaves;Container;0;0;0;0;0;0;Hidden Stash;The fire is spreading all around.<br>;Burned alive screaming
+Forsaken Village;🍂;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
+Forsaken Village;🍁;Pile of Leaves;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
 Forsaken Village;🌾;Thick Grass;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
@@ -87,11 +87,11 @@ Forsaken Village;🎶;Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive th
 Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
 
 Forsaken Village;🐁;Friendly Mouse;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
-Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;0;Speaking Toy;Looks like it has something to say.<br>;Heard a powerful message
-Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Bird;Keeps direct eye contact.<br>;Felt something change inside
-Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
-Forsaken Village;🐇;Curious Bunny;Friend;0;0;1;1;0;0;Friendly Critter;Has quick reflexes and swift paws.<br>;Gained a rabbit's insight
-Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;Wise words are coming from its mouth.<br>n/a;Well... better than being alone
+Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;0;Speaking Toy;Looks like it has something to say.<br>;Received a powerful message
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Bird;Keeps direct eye contact.<br>;Felt a change inside
+Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by Turtle Pope
+Forsaken Village;🐇;Curious Bunny;Friend;0;0;1;1;0;0;Friendly Critter;Has quick reflexes and swift paws.<br>;Gained rabbit's insight
+Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;Wise words are coming from its mouth.<br>n/a;Better than being alone
 
 Forsaken Village;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
@@ -159,7 +159,7 @@ Forsaken Village;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not car
 
 Forsaken Village;🦢;Fearsome Swan;Boss-Swift;4;2;4;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
 Forsaken Village;🐻;Terrifying Grizzly;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Demon;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Demon;4;1;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 //;Forsaken Village;🤡;Cultist Fanatic;Boss-Swift;4;2;3;0;-1;2;Crazed Humanoid;Screams and laughs maniacally.<br>;Got devoured alive.
 
 Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
