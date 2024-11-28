@@ -774,9 +774,8 @@ function redraw(){
       break;
     case "Friend":
     case "Container-Friend":
-      var neutralType=decorateStatusText("💬","Friendly",colorDarkGreen);
-      //enemyStatusString=appendEnemyStats(); //Do not display stats = reward hidden
-      displayEnemyType(neutralType);
+      enemyStatusString=decorateStatusText("💬","Friendly",colorDarkGreen);
+      //Do not display stats = reward hidden
       break;
     case "Small":
       enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small",colorWhite);
@@ -922,7 +921,7 @@ function displayPlayerState(stateString="Cautious",color=colorGrey,time="3"){
   animateUIElement(versusTextUIElement,"animate__pulse",time,false,"",true);
 }
 
-function displayEnemyType(type){
+function displayEnemyType(type){ //TODO Refactor usage or remove
   if ((enemyStatusString.replaceAll("&nbsp;","")!="")&&(!enemyStatusString.includes("</i>"))){
     enemyTeamUIElement.innerHTML=type;
   } else {
@@ -1732,7 +1731,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case "Container-Friend":
           if (playerMgk >= enemyMgk){
-            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
+            var gainedXP=playerGainXP(1,25*playerLevel,"");
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
             nextEncounter();
           } else {
             logPlayerAction(actionString,"Could not overpower their will -2 🔵");
@@ -1742,7 +1742,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case "Friend": //They'll boost your stats
           if (playerMgk >= enemyMgk){
-            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵");
+            var gainedXP=playerGainXP(1,25*playerLevel,"");
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyMsg);
           } else {
             logPlayerAction(actionString,"Could not overpower their will -2 🔵");
@@ -1902,14 +1903,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Container-Friend":
-            logPlayerAction(actionString,"Touch not appreciated, they left.");
+            logPlayerAction(actionString,"Touch not appreciated, lost interest.");
             encounterIndex+=1; //Skip next encounter
             displayEnemyEffect("✋");
             nextEncounter();
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"Touch not appreciated, they left.");
+            logPlayerAction(actionString,"Touch not appreciated, lost interest.");
             displayEnemyEffect("✋");
             nextEncounter();
             break;
@@ -2059,13 +2060,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend": //They'll boost your stats
             if (playerInt >= enemyInt){
               displayPlayerEffect("💬");
+              var gainedXP=playerGainXP(1,25*playerLevel,"");
+
               if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
-                var xpGain = 25+playerLevel*25;
-                playerXP+=xpGain; console.log("XP++ "+ xpGain + " ("+playerXP+"/"+playerXPThreshold+")");
-                logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+xpGain+" XP",colorGold));
+                logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 nextEncounter();
               } else {
-                playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+                enemyMsg=playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg,false);
+                logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
               }
             } else {
               logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
@@ -2075,12 +2077,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Container-Friend":
             if (playerInt >= enemyInt){
-              var openMessage = "Sucessfully found something.";
+              var openMessage = "Received a gift";
+              var gainedXP=playerGainXP(1,25*playerLevel,"");
+
               displayPlayerEffect("💬");
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
               }
-              logPlayerAction(actionString,openMessage);
+              logPlayerAction(actionString,openMessage+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
             } else {
              logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
@@ -2165,7 +2169,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Friend":
           case "Friend": //They'll leave if you'll rest
             playerRest();
-            logPlayerAction(actionString,"They got tired of waiting and left.");
+            logPlayerAction(actionString,"They lost interest tired of waiting.");
             nextEncounter();
             break;
 
