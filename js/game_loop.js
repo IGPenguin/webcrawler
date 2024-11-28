@@ -2008,7 +2008,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyInt < playerInt){
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=enemyEmoji
-              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Convinced them to join forces"); //Cannot get health/sta/int from a recruit
+              var gainedXP=playerGainXP(1.5,0,"");
+              enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Joined forces together",false); //Cannot get health/sta/int from a recruit
+              logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
               break;
             }
 
@@ -2337,12 +2339,12 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "
   statSum+=parseInt(enemyMgk);
 
   if (gainedXP==0) {
-    gainedXP=(((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus;
+    gainedXP=parseInt((((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus);
   } else {
-    gainedXP=gainedXP*multiplier*intBonus;
+    gainedXP=parseInt(gainedXP*multiplier*intBonus);
   }
 
-  playerXP+=parseInt(gainedXP);
+  playerXP+=gainedXP;
   if (message!="") logPlayerAction(actionString,message + decorateStatusText(""," +"+gainedXP+" XP",colorGold));
   console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
