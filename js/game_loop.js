@@ -2254,13 +2254,13 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 }
 
 function enemyKilled(){
-  var enemyXP=parseInt(getEnemyXP(1));
+  var gainedXP=parseInt(playerGainXP(1));
 
-  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   enemyHpLost=enemyHp; //Negate overkill damage
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
-  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
   playerKills++;
 
   isFishing=false;
@@ -2268,11 +2268,11 @@ function enemyKilled(){
 }
 
 function enemyKnockedOut(){
-  var enemyXP=parseInt(getEnemyXP(1.25));
+  var gainedXP=parseInt(playerGainXP(1.25));
 
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   playerKarma+=1; console.log("karma++ ("+playerKarma+")");
-  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
   isFishing=false;
   displayEnemyEffect("💤");
@@ -2280,11 +2280,11 @@ function enemyKnockedOut(){
 }
 
 function enemyDisengage(){
-  var enemyXP=parseInt(getEnemyXP(1.5));
+  var gainedXP=parseInt(playerGainXP(1.5));
 
-  logPlayerAction(actionString,"Convinced them to disengage " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  logPlayerAction(actionString,"Convinced them to disengage " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   playerKarma+=1; //console.log("karma++ ("+playerKarma+")");
-  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
   isFishing=false;
   displayPlayerEffect("💬");
@@ -2292,12 +2292,12 @@ function enemyDisengage(){
 }
 
 function enemyGrabbedIntoLoot(){
-  var enemyXP=parseInt(getEnemyXP(1.25));
+  var gainedXP=parseInt(playerGainXP(1.25));
 
-  logPlayerAction(actionString,"Grabbed it into their bag " + decorateStatusText("","+"+enemyXP+" XP",colorGold));
+  logPlayerAction(actionString,"Grabbed it into their bag " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   playerLootString+=enemyEmoji;
   //playerKarma+=1; //I guess not?
-  playerXP+=enemyXP; console.log("XP++ "+ enemyXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
   isFishing=false;
   displayEnemyEffect("👋");
@@ -2312,9 +2312,9 @@ function enemyKicked(){
   enemyRest(1);
 }
 
-function getEnemyXP(multiplier=1){
+function playerGainXP(multiplier=1){
   var intBonus=1+playerInt/20;
-  var enemyXP=0;
+  var gainedXP=0;
   var statSum=0;
   var typeMultiplier=1;
 
@@ -2332,8 +2332,8 @@ function getEnemyXP(multiplier=1){
   //statSum+=enemyInt; - This might be OP
   statSum+=parseInt(enemyMgk);
 
-  enemyXP=(((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus;
-  return parseInt(enemyXP);
+  gainedXP=(((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus;
+  return parseInt(gainedXP);
 }
 
 function enemyAttackOrRest(message=""){
