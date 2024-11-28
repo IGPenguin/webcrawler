@@ -1383,7 +1383,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             } else {
               playerMgk-=2;
-              logPlayerAction(actionString,"Unlocked using a spell -2 🔵");
+              var gainedXP=playerGainXP(1.5,25*playerLevel,"");
+              logPlayerAction(actionString,"Unlocked using a spell -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
               break;
             }
@@ -1779,9 +1780,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 nextEncounter();
                 break;
               }
-              displayPlayerEffect(enemyEmoji);
-              playerPartyString+=" "+enemyEmoji;
-              playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg); //Cannot get health/sta/int from a pet
+              enemyJoinedParty();
               break;
             }
 
@@ -1923,10 +1922,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
-            var fishingXP=25;
 
             if (playerUseItem("🪱","Fished out something "+decorateStatusText("","+"+fishingXP+" XP",colorGold),"Missing a viable fishing bait.")){
-              playerXP+=fishingXP;
+              playerGainXP(1.5,10*playerLevel,"");
 
               if (procAbilityChance("🧵",33)) {
                 logAction("🧵 ▸ 🪱 Luckily the bait remained hooked.");
@@ -1978,7 +1976,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
-                if (playerUseItem("🗝️","Unlocked it with the key.","Cannot open, it is locked tight.",false)){
+                if (playerUseItem("🗝️","Unlocked it with the key "+decorateStatusText("","+"+(25*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
+                  playerGainXP(1.5,25*playerLevel,"");
                   nextEncounter();
                 } else {
                   displayPlayerCannotEffect();
@@ -2266,6 +2265,16 @@ function enemyKilled(){
   animateFlipNextEncounter();
 }
 
+function enemyJoinedParty(){
+  displayPlayerEffect(enemyEmoji);
+  playerPartyString+=" "+enemyEmoji;
+  //logPlayerAction(actionString,enemyName+" joined the party!");
+  var gainedXP=playerGainXP(1.5,0,"");
+  playerKarma++;
+  enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
+  logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
+}
+
 function enemyKnockedOut(){
   var gainedXP=parseInt(playerGainXP(1.25,0,""));
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
@@ -2277,7 +2286,7 @@ function enemyKnockedOut(){
 }
 
 function enemyDisengage(){
-  playerGainXP(1.5,0,"Convinced them to disengage"); //DO IT LIKE THIS
+  playerGainXP(1.5,0,"Convinced them to disengage");
   playerKarma+=1;
 
   isFishing=false;
@@ -2770,6 +2779,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     logPlayerAction(actionIcon,gainedString);
   }
   if (moveForward) nextEncounter();
+  return gainedString;
 }
 
 function playerConsumed(){
