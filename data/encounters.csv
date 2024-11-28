@@ -230,6 +230,8 @@ Forsaken Village;🧅;Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vit
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Feels blessed
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect.;Was it worth it?
 Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
+Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with honest love.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
+Forsaken Village;🍰;Cherry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with loving care.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
 Forsaken Village;🐟;Smelly Tuna;Consumable;-1;0;0;0;0;0;Rotten Fish;Does not look appealing at all.<br>;Ugh. That tasted terrible
 Forsaken Village;🥣;Unfinished Bowl;Consumable;0;0;-3;0;0;0;Someone's Breakfast;Must have been here for weeks.<br>;Ugh. That tasted terrible
@@ -404,10 +406,13 @@ Depriving Fairyland;🐉;Massive Dragon;Boss-Heavy;6;3;1;0;-1;2;Legendary Creatu
 Depriving Fairyland;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
 Depriving Fairyland;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 
+Depriving Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides extra <b>+2 ❤️ Health</b> temporarily.;Tasted just awesome
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
 Depriving Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Depriving Fairyland;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Depriving Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides extra <b>+1 🟢 Energy</b> temporarily.;Got extra energy
+Depriving Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
+Depriving Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Depriving Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
 Depriving Fairyland;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over

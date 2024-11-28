@@ -1474,7 +1474,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logMessage="Roasted a crunchy crust -1 🔵";
                 if (!playerLootString.includes("🧂")) playerMgk--;
                 enemySta=parseInt(enemySta)+1;
-                enemyName="Crunchy "+enemyName;
                 enemyMsg="That was very tasty";
                 displayEnemyEffect("🔥");
               }
@@ -1483,6 +1482,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logMessage="Added a tiny pinch of salt.";
                 enemyName="Salted "+enemyName;
                 displayEnemyEffect("✨");
+              } else {
+                enemyName="Crispy "+enemyName;
               }
 
               playerCooked=true;
