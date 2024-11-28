@@ -2254,8 +2254,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 }
 
 function enemyKilled(){
-  var gainedXP=parseInt(playerGainXP(1));
-
+  var gainedXP=parseInt(playerGainXP(1,0,""));
   logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   enemyHpLost=enemyHp; //Negate overkill damage
 
@@ -2268,11 +2267,9 @@ function enemyKilled(){
 }
 
 function enemyKnockedOut(){
-  var gainedXP=parseInt(playerGainXP(1.25));
-
+  var gainedXP=parseInt(playerGainXP(1.25,0,""));
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
-  playerKarma+=1; console.log("karma++ ("+playerKarma+")");
-  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  playerKarma+=1;
 
   isFishing=false;
   displayEnemyEffect("💤");
@@ -2280,11 +2277,8 @@ function enemyKnockedOut(){
 }
 
 function enemyDisengage(){
-  var gainedXP=parseInt(playerGainXP(1.5));
-
-  logPlayerAction(actionString,"Convinced them to disengage " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
-  playerKarma+=1; //console.log("karma++ ("+playerKarma+")");
-  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  playerGainXP(1.5,0,"Convinced them to disengage"); //DO IT LIKE THIS
+  playerKarma+=1;
 
   isFishing=false;
   displayPlayerEffect("💬");
@@ -2292,12 +2286,9 @@ function enemyDisengage(){
 }
 
 function enemyGrabbedIntoLoot(){
-  var gainedXP=parseInt(playerGainXP(1.25));
-
-  logPlayerAction(actionString,"Grabbed it into their bag " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
+  playerGainXP(1.25,0,"Grabbed it into their bag");
   playerLootString+=enemyEmoji;
-  //playerKarma+=1; //I guess not?
-  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  //No karma change
 
   isFishing=false;
   displayEnemyEffect("👋");
@@ -2312,9 +2303,8 @@ function enemyKicked(){
   enemyRest(1);
 }
 
-function playerGainXP(multiplier=1){
+function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "){
   var intBonus=1+playerInt/20;
-  var gainedXP=0;
   var statSum=0;
   var typeMultiplier=1;
 
@@ -2332,9 +2322,19 @@ function playerGainXP(multiplier=1){
   //statSum+=enemyInt; - This might be OP
   statSum+=parseInt(enemyMgk);
 
-  gainedXP=(((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus;
+  if (gainedXP==0) {
+    gainedXP=(((parseInt(statSum)*10)/2)*multiplier)*typeMultiplier*intBonus;
+  } else {
+    gainedXP=gainedXP*multiplier*intBonus;
+  }
+
+  playerXP+=parseInt(gainedXP);
+  if (message!="") logPlayerAction(actionString,message + decorateStatusText(""," +"+gainedXP+" XP",colorGold));
+  console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
+
   return parseInt(gainedXP);
 }
+
 
 function enemyAttackOrRest(message=""){
   var damageReceived=enemyAtk+enemyAtkBonus;
