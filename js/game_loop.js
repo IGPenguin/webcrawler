@@ -1058,12 +1058,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            //Hatred
-            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
-            displayPlayerCannotEffect();
-            playerName=getHatredName();
-            playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
-            playerHit(0,false,true);
+            //Health
+            logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("❤️");
+            playerName=getVitalName();
+            playerHpMax+=1;
+            playerHp+=1;
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -1956,12 +1957,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
-            displayPlayerGainedEffect();
-            displayPlayerEffect("❤️");
-            playerName=getVitalName();
-            playerHpMax+=1;
-            playerHp+=1;
+            //Hatred
+            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
+            displayPlayerCannotEffect();
+            playerName=getHatredName();
+            playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
+            playerHit(0,false,true);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -3006,9 +3007,16 @@ function setButton(elementID,text,color=colorWhite){
 }
 
 function resetEncounterButtons(){
-  setButton('button_attack',"⚔️ Attack");
-  setButton('button_block',"🔰 Block");
-  setButton('button_roll',"🌀 Dodge");
+  if (playerSta>0){
+    setButton('button_attack',"⚔️ Attack");
+    setButton('button_block',"🔰 Block");
+    setButton('button_roll',"🌀 Dodge");
+  } else {
+    setButton('button_attack',"⚔️ Attack",colorDarkGrey);
+    setButton('button_block',"🔰 Block",colorDarkGrey);
+    setButton('button_roll',"🌀 Dodge",colorDarkGrey);
+  }
+
   if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
   if (playerMgk<=0){
     setButton('button_cast',"💫 Cast",colorDarkGrey);
@@ -3028,11 +3036,11 @@ function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      setButton('button_attack',"🩸 Hatred");
+      setButton('button_attack',"❤️ Health",colorRed);
       setButton('button_roll',"🟢 Energy",colorGreen);
       setButton('button_block',"🔵 Mana",colorBlue);
       setButton('button_cast',"🔮 Sorcery");
-      setButton('button_grab',"❤️ Health",colorRed);
+      setButton('button_grab',"🩸 Hatred");
       setButton('button_curse',"🍀 Fortune");
       setButton('button_speak',"🧠 Psyche");
       setButton('button_pray',"📿 Faith");
