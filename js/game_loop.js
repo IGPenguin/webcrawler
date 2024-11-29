@@ -1058,12 +1058,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
-            displayPlayerGainedEffect();
-            displayPlayerEffect("❤️");
-            playerName=getVitalName();
-            playerHpMax+=1;
-            playerHp+=1;
+            //Hatred
+            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
+            displayPlayerCannotEffect();
+            playerName=getHatredName();
+            playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
+            playerHit(0,false,true);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -1542,7 +1542,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (enemyType=="Spirit" || enemyType=="Demon"){
+          if (enemyType=="Spirit" || enemyType=="Demon" || enemyType=="Undead"){
             if (!playerUseMagic(1,"Not enough mana, requires +2 🔵")) {
               break;
             }
@@ -1563,8 +1563,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Spirit":
           case "Demon":
-            if ( (enemyMgk-enemyMgkLost) <= playerMgkMax ){
-              logPlayerAction(actionString,"Banished them from this world!");
+            if (enemyInt <= playerInt ){
+              var gainedXP=playerGainXP(1.25,0,"")
+              logPlayerAction(actionString,"Banished them from the world! "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               displayEnemyEffect("🔥");
               nextEncounter();
               break;
@@ -1625,7 +1626,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   isFishing=false
                   if (playerHp>0) nextEncounter();
                 }
-                logPlayerAction(actionString,"No effect, missing <b>🔪 Sacrifical Blade</b>.")
+                logPlayerAction(actionString,"No effect, missing <b>🔪 Blade</b>.")
                 displayPlayerEffect("🤲");
                 displayPlayerCannotEffect();
               } else {
@@ -1955,12 +1956,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            //grab (hatred)
-            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
-            displayPlayerCannotEffect();
-            playerName=getHatredName();
-            playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
-            playerHit(0,false,true);
+            logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("❤️");
+            playerName=getVitalName();
+            playerHpMax+=1;
+            playerHp+=1;
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -3000,8 +3001,8 @@ function getTime(){
 }
 
 //UI Buttons
-function setButton(elementID,text){
-  document.getElementById(elementID).innerHTML=text;
+function setButton(elementID,text,color=colorWhite){
+  document.getElementById(elementID).innerHTML=text.replace(" "," <b style=\"color:"+color+";\">")+"</b>";
 }
 
 function resetEncounterButtons(){
@@ -3009,9 +3010,15 @@ function resetEncounterButtons(){
   setButton('button_block',"🔰 Block");
   setButton('button_roll',"🌀 Dodge");
   if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
-  setButton('button_cast',"💫 Cast");
-  setButton('button_curse',"🪬 Curse");
-  setButton('button_pray',"❤️‍🩹 Heal");
+  if (playerMgk<=0){
+    setButton('button_cast',"💫 Cast",colorDarkGrey);
+    if (playerMgk<=1) setButton('button_curse',"🪬 Curse",colorDarkGrey);
+    setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
+  } else {
+    setButton('button_cast',"💫 Cast");
+    setButton('button_curse',"🪬 Curse");
+    setButton('button_pray',"❤️‍🩹 Heal");
+  }
   setButton('button_grab',"👋 Grab");
   setButton('button_sleep',"💤 Rest");
   setButton('button_speak',"💬 Speak");
@@ -3021,11 +3028,11 @@ function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      setButton('button_attack',"❤️ Health");
-      setButton('button_roll',"🟢 Energy");
-      setButton('button_block',"🔵 Mana");
+      setButton('button_attack',"🩸 Hatred");
+      setButton('button_roll',"🟢 Energy",colorGreen);
+      setButton('button_block',"🔵 Mana",colorBlue);
       setButton('button_cast',"🔮 Sorcery");
-      setButton('button_grab',"🩸 Hatred");
+      setButton('button_grab',"❤️ Health",colorRed);
       setButton('button_curse',"🍀 Fortune");
       setButton('button_speak',"🧠 Psyche");
       setButton('button_pray',"📿 Faith");
@@ -3093,9 +3100,7 @@ function adjustEncounterButtons(){
         if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
           document.getElementById('button_speak').innerHTML="💬 Recruit";
         }
-        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
-          document.getElementById('button_grab').innerHTML="🦶 Kick";
-        }
+        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
         document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
         break;
 
@@ -3118,17 +3123,16 @@ function adjustEncounterButtons(){
       }
       break;
 
+    case "Undead":
     case "Spirit":
     case "Demon":
-      document.getElementById('button_pray').innerHTML="🔥 Banish";
-      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) {
-        document.getElementById('button_grab').innerHTML="🦶 Kick";
+      if (playerMgk>1) {
+        setButton('button_pray',"🔥 Banish");
+      } else {
+        setButton('button_pray',"🔥 Banish",colorDarkGrey);
       }
       break;
 
-    case "Undead":
-      document.getElementById('button_pray').innerHTML="🔥 Banish";
-      break;
 
     case "Death":
       document.getElementById('button_cast').innerHTML="🫶 Praise";
@@ -3142,8 +3146,12 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
     default:
+      if (enemyType.includes("Boss")) {
+        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
+      }
+
       if (enemyType.includes("Container")){
-        if (!enemyType.includes("Friend"))setButton('button_grab',"👀 Search");
+        if (!enemyType.includes("Friend"))setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
         setButton('button_roll',"👣 Walk");
         setButton('button_sleep',"💤 Sleep");
         if (enemyType.includes("Locked")){
