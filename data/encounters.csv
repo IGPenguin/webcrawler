@@ -21,8 +21,8 @@ Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kin
 
 //;Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
-Forsaken Village;🍂;Leaf Pile;Container;0;0;0;0;0;0;Hidden Stash;The fire is spreading all around.<br>;Burned alive screaming
-Forsaken Village;🍁;Pile of Leaves;Container;0;0;0;0;0;0;Hidden Stash;The fire is spreading all around.<br>;Burned alive screaming
+Forsaken Village;🍂;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
+Forsaken Village;🍁;Pile of Leaves;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
 Forsaken Village;🌾;Thick Grass;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
@@ -41,8 +41,8 @@ Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;
 Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Tool Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined Building;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;⛺︎;Camping Tent;Container-2;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;⛺︎;Simple Tent;Container-2;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏕️;Camping Tent;Container-2;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏕️;Simple Tent;Container-2;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Entered through the window.
 
 Forsaken Village;🏚️;Building Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏚️;Ruined House;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
@@ -87,11 +87,11 @@ Forsaken Village;🎶;Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive th
 Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
 
 Forsaken Village;🐁;Friendly Mouse;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
-Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;0;Speaking Toy;Looks like it has something to say.<br>;Heard a powerful message
-Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Bird;Keeps direct eye contact.<br>;Felt something change inside
-Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
-Forsaken Village;🐇;Curious Bunny;Friend;0;0;1;1;0;0;Friendly Critter;Has quick reflexes and swift paws.<br>;Gained a rabbit's insight
-Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;Wise words are coming from its mouth.<br>n/a;Well... better than being alone
+Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;0;Speaking Toy;Looks like it has something to say.<br>;Received a powerful message
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Bird;Keeps direct eye contact.<br>;Felt a change inside
+Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by Turtle Pope
+Forsaken Village;🐇;Curious Bunny;Friend;0;0;1;1;0;0;Friendly Critter;Has quick reflexes and swift paws.<br>;Gained rabbit's insight
+Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;Wise words are coming from its mouth.<br>n/a;Better than being alone
 
 Forsaken Village;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
@@ -147,7 +147,7 @@ Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;Dangerous Critter;Rarely see
 Forsaken Village;🗡️;Possesed Dagger;Swift;1;3;1;0;-1;0;Deadly Weapon;One bad move and that's it.<br>;Stabbed by invisible hand.
 Forsaken Village;🪡;Possesed Needle;Swift;1;2;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 
-Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;3;1;1;3;0;Cute Animal;These usually bring bad luck.<br>;Bitten into neck artery.
+Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
 Forsaken Village;👗;Haunted Dress;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Suffocated by floating clothing.
 
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
@@ -159,7 +159,7 @@ Forsaken Village;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not car
 
 Forsaken Village;🦢;Fearsome Swan;Boss-Swift;4;2;4;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
 Forsaken Village;🐻;Terrifying Grizzly;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Demon;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Demon;4;1;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 //;Forsaken Village;🤡;Cultist Fanatic;Boss-Swift;4;2;3;0;-1;2;Crazed Humanoid;Screams and laughs maniacally.<br>;Got devoured alive.
 
 Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
@@ -187,8 +187,10 @@ Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely cou
 Forsaken Village;📔;Mythical Tales;Item;0;0;0;0;1;1;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🧠 Intellect and +1 🔵 Mana</b>.;Learned plenty of stuff
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.<br>n/a;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various forest growth species.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
-Forsaken Village;👢;Riding Boots;Item;0;0;2;0;0;0;Specialized Gear;Gives better stability in action.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
-Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Definitely could be of service.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
+Forsaken Village;👢;Riding Boots;Item;0;0;2;0;0;0;Specialized Gear;Enables better stability in action.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
+Forsaken Village;👖;Work Trousers;Item;1;0;1;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action
+Forsaken Village;🥼;Scientific Cloak;Item;0;0;0;0;2;0;Specialized Gear;Makes the wearer look much smarter.<br>Provides <b>+2 🧠 Intellect</b>.;Ready for action
+Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 Forsaken Village;🥁;Bassline Drum;Item;0;0;2;0;;0;Rythmical Instrument;Helps staying alert in combat.<br>Provides <b>+2 🟢 Energy</b>.;Ba dum tss!
 Forsaken Village;🪇;Painted Maracas;Item;0;0;0;2;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+2 🍀 Luck</b>.;Shake it baby!
 Forsaken Village;📿;Prayer Beads;Item;0;0;0;1;1;0;Sacred Trinket;Counting the beads clears ones mind.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;
@@ -223,13 +225,15 @@ Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a be
 Forsaken Village;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no higher purpose.<br>;
 //;Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
 
-Forsaken Village;🍄;Magical Mushroom;Consumable;-2;0;0;0;0;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> does <b>-2 💔 Damage</b>.;
+Forsaken Village;🍄;Magical Mushroom;Consumable;-2;0;0;0;0;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Damage</b>.;
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a ton of vitamins.<br>Provides <b>+1 🧠 Intelect</b>.;Felt an actual difference
 Forsaken Village;🧅;Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Feels blessed
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect.;Was it worth it?
 Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
+Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with honest love.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
+Forsaken Village;🍰;Cherry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with loving care.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
 Forsaken Village;🐟;Smelly Tuna;Consumable;-1;0;0;0;0;0;Rotten Fish;Does not look appealing at all.<br>;Ugh. That tasted terrible
 Forsaken Village;🥣;Unfinished Bowl;Consumable;0;0;-3;0;0;0;Someone's Breakfast;Must have been here for weeks.<br>;Ugh. That tasted terrible
@@ -252,7 +256,7 @@ Forsaken Village;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably ta
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
-Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacret texts.<br>;Gained deeper insight
+Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained deeper insight
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 //Depriving Fairyland
@@ -272,7 +276,7 @@ Depriving Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long ti
 Depriving Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;Weather Condition;Time for well deserved rest.<br>;
 Depriving Fairyland;☀️;Warming Sunrise;Prop;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
 //;Depriving Fairyland;🎶;Distant Humming;Prop;0;0;0;0;0;0;Familiar Melody;Impossible to tell the source direction.<br>;
-🗼⛳️⛺️🏕️
+🗼⛳️
 
 Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Depriving Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
@@ -289,20 +293,21 @@ Depriving Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;Tough Terrain;Farmla
 Depriving Fairyland;🌻;Bunch of Sunflowers;Container-2;0;0;0;0;0;0;Wild Flora;Something seems hidden in there.<br>;
 Depriving Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Depriving Fairyland;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hidden there.
-Depriving Fairyland;⛺️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
-Depriving Fairyland;⛺️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
+Depriving Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
+Depriving Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 
 Depriving Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
-Depriving Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden in the trunk.
+Depriving Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
 Depriving Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Depriving Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Depriving Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Depriving Fairyland;🎪;Cheftain's Tent;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
 
 Depriving Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
 Depriving Fairyland;🗻;Rocky Mountain;Container-4;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
 Depriving Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Depriving Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
-Depriving Fairyland;🛖;Chief's Hut;Container-4;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Depriving Fairyland;🌲;Deep Forest;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
 
 Depriving Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Depriving Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
@@ -404,10 +409,13 @@ Depriving Fairyland;🐉;Massive Dragon;Boss-Heavy;6;3;1;0;-1;2;Legendary Creatu
 Depriving Fairyland;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
 Depriving Fairyland;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 
+Depriving Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides extra <b>+2 ❤️ Health</b> temporarily.;Tasted just awesome
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
 Depriving Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Depriving Fairyland;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Depriving Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides extra <b>+1 🟢 Energy</b> temporarily.;Got extra energy
+Depriving Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
+Depriving Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Depriving Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
 Depriving Fairyland;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Depriving Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
@@ -449,8 +457,9 @@ Depriving Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;<br>Provides <
 Depriving Fairyland;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 Depriving Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
 Depriving Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy;Provides <b>+3 🧠 Intellect</b> and insight.<br>n/a;Embraced the knowledge.
-Depriving Fairyland;🧣;Vigor Scarf;Item;2;0;0;0;0;0;Accessory;Soft silk warms both body and soul.<br>Provides <b>+2 ❤️ Health.</b>;Feels soft to touch.
+Depriving Fairyland;🧣;Vigor Scarf;Item;2;0;0;0;0;0;Accessory;Soft silk warms both body and soul.<br>Provides <b>+2 ❤️ Health</b>.;Feels soft to touch.
 Depriving Fairyland;👘;Wizard Robe;Item;0;0;0;0;0;2;Accessory;Perfect piece of clothing for casters.<br>Provides <b>+2 🔵 Mana</b>.;
+Depriving Fairyland;🧥;Protection Coat;Item;2;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;
 Depriving Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;Malvolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
 Depriving Fairyland;🧭;Cursed Compass;Item;0;0;2;-1;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-1 🍀 Luck</b>.;
 Depriving Fairyland;🧧;Crimson Medailon;Item;2;0;0;-1;0;0;Rare Trinket;Something feels off about this.<br>Provides <b>+2 ❤️ Health”</b> for <b>-1 🍀 Luck</b>.;
