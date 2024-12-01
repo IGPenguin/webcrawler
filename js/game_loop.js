@@ -3064,7 +3064,8 @@ function adjustEncounterButtons(){
 
     case "Dream":
       setButton('button_grab',"✋ Reach",colorDarkGrey);
-      setButton('button_roll',"👣 Walk",colorDarkGrey);
+      setButton('button_roll',"👣 Walk");
+      if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
