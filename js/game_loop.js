@@ -3081,14 +3081,12 @@ function adjustEncounterButtons(){
           document.getElementById('button_speak').innerHTML="💬 Recruit";
         }
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
-        document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
         break;
 
     case "Pet":
       if ((enemyAtk+enemyAtkBonus)<=0) document.getElementById('button_block').innerHTML="🫶 Play";
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
     case "Standard":
-      document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
@@ -3097,7 +3095,6 @@ function adjustEncounterButtons(){
     case "Heavy":
     case "Swift":
     case "Boss":
-      document.getElementById('button_pray').innerHTML="❤️‍🩹 Heal";
       if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
