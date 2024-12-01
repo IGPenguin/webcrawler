@@ -4,39 +4,11 @@
 //Debug
 var versionCode = "ver. 11/30/24 • 00:26 am"
 var initialEncounterOverride=0; //6 skips tutorial
+if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
-//To handle notes and death in .csv
-if (initialEncounterOverride!=0) initialEncounterOverride-=3;
-
-//Colors
-var colorWhite = "#FFFFFF";
-var colorGold = "#FFD940";
-var colorDarkGold = "#4d4112";
-var colorGreen = "#22BF22";
-var colorDarkGreen = "#509920";
-var colorRed = "#FF0000";
-var colorDarkRed = "#690000";
-var colorGrey = "#CCCCCC";
-var colorDarkGrey = "#888888";
-var colorOrange = "orange";
-var colorDarkOrange = "#523501";
-var colorYellow = "#F7D147";
-var colorDarkYellow = "#d6b53c";
-var colorBlue = "#1059AA";
-var colorLightBlue = "#487bb5"
-var colorDarkBlue = "#072a52";
-var colorPurple = "#BF40BF";
-var colorDarkPurple = "#381338";
-var colorPink = "#c9594f";
-
-var colorCardBackground = "#202020";
-
-//Symbols
-var fullSymbol = "●";
-var emptySymbol = "○";
-var enemyStatusString = "";
-var newline="<br>";
-var emptySpace="&nbsp";
+//Colors & Symbols
+var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5" var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorCardBackground = "#202020";
+var fullSymbol = "●"; var emptySymbol = "○"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp";
 
 //Stats
 var adventureStartTime = getTime();
@@ -48,7 +20,6 @@ var playerNumber = 1; //Increments on death if at least once saved
 var playerKills = 0;
 var playerLootString;
 var playerPartyString;
-
 var playerHpMax;
 var playerStaMax;
 var playerMgkMax;
@@ -61,11 +32,10 @@ var playerAtk;
 var playerXP;
 var playerLevel;
 var playerXPThreshold;
+var playerKarma=1; //Does not reset during the session
 var playerRested = false;
 var playerCooked = false;
 var seenLoot;
-
-var playerKarma=1; //Does not reset during the session
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -96,7 +66,6 @@ var storyData;
 var linesStory;
 var linesLoot;
 var linesGenerator;
-
 var encounterIndex;
 var lastEncounterIndex;
 var lastGeneratorName = "none";
@@ -104,7 +73,6 @@ var lootTotal;
 var randomEncounterIndex;
 var lootEncounterIndex;
 var isFishing = false;
-
 var seenEncounters = [];
 
 //Globar vars - UIElements
