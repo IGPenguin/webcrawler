@@ -1319,8 +1319,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_cast':
           if (enemyType=="Death"){
-            logPlayerAction(actionString,"Cast out a powerful message.");
-            redirectToFeedback();
+            logPlayerAction(actionString,"Cannot really cast anymore.");
+            displayPlayerCannotEffect();
             break;
           }
 
@@ -1619,10 +1619,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
         break;
 
-      case 'button_curse': //TODO: Boosts undead and demon, curse basic enemies if Mgk > them, what else?
+      case 'button_curse':
         if (enemyType=="Death"){
-          logPlayerAction(actionString,"Decided to make a complaint.");
-          redirectToFeedback();
+          logPlayerAction(actionString,"Cannot really curse anymore.");
+          displayPlayerCannotEffect();
           break;
         }
 
@@ -3044,7 +3044,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
       document.getElementById('button_pray').innerHTML="🧠 Endure";
-      document.getElementById('button_sleep').innerHTML="😱 Faint";
+      setButton('button_sleep',"😱 Faint",colorRed);
       break;
 
     case "Item":
@@ -3114,8 +3114,8 @@ function adjustEncounterButtons(){
 
 
     case "Death":
-      document.getElementById('button_cast').innerHTML="🫶 Praise";
-      document.getElementById('button_grab').innerHTML="✏️ Report";
+      //document.getElementById('button_cast').innerHTML="🫶 Praise";
+      document.getElementById('button_grab').innerHTML="🫶 Review";
       document.getElementById('button_speak').innerHTML="🦆 Tweet";
       document.getElementById('button_sleep').innerHTML="📜 Legend";
       break;
