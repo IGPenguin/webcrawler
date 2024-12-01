@@ -2,12 +2,12 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/30/24 • 00:26 am"
+var versionCode = "ver. 12/01/24 • 08:29pm"
 var initialEncounterOverride=0; //6 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors & Symbols
-var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5" var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorCardBackground = "#202020";
+var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorCardBackground = "#202020";
 var fullSymbol = "●"; var emptySymbol = "○"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp";
 
 //Stats
@@ -2070,8 +2070,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            playerRest();
-            nextEncounter();
+            logPlayerAction(actionString,"Cannot speak while asleep.");
+            displayPlayerCannotEffect();
+            //playerRest();
+            //nextEncounter();
             break;
 
           case "Upgrade":
@@ -3061,9 +3063,9 @@ function adjustEncounterButtons(){
       break;
 
     case "Dream":
-      document.getElementById('button_grab').innerHTML="✋ Reach";
-      document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_speak').innerHTML="💭 Dream";
+      setButton('button_grab',"✋ Reach",colorDarkGrey);
+      setButton('button_roll',"👣 Walk",colorDarkGrey);
+      setButton('button_speak',"💬 Speak",colorDarkGrey);
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       break;
 

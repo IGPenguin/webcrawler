@@ -214,8 +214,8 @@ layout: default
   <button type = "button" id = "button_block">🔰</button>
     <p style="margin:8px;"></p>
   <button type = "button" id = "button_grab">✋</button>&nbsp;
-  <button type = "button" id = "button_speak">💬</button>&nbsp;
-  <button type = "button" id = "button_sleep">💤</button>
+  <button type = "button" id = "button_sleep">💤</button>&nbsp;
+  <button type = "button" id = "button_speak">💬</button>
     <p style="margin:8px;"></p>
   <button type = "button" id = "button_cast">🪄</button>&nbsp;
   <button type = "button" id = "button_pray">🙏</button>&nbsp;
