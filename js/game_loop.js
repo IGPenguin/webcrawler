@@ -2067,6 +2067,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Death":
             redirectToTweet();
+            logPlayerAction(actionString,"Echoed their story to the world!")
             break;
 
           case "Dream":
@@ -2901,7 +2902,7 @@ function playerReincarnate(){
   encounterIndex=3; //Skip tutorial
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
-  logPlayerAction("👋","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
+  logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
   nextEncounter();
 
   if (playerKarma>0){
@@ -3114,10 +3115,10 @@ function adjustEncounterButtons(){
 
 
     case "Death":
-      //document.getElementById('button_cast').innerHTML="🫶 Praise";
-      document.getElementById('button_grab').innerHTML="🫶 Review";
-      document.getElementById('button_speak').innerHTML="🦆 Tweet";
+      setButton('button_grab',"🫶 Review",colorYellow);
+      setButton('button_speak',"‍🦆 Tweet",colorLightBlue);
       document.getElementById('button_sleep').innerHTML="📜 Legend";
+      setButton('button_pray',"❤️‍🩹 Heal",colorOrange);
       break;
 
     case "Checkpoint":
@@ -3319,7 +3320,7 @@ function generateCharacterLegend(logLength=0) {
 function copyAdventureToClipboard(){
   var adventureLogClipboard = generateCharacterLegend();
   displayPlayerEffect("📜");
-  logPlayerAction(actionString,"Written the legend to hard drive.");
+  logPlayerAction(actionString,"Recapped their legendary story.");
 
   //Copy to clipboard
   navigator.clipboard.writeText(adventureLogClipboard);
