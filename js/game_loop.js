@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/01/24 • 09:17pm"
+var versionCode = "ver. 12/02/24 • 11:05pm"
 var initialEncounterOverride=0; //6 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -447,7 +447,7 @@ function generateNextEncounters(generatorID=0){
 
     case 0: //Prop or Small in container
       logGenerator("prop/small");
-      var type=chooseFrom(["Prop","Small"])
+      var type=chooseFrom(["Prop","Prop","Small"]) // 1/3 chance for small
       if (type=="Prop") {
         pushEncounter(getRandomEncounter(["Prop"]));
       } else {
@@ -3001,7 +3001,7 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health",colorPink);
-      setButton('button_roll',"🟢 Energy",colorLightBlueGreen);
+      setButton('button_roll',"🟢 Energy",colorLightGreen);
       setButton('button_block',"🔵 Mana",colorLightBlue);
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_grab',"🩸 Hatred");
