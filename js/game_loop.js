@@ -3001,7 +3001,7 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health",colorPink);
-      setButton('button_roll',"🟢 Energy",colorLightGreen);
+      setButton('button_roll',"🟢 Energy",colorGreen);
       setButton('button_block',"🔵 Mana",colorLightBlue);
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_grab',"🩸 Hatred");
@@ -3023,6 +3023,7 @@ function adjustEncounterButtons(){
 
       document.getElementById('button_grab').innerHTML="🍴 Eat";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Altar":
@@ -3033,6 +3034,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       if (isFishing) setButton('button_roll',"❌ Ditch");
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (enemyEmoji=="🛶") setButton("button_roll","🛶 Sail");
       break;
 
@@ -3047,6 +3049,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="👋 Grab";
       setButton('button_roll',"❌ Ditch");
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Trap":
@@ -3056,6 +3059,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Dream":
@@ -3118,6 +3122,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✨ Embrace";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
     default:
       if (enemyType.includes("Boss")) {
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
@@ -3127,6 +3132,7 @@ function adjustEncounterButtons(){
         if (!enemyType.includes("Friend"))setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
         setButton('button_roll',"👣 Walk");
         setButton('button_sleep',"💤 Sleep");
+        if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
         if (enemyType.includes("Locked")){
           setButton('button_cast',"🪄 Unlock")
           if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorGrey)
