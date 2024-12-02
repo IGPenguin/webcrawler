@@ -451,59 +451,59 @@ function generateNextEncounters(generatorID=0){
       if (type=="Prop") {
         pushEncounter(getRandomEncounter(["Prop"]));
       } else {
+        pushEncounter(getRandomEncounter(["Prop"]));
+        pushEncounter(getRandomEncounter(["Small"]));
         pushEncounter(getRandomEncounter(["Container"]));
-        pushEncounter(getRandomEncounter(["Small"]),2);
-        pushEncounter(getRandomEncounter(["Prop"]),3);
       }
       break;
 
     case 1: //Consumable - Optional
       logGenerator("cons");
+      pushEncounter(getRandomEncounter(["Consumable"]));
       pushEncounter(getRandomEncounter(["Container"]));
-      pushEncounter(getRandomEncounter(["Consumable"]),2);
       break;
 
     case 2: //Easy Encounter
       logGenerator("easy");
-      pushEncounter(getRandomEncounter(["Prop"]));
+      generateNextEncounters(0); //Prop or Contained Small
       pushEncounter(getRandomEncounter(["Standard","Recruit"]));
       break;
 
     case 3: //Mid Encounter - 20% item
       logGenerator("mid");
-      pushEncounter(getRandomEncounter(["Prop"]));
-      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
-
+      generateNextEncounters(0); //Prop or Contained Small
       //20% item
       if (procAbilityChance("",20+playerLck)) {
-        pushEncounter(getRandomEncounter(["Item"]),2)
+        pushEncounter(getRandomEncounter(["Item"]))
       } else {
         //30% consumable
-        if(procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
+        if(procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
+      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
       break;
 
     case 4: //Hard Encounter - 40% item / 100% consumable
       logGenerator("hard");
-      pushEncounter(getRandomEncounter(["Prop"]));
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
-
+      generateNextEncounters(0); //Prop or Contained Small
       //30% item & consumable
       if (procAbilityChance("",30+playerLck)) {
-        pushEncounter(getRandomEncounter(["Item"]),2)
-        pushEncounter(getRandomEncounter(["Consumable"]),3);
+        pushEncounter(getRandomEncounter(["Item"]))
+        pushEncounter(getRandomEncounter(["Consumable"]));
       } else {
         //40% consumable
-        if (procAbilityChance("",40+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]),2);
+        if (procAbilityChance("",40+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
+
+
       break;
 
     //TODO add choose random enc (similar as house) + add to story.csv
 
     case 9: //Boss
       logGenerator("boss");
+      pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
-      pushEncounter(getRandomEncounter(["Item"],["Artifact"]),2)
       break;
 
     case 19: //Small|Demon + Altar or Trap
@@ -524,111 +524,105 @@ function generateNextEncounters(generatorID=0){
 
     case 20: //House Small - 20% item
       logGenerator("h-small");
-      pushEncounter(getRandomEncounter(["Container-2"]));
-      pushEncounter(getRandomEncounter(["Small","Standard","Recruit"]),2);
-
       if (procAbilityChance("",20+playerLck)) {
-        pushEncounter(getRandomEncounter(["Item"]),3)
+        pushEncounter(getRandomEncounter(["Item"]))
       } else {
         //20% consumable or prop (cause this is container)
         if(procAbilityChance("",20+playerLck)) {
-          pushEncounter(getRandomEncounter(["Consumable"]),3);
+          pushEncounter(getRandomEncounter(["Consumable"]));
         } else {
-          pushEncounter(getRandomEncounter(["Prop"]),3);
+          generateNextEncounters(0); //Prop or Contained Small
         }
       }
+      pushEncounter(getRandomEncounter(["Small","Standard","Recruit"]));
+      pushEncounter(getRandomEncounter(["Container-2"]));
       break;
 
-    case 30: //House Mid - 30% item + 100% small
+    case 30: //House Mid - 30% item
       logGenerator("h-mid");
-      pushEncounter(getRandomEncounter(["Container-3"]));
-
-      if (procAbilityChance("",80)) { //80% chance - enemy/trap
-        pushEncounter(getRandomEncounter(["Standard","Recruit"]),2);
-      } else {
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
-      }
-
       if (procAbilityChance("",30+playerLck)) { //
-        pushEncounter(getRandomEncounter(["Item"]),3)
+        pushEncounter(getRandomEncounter(["Item"]))
       } else {
         //50% consumable or prop (cause this is container)
         if (procAbilityChance("",50+playerLck)) {
-          pushEncounter(getRandomEncounter(["Consumable"]),3);
+          pushEncounter(getRandomEncounter(["Consumable"]));
         } else {
-          pushEncounter(getRandomEncounter(["Prop"]),3);
+          generateNextEncounters(0); //Prop or Contained Small
         }
       }
-
-      pushEncounter(getRandomEncounter(["Small","Recruit","Standard","Swift","Heavy","Demon"]),4);
+      if (procAbilityChance("",80)) { //80% chance - enemy/trap
+        pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      } else {
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+      }
+      pushEncounter(getRandomEncounter(["Small","Recruit","Standard","Swift","Heavy","Demon"]));
+      pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
     case 31: //House Locked - 100% item/pet/friend, 100% consumable
       logGenerator("h-lock");
       var type=chooseFrom(["Item","Pet","Friend","Container-Friend"]);
-
       if (type=="Container-Friend") {
-        //Change container size to 4 to account for extra encounter -> item
-        var adjustedSizeContainer=getRandomEncounter(["Locked-Container-3"]).replace("3","4");
-
+        var adjustedSizeContainer=getRandomEncounter(["Locked-Container-3"]).replace("3","4"); //Change container size to 4 to account for extra encounter -> item
+        pushEncounter(getRandomEncounter(["Consumable"]));
+        pushEncounter(getRandomEncounter(["Item"]))
+        pushEncounter(getRandomEncounter([type]))
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
         pushEncounter(adjustedSizeContainer);
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
-        pushEncounter(getRandomEncounter([type]),3)
-        pushEncounter(getRandomEncounter(["Item"]),4)
-        pushEncounter(getRandomEncounter(["Consumable"]),5);
         break;
       }
 
+      pushEncounter(getRandomEncounter(["Consumable"]));
+      pushEncounter(getRandomEncounter([type]))
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
       pushEncounter(getRandomEncounter(["Locked-Container-3"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
-      pushEncounter(getRandomEncounter([type]),3)
-      pushEncounter(getRandomEncounter(["Consumable"]),4);
       break;
 
 
     case 40: //Optional Hard House - 100% consumable, 40% item or maybe altar
       logGenerator("h-hard");
-      pushEncounter(getRandomEncounter(["Container-3"]));
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Curse","Trap","Trap-Attack","Trap-Roll"]),2);
-
       if (procAbilityChance("",40+playerLck)) {
-        pushEncounter(getRandomEncounter(["Item"]),3)
-        pushEncounter(getRandomEncounter(["Consumable"]),4);
+        pushEncounter(getRandomEncounter(["Consumable"]));
+        pushEncounter(getRandomEncounter(["Item"]))
       } else {
-        pushEncounter(getRandomEncounter(["Consumable"]),3);
-        pushEncounter(getRandomEncounter(["Prop","Altar"]),4);
+        pushEncounter(getRandomEncounter(["Prop","Altar"]));
+        pushEncounter(getRandomEncounter(["Consumable"]));
       }
+
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Curse","Trap","Trap-Attack","Trap-Roll"]));
+      pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
     case 50: //Optional Big House - 100% consumable, 40% item or maybe altar
       logGenerator("h-big");
-      pushEncounter(getRandomEncounter(["Container-4"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),2);
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),3);
 
       if (procAbilityChance("",40+playerLck)) {
-        pushEncounter(getRandomEncounter(["Item"]),4)
-        pushEncounter(getRandomEncounter(["Consumable"]),5);
+        pushEncounter(getRandomEncounter(["Consumable"]));
+        pushEncounter(getRandomEncounter(["Item"]))
       } else {
-        pushEncounter(getRandomEncounter(["Consumable"]),4);
-        pushEncounter(getRandomEncounter(["Prop","Altar"]),5);
+        pushEncounter(getRandomEncounter(["Prop","Altar"]));
+        pushEncounter(getRandomEncounter(["Consumable"]));
       }
+
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+      pushEncounter(getRandomEncounter(["Container-4"]));
       break;
 
     case 60: //Optional Huge House - 100% consumable, 50% item or altar
       logGenerator("h-huge");
-      pushEncounter(getRandomEncounter(["Container-5"]));
-      pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]),2);
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]),3);
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]),4);
-
       if (procAbilityChance("",50+playerLck)) {
-        pushEncounter(getRandomEncounter(["Item"]),5)
-        pushEncounter(getRandomEncounter(["Consumable"]),6);
+        pushEncounter(getRandomEncounter(["Consumable"]));
+        pushEncounter(getRandomEncounter(["Item"]))
       } else {
-        pushEncounter(getRandomEncounter(["Consumable"]),5);
-        pushEncounter(getRandomEncounter(["Altar"]),6);
+        pushEncounter(getRandomEncounter(["Altar"]));
+        pushEncounter(getRandomEncounter(["Consumable"]));
       }
+
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+      pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]));
+      pushEncounter(getRandomEncounter(["Container-5"]));
       break;
 
     case 69: //Fishing
@@ -2113,15 +2107,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
+            if (playerHp>0){
+              displayPlayerEffect("💤");
+              playerGetStamina(1);
+            }
             if (enemyCastIfMgk()){
               //
             } else {
               enemyAttackOrRest();
-            }
-
-            if (playerHp>0){
-              displayPlayerEffect("💤");
-              playerGetStamina(1);
             }
             break;
 
@@ -2251,8 +2244,8 @@ function enemyJoinedParty(){
   //logPlayerAction(actionString,enemyName+" joined the party!");
   var gainedXP=playerGainXP(1.5,0,"");
   playerKarma++;
-  enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
   logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
+  enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
 }
 
 function enemyKnockedOut(){
@@ -2989,45 +2982,47 @@ function resetEncounterButtons(){
   }
 
   if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
-  if (playerMgk<=0){
-    setButton('button_cast',"💫 Cast",colorDarkGrey);
-    if (playerMgk<=1) setButton('button_curse',"🪬 Curse",colorDarkGrey);
-    setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
-  } else {
-    setButton('button_cast',"💫 Cast");
-    setButton('button_curse',"🪬 Curse");
-    setButton('button_pray',"❤️‍🩹 Heal");
-  }
   setButton('button_grab',"👋 Grab");
   setButton('button_sleep',"💤 Rest");
   setButton('button_speak',"💬 Speak");
+
+  setButton('button_cast',"💫 Cast");
+  setButton('button_curse',"🪬 Curse");
+  setButton('button_pray',"❤️‍🩹 Heal");
+  if (playerMgk<=0){
+    setButton('button_cast',"💫 Cast",colorDarkGrey);
+    setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
+  }
+  if (playerMgk<=1) setButton('button_curse',"🪬 Curse",colorDarkGrey);
 }
 
 function adjustEncounterButtons(){
   resetEncounterButtons();
   switch (enemyType){
     case "Upgrade":
-      setButton('button_attack',"❤️ Health",colorRed);
-      setButton('button_roll',"🟢 Energy",colorGreen);
-      setButton('button_block',"🔵 Mana",colorBlue);
+      setButton('button_attack',"❤️ Health",colorPink);
+      setButton('button_roll',"🟢 Energy",colorLightBlueGreen);
+      setButton('button_block',"🔵 Mana",colorLightBlue);
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_grab',"🩸 Hatred");
       setButton('button_curse',"🍀 Fortune");
       setButton('button_speak',"🧠 Psyche");
       setButton('button_pray',"📿 Faith");
-      setButton('button_sleep',"💀 Pain"); //TODO: Refactor below
+      setButton('button_sleep',"💀 Pain",colorDarkGrey); //TODO: Invent new perk
       break;
 
     case "Consumable":
     case "Consumable-Container":
-      if (playerMgk>0) setButton('button_cast',"🔥 Cook");
-      if (playerLootString.includes("🧂")) setButton('button_cast',"🧂 Salt");
+      setButton('button_cast',"🔥 Cook",colorDarkGrey);
+      if (playerMgk>0 && !playerCooked) setButton('button_cast',"🔥 Cook");
+      if (playerLootString.includes("🧂")) {
+        setButton('button_cast',"🧂 Salt");
+        if (playerCooked) setButton('button_cast',"🧂 Salt",colorDarkGrey);
+      }
       setButton('button_roll',"❌ Ditch");
 
       document.getElementById('button_grab').innerHTML="🍴 Eat";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      if (playerLootString.includes("⛺️")) setButton('button_sleep',"⛺️ Camp");
-
       break;
 
     case "Altar":
@@ -3045,7 +3040,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
       document.getElementById('button_pray').innerHTML="🧠 Endure";
-      setButton('button_sleep',"😱 Faint",colorRed);
+      setButton('button_sleep',"😱 Faint");
       break;
 
     case "Item":
@@ -3084,7 +3079,8 @@ function adjustEncounterButtons(){
         break;
 
     case "Pet":
-      if ((enemyAtk+enemyAtkBonus)<=0) document.getElementById('button_block').innerHTML="🫶 Play";
+      if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
+      if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
@@ -3132,7 +3128,8 @@ function adjustEncounterButtons(){
         setButton('button_roll',"👣 Walk");
         setButton('button_sleep',"💤 Sleep");
         if (enemyType.includes("Locked")){
-          document.getElementById('button_cast').innerHTML="🪄 Unlock";
+          setButton('button_cast',"🪄 Unlock")
+          if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorGrey)
           if (playerLootString.includes("🗝️")){
             document.getElementById('button_grab').innerHTML="🗝️ Unlock";
           } else {
