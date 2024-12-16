@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/02/24 • 11:23pm"
+var versionCode = "ver. 12/16/24 • 11:02pm"
 var initialEncounterOverride=0; //6 skips tutorial
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -771,7 +771,7 @@ function redraw(){
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
-      if (enemyTeam.includes("Artifact")) {
+      if (enemyTeam.includes("Artifact") || enemyTeam.includes("Goo")) {
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.background=colorDarkOrange;
       }
@@ -1853,8 +1853,83 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerHit(halfHp,false,true);
             }
 
+            if (enemyEmoji=="🧪"){
+              displayPlayerEffect("🌪️");
+              var polymorph = chooseFrom(["🗿","🥨","🪰","🦎","🐸","🐁","🐷","🦍","😾","🧞‍♂️","👽","🎃","🪽"]);
+              switch (polymorph) {
+
+                case "🦍":
+                  playerAtk+=1;
+                  playerName="Muscular Ape"
+                  enemyMsg="Turned into "+polymorph+" <b>Muscular Ape</b> +1 ⚔️";
+                  break;
+
+                case "😾":
+                  playerAtk+=2;
+                  playerName="Bipedal Feline"
+                  enemyMsg="Turned into "+polymorph+" <b>Bipedal Feline</b> +2 ⚔️";
+                  break;
+
+                case "🪽":
+                  playerSta+=3; playerStaMax+=3;
+                  playerName="Winged Hybrid"
+                  enemyMsg="Turned into "+polymorph+" <b>"+playerName+"</b> +3 🟢";
+                  break;
+
+                case "🧞‍♂️":
+                  playerMgk=+3; playerMgkMax=+3;
+                  playerName="Blueskin Genie"
+                  enemyMsg="Morphed into "+polymorph+" <b>Blueskin Genie</b> +3 🔵";
+                  break;
+
+                case "👽":
+                  playerName="Ancient Alien"
+                  enemyMsg="Turned into "+polymorph+" <b>Ancient Alien</b> +4 🧠";
+                  playerInt+=4;
+                  break;
+
+                case "🎃":
+                  playerName="Hollow Giant"
+                  enemyMsg="Turned into "+polymorph+" <b>"+playerName+"</b> +3 ❤️";
+                  playerHp+=3; playerHpMax+=3;
+                  break;
+
+                case "🐷":
+                  playerName="Pighead Hybrid"
+                  enemyMsg="Turned into "+polymorph+" <b>Pighead Hybrid</b> -4 🧠";
+                  playerInt-=4;
+                  break;
+
+                case "🗿":
+                  playerName="Petrified Stone"
+                  enemyMsg="Turned into "+polymorph+" <b>Petrified Stone</b>";
+                  playerHp=0;
+                  playerHit(0,false);
+                  break;
+
+                case "🥨":
+                  playerName="Stale Pretzel"
+                  enemyMsg="Turned into "+polymorph+" <b>"+playerName+"</b>";
+                  playerHp=0;
+                  playerHit(0,false);
+                  break;
+
+                default:
+                  playerName="Harmless Vermin"
+                  enemyMsg="Morphed into "+polymorph+" <b>Harmless Vermin</b> ⇣🔻";
+                  playerHp=1; playerHpMax=1;
+                  playerSta=2; playerStaMax=2;
+                  playerMgk=0; playerMgkMax=0;
+                  playerAtk=0;
+              }
+
+              playerName=polymorph+" "+playerName;
+              displayPlayerCannotEffect();
+            }
+
             playerLootString+=enemyEmoji;
             isFishing=false;
+            if (playerHp==0) break;
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
             break;
 
@@ -2245,7 +2320,7 @@ function enemyJoinedParty(){
   var gainedXP=playerGainXP(1.5,0,"");
   playerKarma++;
   logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
-  enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
+  playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
 }
 
 function enemyKnockedOut(){
@@ -3001,7 +3076,7 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health",colorPink);
-      setButton('button_roll',"🟢 Energy",colorGreen);
+      setButton('button_roll',"🟢 Energy",colorDarkGreen);
       setButton('button_block',"🔵 Mana",colorLightBlue);
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_grab',"🩸 Hatred");
@@ -3112,10 +3187,10 @@ function adjustEncounterButtons(){
 
 
     case "Death":
-      setButton('button_grab',"🫶 Review",colorYellow);
+      setButton('button_grab',"💌 Review",colorPink);
       setButton('button_speak',"‍🦆 Tweet",colorLightBlue);
       document.getElementById('button_sleep').innerHTML="📜 Legend";
-      setButton('button_pray',"❤️‍🩹 Heal",colorOrange);
+      setButton('button_pray',"✨ Rebirth",colorYellow);
       break;
 
     case "Checkpoint":
