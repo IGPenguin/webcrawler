@@ -3187,10 +3187,10 @@ function adjustEncounterButtons(){
 
 
     case "Death":
-      setButton('button_grab',"🫶 Review",colorYellow);
+      setButton('button_grab',"💌 Review",colorPink);
       setButton('button_speak',"‍🦆 Tweet",colorLightBlue);
       document.getElementById('button_sleep').innerHTML="📜 Legend";
-      setButton('button_pray',"❤️‍🩹 Heal",colorOrange);
+      setButton('button_pray',"✨ Rebirth",colorYellow);
       break;
 
     case "Checkpoint":
