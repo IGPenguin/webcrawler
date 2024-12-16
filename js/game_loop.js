@@ -2245,7 +2245,7 @@ function enemyJoinedParty(){
   var gainedXP=playerGainXP(1.5,0,"");
   playerKarma++;
   logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
-  enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
+  playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
 }
 
 function enemyKnockedOut(){
@@ -3001,7 +3001,7 @@ function adjustEncounterButtons(){
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health",colorPink);
-      setButton('button_roll',"🟢 Energy",colorGreen);
+      setButton('button_roll',"🟢 Energy",colorDarkGreen);
       setButton('button_block',"🔵 Mana",colorLightBlue);
       setButton('button_cast',"🔮 Sorcery");
       setButton('button_grab',"🩸 Hatred");
