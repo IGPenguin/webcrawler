@@ -3147,7 +3147,8 @@ function adjustEncounterButtons(){
 
     case "Fishing":
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_grab').innerHTML="🎣 Fish";
+      setButton('button_grab',"🎣 Fish",colorDarkGrey);
+      if (playerLootString.includes("🪱")) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
     case "Recruit":
