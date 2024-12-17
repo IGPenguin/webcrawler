@@ -125,7 +125,7 @@ Forsaken Village;🦔️;Scared Hedgehog;Small;2;0;2;0;0;0;Innocent Critter;He's
 
 Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
+Forsaken Village;🐓;Enraged Cock;Standard;2;1;1;0;1;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
 Forsaken Village;🦆;Protective Duck;Standard;2;1;1;0;1;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
 Forsaken Village;🐑;Oversensitive Sheep;Standard;3;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
 Forsaken Village;🪿;Untitled Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
@@ -150,7 +150,8 @@ Forsaken Village;🗡️;Possesed Dagger;Swift;1;3;1;0;-1;0;Deadly Weapon;One ba
 Forsaken Village;🪡;Possesed Needle;Swift;1;2;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 
 Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
-Forsaken Village;👗;Haunted Dress;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Suffocated by floating clothing.
+Forsaken Village;☁️;Toxic Cloud;Spirit;1;0;1;0;-1;1;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
+//;Forsaken Village;👗;Haunted Dress;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Suffocated by floating clothing.
 
 Forsaken Village;🐏;Alpha Ram;Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Forsaken Village;🐗;Aging Warthog;Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
@@ -159,9 +160,9 @@ Forsaken Village;🦬;Enraged Bison;Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps f
 Forsaken Village;🐂;Mighty Bull;Heavy;2;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Forsaken Village;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 
-Forsaken Village;🦢;Fearsome Swan;Boss-Swift;4;2;4;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
+Forsaken Village;🦢;Fearsome Swan;Boss-Swift;4;3;2;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
 Forsaken Village;🐻;Terrifying Grizzly;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;1;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 Forsaken Village;🤡;Cultist Madman;Boss-Standard;4;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
 Forsaken Village;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
 
@@ -239,7 +240,7 @@ Forsaken Village;🍒;Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially 
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect.;Was it worth it?
 Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
 Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with honest love.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
-Forsaken Village;🍰;Cherry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with loving care.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
+Forsaken Village;🍰;Strawberry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with loving care.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
 Forsaken Village;🐟;Smelly Tuna;Consumable;-1;0;0;0;0;0;Rotten Fish;Does not look appealing at all.<br>;Ugh. That tasted terrible
 Forsaken Village;🥣;Unfinished Bowl;Consumable;0;0;-3;0;0;0;Someone's Breakfast;Must have been here for weeks.<br>;Ugh. That tasted terrible
@@ -282,7 +283,6 @@ Depriving Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long ti
 Depriving Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;Weather Condition;Time for well deserved rest.<br>;
 Depriving Fairyland;☀️;Warming Sunrise;Prop;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
 //;Depriving Fairyland;🎶;Distant Humming;Prop;0;0;0;0;0;0;Familiar Melody;Impossible to tell the source direction.<br>;
-🗼⛳️
 
 Depriving Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Depriving Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
@@ -301,6 +301,7 @@ Depriving Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compe
 Depriving Fairyland;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hidden there.
 Depriving Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Depriving Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
+Depriving Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 
 Depriving Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Depriving Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
@@ -308,12 +309,13 @@ Depriving Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Bui
 Depriving Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Depriving Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Depriving Fairyland;🎪;Cheftain's Tent;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
+Depriving Fairyland;🗼;Tribal Monument;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
 
 Depriving Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
 Depriving Fairyland;🗻;Rocky Mountain;Container-4;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
 Depriving Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Depriving Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
-Depriving Fairyland;🌲;Deep Forest;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
+Depriving Fairyland;🌲;Deep Forest;Container-4;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
 
 Depriving Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Depriving Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
@@ -331,9 +333,9 @@ Depriving Fairyland;🗯️;Unknown Voice;Curse;-1;0;0;0;-1;0;Misfortune;Its wor
 //TODO add explanations
 Depriving Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods
 Depriving Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
-Depriving Fairyland;🌕;Full Moon;Altar;-2;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;
 Depriving Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
 Depriving Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
+Depriving Fairyland;🌕;Full Moon;Altar;-2;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;
 
 Depriving Fairyland;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
 Depriving Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
@@ -344,9 +346,9 @@ Depriving Fairyland;🪲;Smelly Bug;Trap;-1;0;0;0;0;0;Insect;Its colour suggests
 Depriving Fairyland;🌵;Pointy Cacti;Trap;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 
 Depriving Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
-Depriving Fairyland;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
-Depriving Fairyland;🌊;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
-Depriving Fairyland;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
+Depriving Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
+Depriving Fairyland;🌾;Overgrown Pond;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
+Depriving Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
 Depriving Fairyland;🦧;Friendly Orangutan;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
 Depriving Fairyland;🐒;Talking Monkey;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Heard a powerful message
@@ -414,7 +416,6 @@ Depriving Fairyland;👹;Sinister Devil;Demon;3;2;2;0;-1;1;Imminent Threat;Laugh
 Depriving Fairyland;👹;Malvolent Being;Demon;3;2;2;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 
 Depriving Fairyland;👻;Spooky Ghost;Spirit;4;1;2;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
-Depriving Fairyland;☁️;Toxic Cloud;Spirit;3;1;2;1;-1;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 Depriving Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Strikes with power and precision.<br>;Zapped away from this world.
 
 Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;4;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
@@ -592,9 +593,9 @@ Afflicted Necropolis;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Prov
 Afflicted Necropolis;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Add a new option to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
 Afflicted Necropolis;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Strange Goo</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;Something feels different.
 
-Afflicted Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Questionable Trinket;Who knows what this brings?<br>;Another disgusting item in pocket.
-Afflicted Necropolis;🦴;Human Femur;Item;0;0;0;0;0;0;Human Remains;Oof... Rest in pieces.br>;Another disgusting item in pocket.
-Afflicted Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;1;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;Felt a surge in your chest
+Afflicted Necropolis;🦷;Lucky Tooth;Item;0;0;0;1;0;0;Questionable Trinket;Who knows what this brings?<br>;Another disgusting item in pockets.
+Afflicted Necropolis;🦴;Human Femur;Item;0;0;0;0;0;0;Human Remains;Oof... Rest in pieces.br>;Another disgusting thing in pockets.
+Afflicted Necropolis;💍;Engagement Ring;Item;1;0;0;0;0;1;Shiny Object;It could still warm someone's heart.<br>Or at least fill their pocket.;Felt a surge in the chest.
 
 Afflicted Necropolis;🫀;Rotten Heart;Consumable;0;0;0;0;-1;0;Disgusting Sight;Does not look appealing.<br>;What have you done?!
 Afflicted Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
