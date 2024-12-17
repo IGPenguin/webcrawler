@@ -34,7 +34,6 @@ Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something
 Forsaken Village;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Forsaken Village;🪺;Bird Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;
 Forsaken Village;🪴;Thriving Plantpot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
-Forsaken Village;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
 
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
 Forsaken Village;🏚️;Abandoned Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
@@ -226,7 +225,7 @@ Forsaken Village;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Loud Trinket;Makes annoying 
 
 Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a warrior.<br>;
 Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
-Forsaken Village;🧦;Lost Sock;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
+Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
 Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
 Forsaken Village;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no higher purpose.<br>;
@@ -520,6 +519,7 @@ Afflicted Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign o
 Afflicted Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Afflicted Necropolis;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Afflicted Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;
+Afflicted Necropolis;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
 Afflicted Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
 Afflicted Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
 Afflicted Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.

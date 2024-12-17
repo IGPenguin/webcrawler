@@ -1255,7 +1255,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (enemyAtk<=0 && enemyType!="Pet" && enemySta > 0){
+        if (enemyAtk<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
           enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
           displayEnemyCannotEffect();
           break;
@@ -1267,6 +1267,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Pet":
+          case "Small":
             if (enemyAtk<=0) {
               enemyStaminaChangeMessage(-1,"Enjoyed a moment together -1 🟢","They needed to catch a breath -1 🟢");
             } else {
@@ -1277,7 +1278,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Recruit":
           case "Demon":
-          case "Small":
             enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -2592,10 +2592,10 @@ function animateFlipNextEncounter(){
 
 //Player
 function playerCheckLevelUp(){
-  var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
+  var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased"+decorateStatusText("","<br>New perk point available.",colorWhite))+"</p>";
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased!<br>"+decorateStatusText("","New perk available.",colorWhite))+"</p>";
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
@@ -3153,12 +3153,20 @@ function adjustEncounterButtons(){
       if (playerLootString.includes("🪱")) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
+    case "Small":
+      if (playerSta>0){
+        if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
+      } else {
+        if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
+      }
+      break;
+
     case "Recruit":
-        if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
-          document.getElementById('button_speak').innerHTML="💬 Recruit";
-        }
-        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
-        break;
+      if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
+        document.getElementById('button_speak').innerHTML="💬 Recruit";
+      }
+      if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
+      break;
 
     case "Pet":
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
