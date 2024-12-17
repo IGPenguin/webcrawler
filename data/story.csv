@@ -9,7 +9,7 @@ Depths of Slumber;👿;Bad Thought;Demon;1;1;1;0;0;0;Imaginary Threat;<b>🔰 Bl
 Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>;
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Focus on the details to <b>increase your chances.</b><br>n/a;
 
-//Work-in-progress & TODOs: 🖼️🦦 🍚🍆
+//Work-in-progress
 //;Depriving Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Calming aura radiates around.<br>;
 //;Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
 //;Forsaken Village;🪅;Piñata;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
@@ -18,6 +18,7 @@ Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Focus on 
 //;Forsaken Village;💐;Flower Bouquet;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
 //;Forsaken Village;⛺️;Camping Tent;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to recover <b>🟢 Energy</b> on use.;Gained skill <b>⚡️ Quick Reflexes</b>.
 //;Forsaken Village;📙;Mythical Tales;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
+🖼️🦦 🍚🍆
 
 //Forsaken Village
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
@@ -64,10 +65,15 @@ Depriving Fairyland;🌴;Sandy Beach;Prop;0;0;0;0;0;0;Edge of the World;Water wa
 Depriving Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled towards the opposite shore.
 
 Mournful Barrens;🏜️;Endless Shore;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
-Mournful Barrens;👾;The Singularity;Death;0;0;0;0;0;0;Mission Accomplished;<b>👑 Congrats! You just finished the demo.</b><br>Consider sending feedback. <b>Thank you!</b>;
-Mournful Barrens;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;XXX;XXX;XXX
+Mournful Barrens;🌒;Cold Darkness;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
+Mournful Barrens;🌑;SIlent Midnight;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
 
-//;Afflicted Necropolis;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-//;Afflicted Necropolis;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-//;Afflicted Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
-//;Afflicted Necropolis;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+
+The Singularity;👾;Completionist;Death;0;0;0;0;0;0;Mission Accomplished;<b>👑 Congrats! You just finished the demo.</b><br>Consider sending feedback. <b>Thank you!</b>;
+The Singularity;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;XXX;XXX;XXX
