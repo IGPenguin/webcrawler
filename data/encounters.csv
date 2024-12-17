@@ -127,15 +127,17 @@ Forsaken Village;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Leaves 
 Forsaken Village;🪲;Pearlescent Bug;Small;1;0;0;0;-1;0;Pelicular Insect;The most beautiful color ever.<br>;
 Forsaken Village;🦔️;Scared Hedgehog;Small;2;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Ouch! That was painful
 
-Forsaken Village;🧹;Possesed Broom;Standard;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
-Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;10;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Animal;Better not to underestimate.<br>;Defeated by an angry bird.
-Forsaken Village;🪿;Angry Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
+Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🐓;Angry Cock;Standard;2;1;1;0;1;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
+Forsaken Village;🦆;Protective Duck;Standard;2;1;1;0;1;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
+Forsaken Village;🐑;Oversensitive Sheep;Standard;3;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
+Forsaken Village;🪿;Untitled Goose;Standard;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 Forsaken Village;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Forsaken Village;🐐;Annoying Goat;Standard;3;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Forsaken Village;🦝;Ferocious Coon;Standard;1;1;3;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
+//;Forsaken Village;🧹;Possesed Broom;Standard;1;1;2;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 //;Forsaken Village;🐺;Lone Wolf;Standard;2;2;2;0;0;0;Wild Animal;Seems starving for a long time.<br>;
 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got their heart ripped out!
@@ -386,6 +388,7 @@ Depriving Fairyland;🦡;Honey Badger;Standard;3;3;2;0;3;0;Wild Animal;The creat
 Depriving Fairyland;🦎;Komodo Dragon;Standard;4;2;2;0;-1;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
 Depriving Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
 Depriving Fairyland;🦘;Vengeful 'Roo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
+Depriving Fairyland;🦩;Starving Flamingo;Standard;2;2;3;0;4;0;Wild Bird;Seems craving fresh blood.<br>;Got their brains pecked.
 
 Depriving Fairyland;🧌;Old Troll;Recruit;4;2;2;0;2;2;Creature;Not happy about having a company.<br>;Turned into goulash.
 Depriving Fairyland;🧝‍♀️;Cultist Priestess;Recruit;3;2;2;0;-1;3;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
@@ -408,7 +411,11 @@ Depriving Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;Alpha Predator;Be
 Depriving Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
 
 Depriving Fairyland;👹;Sinister Devil;Demon;3;2;2;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
-Depriving Fairyland;👹;Malvolent Spirit;Demon;3;2;2;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
+Depriving Fairyland;👹;Malvolent Being;Demon;3;2;2;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
+
+Depriving Fairyland;👻;Spooky Ghost;Spirit;4;1;2;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
+Depriving Fairyland;☁️;Toxic Cloud;Spirit;3;1;2;1;-1;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
+Depriving Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Strikes with power and precision.<br>;Zapped away from this world.
 
 Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;4;3;3;0;3;1;Soul Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 Depriving Fairyland;🦀;Titan Crab;Boss-Heavy;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
@@ -555,7 +562,7 @@ Afflicted Necropolis;🧟;Animated Dead;Undead;5;2;2;0;4;1;Restless Body;It sure
 
 Afflicted Necropolis;🧛🏼;Thirsty Vampire;Demon;5;2;1;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 
-Afflicted Necropolis;👻;Spooky Spirit;Spirit;4;2;3;0;3;4;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
+Afflicted Necropolis;👻;Spooky Spirit;Spirit;4;2;3;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
 
 Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss-Heavy;10;8;3;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
 Afflicted Necropolis;🧞;Evil Genie;Boss-Spirit;6;0;0;0;2;6;Magic Creature;Asks for an immediate attention.<br>;Received a mysterious item.

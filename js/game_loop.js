@@ -493,7 +493,7 @@ function generateNextEncounters(generatorID=0){
         //40% consumable
         if (procAbilityChance("",40+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
 
 
       break;
@@ -512,12 +512,12 @@ function generateNextEncounters(generatorID=0){
       if (procAbilityChance("",50)) {
         pushEncounter(getRandomEncounter(["Prop"]))
         pushEncounter(getRandomEncounter(["Altar"]));
-        pushEncounter(getRandomEncounter(["Standard","Recruit","Demon","Pet"]));
+        pushEncounter(getRandomEncounter(["Standard","Recruit","Demon","Pet","Spirit"]));
         pushEncounter(getRandomEncounter(["Container-3"]))
       } else {
         pushEncounter(getRandomEncounter(["Prop"]))
         pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Friend"]));
-        pushEncounter(getRandomEncounter(["Standard","Recruit","Demon","Pet"]));
+        pushEncounter(getRandomEncounter(["Standard","Recruit","Demon","Pet","Spirit"]));
         pushEncounter(getRandomEncounter(["Container-3"]))
       }
       break;
@@ -555,7 +555,7 @@ function generateNextEncounters(generatorID=0){
       } else {
         pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
       }
-      pushEncounter(getRandomEncounter(["Small","Recruit","Standard","Swift","Heavy","Demon"]));
+      pushEncounter(getRandomEncounter(["Small","Recruit","Standard","Swift","Heavy","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -589,7 +589,7 @@ function generateNextEncounters(generatorID=0){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Curse","Trap","Trap-Attack","Trap-Roll"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll"]));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -604,7 +604,7 @@ function generateNextEncounters(generatorID=0){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
       pushEncounter(getRandomEncounter(["Container-4"]));
       break;
@@ -619,7 +619,7 @@ function generateNextEncounters(generatorID=0){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet"]));
       pushEncounter(getRandomEncounter(["Container-5"]));
