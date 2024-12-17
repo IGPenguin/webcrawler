@@ -1,5 +1,5 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
-Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;End of the Line;<b>✨ Rebirth</b> thy soul to start a new adventure.<br><b>🦆 Tweet</b> your run to appear in credits.;
+Eternal Realm;💀;Death Sentence;Death;0;0;0;0;0;0;End of the Line;<b>✨ Revive</b> thy soul to start a new adventure.<br><b>🦆 Tweet</b> your run to appear in credits.;
 
 //Debug
 
@@ -64,9 +64,8 @@ Depriving Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🌴;Sandy Beach;Prop;0;0;0;0;0;0;Edge of the World;Water waves splashing all around.<br>;
 Depriving Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled towards the opposite shore.
 
-Mournful Barrens;🏜️;Endless Shore;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
-Mournful Barrens;🌒;Cold Darkness;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
-Mournful Barrens;🌑;SIlent Midnight;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
+Mournful Barrens;🏜️;Endless Shore;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;Walked endless miles straight forward.
+Mournful Barrens;🌒;Incoming Darkness;Prop;0;0;0;0;0;0;Unsettling Atmosphere;Freezing chills are filling the air.<br>;Arrived to a depressing area.
 
 Afflicted Necropolis;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX

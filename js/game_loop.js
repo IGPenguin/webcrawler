@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 12/17/24 • 07:24pm"
-var initialEncounterOverride=0; //6 skips tutorial
+var initialEncounterOverride=0; //6 skips tutorial, 40 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors & Symbols
@@ -3192,7 +3192,7 @@ function adjustEncounterButtons(){
       setButton('button_grab',"💌 Review",colorPink);
       setButton('button_speak',"‍🦆 Tweet",colorLightBlue);
       document.getElementById('button_sleep').innerHTML="📜 Legend";
-      setButton('button_pray',"✨ Rebirth",colorYellow);
+      setButton('button_pray',"✨ Revive",colorYellow);
       break;
 
     case "Checkpoint":
