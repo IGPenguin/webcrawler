@@ -16,14 +16,11 @@ Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular in
 Forsaken Village;🪨;Pile of Stone;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
-Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
-Forsaken Village;🪴;Plant Pot;Prop;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 Forsaken Village;🌳;Lone Tree;Prop;0;0;0;0;0;0;Tall Flora;Nothing of particular interest.<br>;
-//;Forsaken Village;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-//;Forsaken Village;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 
 //;Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
+Forsaken Village;🍂;Dry Leaves;Container;0;0;0;0;0;0;Anything could be lurking inside.<br>;
 Forsaken Village;🍂;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Forsaken Village;🍁;Pile of Leaves;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Forsaken Village;🪨;Pile of Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
@@ -32,11 +29,11 @@ Forsaken Village;🌾;Thick Reeds;Container;0;0;0;0;0;0;Dense Flora;Tall growth 
 Forsaken Village;🪵;Wooden Logs;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
 Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌿;Thick Grass;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;There was something behind the tree.
+Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a shadow behind.<br>;There was something behind the tree.
 Forsaken Village;🪤;Animal Trap;Container;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Forsaken Village;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Forsaken Village;🪺;Bird Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;
-Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
+Forsaken Village;🪴;Thriving Plantpot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 Forsaken Village;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
 
 Forsaken Village;🪤;Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
@@ -69,15 +66,14 @@ Forsaken Village;🏘️;Shady Backalley;Container-4;0;0;0;0;0;0;Deserted Buildi
 Forsaken Village;🏯️;Abandoned Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;️🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🛕;Cult Tower;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🕌;Cult Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🛕;Cult Monument;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
-Forsaken Village;⛲️;Sparkling Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
-Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
+Forsaken Village;⛲️;Freshwater Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
+Forsaken Village;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
-Forsaken Village;🍂;Leaf Pile;Trap-Attack;-10;0;0;0;0;0;;The fire is spreading all around.<br>;Burned alive screaming
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
 Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
@@ -89,7 +85,7 @@ Forsaken Village;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden str
 Forsaken Village;🎶;Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
 Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
 
-Forsaken Village;🐁;Friendly Mouse;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
+Forsaken Village;🐁;Friendly Vermin;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
 Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;0;Speaking Toy;Looks like it has something to say.<br>;Received a powerful message
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Curious Bird;Keeps direct eye contact.<br>;Felt a change inside
 Forsaken Village;🐢;Turtle Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by Turtle Pope
@@ -513,6 +509,9 @@ Afflicted Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The
 Afflicted Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
 Afflicted Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Afflicted Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
+Afflicted Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Afflicted Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+//;Afflicted Necropolis;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
 //;Afflicted Necropolis;📚;Book Pile;Container;0;0;0;0;0;0;Source of Wisdom;Laying among a bunch of other junk.<br>The bottom book slightly glows.;
 //;Afflicted Necropolis;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
 //;Afflicted Necropolis;🪑;Burnt Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
@@ -521,7 +520,7 @@ Afflicted Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of par
 Afflicted Necropolis;🦴;Pile of Bones;Container;0;0;0;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;
 Afflicted Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;0;Place of Rest;Looks someone tampered with it recently.<br>;
 Afflicted Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
-Afflicted Necropolis;🚪;Strange Door;Container;0;0;0;0;0;1;Unknown;Ornate door shimmering at the edges.<br>;
+Afflicted Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
 Afflicted Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.
 //;Afflicted Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 
