@@ -109,6 +109,9 @@ Forsaken Village;🐩;Lost Doggo;Pet;2;1;2;0;0;0;Good Boy;Looks cute as hell.<br
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
 Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing
 Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
+Forsaken Village;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Gained a new minion
+Forsaken Village;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Gained a new minion
+Forsaken Village;🦎;Green Gecko;Pet;1;0;2;0;1;1;Beautiful Lizard;Eyes are glowing blue.<br>;Gained a new minion
 
 Forsaken Village;🪱;Worm;Small;1;0;0;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -122,9 +125,7 @@ Forsaken Village;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect
 Forsaken Village;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Forsaken Village;🦎;Green Gecko;Small;1;0;2;0;-1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Insides devoured by a lizard.
 Forsaken Village;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Leaves a sticky trail<br>;Choked on snail ooze.
-Forsaken Village;🪲;Pearlescent Bug;Small;1;0;0;0;-1;0;Pelicular Insect;The most beautiful color ever.<br>;
 Forsaken Village;🦔️;Scared Hedgehog;Small;2;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Ouch! That was painful
 
 Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
@@ -365,6 +366,9 @@ Depriving Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a
 Depriving Fairyland;🐫;Desert Inhabitant;Pet;2;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
 Depriving Fairyland;🐝;Friendly Bee;Pet;1;1;1;0;-1;0;Bodyguard;Keeps a close distance.<br>;Became best friends.
 Depriving Fairyland;🦊;Cunning Fox;Pet;1;1;3;0;1;0;Wild Animal;Sits around waving its furry tail.<br>;
+Depriving Fairyland;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Gained a new minion
+Depriving Fairyland;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Gained a new minion
+Depriving Fairyland;🦎;Green Gecko;Pet;1;0;2;0;1;1;Beautiful Lizard;Eyes are glowing blue.<br>;Gained a new minion
 
 Depriving Fairyland;🪱;Confused Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Depriving Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -378,7 +382,7 @@ Depriving Fairyland;🪱;Bee Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angr
 Depriving Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;Dangerous Insect;<br>;
 Depriving Fairyland;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
 Depriving Fairyland;🕷️;Black Widow;Small;1;5;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.<br>;Got stinged into their eyes.
-Depriving Fairyland;🦋;Skyblue Butterfly;Small;1;0;1;0;-1;2;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
+Depriving Fairyland;🦋;Bluesky Butterfly;Small;1;0;1;0;-1;1;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
 Depriving Fairyland;🦀;Tiny Crab;Trap;1;2;1;0;-1;0;Crustacean;Boasts painful pinchers.<br>;Got pinched to death.
 Depriving Fairyland;🐜;Bullet Ant;Small;1;3;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
 

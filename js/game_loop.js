@@ -2319,8 +2319,8 @@ function enemyJoinedParty(){
   //logPlayerAction(actionString,enemyName+" joined the party!");
   var gainedXP=playerGainXP(1.5,0,"");
   playerKarma++;
-  logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
-  playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg,false); //Cannot get health/sta/int from a pet
+  enemyMsg=enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold)
+  playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg); //Cannot get health/sta/int from a pet
 }
 
 function enemyKnockedOut(){
