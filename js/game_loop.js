@@ -1588,6 +1588,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   playerHit(0,false,true);
                   isFishing=false
                   if (playerHp>0) nextEncounter();
+                  break;
                 }
                 logPlayerAction(actionString,"No effect, missing <b>🔪 Blade</b>.")
                 displayPlayerEffect("🤲");
