@@ -2646,12 +2646,13 @@ function playerHeal(){
     if (healAmount>(playerMgk)) healAmount=(playerMgk);
     if (healAmount>2) healAmount=2;
     playerHp+=healAmount;
-    playerMgk-=(healAmount);
+    playerMgk-=healAmount;
 
     logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell -"+healAmount+" 🔵");
     displayPlayerGainedEffect();
   } else {
     logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
+    playerMgk-=1;
     displayPlayerCannotEffect();
   }
 }
