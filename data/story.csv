@@ -61,8 +61,9 @@ Depriving Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Depriving Fairyland;🌴;Sandy Beach;Prop;0;0;0;0;0;0;Edge of the World;Water waves splashing all around.<br>;
 Depriving Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled towards the opposite shore.
 
-Mournful Barrens;🏜️;Barren Shore;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
-Mournful Barrens;👾;The Singularity;Death;0;0;0;0;0;0;Demo Finished;<b>👑 Congrats! You just finished the game.</b><br>Consider sending feedback. <b>Thank you!</b>;
+Mournful Barrens;🏜️;Endless Shore;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;
+Mournful Barrens;👾;The Singularity;Death;0;0;0;0;0;0;Mission Accomplished;<b>👑 Congrats! You just finished the demo.</b><br>Consider sending feedback. <b>Thank you!</b>;
+Mournful Barrens;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;XXX;XXX;XXX
 
 //;Afflicted Necropolis;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 //;Afflicted Necropolis;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
