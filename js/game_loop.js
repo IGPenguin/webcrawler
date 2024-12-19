@@ -228,7 +228,7 @@ $(document).ready(function() {
 });
 
 //Process csv into lines of encounters
-function processStoryData(allText, initNextEncounter=true) {
+function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
   linesStory = [];
@@ -245,7 +245,7 @@ function processStoryData(allText, initNextEncounter=true) {
   }
   }
   if (initNextEncounter){
-    loadEncounter(1+initialEncounterOverride);//Start from the first encounter (0 is dead)
+    loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
@@ -369,7 +369,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
     randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"]);
   }
 
-  console.log("Types:"+encounterTypes+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
+  console.log("Type:"+encounterTypes+" Opts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
   return randomEncounter;
 }
 
@@ -643,6 +643,10 @@ function chooseFrom(array=[]){
   var options = array.length
   var choice = array[Math.floor(Math.random() * options)];
   return choice;
+}
+
+function randomNumber(min=0,max=1){
+  return min+Math.floor(Math.random() * max);
 }
 
 //UI DRAW FUNCTIONS
@@ -2369,9 +2373,6 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "
   if (enemyType=="Swift"||enemyType=="Heavy") typeMultiplier=1.2;
   if (enemyType=="Demon"||enemyType=="Spirit"||enemyType=="Undead") typeMultiplier=1.3;
   if (enemyBossType.includes("Boss")) typeMultiplier=2;
-  console.log("actionXP x"+multiplier);
-  console.log("typeXP x" +typeMultiplier);
-  console.log("intXP x" +intBonus);
 
   statSum+=parseInt(enemyHp);
   statSum+=parseInt(enemySta);
@@ -2388,7 +2389,8 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "
 
   playerXP+=gainedXP;
   if (message!="") logPlayerAction(actionString,message + decorateStatusText(""," +"+gainedXP+" XP",colorGold));
-  console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
+  var XPString = gainedXP + " ("+playerXP+"/"+playerXPThreshold+")"
+  console.log("XP +"+XPString+"\naction x"+multiplier+" type x" +typeMultiplier+" int x" +intBonus);
 
   return parseInt(gainedXP);
 }
@@ -2967,9 +2969,9 @@ function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory."
 
 function playerReincarnate(){
   playerNumber++;
-  displayEnemyEffect("❤️‍🩹");
+  displayPlayerEffect("✨");
   renewPlayer();
-  encounterIndex=3; //Skip tutorial
+  encounterIndex=4; //Skip tutorial
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
@@ -3320,7 +3322,7 @@ void documentElement.offsetWidth; // trigger a DOM reflow
 }
 
 function logGenerator(generatorName="none"){
-  console.log("Gen-name:"+generatorName);
+  console.log("Gnrt:"+generatorName);
   lastGeneratorName=generatorName;
 }
 
