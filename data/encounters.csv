@@ -180,6 +180,8 @@ Forsaken Village;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides
 Forsaken Village;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Add a new option to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
 Forsaken Village;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Strange Goo</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;Something feels different.
 
+Forsaken Village;🔥;The Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
+
 Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
 Forsaken Village;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
 Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
@@ -459,6 +461,8 @@ Depriving Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provide
 Depriving Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance to get +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 Depriving Fairyland;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Add a new option to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
 Depriving Fairyland;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Strange Goo</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;Something feels different.
+
+Depriving Fairyland;🔥;Another Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
 Depriving Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
 Depriving Fairyland;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced

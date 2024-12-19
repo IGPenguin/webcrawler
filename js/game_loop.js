@@ -498,8 +498,6 @@ function generateNextEncounters(generatorID=0){
 
       break;
 
-    //TODO add choose random enc (similar as house) + add to story.csv
-
     case 9: //Boss
       logGenerator("boss");
       pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
@@ -559,21 +557,25 @@ function generateNextEncounters(generatorID=0){
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
-    case 31: //House Locked - 100% item/pet/friend, 100% consumable
+    case 31: //House Locked - 100% item/checkpoint/pet/friend, 100% consumable
       logGenerator("h-lock");
       var type=chooseFrom(["Item","Pet","Friend","Container-Friend"]);
       if (type=="Container-Friend") {
         var adjustedSizeContainer=getRandomEncounter(["Locked-Container-3"]).replace("3","4"); //Change container size to 4 to account for extra encounter -> item
         pushEncounter(getRandomEncounter(["Consumable"]));
-        pushEncounter(getRandomEncounter(["Item"]))
-        pushEncounter(getRandomEncounter([type]))
+        pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+        pushEncounter(getRandomEncounter([type]));
         pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
         pushEncounter(adjustedSizeContainer);
         break;
       }
 
       pushEncounter(getRandomEncounter(["Consumable"]));
-      pushEncounter(getRandomEncounter([type]))
+      if (type=="Item") {
+        pushEncounter(getRandomEncounter([type],["Artifact"]));
+      } else {
+        pushEncounter(getRandomEncounter([type,"Checkpoint"]));
+      }
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
       pushEncounter(getRandomEncounter(["Locked-Container-3"]));
       break;
@@ -613,7 +615,7 @@ function generateNextEncounters(generatorID=0){
       logGenerator("h-huge");
       if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
-        pushEncounter(getRandomEncounter(["Item"]))
+        pushEncounter(getRandomEncounter(["Item","Checkpoint"]))
       } else {
         pushEncounter(getRandomEncounter(["Altar"]));
         pushEncounter(getRandomEncounter(["Consumable"]));
@@ -775,7 +777,7 @@ function redraw(){
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
-      if (enemyTeam.includes("Artifact") || enemyTeam.includes("Goo")) {
+      if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Goo")) {
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.background=colorDarkOrange;
       }
@@ -811,6 +813,7 @@ function redraw(){
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
+      cardUIElement.style.background=colorDarkOrange;
       break;
 
     default:
@@ -2010,7 +2013,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Checkpoint": //LVL UP
-            curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
+            //There's now level up effect
+            //curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
             playerXP+=playerXPThreshold;
             isFishing=false;
             logPlayerAction(actionString,"Embraced the "+enemyName+".");
@@ -3207,7 +3211,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Checkpoint":
-      document.getElementById('button_grab').innerHTML="✨ Embrace";
+      setButton('button_grab',"✨ Embrace",colorYellow)
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
@@ -3223,7 +3227,7 @@ function adjustEncounterButtons(){
         if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
         if (enemyType.includes("Locked")){
           setButton('button_cast',"🪄 Unlock")
-          if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorGrey)
+          if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorDarkGrey)
           if (playerLootString.includes("🗝️")){
             document.getElementById('button_grab').innerHTML="🗝️ Unlock";
           } else {
