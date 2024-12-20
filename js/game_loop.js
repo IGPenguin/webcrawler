@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/21/24 • 00:33am"
+var versionCode = "ver. 12/21/24 • 00:57am"
 var initialEncounterOverride=0; //~4 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
