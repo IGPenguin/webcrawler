@@ -5,14 +5,17 @@ Another text-based rougelike RPG, this one is written in JavaScript + driven by 
 <b>→ [Play in browser!](https://igpenguin.github.io/webcrawler)</b> _(optimized for iPhone)_<br>
 <br>
 
-## 🏗 Development
-<b>📝 [Create issues](https://github.com/IGPenguin/webcrawler/issues)</b> to request changes/fixes or submit new data suggestions.<br><br>
-<b>⚠️ [Pull requests](https://github.com/IGPenguin/webcrawler/pulls)</b> must follow [contribution rules](https://github.com/IGPenguin/webcrawler/blob/live/.github/CONTRIBUTING.md "the contribution rules").<br><br>
-🏗️ Deploy locally ```bundle exec jekyll serve``` to test your changes at http://127.0.0.1:4000<br><br>
-
 ## 🤘 Support
-<b>📣 Send [feedback](https://forms.gle/FJmHN9FL3ks65trv5)</b> to help improve the game.<br>
+<b>📣 Send [feedback](https://forms.gle/FJmHN9FL3ks65trv5)</b> to help me improve the game.<br>
 <br>
+<b>📝 [Create issues](https://github.com/IGPenguin/webcrawler/issues)</b> to report bugs or request features.<br>
+<br>
+
+## 🏗 Development
+<b>⚠️ [Pull requests](https://github.com/IGPenguin/webcrawler/pulls)</b> must follow [contribution rules](https://github.com/IGPenguin/webcrawler/blob/live/.github/CONTRIBUTING.md "the contribution rules").<br><br>
+🏗️ Deploy locally ```bundle exec jekyll serve``` to test your changes at http://127.0.0.1:4000<br>
+<br>
+
 <sup>⭐️ <strong>Hit the star button to make me smile!</strong><br></sup>
 <sup>🙈 Don't judge the .js spaghetti monster.<br></sup>
 <sup>📱 Check my other project: [mobile-toolkit](https://github.com/IGPenguin/mobile-toolkit)<br></sup>
