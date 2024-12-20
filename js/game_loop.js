@@ -810,6 +810,7 @@ function redraw(){
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
 
       if (enemyType.includes("Consumable")) {
+        eatColor=colorWhite;
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
         if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
           enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
@@ -3051,8 +3052,6 @@ function setButton(elementID,text,color=colorWhite){
 }
 
 function resetEncounterButtons(){
-  eatColor=colorWhite;
-  grabColor=colorWhite;
   if (playerSta>0){
     setButton('button_attack',"⚔️ Attack");
     setButton('button_block',"🔰 Block");
@@ -3129,7 +3128,8 @@ function adjustEncounterButtons(){
       break;
 
     case "Item":
-      if (enemyStatusString.includes("Valuable")) grabColor= colorYellow;
+      grabColor=colorWhite;
+      if (enemyStatusString.includes("Valuable")) grabColor=colorYellow;
       if (enemyStatusString.includes("Magnificient")) grabColor=colorLightBlue;
       if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
       if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
