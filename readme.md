@@ -10,6 +10,7 @@ Another text-based rougelike RPG, this one is written in JavaScript + driven by 
 <b>📝 [Create issues](https://github.com/IGPenguin/webcrawler/issues)</b> to request changes/fixes or submit new data suggestions.<br><br>
 <b>⚠️ [Pull requests](https://github.com/IGPenguin/webcrawler/pulls)</b> must follow [contribution rules](https://github.com/IGPenguin/webcrawler/blob/live/.github/CONTRIBUTING.md "the contribution rules").<br><br>
 🏗️ Deploy locally ```bundle exec jekyll serve``` to test your changes at http://127.0.0.1:4000<br><br>
+
 ----
 <sup>⭐️ <strong>Hit the star button to make me smile!</strong><br></sup>
 <sup>🙈 Don't judge the .js spaghetti monster.<br></sup>
