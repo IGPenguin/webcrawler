@@ -3067,6 +3067,8 @@ function setButton(elementID,text,color=colorWhite){
 }
 
 function resetEncounterButtons(){
+  eatColor=colorWhite;
+  grabColor=colorWhite;
   if (playerSta>0){
     setButton('button_attack',"⚔️ Attack");
     setButton('button_block',"🔰 Block");
@@ -3118,8 +3120,8 @@ function adjustEncounterButtons(){
       setButton('button_roll',"❌ Ditch");
       setButton("button_grab","🍴 Eat",eatColor);
 
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+      if (playerSta<playerStaMax) setButton('button_sleep',"💤 Sleep",colorOrange);
+      if (playerRested || (parseInt(playerSta)>=parseInt(playerStaMax))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Altar":
@@ -3129,8 +3131,8 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       if (isFishing) setButton('button_roll',"❌ Ditch");
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+      if (playerSta<playerStaMax) setButton('button_sleep',"💤 Sleep",colorOrange);
+      if (playerRested || (parseInt(playerSta)>=parseInt(playerStaMax))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (enemyEmoji=="🛶") setButton("button_roll","🛶 Sail");
       break;
 
@@ -3149,8 +3151,8 @@ function adjustEncounterButtons(){
       setButton('button_grab',"👋 Grab",grabColor);
 
       setButton('button_roll',"❌ Ditch");
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+      if (playerSta<playerStaMax) setButton('button_sleep',"💤 Sleep",colorOrange);
+      if (playerRested || (parseInt(playerSta)>=parseInt(playerStaMax))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Trap":
@@ -3159,8 +3161,8 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+      if (playerSta<playerStaMax) setButton('button_sleep',"💤 Sleep",colorOrange);
+      if (playerRested || (parseInt(playerSta)>=parseInt(playerStaMax))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Dream":
@@ -3168,13 +3170,15 @@ function adjustEncounterButtons(){
       setButton('button_roll',"👣 Walk");
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
+      setButton('button_sleep',"💤 Sleep",colorDarkGrey,colorYellow);
       break;
 
     case "Fishing":
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
       if (playerLootString.includes("🪱")) setButton('button_grab',"🎣 Fish",colorYellow);
+      if (playerSta<playerStaMax) setButton('button_sleep',"💤 Sleep",colorOrange);
+      if (playerRested || (parseInt(playerSta)>=parseInt(playerStaMax))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Small":
@@ -3228,19 +3232,12 @@ function adjustEncounterButtons(){
       setButton('button_pray',"✨ Revive",colorYellow);
       break;
 
-    case "Checkpoint":
-      setButton('button_grab',"✨ Embrace",colorYellow)
-      document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_sleep').innerHTML="💤 Sleep";
-      if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
-      break;
-
     default:
+      if (enemyType=="Checkpoint") setButton('button_grab',"✨ Embrace",colorYellow)
       if (enemyType.includes("Boss")) {
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
       } else {
         setButton('button_roll',"👣 Walk");
-        setButton('button_sleep',"💤 Sleep");
         if (playerSta<playerStaMax) setButton('button_sleep',"💤 Sleep",colorOrange);
         if (playerRested || (parseInt(playerSta)>=parseInt(playerStaMax))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
 
