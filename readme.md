@@ -1,6 +1,6 @@
 ## 🖤 About this project
 ### ⚔️ Webcrawler
-Another text-based rougelike RPG, written in .js + driven by .csv data.<br>
+Another text-based rougelike RPG, this one is written in JavaScript + driven by .csv data.<br>
 <b>→ [Play in the browser!](https://igpenguin.github.io/webcrawler)</b> _(optimized for iPhone)_<br>
 <br>
 <b>📣 Send [feedback](https://forms.gle/FJmHN9FL3ks65trv5)</b> to help improve the game!<br>
