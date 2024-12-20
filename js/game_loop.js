@@ -2,13 +2,13 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/20/24 • 0:43pm"
+var versionCode = "ver. 12/20/24 • 10:55pm"
 var initialEncounterOverride=0; //6 skips tutorial, 40 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorCardBackground = "#202020";
-var fullSymbol = "●"; var emptySymbol = "○"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp";
+var fullSymbol = "●"; var emptySymbol = "○"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
 
 //Stats
 var adventureStartTime = getTime();
@@ -88,6 +88,9 @@ var toolbarCardUIElement;
 var enemyTeamUIElement;
 var versusTextUIElement;
 var buttonsContainer;
+
+var grabColor=colorWhite;
+var eatColor=colorWhite;
 
 //String generators
 function getFirstName(){
@@ -543,17 +546,16 @@ function generateNextEncounters(generatorID=0){
       } else {
         //50% consumable or prop (cause this is container)
         if (procAbilityChance("",50+playerLck)) {
-          pushEncounter(getRandomEncounter(["Consumable"]));
+          pushEncounter(getRandomEncounter(["Consumable","Friend"]));
         } else {
           generateNextEncounters(0); //Prop or Contained Small
         }
       }
-      if (procAbilityChance("",80)) { //80% chance - enemy/trap
-        pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      if (procAbilityChance("",20)) { //20% chance enemy vs. 80% trap
+        pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit"]));
       } else {
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
       }
-      pushEncounter(getRandomEncounter(["Small","Recruit","Standard","Swift","Heavy","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -633,6 +635,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 99: //Random house
+      logGenerator("rand");
       generateNextEncounters(chooseFrom([20,30,31,40,50,60]));
       break;
 
@@ -825,15 +828,18 @@ function redraw(){
       if (enemyType.includes("Consumable")) {
         enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
         if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
-          enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed)
+          enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+          eatColor=colorRed;
         }
         if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
           enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
           cardUIElement.style.background=colorDarkBlue;
+          eatColor=colorLightBlue;
         }
         if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=2){
           enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
           cardUIElement.style.background=colorDarkPurple;
+          eatColor=colorPurple;
         }
       }
 
@@ -2117,8 +2123,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 nextEncounter();
               } else {
-                enemyMsg=playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg,false);
-                logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
+                enemyMsg=playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
               }
             } else {
               logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
@@ -2289,8 +2294,16 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
-  if (magicType==true) {actionString="🪄"; hitMsg="Scorched them with a spell -"+damage+" 💔";}
-    else {actionString="⚔️";}
+
+  if (magicType==true) {
+    actionString="🪄"; hitMsg="Scorched them with a spell -"+damage+" 💔";
+  } else { //Not melee
+      actionString="⚔️";
+      if (procAbilityChance("🖋️",33) && playerHp>playerHpMax){
+          logAction("🖋️ "+arrowSymbol+" "+enemyEmoji+" Successfully syphoned <b>+1 Health ❤️</b>.");
+          playerHp+=1;
+      }
+  }
 
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
@@ -2425,7 +2438,7 @@ function enemyAttackOrRest(message=""){
     if (enemyType!="Demon"){
       staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"
     } else {
-        staminaChangeMsg = "The enemy siphoned some health -"+damageReceived+" 💔";
+        staminaChangeMsg = "The enemy syphoned some health -"+damageReceived+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
 
@@ -2629,7 +2642,7 @@ function playerRest(silent=false){
       playerRested=true;
 
       if (!silent) {
-        logPlayerAction(actionString,"Wasted a precious moment of life.");
+        logPlayerAction(actionString,"Wasted some time sleeping.");
         displayPlayerEffect("💤");
       }
     }
@@ -2639,7 +2652,7 @@ function playerRest(silent=false){
       displayPlayerRestedEffect();
     }
   } else {
-    if (!silent) logPlayerAction(actionString,"Already rested at this spot.");
+    if (!silent) logPlayerAction(actionString,"Not feeling sleepy at this time.");
     displayPlayerCannotEffect();
   }
 }
@@ -3103,8 +3116,8 @@ function adjustEncounterButtons(){
         if (playerCooked) setButton('button_cast',"🧂 Salt",colorDarkGrey);
       }
       setButton('button_roll',"❌ Ditch");
+      setButton("button_grab","🍴 Eat",eatColor);
 
-      document.getElementById('button_grab').innerHTML="🍴 Eat";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
@@ -3129,7 +3142,12 @@ function adjustEncounterButtons(){
       break;
 
     case "Item":
-      document.getElementById('button_grab').innerHTML="👋 Grab";
+      if (enemyStatusString.includes("Valuable")) grabColor= colorYellow;
+      if (enemyStatusString.includes("Magnificient")) grabColor=colorLightBlue;
+      if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
+      if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
+      setButton('button_grab',"👋 Grab",grabColor);
+
       setButton('button_roll',"❌ Ditch");
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
@@ -3215,23 +3233,25 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_sleep').innerHTML="💤 Sleep";
       if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+      break;
+
     default:
       if (enemyType.includes("Boss")) {
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
-      }
-
-      if (enemyType.includes("Container")){
-        if (!enemyType.includes("Friend"))setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
+      } else {
         setButton('button_roll',"👣 Walk");
         setButton('button_sleep',"💤 Sleep");
-        if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+        if (playerSta<playerStaMax) setButton('button_sleep',"💤 Sleep",colorOrange);
+        if (playerRested || (parseInt(playerSta)>=parseInt(playerStaMax))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+
+        if (enemyType.includes("Container")) setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
         if (enemyType.includes("Locked")){
-          setButton('button_cast',"🪄 Unlock")
+          setButton('button_cast',"🪄 Unlock");
           if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorDarkGrey)
           if (playerLootString.includes("🗝️")){
             document.getElementById('button_grab').innerHTML="🗝️ Unlock";
           } else {
-            document.getElementById('button_grab').innerHTML="👋 Reach";
+          document.getElementById('button_grab').innerHTML="👋 Reach";
           }
         }
       }
