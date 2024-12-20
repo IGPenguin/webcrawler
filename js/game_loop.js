@@ -535,11 +535,8 @@ function generateNextEncounters(generatorID=0){
           generateNextEncounters(0); //Prop or Contained Small
         }
       }
-      if (procAbilityChance("",20)) { //20% chance enemy vs. 80% trap
-        pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit"]));
-      } else {
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
-      }
+      pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
+      pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -2284,10 +2281,6 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
     actionString="🪄"; hitMsg="Scorched them with a spell -"+damage+" 💔";
   } else { //Melee
       actionString="⚔️";
-      if (procAbilityChance("🀄️",33) && playerHp<playerHpMax){
-          logAction("🀄️ "+arrowSymbol+" "+enemyEmoji+" Successfully syphoned <b>+1 Health ❤️</b>.");
-          playerHp+=1;
-      }
   }
 
   displayEnemyEffect("💢");
@@ -2301,6 +2294,11 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
   if (!silent) logPlayerAction(actionString,hitMsg);
   enemyHpLost = enemyHpLost + damage;
+
+  if (!magicType && procAbilityChance("🀄️",33) && playerHp<playerHpMax){
+      logAction("🀄️ "+arrowSymbol+" ✨ The attack syphoned health +1 ❤️");
+      playerHp+=1;
+  }
 
   if (enemyHpLost >= enemyHp) {
     enemyKilled();
