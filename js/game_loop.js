@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/20/24 • 10:55pm"
+var versionCode = "ver. 12/20/24 • 11:12pm"
 var initialEncounterOverride=0; //6 skips tutorial, 40 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -2871,7 +2871,7 @@ function playerConsumed(){
   if ((playerHp>=playerHpMax)&&enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
     if (parseInt(missingSta)<=0) {
       gainStamina+=1;
-      if (enemyMsg=="") consumedString="Got energy bonus";
+      if (enemyMsg=="") consumedString="Got an energy bonus";
     } else {
       gainStamina+=parseInt(missingSta);
     }
