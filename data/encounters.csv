@@ -10,8 +10,8 @@ Forsaken Village;🌱;Potato Field;Prop;0;0;0;0;0;0;Wild Flora;Good place to cat
 Forsaken Village;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Forsaken Village;🌱;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
-Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;
-Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;
+Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
+Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🪨;Pile of Stone;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
@@ -87,7 +87,7 @@ Forsaken Village;🎶;Everlasting Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;
 Forsaken Village;🫀;Sudden Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
 
 Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;1;Speaking Toy;Looks like it has something to say.<br>;Revealed its magical secret
-Forsaken Village;🦉;Kinda Judging Owl;Friend;0;0;0;0;1;0;Prophet;Maintains direct eye contact while saying...<br>n/a;Had a pleasant conversation
+Forsaken Village;🦉;Kinda Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
 Forsaken Village;🐢;Elder Turtle Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Forsaken Village;🐇;Master Hop Hop;Friend;0;0;0;0;1;0;Friendly Critter;Might give you a lecture on life.<br>;Gained rabbit's insight
 Forsaken Village;🐖;Very Cursed Being;Friend;0;0;0;0;1;0;Prophet;Hear the wise words coming from its mouth.<br>n/a;Better than being alone
