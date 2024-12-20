@@ -2282,9 +2282,9 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
   if (magicType==true) {
     actionString="🪄"; hitMsg="Scorched them with a spell -"+damage+" 💔";
-  } else { //Not melee
+  } else { //Melee
       actionString="⚔️";
-      if (procAbilityChance("🀄️",33) && playerHp>playerHpMax){
+      if (procAbilityChance("🀄️",33) && playerHp<playerHpMax){
           logAction("🀄️ "+arrowSymbol+" "+enemyEmoji+" Successfully syphoned <b>+1 Health ❤️</b>.");
           playerHp+=1;
       }
