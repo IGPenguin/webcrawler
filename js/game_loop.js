@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/21/24 • 00:57am"
+var versionCode = "ver. 12/23/24 • 00:20am"
 var initialEncounterOverride=0; //~4 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -94,7 +94,7 @@ var eatColor=colorWhite;
 
 //String generators
 function getFirstName(){
-  const random_names = ["Scum","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit", "Deserter"];
+  const random_names = ["Vagrand","Pilgrim","Explorer","Adventurer","Wanderer", "Freak", "Nameless", "Peasant", "Voyager", "Stranger", "Traveller", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Deserter","Venturer","Pathfinder","Seeker"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -445,36 +445,42 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
-function generateNextEncounters(generatorID=0){
+function generateNextEncounters(generatorID=0, logCall=true){
   switch (generatorID) {
 
     case 0: //Prop or Small in container
-      logGenerator("prop/small");
-      var type=chooseFrom(["Prop","Prop","Prop","Small"]) // 1/4 chance for small
+      if (logCall) logGenerator("prop/small");
+      var type=chooseFrom(["Prop","Prop","Prop","Small","Consumable"]) // 1/4 chance for small
       if (type=="Prop") {
         pushEncounter(getRandomEncounter(["Prop"]));
-      } else {
+      }
+      if (type=="Small") {
         pushEncounter(getRandomEncounter(["Prop"]));
         pushEncounter(getRandomEncounter(["Small"]));
+        pushEncounter(getRandomEncounter(["Container"]));
+      }
+      if (type=="Consumable") {
+        pushEncounter(getRandomEncounter(["Prop"]));
+        pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Container"]));
       }
       break;
 
     case 1: //Consumable - Optional
-      logGenerator("cons");
+      if (logCall) logGenerator("cons");
       pushEncounter(getRandomEncounter(["Consumable"]));
       pushEncounter(getRandomEncounter(["Container"]));
       break;
 
     case 2: //Easy Encounter
-      logGenerator("easy");
-      generateNextEncounters(0); //Prop or Contained Small
-      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      if (logCall) logGenerator("easy/pet");
+      generateNextEncounters(0,false); //Prop or Contained Small
+      pushEncounter(getRandomEncounter(["Standard"]));
       break;
 
     case 3: //Mid Encounter - 20% item
-      logGenerator("mid");
-      generateNextEncounters(0); //Prop or Contained Small
+      if (logCall) logGenerator("mid");
+      generateNextEncounters(0,false); //Prop or Contained Small
       //20% item
       if (procAbilityChance("",20+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]))
@@ -482,12 +488,12 @@ function generateNextEncounters(generatorID=0){
         //30% consumable
         if(procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
-      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      pushEncounter(getRandomEncounter(["Standard","Recruit","Pet"]));
       break;
 
     case 4: //Hard Encounter - 40% item / 100% consumable
-      logGenerator("hard");
-      generateNextEncounters(0); //Prop or Contained Small
+      if (logCall) logGenerator("hard");
+      generateNextEncounters(0,false); //Prop or Contained Small
       //30% item & consumable
       if (procAbilityChance("",30+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]))
@@ -502,21 +508,25 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 9: //Boss
-      logGenerator("boss");
-      pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+      if (logCall) logGenerator("boss");
+      if (!areaName.includes("Meadows")) { //Do no guarantee legendary in first area
+        pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+      } else {
+        pushEncounter(getRandomEncounter(["Item"]));
+      }
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       break;
 
     case 20: //House Small - 20% item
-      logGenerator("h-small");
+      if (logCall) logGenerator("h-small");
       if (procAbilityChance("",20+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]))
       } else {
         //20% consumable or prop (cause this is container)
-        if(procAbilityChance("",20+playerLck)) {
+        if(procAbilityChance("",40+playerLck)) {
           pushEncounter(getRandomEncounter(["Consumable"]));
         } else {
-          generateNextEncounters(0); //Prop or Contained Small
+          generateNextEncounters(0,false); //Prop or Contained Small
         }
       }
       pushEncounter(getRandomEncounter(["Small","Standard","Recruit"]));
@@ -524,7 +534,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 30: //House Mid - 30% item
-      logGenerator("h-mid");
+      if (logCall) logGenerator("h-mid");
       if (procAbilityChance("",30+playerLck)) { //
         pushEncounter(getRandomEncounter(["Item"]))
       } else {
@@ -532,7 +542,7 @@ function generateNextEncounters(generatorID=0){
         if (procAbilityChance("",50+playerLck)) {
           pushEncounter(getRandomEncounter(["Consumable","Friend"]));
         } else {
-          generateNextEncounters(0); //Prop or Contained Small
+          generateNextEncounters(0,false); //Prop or Contained Small
         }
       }
       pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
@@ -541,14 +551,14 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 31: //House Locked - 100% item/checkpoint/pet/friend, 100% consumable
-      logGenerator("h-lock");
+      if (logCall) logGenerator("h-lock");
       var type=chooseFrom(["Item","Pet","Friend","Container-Friend"]);
       if (type=="Container-Friend") {
         var adjustedSizeContainer=getRandomEncounter(["Locked-Container-3"]).replace("3","4"); //Change container size to 4 to account for extra encounter -> item
         pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter([type]));
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+        pushEncounter(getRandomEncounter(["Altar","Curse","Trap","Trap-Attack","Trap-Roll"]));
         pushEncounter(adjustedSizeContainer);
         break;
       }
@@ -565,7 +575,7 @@ function generateNextEncounters(generatorID=0){
 
 
     case 40: //Optional Hard House - 100% consumable, 40% item or maybe altar
-      logGenerator("h-hard");
+      if (logCall) logGenerator("h-hard");
       if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Item"]))
@@ -579,7 +589,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 50: //Optional Big House - 100% consumable, 40% item or maybe altar
-      logGenerator("h-big");
+      if (logCall) logGenerator("h-big");
 
       if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
@@ -595,7 +605,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 60: //Optional Huge House - 100% consumable, 50% item or altar
-      logGenerator("h-huge");
+      if (logCall) logGenerator("h-huge");
       if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Item","Checkpoint"]))
@@ -611,12 +621,12 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 69: //Fishing
-      logGenerator("fish");
+      if (logCall) logGenerator("fish");
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Fishing"]));
       break;
 
     case 99: //Random house
-      logGenerator("rand");
+      if (logCall) logGenerator("rand");
       generateNextEncounters(chooseFrom([20,30,31,40,50,60]));
       break;
 
@@ -761,7 +771,7 @@ function redraw(){
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
-      if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Goo")) {
+      if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Questionable Drink")) {
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.background=colorDarkOrange;
       }
@@ -975,6 +985,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
               displayEnemyEffect("💨");
+              playerKarma--;
               isFishing=false;
               nextEncounter();
               break;
@@ -1354,10 +1365,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Friend":
             if (enemyAtk>0){
               playerMgk--;
+              playerKarma--;
               logPlayerAction(actionString,"Turned them adversary -1 🔵");
               enemyType="Standard";
             } else {
               playerMgk--;
+              playerKarma--;
               logPlayerAction(actionString,"Magic spooked them away -1 🔵");
               displayEnemyEffect("💨");
               isFishing=false;
@@ -1991,7 +2004,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             //Hatred
-            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
+            logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+2 🔵 Mana</b>.");
             displayPlayerCannotEffect();
             playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
@@ -2331,7 +2344,8 @@ function enemyJoinedParty(){
 function enemyKnockedOut(){
   var gainedXP=parseInt(playerGainXP(1.25,0,""));
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
-  playerKarma+=1;
+  if (enemyAtk>0) playerKarma++;
+  if (enemyAtk<=0) playerKarma--;
 
   isFishing=false;
   displayEnemyEffect("💤");
@@ -3122,7 +3136,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
       document.getElementById('button_pray').innerHTML="🧠 Endure";
-      setButton('button_sleep',"😱 Faint",colorRed);
+      setButton('button_sleep',"😱 Faint",colorPink);
       break;
 
     case "Item":
