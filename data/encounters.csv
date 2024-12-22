@@ -3,14 +3,15 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 //Meadow Wildands;
 Meadow Wildands;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Meadow Wildands;🍁;Fallen Leaves;Prop;0;0;0;0;0;0;Colorful Autumn;The heap might be hiding something.<br>;There was something hidden inside
+Meadow Wildands;🍂;Fallen Leaves;Prop;0;0;0;0;0;0;Colorful Autumn;Just leaves lying all around.<br>;There was something hidden inside
 Meadow Wildands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Meadow Wildands;🌾;Paddy Field;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Meadow Wildands;🌿;Fern Thicket;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🍂;Dry Leaves Pile;Container;0;0;0;0;0;0;Anything could be lurking inside.<br>;
-Meadow Wildands;🍁;Big Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
+Meadow Wildands;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Meadow Wildands;🍂;Fallen Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
+Meadow Wildands;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;
 Meadow Wildands;🌾;Thick Reeds;Container-2;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
 Meadow Wildands;🪤;Primitive Animal Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Meadow Wildands;🏕️;Simple Tent;Container-3;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Decided to investigate the tent.
@@ -20,6 +21,12 @@ Meadow Wildands;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sou
 Meadow Wildands;🌲;Spurce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 Meadow Wildands;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Meadow Wildands;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
+
+Meadow Wildands;🍀️;Clover Growth;Altar;0;0;0;2;0;0;Ritual Place;Surrounded by four-leaf clovers.<br>;Feels extremely lucky.
+
+Meadow Wildands;🌬️;Chilling Wind;Curse;0;0;-1;0;0;0;Disgusting Sight;Horrible chills go down the spine.<br>;Lost concetration.
+Meadow Wildands;💩;Dung Pile;Trap-Attack;0;0;0;-2;0;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
+Meadow Wildands;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
 
 Meadow Wildands;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Meadow Wildands;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -40,7 +47,6 @@ Meadow Wildands;🐿️;Greedy Chipmunk;Small;1;0;3;1;0;0;Wild Animal;Probably c
 Meadow Wildands;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
 Meadow Wildands;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Meadow Wildands;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
-Meadow Wildands;🐎;Lucky Stallion;Pet;3;0;3;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
 
 Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;5;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
 Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -125,7 +131,6 @@ Forsaken Village;🌿;Fern Thicket Patch;Container;0;0;0;0;0;0;Soft Surface;Look
 Forsaken Village;🌿;Thick Grass Patch;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the tree.
 Forsaken Village;🧺;Lost Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
-Forsaken Village;🪺;Abandoned Bird Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;
 Forsaken Village;🪴;Thriving Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 
 Forsaken Village;🪤;Elaborate Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
@@ -165,16 +170,23 @@ Forsaken Village;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautif
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
+Forsaken Village;👁️‍🗨️;Haunting Voice Echo;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
+Forsaken Village;🎭;Small Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
+Forsaken Village;🎶;Everlasting Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
+Forsaken Village;🫀;Sudden Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
+
+Forsaken Village;🕳️;Bottomless Pit;Trap-Roll;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
+Forsaken Village;💩;Dung Pile;Trap-Attack;0;0;0;-1;0;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
 Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
 Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
-Forsaken Village;💩;Dung Pile;Trap-Attack;0;0;0;-1;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 
-Forsaken Village;👁️‍🗨️;Haunting Voice Echo;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
-Forsaken Village;🎭;Small Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
-Forsaken Village;🎶;Everlasting Annoying Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
-Forsaken Village;🫀;Sudden Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
+Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
+Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
+Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
+Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained deeper insight
+Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;1;Speaking Toy;Looks like it has something to say.<br>;Revealed its magical secret
 Forsaken Village;🦉;Kinda Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
@@ -192,6 +204,7 @@ Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate
 Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
 Forsaken Village;🐩;Lost Doggo;Pet;1;1;1;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;Good Boy;These are super rare.<br>;Doge joined the party
+Forsaken Village;🐎;Lucky Stallion;Pet;3;0;3;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
 
 Forsaken Village;🪱;Worm;Small;1;0;0;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -305,13 +318,6 @@ Forsaken Village;🥖;Herb Baguette;Consumable;0;0;0;0;0;0;Snack;Still suspiciou
 Forsaken Village;🍞;Basic Bread;Consumable;0;0;0;0;0;0;Snack;Still suspiciously fresh.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Forsaken Village;🍑;Juicy Peach;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Forsaken Village;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-
-//TODO add explanations
-Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
-Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
-Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
-Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained deeper insight
-Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 //Depriving Fairyland
 Depriving Fairyland;🌾;Tall Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
