@@ -34,6 +34,7 @@ Meadow Wildands;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect 
 Meadow Wildands;🪱;Panicked Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;
 Meadow Wildands;🪱;Rain Worm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Meadow Wildands;🪱;Earthworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Meadow Wildands;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;Never hurt no one.<br>;
 Meadow Wildands;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Meadow Wildands;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
 Meadow Wildands;🦟;Pesky Mosqito;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
@@ -475,10 +476,8 @@ Depriving Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Str
 
 Depriving Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Depriving Fairyland;🦀;Titan Crab;Boss-Heavy;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
-Depriving Fairyland;🐉;Massive Dragon;Boss-Heavy;6;3;1;0;-1;2;Mythical Creature;Hungry maw full of magical teeth.;Got their head chewed off.
-Depriving Fairyland;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
-Depriving Fairyland;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+++
 
 Depriving Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
 Depriving Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
@@ -556,6 +555,29 @@ Depriving Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excess
 Depriving Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
 Depriving Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
+
+//Mournful Barrens
+Mournful Barrens;🐉;Massive Dragon;Boss-Heavy;6;3;1;0;-1;2;Mythical Creature;Hungry maw full of magical teeth.;Got their head chewed off.
+Mournful Barrens;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
+Mournful Barrens;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
+
+Mournful Barrens;;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
+Mournful Barrens;;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
+Mournful Barrens;;🖤;Obsidian Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
+Mournful Barrens;;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death Sentece</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Mournful Barrens;;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
+Mournful Barrens;;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Energy</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
+Mournful Barrens;;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice <b>1/2 ❤️ Health</b> for <b>🎲 Pure Chance</b>.<br>33% chance to <b>resist physical damage</b>.;<b>Pure Chance</b> added for <b>1/2 ❤️ Health</b>.
+Mournful Barrens;;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
+Mournful Barrens;;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
+Mournful Barrens;;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
+Mournful Barrens;;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>avoid physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
+Mournful Barrens;;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.
+Mournful Barrens;;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to generate <b>🟢 Energy</b> on action.;Gained skill <b>⚡️ Quick Reflexes</b>.
+Mournful Barrens;;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance to get +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
+Mournful Barrens;;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Add a new option to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
+Mournful Barrens;;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;Something feels different.
+Mournful Barrens;;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 
 //Afflicted Necropolis 🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
 Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
