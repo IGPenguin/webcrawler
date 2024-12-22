@@ -488,7 +488,7 @@ function generateNextEncounters(generatorID=0){
         //30% consumable
         if(procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
-      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      pushEncounter(getRandomEncounter(["Standard","Recruit","Pet","Heavy"]));
       break;
 
     case 4: //Hard Encounter - 40% item / 100% consumable
