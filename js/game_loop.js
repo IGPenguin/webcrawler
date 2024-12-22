@@ -94,7 +94,7 @@ var eatColor=colorWhite;
 
 //String generators
 function getFirstName(){
-  const random_names = ["Scum","Freak","Initiate","Savior","Nameless", "Hero", "Peasant", "Human", "Stranger", "Villain", "Soldier", "Traveller", "Wanderer", "Mortal", "Guerilla", "Lizardperson", "Casual", "Lady", "Lord", "Duke", "Mercenary", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Bandit", "Deserter"];
+  const random_names = ["Vagrand","Pilgrim","Explorer","Adventurer","Wanderer", "Freak", "Nameless", "Peasant", "Voyager", "Stranger", "Traveller", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Deserter","Venturer","Pathfinder","Seeker"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -981,6 +981,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
               displayEnemyEffect("💨");
+              playerKarma--;
               isFishing=false;
               nextEncounter();
               break;
@@ -1360,10 +1361,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Friend":
             if (enemyAtk>0){
               playerMgk--;
+              playerKarma--;
               logPlayerAction(actionString,"Turned them adversary -1 🔵");
               enemyType="Standard";
             } else {
               playerMgk--;
+              playerKarma--;
               logPlayerAction(actionString,"Magic spooked them away -1 🔵");
               displayEnemyEffect("💨");
               isFishing=false;
