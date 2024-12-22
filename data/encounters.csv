@@ -41,7 +41,6 @@ Meadow Wildands;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute f
 Meadow Wildands;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Meadow Wildands;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 Meadow Wildands;🐎;Lucky Stallion;Pet;3;0;3;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
-Meadow Wildands;🦊;Cunning Fox;Pet;2;1;2;0;1;0;Wild Animal;Sits around waving its furry tail.<br>;Got a new travel buddy!
 
 Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;5;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
 Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -406,14 +405,15 @@ Depriving Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unus
 Depriving Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;2;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
 Depriving Fairyland;🧞‍♀️;Generous Genie;Container-Friend;0;0;0;0;0;0;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
 
-Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
+Depriving Fairyland;🦄;Rainbow Unicorn;Pet;3;0;3;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
 Depriving Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
-Depriving Fairyland;🐫;Desert Inhabitant;Pet;2;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
+Depriving Fairyland;🐫;Desert Inhabitant;Pet;3;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
 Depriving Fairyland;🐝;Friendly Bee;Pet;1;1;1;0;-1;0;Bodyguard;Keeps a close distance.<br>;Became best friends.
 Depriving Fairyland;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Gained a new friend
 Depriving Fairyland;🦎;Blue-eyed Gecko;Pet;1;0;2;0;1;1;Beautiful Lizard;Eyes are glowing blue.<br>;Gained a new minion
 Depriving Fairyland;🦩;Baby Flamingo;Pet;1;0;1;1;0;0;Wild Bird;Small fancy bird in a need of help.<br>;Gained a new friend
 Depriving Fairyland;🦓;Wild Zebra;Pet;3;0;2;0;2;0;Mighty Animal;Strange horse approached.<br>;Gained a new travel buddy!
+Depriving Fairyland;🦊;Cunning Fox;Pet;3;1;3;0;3;0;Wild Animal;Sits around waving its furry tail.<br>;Got a new travel buddy!
 
 Depriving Fairyland;🪱;Confused Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Depriving Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
