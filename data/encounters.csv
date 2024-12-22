@@ -54,22 +54,19 @@ Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes 
 Meadow Wildands;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Meadow Wildands;🐦‍⬛;Scared Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Meadow Wildands;🐍;Venomous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Meadow Wildands;🦆;Overprotective Duck;Swift;2;1;1;0;1;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
 Meadow Wildands;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
-Meadow Wildands;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
-Meadow Wildands;🐂;Grazing Ox;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
+Meadow Wildands;🐄;Grazing Cow;Heavy;2;2;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
+Meadow Wildands;🐂;Grazing Ox;Heavy;2;2;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 
-Meadow Wildands;🦆;Protective Duck;Standard-Swift;2;1;1;0;1;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
-Meadow Wildands;🪿;Untitled Goose;Boss-Swift;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
+Meadow Wildands;🪿;Untitled Goose;Boss-Swift;2;2;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 Meadow Wildands;🦢;Fearsome Swan;Boss-Swift;3;2;2;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
-Meadow Wildands;🐏;Alpha Ram;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Meadow Wildands;🦌;Alpha Deer;Boss-Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Meadow Wildands;🐏;Alpha Ram;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Meadow Wildands;🦌;Alpha Deer;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Meadow Wildands;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Meadow Wildands;🐂;Mighty Bull;Boss-Heavy;2;1;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
+Meadow Wildands;🐂;Mighty Bull;Boss-Heavy;3;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Meadow Wildands;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 
-Meadow Wildands;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
-Meadow Wildands;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
-Meadow Wildands;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to generate <b>🟢 Energy</b> on action.;Gained skill <b>⚡️ Quick Reflexes</b>.
 Meadow Wildands;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels gooood maaan.
 Meadow Wildands;🌷;Pink Tulip;Item;0;0;0;0;2;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🧠 Intellect</b>.;Feels gooood maaan.
 Meadow Wildands;🌸;Cherry Blossom;Item;0;0;0;2;0;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🍀 Luck</b>.;Feels gooood maaan.
@@ -248,6 +245,8 @@ Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;
 Forsaken Village;🤡;Cultist Madman;Boss-Standard;4;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
 Forsaken Village;🐻;Fearsome Grizzly;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 
+Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
+Forsaken Village;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to generate <b>🟢 Energy</b> on action.;Gained skill <b>⚡️ Quick Reflexes</b>.
 Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think and rest anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
