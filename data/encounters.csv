@@ -3,9 +3,9 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 //Meadow Wildands;
 Meadow Wildands;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Meadow Wildands;🌾;Paddy Field;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Meadow Wildands;🍁;Fallen Leaves;Prop;0;0;0;0;0;0;Colorful Autumn;The heap might be hiding something.<br>;There was something hidden inside
-Meadow Wildands;🌱;Fresh Growth;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Meadow Wildands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Meadow Wildands;🌾;Paddy Field;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Meadow Wildands;🌿;Fern Thicket;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🍂;Dry Leaves Pile;Container;0;0;0;0;0;0;Anything could be lurking inside.<br>;
@@ -34,30 +34,33 @@ Meadow Wildands;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes a
 Meadow Wildands;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?.
 Meadow Wildands;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Meadow Wildands;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
+Meadow Wildands;🦥;Young Sloth;Small;2;0;1;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
 Meadow Wildands;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
-Meadow Wildands;🐿️;Greedy Chipmunk;Small;1;1;2;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
-Meadow Wildands;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Got a new travel buddy!
+Meadow Wildands;🐿️;Greedy Chipmunk;Small;1;0;3;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
 Meadow Wildands;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
-Meadow Wildands;🦎;Green Gecko;Pet;1;0;2;0;0;0;Beautiful Lizard;Chill fella just running around.<br>;Gained a new travel buddy!
+Meadow Wildands;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
+Meadow Wildands;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
+Meadow Wildands;🐎;Lucky Stallion;Pet;3;0;3;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
+Meadow Wildands;🦊;Cunning Fox;Pet;2;1;2;0;1;0;Wild Animal;Sits around waving its furry tail.<br>;Got a new travel buddy!
 
 Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;5;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
-Meadow Wildands;🦆;Protective Duck;Standard;2;1;1;0;1;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
-Meadow Wildands;🐑;Annoyed Sheep;Standard;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
 Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
-Meadow Wildands;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
-Meadow Wildands;🦨;Forest Skunk;Swift;1;1;2;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
+Meadow Wildands;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Meadow Wildands;🐦‍⬛;Scared Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Meadow Wildands;🐍;Poisonous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Meadow Wildands;🐏;Alpha Ram;Heavy;2;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Meadow Wildands;🦌;Alpha Deer;Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Meadow Wildands;🦬;Enraged Bison;Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Meadow Wildands;🐂;Mighty Bull;Heavy;2;1;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
+Meadow Wildands;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
+Meadow Wildands;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
 Meadow Wildands;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
+Meadow Wildands;🐂;Grazing Ox;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 
-Meadow Wildands;🪿;Untitled Goose;Boss-Heavy;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Meadow Wildands;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
+Meadow Wildands;🦆;Protective Duck;Standard-Swift;2;1;1;0;1;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
+Meadow Wildands;🪿;Untitled Goose;Boss-Swift;2;1;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 Meadow Wildands;🦢;Fearsome Swan;Boss-Swift;3;2;2;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
-Meadow Wildands;🐻;Grizzly Cub;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
+Meadow Wildands;🐏;Alpha Ram;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Meadow Wildands;🦌;Alpha Deer;Boss-Heavy;2;1;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Meadow Wildands;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
+Meadow Wildands;🐂;Mighty Bull;Boss-Heavy;2;1;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
+Meadow Wildands;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 
 Meadow Wildands;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
 Meadow Wildands;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
@@ -73,7 +76,7 @@ Meadow Wildands;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon a
 Meadow Wildands;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
 Meadow Wildands;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boots fit just perfectly.
 Meadow Wildands;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;
-Meadow Wildands;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action
+Meadow Wildands;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action
 Meadow Wildands;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels gooood maaan.
 Meadow Wildands;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
 Meadow Wildands;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
@@ -86,7 +89,6 @@ Meadow Wildands;🗝️;Home Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> do
 Meadow Wildands;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
 Meadow Wildands;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
-Meadow Wildands;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intelect</b>.;
 Meadow Wildands;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intelect</b>.;Felt an actual difference
 Meadow Wildands;🧅;Wild Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Meadow Wildands;🌽;Wild Corn;Consumable;0;0;0;0;0;0;Standard Crop;Just harvested crops never disappoints.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -219,6 +221,7 @@ Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;Humanoid;Trying to pr
 Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
 Forsaken Village;🦂;Fierce Scorpion;Swift;1;2;1;0;-1;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
+Forsaken Village;🦨;Aggresive Skunk;Swift;2;1;2;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Forsaken Village;🪡;Possesed Needle;Swift;1;1;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 
 Forsaken Village;🧹;Possesed Broom;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
@@ -227,7 +230,7 @@ Forsaken Village;☁️;Toxic Cloud;Spirit;1;0;1;0;-1;1;Unpleasant Odour;This is
 
 Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 Forsaken Village;🤡;Cultist Madman;Boss-Standard;4;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
-Forsaken Village;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
+Forsaken Village;🐻;Fearsome Grizzly;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 
 Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -397,7 +400,6 @@ Depriving Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are danc
 
 Depriving Fairyland;🦧;Friendly Orangutan;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
 Depriving Fairyland;🐒;Talking Monkey;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Heard a powerful message
-Depriving Fairyland;🦓;Clever Zebra;Friend;0;0;0;0;2;0;Mythical Creature;Strange horse approached.<br>;Revealed a shocking secret.
 Depriving Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Depriving Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could provide some agaility lessons.<br>;Got through their training.
 Depriving Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
@@ -408,11 +410,10 @@ Depriving Fairyland;🦄;Rainbow Unicorn;Pet;2;0;2;2;3;0;Mythical Creature;Stran
 Depriving Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
 Depriving Fairyland;🐫;Desert Inhabitant;Pet;2;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
 Depriving Fairyland;🐝;Friendly Bee;Pet;1;1;1;0;-1;0;Bodyguard;Keeps a close distance.<br>;Became best friends.
-Depriving Fairyland;🦊;Cunning Fox;Pet;1;1;3;0;1;0;Wild Animal;Sits around waving its furry tail.<br>;
 Depriving Fairyland;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Gained a new friend
-Depriving Fairyland;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;The usually bring luck.<br>;Gained a new friend
 Depriving Fairyland;🦎;Blue-eyed Gecko;Pet;1;0;2;0;1;1;Beautiful Lizard;Eyes are glowing blue.<br>;Gained a new minion
 Depriving Fairyland;🦩;Baby Flamingo;Pet;1;0;1;1;0;0;Wild Bird;Small fancy bird in a need of help.<br>;Gained a new friend
+Depriving Fairyland;🦓;Wild Zebra;Pet;3;0;2;0;2;0;Mighty Animal;Strange horse approached.<br>;Gained a new travel buddy!
 
 Depriving Fairyland;🪱;Confused Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Depriving Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -463,12 +464,14 @@ Depriving Fairyland;🌚;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Ap
 //More angry clouds
 Depriving Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Strikes with power and precision.<br>;Zapped away from this world.
 
-Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;4;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+Depriving Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Depriving Fairyland;🦀;Titan Crab;Boss-Heavy;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
 Depriving Fairyland;🐉;Massive Dragon;Boss-Heavy;6;3;1;0;-1;2;Mythical Creature;Hungry maw full of magical teeth.;Got their head chewed off.
 Depriving Fairyland;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
 Depriving Fairyland;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
+Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 
+Depriving Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intelect</b>.;
 Depriving Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides extra <b>+2 🧠 Intelect</b>.;Tasted just awesome
 Depriving Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides extra <b>+2 ❤️ Health</b> temporarily.;Tasted just awesome
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
