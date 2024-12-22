@@ -2000,7 +2000,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Upgrade":
             //Hatred
-            logPlayerAction(actionString,"Sacrificed <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.");
+            logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+2 🔵 Mana</b>.");
             displayPlayerCannotEffect();
             playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);

@@ -47,7 +47,7 @@ Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;5;0;Crazed Animal;Better not 
 Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Meadow Wildands;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Meadow Wildands;🐦‍⬛;Scared Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
-Meadow Wildands;🐍;Poisonous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Meadow Wildands;🐍;Venomous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Meadow Wildands;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Meadow Wildands;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
 Meadow Wildands;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
@@ -89,10 +89,10 @@ Meadow Wildands;🗝️;Home Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> do
 Meadow Wildands;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
 Meadow Wildands;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
-Meadow Wildands;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intelect</b>.;Felt an actual difference
+Meadow Wildands;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
 Meadow Wildands;🧅;Wild Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Meadow Wildands;🌽;Wild Corn;Consumable;0;0;0;0;0;0;Standard Crop;Just harvested crops never disappoints.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🫛;Wild Peas;Consumable;0;0;0;0;0;0;Fresh Food;Packs a ton of vitamins.<<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Meadow Wildands;🫛;Wild Peas;Consumable;0;0;0;0;0;0;Fresh Food;Packs a ton of vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Meadow Wildands;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Meadow Wildands;🍓;Wild Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Meadow Wildands;🫐;Wild Blueberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -266,7 +266,7 @@ Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still 
 Forsaken Village;🖋️;Fountin Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🔧;Hefty Spanner;Item;0;1;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.
-Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot an arrow in the knee
+Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot an arrow in the knee!
 Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Very heavy to carry around and swing with.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>.;Tiring to carry.
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
@@ -289,7 +289,7 @@ Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a be
 //;Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
-Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a ton of vitamins.<br>Provides <b>+1 🧠 Intelect</b>.;Felt an actual difference
+Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a ton of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect.;Was it worth it?
 Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
 Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
@@ -463,6 +463,7 @@ Depriving Fairyland;🌚;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Ap
 
 //More angry clouds
 Depriving Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Strikes with power and precision.<br>;Zapped away from this world.
+🌧️⛈️
 
 Depriving Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Depriving Fairyland;🦀;Titan Crab;Boss-Heavy;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
@@ -471,8 +472,8 @@ Depriving Fairyland;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must 
 Depriving Fairyland;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 
-Depriving Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intelect</b>.;
-Depriving Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides extra <b>+2 🧠 Intelect</b>.;Tasted just awesome
+Depriving Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
+Depriving Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides extra <b>+2 🧠 Intellect</b>.;Tasted just awesome
 Depriving Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides extra <b>+2 ❤️ Health</b> temporarily.;Tasted just awesome
 Depriving Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
 Depriving Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
