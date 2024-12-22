@@ -554,7 +554,7 @@ function generateNextEncounters(generatorID=0){
         pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter([type]));
-        pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll"]));
+        pushEncounter(getRandomEncounter(["Altar","Curse","Trap","Trap-Attack","Trap-Roll"]));
         pushEncounter(adjustedSizeContainer);
         break;
       }
