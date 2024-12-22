@@ -3,7 +3,6 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 //Meadow Wildands;
 Meadow Wildands;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Meadow Wildands;🍂;Fallen Leaves;Prop;0;0;0;0;0;0;Colorful Autumn;Just leaves lying all around.<br>;There was something hidden inside
 Meadow Wildands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Meadow Wildands;🌾;Paddy Field;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Meadow Wildands;🌿;Fern Thicket;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
@@ -18,15 +17,16 @@ Meadow Wildands;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;St
 Meadow Wildands;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
 Meadow Wildands;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
 Meadow Wildands;🌲;Spurce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
-Meadow Wildands;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
-Meadow Wildands;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
+Meadow Wildands;🌊;Sparkly Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
+Meadow Wildands;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 
 Meadow Wildands;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
 Meadow Wildands;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
 
-Meadow Wildands;🌬️;Chilling Wind;Curse;0;0;-1;0;0;0;Disgusting Sight;Horrible chills go down the spine.<br>;Lost concetration.
-Meadow Wildands;💩;Dung Pile;Trap-Attack;0;0;0;-2;0;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
-Meadow Wildands;🍂;Unnatural Leaf Pile;Trap;-1;0;0;0;0;0;Suspicious Object;Recently disturbed pile of leafs.<br>;Stepped into a covered hole.
+Meadow Wildands;💨;Strong Wind;Curse;0;0;0;0;0;0;Weather Condition;Fast air currents fly by.<br>;The weather is really unpleassant.
+Meadow Wildands;🌬️;Chilling Wind;Curse;0;0;-1;0;0;0;Weather Condition;Horrible chills go down the spine.<br>;Permanently lost concetration.
+Meadow Wildands;💩;Dung Pile;Trap-Attack;0;0;0;-1;0;0;Disgusting Stench;Terrible stench fills the air.<br>;Got some shit on their hands
+Meadow Wildands;🍂;Fallen Leaves;Trap;-1;0;0;0;0;0;Suspicious Object;Recently disturbed pile of leafs.<br>;Stepped into a covered hole.
 
 Meadow Wildands;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Meadow Wildands;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -47,13 +47,13 @@ Meadow Wildands;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute f
 Meadow Wildands;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Meadow Wildands;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 
-Meadow Wildands;🦥;Young Sloth;Standard;2;0;1;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
+Meadow Wildands;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
+Meadow Wildands;🦥;Young Sloth;Standard;2;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
 Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;5;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
 Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Meadow Wildands;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Meadow Wildands;🐦‍⬛;Scared Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Meadow Wildands;🐍;Venomous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Meadow Wildands;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Meadow Wildands;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
 Meadow Wildands;🐄;Grazing Cow;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 Meadow Wildands;🐂;Grazing Ox;Heavy;2;0;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.

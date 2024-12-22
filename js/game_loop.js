@@ -445,11 +445,11 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
 }
 
-function generateNextEncounters(generatorID=0){
+function generateNextEncounters(generatorID=0, logCall=true){
   switch (generatorID) {
 
     case 0: //Prop or Small in container
-      logGenerator("prop/small");
+      if (logCall) logGenerator("prop/small");
       var type=chooseFrom(["Prop","Prop","Prop","Small","Consumable"]) // 1/4 chance for small
       if (type=="Prop") {
         pushEncounter(getRandomEncounter(["Prop"]));
@@ -467,20 +467,20 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 1: //Consumable - Optional
-      logGenerator("cons");
+      if (logCall) logGenerator("cons");
       pushEncounter(getRandomEncounter(["Consumable"]));
       pushEncounter(getRandomEncounter(["Container"]));
       break;
 
     case 2: //Easy Encounter
-      logGenerator("easy/pet");
-      generateNextEncounters(0); //Prop or Contained Small
+      if (logCall) logGenerator("easy/pet");
+      generateNextEncounters(0,false); //Prop or Contained Small
       pushEncounter(getRandomEncounter(["Standard"]));
       break;
 
     case 3: //Mid Encounter - 20% item
-      logGenerator("mid");
-      generateNextEncounters(0); //Prop or Contained Small
+      if (logCall) logGenerator("mid");
+      generateNextEncounters(0,false); //Prop or Contained Small
       //20% item
       if (procAbilityChance("",20+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]))
@@ -492,8 +492,8 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 4: //Hard Encounter - 40% item / 100% consumable
-      logGenerator("hard");
-      generateNextEncounters(0); //Prop or Contained Small
+      if (logCall) logGenerator("hard");
+      generateNextEncounters(0,false); //Prop or Contained Small
       //30% item & consumable
       if (procAbilityChance("",30+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]))
@@ -508,13 +508,17 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 9: //Boss
-      logGenerator("boss");
-      pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+      if (logCall) logGenerator("boss");
+      if (!areaName.includes("Meadows")) { //Do no guarantee legendary in first area
+        pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+      } else {
+        pushEncounter(getRandomEncounter(["Item"]));
+      }
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       break;
 
     case 20: //House Small - 20% item
-      logGenerator("h-small");
+      if (logCall) logGenerator("h-small");
       if (procAbilityChance("",20+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]))
       } else {
@@ -522,7 +526,7 @@ function generateNextEncounters(generatorID=0){
         if(procAbilityChance("",40+playerLck)) {
           pushEncounter(getRandomEncounter(["Consumable"]));
         } else {
-          generateNextEncounters(0); //Prop or Contained Small
+          generateNextEncounters(0,false); //Prop or Contained Small
         }
       }
       pushEncounter(getRandomEncounter(["Small","Standard","Recruit"]));
@@ -530,7 +534,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 30: //House Mid - 30% item
-      logGenerator("h-mid");
+      if (logCall) logGenerator("h-mid");
       if (procAbilityChance("",30+playerLck)) { //
         pushEncounter(getRandomEncounter(["Item"]))
       } else {
@@ -538,7 +542,7 @@ function generateNextEncounters(generatorID=0){
         if (procAbilityChance("",50+playerLck)) {
           pushEncounter(getRandomEncounter(["Consumable","Friend"]));
         } else {
-          generateNextEncounters(0); //Prop or Contained Small
+          generateNextEncounters(0,false); //Prop or Contained Small
         }
       }
       pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
@@ -547,7 +551,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 31: //House Locked - 100% item/checkpoint/pet/friend, 100% consumable
-      logGenerator("h-lock");
+      if (logCall) logGenerator("h-lock");
       var type=chooseFrom(["Item","Pet","Friend","Container-Friend"]);
       if (type=="Container-Friend") {
         var adjustedSizeContainer=getRandomEncounter(["Locked-Container-3"]).replace("3","4"); //Change container size to 4 to account for extra encounter -> item
@@ -571,7 +575,7 @@ function generateNextEncounters(generatorID=0){
 
 
     case 40: //Optional Hard House - 100% consumable, 40% item or maybe altar
-      logGenerator("h-hard");
+      if (logCall) logGenerator("h-hard");
       if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Item"]))
@@ -585,7 +589,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 50: //Optional Big House - 100% consumable, 40% item or maybe altar
-      logGenerator("h-big");
+      if (logCall) logGenerator("h-big");
 
       if (procAbilityChance("",40+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
@@ -601,7 +605,7 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 60: //Optional Huge House - 100% consumable, 50% item or altar
-      logGenerator("h-huge");
+      if (logCall) logGenerator("h-huge");
       if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Item","Checkpoint"]))
@@ -617,12 +621,12 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 69: //Fishing
-      logGenerator("fish");
+      if (logCall) logGenerator("fish");
       linesStory.splice(encounterIndex+1,0,getRandomEncounter(["Fishing"]));
       break;
 
     case 99: //Random house
-      logGenerator("rand");
+      if (logCall) logGenerator("rand");
       generateNextEncounters(chooseFrom([20,30,31,40,50,60]));
       break;
 
@@ -3132,7 +3136,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
       document.getElementById('button_pray').innerHTML="🧠 Endure";
-      setButton('button_sleep',"😱 Faint",colorRed);
+      setButton('button_sleep',"😱 Faint",colorPink);
       break;
 
     case "Item":
