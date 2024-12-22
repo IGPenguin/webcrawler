@@ -450,12 +450,18 @@ function generateNextEncounters(generatorID=0){
 
     case 0: //Prop or Small in container
       logGenerator("prop/small");
-      var type=chooseFrom(["Prop","Prop","Prop","Small"]) // 1/4 chance for small
+      var type=chooseFrom(["Prop","Prop","Prop","Small","Consumable"]) // 1/4 chance for small
       if (type=="Prop") {
         pushEncounter(getRandomEncounter(["Prop"]));
-      } else {
+      }
+      if (type=="Small") {
         pushEncounter(getRandomEncounter(["Prop"]));
         pushEncounter(getRandomEncounter(["Small"]));
+        pushEncounter(getRandomEncounter(["Container"]));
+      }
+      if (type=="Consumable") {
+        pushEncounter(getRandomEncounter(["Prop"]));
+        pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Container"]));
       }
       break;
@@ -467,9 +473,9 @@ function generateNextEncounters(generatorID=0){
       break;
 
     case 2: //Easy Encounter
-      logGenerator("easy");
+      logGenerator("easy/pet");
       generateNextEncounters(0); //Prop or Contained Small
-      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      pushEncounter(getRandomEncounter(["Standard","Recruit","Pet"]));
       break;
 
     case 3: //Mid Encounter - 20% item
@@ -513,7 +519,7 @@ function generateNextEncounters(generatorID=0){
         pushEncounter(getRandomEncounter(["Item"]))
       } else {
         //20% consumable or prop (cause this is container)
-        if(procAbilityChance("",20+playerLck)) {
+        if(procAbilityChance("",40+playerLck)) {
           pushEncounter(getRandomEncounter(["Consumable"]));
         } else {
           generateNextEncounters(0); //Prop or Contained Small
