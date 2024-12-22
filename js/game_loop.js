@@ -767,7 +767,7 @@ function redraw(){
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
-      if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Goo")) {
+      if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Questionable Drink")) {
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.background=colorDarkOrange;
       }
