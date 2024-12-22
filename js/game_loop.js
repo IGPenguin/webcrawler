@@ -475,7 +475,7 @@ function generateNextEncounters(generatorID=0){
     case 2: //Easy Encounter
       logGenerator("easy/pet");
       generateNextEncounters(0); //Prop or Contained Small
-      pushEncounter(getRandomEncounter(["Standard","Recruit","Pet"]));
+      pushEncounter(getRandomEncounter(["Standard"]));
       break;
 
     case 3: //Mid Encounter - 20% item
@@ -2340,7 +2340,8 @@ function enemyJoinedParty(){
 function enemyKnockedOut(){
   var gainedXP=parseInt(playerGainXP(1.25,0,""));
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
-  playerKarma+=1;
+  if (enemyAtk>0) playerKarma++;
+  if (enemyAtk<=0) playerKarma--;
 
   isFishing=false;
   displayEnemyEffect("💤");

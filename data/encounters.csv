@@ -8,7 +8,6 @@ Meadow Wildands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catc
 Meadow Wildands;🌾;Paddy Field;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Meadow Wildands;🌿;Fern Thicket;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Meadow Wildands;🍂;Dry Leaves Pile;Container;0;0;0;0;0;0;Anything could be lurking inside.<br>;
 Meadow Wildands;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Meadow Wildands;🍂;Fallen Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Meadow Wildands;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;
@@ -22,11 +21,12 @@ Meadow Wildands;🌲;Spurce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder
 Meadow Wildands;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Meadow Wildands;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 
-Meadow Wildands;🍀️;Clover Growth;Altar;0;0;0;2;0;0;Ritual Place;Surrounded by four-leaf clovers.<br>;Feels extremely lucky.
+Meadow Wildands;🍀️;Clover Growth;Altar;0;0;0;2;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels extremely lucky.
+Meadow Wildands;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Wondering where did the artist go.
 
 Meadow Wildands;🌬️;Chilling Wind;Curse;0;0;-1;0;0;0;Disgusting Sight;Horrible chills go down the spine.<br>;Lost concetration.
 Meadow Wildands;💩;Dung Pile;Trap-Attack;0;0;0;-2;0;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
-Meadow Wildands;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
+Meadow Wildands;🍂;Unnatural Leaf Pile;Trap;-1;0;0;0;0;0;Suspicious Object;Recently disturbed pile of leafs.<br>;Stepped into a covered hole.
 
 Meadow Wildands;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Meadow Wildands;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -41,13 +41,13 @@ Meadow Wildands;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes a
 Meadow Wildands;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?.
 Meadow Wildands;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Meadow Wildands;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
-Meadow Wildands;🦥;Young Sloth;Small;2;0;1;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
 Meadow Wildands;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
 Meadow Wildands;🐿️;Greedy Chipmunk;Small;1;0;3;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
 Meadow Wildands;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
 Meadow Wildands;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Meadow Wildands;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 
+Meadow Wildands;🦥;Young Sloth;Standard;2;0;1;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
 Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;5;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
 Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Meadow Wildands;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
@@ -83,6 +83,8 @@ Meadow Wildands;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigatin
 Meadow Wildands;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;
 Meadow Wildands;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action
 Meadow Wildands;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels gooood maaan.
+//;Forsaken Village;🎨;Painter's Palette;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
+//;Forsaken Village;🖌️;Painter's Palette;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
 Meadow Wildands;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
 Meadow Wildands;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
 Meadow Wildands;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
@@ -478,6 +480,7 @@ Depriving Fairyland;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must 
 Depriving Fairyland;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 
+Depriving Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
 Depriving Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
 Depriving Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides extra <b>+2 🧠 Intellect</b>.;Tasted just awesome
 Depriving Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides extra <b>+2 ❤️ Health</b> temporarily.;Tasted just awesome
@@ -626,7 +629,8 @@ Afflicted Necropolis;🧛🏼;Fearsome Vampire;Demon;3;3;2;0;-1;0;Humanoid;Slowl
 
 Afflicted Necropolis;👺;Haunting Spirit;Boss-Spirit;2;2;4;0;4;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
 Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss-Heavy;6;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
-Afflicted Necropolis;🧞;Evil Genie;Boss-Spirit;1;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;
+Afflicted Necropolis;👰🏻‍♀️;The Snowhite;Boss-Spirit;2;1;2;0;10;2;Mythic Person;Does not look that friendly.<br>;Put to sleep forever.
+Afflicted Necropolis;🧞;Evil Genie;Boss-Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
 Afflicted Necropolis;🤺;Mysterious Blademaster;Boss-Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;Received a mysterious item.
 
 Afflicted Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-2;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-2 🧠 Intellect</b>.;Ewwww...
