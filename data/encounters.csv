@@ -1,111 +1,111 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
-//Meadow Wildands;
-Meadow Wildands;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Meadow Wildands;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Meadow Wildands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Meadow Wildands;🌾;Thick Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Meadow Wildands;🌿;Fern Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Meadow Wildands;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
-Meadow Wildands;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Meadow Wildands;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Meadow Wildands;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Meadow Wildands;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Meadow Wildands;🍂;Fallen Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Meadow Wildands;🪤;Primitive Animal Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
-Meadow Wildands;🏕️;Simple Tent;Container-3;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Decided to investigate the tent.
-Meadow Wildands;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
-Meadow Wildands;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
-Meadow Wildands;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
-Meadow Wildands;🌲;Spurce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
-Meadow Wildands;🌊;Sparkly Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
-Meadow Wildands;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
+//Wildland Meadows;
+Wildland Meadows;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
+Wildland Meadows;🌾;Thick Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Wildland Meadows;🌿;Fern Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
+Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Wildland Meadows;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Wildland Meadows;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Wildland Meadows;🍂;Fallen Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Wildland Meadows;🪤;Primitive Animal Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
+Wildland Meadows;🏕️;Simple Tent;Container-3;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Decided to investigate the tent.
+Wildland Meadows;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
+Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
+Wildland Meadows;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
+Wildland Meadows;🌲;Spurce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
+Wildland Meadows;🌊;Sparkly Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
+Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 
-Meadow Wildands;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
-Meadow Wildands;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
+Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
+Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
 
-Meadow Wildands;💨;Strong Wind;Curse;0;0;0;0;0;0;Weather Condition;Fast air currents fly by.<br>;The weather is really unpleassant.
-Meadow Wildands;🌬️;Chilling Wind;Curse;0;0;-1;0;0;0;Weather Condition;Horrible chills go down the spine.<br>;Permanently lost concetration.
-Meadow Wildands;💩;Dung Pile;Trap-Attack;0;0;0;-1;0;0;Disgusting Stench;Terrible stench fills the air.<br>;Got some shit on their hands
-Meadow Wildands;🍂;Fallen Leaves;Trap;-1;0;0;0;0;0;Suspicious Object;Recently disturbed pile of leafs.<br>;Stepped into a covered hole.
+Wildland Meadows;💨;Strong Wind;Curse;0;0;0;0;0;0;Weather Condition;Fast air currents fly by.<br>;The weather is really unpleassant.
+Wildland Meadows;🌬️;Chilling Wind;Curse;0;0;-1;0;0;0;Weather Condition;Horrible chills go down the spine.<br>;Permanently lost concetration.
+Wildland Meadows;💩;Dung Pile;Trap-Attack;0;0;0;-1;0;0;Disgusting Stench;Terrible stench fills the air.<br>;Got some shit on their hands
+Wildland Meadows;🍂;Fallen Leaves;Trap;-1;0;0;0;0;0;Suspicious Object;Recently disturbed pile of leafs.<br>;Stepped into a covered hole.
 
-Meadow Wildands;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Meadow Wildands;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Meadow Wildands;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Meadow Wildands;🪱;Panicked Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;
-Meadow Wildands;🪱;Rain Worm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Meadow Wildands;🪱;Earthworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Meadow Wildands;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;Never hurt no one.<br>;
-Meadow Wildands;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Meadow Wildands;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
-Meadow Wildands;🦟;Pesky Mosqito;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Meadow Wildands;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Got their head exploded by sound.
-Meadow Wildands;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?.
-Meadow Wildands;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Meadow Wildands;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
-Meadow Wildands;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
-Meadow Wildands;🐿️;Greedy Chipmunk;Small;1;0;3;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
-Meadow Wildands;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
-Meadow Wildands;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
-Meadow Wildands;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
+Wildland Meadows;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Wildland Meadows;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Wildland Meadows;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Wildland Meadows;🪱;Panicked Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;
+Wildland Meadows;🪱;Rain Worm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Wildland Meadows;🪱;Earthworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Wildland Meadows;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;Never hurt no one.<br>;
+Wildland Meadows;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Wildland Meadows;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
+Wildland Meadows;🦟;Pesky Mosqito;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Got their head exploded by sound.
+Wildland Meadows;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?.
+Wildland Meadows;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Wildland Meadows;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
+Wildland Meadows;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
+Wildland Meadows;🐿️;Greedy Chipmunk;Small;1;0;3;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
+Wildland Meadows;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
+Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
+Wildland Meadows;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 
-Meadow Wildands;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
-Meadow Wildands;🦥;Young Sloth;Standard;2;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
-Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
-Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
-Meadow Wildands;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
-Meadow Wildands;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
-Meadow Wildands;🐍;Venomous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Meadow Wildands;🦆;Overprotective Duck;Swift;2;1;1;0;0;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
-Meadow Wildands;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
-Meadow Wildands;🐄;Grazing Cow;Heavy;2;1;1;0;1;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
-Meadow Wildands;🐂;Grazing Ox;Heavy;2;1;1;0;2;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
+Wildland Meadows;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
+Wildland Meadows;🦥;Young Sloth;Standard;2;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
+Wildland Meadows;🐓;Enraged Cock;Standard;2;1;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
+Wildland Meadows;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
+Wildland Meadows;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
+Wildland Meadows;🐍;Venomous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Wildland Meadows;🦆;Overprotective Duck;Swift;2;1;1;0;0;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
+Wildland Meadows;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
+Wildland Meadows;🐄;Grazing Cow;Heavy;2;1;1;0;1;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
+Wildland Meadows;🐂;Grazing Ox;Heavy;2;1;1;0;2;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 
-Meadow Wildands;🪿;Untitled Goose;Boss-Swift;2;2;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Meadow Wildands;🦢;Fearsome Swan;Boss-Swift;3;2;2;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
-Meadow Wildands;🐏;Alpha Ram;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Meadow Wildands;🦌;Alpha Deer;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Meadow Wildands;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Meadow Wildands;🐂;Mighty Bull;Boss-Heavy;3;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
-Meadow Wildands;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
+Wildland Meadows;🪿;Untitled Goose;Boss-Swift;2;2;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
+Wildland Meadows;🦢;Fearsome Swan;Boss-Swift;3;2;2;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
+Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Wildland Meadows;🦌;Alpha Deer;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Wildland Meadows;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
+Wildland Meadows;🐂;Mighty Bull;Boss-Heavy;3;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
+Wildland Meadows;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 
-Meadow Wildands;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels gooood maaan.
-Meadow Wildands;🌷;Pink Tulip;Item;0;0;0;0;2;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🧠 Intellect</b>.;Feels gooood maaan.
-Meadow Wildands;🌸;Cherry Blossom;Item;0;0;0;2;0;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🍀 Luck</b>.;Feels gooood maaan.
-Meadow Wildands;🌻;Sun Flower;Item;1;0;0;0;0;0;Natural Beauty;Brings warmth whenever looked at.<br>Provides <b>+1 ❤️ Health</b>.;Feels gooood maaan.
-Meadow Wildands;🌺;Red Flower;Item;0;0;0;0;1;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
-Meadow Wildands;🌼;Yellow Flower;Item;1;0;0;0;1;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
-Meadow Wildands;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch! It has sharp thorns
-Meadow Wildands;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced their awareness.
-Meadow Wildands;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
-Meadow Wildands;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boots fit just perfectly.
-Meadow Wildands;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;
-Meadow Wildands;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action
-Meadow Wildands;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels gooood maaan.
+Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels gooood maaan.
+Wildland Meadows;🌷;Pink Tulip;Item;0;0;0;0;2;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🧠 Intellect</b>.;Feels gooood maaan.
+Wildland Meadows;🌸;Cherry Blossom;Item;0;0;0;2;0;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🍀 Luck</b>.;Feels gooood maaan.
+Wildland Meadows;🌻;Sun Flower;Item;1;0;0;0;0;0;Natural Beauty;Brings warmth whenever looked at.<br>Provides <b>+1 ❤️ Health</b>.;Feels gooood maaan.
+Wildland Meadows;🌺;Red Flower;Item;0;0;0;0;1;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
+Wildland Meadows;🌼;Yellow Flower;Item;1;0;0;0;1;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
+Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch! It has sharp thorns
+Wildland Meadows;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced their awareness.
+Wildland Meadows;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
+Wildland Meadows;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boots fit just perfectly.
+Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;
+Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action
+Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels gooood maaan.
 //;Forsaken Village;🎨;Painter's Palette;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
 //;Forsaken Village;🖌️;Painter's Palette;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-Meadow Wildands;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
-Meadow Wildands;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
-Meadow Wildands;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
-Meadow Wildands;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Meadow Wildands;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Meadow Wildands;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Meadow Wildands;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Meadow Wildands;🗝️;Home Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Meadow Wildands;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Wildland Meadows;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
+Wildland Meadows;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
+Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
+Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Wildland Meadows;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Wildland Meadows;🗝️;Home Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
-Meadow Wildands;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
-Meadow Wildands;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
-Meadow Wildands;🧅;Wild Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
-Meadow Wildands;🌽;Wild Corn;Consumable;0;0;0;0;0;0;Standard Crop;Just harvested crops never disappoints.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🫛;Wild Peas;Consumable;0;0;0;0;0;0;Fresh Food;Packs a ton of vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🍓;Wild Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🫐;Wild Blueberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🍎;Wild Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🍐;Wild Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Meadow Wildands;🥚;Bird Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
+Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
+Wildland Meadows;🧅;Wild Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides extra <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Wildland Meadows;🌽;Wild Corn;Consumable;0;0;0;0;0;0;Standard Crop;Just harvested crops never disappoints.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🫛;Wild Peas;Consumable;0;0;0;0;0;0;Fresh Food;Packs a ton of vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🍓;Wild Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🫐;Wild Blueberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🍎;Wild Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🍐;Wild Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🥚;Bird Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
 //Forsaken Village
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
