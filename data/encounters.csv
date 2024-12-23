@@ -4,13 +4,14 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Meadow Wildands;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Meadow Wildands;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Meadow Wildands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Meadow Wildands;🌾;Paddy Field;Container;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Meadow Wildands;🌿;Fern Thicket;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Meadow Wildands;🌾;Thick Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Meadow Wildands;🌿;Fern Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Meadow Wildands;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Meadow Wildands;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Meadow Wildands;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
-Meadow Wildands;🍂;Fallen Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
-Meadow Wildands;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;
-Meadow Wildands;🌾;Thick Reeds;Container-2;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
+Meadow Wildands;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Meadow Wildands;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Meadow Wildands;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Meadow Wildands;🍂;Fallen Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Meadow Wildands;🪤;Primitive Animal Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Meadow Wildands;🏕️;Simple Tent;Container-3;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Decided to investigate the tent.
 Meadow Wildands;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
@@ -50,15 +51,15 @@ Meadow Wildands;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively sno
 
 Meadow Wildands;🐐;Crazed Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Meadow Wildands;🦥;Young Sloth;Standard;2;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
-Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;5;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
+Meadow Wildands;🐓;Enraged Cock;Standard;2;1;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
 Meadow Wildands;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Meadow Wildands;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
-Meadow Wildands;🐦‍⬛;Scared Crow;Swift;1;1;2;0;3;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
+Meadow Wildands;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Meadow Wildands;🐍;Venomous Snake;Swift;2;2;1;0;-1;0;Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Meadow Wildands;🦆;Overprotective Duck;Swift;2;1;1;0;1;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
+Meadow Wildands;🦆;Overprotective Duck;Swift;2;1;1;0;0;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
 Meadow Wildands;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
-Meadow Wildands;🐄;Grazing Cow;Heavy;2;2;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
-Meadow Wildands;🐂;Grazing Ox;Heavy;2;2;1;0;3;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
+Meadow Wildands;🐄;Grazing Cow;Heavy;2;1;1;0;1;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
+Meadow Wildands;🐂;Grazing Ox;Heavy;2;1;1;0;2;0;Domestic Animal;Does not care if someone is around.<br>;Impaled by two horns at once.
 
 Meadow Wildands;🪿;Untitled Goose;Boss-Swift;2;2;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 Meadow Wildands;🦢;Fearsome Swan;Boss-Swift;3;2;2;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
@@ -123,8 +124,6 @@ Forsaken Village;🌳;Lone Tree;Prop;0;0;0;0;0;0;Tall Flora;Nothing of particula
 
 //;Forsaken Village;🥠;Fortune Cookie;Consumable-Container;0;0;0;0;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 
-Forsaken Village;🍂;Fallen Leaves Pile;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
-Forsaken Village;🍁;Pile of Leaves;Container;0;0;0;0;0;0;Possible Stash;The heap might be hiding something.<br>;There was something hidden inside
 Forsaken Village;🪨;Building Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall Remains;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
 Forsaken Village;🌾;Thick Reeds Patch;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
@@ -477,6 +476,7 @@ Depriving Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Str
 Depriving Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Depriving Fairyland;🦀;Titan Crab;Boss-Heavy;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
 Depriving Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+Depriving Fairyland;🦖;Ferocious Raptor;Boss-Swift;5;5;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 ++
 
 Depriving Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
@@ -559,7 +559,6 @@ Depriving Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather do
 //Mournful Barrens
 Mournful Barrens;🐉;Massive Dragon;Boss-Heavy;6;3;1;0;-1;2;Mythical Creature;Hungry maw full of magical teeth.;Got their head chewed off.
 Mournful Barrens;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
-Mournful Barrens;🦖;Ferocious Raptor;Boss-Heavy;5;5;3;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
 
 Mournful Barrens;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 Mournful Barrens;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.

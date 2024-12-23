@@ -529,7 +529,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
           generateNextEncounters(0,false); //Prop or Contained Small
         }
       }
-      pushEncounter(getRandomEncounter(["Small","Standard","Recruit"]));
+      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
       pushEncounter(getRandomEncounter(["Container-2"]));
       break;
 
