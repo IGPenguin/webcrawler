@@ -18,16 +18,12 @@ Wildland Meadows;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;S
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
 Wildland Meadows;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
 Wildland Meadows;🌲;Spurce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
-Wildland Meadows;🌊;Sparkly Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
+Wildland Meadows;🌊;Small Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
 Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
 
-Wildland Meadows;✨;Sparkly Mist;Curse;1;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
-Wildland Meadows;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark jumped across.
-Wildland Meadows;💨;Swift Wind;Curse;0;0;1;0;-1;0;Weather Condition;These air currents make one act fast.<br>;Embraced the howling wind.
-Wildland Meadows;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;Horrible chills go down the spine.<br>;Suffered permanent changes.
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Oddity;Cannot really see what is inside.<br>;Ouch! There are some hidden spikes.
 Wildland Meadows;🕸️;Lucky Spider Web;Trap-Roll;0;-1;0;3;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face.
@@ -173,13 +169,11 @@ Forsaken Village;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautif
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
-Forsaken Village;👁️‍🗨️;Haunting Voice Echo;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
-Forsaken Village;🎭;Small Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
+Forsaken Village;👁️‍🗨️;Haunting Echo;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Forsaken Village;🎶;Everlasting Melody;Curse;0;0;0;0;-1;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
-Forsaken Village;🫀;Sudden Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
+Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
 
-Forsaken Village;🕳️;Bottomless Pit;Trap-Roll;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
-Forsaken Village;💩;Dung Pile;Trap-Attack;0;0;0;-1;0;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
+Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
 Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
@@ -382,8 +376,11 @@ Deprived Fairyland;🏛️;Ancient Temple;Container-5;0;0;0;0;0;0;Ritual Place;R
 Deprived Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Deprived Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
+Deprived Fairyland;✨;Sparkly Mist;Curse;1;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
+Deprived Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark jumped across.
+Deprived Fairyland;💨;Swift Winds;Curse;0;0;1;0;-1;0;Weather Condition;These air currents make one act fast.<br>;Embraced the howling wind.
+Deprived Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;Horrible chills go down the spine.<br>;Suffered permanent changes.
 Deprived Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
-Deprived Fairyland;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Deprived Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 Deprived Fairyland;🗯️;Unknown Voice;Curse;-1;0;0;0;-1;0;Misfortune;Its words make no sense.<br>;Suffered a nasty curse
 
@@ -472,7 +469,7 @@ Deprived Fairyland;👹;Little Devil;Demon;2;2;1;0;-1;1;Imminent Threat;Laughs o
 Deprived Fairyland;🌚;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 
 //More angry clouds
-Deprived Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Strikes with power and precision.<br>;Zapped away from this world.
+//;Deprived Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Strikes with power and precision.<br>;Zapped away from this world.
 🌧️⛈️
 
 Deprived Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
@@ -603,11 +600,12 @@ Afflicted Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Hal
 //;Afflicted Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 
 Afflicted Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
-Afflicted Necropolis;🕳️;Endless Pit;Fishing;-10;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;Got both legs broken.
+Afflicted Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
 
-Afflicted Necropolis;🫁;Collapsed Lungs;Curse;0;0;0;-1;0;0;Disturbing Sight;Disgusting on sight.<br>;
-
-Traps
+Afflicted Necropolis;🫁;Collapsed Lungs;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
+Afflicted Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
+Afflicted Necropolis;�️;Bottomless Pit;Trap-Roll;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
+❄️🌨️🌫🥶☃️⛄️️
 
 Altars
 
