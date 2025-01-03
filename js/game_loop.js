@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/23/24 • 00:33am"
+var versionCode = "ver. 1/3/25 • 11:22pm"
 var initialEncounterOverride=0; //~4 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -94,7 +94,7 @@ var eatColor=colorWhite;
 
 //String generators
 function getFirstName(){
-  const random_names = ["Vagrand","Pilgrim","Explorer","Adventurer","Wanderer", "Freak", "Nameless", "Peasant", "Voyager", "Stranger", "Traveller", "Survivor", "Prophet", "Drifter", "Vagabond", "Straggler", "Deserter","Venturer","Pathfinder","Seeker"];
+  const random_names = ["Vagrand","Pilgrim","Explorer","Adventurer","Wanderer", "Freak", "Nameless", "Peasant", "Voyager", "Stranger", "Traveller", "Survivor", "Prophet", "Drifter", "Vagabond", "Nomad", "Someone", "Whoever", "Handsome", "Wholesome", "Straggler", "Unnamed","Venturer","Pathfinder","Seeker"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -3007,7 +3007,7 @@ function gameOver(silent=false){
   if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")) enemyMsg="Got killed, ending the adventure.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
-  adventureEndReason="\nReason: "+enemyEmoji+" "+enemyName;
+  adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
@@ -3167,7 +3167,7 @@ function adjustEncounterButtons(){
       setButton('button_roll',"👣 Walk");
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
-      setButton('button_sleep',"💤 Sleep",colorYellow);
+      setButton('button_sleep',"💤 Sleep",colorLightBlue);
       break;
 
     case "Fishing":
@@ -3370,6 +3370,7 @@ function registerClickListeners(){
   versionIDUIElement.addEventListener(eventType, ()=> {
     actionString="⚙️"
     adventureEndTime=getTime();
+    adventureEndReason="\nDebug: "+enemyEmoji+" "+enemyName
     copyAdventureToClipboard();
     redraw();
   });
@@ -3397,9 +3398,10 @@ function generateCharacterShareString(){
     if ((playerPartyString.length+playerLootString.length)>0) characterShareString+="\n";
     if (playerPartyString.length > 0) characterShareString += playerPartyString;
     if (playerLootString.length > 0) characterShareString += playerLootString;
-    characterShareString += "\nAwoken: "+adventureStartTime;
-    characterShareString += "\nKillcount: "+playerKills;
-    characterShareString += "\nDeceased: "+adventureEndTime;
+    characterShareString += "\nLifetime: "+adventureStartTime;
+    characterShareString += "\n"+emptySpace+"→ "+adventureEndTime;
+    characterShareString += " (✞"+playerKarma+")";
+    //characterShareString += "\nKillcount: "+playerKills;
     characterShareString += adventureEndReason+" (#"+adventureEncounterCount+")";
 
   return characterShareString;
@@ -3416,7 +3418,7 @@ function generateCharacterLegend(logLength=0) {
   }
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
-  characterLegend += "\nhttps://igpenguin.github.io/webcrawler";
+  characterLegend += "\n<a href=\"https://igpenguin.github.io/webcrawler\">Webcrawler</a>";
   characterLegend +=  "\n"+ versionCode;
 
   return characterLegend;
@@ -3448,7 +3450,7 @@ function copyAdventureToClipboard(){
 
 function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, check out my WebCrawler run!"+"\n\n"+generateCharacterShareString().replaceAll("<b>","").replaceAll("</b>","")+"\n"));
+  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, check out my WebCrawler run!"+"\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")+"\n"));
 }
 
 function redirectToFeedback(){
