@@ -2343,7 +2343,9 @@ function enemyJoinedParty(){
 
 function enemyKnockedOut(){
   var gainedXP=parseInt(playerGainXP(1.25,0,""));
-  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + "💤 Harmlessly knocked them out " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
+  var knockoutString="💤 Harmlessly knocked them out "
+  if ((enemyAtk+enemyAtkBonus)<=0) knockoutString="💤 Carefully put them to sleep "
+  logAction(enemyEmoji + "&nbsp;▸&nbsp;" + knockoutString + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   if (enemyAtk>0) playerKarma++;
   if (enemyAtk<=0) playerKarma--;
 
@@ -3005,7 +3007,7 @@ function playerReincarnate(){
 function gameOver(silent=false){
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")) enemyMsg="Got killed, ending the adventure.";
-  if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
+  if (!silent) logAction(actionString+"&nbsp;▸&nbsp;"+enemyEmoji+" "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
@@ -3136,7 +3138,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
       document.getElementById('button_pray').innerHTML="🧠 Endure";
-      setButton('button_sleep',"😱 Faint",colorPink);
+      setButton('button_sleep',"😵‍💫 Submit");
       break;
 
     case "Item":
