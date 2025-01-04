@@ -3007,7 +3007,7 @@ function playerReincarnate(){
 function gameOver(silent=false){
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")) enemyMsg="Got killed, ending the adventure.";
-  if (!silent) logAction(actionString+"&nbsp;▸&nbsp;"+enemyEmoji+" "+enemyMsg);
+  if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
@@ -3420,7 +3420,7 @@ function generateCharacterLegend(logLength=0) {
   }
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
-  characterLegend += "\n<a href=\"https://igpenguin.github.io/webcrawler\">Webcrawler</a>";
+  characterLegend += "https://igpenguin.github.io/webcrawler";
   characterLegend +=  "\n"+ versionCode;
 
   return characterLegend;
