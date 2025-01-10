@@ -2411,6 +2411,8 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "
   var XPString = gainedXP + " ("+playerXP+"/"+playerXPThreshold+")"
   console.log("XP +"+XPString+"\naction x"+multiplier+" type x" +typeMultiplier+" int x" +intBonus);
 
+  if (procAbilityChance("🎓",100)) gainedXP=parseInt(gainedXP*1.25);
+
   return parseInt(gainedXP);
 }
 
