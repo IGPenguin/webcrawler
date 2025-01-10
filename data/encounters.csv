@@ -76,6 +76,7 @@ Wildland Meadows;🌺;Red Flower;Item;0;0;0;0;1;0;Natural Beauty;Brings comfort 
 Wildland Meadows;🌼;Yellow Flower;Item;1;0;0;0;1;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
 Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch! It has sharp thorns
 Wildland Meadows;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced their awareness.
+Wildland Meadows;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Wildland Meadows;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
 Wildland Meadows;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boots fit just perfectly.
 Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;
@@ -540,6 +541,7 @@ Deprived Fairyland;🪇;Painted Maracas;Item;0;0;0;2;0;0;Rythmical Instrument;So
 
 Deprived Fairyland;🪭;Sharp Fan;Item;0;1;0;0;0;0;Inconspicious Weapon;No one would guess it's a deadly weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;
 Deprived Fairyland;🏹;Primitive Bow;Item;0;1;0;0;0;0;Weapon;Standard tool for hunting prey.<br>Provides <b>+1 ⚔️ Damage</b>.;
+Deprived Fairyland;🔥;Dancing Flame;Item;-1;2;0;0;0;0;Disgusting Stench;Strange urge draws hands towards the heat.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 💔 Health</b>;Suffered severe burns!
 Deprived Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;The polished surface reflects energy.<br>Provides <b>+1 🔵 Mana</b>.;Irradiated with magic energy.
 Deprived Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>Provides <b>+1 🔵 Mana</b>.;Embraced the energy surge.
 Deprived Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>Provides <b>+1 🔵 Mana</b>.;Felt strange power surge.
@@ -549,7 +551,7 @@ Deprived Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Expre
 Deprived Fairyland;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Deprived Fairyland;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
-Deprived Fairyland;🔪;Twisted Blade;Item;0;1;0;0;-2;0;Ritual Tool;The sacrifical blade demands offering.<br>Gives <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;
+Deprived Fairyland;🔪;Twisted Blade;Item;0;1;0;0;-2;0;Ritual Tool;The sacrifical blade demands offering.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;
 Deprived Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;Mystical Relic;No one should ever not look directly into it.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth
 Deprived Fairyland;🎀;Silly Bowtie;Item;0;0;0;2;-1;0;Accessory;Gives extra luck but looks cringe.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;That looks ridiculous
 Deprived Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under their arm
