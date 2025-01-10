@@ -3191,11 +3191,12 @@ function adjustEncounterButtons(){
       } else {
         if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       }
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
       break;
 
     case "Recruit":
       if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
-        document.getElementById('button_speak').innerHTML="💬 Recruit";
+        setButton('button_speak',"💬 Recruit");
       }
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
       break;
@@ -3204,10 +3205,12 @@ function adjustEncounterButtons(){
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
       if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
       break;
 
     case "Heavy":
@@ -3216,6 +3219,7 @@ function adjustEncounterButtons(){
       if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
       break;
 
     case "Undead":
@@ -3226,6 +3230,7 @@ function adjustEncounterButtons(){
       } else {
         setButton('button_pray',"🔥 Banish",colorDarkGrey);
       }
+      if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
       break;
 
     case "Death":
