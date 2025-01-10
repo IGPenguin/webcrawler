@@ -1438,7 +1438,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logMessage="Cooked it with a spell -1 🔵";
                 if (!playerLootString.includes("🧂")) playerMgk--;
                 enemyHp=0;
-                enemyName="Cooked "+enemyName;
+                enemyName=enemyName+" (Cooked)";
                 enemyMsg="Actually tasted good";
                 displayEnemyEffect("🔥");
               } else {
@@ -1451,10 +1451,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (playerLootString.includes("🧂")){
                 logMessage="Added a tiny pinch of salt.";
-                enemyName="Salted "+enemyName;
+                enemyName=enemyName+" (Salty)";
                 displayEnemyEffect("✨");
               } else {
-                enemyName="Crispy "+enemyName;
+                enemyName=enemyName+" (Crispy)";
               }
 
               playerCooked=true;
@@ -1573,6 +1573,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
               logPlayerAction(actionString,"Made them -1 ⚔️ weaker for -1 🔵");
+              enemyName=enemyName+" (Cursed)";
               displayEnemyEffect("🔥");
             } else if (playerMgkMax < enemyMgk) {
               logPlayerAction(actionString,"They resisted the prayer -1 🔵");
@@ -1653,7 +1654,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       switch (enemyType){
         case "Demon":
-            logPlayerAction(actionString,"The curse made them even stronger!");
+            logPlayerAction(actionString,"The curse made them stronger!");
+            enemyName=enemyName+" (Cursed)";
             animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
             enemyMgk+=1;
             break;
@@ -2085,7 +2087,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyDisengage();
               break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
-              logPlayerAction(actionString,"The words made them more upset +1 ⚔️");
+              logPlayerAction(actionString,"The words made them angry +1 ⚔️");
+              enemyName=enemyName+" (Angry)";
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
