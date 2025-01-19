@@ -798,6 +798,8 @@ function redraw(){
       break;
     case "Fishing":
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
+      cardUIElement.style.background=colorDarkBlue;
+      //emojiWrapperUIElement.style.background=colorDarkBlue;
       break;
     case "Curse":
       enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
@@ -1159,7 +1161,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Fishing":
-            logPlayerAction(actionString,"Continued alongside the edge.");
+            logPlayerAction(actionString,"Continued away from the water.");
             nextEncounter();
             break;
           case "Altar":
@@ -1954,7 +1956,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Container-Friend":
-            logPlayerAction(actionString,"Touch not appreciated, lost interest.");
+            logPlayerAction(actionString,"Touch not appreciated, interest dropped.");
             encounterIndex+=1; //Skip next encounter
             displayEnemyEffect("✋");
             nextEncounter();
@@ -2017,10 +2019,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Checkpoint": //LVL UP
             //There's now level up effect
-            //curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Embraced&nbsp;&nbsp;");
+            //curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Praised&nbsp;&nbsp;");
             playerXP+=playerXPThreshold;
             isFishing=false;
-            logPlayerAction(actionString,"Embraced the "+enemyName+".");
+            logPlayerAction(actionString,"Praised the "+enemyName+".");
             playerGetStamina(playerStaMax-playerSta,true);
             playerHp=playerHpMax;
             playerMgk=playerMgkMax;
@@ -2030,6 +2032,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
                 if (playerUseItem("🗝️","Unlocked it with the key "+decorateStatusText("","+"+(25*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
+                  playerGainXP(1,25*playerLevel,"");
+                  nextEncounter();
+                } else if (playerLootString.includes("📎")) {
+                  logPlayerAction(actionString,"Unlocked with <b>📎 The Universal Key</b>.")
                   playerGainXP(1,25*playerLevel,"");
                   nextEncounter();
                 } else {
@@ -2084,7 +2090,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyInt < playerInt){
-              enemyDisengage();
+              if (enemyAtk>0){
+                enemyAtk--;
+                logPlayerAction(actionString,"Managed to calm them down -1 ⚔️");
+                if (enemyAtk>0) enemyAttackOrRest();
+                displayEnemyCannotEffect();
+              } else {
+                enemyDisengage();
+              }
               break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
               logPlayerAction(actionString,"The words made them angry +1 ⚔️");
@@ -2449,7 +2462,7 @@ function enemyAttackOrRest(message=""){
     if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
-        staminaChangeMsg="They cannot cause any harm."
+        staminaChangeMsg=chooseFrom(["They cannot cause any harm.","Thay don't mean any harm.","They just wait around."])
         if (enemyType=="Pet"){
           enemyIntBonus++; //Harder to befriend
 
@@ -2552,7 +2565,12 @@ function getRandomFish(){ //TODO refactor into encounters.csv
   lootEncounterIndex = getUnseenLootIndex();
   markAsSeenFishing(lootEncounterIndex);
 
-  animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  //animateUIElement(cardUIElement,"animate__fadeIn","0.8");
+  animateUIElement(cardUIElement,"animate__bounceInUp","0.9");
+
+  toggleUIElement(areaUIElement,1);
+  animateUIElement(areaUIElement,"animate__bounce","1.2");
+
   enemyRenew();
   return
 }
@@ -2581,7 +2599,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   if (animateArea) {
     toggleUIElement(areaUIElement,1);
-    animateUIElement(areaUIElement,"animate__flipInX","1");
+    animateUIElement(areaUIElement,"animate__flipInX","1.2");
   }
 
   encounterIndex = getNextEncounterIndex();
@@ -2595,7 +2613,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
   }
-  animateUIElement(cardUIElement,"animate__fadeIn","1");
+  animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   previousArea = areaName;
   redraw();
 }
@@ -3084,7 +3102,7 @@ function resetEncounterButtons(){
   if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
   setButton('button_grab',"👋 Grab");
   setButton('button_sleep',"💤 Rest");
-  if (playerRested || playerSta>=playerStaMax) setButton('button_sleep',"💤 Rest",colorDarkGrey);
+  if (playerRested || (playerSta>=playerStaMax && playerMgk>=playerMgkMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
   setButton('button_speak',"💬 Speak");
 
   setButton('button_cast',"💫 Cast");
@@ -3191,7 +3209,7 @@ function adjustEncounterButtons(){
       } else {
         if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       }
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Recruit":
@@ -3205,12 +3223,12 @@ function adjustEncounterButtons(){
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
       if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Heavy":
@@ -3219,7 +3237,7 @@ function adjustEncounterButtons(){
       if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
+      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Undead":
@@ -3230,7 +3248,7 @@ function adjustEncounterButtons(){
       } else {
         setButton('button_pray',"🔥 Banish",colorDarkGrey);
       }
-      if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Appease");
+      if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Death":
@@ -3241,7 +3259,7 @@ function adjustEncounterButtons(){
       break;
 
     default:
-      if (enemyType=="Checkpoint") setButton('button_grab',"✨ Embrace",colorYellow)
+      if (enemyType=="Checkpoint") setButton('button_grab',"✨ Praise",colorYellow)
       if (enemyType.includes("Boss")) {
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
       } else {
@@ -3255,6 +3273,8 @@ function adjustEncounterButtons(){
           if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorDarkGrey)
           if (playerLootString.includes("🗝️")){
             document.getElementById('button_grab').innerHTML="🗝️ Unlock";
+          } else if (playerLootString.includes("📎")) {
+            setButton('button_grab',"️📎 Unlock",colorOrange);
           } else {
           document.getElementById('button_grab').innerHTML="👋 Reach";
           }
@@ -3429,7 +3449,7 @@ function generateCharacterLegend(logLength=0) {
     characterLegend="Limited to last "+logLength+" events...\n"+characterLegend.split("\n").slice(-logLength-1).join("\n");
   }
 
-  characterLegend=generateCharacterShareString()+"\n\n"+characterLegend;
+  characterLegend=generateCharacterShareString()+"\n\n"+characterLegend+"\n";
   characterLegend += "https://igpenguin.github.io/webcrawler";
   characterLegend +=  "\n"+ versionCode;
 
