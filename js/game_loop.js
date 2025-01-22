@@ -1083,7 +1083,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Boss":
           case "Small":
             if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
-              logPlayerAction(actionString,"Walked away leaving them behind.");
+              if (enemyAtkBonus<0){
+                playerGainXP(1.5,0,"They let you walk away");
+              } else {
+                logPlayerAction(actionString,"Walked away leaving them behind.");
+              }
+
               nextEncounter();
               isFishing=false;
               break;
@@ -2098,13 +2103,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString,"Managed to calm them down -1 ⚔️");
                 if ((enemyAtk+enemyAtkBonus)>0) enemyAttackOrRest();
                 displayEnemyCannotEffect();
-              } else {
+              } else if (enemyAtk>0){
                 enemyDisengage();
+              } else {
+                logPlayerAction(actionString,"They do not seem to care at all.")
+                displayPlayerCannotEffect();
               }
               break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
               logPlayerAction(actionString,"The words made them angry +1 ⚔️");
-              enemyName=enemyName+" (Angry)";
+              //enemyName=enemyName+" (Angry)";
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
@@ -3213,7 +3221,7 @@ function adjustEncounterButtons(){
       } else {
         if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       }
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Recruit":
@@ -3227,12 +3235,12 @@ function adjustEncounterButtons(){
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
       if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Heavy":
@@ -3241,7 +3249,7 @@ function adjustEncounterButtons(){
       if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
-      if (enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Undead":
@@ -3252,7 +3260,7 @@ function adjustEncounterButtons(){
       } else {
         setButton('button_pray',"🔥 Banish",colorDarkGrey);
       }
-      if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt) setButton('button_speak',"💬 Defuse");
+      if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
       break;
 
     case "Death":
