@@ -4,7 +4,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Wildland Meadows;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Wildland Meadows;🌾;Thick Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Wildland Meadows;🌾;Dense Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🌿;Fern Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
@@ -12,7 +12,7 @@ Wildland Meadows;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap m
 Wildland Meadows;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🍂;Fallen Leaves Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Wildland Meadows;🪤;Primitive Animal Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
+Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Wildland Meadows;🏕️;Simple Tent;Container-3;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Decided to investigate the tent.
 Wildland Meadows;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
@@ -108,17 +108,19 @@ Wildland Meadows;🥚;Bird Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably taste
 
 //Forsaken Village
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Forsaken Village;🌿;Short Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌿;Wild Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Forsaken Village;🌾;Overgrown Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
-Forsaken Village;🌱;Grass Patch;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
-Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
+Forsaken Village;🌱;Dense Grass;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
+Forsaken Village;🌱;Wild Growth;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🪨;Pile of Stone;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
+Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
 Forsaken Village;🌳;Lone Tree;Prop;0;0;0;0;0;0;Tall Flora;Nothing of particular interest.<br>;
 Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
 Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
@@ -126,19 +128,19 @@ Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Drop
 
 Forsaken Village;🪨;Building Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Brick Wall Remains;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
-Forsaken Village;🌾;Thick Reeds Patch;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
+Forsaken Village;🌾;Thick Reeds;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🪵;Wooden Logs Pile;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
-Forsaken Village;🌿;Fern Thicket Patch;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
-Forsaken Village;🌿;Thick Grass Patch;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
+Forsaken Village;🌿;Thick Grass ;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the tree.
-Forsaken Village;🧺;Lost Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
-Forsaken Village;🪴;Thriving Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
+Forsaken Village;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 
-Forsaken Village;🪤;Elaborate Animal Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
+Forsaken Village;🪤;Elaborate Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
 Forsaken Village;🏚️;Long Abandoned Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
 Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🏚️;Ruined Tool Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏚️;Ruined Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined Building;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
