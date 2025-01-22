@@ -43,7 +43,7 @@ function renewPlayer(){ //Default values
   playerHpMax=3;
   playerHp = playerHpMax;
   playerStaMax = 3;
-  playerSta = 0; //Start tired in a dream (was playerStaMax;)
+  playerSta = playerStaMax;
   playerMgkMax = 0;
   playerAtk = 1;
   playerLck = 0;
@@ -442,7 +442,10 @@ function loadEncounter(index, fileLines = linesStory){
     enemyDesc=enemyDesc.replaceAll("n/a","");
     enemyDesc+="<i>"+getProphecy()+"</i>";
   }
-  enemyMsg = String(selectedLine.split(",")[12].split(":")[1]);
+  enemyDesc = enemyDesc.replaceAll("\\",",");
+  enemyMsg = String(selectedLine.split(",")[12].split(":")[1]).replaceAll("\\",",");
+
+  if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
 }
 
 function generateNextEncounters(generatorID=0, logCall=true){
@@ -1095,10 +1098,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
 
-              if (enemyAtk!=0){
+              if ((enemyAtk+enemyAtkBonus)!=0){
                 rollMessage="Successfully dodged their attack -1 🟢";
               } else {
-                rollMessage="They do not mean no harm -1 🟢";
+                rollMessage="They do not mean any harm -1 🟢";
               }
 
               enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
@@ -1263,7 +1266,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (enemyAtk<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
+        if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
           enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
           displayEnemyCannotEffect();
           break;
@@ -2090,10 +2093,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyInt < playerInt){
-              if (enemyAtk>0){
-                enemyAtk--;
+              if ((enemyAtk+enemyAtkBonus)>0){
+                enemyAtkBonus--;
                 logPlayerAction(actionString,"Managed to calm them down -1 ⚔️");
-                if (enemyAtk>0) enemyAttackOrRest();
+                if ((enemyAtk+enemyAtkBonus)>0) enemyAttackOrRest();
                 displayEnemyCannotEffect();
               } else {
                 enemyDisengage();
@@ -2231,7 +2234,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            playerRest();
+            playerRest(true);
+            logPlayerAction(actionString,enemyMsg)
             nextEncounter();
             break;
 
@@ -2889,8 +2893,8 @@ function playerConsumed(){
     if (enemyMsg=="") consumedString="That was actually tasty";
   }
 
-  //Gain stamina only if not bad food and not hurt
-  if ((playerHp>=playerHpMax)&&enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
+  //Gain stamina only if not bad food
+  if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
     if (parseInt(missingSta)<=0) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
