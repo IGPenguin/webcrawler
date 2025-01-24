@@ -506,16 +506,14 @@ function generateNextEncounters(generatorID=0, logCall=true){
         if (procAbilityChance("",40+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
-
-
       break;
 
     case 9: //Boss
       if (logCall) logGenerator("boss");
-      if (!areaName.includes("Meadows")) { //Do no guarantee legendary in first area
-        pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
-      } else {
+      if (areaName.includes("Meadows")) { //Do no guarantee legendary in first area
         pushEncounter(getRandomEncounter(["Item"]));
+      } else {
+        pushEncounter(getRandomEncounter(["Artifact"]));
       }
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       break;
@@ -2277,7 +2275,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       console.log("Chance→int:"+temporaryIntellect);
       playerInt=temporaryIntellect;
     }
-    
+
     redraw();
   };
 }
