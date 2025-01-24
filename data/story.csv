@@ -44,24 +44,24 @@ Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 
-//Depriving Fairyland
-Depriving Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
+//Twisted Fairyland
+Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 
-//;Depriving Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;🌊;Swamp Shore;Fishing;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
+//;Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;🌊;Swamp Shore;Fishing;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
 
-Depriving Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;🌴;Sandy Beach;Prop;0;0;0;0;0;0;Edge of the World;Water waves splashing all around.<br>;
-//;Depriving Fairyland;❓;Random Consumable;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
-Depriving Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled towards the opposite shore.
+Twisted Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;🌴;Sandy Beach;Prop;0;0;0;0;0;0;Edge of the World;Water waves splashing all around.<br>;
+//;Twisted Fairyland;❓;Random Consumable;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem sturdy and reliable.<br>;Paddled towards the opposite shore.
 
 Mournful Barrens;🏜️;Endless Shore;Prop;0;0;0;0;0;0;Edge of the World;No living beings or growth around.<br>;Walked endless miles straight forward.
 Mournful Barrens;🌒;Incoming Darkness;Prop;0;0;0;0;0;0;Unsettling Atmosphere;Freezing chills are filling the air.<br>;Arrived to the endgame area.
