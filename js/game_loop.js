@@ -1079,7 +1079,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Boss":
           case "Small":
-            if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
+            if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
               if (enemyAtkBonus<0){
                 playerGainXP(1.5,0,"They let you walk away");
               } else {
@@ -2891,8 +2891,8 @@ function playerConsumed(){
     if (enemyMsg=="") consumedString="That was actually tasty";
   }
 
-  //Gain stamina only if not bad food
-  if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
+  //Gain stamina only if not bad food and not hurt
+  if ((playerHp>=playerHpMax) && enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
     if (parseInt(missingSta)<=0) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
