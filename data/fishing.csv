@@ -8,14 +8,8 @@ Loot;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add 
 Loot;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;Something feels different.
 Loot;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
 
-Loot;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Loot;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Loot;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Loot;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
-
 Loot;🗡️;Silver Dagger;Item;0;2;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
 Loot;🪓;Firewatch Axe;Item;0;2;0;0;0;0;Weapon;Makeshift weapon with great effect.<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
-Loot;🎓;Wet Graduate Hat;Item;0;0;0;0;2;0;Proof of Knowledge;Makes anyone look 2x smarter.<br>Provides <b>+2 🧠 Intellect</b>.;
 Loot;💍;Queen's Ring;Item;2;0;0;0;0;0;Accessory;Probably worn by a noble lady long time ago.<br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
 Loot;💍;King's Ring;Item;0;1;1;0;0;0;Accessory;Probably worn by a true leader long time ago<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Felt a surge in the chest.
 Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by a loved one long time ago<br>Provides <b>+1 ❤️ Health</b>;Felt a surge in the chest.
@@ -29,7 +23,7 @@ Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Accessory;The surface has a pearl
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings some extra luck.<br>Provides<b>+1 🍀 Luck</b>.;Feels good to have it.
 Loot;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
 
-Loot;👞;Wet Old Shoes;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoes.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Disgusting but kinda cool.
+Loot;👞;Wet Shoe;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Does not feel right
 Loot;🔪;Rusty Knife;Item;0;1;0;0;0;0;Worn Tool;Still quite useful in combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Took it with themselves just in case.
 Loot;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Loot;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
@@ -37,7 +31,7 @@ Loot;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and c
 Loot;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Loot;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 Loot;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.
-//;Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Does not look like it brings luck.<br>;Stuck onto the tip of the weapon.
+Loot;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Does not look like it brings luck.<br>;Stuck onto the tip of the weapon.
 Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<br>;
 
 Loot;🪱;Drowned worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
@@ -53,7 +47,7 @@ Loot;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Its surface
 Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated upon reaching the throat
 
 Loot;🐸;Cursed Prince;Friend;0;0;0;0;0;1;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.
-Loot;🦭;Retired Navy Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
+Loot;🦭;Retired Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
 Loot;🐬;Unfathomable Dolphin;Friend;0;0;0;0;-1;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 Loot;🐧;Stranded Penguin;Container-Friend;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
 Loot;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides a very special gift. <br><i>For a price.</i>;Received a special blessing.
