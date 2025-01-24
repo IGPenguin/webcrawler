@@ -937,7 +937,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
     var buttonUIElement = document.getElementById(button);
     animateUIElement(buttonUIElement,"animate__pulse","0.15");
-
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
 
@@ -1863,17 +1862,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerMgk=parseInt(playerMgk)+halfSta;
             }
 
-            if (enemyEmoji=="🎲"){
-              var halfHp = Math.floor(playerHpMax/2);
-              if (halfHp == 0) {
-                logPlayerAction(actionString,"Not enough <b>❤️ Health</b> available.");
-                displayPlayerCannotEffect();
-                break;
-              }
-              playerHpMax=parseInt(playerHpMax)-halfHp;
-              playerHit(halfHp,false,true);
-            }
-
             if (enemyEmoji=="🧪"){
               displayPlayerEffect("🌪️");
               var polymorph = chooseFrom(["🗿","🥨","🪰","🦎","🐸","🐁","🐷","🦍","😾","🧞‍♂️","👽","🎃","🪽"]);
@@ -2111,7 +2099,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               break;
             } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
-              logPlayerAction(actionString,"The words made them angry +1 ⚔️");
+              logPlayerAction(actionString,"They got more angry +1 ⚔️");
               //enemyName=enemyName+" (Angry)";
               displayPlayerEffect("💬");
               enemyAtkBonus+=1;
@@ -2282,6 +2270,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       encounterIndex=lastEncounterIndex;
     }
     enemyType=enemyBossType;
+
+    //Set intellect 1-6 (Pure Chance)
+    if (procAbilityChance("🎲",100)){
+      var temporaryIntellect=chooseFrom([1,2,3,4,5,6]);
+      console.log("Chance→int:"+temporaryIntellect);
+      playerInt=temporaryIntellect;
+    }
+    
     redraw();
   };
 }
@@ -2448,26 +2444,20 @@ function enemyAttackOrRest(message=""){
 
   if (enemySta>enemyStaLost) {
 
-    if (procAbilityChance("🎲",33)){
-      logAction("⚔️ ▸ <b>🎲 Pure Chance</b> averted enemy attack.");
-      displayPlayerEffect("🎲");
-      return false;
-    }
-
-    if (playerLootString.includes("🖤") && (enemyAtk+enemyAtkBonus)>0) {
-      logAction("⚔️ ▸ 🖤 Resisted -1 💔 by <b>🖤 Unbreakable</b>.");
+    if (playerLootString.includes("🖤") && (damageReceived)>0) {
       damageReceived--;
       displayPlayerEffect("🖤");
       if (damageReceived<=0) {
+        logAction("⚔️ ▸ <b>🖤 Unbreakable</b> resisted -1 💔");
         if (enemyStaLost<enemySta) enemyStaLost++;
         return false;
       }
     }
 
     if (enemyType!="Demon"){
-      staminaChangeMsg = "The enemy attacked dealing -"+damageReceived+" 💔"
+      staminaChangeMsg = "The enemy attacked dealing -"+(enemyAtk+enemyAtkBonus)+" 💔"
     } else {
-        staminaChangeMsg = "The enemy syphoned some health -"+damageReceived+" 💔";
+        staminaChangeMsg = "The enemy syphoned some health -"+(enemyAtk+enemyAtkBonus)+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
       }
 
@@ -2499,6 +2489,8 @@ function enemyAttackOrRest(message=""){
         enemyHit(1,false,false,true);
         displayEnemyEffect("🥀");
       }
+
+      if (playerLootString.includes("🖤")) logAction("⚔️ ▸ <b>🖤 Unbreakable</b> resisted -1 💔");
 
       return;
     }
