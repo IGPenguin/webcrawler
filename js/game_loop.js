@@ -446,7 +446,6 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]).replaceAll("\\",",");
 
   if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
-  if (adventureEncounterCount==1) curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
 }
 
 function generateNextEncounters(generatorID=0, logCall=true){
