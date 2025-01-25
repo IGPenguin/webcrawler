@@ -446,6 +446,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]).replaceAll("\\",",");
 
   if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
+  if (adventureEncounterCount==1) curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
 }
 
 function generateNextEncounters(generatorID=0, logCall=true){
@@ -3012,14 +3013,14 @@ function playerReincarnate(){
   playerNumber++;
   displayPlayerEffect("✨");
   renewPlayer();
-  encounterIndex=4; //Skip tutorial
+  encounterIndex=3; //Skip tutorial
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
   nextEncounter();
 
   if (playerKarma>0){
-    var bonusItem=getRandomEncounter(["Item"],["Artifact"],"Forsaken Village");
+    var bonusItem=getRandomEncounter(["Item"],["Artifact"],"Forsaken Village"); //TODO Special karma-only bonuses??
     var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
@@ -3304,6 +3305,7 @@ function curtainFadeInAndOut(message=""){
   animateUIElement(curtainUIElement,"animate__fadeIn",1.5,true);
 
   var animationHandler = function(){
+    setBackground(areaName);
     animateUIElement(curtainUIElement,"animate__fadeOut",2.2,true);
     animateUIElement(fullscreenTextUIElement,"animate__fadeOut",2.2,true,message);
     curtainUIElement.removeEventListener("animationend",animationHandler);
@@ -3370,6 +3372,15 @@ void documentElement.offsetWidth; // trigger a DOM reflow
     }
     documentElement.classList.remove("animate__animated",animation);
   });
+}
+
+function setBackground(fileName="Depths.png"){
+  var fileUrl='url(../../assets/img/file.png)';
+  fileUrl=fileUrl.replaceAll("file.png",fileName.split(" ")[0]+".png");
+  console.log(fileUrl);
+  var bodyUIElement = document.getElementsByTagName('body')[0];
+
+  bodyUIElement.style.backgroundImage = fileUrl;
 }
 
 function logGenerator(generatorName="none"){
