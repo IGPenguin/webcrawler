@@ -27,7 +27,7 @@ var playerMgkMax;
 var playerHp;
 var playerSta;
 var playerLck;
-var luckInterval = 30; //Lower to increase chances
+var luckInterval = 33; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerXP;
