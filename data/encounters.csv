@@ -268,7 +268,7 @@ Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from ma
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 
 Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
-Forsaken Village;🖋️;Fountin Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
+Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🔧;Hefty Spanner;Item;0;1;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot arrow in the knee!
@@ -499,8 +499,8 @@ Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful text
 
 Twisted Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.
-Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>⚡️ Quick Reflexes</b>.<br>33% chance to regenerate <b>🟢 Energy</b> on action.;Gained skill <b>⚡️ Quick Reflexes</b>.
-Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance to get +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
+Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.
+Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance for +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 Twisted Fairyland;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 Twisted Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 

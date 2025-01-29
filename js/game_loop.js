@@ -13,6 +13,7 @@ var fullSymbol = "●"; var emptySymbol = "○"; var enemyStatusString = ""; var
 //Stats
 var adventureStartTime = getTime();
 var adventureEndTime;
+var seenLoot;
 
 //Player stats init
 var playerName = getFirstName();
@@ -35,7 +36,14 @@ var playerXPThreshold;
 var playerKarma=1; //Does not reset during the session
 var playerRested = false;
 var playerCooked = false;
-var seenLoot;
+var playerAttackType = "⚔️";
+var playerRollType = "🌀";
+var playerBlockType = "🔰";
+var playerSleepType = "💤";
+var playerSpeakType = "💬";
+var playerCastType = "💫";
+var playerHealType = "❤️‍🩹";
+var playerCurseType = "🪬";
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -55,10 +63,20 @@ function renewPlayer(){ //Default values
   playerRested = false;
   playerLootString = "";
   playerPartyString = "";
+  playerAttackType = "⚔️";
+  playerRollType = "🌀";
+  playerBlockType = "🔰";
+  playerSleepType = "💤";
+  playerSpeakType = "💬";
+  playerCastType = "💫";
+  playerHealType = "❤️‍🩹";
+  playerCurseType = "🪬";
 
   playerKills = 0;
   seenLoot = [];
   adventureLog = [];
+
+
 }
 
 //Global vars
@@ -2670,6 +2688,13 @@ function playerRest(silent=false){
         displayPlayerEffect("💤");
       }
     }
+
+    if (!silent && procAbilityChance("⛺️",33)){
+      logAction("💤 ▸ <b>⛺️️ Camping Tent</b> provided bonus +1 🟢")
+      playerSta++;
+      displayPlayerRestedEffect();
+    }
+
     if (!silent && procAbilityChance("🔮",33)){
       logAction("🔮 ▸ <b>👁️ Vivid Dream</b> provided bonus +1 🔵")
       playerMgk++;
@@ -2730,7 +2755,7 @@ function playerUseStamina(stamina, message = ""){
   } else {
     playerSta -= stamina;
     if (procAbilityChance("🪶",33)){
-      logAction("🪶  ▸ <b>⚡️ Quick Reflexes</b> kicked in +"+stamina+" 🟢");
+      logAction("🪶  ▸ <b>♻️ Quick Reflexes</b> kicked in +"+stamina+" 🟢");
       playerSta+=stamina;
     }
     return true;
@@ -2867,6 +2892,16 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       return;
     }
   }
+
+  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃"])
+  if (attackTypes.includes(enemyEmoji)) playerAttackType=enemyEmoji;
+
+  var castTypes=(["⚡️","☄️"])
+  if (castTypes.includes(enemyEmoji)) playerCastType=enemyEmoji;
+
+  if (enemyEmoji=="⛺️") playerSleepType=enemyEmoji;
+
+  if (enemyEmoji=="📣") playerSpeakType=enemyEmoji;
 
   if (logMessage) {
     logPlayerAction(actionIcon,gainedString);
@@ -3092,26 +3127,27 @@ function setButton(elementID,text,color=colorWhite){
 
 function resetEncounterButtons(){
   if (playerSta>0){
-    setButton('button_attack',"⚔️ Attack");
+    setButton('button_attack',playerAttackType+" Attack");
     setButton('button_block',"🔰 Block");
     setButton('button_roll',"🌀 Dodge");
   } else {
-    setButton('button_attack',"⚔️ Attack",colorDarkGrey);
+    setButton('button_attack',playerAttackType+" Attack",colorDarkGrey);
     setButton('button_block',"🔰 Block",colorDarkGrey);
     setButton('button_roll',"🌀 Dodge",colorDarkGrey);
   }
 
   if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
   setButton('button_grab',"👋 Grab");
-  setButton('button_sleep',"💤 Rest");
-  if (playerRested || (playerSta>=playerStaMax && playerMgk>=playerMgkMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
-  setButton('button_speak',"💬 Speak");
+  setButton('button_sleep',playerSleepType+" Sleep");
+  if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
+  if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+  setButton('button_speak',playerSpeakType+" Speak");
 
-  setButton('button_cast',"💫 Cast");
+  setButton('button_cast',playerCastType+" Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
   if (playerMgk<=0){
-    setButton('button_cast',"💫 Cast",colorDarkGrey);
+    setButton('button_cast',playerCastType+" Cast",colorDarkGrey);
     setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
   }
   if (playerMgk<=1) setButton('button_curse',"🪬 Curse",colorDarkGrey);
@@ -3142,9 +3178,6 @@ function adjustEncounterButtons(){
       }
       setButton('button_roll',"❌ Ditch");
       setButton("button_grab","🍴 Eat",eatColor);
-
-      if (playerSta<playerStaMax  || playerMgk<playerMgkMax) setButton('button_sleep',"💤 Rest",colorLightBlue);
-      if (playerRested || (playerSta>=playerStaMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
       break;
 
     case "Altar":
@@ -3154,8 +3187,6 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       if (isFishing) setButton('button_roll',"❌ Ditch");
-      if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',"💤 Rest",colorLightBlue);
-      if (playerRested || (playerSta>=playerStaMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
       if (enemyEmoji=="🛶") setButton("button_roll","🛶 Sail");
       break;
 
@@ -3175,8 +3206,6 @@ function adjustEncounterButtons(){
       setButton('button_grab',"👋 Grab",grabColor);
 
       setButton('button_roll',"❌ Ditch");
-      if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',"💤 Rest",colorLightBlue);
-      if (playerRested || (playerSta>=playerStaMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
       break;
 
     case "Trap":
@@ -3185,8 +3214,6 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',"💤 Rest",colorLightBlue);
-      if (playerRested || (playerSta>=playerStaMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
       break;
 
     case "Dream":
@@ -3201,8 +3228,6 @@ function adjustEncounterButtons(){
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
       if (playerLootString.includes("🪱")) setButton('button_grab',"🎣 Fish",colorYellow);
-      if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',"💤 Rest",colorLightBlue);
-      if (playerRested || (playerSta>=playerStaMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
       break;
 
     case "Small":
@@ -3219,6 +3244,7 @@ function adjustEncounterButtons(){
         setButton('button_speak',"💬 Recruit");
       }
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
+      setButton('button_sleep',"💤 Rest");
       break;
 
     case "Pet":
@@ -3231,6 +3257,7 @@ function adjustEncounterButtons(){
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      setButton('button_sleep',"💤 Rest");
       break;
 
     case "Heavy":
@@ -3240,6 +3267,7 @@ function adjustEncounterButtons(){
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
       if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      setButton('button_sleep',"💤 Rest");
       break;
 
     case "Undead":
@@ -3251,6 +3279,7 @@ function adjustEncounterButtons(){
         setButton('button_pray',"🔥 Banish",colorDarkGrey);
       }
       if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      setButton('button_sleep',"💤 Rest");
       break;
 
     case "Death":
@@ -3266,9 +3295,6 @@ function adjustEncounterButtons(){
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
       } else {
         setButton('button_roll',"👣 Walk");
-        if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',"💤 Rest",colorLightBlue);
-        if (playerRested || (playerSta>=playerStaMax)) setButton('button_sleep',"💤 Rest",colorDarkGrey);
-
         if (enemyType.includes("Container")) setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
         if (enemyType.includes("Locked")){
           setButton('button_cast',"🪄 Unlock");
