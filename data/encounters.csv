@@ -52,18 +52,15 @@ Wildland Meadows;🐓;Enraged Cock;Standard;2;1;1;0;10;0;Crazed Animal;Better no
 Wildland Meadows;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Wildland Meadows;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
-Wildland Meadows;🦆;Protective Duck;Swift;2;1;1;0;0;0;Wild Animal;Quack was the first warning.<br>;Defeated by an angry bird.
+Wildland Meadows;🦆;Quacking Duck;Swift;2;1;1;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
-Wildland Meadows;🐄;Grazing Cow;Heavy;2;1;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
-Wildland Meadows;🐂;Grazing Ox;Heavy;2;1;1;0;2;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
+Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
+Wildland Meadows;🐂;Grazing Ox;Heavy;3;0;1;0;2;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
 
 Wildland Meadows;🐍;Venomous Snake;Boss-Swift;1;3;1;0;-1;0;Fearsome Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Wildland Meadows;🪿;Untitled Goose;Boss-Swift;2;2;2;0;2;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Wildland Meadows;🦢;Fearsome Swan;Boss-Swift;3;2;2;0;10;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
 Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Wildland Meadows;🦌;Alpha Deer;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Wildland Meadows;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Wildland Meadows;🐂;Mighty Bull;Boss-Heavy;3;2;1;0;3;0;Domestic Animal;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Wildland Meadows;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 
 Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels gooood maaan.
@@ -240,15 +237,18 @@ Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;-1;0;Terrifying Animal;Th
 Forsaken Village;☁️;Toxic Cloud;Spirit;1;0;1;0;-1;1;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 
 Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
-Forsaken Village;🤡;Cultist Madman;Boss-Standard;4;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
-Forsaken Village;🐻;Fearsome Grizzly;Boss-Heavy;5;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
+Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
+Forsaken Village;🐻;Enraged Grizzly;Boss-Heavy;4;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
+Forsaken Village;🪿;Untitled Goose;Boss-Swift;2;1;4;0;3;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
+Forsaken Village;🦢;Fearsome Swan;Boss-Swift;3;2;3;0;4;0;Resolute Bird;Peace was really never an option.<br>;Defeated by an angry bird.
+Forsaken Village;🐂;Mighty Bull;Boss-Heavy;3;2;2;0;3;0;Domestic Animal;Looks extremely agitated.<br>;Impaled by both horns at once.
 
 Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
 Forsaken Village;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
-Forsaken Village;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Energy</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
+Forsaken Village;⛺️;Camping Tent;Item;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
 
 Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
 Forsaken Village;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
@@ -267,12 +267,14 @@ Forsaken Village;📿;Prayer Beads;Item;0;0;0;1;1;0;Sacred Trinket;Counting the 
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from malvolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 
+Forsaken Village;🪨;Sharp Rock;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
+Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🔧;Hefty Spanner;Item;0;1;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.
-Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot arrow in the knee!
-Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;Makeshift Weapon;Very heavy to carry around and swing with.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>.;Tiring to carry.
+Forsaken Village;🔨;Hefty Hammer;Item;0;1;0;0;0;0;Makeshift Weapon;Kinda heavy to swing around with.<br>Provides <b>+1 ⚔️ Damage</b>.;Tiring to carry.
+Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with a lot of care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot arrow in the knee!
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
 Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!
@@ -497,6 +499,7 @@ Twisted Fairyland;🥜;Sweet Peanuts;Consumable;0;0;0;0;0;0;Crunchy Food;Seems l
 Twisted Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;That was delicious
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
+Twisted Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Energy</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
 Twisted Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.
 Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.

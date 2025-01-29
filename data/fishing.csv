@@ -9,13 +9,17 @@ Loot;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 
 Loot;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
 
 Loot;🗡️;Silver Dagger;Item;0;2;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
-Loot;🪓;Firewatch Axe;Item;0;2;0;0;0;0;Weapon;Makeshift weapon with great effect.<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
+Loot;✂️;Sharp Scissors;Item;0;2;0;0;0;0;Violent Weapon;One can do a bloody mess with these.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a violent weapon.
 Loot;💍;Queen's Ring;Item;2;0;0;0;0;0;Accessory;Probably worn by a noble lady long time ago.<br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
 Loot;💍;King's Ring;Item;0;1;1;0;0;0;Accessory;Probably worn by a true leader long time ago<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Felt a surge in the chest.
 Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by a loved one long time ago<br>Provides <b>+1 ❤️ Health</b>;Felt a surge in the chest.
-Loot;💍;Engraved Ring;Item;0;0;0;0;-3;1;Isildur's Bane;Says "My Precious" on the inside.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The ring took its toll
+Loot;💍;Engraved Ring;Item;0;0;0;0;-3;1;Isildur's Bane;Says "My Precious" on the inside.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The ring took its toll.
+Loot;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Swimming Equipment;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
+Loot;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;Feels kind of uncomfortable.
+Loot;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Improvement;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
 
-Loot;🪲;Pearlescent Scarab;Item;0;0;1;0;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+1 🟢 Energy</b>.;Felt a surge of power
+Loot;🥽;Underwater Goggles;Item;1;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
+Loot;🪲;Pearlescent Scarab;Item;0;0;1;0;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+1 🟢 Energy</b>.;Felt a surge of power.
 Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Loot;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
@@ -48,7 +52,7 @@ Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look pa
 
 Loot;🐸;Cursed Prince;Friend;0;0;0;0;0;1;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.
 Loot;🦭;Retired Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
-Loot;🐬;Unfathomable Dolphin;Friend;0;0;0;0;-1;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+Loot;🐬;Sinister Dolphin;Friend;0;0;0;0;-1;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 Loot;🐧;Stranded Penguin;Container-Friend;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
 Loot;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides a very special gift. <br><i>For a price.</i>;Received a special blessing.
 Loot;🪔;The Floating Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides Instant <b>🎉 Level Up!</b>;
