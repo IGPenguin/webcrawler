@@ -44,6 +44,7 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
+var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂"])
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -1993,9 +1994,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
-            var baitTypes=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐"])
             var bait="";
-            baitTypes.forEach((item, i) => {
+            validBaits.forEach((item, i) => {
               if (playerLootString.includes(item)) bait=item;
             });
 
@@ -3253,9 +3253,8 @@ function adjustEncounterButtons(){
     case "Fishing":
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
-      var baitTypes=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐"])
       var bait="";
-      baitTypes.forEach((item, i) => {
+      validBaits.forEach((item, i) => {
         if (playerLootString.includes(item)) bait=item;
       });
       if (playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
