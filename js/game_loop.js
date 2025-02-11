@@ -2657,7 +2657,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   //Fullscreen Curtain
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut("<span style=-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
+    curtainFadeInAndOut("<span style=font-size:42px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   previousArea = areaName;
