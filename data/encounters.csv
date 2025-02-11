@@ -6,6 +6,9 @@ Wildland Meadows;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth cover
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Wildland Meadows;🌾;Dense Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🌿;Fern Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🪨;Massive Rock;Prop;0;0;0;0;0;0;Wild Landscape;Good place to catch a breath.<br>;Moved around that.
+Wildland Meadows;🪨;Looming Rock;Prop;0;0;0;0;0;0;Wild Landscape;Good place to catch a breath.<br>;Moved around that.
+
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
@@ -17,39 +20,44 @@ Wildland Meadows;🏕️;Simple Tent;Container-3;0;0;0;0;0;0;Survival Tool;Stran
 Wildland Meadows;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
 Wildland Meadows;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
-Wildland Meadows;🌲;Spurce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
+Wildland Meadows;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
 Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
 
+Wildland Meadows;🍃;Falling Leaves;Trap;0;0;0;0;0;0;Brief Moment;Leaves are getting carried by the wind.<br>;Not much happened.
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Oddity;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
-Wildland Meadows;🕸️;Blursed Web;Trap-Roll;-1;0;0;3;0;0;Inconvenience;Pass with care to avoid getting stuck.<br>;Got some webs on their face.
+Wildland Meadows;🕸️;Blursed Web;Trap-Roll;-1;0;0;1;0;0;Inconvenience;Pass through with care to avoid getting stuck.<br>;Got webs on their face.
 
-Wildland Meadows;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Wildland Meadows;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Wildland Meadows;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Wildland Meadows;🪱;Panicked Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;
-Wildland Meadows;🪱;Rain Worm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Wildland Meadows;🪱;Earthworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Wildland Meadows;🦋;Blue Butterfly;Small;1;0;1;0;-1;0;Nature's Beauty;Makes a perfect fishing bait.<br>;How come this happened?
+Wildland Meadows;🐝;Stray Bee;Small;1;0;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
+Wildland Meadows;🐞;Hyperactive Ladybug;Small;1;0;2;0;-1;0;Cute Insect;Makes a perfect fishing bait.<br>;How come this happened?
+Wildland Meadows;🐌;Hyperfocused Snail;Small;1;0;0;0;-1;0;Slow Insect;Makes a perfect fishing bait.<br>;How come this happened?
+Wildland Meadows;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
+Wildland Meadows;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
+Wildland Meadows;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
+Wildland Meadows;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
+Wildland Meadows;🪱;Panicked Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;Got destroyed by a worm.
+Wildland Meadows;🪱;Rain Worm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
+Wildland Meadows;🪱;Earthworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;Never hurt no one.<br>;
 Wildland Meadows;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Wildland Meadows;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
-Wildland Meadows;🦟;Pesky Mosqito;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Wildland Meadows;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
+Wildland Meadows;🐜;Worker Ant;Small;1;0;2;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
 Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Got their head exploded by sound.
-Wildland Meadows;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?.
-Wildland Meadows;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Wildland Meadows;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
 Wildland Meadows;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
 Wildland Meadows;🐿️;Greedy Chipmunk;Small;1;0;2;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
-Wildland Meadows;🐞;Lovely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
+
+Wildland Meadows;🪲;Glowing Bug;Pet;1;0;0;1;-1;1;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
+Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;How come this happened?
 
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
-Wildland Meadows;🦥;Young Sloth;Standard;2;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
-Wildland Meadows;🐓;Enraged Cock;Standard;2;1;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
-Wildland Meadows;🦃;Frenzied Turkey;Standard;1;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🦥;Young Sloth;Standard;1;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
+Wildland Meadows;🐓;Enraged Cock;Standard;2;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
+Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Wildland Meadows;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Wildland Meadows;🦆;Quacking Duck;Swift;2;1;1;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -73,10 +81,10 @@ Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but 
 Wildland Meadows;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced their awareness.
 Wildland Meadows;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Wildland Meadows;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
-Wildland Meadows;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boots fit just perfectly.
-Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;
-Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action
-Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels gooood maaan.
+Wildland Meadows;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating through tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boots fit just perfectly.
+Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;Feels a bit less serious.
+Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action.
+Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels really warm.
 Wildland Meadows;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
 Wildland Meadows;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
 Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
@@ -90,7 +98,8 @@ Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 Wildland Meadows;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
 Wildland Meadows;🧅;Wild Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
-Wildland Meadows;🌽;Wild Corn;Consumable;0;0;0;0;0;0;Standard Crop;Just harvested crops never disappoints.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🌽;Wild Corn;Consumable;0;0;0;0;0;0;Standard Crop;Just harvested crop never disappoints.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🫑;Bell Pepper;Consumable;0;0;0;0;0;0;Standard Crop;Tastes not bad\ not terrible.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🫛;Wild Peas;Consumable;0;0;0;0;0;0;Fresh Food;Packs a ton of vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍓;Wild Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -111,7 +120,7 @@ Forsaken Village;🌱;Wild Growth;Prop;0;0;0;0;0;0;Soft Surface;Good place to ca
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Forsaken Village;🪨;Pile of Stone;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Forsaken Village;🪨;Pile of Stones;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
@@ -121,9 +130,9 @@ Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Lo
 Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 
 Forsaken Village;🪨;Building Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
-Forsaken Village;🧱;Brick Wall Remains;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
+Forsaken Village;🧱;Wall Remains;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
 Forsaken Village;🌾;Thick Reeds;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
-Forsaken Village;🪵;Wooden Logs Pile;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
+Forsaken Village;🪵;Wood Pile;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
 Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
 Forsaken Village;🌿;Thick Grass ;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the tree.
@@ -202,6 +211,12 @@ Forsaken Village;🐩;Lost Doggo;Pet;1;1;1;0;0;0;Good Boy;Looks cute as hell.<br
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;Good Boy;These are super rare.<br>;Doge joined the party
 Forsaken Village;🐎;Lucky Stallion;Pet;3;0;3;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
 
+Forsaken Village;🐝;Flying Stinger;Small;1;1;1;0;-1;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
+Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;Insect;Going in for the kill.<br>;How could this happen?
+Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Forsaken Village;🦂;Tiny Scorpion;Small;1;2;1;0;-1;0;Dangerous Insect;Beware\ it is venous AF.<br>;There was nowhere to run.
+Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Forsaken Village;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
 Forsaken Village;🪱;Worm;Small;1;0;0;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -212,10 +227,7 @@ Forsaken Village;🪱;Meatfly Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems ang
 Forsaken Village;🪱;Tapeworm;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Forsaken Village;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;It is harmless. Only leaving a sticky trail.<br>;Choked themselves on snail ooze.
-Forsaken Village;🦔️;Scared Hedgehog;Small;2;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Ouch! That was painful
+Forsaken Village;🪰;Annoying Fly;Small;1;0;3;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 
 Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
@@ -229,11 +241,11 @@ Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;Humanoid;Trying to pr
 Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
 Forsaken Village;🦂;Fierce Scorpion;Swift;1;2;1;0;-1;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
-Forsaken Village;🦨;Aggresive Skunk;Swift;2;1;2;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
-Forsaken Village;🪡;Possesed Needle;Swift;1;1;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
+Forsaken Village;🦨;Aggressive Skunk;Swift;2;1;2;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
+Forsaken Village;🪡;Possessed Needle;Swift;1;1;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
 
-Forsaken Village;🧹;Possesed Broom;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
-Forsaken Village;🐈‍⬛;Possesed Cat;Demon;1;2;1;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
+Forsaken Village;🧹;Possessed Broom;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
+Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;2;1;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
 Forsaken Village;☁️;Toxic Cloud;Spirit;1;0;1;0;-1;1;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 
 Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
@@ -267,7 +279,7 @@ Forsaken Village;📿;Prayer Beads;Item;0;0;0;1;1;0;Sacred Trinket;Counting the 
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from malvolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 
-Forsaken Village;🪨;Sharp Rock;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
+Forsaken Village;🪨;Sharp Stone;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
@@ -293,12 +305,13 @@ Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape
 Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
 Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-//;Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless
+Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless kinda
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a ton of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
+Forsaken Village;🧃;Energy Drink;Consumable;0;0;2;0;0;0;Sweet Liquid;Wonder how it tastes and feels?<br>Temporary <b>+2 🟢 Energy</b> bonus.;Was it worth it?
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect.;Was it worth it?
-Forsaken Village;🌶️;Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
+Forsaken Village;🌶️;Burning Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
 Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🍰;Strawberry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
@@ -478,6 +491,7 @@ Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
 Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome
 Twisted Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Tasted just awesome
+Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;2;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
 Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Twisted Fairyland;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
@@ -499,6 +513,7 @@ Twisted Fairyland;🥜;Sweet Peanuts;Consumable;0;0;0;0;0;0;Crunchy Food;Seems l
 Twisted Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;That was delicious
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
+Twisted Fairyland;⚡️;Lightning Bolt;Item;0;0;0;0;0;2;<b>Artifact</b>;Weapon once wielded by the king of gods.<br><b>⚡️ Cast</b> lighting bolts</b>\ <b>+2 🔵 Mana</b>.;Gained <b>⚡️ Lightning Bolt</b> and
 Twisted Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Energy</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
 Twisted Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.
@@ -629,7 +644,7 @@ Afflicted Necropolis;🧞;Evil Genie;Boss-Spirit;2;0;0;0;10;4;Magic Creature;Ask
 Afflicted Necropolis;🤺;Mysterious Blademaster;Boss-Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;Received a mysterious item.
 
 Afflicted Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-2;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-2 🧠 Intellect</b>.;Ewwww...
-Afflicted Necropolis;🦴;Human Femur;Item;0;0;0;0;0;0;Human Remains;May the previous owner rest in pieces.br>;Makes one bit uncomfortable.
+Afflicted Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
 Afflicted Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
 Afflicted Necropolis;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
 Afflicted Necropolis;🗡️;Possesed Dagger;Item;-2;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-2 💔 Health</b>.;Accidentaly cut themselves
