@@ -225,13 +225,13 @@ layout: default
 
 
 
-<p style="margin:8px"></p>
+<p style="margin:18px"></p>
 
 <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/webcrawler/pulls?q=is%3Apr+is%3Aclosed';">
-<h4 style="font-size:11px; opacity:0.9; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/webcrawler/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+<h4 style="font-size:11px; opacity:0.6; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/webcrawler/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
 </div>
 
 <div id="id_bug" style="cursor: pointer;">
-<h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.6; box-shadow:none;"/>
+<h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
 </div>
 </center>
