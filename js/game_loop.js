@@ -58,7 +58,7 @@ function renewPlayer(){ //Default values
   playerInt = 1;
   playerXP=0;
   playerLevel=1;
-  playerXPThreshold=100+playerLevel*200;
+  playerXPThreshold=200+playerLevel*200;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerLootString = "";
@@ -652,6 +652,10 @@ function generateNextEncounters(generatorID=0, logCall=true){
     default:
       console.log("ERROR: Missing generator definition!");
   }
+}
+
+function anyOf(array=[],item){ //TODO refactor fishing - all kinds of insects
+  return array.includes(item);
 }
 
 function chooseFrom(array=[]){
@@ -1977,6 +1981,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
             logPlayerAction(actionString,"Touch not appreciated, lost interest.");
             displayEnemyEffect("✋");
+            isfishing=false;
             nextEncounter();
             break;
 
@@ -1988,8 +1993,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
+            var baitTypes=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐"])
+            var bait="";
+            baitTypes.forEach((item, i) => {
+              if (playerLootString.includes(item)) bait=item;
+            });
 
-            if (playerUseItem("🪱","Fished out something "+decorateStatusText("","+"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
+            if (bait!="" && playerUseItem(bait,"Fished out something "+decorateStatusText("","+"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
               playerGainXP(1,10*playerLevel,"");
 
               if (procAbilityChance("🧵",33)) {
@@ -2002,6 +2012,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyEffect("🪝");
             } else {
               displayPlayerCannotEffect();
+              logPlayerAction(actionString,"Missing viable fishing bait.");
             }
             break;
 
@@ -2071,10 +2082,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_speak':
+        var convinceInt=playerInt;
+        if (playerLootString.includes("📣")) {
+          convinceInt=playerInt*2;
+        }
 
         switch (enemyType){
           case "Recruit": //If you are smarter they join you
-            if (enemyInt < playerInt){
+            if (enemyInt < convinceInt){
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=enemyEmoji
               var gainedXP=playerGainXP(1.5,0,"");
@@ -2101,7 +2116,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (enemyInt < playerInt){
+            if (enemyInt < convinceInt){
               if ((enemyAtk+enemyAtkBonus)>0){
                 enemyAtkBonus--;
                 logPlayerAction(actionString,"Managed to calm them down -1 ⚔️");
@@ -2114,7 +2129,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerCannotEffect();
               }
               break;
-            } else if ((enemyInt > (playerInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
+            } else if ((enemyInt > (convinceInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
               logPlayerAction(actionString,"They got more angry +1 ⚔️");
               //enemyName=enemyName+" (Angry)";
               displayPlayerEffect("💬");
@@ -2141,7 +2156,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            if (playerInt >= enemyInt){
+            if (convinceInt >= enemyInt){
               displayPlayerEffect("💬");
               var gainedXP=playerGainXP(1,25*playerLevel,"");
 
@@ -2158,7 +2173,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Container-Friend":
-            if (playerInt >= enemyInt){
+            if (convinceInt >= enemyInt){
               var openMessage = "Received a gift";
               var gainedXP=playerGainXP(1,25*playerLevel,"");
 
@@ -2355,6 +2370,12 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
   if (enemyHpLost >= enemyHp) {
     enemyKilled();
+    return true;
+  }
+
+  if (enemyAtk==0 && enemyAtkBonus<1) {
+    enemyAtkBonus++
+    logAction(enemyEmoji+" "+arrowSymbol+" 💢 They got enraged gaining +1 ⚔️");
   }
 }
 
@@ -2419,6 +2440,10 @@ function enemyKicked(){
   displayEnemyEffect("🦶");
   playerGetStamina(2,true);
   enemyRest(1);
+  if (enemyAtk==0 && enemyAtkBonus<1) {
+    enemyAtkBonus++
+    logAction(enemyEmoji+" "+arrowSymbol+" 💢 They got enraged gaining +1 ⚔️");
+  }
 }
 
 function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "){
@@ -2426,9 +2451,10 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "
   var statSum=0;
   var typeMultiplier=1;
 
+  //Per type XP multipliers
   if (enemyType=="Swift"||enemyType=="Heavy") typeMultiplier=1.2;
-  if (enemyType=="Demon"||enemyType=="Spirit"||enemyType=="Undead") typeMultiplier=1.3;
-  if (enemyBossType.includes("Boss")) typeMultiplier=2;
+  if (enemyType=="Demon"||enemyType=="Spirit"||enemyType=="Undead") typeMultiplier=1.4;
+  if (enemyBossType.includes("Boss")) typeMultiplier=1.6;
 
   statSum+=parseInt(enemyHp);
   statSum+=parseInt(enemySta);
@@ -2586,7 +2612,7 @@ function getRandomFish(){ //TODO refactor into encounters.csv
   markAsSeenFishing(lootEncounterIndex);
 
   //animateUIElement(cardUIElement,"animate__fadeIn","0.8");
-  animateUIElement(cardUIElement,"animate__bounceInUp","0.9");
+  animateUIElement(cardUIElement,"animate__bounceInUp","1.3");
 
   toggleUIElement(areaUIElement,1);
   animateUIElement(areaUIElement,"animate__bounce","1.2");
@@ -2893,10 +2919,10 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     }
   }
 
-  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂"])
-  if (attackTypes.includes(enemyEmoji)) playerAttackType=enemyEmoji;
+  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦴"])
+  if (anyOf(attackTypes,enemyEmoji)) playerAttackType=enemyEmoji;
 
-  var castTypes=(["⚡️","☄️"])
+  var castTypes=(["⚡️","☄️","🍭"])
   if (castTypes.includes(enemyEmoji)) playerCastType=enemyEmoji;
 
   if (enemyEmoji=="⛺️") playerSleepType=enemyEmoji;
@@ -3227,7 +3253,12 @@ function adjustEncounterButtons(){
     case "Fishing":
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
-      if (playerLootString.includes("🪱")) setButton('button_grab',"🎣 Fish",colorYellow);
+      var baitTypes=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐"])
+      var bait="";
+      baitTypes.forEach((item, i) => {
+        if (playerLootString.includes(item)) bait=item;
+      });
+      if (playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
     case "Small":
