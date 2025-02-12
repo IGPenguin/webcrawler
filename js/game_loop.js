@@ -45,7 +45,7 @@ var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂"])
-var validRess=["🫀","💾","♥️"];
+var validRess=["🫀","💾","♥️","🫁","🏵️"];
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -2081,8 +2081,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_speak':
+        displayPlayerEffect("💬");
+
         var convinceInt=playerInt;
         if (playerLootString.includes("📣")) {
+          displayPlayerEffect("📣");
           convinceInt=playerInt*2;
         }
 
@@ -2124,23 +2127,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else if (enemyAtk>0){
                 enemyDisengage();
               } else {
+                if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
                 logPlayerAction(actionString,"They do not seem to care at all.")
                 displayPlayerCannotEffect();
               }
               break;
             } else if ((enemyInt > (convinceInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
+              if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
               logPlayerAction(actionString,"They got more angry +1 ⚔️");
               //enemyName=enemyName+" (Angry)";
-              displayPlayerEffect("💬");
               enemyAtkBonus+=1;
             } else {
               var speechChance = Math.floor(Math.random() * luckInterval);
               if ( speechChance <= playerLck ){
                 logAction("🍀 ▸ 💬 They believed the lies and left.");
-                displayPlayerEffect("💬");
                 nextEncounter();
                 break;
               } else {
+                if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
                 logPlayerAction(actionString,"They ignored whatever has been said.");
               }
             }
@@ -2156,7 +2160,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll boost your stats
             if (convinceInt >= enemyInt){
-              displayPlayerEffect("💬");
               var gainedXP=playerGainXP(1,25*playerLevel,"");
 
               if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
@@ -2176,7 +2179,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var openMessage = "Received a gift";
               var gainedXP=playerGainXP(1,25*playerLevel,"");
 
-              displayPlayerEffect("💬");
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
               }
@@ -3075,6 +3077,14 @@ function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory."
   }
 }
 
+function playerWaive(){
+  logPlayerAction(actionString,"Waived the <b>🏳️ White Flag</b>! -3 🧠");
+  displayPlayerEffect("🏳️");
+  playerInt-=3;
+  nextEncounter();
+  return false;
+}
+
 function playerReincarnate(){
   playerNumber++;
   displayPlayerEffect("✨");
@@ -3272,12 +3282,18 @@ function adjustEncounterButtons(){
       } else {
         if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       }
-      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
+        setButton('button_speak',"💬 Defuse");
+      } else if (playerLootString.includes("🏳️")) {
+        setButton('button_speak',"🏳️ Waive");
+      }
       break;
 
     case "Recruit":
       if ((enemyInt < playerInt) && (enemySta-enemyStaLost == 0)){ //If they are tired and you are smarter they join you
         setButton('button_speak',"💬 Recruit");
+      } else if (playerLootString.includes("🏳️")) {
+        setButton('button_speak',"🏳️ Waive");
       }
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
       setButton('button_sleep',"💤 Rest");
@@ -3287,12 +3303,20 @@ function adjustEncounterButtons(){
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
       if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
-      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
+        setButton('button_speak',"💬 Defuse");
+      } else if (playerLootString.includes("🏳️")) {
+        setButton('button_speak',"🏳️ Waive");
+      }
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
-      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
+        setButton('button_speak',"💬 Defuse");
+      } else if (playerLootString.includes("🏳️")) {
+        setButton('button_speak',"🏳️ Waive");
+      }
       setButton('button_sleep',"💤 Rest");
       break;
 
@@ -3302,7 +3326,11 @@ function adjustEncounterButtons(){
       if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
-      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
+        setButton('button_speak',"💬 Defuse");
+      } else if (playerLootString.includes("🏳️")) {
+        setButton('button_speak',"🏳️ Waive");
+      }
       setButton('button_sleep',"💤 Rest");
       break;
 
@@ -3314,7 +3342,11 @@ function adjustEncounterButtons(){
       } else {
         setButton('button_pray',"🔥 Banish",colorDarkGrey);
       }
-      if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) setButton('button_speak',"💬 Defuse");
+      if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
+        setButton('button_speak',"💬 Defuse");
+      } else if (playerLootString.includes("🏳️")) {
+        setButton('button_speak',"🏳️ Waive");
+      }
       setButton('button_sleep',"💤 Rest");
       break;
 
