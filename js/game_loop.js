@@ -45,6 +45,7 @@ var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂"])
+var validRess=["🫀","💾"];
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -655,7 +656,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
   }
 }
 
-function anyOf(array=[],item){ //TODO refactor fishing - all kinds of insects
+function hasAnyOf(array=[],item){
   return array.includes(item);
 }
 
@@ -805,6 +806,7 @@ function redraw(){
     case "Trap-Attack":
     case "Trap-Roll":
       enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+      if ((enemyAtk+enemyHp+enemySta+enemyLck+enemyMgk+enemyInt)>=0) enemyStatusString=decorateStatusText("🏳️","Whatever",colorYellow);
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
@@ -826,7 +828,9 @@ function redraw(){
       //emojiWrapperUIElement.style.background=colorDarkBlue;
       break;
     case "Curse":
-      enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
+      //enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
+      //if ((enemyAtk+enemyHp+enemySta+enemyLck+enemyMgk+enemyInt)>=0)
+      enemyStatusString=decorateStatusText("🔆","Condition",colorYellow);
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
@@ -994,7 +998,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Trap-Attack": //Attacking causes you damage
             playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Spirit":
@@ -1091,7 +1094,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Curse":
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
-            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Standard":
@@ -1232,7 +1234,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll": //Triggers when rolling into it
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
           case "Trap":
           case "Trap-Attack":
@@ -1844,8 +1845,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Trap-Attack":
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            playerHpMax+=(enemyHp*(-1));
-            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Undead": //Grabbing is not safe
@@ -2224,7 +2223,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Curse": //Waiting triggers the curse
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
-            if (enemyHp<0 || playerHp<=0) playerHit(0,true,true); //Oof
             break;
 
           case "Standard": //You get hit if they have stamina
@@ -2506,7 +2504,7 @@ function enemyAttackOrRest(message=""){
     if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
-        staminaChangeMsg=chooseFrom(["They cannot cause any harm.","Thay don't mean any harm.","They just wait around."])
+        staminaChangeMsg=chooseFrom(["They just hang around.","They just hang around.","They just wait around."])
         if (enemyType=="Pet"){
           enemyIntBonus++; //Harder to befriend
 
@@ -2918,10 +2916,11 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       playerHit(0,false,true);
       return;
     }
+    displayPlayerEffect(enemyEmoji);
   }
 
   var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦴"])
-  if (anyOf(attackTypes,enemyEmoji)) playerAttackType=enemyEmoji;
+  if (hasAnyOf(attackTypes,enemyEmoji)) playerAttackType=enemyEmoji;
 
   var castTypes=(["⚡️","☄️","🍭"])
   if (castTypes.includes(enemyEmoji)) playerCastType=enemyEmoji;
@@ -3025,9 +3024,15 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
       return;
     }
 
-    if (playerLootString.includes("🫀")) {
-      playerUseItem("🫀","n/a","n/a",true,true)
-      logAction("💀 ▸ 🫀 Still allive thanks to <b>💀 Cheat Death</b>.");
+    var ress="";
+    validRess.forEach((item, i) => {
+      if (playerLootString.includes(item)) {
+        ress=item;
+        return true
+        }
+    });
+    if (ress!="" && playerUseItem(ress,"n/a","n/a",true,true)){
+      logAction("💀 ▸ "+ress+" Still allive thanks to <b>💀 Cheat Death</b>.");
       displayPlayerGainedEffect();
       playerHp+=1;
       return;
