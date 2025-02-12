@@ -761,7 +761,7 @@ function redraw(){
       break;
     case "Friend":
     case "Container-Friend":
-      enemyStatusString=decorateStatusText("💬","Friendly",colorDarkGreen);
+      enemyStatusString=decorateStatusText("💬","Friendly",colorGreen);
       //Do not display stats = reward hidden
       break;
     case "Small":

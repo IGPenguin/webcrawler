@@ -25,7 +25,8 @@ Wildland Meadows;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harde
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
 Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
 
-Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like calling for attenetion.<br>;Became fast as a wind!
+Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird
+Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like something's calling for attention.<br>;Became fast as a wind!
 Wildland Meadows;🍃;Falling Leaves;Curse;0;0;0;1;0;0;Brief Moment;Signs reminding of the circle of life.<br>;Time has stopped for a moment.
 Wildland Meadows;🍂;Rotting Leaves;Curse;-1;0;0;0;0;0;Brief Moment;Leaves are getting carried by the wind.<br>;Got covered by dying life.
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
@@ -56,16 +57,24 @@ Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella j
 Wildland Meadows;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;How come this happened?
 
+Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-2;0;Talking Animal;Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Intellect</b>.<br>Kinda tiring to even be around.;That was annoying
+Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
+Wildland Meadows;🐇;Master Hop;Friend;0;0;0;0;1;0;Friendly Critter;Might give you a lecture on life.<br>;Gained rabbit's insight
+Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;Hear the wise words coming from its mouth.<br>n/a;Better than being alone
+Wildland Meadows;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
+
+Wildland Meadows;🐓;Enraged Cock;Standard;2;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got their brain pecked out.
+Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Wildland Meadows;🦥;Young Sloth;Standard;1;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
-Wildland Meadows;🐓;Enraged Cock;Standard;2;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Defeated by an angry bird.
-Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
+
 Wildland Meadows;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
 Wildland Meadows;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
-Wildland Meadows;🦆;Quacking Duck;Swift;2;1;1;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
-Wildland Meadows;🐑;Annoyed Sheep;Heavy;2;1;1;0;10;0;Domestic Animal;Better not to underestimate.<br>;Head-butted to death.
+Wildland Meadows;🦆;Quacking Duck;Swift;2;1;2;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🦡;Honey Badger;Heavy;2;2;1;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
-Wildland Meadows;🐂;Grazing Ox;Heavy;3;0;1;0;2;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
+Wildland Meadows;🐂;Grazing Bull;Heavy;3;0;1;0;2;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
 
 Wildland Meadows;🐍;Venomous Snake;Boss-Swift;1;2;2;0;-1;0;Fearsome Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
 Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
@@ -195,13 +204,9 @@ Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory o
 Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained deeper insight
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
+Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Experienced a heartbreak
 Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;1;Speaking Toy;Looks like it has something to say.<br>;Revealed its magical secret
-Forsaken Village;🦉;Kinda Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
-Forsaken Village;🐢;Elder Turtle Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
-Forsaken Village;🐇;Master Hop Hop;Friend;0;0;0;0;1;0;Friendly Critter;Might give you a lecture on life.<br>;Gained rabbit's insight
-Forsaken Village;🐖;Very Cursed Being;Friend;0;0;0;0;1;0;Prophet;Hear the wise words coming from its mouth.<br>n/a;Better than being alone
-
-Forsaken Village;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
 Forsaken Village;🦝;Raccoon Ambassador;Container-Friend;0;0;0;0;1;0;Representative;Brings a special gift.<br>;Strenghtened the interspecies bond.
 ‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
 
@@ -211,7 +216,7 @@ Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate
 Forsaken Village;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
 Forsaken Village;🐩;Lost Doggo;Pet;1;1;1;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;Good Boy;These are super rare.<br>;Doge joined the party
-Forsaken Village;🐎;Lucky Stallion;Pet;3;0;3;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
+Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
 
 Forsaken Village;🐝;Flying Stinger;Small;1;1;1;0;-1;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
 Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;Insect;Going in for the kill.<br>;How could this happen?
@@ -272,6 +277,7 @@ Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifi
 Forsaken Village;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
 
 Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a makeshift weapon.
+Forsaken Village;🪖;Trench Helmet;Item;2;0;0;0;0;0;Head Protection;Makes one look extremely cool.<br>Provides <b>+2 ❤️ Health</b>;Ready for the spotlight
 Forsaken Village;📔;Mythical Tales;Item;0;0;0;0;1;1;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🧠 Intellect and +1 🔵 Mana</b>.;Learned plenty of stuff
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.<br>n/a;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
@@ -280,8 +286,9 @@ Forsaken Village;👖;Work Trousers;Item;1;0;1;0;0;0;Specialized Gear;Versatile 
 Forsaken Village;🥼;Scientific Cloak;Item;0;0;0;0;2;0;Specialized Gear;Makes the wearer look much smarter.<br>Provides <b>+2 🧠 Intellect</b>.;Ready for action
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 Forsaken Village;📿;Prayer Beads;Item;0;0;0;1;1;0;Sacred Trinket;Counting the beads clears ones mind.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;
-Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from malvolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
+Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
+Forsaken Village;🧮️;Manual Calculator;Item;0;0;-1;0;3;0;Counting Tool;Provides <b>+3 🧠 Intellect</b> for <b>-1  🟢 Energy</b>.<br>Operating this slows you down.;Thinking can be hard.
 
 Forsaken Village;🪨;Sharp Stone;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
@@ -294,6 +301,10 @@ Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires ha
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
 Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!
+Forsaken Village;👓;Zooming Glasses;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite focused.<br>Provides <b>+1 🧠 Intellect</b>;Finally can see the details
+Forsaken Village;🕶️;Cool Sunglasses;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look extremely cool.<br>Provides <b>+1 🧠 Charisma</b>;Ready for the spotlight
+Forsaken Village;🥽️;Protective Goggles;Item;1;0;0;0;1;0;Unusal Headgear;Makes one look quite focused.<br>Provides <b>+1 ❤️ Health</b>;Feeling safer than ever
+
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
 Forsaken Village;💌;Spicy Letter;Item;1;0;0;0;0;0;Lost Message;Haven't found the original recipient.<br>Provides <b>+1 ❤️ Health</b>.;Felt strange to put into pocket
@@ -453,7 +464,7 @@ Twisted Fairyland;🐜;Bullet Ant;Small;1;3;2;0;-1;0;Tireless Worker;Able to car
 
 Twisted Fairyland;🐺;Prowling Wolf;Standard;4;3;2;0;10;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
 Twisted Fairyland;🦚;Pearlescent Bird;Standard;3;2;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
-Twisted Fairyland;🦡;Honey Badger;Standard;3;3;2;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;
+Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;Wild Beast;Probably has no soul.<br>;
 Twisted Fairyland;🦎;Komodo Dragon;Standard;4;2;2;0;-1;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
 Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
 Twisted Fairyland;🦘;Vengeful 'Roo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
@@ -472,14 +483,13 @@ Twisted Fairyland;🦟;Oversized Mosqito;Swift;2;3;2;0;-1;0;Pesky Insect;Never s
 Twisted Fairyland;🦅;Bald Eagle;Swift;3;4;1;0;-1;0;Wild Animal;Attacks from high altitude.<br>;Got their brain pecked out.
 
 Twisted Fairyland;🐃;Frantic Horns;Heavy;4;3;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
-Twisted Fairyland;🦧;Ginger Ape;Heavy;3;2;3;0;3;0;Wild Beast;Probably has no soul.<br>;
 Twisted Fairyland;🦍;Native Ape;Heavy;3;2;3;0;3;0;Wild Beast;Buffed and ready to fight.<br>;
 Twisted Fairyland;🦏;Bulky Rhino;Heavy;5;3;1;0;5;0;Wild Beast;Its majestic horn looks rather deadly.<br>;
 Twisted Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
 Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
 
 Twisted Fairyland;👹;Little Devil;Demon;2;2;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
-Twisted Fairyland;🌚;Malvolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
+Twisted Fairyland;🌚;Malevolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 
 //More angry clouds
 //;Twisted Fairyland;🌩️;Lightning Cloud;Spirit;2;1;1;1;-1;2;Anger Energy;Strikes with power and precision.<br>;Zapped away from this world.
@@ -538,9 +548,10 @@ Twisted Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;<br>Provides <b>
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
 Twisted Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy;Provides <b>+3 🧠 Intellect</b> and insight.<br>n/a;Embraced the knowledge.
 Twisted Fairyland;🪁;Lightning Kite;Item;0;0;2;0;0;0;Accessory;Unfamiliar makeshift piece of art.<br>Somehow provides <b>+2 🟢 Energy</b>.;Yay! Weeee!
-Twisted Fairyland;🧥;Protection Coat;Item;2;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;
+Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;
+Twisted Fairyland;🧥;Protective Coat;Item;2;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;
 Twisted Fairyland;👘;Wizard Robe;Item;0;0;0;0;0;2;Accessory;Perfect piece of clothing for casters.<br>Provides <b>+2 🔵 Mana</b>.;
-Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;Malvolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
+Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
 Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-1;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-1 🍀 Luck</b>.;
 Twisted Fairyland;🧧;Crimson Medailon;Item;2;0;0;-1;0;0;Rare Trinket;Something feels off about this.<br>Provides <b>+2 ❤️ Health”</b> for <b>-1 🍀 Luck</b>.;
 Twisted Fairyland;🥁;Bassline Drum;Item;0;0;2;0;;0;Rythmical Instrument;Helps staying alert in combat.<br>Provides <b>+2 🟢 Energy</b>.;Ba dum tss!
@@ -552,7 +563,6 @@ Twisted Fairyland;🔥;Dancing Flame;Item;-1;2;0;0;0;0;Disgusting Stench;Strange
 Twisted Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;The polished surface reflects energy.<br>Provides <b>+1 🔵 Mana</b>.;Irradiated with magic energy.
 Twisted Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>Provides <b>+1 🔵 Mana</b>.;Embraced the energy surge.
 Twisted Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>Provides <b>+1 🔵 Mana</b>.;Felt strange power surge.
-Twisted Fairyland;🥋;Reinforced Kimono;Item;1;0;0;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b>.;
 Twisted Fairyland;🎎;Lucky Trinket;Item;0;0;0;1;0;0;Accessory;Traditional protection againts bad luck.<br>Provides <b>+1 🍀 Luck</b>.;
 Twisted Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>Provides <b>+1 ❤️ Health</b>.;
 Twisted Fairyland;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
@@ -574,7 +584,8 @@ Mournful Barrens;📎;The Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provide
 
 //Afflicted Necropolis 🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
 Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
-Afflicted Necropolis;🌿;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Afflicted Necropolis;🍂;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Afflicted Necropolis;⚱️;Burial Urn;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
 Afflicted Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
 Afflicted Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
 Afflicted Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
