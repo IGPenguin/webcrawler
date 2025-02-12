@@ -732,10 +732,10 @@ function redraw(){
 
   //Encounter Statusbar UI
   var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk];
-  var EffectArrayBonus=effectArray.filter(function(x){ return x > 0 });
-  var EffectArrayMalus=effectArray.filter(function(x){ return x < 0 });
-  var totalBonus=EffectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
-  var totalMalus=EffectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
+  var effectArrayBonus=effectArray.filter(function(x){ return x > 0 });
+  var effectArrayMalus=effectArray.filter(function(x){ return x < 0 });
+  var totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
+  var totalMalus=effectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
   if (totalMalus=="") totalMalus=0;
   //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
 
@@ -937,7 +937,7 @@ function appendEnemyStats(){
   if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
     if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
 
-  if ((enemyAtk)>0) {
+  if ((enemyAtk+enemyAtkBonus)>0) {
     enemyStats += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
     if (enemyAtkBonus<0) enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
   }
