@@ -1,7 +1,7 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Loot;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
 Loot;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
-Loot;🎲;Gambling Dice;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
+Loot;🎲;Gambling Die;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
 Loot;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
 Loot;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Loot;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
@@ -16,9 +16,9 @@ Loot;💍;Queen's Ring;Item;2;0;0;0;0;0;Accessory;Probably worn by some noble la
 Loot;💍;King's Ring;Item;0;1;1;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Felt a surge in the chest.
 Loot;💍;Engagement Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by someone's lover a long time ago.<br>Provides <b>+1 ❤️ Health</b>;Felt a surge in the chest.
 Loot;💍;Engraved Ring;Item;0;0;0;0;-3;1;Isildur's Bane;Says "My Precious" on the inside.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The ring took its toll.
-Loot;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Swimming Equipment;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
+Loot;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
 Loot;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;Feels kind of uncomfortable.
-Loot;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Improvement;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
+Loot;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
 
 Loot;🥽;Underwater Goggles;Item;1;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
 Loot;🪲;Pearlescent Scarab;Item;0;0;1;0;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+1 🟢 Energy</b>.;Felt a surge of power.
