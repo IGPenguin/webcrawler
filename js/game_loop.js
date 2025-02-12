@@ -45,7 +45,7 @@ var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂"])
-var validRess=["🫀","💾"];
+var validRess=["🫀","💾","♥️"];
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -1045,7 +1045,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+enemyAtk+" 💔","n/a");
                 playerHit(enemyAtk);
               } else {
-                enemyStaminaChangeMessage(-1,"They barely dodged the attack.","n/a");
+                enemyStaminaChangeMessage(-1,"They barely dodged the attack.","They needed to catch a breath.");
               }
             } else {
               enemyHit(playerAtk);
@@ -1326,7 +1326,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Heavy": //Too heavy or spirit attack
           case "Boss":
-            if (enemyStaminaChangeMessage(-1,"Could not block a heavy attack -"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block a heavy attack -"+enemyAtk+" 💔","They needed to catch a breath.")){
               playerHit(enemyAtk);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
@@ -1334,7 +1334,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Spirit":
-            if (enemyStaminaChangeMessage(-1,"Could not block a spectral attack -"+enemyAtk+" 💔","n/a")){
+            if (enemyStaminaChangeMessage(-1,"Could not block a spectral attack -"+enemyAtk+" 💔","They needed to recover some energy.")){
               playerHit(enemyAtk,true,true);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
