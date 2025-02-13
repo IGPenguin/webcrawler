@@ -432,7 +432,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
-  enemyBossType = enemyType; //I'll end up in hell for these hacks
+  if (enemyType.includes("Boss")) enemyBossType = enemyType; //I'll end up in hell for these hacks
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
     //console.log("Gen-type:"+number);
@@ -862,7 +862,7 @@ function redraw(){
         }
       }
 
-      if (enemyBossType.includes("Boss-")){
+      if (enemyBossType.includes("Boss")){
         enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
         enemyStatusString=appendEnemyStats();
         cardUIElement.style.background=colorDarkRed;
@@ -1004,17 +1004,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend":
           case "Container-Friend":
-            if (enemyAtk>0){
-              logPlayerAction(actionString,"Turned them adversary -1 🟢");
-              enemyType="Standard";
-            } else {
-              logPlayerAction(actionString,"Spooked them with an attack -1 🟢");
-              displayEnemyEffect("💨");
-              playerKarma--;
-              isFishing=false;
-              nextEncounter();
-              break;
-            }
+            enemyTurnAggressive("The attack turned them adversary!");
+            enemyHit(playerAtk);
+            break;
 
           case "Standard": //You hit first, they hit back if they have stamina
           case "Undead":
@@ -1387,24 +1379,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType!="Death" && playerCooked!=true && (enemyType=="Consumable" && !playerLootString.includes("🧂"))) displayPlayerEffect("🪄"); //I'm lazy
+          var magicDamage = playerMgk;
+          if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
+          if (magicDamage > 2) {
+            magicDamage=2;
+          }
+          playerMgk-=magicDamage;
 
         switch (enemyType){
           case "Friend":
           case "Container-Friend":
-            if (enemyAtk>0){
-              playerMgk--;
-              playerKarma--;
-              logPlayerAction(actionString,"Turned them adversary -1 🔵");
-              enemyType="Standard";
-            } else {
-              playerMgk--;
-              playerKarma--;
-              logPlayerAction(actionString,"Magic spooked them away -1 🔵");
-              displayEnemyEffect("💨");
-              isFishing=false;
-              nextEncounter();
-              break;
-            }
+            enemyTurnAggressive("The spell turned them adversary!");
+            enemyHit(magicDamage,true);
+            break;
 
           case "Recruit": //You should be faster if you have Mgk >= them
           case "Standard":
@@ -1417,13 +1404,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
-            var magicDamage = playerMgk;
-            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
-            if (magicDamage > 2) {
-              magicDamage=2;
-            }
-            playerMgk-=magicDamage;
-
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
               enemyHit(magicDamage,true);
             } else {
@@ -1436,14 +1416,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemyCastIfMgk()) break;
               enemyAttackOrRest();
             }
-            break;
-
-          case "Container-Friend":
-          case "Friend": //They'll be hit (above) and then get angry //TODO: Check this, they might not get hit
-            playerMgk--;
-            logPlayerAction(actionString,"The spell turned them adversary -1 🔵");
-            displayEnemyEffect("‼️");
-            enemyType="Standard";
             break;
 
           case "Trap":
@@ -2297,7 +2269,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
-    enemyType=enemyBossType;
+    if (enemyBossType!="") enemyType=enemyBossType;
 
     //Set intellect 1-6 (Pure Chance)
     if (procAbilityChance("🎲",100)){
@@ -2343,7 +2315,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
 
   if (magicType==true) {
-    actionString="🪄"; hitMsg="Scorched them with a spell -"+damage+" 💔";
+    actionString=playerCastType; hitMsg="Scorched them with a spell -"+damage+" 💔";
   } else { //Melee
       actionString="⚔️";
   }
@@ -2585,6 +2557,16 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
 
     return true;
   }
+}
+
+function enemyTurnAggressive(message="That made them really upset!"){
+  enemyType="Standard";
+  enemyHp=2+playerLevel;
+  enemyAtk=1+playerLevel/2;
+  enemySta=2+playerLevel/2;
+  playerKarma--;
+  logPlayerAction(actionString,message);
+  return true;
 }
 
 //Encounters
