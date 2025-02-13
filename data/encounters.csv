@@ -7,7 +7,6 @@ Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to cat
 Wildland Meadows;🌾;Dense Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🌿;Fern Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🪨;Massive Rock;Prop;0;0;0;0;0;0;Wild Landscape;Good place to catch a breath.<br>;Moved around that.
-Wildland Meadows;🪨;Looming Rock;Prop;0;0;0;0;0;0;Wild Landscape;Good place to catch a breath.<br>;Moved around that.
 
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
@@ -76,11 +75,11 @@ Wildland Meadows;🦡;Honey Badger;Heavy;2;2;1;0;3;0;Wild Animal;The creature bo
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
 Wildland Meadows;🐂;Grazing Bull;Heavy;3;0;1;0;2;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
 
-Wildland Meadows;🐍;Venomous Snake;Boss-Swift;1;2;2;0;-1;0;Fearsome Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
-Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Wildland Meadows;🦌;Alpha Deer;Boss-Heavy;3;2;2;0;5;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Wildland Meadows;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;10;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Wildland Meadows;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;5;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
+Wildland Meadows;🐍;Venomous Snake;Boss-Swift;1;2;1;0;-1;0;Fearsome Reptile;Perfectly blends with the surroundings.<br>Almost stepped on it.;
+Wildland Meadows;🦌;Vigorous Deer;Boss-Swift;2;2;2;0;3;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;3;1;2;0;4;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
+Wildland Meadows;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;-1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
+Wildland Meadows;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;3;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 
 Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels gooood maaan.
 Wildland Meadows;🌷;Pink Tulip;Item;0;0;0;0;2;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🧠 Intellect</b>.;Feels gooood maaan.
@@ -97,14 +96,12 @@ Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for 
 Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action.
 Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels really warm.
 Wildland Meadows;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
-Wildland Meadows;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
 Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
 Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Wildland Meadows;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Wildland Meadows;🗝️;Home Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+//;Wildland Meadows;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
 
 Wildland Meadows;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
