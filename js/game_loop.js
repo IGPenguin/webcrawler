@@ -2503,7 +2503,7 @@ function enemyAttackOrRest(message=""){
     if (damageReceived<=0){
       staminaChangeMsg="They are too weak to do any harm."
       if (enemyAtk==0) {
-        staminaChangeMsg=chooseFrom(["They just hang around.","They just hang around.","They just wait around."])
+        staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around."])
         if (enemyType=="Pet"){
           enemyIntBonus++; //Harder to befriend
 
@@ -2517,6 +2517,8 @@ function enemyAttackOrRest(message=""){
           }
           return;
         }
+        logAction(enemyEmoji+" "+arrowSymbol+" 💤 "+staminaChangeMsg);
+        return; //They don't waste stamina unless necessary
       }
     } else {
       if (message!="") staminaChangeMsg=message;
