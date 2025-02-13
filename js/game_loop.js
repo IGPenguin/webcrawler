@@ -60,7 +60,7 @@ function renewPlayer(){ //Default values
   playerInt = 1;
   playerXP=0;
   playerLevel=1;
-  playerXPThreshold=200+playerLevel*200;
+  playerXPThreshold=100+playerLevel*200;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerLootString = "";
@@ -214,6 +214,7 @@ function enemyRenew(){
   enemyAtkBonus = 0;
   enemyIntBonus = 0;
   enemyMgkLost = 0;
+  enemyBossType = "";
   currentProphercy = getGameTip();
   enemyEmojiScaleX = chooseFrom(['scaleX(-1)','scaleX(1)']);
 }
@@ -934,7 +935,7 @@ function appendEnemyStats(){
   if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
     if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
 
-  if ((enemyAtk+enemyAtkBonus)>0) {
+  if ((enemyAtk+enemyAtkBonus)>0 || enemyAtk!=0) {
     enemyStats += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
     if (enemyAtkBonus<0) enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
   }
@@ -1684,7 +1685,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2);
+            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
