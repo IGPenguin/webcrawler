@@ -3272,7 +3272,7 @@ function adjustEncounterButtons(){
       validBaits.forEach((item, i) => {
         if (playerLootString.includes(item)) bait=item;
       });
-      if (playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
+      if (bait!="" && playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
     case "Small":
