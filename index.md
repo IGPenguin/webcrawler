@@ -87,7 +87,7 @@ layout: default
                                 font-weight:300;
                                 font-size:14px;
                                 padding-bottom:0px;
-                                padding-right:8px;
+                                padding-right:7px;
                                 margin-bottom:0px;
                                 display:inline;
                                 overflow:auto;
