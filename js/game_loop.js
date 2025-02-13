@@ -501,29 +501,27 @@ function generateNextEncounters(generatorID=0, logCall=true){
       pushEncounter(getRandomEncounter(["Standard"]));
       break;
 
-    case 3: //Mid Encounter - 20% item
+    case 3: //Mid Encounter - 10% item
       if (logCall) logGenerator("mid");
       generateNextEncounters(0,false); //Prop or Contained Small
-      //20% item
-      if (procAbilityChance("",20+playerLck)) {
+
+      if (procAbilityChance("",10+playerLck)) { //10% item
         pushEncounter(getRandomEncounter(["Item"]))
-      } else {
-        //30% consumable
-        if(procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
+      } else { //20% consumable
+        if(procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
       pushEncounter(getRandomEncounter(["Standard","Recruit","Pet"]));
       break;
 
-    case 4: //Hard Encounter - 40% item / 100% consumable
+    case 4: //Hard Encounter - 20% item / 100% consumable
       if (logCall) logGenerator("hard");
       generateNextEncounters(0,false); //Prop or Contained Small
-      //30% item & consumable
-      if (procAbilityChance("",30+playerLck)) {
+      if (procAbilityChance("",20+playerLck)) { //20% item & consumable
         pushEncounter(getRandomEncounter(["Item"]))
         pushEncounter(getRandomEncounter(["Consumable"]));
       } else {
-        //40% consumable
-        if (procAbilityChance("",40+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
+        //30% consumable
+        if (procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
       pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
       break;
@@ -538,13 +536,12 @@ function generateNextEncounters(generatorID=0, logCall=true){
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       break;
 
-    case 20: //House Small - 20% item
+    case 20: //House Small - 10% item
       if (logCall) logGenerator("h-small");
-      if (procAbilityChance("",20+playerLck)) {
+      if (procAbilityChance("",10+playerLck)) {
         pushEncounter(getRandomEncounter(["Item"]))
       } else {
-        //20% consumable or prop (cause this is container)
-        if(procAbilityChance("",40+playerLck)) {
+        if(procAbilityChance("",20+playerLck)) { //20% consumable
           pushEncounter(getRandomEncounter(["Consumable"]));
         } else {
           generateNextEncounters(0,false); //Prop or Contained Small
@@ -554,13 +551,13 @@ function generateNextEncounters(generatorID=0, logCall=true){
       pushEncounter(getRandomEncounter(["Container-2"]));
       break;
 
-    case 30: //House Mid - 30% item
+    case 30: //House Mid - 20% item
       if (logCall) logGenerator("h-mid");
-      if (procAbilityChance("",30+playerLck)) { //
+      if (procAbilityChance("",20+playerLck)) { //
         pushEncounter(getRandomEncounter(["Item"]))
       } else {
-        //50% consumable or prop (cause this is container)
-        if (procAbilityChance("",50+playerLck)) {
+        //40% consumable or prop (cause this is container)
+        if (procAbilityChance("",40+playerLck)) {
           pushEncounter(getRandomEncounter(["Consumable","Friend"]));
         } else {
           generateNextEncounters(0,false); //Prop or Contained Small
