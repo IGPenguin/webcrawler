@@ -206,6 +206,7 @@ var enemyMgkLost = 0;
 var currentProphercy;
 var enemyEmojiScaleX;
 var enemyBossType = "";
+var enemyCursed=false;
 
 enemyRenew()
 function enemyRenew(){
@@ -215,6 +216,7 @@ function enemyRenew(){
   enemyIntBonus = 0;
   enemyMgkLost = 0;
   enemyBossType = "";
+  enemyCursed=false;
   currentProphercy = getGameTip();
   enemyEmojiScaleX = chooseFrom(['scaleX(-1)','scaleX(1)']);
 }
@@ -1688,6 +1690,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
+            enemyCursed=true;
             logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
             break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
@@ -1802,10 +1805,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Heavy":
           case "Boss":
-            if (enemySta - enemyStaLost > 0){ //Enemy hits extra hard if they got stamina
-              if (enemyCastIfMgk()) break;
-              logPlayerAction(actionString,"Overpowered, got hit extra hard -"+enemyAtk*2+" 💔");
-              playerHit(enemyAtk+2);
+            if (enemyCastIfMgk()) break;
+            if ((enemySta - enemyStaLost) > 0){ //Enemy hits extra hard if they got stamina
+              var damageReceived=(enemyAtk+enemyAtkBonus)+2;
+              var overpowerMessage="Overpowered, got hit extra hard -"+damageReceived+" 💔";
+              if (damageReceived<=0) {
+                overpowerMessage="They are too big to grasp!";
+              } else {
+                playerHit(damageReceived);
+              }
+              logPlayerAction(actionString,overpowerMessage);
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
             }
@@ -2450,7 +2459,7 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "
 }
 
 
-function enemyAttackOrRest(message=""){
+function enemyAttackOrRest(message="",isGrab=false){
   var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
 
@@ -2474,25 +2483,25 @@ function enemyAttackOrRest(message=""){
       }
 
     if (damageReceived<=0){
-      staminaChangeMsg="They are too weak to do any harm."
-      if (enemyAtk==0) {
-        staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around."])
-        if (enemyType=="Pet"){
-          enemyIntBonus++; //Harder to befriend
-
-          if ((enemyInt+enemyIntBonus)<=playerInt){
-            logAction(enemyEmoji+" ▸ ⁉️ They now seem more concerned.");
-            displayEnemyEffect("⁉️")
-            enemyRest(1);
-          } else {
-            logAction(enemyEmoji+" ▸ ‼️ They got bored and left.");
-            nextEncounter();
-          }
-          return;
+      staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around.","They seem to be very chill."])
+      if (enemyCursed && (enemyAtk+enemyAtkBonus)<=0) staminaChangeMsg="They are too weak to do any harm."
+      if (enemyType=="Pet"){ //Harder to befriend
+        enemyIntBonus++;
+        if ((enemyInt+enemyIntBonus)<=playerInt){
+          logAction(enemyEmoji+" ▸ ⁉️ They now seem more concerned.");
+          displayEnemyEffect("⁉️")
+          enemyRest(1);
+        } else {
+          logAction(enemyEmoji+" ▸ ‼️ They got bored and left.");
+          nextEncounter();
         }
-        logAction(enemyEmoji+" "+arrowSymbol+" 💤 "+staminaChangeMsg);
-        return; //They don't waste stamina unless necessary
       }
+      if (message!="") staminaChangeMsg=message;
+      if (!isGrab) {
+        logAction(enemyEmoji+" "+arrowSymbol+" 💤 "+staminaChangeMsg);
+        enemyRest(1);
+        return; //They don't waste stamina unless necessary
+        }
     } else {
       if (message!="") staminaChangeMsg=message;
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
@@ -2516,9 +2525,8 @@ function enemyAttackOrRest(message=""){
 
 function enemyDodged(message="Missed, it evaded the grasp."){
   displayPlayerCannotEffect();
-  logPlayerAction(actionString,message);
   displayEnemyEffect("🌀");
-  enemyAttackOrRest();
+  enemyAttackOrRest(message,true); //FML
 }
 
 function enemyCastIfMgk(hit=true,customHitMessage=""){
@@ -2726,7 +2734,7 @@ function playerHeal(){
     playerHp+=healAmount;
     playerMgk-=healAmount;
 
-    logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell -"+healAmount+" 🔵");
+    logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell for -"+healAmount+" 🔵");
     displayPlayerGainedEffect();
   } else {
     logPlayerAction(actionString,"Wasted a healing spell -1 🔵");
