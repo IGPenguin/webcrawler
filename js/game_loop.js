@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 02/14/25 • 06:25pm"
-var initialEncounterOverride=0; //~4 skips tutorial, ~38 barrens
+var versionCode = "ver. 02/16/25 • 10:47pm"
+var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors & Symbols
@@ -476,18 +476,11 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 0: //Prop or Small in container
       if (logCall) logGenerator("prop/small");
-      var type=chooseFrom(["Prop","Prop","Prop","Small","Consumable"]) // 1/4 chance for small
-      if (type=="Prop") {
-        pushEncounter(getRandomEncounter(["Prop"]));
-      }
+      var type=chooseFrom(["Prop","Prop","Prop","Small"]) // 1/4 chance for small
+      pushEncounter(getRandomEncounter(["Prop"]));
       if (type=="Small") {
-        pushEncounter(getRandomEncounter(["Prop"]));
+        if (procAbilityChance("",10)) pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Small"]));
-        pushEncounter(getRandomEncounter(["Container"]));
-      }
-      if (type=="Consumable") {
-        pushEncounter(getRandomEncounter(["Prop"]));
-        pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Container"]));
       }
       break;
@@ -3458,7 +3451,7 @@ void documentElement.offsetWidth; // trigger a DOM reflow
 }
 
 function setBackground(fileName="Depths.png"){
-  var fileUrl='url(../../assets/img/file.png)';
+  var fileUrl='url(https://raw.githubusercontent.com/IGPenguin/webcrawler/refs/heads/live/assets/img/file.png)';
   fileUrl=fileUrl.replaceAll("file.png",fileName.split(" ")[0]+".png");
   console.log(fileUrl);
   var bodyUIElement = document.getElementsByTagName('body')[0];

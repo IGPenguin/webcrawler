@@ -15,9 +15,9 @@ Wildland Meadows;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This he
 Wildland Meadows;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🍂;Rotting Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
-Wildland Meadows;🏕️;Simple Tent;Container-3;0;0;0;0;0;0;Survival Tool;Strange noises are coming out.<br>;Decided to investigate the tent.
-Wildland Meadows;🏕️;Primitive Tent;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
-Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out.<br>;Decided to investigate the tent.
+Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out of the tent.<br>;Decided to investigate the tent.
+Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
+Wildland Meadows;🌺;Blooming Field;Container-3;0;0;0;0;0;0;Natural Beauty;There's some movement in the distance.<br>;Crossed right through.
 Wildland Meadows;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
 Wildland Meadows;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 
@@ -48,7 +48,7 @@ Wildland Meadows;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin 
 Wildland Meadows;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
 Wildland Meadows;🐜;Worker Ant;Small;1;0;2;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
 Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Got their head exploded by sound.
-Wildland Meadows;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
+Wildland Meadows;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;It seems to be no harm.<br>;Got a new travel buddy!
 Wildland Meadows;🐿️;Greedy Chipmunk;Small;1;0;2;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
 
 Wildland Meadows;🪲;Glowing Bug;Pet;1;0;0;1;-1;1;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
@@ -66,7 +66,7 @@ Wildland Meadows;🐓;Raging Cock;Standard;2;1;1;0;10;0;Crazed Animal;Better not
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
-Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;0;-1;0;Innocent Critter;He's no harm. Just let him be!<br>;Got a new travel buddy!
+Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;0;-1;0;Innocent Critter;It seems to be no harm<br>;Oh\ that is really unfortunate.
 
 Wildland Meadows;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems like it has lightning reflexes.<br>;Died of the horrendous stench.
 Wildland Meadows;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
@@ -114,8 +114,8 @@ Wildland Meadows;🍓;Wild Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks a
 Wildland Meadows;🫐;Wild Blueberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍎;Wild Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍐;Wild Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Wildland Meadows;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Wildland Meadows;🥚;Bird Egg;Consumable;0;0;0;0;0;0;Fresh Fruit;Probably tastes better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Raw Food;Probably tastes much better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🥚;Bird Egg;Consumable;0;0;0;0;0;0;Raw Food;Probably tastes much better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
 //Forsaken Village
 Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
