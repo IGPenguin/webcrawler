@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 02/16/25 • 10:47pm"
+var versionCode = "ver. 02/17/25 • 9:22am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -17,7 +17,7 @@ var seenLoot;
 
 //Player stats init
 var playerName = getFirstName();
-var playerNumber = 1; //Increments on death if at least once saved
+var playerNumber = 1; //Increments on revival
 var playerKills = 0;
 var playerLootString;
 var playerPartyString;
@@ -1800,11 +1800,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Boss":
             if (enemyCastIfMgk()) break;
             if ((enemySta - enemyStaLost) > 0){ //Enemy hits extra hard if they got stamina
-              var damageReceived=(enemyAtk+enemyAtkBonus)+2;
-              var overpowerMessage="Overpowered, got hit extra hard -"+damageReceived+" 💔";
-              if (damageReceived<=0) {
-                overpowerMessage="They are too big to grasp!";
-              } else {
+              var damageReceived=(enemyAtk+enemyAtkBonus);
+              var overpowerMessage="They are too big to grasp!";
+              if (damageReceived>0) {
+                damageReceived+=2;
+                overpowerMessage="Got overpowered and hit hard -"+damageReceived+" 💔";
                 playerHit(damageReceived);
               }
               logPlayerAction(actionString,overpowerMessage);
@@ -2641,7 +2641,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   //Fullscreen Curtain
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<span style=font-size:42px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
-    logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+    if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   previousArea = areaName;
