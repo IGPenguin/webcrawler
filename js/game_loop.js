@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 02/17/25 • 9:22am"
+var versionCode = "ver. 02/17/25 • 9:40am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -559,8 +559,11 @@ function generateNextEncounters(generatorID=0, logCall=true){
           generateNextEncounters(0,false); //Prop or Contained Small
         }
       }
-      pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
-      pushEncounter(getRandomEncounter(["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"]));
+      var possibleEncounters=["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"];
+      var firstEncounter=[chooseFrom(possibleEncounters)];
+      possibleEncounters = possibleEncounters.filter(string => string !== firstEncounter[0]); // Prevents duplicate encounter types twice in a row
+      pushEncounter(getRandomEncounter(firstEncounter));
+      pushEncounter(getRandomEncounter(possibleEncounters));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -3453,7 +3456,6 @@ void documentElement.offsetWidth; // trigger a DOM reflow
 function setBackground(fileName="Depths.png"){
   var fileUrl='url(https://raw.githubusercontent.com/IGPenguin/webcrawler/refs/heads/live/assets/img/file.png)';
   fileUrl=fileUrl.replaceAll("file.png",fileName.split(" ")[0]+".png");
-  console.log(fileUrl);
   var bodyUIElement = document.getElementsByTagName('body')[0];
 
   bodyUIElement.style.backgroundImage = fileUrl;
