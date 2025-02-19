@@ -68,18 +68,18 @@ Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a vari
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
 Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;0;-1;0;Innocent Critter;It seems to be no harm<br>;Oh\ that is really unfortunate.
 
-Wildland Meadows;🦨;Forest Skunk;Swift;1;1;1;0;1;0;Wild Animal;Seems like it has lightning reflexes.<br>;Died of the horrendous stench.
+Wildland Meadows;🐿️;Forest Squirrel;Swift;1;1;1;0;1;0;Wild Animal;Seems like it has lightning reflexes.<br>;Got their nuts handed to 'em.
 Wildland Meadows;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
-Wildland Meadows;🦆;Quacking Duck;Swift;2;1;2;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
-Wildland Meadows;🦡;Honey Badger;Heavy;2;2;1;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;
+Wildland Meadows;🦆;Quacking Duck;Swift;1;1;2;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🦡;Honey Badger;Heavy;2;2;1;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;Got freaking destroyed!
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
-Wildland Meadows;🐂;Grazing Bull;Heavy;3;0;1;0;2;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
+Wildland Meadows;🐂;Grazing Bull;Heavy;3;0;1;0;6;0;Alpha Animal;Does not let anyone too close.<br>;Impaled by two horns at once.
 
 Wildland Meadows;🐍;Venomous Snake;Boss-Swift;1;2;1;0;-1;0;Fearsome Reptile;Perfectly blends with the surroundings.<br>;
 Wildland Meadows;🦌;Vigorous Deer;Boss-Swift;2;2;2;0;3;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;3;1;2;0;4;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Wildland Meadows;🦬;Enraged Bison;Boss-Heavy;3;2;1;0;-1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Wildland Meadows;🐗;Warthog Alpha;Boss-Heavy;2;2;2;0;3;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
+Wildland Meadows;🦬;Risky Bison;Boss-Heavy;3;2;1;0;-1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
+Wildland Meadows;🐗;Furious Warthog;Boss-Heavy;2;2;2;0;3;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 
 Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels gooood maaan.
 Wildland Meadows;🌷;Pink Tulip;Item;0;0;0;0;2;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🧠 Intellect</b>.;Feels gooood maaan.
@@ -629,13 +629,14 @@ Friend 👰🏻‍♀️🤴🏻👸🏻
 
 Standard 🏻🧙🏻‍♀️🧙🏻‍♂️
 
-Afflicted Necropolis;🧙;Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-
-Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>Goosebumps.;Gloomy Cavern;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got ripped apart
-
-Heavy??
-
+Afflicted Necropolis;🧙;The Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 Afflicted Necropolis;👻;Spooky Ghost;Spirit;4;2;3;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
+Afflicted Necropolis;👺;Haunting Spirit;Spirit;2;2;4;0;4;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
+Afflicted Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
+Afflicted Necropolis;🎃;Overgrown Pumpkin;Heavy;6;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
+Afflicted Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;Received a mysterious item.
+Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>Goosebumps.;
+Afflicted Necropolis;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got ripped apart
 
 Afflicted Necropolis;🧟;Animated Dead;Undead;1;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
 Afflicted Necropolis;🧟;Tired Zombie;Undead;2;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
@@ -648,11 +649,7 @@ Afflicted Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoi
 Afflicted Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got their heart ripped out!
 Afflicted Necropolis;🧛🏼;Fearsome Vampire;Demon;3;3;2;0;-1;0;Humanoid;Slowly walks onwards.<br>;Got their heart ripped out!
 
-Afflicted Necropolis;👺;Haunting Spirit;Boss-Spirit;2;2;4;0;4;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
-Afflicted Necropolis;🎃;Overgrown Pumpkin;Boss-Heavy;6;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
-Afflicted Necropolis;👰🏻‍♀️;The Snow White;Boss-Spirit;2;1;2;0;10;2;Mythic Person;Does not look that friendly.<br>;Put to sleep forever.
-Afflicted Necropolis;🧞;Evil Genie;Boss-Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
-Afflicted Necropolis;🤺;Mysterious Blademaster;Boss-Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;Received a mysterious item.
+Afflicted Necropolis;👰🏻‍♀️;The Bride;Boss-Spirit;2;1;2;0;6;2;True Love;She's been waiting for you since forever.<br>;Failed to face the True Love.
 
 Afflicted Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Afflicted Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
