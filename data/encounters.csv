@@ -26,7 +26,7 @@ Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;
 
 Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird
 Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like something's calling for attention.<br>;Became fast as a wind!
-Wildland Meadows;🍃;Falling Leaves;Curse;0;0;0;1;0;0;Brief Moment;Signs reminding of the circle of life.<br>;Time has stopped for a moment.
+Wildland Meadows;🍃;Falling Leaves;Curse;0;0;0;1;0;0;Brief Moment;Signs reminding you of the circle of life.<br>;Time has stopped for a moment.
 Wildland Meadows;🍂;Rotting Leaves;Curse;-1;0;0;0;0;0;Brief Moment;Leaves are getting carried by the wind.<br>;Got covered by dying life.
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Oddity;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
@@ -34,24 +34,21 @@ Wildland Meadows;🕸️;Blursed Web;Trap-Roll;-1;0;0;1;0;0;Inconvenience;Pass t
 
 Wildland Meadows;🦋;Blue Butterfly;Small;1;0;1;0;-1;0;Nature's Beauty;Makes a perfect fishing bait.<br>;How come this happened?
 Wildland Meadows;🐝;Stray Bee;Small;1;0;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
-Wildland Meadows;🐞;Hyperactive Ladybug;Small;1;0;2;0;-1;0;Cute Insect;Makes a perfect fishing bait.<br>;How come this happened?
-Wildland Meadows;🐌;Hyperfocused Snail;Small;1;0;0;0;-1;0;Slow Insect;Makes a perfect fishing bait.<br>;How come this happened?
-Wildland Meadows;🐌;Trailing Snail;Small;1;0;1;0;-1;0;Pelicular Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
+Wildland Meadows;🐞;Hyperactive Ladybug;Small;1;0;2;0;-1;0;Cute Insect;Might be considered a fishing bait.<br>;How come this happened?
+Wildland Meadows;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Slow Insect;Perhaps it could attract some fish.<br>;How come this happened?
 Wildland Meadows;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
-Wildland Meadows;🪱;Panicked Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;Got destroyed by a worm.
+Wildland Meadows;🪱;Anxious Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Rain Worm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Earthworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;Never hurt no one.<br>;
 Wildland Meadows;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Wildland Meadows;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
 Wildland Meadows;🐜;Worker Ant;Small;1;0;2;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
-Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Got their head exploded by sound.
-Wildland Meadows;🦔️;Scared Hedgehog;Small;1;0;2;0;0;0;Innocent Critter;It seems to be no harm.<br>;Got a new travel buddy!
-Wildland Meadows;🐿️;Greedy Chipmunk;Small;1;0;2;1;0;0;Wild Animal;Probably carries some nasty diseases.<br>;New buddy joined!
+Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Sound exploded their head!
+Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
-Wildland Meadows;🪲;Glowing Bug;Pet;1;0;0;1;-1;1;Pelicular Insect;Tiny cute friend crawling around.<br>;Got a new travel buddy!
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute friend crawling around.<br>;How come this happened?
@@ -59,16 +56,17 @@ Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute 
 Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-2;0;Talking Animal;Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Intellect</b>.<br>Kinda tiring to even be around.;That was annoying
 Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Wildland Meadows;🐇;Master Hop;Friend;0;0;0;0;1;0;Friendly Critter;Might give you a lecture on life.<br>;Gained rabbit's insight
-Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;1;0;Prophet;Hear the wise words coming from its mouth.<br>n/a;Better than being alone
+Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;1;0;The Prophet;Hear the wise words coming from its mouth.<br>n/a;Better than being alone
 Wildland Meadows;🦤;Altruistic Dodo;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
 
-Wildland Meadows;🐓;Raging Cock;Standard;2;1;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got their brain pecked out.
-Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;2;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got their brain pecked out.
+Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
-Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;0;-1;0;Innocent Critter;It seems to be no harm<br>;Oh\ that is really unfortunate.
+Wildland Meadows;🦔️;Sacred Hedgehog;Standard;1;0;2;1;2;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
+Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
 
-Wildland Meadows;🐿️;Forest Squirrel;Swift;1;1;1;0;1;0;Wild Animal;Seems like it has lightning reflexes.<br>;Got their nuts handed to 'em.
+Wildland Meadows;🐿️;Forest Squirrel;Swift;1;0;1;0;1;0;Wild Animal;Seems like it has lightning reflexes.<br>;Got their nuts handed to 'em.
 Wildland Meadows;🐦‍⬛;Scared Crow;Swift;1;1;2;0;0;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Wildland Meadows;🦆;Quacking Duck;Swift;1;1;2;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🦡;Honey Badger;Heavy;2;2;1;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;Got freaking destroyed!
@@ -94,7 +92,7 @@ Wildland Meadows;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of s
 Wildland Meadows;🥾;Heavy Duty Boots;Item;0;0;1;0;0;0;Work Gear;Helps navigating through tough terrain.<br>Provides <b>+1 🟢 Energy</b>.;The boots fit just perfectly.
 Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;Feels a bit less serious.
 Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action.
-Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection the your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels really warm.
+Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection for your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels really warm.
 Wildland Meadows;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
 Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
 Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;

@@ -2,8 +2,8 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 02/17/25 • 9:40am"
-var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
+var versionCode = "ver. 02/19/25 • 8:22pm"
+var initialEncounterOverride=6; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors & Symbols
@@ -494,7 +494,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
     case 2: //Easy Encounter
       if (logCall) logGenerator("easy/pet");
       generateNextEncounters(0,false); //Prop or Contained Small
-      pushEncounter(getRandomEncounter(["Standard"]));
+      pushEncounter(getRandomEncounter(["Standard","Pet"]));
       break;
 
     case 3: //Mid Encounter - 10% item
@@ -1811,6 +1811,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerHit(damageReceived);
               }
               logPlayerAction(actionString,overpowerMessage);
+              displayPlayerCannotEffect();
             } else { //Enemy has no stamina - asymetrical rest
               enemyKicked();
             }
