@@ -11,25 +11,6 @@ Depths of Slumber;👿;Vivid Nightmare;Demon;1;1;1;0;0;0;Imaginary Threat;<b>�
 Depths of Slumber;🦐;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>These resources are <b>essential for survival.</b>;Yummy! Tasted almost real
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;Luckily\ you recall at last one <b> survival tip</b>.<br>n/a;Woke up in the middle of nowhere.
 
-//Work-in-progress
-//;Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides <b>+2 🧠 Intelect</b>.<br>;XXX
-//;Forsaken Village;🪅;Big Piñata;Container;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-//;Forsaken Village;🧦;Forbidden Pouch;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
-//;Forsaken Village;🧷;Useful Pin;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
-//;Forsaken Village;🎴;Daunting Shém;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
-//;Forsaken Village;🎨;Painter's Palette;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-//;Forsaken Village;🖌️;Painter's Palette;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-🫠🫨😵👽🤖🎃🌵🌺🪁🏆
-🧕👨‍🌾👩‍🌾🌾👨‍🎨👩‍🎨‍👩‍⚖️👰‍♀️👸🏼🫅🙋‍♂️🙋‍♀️🙋🤹🤹‍♂️‍🧘‍♂️🧘🧘‍♀️👱‍♀️
-🐊🦣🦏🐘🦛🐫🐪🦒
-🍬🍫🍩🫖🍚🍆
-🦾🦿🪄🪠🩼🔫
-🎈💡🔩🔭⚙️🔗🗜️💼🎒👜📌📍♠️♦️♣️⛑
-🧭⏱️⚗️🩺🧩
-🌈🌪️❄️⛈️🌧️🌩️🌦️⛅️🌥️🧬🦠💣🧨
-🧻🛒✉️💌
-🏴🏁🏴‍☠️🇨🇿🇪🇺
-
 //Wildland Meadows
 Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Wildland Meadows;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
@@ -40,9 +21,9 @@ Wildland Meadows;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 //Forsaken Village
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+//;Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+//;Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
@@ -57,9 +38,9 @@ Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+//;Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+//;Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;🌊;Swamp Shore;Fishing;0;0;0;0;0;0;Edge of the World;Murky water bubbles all around.<br>;
