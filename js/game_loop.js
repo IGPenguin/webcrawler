@@ -3,7 +3,7 @@
 
 //Debug
 var versionCode = "ver. 02/19/25 • 8:22pm"
-var initialEncounterOverride=6; //6 skips tutorial, ~38 barrens
+var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors & Symbols
@@ -757,7 +757,7 @@ function redraw(){
       break;
     case "Friend":
     case "Container-Friend":
-      enemyStatusString=decorateStatusText("💬","Friendly",colorGreen);
+      enemyStatusString=decorateStatusText("💬","Friendly",colorDarkGreen);
       //Do not display stats = reward hidden
       break;
     case "Small":
@@ -1435,14 +1435,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (enemyHp<0){
                 logMessage="Cooked it with a spell -1 🔵";
-                if (!playerLootString.includes("🧂")) playerMgk--;
                 enemyHp=0;
                 enemyName=enemyName+" (Cooked)";
                 enemyMsg="Actually tasted good";
                 displayEnemyEffect("🔥");
               } else {
-                logMessage="Roasted a crunchy crust -1 🔵";
-                if (!playerLootString.includes("🧂")) playerMgk--;
+                logMessage="Roasted a crispy crust -1 🔵";
                 enemySta=parseInt(enemySta)+1;
                 enemyMsg="That was very tasty";
                 displayEnemyEffect("🔥");
@@ -1450,6 +1448,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (playerLootString.includes("🧂")){
                 logMessage="Added a tiny pinch of salt.";
+                playerMgk++; //OOF
                 enemyName=enemyName+" (Salty)";
                 displayEnemyEffect("✨");
               } else {
