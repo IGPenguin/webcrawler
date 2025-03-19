@@ -1459,7 +1459,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,logMessage);
               animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
             } else {
-              if (!playerPartyString.includes("🧂"))//Regain the lost mana if no salt shaker
               displayPlayerCannotEffect();
               logPlayerAction(actionString, "Already improved this food!")
             }
