@@ -1219,9 +1219,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Trap-Roll": //Triggers when rolling into it
+          case "Trap-Roll": //Triggers when rolling into it, next encounter
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             playerHpMax+=(enemyHp*(-1));
+            nextEncounter();
             break;
           case "Trap":
           case "Trap-Attack":
@@ -3241,9 +3242,12 @@ function adjustEncounterButtons(){
       setButton('button_roll',"❌ Ditch");
       break;
 
+    case "Trap-Attack":
+      document.getElementById('button_roll').innerHTML="👣 Avoid";
+      break;
+
     case "Trap":
     case "Trap-Roll":
-    case "Trap-Attack":
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
