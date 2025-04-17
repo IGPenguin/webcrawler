@@ -166,7 +166,7 @@ function getLuckyName(name=playerName){
 }
 
 function getGameTip(){
-  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> tired enemies to knock them out.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","Non-deadly resolutions award sligthly more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to level up and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> provides <b>🎁 Bonus</b> on revival."];
+  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> the hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️<b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","Non-deadly resolutions award sligthly more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to level up and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -2044,7 +2044,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
               }
-              logPlayerAction(actionString,openMessage);
+              var tempLog=playerConsumed(true);
+              logPlayerAction(actionString,tempLog);
               nextEncounter();
               break;
             }
@@ -2615,6 +2616,12 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
 
+  if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
+    markAsSeen(enemyName);
+    previousEnemyType = enemyType;
+    if (enemyType.includes("Boss"))  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss Vanquished!</p>",4);
+  }
+
   if (playerCheckLevelUp()){
     return true;
   }
@@ -2624,9 +2631,6 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     linesStory.splice(encounterIndex+1,0,philosopherThoughts);
     logAction("🥻 ▸ <b>💭 Curious Thought</b> came on their mind.")
   }
-
-  if (!enemyType.includes("Generator")) markAsSeen(enemyName) //Hacky hacky hack
-  previousEnemyType = enemyType;
 
   if (animateArea) {
     toggleUIElement(areaUIElement,1);
@@ -2923,7 +2927,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   return gainedString;
 }
 
-function playerConsumed(){
+function playerConsumed(silent=false){
   var consumedString="Replenished resources"
   var sign = "";
   var eatEmoji= "🍴"
@@ -2939,8 +2943,8 @@ function playerConsumed(){
     if (enemyMsg=="") consumedString="That was actually tasty";
   }
 
-  //Gain stamina only if not bad food and not hurt
-  if ((playerHp>=playerHpMax) && enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
+  //Recover stamina if not bad food
+  if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
     if (parseInt(missingSta)<=0) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
@@ -2976,10 +2980,12 @@ function playerConsumed(){
   }
 
   //Apply stat changes (except hp & sta)
-  playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,true,false,eatEmoji);
+  playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,!silent,false,eatEmoji);
 
   //Actually damages here, to log potential lucky dmg avoidance at the right time
   if (enemyHp<0) playerHit(-1*enemyHp,true,true);
+
+  return consumedString;
 }
 
 function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
@@ -3375,7 +3381,7 @@ function toggleUIElement(UIElement,opacity = "0"){
   }
 }
 
-function curtainFadeInAndOut(message=""){
+function curtainFadeInAndOut(message="",duration=3){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
   var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
 
@@ -3384,8 +3390,8 @@ function curtainFadeInAndOut(message=""){
 
   var animationHandler = function(){
     setBackground(areaName);
-    animateUIElement(curtainUIElement,"animate__fadeOut",2.2,true);
-    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",2.2,true,message);
+    animateUIElement(curtainUIElement,"animate__fadeOut",duration,true);
+    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration,true,message);
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
   curtainUIElement.addEventListener('animationend',animationHandler);

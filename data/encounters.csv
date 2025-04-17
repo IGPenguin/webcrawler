@@ -1,17 +1,20 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Wildland Meadows;
-Wildland Meadows;🌿;Fern Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🌾;Tall Weeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Wildland Meadows;🌾;Dense Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Wildland Meadows;🌿;Fern Thicket;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🪨;Massive Rock;Prop;0;0;0;0;0;0;Wild Landscape;Good place to catch a breath.<br>;Moved around that.
+Wildland Meadows;🌾;Dense Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Wildland Meadows;🌿;Overgrown Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🌼;Flower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
+Blooming Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
+Wildland Meadows;🌺;Blooming Patch;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
+Wildland Meadows;🌸;Cherry Orchard;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>Provides <b>+1 🧠 Intellect</b>.;Feels gooood maaan.
 
+Wildland Meadows;🪨;Suspicious Rock;Prop;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Wildland Meadows;🌹;Rose Bush;Container;-1;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.;Feels gooood maaan
 Wildland Meadows;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🍂;Rotting Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
@@ -30,7 +33,7 @@ Wildland Meadows;🍃;Falling Leaves;Curse;0;0;0;1;0;0;Brief Moment;Signs remind
 Wildland Meadows;🍂;Rotting Leaves;Curse;-1;0;0;0;0;0;Brief Moment;Leaves are getting carried by the wind.<br>;Got covered by dying life.
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Oddity;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
-Wildland Meadows;🕸️;Blursed Web;Trap-Roll;-1;0;0;1;0;0;Inconvenience;Pass through with care to avoid getting stuck.<br>;Got webs on their face.
+//;Wildland Meadows;🕸️;Blursed Web;Trap-Roll;-1;0;0;1;0;0;Minor Inconvenience;Pass through with care to avoid getting stuck.<br>;Got webs on their face.
 
 Wildland Meadows;🦋;Blue Butterfly;Small;1;0;1;0;-1;0;Nature's Beauty;Makes a perfect fishing bait.<br>;How come this happened?
 Wildland Meadows;🐝;Stray Bee;Small;1;0;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
@@ -99,7 +102,6 @@ Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> d
 Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-//;Wildland Meadows;☘️;Common Clover;Item;0;0;0;0;0;0;Wild Flora;Likely serves no actual purpose.<br>;
 
 Wildland Meadows;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -116,12 +118,11 @@ Wildland Meadows;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Raw Food;Probably taste
 Wildland Meadows;🥚;Bird Egg;Consumable;0;0;0;0;0;0;Raw Food;Probably tastes much better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
 //Forsaken Village
-Forsaken Village;🌿;Grass Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌿;Overgrown Patch;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌿;Wild Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Forsaken Village;🌾;Overgrown Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Forsaken Village;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
-Forsaken Village;🌱;Dense Grass;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🌱;Wild Growth;Prop;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
@@ -144,6 +145,7 @@ Forsaken Village;🌿;Thick Grass ;Container;0;0;0;0;0;0;Wild Flora;Good place t
 Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the tree.
 Forsaken Village;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
+Forsaken Village;🕸️;Spider Web;Container;0;0;-2;0;0;0;Inconvenient Stash;Something seems to be stuck there.<br>;Got some webs on your face
 
 Forsaken Village;🪤;Elaborate Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
 Forsaken Village;🏚️;Long Abandoned Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
@@ -190,7 +192,6 @@ Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;Health Condition;Uncomfort
 Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
-Forsaken Village;🕸️;Spider Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
 Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
@@ -360,7 +361,7 @@ Twisted Fairyland;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone mus
 Twisted Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Twisted Fairyland;🕸;Spider Cocoon;Container;0;0;0;0;0;0;Someone's Lunch;Seems to have something inside.<br>;Grossed out by the sticky webs.
 Twisted Fairyland;🪺;Unguarded Nest;Container;0;0;0;0;0;0;Opportunity;Whatever built this isn't far.<br>;
-Twisted Fairyland;🍯;Sticky Honeypot;Container;0;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>;Something has been revealed.
+Twisted Fairyland;🍯;Sticky Honeypot;Container;-1;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>;Got stung by an angry bee
 
 Twisted Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
 Twisted Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;Tough Terrain;Farmland of the natives.<br>;
@@ -497,11 +498,12 @@ Twisted Fairyland;🦖;Ferocious Raptor;Boss-Swift;5;5;2;0;-1;0;Mr. Funny Hands;
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
 Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome
-Twisted Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Tasted just awesome
-Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;2;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome
+Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity
+Twisted Fairyland;🥥;Sweet Coconut;Consumable;2;0;0;0;0;0;Healthy Treat;Full of refreshing juice.<br>Provides <b>+2 ❤️ Energy</b> temporarily.;Tasted just awesome
+Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;2;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
-Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Food;Smells absolutely amazing.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Twisted Fairyland;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Twisted Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides <b>+1 🟢 Energy</b> temporarily.;Got extra energy
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
