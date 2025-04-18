@@ -28,6 +28,7 @@ Loot;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for 
 Loot;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
 Loot;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings some extra luck.<br>Provides<b>+1 🍀 Luck</b>.;Feels good to have it.
 Loot;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
+Loot;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!
 
 Loot;👞;Wet Shoe;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Does not feel right
 Loot;🔪;Rusty Knife;Item;0;1;0;0;0;0;Worn Tool;Still quite useful in combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Took it with themselves just in case.
