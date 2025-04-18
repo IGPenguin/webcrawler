@@ -395,7 +395,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
     randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"]);
   }
 
-  console.log("Type:"+encounterTypes+" Opts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
+  console.log("Type:"+encounterTypes+"\n\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
   return randomEncounter;
 }
 
@@ -560,10 +560,13 @@ function generateNextEncounters(generatorID=0, logCall=true){
         }
       }
       var possibleEncounters=["Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Altar"];
-      var firstEncounter=[chooseFrom(possibleEncounters)];
-      possibleEncounters = possibleEncounters.filter(string => string !== firstEncounter[0]); // Prevents duplicate encounter types twice in a row
-      pushEncounter(getRandomEncounter(firstEncounter));
-      pushEncounter(getRandomEncounter(possibleEncounters));
+      var firstEncounter=[getRandomEncounter(possibleEncounters)];
+      pushEncounter(firstEncounter);
+
+      var filterType=firstEncounter[0].split("type:")[1].split(",")[0];
+      possibleEncounters = possibleEncounters.filter(string => string !== filterType); // Prevents duplicate encounter types twice in a row
+
+      pushEncounter(getRandomEncounter(possibleEncounters)); // Push second encounter which is guaranteed different type
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
