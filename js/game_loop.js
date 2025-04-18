@@ -2911,7 +2911,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     displayPlayerEffect(enemyEmoji);
   }
 
-  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦴"])
+  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦴","🦯","🥊"])
   if (hasAnyOf(attackTypes,enemyEmoji)) playerAttackType=enemyEmoji;
 
   var castTypes=(["⚡️","☄️","🍭"])

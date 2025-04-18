@@ -5,24 +5,23 @@ Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to cat
 Wildland Meadows;🌾;Dense Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🌿;Overgrown Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🌼;Flower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
-Blooming Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
+Wildland Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌺;Blooming Patch;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌸;Cherry Orchard;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 
-Wildland Meadows;🪨;Suspicious Rock;Prop;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
+Wildland Meadows;🪨;Suspicious Rock;Container;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Wildland Meadows;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Wildland Meadows;🌹;Rose Bush;Container;-1;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.;Feels gooood maaan
-Wildland Meadows;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Wildland Meadows;🍂;Rotting Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Wildland Meadows;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Wildland Meadows;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Wildland Meadows;🌹;Rose Bush;Container;-1;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.;
+
+Wildland Meadows;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Wildland Meadows;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hidden there.
 Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out of the tent.<br>;Decided to investigate the tent.
 Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
 Wildland Meadows;🌺;Blooming Field;Container-3;0;0;0;0;0;0;Natural Beauty;There's some movement in the distance.<br>;Crossed right through.
-Wildland Meadows;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
-Wildland Meadows;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
 Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
@@ -133,8 +132,11 @@ Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
 Forsaken Village;🌳;Lone Tree;Prop;0;0;0;0;0;0;Tall Flora;Nothing of particular interest.<br>;
 Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
-Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
-Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;Battle-scarred Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
+Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;Wrecked Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
+Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;Wrecked Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
+Forsaken Village;🏗;Strange Monument;Prop;0;0;0;0;0;0;Metal Construction;A remnant from the distant past.<br>;Continued the adventure.
+Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
+Forsaken Village;🚧;Reflective Barricade;Prop;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 
 Forsaken Village;🪨;Building Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Wall Remains;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
@@ -145,6 +147,7 @@ Forsaken Village;🌿;Thick Grass ;Container;0;0;0;0;0;0;Wild Flora;Good place t
 Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the tree.
 Forsaken Village;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
+Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Container;Seems to be indicating something inside.<br>;
 Forsaken Village;🕸️;Spider Web;Container;0;0;-2;0;0;0;Inconvenient Stash;Something seems to be stuck there.<br>;Got some webs on your face
 Forsaken Village;🧦;Forbidden Pouch;Item;0;0;0;-1;0;0;Questionable Stash;Something seems to be hidden there.;Got some nasty stuff on yourself
 
@@ -194,6 +197,7 @@ Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;T
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
 Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
+Forsaken Village;🛢;Sealed Container;Trap-Attack;-4;0;0;0;0;0;Garbage;There must be a reason why it's closed.<br>;Oops the lid came off
 
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
@@ -289,6 +293,8 @@ Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains ma
 Forsaken Village;🧮️;Manual Calculator;Item;0;0;-1;0;3;0;Counting Tool;Provides <b>+3 🧠 Intellect</b> for <b>-1  🟢 Energy</b>.<br>Operating this slows you down.;Thinking can be hard.
 
 Forsaken Village;🪨;Sharp Stone;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
+Forsaken Village;🥊;Boxing Glove;Item;0;1;0;0;0;0;Figting Gear;Improves hand-to-hand combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Feeling more confident.
+Forsaken Village;🦯;Telescopic Stick;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
@@ -317,6 +323,7 @@ Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<
 Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
 Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless kinda
+Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Junk;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a ton of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -359,21 +366,21 @@ Twisted Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;
 Twisted Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
 Twisted Fairyland;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
 Twisted Fairyland;🎋;Bamboo Growth;Container;0;0;0;0;0;0;Jungle Flora;Good place to catch a breath.<br>;
-Twisted Fairyland;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
-Twisted Fairyland;🪻;Hyacinth Thicket;Container;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Twisted Fairyland;🕸;Spider Cocoon;Container;0;0;0;0;0;0;Someone's Lunch;Seems to have something inside.<br>;Grossed out by the sticky webs.
 Twisted Fairyland;🪺;Unguarded Nest;Container;0;0;0;0;0;0;Opportunity;Whatever built this isn't far.<br>;
 Twisted Fairyland;🍯;Sticky Honeypot;Container;-1;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>;Got stung by an angry bee
+Twisted Fairyland;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Twisted Fairyland;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 
 Twisted Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
 Twisted Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;Tough Terrain;Farmland of the natives.<br>;
-Twisted Fairyland;🌻;Bunch of Sunflowers;Container-2;0;0;0;0;0;0;Wild Flora;Something seems hidden in there.<br>;
-Twisted Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
-Twisted Fairyland;🌷;Tulip Glade;Container-2;0;0;0;0;0;0;Beautiful Spot;Colorful tulips literally everywhere.<br>;Something was hidden there.
 Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
-
+Twisted Fairyland;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Twisted Fairyland;🍂;Rotting Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
+Twisted Fairyland;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Twisted Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
 Twisted Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
@@ -494,7 +501,6 @@ Twisted Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fai
 Twisted Fairyland;🦀;Titan Crab;Boss-Heavy;6;4;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
 Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;3;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Swift;5;5;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
-🦣🐘
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
