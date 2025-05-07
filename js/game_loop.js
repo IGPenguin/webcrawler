@@ -1126,7 +1126,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
 
               enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
-              displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
             }
             break;
@@ -2045,6 +2044,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               var openMessage = "Sucessfully found something.";
+              displayEnemyDodgeEffect();
               displayEnemyEffect("👋");
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
@@ -2056,6 +2056,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             logPlayerAction(actionString,"Touched it, nothing happened.");
+            displayEnemyCannotEffect();
             displayEnemyEffect("✋");
           }
         break;
@@ -2305,6 +2306,13 @@ function enemyRest(stamina){
 }
 
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
+  if (enemySta>enemyStaLost){
+    displayEnemyAttackEffect();
+  } else {
+    displayEnemyRestEffect();
+    displayEnemyEffect("💤");
+  }
+
   if (enemyStaLost < enemySta) {
     logPlayerAction(actionString,successMessage); //TODO: switch emojis around >> 🐅 > ⚔️
     animateUIElement(enemyInfoUIElement,"animate__headShake","0.7"); //Play attack animation
@@ -3090,7 +3098,7 @@ function playerReincarnate(){
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-  curtainFadeInAndOut("<p style=\"color:"+colorDarkGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Reincarnated!<br>"+decorateStatusText("","Remember what you've learned!",colorWhite),5)+"</p>";
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Reincarnated!<br>"+decorateStatusText("","Remember what you've learned!",colorWhite),5)+"</p>";
   nextEncounter();
 
   if (playerKarma>-5){
@@ -3113,8 +3121,8 @@ function gameOver(silent=false){
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
-  
-  curtainFadeInAndOut("<p style=\"color:"+colorDarkRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">You died!",5)+"</p>";
+
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">You died!",5)+"</p>";
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
 
