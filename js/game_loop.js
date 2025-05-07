@@ -2,13 +2,13 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 04/18/25 • 07:27pm"
+var versionCode = "ver. 05/08/25 • 00:42am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorCardBackground = "#202020";
-var fullSymbol = "●"; var emptySymbol = "○"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
+var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
 
 //Stats
 var adventureStartTime = getTime();
@@ -273,6 +273,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
+    curtainFadeInAndOut("<p style=\"color:"+colorDarkYellow+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Webcrawler</p><p style=\"font-size:10px;\""+decorateStatusText("",versionCode,colorWhite),4);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }
@@ -903,7 +904,10 @@ function redraw(){
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-      if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) displayPlayerState("In Combat",colorRed,"0.8");
+      if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) {
+        displayPlayerState("In Combat",colorRed,"0.8");
+        setButton('button_sleep',"💤 Rest"); //Hack
+      }
       break;
   }
 
@@ -927,14 +931,14 @@ function displayEnemyType(type){ //TODO Refactor usage or remove
 
 function appendEnemyStats(){
   var enemyStats = "";
-  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
-    if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
+  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp-enemyHpLost);}
+    if (enemyHpLost > 0) { enemyStats += emptySymbol.repeat(enemyHpLost); } //YOLO
 
-  if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
-    if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyStaLost) + emptySymbol.repeat(enemyStaLost); } //YOLO
+  if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta-enemyStaLost);}
+    if (enemyStaLost > 0) { enemyStats += emptySymbol.repeat(enemyStaLost); } //YOLO
 
-  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
-    if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
+  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
+    if (enemyMgkLost > 0) { enemyStats += emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   if ((enemyAtk+enemyAtkBonus)>0 || enemyAtk!=0) {
     enemyStats += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
@@ -1123,7 +1127,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
 
               enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
-              displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
             }
             break;
@@ -2018,8 +2021,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Checkpoint": //LVL UP
-            //There's now level up effect
-            //curtainFadeInAndOut("<p style=\"color:#EEBC1D;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">&nbsp;⏀&nbsp;Flame Praised&nbsp;&nbsp;");
             playerXP+=playerXPThreshold;
             isFishing=false;
             logPlayerAction(actionString,"Praised the "+enemyName+".");
@@ -2055,6 +2056,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             logPlayerAction(actionString,"Touched it, nothing happened.");
+            displayEnemyCannotEffect();
             displayEnemyEffect("✋");
           }
         break;
@@ -2295,8 +2297,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 //Enemy
 function enemyRest(stamina){
   if (enemyHp - enemyHpLost > 0){
-    animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
-    if (document.getElementById('id_enemy_overlay').innerHTML!= "💢") displayEnemyEffect("⏳")
+    if (document.getElementById('id_enemy_overlay').innerHTML!= "💢") displayEnemyEffect("💤")
     enemyStaLost-=stamina;
     if (enemyStaLost < 0) {
       enemyStaLost = 0;
@@ -2305,6 +2306,13 @@ function enemyRest(stamina){
 }
 
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
+  if (enemySta>enemyStaLost){
+    displayEnemyAttackEffect();
+  } else {
+    displayEnemyRestEffect();
+    displayEnemyEffect("💤");
+  }
+
   if (enemyStaLost < enemySta) {
     logPlayerAction(actionString,successMessage); //TODO: switch emojis around >> 🐅 > ⚔️
     animateUIElement(enemyInfoUIElement,"animate__headShake","0.7"); //Play attack animation
@@ -2388,6 +2396,7 @@ function enemyKnockedOut(){
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + knockoutString + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   if (enemyAtk>0) playerKarma++;
   if (enemyAtk<=0) playerKarma--;
+  playerSta--;
 
   isFishing=false;
   displayEnemyEffect("💤");
@@ -2464,7 +2473,6 @@ function enemyAttackOrRest(message="",isGrab=false){
   var staminaChangeMsg;
 
   if (enemySta>enemyStaLost) {
-
     if (playerLootString.includes("🖤") && (damageReceived)>0) {
       damageReceived--;
       displayPlayerEffect("🖤");
@@ -2480,7 +2488,9 @@ function enemyAttackOrRest(message="",isGrab=false){
     } else {
         staminaChangeMsg = "The enemy syphoned some health -"+(enemyAtk+enemyAtkBonus)+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
-      }
+    }
+
+    displayEnemyAttackEffect();
 
     if (damageReceived<=0){
       staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around.","They seem to be very chill."])
@@ -2501,7 +2511,7 @@ function enemyAttackOrRest(message="",isGrab=false){
         logAction(enemyEmoji+" "+arrowSymbol+" 💤 "+staminaChangeMsg);
         enemyRest(1);
         return; //They don't waste stamina unless necessary
-        }
+      }
     } else {
       if (message!="") staminaChangeMsg=message;
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
@@ -2623,7 +2633,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
-    if (enemyType.includes("Boss"))  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss Vanquished!</p>",4);
+    if (enemyType.includes("Boss"))  curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss Vanquished!</p>",4);
   }
 
   if (playerCheckLevelUp()){
@@ -2649,7 +2659,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   loadEncounter(encounterIndex);
 
   //Fullscreen Curtain
-  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
+  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm") && (areaName != "Depths of Slumber")){ //Does not animate new area when killed
     curtainFadeInAndOut("<span style=font-size:42px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
     if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
@@ -2676,7 +2686,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased!<br>"+decorateStatusText("","New perk available.",colorWhite))+"</p>";
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Level increased!<p style=\"font-size:14px;\""+decorateStatusText("","New perk available.",colorWhite));
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
@@ -3088,9 +3098,10 @@ function playerReincarnate(){
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Reincarnated!</p><p style=\"font-size:14px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),5);
   nextEncounter();
 
-  if (playerKarma>0){
+  if (playerKarma>-5){
     var bonusItem=getRandomEncounter(["Item"],["Artifact"],"Forsaken Village"); //TODO Special karma-only bonuses??
     var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
@@ -3110,8 +3121,10 @@ function gameOver(silent=false){
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
+
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">You died!",5)+"</p>";
+  animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
-  animateUIElement(cardUIElement,"animate__flipInY","1.2");
 
   //Reset generated data
   resetSeenEncounters();
@@ -3417,7 +3430,19 @@ function displayPlayerCannotEffect(){
 }
 
 function displayEnemyCannotEffect(){
-  animateUIElement(document.getElementById('id_enemy_info'),"animate__headShake","0.7"); //Animate enemy not enough stamina
+  animateUIElement(emojiWrapperUIElement,"animate__headShake","0.7"); //Animate enemy not enough stamina
+}
+
+function displayEnemyDodgeEffect(){
+  animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.7");
+}
+
+function displayEnemyAttackEffect(){
+  animateUIElement(emojiWrapperUIElement,"animate__bounce","0.7");
+}
+
+function displayEnemyRestEffect(){
+  animateUIElement(emojiWrapperUIElement,"animate__pulse","0.7");
 }
 
 function displayPlayerGainedEffect(){
