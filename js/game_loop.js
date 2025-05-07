@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 05/08/25 • 00:42am"
+var versionCode = "ver. 05/08/25 • 00:49am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -2958,7 +2958,7 @@ function playerConsumed(silent=false){
   }
 
   //Recover stamina if not bad food
-  if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0){
+  if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0 && !enemyType.includes("Container")){
     if (parseInt(missingSta)<=0) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
