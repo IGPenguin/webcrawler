@@ -8,7 +8,7 @@ if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes 
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorCardBackground = "#202020";
-var fullSymbol = "●"; var emptySymbol = "○"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
+var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
 
 //Stats
 var adventureStartTime = getTime();
@@ -931,13 +931,13 @@ function displayEnemyType(type){ //TODO Refactor usage or remove
 function appendEnemyStats(){
   var enemyStats = "";
   if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
-    if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyHpLost) + emptySymbol.repeat(enemyHpLost); } //YOLO
+    if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,(-1*enemyHpLost)-4) + emptySymbol.repeat(enemyHpLost); } //YOLO
 
   if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
-    if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyStaLost) + emptySymbol.repeat(enemyStaLost); } //YOLO
+    if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,(-1*enemyStaLost)-4) + emptySymbol.repeat(enemyStaLost); } //YOLO
 
   if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
-    if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,-1*enemyMgkLost) + emptySymbol.repeat(enemyMgkLost); } //YOLO
+    if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,(-1*enemyMgkLost)-4) + emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   if ((enemyAtk+enemyAtkBonus)>0 || enemyAtk!=0) {
     enemyStats += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);

@@ -168,9 +168,9 @@ layout: default
 
 <h3 id = "id_player_status" style="text-align:left;
                                     padding-left:8px;
-                                    font-size:12px;
-                                    padding-top:5px;
-                                    padding-bottom:3px;
+                                    padding-top:2px;
+                                    padding-bottom:2px;
+                                    font-size:14px;
                                     margin-bottom:-11px;
                                     margin-top:12px;
                                     font-family:sans;
