@@ -273,6 +273,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
+    curtainFadeInAndOut("<p style=\"color:"+colorDarkYellow+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Webcrawler</p><p style=\"font-size:10px;\""+decorateStatusText("",versionCode,colorWhite),4);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }
@@ -930,14 +931,14 @@ function displayEnemyType(type){ //TODO Refactor usage or remove
 
 function appendEnemyStats(){
   var enemyStats = "";
-  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp);}
-    if (enemyHpLost > 0) { enemyStats = enemyStats.slice(0,(-1*enemyHpLost)-4) + emptySymbol.repeat(enemyHpLost); } //YOLO
+  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp-enemyHpLost);}
+    if (enemyHpLost > 0) { enemyStats += emptySymbol.repeat(enemyHpLost); } //YOLO
 
-  if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta);}
-    if (enemyStaLost > 0) { enemyStats = enemyStats.slice(0,(-1*enemyStaLost)-4) + emptySymbol.repeat(enemyStaLost); } //YOLO
+  if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta-enemyStaLost);}
+    if (enemyStaLost > 0) { enemyStats += emptySymbol.repeat(enemyStaLost); } //YOLO
 
-  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk);}
-    if (enemyMgkLost > 0) { enemyStats = enemyStats.slice(0,(-1*enemyMgkLost)-4) + emptySymbol.repeat(enemyMgkLost); } //YOLO
+  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
+    if (enemyMgkLost > 0) { enemyStats += emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   if ((enemyAtk+enemyAtkBonus)>0 || enemyAtk!=0) {
     enemyStats += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
@@ -2044,7 +2045,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               var openMessage = "Sucessfully found something.";
-              displayEnemyDodgeEffect();
               displayEnemyEffect("👋");
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
@@ -2686,7 +2686,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Level Increased!<br>"+decorateStatusText("","New perk available.",colorWhite))+"</p>";
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Level increased!<br>"+decorateStatusText("","New perk available.",colorWhite))+"</p>";
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
@@ -3098,7 +3098,7 @@ function playerReincarnate(){
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Reincarnated!<br>"+decorateStatusText("","Remember what you've learned!",colorWhite),5)+"</p>";
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Reincarnated!<br>"+decorateStatusText("","Remember what you've learned!",colorWhite),5)+"</p>";
   nextEncounter();
 
   if (playerKarma>-5){
