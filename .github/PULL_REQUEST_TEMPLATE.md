@@ -20,10 +20,10 @@
   - ~[ ] With mistakes~
 - ~[ ]  Encounters balance-pass~
 
-## ⚠️ Essential review checklist
-**I truthfully declare that the following requirements have been met:**
-- [ ] This pull requests follows [the contribution rules](https://github.com/IGPenguin/webcrawler/blob/live/.github/CONTRIBUTING.md "the contribution rules").
-- [ ] New features are fully completed.
+## ⚠️ Review checklist
+**I declare that all requirements have been met:**
+- [ ] Pull requests follows [the contribution rules](https://github.com/IGPenguin/webcrawler/blob/live/.github/CONTRIBUTING.md "the contribution rules")
+- [ ] New features are fully completed
   - [ ] What about the data though?
-- [ ] File diff has been examined thoroughly.
-- [ ] All changes have been properly tested.
+- [ ] File diff has been examined thoroughly
+- [ ] All changes have been properly tested
