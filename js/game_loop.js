@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 04/18/25 • 07:27pm"
+var versionCode = "ver. 05/08/25 • 00:31am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -2686,7 +2686,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Level increased!<br>"+decorateStatusText("","New perk available.",colorWhite))+"</p>";
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Level increased!<p style=\"font-size:14px;\""+decorateStatusText("","New perk available.",colorWhite));
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
@@ -3098,7 +3098,7 @@ function playerReincarnate(){
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Reincarnated!<br>"+decorateStatusText("","Remember what you've learned!",colorWhite),5)+"</p>";
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Reincarnated!</p><p style=\"font-size:14px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),5);
   nextEncounter();
 
   if (playerKarma>-5){
