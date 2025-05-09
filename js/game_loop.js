@@ -44,8 +44,8 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
-var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂"])
-var validRess=["🫀","💾","♥️","🫁","🏵️"];
+var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤"])
+var validRess=["🫀","💾","♥️","🫁","🏵️","🛟"];
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -273,7 +273,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
-    curtainFadeInAndOut("<p style=\"color:"+colorDarkYellow+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Webcrawler</p><p style=\"font-size:10px;\""+decorateStatusText("",versionCode,colorWhite),4);
+    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorDarkYellow+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Webcrawler</p><p style=\"font-size:10px;\""+decorateStatusText("",versionCode,colorWhite),4);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }
@@ -462,7 +462,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
-  if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
+  if (enemyTeam.includes("Prophet") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
     enemyDesc=enemyDesc.replaceAll("n/a","");
     enemyDesc+="<i>"+getGameTip()+"</i>";
   }
@@ -899,12 +899,12 @@ function redraw(){
         if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
         if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
-        if (playerLootString.includes("🪱") && enemyType==="Fishing") displayPlayerState("Bait Ready",colorPink,"0.8");
+        if ((enemyType==="Fishing" && check_valid_bait()!="")) displayPlayerState("Bait Ready",colorPink,"0.8");
         if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorDarkYellow,"0.4");
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-      if (enemyHp>0 && (enemyAtk>0 || enemyMgk>0)) {
+      if (enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
         displayPlayerState("In Combat",colorRed,"0.8");
         setButton('button_sleep',"💤 Rest"); //Hack
       }
@@ -1215,7 +1215,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             if (enemyMsg!=""){
               logPlayerAction(actionString,enemyMsg)
-            } else {logPlayerAction(actionString,"Continued on the adventure.");}
+            } else {
+              logPlayerAction(actionString,"Continued on the adventure.");
+            }
             nextEncounter();
             break;
           case "Container-Friend":
@@ -1300,7 +1302,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Pet":
           case "Small":
-            if (enemyAtk<=0) {
+            if (enemySta<=0){
+              logPlayerAction(actionString,"They cannot do much about that.")
+              displayEnemyCannotEffect();
+              break;
+            }
+            if ((enemyAtk+enemyAtkBonus)<=0) {
               enemyStaminaChangeMessage(-1,"Enjoyed a moment together -1 🟢","They needed to catch a breath -1 🟢");
             } else {
               enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
@@ -1320,7 +1327,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Heavy": //Too heavy or spirit attack
-          case "Boss":
             if (enemyStaminaChangeMessage(-1,"Could not block a heavy attack -"+enemyAtk+" 💔","They needed to catch a breath.")){
               playerHit(enemyAtk);
             } else {
@@ -1677,7 +1683,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("🪬");
 
             if (procAbilityChance("🪆",33)){
-              var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪱","🪱","🪱","🪱"]); //50% for worm
+              var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪰","🪲","🪳","🐌"]);
               logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
@@ -1813,7 +1819,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (damageReceived>0) {
                 damageReceived+=2;
                 overpowerMessage="Got overpowered and hit hard -"+damageReceived+" 💔";
+                logPlayerAction(actionString,overpowerMessage);
                 playerHit(damageReceived);
+                break;
               }
               logPlayerAction(actionString,overpowerMessage);
               displayPlayerCannotEffect();
@@ -1974,25 +1982,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
-            var bait="";
-            validBaits.forEach((item, i) => {
-              if (playerLootString.includes(item)) bait=item;
-            });
-
+            var bait=check_valid_bait();
             if (bait!="" && playerUseItem(bait,"Fished out something "+decorateStatusText("","+"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
               playerGainXP(1,10*playerLevel,"");
 
               if (procAbilityChance("🧵",33)) {
-                logAction("🧵 ▸ 🪱 Luckily the bait remained hooked.");
+                logAction("🧵 ▸ "+bait+" Luckily the bait remained hooked.");
                 displayPlayerEffect("🧵");
-                playerLootString+="🪱";
+                playerLootString+=bait;
               }
 
               getRandomFish();
               displayEnemyEffect("🪝");
             } else {
               displayPlayerCannotEffect();
-              logPlayerAction(actionString,"Missing viable fishing bait.");
+              logPlayerAction(actionString,"Missing a viable fishing bait.")
             }
             break;
 
@@ -2029,6 +2033,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerMgk=playerMgkMax;
             animateFlipNextEncounter();
             break;
+
           default:
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
@@ -2040,7 +2045,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   playerGainXP(1,25*playerLevel,"");
                   nextEncounter();
                 } else {
-                  displayPlayerCannotEffect();
+                  displayEnemyCannotEffect();
                 }
                 break;
               }
@@ -2504,6 +2509,7 @@ function enemyAttackOrRest(message="",isGrab=false){
         } else {
           logAction(enemyEmoji+" ▸ ‼️ They got bored and left.");
           nextEncounter();
+          return;
         }
       }
       if (message!="") staminaChangeMsg=message;
@@ -2524,7 +2530,6 @@ function enemyAttackOrRest(message="",isGrab=false){
       }
 
       if (playerLootString.includes("🖤")) logAction("⚔️ ▸ <b>🖤 Unbreakable</b> resisted -1 💔");
-
       return;
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");
@@ -2629,11 +2634,10 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
-
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
-    if (enemyType.includes("Boss"))  curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss Vanquished!</p>",4);
+    if (enemyType.includes("Boss"))  curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss defeated!</p>",4);
   }
 
   if (playerCheckLevelUp()){
@@ -3111,6 +3115,17 @@ function playerReincarnate(){
   }
 }
 
+function check_valid_bait(){
+  var bait="";
+  validBaits.forEach((item, i) => {
+    if (playerLootString.includes(item)) {
+      bait=item;
+      return true;
+    }
+  });
+  return bait;
+}
+
 //End Game
 function gameOver(silent=false){
   //Reset progress to death encounter
@@ -3237,7 +3252,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       if (isFishing) setButton('button_roll',"❌ Ditch");
-      if (enemyEmoji=="🛶") setButton("button_roll","🛶 Sail");
+      if (enemyEmoji=="🛶" || areaName=="Endless Ocean") setButton("button_roll","🛶 Sail");
       break;
 
     case "Curse":
@@ -3265,6 +3280,7 @@ function adjustEncounterButtons(){
     case "Trap":
     case "Trap-Roll":
     case "Prop":
+      if (areaName=="Endless Ocean") setButton("button_roll","🛶 Sail");
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       break;
@@ -3278,12 +3294,10 @@ function adjustEncounterButtons(){
       break;
 
     case "Fishing":
+      if (areaName=="Endless Ocean") setButton("button_roll","🛶 Sail");
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
-      var bait="";
-      validBaits.forEach((item, i) => {
-        if (playerLootString.includes(item)) bait=item;
-      });
+      var bait=check_valid_bait();
       if (bait!="" && playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
@@ -3333,7 +3347,6 @@ function adjustEncounterButtons(){
 
     case "Heavy":
     case "Swift":
-    case "Boss":
       if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
@@ -3370,8 +3383,8 @@ function adjustEncounterButtons(){
 
     default:
       if (enemyType=="Checkpoint") setButton('button_grab',"✨ Praise",colorYellow)
-      if (enemyType.includes("Boss")) {
-        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
+      if (enemyType.includes("Heavy")||enemyType.includes("Swift")) {
+        if (enemySta-enemyStaLost==0) document.getElementById('button_grab').innerHTML="🦶 Kick";
       } else {
         setButton('button_roll',"👣 Walk");
         if (enemyType.includes("Container")) setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
@@ -3553,8 +3566,8 @@ function registerClickListeners(){
 function generateCharacterShareString(){
   var characterShareString="";
     characterShareString+="<b>"+playerName+"</b> "+"•  Lvl "+playerLevel;
-    characterShareString+="\n❤️ "+fullSymbol.repeat(playerHpMax)+"  🟢 "+fullSymbol.repeat(playerStaMax)+"  ⚔️ " + fullSymbol.repeat(playerAtk);
-    if (playerMgkMax>0) characterShareString+="  🔵 " + fullSymbol.repeat(playerMgkMax);
+    characterShareString+="\n❤️ "+playerHpMax+"  🟢 "+playerStaMax+"  ⚔️ " +playerAtk;
+    if (playerMgkMax>0) characterShareString+="  🔵 " + playerMgkMax;
     if ((playerPartyString.length+playerLootString.length)>0) characterShareString+="\n";
     if (playerPartyString.length > 0) characterShareString += playerPartyString;
     if (playerLootString.length > 0) characterShareString += playerLootString;
@@ -3563,7 +3576,6 @@ function generateCharacterShareString(){
     characterShareString += " (✞"+playerKarma+")";
     //characterShareString += "\nKillcount: "+playerKills;
     characterShareString += adventureEndReason+" (#"+adventureEncounterCount+")";
-
   return characterShareString;
 }
 

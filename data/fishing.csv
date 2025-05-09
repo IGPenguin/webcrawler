@@ -9,6 +9,7 @@ Loot;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 
 Loot;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
 Loot;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br>Using <b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Ultra Loud</b>!
 Loot;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
+Loot;🛟️;Floating Ring;Item;0;0;0;0;0;0;Artifact;Hold tight in case of drowning!<br>Provides one last change to survive.;
 
 Loot;🗡️;Silver Dagger;Item;0;2;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
 Loot;✂️;Sharp Scissors;Item;0;2;0;0;0;0;Violent Weapon;One can do a bloody mess with these.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a violent weapon.
@@ -21,7 +22,6 @@ Loot;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional atten
 Loot;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
 
 Loot;🥽;Underwater Goggles;Item;1;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
-Loot;🪲;Pearlescent Scarab;Item;0;0;1;0;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+1 🟢 Energy</b>.;Felt a surge of power.
 Loot;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
 Loot;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Loot;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
@@ -44,14 +44,13 @@ Loot;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this out.<b
 Loot;🪱;Drowned Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🪱;Tired Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Loot;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Loot;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
-Loot;🦐;Fresh Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
-Loot;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>;
-Loot;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
-Loot;🐙;Tiny Octopus;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>;
-Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>;
+Loot;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Loot;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Loot;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Loot;🐙;Tiny Octopus;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Loot;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Loot;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Its surface has an eerie glow.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Brutal spasms took a toll
-Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;Inflated upon reaching the throat
+Loot;🐡;Spiky Fish;Consumable;-1;0;0;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;That hurt you inside the throat
 
 Loot;🐸;Cursed Prince;Friend;0;0;0;0;0;1;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.
 Loot;🦭;Retired Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
