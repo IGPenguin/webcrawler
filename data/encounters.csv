@@ -2,32 +2,33 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Wildland Meadows;
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Wildland Meadows;🌾;Dense Grass;Prop;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Wildland Meadows;🌿;Overgrown Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🌿;Dense Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🌼;Flower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌺;Blooming Field;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌸;Cherry Orchard;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
+Wildland Meadows;🍃;Flying Leaves;Prop;0;0;0;0;0;0;Natural Beauty;Signs reminding you of the circle of life.<br>;
 
 Wildland Meadows;🪨;Suspicious Rock;Container;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Wildland Meadows;🕸️;Spider Web;Container;0;0;-1;0;0;0;Minor Inconvenience;Something seems to be stuck in it.<br>;Got some webs on your face
+Wildland Meadows;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.
 
-Wildland Meadows;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Wildland Meadows;🌾;Overgrown Grass;Container-2;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
+Wildland Meadows;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.<br>;Got stinged real bad!
+
+Wildland Meadows;🌽;Corn Field;Container-3;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out of the tent.<br>;Decided to investigate the tent.
 Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
-Wildland Meadows;🌹;Rose Bush;Container;-2;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.<br>;Got stinged real bad!
 
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;2;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
 Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;2;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
 
-Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird
-Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like something's calling for attention.<br>;Became fast as a wind!
-Wildland Meadows;🍃;Falling Leaves;Curse;0;0;0;1;0;0;Brief Moment;Signs reminding you of the circle of life.<br>;Time has stopped for a moment.
-Wildland Meadows;🍂;Rotting Leaves;Curse;-1;0;0;0;0;0;Brief Moment;Leaves are getting carried by the wind.<br>;Got covered by dying life.
+Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird.
+Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like something's calling for attention.<br>;Received a howling blessing.
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Oddity;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
 
@@ -143,7 +144,6 @@ Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a
 Forsaken Village;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Container;Seems to be indicating something inside.<br>;
-Forsaken Village;🕸️;Spider Web;Container;0;0;-2;0;0;0;Inconvenient Stash;Something seems to be stuck there.<br>;Got some webs on your face
 Forsaken Village;🧦;Forbidden Pouch;Item;0;0;0;-1;0;0;Questionable Stash;Something seems to be hidden there.;Got some nasty stuff on yourself
 
 Forsaken Village;🪤;Elaborate Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
@@ -363,16 +363,13 @@ Twisted Fairyland;🎋;Bamboo Growth;Container;0;0;0;0;0;0;Jungle Flora;Good pla
 Twisted Fairyland;🕸;Spider Cocoon;Container;-1;0;0;0;0;0;Someone's Lunch;Seems to have something inside.<br>;Grossed out by the sticky webs.
 Twisted Fairyland;🪺;Unguarded Nest;Container;0;0;0;0;0;0;Opportunity;Whatever built this isn't far.<br>;
 Twisted Fairyland;🍯;Sticky Honeypot;Container;-1;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>;Got stung by an angry bee!
-Twisted Fairyland;🍁;Leaf Pile;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Twisted Fairyland;🍂;Fallen Leaves;Container;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 
 Twisted Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
 Twisted Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;Tough Terrain;Farmland of the natives.<br>;
 Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
-Twisted Fairyland;🍁;Big Leaf Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
-Twisted Fairyland;🍂;Rotting Pile;Container-2;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
+Twisted Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
 Twisted Fairyland;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.

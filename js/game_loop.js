@@ -470,6 +470,45 @@ function loadEncounter(index, fileLines = linesStory){
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]).replaceAll("\\",",");
 
   if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
+
+  switch (enemyType){
+    case "Small":
+    case "Standard":
+    case "Swift":
+    case "Heavy":
+    case "Recruit":
+    case "Pet":
+    case "Spirit":
+    case "Demon":
+    case "Undead":
+    case "Small":
+      if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
+        logAction("💢 ▸ "+enemyEmoji+" Engaged in combat: <b>"+enemyName+"</b>")
+      } else {
+        logAction("👁️ ▸ "+enemyEmoji+" Spotted a creature: <b>"+enemyName+"</b>")
+      }
+      break;
+    case "Item":
+    case "Consumable":
+      logAction("🎉 ▸ "+enemyEmoji+" Found something: <b>"+enemyName+"</b>")
+      break;
+    case "Curse":
+    case "Trap":
+    case "Trap-Attack":
+    case "Trap-Roll":
+      logAction("⁉️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
+      break;
+    case "Altar":
+      logAction("👁️ ▸ "+enemyEmoji+" Discovered something: <b>"+enemyName+"</b>")
+      break;
+    case "Friend":
+    case "Container-Friend":
+      logAction("💭 ▸ "+enemyEmoji+" Established contact: <b>"+enemyName+"</b>")
+      break;
+    default:
+      if (enemyType.includes("Boss")) logAction("💢 ▸ "+enemyEmoji+" Engaged in combat: <b>"+enemyName+"</b>")
+      break;
+  }
 }
 
 function generateNextEncounters(generatorID=0, logCall=true){
@@ -3129,7 +3168,7 @@ function check_valid_bait(){
 //End Game
 function gameOver(silent=false){
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")||(enemyType.includes("Container"))) enemyMsg="Got killed, ending the adventure.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
