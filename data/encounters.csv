@@ -101,7 +101,6 @@ Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 Wildland Meadows;🍒;Sweet Cherry Pair;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
 Wildland Meadows;🧅;Wild Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
-Wildland Meadows;🌽;Wild Corn;Consumable;0;0;0;0;0;0;Standard Crop;Just harvested crop never disappoints.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🫑;Bell Pepper;Consumable;0;0;0;0;0;0;Standard Crop;Tastes not bad\ not terrible.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🫛;Wild Peas;Consumable;0;0;0;0;0;0;Fresh Food;Probably packs some vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -322,9 +321,8 @@ Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Junk;Supposedly brings <b>bad
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Broccoli;Consumable;0;0;0;0;1;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
-Forsaken Village;🧃;Energy Drink;Consumable;0;0;2;0;0;0;Sweet Liquid;Wonder how it tastes and feels?<br>Temporary <b>+2 🟢 Energy</b> bonus.;Was it worth it?
-Forsaken Village;🍷;Sour Wine;Consumable;0;0;3;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Was it worth it?
-Forsaken Village;🌶️;Burning Jalapeño;Consumable;-1;0;3;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
+Forsaken Village;🍷;Sour Wine;Consumable;0;0;2;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Was it worth it?
+Forsaken Village;🌶️;Burning Jalapeño;Consumable;-1;0;2;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
 Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🍰;Strawberry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
@@ -485,8 +483,8 @@ Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware 
 Twisted Fairyland;👹;Little Devil;Demon;2;2;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Twisted Fairyland;🌚;Malevolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 
-Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;1;1;1;-1;2;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.//More angry clouds
-🌧️⛈️
+Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;0;0;1;-1;1;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
+Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;0;0;1;-1;2;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
 
 Twisted Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
 Twisted Fairyland;🦀;Titan Crab;Boss-Heavy;4;3;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
@@ -497,16 +495,13 @@ Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
 Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome
 Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity
-Twisted Fairyland;🥥;Sweet Coconut;Consumable;2;0;0;0;0;0;Healthy Treat;Full of refreshing juice.<br>Provides <b>+2 ❤️ Energy</b> temporarily.;Tasted just awesome
-Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;2;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome
+Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;1;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
-Twisted Fairyland;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Twisted Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides <b>+1 🟢 Energy</b> temporarily.;Got extra energy
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
-Twisted Fairyland;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 Twisted Fairyland;🍏;Poisoned Apple;Consumable;-2;0;-2;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took over
 Twisted Fairyland;🧀;Smelly Cheese;Consumable;0;0;0;-1;0;0;Rare Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
 
@@ -570,7 +565,7 @@ Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is lik
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
 //Endless Ocean
-Endless Ocean;🌊;Empty Waves;Prop;0;0;0;0;0;0;Water Condition;Really nothing interesting in sight.<br>;Something jumped the hook!
+Endless Ocean;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Water Condition;Really nothing interesting in sight.<br>;
 Endless Ocean;🍂;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 Endless Ocean;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 Endless Ocean;🏝️;Tiny Island;Prop;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;
@@ -658,18 +653,21 @@ Afflicted Necropolis;🦗;Ferocious Cricket;Small;3;2;2;0;5;0;Insect;Screams ech
 Afflicted Necropolis;🪳;Glowing Cockroach;Small;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 
 Pet
+Afflicted Necropolis;🦇;Friendly Bat;Pet;2;1;3;0;-1;2;Annoying Insect;Hopefully does not carry any diseases.<br>;Gained a new friend.
 
-Friend 👰🏻‍♀️🤴🏻👸🏻
+Friend 🤴🏻👸🏻
 
-Standard 🏻🧙🏻‍♀️🧙🏻‍♂️
+Standard 🏻🧙
 
-Afflicted Necropolis;🧙;The Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Afflicted Necropolis;👻;Spooky Ghost;Spirit;4;2;3;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
-Afflicted Necropolis;👺;Haunting Spirit;Spirit;2;2;4;0;4;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;The spirit cannot be physically hit
+Afflicted Necropolis;🧙🏻‍♂️;Acolyte Necromancer;Recruit;3;1;1;0;3;3;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Afflicted Necropolis;🐀;Overgrown Rat;Swift;3;1;3;0;-1;0;Unusual Mammal;Screams echo around the crypt.<br>;
+
+Afflicted Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
+Afflicted Necropolis;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
 Afflicted Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
-Afflicted Necropolis;🎃;Overgrown Pumpkin;Heavy;6;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.<br>They are willing to <b>enchant you</b>.;
-Afflicted Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;Received a mysterious item.
-Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>Goosebumps.;
+Afflicted Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
+Afflicted Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
+Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
 Afflicted Necropolis;🐺;Ghastly Wolf;Heavy;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
 Afflicted Necropolis;🧟;Animated Dead;Undead;1;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
@@ -683,7 +681,9 @@ Afflicted Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoi
 Afflicted Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got their heart ripped out!
 Afflicted Necropolis;🧛🏼;Fearsome Vampire;Demon;3;3;2;0;-1;0;Humanoid;Slowly walks onwards.<br>;Got their heart ripped out!
 
-Afflicted Necropolis;👰🏻‍♀️;The Bride;Boss-Spirit;2;1;2;0;6;2;True Love;She's been waiting for you since forever.<br>;Failed to face the True Love.
+Afflicted Necropolis;👰🏻‍♀️;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
+Afflicted Necropolis;👰‍♀️;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
+Afflicted Necropolis;👰🏻;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
 
 Afflicted Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Afflicted Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -695,8 +695,10 @@ Afflicted Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impre
 Afflicted Necropolis;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
 Afflicted Necropolis;🗡️;Possesed Dagger;Item;-2;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-2 💔 Health</b>.;Accidentaly cut themselves
 
+Afflicted Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Afflicted Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Afflicted Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Afflicted Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+Afflicted Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 
-Afflicted Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;<i>Proves one's determination.<i><br>;Grabbed the <b>🧩 Memory Fragment</b>.
+Afflicted Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Reminds you of your forgotten past.<i>Proves one's determination.</i><br>;Grabbed the <b>🧩 Memory Fragment</b>.

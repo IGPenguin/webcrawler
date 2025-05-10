@@ -29,14 +29,12 @@ Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;🛟️;Floating Ring;Item;0;0;0;0;0;0;Artifact;Hold tight in case of drowning!<br>Provides one last change to survive.;
-Forsaken Village;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Opportunity;Seem quite sturdy and reliable.<br>;Paddled towards the endless horizon.
+Forsaken Village;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough for an adventure.<br>;Paddled towards the horizon.
 
 //Endless Ocean
 Endless Ocean;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Endless Ocean;❓;Consumable;Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Endless Ocean;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
-
 
 //Twisted Fairyland
 Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
@@ -53,12 +51,14 @@ Afflicted Necropolis;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Afflicted Necropolis;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Afflicted Necropolis;❓;Prop;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Afflicted Necropolis;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;💌;Soaked Letter;Container;0;0;0;0;0;0;Undeniable Proof;You did this to me... TO US!<br>Why wouldn't you let me go?;Picked up the old letter.
+Afflicted Necropolis;📃;Soaked Letter;Prop;0;0;0;0;0;0;Undeniable Proof;If only you would listen to me.<br>I could have rest in peace.;
+Afflicted Necropolis;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;🤔;Restless Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to acknowledge your sins.<br>You cannot run anymore.;The inner thoughts took over.
+Afflicted Necropolis;😰;Final Realization;Dream;0;0;0;0;0;0;Painful Truth;After all the trying\ you just could not escape!<br>Now you remember what you did.;
+Afflicted Necropolis;💀;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;The forbidden revive spell did not go well.<br>You've corrupted the whole world.;
 
 //Auxiliary Dimension
-Auxiliary Dimension;🤔;Burning Question;Dream;0;0;0;0;0;0;Final Realization;<b>Time has come to reveal the ultimate truth</b>.<br>It is kinda obvious\ you probably know.;Let the inner thoughts take over.
-Auxiliary Dimension;😅;Obvious Answer;Dream;0;0;0;0;0;0;Final Realization;It takes a true dedication to reach the endgame.<br>Doesn't matter if its a game or the real life.;Realized it was all just a dream.
-Auxiliary Dimension;👾;Stack Overflow;Death;0;0;0;0;0;0;Game End;<b>You just finsihed the WebCrawler preview.</b><br>Send feedback using the <b>💌 Review</b> button.;
+Auxiliary Dimension;👾;Stack Overflow;Death;0;0;0;0;0;0;Game End;<b>You just succesfully finished the WebCrawler preview.</b><br>Please\ consider giving feedback via <b>💌 Review</b>.;
 Auxiliary Dimension;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;XXX;XXX;XXX

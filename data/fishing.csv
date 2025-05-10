@@ -9,7 +9,7 @@ Loot;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 
 Loot;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
 Loot;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br>Using <b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Ultra Loud</b>!
 Loot;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
-Loot;🛟️;Floating Ring;Item;0;0;0;0;0;0;Artifact;Hold tight in case of drowning!<br>Provides one last change to survive.;
+Loot;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
 Loot;🗡️;Silver Dagger;Item;0;2;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
 Loot;✂️;Sharp Scissors;Item;0;2;0;0;0;0;Violent Weapon;One can do a bloody mess with these.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a violent weapon.
@@ -59,7 +59,7 @@ Loot;🐧;Stranded Penguin;Container-Friend;0;0;0;0;0;0;Intergalactic Traveller;
 Loot;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides a very special gift. <br><i>For a price.</i>;Received a special blessing.
 Loot;🪔;The Floating Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides Instant <b>🎉 Level Up!</b>;
 
-Loot;‍🪼;Box Jelly;Swift;1;4;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
+Loot;‍🪼;Box Jellyfish;Swift;1;4;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 Loot;‍🦈;Hungry Shark;Standard;1;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
 Loot;‍🦑;Depths Squid;Heavy;2;2;1;0;-1;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Swallowed in one slurp!
 Loot;🦞;Pinching Lobster;Small;1;1;1;0;0;0;Crustacean;Handle with care.<br>;Cooked one would serve better
