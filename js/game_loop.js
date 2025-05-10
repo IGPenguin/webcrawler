@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 05/08/25 • 00:49am"
+var versionCode = "ver. 05/10/25 • 03:29am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
 
@@ -2970,7 +2970,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦴","🦯","🥊"])
   if (hasAnyOf(attackTypes,enemyEmoji)) playerAttackType=enemyEmoji;
 
-  var castTypes=(["⚡️","☄️","🍭"])
+  var castTypes=(["⚡️","☄️","🍭","🔥"])
   if (castTypes.includes(enemyEmoji)) playerCastType=enemyEmoji;
 
   if (enemyEmoji=="⛺️") playerSleepType=enemyEmoji;

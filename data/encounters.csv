@@ -393,7 +393,7 @@ Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housin
 Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
 Twisted Fairyland;✨;Sparkly Mist;Curse;1;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
-Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark jumped across.
+Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark zapped you.
 Twisted Fairyland;💨;Swift Winds;Curse;0;0;1;0;-1;0;Weather Condition;These air currents make one act fast.<br>;Embraced the howling wind.
 Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;Horrible chills go down the spine.<br>;Suffered permanent changes.
 Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
@@ -548,7 +548,7 @@ Twisted Fairyland;🪇;Painted Maracas;Item;0;0;0;2;0;0;Rythmical Instrument;Sou
 
 Twisted Fairyland;🪭;Sharp Fan;Item;0;1;0;0;0;0;Inconspicious Weapon;No one would guess it's a deadly weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;
 Twisted Fairyland;🏹;Primitive Bow;Item;0;1;0;0;0;0;Weapon;Standard tool for hunting prey.<br>Provides <b>+1 ⚔️ Damage</b>.;
-Twisted Fairyland;🔥;Dancing Flame;Item;-1;2;0;0;0;0;Disgusting Stench;Strange urge draws hands towards the heat.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 💔 Health</b>;Suffered severe burns!
+Twisted Fairyland;🔥;Dancing Flame;Item;-1;0;0;0;0;2;Dangerous Spell;Strange urge draws hands towards the heat.<br>Provides <b>+2 🔵 Mana</b> for <b>-1 💔 Health</b>;Suffered severe burns!
 Twisted Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;The polished surface reflects energy.<br>Provides <b>+1 🔵 Mana</b>.;Irradiated with magic energy.
 Twisted Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>Provides <b>+1 🔵 Mana</b>.;Embraced the energy surge.
 Twisted Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>Provides <b>+1 🔵 Mana</b>.;Felt strange power surge.
