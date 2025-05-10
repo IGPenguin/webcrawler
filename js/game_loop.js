@@ -1488,7 +1488,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemyHp<0){
                 logMessage="Cooked it with a spell -1 🔵";
                 enemyHp=0;
-                enemyName=enemyName+" (Cooked)";
                 enemyMsg="Actually tasted good";
                 displayEnemyEffect("🔥");
               } else {
