@@ -44,7 +44,7 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
-var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤"])
+var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟"];
 
 renewPlayer();
@@ -490,7 +490,7 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Item":
     case "Consumable":
-      logAction("🎉 ▸ "+enemyEmoji+" Found something: <b>"+enemyName+"</b>")
+      logAction("🎉 ▸ "+enemyEmoji+" Found loot: <b>"+enemyName+"</b>")
       break;
     case "Curse":
     case "Trap":
@@ -503,7 +503,7 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Friend":
     case "Container-Friend":
-      logAction("💭 ▸ "+enemyEmoji+" Established contact: <b>"+enemyName+"</b>")
+      logAction("💭 ▸ "+enemyEmoji+" Met someone: <b>"+enemyName+"</b>")
       break;
     default:
       if (enemyType.includes("Boss")) logAction("💢 ▸ "+enemyEmoji+" Engaged in combat: <b>"+enemyName+"</b>")
@@ -3281,6 +3281,9 @@ function adjustEncounterButtons(){
       }
       setButton('button_roll',"❌ Ditch");
       setButton("button_grab","🍴 Eat",eatColor);
+      var drinks=["🧃","🍺","🍹","🍷","🍸","🍾","🧉","🥤","🧋"]
+      if (drinks.includes(enemyEmoji)) setButton("button_grab","👄 Drink",eatColor);
+
       break;
 
     case "Altar":

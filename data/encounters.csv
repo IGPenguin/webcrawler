@@ -84,12 +84,12 @@ Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Provid
 
 Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels good carrying that.
 Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;3;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+3 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch\ sharp thorns!
-Wildland Meadows;👢;Riding Boots;Item;0;0;2;0;0;0;Specialized Gear;Enables better stability in action.<br>Provides <b>+2 🟢 Energy</b>.;They fit you just perfectly.
 Wildland Meadows;🌷;Pink Tulip;Item;0;0;0;0;2;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🧠 Intellect</b>.;Feels good carrying that.
 Wildland Meadows;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced your area awareness.
 Wildland Meadows;🪨;Sharp Stone;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;Feels a bit less serious.
 Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action.
+Wildland Meadows;👢;Riding Boots;Item;0;0;1;0;0;0;Specialized Gear;Enables better stability in action.<br>Provides <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection for your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels really warm.
 Wildland Meadows;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Loud Trinket;Makes annoying sound anytime it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
 Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
@@ -299,7 +299,6 @@ Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires ha
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
 Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!
-Forsaken Village;🥽️;Protective Goggles;Item;1;0;0;0;1;0;Unusal Headgear;Makes one look quite focused.<br>Provides <b>+1 ❤️ Health</b>;Feeling safer than ever
 
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
@@ -566,11 +565,13 @@ Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is lik
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
 //Endless Ocean
-Endless Ocean;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Water Condition;Really nothing interesting in sight.<br>;
+Endless Ocean;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
 Endless Ocean;🍂;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 Endless Ocean;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 Endless Ocean;🏝️;Tiny Island;Prop;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;
 Endless Ocean;🏖;Tiny Beach;Prop;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;
+Endless Ocean;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
+Endless Ocean;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
 
 Endless Ocean;🍂;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 Endless Ocean;🍃;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
@@ -579,13 +580,10 @@ Endless Ocean;🎁;Festive Box;Container;0;0;0;0;0;0;Lost Container;Perhaps hold
 Endless Ocean;💝;Chocolate Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something sweet inside.<br>;Oh\ so this was inside!?
 Endless Ocean;️🏝️;Lonely Sandbank;Container;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
 Endless Ocean;🏖;Little Island;Container;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
-
-Endless Ocean;🏖;Chill Island;Container-2;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
-Endless Ocean;️🏝️;Palm Island;Container-2;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
-
-Endless Ocean;🏖;Shaded Island;Container-3;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
-Endless Ocean;️🏝️;Tiny Beach;Container-3;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
-Endless Ocean;️⛵️️;Sailing Boat;Container-3;0;0;0;0;0;0;Abandoned Transport;Water waves splashing all around.<br>;
+Endless Ocean;🏖;Chill Island;Container;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
+Endless Ocean;️🏝️;Palm Island;Container;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
+Endless Ocean;🏖;Shaded Island;Container;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
+Endless Ocean;️🏝️;Tiny Beach;Container;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
 
 Endless Ocean;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 Endless Ocean;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
@@ -595,15 +593,14 @@ Endless Ocean;🏖;Little Island;Fishing;0;0;0;0;0;0;Piece of Land;Place of rest
 Endless Ocean;🕷️;Floating Spider;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Endless Ocean;🦐;Twisted Shrimp;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Endless Ocean;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-
-Endless Ocean;️❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b>.;
-Endless Ocean;️🛟️;Survival Ring;Item;0;0;0;0;0;0;Artifact;Hold tight in case of sudden drowning!<br>Provides one last change to live.;
+Endless Ocean;🐙;Tiny Octopus;Small;1;1;0;0;-1;0;Cephalopod;Possibly can be used as a bait.<br>;
 
 Endless Ocean;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
 Endless Ocean;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Unnatural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
 Endless Ocean;🧃;Juice Box;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a bit little inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Endless Ocean;🥤;Coke Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Endless Ocean;🧋;Floating Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+//TODO Variety
 
 //Afflicted Necropolis
 Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
