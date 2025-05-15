@@ -312,6 +312,10 @@ Forsaken Village;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> d
 Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
+Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🦴;Tasty Bone;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🍖;Fleshy BoneTeddy;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+
 Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a warrior.<br>;
 Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
 Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
@@ -428,7 +432,7 @@ Twisted Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could pro
 Twisted Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Twisted Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;0;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot;.
 Twisted Fairyland;🧞‍♀️;Generous Genie;Container-Friend;0;0;0;0;0;0;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
-Twisted Fairyland;🐿️;Twitchy Squirrel;Quest🌰\🥜;1;0;1;0;6;0;Wild Animal;Seems like it has lightning reflexes.<br>;Got their nuts handed to 'em.
+Twisted Fairyland;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
 
 Twisted Fairyland;🦄;Rainbow Unicorn;Pet;3;0;3;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
 Twisted Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
@@ -685,7 +689,6 @@ Friend 🤴🏻👸🏻
 
 Afflicted Necropolis;👤;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
 Afflicted Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
-
 ️🫂👥
 
 Standard 💀

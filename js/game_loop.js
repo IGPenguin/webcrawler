@@ -2217,8 +2217,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend": //They'll boost your stats
             var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
             //Either they don't want an item, or player has it + has more or same int
-            if (((enemyQuestItems.length<0)||(heldQuestItem!="")) && (convinceInt >= enemyInt)){
-              if (enemyQuestItems.length>0) playerLootString=playerLootString.replace(heldQuestItem,"");
+            if (((String(enemyQuestItems)=="")||(heldQuestItem!="")) && (convinceInt >= enemyInt)){
+              if (enemyQuestItems.length>=1) playerLootString=playerLootString.replace(heldQuestItem,"");
               var gainedXP=playerGainXP(1,25*playerLevel,"");
 
               if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
@@ -2228,7 +2228,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyMsg=playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
               }
             } else {
-              if (enemyQuestItems){
+              console.log(enemyQuestItems);
+              if (String(enemyQuestItems)!=""){
                 logPlayerAction(actionString,"You lack the desired item: "+String(enemyQuestItems).replaceAll(","," "));
               } else {
                 logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
