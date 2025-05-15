@@ -2714,8 +2714,10 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
-    if (enemyType.includes("Boss"))  curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss defeated!</p>",4);
-    logAction("👑 ▸ "+enemyEmoji+" Boss defeated: <b>"+enemyName+"</b>")
+    if (enemyType.includes("Boss")) {
+      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss defeated!</p>",4);
+      logAction("👑 ▸ "+enemyEmoji+" Boss defeated: <b>"+enemyName+"</b>")
+    }
   }
 
   if (playerCheckLevelUp()){
