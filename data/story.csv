@@ -2,9 +2,13 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;End of the Line;<b>✨ Revive</b> your soul to start a new adventure.<br><b>🦆 Tweet</b> this run to appear in credits.;
 
 //Debug
-Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Quest Item;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🦴;Tasty Bone;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🍖;Fleshy BoneTeddy;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🐕;Nervous Dog;Friend🧸\🦴\🍖;1;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
+
 Wildland Meadows;🥜;The Peanuts;Item;0;0;0;0;0;0;Quest Item;May be traded for something valuable.<br>;Got something of a real value!
-Wildland Meadows;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;1;0;0;Wild Animal;Oh finally\ you got me some nuts!<br>Just what I was looking for(( n/a;Handed them some nuts
+Wildland Meadows;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for luck
 
 //Tutorial Dreams
 Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Inner Thought;<b>Can't move a muscle</b>\ you are way too weak.<br><b>💤 Sleep</b> to recover all lost <b>🟢 Energy</b>.;Caught off guard by a bad thought.

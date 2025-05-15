@@ -99,8 +99,9 @@ Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> d
 Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Quest Item;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
-Wildland Meadows;🥜;The Peanuts;Item;0;0;0;1;0;0;Quest Item;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
+Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Quest Item;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🥜;The Peanuts;Item;0;0;0;0;0;0;Quest Item;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -205,7 +206,6 @@ Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of 
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Experienced a heartbreak
-Forsaken Village;🧸;Enchanted Teddy;Friend;0;0;0;0;0;1;Speaking Toy;Looks like it has something to say.<br>;Revealed its magical secret
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
 Forsaken Village;🦝;Raccoon Ambassador;Container-Friend;0;0;0;0;1;0;Representative;Brings a special gift.<br>;Strenghtened the interspecies bond.
 ‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
@@ -704,6 +704,6 @@ Afflicted Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps th
 Afflicted Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Afflicted Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Afflicted Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
-Afflicted Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
+//;Afflicted Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 
 Afflicted Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Reminds you of your forgotten past.<br>And also proves one's determination.;Grabbed the <b>🧩 Memory Fragment</b>.

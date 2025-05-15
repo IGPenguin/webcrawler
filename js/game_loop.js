@@ -2993,7 +2993,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     displayPlayerEffect(enemyEmoji);
   }
 
-  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦴","🦯","🥊"])
+  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊"])
   if (hasAnyOf(attackTypes,enemyEmoji)) playerAttackType=enemyEmoji;
 
   var castTypes=(["⚡️","☄️","🍭","🔥"])
@@ -3272,13 +3272,7 @@ function resetEncounterButtons(){
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
   if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
 
-  //Speak or give quest item
   setButton('button_speak',playerSpeakType+" Speak");
-  var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
-  if (heldQuestItem!="") {
-    setButton('button_speak',heldQuestItem+" Give");
-  }
-
   setButton('button_cast',playerCastType+" Cast");
   setButton('button_curse',"🪬 Curse");
   setButton('button_pray',"❤️‍🩹 Heal");
@@ -3397,6 +3391,12 @@ function adjustEncounterButtons(){
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
       setButton('button_sleep',"💤 Rest");
       break;
+
+    case "Friend":
+      var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
+      if (heldQuestItem!="") {
+        setButton('button_speak',heldQuestItem+" Give");
+      }
 
     case "Pet":
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
