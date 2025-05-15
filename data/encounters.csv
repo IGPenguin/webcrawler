@@ -49,7 +49,6 @@ Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes 
 Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
-Wildland Meadows;🦦;Playful Otter;Pet;1;0;2;2;0;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
 Wildland Meadows;🐇;Hop Hop;Pet;0;0;0;4;2;0;Friendly Critter;Its paws might bring you some extra luck.<br>;4 paws equals
 
@@ -57,7 +56,7 @@ Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-2;0;Talking Animal;Provides 
 Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Wildland Meadows;🧖🏻‍♀️;Ethereal Being;Friend;0;0;0;0;1;0;Unknown;They've offered you a lecture on life.<br>n/a;Whatever that meant
 Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;-11;0;The Prophet;Spits "wise" words from its mouth.<br>n/a;That speech has taken a toll
-Wildland Meadows;🦤;Altruistic Bird;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
+Wildland Meadows;🦤;Altruistic Bird;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot;.
 
 Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got their brain pecked out.
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -427,7 +426,7 @@ Twisted Fairyland;🐒;Talking Monkey;Friend;0;0;0;0;0;0;Speaking Animal;Looks l
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Twisted Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could provide some agility lessons.<br>;Got through their training.
 Twisted Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
-Twisted Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;0;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot.
+Twisted Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;0;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot;.
 Twisted Fairyland;🧞‍♀️;Generous Genie;Container-Friend;0;0;0;0;0;0;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
 Twisted Fairyland;🐿️;Twitchy Squirrel;Quest🌰\🥜;1;0;1;0;6;0;Wild Animal;Seems like it has lightning reflexes.<br>;Got their nuts handed to 'em.
 
@@ -569,7 +568,9 @@ Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is lik
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
 //Endless Ocean
+Endless Ocean;🌫;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
 Endless Ocean;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
+Endless Ocean;🌩️;Distant Lightning;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
 Endless Ocean;🍂;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 Endless Ocean;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 Endless Ocean;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
@@ -590,6 +591,15 @@ Endless Ocean;🏖;Chill Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of res
 Endless Ocean;️🏝️;Palm Island;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
 Endless Ocean;🏖;Shaded Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
 
+Endless Ocean;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
+
+Endless Ocean;‍🦦;Playful Otter;Pet;1;0;2;2;1;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
+Endless Ocean;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
+Endless Ocean;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+Endless Ocean;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
+Endless Ocean;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
+Endless Ocean;‍🐳;Silly Willy;Heavy;4;0;1;0;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
+Endless Ocean;‍🐋;White Whale;Heavy;5;0;1;0;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
 Endless Ocean;🕷️;Floating Spider;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Endless Ocean;🦐;Twisted Shrimp;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Endless Ocean;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -600,7 +610,25 @@ Endless Ocean;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Unnatural energ
 Endless Ocean;🧃;Juice Box;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a bit little inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Endless Ocean;🥤;Coke Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Endless Ocean;🧋;Floating Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-//TODO Variety
+
+Endless Ocean;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
+Endless Ocean;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Endless Ocean;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
+Endless Ocean;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
+Endless Ocean;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
+Endless Ocean;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
+
+Endless Ocean;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
+Endless Ocean;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;Feels kind of uncomfortable.
+Endless Ocean;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
+Endless Ocean;🥽;Diving Goggles;Item;1;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
+Endless Ocean;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
+Endless Ocean;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
+Endless Ocean;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!
+Endless Ocean;👞;Wet Shoe;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Does not feel right
+Endless Ocean;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Endless Ocean;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
+Endless Ocean;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 
 //Afflicted Necropolis
 Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
@@ -632,8 +660,8 @@ Afflicted Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splas
 
 Afflicted Necropolis;🫁;Collapsed Lungs;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
 Afflicted Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
-Afflicted Necropolis;�️;Bottomless Pit;Trap-Roll;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
-❄️🌨️🌫🥶☃️⛄️️
+Afflicted Necropolis;🕳️;Bottomless Pit;Trap-Roll;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
+❄️🌨️🥶☃️⛄️️
 
 Altars
 

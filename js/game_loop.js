@@ -592,6 +592,18 @@ function generateNextEncounters(generatorID=0, logCall=true){
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       break;
 
+    case 11: //Any Enemy/Curse - 20% item
+      if (logCall) logGenerator("any");
+      generateNextEncounters(0,false); //Prop or Contained Small
+
+      if (procAbilityChance("",20+playerLck)) { //10% item
+        pushEncounter(getRandomEncounter(["Item"]))
+      } else { //20% consumable
+        if(procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
+      }
+      pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet","Swift","Heavy","Demon","Spirit","Curse"]));
+      break;
+
     case 20: //House Small - 10% item
       if (logCall) logGenerator("h-small");
       if (procAbilityChance("",10+playerLck)) {
