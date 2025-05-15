@@ -197,6 +197,7 @@ var enemyContainerNumber = 0;
 var enemyTeam;
 var enemyDesc;
 var enemyMsg;
+var enemyQuestItems;
 
 var enemyHpLost = 0;
 var enemyStaLost = 0;
@@ -466,7 +467,20 @@ function loadEncounter(index, fileLines = linesStory){
     enemyDesc=enemyDesc.replaceAll("n/a","");
     enemyDesc+="<i>"+getGameTip()+"</i>";
   }
+  if (enemyType.includes("Friend")){
+    enemyQuestItems=enemyType.replace("Friend","").split('\\');
+    if (enemyQuestItems.length>0){
+      var heldItem=checkPlayerHasItem(enemyQuestItems);
+      if (heldItem==""){
+        enemyDesc="If you see me again, <b>bring something good</b>.<br>How about any of these? "+String(enemyQuestItems).replaceAll(","," ");
+      }
+      enemyDesc=enemyDesc.replaceAll("n/a",heldItem);
+    }
+
+    enemyType="Friend";
+  }
   enemyDesc = enemyDesc.replaceAll("\\",",");
+  enemyDesc = enemyDesc.replaceAll("((",":");
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]).replaceAll("\\",",");
 
   if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
@@ -489,8 +503,14 @@ function loadEncounter(index, fileLines = linesStory){
       }
       break;
     case "Item":
+      if (enemyTeam.includes("Artifact")){
+        logAction("⭐️ ▸ "+enemyEmoji+" Found an Artifact: <b>"+enemyName+"</b>")
+      } else {
+        logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+      }
+      break;
     case "Consumable":
-      logAction("🎉 ▸ "+enemyEmoji+" Found loot: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Found some food: <b>"+enemyName+"</b>")
       break;
     case "Curse":
     case "Trap":
@@ -938,7 +958,7 @@ function redraw(){
         if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
         if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
-        if ((enemyType==="Fishing" && check_valid_bait()!="")) displayPlayerState("Bait Ready",colorPink,"0.8");
+        if ((enemyType==="Fishing" && checkPlayerHasItem(validBaits)!="")) displayPlayerState("Bait Ready",colorPink,"0.8");
         if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorDarkYellow,"0.4");
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
@@ -2020,7 +2040,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
-            var bait=check_valid_bait();
+            var bait=checkPlayerHasItem(validBaits);
             if (bait!="" && playerUseItem(bait,"Fished out something "+decorateStatusText("","+"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
               playerGainXP(1,10*playerLevel,"");
 
@@ -2183,7 +2203,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll boost your stats
-            if (convinceInt >= enemyInt){
+            var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
+            //Either they don't want an item, or player has it + has more or same int
+            if (((enemyQuestItems.length<0)||(heldQuestItem!="")) && (convinceInt >= enemyInt)){
+              if (enemyQuestItems.length>0) playerLootString=playerLootString.replace(heldQuestItem,"");
               var gainedXP=playerGainXP(1,25*playerLevel,"");
 
               if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
@@ -2193,7 +2216,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyMsg=playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
               }
             } else {
-              logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
+              if (enemyQuestItems){
+                logPlayerAction(actionString,"You lack the desired item: "+String(enemyQuestItems).replaceAll(","," "));
+              } else {
+                logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
+              }
               displayPlayerCannotEffect();
             }
             break;
@@ -3153,9 +3180,9 @@ function playerReincarnate(){
   }
 }
 
-function check_valid_bait(){
+function checkPlayerHasItem(itemArray=validBaits){
   var bait="";
-  validBaits.forEach((item, i) => {
+  itemArray.forEach((item, i) => {
     if (playerLootString.includes(item)) {
       bait=item;
       return true;
@@ -3244,7 +3271,13 @@ function resetEncounterButtons(){
   setButton('button_sleep',playerSleepType+" Sleep");
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
   if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+
+  //Speak or give quest item
   setButton('button_speak',playerSpeakType+" Speak");
+  var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
+  if (heldQuestItem!="") {
+    setButton('button_speak',heldQuestItem+" Give");
+  }
 
   setButton('button_cast',playerCastType+" Cast");
   setButton('button_curse',"🪬 Curse");
@@ -3338,7 +3371,7 @@ function adjustEncounterButtons(){
       if (areaName=="Endless Ocean") setButton("button_roll","🛶 Sail");
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
-      var bait=check_valid_bait();
+      var bait=checkPlayerHasItem();
       if (bait!="" && playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
