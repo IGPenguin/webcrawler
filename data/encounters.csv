@@ -98,9 +98,9 @@ Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> d
 Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Quest Item;May be traded for something valuable.<br>;Got something of a real value!
-Wildland Meadows;🥜;The Peanuts;Item;0;0;0;0;0;0;Quest Item;May be traded for something valuable.<br>;Got something of a real value!
-Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🥜;The Peanuts;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -313,8 +313,8 @@ Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b>
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
 Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Wildland Meadows;🦴;Tasty Bone;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
-Wildland Meadows;🍖;Fleshy BoneTeddy;Item;0;0;0;0;0;0;Quest Item;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🦴;Tasty Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🍖;Fleshy BoneTeddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
 Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a warrior.<br>;
 Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
