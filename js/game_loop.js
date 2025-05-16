@@ -1824,7 +1824,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
           case "Standard":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
-              logPlayerAction(actionString,"Grabbed them into stranglehold.");
+              logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
+              playerSta--;
               enemyKnockedOut();
               isFishing=false;
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
