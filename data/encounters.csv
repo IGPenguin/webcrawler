@@ -50,13 +50,12 @@ Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute 
 
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
-Wildland Meadows;🐇;Hop Hop;Pet;0;0;0;4;2;0;Friendly Critter;Its paws might bring you some extra luck.<br>;4 paws equals
+Wildland Meadows;🐇;Lucky Four;Pet;0;0;0;4;2;0;Friendly Critter;Its paws might bring you some extra luck.<br>;4 paws equals
 
 Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-2;0;Talking Animal;Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Intellect</b>.<br>Kinda tiring to even be around.;That was annoying
 Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Wildland Meadows;🧖🏻‍♀️;Ethereal Being;Friend;0;0;0;0;1;0;Unknown;They've offered you a lecture on life.<br>n/a;Whatever that meant
-Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;-11;0;The Prophet;Spits "wise" words from its mouth.<br>n/a;That speech has taken a toll
-Wildland Meadows;🦤;Altruistic Bird;Container-Friend;0;0;0;0;1;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot;.
+Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;-1;0;The Prophet;Spits "wise" words from its mouth.<br>n/a;That speech has taken a toll
 
 Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got their brain pecked out.
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -205,9 +204,9 @@ Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is 
 
 Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Experienced a heartbreak
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
-Forsaken Village;🦝;Raccoon Ambassador;Friend;0;0;0;0;1;0;Representative;Brings a special gift.<br>;Strenghtened the interspecies bond.
+Forsaken Village;🦝;Raccoon Ambassador;Friend🧸\🦴\🍖;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Strenghtened the interspecies bond.
 Forsaken Village;🐕;Nervous Dog;Friend🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
-;//‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
+;//‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
 
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;1;2;-1;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
