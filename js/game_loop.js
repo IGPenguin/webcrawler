@@ -526,7 +526,6 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("👁️ ▸ "+enemyEmoji+" Discovered something: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-    case "Container-Friend":
       logAction("💭 ▸ "+enemyEmoji+" Met someone: <b>"+enemyName+"</b>")
       break;
     default:
@@ -648,16 +647,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 31: //House Locked - 100% item/checkpoint/pet/friend, 100% consumable
       if (logCall) logGenerator("h-lock");
-      var type=chooseFrom(["Item","Pet","Friend","Container-Friend"]);
-      if (type=="Container-Friend") {
-        var adjustedSizeContainer=getRandomEncounter(["Locked-Container-3"]).replace("3","4"); //Change container size to 4 to account for extra encounter -> item
-        pushEncounter(getRandomEncounter(["Consumable"]));
-        pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
-        pushEncounter(getRandomEncounter([type]));
-        pushEncounter(getRandomEncounter(["Altar","Curse","Trap","Trap-Attack","Trap-Roll"]));
-        pushEncounter(adjustedSizeContainer);
-        break;
-      }
+      var type=chooseFrom(["Item","Pet","Friend"]);
 
       pushEncounter(getRandomEncounter(["Consumable"]));
       if (type=="Item") {
@@ -836,8 +826,7 @@ function redraw(){
       enemyStatusString=appendEnemyStats();
       break;
     case "Friend":
-    case "Container-Friend":
-      enemyStatusString=decorateStatusText("💬","Friendly",colorDarkGreen);
+      enemyStatusString=decorateStatusText("💬","Friendly",colorGreen);
       //Do not display stats = reward hidden
       break;
     case "Small":
@@ -1086,7 +1075,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-          case "Container-Friend":
             enemyTurnAggressive("The attack turned them adversary!");
             enemyHit(playerAtk);
             break;
@@ -1273,7 +1261,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container":
           case "Consumable-Container":
           case "Locked-Container":
-          case "Container-Friend":
             logPlayerAction(actionString,"Walked away wasting the potential.");
             encounterIndex++;
             isFishing=false;
@@ -1297,7 +1284,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             nextEncounter();
             break;
-          case "Container-Friend":
           case "Friend":
             logPlayerAction(actionString,"Walked away leaving them behind.");
             isFishing=false;
@@ -1477,7 +1463,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Friend":
-          case "Container-Friend":
             enemyTurnAggressive("The spell turned them adversary!");
             enemyHit(magicDamage,true);
             break;
@@ -1647,7 +1632,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
           case "Pet":
           case "Friend":
-          case "Container-Friend":
           case "Boss":
           case "Small":
             playerHeal();
@@ -1790,17 +1774,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
           if (enemyCastIfMgk()) break;
           enemyAttackOrRest();
-          break;
-
-        case "Container-Friend":
-          if (playerMgk >= enemyMgk){
-            var gainedXP=playerGainXP(1,25*playerLevel,"");
-            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
-            nextEncounter();
-          } else {
-            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
-            displayPlayerCannotEffect();
-          }
           break;
 
         case "Friend": //They'll boost your stats
@@ -2035,13 +2008,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Container-Friend":
-            logPlayerAction(actionString,"Touch not appreciated, interest dropped.");
-            encounterIndex+=1; //Skip next encounter
-            displayEnemyEffect("✋");
-            nextEncounter();
-            break;
-
           case "Friend":
             logPlayerAction(actionString,"Touch not appreciated, lost interest.");
             displayEnemyEffect("✋");
@@ -2244,22 +2210,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Container-Friend":
-            if (convinceInt >= enemyInt){
-              var openMessage = "Received a gift";
-              var gainedXP=playerGainXP(1,25*playerLevel,"");
-
-              if (enemyMsg != ""){
-                openMessage = enemyMsg;
-              }
-              logPlayerAction(actionString,openMessage+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
-              nextEncounter();
-            } else {
-             logPlayerAction(actionString,"Unable to initiate a conversation ?? 🧠");
-             displayPlayerCannotEffect();
-           }
-           break;
-
           case "Death":
             redirectToTweet();
             logPlayerAction(actionString,"Echoed their story to the world!")
@@ -2336,7 +2286,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Container-Friend":
           case "Friend": //They'll leave if you'll rest
             playerRest();
             logPlayerAction(actionString,"They lost interest tired of waiting.");

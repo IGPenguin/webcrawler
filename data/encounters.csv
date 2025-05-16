@@ -112,7 +112,6 @@ Wildland Meadows;🍓;Wild Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks a
 Wildland Meadows;🫐;Wild Blueberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍎;Wild Apple;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍐;Wild Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Wildland Meadows;🥚;Chicken Egg;Consumable;0;0;0;0;0;0;Raw Food;Probably tastes much better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🥚;Bird Egg;Consumable;0;0;0;0;0;0;Raw Food;Probably tastes much better cooked.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
 //Forsaken Village
@@ -206,8 +205,9 @@ Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is 
 
 Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Experienced a heartbreak
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
-Forsaken Village;🦝;Raccoon Ambassador;Container-Friend;0;0;0;0;1;0;Representative;Brings a special gift.<br>;Strenghtened the interspecies bond.
-‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
+Forsaken Village;🦝;Raccoon Ambassador;Friend;0;0;0;0;1;0;Representative;Brings a special gift.<br>;Strenghtened the interspecies bond.
+Forsaken Village;🐕;Nervous Dog;Friend🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
+;//‍Forsaken Village;🧖🏻‍♀️;Heavenly Angel;Container-Friend;0;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
 
 Forsaken Village;🐈‍⬛;Black Cat;Pet;1;1;2;-1;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
@@ -314,7 +314,11 @@ Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 
 Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 Wildland Meadows;🦴;Tasty Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Wildland Meadows;🍖;Fleshy BoneTeddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Wildland Meadows;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Wildland Meadows;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Wildland Meadows;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
 
 Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a warrior.<br>;
 Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
@@ -429,9 +433,9 @@ Twisted Fairyland;🦧;Friendly Orangutan;Friend;0;0;0;0;0;0;Speaking Animal;Loo
 Twisted Fairyland;🐒;Talking Monkey;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Heard a powerful message
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Twisted Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could provide some agility lessons.<br>;Got through their training.
-Twisted Fairyland;🐧;Intergalactic Penguin;Container-Friend;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
-Twisted Fairyland;🦤;Cousin Dodo;Container-Friend;0;0;0;0;0;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some loot;.
-Twisted Fairyland;🧞‍♀️;Generous Genie;Container-Friend;0;0;0;0;0;0;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
+Twisted Fairyland;🦤;Curious Dodo;Friend;0;0;0;1;0;0;Unusal Critter;Usually known for being selfish.<br>;Willingly shared some luck;.
+Twisted Fairyland;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸;0;0;0;0;0;1;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
+Twisted Fairyland;🧞‍♀️;Generous Genie;Friend🔮\🪄;0;0;0;0;0;1;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
 Twisted Fairyland;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
 
 Twisted Fairyland;🦄;Rainbow Unicorn;Pet;3;0;3;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
