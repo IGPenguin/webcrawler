@@ -2,7 +2,8 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;End of the Line;<b>✨ Revive</b> your soul to start a new adventure.<br><b>🦆 Tweet</b> this run to appear in credits.;
 
 //Debug
-;//Wildland Meadows;🐕;Nervous Dog;Friend🧸\🦴\🍖;1;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
+Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🐕;Nervous Dog;Friend🧸\🦴\🍖;1;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
 ;//Twisted Fairyland;🧞‍♀️;Generous Genie;Friend🔮\⭐️\;0;0;0;0;0;1;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
 
 //Tutorial Dreams

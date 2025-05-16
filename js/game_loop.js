@@ -504,9 +504,13 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Item":
       if (enemyTeam.includes("Artifact")){
-        logAction("⭐️ ▸ "+enemyEmoji+" Found an Artifact: <b>"+enemyName+"</b>")
+        logAction("🟠 ▸ "+enemyEmoji+" Found an artifact: <b>"+enemyName+"</b>")
       } else {
-        logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+        if (enemyTeam.includes("Possesion")) {
+          logAction("⭐️ ▸ "+enemyEmoji+" Found a quest item: <b>"+enemyName+"</b>")
+        } else {
+          logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+        }
       }
       break;
     case "Consumable":
@@ -798,6 +802,7 @@ function redraw(){
 
   var enemyDescUIElement = document.getElementById('id_desc')
   enemyDescUIElement.innerHTML = enemyDesc;
+
   //Hacky hacky hacky hack hack hack, hacky hacky hacky, yeah yeah
   enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"»  "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
@@ -871,6 +876,7 @@ function redraw(){
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.background=colorDarkOrange;
       }
+      if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
       break;
 
     case "Trap":
@@ -1915,7 +1921,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Item":
             displayEnemyEffect("👋");
-
             if (enemyEmoji=="⚖️"){
               var halfHp = Math.floor(playerHpMax/2);
               if (halfHp == 0) {
@@ -2226,6 +2231,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 nextEncounter();
               } else {
                 enemyMsg=playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
+                displayPlayerEffect("✨");
               }
             } else {
               console.log(enemyQuestItems);
@@ -3348,7 +3354,7 @@ function adjustEncounterButtons(){
 
     case "Item":
       grabColor=colorWhite;
-      if (enemyStatusString.includes("Valuable")) grabColor=colorYellow;
+      if (enemyStatusString.includes("Valuable")||enemyStatusString.includes("Quest")) grabColor=colorYellow;
       if (enemyStatusString.includes("Magnificient")) grabColor=colorLightBlue;
       if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
       if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
@@ -3411,10 +3417,16 @@ function adjustEncounterButtons(){
     case "Friend":
       var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
       if (heldQuestItem!="") {
-        setButton('button_speak',heldQuestItem+" Give");
+        setButton('button_speak',heldQuestItem+" Give",colorYellow);
       }
+      break;
 
     case "Pet":
+      var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
+      if (heldQuestItem!="") {
+        setButton('button_speak',heldQuestItem+" Give",colorYellow);
+      }
+
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
       if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
