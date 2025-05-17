@@ -29,31 +29,37 @@ Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough for an adventure.<br>;Paddled towards the horizon.
-
-//River of Sorrows
-River of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Mid Encounter;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Twisted Fairyland
 Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough for an adventure.<br>;Paddled towards the horizon.
+
+//River of Sorrows
+River of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Afflicted Necropolis
+Afflicted Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Afflicted Necropolis;💌;Soaked Letter;Container;0;0;0;0;0;0;Undeniable Proof;You did this to me...\ did it to us!<br>Why wouldn't you let me go?;Picked up the old letter.
+
 Afflicted Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
-Afflicted Necropolis;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Afflicted Necropolis;💌;Soaked Letter;Container;0;0;0;0;0;0;Undeniable Proof;You did this to me...\ did it to us!<br>Why wouldn't you let me go?;Picked up the old letter.
+Afflicted Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;📃;Soaked Letter;Prop;0;0;0;0;0;0;Undeniable Proof;If only you would listen to me.<br>The world could remain peaceful.;
+
 Afflicted Necropolis;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Afflicted Necropolis;🤔;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to acknowledge your sins.<br>You cannot run anymore.;The inner thoughts took over.
 Afflicted Necropolis;😰;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;All the trying...\ you've corrupted everything!<br>You now remember what you did.;
