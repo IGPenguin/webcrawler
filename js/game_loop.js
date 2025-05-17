@@ -2190,12 +2190,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
             //Either they don't want an item, or player has it + has more or same int
             if (((String(enemyQuestItems)=="")||(heldQuestItem!="")) && (convinceInt >= enemyInt)){
-              if (enemyQuestItems.length>=1) playerLootString=playerLootString.replace(heldQuestItem,"");
-              //Quest rewards
+              if (String(enemyQuestItems).length>=1) { //Quest rewards
+                //This means filter by two = guarantee artifact
+                pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+                playerLootString=playerLootString.replace(heldQuestItem,"");
+              }
+              //XP is even for interaction
               var gainedXP=playerGainXP(1,25*playerLevel,"");
-
-              //This means filter by two = guarantee artifact
-              pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
 
               if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
                 logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
