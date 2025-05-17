@@ -2191,13 +2191,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             //Either they don't want an item, or player has it + has more or same int
             if (((String(enemyQuestItems)=="")||(heldQuestItem!="")) && (convinceInt >= enemyInt)){
               if (enemyQuestItems.length>=1) playerLootString=playerLootString.replace(heldQuestItem,"");
+              //Quest rewards
               var gainedXP=playerGainXP(1,25*playerLevel,"");
+
+              //This means filter by two = guarantee artifact
+              pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
 
               if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
                 logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 nextEncounter();
               } else {
-                enemyMsg=playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
+                playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
                 displayPlayerEffect("✨");
               }
             } else {
@@ -2209,6 +2213,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               displayPlayerCannotEffect();
             }
+            fishing=false;
             break;
 
           case "Death":
