@@ -286,6 +286,7 @@ Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from Ma
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 Forsaken Village;🧮️;Manual Calculator;Item;0;0;-1;0;3;0;Counting Tool;Provides <b>+3 🧠 Intellect</b> for <b>-1  🟢 Energy</b>.<br>Operating this slows you down.;Thinking can be hard.
 
+Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Shot arrow in the knee!
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
 Forsaken Village;🥊;Boxing Glove;Item;0;1;0;0;0;0;Figting Gear;Improves hand-to-hand combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Feeling more confident.
 Forsaken Village;🦯;Telescopic Stick;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
@@ -705,15 +706,15 @@ Afflicted Necropolis;🧙🏻‍♂️;Vengeful Necromancer;Recruit;3;2;1;0;3;2;
 
 Afflicted Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
 Afflicted Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
+Afflicted Necropolis;🐼;Zombie Bear;Heavy;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
 
 Afflicted Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
 Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
 Afflicted Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
-Afflicted Necropolis;🧟;Animated Dead;Undead;1;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
-Afflicted Necropolis;🧟;Tired Zombie;Undead;2;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
-Afflicted Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
-Afflicted Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Hands started to rot
+Afflicted Necropolis;🧟;Animated Dead;Undead;1;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
+Afflicted Necropolis;🧟;Tired Zombie;Undead;2;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
+Afflicted Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
 Afflicted Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
 
 Afflicted Necropolis;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got their heart ripped out!
@@ -736,7 +737,7 @@ Afflicted Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the pre
 Afflicted Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
 Afflicted Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
 Afflicted Necropolis;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
-Afflicted Necropolis;🗡️;Possesed Dagger;Item;-2;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-2 💔 Health</b>.;Accidentaly cut themselves
+Afflicted Necropolis;🗡️;Possesed Dagger;Item;-1;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Accidentaly cut themselves
 
 Afflicted Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Afflicted Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;

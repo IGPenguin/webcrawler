@@ -4,7 +4,7 @@
 //Debug
 var versionCode = "ver. 05/16/25 • 00:39am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
-if (initialEncounterOverride!=0) initialEncounterOverride-=3; //To handle notes and death in .csv
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorCardBackground = "#202020";
@@ -275,6 +275,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
     if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorDarkYellow+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:58px;\">WebCrawler</p><p style=\"font-size:10px;\""+decorateStatusText("","<br>"+versionCode,colorWhite),4);
+    else
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }
