@@ -49,7 +49,7 @@ Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes 
 Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
 Wildland Meadows;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;Wild Animal;Made for racing the wind.<br>;Got a new travel buddy!
-Wildland Meadows;🐥;Needy Chick;Pet;1;-1;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
+Wildland Meadows;🐥;Needy Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
 
@@ -279,7 +279,8 @@ Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;Provides <b>+
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
 Forsaken Village;🥾;Heavy Boots;Item;1;0;1;0;0;0;Work Gear;Helps navigating through tough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Forsaken Village;👖;Work Trousers;Item;1;0;1;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action
-Forsaken Village;🥼;Scientific Cloak;Item;0;0;0;0;2;0;Specialized Gear;Makes the wearer look much smarter.<br>Provides <b>+2 🧠 Intellect</b>.;Ready for action
+Forsaken Village;🥼;Scientific Cloak;Item;0;0;0;0;3;0;Specialized Gear;Makes the wearer look <b>very smart™️</b>.<br>Provides <b>+3 🧠 Intellect</b>.;Ready for action
+Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;2;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+2 🧠 Intellect</b>;Let's do this!
 Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;2;0;0;Lasting Hope;Brings pleasure whenever looked at.<br>Provides <b>+2 🍀 Luck</b>.;Feels good carrying that.
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
@@ -299,7 +300,8 @@ Forsaken Village;🔨;Hefty Hammer;Item;0;1;0;0;0;0;Makeshift Weapon;Kinda heavy
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with a lot of care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot arrow in the knee!
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
-Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!
+Forsaken Village;🎒;School Backpack;Item;0;0;0;0;1;0;Knowledge Vessel;Contains books of immense knowledge.<br>Provides <b>+1 🧠 Intellect</b>;Even carrying it makes a difference
+Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Ready to rock. Let's do this!
 
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
@@ -437,7 +439,7 @@ Twisted Fairyland;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸;0;0;0;0;0
 Twisted Fairyland;🧞‍♀️;Generous Genie;Friend🔮\🪄;0;0;0;0;0;1;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
 Twisted Fairyland;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
 
-Twisted Fairyland;🐇;Lucky Four;Pet;1;0;1;4;1;0;Friendly Critter;Its paws might bring you some extra luck.<br>;4 paws equals
+Twisted Fairyland;🐇;Lucky Four;Pet;1;0;1;2;0;0;Friendly Critter;Its paws might bring you some extra luck.<br>;4 paws equals((
 Twisted Fairyland;🦄;Rainbow Unicorn;Pet;3;0;3;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
 Twisted Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
 Twisted Fairyland;🐫;Desert Inhabitant;Pet;3;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
@@ -471,10 +473,11 @@ Twisted Fairyland;🦎;Komodo Dragon;Standard;4;2;2;0;-1;0;Massive Lizard;Eyes a
 Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
 
-Twisted Fairyland;🧌;Old Troll;Recruit;4;2;2;0;2;2;Creature;Not happy about having a company.<br>;Turned into goulash.
-Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;3;2;2;0;-1;3;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
-Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;3;2;2;0;4;2;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
-Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;3;1;0;-1;0;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Twisted Fairyland;🧌;Aged Troll;Recruit;4;2;2;0;1;2;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
+Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;2;3;0;2;2;Twisted Humanoid;Not happy about having a company.<br>;Turned into goulash.
+Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;3;1;Twisted Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
+Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;2;2;0;4;2;Twisted Humanoid;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;3;1;0;1;0;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
 Twisted Fairyland;🦜;Annoying Parrot;Swift;2;2;4;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
@@ -546,7 +549,7 @@ Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;Rythmical Instrument;Sounds
 Twisted Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;<br>Provides <b>+2 🍀 Luck</b>.;Feels good to have it.
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
 Twisted Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy Artifact;Provides <b>+3 🧠 Intellect</b> and insight.<br>n/a;Embraced the knowledge.
-Twisted Fairyland;📜;Magic Scroll;Item;0;0;0;0;0;1;Precious Gem;The polished surface reflects energy.<br>Provides <b>+1 🔵 Mana</b>.;Irradiated with magic energy.
+Twisted Fairyland;📜;Magic Scroll;Item;0;0;0;0;0;1;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b>.;Absorbed some magic knowledge
 
 Twisted Fairyland;🪁;Lightning Kite;Item;0;0;2;0;0;0;Accessory;Unfamiliar makeshift piece of art.<br>Somehow provides <b>+2 🟢 Energy</b>.;Yay! Weeee!
 Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;
@@ -639,7 +642,7 @@ River of Sorrows;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 
 River of Sorrows;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!
 River of Sorrows;👞;Wet Shoe;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Does not feel right
 River of Sorrows;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-River of Sorrows;📘;Wet Book;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
+River of Sorrows;📘;Damned Book;Item;-1;0;0;0;0;1;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Pocketed a piece of trash.
 River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 
 //Afflicted Necropolis
@@ -706,7 +709,7 @@ Afflicted Necropolis;🧙🏻‍♂️;Vengeful Necromancer;Recruit;3;2;1;0;3;2;
 
 Afflicted Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
 Afflicted Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
-Afflicted Necropolis;🐼;Zombie Bear;Heavy;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
+Afflicted Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
 
 Afflicted Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
 Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
@@ -726,7 +729,6 @@ Afflicted Necropolis;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spiri
 Afflicted Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
 
 Afflicted Necropolis;👰🏻‍♀️;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
-Afflicted Necropolis;👰‍♀️;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
 Afflicted Necropolis;👰🏻;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
 
 Afflicted Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
