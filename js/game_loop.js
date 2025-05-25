@@ -1606,7 +1606,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Spirit":
           case "Demon":
-            if (enemyInt <= playerInt ){
+            if ((playerMgk>0)&&(enemyInt <= playerInt )){
               var gainedXP=playerGainXP(1.25,0,"")
               logPlayerAction(actionString,"Banished them from the world! "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               displayEnemyEffect("🔥");
@@ -3420,7 +3420,7 @@ function adjustEncounterButtons(){
     case "Undead":
     case "Spirit":
     case "Demon":
-      if (playerMgk>1) {
+      if (playerMgk>0) {
         setButton('button_pray',"🔥 Banish");
       } else {
         setButton('button_pray',"🔥 Banish",colorDarkGrey);
