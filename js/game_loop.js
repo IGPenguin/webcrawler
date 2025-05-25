@@ -2205,6 +2205,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else {
                 playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
                 displayPlayerEffect("✨");
+                nextEncounter();
               }
             } else {
               console.log(enemyQuestItems);
