@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 05/28/25 • 10:08pm"
+var versionCode = "ver. 05/28/25 • 10:15pm"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -288,7 +288,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
-    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorDarkYellow+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:58px;\">WebCrawler</p><p style=\"font-size:10px;\""+decorateStatusText("","<br>"+versionCode,colorWhite),4);
+    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorDarkYellow+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:58px;\">WebCrawler</p><p style=\"font-size:12px;\""+decorateStatusText("","<br>"+versionCode,colorWhite),4);
     else
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
