@@ -112,6 +112,20 @@ var buttonsContainer;
 var grabColor=colorWhite;
 var eatColor=colorWhite;
 
+function renameCharacter(){
+  var newPlayerName = prompt("Rename your character: ", playerName);
+  if (newPlayerName==="") {
+    newPlayerName="Nameless";
+  } else if (newPlayerName) {
+    //Name changed
+  } else {
+    newPlayerName=playerName;
+  }
+  playerName=newPlayerName;
+  redraw();
+  return playerName;
+}
+
 //String generators
 function getFirstName(){
   const random_names = ["Vagrand","Pilgrim","Explorer","Adventurer","Wanderer", "Freak", "Nameless", "Peasant", "Voyager", "Stranger", "Traveller", "Survivor", "Prophet", "Drifter", "Vagabond", "Nomad", "Someone", "Whoever", "Handsome", "Wholesome", "Straggler", "Unnamed","Venturer","Pathfinder","Seeker"];
@@ -1711,13 +1725,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (playerMgk<2){
-          logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
+        if (playerMgk<1){
+          logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
           displayPlayerCannotEffect();
           break;
         }
 
-        if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
+        if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { //Curse is never free, upgrd handled above
             break;
           }
 
@@ -1745,7 +1759,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (procAbilityChance("🪆",33)){
               var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪰","🪲","🪳","🐌"]);
-              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
+              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -1 🔵");
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
 
@@ -1759,12 +1773,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             enemyCursed=true;
-            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
+            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -1 🔵");
             break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
-            logPlayerAction(actionString,"They resisted the curse -2 🔵");
+            logPlayerAction(actionString,"They resisted the curse -1 🔵");
           } else {
-            logPlayerAction(actionString,"The curse had no effect on them -2 🔵");
+            logPlayerAction(actionString,"The curse had no effect on them -1 🔵");
           }
 
           if (enemyCastIfMgk()) break;
@@ -1772,7 +1786,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case "Spirit": //They don't care
-          logPlayerAction(actionString,"The curse had no effect on it -2 🔵");
+          logPlayerAction(actionString,"The curse had no effect on it -1 🔵");
           if (enemyCastIfMgk()) break;
           enemyAttackOrRest();
           break;
@@ -1780,10 +1794,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Friend": //They'll boost your stats
           if (playerMgk >= enemyMgk){
             var gainedXP=playerGainXP(1,25*playerLevel,"");
-            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+            logPlayerAction(actionString,"Forced revealed their secrets -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyMsg);
           } else {
-            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
+            logPlayerAction(actionString,"Could not overpower their will -1 🔵");
             displayPlayerCannotEffect();
           }
           break;
@@ -1795,7 +1809,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         default:
-          logPlayerAction(actionString,"The curse dispersed into the area -2 🔵");
+          logPlayerAction(actionString,"The curse dispersed into the area -1 🔵");
       }
       break;
 
@@ -3608,17 +3622,24 @@ function registerClickListeners(){
     redraw();
   });
 
-  document.getElementById('id_player_name').addEventListener(eventType, ()=>{
-    var newPlayerName = prompt("Rename your character: ", playerName);
-    if (newPlayerName==="") {
-      newPlayerName="Nameless";
-    } else if (newPlayerName) {
-      //Name changed
-    } else {
-      newPlayerName=playerName;
+  document.getElementById('id_player_level').addEventListener(eventType, ()=>{
+    var newName=renameCharacter();
+    var nameNumber=newName.match(/\d+/)[0];
+    var cheatAmount=3;
+
+    if (newName.includes("Cheater")){
+      if (nameNumber>0) cheatAmount=nameNumber;
+      playerHpMax=cheatAmount;
+      playerAtk=cheatAmount;
+      playerStaMax=cheatAmount;
+      playerMgkMax=cheatAmount;
+
+      playerHp=playerHpMax;
+      playerSta=playerStaMax;
+      playerMgk=playerMgkMax;
+      playerSta=playerStaMax;
+      redraw();
     }
-    playerName=newPlayerName;
-    redraw();
   });
 }
 
