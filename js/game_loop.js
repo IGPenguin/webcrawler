@@ -3273,8 +3273,8 @@ function resetEncounterButtons(){
   if (playerMgk<=0){
     setButton('button_cast',playerCastType+" Cast",colorDarkGrey);
     setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
+    setButton('button_curse',"🪬 Curse",colorDarkGrey);
   }
-  if (playerMgk<=1) setButton('button_curse',"🪬 Curse",colorDarkGrey);
 }
 
 function adjustEncounterButtons(){
