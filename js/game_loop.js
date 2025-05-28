@@ -52,7 +52,7 @@ function renewPlayer(){ //Default values
   playerName = getFirstName();
   playerHpMax=3;
   playerHp = playerHpMax;
-  playerStaMax = 3;
+  playerStaMax = 2;
   playerSta = playerStaMax;
   playerMgkMax = 0;
   playerAtk = 1;
