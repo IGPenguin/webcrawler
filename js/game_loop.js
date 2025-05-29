@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 05/28/25 • 10:15pm"
+var versionCode = "ver. 05/29/25 • 10:52pm"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -781,7 +781,7 @@ function redraw(){
     document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;";
   }
   if (playerLootString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "<b>Bag:</b> "+playerLootString;
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "+playerLootString;
   }
   if (playerPartyString.length+playerLootString.length == 0) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
@@ -2694,7 +2694,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
     if (enemyType.includes("Boss")) {
-      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss defeated!</p>",4);
+      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;\">Boss defeated!</p><p style=\"font-size:12px;\""+decorateStatusText("","<br>"+enemyName,colorWhite),4);
       logAction("👑 ▸ "+enemyEmoji+" Boss defeated: <b>"+enemyName+"</b>")
     }
   }
@@ -3196,7 +3196,7 @@ function gameOver(silent=false){
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
 
-  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:58px;\">You died!",5)+"</p>";
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:58px;line-height:20px;\">You died!</p><p style=\"font-size:12px;\""+decorateStatusText("",enemyMsg,colorWhite),5);
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
 
