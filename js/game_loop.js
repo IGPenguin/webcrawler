@@ -52,7 +52,7 @@ function renewPlayer(){ //Default values
   playerName = getFirstName();
   playerHpMax=3;
   playerHp = playerHpMax;
-  playerStaMax = 2;
+  playerStaMax = 3;
   playerSta = playerStaMax;
   playerMgkMax = 0;
   playerAtk = 1;
@@ -128,7 +128,40 @@ function renameCharacter(){
 
 //String generators
 function getFirstName(){
-  const random_names = ["Vagrand","Pilgrim","Explorer","Adventurer","Wanderer", "Freak", "Nameless", "Peasant", "Voyager", "Stranger", "Traveller", "Survivor", "Prophet", "Drifter", "Vagabond", "Nomad", "Someone", "Whoever", "Handsome", "Wholesome", "Straggler", "Unnamed","Venturer","Pathfinder","Seeker"];
+  const random_names = [
+    "Curious Traveller",
+    "Gentle Nomad",
+    "Quiet Voyager",
+    "Steady Pathfinder",
+    "Kind Stranger",
+    "Steadfast Drifter",
+    "Wayward Explorer",
+    "Hopeful Seeker",
+    "Calm Wanderer",
+    "Bright Adventurer",
+    "Silent Groom",
+    "Wandering Shade",
+    "Wandering Seeker",
+    "Faded Pilgrim",
+    "Grieving Drifter",
+    "Shadowed Stranger",
+    "Tired Prophet",
+    "Frayed Wanderer",
+    "Lone Redeemer",
+    "Tattered Nomad",
+    "Forsaken Seeker",
+    "Ashen Nomad",
+    "Lone Prophet",
+    "Nameless Vagrant",
+    "Weary Pilgrim",
+    "Shrouded Drifter",
+    "Quiet Outcast",
+    "Forgotten Stranger",
+    "Lost Redeemer",
+    "Worn Vagabond",
+    "Mourning Seeker",
+    "Veiled Pilgrim",
+    "Silas Crow"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
@@ -536,19 +569,19 @@ function loadEncounter(index, fileLines = linesStory){
       }
       break;
     case "Consumable":
-      logAction("👁️ ▸ "+enemyEmoji+" Found some food: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
       break;
     case "Curse":
     case "Trap":
     case "Trap-Attack":
     case "Trap-Roll":
-      logAction("⁉️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
+      logAction("⁉️ ▸ "+enemyEmoji+" Noticed: <b>"+enemyName+"</b>")
       break;
     case "Altar":
-      logAction("👁️ ▸ "+enemyEmoji+" Discovered something: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Discovered: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-      logAction("💭 ▸ "+enemyEmoji+" Met someone: <b>"+enemyName+"</b>")
+      logAction("💭 ▸ "+enemyEmoji+" Approached: <b>"+enemyName+"</b>")
       break;
     default:
       if (enemyType.includes("Boss")) logAction("💢 ▸ "+enemyEmoji+" Engaged in combat: <b>"+enemyName+"</b>")
@@ -2468,7 +2501,7 @@ function enemyKnockedOut(){
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + knockoutString + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   if (enemyAtk>0) playerKarma++;
   if (enemyAtk<=0) playerKarma--;
-  playerSta--;
+  //playerSta--;
 
   isFishing=false;
   displayEnemyEffect("💤");
@@ -2567,6 +2600,7 @@ function enemyAttackOrRest(message="",isGrab=false){
     if (damageReceived<=0){
       staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around.","They seem to be very chill."])
       if (enemyCursed && (enemyAtk+enemyAtkBonus)<=0) staminaChangeMsg="They are too weak to do any harm."
+      animateUIElement(emojiWrapperUIElement,"animate__headShake","1"); //Play chill animation
       if (enemyType=="Pet"){ //Harder to befriend
         enemyIntBonus++;
         if ((enemyInt+enemyIntBonus)<=playerInt){
