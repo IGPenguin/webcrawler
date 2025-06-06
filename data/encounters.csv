@@ -621,10 +621,10 @@ River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always g
 River of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 River of Sorrows;‍🐳;Silly Willy;Heavy;4;0;1;0;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
 River of Sorrows;‍🐋;White Whale;Heavy;5;0;1;0;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-River of Sorrows;🕷️;Floating Spider;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🦐;Twisted Shrimp;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
 River of Sorrows;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🐙;Tiny Octopus;Small;1;1;0;0;-1;0;Cephalopod;Possibly can be used as a bait.<br>;
+River of Sorrows;🐙;Lonely Octopus;Small;1;1;0;0;-1;0;Cephalopod;Does not care\ can be used as a bait.<br>;
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Unnatural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;

@@ -1499,14 +1499,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType.includes("Locked")){
-            if (playerMgk<2){
-              logPlayerAction(actionString,"Not enough mana, requires +2 🔵");
+            if (playerMgk<1){
+              logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
               displayPlayerCannotEffect();
               break;
             } else {
-              playerMgk-=2;
+              playerMgk-=1;
               var gainedXP=playerGainXP(1,25*playerLevel,"");
-              logPlayerAction(actionString,"Unlocked using a spell -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              logPlayerAction(actionString,"Unlocked using a spell -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
               break;
             }
