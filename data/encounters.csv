@@ -23,7 +23,7 @@ Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Ho
 Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
 
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;2;0;0;Safe Place;Surrounded by four-leaf clovers.<br>;Feels kinda more lucky.
-Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;2;0;Unfinished Art;Still deserves some basic admiration.<br>;Truly an interesting piece.
+Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;2;0;Unfinished Art;Deserves some basic admiration.<br>;Truly an interesting piece.
 
 Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird.
 Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like something's calling for attention.<br>;Received a howling blessing.
@@ -50,10 +50,12 @@ Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute 
 
 Wildland Meadows;🐎;Lucky Stallion;Pet;3;0;2;2;1;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
 Wildland Meadows;🐥;Needy Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
+Wildland Meadows;🐈;Grass Panther;Pet;1;0;0;1;0;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
+Wildland Meadows;🐈‍⬛;Shadow Hunteress;Pet;1;1;0;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
 
-Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-2;0;Talking Animal;Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Intellect</b>.<br>Kinda tiring to even be around.;That was annoying
+Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;That was annoying
 Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Wildland Meadows;🧖🏻‍♀️;Ethereal Being;Friend;0;0;0;0;1;0;Unknown;They've offered you a lecture on life.<br>n/a;Whatever that meant
 Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;0;0;The Prophet;Always has some obscure tip to share((<br>n/a;That speech has taken a toll
@@ -62,8 +64,8 @@ Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
-Wildland Meadows;🦔️;Sacred Hedgehog;Standard;1;0;2;1;2;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
-Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
+Wildland Meadows;🦔️;Sacred Hedgehog;Pet;1;0;2;1;2;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
+Wildland Meadows;🦥;Chill Sloth;Pet;1;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
 
 Wildland Meadows;🐦‍⬛;Curious Crow;Swift;1;0;2;0;2;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Wildland Meadows;🦆;Aggresive Duck;Swift;1;1;1;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -82,7 +84,7 @@ Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Provide
 Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Provides <b>+1 🔵 Mana</b>.<br>;Enhanced their magic skills
 Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels good carrying that.
 Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch\ sharp thorns!
-Wildland Meadows;🌷;Pink Tulip;Item;0;0;0;0;2;0;Natural Beauty;Brings pleasure whenever looked at.<br>Provides <b>+2 🧠 Intellect</b>.;Feels good carrying that.
+Wildland Meadows;🌷;Pink Tulip;Item;1;0;0;0;1;0;Natural Beauty;Brings intense pleasure whenever looked at.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Intellect</b>.;Just awesome!
 Wildland Meadows;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced your area awareness.
 Wildland Meadows;🪨;Sharp Stone;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;Feels a bit less serious.
