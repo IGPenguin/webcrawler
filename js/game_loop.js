@@ -3361,7 +3361,7 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       if (isFishing) setButton('button_roll',"❌ Ditch");
-      if (enemyEmoji=="🛶" || areaName=="Endless Ocean") setButton("button_roll","🛶 Sail");
+      if (enemyEmoji=="🛶" || areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;
 
     case "Curse":
@@ -3389,7 +3389,7 @@ function adjustEncounterButtons(){
     case "Trap":
     case "Trap-Roll":
     case "Prop":
-      if (areaName=="Endless Ocean") setButton("button_roll","🛶 Sail");
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Walk";
       break;
@@ -3403,7 +3403,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Fishing":
-      if (areaName=="Endless Ocean") setButton("button_roll","🛶 Sail");
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
       var bait=checkPlayerHasItem();
