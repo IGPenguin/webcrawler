@@ -802,8 +802,8 @@ function redraw(){
 
   playerLevelUIELement = document.getElementById('id_player_level');
   var lvlSymbol= ""
-  if (playerXP>=playerXPThreshold) lvlSymbol="⇪"
-  playerLevelUIELement.innerHTML = decorateStatusText("","Level "+playerLevel+lvlSymbol,colorGold);
+  if (playerXP>=playerXPThreshold) lvlSymbol="⏾ "
+  playerLevelUIELement.innerHTML = decorateStatusText("",lvlSymbol+"Level "+playerLevel,colorGold);
 
   var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp);
   if ((playerHpMax-playerHp)>0) playerStatusString+=emptySymbol.repeat(playerHpMax-playerHp);
@@ -2264,7 +2264,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else {
                 playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
                 displayPlayerEffect("✨");
-                nextEncounter();
               }
             } else {
               console.log(enemyQuestItems);
@@ -3313,6 +3312,7 @@ function resetEncounterButtons(){
   setButton('button_grab',"👋 Grab");
   setButton('button_sleep',playerSleepType+" Sleep");
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
+  if (playerXP>=playerXPThreshold) setButton('button_sleep',playerSleepType+" Sleep",colorGold);
   if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
 
   setButton('button_speak',playerSpeakType+" Speak");
