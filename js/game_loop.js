@@ -801,7 +801,9 @@ function redraw(){
   document.getElementById('id_player_name').innerHTML = playerName;
 
   playerLevelUIELement = document.getElementById('id_player_level');
-  playerLevelUIELement.innerHTML = decorateStatusText("","Level "+playerLevel,colorGold);
+  var lvlSymbol= ""
+  if (playerXP>=playerXPThreshold) lvlSymbol="⇪"
+  playerLevelUIELement.innerHTML = decorateStatusText("","Level "+playerLevel+lvlSymbol,colorGold);
 
   var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp);
   if ((playerHpMax-playerHp)>0) playerStatusString+=emptySymbol.repeat(playerHpMax-playerHp);
@@ -2738,14 +2740,10 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
     if (enemyType.includes("Boss")) {
-      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:58px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:16px;\""+decorateStatusText("",enemyName,colorWhite),5);
+      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyName,colorWhite),5);
 
       logAction("👑 ▸ "+enemyEmoji+" Boss defeated: <b>"+enemyName+"</b>")
     }
-  }
-
-  if (playerCheckLevelUp()){
-    return true;
   }
 
   if (procAbilityChance("🥻",5)){
@@ -2838,6 +2836,11 @@ function playerRest(silent=false){
       playerMgk++;
       displayPlayerRestedEffect();
     }
+
+if (playerCheckLevelUp()){
+  return true;
+}
+
   } else {
     if (!silent) logPlayerAction(actionString,"Not feeling sleepy at this time.");
     displayPlayerCannotEffect();
@@ -3033,7 +3036,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   }
 
   var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊"])
-  if (hasAnyOf(attackTypes,enemyEmoji)) playerAttackType=enemyEmoji;
+  if (hasAnyOf(attackTypes,enemyEmoji)&&enemyType=="Item") playerAttackType=enemyEmoji;
 
   var castTypes=(["⚡️","☄️","🍭","🔥"])
   if (castTypes.includes(enemyEmoji)) playerCastType=enemyEmoji;
@@ -3242,7 +3245,7 @@ function gameOver(silent=false){
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
 
-  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:58px;line-height:20px;\">You died!</p><p style=\"font-size:14px;\""+decorateStatusText("",enemyMsg,colorWhite),5);
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite),5);
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
 
