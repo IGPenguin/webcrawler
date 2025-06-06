@@ -49,11 +49,11 @@ Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes 
 Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
 Wildland Meadows;🐈;Savannah Cat;Pet;1;1;2;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
-Wildland Meadows;🐎;Lucky Stallion;Pet;3;0;2;2;1;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
+Wildland Meadows;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
 Wildland Meadows;🦔️;Scared Hedgehog;Pet;1;0;2;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
-Wildland Meadows;🐥;Needy Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate
+Wildland Meadows;🐥;Cute Chick;Pet;1;0;-1;0;0;0;Cute Animal;Constantly peeps and runs around.<br>;Does not make much differece.
 
 Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;That was annoying
 Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
@@ -313,8 +313,6 @@ Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b>
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
 Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Wildland Meadows;🦴;Tasty Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Wildland Meadows;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 Wildland Meadows;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
 Wildland Meadows;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
 Wildland Meadows;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
@@ -332,8 +330,8 @@ Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It fe
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference
-Forsaken Village;🍷;Sour Wine;Consumable;0;0;2;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Was it worth it?
-Forsaken Village;🌶️;Burning Jalapeño;Consumable;-1;0;2;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+3 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
+Forsaken Village;🍷;Sour Wine;Consumable;0;0;2;0;-1;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+2 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Was it worth it?
+Forsaken Village;🌶️;Burning Jalapeño;Consumable;-1;0;2;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+2 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
 Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🍰;Strawberry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
@@ -580,9 +578,10 @@ Twisted Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;Mystical Relic;No one shoul
 Twisted Fairyland;🎀;Silly Bowtie;Item;0;0;0;2;-1;0;Accessory;Gives extra luck but looks cringe.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;That looks ridiculous
 Twisted Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under their arm
 Twisted Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is likely missing it.<br>;
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
+Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is likely missing it.<br>;You should find the owner!
+Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 //River of Sorrows
@@ -751,6 +750,5 @@ Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the
 Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
-Shrouded Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;-1;0;Questionable Food;Could be remains of one of the villagers.<br><br>Might have <b>severe consequences.</b>;That was just disgusting
 
 Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
