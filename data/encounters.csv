@@ -48,12 +48,13 @@ Wildland Meadows;🐜;Worker Ant;Small;1;0;2;0;-1;0;Insect;Minds its own busines
 Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Sound exploded their head!
 Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
+Wildland Meadows;🐈;Grass Panther;Pet;1;1;2;0;0;0;Cute Animal;Constantly peeps and runs around.<br>;Gained powerful follower
+Wildland Meadows;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;0;0;0;Cute Animal;Constantly peeps and runs around.<br>;Gained powerful follower
 Wildland Meadows;🐎;Lucky Stallion;Pet;3;0;2;2;1;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
-Wildland Meadows;🐥;Needy Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
-Wildland Meadows;🐈;Grass Panther;Pet;1;0;0;1;0;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
-Wildland Meadows;🐈‍⬛;Shadow Hunteress;Pet;1;1;0;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate anymore
+Wildland Meadows;🦔️;Sacred Hedgehog;Pet;1;0;2;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
+Wildland Meadows;🐥;Needy Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Cannot concentrate
 
 Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;That was annoying
 Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
@@ -64,8 +65,7 @@ Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Impaled by two horns at once.
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
-Wildland Meadows;🦔️;Sacred Hedgehog;Pet;1;0;2;1;2;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
-Wildland Meadows;🦥;Chill Sloth;Pet;1;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
+Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
 
 Wildland Meadows;🐦‍⬛;Curious Crow;Swift;1;0;2;0;2;0;Wild Animal;Seems to have quick reflexes.<br>;Got both eyes pecked out.
 Wildland Meadows;🦆;Aggresive Duck;Swift;1;1;1;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -256,7 +256,7 @@ Forsaken Village;☁️;Toxic Cloud;Spirit;1;0;1;0;-1;1;Unpleasant Odour;This is
 
 Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
 Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
-Forsaken Village;🐻;Enraged Grizzly;Boss-Heavy;4;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
+Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 Forsaken Village;🪿;Untitled Goose;Boss-Swift;2;1;4;0;3;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
 
 Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -658,106 +658,106 @@ River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It fe
 River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
-//Afflicted Necropolis
-Afflicted Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
-Afflicted Necropolis;🍂;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Afflicted Necropolis;⚱️;Burial Urn;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Afflicted Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
-Afflicted Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
-Afflicted Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Afflicted Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
-Afflicted Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-Afflicted Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+//Shrouded Necropolis
+Shrouded Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
+Shrouded Necropolis;🍂;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
+Shrouded Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
+Shrouded Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
+Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
 
-//;Afflicted Necropolis;🥠;Misfortune Cookie;Consumable-Container;0;0;0;-1;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
-Afflicted Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
-Afflicted Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Afflicted Necropolis;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
-Afflicted Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
-Afflicted Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
-Afflicted Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.
-Afflicted Necropolis;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.
-Afflicted Necropolis;🦴;Pile of Bones;Container;0;0;0;0;-1;0;Disturbing Scenery;Doesn't look like an accident.<br>;Got cursed for disturbing that
-Afflicted Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;Questionable Stash;Something seems to be hidden there.;Got cursed for disturbing that
-Afflicted Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
-//;Afflicted Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+//;Shrouded Necropolis;🥠;Misfortune Cookie;Consumable-Container;0;0;0;-1;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
+Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
+Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Shrouded Necropolis;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
+Shrouded Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
+Shrouded Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
+Shrouded Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.
+Shrouded Necropolis;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.
+Shrouded Necropolis;🦴;Pile of Bones;Container;0;0;0;0;-1;0;Disturbing Scenery;Doesn't look like an accident.<br>;Got cursed for disturbing that
+Shrouded Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;Questionable Stash;Something seems to be hidden there.;Got cursed for disturbing that
+Shrouded Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
+//;Shrouded Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 
-Afflicted Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
-Afflicted Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
+Shrouded Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
+Shrouded Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
 
-Afflicted Necropolis;🫁;Collapsed Lungs;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
-Afflicted Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
-Afflicted Necropolis;🕳️;Bottomless Pit;Trap-Roll;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
+Shrouded Necropolis;🫁;Collapsed Lungs;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
+Shrouded Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
+Shrouded Necropolis;🕳️;Bottomless Pit;Trap-Roll;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
 ❄️🌨️🥶☃️⛄️️
 
 Altars
 
-Afflicted Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Afflicted Necropolis;🪱;Bloodsucking Worm;Small;1;0;0;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Afflicted Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Afflicted Necropolis;🪱;The Glowing One;Small;1;0;0;0;-1;2;Arthropod;Dangerous fishing bait.<br>;
-Afflicted Necropolis;🪱;Chewing Worm;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Afflicted Necropolis;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Afflicted Necropolis;🪱;Bloodsucking Tapeworm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Afflicted Necropolis;🪱;Nasty Leech;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Afflicted Necropolis;🪱;Parasitic Worm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Afflicted Necropolis;🪰;Bloodsucking Fly;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Afflicted Necropolis;🦟;Pesky Mosqito;Small;3;2;2;0;5;0;Insect;Screams echo around the crypt.<br>Goosebumps.
-Afflicted Necropolis;🦗;Ferocious Cricket;Small;3;2;2;0;5;0;Insect;Screams echo around the crypt.<br>Goosebumps.
-Afflicted Necropolis;🪳;Glowing Cockroach;Small;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Shrouded Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Bloodsucking Worm;Small;1;0;0;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;The Glowing One;Small;1;0;0;0;-1;2;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Chewing Worm;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Shrouded Necropolis;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Nasty Leech;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Parasitic Worm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪰;Bloodsucking Fly;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Shrouded Necropolis;🦟;Pesky Mosqito;Small;3;2;2;0;5;0;Insect;Screams echo around the crypt.<br>Goosebumps.
+Shrouded Necropolis;🦗;Ferocious Cricket;Small;3;2;2;0;5;0;Insect;Screams echo around the crypt.<br>Goosebumps.
+Shrouded Necropolis;🪳;Glowing Cockroach;Small;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 
-Afflicted Necropolis;🦇;Friendly Bat;Pet;2;1;3;0;-1;2;Annoying Insect;Hopefully does not carry any diseases.<br>;Gained a new friend.
+Shrouded Necropolis;🦇;Friendly Bat;Pet;2;1;3;0;-1;2;Annoying Insect;Hopefully does not carry any diseases.<br>;Gained a new friend.
 
 Friend 🤴🏻👸🏻
 
-Afflicted Necropolis;👤;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
-Afflicted Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
+Shrouded Necropolis;👤;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
+Shrouded Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
 ️🫂👥
 
 Standard 💀
 
-Afflicted Necropolis;🧙🏻‍♂️;Acolyte Necromancer;Recruit;3;1;0;0;3;1;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Afflicted Necropolis;🧙🏻‍♂️;Vengeful Necromancer;Recruit;3;2;1;0;3;2;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Shrouded Necropolis;🧙🏻‍♂️;Acolyte Necromancer;Recruit;3;1;0;0;3;1;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Shrouded Necropolis;🧙🏻‍♂️;Vengeful Necromancer;Recruit;3;2;1;0;3;2;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
 
-Afflicted Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
-Afflicted Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
-Afflicted Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
+Shrouded Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
+Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
+Shrouded Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
 
-Afflicted Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
-Afflicted Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
-Afflicted Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
+Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
+Shrouded Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
+Shrouded Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
-Afflicted Necropolis;🧟;Animated Dead;Undead;1;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
-Afflicted Necropolis;🧟;Tired Zombie;Undead;2;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
-Afflicted Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
-Afflicted Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
+Shrouded Necropolis;🧟;Animated Dead;Undead;1;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
+Shrouded Necropolis;🧟;Tired Zombie;Undead;2;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
+Shrouded Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
+Shrouded Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
 
-Afflicted Necropolis;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got their heart ripped out!
-Afflicted Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got their heart ripped out!
-Afflicted Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got their heart ripped out!
+Shrouded Necropolis;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got their heart ripped out!
+Shrouded Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got their heart ripped out!
+Shrouded Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got their heart ripped out!
 
-Afflicted Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
-Afflicted Necropolis;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
-Afflicted Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
+Shrouded Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Necropolis;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
 
-Afflicted Necropolis;👰🏻‍♀️;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
-Afflicted Necropolis;👰🏻;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
 
-Afflicted Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Afflicted Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
-Afflicted Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-2;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-2 🧠 Intellect</b>.;Ewwww...
-Afflicted Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
-Afflicted Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
-Afflicted Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
-Afflicted Necropolis;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
-Afflicted Necropolis;🗡️;Possesed Dagger;Item;-1;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Accidentaly cut themselves
+Shrouded Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-2;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-2 🧠 Intellect</b>.;Ewwww...
+Shrouded Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
+Shrouded Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
+Shrouded Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
+Shrouded Necropolis;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
+Shrouded Necropolis;🗡️;Possesed Dagger;Item;-1;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Accidentaly cut themselves
 
-Afflicted Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
-Afflicted Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Afflicted Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Afflicted Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
-//;Afflicted Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
+Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Shrouded Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+//;Shrouded Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
 
-Afflicted Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Reminds you of your forgotten past.<br>And also proves one's determination.;Grabbed the <b>🧩 Memory Fragment</b>.
+Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Reminds you of your forgotten past.<br>And also proves one's determination.;Grabbed the <b>🧩 Memory Fragment</b>.
