@@ -3170,7 +3170,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
       return;
     }
 
-    gameOver();
+    gameOver(true);
     return;
   }
   displayPlayerEffect("💢");
@@ -3234,7 +3234,8 @@ function checkPlayerHasItem(itemArray=validBaits){
 //End Game
 function gameOver(silent=false){
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")||(enemyType.includes("Container"))) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Pet")) enemyMsg="Got killed, ending the adventure.";
+  //if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")||(enemyType.includes("Container"))) enemyMsg="Got killed, ending the adventure.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;

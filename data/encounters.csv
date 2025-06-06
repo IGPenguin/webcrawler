@@ -331,8 +331,6 @@ Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry thi
 Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Junk;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
 
 Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference
@@ -588,19 +586,18 @@ Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Skeleton Part;Someone is lik
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
 
 Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 //River of Sorrows
-River of Sorrows;🌫;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
+River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
 River of Sorrows;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
 River of Sorrows;🌩️;Distant Lightning;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
-River of Sorrows;🍂;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
+River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
 River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
 
-River of Sorrows;🍂;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
+River of Sorrows;🌪️;Wailing Hurricane;Container;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
+River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;📦;Floating Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something of use inside.<br>;Oh\ so this was inside!?
 River of Sorrows;🎁;Festive Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something lovely inside.<br>;Oh\ so this was inside!?
@@ -609,8 +606,8 @@ River of Sorrows;💝;Chocolate Box;Container;0;0;0;0;0;0;Lost Container;Perhaps
 River of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;️🏝️;Quiet Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;Peaceful place in the middle of nowhere.<br>;Something jumped the hook!
-River of Sorrows;🏖;Little Island;Fishing;0;0;0;0;0;0;Piece of Land;Place of rest in the middle of nowhere.<br>;Something jumped the hook!
-River of Sorrows;️🏝️;Lonely Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
+River of Sorrows;🏖;Lonely Island;Fishing;0;0;0;0;0;0;Piece of Land;Place of rest in the middle of nowhere.<br>;Something jumped the hook!
+River of Sorrows;️🏝️;Little Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
 River of Sorrows;🏖;Chill Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
 River of Sorrows;️🏝️;Palm Island;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
 River of Sorrows;🏖;Shaded Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
@@ -654,8 +651,6 @@ River of Sorrows;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 River of Sorrows;📘;Damned Book;Item;-1;0;0;0;0;1;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Pocketed a piece of trash.
 River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 
-River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 //Shrouded Necropolis
