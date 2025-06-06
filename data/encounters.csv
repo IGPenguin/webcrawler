@@ -614,17 +614,14 @@ River of Sorrows;🏖;Shaded Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of
 
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
 
-River of Sorrows;‍🦦;Playful Otter;Pet;1;0;2;2;1;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 River of Sorrows;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
 River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
 River of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
-River of Sorrows;‍🐳;Silly Willy;Heavy;4;0;1;0;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-River of Sorrows;‍🐋;White Whale;Heavy;5;0;1;0;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
 River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
 River of Sorrows;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🐙;Lonely Octopus;Small;1;1;0;0;-1;0;Cephalopod;Does not care\ can be used as a bait.<br>;
+River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Cephalopod;Always lusts for blood.<br>;
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Unnatural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
@@ -640,7 +637,7 @@ River of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ E
 River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 
 River of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
-River of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;Feels kind of uncomfortable.
+River of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!
 River of Sorrows;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
 River of Sorrows;🥽;Diving Goggles;Item;1;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
 River of Sorrows;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
@@ -663,9 +660,9 @@ Shrouded Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particu
 Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
 Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
 🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
 
-//;Shrouded Necropolis;🥠;Misfortune Cookie;Consumable-Container;0;0;0;-1;0;0;Ritual Place;Delicious on the first glance.<br>;Found a paper note inside.
 Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
 Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Shrouded Necropolis;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
@@ -706,14 +703,15 @@ Shrouded Necropolis;🦇;Friendly Bat;Pet;2;1;3;0;-1;2;Annoying Insect;Hopefully
 
 Friend 🤴🏻👸🏻
 
-Shrouded Necropolis;👤;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
+Shrouded Necropolis;👤;Lost Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
 Shrouded Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
-️🫂👥
+️👥
 
-Standard 💀
+Shrouded Necropolis;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
+Shrouded Necropolis;💀;Skeleton Warrior;Standard;3;3;2;0;-1;0;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Necropolis;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
 
-Shrouded Necropolis;🧙🏻‍♂️;Acolyte Necromancer;Recruit;3;1;0;0;3;1;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
-Shrouded Necropolis;🧙🏻‍♂️;Vengeful Necromancer;Recruit;3;2;1;0;3;2;Outcast Hermit;Noticed suspicious activity in their camp.<br><i>"Never should have come here!"</i>;
+Shrouded Necropolis;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;
 
 Shrouded Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
 Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
@@ -723,21 +721,22 @@ Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving O
 Shrouded Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
 Shrouded Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
-Shrouded Necropolis;🧟;Animated Dead;Undead;1;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
-Shrouded Necropolis;🧟;Tired Zombie;Undead;2;2;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
-Shrouded Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Rotten to the bones
+Shrouded Necropolis;🧟;Animated Dead;Undead;2;2;1;0;-1;1;Restless Body;Better keep your distance.<br>;Rotten to the bones
+Shrouded Necropolis;🧟;Tainted Zombie;Undead;2;2;1;0;-1;1;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;Restless Body;Still almost looks human.<br>Better keep distance.;Rotten to the bones
 Shrouded Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
 
 Shrouded Necropolis;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got their heart ripped out!
 Shrouded Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got their heart ripped out!
 Shrouded Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got their heart ripped out!
+Shrouded Necropolis;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
 
 Shrouded Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
 Shrouded Necropolis;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
 Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
 
-Shrouded Necropolis;👰🏻‍♀️;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
-Shrouded Necropolis;👰🏻;Restless Bride;Boss-Spirit;2;1;2;0;6;2;Someone's Love;Finally\ she's been waiting forever.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;6;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
+Shrouded Necropolis;👰🏻;Restless Bride;Boss-Undead;4;4;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
 
 Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -749,10 +748,11 @@ Shrouded Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impres
 Shrouded Necropolis;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
 Shrouded Necropolis;🗡️;Possesed Dagger;Item;-1;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Accidentaly cut themselves
 
+Shrouded Necropolis;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
 Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
-//;Shrouded Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was just disgusting
+Shrouded Necropolis;🍖;Rotten Flesh;Consumable;-1;0;0;0;-1;0;Questionable Food;Could be remains of one of the villagers.<br><br>Might have <b>severe consequences.</b>;That was just disgusting
 
-Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Reminds you of your forgotten past.<br>And also proves one's determination.;Grabbed the <b>🧩 Memory Fragment</b>.
+Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
