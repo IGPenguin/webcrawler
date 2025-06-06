@@ -158,10 +158,9 @@ function getFirstName(){
     "Quiet Outcast",
     "Forgotten Stranger",
     "Lost Redeemer",
-    "Worn Vagabond",
+    "Wandering Vagabond",
     "Mourning Seeker",
-    "Veiled Pilgrim",
-    "Silas Crow"];
+    "Veiled Pilgrim"];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
