@@ -40,7 +40,7 @@ Wildland Meadows;🌵;Thorny Patch;Trap;-1;0;0;0;0;0;Natural Hazard;Spiny growth
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-2;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
 Wildland Meadows;🕳️;Hidden Hollow;Trap;-1;0;0;0;0;0;Concealed Drop;A small hole opens beneath your step.<br>;Twisted your ankle.
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
-Wildland Meadows;🪵;Rotting Log;Trap-Roll;0;0;0;0;0;0;Natural Hazard;Softened by time\ but still treacherous.<br>;Sank in and twisted an ankle.
+Wildland Meadows;🪵;Rotting Log;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Softened by time\ but still treacherous.<br>;Sank in and twisted an ankle.
 
 Wildland Meadows;🐭;Squeaky Mouse;Small;1;0;1;0;-1;0;Tiny Rodent;Runs around\ looking for crumbs.<br>;Bitten to death by a mouse.
 Wildland Meadows;🦎;Quick Lizard;Small;1;0;2;0;-1;0;Sneaky Reptile;Dashes quickly between rocks.<br>;Lost sight of it\ paid the price.
@@ -69,15 +69,15 @@ Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes 
 Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
 Wildland Meadows;🐓;Curious Rooster;Pet;1;0;1;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Became a village mascot.
-Wildland Meadows;🐢;Wandering Tortoise;Pet;1;1;1;0;0;0;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
+Wildland Meadows;🐢;Wandering Tortoise;Pet;1;0;1;0;0;0;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
 Wildland Meadows;🦊;Wily Fox;Pet;2;1;2;0;0;0;Cunning Companion;Glimmers with intelligence.<br>;New friend joined the gang.
 Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;Mysterious Bird;Croaks in a haunting tone.<br>;Received a prophetic blessing.
 Wildland Meadows;🦦;Cheeky Otter;Pet;1;1;1;0;0;0;Playful Critter;Seems to enjoy chaos.<br>;Slipped into your party unannounced.
-Wildland Meadows;🐈;Savannah Cat;Pet;1;1;2;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
+Wildland Meadows;🐈;Savannah Cat;Pet;1;0;2;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
 Wildland Meadows;🦔️;Scared Hedgehog;Pet;1;0;2;1;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
-Wildland Meadows;🐥;Cute Chick;Pet;1;0;-1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Does not make much differece.
+Wildland Meadows;🐥;Cute Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Got a new travel buddy!
 
 Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;That was annoying
 Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
@@ -92,7 +92,7 @@ Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;1;1;0;Innocent Critter;Leave hi
 Wildland Meadows;🦫;Timber Terror;Standard;2;2;1;0;2;0;Wild Animal;Chomps anything in reach.<br>;Dragged you to a dam of bones.
 Wildland Meadows;🦨;Sneaky Skunk;Standard;1;1;2;0;1;0;Wild Animal;Sprays a foul cloud.<br>;Died from the suffocating stench.
 
-Wildland Meadows;🦆;Aggresive Duck;Swift;1;1;1;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🦆;Aggresive Duck;Swift;1;1;2;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by its horns.
 Wildland Meadows;🦌;Grazing Deer;Heavy;2;0;2;0;3;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 
@@ -103,7 +103,7 @@ Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;2;1;0;1;0;Wild Animal;Loud stomps
 Wildland Meadows;🐗;Furious Warthog;Boss-Heavy;2;2;2;0;-1;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 Wildland Meadows;🐂;Tired Bull;Boss-Heavy;3;2;1;0;1;0;Domestic Animal;Looks extremely agitated.<br>;Impaled by both horns at once.
 Wildland Meadows;🦅;Sky Tyrant;Boss-Swift;3;1;4;0;3;0;Winged Horror;Wings black as pitch.<br>;Talons tore your throat apart.
-Wildland Meadows;🦢;Murderous Queen;Boss-Swift;2;1;2;0;2;0;Feathered Fury;Looks calm, but it kills.<br>;Choked by the long neck.
+Wildland Meadows;🦢;Murderous Queen;Boss-Swift;2;1;2;0;2;0;Feathered Fury;Looks calm\ but it kills.<br>;Choked by the long neck.
 
 Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Provides <b>+4 🧠 Creativity</b>.<br>;Enhanced their insight
 Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Provides <b>+1 🔵 Mana</b>.<br>;Enhanced their magic skills
@@ -734,7 +734,7 @@ Shrouded Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splash
 Shrouded Necropolis;🫁;Collapsed Lungs;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
 Shrouded Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Shrouded Necropolis;💀;Mourning Echo;Curse;-1;0;0;0;0;0;Haunted Spot;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
-Shrouded Necropolis;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away,<br>;Slipped right into it.
+Shrouded Necropolis;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;0;0;0;0;-1;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your heel\ but survived.
 ❄️🌨️🥶☃️⛄️️
 
