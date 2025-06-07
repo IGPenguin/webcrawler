@@ -128,12 +128,9 @@ function renameCharacter(){
 function getFirstName(){
   const random_names = [
     "Curious Traveller",
-    "Gentle Nomad",
-    "Quiet Voyager",
     "Steady Pathfinder",
-    "Kind Stranger",
     "Steadfast Drifter",
-    "Wayward Explorer",
+    "Tattered Explorer",
     "Hopeful Seeker",
     "Calm Wanderer",
     "Bright Adventurer",
@@ -144,7 +141,6 @@ function getFirstName(){
     "Grieving Drifter",
     "Shadowed Stranger",
     "Tired Prophet",
-    "Frayed Wanderer",
     "Lone Redeemer",
     "Tattered Nomad",
     "Forsaken Seeker",
@@ -153,7 +149,7 @@ function getFirstName(){
     "Nameless Vagrant",
     "Weary Pilgrim",
     "Shrouded Drifter",
-    "Quiet Outcast",
+    "Silent Outcast",
     "Forgotten Stranger",
     "Lost Redeemer",
     "Wandering Vagabond",
@@ -3444,10 +3440,10 @@ function adjustEncounterButtons(){
       break;
 
     case "Pet":
-      var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
-      if (heldQuestItem!="") {
-        setButton('button_speak',heldQuestItem+" Give",colorYellow);
-      }
+      //var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
+      //if (heldQuestItem!="") {
+      //  setButton('button_speak',heldQuestItem+" Give",colorYellow);
+      //}
 
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
       if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
