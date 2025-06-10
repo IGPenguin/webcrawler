@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 06/07/25 • 05:35pm"
+var versionCode = "ver. 06/10/25 • 11:05pm"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -520,9 +520,10 @@ function loadEncounter(index, fileLines = linesStory){
     if (String(enemyQuestItems).length>0){
       var heldItem=checkPlayerHasItem(enemyQuestItems);
       if (heldItem==""){
-        enemyDesc="If you see me again, <b>bring something good</b>.<br>How about any of these? "+String(enemyQuestItems).replaceAll(","," ");
+        enemyDesc="If you see me again, <b>bring something good</b>.<br>How some of this? "+String(enemyQuestItems).replaceAll(",","");
       }
       enemyDesc=enemyDesc.replaceAll("n/a",heldItem);
+      enemyDesc=enemyDesc.replaceAll("<br>","<br><b>Looks like this might do: "+heldItem)
     }
 
     enemyType="Friend";
@@ -552,10 +553,10 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Item":
       if (enemyTeam.includes("Artifact")){
-        logAction("🟠 ▸ "+enemyEmoji+" Found an artifact: <b>"+enemyName+"</b>")
+        logAction("🟠 ▸ "+enemyEmoji+" Discovered artifact: <b>"+enemyName+"</b>")
       } else {
         if (enemyTeam.includes("Possesion")) {
-          logAction("⭐️ ▸ "+enemyEmoji+" Found a quest item: <b>"+enemyName+"</b>")
+          logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
         } else {
           logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
         }
@@ -568,16 +569,16 @@ function loadEncounter(index, fileLines = linesStory){
     case "Trap":
     case "Trap-Attack":
     case "Trap-Roll":
-      logAction("⁉️ ▸ "+enemyEmoji+" Noticed: <b>"+enemyName+"</b>")
+      logAction("⁉️ ▸ "+enemyEmoji+" Noticed danger: <b>"+enemyName+"</b>")
       break;
     case "Altar":
-      logAction("👁️ ▸ "+enemyEmoji+" Discovered: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Discovered something: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-      logAction("💭 ▸ "+enemyEmoji+" Approached: <b>"+enemyName+"</b>")
+      logAction("💭 ▸ "+enemyEmoji+" Approached being: <b>"+enemyName+"</b>")
       break;
     default:
-      if (enemyType.includes("Boss")) logAction("💢 ▸ "+enemyEmoji+" Engaged in combat: <b>"+enemyName+"</b>")
+      if (enemyType.includes("Boss")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
       break;
   }
 }
@@ -876,7 +877,7 @@ function redraw(){
       enemyStatusString=appendEnemyStats();
       break;
     case "Friend":
-      enemyStatusString=decorateStatusText("💬","Friendly",colorDarkGreen);
+      enemyStatusString=decorateStatusText("💚","Friend",colorGreen);
       //Do not display stats = reward hidden
       break;
     case "Small":
@@ -3433,6 +3434,8 @@ function adjustEncounterButtons(){
       break;
 
     case "Friend":
+      setButton('button_speak',playerSpeakType+" Speak",colorGreen);
+
       var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
       if (heldQuestItem!="") {
         setButton('button_speak',heldQuestItem+" Give",colorYellow);

@@ -239,10 +239,25 @@ Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory o
 Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained deeper insight
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
-Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Experienced a heartbreak
-Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction throug direct eye contact.<br>n/a;Had a nice conversation
-Forsaken Village;🦝;Raccoon Ambassador;Friend🧸\🦴\🍖;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Strenghtened the interspecies bond.
-Forsaken Village;🐕;Nervous Dog;Friend🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
+Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Lost Possesion;No practical use to a warrior.<br>;
+Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Lost Possesion;Perhaps the special shape is by design.<br>;
+Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Lost Possesion;Dirty and full of holes.<br>;
+Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;
+Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Lost Possesion;Likely belongs to a beautiful girl.<br>;
+Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Lost Possesion;No reason to carry this anywhere.<br>;It's heavy and useless kinda
+Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
+
+Forsaken Village;🦔;Prickly Pal;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱\🍖;0;0;0;0;0;0;Quirky Animal;Offers valuable in exchange for food.<br>;Became fast friends!
+Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🛷\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸\🦴\🍖;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
+Forsaken Village;🐕;Nervous Dog;Friend👽\🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
+Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Suffered a heartbreak
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction through intense eye contact.<br>n/a;Had a nice conversation
 
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
 Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing
@@ -257,16 +272,13 @@ Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;Annoying Insect;Sits on 
 Forsaken Village;🦂;Tiny Scorpion;Small;1;2;1;0;-1;0;Dangerous Insect;Beware\ it is venous AF.<br>;There was nowhere to run.
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Forsaken Village;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
-Forsaken Village;🪱;Worm;Small;1;0;0;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
+Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fly Larva;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Meatfly Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
-Forsaken Village;🪱;Tapeworm;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Tapeworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪰;Annoying Fly;Small;1;0;3;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 
 Forsaken Village;🐀;Nasty Rat;Standard;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
@@ -356,20 +368,6 @@ Forsaken Village;🏷️;Remembrance Tag;Item;0;0;0;0;1;0;Scribbled Note;Provide
 Forsaken Village;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-
-Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Wildland Meadows;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Wildland Meadows;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Wildland Meadows;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Wildland Meadows;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-
-Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Junk;No practical use to a warrior.<br>;
-Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Junk;Perhaps the special shape is by design.<br>;
-Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Junk;Dirty and full of holes.<br>;
-Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Common Object;Must have been lost recently.<br>;
-Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Garbage;No reason to carry this anywhere.<br>;It's heavy and useless kinda
-Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Junk;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
 
 Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
@@ -662,14 +660,20 @@ River of Sorrows;🏖;Shaded Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
 River of Sorrows;☁️;Toxic Cloud;Trap;-2;0;1;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 
-River of Sorrows;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
-River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
-River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-River of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
 River of Sorrows;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+
+River of Sorrows;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
+
+River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
+River of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
+
 River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Cephalopod;Always lusts for blood.<br>;
+
 River of Sorrows;🌩️;Thunderstorm Entity;Spirit;1;0;0;0;-1;2;Elemental Fury;Eyes crackle with electric hate.<br>;Struck by a lightning bolt.
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
