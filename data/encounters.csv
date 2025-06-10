@@ -420,6 +420,9 @@ Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Se
 Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Twisted Fairyland;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
+Twisted Fairyland;🌹;Briar Thicket;Container-2;-1;0;0;0;0;0;Natural Snare;Spiky branches catch at your clothes.<br>;A few tears in your sleeve.
+
 Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
 Twisted Fairyland;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
@@ -457,12 +460,9 @@ Twisted Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholeso
 Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
 Twisted Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
 Twisted Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
-Twisted Fairyland;🌕;Full Moon;Altar;-2;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;
 
 Twisted Fairyland;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
 Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
-Twisted Fairyland;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
-Twisted Fairyland;🌹;Briar Thicket;Container-2;-1;0;0;0;0;0;Natural Snare;Spiky branches catch at your clothes.<br>;A few tears in your sleeve.
 
 Twisted Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
@@ -474,6 +474,7 @@ Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beau
 Twisted Fairyland;🌾;Overgrown Pond;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Twisted Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
+//TODO ADD MILION QUEST ITEMS TO FRIENDS (count with legendary loot afterwards and small/items from before)
 Twisted Fairyland;🦧;Friendly Orangutan;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
 Twisted Fairyland;🐒;Talking Monkey;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Heard a powerful message
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
@@ -715,7 +716,6 @@ Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;
 Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
 Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
-🌝🌚 🌔🌑🌗🌘🌖🌕🌒🌓🌔
 
 Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
 Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
@@ -729,8 +729,7 @@ Shrouded Necropolis;🦴;Scattered Bones;Container;-1;0;0;0;0;0;Uneasy Sight;Old
 Shrouded Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;Questionable Stash;Something seems to be hidden there.;Got cursed for disturbing that
 Shrouded Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
 Shrouded Necropolis;🥀;Trailing Vines;Container;-1;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.
-
-//;Shrouded Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+Shrouded Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 
 Shrouded Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Shrouded Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
@@ -740,9 +739,8 @@ Shrouded Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortu
 Shrouded Necropolis;💀;Mourning Echo;Curse;-1;0;0;0;0;0;Haunted Spot;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
 Shrouded Necropolis;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;0;0;0;0;-1;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your heel\ but survived.
-❄️🌨️🥶☃️⛄️️
 
-Altars
+Shrouded Necropolis;🌕;Full Moon;Altar;-2;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;
 
 Shrouded Necropolis;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
 Shrouded Necropolis;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
@@ -763,15 +761,11 @@ Shrouded Necropolis;🪱;Nasty Leech;Small;1;1;1;0;-1;0;Arthropod;Dangerous fish
 Shrouded Necropolis;🪱;Parasitic Worm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Necropolis;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Shrouded Necropolis;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.
-Shrouded Necropolis;🪳;Glowing Cockroach;Small;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 
-Pet
-
-Friend 🤴🏻👸🏻
+Shrouded Necropolis;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 
 Shrouded Necropolis;👤;Lost Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
 Shrouded Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
-️👥
 
 Shrouded Necropolis;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
 Shrouded Necropolis;💀;Skeleton Warrior;Standard;3;3;2;0;-1;0;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
@@ -798,16 +792,9 @@ Shrouded Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks l
 Shrouded Necropolis;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
 
 Shrouded Necropolis;🌪️;Tempest Wraith;Spirit;2;2;2;0;-1;1;Ethereal Storm;Spirals in howling fury.<br>;Torn to pieces by the storm.
-
 Shrouded Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
 Shrouded Necropolis;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
 Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
-
-Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;6;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
-Shrouded Necropolis;👰🏻;Restless Bride;Boss-Undead;4;4;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
-
-Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
 Shrouded Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-2;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-2 🧠 Intellect</b>.;Ewwww...
 Shrouded Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
@@ -822,4 +809,8 @@ Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks al
 Shrouded Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
 
+Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;6;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
+Shrouded Necropolis;👰🏻;Restless Bride;Boss-Undead;4;4;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
+Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
