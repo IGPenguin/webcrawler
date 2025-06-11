@@ -13,6 +13,7 @@ Wildland Meadows;🌾;Dense Weeds;Prop;0;0;0;0;0;0;Natural Obstacle;Tangles of w
 
 Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Wildland Meadows;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
+Wildland Meadows;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;Water Body;Crystal-clear water flowing steadily.<br>;
 
 Wildland Meadows;🪵;Splintered Wood;Container;-1;0;0;0;0;0;Wooden Snag;Sharp splinters catch at your skin.<br>;Left with small cuts.
 Wildland Meadows;🪨;Suspicious Rock;Container;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
@@ -162,28 +163,42 @@ Forsaken Village;🏗;Strange Monument;Prop;0;0;0;0;0;0;Metal Construction;A rem
 Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🚧;Reflective Barricade;Prop;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 
-Forsaken Village;🪨;Building Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
-Forsaken Village;🧱;Wall Remains;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
-Forsaken Village;🌾;Thick Reeds;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
-Forsaken Village;🪵;Wood Pile;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
-Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
-Forsaken Village;🌿;Thick Grass ;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the tree.
-Forsaken Village;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Forsaken Village;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Sturdy but weathered.<br>;
+Forsaken Village;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Forsaken Village;🛢️;Small Barrel;Container;0;0;0;0;0;0;Container;May contain something interesting.<br>;
+Forsaken Village;🪴;Garden Box;Container;0;0;0;0;0;0;Natural Cover;A modest patch of green.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
-Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Container;Seems to be indicating something is inside.<br>;
+Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Purposeful Container;Seems to be indicating something is inside.<br>;
 Forsaken Village;🕸️;Spider Cocon;Container;0;0;-1;0;0;0;Minor Inconvenience;Something seems to be stuck in it.<br>;Got some webs on your face
 Forsaken Village;🧰;Cracked Toolbox;Container;0;0;0;0;0;0;Forgotten Belongings;There could be something useful\ or cursed.<br>;
 Forsaken Village;📦;Weathered Crate;Container;0;0;0;0;0;0;Someone's Belongings;Wood warped by damp air.<br>;
+Forsaken Village;📦;Supply Crate;Container;0;0;0;0;0;0;Container;Sealed tightly with a rope.<br>;
+Forsaken Village;🎒;Worn Backpack;Container;0;0;0;0;0;0;Container;Looks abandoned in haste.<br>;
+Forsaken Village;🗃️;Metal Box;Container;0;0;0;0;0;0;Container;A small but secure storage.<br>;
+Forsaken Village;💰;Merchant’s Satchel;Container;0;0;0;0;0;0;Container;Once carried precious wares.<br>;
+Forsaken Village;🧳;Traveler’s Chest;Container;0;0;0;0;0;0;Container;Left behind in a hurry.<br>;
+Forsaken Village;🧳;Weathered Trunk;Container;0;0;0;0;0;0;Container;Sturdy enough to hold valuables.<br>;
+Forsaken Village;🎁;Unopened Gift;Container;0;0;0;0;0;0;Container;Wrapped in faded ribbons.<br>;
+Forsaken Village;🛏️;Underbed Cache;Container;0;0;0;0;0;0;Wrecked Furniture;Hidden from prying eyes.<br>;
 
+Forsaken Village;🎭;Trickster’s Cache;Container;0;0;0;-3;0;0;Circumstantial Object;Rumored to be full of mischief.<br>;
+
+Forsaken Village;🪨;Building Rubble;Container-2;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
+Forsaken Village;🧱;Wall Remains;Container-2;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
+Forsaken Village;🌾;Thick Reeds;Container-2;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
+Forsaken Village;🪵;Wood Pile;Container-2;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
+Forsaken Village;🌿;Fern Thicket;Container-2;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
+Forsaken Village;🌿;Thick Grass ;Container-2;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌳;Suspicious Trees;Container-2;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the trees.
+Forsaken Village;📦;Shipping Crate;Container-2;0;0;0;0;0;0;Container;Hefty and cumbersome.<br>;
 Forsaken Village;🪤;Elaborate Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
-Forsaken Village;🏚️;Abandoned Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
-Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🏚️;Ruined Building;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;Deserted Building;Wood planks barely hold together.<br>;Entered through the window.
+Forsaken Village;🏚️;Collapsed Barn;Container-2;0;0;0;0;0;0;Deserted Building;Walls barely hold together.<br>;Entered through the window.
+Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;Deserted Building;Wood planks barely hold together.<br>;Kicked the door open.
 
+Forsaken Village;🏚️;Abandoned Home;Container-3;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
+Forsaken Village;🏚️;Barred House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;Deserted Building;The roof has caved in.<br>;Kicked the door open.
 Forsaken Village;🏚️;Collapsed Mill;Container-3;0;0;0;0;0;0;Deserted Building;The wheel still groans in the wind.<br>;Entered through the broken door.
 Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
@@ -202,6 +217,7 @@ Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;Deserted Building;St
 Forsaken Village;🏘️;Shady Backalley;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏤;Post Office;Container-4;0;0;0;0;0;0;Deserted Building;Could still have some never delivered letters.<br>;Entered through the cracked door.
 Forsaken Village;🍻;Silent Inn;Container-4;0;0;0;0;0;0;Deserted Building;Empty chairs at empty tables everywhere.<br>;Entered through the window.
+Forsaken Village;🍻;Lucky Inn;Container-4;0;0;0;1;0;0;Deserted Building;There is a four-leaf clover on the table.<br>;Reached for the clover.
 
 Forsaken Village;🛠️;Engineering Workshop;Container-5;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.
 Forsaken Village;⚒️;Blacksmith Workshop;Container-5;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.
@@ -209,14 +225,15 @@ Forsaken Village;🎭;Forsaken Theatre;Container-5;0;0;0;0;0;0;Deserted Building
 Forsaken Village;🕰️;Clockhouse Tower;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏫;Town Hall;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🎪;Abandoned Fairground;Container-5;0;0;0;0;0;0;Deserted Building;Bright colors faded to grey.<br>;Wandered into the eerie silence.
-Forsaken Village;🏟️;Forgotten Arena;Container-5;0;0;0;0;0;0;Training Spot;Echoes of cheers linger still.<br>;Wandered into the eerie silence.
+Forsaken Village;🏟️;Forgotten Arena;Container-5;0;0;0;0;0;0;Killing Ground;Echoes of cheers linger still.<br>;Wandered into the eerie silence.
+Forsaken Village;🏤;Deserted Hospital;Container-5;0;0;0;0;0;0;Deserted Building;Faint echoes wander these walls.<br>;
 
 Forsaken Village;⛲️;Freshwater Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Forsaken Village;💧;Cursed Well;Fishing;0;0;0;0;0;0;Water Body;Dark water reflects strange shapes.<br>;
 Forsaken Village;🛢;Rainwater Barrel;Fishing;0;0;0;0;0;0;Water Body;Left open for decades\ who knows what’s inside.<br>;
-Forsaken Village;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;Water Body;Crystal-clear water flowing steadily.<br>;
+Forsaken Village;🪣;Bottomless Bucket;Fishing;0;0;0;0;0;0;Natural Resource;A massively deep well gapes inside.<br>;
 Forsaken Village;⛲️;Sacred Pool;Fishing;0;0;0;0;0;0;Water Body;Still and deep\ holds ancient secrets.<br>;
 
 Forsaken Village;👁️‍🗨️;Haunting Echo;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
@@ -240,22 +257,6 @@ Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
 Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained deeper insight
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
-
-Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Lost Possesion;No practical use to a warrior.<br>;
-Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Lost Possesion;Perhaps the special shape is by design.<br>;
-Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Lost Possesion;Dirty and full of holes.<br>;
-Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;
-Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Lost Possesion;Likely belongs to a beautiful girl.<br>;
-Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Lost Possesion;No reason to carry this anywhere.<br>;It's heavy and useless kinda
-Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
-Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
-Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 
 Forsaken Village;🦔;Prickly Pal;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers valuable in exchange for food.<br>;Became fast friends!
 Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🛷\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
@@ -363,6 +364,7 @@ Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Expl
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
 Forsaken Village;🎒;School Backpack;Item;0;0;0;0;1;0;Knowledge Vessel;Contains books of immense knowledge.<br>Provides <b>+1 🧠 Intellect</b>;Even carrying it makes a difference
 Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Ready to rock. Let's do this!
+Forsaken Village;🪣;Gathering Bucket;Item;1;0;0;0;0;0;Makeshift Headgear;Could brace a mediocre attack.<br>Provides <b>+1 ❤️ Health</b>;
 
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
@@ -373,6 +375,22 @@ Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release
 Forsaken Village;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+
+Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Lost Possesion;No practical use to a warrior.<br>;
+Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Lost Possesion;Perhaps the special shape is by design.<br>;
+Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Lost Possesion;Dirty and full of holes.<br>;
+Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;
+Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Lost Possesion;Likely belongs to a beautiful girl.<br>;
+Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Lost Possesion;No reason to carry this anywhere.<br>;It's heavy and useless kinda
+Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
+Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
+Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 
 Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
@@ -426,6 +444,7 @@ Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Se
 Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
+Twisted Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Forest Flora;Looks like something is hidden inside.<br>;Ouch! There are sharp thorns
 Twisted Fairyland;🌹;Briar Thicket;Container-2;-1;0;0;0;0;0;Natural Snare;Looks like something is hidden inside.<br>;Got cut by sharp torns
 
@@ -433,10 +452,10 @@ Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce s
 Twisted Fairyland;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Twisted Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
-Twisted Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🗼;Tribal Monument;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
+Twisted Fairyland;🛖;Witch’s Hut;Container-3;0;0;0;-1;0;0;Primitve Housing;Dark herbs hang from the rafters.<br>;
 
 Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
@@ -452,7 +471,8 @@ Twisted Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;Wilderness;Tr
 Twisted Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Twisted Fairyland;🌋;Volcano Throat;Container-5;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
 Twisted Fairyland;🏛️;Ancient Temple;Container-5;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
-Twisted Fairyland;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Twisted Fairyland;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;Massive stones suffered many battles.<br>;
+Twisted Fairyland;🏰;Fallen Fortress;Container-5;0;0;0;0;0;0;Ancient Ruins;Massive stones suffered many battles.<br>;
 Twisted Fairyland;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Twisted Fairyland;🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
