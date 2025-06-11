@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 06/10/25 • 11:43pm"
+var versionCode = "ver. 06/12/25 • 00:05am"
 var initialEncounterOverride=0; //6 skips tutorial, ~38 barrens
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
