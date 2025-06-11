@@ -1125,13 +1125,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Container-Consume":
             isFishing=false;
           case "Trap":
+            logPlayerAction(actionString,"The attack had no effect -1 🟢");
+            displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
+            break;
           case "Trap-Roll":
             logPlayerAction(actionString,"Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
+            isFishing=false;
             nextEncounter();
             break;
 
           case "Trap-Attack": //Attacking causes you damage
+            displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
             playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             break;
 
@@ -1968,7 +1976,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap": //Grabbing triggers the effect
           case "Trap-Roll":
           case "Trap-Attack":
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            var possibleCauseOfDeath=enemyMsg;
+            if (enemyHp<0) possibleCauseOfDeath=possibleCauseOfDeath+" "+enemyHp+" 💔";
+            if (possibleCauseOfDeath=="") possibleCauseOfDeath="Well, that was a big mistake -"+enemyHp+" 💔";
+            playerHit(enemyHp*-1);
+            playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,possibleCauseOfDeath.replaceAll(".",""),true,false);
             break;
 
           case "Undead": //Grabbing is not safe
@@ -2956,7 +2968,8 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     }
   } else if (gainedString=="Might come in handy later.") {
     gainedString="Got cursed by it";
-    if (enemyType.includes("Trap")) gainedString="That was a mistake"
+    if (enemyType.includes("Trap")) gainedString=enemyMsg
+    if (gainedString=="") gainedString="Seems like it was a mistake."
   }
 
   if (enemyMsg != "" && gainedString == "") {
