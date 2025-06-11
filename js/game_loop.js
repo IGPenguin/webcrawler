@@ -126,36 +126,43 @@ function renameCharacter(){
 
 //String generators
 function getFirstName(){
-  const random_names = [
-    "Curious Traveller",
-    "Steady Pathfinder",
-    "Steadfast Drifter",
-    "Tattered Explorer",
-    "Hopeful Seeker",
-    "Calm Wanderer",
-    "Bright Adventurer",
-    "Silent Groom",
-    "Wandering Shade",
-    "Wandering Seeker",
-    "Faded Pilgrim",
-    "Grieving Drifter",
-    "Shadowed Stranger",
-    "Tired Prophet",
-    "Lone Redeemer",
-    "Tattered Nomad",
-    "Forsaken Seeker",
-    "Ashen Nomad",
-    "Lone Prophet",
-    "Nameless Vagrant",
-    "Weary Pilgrim",
-    "Shrouded Drifter",
-    "Silent Outcast",
-    "Forgotten Stranger",
-    "Lost Redeemer",
-    "Wandering Vagabond",
-    "Mourning Seeker",
-    "Veiled Pilgrim"];
-  return random_names[Math.floor(Math.random() * random_names.length)];
+  const random_firstnames = [
+    "Tattered",
+    "Hopeful",
+    "Hopeless",
+    "Lost",
+    "Silent",
+    "Faded",
+    "Grieving",
+    "Shadowed",
+    "Tired",
+    "Lone",
+    "Forsaken",
+    "Ashen",
+    "Nameless",
+    "Weary",
+    "Shrouded",
+    "Forgotten",
+    "Mourning",
+    "Veiled"];
+
+  const random_lastnames = [
+      "Explorer",
+      "Seeker",
+      "Wanderer",
+      "Shade",
+      "Pilgrim",
+      "Drifter",
+      "Stranger",
+      "Prophet",
+      "Redeemer",
+      "Nomad",
+      "Vagrant",
+      "Drifter",
+      "Outcast",
+      "Stranger",
+      "Vagabond"];
+  return random_firstnames[Math.floor(Math.random() * random_firstnames.length)]+" "+random_lastnames[Math.floor(Math.random() * random_lastnames.length)];
 }
 
 function getVitalName(name=playerName){
@@ -187,7 +194,7 @@ function getSorceryName(name=playerName){
 function getCleverName(name=playerName){
   if (name.includes(" ")) return name;
 
-  const random_names = ["Intelligent "+name,"Resolute "+name, "Overthinking "+name, "Clever "+name, "Ambitious "+name, "Curious "+name];
+  const random_names = ["Intelligent "+name,"Resolute "+name, "Thoughful "+name, "Clever "+name, "Ambitious "+name, "Curious "+name];
   return random_names[Math.floor(Math.random() * random_names.length)];
 }
 
