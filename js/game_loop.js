@@ -1754,6 +1754,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
                 if (encounterUsed){
                   logPlayerAction(actionString,"The prayer had no further effect.")
+                  displayPlayerEffect("🤲");
                   displayPlayerCannotEffect();
                   break;
                 }
@@ -1762,7 +1763,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerGainedEffect();
                 isFishing=false
                 encounterUsed=true;
-                nextEncounter();
             }
             break;
 
@@ -3386,9 +3386,13 @@ function adjustEncounterButtons(){
       break;
 
     case "Altar":
+      setButton('button_pray',"🙏 Pray",colorWhite);
       if (!encounterUsed) setButton('button_pray',"🙏 Pray",colorYellow);
       var blade=checkPlayerHasItem(validBlades);
-      if (blade!=""&&enemyHp<0) setButton("button_pray","🩸 Offer",colorRed);
+      if (blade!=""&&enemyHp<0) {
+        setButton("button_pray","🩸 Offer",colorRed);
+        if (encounterUsed) setButton('button_pray',"🩸 Offer",colorWhite);
+      }
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
