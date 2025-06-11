@@ -44,6 +44,7 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
+var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹"])
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙","🐛"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟"];
 
@@ -91,6 +92,7 @@ var lootTotal;
 var randomEncounterIndex;
 var lootEncounterIndex;
 var isFishing = false;
+var encounterUsed=false;
 var seenEncounters = [];
 
 //Globar vars - UIElements
@@ -1728,24 +1730,40 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var isSacrifice = (enemyHp<0)
 
             if (isSacrifice) {
-                if (playerUseItem("🔪","overwritten","overwritten",true,true,false)){
-                  displayEnemyEffect("🩸");
-                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-                  playerHit(0,false,true);
-                  isFishing=false
-                  if (playerHp>0) nextEncounter();
+              var blade=checkPlayerHasItem(validBlades);
+              if (blade!=""){
+                playerLootString+=blade; //Blade is not lost
+                displayEnemyEffect("🩸");
+                playerHit(1,false,true);
+
+                if (encounterUsed){
+                  logPlayerAction(actionString,"The sacrifice had no effect -1 💔")
+                  displayPlayerCannotEffect();
                   break;
                 }
-                logPlayerAction(actionString,"No effect, missing <b>🔪 Blade</b>.")
-                displayPlayerEffect("🤲");
-                displayPlayerCannotEffect();
+
+                playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg+" -1 💔",true,false);
+                playerGainXP(1,10*playerLevel,"");
+
+                isFishing=false
+                encounterUsed=true;
               } else {
+                logPlayerAction(actionString,"No effect, missing a viable <b>🔪 Blade</b>.")
+                displayPlayerCannotEffect();
+              }
+            } else {
+                if (encounterUsed){
+                  logPlayerAction(actionString,"The prayer had no further effect.")
+                  displayPlayerCannotEffect();
+                  break;
+                }
                 playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
                 displayPlayerEffect("✨")
                 displayPlayerGainedEffect();
                 isFishing=false
+                encounterUsed=true;
                 nextEncounter();
-              }
+            }
             break;
 
           default:
@@ -3247,8 +3265,7 @@ function checkPlayerHasItem(itemArray=validBaits){
 //End Game
 function gameOver(silent=false){
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Pet")) enemyMsg="Got killed, ending the adventure.";
-  //if ((enemyMsg=="")||(enemyType=="Undead")||(enemyType=="Trap")||(enemyType=="Trap-Roll")||(enemyType=="Trap-Attack")||(enemyType=="Consumable")||(enemyType=="Pet")||(enemyType.includes("Container"))) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container"))) enemyMsg="Got killed, ending the adventure.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
@@ -3369,8 +3386,9 @@ function adjustEncounterButtons(){
       break;
 
     case "Altar":
-      setButton('button_pray',"🙏 Pray",colorYellow);
-      if (playerLootString.includes("🔪")&&enemyHp<0) document.getElementById('button_pray').innerHTML="🩸 Offer";
+      if (!encounterUsed) setButton('button_pray',"🙏 Pray",colorYellow);
+      var blade=checkPlayerHasItem(validBlades);
+      if (blade!=""&&enemyHp<0) setButton("button_pray","🩸 Offer",colorRed);
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";

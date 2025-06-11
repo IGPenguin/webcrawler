@@ -232,7 +232,6 @@ Forsaken Village;🛢;Sealed Container;Trap-Attack;-4;0;0;0;0;0;Garbage;There mu
 
 Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received.
 Forsaken Village;🌕;Moonlit Shrine;Altar;0;0;0;3;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;Blessed by the moonlight.
-Forsaken Village;🗡️;Bloody Dagger;Altar;-2;0;0;0;0;1;Ritual Place;The blade still drips with blood.<br>;Dealt with the Devil.
 Forsaken Village;📿;Prayer Beads;Altar;0;0;0;1;0;0;Sacred Offering;Each bead is worn smooth by devotion.<br>;Peace in the quiet prayer.
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
@@ -745,7 +744,8 @@ Shrouded Necropolis;💀;Mourning Echo;Curse;-1;0;0;0;0;0;Haunted Spot;A cold wi
 Shrouded Necropolis;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;0;0;0;0;-1;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your heel\ but survived.
 
-Shrouded Necropolis;🌕;Full Moon;Altar;-2;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;
+Shrouded Necropolis;🌕;Full Moon;Altar;-1;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
+Shrouded Necropolis;🌌;Starlight Mural;Altar;0;0;0;0;0;2;Ritual Place;The skies will show you the way.<br>;Recived celestial blessing
 
 Shrouded Necropolis;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
 Shrouded Necropolis;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.

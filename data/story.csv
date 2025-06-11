@@ -10,6 +10,10 @@ Depths of Slumber;🍤;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;<b>A random survival tip</b> came to your mind.<br>n/a;Woke up in the middle of nowhere.
 
 //Debug
+Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
+Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
+
+Forsaken Village;🌕;Full Moon;Altar;-1;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
 
 //Wildland Meadows
 Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
