@@ -44,7 +44,7 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
-var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙"])
+var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙","🐛"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟"];
 
 renewPlayer();
@@ -60,7 +60,7 @@ function renewPlayer(){ //Default values
   playerInt = 1;
   playerXP=0;
   playerLevel=1;
-  playerXPThreshold=200;
+  playerXPThreshold=300;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerLootString = "";
@@ -546,7 +546,7 @@ function loadEncounter(index, fileLines = linesStory){
     case "Undead":
     case "Small":
       if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
-        logAction("💢 ▸ "+enemyEmoji+" Engaged in combat: <b>"+enemyName+"</b>")
+        logAction("💢 ▸ "+enemyEmoji+" Engaged enemy: <b>"+enemyName+"</b>")
       } else {
         logAction("👁️ ▸ "+enemyEmoji+" Spotted a creature: <b>"+enemyName+"</b>")
       }
@@ -572,10 +572,10 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("⁉️ ▸ "+enemyEmoji+" Noticed danger: <b>"+enemyName+"</b>")
       break;
     case "Altar":
-      logAction("👁️ ▸ "+enemyEmoji+" Discovered something: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Discovered shrine: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-      logAction("💭 ▸ "+enemyEmoji+" Approached being: <b>"+enemyName+"</b>")
+      logAction("💭 ▸ "+enemyEmoji+" Approached creature: <b>"+enemyName+"</b>")
       break;
     default:
       if (enemyType.includes("Boss")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
@@ -797,7 +797,7 @@ function redraw(){
 
   playerLevelUIELement = document.getElementById('id_player_level');
   var lvlSymbol= ""
-  if (playerXP>=playerXPThreshold) lvlSymbol="⇡ "
+  if (playerXP>=playerXPThreshold) lvlSymbol="↑ "
   playerLevelUIELement.innerHTML = decorateStatusText("",lvlSymbol+"Level "+playerLevel,colorGold);
 
   var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp);
@@ -1225,7 +1225,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else {
                 logPlayerAction(actionString,"Walked away leaving them behind.");
               }
-
               nextEncounter();
               isFishing=false;
               break;
@@ -2256,8 +2255,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
                 logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 nextEncounter();
+                isFishing=false;
               } else {
                 playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
+                isFishing=false;
                 displayPlayerEffect("✨");
               }
             } else {
@@ -2269,7 +2270,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               displayPlayerCannotEffect();
             }
-            fishing=false;
             break;
 
           case "Death":
@@ -2564,6 +2564,8 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved their insight "
 
   if (procAbilityChance("🎓",100)) gainedXP=parseInt(gainedXP*1.25);
 
+  if ((playerXP+gainedXP)>=playerXPThreshold) logAction(enemyEmoji+" ▸ 🎉 You are ready to <b>level up!</b>")
+
   return parseInt(gainedXP);
 }
 
@@ -2743,7 +2745,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   if (procAbilityChance("🥻",5)){
     var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Curious Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:Stopped to think about the universe.<br>n/a","message:"]
     linesStory.splice(encounterIndex+1,0,philosopherThoughts);
-    logAction("🥻 ▸ <b>💭 Curious Thought</b> came on their mind.")
+    logAction("🥻 ▸ <b>💭 Curious Thought</b> came on your mind.")
   }
 
   if (animateArea) {
