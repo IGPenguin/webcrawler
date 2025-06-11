@@ -879,7 +879,11 @@ Shrouded Vale;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an imm
 Shrouded Vale;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
 Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
-Shrouded Vale;👑;Golden Crown;Item;2;0;0;0;0;0;<b>Artifact</b>;Still carries a trace of grandeur.<br>Provides <b>+2 ❤️ Health</b> and a sense of authority.;Gained a deep sense of authority.
+Shrouded Vale;👑;Golden Crown;Item;3;0;0;0;0;0;<b>Artifact</b>;Still carries a trace of grandeur.<br>Provides <b>+2 ❤️ Health</b> and a sense of authority.;Gained a deep sense of authority.
+Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Vale;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
+
 Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
 Shrouded Vale;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
 Shrouded Vale;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
@@ -898,7 +902,3 @@ Shrouded Vale;👰🏻‍♀️;Wicked Bride;Boss-Spirit;4;1;2;0;6;5;Forgotten L
 Shrouded Vale;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;4;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
 Shrouded Vale;👰🏻;Restless Bride;Boss-Undead;4;3;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
 Shrouded Vale;👰🏻;Pale Bride;Boss-Undead;3;4;1;0;2;0;Forgotten Love;It's eyes are hollow but still accusing.<br>;Failed to find the true love.
-
-Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Vale;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
