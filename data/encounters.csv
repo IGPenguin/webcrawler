@@ -175,36 +175,39 @@ Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Container;Seems to b
 Forsaken Village;🕸️;Spider Cocon;Container;0;0;-1;0;0;0;Minor Inconvenience;Something seems to be stuck in it.<br>;Got some webs on your face
 
 Forsaken Village;🪤;Elaborate Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
-Forsaken Village;🏚️;Long Abandoned Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
+Forsaken Village;🏚️;Abandoned Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
 Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined Building;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;Deserted Building;Wood planks barely hold together.<br>;Entered through the window.
 
-Forsaken Village;🏚️;Big House Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Ruined Family House;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
-Forsaken Village;🏚️;Unsettling Building Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🏚️;Old Neglected House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🏚️;Unsettling Building;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;Deserted Building;The roof has caved in.<br>;Kicked the door open.
+Forsaken Village;🏚️;Collapsed Mill;Container-3;0;0;0;0;0;0;Deserted Building;The wheel still groans in the wind.<br>;Entered through the broken door.
+Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
+Forsaken Village;🏚️;Neglected House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏚️;Unsettling Ruins;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏡;Fancy Garden House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Unlocked the chained door.
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Unlocked the entrance.
 Forsaken Village;🏡;Garden Shed;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Unlocked the front door.
+Forsaken Village;📚;Barred Library;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Pages whisper in the stillness.<br>;Pulled open the heavy door.
 
 Forsaken Village;🎯;Archery Range;Container-4;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
-Forsaken Village;🕰️;Clockhouse Tower;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏫;Town Hall;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏘️;Shady Backalley;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏤;Post Office;Container-4;0;0;0;0;0;0;Deserted Building;Could still have some never delivered letters.<br>;Entered through the cracked door.
+Forsaken Village;🍻;Silent Inn;Container-4;0;0;0;0;0;0;Deserted Building;Empty chairs at empty tables everywhere.<br>;Entered through the window.
 
-Forsaken Village;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;️🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🛕;Cult Monument;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🛠️;Engineering Workshop;Container-5;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.
+Forsaken Village;⚒️;Blacksmith Workshop;Container-5;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.
+Forsaken Village;🎭;Forsaken Theatre;Container-5;0;0;0;0;0;0;Deserted Building;Faded costumes hang like ghosts.<br>;Stepped onto the cracked tiles.
+Forsaken Village;🕰️;Clockhouse Tower;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏫;Town Hall;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🎪;Abandoned Fairground;Container-5;0;0;0;0;0;0;Deserted Building;Bright colors faded to grey.<br>;Wandered into the eerie silence.
+Forsaken Village;🏟️;Forgotten Arena;Container-5;0;0;0;0;0;0;Training Spot;Echoes of cheers linger still.<br>;Wandered into the eerie silence.
 
 Forsaken Village;⛲️;Freshwater Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
@@ -429,22 +432,26 @@ Twisted Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing b
 Twisted Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
-Twisted Fairyland;🎪;Cheftain's Tent;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
 Twisted Fairyland;🗼;Tribal Monument;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
+
+Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
 Twisted Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
 Twisted Fairyland;🗻;Rocky Mountain;Container-4;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
 Twisted Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Twisted Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Twisted Fairyland;🌲;Deep Forest;Container-4;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
+Twisted Fairyland;🛕;Cult Monument;Container-4;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
 Twisted Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Twisted Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Twisted Fairyland;🌋;Volcano Throat;Container-5;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
 Twisted Fairyland;🏛️;Ancient Temple;Container-5;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
-
-Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
-Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Twisted Fairyland;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Twisted Fairyland;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Twisted Fairyland;🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
 Twisted Fairyland;✨;Sparkly Mist;Curse;1;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
 Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark zapped you.
