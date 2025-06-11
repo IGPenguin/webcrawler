@@ -1,4 +1,15 @@
 //Generated
+
+25. Shrouded Necropolis;💀;Rusted Skeleton;Standard;2;2;1;0;-1;0;Restless Bones;Metal rattles in its frame.<br>;Rotten to the bones.
+26. Shrouded Necropolis;👹;Skeletal Brute;Standard;4;2;2;0;-1;0;Restless Bones;Swings with merciless force.<br>;Rotten to the bones.
+
+Shrouded Necropolis;🪶;Obsidian Feather;Item;0;1;0;0;0;0;Mysterious Trinket;Whispers echo within.<br>Provides <b>+1 ⚔️ Damage</b>.;Unearthly shivers.
+Shrouded Necropolis;🪞;Fractured Mirror;Item;0;0;0;3;0;0;Shiny Object;Reflects something sinister.<br>Provides <b>+3 🍀 Luck</b>.;Saw something that wasn't you.
+Shrouded Necropolis;🔮;Crimson Orb;Item;0;0;0;0;0;1;Magical Relic;Pulses with a hidden power.<br>Provides <b>+1 🔵 Mana</b>.;Felt a surge of dark energy.
+
+1. Shrouded Necropolis;🧟‍♀️;Withered Corpse;Undead;2;2;1;0;-1;1;Restless Body;Its skin is paper thin.<br>;Rotten to the bones.
+32. Shrouded Necropolis;🐦;Cursed Raven;Undead;3;1;3;0;1;0;Wild Animal;Caws echo with the dead.<br>;Got both eyes pecked out.
+
 Forsaken Village;🪵;Hidden Cache;Container;0;0;0;0;0;0;Traces of Work;A stash of forgotten goods.<br>;
 Forsaken Village;🍎;Fruit Crate;Container;0;0;0;0;0;0;Natural Resource;Some fruits still look fresh.<br>;
 Forsaken Village;🔮;Covered Shrine;Container;0;0;0;0;0;0;Ritual Place;Offerings still lie within.<br>;
@@ -9,7 +20,6 @@ Forsaken Village;🧊;Icy Puddle;Container;0;0;0;0;0;0;Natural Cover;Crack the i
 Shrouded Necropolis;🔮;Veiled Oracle;Altar;1;0;1;0;0;0;Ritual Place;Whispers guide the soul.<br>;
 Shrouded Necropolis;⚰️;Bone Reliquary;Altar;-1;2;0;0;0;0;Sacred Bones;Silent prayers to the past.<br>;
 Shrouded Necropolis;🌒;Moonlit Shrine;Altar;0;1;2;0;0;0;Ritual Place;Pale light washes over ancient stones.<br>;
-Shrouded Necropolis;🗿;Gloom Idol;Altar;0;0;1;0;1;0;Eternal Witness;Eyes carved from void.<br>;
 Shrouded Necropolis;🔥;Ember Pyre;Altar;0;0;2;0;0;1;Sacrifice Altar;Ashes swirl in the faint glow.<br>;
 Shrouded Necropolis;🌪️;Tempest Spire;Altar;0;0;1;0;1;1;Storm Altar;The wind howls with forgotten rage.<br>;
 Shrouded Necropolis;🪞;Mirror of Regret;Altar;0;0;0;0;1;1;Echoes of Loss;Your reflection is not your own.<br>;

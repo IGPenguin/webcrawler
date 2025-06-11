@@ -256,7 +256,7 @@ Forsaken Village;👁️‍🗨️;Lingering Fear;Curse;0;0;0;0;-1;0;Misfortune;
 Forsaken Village;💀;Memento Mori;Curse;0;0;0;0;-1;0;Misfortune;A constant reminder of mortality.<br>;Lost all hope.
 Forsaken Village;💨;Breath of Dread;Curse;0;0;0;0;-1;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.
 
-Forsaken Village;🕳️;Bottomless Sinkhole;Trap;-10;0;0;0;0;0;Natural Disaster;A deep and treacherous hole.<br>;Fell into the dark depths.
+Forsaken Village;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
 Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit your head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
@@ -348,7 +348,7 @@ Forsaken Village;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacr
 
 Forsaken Village;🩼;Disposed Crutch;Item;1;1;0;0;0;0;Support Tool;Best of both - support and attack power.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 ⚔️ Damage</b>.;This will come in handy!
 Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a makeshift weapon.
-Forsaken Village;🪖;Trench Helmet;Item;2;0;0;0;0;0;Head Protection;Makes one look extremely cool.<br>Provides <b>+2 ❤️ Health</b>;Ready for the spotlight
+Forsaken Village;🪖;Trench Helmet;Item;1;0;0;0;1;0;Head Protection;Neat combination of protection and experience.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Intellect</b>.;Ready for the spotlight
 Forsaken Village;📔;Mythical Tales;Item;0;0;0;0;1;1;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🧠 Intellect and +1 🔵 Mana</b>.;Learned plenty of stuff
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;The ulimate guide with colorful illustrations.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
@@ -503,13 +503,13 @@ Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful war
 Twisted Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
 Twisted Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
 
-Twisted Fairyland;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
-Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on your face
-
+Forsaken Village;🕳️;Bottomless Sinkhole;Trap;-10;0;0;0;0;0;Natural Disaster;A deep and treacherous hole.<br>;Fell into the dark depths.
+Twisted Fairyland;🔥;Spreading Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
 Twisted Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
+Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on your face
 Twisted Fairyland;🪲;Smelly Bug;Trap;-1;0;0;0;0;0;Insect;Its colour suggests against touching.<br>;Horrendous smell filled the air
-Twisted Fairyland;🌵;Pointy Cacti;Trap;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
+Twisted Fairyland;🌵;Pointy Cacti;Trap;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 
 Twisted Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
@@ -795,7 +795,7 @@ Shrouded Vale;🫁;Collapsed Lung;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot rea
 Shrouded Vale;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Shrouded Vale;🌬️;Mourning Echo;Curse;0;0;0;0;-1;0;Haunted Moment;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
 
-Shrouded Vale;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
+Shrouded Vale;🕳️;Dark Maw;Trap-Attack;-10;0;0;0;0;0;Hunger;A void that never ends.<br>;Dragged you in inch by inch.
 Shrouded Vale;🔥;Ember Pit;Trap-Attack;0;0;0;0;-1;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
 
 Shrouded Vale;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
@@ -825,24 +825,33 @@ Shrouded Vale;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;Burrowing Insect;Wings shimme
 Shrouded Vale;🦋;Nocturne Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
 
 Shrouded Vale;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Shrouded Vale;💀;Little Skeleton;Pet;1;1;1;0;2;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
 Shrouded Vale;🐈‍⬛;Black Cat;Pet;2;1;1;3;3;2;Stray Spirit;Stares with unsettling calmness.<br>;
 
 Shrouded Vale;👤;Lost Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
 Shrouded Vale;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
+Shrouded Vale;👤;Echoing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Their presence lingers in the air.<br>;
+Shrouded Vale;🗣️;Whispering Soul;Friend;0;0;0;0;0;0;Hopeless Soul;Their words fade like mist.<br>;
 Shrouded Vale;🤖;Exhausted Golem;Friend⚙️\🔧\🔩\🪛;0;0;0;0;0;0;Hopeless Machine;You can hear its very faint voice.<br>;They gestured "OK" towards you.
 
 Shrouded Vale;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
+Shrouded Vale;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;Restless Bones;Silent guardian of this realm.<br>;
 Shrouded Vale;💀;Skeleton Warrior;Standard;3;3;2;0;-1;0;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
 Shrouded Vale;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Vale;💀;Crypt Guard;Standard;3;3;3;0;-1;0;Restless Bones;Silent watcher of forgotten paths.<br>;
 
 Shrouded Vale;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;
+Shrouded Vale;🧙‍♂️;Fallen Acolyte;Recruit;3;1;0;0;3;1;Forsaken;Eyes glow with an unnatural light.<br>;
 
+Shrouded Vale;🐍;Cursed Serpent;Heavy;3;1;3;0;-1;0;Venomous Predator;Scales glisten in moonlight.<br>;
+Shrouded Vale;🎭;Laughing Mask;Heavy;4;4;2;0;-1;0;Eerie Presence;Eyes seem to follow your every move.<br>;
 Shrouded Vale;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
 Shrouded Vale;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
 Shrouded Vale;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
 
 Shrouded Vale;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
 Shrouded Vale;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
+Shrouded Vale;🦌;Stag Wraith;Swift;3;3;1;0;4;1;Ethereal Beast;Antlers glow with spectral fire.<br>;
 Shrouded Vale;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
 Shrouded Vale;🧟;Animated Dead;Undead;2;2;1;0;-1;1;Restless Body;Better keep your distance.<br>;Rotten to the bones
@@ -851,31 +860,45 @@ Shrouded Vale;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;Restless Body;Still 
 Shrouded Vale;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
 Shrouded Vale;🪰;Necrotic Fly;Undead;1;2;3;0;-1;0;Pestilence;Buzzing wings promise disease.<br>;
 
+Shrouded Vale;🧛‍♀️;Pale Countess;Demon;2;2;1;0;4;0;Humanoid;Moves with deadly grace.<br>;Got their heart ripped out!
+Shrouded Vale;🧛🏽;Noble Vampire;Demon;3;2;1;0;5;0;Humanoid;Eyes glow with hunger.<br>;Got their heart ripped out!
 Shrouded Vale;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got your heart ripped out!
 Shrouded Vale;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got your heart ripped out!
 Shrouded Vale;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got your heart ripped out!
 Shrouded Vale;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
+Shrouded Vale;👺;Haunting Spirit;Demon;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Vale;👺;Dread Spirit;Demon;1;0;0;0;4;2;Eerie Being;A form takes shape in the dark.<br>;
 
+Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
+Shrouded Vale;🦋;Eclipse Moth;Spirit;1;0;1;0;0;1;Eerie Being;Wings glow under the dark.<br>;Dust turned to whispers.
+Shrouded Vale;👁️;Judging Eye;Spirit;2;0;0;0;5;0;All-Seeing;Locks you in a gaze of eternity.<br>;Tore your secrets apart.
 Shrouded Vale;🌪️;Tempest Wraith;Spirit;2;2;2;0;-1;1;Ethereal Storm;Spirals in howling fury.<br>;Torn to pieces by the storm.
 Shrouded Vale;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
-Shrouded Vale;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Vale;🧞‍♂️;Malevolent Genie;Spirit;2;0;0;0;10;4;Magic Creature;Dark wishes bloom on its breath.<br>;
 Shrouded Vale;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
+Shrouded Vale;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
+Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
-Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-2;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-2 🧠 Intellect</b>.;Ewwww...
+Shrouded Vale;👑;Golden Crown;Item;2;0;0;0;0;0;<b>Artifact</b>;Still carries a trace of grandeur.<br>Provides <b>+2 ❤️ Health</b> and a sense of authority.;Gained a deep sense of authority.
+Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
 Shrouded Vale;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
 Shrouded Vale;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
 Shrouded Vale;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
 Shrouded Vale;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
 Shrouded Vale;🗡️;Possesed Dagger;Item;-1;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Accidentaly cut themselves
 
-Shrouded Vale;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
+Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br>Provides <b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
 Shrouded Vale;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Shrouded Vale;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Vale;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Vale;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+Shrouded Vale;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
 
-Shrouded Vale;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;6;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
-Shrouded Vale;👰🏻;Restless Bride;Boss-Undead;4;4;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
+Shrouded Vale;👰🏻‍♀️;Wicked Bride;Boss-Spirit;4;1;2;0;6;5;Forgotten Love;Her wedding dress is stained with rot.<br>;Failed to find the true love.
+Shrouded Vale;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;4;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
+Shrouded Vale;👰🏻;Restless Bride;Boss-Undead;4;3;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
+Shrouded Vale;👰🏻;Pale Bride;Boss-Undead;3;4;1;0;2;0;Forgotten Love;It's eyes are hollow but still accusing.<br>;Failed to find the true love.
+
 Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Vale;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
