@@ -147,21 +147,21 @@ function getFirstName(){
     "Veiled"];
 
   const random_lastnames = [
-      "Explorer",
-      "Seeker",
-      "Wanderer",
-      "Shade",
-      "Pilgrim",
-      "Drifter",
-      "Stranger",
-      "Prophet",
-      "Redeemer",
-      "Nomad",
-      "Vagrant",
-      "Drifter",
-      "Outcast",
-      "Stranger",
-      "Vagabond"];
+    "Explorer",
+    "Seeker",
+    "Wanderer",
+    "Shade",
+    "Pilgrim",
+    "Drifter",
+    "Stranger",
+    "Prophet",
+    "Redeemer",
+    "Nomad",
+    "Vagrant",
+    "Drifter",
+    "Outcast",
+    "Stranger",
+    "Vagabond"];
   return random_firstnames[Math.floor(Math.random() * random_firstnames.length)]+" "+random_lastnames[Math.floor(Math.random() * random_lastnames.length)];
 }
 
