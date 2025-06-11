@@ -1253,8 +1253,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Swift":
-            if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
-              logPlayerAction(actionString,"Walked away leaving them behind.");
+            if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
+              if (enemyAtkBonus<0){
+                playerGainXP(1.5,0,"They let you walk away");
+              } else {
+                logPlayerAction(actionString,"Walked away leaving them behind.");
+              }
               nextEncounter();
               isFishing=false;
               break;
