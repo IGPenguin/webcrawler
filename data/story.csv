@@ -48,21 +48,21 @@ River of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
-//The Mourning Vale
-The Mourning Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-The Mourning Vale;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+//Shrouded Vale
+Shrouded Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Vale;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 
-The Mourning Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-The Mourning Vale;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-The Mourning Vale;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Vale;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Vale;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
-The Mourning Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-The Mourning Vale;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Vale;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 
-The Mourning Vale;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
-The Mourning Vale;🤔;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to acknowledge your sins.<br>You cannot run anymore.;The inner thoughts took over.
-The Mourning Vale;😥;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;All the trying...\ you've corrupted everything!<br>You now remember what you did.;
-The Mourning Vale;😰;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;That forbidden witchery did not go well.<br><b>It is you\ who corrupted the whole world!</b>;
+Shrouded Vale;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Vale;🤔;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to acknowledge your sins.<br>You cannot run anymore.;The inner thoughts took over.
+Shrouded Vale;😥;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;All the trying...\ you've corrupted everything!<br>You now remember what you did.;
+Shrouded Vale;😰;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;That forbidden witchery did not go well.<br><b>It is you\ who corrupted the whole world!</b>;
 
 //Auxiliary Dimension
 Auxiliary Dimension;👾;Stack Overflow;Death;0;0;0;0;0;0;Game End;<b>You just succesfully finished the WebCrawler preview.</b><br>Please\ consider giving feedback via <b>💌 Review</b>.;
