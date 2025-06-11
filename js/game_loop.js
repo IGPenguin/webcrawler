@@ -965,6 +965,8 @@ function redraw(){
       enemyStatusString=decorateStatusText("⁉️","No Details","red");
       //Multi-match
       if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
+      if (enemyType.includes("Container")&&(parseInt(totalMalus)<0)) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
 
       if (enemyType.includes("Consumable")) {
@@ -2788,7 +2790,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;\">Level increased!<p style=\"font-size:14px;\""+decorateStatusText("","New perk available.",colorWhite));
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Level increased!</p><p style=\"font-size:20px;\""+decorateStatusText("","New perk available.",colorWhite));
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
