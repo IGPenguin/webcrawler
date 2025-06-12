@@ -3,8 +3,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 //Wildland Meadows;
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Wildland Meadows;🌿;Dense Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🌼;Flower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
-Wildland Meadows;🌼;Wildflowers Patch;Prop;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
+Wildland Meadows;🌼;Wildflower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
 Wildland Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌺;Blooming Field;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌸;Cherry Orchard;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
@@ -24,6 +23,7 @@ Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Una
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Wildland Meadows;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Wildland Meadows;🕳️;Hidden Hollow;Container;0;0;0;0;0;0;Concealed Stash;A small hole opens beneath your step.<br>;There was something inside.
 Wildland Meadows;🪵;Splintered Wood;Container;-1;0;0;0;0;0;Wooden Snag;Sharp splinters catch at your skin.<br>;Left with small cuts.
 
 Wildland Meadows;🍂;Leaf Pile;Container-2;0;0;0;0;0;0;Natural Cover;Something may be hidden beneath.<br>;
@@ -45,7 +45,6 @@ Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like 
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Wildland Meadows;🌵;Thorny Patch;Trap;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Pricked by thorns\ but kept moving.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-2;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
-Wildland Meadows;🕳️;Hidden Hollow;Trap;-1;0;0;0;0;0;Concealed Drop;A small hole opens beneath your step.<br>;Twisted your ankle.
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
 Wildland Meadows;🪵;Rotting Log;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Softened by time\ but still treacherous.<br>;Sank in and twisted an ankle.
 
