@@ -1,50 +1,21 @@
-//Generated
+//Nominations
+Fishing;🩸;Leech Jar;Item;0;0;1;0;0;0;Creepy Curio;They’re still alive in there.<br>Provides <b>+1 🟢 Energy</b>.;Shivered in disgust.
+Fishing;🍶;Sake Flask;Consumable;0;0;0;0;1;0;Forgotten Drink;Cracked but still watertight.<br>Provides <b>+1 🧠 Intellect</b>.;Took a sip of mystery.
 Fishing;🧿;Evil Eye Charm;Item;0;0;0;0;0;1;Artifact;Ward off curses and ill will.<br>Provides <b>+1 🔵 Mana</b>.;Hung it close to your chest.
-
+Fishing;🎻;Barnacled Violin;Item;0;0;0;0;2;0;Withered Instrument;Music from another time.<br>Provides <b>+2 🧠 Charisma</b>.;Strummed a captivating tune.
 Fishing;🩲;Wet Underwear;Item;0;0;0;0;-1;0;Embarassing Find;Probably belonged to someone else.<br>Provides <b>-1 🍀 Luck</b>.;Why did you even pick this up?
-Twisted Fairyland;🪞;Malevolent Mirror;Item;0;0;0;0;-1;1;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 🍀 Luck</b>.;Reality itself seemed fractured.
-Fishing;🔑;Old Padlock;Item;0;0;0;0;0;0;Junk;Seems to be missing its matching key.<br>;Sank down with the weight of lost secrets.
-Fishing;;Prayer Beads;Item;0;0;0;1;0;0;Spiritual Token;Worn smooth by years of devotion.<br>Provides <b>+1 🧠 Intellect</b>.;The whispers echo in your mind.
-
 Fishing;🩹;Bandage Roll;Item;0;0;0;0;0;0;Basic Aid;Could still be useful in a pinch.<br>;Wound up tighter than before.
-Fishing;🖋️;Broken Quill;Item;0;0;0;0;1;0;Discarded Tool;Ink long gone, stories still remain.<br>Provides <b>+1 🧠 Intellect</b>.;Imagined new tales.
-Fishing;🧣;Tattered Scarf;Item;0;0;0;0;1;0;Faded Garment;Smells faintly of the sea breeze.<br>Provides <b>+1 🧠 Charisma</b>.;Wrapped up in memories.
-Fishing;🪤;Mousetrap;Item;0;1;0;0;0;0;Defensive Tool;Careful where you step.<br>Provides <b>+1 ⚔️ Damage</b>.;Set for a catch.
-Fishing;🧤;Damp Glove;Item;0;0;0;0;1;0;Handwear;Better than nothing.<br>Provides <b>+1 🧠 Charisma</b>.;Slipped your hand in.
+
 Fishing;🎭;Masquerade Mask;Item;0;0;0;0;2;0;Disguise;Looked fancy once upon a time.<br>Provides <b>+2 🧠 Charisma</b>.;Played a different role.
-Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;Junk;Waterlogged and falling apart.<br>;Sifted through for scraps.
-Fishing;🪦;Tiny Tombstone;Item;0;-1;0;0;0;1;Cursed Relic;The name has long faded.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 ❤️ Health</b>.;Whispered promises of eternity.
-Fishing;💧;Glass Flask;Item;1;0;0;0;0;0;Container;Still smells faintly of brine.<br>Provides <b>+1 ❤️ Health</b>.;Sealed some of the sea inside.
-Fishing;🦑;Tiny Squid;Consumable;0;0;0;0;0;0;Seafood;A little bite of the deep.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
-Fishing;🍶;Old Flask;Consumable;0;0;0;0;1;0;Forgotten Drink;Cracked but still watertight.<br>Provides <b>+1 🧠 Intellect</b>.;Took a sip of mystery.
-
-Fishing;🪞;Tarnished Locket;Item;0;0;0;1;0;0;Lost Keepsake;A face once captured inside.<br>Provides <b>+1 🧠 Intellect</b>.;Felt oddly familiar.
-Fishing;🎣;Fisher’s Cap;Item;0;0;0;1;0;0;Headgear;Smells of seaweed and old tales.<br>Provides <b>+1 🧠 Intellect</b>.;Set it snug on your head.
-
 Fishing;🪗;Rusty Harmonica;Item;0;0;0;0;2;0;Musical Junk;Only plays the song of lost sailors.<br>Provides <b>+2 🧠 Charisma</b>.;Played a haunting tune.
-Fishing;🕯️;Wax Candle;Item;0;0;0;0;0;1;Light Source;Barely enough to see by.<br>Provides <b>+1 🔵 Mana</b>.;Lit the dark corners.
-
-Fishing;🦷;Whale Tooth;Item;0;1;0;0;0;0;Rare Find;As sharp as the deep sea's memory.<br>Provides <b>+1 ⚔️ Damage</b>.;Carried a primal power.
-Fishing;🪶;Drenched Feather;Item;0;0;0;0;1;0;Token;Soft to the touch despite the water.<br>Provides <b>+1 🧠 Charisma</b>.;Tickled the senses.
-Fishing;🥄;Bent Spoon;Item;0;0;0;0;1;0;Junk;Curiously deformed by the waves.<br>Provides <b>+1 🧠 Intellect</b>.;Imagined new uses.
-Fishing;🎣;Fisherman's Badge;Item;1;0;0;0;0;0;Medal;Given to the bravest of sea-roamers.<br>Provides <b>+1 ❤️ Health</b>.;Proudly pinned it on.
-Fishing;🪗;Rusty Accordion;Item;0;0;0;0;2;0;Music Relic;Plays a sea shanty from memory.<br>Provides <b>+2 🧠 Charisma</b>.;Breathed new life into old tunes.
 Fishing;📌;Rusty Pin;Item;0;1;0;0;0;0;Scrap Weapon;Sharp enough for mischief.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it somewhere useful.
-Fishing;🛢️;Oil Canister;Item;0;0;0;-1;0;0;Polluted Junk;The black ooze stinks.<br>Provides <b>-1 🍀 Luck</b>.;Hands feel slick.
-Fishing;🩸;Bloodied Cloth;Item;0;0;0;0;-1;1;Cursed Remnant;The stain never washed away.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 🍀 Luck</b>.;Touched the edge of horror.
-Fishing;🧂;Salt Pouch;Item;0;0;1;0;0;0;Seasoning;Still useful, still biting.<br>Provides <b>+1 🟢 Energy</b>.;Added a bit of spice.
-Fishing;🪦;Tiny Coffin;Item;0;-1;0;0;0;1;Cursed Trinket;Who would bury something so small?<br>Provides <b>+1 🔵 Mana</b> for <b>-1 ❤️ Health</b>.;Chilled the spine.
-
-Fishing;🪄;Old Wand;Item;0;0;0;0;0;1;Mystic Relic;Lost a bit of its magic, but not all.<br>Provides <b>+1 🔵 Mana</b>.;Wielded power with caution.
 Fishing;🦷;Piranha Jaw;Item;0;1;0;0;0;0;Toothy Tool;The grin of a river demon.<br>Provides <b>+1 ⚔️ Damage</b>.;Brandished it fiercely.
-Fishing;🎨;Watercolor Palette;Item;0;0;0;1;0;0;Art Tool;The colors might still flow.<br>Provides <b>+1 🧠 Intellect</b>.;Painted a fleeting memory.
 Fishing;🪢;Knotted Rope;Item;0;0;1;0;0;0;Ropework;Knots tell their own story.<br>Provides <b>+1 🟢 Energy</b>.;Untangled some secrets.
 Fishing;🧼;Slippery Soap;Item;0;0;0;0;1;0;Hygiene;Slipped through the fingers.<br>Provides <b>+1 🧠 Charisma</b>.;Sudsy thoughts.
-Fishing;🦪;Giant Clam;Consumable;0;0;0;0;0;0;Seafood;A rare treat of the depths.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+
+//Generated
 Fishing;🦷;Barracuda Tooth;Item;0;1;0;0;0;0;Deadly Trinket;A trophy of the hunt.<br>Provides <b>+1 ⚔️ Damage</b>.;Kept it for good luck.
-Fishing;🎻;Barnacled Violin;Item;0;0;0;0;2;0;Ancient Melody;Music from another time.<br>Provides <b>+2 🧠 Charisma</b>.;Strummed a haunted tune.
 Fishing;🕊️;Message Bottle;Item;0;0;0;0;1;0;Mystery;Contains a forgotten letter.<br>Provides <b>+1 🧠 Intellect</b>.;Imagined the writer.
-Fishing;🩸;Leech Jar;Item;0;0;1;0;0;0;Creepy Curio;They’re still alive in there.<br>Provides <b>+1 🟢 Energy</b>.;Shivered in disgust.
 
 Fishing;💀;Miniature Skull;Item;0;1;0;0;0;0;Dark Curio;Not as lifeless as it seems.<br>Provides <b>+1 ⚔️ Damage</b>.;Whispered dark truths.
 Fishing;🧃;Juice Pouch;Consumable;0;0;0;0;0;0;Refreshment;A burst of sweetness.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;

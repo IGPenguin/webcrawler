@@ -644,7 +644,7 @@ Twisted Fairyland;📜;Magic Scroll;Item;0;0;0;0;0;1;Precious Writing;The letter
 
 Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;
 Twisted Fairyland;🧥;Protective Coat;Item;2;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;
-Twisted Fairyland;👘;Wizard Robe;Item;0;0;0;0;0;2;Accessory;Perfect piece of clothing for casters.<br>Provides <b>+2 🔵 Mana</b>.;
+Twisted Fairyland;🪄;Old Wand;Item;0;0;0;0;0;2;Mystic Relic;Still possesses considerable magical power.<br>Provides <b>+2 🔵 Mana</b>.;Wielded a dangerous power.
 Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
 Twisted Fairyland;🧭;Navigation Compass;Item;0;0;2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b>.;
 Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-2;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;
@@ -656,6 +656,7 @@ Twisted Fairyland;🪇;Painted Maracas;Item;0;0;0;2;0;0;Rythmical Instrument;Sou
 Twisted Fairyland;🪭;Sharp Fan;Item;0;1;0;0;0;0;Inconspicious Weapon;No one would guess it's a deadly weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;
 Twisted Fairyland;🏹;Primitive Bow;Item;0;1;0;0;0;0;Weapon;Standard tool for hunting prey.<br>Provides <b>+1 ⚔️ Damage</b>.;
 Twisted Fairyland;🔥;Dancing Flame;Item;-1;0;0;0;0;2;Dangerous Spell;Strange urge draws hands towards the heat.<br>Provides <b>+2 🔵 Mana</b> for <b>-1 💔 Health</b>;Suffered severe burns!
+Twisted Fairyland;👘;Wizard Robe;Item;0;0;0;0;0;1;Accessory;Perfect piece of clothing for casters.<br>Provides <b>+1 🔵 Mana</b>.;
 Twisted Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;The polished surface reflects energy.<br>Provides <b>+1 🔵 Mana</b>.;Irradiated with magic energy.
 Twisted Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>Provides <b>+1 🔵 Mana</b>.;Embraced the energy surge.
 Twisted Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>Provides <b>+1 🔵 Mana</b>.;Felt strange power surge.
@@ -666,6 +667,7 @@ Twisted Fairyland;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b>
 Twisted Fairyland;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
 Twisted Fairyland;🔪;Twisted Blade;Item;0;1;0;0;-2;0;Ritual Tool;The sacrifical blade demands offering.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;
+Twisted Fairyland;🪞;Malevolent Mirror;Item;0;0;0;0;-1;1;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 🍀 Luck</b>.;Reality itself seemed fractured.
 Twisted Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;Mystical Relic;It's hard to face the horrors of truth.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth
 Twisted Fairyland;🎀;Silly Bowtie;Item;0;0;0;2;-1;0;Accessory;Gives extra luck but looks cringe.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;That looks ridiculous
 Twisted Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under your arm
@@ -678,87 +680,82 @@ Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is li
 Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
-//River of Sorrows
-River of Sorrows;🌫️;Misty Veil;Prop;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;
-River of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the fog.<br>;
-River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
-River of Sorrows;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
-River of Sorrows;🌩️;Distant Lightning;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
-River of Sorrows;🌥️;Gloomy Sky;Prop;0;0;0;0;0;0;Weather Condition;The world feels heavy under clouds.<br>;
-River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
-River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
-River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;
-River of Sorrows;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
-River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
-River of Sorrows;🌈;Brief Rainbow;Prop;0;0;0;0;0;0;Weather Condition;A fleeting promise of peace.<br>;
-River of Sorrows;🌩️;Distant Thunderstorm;Prop;0;0;0;0;0;0;Weather Condition;The storm rumbles in the distance.<br>;
+//Ocean of Sorrows
+Ocean of Sorrows;🌫️;Misty Veil;Prop;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;
+Ocean of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the fog.<br>;
+Ocean of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
+Ocean of Sorrows;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
+Ocean of Sorrows;🌩️;Distant Lightning;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
+Ocean of Sorrows;🌥️;Gloomy Sky;Prop;0;0;0;0;0;0;Weather Condition;The world feels heavy under clouds.<br>;
+Ocean of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
+Ocean of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
+Ocean of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;
+Ocean of Sorrows;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
+Ocean of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
+Ocean of Sorrows;🌈;Brief Rainbow;Prop;0;0;0;0;0;0;Weather Condition;A fleeting promise of peace.<br>;
+Ocean of Sorrows;🌩️;Distant Thunderstorm;Prop;0;0;0;0;0;0;Weather Condition;The storm rumbles in the distance.<br>;
 
-River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
-River of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
-River of Sorrows;📦;Floating Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something of use inside.<br>;Oh\ so this was inside!?
-River of Sorrows;🎁;Festive Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something lovely inside.<br>;Oh\ so this was inside!?
-River of Sorrows;💝;Chocolate Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something sweet inside.<br>;Oh\ so this was inside!?
-River of Sorrows;🛢️;Floating Barrel;Container;0;0;0;0;0;0;Lost Container;Who knows what it holds inside.<br>;The contents were surprising!
+Ocean of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
+Ocean of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
+Ocean of Sorrows;📦;Floating Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something of use inside.<br>;Oh\ so this was inside!?
+Ocean of Sorrows;🎁;Festive Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something lovely inside.<br>;Oh\ so this was inside!?
+Ocean of Sorrows;💝;Chocolate Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something sweet inside.<br>;Oh\ so this was inside!?
+Ocean of Sorrows;🛢️;Floating Barrel;Container;0;0;0;0;0;0;Lost Container;Who knows what it holds inside.<br>;The contents were surprising!
 
-River of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
-River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
-River of Sorrows;️🏝️;Quiet Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;Peaceful place in the middle of nowhere.<br>;Something jumped the hook!
-River of Sorrows;🏖;Lonely Island;Fishing;0;0;0;0;0;0;Piece of Land;Place of rest in the middle of nowhere.<br>;Something jumped the hook!
-River of Sorrows;️🏝️;Little Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
-River of Sorrows;🏖;Chill Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
-River of Sorrows;️🏝️;Palm Island;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
-River of Sorrows;🏖;Shaded Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
+Ocean of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
+Ocean of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
+Ocean of Sorrows;️🏝️;Quiet Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;Peaceful place in the middle of nowhere.<br>;Something jumped the hook!
+Ocean of Sorrows;🏖;Lonely Island;Fishing;0;0;0;0;0;0;Piece of Land;Place of rest in the middle of nowhere.<br>;Something jumped the hook!
+Ocean of Sorrows;️🏝️;Little Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
+Ocean of Sorrows;🏖;Chill Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
+Ocean of Sorrows;️🏝️;Palm Island;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
+Ocean of Sorrows;🏖;Shaded Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
 
-River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
-River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
-River of Sorrows;☁️;Toxic Cloud;Trap;-2;0;1;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
+Ocean of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
+Ocean of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
+Ocean of Sorrows;☁️;Toxic Cloud;Trap;-2;0;1;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 
-River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🦑;Sinister Squidling;Small;1;1;1;0;-1;0;Cephalopod;Wriggles with unsettling energy.<br>;
-River of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
-River of Sorrows;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Ocean of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Ocean of Sorrows;🦑;Sinister Squidling;Small;1;1;1;0;-1;0;Cephalopod;Wriggles with unsettling energy.<br>;
+Ocean of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
+Ocean of Sorrows;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Ocean of Sorrows;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Ocean of Sorrows;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 
-River of Sorrows;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
-River of Sorrows;🐡;Barbed Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly catch!
+Ocean of Sorrows;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
+Ocean of Sorrows;🐡;Barbed Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly catch!
 
-River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
-River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-River of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
+Ocean of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+Ocean of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
+Ocean of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 
-River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
+Ocean of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
 
-River of Sorrows;🌩️;Thunderstorm Entity;Spirit;1;0;0;0;-1;2;Elemental Fury;Eyes crackle with electric hate.<br>;Struck by a lightning bolt.
-River of Sorrows;👤;Drowned Spirit;Spirit;1;1;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
+Ocean of Sorrows;🌩️;Thunderstorm Entity;Spirit;1;0;0;0;-1;2;Elemental Fury;Eyes crackle with electric hate.<br>;Struck by a lightning bolt.
+Ocean of Sorrows;👤;Drowned Spirit;Spirit;1;1;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
 
-River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
-River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Unnatural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
-River of Sorrows;🧃;Juice Box;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a bit little inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-River of Sorrows;🥤;Coke Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-River of Sorrows;🧋;Floating Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;1;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
+Ocean of Sorrows;🍌;Rotten Banana;Consumable;-1;0;1;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
-River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
-River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-River of Sorrows;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
-River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
-River of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
-River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
+Ocean of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
+Ocean of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Ocean of Sorrows;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
+Ocean of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
+Ocean of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
+Ocean of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 
-River of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
-River of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!
-River of Sorrows;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
-River of Sorrows;🥽;Diving Goggles;Item;1;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
-River of Sorrows;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
-River of Sorrows;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
-River of Sorrows;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!
-River of Sorrows;👞;Wet Shoe;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Does not feel right
-River of Sorrows;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-River of Sorrows;📘;Damned Book;Item;-1;0;0;0;0;1;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Pocketed a piece of trash.
-River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
+Ocean of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
+Ocean of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!
+Ocean of Sorrows;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
+Ocean of Sorrows;🥽;Diving Goggles;Item;1;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
+Ocean of Sorrows;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
+Ocean of Sorrows;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
+Ocean of Sorrows;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!
+Ocean of Sorrows;👞;Wet Shoe;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Does not feel right
+Ocean of Sorrows;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Ocean of Sorrows;📘;Damned Book;Item;-1;0;0;0;0;1;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Pocketed a piece of trash.
+Ocean of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 
-River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+Ocean of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 //Shrouded Vale
 Shrouded Vale;💀;Cracked Skull;Prop;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.
@@ -874,6 +871,8 @@ Shrouded Vale;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;Restless Body;Still 
 Shrouded Vale;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
 Shrouded Vale;🪰;Necrotic Fly;Undead;1;2;3;0;-1;0;Pestilence;Buzzing wings promise disease.<br>;
 
+Shrouded Vale;👗;Haunted Dress;Demon;2;1;2;0;-1;0;Animated Object;Probably a side-effect of a spell gone wild.<br>;Embraced the cold
+Shrouded Vale;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat
 Shrouded Vale;🧛‍♀️;Pale Countess;Demon;2;2;1;0;4;0;Humanoid;Moves with deadly grace.<br>;Got their heart ripped out!
 Shrouded Vale;🧛🏽;Noble Vampire;Demon;3;2;1;0;5;0;Humanoid;Eyes glow with hunger.<br>;Got their heart ripped out!
 Shrouded Vale;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got your heart ripped out!
@@ -902,8 +901,7 @@ Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would b
 Shrouded Vale;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
 Shrouded Vale;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
 Shrouded Vale;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
-Shrouded Vale;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
-Shrouded Vale;🗡️;Possesed Dagger;Item;-1;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Accidentaly cut themselves
+Shrouded Vale;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
 
 Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br>Provides <b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
 Shrouded Vale;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity

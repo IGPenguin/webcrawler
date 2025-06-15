@@ -8,7 +8,8 @@ Depths of Slumber;🍤;Floating Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;<b>A random survival tip</b> came to your mind.<br>n/a;Woke up in the middle of nowhere.
 
 //Debug
-Fishing;👒;Lucky Fishing Hat;Item;0;0;0;3;0;0;Signature Look;Originally comes from a goblin fishing event.<br>Provides <b>+3 🍀 Luck</b>.;Feels a bit less serious.
+Fishing;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
+
 
 //Wildland Meadows
 Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
@@ -44,10 +45,10 @@ Twisted Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough for an adventure.<br>;Paddled towards the horizon.
 
-//River of Sorrows
-River of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+//Ocean of Sorrows
+Ocean of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+Ocean of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Ocean of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Shrouded Vale
 Shrouded Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
