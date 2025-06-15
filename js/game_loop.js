@@ -574,7 +574,11 @@ function loadEncounter(index, fileLines = linesStory){
       }
       break;
     case "Consumable":
-      logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
+      if (enemyTeam.includes("Artifact")){
+        logAction("🟠 ▸ "+enemyEmoji+" Discovered artifact: <b>"+enemyName+"</b>")
+      } else {
+        logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
+      }
       break;
     case "Curse":
     case "Trap":
@@ -934,6 +938,30 @@ function redraw(){
       if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
       break;
 
+    case "Consumable":
+      eatColor=colorWhite;
+      enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
+      if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
+        enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+        eatColor=colorRed;
+      }
+      if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
+        enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
+        cardUIElement.style.background=colorDarkBlue;
+        eatColor=colorLightBlue;
+      }
+      if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=2){
+        enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
+        cardUIElement.style.background=colorDarkPurple;
+        eatColor=colorPurple;
+      }
+      if (enemyTeam.includes("Artifact")){
+        enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
+        cardUIElement.style.background=colorDarkOrange;
+        eatColor=colorOrange;
+      }
+      break;
+
     case "Trap":
     case "Trap-Attack":
     case "Trap-Roll":
@@ -979,25 +1007,6 @@ function redraw(){
       if (enemyType.includes("Container")&&(parseInt(totalMalus)<0)) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
 
       if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
-
-      if (enemyType.includes("Consumable")) {
-        eatColor=colorWhite;
-        enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
-        if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
-          enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
-          eatColor=colorRed;
-        }
-        if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
-          enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
-          cardUIElement.style.background=colorDarkBlue;
-          eatColor=colorLightBlue;
-        }
-        if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=2){
-          enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
-          cardUIElement.style.background=colorDarkPurple;
-          eatColor=colorPurple;
-        }
-      }
 
       if (enemyBossType.includes("Boss")){
         enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);

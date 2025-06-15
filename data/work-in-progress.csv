@@ -1,9 +1,8 @@
 //Generated
-Fishing;🦴;Witchbane Necklace;Item;0;0;1;0;0;0;Artifact;Blessed with saint energy!.<br>Provides <b>+1 ⚔️ Damage against 💀 Undead</b>.;Hung it around your neck.
 
 Twisted Fairyland;🪞;Malevolent Mirror;Item;0;0;0;0;-1;1;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 🍀 Luck</b>.;Reality itself seemed fractured.
 Fishing;🔑;Old Padlock;Item;0;0;0;0;0;0;Junk;Seems to be missing its matching key.<br>;Sank down with the weight of lost secrets.
-Fishing;📿;Prayer Beads;Item;0;0;0;1;0;0;Spiritual Token;Worn smooth by years of devotion.<br>Provides <b>+1 🧠 Intellect</b>.;The whispers echo in your mind.
+Fishing;;Prayer Beads;Item;0;0;0;1;0;0;Spiritual Token;Worn smooth by years of devotion.<br>Provides <b>+1 🧠 Intellect</b>.;The whispers echo in your mind.
 
 Fishing;🩹;Bandage Roll;Item;0;0;0;0;0;0;Basic Aid;Could still be useful in a pinch.<br>;Wound up tighter than before.
 Fishing;🖋️;Broken Quill;Item;0;0;0;0;1;0;Discarded Tool;Ink long gone, stories still remain.<br>Provides <b>+1 🧠 Intellect</b>.;Imagined new tales.
@@ -15,7 +14,7 @@ Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;Junk;Waterlogged and falling apart.<br>;
 Fishing;🪦;Tiny Tombstone;Item;0;-1;0;0;0;1;Cursed Relic;The name has long faded.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 ❤️ Health</b>.;Whispered promises of eternity.
 Fishing;💧;Glass Flask;Item;1;0;0;0;0;0;Container;Still smells faintly of brine.<br>Provides <b>+1 ❤️ Health</b>.;Sealed some of the sea inside.
 Fishing;🦑;Tiny Squid;Consumable;0;0;0;0;0;0;Seafood;A little bite of the deep.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
-Fishing;🍶;Old Flask;Item;0;0;0;0;1;0;Forgotten Drink;Cracked but still watertight.<br>Provides <b>+1 🧠 Intellect</b>.;Took a sip of mystery.
+Fishing;🍶;Old Flask;Consumable;0;0;0;0;1;0;Forgotten Drink;Cracked but still watertight.<br>Provides <b>+1 🧠 Intellect</b>.;Took a sip of mystery.
 Fishing;🪞;Tarnished Locket;Item;0;0;0;1;0;0;Lost Keepsake;A face once captured inside.<br>Provides <b>+1 🧠 Intellect</b>.;Felt oddly familiar.
 Fishing;🧿;Evil Eye Charm;Item;0;0;0;0;0;1;Protective Talisman;Ward off curses and ill will.<br>Provides <b>+1 🔵 Mana</b>.;Hung it close to your chest.
 Fishing;🎣;Fisher’s Cap;Item;0;0;0;1;0;0;Headgear;Smells of seaweed and old tales.<br>Provides <b>+1 🧠 Intellect</b>.;Set it snug on your head.

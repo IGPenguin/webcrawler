@@ -12,6 +12,7 @@ Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of h
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
 Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Fishing;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
+Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like nothing before.
 
 Fishing;💍;Engraved Ring;Item;0;0;0;0;-3;3;Artifact;Says "My Precious" on the inside.<br>Provides <b>+3 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.
 
@@ -47,9 +48,6 @@ Fishing;🩲;Wet Underwear;Item;0;0;0;0;-1;0;Embarassing Find;Probably belonged 
 Fishing;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Does not look like it brings luck.<br>;Stuck onto the tip of the weapon.
 Fishing;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;
 
-Fishing;🪱;Drowned Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Fishing;🪱;Tired Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Fishing;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -62,6 +60,12 @@ Fishing;🐬;Friendly Dolphin;Friend;0;0;0;0;1;0;The Clever One;Makes a lot of s
 Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides a very special gift. <br><i>For a price.</i>;Received a special blessing.
 Fishing;🪔;The Floating Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides Instant <b>🎉 Level Up!</b>;
+
+Fishing;🪱;Drowned Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+
+Fishing;🪱;Tired Worm;Item;1;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Fishing;🦑;Tiny Squid;Small;1;0;2;0;0;0;Seafood;A little bite of the deep.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
 
 Fishing;‍🪼;Box Jellyfish;Boss-Swift;1;4;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 Fishing;‍🦈;Shark Nado;Boss-Swift;1;3;2;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
