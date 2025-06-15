@@ -564,11 +564,11 @@ Twisted Fairyland;🦎;Komodo Dragon;Standard;4;2;2;0;-1;0;Massive Lizard;Eyes a
 Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
 
-Twisted Fairyland;🧌;Aged Troll;Recruit;4;2;2;0;1;2;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
-Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;2;3;0;2;2;Twisted Humanoid;Not happy about having a company.<br>;Turned into goulash.
+Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
+Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;Twisted Humanoid;Not happy about having a company.<br>;Turned into goulash.
 Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;3;1;Twisted Humanoid;Searching for a sacrifice victim.<br>;Got your heart ripped out!
-Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;2;2;0;4;2;Twisted Humanoid;Eyes are glowing blue.<br>;Sacrificed to the great evil.
-Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;3;1;0;1;0;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;1;2;0;4;2;Twisted Humanoid;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
 Twisted Fairyland;🦜;Annoying Parrot;Swift;2;2;4;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
@@ -592,11 +592,15 @@ Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;1;0;-1;1;Ethereal Wraith;Glows i
 Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;0;0;1;-1;1;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
 Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;0;0;1;-1;2;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
 
-Twisted Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
-Twisted Fairyland;🦀;Titan Crab;Boss-Heavy;4;3;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
-Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;2;3;2;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+Twisted Fairyland;🧌;Troll Warbringer;Boss-Heavy;4;3;2;0;4;1;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
+Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
+Twisted Fairyland;🦏;Horned Juggernaut;Boss-Heavy;4;4;1;0;4;0;Savage Titan;Nothing survives its charge.<br>;Gored like a ragdoll.
+
+Twisted Fairyland;🦟;Plague Mosquito;Boss-Swift;2;3;3;0;-1;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to a husk.
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Swift;3;4;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
-Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;4;3;1;0;-1;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
+
+Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+Twisted Fairyland;🐃;Mythical Buffalo;Boss-Spirit;1;2;2;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by the spirital horns.
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;

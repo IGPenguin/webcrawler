@@ -29,54 +29,12 @@ Loot;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;Handcarved Curio;Worn by sea and t
 Loot;🧊;Cold Stone;Item;0;0;1;0;0;0;Chill Charm;Cold enough to bite.<br>Provides <b>+1 🟢 Energy</b>.;Pressed it to your forehead.
 Enemy;🦠;Sludge Slime;Creature;1;0;0;0;1;0;Toxic Blob;Saps your energy.<br>Deals <b>1 🟢 Energy</b> penalty.
 
-
 //Generated
-Enemy;🦞;Lobster Knight;Creature;3;0;0;0;0;0;Crustacean Warrior;Clacks his claws.<br>Deals <b>3 ⚔️ Damage</b>.
-Enemy;🐟;Toothy Pike;Creature;2;0;0;0;0;0;River Predator;Sharp bite.<br>Deals <b>2 ⚔️ Damage</b>.
-Enemy;🦦;Slick Mink;Creature;1;0;0;0;1;0;Slippery Thief;Steals small treasures.<br>Steals <b>1 🍀 Luck</b>.
-Enemy;🦑;Void Cuttlefish;Creature;3;0;0;0;0;1;Mystical Ink;Darkens your mind.<br>Deals <b>1 🧠 Intellect</b> penalty.
-Enemy;🦭;Mournful Seal;Creature;2;0;0;0;0;1;Ghostly Song;Weakens the soul.<br>Deals <b>1 ❤️ Health</b> penalty.
-Enemy;🦀;Bone Crab;Creature;2;0;0;0;0;0;Skeletal Shell;Snaps and cracks.<br>Deals <b>2 ⚔️ Damage</b>.
-Enemy;🦐;Ghost Shrimp;Creature;1;0;0;0;0;1;Transparent Haunt;Steals essence.<br>Steals <b>1 🔵 Mana</b>.
 Enemy;🦭;Cursed Walrus;Creature;4;0;0;0;0;0;Heavy Tusk;Crushes with weight.<br>Deals <b>4 ⚔️ Damage</b>.
 Enemy;🐚;Clam Fiend;Creature;1;0;0;0;1;0;Snaps shut on fingers.<br>Deals <b>1 🧠 Intellect</b> penalty.
 
-Friend;🐟;Gentle Koi;Creature;1;0;0;0;0;1;Calm Spirit;Shares peaceful waters.<br>Grants <b>1 🔵 Mana</b>.
-Friend;🦭;Friendly Seal;Creature;2;0;0;0;0;0;Playful Mammal;Cheers you up.<br>Restores <b>1 ❤️ Health</b>.
-Friend;🦦;Helpful Otter;Creature;0;0;1;0;0;0;Nimble Friend;Fetches small things.<br>Grants <b>1 🟢 Energy</b>.
-Friend;🐡;Kind Puffer;Creature;0;0;0;1;0;0;Buoyant Spirit;Brings good luck.<br>Grants <b>1 🍀 Luck</b>.
-Friend;🦑;Wise Squid;Creature;0;0;0;0;1;0;Ink Scholar;Whispers knowledge.<br>Grants <b>1 🧠 Intellect</b>.
-Friend;🦀;Crab Courier;Creature;0;0;0;0;0;1;Scuttling Courier;Delivers small gifts.<br>Grants <b>1 🔵 Mana</b>.
-Friend;🐟;Blue Tang;Creature;0;0;1;0;0;0;Energetic Swimmer;Revives your spirit.<br>Grants <b>1 🟢 Energy</b>.
-Friend;🦭;Singing Walrus;Creature;1;0;0;0;0;0;Melodic Soul;Heals with song.<br>Restores <b>1 ❤️ Health</b>.
-Friend;🦦;Resourceful Mink;Creature;0;0;0;1;0;0;Lucky Find;Brings trinkets.<br>Grants <b>1 🍀 Luck</b>.
-Friend;🦐;Bright Shrimp;Creature;0;0;0;0;1;0;Tiny Spark;Lights up the dark.<br>Grants <b>1 🧠 Intellect</b>.
-Friend;🐟;Darting Minnow;Creature;0;0;1;0;0;0;Swift Companion;Boosts your pace.<br>Grants <b>1 🟢 Energy</b>.
-Friend;🦑;Mirthful Cuttlefish;Creature;0;0;0;1;0;0;Jovial Ink;Draws good fortune.<br>Grants <b>1 🍀 Luck</b>.
-Friend;🦭;Caring Seal;Creature;1;0;0;0;0;0;Warm Embrace;Restores your health.<br>Restores <b>1 ❤️ Health</b>.
-Friend;🦞;Loyal Lobster;Creature;0;0;0;0;0;1;Crustacean Ally;Boosts your magic.<br>Grants <b>1 🔵 Mana</b>.
-Friend;🦀;Guardian Crab;Creature;0;1;0;0;0;0;Protective Shell;Defends you.<br>Grants <b>1 ⚔️ Damage</b>.
-Friend;🦦;Cheerful Otter;Creature;0;0;1;0;0;0;Boundless Energy;Inspires action.<br>Grants <b>1 🟢 Energy</b>.
-Friend;🐟;Wise Salmon;Creature;0;0;0;0;1;0;Ancient Swimmer;Teaches calm.<br>Grants <b>1 🧠 Intellect</b>.
-Friend;🦞;Gentle Lobster;Creature;0;0;0;1;0;0;Lucky Pinch;Brings good tidings.<br>Grants <b>1 🍀 Luck</b>.
-Friend;🦦;Playful Mink;Creature;1;0;0;0;0;0;Warm Friend;Soothes your wounds.<br>Restores <b>1 ❤️ Health</b>.
-Friend;🦀;Moon Crab;Creature;0;0;0;0;0;1;Lunar Blessing;Glows with magic.<br>Grants <b>1 🔵 Mana</b>.
-
-Twisted Fairyland;🦅;Storm Harpy Queen;Boss-Swift;3;4;2;0;4;0;Avian Matriarch;Controls the winds to destroy.<br>;Torn asunder by the storm.
-Twisted Fairyland;🐅;Primeval Tiger;Boss-Heavy;4;4;1;0;5;0;Apex Beast;Eyes blaze with ancient fury.<br>;Ripped in two by primal claws.
 Twisted Fairyland;🦧;Elder Ape King;Boss-Heavy;4;3;2;0;4;0;Monarch of the Jungle;Its howl is a death knell.<br>;Flattened beneath its fists.
-Twisted Fairyland;🦟;Plague Mosquito;Boss-Swift;2;3;3;0;-1;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to a husk.
-Twisted Fairyland;🧌;Troll Warbringer;Boss-Heavy;4;3;2;0;4;1;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
-Twisted Fairyland;🦜;Parrot Prophet;Boss-Spirit;2;2;3;0;3;1;Twisted Oracle;Its cries foretell your doom.<br>;Soul consumed by prophecy.
-Twisted Fairyland;🦏;Horned Juggernaut;Boss-Heavy;5;4;1;0;5;0;Savage Titan;Nothing survives its charge.<br>;Gored like a ragdoll.
 Twisted Fairyland;🦇;Lord of Bats;Boss-Spirit;2;3;2;0;3;1;Vampiric Monarch;Commands the night’s children.<br>;Left a bloodless husk.
-Twisted Fairyland;🦌;Phantom Stag;Boss-Spirit;2;3;1;0;3;1;Spirit Beast;Antlers shimmer with spectral light.<br>;Shattered like glass.
-Twisted Fairyland;👿;Demonic Trickster;Boss-Swift;3;3;3;0;2;1;Sinister Fiend;Laughter echoes through your mind.<br>;Choked on your own fear.
-
-Twisted Fairyland;🧿;Evil Eye Charm;Item;0;0;0;1;0;0;Protective Talisman;Wards off lurking curses.<br>Provides <b>+1 🍀 Luck</b>.;
-Twisted Fairyland;🧴;Mystic Elixir;Item;0;0;1;0;0;0;Potion;A swirling concoction of forest herbs.<br>Provides <b>+1 🟢 Energy</b>.;
-Twisted Fairyland;🪚;Rusty Sawblade;Item;0;1;0;0;-1;0;Tool Weapon;Dangerous but surprisingly effective.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;
-Twisted Fairyland;🪦;Graveflower;Item;0;0;0;1;-1;0;Dark Bloom;Carries a funeral fragrance.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;
 Twisted Fairyland;🪡;Thread of Fate;Item;0;0;0;2;0;0;Mystical Thread;Whispers of destiny woven tight.<br>Provides <b>+2 🍀 Luck</b>.;
 Twisted Fairyland;🔮;Witch's Crystal;Item;0;0;0;0;2;0;Mystical Focus;Glimmers with future sight.<br>Provides <b>+2 🧠 Intellect</b>.;
 Twisted Fairyland;🦷;Beast Fang;Item;0;1;0;0;0;0;Trophy Weapon;Torn from a monstrous maw.<br>Provides <b>+1 ⚔️ Damage</b>.;
@@ -84,33 +42,22 @@ Twisted Fairyland;🪝;Hook of the Damned;Item;0;1;0;-1;0;0;Cursed Tool;Pulled f
 Twisted Fairyland;💀;Mini Skull;Item;0;0;0;-1;1;0;Odd Trinket;Cradles a fragment of ancient knowledge.<br>Provides <b>+1 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;
 Twisted Fairyland;🕯️;Spirit Candle;Item;0;0;0;0;1;0;Mystical Light;Flickers with ethereal flame.<br>Provides <b>+1 🧠 Intellect</b>.;
 
-Twisted Fairyland;🦦;River Otter;Standard;3;2;2;0;2;0;Playful Predator;Eyes sparkle with mischief.<br>;Pulled you under the waves.
-Twisted Fairyland;🦅;Shrieking Harpy;Standard;4;3;2;0;2;0;Feral Predator;Swoops down with claws bared.<br>;Left in pieces among the trees.
-Twisted Fairyland;🦂;Chittering Scorpion;Standard;3;2;1;0;-1;0;Venomous Fiend;Tail ready to sting.<br>;Died in poison agony.
-Twisted Fairyland;🦉;Haunted Owl;Standard;3;2;2;0;2;0;Eerie Animal;Hoots echo in the mists.<br>;Torn apart by its talons.
-Twisted Fairyland;🦡;Ravaging Badger;Standard;4;3;1;0;3;0;Savage Beast;Eyes glare with hunger.<br>;Burrowed right through you.
-
 Twisted Fairyland;🧝‍♂️;Cultist Archer;Recruit;3;2;2;0;2;1;Twisted Humanoid;Loose arrows with disturbing glee.<br>;Filled with arrows.
 Twisted Fairyland;🧙‍♀️;Cultist Witch;Recruit;2;1;3;0;3;1;Twisted Humanoid;Cackles in foul delight.<br>;Lost your soul to her magic.
 Twisted Fairyland;🧟;Ghoul Brute;Recruit;3;3;1;0;1;1;Cursed Creature;Reeking of death and decay.<br>;Ripped limb from limb.
 Twisted Fairyland;🧝‍♂️;Cultist Warlock;Recruit;2;2;3;0;4;2;Twisted Humanoid;Eyes gleam with dark power.<br>;Soul torn asunder.
-
 Twisted Fairyland;🐆;Ghostly Lynx;Swift;3;4;2;0;5;0;Wild Phantom;A silent killer in the mists.<br>;Shredded to ribbons.
 Twisted Fairyland;🦡;Dire Badger;Swift;3;3;2;0;4;0;Savage Beast;Moves with unnatural speed.<br>;Burrowed deep in your flesh.
-Twisted Fairyland;🐍;Viper Swarm;Swift;2;3;2;3;-1;0;Venomous Swarm;Slithers and strikes.<br>;Bled out from hundreds of bites.
-Twisted Fairyland;🦉;Nightshade Owl;Swift;2;3;2;0;2;0;Eerie Predator;Attacks from shadows.<br>;Eyes gouged out.
 Twisted Fairyland;🦇;Bloodthirsty Bat;Swift;2;2;3;0;2;0;Vampiric Fiend;Wings blur in the night.<br>;Drained of every drop.
-
 Twisted Fairyland;🦬;Charging Bison;Heavy;4;4;1;0;5;0;Massive Beast;Thunders forward in fury.<br>;Skull crushed to dust.
 Twisted Fairyland;🐘;Wrathful Mammoth;Heavy;5;3;1;0;5;0;Ancient Beast;A monstrous wall of flesh.<br>;Trampled beneath colossal weight.
 Twisted Fairyland;🦏;Brutal Rhinox;Heavy;4;4;1;0;5;0;Savage Juggernaut;Its horn is its promise of death.<br>;Skewered to the bone.
-
 Twisted Fairyland;👺;Wicked Imp;Demon;2;2;2;0;-1;1;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.
 Twisted Fairyland;👿;Shadow Fiend;Demon;2;1;2;0;1;1;Sinister Shape;Slips between the shadows.<br>;Lost in endless darkness.
 
 Twisted Fairyland;🌫️;Mist Wraith;Spirit;1;1;1;0;-1;1;Ethereal Apparition;Whispers of the dead.<br>;Suffocated in fog.
 Twisted Fairyland;🌠;Celestial Echo;Spirit;1;0;1;1;-1;1;Otherworldly Glimmer;A glint of lost hope.<br>;Erased by stardust.
-Twisted Fairyland;🔥;Will-o’-the-Wisp;Spirit;1;0;0;1;-1;1;Flickering Flame;Dances just out of reach.<br>;Consumed in flame’s embrace.
+Twisted Fairyland;🔥;Will-o’-the-Wisp;Spirit1;0;0;1;-1;1;Flickering Flame;Dances just out of reach.<br>;Consumed in flame’s embrace.
 
 Twisted Fairyland;🌈;Shimmering Veil;Curse;1;0;0;0;0;0;Illusion;Veils your senses in strange lights.<br>;Stepped into false hope.
 Twisted Fairyland;💀;Whispering Skulls;Curse;0;0;-1;0;0;0;Haunting Presence;The skulls sing your name.<br>;Lost part of your soul.
@@ -156,30 +103,18 @@ Twisted Fairyland;🍂;Amber Pond;Fishing;0;0;0;0;0;0;Golden Reflection;Warm glo
 Twisted Fairyland;🦈;Shadowy Fin;Fishing;0;0;0;0;0;0;Dark Predator;Lurking beneath, watching.<br>;Heart raced at the shape.
 Twisted Fairyland;🌟;Fae Ripple;Fishing;0;0;0;0;0;0;Mirrored Waters;The surface shows your wishes.<br>;Met yourself in the ripples.
 
-Twisted Fairyland;💀;Banshee’s Wail;Curse;-1;0;0;0;0;0;Echo of Death;Piercing scream breaks your thoughts.<br>;Ears bleed from the noise.
+Twisted Fairyland;💀;Banshee’s Cry;Curse;-1;0;0;0;0;0;Echo of Death;Piercing scream breaks your thoughts.<br>;Ears bleed from the noise.
 Twisted Fairyland;🌠;Falling Star;Curse;0;0;0;0;0;1;Celestial Omen;A wish granted, at a price.<br>;Sacrificed something dear.
 Twisted Fairyland;🪦;Grave Dust;Curse;-1;0;0;0;0;0;Mourning Ash;The earth’s final breath.<br>;Felt the weight of the grave.
 Twisted Fairyland;🎩;Mischievous Cap;Curse;0;0;0;0;-1;0;Fae Trickery;You can’t remember where you found it.<br>;Lost a piece of yourself.
 Twisted Fairyland;🧚;Pixie Mischief;Curse;0;0;0;0;-1;0;Fae Curse;Laughing voices haunt you.<br>;Lost your way in laughter.
 
-Shrouded Necropolis; - Revenant, lich
-
-25. Shrouded Necropolis;💀;Rusted Skeleton;Standard;2;2;1;0;-1;0;Restless Bones;Metal rattles in its frame.<br>;Rotten to the bones.
-26. Shrouded Necropolis;👹;Skeletal Brute;Standard;4;2;2;0;-1;0;Restless Bones;Swings with merciless force.<br>;Rotten to the bones.
-
 Shrouded Necropolis;🪶;Obsidian Feather;Item;0;1;0;0;0;0;Mysterious Trinket;Whispers echo within.<br>Provides <b>+1 ⚔️ Damage</b>.;Unearthly shivers.
 Shrouded Necropolis;🪞;Fractured Mirror;Item;0;0;0;3;0;0;Shiny Object;Reflects something sinister.<br>Provides <b>+3 🍀 Luck</b>.;Saw something that wasn't you.
 Shrouded Necropolis;🔮;Crimson Orb;Item;0;0;0;0;0;1;Magical Relic;Pulses with a hidden power.<br>Provides <b>+1 🔵 Mana</b>.;Felt a surge of dark energy.
-
-1. Shrouded Necropolis;🧟‍♀️;Withered Corpse;Undead;2;2;1;0;-1;1;Restless Body;Its skin is paper thin.<br>;Rotten to the bones.
-32. Shrouded Necropolis;🐦;Cursed Raven;Undead;3;1;3;0;1;0;Wild Animal;Caws echo with the dead.<br>;Got both eyes pecked out.
-
-Forsaken Village;🪵;Hidden Cache;Container;0;0;0;0;0;0;Traces of Work;A stash of forgotten goods.<br>;
-Forsaken Village;🍎;Fruit Crate;Container;0;0;0;0;0;0;Natural Resource;Some fruits still look fresh.<br>;
-Forsaken Village;🔮;Covered Shrine;Container;0;0;0;0;0;0;Ritual Place;Offerings still lie within.<br>;
-Forsaken Village;🪞;Shattered Mirror;Container;0;0;0;0;0;0;Circumstantial Object;What secrets lie within the shards?<br>;
-Forsaken Village;🪞;Dusty Mirror;Container;0;0;0;0;0;0;Circumstantial Object;Reflects more than the eye can see.<br>;
-Forsaken Village;🧊;Icy Puddle;Container;0;0;0;0;0;0;Natural Cover;Crack the ice to see beneath.<br>;
+Shrouded Necropolis;🧟‍♀️;Withered Corpse;Undead;2;2;1;0;-1;1;Restless Body;Its skin is paper thin.<br>;Rotten to the bones.
+Shrouded Necropolis;🐦‍⬛;Cursed Raven;Undead;3;1;3;0;1;0;Wild Animal;Caws echo with the dead.<br>;Got both eyes pecked out.
+Shrouded Necropolis; - Revenant, lich
 
 Shrouded Necropolis;🔮;Veiled Oracle;Altar;1;0;1;0;0;0;Ritual Place;Whispers guide the soul.<br>;
 Shrouded Necropolis;⚰️;Bone Reliquary;Altar;-1;2;0;0;0;0;Sacred Bones;Silent prayers to the past.<br>;
@@ -203,18 +138,11 @@ Shrouded Necropolis;🪤;Crushing Maw;Trap-Attack;-10;0;0;0;0;0;Stone Trap;Ancie
 Shrouded Necropolis;🧊;Freezing Gloom;Trap-Attack;-1;0;0;0;-1;0;Frostbite;Cold seeps deep into the bones.<br>;
 Shrouded Necropolis;🦴;Bone Lure;Trap-Attack;0;0;0;0;-1;0;False Comfort;A promise of warmth—then nothing.<br>;
 
-Forsaken Village;🦢;Mystic Swan;Friend;0;0;0;2;1;0;Enigmatic Guide;A serene presence calming the mind.<br>;Found fleeting peace.
-Forsaken Village;🦔;Prickly Pal;Friend🧸\🍖;1;0;0;0;1;0;Quirky Animal;Tough to hold but endearing.<br>;Became fast friends!
-Forsaken Village;🦌;Elusive Stag;Friend;0;0;0;1;1;0;Sacred Creature;Its eyes see beyond.<br>;A bond was forged.
-Forsaken Village;🦇;Little Batling;Friend;1;0;0;0;0;0;Gentle Critter;Curious about your scent.<br>;Gained a tiny companion.
 Forsaken Village;🕊️;Pale Dove;Friend;0;0;0;1;0;0;Peaceful Bird;A symbol of fleeting hope.<br>;Blessed by purity.
 Forsaken Village;🧙;Wandering Hermit;Friend;0;1;0;0;1;0;Wise Elder;Mumbles truths only he knows.<br>;Shared cryptic advice.
 Forsaken Village;🪷;Spirit of the Lotus;Friend;0;0;0;1;1;0;Mystical Entity;A fragrant presence soothes the soul.<br>;A moment of harmony.
-Forsaken Village;🦚;Ornate Peacock;Friend;1;0;0;0;1;0;Proud Creature;Spreads its beauty proudly.<br>;Admired in awe.
-Forsaken Village;🦦;Merry Otter;Friend🧸\🍖;1;0;1;0;0;0;Playful Companion;Wants to share a fishy snack.<br>;Laughed together.
-Forsaken Village;👻;Restless Ghost;Friend;0;0;0;0;1;0;Lingering Soul;Yearns for understanding.<br>;Shared a haunting tale.
 
-Forsaken Village;🦂;Venomous Widow;Swift;1;2;1;0;-1;0;Extremely Venomous;Her sting brings endless sleep.<br>;Poisoned from within.
+Forsaken Village;🕷️;Venomous Widow;Swift;1;2;1;0;-1;0;Extremely Venomous;Her sting brings endless sleep.<br>;Poisoned from within.
 Forsaken Village;🐍;Silent Viper;Swift;1;2;1;0;-1;0;Deadly Serpent;Coils for a final embrace.<br>;Died in silent agony.
 Forsaken Village;🦨;Rabid Skunk;Swift;2;1;2;0;1;0;Wild Animal;Smells of madness and death.<br>;Choked by rancid fumes.
 Forsaken Village;🦇;Frenzied Bat;Swift;1;2;1;0;-1;0;Bloodsucker;Wings flutter in manic hunger.<br>;Bled dry under the moon.
@@ -225,8 +153,6 @@ Forsaken Village;🦨;Horrid Skunk;Swift;2;1;2;0;1;0;Wild Animal;A pestilence in
 Forsaken Village;🦔;Prickled Fury;Swift;1;1;1;0;-1;0;Dangerous Critter;Sharp defense bristling.<br>;Skewered on the spot.
 Forsaken Village;🪣;Possessed Bucket;Swift;1;1;1;0;-1;0;Cursed Object;Swallowed all within.<br>;Drowned in darkness.
 
-Forsaken Village;🧊;Icy Puddle;Container;0;0;0;0;0;0;Natural Cover;Crack the ice to see beneath.<br>;
-Forsaken Village;🗡️;Bloody Dagger;Altar;-2;0;0;0;0;1;Ritual Place;The blade still drips with blood.<br>;Dealt with the Devil.
 Wildland Meadows;🧣;Petal Wrap;Item;0;0;1;1;0;0;Woven Scarf;Stitched from meadow blooms<br>+1 Stamina🟢\\+1 Luck🍀\\fades in sunlight.;Nostalgia brushes your cheek.
 Forsaken Village;🕯️;Wax Charm;Item;0;1;0;0;0;1;Soft Fetish;Melted edges shaped like a face<br>+1 Attack⚔️\\+1 Magic🔵\\-1 Luck🍀;Warmth seeps into your bones.
 Twisted Fairyland;🎀;Lace Collar;Item;0;0;0;1;1;0;Tattered Frill;Once part of something finer<br>+1 Luck🍀\\+1 Intellect🧠\\itchy at the throat.;It tickles slightly.
@@ -239,7 +165,6 @@ Twisted Fairyland;🎀;Lace Collar;Item;0;0;0;1;1;0;Tattered Frill;Once part of 
 River of Sorrows;🖋️;Ink Feather;Item;0;0;0;0;2;0;Quill Relic;The tip is still wet<br>+2 Intellect🧠\\stains everything it touches.;You hear faint scribbling.
 Afflicted Necropolis;🪓;Rust Hatchet;Item;1;1;0;0;0;0;Cracked Tool;Handle bound with old sinew<br>+1 Health❤️\\+1 Attack⚔️\\-1 Magic🔵;It thirsts in your hand.
 Shrouded Court;👑;Veil Pin;Item;0;0;1;0;0;1;Gilded Spike;Still holds a curled hair<br>+1 Stamina🟢\\+1 Magic🔵\\-1 Intellect🧠;The metal gleams hungrily.
-
 
 River of Sorrows;‍🦦;Playful Otter;Pet;1;0;2;2;1;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
 River of Sorrows;‍🐳;Silly Willy;Heavy;4;0;1;0;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
