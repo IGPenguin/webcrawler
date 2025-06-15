@@ -1,10 +1,16 @@
 //Nominations
+Loot;🧷;Safety Pin;Item;0;1;0;0;0;0;Tool;It can hold things together.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it in your belt.
+Loot;🪶;Seabird Feather;Item;0;0;0;1;0;0;Lightweight Trinket;Soft as a dream.<br>Provides <b>+1 🍀 Luck</b>.;Tucked it in your hat.
+Fishing;🌸;Dried Petals;Item;0;0;0;0;1;0;Faded Scent;Still faintly fragrant.<br>Provides <b>+1 🧠 Charisma</b>.;Dreamt of spring.
+
 Fishing;🩸;Leech Jar;Item;0;0;1;0;0;0;Creepy Curio;They’re still alive in there.<br>Provides <b>+1 🟢 Energy</b>.;Shivered in disgust.
 Fishing;🍶;Sake Flask;Consumable;0;0;0;0;1;0;Forgotten Drink;Cracked but still watertight.<br>Provides <b>+1 🧠 Intellect</b>.;Took a sip of mystery.
 Fishing;🧿;Evil Eye Charm;Item;0;0;0;0;0;1;Artifact;Ward off curses and ill will.<br>Provides <b>+1 🔵 Mana</b>.;Hung it close to your chest.
 Fishing;🎻;Barnacled Violin;Item;0;0;0;0;2;0;Withered Instrument;Music from another time.<br>Provides <b>+2 🧠 Charisma</b>.;Strummed a captivating tune.
 Fishing;🩲;Wet Underwear;Item;0;0;0;0;-1;0;Embarassing Find;Probably belonged to someone else.<br>Provides <b>-1 🍀 Luck</b>.;Why did you even pick this up?
 Fishing;🩹;Bandage Roll;Item;0;0;0;0;0;0;Basic Aid;Could still be useful in a pinch.<br>;Wound up tighter than before.
+Fishing;🗿;Mini Totem;Item;0;0;0;0;0;1;Ancient Relic;Carved by ancient hands.<br>Provides <b>+1 🔵 Mana</b>.;Held it close to your chest.
+Fishing;🎐;Wind Chime;Item;0;0;0;0;0;1;Soothing Talisman;Music of the breeze.<br>Provides <b>+1 🔵 Mana</b>.;Felt a sense of calm.
 
 Fishing;🎭;Masquerade Mask;Item;0;0;0;0;2;0;Disguise;Looked fancy once upon a time.<br>Provides <b>+2 🧠 Charisma</b>.;Played a different role.
 Fishing;🪗;Rusty Harmonica;Item;0;0;0;0;2;0;Musical Junk;Only plays the song of lost sailors.<br>Provides <b>+2 🧠 Charisma</b>.;Played a haunting tune.
@@ -13,84 +19,18 @@ Fishing;🦷;Piranha Jaw;Item;0;1;0;0;0;0;Toothy Tool;The grin of a river demon.
 Fishing;🪢;Knotted Rope;Item;0;0;1;0;0;0;Ropework;Knots tell their own story.<br>Provides <b>+1 🟢 Energy</b>.;Untangled some secrets.
 Fishing;🧼;Slippery Soap;Item;0;0;0;0;1;0;Hygiene;Slipped through the fingers.<br>Provides <b>+1 🧠 Charisma</b>.;Sudsy thoughts.
 
-//Generated
-Fishing;🦷;Barracuda Tooth;Item;0;1;0;0;0;0;Deadly Trinket;A trophy of the hunt.<br>Provides <b>+1 ⚔️ Damage</b>.;Kept it for good luck.
-Fishing;🕊️;Message Bottle;Item;0;0;0;0;1;0;Mystery;Contains a forgotten letter.<br>Provides <b>+1 🧠 Intellect</b>.;Imagined the writer.
-
-Fishing;💀;Miniature Skull;Item;0;1;0;0;0;0;Dark Curio;Not as lifeless as it seems.<br>Provides <b>+1 ⚔️ Damage</b>.;Whispered dark truths.
-Fishing;🧃;Juice Pouch;Consumable;0;0;0;0;0;0;Refreshment;A burst of sweetness.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Fishing;🌸;Dried Petals;Item;0;0;0;0;1;0;Faded Scent;Still faintly fragrant.<br>Provides <b>+1 🧠 Charisma</b>.;Dreamt of spring.
-Fishing;🗡️;Hidden Blade;Item;0;2;0;0;0;0;Stealth Weapon;Compact but deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Felt strangely safe.
-Fishing;🪣;Sea Foam Jar;Item;0;0;0;0;0;1;Curio;A sample of ocean's breath.<br>Provides <b>+1 🔵 Mana</b>.;Breath of the sea itself.
-Fishing;📘;Wet Almanac;Item;0;0;0;0;1;0;Knowledge;Barely legible but still valuable.<br>Provides <b>+1 🧠 Intellect</b>.;Learned something new.
-Fishing;🩰;Lost Ballet Shoe;Item;0;0;0;1;0;0;Dancer’s Memory;It’s seen better days.<br>Provides <b>+1 🧠 Intellect</b>.;Spun with ghostly grace.
-Fishing;🐡;Pufferfish Snack;Consumable;0;0;0;0;0;0;Seafood;Handle with care.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Fishing;🦴;Bone Fragment;Item;0;1;0;0;0;0;Ancient Remains;Whispers of a long-gone era.<br>Provides <b>+1 ⚔️ Damage</b>.;Bound to the past.
-Fishing;🎩;Fancy Hat;Item;0;0;0;0;2;0;Stylish Accessory;Salt-stained but dashing.<br>Provides <b>+2 🧠 Charisma</b>.;Felt rather dapper.
-
-Fishing;🪺;Bird’s Nest;Item;0;0;1;0;0;0;Nature’s Craft;Woven with care and purpose.<br>Provides <b>+1 🟢 Energy</b>.;Held a spark of life.
-Fishing;🎐;Wind Chime;Item;0;0;0;0;0;1;Soothing Talisman;Music of the breeze.<br>Provides <b>+1 🔵 Mana</b>.;Felt a sense of calm.
-Fishing;🦐;River Shrimp;Consumable;0;0;0;0;0;0;Seafood;Freshly caught snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Fishing;🦪;Polished Pearl;Item;0;0;1;0;0;0;Treasure;Smooth and luminous.<br>Provides <b>+1 🟢 Energy</b>.;Felt a spark of wonder.
-Fishing;💧;Sea Gem;Item;0;0;0;0;0;1;Ocean Jewel;Gleams with hidden power.<br>Provides <b>+1 🔵 Mana</b>.;Cradled a piece of the deep.
-Fishing;🎒;Waterlogged Pack;Item;0;0;0;0;1;0;Traveling Gear;Heavy but worth it.<br>Provides <b>+1 🧠 Intellect</b>.;Found small treasures within.
-Fishing;🗿;Mini Totem;Item;0;0;0;0;0;1;Ancient Relic;Carved by ancient hands.<br>Provides <b>+1 🔵 Mana</b>.;Held it close to your chest.
-Fishing;🐠;Golden Guppy;Consumable;0;0;0;0;0;0;Rare Fish;A prize from the deep.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;Tasted rare delight.
-
-Loot;🗡️;Worn Cutlass;Item;0;2;0;0;0;0;Weapon;A relic from the high seas.<br>Provides <b>+2 ⚔️ Damage</b>.;Swung it with gusto.
-Loot;🔮;Mystic Orb;Item;0;0;0;0;0;2;Artifact;It whispers ancient secrets.<br>Provides <b>+2 🔵 Mana</b>.;Held a gateway to the unknown.
-Loot;👑;Broken Crown;Item;1;0;0;0;0;0;Lost Heirloom;Once symbolized power.<br>Provides <b>+1 ❤️ Health</b>.;Wore it for a moment of glory.
-Loot;🔔;Rusty Bell;Item;0;0;0;1;-1;0;Forgotten Relic;A haunting echo remains.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Chimed in the dark.
 Loot;🔗;Shattered Shackles;Item;0;0;1;0;0;0;Freedom Relic;Echoes of past captivity.<br>Provides <b>+1 🟢 Energy</b>.;Felt the chains of the past.
-Loot;🍸;Old Flask;Item;0;0;0;0;1;0;Liquid Courage;The taste of old spirits.<br>Provides <b>+1 🧠 Intellect</b>.;Burned on the way down.
-Loot;🔦;Flickering Lantern;Item;0;0;0;0;0;1;Dim Light;Barely illuminates the night.<br>Provides <b>+1 🔵 Mana</b>.;Guided by faint glow.
 Loot;🌿;Herbal Poultice;Consumable;1;0;0;0;0;0;Natural Remedy;Mends minor wounds.<br>Restores <b>❤️ Health</b>.
 Loot;🪞;Cracked Mirror;Item;0;0;0;-1;1;0;Disturbing Reflection;Reveals a hidden truth.<br>Provides <b>+1 🧠 Intimidation</b> for <b>-1 🍀 Luck</b>.;Shuddered at the sight.
 Loot;🐚;Conch Shell;Item;0;0;1;0;0;0;Sea's Voice;Still carries an echo.<br>Provides <b>+1 🟢 Energy</b>.;Whispered a song of the sea.
-Loot;🧿;Evil Eye Charm;Item;0;-1;0;0;0;0;Superstitious Relic;Seems to repel misfortune.<br>Provides <b>-1 🍀 Luck</b>.;Hung it around your neck.
 Loot;🪝;Fish Hook;Item;0;1;0;0;0;0;Fisherman's Tool;Simple, but effective.<br>Provides <b>+1 ⚔️ Damage</b>.;Caught more than fish.
-Loot;🧤;Wet Gloves;Item;0;0;0;1;0;0;Handwear;Provides modest comfort.<br>Provides <b>+1 🍀 Luck</b>.;Dried them by the fire.
-Loot;🧣;Frayed Scarf;Item;0;0;0;0;1;0;Worn Garment;Once kept someone warm.<br>Provides <b>+1 🧠 Intellect</b>.;Wrapped around the neck.
 Loot;🌙;Moonstone;Item;0;0;0;0;0;1;Lunar Gem;Gleams with quiet light.<br>Provides <b>+1 🔵 Mana</b>.;Felt strangely at peace.
-Loot;💡;Stray Bulb;Item;0;0;0;0;0;0;Curiosity;Dim but persistent glow.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 ❤️ Health</b>.;Burned a bit to hold.
-Loot;🎩;Top Hat;Item;0;0;0;1;0;0;Foppish Accessory;For the distinguished.<br>Provides <b>+1 🍀 Luck</b>.;Tipped it with a flourish.
-Loot;🧵;Silver Thread;Item;0;0;1;0;0;0;Unusual Material;Delicate yet resilient.<br>Provides <b>+1 🟢 Energy</b>.;Wove it into your coat.
-Loot;🎻;Broken Violin;Item;0;0;0;-1;1;0;Haunting Tune;It still hums with memories.<br>Provides <b>+1 🧠 Intimidation</b> for <b>-1 🍀 Luck</b>.;Played a ghostly note.
-Loot;🧪;Sea Elixir;Consumable;0;0;0;0;0;0;Potion;Tastes of salt and promise.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
-Loot;🧷;Safety Pin;Item;0;1;0;0;0;0;Tool;It can hold things together.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it in your belt.
-Loot;🪶;Seabird Feather;Item;0;0;0;1;0;0;Lightweight Trinket;Soft as a dream.<br>Provides <b>+1 🍀 Luck</b>.;Tucked it in your hat.
 Loot;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;Handcarved Curio;Worn by sea and time.<br>Provides <b>+1 ❤️ Health</b>.;Clutched it in a memory.
-Loot;🧲;Magnetized Nail;Item;0;1;0;0;0;0;Curious Tool;Sticks to iron.<br>Provides <b>+1 ⚔️ Damage</b>.;Used it for defense.
-Loot;🪦;Grave Marker;Item;0;0;0;-1;1;0;Forgotten Stone;Etched with old names.<br>Provides <b>+1 🧠 Intimidation</b> for <b>-1 🍀 Luck</b>.;Paid silent respects.
-Loot;🧃;Soggy Fruit Juice;Consumable;0;0;0;0;0;0;Drink;Tastes of brine and sweetness.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
-Loot;🪙;Old Coin;Item;0;0;0;1;0;0;Lucky Find;Might be worth a fortune.<br>Provides <b>+1 🍀 Luck</b>.;Pocketed with delight.
-Loot;📿;Prayer Beads;Item;0;0;0;0;1;0;Quiet Devotion;Worn smooth by fingers.<br>Provides <b>+1 🧠 Intellect</b>.;Murmured an old prayer.
-Loot;🎺;Broken Horn;Item;0;0;0;1;0;0;Forgotten Instrument;Can still make a noise.<br>Provides <b>+1 🍀 Luck</b>.;Tooted triumphantly.
-Loot;🕯️;Melted Candle;Item;0;0;0;0;0;1;Dim Light;Barely flickers but persists.<br>Provides <b>+1 🔵 Mana</b>.;Lit it in the dark.
-Loot;🧂;Salt Shaker;Item;0;0;1;0;0;0;Kitchen Essential;Lost from a picnic basket.<br>Provides <b>+1 🟢 Energy</b>.;Sprinkled on a snack.
-Loot;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Could still cut through wood.<br>Provides <b>+1 ⚔️ Damage</b>.;Hauled it home.
-Loot;🍬;Wrapped Candy;Consumable;1;0;0;0;0;0;Sweet Treat;A sticky delight.<br>Restores <b>❤️ Health</b>.
 Loot;🧊;Cold Stone;Item;0;0;1;0;0;0;Chill Charm;Cold enough to bite.<br>Provides <b>+1 🟢 Energy</b>.;Pressed it to your forehead.
-Loot;🪕;Broken Banjo;Item;0;0;0;0;1;0;Twangy Relic;Strains with ghostly music.<br>Provides <b>+1 🧠 Intellect</b>.;Plucked a string.
-Loot;🎯;Tattered Dart;Item;0;1;0;0;0;0;Sharp Object;Good for precision.<br>Provides <b>+1 ⚔️ Damage</b>.;Flicked it for fun.
-Loot;🎨;Worn Palette;Item;0;0;0;0;0;1;Colorful Smears;Still vibrant in places.<br>Provides <b>+1 🔵 Mana</b>.;Smeared it around.
-Loot;🪨;Smooth Pebble;Item;1;0;0;0;0;0;Nature's Touch;Warm and comforting.<br>Provides <b>+1 ❤️ Health</b>.;Rolled it in your palm.
-Loot;🪣;Old Bucket;Item;0;0;0;1;0;0;Useful Junk;Holds more than water.<br>Provides <b>+1 🍀 Luck</b>.;Carried it along.
-Loot;🪴;Seaweed Pot;Item;0;0;1;0;0;0;Aquatic Herb;Still green and fresh.<br>Provides <b>+1 🟢 Energy</b>.;Wrapped around your neck.
-Loot;🔨;Bent Hammer;Item;0;1;0;0;0;0;Tool of Force;Still packs a punch.<br>Provides <b>+1 ⚔️ Damage</b>.;Swung it carelessly.
-Loot;🧺;Waterlogged Basket;Item;0;0;0;1;0;0;Fishing Junk;Used to carry fish.<br>Provides <b>+1 🍀 Luck</b>.;Sloshed with water.
-Loot;🍯;Sticky Honey Jar;Consumable;1;0;0;0;0;0;Sweet Sustenance;Golden delight.<br>Restores <b>❤️ Health</b>.
-
-Enemy;🦈;Shark Pup;Creature;3;0;0;0;0;0;Beast;Small but aggressive.<br>Deals <b>3 ⚔️ Damage</b>.
-Enemy;🦑;Ink Squid;Creature;1;0;0;0;2;0;Aquatic Terror;Blinds you with ink.<br>Steals <b>2 🔵 Mana</b>.
-Enemy;🦀;Crab Thief;Creature;2;1;0;0;0;0;Crustacean Crook;Snips at your toes.<br>Steals <b>1 🍀 Luck</b>.
-Enemy;🐡;Pufferfish;Creature;1;0;0;0;1;0;Defensive Swell;Poisons with a spike.<br>Deals <b>1 ⚔️ Damage</b> and <b>1 🧠 Intellect</b> penalty.
-Enemy;🐍;Sea Serpent;Creature;4;0;0;0;0;0;Serpentine Predator;Strikes without warning.<br>Deals <b>4 ⚔️ Damage</b>.
 Enemy;🦠;Sludge Slime;Creature;1;0;0;0;1;0;Toxic Blob;Saps your energy.<br>Deals <b>1 🟢 Energy</b> penalty.
-Enemy;🦂;Reef Scorpion;Creature;2;0;0;0;0;1;Venomous Sting;Poisons your mind.<br>Deals <b>1 🧠 Intellect</b> penalty.
-Enemy;🦦;Furious Otter;Creature;2;0;0;0;0;0;Angry Rodent;Bites with fury.<br>Deals <b>2 ⚔️ Damage</b>.
-Enemy;🐙;Cursed Octopus;Creature;2;0;0;0;1;1;Tentacled Wraith;Steals your breath.<br>Deals <b>1 ❤️ Health</b> penalty and <b>1 🔵 Mana</b> penalty.
-Enemy;🦐;Shrimp Swarm;Creature;1;1;0;0;0;0;Tiny Menace;Pincer swarm.<br>Deals <b>1 ⚔️ Damage</b>.
+
+
+//Generated
 Enemy;🦞;Lobster Knight;Creature;3;0;0;0;0;0;Crustacean Warrior;Clacks his claws.<br>Deals <b>3 ⚔️ Damage</b>.
 Enemy;🐟;Toothy Pike;Creature;2;0;0;0;0;0;River Predator;Sharp bite.<br>Deals <b>2 ⚔️ Damage</b>.
 Enemy;🦦;Slick Mink;Creature;1;0;0;0;1;0;Slippery Thief;Steals small treasures.<br>Steals <b>1 🍀 Luck</b>.
@@ -100,7 +40,7 @@ Enemy;🦀;Bone Crab;Creature;2;0;0;0;0;0;Skeletal Shell;Snaps and cracks.<br>De
 Enemy;🦐;Ghost Shrimp;Creature;1;0;0;0;0;1;Transparent Haunt;Steals essence.<br>Steals <b>1 🔵 Mana</b>.
 Enemy;🦭;Cursed Walrus;Creature;4;0;0;0;0;0;Heavy Tusk;Crushes with weight.<br>Deals <b>4 ⚔️ Damage</b>.
 Enemy;🐚;Clam Fiend;Creature;1;0;0;0;1;0;Snaps shut on fingers.<br>Deals <b>1 🧠 Intellect</b> penalty.
-Enemy;🦐;Sea Phantom;Creature;3;0;0;0;0;1;Haunting Whisper;Feeds on your fear.<br>Deals <b>1 🧠 Intellect</b> penalty and <b>1 ❤️ Health</b> penalty.
+
 Friend;🐟;Gentle Koi;Creature;1;0;0;0;0;1;Calm Spirit;Shares peaceful waters.<br>Grants <b>1 🔵 Mana</b>.
 Friend;🦭;Friendly Seal;Creature;2;0;0;0;0;0;Playful Mammal;Cheers you up.<br>Restores <b>1 ❤️ Health</b>.
 Friend;🦦;Helpful Otter;Creature;0;0;1;0;0;0;Nimble Friend;Fetches small things.<br>Grants <b>1 🟢 Energy</b>.

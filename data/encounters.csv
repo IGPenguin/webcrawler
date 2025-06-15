@@ -505,11 +505,13 @@ Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful war
 Twisted Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
 Twisted Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
 
-Forsaken Village;🕳️;Bottomless Sinkhole;Trap;-10;0;0;0;0;0;Natural Disaster;A deep and treacherous hole.<br>;Fell into the dark depths.
+Twisted Fairyland;🔥;The Eternal Flame;Upgrade;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
+
+Twisted Fairyland;🕳️;Bottomless Sinkhole;Trap;-10;0;0;0;0;0;Natural Disaster;A deep and treacherous hole.<br>;Fell into the dark depths.
 Twisted Fairyland;🔥;Spreading Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
 Twisted Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
-Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on your face
+Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
 Twisted Fairyland;🪲;Smelly Bug;Trap;-1;0;0;0;0;0;Insect;Its colour suggests against touching.<br>;Horrendous smell filled the air
 Twisted Fairyland;🌵;Pointy Cacti;Trap;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 
@@ -628,7 +630,6 @@ Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Cu
 Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.
 Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance for +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 Twisted Fairyland;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
-Twisted Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
 Twisted Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
 Twisted Fairyland;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
@@ -733,8 +734,20 @@ Ocean of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;
 
 Ocean of Sorrows;🌩️;Thunderstorm Entity;Spirit;1;0;0;0;-1;2;Elemental Fury;Eyes crackle with electric hate.<br>;Struck by a lightning bolt.
 Ocean of Sorrows;👤;Drowned Spirit;Spirit;1;1;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
+Ocean of Sorrows;👤;Sea Phantom;Spirit;1;2;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
-Ocean of Sorrows;🍌;Rotten Banana;Consumable;-1;0;1;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
+Ocean of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
+Ocean of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
+Ocean of Sorrows;🥤;Coke Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🧋;Floating Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🧃;Juice Pouch;Consumable;0;0;0;0;0;0;Refreshment;Packs a burst of energy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🦪;Giant Clam;Consumable;0;0;0;0;0;0;Seafood;A rare treat of the depths.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🦪;Brackish Oyster;Consumable;0;0;0;0;2;0;Seafood;A rare treat of the water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🦐;Crawfish Snack;Consumable;0;0;0;0;0;0;Seafood;A bite of the river’s life.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
+Ocean of Sorrows;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Ocean of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
 Ocean of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
 Ocean of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -897,10 +910,14 @@ Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new 
 Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Vale;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
 
-Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
+Shrouded Vale;🗡️;Thirsty Blade;Item;-1;3;0;0;0;0;Cursed Weapon;Very deadly but wielding it takes a toll.<br>Provides <b>+3 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Felt strangely familiar.
 Shrouded Vale;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
+
+Shrouded Vale;🎩;Fancy Hat;Item;0;0;0;0;3;0;Stylish Accessory;Salt-stained but dashing.<br>Provides <b>+3 🧠 Charisma</b>.;Felt rather dapper.
 Shrouded Vale;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
 Shrouded Vale;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
+
+Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
 Shrouded Vale;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
 
 Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br>Provides <b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
