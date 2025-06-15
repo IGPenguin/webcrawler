@@ -3125,7 +3125,7 @@ function playerConsumed(silent=false){
 
   //Recover stamina if not bad food
   if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0 && !enemyType.includes("Container")){
-    if (parseInt(missingSta)<=0) {
+    if (parseInt(missingSta)<=0 && enemySta==0) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
     } else {
