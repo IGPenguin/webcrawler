@@ -30,6 +30,7 @@ var playerLck;
 var luckInterval = 33; //Lower to increase chances
 var playerInt;
 var playerAtk;
+var playerAtkBonus;
 var playerXP;
 var playerLevel;
 var playerXPThreshold;
@@ -57,6 +58,7 @@ function renewPlayer(){ //Default values
   playerSta = playerStaMax;
   playerMgkMax = 0;
   playerAtk = 1;
+  playerAtkBonus = 0;
   playerLck = 0;
   playerInt = 1;
   playerXP=0;
@@ -908,7 +910,7 @@ function redraw(){
       break;
 
     case "Item":
-      if ((totalBonus > 0) || (enemyEmoji=="🗝️")){
+      if ((totalBonus > 0) || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
         if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
           enemyStatusString=decorateStatusText("🔷","Magnificient",colorLightBlue);
@@ -1155,6 +1157,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Standard": //You hit first, they hit back if they have stamina
           case "Undead":
+            if (playerLootString.includes("📿")) playerAtkBonus=2;
+            logAction("📿 ▸ ⚔️ The attack was blessed with +2 ⚔️")
           case "Demon":
           case "Heavy":
           case "Recruit":
@@ -1163,7 +1167,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Small":
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
-            enemyHit(playerAtk);
+            enemyHit(playerAtk+playerAtkBonus);
 
             if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
