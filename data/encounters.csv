@@ -494,7 +494,12 @@ Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;
 
 Twisted Fairyland;✨;Sparkly Mist;Curse;1;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
 Twisted Fairyland;🌈;Brief Rainbow;Curse;0;0;0;3;0;0;Weather Condition;The end of the rainbow always holds treasure.<br>At least for those who believe.;Brought yourself a lucky blessing!
+Twisted Fairyland;✨;Whispering Lights;Curse;0;1;0;0;0;0;Magical Phenomenon;Tiny glimmers beckon from the shadows.<br>;Let them guide your steps.
+Twisted Fairyland;🌟;Stardust Drizzle;Curse;0;0;0;1;0;0;Weather Anomaly;Fine shimmering dust floats through the air.<br>;You shimmer with strange luck.
+Twisted Fairyland;💫;Twirling Glow;Curse;1;0;0;0;1;0;Magic Aura;The light spins around your head, dizzying but harmless.<br>;Let it dance within.
+Twisted Fairyland;💧;Moonkissed Dew;Curse;0;0;%;0;0;1;Natural Phenomenon;Dewdrops shimmer like silver under no sun.<br>;Embraced the magical power.
 
+Twisted Fairyland;👤;Glimmering Reflection;Curse;0;0;0;0;-3;0;Fae Illusion;A faint silhouette mimics your movements.<br>;Embraced your mirrored self.
 Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark zapped you.
 Twisted Fairyland;💨;Swift Winds;Curse;0;0;1;0;-1;0;Weather Condition;These air currents make one act fast.<br>;Embraced the howling wind.
 Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;A horrible chills goes down your spine.<br>;Suffered permanent changes.
@@ -691,13 +696,11 @@ Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It 
 River of Sorrows;🌫️;Misty Veil;Prop;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;
 River of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the fog.<br>;
 River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
-River of Sorrows;🌩️;Distant Lightning;Prop;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;
 River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;
 River of Sorrows;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
 River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
-River of Sorrows;🌩️;Distant Thunderstorm;Prop;0;0;0;0;0;0;Weather Condition;The storm rumbles in the distance.<br>;
 
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
@@ -709,7 +712,7 @@ River of Sorrows;🛢️;Floating Barrel;Container;0;0;0;0;0;0;Lost Container;Wh
 River of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
-
+River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;
 
 River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
@@ -727,13 +730,11 @@ River of Sorrows;🐡;Barbed Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Best l
 
 River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-River of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 
+River of Sorrows;‍🪼;Square Jelly;Undead;1;4;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
 River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
-
-River of Sorrows;🌩️;Thunderstorm Entity;Spirit;1;0;0;0;-1;2;Elemental Fury;Eyes crackle with electric hate.<br>;Struck by a lightning bolt.
-River of Sorrows;👤;Drowned Spirit;Spirit;1;1;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
-River of Sorrows;👤;Sea Phantom;Spirit;1;2;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
+River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
+River of Sorrows;👤;Sea Phantom;Spirit;1;0;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
