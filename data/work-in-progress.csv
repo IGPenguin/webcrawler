@@ -108,6 +108,12 @@ Twisted Fairyland;🌠;Falling Star;Curse;0;0;0;0;0;1;Celestial Omen;A wish gran
 Twisted Fairyland;🪦;Grave Dust;Curse;-1;0;0;0;0;0;Mourning Ash;The earth’s final breath.<br>;Felt the weight of the grave.
 Twisted Fairyland;🎩;Mischievous Cap;Curse;0;0;0;0;-1;0;Fae Trickery;You can’t remember where you found it.<br>;Lost a piece of yourself.
 Twisted Fairyland;🧚;Pixie Mischief;Curse;0;0;0;0;-1;0;Fae Curse;Laughing voices haunt you.<br>;Lost your way in laughter.
+Forsaken Village;🕯️;Flickering Flame;Curse;0;0;0;0;-1;0;Misfortune;A single light grows and fades.<br>;Hope flickered and died.
+Forsaken Village;🧠;Fractured Mind;Curse;0;0;0;0;-1;0;Misfortune;Thoughts splinter into chaos.<br>;Madness took over.
+Forsaken Village;🦴;Cracked Bones;Curse;-1;0;0;0;0;0;Health Condition;Aching joints groan in pain.<br>;Every movement became agony.
+Forsaken Village;💤;Endless Sleep;Curse;0;0;0;0;-1;0;Misfortune;The weight of dreams drags you under.<br>;Never woke again.
+Forsaken Village;👣;Ghostly Footsteps;Curse;0;0;0;0;-1;0;Misfortune;Faint steps echo just behind you.<br>;Sanity slipped away.
+Forsaken Village;🩸;Blood Price;Curse;-1;0;0;0;0;0;Health Condition;A price paid in crimson.<br>;Life drained out.
 
 Shrouded Necropolis;🪶;Obsidian Feather;Item;0;1;0;0;0;0;Mysterious Trinket;Whispers echo within.<br>Provides <b>+1 ⚔️ Damage</b>.;Unearthly shivers.
 Shrouded Necropolis;🪞;Fractured Mirror;Item;0;0;0;3;0;0;Shiny Object;Reflects something sinister.<br>Provides <b>+3 🍀 Luck</b>.;Saw something that wasn't you.
@@ -122,6 +128,16 @@ Shrouded Necropolis;🌒;Moonlit Shrine;Altar;0;1;2;0;0;0;Ritual Place;Pale ligh
 Shrouded Necropolis;🔥;Ember Pyre;Altar;0;0;2;0;0;1;Sacrifice Altar;Ashes swirl in the faint glow.<br>;
 Shrouded Necropolis;🌪️;Tempest Spire;Altar;0;0;1;0;1;1;Storm Altar;The wind howls with forgotten rage.<br>;
 Shrouded Necropolis;🪞;Mirror of Regret;Altar;0;0;0;0;1;1;Echoes of Loss;Your reflection is not your own.<br>;
+Forsaken Village;🪦;Forgotten Tomb;Altar;0;0;0;0;0;1;Ritual Place;Dusty grave markers stand tall.<br>;Echoes of the past spoken.
+Forsaken Village;🌑;Obsidian Obelisk;Altar;0;0;0;0;0;1;Ritual Place;Black stone shimmers with power.<br>;Shadowy energies embraced.
+Forsaken Village;💧;Sacred Well;Altar;0;0;0;2;0;0;Ritual Place;Water whispers old secrets.<br>;Blessed by ancient spirits.
+Forsaken Village;🔥;Pyre of Devotion;Altar;0;1;0;0;0;1;Ritual Place;Flames lick at the carved symbols.<br>;Power surged within.
+Forsaken Village;🎻;Hymn of the Damned;Altar;0;0;0;0;2;0;Knowledge Source;A melody of sorrow echoes here.<br>;Knowledge of despair gained.
+Forsaken Village;🪙;Gilded Offering Plate;Altar;0;0;0;1;0;0;Sacred Offering;Coins glint under the flickering light.<br>;Fortune smiled briefly.
+Forsaken Village;🍂;Witch’s Circle;Altar;-1;0;0;0;0;1;Ritual Place;Roots and bones intertwine here.<br>;A dark pact sealed.
+Forsaken Village;🪶;Feathered Totem;Altar;0;0;0;1;0;0;Sacred Offering;Feathers swaying like prayers.<br>;A gentle blessing felt.
+Forsaken Village;🪨;Runestone Slab;Altar;0;0;0;0;2;0;Knowledge Source;Ancient etchings glow faintly.<br>;Runes whispered secrets.
+Forsaken Village;⚰️;Crypt of the Nameless;Altar;0;0;0;0;0;1;Ritual Place;Silence speaks to eternity.<br>;Felt the chill of the grave.
 
 Shrouded Necropolis;🩸;Blood Pact;Curse;0;0;0;-1;-1;0;Sanguine Binding;Your veins remember the oath.<br>;
 Shrouded Necropolis;🌑;Eclipse Veil;Curse;-1;0;0;0;0;0;Shadow Cloak;A darkness clings to every step.<br>;
