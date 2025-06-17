@@ -893,6 +893,7 @@ function redraw(){
       break;
     case "Friend":
       enemyStatusString=decorateStatusText("💚","Friend",colorGreen);
+      if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Adversary",colorRed);
       //Do not display stats = reward hidden
       break;
     case "Small":
@@ -1443,7 +1444,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
-          enemyStaminaChangeMessage(-1,"They cannot do any harm -1 🟢","Blocked just for the sake of it -1 🟢")
+          logPlayerAction(actionString,"Performed a theatrical gesture -1 🟢");
+          displayPlayerEffect("🤘");
           displayEnemyCannotEffect();
           break;
         }
@@ -1461,7 +1463,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             if ((enemyAtk+enemyAtkBonus)<=0) {
-              enemyStaminaChangeMessage(-1,"Enjoyed a moment together -1 🟢","They needed to catch a breath -1 🟢");
+              enemyStaminaChangeMessage(-1,"They dodged your finger -1 🟢","They needed to catch a breath -1 🟢");
             } else {
               enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
             }
@@ -3039,15 +3041,15 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   if (bonusSta != 0){
     if (bonusSta<0) {
       changeSign=" "
-      displayPlayerEffect("🐢");
+      displayPlayerEffect(enemyEmoji);
       displayPlayerCannotEffect();
     } else {
       changeSign=" +";
-      playerSta += parseInt(bonusSta);
       displayPlayerEffect("💨");
       displayPlayerGainedEffect();
     }
     playerStaMax += parseInt(bonusSta);
+    playerSta += parseInt(bonusSta);
     gainedString += changeSign+bonusSta + " 🟢";
   }
 
@@ -3492,7 +3494,8 @@ function adjustEncounterButtons(){
       break;
 
     case "Friend":
-      setButton('button_speak',playerSpeakType+" Speak",colorGreen);
+      setButton('button_speak',playerSpeakType+" Speak",colorDarkGreen);
+      if (enemyStatusString.includes("Adversary")) setButton('button_speak',playerSpeakType+" Speak",colorWhite);
 
       var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
       if (heldQuestItem!="") {
@@ -3505,10 +3508,6 @@ function adjustEncounterButtons(){
       //if (heldQuestItem!="") {
       //  setButton('button_speak',heldQuestItem+" Give",colorYellow);
       //}
-
-      if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
-      if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
-
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
       if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
         setButton('button_speak',"💬 Defuse");
@@ -3586,8 +3585,10 @@ function adjustEncounterButtons(){
       break;
   }
   //After all button manipulations
-  if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"☝️ Tease")
-  if (playerSta<=0) setButton('button_block',"☝️ Tease",colorDarkGrey)
+  if (enemyHp>0 && enemySta>0) {
+    if (((enemyAtk+enemyAtkBonus)<=0)) setButton('button_block',"☝️ Tease")
+    if (((enemyAtk+enemyAtkBonus)<=0) && playerSta<=0) setButton('button_block',"☝️ Tease",colorDarkGrey)
+  }
 }
 
 //UI Effects
