@@ -135,8 +135,9 @@ Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> d
 Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+
 Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
-Wildland Meadows;🥜;The Peanuts;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🥜;Few Peanuts;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
@@ -275,11 +276,14 @@ Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of 
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
 Forsaken Village;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
-Forsaken Village;🦔;Prickly Pal;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers valuable in exchange for food.<br>;Became fast friends!
-Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🛷\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
-Forsaken Village;🐕;Nervous Dog;Friend🧶\👽\🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in((n/a;You made them happy!
+Forsaken Village;🦔;Prickly Pal;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers valuable in exchange for food.<br>;Became fast friends!
+Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
+Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in((n/a;You made them happy!
 Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Suffered a heartbreak
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Whispers a survival tip while staring at you((<br>n/a;Had a nice conversation
+Forsaken Village;👵;Grieving Widow;Friend;0;0;0;0;0;0;Hopeless Person;Sits on a porch with an empty chair beside her.<br>;You joined her silent mourning.
+
+Forsaken Village;🐕;Starved Hound;Friend;-1;0;0;0;0;0;Stray Creature;Its ribs are visible\ but it keeps on going.<br>;Got bit by the hungry beast!
 
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
 Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received purrfect blessing
@@ -405,7 +409,6 @@ Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Lost Possesion;Perhaps the spe
 Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Lost Possesion;Dirty and full of holes.<br>;
 Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;
 Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Lost Possesion;Likely belongs to a beautiful girl.<br>;
-Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Lost Possesion;No reason to carry this anywhere.<br>;It's heavy and useless kinda
 Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
 Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
@@ -529,15 +532,15 @@ Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beau
 Twisted Fairyland;🌾;Overgrown Pond;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Twisted Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
-//TODO ADD MILION QUEST ITEMS TO FRIENDS (count with legendary loot afterwards and small/items from before)
-Twisted Fairyland;🦧;Friendly Orangutan;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
-Twisted Fairyland;🐒;Talking Monkey;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Heard a powerful message
+Twisted Fairyland;🦧;Confused Orangutan;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;Troubles Animal;Looks like it has something barter.<br>;Received a poweful artifact
+Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;Troubled Animal;Looks like it has something to barter.<br>;Received a poweful artifact
+Twisted Fairyland;🦤;Hungry Dodo🪳\🪰\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;Friend;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared something.
+Twisted Fairyland;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸\🗿;0;0;0;0;0;1;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
+Twisted Fairyland;🐢;The Elder Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Twisted Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could provide some agility lessons.<br>;Got through their training.
-Twisted Fairyland;🦤;Curious Dodo;Friend;0;0;0;1;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared some luck.
-Twisted Fairyland;🐧;Galactic Penguin;Friend🚀\🔭\👽\🛸\🗿;0;0;0;0;0;1;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
-Twisted Fairyland;🧞‍♀️;Generous Genie;Friend🔮\🪄\🗿\🎋;0;0;0;0;0;1;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
-Twisted Fairyland;🐢;Elder Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>Provides <b>+1 🔵 Mana</b>;Blessed by the Turtle Pope
+
+Twisted Fairyland;🧚;Flickering Shade;Friend;0;0;0;-3;0;0;Corrupted Fey;Its wings shimmer\ but it brings only grief.<br>;Got covered with unlucky dust.
 
 Twisted Fairyland;🐇;Lucky Four;Pet;1;0;1;2;0;0;Friendly Critter;Its paws might bring you some extra luck.<br>;4 paws equals((
 Twisted Fairyland;🦄;Rainbow Unicorn;Pet;3;0;3;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
@@ -631,7 +634,6 @@ Twisted Fairyland;🍊;Orange Citrus;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems li
 Twisted Fairyland;🍐;Ripe Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Twisted Fairyland;🫐;Berries;Consumable;0;0;0;0;0;0;Forest Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Twisted Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Twisted Fairyland;🥜;Sweet Peanuts;Consumable;0;0;0;0;0;0;Crunchy Food;Seems like a good snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Twisted Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;That was delicious
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
@@ -738,7 +740,7 @@ River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;
 River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
 River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
-River of Sorrows;👤;Abandoned Love;Friend;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
+River of Sorrows;👤;Abandoned Love;Friend👠;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
@@ -861,8 +863,7 @@ Shrouded Vale;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hea
 Shrouded Vale;👤;Echoing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Their presence lingers in the air.<br>;
 Shrouded Vale;🗣️;Whispering Soul;Friend;0;0;0;0;0;0;Hopeless Soul;Their words fade like mist.<br>;
 Shrouded Vale;🤖;Exhausted Golem;Friend⚙️\🔧\🔩\🪛;0;0;0;0;0;0;Hopeless Machine;You can hear its very faint voice.<br>;They gestured "OK" towards you.
-Shrouded Vale;🧖🏻‍♀️;Guridan Angel;Friend;1;0;0;0;0;0;Supernatural Being;They've offered you a lecture on life((<br>n/a;Whatever that meant
-Shrouded Vale;🧖🏻‍♀️;Heavenly Angel;Friend;1;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
+Shrouded Vale;🧖🏻‍♀️;Guardian Angel;Friend;1;0;0;0;0;0;Sacred Being;Has understanding for all and everyone.<br>;Received a precious blessing.
 
 Shrouded Vale;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
 Shrouded Vale;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;Restless Bones;Silent guardian of this realm.<br>;
@@ -929,7 +930,6 @@ Shrouded Vale;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar f
 Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br>Provides <b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
 Shrouded Vale;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Shrouded Vale;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Shrouded Vale;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Vale;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
 Shrouded Vale;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
 

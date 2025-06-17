@@ -892,7 +892,7 @@ function redraw(){
       enemyStatusString=appendEnemyStats();
       break;
     case "Friend":
-      enemyStatusString=decorateStatusText("💚","Friend",colorGreen);
+      enemyStatusString=decorateStatusText("💚","Friend",colorDarkGreen);
       if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Adversary",colorRed);
       //Do not display stats = reward hidden
       break;
