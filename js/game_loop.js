@@ -3125,7 +3125,7 @@ function playerConsumed(silent=false){
 
   //Recover stamina if not bad food
   if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0 && !enemyType.includes("Container")){
-    if (parseInt(missingSta)<=0 && enemySta==0) {
+    if ((parseInt(missingSta)<=0 && enemySta==0) && playerHp>=playerHpMax) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
     } else {
@@ -3473,11 +3473,6 @@ function adjustEncounterButtons(){
       break;
 
     case "Small":
-      if (playerSta>0){
-        if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
-      } else {
-        if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
-      }
       if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
         setButton('button_speak',"💬 Defuse");
       } else if (playerLootString.includes("🏳️")) {
@@ -3513,6 +3508,7 @@ function adjustEncounterButtons(){
 
       if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"🫶 Play")
       if (playerSta<=0) setButton('button_block',"🫶 Play",colorDarkGrey)
+
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
       if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
         setButton('button_speak',"💬 Defuse");
@@ -3589,6 +3585,9 @@ function adjustEncounterButtons(){
       }
       break;
   }
+  //After all button manipulations
+  if ((enemyAtk+enemyAtkBonus)<=0) setButton('button_block',"☝️ Tease")
+  if (playerSta<=0) setButton('button_block',"☝️ Tease",colorDarkGrey)
 }
 
 //UI Effects
