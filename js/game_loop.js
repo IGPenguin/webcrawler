@@ -1959,9 +1959,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
               if (enemyType=="Pet"){
-                logAction(enemyEmoji+" ▸ 😱 They got spooked and fled!");
+                var gainedXP=parseInt(playerGainXP(1,0,""));
+                playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
+
+                logAction(enemyEmoji+" ▸ 😱 They got spooked and fled! "+ decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 displayEnemyEffect("💨");
-                nextEncounter();
+                animateFlipNextEncounter();
+                isFishing=false;
               }
             }
             break;
