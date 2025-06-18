@@ -2529,6 +2529,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   }
 
   if (enemyHpLost >= enemyHp) {
+    enemyHpLost=enemyHp; //Negate overkill damage
     enemyKilled();
     return true;
   }
@@ -2542,7 +2543,6 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 function enemyKilled(){
   var gainedXP=parseInt(playerGainXP(1,0,""));
   logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
-  enemyHpLost=enemyHp; //Negate overkill damage
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
   playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
@@ -3760,16 +3760,17 @@ function registerClickListeners(){
     var cheatAmount=3;
 
     if (newName.includes("Cheater")){
-      if (nameNumber>0) cheatAmount=nameNumber;
+      if (nameNumber>0) cheatAmount=parseInt(nameNumber);
       playerHpMax=cheatAmount;
       playerAtk=cheatAmount;
       playerStaMax=cheatAmount;
       playerMgkMax=cheatAmount;
+      playerLck=cheatAmount;
+      playerInt=cheatAmount;
 
       playerHp=playerHpMax;
       playerSta=playerStaMax;
       playerMgk=playerMgkMax;
-      playerSta=playerStaMax;
       redraw();
     }
   });
