@@ -593,7 +593,7 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("💭 ▸ "+enemyEmoji+" Approached creature: <b>"+enemyName+"</b>")
       break;
     default:
-      if (enemyType.includes("Boss")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
       break;
   }
 }
@@ -653,6 +653,8 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (logCall) logGenerator("boss");
       if (areaName.includes("Meadows")) { //Do no guarantee legendary in first area
         pushEncounter(getRandomEncounter(["Item"]));
+      } else if (areaName.includes("Shrouded")) {
+        //No item
       } else {
         pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
       }
@@ -894,6 +896,8 @@ function redraw(){
     case "Friend":
       enemyStatusString=decorateStatusText("💚","Friend",colorDarkGreen);
       if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Adversary",colorRed);
+      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
+
       //Do not display stats = reward hidden
       break;
     case "Small":
@@ -1004,7 +1008,7 @@ function redraw(){
       break;
 
     default:
-      enemyStatusString=decorateStatusText("⁉️","No Details","red");
+      enemyStatusString=decorateStatusText("⚠️","No Details","red");
       //Multi-match
       if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
       if (enemyType.includes("Container")&&(parseInt(totalMalus)<0)) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
@@ -2135,7 +2139,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"Touch not appreciated, lost interest.");
+            logPlayerAction(actionString,"Your touch was not appreciated.");
             displayEnemyEffect("✋");
             isfishing=false;
             nextEncounter();
@@ -2421,7 +2425,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll leave if you'll rest
             playerRest();
-            logPlayerAction(actionString,"They lost interest tired of waiting.");
+            logPlayerAction(actionString,"They got tired of waiting for you.");
             nextEncounter();
             break;
 
@@ -2755,8 +2759,9 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
 function enemyTurnAggressive(message="That made them really upset!"){
   enemyType="Standard";
   enemyHp=2+playerLevel;
-  enemyAtk=1+playerLevel/2;
-  enemySta=2+playerLevel/2;
+  enemyAtk=Math.floor(1+playerLevel/2);
+  enemySta=Math.floor(2+playerLevel/2);
+  enemyMsg="Got killed instead of a conversation."
   playerKarma--;
   logPlayerAction(actionString,message);
   return true;
@@ -2806,7 +2811,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
-    if (enemyType.includes("Boss")) {
+    if (enemyType.includes("Boss") && !areaName.includes("Shrouded")) {
       curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+enemyName+emptySpace+emptySpace,colorWhite),5);
 
       logAction("👑 ▸ "+enemyEmoji+" Boss defeated: <b>"+enemyName+"</b>")
@@ -3509,7 +3514,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Friend":
-      setButton('button_speak',playerSpeakType+" Speak",colorDarkGreen);
+      setButton('button_speak',playerSpeakType+" Speak",colorWhite);
       if (enemyStatusString.includes("Adversary")) setButton('button_speak',playerSpeakType+" Speak",colorWhite);
 
       var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
