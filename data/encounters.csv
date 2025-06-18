@@ -136,9 +136,9 @@ Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
-Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
-Wildland Meadows;🥜;Few Peanuts;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
-Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Wildland Meadows;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🧸;Worn Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -606,10 +606,8 @@ Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;0;0;1;-1;2;Negative Ener
 Twisted Fairyland;🧌;Troll Warbringer;Boss-Heavy;4;3;2;0;4;1;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
 Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
 Twisted Fairyland;🦏;Horned Juggernaut;Boss-Heavy;4;4;1;0;4;0;Savage Titan;Nothing survives its charge.<br>;Gored like a ragdoll.
-
-Twisted Fairyland;🦟;Plague Mosquito;Boss-Swift;2;3;3;0;-1;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to a husk.
-Twisted Fairyland;🦖;Ferocious Raptor;Boss-Swift;3;4;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
-
+Twisted Fairyland;🦟;Plague Mosquito;Boss-Swift;2;3;3;0;-1;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.
+Twisted Fairyland;🦖;Ferocious Raptor;Boss-Swift;3;4;2;0;-1;0;Mr. Funny Hands;Looks like a freakin' big problem.<br>;Got chewed with dozens of teeth.
 Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 Twisted Fairyland;🐃;Mythical Buffalo;Boss-Spirit;1;2;2;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by the spirital horns.
 
@@ -724,12 +722,12 @@ River of Sorrows;☁️;Toxic Cloud;Trap;-2;0;1;0;0;0;Unpleasant Odour;This is r
 River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🦑;Sinister Squidling;Small;1;1;1;0;-1;0;Cephalopod;Wriggles with unsettling energy.<br>;
 River of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
-River of Sorrows;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🪱;Twisting Seaworm;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 
-River of Sorrows;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
-River of Sorrows;🐡;Barbed Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly catch!
+River of Sorrows;🐡;Spiky Fish;Standard;2;2;2;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
+River of Sorrows;🐡;Barbed Fish;Standard;2;3;1;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly catch!
 
 River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
@@ -755,7 +753,7 @@ River of Sorrows;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient s
 River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
 //Matches fishing
-River of Sorrows;📿;Witchbane Necklace;Item;0;0;1;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Hung it around your neck.
+River of Sorrows;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 River of Sorrows;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 River of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
@@ -827,7 +825,7 @@ Shrouded Vale;🌊;Flooded Crypt;Fishing;0;0;0;0;0;0;Hidden Depths;Ripples betra
 
 Shrouded Vale;👣;Trailing Shade;Curse;0;0;0;0;-3;0;Doppelganger;Footsteps match yours exactly\<br> but they are always late.;Unsure who walked first.
 Shrouded Vale;👁️;Unseen Witness;Curse;0;0;0;0;-2;0;Guilt Manifest;Always a step behind\ never speaking.<br>It knows what you did.;The anxiety never leaves.
-Shrouded Vale;🫀;Irregular Beat;Curse;-1;0;0;0;0;0;Relentless Pulse;Your heart suddenly struggles to keep up.<br>;
+Shrouded Vale;🫀;Irregular Heartbeat;Curse;-1;0;0;0;0;0;Relentless Pulse;Your heart suddenly struggles to keep up.<br>;
 Shrouded Vale;🩹;Festering Wound;Curse;0;0;-1;0;0;0;Everlasting Pain;The wound seems to have never fully recovered.<br>;The pain limits your movement.
 Shrouded Vale;🫁;Collapsed Lung;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
 Shrouded Vale;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
@@ -843,15 +841,15 @@ Shrouded Vale;🌌;Starlight Mural;Altar;0;0;0;0;0;2;Ritual Place;The skies will
 Shrouded Vale;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
 Shrouded Vale;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
 Shrouded Vale;🪳;Plague Roach;Small;2;1;1;0;-1;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.
-Shrouded Vale;🪰;Hungry Fly;Small;1;1;2;0;-1;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
+Shrouded Vale;🪰;Hungry Fly;Small;1;2;2;0;-1;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
 Shrouded Vale;🪲;Green Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.
 Shrouded Vale;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.
 Shrouded Vale;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.
 Shrouded Vale;🦋;Death’s Moth;Small;1;0;1;0;-1;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.
 Shrouded Vale;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Shrouded Vale;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪱;Nasty Leech;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪱;Parasitic Worm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪱;Nasty Leech;Small;2;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Vale;🪱;Grave Worm;Small;1;2;1;0;-1;0;Crawling Parasite;Nourished by the decay of ages.<br>;
 Shrouded Vale;🪱;Bloodsucking Worm;Small;1;2;2;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Vale;🪱;Venomous Larva;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
@@ -860,7 +858,7 @@ Shrouded Vale;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;Annoying Insect;Sits on sk
 Shrouded Vale;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.
 Shrouded Vale;🦗;Grave Cricket;Small;1;1;1;0;-1;0;Chirping Insect;Echoes break the silence.<br>;
 Shrouded Vale;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;Burrowing Insect;Wings shimmer faintly in the gloom.<br>;
-Shrouded Vale;🦋;Nocturne Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
+Shrouded Vale;🦋;Nocturnal Moth;Small;1;0;2;0;-1;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
 
 Shrouded Vale;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Shrouded Vale;💀;Little Skeleton;Pet;1;1;1;0;2;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
@@ -920,7 +918,7 @@ Shrouded Vale;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an imm
 Shrouded Vale;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
 Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
-Shrouded Vale;👑;Golden Crown;Item;3;0;0;0;0;0;<b>Artifact</b>;Still carries a trace of grandeur.<br>Provides <b>+2 ❤️ Health</b> and a sense of authority.;Gained a deep sense of authority.
+Shrouded Vale;👑;Golden Crown;Item;3;0;0;0;0;0;<b>Artifact</b>;Still carries a trace of grandeur.<br>Provides <b>+3 ❤️ Health</b> and a sense of authority.;Gained a deep sense of authority.
 Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Vale;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
@@ -935,7 +933,7 @@ Shrouded Vale;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively
 Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
 Shrouded Vale;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
 
-Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br>Provides <b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
+Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
 Shrouded Vale;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Shrouded Vale;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Vale;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
