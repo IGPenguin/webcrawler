@@ -1384,7 +1384,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Friend":
-            logPlayerAction(actionString,"Walked away leaving them behind.");
+            var msg="Walked away leaving them behind.";
+            if (areaName.includes("Shrouded")) msg="They did not let you leave!"
+            logPlayerAction(actionString,msg);
             isFishing=false;
             nextEncounter();
             break;
@@ -3583,10 +3585,6 @@ function adjustEncounterButtons(){
       break;
 
     default:
-      if (enemyType.includes("Boss")) {
-        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
-        setButton('button_sleep',"💤 Rest");
-      }
       if (enemyType=="Checkpoint") setButton('button_grab',"✨ Praise",colorYellow)
       if (enemyType.includes("Heavy")||enemyType.includes("Swift")) {
         if (enemySta-enemyStaLost==0) document.getElementById('button_grab').innerHTML="🦶 Kick";
@@ -3604,6 +3602,11 @@ function adjustEncounterButtons(){
           document.getElementById('button_grab').innerHTML="👋 Reach";
           }
         }
+      }
+      if (enemyType.includes("Boss")) {
+        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
+        setButton('button_sleep',"💤 Rest");
+        setButton('button_roll',"🌀 Dodge");
       }
       break;
   }
