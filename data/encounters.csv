@@ -368,7 +368,7 @@ Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;2;0;0;Lasting Hope;Brings ple
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
-Forsaken Village;🧮️;Manual Calculator;Item;0;0;-1;0;3;0;Counting Tool;Provides <b>+3 🧠 Intellect</b> for <b>-1  🟢 Energy</b>.<br>Operating this slows you down a bit.;Thinking can be hard.
+Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;3;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+3 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Even carrying it makes a difference
 
 Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Shot arrow in the knee!
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>;<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
@@ -384,7 +384,6 @@ Forsaken Village;🔨;Hefty Hammer;Item;0;1;0;0;0;0;Makeshift Weapon;Kinda heavy
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with a lot of care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot arrow in the knee!
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
-Forsaken Village;🎒;School Backpack;Item;0;0;0;0;1;0;Knowledge Vessel;Contains books of immense knowledge.<br>Provides <b>+1 🧠 Intellect</b>;Even carrying it makes a difference
 Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Ready to rock. Let's do this!
 Forsaken Village;🪣;Gathering Bucket;Item;1;0;0;0;0;0;Makeshift Headgear;Could brace a mediocre attack.<br>Provides <b>+1 ❤️ Health</b>;
 
