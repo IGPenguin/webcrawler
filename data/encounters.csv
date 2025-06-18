@@ -76,7 +76,6 @@ Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute 
 
 Wildland Meadows;🐓;Curious Rooster;Pet;1;0;1;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Convinced it to join you.
 Wildland Meadows;🐢;Wandering Tortoise;Pet;1;0;1;0;0;0;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
-Wildland Meadows;🦊;Wily Fox;Pet;2;1;2;0;0;0;Cunning Companion;Glimmers with intelligence.<br>;New friend joined the gang.
 Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;Mysterious Bird;Croaks in a haunting tone.<br>;The bird joined your side.
 Wildland Meadows;🦦;Cheeky Otter;Pet;1;1;1;0;0;0;Playful Critter;Seems to enjoy chaos.<br>;Slipped into your party unannounced.
 Wildland Meadows;🐈;Savannah Cat;Pet;1;0;2;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
@@ -531,6 +530,7 @@ Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beau
 Twisted Fairyland;🌾;Overgrown Pond;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Twisted Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
+Twisted Fairyland;🦊;Mystery Fox;Friend🌰\🥜;0;0;0;0;0;0;Wild Animal;Sits around waving its furry tail.<br>;Received a poweful artifact
 Twisted Fairyland;🦧;Confused Orangutan;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;Troubles Animal;Looks like it has something barter.<br>;Received a poweful artifact
 Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;Troubled Animal;Looks like it has something to barter.<br>;Received a poweful artifact
 Twisted Fairyland;🦤;Hungry Dodo🪳\🪰\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;Friend;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared something.
@@ -550,7 +550,6 @@ Twisted Fairyland;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;Pelicular Insect;The most
 Twisted Fairyland;🦎;Blue-eyed Gecko;Pet;1;0;2;0;1;1;Beautiful Lizard;Eyes are glowing blue.<br>;Gained a new minion
 Twisted Fairyland;🦩;Baby Flamingo;Pet;1;0;1;1;0;0;Wild Bird;Small fancy bird in a need of help.<br>;Gained a new friend
 Twisted Fairyland;🦓;Wild Zebra;Pet;3;0;2;0;2;0;Mighty Animal;Strange horse approached.<br>;Gained a new travel buddy!
-Twisted Fairyland;🦊;Cunning Fox;Pet;3;1;3;0;3;0;Wild Animal;Sits around waving its furry tail.<br>;Got a new travel buddy!
 
 Twisted Fairyland;🪱;Confused Earthworm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -688,7 +687,6 @@ Twisted Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a b
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on your hands
 
 Twisted Fairyland;🗿;Stone Figure;Item;0;0;0;0;0;0;Lost Possesion;A relic of the ancient times.<br>;
-Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is likely missing it.<br>;You should find the owner!
 Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is likely missing it.<br>;You should find the owner!
 Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
