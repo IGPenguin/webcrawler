@@ -971,6 +971,8 @@ function redraw(){
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
+      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Anxiety",colorRed);
+
       break;
     case "Upgrade":
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
@@ -1620,11 +1622,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (playerLootString.includes("🧂")){
                 logMessage="Added a tiny pinch of salt.";
-                playerMgk++; //OOF
+                playerMgk+=magicDamage;
                 enemyName=enemyName+" (Salty)";
                 displayEnemyEffect("✨");
               } else {
                 enemyName=enemyName+" (Crispy)";
+                playerMgk+=(magicDamage-1);
               }
 
               playerCooked=true;
@@ -3127,7 +3130,7 @@ function playerConsumed(silent=false){
   var missingHp=0
   if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
   var missingSta=parseInt(playerStaMax)-parseInt(playerSta);
-  var gainStamina=0
+  var gainStamina=0;
 
   if (enemyMsg!="") consumedString=enemyMsg;
 
@@ -3141,7 +3144,7 @@ function playerConsumed(silent=false){
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
     } else {
-      gainStamina+=parseInt(missingSta);
+      gainStamina+=parseInt(missingSta)+parseInt(enemySta);
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   }
@@ -3475,6 +3478,7 @@ function adjustEncounterButtons(){
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       setButton('button_sleep',"💤 Sleep",colorLightBlue);
+      if (areaName.includes("Shrouded")) setButton('button_sleep',"🧠 Think",colorRed);
       break;
 
     case "Fishing":

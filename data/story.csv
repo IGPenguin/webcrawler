@@ -60,9 +60,9 @@ Shrouded Vale;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Vale;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 
 Shrouded Vale;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Vale;🤔;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to acknowledge your sins.<br>You cannot run anymore.;The inner thoughts took over.
-Shrouded Vale;😥;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;All the trying...\ you've corrupted everything!<br>You now remember what you did.;
-Shrouded Vale;😰;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;That forbidden witchery did not go well.<br><b>It is you\ who corrupted this world!</b>;
+Shrouded Vale;🤔;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to <b>acknowledge your sin</b>.<br>You cannot run away from it anymore.;The inner thoughts took over.
+Shrouded Vale;😥;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;All the trying... You remembered what you did.<br>That forbidden <b>witchery did not go well</b>.;Everything seems so clear now.
+Shrouded Vale;😰;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;Why couldn't you just let her go in peace.<br><b>You have corrupted this world!</b>;You've revealed the thruth.
 
 //Auxiliary Dimension
 Auxiliary Dimension;👾;Stack Overflow;Death;0;0;0;0;0;0;Game End;<b>You succesfully finished the WebCrawler demo.</b><br>Please\ consider sending feedback via <b>💌 Review</b>.;
