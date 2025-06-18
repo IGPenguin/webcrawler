@@ -1444,7 +1444,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
-          enemyStaminaChangeMessage(-1,"They dodged out of reach -1 🟢","They needed to catch a breath -1 🟢");
+          enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
           displayPlayerEffect("☝️");
           displayEnemyCannotEffect();
           break;
@@ -1464,7 +1464,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             if ((enemyAtk+enemyAtkBonus)<=0) {
-              enemyStaminaChangeMessage(-1,"They dodged out of reach -1 🟢","They needed to catch a breath -1 🟢");
+              enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
               displayPlayerEffect("☝️");
             } else {
               enemyStaminaChangeMessage(-1,"Blocked a normal attack -1 🟢","Blocked just for the sake of it -1 🟢");
@@ -3230,11 +3230,9 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
       logAction("📦 ▸ 💀 Turned out <b>📦 Dead <s>or Alive</s></b>.");
       displayPlayerCannotEffect();
       displayPlayerEffect("📦");
-      gameOver(true);
-      return;
     }
 
-    gameOver(true);
+    gameOver();
     return;
   }
   displayPlayerEffect("💢");
@@ -3271,12 +3269,15 @@ function playerReincarnate(){
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),5);
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),5);
   nextEncounter();
 
-  if (playerKarma>-5){
-    var bonusItem=getRandomEncounter(["Item"],["Artifact"],"Forsaken Village"); //TODO Special karma-only bonuses??
-    var bonusWrapper=["area:Forsaken Village","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
+  if (playerKarma>-5){ //TODO Revise this threshold
+    var randomArea=chooseFrom(["Wildland Meadows","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame
+    var bonusItem=getRandomEncounter(["Item"],["Artifact"],randomArea);
+    bonusItem=bonusItem.replaceAll(randomArea,"Wildland Meadows")
+
+    var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well)

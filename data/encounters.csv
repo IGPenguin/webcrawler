@@ -755,12 +755,21 @@ River of Sorrows;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient
 River of Sorrows;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
-River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
-River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+//Matches fishing
+River of Sorrows;📿;Witchbane Necklace;Item;0;0;1;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Hung it around your neck.
 River of Sorrows;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 River of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
 River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
+River of Sorrows;🎲;Gambling Die;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
+River of Sorrows;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
+River of Sorrows;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
+River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides the ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
+River of Sorrows;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
+River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
+River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+River of Sorrows;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
+River of Sorrows;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like nothing before.
 
 River of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
 River of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!
