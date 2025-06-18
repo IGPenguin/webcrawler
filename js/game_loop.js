@@ -52,9 +52,9 @@ var validRess=["🫀","💾","♥️","🫁","🏵️","🛟"];
 renewPlayer();
 function renewPlayer(){ //Default values
   playerName = getFirstName();
-  playerHpMax=3;
+  playerHpMax=2;
   playerHp = playerHpMax;
-  playerStaMax = 3;
+  playerStaMax = 2;
   playerSta = playerStaMax;
   playerMgkMax = 0;
   playerAtk = 1;
@@ -1165,10 +1165,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyHit(playerAtk);
             break;
 
-          case "Standard": //You hit first, they hit back if they have stamina
-          case "Undead":
-            if (playerLootString.includes("📿")) playerAtkBonus=2;
-            logAction("📿 ▸ ⚔️ The attack was blessed with +2 ⚔️")
+          case "Undead": //You hit first, they hit back if they have stamina
+            if (playerLootString.includes("📿")) {
+              playerAtkBonus=2;
+              logAction("📿 ▸ ⚔️ The attack was blessed with +2 ⚔️")
+            }
+          case "Standard":
           case "Demon":
           case "Heavy":
           case "Recruit":
@@ -1258,7 +1260,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else {
                 logPlayerAction(actionString,"Walked away leaving them behind.");
               }
-              nextEncounter();
+              animateFlipNextEncounter();
               isFishing=false;
               break;
             }
@@ -3569,7 +3571,10 @@ function adjustEncounterButtons(){
       break;
 
     default:
-      if (enemyType.includes("Boss")) setButton('button_sleep',"💤 Rest");
+      if (enemyType.includes("Boss")) {
+        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
+        setButton('button_sleep',"💤 Rest");
+      }
       if (enemyType=="Checkpoint") setButton('button_grab',"✨ Praise",colorYellow)
       if (enemyType.includes("Heavy")||enemyType.includes("Swift")) {
         if (enemySta-enemyStaLost==0) document.getElementById('button_grab').innerHTML="🦶 Kick";

@@ -2,16 +2,15 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 
 //Wildland Meadows;
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
-Wildland Meadows;🌿;Dense Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🌼;Wildflower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
+Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🌿;Grass Field;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🌼;Flower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
 Wildland Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌺;Blooming Field;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌸;Cherry Orchard;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🍃;Flying Leaves;Prop;0;0;0;0;0;0;Natural Beauty;Signs reminding you of the circle of life.<br>;
 Wildland Meadows;🌳;Fallen Trunk;Prop;0;0;0;0;0;0;Natural Obstacle;A giant trunk blocks the path.<br>;Clambered over with caution.
-Wildland Meadows;🌾;Dense Weeds;Prop;0;0;0;0;0;0;Natural Obstacle;Tangles of weed wrap around your feet.<br>;Nearly tripped\ but caught yourself.
-Wildland Meadows;🧺;Woven Basket;Prop;0;0;0;0;0;0;Container;Looks abandoned and empty.<br>;
-Wildland Meadows;🪹;Empty Nest;Container;0;0;0;0;0;0;Natural Habitat;Nothing more than twigs and dust.<br>;
+Wildland Meadows;🪹;Empty Nest;Prop;0;0;0;0;0;0;Natural Habitat;Nothing more than twigs and dust.<br>;
 
 Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Wildland Meadows;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
@@ -20,9 +19,8 @@ Wildland Meadows;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;Water Body;Crystal-clea
 Wildland Meadows;🪵;Hidden Hollow;Container;0;0;0;0;0;0;Natural Cover;A dark space under some old roots.<br>;
 Wildland Meadows;🪨;Suspicious Rock;Container;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
-Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Wildland Meadows;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Wildland Meadows;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Looks abandoned in rush.<br>;
 Wildland Meadows;🕳️;Hidden Hollow;Container;0;0;0;0;0;0;Concealed Stash;A small hole opens beneath your step.<br>;There was something inside.
 Wildland Meadows;🪵;Splintered Wood;Container;-1;0;0;0;0;0;Wooden Snag;Sharp splinters catch at your skin.<br>;Left with small cuts.
 
@@ -32,6 +30,8 @@ Wildland Meadows;🌾;Overgrown Grass;Container-2;0;0;0;0;0;0;Dense Flora;Thick 
 Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Wildland Meadows;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.<br>;Got stinged real bad!
 
+Wildland Meadows;🌿;Dense Grass;Container-3;0;0;0;0;0;0;Wild Flora;Looks like something is hidden there.<br>;Crossed right through.
+Wildland Meadows;🌾;Dense Weeds;Container-3;0;0;0;0;0;0;Natural Obstacle;Looks like something is hidden there.<br>;Nearly tripped\ but caught yourself.
 Wildland Meadows;🌽;Corn Field;Container-3;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out of the tent.<br>;Decided to investigate the tent.
 Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
@@ -74,7 +74,7 @@ Wildland Meadows;🐜;Worker Ant;Small;1;0;2;0;-1;0;Insect;Minds its own busines
 Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;The noise exploded your head!
 Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
-Wildland Meadows;🐓;Curious Rooster;Pet;1;0;1;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Became a village mascot.
+Wildland Meadows;🐓;Curious Rooster;Pet;1;0;1;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Convinced it to join you.
 Wildland Meadows;🐢;Wandering Tortoise;Pet;1;0;1;0;0;0;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
 Wildland Meadows;🦊;Wily Fox;Pet;2;1;2;0;0;0;Cunning Companion;Glimmers with intelligence.<br>;New friend joined the gang.
 Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;Mysterious Bird;Croaks in a haunting tone.<br>;Received a prophetic blessing.
@@ -143,7 +143,7 @@ Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it i
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
 Wildland Meadows;🧅;Wild Onion;Consumable;1;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
-Wildland Meadows;🫑;Bell Pepper;Consumable;0;0;0;0;0;0;Standard Crop;Tastes not bad\ not terrible.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Wildland Meadows;🫑;Bell Pepper;Consumable;0;0;0;0;0;0;Standard Crop;Tastes not great\ not terrible.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🫛;Wild Peas;Consumable;0;0;0;0;0;0;Fresh Food;Probably packs some vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍇;Grape Vine;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Wildland Meadows;🍓;Wild Strawberry;Consumable;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -337,7 +337,7 @@ Forsaken Village;🦝;Rabid Coon;Boss-Swift;3;2;3;0;3;0;Plague Beast;The nightma
 Forsaken Village;🦌;Horned Nightmare;Boss-Heavy;3;2;1;0;-1;0;Beast of the Forest;Antlers like towers of bone.<br>;Impaled on the forest crown.
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
 Forsaken Village;🎭;Cultist Masquerader;Boss-Standard;3;3;2;0;3;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.
-Forsaken Village;🪚;Haunted Saw;Boss-Standard;3;3;2;1;-1;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced to ribbons.
+Forsaken Village;🪚;Haunted Saw;Boss-Standard;3;3;2;1;-1;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced to thin ribbons.
 Forsaken Village;🪞;Mirror Horror;Boss-Demon;2;1;2;1;-1;1;Spirit of Reflection;Copies your every move.<br>;Shattered in a mirror duel.
 
 Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
