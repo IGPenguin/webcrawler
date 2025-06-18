@@ -52,7 +52,7 @@ var validRess=["🫀","💾","♥️","🫁","🏵️","🛟"];
 renewPlayer();
 function renewPlayer(){ //Default values
   playerName = getFirstName();
-  playerHpMax=2;
+  playerHpMax=3;
   playerHp = playerHpMax;
   playerStaMax = 2;
   playerSta = playerStaMax;
@@ -2840,7 +2840,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   //Fullscreen Curtain
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm") && (areaName != "Depths of Slumber")){ //Does not animate new area when killed
-    curtainFadeInAndOut("<span style=font-size:42px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;>&nbsp;"+areaName+"&nbsp;</span>");
+    curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:42px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-46px;z-index:-100;position:relative;\">____________________________________</p>");
     if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");

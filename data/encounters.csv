@@ -725,17 +725,16 @@ River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Pea
 
 River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
-River of Sorrows;☁️;Toxic Cloud;Trap;-2;0;1;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
+River of Sorrows;☁️;Toxic Cloud;Trap;-2;0;0;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 
 River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🦑;Sinister Squidling;Small;1;1;1;0;-1;0;Cephalopod;Wriggles with unsettling energy.<br>;
-River of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
-River of Sorrows;🪱;Twisting Seaworm;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;Cephalopod;Wriggles with unsettling energy.<br>;
+River of Sorrows;🦐;Twisted Shrimp;Small;1;1;2;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
+River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 
-River of Sorrows;🐡;Spiky Fish;Standard;2;2;2;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
-River of Sorrows;🐡;Barbed Fish;Standard;2;3;1;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly catch!
+River of Sorrows;🐡;Spiky Fish;Standard;2;2;2;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly.
 
 River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
