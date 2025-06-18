@@ -3,24 +3,31 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 //Wildland Meadows;
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Wildland Meadows;🌿;Dense Grass;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🌼;Flower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
+Wildland Meadows;🌼;Wildflower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
 Wildland Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌺;Blooming Field;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌸;Cherry Orchard;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🍃;Flying Leaves;Prop;0;0;0;0;0;0;Natural Beauty;Signs reminding you of the circle of life.<br>;
 Wildland Meadows;🌳;Fallen Trunk;Prop;0;0;0;0;0;0;Natural Obstacle;A giant trunk blocks the path.<br>;Clambered over with caution.
 Wildland Meadows;🌾;Dense Weeds;Prop;0;0;0;0;0;0;Natural Obstacle;Tangles of weed wrap around your feet.<br>;Nearly tripped\ but caught yourself.
+Wildland Meadows;🧺;Woven Basket;Prop;0;0;0;0;0;0;Container;Looks abandoned and empty.<br>;
+Wildland Meadows;🪹;Empty Nest;Container;0;0;0;0;0;0;Natural Habitat;Nothing more than twigs and dust.<br>;
 
 Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Wildland Meadows;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
+Wildland Meadows;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;Water Body;Crystal-clear water flowing steadily.<br>;
 
-Wildland Meadows;🪵;Splintered Wood;Container;-1;0;0;0;0;0;Wooden Snag;Sharp splinters catch at your skin.<br>;Left with small cuts.
+Wildland Meadows;🪵;Hidden Hollow;Container;0;0;0;0;0;0;Natural Cover;A dark space under some old roots.<br>;
 Wildland Meadows;🪨;Suspicious Rock;Container;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Wildland Meadows;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
 Wildland Meadows;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
-Wildland Meadows;🌾;Grain Growth;Container;0;0;0;0;0;0;Farmland Remains;A burlap sack forgotten among the grass.<br>;Opened to reveal a small stash.
+Wildland Meadows;🕳️;Hidden Hollow;Container;0;0;0;0;0;0;Concealed Stash;A small hole opens beneath your step.<br>;There was something inside.
+Wildland Meadows;🪵;Splintered Wood;Container;-1;0;0;0;0;0;Wooden Snag;Sharp splinters catch at your skin.<br>;Left with small cuts.
 
+Wildland Meadows;🍂;Leaf Pile;Container-2;0;0;0;0;0;0;Natural Cover;Something may be hidden beneath.<br>;
+Wildland Meadows;🌾;Grain Growth;Container-2;0;0;0;0;0;0;Farmland Remains;A burlap sack forgotten among the grass.<br>;Opened to reveal a small stash.
 Wildland Meadows;🌾;Overgrown Grass;Container-2;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Wildland Meadows;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.<br>;Got stinged real bad!
@@ -38,7 +45,6 @@ Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like 
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
 Wildland Meadows;🌵;Thorny Patch;Trap;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Pricked by thorns\ but kept moving.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-2;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
-Wildland Meadows;🕳️;Hidden Hollow;Trap;-1;0;0;0;0;0;Concealed Drop;A small hole opens beneath your step.<br>;Twisted your ankle.
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
 Wildland Meadows;🪵;Rotting Log;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Softened by time\ but still treacherous.<br>;Sank in and twisted an ankle.
 
@@ -65,7 +71,7 @@ Wildland Meadows;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;Never hurt 
 Wildland Meadows;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Wildland Meadows;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
 Wildland Meadows;🐜;Worker Ant;Small;1;0;2;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
-Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;Sound exploded their head!
+Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;The noise exploded your head!
 Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
 
 Wildland Meadows;🐓;Curious Rooster;Pet;1;0;1;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Became a village mascot.
@@ -79,12 +85,14 @@ Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella j
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
 Wildland Meadows;🐥;Cute Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Got a new travel buddy!
 
-Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;That was annoying
-Wildland Meadows;🐢;Elder Pope;Friend;0;0;0;2;0;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
-Wildland Meadows;🧖🏻‍♀️;Ethereal Being;Friend;0;0;0;0;1;0;Unknown;They've offered you a lecture on life.<br>n/a;Whatever that meant
-Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;0;0;The Prophet;Always has some obscure tip to share((<br>n/a;That speech has taken a toll
+Wildland Meadows;🦜;Colourful Songbird;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
+Wildland Meadows;🦔;Prickly Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
+Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Oh\ that was annoying.
+Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;0;0;The Prophet;Always has an obscure tip to share((<br>n/a;Whatever that meant
 
-Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got their brain pecked out.
+Wildland Meadows;🦌;Starved Companion;Friend;-1;0;0;0;0;0;Feral Remnant;It follows you like it remembers something.<br>;Took more than it gave.
+
+Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got your brain pecked out.
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Capable of unfortunate headbutts.<br>;Impaled by its horns.
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
@@ -102,30 +110,34 @@ Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Getting ready
 Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;2;1;0;1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
 Wildland Meadows;🐗;Furious Warthog;Boss-Heavy;2;2;2;0;-1;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
 Wildland Meadows;🐂;Tired Bull;Boss-Heavy;3;2;1;0;1;0;Domestic Animal;Looks extremely agitated.<br>;Impaled by both horns at once.
-Wildland Meadows;🦅;Sky Tyrant;Boss-Swift;3;1;4;0;3;0;Winged Horror;Wings black as pitch.<br>;Talons tore your throat apart.
+Wildland Meadows;🦅;Sky Tyrant;Boss-Swift;1;1;3;0;3;0;Winged Horror;Wings black as pitch.<br>;Talons tore your throat apart.
 Wildland Meadows;🦢;Murderous Queen;Boss-Swift;2;1;2;0;2;0;Feathered Fury;Looks calm\ but it kills.<br>;Choked by the long neck.
 
-Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Provides <b>+4 🧠 Creativity</b>.<br>;Enhanced their insight
-Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Provides <b>+1 🔵 Mana</b>.<br>;Enhanced their magic skills
-Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Natural Beauty;Makes anyone look much friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels good carrying that.
+Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
+Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+1 🔵 Mana</b>.;Enhanced your magic skills
+Wildland Meadows;🪁;Lightning Kite;Item;0;0;2;0;0;0;<b>Artifact</b>;Unfamiliar makeshift piece of art.<br>Somehow provides <b>+2 🟢 Energy</b>.;Yay! Weeee!
+
+Wildland Meadows;🍀;Four-leaf Clover;Item;0;0;0;4;0;0;Rare Specimen;The legend says it gives you an edge.<br>Provides <b>+4 🍀 Luck</b>.;Everything is gonna get easier.
+Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;3;0;Floral Gift;Makes anyone look a lot friendlier.<br>Provides <b>+3 🧠 Intellect</b>.;Feels good carrying that.
 Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch\ sharp thorns!
 Wildland Meadows;🌷;Pink Tulip;Item;1;0;0;0;1;0;Natural Beauty;Brings intense pleasure whenever looked at.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Intellect</b>.;Just awesome!
+
 Wildland Meadows;🗺;A Lost Map;Item;0;0;1;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+1 🟢 Energy</b>.;Enhanced your area awareness.
 Wildland Meadows;🪨;Sharp Stone;Item;0;1;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
-Wildland Meadows;👒;Silly Hat;Item;0;0;0;2;0;0;Cringe Accessory;Silly hat for adventuous personalities.<br>Provides <b>+2 🍀 Luck</b>.;Feels a bit less serious.
 Wildland Meadows;🧤;Lucky Gloves;Item;0;0;0;2;0;0;Blessed Gear;Deems both hands "the lucky hand".<br>Provides <b>+2 🍀 Luck</b>.;This
 Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases wearer's versatility.<br>Provides <b>+1 🟢 Energy</b>.;Ready for action.
 Wildland Meadows;👢;Riding Boots;Item;0;0;1;0;0;0;Specialized Gear;Enables better stability in action.<br>Provides <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection for your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels really warm.
 Wildland Meadows;🔔;Lucky Chime;Item;0;0;0;3;-1;0;Annoying Trinket;Makes annoying sound every time it moves.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
-Wildland Meadows;🔔;Unlucky Chime;Item;0;0;0;-1;-1;0;Cursed Trinket;Makes annoying sound even when being still.<br><b>Does not offer any advantage.</b>;Aghhh\ did you think!?
-Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
+Wildland Meadows;🔔;Unlucky Chime;Item;0;0;0;-1;-1;0;Cursed Trinket;Makes annoying sound every step you take.<br><b>Does not offer any advantage.</b>;Aghhh\ did you think!?
+Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight((<br>n/a;Should help to remember.
 Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+
 Wildland Meadows;🌰;The Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
-Wildland Meadows;🥜;The Peanuts;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
+Wildland Meadows;🥜;Few Peanuts;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
@@ -161,57 +173,83 @@ Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;Wrecked Furniture;Dropped in 
 Forsaken Village;🏗;Strange Monument;Prop;0;0;0;0;0;0;Metal Construction;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🚧;Reflective Barricade;Prop;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
+Forsaken Village;🛢️;Empty Barrel;Prop;0;0;0;0;0;0;Circumstantial Object;Its contents are long gone.<br>;
 
-Forsaken Village;🪨;Building Rubble;Container;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
-Forsaken Village;🧱;Wall Remains;Container;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
-Forsaken Village;🌾;Thick Reeds;Container;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
-Forsaken Village;🪵;Wood Pile;Container;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
-Forsaken Village;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
-Forsaken Village;🌿;Thick Grass ;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Forsaken Village;🌳;Suspicious Tree;Container;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the tree.
-Forsaken Village;🧺;Lost Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
+Forsaken Village;🛢️;Small Barrel;Container;0;0;0;0;0;0;Container;May contain something interesting.<br>;
+Forsaken Village;🪴;Garden Box;Container;0;0;0;0;0;0;Natural Cover;A modest patch of green.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
-Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Container;Seems to be indicating something is inside.<br>;
-Forsaken Village;🕸️;Spider Cocon;Container;0;0;-1;0;0;0;Minor Inconvenience;Something seems to be stuck in it.<br>;Got some webs on your face
+Forsaken Village;🪴;Cracked Planter;Container;0;0;0;0;0;0;Decoration;Roots and soil are tightly intertwined.<br>;
+Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Purposeful Container;Seems to be indicating something is inside.<br>;
+Forsaken Village;🧰;Cracked Toolbox;Container;0;0;0;0;0;0;Forgotten Belongings;There could be something useful\ or cursed.<br>;
+Forsaken Village;📦;Weathered Crate;Container;0;0;0;0;0;0;Someone's Belongings;Wood warped by damp air.<br>;
+Forsaken Village;📦;Supply Crate;Container;0;0;0;0;0;0;Container;Sealed tightly with a rope.<br>;
+Forsaken Village;🎒;Worn Backpack;Container;0;0;0;0;0;0;Container;Looks abandoned in haste.<br>;
+Forsaken Village;🗃️;Metal Box;Container;0;0;0;0;0;0;Container;A small but secure storage.<br>;
+Forsaken Village;💰;Merchant’s Satchel;Container;0;0;0;0;0;0;Container;Once carried precious wares.<br>;
+Forsaken Village;🧳;Traveler’s Chest;Container;0;0;0;0;0;0;Container;Left behind in a hurry.<br>;
+Forsaken Village;🧳;Weathered Trunk;Container;0;0;0;0;0;0;Container;Sturdy enough to hold valuables.<br>;
+Forsaken Village;🎁;Wrapped Parcel;Container;0;0;0;0;0;0;Container;Wrapped in faded ribbons.<br>;
+Forsaken Village;🎁;Unopened Gift;Container;0;0;0;0;0;0;Container;Who left this surprise here?<br>;
+Forsaken Village;🛏️;Underbed Cache;Container;0;0;0;0;0;0;Wrecked Furniture;Hidden from prying eyes.<br>;
+Forsaken Village;🛏️;Stuffed Mattress;Container;0;0;0;0;0;0;Wrecked Furniture;Might be hiding something.<br>;
+Forsaken Village;🕰️;Grandfather’s Clock;Container;0;0;0;0;0;0;Worthless Junk;The time stands still inside.<br>;
 
+Forsaken Village;☢️;Suspicious Barrel;Container;-2;0;0;0;0;0;Disposed Container;It is leaking a bright green light.<br>;Suffered permanent damage.
+Forsaken Village;🧱;Loose Bricks;Container;-1;0;0;0;0;0;Unstable Remains;Might reveal a hidden treasure.<br>;Falling bricks twisted your finger
+Forsaken Village;🕸️;Spider Cocon;Container;0;0;-1;0;0;0;Minor Inconvenience;Something seems to be stuck in it.<br>;Got some webs on your face
+Forsaken Village;🎭;Trickster’s Cache;Container;0;0;0;-3;0;0;Circumstantial Object;Rumored to be full of mischief.<br>;
+
+Forsaken Village;🪨;Building Rubble;Container-2;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
+Forsaken Village;🧱;Wall Remains;Container-2;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
+Forsaken Village;🌾;Thick Reeds;Container-2;0;0;0;0;0;0;Dense Flora;Tall growth covers the way forward.<br>;Crossed right through.
+Forsaken Village;🪵;Wood Pile;Container-2;0;0;0;0;0;0;Traces of Work;There seems to be something stuck.<br>;Lifted one of the logs.
+Forsaken Village;🌿;Fern Thicket;Container-2;0;0;0;0;0;0;Soft Surface;Looks like somethings is hidden there.<br>;Searched through the fern.
+Forsaken Village;🌿;Thick Grass;Container-2;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
+Forsaken Village;🌳;Suspicious Trees;Container-2;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the trees.
+Forsaken Village;📦;Shipping Crate;Container-2;0;0;0;0;0;0;Container;Hefty and cumbersome.<br>;
 Forsaken Village;🪤;Elaborate Trap;Container-2;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!
-Forsaken Village;🏚️;Long Abandoned Home;Container-2;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
-Forsaken Village;🏚️;Barred House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 Forsaken Village;🏚️;Ruined Shed;Container-2;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🏚️;Ruined Building;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Ruined Home;Container-2;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏚️;Collapsed Barn;Container-2;0;0;0;0;0;0;Deserted Building;Walls barely hold together.<br>;Entered through the window.
+Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;Deserted Building;Wood planks barely hold together.<br>;Kicked the door open.
 
-Forsaken Village;🏚️;Big House Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏚️;Ruined Family House;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
-Forsaken Village;🏚️;Unsettling Building Ruins;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🏚️;Old Neglected House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
-Forsaken Village;🏚️;Unsettling Building;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Forsaken Village;🏚️;Abandoned Home;Container-3;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.
+Forsaken Village;🏚️;Barred House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;Deserted Building;The roof has caved in.<br>;Kicked the door open.
+Forsaken Village;🏚️;Collapsed Mill;Container-3;0;0;0;0;0;0;Deserted Building;The wheel still groans in the wind.<br>;Entered through the broken door.
+Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.
+Forsaken Village;🏚️;Neglected House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
+Forsaken Village;🏚️;Unsettling Ruins;Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Forsaken Village;🏡;Fancy Garden House;Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.
 
 Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.
 Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Unlocked the chained door.
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Unlocked the entrance.
 Forsaken Village;🏡;Garden Shed;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Unlocked the front door.
+Forsaken Village;📚;Barred Library;Locked-Container-3;0;0;0;0;0;0;Deserted Building;Pages whisper in the stillness.<br>;Pulled open the heavy door.
 
 Forsaken Village;🎯;Archery Range;Container-4;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.
-Forsaken Village;🕰️;Clockhouse Tower;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
-Forsaken Village;🏫;Town Hall;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🏘️;Shady Backalley;Container-4;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏤;Post Office;Container-4;0;0;0;0;0;0;Deserted Building;Could still have some never delivered letters.<br>;Entered through the cracked door.
+Forsaken Village;🍻;Silent Inn;Container-4;0;0;0;0;0;0;Deserted Building;Empty chairs at empty tables everywhere.<br>;Entered through the window.
+Forsaken Village;🍻;Lucky Inn;Container-4;0;0;0;1;0;0;Deserted Building;There is a four-leaf clover on the table.<br>;Reached for the clover.
 
-Forsaken Village;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;️🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🛕;Cult Monument;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
-Forsaken Village;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🛠️;Engineering Workshop;Container-5;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.
+Forsaken Village;⚒️;Blacksmith Workshop;Container-5;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.
+Forsaken Village;🎭;Forsaken Theatre;Container-5;0;0;0;0;0;0;Deserted Building;Faded costumes hang like ghosts.<br>;Stepped onto the cracked tiles.
+Forsaken Village;🕰️;Clockhouse Tower;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🏫;Town Hall;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
+Forsaken Village;🎪;Abandoned Fairground;Container-5;0;0;0;0;0;0;Deserted Building;Bright colors faded to grey.<br>;Wandered into the eerie silence.
+Forsaken Village;🏟️;Forgotten Arena;Container-5;0;0;0;0;0;0;Killing Ground;Echoes of cheers linger still.<br>;Wandered into the eerie silence.
+Forsaken Village;🏤;Deserted Hospital;Container-5;0;0;0;0;0;0;Deserted Building;Faint echoes wander these walls.<br>;
 
 Forsaken Village;⛲️;Freshwater Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Forsaken Village;💧;Cursed Well;Fishing;0;0;0;0;0;0;Water Body;Dark water reflects strange shapes.<br>;
 Forsaken Village;🛢;Rainwater Barrel;Fishing;0;0;0;0;0;0;Water Body;Left open for decades\ who knows what’s inside.<br>;
-Forsaken Village;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;Water Body;Crystal-clear water flowing steadily.<br>;
+Forsaken Village;🪣;Bottomless Bucket;Fishing;0;0;0;0;0;0;Natural Resource;A massively deep well gapes inside.<br>;
 Forsaken Village;⛲️;Sacred Pool;Fishing;0;0;0;0;0;0;Water Body;Still and deep\ holds ancient secrets.<br>;
 
 Forsaken Village;👁️‍🗨️;Haunting Echo;Curse;0;0;0;0;-1;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
@@ -222,44 +260,33 @@ Forsaken Village;👁️‍🗨️;Lingering Fear;Curse;0;0;0;0;-1;0;Misfortune;
 Forsaken Village;💀;Memento Mori;Curse;0;0;0;0;-1;0;Misfortune;A constant reminder of mortality.<br>;Lost all hope.
 Forsaken Village;💨;Breath of Dread;Curse;0;0;0;0;-1;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.
 
-Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
-Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit their head
+Forsaken Village;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
+Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
+Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit your head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
-Forsaken Village;🫙;Fart in a Jar;Trap-Attack;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 Forsaken Village;🛢;Sealed Container;Trap-Attack;-4;0;0;0;0;0;Garbage;There must be a reason why it's closed.<br>;Oops the lid came off
 
-Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received.
-Forsaken Village;🌕;Moonlit Shrine;Altar;0;0;0;3;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;Blessed by the moonlight.
-Forsaken Village;🗡️;Bloody Dagger;Altar;-2;0;0;0;0;1;Ritual Place;The blade still drips with blood.<br>;Dealt with the Devil.
-Forsaken Village;📿;Prayer Beads;Altar;0;0;0;1;0;0;Sacred Offering;Each bead is worn smooth by devotion.<br>;Peace in the quiet prayer.
+Forsaken Village;🌕;Bloodmoon Shrine;Altar;-1;1;0;0;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;The great hunt calls
+Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power
 Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
+Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received
+Forsaken Village;📿;Prayer Beads;Altar;0;0;0;1;0;0;Sacred Offering;Each bead is worn smooth by devotion.<br>;Peace in the quiet prayer
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
 Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained deeper insight
-Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Dealt with the Devil
 
-Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
-Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Lost Possesion;No practical use to a warrior.<br>;
-Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Lost Possesion;Perhaps the special shape is by design.<br>;
-Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Lost Possesion;Dirty and full of holes.<br>;
-Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;
-Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Lost Possesion;Likely belongs to a beautiful girl.<br>;
-Forsaken Village;🛷;Snow Sled;Item;0;0;-1;0;0;0;Lost Possesion;No reason to carry this anywhere.<br>;It's heavy and useless kinda
-Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
-
-Forsaken Village;🦔;Prickly Pal;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱\🍖;0;0;0;0;0;0;Quirky Animal;Offers valuable in exchange for food.<br>;Became fast friends!
-Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🛷\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸\🦴\🍖;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
-Forsaken Village;🐕;Nervous Dog;Friend👽\🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in(( n/a;You made them happy!
+Forsaken Village;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
+Forsaken Village;🦔;Prickly Pal;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers valuable in exchange for food.<br>;Became fast friends!
+Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸;2;0;0;0;1;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
+Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🧸\🦴\🍖;2;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in((n/a;You made them happy!
 Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Suffered a heartbreak
-Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Proposes interaction through intense eye contact.<br>n/a;Had a nice conversation
+Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;Prophet;Whispers a survival tip while staring at you((<br>n/a;Had a nice conversation
+Forsaken Village;👵;Grieving Widow;Friend;0;0;0;0;0;0;Hopeless Person;Sits on a porch with an empty chair beside her.<br>;You joined her silent mourning.
+
+Forsaken Village;🐕;Starved Hound;Friend;-1;0;0;0;0;0;Stray Creature;Its ribs are visible\ but it keeps on going.<br>;Got bit by the hungry beast!
 
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
-Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received a purrfect blessing
+Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;Cute Animal;Wants to initiate a contact.<br>;Received purrfect blessing
 Forsaken Village;🐩;Lost Doggo;Pet;1;1;1;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
 Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;Good Boy;These are super rare.<br>;Doge joined the party
 Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck
@@ -285,15 +312,15 @@ Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;Dangerous Critter;Proba
 Forsaken Village;🐖;Starving Pig;Standard;2;2;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured alive by a pig.
 Forsaken Village;🦝;Ferocious Coon;Standard;1;1;2;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
-Forsaken Village;🧝‍♂️;Cultist Adept;Standard;2;1;2;0;3;0;Humanoid;On their way to exaltation.<br>;Got their heart ripped out!
-Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got their heart ripped out!
-Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;Humanoid;Trying to prove themselves.<br>;Got their heart ripped out!
+Forsaken Village;🧝‍♂️;Cultist Adept;Standard;2;1;2;0;3;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
+Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!
+Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;Humanoid;Trying to prove themselves.<br>;Got your heart ripped out!
 
-Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
+Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;Humanoid;Searching for a sacrifice victim.<br>;Got your heart ripped out!
 Forsaken Village;🦂;Fierce Scorpion;Swift;1;2;1;0;-1;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
 Forsaken Village;🦨;Aggressive Skunk;Swift;2;1;2;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
-Forsaken Village;🪡;Possessed Needle;Swift;1;1;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got their holes sewn shut.
+Forsaken Village;🪡;Possessed Needle;Swift;1;1;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
 
 Forsaken Village;🪓;Possessed Axe;Demon;1;2;1;0;-1;0;Cursed Tool;Thirsts for warm blood.<br>;Split your skull in two.
 Forsaken Village;🪑;Cursed Chair;Demon;1;1;1;0;-1;0;Animated Object;Whispers from the wood.<br>;Crushed your spine to dust.
@@ -302,7 +329,7 @@ Forsaken Village;🎻;Sinister Violin;Demon;1;1;1;0;-1;0;Animated Object;Plays a
 Forsaken Village;🧹;Possessed Broom;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;2;1;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
 
-Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got their heart ripped out!
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;4;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
 Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
 Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 Forsaken Village;🪿;Untitled Goose;Boss-Swift;2;1;4;0;3;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
@@ -329,9 +356,9 @@ Forsaken Village;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacr
 
 Forsaken Village;🩼;Disposed Crutch;Item;1;1;0;0;0;0;Support Tool;Best of both - support and attack power.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 ⚔️ Damage</b>.;This will come in handy!
 Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a makeshift weapon.
-Forsaken Village;🪖;Trench Helmet;Item;2;0;0;0;0;0;Head Protection;Makes one look extremely cool.<br>Provides <b>+2 ❤️ Health</b>;Ready for the spotlight
+Forsaken Village;🪖;Trench Helmet;Item;1;0;0;0;1;0;Head Protection;Neat combination of protection and experience.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Intellect</b>.;Ready for the spotlight
 Forsaken Village;📔;Mythical Tales;Item;0;0;0;0;1;1;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🧠 Intellect and +1 🔵 Mana</b>.;Learned plenty of stuff
-Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.<br>n/a;Embraced the knowledge.
+Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;Knowledge Book;The ulimate guide with colorful illustrations.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;Encyclopedia;Describes various species of forest growth.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
 Forsaken Village;🥾;Heavy Boots;Item;1;0;1;0;0;0;Work Gear;Helps navigating through tough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Forsaken Village;👖;Work Trousers;Item;1;0;1;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action
@@ -341,10 +368,10 @@ Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;2;0;0;Lasting Hope;Brings ple
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
-Forsaken Village;🧮️;Manual Calculator;Item;0;0;-1;0;3;0;Counting Tool;Provides <b>+3 🧠 Intellect</b> for <b>-1  🟢 Energy</b>.<br>Operating this slows you down a bit.;Thinking can be hard.
+Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;3;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+3 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Even carrying it makes a difference
 
 Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Shot arrow in the knee!
-Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;Perhaps could be of service.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
+Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>;<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
 Forsaken Village;🥊;Boxing Glove;Item;0;1;0;0;0;0;Figting Gear;Improves hand-to-hand combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Feeling more confident.
 Forsaken Village;🦯;Telescopic Stick;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
@@ -352,21 +379,38 @@ Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;Multi-tool;The blade still 
 Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🔧;Hefty Spanner;Item;0;1;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.
+Forsaken Village;🪝;Rusty Hook;Item;0;1;0;0;0;0;Weathered Tool;Hangs uselessly from the eaves.<br>Provides <b>+1 ⚔️ Damage</b>.;Could still make a bloody mess.
 Forsaken Village;🔨;Hefty Hammer;Item;0;1;0;0;0;0;Makeshift Weapon;Kinda heavy to swing around with.<br>Provides <b>+1 ⚔️ Damage</b>.;Tiring to carry.
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;Malevolent Weapon;Requires handling with a lot of care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot arrow in the knee!
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
-Forsaken Village;🎒;School Backpack;Item;0;0;0;0;1;0;Knowledge Vessel;Contains books of immense knowledge.<br>Provides <b>+1 🧠 Intellect</b>;Even carrying it makes a difference
 Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Ready to rock. Let's do this!
+Forsaken Village;🪣;Gathering Bucket;Item;1;0;0;0;0;0;Makeshift Headgear;Could brace a mediocre attack.<br>Provides <b>+1 ❤️ Health</b>;
 
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
 Forsaken Village;📓;Cultist Notes;Item;0;0;0;-3;0;1;Ritual Book;Contains endless pages of nonsense gibberish.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🍀 Luck</b>.;Eternal presence seen that.
 Forsaken Village;📔;Philosopher Journal;Item;0;0;0;0;1;0;Notes;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Embraced the knowledge.
 Forsaken Village;🏷️;Remembrance Tag;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and insight.<br>n/a;Should help to remember.
+Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;Garbage;Better not release the contents.<br>;Oops the lid came off
 Forsaken Village;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+
+Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🧸;Lost Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;👽;Toy Creature;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!
+Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;Lost Possesion;No practical use to a warrior.<br>;
+Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;Lost Possesion;Perhaps the special shape is by design.<br>;
+Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;Lost Possesion;Dirty and full of holes.<br>;
+Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;
+Forsaken Village;👠;Princess Shoe;Item;0;0;0;0;0;0;Lost Possesion;Likely belongs to a beautiful girl.<br>;
+Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!
+Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
+Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 
 Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
@@ -405,6 +449,7 @@ Twisted Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;Deserted Home;Looks long time
 Twisted Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;Weather Condition;Time for well deserved rest.<br>;
 Twisted Fairyland;☀️;Warming Sunrise;Prop;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
 
+Twisted Fairyland;🪵;Hollow Log;Container;0;0;0;0;0;0;Natural Stash;Hides what shouldn't be here.<br>;
 Twisted Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
 Twisted Fairyland;🎶;Lovely Song;Container;1;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
 Twisted Fairyland;🌿;Fern Thicket;Container;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
@@ -419,70 +464,82 @@ Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;Suspense Area;Se
 Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
-Twisted Fairyland;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Forest Flora;These are just beautiful.<br>Perhaps grab some.;Ouch! There are sharp thorns
-Twisted Fairyland;🌹;Briar Thicket;Container-2;-1;0;0;0;0;0;Natural Snare;Spiky branches catch at your clothes.<br>;A few tears in your sleeve.
+Twisted Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Twisted Fairyland;🌹;Briar Thicket;Container-2;-1;0;0;0;0;0;Natural Snare;Looks like something is hidden inside.<br>;Got cut by sharp torns
 
 Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
 Twisted Fairyland;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
 Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Twisted Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
-Twisted Fairyland;🛖;Simple Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
-Twisted Fairyland;🎪;Cheftain's Tent;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
 Twisted Fairyland;🗼;Tribal Monument;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
+Twisted Fairyland;🛖;Witch’s Hut;Container-3;0;0;0;-1;0;0;Primitve Housing;Dark herbs hang from the rafters.<br>;
+
+Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
+Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 
 Twisted Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
 Twisted Fairyland;🗻;Rocky Mountain;Container-4;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.
 Twisted Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Twisted Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Twisted Fairyland;🌲;Deep Forest;Container-4;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
+Twisted Fairyland;🛕;Cult Monument;Container-4;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 
 Twisted Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Twisted Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
 Twisted Fairyland;🌋;Volcano Throat;Container-5;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.
 Twisted Fairyland;🏛️;Ancient Temple;Container-5;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.
+Twisted Fairyland;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;Deserted Building;Massive stones suffered many battles.<br>;
+Twisted Fairyland;🏰;Fallen Fortress;Container-5;0;0;0;0;0;0;Ancient Ruins;Massive stones suffered many battles.<br>;
+Twisted Fairyland;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Twisted Fairyland;🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
-Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
-Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
-
+Twisted Fairyland;💫;Twirling Glow;Curse;0;0;1;0;0;0;Magic Aura;The light spins around your head\ dizzying but harmless.<br>;Let the good vibes dance within.
 Twisted Fairyland;✨;Sparkly Mist;Curse;1;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
+Twisted Fairyland;🌈;Brief Rainbow;Curse;0;0;0;3;0;0;Weather Condition;The end of the rainbow always holds treasure.<br>At least for those who believe.;Brought yourself a lucky blessing!
+Twisted Fairyland;✨;Whispering Glow;Curse;0;0;0;0;2;0;Magical Phenomenon;Tiny glimmers beckon from the shadows.<br>;Let them guide your steps.
+Twisted Fairyland;🌟;Stardust Drizzle;Curse;0;0;0;1;0;0;Weather Anomaly;Fine shimmering dust floats through the air.<br>;You shimmer with strange luck.
+Twisted Fairyland;💧;Moonkissed Dew;Curse;0;0;0;0;0;1;Natural Phenomenon;Dewdrops shimmer like silver under no sun.<br>;Embraced the magical power.
+
+Twisted Fairyland;👤;Glimmering Reflection;Curse;0;0;0;0;-3;0;Fae Illusion;A faint silhouette mimics your movements.<br>;Embraced your mirrored self.
 Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark zapped you.
 Twisted Fairyland;💨;Swift Winds;Curse;0;0;1;0;-1;0;Weather Condition;These air currents make one act fast.<br>;Embraced the howling wind.
-Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;Horrible chills go down the spine.<br>;Suffered permanent changes.
-Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered lasting changes.
+Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;A horrible chills goes down your spine.<br>;Suffered permanent changes.
+Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered mental damage.
 Twisted Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
-Twisted Fairyland;🗯️;Unknown Voice;Curse;-1;0;0;0;-1;0;Misfortune;Its words make no sense.<br>;Suffered a nasty curse
+Twisted Fairyland;🗯️;Unknown Voice;Curse;0;0;0;0;-1;0;Misfortune;Its unsettling words make no sense.<br>;Suffered mental damage.
 
-//TODO add explanations
 Twisted Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Wholesome statues gaze upon the altar.<br>;Embraced ancient gods
 Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
 Twisted Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
 Twisted Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
 
-Twisted Fairyland;🔥;Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
-Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Better not release the contents.<br>;Got some webs on their face
+Twisted Fairyland;🔥;The Eternal Flame;Upgrade;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
-Twisted Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on their hands
+Twisted Fairyland;🕳️;Bottomless Sinkhole;Trap;-10;0;0;0;0;0;Natural Disaster;A deep and treacherous hole.<br>;Fell into the dark depths.
+Twisted Fairyland;🔥;Spreading Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
+Twisted Fairyland;💩;Dung Pile;Trap-Attack;-1;0;0;0;-3;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
+Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
 Twisted Fairyland;🪲;Smelly Bug;Trap;-1;0;0;0;0;0;Insect;Its colour suggests against touching.<br>;Horrendous smell filled the air
-Twisted Fairyland;🌵;Pointy Cacti;Trap;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
+Twisted Fairyland;🌵;Pointy Cacti;Trap;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 
 Twisted Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Twisted Fairyland;🌾;Overgrown Pond;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Twisted Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 
-//TODO ADD MILION QUEST ITEMS TO FRIENDS (count with legendary loot afterwards and small/items from before)
-Twisted Fairyland;🦧;Friendly Orangutan;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Received a powerful message
-Twisted Fairyland;🐒;Talking Monkey;Friend;0;0;0;0;0;0;Speaking Animal;Looks like it has something to say.<br>;Heard a powerful message
+Twisted Fairyland;🦧;Confused Orangutan;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;Troubles Animal;Looks like it has something barter.<br>;Received a poweful artifact
+Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;Troubled Animal;Looks like it has something to barter.<br>;Received a poweful artifact
+Twisted Fairyland;🦤;Hungry Dodo🪳\🪰\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;Friend;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared something.
+Twisted Fairyland;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸\🗿;0;0;0;0;0;1;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
+Twisted Fairyland;🐢;The Elder Pope;Friend;0;0;0;0;0;1;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Twisted Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;Mythical Creature;Could provide some agility lessons.<br>;Got through their training.
-Twisted Fairyland;🦤;Curious Dodo;Friend;0;0;0;1;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared some luck.
-Twisted Fairyland;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸;0;0;0;0;0;1;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
-Twisted Fairyland;🧞‍♀️;Generous Genie;Friend🔮\🪄;0;0;0;0;0;1;Magical Creature;Offers a pleasant conversation.<br>;Received a special gift.
-Twisted Fairyland;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
-Twisted Fairyland;🧖🏻‍♀️;Heavenly Angel;Friend;1;0;0;0;0;0;Supernatural Being;Has understanding for all and everyone.<br>;Received a precious gift.
+
+Twisted Fairyland;🧚;Flickering Shade;Friend;0;0;0;-3;0;0;Corrupted Fey;Its wings shimmer\ but it brings only grief.<br>;Got covered with unlucky dust.
 
 Twisted Fairyland;🐇;Lucky Four;Pet;1;0;1;2;0;0;Friendly Critter;Its paws might bring you some extra luck.<br>;4 paws equals((
 Twisted Fairyland;🦄;Rainbow Unicorn;Pet;3;0;3;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
@@ -506,7 +563,7 @@ Twisted Fairyland;🪱;Overgrown Worm;Small;2;1;1;0;-1;0;Arthropod;Oh no. It fig
 Twisted Fairyland;🪱;Bee Larva;Small;1;1;1;0;-1;0;Harmless Insect;Seems angry of the disturbance.<br>;
 Twisted Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;Dangerous Insect;<br>;
 Twisted Fairyland;🐝;Stray Bee;Small;1;1;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
-Twisted Fairyland;🕷️;Black Widow;Small;1;5;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.<br>;Got stinged into their eyes.
+Twisted Fairyland;🕷️;Black Widow;Small;1;5;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.
 Twisted Fairyland;🦋;Bluesky Butterfly;Small;1;0;1;0;-1;1;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
 Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;Crustacean;Boasts a pair of painful pinchers.<br>;Got pinched to death.
 Twisted Fairyland;🐜;Bullet Ant;Small;1;3;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
@@ -515,14 +572,14 @@ Twisted Fairyland;🐺;Prowling Wolf;Standard;4;3;2;0;10;0;Apex Predator;Hunting
 Twisted Fairyland;🦚;Pearlescent Bird;Standard;3;2;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
 Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;Wild Beast;Probably has no soul.<br>;
 Twisted Fairyland;🦎;Komodo Dragon;Standard;4;2;2;0;-1;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
-Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got stinged into their eyes.
+Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
 
-Twisted Fairyland;🧌;Aged Troll;Recruit;4;2;2;0;1;2;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
-Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;2;3;0;2;2;Twisted Humanoid;Not happy about having a company.<br>;Turned into goulash.
-Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;3;1;Twisted Humanoid;Searching for a sacrifice victim.<br>;Got their heart ripped out!
-Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;2;2;0;4;2;Twisted Humanoid;Eyes are glowing blue.<br>;Sacrificed to the great evil.
-Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;3;1;0;1;0;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
+Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;Twisted Humanoid;Not happy about having a company.<br>;Turned into goulash.
+Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;3;1;Twisted Humanoid;Searching for a sacrifice victim.<br>;Got your heart ripped out!
+Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;1;2;0;4;2;Twisted Humanoid;Eyes are glowing blue.<br>;Sacrificed to the great evil.
+Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;Crazed Maniac;Eyes are glowing blue.<br>;Sacrificed to the great evil.
 
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
 Twisted Fairyland;🦜;Annoying Parrot;Swift;2;2;4;0;2;0;Wild Animal;Seems having lightning reflexes.<br>;
@@ -531,7 +588,7 @@ Twisted Fairyland;🐝;Swarm of Bees;Swift;3;2;3;3;-1;0;Pesky Insects;A ton of b
 Twisted Fairyland;🐆;Daunting Panther;Swift;3;4;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
 Twisted Fairyland;🐅;Enraged Tiger;Swift;3;4;2;0;5;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
 Twisted Fairyland;🦟;Oversized Mosqito;Swift;2;3;2;0;-1;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
-Twisted Fairyland;🦅;Bald Eagle;Swift;3;4;1;0;-1;0;Wild Animal;Attacks from high altitude.<br>;Got their brain pecked out.
+Twisted Fairyland;🦅;Bald Eagle;Swift;3;4;1;0;-1;0;Wild Animal;Attacks from high altitude.<br>;Got your brain pecked out.
 
 Twisted Fairyland;🐃;Frantic Horns;Heavy;4;3;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
 Twisted Fairyland;🦍;Native Ape;Heavy;3;2;3;0;3;0;Wild Beast;Buffed and ready to fight.<br>;
@@ -542,15 +599,19 @@ Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware 
 Twisted Fairyland;👹;Little Devil;Demon;2;2;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
 Twisted Fairyland;🌚;Malevolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 
-Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;1;0;-1;1;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.
+Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;2;0;-1;0;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.
 Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;0;0;1;-1;1;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
 Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;0;0;1;-1;2;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
 
-Twisted Fairyland;🐃;Mythical Buffalo;Boss-Heavy;2;2;1;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by two horns at once.
-Twisted Fairyland;🦀;Titan Crab;Boss-Heavy;4;3;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
-Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;2;3;2;0;3;1;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+Twisted Fairyland;🧌;Troll Warbringer;Boss-Heavy;4;3;2;0;4;1;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
+Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
+Twisted Fairyland;🦏;Horned Juggernaut;Boss-Heavy;4;4;1;0;4;0;Savage Titan;Nothing survives its charge.<br>;Gored like a ragdoll.
+
+Twisted Fairyland;🦟;Plague Mosquito;Boss-Swift;2;3;3;0;-1;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to a husk.
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Swift;3;4;2;0;-1;0;Mr. Funny Hands;Looks like freakin' big problem.<br>;Got chewed with dozens of teeth.
-Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;4;3;1;0;-1;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
+
+Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
+Twisted Fairyland;🐃;Mythical Buffalo;Boss-Spirit;1;2;2;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by the spirital horns.
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
@@ -572,7 +633,6 @@ Twisted Fairyland;🍊;Orange Citrus;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems li
 Twisted Fairyland;🍐;Ripe Pear;Consumable;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Twisted Fairyland;🫐;Berries;Consumable;0;0;0;0;0;0;Forest Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Twisted Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Twisted Fairyland;🥜;Sweet Peanuts;Consumable;0;0;0;0;0;0;Crunchy Food;Seems like a good snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Twisted Fairyland;🍯;Sweet Honeypot;Consumable;0;0;0;0;0;0;Lost Treat;Seems like a fine refreshment.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;That was delicious
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
@@ -584,110 +644,131 @@ Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Cu
 Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.
 Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance for +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 Twisted Fairyland;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
-Twisted Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
 Twisted Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
 Twisted Fairyland;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
 Twisted Fairyland;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
 Twisted Fairyland;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
 
-Twisted Fairyland;🪃;Tribal Boomerang;Item;0;2;0;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b>.;
+Twisted Fairyland;🪃;Haunting Boomerang;Item;0;2;0;0;0;0;Tribal Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b>.;
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!
 Twisted Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;<br>Provides <b>+2 🍀 Luck</b>.;Feels good to have it.
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
 Twisted Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy Artifact;Provides <b>+3 🧠 Intellect</b> and insight.<br>n/a;Embraced the knowledge.
 Twisted Fairyland;📜;Magic Scroll;Item;0;0;0;0;0;1;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b>.;Absorbed some magic knowledge
 
-Twisted Fairyland;🪁;Lightning Kite;Item;0;0;2;0;0;0;Accessory;Unfamiliar makeshift piece of art.<br>Somehow provides <b>+2 🟢 Energy</b>.;Yay! Weeee!
 Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;
 Twisted Fairyland;🧥;Protective Coat;Item;2;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;
-Twisted Fairyland;👘;Wizard Robe;Item;0;0;0;0;0;2;Accessory;Perfect piece of clothing for casters.<br>Provides <b>+2 🔵 Mana</b>.;
+Twisted Fairyland;🪄;Old Wand;Item;0;0;0;0;0;2;Mystic Relic;Still possesses considerable magical power.<br>Provides <b>+2 🔵 Mana</b>.;Wielded a dangerous power.
 Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
 Twisted Fairyland;🧭;Navigation Compass;Item;0;0;2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b>.;
 Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-2;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;
 Twisted Fairyland;🪃;Cursed Boomerang;Item;0;2;0;-1;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;
 Twisted Fairyland;🧧;Crimson Medailon;Item;2;0;0;-1;0;0;Rare Trinket;Something feels off about this.<br>Provides <b>+2 ❤️ Health”</b> for <b>-1 🍀 Luck</b>.;
-Twisted Fairyland;🥁;Bassline Drum;Item;0;0;2;0;;0;Rythmical Instrument;Helps staying alert in combat.<br>Provides <b>+2 🟢 Energy</b>.;Ba dum tss!
+Twisted Fairyland;🥁;Treble Drum;Item;0;0;2;0;;0;Rythmical Instrument;Helps staying alert in combat.<br>Provides <b>+2 🟢 Energy</b>.;Ba dum tss!
 Twisted Fairyland;🪇;Painted Maracas;Item;0;0;0;2;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+2 🍀 Luck</b>.;Shake it baby!
 
 Twisted Fairyland;🪭;Sharp Fan;Item;0;1;0;0;0;0;Inconspicious Weapon;No one would guess it's a deadly weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;
 Twisted Fairyland;🏹;Primitive Bow;Item;0;1;0;0;0;0;Weapon;Standard tool for hunting prey.<br>Provides <b>+1 ⚔️ Damage</b>.;
 Twisted Fairyland;🔥;Dancing Flame;Item;-1;0;0;0;0;2;Dangerous Spell;Strange urge draws hands towards the heat.<br>Provides <b>+2 🔵 Mana</b> for <b>-1 💔 Health</b>;Suffered severe burns!
+Twisted Fairyland;👘;Wizard Robe;Item;0;0;0;0;0;1;Accessory;Perfect piece of clothing for casters.<br>Provides <b>+1 🔵 Mana</b>.;
 Twisted Fairyland;💎;Radiating Jewel;Item;0;0;0;0;0;1;Precious Gem;The polished surface reflects energy.<br>Provides <b>+1 🔵 Mana</b>.;Irradiated with magic energy.
 Twisted Fairyland;🥢;Magic Sticks;Item;0;0;0;0;0;1;Spellcasting Tool;Glows with strong energy.<br>Provides <b>+1 🔵 Mana</b>.;Embraced the energy surge.
 Twisted Fairyland;🎐;Magic Chime;Item;0;0;0;0;0;1;Rare Trinket;Looks nice. Whatever purpose it has.<br>Provides <b>+1 🔵 Mana</b>.;Felt strange power surge.
+Twisted Fairyland;🎋;Wicked Staff;Item;0;0;0;-2;0;1;Casting Tool;Energized by countless blood rituals.<br>Provides <b>+1 🔵 Mana</b> for Provides <b>-2 🍀 Luck</b>.;
 Twisted Fairyland;🎎;Lucky Trinket;Item;0;0;0;1;0;0;Accessory;Traditional protection againts bad luck.<br>Provides <b>+1 🍀 Luck</b>.;
 Twisted Fairyland;🎗️;Vigor Amulet;Item;1;0;0;0;0;0;Handmade Ornament;Express empathy with the terminally ill.<br>Provides <b>+1 ❤️ Health</b>.;
 Twisted Fairyland;🗝️;Small Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Twisted Fairyland;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 
 Twisted Fairyland;🔪;Twisted Blade;Item;0;1;0;0;-2;0;Ritual Tool;The sacrifical blade demands offering.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;
-Twisted Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;Mystical Relic;No one should ever not look directly into it.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth
+Twisted Fairyland;🪞;Malevolent Mirror;Item;0;0;0;0;-1;1;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 🍀 Luck</b>.;Reality itself seemed fractured.
+Twisted Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;Mystical Relic;It's hard to face the horrors of truth.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth
 Twisted Fairyland;🎀;Silly Bowtie;Item;0;0;0;2;-1;0;Accessory;Gives extra luck but looks cringe.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;That looks ridiculous
-Twisted Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under their arm
+Twisted Fairyland;🪘;Tribal Drum;Item;0;0;-1;0;1;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under your arm
 Twisted Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;Junk;Likely belongs to a beautiful girl.<br>;
-Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on their hands
+Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on your hands
 
+Twisted Fairyland;🗿;Stone Figure;Item;0;0;0;0;0;0;Lost Possesion;A relic of the ancient times.<br>;
+Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is likely missing it.<br>;You should find the owner!
 Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is likely missing it.<br>;You should find the owner!
 Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 //River of Sorrows
+River of Sorrows;🌫️;Misty Veil;Prop;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;
+River of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the fog.<br>;
 River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
-River of Sorrows;🌧️;Slight Rainfall;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
-River of Sorrows;🌩️;Distant Lightning;Prop;0;0;0;0;0;0;Weather Condition;Really nothing interesting in sight.<br>;
 River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
+River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;
 River of Sorrows;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
 River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
 
-River of Sorrows;🌪️;Wailing Hurricane;Container;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;📦;Floating Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something of use inside.<br>;Oh\ so this was inside!?
 River of Sorrows;🎁;Festive Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something lovely inside.<br>;Oh\ so this was inside!?
 River of Sorrows;💝;Chocolate Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something sweet inside.<br>;Oh\ so this was inside!?
+River of Sorrows;🛢️;Floating Barrel;Container;0;0;0;0;0;0;Lost Container;Who knows what it holds inside.<br>;The contents were surprising!
 
 River of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
-River of Sorrows;️🏝️;Quiet Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;Peaceful place in the middle of nowhere.<br>;Something jumped the hook!
-River of Sorrows;🏖;Lonely Island;Fishing;0;0;0;0;0;0;Piece of Land;Place of rest in the middle of nowhere.<br>;Something jumped the hook!
-River of Sorrows;️🏝️;Little Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
-River of Sorrows;🏖;Chill Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
-River of Sorrows;️🏝️;Palm Island;Fishing;0;0;0;0;0;0;Natural Habitat;A place of rest in the middle of nowhere.<br>;Something was behind the palm tree.
-River of Sorrows;🏖;Shaded Island;Fishing;0;0;0;0;0;0;Piece of Land;A place of rest in the middle of nowhere.<br>;Found something in the shade.
+River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
+River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;
 
+River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
 River of Sorrows;☁️;Toxic Cloud;Trap;-2;0;1;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 
 River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🦑;Sinister Squidling;Small;1;1;1;0;-1;0;Cephalopod;Wriggles with unsettling energy.<br>;
 River of Sorrows;🦐;Twisted Shrimp;Small;1;1;1;0;-1;0;Arthropod;Goes for your blood like crazy.<br>;
 River of Sorrows;🪱;Twisting Seaworm;Small;1;1;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Thirsty Leech;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 
 River of Sorrows;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
+River of Sorrows;🐡;Barbed Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly catch!
 
 River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-River of Sorrows;‍🪼;Small Jellyfish;Swift;1;2;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 
-River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Cephalopod;Always lusts for blood.<br>;
+River of Sorrows;‍🪼;Square Jelly;Undead;1;4;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
+River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
+River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
+River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
-River of Sorrows;🌩️;Thunderstorm Entity;Spirit;1;0;0;0;-1;2;Elemental Fury;Eyes crackle with electric hate.<br>;Struck by a lightning bolt.
+River of Sorrows;👤;Abandoned Love;Friend👠;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
 
-River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
-River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Unnatural energy booster.<br>Provides <b>+2 🟢 Energy</b> bonus.;
-River of Sorrows;🧃;Juice Box;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a bit little inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
+River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🥤;Coke Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 River of Sorrows;🧋;Floating Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🧃;Juice Pouch;Consumable;0;0;0;0;0;0;Refreshment;Packs a burst of energy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🦪;Giant Clam;Consumable;0;0;0;0;0;0;Seafood;A rare treat of the depths.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🦪;Brackish Oyster;Consumable;0;0;0;0;2;0;Seafood;A rare treat of the water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🦐;Crawfish Snack;Consumable;0;0;0;0;0;0;Seafood;A bite of the river’s life.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
+River of Sorrows;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
-River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
-River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-River of Sorrows;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
+//Matches fishing
+River of Sorrows;📿;Witchbane Necklace;Item;0;0;1;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Hung it around your neck.
+River of Sorrows;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 River of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
 River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
+River of Sorrows;🎲;Gambling Die;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
+River of Sorrows;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
+River of Sorrows;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
+River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides the ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
+River of Sorrows;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
+River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
+River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+River of Sorrows;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
+River of Sorrows;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like nothing before.
 
 River of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
 River of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!
@@ -703,113 +784,164 @@ River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters alrea
 
 River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
-//Shrouded Necropolis
-Shrouded Necropolis;💀;Cracked Skull;Prop;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.
-Shrouded Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
-Shrouded Necropolis;🍂;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
-Shrouded Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
-Shrouded Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
-Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
+//Shrouded Vale
+Shrouded Vale;💀;Cracked Skull;Prop;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.
+Shrouded Vale;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
+Shrouded Vale;🍂;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Shrouded Vale;⚱️;Burial Urn;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Shrouded Vale;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
+Shrouded Vale;🪦;Weathered Tombstone;Prop;0;0;0;0;0;0;Memorial;Names long forgotten.<br>;
+Shrouded Vale;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
+Shrouded Vale;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Shrouded Vale;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
+Shrouded Vale;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Vale;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Vale;🫂;Mourning Shades;Prop;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
+Shrouded Vale;🩸;Blood-Stained Stone;Prop;0;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;
+Shrouded Vale;🌫️;Pale Mist;Prop;0;0;0;0;0;0;Unsettling Atmosphere;A veil of fog conceals the path.<br>;
+Shrouded Vale;⚰️;Broken Coffin;Prop;0;0;0;0;0;0;Ruins;Wood splinters litter the ground.<br>;
+Shrouded Vale;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;
+Shrouded Vale;⏳;Frozen Hourglass;Prop;0;0;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;
+Shrouded Vale;🌾;Dead Reeds;Prop;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;
+Shrouded Vale;🕯️;Unlit Candle;Prop;0;0;0;0;0;0;Faint Hope;Once offered flickering guidance.<br>;
 
-Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
-Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Shrouded Necropolis;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
-Shrouded Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
-Shrouded Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
-Shrouded Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.
-Shrouded Necropolis;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.
-Shrouded Necropolis;🦴;Pile of Bones;Container;0;0;0;-3;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;Got cursed for disturbing that
-Shrouded Necropolis;🦴;Scattered Bones;Container;-1;0;0;0;0;0;Uneasy Sight;Old bones lie scattered around.<br>;Stepped on something sharp.
-Shrouded Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;Questionable Stash;Something seems to be hidden there.;Got cursed for disturbing that
-Shrouded Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
-Shrouded Necropolis;🥀;Trailing Vines;Container;-1;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.
-Shrouded Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+Shrouded Vale;🏺;Ancient Urn;Container;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;
+Shrouded Vale;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
+Shrouded Vale;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Shrouded Vale;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
+Shrouded Vale;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
+Shrouded Vale;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
+Shrouded Vale;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.
+Shrouded Vale;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.
+Shrouded Vale;🦴;Pile of Bones;Container;0;0;0;-3;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;Got cursed for disturbing that
+Shrouded Vale;🦴;Scattered Bones;Container;-1;0;0;0;0;0;Uneasy Sight;Old bones lie scattered around.<br>;Stepped on something sharp.
+Shrouded Vale;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;Questionable Stash;Something seems to be hidden there.;Got cursed for disturbing that
+Shrouded Vale;🪦;Toppled Headstone;Container;0;0;0;0;0;0;Resting Place;Something is sticking from below it.<br>;
+Shrouded Vale;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
+Shrouded Vale;🥀;Trailing Vines;Container;-1;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.
+Shrouded Vale;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 
-Shrouded Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
-Shrouded Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
+Shrouded Vale;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
+Shrouded Vale;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
+Shrouded Vale;🌊;Flooded Crypt;Fishing;0;0;0;0;0;0;Hidden Depths;Ripples betray movement below.<br>;
 
-Shrouded Necropolis;🫁;Collapsed Lungs;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
-Shrouded Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
-Shrouded Necropolis;💀;Mourning Echo;Curse;-1;0;0;0;0;0;Haunted Spot;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
-Shrouded Necropolis;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
-Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;0;0;0;0;-1;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your heel\ but survived.
+Shrouded Vale;👣;Trailing Shade;Curse;0;0;0;0;-3;0;Doppelganger;Footsteps match yours exactly\<br> but they are always late.;Unsure who walked first.
+Shrouded Vale;👁️;Unseen Witness;Curse;0;0;0;0;-2;0;Guilt Manifest;Always a step behind\ never speaking.<br>It knows what you did.;The anxiety never leaves.
+Shrouded Vale;🫀;Irregular Beat;Curse;-1;0;0;0;0;0;Relentless Pulse;Your heart suddenly struggles to keep up.<br>;
+Shrouded Vale;🩹;Festering Wound;Curse;0;0;-1;0;0;0;Everlasting Pain;The wound seems to have never fully recovered.<br>;The pain limits your movement.
+Shrouded Vale;🫁;Collapsed Lung;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
+Shrouded Vale;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
+Shrouded Vale;🌬️;Mourning Echo;Curse;0;0;0;0;-1;0;Haunted Moment;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
 
-Shrouded Necropolis;🌕;Full Moon;Altar;-2;1;1;0;0;0;Ritual Place;The skies demand fresh blood.<br>;
+Shrouded Vale;🕳️;Dark Maw;Trap-Attack;-10;0;0;0;0;0;Hunger;A void that never ends.<br>;Dragged you in inch by inch.
+Shrouded Vale;🔥;Ember Pit;Trap-Attack;0;0;0;0;-1;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
 
-Shrouded Necropolis;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
-Shrouded Necropolis;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
-Shrouded Necropolis;🪳;Plague Roach;Small;2;1;1;0;-1;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.
-Shrouded Necropolis;🪰;Hungry Fly;Small;1;1;2;0;-1;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
-Shrouded Necropolis;🪲;Green Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.
-Shrouded Necropolis;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.
-Shrouded Necropolis;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.
-Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.
-Shrouded Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪱;Bloodsucking Worm;Small;1;0;0;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪱;The Glowing One;Small;1;0;0;0;-1;2;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪱;Chewing Worm;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Shrouded Necropolis;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪱;Nasty Leech;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪱;Parasitic Worm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Shrouded Necropolis;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.
+Shrouded Vale;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
+Shrouded Vale;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;Ritual Place;The stone feels cold to the touch.<br>;
+Shrouded Vale;🌌;Starlight Mural;Altar;0;0;0;0;0;2;Ritual Place;The skies will show you the way.<br>;Recived celestial blessing
 
-Shrouded Necropolis;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Shrouded Vale;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
+Shrouded Vale;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
+Shrouded Vale;🪳;Plague Roach;Small;2;1;1;0;-1;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.
+Shrouded Vale;🪰;Hungry Fly;Small;1;1;2;0;-1;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
+Shrouded Vale;🪲;Green Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.
+Shrouded Vale;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.
+Shrouded Vale;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.
+Shrouded Vale;🦋;Death’s Moth;Small;1;0;1;0;-1;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.
+Shrouded Vale;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Shrouded Vale;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪱;Nasty Leech;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪱;Parasitic Worm;Small;1;1;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪱;Grave Worm;Small;1;2;1;0;-1;0;Crawling Parasite;Nourished by the decay of ages.<br>;
+Shrouded Vale;🪱;Bloodsucking Worm;Small;1;2;2;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪱;Venomous Larva;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Vale;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Shrouded Vale;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.
+Shrouded Vale;🦗;Grave Cricket;Small;1;1;1;0;-1;0;Chirping Insect;Echoes break the silence.<br>;
+Shrouded Vale;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;Burrowing Insect;Wings shimmer faintly in the gloom.<br>;
+Shrouded Vale;🦋;Nocturne Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
 
-Shrouded Necropolis;👤;Lost Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
-Shrouded Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
+Shrouded Vale;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Shrouded Vale;💀;Little Skeleton;Pet;1;1;1;0;2;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
+Shrouded Vale;🐈‍⬛;Black Cat;Pet;2;1;1;3;3;2;Stray Spirit;Stares with unsettling calmness.<br>;
 
-Shrouded Necropolis;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
-Shrouded Necropolis;💀;Skeleton Warrior;Standard;3;3;2;0;-1;0;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
-Shrouded Necropolis;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Vale;👤;Lost Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
+Shrouded Vale;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
+Shrouded Vale;👤;Echoing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Their presence lingers in the air.<br>;
+Shrouded Vale;🗣️;Whispering Soul;Friend;0;0;0;0;0;0;Hopeless Soul;Their words fade like mist.<br>;
+Shrouded Vale;🤖;Exhausted Golem;Friend⚙️\🔧\🔩\🪛;0;0;0;0;0;0;Hopeless Machine;You can hear its very faint voice.<br>;They gestured "OK" towards you.
+Shrouded Vale;🧖🏻‍♀️;Guardian Angel;Friend;1;0;0;0;0;0;Sacred Being;Has understanding for all and everyone.<br>;Received a precious blessing.
 
-Shrouded Necropolis;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;
+Shrouded Vale;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
+Shrouded Vale;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;Restless Bones;Silent guardian of this realm.<br>;
+Shrouded Vale;💀;Skeleton Warrior;Standard;3;3;2;0;-1;0;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Vale;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Vale;💀;Crypt Guard;Standard;3;3;3;0;-1;0;Restless Bones;Silent watcher of forgotten paths.<br>;
 
-Shrouded Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
-Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
-Shrouded Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
+Shrouded Vale;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;
+Shrouded Vale;🧙‍♂️;Fallen Acolyte;Recruit;3;1;0;0;3;1;Forsaken;Eyes glow with an unnatural light.<br>;
 
-Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
-Shrouded Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
-Shrouded Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
+Shrouded Vale;🐍;Cursed Serpent;Heavy;3;1;3;0;-1;0;Venomous Predator;Scales glisten in moonlight.<br>;
+Shrouded Vale;🎭;Laughing Mask;Heavy;4;4;2;0;-1;0;Eerie Presence;Eyes seem to follow your every move.<br>;
+Shrouded Vale;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
+Shrouded Vale;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
+Shrouded Vale;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
 
-Shrouded Necropolis;🧟;Animated Dead;Undead;2;2;1;0;-1;1;Restless Body;Better keep your distance.<br>;Rotten to the bones
-Shrouded Necropolis;🧟;Tainted Zombie;Undead;2;2;1;0;-1;1;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones
-Shrouded Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;Restless Body;Still almost looks human.<br>Better keep distance.;Rotten to the bones
-Shrouded Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
+Shrouded Vale;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
+Shrouded Vale;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
+Shrouded Vale;🦌;Stag Wraith;Swift;3;3;1;0;4;1;Ethereal Beast;Antlers glow with spectral fire.<br>;
+Shrouded Vale;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
-Shrouded Necropolis;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got their heart ripped out!
-Shrouded Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got their heart ripped out!
-Shrouded Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got their heart ripped out!
-Shrouded Necropolis;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
+Shrouded Vale;🧟;Animated Dead;Undead;2;2;1;0;-1;1;Restless Body;Better keep your distance.<br>;Rotten to the bones
+Shrouded Vale;🧟;Tainted Zombie;Undead;2;2;1;0;-1;1;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Vale;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;Restless Body;Still almost looks human.<br>Better keep distance.;Rotten to the bones
+Shrouded Vale;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
+Shrouded Vale;🪰;Necrotic Fly;Undead;1;2;3;0;-1;0;Pestilence;Buzzing wings promise disease.<br>;
 
-Shrouded Necropolis;🌪️;Tempest Wraith;Spirit;2;2;2;0;-1;1;Ethereal Storm;Spirals in howling fury.<br>;Torn to pieces by the storm.
-Shrouded Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
-Shrouded Necropolis;👺;Haunting Spirit;Spirit;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
-Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
+Shrouded Vale;👗;Haunted Dress;Demon;2;1;2;0;-1;0;Animated Object;Probably a side-effect of a spell gone wild.<br>;Embraced the cold
+Shrouded Vale;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat
+Shrouded Vale;🧛‍♀️;Pale Countess;Demon;2;2;1;0;4;0;Humanoid;Moves with deadly grace.<br>;Got their heart ripped out!
+Shrouded Vale;🧛🏽;Noble Vampire;Demon;3;2;1;0;5;0;Humanoid;Eyes glow with hunger.<br>;Got their heart ripped out!
+Shrouded Vale;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got your heart ripped out!
+Shrouded Vale;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got your heart ripped out!
+Shrouded Vale;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got your heart ripped out!
+Shrouded Vale;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
+Shrouded Vale;👺;Haunting Spirit;Demon;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Vale;👺;Dread Spirit;Demon;1;0;0;0;4;2;Eerie Being;A form takes shape in the dark.<br>;
 
-Shrouded Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-2;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-2 🧠 Intellect</b>.;Ewwww...
-Shrouded Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
-Shrouded Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
-Shrouded Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
-Shrouded Necropolis;👗;Haunted Dress;Item;-1;0;0;0;0;1;Animated Object;Probably a side-effect of a spell gone wild.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Embraced the cold
-Shrouded Necropolis;🗡️;Possesed Dagger;Item;-1;2;0;0;0;0;Deadly Weapon;First touch always cuts the wearer.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Accidentaly cut themselves
+Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
+Shrouded Vale;🦋;Eclipse Moth;Spirit;1;0;1;0;0;1;Eerie Being;Wings glow under the dark.<br>;Dust turned to whispers.
+Shrouded Vale;👁️;Judging Eye;Spirit;2;0;0;0;5;0;All-Seeing;Locks you in a gaze of eternity.<br>;Tore your secrets apart.
+Shrouded Vale;🌪️;Tempest Wraith;Spirit;2;2;2;0;-1;1;Ethereal Storm;Spirals in howling fury.<br>;Torn to pieces by the storm.
+Shrouded Vale;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Vale;🧞‍♂️;Malevolent Genie;Spirit;2;0;0;0;10;4;Magic Creature;Dark wishes bloom on its breath.<br>;
+Shrouded Vale;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
+Shrouded Vale;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
+Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
-Shrouded Necropolis;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
-Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
-Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Shrouded Necropolis;🥜;Crunchy Peanut;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+Shrouded Vale;👑;Golden Crown;Item;3;0;0;0;0;0;<b>Artifact</b>;Still carries a trace of grandeur.<br>Provides <b>+2 ❤️ Health</b> and a sense of authority.;Gained a deep sense of authority.
+Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Vale;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
 
-Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;6;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
-Shrouded Necropolis;👰🏻;Restless Bride;Boss-Undead;4;4;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
-Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
+Shrouded Vale;🗡️;Thirsty Blade;Item;-1;3;0;0;0;0;Cursed Weapon;Very deadly but wielding it takes a toll.<br>Provides <b>+3 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Felt strangely familiar.
+Shrouded Vale;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
+
+Shrouded Vale;🎩;Fancy Hat;Item;0;0;0;0;3;0;Stylish Accessory;Salt-stained but dashing.<br>Provides <b>+3 🧠 Charisma</b>.;Felt rather dapper.
+Shrouded Vale;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
+Shrouded Vale;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
+
+Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
+Shrouded Vale;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
+
+Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br>Provides <b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
+Shrouded Vale;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Shrouded Vale;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Shrouded Vale;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+Shrouded Vale;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
+
+Shrouded Vale;👰🏻‍♀️;Wicked Bride;Boss-Spirit;4;1;2;0;6;5;Forgotten Love;Her wedding dress is stained with rot.<br>;Failed to find the true love.
+Shrouded Vale;👰🏻‍♀️;Wailing Bride;Boss-Spirit;4;1;2;0;4;3;Forgotten Love;She's been crying for you since ever.<br>;Failed to find the true love.
+Shrouded Vale;👰🏻;Restless Bride;Boss-Undead;4;3;2;0;3;0;Forgotten Love;Finally\ she's been waiting here forever.<br>;Failed to find the true love.
+Shrouded Vale;👰🏻;Pale Bride;Boss-Undead;3;4;1;0;2;0;Forgotten Love;It's eyes are hollow but still accusing.<br>;Failed to find the true love.

@@ -1,4 +1,182 @@
+//Boss phases
+
+River of Sorrows;👤;Abandoned Love;Friend\👠;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
+Enraged - Heavy
+
+//
+🎾🏐
+
+//Nominations
+Loot;🧷;Safety Pin;Item;0;1;0;0;0;0;Tool;It can hold things together.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it in your belt.
+Loot;🪶;Seabird Feather;Item;0;0;0;1;0;0;Lightweight Trinket;Soft as a dream.<br>Provides <b>+1 🍀 Luck</b>.;Tucked it in your hat.
+Fishing;🌸;Dried Petals;Item;0;0;0;0;1;0;Faded Scent;Still faintly fragrant.<br>Provides <b>+1 🧠 Charisma</b>.;Dreamt of spring.
+
+Fishing;🩸;Leech Jar;Item;0;0;1;0;0;0;Creepy Curio;They’re still alive in there.<br>Provides <b>+1 🟢 Energy</b>.;Shivered in disgust.
+Fishing;🍶;Sake Flask;Consumable;0;0;0;0;1;0;Forgotten Drink;Cracked but still watertight.<br>Provides <b>+1 🧠 Intellect</b>.;Took a sip of mystery.
+Fishing;🧿;Evil Eye Charm;Item;0;0;0;0;0;1;Artifact;Ward off curses and ill will.<br>Provides <b>+1 🔵 Mana</b>.;Hung it close to your chest.
+Fishing;🎻;Barnacled Violin;Item;0;0;0;0;2;0;Withered Instrument;Music from another time.<br>Provides <b>+2 🧠 Charisma</b>.;Strummed a captivating tune.
+Fishing;🩲;Wet Underwear;Item;0;0;0;0;-1;0;Embarassing Find;Probably belonged to someone else.<br>Provides <b>-1 🍀 Luck</b>.;Why did you even pick this up?
+Fishing;🩹;Bandage Roll;Item;0;0;0;0;0;0;Basic Aid;Could still be useful in a pinch.<br>;Wound up tighter than before.
+Fishing;🗿;Mini Totem;Item;0;0;0;0;0;1;Ancient Relic;Carved by ancient hands.<br>Provides <b>+1 🔵 Mana</b>.;Held it close to your chest.
+Fishing;🎐;Wind Chime;Item;0;0;0;0;0;1;Soothing Talisman;Music of the breeze.<br>Provides <b>+1 🔵 Mana</b>.;Felt a sense of calm.
+
+Fishing;🎭;Masquerade Mask;Item;0;0;0;0;2;0;Disguise;Looked fancy once upon a time.<br>Provides <b>+2 🧠 Charisma</b>.;Played a different role.
+Fishing;🪗;Rusty Harmonica;Item;0;0;0;0;2;0;Musical Junk;Only plays the song of lost sailors.<br>Provides <b>+2 🧠 Charisma</b>.;Played a haunting tune.
+Fishing;📌;Rusty Pin;Item;0;1;0;0;0;0;Scrap Weapon;Sharp enough for mischief.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it somewhere useful.
+Fishing;🦷;Piranha Jaw;Item;0;1;0;0;0;0;Toothy Tool;The grin of a river demon.<br>Provides <b>+1 ⚔️ Damage</b>.;Brandished it fiercely.
+Fishing;🪢;Knotted Rope;Item;0;0;1;0;0;0;Ropework;Knots tell their own story.<br>Provides <b>+1 🟢 Energy</b>.;Untangled some secrets.
+Fishing;🧼;Slippery Soap;Item;0;0;0;0;1;0;Hygiene;Slipped through the fingers.<br>Provides <b>+1 🧠 Charisma</b>.;Sudsy thoughts.
+
+Loot;🔗;Shattered Shackles;Item;0;0;1;0;0;0;Freedom Relic;Echoes of past captivity.<br>Provides <b>+1 🟢 Energy</b>.;Felt the chains of the past.
+Loot;🌿;Herbal Poultice;Consumable;1;0;0;0;0;0;Natural Remedy;Mends minor wounds.<br>Restores <b>❤️ Health</b>.
+Loot;🪞;Cracked Mirror;Item;0;0;0;-1;1;0;Disturbing Reflection;Reveals a hidden truth.<br>Provides <b>+1 🧠 Intimidation</b> for <b>-1 🍀 Luck</b>.;Shuddered at the sight.
+Loot;🐚;Conch Shell;Item;0;0;1;0;0;0;Sea's Voice;Still carries an echo.<br>Provides <b>+1 🟢 Energy</b>.;Whispered a song of the sea.
+Loot;🪝;Fish Hook;Item;0;1;0;0;0;0;Fisherman's Tool;Simple, but effective.<br>Provides <b>+1 ⚔️ Damage</b>.;Caught more than fish.
+Loot;🌙;Moonstone;Item;0;0;0;0;0;1;Lunar Gem;Gleams with quiet light.<br>Provides <b>+1 🔵 Mana</b>.;Felt strangely at peace.
+Loot;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;Handcarved Curio;Worn by sea and time.<br>Provides <b>+1 ❤️ Health</b>.;Clutched it in a memory.
+Loot;🧊;Cold Stone;Item;0;0;1;0;0;0;Chill Charm;Cold enough to bite.<br>Provides <b>+1 🟢 Energy</b>.;Pressed it to your forehead.
+Enemy;🦠;Sludge Slime;Creature;1;0;0;0;1;0;Toxic Blob;Saps your energy.<br>Deals <b>1 🟢 Energy</b> penalty.
+
 //Generated
+Enemy;🦭;Cursed Walrus;Creature;4;0;0;0;0;0;Heavy Tusk;Crushes with weight.<br>Deals <b>4 ⚔️ Damage</b>.
+Enemy;🐚;Clam Fiend;Creature;1;0;0;0;1;0;Snaps shut on fingers.<br>Deals <b>1 🧠 Intellect</b> penalty.
+
+Twisted Fairyland;🦧;Elder Ape King;Boss-Heavy;4;3;2;0;4;0;Monarch of the Jungle;Its howl is a death knell.<br>;Flattened beneath its fists.
+Twisted Fairyland;🦇;Lord of Bats;Boss-Spirit;2;3;2;0;3;1;Vampiric Monarch;Commands the night’s children.<br>;Left a bloodless husk.
+Twisted Fairyland;🪡;Thread of Fate;Item;0;0;0;2;0;0;Mystical Thread;Whispers of destiny woven tight.<br>Provides <b>+2 🍀 Luck</b>.;
+Twisted Fairyland;🔮;Witch's Crystal;Item;0;0;0;0;2;0;Mystical Focus;Glimmers with future sight.<br>Provides <b>+2 🧠 Intellect</b>.;
+Twisted Fairyland;🦷;Beast Fang;Item;0;1;0;0;0;0;Trophy Weapon;Torn from a monstrous maw.<br>Provides <b>+1 ⚔️ Damage</b>.;
+Twisted Fairyland;🪝;Hook of the Damned;Item;0;1;0;-1;0;0;Cursed Tool;Pulled from the depths of torment.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;
+Twisted Fairyland;💀;Mini Skull;Item;0;0;0;-1;1;0;Odd Trinket;Cradles a fragment of ancient knowledge.<br>Provides <b>+1 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;
+Twisted Fairyland;🕯️;Spirit Candle;Item;0;0;0;0;1;0;Mystical Light;Flickers with ethereal flame.<br>Provides <b>+1 🧠 Intellect</b>.;
+
+Twisted Fairyland;🧝‍♂️;Cultist Archer;Recruit;3;2;2;0;2;1;Twisted Humanoid;Loose arrows with disturbing glee.<br>;Filled with arrows.
+Twisted Fairyland;🧙‍♀️;Cultist Witch;Recruit;2;1;3;0;3;1;Twisted Humanoid;Cackles in foul delight.<br>;Lost your soul to her magic.
+Twisted Fairyland;🧟;Ghoul Brute;Recruit;3;3;1;0;1;1;Cursed Creature;Reeking of death and decay.<br>;Ripped limb from limb.
+Twisted Fairyland;🧝‍♂️;Cultist Warlock;Recruit;2;2;3;0;4;2;Twisted Humanoid;Eyes gleam with dark power.<br>;Soul torn asunder.
+Twisted Fairyland;🐆;Ghostly Lynx;Swift;3;4;2;0;5;0;Wild Phantom;A silent killer in the mists.<br>;Shredded to ribbons.
+Twisted Fairyland;🦡;Dire Badger;Swift;3;3;2;0;4;0;Savage Beast;Moves with unnatural speed.<br>;Burrowed deep in your flesh.
+Twisted Fairyland;🦇;Bloodthirsty Bat;Swift;2;2;3;0;2;0;Vampiric Fiend;Wings blur in the night.<br>;Drained of every drop.
+Twisted Fairyland;🦬;Charging Bison;Heavy;4;4;1;0;5;0;Massive Beast;Thunders forward in fury.<br>;Skull crushed to dust.
+Twisted Fairyland;🐘;Wrathful Mammoth;Heavy;5;3;1;0;5;0;Ancient Beast;A monstrous wall of flesh.<br>;Trampled beneath colossal weight.
+Twisted Fairyland;🦏;Brutal Rhinox;Heavy;4;4;1;0;5;0;Savage Juggernaut;Its horn is its promise of death.<br>;Skewered to the bone.
+Twisted Fairyland;👺;Wicked Imp;Demon;2;2;2;0;-1;1;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.
+Twisted Fairyland;👿;Shadow Fiend;Demon;2;1;2;0;1;1;Sinister Shape;Slips between the shadows.<br>;Lost in endless darkness.
+
+Twisted Fairyland;🌫️;Mist Wraith;Spirit;1;1;1;0;-1;1;Ethereal Apparition;Whispers of the dead.<br>;Suffocated in fog.
+Twisted Fairyland;🌠;Celestial Echo;Spirit;1;0;1;1;-1;1;Otherworldly Glimmer;A glint of lost hope.<br>;Erased by stardust.
+Twisted Fairyland;🔥;Will-o’-the-Wisp;Spirit1;0;0;1;-1;1;Flickering Flame;Dances just out of reach.<br>;Consumed in flame’s embrace.
+
+Twisted Fairyland;🌈;Shimmering Veil;Curse;1;0;0;0;0;0;Illusion;Veils your senses in strange lights.<br>;Stepped into false hope.
+Twisted Fairyland;💀;Whispering Skulls;Curse;0;0;-1;0;0;0;Haunting Presence;The skulls sing your name.<br>;Lost part of your soul.
+Twisted Fairyland;🍄;Maddening Mushrooms;Curse;0;0;1;0;-1;0;Fungal Curse;Inhale the spores and change.<br>;Vision blurred with dreams.
+Twisted Fairyland;🦋;Moth Swarm;Curse;-1;0;1;0;0;0;Insect Plague;Drawn to your warmth.<br>;Covered in fluttering shadows.
+Twisted Fairyland;🌟;Fae Starlight;Curse;0;0;0;0;0;1;Otherworldly Light;Lures you deeper into madness.<br>;Enchanted, never to return.
+Twisted Fairyland;🌪️;Hollow Wind;Curse;0;0;0;0;-1;0;Whistling Sound;Whispers only you hear.<br>;Sanity frayed in the breeze.
+Twisted Fairyland;🌸;Poisonous Petals;Curse;-1;0;0;0;0;0;Floral Trap;Too sweet to resist.<br>;Choked by false beauty.
+Twisted Fairyland;🌧️;Weeping Rain;Curse;0;0;0;0;0;1;Cursed Weather;Soft rain that never stops.<br>;Heart grew heavy and wet.
+Twisted Fairyland;🕯️;Flickering Wicks;Curse;0;0;0;0;-1;0;Ghostly Light;Dances and fades without end.<br>;Lost sight of the path.
+Twisted Fairyland;🕳️;Bottomless Hollow;Curse;-1;0;0;0;0;0;Abyssal Void;It pulls everything close.<br>;Felt the weight of eternity.
+
+Twisted Fairyland;🛕;Gloomy Temple;Altar;0;0;0;1;0;1;Ancient Ruin;Mossy stone echoes with power.<br>;Bowed to unseen forces.
+Twisted Fairyland;🌿;Sacred Grove;Altar;1;0;0;0;0;0;Living Altar;Whispers of old spirits surround you.<br>;Felt blessed by green life.
+Twisted Fairyland;🌕;Moonlit Clearing;Altar;1;0;0;0;0;0;Silent Glade;Bathed in eternal moonlight.<br>;Drank the silver glow.
+Twisted Fairyland;🕯️;Candle Circle;Altar;0;0;0;0;1;0;Ritual Circle;Flickers of devotion in the dark.<br>;Shared a fleeting prayer.
+Twisted Fairyland;🗿;Worn Effigy;Altar;0;0;0;1;0;0;Forgotten Idol;Ancestors carved their hopes here.<br>;Felt the weight of their memory.
+Twisted Fairyland;🔥;Burning Shrine;Altar;-2;0;1;0;0;0;Sacrificial Spot;Flames hunger for your soul.<br>;Offered a piece of yourself.
+Twisted Fairyland;🌙;Lunar Gate;Altar;1;0;0;0;0;0;Portal to Night;Cradles moon’s essence.<br>;Glimpsed secrets of the dark.
+Twisted Fairyland;🔮;Crystal Altar;Altar;0;0;0;0;1;0;Mystic Focus;Reflections of what could be.<br>;Whispered dreams to the void.
+Twisted Fairyland;🦷;Tooth Relic;Altar;0;0;0;1;0;0;Primal Offering;Echoes of ancient beasts.<br>;Teeth of the earth speak.
+Twisted Fairyland;🌹;Thorny Shrine;Altar;-1;0;0;0;0;1;Sacred Pain;Beauty wrapped in agony.<br>;Blood paid for devotion.
+
+Twisted Fairyland;💥;Mushroom Spore Trap;Trap-Attack;-1;0;0;0;0;0;Fungal Burst;Spore cloud explodes around you.<br>;Coughed up sickness.
+Twisted Fairyland;🪦;Open Grave;Trap-Attack;-1;0;0;0;-1;0;Mourning Ground;The earth wants you too.<br>;Laid down for eternal rest.
+Twisted Fairyland;🧨;Faerie Bomb;Trap-Attack;-2;0;0;0;0;0;Glittering Hazard;Explodes with trickster magic.<br>;Showered in stinging light.
+Twisted Fairyland;🌵;Thorn Patch;Trap-Roll;0;0;0;0;0;0;Wild Flora;Painful step through the thorns.<br>;Pricked and scratched raw.
+Twisted Fairyland;🪲;Blood Beetle;Trap-Roll;-1;0;0;0;0;0;Insect Ambush;Drawn to warmth of your blood.<br>;Bitten and drained.
+Twisted Fairyland;🌑;Dark Pool;Trap-Roll;0;0;0;0;-1;0;Unseen Depths;Can’t see what’s below.<br>;Stepped in unseen horror.
+Twisted Fairyland;🪤;Mouse Trap;Trap-Roll;-1;0;0;0;0;0;Tiny Snare;Who set this here?<br>;Snap echoed in your mind.
+Twisted Fairyland;🕷️;Hidden Spider;Trap;-1;0;0;0;0;0;Creepy Crawler;It waits in dark corners.<br>;Shivers ran down your spine.
+Twisted Fairyland;🌱;Tangle Vines;Trap;0;0;0;0;0;0;Nature Snare;Soft but constricting.<br>;Struggled to break free.
+Twisted Fairyland;🪨;Falling Rock;Trap-Attack;-2;0;0;0;0;0;Natural Disaster;The weight of the world above.<br>;Crushed under sudden burden.
+
+Twisted Fairyland;🫧;Whispering Spring;Fishing;0;0;0;0;0;0;Mystic Pool;Waters murmur secrets to those who listen.<br>;Heard ancient songs.
+Twisted Fairyland;🌾;Singing Reed;Fishing;0;0;0;0;0;0;Magical Growth;Rustles in a tune only you can hear.<br>;Found music in the wild.
+Twisted Fairyland;🦑;Squid Ink Pond;Fishing;0;0;0;0;0;0;Murky Water;Clouds of black swirl around.<br>;Touched the darkness within.
+Twisted Fairyland;🌿;Charmed Lily Pad;Fishing;0;0;0;0;0;0;Floating Platform;A faerie seat bobbing gently.<br>;Felt the fae’s silent watch.
+Twisted Fairyland;🌈;Rainbow Koi;Fishing;0;0;0;0;0;0;Rare Catch;Shimmers with every color.<br>;Caught a splash of dreams.
+Twisted Fairyland;🪷;Lotus Bloom;Fishing;0;0;0;0;0;0;Sacred Flower;Petals soft as whispered wishes.<br>;Held a moment of grace.
+Twisted Fairyland;🦦;Otter's Cove;Fishing;0;0;0;0;0;0;Playful Waters;Little spirits of mischief splash around.<br>;Laughed at their games.
+Twisted Fairyland;🍂;Amber Pond;Fishing;0;0;0;0;0;0;Golden Reflection;Warm glow of trapped light.<br>;Drew warmth from the depths.
+Twisted Fairyland;🦈;Shadowy Fin;Fishing;0;0;0;0;0;0;Dark Predator;Lurking beneath, watching.<br>;Heart raced at the shape.
+Twisted Fairyland;🌟;Fae Ripple;Fishing;0;0;0;0;0;0;Mirrored Waters;The surface shows your wishes.<br>;Met yourself in the ripples.
+
+Twisted Fairyland;💀;Banshee’s Cry;Curse;-1;0;0;0;0;0;Echo of Death;Piercing scream breaks your thoughts.<br>;Ears bleed from the noise.
+Twisted Fairyland;🌠;Falling Star;Curse;0;0;0;0;0;1;Celestial Omen;A wish granted, at a price.<br>;Sacrificed something dear.
+Twisted Fairyland;🪦;Grave Dust;Curse;-1;0;0;0;0;0;Mourning Ash;The earth’s final breath.<br>;Felt the weight of the grave.
+Twisted Fairyland;🎩;Mischievous Cap;Curse;0;0;0;0;-1;0;Fae Trickery;You can’t remember where you found it.<br>;Lost a piece of yourself.
+Twisted Fairyland;🧚;Pixie Mischief;Curse;0;0;0;0;-1;0;Fae Curse;Laughing voices haunt you.<br>;Lost your way in laughter.
+Forsaken Village;🕯️;Flickering Flame;Curse;0;0;0;0;-1;0;Misfortune;A single light grows and fades.<br>;Hope flickered and died.
+Forsaken Village;🧠;Fractured Mind;Curse;0;0;0;0;-1;0;Misfortune;Thoughts splinter into chaos.<br>;Madness took over.
+Forsaken Village;🦴;Cracked Bones;Curse;-1;0;0;0;0;0;Health Condition;Aching joints groan in pain.<br>;Every movement became agony.
+Forsaken Village;💤;Endless Sleep;Curse;0;0;0;0;-1;0;Misfortune;The weight of dreams drags you under.<br>;Never woke again.
+Forsaken Village;👣;Ghostly Footsteps;Curse;0;0;0;0;-1;0;Misfortune;Faint steps echo just behind you.<br>;Sanity slipped away.
+Forsaken Village;🩸;Blood Price;Curse;-1;0;0;0;0;0;Health Condition;A price paid in crimson.<br>;Life drained out.
+
+Shrouded Necropolis;🪶;Obsidian Feather;Item;0;1;0;0;0;0;Mysterious Trinket;Whispers echo within.<br>Provides <b>+1 ⚔️ Damage</b>.;Unearthly shivers.
+Shrouded Necropolis;🪞;Fractured Mirror;Item;0;0;0;3;0;0;Shiny Object;Reflects something sinister.<br>Provides <b>+3 🍀 Luck</b>.;Saw something that wasn't you.
+Shrouded Necropolis;🔮;Crimson Orb;Item;0;0;0;0;0;1;Magical Relic;Pulses with a hidden power.<br>Provides <b>+1 🔵 Mana</b>.;Felt a surge of dark energy.
+Shrouded Necropolis;🧟‍♀️;Withered Corpse;Undead;2;2;1;0;-1;1;Restless Body;Its skin is paper thin.<br>;Rotten to the bones.
+Shrouded Necropolis;🐦‍⬛;Cursed Raven;Undead;3;1;3;0;1;0;Wild Animal;Caws echo with the dead.<br>;Got both eyes pecked out.
+Shrouded Necropolis; - Revenant, lich
+
+Shrouded Necropolis;🔮;Veiled Oracle;Altar;1;0;1;0;0;0;Ritual Place;Whispers guide the soul.<br>;
+Shrouded Necropolis;⚰️;Bone Reliquary;Altar;-1;2;0;0;0;0;Sacred Bones;Silent prayers to the past.<br>;
+Shrouded Necropolis;🌒;Moonlit Shrine;Altar;0;1;2;0;0;0;Ritual Place;Pale light washes over ancient stones.<br>;
+Shrouded Necropolis;🔥;Ember Pyre;Altar;0;0;2;0;0;1;Sacrifice Altar;Ashes swirl in the faint glow.<br>;
+Shrouded Necropolis;🌪️;Tempest Spire;Altar;0;0;1;0;1;1;Storm Altar;The wind howls with forgotten rage.<br>;
+Shrouded Necropolis;🪞;Mirror of Regret;Altar;0;0;0;0;1;1;Echoes of Loss;Your reflection is not your own.<br>;
+Forsaken Village;🪦;Forgotten Tomb;Altar;0;0;0;0;0;1;Ritual Place;Dusty grave markers stand tall.<br>;Echoes of the past spoken.
+Forsaken Village;🌑;Obsidian Obelisk;Altar;0;0;0;0;0;1;Ritual Place;Black stone shimmers with power.<br>;Shadowy energies embraced.
+Forsaken Village;💧;Sacred Well;Altar;0;0;0;2;0;0;Ritual Place;Water whispers old secrets.<br>;Blessed by ancient spirits.
+Forsaken Village;🔥;Pyre of Devotion;Altar;0;1;0;0;0;1;Ritual Place;Flames lick at the carved symbols.<br>;Power surged within.
+Forsaken Village;🎻;Hymn of the Damned;Altar;0;0;0;0;2;0;Knowledge Source;A melody of sorrow echoes here.<br>;Knowledge of despair gained.
+Forsaken Village;🪙;Gilded Offering Plate;Altar;0;0;0;1;0;0;Sacred Offering;Coins glint under the flickering light.<br>;Fortune smiled briefly.
+Forsaken Village;🍂;Witch’s Circle;Altar;-1;0;0;0;0;1;Ritual Place;Roots and bones intertwine here.<br>;A dark pact sealed.
+Forsaken Village;🪶;Feathered Totem;Altar;0;0;0;1;0;0;Sacred Offering;Feathers swaying like prayers.<br>;A gentle blessing felt.
+Forsaken Village;🪨;Runestone Slab;Altar;0;0;0;0;2;0;Knowledge Source;Ancient etchings glow faintly.<br>;Runes whispered secrets.
+Forsaken Village;⚰️;Crypt of the Nameless;Altar;0;0;0;0;0;1;Ritual Place;Silence speaks to eternity.<br>;Felt the chill of the grave.
+
+Shrouded Necropolis;🩸;Blood Pact;Curse;0;0;0;-1;-1;0;Sanguine Binding;Your veins remember the oath.<br>;
+Shrouded Necropolis;🌑;Eclipse Veil;Curse;-1;0;0;0;0;0;Shadow Cloak;A darkness clings to every step.<br>;
+Shrouded Necropolis;🌬️;Withering Breath;Curse;-1;0;-1;0;0;0;Decay's Touch;Your skin grows brittle.<br>;
+Shrouded Necropolis;🦴;Bone Hunger;Curse;0;0;-1;0;0;0;Gnawing Pain;Your bones ache with ancient hunger.<br>;
+Shrouded Necropolis;🕯️;Flickering Spirit;Curse;0;0;0;0;-1;0;Fading Will;Your resolve flickers like dying light.<br>;
+Shrouded Necropolis;🪞;Broken Reflection;Curse;0;0;0;0;0;-1;Shattered Self;You see only the flaws in your soul.<br>;
+Shrouded Necropolis;⚰️;Gravebound;Curse;0;0;-1;0;0;0;Tethered Soul;Earth clings to your very being.<br>;
+
+Shrouded Necropolis;🪦;Grave Collapse;Trap-Attack;-8;0;0;0;0;0;Hidden Pit;The ground gives way beneath you.<br>;
+Shrouded Necropolis;🕷️;Venom Snare;Trap-Attack;0;0;-1;0;0;0;Poison Trap;A spider's sting in the dark.<br>;
+Shrouded Necropolis;🌑;Blinding Fog;Trap-Attack;0;0;0;0;-1;0;Sightless Path;Vision fades in swirling mists.<br>;
+Shrouded Necropolis;🪤;Crushing Maw;Trap-Attack;-10;0;0;0;0;0;Stone Trap;Ancient jaws close on the careless.<br>;
+Shrouded Necropolis;🧊;Freezing Gloom;Trap-Attack;-1;0;0;0;-1;0;Frostbite;Cold seeps deep into the bones.<br>;
+Shrouded Necropolis;🦴;Bone Lure;Trap-Attack;0;0;0;0;-1;0;False Comfort;A promise of warmth—then nothing.<br>;
+
+Forsaken Village;🕊️;Pale Dove;Friend;0;0;0;1;0;0;Peaceful Bird;A symbol of fleeting hope.<br>;Blessed by purity.
+Forsaken Village;🧙;Wandering Hermit;Friend;0;1;0;0;1;0;Wise Elder;Mumbles truths only he knows.<br>;Shared cryptic advice.
+Forsaken Village;🪷;Spirit of the Lotus;Friend;0;0;0;1;1;0;Mystical Entity;A fragrant presence soothes the soul.<br>;A moment of harmony.
+
+Forsaken Village;🕷️;Venomous Widow;Swift;1;2;1;0;-1;0;Extremely Venomous;Her sting brings endless sleep.<br>;Poisoned from within.
+Forsaken Village;🐍;Silent Viper;Swift;1;2;1;0;-1;0;Deadly Serpent;Coils for a final embrace.<br>;Died in silent agony.
+Forsaken Village;🦨;Rabid Skunk;Swift;2;1;2;0;1;0;Wild Animal;Smells of madness and death.<br>;Choked by rancid fumes.
+Forsaken Village;🦇;Frenzied Bat;Swift;1;2;1;0;-1;0;Bloodsucker;Wings flutter in manic hunger.<br>;Bled dry under the moon.
+Forsaken Village;🧿;Enchanted Eye;Swift;1;1;1;0;-1;0;Eldritch Entity;Gazes into your soul.<br>;Vision became endless torment.
+Forsaken Village;🪡;Possessed Spindle;Swift;1;1;1;1;-1;0;Cursed Tool;Spins threads of death.<br>;Entrapped in a deadly weave.
+Forsaken Village;🧵;Animated Yarn;Swift;1;1;1;0;-1;0;Malevolent Thread;Winds and binds in fury.<br>;Tangled until breathless.
+Forsaken Village;🦨;Horrid Skunk;Swift;2;1;2;0;1;0;Wild Animal;A pestilence in black and white.<br>;Succumbed to the stench.
+Forsaken Village;🦔;Prickled Fury;Swift;1;1;1;0;-1;0;Dangerous Critter;Sharp defense bristling.<br>;Skewered on the spot.
+Forsaken Village;🪣;Possessed Bucket;Swift;1;1;1;0;-1;0;Cursed Object;Swallowed all within.<br>;Drowned in darkness.
+
 Wildland Meadows;🧣;Petal Wrap;Item;0;0;1;1;0;0;Woven Scarf;Stitched from meadow blooms<br>+1 Stamina🟢\\+1 Luck🍀\\fades in sunlight.;Nostalgia brushes your cheek.
 Forsaken Village;🕯️;Wax Charm;Item;0;1;0;0;0;1;Soft Fetish;Melted edges shaped like a face<br>+1 Attack⚔️\\+1 Magic🔵\\-1 Luck🍀;Warmth seeps into your bones.
 Twisted Fairyland;🎀;Lace Collar;Item;0;0;0;1;1;0;Tattered Frill;Once part of something finer<br>+1 Luck🍀\\+1 Intellect🧠\\itchy at the throat.;It tickles slightly.
@@ -29,7 +207,8 @@ Endless Ocean;🐉;Aquatic Dragon;Boss-Heavy;6;3;1;0;-1;2;Mythical Creature;Hung
 Endless Ocean;🦕;Ancient Lizard;Boss-Heavy;8;3;3;0;-1;0;Eden Beast;Must weight a million tons.;Got stomped into the ground.
 Endless Ocean;️❤️‍🩹;First Aid Kit;Item;0;0;0;0;0;0;Artifact;Patch yourself up after every beating.<br>Heals <b>+1 ❤️ Health</b> after a fight.;
 Endless Ocean;🍼;Baby Milk;Consumable;0;0;0;0;0;0;Suspicous Container;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-🎭
+
+⚠️🧯🚷☠️
 
 Friend 🤴🏻👸🏻️👥
 

@@ -1,69 +1,101 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
-Fishing;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced their fishing pole.
+Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides special gift per your selection.<br>Provides Instant <b>🎉 Level Up!</b>;
+Fishing;🪔;The Floating Flame;Upgrade;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides Instant <b>🎉 Level Up!</b>;
+
+Fishing;📿;Witchbane Necklace;Item;0;0;1;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Hung it around your neck.
+Fishing;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 Fishing;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Fishing;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
 Fishing;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 Fishing;🎲;Gambling Die;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
 Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
-Fishing;🧪;Unknown Experiment;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;Something feels different.
+Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 Fishing;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides the ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
 Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
 Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Fishing;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
+Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like nothing before.
 
-Fishing;💍;Engraved Ring;Item;0;0;0;0;-3;3;Artifact;Says "My Precious" on the inside.<br>Provides <b>+3 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.
+Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;Artifact;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.
 
 Fishing;🗡️;Silver Dagger;Item;0;2;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
-Fishing;✂️;Sharp Scissors;Item;0;2;0;0;0;0;Violent Weapon;One can do a bloody mess with these.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a violent weapon.
-Fishing;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
+Fishing;🪝;Lucky Hook;Item;0;1;0;1;0;0;Fishing Gear;Increases (not only) fishing luck.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Reeled in some fortune.
+Fishing;✂️;Sharp Scissors;Item;0;1;0;0;0;0;Makeshift Weapon;One can do a bloody mess with these.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained a violent weapon.
+Fishing;👒;Lucky Fishing Hat;Item;0;0;0;3;0;0;Signature Look;Originally comes from a goblin fishing event.<br>Provides <b>+3 🍀 Luck</b>.;Feels a bit less serious.
+Fishing;🕶;Cool Sunglasses;Item;0;0;0;0;2;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🧠 Charisma</b>.;Feels a lot cooler.
 Fishing;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;Feels kind of uncomfortable.
 Fishing;🥽;Diving Goggles;Item;2;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
-Fishing;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
+Fishing;👓;Reading Glasses;Item;0;0;0;0;1;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+1 🧠 Intellect</b>.;Immediately felt a difference.
 Fishing;💍;Engagement Ring;Item;2;0;0;0;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+2 ❤️ Health</b>;Felt a subtle surge in your chest.
 
-Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
-Fishing;💍;King's Ring;Item;0;1;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in the chest.
+Fishing;💧;Glass Drop;Item;0;0;0;0;0;1;Magical Pin;Radiates subtle waves of energy.<br>Provides <b>+1 🔵 Mana</b>.;Forever tied with the tide.
+Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.
+Fishing;💍;King's Ring;Item;0;1;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in your chest.
 Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
 Fishing;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
-Fishing;🍀;Four-leaf Clover;Item;0;0;0;1;0;0;Rarity;Usually brings some extra luck.<br>Provides<b>+1 🍀 Luck</b>.;Feels good to have it.
-Fishing;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
-Fishing;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!
-Fishing;📘;Damned Book;Item;-1;0;0;0;0;1;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Pocketed a piece of trash.
+Fishing;🐒;Driftwood Totem;Item;0;0;0;2;0;1;Primitive Idol;Worn by the tide for years.<br>Provides <b>+2 🍀 Luck</b>;Radiates positive energy.
 
-Fishing;👞;Wet Shoe;Item;0;0;0;1;-1;0;Trash;Thoroughly wet leather shoe.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>;Does not feel right
+Fishing;🪙;Old Coin;Item;0;0;0;1;0;0;Lucky Find;Might be worth a fortune.<br>Provides <b>+1 🍀 Luck</b>.;Pocketed with delight.
+Fishing;🔖;Wet Memo;Item;0;0;0;0;1;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
+Fishing;📔;Waterlogged Diary;Item;0;0;0;0;1;0;Tale of Woe;Words smear but the story’s still alive.<br>Provides <b>+1 🧠 Intellect</b>.;Felt like it was written for you.
+Fishing;📔;Wet Almanac;Item;0;0;0;0;1;0;Knowledge;Barely legible but still valuable.<br>Provides <b>+1 🧠 Intellect</b>.;Learned something new.
+
+Fishing;🧢;Sailor’s Cap;Item;0;0;0;2;-1;0;Headgear;Smells of seaweed and old tales.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Charisma</b>.;Set it snug on your head.
+Fishing;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the bad guys!
+Fishing;📘;Damned Book;Item;-1;0;0;0;0;1;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Joined the dark side!
+Fishing;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.
+
 Fishing;🔪;Rusty Knife;Item;0;1;0;0;0;0;Worn Tool;Still quite useful in combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Took it with themselves just in case.
 Fishing;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Fishing;🗝️;Silver Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Fishing;🗝️;Bronze Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Fishing;🗝️;Iron Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Fishing;🪱;Drowned Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+
+Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;Junk;Waterlogged and falling apart.<br>;Sifted through for scraps.
 Fishing;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
-Fishing;🏺;Burial Urn;Item;0;0;0;-3;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.
-Fishing;🧲;Unlucky Horseshoe;Item;0;-1;0;0;0;0;Obscure Alloy;Does not look like it brings luck.<br>;Stuck onto the tip of the weapon.
+Fishing;👞;Wet Shoe;Item;0;0;0;0;0;0;Worthless Trash;Thoroughly wet leather shoe.<br>;Why did you even pick this up?
+Fishing;🪣;Leaky Bucket;Item;0;0;0;0;0;0;Broken Carrier;Has absolutely zero practical use.<br>;Just picked up some trash.
 Fishing;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;
 
-Fishing;🪱;Drowned Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Fishing;🪱;Tired Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Fishing;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Fishing;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Malevolent glow covers its entire surface.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Brutal spasms took a toll
+Fishing;🌿;Miracle Kelp;Consumable;0;0;1;1;0;0;Natural Source;Might be causing some unknown side-effects.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Tasted like a fish water
+
+Fishing;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
+Fishing;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
+Fishing;🥤;Coke Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Fishing;🧋;Floating Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Fishing;🧃;Juice Pouch;Consumable;0;0;0;0;0;0;Refreshment;Packs a burst of energy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Fishing;🦪;Giant Clam;Consumable;0;0;0;0;0;0;Seafood;A rare treat of the depths.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Fishing;🦪;Brackish Oyster;Consumable;0;0;0;0;2;0;Seafood;A rare treat of the water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Fishing;🦐;Crawfish Snack;Consumable;0;0;0;0;0;0;Seafood;A bite of the river’s life.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.
 Fishing;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Fishing;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Its surface has an eerie glow.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Brutal spasms took a toll
+Fishing;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
 Fishing;🐸;Cursed Prince;Friend;0;0;0;0;0;1;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.
 Fishing;🦭;Retired Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
 Fishing;🐬;Friendly Dolphin;Friend;0;0;0;0;1;0;The Clever One;Makes a lot of squaking noises.<br>;They shared some secret.
-Fishing;🐧;Stranded Penguin;Container-Friend;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
-Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides a very special gift. <br><i>For a price.</i>;Received a special blessing.
-Fishing;🪔;The Floating Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides Instant <b>🎉 Level Up!</b>;
+Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
+
+Fishing;🦞;Lobster Warrior;Pet;2;1;1;0;0;0;Crustacean Ally;Looks like it is going to fight back.<br>;Defeated by a lobster!
+Fishing;🦀;Pinching Crab;Pet;1;1;1;0;0;0;Crustacean;Handle with care.<br>;
+
+Fishing;🪱;Tired Worm;Small;1;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
+Fishing;🦑;Tiny Squid;Small;1;0;2;0;0;0;Seafood;A little bite of the deep.<br>
+Fishing;🐌;Water Snail;Small;1;0;1;0;-1;0;Underwater Critter;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
+
+Fishing;🐡;Spiky Pufferfish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
+
+Fishing;‍🐍;Water Serpent;Swift;3;2;2;0;0;0;Juvenile Predator;Slithers both out and in the water.<br>;Died off an ancient venom.
+Fishing;‍🦈;Shark Pup;Swift;3;2;2;0;0;0;Juvenile Predator;Small but very aggressive.<br>;Torn to bloody peaces.
 
 Fishing;‍🪼;Box Jellyfish;Boss-Swift;1;4;1;0;-1;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
 Fishing;‍🦈;Shark Nado;Boss-Swift;1;3;2;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
 Fishing;‍🦑;Depths Squid;Boss-Heavy;2;2;1;0;-1;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Swallowed in one slurp!
-Fishing;🦞;Pinching Lobster;Standard;1;2;1;0;0;0;Crustacean;Handle with care.<br>;Cooked one would serve better
-Fishing;🐡;Spiky Fish;Standard;1;1;1;0;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
-Fishing;🦀;Pinching Crab;Small;1;1;1;0;0;0;Crustacean;Handle with care.<br>;Cooked one would serve better
-Fishing;🐌;Water Snail;Small;1;0;1;0;-1;0;Underwater Insect;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
+Fishing;‍🦀;Titan Crab;Boss-Heavy;4;3;2;0;-1;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
