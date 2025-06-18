@@ -1949,7 +1949,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logAction("🍀 ▸ ✋ <b>Luckily</b>, they were spooked.");
                 displayEnemyEffect("💨");
                 displayPlayerEffect("🍀");
-                nextEncounter();
+                animateFlipNextEncounter();
+                isFishing=false;
                 break;
               }
               else {
