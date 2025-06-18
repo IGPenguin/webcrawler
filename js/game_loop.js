@@ -1152,7 +1152,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Attack": //Attacking causes you damage
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
-            playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             break;
 
           case "Spirit":
@@ -1385,7 +1385,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Trap-Roll": //Triggers when rolling into it, next encounter
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
-            playerHpMax+=(enemyHp*(-1));
             nextEncounter();
             break;
           case "Trap":
@@ -1599,7 +1598,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
             displayEnemyEffect("🔥");
             isFishing=false;
-            nextEncounter();
+            animateFlipNextEncounter();
             break;
 
           case "Consumable":
@@ -2006,11 +2005,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap": //Grabbing triggers the effect
           case "Trap-Roll":
           case "Trap-Attack":
-            var possibleCauseOfDeath=enemyMsg;
-            if (enemyHp<0) possibleCauseOfDeath=possibleCauseOfDeath+" "+enemyHp+" 💔";
-            if (possibleCauseOfDeath=="") possibleCauseOfDeath="Well, that was a big mistake -"+enemyHp+" 💔";
-            playerHit(enemyHp*-1);
-            playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,possibleCauseOfDeath.replaceAll(".",""),true,false);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             break;
 
           case "Undead": //Grabbing is not safe
