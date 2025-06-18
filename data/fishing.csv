@@ -20,18 +20,18 @@ Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source
 Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;Artifact;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.
 
 Fishing;🗡️;Silver Dagger;Item;0;2;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
-Fishing;✂️;Sharp Scissors;Item;0;2;0;0;0;0;Violent Weapon;One can do a bloody mess with these.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a violent weapon.
-Fishing;🪝;Lucky Hook;Item;0;1;1;0;0;0;Fishing Gear;Increases (not only) fishing luck.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Reeled in some fortune.
-Fishing;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
+Fishing;🪝;Lucky Hook;Item;0;1;0;1;0;0;Fishing Gear;Increases (not only) fishing luck.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Reeled in some fortune.
+Fishing;✂️;Sharp Scissors;Item;0;1;0;0;0;0;Makeshift Weapon;One can do a bloody mess with these.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained a violent weapon.
+Fishing;👒;Lucky Fishing Hat;Item;0;0;0;3;0;0;Signature Look;Originally comes from a goblin fishing event.<br>Provides <b>+3 🍀 Luck</b>.;Feels a bit less serious.
+Fishing;🕶;Cool Sunglasses;Item;0;0;0;0;2;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🧠 Charisma</b>.;Feels a lot cooler.
 Fishing;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;Feels kind of uncomfortable.
 Fishing;🥽;Diving Goggles;Item;2;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
-Fishing;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
+Fishing;👓;Reading Glasses;Item;0;0;0;0;1;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+1 🧠 Intellect</b>.;Immediately felt a difference.
 Fishing;💍;Engagement Ring;Item;2;0;0;0;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+2 ❤️ Health</b>;Felt a subtle surge in your chest.
-Fishing;👒;Lucky Fishing Hat;Item;0;0;0;3;0;0;Signature Look;Originally comes from a goblin fishing event.<br>Provides <b>+3 🍀 Luck</b>.;Feels a bit less serious.
 
 Fishing;💧;Glass Drop;Item;0;0;0;0;0;1;Magical Pin;Radiates subtle waves of energy.<br>Provides <b>+1 🔵 Mana</b>.;Forever tied with the tide.
-Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
-Fishing;💍;King's Ring;Item;0;1;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in the chest.
+Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.
+Fishing;💍;King's Ring;Item;0;1;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in your chest.
 Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
