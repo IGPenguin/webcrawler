@@ -3429,7 +3429,7 @@ function adjustEncounterButtons(){
       }
       setButton('button_roll',"❌ Ditch");
       setButton("button_grab","🍴 Eat",eatColor);
-      var drinks=["🧃","🍺","🍹","🍷","🍸","🍾","🧉","🥤","🧋"]
+      var drinks=["🧃","🍺","🍹","🍷","🍸","🍾","🧉","🥤","🧋","🍵","⚗️"]
       if (drinks.includes(enemyEmoji)) setButton("button_grab","👄 Drink",eatColor);
 
       break;
