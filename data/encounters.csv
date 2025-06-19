@@ -40,7 +40,6 @@ Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;2;0;0;Safe Place;Surrounded b
 Wildland Meadows;🌸;Wildflower Shrine;Altar;0;0;0;1;0;0;Peaceful Place;Colorful flowers dance with the breeze.<br>;The nature blessed you.
 Wildland Meadows;🍁;Maple Glade;Altar;0;0;0;1;0;0;Safe Haven;Leaves whisper secrets of natural luck.<br>;You listened to the whispers.
 Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;2;0;Unfinished Art;Deserves some basic admiration.<br>;Hmm\ truly an interesting piece.
-Wildland Meadows;🥀;Knotted Vines;Altar;-1;0;0;0;4;0;Nature Totem;Tied deliberately\ almost ritualistically.<br>;You became tougher than before.
 
 Wildland Meadows;🦋;Butterfly Swarm;Curse;0;0;0;0;0;1;Natural Beauty;The butterflies are surrounding yourself.<br>;They bestowed you a magical power.
 Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird.
@@ -517,7 +516,7 @@ Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden st
 Twisted Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 Twisted Fairyland;🗯️;Unknown Voice;Curse;0;0;0;0;-1;0;Misfortune;Its unsettling words make no sense.<br>;Suffered mental damage.
 
-Twisted Fairyland;�🥀;Knotted Vines;Altar;-1;0;0;0;4;0;Nature Totem;Tied deliberately\ almost ritualistically.<br>;Became tougher than ever.
+Twisted Fairyland;🥀;Knotted Vines;Altar;-1;0;0;0;4;0;Nature Totem;Tied deliberately\ almost ritualistically.<br>;You became tougher than before.
 Twisted Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Blood-crying statues gaze upon the altar.<br>;Embraced ancient gods
 Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
 Twisted Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
@@ -744,7 +743,7 @@ River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;Haunting Whisper;Feeds on
 
 River of Sorrows;👤;Abandoned Love;Friend👠;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
 
-River of Sorrows;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like nothing before.
+River of Sorrows;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;

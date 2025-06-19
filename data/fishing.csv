@@ -15,7 +15,7 @@ Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of h
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
 Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Fishing;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
-Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like nothing before.
+Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
 
 Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;Artifact;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.
 
@@ -79,7 +79,7 @@ Fishing;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack stra
 Fishing;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
 Fishing;🐸;Cursed Prince;Friend;0;0;0;0;0;1;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.
-Fishing;🦭;Retired Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
+Fishing;🦭;Retired Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Got a survival training.
 Fishing;🐬;Friendly Dolphin;Friend;0;0;0;0;1;0;The Clever One;Makes a lot of squaking noises.<br>;They shared some secret.
 Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
 

@@ -2871,7 +2871,7 @@ function playerCheckLevelUp(){
     playerRest(true);
     playerLevel++;
     playerXP=playerXP-playerXPThreshold;
-    playerXPThreshold=playerLevel*150;
+    playerXPThreshold=playerLevel*200;
     updateXPProgress();
     pushEncounter(levelUp,0);
     encounterIndex=encounterIndex-1;
