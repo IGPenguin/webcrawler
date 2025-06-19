@@ -1315,9 +1315,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Heavy":
-            if (((enemyAtk+enemyAtkBonus)<=0) && (enemyMgk<=0)){
-              logPlayerAction(actionString,"Walked away leaving them behind.");
-              nextEncounter();
+            if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
+              if (enemyAtkBonus<0){
+                playerGainXP(1.5,0,"They let you walk away");
+              } else {
+                logPlayerAction(actionString,"Walked away leaving them behind.");
+              }
+              animateFlipNextEncounter();
               isFishing=false;
               break;
             }
@@ -3606,7 +3610,6 @@ function adjustEncounterButtons(){
       if (enemyType.includes("Boss")) {
         if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
         setButton('button_sleep',"💤 Rest");
-        setButton('button_roll',"🌀 Dodge");
       }
       break;
   }
