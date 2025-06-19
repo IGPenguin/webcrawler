@@ -47,10 +47,9 @@ Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this h
 Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like something's calling for attention.<br>;Received a howling blessing.
 
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered nasty consequences.
-Wildland Meadows;🌵;Thorny Patch;Trap;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Pricked by thorns\ but kept moving.
-Wildland Meadows;🕳️;Suspicious Hole;Trap;-2;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
+Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
-Wildland Meadows;🪵;Rotting Log;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Softened by time\ but still treacherous.<br>;Sank in and twisted an ankle.
+Wildland Meadows;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Pricked by thorns\ but kept moving.
 
 Wildland Meadows;🐭;Squeaky Mouse;Small;1;0;1;0;-1;0;Tiny Rodent;Runs around\ looking for crumbs.<br>;Bitten to death by a mouse.
 Wildland Meadows;🦎;Quick Lizard;Small;1;0;2;0;-1;0;Sneaky Reptile;Dashes quickly between rocks.<br>;Lost sight of it\ paid the price.
@@ -263,7 +262,7 @@ Forsaken Village;👁️‍🗨️;Lingering Fear;Curse;0;0;0;0;-1;0;Misfortune;
 Forsaken Village;💀;Memento Mori;Curse;0;0;0;0;-1;0;Misfortune;A constant reminder of mortality.<br>;Lost all hope.
 Forsaken Village;💨;Breath of Dread;Curse;0;0;0;0;-1;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.
 
-Forsaken Village;🕳️;Bottomless Pit;Trap-Attack;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
+Forsaken Village;🕳️;Bottomless Pit;Trap;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
 Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit your head
 Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
@@ -531,7 +530,7 @@ Twisted Fairyland;🔥;Spreading Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disas
 Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
-Twisted Fairyland;🌵;Pointy Cacti;Trap;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
+Twisted Fairyland;🌵;Pointy Cacti;Trap-Roll;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 
 Twisted Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
@@ -725,7 +724,6 @@ River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Pea
 
 River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
-River of Sorrows;☁️;Toxic Cloud;Trap;-2;0;0;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
 
 River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;Cephalopod;Wriggles with unsettling energy.<br>;
@@ -839,8 +837,8 @@ Shrouded Vale;🫁;Collapsed Lung;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot rea
 Shrouded Vale;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Shrouded Vale;🌬️;Mourning Echo;Curse;0;0;0;0;-1;0;Haunted Moment;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
 
-Shrouded Vale;🕳️;Dark Maw;Trap-Attack;-10;0;0;0;0;0;Hunger;A void that never ends.<br>;Dragged you in inch by inch.
-Shrouded Vale;🔥;Ember Pit;Trap-Attack;0;0;0;0;-1;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
+Shrouded Vale;🕳️;Dark Maw;Trap;-1;0;0;0;0;0;Hunger;A void that never ends.<br>;Dragged you in inch by inch.
+Shrouded Vale;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
 
 Shrouded Vale;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
 Shrouded Vale;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;Ritual Place;The stone feels cold to the touch.<br>;
