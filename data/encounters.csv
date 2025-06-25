@@ -178,14 +178,13 @@ Forsaken Village;🛢️;Small Barrel;Container;0;0;0;0;0;0;Container;May contai
 Forsaken Village;🪴;Garden Box;Container;0;0;0;0;0;0;Natural Cover;A modest patch of green.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 Forsaken Village;🪴;Cracked Planter;Container;0;0;0;0;0;0;Decoration;Roots and soil are tightly intertwined.<br>;
-Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Purposeful Container;Seems to be indicating something is inside.<br>;
+Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;Purposeful Container;Seems to be indicating that something is inside.<br>;
 Forsaken Village;🧰;Cracked Toolbox;Container;0;0;0;0;0;0;Forgotten Belongings;There could be something useful\ or cursed.<br>;
 Forsaken Village;📦;Weathered Crate;Container;0;0;0;0;0;0;Someone's Belongings;Wood warped by damp air.<br>;
 Forsaken Village;📦;Supply Crate;Container;0;0;0;0;0;0;Container;Sealed tightly with a rope.<br>;
 Forsaken Village;🎒;Worn Backpack;Container;0;0;0;0;0;0;Container;Looks abandoned in haste.<br>;
 Forsaken Village;🗃️;Metal Box;Container;0;0;0;0;0;0;Container;A small but secure storage.<br>;
 Forsaken Village;💰;Merchant’s Satchel;Container;0;0;0;0;0;0;Container;Once carried precious wares.<br>;
-Forsaken Village;🧳;Traveler’s Chest;Container;0;0;0;0;0;0;Container;Left behind in a hurry.<br>;
 Forsaken Village;🧳;Weathered Trunk;Container;0;0;0;0;0;0;Container;Sturdy enough to hold valuables.<br>;
 Forsaken Village;🎁;Wrapped Parcel;Container;0;0;0;0;0;0;Container;Wrapped in faded ribbons.<br>;
 Forsaken Village;🎁;Unopened Gift;Container;0;0;0;0;0;0;Container;Who left this surprise here?<br>;
@@ -196,7 +195,20 @@ Forsaken Village;🕰️;Grandfather’s Clock;Container;0;0;0;0;0;0;Worthless J
 Forsaken Village;☢️;Suspicious Barrel;Container;-2;0;0;0;0;0;Disposed Container;It is leaking a bright green light.<br>;Suffered permanent damage.
 Forsaken Village;🧱;Loose Bricks;Container;-1;0;0;0;0;0;Unstable Remains;Might reveal a hidden treasure.<br>;Falling bricks twisted your finger
 Forsaken Village;🕸️;Spider Cocon;Container;0;0;-1;0;0;0;Minor Inconvenience;Something seems to be stuck in it.<br>;Got some webs on your face
-Forsaken Village;🎭;Trickster’s Cache;Container;0;0;0;-3;0;0;Circumstantial Object;Rumored to be full of mischief.<br>;
+Forsaken Village;🎭;Trickster’s Cache;Container;0;0;0;-1;0;0;Circumstantial Object;Rumored to be full of mischief.<br>;
+Forsaken Village;🚪;Tainted Outhouse;Container;-1;0;0;0;0;0;Nasty Restroom;Even a peek inside might have lasting effects.<br>;You won't forget that smell.
+
+Forsaken Village;🛢️;Chained Barrel;Locked-Container;0;0;0;0;0;0;Suspicious Container;Closed forever with a hefty chain and a lock.<br>;It finally clicked open.
+Forsaken Village;🧳;Sturdy Trunk;Locked-Container;0;0;0;0;0;0;Personal Belongings;Secured by lock\ might hold something useful.<br>;Uncovered the contents.
+Forsaken Village;🧳;Traveler’s Chest;Locked-Container;0;0;0;0;0;0;Abandoned Belongings;Left behind by someone fleeing in haste.<br>;The latch gave way at last.
+Forsaken Village;🧰;Metal Toolbox;Locked-Container;0;0;0;0;0;0;Secured Container;There could be something useful\ or cursed.<br>;It finally clicked open.
+Forsaken Village;📫;Secured Mailbox;Locked-Container;0;0;0;0;0;0;Locked Container;Seems to be indicating that something is inside.<br>;It finally clicked open.
+Forsaken Village;🔒;Iron Strongbox;Locked-Container;0;0;0;0;0;0;Heavy Storage;Worn and rusted\ but unbroken.<br>;The lock clicked after effort.
+Forsaken Village;🗄️;Locked Cabinet;Locked-Container;0;0;0;0;0;0;Secured Vault;Bolted shut for decades\ marked with initials.<br>;It gave a deep groan opening.
+Forsaken Village;📫;Welded Mailbox;Locked-Container;0;0;0;0;0;0;Untouched Post;Still sealed with wax\ addressed in a dead language.<br>;It hissed as it opened.
+Forsaken Village;🚪;Locked Toolshed;Locked-Container;0;0;0;0;0;0;Wooden Storage;Someone locked it shut years ago.<br>;You Forced the door open.
+Forsaken Village;🎰;Ancient Machine;Locked-Container;0;0;0;0;0;0;Forgotten Relic;Old gears groan behind a rusted panel.<br>;The mechanism stutters open.
+Forsaken Village;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;Dusty Keepsake;Gleams faintly under soot.<br>;Latch clicks open.
 
 Forsaken Village;🪨;Building Rubble;Container-2;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Wall Remains;Container-2;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
@@ -339,9 +351,12 @@ Forsaken Village;🎭;Cultist Masquerader;Boss-Standard;3;3;2;0;3;0;Masked Betra
 Forsaken Village;🪚;Haunted Saw;Boss-Standard;3;3;2;1;-1;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced to thin ribbons.
 Forsaken Village;🪞;Mirror Horror;Boss-Demon;2;1;2;1;-1;1;Spirit of Reflection;Copies your every move.<br>;Shattered in a mirror duel.
 
+Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Forsaken Village;📼;Cassette Tape;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;🏵️;Symbol of Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Forsaken Village;📎;The Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
 Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
@@ -459,6 +474,13 @@ Twisted Fairyland;🎋;Bamboo Growth;Container;0;0;0;0;0;0;Jungle Flora;Good pla
 Twisted Fairyland;🕸;Spider Cocoon;Container;-1;0;0;0;0;0;Someone's Lunch;Seems to have something inside.<br>;Grossed out by the sticky webs.
 Twisted Fairyland;🪺;Unguarded Nest;Container;0;0;0;0;0;0;Opportunity;Whatever built this isn't far.<br>;
 Twisted Fairyland;🍯;Sticky Honeypot;Container;-1;0;0;0;0;0;Suspicious Container;Seems like a fine refreshment.<br>;Got stung by an angry bee!
+
+Twisted Fairyland;🎠;Music Carousel;Locked-Container;0;0;0;0;0;0;Wind-Up Lock;Only plays in reverse.<br>;It popped open with a tune.
+Twisted Fairyland;🎠;Trojan Box;Locked-Container;0;0;0;0;0;0;Suspicious Keepsake;Nailed shut\ there's a small keyhole at the top.<br>;Hinges creaked softly.
+Twisted Fairyland;🗿;Hollow Statue;Locked-Container;0;0;0;0;0;0;Hidden Stash;Something rattles inside\ there's a keyhole.<br>;Unlocked the base.
+Twisted Fairyland;⭐️;Star-Shaped Box;Locked-Container;0;0;0;0;0;0;Magical Trinket;Glows faintly but won’t open easily.<br>;You find the hidden keyhole.
+Twisted Fairyland;🪞;Gilded Mirror;Locked-Container;0;0;0;0;0;0;Reflected Secret;Something faint is visible behind the glass.<br>;Found the hidden keyhole.
+Twisted Fairyland;🧿;Enchanted Orb;Locked-Container;0;0;0;0;0;0;Warding Eye;The seal must be dispelled.<br>;It unlatched with shimmer.
 
 Twisted Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
 Twisted Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;Tough Terrain;Farmland of the natives.<br>;
@@ -644,7 +666,8 @@ Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Cu
 Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.
 Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance for +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 Twisted Fairyland;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
-Twisted Fairyland;👑;Golden Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;Still carries a sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.
+Twisted Fairyland;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
+Twisted Fairyland;👑;The Golden Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;Still carries a sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.
 Twisted Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Twisted Fairyland;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
@@ -714,6 +737,12 @@ River of Sorrows;🎁;Festive Box;Container;0;0;0;0;0;0;Lost Container;Perhaps h
 River of Sorrows;💝;Chocolate Box;Container;0;0;0;0;0;0;Lost Container;Perhaps holds something sweet inside.<br>;Oh\ so this was inside!?
 River of Sorrows;🛢️;Floating Barrel;Container;0;0;0;0;0;0;Lost Container;Who knows what it holds inside.<br>;The contents were surprising!
 
+River of Sorrows;🛢️;Chained Barrel;Locked-Container;0;0;0;0;0;0;Suspicious Container;Closed forever with a hefty chain and a lock.<br>;It finally clicked open.
+River of Sorrows;🧳;Sturdy Trunk;Locked-Container;0;0;0;0;0;0;Personal Belongings;Secured by lock\ might hold something useful.<br>;Uncovered the contents.
+River of Sorrows;🧳;Travel Chest;Locked-Container;0;0;0;0;0;0;Abandoned Belongings;Left behind by someone fleeing in haste.<br>;The latch gave way at last.
+River of Sorrows;🎒;Waterproof Backpack;Locked-Container;0;0;0;0;0;0;Traveler’s Chest;Strapped shut\ washed ashore long ago.<br>;The lock was brittle and gave in.
+River of Sorrows;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar\ almost painful to touch.<br>;It clicks softly open.
+
 River of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
@@ -757,15 +786,16 @@ River of Sorrows;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient s
 River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
 //Matches fishing
+River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 River of Sorrows;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
-River of Sorrows;🧵;Enchanted Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
+River of Sorrows;🧵;Enchanted Fishing Line;Item;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 River of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;Already feeling wiser!
 River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 River of Sorrows;🎲;Gambling Die;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
 River of Sorrows;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
 River of Sorrows;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
-River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides the ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
+River of Sorrows;📎;The Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
 River of Sorrows;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
 River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
 River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -821,6 +851,10 @@ Shrouded Vale;🪦;Toppled Headstone;Container;0;0;0;0;0;0;Resting Place;Somethi
 Shrouded Vale;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
 Shrouded Vale;🥀;Trailing Vines;Container;-1;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.
 Shrouded Vale;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+
+Shrouded Vale;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar\ almost painful to touch.<br>;It clicks softly open.
+Shrouded Vale;⚰️;Locked Coffin;Locked-Container;0;0;0;0;0;0;Sealed Fate;The nails hold strong\ the latch is locked.<br>;You found the hidden keyhole.
+Shrouded Vale;🏺;Sealed Urn;Locked-Container;0;0;0;0;0;0;Ceremonial Container;Plugged with wax and carved runes.;You found the hidden keyhole.
 
 Shrouded Vale;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Shrouded Vale;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
@@ -921,7 +955,13 @@ Shrouded Vale;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an imm
 Shrouded Vale;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
 Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
-//No artifacts here
+//Almost no artifacts here
+Shrouded Vale;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
+Shrouded Vale;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
+Shrouded Vale;👑;The Golden Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;Still carries a sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.
+Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Vale;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 
 Shrouded Vale;🗡️;Thirsty Blade;Item;-1;3;0;0;0;0;Cursed Weapon;Very deadly but wielding it takes a toll.<br>Provides <b>+3 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Felt strangely familiar.
 Shrouded Vale;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong

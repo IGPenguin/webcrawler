@@ -47,7 +47,7 @@ var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝"])
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙","🐛","🦑"])
-var validRess=["🫀","💾","♥️","🫁","🏵️","🛟"];
+var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
 renewPlayer();
 function renewPlayer(){ //Default values
@@ -601,21 +601,26 @@ function loadEncounter(index, fileLines = linesStory){
 function generateNextEncounters(generatorID=0, logCall=true){
   switch (generatorID) {
 
-    case 0: //Prop or Small in container
+    case 0: //Prop/Small/Lockbox
       if (logCall) logGenerator("prop/small");
       var type=chooseFrom(["Prop","Prop","Prop","Small"]) // 1/4 chance for small
       pushEncounter(getRandomEncounter(["Prop"]));
+
       if (type=="Small") {
         if (procAbilityChance("",10)) pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Small"]));
         pushEncounter(getRandomEncounter(["Container"]));
       }
+
+      if (!areaName.includes("Meadow")&& (procAbilityChance("",5+playerLck))){ //5% chance for a locked container with artifact
+        pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+        pushEncounter(getRandomEncounter(["Locked-Container"]));
+      }
+
       break;
 
-    case 1: //Consumable - Optional
-      if (logCall) logGenerator("cons");
-      pushEncounter(getRandomEncounter(["Consumable"]));
-      pushEncounter(getRandomEncounter(["Container"]));
+    case 1:
+      //TBD
       break;
 
     case 2: //Easy Encounter
@@ -2039,7 +2044,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               playerHpMax-=halfHp;
               playerAtk+=halfHp;
-              playerHit(halfHp,false,true);
+              if (playerHp>playerHpMax) playerHp=playerHpMax;
+              displayPlayerEffect("💢");
+              //playerHit(halfHp,false,true);
             }
 
             if (enemyEmoji=="🍭"){
