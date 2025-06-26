@@ -36,10 +36,10 @@ Wildland Meadows;🌽;Corn Field;Container-3;0;0;0;0;0;0;Possible Stash;This hea
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out of the tent.<br>;Decided to investigate the tent.
 Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
 
-Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;2;0;0;Safe Place;Surrounded by rare four-leaf clovers.<br>;You won't ever forget this.
+Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by rare four-leaf clovers.<br>;You won't ever forget this.
 Wildland Meadows;🌸;Wildflower Shrine;Altar;0;0;0;1;0;0;Peaceful Place;Colorful flowers dance with the breeze.<br>;The nature blessed you.
 Wildland Meadows;🍁;Maple Glade;Altar;0;0;0;1;0;0;Safe Haven;Leaves whisper secrets of natural luck.<br>;You listened to the whispers.
-Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;2;0;Unfinished Art;Deserves some basic admiration.<br>;Hmm\ truly an interesting piece.
+Wildland Meadows;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;Unfinished Art;Deserves some basic admiration.<br>;Hmm\ truly an interesting piece.
 
 Wildland Meadows;🦋;Butterfly Swarm;Curse;0;0;0;0;0;1;Natural Beauty;The butterflies are surrounding yourself.<br>;They bestowed you magical power.
 Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird.
@@ -335,10 +335,10 @@ Forsaken Village;🪡;Possessed Needle;Swift;1;1;1;1;-1;0;Deadly Tool;Whatever t
 
 Forsaken Village;🪓;Possessed Axe;Demon;1;2;1;0;-1;0;Cursed Tool;Thirsts for warm blood.<br>;Split your skull in two.
 Forsaken Village;🪑;Cursed Chair;Demon;1;1;1;0;-1;0;Animated Object;Whispers from the wood.<br>;Crushed your spine to dust.
-Forsaken Village;🧸;Demonic Teddy;Demon;1;1;1;1;-1;0;Malevolent Toy;Eyes glow with eerie light.<br>;Strangled in a soft embrace.
-Forsaken Village;🎻;Sinister Violin;Demon;1;1;1;0;-1;0;Animated Object;Plays a tune of death.<br>;Heart burst from melody.
+Forsaken Village;🧸;Demonic Teddy;Demon;2;1;1;1;-1;0;Malevolent Toy;Eyes glow with eerie light.<br>;Strangled in a soft embrace.
+Forsaken Village;🎻;Sinister Violin;Demon;1;1;2;0;-1;0;Animated Object;Plays a tune of death.<br>;Heart burst from melody.
 Forsaken Village;🧹;Possessed Broom;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
-Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;2;1;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
+Forsaken Village;🐈‍⬛;Possessed Cat;Demon;2;1;2;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
 
 Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
 Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
@@ -435,7 +435,7 @@ Forsaken Village;🍷;Sour Wine;Consumable;0;0;2;0;-1;0;Stale Delicacy;Wonder ho
 Forsaken Village;🌶️;Burning Jalapeño;Consumable;-1;0;2;0;0;0;Fresh Fruit;Too hot to handle but boosts energy.<br>Temporary <b>+2 🟢 Energy</b> for <b>-1 💔 Damage.</b>;Burned down the throat
 Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🍰;Strawberry Cake;Consumable;1;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
-Forsaken Village;🍵;Cold Tea;Consumable;0;0;0;1;0;0;Herbal Blend;A calming natural black tea.<br>;You feel gently focused.
+Forsaken Village;🍵;Cold Tea;Consumable;0;0;0;1;0;0;Herbal Blend;A calming natural black tea.<br>Provides <b>+1 🍀 Luck</b>;You feel gently focused.
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
 Forsaken Village;🐟;Smelly Tuna;Consumable;-1;0;0;0;0;0;Rotten Fish;Does not look appealing at all.<br>;Ugh. That tasted terrible
 Forsaken Village;🥣;Unfinished Bowl;Consumable;0;0;-3;0;0;0;Someone's Breakfast;Must have been here for weeks.<br>;Ugh. That tasted terrible
@@ -622,7 +622,7 @@ Twisted Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;Alpha Predator;Bewa
 Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
 
 Twisted Fairyland;👹;Little Devil;Demon;2;2;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
-Twisted Fairyland;🌚;Malevolent Spirit;Demon;2;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
+Twisted Fairyland;🌚;Malevolent Spirit;Demon;3;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
 
 Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;2;0;-1;0;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.
 Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;0;0;1;-1;1;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
@@ -942,8 +942,8 @@ Shrouded Vale;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiou
 Shrouded Vale;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got your heart ripped out!
 Shrouded Vale;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got your heart ripped out!
 Shrouded Vale;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
-Shrouded Vale;👺;Haunting Spirit;Demon;1;0;0;0;4;2;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
-Shrouded Vale;👺;Dread Spirit;Demon;1;0;0;0;4;2;Eerie Being;A form takes shape in the dark.<br>;
+Shrouded Vale;👺;Haunting Spirit;Demon;3;1;1;0;4;3;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Vale;👺;Dread Spirit;Demon;3;2;2;0;4;0;Eerie Being;A form takes shape in the dark.<br>;
 
 Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 Shrouded Vale;🦋;Eclipse Moth;Spirit;1;0;1;0;0;1;Eerie Being;Wings glow under the dark.<br>;Dust turned to whispers.

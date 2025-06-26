@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 06/26/25 • 00:13am"
+var versionCode = "ver. 06/26/25 • 07:52am"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -2315,7 +2315,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               } else {
                 if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
-                logPlayerAction(actionString,"They ignored whatever has been said.");
+                logPlayerAction(actionString,"They ignored whatever you said.");
               }
             }
             if (enemyCastIfMgk()) break;
@@ -3309,6 +3309,8 @@ function playerReincarnate(){
     pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well)
     pushEncounter(bonusItem,2);
   }
+  playerKarma=1; //Reset on ress
+  console.log("Karma reset: 1");
 }
 
 function checkPlayerHasItem(itemArray=validBaits){
