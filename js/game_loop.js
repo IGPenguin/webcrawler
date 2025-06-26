@@ -612,7 +612,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Container"]));
       }
 
-      if (!areaName.includes("Meadow")&& (procAbilityChance("",5+playerLck))){ //5% chance for a locked container with artifact
+      if (!areaName.includes("Meadow")&& (procAbilityChance("",2+playerLck))){ //2% chance for a locked container with artifact
         pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter(["Locked-Container"]));
       }
@@ -3604,7 +3604,7 @@ function adjustEncounterButtons(){
         if (enemyType.includes("Container")) setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
         if (enemyType.includes("Locked")){
           setButton('button_cast',"🪄 Unlock");
-          if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorDarkGrey)
+          if (playerMgk<1) setButton('button_cast',"🪄 Unlock",colorDarkGrey)
           if (playerLootString.includes("🗝️")){
             document.getElementById('button_grab').innerHTML="🗝️ Unlock";
           } else if (playerLootString.includes("📎")) {
