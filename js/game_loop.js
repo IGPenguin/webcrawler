@@ -620,8 +620,10 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
       break;
 
-    case 1:
-      //TBD
+    case 1://Random story letter
+      var randomSlot=chooseFrom([2,3,4,5])
+      pushEncounter(getRandomEncounter(["Item"],["Memento"]),randomSlot);
+      if (chooseFrom([true,false])) pushEncounter(getRandomEncounter(["Container"]),randomSlot);
       break;
 
     case 2: //Easy Encounter
