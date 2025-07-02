@@ -20,7 +20,7 @@ layout: default
 
 <center class="animate__animated animate__fadeIn animate__fast">
 
-<h2 id = "id_area" style="margin-top:-30px;
+<h2 id = "id_area" style="
     margin-bottom:-12px;
     font-size:28px;
     letter-spacing: 1.5px;

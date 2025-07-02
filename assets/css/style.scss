@@ -8,16 +8,21 @@ header {
 }
 
 // Screen scaling
+@media  (min-height: 128px) {
+  body {
+    zoom: 1.18;
+    }
+}
+
 @media  (min-height: 820px) {
   body {
-    padding-top: 58px;
+    padding-top: 24px;
     zoom: 1.18;
     }
 }
 
 @media  (max-width: 420px) {
   body {
-    padding-top: 28px;
     zoom: 0.99;
     }
 }
