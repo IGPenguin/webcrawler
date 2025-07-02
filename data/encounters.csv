@@ -201,6 +201,7 @@ Forsaken Village;🕸️;Spider Cocon;Container;0;0;-1;0;0;0;Minor Inconvenience
 Forsaken Village;🎭;Trickster’s Cache;Container;0;0;0;-1;0;0;Circumstantial Object;Rumored to be full of mischief.<br>;
 Forsaken Village;🚪;Tainted Outhouse;Container;-1;0;0;0;0;0;Nasty Restroom;Even a peek inside might have lasting effects.<br>;You won't forget that smell.
 
+Forsaken Village;📮;Public Mailbox;Locked-Container;0;0;0;0;0;0;Locked Container;Seems packed full of stuff.<br>;It finally clicked open.
 Forsaken Village;🛢️;Chained Barrel;Locked-Container;0;0;0;0;0;0;Suspicious Container;Closed forever with a hefty chain and a lock.<br>;It finally clicked open.
 Forsaken Village;🧳;Sturdy Trunk;Locked-Container;0;0;0;0;0;0;Personal Belongings;Secured by lock\ might hold something useful.<br>;Uncovered the contents.
 Forsaken Village;🧳;Traveler’s Chest;Locked-Container;0;0;0;0;0;0;Abandoned Belongings;Left behind by someone fleeing in haste.<br>;The latch gave way at last.
@@ -662,7 +663,7 @@ Twisted Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely 
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
 Twisted Fairyland;⚡️;Lightning Bolt;Item;0;0;0;0;0;2;<b>Artifact</b>;Weapon once wielded by the king of gods.<br><b>⚡️ Cast</b> lighting bolts</b>\ <b>+2 🔵 Mana</b>.;Gained <b>⚡️ Lightning Bolt</b> and
-Twisted Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 🟢 Energy</b> for more <b>🔵 Mana</b>.<br>;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
+Twisted Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;A rainbow-colored wand sparkling with power.<br>Trade <b>1/2 🟢 Energy</b> for extra <b>🔵 Mana</b>.;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
 Twisted Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.
 Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.
