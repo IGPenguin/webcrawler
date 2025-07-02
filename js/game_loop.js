@@ -275,6 +275,7 @@ function enemyRenew(){
   enemyMgkLost = 0;
   enemyBossType = "";
   enemyCursed=false;
+  encounterUsed=false;
   currentProphercy = getGameTip();
   enemyEmojiScaleX = chooseFrom(['scaleX(-1)','scaleX(1)']);
 }
