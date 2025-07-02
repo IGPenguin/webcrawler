@@ -2140,7 +2140,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerCannotEffect();
             }
 
-            if (enemyEmoji!="💌") { //Add to loot or add karma
+            if (enemyEmoji!="💌") { //Add to loot or add karma for 💌
               playerLootString+=enemyEmoji;
             } else {
               playerKarma+=1;
