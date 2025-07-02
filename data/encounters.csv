@@ -4,10 +4,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🌿;Grass Field;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;🌼;Flower Patch;Prop;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
 Wildland Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
-Wildland Meadows;🌺;Blooming Field;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
-Wildland Meadows;🌸;Cherry Orchard;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🍃;Flying Leaves;Prop;0;0;0;0;0;0;Natural Beauty;Signs reminding you of the circle of life.<br>;
 Wildland Meadows;🌳;Fallen Trunk;Prop;0;0;0;0;0;0;Natural Obstacle;A giant trunk blocks the path.<br>;Clambered over with caution.
 Wildland Meadows;🪹;Empty Nest;Prop;0;0;0;0;0;0;Natural Habitat;Nothing more than twigs and dust.<br>;
@@ -27,6 +24,9 @@ Wildland Meadows;🪵;Splintered Wood;Container;-1;0;0;0;0;0;Wooden Snag;Sharp s
 Wildland Meadows;🍂;Leaf Pile;Container-2;0;0;0;0;0;0;Natural Cover;Something may be hidden beneath.<br>;
 Wildland Meadows;🌾;Grain Growth;Container-2;0;0;0;0;0;0;Farmland Remains;A burlap sack forgotten among the grass.<br>;Opened to reveal a small stash.
 Wildland Meadows;🌾;Overgrown Grass;Container-2;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
+Wildland Meadows;🌼;Flower Patch;Container-2;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
+Wildland Meadows;🌺;Blooming Field;Container-2;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
+Wildland Meadows;🌸;Cherry Orchard;Container-2;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Wildland Meadows;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.<br>;Got stinged real bad!
 
@@ -50,39 +50,37 @@ Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Concealed Trap;Cannot
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
 Wildland Meadows;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Pricked by thorns\ but kept moving.
 
-Wildland Meadows;🐭;Squeaky Mouse;Small;1;0;1;0;-1;0;Tiny Rodent;Runs around\ looking for crumbs.<br>;Bitten to death by a mouse.
-Wildland Meadows;🦎;Quick Lizard;Small;1;0;2;0;-1;0;Sneaky Reptile;Dashes quickly between rocks.<br>;Lost sight of it\ paid the price.
+Wildland Meadows;🐭;Squeaky Mouse;Small;1;0;1;0;0;0;Tiny Rodent;Runs around\ looking for crumbs.<br>;Bitten to death by a mouse.
+Wildland Meadows;🦎;Quick Lizard;Small;1;0;1;0;0;0;Sneaky Reptile;Dashes quickly between rocks.<br>;Lost sight of it\ paid the price.
 Wildland Meadows;🪳;Creeping Cockroach;Small;1;0;1;0;-1;0;Annoying Insect;Scuttles in the undergrowth.<br>;Crawled in the ear and ended it all.
 Wildland Meadows;🪰;Buzzing Fly;Small;1;0;1;0;-1;0;Tiny Annoyance;Barely visible\ but relentless.<br>;Couldn’t take the endless buzzing.
-Wildland Meadows;🪲;Scuttling Beetle;Small;1;0;2;0;-1;0;Innocent Critter;Clings to your boots.<br>;Was too distracted by it.
 Wildland Meadows;🦗;Jumping Grasshopper;Small;1;0;1;0;-1;0;Lively Insect;Leaps away at the last second.<br>;Got too close and fell.
 Wildland Meadows;🐝;Busy Bumblebee;Small;1;0;1;0;-1;0;Flying Insect;Bumbles along with no aim.<br>;Stung in the eye and fell.
 Wildland Meadows;🦋;Blue Butterfly;Small;1;0;1;0;-1;0;Nature's Beauty;Makes a perfect fishing bait.<br>;How come this happened?
 Wildland Meadows;🐝;Stray Bee;Small;1;0;1;0;-1;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
 Wildland Meadows;🐌;Trailing Snail;Small;1;0;0;0;-1;0;Slow Insect;Perhaps it could attract some fish.<br>;How come this happened?
-Wildland Meadows;🦔;Barbed Hedgehog;Small;1;0;1;0;-1;0;Wild Animal;A ball of prickly menace.<br>;Punctured your foot to shreds.
 Wildland Meadows;🪱;Small Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Tiny Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Confused Worm;Small;1;0;0;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Anxious Worm;Small;1;0;1;0;-1;0;Arthropod;Spooked by the sudden sunlight.<br>;Got destroyed by a worm.
-Wildland Meadows;🪱;Rain Worm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
 Wildland Meadows;🪱;Earthworm;Small;1;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
-Wildland Meadows;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;Never hurt no one.<br>;
+Wildland Meadows;🪱;Rain Worm;Small;2;0;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;Got destroyed by a worm.
+Wildland Meadows;🐛;Little Bug;Small;1;0;1;0;-1;0;Innocent Critter;May ruin your day\ but never hurts no one.<br>;This was a disaster.
 Wildland Meadows;🪰;Pesky Fly;Small;1;0;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Wildland Meadows;🐜;Tiny Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
+Wildland Meadows;🐜;Tiny Ant;Small;1;0;0;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
 Wildland Meadows;🐜;Worker Ant;Small;1;0;1;0;-1;0;Insect;Minds its own business.<br>;How could this happen?
-Wildland Meadows;🦗;Chirping Cricket;Small;1;0;3;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;The noise exploded your head!
-Wildland Meadows;🪲;Glowing Bug;Small;1;0;1;0;-1;0;Pelicular Insect;Tiny cute being crawling around.<br>;How could this happen?
+Wildland Meadows;🦗;Chirping Cricket;Small;1;0;0;0;-1;0;Annoying Insect;Makes annoying loud sounds.<br>;The noise exploded your head!
 
-Wildland Meadows;🐓;Curious Rooster;Pet;1;0;1;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Convinced it to join you.
+Wildland Meadows;🐓;Patrolling Rooster;Pet;1;1;2;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Convinced it to join you.
 Wildland Meadows;🐢;Wandering Tortoise;Pet;1;0;1;0;0;0;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
-Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;Mysterious Bird;Croaks in a haunting tone.<br>;The bird joined your side.
-Wildland Meadows;🦦;Cheeky Otter;Pet;1;1;1;0;0;0;Playful Critter;Seems to enjoy chaos.<br>;Slipped into your party.
+Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;Mysterious Bird;Croaks in a haunting tone.<br>;The bird has joined your side.
+Wildland Meadows;🦦;Cheeky Otter;Pet;1;1;1;0;0;0;Playful Critter;Seems to enjoy total chaos.<br>;Slipped into your party.
 Wildland Meadows;🐈;Savannah Cat;Pet;1;0;2;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
 Wildland Meadows;🦔️;Scared Hedgehog;Pet;1;0;2;1;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
+Wildland Meadows;🪲;Glowing Bug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute being crawling around.;Got a little passenger.
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
-Wildland Meadows;🐥;Cute Chick;Pet;1;0;1;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Got a new travel buddy!
+Wildland Meadows;🐥;Lost Chick;Pet;1;0;2;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Got a new travel buddy!
 
 Wildland Meadows;🦜;Colourful Songbird;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
 Wildland Meadows;🦔;Prickly Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
@@ -91,7 +89,7 @@ Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;0;0;The Prophet;Always has an 
 
 Wildland Meadows;🦌;Starved Companion;Friend;-1;0;0;0;0;0;Feral Remnant;It follows you like it remembers something.<br>;Took more than it gave.
 
-Wildland Meadows;🐓;Raging Cock;Standard;1;2;1;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got your brain pecked out.
+Wildland Meadows;🦔;Barbed Hedgehog;Standard;1;1;1;0;0;0;Wild Animal;A ball of prickly menace.<br>;Punctured your foot to shreds.
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Capable of unfortunate headbutts.<br>;Impaled by its horns.
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
@@ -103,15 +101,18 @@ Wildland Meadows;🦆;Aggresive Duck;Swift;1;1;2;0;0;0;Wild Animal;Goes straight
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by its horns.
 Wildland Meadows;🦌;Grazing Deer;Heavy;2;0;2;0;3;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 
+Wildland Meadows;🐓;Enraged Cock;Boss-Swift;1;1;2;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got your brain pecked out.
 Wildland Meadows;🐍;Venomous Viper;Boss-Swift;1;2;1;0;-1;0;Fearsome Reptile;Slithers in the dark.<br>;Injected deadly venom.
 Wildland Meadows;🦡;Honey Badger;Boss-Swift;2;2;2;0;3;0;Wild Animal;The creature boasts sinister energy.<br>;Got freaking destroyed.
 Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
-Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;2;1;0;1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Wildland Meadows;🐗;Furious Warthog;Boss-Heavy;2;2;2;0;-1;0;Wild Animal;Tusks all ready for action.<br>;Got totally torn apart.
-Wildland Meadows;🐂;Tired Bull;Boss-Heavy;3;2;1;0;1;0;Domestic Animal;Looks extremely agitated.<br>;Impaled by both horns at once.
+Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
+Wildland Meadows;🐗;Mama Warthog;Boss-Heavy;2;2;1;0;-1;0;Wild Animal;Does seem to like your kind around.<br>;Got totally torn apart.
+Wildland Meadows;🐂;Tired Old Bull;Boss-Heavy;3;0;1;0;1;0;Domestic Animal;Looks extremely agitated.<br>;Impaled by both horns at once.
 Wildland Meadows;🦅;Sky Tyrant;Boss-Swift;1;1;3;0;3;0;Winged Horror;Wings black as pitch.<br>;Talons tore your throat apart.
 Wildland Meadows;🦢;Murderous Queen;Boss-Swift;2;1;2;0;2;0;Feathered Fury;Looks calm\ but it kills.<br>;Choked by the long neck.
+Wildland Meadows;🐓;Enraged Cock;Boss-Swift;1;1;2;0;10;0;Crazed Animal;Better not underestimate it.<br>;Got your brain pecked out.
 
+Wildland Meadows;🏵️;Symbol of Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
 Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+1 🔵 Mana</b>.;Enhanced your magic skills
 Wildland Meadows;🪁;Lightning Kite;Item;0;0;2;0;0;0;<b>Artifact</b>;Unusual tool\ perhaps serves a higher purpose.<br>Somehow provides <b>+2 🟢 Energy</b>.;Got struck by lightning gaining
@@ -138,6 +139,8 @@ Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 Wildland Meadows;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🧸;Worn Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
+
+Wildland Meadows;🌸;Ambrosia Nectar;Consumable;0;0;0;0;3;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge inside.
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -354,7 +357,6 @@ Forsaken Village;🪞;Mirror Horror;Boss-Demon;2;1;2;1;-1;1;Spirit of Reflection
 Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;📼;Cassette Tape;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Forsaken Village;🏵️;Symbol of Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;📎;The Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
 Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.

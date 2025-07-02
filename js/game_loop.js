@@ -54,7 +54,7 @@ function renewPlayer(){ //Default values
   playerName = getFirstName();
   playerHpMax=3;
   playerHp = playerHpMax;
-  playerStaMax = 3;
+  playerStaMax = 2;
   playerSta = playerStaMax;
   playerMgkMax = 0;
   playerAtk = 1;
@@ -965,7 +965,7 @@ function redraw(){
         cardUIElement.style.background=colorDarkPurple;
         eatColor=colorPurple;
       }
-      if (enemyTeam.includes("Artifact")){
+      if (enemyTeam.includes("Artifact") || enemyTeam.includes("Essence")){
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.background=colorDarkOrange;
         eatColor=colorOrange;
