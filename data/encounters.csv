@@ -139,8 +139,9 @@ Wildland Meadows;🗝️;Brass Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 Wildland Meadows;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🧸;Worn Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
-Wildland Meadows;💌;Lost Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-Wildland Meadows;💌;Undelivered Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+
+Wildland Meadows;💌;Lost Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+Wildland Meadows;💌;Undelivered Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 Wildland Meadows;🌸;Ambrosia Nectar;Consumable;0;0;0;0;3;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge inside.
 
@@ -432,8 +433,8 @@ Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly bri
 Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 
-Forsaken Village;💌;Creepy Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-Forsaken Village;💌;Torn Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+Forsaken Village;💌;Creepy Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+Forsaken Village;💌;Torn Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference
@@ -725,8 +726,8 @@ Twisted Fairyland;🗿;Stone Figure;Item;0;0;0;0;0;0;Lost Possesion;A relic of t
 Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is likely missing it.<br>;You should find the owner!
 Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
-Twisted Fairyland;💌;Ominous Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
-Twisted Fairyland;💌;Anxious Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+Twisted Fairyland;💌;Ominous Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+Twisted Fairyland;💌;Anxious Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 //River of Sorrows
 River of Sorrows;🌫️;Misty Veil;Prop;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;
@@ -821,7 +822,7 @@ River of Sorrows;🗝️;Rusty Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> 
 River of Sorrows;📘;Damned Book;Item;-1;0;0;0;0;1;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Pocketed a piece of trash.
 River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 
-River of Sorrows;💌;Soaked Letter;Item;1;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
+River of Sorrows;💌;Soaked Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;It feels strangely familiar.
 
 //Shrouded Vale
 Shrouded Vale;💀;Cracked Skull;Prop;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.
