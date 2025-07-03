@@ -3266,6 +3266,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
       displayPlayerEffect("📦");
     }
 
+    isFishing = false;
     gameOver();
     return;
   }
