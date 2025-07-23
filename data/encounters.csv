@@ -80,28 +80,31 @@ Wildland Meadows;🦔️;Scared Hedgehog;Pet;1;0;2;1;0;0;Innocent Critter;Leave 
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
 Wildland Meadows;🪲;Glowing Bug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute being crawling around.<br>;Got a little passenger.
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
-Wildland Meadows;🐥;Lost Chick;Pet;1;0;2;0;-1;0;Cute Animal;Constantly peeps and runs around.<br>;Got a new travel buddy!
+Wildland Meadows;🐥;Lost Chick;Pet;1;0;1;0;-1;0;Cute Animal;Runs around constantly peeping.<br>;Got a new travel buddy!
+Wildland Meadows;🕊️;Frail Dove;Pet;1;0;3;1;0;0;Symbol of Peace;Carries mourning in every flap.<br>;It chose to follow your shadow.
 
 Wildland Meadows;🦜;Colourful Songbird;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
 Wildland Meadows;🦔;Prickly Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
 Wildland Meadows;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Oh\ that was annoying.
 Wildland Meadows;🐖;Cursed Being;Friend;0;0;0;0;0;0;The Prophet;Always has an obscure tip to share((<br>n/a;Whatever that meant
 
-Wildland Meadows;🦌;Starved Companion;Friend;-1;0;0;0;0;0;Feral Remnant;It follows you like it remembers something.<br>;Took more than it gave.
+Wildland Meadows;🦌;Starved Companion;Friend;-1;0;0;0;0;0;Feral Remnant;Follows you like it remembers something.<br>;Took part of your soul.
 
 Wildland Meadows;🦔;Barbed Hedgehog;Standard;1;1;1;0;0;0;Wild Animal;A ball of prickly menace.<br>;Punctured your foot to shreds.
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Capable of unfortunate headbutts.<br>;Impaled by its horns.
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
 Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
-Wildland Meadows;🦫;Timber Terror;Standard;2;1;1;0;2;0;Wild Animal;Chomps anything in reach.<br>;Dragged you to a dam of bones.
+Wildland Meadows;🦫;Timber Terror;Standard;2;1;1;0;2;0;Timber Terror;Constructs dams\ and maybe your coffin.<br>;Gained a new follower.
 Wildland Meadows;🦨;Sneaky Skunk;Standard;1;1;2;0;1;0;Wild Animal;Sprays a foul cloud.<br>;Died from the suffocating stench.
 
 Wildland Meadows;🦆;Aggresive Duck;Swift;1;1;2;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by its horns.
 Wildland Meadows;🦌;Grazing Deer;Heavy;2;0;2;0;3;0;Wild Animal;Getting ready for ramming.<br>;Rammed till the last breath.
 
-Wildland Meadows;🐓;Enraged Cock;Boss-Standard;2;1;2;0;10;0;Crazed Animal;Looks funny\ but better don't underestimate it.<br>;Got your brain pecked out.
+Wildland Meadows;🐂;Tired Bull;Boss-Heavy;3;0;1;0;1;0;Domestic Animal;Does not give a damn anymore.<br>;Impaled by both horns at once.
+
+Wildland Meadows;🐓;Raging Cock;Boss-Standard;2;1;2;0;10;0;Crazed Animal;Looks funny\ but better don't underestimate it.<br>;Got your brain pecked out.
 Wildland Meadows;🦅;Sky Tyrant;Boss-Swift;1;2;1;0;3;0;Winged Horror;Aims straight for your eyes.<br>;Talons tore your throat apart.
 Wildland Meadows;🦢;Pond Queen;Boss-Standard;2;1;2;0;2;0;Feathered Fury;Looks calm\ but might surprise you.<br>;Choked by the long neck.
 Wildland Meadows;🐍;Venomous Viper;Boss-Swift;1;2;1;0;-1;0;Fearsome Reptile;Fast\ precise and extremely deadly.<br>;Injected deadly venom.
@@ -109,7 +112,7 @@ Wildland Meadows;🦡;Honey Badger;Boss-Heavy;2;1;2;0;3;0;Wild Animal;Fierce\ vi
 Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Getting ready for some ramming.<br>;Rammed till the last breath.
 Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
 Wildland Meadows;🐗;Mama Warthog;Boss-Heavy;2;2;1;0;-1;0;Wild Animal;Gets more nervous as you approach.<br>;Got totally torn apart.
-Wildland Meadows;🐂;Tired Bull;Boss-Heavy;3;0;1;0;1;0;Domestic Animal;Does not give a damn anymore.<br>;Impaled by both horns at once.
+Wildland Meadows;🦌;Horned Nightmare;Boss-Heavy;2;2;1;0;-1;0;Beast of the Forest;Antlers like towers of bone.<br>;Impaled on the forest crown.
 
 Wildland Meadows;🏵️;Symbol of Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
@@ -278,10 +281,11 @@ Forsaken Village;💀;Memento Mori;Curse;0;0;0;0;-1;0;Misfortune;A constant remi
 Forsaken Village;💨;Breath of Dread;Curse;0;0;0;0;-1;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.
 
 Forsaken Village;🕳️;Bottomless Pit;Trap;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
-Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
-Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;0;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit your head
-Forsaken Village;🔥;Burning Pile;Trap-Attack;-3;0;0;0;0;0;Disaster;The fire is spreading all around.<br>;Burned alive screaming
-Forsaken Village;🛢;Sealed Container;Trap-Attack;-4;0;0;0;0;0;Garbage;There must be a reason why it's closed.<br>;Oops the lid came off
+Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;-1;0;0;0;Living Decay;Spreads faster when watched.<br>;Got deep into your lungs.
+Forsaken Village;🔥;Burning Pile;Trap-Sleep;-3;0;0;0;0;0;Disaster Remnants;The fire is spreading all around.<br>;Burned alive screaming.
+Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;-1;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit your head.
+Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;-1;0;-1;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
+Forsaken Village;🛢;Sealed Container;Trap-Attack;-1;0;0;0;0;0;Toxic Garbage;There must be a reason why it's closed.<br>;Oops\ the lid came off.
 
 Forsaken Village;🌕;Bloodmoon Shrine;Altar;-1;1;0;0;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;The great hunt calls
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power
@@ -309,6 +313,7 @@ Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;Good Boy;These are super rare.<
 Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck
 Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
 
+Forsaken Village;🦎;Ash Lizard;Small;1;1;1;0;0;0;Charred Reptile;Sheds soot wherever it slinks.<br>;Its stare froze your breath.
 Forsaken Village;🐝;Flying Stinger;Small;1;1;1;0;-1;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
 Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;Insect;Going in for the kill.<br>;How could this happen?
 Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
@@ -329,9 +334,11 @@ Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;Dangerous Critter;Proba
 Forsaken Village;🐖;Starving Pig;Standard;2;2;1;0;10;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured alive by a pig.
 Forsaken Village;🦝;Ferocious Coon;Standard;1;1;2;0;2;0;Rabid Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
-Forsaken Village;🧝‍♂️;Cultist Adept;Standard;2;1;2;0;3;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
+Forsaken Village;🪴;Cursed Sprout;Small;1;0;1;1;0;0;Animated Plant;Twists toward your voice in silence.<br>;Wrapped around your fingers.
+
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!
 Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;Humanoid;Trying to prove themselves.<br>;Got your heart ripped out!
+Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;2;0;3;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
 
 Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;Humanoid;Searching for a sacrifice victim.<br>;Got your heart ripped out!
 Forsaken Village;🦂;Fierce Scorpion;Swift;1;2;1;0;-1;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
@@ -346,15 +353,16 @@ Forsaken Village;🎻;Sinister Violin;Demon;1;1;2;0;-1;0;Animated Object;Plays a
 Forsaken Village;🧹;Possessed Broom;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 Forsaken Village;🐈‍⬛;Possessed Cat;Demon;2;1;2;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
 
-Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
-Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
-Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;🪿;Untitled Goose;Boss-Swift;2;1;4;0;3;0;Vicious Beast;Peace was never an option.<br>;Absolutely honked to death!
-Forsaken Village;🦝;Rabid Coon;Boss-Swift;3;2;3;0;3;0;Plague Beast;The nightmare in the alley.<br>;Bitten and left to rot.
-Forsaken Village;🦌;Horned Nightmare;Boss-Heavy;3;2;1;0;-1;0;Beast of the Forest;Antlers like towers of bone.<br>;Impaled on the forest crown.
+Forsaken Village;🪿;Untitled Goose;Boss-Pet;2;1;4;0;3;0;Feathered Menace;Peace was never an option.<br>;Honked its way into your party.
+Forsaken Village;🦝;Masked Bandit;Boss-Pet;3;2;3;0;3;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
+
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
 Forsaken Village;🎭;Cultist Masquerader;Boss-Standard;3;3;2;0;3;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.
 Forsaken Village;🪚;Haunted Saw;Boss-Standard;3;3;2;1;-1;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced to thin ribbons.
+Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;3;2;0;-1;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
+
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;3;0;10;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
+Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 Forsaken Village;🪞;Mirror Horror;Boss-Demon;2;1;2;1;-1;1;Spirit of Reflection;Copies your every move.<br>;Shattered in a mirror duel.
 
 Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -556,6 +564,7 @@ Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terri
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
 Twisted Fairyland;🌵;Pointy Cacti;Trap-Roll;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
+Twisted Fairyland;🫧;Rainbow Bubbles;Trap-Sleep;-3;0;0;0;0;0;Mysterious Beauty;Colourful bubbles are rising from the ground.<br>;Inhaled some nasty fumes.
 
 Twisted Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
@@ -756,6 +765,8 @@ River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water w
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
 River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;
 
+River of Sorrows;�☁️;Toxic Cloud;Trap-Sleep;-3;0;0;0;0;0;Deadly Environment;Noticed an almost invisible gas.<br>;Got deep into your lungs.
+
 River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
 
@@ -883,6 +894,7 @@ Shrouded Vale;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fr
 Shrouded Vale;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;Ritual Place;The stone feels cold to the touch.<br>;
 Shrouded Vale;🌌;Starlight Mural;Altar;0;0;0;0;0;2;Ritual Place;The skies will show you the way.<br>;Recived celestial blessing
 
+Shrouded Vale;🕷️;Hollow Spider;Small;0;0;2;0;-1;0;Empty Shell;Seems long dead\ but still crawling.<br>;Got webbed into sleep.
 Shrouded Vale;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
 Shrouded Vale;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
 Shrouded Vale;🪳;Plague Roach;Small;2;1;1;0;-1;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.
