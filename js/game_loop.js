@@ -629,13 +629,27 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 2: //Easy Encounter
       if (logCall) logGenerator("easy/pet");
+      var encounterPool=["Standard"]
       generateNextEncounters(0,false); //Prop or Contained Small
-      pushEncounter(getRandomEncounter(["Standard","Pet"]));
+
+      if (procAbilityChance("",10+playerLck)){
+        console.log("10% chance: Pet");
+        encounterPool = ["Pet"];
+      }
+
+      pushEncounter(getRandomEncounter(encounterPool));
       break;
 
     case 3: //Mid Encounter - 10% item
       if (logCall) logGenerator("mid");
+      var encounterPool=["Standard"]
       generateNextEncounters(0,false); //Prop or Contained Small
+
+      if (procAbilityChance("",10+playerLck)){
+        console.log("10% chance: Recruit/Pet");
+        encounterPool = ["Recruit"];
+        encounterPool.push("Pet")
+      }
 
       if (procAbilityChance("",10+playerLck)) { //10% item
         pushEncounter(getRandomEncounter(["Item"]))
@@ -670,7 +684,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
       break;
 
-    case 11: //Any Enemy/Curse - 20% item
+    case 11: //Any Enemy - 20% item
       if (logCall) logGenerator("any");
       generateNextEncounters(0,false); //Prop or Contained Small
 
@@ -679,7 +693,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       } else { //20% consumable
         if(procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"]));
       }
-      pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet","Swift","Heavy","Demon","Spirit","Curse"]));
+      pushEncounter(getRandomEncounter(["Small","Standard","Recruit","Pet","Swift","Heavy","Demon","Spirit"]));
       break;
 
     case 20: //House Small - 10% item
