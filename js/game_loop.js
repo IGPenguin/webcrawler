@@ -1186,6 +1186,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
+            if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             break;
 
           case "Spirit":
@@ -1424,6 +1426,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Trap-Roll": //Triggers when rolling into it, next encounter
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
+            if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             nextEncounter();
             break;
           case "Trap":
@@ -2049,6 +2053,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Trap-Attack":
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
+            if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             break;
 
           case "Undead": //Grabbing is not safe
@@ -2461,6 +2467,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Trap-Sleep":
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
+            if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             break;
 
           case "Dream":
