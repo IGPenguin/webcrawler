@@ -587,7 +587,7 @@ function loadEncounter(index, fileLines = linesStory){
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      logAction("⁉️ ▸ "+enemyEmoji+" Noticed danger: <b>"+enemyName+"</b>")
+      logAction("⁉️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
       break;
     case "Altar":
       logAction("👁️ ▸ "+enemyEmoji+" Discovered shrine: <b>"+enemyName+"</b>")
@@ -2080,7 +2080,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               //playerHit(halfHp,false,true);
             }
 
-            if (enemyEmoji=="🍭"){
+            if (enemyEmoji=="UNASSIGNED"){ //TODO Was 🍭, needs replacement
               var halfSta = Math.floor(playerStaMax/2);
               if (halfSta == 0) {
                 logPlayerAction(actionString,"Not enough <b>🟢 Energy</b> available.");
