@@ -1,14 +1,27 @@
-//New Trap Type
-River of Sorrows;☁️;Toxic Cloud;Trap-Sleep;-2;0;0;0;0;0;Unpleasant Odour;This is really nasty.<br>;Suffocated by a toxic gas.
+//New traps
+Wildland Meadows;🪞;Still Reflection;Trap-Sleep;-2;0;0;-1;0;0;Distorted Vision;Your face blinks back at you.<br>;Woke with someone else’s thoughts.
+Wildland Meadows;🦗;Endless Chirping;Trap-Sleep;0;0;-2;0;0;0;Sound Torture;A single cricket never stopped.<br>;Drove you half-mad before dawn.
+Wildland Meadows;🌧️;Drizzle That Burns;Trap-Sleep;-1;0;0;0;0;0;Tainted Rain;It smelled metallic before it hit.<br>;Left red welts across your back.
+Twisted Fairyland;🎠;Whispering Carousel;Trap-Sleep;-2;0;0;-1;0;0;Abandoned Toy;Spins slowly on no wind.<br>;Dreams turned to spirals.
+Twisted Fairyland;👁️;Everseeing Eye;Trap-Sleep;0;0;-3;0;0;0;Watcher’s Curse;You *felt* it blink while you slept.<br>;Mind splintered from the gaze.
+Twisted Fairyland;🎵;Mocking Tune;Trap-Sleep;0;0;-2;0;0;0;Repeating Laughter;Lullaby never stops repeating.<br>;Woke up humming\ unable to stop.
+River of Sorrows;⏳;Slow Timefall;Trap-Sleep;-3;0;0;0;0;0;Aging Rain;Every drop felt heavier than the last.<br>;Skin wrinkled overnight.
+River of Sorrows;🪞;Flooded Memory;Trap-Sleep;0;0;-2;0;0;0;Lingering Thought;You remembered what you shouldn’t have.<br>;Mind staggered under its weight.
+River of Sorrows;🗣️;Faint Crying;Trap-Sleep;-1;0;-1;0;0;0;Grief Echo;You tried to ignore it\ but it crawled closer.<br>;Woke up weeping\ unaware why.
+Shrouded Vale;⚔️;Spectral March;Trap-Sleep;0;0;-2;0;0;0;Ghost Parade;Boots pass through your camp at night.<br>;Woke up covered in ash.
+Shrouded Vale;📯;Phantom Horn;Trap-Sleep;0;0;-2;0;0;0;Final Signal;Heard the call\ felt the dread.<br>;Woke with shaking hands.
+Shrouded Vale;👣;Echoing Footsteps;Trap-Sleep;0;0;-2;0;0;0;Presence Unseen;Footfalls circled all night long.<br>;Didn’t sleep\ not truly.
 
-River of Sorrows;👤;Abandoned Love;Friend\👠;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
+Wildland Meadows;🪁;Lightning Kite;Item;0;0;1;0;0;0;<b>Artifact</b>;Unusual tool\ perhaps serves a higher purpose.<br>Somehow provides <b>+2 🟢 Energy</b>.;Got struck by lightning gaining
+
+Forsaken Village;🌬️;Howling Winds;Trap-Sleep;0;0;-2;0;0;0;Living Decay;Spreads faster when watched.<br>;
+
 Enraged - Heavy
 
 //
 🎾🏐
 
 //Nominations
-Loot;🧷;Safety Pin;Item;0;1;0;0;0;0;Tool;It can hold things together.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it in your belt.
 Loot;🪶;Seabird Feather;Item;0;0;0;1;0;0;Lightweight Trinket;Soft as a dream.<br>Provides <b>+1 🍀 Luck</b>.;Tucked it in your hat.
 Fishing;🌸;Dried Petals;Item;0;0;0;0;1;0;Faded Scent;Still faintly fragrant.<br>Provides <b>+1 🧠 Charisma</b>.;Dreamt of spring.
 
@@ -39,6 +52,7 @@ Loot;🧊;Cold Stone;Item;0;0;1;0;0;0;Chill Charm;Cold enough to bite.<br>Provid
 Enemy;🦠;Sludge Slime;Creature;1;0;0;0;1;0;Toxic Blob;Saps your energy.<br>Deals <b>1 🟢 Energy</b> penalty.
 
 //Generated
+Forsaken Village;👵;Grieving Widow;Friend;0;0;0;0;0;0;Hopeless Person;Sits on a porch with an empty chair beside her.<br>;You joined her silent mourning.
 Enemy;🦭;Cursed Walrus;Creature;4;0;0;0;0;0;Heavy Tusk;Crushes with weight.<br>Deals <b>4 ⚔️ Damage</b>.
 Enemy;🐚;Clam Fiend;Creature;1;0;0;0;1;0;Snaps shut on fingers.<br>Deals <b>1 🧠 Intellect</b> penalty.
 
@@ -47,7 +61,6 @@ Twisted Fairyland;🦇;Lord of Bats;Boss-Spirit;2;3;2;0;3;1;Vampiric Monarch;Com
 Twisted Fairyland;🪡;Thread of Fate;Item;0;0;0;2;0;0;Mystical Thread;Whispers of destiny woven tight.<br>Provides <b>+2 🍀 Luck</b>.;
 Twisted Fairyland;🔮;Witch's Crystal;Item;0;0;0;0;2;0;Mystical Focus;Glimmers with future sight.<br>Provides <b>+2 🧠 Intellect</b>.;
 Twisted Fairyland;🦷;Beast Fang;Item;0;1;0;0;0;0;Trophy Weapon;Torn from a monstrous maw.<br>Provides <b>+1 ⚔️ Damage</b>.;
-Twisted Fairyland;🪝;Hook of the Damned;Item;0;1;0;-1;0;0;Cursed Tool;Pulled from the depths of torment.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;
 Twisted Fairyland;💀;Mini Skull;Item;0;0;0;-1;1;0;Odd Trinket;Cradles a fragment of ancient knowledge.<br>Provides <b>+1 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;
 Twisted Fairyland;🕯️;Spirit Candle;Item;0;0;0;0;1;0;Mystical Light;Flickers with ethereal flame.<br>Provides <b>+1 🧠 Intellect</b>.;
 
@@ -61,16 +74,14 @@ Twisted Fairyland;🦇;Bloodthirsty Bat;Swift;2;2;3;0;2;0;Vampiric Fiend;Wings b
 Twisted Fairyland;🦬;Charging Bison;Heavy;4;4;1;0;5;0;Massive Beast;Thunders forward in fury.<br>;Skull crushed to dust.
 Twisted Fairyland;🐘;Wrathful Mammoth;Heavy;5;3;1;0;5;0;Ancient Beast;A monstrous wall of flesh.<br>;Trampled beneath colossal weight.
 Twisted Fairyland;🦏;Brutal Rhinox;Heavy;4;4;1;0;5;0;Savage Juggernaut;Its horn is its promise of death.<br>;Skewered to the bone.
-Twisted Fairyland;👺;Wicked Imp;Demon;2;2;2;0;-1;1;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.
-Twisted Fairyland;👿;Shadow Fiend;Demon;2;1;2;0;1;1;Sinister Shape;Slips between the shadows.<br>;Lost in endless darkness.
 
 Twisted Fairyland;🌫️;Mist Wraith;Spirit;1;1;1;0;-1;1;Ethereal Apparition;Whispers of the dead.<br>;Suffocated in fog.
 Twisted Fairyland;🌠;Celestial Echo;Spirit;1;0;1;1;-1;1;Otherworldly Glimmer;A glint of lost hope.<br>;Erased by stardust.
-Twisted Fairyland;🔥;Will-o’-the-Wisp;Spirit1;0;0;1;-1;1;Flickering Flame;Dances just out of reach.<br>;Consumed in flame’s embrace.
+Twisted Fairyland;🔥;Will-o’-the-Wisp;Spirit;1;0;0;1;-1;1;Flickering Flame;Dances just out of reach.<br>;Consumed in flame’s embrace.
 
 Twisted Fairyland;🌈;Shimmering Veil;Curse;1;0;0;0;0;0;Illusion;Veils your senses in strange lights.<br>;Stepped into false hope.
 Twisted Fairyland;💀;Whispering Skulls;Curse;0;0;-1;0;0;0;Haunting Presence;The skulls sing your name.<br>;Lost part of your soul.
-Twisted Fairyland;🍄;Maddening Mushrooms;Curse;0;0;1;0;-1;0;Fungal Curse;Inhale the spores and change.<br>;Vision blurred with dreams.
+Twisted Fairyland;🍄;Maddening Mushrooms;Consumable;0;0;0;4;-2;0;Fungal Curse;Inhale the spores and change.<br>;Vision blurred with dreams.
 Twisted Fairyland;🦋;Moth Swarm;Curse;-1;0;1;0;0;0;Insect Plague;Drawn to your warmth.<br>;Covered in fluttering shadows.
 Twisted Fairyland;🌟;Fae Starlight;Curse;0;0;0;0;0;1;Otherworldly Light;Lures you deeper into madness.<br>;Enchanted, never to return.
 Twisted Fairyland;🌪️;Hollow Wind;Curse;0;0;0;0;-1;0;Whistling Sound;Whispers only you hear.<br>;Sanity frayed in the breeze.

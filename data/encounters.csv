@@ -4,7 +4,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
 Wildland Meadows;🌱;Fresh Growth;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;
 Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;🌿;Grass Field;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
-Wildland Meadows;☘️;Fresh Grass;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
+Wildland Meadows;☘️;Clover Field;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🍃;Flying Leaves;Prop;0;0;0;0;0;0;Natural Beauty;Signs reminding you of the circle of life.<br>;
 Wildland Meadows;🌳;Fallen Trunk;Prop;0;0;0;0;0;0;Natural Obstacle;A giant trunk blocks the path.<br>;Clambered over with caution.
 Wildland Meadows;🪹;Empty Nest;Prop;0;0;0;0;0;0;Natural Habitat;Nothing more than twigs and dust.<br>;
@@ -35,6 +35,7 @@ Wildland Meadows;🌾;Dense Weeds;Container-3;0;0;0;0;0;0;Natural Obstacle;Looks
 Wildland Meadows;🌽;Corn Field;Container-3;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out of the tent.<br>;Decided to investigate the tent.
 Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
+Wildland Meadows;🥀;Overgrown Campsite;Container-3;-1;0;0;0;0;0;Abandoned Spot;Strange noises are coming out of the bushes.<br>;Ouch! Thorns cut your skin.
 
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by rare four-leaf clovers.<br>;You won't ever forget this.
 Wildland Meadows;🌸;Wildflower Shrine;Altar;0;0;0;1;0;0;Peaceful Place;Colorful flowers dance with the breeze.<br>;The nature blessed you.
@@ -110,9 +111,8 @@ Wildland Meadows;🦌;Horned Nightmare;Boss-Heavy;2;2;1;0;-1;0;Beast of the Fore
 Wildland Meadows;🏵️;Symbol of Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
 Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+1 🔵 Mana</b>.;Enhanced your magic skills
-Wildland Meadows;🪁;Lightning Kite;Item;0;0;2;0;0;0;<b>Artifact</b>;Unusual tool\ perhaps serves a higher purpose.<br>Somehow provides <b>+2 🟢 Energy</b>.;Got struck by lightning gaining
+Wildland Meadows;🍀;Four-leaf Clover;Item;0;0;0;4;0;0;Artifact;Extremely rare plant\ supposedly beneficial.<br>Provides <b>+4 🍀 Luck</b>.;Feels so good to have it.
 
-Wildland Meadows;🍀;Four-leaf Clover;Item;0;0;0;3;0;0;Rare Specimen;The legend says it gives you an edge.<br>Provides <b>+3 🍀 Luck</b>.;Everything is gonna get easier.
 Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;2;0;Floral Gift;Makes anyone look a lot friendlier.<br>Provides <b>+2 🧠 Intellect</b>.;Feels purposeful carrying that.
 Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch\ sharp thorns!
 Wildland Meadows;🌷;Pink Tulip;Item;1;0;0;0;1;0;Natural Beauty;Brings intense pleasure whenever looked at.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Intellect</b>.;Just awesome!
@@ -346,7 +346,7 @@ Forsaken Village;🪑;Cursed Chair;Demon;1;1;1;0;-1;0;Animated Object;Whispers f
 Forsaken Village;🧸;Demonic Teddy;Demon;2;1;1;1;-1;0;Malevolent Toy;Eyes glow with eerie light.<br>;Strangled in a soft embrace.
 Forsaken Village;🎻;Sinister Violin;Demon;1;1;2;0;-1;0;Animated Object;Plays a tune of death.<br>;Heart burst from melody.
 Forsaken Village;🧹;Possessed Broom;Demon;1;1;1;0;-1;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
-Forsaken Village;🐈‍⬛;Possessed Cat;Demon;2;1;2;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
+Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;1;2;1;-1;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
 
 Forsaken Village;🪿;Untitled Goose;Boss-Pet;2;1;4;0;3;0;Feathered Menace;Peace was never an option.<br>;Honked its way into your party.
 Forsaken Village;🦝;Masked Bandit;Boss-Pet;3;2;3;0;3;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
@@ -391,6 +391,7 @@ Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;2;0;0;Lasting Hope;Brings ple
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
+Forsaken Village;🧷;Makeshift Piercing;Item;0;0;0;0;2;0;Cool Accessory;Adjusts how others perceive your personality.<br>Provides <b>+2 🧠 Charisma</b>.;Stuck it into your body.
 Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;3;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+3 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Even carrying it makes a difference
 
 Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Shot arrow in the knee!
@@ -632,8 +633,10 @@ Twisted Fairyland;🦏;Bulky Rhino;Heavy;5;3;1;0;5;0;Wild Beast;Its majestic hor
 Twisted Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
 Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
 
-Twisted Fairyland;👹;Little Devil;Demon;2;2;1;0;-1;1;Imminent Threat;Laughs out loud maniacally.<br>;
-Twisted Fairyland;🌚;Malevolent Spirit;Demon;3;1;1;0;2;1;Sinister Remnants;Appeared out of nowhere.<br>;No mercy for the wicked.
+Twisted Fairyland;👺;Wicked Imp;Demon;2;2;2;0;3;0;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.
+Twisted Fairyland;👹;Little Devil;Demon;1;3;1;0;3;0;Imminent Threat;Laughs out loud maniacally.<br>;
+Twisted Fairyland;🌚;Shadow Spirit;Demon;3;1;1;0;-1;1;Sinister Remnants;Slips between the shadows.<br>;No mercy for the wicked.
+Twisted Fairyland;👿;Malevolent Fiend;Demon;2;1;3;0;1;1;Sinister Shape;Appeared out of nowhere.<br>;Lost in endless darkness.
 
 Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;2;0;-1;0;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.
 Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;0;0;1;-1;1;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
@@ -647,7 +650,9 @@ Twisted Fairyland;🦖;Ferocious Raptor;Boss-Swift;3;4;2;0;-1;0;Mr. Funny Hands;
 Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
 Twisted Fairyland;🐃;Mythical Buffalo;Boss-Spirit;1;2;2;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by the spirital horns.
 
-Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;
+Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that even drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power.
+Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;2;0;0;-4;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.
+
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
 Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;Brain Juice;Enances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome
 Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity
@@ -658,8 +663,10 @@ Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;Vegetable;Packs a ton
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
-Twisted Fairyland;🧀;Smelly Cheese;Consumable;0;0;0;-1;0;0;Rare Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+Twisted Fairyland;🧀;Smelly Cheese;Consumable;0;0;0;0;-1;0;Rare Delicacy;Smells exactly like <b>-1 🧠 Charisma</b>.<br>...still tempting though.;Your breath now reeks
 Twisted Fairyland;🍏;Poisoned Apple;Consumable;-5;0;0;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took you over
+
+Twisted Fairyland;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;Artifact;Sweet and sour\ exactly like vendetta.<br><b>+1 ⚔️ Damage</b>\ restores <b>❤️ Health</b> & <b>🟢 Energy</b>.;
 
 Twisted Fairyland;🍠;Sweet Root;Consumable;0;0;0;0;0;0;Common Dish;Earthy\ but also suprisingly filling;
 Twisted Fairyland;🥭;Sweet Mango;Consumable;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -671,7 +678,7 @@ Twisted Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;Fancy Food;All nicely 
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
 Twisted Fairyland;⚡️;Lightning Bolt;Item;0;0;0;0;0;2;<b>Artifact</b>;Weapon once wielded by the king of gods.<br><b>⚡️ Cast</b> lighting bolts</b>\ <b>+2 🔵 Mana</b>.;Gained <b>⚡️ Lightning Bolt</b> and
-Twisted Fairyland;🍭;Magic Stick;Item;0;0;0;0;0;0;<b>Artifact</b>;A rainbow-colored wand sparkling with power.<br>Trade <b>1/2 🟢 Energy</b> for extra <b>🔵 Mana</b>.;Traded <b>1/2 🟢 Energy</b> for <b>🔵 Mana</b>.
+Twisted Fairyland;🪄;Magic Wand;Item;0;0;0;0;0;3;<b>Artifact</b>;Resonates with impressive magical power.<br>Provides <b>+3 🔵 Mana</b>.;Got to wield a dangerous power.
 Twisted Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.
 Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.
 Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.
@@ -689,14 +696,13 @@ Twisted Fairyland;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;Destiny Echo;Sac
 
 Twisted Fairyland;🪃;Haunting Boomerang;Item;0;2;0;0;0;0;Tribal Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b>.;
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!
-Twisted Fairyland;🍀;Four-leaf Clover;Item;0;0;0;2;0;0;Rarity;<br>Provides <b>+2 🍀 Luck</b>.;Feels good to have it.
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
 Twisted Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;Prophecy Artifact;Provides <b>+3 🧠 Intellect</b> and insight.<br>n/a;Embraced the knowledge.
 Twisted Fairyland;📜;Magic Scroll;Item;0;0;0;0;0;1;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b>.;Absorbed some magic knowledge
 
 Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;
 Twisted Fairyland;🧥;Protective Coat;Item;2;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;
-Twisted Fairyland;🪄;Old Wand;Item;0;0;0;0;0;2;Mystic Relic;Still possesses considerable magical power.<br>Provides <b>+2 🔵 Mana</b>.;Wielded a dangerous power.
+Twisted Fairyland;🍭;Candy Wand;Item;0;0;0;0;2;0;Magical Weapon;A rainbow-colored wand sparkling with power.<br>Provides <b>+2 🔵 Mana</b>.;The old hag won't be happy.
 Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
 Twisted Fairyland;🧭;Navigation Compass;Item;0;0;2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b>.;
 Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-2;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;
@@ -816,6 +822,7 @@ River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to 
 River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 River of Sorrows;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
 
+River of Sorrows;🪝;Captain's Hook;Item;0;2;0;-1;0;0;Cursed Tool;Pulled from the depths of torment.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.
 River of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
 River of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!
 River of Sorrows;👓;Reading Glasses;Item;0;0;0;0;2;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
