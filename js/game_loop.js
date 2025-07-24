@@ -784,7 +784,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (logCall) logGenerator("h-huge");
       if (procAbilityChance("",50+playerLck)) {
         pushEncounter(getRandomEncounter(["Consumable"]));
-        pushEncounter(getRandomEncounter(["Item","Checkpoint"]))
+        pushEncounter(getRandomEncounter(["Friend","Item","Checkpoint"]))
       } else {
         pushEncounter(getRandomEncounter(["Altar"]));
         pushEncounter(getRandomEncounter(["Consumable"]));
