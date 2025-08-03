@@ -587,7 +587,10 @@ function loadEncounter(index, fileLines = linesStory){
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      logAction("⁉️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
+      logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
+      break;
+    case "Container":
+      if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
       break;
     case "Altar":
       logAction("👁️ ▸ "+enemyEmoji+" Discovered shrine: <b>"+enemyName+"</b>")
