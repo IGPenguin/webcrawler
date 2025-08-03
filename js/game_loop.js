@@ -1589,7 +1589,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               playerMgk-=1;
               var gainedXP=playerGainXP(1,25*playerLevel,"");
-              logPlayerAction(actionString,"Unlocked using a spell -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              logPlayerAction(actionString,"Unlocked it with a spell -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
               break;
             }
@@ -1788,7 +1788,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
               enemyAtkBonus-=1;
               logPlayerAction(actionString,"Made them -1 ⚔️ weaker for -1 🔵");
-              enemyName=enemyName+" (Cursed)";
+              enemyName=enemyName+" (Weakened)";
               displayEnemyEffect("🔥");
             } else if (playerMgkMax < enemyMgk) {
               logPlayerAction(actionString,"They resisted the prayer -1 🔵");
@@ -1871,12 +1871,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (playerMgk<1){
-          logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
-          displayPlayerCannotEffect();
-          break;
-        }
-
         if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { //Curse is never free, upgrd handled above
             break;
           }
@@ -1885,10 +1879,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       switch (enemyType){
         case "Demon":
-            logPlayerAction(actionString,"The curse made them stronger!");
+            logPlayerAction(actionString,"The curse has made them stronger!");
             enemyName=enemyName+" (Cursed)";
             animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
-            enemyMgk+=1;
+            enemyAtk+=1;
             break;
 
         case "Standard": //Reduce enemy atk if mgk stronger then them
@@ -1897,6 +1891,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Heavy":
         case "Pet":
         case "Undead":
+        case "Spirit":
         case "Boss":
         case "Small":
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
@@ -1927,12 +1922,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"The curse had no effect on them -1 🔵");
           }
 
-          if (enemyCastIfMgk()) break;
-          enemyAttackOrRest();
-          break;
-
-        case "Spirit": //They don't care
-          logPlayerAction(actionString,"The curse had no effect on it -1 🔵");
           if (enemyCastIfMgk()) break;
           enemyAttackOrRest();
           break;
@@ -2810,7 +2799,7 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
   }
 }
 
-function enemyTurnAggressive(message="That made them really upset!"){
+function enemyTurnAggressive(message="That has made them really upset!"){
   enemyType="Standard";
   enemyHp=2+playerLevel;
   enemyAtk=Math.floor(1+playerLevel/2);
