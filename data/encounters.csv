@@ -135,7 +135,7 @@ Wildland Meadows;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be tr
 Wildland Meadows;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🧸;Worn Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
-Wildland Meadows;💌;Lost Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
+Wildland Meadows;💌;Lost Memories;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 Wildland Meadows;💌;Undelivered Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
 Wildland Meadows;🌸;Ambrosia Nectar;Consumable;0;0;0;0;3;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge inside.
@@ -440,7 +440,7 @@ Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;Lost Possesion;Part of some
 Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 
 Forsaken Village;💌;Creepy Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
-Forsaken Village;💌;Torn Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
+Forsaken Village;💌;Romantic Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference

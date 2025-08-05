@@ -2178,7 +2178,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               playerKarma++;
               playerLove++;
-              enemyMsg="You needed to keep it with yourself +1 ❤️‍🩹"
+              enemyMsg="You needed to keep it by yourself +1 ❤️‍🔥"
             }
             isFishing=false;
             if (playerHp==0) break;
@@ -2434,9 +2434,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyTeam.includes("Lover's Memento")){
-              logPlayerAction(actionString,enemyMsg+" +1 ❤️‍🩹");
+              logPlayerAction(actionString,enemyMsg+" -1 💔");
               playerKarma++;
               playerLove++;
+              playerHit(1);
               displayPlayerRestedEffect();
               encounterUsed=true;
               break;
@@ -3394,6 +3395,7 @@ function checkPlayerHasItem(itemArray=validBaits){
 function gameOver(silent=false){
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container"))) enemyMsg="Got killed, ending the adventure.";
+  if (enemyTeam.includes("Lover's Memento")) enemyMsg="Killed by a severe heartbreak.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
