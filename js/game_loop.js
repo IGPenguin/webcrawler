@@ -34,7 +34,8 @@ var playerAtkBonus;
 var playerXP;
 var playerLevel;
 var playerXPThreshold;
-var playerKarma=1; //Does reset after ress
+var playerLove=0;
+var playerKarma=1;
 var playerRested = false;
 var playerCooked = false;
 var playerAttackType = "⚔️";
@@ -79,6 +80,7 @@ function renewPlayer(){ //Default values
 
   playerKills = 0;
   playerKarma=1;
+  playerLove=0;
   seenLoot = [];
   adventureLog = [];
 }
@@ -626,7 +628,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       break;
 
     case 1://Random story letter
-      var randomSlot=chooseFrom([4,5])
+      var randomSlot=chooseFrom([3,4,5])
       pushEncounter(getRandomEncounter(["Item"],["Memento"]),randomSlot);
       if (chooseFrom([true,false])) pushEncounter(getRandomEncounter(["Container"]),randomSlot);
       break;
@@ -1083,6 +1085,8 @@ function redraw(){
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
+      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) displayPlayerState("Frightened",colorDarkGrey,"0.4");
+      if (enemyTeam.includes("Lover's Memento")&&encounterUsed) displayPlayerState("Reminiscing",colorPink,"2.5");
       if (enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
         displayPlayerState("In Combat",colorRed,"0.8");
         setButton('button_sleep',"💤 Rest"); //Hack
@@ -1379,6 +1383,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               isFishing=false;
               logPlayerAction(actionString,"Threw it far away.");
             } else {
+              if (enemyTeam.includes("Lover's Memento")){
+                playerAtk++;
+                playerLove-=2;
+                playerKarma-=2;
+                logPlayerAction(actionString,"Your throat tightened with hatred! +1 ⚔️");
+                displayPlayerCannotEffect();
+                nextEncounter();
+                break;
+              }
+
               logPlayerAction(actionString,"Walked away wasting the potential.");
               if (enemyType=="Checkpoint") encounterIndex++;
             }
@@ -2159,10 +2173,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerCannotEffect();
             }
 
-            if (enemyEmoji!="💌") { //Add to loot or add karma for 💌
+            if (enemyEmoji!="💌") { //Add to loot
               playerLootString+=enemyEmoji;
             } else {
-              playerKarma+=1;
+              playerKarma++;
+              playerLove++;
+              enemyMsg="You needed to keep it with yourself +1 ❤️‍🩹"
             }
             isFishing=false;
             if (playerHp==0) break;
@@ -2409,6 +2425,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             animateFlipNextEncounter();
             break;
+
+          case "Item":
+            if (encounterUsed) {
+              logPlayerAction(actionString,"It doesn't cause you any new feelings.");
+              displayPlayerCannotEffect();
+              break;
+            }
+
+            if (enemyTeam.includes("Lover's Memento")){
+              logPlayerAction(actionString,enemyMsg+" +1 ❤️‍🩹");
+              playerKarma++;
+              playerLove++;
+              displayPlayerRestedEffect();
+              encounterUsed=true;
+              break;
+            }
 
           default:
             logPlayerAction(actionString,"The voice echoes around the area.");
@@ -3487,7 +3519,7 @@ function adjustEncounterButtons(){
       var blade=checkPlayerHasItem(validBlades);
       if (blade!=""&&enemyHp<0) {
         setButton("button_pray","🩸 Offer",colorRed);
-        if (encounterUsed) setButton('button_pray',"🩸 Offer",colorWhite);
+        if (encounterUsed) setButton('button_pray',"🩸 Offer",colorDarkGrey);
       }
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
@@ -3510,8 +3542,10 @@ function adjustEncounterButtons(){
       if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
       if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
       setButton('button_grab',"👋 Grab",grabColor);
-
-      setButton('button_roll',"❌ Ditch");
+      setButton('button_roll',"❌ Ditch",colorRed);
+      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Read",colorPink);
+      if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Read",colorDarkGrey);
+      if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorYellow);
       break;
 
     case "Trap-Attack":
