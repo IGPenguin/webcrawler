@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 08/04/25 • 02:28pm"
+var versionCode = "ver. 08/06/25 • 00:03am"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -596,7 +596,7 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("👁️ ▸ "+enemyEmoji+" Discovered shrine: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-      logAction("💭 ▸ "+enemyEmoji+" Approached creature: <b>"+enemyName+"</b>")
+      logAction("💭 ▸ "+enemyEmoji+" Spotted a creature: <b>"+enemyName+"</b>")
       break;
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
@@ -626,7 +626,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       break;
 
     case 1://Random story letter
-      var randomSlot=chooseFrom([2,3,4,5])
+      var randomSlot=chooseFrom([4,5])
       pushEncounter(getRandomEncounter(["Item"],["Memento"]),randomSlot);
       if (chooseFrom([true,false])) pushEncounter(getRandomEncounter(["Container"]),randomSlot);
       break;
