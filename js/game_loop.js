@@ -4,7 +4,7 @@
 //Debug
 var versionCode = "ver. 08/06/25 • 00:03am"
 var initialEncounterOverride=0; //6 skips tutorial
-if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorDarkPink = "#a1111a"; var colorCardBackground = "#202020";
@@ -573,7 +573,8 @@ function loadEncounter(index, fileLines = linesStory){
         if (enemyTeam.includes("Possesion")) {
           logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
         } else {
-          logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+         if (!enemyTeam.includes("Lover's Memento")) logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+         logAction("🫀 ▸ "+enemyEmoji+" Faced the truth: <b>"+enemyName+"</b>")
         }
       }
       break;
@@ -2173,7 +2174,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerCannotEffect();
             }
 
-            if (enemyEmoji!="💌") { //Add to loot
+            if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               playerLootString+=enemyEmoji;
             } else {
               playerKarma++;
@@ -3545,8 +3546,8 @@ function adjustEncounterButtons(){
       if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
       setButton('button_grab',"👋 Grab",grabColor);
       setButton('button_roll',"❌ Ditch",colorRed);
-      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Read",colorPink);
-      if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Read",colorDarkGrey);
+      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Recall",colorPink);
+      if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
       if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorYellow);
       break;
 
