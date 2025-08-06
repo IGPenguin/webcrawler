@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 0.0.9"
+var versionCode = "v0.0.9"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
 
@@ -335,7 +335,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
-    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:58px;\">Stay Dead</p><p style=\"font-size:14px;\""+decorateStatusText("","<br> by IGPenguin <i>("+versionCode+")</i>",colorWhite),5);
+    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:20px;line-height:18px;\""+decorateStatusText("","<br>"+emptySpace.repeat(32)+"by IGPenguin",colorWhite),5);
     else
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
