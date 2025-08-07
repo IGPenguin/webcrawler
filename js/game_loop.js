@@ -1457,9 +1457,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Roll": //Triggers when rolling into it, next encounter
-            if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
-            if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            if (!encounterUsed) {
+              if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
+              if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
+              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+              }
             nextEncounter();
             break;
           case "Trap":
@@ -3166,6 +3168,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     }
     playerMgkMax += parseInt(bonusMgk);
     playerMgk += parseInt(bonusMgk);
+    if (playerMgk<0) playerMgk=0;
     gainedString += changeSign+bonusMgk + " 🔵";
     displayPlayerEffect("🪬");
     displayPlayerGainedEffect();
@@ -3183,6 +3186,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     }
     playerStaMax += parseInt(bonusSta);
     playerSta += parseInt(bonusSta);
+    if (playerSta<0) playerSta=0;
     gainedString += changeSign+bonusSta + " 🟢";
   }
 
@@ -3222,7 +3226,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       playerHit(0,false,true);
       return;
     }
-    displayPlayerEffect(enemyEmoji);
+    if (enemyType=="Item") displayPlayerEffect(enemyEmoji);
   }
 
   var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝"])
@@ -3586,6 +3590,7 @@ function adjustEncounterButtons(){
       if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorYellow);
       break;
 
+    case "Trap":
     case "Trap-Attack":
     case "Trap-Sleep":
       document.getElementById('button_grab').innerHTML="✋ Reach";
