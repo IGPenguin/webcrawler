@@ -578,8 +578,11 @@ function loadEncounter(index, fileLines = linesStory){
         if (enemyTeam.includes("Possesion")) {
           logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
         } else {
-         if (!enemyTeam.includes("Lover's Memento")) logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
-         logAction("🫀 ▸ "+enemyEmoji+" Faced the truth: <b>"+enemyName+"</b>")
+         if (!enemyTeam.includes("Lover's Memento")) {
+          logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+         } else {
+          logAction("🫀 ▸ "+enemyEmoji+" Faced old truth: <b>"+enemyName+"</b>")
+         }
         }
       }
       break;
@@ -2980,7 +2983,7 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
-    curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Level increased!</p><p style=\"font-size:20px;\""+decorateStatusText("","New perk available.",colorWhite));
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;font-weight:600;\">Level Up!</p><p style=\"font-size:20px;\""+decorateStatusText("","New perk available.",colorWhite));
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
