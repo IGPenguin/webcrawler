@@ -3887,7 +3887,6 @@ function registerClickListeners(){
 
   versionIDUIElement.addEventListener(eventType, ()=> {
     actionString="⚙️"
-    adventureEndTime=getTime();
     adventureEndReason="\nDebug: "+enemyEmoji+" "+enemyName
     copyAdventureToClipboard();
     redraw();
