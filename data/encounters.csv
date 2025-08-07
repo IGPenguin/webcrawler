@@ -274,12 +274,20 @@ Forsaken Village;👁️‍🗨️;Lingering Fear;Curse;0;0;0;0;-1;0;Misfortune;
 Forsaken Village;💀;Memento Mori;Curse;0;0;0;0;-1;0;Misfortune;A constant reminder of mortality.<br>;Lost all hope.
 Forsaken Village;💨;Breath of Dread;Curse;0;0;0;0;-1;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.
 
-Forsaken Village;🕳️;Bottomless Pit;Trap;-10;0;0;0;0;0;Mystery;Better not mess around and walk away.<br>;Slipped right into it.
+Forsaken Village;🕹️;Strange Lever;Trap;-9;0;0;0;0;0;Ancient Mechanism;Someone clearly meant this to be found.<br>;Rusty blade punctured your head.
+Forsaken Village;🛢;Sealed Container;Trap-Attack;-3;0;0;0;0;0;Toxic Garbage;There must be a reason why it's closed.<br>;Oops\ the lid came off.
+Wildland Meadows;🧨;Sparkling Torch;Trap-Sleep;-3;0;0;0;0;0;Flickering Light;Probably not a good idea to stick around here.<br>;Suffered severe explosive trauma.
+Wildland Meadows;💣;Sizzling Sphere;Trap-Sleep;-2;0;0;0;0;0;Flickering Light;Probably not a good idea to stick around here.<br>;Suffered some explosive trauma.
+Forsaken Village;🍌;Banana Peel;Trap-Roll;-2;0;0;0;0;0;Garbage;Extremely slippery when stepped on.<br>;Slipped and hit your head hard.
+Forsaken Village;⚙️;Exposed Gearwork;Trap;-1;0;0;0;0;0;Clockwork Remnant;Old parts still twitch and rattle.<br>;Your finger got caught in the cogs.
+Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;-1;0;-1;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
+Forsaken Village;🕯️;Burning Candle;Trap;-1;0;0;0;0;0;Light Source;You know the drill\ don't play with fire.<br>;You have burned your hand.
 Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;-1;0;0;0;Living Decay;Spreads faster when watched.<br>;Got deep into your lungs.
 Forsaken Village;🔥;Burning Pile;Trap-Sleep;-3;0;0;0;0;0;Disaster Remnants;The fire is spreading all around.<br>;Burned alive screaming.
-Forsaken Village;🍌;Banana Peel;Trap-Roll;-1;0;-1;0;0;0;Garbage;Slippery when stepped on.<br>;Slipped and hit your head.
-Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;-1;0;-1;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
-Forsaken Village;🛢;Sealed Container;Trap-Attack;-1;0;0;0;0;0;Toxic Garbage;There must be a reason why it's closed.<br>;Oops\ the lid came off.
+
+Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;Training Spot;You should give it a shot!<br>;Improved your combat technique!
+Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;Party Prop;These are made for smashing!<br>;Improved your attack accuracy!
+Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.
 
 Forsaken Village;🌕;Bloodmoon Shrine;Altar;-1;1;0;0;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;The great hunt calls
 Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power
@@ -553,17 +561,18 @@ Twisted Fairyland;🥀;Knotted Vines;Altar;-1;0;0;0;4;0;Nature Totem;Tied delibe
 Twisted Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Blood-crying statues gaze upon the altar.<br>;Embraced ancient gods
 Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
 Twisted Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
-Twisted Fairyland;⛩️;Ornate Shrine;Altar;1;0;0;0;0;0;Ritual Place;Gods shall be merciful.<br>;Received a powerful blessing.
 
 Twisted Fairyland;🔥;The Eternal Flame;Upgrade;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
-Twisted Fairyland;🕳️;Bottomless Sinkhole;Trap;-10;0;0;0;0;0;Natural Disaster;A deep and treacherous hole.<br>;Fell into the dark depths.
-Twisted Fairyland;🔥;Spreading Wildfire;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Burned alive screaming
-Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
+Twisted Fairyland;🗿;False Idol;Trap;-3;0;0;0;0;0;Rigged Statue;Its eyes are watching your every move.<br>;It suddenly hit your head.
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
-Twisted Fairyland;🕸️;Sticky Web;Trap-Roll;-1;0;0;0;0;0;Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
+Twisted Fairyland;🪨;Animated Stone;Trap;-2;0;0;0;0;0;Malevolent Spell;Perhaps you should just leave it alone.<br>;The rock has bit your finger!
 Twisted Fairyland;🌵;Pointy Cacti;Trap-Roll;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
-Twisted Fairyland;🫧;Rainbow Bubbles;Trap-Sleep;-3;0;0;0;0;0;Mysterious Beauty;Colourful bubbles are rising from the ground.<br>;Inhaled some nasty fumes.
+Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
+Twisted Fairyland;🔥;Spreading Wildfire;Trap-Sleep;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Woke up to be burning alive.
+
+Twisted Fairyland;⛩️;Sacred Gate;Trap-Roll;0;0;0;3;0;0;Man-made Monument;Rumors claim whoever passes will become lucky.<br>;Recieved a sacred blessing!
+Twisted Fairyland;✨;Floating Sparkles;Trap-Sleep;0;0;0;0;0;1;Mystical Spot;Tiny sparkling bits are floating in this area.<br>;Got some bits under your skin.
 
 Twisted Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
@@ -688,7 +697,6 @@ Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides 
 Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance for +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 Twisted Fairyland;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 Twisted Fairyland;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
-Twisted Fairyland;👑;The Golden Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;Still carries a sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.
 Twisted Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Twisted Fairyland;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
@@ -770,7 +778,7 @@ River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water w
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
 River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;
 
-River of Sorrows;�☁️;Toxic Cloud;Trap-Sleep;-3;0;0;0;0;0;Deadly Environment;Noticed an almost invisible gas.<br>;Got deep into your lungs.
+River of Sorrows;☁️;Toxic Cloud;Trap-Sleep;-3;0;0;0;0;0;Deadly Environment;Noticed an almost invisible gas.<br>;Got deep into your lungs.
 
 River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
@@ -840,173 +848,179 @@ River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;Worthless Junk;All letters alrea
 
 River of Sorrows;💌;Soaked Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
-//Shrouded Vale
-Shrouded Vale;💀;Cracked Skull;Prop;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.
-Shrouded Vale;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
-Shrouded Vale;🍂;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Shrouded Vale;⚱️;Burial Urn;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Shrouded Vale;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
-Shrouded Vale;🪦;Weathered Tombstone;Prop;0;0;0;0;0;0;Memorial;Names long forgotten.<br>;
-Shrouded Vale;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
-Shrouded Vale;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Shrouded Vale;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
-Shrouded Vale;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-Shrouded Vale;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-Shrouded Vale;🫂;Mourning Shades;Prop;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
-Shrouded Vale;🩸;Blood-Stained Stone;Prop;0;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;
-Shrouded Vale;🌫️;Pale Mist;Prop;0;0;0;0;0;0;Unsettling Atmosphere;A veil of fog conceals the path.<br>;
-Shrouded Vale;⚰️;Broken Coffin;Prop;0;0;0;0;0;0;Ruins;Wood splinters litter the ground.<br>;
-Shrouded Vale;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;
-Shrouded Vale;⏳;Frozen Hourglass;Prop;0;0;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;
-Shrouded Vale;🌾;Dead Reeds;Prop;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;
-Shrouded Vale;🕯️;Unlit Candle;Prop;0;0;0;0;0;0;Faint Hope;Once offered flickering guidance.<br>;
+//Shrouded Necropolis
+Shrouded Necropolis;💀;Cracked Skull;Prop;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.
+Shrouded Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
+Shrouded Necropolis;🍂;Dying Fern;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
+Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
+Shrouded Necropolis;🪦;Weathered Tombstone;Prop;0;0;0;0;0;0;Memorial;Names long forgotten.<br>;
+Shrouded Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
+Shrouded Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
+Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
+Shrouded Necropolis;🩸;Blood-Stained Stone;Prop;0;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;
+Shrouded Necropolis;🌫️;Pale Mist;Prop;0;0;0;0;0;0;Unsettling Atmosphere;A veil of fog conceals the path.<br>;
+Shrouded Necropolis;⚰️;Broken Coffin;Prop;0;0;0;0;0;0;Ruins;Wood splinters litter the ground.<br>;
+Shrouded Necropolis;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;
+Shrouded Necropolis;⏳;Frozen Hourglass;Prop;0;0;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;
+Shrouded Necropolis;🌾;Dead Reeds;Prop;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;
+Shrouded Necropolis;🕯️;Unlit Candle;Prop;0;0;0;0;0;0;Faint Hope;Once offered flickering guidance.<br>;
 
-Shrouded Vale;🏺;Ancient Urn;Container;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;
-Shrouded Vale;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
-Shrouded Vale;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Shrouded Vale;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
-Shrouded Vale;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
-Shrouded Vale;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
-Shrouded Vale;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.
-Shrouded Vale;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.
-Shrouded Vale;🦴;Pile of Bones;Container;0;0;0;-3;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;Got cursed for disturbing that
-Shrouded Vale;🦴;Scattered Bones;Container;-1;0;0;0;0;0;Uneasy Sight;Old bones lie scattered around.<br>;Stepped on something sharp.
-Shrouded Vale;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;Questionable Stash;Something seems to be hidden there.;Got cursed for disturbing that
-Shrouded Vale;🪦;Toppled Headstone;Container;0;0;0;0;0;0;Resting Place;Something is sticking from below it.<br>;
-Shrouded Vale;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
-Shrouded Vale;🥀;Trailing Vines;Container;-1;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.
-Shrouded Vale;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
+Shrouded Necropolis;🏺;Ancient Urn;Container;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;
+Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
+Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
+Shrouded Necropolis;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;
+Shrouded Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.
+Shrouded Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;
+Shrouded Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.
+Shrouded Necropolis;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.
+Shrouded Necropolis;🦴;Pile of Bones;Container;0;0;0;-3;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;Got cursed for disturbing that
+Shrouded Necropolis;🦴;Scattered Bones;Container;-1;0;0;0;0;0;Uneasy Sight;Old bones lie scattered around.<br>;Stepped on something sharp.
+Shrouded Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;Questionable Stash;Something seems to be hidden there.;Got cursed for disturbing that
+Shrouded Necropolis;🪦;Toppled Headstone;Container;0;0;0;0;0;0;Resting Place;Something is sticking from below it.<br>;
+Shrouded Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that
+Shrouded Necropolis;🥀;Trailing Vines;Container;-1;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.
+Shrouded Necropolis;👝;Lost Purse;Container;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside<br>;
 
-Shrouded Vale;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar\ almost painful to touch.<br>;It clicks softly open.
-Shrouded Vale;⚰️;Locked Coffin;Locked-Container;0;0;0;0;0;0;Sealed Fate;The nails hold strong\ the latch is locked.<br>;You found the hidden keyhole.
-Shrouded Vale;🏺;Sealed Urn;Locked-Container;0;0;0;0;0;0;Ceremonial Container;Plugged with wax and carved runes.;You found the hidden keyhole.
+Shrouded Necropolis;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar\ almost painful to touch.<br>;It clicks softly open.
+Shrouded Necropolis;⚰️;Locked Coffin;Locked-Container;0;0;0;0;0;0;Sealed Fate;The nails hold strong\ the latch is locked.<br>;You found the hidden keyhole.
+Shrouded Necropolis;🏺;Sealed Urn;Locked-Container;0;0;0;0;0;0;Ceremonial Container;Plugged with wax and carved runes.;You found the hidden keyhole.
 
-Shrouded Vale;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
-Shrouded Vale;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
-Shrouded Vale;🌊;Flooded Crypt;Fishing;0;0;0;0;0;0;Hidden Depths;Ripples betray movement below.<br>;
+Shrouded Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
+Shrouded Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
+Shrouded Necropolis;🌊;Flooded Crypt;Fishing;0;0;0;0;0;0;Hidden Depths;Ripples betray movement below.<br>;
 
-Shrouded Vale;👣;Trailing Shade;Curse;0;0;0;0;-3;0;Doppelganger;Footsteps match yours exactly\<br> but they are always late.;Unsure who walked first.
-Shrouded Vale;👁️;Unseen Witness;Curse;0;0;0;0;-2;0;Guilt Manifest;Always a step behind\ never speaking.<br>It knows what you did.;The anxiety never leaves.
-Shrouded Vale;🫀;Irregular Heartbeat;Curse;-1;0;0;0;0;0;Relentless Pulse;Your heart suddenly struggles to keep up.<br>;
-Shrouded Vale;🩹;Festering Wound;Curse;0;0;-1;0;0;0;Everlasting Pain;The wound seems to have never fully recovered.<br>;The pain limits your movement.
-Shrouded Vale;🫁;Collapsed Lung;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
-Shrouded Vale;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
-Shrouded Vale;🌬️;Mourning Echo;Curse;0;0;0;0;-1;0;Haunted Moment;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
+Shrouded Necropolis;👣;Trailing Shade;Curse;0;0;0;0;-3;0;Doppelganger;Footsteps match yours exactly\<br> but they are always late.;Unsure who walked first.
+Shrouded Necropolis;👁️;Unseen Witness;Curse;0;0;0;0;-2;0;Guilt Manifest;Always a step behind\ never speaking.<br>It knows what you did.;The anxiety never leaves.
+Shrouded Necropolis;🫀;Irregular Heartbeat;Curse;-1;0;0;0;0;0;Relentless Pulse;Your heart suddenly struggles to keep up.<br>;
+Shrouded Necropolis;🩹;Festering Wound;Curse;0;0;-1;0;0;0;Everlasting Pain;The wound seems to have never fully recovered.<br>;The pain limits your movement.
+Shrouded Necropolis;🫁;Collapsed Lung;Curse;0;0;-2;0;0;0;Moment of Crisis;Cannot really catch a breath!<br>;
+Shrouded Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
+Shrouded Necropolis;🌬️;Mourning Echo;Curse;0;0;0;0;-1;0;Haunted Moment;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
 
-Shrouded Vale;🕳️;Dark Maw;Trap;-1;0;0;0;0;0;Hunger;A void that never ends.<br>;Dragged you in inch by inch.
-Shrouded Vale;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
+Shrouded Necropolis;🕳️;Bottomless Sinkhole;Trap;-9;0;0;0;0;0;Natural Disaster;Better not mess around and walk away.<br>;Fell into the dark depths.
+Shrouded Necropolis;🟫;Pressure Plate;Trap;-9;0;0;0;0;0;Mechanical Trigger;Odd tile doesn’t quite match the others.<br>;The floor dropped beneath your feet.
+Shrouded Necropolis;🔘;Mysterious Button;Trap;-9;0;0;0;0;0;Ancient Mechanism;Someone clearly meant this to be found.<br>;Rusty blade punctured your head.
+Shrouded Necropolis;🔮;Clouded Oraculum;Trap;-1;0;0;0;-1;0;Unholy Relic;It hums quietly\ drawing your gaze.<br>;Horrific visions took their toll.
+Shrouded Necropolis;�️;Sticky Web;Trap-Roll;0;0;-3;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got entangled in sticky webs
+Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
 
-Shrouded Vale;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
-Shrouded Vale;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;Ritual Place;The stone feels cold to the touch.<br>;
-Shrouded Vale;🌌;Starlight Mural;Altar;0;0;0;0;0;2;Ritual Place;The skies will show you the way.<br>;Recived celestial blessing
+Shrouded Necropolis;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
+Shrouded Necropolis;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;Ritual Place;The stone feels cold to the touch.<br>;
+Shrouded Necropolis;🌌;Starlight Mural;Altar;0;0;0;0;0;2;Ritual Place;The skies will show you the way.<br>;Recived celestial blessing
 
-Shrouded Vale;🕷️;Hollow Spider;Small;0;0;2;0;-1;0;Empty Shell;Seems long dead\ but still crawling.<br>;Got webbed into sleep.
-Shrouded Vale;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
-Shrouded Vale;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
-Shrouded Vale;🪳;Plague Roach;Small;2;1;1;0;-1;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.
-Shrouded Vale;🪰;Hungry Fly;Small;1;2;2;0;-1;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
-Shrouded Vale;🪲;Green Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.
-Shrouded Vale;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.
-Shrouded Vale;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.
-Shrouded Vale;🦋;Death’s Moth;Small;1;0;1;0;-1;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.
-Shrouded Vale;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
-Shrouded Vale;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪱;Nasty Leech;Small;2;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪱;Grave Worm;Small;1;2;1;0;-1;0;Crawling Parasite;Nourished by the decay of ages.<br>;
-Shrouded Vale;🪱;Bloodsucking Worm;Small;1;2;2;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪱;Venomous Larva;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Vale;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Shrouded Vale;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.
-Shrouded Vale;🦗;Grave Cricket;Small;1;1;1;0;-1;0;Chirping Insect;Echoes break the silence.<br>;
-Shrouded Vale;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;Burrowing Insect;Wings shimmer faintly in the gloom.<br>;
-Shrouded Vale;🦋;Nocturnal Moth;Small;1;0;2;0;-1;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
+Shrouded Necropolis;🕷️;Hollow Spider;Small;0;0;2;0;-1;0;Empty Shell;Seems long dead\ but still crawling.<br>;Got webbed into sleep.
+Shrouded Necropolis;🦠;Floating Spore;Small;1;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
+Shrouded Necropolis;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
+Shrouded Necropolis;🪳;Plague Roach;Small;2;1;1;0;-1;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.
+Shrouded Necropolis;🪰;Hungry Fly;Small;1;2;2;0;-1;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
+Shrouded Necropolis;🪲;Green Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.
+Shrouded Necropolis;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.
+Shrouded Necropolis;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.
+Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.
+Shrouded Necropolis;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
+Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Nasty Leech;Small;2;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Grave Worm;Small;1;2;1;0;-1;0;Crawling Parasite;Nourished by the decay of ages.<br>;
+Shrouded Necropolis;🪱;Bloodsucking Worm;Small;1;2;2;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;Arthropod;Dangerous fishing bait.<br>;
+Shrouded Necropolis;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Shrouded Necropolis;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.
+Shrouded Necropolis;🦗;Grave Cricket;Small;1;1;1;0;-1;0;Chirping Insect;Echoes break the silence.<br>;
+Shrouded Necropolis;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;Burrowing Insect;Wings shimmer faintly in the gloom.<br>;
+Shrouded Necropolis;🦋;Nocturnal Moth;Small;1;0;2;0;-1;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
 
-Shrouded Vale;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Shrouded Vale;💀;Little Skeleton;Pet;1;1;1;0;2;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
-Shrouded Vale;🐈‍⬛;Black Cat;Pet;2;1;1;3;3;2;Stray Spirit;Stares with unsettling calmness.<br>;
+Shrouded Necropolis;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Shrouded Necropolis;💀;Little Skeleton;Pet;1;1;1;0;2;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
+Shrouded Necropolis;🐈‍⬛;Black Cat;Pet;2;1;1;3;3;2;Stray Spirit;Stares with unsettling calmness.<br>;
 
-Shrouded Vale;👤;Lost Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
-Shrouded Vale;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
-Shrouded Vale;👤;Echoing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Their presence lingers in the air.<br>;
-Shrouded Vale;🗣️;Whispering Soul;Friend;0;0;0;0;0;0;Hopeless Soul;Their words fade like mist.<br>;
-Shrouded Vale;🤖;Exhausted Golem;Friend⚙️\🔧\🔩\🪛;0;0;0;0;0;0;Hopeless Machine;You can hear its very faint voice.<br>;They gestured "OK" towards you.
-Shrouded Vale;🧖🏻‍♀️;Guardian Angel;Friend;1;0;0;0;0;0;Sacred Being;Has understanding for all and everyone.<br>;Received a precious blessing.
+Shrouded Necropolis;👤;Lost Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
+Shrouded Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.
+Shrouded Necropolis;👤;Echoing Shade;Friend;0;0;0;0;0;0;Hopeless Soul;Their presence lingers in the air.<br>;
+Shrouded Necropolis;🗣️;Whispering Soul;Friend;0;0;0;0;0;0;Hopeless Soul;Their words fade like mist.<br>;
+Shrouded Necropolis;🤖;Exhausted Golem;Friend⚙️\🔧\🔩\🪛;0;0;0;0;0;0;Hopeless Machine;You can hear its very faint voice.<br>;They gestured "OK" towards you.
+Shrouded Necropolis;🧖🏻‍♀️;Guardian Angel;Friend;1;0;0;0;0;0;Sacred Being;Has understanding for all and everyone.<br>;Received a precious blessing.
 
-Shrouded Vale;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
-Shrouded Vale;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;Restless Bones;Silent guardian of this realm.<br>;
-Shrouded Vale;💀;Skeleton Warrior;Standard;3;3;2;0;-1;0;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
-Shrouded Vale;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
-Shrouded Vale;💀;Crypt Guard;Standard;3;3;3;0;-1;0;Restless Bones;Silent watcher of forgotten paths.<br>;
+Shrouded Necropolis;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
+Shrouded Necropolis;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;Restless Bones;Silent guardian of this realm.<br>;
+Shrouded Necropolis;💀;Skeleton Warrior;Standard;3;3;2;0;-1;0;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Necropolis;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;Restless Bones;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Necropolis;💀;Crypt Guard;Standard;3;3;3;0;-1;0;Restless Bones;Silent watcher of forgotten paths.<br>;
 
-Shrouded Vale;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;
-Shrouded Vale;🧙‍♂️;Fallen Acolyte;Recruit;3;1;0;0;3;1;Forsaken;Eyes glow with an unnatural light.<br>;
+Shrouded Necropolis;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;
+Shrouded Necropolis;🧙‍♂️;Fallen Acolyte;Recruit;3;1;0;0;3;1;Forsaken;Eyes glow with an unnatural light.<br>;
 
-Shrouded Vale;🐍;Cursed Serpent;Heavy;3;1;3;0;-1;0;Venomous Predator;Scales glisten in moonlight.<br>;
-Shrouded Vale;🎭;Laughing Mask;Heavy;4;4;2;0;-1;0;Eerie Presence;Eyes seem to follow your every move.<br>;
-Shrouded Vale;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
-Shrouded Vale;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
-Shrouded Vale;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
+Shrouded Necropolis;🐍;Cursed Serpent;Heavy;3;1;3;0;-1;0;Venomous Predator;Scales glisten in moonlight.<br>;
+Shrouded Necropolis;🎭;Laughing Mask;Heavy;4;4;2;0;-1;0;Eerie Presence;Eyes seem to follow your every move.<br>;
+Shrouded Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;Overgrown Vermin;Screams echo around the crypt.<br>;
+Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;Cursed Being;The silhouette changed to a human.;
+Shrouded Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Shredded to tiny pieces
 
-Shrouded Vale;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
-Shrouded Vale;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
-Shrouded Vale;🦌;Stag Wraith;Swift;3;3;1;0;4;1;Ethereal Beast;Antlers glow with spectral fire.<br>;
-Shrouded Vale;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
+Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
+Shrouded Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;Flying Mammal;Screams echo around the crypt.<br>;
+Shrouded Necropolis;🦌;Stag Wraith;Swift;3;3;1;0;4;1;Ethereal Beast;Antlers glow with spectral fire.<br>;
+Shrouded Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
-Shrouded Vale;🧟;Animated Dead;Undead;2;2;1;0;-1;1;Restless Body;Better keep your distance.<br>;Rotten to the bones
-Shrouded Vale;🧟;Tainted Zombie;Undead;2;2;1;0;-1;1;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones
-Shrouded Vale;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;Restless Body;Still almost looks human.<br>Better keep distance.;Rotten to the bones
-Shrouded Vale;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
-Shrouded Vale;🪰;Necrotic Fly;Undead;1;2;3;0;-1;0;Pestilence;Buzzing wings promise disease.<br>;
+Shrouded Necropolis;🧟;Animated Dead;Undead;2;2;1;0;-1;1;Restless Body;Better keep your distance.<br>;Rotten to the bones
+Shrouded Necropolis;🧟;Tainted Zombie;Undead;2;2;1;0;-1;1;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones
+Shrouded Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;Restless Body;Still almost looks human.<br>Better keep distance.;Rotten to the bones
+Shrouded Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;1;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.
+Shrouded Necropolis;🪰;Necrotic Fly;Undead;1;2;3;0;-1;0;Pestilence;Buzzing wings promise disease.<br>;
 
-Shrouded Vale;👗;Haunted Dress;Demon;2;1;2;0;-1;0;Animated Object;Probably a side-effect of a spell gone wild.<br>;Embraced the cold
-Shrouded Vale;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat
-Shrouded Vale;🧛‍♀️;Pale Countess;Demon;2;2;1;0;4;0;Humanoid;Moves with deadly grace.<br>;Got their heart ripped out!
-Shrouded Vale;🧛🏽;Noble Vampire;Demon;3;2;1;0;5;0;Humanoid;Eyes glow with hunger.<br>;Got their heart ripped out!
-Shrouded Vale;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got your heart ripped out!
-Shrouded Vale;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got your heart ripped out!
-Shrouded Vale;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got your heart ripped out!
-Shrouded Vale;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
-Shrouded Vale;👺;Haunting Spirit;Demon;3;1;1;0;4;3;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
-Shrouded Vale;👺;Dread Spirit;Demon;3;2;2;0;4;0;Eerie Being;A form takes shape in the dark.<br>;
+Shrouded Necropolis;👗;Haunted Dress;Demon;2;1;2;0;-1;0;Animated Object;Probably a side-effect of a spell gone wild.<br>;Embraced the cold
+Shrouded Necropolis;🗡️;Possesed Dagger;Demon;1;3;1;0;-1;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat
+Shrouded Necropolis;🧛‍♀️;Pale Countess;Demon;2;2;1;0;4;0;Humanoid;Moves with deadly grace.<br>;Got their heart ripped out!
+Shrouded Necropolis;🧛🏽;Noble Vampire;Demon;3;2;1;0;5;0;Humanoid;Eyes glow with hunger.<br>;Got their heart ripped out!
+Shrouded Necropolis;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;Humanoid;Charges furiously forward to attack.<br>;Got your heart ripped out!
+Shrouded Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;Humanoid;Slowly walks onwards.<br>;Got your heart ripped out!
+Shrouded Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;Humanoid;Looks like still got it.<br>;Got your heart ripped out!
+Shrouded Necropolis;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;Master Necromancer;Cannot comprehend the words it speaks.<br><i>Iziklák ef sskar éktěk.</i>;
+Shrouded Necropolis;👺;Haunting Spirit;Demon;3;1;1;0;4;3;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Necropolis;👺;Dread Spirit;Demon;3;2;2;0;4;0;Eerie Being;A form takes shape in the dark.<br>;
 
-Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
-Shrouded Vale;🦋;Eclipse Moth;Spirit;1;0;1;0;0;1;Eerie Being;Wings glow under the dark.<br>;Dust turned to whispers.
-Shrouded Vale;👁️;Judging Eye;Spirit;2;0;0;0;5;0;All-Seeing;Locks you in a gaze of eternity.<br>;Tore your secrets apart.
-Shrouded Vale;🌪️;Tempest Wraith;Spirit;2;2;2;0;-1;1;Ethereal Storm;Spirals in howling fury.<br>;Torn to pieces by the storm.
-Shrouded Vale;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
-Shrouded Vale;🧞‍♂️;Malevolent Genie;Spirit;2;0;0;0;10;4;Magic Creature;Dark wishes bloom on its breath.<br>;
-Shrouded Vale;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
-Shrouded Vale;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
-Shrouded Vale;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
+Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
+Shrouded Necropolis;🦋;Eclipse Moth;Spirit;1;0;1;0;0;1;Eerie Being;Wings glow under the dark.<br>;Dust turned to whispers.
+Shrouded Necropolis;👁️;Judging Eye;Spirit;2;0;0;0;5;0;All-Seeing;Locks you in a gaze of eternity.<br>;Tore your secrets apart.
+Shrouded Necropolis;🌪️;Tempest Wraith;Spirit;2;2;2;0;-1;1;Ethereal Storm;Spirals in howling fury.<br>;Torn to pieces by the storm.
+Shrouded Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;Eerie Being;A ghost appeared out of nowhere.<br>A little bit scary in this darkness.;
+Shrouded Necropolis;🧞‍♂️;Malevolent Genie;Spirit;2;0;0;0;10;4;Magic Creature;Dark wishes bloom on its breath.<br>;
+Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.
+Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
+Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
 //Almost no artifacts here
-Shrouded Vale;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
-Shrouded Vale;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
-Shrouded Vale;👑;The Golden Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;Still carries a sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.
-Shrouded Vale;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Vale;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Vale;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
+Shrouded Necropolis;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
+Shrouded Necropolis;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
+Shrouded Necropolis;👑;The Blessed Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;One might even gain a false sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.
+Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;3;<b>Malevolent Artifact</b>;You should probably leave this old relic alone.<br><b>+3 🔵 Mana</b>\ might cause <b>serious side-effects</b>.;Syphoned all your life energy!
+Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
+Shrouded Necropolis;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 
-Shrouded Vale;🗡️;Thirsty Blade;Item;-1;3;0;0;0;0;Cursed Weapon;Very deadly but wielding it takes a toll.<br>Provides <b>+3 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Felt strangely familiar.
-Shrouded Vale;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
+Shrouded Necropolis;🗡️;Thirsty Blade;Item;-1;3;0;0;0;0;Cursed Weapon;Very deadly but wielding it takes a toll.<br>Provides <b>+3 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Felt strangely familiar.
+Shrouded Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
 
-Shrouded Vale;🎩;Fancy Hat;Item;0;0;0;0;3;0;Stylish Accessory;Salt-stained but dashing.<br>Provides <b>+3 🧠 Charisma</b>.;Felt rather dapper.
-Shrouded Vale;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
-Shrouded Vale;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
+Shrouded Necropolis;🎩;Fancy Hat;Item;0;0;0;0;3;0;Stylish Accessory;Salt-stained but dashing.<br>Provides <b>+3 🧠 Charisma</b>.;Felt rather dapper.
+Shrouded Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
+Shrouded Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
 
-Shrouded Vale;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
-Shrouded Vale;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
+Shrouded Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
+Shrouded Necropolis;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
+Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;0;<b>Malevolent Artifact</b>;You should probably leave this alone.<br>It might have some unexpected effects.;Syphoned your life energy!
 
-Shrouded Vale;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
-Shrouded Vale;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
-Shrouded Vale;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Shrouded Vale;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
-Shrouded Vale;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
+Shrouded Necropolis;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
+Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
+Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+Shrouded Necropolis;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
 
-Shrouded Vale;👰🏻‍♀️;Wailing Bride;Boss-Standard;4;1;1;0;6;3;Forgotten Love;She's been crying for you since forever.<br>;Failed to face your true love.
-Shrouded Vale;👰🏻‍♀️;Enraged Bride;Boss-Heavy;4;3;2;0;6;O;Forgotten Love;She's winding up for heavy blow.<br>;Failed to face your true love.
-Shrouded Vale;👰🏻‍♀️;Vigilant Bride;Boss-Swift;4;2;3;0;6;O;Forgotten Love;She's moving so fast you struggle to keep up.<br>;Failed to face your true love.
-Shrouded Vale;👰🏻;Wicked Bride;Boss-Demon;4;2;2;0;6;0;Forgotten Love;Almost looks like she prepares to bite you.<br>;Failed to face your true love.
-Shrouded Vale;👰🏻;Hungry Bride;Boss-Undead;4;3;1;0;6;0;Forgotten Love;Her wedding dress is getting stained with rot.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Standard;4;1;1;0;6;3;Forgotten Love;She's been crying for you since forever.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;4;3;2;0;6;O;Forgotten Love;She's winding up for heavy blow.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Vigilant Bride;Boss-Swift;4;2;3;0;6;O;Forgotten Love;She's moving so fast you struggle to keep up.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;4;2;2;0;6;0;Forgotten Love;Almost looks like she prepares to bite you.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻;Hungry Bride;Boss-Undead;4;3;1;0;6;0;Forgotten Love;Her wedding dress is getting stained with rot.<br>;Failed to face your true love.
