@@ -7,7 +7,7 @@ var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
 //Colors & Symbols
-var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorDarkPink = "#a1111a"; var colorCardBackground = "#202020";
+var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorCardBackground = "#202020";
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
 
 //Stats
@@ -269,6 +269,9 @@ var enemyEmojiScaleX;
 var enemyBossType = "";
 var enemyCursed=false;
 
+var totalBonus=0;
+var totalMalus=0;
+
 enemyRenew()
 function enemyRenew(){
   enemyStaLost = 0;
@@ -281,6 +284,9 @@ function enemyRenew(){
   encounterUsed=false;
   currentProphercy = getGameTip();
   enemyEmojiScaleX = chooseFrom(['scaleX(-1)','scaleX(1)']);
+
+  totalBonus=0;
+  totalMalus=0;
 }
 
 //Load encounter data .csv file on page ready
@@ -898,8 +904,8 @@ function redraw(){
   var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk];
   var effectArrayBonus=effectArray.filter(function(x){ return x > 0 });
   var effectArrayMalus=effectArray.filter(function(x){ return x < 0 });
-  var totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
-  var totalMalus=effectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
+  totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
+  totalMalus=effectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
   if (totalMalus=="") totalMalus=0;
   //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
 
@@ -1001,8 +1007,8 @@ function redraw(){
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
-      if ((enemyAtk+enemyHp+enemySta+enemyLck+enemyMgk+enemyInt)>=0) enemyStatusString=decorateStatusText("🏳️","Whatever",colorYellow);
+      if (totalBonus>0) enemyStatusString=decorateStatusText("🎀","Curiosity",colorLightPink);
+      if (totalMalus<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
@@ -1026,8 +1032,7 @@ function redraw(){
       //emojiWrapperUIElement.style.background=colorDarkBlue;
       break;
     case "Curse":
-      //enemyStatusString=decorateStatusText("♣️","Mystery","lightgrey");
-      //if ((enemyAtk+enemyHp+enemySta+enemyLck+enemyMgk+enemyInt)>=0)
+      if (parseInt(totalMalus)<0)enemyStatusString=decorateStatusText("♣️","Mystery",colorDarkGrey);
       enemyStatusString=decorateStatusText("🔆","Condition",colorYellow);
       break;
     case "Death":
@@ -1178,7 +1183,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
           case "Trap":
           case "Trap-Sleep":
-            logPlayerAction(actionString,"The attack had no effect -1 🟢");
+            logPlayerAction(actionString,"Your attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             break;
@@ -1193,6 +1198,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Attack": //Attacking causes you damage
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
+
+            if (encounterUsed){
+                logPlayerAction(actionString,"Seems like that was it for now.")
+                break;
+              }
+            if (totalBonus>0) {
+              encounterUsed=true;
+            }
+
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
@@ -1204,14 +1218,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
-            enemyTurnAggressive("The attack turned them adversary!");
+            enemyTurnAggressive("Your attack turned them adversary!");
             enemyHit(playerAtk);
             break;
 
           case "Undead": //You hit first, they hit back if they have stamina
             if (playerLootString.includes("📿")) {
               playerAtkBonus=2;
-              logAction("📿 ▸ ⚔️ The attack was blessed with +2 ⚔️")
+              logAction("📿 ▸ ⚔️ Your attack was blessed with +2 ⚔️")
             }
           case "Standard":
           case "Demon":
@@ -1238,7 +1252,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+enemyAtk+" 💔","n/a");
                 playerHit(enemyAtk);
               } else {
-                enemyStaminaChangeMessage(-1,"They barely dodged the attack.","They needed to catch a breath.");
+                enemyStaminaChangeMessage(-1,"They barely dodged your attack.","They needed to catch a breath.");
               }
             } else {
               enemyHit(playerAtk);
@@ -1269,7 +1283,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               nextEncounter();
               break;
             }
-            logPlayerAction(actionString,"The attack had no effect -1 🟢");
+            logPlayerAction(actionString,"Your attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
       }
       break;
@@ -1323,7 +1337,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 rollMessage="They do not mean any harm -1 🟢";
               }
 
-              enemyStaminaChangeMessage(-1,rollMessage,"The roll was a waste of energy -1 🟢");
+              enemyStaminaChangeMessage(-1,rollMessage,"Your roll was a waste of energy -1 🟢");
               displayPlayerEffect("🌀");
             }
             break;
@@ -1346,7 +1360,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"Failed to dodge the attack -"+enemyAtk+" 💔","Rolled into a surprise attack -"+enemyAtk+" 💔");
+              enemyStaminaChangeMessage(-1,"Failed to dodge their attack -"+enemyAtk+" 💔","Rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             }
             break;
@@ -1404,7 +1418,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Altar":
-            logPlayerAction(actionString,"Continued the adventure.");
+            logPlayerAction(actionString,"Continued on your adventure.");
             isFishing=false
             nextEncounter();
             break;
@@ -1430,7 +1444,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyMsg!=""){
               logPlayerAction(actionString,enemyMsg)
             } else {
-              logPlayerAction(actionString,"Continued on the adventure.");
+              logPlayerAction(actionString,"Continued on your adventure.");
             }
             nextEncounter();
             break;
@@ -1623,7 +1637,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Friend":
-            enemyTurnAggressive("The spell turned them adversary!");
+            enemyTurnAggressive("Your spell turned them adversary!");
             enemyHit(magicDamage,true);
             break;
 
@@ -1641,7 +1655,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
               enemyHit(magicDamage,true);
             } else {
-              logPlayerAction(actionString,"They resisted the spell -"+magicDamage+" 🔵");
+              logPlayerAction(actionString,"They resisted your spell -"+magicDamage+" 🔵");
               enemyMgkLost+=magicDamage;
               if (enemyMgkLost>enemyMgk) enemyMgkLost=enemyMgk;
             }
@@ -1717,7 +1731,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               nextEncounter();
               break;
               }
-            logPlayerAction(actionString,"The spell had no effect on that -1 🔵");
+            logPlayerAction(actionString,"Your spell had no effect on that -1 🔵");
             displayEnemyEffect("✨");
           }
           break;
@@ -1760,7 +1774,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Managed to keep it together.");
               nextEncounter();
             } else {
-              logPlayerAction(actionString,"Giving the best, but no effect.");
+              logPlayerAction(actionString,"Giving your best, but no effect.");
               displayPlayerCannotEffect();
             }
             break;
@@ -1809,9 +1823,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyName=enemyName+" (Weakened)";
               displayEnemyEffect("🔥");
             } else if (playerMgkMax < enemyMgk) {
-              logPlayerAction(actionString,"They resisted the prayer -1 🔵");
+              logPlayerAction(actionString,"They resisted your prayer -1 🔵");
             } else {
-              logPlayerAction(actionString,"The prayer had no effect on them -1 🔵");
+              logPlayerAction(actionString,"Your prayer had no effect on them -1 🔵");
             }
             enemyAttackOrRest();
             break;
@@ -1831,7 +1845,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerHit(1,false,true);
 
                 if (encounterUsed){
-                  logPlayerAction(actionString,"The sacrifice had no effect -1 💔")
+                  logPlayerAction(actionString,"Your sacrifice had no effect -1 💔")
                   displayPlayerCannotEffect();
                   break;
                 }
@@ -1847,7 +1861,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
             } else {
                 if (encounterUsed){
-                  logPlayerAction(actionString,"The prayer had no further effect.")
+                  logPlayerAction(actionString,"Your prayer had no further effect.")
                   displayPlayerEffect("🤲");
                   displayPlayerCannotEffect();
                   break;
@@ -1861,7 +1875,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            var prayLogMessage="The prayer had no visible effect."
+            var prayLogMessage="Your prayer had no visible effect."
             if (!isfreePrayEncounter){
               prayLogMessage.replace("."," -1 🔵");
             } else {
@@ -1897,7 +1911,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       switch (enemyType){
         case "Demon":
-            logPlayerAction(actionString,"The curse has made them stronger!");
+            logPlayerAction(actionString,"Your curse has made them stronger!");
             enemyName=enemyName+" (Cursed)";
             animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
             enemyAtk+=1;
@@ -1935,9 +1949,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -1 🔵");
             break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
-            logPlayerAction(actionString,"They resisted the curse -1 🔵");
+            logPlayerAction(actionString,"They resisted your curse -1 🔵");
           } else {
-            logPlayerAction(actionString,"The curse had no effect on them -1 🔵");
+            logPlayerAction(actionString,"Your curse had no effect on them -1 🔵");
           }
 
           if (enemyCastIfMgk()) break;
@@ -1956,13 +1970,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case "Altar":
-          logPlayerAction(actionString,"The curse has angered the gods -1 🍀");
+          logPlayerAction(actionString,"Your curse has angered the gods -1 🍀");
           playerLck=-1;
           displayPlayerEffect("🪬");
           break;
 
         default:
-          logPlayerAction(actionString,"The curse dispersed into the area -1 🔵");
+          logPlayerAction(actionString,"Your curse dispersed into the area -1 🔵");
       }
       break;
 
@@ -2010,7 +2024,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               else {
-                enemyDodged("Missed, it evaded the grasp.");
+                enemyDodged("Missed, it evaded your grasp.");
                 if (enemyCastIfMgk()) break;
               }
             } else { //Player and enemy have no stamina - asymetrical rest
@@ -2032,7 +2046,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
-            enemyDodged("Missed, it evaded the grasp.");
+            enemyDodged("Missed, it evaded your grasp.");
             if (enemyCastIfMgk()) break;
             break;
 
@@ -2059,6 +2073,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap": //Grabbing triggers the effect
           case "Trap-Roll":
           case "Trap-Attack":
+
+            if (encounterUsed){
+                logPlayerAction(actionString,"Seems like that was it for now.")
+                displayPlayerCannotEffect();
+                break;
+              }
+            if (totalBonus>0) {
+              encounterUsed=true;
+            }
+
+
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
@@ -2190,7 +2215,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta-enemyStaLost)==0 && (enemyMgk-enemyMgkLost)==0) {
               enemyGrabbedIntoLoot();
             } else {
-              enemyDodged("Missed, it evaded the grasp.");
+              enemyDodged("Missed, it evaded your grasp.");
               if (enemyCastIfMgk()) break;
             }
             break;
@@ -2265,7 +2290,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
-                if (playerUseItem("🗝️","Unlocked it with the key "+decorateStatusText("","+"+(25*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
+                if (playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(25*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
                   playerGainXP(1,25*playerLevel,"");
                   nextEncounter();
                 } else if (playerLootString.includes("📎")) {
@@ -2354,7 +2379,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               var speechChance = Math.floor(Math.random() * luckInterval);
               if ( speechChance <= playerLck ){
-                logAction("🍀 ▸ 💬 They believed the lies and left.");
+                logAction("🍀 ▸ 💬 They believed your lies and left.");
                 nextEncounter();
                 break;
               } else {
@@ -2445,7 +2470,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
           default:
-            logPlayerAction(actionString,"The voice echoes around the area.");
+            logPlayerAction(actionString,"Your voice echoes around the area.");
             displayPlayerCannotEffect();
             displayPlayerEffect("💬");
         }
@@ -2492,6 +2517,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Sleep":
+            if (encounterUsed){
+                logPlayerAction(actionString,"Seems like its power is exhausted.")
+                displayPlayerCannotEffect();
+                break;
+              }
+            if (totalBonus>0) {
+              encounterUsed=true;
+              playerRest(true);
+            }
+
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
@@ -2596,7 +2631,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   displayEnemyEffect("💢");
   var critChance = Math.floor(Math.random() * luckInterval);
   if ( (critChance <= playerLck) && applyLuck){
-    logAction("🍀 ▸ "+actionString+" The strike was blessed with luck.");
+    logAction("🍀 ▸ "+actionString+" Your strike was blessed with luck.");
     hitMsg="Attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
@@ -2606,7 +2641,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   enemyHpLost = enemyHpLost + damage;
 
   if (!magicType && procAbilityChance("🀄️",33) && playerHp<playerHpMax){
-      logAction("🀄️ "+arrowSymbol+" ✨ The attack syphoned health +1 ❤️");
+      logAction("🀄️ "+arrowSymbol+" ✨ Your attack has syphoned health +1 ❤️");
       playerHp+=1;
   }
 
@@ -2791,7 +2826,7 @@ function enemyAttackOrRest(message="",isGrab=false){
   }
 }
 
-function enemyDodged(message="Missed, it evaded the grasp."){
+function enemyDodged(message="Missed, they evaded your grasp."){
   displayPlayerCannotEffect();
   displayEnemyEffect("🌀");
   enemyAttackOrRest(message,true); //FML
@@ -2819,7 +2854,7 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
     displayEnemyCannotEffect(); //Actually can, but this is just for effect
 
     if (procAbilityChance("💠",33)){
-      logAction("🪄 ▸ <b>💠 Reflect Magic</b> resisted the spell.");
+      logAction("🪄 ▸ <b>💠 Reflect Magic</b> resisted their spell.");
       displayPlayerEffect("💠");
       return false;
     }
@@ -3332,7 +3367,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
   displayPlayerEffect("💢");
 }
 
-function playerUseItem(item,messageSuccess = "Used "+item+" from the inventory.",messageFail = "Requires "+item+" to continue.",effect=true,silent=false,consumeItem=true){
+function playerUseItem(item,messageSuccess = "Used "+item+" from your inventory.",messageFail = "Requires "+item+" to continue.",effect=true,silent=false,consumeItem=true){
   if (playerLootString.includes(item)){
     if (enemyMsg!="") messageSuccess=enemyMsg;
     if (effect) displayEnemyEffect(item);
@@ -3371,7 +3406,7 @@ function playerReincarnate(){
     var bonusItem=getRandomEncounter(["Item"],["Artifact"],randomArea);
     bonusItem=bonusItem.replaceAll(randomArea,"Wildland Meadows")
 
-    var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the gift box."]
+    var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well)
@@ -3553,6 +3588,8 @@ function adjustEncounterButtons(){
 
     case "Trap-Attack":
     case "Trap-Sleep":
+      document.getElementById('button_grab').innerHTML="✋ Reach";
+      if (encounterUsed) setButton('button_grab',"✋ Reach",colorDarkGrey);
       document.getElementById('button_roll').innerHTML="👣 Avoid";
       break;
 
@@ -3561,6 +3598,7 @@ function adjustEncounterButtons(){
     case "Prop":
       if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_grab').innerHTML="✋ Reach";
+      if (encounterUsed) setButton('button_grab',"✋ Reach",colorDarkGrey);
       document.getElementById('button_roll').innerHTML="👣 Walk";
       break;
 
