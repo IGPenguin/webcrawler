@@ -12,7 +12,7 @@ var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inlin
 
 //Stats
 var adventureStartTime = getTime();
-var adventureEndTime;
+var adventureEndTime = "Unfinished";
 var seenLoot;
 
 //Player stats init
@@ -607,7 +607,7 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("👁️ ▸ "+enemyEmoji+" Discovered shrine: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-      logAction("💭 ▸ "+enemyEmoji+" Spotted a creature: <b>"+enemyName+"</b>")
+      if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Spotted a creature: <b>"+enemyName+"</b>")
       break;
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
@@ -1023,6 +1023,7 @@ function redraw(){
       break;
     case "Prop":
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
+      if (enemyName.includes("Bride")) enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
       break;
     case "Altar":
       if (totalBonus>0) enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
@@ -1039,6 +1040,7 @@ function redraw(){
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
+      if (areaName.includes("Auxiliary")) enemyStatusString=decorateStatusText("🎉","Achievement",colorYellow);
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
@@ -1068,6 +1070,7 @@ function redraw(){
   switch (enemyType){
     case "Dream":
       displayPlayerState("Sleeping",colorBlue,"2.5")
+      if (areaName.includes("Shrouded")) displayPlayerState("Frightened",colorDarkGrey,"0.4");
       break;
 
     case "Curse":
@@ -3955,7 +3958,7 @@ function copyAdventureToClipboard(){
   navigator.clipboard.writeText(adventureLogClipboard);
 
   //Download as .txt
-  var fileName = "WebCrawler-"+playerName.replaceAll(" ","-")+"-"+adventureEndTime.replaceAll(" at ","-").replaceAll(":","-")+".txt";
+  var fileName = "Stay-Dead-"+playerName.replaceAll(" ","-")+"-"+adventureEndTime.replaceAll(" at ","-").replaceAll(":","-")+".txt";
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(adventureLogClipboard));
   element.setAttribute('download', fileName);

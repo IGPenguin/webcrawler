@@ -865,7 +865,6 @@ Shrouded Necropolis;⚰️;Broken Coffin;Prop;0;0;0;0;0;0;Ruins;Wood splinters l
 Shrouded Necropolis;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;
 Shrouded Necropolis;⏳;Frozen Hourglass;Prop;0;0;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;
 Shrouded Necropolis;🌾;Dead Reeds;Prop;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;
-Shrouded Necropolis;🕯️;Unlit Candle;Prop;0;0;0;0;0;0;Faint Hope;Once offered flickering guidance.<br>;
 
 Shrouded Necropolis;🏺;Ancient Urn;Container;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;
 Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
@@ -903,7 +902,8 @@ Shrouded Necropolis;🕳️;Bottomless Sinkhole;Trap;-9;0;0;0;0;0;Natural Disast
 Shrouded Necropolis;🟫;Pressure Plate;Trap;-9;0;0;0;0;0;Mechanical Trigger;Odd tile doesn’t quite match the others.<br>;The floor dropped beneath your feet.
 Shrouded Necropolis;🔘;Mysterious Button;Trap;-9;0;0;0;0;0;Ancient Mechanism;Someone clearly meant this to be found.<br>;Rusty blade punctured your head.
 Shrouded Necropolis;🔮;Clouded Oraculum;Trap;-1;0;0;0;-1;0;Unholy Relic;It hums quietly\ drawing your gaze.<br>;Horrific visions took their toll.
-Shrouded Necropolis;�️;Sticky Web;Trap-Roll;0;0;-3;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got entangled in sticky webs
+Shrouded Necropolis;🕯️;Ritual Candle;Trap;-1;0;0;0;0;0;Light Source;You know the drill\ don't play with fire.<br>;You have burned your hand.
+Shrouded Necropolis;🕸️;Sticky Web;Trap-Roll;0;0;-3;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got entangled in sticky webs
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
 
 Shrouded Necropolis;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
@@ -1019,6 +1019,6 @@ Shrouded Necropolis;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;Cursed Snack;
 
 Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Standard;4;1;1;0;6;3;Forgotten Love;She's been crying for you since forever.<br>;Failed to face your true love.
 Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;4;3;2;0;6;O;Forgotten Love;She's winding up for heavy blow.<br>;Failed to face your true love.
-Shrouded Necropolis;👰🏻‍♀️;Vigilant Bride;Boss-Swift;4;2;3;0;6;O;Forgotten Love;She's moving so fast you struggle to keep up.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Vengeful Bride;Boss-Swift;4;2;3;0;6;O;Forgotten Love;She's moving so fast you struggle to keep up.<br>;Failed to face your true love.
 Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;4;2;2;0;6;0;Forgotten Love;Almost looks like she prepares to bite you.<br>;Failed to face your true love.
 Shrouded Necropolis;👰🏻;Hungry Bride;Boss-Undead;4;3;1;0;6;0;Forgotten Love;Her wedding dress is getting stained with rot.<br>;Failed to face your true love.

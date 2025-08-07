@@ -63,16 +63,16 @@ Shrouded Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 
-Shrouded Necropolis;👤;Lethargic Shade;Friend;0;0;0;0;0;0;Unknown Being;Looks like they haven't noticed you\ yet.<br>Their pale skin looks so unnatural.;"Oh... You finally came back."
+Shrouded Necropolis;👤;Lethargic Shade;Friend;0;0;0;0;0;0;Unknown Being;Looks like they have not noticed you... yet.<br>Their pale skin looks somehow innocent.;"Oh... You finally came back."
 Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;👰🏻‍♀️;Defeated Bride;Friend;0;0;0;0;0;0;Forgotten Love;You were my whole world... I loved you!<br>How could you do this to me?;You never should have come here!
 Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;Forgotten Love;The last slivers of life are slipping away.<br>You have finally put her to rest.;"Don't you... ever forget me."
+Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;Forgotten Love;The last slivers of her life are slipping away.<br>Seems like you have finally put her to rest.;"Don't you... ever forget me."
 
-Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
-Shrouded Necropolis;🤔;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to <b>acknowledge your sin</b>.<br>You cannot run away from it anymore.;The inner thoughts took over.
-Shrouded Necropolis;😥;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;All the trying... You remembered what you did.<br>That forbidden <b>witchery did not go well</b>.;Everything seems so clear now.
-Shrouded Necropolis;😰;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;Why couldn't you just let her go in peace.<br><b>You have corrupted this world!</b>;You've revealed the thruth.
+Shrouded Necropolis;🤔;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to <b>acknowledge your sins</b>.<br>You cannot run away from it anymore.;The inner thoughts took over.
+Shrouded Necropolis;😥;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;All the trying... You finally remember what you did.<br>That forbidden <b>witchery did not go well</b>.;Everything seems so clear now.
+Shrouded Necropolis;😰;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;Why couldn't you just let her go in peace.<br><b>It was you</b>\ who corrupted this world!;You've revealed the horrific truth.
 
-//Auxiliary Dimension
-Auxiliary Dimension;👾;Stack Overflow;Death;0;0;0;0;0;0;Game End;<b>You succesfully finished the WebCrawler demo.</b><br>Please\ consider sending feedback via <b>💌 Review</b>.;
-Auxiliary Dimension;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;XXX;XXX;XXX
+//Auxiliary Space
+Auxiliary Space;👾;Stack Overflow;Death;0;0;0;0;0;0;The End;<b>You just finished the "Stay Dead" game demo!</b><br>Send your feedback using the <b>💌 Review</b> button.;
+Auxiliary Space;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;XXX;XXX;XXX
