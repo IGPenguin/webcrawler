@@ -135,7 +135,6 @@ Wildland Meadows;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;Lost Possesion;May be tr
 Wildland Meadows;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Wildland Meadows;🧸;Worn Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
-Wildland Meadows;💌;Lost Memories;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 Wildland Meadows;💌;Undelivered Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
 Wildland Meadows;🌸;Ambrosia Nectar;Consumable;0;0;0;0;3;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge inside.
@@ -256,7 +255,8 @@ Forsaken Village;🕰️;Clockhouse Tower;Container-5;0;0;0;0;0;0;Deserted Build
 Forsaken Village;🏫;Town Hall;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 Forsaken Village;🎪;Abandoned Fairground;Container-5;0;0;0;0;0;0;Deserted Building;Bright colors faded to grey.<br>;Wandered into the eerie silence.
 Forsaken Village;🏟️;Forgotten Arena;Container-5;0;0;0;0;0;0;Killing Ground;Echoes of cheers linger still.<br>;Wandered into the eerie silence.
-Forsaken Village;🏤;Deserted Hospital;Container-5;0;0;0;0;0;0;Deserted Building;Faint echoes wander these walls.<br>;
+Forsaken Village;🏥;Deserted Hospital;Container-5;0;0;0;0;0;0;Deserted Building;Faint echoes wander these walls.<br>;
+Forsaken Village;🏤;Deserted Office;Container-5;0;0;0;0;0;0;Deserted Building;Faint echoes wander these walls.<br>;
 
 Forsaken Village;⛲️;Freshwater Fountain;Fishing;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
@@ -447,8 +447,7 @@ Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;Lost Possesion;Supposedly bri
 Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;
 
-Forsaken Village;💌;Creepy Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
-Forsaken Village;💌;Romantic Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
+Forsaken Village;💌;Cryptic Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference
@@ -748,7 +747,6 @@ Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;Lost Possesion;Someone is li
 Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
 Twisted Fairyland;💌;Ominous Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
-Twisted Fairyland;💌;Anxious Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
 //River of Sorrows
 River of Sorrows;🌫️;Misty Veil;Prop;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;
