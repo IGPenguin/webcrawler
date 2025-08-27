@@ -617,9 +617,9 @@ Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;Crustacean;Boasts a pai
 Twisted Fairyland;🐜;Bullet Ant;Small;1;3;2;0;-1;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
 
 Twisted Fairyland;🐺;Prowling Wolf;Standard;4;3;2;0;10;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
-Twisted Fairyland;🦚;Pearlescent Bird;Standard;3;2;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Eyes melted by the feather reflections.
-Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;Wild Beast;Probably has no soul.<br>;
-Twisted Fairyland;🦎;Komodo Dragon;Standard;4;2;2;0;-1;0;Massive Lizard;Eyes are glowing red.<br>;Insides devoured by a lizard.
+Twisted Fairyland;🦚;Pearlescent Bird;Standard;3;2;2;0;2;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
+Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;Wild Beast;Probably has no soul.<br>;Got ripped apart and eaten.
+Twisted Fairyland;🦎;Komodo Dragon;Standard;3;3;1;0;-1;0;Massive Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
 Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
 
@@ -991,7 +991,6 @@ Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for 
 Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
 Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
-//Almost no artifacts here
 Shrouded Necropolis;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 Shrouded Necropolis;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 Shrouded Necropolis;👑;The Blessed Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;One might even gain a false sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.

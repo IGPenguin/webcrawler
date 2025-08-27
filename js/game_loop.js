@@ -598,7 +598,8 @@ function loadEncounter(index, fileLines = linesStory){
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
+      if (totalBonus>0 && totalMalus<=0) logAction("🎀 ▸ "+enemyEmoji+" Noticed curiosity: <b>"+enemyName+"</b>")
+      if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
       break;
     case "Container":
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
@@ -640,6 +641,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       var randomSlot=chooseFrom([3,4,5])
       pushEncounter(getRandomEncounter(["Item"],["Memento"]),randomSlot);
       if (chooseFrom([true,false])) pushEncounter(getRandomEncounter(["Container"]),randomSlot);
+      console.log("pushing letter at pos: "+randomSlot);
       break;
 
     case 2: //Easy Encounter
@@ -2934,7 +2936,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
     if (enemyType.includes("Boss") && !areaName.includes("Shrouded")) {
-      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+enemyName+emptySpace+emptySpace,colorWhite),5);
+      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+"<b>"+enemyName+"</b>"+emptySpace+emptySpace,colorWhite),5);
 
       logAction("👑 ▸ "+enemyEmoji+" Boss defeated: <b>"+enemyName+"</b>")
     }
@@ -3722,7 +3724,7 @@ function adjustEncounterButtons(){
       if (enemyType.includes("Heavy")||enemyType.includes("Swift")) {
         if (enemySta-enemyStaLost==0) document.getElementById('button_grab').innerHTML="🦶 Kick";
       } else {
-        setButton('button_roll',"👣 Walk");
+        if (!enemyType.includes("Boss")) setButton('button_roll',"👣 Walk");
         if (enemyType.includes("Container")) setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
         if (enemyType.includes("Locked")){
           setButton('button_cast',"🪄 Unlock");
