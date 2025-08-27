@@ -2213,7 +2213,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               playerKarma++;
               playerLove++;
-              enemyMsg="You needed to keep it by yourself +1 ❤️‍🔥"
+              enemyMsg="You had to take it with yourself +1 ❤️‍🔥"
             }
             isFishing=false;
             if (playerHp==0) break;
