@@ -226,7 +226,7 @@ function getGameTip(){
 }
 
 function getPoem(){
-  const random_quotes = ["Please\\ be careful what you wish for\\ my love.<br>It might as well be exactly what you get.","Do not ever follow where I fell\\ my heart.<br>The ground has swallowed my beauty.","My vows outlived my breath\\ it seems.<br>They whisper still\\ beneath the soil.","The earth tried to keep me\\ but not anymore.<br>I rose with your name on my lips.","You whispered into the grave like a prayer.<br>And I came\\ half dream\\ half devotion.","I drank from the chalice of sorrow.<br>It tasted like you — and I awoke.","I stitched myself from bones and vows.<br>Just to stand where you once wept.","You said 'forever' with a mortal tongue.<br>I kept my promise — what's your excuse?","The mirror cracked when I passed.<br>It still shows me, just not the same way.","The bells no longer ring for weddings.<br>Not since you spoke my name.","The trees hum softly where I fell and rose.<br>No birds have sung there since.","I left a kiss upon the oak we carved.<br>The bark split down the middle.","Don't reach for the old book\\ my love.<br> Some secrets should remain hidden forever.","You’ll want to fix what was never broken.<br>But disturbing the peace won't help.","You did this to me... did this to us!<br>Why wouldn't you let me go?","The world could remain peaceful.<br>If only you would listen to me.",  "I still wear your name like a veil.<br>Even the worms dare not touch it.","You called me back with love.<br>But love does not know mercy.","I waited in the soil so long.<br>The stars forgot my name.","Every petal you left on my grave<br>grew thorns when you turned away.","Your healing hands became my undoing.<br>But I am not fully gone.","The endless cold welcomed me first.<br>Then I remembered your warmth.","You begged the ancient gods to give me back.<br>They laughed and released the darkness.","I came the way you asked.<br>Not fully whole — but yours.","Our vow didn't end with my death.<br>Only my breathing did.","They buried me with lovely roses.<br>But I bloomed with something else.","You desperately prayed for an act of god.<br>I became one you could not bear.","Even now\ I reach for you - nowhere to find you.<br>Only shadows take my hand.","The stars we used to watch together...\<br>They now turn their faces away.","Your twisted love outlived my breath.<br>Then cursed me forever.","You called me back with trembling hands.<br>Now tremble for what you've done.","I hoped you'd mourn me.<br>Not try to fix me.","You wanted me to never leave.<br>I'll fulfill your wish.","Love me as I am now.<br>Or rot beside me.", "You broke me with foul magic.<br>Now I return with justice.", "I died believing in your endless love.<br>Now I rise certain of your betrayal.","The altar remembers what you forgot.<br>And so do I.",];
+  const random_quotes = ["Please\\ be careful what you wish for\\ my love.<br>It might as well be exactly what you get.","Do not ever follow where I fell\\ my heart.<br>The ground has swallowed my beauty.","My vows outlived my breath\\ it seems.<br>They whisper still\\ beneath the soil.","The earth tried to keep me\\ but not anymore.<br>I rose with your name on my lips.","You whispered into the grave like a prayer.<br>And I came\\ half dream\\ half devotion.","I drank from the chalice of sorrow.<br>It tasted like you — and I awoke.","I stitched myself from bones and vows.<br>Just to stand where you once wept.","You said 'forever' with a mortal tongue.<br>I kept my promise — what's your excuse?","The mirror cracked when I passed.<br>It still shows me, just not the same way.","The bells no longer ring for weddings.<br>Not since you spoke my name.","The trees hum softly where I fell and rose.<br>No birds have sung there since.","I left a kiss upon the oak we carved.<br>The bark split down the middle.","Don't reach for the old book\\ my love.<br> Some secrets should remain hidden forever.","You’ll want to fix what was never broken.<br>But disturbing the peace won't help.","You did this to me... did this to us!<br>Why wouldn't you let me go?","The world could remain peaceful.<br>If only you would listen to me.",  "I still wear your name like a veil.<br>Even the worms dare not touch it.","You called me back with love.<br>But love does not know mercy.","I waited in the soil so long.<br>The stars forgot my name.","Every petal you left on my grave<br>grew thorns when you turned away.","Your healing hands became my undoing.<br>But I am not fully gone.","The endless cold welcomed me first.<br>Then I remembered your warmth.","You begged the ancient gods to give me back.<br>They laughed and released the darkness.","I came the way you asked.<br>Not fully whole — but yours.","Our vow didn't end with my death.<br>Only my breathing did.","They buried me with lovely roses.<br>But I bloomed with something else.","You desperately prayed for an act of god.<br>I became one you could not bear.","Even now\ I reach for you - nowhere to find you.<br>Only shadows take my hand.","The stars we used to watch together...\<br>They now turn their faces away.","Your twisted love outlived my breath.<br>Then cursed me forever.","You called me back with trembling hands.<br>Now tremble for what you've done.","I hoped you'd mourn me.<br>Not try to fix me.","You wanted me to never leave.<br>I'll soon fulfill your wish.","Love me as I am now.<br>Or rot beside me.", "You broke me with foul magic.<br>Now I return with justice.", "I died believing in your endless love.<br>Now I rise certain of your betrayal.","The wicked altar remembers what you forgot.<br>And so do I\ my love.",];
 
   return "<i>"+random_quotes[Math.floor(Math.random() * random_quotes.length)]+"</i>";
 }
@@ -552,8 +552,6 @@ function loadEncounter(index, fileLines = linesStory){
   enemyDesc = enemyDesc.replaceAll("((",":");
   enemyMsg = String(selectedLine.split(",")[12].split(":")[1]).replaceAll("\\",",");
 
-  if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
-
   switch (enemyType){
     case "Small":
     case "Standard":
@@ -613,6 +611,29 @@ function loadEncounter(index, fileLines = linesStory){
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
       break;
+  }
+
+  //Specific encounter starts
+  if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
+  if (enemyName.includes("Bride") && playerLove>2) {
+    console.log("playerlove: "+playerLove);
+    if (enemyAtk<=playerLove) {
+      if (enemyAtk>0) {
+        logAction("♥️ ▸ "+enemyEmoji+" Your true love has calmed her down.")
+        enemyAtkBonus=-enemyAtk
+        enemyName="Merciful Bride"
+        enemyMsg="There's still hope for this to end well."
+        enemyInt=0;
+        enemyType="Boss-Standard"
+      }
+      if (enemyName.includes("Defeated Bride")) {
+        encounterIndex++; //Skip second phase
+        enemyMsg="I'm glad you didn't forget my love."
+      }
+    } else if (playerLove>0){
+    enemyAtkBonus-=playerLove;
+    logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
+    }
   }
 }
 
@@ -2033,7 +2054,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               else {
-                enemyDodged("Missed, it evaded your grasp.");
+                enemyDodged("Missed, they evaded your grasp.");
                 if (enemyCastIfMgk()) break;
               }
             } else { //Player and enemy have no stamina - asymetrical rest
@@ -2055,7 +2076,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
-            enemyDodged("Missed, it evaded your grasp.");
+            enemyDodged("Missed, they evaded your grasp.");
             if (enemyCastIfMgk()) break;
             break;
 
@@ -2224,13 +2245,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemySta-enemyStaLost)==0 && (enemyMgk-enemyMgkLost)==0) {
               enemyGrabbedIntoLoot();
             } else {
-              enemyDodged("Missed, it evaded your grasp.");
+              enemyDodged("Missed, they evaded your grasp.");
               if (enemyCastIfMgk()) break;
             }
             break;
 
           case "Friend":
-            logPlayerAction(actionString,"Your touch was not appreciated.");
+            if ((enemyName.includes("Bride")||enemyName.includes("Lethargic")) && playerLove>2){
+              logPlayerAction(actionString,"You touch has provided her comfort.");
+            } else {
+              logPlayerAction(actionString,"Your touch was not appreciated.");
+            }
             displayEnemyEffect("✋");
             isfishing=false;
             nextEncounter();
@@ -2962,7 +2987,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   //Fullscreen Curtain
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm") && (areaName != "Depths of Slumber")){ //Does not animate new area when killed
-    curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:42px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-46px;z-index:-100;position:relative;\">____________________________________</p>");
+    curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-46px;z-index:-100;position:relative;\">____________________________________</p>");
     if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
