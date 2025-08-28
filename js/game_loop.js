@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "v0.0.9"
+var versionCode = "ver. 8/28/2025 @ 11:10 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -3329,6 +3329,16 @@ function playerConsumed(silent=false){
     consumedString += " "+sign+parseInt(hpChange) + " "+heart+" ";
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   }
+
+  //Ugly hack... Note: I'm tired, lazy and dumb
+  if (enemyAtk<0) consumedString+=" "+enemyAtk+"⚔️"
+  if (enemyAtk>0) consumedString+=" +"+enemyAtk+"⚔️"
+  if (enemyLck<0) consumedString+=" "+enemyLck+"🍀"
+  if (enemyLck>0) consumedString+=" +"+enemyLck+"🍀"
+  if (enemyInt<0) consumedString+=" "+enemyInt+"🧠"
+  if (enemyInt>0) consumedString+=" +"+enemyInt+"🧠"
+  if (enemyMgk<0) consumedString+=" "+enemyMgk+"🔵"
+  if (enemyMgk>0) consumedString+=" +"+enemyMgk+"🔵"
 
   //Apply stat changes (except hp & sta)
   playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,!silent,false,eatEmoji);
