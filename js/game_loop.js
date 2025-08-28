@@ -2341,8 +2341,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
               }
-              var tempLog=playerConsumed(true);
-              logPlayerAction(actionString,tempLog);
+              playerConsumed();
               nextEncounter();
               break;
             }
@@ -3281,7 +3280,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 function playerConsumed(silent=false){
   var consumedString="Replenished resources"
   var sign = "";
-  var eatEmoji= "🍴"
+  if (enemyType=="Consumable") var eatEmoji= "🍴"
 
   var missingHp=0
   if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
@@ -3307,7 +3306,7 @@ function playerConsumed(silent=false){
 
   if (enemyHp<0 || enemySta<0 || enemyAtk<0  || enemyLck<0  || enemyInt<0  || enemyMgk<0) {
     if (enemyMsg=="") consumedString="That did not taste good";
-    eatEmoji="🤮";
+    if (enemyType=="Consumable") eatEmoji="🤮";
     animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
 
@@ -3329,16 +3328,6 @@ function playerConsumed(silent=false){
     consumedString += " "+sign+parseInt(hpChange) + " "+heart+" ";
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   }
-
-  //Ugly hack... Note: I'm tired, lazy and dumb
-  if (enemyAtk<0) consumedString+=" "+enemyAtk+"⚔️"
-  if (enemyAtk>0) consumedString+=" +"+enemyAtk+"⚔️"
-  if (enemyLck<0) consumedString+=" "+enemyLck+"🍀"
-  if (enemyLck>0) consumedString+=" +"+enemyLck+"🍀"
-  if (enemyInt<0) consumedString+=" "+enemyInt+"🧠"
-  if (enemyInt>0) consumedString+=" +"+enemyInt+"🧠"
-  if (enemyMgk<0) consumedString+=" "+enemyMgk+"🔵"
-  if (enemyMgk>0) consumedString+=" +"+enemyMgk+"🔵"
 
   //Apply stat changes (except hp & sta)
   playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,!silent,false,eatEmoji);
