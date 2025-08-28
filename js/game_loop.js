@@ -2986,7 +2986,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   //Fullscreen Curtain
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm") && (areaName != "Depths of Slumber")){ //Does not animate new area when killed
-    curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-46px;z-index:-100;position:relative;\">____________________________________</p>");
+    curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
     if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
