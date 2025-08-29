@@ -22,7 +22,7 @@
 
 ## ⚠️ Review checklist
 **I declare that all requirements have been met:**
-- [ ] Pull requests follows [the contribution rules](https://github.com/IGPenguin/webcrawler/blob/live/.github/CONTRIBUTING.md "the contribution rules")
+- [ ] Pull requests follows [the contribution rules](https://github.com/IGPenguin/stay-dead/blob/live/.github/CONTRIBUTING.md "the contribution rules")
 - [ ] New features are fully completed
   - [ ] What about the data though?
 - [ ] File diff has been examined thoroughly

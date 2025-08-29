@@ -234,8 +234,8 @@ layout: default
 
 <p style="margin:18px"></p>
 
-<div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/webcrawler/pulls?q=is%3Apr+is%3Aclosed';">
-<h4 style="font-size:11px; opacity:0.6; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/webcrawler/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+<div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
+<h4 style="font-size:11px; opacity:0.6; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
 </div>
 
 <div id="id_bug" style="cursor: pointer;">
