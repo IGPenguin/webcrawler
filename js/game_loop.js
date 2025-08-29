@@ -341,7 +341,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     redraw();
-    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(26)+"by IGPenguin",colorWhite),5);
+    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),5);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }
@@ -1430,7 +1430,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerAtk++;
                 playerLove-=2;
                 playerKarma-=2;
-                logPlayerAction(actionString,"Your throat tightened with hatred! +1 ⚔️");
+                logPlayerAction(actionString,"<text style=color:"+colorRed+";>Your throat tightened with hatred! +1 ⚔️</text>");
                 displayPlayerCannotEffect();
                 nextEncounter();
                 break;
@@ -2234,7 +2234,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               playerKarma++;
               playerLove++;
-              enemyMsg="You had to take it with yourself +1 ❤️‍🔥"
+              enemyMsg="<text style=color:"+colorPink+";>You had to take it with yourself.</text>";
             }
             isFishing=false;
             if (playerHp==0) break;
@@ -2342,7 +2342,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 openMessage = enemyMsg;
               }
               if (totalBonus>0 || totalMalus<0) playerConsumed();
-              nextEncounter();
+              if (playerHp>0) nextEncounter();
               break;
             }
 
@@ -2493,7 +2493,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyTeam.includes("Lover's Memento")){
-              logPlayerAction(actionString,enemyMsg+" -1 💔");
+              logPlayerAction(actionString,"<text style=color:"+colorRed+";>"+enemyMsg+" -1 💔</text>");
               playerKarma++;
               playerLove++;
               playerHit(1);
@@ -3464,8 +3464,12 @@ function checkPlayerHasItem(itemArray=validBaits){
 
 //End Game
 function gameOver(silent=false){
+  //Random death messages
+  var deathMsg=["Your life has sliped into silence.","The last breath of life has faded.","You have ran out of blood.","Your adventure has ended.","Your life has ended ends, shadows remain.","Your life has withered away.","Your fate has been sealed.","The end has come.","Silence has taken the hold.","Your journey has ended."]
+  deathMsg=chooseFrom(deathMsg)
+
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container"))) enemyMsg="Got killed, ending the adventure.";
+  if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container"))) enemyMsg=deathMsg;
   if (enemyTeam.includes("Lover's Memento")) enemyMsg="Killed by a severe heartbreak.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
@@ -3616,9 +3620,9 @@ function adjustEncounterButtons(){
       if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
       setButton('button_grab',"👋 Grab",grabColor);
       setButton('button_roll',"❌ Ditch",colorRed);
-      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Recall",colorPink);
+      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Recall",colorRed);
       if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
-      if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorYellow);
+      if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorPink);
       break;
 
     case "Trap":
