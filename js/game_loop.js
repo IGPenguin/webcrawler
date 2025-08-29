@@ -2341,7 +2341,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
               }
-              playerConsumed();
+              if (totalBonus>0 or totalMalus<0) playerConsumed();
               nextEncounter();
               break;
             }
@@ -3282,7 +3282,7 @@ function playerConsumed(silent=false){
   var sign = "";
   if (enemyType=="Consumable") var eatEmoji= "🍴"
 
-  var missingHp=0
+  var missingHp=0;
   if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
   var missingSta=parseInt(playerStaMax)-parseInt(playerSta);
   var gainStamina=0;
