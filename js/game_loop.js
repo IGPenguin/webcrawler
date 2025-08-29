@@ -3879,7 +3879,7 @@ void documentElement.offsetWidth; // trigger a DOM reflow
 }
 
 function setBackground(fileName="Depths.png"){
-  var fileUrl='url(https://raw.githubusercontent.com/IGPenguin/webcrawler/refs/heads/live/assets/img/file.png)';
+  var fileUrl='url(https://raw.githubusercontent.com/IGPenguin/stay-dead/refs/heads/live/assets/img/file.png)';
   fileUrl=fileUrl.replaceAll("file.png",fileName.split(" ")[0]+".png");
   var bodyUIElement = document.getElementsByTagName('body')[0];
 
@@ -3972,7 +3972,7 @@ function generateCharacterLegend(logLength=0) {
   }
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend+"\n";
-  characterLegend += "https://igpenguin.github.io/webcrawler";
+  characterLegend += "https://igpenguin.github.io/stay-dead";
   characterLegend +=  "\n"+ versionCode;
 
   return characterLegend;
@@ -4003,8 +4003,8 @@ function copyAdventureToClipboard(){
 }
 
 function redirectToTweet(){
-  var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/webcrawler&text=";
-  window.open(tweetUrl+encodeURIComponent("Hey @IGPenguin, check out my WebCrawler run!"+"\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")+"\n"));
+  var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/stay-dead&text=";
+  window.open(tweetUrl+encodeURIComponent("Yo @IGPenguin, check out my Stay Dead run!"+"\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")+"\n"));
 }
 
 function redirectToFeedback(){
