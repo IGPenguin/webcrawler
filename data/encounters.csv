@@ -34,7 +34,6 @@ Wildland Meadows;🌾;Dense Weeds;Container-3;0;0;0;0;0;0;Natural Obstacle;Looks
 Wildland Meadows;🌽;Corn Field;Container-3;0;0;0;0;0;0;Possible Stash;This heap might be hiding something.<br>;There was something hidden inside.
 Wildland Meadows;🏕️;Abandoned Campsite;Container-3;0;0;0;0;0;0;Temporary Home;Strange noises are coming out of the tent.<br>;Decided to investigate the tent.
 Wildland Meadows;🌻;Sunflower Field;Container-3;0;0;0;0;0;0;Farmland;Strange noises are coming out.<br>;Crossed right through.
-Wildland Meadows;🥀;Overgrown Campsite;Container-3;-1;0;0;0;0;0;Abandoned Spot;Strange noises are coming out of the bushes.<br>;Ouch! Thorns cut your skin.
 
 Wildland Meadows;🍀️;Clover Growth;Altar;0;0;0;1;0;0;Safe Place;Surrounded by rare four-leaf clovers.<br>;You won't ever forget this.
 Wildland Meadows;🌸;Wildflower Shrine;Altar;0;0;0;1;0;0;Peaceful Place;Colorful flowers dance with the breeze.<br>;The nature blessed you.
@@ -275,8 +274,8 @@ Forsaken Village;💨;Breath of Dread;Curse;0;0;0;0;-1;0;Misfortune;Cold mist ch
 
 Forsaken Village;🕹️;Strange Lever;Trap;-9;0;0;0;0;0;Ancient Mechanism;Someone clearly meant this to be found.<br>;Rusty blade punctured your head.
 Forsaken Village;🛢;Sealed Container;Trap-Attack;-3;0;0;0;0;0;Toxic Garbage;There must be a reason why it's closed.<br>;Oops\ the lid came off.
-Wildland Meadows;🧨;Sparkling Torch;Trap-Sleep;-3;0;0;0;0;0;Flickering Light;Probably not a good idea to stick around here.<br>;Suffered severe explosive trauma.
-Wildland Meadows;💣;Sizzling Sphere;Trap-Sleep;-2;0;0;0;0;0;Flickering Light;Probably not a good idea to stick around here.<br>;Suffered some explosive trauma.
+Forsaken Village;🧨;Sparkling Torch;Trap-Sleep;-3;0;0;0;0;0;Flickering Light;Probably not a good idea to stick around here.<br>;Suffered severe explosive trauma.
+Forsaken Village;💣;Sizzling Sphere;Trap-Sleep;-2;0;0;0;0;0;Flickering Light;Probably not a good idea to stick around here.<br>;Suffered some explosive trauma.
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-2;0;0;0;0;0;Garbage;Extremely slippery when stepped on.<br>;Slipped and hit your head hard.
 Forsaken Village;⚙️;Exposed Gearwork;Trap;-1;0;0;0;0;0;Clockwork Remnant;Old parts still twitch and rattle.<br>;Your finger got caught in the cogs.
 Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;-1;0;-1;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
@@ -516,8 +515,8 @@ Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;Suspense Area;
 Twisted Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
 Twisted Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
-Twisted Fairyland;🗼;Tribal Monument;Container-3;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
 Twisted Fairyland;🛖;Witch’s Hut;Container-3;0;0;0;-1;0;0;Primitve Housing;Dark herbs hang from the rafters.<br>;Radiates some nasty feelings.
+Twisted Fairyland;🥀;Overgrown Campsite;Container-3;-1;0;0;0;0;0;Abandoned Spot;Strange noises are coming out of the bushes.<br>;Ouch! Thorns cut your skin.
 
 Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
@@ -528,6 +527,7 @@ Twisted Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;Cold and hostil
 Twisted Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Twisted Fairyland;🌲;Deep Forest;Container-4;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.
 Twisted Fairyland;🛕;Cult Monument;Container-4;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
+Twisted Fairyland;🗼;Tribal Monument;Container-4;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;
 
 Twisted Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.
 Twisted Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;Cold and hostile place.<br>;Climbed on the summit.
@@ -564,7 +564,6 @@ Twisted Fairyland;🔥;The Eternal Flame;Upgrade;0;0;0;0;0;0;Sanctuary;Welcoming
 
 Twisted Fairyland;🗿;False Idol;Trap;-3;0;0;0;0;0;Rigged Statue;Its eyes are watching your every move.<br>;It suddenly hit your head.
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
-Twisted Fairyland;🪨;Animated Stone;Trap;-2;0;0;0;0;0;Malevolent Spell;Perhaps you should just leave it alone.<br>;The rock has bit your finger!
 Twisted Fairyland;🌵;Pointy Cacti;Trap-Roll;-1;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
 Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
 Twisted Fairyland;🔥;Spreading Wildfire;Trap-Sleep;-3;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Woke up to be burning alive.
@@ -621,6 +620,7 @@ Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;Wild Beast;Probably has n
 Twisted Fairyland;🦎;Komodo Dragon;Standard;3;3;1;0;-1;0;Massive Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
 Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
+Twisted Fairyland;🪨;Animated Stone;Standard;3;3;1;0;0;0;Malevolent Spell;Perhaps you should just leave it alone.<br>;The rock has bit your finger!
 
 Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
 Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;Twisted Humanoid;Tried so hard\ to not get spotted.<br>;Got your head put on a spike.
