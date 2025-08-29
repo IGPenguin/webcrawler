@@ -2341,7 +2341,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemyMsg != ""){
                 openMessage = enemyMsg;
               }
-              if (totalBonus>0 || totalMalus<0) playerConsumed();
+              if (totalBonus>0 || totalMalus<0) {
+                playerConsumed();
+              } else {
+                logPlayerAction(actionString,enemyMsg);
+              }
               if (playerHp>0) nextEncounter();
               break;
             }
