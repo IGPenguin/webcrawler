@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 8/29/2025 @ 10:18 PM"
+var versionCode = "ver. 8/30/2025 @ 06:21 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -579,7 +579,7 @@ function loadEncounter(index, fileLines = linesStory){
          if (!enemyTeam.includes("Lover's Memento")) {
           logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
          } else {
-          logAction("🫀 ▸ "+enemyEmoji+" Faced old truth: <b>"+enemyName+"</b>")
+          logAction("🫀 ▸ "+enemyEmoji+" Faced the truth: <b>"+enemyName+"</b>")
          }
         }
       }
@@ -2344,7 +2344,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (totalBonus>0 || totalMalus<0) {
                 playerConsumed();
               } else {
-                logPlayerAction(actionString,enemyMsg);
+                logPlayerAction(actionString,openMessage);
               }
               if (playerHp>0) nextEncounter();
               break;
