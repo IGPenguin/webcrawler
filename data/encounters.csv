@@ -110,7 +110,7 @@ Wildland Meadows;🦌;Horned Nightmare;Boss-Heavy;2;2;1;0;-1;0;Beast of the Fore
 Wildland Meadows;🏵️;Symbol of Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
 Wildland Meadows;🖌️;Painter's Brush;Item;0;0;0;0;0;1;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+1 🔵 Mana</b>.;Enhanced your magic skills
-Wildland Meadows;🍀;Four-leaf Clover;Item;0;0;0;4;0;0;Artifact;Extremely rare plant\ supposedly beneficial.<br>Provides <b>+4 🍀 Luck</b>.;Feels so good to have it.
+Wildland Meadows;🍀;Four-leaf Clover;Item;0;0;0;4;0;0;Artifact;Extremely rare growth\ might be beneficial.<br>Provides <b>+4 🍀 Luck</b>.;Feels so good to have it.
 
 Wildland Meadows;💐;Flower Bouquet;Item;0;0;0;0;2;0;Floral Gift;Makes anyone look a lot friendlier.<br>Provides <b>+2 🧠 Intellect</b>.;Feels purposeful carrying that.
 Wildland Meadows;🌹;Prickly Rose;Item;-1;0;0;0;2;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Ouch\ sharp thorns!
@@ -205,7 +205,7 @@ Forsaken Village;🧰;Metal Toolbox;Locked-Container;0;0;0;0;0;0;Secured Contain
 Forsaken Village;📫;Secured Mailbox;Locked-Container;0;0;0;0;0;0;Locked Container;Seems to be indicating that something is inside.<br>;It finally clicked open.
 Forsaken Village;🔒;Iron Strongbox;Locked-Container;0;0;0;0;0;0;Heavy Storage;Worn and rusted\ but unbroken.<br>;The lock clicked after effort.
 Forsaken Village;🗄️;Locked Cabinet;Locked-Container;0;0;0;0;0;0;Secured Vault;Bolted shut for decades\ marked with initials.<br>;It gave a deep groan opening.
-Forsaken Village;📫;Welded Mailbox;Locked-Container;0;0;0;0;0;0;Untouched Post;Still sealed with wax\ addressed in a dead language.<br>;It hissed as it opened.
+Forsaken Village;📫;Chained Mailbox;Locked-Container;0;0;0;0;0;0;Untouched Post;Permanently sealed with a chained lock.<br>;Discovered something valuable.
 Forsaken Village;🚪;Locked Toolshed;Locked-Container;0;0;0;0;0;0;Wooden Storage;Someone locked it shut years ago.<br>;You Forced the door open.
 Forsaken Village;🎰;Ancient Machine;Locked-Container;0;0;0;0;0;0;Forgotten Relic;Old gears groan behind a rusted panel.<br>;The mechanism stutters open.
 Forsaken Village;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;Dusty Keepsake;Gleams faintly under soot.<br>;Latch clicks open.
@@ -377,7 +377,6 @@ Forsaken Village;📎;The Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provide
 Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
-Forsaken Village;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Forsaken Village;⛺️;Camping Tent;Item;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
 
@@ -539,7 +538,7 @@ Twisted Fairyland;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;Deserted Buildi
 Twisted Fairyland;🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
-Twisted Fairyland;💫;Twirling Glow;Curse;0;0;1;0;0;0;Magic Aura;The light spins around your head\ dizzying but harmless.<br>;Let the good vibes dance within.
+Twisted Fairyland;💫;Twirling Glow;Curse;0;0;1;0;0;0;Magic Aura;Dizzying light spins around your head.<br>;Let the good vibes dance within.
 Twisted Fairyland;✨;Sparkly Mist;Curse;1;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
 Twisted Fairyland;🌈;Brief Rainbow;Curse;0;0;0;3;0;0;Weather Condition;The end of the rainbow always holds treasure.<br>At least for those who believe.;Brought yourself a lucky blessing!
 Twisted Fairyland;✨;Whispering Glow;Curse;0;0;0;0;2;0;Magical Phenomenon;Tiny glimmers beckon from the shadows.<br>;Let them guide your steps.
@@ -550,7 +549,7 @@ Twisted Fairyland;👤;Glimmering Reflection;Curse;0;0;0;0;-3;0;Fae Illusion;A f
 Twisted Fairyland;🪨;Whispering Stone;Curse;0;0;0;0;-2;0;Mystic Object;Heard your name in a voice not your own.<br>;It won’t leave your head.
 Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark zapped you.
 Twisted Fairyland;💨;Swift Winds;Curse;0;0;1;0;-1;0;Weather Condition;These loud currents make one act fast.<br>;Embraced the howling wind.
-Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;A horrible chills goes down your spine.<br>;Suffered permanent changes.
+Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;A horrible chill goes down your spine.<br>;Suffered permanent changes.
 Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered mental damage.
 Twisted Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 Twisted Fairyland;🗯️;Unknown Voice;Curse;0;0;0;0;-1;0;Misfortune;Its unsettling words make no sense.<br>;Suffered mental damage.
@@ -789,11 +788,14 @@ River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;Arthropod;Makes a perf
 
 River of Sorrows;🐡;Spiky Fish;Standard;2;2;2;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly.
 
-River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+River of Sorrows;🐬;Cursed Dolphin;Swift;3;1;3;0;4;0;Sinister Mammal;Makes a lot of squaking noises.<br>;Outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
+River of Sorrows;🦞;Vengeful Lobster;Swift;3;3;1;0;-1;0;Horror Survivor;Never forgets\ never forgives.<br>;
 
-River of Sorrows;‍🪼;Square Jelly;Undead;1;4;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
+River of Sorrows;‍🪼;Box Jelly;Undead;1;4;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
 River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
+
+River of Sorrows;🐋;Willy's Ghost;Spirit;1;3;1;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
 River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
@@ -990,6 +992,7 @@ Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;Magic Creature;Asks for 
 Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
 Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;Eerie Being;Dances on unseen breezes.<br>;
 
+Shrouded Necropolis;⚖️;Offensive Scales;Item;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Shrouded Necropolis;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 Shrouded Necropolis;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 Shrouded Necropolis;👑;The Blessed Crown;Item;2;0;0;0;2;0;<b>Artifact</b>;One might even gain a false sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.

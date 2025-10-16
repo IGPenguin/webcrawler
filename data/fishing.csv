@@ -1,6 +1,6 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
-Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Wishmaster;Provides special gift per your selection.<br>Provides Instant <b>🎉 Level Up!</b>;
-Fishing;🪔;The Floating Flame;Upgrade;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides Instant <b>🎉 Level Up!</b>;
+Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;
+Fishing;🪔;The Floating Flame;Upgrade;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;
 
 Fishing;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 Fishing;📿;Witchbane Necklace;Item;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.

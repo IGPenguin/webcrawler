@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 8/30/2025 @ 06:21 PM"
+var versionCode = "ver. 10/16/2025 @ 10:23 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -55,7 +55,7 @@ function renewPlayer(){ //Default values
   playerName = getFirstName();
   playerHpMax=3;
   playerHp = playerHpMax;
-  playerStaMax = 2;
+  playerStaMax = 3;
   playerSta = playerStaMax;
   playerMgkMax = 0;
   playerAtk = 1;
@@ -531,7 +531,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
   if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
-  if (enemyTeam.includes("Prophet") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
+  if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
     enemyDesc=enemyDesc.replaceAll("n/a","");
     enemyDesc+="<i>"+getGameTip()+"</i>";
   }
@@ -615,8 +615,15 @@ function loadEncounter(index, fileLines = linesStory){
 
   //Specific encounter starts
   if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
+
+  //Decrase final bass attack/mana based on player love
   if (enemyName.includes("Bride") && playerLove>2) {
     console.log("playerlove: "+playerLove);
+
+    //Meh, I just wanna consider this game finished now
+    enemyMgk-=playerLove;
+    if (enemyMgk<0) enemyMgk=0;
+
     if (enemyAtk<=playerLove) {
       if (enemyAtk>0) {
         logAction("♥️ ▸ "+enemyEmoji+" Your true love has calmed her down.")
@@ -631,8 +638,8 @@ function loadEncounter(index, fileLines = linesStory){
         enemyMsg="I'm glad you didn't forget my love."
       }
     } else if (playerLove>0){
-    enemyAtkBonus-=playerLove;
-    logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
+      enemyAtkBonus-=playerLove;
+      logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
     }
   }
 }
@@ -1037,7 +1044,7 @@ function redraw(){
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
-      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Anxiety",colorRed);
+      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Unsettling Anxiety",colorRed);
 
       break;
     case "Upgrade":
@@ -1063,7 +1070,7 @@ function redraw(){
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
-      if (areaName.includes("Auxiliary")) enemyStatusString=decorateStatusText("🎉","Achievement",colorYellow);
+      if (areaName.includes("Ⱥᵾӿīłīⱥɍɏ")) enemyStatusString=decorateStatusText("🎉","Ⱥȼħīēꝟēᵯēꞥⱦ",colorYellow);
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
@@ -2696,7 +2703,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
 function enemyKilled(){
   var gainedXP=parseInt(playerGainXP(1,0,""));
-  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
+  logAction(enemyEmoji + " ▸ " + "💀 They've received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
   playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
