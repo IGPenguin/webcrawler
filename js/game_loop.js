@@ -531,7 +531,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
   if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
-  if (enemyTeam.includes("Prophet") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
+  if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
     enemyDesc=enemyDesc.replaceAll("n/a","");
     enemyDesc+="<i>"+getGameTip()+"</i>";
   }
