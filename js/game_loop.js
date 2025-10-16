@@ -1037,7 +1037,7 @@ function redraw(){
       break;
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
-      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Anxiety",colorRed);
+      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Unsettling Anxiety",colorRed);
 
       break;
     case "Upgrade":
@@ -1063,7 +1063,7 @@ function redraw(){
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
-      if (areaName.includes("Auxiliary")) enemyStatusString=decorateStatusText("🎉","Achievement",colorYellow);
+      if (areaName.includes("Ⱥᵾӿīłīⱥɍɏ")) enemyStatusString=decorateStatusText("🎉","Ⱥȼħīēꝟēᵯēꞥⱦ",colorYellow);
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Place of Power",colorGold);
