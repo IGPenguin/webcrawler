@@ -550,7 +550,7 @@ Twisted Fairyland;👤;Glimmering Reflection;Curse;0;0;0;0;-3;0;Fae Illusion;A f
 Twisted Fairyland;🪨;Whispering Stone;Curse;0;0;0;0;-2;0;Mystic Object;Heard your name in a voice not your own.<br>;It won’t leave your head.
 Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark zapped you.
 Twisted Fairyland;💨;Swift Winds;Curse;0;0;1;0;-1;0;Weather Condition;These loud currents make one act fast.<br>;Embraced the howling wind.
-Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;A horrible chills goes down your spine.<br>;Suffered permanent changes.
+Twisted Fairyland;🌬️;Frostmourne Breeze;Curse;-1;0;0;0;0;1;Weather Condition;A horrible chill goes down your spine.<br>;Suffered permanent changes.
 Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden strange thoughts  are filling the mind.<br>;Suffered mental damage.
 Twisted Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 Twisted Fairyland;🗯️;Unknown Voice;Curse;0;0;0;0;-1;0;Misfortune;Its unsettling words make no sense.<br>;Suffered mental damage.
@@ -789,11 +789,14 @@ River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;Arthropod;Makes a perf
 
 River of Sorrows;🐡;Spiky Fish;Standard;2;2;2;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly.
 
-River of Sorrows;🐬;Sinister Dolphin;Swift;3;1;3;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+River of Sorrows;🐬;Cursed Dolphin;Swift;3;1;3;0;4;0;Sinister Mammal;Makes a lot of squaking noises.<br>;Outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
+River of Sorrows;🦞;Vengeful Lobster;Swift;3;3;1;0;-1;0;Horror Survivor;Never forgets\ never forgives.<br>;
 
-River of Sorrows;‍🪼;Square Jelly;Undead;1;4;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
+River of Sorrows;‍🪼;Box Jelly;Undead;1;4;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
 River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
+
+River of Sorrows;🐋;Willy's Ghost;Spirit;1;3;1;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
 River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 

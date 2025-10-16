@@ -615,8 +615,15 @@ function loadEncounter(index, fileLines = linesStory){
 
   //Specific encounter starts
   if (enemyType=="Dream" && enemyName!="Waking Moment") playerSta=0;
+
+  //Decrase final bass attack/mana based on player love
   if (enemyName.includes("Bride") && playerLove>2) {
     console.log("playerlove: "+playerLove);
+
+    //Meh, I just wanna consider this game finished now
+    enemyMgk-=playerLove;
+    if (enemyMgk<0) enemyMgk=0;
+
     if (enemyAtk<=playerLove) {
       if (enemyAtk>0) {
         logAction("♥️ ▸ "+enemyEmoji+" Your true love has calmed her down.")
@@ -631,8 +638,8 @@ function loadEncounter(index, fileLines = linesStory){
         enemyMsg="I'm glad you didn't forget my love."
       }
     } else if (playerLove>0){
-    enemyAtkBonus-=playerLove;
-    logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
+      enemyAtkBonus-=playerLove;
+      logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
     }
   }
 }
@@ -2696,7 +2703,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
 function enemyKilled(){
   var gainedXP=parseInt(playerGainXP(1,0,""));
-  logAction(enemyEmoji + " ▸ " + "💀 They received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
+  logAction(enemyEmoji + " ▸ " + "💀 They've received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
   playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
