@@ -34,6 +34,7 @@ Fishing;💍;Engagement Ring;Item;2;0;0;0;0;0;Lost Accessory;Worn by one of the 
 Fishing;💧;Glass Drop;Item;0;0;0;0;0;1;Magical Pin;Radiates subtle waves of energy.<br>Provides <b>+1 🔵 Mana</b>.;Forever tied with the tide.
 Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.
 Fishing;💍;King's Ring;Item;0;1;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in your chest.
+Fishing;🪣;Metal Bucket;Item;1;0;0;0;0;0;Makeshift Helmet;Could serve as a head protection.<br>Provides <b>+1 ❤️ Health</b>.;Not stupid\ if it works!
 Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
@@ -80,7 +81,7 @@ Fishing;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;Rare Fish;Convenient snack stra
 Fishing;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
 Fishing;🐸;Cursed Prince;Friend;0;0;0;0;0;1;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.
-Fishing;🦭;Retired Seal;Friend;1;0;1;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Got a survival training.
+Fishing;🦭;Retired Seal;Friend;0;0;2;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
 Fishing;🐬;Friendly Dolphin;Friend;0;0;0;0;1;0;The Clever One;Makes a lot of squaking noises.<br>;They shared some secret.
 Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
 
