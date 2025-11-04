@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 10/16/2025 @ 10:23 PM"
+var versionCode = "ver. 11/04/2025 @ 05:05 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=3;
 
@@ -220,7 +220,7 @@ function getLuckyName(name=playerName){
 }
 
 function getGameTip(){
-  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","Non-deadly resolutions award sligthly more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by \"<b>⇡</b>\" symbol.","No one likes to be called a <b>Cheater</b>."];
+  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","<b>💤 Sleep</b> whenever you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> provides a chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>✏️ Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Heat</b> raw food to remove negative effects.","<b>🍀 Luck</b> affects the chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","<b>❤️‍🩹 Heal</b> uses up to all available <b>🔵 Mana</b>.","Non-deadly resolutions award sligthly more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by <b>⇡</b> symbol.","No one likes to be called a <b>Cheater</b>."];
 
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -566,29 +566,29 @@ function loadEncounter(index, fileLines = linesStory){
       if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
         logAction("💢 ▸ "+enemyEmoji+" Engaged enemy: <b>"+enemyName+"</b>")
       } else {
-        logAction("👁️ ▸ "+enemyEmoji+" Spotted a creature: <b>"+enemyName+"</b>")
+        logAction("👁️ ▸ "+enemyEmoji+" Spotted creature: <b>"+enemyName+"</b>")
       }
       break;
     case "Item":
       if (enemyTeam.includes("Artifact")){
-        logAction("🟠 ▸ "+enemyEmoji+" Discovered artifact: <b>"+enemyName+"</b>")
+        logAction("🟠 ▸ "+enemyEmoji+" Unveiled artifact: <b>"+enemyName+"</b>")
       } else {
         if (enemyTeam.includes("Possesion")) {
-          logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
+          logAction("⭐️ ▸ "+enemyEmoji+" Found possesion: <b>"+enemyName+"</b>")
         } else {
          if (!enemyTeam.includes("Lover's Memento")) {
-          logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+          logAction("🎉 ▸ "+enemyEmoji+" Found loot: <b>"+enemyName+"</b>")
          } else {
-          logAction("🫀 ▸ "+enemyEmoji+" Faced the truth: <b>"+enemyName+"</b>")
+          logAction("🫀 ▸ "+enemyEmoji+" Faced truth: <b>"+enemyName+"</b>")
          }
         }
       }
       break;
     case "Consumable":
       if (enemyTeam.includes("Artifact")){
-        logAction("🟠 ▸ "+enemyEmoji+" Discovered artifact: <b>"+enemyName+"</b>")
+        logAction("🟠 ▸ "+enemyEmoji+" Unveiled artifact: <b>"+enemyName+"</b>")
       } else {
-        logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
+        logAction("👁️ ▸ "+enemyEmoji+" Found snack: <b>"+enemyName+"</b>")
       }
       break;
     case "Curse":
@@ -603,13 +603,13 @@ function loadEncounter(index, fileLines = linesStory){
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
       break;
     case "Altar":
-      logAction("👁️ ▸ "+enemyEmoji+" Discovered shrine: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Noticed curiosity: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-      if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Spotted a creature: <b>"+enemyName+"</b>")
+      if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Spotted creature: <b>"+enemyName+"</b>")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" Engaged a boss: <b>"+enemyName+"</b>")
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" Engaged boss: <b>"+enemyName+"</b>")
       break;
   }
 
@@ -1820,7 +1820,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
             if ((playerMgk>0)&&(enemyInt <= playerInt )){
               var gainedXP=playerGainXP(1.25,0,"")
-              logPlayerAction(actionString,"Banished them from the world! "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              logPlayerAction(actionString,"Banished them from this world! "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               displayEnemyEffect("🔥");
               nextEncounter();
               break;
@@ -2032,7 +2032,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"Unable to initiate relationship ?? 🧠");
+                logPlayerAction(actionString,"Unable to initiate a relationship ?? 🧠");
                 nextEncounter();
                 break;
               }
