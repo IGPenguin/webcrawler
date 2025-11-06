@@ -503,8 +503,12 @@ function loadEncounter(index, fileLines = linesStory){
   if (fileLines!=linesStory) areaName = previousArea
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
+  if (enemyName.includes("You are dead!")) enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
-  if (enemyType.includes("Boss")) enemyBossType = enemyType; //I'll end up in hell for these hacks
+  if (enemyType.includes("Boss")) {
+    enemyBossType = enemyType; //I'll end up in hell for these hacks
+    //enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
+  }
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
     //console.log("Gen-type:"+number);
@@ -571,7 +575,7 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Item":
       if (enemyTeam.includes("Artifact")){
-        logAction("🟠 ▸ "+enemyEmoji+" Unveiled artifact: <b>"+enemyName+"</b>")
+        logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" + " Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
         if (enemyTeam.includes("Possesion")) {
           logAction("⭐️ ▸ "+enemyEmoji+" Found possesion: <b>"+enemyName+"</b>")
@@ -586,7 +590,7 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Consumable":
       if (enemyTeam.includes("Artifact")){
-        logAction("🟠 ▸ "+enemyEmoji+" Unveiled artifact: <b>"+enemyName+"</b>")
+        logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" +" Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
         logAction("👁️ ▸ "+enemyEmoji+" Found snack: <b>"+enemyName+"</b>")
       }
@@ -609,7 +613,7 @@ function loadEncounter(index, fileLines = linesStory){
       if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Spotted creature: <b>"+enemyName+"</b>")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" Engaged boss: <b>"+enemyName+"</b>")
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged boss: <b>"+enemyName+"</b></text>")
       break;
   }
 
@@ -635,7 +639,7 @@ function loadEncounter(index, fileLines = linesStory){
       }
       if (enemyName.includes("Defeated Bride")) {
         encounterIndex++; //Skip second phase
-        enemyMsg="I'm glad you didn't forget my love."
+        enemyMsg="I'm glad you didn't forget me."
       }
     } else if (playerLove>0){
       enemyAtkBonus-=playerLove;
@@ -2241,7 +2245,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               playerKarma++;
               playerLove++;
-              enemyMsg="<text style=color:"+colorPink+";>You had to take it with yourself.</text>";
+              enemyMsg="<text style=color:"+colorGold+";>You just had to take it with yourself.</text>";
             }
             isFishing=false;
             if (playerHp==0) break;
@@ -2973,7 +2977,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     if (enemyType.includes("Boss") && !areaName.includes("Shrouded")) {
       curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+"<b>"+enemyName+"</b>"+emptySpace+emptySpace,colorWhite),5);
 
-      logAction("👑 ▸ "+enemyEmoji+" Boss defeated: <b>"+enemyName+"</b>")
+      logAction("👑 ▸ "+enemyEmoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+enemyName+"</b></text>")
     }
   }
 
@@ -3633,7 +3637,7 @@ function adjustEncounterButtons(){
       setButton('button_roll',"❌ Ditch",colorRed);
       if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Recall",colorRed);
       if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
-      if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorPink);
+      if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorGold);
       break;
 
     case "Trap":
