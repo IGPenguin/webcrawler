@@ -12,7 +12,7 @@ Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautifu
 Wildland Meadows;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Wildland Meadows;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;Water Body;Crystal-clear water flowing steadily.<br>;
 
-Wildland Meadows;🪵;Hidden Hollow;Container;0;0;0;0;0;0;Natural Cover;A dark space under some old roots.<br>;
+Wildland Meadows;🪵;Hidden Hollow;Container;0;0;0;0;0;0;Natural Cover;Something is sticking from under the roots.<br>;
 Wildland Meadows;🪨;Suspicious Rock;Container;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
 Wildland Meadows;🧺;Picnic Basket;Container;0;0;0;0;0;0;Container;Someone must have lost it here.<br>;
@@ -136,7 +136,7 @@ Wildland Meadows;🧸;Worn Teddy;Item;0;0;0;0;0;0;Lost Possesion;Looks like it i
 
 Wildland Meadows;💌;Undelivered Letter;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
-Wildland Meadows;🌸;Ambrosia Nectar;Consumable;0;0;0;0;3;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge inside.
+Wildland Meadows;🌸;Ambrosia Nectar;Consumable;0;0;0;0;3;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge of clarity.
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -1006,14 +1006,14 @@ Shrouded Necropolis;🗡️;Thirsty Blade;Item;-1;3;0;0;0;0;Cursed Weapon;Very d
 Shrouded Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
 
 Shrouded Necropolis;🎩;Fancy Hat;Item;0;0;0;0;3;0;Stylish Accessory;Salt-stained but dashing.<br>Provides <b>+3 🧠 Charisma</b>.;Felt rather dapper.
-Shrouded Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br><br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in the chest.
+Shrouded Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in your chest.
 Shrouded Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
 
 Shrouded Necropolis;🦷;Lucky Tooth;Item;0;0;0;3;-1;0;Questionable Trinket;It would be very bizzare to pick this up.<br>Provides <b>+3 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Ewwww...
 Shrouded Necropolis;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
 Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;0;<b>Malevolent Artifact</b>;You should probably leave this alone.<br>It might have some unexpected effects.;Syphoned your life energy!
 
-Shrouded Necropolis;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
+Shrouded Necropolis;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;Dark Elixir;Might have some mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
 Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck

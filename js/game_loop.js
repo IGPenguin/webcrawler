@@ -568,9 +568,9 @@ function loadEncounter(index, fileLines = linesStory){
     case "Undead":
     case "Small":
       if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
-        logAction("💢 ▸ "+enemyEmoji+" Engaged enemy: <b>"+enemyName+"</b>")
+        logAction("💢 ▸ "+enemyEmoji+" Engaged an enemy: <b>"+enemyName+"</b>")
       } else {
-        logAction("👁️ ▸ "+enemyEmoji+" Spotted creature: <b>"+enemyName+"</b>")
+        logAction("👁️ ▸ "+enemyEmoji+" Spotted a critter: <b>"+enemyName+"</b>")
       }
       break;
     case "Item":
@@ -578,12 +578,12 @@ function loadEncounter(index, fileLines = linesStory){
         logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" + " Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
         if (enemyTeam.includes("Possesion")) {
-          logAction("⭐️ ▸ "+enemyEmoji+" Found possesion: <b>"+enemyName+"</b>")
+          logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
         } else {
          if (!enemyTeam.includes("Lover's Memento")) {
-          logAction("🎉 ▸ "+enemyEmoji+" Found loot: <b>"+enemyName+"</b>")
+          logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
          } else {
-          logAction("🫀 ▸ "+enemyEmoji+" Found clue: <b>"+enemyName+"</b>")
+          logAction("🫀 ▸ "+enemyEmoji+" Found a clue: <b>"+enemyName+"</b>")
          }
         }
       }
@@ -592,7 +592,7 @@ function loadEncounter(index, fileLines = linesStory){
       if (enemyTeam.includes("Artifact")){
         logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" +" Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
-        logAction("👁️ ▸ "+enemyEmoji+" Found snack: <b>"+enemyName+"</b>")
+        logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
       }
       break;
     case "Curse":
@@ -600,20 +600,20 @@ function loadEncounter(index, fileLines = linesStory){
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      if (totalBonus>0 && totalMalus<=0) logAction("🎀 ▸ "+enemyEmoji+" Noticed curiosity: <b>"+enemyName+"</b>")
-      if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
+      if (totalBonus>0 && totalMalus<=0) logAction("🎀 ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
+      if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed a hazard: <b>"+enemyName+"</b>")
       break;
     case "Container":
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
       break;
     case "Altar":
-      logAction("👁️ ▸ "+enemyEmoji+" Noticed curiosity: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
       break;
     case "Friend":
-      if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Spotted creature: <b>"+enemyName+"</b>")
+      if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Met a creature: <b>"+enemyName+"</b>")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged boss: <b>"+enemyName+"</b></text>")
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
       break;
   }
 
@@ -2282,7 +2282,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Fishing":
             var bait=checkPlayerHasItem(validBaits);
-            if (bait!="" && playerUseItem(bait,"Fished out something "+decorateStatusText("","+"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
+            if (bait!="" && playerUseItem(bait,"Fished out something using "+bait+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
               playerGainXP(1,10*playerLevel,"");
 
               if (procAbilityChance("🧵",33)) {
@@ -2804,7 +2804,7 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
 
   if (procAbilityChance("🎓",100)) gainedXP=parseInt(gainedXP*1.25);
 
-  if ((playerXP+gainedXP)>=playerXPThreshold) logAction(enemyEmoji+" ▸ 🎉 You are ready to <b>level up!</b>")
+  if ((playerXP+gainedXP)>=playerXPThreshold) logAction(enemyEmoji+" ▸ 🎉 "+"<text style=color:"+colorGold+";>"+"You are ready to <b>level up!</b></text>")
 
   return parseInt(gainedXP);
 }
@@ -3039,7 +3039,7 @@ function playerCheckLevelUp(){
     pushEncounter(levelUp,0);
     encounterIndex=encounterIndex-1;
     nextEncounter();
-    logAction("✨ ▸ <b>🎉 Level Up!</b> Select a character perk.")
+    logAction("✨ ▸ <text style=color:"+colorGold+";>"+ "<b>🎉 Level Up!</b> Select a character perk.</text>")
   }
 }
 
