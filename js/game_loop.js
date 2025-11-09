@@ -1253,7 +1253,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Spirit":
             displayEnemyEffect("💨");
-            enemyAttackOrRest("Impossible to hit, they retaliated -"+enemyAtk+" 💔");
+            displayEnemyCannotEffect();
+            if ((enemySta+enemyStaLost)==0){
+              atckmsg="Seems to be impossible to hit.";
+            } else {
+              atckmsg="Impossible to hit, they retaliated -"+enemyAtk+" 💔";
+            }
+            if (enemyCastIfMgk(true)) enemyAttacked=true;
+            if (!enemyAttacked) enemyAttackOrRest(atckmsg);
             break;
 
           case "Friend":
@@ -2872,6 +2879,10 @@ function enemyAttackOrRest(message="",isGrab=false){
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");
   } else {
+    staminaChangeMsg="They recovered some energy.";
+    if (enemyType=="Spirit") staminaChangeMsg = "Impossible to hit, they recovered energy."
+    if (enemyType=="Spirit" && (enemySta+enemyStaLost==0)) staminaChangeMsg = "Seems to be impossible to hit."
+    logPlayerAction(actionString,staminaChangeMsg);
     enemyRest(1);
   }
 }
