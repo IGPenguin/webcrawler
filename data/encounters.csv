@@ -590,7 +590,6 @@ Twisted Fairyland;🧚;Flickering Shade;Friend;0;0;0;-3;0;0;Corrupted Fey;Its wi
 Twisted Fairyland;🐇;Lucky Four;Pet;1;0;1;2;0;0;Friendly Critter;Its paws might bring you some extra luck.<br>;Got a new companion.
 Twisted Fairyland;🦄;Rainbow Unicorn;Pet;3;0;3;2;3;0;Mythical Creature;Strange horse approached.<br>;Received the rainbow blessing.
 Twisted Fairyland;🦙;Fluffy Alpaca;Pet;2;0;2;1;2;0;Witty Animal;Looks like a cloud with four legs.<br>;Received their blessing.
-Twisted Fairyland;🐫;Desert Inhabitant;Pet;3;0;1;0;1;0;Seasoned Survivor;Strange horse approached.<br>;Survival instincts increased.
 Twisted Fairyland;🐝;Friendly Bee;Pet;1;1;1;0;-1;0;Bodyguard;Keeps a close distance.<br>;Became best friends.
 Twisted Fairyland;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;Pelicular Insect;The most beautiful color ever.<br>;Gained a new friend
 Twisted Fairyland;🦎;Blue-eyed Gecko;Pet;1;0;2;0;1;1;Beautiful Lizard;Eyes are glowing blue.<br>;Gained a new minion
@@ -639,8 +638,9 @@ Twisted Fairyland;🦅;Bald Eagle;Swift;3;4;1;0;-1;0;Wild Animal;Attacks from hi
 Twisted Fairyland;🐃;Frantic Horns;Heavy;4;3;1;0;5;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
 Twisted Fairyland;🦍;Native Ape;Heavy;3;2;3;0;3;0;Wild Beast;Buffed and ready to fight.<br>;
 Twisted Fairyland;🦏;Bulky Rhino;Heavy;5;3;1;0;5;0;Wild Beast;Its majestic horn looks rather deadly.<br>;
-Twisted Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
-Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner
+Twisted Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner.
+Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner.
+Twisted Fairyland;🐫;Thirsty Inhabitant;Heavy;4;2;2;0;1;0;Seasoned Survivor;Wants to slurp all your fluids.<br>;Got sucked until dry.
 
 Twisted Fairyland;👺;Wicked Imp;Demon;2;2;2;0;3;0;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.
 Twisted Fairyland;👹;Little Devil;Demon;1;3;1;0;3;0;Imminent Threat;Laughs out loud maniacally.<br>;
