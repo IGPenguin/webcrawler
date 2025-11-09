@@ -66,8 +66,8 @@ Fishing;👞;Wet Shoe;Item;0;0;0;0;0;0;Worthless Trash;Thoroughly wet leather sh
 Fishing;🪣;Leaky Bucket;Item;0;0;0;0;0;0;Broken Carrier;Has absolutely zero practical use.<br>;Just picked up some trash.
 Fishing;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;
 
-Fishing;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Malevolent glow covers its entire surface.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Brutal spasms took a toll
-Fishing;🌿;Miracle Kelp;Consumable;0;0;1;1;0;0;Natural Source;Might be causing some unknown side-effects.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Tasted like a fish water
+Fishing;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;Questionable Snack;Malevolent glow covers its entire surface.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Suffered harsh spasms
+Fishing;🌿;Miracle Kelp;Consumable;0;0;0;2;0;0;Natural Source;Known to be ingested to repel bad spirits.<br><b>+2 🍀 Luck</b>\ restores <b>❤️ Health</b> & <b>🟢 Energy</b>.;Tasted like a fish water
 
 Fishing;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 Fishing;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;

@@ -583,7 +583,7 @@ function loadEncounter(index, fileLines = linesStory){
          if (!enemyTeam.includes("Lover's Memento")) {
           logAction("🎉 ▸ "+enemyEmoji+" Found loot: <b>"+enemyName+"</b>")
          } else {
-          logAction("🫀 ▸ "+enemyEmoji+" Faced truth: <b>"+enemyName+"</b>")
+          logAction("🫀 ▸ "+enemyEmoji+" Found clue: <b>"+enemyName+"</b>")
          }
         }
       }
@@ -1441,7 +1441,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerAtk++;
                 playerLove-=2;
                 playerKarma-=2;
-                logPlayerAction(actionString,"<text style=color:"+colorRed+";>Your throat tightened with hatred! +1 ⚔️</text>");
+                logPlayerAction(actionString,"<text style=color:"+colorRed+";>Your chest has filled with hatred! +1 ⚔️</text>");
                 displayPlayerCannotEffect();
                 nextEncounter();
                 break;
@@ -1501,7 +1501,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
               playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
               }
-            nextEncounter();
+            //nextEncounter(); //Blocks the path ahead
+            displayPlayerCannotEffect();
             break;
           case "Trap":
           case "Trap-Attack":
@@ -2513,6 +2514,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerLove++;
               playerHit(1);
               displayPlayerRestedEffect();
+              displayPlayerEffect("💔")
               encounterUsed=true;
               break;
             }

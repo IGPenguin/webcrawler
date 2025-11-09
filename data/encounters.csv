@@ -6,7 +6,6 @@ Wildland Meadows;🌱;Potato Field;Container;0;0;0;0;0;0;Wild Flora;Good place t
 Wildland Meadows;🌿;Grass Field;Prop;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Wildland Meadows;☘️;Clover Field;Prop;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🍃;Flying Leaves;Prop;0;0;0;0;0;0;Natural Beauty;Signs reminding you of the circle of life.<br>;
-Wildland Meadows;🌳;Fallen Trunk;Prop;0;0;0;0;0;0;Natural Obstacle;A giant trunk blocks the path.<br>;Clambered over with caution.
 Wildland Meadows;🪹;Empty Nest;Prop;0;0;0;0;0;0;Natural Habitat;Nothing more than twigs and dust.<br>;
 
 Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
@@ -44,10 +43,11 @@ Wildland Meadows;🦋;Butterfly Swarm;Curse;0;0;0;0;0;1;Natural Beauty;The butte
 Wildland Meadows;🌀;Deja Vu;Curse;0;0;0;2;-1;0;Brief Moment;Almost like this has already happened.<br>;That felt really weird.
 Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like something's calling for attention.<br>;Received a howling blessing.
 
-Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-2;0;Disgusting Stench;Terrible stench is filling the air.<br>;Suffered nasty consequences.
-Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Ouch! There are hidden spikes.
+Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Stench;Terrible stench is filling the air.<br>;Suffered some nasty consequences.
+Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Stepped on some hidden spikes.
+Wildland Meadows;🪵;Fallen Trunk;Trap-Roll;0;0;0;0;0;0;Natural Obstacle;A giant trunk blocks the path.<br>;There's no other way ahead.
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
-Wildland Meadows;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Pricked by thorns\ but kept moving.
+Wildland Meadows;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Got pricked by sharp thorns.
 
 Wildland Meadows;🐀;Grassland Mouse;Small;1;0;2;0;-1;0;Tiny Rodent;Running around\ looking for seeds.br>;Contracted a deadly disease.
 Wildland Meadows;🐁;Albino Mouse;Small;1;0;2;0;-1;0;Tiny Rodent;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
