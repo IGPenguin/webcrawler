@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/12/2025 @ 11:59 PM"
+var versionCode = "ver. 11/13/2025 @ 00:46 AM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
 
@@ -38,6 +38,7 @@ var playerLove=0;
 var playerKarma=1;
 var playerRested = false;
 var playerCooked = false;
+var bubblesUsed = false;
 var playerAttackType = "⚔️";
 var playerRollType = "🌀";
 var playerBlockType = "🔰";
@@ -272,8 +273,11 @@ var enemyCursed=false;
 var totalBonus=0;
 var totalMalus=0;
 
-enemyRenew()
-function enemyRenew(){
+encounterRenew()
+function encounterRenew(){
+  playerRested=false;
+  playerCooked=false;
+
   enemyStaLost = 0;
   enemyHpLost = 0;
   enemyAtkBonus = 0;
@@ -282,6 +286,7 @@ function enemyRenew(){
   enemyBossType = "";
   enemyCursed=false;
   encounterUsed=false;
+  bubblesUsed = false;
   currentProphercy = getGameTip();
   enemyEmojiScaleX = chooseFrom(['scaleX(-1)','scaleX(1)']);
 
@@ -979,10 +984,7 @@ function redraw(){
     case "Recruit":
     case "Standard":
       enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Normal",colorWhite);
-      enemyStatusString=appendEnemyStats();
-
-      //Tutorial hack
-      enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed);
+      if (areaName.includes("Depths of Slumber"))enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed); //Tutorial hack
       enemyStatusString=appendEnemyStats();
       break;
     case "Demon":
@@ -1989,7 +1991,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
 
-              enemyEmoji=animalEmoji; enemyType="Small"; enemyRenew();
+              enemyEmoji=animalEmoji; enemyType="Small"; encounterRenew();
               enemyHp=1; enemyAtk=1; enemyAtkBonus=0; enemySta=1; enemyLck=0; enemyInt=-1; enemyMgk=0;
               enemyMsg="They avenged getting polymorphed!";
               break;
@@ -2976,7 +2978,7 @@ function getRandomFish(){ //TODO refactor into encounters.csv
   toggleUIElement(areaUIElement,1);
   animateUIElement(areaUIElement,"animate__bounce","1.2");
 
-  enemyRenew();
+  encounterRenew();
   return
 }
 
@@ -3011,9 +3013,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   encounterIndex = getNextEncounterIndex();
 
-  playerRested=false;
-  playerCooked=false;
-  enemyRenew();
+  encounterRenew();
   loadEncounter(encounterIndex);
 
   //Fullscreen Curtain
@@ -3376,6 +3376,14 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
   if (applyLuck && ( hitChance <= playerLck )){
     logAction("🍀 ▸ 💢 <b>Luckily</b> avoided receiving the damage.");
     displayPlayerEffect("🍀");
+    return;
+  }
+
+  if (procAbilityChance("🧼",100) && bubblesUsed==false) {
+    bubblesUsed=true;
+    logAction("🫧 ▸ 💢 Damage repelled by <b>🫧 Protective Bubble</b>.");
+    displayPlayerCannotEffect();
+    displayPlayerEffect("🫧");
     return;
   }
 

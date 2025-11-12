@@ -369,6 +369,7 @@ Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;3;0;10;0;Humanoid;
 Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;3;1;0;-1;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 Forsaken Village;🪞;Mirror Horror;Boss-Demon;2;1;2;1;-1;1;Spirit of Reflection;Copies your every move.<br>;Shattered in a mirror duel.
 
+Forsaken Village;🧼;Ancient Soap;Item;0;0;0;0;0;0;Artifact;Grants attribute <b>🫧 Protective Bubbles</b>.<br>Repels received damage - once per combat.;Gained attribute <b>🫧 Protective Bubbles</b>.
 Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;📼;Cassette Tape;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
@@ -647,9 +648,9 @@ Twisted Fairyland;👹;Little Devil;Demon;1;3;1;0;3;0;Imminent Threat;Laughs out
 Twisted Fairyland;🌚;Shadow Spirit;Demon;3;1;1;0;-1;1;Sinister Remnants;Slips between the shadows.<br>;No mercy for the wicked.
 Twisted Fairyland;👿;Malevolent Fiend;Demon;2;1;3;0;1;1;Sinister Shape;Appeared out of nowhere.<br>;Lost in endless darkness.
 
-Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;2;0;-1;0;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.
-Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;0;0;1;-1;1;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
-Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;0;0;1;-1;2;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
+Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;1;0;-1;1;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.
+Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;1;1;1;-1;0;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
+Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
 
 Twisted Fairyland;🧌;Troll Warbringer;Boss-Heavy;4;3;2;0;4;1;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
 Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
@@ -774,7 +775,8 @@ River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water w
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
 River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;
 
-River of Sorrows;☁️;Toxic Cloud;Trap-Sleep;-3;0;0;0;0;0;Deadly Environment;Noticed an almost invisible gas.<br>;Got deep into your lungs.
+River of Sorrows;⛈️;Severe Storm;Trap-Sleep;-3;0;0;0;0;0;Weather Condition;Better not linger .<br>;Got struck by lightning!
+River of Sorrows;☁️;Toxic Cloud;Trap-Sleep;-1;0;0;0;0;0;Nasty Gas;Noticed an almost invisible haze.<br>;It got deep into your lungs.
 
 River of Sorrows;🌪️;Wailing Hurricane;Curse;-6;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
@@ -786,22 +788,28 @@ River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;Arthropod;Makes a per
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;Arthropod;Makes a perfect fishing bait.<br>;
 
-River of Sorrows;🐡;Spiky Fish;Standard;2;2;2;0;0;0;Unpleasant Critter;Best left alone and far away.<br>;Oof\ that was a deadly.
+River of Sorrows;🦞;Vengeful Lobster;Standard;3;2;2;0;-1;0;Horror Survivor;Never forgets\ never forgives.<br>;Pinched one too many times!
+River of Sorrows;🐚;Hermit Crab;Standard;3;2;2;0;0;0;Armored Crustacean;Better not stick fingers inside.<br>;Oops\ that was deadly!
+River of Sorrows;🦀;Spider Crab;Standard;4;3;1;0;-1;0;Oversized Crustacean;What? It's the size of a dog?<br>;Pinched one too many times!
 
-River of Sorrows;🐬;Cursed Dolphin;Swift;3;1;3;0;4;0;Sinister Mammal;Makes a lot of squaking noises.<br>;Outsmarted by a dlophin.
-River of Sorrows;‍🦈;Hungry Shark;Swift;2;3;1;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-River of Sorrows;🦞;Vengeful Lobster;Swift;3;3;1;0;-1;0;Horror Survivor;Never forgets\ never forgives.<br>;
+River of Sorrows;🐚;Cone Snail;Swift;1;4;1;0;0;0;Poisonous Crustacean;Better keep your distance!<br>;Oops\ that was deadly!
+River of Sorrows;🐬;Scumbag Dolphin;Swift;3;1;3;0;4;0;Sinister Mammal;Makes a lot of squaking noises.<br>;Outsmarted by a dlophin.
+River of Sorrows;‍🦈;Hungry Shark;Swift;3;2;2;0;-1;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by hungry shark!
 
-River of Sorrows;‍🪼;Box Jelly;Undead;1;4;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
-River of Sorrows;🐙;Vampiric Squid;Undead;3;1;3;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
+River of Sorrows;‍🦈;The Megalodon;Heavy;3;3;1;0;-1;0;Mythical Threat;One bite and it's likely over.<br>;Devoured by mythical creature!
+
+River of Sorrows;‍🪼;Box Jelly;Undead;4;2;1;0;-1;0;Aquatic Threat;Practically cannot die - therefore undead.<br>;Killed by a mere touch.
 
 River of Sorrows;🐋;Willy's Ghost;Spirit;1;3;1;0;4;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
 River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
+River of Sorrows;🐙;Vampiric Squid;Demon;4;1;2;0;-1;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
+
 River of Sorrows;👤;Abandoned Love;Friend👠;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
 
-River of Sorrows;🍎;Forbidden Apple;Consumable;0;0;0;0;5;0;Artifact;The ultimate source of an immense brilliance.<br><b>+5 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
+River of Sorrows;🐡;Spiky Sushi;Consumable;-1;0;0;0;4;0;Artifact;Might get you waaay too high.<br>Might turn even deadly though.;Sheeesh\ that was intense!
+River of Sorrows;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;Artifact;The ultimate source of immense brilliance.<br><b>+5 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
