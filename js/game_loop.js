@@ -728,6 +728,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 9: //Boss
       if (logCall) logGenerator("boss");
+      generateNextEncounters(0,false); //Prop or Contained Small
       if (areaName.includes("Meadows")) { //Do no guarantee legendary in first area
         pushEncounter(getRandomEncounter(["Item"]));
       } else if (areaName.includes("Shrouded")) {
