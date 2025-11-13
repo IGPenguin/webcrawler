@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/13/2025 @ 08:22 AM"
+var versionCode = "ver. 11/14/2025 @ 00:16 AM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
 
@@ -627,7 +627,7 @@ function loadEncounter(index, fileLines = linesStory){
   }
 
   //Specific encounter starts
-  if (enemyType=="Dream" && (enemyName!="Waking Moment" && enemyName!="Terrific Realization")) playerSta=0;
+  if (enemyType=="Dream" && (!enemyName.includes("Waking Moment")) && (!enemyName.includes("Terrific Realization")) && (!enemyName.includes("Horrific Realization"))) playerSta=0;
 
   //Decrase final bass attack/mana based on player love
   if (enemyName.includes("Bride") && playerLove>2) {
@@ -1190,6 +1190,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
+        if (enemyType=="Dream") {
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"Cannot attack while asleep.");
+          break;
+        }
+
         if (enemyType!="Upgrade" && !playerUseStamina(1,"Too tired to attack anything.")){
             break;
           }
@@ -1536,7 +1542,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_block':
         if (enemyType=="Death"){
           displayPlayerCannotEffect();
-          logPlayerAction(actionString,"There is nothing to block anymore.");
+          logPlayerAction(actionString,"There's no point in blocking anymore.");
+          break;
+        }
+
+        if (enemyType=="Dream") {
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString,"Cannot block while asleep.");
           break;
         }
 
@@ -1630,6 +1642,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
         case 'button_cast':
+          var mkgCost=1;
+          if (enemyType.includes("Locked")) mkgCost=2;
+
           if (enemyType=="Death"){
             logPlayerAction(actionString,"Cannot really cast anymore.");
             displayPlayerCannotEffect();
@@ -1650,21 +1665,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if ((!playerLootString.includes("🧂")) && (playerMgk<1)){
-            logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
+          if ((!playerLootString.includes("🧂")) && (playerMgk<mkgCost)){
+            logPlayerAction(actionString,"Not enough mana, requires +"+mkgCost+" 🔵");
             displayPlayerCannotEffect();
             break;
           }
 
           if (enemyType.includes("Locked")){
-            if (playerMgk<1){
-              logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
+            if (playerMgk<mkgCost){
+              logPlayerAction(actionString,"Not enough mana, requires +"+mkgCost+" 🔵");
               displayPlayerCannotEffect();
               break;
             } else {
-              playerMgk-=1;
+              playerMgk-=mkgCost;
               var gainedXP=playerGainXP(1,25*playerLevel,"");
-              logPlayerAction(actionString,"Unlocked it with a spell -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              logPlayerAction(actionString,"Unlocked it with a spell -"+mkgCost+" 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
               break;
             }
@@ -2392,7 +2407,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_speak':
-        displayPlayerEffect("💬");
+        if (enemyType!="Dream") displayPlayerEffect("💬");
 
         var convinceInt=playerInt;
         if (playerLootString.includes("📣")) {
@@ -2614,6 +2629,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
+            if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")){
+              displayPlayerCannotEffect();
+              logPlayerAction(actionString,"Cannot fall asleep at the moment.")
+              break;
+            }
             playerRest(true);
             logPlayerAction(actionString,enemyMsg)
             nextEncounter();
@@ -3617,7 +3637,7 @@ function setButton(elementID,text,color=colorWhite){
 }
 
 function resetEncounterButtons(){
-  if (playerSta>0){
+  if (playerSta>0 && (!enemyType.includes("Dream"))){
     setButton('button_attack',playerAttackType+" Attack");
     setButton('button_block',"🔰 Block");
     setButton('button_roll',"🌀 Dodge");
@@ -3729,10 +3749,12 @@ function adjustEncounterButtons(){
 
     case "Dream":
       setButton('button_grab',"✋ Reach",colorDarkGrey);
-      setButton('button_roll',"👣 Walk");
+      setButton('button_roll',"👣 Walk", colorGold);
+      if (enemyName.includes("Waking Moment")) setButton('button_roll',"👁️ Awaken",colorGold);
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       setButton('button_sleep',"💤 Sleep",colorLightBlue);
+      if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (areaName.includes("Shrouded")) setButton('button_sleep',"🧠 Think",colorRed);
       break;
 
@@ -3841,7 +3863,7 @@ function adjustEncounterButtons(){
         if (enemyType.includes("Container")) setButton('button_grab',"👀 <b style=\"color:"+colorYellow+";\">Search</b>");
         if (enemyType.includes("Locked")){
           setButton('button_cast',"🪄 Unlock");
-          if (playerMgk<1) setButton('button_cast',"🪄 Unlock",colorDarkGrey)
+          if (playerMgk<2) setButton('button_cast',"🪄 Unlock",colorDarkGrey)
           if (playerLootString.includes("🗝️")){
             document.getElementById('button_grab').innerHTML="🗝️ Unlock";
           } else if (playerLootString.includes("📎")) {
