@@ -6,13 +6,11 @@ Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Deep Sleep;<b>Can't move
 Depths of Slumber;👹;Vivid Nightmare;Standard;2;1;1;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> once they deplete <b>🟢 Energy</b>.;
 Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind((<br>n/a;Woke up in the middle of nowhere.
-Depths of Slumber;😳;Horrific Realization;Dream;0;0;0;0;0;0;Reality Check;<b>You cannot remember</b> who or where you are.<br>Looks like there's only <b>one way to find out</b>.;Set out on a new adventure!
 
 //Debug
 
-//NOTE: Props are automatically after any enemy encounter
-
 //Wildland Meadows
+Wildland Meadows;😳;Horrific Realization;Dream;0;0;0;0;0;0;Reality Check;<b>You cannot remember</b> who or where you are.<br>Looks like there's only <b>one way to find out</b>.;Set out on a new adventure!
 Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Wildland Meadows;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Wildland Meadows;❓;Mid House;Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
