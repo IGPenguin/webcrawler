@@ -7,7 +7,7 @@ var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
 
 //Colors & Symbols
-var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorCardBackground = "#202020";
+var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorCardBackground = "#202020";
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
 
 //Stats
@@ -252,6 +252,7 @@ var enemySta;
 var enemyLck;
 var enemyInt;
 var enemyMgk;
+var enemyArmor;
 var enemyType;
 var previousEnemyType;
 var enemyContainerNumber = 0;
@@ -283,6 +284,7 @@ function encounterRenew(){
   enemyAtkBonus = 0;
   enemyIntBonus = 0;
   enemyMgkLost = 0;
+  enemyArmor = 0;
   enemyBossType = "";
   enemyCursed=false;
   encounterUsed=false;
@@ -572,6 +574,8 @@ function loadEncounter(index, fileLines = linesStory){
     case "Demon":
     case "Undead":
     case "Small":
+    case "Spiky":
+    case "Toxic":
       if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
         logAction("💢 ▸ "+enemyEmoji+" Engaged an enemy: <b>"+enemyName+"</b>")
       } else {
@@ -689,7 +693,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 3: //Mid Encounter
       if (logCall) logGenerator("mid");
-      var encounterPool=["Standard","Spiky","Toxic"]
+      var encounterPool=["Standard","Spiky","Toxic","Hot"]
       generateNextEncounters(0,false); //Prop or Contained Small
       if (procAbilityChance("",10+playerLck)) encounterPool = ["Recruit","Pet"]; // 10% recruit/pet
       if (procAbilityChance("",3+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //3% item
@@ -702,7 +706,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       generateNextEncounters(0,false); //Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //5% item
       if (procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //30% consumable
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
       break;
 
     case 9: //Boss
@@ -727,7 +731,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       generateNextEncounters(0,false); //Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //5% item
       if (procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //20% consumable
-      pushEncounter(getRandomEncounter(["Small","Standard","Spiky","Toxic","Recruit","Pet","Swift","Heavy","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(["Small","Standard","Spiky","Toxic","Hot","Recruit","Pet","Swift","Heavy","Tough","Demon","Spirit"]));
       break;
 
     case 20: //House Small
@@ -745,7 +749,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (procAbilityChance("",10+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //10% item
       if (procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //20% consumable
 
-      var possibleEncounters=["Friend","Recruit","Standard","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep","Altar"];
+      var possibleEncounters=["Friend","Recruit","Standard","Spiky","Toxic","Hot","Tough","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep","Altar"];
       var firstEncounter=[getRandomEncounter(possibleEncounters)];
       pushEncounter(firstEncounter);
 
@@ -779,7 +783,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -794,7 +798,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
       pushEncounter(getRandomEncounter(["Container-4"]));
       break;
@@ -809,9 +813,9 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
-      pushEncounter(getRandomEncounter(["Small","Standard","Spiky","Toxic","Recruit","Pet"]));
+      pushEncounter(getRandomEncounter(["Small","Standard","Spiky","Toxic","Hot","Recruit","Pet"]));
       pushEncounter(getRandomEncounter(["Container-5"]));
       break;
 
@@ -828,20 +832,6 @@ function generateNextEncounters(generatorID=0, logCall=true){
     default:
       console.log("ERROR: Missing generator definition!");
   }
-}
-
-function hasAnyOf(array=[],item){
-  return array.includes(item);
-}
-
-function chooseFrom(array=[]){
-  var options = array.length
-  var choice = array[Math.floor(Math.random() * options)];
-  return choice;
-}
-
-function randomNumber(min=0,max=1){
-  return min+Math.floor(Math.random() * max);
 }
 
 //UI DRAW FUNCTIONS
@@ -959,6 +949,22 @@ function redraw(){
       break;
     case "Undead":
       enemyTeamUIElement.innerHTML=decorateStatusText("💀","Undead",colorGrey);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Spiky":
+      enemyTeamUIElement.innerHTML=decorateStatusText("📌","Spiky",colorGrapefruit);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Toxic":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🦠","Toxic",colorLime);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Tough":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🐚","Tough",colorSemiDarkGrey);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Hot":
+      enemyTeamUIElement.innerHTML=decorateStatusText("♨️","Hot",colorRed);
       enemyStatusString=appendEnemyStats();
       break;
 
@@ -1252,9 +1258,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet":
           case "Boss":
           case "Small":
+          case "Spiky":
+          case "Toxic":
+          case "Hot":
+          case "Tough":
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
-            enemyHit(playerAtk+playerAtkBonus);
+            if (enemyType=="Tough") enemyArmor=1; //TODO: Dynamic "Tough-2, Tough-3"
+            enemyHit(playerAtk+playerAtkBonus-enemyArmor);
 
             if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
@@ -1329,6 +1340,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Spirit":
           case "Boss":
           case "Small":
+          case "Spiky":
+          case "Toxic":
+          case "Hot":
+          case "Tough":
             if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
               if (enemyAtkBonus<0){
                 playerGainXP(1.5,0,"They let you walk away");
@@ -1427,7 +1442,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
 
               logPlayerAction(actionString,"Walked away wasting the potential.");
-              if (enemyType=="Checkpoint") encounterIndex++;
             }
             nextEncounter();
             break;
@@ -1573,6 +1587,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Recruit":
           case "Demon":
+          case "Spiky":
+          case "Tough":
             enemyStaminaChangeMessage(-1,"Blocked a regular attack -1 🟢","Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -1592,7 +1608,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Spirit":
-            if (enemyStaminaChangeMessage(-1,"Could not block a spectral attack -"+enemyAtk+" 💔","They needed to recover some energy.")){
+          case "Hot":
+          case "Toxic":
+            var attackMsg="Could not block a spectral attack";
+            if (enemyType=="Hot") attackMsg="Could not block a burning attack";
+            if (enemyType=="Toxic") attackMsg="Could not block a toxic attack";
+            if (enemyStaminaChangeMessage(-1,attackMsg+" -"+enemyAtk+" 💔","They needed to recover some energy.")){
               playerHit(enemyAtk,true,true);
             } else {
               enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
@@ -1673,6 +1694,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
+          case "Spiky":
+          case "Toxic":
+          case "Hot":
+          case "Tough":
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
               enemyHit(magicDamage,true);
             } else {
@@ -1832,6 +1857,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
           case "Boss":
           case "Small":
+          case "Spiky":
+          case "Toxic":
+          case "Hot":
+          case "Tough":
             playerHeal();
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
@@ -1947,6 +1976,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Spirit":
         case "Boss":
         case "Small":
+        case "Spiky":
+        case "Toxic":
+        case "Hot":
+        case "Tough":
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
             displayEnemyCannotEffect();
             displayEnemyEffect("🪬");
@@ -2026,6 +2059,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
           case "Standard":
+          case "Tough":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
               logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
               playerSta--;
@@ -2110,9 +2144,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
             break;
 
+          case "Spiky":
+          case "Toxic":
+          case "Hot":
           case "Undead": //Grabbing is not safe
             if (enemyCastIfMgk()) break;
-            logPlayerAction(actionString,enemyMsg+" -"+enemyAtk+" 💔");
+            logPlayerAction(actionString,enemyMsg.replace(".","")+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk,true,true);
             displayEnemyEffect("✋");
             break;
@@ -2280,7 +2317,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Demon":
           case "Spirit":
-            logPlayerAction(actionString,"Missed, they are untouchable.");
+            logPlayerAction(actionString,"Missed, they seem untouchable.");
             displayEnemyEffect("🌀");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
@@ -2375,6 +2412,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Boss":
           case "Small":
+          case "Spiky":
+          case "Toxic":
+          case "Hot":
+          case "Tough":
             var maxEnemyAngryBoost=3;
 
             if (enemyInt==-1) {
@@ -2522,6 +2563,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Undead":
           case "Boss":
           case "Small":
+          case "Spiky":
+          case "Toxic":
+          case "Hot":
+          case "Tough":
             if (playerHp>0){
               displayPlayerEffect("💤");
               playerGetStamina(1);
@@ -2664,6 +2709,17 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
     hitMsg="Attack hit them critically -"+(damage+2)+" 💔";
     displayPlayerEffect("🍀");
     damage+=2;
+  }
+
+  if (damage<=0){
+    hitMsg="Your attack had no effect! ❌";
+    displayEnemyEffect("");
+    if (enemyArmor>0) {
+      if (enemyArmor>=damage){
+        hitMsg="Your attack was repelled! ️🔰";
+        displayEnemyEffect("🔰");
+      }
+    }
   }
 
   if (!silent) logPlayerAction(actionString,hitMsg);
@@ -2840,7 +2896,7 @@ function enemyAttackOrRest(message="",isGrab=false){
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
       playerHit(damageReceived,true,false);
 
-      if (playerLootString.includes("🥀") && (enemyHp>enemyHpLost) && (enemyAtk+enemyAtkBonus)>0) {
+      if (playerLootString.includes("🥀") && (enemyHp>enemyHpLost) && (enemyAtk+enemyAtkBonus)>0 && !isGrab) {
         logAction("⚔️ ▸ 🥀 Dealt -1 💔 by <b>🥀 Thorns Payback</b>.");
         enemyHit(1,false,false,true);
         displayEnemyEffect("🥀");
@@ -3468,6 +3524,22 @@ function checkPlayerHasItem(itemArray=validBaits){
   return bait;
 }
 
+//Technical
+
+function hasAnyOf(array=[],item){
+  return array.includes(item);
+}
+
+function chooseFrom(array=[]){
+  var options = array.length
+  var choice = array[Math.floor(Math.random() * options)];
+  return choice;
+}
+
+function randomNumber(min=0,max=1){
+  return min+Math.floor(Math.random() * max);
+}
+
 //End Game
 function gameOver(silent=false){
   //Random death messages
@@ -3695,16 +3767,16 @@ function adjustEncounterButtons(){
       break;
 
     case "Pet":
-      //var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
-      //if (heldQuestItem!="") {
-      //  setButton('button_speak',heldQuestItem+" Give",colorYellow);
-      //}
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
       if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
         setButton('button_speak',"💬 Defuse");
       } else if (playerLootString.includes("🏳️")) {
         setButton('button_speak',"🏳️ Waive");
       }
+    case "Spiky":
+    case "Toxic":
+    case "Hot":
+    case "Tough":
     case "Standard":
       if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) { //Applies for all above without "break;"
         document.getElementById('button_grab').innerHTML="🦶 Kick";
