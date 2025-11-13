@@ -65,7 +65,7 @@ function renewPlayer(){ //Default values
   playerInt = 1;
   playerXP=0;
   playerLevel=1;
-  playerXPThreshold=300;
+  playerXPThreshold=400;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerLootString = "";
