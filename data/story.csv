@@ -14,9 +14,13 @@ Depths of Slumber;😳;Terrific Realization;Dream;0;0;0;0;0;0;Reality Check;<b>Y
 Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Wildland Meadows;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Wildland Meadows;❓;Mid House;Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
+
+Wildland Meadows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+
 Wildland Meadows;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Wildland Meadows;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Wildland Meadows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+
 Wildland Meadows;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 
@@ -24,13 +28,18 @@ Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+
 Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Huge House;Generator-60;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+
 Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 
@@ -39,9 +48,17 @@ Twisted Fairyland;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+
+Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
+
+Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+
 Twisted Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+
 Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
@@ -58,10 +75,8 @@ River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
 //Shrouded Necropolis
 Shrouded Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-
 Shrouded Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-
 Shrouded Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX

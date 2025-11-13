@@ -754,7 +754,6 @@ River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;Weather Condition;Cannot see 
 River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;
-River of Sorrows;🌊;Calm Waves;Prop;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;
 River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
 
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
@@ -770,10 +769,11 @@ River of Sorrows;🧳;Travel Chest;Locked-Container;0;0;0;0;0;0;Abandoned Belong
 River of Sorrows;🎒;Waterproof Backpack;Locked-Container;0;0;0;0;0;0;Traveler’s Chest;Strapped shut\ washed ashore long ago.<br>;The lock was brittle and gave in.
 River of Sorrows;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar\ almost painful to touch.<br>;It clicks softly open.
 
+River of Sorrows;🌊;Calm Waves;Fishing;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;Something jumped the hook!
 River of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
-River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;
+River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;Something jumped the hook!
 
 River of Sorrows;⛈️;Severe Storm;Trap-Sleep;-3;0;0;0;0;0;Weather Condition;Better not linger .<br>;Got struck by lightning!
 River of Sorrows;☁️;Toxic Cloud;Trap-Sleep;-1;0;0;0;0;0;Nasty Gas;Noticed an almost invisible haze.<br>;It got deep into your lungs.
