@@ -2149,7 +2149,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Hot":
           case "Undead": //Grabbing is not safe
             if (enemyCastIfMgk()) break;
-            logPlayerAction(actionString,enemyMsg.replace(".","")+" -"+enemyAtk+" 💔");
+            var dmgMsg="Ouch, that hurt pretty bad";
+            if (enemyType=="Toxic" || enemyType=="Undead") dmgMsg="Oof, that was really nasty";
+            if (enemyMsg!="") dmgMsg=enemyMsg.replace(".","");
+            logPlayerAction(actionString,dmgMsg+" -"+enemyAtk+" 💔");
             playerHit(enemyAtk,true,true);
             displayEnemyEffect("✋");
             break;
