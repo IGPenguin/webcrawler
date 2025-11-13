@@ -289,9 +289,7 @@ Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;Training Spot;You 
 Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;Party Prop;These are made for smashing!<br>;Improved your attack accuracy!
 Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.
 
-Forsaken Village;🌕;Bloodmoon Shrine;Altar;-1;1;0;0;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;The great hunt calls
-Forsaken Village;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power
-Forsaken Village;🔱;Altar of Hatred;Altar;-1;0;0;0;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
+Forsaken Village;🔱;Altar of Hatred;Altar;0;0;0;-3;0;1;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received
 Forsaken Village;📿;Prayer Beads;Altar;0;0;0;1;0;0;Sacred Offering;Each bead is worn smooth by devotion.<br>;Peace in the quiet prayer
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
@@ -557,6 +555,7 @@ Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;Mind State;Sudden st
 Twisted Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 Twisted Fairyland;🗯️;Unknown Voice;Curse;0;0;0;0;-1;0;Misfortune;Its unsettling words make no sense.<br>;Suffered mental damage.
 
+Twisted Fairyland;🌕;Bloodmoon Shrine;Altar;-2;2;0;0;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;The great hunt calls
 Twisted Fairyland;🥀;Knotted Vines;Altar;-1;0;0;0;4;0;Nature Totem;Tied deliberately\ almost ritualistically.<br>;You became tougher than before.
 Twisted Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;Ritual Place;Blood-crying statues gaze upon the altar.<br>;Embraced ancient gods
 Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
@@ -621,7 +620,6 @@ Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;Wild Beast;Probably has n
 Twisted Fairyland;🦎;Komodo Dragon;Standard;3;3;1;0;-1;0;Massive Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
 Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
-Twisted Fairyland;🪨;Animated Stone;Standard;3;3;1;0;0;0;Malevolent Spell;Perhaps you should just leave it alone.<br>;The rock has bit your finger!
 
 Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
 Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;Twisted Humanoid;Tried so hard\ to not get spotted.<br>;Got your head put on a spike.
@@ -644,6 +642,7 @@ Twisted Fairyland;🦏;Bulky Rhino;Heavy;5;3;1;0;5;0;Wild Beast;Its majestic hor
 Twisted Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner.
 Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner.
 Twisted Fairyland;🐫;Thirsty Inhabitant;Heavy;4;2;2;0;1;0;Seasoned Survivor;Wants to slurp all your fluids.<br>;Got sucked until dry.
+Twisted Fairyland;🪨;Animated Boulder;Heavy;3;3;1;0;0;0;Malevolent Spell;Perhaps you should just leave it alone.<br>;The rock has bit your finger!
 
 Twisted Fairyland;👺;Wicked Imp;Demon;2;2;2;0;3;0;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.
 Twisted Fairyland;👹;Little Devil;Demon;1;3;1;0;3;0;Imminent Threat;Laughs out loud maniacally.<br>;
@@ -659,8 +658,8 @@ Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;Towering Beast;Ro
 Twisted Fairyland;🦏;Horned Juggernaut;Boss-Heavy;4;4;1;0;4;0;Savage Titan;Nothing survives its charge.<br>;Gored like a ragdoll.
 Twisted Fairyland;🦟;Plague Mosquito;Boss-Swift;2;3;3;0;-1;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Heavy;3;3;2;0;-1;0;Mr. Funny Hands;Looks like a freakin' big problem.<br>;Got chewed with dozens of teeth.
-Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the Underworld.
-Twisted Fairyland;🐃;Mythical Buffalo;Boss-Spirit;1;2;2;0;3;0;Cryptid;Looks fairly angry over something.<br>;Impaled by the spirital horns.
+Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the underworld.
+Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;1;2;2;0;3;0;Ethereal Cryptid;Shimmers like a hot air in the summer.<br>;Impaled by spectral horns.
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;Unknown Liquid;Is that even drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power.
 Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;2;0;0;-4;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.
@@ -810,9 +809,6 @@ River of Sorrows;🐙;Vampiric Squid;Demon;4;1;2;0;-1;0;Bloodthisty Cephalopod;A
 
 River of Sorrows;👤;Abandoned Love;Friend👠;-1;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
 
-River of Sorrows;🐡;Spiky Sushi;Consumable;-1;0;0;0;4;0;Artifact;Might get you waaay too high.<br>Might turn even deadly though.;Sheeesh\ that was intense!
-River of Sorrows;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;Artifact;The ultimate source of immense brilliance.<br><b>+5 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
-
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🥤;Coke Cup;Consumable;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -838,7 +834,7 @@ River of Sorrows;🧂;Salt Shaker;Item;0;0;0;0;0;0;Artifact;Provides ability to 
 River of Sorrows;🧪;Unknown Elixir;Item;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 River of Sorrows;📎;The Universal Key;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
 River of Sorrows;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
-River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Intellect</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
+River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
 River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 River of Sorrows;❤️‍🩹;Heart Band-Aid;Item;1;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+1 ❤️ Health</b> and that's it.;
 
@@ -917,7 +913,8 @@ Shrouded Necropolis;🕯️;Ritual Candle;Trap;-1;0;0;0;0;0;Light Source;You kno
 Shrouded Necropolis;🕸️;Sticky Web;Trap-Roll;0;0;-3;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got entangled in sticky webs
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
 
-Shrouded Necropolis;🌕;Full Moon;Altar;-1;2;0;0;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Blood Hunt</b> starts!
+Shrouded Necropolis;☠️;Cult Altar;Altar;-1;0;0;0;0;1;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power
+Shrouded Necropolis;🌕;Blood Moon;Altar;0;1;0;0;-2;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Great Hunt</b> starts!
 Shrouded Necropolis;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;Ritual Place;The stone feels cold to the touch.<br>;
 Shrouded Necropolis;🌌;Starlight Mural;Altar;0;0;0;0;0;2;Ritual Place;The skies will show you the way.<br>;Recived celestial blessing
 
