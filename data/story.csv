@@ -6,9 +6,17 @@ Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Deep Sleep;<b>Can't move
 Depths of Slumber;👹;Vivid Nightmare;Standard;2;1;1;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> once they deplete <b>🟢 Energy</b>.;
 Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind((<br>n/a;Woke up in the middle of nowhere.
-Depths of Slumber;😳;Terrific Realization;Dream;0;0;0;0;0;0;Reality Check;<b>You cannot remember</b> who or where you are.<br>Looks like there's only <b>one way to find out</b>.;Set out on a new adventure!
+Depths of Slumber;😳;Horrific Realization;Dream;0;0;0;0;0;0;Reality Check;<b>You cannot remember</b> who or where you are.<br>Looks like there's only <b>one way to find out</b>.;Set out on a new adventure!
 
 //Debug
+Wildland Meadows;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;Strange Fungus;Drifts in the breeze.<br>;Choked to death by the spores.
+Wildland Meadows;‍🪸;Reef Growth;Stingy;1;3;0;0;-1;0;Sea Inhabitant;Harmless to watch\ dangerous to touch.<br>;Killed by a mere touch.
+Wildland Meadows;🦔️;Spooked Hedgehog;Stingy;1;0;2;1;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got severely pierced.
+Wildland Meadows;🦨;Sneaky Skunk;Toxic;1;1;2;0;1;0;Wild Animal;Sprays a foul cloud.<br>;Got sprayed with stinky stuff.
+
+Wildland Meadows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;
+Wildland Meadows;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
+
 
 //NOTE: Props are automatically after any enemy encounter
 
@@ -78,8 +86,8 @@ Shrouded Necropolis;👰🏻‍♀️;Defeated Bride;Friend;0;0;0;0;0;0;Forgotte
 Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;Forgotten Love;The last slivers of her life are slipping away.<br>Seems like you have finally put her to rest.;"Don't you... ever forget me."
 
-Shrouded Necropolis;😟;Intrusive Thoughts;Dream;0;0;0;0;0;0;Breaking Point;The time has come to <b>acknowledge your sins</b>.<br>You cannot run away from the past anymore.;The inner thoughts took over.
-Shrouded Necropolis;😳;Horrific Realization;Dream;0;0;0;0;0;0;Painful Truth;Ohh... You finally remember what you've done.<br><b>That nefarious witchery did not go well</b>.;Everything seems so clear now.
+Shrouded Necropolis;😟;Intrusive Thoughts;Dream;0;0;0;0;0;0;Disturbing Feeling;The time has come to <b>acknowledge your sins</b>.<br>You cannot run away from the past anymore.;The inner thoughts took over.
+Shrouded Necropolis;😦;Horrific Realization;Dream;0;0;0;0;0;0;Breaking Point;Ohh... You finally remember what you've done.<br><b>That nefarious witchery did not go well</b>.;Everything seems so clear now.
 Shrouded Necropolis;😱;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;<b>You corrupted the whole world around you!</b><br>Why couldn't you let her go in peace.;You've revealed the horrific truth.
 
 //Auxiliary Space
