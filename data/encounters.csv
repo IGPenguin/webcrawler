@@ -52,7 +52,7 @@ Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;0;Minor Inconvenience
 Wildland Meadows;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Got pricked by sharp thorns.
 Wildland Meadows;🪵;Fallen Trunk;Trap-Roll;0;0;0;0;0;0;0;Natural Debris;A giant trunk blocks the path.<br>;There's no other way ahead.
 
-Wildland Meadows;🐀;Grassland Mouse;Small;1;0;2;0;-1;0;0;Tiny Rodent;Running around\ looking for seeds.br>;Contracted a deadly disease.
+Wildland Meadows;🐀;Grassland Mouse;Small;1;0;2;0;-1;0;0;Tiny Rodent;Running around\ looking for seeds.<br>;Contracted a deadly disease.
 Wildland Meadows;🐁;Albino Mouse;Small;1;0;2;0;-1;0;0;Tiny Rodent;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Wildland Meadows;🦎;Quick Lizard;Small;1;0;1;0;0;0;0;Sneaky Reptile;Dashes quickly between rocks.<br>;Lost sight of it\ paid the price.
 Wildland Meadows;🪳;Creeping Cockroach;Small;1;0;1;0;-1;0;0;Annoying Insect;Scuttles in the undergrowth.<br>;Crawled in the ear and ended it all.
@@ -74,7 +74,7 @@ Wildland Meadows;🐜;Worker Ant;Small;1;0;1;0;-1;0;0;Insect;Minds its own busin
 Wildland Meadows;🦗;Chirping Cricket;Small;1;0;0;0;-1;0;0;Annoying Insect;Makes annoying loud sounds.<br>;The noise exploded your head!
 
 Wildland Meadows;🐓;Patrolling Rooster;Pet;1;1;2;0;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Convinced it to join you.
-Wildland Meadows;🐢;Wandering Turtle;Pet;1;0;1;0;0;0;0;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
+Wildland Meadows;🐢;Wandering Turtle;Pet;1;0;1;0;0;0;1;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
 Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;0;Mysterious Bird;Croaks in a haunting tone.<br>;The bird has joined your side.
 Wildland Meadows;🦦;Cheeky Otter;Pet;1;1;1;0;0;0;0;Playful Critter;Seems to enjoy total chaos.<br>;Slipped into your party.
 Wildland Meadows;🐈;Savannah Cat;Pet;1;0;2;0;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
@@ -91,7 +91,7 @@ Wildland Meadows;🐓;Raging Cock;Standard;2;1;2;0;10;0;0;Crazed Animal;Looks fu
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
 Wildland Meadows;🦥;Chill Sloth;Standard;2;0;1;1;1;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
 
-Wildland Meadows;🦨;Sneaky Skunk;Toxic;1;0;2;0;1;0;0;Wild Animal;Sprays a foul cloud when spooked.<br>;Died from the suffocating stench.
+Wildland Meadows;🦨;Sneaky Skunk;Toxic;1;0;2;0;1;0;0;Wild Animal;Sprays a foul cloud when spooked.<br>;Suffered from terrible stench.
 Wildland Meadows;🦔️;Spooked Hedgehog;Stingy;1;0;2;1;0;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
 Wildland Meadows;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Confused Insect;Flies in a weird pattern.<br>;Ouch! That stinged.
 

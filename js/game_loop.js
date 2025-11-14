@@ -950,7 +950,7 @@ function redraw(){
       break;
     case "Recruit":
     case "Standard":
-      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Normal",colorWhite);
+      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Standard",colorWhite);
       if (areaName.includes("Depths of Slumber"))enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed); //Tutorial hack
       enemyStatusString=appendEnemyStats();
       break;
@@ -2861,6 +2861,7 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
   var typeMultiplier=1;
 
   //Per type XP multipliers
+  if (enemyType=="Hot"||enemyType=="Stingy"||enemyType=="Toxic"||enemyType=="Tough") typeMultiplier=1.1;
   if (enemyType=="Swift"||enemyType=="Heavy") typeMultiplier=1.2;
   if (enemyType=="Demon"||enemyType=="Spirit"||enemyType=="Undead") typeMultiplier=1.4;
   if (enemyBossType.includes("Boss")) typeMultiplier=1.6;
