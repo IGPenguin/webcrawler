@@ -85,10 +85,11 @@ Wildland Meadows;🐥;Lost Chick;Pet;1;0;1;0;-1;0;Cute Animal;Runs around consta
 Wildland Meadows;🕊️;Frail Dove;Pet;1;0;2;1;0;0;Symbol of Peace;Carries hope in every flap.<br>;Follows your shadow.
 
 Wildland Meadows;🐐;Wild Goat;Standard;2;1;1;0;10;0;Wild Beast;Capable of unfortunate headbutts.<br>;Impaled by its horns.
-Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
-Wildland Meadows;🦥;Chill Sloth;Standard;1;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
 Wildland Meadows;🦫;Timber Terror;Standard;2;1;1;0;2;0;Wild Beast;Chomps anything in its reach.<br>;Dragged you to a dam of bones.
 Wildland Meadows;🦃;Frenzied Turkey;Standard;2;1;1;0;10;0;Domestic Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Wildland Meadows;🐓;Raging Cock;Standard;2;1;2;0;10;0;Crazed Animal;Looks funny\ but better don't underestimate it.<br>;Got your brain pecked out.
+Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
+Wildland Meadows;🦥;Chill Sloth;Standard;2;0;1;1;1;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
 
 Wildland Meadows;🦨;Sneaky Skunk;Toxic;1;0;2;0;1;0;Wild Animal;Sprays a foul cloud when spooked.<br>;Died from the suffocating stench.
 Wildland Meadows;🦔️;Spooked Hedgehog;Stingy;1;0;2;1;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Got a new travel buddy!
@@ -98,17 +99,15 @@ Wildland Meadows;🦆;Aggressive Duck;Swift;1;1;2;0;0;0;Wild Animal;Goes straigh
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by its horns.
 Wildland Meadows;🦌;Grazing Deer;Heavy;2;0;2;0;3;0;Wild Animal;Getting ready for some ramming.<br>;Rammed till the last breath.
 
-Wildland Meadows;🐂;Tired Bull;Boss-Heavy;3;0;1;0;1;0;Domestic Animal;Does not give a damn anymore.<br>;Impaled by both horns at once.
-
-Wildland Meadows;🐓;Raging Cock;Boss-Standard;2;1;2;0;10;0;Crazed Animal;Looks funny\ but better don't underestimate it.<br>;Got your brain pecked out.
 Wildland Meadows;🦅;Sky Tyrant;Boss-Swift;1;2;1;0;3;0;Winged Horror;Aims straight for your eyes.<br>;Talons tore your throat apart.
+Wildland Meadows;🐍;Venomous Viper;Boss-Swift;1;2;1;0;-1;0;Fearsome Reptile;Fast\ precise and extremely deadly.<br>;Injected deadly venom.
 Wildland Meadows;🦢;Pond Queen;Boss-Standard;2;1;2;0;2;0;Feathered Fury;Looks calm\ but might surprise you.<br>;Choked by the long neck.
-Wildland Meadows;🐍;Venomous Viper;Boss-Toxic;1;2;1;0;-1;0;Fearsome Reptile;Fast\ precise and extremely deadly.<br>;Injected deadly venom.
 Wildland Meadows;🦡;Honey Badger;Boss-Heavy;2;1;2;0;3;0;Wild Animal;Fierce\ vigorous and witty.<br>;Got freaking destroyed.
-Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Getting ready for some ramming.<br>;Rammed till the last breath.
-Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Loud stomps follow its steps.<br>;Got stomped to death.
-Wildland Meadows;🐗;Mama Warthog;Boss-Heavy;2;2;1;0;-1;0;Wild Animal;Gets more nervous as you approach.<br>;Got totally torn apart.
-Wildland Meadows;🦌;Horned Nightmare;Boss-Heavy;2;2;1;0;-1;0;Beast of the Forest;Antlers like towers of bone.<br>;Impaled on the forest crown.
+Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Getting ready for some ramming.<br>;Rammed till releasing the last breath.
+Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;1;2;0;1;0;Wild Animal;Loud stomps follow its steps.<br>;Suffered a fatal blunt trauma.
+Wildland Meadows;🐗;Mama Warthog;Boss-Heavy;2;2;1;0;-1;0;Wild Animal;Gets more nervous as you approach.<br>;Got torn apart by tusks.
+Wildland Meadows;🦌;Horned Nightmare;Boss-Heavy;2;2;1;0;-1;0;Beast of the Forest;Antlers like towers of bone.<br>;Got stomped to death by hooves.
+Wildland Meadows;🐂;Tired Bull;Boss-Heavy;3;0;1;0;1;0;Domestic Animal;Does not give a damn anymore.<br>;Got impaled by both horns at once.
 
 Wildland Meadows;🏵️;Symbol of Life;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Wildland Meadows;🎨;Painter's Palette;Item;0;0;0;0;4;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
@@ -126,7 +125,6 @@ Wildland Meadows;🧤;Riding Gloves;Item;0;0;1;0;0;0;Specialized Gear;Increases 
 Wildland Meadows;👢;Riding Boots;Item;0;0;1;0;0;0;Specialized Gear;Enables better stability in action.<br>Provides <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Wildland Meadows;🧣;Red Scarf;Item;1;0;0;0;0;0;Warming Accessory;Additional protection for your neck.<br>Provides <b>+1 ❤️ Health</b>.;Feels really warm.
 Wildland Meadows;🔔;Lucky Chime;Item;0;0;0;1;-1;0;Annoying Trinket;Makes annoying sound every time it moves.<br>Provides <b>+1 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.;Hopefully this works
-Wildland Meadows;🔔;Unlucky Chime;Item;0;0;0;-1;-1;0;Cursed Trinket;Makes annoying sound every step you take.<br><b>Does not offer any advantage.</b>;Aghhh\ did you think!?
 Wildland Meadows;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and an insight((<br>n/a;Should help to remember.
 Wildland Meadows;🗝️;Lost Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Wildland Meadows;🗝️;Shiny Key;Item;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
@@ -339,7 +337,7 @@ Forsaken Village;🦝;Rabid Coon;Standard;2;2;1;0;2;0;Sickly Animal;Kinda cute o
 Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
 Forsaken Village;🐝;Flying Stinger;Stingy;1;1;1;0;-1;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
 Forsaken Village;🐀;Plague Rat;Toxic;2;1;2;0;-1;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-Forsaken Village;🦨;Sneaky Skunk;Toxic;1;1;3;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Died of the horrendous stench.
+Forsaken Village;🦨;Sneaky Skunk;Toxic;1;2;3;0;1;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
 Forsaken Village;🪴;Cursed Sprout;Toxic;1;0;1;1;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!
