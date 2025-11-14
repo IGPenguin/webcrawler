@@ -662,7 +662,8 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 0: //Prop/Small/Lockbox
       if (logCall) logGenerator("prop/small");
-      var type=chooseFrom(["Prop","Prop","Small"]) // 1/3 chance for small
+      var type="Prop"
+      if (procAbilityChance("",25+playerLck)) type="Small"; //25% Small
       pushEncounter(getRandomEncounter(["Prop"]));
 
       if (type=="Small") {
@@ -685,8 +686,8 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 2: //Easy Encounter
       if (logCall) logGenerator("easy/pet");
-      var encounterPool=["Standard"]
-      generateNextEncounters(0,false); //Prop or Contained Small
+      var encounterPool=["Small","Standard"]
+      //generateNextEncounters(0,false); //Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) encounterPool = ["Pet"]; //5% pet
       pushEncounter(getRandomEncounter(encounterPool));
       break;
@@ -694,7 +695,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
     case 3: //Mid Encounter
       if (logCall) logGenerator("mid");
       var encounterPool=["Standard","Stingy","Toxic","Hot"]
-      generateNextEncounters(0,false); //Prop or Contained Small
+      if (procAbilityChance("",50+playerLck)) generateNextEncounters(0,false); //50% Prop or Contained Small
       if (procAbilityChance("",10+playerLck)) encounterPool = ["Recruit","Pet"]; // 10% recruit/pet
       if (procAbilityChance("",3+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //3% item
       if (procAbilityChance("",10+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //10% consumable
@@ -703,7 +704,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 4: //Hard Encounter
       if (logCall) logGenerator("hard");
-      generateNextEncounters(0,false); //Prop or Contained Small
+      if (procAbilityChance("",70+playerLck)) generateNextEncounters(0,false); //70% Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //5% item
       if (procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //30% consumable
       pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
@@ -728,7 +729,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 11: //Any Enemy
       if (logCall) logGenerator("any");
-      generateNextEncounters(0,false); //Prop or Contained Small
+      if (procAbilityChance("",50+playerLck)) generateNextEncounters(0,false); //50% Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //5% item
       if (procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //20% consumable
       pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet","Swift","Heavy","Tough","Demon","Spirit"]));
@@ -736,18 +737,26 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 20: //House Small
       if (logCall) logGenerator("h-small");
-      generateNextEncounters(0,false); //Prop or Contained Small
-      if (procAbilityChance("",10+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //10% item
-      if (procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //20% consumable
-      pushEncounter(getRandomEncounter(["Standard","Recruit"]));
+      if (procAbilityChance("",10+playerLck)) { //10% item
+        pushEncounter(getRandomEncounter(["Item"]))
+      } else if (procAbilityChance("",20+playerLck)) { //20% consumable
+        pushEncounter(getRandomEncounter(["Consumable"]));
+      } else {
+        generateNextEncounters(0,false); //Prop or Contained Small
+      }
+      pushEncounter(getRandomEncounter(["Standard","Recruit","Stingy","Toxic","Hot","Tough"]));
       pushEncounter(getRandomEncounter(["Container-2"]));
       break;
 
     case 30: //House Mid
       if (logCall) logGenerator("h-mid");
-      generateNextEncounters(0,false); //Prop or Contained Small
-      if (procAbilityChance("",10+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //10% item
-      if (procAbilityChance("",20+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //20% consumable
+      if (procAbilityChance("",15+playerLck)) { //15% item
+        pushEncounter(getRandomEncounter(["Item"]))
+      } else if (procAbilityChance("",25+playerLck)) { //25% consumable
+        pushEncounter(getRandomEncounter(["Consumable"]));
+      } else {
+        generateNextEncounters(0,false); //Prop or Contained Small
+      }
 
       var possibleEncounters=["Friend","Recruit","Standard","Stingy","Toxic","Hot","Tough","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep","Altar"];
       var firstEncounter=[getRandomEncounter(possibleEncounters)];
@@ -763,13 +772,13 @@ function generateNextEncounters(generatorID=0, logCall=true){
     case 31: //House Locked
       if (logCall) logGenerator("h-lock");
       var type=chooseFrom(["Item","Pet","Friend"]);
-      if (procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //30%
       if (type=="Item") {
         pushEncounter(getRandomEncounter([type],["Artifact"]));
       } else {
         pushEncounter(getRandomEncounter([type,"Checkpoint"]));
       }
       pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet","Swift","Heavy","Tough","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Locked-Container-3"]));
       break;
 
@@ -789,7 +798,6 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 50: //House Big
       if (logCall) logGenerator("h-big");
-
       if (procAbilityChance("",30+playerLck)) { //30% item, 100% consumable
         pushEncounter(getRandomEncounter(["Consumable"]));
         pushEncounter(getRandomEncounter(["Item"]))
@@ -1021,6 +1029,7 @@ function redraw(){
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
+      enemyStatusString=decorateStatusText("⚫️","Obstacle",colorSemiDarkGrey);
       if (totalBonus>0) enemyStatusString=decorateStatusText("🎀","Curiosity",colorLightPink);
       if (totalMalus<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
       break;
@@ -2154,6 +2163,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               encounterUsed=true;
             }
 
+            if (totalBonus<=0 && totalMalus>=0) displayPlayerCannotEffect();
 
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta

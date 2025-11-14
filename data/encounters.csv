@@ -48,9 +48,9 @@ Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;Brief Moment;Feels like 
 
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-1;0;Disgusting Stench;Terrible stench is filling the air.<br>;Suffered some nasty consequences.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Stepped on some hidden spikes.
-Wildland Meadows;🪵;Fallen Trunk;Trap-Roll;0;0;0;0;0;0;Natural Obstacle;A giant trunk blocks the path.<br>;There's no other way ahead.
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
 Wildland Meadows;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Got pricked by sharp thorns.
+Wildland Meadows;🪵;Fallen Trunk;Trap-Roll;0;0;0;0;0;0;Natural Debris;A giant trunk blocks the path.<br>;There's no other way ahead.
 
 Wildland Meadows;🐀;Grassland Mouse;Small;1;0;2;0;-1;0;Tiny Rodent;Running around\ looking for seeds.br>;Contracted a deadly disease.
 Wildland Meadows;🐁;Albino Mouse;Small;1;0;2;0;-1;0;Tiny Rodent;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
