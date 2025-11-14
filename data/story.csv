@@ -1,85 +1,85 @@
-area;emoji;name;type;hp;atk;sta;lck;int;mgk;note;desc;message
-Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;End of the Line;<b>✨ Revive</b> your soul to start a new adventure.<br><b>🦆 Tweet</b> this run to appear in credits.;
+area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
+Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;0;End of the Line;<b>✨ Revive</b> your soul to start a new adventure.<br><b>🦆 Tweet</b> this run to appear in credits.;
 
 //Tutorial Dreams
-Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;Deep Sleep;<b>Can't move a muscle</b>\ you're feeling too weak.<br>Try using <b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.;Caught off guard by a bad thought.
-Depths of Slumber;👹;Vivid Nightmare;Standard;2;1;1;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> once they deplete <b>🟢 Energy</b>.;
-Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real
-Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind((<br>n/a;Woke up in the middle of nowhere.
+Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;0;Deep Sleep;<b>Can't move a muscle</b>\ you're feeling too weak.<br>Try using <b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.;Caught off guard by a bad thought.
+Depths of Slumber;👹;Vivid Nightmare;Standard;2;1;1;0;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> once they deplete <b>🟢 Energy</b>.;
+Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real
+Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind((<br>n/a;Woke up in the middle of nowhere.
 
 //Debug
 
 //Wildland Meadows
-Wildland Meadows;😳;Horrific Realization;Dream;0;0;0;0;0;0;Reality Check;<b>You cannot remember</b> who or where you are.<br>Looks like there's only <b>one way to find out</b>.;Set out on a new adventure!
-Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Wildland Meadows;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-Wildland Meadows;❓;Mid House;Generator-30;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You cannot remember</b> who or where you are.<br>Looks like there's only <b>one way to find out</b>.;Set out on a new adventure!
+Wildland Meadows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;❓;Mid House;Generator-30;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Wildland Meadows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-Wildland Meadows;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Wildland Meadows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Wildland Meadows;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Wildland Meadows;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Forsaken Village
-Forsaken Village;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Twisted Fairyland
-Twisted Fairyland;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Twisted Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough to keep you afloat.<br>;Paddled towards the horizon.
+Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough to keep you afloat.<br>;Paddled towards the horizon.
 
 //River of Sorrows
-River of Sorrows;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Shrouded Necropolis
-Shrouded Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Shrouded Necropolis;👤;Lethargic Shade;Friend;0;0;0;0;0;0;Unknown Being;Looks like they have not noticed you... yet.<br>Their pale skin looks somehow innocent.;"Oh... You finally came back."
-Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;👰🏻‍♀️;Defeated Bride;Friend;0;0;0;0;0;0;Forgotten Love;You were my whole world... I loved you!<br>How could you do this to me?;You never should have come here!
-Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;Forgotten Love;The last slivers of her life are slipping away.<br>Seems like you have finally put her to rest.;"Don't you... ever forget me."
+Shrouded Necropolis;👤;Lethargic Shade;Friend;0;0;0;0;0;0;0;Unknown Being;Looks like they have not noticed you... yet.<br>Their pale skin looks somehow innocent.;"Oh... You finally came back."
+Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;👰🏻‍♀️;Defeated Bride;Friend;0;0;0;0;0;0;0;Forgotten Love;You were my whole world... I loved you!<br>How could you do this to me?;You never should have come here!
+Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;0;Forgotten Love;The last slivers of her life are slipping away.<br>Seems like you have finally put her to rest.;"Don't you... ever forget me."
 
-Shrouded Necropolis;😟;Intrusive Thoughts;Dream;0;0;0;0;0;0;Disturbing Feeling;The time has come to <b>acknowledge your sins</b>.<br>You cannot run away from the past anymore.;The inner thoughts took over.
-Shrouded Necropolis;😦;Horrific Realization;Dream;0;0;0;0;0;0;Breaking Point;Ohh... You finally remember what you've done.<br><b>That nefarious witchery did not go well</b>.;Everything seems so clear now.
-Shrouded Necropolis;😱;Boneshaking Panic;Dream;0;0;0;0;0;0;Eternal Suffering;<b>You corrupted the whole world around you!</b><br>Why couldn't you let her go in peace.;You've revealed the horrific truth.
+Shrouded Necropolis;😟;Intrusive Thoughts;Dream;0;0;0;0;0;0;0;Disturbing Feeling;The time has come to <b>acknowledge your sins</b>.<br>You cannot run away from the past anymore.;The inner thoughts took over.
+Shrouded Necropolis;😦;Horrific Realization;Dream;0;0;0;0;0;0;0;Breaking Point;Ohh... You finally remember what you've done.<br><b>That nefarious witchery did not go well</b>.;Everything seems so clear now.
+Shrouded Necropolis;😱;Boneshaking Panic;Dream;0;0;0;0;0;0;0;Eternal Suffering;<b>You corrupted the whole world around you!</b><br>Why couldn't you let her go in peace.;You've revealed the horrific truth.
 
 //Auxiliary Space
-Auxiliary Space;👾;Stack Overflow;Death;0;0;0;0;0;0;The End (for now);<b>You just finished the "Stay Dead" demo!</b><br>Provide feedback using the <b>💌 Review</b> button.;
-Auxiliary Space;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;XXX;XXX;XXX
+Auxiliary Space;👾;Stack Overflow;Death;0;0;0;0;0;0;0;The End (for now);<b>You just finished the "Stay Dead" demo!</b><br>Provide feedback using the <b>💌 Review</b> button.;
+Auxiliary Space;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;0;XXX;XXX;XXX

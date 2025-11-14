@@ -31,6 +31,7 @@ var luckInterval = 33; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerAtkBonus;
+var playerDef;
 var playerXP;
 var playerLevel;
 var playerXPThreshold;
@@ -61,6 +62,7 @@ function renewPlayer(){ //Default values
   playerMgkMax = 0;
   playerAtk = 1;
   playerAtkBonus = 0;
+  playerDef = 0;
   playerLck = 0;
   playerInt = 1;
   playerXP=0;
@@ -252,7 +254,7 @@ var enemySta;
 var enemyLck;
 var enemyInt;
 var enemyMgk;
-var enemyArmor;
+var enemyDef;
 var enemyType;
 var previousEnemyType;
 var enemyContainerNumber = 0;
@@ -284,7 +286,7 @@ function encounterRenew(){
   enemyAtkBonus = 0;
   enemyIntBonus = 0;
   enemyMgkLost = 0;
-  enemyArmor = 0;
+  enemyDef = 0;
   enemyBossType = "";
   enemyCursed=false;
   encounterUsed=false;
@@ -539,8 +541,9 @@ function loadEncounter(index, fileLines = linesStory){
   enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
-  enemyTeam = String(selectedLine.split(",")[10].split(":")[1]);
-  enemyDesc = String(selectedLine.split(",")[11].split(":")[1]);
+  enemyDef = String(selectedLine.split(",")[10].split(":")[1]);
+  enemyTeam = String(selectedLine.split(",")[11].split(":")[1]);
+  enemyDesc = String(selectedLine.split(",")[12].split(":")[1]);
   if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
   if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
     enemyDesc=enemyDesc.replaceAll("n/a","");
@@ -561,7 +564,7 @@ function loadEncounter(index, fileLines = linesStory){
   }
   enemyDesc = enemyDesc.replaceAll("\\",",");
   enemyDesc = enemyDesc.replaceAll("((",":");
-  enemyMsg = String(selectedLine.split(",")[12].split(":")[1]).replaceAll("\\",",");
+  enemyMsg = String(selectedLine.split(",")[13].split(":")[1]).replaceAll("\\",",");
 
   switch (enemyType){
     case "Small":
@@ -906,7 +909,7 @@ function redraw(){
   enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"» "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
-  var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk];
+  var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef];
   var effectArrayBonus=effectArray.filter(function(x){ return x > 0 });
   var effectArrayMalus=effectArray.filter(function(x){ return x < 0 });
   totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
@@ -968,7 +971,9 @@ function redraw(){
       enemyStatusString=appendEnemyStats();
       break;
     case "Tough":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🐚","Tough",colorSemiDarkGrey);
+      var enemyDefString = "";
+      if (enemyDef>1) enemyDefString = romanNumber(enemyDef);
+      enemyTeamUIElement.innerHTML=decorateStatusText("🐚","Tough "+enemyDefString,colorSemiDarkGrey);
       enemyStatusString=appendEnemyStats();
       break;
     case "Hot":
@@ -1152,6 +1157,9 @@ function appendEnemyStats(){
   if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta-enemyStaLost);}
     if (enemyStaLost > 0) { enemyStats += emptySymbol.repeat(enemyStaLost); } //YOLO
 
+  //if (enemyDef > 0) { enemyStats += "&nbsp;&nbsp;🔰 " + fullSymbol.repeat(enemyDef);} //Hmm... maybe not?
+    //if (enemyDefLost > 0) { enemyStats += emptySymbol.repeat(enemyDefLost); }
+
   if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
     if (enemyMgkLost > 0) { enemyStats += emptySymbol.repeat(enemyMgkLost); } //YOLO
 
@@ -1242,7 +1250,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg,true,false);
             break;
 
           case "Spirit":
@@ -1280,8 +1288,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Tough":
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
-            if (enemyType=="Tough") enemyArmor=1; //TODO: Dynamic "Tough-2, Tough-3"
-            enemyHit(playerAtk+playerAtkBonus-enemyArmor);
+            //if (enemyType=="Tough") enemyDef=1; //Hehe, should Tough have something špeci?
+            enemyHit(playerAtk+playerAtkBonus-enemyDef);
 
             if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
@@ -1294,8 +1302,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((parseInt(enemySta)-parseInt(enemyStaLost) > 0) && !enemyAttacked) {
               displayEnemyEffect("🌀");
               if ((enemyAtk+enemyAtkBonus)>0){
-                enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+enemyAtk+" 💔","n/a");
-                playerHit(enemyAtk);
+                enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔","n/a");
+                playerHit(enemyAtk+enemyAtkBonus);
               } else {
                 enemyStaminaChangeMessage(-1,"They barely dodged your attack.","They needed to catch a breath.");
               }
@@ -1345,7 +1353,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Curse":
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
             break;
 
           case "Standard":
@@ -1508,7 +1516,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (!encounterUsed) {
               if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
               if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
-              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg,true,false);
               }
             //nextEncounter(); //Blocks the path ahead
             displayPlayerCannotEffect();
@@ -1925,7 +1933,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   break;
                 }
 
-                playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg+" -1 💔",true,false);
+                playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg+" -1 💔",true,false);
                 playerGainXP(1,10*playerLevel,"");
 
                 isFishing=false
@@ -1941,7 +1949,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   displayPlayerCannotEffect();
                   break;
                 }
-                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg,true,false);
                 displayPlayerEffect("✨")
                 displayPlayerGainedEffect();
                 isFishing=false
@@ -1972,7 +1980,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Gained permanent bonus <b>+2 🍀 Luck</b>.");
             displayPlayerCannotEffect();
             playerName=getLuckyName();
-            playerChangeStats(0, 0, 0, 2, 0, 0,"n/a",false,false);
+            playerChangeStats(0, 0, 0, 2, 0, 0,0,"n/a",false,false);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -2041,7 +2049,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (playerMgk >= enemyMgk){
             var gainedXP=playerGainXP(1,25*playerLevel,"");
             logPlayerAction(actionString,"Forced revealed their secrets -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyMsg);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg);
           } else {
             logPlayerAction(actionString,"Could not overpower their will -1 🔵");
             displayPlayerCannotEffect();
@@ -2167,7 +2175,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg,true,false);
             break;
 
           case "Stingy":
@@ -2298,7 +2306,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             isFishing=false;
             if (playerHp==0) break;
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
             break;
 
           case "Small":
@@ -2365,7 +2373,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+2 🔵 Mana</b>.");
             displayPlayerCannotEffect();
             playerName=getHatredName();
-            playerChangeStats(-1, 0, 0, 0, 0, 2,"n/a",false,false);
+            playerChangeStats(-1, 0, 0, 0, 0, 2,0,"n/a",false,false);
             playerHit(0,false,true);
             isFishing=false;
             animateFlipNextEncounter();
@@ -2431,7 +2439,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=enemyEmoji
               var gainedXP=playerGainXP(1.5,0,"");
-              enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,"Joined forces together",false); //Cannot get health/sta/int from a recruit
+              enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk, 0,"Joined forces together",false); //Cannot get health/sta/int/def from a recruit
               logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
               break;
             }
@@ -2515,7 +2523,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 nextEncounter();
                 isFishing=false;
               } else {
-                playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
+                playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold),true);
                 isFishing=false;
                 displayPlayerEffect("✨");
               }
@@ -2582,7 +2590,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
 
           case "Curse": //Waiting triggers the curse
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyMsg);
+            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
             break;
 
           case "Standard": //You get hit if they have stamina
@@ -2635,7 +2643,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
-            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyMsg,true,false);
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg,true,false);
             break;
 
           case "Dream":
@@ -2748,14 +2756,15 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
     damage+=2;
   }
 
-  if (damage<=0){
+  if (damage<=0) {
     hitMsg="Your attack had no effect! ❌";
     displayEnemyEffect("");
-    if (enemyArmor>0) {
-      if (enemyArmor>=damage){
-        hitMsg="Your attack was repelled! ️🔰";
-        displayEnemyEffect("🔰");
-      }
+  }
+  if (enemyDef>0 && !magicType) {
+    hitMsg=hitMsg+" ("+enemyDef+" 🔰)";
+    if (damage<=0){
+      hitMsg="Your attack was fully repelled! ("+enemyDef+" ️🔰)";
+      displayEnemyEffect("🔰");
     }
   }
 
@@ -2798,7 +2807,7 @@ function enemyJoinedParty(){
   var gainedXP=playerGainXP(1.5,0,"");
   playerKarma++;
   enemyMsg=enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold)
-  playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,enemyMsg); //Cannot get health/sta/int from a pet
+  playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,0,enemyMsg); //Cannot get health/sta/int/def from a pet
 }
 
 function enemyKnockedOut(){
@@ -2898,7 +2907,7 @@ function enemyAttackOrRest(message="",isGrab=false){
     }
 
     if (enemyType!="Demon"){
-      staminaChangeMsg = "The enemy attacked dealing -"+(enemyAtk+enemyAtkBonus)+" 💔"
+      staminaChangeMsg = "The enemy attacked you dealing -"+(enemyAtk+enemyAtkBonus)+" 💔"
     } else {
         staminaChangeMsg = "The enemy syphoned some health -"+(enemyAtk+enemyAtkBonus)+" 💔";
         if (enemyHpLost >0) {enemyHpLost-=1;}
@@ -3229,8 +3238,8 @@ function playerUseMagic(magic, message = ""){
   }
 }
 
-function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,gainedString = "Might come in handy later.",logMessage=true,moveForward=true,actionIcon=actionString){
-  var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk;
+function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,bonusLck=enemyLck,bonusInt=enemyInt,bonusMgk=enemyMgk,bonusDef=enemyDef,gainedString = "Might come in handy later.",logMessage=true,moveForward=true,actionIcon=actionString){
+  var totalBonus=bonusHp+bonusAtk+bonusSta+bonusLck+bonusInt+bonusMgk+bonusDef;
   var changeSign=" +";
   if (gainedString=="") gainedString="Might come in handy later."
 
@@ -3324,6 +3333,21 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     }
     playerAtk += parseInt(bonusAtk);
     gainedString += changeSign+bonusAtk + " ⚔️";
+  }
+
+  if (bonusDef != 0){
+    if (bonusDef<0) {
+      changeSign=" ";
+      displayPlayerCannotEffect();
+    } else {
+      changeSign=" +";
+      displayPlayerGainedEffect();
+    }
+    playerDef += parseInt(bonusDef);
+    if (bonusDef<0) playerDef=0;
+    gainedString += changeSign+bonusDef + " 🔰";
+    displayPlayerEffect("🔰");
+    displayPlayerGainedEffect();
   }
 
   if (bonusHp != 0) {
@@ -3559,22 +3583,6 @@ function checkPlayerHasItem(itemArray=validBaits){
     }
   });
   return bait;
-}
-
-//Technical
-
-function hasAnyOf(array=[],item){
-  return array.includes(item);
-}
-
-function chooseFrom(array=[]){
-  var options = array.length
-  var choice = array[Math.floor(Math.random() * options)];
-  return choice;
-}
-
-function randomNumber(min=0,max=1){
-  return min+Math.floor(Math.random() * max);
 }
 
 //End Game
@@ -4156,4 +4164,34 @@ function vibrateButtonPress(){
 async function actionVibrateFeedback(buttonID){
   vibrateButtonPress();
   await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
+}
+
+//Technical
+
+function hasAnyOf(array=[],item){
+  return array.includes(item);
+}
+
+function chooseFrom(array=[]){
+  var options = array.length
+  var choice = array[Math.floor(Math.random() * options)];
+  return choice;
+}
+
+function randomNumber(min=0,max=1){
+  return min+Math.floor(Math.random() * max);
+}
+
+function romanNumber (num) {
+    if (isNaN(num))
+        return NaN;
+    var digits = String(+num).split(""),
+        key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+               "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+               "","I","II","III","IV","V","VI","VII","VIII","IX"],
+        roman = "",
+        i = 3;
+    while (i--)
+        roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+    return Array(+digits.join("") + 1).join("M") + roman;
 }
