@@ -686,7 +686,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 2: //Easy Encounter
       if (logCall) logGenerator("easy/pet");
-      var encounterPool=["Small","Standard"]
+      var encounterPool=["Standard","Stingy"]
       //generateNextEncounters(0,false); //Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) encounterPool = ["Pet"]; //5% pet
       pushEncounter(getRandomEncounter(encounterPool));
