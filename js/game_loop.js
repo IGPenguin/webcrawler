@@ -642,7 +642,7 @@ function loadEncounter(index, fileLines = linesStory){
 
     if (enemyAtk<=playerLove) {
       if (enemyAtk>0) {
-        logAction("♥️ ▸ "+enemyEmoji+" Your true love has calmed her down.")
+        logAction("♥️ ▸ "+enemyEmoji+" <text style=color:"+colorGold+";>Your true love has calmed her down.</text>")
         enemyAtkBonus=-enemyAtk
         enemyName="Merciful Bride"
         enemyMsg="There's still hope for this to end well."
@@ -651,7 +651,7 @@ function loadEncounter(index, fileLines = linesStory){
       }
       if (enemyName.includes("Defeated Bride")) {
         encounterIndex++; //Skip second phase
-        enemyMsg="I'm glad you didn't forget me."
+        enemyMsg="I'm glad that you didn't forget me."
       }
     } else if (playerLove>0){
       enemyAtkBonus-=playerLove;
@@ -1326,14 +1326,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            if (enemyType.includes("Container") && !enemyType.includes("Locked")){
+            if (enemyType.includes("Container")){
               var openMessage = "Smashed it wide open -1 🟢";
-              if (enemyMsg != ""){
-                openMessage = enemyMsg.replaceAll(".","")+" -1 🟢";
-              }
-              logPlayerAction(actionString,openMessage);
+
+              enemyHp-=playerAtk;
               displayEnemyEffect("〽️");
-              nextEncounter();
+              displayEnemyCannotEffect();
+
+              if (enemyType.includes("Locked")&&(enemyHp>(-3))){
+                openMessage = "Smashed it, but it still holds -1 🟢";
+                logPlayerAction(actionString,openMessage);
+              } else {
+                logPlayerAction(actionString,openMessage);
+                nextEncounter();
+              }
               break;
             }
             logPlayerAction(actionString,"Your attack had no effect -1 🟢");
