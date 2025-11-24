@@ -23,6 +23,7 @@ Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;Artifact;The ultimate sour
 Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;Artifact;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.
 
 Fishing;👒;Lucky Fishing Hat;Item;0;0;0;3;0;0;0;Signature Look;Originally comes from a goblin fishing event.<br>Provides <b>+3 🍀 Luck</b>.;Feels a bit less serious.
+Fishing;🏅;Olympic Gold;Item;0;0;0;0;0;3;0;Accessory;Awarded to the best of the best.<br>Provides <b>+3 🧠 Charisma</b>;
 
 Fishing;🗡️;Silver Dagger;Item;0;2;0;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
 Fishing;🪝;Lucky Hook;Item;0;1;0;1;0;0;0;Fishing Gear;Increases (not only) fishing luck.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Reeled in some fortune.
@@ -41,6 +42,7 @@ Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;0;Souvenir;Pleasantly warm to 
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
 Fishing;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
+Fishing;🥈;2nd Place Medal;Item;-1;0;0;0;0;0;0;Accessory;Prize for the "almost winner"\ kinda sad.<br>Feels like a heartbreak?!;
 
 Fishing;🪙;Old Coin;Item;0;0;0;1;0;0;0;Lucky Find;Might be worth a fortune.<br>Provides <b>+1 🍀 Luck</b>.;Pocketed with delight.
 Fishing;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.

@@ -336,7 +336,6 @@ Forsaken Village;🦝;Rabid Coon;Standard;2;2;1;0;2;0;0;Sickly Animal;Kinda cute
 
 Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
 Forsaken Village;🐝;Flying Stinger;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
-Forsaken Village;🐀;Plague Rat;Toxic;2;1;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🦨;Sneaky Skunk;Toxic;1;2;3;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
 Forsaken Village;🪴;Cursed Sprout;Toxic;1;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
 
@@ -357,14 +356,13 @@ Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;1;2;1;-1;0;0;Terrifying Animal
 
 Forsaken Village;🪿;Untitled Goose;Boss-Pet;2;1;4;0;3;0;0;Feathered Menace;Peace was never an option.<br>;Honked its way into your party.
 Forsaken Village;🦝;Masked Bandit;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
-
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;0;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
 Forsaken Village;🎭;Cultist Masquerader;Boss-Standard;3;3;2;0;3;0;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.
 Forsaken Village;🪚;Haunted Saw;Boss-Standard;3;3;2;1;-1;0;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced to thin ribbons.
-Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;3;2;0;-1;0;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
-Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;3;0;10;0;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
+Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;2;2;0;-1;0;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;2;0;10;0;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
 Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;2;1;0;-1;0;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;🪞;Mirror Horror;Boss-Demon;2;1;2;1;-1;1;0;Spirit of Reflection;Copies your every move.<br>;Shattered in a mirror duel.
+Forsaken Village;🐀;Fetid Rat;Boss-Toxic;2;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly infection.
 
 Forsaken Village;🔥;Lingering Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
@@ -416,7 +414,7 @@ Forsaken Village;🔨;Hefty Hammer;Item;0;1;0;0;0;0;0;Makeshift Weapon;Kinda hea
 Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;0;Malevolent Weapon;Requires handling with a lot of care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot arrow in own knee!
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
-Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Ready to rock. Let's do this!
+Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Ready to rock\ let's do this!
 
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Should help to remember.
@@ -609,15 +607,14 @@ Twisted Fairyland;🐝;Stray Bee;Small;1;1;1;0;-1;0;0;Confused Insect;Flies in a
 Twisted Fairyland;🦋;Bluesky Butterfly;Small;1;0;1;0;-1;1;0;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
 Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;0;Crustacean;Boasts a pair of painful pinchers.<br>;Got pinched to death.
 
-Twisted Fairyland;🐺;Prowling Wolf;Standard;4;3;2;0;10;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
-Twisted Fairyland;🦚;Pearlescent Bird;Standard;3;2;2;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
 Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;0;Wild Beast;Probably has no soul.<br>;Got ripped apart and eaten.
-Twisted Fairyland;🕷️;Huge Tarantula;Standard;3;2;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.
 
 Twisted Fairyland;🔥;Dancing Flame;Hot;1;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.
 Twisted Fairyland;🐢;Fierce Tortoise;Tough;3;1;2;1;0;0;0;Armored Critter;Leave him be\ he means no harm!<br>;Turned into a human cabbage.
 Twisted Fairyland;🐜;Bullet Ant;Stingy;1;3;2;0;-1;0;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
+Twisted Fairyland;🦟;Oversized Mosqito;Stingy;2;2;2;0;-1;0;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
+Twisted Fairyland;🕷️;Huge Tarantula;Stingy;3;2;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦎;Komodo Dragon;Toxic;3;3;1;0;-1;0;0;Venomous Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
 Twisted Fairyland;🕷️;Black Widow;Toxic;1;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.
 
@@ -627,13 +624,14 @@ Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;3;1;0;Twisted 
 Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;1;2;0;4;2;0;Twisted Humanoid;His beliefs are rooted very deep.<br>;Sacrificed to the great evil.
 Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;0;Crazed Maniac;Looks like one of those mythical creatures.<br>Something just feells off though.;Devoured by a giant mouth.
 
+Twisted Fairyland;🐺;Prowling Wolf;Swift;4;3;2;0;10;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
+Twisted Fairyland;🦚;Pearlescent Bird;Swift;3;2;2;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
 Twisted Fairyland;🦜;Annoying Parrot;Swift;2;1;4;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;
 Twisted Fairyland;🥷;Cultist Elite;Swift;4;3;3;0;5;0;0;Humanoid;Uncanny figure with ellegant moves.<br>;Stabbed till fully dead.
 Twisted Fairyland;🐝;Swarm of Bees;Swift;3;1;3;0;-1;0;0;Pesky Insects;A ton of bees swarmed the area.<br>;There was nowhere to run.
 Twisted Fairyland;🐆;Daunting Panther;Swift;3;3;2;0;5;0;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
 Twisted Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;5;0;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.
-Twisted Fairyland;🦟;Oversized Mosqito;Swift;2;2;2;0;-1;0;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
 Twisted Fairyland;🦅;Bald Eagle;Swift;3;4;1;0;-1;0;0;Wild Animal;Attacks from high altitude.<br>;Got your brain pecked out.
 
 Twisted Fairyland;🐃;Frantic Horns;Heavy;4;3;1;0;5;0;0;Wild Beast;Its majestic antlers look rather deadly.<br>;
@@ -656,10 +654,11 @@ Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;0;Negative En
 Twisted Fairyland;🧌;Troll Warbringer;Boss-Heavy;4;3;2;0;4;1;0;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
 Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
 Twisted Fairyland;🦏;Horned Juggernaut;Boss-Heavy;4;4;1;0;4;0;0;Savage Titan;Nothing survives its charge.<br>;Gored like a ragdoll.
-Twisted Fairyland;🦟;Thirsty Mosquito;Boss-Demon;3;1;3;0;-1;0;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Heavy;3;3;2;0;-1;0;0;Mr. Funny Hands;Looks like a freakin' big problem.<br>;Got chewed with dozens of teeth.
 Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the underworld.
 Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;1;2;2;0;3;0;0;Ethereal Cryptid;Shimmers like a hot air in the summer.<br>;Impaled by spectral horns.
+Twisted Fairyland;🦟;Thirsty Mosquito;Boss-Demon;2;2;3;0;-1;0;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.
+Twisted Fairyland;🪞;Mirror Horror;Boss-Demon;3;1;3;0;-1;0;0;Cursed Reflection;Copies your every move.<br>;Shattered in a mirror duel.
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;0;Unknown Liquid;Is that even drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power.
 Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;2;0;0;-4;0;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.
