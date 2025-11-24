@@ -2391,11 +2391,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Checkpoint": //LVL UP
             playerXP+=playerXPThreshold;
             isFishing=false;
-            logPlayerAction(actionString,"Praised the "+enemyName+".");
-            playerGetStamina(playerStaMax-playerSta,true);
-            playerHp=playerHpMax;
-            playerMgk=playerMgkMax;
-            animateFlipNextEncounter();
+            logPlayerAction(actionString,"Praised the <b>"+enemyName+"</b>!")
+            playerRest(true);
+            encounterIndex++;
             break;
 
           default:
