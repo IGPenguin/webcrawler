@@ -1960,6 +1960,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg,true,false);
                 displayPlayerEffect("✨")
                 displayPlayerGainedEffect();
+                displayEnemyCannotEffect();
                 isFishing=false
                 encounterUsed=true;
             }
