@@ -1709,12 +1709,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType!="Death" && playerCooked!=true && (enemyType=="Consumable" && !playerLootString.includes("🧂"))) displayPlayerEffect("🪄"); //I'm lazy
-          var magicDamage = playerMgk;
-          if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
-          if (magicDamage > 2) {
-            magicDamage=2;
-          }
-          playerMgk-=magicDamage;
 
         switch (enemyType){
           case "Friend":
@@ -1737,6 +1731,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
+            var magicDamage = playerMgk;
+            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
+            if (magicDamage > 2) {
+              magicDamage=2;
+            }
+            playerMgk-=magicDamage;
+
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
               enemyHit(magicDamage,true);
             } else {
@@ -1817,6 +1818,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
               }
             logPlayerAction(actionString,"Your spell had no effect on that -1 🔵");
+            playerMgk--;
             displayEnemyEffect("✨");
           }
           break;
