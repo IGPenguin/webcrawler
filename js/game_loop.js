@@ -470,7 +470,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
 
   var randomEncounter = String(tempLinesGenerator[randomEncounterIndex])
   if (randomEncounter == "undefined") {
-    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"]);
+    randomEncounter=String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"]);
   }
 
   console.log("Type:"+encounterTypes+"\nOpts:"+tempLinesGeneratorTotal+"→#"+randomEncounterIndex+":\n"+randomEncounter.split(",t")[0].split("i:")[1])
@@ -478,7 +478,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
 }
 
 function pushEncounter(encounterStringArray=[],index=1,areaNameOverride=""){
-  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Error","desc:Missing data for pushing new encounter.","message:"]
+  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Error","desc:Missing data for pushing new encounter.","message:"]
 
   if (areaNameOverride!=""){
     linesStory.splice(encounterIndex+index,0,encounterStringArray,areaNameOverride);
@@ -3071,7 +3071,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   }
 
   if (procAbilityChance("🥻",5)){
-    var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Curious Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Epiphany","desc:Stopped to think about the universe.<br>n/a","message:"]
+    var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Curious Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Epiphany","desc:Stopped to think about the universe.<br>n/a","message:"]
     linesStory.splice(encounterIndex+1,0,philosopherThoughts);
     logAction("🥻 ▸ <b>💭 Curious Thought</b> came on your mind.")
   }
@@ -3111,7 +3111,7 @@ function animateFlipNextEncounter(){
 
 //Player
 function playerCheckLevelUp(){
-  var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
+  var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
 
   if (playerXP>=playerXPThreshold){
     curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;font-weight:600;\">Level Up!</p><p style=\"font-size:20px;\""+decorateStatusText("","New perk available.",colorWhite));
@@ -3566,7 +3566,7 @@ function playerReincarnate(){
     var bonusItem=getRandomEncounter(["Item"],["Artifact"],randomArea);
     bonusItem=bonusItem.replaceAll(randomArea,"Wildland Meadows")
 
-    var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
+    var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     pushEncounter(bonusWrapper,2); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
