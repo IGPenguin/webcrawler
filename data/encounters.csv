@@ -598,7 +598,6 @@ Twisted Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect 
 Twisted Fairyland;🪱;Tapeworm;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Bloodsucking Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Stimulated Flatworm;Small;1;0;3;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Twisted Fairyland;🪱;Glowing Worm;Small;1;0;0;0;-1;1;0;Arthropod;Radiates a strange aura.<br>;
 Twisted Fairyland;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Overgrown Worm;Small;2;1;1;0;-1;0;0;Arthropod;Oh no. It fights back!<br>;
 Twisted Fairyland;🪱;Bee Larva;Small;1;1;1;0;-1;0;0;Harmless Insect;Seems angry of the disturbance.<br>;
@@ -617,6 +616,7 @@ Twisted Fairyland;🦟;Oversized Mosqito;Stingy;2;2;2;0;-1;0;0;Pesky Insect;Neve
 Twisted Fairyland;🕷️;Huge Tarantula;Stingy;3;2;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.;Got lethally stinged.
 Twisted Fairyland;🦎;Komodo Dragon;Toxic;3;3;1;0;-1;0;0;Venomous Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
 Twisted Fairyland;🕷️;Black Widow;Toxic;1;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.
+Twisted Fairyland;🪱;Glowing Worm;Toxic;1;0;1;0;-1;1;0;Arthropod;Radiates a strange aura.<br>;
 
 Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;0;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.
 Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;0;Twisted Humanoid;Tried so hard\ to not get spotted.<br>;Got your head put on a spike.
@@ -943,7 +943,6 @@ Shrouded Necropolis;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;0;Burrowing Insect;Wing
 Shrouded Necropolis;🦋;Nocturnal Moth;Small;1;0;2;0;-1;0;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
 
 Shrouded Necropolis;👋;Autonomous Hand;Pet;2;1;1;0;0;2;0;Twisted Being;Shows faint traces of intelligence.<br>;Strangled by a living hand?
-Shrouded Necropolis;🪳;Glowing Cockroach;Pet;2;1;1;0;-1;2;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Shrouded Necropolis;💀;Little Skeleton;Pet;1;1;1;0;2;0;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
 Shrouded Necropolis;🐈‍⬛;Black Cat;Pet;2;1;1;3;3;2;0;Stray Spirit;Stares with unsettling calmness.<br>;
 
@@ -961,6 +960,7 @@ Shrouded Necropolis;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;0;Restless Bones;It
 Shrouded Necropolis;💀;Crypt Guardian;Tough;3;3;2;0;-1;0;0;Restless Bones;Silent watcher of forgotten paths.<br>;
 Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the breeze.<br>;Choked on deadly spores.
 Shrouded Necropolis;🐍;Venomous Serpent;Toxic;3;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in moonlight.<br>;Suffered a venomous bite.
+Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;2;1;1;0;-1;2;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Shrouded Necropolis;🗡️;Possesed Dagger;Stingy;1;3;1;0;-1;0;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat
 
 Shrouded Necropolis;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;0;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;

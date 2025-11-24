@@ -667,14 +667,19 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (logCall) logGenerator("prop/small");
       var type="Prop"
       if (procAbilityChance("",25+playerLck)) type="Small"; //25% Small
-      pushEncounter(getRandomEncounter(["Prop"]));
+
+      if (procAbilityChance("",5-playerLck)) { //5% Trap chance, lowers with luck
+        pushEncounter(getRandomEncounter(["Prop"]));
+      } else {
+        pushEncounter(getRandomEncounter(["Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      }
 
       if (type=="Small") {
         pushEncounter(getRandomEncounter(["Small"]));
         pushEncounter(getRandomEncounter(["Container"]));
       }
 
-      if (!areaName.includes("Meadow") && (procAbilityChance("",2+playerLck))){ //2% chance for a locked container with artifact
+      if (!areaName.includes("Meadow") && (procAbilityChance("",3+playerLck))){ //3% chance for a locked container with artifact
         pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter(["Locked-Container"]));
       }
