@@ -3558,8 +3558,8 @@ function playerReincarnate(){
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),5);
   nextEncounter();
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),5);
 
   if (playerKarma>-5){ //TODO Revise this threshold
     var randomArea=chooseFrom(["Wildland Meadows","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame
@@ -3569,8 +3569,8 @@ function playerReincarnate(){
     var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
-    pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well)
-    pushEncounter(bonusItem,2);
+    pushEncounter(bonusWrapper,2); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
+    pushEncounter(bonusItem,3);
   }
   playerKarma=1; //Reset on ress
   console.log("Karma reset: 1");
