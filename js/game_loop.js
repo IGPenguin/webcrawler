@@ -3449,7 +3449,7 @@ function playerConsumed(silent=false){
   }
 
   //Apply stat changes (except hp & sta)
-  playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,consumedString,!silent,false,eatEmoji);
+  playerChangeStats(0,enemyAtk,0,enemyLck,enemyInt,enemyMgk,enemyDef,consumedString,!silent,false,eatEmoji);
 
   //Actually damages here, to log potential lucky dmg avoidance at the right time
   if (enemyHp<0) playerHit(-1*enemyHp,true,true);
