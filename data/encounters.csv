@@ -334,7 +334,7 @@ Forsaken Village;🐖;Starving Pig;Standard;2;2;1;0;10;0;0;Wild Beast;Produces a
 Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
 Forsaken Village;🦝;Rabid Coon;Standard;2;2;1;0;2;0;0;Sickly Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 
-Forsaken Village;🪨;Animated Pebble;Boss-Tough;1;0;1;0;0;0;0;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
+Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;0;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
 Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
 Forsaken Village;🐝;Flying Stinger;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
@@ -966,7 +966,7 @@ Shrouded Necropolis;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;0;Restless Bones;Si
 Shrouded Necropolis;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;
 
 Shrouded Necropolis;💀;Crypt Guardian;Tough;3;3;2;0;-1;0;0;Restless Bones;Silent watcher of forgotten paths.<br>;
-Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;1;1;0;0;0;2;Malevolent Spell;Perhaps you should just leave it alone.<br>;The rock has bit your finger!
+Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;1;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.
 
 Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the breeze.<br>;Choked on deadly spores.
 Shrouded Necropolis;🐍;Venomous Serpent;Toxic;3;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in moonlight.<br>;Suffered a venomous bite.
