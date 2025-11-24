@@ -2903,14 +2903,9 @@ function enemyAttackOrRest(message="",isGrab=false){
   var staminaChangeMsg;
 
   if (enemySta>enemyStaLost) {
-    if (playerLootString.includes("🖤") && (damageReceived)>0) {
+    if (playerLootString.includes("🖤") || playerLootString.includes("🪣") ) {
       damageReceived--;
-      displayPlayerEffect("🖤");
-      if (damageReceived<=0) {
-        logAction("⚔️ ▸ <b>🖤 Unbreakable</b> resisted -1 💔");
-        if (enemyStaLost<enemySta) enemyStaLost++;
-        return false;
-      }
+      displayPlayerEffect("🔰");
     }
 
     if (enemyType!="Demon"){
@@ -2922,7 +2917,7 @@ function enemyAttackOrRest(message="",isGrab=false){
 
     displayEnemyAttackEffect();
 
-    if (damageReceived<=0){
+    if ((damageReceived<=0) && !(playerLootString.includes("🖤") || playerLootString.includes("🪣") )){
       staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around.","They seem to be very chill."])
       if (enemyCursed && (enemyAtk+enemyAtkBonus)<=0) staminaChangeMsg="They are too weak to do any harm."
       animateUIElement(emojiWrapperUIElement,"animate__headShake","0.8"); //Play chill animation
@@ -2955,7 +2950,7 @@ function enemyAttackOrRest(message="",isGrab=false){
         displayEnemyEffect("🥀");
       }
 
-      if (playerLootString.includes("🖤")) logAction("⚔️ ▸ <b>🖤 Unbreakable</b> resisted -1 💔");
+      if (playerLootString.includes("🖤") || playerLootString.includes("🪣") ) logAction("⚔️ ▸ <b>🔰 Unbreakable</b> provided protection +1 🔰");
       return;
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");

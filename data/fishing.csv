@@ -2,6 +2,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;
 Fishing;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;
 
+Fishing;🪣;Metal Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly could serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Not stupid\ if it works! <b>+1 🔰</b>
 Fishing;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 Fishing;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 Fishing;🧵;Enchanted Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
@@ -36,7 +37,6 @@ Fishing;🐒;Driftwood Totem;Item;0;0;0;2;0;0;0;Primitive Idol;Worn by the tide 
 Fishing;💧;Glass Drop;Item;0;0;0;0;0;1;0;Magical Pin;Radiates subtle waves of energy.<br>Provides <b>+1 🔵 Mana</b>.;Forever tied with the tide.
 Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.
 Fishing;💍;King's Ring;Item;0;1;0;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in your chest.
-Fishing;🪣;Metal Bucket;Item;1;0;0;0;0;0;0;Makeshift Helmet;Can possibly serve as a head protection.<br>Provides <b>+1 🔰 Defense</b>.;Not stupid\ if it works!
 Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
@@ -63,7 +63,6 @@ Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;0;Arthropod;Perhaps could still be
 Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;0;Junk;Waterlogged and falling apart.<br>;Sifted through for scraps.
 Fishing;💵;Wet Cash;Item;0;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 Fishing;👞;Wet Shoe;Item;0;0;0;0;0;0;0;Worthless Trash;Thoroughly wet leather shoe.<br>;Why did you even pick this up?
-Fishing;🪣;Leaky Bucket;Item;0;0;0;0;0;0;0;Broken Carrier;Has absolutely zero practical use.<br>;Just picked up some trash.
 Fishing;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;
 
 Fishing;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;0;Questionable Snack;Malevolent glow covers its entire surface.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Suffered harsh spasms

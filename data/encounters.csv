@@ -374,7 +374,7 @@ Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a 
 Forsaken Village;📼;Cassette Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;📎;The Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
-Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🖤 Unbreakable</b>.<br><b>Resist +1 ⚔️ physical damage</b>.;Gained skill <b>🖤 Unbreakable</b>.
+Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Physical Defence</b>.;Who needs love anyway? <b>+1 🔰</b>
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
 Forsaken Village;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
@@ -417,7 +417,6 @@ Forsaken Village;🏹;Cursed Bow;Item;-1;1;0;0;0;0;0;Malevolent Weapon;Requires 
 Forsaken Village;📗;Camping Instructions;Item;0;0;1;0;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.
 Forsaken Village;📕;First Aid Instructions;Item;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
 Forsaken Village;🧢;Clever Hat;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Intellect</b>;Ready to rock. Let's do this!
-Forsaken Village;🪣;Gathering Bucket;Item;1;0;0;0;0;0;0;Makeshift Headgear;Could brace a mediocre attack.<br>Provides <b>+1 ❤️ Health</b>;
 
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Should help to remember.
