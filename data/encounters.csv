@@ -334,7 +334,7 @@ Forsaken Village;🐖;Starving Pig;Standard;2;2;1;0;10;0;0;Wild Beast;Produces a
 Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
 Forsaken Village;🦝;Rabid Coon;Standard;2;2;1;0;2;0;0;Sickly Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 
-Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;0;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
+Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
 Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
 Forsaken Village;🐝;Flying Stinger;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
@@ -392,7 +392,7 @@ Forsaken Village;🪖;Trench Helmet;Item;1;0;0;0;1;0;0;Head Protection;Neat comb
 Forsaken Village;📔;Mythical Tales;Item;0;0;0;0;1;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🧠 Intellect and +1 🔵 Mana</b>.;Learned plenty of stuff
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;0;Knowledge Book;The ulimate guide with colorful illustrations.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.
 Forsaken Village;📓;Mushroom Atlas;Item;0;0;0;1;1;0;0;Encyclopedia;Describes various species of forest growth.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.
-Forsaken Village;🥾;Heavy Boots;Item;1;0;1;0;0;0;0;Work Gear;Helps navigating through tough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.
+Forsaken Village;🥾;Heavy Boots;Item;1;0;1;0;0;0;0;Work Gear;Helps navigating through rough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Forsaken Village;👖;Work Trousers;Item;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action
 Forsaken Village;🥼;Scientific Cloak;Item;0;0;0;0;3;0;0;Specialized Gear;Makes the wearer look <b>very smart™️</b>.<br>Provides <b>+3 🧠 Intellect</b>.;Ready for action
 Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;2;0;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+2 🧠 Intellect</b>;Let's do this!
@@ -446,6 +446,7 @@ Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;0;Lost Possesion;Part of so
 
 Forsaken Village;💌;Cryptic Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
+Forsaken Village;🐟;Surströmming;Consumable;-1;1;0;0;0;0;0;Rotten Fish;Oh boy\ ...that's an ungodly smell.<br>;That required rather big balls!
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference
 Forsaken Village;🍷;Sour Wine;Consumable;0;0;2;0;-1;0;0;Stale Delicacy;Wonder how it tastes and feels?<br>Temporary <b>+2 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Was it worth it?
@@ -454,7 +455,6 @@ Forsaken Village;🍪️;Cinnamon Cookie;Consumable;1;0;0;0;0;0;0;Lovely Treat;B
 Forsaken Village;🍰;Strawberry Cake;Consumable;1;0;0;0;0;0;0;Lovely Treat;Baked with extra care and love.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Forsaken Village;🍵;Cold Tea;Consumable;0;0;0;1;0;0;0;Herbal Blend;A calming natural black tea.<br>Provides <b>+1 🍀 Luck</b>;You feel gently focused.
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
-Forsaken Village;🐟;Smelly Tuna;Consumable;-1;0;0;0;0;0;0;Rotten Fish;Does not look appealing at all.<br>;Ugh. That tasted terrible
 Forsaken Village;🥣;Unfinished Bowl;Consumable;0;0;-3;0;0;0;0;Someone's Breakfast;Must have been here for weeks.<br>;Ugh. That tasted terrible
 Forsaken Village;🥫;Pistachio Ketchup;Consumable;-1;0;1;0;0;0;0;Canned Food;A greenish crust indicates a special flavor.<br>Makes you run fast\ <b>for a price.</b>;The flavoring took its toll
 
@@ -498,8 +498,8 @@ Twisted Fairyland;⭐️;Star-Shaped Box;Locked-Container;0;0;0;0;0;0;0;Magical 
 Twisted Fairyland;🪞;Gilded Mirror;Locked-Container;0;0;0;0;0;0;0;Reflected Secret;Something faint is visible behind the glass.<br>;Found the hidden keyhole.
 Twisted Fairyland;🧿;Enchanted Orb;Locked-Container;0;0;0;0;0;0;0;Warding Eye;The seal must be dispelled.<br>;It unlatched with shimmer.
 
+Twisted Fairyland;🌾;Rice Field;Container-2;0;-1;0;0;0;0;0;Uneasy Terrain;Farmland of the natives.<br>;
 Twisted Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
-Twisted Fairyland;🌾;Rice Field;Container-2;0;0;0;0;0;0;0;Tough Terrain;Farmland of the natives.<br>;
 Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
 Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
 Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.
@@ -614,8 +614,8 @@ Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems l
 
 Twisted Fairyland;🔥;Dancing Flame;Hot;1;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.
 
-Twisted Fairyland;🐌;Oversized Snail;Tough;2;0;1;0;0;0;0;Armored Critter;Leave him be\ he means no harm!<br>;Covered in sticky goo.
-Twisted Fairyland;🐢;Fierce Tortoise;Tough;3;2;2;0;0;0;0;Armored Foe;Too hungry to leave you alone.<br>;Turned into a human cabbage.
+Twisted Fairyland;🐌;Oversized Snail;Tough;1;0;1;0;0;0;1;Armored Critter;Leave him be\ he means no harm!<br>;Covered in sticky goo.
+Twisted Fairyland;🐢;Fierce Tortoise;Tough;3;2;2;0;0;0;1;Armored Foe;Too hungry to leave you alone.<br>;Turned into a human cabbage.
 
 Twisted Fairyland;🐜;Bullet Ant;Stingy;1;3;2;0;-1;0;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.
 Twisted Fairyland;🦟;Oversized Mosqito;Stingy;2;2;2;0;-1;0;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.
@@ -657,7 +657,7 @@ Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;1;1;1;-1;0;0;Negative Energy;Stri
 Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;0;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
 
 Twisted Fairyland;🦎;Komodo Dragon;Boss-Toxic;3;3;2;0;-1;0;0;Venomous Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
-Twisted Fairyland;🪨;Animated Stone;Boss-Tough;3;2;1;0;0;0;0;Malevolent Spell;This one seems pretty serious.<br>;Crushed into a fine dust.
+Twisted Fairyland;🪨;Animated Stone;Boss-Tough;3;2;1;0;0;0;1;Malevolent Spell;This one seems pretty serious.<br>;Crushed into a fine dust.
 Twisted Fairyland;🐺;Prowling Wolf;Boss-Swift;2;3;2;0;10;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
 Twisted Fairyland;🧌;Troll Warmonger;Boss-Heavy;4;3;2;0;4;1;0;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
 Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
@@ -681,7 +681,7 @@ Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;0;Vegetable;Packs a t
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
-Twisted Fairyland;🧀;Smelly Cheese;Consumable;0;0;0;0;-1;0;0;Rare Delicacy;Smells exactly like <b>-1 🧠 Charisma</b>.<br>...still tempting though.;Your breath now reeks
+Twisted Fairyland;🧀;Smelly Cheese;Consumable;0;0;0;0;-1;0;0;Rare Delicacy;Smells like <b>-1 🧠 Charisma</b>\ ...still tempting.<br>;Your breath now reeks
 Twisted Fairyland;🍏;Poisoned Apple;Consumable;-5;0;0;0;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Nausea took you over
 
 Twisted Fairyland;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;Artifact;Sweet and sour\ exactly like vendetta.<br><b>+1 ⚔️ Damage</b>\ restores <b>❤️ Health</b> & <b>🟢 Energy</b>.;
@@ -804,8 +804,8 @@ River of Sorrows;‍🦈;Hungry Shark;Swift;3;2;2;0;-1;0;0;Aquatic Threat;Always
 
 River of Sorrows;‍🦈;The Megalodon;Heavy;3;3;1;0;-1;0;0;Mythical Threat;One bite and it's likely over.<br>;Devoured by mythical creature!
 
-River of Sorrows;🐚;Hermit Crab;Tough;3;2;2;0;0;0;0;Armored Crustacean;Better not stick fingers inside.<br>;Oops\ that was deadly!
-River of Sorrows;🐚;Cone Snail;Toxic;1;4;1;0;0;0;0;Venomous Crustacean;Better keep your distance!<br>;Oops\ that was deadly!
+River of Sorrows;🐚;Hermit Crab;Tough;3;2;2;0;0;0;1;Armored Crustacean;Better not stick fingers inside.<br>;Oops\ that was deadly!
+River of Sorrows;🐚;Cone Snail;Toxic;1;4;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops\ that was deadly!
 River of Sorrows;‍🪼;Box Jelly;Toxic;4;2;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.
 River of Sorrows;‍🪸;Coral Reef;Stingy;1;3;0;0;-1;0;0;Sea Growth;Harmless to watch\ dangerous to touch.<br>;Killed by a mere touch.
 
@@ -873,8 +873,8 @@ Shrouded Necropolis;🪦;Weathered Tombstone;Prop;0;0;0;0;0;0;0;Memorial;Names l
 Shrouded Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
 Shrouded Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
-Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
-Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Fresh Clue;Clear sign of recent activity.<br>;Followed the trail.
+Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unsettling Clue;Clear sign of recent activity.<br>;Followed the trail.
 Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
 Shrouded Necropolis;🩸;Blood-Stained Stone;Prop;0;0;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;
 Shrouded Necropolis;🌫️;Pale Mist;Prop;0;0;0;0;0;0;0;Unsettling Atmosphere;A veil of fog conceals the path.<br>;
@@ -965,7 +965,7 @@ Shrouded Necropolis;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;0;Restless Bones
 Shrouded Necropolis;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;
 Shrouded Necropolis;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;
 
-Shrouded Necropolis;💀;Crypt Guardian;Tough;3;3;2;0;-1;0;0;Restless Bones;Silent watcher of forgotten paths.<br>;
+Shrouded Necropolis;💀;Crypt Guardian;Tough;3;3;2;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;
 Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;1;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.
 
 Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the breeze.<br>;Choked on deadly spores.
@@ -1038,12 +1038,12 @@ Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;0;0;<b>Malevolent Arti
 Shrouded Necropolis;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;0;Dark Elixir;Might have some mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
 Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
 Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;0;Ancient Food;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;-1;0;0;0;Questionable Delicacy;Smells exactly like <b>-1 🍀 Luck</b>.<br>...still tempting though.;Reeks of bad luck
+Shrouded Necropolis;🧀;Mouldy Cheese;Consumable;0;0;0;0;-1;0;0;Rare Delicacy;Smells like <b>-1 🧠 Charisma</b>, ...still tempting.<br>;Your breath now reeks
 Shrouded Necropolis;🥠;Misfortune Cookie;Consumable;0;0;0;-3;0;0;0;Cursed Snack;Delicious on the first glance.<br>Might have <b>severe consequences.</b>;Luck has been compromised.
 
-Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Standard;5;2;3;0;12;0;0;Forgotten Love;She's been crying for what feels like an eternity.<br>;Failed to face your true love.
-Shrouded Necropolis;👰🏻‍♀️;Rotten Bride;Boss-Toxic;5;2;2;0;6;3;0;Forgotten Love;She's whispering some ancient dark magic.<br>;Failed to face your true love.
-Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;5;4;2;0;12;O;0;Forgotten Love;She's obviously winding up for heavy blow.<br>;Failed to face your true love.
-Shrouded Necropolis;👰🏻‍♀️;Vengeful Bride;Boss-Swift;5;3;2;0;6;O;0;Forgotten Love;She's moving so fast\ you struggle to keep up.<br>;Failed to face your true love.
-Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;5;2;2;0;-1;0;0;Forgotten Love;There's some strange glow in her eyes.<br>;Failed to face your true love.
-Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;5;2;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Standard;3;2;3;0;12;0;0;Forgotten Love;She's been crying for what feels like an eternity.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Rotten Bride;Boss-Toxic;3;2;2;0;6;3;0;Forgotten Love;She's whispering some ancient dark magic.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;3;4;2;0;12;O;0;Forgotten Love;She's obviously winding up for heavy blow.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻‍♀️;Vengeful Bride;Boss-Swift;3;3;2;0;6;O;0;Forgotten Love;She's moving so fast\ you struggle to keep up.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;3;2;2;0;-1;0;0;Forgotten Love;There's some strange glow in her eyes.<br>;Failed to face your true love.
+Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.
