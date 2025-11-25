@@ -73,7 +73,6 @@ Wildland Meadows;🐜;Worker Ant;Small;1;0;1;0;-1;0;0;Insect;Minds its own busin
 Wildland Meadows;🦗;Chirping Cricket;Small;1;0;0;0;-1;0;0;Annoying Insect;Makes annoying loud sounds.<br>;The noise exploded your head!
 
 Wildland Meadows;🐓;Patrolling Rooster;Pet;1;1;2;0;0;0;0;Feathery Friend;Crows at inappropriate hours.<br>;Convinced it to join you.
-Wildland Meadows;🐢;Wandering Turtle;Pet;1;0;1;0;0;0;1;Slow but Steady;Carries a miniature world on its back.<br>;Slowly bonded with the gang.
 Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;0;Mysterious Bird;Croaks in a haunting tone.<br>;The bird has joined your side.
 Wildland Meadows;🦦;Cheeky Otter;Pet;1;1;1;0;0;0;0;Playful Critter;Seems to enjoy total chaos.<br>;Slipped into your party.
 Wildland Meadows;🐈;Savannah Cat;Pet;1;0;2;0;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
@@ -98,9 +97,9 @@ Wildland Meadows;🦆;Aggressive Duck;Swift;1;1;2;0;0;0;0;Wild Animal;Goes strai
 Wildland Meadows;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;0;Domestic Animal;Does not let anyone too close.<br>;Impaled by its horns.
 Wildland Meadows;🦌;Grazing Deer;Heavy;2;0;2;0;3;0;0;Wild Animal;Getting ready for some ramming.<br>;Rammed till the last breath.
 
+Wildland Meadows;🦢;Pond Queen;Boss-Standard;2;1;2;0;2;0;0;Feathered Fury;Looks calm\ but might surprise you.<br>;Choked by the long neck.
 Wildland Meadows;🦅;Sky Tyrant;Boss-Swift;1;2;1;0;3;0;0;Winged Horror;Aims straight for your eyes.<br>;Talons tore your throat apart.
 Wildland Meadows;🐍;Venomous Viper;Boss-Swift;1;2;1;0;-1;0;0;Fearsome Reptile;Fast\ precise and extremely deadly.<br>;Injected deadly venom.
-Wildland Meadows;🦢;Pond Queen;Boss-Standard;2;1;2;0;2;0;0;Feathered Fury;Looks calm\ but might surprise you.<br>;Choked by the long neck.
 Wildland Meadows;🦡;Honey Badger;Boss-Heavy;2;1;2;0;3;0;0;Wild Animal;Fierce\ vigorous and witty.<br>;Got freaking destroyed.
 Wildland Meadows;🐏;Alpha Ram;Boss-Heavy;2;1;2;0;1;0;0;Wild Animal;Getting ready for some ramming.<br>;Rammed till releasing the last breath.
 Wildland Meadows;🦬;Risky Bison;Boss-Heavy;2;1;2;0;1;0;0;Wild Animal;Loud stomps follow its steps.<br>;Suffered a fatal blunt trauma.
@@ -136,7 +135,7 @@ Wildland Meadows;🧸;Worn Teddy;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like it
 
 Wildland Meadows;💌;Undelivered Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
-Wildland Meadows;🌸;Ambrosia Nectar;Consumable;0;0;0;0;3;0;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge of clarity.
+Wildland Meadows;🌸;Ambrosia Flower;Consumable;0;0;0;0;3;0;0;Spring's Essence;Thick\ fragrant... and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Felt a surge of clarity.
 
 Wildland Meadows;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Refreshed and blessed
 Wildland Meadows;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference
@@ -207,7 +206,7 @@ Forsaken Village;🗄️;Locked Cabinet;Locked-Container;0;0;0;0;0;0;0;Secured V
 Forsaken Village;📫;Chained Mailbox;Locked-Container;0;0;0;0;0;0;0;Untouched Post;Permanently sealed with a chained lock.<br>;Discovered something valuable.
 Forsaken Village;🚪;Locked Toolshed;Locked-Container;0;0;0;0;0;0;0;Wooden Storage;Someone locked it shut years ago.<br>;You Forced the door open.
 Forsaken Village;🎰;Ancient Machine;Locked-Container;0;0;0;0;0;0;0;Forgotten Relic;Old gears groan behind a rusted panel.<br>;The mechanism stutters open.
-Forsaken Village;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;0;Dusty Keepsake;Gleams faintly under soot.<br>;Latch clicks open.
+Forsaken Village;🕋;Jewellery Box;Locked-Container;0;0;0;0;0;0;0;Dusty Keepsake;Gleams faintly under soot.<br>;Latch clicks open.
 
 Forsaken Village;🪨;Building Rubble;Container-2;0;0;0;0;0;0;0;Building Debris;Bunch of stones lying around.<br>;Lifted the nearest boulder.
 Forsaken Village;🧱;Wall Remains;Container-2;0;0;0;0;0;0;0;Material;One of the bricks seems loose.<br>;Lifted the bricks.
@@ -257,7 +256,7 @@ Forsaken Village;🏤;Deserted Office;Container-5;0;0;0;0;0;0;0;Deserted Buildin
 
 Forsaken Village;⛲️;Freshwater Fountain;Fishing;0;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
-Forsaken Village;🌊;Sparkling Pond;Fishing;0;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
+Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Forsaken Village;💧;Cursed Well;Fishing;0;0;0;0;0;0;0;Water Body;Dark water reflects strange shapes.<br>;
 Forsaken Village;🛢;Rainwater Barrel;Fishing;0;0;0;0;0;0;0;Water Body;Left open for decades\ who knows what’s inside.<br>;
 Forsaken Village;🪣;Bottomless Bucket;Fishing;0;0;0;0;0;0;0;Natural Resource;A massively deep well gapes inside.<br>;
@@ -303,9 +302,6 @@ Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;0;Prophet;Whispers a surviv
 Forsaken Village;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Oh\ that was annoying.
 Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;0;0;0;The Prophet;Always has an obscure tip to share((<br>n/a;Whatever that meant
 
-Forsaken Village;🐕;Starved Hound;Friend;-1;0;0;0;0;0;0;Stray Creature;Its ribs are visible\ but it keeps on going.<br>;Got bit by a hungry beast!
-Forsaken Village;🦌;Starved Elk;Friend;0;0;0;-1;0;0;0;Feral Remnant;Follows you like it remembers something.<br>;Its stare took a part of your soul.
-
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
 Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;0;Cute Animal;Wants to initiate a contact.<br>;Received purrfect blessing
 Forsaken Village;🐩;Lost Doggo;Pet;1;1;1;0;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
@@ -336,8 +332,9 @@ Forsaken Village;🦝;Rabid Coon;Standard;2;2;1;0;2;0;0;Sickly Animal;Kinda cute
 
 Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
+Forsaken Village;🦂;Fierce Scorpion;Stingy;1;3;1;0;-1;0;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
 Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
-Forsaken Village;🐝;Flying Stinger;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Makes a perfect fishing bait.<br>;There was nowhere to run.
+Forsaken Village;🐝;Busy Hornet;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Oversensitive to close contact.<br>;There was nowhere to run.
 
 Forsaken Village;🦨;Sneaky Skunk;Toxic;1;2;3;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
 Forsaken Village;🪴;Cursed Sprout;Toxic;1;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
@@ -347,7 +344,6 @@ Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;0;Humanoid;Trying to 
 Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;2;0;3;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
 
 Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;0;Humanoid;Searching for a sacrifice victim.<br>;Got your heart ripped out!
-Forsaken Village;🦂;Fierce Scorpion;Swift;1;3;1;0;-1;0;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
 
 Forsaken Village;🪓;Possessed Axe;Demon;1;2;1;0;-1;0;0;Cursed Tool;Thirsts for warm blood.<br>;Split your skull in two.
@@ -360,12 +356,12 @@ Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;1;2;1;-1;0;0;Terrifying Animal
 Forsaken Village;🪿;Untitled Goose;Boss-Pet;2;1;4;0;3;0;0;Feathered Menace;Peace was never an option.<br>;Honked its way into your party.
 Forsaken Village;🦝;Masked Bandit;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;0;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
-Forsaken Village;🎭;Cultist Masquerader;Boss-Standard;3;3;2;0;3;0;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.
-Forsaken Village;🪚;Haunted Saw;Boss-Standard;3;3;2;1;-1;0;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced to thin ribbons.
-Forsaken Village;🤡;Cultist Madman;Boss-Standard;3;2;2;0;-1;0;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
+Forsaken Village;🐀;Fetid Rat;Boss-Toxic;2;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly infection.
+Forsaken Village;🤡;Cultist Madman;Boss-Toxic;3;2;2;0;-1;0;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
+Forsaken Village;🎭;Cultist Masquerader;Boss-Reflective;3;3;2;0;3;0;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.
+Forsaken Village;🪚;Haunted Saw;Boss-Stingy;3;3;2;1;-1;0;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced by the rusty blade.
 Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;2;0;10;0;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
 Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;2;1;0;-1;0;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
-Forsaken Village;🐀;Fetid Rat;Boss-Toxic;2;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly infection.
 
 Forsaken Village;🔥;Lingering Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
@@ -581,7 +577,7 @@ Twisted Fairyland;🦧;Confused Orangutan;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;
 Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;0;Troubled Animal;Looks like it has something to barter.<br>;Received a poweful artifact
 Twisted Fairyland;🦤;Hungry Dodo;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared something.
 Twisted Fairyland;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸\🗿;0;0;0;0;0;1;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
-Twisted Fairyland;🐢;The Elder Pope;Friend;0;0;0;0;0;1;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
+Twisted Fairyland;🐢;Elder Pope;Friend;0;0;0;0;0;1;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
 Twisted Fairyland;🦭;Naval Seal;Friend;0;0;1;0;0;0;0;Mythical Creature;Could provide some agility lessons.<br>;Got through their training.
 
@@ -605,7 +601,7 @@ Twisted Fairyland;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;0;Arthropod;Makes a p
 Twisted Fairyland;🪱;Overgrown Worm;Small;2;1;1;0;-1;0;0;Arthropod;Oh no. It fights back!<br>;
 Twisted Fairyland;🪱;Bee Larva;Small;1;1;1;0;-1;0;0;Harmless Insect;Seems angry of the disturbance.<br>;
 Twisted Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;0;Dangerous Insect;<br>;
-Twisted Fairyland;🐝;Stray Bee;Small;1;1;1;0;-1;0;0;Confused Insect;Flies in a weird pattern.<br>;There was nowhere to run.
+Twisted Fairyland;🐝;Confused Bee;Small;1;1;1;0;-1;0;0;Stray Insect;Flies in a weird pattern.<br>;There was nowhere to run.
 Twisted Fairyland;🦋;Bluesky Butterfly;Small;1;0;1;0;-1;1;0;Stunning Insect;Does not like being disturbed.<br>;How could this happen?
 Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;0;Crustacean;Boasts a pair of painful pinchers.<br>;Got pinched to death.
 
@@ -659,13 +655,13 @@ Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;0;Negative En
 
 Twisted Fairyland;🦎;Komodo Dragon;Boss-Toxic;3;3;2;0;-1;0;0;Venomous Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
 Twisted Fairyland;🪨;Animated Stone;Boss-Tough;3;2;1;0;0;0;1;Malevolent Spell;This one seems pretty serious.<br>;Crushed into a fine dust.
+Twisted Fairyland;🪞;Mirror Horror;Boss-Reflective;3;1;3;0;-1;0;0;Cursed Reflection;Copies your every move.<br>;Shattered in a mirror duel.
 Twisted Fairyland;🐺;Prowling Wolf;Boss-Swift;2;3;2;0;10;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
 Twisted Fairyland;🧌;Troll Warmonger;Boss-Heavy;4;3;2;0;4;1;0;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.
 Twisted Fairyland;🦍;Ruinous Gorilla;Boss-Heavy;3;2;2;0;-1;0;0;Towering Beast;Roars echo in the woods.<br>;Crushed by monstrous fists.
 Twisted Fairyland;🦏;Shrunk Rhino;Boss-Heavy;2;3;1;0;4;0;1;Insecure "Titan";Don't stay in the way of its charge.<br>;Gored like a ragdoll.
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Heavy;3;3;1;0;-1;0;0;Mr. Funny Hands;Looks like a freakin' big problem.<br>;Got chewed with dozens of teeth.
 Twisted Fairyland;🦟;Thirsty Mosquito;Boss-Demon;2;2;3;0;-1;0;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.
-Twisted Fairyland;🪞;Mirror Horror;Boss-Demon;3;1;3;0;-1;0;0;Cursed Reflection;Copies your every move.<br>;Shattered in a mirror duel.
 Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;1;0;3;0;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the underworld.
 Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;1;1;3;0;3;0;0;Ethereal Cryptid;Shimmers like a hot air in the summer.<br>;Impaled by spectral horns.
 
@@ -797,8 +793,8 @@ River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;0;Arthropod;Makes a p
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 
-River of Sorrows;🦞;Vengeful Lobster;Standard;3;2;2;0;-1;0;0;Horror Survivor;Never forgets\ never forgives.<br>;Pinched one too many times!
-River of Sorrows;🦀;Spider Crab;Standard;4;3;1;0;-1;0;0;Oversized Crustacean;What? It's the size of a dog?<br>;Pinched one too many times!
+River of Sorrows;🦞;Vengeful Lobster;Tough;3;2;2;0;-1;0;1;Horror Survivor;Never forgets\ never forgives.<br>;Pinched one too many times!
+River of Sorrows;🦀;Spider Crab;Tough;4;3;1;0;-1;0;1;Oversized Crustacean;What? It's the size of a dog?<br>;Pinched one too many times!
 
 River of Sorrows;🐬;Scumbag Dolphin;Swift;3;1;3;0;4;0;0;Sinister Mammal;Makes a lot of squaking noises.<br>;Outsmarted by a dlophin.
 River of Sorrows;‍🦈;Hungry Shark;Swift;3;2;2;0;-1;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by hungry shark!
@@ -810,13 +806,10 @@ River of Sorrows;🐚;Cone Snail;Toxic;1;4;1;0;0;0;1;Venomous Crustacean;Better 
 River of Sorrows;‍🪼;Box Jelly;Toxic;4;2;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.
 River of Sorrows;‍🪸;Coral Reef;Stingy;1;3;0;0;-1;0;0;Sea Growth;Harmless to watch\ dangerous to touch.<br>;Killed by a mere touch.
 
-River of Sorrows;🐋;Willy's Ghost;Spirit;1;3;1;0;4;0;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
 River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
 River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
 River of Sorrows;🐙;Vampiric Squid;Demon;4;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
-
-River of Sorrows;👤;Abandoned Love;Friend👠;-1;0;0;0;0;0;0;Unfinished Business;Wandering around\ trying to find the way.<br>;Got a secondhand heartbreak
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
@@ -964,23 +957,24 @@ Shrouded Necropolis;🧖🏻‍♀️;Guardian Angel;Friend;1;0;0;0;0;0;0;Sacred
 
 Shrouded Necropolis;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;0;Restless Bones;Looks like its gonna fall apart.<br>;
 Shrouded Necropolis;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;
-Shrouded Necropolis;💀;Skeleton Mage;Standard;3;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;
+Shrouded Necropolis;💀;Skeleton Mage;Standard;2;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;
+
+Shrouded Necropolis;🎭;Laughing Mask;Reflective;4;4;2;0;-1;0;0;Eerie Presence;Eyes seem to follow your every move.<br>;
 
 Shrouded Necropolis;💀;Crypt Guardian;Tough;3;3;2;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;
 Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;1;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.
 
-Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the breeze.<br>;Choked on deadly spores.
-Shrouded Necropolis;🐍;Venomous Serpent;Toxic;3;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in moonlight.<br>;Suffered a venomous bite.
+Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.
+Shrouded Necropolis;🐍;Venomous Serpent;Toxic;3;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.
 Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;2;1;1;0;-1;2;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+
 Shrouded Necropolis;🗡️;Possesed Dagger;Stingy;1;3;1;0;-1;0;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat
 
 Shrouded Necropolis;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;0;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;
 Shrouded Necropolis;🧙‍♂️;Fallen Acolyte;Recruit;3;1;0;0;3;1;0;Forsaken;Eyes glow with an unnatural light.<br>;
 
-Shrouded Necropolis;🎭;Laughing Mask;Heavy;4;4;2;0;-1;0;0;Eerie Presence;Eyes seem to follow your every move.<br>;
 Shrouded Necropolis;🐀;Gigantic Rat;Heavy;3;1;3;0;-1;0;0;Overgrown Vermin;Screams echo around the crypt.<br>;
 Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;0;Cursed Being;The silhouette changed to a human.;
-Shrouded Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;0;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;
 
 Shrouded Necropolis;💀;Skeleton Ninja;Swift;3;3;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;
 Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;0;Unforgiving Opponent;Asks for an immediate attention.<br>;
@@ -988,6 +982,7 @@ Shrouded Necropolis;🦇;Screaming Bat;Swift;3;2;2;0;5;0;0;Flying Mammal;Screams
 Shrouded Necropolis;🦌;Stag Wraith;Swift;3;3;1;0;4;1;0;Ethereal Beast;Antlers glow with spectral fire.<br>;
 Shrouded Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;0;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!
 
+Shrouded Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;4;1;0;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;
 Shrouded Necropolis;🧟;Animated Dead;Undead;2;2;1;0;-1;1;0;Restless Body;Better keep your distance.<br>;Rotten to the bones
 Shrouded Necropolis;🧟;Tainted Zombie;Undead;2;2;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones
 Shrouded Necropolis;🧟‍♂️;Walking Dead;Undead;2;3;2;0;3;1;0;Restless Body;Still almost looks human.<br>Better keep distance.;Rotten to the bones
@@ -1014,7 +1009,7 @@ Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;0;Magic Creature;Asks fo
 Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;0;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.
 Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;0;Eerie Being;Dances on unseen breezes.<br>;
 
-Shrouded Necropolis;🔥;Burning Bones;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
+Shrouded Necropolis;🔥;Mythical Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
 Shrouded Necropolis;⚖️;Offensive Scales;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.
 Shrouded Necropolis;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
