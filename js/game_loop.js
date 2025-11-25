@@ -669,9 +669,9 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (procAbilityChance("",25+playerLck)) type="Small"; //25% Small
 
       if (procAbilityChance("",5-playerLck)) { //5% Trap chance, lowers with luck
-        pushEncounter(getRandomEncounter(["Prop"]));
-      } else {
         pushEncounter(getRandomEncounter(["Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      } else {
+        pushEncounter(getRandomEncounter(["Prop"]));
       }
 
       if (type=="Small") {
