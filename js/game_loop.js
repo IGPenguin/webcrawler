@@ -988,6 +988,10 @@ function redraw(){
       enemyTeamUIElement.innerHTML=decorateStatusText("♨️","Blazing",colorGrapefruit);
       enemyStatusString=appendEnemyStats();
       break;
+    case "Reflective":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔹","Reflective",colorLightBlue);
+      enemyStatusString=appendEnemyStats();
+      break;
 
     case "Item":
       if ((totalBonus > 0) || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
@@ -1294,6 +1298,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
+          case "Reflective":
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
             //if (enemyType=="Tough") enemyDef=1; //Hehe, should Tough have something špeci?
@@ -1310,7 +1315,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((parseInt(enemySta)-parseInt(enemyStaLost) > 0) && !enemyAttacked) {
               displayEnemyEffect("🌀");
               if ((enemyAtk+enemyAtkBonus)>0){
-                enemyStaminaChangeMessage(-1,"They dodged and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔","n/a");
+                enemyStaminaChangeMessage(-1,"They dodged that and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔","n/a");
                 playerHit(enemyAtk+enemyAtkBonus);
               } else {
                 enemyStaminaChangeMessage(-1,"They barely dodged your attack.","They needed to catch a breath.");
@@ -1381,6 +1386,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
+          case "Reflective":
             if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
               if (enemyAtkBonus<0){
                 playerGainXP(1.5,0,"They let you walk away");
@@ -1632,6 +1638,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Stingy":
           case "Tough":
+          case "Reflective":
             enemyStaminaChangeMessage(-1,"Blocked a regular attack -1 🟢","Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -1721,6 +1728,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Friend":
             enemyTurnAggressive("Your spell turned them adversary!");
             enemyHit(magicDamage,true);
+            break;
+
+          case "Reflective": //Copy pasted half of this shizz, damnnn
+            var magicDamage = playerMgk;
+            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
+            if (magicDamage > 2) {
+              magicDamage=2;
+            }
+            playerMgk-=magicDamage;
+            displayEnemyEffect("🔷");
+            displayEnemyCannotEffect();
+            if ((enemySta+enemyStaLost)==0){
+              atckmsg="They reflected the spell.";
+            } else {
+              atckmsg="They reflected the spell and attacked -"+enemyAtk+" 💔";
+            }
+            if (enemyCastIfMgk(true)) enemyAttacked=true;
+            if (!enemyAttacked) enemyAttackOrRest(atckmsg);
             break;
 
           case "Recruit": //You should be faster if you have Mgk >= them
@@ -2010,6 +2035,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
       switch (enemyType){
+        case "Reflective":
+          displayEnemyEffect("🔷");
+          displayEnemyCannotEffect();
+          if ((enemySta+enemyStaLost)==0){
+            atckmsg="They reflected the curse.";
+          } else {
+            atckmsg="They reflected the curse and attacked -"+enemyAtk+" 💔";
+          }
+          if (enemyCastIfMgk(true)) enemyAttacked=true;
+          if (!enemyAttacked) enemyAttackOrRest(atckmsg);
+          break;
+
         case "Demon":
             logPlayerAction(actionString,"Your curse has made them stronger!");
             enemyName=enemyName+" (Cursed)";
@@ -2109,8 +2146,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Recruit": //Player vs encounter stamina - knockout, dodge or asymmetrical rest
           case "Standard":
+          case "Reflective":
           case "Tough":
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){ //If they are tired and player has stamina
+              if (enemyType.includes("Tough")) {
+                enemyAttackOrRest("Cannot grab a proper hold of them.",true);
+                displayEnemyCannotEffect();
+                break;
+              }
               logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
               playerSta--;
               enemyKnockedOut();
@@ -2151,8 +2194,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
-            enemyDodged("Missed, they evaded your grasp.");
-            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest("They dodged that and retaliated -"+parseInt(enemyAtk+enemyAtkBonus)+" 💔");
+            if (!enemyAttacked && enemyCastIfMgk()) break;
             break;
 
           case "Heavy":
@@ -2166,6 +2209,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 overpowerMessage="Got overpowered and hit hard -"+damageReceived+" 💔";
                 logPlayerAction(actionString,overpowerMessage);
                 playerHit(damageReceived);
+                enemyStaLost++;
                 break;
               }
               logPlayerAction(actionString,overpowerMessage);
@@ -2471,6 +2515,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
+          case "Reflective":
             var maxEnemyAngryBoost=3;
 
             if (enemyInt==-1) {
@@ -2622,6 +2667,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
+          case "Reflective":
             if (playerHp>0){
               displayPlayerEffect("💤");
               playerGetStamina(1);
@@ -2951,6 +2997,7 @@ function enemyAttackOrRest(message="",isGrab=false){
     } else {
       if (message!="") staminaChangeMsg=message;
       enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a");
+      if (isGrab){return;}
       playerHit(damageReceived,true,false);
 
       if (playerLootString.includes("🥀") && (enemyHp>enemyHpLost) && (enemyAtk+enemyAtkBonus)>0 && !isGrab) {
@@ -2964,7 +3011,11 @@ function enemyAttackOrRest(message="",isGrab=false){
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");
   } else {
-    staminaChangeMsg="They recovered some energy.";
+    if (message=="") {
+      staminaChangeMsg="They recovered some energy.";
+    } else {
+      staminaChangeMsg=message;
+    }
     if (enemyType=="Spirit") staminaChangeMsg = "Impossible to hit, they recovered energy."
     if (enemyType=="Spirit" && (enemySta+enemyStaLost==0)) staminaChangeMsg = "Seems to be impossible to hit."
     logPlayerAction(actionString,staminaChangeMsg);
@@ -3849,6 +3900,7 @@ function adjustEncounterButtons(){
 
     case "Heavy":
     case "Swift":
+    case "Reflective":
       if (enemySta-enemyStaLost==0) {
         document.getElementById('button_grab').innerHTML="🦶 Kick";
       }
