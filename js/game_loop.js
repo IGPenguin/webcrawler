@@ -48,7 +48,7 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
-var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝"])
+var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷"])
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙","🐛","🦑"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
@@ -1478,7 +1478,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerAtk++;
                 playerLove-=2;
                 playerKarma-=2;
-                logPlayerAction(actionString,"<text style=color:"+colorRed+";>Your chest has filled with hatred! +1 ⚔️</text>");
+                logPlayerAction(actionString,"<text style=color:"+colorRed+";>You tossed it aside with hatred! +1 ⚔️</text>");
                 displayPlayerCannotEffect();
                 nextEncounter();
                 break;
@@ -3770,7 +3770,7 @@ function adjustEncounterButtons(){
       }
       setButton('button_roll',"❌ Ditch");
       setButton("button_grab","🍴 Eat",eatColor);
-      var drinks=["🧃","🍺","🍹","🍷","🍸","🍾","🧉","🥤","🧋","🍵","⚗️"]
+      var drinks=["🧃","🍺","🍹","🍷","🍸","🍾","🧉","🥤","🧋","🍵","⚗️","🍶"]
       if (drinks.includes(enemyEmoji)) setButton("button_grab","👄 Drink",eatColor);
 
       break;
