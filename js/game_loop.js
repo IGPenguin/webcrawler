@@ -720,7 +720,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 9: //Boss
       if (logCall) logGenerator("boss");
-      generateNextEncounters(0,false); //Prop or Contained Small
+      if (!areaName.includes("Shrouded")) generateNextEncounters(0,false); //Prop or Contained Small (not in Necropolis)
       if (areaName.includes("Meadows")) { //Do no guarantee legendary in first area
         pushEncounter(getRandomEncounter(["Item"]));
       } else if (areaName.includes("Shrouded")) {
@@ -732,7 +732,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
           pushEncounter(getRandomEncounter(["Item"]))
         }
       }
-      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead"]));
+      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy"]));
       break;
 
     case 11: //Any Enemy
@@ -939,13 +939,16 @@ function redraw(){
       enemyStatusString=appendEnemyStats();
       break;
     case "Spirit":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔘","Spirit",colorWhite);
+      enemyTeamUIElement.innerHTML=decorateStatusText("🎐","Spectral",colorWhite);
       enemyStatusString=appendEnemyStats();
       break;
     case "Friend":
       enemyStatusString=decorateStatusText("💚","Friend",colorDarkGreen);
       if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Adversary",colorRed);
-      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
+      if (areaName.includes("Shrouded")) {
+        enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
+        cardUIElement.style.background=colorDarkRed;
+      }
 
       //Do not display stats = reward hidden
       break;
@@ -2659,7 +2662,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")){
+            if (enemyName.includes("Waking Moment") || enemyName.includes("Worrying Realization")){
               displayPlayerCannotEffect();
               logPlayerAction(actionString,"Cannot fall asleep at the moment.")
               break;
@@ -2908,7 +2911,7 @@ function enemyAttackOrRest(message="",isGrab=false){
   var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
 
-  if (enemySta>enemyStaLost) {
+  if ((enemySta>enemyStaLost)&&(enemyHp>enemyHpLost)) {
     if (playerLootString.includes("🖤") || playerLootString.includes("🪣") ) {
       damageReceived--;
       displayPlayerEffect("🔰");
@@ -3596,7 +3599,7 @@ function checkPlayerHasItem(itemArray=validBaits){
 //End Game
 function gameOver(silent=false){
   //Random death messages
-  var deathMsg=["Your life has sliped into silence.","The last breath of life has faded.","You have ran out of blood.","Your adventure has ended.","Your life has ended ends, shadows remain.","Your life has withered away.","Your fate has been sealed.","The end has come.","Silence has taken the hold.","Your journey has ended."]
+  var deathMsg=["Your life has sliped into silence.","The last breath of life has faded.","You have ran out of blood.","Your adventure has ended.","Your life has ended, shadows remain.","Your life has withered away.","Your fate has been sealed forever.","The end has come\ darkness awaits.","Silence has taken the hold.","Your journey has ended here."]
   deathMsg=chooseFrom(deathMsg)
 
   //Reset progress to death encounter
