@@ -49,7 +49,6 @@ Wildland Meadows;🌬️;Howling Wind;Curse;0;0;1;0;0;0;0;Brief Moment;Feels lik
 Wildland Meadows;💩;Steaming Pile;Trap-Attack;0;0;0;0;-1;0;0;Disgusting Stench;Terrible stench is filling the air.<br>;Suffered some nasty consequences.
 Wildland Meadows;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;0;Concealed Trap;Cannot really see what is inside.<br>;Stepped on some hidden spikes.
 Wildland Meadows;🕸️;Spider Web;Trap-Roll;0;0;-1;0;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got some webs on your face
-Wildland Meadows;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;0;Natural Hazard;Spiny growth covers the path.<br>;Got pricked by sharp thorns.
 Wildland Meadows;🪵;Fallen Trunk;Trap-Roll;0;0;0;0;0;0;0;Natural Debris;A giant trunk blocks the path.<br>;There's no other way ahead.
 
 Wildland Meadows;🐀;Grassland Mouse;Small;1;0;2;0;-1;0;0;Tiny Rodent;Running around\ looking for seeds.<br>;Contracted a deadly disease.
@@ -280,6 +279,7 @@ Forsaken Village;🍌;Banana Peel;Trap-Roll;-2;0;0;0;0;0;0;Garbage;Extremely sli
 Forsaken Village;⚙️;Exposed Gearwork;Trap;-1;0;0;0;0;0;0;Clockwork Remnant;Old parts still twitch and rattle.<br>;Your finger got caught in the cogs.
 Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;-1;0;-1;0;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
 Forsaken Village;🕯️;Burning Candle;Trap;-1;0;0;0;0;0;0;Light Source;You know the drill\ don't play with fire.<br>;You have burned your hand.
+Forsaken Village;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;0;Natural Hazard;Spiny growth covers the path ahead.<br>;Got pricked by sharp thorns.
 Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;-1;0;0;0;0;Living Decay;Spreads faster when watched.<br>;Spores buried into your lungs.
 Forsaken Village;🔥;Burning Pile;Trap-Sleep;-3;0;0;0;0;0;0;Disaster Remnants;The fire is spreading all around.<br>;Burned alive screaming.
 
@@ -835,7 +835,7 @@ River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thorough
 //Matches fishing
 River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 River of Sorrows;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
-River of Sorrows;🧵;Enchanted Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
+River of Sorrows;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 River of Sorrows;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>
 River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.

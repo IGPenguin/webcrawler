@@ -931,7 +931,7 @@ function redraw(){
       enemyStatusString=appendEnemyStats();
       break;
     case "Swift": //TODO: Perhaps there should also be "Flying"??
-      enemyTeamUIElement.innerHTML=decorateStatusText("💨","Hasty",colorGreen);
+      enemyTeamUIElement.innerHTML=decorateStatusText("💨","Swift",colorGreen);
       enemyStatusString=appendEnemyStats();
       break;
     case "Heavy":
@@ -1354,8 +1354,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
         if (enemyType=="Death"){
-          displayPlayerCannotEffect();
-          logPlayerAction(actionString,"There is nothing to dodge anymore.");
+          playerReincarnate();
           break;
         }
 
@@ -1674,8 +1673,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (enemyType.includes("Locked")) mkgCost=2;
 
           if (enemyType=="Death"){
-            logPlayerAction(actionString,"Cannot really cast anymore.");
-            displayPlayerCannotEffect();
+            redirectToTweet();
+            logPlayerAction(actionString,"Echoed your story to the world!")
             break;
           }
 
@@ -1830,7 +1829,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_pray':
           if (enemyType=="Death"){
-            playerReincarnate();
+            logPlayerAction(actionString,"It's kinda too late for healing now.");
+            displayPlayerCannotEffect();
             break;
           }
 
@@ -1985,8 +1985,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_curse':
         if (enemyType=="Death"){
-          logPlayerAction(actionString,"Cannot really curse anymore.");
-          displayPlayerCannotEffect();
+          shareLinkedIn();
+          logPlayerAction(actionString,"Shared your story to LinkedIn!");
           break;
         }
 
@@ -2551,8 +2551,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            redirectToTweet();
-            logPlayerAction(actionString,"Echoed your story to the world!")
+            visitLinkedIn();
+            logPlayerAction(actionString,"Checked out IGPenguin on LinkedIn!");
             break;
 
           case "Dream":
@@ -3875,9 +3875,11 @@ function adjustEncounterButtons(){
 
     case "Death":
       setButton('button_grab',"💌 Review",colorPink);
-      setButton('button_speak',"‍🦆 Tweet",colorLightBlue);
-      document.getElementById('button_sleep').innerHTML="📜 Legend";
-      setButton('button_pray',"✨ Revive",colorYellow);
+      setButton('button_speak',"‍👤 Meet",colorLightBlue);
+      setButton('button_curse',"‍🗣️ Share",colorLightBlue);
+      setButton('button_cast',"‍🦆 Tweet",colorLightBlue);
+      setButton('button_sleep',"📜 Legend",colorOrange);
+      setButton('button_roll',"✨ Revive",colorYellow);
       break;
 
     default:
@@ -4139,9 +4141,19 @@ function copyAdventureToClipboard(){
   legendTab.document.close();
 }
 
-function redirectToTweet(){
+function shareTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/stay-dead&text=";
   window.open(tweetUrl+encodeURIComponent("Yo @IGPenguin, check out my Stay Dead run!"+"\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")+"\n"));
+}
+
+function shareLinkedIn(){
+  var linkedInUrl = "https://www.linkedin.com/feed/?shareActive&mini=true&text=";
+  window.open(linkedInUrl+encodeURIComponent("I just finished another Stay Dead playthrough!"+"\nIt's a data-driven rougelike RPG written in JS.\nCheck it out at: https://igpenguin.github.io/stay-dead\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")));
+}
+
+function visitLinkedIn(){
+  var profileUrl = "https://www.linkedin.com/in/igpenguin/";
+  window.open(profileUrl);
 }
 
 function redirectToFeedback(){
