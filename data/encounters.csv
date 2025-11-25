@@ -90,7 +90,7 @@ Wildland Meadows;🐓;Raging Cock;Standard;2;1;2;0;10;0;0;Crazed Animal;Looks fu
 Wildland Meadows;🐑;Annoyed Sheep;Standard;2;0;1;0;10;0;0;Domestic Animal;Better not underestimate this one.<br>;Head-butted to death.
 Wildland Meadows;🦥;Chill Sloth;Standard;2;0;1;1;1;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Oh\ that is really unfortunate.
 
-Wildland Meadows;🦨;Sneaky Skunk;Toxic;1;0;2;0;1;0;0;Wild Animal;Sprays a foul cloud when spooked.<br>;Suffered from terrible stench.
+Wildland Meadows;🦨;Sneaky Skunk;Toxic;1;0;2;0;1;0;0;Wild Animal;Sprays a foul cloud when spooked.<br>;Suffered a terrible stench.
 Wildland Meadows;🦔️;Spooked Hedgehog;Stingy;1;0;2;1;0;0;0;Innocent Critter;Leave him be\ he means no harm!<br>;Ouch\ that stings!
 Wildland Meadows;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Confused Insect;Flies in a weird pattern.<br>;Ouch\ that stings!
 
@@ -614,6 +614,8 @@ Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems l
 
 Twisted Fairyland;🔥;Dancing Flame;Hot;1;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.
 
+Twisted Fairyland;🦚;Pearlescent Bird;Reflective;3;2;2;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
+
 Twisted Fairyland;🐌;Oversized Snail;Tough;1;0;1;0;0;0;1;Armored Critter;Leave him be\ he means no harm!<br>;Covered in sticky goo.
 Twisted Fairyland;🐢;Fierce Tortoise;Tough;3;2;2;0;0;0;1;Armored Foe;Too hungry to leave you alone.<br>;Turned into a human cabbage.
 
@@ -630,7 +632,6 @@ Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;3;1;0;Twisted 
 Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;1;2;0;4;2;0;Twisted Humanoid;His beliefs are rooted very deep.<br>;Sacrificed to the great evil.
 Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;0;Crazed Maniac;Looks like one of those mythical creatures.<br>Something just feells off though.;Devoured by a giant mouth.
 
-Twisted Fairyland;🦚;Pearlescent Bird;Swift;3;2;2;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.
 Twisted Fairyland;🦜;Annoying Parrot;Swift;2;1;4;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;
 Twisted Fairyland;🥷;Cultist Elite;Swift;4;3;3;0;5;0;0;Humanoid;Uncanny figure with ellegant moves.<br>;Got stabbed\ bled out.

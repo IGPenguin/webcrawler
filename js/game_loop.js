@@ -702,7 +702,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 3: //Mid Encounter
       if (logCall) logGenerator("mid");
-      var encounterPool=["Standard","Stingy","Toxic","Hot"]
+      var encounterPool=["Standard","Stingy","Toxic","Hot","Reflective"]
       if (procAbilityChance("",50+playerLck)) generateNextEncounters(0,false); //50% Prop or Contained Small
       if (procAbilityChance("",10+playerLck)) encounterPool = ["Recruit","Pet"]; // 10% recruit/pet
       if (procAbilityChance("",3+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //3% item
@@ -715,7 +715,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (procAbilityChance("",70+playerLck)) generateNextEncounters(0,false); //70% Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) pushEncounter(getRandomEncounter(["Item"])) //5% item
       if (procAbilityChance("",30+playerLck)) pushEncounter(getRandomEncounter(["Consumable"])); //30% consumable
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Reflective","Demon","Spirit"]));
       break;
 
     case 9: //Boss
@@ -732,7 +732,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
           pushEncounter(getRandomEncounter(["Item"]))
         }
       }
-      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy"]));
+      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective"]));
       break;
 
     case 11: //Any Enemy
