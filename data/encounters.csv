@@ -1036,7 +1036,8 @@ Shrouded Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;0;Human Remains;May the pr
 
 Shrouded Necropolis;🎩;Fancy Hat;Item;0;0;0;0;3;0;0;Stylish Accessory;Salt-stained but dashing.<br>Provides <b>+3 🧠 Charisma</b>.;Felt rather dapper.
 Shrouded Necropolis;💍;Engagement Ring;Item;2;0;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in your chest.
-Shrouded Necropolis;🪲;Pearlescent Scarab;Item;0;0;0;3;0;0;0;Shiny Object;Impressively fancy ornament.<br>Provides <b>+3 🍀 Luck</b>.;Felt a slight surge of power.
+Shrouded Necropolis;🔗;Shattered Shackles;Item;0;0;0;2;0;0;0;Freedom Relic;Remnants of some lucky prisoner's captivity.<br>Provides <b>+2 🍀 Luck</b>.;Felt the chains of the past.
+Shrouded Necropolis;🪲;Cursed Scarab;Item;-1;0;0;5;0;0;0;Shiny Object;An unauthorized loot from someone's tomb.<br>Provides <b>+5 🍀 Luck</b> for <b>-1 💔 Health</b>.;Ancient curse settled in you
 
 Shrouded Necropolis;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
 Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;0;0;<b>Malevolent Artifact</b>;You should probably leave this alone.<br>It might have some unexpected effects.;Syphoned your life energy!

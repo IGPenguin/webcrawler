@@ -83,7 +83,6 @@ Fishing;📌;Rusty Pin;Item;0;1;0;0;0;0;Scrap Weapon;Sharp enough for mischief.<
 Fishing;🪢;Knotted Rope;Item;0;0;1;0;0;0;Ropework;Knots tell their own story.<br>Provides <b>+1 🟢 Energy</b>.;Untangled some secrets.
 Fishing;🧼;Slippery Soap;Item;0;0;0;0;1;0;Hygiene;Slipped through the fingers.<br>Provides <b>+1 🧠 Charisma</b>.;Sudsy thoughts.
 
-Loot;🔗;Shattered Shackles;Item;0;0;1;0;0;0;Freedom Relic;Echoes of past captivity.<br>Provides <b>+1 🟢 Energy</b>.;Felt the chains of the past.
 Loot;🌿;Herbal Poultice;Consumable;1;0;0;0;0;0;Natural Remedy;Mends minor wounds.<br>Restores <b>❤️ Health</b>.
 Loot;🪞;Cracked Mirror;Item;0;0;0;-1;1;0;Disturbing Reflection;Reveals a hidden truth.<br>Provides <b>+1 🧠 Intimidation</b> for <b>-1 🍀 Luck</b>.;Shuddered at the sight.
 Loot;🐚;Conch Shell;Item;0;0;1;0;0;0;Sea's Voice;Still carries an echo.<br>Provides <b>+1 🟢 Energy</b>.;Whispered a song of the sea.
@@ -106,7 +105,6 @@ Twisted Fairyland;🕯️;Spirit Candle;Item;0;0;0;0;1;0;Mystical Light;Flickers
 
 Twisted Fairyland;🧝‍♂️;Cultist Archer;Recruit;3;2;2;0;2;1;Twisted Humanoid;Loose arrows with disturbing glee.<br>;Filled with arrows.
 Twisted Fairyland;🧙‍♀️;Cultist Witch;Recruit;2;1;3;0;3;1;Twisted Humanoid;Cackles in foul delight.<br>;Lost your soul to her magic.
-Twisted Fairyland;🧟;Ghoul Brute;Recruit;3;3;1;0;1;1;Cursed Creature;Reeking of death and decay.<br>;Ripped limb from limb.
 Twisted Fairyland;🧝‍♂️;Cultist Warlock;Recruit;2;2;3;0;4;2;Twisted Humanoid;Eyes gleam with dark power.<br>;Soul torn asunder.
 Twisted Fairyland;🐆;Ghostly Lynx;Swift;3;4;2;0;5;0;Wild Phantom;A silent killer in the mists.<br>;Shredded to ribbons.
 Twisted Fairyland;🦡;Dire Badger;Swift;3;3;2;0;4;0;Savage Beast;Moves with unnatural speed.<br>;Burrowed deep in your flesh.
