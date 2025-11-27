@@ -11,7 +11,12 @@ var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
 
 //Savedata
-var savedCoins = localStorage.getItem('coins');
+var savedCoins = parseInt(localStorage.getItem('coins'));
+if (isNaN(savedCoins)) {
+  localStorage.setItem('coins', 0);
+  savedCoins=0;
+}
+var spentCoins = 0;
 console.log("Coins: "+savedCoins);
 
 //Stats
@@ -577,6 +582,10 @@ function loadEncounter(index, fileLines = linesStory){
   }
   enemyDesc = enemyDesc.replaceAll("\\",",");
   enemyDesc = enemyDesc.replaceAll("((",":");
+  if (enemyTeam=="Undertaker") enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+  if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+
+
   enemyMsg = String(selectedLine.split(",")[13].split(":")[1]).replaceAll("\\",",");
 
   switch (enemyType){
