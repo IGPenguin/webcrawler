@@ -15,6 +15,7 @@ Wildland Meadows;🪷;Quiet Pond;Fishing;0;0;0;0;0;0;0;Water Body;Full of beauti
 Wildland Meadows;🪷;Lovely Pond;Fishing;0;0;0;0;0;0;0;Water Body;Full of beautiful water lilies.<br>;
 Wildland Meadows;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;0;Water Body;Crystal-clear water flowing steadily.<br>;
 
+Wildland Meadows;🍂;Leaf Pile;Container;0;0;0;0;0;0;0;Natural Cover;Something may be hidden beneath.<br>;
 Wildland Meadows;🪵;Hidden Hollow;Container;0;0;0;0;0;0;0;Natural Cover;Something is sticking from under the roots.<br>;
 Wildland Meadows;🪨;Suspicious Rock;Container;0;0;0;0;0;0;0;Wild Landscape;Looks recently disturbed somehow.<br>;Something was hidden underneath.
 Wildland Meadows;🪺;Abandoned Nest;Container;0;0;0;0;0;0;0;Wildlife Creation;Unattended nest with something inside.<br>;There was something inside indeed.
@@ -22,13 +23,11 @@ Wildland Meadows;🧺;Picnic Basket;Container;0;0;0;0;0;0;0;Container;Someone mu
 Wildland Meadows;🧺;Lost Basket;Container;0;0;0;0;0;0;0;Container;Looks abandoned in rush.<br>;
 Wildland Meadows;🕳️;Shallow Hole;Container;0;0;0;0;0;0;0;Concealed Stash;A small hole opens beneath your step.<br>;There was something inside.
 
-Wildland Meadows;🍂;Leaf Pile;Container-2;0;0;0;0;0;0;0;Natural Cover;Something may be hidden beneath.<br>;
 Wildland Meadows;🌾;Grain Growth;Container-2;0;0;0;0;0;0;0;Farmland Remains;A burlap sack forgotten among the grass.<br>;Opened to reveal a small stash.
 Wildland Meadows;🌾;Overgrown Grass;Container-2;0;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Wildland Meadows;🌼;Flower Patch;Container-2;0;0;0;0;0;0;0;Natural Beauty;Another splash of color around here.<br>;
 Wildland Meadows;🌺;Blooming Field;Container-2;0;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
 Wildland Meadows;🌸;Cherry Orchard;Container-2;0;0;0;0;0;0;0;Natural Beauty;Brings comfort whenever looked at.<br>;
-Wildland Meadows;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Wildland Meadows;🌹;Rose Bush;Container-2;-1;0;0;0;0;0;0;Natural Beauty;Lovely to look at\ but <b>stingy on touch</b>.<br>;Got stinged real bad!
 
 Wildland Meadows;🌿;Dense Grass;Container-3;0;0;0;0;0;0;0;Wild Flora;Looks like something is hidden there.<br>;Crossed right through.
@@ -77,7 +76,6 @@ Wildland Meadows;🐦‍⬛;Lost Raven;Pet;1;0;1;1;0;0;0;Mysterious Bird;Croaks 
 Wildland Meadows;🦦;Cheeky Otter;Pet;1;1;1;0;0;0;0;Playful Critter;Seems to enjoy total chaos.<br>;Slipped into your party.
 Wildland Meadows;🐈;Savannah Cat;Pet;1;0;2;0;0;0;0;Cute Animal;Loves pouncing at small rodents.<br>;Gained powerful follower
 Wildland Meadows;🦎;Green Gecko;Pet;1;0;2;1;0;0;0;Beautiful Lizard;Chill fella just running around.<br>;Got a new travel buddy!
-Wildland Meadows;🪲;Glowing Bug;Pet;1;0;1;1;0;0;0;Pelicular Insect;Tiny cute being crawling around.<br>;Got a little passenger.
 Wildland Meadows;🐞;Lonely Ladybug;Pet;1;0;1;1;0;0;0;Pelicular Insect;Tiny cute creature crawling around.<br>;Got a new travel buddy!
 Wildland Meadows;🐥;Lost Chick;Pet;1;0;1;0;-1;0;0;Cute Animal;Runs around constantly peeping.<br>;Got a new travel buddy!
 Wildland Meadows;🕊️;Pale Dove;Pet;1;0;2;1;0;0;0;Symbol of Peace;Carries hope in every flap.<br>;Follows your shadow.
@@ -310,7 +308,6 @@ Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;0;Good Boy;These are super rare
 Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck
 Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
 
-Forsaken Village;🦎;Ash Lizard;Small;1;1;1;0;0;0;0;Charred Reptile;Sheds soot wherever it slinks.<br>;Its stare froze your breath.
 Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;0;Insect;Going in for the kill.<br>;How could this happen?
 Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🦂;Tiny Scorpion;Small;1;2;1;0;-1;0;0;Dangerous Insect;Beware\ it is venous AF.<br>;There was nowhere to run.
@@ -329,7 +326,6 @@ Forsaken Village;🐁;Albino Mouse;Small;1;2;2;0;-1;0;0;Dangerous Critter;Probab
 Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐖;Starving Pig;Standard;2;2;1;0;10;0;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured alive by a pig.
 Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
-Forsaken Village;🦝;Rabid Coon;Standard;2;2;1;0;2;0;0;Sickly Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 
 Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
@@ -337,15 +333,17 @@ Forsaken Village;🦂;Fierce Scorpion;Stingy;1;3;1;0;-1;0;0;Extremely Venomous;D
 Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
 Forsaken Village;🐝;Busy Hornet;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Oversensitive to close contact.<br>;There was nowhere to run.
 
-Forsaken Village;🦨;Sneaky Skunk;Toxic;1;2;3;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
-Forsaken Village;🪴;Cursed Sprout;Toxic;1;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
+Forsaken Village;🦨;Sneaky Skunk;Toxic;2;2;2;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
+Forsaken Village;🪴;Cursed Sprout;Toxic;3;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
+Forsaken Village;🦎;Ashen Lizard;Hot;2;1;3;0;0;0;0;Charred Reptile;Sheds soot wherever it slinks.<br>;Its stare froze your breath.
 
-Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;1;0;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!
-Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;2;0;0;Humanoid;Trying to prove themselves.<br>;Got your heart ripped out!
-Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;2;0;3;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
+Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;0;0;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!
+Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;1;0;0;Humanoid;Trying to prove themselves.<br>;Got your heart ripped out!
+Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;2;0;2;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
+Forsaken Village;💂;Cultist Guard;Recruit;2;2;1;0;3;0;0;Humanoid;Does not look very friendly.<br>;Stabbed repedately\ bled out.
 
-Forsaken Village;🥷;Cultist Guard;Swift;2;2;1;0;3;0;0;Humanoid;Searching for a sacrifice victim.<br>;Got your heart ripped out!
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
+Forsaken Village;🦝;Masked Bandit;Swift;2;2;1;0;2;0;0;Devious Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 
 Forsaken Village;🪓;Possessed Axe;Demon;1;2;1;0;-1;0;0;Cursed Tool;Thirsts for warm blood.<br>;Split your skull in two.
 Forsaken Village;🪑;Cursed Chair;Demon;1;1;1;0;-1;0;0;Animated Object;Whispers from the wood.<br>;Crushed your spine to dust.
@@ -354,7 +352,7 @@ Forsaken Village;🎻;Sinister Violin;Demon;1;1;2;0;-1;0;0;Animated Object;Plays
 Forsaken Village;🧹;Possessed Broom;Demon;1;1;1;0;-1;0;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;1;2;1;-1;0;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
 
-Forsaken Village;🦝;Masked Bandit;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
+Forsaken Village;🦝;King of Bandits;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;0;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
 Forsaken Village;🥷;Cultist Elite;Boss-Swift;1;3;3;0;5;0;0;Humanoid;Uncanny figure with ellegant moves.<br>;Got stabbed and bled out.
 Forsaken Village;🥋;Invisible Ninja;Boss-Swift;1;3;3;0;5;0;0;Humanoid;Thanks got he's not naked.<br>;Got stabbed and bled out.
@@ -497,6 +495,8 @@ Twisted Fairyland;⭐️;Star-Shaped Box;Locked-Container;0;0;0;0;0;0;0;Magical 
 Twisted Fairyland;🪞;Gilded Mirror;Locked-Container;0;0;0;0;0;0;0;Reflected Secret;Something faint is visible behind the glass.<br>;Found the hidden keyhole.
 Twisted Fairyland;🧿;Enchanted Orb;Locked-Container;0;0;0;0;0;0;0;Warding Eye;The seal must be dispelled.<br>;It unlatched with shimmer.
 
+Twisted Fairyland;🕳️;Deep Hollow;Container-2;0;0;0;0;0;0;0;Dark Place;A big hole opens in front of you.<br>;Holy moly\ bigger than expected.
+Twisted Fairyland;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.
 Twisted Fairyland;🌾;Rice Field;Container-2;0;-1;0;0;0;0;0;Uneasy Terrain;Farmland of the natives.<br>;
 Twisted Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;
 Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.
@@ -505,7 +505,6 @@ Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;0;Suspense Area
 Twisted Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Twisted Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;
 Twisted Fairyland;🌹;Briar Thicket;Container-2;-1;0;0;0;0;0;0;Natural Snare;Looks like something is hidden inside.<br>;Got cut by sharp torns
-Twisted Fairyland;🕳️;Deep Hollow;Container;0;0;0;0;0;0;0;Dark Place;A big hole opens in front of you.<br>;Holy moly\ bigger than expected.
 
 Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;
 Twisted Fairyland;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;
@@ -616,7 +615,8 @@ Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems l
 
 Twisted Fairyland;🔥;Dancing Flame;Hot;1;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.
 
-Twisted Fairyland;🦚;Pearlescent Bird;Reflective;3;2;2;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
+Twisted Fairyland;🦚;Pearlescent Bird;Reflective;2;2;3;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
+Twisted Fairyland;🪲;Overgrown Beetle;Reflective;3;3;1;1;0;0;0;Pelicular Insect;Beautifully colored\ but seems deadly.<br>;Crushed by giant mandibles.
 
 Twisted Fairyland;🐌;Oversized Snail;Tough;1;0;1;0;0;0;1;Armored Critter;Leave him be\ he means no harm!<br>;Covered in sticky goo.
 Twisted Fairyland;🐢;Fierce Tortoise;Tough;3;2;2;0;0;0;1;Armored Foe;Too hungry to leave you alone.<br>;Turned into a human cabbage.
