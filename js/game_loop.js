@@ -1150,6 +1150,10 @@ function redraw(){
       displayPlayerState("Suspicious",colorOrange,"1")
       break;
 
+    case "Shop":
+      displayPlayerState("Contemplating",colorDarkYellow,"2.5")
+      break;
+
     case "Death":
       displayPlayerState(emptySpace,colorGrey,"0")
       break;
@@ -1161,7 +1165,7 @@ function redraw(){
         if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
         if ((enemyType==="Fishing" && checkPlayerHasItem(validBaits)!="")) displayPlayerState("Bait Ready",colorPink,"0.8");
-        if (enemyStatusString.includes("Legendary")) displayPlayerState("Excited",colorDarkYellow,"0.4");
+        if (enemyStatusString.includes("Legendary") || enemyEmoji=="🪙") displayPlayerState("Excited",colorDarkYellow,"0.4");
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
@@ -2392,6 +2396,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               if (enemyEmoji!="🪙") playerLootString+=enemyEmoji;
+              displayPlayerGainedEffect();
+              displayPlayerEffect("🪙");
             } else {
               playerKarma++;
               playerLove++;
