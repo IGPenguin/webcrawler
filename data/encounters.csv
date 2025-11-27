@@ -377,11 +377,12 @@ Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice
 Forsaken Village;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight
 
-Forsaken Village;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Forsaken Village;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Forsaken Village;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Forsaken Village;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
+Forsaken Village;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
+Forsaken Village;🃏;Tarot Card(( Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
+Forsaken Village;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
+Forsaken Village;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
 
+Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!
 Forsaken Village;🩼;Disposed Crutch;Item;1;1;0;0;0;0;0;Support Tool;Best of both - support and attack power.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 ⚔️ Damage</b>.;This will come in handy!
 Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a makeshift weapon.
 Forsaken Village;🪖;Trench Helmet;Item;1;0;0;0;1;0;0;Head Protection;Neat combination of protection and experience.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Intellect</b>.;Ready for the spotlight
@@ -399,8 +400,7 @@ Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;0;Forbidden Text;Contains 
 Forsaken Village;🧷;Makeshift Piercing;Item;0;0;0;0;2;0;0;Cool Accessory;Adjusts how others perceive your personality.<br>Provides <b>+2 🧠 Charisma</b>.;Stuck it into your body.
 Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;3;0;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+3 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Even carrying it makes a difference
 
-Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!
-Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>;<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
+Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
 Forsaken Village;🥊;Boxing Glove;Item;0;1;0;0;0;0;0;Figting Gear;Improves hand-to-hand combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Feeling more confident.
 Forsaken Village;🦯;Telescopic Stick;Item;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
@@ -711,10 +711,10 @@ Twisted Fairyland;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by
 Twisted Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Twisted Fairyland;🫁;Second Breath;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
-Twisted Fairyland;🃏;Tarot Card — Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Twisted Fairyland;🃏;Tarot Card — Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Twisted Fairyland;🃏;Tarot Card — Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Twisted Fairyland;🃏;Tarot Card — Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
+Twisted Fairyland;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
+Twisted Fairyland;🃏;Tarot Card(( Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
+Twisted Fairyland;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
+Twisted Fairyland;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
 
 Twisted Fairyland;🪃;Haunting Boomerang;Item;0;2;0;0;0;0;0;Tribal Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b>.;
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!

@@ -4,11 +4,15 @@
 //Debug
 var versionCode = "ver. 11/27/2025 @ 01:11 AM"
 var initialEncounterOverride=0; //6 skips tutorial
-if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "192.168.1.120" ) initialEncounterOverride=4;
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorCardBackground = "#202020";
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; var arrowSymbol="▸";
+
+//Savedata
+var savedCoins = localStorage.getItem('coins');
+console.log("Coins: "+savedCoins);
 
 //Stats
 var adventureStartTime = getTime();
@@ -48,6 +52,11 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
+
+var transientCoin=["area:Wherever","emoji:🪙","name:Ethereal Coin","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Felt a surge deep inside."]
+//TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
+var transientCoin=["area:Wherever","emoji:👤","name:Ferryman Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Spectral Mechant","desc:Whats it gonna be this time?<br>","message:Set out on another adventure!"]
+//TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
 
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷"])
 var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷"])
@@ -515,6 +524,7 @@ function loadEncounter(index, fileLines = linesStory){
   if (fileLines!=linesStory) areaName = previousArea
   enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
   enemyName = String(selectedLine.split(",")[2].split(":")[1]);
+  enemyName = enemyName.replaceAll("((",":");
   if (enemyName.includes("You are dead!")) enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Boss")) {
@@ -736,6 +746,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
           pushEncounter(getRandomEncounter(["Item"]))
         }
       }
+      pushEncounter(transientCoin);
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 
@@ -1018,6 +1029,10 @@ function redraw(){
       if (enemyTeam.includes("Lover's Memento")) {
         enemyStatusString=decorateStatusText("💔","Remembrance",colorPink);
         cardUIElement.style.background=colorDarkPink;
+      }
+      if (enemyEmoji=="🪙"){
+        enemyStatusString=decorateStatusText("🩶","Everlasting",colorWhite);
+        cardUIElement.style.background=colorSemiDarkGrey;
       }
       if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
       break;
@@ -2261,6 +2276,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Item":
             displayEnemyEffect("👋");
+
             if (enemyEmoji=="⚖️"){
               var halfHp = Math.floor(playerHpMax/2);
               if (halfHp == 0) {
@@ -2363,12 +2379,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
-              playerLootString+=enemyEmoji;
+              if (enemyEmoji!="🪙") playerLootString+=enemyEmoji;
             } else {
               playerKarma++;
               playerLove++;
               enemyMsg="<text style=color:"+colorGold+";>You just had to take it with yourself.</text>";
             }
+
+            if (enemyEmoji=="🪙"){
+              savedCoins++
+              localStorage.setItem('coins', savedCoins);
+            }
+
+            //Grab end
             isFishing=false;
             if (playerHp==0) break;
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);

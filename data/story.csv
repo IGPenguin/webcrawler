@@ -8,6 +8,13 @@ Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>�
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind((<br>n/a;Woke up in the middle of nowhere.
 
 //Debug
+Forsaken Village;💌;Cryptic Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
+Forsaken Village;🧼;Ancient Soap;Item;0;0;0;0;0;0;0;Artifact;Grants attribute <b>🫧 Protective Bubbles</b>.<br>Repels received damage - once per combat.;Gained attribute <b>🫧 Protective Bubbles</b>.
+Forsaken Village;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
+Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
+
+Wildland Meadows;🪙;Ethereal Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Felt a surge deep inside.
+Wildland Meadows;👤;Ferryman Shade;Shop;0;0;0;0;0;0;0;Spectral Mechant;Whats it gonna be this time?<br>;Set out on another adventure!
 
 //Wildland Meadows
 Wildland Meadows;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You don't remember</b> what happened to you.<br>Looks like there's <b>only one way to find out</b>.;Set out on a new adventure!
