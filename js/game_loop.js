@@ -53,7 +53,7 @@ var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 
-var transientCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Felt a surge deep inside."]
+var transientCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Acquired an <b>Ethereal Drachma +1 🪙</b>"]
 //TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
 var transientCoin=["area:Wherever","emoji:👤","name:Riverwatch Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:So, what's it gonna be this time?<br>","message:Set out on another adventure!"]
 //TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
@@ -607,7 +607,7 @@ function loadEncounter(index, fileLines = linesStory){
         } else {
          if (!enemyTeam.includes("Lover's Memento")) {
            if (enemyEmoji=="🪙"){
-             logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Shape spawned: <b>"+enemyName+"</b></text>")            
+             logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Shape spawned: <b>"+enemyName+"</b></text>")
            } else {
              logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
            }
@@ -640,6 +640,9 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Friend":
       if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Met a creature: <b>"+enemyName+"</b>")
+      break;
+    case "Shop":
+      logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Silhouette appeared: <b>"+enemyName+"</b></text>")
       break;
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
