@@ -797,30 +797,43 @@ River of Sorrows;🌪️;Violent Hurricane;Curse;-6;0;0;0;0;0;0;Natural Disaster
 River of Sorrows;🗣️;Muffled Screams;Curse;0;0;0;-2;0;0;0;Distant Noise;Disturbing voices begging for mercy.<br>;Depression intensified
 River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
 
-River of Sorrows;🕷️;Floating Widow;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🕷️;Water Skipper;Small;1;0;3;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;0;Cephalopod;Wriggles with unsettling energy.<br>;
 River of Sorrows;🦐;Twisted Shrimp;Small;1;1;2;0;-1;0;0;Arthropod;Goes for your blood like crazy.<br>;
 River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 
-River of Sorrows;🦞;Vengeful Lobster;Tough;3;2;2;0;-1;0;1;Horror Survivor;Never forgets\ never forgives.<br>;Pinched one too many times!
+River of Sorrows;🐠;Depressed Angelfish;Reflective;2;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.
+River of Sorrows;🦞;Vengeful Lobster;Tough;3;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets\ never forgives.<br>;Pinched one too many times!
 River of Sorrows;🦀;Spider Crab;Tough;4;3;1;0;-1;0;1;Oversized Crustacean;What? It's the size of a dog?<br>;Pinched one too many times!
-
-River of Sorrows;🐬;Scumbag Dolphin;Swift;3;1;3;0;4;0;0;Sinister Mammal;Makes a lot of squaking noises.<br>;Outsmarted by a dlophin.
-River of Sorrows;‍🦈;Hungry Shark;Swift;3;2;2;0;-1;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by hungry shark!
-
-River of Sorrows;‍🦈;The Megalodon;Heavy;3;3;1;0;-1;0;0;Mythical Threat;One bite and it's likely over.<br>;Devoured by mythical creature!
-
-River of Sorrows;🐚;Hermit Crab;Tough;3;2;2;0;0;0;1;Armored Crustacean;Better not stick fingers inside.<br>;Oops\ that was deadly!
 River of Sorrows;🐚;Cone Snail;Toxic;1;4;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops\ that was deadly!
 River of Sorrows;‍🪼;Box Jelly;Toxic;4;2;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.
-River of Sorrows;‍🪸;Coral Reef;Stingy;1;3;0;0;-1;0;0;Sea Growth;Harmless to watch\ dangerous to touch.<br>;Killed by a mere touch.
+River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless to watch\ dangerous to touch.<br>;Killed by a mere touch.
+River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;2;3;2;0;-1;0;0;Spiky Ball;Looks funny\ but is lethal.<br>;Pierced by thousands spikes.
 
-River of Sorrows;👤;Drowned Spirit;Spirit;1;0;1;0;-1;0;0;Unfinished Business;Lurks just below the surface.<br>;Chilled to the bone.
-River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;0;1;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
+River of Sorrows;‍🦈;White Shark;Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry shark!
+River of Sorrows;🐟;Suicidal Tuna;Swift;1;3;2;0;-1;0;1;Fearless Critter;Charges forward no matter the consequences.<br>;Not really sure what happened.
+River of Sorrows;🐬;Laughing Scumbag;Swift;3;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.
+River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;2;1;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
-River of Sorrows;🐙;Vampiric Squid;Demon;4;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;
+DEMON
+DEMON
+UNDEAD
+UNDEAD
+
+River of Sorrows;‍🦈;The Megalodon;Boss-Swift;3;3;2;0;-1;0;0;Mythical Monster;One bite and it's likely over.<br>;Devoured by mythical creature!
+River of Sorrows;👤;Drowned Soul;Boss-Spirit;1;2;3;0;2;0;0;Unfinished Business;Lurks below the surface for another victim.<br>;Dragged into dark depths.
+River of Sorrows;🦀;Spider Crab;Boss-Tough;3;2;2;0;-1;0;1;Oversized Crustacean;Whaat? It's the size of a dog!<br>;Got pinched in half.
+River of Sorrows;🐚;Squatting Hermit;Boss-Tough;3;3;1;0;-1;0;1;Armored Crustacean;Better not stick your fingers inside.<br>;Oops\ that was deadly!
+River of Sorrows;🧜;Depths Queen;Boss-Reflective;3;2;3;0;3;2;0;Abyssal Monarch;Veil of weeds covers her hair.<br>;Got kissed and pulled you below.
+River of Sorrows;🦈;Pearlescent Serrato;Boss-Reflective;4;3;1;0;4;0;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+River of Sorrows;‍🪼;Jellyfish Swarm;Boss-Toxic;3;3;3;0;-1;0;0;Lethal Threat;Squishy deathtraps spreading all around.<br>;Stung by a jellyfish.
+River of Sorrows;🦑;Depths Squid;Boss-Heavy;3;3;2;0;-1;0;0;Horrific Monster;Giant octopus from the deep ends.<br>;Got swallowed in one slurp.
+River of Sorrows;🐸;Frogface Behemoth;Boss-Heavy;4;2;2;0;4;0;0;Amphibious Giant;Always lusts for blood.<br>;Got swallowed in one gulp.
+River of Sorrows;🐋;Massive Fintail;Boss-Heavy;4;3;1;0;4;0;0;Absurd-sized Monster;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.
+River of Sorrows;🐙;Vampiric Squid;Boss-Demon;3;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;Sucked dry bonemarrow-deep.
+River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;3;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;

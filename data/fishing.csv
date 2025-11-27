@@ -88,19 +88,19 @@ Fishing;🦭;Retired Seal;Friend;0;0;2;0;0;0;0;War Veteran;Still can teach you a
 Fishing;🐬;Cute Dolphin;Friend;0;0;0;0;1;0;0;The Clever One;Makes a lot of squaking noises.<br>;They shared some secret.
 Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
 
-Fishing;🦞;Lobster Warrior;Pet;2;1;1;0;0;0;0;Crustacean Ally;Looks like it is going to fight back.<br>;Defeated by a lobster!
-Fishing;🦀;Pinching Crab;Pet;1;1;1;0;0;0;0;Crustacean;Handle with care.<br>;
+PET
+PET
 
 Fishing;🐌;Water Snail;Small;1;0;0;0;-1;0;0;Underwater Critter;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
 Fishing;🪱;Tired Worm;Small;1;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Fishing;🦐;Brackish Crawfish;Small;1;0;1;0;0;0;0;Delicacy;A bite of the water’s life.;
 Fishing;🦑;Tiny Squid;Small;1;0;2;0;0;0;0;Seafood;A little bite of the deep.<br>
 
-Fishing;🐡;Spiky Pufferfish;Stingy;2;2;2;0;-1;0;0;Unpleasant Critter;Does not look particurarly tasty.<br>;The spikes were too much!
-
+STANDARD
+HEAVY
+TOXIC
+REFLECTIVE
+Fishing;‍🦀;Freshwater Crab;Tough;2;1;1;0;-1;0;1;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
+Fishing;🐡;Small Pufferfish;Stingy;2;2;2;0;-1;0;0;Unpleasant Critter;Does not look particularly tasty.<br>;The spikes were too much!
 Fishing;‍🐍;Water Serpent;Swift;2;2;2;0;0;0;0;Juvenile Predator;Slithers both out and in the water.<br>;Died off an ancient venom.
-
-Fishing;‍🪼;Box Jellyfish;Boss-Toxic;1;4;1;0;-1;0;0;Aquatic Threat;Must be dangerous to touch.<br>;Stung by a jellyfish.
-Fishing;‍🦈;Shark Nado;Boss-Swift;1;3;2;0;-1;0;0;Aquatic Threat;Always goes straight for the neck.<br>;Devoured by unexpected shark!
-Fishing;‍🦑;Depths Squid;Boss-Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Swallowed in one slurp!
-Fishing;‍🦀;Titan Crab;Boss-Heavy;3;4;1;0;-1;0;0;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
+Fishing;‍🦑;Freshwater Squid;Boss-Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Swallowed in one slurp!
