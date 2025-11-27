@@ -55,7 +55,7 @@ var playerCurseType = "🪬";
 
 var transientCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Felt a surge deep inside."]
 //TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
-var transientCoin=["area:Wherever","emoji:👤","name:Riverwatch Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Whats it gonna be this time?<br>","message:Set out on another adventure!"]
+var transientCoin=["area:Wherever","emoji:👤","name:Riverwatch Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:So, what's it gonna be this time?<br>","message:Set out on another adventure!"]
 //TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
 
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷"])
@@ -606,7 +606,11 @@ function loadEncounter(index, fileLines = linesStory){
           logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
         } else {
          if (!enemyTeam.includes("Lover's Memento")) {
-          logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+           if (enemyEmoji=="🪙"){
+             logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Shape spawned: <b>"+enemyName+"</b></text>")            
+           } else {
+             logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
+           }
          } else {
           logAction("🫀 ▸ "+enemyEmoji+" Found a clue: <b>"+enemyName+"</b>")
          }
