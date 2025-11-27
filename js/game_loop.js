@@ -53,7 +53,7 @@ var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 
-var transientCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Acquired an <b>Ethereal Drachma +1 🪙</b>"]
+var transientCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
 //TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
 var transientCoin=["area:Wherever","emoji:👤","name:Riverwatch Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:So, what's it gonna be this time?<br>","message:Set out on another adventure!"]
 //TODO SPECIAL BACKGROUND, TYPE HANDLING, GRAB COLOR
@@ -3845,6 +3845,7 @@ function adjustEncounterButtons(){
       if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Recall",colorRed);
       if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
       if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorGold);
+      if (enemyEmoji=="🪙") setButton('button_grab',"👋 Claim",colorLightShadeBlue);
       break;
 
     case "Trap":
