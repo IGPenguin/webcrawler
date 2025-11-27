@@ -48,7 +48,10 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
+
+var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷"])
 var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷"])
+var castTypes=(["⚡️","☄️","🍭","🔥"])
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙","🐛","🦑"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
@@ -720,10 +723,11 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 9: //Boss
       if (logCall) logGenerator("boss");
-      if (!areaName.includes("Shrouded")) generateNextEncounters(0,false); //Prop or Contained Small (not in Necropolis)
-      if (areaName.includes("Meadows")) { //Do no guarantee legendary in first area
-        pushEncounter(getRandomEncounter(["Item"]));
-      } else if (areaName.includes("Shrouded")) {
+
+      //Prop or Contained Small after fight (not in Necropolis)
+      if (!areaName.includes("Shrouded")) generateNextEncounters(0,false);
+
+      if (areaName.includes("Shrouded")) {
         //No item
       } else {
         if (procAbilityChance("",33+playerLck)) { //33% Artifact
@@ -3437,10 +3441,8 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     if (enemyType=="Item") displayPlayerEffect(enemyEmoji);
   }
 
-  var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝"])
   if (hasAnyOf(attackTypes,enemyEmoji)&&enemyType=="Item") playerAttackType=enemyEmoji;
 
-  var castTypes=(["⚡️","☄️","🍭","🔥"])
   if (castTypes.includes(enemyEmoji)) playerCastType=enemyEmoji;
 
   if (enemyEmoji=="⛺️") playerSleepType=enemyEmoji;
