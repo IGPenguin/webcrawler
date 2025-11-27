@@ -3735,6 +3735,11 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
 //Logging
 function logPlayerAction(actionString,message){
   actionString = actionString.split(" ")[0] + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
+  if (actionString.includes(" 🪙")) { //Ahhh, yeah more hacks at 1 AM
+    var price = actionString.split(" ")[0] //Very much HACKS... YOLO!!!
+    actionString=actionString.slice(2);
+    actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
+  }
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
@@ -3764,10 +3769,9 @@ function getTime(){
 //UI Buttons
 function setButton(elementID,text,color=colorWhite){
   document.getElementById(elementID).innerHTML=text.replace(" "," <b style=\"color:"+color+";\">")+"</b>";
-  if (text.includes("🪙")) {
+  if (text.includes("🪙")) { //HAAAACKKKK!!!
     var price = text.split(" ")[0]
     var item = text.split(" ")[2]
-    console.log(price);
     document.getElementById(elementID).innerHTML=price+narrowSpace+"🪙 <b style=\"color:"+color+";\">"+item+"</b>";
   }
 }
