@@ -718,6 +718,7 @@ function loadEncounter(index, fileLines = linesStory){
 function generateRandomItem(item=""){
   var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
   if (item=="Artifact")   var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]); //arg #2 = artifact only, arg #4 excludes specific texts
+  if (item=="Food")   var randomItem=getRandomEncounter(["Consumable"],[],"ALL"); //arg #2 = artifact only, arg #4 excludes specific texts
   return randomItem;
 }
 
@@ -728,18 +729,28 @@ function drachmaeBuy(price=1,item=""){
     spentCoins+=price;
     displayEnemyEffect("🪙");
     displayPlayerGainedEffect();
+
+    if (item!="Level") {
+    logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
     drachmaShop[0]="area:"+areaName
     pushEncounter(drachmaShop);
     var item=generateRandomItem(item).split(",");
     item[0]="area:"+areaName;
     item=String(item);
     pushEncounter(item);
-    logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
+    } else {
+      logPlayerAction(actionString,"Sure, grow stronger as you need!");
+      playerXP+=playerXPThreshold;
+      playerRest(true);
+      return;
+    }
     nextEncounter();
+    return;
   } else {
     logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
     displayEnemyDodgeEffect();
     displayPlayerCannotEffect();
+    return;
   }
 }
 
@@ -1324,7 +1335,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1);
+          drachmaeBuy(1,"Food");
           break;
         }
 
@@ -1684,6 +1695,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_block':
+        if (enemyType=="Shop") {
+          drachmaeBuy(2);
+          break;
+        }
+
         if (enemyType=="Death"){
           displayPlayerCannotEffect();
           logPlayerAction(actionString,"There's no point in blocking anymore.");
@@ -2230,6 +2246,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       break;
 
       case 'button_grab': //Player vs encounter stamina decides the success
+
+        if (enemyType=="Shop") {
+          drachmaeBuy(4,"Level");
+          break;
+        }
+
         switch (enemyType){
           case "Curse":
             logPlayerAction(actionString,"Hands reached forward to no effect.");
@@ -3597,7 +3619,7 @@ function playerConsumed(silent=false){
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
     } else {
-      gainStamina+=parseInt(missingSta)+parseInt(enemySta);
+      if (missingSta>0) gainStamina+=parseInt(missingSta)+parseInt(enemySta);
     }
     animateUIElement(playerInfoUIElement,"animate__pulse","0.4"); //Animate player rest
   }
@@ -3617,7 +3639,10 @@ function playerConsumed(silent=false){
   if (missingHp > 0 || parseInt(enemyHp)!=0){
     var heart = "❤️"
     var hpChange=parseInt(enemyHp);
-    if (enemyHp>=0) hpChange+=parseInt(missingHp); //Another nasty hack, why is this so spaghetti
+    if (enemyHp>=0) {
+      hpChange+=parseInt(missingHp); //Another nasty hack, why is this so spaghetti
+      sign=" +"
+    }
     if (hpChange<0) {
       sign="";
       heart="💔";
@@ -4070,17 +4095,17 @@ function adjustEncounterButtons(){
       break;
 
     case "Shop":
-      setButton('button_attack',"1 🪙 Loot",colorWhite);
-        if ((savedCoins-spentCoins)<1) setButton('button_attack',"1 🪙 Loot",colorDarkGrey);
+      setButton('button_attack',"1 🪙 Food",colorWhite);
+        if ((savedCoins-spentCoins)<1) setButton('button_attack',"1 🪙 Food",colorDarkGrey);
       setButton('button_roll',"👣 Leave",colorRed);
       setButton('button_block',"2 🪙 Loot",colorWhite);
         if ((savedCoins-spentCoins)<2) setButton('button_block',"2 🪙 Loot",colorDarkGrey);
 
       setButton('button_grab',"4 🪙 Level",colorYellow);
         if ((savedCoins-spentCoins)<4) setButton('button_grab',"4 🪙 Loot",colorDarkGrey);
-      //setButton('button_sleep',"Loot 5 🪙",colorOrange);
-      setButton('button_speak',"5 🪙 Loot",colorOrange);
-        if ((savedCoins-spentCoins)<5) setButton('button_speak',"5 🪙 Loot",colorDarkGrey);
+      setButton('button_sleep',"💤 Rest",colorDarkGrey);
+      setButton('button_speak',"5 🪙 Artif.",colorOrange);
+        if ((savedCoins-spentCoins)<5) setButton('button_speak',"5 🪙 Artif.",colorDarkGrey);
 
       setButton('button_cast',"‍-",colorDarkGrey);
       setButton('button_pray',"‍-",colorDarkGrey);
