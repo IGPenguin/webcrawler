@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/28/2025 @ 02:01 AM"
+var versionCode = "ver. 11/28/2025 @ 02:06 AM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "192.168.1.120" ) initialEncounterOverride=4;
 
@@ -660,8 +660,8 @@ function loadEncounter(index, fileLines = linesStory){
     case "Friend":
       if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Met a creature: <b>"+enemyName+"</b>")
       break;
-    case "Shop":
-      logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Silhouette appeared: <b>"+enemyName+"</b></text>")
+    case "Shop": //I just did HAAAACKKKK, and it feelt sooo WRONG (really, needs fixing... later)
+      if (!adventureLog.includes("Silhouette appeared:")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Silhouette appeared: <b>"+enemyName+"</b></text>")
       break;
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
@@ -1179,7 +1179,7 @@ function redraw(){
       break;
 
     case "Shop":
-      displayPlayerState("Contemplating",colorDarkYellow,"2.5")
+      displayPlayerState("Deciding",colorDarkYellow,"2.5")
       break;
 
     case "Death":
@@ -1299,6 +1299,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             item[0]="area:"+areaName;
             item=String(item);
             pushEncounter(item);
+            logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
             nextEncounter();
           } else {
             logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
