@@ -432,14 +432,15 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
-function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverride="") {
+function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverride="", excludeStrings=[]) {
   var tempLinesGenerator = linesGenerator;
   var generatorAreaName=areaName;
   //console.log("Area override:"+areaNameOverride);
 
-  //drop anything but areaName
+  //drop anything but areaName (unless areaNameOverride=="ALL")
   if (areaNameOverride!="") generatorAreaName = areaNameOverride;
-  tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+generatorAreaName) === 0; });
+  if (areaNameOverride!="ALL") tempLinesGenerator = $.grep(tempLinesGenerator, function (item) { return item.indexOf("area:"+generatorAreaName) === 0; });
+  //You see the condition above? I'm not proud, its 1:44 AM an the beta test is supposed to be tomorrow
 
   //drop anything but type
   var matchingTypeLines = [];
@@ -465,6 +466,16 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
     tempLinesGenerator=includesStringLines;
   }
 
+  //drop all excluded strings
+  if (excludeStrings.length !== 0) {
+  tempLinesGenerator = tempLinesGenerator.filter((line) => {
+    // keep line only if it does NOT include any excluded string
+    return !excludeStrings.some((excludeString) => {
+      return String(line).includes(excludeString);
+    });
+  });
+}
+
   //drop all seen names
   //console.log("Seen: "+seenEncounters);
   seenEncounters.forEach(seenEncounterName => {
@@ -477,6 +488,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
       }
     })
   });
+  //console.log(tempLinesGenerator); //Log all valid choices
 
   var tempLinesGeneratorTotal = tempLinesGenerator.length;
   var max = tempLinesGeneratorTotal;
@@ -685,6 +697,15 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
     }
   }
+}
+
+function generateRandomItem(artifactOnly=false){
+  var randomArea=chooseFrom(["Wildland Meadows","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any item from all areas except endgame
+  console.log("itemArea:"+randomArea);
+  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
+  if (artifactOnly) randomItem=getRandomEncounter(["Item"],["Artifact"],randomArea); //arg #2 = artifact required
+  randomItem=randomItem.replaceAll(randomArea,areaName)
+  return randomItem;
 }
 
 function generateNextEncounters(generatorID=0, logCall=true){
@@ -1267,6 +1288,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
+        if (enemyType=="Shop") { //TODO Refactor: drachmaBuy(price);
+          displayEnemyEffect("🪙");
+          displayPlayerGainedEffect();
+          drachmaShop[0]="area:"+areaName
+          pushEncounter(drachmaShop);
+          pushEncounter(generateRandomItem());
+          nextEncounter();
+          break;
+        }
+
         if (enemyType!="Upgrade" && !playerUseStamina(1,"Too tired to attack anything.")){
             break;
           }
@@ -1603,6 +1634,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Error":
             logPlayerAction(actionString,"Skipping to next encounter.");
+            nextEncounter();
+            break;
+
+          case "Shop":
+            logPlayerAction(actionString,enemyMsg);
             nextEncounter();
             break;
 
