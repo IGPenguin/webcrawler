@@ -1295,12 +1295,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerGainedEffect();
             drachmaShop[0]="area:"+areaName
             pushEncounter(drachmaShop);
-            pushEncounter(generateRandomItem());
+            var item=generateRandomItem().split(",");
+            item[0]="area:"+areaName;
+            item=String(item);
+            pushEncounter(item);
             nextEncounter();
+          } else {
+            logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
+            displayEnemyDodgeEffect();
+            displayPlayerCannotEffect();
           }
-          logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
-          displayEnemyDodgeEffect();
-          displayPlayerCannotEffect();
           break;
         }
 
