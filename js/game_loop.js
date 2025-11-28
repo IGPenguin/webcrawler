@@ -252,8 +252,8 @@ function getPoem(){
 }
 
 function getShopMessage(){
-  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Hmm, back so soon? Better stock properly.","You again? I guess you failed your quest then."].filter(item => !usedShopMessages.includes(item));
-  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","You again? I guess you failed your quest then."].filter(item => !usedShopMessages.includes(item));
+  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need better gear.","You again? I guess you failed your quest then."].filter(item => !usedShopMessages.includes(item));
+  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more."].filter(item => !usedShopMessages.includes(item));
 
   if (random_quotes.length==0) random_quotes.push("Ugh, hate to see you here all the time.")
   var message = random_quotes[Math.floor(Math.random() * random_quotes.length)]+"<br>";
