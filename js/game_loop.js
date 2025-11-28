@@ -17,7 +17,7 @@ if (isNaN(savedCoins)) {
   savedCoins=0;
 }
 var spentCoins = 0;
-console.log("Coins: "+savedCoins);
+console.log("Drachmae: "+savedCoins);
 
 //Stats
 var adventureStartTime = getTime();
@@ -4253,6 +4253,15 @@ function registerClickListeners(){
       playerSta=playerStaMax;
       playerMgk=playerMgkMax;
       redraw();
+    }
+
+    if (newName.includes("Mucho Dinero")){
+      savedCoins=69;
+    }
+
+    if (newName.includes("Cleaner")){
+      localStorage.setItem('coins', 0);
+      savedCoins=0;
     }
   });
 }
