@@ -700,11 +700,8 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateRandomItem(artifactOnly=false){
-  var randomArea=chooseFrom(["Wildland Meadows","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any item from all areas except endgame
-  console.log("itemArea:"+randomArea);
   var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
-  if (artifactOnly) randomItem=getRandomEncounter(["Item"],["Artifact"],randomArea); //arg #2 = artifact required
-  randomItem=randomItem.replaceAll(randomArea,areaName)
+  if (artifactOnly)   var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]); //arg #2 = artifact only, arg #4 excludes specific texts
   return randomItem;
 }
 
@@ -781,7 +778,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
           pushEncounter(getRandomEncounter(["Item"]))
         }
       }
-      pushEncounter(transientCoin);
+      pushEncounter(drachmaCoin);
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 
