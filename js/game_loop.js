@@ -592,7 +592,7 @@ function loadEncounter(index, fileLines = linesStory){
   }
   enemyDesc = enemyDesc.replaceAll("\\",",");
   enemyDesc = enemyDesc.replaceAll("((",":");
-  if (enemyTeam=="Undertaker") enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+  if (enemyTeam=="Undertaker") enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
   if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
 
 
@@ -1289,12 +1289,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") { //TODO Refactor: drachmaBuy(price);
-          displayEnemyEffect("🪙");
-          displayPlayerGainedEffect();
-          drachmaShop[0]="area:"+areaName
-          pushEncounter(drachmaShop);
-          pushEncounter(generateRandomItem());
-          nextEncounter();
+          if (savedCoins>spentCoins){
+            spentCoins++
+            displayEnemyEffect("🪙");
+            displayPlayerGainedEffect();
+            drachmaShop[0]="area:"+areaName
+            pushEncounter(drachmaShop);
+            pushEncounter(generateRandomItem());
+            nextEncounter();
+          }
+          logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
+          displayEnemyDodgeEffect();
+          displayPlayerCannotEffect();
           break;
         }
 
