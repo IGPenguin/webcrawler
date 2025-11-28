@@ -1055,7 +1055,7 @@ function redraw(){
           enemyStatusString=decorateStatusText("🔷","Magnificent",colorLightBlue);
           cardUIElement.style.background=colorDarkBlue;
         }
-        if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=2){
+        if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=1){
           enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
           cardUIElement.style.background=colorDarkPurple;
         }
