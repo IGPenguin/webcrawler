@@ -715,10 +715,32 @@ function loadEncounter(index, fileLines = linesStory){
   }
 }
 
-function generateRandomItem(artifactOnly=false){
+function generateRandomItem(item=""){
   var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
-  if (artifactOnly)   var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]); //arg #2 = artifact only, arg #4 excludes specific texts
+  if (item=="Artifact")   var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]); //arg #2 = artifact only, arg #4 excludes specific texts
   return randomItem;
+}
+
+function drachmaeBuy(price=1,item=""){
+  var availableCoins = savedCoins-spentCoins;
+  if (availableCoins>=price) {
+    playerShopped=true;
+    spentCoins+=price;
+    displayEnemyEffect("🪙");
+    displayPlayerGainedEffect();
+    drachmaShop[0]="area:"+areaName
+    pushEncounter(drachmaShop);
+    var item=generateRandomItem(item).split(",");
+    item[0]="area:"+areaName;
+    item=String(item);
+    pushEncounter(item);
+    logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
+    nextEncounter();
+  } else {
+    logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
+    displayEnemyDodgeEffect();
+    displayPlayerCannotEffect();
+  }
 }
 
 function generateNextEncounters(generatorID=0, logCall=true){
@@ -1301,25 +1323,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (enemyType=="Shop") { //TODO Refactor: drachmaBuy(price);
-          if (savedCoins>spentCoins){
-            playerShopped=true;
-            spentCoins++
-            displayEnemyEffect("🪙");
-            displayPlayerGainedEffect();
-            drachmaShop[0]="area:"+areaName
-            pushEncounter(drachmaShop);
-            var item=generateRandomItem().split(",");
-            item[0]="area:"+areaName;
-            item=String(item);
-            pushEncounter(item);
-            logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
-            nextEncounter();
-          } else {
-            logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
-            displayEnemyDodgeEffect();
-            displayPlayerCannotEffect();
-          }
+        if (enemyType=="Shop") {
+          drachmaeBuy(1);
           break;
         }
 
@@ -2598,6 +2603,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_speak':
         if (enemyType!="Dream") displayPlayerEffect("💬");
+
+        if (enemyType=="Shop") {
+          drachmaeBuy(5,"Artifact");
+          break;
+        }
 
         var convinceInt=playerInt;
         if (playerLootString.includes("📣")) {
@@ -4061,16 +4071,20 @@ function adjustEncounterButtons(){
 
     case "Shop":
       setButton('button_attack',"1 🪙 Loot",colorWhite);
+        if ((savedCoins-spentCoins)<1) setButton('button_attack',"1 🪙 Loot",colorDarkGrey);
       setButton('button_roll',"👣 Leave",colorRed);
       setButton('button_block',"2 🪙 Loot",colorWhite);
+        if ((savedCoins-spentCoins)<2) setButton('button_block',"2 🪙 Loot",colorDarkGrey);
 
       setButton('button_grab',"4 🪙 Level",colorYellow);
+        if ((savedCoins-spentCoins)<4) setButton('button_grab',"4 🪙 Loot",colorDarkGrey);
       //setButton('button_sleep',"Loot 5 🪙",colorOrange);
       setButton('button_speak',"5 🪙 Loot",colorOrange);
+        if ((savedCoins-spentCoins)<5) setButton('button_speak',"5 🪙 Loot",colorDarkGrey);
 
-      setButton('button_cast',"‍-",colorLightBlue);
-      setButton('button_pray',"‍-",colorLightBlue);
-      setButton('button_curse',"-",colorYellow);
+      setButton('button_cast',"‍-",colorDarkGrey);
+      setButton('button_pray',"‍-",colorDarkGrey);
+      setButton('button_curse',"-",colorDarkGrey);
       break;
 
     default:
