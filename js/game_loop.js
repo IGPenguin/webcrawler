@@ -4332,12 +4332,12 @@ function registerClickListeners(){
 
     if (newName.includes("Dinero Mucho")){
       savedCoins=69;
-      localStorage.setItem('coins', 69);
+      localStorage.setItem('coins', 10);
     }
 
     if (newName.includes("Dinero Poco")){
       savedCoins=10;
-      localStorage.setItem('coins', 10);
+      localStorage.setItem('coins', 1);
     }
 
     if (newName.includes("Cleaner")){
