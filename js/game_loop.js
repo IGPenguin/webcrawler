@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 11/28/2025 @ 02:06 AM"
+var versionCode = "ver. 11/29/2025 @ 01:03 AM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "192.168.1.120" ) initialEncounterOverride=4;
 
@@ -252,7 +252,7 @@ function getPoem(){
 }
 
 function getShopMessage(){
-  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need better gear.","You again? I guess you failed your quest then."].filter(item => !usedShopMessages.includes(item));
+  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need better a gear.","You again? I guess you failed your quest then."].filter(item => !usedShopMessages.includes(item));
   if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more."].filter(item => !usedShopMessages.includes(item));
 
   if (random_quotes.length==0) random_quotes.push("Ugh, hate to see you here all the time.")
@@ -744,7 +744,7 @@ function drachmaeBuy(price=1,item=""){
       playerRest(true);
       return;
     }
-    nextEncounter();
+    nextEncounter(); //Also marks as seen, haha smart
     return;
   } else {
     logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
