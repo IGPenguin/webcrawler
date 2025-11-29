@@ -4,7 +4,7 @@
 //Debug
 var versionCode = "ver. 11/29/2025 @ 01:03 AM"
 var initialEncounterOverride=0; //6 skips tutorial
-if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "192.168.1.120" ) initialEncounterOverride=4;
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020";
@@ -105,6 +105,7 @@ function renewPlayer(){ //Default values
   playerLove=0;
   seenLoot = [];
   adventureLog = [];
+  spentCoins=0;
 }
 
 //Global vars
@@ -252,9 +253,9 @@ function getPoem(){
 }
 
 function getShopMessage(){
-  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free. My shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you’d be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except your spending habits.","Back from the void? At least not empty handed.","The grave is patient. I am not.","You look worse. My inventory looks better.","Failure is a habit. So is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
+  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free. My shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you’d be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient. I am not.","You look worse. My inventory looks better.","Failure is a habit. So is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
 .filter(item => !usedShopMessages.includes(item));
-  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more.","Ah, a spender. I approve.","Coins still rattling? I've got more burdens for you.","Plenty of stock, pity about your skill.","Keep buying, maybe luck will notice you.","You live, you die, you shop. Cycle continues.","Still have coin? I'll fix that.","Careful, you're starting to look competent.","Gear's heavier, purse is lighter. Balance restored.","Nothing like fresh regret in shiny packaging.","You equip it, I profit. Fair trade.","More trinkets, same doomed story.","You can’t buy talent, but you’re trying.","Still breathing and still paying. Good.","Spend now, regret later. Tradition.","Don’t worry, I’ll remember you when you’re broke.","Stock’s full, your fate is not.","Oh look, you found more currency to waste.","You must really believe this will help.","I admire your optimism. It's delicious.","Another shiny thing to die with.","You buy, they kill, I restock.","If preparation mattered, you’d be unstoppable.","More equipment, same old gravestone.","I’ll happily enable your next failure.","A wise investment… probably. Maybe. Not really.","Good choice. Not good enough, but good.","Your purse bleeds, my shelves smile.","One step closer to being stylishly deceased.","Keep this up and I’ll name a shelf after you.","Still have coin? Then we’re not done."].filter(item => !usedShopMessages.includes(item));
+  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more.","Ah, a spender. I approve.","Coins still rattling? I've got more burdens for you.","Plenty of stock, pity about your skill.","Keep buying, maybe luck will notice you.","You live, you die, you shop. Cycle continues.","Still have coin? I can surely fix that.","Careful, you're starting to look competent.","Gear's heavier, purse is lighter. Balance restored.","Nothing like fresh regret in shiny packaging.","You equip it, I profit. Fair trade.","More trinkets, same doomed story.","You can’t buy talent, but you’re trying.","Still breathing and still paying. Good.","Spend now, regret later. Tradition.","Don’t worry, I’ll remember you when you’re broke.","Stock’s full, your fate is not.","Oh look, you found more currency to waste.","You must really believe this will help.","I admire your optimism. It's delicious.","Another shiny thing to die with.","You buy, they kill, I restock.","If preparation mattered, you’d be unstoppable.","More equipment, same old gravestone.","I’ll happily enable your next failure.","A wise investment… probably. Maybe. Not really.","Good choice. Not good enough, but good.","Your purse bleeds, my shelves smile.","One step closer to being stylishly deceased.","Keep this up and I’ll name a shelf after you.","Still have coin? Then we’re not done."].filter(item => !usedShopMessages.includes(item));
 
   if (random_quotes.length==0) random_quotes.push("Ugh, hate to see you here all the time.")
   var message = random_quotes[Math.floor(Math.random() * random_quotes.length)]+"<br>";
@@ -378,6 +379,16 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   }
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
+    if (savedCoins!= NaN && savedCoins>0){ //Skip tutorial, visit shop
+      loadEncounter(4);
+      drachmaShop[0]="area:"+"Wildland Meadows";
+      linesStory.splice(encounterIndex+1,1); //RM Realization
+      pushEncounter(drachmaShop)
+    }
+    if (savedCoins==0){
+      loadEncounter(4);
+      logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
+    }
     redraw();
     if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),5);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
@@ -728,12 +739,14 @@ function drachmaeBuy(price=1,item=""){
   if (availableCoins>=price) {
     playerShopped=true;
     spentCoins+=price;
+    availableCoins-=price;
+    localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerGainedEffect();
 
     if (item!="Level") {
     logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
-    drachmaShop[0]="area:"+areaName
+    drachmaShop[0]="area:"+"Wildland Meadows";
     pushEncounter(drachmaShop);
     var item=generateRandomItem(item).split(",");
     item[0]="area:"+areaName;
@@ -3266,6 +3279,7 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
+  previousArea = areaName;
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
@@ -3298,7 +3312,6 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
-  previousArea = areaName;
   redraw();
 }
 
@@ -3766,7 +3779,13 @@ function playerReincarnate(){
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
   nextEncounter();
-  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),5);
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
+
+  if (savedCoins>0){
+    drachmaShop[0]="area:"+"Wildland Meadows"
+    linesStory.splice(encounterIndex+1,1); //RM Realization
+    pushEncounter(drachmaShop)
+  }
 
   if (playerKarma>-5){ //TODO Revise this threshold
     var randomArea=chooseFrom(["Wildland Meadows","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame
@@ -3776,8 +3795,8 @@ function playerReincarnate(){
     var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
-    pushEncounter(bonusWrapper,2); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
-    pushEncounter(bonusItem,3);
+    pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
+    pushEncounter(bonusItem,2);
   }
   playerKarma=1; //Reset on ress
   console.log("Karma reset: 1");
@@ -4312,8 +4331,14 @@ function registerClickListeners(){
       redraw();
     }
 
-    if (newName.includes("Mucho Dinero")){
+    if (newName.includes("Dinero Mucho")){
       savedCoins=69;
+      localStorage.setItem('coins', 69);
+    }
+
+    if (newName.includes("Dinero Poco")){
+      savedCoins=10;
+      localStorage.setItem('coins', 10);
     }
 
     if (newName.includes("Cleaner")){
