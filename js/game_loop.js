@@ -572,6 +572,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(selectedLine.split(",")[3].split(":")[1]);
   if (enemyType.includes("Boss")) {
     enemyBossType = enemyType; //I'll end up in hell for these hacks
+    if (isNaN(savedCoins)) savedCoins=0;
     //enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
   }
   if (enemyType.includes("Generator")) {
@@ -748,7 +749,7 @@ function drachmaeBuy(price=1,item=""){
     displayPlayerGainedEffect();
 
     if (item!="Level") {
-    logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
+    logPlayerAction(actionString,"Splendid choice, this ought to help.");
     drachmaShop[0]="area:"+"Fading Wildlands";
     pushEncounter(drachmaShop);
     var item=generateRandomItem(item).split(",");
@@ -764,7 +765,7 @@ function drachmaeBuy(price=1,item=""){
     nextEncounter(); //Also marks as seen, haha smart
     return;
   } else {
-    logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>YOU ARE VERY MUCH BROKE!</text>")
+    logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>You don't have enouh Drachmae!</text>")
     displayEnemyDodgeEffect();
     displayPlayerCannotEffect();
     return;
@@ -844,6 +845,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
           pushEncounter(getRandomEncounter(["Item"]))
         }
       }
+      drachmaCoin[0]="area:"+areaName;
       pushEncounter(drachmaCoin);
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
@@ -2574,6 +2576,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Demon":
+            logPlayerAction(actionString,"Missed, they are faster than expected.");
+            displayEnemyEffect("🌀");
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+
           case "Spirit":
             logPlayerAction(actionString,"Missed, they seem untouchable.");
             displayEnemyEffect("🌀");

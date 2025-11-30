@@ -109,10 +109,10 @@ Fading Wildlands;🦢;Pond Queen;Boss-Standard;2;2;2;0;3;0;0;Feathered Fury;Stil
 Fading Wildlands;🦅;Sky Tyrant;Boss-Swift;1;3;1;0;3;0;0;Aerial Killer;Eyes locked on soft places.<br>;Talons tore your throat apart.
 Fading Wildlands;🐍;Rush Viper;Boss-Swift;1;3;1;0;-1;0;0;Ambush Predator;You never see the first bite.<br>;Got injected with deadly venom.
 Fading Wildlands;🦡;Burrow Fury;Boss-Swift;2;2;2;0;4;0;0;Relentless Savage;Afraid of nothing\ including you.<br>;Got freaking destroyed.
-Fading Wildlands;🐏;Alpha Ram;Boss-Heavy;3;1;1;0;2;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Rammed till releasing the last breath.
-Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;1;0;3;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.
-Fading Wildlands;🐗;Brood Matron;Boss-Heavy;2;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.
-Fading Wildlands;🐂;Elder Bull;Boss-Heavy;3;0;1;0;1;0;0;Broken Charge;Looks tired\ still hits like a last resort.<br>;Got impaled by both horns at once.
+Fading Wildlands;🐏;Alpha Ram;Boss-Heavy;2;2;2;0;2;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Rammed till releasing the last breath.
+Fading Wildlands;🦬;Risky Bison;Boss-Heavy;2;2;2;0;3;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.
+Fading Wildlands;🐗;Brood Matron;Boss-Heavy;3;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.
+Fading Wildlands;🐂;Elder Bull;Boss-Heavy;3;2;1;0;1;0;0;Broken Charge;Looks tired\ still hits like a last resort.<br>;Got impaled by both horns at once.
 
 Fading Wildlands;🏵️;Symbol of Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Fading Wildlands;🎨;Painter's Palette;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
@@ -297,7 +297,7 @@ Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;0;Immunity Booster;Somehow the w
 
 Forsaken Village;🔱;Altar of Hatred;Altar;0;0;0;-3;0;1;0;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;0;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received
-Forsaken Village;📿;Prayer Beads;Altar;0;0;0;1;0;0;0;Sacred Offering;Each bead is worn smooth by devotion.<br>;Peace in the quiet prayer
+Forsaken Village;📿;Prayer Beads;Altar;0;0;0;1;0;0;0;Sacred Offering;Each bead is worn smooth by devotion.<br>;Found peace in the quiet prayer
 Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;0;Ritual Place;Remnants of a cultist ritual.<br>;Dealt with the Devil
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
 Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained a deeper insight
@@ -321,7 +321,6 @@ Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Wild Animal;Born to race 
 
 Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;0;Insect;Going in for the kill.<br>;How could this happen?
 Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Forsaken Village;🦂;Tiny Scorpion;Small;1;2;1;0;-1;0;0;Dangerous Insect;Beware\ it is venous AF.<br>;There was nowhere to run.
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Forsaken Village;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
 Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;
@@ -341,6 +340,7 @@ Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;0;Wild Animal;Does not 
 
 Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
+Forsaken Village;🦂;Tiny Scorpion;Stingy;1;2;2;0;-1;0;0;Dangerous Insect;Beware\ seems venous AF.<br>;There was nowhere to run.
 Forsaken Village;🦂;Fierce Scorpion;Stingy;1;3;1;0;-1;0;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
 Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
 Forsaken Village;🐝;Busy Hornet;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Oversensitive to close contact.<br>;There was nowhere to run.
@@ -465,7 +465,7 @@ Forsaken Village;🍰;Strawberry Cake;Consumable;1;0;0;0;0;0;0;Lovely Treat;Bake
 Forsaken Village;🍵;Cold Tea;Consumable;0;0;0;1;0;0;0;Herbal Blend;A calming natural black tea.<br>Provides <b>+1 🍀 Luck</b>;You feel gently focused.
 Forsaken Village;🥩;Fresh Venison;Consumable;-1;0;0;0;0;0;0;Raw Meat;Not safe to eat without cooking first.<br>;That was just disgusting
 Forsaken Village;🥣;Unfinished Bowl;Consumable;0;0;-3;0;0;0;0;Someone's Breakfast;Must have been here for weeks.<br>;Ugh. That tasted terrible
-Forsaken Village;🥫;Pistachio Ketchup;Consumable;-1;0;3;0;0;0;0;Canned Food;A greenish crust indicates a special flavor.<br>Makes you run fast\ <b>for a price.</b>;The flavoring took its toll
+Forsaken Village;🥫;Pistachio Ketchup;Consumable;-1;0;3;0;0;0;0;Canned Food;A greenish crust indicates a special flavor.<br>Makes you run faster\ <b>for a price?</b>;The flavoring took its toll
 
 Forsaken Village;🍅;Sweet Tomato;Consumable;0;0;0;0;0;0;0;Actually a Fruit;Likely packs some vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
