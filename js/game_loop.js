@@ -376,6 +376,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
         linesStory.push(tarr);
   }
   }
+
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     if (savedCoins!= NaN && savedCoins>0){ //Skip tutorial, visit shop
@@ -386,6 +387,8 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
     }
     if (savedCoins==0){
       loadEncounter(4);
+      enemyName="Deja Vu?";
+      enemyEmoji="🤔";
       playerSta=playerStaMax;
       logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
     }
@@ -787,7 +790,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Container"]));
       }
 
-      if (!areaName.includes("Meadow") && (procAbilityChance("",3+playerLck))){ //3% chance for a locked container with artifact
+      if (!areaName.includes("Fading") && (procAbilityChance("",3+playerLck))){ //3% chance for a locked container with artifact
         pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter(["Locked-Container"]));
       }
