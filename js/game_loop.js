@@ -380,6 +380,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     if (savedCoins!= NaN && savedCoins>0){ //Skip tutorial, visit shop
+      playerSta=playerStaMax;
       loadEncounter(4);
       drachmaShop[0]="area:"+"Fading Wildlands";
       linesStory.splice(encounterIndex+1,1); //RM Realization
@@ -743,7 +744,7 @@ function drachmaeBuy(price=1,item=""){
   if (availableCoins>=price) {
     playerShopped=true;
     spentCoins+=price;
-    availableCoins-=price;
+    availableCoins=availableCoins-spentCoins;
     localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerGainedEffect();
