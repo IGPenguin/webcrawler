@@ -380,7 +380,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     if (savedCoins!= NaN && savedCoins>0){ //Skip tutorial, visit shop
       loadEncounter(4);
-      drachmaShop[0]="area:"+"Wildland Meadows";
+      drachmaShop[0]="area:"+"Fading Wildlands";
       linesStory.splice(encounterIndex+1,1); //RM Realization
       pushEncounter(drachmaShop)
     }
@@ -746,7 +746,7 @@ function drachmaeBuy(price=1,item=""){
 
     if (item!="Level") {
     logPlayerAction(actionString,"Ya ya ya, bought MUCH GOOD!");
-    drachmaShop[0]="area:"+"Wildland Meadows";
+    drachmaShop[0]="area:"+"Fading Wildlands";
     pushEncounter(drachmaShop);
     var item=generateRandomItem(item).split(",");
     item[0]="area:"+areaName;
@@ -3782,17 +3782,17 @@ function playerReincarnate(){
   curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
 
   if (savedCoins>0){
-    drachmaShop[0]="area:"+"Wildland Meadows"
+    drachmaShop[0]="area:"+"Fading Wildlands"
     linesStory.splice(encounterIndex+1,1); //RM Realization
     pushEncounter(drachmaShop)
   }
 
   if (playerKarma>0){ //TODO Revise this threshold
-    var randomArea=chooseFrom(["Wildland Meadows","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame
+    var randomArea=chooseFrom(["Fading Wildlands","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame
     var bonusItem=getRandomEncounter(["Item"],["Artifact"],randomArea);
-    bonusItem=bonusItem.replaceAll(randomArea,"Wildland Meadows")
+    bonusItem=bonusItem.replaceAll(randomArea,"Fading Wildlands")
 
-    var bonusWrapper=["area:Wildland Meadows","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
+    var bonusWrapper=["area:Fading Wildlands","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
