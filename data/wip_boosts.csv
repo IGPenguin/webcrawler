@@ -1,0 +1,79 @@
+//Loot & food ideas
+💸 = 5x Coin (Game End)
+
+Depths of Slumber;⚱️;Ming-dynasty Vase;Item;0;0;0;0;0;0;Artifact;Contents explode when violently disturbed.;???
+Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
+Depths of Slumber;💋;Distant Memory;Item;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
+Loot;🪶;Seabird Feather;Item;0;0;0;1;0;0;Lightweight Trinket;Soft as a dream.<br>Provides <b>+1 🍀 Luck</b>.;Tucked it in your hat.
+Fishing;🌸;Dried Petals;Item;0;0;0;0;1;0;Faded Scent;Still faintly fragrant.<br>Provides <b>+1 🧠 Charisma</b>.;Dreamt of spring.
+Fishing;🧿;Evil Eye Charm;Item;0;0;0;0;0;1;Artifact;Ward off curses and ill will.<br>Provides <b>+1 🔵 Mana</b>.;Hung it close to your chest.
+Fishing;🎻;Barnacled Violin;Item;0;0;0;0;2;0;Withered Instrument;Music from another time.<br>Provides <b>+2 🧠 Charisma</b>.;Strummed a captivating tune.
+Fishing;🩲;Wet Underwear;Item;0;0;0;0;-1;0;Embarassing Find;Probably belonged to someone else.<br>Provides <b>-1 🍀 Luck</b>.;Why did you even pick this up?
+Fishing;🩹;Bandage Roll;Item;0;0;0;0;0;0;Basic Aid;Could still be useful in a pinch.<br>;Wound up tighter than before.
+Fishing;🗿;Mini Totem;Item;0;0;0;0;0;1;Ancient Relic;Carved by ancient hands.<br>Provides <b>+1 🔵 Mana</b>.;Held it close to your chest.
+Fishing;🎐;Wind Chime;Item;0;0;0;0;0;1;Soothing Talisman;Music of the breeze.<br>Provides <b>+1 🔵 Mana</b>.;Felt a sense of calm.
+Fishing;🎭;Masquerade Mask;Item;0;0;0;0;2;0;Disguise;Looked fancy once upon a time.<br>Provides <b>+2 🧠 Charisma</b>.;Played a different role.
+Fishing;🪗;Rusty Harmonica;Item;0;0;0;0;2;0;Musical Junk;Only plays the song of lost sailors.<br>Provides <b>+2 🧠 Charisma</b>.;Played a haunting tune.
+Fishing;📌;Rusty Pin;Item;0;1;0;0;0;0;Scrap Weapon;Sharp enough for mischief.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it somewhere useful.
+Fishing;🪢;Knotted Rope;Item;0;0;1;0;0;0;Ropework;Knots tell their own story.<br>Provides <b>+1 🟢 Energy</b>.;Untangled some secrets.
+Fishing;🧼;Slippery Soap;Item;0;0;0;0;1;0;Hygiene;Slipped through the fingers.<br>Provides <b>+1 🧠 Charisma</b>.;Sudsy thoughts.
+Loot;🪞;Cracked Mirror;Item;0;0;0;-1;1;0;Disturbing Reflection;Reveals a hidden truth.<br>Provides <b>+1 🧠 Intimidation</b> for <b>-1 🍀 Luck</b>.;Shuddered at the sight.
+Loot;🐚;Conch Shell;Item;0;0;1;0;0;0;Sea's Voice;Still carries an echo.<br>Provides <b>+1 🟢 Energy</b>.;Whispered a song of the sea.
+Loot;🪝;Fish Hook;Item;0;1;0;0;0;0;Fisherman's Tool;Simple, but effective.<br>Provides <b>+1 ⚔️ Damage</b>.;Caught more than fish.
+Loot;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;Handcarved Curio;Worn by sea and time.<br>Provides <b>+1 ❤️ Health</b>.;Clutched it in a memory.
+Loot;🧊;Cold Stone;Item;0;0;1;0;0;0;Chill Charm;Cold enough to bite.<br>Provides <b>+1 🟢 Energy</b>.;Pressed it to your forehead.
+Shrouded Necropolis;🪶;Obsidian Feather;Item;0;1;0;0;0;0;Mysterious Trinket;Whispers echo within.<br>Provides <b>+1 ⚔️ Damage</b>.;Unearthly shivers.
+Shrouded Necropolis;🪞;Fractured Mirror;Item;0;0;0;3;0;0;Shiny Object;Reflects something sinister.<br>Provides <b>+3 🍀 Luck</b>.;Saw something that wasn't you.
+Shrouded Necropolis;🔮;Crimson Orb;Item;0;0;0;0;0;1;Magical Relic;Pulses with a hidden power.<br>Provides <b>+1 🔵 Mana</b>.;Felt a surge of dark energy.
+Wildland Meadows;🧣;Petal Wrap;Item;0;0;1;1;0;0;Woven Scarf;Stitched from meadow blooms<br>+1 Stamina🟢\\+1 Luck🍀\\fades in sunlight.;Nostalgia brushes your cheek.
+Forsaken Village;🕯️;Wax Charm;Item;0;1;0;0;0;1;Soft Fetish;Melted edges shaped like a face<br>+1 Attack⚔️\\+1 Magic🔵\\-1 Luck🍀;Warmth seeps into your bones.
+Twisted Fairyland;🎀;Lace Collar;Item;0;0;0;1;1;0;Tattered Frill;Once part of something finer<br>+1 Luck🍀\\+1 Intellect🧠\\itchy at the throat.;It tickles slightly.
+River of Sorrows;🖋️;Ink Feather;Item;0;0;0;0;2;0;Quill Relic;The tip is still wet<br>+2 Intellect🧠\\stains everything it touches.;You hear faint scribbling.
+Afflicted Necropolis;🪓;Rust Hatchet;Item;1;1;0;0;0;0;Cracked Tool;Handle bound with old sinew<br>+1 Health❤️\\+1 Attack⚔️\\-1 Magic🔵;It thirsts in your hand.
+Shrouded Court;👑;Veil Pin;Item;0;0;1;0;0;1;Gilded Spike;Still holds a curled hair<br>+1 Stamina🟢\\+1 Magic🔵\\-1 Intellect🧠;The metal gleams hungrily.
+Forsaken Village;📿;Prayer Beads;Item;0;0;0;1;1;0;Sacred Trinket;Counting the beads clears ones mind.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;
+Forsaken Village;🔫;Unfair Advantage;Item;0;0;0;0;0;0;<b>Artifact</b>;The wielder always attacks first.<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
+Forsaken Village;🪙;Bribe Coin;Item;0;0;0;0;0;0;<b>Artifact</b>;One-time white flag.;XXX
+Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides <b>+2 🧠 Intelect</b>.<br>;XXX
+Forsaken Village;🪅;Big Piñata;Container;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
+Forsaken Village;🧷;Useful Pin;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
+Forsaken Village;🎴;Daunting Shém;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
+Endless Ocean;️❤️‍🩹;First Aid Kit;Item;0;0;0;0;0;0;Artifact;Patch yourself up after every beating.<br>Heals <b>+1 ❤️ Health</b> after a fight.;
+Twisted Fairyland;🪡;Thread of Fate;Item;0;0;0;2;0;0;Mystical Thread;Whispers of destiny woven tight.<br>Provides <b>+2 🍀 Luck</b>.;
+Twisted Fairyland;🔮;Witch's Crystal;Item;0;0;0;0;2;0;Mystical Focus;Glimmers with future sight.<br>Provides <b>+2 🧠 Intellect</b>.;
+Twisted Fairyland;💀;Mini Skull;Item;0;0;0;-1;1;0;Odd Trinket;Cradles a fragment of ancient knowledge.<br>Provides <b>+1 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;
+Twisted Fairyland;🕯️;Spirit Candle;Item;0;0;0;0;1;0;Mystical Light;Flickers with ethereal flame.<br>Provides <b>+1 🧠 Intellect</b>.;
+
+Fishing;🐡;Spiky Sushi;Consumable;-1;0;0;0;4;0;Artifact;Might get you waaay too high.<br>Might turn even deadly though.;Sheeesh\ that was intense!
+Loot;🌿;Herbal Poultice;Consumable;1;0;0;0;0;0;Natural Remedy;Mends minor wounds.<br>Restores <b>❤️ Health</b>.
+Endless Ocean;🍼;Baby Milk;Consumable;0;0;0;0;0;0;Suspicous Container;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+
+Shrouded Necropolis;🔮;Veiled Oracle;Altar;1;0;1;0;0;0;Ritual Place;Whispers guide the soul.<br>;
+Shrouded Necropolis;⚰️;Bone Reliquary;Altar;-1;2;0;0;0;0;Sacred Bones;Silent prayers to the past.<br>;
+Shrouded Necropolis;🌒;Moonlit Shrine;Altar;0;1;2;0;0;0;Ritual Place;Pale light washes over ancient stones.<br>;
+Shrouded Necropolis;🔥;Ember Pyre;Altar;0;0;2;0;0;1;Sacrifice Altar;Ashes swirl in the faint glow.<br>;
+Shrouded Necropolis;🌪️;Tempest Spire;Altar;0;0;1;0;1;1;Storm Altar;The wind howls with forgotten rage.<br>;
+Shrouded Necropolis;🪞;Mirror of Regret;Altar;0;0;0;0;1;1;Echoes of Loss;Your reflection is not your own.<br>;
+Forsaken Village;🪦;Forgotten Tomb;Altar;0;0;0;0;0;1;Ritual Place;Dusty grave markers stand tall.<br>;Echoes of the past spoken.
+Forsaken Village;🌑;Obsidian Obelisk;Altar;0;0;0;0;0;1;Ritual Place;Black stone shimmers with power.<br>;Shadowy energies embraced.
+Forsaken Village;💧;Sacred Well;Altar;0;0;0;2;0;0;Ritual Place;Water whispers old secrets.<br>;Blessed by ancient spirits.
+Forsaken Village;🔥;Pyre of Devotion;Altar;0;1;0;0;0;1;Ritual Place;Flames lick at the carved symbols.<br>;Power surged within.
+Forsaken Village;🎻;Hymn of the Damned;Altar;0;0;0;0;2;0;Knowledge Source;A melody of sorrow echoes here.<br>;Knowledge of despair gained.
+Forsaken Village;🪙;Gilded Offering Plate;Altar;0;0;0;1;0;0;Sacred Offering;Coins glint under the flickering light.<br>;Fortune smiled briefly.
+Forsaken Village;🍂;Witch’s Circle;Altar;-1;0;0;0;0;1;Ritual Place;Roots and bones intertwine here.<br>;A dark pact sealed.
+Forsaken Village;🪶;Feathered Totem;Altar;0;0;0;1;0;0;Sacred Offering;Feathers swaying like prayers.<br>;A gentle blessing felt.
+Forsaken Village;🪦;Runestone Slab;Altar;0;0;0;0;2;0;Knowledge Source;Ancient etchings glow faintly.<br>;Runes whispered secrets.
+Forsaken Village;⚰️;Crypt of the Nameless;Altar;0;0;0;0;0;1;Ritual Place;Silence speaks to eternity.<br>;Felt the chill of the grave.
+Twisted Fairyland;🛕;Gloomy Temple;Altar;0;0;0;1;0;1;Ancient Ruin;Mossy stone echoes with power.<br>;Bowed to unseen forces.
+Twisted Fairyland;🌿;Sacred Grove;Altar;1;0;0;0;0;0;Living Altar;Whispers of old spirits surround you.<br>;Felt blessed by green life.
+Twisted Fairyland;🌕;Moonlit Clearing;Altar;1;0;0;0;0;0;Silent Glade;Bathed in eternal moonlight.<br>;Drank the silver glow.
+Twisted Fairyland;🕯️;Candle Circle;Altar;0;0;0;0;1;0;Ritual Circle;Flickers of devotion in the dark.<br>;Shared a fleeting prayer.
+Twisted Fairyland;🗿;Worn Effigy;Altar;0;0;0;1;0;0;Forgotten Idol;Ancestors carved their hopes here.<br>;Felt the weight of their memory.
+Twisted Fairyland;🔥;Burning Shrine;Altar;-2;0;1;0;0;0;Sacrificial Spot;Flames hunger for your soul.<br>;Offered a piece of yourself.
+Twisted Fairyland;🌙;Lunar Gate;Altar;1;0;0;0;0;0;Portal to Night;Cradles moon’s essence.<br>;Glimpsed secrets of the dark.
+Twisted Fairyland;🔮;Crystal Altar;Altar;0;0;0;0;1;0;Mystic Focus;Reflections of what could be.<br>;Whispered dreams to the void.
+Twisted Fairyland;🌹;Thorny Shrine;Altar;-1;0;0;0;0;1;Sacred Pain;Beauty wrapped in agony.<br>;Blood paid for devotion.
+
+Forsaken Village;🧙;Wandering Hermit;Friend;0;1;0;0;1;0;Wise Elder;Mumbles truths only he knows.<br>;Shared cryptic advice.
+Forsaken Village;🪷;Spirit of the Lotus;Friend;0;0;0;1;1;0;Mystical Entity;A fragrant presence soothes the soul.<br>;A moment of harmony.
+River of Sorrows;‍🦦;Playful Otter;Pet;1;0;2;2;1;0;Wild Animal;Hyperactively snooping around.<br>;Got a new travel buddy!
