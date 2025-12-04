@@ -43,7 +43,7 @@ Fading Wildlands;🌾;Tangled Weeds;Container-3;0;0;0;0;0;0;0;Snaring Growth;Eve
 Fading Wildlands;🌽;Whispering Cornfield;Container-3;0;0;0;0;0;0;0;Hidden Walkway;Stalks crowd together\ concealing more than soil.<br>;There was something hidden inside.
 Fading Wildlands;🏕️;Silent Campsite;Container-3;0;0;0;0;0;0;0;Hastened Departure;Bedrolls cold\ fire long extinguished.<br>;Decided to investigate the tent.
 Fading Wildlands;🌻;Sunward Field;Container-3;0;0;0;0;0;0;0;Watching Field;Tall heads seem to follow your steps.<br>;Crossed right through.
-Fading Wildlands;🌾;Ensnaring Weeds;Container-3;0;0;-1;0;0;0;0;Natural Obstacle;Tangles clutch at boots like nervous fingers.<br>;Nearly tripped\ but caught yourself.
+Fading Wildlands;🌾;Ensnaring Weeds;Container-3;0;0;-1;0;0;0;0;Natural Obstacle;Tangles clutch at your boots.<br>;Nearly tripped\ but caught yourself
 
 Fading Wildlands;🍀️;Clover Shrine;Altar;0;0;0;1;0;0;0;Gentle Fortune;Four-leaf clusters lean toward you.<br>;You won't ever forget this.
 Fading Wildlands;🌸;Petal Shrine;Altar;0;0;0;1;0;0;0;Quiet Blessing;Color clings stubbornly to these blooms.<br>;The nature blessed you.
@@ -80,7 +80,10 @@ Fading Wildlands;🐜;Trail Ant;Small;1;0;1;0;-1;0;0;Line Walker;One ant\ a whol
 Fading Wildlands;🦗;Careless Cricket;Small;1;0;2;0;-1;0;0;Noise Maker;The chirping never\ ever stops.<br>;The noise exploded your head!
 Fading Wildlands;🪰;Carrion Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Smells your fear from miles away.<br>;Contracted a deadly disease.
 Fading Wildlands;🪰;Itching Fly;Small;1;1;2;0;-1;0;0;Skin Haunter;Always lands exactly where it hurts.<br>;Contracted a deadly disease.
-Fading Wildlands;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Always chewing something you hope isn’t important.<br>;Become its meal\ unwillingly.
+Fading Wildlands;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Chewing something you hope isn’t important.<br>;Become its meal\ unwillingly.
+
+Fading Wildlands;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
+Fading Wildlands;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers something valuable in exchange for food.<br>It is looking for(( n/a;Looks like it was worth it
 
 Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;The bird has joined your side.
 Fading Wildlands;🦦;Stream Rascal;Pet;1;1;1;0;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.
@@ -106,8 +109,8 @@ Fading Wildlands;🦌;Startled Stag;Heavy;2;0;2;0;3;0;0;Flee or Fight;Flight can
 
 Fading Wildlands;🪿;Untitled Goose;Boss-Pet;2;1;2;0;2;0;0;Feathered Menace;Peace was never an option.<br>;Finally found peace?
 Fading Wildlands;🦢;Pond Queen;Boss-Standard;2;2;2;0;3;0;0;Feathered Fury;Still waters\ vicious wings.<br>;Choked by the long neck.
-Fading Wildlands;🦅;Sky Tyrant;Boss-Swift;1;3;1;0;3;0;0;Aerial Killer;Eyes locked on soft places.<br>;Talons tore your throat apart.
-Fading Wildlands;🐍;Rush Viper;Boss-Swift;1;2;2;0;-1;0;0;Ambush Predator;You never see the first bite.<br>;Got injected with deadly venom.
+Fading Wildlands;🦅;Sky Tyrant;Boss-Swift;1;3;2;0;3;0;0;Aerial Killer;Eyes locked on soft places.<br>;Talons tore your throat apart.
+Fading Wildlands;🐍;Rush Viper;Boss-Swift;1;2;2;0;-1;0;0;Ambush Predator;Strikes as fast as a lightning.<br>;Got injected with deadly venom.
 Fading Wildlands;🦡;Burrow Fury;Boss-Swift;2;2;1;0;4;0;0;Relentless Savage;Afraid of nothing\ including you.<br>;Got freaking destroyed.
 Fading Wildlands;🐏;Alpha Ram;Boss-Heavy;2;2;2;0;2;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Rammed till releasing the last breath.
 Fading Wildlands;🦬;Risky Bison;Boss-Heavy;2;2;2;0;3;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.
@@ -138,7 +141,6 @@ Fading Wildlands;🗝️;Brass Key;Item;0;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b
 
 Fading Wildlands;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
 Fading Wildlands;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!
-Fading Wildlands;🧸;Worn Teddy;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!
 
 Fading Wildlands;💌;Undelivered Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
@@ -302,10 +304,9 @@ Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;0;Ritual Place;Remnan
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
 Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained a deeper insight
 
-Forsaken Village;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;3;0;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for(( n/a;Swapped your nuts for
-Forsaken Village;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
-Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸;2;0;0;0;1;0;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
-Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🧸\🦴\🍖;2;0;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in((n/a;You made them happy!
+Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\👠\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀\🧸;0;0;0;0;0;0;0;Serious Representative;Would very much like to barter with you.<br>;Initiated contact!
+Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🧸\🦴\🍖;0;0;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in((n/a;You made them happy!
+
 Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Suffered a heartbreak
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;0;Prophet;Whispers a survival tip while staring at you((<br>n/a;Had a nice conversation
 Forsaken Village;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Oh\ that was annoying.
@@ -590,11 +591,11 @@ Twisted Fairyland;🌾;Overgrown Pond;Fishing;0;0;0;0;0;0;0;Water Body;Smells ab
 Twisted Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Twisted Fairyland;🍂;Amber Pond;Fishing;0;0;0;0;0;0;0;Murky Waters;Surface is covered with dead leaves.<br>;Drew something from the depths.
 
-Twisted Fairyland;🦜;Colourful Songbird;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
+Twisted Fairyland;🦜;Colourful Songbird;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>;Looks like it was worth it.
 Twisted Fairyland;🦊;Mystery Fox;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;Sits around waving its furry tail.<br>;Received a poweful artifact
 Twisted Fairyland;🦧;Confused Orangutan;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;0;Troubles Animal;Looks like it has something barter.<br>;Received a poweful artifact
 Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶;0;0;0;0;0;0;0;Troubled Animal;Looks like it has something to barter.<br>;Received a poweful artifact
-Twisted Fairyland;🦤;Hungry Dodo;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐌\🐛\🐜\🪱;0;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared something.
+Twisted Fairyland;🦤;Hungry Dodo;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>;Willingly shared something.
 Twisted Fairyland;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸\🗿;0;0;0;0;0;1;0;Unusal Critter;Travelled from a galaxy far far away.<br>;Received a special treat.
 Twisted Fairyland;🐢;Elder Pope;Friend;0;0;0;0;0;1;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
