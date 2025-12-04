@@ -474,7 +474,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
   //drop anything but type
   var matchingTypeLines = [];
   encounterTypes.forEach((type) => {
-    $.grep(tempLinesGenerator, function (item) { return item.indexOf("type:"+type) === 3 }).forEach((line) => {
+    $.grep(tempLinesGenerator, function (item) { return item[3].includes("type:"+type) }).forEach((line) => {
       //console.log(line);
       matchingTypeLines.push(line);
     });
@@ -612,10 +612,9 @@ function loadEncounter(index, fileLines = linesStory){
     if (String(enemyQuestItems).length>0){
       var heldItem=checkPlayerHasItem(enemyQuestItems);
       if (heldItem==""){
-        enemyDesc="If you see me again, <b>bring something good</b>.<br>How some of this? "+String(enemyQuestItems).replaceAll(",","");
+        enemyDesc="If you see me again, bring me <b>something good</b>.<br>Perhaps this? "+String(enemyQuestItems).replaceAll(","," ");
       }
       enemyDesc=enemyDesc.replaceAll("n/a",heldItem);
-      enemyDesc=enemyDesc.replaceAll("<br>","<br><b>Looks like this might do: "+heldItem)
     }
 
     enemyType="Friend";
@@ -730,6 +729,11 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
     }
   }
+  if (enemyTeam.includes("Lost Possesion")) { //Found quest item, spawn friend who wants it
+    console.log(enemyEmoji)
+    var randomSlot=chooseFrom([3,4,5])
+    pushEncounter(getRandomEncounter(["Friend"],[enemyEmoji]),randomSlot);
+  }
 }
 
 function generateRandomItem(item=""){
@@ -750,7 +754,7 @@ function drachmaeBuy(price=1,item=""){
     displayPlayerGainedEffect();
 
     if (item!="Level") {
-    logPlayerAction(actionString,"Splendid choice, this ought to help.");
+    logPlayerAction(actionString,"Splendid choice, this ought to help");
     drachmaShop[0]="area:"+"Fading Wildlands";
     pushEncounter(drachmaShop);
     var item=generateRandomItem(item).split(",");
@@ -758,7 +762,7 @@ function drachmaeBuy(price=1,item=""){
     item=String(item);
     pushEncounter(item);
     } else {
-      logPlayerAction(actionString,"Sure, grow stronger as you need!");
+      logPlayerAction(actionString,"Sure, grow stronger as you need");
       playerXP+=playerXPThreshold;
       playerRest(true);
       return;
@@ -840,10 +844,10 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (areaName.includes("Shrouded")) {
         //No item
       } else {
-        if (procAbilityChance("",33+playerLck)) { //33% Artifact
+        if (procAbilityChance("",20+playerLck)) { //20% Artifact
           pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         } else {
-          pushEncounter(getRandomEncounter(["Item"]))
+          pushEncounter(getRandomEncounter(["Item"],[],"",["Lost Possesion"])) //Any item, but not quest (too late)
         }
       }
       drachmaCoin[0]="area:"+areaName;
@@ -882,7 +886,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         generateNextEncounters(0,false); //Prop or Contained Small
       }
 
-      var possibleEncounters=["Friend","Recruit","Standard","Stingy","Toxic","Hot","Tough","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep","Altar"];
+      var possibleEncounters=["Recruit","Standard","Stingy","Toxic","Hot","Tough","Swift","Heavy","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep","Altar"];
       var firstEncounter=[getRandomEncounter(possibleEncounters)];
       pushEncounter(firstEncounter);
 
@@ -2514,7 +2518,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               if (enemyEmoji!="🪙") playerLootString+=enemyEmoji;
               displayPlayerGainedEffect();
-              displayPlayerEffect("🪙");
             } else {
               playerKarma++;
               playerLove++;
@@ -2523,6 +2526,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (enemyEmoji=="🪙"){
               savedCoins++
+              displayPlayerEffect("🪙");
               localStorage.setItem('coins', savedCoins);
             }
 
@@ -2747,6 +2751,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 //This means filter by two = guarantee artifact
                 pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
                 playerLootString=playerLootString.replace(heldQuestItem,"");
+                displayPlayerEffect(heldQuestItem)
               }
               //XP is even for interaction
               var gainedXP=playerGainXP(1,25*playerLevel,"");
@@ -2763,7 +2768,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               console.log(enemyQuestItems);
               if (String(enemyQuestItems)!=""){
-                logPlayerAction(actionString,"You lack the desired item: "+String(enemyQuestItems).replaceAll(","," "));
+                logPlayerAction(actionString,"Bring me: "+String(enemyQuestItems).replaceAll(","," "));
               } else {
                 logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
               }
@@ -3243,10 +3248,11 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
 
 function enemyTurnAggressive(message="That has made them really upset!"){
   enemyType="Standard";
+  enemyDesc="It wanted be friends, not enemies.<br>But you asked for it..."
   enemyHp=2+playerLevel;
   enemyAtk=Math.floor(1+playerLevel/2);
   enemySta=Math.floor(2+playerLevel/2);
-  enemyMsg="Got killed instead of a conversation."
+  enemyMsg="Got killed by a friend."
   playerKarma--;
   logPlayerAction(actionString,message);
   return true;
