@@ -766,7 +766,7 @@ function drachmaeBuy(price=1,item=""){
     nextEncounter(); //Also marks as seen, haha smart
     return;
   } else {
-    logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>You don't have enouh Drachmae!</text>")
+    logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>You don't have enough 🪙 Drachmae!</text>")
     displayEnemyDodgeEffect();
     displayPlayerCannotEffect();
     return;
@@ -1295,7 +1295,9 @@ function appendEnemyStats(){
   if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp-enemyHpLost);}
     if (enemyHpLost > 0) { enemyStats += emptySymbol.repeat(enemyHpLost); } //YOLO
 
-  if (enemySta > 0) { enemyStats += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(enemySta-enemyStaLost);}
+  if (enemyHp>0) enemyStats+="&nbsp;&nbsp;"
+
+  if (enemySta > 0) { enemyStats += "🟢 " + fullSymbol.repeat(enemySta-enemyStaLost);}
     if (enemyStaLost > 0) { enemyStats += emptySymbol.repeat(enemyStaLost); } //YOLO
 
   //if (enemyDef > 0) { enemyStats += "&nbsp;&nbsp;🔰 " + fullSymbol.repeat(enemyDef);} //Hmm... maybe not?

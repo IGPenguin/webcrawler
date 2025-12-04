@@ -61,23 +61,23 @@ Fading Wildlands;🪵;Fallen Trunk;Trap-Roll;0;0;0;0;0;0;0;Blocking Mass;A heavy
 
 Fading Wildlands;🐀;Field Scavenger;Small;1;0;2;0;-1;0;0;Disease Carrier;Tiny body\ filthy teeth.<br>;Contracted a deadly disease.
 Fading Wildlands;🐁;Pale Vermin;Small;1;0;2;0;-1;0;0;Sickly Rodent;Eyes too bright\ ribs too sharp.<br>;Contracted a deadly disease.
-Fading Wildlands;🦎;Skitter Lizard;Small;1;0;1;0;0;0;0;Quick Reptile;Darts just out of reach.<br>;Lost sight of it\ paid the price.
+Fading Wildlands;🦎;Skitter Lizard;Small;1;0;2;0;0;0;0;Quick Reptile;Darts just out of reach.<br>;Lost sight of it\ paid the price.
 Fading Wildlands;🪳;Floor Crawler;Small;1;0;1;0;-1;0;0;Creeping Filth;You hear it before you see it.\n<br>;Crawled in the ear and ended it all.
 Fading Wildlands;🦗;Startled Hopper;Small;1;0;1;0;-1;0;0;Jumpy Insect;Bolts suddenly\ ruining your footing.<br>;Got too close and fell.
 Fading Wildlands;🐝;Lost Bumble;Small;1;0;1;0;-1;0;0;Straying Sting;Wanders aimlessly\ stinger always ready.<br>;Stung in the eye and fell.
 Fading Wildlands;🦋;Azure Moth;Small;1;0;1;0;-1;0;0;Fragile Bait;Delicate wings\ surprisingly good hook bait.<br>;How come this happened?
 Fading Wildlands;🐌;Trail Slug;Small;1;0;0;0;-1;0;0;Slow Crawler;Leaves a faint\ unhealthy shimmer behind.<br>;How come this happened?
-Fading Wildlands;🪱;Burrow Worm;Small;1;0;0;0;-1;0;0;Soil Dweller;Perfect for fish\ less so for you.<br>;Got destroyed by a worm.
-Fading Wildlands;🪱;Hook Worm;Small;1;0;0;0;-1;0;0;Bait Creature;Wriggles like it already knows the water.<br>;Got destroyed by a worm.
-Fading Wildlands;🪱;Lost Worm;Small;1;0;0;0;-1;0;0;Surface Stray;Should’ve stayed underground.<br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Burrow Worm;Small;1;0;1;0;-1;0;0;Soil Dweller;Perfect for fish\ less so for you.<br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Hook Worm;Small;1;0;1;0;-1;0;0;Bait Creature;Wriggles like it already knows the water.<br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Lost Worm;Small;1;0;1;0;-1;0;0;Surface Stray;Should’ve stayed underground.<br>;Got destroyed by a worm.
 Fading Wildlands;🪱;Skittish Worm;Small;1;0;1;0;-1;0;0;Nervous Bait;Jumps at every tremor in the soil.<br>;Got destroyed by a worm.
 Fading Wildlands;🪱;Old Grub;Small;1;0;1;0;-1;0;0;Reliable Bait;Always where the shovel lands first.<br>;Got destroyed by a worm.
 Fading Wildlands;🪱;Rain Crawler;Small;2;0;1;0;-1;0;0;Storm Bait;Comes out when the sky cries.<br>;Got destroyed by a worm.
 Fading Wildlands;🐛;Quiet Larva;Small;1;0;1;0;-1;0;0;Soft Threat;Looks harmless\ feels like a warning.<br>;This was a disaster.
 Fading Wildlands;🪰;Ceaseless Fly;Small;1;0;1;0;-1;0;0;Nagging Buzz;The hum drills straight into your skull.<br>;Couldn’t take the endless buzzing.
-Fading Wildlands;🐜;Small Forager;Small;1;0;0;0;-1;0;0;Tiny Marcher;Crawls around like the world isn't ending.<br>;How could this happen?
+Fading Wildlands;🐜;Small Forager;Small;1;0;1;0;-1;0;0;Tiny Marcher;Crawls around like the world isn't ending.<br>;How could this happen?
 Fading Wildlands;🐜;Trail Ant;Small;1;0;1;0;-1;0;0;Line Walker;One ant\ a whole nest nearby.<br>;How could this happen?
-Fading Wildlands;🦗;Careless Cricket;Small;1;0;0;0;-1;0;0;Noise Maker;The chirping never\ ever stops.<br>;The noise exploded your head!
+Fading Wildlands;🦗;Careless Cricket;Small;1;0;2;0;-1;0;0;Noise Maker;The chirping never\ ever stops.<br>;The noise exploded your head!
 Fading Wildlands;🪰;Carrion Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Smells your fear from miles away.<br>;Contracted a deadly disease.
 Fading Wildlands;🪰;Itching Fly;Small;1;1;2;0;-1;0;0;Skin Haunter;Always lands exactly where it hurts.<br>;Contracted a deadly disease.
 Fading Wildlands;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Always chewing something you hope isn’t important.<br>;Become its meal\ unwillingly.
@@ -324,11 +324,11 @@ Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;0;Annoying Insect;Sits o
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
 Forsaken Village;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
 Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;
-Forsaken Village;🪱;Tiny Worm;Small;1;0;0;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Confused Worm;Small;1;0;0;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Earthworm;Small;1;0;0;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Fruit Worm;Small;1;0;0;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Fly Larva;Small;1;0;0;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Tiny Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Confused Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Fruit Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Fly Larva;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Tapeworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪰;Annoying Fly;Small;1;0;3;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🐁;Albino Mouse;Small;1;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
@@ -611,7 +611,7 @@ Twisted Fairyland;🦎;Blue-eyed Gecko;Pet;1;0;2;0;1;1;0;Beautiful Lizard;Eyes a
 Twisted Fairyland;🦩;Baby Flamingo;Pet;1;0;1;1;0;0;0;Wild Bird;Small fancy bird in a need of help.<br>;Gained a new friend
 Twisted Fairyland;🦓;Wild Zebra;Pet;3;0;2;0;2;0;0;Mighty Animal;Strange horse approached.<br>;Gained a new travel buddy!
 
-Twisted Fairyland;🪱;Confused Earthworm;Small;1;0;0;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Twisted Fairyland;🪱;Confused Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Tapeworm;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Bloodsucking Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
