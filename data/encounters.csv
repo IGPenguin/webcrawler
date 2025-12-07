@@ -388,11 +388,6 @@ Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice
 Forsaken Village;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight
 
-Forsaken Village;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Forsaken Village;🃏;Tarot Card(( Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Forsaken Village;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Forsaken Village;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
-
 Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!
 Forsaken Village;🩼;Disposed Crutch;Item;1;1;0;0;0;0;0;Support Tool;Best of both - support and attack power.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 ⚔️ Damage</b>.;This will come in handy!
 Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a makeshift weapon.
@@ -721,10 +716,20 @@ Twisted Fairyland;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by
 Twisted Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Twisted Fairyland;🫁;Second Breath;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
-Twisted Fairyland;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Twisted Fairyland;🃏;Tarot Card(( Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Twisted Fairyland;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Twisted Fairyland;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
+Twisted Fairyland;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Fool</b>
+Twisted Fairyland;🃏;Tarot Card(( Lover;Item;1;0;0;0;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b>.<br>;Accepted destiny(( <b>Lover</b>
+Twisted Fairyland;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Mage</b>
+Twisted Fairyland;🃏;Tarot Card(( Choleric;Item;0;+;0;0;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Choleric</b>
+Twisted Fairyland;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Berserk</b>
+Twisted Fairyland;🃏;Tarot Card(( Warlock;Item;-1;0;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Warlock</b>
+Twisted Fairyland;🃏;Tarot Card(( Cleric;Item;0;0;-1;0;0;1;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 🔵 Mana</b>.<br>;Accepted destiny(( <b>Cleric</b>
+Twisted Fairyland;🃏;Tarot Card(( Shadow;Item;-1;0;2;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🟢 Energy</b>.<br>;Accepted destiny(( <b>Shadow</b>
+Twisted Fairyland;🃏;Tarot Card(( Guard;Item;2;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+2 ❤️ Health</b>.<br>;Accepted destiny(( <b>Guard</b>
+Twisted Fairyland;🃏;Tarot Card(( Knight;Item;0;1;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Knight</b>
+Twisted Fairyland;🃏;Tarot Card(( Serpent;Item;-1;1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Serpent</b>
+Twisted Fairyland;🃏;Tarot Card(( Wiseman;Item;-1;0;0;0;4;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+4 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Wiseman</b>
+Twisted Fairyland;🃏;Tarot Card(( Devil;Item;-1;0;0;4;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Devil</b>
+Twisted Fairyland;🃏;Tarot Card(( Angel;Item;2;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 ❤️ Health</b>.<br>;Accepted destiny(( <b>Devil</b>
 
 Twisted Fairyland;🪃;Haunting Boomerang;Item;0;2;0;0;0;0;0;Tribal Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b>.;
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!
