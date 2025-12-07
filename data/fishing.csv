@@ -33,6 +33,7 @@ Fishing;👒;Lucky Fishing Hat;Item;0;0;0;3;0;0;0;Signature Look;Originally come
 Fishing;🏅;Olympic Gold;Item;0;0;0;0;0;3;0;Accessory;Awarded to the best of the best.<br>Provides <b>+3 🧠 Charisma</b>;
 
 Fishing;🗡️;Silver Dagger;Item;0;2;0;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
+Fishing;🩸;Blood-drop Compass;Item;-1;2;0;0;0;0;0;Hunting Relic;Always points towards possible pray.<br>Provides <b>+2 ⚔️ Attack</b> for <b> -1 💔 Health</b>.;It twitched in your palm.
 Fishing;🪝;Lucky Hook;Item;0;1;0;1;0;0;0;Fishing Gear;Increases (not only) fishing luck.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Reeled in some fortune.
 Fishing;✂️;Sharp Scissors;Item;0;1;0;0;0;0;0;Makeshift Weapon;One can do a bloody mess with these.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained a violent weapon.
 Fishing;🕶;Cool Sunglasses;Item;0;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🧠 Charisma</b>.;Feels a lot cooler.
@@ -91,23 +92,23 @@ Fishing;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;0;Rare Fish;Convenient snack st
 Fishing;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not the best snack\ hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;
 
 Fishing;🐸;Cursed Prince;Friend;0;0;0;0;0;1;0;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.
-Fishing;🦭;Retired Seal;Friend;0;0;2;0;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
-Fishing;🐬;Cute Dolphin;Friend;0;0;0;0;1;0;0;The Clever One;Makes a lot of squaking noises.<br>;They shared some secret.
-Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;0;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Received a special treat.
-
-PET
-PET
+Fishing;🦭;Lazy Seal;Friend;0;0;2;0;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.
+Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;1;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Understood the secret of life.
 
 Fishing;🐌;Water Snail;Small;1;0;0;0;-1;0;0;Underwater Critter;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
 Fishing;🪱;Tired Worm;Small;1;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Fishing;🦐;Brackish Crawfish;Small;1;0;1;0;0;0;0;Delicacy;A bite of the water’s life.;
 Fishing;🦑;Tiny Squid;Small;1;0;2;0;0;0;0;Seafood;A little bite of the deep.<br>
 
-STANDARD
-HEAVY
-TOXIC
-REFLECTIVE
+Fishing;🦦;Deepwater Otter;Pet;1;1;3;0;0;0;0;Joyful Companion;Brings strange comfort with every splash.<br>;Formed a wet bond.
+Fishing;🪼;Venom Jelly;Toxic;2;1;2;0;0;0;0;Drifting Poison;So transparent it is barely visible.<br>;Nerves shut down completely.
+Fishing;🦂;Water Scorpion;Toxic;1;3;1;0;0;0;0;Ambush Stinger;Waits motionless in shallow mud.<br>;Venom stopped the heart.
+Fishing;🐟;Bitter Carp;Standard;2;1;1;0;0;0;0;River Dweller;Its scales taste of rust and sorrow.<br>;Turned into drifting scales.
+Fishing;🐊;Sewer Crocodile;Heavy;4;3;1;0;0;0;0;Ancient Lurker;Has waited beneath the water for ages.<br>;Dragged under for the last time.
+Fishing;🐠;Nullscale Giant;Reflective;4;1;1;0;0;0;0;Spell Eater;Feeds on pure mana currents.<br>;Your magic vanished.
+Fishing;🐢;Juvenile Turtle;Tough;1;0;1;0;0;0;0;Patient Critter;Slowly looks around trying to understand.<br>;Killed by a turtle beak.
 Fishing;‍🦀;Freshwater Crab;Tough;2;1;1;0;-1;0;1;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
 Fishing;🐡;Small Pufferfish;Stingy;2;2;2;0;-1;0;0;Unpleasant Critter;Does not look particularly tasty.<br>;The spikes were too much!
 Fishing;‍🐍;Water Serpent;Swift;2;2;2;0;0;0;0;Juvenile Predator;Slithers both out and in the water.<br>;Died off an ancient venom.
+Fishing;🦈;Young Shark;Swift;2;2;1;0;0;0;0;Fresh Predator;Still learning the gripes of hunting.<br>;Bled back into the stream.
 Fishing;‍🦑;Freshwater Squid;Boss-Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Swallowed in one slurp!
