@@ -1084,11 +1084,11 @@ Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;3;2;2;0;-1;0;0;Forgotten Lo
 Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.
 
 //Tarot Cards
-Tarot Cards;🃏;Tarot Card(( Prodigy;Item;-2;0;0;0;0;2;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+3 🔵 Mana</b>.<br>;Accepted destiny(( <b>Prodigy</b>
+Tarot Cards;🃏;Tarot Card(( Prodigy;Item;-2;0;0;0;0;3;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+3 🔵 Mana</b>.<br>;Accepted destiny(( <b>Prodigy</b>
 Tarot Cards;🃏;Tarot Card(( Wizard;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Wizard</b>
 Tarot Cards;🃏;Tarot Card(( Warlock;Item;-1;0;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Warlock</b>
 Tarot Cards;🃏;Tarot Card(( Cleric;Item;0;0;-1;0;0;1;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 🔵 Mana</b>.<br>;Accepted destiny(( <b>Cleric</b>
-Tarot Cards;🃏;Tarot Card(( Mage;Item;0;0;0;1;0;0;0;Destiny Echo;Gain <b>+1 🔵 Mana</b> with no apparent downside.<br>;Accepted destiny(( <b>Spark</b>
+Tarot Cards;🃏;Tarot Card(( Mage;Item;0;0;0;1;0;0;0;Destiny Echo;Gain <b>+1 🔵 Mana</b> with no apparent downside.<br>;Accepted destiny(( <b>Mage</b>
 
 Tarot Cards;🃏;Tarot Card(( Assassin;Item;-2;2;0;0;0;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Assassin</b>
 Tarot Cards;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-6;0;0;Destiny Echo;Sacrifice <b>-6 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Berserk</b>
@@ -1109,12 +1109,12 @@ Tarot Cards;🃏;Tarot Card(( Rotten;Item;-1;0;0;0;0;0;0;Destiny Echo;Sacrifice 
 Tarot Cards;🃏;Tarot Card(( Exile;Item;-1;0;2;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🟢 Energy</b>.<br>;Accepted destiny(( <b>Exile</b>
 Tarot Cards;🃏;Tarot Card(( Shadow;Item;-2;0;3;0;0;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+3 🟢 Energy</b>.<br>;Accepted destiny(( <b>Shadow</b>
 Tarot Cards;🃏;Tarot Card(( Athlete;Item;0;0;1;0;0;0;0;Destiny Echo;Gain <b>+1 🟢 Energy</b> with no apparent downside.<br>;Accepted destiny(( <b>Athlete</b>
-Tarot Cards;🃏;Tarot Card(( Fatso;Item;0;0;0;-1;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy/b> with nothing in return.<br>;Accepted destiny(( <b>Fatso</b>
+Tarot Cards;🃏;Tarot Card(( Fatso;Item;0;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> with nothing in return.<br>;Accepted destiny(( <b>Fatso</b>
 
 Tarot Cards;🃏;Tarot Card(( Prophet;Item;-2;0;0;0;6;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+6 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Prophet</b>
 Tarot Cards;🃏;Tarot Card(( Wiseman;Item;-1;0;0;0;3;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+3 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Wiseman</b>
 Tarot Cards;🃏;Tarot Card(( Scholar;Item;0;0;0;0;0;0;0;Destiny Echo;Gain <b>+1 🧠 Intellect</b> with no apparent downside.<br>;Accepted destiny(( <b>Scholar</b>
-Tarot Cards;🃏;Tarot Card(( Imbecile;Item;0;0;0;-1;0;0;0;Destiny Echo;Sacrifice <b>-1 🧠 Intellect</b> with nothing in return.<br>;Accepted destiny(( <b>Imbecile</b>
+Tarot Cards;🃏;Tarot Card(( Imbecile;Item;0;0;0;0;-1;0;0;Destiny Echo;Sacrifice <b>-1 🧠 Intellect</b> with nothing in return.<br>;Accepted destiny(( <b>Imbecile</b>
 
 Tarot Cards;🃏;Tarot Card(( Gambler;Item;0;0;0;4;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Gambler</b>
 Tarot Cards;🃏;Tarot Card(( Devil;Item;-1;0;0;3;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+3 🍀 Luck</b>.<br>;Accepted destiny(( <b>Devil</b>
