@@ -2567,6 +2567,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyMsg="Claimed <b>Ethereal Drachmae +"+coinNumber+" 🪙</b>";
             }
 
+            if (enemyEmoji=="🃏"){
+              if (!playerName.includes("(")) playerName=playerName+" ("+enemyName.replace("Tarot Card: ","")+")"
+            }
             //Grab end
             isFishing=false;
             if (playerHp==0) break;
