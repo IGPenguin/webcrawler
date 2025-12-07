@@ -2,7 +2,7 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/04/2025 @ 11:27 PM"
+var versionCode = "ver. 12/08/2025 @ 00:16 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
 
@@ -663,7 +663,7 @@ function loadEncounter(index, fileLines = linesStory){
              logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Found fortune: <b>"+enemyName+"</b></text>")
            } else {
               if (enemyName.includes("Tarot")){
-                logAction("👁️‍🗨️ ▸ "+enemyEmoji+" Destiny calls you through a tarot card.")
+                logAction("👁️‍🗨️ ▸ "+enemyEmoji+" Destiny calls you through a <b>Tarot Card</b>.")
               } else {
                 logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
               }
