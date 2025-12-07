@@ -1846,6 +1846,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           var mkgCost=1;
           if (enemyType.includes("Locked")) mkgCost=2;
 
+          if (enemyType=="Shop") {
+            displayPlayerCannotEffect();
+            break;
+          }
+
           if (enemyType=="Death"){
             redirectToTweet();
             logPlayerAction(actionString,"Echoed your story to the world!")
@@ -2020,6 +2025,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case 'button_pray':
+          if (enemyType=="Shop") {
+            displayPlayerCannotEffect();
+            break;
+          }
+
           if (enemyType=="Death"){
             logPlayerAction(actionString,"It's kinda too late for healing now.");
             displayPlayerCannotEffect();
@@ -2176,6 +2186,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_curse':
+        if (enemyType=="Shop") {
+          displayPlayerCannotEffect();
+          break;
+        }
+
         if (enemyType=="Death"){
           shareLinkedIn();
           logPlayerAction(actionString,"Shared your story to LinkedIn!");
