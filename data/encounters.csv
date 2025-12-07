@@ -388,11 +388,6 @@ Forsaken Village;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice
 Forsaken Village;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight
 
-Forsaken Village;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Forsaken Village;🃏;Tarot Card(( Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Forsaken Village;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Forsaken Village;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
-
 Forsaken Village;🏹;Hunting Bow;Item;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!
 Forsaken Village;🩼;Disposed Crutch;Item;1;1;0;0;0;0;0;Support Tool;Best of both - support and attack power.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 ⚔️ Damage</b>.;This will come in handy!
 Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;0;Makeshift Weapon;Definitely could be of service.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a makeshift weapon.
@@ -721,11 +716,6 @@ Twisted Fairyland;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by
 Twisted Fairyland;🫀;Backup Heart;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Twisted Fairyland;🫁;Second Breath;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 
-Twisted Fairyland;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;<b>Fool</b> card embraced
-Twisted Fairyland;🃏;Tarot Card(( Lover;Item;2;0;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ❤️ Health</b>.<br>;<b>Lover</b> card embraced
-Twisted Fairyland;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;<b>Mage</b> card embraced
-Twisted Fairyland;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;<b>Berserk</b> card embraced
-
 Twisted Fairyland;🪃;Haunting Boomerang;Item;0;2;0;0;0;0;0;Tribal Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b>.;
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
@@ -869,7 +859,13 @@ River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not th
 
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;
 
-//Matches fishing
+//~Matches fishing
+River of Sorrows;🪙;Sunken Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Sunken Drachma +1 🪙</b>
+River of Sorrows;🪙;Misplaced Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Misplaced Drachma +1 🪙</b>
+River of Sorrows;🪙;Deserted Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Deserted Drachma +1 🪙</b>
+River of Sorrows;🪙;Castaway Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Castaway Drachma +1 🪙</b>
+River of Sorrows;🪙;Forgotten Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Forgotten Drachma +1 🪙</b>
+
 River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 River of Sorrows;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 River of Sorrows;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
@@ -1059,7 +1055,7 @@ Shrouded Necropolis;⚖️;Offensive Scales;Item;0;0;0;0;0;0;0;<b>Artifact</b>;T
 Shrouded Necropolis;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 Shrouded Necropolis;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 Shrouded Necropolis;👑;The Blessed Crown;Item;2;0;0;0;2;0;0;<b>Artifact</b>;One might even gain a false sense of authority.<br>Provides <b>+2 ❤️ Health</b> and <b>+2 🧠 Intellect</b>.;Gained a deep sense of authority.
-Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;3;0;<b>Malevolent Artifact</b>;You should probably leave this old relic alone.<br><b>+3 🔵 Mana</b>\ might cause <b>serious side-effects</b>.;Syphoned all your life energy!
+Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;3;0;<b>Malevolent Artifact</b>;You should probably leave this old relic alone.<br><b>+3 🔵 Mana</b>\ might cause <b>serious side-effects</b>.;Syphoned your life energy!
 Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Necropolis;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
@@ -1073,7 +1069,6 @@ Shrouded Necropolis;🔗;Shattered Shackles;Item;0;0;0;2;0;0;0;Freedom Relic;Rem
 Shrouded Necropolis;🪲;Cursed Scarab;Item;-1;0;0;5;0;0;0;Shiny Object;An unauthorized loot from someone's tomb.<br>Provides <b>+5 🍀 Luck</b> for <b>-1 💔 Health</b>.;Ancient curse settled in you
 
 Shrouded Necropolis;🪞;Tarnished Locket;Item;-1;0;0;0;4;0;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart amost stopped for a sec.
-Shrouded Necropolis;👑;The Cursed Crown;Item;-3;0;0;0;0;0;0;<b>Malevolent Artifact</b>;You should probably leave this alone.<br>It might have some unexpected effects.;Syphoned your life energy!
 
 Shrouded Necropolis;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;0;Dark Elixir;Might have some mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.
 Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity
@@ -1087,3 +1082,43 @@ Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;3;4;2;0;12;O;0;Fo
 Shrouded Necropolis;👰🏻‍♀️;Vengeful Bride;Boss-Swift;3;3;2;0;6;O;0;Forgotten Love;She's moving so fast\ you struggle to keep up.<br>;Failed to face your true love.
 Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;3;2;2;0;-1;0;0;Forgotten Love;There's some strange glow in her eyes.<br>;Failed to face your true love.
 Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.
+
+//Tarot Cards
+Tarot Cards;🃏;Tarot Card(( Prodigy;Item;-2;0;0;0;0;3;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+3 🔵 Mana</b>.<br>;Accepted destiny(( <b>Prodigy</b>
+Tarot Cards;🃏;Tarot Card(( Wizard;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Wizard</b>
+Tarot Cards;🃏;Tarot Card(( Warlock;Item;-1;0;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Warlock</b>
+Tarot Cards;🃏;Tarot Card(( Cleric;Item;0;0;-1;0;0;1;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 🔵 Mana</b>.<br>;Accepted destiny(( <b>Cleric</b>
+Tarot Cards;🃏;Tarot Card(( Mage;Item;0;0;0;1;0;0;0;Destiny Echo;Gain <b>+1 🔵 Mana</b> with no apparent downside.<br>;Accepted destiny(( <b>Mage</b>
+
+Tarot Cards;🃏;Tarot Card(( Assassin;Item;-2;2;0;0;0;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Assassin</b>
+Tarot Cards;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-6;0;0;Destiny Echo;Sacrifice <b>-6 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Berserk</b>
+Tarot Cards;🃏;Tarot Card(( Knight;Item;0;1;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Knight</b>
+Tarot Cards;🃏;Tarot Card(( Serpent;Item;-1;1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Serpent</b>
+Tarot Cards;🃏;Tarot Card(( Choleric;Item;0;1;0;0;-3;0;0;Destiny Echo;Sacrifice <b>-3 🧠 Intellect</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Choleric</b>
+Tarot Cards;🃏;Tarot Card(( Murderer;Item;0;1;0;-4;0;0;0;Destiny Echo;Sacrifice <b>-4 🍀 Luck</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Murderer</b>
+Tarot Cards;🃏;Tarot Card(( Slayer;Item;0;0;0;1;0;0;0;Destiny Echo;Gain <b>+1 ⚔️ Attack</b> with no apparent downside.<br>;Accepted destiny(( <b>Slayer</b>
+Tarot Cards;🃏;Tarot Card(( Monk;Item;0;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> with nothing in return.<br>;Accepted destiny(( <b>Monk</b>
+
+Tarot Cards;🃏;Tarot Card(( Angel;Item;3;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+3 ❤️ Health</b>.<br>;Accepted destiny(( <b>Angel</b>
+Tarot Cards;🃏;Tarot Card(( Warden;Item;3;0;-2;0;0;0;0;Destiny Echo;Sacrifice <b>-2 🟢 Energy</b> for <b>+3 ❤️ Health</b>.<br>;Accepted destiny(( <b>Warden</b>
+Tarot Cards;🃏;Tarot Card(( Guard;Item;1;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ❤️ Health</b>.<br>;Accepted destiny(( <b>Guard</b>
+Tarot Cards;🃏;Tarot Card(( Lover;Item;1;0;0;0;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b>.<br>;Accepted destiny(( <b>Lover</b>
+Tarot Cards;🃏;Tarot Card(( Hero;Item;0;0;0;1;0;0;0;Destiny Echo;Gain <b>+1 ❤️ Health</b> with no apparent downside.<br>;Accepted destiny(( <b>Hero</b>
+Tarot Cards;🃏;Tarot Card(( Rotten;Item;-1;0;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> with nothing in return.<br>;Accepted destiny(( <b>Rotten</b>
+
+Tarot Cards;🃏;Tarot Card(( Exile;Item;-1;0;2;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🟢 Energy</b>.<br>;Accepted destiny(( <b>Exile</b>
+Tarot Cards;🃏;Tarot Card(( Shadow;Item;-2;0;3;0;0;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+3 🟢 Energy</b>.<br>;Accepted destiny(( <b>Shadow</b>
+Tarot Cards;🃏;Tarot Card(( Athlete;Item;0;0;1;0;0;0;0;Destiny Echo;Gain <b>+1 🟢 Energy</b> with no apparent downside.<br>;Accepted destiny(( <b>Athlete</b>
+Tarot Cards;🃏;Tarot Card(( Fatso;Item;0;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> with nothing in return.<br>;Accepted destiny(( <b>Fatso</b>
+
+Tarot Cards;🃏;Tarot Card(( Prophet;Item;-2;0;0;0;6;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+6 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Prophet</b>
+Tarot Cards;🃏;Tarot Card(( Wiseman;Item;-1;0;0;0;3;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+3 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Wiseman</b>
+Tarot Cards;🃏;Tarot Card(( Scholar;Item;0;0;0;0;0;0;0;Destiny Echo;Gain <b>+1 🧠 Intellect</b> with no apparent downside.<br>;Accepted destiny(( <b>Scholar</b>
+Tarot Cards;🃏;Tarot Card(( Imbecile;Item;0;0;0;0;-1;0;0;Destiny Echo;Sacrifice <b>-1 🧠 Intellect</b> with nothing in return.<br>;Accepted destiny(( <b>Imbecile</b>
+
+Tarot Cards;🃏;Tarot Card(( Gambler;Item;0;0;0;4;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Gambler</b>
+Tarot Cards;🃏;Tarot Card(( Devil;Item;-1;0;0;3;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+3 🍀 Luck</b>.<br>;Accepted destiny(( <b>Devil</b>
+Tarot Cards;🃏;Tarot Card(( Fool;Item;0;0;0;2;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b>.<br>;Accepted destiny(( <b>Fool</b>
+Tarot Cards;🃏;Tarot Card(( Lucky;Item;0;0;0;1;0;0;0;Destiny Echo;Gain <b>+1 🍀 Luck</b> with no apparent downside.<br>;Accepted destiny(( <b>Lucky</b>
+Tarot Cards;🃏;Tarot Card(( Jinx;Item;0;0;0;-1;0;0;0;Destiny Echo;Sacrifice <b>-1 🍀 Luck</b> with nothing in return.<br>;Accepted destiny(( <b>Jinx</b>
+
