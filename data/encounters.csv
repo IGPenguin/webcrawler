@@ -1084,17 +1084,29 @@ Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;3;2;2;0;-1;0;0;Forgotten Lo
 Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.
 
 //Tarot Cards
-Tarot Cards;🃏;Tarot Card(( Fool;Item;0;0;0;4;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Fool</b>
-Tarot Cards;🃏;Tarot Card(( Lover;Item;1;0;0;0;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b>.<br>;Accepted destiny(( <b>Lover</b>
+Tarot Cards;🃏;Tarot Card(( Prodigy;Item;-2;0;0;0;0;2;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+3 🔵 Mana</b>.<br>;Accepted destiny(( <b>Prodigy</b>
 Tarot Cards;🃏;Tarot Card(( Mage;Item;0;-1;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Mage</b>
-Tarot Cards;🃏;Tarot Card(( Choleric;Item;0;+1;0;0;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Choleric</b>
-Tarot Cards;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Berserk</b>
 Tarot Cards;🃏;Tarot Card(( Warlock;Item;-1;0;0;0;0;2;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.<br>;Accepted destiny(( <b>Warlock</b>
 Tarot Cards;🃏;Tarot Card(( Cleric;Item;0;0;-1;0;0;1;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 🔵 Mana</b>.<br>;Accepted destiny(( <b>Cleric</b>
-Tarot Cards;🃏;Tarot Card(( Shadow;Item;-1;0;2;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🟢 Energy</b>.<br>;Accepted destiny(( <b>Shadow</b>
-Tarot Cards;🃏;Tarot Card(( Guard;Item;2;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+2 ❤️ Health</b>.<br>;Accepted destiny(( <b>Guard</b>
-Tarot Cards;🃏;Tarot Card(( Knight;Item;0;1;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Knight</b>
-Tarot Cards;🃏;Tarot Card(( Serpent;Item;-1;1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Serpent</b>
-Tarot Cards;🃏;Tarot Card(( Wiseman;Item;-1;0;0;0;4;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+4 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Wiseman</b>
-Tarot Cards;🃏;Tarot Card(( Devil;Item;-1;0;0;4;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Devil</b>
-Tarot Cards;🃏;Tarot Card(( Angel;Item;2;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 ❤️ Health</b>.<br>;Accepted destiny(( <b>Devil</b>
+
+Tarot Cards;🃏;Tarot Card(( Assassin;Item;-2;2;0;0;0;0;0;Prophecy;Sacrifice <b>-2 💔 Health</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Assassin</b>
+Tarot Cards;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-6;0;0;Prophecy;Sacrifice <b>-6 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Berserk</b>
+Tarot Cards;🃏;Tarot Card(( Knight;Item;0;1;-1;0;0;0;0;Prophecy;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Knight</b>
+Tarot Cards;🃏;Tarot Card(( Serpent;Item;-1;1;0;0;0;0;0;Prophecy;Sacrifice <b>-1 💔 Health</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Serpent</b>
+Tarot Cards;🃏;Tarot Card(( Choleric;Item;0;1;0;0;-3;0;0;Prophecy;Sacrifice <b>-3 🧠 Intellect</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Choleric</b>
+Tarot Cards;🃏;Tarot Card(( Killer;Item;0;1;0;-4;0;0;0;Prophecy;Sacrifice <b>-4 🍀 Luck</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Killer</b>
+
+Tarot Cards;🃏;Tarot Card(( Angel;Item;3;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+3 ❤️ Health</b>.<br>;Accepted destiny(( <b>Angel</b>
+Tarot Cards;🃏;Tarot Card(( Warden;Item;3;0;-2;0;0;0;0;Destiny Echo;Sacrifice <b>-2 🟢 Energy</b> for <b>+3 ❤️ Health</b>.<br>;Accepted destiny(( <b>Warden</b>
+Tarot Cards;🃏;Tarot Card(( Guard;Item;1;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ❤️ Health</b>.<br>;Accepted destiny(( <b>Guard</b>
+Tarot Cards;🃏;Tarot Card(( Lover;Item;1;0;0;0;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b>.<br>;Accepted destiny(( <b>Lover</b>
+
+Tarot Cards;🃏;Tarot Card(( Exile;Item;-1;0;2;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+2 🟢 Energy</b>.<br>;Accepted destiny(( <b>Exile</b>
+Tarot Cards;🃏;Tarot Card(( Shadow;Item;-2;0;3;0;0;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+3 🟢 Energy</b>.<br>;Accepted destiny(( <b>Shadow</b>
+
+Tarot Cards;🃏;Tarot Card(( Wiseman;Item;-1;0;0;0;3;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+3 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Wiseman</b>
+Tarot Cards;🃏;Tarot Card(( Prophet;Item;-2;0;0;0;6;0;0;Destiny Echo;Sacrifice <b>-2 💔 Health</b> for <b>+6 🧠 Intellect</b>.<br>;Accepted destiny(( <b>Prophet</b>
+
+Tarot Cards;🃏;Tarot Card(( Gambler;Item;0;0;0;4;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Gambler</b>
+Tarot Cards;🃏;Tarot Card(( Devil;Item;-1;0;0;3;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+3 🍀 Luck</b>.<br>;Accepted destiny(( <b>Devil</b>
+Tarot Cards;🃏;Tarot Card(( Fool;Item;0;0;0;2;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b>.<br>;Accepted destiny(( <b>Fool</b>
