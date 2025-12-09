@@ -1497,7 +1497,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyCannotEffect();
               
               if (enemyType.includes("Locked")) {
-                openMessage = "Smashed the lock into pieces! -1 🟢";
+                var gainedXP=playerGainXP(1,25*playerLevel,""); //Same XP gain as for spell unlock
+                openMessage = "Smashed the lock open! -1 🟢 "+decorateStatusText("","+"+gainedXP+" XP",colorGold);
                 enemyHp-=playerAtk;
               } else {
                 logPlayerAction(actionString,openMessage);
