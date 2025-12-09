@@ -83,8 +83,7 @@ Fishing;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;0;Sweet Candy;Artificial energy b
 Fishing;🥤;Coke Cup;Consumable;0;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🧋;Floating Cup;Consumable;0;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🧃;Juice Pouch;Consumable;0;0;0;0;0;0;0;Refreshment;Packs a burst of energy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Fishing;🦪;Giant Clam;Consumable;0;0;0;0;0;0;0;Delicacy;A rare treat of the depths.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
-Fishing;🦪;Brackish Oyster;Consumable;0;0;0;0;2;0;0;Delicacy;A rare treat of the water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
+Fishing;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;0;Delicacy;A rare treat of the water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Fishing;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -107,6 +106,7 @@ Fishing;🐊;Sewer Crocodile;Heavy;4;3;1;0;0;0;0;Ancient Lurker;Has waited benea
 Fishing;🐠;Nullscale Giant;Reflective;4;1;1;0;0;0;0;Spell Eater;Feeds on pure mana currents.<br>;Your magic vanished.
 Fishing;🐢;Juvenile Turtle;Tough;1;0;1;0;0;0;0;Patient Critter;Slowly looks around trying to understand.<br>;Killed by a turtle beak.
 Fishing;‍🦀;Freshwater Crab;Tough;2;1;1;0;-1;0;1;Overgrown Crustacean;Packs a massive painful pinch.;Got ripped in two halves.
+Fishing;🦪;Giant Clam;Tough;2;0;1;0;-1;0;1;Overgrown Delicacy;Wields the power to break your bones.<br>;
 Fishing;🐡;Small Pufferfish;Stingy;2;2;2;0;-1;0;0;Unpleasant Critter;Does not look particularly tasty.<br>;The spikes were too much!
 Fishing;‍🐍;Water Serpent;Swift;2;2;2;0;0;0;0;Juvenile Predator;Slithers both out and in the water.<br>;Died off an ancient venom.
 Fishing;🦈;Young Shark;Swift;2;2;1;0;0;0;0;Fresh Predator;Still learning the gripes of hunting.<br>;Bled back into the stream.
