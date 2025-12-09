@@ -3717,6 +3717,7 @@ function playerConsumed(silent=false){
   if (gainStamina>=0) sign=" +"
   if (gainStamina!=0) consumedString +=" "+sign+(parseInt(gainStamina)) + " 🟢";
   playerSta+=parseInt(gainStamina);
+  if (playerSta<0) playerSta=0;
 
   if (missingHp > 0 || parseInt(enemyHp)!=0){
     var heart = "❤️"
