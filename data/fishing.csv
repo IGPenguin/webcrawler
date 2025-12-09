@@ -63,14 +63,14 @@ Fishing;🏺;Burial Urn;Item;0;0;0;-3;0;0;0;Ancient Container;Water is splashing
 
 Fishing;🦷;Piranha Jaw;Item;0;1;0;0;0;0;0;Sharp Bones;The grin of a river demon.<br>Provides <b>+1 ⚔️ Damage</b>.;Brandished it fiercely.
 Fishing;🔪;Rusty Knife;Item;0;1;0;0;0;0;0;Worn Tool;Still quite useful in combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Took it with themselves just in case.
-Fishing;🗝️;Rusty Key;Item;0;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Fishing;🗝️;Silver Key;Item;0;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Fishing;🗝️;Bronze Key;Item;0;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Fishing;🗝️;Iron Key;Item;0;0;0;0;0;0;0;Junk;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Fishing;🗝️;Rusty Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Fishing;🗝️;Silver Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Fishing;🗝️;Bronze Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
+Fishing;🗝️;Iron Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Fishing;🪱;Drowned Worm;Item;0;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
 
-Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;0;Junk;Waterlogged and falling apart.<br>;Sifted through for scraps.
+Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;0;Worthless Junk;Waterlogged and falling apart.<br>;Sifted through for scraps.
 Fishing;💵;Wet Cash;Item;0;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 Fishing;👞;Wet Shoe;Item;0;0;0;0;0;0;0;Worthless Trash;Thoroughly wet leather shoe.<br>;Why did you even pick this up?
 Fishing;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;

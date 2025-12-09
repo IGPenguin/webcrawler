@@ -1844,6 +1844,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_cast':
           var mkgCost=1;
+          var magicDamage = playerMgk;
+
           if (enemyType.includes("Locked")) mkgCost=2;
 
           if (enemyType=="Shop") {
@@ -1932,7 +1934,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
-            var magicDamage = playerMgk;
             if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
             if (magicDamage > 2) {
               magicDamage=2;
@@ -1984,12 +1985,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (playerLootString.includes("🧂")){
                 logMessage="Added a tiny pinch of salt.";
-                playerMgk+=magicDamage;
                 enemyName=enemyName+" (Salty)";
                 displayEnemyEffect("✨");
               } else {
                 enemyName=enemyName+" (Crispy)";
-                playerMgk+=(magicDamage-1);
+                playerMgk-=(parseInt(magicDamage)-2);
               }
 
               playerCooked=true;
