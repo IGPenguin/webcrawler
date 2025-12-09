@@ -82,17 +82,17 @@ Fading Wildlands;🪰;Itching Fly;Small;1;1;2;0;-1;0;0;Skin Haunter;Always lands
 Fading Wildlands;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Chewing something you hope isn’t important.<br>;Become its meal\ unwillingly.
 
 Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;The bird has joined your side.
-Fading Wildlands;🦦;Stream Rascal;Pet;1;1;1;0;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.
-Fading Wildlands;🐈;Field Stray;Pet;1;0;2;0;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower
+Fading Wildlands;🦦;Stream Rascal;Pet;1;0;1;1;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.
+Fading Wildlands;🐈;Field Stray;Pet;1;0;2;1;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower
 Fading Wildlands;🦎;Grass Gecko;Pet;1;0;2;1;0;0;0;Wall Climber;Unbothered by anyone’s panic.<br>;Got a new travel buddy!
 Fading Wildlands;🐞;Spotted Wanderer;Pet;1;0;1;1;0;0;0;Tiny Traveler;Too small to fear\ too stubborn to stop.<br>;Got a new travel buddy!
 Fading Wildlands;🐥;Stray Chick;Pet;1;0;1;0;-1;0;0;Lost Hatchling;Looking for something that won’t answer back.<br>;Got a new travel buddy!
 Fading Wildlands;🕊️;Pale Dove;Pet;1;0;2;1;0;0;0;Fading Peace;Carries a hint of better days.<br>;Follows your shadow.
 
-Fading Wildlands;🐐;Wild Goat;Standard;2;1;1;0;10;0;0;Horned Temper;Capable of unfortunate headbutts.<br>;Impaled by its horns.
+Fading Wildlands;🐐;Wild Goat;Standard;2;0;2;0;10;0;0;Horned Temper;Capable of unfortunate headbutts.<br>;Impaled by its horns.
 Fading Wildlands;🦫;Timber Terror;Standard;2;1;1;0;2;0;0;Busy Maw;Teeth made for wood\ repurposed for bone.<br>;Dragged you to a dam of bones.
-Fading Wildlands;🦃;Riled Turkey;Standard;2;1;1;0;10;0;0;Feathered Fury;The closer you step\ the louder it rages.<br>;Defeated by an angry bird.
-Fading Wildlands;🐑;Irritated Sheep;Standard;2;0;1;0;10;0;0;Woolen Rammer;Soft coat\ hard skull.<br>;Head-butted to death.
+Fading Wildlands;🦃;Riled Turkey;Standard;2;1;2;0;10;0;0;Feathered Fury;The closer you step\ the louder it rages.<br>;Defeated by an angry bird.
+Fading Wildlands;🐑;Irritated Sheep;Standard;2;0;2;0;10;0;0;Woolen Rammer;Soft coat\ hard skull.<br>;Head-butted to death.
 Fading Wildlands;🦥;Slow Watcher;Standard;2;0;1;1;1;0;0;Gentle Observer;Barely moves\ means no harm.<br>;Oh\ that is really unfortunate.
 
 Fading Wildlands;🦨;Musk Spray;Toxic;2;0;2;0;1;0;0;Stench Attack;Smell clings to skin and soul.<br>;Suffered a terrible stench.
@@ -316,7 +316,7 @@ Forsaken Village;🕯️;Demonic Shrine;Altar;0;1;0;-3;0;0;0;Ritual Place;Remnan
 Forsaken Village;🕯️;Prayer Candle;Altar;0;0;0;2;0;0;0;Ritual Place;A memory of the lost ones.<br>;Prayed for the lost ones
 Forsaken Village;📚;Pile of Books;Altar;0;0;0;0;2;0;0;Knowledge Source;Bunch of books with sacred texts.<br>;Gained a deeper insight
 
-Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Suffered a heartbreak
+Forsaken Village;💃;Lusty Succuba;Friend;-2;1;0;0;0;0;0;Devil Spawn;Offers <b>+1 ⚔️ Attack</b> for a <b>-1 💔 Broken Heart</b>.<br>Really freakin' hard to resist.;Suffered a heartbreak
 Forsaken Village;🦉;Judging Owl;Friend;0;0;0;0;1;0;0;Prophet;Whispers a survival tip while staring at you((<br>n/a;Had a nice conversation
 Forsaken Village;🫏;Simple Donkey;Friend;0;0;1;0;-1;0;0;Talking Animal;Sometimes makes annoying sounds.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Intellect</b>.;Oh\ that was annoying.
 Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;0;0;0;The Prophet;Always has an obscure tip to share((<br>n/a;Whatever that meant
@@ -332,7 +332,7 @@ Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Wild Animal;Born to race 
 Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;0;Insect;Going in for the kill.<br>;How could this happen?
 Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Forsaken Village;🪳;Aggresive Cockroach;Small;1;1;1;0;-1;0;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
+Forsaken Village;🪳;Aggresive Cockroach;Small;1;2;1;0;-1;0;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
 Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Confused Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -344,46 +344,45 @@ Forsaken Village;🪰;Annoying Fly;Small;1;0;3;0;-1;0;0;Annoying Insect;Sits on 
 Forsaken Village;🐁;Albino Mouse;Small;1;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 
 Forsaken Village;🐓;Yard Terror;Standard;2;2;2;0;10;0;0;Rabid Rooster;Looks ridiculous\ hits like regret.<br>;Got your brain pecked out.
-Forsaken Village;🐀;Starving Rat;Standard;2;1;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 Forsaken Village;🐖;Starving Pig;Standard;2;2;1;0;10;0;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured alive by a pig.
 Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
+Forsaken Village;🐀;Starving Rat;Standard;2;1;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 
 Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
-Forsaken Village;🦂;Tiny Scorpion;Stingy;1;2;2;0;-1;0;0;Dangerous Insect;Beware\ seems venous AF.<br>;There was nowhere to run.
-Forsaken Village;🦂;Fierce Scorpion;Stingy;1;3;1;0;-1;0;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
-Forsaken Village;🪡;Possessed Needle;Stingy;1;1;1;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
-Forsaken Village;🐝;Busy Hornet;Stingy;1;1;1;0;-1;0;0;Annoying Insect;Oversensitive to close contact.<br>;There was nowhere to run.
+Forsaken Village;🦂;Fierce Scorpion;Stingy;1;2;2;0;-1;0;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
+Forsaken Village;🪡;Possessed Needle;Stingy;2;1;2;1;-1;0;0;Deadly Tool;Whatever this is... it's scary.<br>;Got your holes sewn shut.
+Forsaken Village;🐝;Busy Hornet;Stingy;1;1;2;0;-1;0;0;Annoying Insect;Oversensitive to close contact.<br>;There was nowhere to run.
 
-Forsaken Village;🦨;Sneaky Skunk;Toxic;2;2;2;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
+Forsaken Village;🦨;Sneaky Skunk;Toxic;2;1;3;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
 Forsaken Village;🪴;Cursed Sprout;Toxic;3;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
-Forsaken Village;🦎;Ashen Lizard;Hot;2;1;3;0;0;0;0;Charred Reptile;Sheds soot wherever it slinks.<br>;Its stare froze your breath.
+Forsaken Village;🦎;Ashen Lizard;Hot;2;2;2;0;0;0;0;Charred Reptile;Sheds soot wherever it slinks.<br>;Its stare froze your breath.
 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;0;0;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!
 Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;1;0;0;Humanoid;Trying to prove themselves.<br>;Got your heart ripped out!
-Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;2;0;2;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
-Forsaken Village;💂;Cultist Guard;Recruit;2;2;1;0;3;0;0;Humanoid;Does not look very friendly.<br>;Stabbed repedately\ bled out.
+Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;3;1;2;0;2;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!
+Forsaken Village;💂;Cultist Guard;Recruit;2;1;3;0;3;0;0;Humanoid;Does not look very friendly.<br>;Stabbed repedately\ bled out.
 
 Forsaken Village;🐦‍⬛;Blood Raven;Swift;1;2;2;1;0;0;0;Thirsty Bird;Aims its beak straight for your neck.<br>;Got your veins sucked dry.
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
 Forsaken Village;🦝;Masked Bandit;Swift;2;2;1;0;2;0;0;Devious Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
 
-Forsaken Village;🪓;Possessed Axe;Demon;1;2;1;0;-1;0;0;Cursed Tool;Thirsts for warm blood.<br>;Split your skull in two.
+Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;2;2;1;-1;0;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
+Forsaken Village;🪓;Possessed Axe;Demon;1;2;2;0;-1;0;0;Cursed Tool;Thirsts for warm blood.<br>;Split your skull in two.
+Forsaken Village;🧸;Demonic Teddy;Demon;2;1;2;1;-1;0;0;Malevolent Toy;Eyes glow with eerie light.<br>;Strangled in a soft embrace.
 Forsaken Village;🪑;Cursed Chair;Demon;1;1;1;0;-1;0;0;Animated Object;Whispers from the wood.<br>;Crushed your spine to dust.
-Forsaken Village;🧸;Demonic Teddy;Demon;2;1;1;1;-1;0;0;Malevolent Toy;Eyes glow with eerie light.<br>;Strangled in a soft embrace.
 Forsaken Village;🎻;Sinister Violin;Demon;1;1;2;0;-1;0;0;Animated Object;Plays a tune of death.<br>;Heart burst from melody.
-Forsaken Village;🧹;Possessed Broom;Demon;1;1;1;0;-1;0;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
-Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;1;2;1;-1;0;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.
+Forsaken Village;🧹;Possessed Broom;Demon;1;1;2;0;-1;0;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 
 Forsaken Village;🦝;King of Bandits;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;0;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
-Forsaken Village;🥷;Cultist Elite;Boss-Swift;1;3;3;0;5;0;0;Humanoid;Uncanny figure with ellegant moves.<br>;Got stabbed and bled out.
-Forsaken Village;🥋;Invisible Ninja;Boss-Swift;1;3;3;0;5;0;0;Humanoid;Thanks got he's not naked.<br>;Got stabbed and bled out.
-Forsaken Village;🐀;Fetid Rat;Boss-Toxic;2;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly infection.
-Forsaken Village;🤡;Cultist Madman;Boss-Toxic;3;2;2;0;-1;0;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
-Forsaken Village;🎭;Cultist Masquerader;Boss-Reflective;3;3;2;0;3;0;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.
-Forsaken Village;🪚;Haunted Saw;Boss-Stingy;3;3;2;1;-1;0;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced by the rusty blade.
-Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;2;2;2;0;10;0;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
+Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;3;2;1;0;10;0;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!
+Forsaken Village;🥷;Cultist Elite;Boss-Swift;2;2;2;0;5;0;0;Humanoid;Uncanny figure with ellegant moves.<br>;Got stabbed and bled out.
+Forsaken Village;🥋;Invisible Ninja;Boss-Swift;1;2;3;0;5;0;0;Humanoid;Thanks got he's not naked.<br>;Got stabbed and bled out.
+Forsaken Village;🐀;Fetid Rat;Boss-Toxic;2;1;3;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly infection.
+Forsaken Village;🤡;Cultist Madman;Boss-Toxic;4;1;2;0;-1;0;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.
+Forsaken Village;🎭;Cultist Masquerader;Boss-Reflective;3;1;2;0;3;0;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.
+Forsaken Village;🪚;Haunted Saw;Boss-Stingy;3;2;1;1;-1;0;0;Cursed Tool;Metal teeth shriek in glee.<br>;Sliced by the rusty blade.
 Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;2;1;0;-1;0;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.
 
 Forsaken Village;🔥;Lingering Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
