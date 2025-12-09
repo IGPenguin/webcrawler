@@ -1492,10 +1492,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           default:
             if (enemyType.includes("Container")){
-              var openMessage = "Smashed the lock in pieces! -1 🟢";
-              enemyHp-=playerAtk;
+              var openMessage = "Smashed it into many pieces! -1 🟢";
               displayEnemyEffect("〽️");
               displayEnemyCannotEffect();
+              
+              if (enemyType.includes("Locked")) {
+                openMessage = "Smashed the lock into pieces! -1 🟢";
+                enemyHp-=playerAtk;
+              } else {
+                logPlayerAction(actionString,openMessage);
+                nextEncounter();
+                break;
+              }
 
               if (enemyType.includes("Locked")&&(enemyHp>(-3))){
                 openMessage = "Smashed it, but the lock still holds -1 🟢";
