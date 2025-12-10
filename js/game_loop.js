@@ -854,7 +854,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         if (procAbilityChance("",20+playerLck)) { //20% Artifact
           pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         } else {
-          pushEncounter(getRandomEncounter(["Item"],[],"",["Lost Possesion"])) //Any item, but not quest (too late)
+          pushEncounter(getRandomEncounter(["Item"],[],"",["Artifact","Lost Possesion"])) //Any item, but not Artifact (didnt procc) and not quest item (too late)
         }
       }
       drachmaCoin[0]="area:"+areaName;
