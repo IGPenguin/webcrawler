@@ -858,7 +858,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         }
       }
       drachmaCoin[0]="area:"+areaName;
-      pushEncounter(drachmaCoin);
+      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin);
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 
