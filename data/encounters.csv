@@ -684,13 +684,13 @@ Twisted Fairyland;🦖;Ferocious Raptor;Boss-Heavy;4;3;1;0;-1;0;0;Mr. Funny Hand
 Twisted Fairyland;🦟;Thirsty Mosquito;Boss-Demon;2;1;4;0;-1;0;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.
 Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;2;0;3;0;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the underworld.
 Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;1;2;3;0;3;0;0;Ethereal Cryptid;Shimmers like a hot air in the summer.<br>;Impaled by spectral horns.
-Twisted Fairyland;🐉;Ancient Dragon;Boss-Heavy;4;3;1;0;-1;1;0;Mythical Creature;Hungry maw full of magical teeth.;Got their head chewed off.
+Twisted Fairyland;🐉;Ancient Dragon;Boss-Heavy;4;3;1;0;-1;1;0;Mythical Creature;Hungry maw full of magical teeth.<br>;Got their head chewed off.
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;0;Unknown Liquid;Is that even drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power.
 Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;2;0;0;-4;0;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.
 
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;0;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;
-Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;0;Brain Juice;Enances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome
+Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;0;Brain Juice;Enhances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome
 Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity
 Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;1;0;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;0;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
@@ -705,7 +705,7 @@ Twisted Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;0;Questionable Food;Coul
 Twisted Fairyland;🧀;Smelly Cheese;Consumable;0;0;0;0;-1;0;0;Rare Delicacy;Smells like <b>-1 🧠 Charisma</b>\ ...still tempting.<br>;Your breath now reeks
 Twisted Fairyland;🍏;Poisoned Apple;Consumable;-5;0;0;0;0;0;0;Fresh Fruit;Obviously not good to eat.<br>;Suffered a strong poisoning.
 
-Twisted Fairyland;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;Artifact;Sweet and sour\ exactly like vendetta.<br><b>+1 ⚔️ Damage</b>\ restores <b>❤️ Health</b> & <b>🟢 Energy</b>.;
+Twisted Fairyland;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;Artifact;Tastes like a vendetta\ sweet and sour.<br>Provides <b>+1 ⚔️ Damage</b>\ <b>restores</b> ❤️ & 🟢.;Ahhh...
 
 Twisted Fairyland;🍠;Sweet Root;Consumable;0;0;0;0;0;0;0;Common Dish;Earthy\ but also suprisingly filling;
 Twisted Fairyland;🍌;Wild Banana;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;

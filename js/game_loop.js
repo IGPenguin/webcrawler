@@ -63,7 +63,7 @@ var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Sho
 var usedShopMessages=[];
 
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷"])
-var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷"])
+var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷","✂️"])
 var castTypes=(["⚡️","☄️","🍭","🔥"])
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙","🐛","🦑"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
@@ -728,7 +728,7 @@ function loadEncounter(index, fileLines = linesStory){
       }
       if (enemyName.includes("Defeated Bride")) {
         encounterIndex++; //Skip second phase
-        enemyMsg="I'm glad that you didn't forget me."
+        enemyMsg="I'm glad that you didn't forget."
       }
     } else if (playerLove>0){
       enemyAtkBonus-=playerLove;
@@ -1497,7 +1497,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyCannotEffect();
               
               if (enemyType.includes("Locked")) {
-                var gainedXP=playerGainXP(1,25*playerLevel,""); //Same XP gain as for spell unlock
+                var gainedXP=playerGainXP(1,15*playerLevel,""); //Same XP gain as for spell unlock
                 openMessage = "Smashed the lock open! -1 🟢 "+decorateStatusText("","+"+gainedXP+" XP",colorGold);
                 enemyHp-=playerAtk;
               } else {
@@ -1895,7 +1895,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             } else {
               playerMgk-=mkgCost;
-              var gainedXP=playerGainXP(1,25*playerLevel,"");
+              var gainedXP=playerGainXP(1,15*playerLevel,"");
               logPlayerAction(actionString,"Unlocked it with a spell -"+mkgCost+" 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
               break;
@@ -2672,12 +2672,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
-                if (playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(25*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
-                  playerGainXP(1,25*playerLevel,"");
+                if (playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
+                  playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else if (playerLootString.includes("📎")) {
-                  logPlayerAction(actionString,"Unlocked with <b>📎 The Universal Key</b>.")
-                  playerGainXP(1,25*playerLevel,"");
+                  logPlayerAction(actionString,"Unlocked with <b>📎 The Universal Key</b>"+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
+                  playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else {
                   displayEnemyCannotEffect();
@@ -3090,7 +3090,7 @@ function enemyKilled(){
 
 function enemyJoinedParty(){
   displayPlayerEffect(enemyEmoji);
-  playerPartyString+=" "+enemyEmoji;
+  playerPartyString+=enemyEmoji;
   //logPlayerAction(actionString,enemyName+" joined the party!");
   var gainedXP=playerGainXP(1.5,0,"");
   playerKarma++;
