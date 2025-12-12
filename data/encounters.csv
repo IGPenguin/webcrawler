@@ -82,7 +82,7 @@ Fading Wildlands;🪰;Carrion Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Smells yo
 Fading Wildlands;🪰;Itching Fly;Small;1;1;2;0;-1;0;0;Skin Haunter;Always lands exactly where it hurts.<br>;Contracted a deadly disease.
 Fading Wildlands;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Chewing something you hope isn’t important.<br>;Become its meal\ unwillingly.
 
-Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;The bird has joined your side.
+Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;It has joined your side.
 Fading Wildlands;🦦;Stream Rascal;Pet;1;0;1;1;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.
 Fading Wildlands;🐈;Field Stray;Pet;1;0;2;1;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower
 Fading Wildlands;🦎;Grass Gecko;Pet;1;0;2;1;0;0;0;Wall Climber;Unbothered by anyone’s panic.<br>;Got a new travel buddy!
@@ -93,7 +93,6 @@ Fading Wildlands;🕊️;Pale Dove;Pet;1;0;2;1;0;0;0;Fading Peace;Carries a hint
 Fading Wildlands;🐐;Wild Goat;Standard;2;0;2;0;10;0;0;Horned Temper;Capable of unfortunate headbutts.<br>;Impaled by its horns.
 Fading Wildlands;🦫;Timber Terror;Standard;2;1;1;0;2;0;0;Busy Maw;Teeth made for wood\ repurposed for bone.<br>;Dragged you to a dam of bones.
 Fading Wildlands;🦃;Riled Turkey;Standard;2;1;2;0;10;0;0;Feathered Fury;The closer you step\ the louder it rages.<br>;Defeated by an angry bird.
-Fading Wildlands;🐑;Irritated Sheep;Standard;2;0;2;0;10;0;0;Woolen Rammer;Soft coat\ hard skull.<br>;Head-butted to death.
 Fading Wildlands;🦥;Slow Watcher;Standard;2;0;1;1;1;0;0;Gentle Observer;Barely moves\ means no harm.<br>;Oh\ that is really unfortunate.
 
 Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings to skin and soul.<br>;Suffered a terrible stench.
@@ -103,9 +102,9 @@ Fading Wildlands;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Wandering Threat;Doesn’t
 Fading Wildlands;🦆;Spooked Drake;Swift;1;1;2;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Fading Wildlands;🐺;Stray Whelp;Swift;2;2;1;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 
-Fading Wildlands;🐏;Neurotic Ram;Heavy;2;1;2;0;4;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Rammed till the last breath.
+Fading Wildlands;🐏;Neurotic Sheep;Heavy;2;1;2;0;4;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Head-butted to death.
 Fading Wildlands;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;0;Guarded Bulk;Tolerates you right up until it doesn’t.<br>;Impaled by its horns.
-Fading Wildlands;🦌;Startled Stag;Heavy;2;0;2;0;2;0;0;Flee or Fight;Flight can turn to trampling in a heartbeat.<br>;Rammed till the last breath.
+Fading Wildlands;🦌;Startled Stag;Heavy;2;0;2;0;2;0;0;Flee or Fight;Flight can turn to trampling in a heartbeat.<br>;Head-butted to death.
 
 Fading Wildlands;🪿;Untitled Goose;Boss-Pet;2;1;2;0;2;0;0;Feathered Menace;Peace was never an option.<br>;Finally found peace?
 Fading Wildlands;🦢;Pond Queen;Boss-Standard;2;2;2;0;3;0;0;Feathered Fury;Still waters\ vicious wings.<br>;Choked by the long neck.

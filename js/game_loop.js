@@ -3756,7 +3756,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
 
   if (procAbilityChance("🧼",100) && bubblesUsed==false && !enemyType.includes("consumable") && !enemyType.includes("trap") && !enemyType.includes("container")) {
     bubblesUsed=true;
-    logAction("🫧 ▸ 💢 Damage repelled by <b>🫧 Protective Bubble</b>.");
+    logAction("🫧 ▸ 💢 Damage repelled by <b>🫧 Bubble Shield</b>.");
     displayPlayerCannotEffect();
     displayPlayerEffect("🫧");
     return;
