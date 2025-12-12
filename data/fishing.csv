@@ -25,12 +25,12 @@ Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;Artifact;Provides a new skill 
 Fishing;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
 
 //The one example of legendary consumable
-Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;Artifact;The ultimate source of immense brilliance.<br><b>+5 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
+Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;Artifact;The ultimate source of immense brilliance.<br><b>+4 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
 
 Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;Artifact;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.
 
-Fishing;👒;Lucky Fishing Hat;Item;0;0;0;3;0;0;0;Signature Look;Originally comes from a goblin fishing event.<br>Provides <b>+3 🍀 Luck</b>.;Feels a bit less serious.
-Fishing;🏅;Olympic Gold;Item;0;0;0;0;0;3;0;Accessory;Awarded to the best of the best.<br>Provides <b>+3 🧠 Charisma</b>;
+Fishing;👒;Lucky Fishing Hat;Item;0;0;0;2;0;0;0;Signature Look;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Feels a bit less serious.
+Fishing;🏅;Olympic Gold;Item;0;0;0;0;0;2;0;Accessory;Awarded to the best of the best.<br>Provides <b>+2 🧠 Charisma</b>;
 
 Fishing;🗡️;Silver Dagger;Item;0;2;0;0;0;0;0;Weapon;Subtle armament made for "self defense".<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
 Fishing;🩸;Blood-drop Compass;Item;-1;2;0;0;0;0;0;Hunting Relic;Always points towards possible pray.<br>Provides <b>+2 ⚔️ Attack</b> for <b> -1 💔 Health</b>.;It twitched in your palm.
@@ -50,7 +50,7 @@ Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;0;Souvenir;Pleasantly warm to 
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
 Fishing;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
-Fishing;🥈;2nd Place Medal;Item;-1;0;0;0;0;0;0;Accessory;Prize for the "almost winner"\ kinda sad.<br>Feels like a heartbreak?!;
+Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner"\ kinda sad.<br>;Almost got the first place...
 
 Fishing;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.
 Fishing;📔;Waterlogged Diary;Item;0;0;0;0;1;0;0;Tale of Woe;Words smear but the story’s still alive.<br>Provides <b>+1 🧠 Intellect</b>.;Felt like it was written for you.

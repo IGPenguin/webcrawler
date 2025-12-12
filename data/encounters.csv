@@ -20,17 +20,17 @@ Fading Wildlands;🪷;Faded Pond;Fishing;0;0;0;0;0;0;0;Tired Waters;Reflections 
 Fading Wildlands;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;0;Cold Current;Clear water\ carrying memories downstream.<br>;
 Fading Wildlands;🌊;Whispering Stream;Fishing;0;0;0;0;0;0;0;Water Body;Clear water\ carrying distant sobs downstream.<br>;
 
+Fading Wildlands;🌿;Swaying Fern;Container;0;0;0;0;0;0;0;Wild Flora;The grass moves\ the air does not.<br>;Crossed right through.
 Fading Wildlands;🌱;Potato Patch;Container;0;0;0;0;0;0;0;Forgotten Crop;Someone once depended on this field.<br>;Crossed right through.
-Fading Wildlands;🌾;Grain Cache;Container-1;0;0;0;0;0;0;0;Forgotten Ration;A burlap bundle\ left for no one.<br>;Opened to reveal a small stash.
+Fading Wildlands;🌾;Grain Cache;Container;0;0;0;0;0;0;0;0;Forgotten Ration;A burlap bundle\ left for no one.<br>;Opened to reveal a small stash.
 Fading Wildlands;🍂;Leaf Pile;Container;0;0;0;0;0;0;0;Loose Cover;Something may be hidden beneath.<br>;
 Fading Wildlands;🪵;Root Hollow;Container;0;0;0;0;0;0;0;Hidden Cache;Roots wrap around something that isn't theirs.<br>;
 Fading Wildlands;🪨;Loose Stone;Container;0;0;0;0;0;0;0;Disturbed Ground;Someone moved this rock\ not long ago.<br>;Something was hidden underneath.
+Fading Wildlands;🪨;Suspicious Rock;Container;0;0;0;0;0;0;0;Disturbed Ground;Someone moved this rock\ not long ago.<br>;Struggled to move it away.
 Fading Wildlands;🪺;Abandoned Nest;Container;0;0;0;0;0;0;0;Old Shelter;The owners left\ but something stayed.<br>;There was something inside indeed.
 Fading Wildlands;🧺;Forgotten Basket;Container;0;0;0;0;0;0;0;Lost Belongings;Packed once\ abandoned in a hurry.<br>;
 Fading Wildlands;🧺;Trampled Basket;Container;0;0;0;0;0;0;0;Spilled Life;You can almost see the panic that dropped it.<br>;
 Fading Wildlands;🕳️;Shallow Hole;Container;0;0;0;0;0;0;0;Covered Stash;A small hole opens beneath your step.<br>;There was something inside.
-Fading Wildlands;🌿;Swaying Tangle;Container;0;0;-1;0;0;0;0;Wild Flora;The grass moves\ the air does not.<br>;Strugled to untagle the growth.
-Fading Wildlands;🪨;Suspicious Rock;Container;0;0;-1;0;0;0;0;Disturbed Ground;Someone moved this rock\ not long ago.<br>;Struggled to move it away.
 
 Fading Wildlands;🌾;Smothering Grass;Container-2;0;0;0;0;0;0;0;Dense Flora;Growth chokes the path\ hiding old tracks.<br>;Crossed right through.
 Fading Wildlands;🌾;Tall Weeds;Container-2;0;0;0;0;0;0;0;Overgrown Path;Weeds swallow what the road tried to be.<br>;Crossed right through.
@@ -96,30 +96,32 @@ Fading Wildlands;🦃;Riled Turkey;Standard;2;1;2;0;10;0;0;Feathered Fury;The cl
 Fading Wildlands;🐑;Irritated Sheep;Standard;2;0;2;0;10;0;0;Woolen Rammer;Soft coat\ hard skull.<br>;Head-butted to death.
 Fading Wildlands;🦥;Slow Watcher;Standard;2;0;1;1;1;0;0;Gentle Observer;Barely moves\ means no harm.<br>;Oh\ that is really unfortunate.
 
-Fading Wildlands;🦨;Musk Spray;Toxic;2;0;2;0;1;0;0;Stench Attack;Smell clings to skin and soul.<br>;Suffered a terrible stench.
+Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings to skin and soul.<br>;Suffered a terrible stench.
 Fading Wildlands;🦔️;Curled Bristle;Stingy;1;0;1;1;0;0;0;Spined Bundle;Harmless until you reach for it.<br>;Ouch\ that stings!
 Fading Wildlands;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Wandering Threat;Doesn’t know where it’s going\ only that it hurts.<br>;Ouch\ that stings!
 
-Fading Wildlands;🦆;Aggressive Duck;Swift;1;1;2;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Fading Wildlands;🦆;Spooked Drake;Swift;1;1;2;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+Fading Wildlands;🐺;Stray Whelp;Swift;2;2;1;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
+
+Fading Wildlands;🐏;Neurotic Ram;Heavy;2;1;2;0;4;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Rammed till the last breath.
 Fading Wildlands;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;0;Guarded Bulk;Tolerates you right up until it doesn’t.<br>;Impaled by its horns.
-Fading Wildlands;🦌;Startled Stag;Heavy;2;0;2;0;3;0;0;Flee or Fight;Flight can turn to trampling in a heartbeat.<br>;Rammed till the last breath.
+Fading Wildlands;🦌;Startled Stag;Heavy;2;0;2;0;2;0;0;Flee or Fight;Flight can turn to trampling in a heartbeat.<br>;Rammed till the last breath.
 
 Fading Wildlands;🪿;Untitled Goose;Boss-Pet;2;1;2;0;2;0;0;Feathered Menace;Peace was never an option.<br>;Finally found peace?
 Fading Wildlands;🦢;Pond Queen;Boss-Standard;2;2;2;0;3;0;0;Feathered Fury;Still waters\ vicious wings.<br>;Choked by the long neck.
 Fading Wildlands;🦅;Sky Tyrant;Boss-Swift;1;3;2;0;3;0;0;Aerial Killer;Eyes locked on soft places.<br>;Talons tore your throat apart.
 Fading Wildlands;🐍;Rush Viper;Boss-Swift;1;2;2;0;-1;0;0;Ambush Predator;Strikes as fast as a lightning.<br>;Got injected with deadly venom.
 Fading Wildlands;🦡;Burrow Fury;Boss-Swift;2;2;1;0;4;0;0;Relentless Savage;Afraid of nothing\ including you.<br>;Got freaking destroyed.
-Fading Wildlands;🐏;Alpha Ram;Boss-Heavy;2;2;2;0;2;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Rammed till releasing the last breath.
-Fading Wildlands;🦬;Risky Bison;Boss-Heavy;2;2;2;0;3;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.
+Fading Wildlands;🦬;Risky Bison;Boss-Heavy;2;2;2;0;2;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.
 Fading Wildlands;🐗;Brood Matron;Boss-Heavy;2;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.
-Fading Wildlands;🐂;Elder Bull;Boss-Heavy;2;2;1;0;1;0;0;Broken Charge;Looks tired\ still hits like a last resort.<br>;Got impaled by both horns at once.
+Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;2;2;1;0;1;0;0;Broken Charge;Looks tired\ still hits like a last resort.<br>;Got impaled by both horns at once.
 
 Fading Wildlands;🏵️;Symbol of Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
 Fading Wildlands;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by any physical attack.;Obtained <b>🥀 Thorns Payback</b>.
 Fading Wildlands;🎨;Painter's Palette;Item;0;0;0;0;3;0;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+4 🧠 Creativity</b>.;Enhanced your creativity
 Fading Wildlands;🖌️;Painter's Brush;Item;0;0;0;0;0;1;0;<b>Artifact</b>;Extremely rare enchanted tool.<br>Provides <b>+1 🔵 Mana</b>.;Enhanced your magic skills
-Fading Wildlands;🍀;Four-leaf Clover;Item;0;0;0;3;0;0;0;Artifact;Extremely rare growth\ might be beneficial.<br>Provides <b>+4 🍀 Luck</b>.;Feels so good to have it.
+Fading Wildlands;🍀;Four-leaf Clover;Item;0;0;0;3;0;0;0;Artifact;Extremely rare growth\ might be beneficial.<br>Provides <b>+3 🍀 Luck</b>.;Feels so good to have it.
 Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
 Fading Wildlands;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 
@@ -388,7 +390,7 @@ Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;2;1;0;-1;0;0;Huge Beast;Packs a
 
 Forsaken Village;🔥;Lingering Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
-Forsaken Village;🧼;Ancient Soap;Item;0;0;0;0;0;0;0;Artifact;Grants attribute <b>🫧 Protective Bubbles</b>.<br>Repels received damage - once per combat.;Gained attribute <b>🫧 Protective Bubbles</b>.
+Forsaken Village;🧼;Ancient Soap;Item;0;0;0;0;0;0;0;Artifact;Grants attribute <b>🫧 Bubble Shield</b>.<br>Repels received damage - <b>once per combat</b>.;Gained attribute <b>🫧 Bubble Shield</b>.
 Forsaken Village;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>
 Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
