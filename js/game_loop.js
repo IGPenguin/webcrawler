@@ -745,7 +745,7 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateRandomItem(item=""){
-  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
+  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Tarot","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
   if (item=="Artifact")   var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]); //arg #2 = artifact only, arg #4 excludes specific texts
   if (item=="Tarot")   var randomItem=getRandomEncounter(["Item"],["Tarot"],"ALL"); //Tarot cards from all areas
   return randomItem;
