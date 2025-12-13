@@ -59,6 +59,9 @@ var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
+var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
+var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling reward useful in the afterlife.<br>","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
+var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gambling risks turned out on the bad side.<br>","message:Released a long disappointed sigh..."]
 var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
 var usedShopMessages=[];
 
@@ -254,7 +257,7 @@ function getPoem(){
 function getShopMessage(){
   var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free, my shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you’d be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient, I am not.","You look worse. My inventory looks better.","Failure is a habit and so is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
 .filter(item => !usedShopMessages.includes(item));
-  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more.","Ah, a spender. I totally approve.","Coins still rattling? I've got more burdens for you.","Plenty of stock, pity about your skill.","Keep buying, maybe luck will notice you.","You live, you die, you shop. Cycle continues.","Still have coin? I can surely fix that.","Gear's heavier, purse is lighter. Balance restored.","Nothing like fresh regret in shiny packaging.","You equip it, I profit. Fair trade.","More trinkets, same doomed story.","You can’t buy talent, but you’re trying.","Still breathing and still paying. Good.","Spend now, regret later. Tradition.","Don’t worry, I’ll remember you when you’re broke.","Stock’s full, your fate is not.","Oh look, you found more currency to waste.","You must really believe this will help.","I admire your optimism. It's delicious.","Another shiny thing to die with.","You buy, they kill, I restock.","If preparation mattered, you’d be unstoppable.","I’ll happily enable your next failure.","A wise investment… probably.","Good choice. Not good enough, but good.","Your purse bleeds, my shelves smile.","One step closer to being stylishly deceased.","Keep this up and I’ll name a shelf after you.","Still have coin? Then we’re not done."].filter(item => !usedShopMessages.includes(item));
+  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more.","Ah, a spender. I totally approve.","Coins still rattling? I've got more burdens for you.","Plenty of stock, pity about your skill.","Keep buying, maybe luck will notice you.","You live, you die, you shop. Cycle continues.","Still have coin? I can surely fix that.","Gear's heavier, purse is lighter. Balance restored.","Nothing like fresh regret in shiny packaging.","You equip it, I profit. Fair trade.","More trinkets, same doomed story.","You can’t buy talent, but you’re trying.","Still breathing and still paying. Good.","Spend now, regret later. Tradition.","Don’t worry, I won't mind when you’re broke.","Stock’s full, your fate is not.","Oh look, you found more currency to waste.","You must really believe this will help.","I admire your optimism. It's delicious.","Another shiny thing to die with.","You buy, they kill, I restock.","If preparation mattered, you’d be unstoppable.","I’ll happily enable your next failure.","A wise investment… probably.","Good choice. Not good enough, but good.","Your purse bleeds, my shelves smile.","One step closer to being stylishly deceased.","Keep this up and I’ll name a shelf after you.","Still have coin? Then we’re not done."].filter(item => !usedShopMessages.includes(item));
 
   if (random_quotes.length==0) random_quotes.push("Ugh, hate to see you here all the time.")
   var message = random_quotes[Math.floor(Math.random() * random_quotes.length)]+"<br>";
@@ -660,7 +663,7 @@ function loadEncounter(index, fileLines = linesStory){
            if (enemyName=="Ethereal Drachma"){
              logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Shape spawned: <b>"+enemyName+"</b></text>")
            } else if (enemyEmoji== "🪙" || enemyEmoji=="💰") {
-             logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Found fortune: <b>"+enemyName+"</b></text>")
+             if (!enemyName.includes("Lucky")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Found fortune: <b>"+enemyName+"</b></text>")
            } else {
               if (enemyName.includes("Tarot")){
                 logAction("👁️‍🗨️ ▸ "+enemyEmoji+" Destiny calls you through a <b>Tarot Card</b>.")
@@ -758,21 +761,36 @@ function drachmaeBuy(price=1,item=""){
     displayPlayerEffect("");
     displayPlayerGainedEffect();
 
-    if (item!="Level") {
+    if ((item=="Item") || (item=="Artifact") || (item=="Tarot")) {
       logPlayerAction(actionString,"Splendid choice, this ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
-      if (savedCoins>0)pushEncounter(drachmaShop);
       var item=generateRandomItem(item).split(",");
       item[0]="area:"+areaName;
       item=String(item);
       pushEncounter(item);
+      nextEncounter();
+      if (savedCoins>0) pushEncounter(drachmaShop);
+    } else if (item=="Gamble")  {
+      if (procAbilityChance("",50+playerLck)){
+        logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
+        savedCoins+=1; localStorage.setItem('coins', savedCoins); //Didn't spend a drachma when won
+        drachmaPrize[0]="area:"+areaName;
+        pushEncounter(drachmaPrize);
+        nextEncounter();
+      } else {
+        logPlayerAction(actionString,"<text style=color:"+colorRed+";>Ooops... you lost the gamble!</text>")
+        gamblingLost[0]="area:"+areaName;
+        pushEncounter(gamblingLost);
+        nextEncounter();
+      }
+      if (savedCoins>0) pushEncounter(drachmaShop);
+      return;
     } else {
       logPlayerAction(actionString,"Sure, grow stronger as you need");
       playerXP+=playerXPThreshold;
       playerRest(true);
       return;
     }
-    nextEncounter(); //Also marks as seen, haha smart
     return;
   } else {
     logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>You don't have enough 🪙 <b>Drachmae</b>!</text>")
@@ -1366,7 +1384,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Dream") {
           displayPlayerCannotEffect();
-          logPlayerAction(actionString,"Cannot attack while asleep.");
+          var msg="Cannot attack while asleep."
+          if (enemyName.includes("Regrets")) msg="Attacking wouldn't solve anything."
+          logPlayerAction(actionString,msg);
           break;
         }
 
@@ -1374,7 +1394,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (!playerDestined) {
             drachmaeBuy(1,"Tarot");
           } else {
-            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted a destiny!</text>")
+            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
             displayPlayerCannotEffect();
           }
           break;
@@ -1669,12 +1689,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Walked away wasting the potential.");
             encounterIndex++;
             isFishing=false;
-            nextEncounter();
+            nextEncounter();a
             break;
           case "Dream":
             if (playerSta<=0){
-              logPlayerAction(actionString,"Cannot walk while asleep.");
               displayPlayerCannotEffect();
+              var msg="Cannot walk while asleep."
+              if (enemyName.includes("Regrets")) msg="You cannot walk away from this."
+              logPlayerAction(actionString,msg);
             } else {
               logPlayerAction(actionString,enemyMsg);
               nextEncounter();
@@ -1748,7 +1770,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType=="Shop") {
-          drachmaeBuy(2);
+          drachmaeBuy(1,"Gamble");
           break;
         }
 
@@ -1760,7 +1782,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Dream") {
           displayPlayerCannotEffect();
-          logPlayerAction(actionString,"Cannot block while asleep.");
+          var msg="Cannot block while asleep."
+          if (enemyName.includes("Regrets")) msg="You cannot block your regrets."
+          logPlayerAction(actionString,msg);
           break;
         }
 
@@ -2315,10 +2339,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
 
         if (enemyType=="Shop") {
-          drachmaeBuy(3,"Level");
+          drachmaeBuy(2,"Item");
           break;
         }
-
+        
         switch (enemyType){
           case "Curse":
             logPlayerAction(actionString,"Hands reached forward to no effect.");
@@ -2836,10 +2860,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Cannot speak while asleep.");
             displayPlayerCannotEffect();
-            //playerRest();
-            //nextEncounter();
+            var msg="Cannot speak while asleep."
+            if (enemyName.includes("Regrets")) msg="Your throat shakes as you sigh."
+            logPlayerAction(actionString,msg);
             break;
 
           case "Upgrade":
@@ -2879,6 +2903,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_sleep':
+
+        if (enemyType=="Shop") {
+          drachmaeBuy(3,"Level");
+          break;
+        }
+
+
         switch (enemyType){
 
           case "Curse": //Waiting triggers the curse
@@ -3930,7 +3961,7 @@ function logPlayerAction(actionString,message){
   if (actionString.includes(" 🪙")) { //Ahhh, yeah more hacks at 1 AM
     var price = actionString.split(" ")[0] //Very much HACKS... YOLO!!!
     actionString=actionString.slice(2);
-    actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
+    if (!actionString.includes("you actually won!")) actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
   }
   adventureLog += actionString;
   actionLog = actionString + actionLog;
@@ -4091,6 +4122,7 @@ function adjustEncounterButtons(){
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       setButton('button_sleep',"💤 Sleep",colorLightBlue);
+      if (enemyName.includes("Regrets")) setButton('button_sleep',"🙁 Accept",colorWhite);
       if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (areaName.includes("Shrouded")) setButton('button_sleep',"🧠 Think",colorRed);
       break;
@@ -4199,12 +4231,16 @@ function adjustEncounterButtons(){
         if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
         if (savedCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
       setButton('button_roll',"👣 Leave",colorRed);
-      setButton('button_block',"2 🪙 Loot",colorLightBlue);
-        if (savedCoins<2) setButton('button_block',"2 🪙 Loot",colorDarkGrey);
 
-      setButton('button_grab',"3 🪙 Level",colorYellow);
-        if (savedCoins<3) setButton('button_grab',"3 🪙 Level",colorDarkGrey);
-      setButton('button_sleep',"💤 Rest",colorDarkGrey);
+      setButton('button_block',"1 🪙 Risk",colorPink);
+        if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
+
+      setButton('button_grab',"2 🪙 Loot",colorLightBlue);
+        if (savedCoins<2) setButton('button_grab',"2 🪙 Loot",colorDarkGrey);
+
+      setButton('button_sleep',"3 🪙 Level",colorYellow);
+        if (savedCoins<3) setButton('button_sleep',"3 🪙 Level",colorDarkGrey);
+
       setButton('button_speak',"4 🪙 Artif.",colorOrange);
         if (savedCoins<4) setButton('button_speak',"4 🪙 Artif.",colorDarkGrey);
 
