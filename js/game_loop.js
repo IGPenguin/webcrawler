@@ -16,7 +16,6 @@ if (isNaN(savedCoins)) {
   localStorage.setItem('coins', 0);
   //savedCoins=0;
 }
-var spentCoins = 0;
 
 //Stats
 var adventureStartTime = getTime();
@@ -106,7 +105,6 @@ function renewPlayer(){ //Default values
   playerLove=0;
   seenLoot = [];
   adventureLog = [];
-  spentCoins=0;
 }
 
 //Global vars
@@ -625,7 +623,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyDesc = enemyDesc.replaceAll("((",":");
   if (enemyTeam=="Undertaker") {
     enemyDesc=getShopMessage();
-    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
+    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
   }
   if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
 
@@ -752,12 +750,10 @@ function generateRandomItem(item=""){
 }
 
 function drachmaeBuy(price=1,item=""){
-  var availableCoins = savedCoins-spentCoins;
-  if (availableCoins>=price) {
+  if (savedCoins>=price) {
     playerShopped=true;
-    spentCoins+=price;
-    availableCoins=availableCoins-spentCoins;
-    localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
+    savedCoins-=price;
+    localStorage.setItem('coins', savedCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
     displayPlayerGainedEffect();
@@ -765,7 +761,7 @@ function drachmaeBuy(price=1,item=""){
     if (item!="Level") {
       logPlayerAction(actionString,"Splendid choice, this ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
-      if (availableCoins>0)pushEncounter(drachmaShop);
+      if (savedCoins>0)pushEncounter(drachmaShop);
       var item=generateRandomItem(item).split(",");
       item[0]="area:"+areaName;
       item=String(item);
@@ -2570,16 +2566,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyEmoji=="🪙"){
-              savedCoins++
+              savedCoins+=1;
               displayPlayerEffect("🪙");
-              localStorage.setItem('coins', savedCoins);
+              localStorage.setItem('coins', parseInt(savedCoins));
             }
 
             if (enemyEmoji=="💰"){
               var coinNumber=randomNumber(2,5);
               savedCoins+=coinNumber;
               displayPlayerEffect("🪙");
-              localStorage.setItem('coins', savedCoins);
+              localStorage.setItem('coins', parseInt(savedCoins));
               enemyMsg="Claimed <b>Ethereal Drachmae +"+coinNumber+" 🪙</b>";
             }
 
@@ -2717,6 +2713,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Shop") {
           drachmaeBuy(4,"Artifact");
+          displayPlayerEffect("");
           break;
         }
 
@@ -4200,16 +4197,16 @@ function adjustEncounterButtons(){
     case "Shop":
       setButton('button_attack',"1 🪙 Tarot",colorPaper);
         if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
-        if ((savedCoins-spentCoins)<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+        if (savedCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
       setButton('button_roll',"👣 Leave",colorRed);
       setButton('button_block',"2 🪙 Loot",colorLightBlue);
-        if ((savedCoins-spentCoins)<2) setButton('button_block',"2 🪙 Loot",colorDarkGrey);
+        if (savedCoins<2) setButton('button_block',"2 🪙 Loot",colorDarkGrey);
 
       setButton('button_grab',"3 🪙 Level",colorYellow);
-        if ((savedCoins-spentCoins)<3) setButton('button_grab',"3 🪙 Level",colorDarkGrey);
+        if (savedCoins<3) setButton('button_grab',"3 🪙 Level",colorDarkGrey);
       setButton('button_sleep',"💤 Rest",colorDarkGrey);
       setButton('button_speak',"4 🪙 Artif.",colorOrange);
-        if ((savedCoins-spentCoins)<4) setButton('button_speak',"4 🪙 Artif.",colorDarkGrey);
+        if (savedCoins<4) setButton('button_speak',"4 🪙 Artif.",colorDarkGrey);
 
       setButton('button_cast',"‍-",colorDarkGrey);
       setButton('button_pray',"‍-",colorDarkGrey);
