@@ -17,7 +17,7 @@ Fishing;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a ne
 Fishing;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>
 Fishing;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 Fishing;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
-Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;Artifact;Provides ability to <b>🧂 Add Salt</b> on food.<br>Add <b>+1 🟢 Energy</b> & remove negative effects.;Gained skill <b>🧂 Add Salt</b>.
+Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;Artifact;Grants ability <b>🧂 Master Chef</b> - salt the food.<br>Add <b>+1 🟢 Energy</b> & <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.
 Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 Fishing;📎;The Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
