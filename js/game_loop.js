@@ -339,7 +339,7 @@ $(document).ready(function() {
         success: function(data) {
           storyData = data;
           processStoryData(storyData);
-          registerClickListeners();
+          registerClickListeners(200);
         }
      });
 
@@ -3025,7 +3025,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       console.log("Chance→int:"+temporaryIntellect);
       playerInt=temporaryIntellect;
     }
-
     redraw();
   };
 }
@@ -3120,7 +3119,6 @@ function enemyKilled(){
   logAction(enemyEmoji + " ▸ " + "💀 They've received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
-  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
   playerKills++;
 
   isFishing=false;
@@ -3426,12 +3424,14 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 function animateFlipNextEncounter(){
   var animationHandler = function(){
     nextEncounter();
+    registerClickListeners();
     cardUIElement.removeEventListener("animationend",animationHandler);
   }
   cardUIElement.removeEventListener("animationend",animationHandler);
 
   animateUIElement(areaUIElement,"animate__flipOutX","1.2");
   animateUIElement(cardUIElement,"animate__flipOutY","1.2");
+  removeClickListeners();
 
   cardUIElement.addEventListener('animationend',animationHandler);
 }
@@ -3939,7 +3939,7 @@ function gameOver(silent=false){
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
 
-  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite),5);
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite),4);
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
 
@@ -4294,17 +4294,19 @@ function toggleUIElement(UIElement,opacity = "0"){
   }
 }
 
-function curtainFadeInAndOut(message="",duration=3){
+function curtainFadeInAndOut(message="",duration=2){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
   var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
 
-  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",1.6,true,message);
-  animateUIElement(curtainUIElement,"animate__fadeIn",1.5,true);
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",(duration/2)+0.1,true,message);
+  animateUIElement(curtainUIElement,"animate__fadeIn",duration/2,true);
+  removeClickListeners();
 
   var animationHandler = function(){
     setBackground(areaName);
     animateUIElement(curtainUIElement,"animate__fadeOut",duration,true);
     animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration,true,message);
+    registerClickListeners(1000); //Ooopa, still hacking my way through
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
   curtainUIElement.addEventListener('animationend',animationHandler);
@@ -4397,7 +4399,20 @@ function logGenerator(generatorName="none"){
 }
 
 //Button click listeners
-function registerClickListeners(){
+var callback_attack=resolveAction('button_attack');
+var callback_roll=resolveAction('button_roll');
+var callback_block=resolveAction('button_block');
+
+var callback_grab=resolveAction('button_grab');
+var callback_sleep=resolveAction('button_sleep');
+var callback_speak=resolveAction('button_speak');
+
+var callback_cast=resolveAction('button_cast');
+var callback_pray=resolveAction('button_pray');
+var callback_curse=resolveAction('button_curse');
+
+
+function registerClickListeners(delay=800){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
   var eventType = 'click';
@@ -4409,16 +4424,21 @@ function registerClickListeners(){
   //    eventType = 'touchend';
   //  }
   //}
+  
+  setTimeout(function(){
+    //console.log("register-click-listeners");
+    document.getElementById('button_attack').addEventListener(eventType, callback_attack);
+    document.getElementById('button_roll').addEventListener(eventType, callback_roll);
+    document.getElementById('button_block').addEventListener(eventType, callback_block);
 
-  document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
-  document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
-  document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
-  document.getElementById('button_cast').addEventListener(eventType, resolveAction('button_cast'));
-  document.getElementById('button_curse').addEventListener(eventType, resolveAction('button_curse'));
-  document.getElementById('button_pray').addEventListener(eventType, resolveAction('button_pray'));
-  document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
-  document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
-  document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+    document.getElementById('button_grab').addEventListener(eventType, callback_grab);
+    document.getElementById('button_sleep').addEventListener(eventType, callback_sleep);
+    document.getElementById('button_speak').addEventListener(eventType, callback_speak);
+
+    document.getElementById('button_cast').addEventListener(eventType, callback_cast);
+    document.getElementById('button_pray').addEventListener(eventType, callback_pray);
+    document.getElementById('button_curse').addEventListener(eventType, callback_curse);
+  },delay)
 
   versionIDUIElement.addEventListener(eventType, ()=> {
     actionString="⚙️"
@@ -4467,6 +4487,21 @@ function registerClickListeners(){
       savedCoins=0;
     }
   });
+}
+function removeClickListeners(){
+  var eventType = 'click';
+
+  document.getElementById('button_attack').removeEventListener(eventType, callback_attack);
+  document.getElementById('button_roll').removeEventListener(eventType, callback_roll);
+  document.getElementById('button_block').removeEventListener(eventType, callback_block);
+
+  document.getElementById('button_grab').removeEventListener(eventType, callback_grab);
+  document.getElementById('button_sleep').removeEventListener(eventType, callback_sleep);
+  document.getElementById('button_speak').removeEventListener(eventType, callback_speak);
+
+  document.getElementById('button_cast').removeEventListener(eventType, callback_cast);
+  document.getElementById('button_pray').removeEventListener(eventType, callback_pray);
+  document.getElementById('button_curse').removeEventListener(eventType, callback_curse);
 }
 
 //Social features
