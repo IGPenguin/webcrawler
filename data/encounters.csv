@@ -51,7 +51,7 @@ Fading Wildlands;🌸;Petal Shrine;Altar;0;0;0;1;0;0;0;Quiet Blessing;Color clin
 Fading Wildlands;🍁;Maple Haven;Altar;0;0;0;1;0;0;0;Sheltering Grove;Leaves whisper of older\ safer days.<br>;You listened to the whispers.
 Fading Wildlands;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;0;Unfinished Art;Seems like the author left in hurry.<br>;Hmm\ truly an interesting piece.
 
-Fading Wildlands;🦋;Glimmering Swarm;Curse;0;0;0;0;0;1;0;Soft Enchantment;Wings brush your skin\ leaving a tingle.<br>;They bestowed you a magical power.
+Fading Wildlands;🦋;Glimmering Swarm;Curse;0;0;0;0;0;1;0;Soft Enchantment;Wings brush your skin\ leaving a tingle.<br>;Absorbed s magical power.
 Fading Wildlands;🌀;Echoing Moment;Curse;0;0;0;2;-1;0;0;Time Slip;You swear you’ve taken this step before.<br>;That felt really weird.
 Fading Wildlands;🌬️;Calling Wind;Curse;0;0;1;0;0;0;0;Whispered Omen;Wind pushes from behind\ urging you forward.<br>;Received a howling blessing.
 
@@ -1123,4 +1123,4 @@ Tarot Cards;🃏;Tarot Card(( Lucky;Item;0;0;0;1;0;0;0;Destiny Echo;Gain <b>+1 �
 Tarot Cards;🃏;Tarot Card(( Jinx;Item;0;0;0;-1;0;0;0;Destiny Echo;Sacrifice <b>-1 🍀 Luck</b> with nothing in return.<br>;Accepted destiny(( <b>Jinx</b>
 
 Tarot Cards;🃏;Tarot Card(( Noble;Item;0;0;0;1;1;0;0;Destiny Echo;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br>;Accepted destiny(( <b>Noble</b>
-Tarot Cards;🃏;Tarot Card(( Hero;Item;0;0;1;1;0;0;0;Destiny Echo;Bestow <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br>;Accepted destiny(( <b>Hero</b>
+Tarot Cards;🃏;Tarot Card(( Hero;Item;0;0;1;1;0;0;0;Destiny Echo;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br>;Accepted destiny(( <b>Hero</b>
