@@ -687,10 +687,13 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Curse":
     case "Trap":
+    case "Trap-Big":
+    case "Trap-Obstacle":
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      if (totalBonus>0 && totalMalus<=0) logAction("🎀 ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
+      if (totalBonus==0 && totalMalus==0) logAction("⚫️ ▸ "+enemyEmoji+" Encountered obstacle: <b>"+enemyName+"</b>")
+      if (totalBonus>0 && totalMalus<0) logAction("🎀 ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
       if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed a hazard: <b>"+enemyName+"</b>")
       break;
     case "Container":
@@ -813,7 +816,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (procAbilityChance("",25+playerLck)) type="Small"; //25% Small
 
       if (procAbilityChance("",5-playerLck)) { //5% Trap chance, lowers with luck
-        pushEncounter(getRandomEncounter(["Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+        pushEncounter(getRandomEncounter(["Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       } else {
         pushEncounter(getRandomEncounter(["Prop"]));
       }
@@ -932,7 +935,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       } else {
         pushEncounter(getRandomEncounter([type,"Checkpoint"]));
       }
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet","Swift","Heavy","Tough","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Locked-Container-3"]));
       break;
@@ -947,7 +950,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit","Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -962,7 +965,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       }
 
       pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Container-4"]));
       break;
 
@@ -977,7 +980,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       }
 
       pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet"]));
       pushEncounter(getRandomEncounter(["Container-5"]));
       break;
@@ -1203,9 +1206,11 @@ function redraw(){
       break;
 
     case "Trap":
+    case "Trap-Big":
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
+    case "Trap-Obstacle":
       enemyStatusString=decorateStatusText("⚫️","Obstacle",colorSemiDarkGrey);
       if (totalBonus>0) enemyStatusString=decorateStatusText("🎀","Curiosity",colorLightPink);
       if (totalMalus<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
@@ -1273,9 +1278,11 @@ function redraw(){
 
     case "Curse":
     case "Trap":
+    case "Trap-Big":
     case "Trap-Roll":
     case "Trap-Attack":
     case "Trap-Sleep":
+    case "Trap-Obstacle":
       displayPlayerState("Suspicious",colorOrange,"1")
       break;
 
@@ -1413,13 +1420,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Container-Consume":
             isFishing=false;
-          case "Trap":
           case "Trap-Sleep":
+          case "Trap-Big":
             logPlayerAction(actionString,"Your attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             break;
+          case "Trap":
           case "Trap-Roll":
+          case "Trap-Obstacle":
             logPlayerAction(actionString,"Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
@@ -1723,7 +1732,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Trap-Roll": //Triggers when rolling into it, next encounter
+          case "Trap-Roll": //Triggers when rolling into it
+          case "Trap-Obstacle":
             if (!encounterUsed) {
               if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
               if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
@@ -1733,6 +1743,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             break;
           case "Trap":
+          case "Trap-Big":
           case "Trap-Attack":
           case "Trap-Sleep":
             isFishing=false;
@@ -1995,6 +2006,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap":
+          case "Trap-Obstacle":
           case "Trap-Roll":
           case "Trap-Attack":
           case "Trap-Sleep":
@@ -2130,6 +2142,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
           case "Trap":
+          case "Trap-Big":
+          case "Trap-Obstacle":
           case "Trap-Attack":
           case "Trap-Roll":
           case "Trap-Sleep":
@@ -2441,11 +2455,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
             }
             break;
+          
+          case "Trap-Obstacle": //Removes from the way
+            logPlayerAction(actionString,"Cleared it from the way forward.")
+            nextEncounter();
+            break;
 
           case "Trap": //Grabbing triggers the effect
+          case "Trap-Big":
           case "Trap-Roll":
           case "Trap-Attack":
-
             if (encounterUsed){
                 logPlayerAction(actionString,"Seems like that was it for now.")
                 displayPlayerCannotEffect();
@@ -2945,6 +2964,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap": //Rest to full if out of combat + mana
+          case "Trap-Big":
+          case "Trap-Obstacle":
           case "Trap-Attack":
           case "Trap-Roll":
           case "Item":
@@ -3297,6 +3318,8 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
     case "Trap": //Rest to full if out of combat + mana
     case "Trap-Attack":
     case "Trap-Roll":
+    case "Trap-Big":
+    case "Trap-Obstacle":
     case "Item":
     case "Consumable":
     case "Altar":
@@ -4101,20 +4124,27 @@ function adjustEncounterButtons(){
       break;
 
     case "Trap":
+    case "Trap-Big":
     case "Trap-Attack":
     case "Trap-Sleep":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       if (encounterUsed) setButton('button_grab',"✋ Reach",colorDarkGrey);
       document.getElementById('button_roll').innerHTML="👣 Avoid";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;
 
-    case "Trap":
     case "Trap-Roll":
     case "Prop":
-      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_grab').innerHTML="✋ Reach";
       if (encounterUsed) setButton('button_grab',"✋ Reach",colorDarkGrey);
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
+      break;
+    
+    case "Trap-Obstacle":
+      document.getElementById('button_grab').innerHTML="👋 Move";      
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;
 
     case "Dream":
@@ -4130,8 +4160,8 @@ function adjustEncounterButtons(){
       break;
 
     case "Fishing":
-      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
       var bait=checkPlayerHasItem(validBaits);
       if (bait!="" && playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);

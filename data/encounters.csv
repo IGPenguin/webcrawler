@@ -4,13 +4,17 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
 Fading Wildlands;🌱;Strained Growth;Prop;0;0;0;0;0;0;0;Wild Flora;Too vibrant for a land this quiet.<br>;
 Fading Wildlands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;0;Quiet Flora;Soft sprouts push through tired soil.<br>;
 Fading Wildlands;🌿;Grass Field;Prop;0;0;0;0;0;0;0;Wind-swept Blades;The grass sways like restless sleepers.<br>;
+Fading Wildlands;🌿;Soft Moss;Prop;0;0;0;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;
 Fading Wildlands;☘️;Clover Drift;Prop;0;0;0;0;0;0;0;Lingering Luck;Greens still cling to hope.<br>;
 Fading Wildlands;🍃;Falling Leaves;Prop;0;0;0;0;0;0;0;Quiet Decay;What once bloomed now lets go.<br>;
 Fading Wildlands;🪹;Deserted Nest;Prop;0;0;0;0;0;0;0;Left Behind;Whatever lived here flew away long ago.<br>;
 Fading Wildlands;🪨;Granite Marker;Prop;0;0;0;0;0;0;0;Silent Witness;Stone watches the world fade.<br>;
+Fading Wildlands;🪨;Warm Stone;Prop;0;0;0;0;0;0;0;Comforting Weight;Somehow warm despite the cold air.<br>;
 Fading Wildlands;🌳;Lone Tree;Prop;0;0;0;0;0;0;0;Tired Sentinel;The last trunk standing from a lost grove.<br>;
 Fading Wildlands;🪵;Mossy Remains;Prop;0;0;0;0;0;0;0;Reclaimed Wood;Once a tree\ now slowly dissolving.<br>;
 Fading Wildlands;🪵;Reclaimed Logs;Prop;0;0;0;0;0;0;0;Natural Debris;Moss eats wood faster than time should.<br>;
+Fading Wildlands;🪵;Carved Stump;Prop;0;0;0;0;0;0;0;Old Marker;Knife marks tell forgotten stories.<br>;
+Fading Wildlands;🪶;Fallen Feather;Prop;0;0;0;0;0;0;0;Quiet Remnant;Something once passed overhead.<br>;
 Fading Wildlands;☀️;Warming Sunrise;Prop;0;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
 
 Fading Wildlands;🪷;Mirror-Pale Pond;Fishing;0;0;0;0;0;0;0;Water Body;Reflects the sky\ but not you.<br>;
@@ -21,10 +25,13 @@ Fading Wildlands;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;0;Cold Current;Clear wa
 Fading Wildlands;🌊;Whispering Stream;Fishing;0;0;0;0;0;0;0;Water Body;Clear water\ carrying distant sobs downstream.<br>;
 
 Fading Wildlands;🌿;Swaying Fern;Container;0;0;0;0;0;0;0;Wild Flora;The grass moves\ the air does not.<br>;Crossed right through.
+Fading Wildlands;🌱;Loose Soil;Container;0;0;0;0;0;0;0;Soft Ground;Recently disturbed earth.<br>;Dug through cautiously.
 Fading Wildlands;🌱;Potato Patch;Container;0;0;0;0;0;0;0;Forgotten Crop;Someone once depended on this field.<br>;Crossed right through.
+Fading Wildlands;🌾;Bent Grass;Container;0;0;0;0;0;0;0;Recent Passage;Something passed through not long ago.<br>;
 Fading Wildlands;🌾;Grain Cache;Container;0;0;0;0;0;0;0;0;Forgotten Ration;A burlap bundle\ left for no one.<br>;Opened to reveal a small stash.
 Fading Wildlands;🍂;Leaf Pile;Container;0;0;0;0;0;0;0;Loose Cover;Something may be hidden beneath.<br>;
 Fading Wildlands;🪵;Root Hollow;Container;0;0;0;0;0;0;0;Hidden Cache;Roots wrap around something that isn't theirs.<br>;
+Fading Wildlands;🪵;Hollow Stump;Container;0;0;0;0;0;0;0;Hidden Cache;Something seems to be stuck inside.<br>;
 Fading Wildlands;🪨;Loose Stone;Container;0;0;0;0;0;0;0;Disturbed Ground;Someone moved this rock\ not long ago.<br>;Something was hidden underneath.
 Fading Wildlands;🪨;Suspicious Rock;Container;0;0;0;0;0;0;0;Disturbed Ground;Someone moved this rock\ not long ago.<br>;Struggled to move it away.
 Fading Wildlands;🪺;Abandoned Nest;Container;0;0;0;0;0;0;0;Old Shelter;The owners left\ but something stayed.<br>;There was something inside indeed.
@@ -38,6 +45,7 @@ Fading Wildlands;🌼;Fading Blooms;Container-2;0;0;0;0;0;0;0;Tired Color;Petals
 Fading Wildlands;🌺;Withering Field;Container-2;0;0;0;0;0;0;0;Dying Beauty;Once vibrant\ now almost gone.<br>;
 Fading Wildlands;🌸;Pale Orchard;Container-2;0;0;0;0;0;0;0;Silent Harvest;Branches wait for hands that never came.<br>;
 Fading Wildlands;🌹;Thorny Rosebush;Container-2;-1;0;0;0;0;0;0;Stinging Growth;Lovely at distance\ punishing up close.<br>;Got stinged real bad!
+Fading Wildlands;🌹;Thorny Bramble;Container-2;-1;0;0;0;0;0;0;Natural Barrier;Sharp thorns suggest avoidance.<br>;Forced your way through.
 
 Fading Wildlands;🌿;Thick Growth;Container-3;0;0;0;0;0;0;0;Hidden Shapes;Something shifts where the grass is darkest.<br>;Crossed right through.
 Fading Wildlands;🌾;Tangled Weeds;Container-3;0;0;0;0;0;0;0;Snaring Growth;Every step feels slightly unwelcome.<br>;Nearly tripped\ but caught yourself.
@@ -50,14 +58,19 @@ Fading Wildlands;🍀️;Clover Shrine;Altar;0;0;0;1;0;0;0;Gentle Fortune;Four-l
 Fading Wildlands;🌸;Petal Shrine;Altar;0;0;0;1;0;0;0;Quiet Blessing;Color clings stubbornly to these blooms.<br>;The nature blessed you.
 Fading Wildlands;🍁;Maple Haven;Altar;0;0;0;1;0;0;0;Sheltering Grove;Leaves whisper of older\ safer days.<br>;You listened to the whispers.
 Fading Wildlands;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;0;Unfinished Art;Seems like the author left in hurry.<br>;Hmm\ truly an interesting piece.
+Fading Wildlands;🍃;Whispering Grove;Altar;0;0;0;1;0;0;0;Soft Murmurs;Leaves rustle without wind.<br>;Luck gently shifted to your side.
+Fading Wildlands;🪔;Ashen Brazier;Altar;1;0;0;0;0;0;0;Radiating Warmth;Embers still glow of faint hope.<br>;Rallied a new self-determination
 
-Fading Wildlands;🦋;Glimmering Swarm;Curse;0;0;0;0;0;1;0;Soft Enchantment;Wings brush your skin\ leaving a tingle.<br>;Absorbed s magical power.
-Fading Wildlands;🌀;Echoing Moment;Curse;0;0;0;2;-1;0;0;Time Slip;You swear you’ve taken this step before.<br>;That felt really weird.
-Fading Wildlands;🌬️;Calling Wind;Curse;0;0;1;0;0;0;0;Whispered Omen;Wind pushes from behind\ urging you forward.<br>;Received a howling blessing.
+Fading Wildlands;🦋;Glimmering Swarm;Curse;0;0;0;0;-1;1;0;Soft Enchantment;Wings brush your skin\ leaving a tingle.<br>;Suffered a surge of magic
+Fading Wildlands;🌀;Echoing Moment;Curse;0;0;0;1;-1;0;0;Time Slip;You swear you’ve taken this step before.<br>;Admitted the unending cycle
+Fading Wildlands;🌬️;Howling Wind;Curse;0;0;1;0;-1;0;0;Calling Omen;Wind pushes from behind\ urging you forward.<br>;Suffered tinnitus\ raised speed
+Fading Wildlands;💧;Dripping Spring;Curse;0;0;0;0;-1;0;0;Unsettling Aura;The atmoshpere thickens with every drop.<br>;Chills went down your spine
+Fading Wildlands;🌗;Half-Moon Glow;Curse;0;0;0;0;-1;0;0;Glowing Blessing;Moonlight lingers unnaturally long.<br>;Felt watched from afar
 
 Fading Wildlands;💩;Rotten Mound;Trap-Attack;0;0;0;0;-1;0;0;Foul Remains;Whatever died here didn’t rest clean.<br>;Suffered some nasty consequences.
 Fading Wildlands;🕸️;Clinging Web;Trap-Roll;0;0;-1;0;0;0;0;Snaring Threads;Sticky strands refuse to let go.<br>;Got some webs on your face
-Fading Wildlands;🪵;Fallen Trunk;Trap-Roll;0;0;0;0;0;0;0;Blocking Mass;A heavy trunk denies the easy way forward.<br>;There's no other way ahead.
+Fading Wildlands;🪵;Fallen Trunk;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;A heavy trunk denies the easy way forward.<br>;There's no other way ahead.
+Fading Wildlands;🪨;Collapsed Stones;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;The path ahead is choked with rubble.<br>;The way forward is blocked.
 
 Fading Wildlands;🐀;Field Scavenger;Small;1;0;2;0;-1;0;0;Disease Carrier;Tiny body\ filthy teeth.<br>;Contracted a deadly disease.
 Fading Wildlands;🐁;Pale Vermin;Small;1;0;2;0;-1;0;0;Sickly Rodent;Eyes too bright\ ribs too sharp.<br>;Contracted a deadly disease.
@@ -67,6 +80,7 @@ Fading Wildlands;🦗;Startled Hopper;Small;1;0;1;0;-1;0;0;Jumpy Insect;Bolts su
 Fading Wildlands;🐝;Lost Bumble;Small;1;0;1;0;-1;0;0;Straying Sting;Wanders aimlessly\ stinger always ready.<br>;Stung in the eye and fell.
 Fading Wildlands;🦋;Azure Moth;Small;1;0;1;0;-1;0;0;Fragile Bait;Delicate wings\ surprisingly good hook bait.<br>;How come this happened?
 Fading Wildlands;🐌;Trail Slug;Small;1;0;0;0;-1;0;0;Slow Crawler;Leaves a faint\ unhealthy shimmer behind.<br>;How come this happened?
+Fading Wildlands;🐌;Ash Snail;Small;1;0;0;0;-1;0;0;Slow Mover;Covered by dust\ leaves pale trail behind.<br>;Slipped at the wrong time.
 Fading Wildlands;🪱;Burrow Worm;Small;1;0;1;0;-1;0;0;Soil Dweller;Perfect for fish\ less so for you.<br>;Got destroyed by a worm.
 Fading Wildlands;🪱;Hook Worm;Small;1;0;1;0;-1;0;0;Bait Creature;Wriggles like it already knows the water.<br>;Got destroyed by a worm.
 Fading Wildlands;🪱;Lost Worm;Small;1;0;1;0;-1;0;0;Surface Stray;Should’ve stayed underground.<br>;Got destroyed by a worm.
@@ -193,20 +207,18 @@ Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;0;Circumstantial Object;A 
 Forsaken Village;🚧;Reflective Barricade;Prop;0;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🛢️;Empty Barrel;Prop;0;0;0;0;0;0;0;Circumstantial Object;Its contents are long gone.<br>;
 
-Forsaken Village;🛢️;Small Barrel;Container;0;0;0;0;0;0;0;Container;May contain something interesting.<br>;
+Forsaken Village;🛢️;Small Barrel;Container;0;0;0;0;0;0;0;Metal Container;May contain something interesting.<br>;
 Forsaken Village;🪴;Garden Box;Container;0;0;0;0;0;0;0;Natural Cover;A modest patch of green.<br>;
 Forsaken Village;🪴;Plant Pot;Container;0;0;0;0;0;0;0;Decoration;Makes this place kinda peaceful.<br>;
 Forsaken Village;🪴;Cracked Planter;Container;0;0;0;0;0;0;0;Decoration;Roots and soil are tightly intertwined.<br>;
 Forsaken Village;📫;Flagged Mailbox;Container;0;0;0;0;0;0;0;Purposeful Container;Seems to be indicating that something is inside.<br>;
 Forsaken Village;🧰;Cracked Toolbox;Container;0;0;0;0;0;0;0;Forgotten Belongings;There could be something useful\ or cursed.<br>;
+Forsaken Village;👕;Discarded Clothes;Container;0;0;0;0;0;0;0;Forgotten Belongings;Fabric stiff with age.<br>;Checked the pockets.
 Forsaken Village;📦;Weathered Crate;Container;0;0;0;0;0;0;0;Someone's Belongings;Wood warped by damp air.<br>;
-Forsaken Village;📦;Supply Crate;Container;0;0;0;0;0;0;0;Container;Sealed tightly with a rope.<br>;
-Forsaken Village;🎒;Worn Backpack;Container;0;0;0;0;0;0;0;Container;Looks abandoned in haste.<br>;
-Forsaken Village;🗃️;Metal Box;Container;0;0;0;0;0;0;0;Container;A small but secure storage.<br>;
-Forsaken Village;💰;Merchant’s Satchel;Container;0;0;0;0;0;0;0;Container;Once carried precious wares.<br>;
-Forsaken Village;🧳;Weathered Trunk;Container;0;0;0;0;0;0;0;Container;Sturdy enough to hold valuables.<br>;
-Forsaken Village;🎁;Wrapped Parcel;Container;0;0;0;0;0;0;0;Container;Wrapped in faded ribbons.<br>;
-Forsaken Village;🎁;Unopened Gift;Container;0;0;0;0;0;0;0;Container;Who left this surprise here?<br>;
+Forsaken Village;📦;Supply Crate;Container;0;0;0;0;0;0;0;Container;Lost Delivery;Sealed tightly with a rope.<br>;
+Forsaken Village;🎒;Worn Backpack;Container;0;0;0;0;0;0;0;Container;Forgotten Belongings;Looks abandoned in haste.<br>;
+Forsaken Village;🧳;Weathered Trunk;Container;0;0;0;0;0;0;0;Container;Lost Belongings;Sturdy enough to hold valuables.<br>;
+Forsaken Village;🗃️;Metal Box;Container;0;0;0;0;0;0;0;Busted Stash;Secure storage\ but already rummaged.<br>;
 Forsaken Village;🛏️;Underbed Cache;Container;0;0;0;0;0;0;0;Wrecked Furniture;Hidden from prying eyes.<br>;
 Forsaken Village;🛏️;Stuffed Mattress;Container;0;0;0;0;0;0;0;Wrecked Furniture;Might be hiding something.<br>;
 Forsaken Village;🕰️;Grandfather’s Clock;Container;0;0;0;0;0;0;0;Worthless Junk;The time stands still inside.<br>;
@@ -300,7 +312,7 @@ Forsaken Village;🧨;Sparkling Torch;Trap-Sleep;-3;0;0;0;0;0;0;Flickering Light
 Forsaken Village;💣;Sizzling Sphere;Trap-Sleep;-2;0;0;0;0;0;0;Flickering Light;Probably not a good idea to stick around here.<br>;Suffered some explosive trauma.
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-2;0;0;0;0;0;0;Garbage;Extremely slippery when stepped on.<br>;Slipped and hit your head hard.
 Forsaken Village;⚙️;Exposed Gearwork;Trap;-1;0;0;0;0;0;0;Clockwork Remnant;Old parts still twitch and rattle.<br>;Your finger got caught in the cogs.
-Forsaken Village;🕳️;Suspicious Hole;Trap;-1;0;0;0;0;0;0;Concealed Hazard;The ground feels too hollow to trust.<br>;Got scratched by hidden spikes.
+Forsaken Village;🕳️;Suspicious Hole;Trap-Big;-1;0;0;0;0;0;0;Concealed Hazard;The ground feels too hollow to trust.<br>;Got scratched by hidden spikes.
 Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;-1;0;-1;0;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
 Forsaken Village;🕯️;Burning Candle;Trap;-1;0;0;0;0;0;0;Light Source;You know the drill\ don't play with fire.<br>;You have burned your hand.
 Forsaken Village;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;0;Natural Hazard;Spiny growth covers the path ahead.<br>;Got pricked by sharp thorns.
@@ -576,7 +588,7 @@ Twisted Fairyland;🎭;Psychotic Episode;Curse;0;0;0;0;-1;0;0;Mind State;Sudden 
 Twisted Fairyland;🎶;Captivating Song;Curse;0;0;0;0;-1;0;0;Misfortune;Suggestive voice draws attention.<br>;Suffered mental damage.
 Twisted Fairyland;🗯️;Unknown Voice;Curse;0;0;0;0;-1;0;0;Misfortune;Its unsettling words make no sense.<br>;Suffered mental damage.
 
-Twisted Fairyland;🌕;Bloodmoon Shrine;Altar;-2;2;0;0;0;0;0;Ritual Place;Bathe in the silver light of the moon.<br>;The great hunt calls
+Twisted Fairyland;🌕;Blood Moon;Altar;0;1;0;0;-2;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Great Hunt</b> starts!
 Twisted Fairyland;🥀;Knotted Vines;Altar;-1;0;0;0;4;0;0;Nature Totem;Tied deliberately\ almost ritualistically.<br>;You became tougher than before.
 Twisted Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;0;Ritual Place;Blood-crying statues gaze upon the altar.<br>;Embraced ancient gods
 Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
@@ -591,7 +603,7 @@ Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;0;Disgusting Sight;Ter
 Twisted Fairyland;🔥;Spreading Wildfire;Trap-Sleep;-3;0;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Woke up to be burning alive.
 Twisted Fairyland;🌧️;Aging Timefall;Trap-Sleep;-3;0;0;0;0;0;0;Aging Rain;Every drop felt heavier than the last.<br>;Skin wrinkled overnight.
 
-Twisted Fairyland;⛩️;Sacred Gate;Trap-Roll;0;0;0;3;0;0;0;Man-made Monument;Rumors claim whoever passes will become lucky.<br>;Recieved a sacred blessing!
+Twisted Fairyland;⛩️;Sacred Gate;Trap-Roll;0;0;0;3;0;0;0;Ancient Monument;Rumors claim whoever passes will become lucky.<br>;Recieved a sacred blessing!
 Twisted Fairyland;✨;Floating Sparkles;Trap-Sleep;0;0;0;0;0;1;0;Mystical Spot;Tiny sparkling bits are floating in this area.<br>;Got some bits under your skin.
 
 Twisted Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;Drew something from the depths.
@@ -678,7 +690,8 @@ Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;1;0;-1;1;0;Ethereal Wraith;Glows
 Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;1;1;1;-1;0;0;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
 Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;0;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
 
-Twisted Fairyland;🦎;Komodo Dragon;Boss-Toxic;3;3;2;0;4;0;0;Venomous Lizard;Its eyes are glowing red.<br>;Devoured by a hungry lizard.
+Twisted Fairyland;🐦‍🔥;Ashen Glider;Boss-Hot;3;3;2;0;4;0;0;Blazing Bird;Its eyes are glowing with anger.<br>;Turned into ash pile.
+Twisted Fairyland;🦎;Komodo Dragon;Boss-Toxic;3;3;2;0;4;0;0;Venomous Lizard;Maw full of venomous teeth.<br>;Devoured by a hungry lizard.
 Twisted Fairyland;🪨;Animated Stone;Boss-Tough;3;2;1;0;-1;0;1;Malevolent Spell;This one seems pretty serious.<br>;Crushed into a fine dust.
 Twisted Fairyland;🐉;Faerie Dragon;Boss-Reflective;4;3;1;0;3;1;0;Mythical Creature;Pearlescent scales\ maw full of teeth.<br>;Got their head chewed off.
 Twisted Fairyland;🐺;Prowling Wolf;Boss-Swift;2;3;2;0;3;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.
@@ -950,16 +963,15 @@ Shrouded Necropolis;🫁;Collapsed Lung;Curse;0;0;-2;0;0;0;0;Moment of Crisis;Ca
 Shrouded Necropolis;👁️‍🗨️;Haunting Voice;Curse;0;0;0;0;-2;0;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Shrouded Necropolis;🌬️;Mourning Echo;Curse;0;0;0;0;-1;0;0;Haunted Moment;A cold wind sighs through hollow spaces.<br>;Sent shivers down your spine.
 
-Shrouded Necropolis;🕳️;Bottomless Sinkhole;Trap;-3;0;0;0;0;0;0;Natural Disaster;Better not mess around and walk away.<br>;Fell into the dark depths.
-Shrouded Necropolis;🟫;Pressure Plate;Trap;-3;0;0;0;0;0;0;Mechanical Trigger;Odd tile doesn’t quite match the others.<br>;The floor dropped beneath your feet.
-Shrouded Necropolis;🔘;Mysterious Button;Trap;-3;0;0;0;0;0;0;Ancient Mechanism;Someone clearly meant this to be found.<br>;Rusty blade punctured your head.
+Shrouded Necropolis;🕳️;Bottomless Sinkhole;Trap-Big;-3;0;0;0;0;0;0;Natural Disaster;Better not mess around and walk away.<br>;Fell into the dark depths.
+Shrouded Necropolis;🟫;Pressure Plate;Trap-Attack;-3;0;0;0;0;0;0;Mechanical Trigger;Odd tile doesn’t quite match the others.<br>;The floor dropped beneath your feet.
+Shrouded Necropolis;🔘;Mysterious Button;Trap-Attack;-3;0;0;0;0;0;0;Ancient Mechanism;Someone clearly meant this to be found.<br>;Rusty blade punctured your head.
 Shrouded Necropolis;🔮;Clouded Oraculum;Trap;-1;0;0;0;-1;0;0;Unholy Relic;It hums quietly\ drawing your gaze.<br>;Horrific visions took their toll.
-Shrouded Necropolis;🕯️;Ritual Candle;Trap;-1;0;0;0;0;0;0;Light Source;You know the drill\ don't play with fire.<br>;You have burned your hand.
+Shrouded Necropolis;🕯️;Ritual Candle;Trap;-2;0;0;0;0;0;0;Light Source;You know the drill\ don't play with fire.<br>;You have burned your hand.
 Shrouded Necropolis;🕸️;Sticky Web;Trap-Roll;0;0;-3;0;0;0;0;Minor Inconvenience;Unfortunately\ it blocks the only way ahead.<br>;Got entangled in sticky webs
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers\ but survived.
 
 Shrouded Necropolis;☠️;Cult Altar;Altar;-1;0;0;0;0;1;0;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power
-Shrouded Necropolis;🌕;Blood Moon;Altar;0;1;0;0;-2;0;0;Ritual Place;The skies demand fresh blood.<br>;The <b>Great Hunt</b> starts!
 Shrouded Necropolis;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;0;Ritual Place;The stone feels cold to the touch.<br>;
 Shrouded Necropolis;🌌;Starlight Mural;Altar;0;0;0;0;0;2;0;Ritual Place;The skies will show you the way.<br>;Recived celestial blessing
 
