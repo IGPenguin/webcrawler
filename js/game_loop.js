@@ -48,6 +48,7 @@ var playerKarma=1;
 var playerRested = false;
 var playerCooked = false;
 var playerShopped = false;
+var playerDestined = false;
 var bubblesUsed = false;
 var playerAttackType = "⚔️";
 var playerRollType = "🌀";
@@ -88,6 +89,7 @@ function renewPlayer(){ //Default values
   playerRested = false;
   playerCooked = false;
   playerShopped = false;
+  playerDestined = false;
   playerLootString = "";
   playerPartyString = "";
   playerAttackType = "⚔️";
@@ -1373,7 +1375,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Tarot");
+          if (!playerDestined) {
+            drachmaeBuy(1,"Tarot");
+          } else {
+            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted a destiny!</text>")
+            displayPlayerCannotEffect();
+          }
           break;
         }
 
@@ -2578,6 +2585,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (enemyEmoji=="🃏"){
               if (!playerName.includes("(")) playerName=playerName+" ("+enemyName.replace("Tarot Card: ","")+")"
+              playerDestined=true;
             }
             //Grab end
             isFishing=false;
@@ -3674,6 +3682,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   if (enemyEmoji=="📣") playerSpeakType=enemyEmoji;
 
   if (logMessage) {
+    if (enemyEmoji=="🃏") gainedString="<text style=color:"+colorPaper+";>"+gainedString+"</text>";
     logPlayerAction(actionIcon,gainedString);
   }
   if (moveForward) nextEncounter();
@@ -4190,6 +4199,7 @@ function adjustEncounterButtons(){
 
     case "Shop":
       setButton('button_attack',"1 🪙 Tarot",colorPaper);
+        if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
         if ((savedCoins-spentCoins)<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
       setButton('button_roll',"👣 Leave",colorRed);
       setButton('button_block',"2 🪙 Loot",colorLightBlue);
