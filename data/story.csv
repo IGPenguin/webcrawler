@@ -11,22 +11,23 @@ Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A di
 
 //Fading Wildlands
 Fading Wildlands;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You don't remember</b> what happened to you.<br>Looks like there's <b>only one way to find out</b>.;Set out on a new adventure!
-Fading Wildlands;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Fading Wildlands;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
 Fading Wildlands;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX
 Fading Wildlands;❓;Mid House;Generator-30;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 Fading Wildlands;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
 Fading Wildlands;❓;Small House;Generator-20;0;0;0;0;0;0;0;XXX;XXX;XXX
+
 Fading Wildlands;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
 Fading Wildlands;❓;Mid House;Generator-30;0;0;0;0;0;0;0;XXX;XXX;XXX
-Fading Wildlands;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
-Fading Wildlands;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Fading Wildlands;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+Fading Wildlands;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
+Fading Wildlands;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
+Fading Wildlands;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Forsaken Village
 Forsaken Village;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
@@ -35,51 +36,52 @@ Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 Forsaken Village;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
 Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
-Forsaken Village;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
-
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
-Forsaken Village;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
+Forsaken Village;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Twisted Fairyland
 Twisted Fairyland;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
 
+Twisted Fairyland;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;❓;Mid Encounter;Generator-3;0;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX
-
 Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX
-Twisted Fairyland;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+
+Twisted Fairyland;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Twisted Fairyland;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough to keep you afloat.<br>;Paddled towards the horizon.
 
 //River of Sorrows
 River of Sorrows;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
 River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
 River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
-River of Sorrows;❓;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
+River of Sorrows;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 //Shrouded Necropolis
-Shrouded Necropolis;❓;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
-Shrouded Necropolis;❓;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX
 
 Shrouded Necropolis;🌫️;Gloomy Gateway;Prop;0;0;0;0;0;0;0;Obscuring Barrier;Something dangerous possibly lies ahead.<br>;Crossed right through.
 Shrouded Necropolis;👤;Lethargic Shade;Friend;0;0;0;0;0;0;0;Familiar Being;Looks like they have not noticed you... yet?<br>;"Oh... You finally came back."
-Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+
+Shrouded Necropolis;👑;Boss;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;👰🏻‍♀️;Defeated Bride;Friend;0;0;0;0;0;0;0;Forgotten Love;You were my whole world... I loved you!<br>How could you do this to me?;You never should have come here!
-Shrouded Necropolis;❓;Boss;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
+Shrouded Necropolis;👑;Boss;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX
 Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;0;Forgotten Love;The last slivers of her life are slipping away.<br>Seems like you have <b>finally put her to rest</b>.;"Don't you... ever forget me."
 Shrouded Necropolis;💰;Drachmae Pouch;Item;0;0;0;0;0;0;0;Cursed Heritage;Inherited savings for the life after this one.<br>Contains few <b>🪙 Ethereal Drachmae</b>.;Claimed a <b>Sunken Drachma +1 🪙</b>
 
