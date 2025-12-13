@@ -4,7 +4,9 @@
 //Debug
 var versionCode = "ver. 12/12/2025 @ 00:38 PM"
 var initialEncounterOverride=0; //6 skips tutorial
-if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
+
+function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}
+if (isLocalhost()) initialEncounterOverride=4;
 
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020"; var colorPaper = "#d1bd91"; var colorDarkPaper = "#8c7f61";
@@ -339,7 +341,7 @@ $(document).ready(function() {
         success: function(data) {
           storyData = data;
           processStoryData(storyData);
-          registerClickListeners(200);
+          if (!isLocalhost()) {registerClickListeners(4000);} else {registerClickListeners(0);}
           registerClickListenersTechnical();
         }
      });
@@ -398,7 +400,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
       logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
     }
     redraw();
-    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),5);
+    if (!isLocalhost()) curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }
@@ -746,6 +748,10 @@ function loadEncounter(index, fileLines = linesStory){
     console.log(enemyEmoji)
     var randomSlot=chooseFrom([3,4,5])
     pushEncounter(getRandomEncounter(["Friend"],[enemyEmoji]),randomSlot);
+  }
+
+  if (playerLootString.includes("👺")){
+    if (enemyType=="Demon") enemyAtkBonus=(-enemyAtk)
   }
 }
 
@@ -3435,7 +3441,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   loadEncounter(encounterIndex);
 
   //Fullscreen Curtain
-  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm") && (areaName != "Depths of Slumber")){ //Does not animate new area when killed
+  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
     if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
@@ -4323,18 +4329,23 @@ function toggleUIElement(UIElement,opacity = "0"){
   }
 }
 
-function curtainFadeInAndOut(message="",duration=2){
+function curtainFadeInAndOut(message="",duration=3){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
   var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
 
+  //Force end any existing anim first
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",0,true,message);
+  animateUIElement(curtainUIElement,"animate__fadeIn",0,true);
+
+  //Actual animation
   animateUIElement(fullscreenTextUIElement,"animate__fadeIn",(duration/2)+0.1,true,message);
   animateUIElement(curtainUIElement,"animate__fadeIn",duration/2,true);
   removeClickListeners();
 
   var animationHandler = function(){
     setBackground(areaName);
-    animateUIElement(curtainUIElement,"animate__fadeOut",duration,true);
-    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration,true,message);
+    animateUIElement(curtainUIElement,"animate__fadeOut",duration/1.5,true);
+    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration/1.5,true,message);
     registerClickListeners(1000); //Ooopa, still hacking my way through
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
@@ -4621,7 +4632,7 @@ function redirectToFeedback(){
 }
 
 //Prevent data loss warning if not running on localhost
-if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1"){
+if (!isLocalhost()){
   window.onbeforeunload = function() {
       return true;
   };

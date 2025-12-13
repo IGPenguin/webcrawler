@@ -25,7 +25,8 @@ Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;Artifact;Provides a new skill 
 Fishing;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
 
 //The one example of legendary consumable
-Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;Artifact;The ultimate source of immense brilliance.<br><b>+4 🧠 Intellect</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tasted like heaven.
+Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;Artifact;The ultimate source of immense brilliance.<br><b>+4 🧠 Intellect</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>.;Tastes literally like heaven.
+Fishing;🐟;Surströmming Fish;Consumable;-1;1;0;0;0;0;0;Artifact;Ohhhh boy\ ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!
 
 Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;Artifact;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.
 
