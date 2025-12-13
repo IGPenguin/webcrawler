@@ -86,7 +86,7 @@ function renewPlayer(){ //Default values
   playerInt = 1;
   playerXP=0;
   playerLevel=1;
-  playerXPThreshold=400;
+  playerXPThreshold=300;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerCooked = false;
@@ -340,6 +340,7 @@ $(document).ready(function() {
           storyData = data;
           processStoryData(storyData);
           registerClickListeners(200);
+          registerClickListenersTechnical();
         }
      });
 
@@ -1692,7 +1693,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Walked away wasting the potential.");
             encounterIndex++;
             isFishing=false;
-            nextEncounter();a
+            nextEncounter();
             break;
           case "Dream":
             if (playerSta<=0){
@@ -2386,7 +2387,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
                 var gainedXP=parseInt(playerGainXP(1,0,""));
-                playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
                 logAction("🍀 ▸ ✋ <b>Luckily</b>, they were spooked. "+ decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 displayEnemyEffect("💨");
@@ -2403,7 +2403,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               if (enemyType=="Pet"){
                 var gainedXP=parseInt(playerGainXP(1,0,""));
-                playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
                 logAction(enemyEmoji+" ▸ 😱 They got spooked and fled! "+ decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 displayEnemyEffect("💨");
@@ -4439,8 +4438,28 @@ function registerClickListeners(delay=800){
     document.getElementById('button_pray').addEventListener(eventType, callback_pray);
     document.getElementById('button_curse').addEventListener(eventType, callback_curse);
   },delay)
+}
 
-  versionIDUIElement.addEventListener(eventType, ()=> {
+function removeClickListeners(){
+  var eventType = 'click';
+
+  document.getElementById('button_attack').removeEventListener(eventType, callback_attack);
+  document.getElementById('button_roll').removeEventListener(eventType, callback_roll);
+  document.getElementById('button_block').removeEventListener(eventType, callback_block);
+
+  document.getElementById('button_grab').removeEventListener(eventType, callback_grab);
+  document.getElementById('button_sleep').removeEventListener(eventType, callback_sleep);
+  document.getElementById('button_speak').removeEventListener(eventType, callback_speak);
+
+  document.getElementById('button_cast').removeEventListener(eventType, callback_cast);
+  document.getElementById('button_pray').removeEventListener(eventType, callback_pray);
+  document.getElementById('button_curse').removeEventListener(eventType, callback_curse);
+}
+
+function registerClickListenersTechnical(){
+    var eventType = 'click';
+
+    versionIDUIElement.addEventListener(eventType, ()=> {
     actionString="⚙️"
     adventureEndReason="\nDebug: "+enemyEmoji+" "+enemyName
     //copyAdventureToClipboard();
@@ -4487,21 +4506,6 @@ function registerClickListeners(delay=800){
       savedCoins=0;
     }
   });
-}
-function removeClickListeners(){
-  var eventType = 'click';
-
-  document.getElementById('button_attack').removeEventListener(eventType, callback_attack);
-  document.getElementById('button_roll').removeEventListener(eventType, callback_roll);
-  document.getElementById('button_block').removeEventListener(eventType, callback_block);
-
-  document.getElementById('button_grab').removeEventListener(eventType, callback_grab);
-  document.getElementById('button_sleep').removeEventListener(eventType, callback_sleep);
-  document.getElementById('button_speak').removeEventListener(eventType, callback_speak);
-
-  document.getElementById('button_cast').removeEventListener(eventType, callback_cast);
-  document.getElementById('button_pray').removeEventListener(eventType, callback_pray);
-  document.getElementById('button_curse').removeEventListener(eventType, callback_curse);
 }
 
 //Social features
