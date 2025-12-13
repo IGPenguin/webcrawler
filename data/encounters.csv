@@ -1094,7 +1094,7 @@ Tarot Cards;🃏;Tarot Card(( Berserk;Item;0;2;0;0;-6;0;0;Destiny Echo;Sacrifice
 Tarot Cards;🃏;Tarot Card(( Knight;Item;0;1;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Knight</b>
 Tarot Cards;🃏;Tarot Card(( Serpent;Item;-1;1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Serpent</b>
 Tarot Cards;🃏;Tarot Card(( Choleric;Item;0;1;0;0;-3;0;0;Destiny Echo;Sacrifice <b>-3 🧠 Intellect</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Choleric</b>
-Tarot Cards;🃏;Tarot Card(( Murderer;Item;0;1;0;-4;0;0;0;Destiny Echo;Sacrifice <b>-4 🍀 Luck</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Murderer</b>
+Tarot Cards;🃏;Tarot Card(( Murderer;Item;0;1;0;-3;0;0;0;Destiny Echo;Sacrifice <b>-3 🍀 Luck</b> for <b>+1 ⚔️ Attack</b>.<br>;Accepted destiny(( <b>Murderer</b>
 Tarot Cards;🃏;Tarot Card(( Slayer;Item;0;1;0;0;0;0;0;Destiny Echo;Gain <b>+1 ⚔️ Attack</b> with no apparent downside.<br>;Accepted destiny(( <b>Slayer</b>
 Tarot Cards;🃏;Tarot Card(( Monk;Item;0;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> with nothing in return.<br>;Accepted destiny(( <b>Monk</b>
 
@@ -1115,7 +1115,7 @@ Tarot Cards;🃏;Tarot Card(( Scholar;Item;0;0;0;0;2;0;0;Destiny Echo;Gain <b>+2
 Tarot Cards;🃏;Tarot Card(( Adept;Item;0;0;0;0;1;0;0;Destiny Echo;Gain <b>+1 🧠 Intellect</b> with no apparent downside.<br>;Accepted destiny(( <b>Adept</b>
 Tarot Cards;🃏;Tarot Card(( Imbecile;Item;0;0;0;0;-1;0;0;Destiny Echo;Sacrifice <b>-1 🧠 Intellect</b> with nothing in return.<br>;Accepted destiny(( <b>Imbecile</b>
 
-Tarot Cards;🃏;Tarot Card(( Gambler;Item;0;0;0;4;-4;0;0;Destiny Echo;Sacrifice <b>-4 🧠 Intellect</b> for <b>+4 🍀 Luck</b>.<br>;Accepted destiny(( <b>Gambler</b>
+Tarot Cards;🃏;Tarot Card(( Gambler;Item;0;0;0;3;-3;0;0;Destiny Echo;Sacrifice <b>-3 🧠 Intellect</b> for <b>+3 🍀 Luck</b>.<br>;Accepted destiny(( <b>Gambler</b>
 Tarot Cards;🃏;Tarot Card(( Devil;Item;-1;0;0;3;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> for <b>+3 🍀 Luck</b>.<br>;Accepted destiny(( <b>Devil</b>
 Tarot Cards;🃏;Tarot Card(( Fool;Item;0;0;0;2;-2;0;0;Destiny Echo;Sacrifice <b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b>.<br>;Accepted destiny(( <b>Fool</b>
 Tarot Cards;🃏;Tarot Card(( Blessed;Item;0;0;0;2;0;0;0;Destiny Echo;Gain <b>+2 🍀 Luck</b> with no apparent downside.<br>;Accepted destiny(( <b>Blessed</b>
