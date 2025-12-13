@@ -68,7 +68,7 @@ var usedShopMessages=[];
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷"])
 var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷","✂️"])
 var castTypes=(["⚡️","☄️","🍭","🔥"])
-var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","🦐","🦂","🍤","🐙","🐛","🦑","️🐌"])
+var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","🦐","🦂","🍤","🐙","🐛","🦑","🐌"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
 renewPlayer();
@@ -92,8 +92,8 @@ function renewPlayer(){ //Default values
   playerCooked = false;
   playerShopped = false;
   playerDestined = false;
-  playerLootString = "";
-  playerPartyString = "";
+  playerLootString = [];
+  playerPartyString = [];
   playerAttackType = "⚔️";
   playerRollType = "🌀";
   playerBlockType = "🔰";
@@ -4133,7 +4133,7 @@ function adjustEncounterButtons(){
       if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_roll').innerHTML="👣 Walk";
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
-      var bait=checkPlayerHasItem();
+      var bait=checkPlayerHasItem(validBaits);
       if (bait!="" && playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
