@@ -2615,7 +2615,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               if (enemyEmoji!="🪙" && enemyEmoji!="💰") playerLootString+=enemyEmoji;
-              if (enemyEmoji=="👺" || enemyEmoji=="🐴") playerName=enemyEmoji+" "+playerName;
+              if (enemyEmoji=="👺" || enemyEmoji=="🐴" || enemyEmoji=="🐷") playerName=enemyEmoji+" "+playerName;
               displayPlayerGainedEffect();
             } else {
               playerKarma++;
@@ -3759,7 +3759,10 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   return gainedString;
 }
 
-function playerConsumed(silent=false){
+function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef at various places (not needed at the moment, but might be in future)
+  //Works for both morph and mask, logs manipulated further down
+  if (playerName.includes("🐷") || playerLootString.includes("🐷")) {enemyHp=0; enemyAtk=0; enemySta=0; enemyLck=0; enemyInt=0; enemyMgk=0; enemyDef=0;}
+
   var consumedString="Replenished resources"
   var sign = "";
   if (enemyType=="Consumable") var eatEmoji= "🍴"
@@ -3791,6 +3794,9 @@ function playerConsumed(silent=false){
     if (enemyType=="Consumable") eatEmoji="🤮";
     animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
+
+  //Pig morph and mask log tweak
+  if (playerName.includes("🐷") || playerLootString.includes("🐷")) consumedString="<b>Devoured</b> by <b>🐷 Pig Digestion</b>";
 
   gainStamina+=parseInt(enemySta);
   if (gainStamina<0) sign=" "
