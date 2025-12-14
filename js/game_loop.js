@@ -2302,7 +2302,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Your curse has made them stronger!");
             enemyName=enemyName+" (Cursed)";
             animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
-            enemyAtk+=1;
+            enemyAtkBonus+=1;
             break;
 
         case "Standard": //Reduce enemy atk if mgk stronger then them
@@ -2334,7 +2334,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way
+            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way (halves damage?)
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             enemyCursed=true;
@@ -2346,8 +2346,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Your curse had no effect on them -1 🔵");
           }
 
-          if (enemyCastIfMgk()) break;
-          enemyAttackOrRest();
+          logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
+          //if (enemyCastIfMgk()) break;
+          //enemyAttackOrRest();
           break;
 
         case "Friend": //They'll boost your stats

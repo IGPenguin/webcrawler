@@ -525,10 +525,11 @@ Twisted Fairyland;🍄;Glowcap Ring;Prop;0;0;0;1;0;0;0;Bioluminescent Circle;Sof
 Twisted Fairyland;🌿;Soft Moss;Prop;0;0;1;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;Well rested on the soft ground
 Twisted Fairyland;🌸;Dreamblossom Patch;Prop;0;0;0;0;1;0;0;Soothing Spores;Sweet scent dulls anxious thoughts.<br>;Dreamed of a welcoming paradise
 Twisted Fairyland;🌲;Needlepine Grove;Prop;0;0;-1;0;0;0;0;Harsh Terrain;It's harder to navigate between the trees.<br>;Rested\ but needles kept poking you
+Twisted Fairyland;☄️;Falling Comet;Prop;-9;0;0;0;0;0;0;Burning Debris;Bright light coming closer and closer.<br>;Completely wiped by an explosion
 
 Twisted Fairyland;🪵;Hollow Log;Container;0;0;0;0;0;0;0;Natural Stash;Hides what shouldn't be here.<br>;
 Twisted Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
-Twisted Fairyland;🎶;Lovely Song;Container;1;0;0;0;0;0;0;Chill Vibes;Calls for lost souls to come.<br>;Continued towards the source.
+Twisted Fairyland;🎶;Lovely Song;Container;0;0;0;0;0;0;0;Strange Vibes;Calls for the lost souls to come.<br>;Continued towards the source.
 Twisted Fairyland;🌿;Fern Thicket;Container;0;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;Crossed right through.
 Twisted Fairyland;🎋;Bamboo Growth;Container;0;0;0;0;0;0;0;Jungle Flora;Good place to catch a breath.<br>;
 Twisted Fairyland;🕸;Spider Cocoon;Container;-1;0;0;0;0;0;0;Someone's Lunch;Seems to have something inside.<br>;Grossed out by the sticky webs.
@@ -819,6 +820,7 @@ River of Sorrows;🪶;Drifting Feather;Prop;0;0;0;0;0;0;0;Flight Remnants;Floats
 River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
 
 River of Sorrows;🌙;Moonlit Current;Prop;0;0;0;0;1;0;0;Silver Flow;Light dances on moving water.<br>;Dreamed of the distant shores
+River of Sorrows;🎶;Siren Song;Prop;-1;0;0;0;0;0;0;Unsettling Feeling;Calls for lost souls to come.<br>;Dreamed of a terrible heartbreak
 River of Sorrows;⚱️;Floating Urn;Prop;0;0;0;-1;0;0;0;Funerary Relic;River water hugs its base\ waving it around.<br>;Got haunted by bad spirits
 
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
