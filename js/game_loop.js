@@ -3768,7 +3768,7 @@ function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef 
   if (enemyType=="Consumable") var eatEmoji= "🍴"
 
   var missingHp=0;
-  if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
+  if (playerHp<playerHpMax && enemyType=="Consumable") missingHp=parseInt(playerHpMax)-parseInt(playerHp);
   var missingSta=parseInt(playerStaMax)-parseInt(playerSta);
   var gainStamina=0;
 
@@ -3780,7 +3780,7 @@ function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef 
 
   //Recover stamina if not bad food
   if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0 && !enemyType.includes("Container")){
-    if ((parseInt(missingSta)<=0 && enemySta==0) && playerHp>=playerHpMax) {
+    if ((parseInt(missingSta)<=0 && enemySta==0 && enemyType=="Consumable") && playerHp>=playerHpMax) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
     } else {
