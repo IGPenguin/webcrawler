@@ -36,7 +36,7 @@ var playerMgkMax;
 var playerHp;
 var playerSta;
 var playerLck;
-var luckInterval = 33; //Lower to increase chances
+var luckInterval = 35; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerAtkBonus;
@@ -1990,7 +1990,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("🔷");
             displayEnemyCannotEffect();
             if ((enemySta+enemyStaLost)==0){
-              atckmsg="They reflected the spell.";
+              atckmsg="They reflected your spell -"+magicDamage+" 🔵";
             } else {
               atckmsg="They reflected the spell and attacked -"+enemyAtk+" 💔";
             }
@@ -2017,10 +2017,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (magicDamage > 2) {
               magicDamage=2;
             }
+
             playerMgk-=magicDamage;
+            var magicBonusDamage=0;
+
+            if (procAbilityChance("💫",100)){
+              magicBonusDamage=1;
+            }
 
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
-              enemyHit(magicDamage,true);
+              enemyHit(magicDamage+magicBonusDamage,true);
             } else {
               logPlayerAction(actionString,"They resisted your spell -"+magicDamage+" 🔵");
               enemyMgkLost+=magicDamage;
