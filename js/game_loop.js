@@ -9,7 +9,7 @@ function isLocalhost(){ if (location.hostname === "localhost" || location.hostna
 if (isLocalhost()) initialEncounterOverride=4;
 
 //Colors & Symbols
-var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020"; var colorPaper = "#d1bd91"; var colorDarkPaper = "#8c7f61";
+var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorSoftGreen = "#62a862ff"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorSoftRed = "#ef4646ff"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020"; var colorPaper = "#d1bd91"; var colorDarkPaper = "#8c7f61";
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; narrowSpace="&#8239;"; var arrowSymbol="▸";
 
 //Savedata
@@ -1241,6 +1241,8 @@ function redraw(){
       break;
     case "Prop":
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
+      if (totalBonus>0)enemyStatusString=decorateStatusText("🟢","Comfortable",colorSoftGreen);
+      if (totalMalus<0)enemyStatusString=decorateStatusText("🔴","Uncomfortable",colorSoftRed);
       if (enemyName.includes("Bride")) enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
       break;
     case "Altar":
@@ -2984,6 +2986,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (totalBonus>0 && enemyMsg=="") enemyMsg="Rested very well, gaining extra"
               if (totalMalus<0 && enemyMsg=="") enemyMsg="Did not rest well, somehow lost"
               playerConsumed();
+              displayPlayerEffect("💤")
             } else {
               playerRest();
             }
@@ -4073,6 +4076,8 @@ function resetEncounterButtons(){
   if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
   setButton('button_grab',"👋 Grab");
   setButton('button_sleep',playerSleepType+" Sleep");
+  if (enemyType=="Prop" && totalBonus>0) setButton('button_sleep',playerSleepType+" Sleep",colorSoftGreen);
+  if (enemyType=="Prop" && totalMalus<0) setButton('button_sleep',playerSleepType+" Sleep",colorSoftRed);
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
   if (playerXP>=playerXPThreshold) setButton('button_sleep',playerSleepType+" Sleep",colorGold);
   if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);

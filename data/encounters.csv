@@ -4,8 +4,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
 Fading Wildlands;🌱;Strained Growth;Prop;0;0;0;0;0;0;0;Wild Flora;Too vibrant for a land this quiet.<br>;
 Fading Wildlands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;0;Quiet Flora;Soft sprouts push through tired soil.<br>;
 Fading Wildlands;🌿;Grass Field;Prop;0;0;0;0;0;0;0;Wind-swept Blades;The grass sways like restless sleepers.<br>;
-Fading Wildlands;🌿;Soft Moss;Prop;0;0;0;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;
-Fading Wildlands;☘️;Clover Drift;Prop;0;0;0;0;0;0;0;Lingering Luck;Greens still cling to hope.<br>;
+Fading Wildlands;☘️;Clover Drift;Prop;0;0;0;1;0;0;0;Lingering Luck;Greens still cling to hope.<br>;
 Fading Wildlands;🍃;Falling Leaves;Prop;0;0;0;0;0;0;0;Quiet Decay;What once bloomed now lets go.<br>;
 Fading Wildlands;🪹;Deserted Nest;Prop;0;0;0;0;0;0;0;Left Behind;Whatever lived here flew away long ago.<br>;
 Fading Wildlands;🪨;Granite Marker;Prop;0;0;0;0;0;0;0;Silent Witness;Stone watches the world fade.<br>;
@@ -16,6 +15,8 @@ Fading Wildlands;🪵;Reclaimed Logs;Prop;0;0;0;0;0;0;0;Natural Debris;Moss eats
 Fading Wildlands;🪵;Carved Stump;Prop;0;0;0;0;0;0;0;Old Marker;Knife marks tell forgotten stories.<br>;
 Fading Wildlands;🪶;Fallen Feather;Prop;0;0;0;0;0;0;0;Quiet Remnant;Something once passed overhead.<br>;
 Fading Wildlands;☀️;Warming Sunrise;Prop;0;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
+Fading Wildlands;🌿;Soft Moss;Prop;0;0;1;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;Well rested on the soft ground
+Fading Wildlands;🌾;Tall Grass;Prop;0;0;1;0;0;0;0;Natural Bedding;Good place for a short rest.<br>;Rested hidden from the wind
 
 Fading Wildlands;🪷;Mirror-Pale Pond;Fishing;0;0;0;0;0;0;0;Water Body;Reflects the sky\ but not you.<br>;
 Fading Wildlands;🪷;Stillwater Pond;Fishing;0;0;0;0;0;0;0;Water Body;Lilies crowd together\ hiding the center.<br>;
@@ -200,12 +201,13 @@ Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;0;Ruins;Nothing but junk.<br>
 Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
 Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
-Forsaken Village;🛏️;Ruined Bed;Prop;0;0;0;0;0;0;0;Wrecked Furniture;Looks long time abandoned.<br>;Avoided a pile of rubbish.
 Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;0;Wrecked Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 Forsaken Village;🏗;Strange Monument;Prop;0;0;0;0;0;0;0;Metal Construction;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🚧;Reflective Barricade;Prop;0;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🛢️;Empty Barrel;Prop;0;0;0;0;0;0;0;Circumstantial Object;Its contents are long gone.<br>;
+Forsaken Village;🔥;Smoldering Campfire;Prop;1;0;0;0;0;0;0;Lingering Warmth;Embers still glow faintly in the ash.<br>;Slept close to a comforting heat
+Forsaken Village;🛏️;Ruined Bed;Prop;0;0;-1;0;0;0;0;Wrecked Furniture;Looks long time abandoned.<br>;Ouch\ you got sore back
 
 Forsaken Village;🛢️;Small Barrel;Container;0;0;0;0;0;0;0;Metal Container;May contain something interesting.<br>;
 Forsaken Village;🪴;Garden Box;Container;0;0;0;0;0;0;0;Natural Cover;A modest patch of green.<br>;
