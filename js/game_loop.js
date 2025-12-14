@@ -2,12 +2,14 @@
 //...submit a pull request if you dare
 
 //Debug
-var versionCode = "ver. 12/08/2025 @ 00:40 PM"
+var versionCode = "ver. 12/14/2025 @ 11:23 AM"
 var initialEncounterOverride=0; //6 skips tutorial
-if (location.hostname === "localhost" || location.hostname === "127.0.0.1") initialEncounterOverride=4;
+
+function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}
+if (isLocalhost()) initialEncounterOverride=4;
 
 //Colors & Symbols
-var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020"; var colorPaper = "#d1bd91"; var colorDarkPaper = "#8c7f61";
+var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorSoftGreen = "#62a862ff"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorSoftRed = "#ef4646ff"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020"; var colorPaper = "#d1bd91"; var colorDarkPaper = "#8c7f61";
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; narrowSpace="&#8239;"; var arrowSymbol="▸";
 
 //Savedata
@@ -16,7 +18,6 @@ if (isNaN(savedCoins)) {
   localStorage.setItem('coins', 0);
   //savedCoins=0;
 }
-var spentCoins = 0;
 
 //Stats
 var adventureStartTime = getTime();
@@ -35,7 +36,7 @@ var playerMgkMax;
 var playerHp;
 var playerSta;
 var playerLck;
-var luckInterval = 33; //Lower to increase chances
+var luckInterval = 35; //Lower to increase chances
 var playerInt;
 var playerAtk;
 var playerAtkBonus;
@@ -48,6 +49,7 @@ var playerKarma=1;
 var playerRested = false;
 var playerCooked = false;
 var playerShopped = false;
+var playerDestined = false;
 var bubblesUsed = false;
 var playerAttackType = "⚔️";
 var playerRollType = "🌀";
@@ -59,13 +61,16 @@ var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
 
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
+var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
+var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling reward useful in the afterlife.<br>","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
+var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gambling risks turned out on the bad side.<br>","message:Released a long disappointed sigh..."]
 var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
 var usedShopMessages=[];
 
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷"])
-var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷"])
+var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷","✂️"])
 var castTypes=(["⚡️","☄️","🍭","🔥"])
-var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","️🐌","🦐","🦂","🍤","🐙","🐛","🦑"])
+var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","🦐","🦂","🍤","🐙","🐛","🦑","🐌"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
 renewPlayer();
@@ -83,13 +88,14 @@ function renewPlayer(){ //Default values
   playerInt = 1;
   playerXP=0;
   playerLevel=1;
-  playerXPThreshold=400;
+  playerXPThreshold=300;
   playerMgk = playerMgkMax;
   playerRested = false;
   playerCooked = false;
   playerShopped = false;
-  playerLootString = "";
-  playerPartyString = "";
+  playerDestined = false;
+  playerLootString = [""];
+  playerPartyString = [""];
   playerAttackType = "⚔️";
   playerRollType = "🌀";
   playerBlockType = "🔰";
@@ -104,7 +110,6 @@ function renewPlayer(){ //Default values
   playerLove=0;
   seenLoot = [];
   adventureLog = [];
-  spentCoins=0;
 }
 
 //Global vars
@@ -252,9 +257,9 @@ function getPoem(){
 }
 
 function getShopMessage(){
-  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free. My shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you’d be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient. I am not.","You look worse. My inventory looks better.","Failure is a habit. So is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
+  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free, my shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you’d be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient, I am not.","You look worse. My inventory looks better.","Failure is a habit and so is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
 .filter(item => !usedShopMessages.includes(item));
-  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more.","Ah, a spender. I totally approve.","Coins still rattling? I've got more burdens for you.","Plenty of stock, pity about your skill.","Keep buying, maybe luck will notice you.","You live, you die, you shop. Cycle continues.","Still have coin? I can surely fix that.","Gear's heavier, purse is lighter. Balance restored.","Nothing like fresh regret in shiny packaging.","You equip it, I profit. Fair trade.","More trinkets, same doomed story.","You can’t buy talent, but you’re trying.","Still breathing and still paying. Good.","Spend now, regret later. Tradition.","Don’t worry, I’ll remember you when you’re broke.","Stock’s full, your fate is not.","Oh look, you found more currency to waste.","You must really believe this will help.","I admire your optimism. It's delicious.","Another shiny thing to die with.","You buy, they kill, I restock.","If preparation mattered, you’d be unstoppable.","I’ll happily enable your next failure.","A wise investment… probably.","Good choice. Not good enough, but good.","Your purse bleeds, my shelves smile.","One step closer to being stylishly deceased.","Keep this up and I’ll name a shelf after you.","Still have coin? Then we’re not done."].filter(item => !usedShopMessages.includes(item));
+  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more.","Ah, a spender. I totally approve.","Coins still rattling? I've got more for you.","Plenty of stock, pity about your skill.","Keep buying, maybe luck will notice you.","You live, you die, you shop. Cycle continues.","Still have coin? I can surely fix that.","Gear's heavier, purse is lighter. Balance restored.","Nothing like fresh regret in shiny packaging.","You buy it, I profit. Fair trade.","More trinkets, same doomed story.","You can’t buy talent, but you’re trying.","Still breathing and still paying. Good.","Spend now, regret later. Tradition.","Don’t worry, I won't mind when you’re broke.","Stock’s full, your fate is not.","Oh look, you found more currency to waste.","You must really believe this will help.","I admire your optimism. It's delicious.","Another shiny thing to die with.","You buy, they kill, I restock.","If preparation mattered, you’d be unstoppable.","I’ll happily enable your next failure.","A wise investment… probably.","Good choice. Not good enough, but good.","Your purse bleeds, my shelves smile.","One step closer to being stylishly deceased.","Keep this up and I’ll name a shelf after you.","Still have coin? Then we’re not done."].filter(item => !usedShopMessages.includes(item));
 
   if (random_quotes.length==0) random_quotes.push("Ugh, hate to see you here all the time.")
   var message = random_quotes[Math.floor(Math.random() * random_quotes.length)]+"<br>";
@@ -336,7 +341,8 @@ $(document).ready(function() {
         success: function(data) {
           storyData = data;
           processStoryData(storyData);
-          registerClickListeners();
+          if (!isLocalhost()) {registerClickListeners(4000);} else {registerClickListeners(0);}
+          registerClickListenersTechnical();
         }
      });
 
@@ -380,6 +386,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   if (initNextEncounter){
     loadEncounter(1+initialEncounterOverride+encounterIndex);//Start from the first encounter (0 is dead)
     if (savedCoins!= NaN && savedCoins>0){ //Skip tutorial, visit shop
+      logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
       playerSta=playerStaMax;
       loadEncounter(4);
       drachmaShop[0]="area:"+"Fading Wildlands";
@@ -394,7 +401,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
       logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
     }
     redraw();
-    if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),5);
+    if (!isLocalhost()) curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }
@@ -544,6 +551,7 @@ function pushEncounter(encounterStringArray=[],index=1,areaNameOverride=""){
 }
 
 function markAsSeen(seenName){
+  seenName=seenName.replace(" (Crispy)","").replace(" (Salty)",""); //To avoid seeing same food again if cooked
   if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
 }
 
@@ -600,6 +608,17 @@ function loadEncounter(index, fileLines = linesStory){
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyDef = String(selectedLine.split(",")[10].split(":")[1]);
+
+  //Calculate total bonus/malus
+  var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef];
+  var effectArrayBonus=effectArray.filter(function(x){ return x > 0 });
+  var effectArrayMalus=effectArray.filter(function(x){ return x < 0 });
+  totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
+  totalMalus=effectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
+  if (totalMalus=="") totalMalus=0;
+  if (totalBonus=="") totalBonus=0;
+  //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
+
   enemyTeam = String(selectedLine.split(",")[11].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[12].split(":")[1]);
   if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
@@ -623,7 +642,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyDesc = enemyDesc.replaceAll("((",":");
   if (enemyTeam=="Undertaker") {
     enemyDesc=getShopMessage();
-    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
+    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
   }
   if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
 
@@ -660,7 +679,7 @@ function loadEncounter(index, fileLines = linesStory){
            if (enemyName=="Ethereal Drachma"){
              logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Shape spawned: <b>"+enemyName+"</b></text>")
            } else if (enemyEmoji== "🪙" || enemyEmoji=="💰") {
-             logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Found fortune: <b>"+enemyName+"</b></text>")
+             if (!enemyName.includes("Lucky")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Found fortune: <b>"+enemyName+"</b></text>")
            } else {
               if (enemyName.includes("Tarot")){
                 logAction("👁️‍🗨️ ▸ "+enemyEmoji+" Destiny calls you through a <b>Tarot Card</b>.")
@@ -681,13 +700,18 @@ function loadEncounter(index, fileLines = linesStory){
         logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
       }
       break;
-    case "Curse":
     case "Trap":
+    case "Trap-Big":
+    case "Trap-Obstacle":
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      if (totalBonus>0 && totalMalus<=0) logAction("🎀 ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
+      if (totalBonus==0 && totalMalus==0) logAction("⚫️ ▸ "+enemyEmoji+" Encountered obstacle: <b>"+enemyName+"</b>")
+      if (totalBonus>0 && totalMalus<0) logAction("🎀 ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
       if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed a hazard: <b>"+enemyName+"</b>")
+      break;
+    case "Curse":
+      logAction("⁉️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
       break;
     case "Container":
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
@@ -728,7 +752,7 @@ function loadEncounter(index, fileLines = linesStory){
       }
       if (enemyName.includes("Defeated Bride")) {
         encounterIndex++; //Skip second phase
-        enemyMsg="I'm glad that you didn't forget me."
+        enemyMsg="I'm glad that you didn't forget."
       }
     } else if (playerLove>0){
       enemyAtkBonus-=playerLove;
@@ -740,41 +764,67 @@ function loadEncounter(index, fileLines = linesStory){
     var randomSlot=chooseFrom([3,4,5])
     pushEncounter(getRandomEncounter(["Friend"],[enemyEmoji]),randomSlot);
   }
+
+  if (playerLootString.includes("👺")){
+    if (enemyType=="Demon") {
+      enemyAtkBonus=(-enemyAtk)
+      enemyMgkLost=(enemyMgk)
+    }
+  }
+  if (playerLootString.includes("🐴")){
+    enemyAtkBonus-=1;
+  }
 }
 
 function generateRandomItem(item=""){
-  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
+  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Tarot","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
   if (item=="Artifact")   var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]); //arg #2 = artifact only, arg #4 excludes specific texts
   if (item=="Tarot")   var randomItem=getRandomEncounter(["Item"],["Tarot"],"ALL"); //Tarot cards from all areas
   return randomItem;
 }
 
 function drachmaeBuy(price=1,item=""){
-  var availableCoins = savedCoins-spentCoins;
-  if (availableCoins>=price) {
+  if (savedCoins>=price) {
     playerShopped=true;
-    spentCoins+=price;
-    availableCoins=availableCoins-spentCoins;
-    localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
+    savedCoins-=price;
+    localStorage.setItem('coins', savedCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
-    displayPlayerGainedEffect();
 
-    if (item!="Level") {
+    if ((item=="Item") || (item=="Artifact") || (item=="Tarot")) {
+      displayPlayerGainedEffect();
       logPlayerAction(actionString,"Splendid choice, this ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
-      if (availableCoins>0)pushEncounter(drachmaShop);
       var item=generateRandomItem(item).split(",");
       item[0]="area:"+areaName;
       item=String(item);
       pushEncounter(item);
+      nextEncounter();
+      pushEncounter(drachmaShop);
+    } else if (item=="Gamble")  {
+      if (procAbilityChance("",50+playerLck)){
+        displayPlayerGainedEffect();
+        logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
+        savedCoins+=1; localStorage.setItem('coins', savedCoins); //Didn't spend a drachma when won
+        drachmaPrize[0]="area:"+areaName;
+        pushEncounter(drachmaPrize);
+        nextEncounter();
+      } else {
+        logPlayerAction(actionString,"<text style=color:"+colorRed+";>Ooops... you lost the gamble!</text>")
+        gamblingLost[0]="area:"+areaName;
+        displayPlayerCannotEffect();
+        pushEncounter(gamblingLost);
+        nextEncounter();
+      }
+      pushEncounter(drachmaShop);
+      return;
     } else {
+      displayPlayerGainedEffect();
       logPlayerAction(actionString,"Sure, grow stronger as you need");
       playerXP+=playerXPThreshold;
       playerRest(true);
       return;
     }
-    nextEncounter(); //Also marks as seen, haha smart
     return;
   } else {
     logAction("👤 ▸ ⁉️ "+"<text style=color:"+colorRed+";>You don't have enough 🪙 <b>Drachmae</b>!</text>")
@@ -790,12 +840,18 @@ function generateNextEncounters(generatorID=0, logCall=true){
     case 0: //Prop/Small/Lockbox
       if (logCall) logGenerator("prop/small");
       var type="Prop"
-      if (procAbilityChance("",25+playerLck)) type="Small"; //25% Small
+      if (procAbilityChance("",10+playerLck)) type="Small"; //10% Small
 
       if (procAbilityChance("",5-playerLck)) { //5% Trap chance, lowers with luck
-        pushEncounter(getRandomEncounter(["Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
-      } else {
-        pushEncounter(getRandomEncounter(["Prop"]));
+        pushEncounter(getRandomEncounter(["Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
+      } else { //No small, no trap
+        if (procAbilityChance("",5-playerLck)){//5%- Bad flavoured prop
+            pushEncounter(getRandomEncounter(["Prop"],["-1"])); //Only bad flavoured props
+        } else if (procAbilityChance("",5+playerLck)) { //5%+ Good flavoured prop
+            pushEncounter(getRandomEncounter(["Prop"],["1"])); //Only good flavoured props
+        } else {
+          pushEncounter(getRandomEncounter(["Prop"],[],"",["-1","1"])); //Exclude flavoured props
+        }
       }
 
       if (type=="Small") {
@@ -854,11 +910,11 @@ function generateNextEncounters(generatorID=0, logCall=true){
         if (procAbilityChance("",20+playerLck)) { //20% Artifact
           pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         } else {
-          pushEncounter(getRandomEncounter(["Item"],[],"",["Lost Possesion"])) //Any item, but not quest (too late)
+          pushEncounter(getRandomEncounter(["Item"],[],"",["Artifact","Lost Possesion"])) //Any item, but not Artifact (didnt procc) and not quest item (too late)
         }
       }
       drachmaCoin[0]="area:"+areaName;
-      pushEncounter(drachmaCoin);
+      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin);
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 
@@ -912,7 +968,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       } else {
         pushEncounter(getRandomEncounter([type,"Checkpoint"]));
       }
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet","Swift","Heavy","Tough","Demon","Spirit"]));
       pushEncounter(getRandomEncounter(["Locked-Container-3"]));
       break;
@@ -927,7 +983,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit","Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit","Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -942,7 +998,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       }
 
       pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Container-4"]));
       break;
 
@@ -957,7 +1013,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       }
 
       pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Attack","Trap-Roll","Trap-Sleep"]));
+      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
       pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet"]));
       pushEncounter(getRandomEncounter(["Container-5"]));
       break;
@@ -1006,13 +1062,13 @@ function redraw(){
 
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
-  if (playerPartyString.length > 0) {
-    document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;";
+  if (playerPartyString.length > 1) { //Now inicializes with [""]
+        document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;";
   }
-  if (playerLootString.length > 0) {
+  if (playerLootString.length > 1) { //Now inicializes with [""]
     document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "+playerLootString;
   }
-  if (playerPartyString.length+playerLootString.length == 0) {
+  if (playerPartyString.length+playerLootString.length == 2) {
     document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
   }
 
@@ -1041,14 +1097,6 @@ function redraw(){
   enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"» "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
-  var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef];
-  var effectArrayBonus=effectArray.filter(function(x){ return x > 0 });
-  var effectArrayMalus=effectArray.filter(function(x){ return x < 0 });
-  totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
-  totalMalus=effectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
-  if (totalMalus=="") totalMalus=0;
-  //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
-
   enemyTeamUIElement.innerHTML="";
   cardUIElement.style.background=colorCardBackground;
 
@@ -1183,9 +1231,11 @@ function redraw(){
       break;
 
     case "Trap":
+    case "Trap-Big":
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
+    case "Trap-Obstacle":
       enemyStatusString=decorateStatusText("⚫️","Obstacle",colorSemiDarkGrey);
       if (totalBonus>0) enemyStatusString=decorateStatusText("🎀","Curiosity",colorLightPink);
       if (totalMalus<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
@@ -1201,9 +1251,12 @@ function redraw(){
       break;
     case "Prop":
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
+      if (totalBonus>0)enemyStatusString=decorateStatusText("🟢","Comfortable",colorSoftGreen);
+      if (totalMalus<0)enemyStatusString=decorateStatusText("🔴","Uncomfortable",colorSoftRed);
       if (enemyName.includes("Bride")) enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
       break;
     case "Altar":
+      enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
       if (totalBonus>0) enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
       if (totalMalus<0) enemyStatusString=decorateStatusText("♦️","Sacrificial Altar",colorRed);
       break;
@@ -1213,8 +1266,8 @@ function redraw(){
       //emojiWrapperUIElement.style.background=colorDarkBlue;
       break;
     case "Curse":
-      if (parseInt(totalMalus)<0)enemyStatusString=decorateStatusText("♣️","Mystery",colorDarkGrey);
       enemyStatusString=decorateStatusText("🔆","Condition",colorYellow);
+      if (parseInt(totalMalus)<0)enemyStatusString=decorateStatusText("♣️","Mystery",colorDarkGrey);
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
@@ -1253,9 +1306,11 @@ function redraw(){
 
     case "Curse":
     case "Trap":
+    case "Trap-Big":
     case "Trap-Roll":
     case "Trap-Attack":
     case "Trap-Sleep":
+    case "Trap-Obstacle":
       displayPlayerState("Suspicious",colorOrange,"1")
       break;
 
@@ -1368,12 +1423,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Dream") {
           displayPlayerCannotEffect();
-          logPlayerAction(actionString,"Cannot attack while asleep.");
+          var msg="Cannot attack while asleep."
+          if (enemyName.includes("Regrets")) msg="Attacking wouldn't solve anything."
+          logPlayerAction(actionString,msg);
           break;
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Tarot");
+          if (!playerDestined) {
+            drachmaeBuy(1,"Tarot");
+          } else {
+            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
+            displayPlayerCannotEffect();
+          }
           break;
         }
 
@@ -1386,13 +1448,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Container-Consume":
             isFishing=false;
-          case "Trap":
           case "Trap-Sleep":
+          case "Trap-Big":
             logPlayerAction(actionString,"Your attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             break;
+          case "Trap":
           case "Trap-Roll":
+          case "Trap-Obstacle":
             logPlayerAction(actionString,"Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
@@ -1492,10 +1556,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           default:
             if (enemyType.includes("Container")){
-              var openMessage = "Smashed the lock in pieces! -1 🟢";
-              enemyHp-=playerAtk;
+              var openMessage = "Smashed it into many pieces! -1 🟢";
               displayEnemyEffect("〽️");
               displayEnemyCannotEffect();
+              
+              if (enemyType.includes("Locked")) {
+                var gainedXP=playerGainXP(1,15*playerLevel,""); //Same XP gain as for spell unlock
+                openMessage = "Smashed the lock open! -1 🟢 "+decorateStatusText("","+"+gainedXP+" XP",colorGold);
+                enemyHp-=playerAtk;
+              } else {
+                logPlayerAction(actionString,openMessage);
+                nextEncounter();
+                break;
+              }
 
               if (enemyType.includes("Locked")&&(enemyHp>(-3))){
                 openMessage = "Smashed it, but the lock still holds -1 🟢";
@@ -1661,8 +1734,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Dream":
             if (playerSta<=0){
-              logPlayerAction(actionString,"Cannot walk while asleep.");
               displayPlayerCannotEffect();
+              var msg="Cannot walk while asleep."
+              if (enemyName.includes("Regrets")) msg="You cannot walk away from this."
+              logPlayerAction(actionString,msg);
             } else {
               logPlayerAction(actionString,enemyMsg);
               nextEncounter();
@@ -1670,7 +1745,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Prop":
             isFishing=false;
-            if (enemyMsg!=""){
+            if (enemyMsg!="" && totalBonus==0 && totalMalus==0){
               logPlayerAction(actionString,enemyMsg)
             } else {
               logPlayerAction(actionString,"Continued on your adventure.");
@@ -1685,7 +1760,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
-          case "Trap-Roll": //Triggers when rolling into it, next encounter
+          case "Trap-Roll": //Triggers when rolling into it
+          case "Trap-Obstacle":
             if (!encounterUsed) {
               if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
               if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
@@ -1695,6 +1771,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             break;
           case "Trap":
+          case "Trap-Big":
           case "Trap-Attack":
           case "Trap-Sleep":
             isFishing=false;
@@ -1736,7 +1813,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType=="Shop") {
-          drachmaeBuy(2);
+          drachmaeBuy(1,"Gamble");
           break;
         }
 
@@ -1748,7 +1825,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Dream") {
           displayPlayerCannotEffect();
-          logPlayerAction(actionString,"Cannot block while asleep.");
+          var msg="Cannot block while asleep."
+          if (enemyName.includes("Regrets")) msg="You cannot block your regrets."
+          logPlayerAction(actionString,msg);
           break;
         }
 
@@ -1844,6 +1923,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_cast':
           var mkgCost=1;
+          var magicDamage = playerMgk;
+
           if (enemyType.includes("Locked")) mkgCost=2;
 
           if (enemyType=="Shop") {
@@ -1884,7 +1965,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             } else {
               playerMgk-=mkgCost;
-              var gainedXP=playerGainXP(1,25*playerLevel,"");
+              var gainedXP=playerGainXP(1,15*playerLevel,"");
               logPlayerAction(actionString,"Unlocked it with a spell -"+mkgCost+" 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               nextEncounter();
               break;
@@ -1909,7 +1990,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("🔷");
             displayEnemyCannotEffect();
             if ((enemySta+enemyStaLost)==0){
-              atckmsg="They reflected the spell.";
+              atckmsg="They reflected your spell -"+magicDamage+" 🔵";
             } else {
               atckmsg="They reflected the spell and attacked -"+enemyAtk+" 💔";
             }
@@ -1932,15 +2013,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
-            var magicDamage = playerMgk;
             if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
             if (magicDamage > 2) {
               magicDamage=2;
             }
+
             playerMgk-=magicDamage;
+            var magicBonusDamage=0;
+
+            if (procAbilityChance("💫",100)){
+              magicBonusDamage=1;
+            }
 
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
-              enemyHit(magicDamage,true);
+              enemyHit(magicDamage+magicBonusDamage,true);
             } else {
               logPlayerAction(actionString,"They resisted your spell -"+magicDamage+" 🔵");
               enemyMgkLost+=magicDamage;
@@ -1954,6 +2040,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap":
+          case "Trap-Obstacle":
           case "Trap-Roll":
           case "Trap-Attack":
           case "Trap-Sleep":
@@ -1984,12 +2071,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               if (playerLootString.includes("🧂")){
                 logMessage="Added a tiny pinch of salt.";
-                playerMgk+=magicDamage;
                 enemyName=enemyName+" (Salty)";
                 displayEnemyEffect("✨");
               } else {
                 enemyName=enemyName+" (Crispy)";
-                playerMgk+=(magicDamage-1);
+                playerMgk-=(parseInt(magicDamage)-2);
               }
 
               playerCooked=true;
@@ -2090,6 +2176,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
           case "Trap":
+          case "Trap-Big":
+          case "Trap-Obstacle":
           case "Trap-Attack":
           case "Trap-Roll":
           case "Trap-Sleep":
@@ -2207,7 +2295,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { //Curse is never free, upgrd handled above
+        if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
             break;
           }
 
@@ -2218,19 +2306,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           displayEnemyEffect("🔷");
           displayEnemyCannotEffect();
           if ((enemySta+enemyStaLost)==0){
-            atckmsg="They reflected the curse.";
+            atckmsg="They reflected your curse -2 🔵";
           } else {
-            atckmsg="They reflected the curse and attacked -"+enemyAtk+" 💔";
+            atckmsg="They reflected it and attacked -"+enemyAtk+" 💔";
           }
           if (enemyCastIfMgk(true)) enemyAttacked=true;
           if (!enemyAttacked) enemyAttackOrRest(atckmsg);
           break;
 
         case "Demon":
-            logPlayerAction(actionString,"Your curse has made them stronger!");
+            logPlayerAction(actionString,"Your curse has made them stronger! -2 🔵");
             enemyName=enemyName+" (Cursed)";
             animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
-            enemyAtk+=1;
+            enemyAtkBonus+=1;
             break;
 
         case "Standard": //Reduce enemy atk if mgk stronger then them
@@ -2252,7 +2340,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (procAbilityChance("🪆",33)){
               var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪰","🪲","🪳","🐌"]);
-              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -1 🔵");
+              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
 
@@ -2262,18 +2350,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way
+            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way (halves damage?)
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             enemyCursed=true;
-            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -1 🔵");
+            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
+            logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
             break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
-            logPlayerAction(actionString,"They resisted your curse -1 🔵");
+            logPlayerAction(actionString,"They resisted your curse -2 🔵");
           } else {
-            logPlayerAction(actionString,"Your curse had no effect on them -1 🔵");
+            logPlayerAction(actionString,"Your curse had no effect on them -2 🔵");
           }
-
+          procAbilityChance()
           if (enemyCastIfMgk()) break;
           enemyAttackOrRest();
           break;
@@ -2281,32 +2370,32 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         case "Friend": //They'll boost your stats
           if (playerMgk >= enemyMgk){
             var gainedXP=playerGainXP(1,25*playerLevel,"");
-            logPlayerAction(actionString,"Forced revealed their secrets -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg);
           } else {
-            logPlayerAction(actionString,"Could not overpower their will -1 🔵");
+            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
             displayPlayerCannotEffect();
           }
           break;
 
         case "Altar":
           logPlayerAction(actionString,"Your curse has angered the gods -1 🍀");
-          playerLck=-1;
+          playerLck-=1;
           displayPlayerEffect("🪬");
           break;
 
         default:
-          logPlayerAction(actionString,"Your curse dispersed into the area -1 🔵");
+          logPlayerAction(actionString,"Your curse dispersed into the area -2 🔵");
       }
       break;
 
       case 'button_grab': //Player vs encounter stamina decides the success
 
         if (enemyType=="Shop") {
-          drachmaeBuy(3,"Level");
+          drachmaeBuy(2,"Item");
           break;
         }
-
+        
         switch (enemyType){
           case "Curse":
             logPlayerAction(actionString,"Hands reached forward to no effect.");
@@ -2347,7 +2436,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
                 var gainedXP=parseInt(playerGainXP(1,0,""));
-                playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
                 logAction("🍀 ▸ ✋ <b>Luckily</b>, they were spooked. "+ decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 displayEnemyEffect("💨");
@@ -2364,7 +2452,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               if (enemyType=="Pet"){
                 var gainedXP=parseInt(playerGainXP(1,0,""));
-                playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
 
                 logAction(enemyEmoji+" ▸ 😱 They got spooked and fled! "+ decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 displayEnemyEffect("💨");
@@ -2403,11 +2490,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
             }
             break;
+          
+          case "Trap-Obstacle": //Removes from the way
+            logPlayerAction(actionString,"Cleared it from the way forward.")
+            nextEncounter();
+            break;
 
           case "Trap": //Grabbing triggers the effect
+          case "Trap-Big":
           case "Trap-Roll":
           case "Trap-Attack":
-
             if (encounterUsed){
                 logPlayerAction(actionString,"Seems like that was it for now.")
                 displayPlayerCannotEffect();
@@ -2546,6 +2638,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               if (enemyEmoji!="🪙" && enemyEmoji!="💰") playerLootString+=enemyEmoji;
+              if (enemyEmoji=="👺" || enemyEmoji=="🐴" || enemyEmoji=="🐷") playerName=enemyEmoji+" "+playerName;
               displayPlayerGainedEffect();
             } else {
               playerKarma++;
@@ -2554,21 +2647,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyEmoji=="🪙"){
-              savedCoins++
+              savedCoins+=1;
               displayPlayerEffect("🪙");
-              localStorage.setItem('coins', savedCoins);
+              localStorage.setItem('coins', parseInt(savedCoins));
             }
 
             if (enemyEmoji=="💰"){
               var coinNumber=randomNumber(2,5);
               savedCoins+=coinNumber;
               displayPlayerEffect("🪙");
-              localStorage.setItem('coins', savedCoins);
+              localStorage.setItem('coins', parseInt(savedCoins));
               enemyMsg="Claimed <b>Ethereal Drachmae +"+coinNumber+" 🪙</b>";
             }
 
             if (enemyEmoji=="🃏"){
               if (!playerName.includes("(")) playerName=playerName+" ("+enemyName.replace("Tarot Card: ","")+")"
+              playerDestined=true;
             }
             //Grab end
             isFishing=false;
@@ -2663,12 +2757,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
-                if (playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(25*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
-                  playerGainXP(1,25*playerLevel,"");
+                if (playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
+                  playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else if (playerLootString.includes("📎")) {
-                  logPlayerAction(actionString,"Unlocked with <b>📎 The Universal Key</b>.")
-                  playerGainXP(1,25*playerLevel,"");
+                  logPlayerAction(actionString,"Unlocked with <b>📎 The Universal Key</b>"+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
+                  playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else {
                   displayEnemyCannotEffect();
@@ -2700,6 +2794,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Shop") {
           drachmaeBuy(4,"Artifact");
+          displayPlayerEffect("");
           break;
         }
 
@@ -2822,10 +2917,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Cannot speak while asleep.");
             displayPlayerCannotEffect();
-            //playerRest();
-            //nextEncounter();
+            var msg="Cannot speak while asleep."
+            if (enemyName.includes("Regrets")) msg="Your throat shakes as you sigh."
+            logPlayerAction(actionString,msg);
             break;
 
           case "Upgrade":
@@ -2865,6 +2960,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_sleep':
+
+        if (enemyType=="Shop") {
+          drachmaeBuy(3,"Level");
+          break;
+        }
+
         switch (enemyType){
 
           case "Curse": //Waiting triggers the curse
@@ -2896,13 +2997,26 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAttackOrRest();
             }
             break;
+          
+          case "Prop":
+            if (!playerRested && (totalBonus>0 || totalMalus<0)){
+              playerRest(true);
+              if (totalBonus>0 && enemyMsg=="") enemyMsg="Rested very well, gaining extra"
+              if (totalMalus<0 && enemyMsg=="") enemyMsg="Did not rest well, somehow lost"
+              playerConsumed();
+              displayPlayerEffect("💤")
+            } else {
+              playerRest();
+            }
+            break;
 
           case "Trap": //Rest to full if out of combat + mana
+          case "Trap-Big":
+          case "Trap-Obstacle":
           case "Trap-Attack":
           case "Trap-Roll":
           case "Item":
           case "Consumable":
-          case "Prop":
           case "Checkpoint":
           case "Altar":
           case "Fishing":
@@ -2977,7 +3091,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       console.log("Chance→int:"+temporaryIntellect);
       playerInt=temporaryIntellect;
     }
-
     redraw();
   };
 }
@@ -3017,6 +3130,10 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
+  if (playerLootString.includes("🐴")){
+    if (enemyHpLost==0) enemyAtkBonus+=1; //Revert mask effect, just the first time hit
+  }
+
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
 
@@ -3072,7 +3189,6 @@ function enemyKilled(){
   logAction(enemyEmoji + " ▸ " + "💀 They've received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
-  playerXP+=gainedXP; console.log("XP++ "+ gainedXP + " ("+playerXP+"/"+playerXPThreshold+")");
   playerKills++;
 
   isFishing=false;
@@ -3081,7 +3197,7 @@ function enemyKilled(){
 
 function enemyJoinedParty(){
   displayPlayerEffect(enemyEmoji);
-  playerPartyString+=" "+enemyEmoji;
+  playerPartyString+=enemyEmoji;
   //logPlayerAction(actionString,enemyName+" joined the party!");
   var gainedXP=playerGainXP(1.5,0,"");
   playerKarma++;
@@ -3170,6 +3286,17 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
   return parseInt(gainedXP);
 }
 
+function sufferToxin(){
+  if (enemyType=="Toxic") {
+  var grabDmg=enemyAtk;
+  if (grabDmg==0) grabDmg=1;
+  var dmgMsg="Oof, that smells just nasty";
+
+  logAction(enemyEmoji+" ▸ 🦠 "+dmgMsg+" -"+grabDmg+" 💔");
+  playerHit(grabDmg,true,true);
+  displayEnemyEffect("🦠");
+  }
+}
 
 function enemyAttackOrRest(message="",isGrab=false){
   var damageReceived=enemyAtk+enemyAtkBonus;
@@ -3210,6 +3337,7 @@ function enemyAttackOrRest(message="",isGrab=false){
       if (!isGrab) {
         logAction(enemyEmoji+" "+arrowSymbol+" 💤 "+staminaChangeMsg);
         enemyRest(1);
+        sufferToxin();
         return; //They don't waste stamina unless necessary
       }
     } else {
@@ -3238,6 +3366,7 @@ function enemyAttackOrRest(message="",isGrab=false){
     if (enemyType=="Spirit" && (enemySta+enemyStaLost==0)) staminaChangeMsg = "Seems to be impossible to hit."
     logPlayerAction(actionString,staminaChangeMsg);
     enemyRest(1);
+    sufferToxin();
   }
 }
 
@@ -3252,6 +3381,8 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
     case "Trap": //Rest to full if out of combat + mana
     case "Trap-Attack":
     case "Trap-Roll":
+    case "Trap-Big":
+    case "Trap-Obstacle":
     case "Item":
     case "Consumable":
     case "Altar":
@@ -3332,19 +3463,19 @@ function getRandomFish(){ //TODO refactor into encounters.csv
 }
 
 function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
-  var success = Math.floor(((Math.random() * 100))<=abilityChance)
+  var success = (Math.floor(Math.random() * 100)<=abilityChance)
   if (success && playerLootString.includes(abilityEmoji)) {
     return true;
   }
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
-  previousArea = areaName;
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
+    previousArea = areaName;
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
     if (enemyType.includes("Boss") && !areaName.includes("Shrouded")) {
-      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+"<b>"+enemyName+"</b>"+emptySpace+emptySpace,colorWhite),5);
+      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+"<b>"+enemyName+"</b>"+emptySpace+emptySpace,colorWhite),4);
 
       logAction("👑 ▸ "+enemyEmoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+enemyName+"</b></text>")
     }
@@ -3367,7 +3498,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   loadEncounter(encounterIndex);
 
   //Fullscreen Curtain
-  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm") && (areaName != "Depths of Slumber")){ //Does not animate new area when killed
+  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
     if ((!areaName.includes("Eternal") && (!areaName.includes("Depths")))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
@@ -3378,12 +3509,14 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 function animateFlipNextEncounter(){
   var animationHandler = function(){
     nextEncounter();
+    registerClickListeners();
     cardUIElement.removeEventListener("animationend",animationHandler);
   }
   cardUIElement.removeEventListener("animationend",animationHandler);
 
   animateUIElement(areaUIElement,"animate__flipOutX","1.2");
   animateUIElement(cardUIElement,"animate__flipOutY","1.2");
+  removeClickListeners();
 
   cardUIElement.addEventListener('animationend',animationHandler);
 }
@@ -3665,19 +3798,23 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   if (enemyEmoji=="📣") playerSpeakType=enemyEmoji;
 
   if (logMessage) {
+    if (enemyEmoji=="🃏") gainedString="<text style=color:"+colorPaper+";>"+gainedString+"</text>";
     logPlayerAction(actionIcon,gainedString);
   }
   if (moveForward) nextEncounter();
   return gainedString;
 }
 
-function playerConsumed(silent=false){
+function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef at various places (not needed at the moment, but might be in future)
+  //Works for both morph and mask, logs manipulated further down
+  if (playerName.includes("🐷") || playerLootString.includes("🐷")) {enemyHp=0; enemyAtk=0; enemySta=0; enemyLck=0; enemyInt=0; enemyMgk=0; enemyDef=0;}
+
   var consumedString="Replenished resources"
   var sign = "";
   if (enemyType=="Consumable") var eatEmoji= "🍴"
 
   var missingHp=0;
-  if (playerHp<playerHpMax) missingHp=parseInt(playerHpMax)-parseInt(playerHp);
+  if (playerHp<playerHpMax && enemyType=="Consumable") missingHp=parseInt(playerHpMax)-parseInt(playerHp);
   var missingSta=parseInt(playerStaMax)-parseInt(playerSta);
   var gainStamina=0;
 
@@ -3689,7 +3826,7 @@ function playerConsumed(silent=false){
 
   //Recover stamina if not bad food
   if (enemyHp>=0 && enemySta>=0 && enemyAtk>=0  && enemyLck>=0  && enemyInt>=0  && enemyMgk>=0 && !enemyType.includes("Container")){
-    if ((parseInt(missingSta)<=0 && enemySta==0) && playerHp>=playerHpMax) {
+    if ((parseInt(missingSta)<=0 && enemySta==0 && enemyType=="Consumable") && playerHp>=playerHpMax) {
       gainStamina+=1;
       if (enemyMsg=="") consumedString="Got an energy bonus";
     } else {
@@ -3704,11 +3841,15 @@ function playerConsumed(silent=false){
     animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
   }
 
+  //Pig morph and mask log tweak
+  if (playerName.includes("🐷") || playerLootString.includes("🐷")) consumedString="<b>Devoured</b> by <b>🐷 Pig Digestion</b>";
+
   gainStamina+=parseInt(enemySta);
   if (gainStamina<0) sign=" "
   if (gainStamina>=0) sign=" +"
   if (gainStamina!=0) consumedString +=" "+sign+(parseInt(gainStamina)) + " 🟢";
   playerSta+=parseInt(gainStamina);
+  if (playerSta<0) playerSta=0;
 
   if (missingHp > 0 || parseInt(enemyHp)!=0){
     var heart = "❤️"
@@ -3746,7 +3887,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
 
   if (procAbilityChance("🧼",100) && bubblesUsed==false && !enemyType.includes("consumable") && !enemyType.includes("trap") && !enemyType.includes("container")) {
     bubblesUsed=true;
-    logAction("🫧 ▸ 💢 Damage repelled by <b>🫧 Protective Bubble</b>.");
+    logAction("🫧 ▸ 💢 Damage repelled by <b>🫧 Bubble Shield</b>.");
     displayPlayerCannotEffect();
     displayPlayerEffect("🫧");
     return;
@@ -3880,7 +4021,7 @@ function gameOver(silent=false){
   deathMsg=chooseFrom(deathMsg)
 
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container"))) enemyMsg=deathMsg;
+  if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container")||enemyType=="Prop")) enemyMsg=deathMsg;
   if (enemyTeam.includes("Lover's Memento")) enemyMsg="Killed by a severe heartbreak.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
@@ -3889,7 +4030,7 @@ function gameOver(silent=false){
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
 
-  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite),5);
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite),4);
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
 
@@ -3914,7 +4055,7 @@ function logPlayerAction(actionString,message){
   if (actionString.includes(" 🪙")) { //Ahhh, yeah more hacks at 1 AM
     var price = actionString.split(" ")[0] //Very much HACKS... YOLO!!!
     actionString=actionString.slice(2);
-    actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
+    if (!actionString.includes("you actually won!")) actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
   }
   adventureLog += actionString;
   actionLog = actionString + actionLog;
@@ -3966,6 +4107,8 @@ function resetEncounterButtons(){
   if ((((enemyAtk+enemyAtkBonus)<=0)&&(enemyMgk<=0)&&(enemyType!="Death"))||enemyType=="Friend")  setButton('button_roll',"👣 Leave");
   setButton('button_grab',"👋 Grab");
   setButton('button_sleep',playerSleepType+" Sleep");
+  if (enemyType=="Prop" && totalBonus>0) setButton('button_sleep',playerSleepType+" Sleep",colorSoftGreen);
+  if (enemyType=="Prop" && totalMalus<0) setButton('button_sleep',playerSleepType+" Sleep",colorSoftRed);
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
   if (playerXP>=playerXPThreshold) setButton('button_sleep',playerSleepType+" Sleep",colorGold);
   if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
@@ -3977,7 +4120,7 @@ function resetEncounterButtons(){
   if (playerMgk<=0){
     setButton('button_cast',playerCastType+" Cast",colorDarkGrey);
     setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
-    setButton('button_curse',"🪬 Curse",colorDarkGrey);
+    if (playerMgk<2) setButton('button_curse',"🪬 Curse",colorDarkGrey);
   }
 }
 
@@ -4052,20 +4195,27 @@ function adjustEncounterButtons(){
       break;
 
     case "Trap":
+    case "Trap-Big":
     case "Trap-Attack":
     case "Trap-Sleep":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       if (encounterUsed) setButton('button_grab',"✋ Reach",colorDarkGrey);
       document.getElementById('button_roll').innerHTML="👣 Avoid";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;
 
-    case "Trap":
     case "Trap-Roll":
     case "Prop":
-      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_grab').innerHTML="✋ Reach";
       if (encounterUsed) setButton('button_grab',"✋ Reach",colorDarkGrey);
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
+      break;
+    
+    case "Trap-Obstacle":
+      document.getElementById('button_grab').innerHTML="👋 Move";      
+      document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;
 
     case "Dream":
@@ -4075,15 +4225,16 @@ function adjustEncounterButtons(){
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       setButton('button_sleep',"💤 Sleep",colorLightBlue);
+      if (enemyName.includes("Regrets")) setButton('button_sleep',"🙁 Accept",colorWhite);
       if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (areaName.includes("Shrouded")) setButton('button_sleep',"🧠 Think",colorRed);
       break;
 
     case "Fishing":
-      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       setButton('button_grab',"🎣 Fish",colorDarkGrey);
-      var bait=checkPlayerHasItem();
+      var bait=checkPlayerHasItem(validBaits);
       if (bait!="" && playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
       break;
 
@@ -4180,16 +4331,22 @@ function adjustEncounterButtons(){
 
     case "Shop":
       setButton('button_attack',"1 🪙 Tarot",colorPaper);
-        if ((savedCoins-spentCoins)<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+        if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+        if (savedCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
       setButton('button_roll',"👣 Leave",colorRed);
-      setButton('button_block',"2 🪙 Loot",colorLightBlue);
-        if ((savedCoins-spentCoins)<2) setButton('button_block',"2 🪙 Loot",colorDarkGrey);
+      if (savedCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
-      setButton('button_grab',"3 🪙 Level",colorYellow);
-        if ((savedCoins-spentCoins)<3) setButton('button_grab',"3 🪙 Level",colorDarkGrey);
-      setButton('button_sleep',"💤 Rest",colorDarkGrey);
+      setButton('button_block',"1 🪙 Risk",colorPink);
+        if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
+
+      setButton('button_grab',"2 🪙 Loot",colorLightBlue);
+        if (savedCoins<2) setButton('button_grab',"2 🪙 Loot",colorDarkGrey);
+
+      setButton('button_sleep',"3 🪙 Level",colorYellow);
+        if (savedCoins<3) setButton('button_sleep',"3 🪙 Level",colorDarkGrey);
+
       setButton('button_speak',"4 🪙 Artif.",colorOrange);
-        if ((savedCoins-spentCoins)<4) setButton('button_speak',"4 🪙 Artif.",colorDarkGrey);
+        if (savedCoins<4) setButton('button_speak',"4 🪙 Artif.",colorDarkGrey);
 
       setButton('button_cast',"‍-",colorDarkGrey);
       setButton('button_pray',"‍-",colorDarkGrey);
@@ -4242,13 +4399,20 @@ function curtainFadeInAndOut(message="",duration=3){
   var curtainUIElement = document.getElementById('id_fullscreen_curtain');
   var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
 
-  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",1.6,true,message);
-  animateUIElement(curtainUIElement,"animate__fadeIn",1.5,true);
+  //Force end any existing anim first
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",0,true,message);
+  animateUIElement(curtainUIElement,"animate__fadeIn",0,true);
+
+  //Actual animation
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",(duration/2)+0.1,true,message);
+  animateUIElement(curtainUIElement,"animate__fadeIn",duration/2,true);
+  removeClickListeners();
 
   var animationHandler = function(){
     setBackground(areaName);
-    animateUIElement(curtainUIElement,"animate__fadeOut",duration,true);
-    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration,true,message);
+    animateUIElement(curtainUIElement,"animate__fadeOut",duration/1.5,true);
+    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration/1.5,true,message);
+    registerClickListeners(1000); //Ooopa, still hacking my way through
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
   curtainUIElement.addEventListener('animationend',animationHandler);
@@ -4341,7 +4505,20 @@ function logGenerator(generatorName="none"){
 }
 
 //Button click listeners
-function registerClickListeners(){
+var callback_attack=resolveAction('button_attack');
+var callback_roll=resolveAction('button_roll');
+var callback_block=resolveAction('button_block');
+
+var callback_grab=resolveAction('button_grab');
+var callback_sleep=resolveAction('button_sleep');
+var callback_speak=resolveAction('button_speak');
+
+var callback_cast=resolveAction('button_cast');
+var callback_pray=resolveAction('button_pray');
+var callback_curse=resolveAction('button_curse');
+
+
+function registerClickListeners(delay=800){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
   var eventType = 'click';
@@ -4353,21 +4530,47 @@ function registerClickListeners(){
   //    eventType = 'touchend';
   //  }
   //}
+  
+  setTimeout(function(){
+    //console.log("register-click-listeners");
+    document.getElementById('button_attack').addEventListener(eventType, callback_attack);
+    document.getElementById('button_roll').addEventListener(eventType, callback_roll);
+    document.getElementById('button_block').addEventListener(eventType, callback_block);
 
-  document.getElementById('button_attack').addEventListener(eventType, resolveAction('button_attack'));
-  document.getElementById('button_block').addEventListener(eventType, resolveAction('button_block'));
-  document.getElementById('button_roll').addEventListener(eventType, resolveAction('button_roll'));
-  document.getElementById('button_cast').addEventListener(eventType, resolveAction('button_cast'));
-  document.getElementById('button_curse').addEventListener(eventType, resolveAction('button_curse'));
-  document.getElementById('button_pray').addEventListener(eventType, resolveAction('button_pray'));
-  document.getElementById('button_grab').addEventListener(eventType, resolveAction('button_grab'));
-  document.getElementById('button_sleep').addEventListener(eventType, resolveAction('button_sleep'));
-  document.getElementById('button_speak').addEventListener(eventType, resolveAction('button_speak'));
+    document.getElementById('button_grab').addEventListener(eventType, callback_grab);
+    document.getElementById('button_sleep').addEventListener(eventType, callback_sleep);
+    document.getElementById('button_speak').addEventListener(eventType, callback_speak);
 
-  versionIDUIElement.addEventListener(eventType, ()=> {
+    document.getElementById('button_cast').addEventListener(eventType, callback_cast);
+    document.getElementById('button_pray').addEventListener(eventType, callback_pray);
+    document.getElementById('button_curse').addEventListener(eventType, callback_curse);
+  },delay)
+}
+
+function removeClickListeners(){
+  var eventType = 'click';
+
+  document.getElementById('button_attack').removeEventListener(eventType, callback_attack);
+  document.getElementById('button_roll').removeEventListener(eventType, callback_roll);
+  document.getElementById('button_block').removeEventListener(eventType, callback_block);
+
+  document.getElementById('button_grab').removeEventListener(eventType, callback_grab);
+  document.getElementById('button_sleep').removeEventListener(eventType, callback_sleep);
+  document.getElementById('button_speak').removeEventListener(eventType, callback_speak);
+
+  document.getElementById('button_cast').removeEventListener(eventType, callback_cast);
+  document.getElementById('button_pray').removeEventListener(eventType, callback_pray);
+  document.getElementById('button_curse').removeEventListener(eventType, callback_curse);
+}
+
+function registerClickListenersTechnical(){
+    var eventType = 'click';
+
+    versionIDUIElement.addEventListener(eventType, ()=> {
     actionString="⚙️"
     adventureEndReason="\nDebug: "+enemyEmoji+" "+enemyName
-    copyAdventureToClipboard();
+    //copyAdventureToClipboard();
+    redirectToFeedback();
     redraw();
   });
 
@@ -4470,14 +4673,14 @@ function copyAdventureToClipboard(){
   legendTab.document.close();
 }
 
-function shareTweet(){
+function redirectToTweet(){
   var tweetUrl = "http://twitter.com/intent/tweet?url=https://igpenguin.github.io/stay-dead&text=";
   window.open(tweetUrl+encodeURIComponent("Yo @IGPenguin, check out my Stay Dead run!"+"\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")+"\n"));
 }
 
 function shareLinkedIn(){
   var linkedInUrl = "https://www.linkedin.com/feed/?shareActive&mini=true&text=";
-  window.open(linkedInUrl+encodeURIComponent("I just finished another Stay Dead playthrough!"+"\nIt's a data-driven rougelike RPG written in JS.\nCheck it out at: https://igpenguin.github.io/stay-dead\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")));
+  window.open(linkedInUrl+encodeURIComponent("I just finished another Stay Dead playthrough!"+"\nIt's a data-driven roguelike RPG written in JS.\nCheck it out at: https://igpenguin.github.io/stay-dead\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")));
 }
 
 function visitLinkedIn(){
@@ -4489,13 +4692,13 @@ function redirectToFeedback(){
   //var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
   var characterLegend=generateCharacterLegend(50);
   console.log(characterLegend);
-  var gameLog=encodeURIComponent(characterLegend.replaceAll("<b>","").replaceAll("</b>",""));
+  var gameLog=encodeURIComponent(characterLegend.replaceAll("<b>","").replaceAll("</b>","").replaceAll(emptySpace,"   "));
   var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+gameLog;
   window.open(googleFormUrl);
 }
 
 //Prevent data loss warning if not running on localhost
-if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1"){
+if (!isLocalhost()){
   window.onbeforeunload = function() {
       return true;
   };
