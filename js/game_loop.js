@@ -700,7 +700,6 @@ function loadEncounter(index, fileLines = linesStory){
         logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
       }
       break;
-    case "Curse":
     case "Trap":
     case "Trap-Big":
     case "Trap-Obstacle":
@@ -710,6 +709,9 @@ function loadEncounter(index, fileLines = linesStory){
       if (totalBonus==0 && totalMalus==0) logAction("⚫️ ▸ "+enemyEmoji+" Encountered obstacle: <b>"+enemyName+"</b>")
       if (totalBonus>0 && totalMalus<0) logAction("🎀 ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
       if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed a hazard: <b>"+enemyName+"</b>")
+      break;
+    case "Curse":
+      logAction("⁉️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
       break;
     case "Container":
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
@@ -838,7 +840,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
     case 0: //Prop/Small/Lockbox
       if (logCall) logGenerator("prop/small");
       var type="Prop"
-      if (procAbilityChance("",25+playerLck)) type="Small"; //25% Small
+      if (procAbilityChance("",10+playerLck)) type="Small"; //10% Small
 
       if (procAbilityChance("",5-playerLck)) { //5% Trap chance, lowers with luck
         pushEncounter(getRandomEncounter(["Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
