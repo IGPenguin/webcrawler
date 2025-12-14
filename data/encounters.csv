@@ -4,6 +4,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
 Fading Wildlands;🌱;Strained Growth;Prop;0;0;0;0;0;0;0;Wild Flora;Too vibrant for a land this quiet.<br>;
 Fading Wildlands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;0;Quiet Flora;Soft sprouts push through tired soil.<br>;
 Fading Wildlands;🌿;Grass Field;Prop;0;0;0;0;0;0;0;Wind-swept Blades;The grass sways like restless sleepers.<br>;
+Fading Wildlands;🌱;Potato Patch;Container;0;0;0;0;0;0;0;Forgotten Crop;Someone once depended on this field.<br>;Crossed right through.
 Fading Wildlands;🍃;Falling Leaves;Prop;0;0;0;0;0;0;0;Quiet Decay;What once bloomed now lets go.<br>;
 Fading Wildlands;🪹;Deserted Nest;Prop;0;0;0;0;0;0;0;Left Behind;Whatever lived here flew away long ago.<br>;
 Fading Wildlands;🪨;Granite Marker;Prop;0;0;0;0;0;0;0;Silent Witness;Stone watches the world fade.<br>;
@@ -18,6 +19,7 @@ Fading Wildlands;🌼;Wildflower Bed;Prop;0;0;0;0;1;0;0;Gentle Ground;Flattened 
 Fading Wildlands;☘️;Clover Drift;Prop;0;0;0;1;0;0;0;Lingering Luck;Greens still cling to hope.<br>;Woke up finding a four-leaf clover
 Fading Wildlands;🪨;Sunwarmed Stone;Prop;0;0;1;0;0;0;0;Comforting Weight;Somehow warm despite the cold air.<br>;Muscles loosened as you rested
 Fading Wildlands;🌾;Tall Grass;Prop;0;0;1;0;0;0;0;Natural Bedding;Good place for a short rest.<br>;Rested hidden from the wind
+Fading Wildlands;✨;Starry Night;Prop;0;0;0;0;0;1;0;Clear Sky;The stars shine bright like diamonds.<br>;Woke up with a strange power
 
 Fading Wildlands;🪷;Mirror-Pale Pond;Fishing;0;0;0;0;0;0;0;Water Body;Reflects the sky\ but not you.<br>;
 Fading Wildlands;🪷;Stillwater Pond;Fishing;0;0;0;0;0;0;0;Water Body;Lilies crowd together\ hiding the center.<br>;
@@ -26,9 +28,9 @@ Fading Wildlands;🪷;Faded Pond;Fishing;0;0;0;0;0;0;0;Tired Waters;Reflections 
 Fading Wildlands;🌊;Rushing Stream;Fishing;0;0;0;0;0;0;0;Cold Current;Clear water\ carrying memories downstream.<br>;
 Fading Wildlands;🌊;Whispering Stream;Fishing;0;0;0;0;0;0;0;Water Body;Clear water\ carrying distant sobs downstream.<br>;
 
+Fading Wildlands;🌿;Fern Field;Container;0;0;0;0;0;0;0;Tall Leaves;Surrounded by tall vegetation.<br>;Uncovered something hidden
 Fading Wildlands;🌿;Swaying Fern;Container;0;0;0;0;0;0;0;Wild Flora;The grass moves\ the air does not.<br>;Crossed right through.
 Fading Wildlands;🌱;Loose Soil;Container;0;0;0;0;0;0;0;Soft Ground;Recently disturbed earth.<br>;Dug through cautiously.
-Fading Wildlands;🌱;Potato Patch;Container;0;0;0;0;0;0;0;Forgotten Crop;Someone once depended on this field.<br>;Crossed right through.
 Fading Wildlands;🌾;Bent Grass;Container;0;0;0;0;0;0;0;Recent Passage;Something passed through not long ago.<br>;
 Fading Wildlands;🌾;Grain Cache;Container;0;0;0;0;0;0;0;0;Forgotten Ration;A burlap bundle\ left for no one.<br>;Opened to reveal a small stash.
 Fading Wildlands;🍂;Leaf Pile;Container;0;0;0;0;0;0;0;Loose Cover;Something may be hidden beneath.<br>;
