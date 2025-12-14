@@ -76,13 +76,6 @@ Fading Wildlands;🕸️;Clinging Web;Trap-Roll;0;0;-1;0;0;0;0;Snaring Threads;S
 Fading Wildlands;🪵;Fallen Trunk;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;A heavy trunk denies the easy way forward.<br>;There's no other way ahead.
 Fading Wildlands;🪨;Collapsed Stones;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;The path ahead is choked with rubble.<br>;The way forward is blocked.
 
-Fading Wildlands;🐀;Field Scavenger;Small;1;0;2;0;-1;0;0;Disease Carrier;Tiny body\ filthy teeth.<br>;Contracted a deadly disease.
-Fading Wildlands;🐁;Pale Vermin;Small;1;0;2;0;-1;0;0;Sickly Rodent;Eyes too bright\ ribs too sharp.<br>;Contracted a deadly disease.
-Fading Wildlands;🦎;Skitter Lizard;Small;1;0;2;0;0;0;0;Quick Reptile;Darts just out of reach.<br>;Lost sight of it\ paid the price.
-Fading Wildlands;🪳;Floor Crawler;Small;1;0;1;0;-1;0;0;Creeping Filth;You hear it before you see it.\n<br>;Crawled in the ear and ended it all.
-Fading Wildlands;🦗;Startled Hopper;Small;1;0;1;0;-1;0;0;Jumpy Insect;Bolts suddenly\ ruining your footing.<br>;Got too close and fell.
-Fading Wildlands;🐝;Lost Bumble;Small;1;0;1;0;-1;0;0;Straying Sting;Wanders aimlessly\ stinger always ready.<br>;Stung in the eye and fell.
-Fading Wildlands;🦋;Azure Moth;Small;1;0;1;0;-1;0;0;Fragile Bait;Delicate wings\ surprisingly good hook bait.<br>;How come this happened?
 Fading Wildlands;🐌;Trail Slug;Small;1;0;0;0;-1;0;0;Slow Crawler;Leaves a faint\ unhealthy shimmer behind.<br>;How come this happened?
 Fading Wildlands;🐌;Ash Snail;Small;1;0;0;0;-1;0;0;Slow Mover;Covered by dust\ leaves pale trail behind.<br>;Slipped at the wrong time.
 Fading Wildlands;🪱;Burrow Worm;Small;1;0;1;0;-1;0;0;Soil Dweller;Perfect for fish\ less so for you.<br>;Got destroyed by a worm.
@@ -91,14 +84,15 @@ Fading Wildlands;🪱;Lost Worm;Small;1;0;1;0;-1;0;0;Surface Stray;Should’ve s
 Fading Wildlands;🪱;Skittish Worm;Small;1;0;1;0;-1;0;0;Nervous Bait;Jumps at every tremor in the soil.<br>;Got destroyed by a worm.
 Fading Wildlands;🪱;Old Grub;Small;1;0;1;0;-1;0;0;Reliable Bait;Always where the shovel lands first.<br>;Got destroyed by a worm.
 Fading Wildlands;🪱;Rain Crawler;Small;2;0;1;0;-1;0;0;Storm Bait;Comes out when the sky cries.<br>;Got destroyed by a worm.
+Fading Wildlands;🦗;Startled Hopper;Small;1;0;1;0;-1;0;0;Jumpy Insect;Bolts suddenly\ ruining your footing.<br>;Got too close and fell.
+Fading Wildlands;🐝;Lost Bumble;Small;1;0;1;0;-1;0;0;Straying Sting;Wanders aimlessly\ stinger always ready.<br>;Stung in the eye and fell.
+Fading Wildlands;🦋;Azure Moth;Small;1;0;1;0;-1;0;0;Fragile Bait;Delicate wings\ surprisingly good hook bait.<br>;How come this happened?
 Fading Wildlands;🐛;Quiet Larva;Small;1;0;1;0;-1;0;0;Soft Threat;Looks harmless\ feels like a warning.<br>;This was a disaster.
-Fading Wildlands;🪰;Ceaseless Fly;Small;1;0;1;0;-1;0;0;Nagging Buzz;The hum drills straight into your skull.<br>;Couldn’t take the endless buzzing.
 Fading Wildlands;🐜;Small Forager;Small;1;0;1;0;-1;0;0;Tiny Marcher;Crawls around like the world isn't ending.<br>;How could this happen?
 Fading Wildlands;🐜;Trail Ant;Small;1;0;1;0;-1;0;0;Line Walker;One ant\ a whole nest nearby.<br>;How could this happen?
-Fading Wildlands;🦗;Careless Cricket;Small;1;0;2;0;-1;0;0;Noise Maker;The chirping never\ ever stops.<br>;The noise exploded your head!
-Fading Wildlands;🪰;Carrion Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Smells your fear from miles away.<br>;Contracted a deadly disease.
-Fading Wildlands;🪰;Itching Fly;Small;1;1;2;0;-1;0;0;Skin Haunter;Always lands exactly where it hurts.<br>;Contracted a deadly disease.
-Fading Wildlands;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Chewing something you hope isn’t important.<br>;Become its meal\ unwillingly.
+Fading Wildlands;🐀;Field Scavenger;Small;1;0;2;0;-1;0;0;Disease Carrier;Tiny body\ filthy teeth.<br>;Contracted a deadly disease.
+Fading Wildlands;🐁;Pale Vermin;Small;1;0;2;0;-1;0;0;Sickly Rodent;Eyes too bright\ ribs too sharp.<br>;Contracted a deadly disease.
+Fading Wildlands;🦎;Skitter Lizard;Small;1;0;2;0;0;0;0;Quick Reptile;Darts just out of reach.<br>;Lost sight of it\ paid the price.
 
 Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;It has joined your side.
 Fading Wildlands;🦦;Stream Rascal;Pet;1;0;1;1;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.
@@ -325,9 +319,10 @@ Forsaken Village;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;0;Natural Hazard;Spiny
 Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;0;0;0;0;0;Living Decay;Spreads faster when watched.<br>;Spores buried into your lungs.
 Forsaken Village;🔥;Burning Pile;Trap-Sleep;-3;0;0;0;0;0;0;Disaster Remnants;The fire is spreading all around.<br>;Burned alive screaming.
 
+Forsaken Village;🔔;Golden Bell;Trap;0;0;0;1;0;0;0;Rally Spot;Makes loud sound when disturbed.<br>;Ringed the bell\ hoping for luck
+Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.
 Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;0;Training Spot;You should give it a shot!<br>;Improved your combat technique!
 Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;0;Party Prop;These are made for smashing!<br>;Improved your attack accuracy!
-Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.
 
 Forsaken Village;🔱;Altar of Hatred;Altar;0;0;0;-3;0;1;0;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;0;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received
@@ -349,17 +344,23 @@ Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;0;Good Boy;These are super rare
 Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck
 Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
 
-Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;0;Insect;Going in for the kill.<br>;How could this happen?
-Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
-Forsaken Village;🪳;Overgrown Cockroach;Small;2;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
-Forsaken Village;🪳;Aggresive Cockroach;Small;1;2;1;0;-1;0;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
 Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Confused Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fruit Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Forsaken Village;🪱;Fly Larva;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Forsaken Village;🪱;Tapeworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🪱;Thirsty Tapeworm;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Forsaken Village;🦗;Restless Cricket;Small;1;0;2;0;-1;0;0;Jumpy Insect;Never stops moving\ must've been startlet.<br>;Got too close and fell.
+Forsaken Village;🦗;Careless Cricket;Small;1;0;1;0;-1;0;0;Noise Maker;The chirping never\ ever stops.<br>;The noise exploded your head!
+Forsaken Village;🪳;Floor Crawler;Small;1;0;2;0;-1;0;0;Creeping Filth;You hear it before you see it.\n<br>;Crawled in the ear and ended it all.
+Forsaken Village;🪳;Overgrown Cockroach;Small;2;0;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.
+Forsaken Village;🪳;Aggresive Crawler;Small;1;2;1;0;-1;0;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.
+Forsaken Village;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Chewing something you hope isn’t important.<br>;Become its meal\ unwillingly.
+Forsaken Village;🐜;Soldier Ant;Small;1;1;1;0;-1;0;0;Insect;Going in for the kill.<br>;How could this happen?
+Forsaken Village;🦟;Pesky Mosquito;Small;1;1;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Forsaken Village;🪰;Carrion Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Smells your fear from miles away.<br>;Contracted a deadly disease.
+Forsaken Village;🪰;Itching Fly;Small;1;1;2;0;-1;0;0;Skin Haunter;Always lands exactly where it hurts.<br>;Contracted a deadly disease.
 Forsaken Village;🪰;Annoying Fly;Small;1;0;3;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🐁;Albino Mouse;Small;1;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
 
@@ -644,8 +645,8 @@ Twisted Fairyland;🦓;Wild Zebra;Pet;3;0;2;0;2;0;0;Mighty Animal;Strange horse 
 
 Twisted Fairyland;🪱;Confused Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Twisted Fairyland;🪱;Tapeworm;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-Twisted Fairyland;🪱;Bloodsucking Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+Twisted Fairyland;🪱;Starving Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+
 Twisted Fairyland;🪱;Stimulated Flatworm;Small;1;0;3;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Twisted Fairyland;🪱;Overgrown Worm;Small;2;1;1;0;-1;0;0;Arthropod;Oh no. It fights back!<br>;
@@ -854,8 +855,10 @@ River of Sorrows;🕷️;Water Skipper;Small;1;0;3;0;-1;0;0;Arthropod;Makes a pe
 River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;0;Cephalopod;Wriggles with unsettling energy.<br>;
 River of Sorrows;🦐;Twisted Shrimp;Small;1;1;2;0;-1;0;0;Arthropod;Goes for your blood like crazy.<br>;
 River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
-River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;
+River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
+River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 
 River of Sorrows;🐠;Depressed Angelfish;Reflective;2;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.
 River of Sorrows;🦞;Vengeful Lobster;Tough;3;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets\ never forgives.<br>;Pinched one too many times!
@@ -866,8 +869,10 @@ River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless t
 River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;2;3;2;0;-1;0;0;Spiky Ball;Looks funny\ but is lethal.<br>;Pierced by thousands spikes.
 
 River of Sorrows;‍🦈;White Shark;Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry shark!
-River of Sorrows;🐟;Suicidal Tuna;Swift;1;3;2;0;-1;0;1;Fearless Critter;Charges forward no matter the consequences.<br>;Not really sure what happened.
+
+River of Sorrows;🐍;Aquatic Snake;Swift;1;3;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.
 River of Sorrows;🐬;Laughing Scumbag;Swift;3;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.
+
 River of Sorrows;👤;Water Phantom;Spirit;1;0;1;0;2;1;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.
 
 DEMON
@@ -1003,20 +1008,20 @@ Shrouded Necropolis;🌌;Starlight Mural;Altar;0;0;0;0;0;2;0;Ritual Place;The sk
 Shrouded Necropolis;🕷️;Hollow Spider;Small;0;0;2;0;-1;0;0;Empty Shell;Seems long dead\ but still crawling.<br>;Got webbed into sleep.
 Shrouded Necropolis;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.
 Shrouded Necropolis;🪳;Plague Roach;Small;2;1;1;0;-1;0;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.
-Shrouded Necropolis;🪰;Hungry Fly;Small;1;2;2;0;-1;0;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
+Shrouded Necropolis;🪰;Hungry Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.
 Shrouded Necropolis;🪲;Green Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.
 Shrouded Necropolis;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.
 Shrouded Necropolis;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.
 Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.
 Shrouded Necropolis;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;
-Shrouded Necropolis;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Necropolis;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Necropolis;🪱;Grave Worm;Small;1;2;1;0;-1;0;0;Crawling Parasite;Nourished by the decay of ages.<br>;
 Shrouded Necropolis;🪱;Bloodsucking Worm;Small;1;2;2;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;
 Shrouded Necropolis;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
+Shrouded Necropolis;🪰;Ceaseless Fly;Small;0;0;3;0;-1;0;0;Nagging Buzz;The hum drills straight into your skull.<br>;Couldn’t take the endless buzzing.
 Shrouded Necropolis;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.
 Shrouded Necropolis;🦗;Grave Cricket;Small;1;1;1;0;-1;0;0;Chirping Insect;Echoes break the silence.<br>;
 Shrouded Necropolis;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;0;Burrowing Insect;Wings shimmer faintly in the gloom.<br>;
