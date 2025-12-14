@@ -842,8 +842,14 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
       if (procAbilityChance("",5-playerLck)) { //5% Trap chance, lowers with luck
         pushEncounter(getRandomEncounter(["Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
-      } else {
-        pushEncounter(getRandomEncounter(["Prop"]));
+      } else { //No small, no trap
+        if (procAbilityChance("",5-playerLck)){//5%- Bad flavoured prop
+            pushEncounter(getRandomEncounter(["Prop"],["-1"])); //Only bad flavoured props
+        } else if (procAbilityChance("",5+playerLck)) { //5%+ Good flavoured prop
+            pushEncounter(getRandomEncounter(["Prop"],["1"])); //Only good flavoured props
+        } else {
+          pushEncounter(getRandomEncounter(["Prop"],[],"",["-1","1"])); //Exclude flavoured props
+        }
       }
 
       if (type=="Small") {
