@@ -3269,6 +3269,17 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
   return parseInt(gainedXP);
 }
 
+function sufferToxin(){
+  if (enemyType=="Toxic") {
+  var grabDmg=enemyAtk;
+  if (grabDmg==0) grabDmg=1;
+  var dmgMsg="Oof, that smells just nasty";
+
+  logAction(enemyEmoji+" ▸ 🦠 "+dmgMsg+" -"+grabDmg+" 💔");
+  playerHit(grabDmg,true,true);
+  displayEnemyEffect("🦠");
+  }
+}
 
 function enemyAttackOrRest(message="",isGrab=false){
   var damageReceived=enemyAtk+enemyAtkBonus;
@@ -3309,6 +3320,7 @@ function enemyAttackOrRest(message="",isGrab=false){
       if (!isGrab) {
         logAction(enemyEmoji+" "+arrowSymbol+" 💤 "+staminaChangeMsg);
         enemyRest(1);
+        sufferToxin();
         return; //They don't waste stamina unless necessary
       }
     } else {
@@ -3337,6 +3349,7 @@ function enemyAttackOrRest(message="",isGrab=false){
     if (enemyType=="Spirit" && (enemySta+enemyStaLost==0)) staminaChangeMsg = "Seems to be impossible to hit."
     logPlayerAction(actionString,staminaChangeMsg);
     enemyRest(1);
+    sufferToxin();
   }
 }
 
