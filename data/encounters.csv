@@ -731,6 +731,7 @@ Twisted Fairyland;🫐;Wild Berries;Consumable;0;0;0;0;0;0;0;Forest Fruit;Seems 
 Twisted Fairyland;🍣;Fresh Sushi;Consumable;0;0;0;0;0;0;0;Fancy Food;All nicely arranged and untouched.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 
+Twisted Fairyland;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Artifact;Grants attribute <b>🐴 Prey's Appearance</b>.<br><b>Enemies have -1 ⚔️ Attack</b> until attacked.;Gained attribute <b>🐴 Prey's Appearance</b>.
 Twisted Fairyland;👺;Devil Mask;Item;0;0;0;0;0;0;0;Artifact;Grants attribute <b>👺 Devil's Appearance</b>.<br><b>Demon type enemies will be passive</b>.;Gained attribute <b>👺 Devil's Appearance</b>.
 Twisted Fairyland;⚡️;Lightning Bolt;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Weapon once wielded by the king of gods.<br><b>⚡️ Cast</b> lighting bolts</b>\ <b>+2 🔵 Mana</b>.;Gained <b>⚡️ Lightning Bolt</b> and
 Twisted Fairyland;🪄;Magic Wand;Item;0;0;0;0;0;3;0;<b>Artifact</b>;Resonates with impressive magical power.<br>Provides <b>+3 🔵 Mana</b>.;Got to wield a dangerous power.

@@ -751,7 +751,13 @@ function loadEncounter(index, fileLines = linesStory){
   }
 
   if (playerLootString.includes("👺")){
-    if (enemyType=="Demon") enemyAtkBonus=(-enemyAtk)
+    if (enemyType=="Demon") {
+      enemyAtkBonus=(-enemyAtk)
+      enemyMgkLost=(enemyMgk)
+    }
+  }
+  if (playerLootString.includes("🐴")){
+    enemyAtkBonus-=1;
   }
 }
 
@@ -2609,6 +2615,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               if (enemyEmoji!="🪙" && enemyEmoji!="💰") playerLootString+=enemyEmoji;
+              if (enemyEmoji=="👺" || enemyEmoji=="🐴") playerName=enemyEmoji+" "+playerName;
               displayPlayerGainedEffect();
             } else {
               playerKarma++;
@@ -3090,6 +3097,10 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
+  if (playerLootString.includes("🐴")){
+    if (enemyHpLost==0) enemyAtkBonus+=1; //Revert mask effect, just the first time hit
+  }
+
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
   var hitMsg = "Hit them with an attack -"+damage+" 💔";
 
