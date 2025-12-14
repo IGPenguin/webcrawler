@@ -2279,7 +2279,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (!playerUseMagic(1,"Not enough mana, requires +1 🔵")) { //Curse is never free, upgrd handled above
+        if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
             break;
           }
 
@@ -2290,16 +2290,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           displayEnemyEffect("🔷");
           displayEnemyCannotEffect();
           if ((enemySta+enemyStaLost)==0){
-            atckmsg="They reflected the curse.";
+            atckmsg="They reflected your curse -2 🔵";
           } else {
-            atckmsg="They reflected the curse and attacked -"+enemyAtk+" 💔";
+            atckmsg="They reflected it and attacked -"+enemyAtk+" 💔";
           }
           if (enemyCastIfMgk(true)) enemyAttacked=true;
           if (!enemyAttacked) enemyAttackOrRest(atckmsg);
           break;
 
         case "Demon":
-            logPlayerAction(actionString,"Your curse has made them stronger!");
+            logPlayerAction(actionString,"Your curse has made them stronger! -2 🔵");
             enemyName=enemyName+" (Cursed)";
             animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
             enemyAtkBonus+=1;
@@ -2324,7 +2324,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (procAbilityChance("🪆",33)){
               var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪰","🪲","🪳","🐌"]);
-              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -1 🔵");
+              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
 
@@ -2338,38 +2338,38 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             enemyCursed=true;
-            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -1 🔵");
+            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
+            logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
             break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
-            logPlayerAction(actionString,"They resisted your curse -1 🔵");
+            logPlayerAction(actionString,"They resisted your curse -2 🔵");
           } else {
-            logPlayerAction(actionString,"Your curse had no effect on them -1 🔵");
+            logPlayerAction(actionString,"Your curse had no effect on them -2 🔵");
           }
-
-          logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
-          //if (enemyCastIfMgk()) break;
-          //enemyAttackOrRest();
+          procAbilityChance()
+          if (enemyCastIfMgk()) break;
+          enemyAttackOrRest();
           break;
 
         case "Friend": //They'll boost your stats
           if (playerMgk >= enemyMgk){
             var gainedXP=playerGainXP(1,25*playerLevel,"");
-            logPlayerAction(actionString,"Forced revealed their secrets -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+            logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg);
           } else {
-            logPlayerAction(actionString,"Could not overpower their will -1 🔵");
+            logPlayerAction(actionString,"Could not overpower their will -2 🔵");
             displayPlayerCannotEffect();
           }
           break;
 
         case "Altar":
           logPlayerAction(actionString,"Your curse has angered the gods -1 🍀");
-          playerLck=-1;
+          playerLck-=1;
           displayPlayerEffect("🪬");
           break;
 
         default:
-          logPlayerAction(actionString,"Your curse dispersed into the area -1 🔵");
+          logPlayerAction(actionString,"Your curse dispersed into the area -2 🔵");
       }
       break;
 
@@ -4104,7 +4104,7 @@ function resetEncounterButtons(){
   if (playerMgk<=0){
     setButton('button_cast',playerCastType+" Cast",colorDarkGrey);
     setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
-    setButton('button_curse',"🪬 Curse",colorDarkGrey);
+    if (playerMgk<2) setButton('button_curse',"🪬 Curse",colorDarkGrey);
   }
 }
 
