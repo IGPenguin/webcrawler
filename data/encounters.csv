@@ -4,18 +4,19 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
 Fading Wildlands;🌱;Strained Growth;Prop;0;0;0;0;0;0;0;Wild Flora;Too vibrant for a land this quiet.<br>;
 Fading Wildlands;🌱;Fresh Growth;Prop;0;0;0;0;0;0;0;Quiet Flora;Soft sprouts push through tired soil.<br>;
 Fading Wildlands;🌿;Grass Field;Prop;0;0;0;0;0;0;0;Wind-swept Blades;The grass sways like restless sleepers.<br>;
-Fading Wildlands;☘️;Clover Drift;Prop;0;0;0;1;0;0;0;Lingering Luck;Greens still cling to hope.<br>;
 Fading Wildlands;🍃;Falling Leaves;Prop;0;0;0;0;0;0;0;Quiet Decay;What once bloomed now lets go.<br>;
 Fading Wildlands;🪹;Deserted Nest;Prop;0;0;0;0;0;0;0;Left Behind;Whatever lived here flew away long ago.<br>;
 Fading Wildlands;🪨;Granite Marker;Prop;0;0;0;0;0;0;0;Silent Witness;Stone watches the world fade.<br>;
-Fading Wildlands;🪨;Warm Stone;Prop;0;0;0;0;0;0;0;Comforting Weight;Somehow warm despite the cold air.<br>;
 Fading Wildlands;🌳;Lone Tree;Prop;0;0;0;0;0;0;0;Tired Sentinel;The last trunk standing from a lost grove.<br>;
 Fading Wildlands;🪵;Mossy Remains;Prop;0;0;0;0;0;0;0;Reclaimed Wood;Once a tree\ now slowly dissolving.<br>;
 Fading Wildlands;🪵;Reclaimed Logs;Prop;0;0;0;0;0;0;0;Natural Debris;Moss eats wood faster than time should.<br>;
 Fading Wildlands;🪵;Carved Stump;Prop;0;0;0;0;0;0;0;Old Marker;Knife marks tell forgotten stories.<br>;
 Fading Wildlands;🪶;Fallen Feather;Prop;0;0;0;0;0;0;0;Quiet Remnant;Something once passed overhead.<br>;
 Fading Wildlands;☀️;Warming Sunrise;Prop;0;0;0;0;0;0;0;Weather Condition;Time to set out for an adventure.<br>;
-Fading Wildlands;🌿;Soft Moss;Prop;0;0;1;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;Well rested on the soft ground
+
+Fading Wildlands;🌼;Wildflower Bed;Prop;0;0;0;0;1;0;0;Gentle Ground;Flattened blooms form a soft nest.<br>;Slept peacefully among petals
+Fading Wildlands;☘️;Clover Drift;Prop;0;0;0;1;0;0;0;Lingering Luck;Greens still cling to hope.<br>;Woke up finding a four-leaf clover
+Fading Wildlands;🪨;Sunwarmed Stone;Prop;0;0;1;0;0;0;0;Comforting Weight;Somehow warm despite the cold air.<br>;Muscles loosened as you rested
 Fading Wildlands;🌾;Tall Grass;Prop;0;0;1;0;0;0;0;Natural Bedding;Good place for a short rest.<br>;Rested hidden from the wind
 
 Fading Wildlands;🪷;Mirror-Pale Pond;Fishing;0;0;0;0;0;0;0;Water Body;Reflects the sky\ but not you.<br>;
@@ -191,7 +192,6 @@ Forsaken Village;🌿;Overgrown Patch;Prop;0;0;0;0;0;0;0;Wild Flora;Good place t
 Forsaken Village;🌿;Wild Grass;Prop;0;0;0;0;0;0;0;Wild Flora;Good place to catch a breath.<br>;Crossed right through.
 Forsaken Village;🌾;Tall Grass;Prop;0;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
 Forsaken Village;🌾;Overgrown Reeds;Prop;0;0;0;0;0;0;0;Dense Flora;Thick growth covers the way forward.<br>;Crossed right through.
-Forsaken Village;🪧;Danger Sign;Prop;0;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
 Forsaken Village;🌱;Wild Growth;Prop;0;0;0;0;0;0;0;Soft Surface;Good place to catch a breath.<br>;
 Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
@@ -199,15 +199,17 @@ Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;0;Ruins;Nothing of particular 
 Forsaken Village;🪨;Pile of Stones;Prop;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
 Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
-Forsaken Village;🌳;Apple Tree;Container;0;0;0;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;
 Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
 Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;0;Wrecked Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
-Forsaken Village;🏗;Strange Monument;Prop;0;0;0;0;0;0;0;Metal Construction;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🚧;Reflective Barricade;Prop;0;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🛢️;Empty Barrel;Prop;0;0;0;0;0;0;0;Circumstantial Object;Its contents are long gone.<br>;
-Forsaken Village;🔥;Smoldering Campfire;Prop;1;0;0;0;0;0;0;Lingering Warmth;Embers still glow faintly in the ash.<br>;Slept close to a comforting heat
+
+Forsaken Village;🌳;Apple Tree;Prop;0;0;1;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;Woken up to a sweet apple snack
+Forsaken Village;🔥;Smoldering Campfire;Prop;0;0;1;0;0;0;0;Lingering Warmth;Embers still glow faintly in the ash.<br>;Slept close to a comforting heat
 Forsaken Village;🛏️;Ruined Bed;Prop;0;0;-1;0;0;0;0;Wrecked Furniture;Looks long time abandoned.<br>;Ouch\ you got sore back
+Forsaken Village;🧱;Damp Cellar;Prop;0;0;-1;0;0;0;0;Cold Floor;Moist air seeps into your bones.<br>;Rest left you stiff and sore
+Forsaken Village;🏗;Rusted Monument;Prop;-5;0;0;0;0;0;0;Metal Construction;A remnant from the distant past.<br>;The cargo fell on you while asleep
 
 Forsaken Village;🛢️;Small Barrel;Container;0;0;0;0;0;0;0;Metal Container;May contain something interesting.<br>;
 Forsaken Village;🪴;Garden Box;Container;0;0;0;0;0;0;0;Natural Cover;A modest patch of green.<br>;
@@ -516,6 +518,10 @@ Twisted Fairyland;🪻;Hyacinth Patch;Prop;0;0;0;0;0;0;0;Wild Flora;Compelling s
 Twisted Fairyland;🪻;Flower Growth;Prop;0;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;
 Twisted Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 Twisted Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;0;Weather Condition;Time for a well deserved rest.<br>;
+
+Twisted Fairyland;🍄;Glowcap Ring;Prop;0;0;0;1;0;0;0;Bioluminescent Circle;Soft light pulses gently around you.<br>;Woke up strangely optimistic
+Twisted Fairyland;🌿;Soft Moss;Prop;0;0;1;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;Well rested on the soft ground
+Twisted Fairyland;🌸;Dreamblossom Patch;Prop;0;0;0;0;1;0;0;Soothing Spores;Sweet scent dulls anxious thoughts.<br>;Dreamed of a welcoming paradise
 Twisted Fairyland;🌲;Needlepine Grove;Prop;0;0;-1;0;0;0;0;Harsh Terrain;It's harder to navigate between the trees.<br>;Rested\ but needles kept poking you
 
 Twisted Fairyland;🪵;Hollow Log;Container;0;0;0;0;0;0;0;Natural Stash;Hides what shouldn't be here.<br>;
@@ -584,6 +590,7 @@ Twisted Fairyland;✨;Whispering Glow;Curse;0;0;0;0;2;0;0;Magical Phenomenon;Tin
 Twisted Fairyland;🌟;Stardust Drizzle;Curse;0;0;0;1;0;0;0;Weather Anomaly;Fine shimmering dust floats through the air.<br>;You shimmer with strange luck.
 Twisted Fairyland;💧;Moonkissed Dew;Curse;0;0;0;0;0;1;0;Natural Phenomenon;Dewdrops shimmer like silver under no sun.<br>;Embraced the magical power.
 
+Twisted Fairyland;🛸;Flying Saucer;Curse;-5;0;0;0;0;0;0;Metal Object;Bright lights are zooming through the sky.<br>;Got sucked out of life essence.
 Twisted Fairyland;👤;Glimmering Reflection;Curse;0;0;0;0;-3;0;0;Fae Illusion;A faint silhouette mimics your movements.<br>;Embraced your mirrored self.
 Twisted Fairyland;🪨;Whispering Stone;Curse;0;0;0;0;-2;0;0;Mystic Object;Heard your name in a voice not your own.<br>;It won’t leave your head.
 Twisted Fairyland;🌩️;Charged Cloud;Curse;-1;0;1;0;0;0;0;Weather Anomaly;Floats in a super unusally low altitude.<br>;Crackling spark zapped you.
@@ -806,7 +813,11 @@ River of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;0;Weather Condition;Icy gusts c
 River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;
+River of Sorrows;🪶;Drifting Feather;Prop;0;0;0;0;0;0;0;Flight Remnants;Floats the currents with no effort.<br>;
 River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
+
+River of Sorrows;🌙;Moonlit Current;Prop;0;0;0;0;1;0;0;Silver Flow;Light dances on moving water.<br>;Dreamed of the distant shores
+River of Sorrows;⚱️;Floating Urn;Prop;0;0;0;-1;0;0;0;Funerary Relic;River water hugs its base\ waving it around.<br>;Got haunted by bad spirits
 
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
@@ -921,23 +932,24 @@ River of Sorrows;💌;Soaked Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;You
 
 //Shrouded Necropolis
 Shrouded Necropolis;💀;Cracked Skull;Prop;0;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.
+Shrouded Necropolis;🪦;Weathered Tombstone;Prop;0;0;0;0;0;0;0;Faded Memorial;Names are long forgotten.<br>;
 Shrouded Necropolis;🪨;Cemetery Wall;Prop;0;0;0;0;0;0;0;Place of Rest;Eerie atmosphere in the air.<br>;
 Shrouded Necropolis;🍂;Dying Fern;Prop;0;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;0;0;0;0;Silent Flora;Its colour slowly fades away.<br>;
-Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;0;0;0;Final Resting Place;The text is all faded.<br>;
-Shrouded Necropolis;🪦;Weathered Tombstone;Prop;0;0;0;0;0;0;0;Memorial;Names long forgotten.<br>;
 Shrouded Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;
 Shrouded Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;
 Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Fresh Clue;Clear sign of recent activity.<br>;Followed the trail.
 Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unsettling Clue;Clear sign of recent activity.<br>;Followed the trail.
 Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presnece.<br>;Left them behind.
-Shrouded Necropolis;🩸;Blood-Stained Stone;Prop;0;0;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;
 Shrouded Necropolis;🌫️;Pale Mist;Prop;0;0;0;0;0;0;0;Unsettling Atmosphere;A veil of fog conceals the path.<br>;
-Shrouded Necropolis;⚰️;Broken Coffin;Prop;0;0;0;0;0;0;0;Ruins;Wood splinters litter the ground.<br>;
 Shrouded Necropolis;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;
-Shrouded Necropolis;⏳;Frozen Hourglass;Prop;0;0;0;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;
 Shrouded Necropolis;🌾;Dead Reeds;Prop;0;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;
+
+Shrouded Necropolis;🩸;Blood-Stained Stone;Prop;-1;1;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;Woke up feeling bloodlust!
+Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;-1;0;0;0;Silent Relic;Its colour slowly fades away.<br>;Cursed by the spirit residue
+Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;-1;0;0;Final Destination;The text is almost fully faded.<br>;Haunted by the resident spirit
+Shrouded Necropolis;⏳;Frozen Hourglass;Prop;0;0;-1;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;Woke up with a sluggish aura
+Shrouded Necropolis;⚰️;Broken Coffin;Prop;0;0;0;0;-1;0;0;Ruins;Wood splinters litter the ground.<br>;Sleeping here took its toll
 
 Shrouded Necropolis;🏺;Ancient Urn;Container;0;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;
 Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;

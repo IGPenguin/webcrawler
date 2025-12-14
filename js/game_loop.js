@@ -1246,6 +1246,7 @@ function redraw(){
       if (enemyName.includes("Bride")) enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
       break;
     case "Altar":
+      enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
       if (totalBonus>0) enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
       if (totalMalus<0) enemyStatusString=decorateStatusText("♦️","Sacrificial Altar",colorRed);
       break;
@@ -1255,8 +1256,8 @@ function redraw(){
       //emojiWrapperUIElement.style.background=colorDarkBlue;
       break;
     case "Curse":
-      if (parseInt(totalMalus)<0)enemyStatusString=decorateStatusText("♣️","Mystery",colorDarkGrey);
       enemyStatusString=decorateStatusText("🔆","Condition",colorYellow);
+      if (parseInt(totalMalus)<0)enemyStatusString=decorateStatusText("♣️","Mystery",colorDarkGrey);
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
@@ -3990,7 +3991,7 @@ function gameOver(silent=false){
   deathMsg=chooseFrom(deathMsg)
 
   //Reset progress to death encounter
-  if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container"))) enemyMsg=deathMsg;
+  if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container")||enemyType=="Prop")) enemyMsg=deathMsg;
   if (enemyTeam.includes("Lover's Memento")) enemyMsg="Killed by a severe heartbreak.";
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
