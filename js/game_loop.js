@@ -606,6 +606,17 @@ function loadEncounter(index, fileLines = linesStory){
   enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
   enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
   enemyDef = String(selectedLine.split(",")[10].split(":")[1]);
+
+  //Calculate total bonus/malus
+  var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef];
+  var effectArrayBonus=effectArray.filter(function(x){ return x > 0 });
+  var effectArrayMalus=effectArray.filter(function(x){ return x < 0 });
+  totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
+  totalMalus=effectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
+  if (totalMalus=="") totalMalus=0;
+  if (totalBonus=="") totalBonus=0;
+  console.log("bonus: "+totalBonus+" malus: "+totalMalus);
+
   enemyTeam = String(selectedLine.split(",")[11].split(":")[1]);
   enemyDesc = String(selectedLine.split(",")[12].split(":")[1]);
   if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
@@ -1076,14 +1087,6 @@ function redraw(){
   enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"» "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
-  var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef];
-  var effectArrayBonus=effectArray.filter(function(x){ return x > 0 });
-  var effectArrayMalus=effectArray.filter(function(x){ return x < 0 });
-  totalBonus=effectArrayBonus.reduce((partialSum, a) => partialSum + a, "");
-  totalMalus=effectArrayMalus.reduce((partialSum, a) => partialSum + a, "");
-  if (totalMalus=="") totalMalus=0;
-  //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
-
   enemyTeamUIElement.innerHTML="";
   cardUIElement.style.background=colorCardBackground;
 
@@ -1729,7 +1732,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Prop":
             isFishing=false;
-            if (enemyMsg!=""){
+            if (enemyMsg!="" && totalBonus==0 && totalMalus==0){
               logPlayerAction(actionString,enemyMsg)
             } else {
               logPlayerAction(actionString,"Continued on your adventure.");
@@ -2943,7 +2946,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-
         switch (enemyType){
 
           case "Curse": //Waiting triggers the curse
@@ -2975,6 +2977,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyAttackOrRest();
             }
             break;
+          
+          case "Prop":
+            if (!playerRested && (totalBonus>0 || totalMalus<0)){
+              playerRest(true);
+              if (totalBonus>0 && enemyMsg=="") enemyMsg="Rested very well, gaining extra"
+              if (totalMalus<0 && enemyMsg=="") enemyMsg="Did not rest well, somehow lost"
+              playerConsumed();
+            } else {
+              playerRest();
+            }
+            break;
 
           case "Trap": //Rest to full if out of combat + mana
           case "Trap-Big":
@@ -2983,7 +2996,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll":
           case "Item":
           case "Consumable":
-          case "Prop":
           case "Checkpoint":
           case "Altar":
           case "Fishing":
