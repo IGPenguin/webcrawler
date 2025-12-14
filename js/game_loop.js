@@ -551,6 +551,7 @@ function pushEncounter(encounterStringArray=[],index=1,areaNameOverride=""){
 }
 
 function markAsSeen(seenName){
+  seenName=seenName.replace(" (Crispy)","").replace(" (Salty)",""); //To avoid seeing same food again if cooked
   if (!seenEncounters.includes(seenName)) seenEncounters.push(seenName);
 }
 
