@@ -422,7 +422,7 @@ Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides
 Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;📼;Cassette Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Forsaken Village;📎;The Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.
+Forsaken Village;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.
 Forsaken Village;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Physical Defence</b>.;Who needs love anyway? <b>+1 🔰</b>
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
@@ -815,14 +815,14 @@ Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶\🗿;0;0;0;0;0;0
 Twisted Fairyland;🦤;Hungry Dodo;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>It is looking for(( n/a;Willingly shared something.
 
 //River of Sorrows
-River of Sorrows;☁️;Misty Veil;Prop;0;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;
-River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;
-River of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the fog.<br>;
-River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
-River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
-River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;
-River of Sorrows;🪶;Drifting Feather;Prop;0;0;0;0;0;0;0;Flight Remnants;Floats the currents with no effort.<br>;
-River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;
+River of Sorrows;☁️;Misty Veil;Prop;0;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;Sailed towards the horizon.
+River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;Sailed through the fog.
+River of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the fog.<br>;Sailed with the wind.
+River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.
+River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.
+River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;Sailed through the debris.
+River of Sorrows;🪶;Drifting Feather;Prop;0;0;0;0;0;0;0;Flight Remnants;Floats the currents with no effort.<br>;Sailed through the debris.
+River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;Couldn't keep up with the boat.
 
 River of Sorrows;🌙;Moonlit Current;Prop;0;0;0;0;1;0;0;Silver Flow;Light dances on moving water.<br>;Dreamed of the distant shores
 River of Sorrows;🎶;Siren Song;Prop;-1;0;0;0;0;0;0;Unsettling Feeling;Calls for lost souls to come.<br>;Dreamed of a terrible heartbreak
@@ -915,12 +915,6 @@ River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not th
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;
 
 //~Matches fishing (needs a bit unique touch soon)
-River of Sorrows;🪙;Sunken Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Sunken Drachma +1 🪙</b>
-River of Sorrows;🪙;Misplaced Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Misplaced Drachma +1 🪙</b>
-River of Sorrows;🪙;Deserted Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Deserted Drachma +1 🪙</b>
-River of Sorrows;🪙;Castaway Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Castaway Drachma +1 🪙</b>
-River of Sorrows;🪙;Forgotten Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Forgotten Drachma +1 🪙</b>
-
 River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
 River of Sorrows;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;Artifact;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 River of Sorrows;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.

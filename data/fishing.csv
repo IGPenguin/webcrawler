@@ -19,7 +19,7 @@ Fishing;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new 
 Fishing;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
 Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;Artifact;Grants ability <b>🧂 Master Chef</b> - salt the food.<br>Add <b>+1 🟢 Energy</b> & <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.
 Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
-Fishing;📎;The Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 The Universal Key</b>.Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
+Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
 Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;Artifact;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Fishing;❤️‍🩹;Heart Band-Aid;Item;3;0;0;0;0;0;0;Artifact;Supposedly can heal even a heartbreak.<br>Provides <b>+3 ❤️ Health</b> and that's it.;
@@ -43,13 +43,13 @@ Fishing;👓;Reading Glasses;Item;0;0;0;0;1;0;0;Eyesight Boost;Usually improves 
 Fishing;💍;Engagement Ring;Item;2;0;0;0;0;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+2 ❤️ Health</b>;Felt a subtle surge in your chest.
 Fishing;🐒;Driftwood Totem;Item;0;0;0;2;0;0;0;Primitive Idol;Worn by the tide for years.<br>Provides <b>+2 🍀 Luck</b>;Radiates positive energy.
 
-Fishing;💧;Glass Drop;Item;0;0;0;0;0;1;0;Magical Pin;Radiates subtle waves of energy.<br>Provides <b>+1 🔵 Mana</b>.;Forever tied with the tide.
 Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.
 Fishing;💍;King's Ring;Item;0;1;0;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in your chest.
 Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;0;Souvenir;The previous inhabitant has moved away.<br>Provides <b>+1 🟢 Energy</b>.;Gained the flow of the water.
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
 Fishing;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
+Fishing;💧;Frozen Teardrop;Item;0;0;0;0;-2;1;0;Magical Pin;Tangible proof of previous sins.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Charisma</b>.;Felt a bitter memory
 Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner"\ kinda sad.<br>;Almost got the first place...
 
 Fishing;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Embraced the new knowledge.

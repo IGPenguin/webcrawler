@@ -2761,7 +2761,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else if (playerLootString.includes("📎")) {
-                  logPlayerAction(actionString,"Unlocked with <b>📎 The Universal Key</b>"+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
+                  logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b>"+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
                   playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else {
