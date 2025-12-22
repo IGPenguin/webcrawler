@@ -4340,13 +4340,13 @@ function adjustEncounterButtons(){
         if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
 
       setButton('button_grab',"1 🪙 Loot",colorLightBlue);
-        if (savedCoins<2) setButton('button_grab',"2 🪙 Loot",colorDarkGrey);
+        if (savedCoins<1) setButton('button_grab',"1 🪙 Loot",colorDarkGrey);
 
       setButton('button_sleep',"2 🪙 Level",colorYellow);
-        if (savedCoins<3) setButton('button_sleep',"3 🪙 Level",colorDarkGrey);
+        if (savedCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
 
       setButton('button_speak',"3 🪙 Artif.",colorOrange);
-        if (savedCoins<4) setButton('button_speak',"4 🪙 Artif.",colorDarkGrey);
+        if (savedCoins<3) setButton('button_speak',"3 🪙 Artif.",colorDarkGrey);
 
       setButton('button_cast',"‍-",colorDarkGrey);
       setButton('button_pray',"‍-",colorDarkGrey);
