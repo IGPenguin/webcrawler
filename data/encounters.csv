@@ -438,7 +438,7 @@ Forsaken Village;📔;Mythical Tales;Item;0;0;0;0;1;1;0;Unusual Book;Ancient tom
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;0;Knowledge Book;The ulimate guide with colorful illustrations.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.
 Forsaken Village;🥾;Heavy Boots;Item;1;0;1;0;0;0;0;Work Gear;Helps navigating through rough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Forsaken Village;👖;Work Trousers;Item;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action
-Forsaken Village;🥼;Scientific Cloak;Item;0;0;0;0;3;0;0;Specialized Gear;Makes the wearer look <b>very smart™️</b>.<br>Provides <b>+3 🧠 Intellect</b>.;Ready for action
+Forsaken Village;🥼;Scientific Cloak;Item;0;0;0;0;3;0;0;Specialized Gear;Makes the wearer look very smart.<br>Provides <b>+3 🧠 Intellect</b>.;Ready for experimenting!
 Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;2;0;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+2 🧠 Intellect</b>;Let's do this!
 Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;2;0;0;0;Lasting Hope;Brings pleasure whenever looked at.<br>Provides <b>+2 🍀 Luck</b>.;Feels good carrying that.
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
@@ -489,7 +489,7 @@ Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🧶\🧦\🥄\🪮\🔭\�
 Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🦴\🍖;0;0;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in((n/a;You made them happy!
 Forsaken Village;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸\⚙️\🔩;0;0;0;0;0;1;0;Unusal Critter;Travelled from a galaxy far far away.<br>It is looking for(( n/a;Received a special treat.
 
-Forsaken Village;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;Artifact;Tastes like a vendetta\ sweet and sour.<br><b>+1 ⚔️ Damage</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>.;Ahhh\ sweet and sour
+Forsaken Village;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;Artifact;Tastes like a vendetta\ sweet and sour.<br><b>+1 ⚔️ Damage</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Ahhh\ sweet and sour
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference
@@ -731,9 +731,9 @@ Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;0;Brain Juice;Enhan
 Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity
 Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;1;0;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;0;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;
+Twisted Fairyland;🍍;Sweet Pineapple;Consumable;1;0;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
+Twisted Fairyland;🥭;Sweet Mango;Consumable;1;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🍶;Ancient Sake;Consumable;-1;0;0;0;1;0;0;Forgotten Drink;Scratched but somehow still watertight.<br>Possibly causes some side-effects.;It had a metallic aftertaste
-Twisted Fairyland;🍍;Sweet Pineapple;Consumable;2;0;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
-Twisted Fairyland;🥭;Sweet Mango;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 
 Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides <b>+1 🟢 Energy</b> temporarily.;Got extra energy
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
@@ -1031,9 +1031,9 @@ Shrouded Necropolis;🦗;Grave Cricket;Small;1;1;1;0;-1;0;0;Chirping Insect;Echo
 Shrouded Necropolis;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;0;Burrowing Insect;Wings shimmer faintly in the gloom.<br>;
 Shrouded Necropolis;🦋;Nocturnal Moth;Small;1;0;2;0;-1;0;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;
 
-Shrouded Necropolis;👋;Autonomous Hand;Pet;2;1;1;0;0;2;0;Twisted Being;Shows faint traces of intelligence.<br>;Strangled by a living hand?
-Shrouded Necropolis;💀;Little Skeleton;Pet;1;1;1;0;2;0;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
-Shrouded Necropolis;🐈‍⬛;Black Cat;Pet;2;1;1;3;3;2;0;Stray Spirit;Stares with unsettling calmness.<br>;
+Shrouded Necropolis;👋;Autonomous Hand;Pet;1;1;4;0;0;0;0;Twisted Being;Shows faint traces of intelligence.<br>;Strangled by a living hand?
+Shrouded Necropolis;💀;Little Skeleton;Pet;1;1;3;0;2;0;0;Restless Bones;Looks like its gonna fall apart.<br>;Rotten to the bones
+Shrouded Necropolis;🐈‍⬛;Black Cat;Pet;2;1;3;3;3;2;0;Stray Spirit;Stares with unsettling calmness.<br>;
 
 Shrouded Necropolis;👤;Lost Shade;Friend;0;0;0;0;0;0;0;Hopeless Soul;Looks like it has something to say.<br>;They gestured "OK" towards you.
 Shrouded Necropolis;🗣;Wailing Shade;Friend;0;0;0;0;0;0;0;Hopeless Soul;You cannot hear it make any sound.<br>;They gestured "OK" towards you.

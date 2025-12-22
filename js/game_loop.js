@@ -2163,7 +2163,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
             if ((playerMgk>0)&&(enemyInt <= playerInt )){
               var gainedXP=playerGainXP(1.25,0,"")
-              logPlayerAction(actionString,"Banished them from this world! "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              logPlayerAction(actionString,"Banished them from this world! -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               displayEnemyEffect("🔥");
               nextEncounter();
               break;
