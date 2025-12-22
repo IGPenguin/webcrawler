@@ -2392,7 +2392,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
 
         if (enemyType=="Shop") {
-          drachmaeBuy(2,"Item");
+          drachmaeBuy(1,"Item");
           break;
         }
         
@@ -2793,7 +2793,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType!="Dream") displayPlayerEffect("💬");
 
         if (enemyType=="Shop") {
-          drachmaeBuy(4,"Artifact");
+          drachmaeBuy(3,"Artifact");
           displayPlayerEffect("");
           break;
         }
@@ -2962,7 +2962,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_sleep':
 
         if (enemyType=="Shop") {
-          drachmaeBuy(3,"Level");
+          drachmaeBuy(2,"Level");
           break;
         }
 
@@ -4339,13 +4339,13 @@ function adjustEncounterButtons(){
       setButton('button_block',"1 🪙 Risk",colorPink);
         if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
 
-      setButton('button_grab',"2 🪙 Loot",colorLightBlue);
+      setButton('button_grab',"1 🪙 Loot",colorLightBlue);
         if (savedCoins<2) setButton('button_grab',"2 🪙 Loot",colorDarkGrey);
 
-      setButton('button_sleep',"3 🪙 Level",colorYellow);
+      setButton('button_sleep',"2 🪙 Level",colorYellow);
         if (savedCoins<3) setButton('button_sleep',"3 🪙 Level",colorDarkGrey);
 
-      setButton('button_speak',"4 🪙 Artif.",colorOrange);
+      setButton('button_speak',"3 🪙 Artif.",colorOrange);
         if (savedCoins<4) setButton('button_speak',"4 🪙 Artif.",colorDarkGrey);
 
       setButton('button_cast',"‍-",colorDarkGrey);
