@@ -1699,7 +1699,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Checkpoint":
             if (isFishing){
               isFishing=false;
-              logPlayerAction(actionString,"Threw it far away.");
+              logPlayerAction(actionString,"Threw it back into the water.");
             } else {
               if (enemyTeam.includes("Lover's Memento")){
                 playerAtk++;
@@ -1710,8 +1710,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 nextEncounter();
                 break;
               }
-
-              logPlayerAction(actionString,"Walked away wasting the potential.");
+              logPlayerAction(actionString,"Ditched it onto the ground.");
             }
             nextEncounter();
             break;
@@ -2686,7 +2685,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Your touch was not appreciated.");
             }
             displayEnemyEffect("✋");
-            isfishing=false;
+            isFishing=false;
             nextEncounter();
             break;
 
@@ -3079,7 +3078,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
     };
-    if (isFishing) {
+    if (isFishing && button!="button_cast") {
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
@@ -4339,8 +4338,8 @@ function adjustEncounterButtons(){
       setButton('button_block',"1 🪙 Risk",colorPink);
         if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
 
-      setButton('button_grab',"1 🪙 Loot",colorLightBlue);
-        if (savedCoins<1) setButton('button_grab',"1 🪙 Loot",colorDarkGrey);
+      setButton('button_grab',"1 🪙 Gear",colorLightBlue);
+        if (savedCoins<1) setButton('button_grab',"1 🪙 Gear",colorDarkGrey);
 
       setButton('button_sleep',"2 🪙 Level",colorYellow);
         if (savedCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);

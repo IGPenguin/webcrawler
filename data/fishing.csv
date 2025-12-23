@@ -72,7 +72,8 @@ Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;0;Arthropod;Perhaps could still be
 Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;0;Worthless Junk;Waterlogged and falling apart.<br>;Sifted through for scraps.
 Fishing;💵;Wet Cash;Item;0;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 Fishing;👞;Wet Shoe;Item;0;0;0;0;0;0;0;Worthless Trash;Thoroughly wet leather shoe.<br>;Why did you even pick this up?
-Fishing;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;
+
+Fishing;⚓️;Steel Anchor;Prop;0;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;Unhooked the unfortunate catch.
 
 Fishing;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;0;Questionable Snack;Malevolent glow covers its entire surface.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Suffered harsh spasms
 Fishing;🌿;Miracle Kelp;Consumable;0;0;0;2;0;0;0;Natural Source;Known to be ingested to repel bad spirits.<br><b>+2 🍀 Luck</b>\ restores <b>❤️ Health</b> & <b>🟢 Energy</b>.;Tasted like a fish water
