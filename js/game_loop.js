@@ -1272,7 +1272,10 @@ function redraw(){
       break;
     case "Death":
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
-      if (areaName.includes("Ⱥᵾӿīłīⱥɍɏ")) enemyStatusString=decorateStatusText("🎉","Ⱥȼħīēꝟēᵯēꞥⱦ",colorYellow);
+      if (areaName.includes("Auxiliary")) {
+        enemyStatusString=decorateStatusText("🎉","Achievement",colorOrange);
+        cardUIElement.style.background=colorDarkOrange;
+      }
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Source of Power",colorGold);
@@ -1813,7 +1816,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Gamble");
+          drachmaeBuy(1,"Item");
           break;
         }
 
@@ -2393,7 +2396,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Item");
+          drachmaeBuy(1,"Gamble");
           break;
         }
         
@@ -4337,11 +4340,11 @@ function adjustEncounterButtons(){
       setButton('button_roll',"👣 Leave",colorRed);
       if (savedCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
-      setButton('button_block',"1 🪙 Risk",colorPink);
-        if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
+      setButton('button_block',"1 🪙 Gear",colorLightBlue);
+        if (savedCoins<1) setButton('button_block',"1 🪙 Gear",colorDarkGrey);
 
-      setButton('button_grab',"1 🪙 Gear",colorLightBlue);
-        if (savedCoins<1) setButton('button_grab',"1 🪙 Gear",colorDarkGrey);
+      setButton('button_grab',"1 🪙 Risk",colorPink);
+        if (savedCoins<1) setButton('button_grab',"1 🪙 Risk",colorDarkGrey);
 
       setButton('button_sleep',"2 🪙 Level",colorYellow);
         if (savedCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
