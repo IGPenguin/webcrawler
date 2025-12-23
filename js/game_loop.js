@@ -4621,6 +4621,8 @@ function generateCharacterShareString(){
   var characterShareString="";
     characterShareString+="<b>"+playerName+"</b> "+"•  Lvl "+playerLevel;
     characterShareString+="\n❤️ "+playerHpMax+"  🟢 "+playerStaMax+"  ⚔️ " +playerAtk;
+    characterShareString+="  🍀 " + playerLck;
+    characterShareString+="  🧠 " + playerInt;
     if (playerMgkMax>0) characterShareString+="  🔵 " + playerMgkMax;
     if ((playerPartyString.length+playerLootString.length)>0) characterShareString+="\n";
     if (playerPartyString.length > 0) characterShareString += playerPartyString;
@@ -4645,7 +4647,7 @@ function generateCharacterLegend(logLength=0) {
 
   characterLegend=generateCharacterShareString()+"\n\n"+characterLegend+"\n";
   characterLegend += "https://igpenguin.github.io/stay-dead";
-  characterLegend +=  "\n"+ versionCode;
+  characterLegend +=  "\n"+ versionCode + " ("+window.screen.availHeight+"x"+window.screen.availWidth+")"
 
   return characterLegend;
 }
