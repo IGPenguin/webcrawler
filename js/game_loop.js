@@ -3495,6 +3495,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     toggleUIElement(areaUIElement,1);
     animateUIElement(areaUIElement,"animate__flipInX","1.2");
   }
+  animateUIElement(buttonsContainer,"animate__fadeIn","1.2");
 
   encounterIndex = getNextEncounterIndex();
 
@@ -3518,8 +3519,9 @@ function animateFlipNextEncounter(){
   }
   cardUIElement.removeEventListener("animationend",animationHandler);
 
-  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
-  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2",false,"",false,true);
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2",false,"",false,true);
+
   removeClickListeners();
 
   cardUIElement.addEventListener('animationend',animationHandler);
@@ -4034,8 +4036,8 @@ function gameOver(silent=false){
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
 
-  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite),4);
-  animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite));
+  animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2",false,"",false,true);
   nextEncounter();
 
   //Reset generated data
@@ -4340,8 +4342,8 @@ function adjustEncounterButtons(){
       setButton('button_roll',"👣 Leave",colorRed);
       if (savedCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
-      setButton('button_block',"1 🪙 Gear",colorLightBlue);
-        if (savedCoins<1) setButton('button_block',"1 🪙 Gear",colorDarkGrey);
+      setButton('button_block',"1 🪙 Item",colorLightBlue);
+        if (savedCoins<1) setButton('button_block',"1 🪙 Item",colorDarkGrey);
 
       setButton('button_grab',"1 🪙 Risk",colorPink);
         if (savedCoins<1) setButton('button_grab',"1 🪙 Risk",colorDarkGrey);
@@ -4408,14 +4410,14 @@ function curtainFadeInAndOut(message="",duration=3){
   animateUIElement(curtainUIElement,"animate__fadeIn",0,true);
 
   //Actual animation
-  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",(duration/2)+0.1,true,message);
-  animateUIElement(curtainUIElement,"animate__fadeIn",duration/2,true);
+  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",(duration/2)+0.1,true,message,false,true);
+  animateUIElement(curtainUIElement,"animate__fadeIn",duration/2,true,"",false,true);
   removeClickListeners();
 
   var animationHandler = function(){
     setBackground(areaName);
-    animateUIElement(curtainUIElement,"animate__fadeOut",duration/1.5,true);
-    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration/1.5,true,message);
+    animateUIElement(curtainUIElement,"animate__fadeOut",duration/1.5,true,"",false,true);
+    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration/1.5,true,message,false,true);
     registerClickListeners(1000); //Ooopa, still hacking my way through
     curtainUIElement.removeEventListener("animationend",animationHandler);
   }
@@ -4462,7 +4464,8 @@ function displayEffect(message,documentElement,time=2){
   animateUIElement(documentElement,"animate__fadeOut",time,true,message)
 }
 
-function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false){
+  //Wow, this is nice - https://animate.style
+function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false,removeAnimated=false){
   var typeOfTime = typeof time; //To not forget anymore
   if (typeof time != "string"){
     time = String(time)
@@ -4473,8 +4476,8 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
     documentElement.innerHTML = message;
     documentElement.style.display = "block";
   }
-documentElement.classList.remove(animation);
-void documentElement.offsetWidth; // trigger a DOM reflow
+  documentElement.classList.remove(animation);
+  void documentElement.offsetWidth; // trigger a DOM reflow
 
   if (animateInfinite) {
     documentElement.classList.add("animate__infinite");
@@ -4482,7 +4485,6 @@ void documentElement.offsetWidth; // trigger a DOM reflow
       documentElement.classList.remove("animate__infinite");
     }
   documentElement.style.setProperty("--animate-duration","0.0001s");
-  //Wow, this is nice - https://animate.style
   documentElement.classList.add("animate__animated",animation);
   if (time !="0s"){
     documentElement.style.setProperty("--animate-duration",time+"s");
@@ -4491,7 +4493,7 @@ void documentElement.offsetWidth; // trigger a DOM reflow
     if (hidden){
       documentElement.style.display = "none";
     }
-    documentElement.classList.remove("animate__animated",animation);
+    if (removeAnimated) documentElement.classList.remove("animate__animated",animation);
   });
 }
 
