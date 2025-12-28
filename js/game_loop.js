@@ -2500,15 +2500,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
 
+          case "Trap-Attack":
+            if (totalBonus>0) {
+              displayEnemyCannotEffect();
+              logPlayerAction(actionString,"Touched it, nothing happened.")
+              break;
+            }
           case "Trap": //Grabbing triggers the effect
           case "Trap-Big":
           case "Trap-Roll":
-          case "Trap-Attack":
             if (encounterUsed){
                 logPlayerAction(actionString,"Seems like that was it for now.")
                 displayPlayerCannotEffect();
                 break;
-              }
+            }
             if (totalBonus>0) {
               encounterUsed=true;
             }
@@ -3547,7 +3552,7 @@ function playerCheckLevelUp(){
 }
 
 function playerRest(silent=false){
-  if (!playerRested){
+  if (!playerRested || (enemyType.includes("Trap"))){
     if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
       playerGetStamina(playerStaMax-playerSta,true);
       if (playerMgk<playerMgkMax) playerMgk=playerMgkMax;
@@ -4117,7 +4122,7 @@ function resetEncounterButtons(){
   if (enemyType=="Prop" && totalMalus<0) setButton('button_sleep',playerSleepType+" Sleep",colorSoftRed);
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
   if (playerXP>=playerXPThreshold) setButton('button_sleep',playerSleepType+" Sleep",colorGold);
-  if (playerRested) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+  if (playerRested && (!enemyTeam.includes("Trap"))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
 
   setButton('button_speak',playerSpeakType+" Speak");
   setButton('button_cast',playerCastType+" Cast");
