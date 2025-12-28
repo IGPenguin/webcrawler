@@ -19,8 +19,8 @@ Fading Wildlands;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Fresh Clue;Clear sign
 Fading Wildlands;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unsettling Clue;Clear sign of recent activity.<br>;Followed the trail.
 
 Fading Wildlands;✨;Lingering Starshine;Prop;0;0;0;0;0;1;0;Clear Sky;The stars shine bright like diamonds.<br>;Woke up with a strange power
-Fading Wildlands;☀️;Warming Sunrise;Prop;0;0;1;0;0;0;0;Weather Condition;Good time for an adventure.<br>;Enjoyed a short warm nap.
 Fading Wildlands;🌼;Wildflower Bed;Prop;0;0;0;0;1;0;0;Gentle Ground;Flattened blooms form a soft nest.<br>;Slept peacefully among petals
+Fading Wildlands;☀️;Warming Sunrise;Prop;0;0;1;0;0;0;0;Weather Condition;Good time for an adventure.<br>;Enjoyed a short warm nap.
 Fading Wildlands;☘️;Clover Drift;Prop;0;0;0;1;0;0;0;Lingering Luck;Greens still cling to hope.<br>;Woke up finding a four-leaf clover
 Fading Wildlands;🪨;Sunwarmed Stone;Prop;0;0;1;0;0;0;0;Comforting Weight;Somehow warm despite the cold air.<br>;Muscles loosened as you rested
 Fading Wildlands;🌾;Tall Grass;Prop;0;0;1;0;0;0;0;Natural Bedding;Good place for a short rest.<br>;Rested hidden from the wind
@@ -209,6 +209,7 @@ Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;0;Circumstantial Object;A 
 Forsaken Village;🚧;Reflective Barricade;Prop;0;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
 Forsaken Village;🛢️;Empty Barrel;Prop;0;0;0;0;0;0;0;Circumstantial Object;Its contents are long gone.<br>;
 
+Forsaken Village;⛱️;Umbrella Shade;Prop;0;0;1;0;0;0;0;Chilling Spot;Provides protection against burning sunlight.<br>;Rested well in the shade
 Forsaken Village;🌳;Apple Tree;Prop;0;0;1;0;0;0;0;Natural Resource;A fruit tree in a middle of the village.<br>;Woken up to a sweet apple snack
 Forsaken Village;🔥;Smoldering Campfire;Prop;0;0;1;0;0;0;0;Lingering Warmth;Embers still glow faintly in the ash.<br>;Slept close to a comforting heat
 Forsaken Village;🛏️;Ruined Bed;Prop;0;0;-1;0;0;0;0;Wrecked Furniture;Looks long time abandoned.<br>;Ouch\ you got sore back
@@ -325,11 +326,14 @@ Forsaken Village;🕯️;Burning Candle;Trap;-1;0;0;0;0;0;0;Light Source;You kno
 Forsaken Village;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;0;Natural Hazard;Spiny growth covers the path ahead.<br>;Got pricked by sharp thorns.
 Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;0;0;0;0;0;Living Decay;Spreads faster when watched.<br>;Spores buried into your lungs.
 Forsaken Village;🔥;Burning Pile;Trap-Sleep;-3;0;0;0;0;0;0;Disaster Remnants;The fire is spreading all around.<br>;Burned alive screaming.
+Forsaken Village;🧶;Ensnaring Wool;Trap;0;0;-1;0;0;0;0;Strange Wiggle;Tangles clutch at your fingertips.<br>;Nearly got caught in tangle
 
 Forsaken Village;🔔;Golden Bell;Trap;0;0;0;1;0;0;0;Rally Spot;Makes loud sound when disturbed.<br>;Ringed the bell\ hoping for luck
 Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.
 Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;0;Training Spot;You should give it a shot!<br>;Improved your combat technique!
 Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;0;Party Prop;These are made for smashing!<br>;Improved your attack accuracy!
+
+Forsaken Village;🛎️;Alert Bell;Trap-Attack;0;0;0;0;0;0;0;Loud Prop;This could probably cause some attention.<br>;Hmmm\ seems like nothing happened.
 
 Forsaken Village;🔱;Altar of Hatred;Altar;0;0;0;-3;0;1;0;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;0;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received
@@ -530,6 +534,7 @@ Twisted Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;0;Deserted Home;Looks long ti
 Twisted Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;0;Weather Condition;Time for a well deserved rest.<br>;
 
 Twisted Fairyland;🍄;Glowcap Ring;Prop;0;0;0;1;0;0;0;Bioluminescent Circle;Soft light pulses gently around you.<br>;Woke up strangely optimistic
+Twisted Fairyland;🍄‍🟫;Overgrown Shroom;Prop;0;0;1;0;0;0;0;Chilling Spot;Protects against burning sunlight.<br>;Rested well in the shade
 Twisted Fairyland;🌿;Soft Moss;Prop;0;0;1;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;Well rested on the soft ground
 Twisted Fairyland;🌸;Dreamblossom Patch;Prop;0;0;0;0;1;0;0;Soothing Spores;Sweet scent dulls anxious thoughts.<br>;Dreamed of a welcoming paradise
 Twisted Fairyland;🌲;Needlepine Grove;Prop;0;0;-1;0;0;0;0;Harsh Terrain;It's harder to navigate between the trees.<br>;Rested\ but needles kept poking you
@@ -743,9 +748,10 @@ Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;0;Vegetable;Packs a t
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome
 Twisted Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting
-Twisted Fairyland;🍏;Poisoned Apple;Consumable;-3;0;0;0;0;0;0;Fresh Fruit;Eating it is obviously not a good idea.<br>;Suffered a strong poisoning.
+Twisted Fairyland;🍏;Green Apple;Consumable;-3;0;0;0;0;0;0;Suspicious Fruit;Eating it is obviously not a good idea.<br>;Suffered a strong poisoning
+Twisted Fairyland;🍰;Polished Cake;Consumable;-5;0;0;0;0;0;0;Suspicious Sweet;There's a note(( <i>"The cake is a lie!"</i><br>;Suffered an extreme poisoning
 
-Twisted Fairyland;🍌;Mighty Banana;Consumable;0;1;0;0;0;0;0;Artifact;Packs an extra punch on top of being sweet.<br><b>+1 ⚔️ Damage</b>\ restores <b>❤️ Health</b> + <b>🟢 Energy</b>.;Muscles surged with might
+Twisted Fairyland;🍌;Mighty Banana;Consumable;0;1;0;0;0;0;0;Artifact;Packs an extra punch on top of being sweet.<br><b>+1 ⚔️ Damage</b>\ restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Muscles surged with might
 
 Twisted Fairyland;🍠;Sweet Root;Consumable;0;0;0;0;0;0;0;Common Dish;Earthy\ but also suprisingly filling;
 Twisted Fairyland;🍊;Orange Citrus;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
