@@ -4122,7 +4122,7 @@ function resetEncounterButtons(){
   if (enemyType=="Prop" && totalMalus<0) setButton('button_sleep',playerSleepType+" Sleep",colorSoftRed);
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
   if (playerXP>=playerXPThreshold) setButton('button_sleep',playerSleepType+" Sleep",colorGold);
-  if (playerRested && (!enemyTeam.includes("Trap"))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
+  if (playerRested && (!enemyType.includes("Trap"))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
 
   setButton('button_speak',playerSpeakType+" Speak");
   setButton('button_cast',playerCastType+" Cast");
