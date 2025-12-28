@@ -75,6 +75,8 @@ Fading Wildlands;🌬️;Howling Wind;Curse;0;0;1;0;-1;0;0;Calling Omen;Wind pus
 Fading Wildlands;💧;Dripping Spring;Curse;0;0;0;0;-1;0;0;Unsettling Aura;The atmoshpere thickens with every drop.<br>;Chills went down your spine
 Fading Wildlands;🌗;Half-Moon Glow;Curse;0;0;0;0;-1;0;0;Glowing Blessing;Moonlight lingers unnaturally long.<br>;Felt watched from afar
 
+Fading Wildlands;🎃;Field Scarecrow;Trap-Attack;0;1;0;0;0;0;0;Makeshift Defense;Silently watches over the area.<br>;Improved your combat technique!
+
 Fading Wildlands;💩;Rotten Mound;Trap-Attack;0;0;0;0;-1;0;0;Foul Remains;Whatever died here didn’t rest clean.<br>;Suffered some nasty consequences.
 Fading Wildlands;🕸️;Clinging Web;Trap-Roll;0;0;-1;0;0;0;0;Snaring Threads;Sticky strands refuse to let go.<br>;Got some webs on your face
 
@@ -318,7 +320,7 @@ Forsaken Village;💣;Sizzling Sphere;Trap-Sleep;-2;0;0;0;0;0;0;Flickering Light
 Forsaken Village;🍌;Banana Peel;Trap-Roll;-2;0;0;0;0;0;0;Garbage;Extremely slippery when stepped on.<br>;Slipped and hit your head hard.
 Forsaken Village;⚙️;Exposed Gearwork;Trap;-1;0;0;0;0;0;0;Clockwork Remnant;Old parts still twitch and rattle.<br>;Your finger got caught in the cogs.
 Forsaken Village;🕳️;Suspicious Hole;Trap-Big;-1;0;0;0;0;0;0;Concealed Hazard;The ground feels too hollow to trust.<br>;Got scratched by hidden spikes.
-Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;-1;0;-1;0;0;Disgusting Stench;Terrible stench fills the air.<br>;Suffered some nasty consequences.
+Forsaken Village;💩;Steaming Pile;Trap-Attack;0;0;0;0;-1;0;0;Disgusting Stench;Terrible stench fills the air.<br>;Got the stinky stuff on your hands.
 Forsaken Village;🕯️;Burning Candle;Trap;-1;0;0;0;0;0;0;Light Source;You know the drill\ don't play with fire.<br>;You have burned your hand.
 Forsaken Village;🌵;Thorny Patch;Trap-Roll;-1;0;0;0;0;0;0;Natural Hazard;Spiny growth covers the path ahead.<br>;Got pricked by sharp thorns.
 Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;0;0;0;0;0;Living Decay;Spreads faster when watched.<br>;Spores buried into your lungs.
@@ -619,10 +621,11 @@ Twisted Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcomin
 
 Twisted Fairyland;🗿;False Idol;Trap;-3;0;0;0;0;0;0;Rigged Statue;Its eyes are watching your every move.<br>;It suddenly hit your head.
 Twisted Fairyland;🌪️;Local Tornado;Trap-Attack;-3;0;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Got hit by flying debris
-Twisted Fairyland;🌵;Pointy Cacti;Trap-Roll;-1;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;
+Twisted Fairyland;🌵;Pointy Cacti;Trap-Roll;-1;0;0;0;0;0;0;Wild Flora;Stands tall all alone.<br>;Ouch\ that stings!
+Twisted Fairyland;🫚;Overgrown Root;Trap-Roll;0;0;-1;0;0;0;0;Natural Trap;There's something carved(( <i>"Zdena was here."</i><br>;Slipped\ almost got stuck under that
 Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;0;Disgusting Sight;Terrible stench fills the air.<br>;Got some shit on your hands
-Twisted Fairyland;🔥;Spreading Wildfire;Trap-Sleep;-3;0;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Woke up to be burning alive.
-Twisted Fairyland;🌧️;Aging Timefall;Trap-Sleep;-3;0;0;0;0;0;0;Aging Rain;Every drop felt heavier than the last.<br>;Skin wrinkled overnight.
+Twisted Fairyland;🔥;Spreading Wildfire;Trap-Sleep;-3;0;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Woke up burning alive.
+Twisted Fairyland;🌧️;Aging Timefall;Trap-Sleep;-1;0;0;0;0;0;0;Aging Rain;Every drop felt heavier than the last.<br>;Skin wrinkled overnight.
 
 Twisted Fairyland;⛩️;Sacred Gate;Trap-Roll;0;0;0;3;0;0;0;Ancient Monument;Rumors claim whoever passes will become lucky.<br>;Recieved a sacred blessing!
 Twisted Fairyland;✨;Floating Sparkles;Trap-Sleep;0;0;0;0;0;1;0;Mystical Spot;Tiny sparkling bits are floating in this area.<br>;Got some bits under your skin.
