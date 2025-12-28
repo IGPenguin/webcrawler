@@ -3959,6 +3959,7 @@ function playerUseItem(item,messageSuccess = "Used "+item+" from your inventory.
     if (enemyMsg!="") messageSuccess=enemyMsg;
     if (effect) displayEnemyEffect(item);
     if (consumeItem) playerLootString=playerLootString.replace(item,"");
+    if (playerLootString.length==0) playerLootString=[""]
     displayPlayerEffect(item);
     if (!silent) logPlayerAction(actionString,messageSuccess);
     return true;
