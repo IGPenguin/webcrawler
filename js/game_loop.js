@@ -3927,7 +3927,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
         }
     });
     if (ress!="" && playerUseItem(ress,"n/a","n/a",true,true)){
-      logAction("💀 ▸ "+ress+" Still allive thanks to <b>💀 Cheat Death</b>.");
+      logAction("💀 ▸ "+ress+" Still alive thanks to <b>💀 Cheat Death</b>.");
       displayPlayerGainedEffect();
       playerHp+=1;
       return;
@@ -3936,8 +3936,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
     if (procAbilityChance("📦",50)) {
       logAction("📦 ▸ ❤️‍🩹 Turned out <b>📦 <s>Dead or</s> Alive</b>.");
       displayPlayerGainedEffect();
-      playerHp+=enemyAtk+enemyAtkBonus;
-      if (playerHp>playerHpMax) playerHp=playerHpMax;
+      playerHp+=1;
       return;
     }
 
