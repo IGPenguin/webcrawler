@@ -3171,7 +3171,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   if (!silent) logPlayerAction(actionString,hitMsg);
   enemyHpLost = enemyHpLost + damage;
 
-  if (!magicType && procAbilityChance("🀄️",33) && playerHp<playerHpMax){
+  if (!magicType && procAbilityChance("🀄️",25) && playerHp<playerHpMax){
       logAction("🀄️ "+arrowSymbol+" ✨ Your attack has syphoned health +1 ❤️");
       playerHp+=1;
   }
