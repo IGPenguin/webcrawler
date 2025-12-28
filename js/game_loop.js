@@ -2068,7 +2068,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else {
                 logMessage="Roasted a crispy crust -1 🔵";
                 enemySta=parseInt(enemySta)+1;
-                if (totalBonus==0) enemySta=2;
+                if (enemySta==1) enemySta=2;
                 enemyMsg="That was very tasty";
                 displayEnemyEffect("🔥");
               }
