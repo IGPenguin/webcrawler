@@ -1205,6 +1205,12 @@ function redraw(){
         cardUIElement.style.background=colorDarkPaper;
       }
       if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
+      
+      grabColor=colorWhite;
+      if (enemyStatusString.includes("Valuable")||enemyStatusString.includes("Quest")) grabColor=colorYellow;
+      if (enemyStatusString.includes("Magnificent")) grabColor=colorLightBlue;
+      if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
+      if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
       break;
 
     case "Consumable":
@@ -1437,8 +1443,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (!playerDestined) {
             drachmaeBuy(1,"Tarot");
           } else {
-            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
             displayPlayerCannotEffect();
+            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
           }
           break;
         }
@@ -4188,11 +4194,6 @@ function adjustEncounterButtons(){
       break;
 
     case "Item":
-      grabColor=colorWhite;
-      if (enemyStatusString.includes("Valuable")||enemyStatusString.includes("Quest")) grabColor=colorYellow;
-      if (enemyStatusString.includes("Magnificient")) grabColor=colorLightBlue;
-      if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
-      if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
       setButton('button_grab',"👋 Grab",grabColor);
       setButton('button_roll',"❌ Ditch",colorRed);
       if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Recall",colorRed);
