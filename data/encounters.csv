@@ -439,7 +439,7 @@ Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provid
 Forsaken Village;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
 Forsaken Village;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight
-Forsaken Village;🪓;Steel Axe;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.
+Forsaken Village;🪓;Titansteel Cleaver;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.
 
 Forsaken Village;🥊;Champion Glove;Item;1;1;0;0;0;0;0;Fighting Gear;Improves hand-to-hand combat attack and defense.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 ❤️ Health</b>.;Feeling more confident.
 Forsaken Village;🩼;Disposed Crutch;Item;0;1;1;0;0;0;0;Support Tool;Best of both - support and attack power.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;This will come in handy!
@@ -466,7 +466,7 @@ Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;0;Multi-tool;The tip sure
 Forsaken Village;🔧;Metal Spanner;Item;0;1;0;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.
 Forsaken Village;🪝;Rusty Hook;Item;0;1;0;0;0;0;0;Weathered Tool;Hangs uselessly from the eaves.<br>Provides <b>+1 ⚔️ Damage</b>.;Could still make a bloody mess.
-Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;0;Makeshift Weapon;Kinda heavy to swing around with.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>;Kinda tiring to carry.
+Forsaken Village;🔨;Hefty Hammer;Item;0;1;-1;0;0;0;0;Makeshift Weapon;Kinda heavy to swing around with.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>.;Kinda tiring to carry.
 Forsaken Village;🪖;Trench Helmet;Item;1;0;0;0;0;0;0;Head Protection;Robust protection for adverse conditions.<br>Provides <b>+1 ❤️ Health</b>.;Ready for battle!
 Forsaken Village;📕;First Aid 101;Item;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.
 Forsaken Village;🧢;Cool Hat;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Charisma</b>;Ready to rock\ let's do this!
@@ -1117,7 +1117,7 @@ Shrouded Necropolis;👑;The Blessed Crown;Item;2;0;0;0;2;0;0;<b>Artifact</b>;On
 Shrouded Necropolis;👑;The Cursed Crown;Item;-2;0;0;0;0;3;0;<b>Malevolent Artifact</b>;You should probably leave this old relic alone.<br><b>+3 🔵 Mana</b>\ might cause <b>serious side-effects</b>.;Syphoned your life energy!
 Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
-Shrouded Necropolis;🗡️;Silver Dagger;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Made for killing supernatural monsters.<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
+Shrouded Necropolis;🗡️;Quicksilver Dagger;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Made for killing supernatural monsters.<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.
 
 Shrouded Necropolis;🗡️;Thirsty Blade;Item;-1;2;0;0;0;0;0;Cursed Weapon;Very deadly but wielding it takes a toll.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Felt strangely familiar.
 Shrouded Necropolis;🦴;Human Femur;Item;0;1;0;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong
