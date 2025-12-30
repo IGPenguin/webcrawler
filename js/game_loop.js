@@ -3995,14 +3995,11 @@ function playerWaive(){
 function playerReincarnate(){
   playerNumber++;
   displayPlayerEffect("✨");
-  renewPlayer();
   encounterIndex=3; //Skip tutorial
   playerSta=playerStaMax; //Renew stamina (its empty initially)
   adventureEncounterCount = -1; //Death + tutorial
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-  nextEncounter();
-  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
-
+  
   if (savedCoins>0){
     drachmaShop[0]="area:"+"Fading Wildlands"
     linesStory.splice(encounterIndex+1,1); //RM Realization
@@ -4020,8 +4017,9 @@ function playerReincarnate(){
     pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
     pushEncounter(bonusItem,2);
   }
-  playerKarma=1; //Reset on ress
-  console.log("Karma reset: 1");
+  nextEncounter();
+  curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
+  renewPlayer();
 }
 
 function checkPlayerHasItem(itemArray=validBaits){
