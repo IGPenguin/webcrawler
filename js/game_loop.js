@@ -1067,7 +1067,7 @@ function redraw(){
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (playerPartyString.length > 1) { //Now inicializes with [""]
-        document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;";
+        document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;&nbsp;";
   }
   if (playerLootString.length > 1) { //Now inicializes with [""]
     document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "+playerLootString;
@@ -2779,7 +2779,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else if (playerLootString.includes("📎")) {
-                  logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b>"+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
+                  logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b> "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
                   playerGainXP(1,15*playerLevel,"");
                   nextEncounter();
                 } else {
