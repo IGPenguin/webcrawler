@@ -50,12 +50,12 @@ Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;0;Souvenir;The previous inhabita
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.
 Fishing;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;
 Fishing;💧;Frozen Teardrop;Item;0;0;0;0;-2;1;0;Magical Pin;Tangible proof of previous sins.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Charisma</b>.;Felt a bitter memory
-Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner"\ kinda sad.<br>;Almost got the first place...
+Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner" ...kinda sad.<br>;Almost got the first place...
 
 Fishing;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Embraced the new knowledge.
 Fishing;📔;Waterlogged Diary;Item;0;0;0;0;1;0;0;Knowledge Notes;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Felt like it was written for you.
 
-Fishing;🧢;Sailor’s Cap;Item;0;0;0;2;-1;0;0;Headgear;Smells of seaweed and old tales.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Charisma</b>.;Set it snug on your head.
+Fishing;🧢;Sailor’s Cap;Item;0;0;0;2;-1;0;0;Headgear;Smells of moist seaweed and old tales.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Charisma</b>.;Set it snug on your head.
 Fishing;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the bad guys!
 Fishing;📘;Damned Book;Item;-1;0;0;0;0;1;0;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Joined the dark side!
 Fishing;🏺;Burial Urn;Item;0;0;0;-3;0;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.
@@ -95,7 +95,7 @@ Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;1;0;Intergalactic Traveller;Explo
 
 Fishing;🐌;Water Snail;Small;1;0;0;0;-1;0;0;Underwater Critter;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.
 Fishing;🪱;Tired Worm;Small;1;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;
-Fishing;🦐;Brackish Crawfish;Small;1;0;1;0;0;0;0;Delicacy;A bite of the water’s life.;
+Fishing;🦐;Brackish Crawfish;Small;1;0;1;0;0;0;0;Delicacy;A bite of the water’s life.<br>;
 Fishing;🦑;Tiny Squid;Small;1;0;2;0;0;0;0;Seafood;A little bite of the deep.<br>
 
 Fishing;🦦;Deepwater Otter;Pet;1;1;3;0;0;0;0;Joyful Companion;Brings strange comfort with every splash.<br>;Formed a wet bond.
