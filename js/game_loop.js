@@ -683,6 +683,7 @@ function loadEncounter(index, fileLines = linesStory){
            } else {
               if (enemyName.includes("Tarot")){
                 logAction("👁️‍🗨️ ▸ "+enemyEmoji+" Destiny calls you through a <b>Tarot Card</b>.")
+                displayPlayerEffect("👁️‍🗨️");
               } else {
                 logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
               }
@@ -805,6 +806,7 @@ function drachmaeBuy(price=1,item=""){
     } else if (item=="Gamble")  {
       if (procAbilityChance("",50+playerLck)){
         displayPlayerGainedEffect();
+        displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
         savedCoins+=1; localStorage.setItem('coins', savedCoins); //Didn't spend a drachma when won
         drachmaPrize[0]="area:"+areaName;
@@ -814,6 +816,7 @@ function drachmaeBuy(price=1,item=""){
         logPlayerAction(actionString,"<text style=color:"+colorRed+";>Ooops... you lost the gamble!</text>")
         gamblingLost[0]="area:"+areaName;
         displayPlayerCannotEffect();
+        displayPlayerEffect("❌");
         pushEncounter(gamblingLost);
         nextEncounter();
       }
@@ -3122,21 +3125,23 @@ function enemyRest(stamina){
 }
 
 function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
-  if (enemySta>enemyStaLost){
-    displayEnemyAttackEffect();
-  } else {
-    displayEnemyRestEffect();
-    displayEnemyEffect("💤");
-  }
-
   if (enemyStaLost < enemySta) {
     logPlayerAction(actionString,successMessage); //TODO: switch emojis around >> 🐅 > ⚔️
-    animateUIElement(enemyInfoUIElement,"animate__headShake","0.7"); //Play attack animation
+    //animateUIElement(enemyInfoUIElement,"animate__headShake","0.7");
+    
+    //Play attack animation
+    displayEnemyAttackEffect();
+
     enemyStaLost -= stamina;
     return true;
   } else if (enemyHp - enemyHpLost > 0) { //Enemy rest if not dead
     logPlayerAction(actionString,failMessage);
-    animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate enemy rest
+    //animateUIElement(enemyInfoUIElement,"animate__pulse","0.4");
+    
+    //Animate enemy rest
+    displayEnemyRestEffect();
+    displayEnemyEffect("💤");
+
     enemyStaLost += stamina
     return false;
   } else { //Enemy dead
@@ -3458,7 +3463,7 @@ function isfreePrayEncounter(){
   return returnValue;
 }
 
-function getRandomFish(){ //TODO refactor into encounters.csv
+function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
   isFishing=true;
   previousArea = areaName;
   adventureEncounterCount+=1;
@@ -3467,11 +3472,10 @@ function getRandomFish(){ //TODO refactor into encounters.csv
   lootEncounterIndex = getUnseenLootIndex();
   markAsSeenFishing(lootEncounterIndex);
 
-  //animateUIElement(cardUIElement,"animate__fadeIn","0.8");
-  animateUIElement(cardUIElement,"animate__bounceInUp","1.3");
+  animateUIElement(cardUIElement,"animate__bounceInUp","1.3",false,"",false,true);
 
   toggleUIElement(areaUIElement,1);
-  animateUIElement(areaUIElement,"animate__bounce","1.2");
+  animateUIElement(areaUIElement,"animate__bounce","1.2",false,"",false,true);
 
   encounterRenew();
   return
@@ -4431,7 +4435,7 @@ function curtainFadeInAndOut(message="",duration=3){
 }
 
 function displayEnemyEffect(message){
-  displayEffect(message,document.getElementById('id_enemy_overlay'),"1.5");
+  displayEffect(message,document.getElementById('id_enemy_overlay'));
 }
 
 function displayPlayerEffect(message){
@@ -4439,31 +4443,31 @@ function displayPlayerEffect(message){
 }
 
 function displayPlayerCannotEffect(){
-  animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
+  animateUIElement(playerInfoUIElement,"animate__headShake","0.7",false,"",false,true); //Animate Player not enough stamina
 }
 
 function displayEnemyCannotEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__headShake","0.7"); //Animate enemy not enough stamina
+  animateUIElement(emojiWrapperUIElement,"animate__headShake","0.7",false,"",false,true); //Animate enemy not enough stamina
 }
 
 function displayEnemyDodgeEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.7");
+  animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.7",false,"",false,true);
 }
 
 function displayEnemyAttackEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__bounce","0.7");
+  animateUIElement(emojiWrapperUIElement,"animate__bounce","0.7",false,"",false,true);
 }
 
 function displayEnemyRestEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__pulse","0.7");
+  animateUIElement(emojiWrapperUIElement,"animate__pulse","0.7",false,"",false,true);
 }
 
 function displayPlayerGainedEffect(){
-  animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
+  animateUIElement(playerInfoUIElement,"animate__tada","1",false,"",false,true); //Animate player gain
 }
 
 function displayPlayerRestedEffect(){
-  animateUIElement(playerInfoUIElement,"animate__pulse","0.5"); //Animate player gain
+  animateUIElement(playerInfoUIElement,"animate__pulse","0.5",false,"",false,true); //Animate player gain
 }
 
 function displayEffect(message,documentElement,time=2){
