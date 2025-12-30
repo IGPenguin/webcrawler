@@ -38,9 +38,9 @@ Fishing;🪝;Lucky Hook;Item;0;1;0;1;0;0;0;Fishing Gear;Increases (not only) fis
 Fishing;✂️;Sharp Scissors;Item;0;1;0;0;0;0;0;Makeshift Weapon;One can do a bloody mess with these.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained a violent weapon.
 Fishing;🕶;Cool Sunglasses;Item;0;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🧠 Charisma</b>.;Feels a lot cooler.
 Fishing;👙;Sexy Bikini;Item;0;0;0;0;2;0;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;Feels kind of uncomfortable.
-Fishing;🤿;Diving Goggles;Item;2;0;0;0;0;0;0;Diving Equipment;Serves as a substantial eyesight protection.<br>Provides <b>+2 ❤️ Health</b>.;Put the goggles on.
+Fishing;🤿;Diving Goggles;Item;1;0;0;0;0;0;0;Diving Equipment;Serves as a substantial eyesight protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Put the goggles on.
 Fishing;👓;Reading Glasses;Item;0;0;0;0;1;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+1 🧠 Intellect</b>.;Immediately felt a difference.
-Fishing;💍;Engagement Ring;Item;2;0;0;0;0;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+2 ❤️ Health</b>;Felt a subtle surge in your chest.
+Fishing;💍;Engagement Ring;Item;1;0;0;0;1;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Felt a subtle surge in your chest.
 Fishing;🐒;Driftwood Totem;Item;0;0;0;2;0;0;0;Primitive Idol;Worn by the tide for years.<br>Provides <b>+2 🍀 Luck</b>;Radiates positive energy.
 
 Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.
