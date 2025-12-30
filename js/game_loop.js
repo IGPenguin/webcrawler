@@ -2726,8 +2726,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerLootString+=bait;
               }
 
-              getRandomFish();
               displayEnemyEffect("🪝");
+              getRandomFish();
             } else {
               displayPlayerCannotEffect();
               logPlayerAction(actionString,"Missing a viable fishing bait.")
@@ -3464,6 +3464,9 @@ function isfreePrayEncounter(){
 }
 
 function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
+  toggleUIElement(areaUIElement,1);
+  animateUIElement(areaUIElement,"animate__bounce","1.2",false,"",false,true);
+  animateUIElement(cardUIElement,"animate__bounceInUp","1.2",false,"",false,true);
   isFishing=true;
   previousArea = areaName;
   adventureEncounterCount+=1;
@@ -3471,14 +3474,8 @@ function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
   lastEncounterIndex = encounterIndex-1;
   lootEncounterIndex = getUnseenLootIndex();
   markAsSeenFishing(lootEncounterIndex);
-
-  animateUIElement(cardUIElement,"animate__bounceInUp","1.3",false,"",false,true);
-
-  toggleUIElement(areaUIElement,1);
-  animateUIElement(areaUIElement,"animate__bounce","1.2",false,"",false,true);
-
   encounterRenew();
-  return
+  return true;
 }
 
 function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
@@ -3508,7 +3505,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   if (animateArea) {
     toggleUIElement(areaUIElement,1);
-    animateUIElement(areaUIElement,"animate__flipInX","1.2");
+    animateUIElement(areaUIElement,"animate__flipInX","1.2",false,"",false,true);
   }
   animateUIElement(buttonsContainer,"animate__fadeIn","1.2");
 
@@ -3522,7 +3519,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
     if ((!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
-  animateUIElement(cardUIElement,"animate__fadeIn","1.2");
+  animateUIElement(cardUIElement,"animate__fadeIn","1.2",false,"",false,true);
   redraw();
 }
 
