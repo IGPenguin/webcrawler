@@ -389,12 +389,14 @@ Forsaken Village;🪰;Carrion Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Smells yo
 Forsaken Village;🪰;Itching Fly;Small;1;1;2;0;-1;0;0;Skin Haunter;Always lands exactly where it hurts.<br>;Contracted a deadly disease.
 Forsaken Village;🪰;Annoying Fly;Small;1;0;3;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.
 Forsaken Village;🐁;Albino Mouse;Small;1;2;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🕷️;Cellar Spider;Small;1;1;2;0;-1;0;0;Basement Pest;Surfaced from ground rubble.<br>;Venom stopped your heart.
 
-Forsaken Village;🐖;Starving Porker;Standard;2;1;2;0;3;0;0;Wild Beast;Looking for anything to devour.<br>;Devoured by a porkchop.
-Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;2;0;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
-Forsaken Village;🐀;Starving Rat;Standard;2;1;2;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
-STANDARD
-STANDARD
+Forsaken Village;🐖;Starving Porker;Standard;2;1;2;0;2;0;0;Wild Beast;Looking for anything to devour.<br>;Devoured by a porkchop.
+Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;3;0;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.
+Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.
+Forsaken Village;🐑;Blight Sheep;Standard;3;0;2;0;0;0;0;Diseased Livestock;Sheds its wool in crusty clumps.<br>;Suffocated under its weight.
+Forsaken Village;🕵️‍♂️;Grave Robber;Standard;2;2;2;0;2;0;0;Profane Human;Smells of soil and rotten decay.<br>;Buried in a shallow grave.
+Forsaken Village;🧙‍♀️;Lunatic Hermit;Standard;2;1;1;0;2;1;0;Reclusive Human;Does not care about the decaying world.<br>;Choked with bare hands.
 
 Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
@@ -403,7 +405,9 @@ Forsaken Village;🪡;Possessed Needle;Stingy;2;1;2;1;-1;0;0;Deadly Tool;Whateve
 Forsaken Village;🐝;Busy Hornet;Stingy;1;1;2;0;-1;0;0;Annoying Insect;Oversensitive to close contact.<br>;There was nowhere to run.
 
 Forsaken Village;🦨;Sneaky Stinker;Toxic;2;1;3;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
-Forsaken Village;🪴;Cursed Sprout;Toxic;3;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
+Forsaken Village;🪴;Cursed Sprout;Toxic;2;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
+Forsaken Village;🐀;Bloated Vermin;Toxic;2;2;1;0;-1;0;0;Plagued Critter;Visibly sick with a nasty disease.<br>;Contracted a deadly disease.
+
 Forsaken Village;🦎;Ashen Lizard;Hot;2;2;2;0;0;0;0;Charred Reptile;Sheds soot wherever it slinks.<br>;Its stare froze your breath.
 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;0;0;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!
@@ -413,7 +417,9 @@ Forsaken Village;💂;Cultist Guard;Recruit;2;1;3;0;3;0;0;Humanoid;Does not look
 
 Forsaken Village;🐓;Yard Terror;Swift;1;1;3;0;10;0;0;Rabid Rooster;Looks ridiculous\ hits like regret.<br>;Got your brain pecked out.
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.
+Forsaken Village;🐕;Rabid Watchdog;Swift;2;1;2;0;1;0;0;Tainted Guard;Was trained once\ now only bites.<br>;Mauled beyond recognition.
 Forsaken Village;🦝;Masked Bandit;Swift;2;2;1;0;2;0;0;Devious Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.
+Forsaken Village;🐐;Crazed Goat;Swift;1;0;3;0;0;0;0;Unstable Livestock;Foam drips from its rotten mouth.<br>;Trampled without mercy.
 
 Forsaken Village;🤖;Corrupted Golem;Heavy;2;1;2;0;2;0;0;Automatron;Sparkles and flashing diodes indicate problems.<br>;Torn into two halves.
 Forsaken Village;🐖;Massive Porkchop;Heavy;3;1;1;0;-1;0;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured by a porkchop.
@@ -428,6 +434,8 @@ Forsaken Village;🧸;Demonic Teddy;Demon;2;1;2;1;-1;0;0;Malevolent Toy;Eyes glo
 Forsaken Village;🪑;Cursed Chair;Demon;1;1;1;0;-1;0;0;Animated Object;Whispers from the wood.<br>;Crushed your spine to dust.
 Forsaken Village;🎻;Sinister Violin;Demon;1;1;2;0;-1;0;0;Animated Object;Plays a tune of death.<br>;Heart burst from melody.
 Forsaken Village;🧹;Possessed Broom;Demon;1;1;2;0;-1;0;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
+
+Forsaken Village;👤;Faint Shade;Spirit;1;0;2;0;-1;0;0;Lost Soul;Likely haven't accepted their fade yet.<br>;Hushed by a ghost.
 
 Forsaken Village;🦝;King of Bandits;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;0;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
