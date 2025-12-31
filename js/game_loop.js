@@ -1,8 +1,8 @@
-//Having all this in a one file is truly shameful
-//...submit a pull request if you dare
+//Having all this in one file is truly shameful ...submit a pull request if you dare
+//Note: This game was not planned for 2+ years of development 💀
 
 //Debug
-var versionCode = "ver. 12/29/2025 @ 02:42 AM"
+var versionCode = "ver. 12/31/2025 @ 01:09 AM"
 var initialEncounterOverride=0; //6 skips tutorial
 
 function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}
