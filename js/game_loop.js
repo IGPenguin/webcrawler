@@ -4142,6 +4142,10 @@ function resetEncounterButtons(){
 
 function adjustEncounterButtons(){
   resetEncounterButtons();
+  var originalType=enemyType;
+  if (enemyType.includes("Boss")) {
+    enemyType=enemyType.replace("Boss-","");
+  }
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health",colorPink);
@@ -4383,10 +4387,6 @@ function adjustEncounterButtons(){
           }
         }
       }
-      if (enemyType.includes("Boss")) {
-        if ((playerSta == 0)&&(enemySta-enemyStaLost==0)) document.getElementById('button_grab').innerHTML="🦶 Kick";
-        setButton('button_sleep',"💤 Rest");
-      }
       break;
   }
   //After all button manipulations
@@ -4394,6 +4394,7 @@ function adjustEncounterButtons(){
     if (((enemyAtk+enemyAtkBonus)<=0)) setButton('button_block',"☝️ Tease")
     if (((enemyAtk+enemyAtkBonus)<=0) && playerSta<=0) setButton('button_block',"☝️ Tease",colorDarkGrey)
   }
+  enemyType=originalType;
 }
 
 //UI Effects
