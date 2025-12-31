@@ -6,7 +6,7 @@ Please, follow the rules below.
 
 ### 🕵️‍ Pull request requirements
 
-1. Submit only complete features and data, 
+1. Submit only complete features and data.
 2. Remove any debug or temporary stuff.
 3. Test all code and data changes locally.
 4. Describe the benefits of your changes.
