@@ -1059,10 +1059,10 @@ function redraw(){
   playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
 
+  if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
+
   if (playerMgkMax>0 || playerMgk>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk);}
   if ((playerMgkMax-playerMgk)>0) playerStatusString += emptySymbol.repeat(playerMgkMax-playerMgk);
-
-  if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
 
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   document.getElementById('id_player_party_loot').innerHTML = "";
@@ -1387,14 +1387,14 @@ function appendEnemyStats(){
   //if (enemyDef > 0) { enemyStats += "&nbsp;&nbsp;🔰 " + fullSymbol.repeat(enemyDef);} //Hmm... maybe not?
     //if (enemyDefLost > 0) { enemyStats += emptySymbol.repeat(enemyDefLost); }
 
-  if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
-    if (enemyMgkLost > 0) { enemyStats += emptySymbol.repeat(enemyMgkLost); } //YOLO
-
   if ((enemyAtk+enemyAtkBonus)>0 || enemyAtk!=0) {
     if (enemyHp>0) enemyStats += "&nbsp;&nbsp;"
     enemyStats += "⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
     if (enemyAtkBonus<0) enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
   }
+  
+    if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
+    if (enemyMgkLost > 0) { enemyStats += emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   return enemyStats;
 }
@@ -4632,9 +4632,9 @@ function generateCharacterShareString(){
   var characterShareString="";
     characterShareString+="<b>"+playerName+"</b> "+"•  Lvl "+playerLevel;
     characterShareString+="\n❤️ "+playerHpMax+"  🟢 "+playerStaMax+"  ⚔️ " +playerAtk;
+    if (playerMgkMax>0) characterShareString+="  🔵 " + playerMgkMax;
     characterShareString+="  🍀 " + playerLck;
     characterShareString+="  🧠 " + playerInt;
-    if (playerMgkMax>0) characterShareString+="  🔵 " + playerMgkMax;
     if ((playerPartyString.length+playerLootString.length)>0) characterShareString+="\n";
     if (playerPartyString.length > 0) characterShareString += playerPartyString;
     if (playerLootString.length > 0) characterShareString += playerLootString;
