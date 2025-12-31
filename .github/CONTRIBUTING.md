@@ -1,14 +1,16 @@
 ## 💬 Contributing
 
-If you consider contributing to this repository, please follow the rules below.
+Considering contributing to this repository? <br>
+
+Please, follow the rules below.
 
 ### 🕵️‍ Pull request requirements
 
-1. Implement everything thoroughly, omit any unused or temporary stuff.
-2. Ensure that all code and data changes have been properly tested.
-3. Review the visible output in the final UI and honor the existing formatting.
-4. Briefly describe the benefits of your proposed integration.
+1. Submit only complete features and data, 
+2. Remove any debug or temporary stuff.
+3. Test all code and data changes locally.
+4. Describe the benefits of your changes.
 
 ### ✏️ Right to make changes
 
-Project maintainers have the right and responsibility to remove, edit, or reject any contributions based on their judgement.
+Project maintainers can remove, edit, or reject contributions based on their judgement.
