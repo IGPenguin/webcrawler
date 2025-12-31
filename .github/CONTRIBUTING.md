@@ -13,4 +13,4 @@ Please, follow the rules below.
 
 ### ✏️ Right to make changes
 
-Project maintainers can remove, edit, or reject contributions based on their judgement.
+Project maintainers can remove, edit, or reject any contributions.
