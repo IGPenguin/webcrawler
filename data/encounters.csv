@@ -309,11 +309,10 @@ Forsaken Village;🏥;Deserted Hospital;Container-5;0;0;0;0;0;0;0;Deserted Build
 Forsaken Village;🏤;Deserted Office;Container-5;0;0;0;0;0;0;0;Deserted Building;Faint echoes wander these walls.<br>;
 
 Forsaken Village;⛲️;Freshwater Fountain;Fishing;0;0;0;0;0;0;0;Water Body;Full of pristine cold water.<br>;
+Forsaken Village;⛲️;Sacred Pool;Fishing;0;0;0;0;0;0;0;Water Body;Still and deep\ holds ancient secrets.<br>;
 Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
-Forsaken Village;💧;Cursed Well;Fishing;0;0;0;0;0;0;0;Water Body;Dark water reflects strange shapes.<br>;
-Forsaken Village;🪣;Bottomless Bucket;Fishing;0;0;0;0;0;0;0;Natural Resource;A massively deep well gapes inside.<br>;
-Forsaken Village;⛲️;Sacred Pool;Fishing;0;0;0;0;0;0;0;Water Body;Still and deep\ holds ancient secrets.<br>;
+Forsaken Village;🎏;Carp Pond;Fishing;0;0;0;0;0;0;0;Water Body;The fishes are visible under surface.<br>;
 
 Forsaken Village;👁️‍🗨️;Haunting Echo;Curse;0;0;0;0;-1;0;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Forsaken Village;🎶;Everlasting Melody;Curse;0;0;0;0;-1;0;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
@@ -654,6 +653,7 @@ Twisted Fairyland;🪷;Blooming Pond;Fishing;0;0;0;0;0;0;0;Water Body;Full of be
 Twisted Fairyland;🌾;Overgrown Pond;Fishing;0;0;0;0;0;0;0;Water Body;Smells absolutely terrible.<br>;
 Twisted Fairyland;🌊;Wavy Pond;Fishing;0;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Twisted Fairyland;🍂;Amber Pond;Fishing;0;0;0;0;0;0;0;Murky Waters;Surface is covered with dead leaves.<br>;Drew something from the depths.
+Twisted Fairyland;🪣;Bottomless Bucket;Fishing;0;0;0;0;0;0;0;Natural Resource;A massively deep well gapes inside.<br>;
 
 Twisted Fairyland;🐢;Elder Pope;Friend;0;0;0;0;0;1;0;Unusal Critter;Boasts glorious magical abilities.<br>;Blessed by the Turtle Pope
 Twisted Fairyland;🧚‍♀️;Flying Diva;Friend;1;0;0;0;0;0;0;Magical Creature;Prompts for a lovely conversation.<br>;Shared a lasting moment.
@@ -925,7 +925,7 @@ River of Sorrows;🐋;Massive Fintail;Boss-Heavy;4;3;1;0;4;0;0;Absurd-sized Mons
 River of Sorrows;🐙;Vampiric Squid;Boss-Demon;3;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;Sucked dry bonemarrow-deep.
 River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;3;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.
 
-River of Sorrows;🐟;Surströmming Fish;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy\ ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!
+River of Sorrows;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy\ ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!
 
 River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
@@ -943,7 +943,7 @@ River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not th
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;
 
 //More or less matches fishing (needs retouching soon)
-River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;
+River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.
 River of Sorrows;📿;Witchbane Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br>Provides <b>+2 ⚔️ Damage</b> against <b>💀 Undead</b>.;Gained skill <b>📿 Burn Undead</b>.
 River of Sorrows;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
@@ -1016,6 +1016,7 @@ Shrouded Necropolis;🏺;Sealed Urn;Locked-Container;0;0;0;0;0;0;0;Ceremonial Co
 Shrouded Necropolis;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;
 Shrouded Necropolis;🕳️;Splashing Pit;Fishing;0;0;0;0;0;0;0;Danger Zone;Splashing echoes deep down below.<br>;
 Shrouded Necropolis;🌊;Flooded Crypt;Fishing;0;0;0;0;0;0;0;Hidden Depths;Ripples betray movement below.<br>;
+Shrouded Necropolis;💧;Cursed Well;Fishing;0;0;0;0;0;0;0;Water Body;Dark water reflects strange shapes.<br>;
 
 Shrouded Necropolis;👣;Trailing Shade;Curse;0;0;0;0;-3;0;0;Doppelganger;Footsteps match yours exactly\<br> but they are always late.;Unsure who walked first.
 Shrouded Necropolis;👁️;Unseen Witness;Curse;0;0;0;0;-2;0;0;Guilt Manifest;Always a step behind\ never speaking.<br>It knows what you did.;The anxiety never leaves.
