@@ -1,5 +1,5 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
-Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;0;End of the Line;Provide feedback using the <b>💌 Review</b> button.<br><b>✨ Revive</b> to start <b>another adventure.</b>;
+Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;0;End of the Line;Provide feedback using the <b>💌 Review</b> button.<br><b>✨ Revive</b> to start <b>a new adventure.</b>;
 
 //Tutorial Dreams
 Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;0;Deep Sleep;<b>Can't move a muscle</b>\ you're feeling too weak.<br>Try using <b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.;Caught off guard by a bad thought.
@@ -8,6 +8,7 @@ Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>�
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind((<br>n/a;Woke up in the middle of nowhere.
 
 //Debug
+Shrouded Necropolis;🎠;Horse Statue;Prop;0;0;2;0;0;0;0;Dashing Symbol;Eternal reminder of the royal breed.<br>;Woke up feeling motivated
 
 //Fading Wildlands
 Fading Wildlands;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You don't remember</b> what happened to you.<br>Looks like there's <b>only one way to find out</b>.;Set out on a new adventure!

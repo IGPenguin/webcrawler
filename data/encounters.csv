@@ -210,8 +210,8 @@ Forsaken Village;🪵;Chopped Timber;Prop;0;0;0;0;0;0;0;Traces of Work;Nothing o
 Forsaken Village;🪵;Pile of Wood;Prop;0;0;0;0;0;0;0;Traces of Work;Nothing of particular interest<br>;
 Forsaken Village;🪨;Stone Wall;Prop;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
 Forsaken Village;🪨;Pile of Stones;Prop;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;
-Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
-Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;0;Ruins;Nothing but junk.<br>;
+Forsaken Village;🧱;Rubble Pile;Prop;0;0;0;0;0;0;0;Ruins;Remains of a demolished building.<br>;
+Forsaken Village;🧱;Bricks Pile;Prop;0;0;0;0;0;0;0;Ruins;Remains of a demolished building.<br>;
 Forsaken Village;🪜;Wooden Ladder;Prop;0;0;0;0;0;0;0;Abandoned Tool;Dropped in the middle of nowhere.<br>;
 Forsaken Village;🪑;Burnt Chair;Prop;0;0;0;0;0;0;0;Wrecked Furniture;Dropped in the middle of nowhere.<br>;Moved past that.
 Forsaken Village;🚏;Dated Signpost;Prop;0;0;0;0;0;0;0;Circumstantial Object;A remnant from the distant past.<br>;Continued the adventure.
@@ -434,7 +434,7 @@ Forsaken Village;🪑;Cursed Chair;Demon;1;1;1;0;-1;0;0;Animated Object;Whispers
 Forsaken Village;🎻;Sinister Violin;Demon;1;1;2;0;-1;0;0;Animated Object;Plays a tune of death.<br>;Heart burst from melody.
 Forsaken Village;🧹;Possessed Broom;Demon;1;1;2;0;-1;0;0;Animated Object;Probably a spell gone wild.<br>;Embarrassed by a cleaning tool.
 
-Forsaken Village;👤;Faint Shade;Spirit;1;0;2;0;-1;0;0;Lost Soul;Likely haven't accepted their fade yet.<br>;Hushed by a ghost.
+Forsaken Village;👤;Fading Shade;Spirit;1;0;2;0;-1;0;0;Lost Soul;Likely haven't accepted their fate yet.<br>;Hushed by a ghost.
 
 Forsaken Village;🦝;King of Bandits;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The nightmare of the alleys.<br>;Never mind it's rotten inside.
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;0;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.
@@ -565,15 +565,15 @@ Twisted Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;0;Deserted Home;Looks long ti
 Twisted Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;0;Weather Condition;Time for a well deserved rest.<br>;
 
 Twisted Fairyland;🎄;Starsparkle Spurce;Prop;0;0;0;0;0;1;0;Blessed Flora;Shimmers with overflowing magical energy.<br>;Woken up feeling blessed
-Twisted Fairyland;🍄;Glowcap Ring;Prop;0;0;0;1;0;0;0;Bioluminescent Circle;Soft light pulses gently around you.<br>;Woken up strangely optimistic
-Twisted Fairyland;🍄‍🟫;Overgrown Shroom;Prop;0;0;1;0;0;0;0;Chilling Spot;Protects against burning sunlight.<br>;Rested well in the shade
+Twisted Fairyland;🍄;Glowcap Ring;Prop;0;0;0;0;2;0;0;Bioluminescent Circle;Soft light pulses gently around you.<br>;Woken up strangely optimistic
+Twisted Fairyland;🍄‍🟫;Overgrown Shroom;Prop;0;0;1;0;0;0;0;Chill Spot;Throws shade protecting against burning sunlight.<br>;Rested well in the shade
 Twisted Fairyland;🌿;Soft Moss;Prop;0;0;1;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;Well rested on the soft ground
 Twisted Fairyland;🌸;Dreamblossom Patch;Prop;0;0;0;0;1;0;0;Soothing Spores;Sweet scent dulls anxious thoughts.<br>;Dreamed of a welcoming paradise
 
-Twisted Fairyland;🌲;Needlepine Grove;Prop;0;0;-1;0;0;0;0;Harsh Terrain;It's harder to navigate between the trees.<br>;Rested\ but needles kept poking you
 Twisted Fairyland;☄️;Falling Comet;Prop;-3;0;0;0;0;0;0;Burning Debris;Bright light coming closer and closer.<br>;Completely wiped by an explosion
-BADPROP
-BADPROP
+Twisted Fairyland;🍄;Fruiting Fungi;Prop;-1;0;-2;0;0;0;0;Hidden Danger;Mature growth spreading its spores around.<br>;Got some spores into your lungs
+Twisted Fairyland;🌲;Needlepine Grove;Prop;0;0;-1;0;0;0;0;Harsh Terrain;It's harder to navigate between the trees.<br>;Rested\ but needles kept poking you
+Twisted Fairyland;🎍;Sharp Bamboo;Prop;-1;0;0;0;0;0;0;Harsh Flora;Uncomfortable on the very first look.<br>;Got small cuts all over you.
 
 Twisted Fairyland;🪵;Hollow Log;Container;0;0;0;0;0;0;0;Natural Stash;Hides what shouldn't be here.<br>;
 Twisted Fairyland;🏺;Painted Amphora;Container;0;0;0;0;0;0;0;Disturbing Scenery;Sends shivers down the spine.<br>;
@@ -634,10 +634,10 @@ Twisted Fairyland;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;0;Deserted Buil
 Twisted Fairyland;🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.
 Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.
 
+Twisted Fairyland;🌈;Fantastic Rainbow;Curse;0;0;0;2;0;0;0;Weather Phenomenon;Promise of a good luck moving forward.<br>;Got yourself a lucky blessing
 Twisted Fairyland;💫;Twirling Glow;Curse;0;0;1;0;0;0;0;Magic Aura;Dizzying light spins around your head.<br>;Let the good vibes dance within.
 Twisted Fairyland;✨;Sparkly Mist;Curse;1;0;0;0;0;0;0;Magic Anomaly;Warming aura surrounds this spot.<br>;Let the warmth come inside.
-Twisted Fairyland;🌈;Brief Rainbow;Curse;0;0;0;3;0;0;0;Weather Condition;The end of the rainbow always holds treasure.<br>At least for those who believe.;Brought yourself a lucky blessing!
-Twisted Fairyland;✨;Whispering Glow;Curse;0;0;0;0;2;0;0;Magical Phenomenon;Tiny glimmers beckon from the shadows.<br>;Let them guide your steps.
+Twisted Fairyland;✨;Whispering Glow;Curse;0;0;0;0;1;0;0;Magical Phenomenon;Tiny glimmers beckon from the shadows.<br>;Let them guide your steps.
 Twisted Fairyland;🌟;Stardust Drizzle;Curse;0;0;0;1;0;0;0;Weather Anomaly;Fine shimmering dust floats through the air.<br>;You shimmer with strange luck.
 Twisted Fairyland;💧;Moonkissed Dew;Curse;0;0;0;0;0;1;0;Natural Phenomenon;Dewdrops shimmer like silver under no sun.<br>;Embraced the magical power.
 
@@ -667,7 +667,7 @@ Twisted Fairyland;💩;Dung Pile;Trap-Attack;0;0;0;0;-1;0;0;Disgusting Sight;Ter
 Twisted Fairyland;🔥;Spreading Wildfire;Trap-Sleep;-3;0;0;0;0;0;0;Natural Disaster;It's spreading all around.<br>;Woke up burning alive.
 Twisted Fairyland;🌧️;Aging Timefall;Trap-Sleep;-1;0;0;0;0;0;0;Aging Rain;Every drop felt heavier than the last.<br>;Skin wrinkled overnight.
 
-Twisted Fairyland;⛩️;Sacred Gate;Trap-Roll;0;0;0;3;0;0;0;Ancient Monument;Rumors claim whoever passes will become lucky.<br>;Recieved a sacred blessing!
+Twisted Fairyland;⛩️;Sacred Gate;Trap-Roll;0;0;0;3;0;0;0;Ancient Monument;Rumors claim whoever passes becomes lucky.<br>;Recieved a sacred blessing!
 Twisted Fairyland;✨;Floating Sparkles;Trap-Sleep;0;0;0;0;0;1;0;Mystical Spot;Tiny sparkling bits are floating in this area.<br>;Got some bits under your skin.
 
 Twisted Fairyland;🫧;Bubbling Chasm;Fishing;0;0;0;0;0;0;0;Opportunity;Murky liquid bubbling on the surface.<br>;Drew something from the depths.
@@ -860,24 +860,26 @@ Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶\🗿;0;0;0;0;0;0
 Twisted Fairyland;🦤;Hungry Dodo;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Unusal Critter;Known for being selfish\ maybe not this time.<br>It is looking for(( n/a;Willingly shared something.
 
 //River of Sorrows
-River of Sorrows;☁️;Misty Veil;Prop;0;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;Sailed towards the horizon.
-River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;Sailed through the fog.
-River of Sorrows;💨;Cold Wind;Prop;0;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the fog.<br>;Sailed with the wind.
 River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.
+River of Sorrows;🪵;Floating Logs;Prop;0;0;0;0;0;0;0;Scattered Rubble;Building remains dancing on the surface.<br>;Sailed through the debris.
 River of Sorrows;🌿;Drifting Algae;Prop;0;0;0;0;0;0;0;Scattered Growth;Soft green strands swirl gently.<br>;Sailed through the debris.
 River of Sorrows;🪶;Drifting Feather;Prop;0;0;0;0;0;0;0;Flight Remnants;Floats the currents with no effort.<br>;Sailed through the debris.
+River of Sorrows;☁️;Misty Veil;Prop;0;0;0;0;0;0;0;Weather Condition;The water and air become one.<br>;Sailed towards the horizon.
+River of Sorrows;☁️;Thick Fog;Prop;0;0;0;0;0;0;0;Weather Condition;Cannot see even few meters forward.<br>;Sailed through the fog.
 River of Sorrows;️⛵️️;Distant Boat;Prop;0;0;0;0;0;0;0;Horizon Transport;They are moving too fast to reach.<br>;Couldn't keep up with the boat.
 
-River of Sorrows;🌙;Moonlit Current;Prop;0;0;0;0;1;0;0;Silver Flow;Light dances on moving water.<br>;Dreamed of the distant shores
-GOODPROP
-GOODPROP
-GOODPROP
+River of Sorrows;🌙;Moonlit Current;Prop;0;0;0;0;1;0;0;Silver Flow;Light dances on the moving waves.<br>;Dreamed of the distant shores
+River of Sorrows;💨;Favorable Wind;Prop;0;0;1;0;0;0;0;Weather Condition;Powerful currents blow your way.<br>;Drifted forward with no effort
+River of Sorrows;🌦️;Sparkling Rain;Prop;0;0;0;0;1;0;0;Weather Condition;Each drops promises a better future.<br>;Woke up to positive vibes
+River of Sorrows;🌼;Blooming Waters;Prop;0;0;0;1;0;0;0;Aquatic Flora;Flowers indicate favourable currents.<br>;Woke up feeling lucky
+🏝️ GOODPROP
+🏖️ GOODPROP
 
-River of Sorrows;🎶;Siren Song;Prop;-1;0;0;0;0;0;0;Unsettling Feeling;Calls for lost souls to come.<br>;Dreamed of a terrible heartbreak
-River of Sorrows;⚱️;Floating Urn;Prop;0;0;0;-1;0;0;0;Funerary Relic;River water hugs its base\ waving it around.<br>;Got haunted by bad spirits
-GOODPROP
-GOODPROP
+River of Sorrows;🎶;Siren Song;Prop;-3;0;0;0;0;0;0;Unsettling Feeling;Calls for lost souls to come.<br>;Dreamt of a terrible heartbreak
+River of Sorrows;💨;Cold Currents;Prop;-1;0;0;0;0;0;0;Weather Condition;Icy gusts cut through the thick fog.<br>;Harsh cold got deep into your bones
+River of Sorrows;🪸;Shallow Reef;Prop;0;0;-2;0;0;0;0;Hidden Danger;Threatens only the inattentive sailors.<br>;Had to force unstuck your paddle
+River of Sorrows;⚱️;Floating Urn;Prop;0;0;0;-1;0;0;0;Funerary Relic;The water hugs its base\ waving it around.<br>;Got haunted by bad spirits
 
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
 River of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;
@@ -898,12 +900,20 @@ River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;0;Water Condition;Water
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;0;Weather Condition;Small drops are hitting your body.<br>;The rain has lured some prey!
 River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;Something jumped the hook!
 
+River of Sorrows;⛈️;Nasty Storm;Trap-Sleep;0;0;0;0;-2;0;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
 River of Sorrows;⛈️;Severe Storm;Trap-Sleep;-3;0;0;0;0;0;0;Weather Condition;Better not linger .<br>;Got struck by lightning!
 River of Sorrows;☁️;Toxic Cloud;Trap-Sleep;-1;0;0;0;0;0;0;Nasty Gas;Noticed an almost invisible haze.<br>;It got deep into your lungs.
+River of Sorrows;🌪️;Violent Hurricane;Trap-Sleep;-6;0;0;0;0;0;0;Natural Disaster;Swallows anything in its way.<br>;Got hit by flying debris
 
-River of Sorrows;🌪️;Violent Hurricane;Curse;-6;0;0;0;0;0;0;Natural Disaster;Swallows anything in its way.<br>;Got hit by flying debris
+OTHERTRAP
+OTHERTRAP
+OTHERTRAP
+OTHERTRAP
+
 River of Sorrows;🗣️;Muffled Screams;Curse;0;0;0;-2;0;0;0;Distant Noise;Disturbing voices begging for mercy.<br>;Depression intensified
-River of Sorrows;⛈️;Nasty Storm;Curse;0;0;0;0;-2;0;0;Weather Condition;Really nothing interesting in sight.<br>;Morale broken by the weather
+CURSE
+CURSE
+CURSE
 
 River of Sorrows;🕷️;Water Skipper;Small;1;0;3;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;0;Cephalopod;Wriggles with unsettling energy.<br>;
@@ -948,9 +958,9 @@ River of Sorrows;🐋;Massive Fintail;Boss-Heavy;4;3;1;0;4;0;0;Absurd-sized Mons
 River of Sorrows;🐙;Vampiric Squid;Boss-Demon;3;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;Sucked dry bonemarrow-deep.
 River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;3;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.
 
+River of Sorrows;🥥;Drifting Shell;Consumable;1;0;1;0;0;0;0;<b>Artifact</b>;Natural health and energy booster\ lucky find.<br>Provides <b>+1 ❤️ Health & 🟢 Energy</b> bonus.;Yum yum\ very sweet!
 River of Sorrows;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy\ ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!
 
-River of Sorrows;🥥;Cracked Coconut;Consumable;0;0;1;0;0;0;0;Sweet Refreshment;Natural energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🥤;Coke Cup;Consumable;0;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
 River of Sorrows;🧋;Floating Cup;Consumable;0;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -1007,16 +1017,17 @@ Shrouded Necropolis;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;0;Chilling Remnant;A toot
 Shrouded Necropolis;🌾;Dead Reeds;Prop;0;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;
 Shrouded Necropolis;⛓️‍💥;Broken Shakles;Prop;0;0;0;0;0;0;0;Suspicious Clue;Probably left behind by an escaped prisoner.<br>;Followed the way ahead.
 
-GOODPROP
-GOODPROP
-GOODPROP
+Shrouded Necropolis;✝️;Saint's Grave;Prop;0;0;0;3;0;0;0;Blessed Remains;The resting place of a blessed soul.<br>;Woke up feeling blessed
+Shrouded Necropolis;🎠;Horse Statue;Prop;0;0;2;0;0;0;0;Dashing Symbol;Eternal reminder of the royal breed.<br>;Woke up feeling extra fast
+Shrouded Necropolis;🗿;Stone Guardian;Prop;0;0;1;0;0;0;0;Hulking Authority;Tall statue provides calming comfort.<br>;Rested without a flinch
+Shrouded Necropolis;🌺;Blessed Ground;Prop;0;0;0;1;0;0;0;Safe Haven;Blooming flowers indicate comfort.<br>;Woke up feeling lucky
 
-Shrouded Necropolis;🩸;Blood-Stained Stone;Prop;-1;1;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;Woken up by a bloodlust!
+Shrouded Necropolis;🩸;Bloodstained Stone;Prop;-1;1;0;0;0;0;0;Eerie Marker;Blood seeps through the cracks.<br>;Woken up by a bloodlust!
 Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;-1;0;0;0;Silent Relic;Its colour slowly fades away.<br>;Cursed by the spirit residue
 Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;-1;0;0;Final Destination;The text is almost fully faded.<br>;Haunted by the resident spirit
 Shrouded Necropolis;⏳;Frozen Hourglass;Prop;0;0;-1;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;Woke up with a sluggish aura
 Shrouded Necropolis;⚰️;Broken Coffin;Prop;0;0;0;0;-1;0;0;Ruins;Wood splinters litter the ground.<br>;Sleeping here took its toll
-
+ 
 Shrouded Necropolis;🏺;Ancient Urn;Container;0;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;
 Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;
 Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;

@@ -395,7 +395,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
     }
     if (savedCoins==0){
       loadEncounter(4);
-      enemyName="Deja Vu?";
+      enemyName="Familiar Moment";
       enemyEmoji="🤔";
       playerSta=playerStaMax;
       logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
