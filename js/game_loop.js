@@ -1506,13 +1506,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyHit(playerAtk);
             break;
 
-          case "Undead": //You hit first, they hit back if they have stamina
+          //You hit first, they hit back if they have stamina
+          case "Demon":
+          case "Undead": 
             if (playerLootString.includes("📿")) {
               playerAtkBonus=2;
               logAction("📿 ▸ ⚔️ Your attack was blessed with +2 ⚔️")
             }
           case "Standard":
-          case "Demon":
           case "Heavy":
           case "Recruit":
           case "Pet":
