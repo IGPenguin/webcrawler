@@ -1,6 +1,6 @@
 ## ⚔️ Stay Dead
 ### 🖤 About this project
-Another text-based rougelike RPG, this one is written in JavaScript + driven by .csv data.<br>
+Another text-based roguelike RPG, this one is written in JavaScript + driven by .csv data.<br>
 <br>
 <b>→ [Play in browser!](https://igpenguin.github.io/stay-dead)</b> _(optimized for iPhone)_<br>
 <br>
