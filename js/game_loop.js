@@ -3465,8 +3465,8 @@ function isfreePrayEncounter(){
 
 function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
   toggleUIElement(areaUIElement,1);
-  animateUIElement(areaUIElement,"animate__bounce","1.2",false,"",false,true);
-  animateUIElement(cardUIElement,"animate__bounceInUp","1.2",false,"",false,true);
+  animateUIElement(areaUIElement,"animate__bounce","1.2");
+  animateUIElement(cardUIElement,"animate__bounceInUp","1.2");
   isFishing=true;
   previousArea = areaName;
   adventureEncounterCount+=1;
@@ -3505,7 +3505,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
 
   if (animateArea) {
     toggleUIElement(areaUIElement,1);
-    animateUIElement(areaUIElement,"animate__flipInX","1.2",false,"",false,true);
+    animateUIElement(areaUIElement,"animate__flipInX","1.2");
   }
   animateUIElement(buttonsContainer,"animate__fadeIn","1.2");
 
@@ -3519,7 +3519,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
     curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
     if ((!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
-  animateUIElement(cardUIElement,"animate__fadeIn","1.2",false,"",false,true);
+  animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   redraw();
 }
 
@@ -3531,8 +3531,8 @@ function animateFlipNextEncounter(){
   }
   cardUIElement.removeEventListener("animationend",animationHandler);
 
-  animateUIElement(areaUIElement,"animate__flipOutX","1.2",false,"",false,true);
-  animateUIElement(cardUIElement,"animate__flipOutY","1.2",false,"",false,true);
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
 
   removeClickListeners();
 
@@ -4047,7 +4047,7 @@ function gameOver(silent=false){
   playerMgk=0;
 
   curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite));
-  animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2",false,"",false,true);
+  animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
 
   //Reset generated data
@@ -4439,31 +4439,31 @@ function displayPlayerEffect(message){
 }
 
 function displayPlayerCannotEffect(){
-  animateUIElement(playerInfoUIElement,"animate__headShake","0.7",false,"",false,true); //Animate Player not enough stamina
+  animateUIElement(playerInfoUIElement,"animate__headShake","0.7"); //Animate Player not enough stamina
 }
 
 function displayEnemyCannotEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__headShake","0.7",false,"",false,true); //Animate enemy not enough stamina
+  animateUIElement(emojiWrapperUIElement,"animate__headShake","0.7"); //Animate enemy not enough stamina
 }
 
 function displayEnemyDodgeEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.7",false,"",false,true);
+  animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.7");
 }
 
 function displayEnemyAttackEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__bounce","0.7",false,"",false,true);
+  animateUIElement(emojiWrapperUIElement,"animate__bounce","0.7");
 }
 
 function displayEnemyRestEffect(){
-  animateUIElement(emojiWrapperUIElement,"animate__pulse","0.7",false,"",false,true);
+  animateUIElement(emojiWrapperUIElement,"animate__pulse","0.7");
 }
 
 function displayPlayerGainedEffect(){
-  animateUIElement(playerInfoUIElement,"animate__tada","1",false,"",false,true); //Animate player gain
+  animateUIElement(playerInfoUIElement,"animate__tada","1"); //Animate player gain
 }
 
 function displayPlayerRestedEffect(){
-  animateUIElement(playerInfoUIElement,"animate__pulse","0.5",false,"",false,true); //Animate player gain
+  animateUIElement(playerInfoUIElement,"animate__pulse","0.5"); //Animate player gain
 }
 
 function displayEffect(message,documentElement,time=2){
@@ -4471,7 +4471,7 @@ function displayEffect(message,documentElement,time=2){
 }
 
   //Wow, this is nice - https://animate.style
-function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false,removeAnimated=false){
+function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false){
   var typeOfTime = typeof time; //To not forget anymore
   if (typeof time != "string"){
     time = String(time)
@@ -4496,10 +4496,10 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
     documentElement.style.setProperty("--animate-duration",time+"s");
   }
   documentElement.addEventListener('animationend', () => {
-    if (hidden){
-      documentElement.style.display = "none";
-    }
-    if (removeAnimated) documentElement.classList.remove("animate__animated",animation);
+  if (hidden){
+    documentElement.style.display = "none";
+  }
+  documentElement.classList.remove("animate__animated",animation);
   });
 }
 
