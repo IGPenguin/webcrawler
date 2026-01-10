@@ -1,5 +1,23 @@
 //Loot & food ideas
-💸 = 5x Coin (Game End)
+
+Fading Wildlands;🪽;Hermes Pinion;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides <b>10% chance</b> to perform an <b>extra action</b><br> <b>before the enemy</b> reacts <b>during combat</b>.;Gained skill <b>🪽 Burst of Speed</b>.
+
+🔭 Scientific Mechanism
+🔬 Scientific Mechanism
+🖲️ Magical Altar
+🏮 Lingering Lantern
+💈 Swirled Cylinder
+⏱️ Stunning Ticker - 10% for enemies to skip their attack
+🎈 Lightening Blob - +4 sta -1 hp (feeling lighter, but easier to hurt) 
+🎷 Boring Sax
+🎺 Rythimic Trumpet
+🪗 Annoying Acordeon 
+🖍️ Red Marker
+🧧 Mystic Letter
+🎞️ Past Clues
+🧻 Useless Trash
+🔦 Adventure Lantern
+⭐️ Fallen Star
 
 Depths of Slumber;⚱️;Ming-dynasty Vase;Item;0;0;0;0;0;0;Artifact;Contents explode when violently disturbed.;???
 Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.
@@ -16,10 +34,7 @@ Fishing;🎭;Masquerade Mask;Item;0;0;0;0;2;0;Disguise;Looked fancy once upon a 
 Fishing;🪗;Rusty Harmonica;Item;0;0;0;0;2;0;Musical Junk;Only plays the song of lost sailors.<br>Provides <b>+2 🧠 Charisma</b>.;Played a haunting tune.
 Fishing;📌;Rusty Pin;Item;0;1;0;0;0;0;Scrap Weapon;Sharp enough for mischief.<br>Provides <b>+1 ⚔️ Damage</b>.;Stuck it somewhere useful.
 Fishing;🪢;Knotted Rope;Item;0;0;1;0;0;0;Ropework;Knots tell their own story.<br>Provides <b>+1 🟢 Energy</b>.;Untangled some secrets.
-Fishing;🧼;Slippery Soap;Item;0;0;0;0;1;0;Hygiene;Slipped through the fingers.<br>Provides <b>+1 🧠 Charisma</b>.;Sudsy thoughts.
 Loot;🪞;Cracked Mirror;Item;0;0;0;-1;1;0;Disturbing Reflection;Reveals a hidden truth.<br>Provides <b>+1 🧠 Intimidation</b> for <b>-1 🍀 Luck</b>.;Shuddered at the sight.
-Loot;🐚;Conch Shell;Item;0;0;1;0;0;0;Sea's Voice;Still carries an echo.<br>Provides <b>+1 🟢 Energy</b>.;Whispered a song of the sea.
-Loot;🪝;Fish Hook;Item;0;1;0;0;0;0;Fisherman's Tool;Simple, but effective.<br>Provides <b>+1 ⚔️ Damage</b>.;Caught more than fish.
 Loot;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;Handcarved Curio;Worn by sea and time.<br>Provides <b>+1 ❤️ Health</b>.;Clutched it in a memory.
 Loot;🧊;Cold Stone;Item;0;0;1;0;0;0;Chill Charm;Cold enough to bite.<br>Provides <b>+1 🟢 Energy</b>.;Pressed it to your forehead.
 Shrouded Necropolis;🪶;Obsidian Feather;Item;0;1;0;0;0;0;Mysterious Trinket;Whispers echo within.<br>Provides <b>+1 ⚔️ Damage</b>.;Unearthly shivers.
@@ -35,7 +50,6 @@ Forsaken Village;📿;Prayer Beads;Item;0;0;0;1;1;0;Sacred Trinket;Counting the 
 Forsaken Village;🔫;Unfair Advantage;Item;0;0;0;0;0;0;<b>Artifact</b>;The wielder always attacks first.<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
 Forsaken Village;♟️;Chess Figure;Item;0;0;0;0;0;0;<b>Artifact</b>;Provides <b>+2 🧠 Intelect</b>.<br>;XXX
 Forsaken Village;🪅;Big Piñata;Container;0;0;0;0;0;0;<b>Artifact</b>;<b>-1 ❤️ XXX</b> and <b>-1 🧠 XXX</b>.<br>;XXX
-Forsaken Village;🧷;Useful Pin;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
 Forsaken Village;🎴;Daunting Shém;Item;0;0;0;0;4;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained exceptional insight
 Endless Ocean;️❤️‍🩹;First Aid Kit;Item;0;0;0;0;0;0;Artifact;Patch yourself up after every beating.<br>Heals <b>+1 ❤️ Health</b> after a fight.;
 Twisted Fairyland;🪡;Thread of Fate;Item;0;0;0;2;0;0;Mystical Thread;Whispers of destiny woven tight.<br>Provides <b>+2 🍀 Luck</b>.;
