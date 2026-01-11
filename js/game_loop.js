@@ -1443,7 +1443,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Gamble");
+          drachmaeBuy(1,"Tarot");
           break;
         }
 
@@ -1821,7 +1821,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Item");
+          drachmaeBuy(1,"Gamble");
           break;
         }
 
@@ -2402,7 +2402,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Shop") {
           if (!playerDestined) {
-            drachmaeBuy(1,"Tarot");
+            drachmaeBuy(1,"Item");
           } else {
             displayEnemyCannotEffect();
             logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
@@ -4346,17 +4346,18 @@ function adjustEncounterButtons(){
       break;
 
     case "Shop":
-      setButton('button_grab',"1 🪙 Tarot",colorPaper);
-        if (playerDestined) setButton('button_grab',"1 🪙 Tarot",colorDarkGrey);
-        if (savedCoins<1) setButton('button_grab',"1 🪙 Tarot",colorDarkGrey);
+      setButton('button_attack',"1 🪙 Tarot",colorPaper);
+        if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+        if (savedCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+
       setButton('button_roll',"👣 Leave",colorRed);
       if (savedCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
-      setButton('button_block',"1 🪙 Item",colorLightBlue);
-        if (savedCoins<1) setButton('button_block',"1 🪙 Item",colorDarkGrey);
+      setButton('button_grab',"1 🪙 Item",colorLightBlue);
+        if (savedCoins<1) setButton('button_grab',"1 🪙 Item",colorDarkGrey);
 
-      setButton('button_attack',"1 🪙 Risk",colorPink);
-        if (savedCoins<1) setButton('button_attack',"1 🪙 Risk",colorDarkGrey);
+      setButton('button_block',"1 🪙 Risk",colorPink);
+        if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
 
       setButton('button_sleep',"2 🪙 Level",colorYellow);
         if (savedCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
