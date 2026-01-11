@@ -1443,7 +1443,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Tarot");
+          if (!playerDestined) {
+            drachmaeBuy(1,"Tarot");
+          } else {
+            displayEnemyCannotEffect();
+            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
+          }
           break;
         }
 
@@ -2401,12 +2406,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
 
         if (enemyType=="Shop") {
-          if (!playerDestined) {
-            drachmaeBuy(1,"Item");
-          } else {
-            displayEnemyCannotEffect();
-            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
-          }
+          drachmaeBuy(1,"Item");
           break;
         }
         
