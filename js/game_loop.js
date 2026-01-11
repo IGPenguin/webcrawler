@@ -3481,10 +3481,20 @@ function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
 }
 
 function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
-  var success = (Math.floor(Math.random() * 100)<=abilityChance)
-  if (success && playerLootString.includes(abilityEmoji)) {
-    return true;
+  if (!playerLootString.includes(abilityEmoji)){
+    return false;
   }
+
+  var randomRoll = (Math.floor(Math.random() * 100))
+  var success = (randomRoll<=abilityChance)
+
+  console.log("requires:"+abilityEmoji);
+  console.log("chance:"+abilityChance+"/100");
+  console.log("rolled:"+randomRoll);
+  console.log("success:"+success);
+  console.log("----");
+  
+  return success;
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
