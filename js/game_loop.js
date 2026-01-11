@@ -2653,6 +2653,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               playerName=polymorph+" "+playerName;
               displayPlayerCannotEffect();
+              playerRest(true);
             }
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
