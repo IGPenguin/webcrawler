@@ -69,7 +69,7 @@ var usedShopMessages=[];
 
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷","🪠","🗞️","🔱","🧹","🥏"])
 var validBlades=(["🔪","🗡️","🪛","🪚","🪓","✒️","🖋️","🖊️","🏹","🪝","🦷","✂️","🔱"])
-var castTypes=(["⚡️","☄️","🍭","🔥","🪄"])
+var castTypes=(["⚡️","☄️","🍭","🔥","🪄","🥢","🌙","🎐","🎋","🖌️","📔","📘","📓"])
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","🦐","🦂","🍤","🐙","🐛","🦑","🐌"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
@@ -1443,7 +1443,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Gamble");
+          if (!playerDestined) {
+            drachmaeBuy(1,"Tarot");
+          } else {
+            displayEnemyCannotEffect();
+            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
+          }
           break;
         }
 
@@ -1821,7 +1826,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Item");
+          drachmaeBuy(1,"Gamble");
           break;
         }
 
@@ -2401,12 +2406,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
 
         if (enemyType=="Shop") {
-          if (!playerDestined) {
-            drachmaeBuy(1,"Tarot");
-          } else {
-            displayEnemyCannotEffect();
-            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
-          }
+          drachmaeBuy(1,"Item");
           break;
         }
         
@@ -2653,6 +2653,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
               playerName=polymorph+" "+playerName;
               displayPlayerCannotEffect();
+              playerRest(true);
             }
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
@@ -3480,10 +3481,20 @@ function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
 }
 
 function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
-  var success = (Math.floor(Math.random() * 100)<=abilityChance)
-  if (success && playerLootString.includes(abilityEmoji)) {
-    return true;
+  if (!playerLootString.includes(abilityEmoji)){
+    return false;
   }
+
+  var randomRoll = (Math.floor(Math.random() * 100))
+  var success = (randomRoll<=abilityChance)
+
+  if (abilityEmoji!="") console.log("requires:"+abilityEmoji);
+  console.log("chance:"+abilityChance+"/100");
+  console.log("rolled:"+randomRoll);
+  console.log("success:"+success);
+  console.log("----");
+  
+  return success;
 }
 
 function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
@@ -4346,17 +4357,18 @@ function adjustEncounterButtons(){
       break;
 
     case "Shop":
-      setButton('button_grab',"1 🪙 Tarot",colorPaper);
-        if (playerDestined) setButton('button_grab',"1 🪙 Tarot",colorDarkGrey);
-        if (savedCoins<1) setButton('button_grab',"1 🪙 Tarot",colorDarkGrey);
+      setButton('button_attack',"1 🪙 Tarot",colorPaper);
+        if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+        if (savedCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+
       setButton('button_roll',"👣 Leave",colorRed);
       if (savedCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
-      setButton('button_block',"1 🪙 Item",colorLightBlue);
-        if (savedCoins<1) setButton('button_block',"1 🪙 Item",colorDarkGrey);
+      setButton('button_grab',"1 🪙 Item",colorLightBlue);
+        if (savedCoins<1) setButton('button_grab',"1 🪙 Item",colorDarkGrey);
 
-      setButton('button_attack',"1 🪙 Risk",colorPink);
-        if (savedCoins<1) setButton('button_attack',"1 🪙 Risk",colorDarkGrey);
+      setButton('button_block',"1 🪙 Risk",colorPink);
+        if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
 
       setButton('button_sleep',"2 🪙 Level",colorYellow);
         if (savedCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);

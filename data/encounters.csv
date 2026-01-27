@@ -467,6 +467,7 @@ Forsaken Village;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes yo
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight
 Forsaken Village;🐷;Pig Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>Food effects</b> (negative & positive) <b>are negated.</b>;Gained special skill <b>🐷 Pig Digestion</b>.
 Forsaken Village;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies have -1 ⚔️ Attack</b> until attacked.;Gained attribute <b>🐴 Prey's Appearance</b>.
+Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 
 Forsaken Village;🗞️;Fly Swatter;Item;0;1;0;0;0;0;0;Makeshift Weapon;Effective but might not last for long.<br>Provides <b>+1 ⚔️ Attack</b>.;Grabbed a makeshift weapon.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
@@ -477,7 +478,8 @@ Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;0;Multi-tool;The tip sure
 Forsaken Village;🔧;Metal Spanner;Item;0;1;0;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.
 Forsaken Village;⛑️;Medic Helmet;Item;1;0;0;1;0;0;0;Head Protection;Robust protection for those who help others.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Protected and blessed
-Forsaken Village;📔;Mythical Tales;Item;0;0;0;0;1;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🧠 Intellect and +1 🔵 Mana</b>.;Learned plenty of stuff
+Forsaken Village;📔;Holy Prayerbook;Item;0;0;0;1;0;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;Learned plenty of stuff
+
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;0;Manual;The ulimate guide with colorful illustrations.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.
 Forsaken Village;🥾;Heavy Boots;Item;1;0;1;0;0;0;0;Work Gear;Helps navigating through rough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.
 Forsaken Village;👖;Work Trousers;Item;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action
@@ -486,7 +488,6 @@ Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;2;0;0;Unusal Headgear;Make
 Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;2;0;0;0;Lasting Hope;Brings pleasure whenever looked at.<br>Provides <b>+2 🍀 Luck</b>.;Feels good carrying that.
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;
-Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;0;Forbidden Text;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 Forsaken Village;🧷;Makeshift Piercing;Item;-1;0;0;0;4;0;0;Cool Accessory;Adjusts how others perceive your personality.<br>Provides <b>+4 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Stuck it into your ear.
 Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;3;0;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+3 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Got smarter\ but also slower
 
@@ -805,6 +806,7 @@ Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provide
 Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance for +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.
 Twisted Fairyland;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 25% chance to restore<br><b>+1 ❤️ Health</b> whenever hitting an enemy.;Gained 25% chance to <b>🩸 Steal Life</b>.
 Twisted Fairyland;⚡️;Lightning Bolt;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Weapon once wielded by the king of gods.<br><b>⚡️ Cast</b> lighting bolts</b>\ <b>+2 🔵 Mana</b>.;Gained <b>⚡️ Lightning Bolt</b> and
+Twisted Fairyland;🍭;Candy Wand;Item;0;0;0;0;2;0;0;<b>Artifact</b>;A rainbow-colored wand sparkling with power.<br>Provides <b>+2 🔵 Mana</b>.;The old hag won't be happy.
 Twisted Fairyland;👘;Warlock Robe;Item;0;0;0;0;-4;2;0;Artifact;Usually worn by the darkest of spellcasters.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;Felt a dark urge inside
 Twisted Fairyland;🪄;Warlock Wand;Item;0;0;0;-2;0;2;0;<b>Artifact</b>;Resonates with forsaken magical power.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Wielded a dangerous power.
 Twisted Fairyland;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> against <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
@@ -817,7 +819,6 @@ Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The 
 
 Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;
 Twisted Fairyland;🧥;Protective Coat;Item;2;0;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;
-Twisted Fairyland;🍭;Candy Wand;Item;0;0;0;0;2;0;0;Magical Weapon;A rainbow-colored wand sparkling with power.<br>Provides <b>+2 🔵 Mana</b>.;The old hag won't be happy.
 Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds
 Twisted Fairyland;🧭;Navigation Compass;Item;0;0;2;0;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b>.;
 Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;
