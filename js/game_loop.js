@@ -2,7 +2,7 @@
 //Note: This game was not planned for 2+ years of development 💀
 
 //Debug
-var versionCode = "ver. 01/11/2026 @ 00:10 AM"
+var versionCode = "ver. 02/27/2026 @ 11:55 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 
 function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}
@@ -16,7 +16,6 @@ var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inlin
 var savedCoins = parseInt(localStorage.getItem('coins'));
 if (isNaN(savedCoins)) {
   localStorage.setItem('coins', 0);
-  //savedCoins=0;
 }
 
 //Stats
@@ -59,6 +58,8 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
+var availableCoins=savedCoins;
+var spentCoins=0;
 
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
 var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
@@ -110,6 +111,7 @@ function renewPlayer(){ //Default values
   playerLove=0;
   seenLoot = [];
   adventureLog = [];
+  spentCoins=0;
 }
 
 //Global vars
@@ -247,7 +249,7 @@ function getLuckyName(name=playerName){
 }
 
 function getGameTip(){
-  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","Always <b>💤 Sleep</b> when you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> rises the chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b>.","<b>💌 Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Cook</b> bad food to remove negative effects.","<b>🍀 Luck</b> affects your chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","Non-deadly options always award more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by <b>⇡</b> symbol.","No one likes to be called a <i><b>✏️ Cheater</b></i>.","<b>⚔️ Attack</b> locks repedately to smash them open.","<b>💔 Recalling</b> memories hurts first, helps later.","Carefully consider where you <b>💤 Sleep</b>.","Spend <b>🪙 Drachmae</b> to improve your chances.","Risking <b>🪙 Drachmae</b> has ~50% success rate.","<b>🍀 Luck</b> affects various random chances.","Getting <b><i>✏️ Poco Dinero</b></i> counts as cheating."];
+  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","Always <b>💤 Sleep</b> when you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> rises the chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b> later.","<b>💌 Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Cook</b> bad food to remove negative effects.","<b>🍀 Luck</b> affects your chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","Non-deadly options always award more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to get a <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by the <b>⇡</b> symbol.","No one likes to be called a <i><b>✏️ Cheater</b></i>.","<b>⚔️ Attack</b> locks repedately to smash them open.","<b>💔 Recalling</b> memories hurts first, helps later.","Carefully consider where you <b>💤 Sleep</b>.","Spend <b>🪙 Drachmae</b> to improve your chances.","Risking <b>🪙 Drachmae</b> has a ~50% success rate.","<b>🍀 Luck</b> affects various random chances.","Renaming to <b><i>✏️ Poco Dinero</b></i> counts as cheating.","<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
 
@@ -642,7 +644,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyDesc = enemyDesc.replaceAll("((",":");
   if (enemyTeam=="Undertaker") {
     enemyDesc=getShopMessage();
-    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
   }
   if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
 
@@ -725,7 +727,7 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Shop": //I just did HAAAACKKKK, and it feelt sooo WRONG (really, needs fixing... later)
       if (!adventureLog.includes("Silhouette appeared:")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Silhouette appeared: <b>"+enemyName+"</b></text>")
-      if (savedCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke. I guess that's it for now...")
+      if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke. I guess that's it for now...")
       break;
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
@@ -786,10 +788,12 @@ function generateRandomItem(item=""){
 }
 
 function drachmaeBuy(price=1,item=""){
-  if (savedCoins>=price) {
+  var availableCoins=(savedCoins-spentCoins)
+
+  if (availableCoins>=price) {
     playerShopped=true;
-    savedCoins-=price;
-    localStorage.setItem('coins', savedCoins); //Remove from local storage as well (coins do not endlessly add up)
+    spentCoins+=price;
+    //DO NOT localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
 
@@ -808,7 +812,7 @@ function drachmaeBuy(price=1,item=""){
         displayPlayerGainedEffect();
         displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
-        savedCoins+=1; localStorage.setItem('coins', savedCoins); //Didn't spend a drachma when won
+        spentCoins-=2; //Get a temporary extra coin
         drachmaPrize[0]="area:"+areaName;
         pushEncounter(drachmaPrize);
         nextEncounter();
@@ -918,7 +922,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         }
       }
       drachmaCoin[0]="area:"+areaName;
-      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin);
+      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin); //TODO this means you can farm coins forever, perhaps I should add tracking where you already got a coin and do it just once?
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 
@@ -1612,7 +1616,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Curse":
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+            if (!encounterUsed) {
+              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+              encounterUsed=true;
+            } else {
+              logPlayerAction(actionString,"Continued on your adventure.");
+              nextEncounter();
+            }
             break;
 
           case "Standard":
@@ -2165,8 +2175,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=(-1*enemyInt)){
-              logPlayerAction(actionString,"Managed to keep it together.");
-              nextEncounter();
+              if (!encounterUsed) {
+                logPlayerAction(actionString,"Managed to keep it together +1 🧠");
+                playerInt++;
+                displayPlayerGainedEffect();
+                encounterUsed=true;
+              } else {
+                logPlayerAction(actionString,"Seems like it this has no further effect.");
+                displayPlayerCannotEffect();
+                displayPlayerEffect("");
+              }
             } else {
               logPlayerAction(actionString,"Giving your best, but no effect.");
               displayPlayerCannotEffect();
@@ -2667,6 +2685,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyEmoji=="🪙"){
+              if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to shape your fate.",colorWhite),6);
               savedCoins+=1;
               displayPlayerEffect("🪙");
               localStorage.setItem('coins', parseInt(savedCoins));
@@ -2989,7 +3008,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
 
           case "Curse": //Waiting triggers the curse
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+            if (!encounterUsed) {
+              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg,true,false);
+              encounterUsed=true;
+            } else {
+              playerRest();
+            }
             break;
 
           case "Standard": //You get hit if they have stamina
@@ -4204,8 +4228,13 @@ function adjustEncounterButtons(){
     case "Curse":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
+      if (encounterUsed) document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_pray').innerHTML="🧠 Endure";
+      if (encounterUsed) setButton('button_pray',"🧠 Endure",colorDarkGrey);
       setButton('button_sleep',"😵‍💫 Submit");
+      if (encounterUsed) setButton('button_sleep',playerSleepType+" Sleep");
+      if (encounterUsed) if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
+      if (encounterUsed) if (playerRested && (!enemyType.includes("Trap"))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Item":
@@ -4357,24 +4386,25 @@ function adjustEncounterButtons(){
       break;
 
     case "Shop":
+      var availableCoins=savedCoins-spentCoins;
       setButton('button_attack',"1 🪙 Tarot",colorPaper);
         if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
-        if (savedCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+        if (availableCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
 
       setButton('button_roll',"👣 Leave",colorRed);
-      if (savedCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
+      if (availableCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
       setButton('button_grab',"1 🪙 Item",colorLightBlue);
-        if (savedCoins<1) setButton('button_grab',"1 🪙 Item",colorDarkGrey);
+        if (availableCoins<1) setButton('button_grab',"1 🪙 Item",colorDarkGrey);
 
       setButton('button_block',"1 🪙 Risk",colorPink);
-        if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
+        if (availableCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
 
       setButton('button_sleep',"2 🪙 Level",colorYellow);
-        if (savedCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
+        if (availableCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
 
       setButton('button_speak',"3 🪙 Artif.",colorOrange);
-        if (savedCoins<3) setButton('button_speak',"3 🪙 Artif.",colorDarkGrey);
+        if (availableCoins<3) setButton('button_speak',"3 🪙 Artif.",colorDarkGrey);
 
       setButton('button_cast',"‍-",colorDarkGrey);
       setButton('button_pray',"‍-",colorDarkGrey);
