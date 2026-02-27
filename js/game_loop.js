@@ -2,7 +2,7 @@
 //Note: This game was not planned for 2+ years of development 💀
 
 //Debug
-var versionCode = "ver. 02/27/2026 @ 11:19 PM"
+var versionCode = "ver. 02/27/2026 @ 11:55 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 
 function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}
@@ -2685,7 +2685,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyEmoji=="🪙"){
-              if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to change your fate.",colorWhite),6);
+              if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to shape your fate.",colorWhite),6);
               savedCoins+=1;
               displayPlayerEffect("🪙");
               localStorage.setItem('coins', parseInt(savedCoins));
