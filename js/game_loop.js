@@ -1612,7 +1612,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Curse":
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+            if (!encounterUsed) {
+              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+              encounterUsed=true;
+            } else {
+              logPlayerAction(actionString,"Continued on your adventure.");
+              nextEncounter();
+            }
             break;
 
           case "Standard":
@@ -2165,8 +2171,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=(-1*enemyInt)){
-              logPlayerAction(actionString,"Managed to keep it together.");
-              nextEncounter();
+              if (!encounterUsed) {
+                logPlayerAction(actionString,"Managed to keep it together +1 🧠");
+                playerInt++;
+                displayPlayerGainedEffect();
+                encounterUsed=true;
+              } else {
+                logPlayerAction(actionString,"Seems like it this has no further effect.");
+                displayPlayerCannotEffect();
+                displayPlayerEffect("");
+              }
             } else {
               logPlayerAction(actionString,"Giving your best, but no effect.");
               displayPlayerCannotEffect();
@@ -2989,7 +3003,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
 
           case "Curse": //Waiting triggers the curse
-            playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+            if (!encounterUsed) {
+              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg,true,false);
+              encounterUsed=true;
+            } else {
+              playerRest();
+            }
             break;
 
           case "Standard": //You get hit if they have stamina
@@ -4204,8 +4223,13 @@ function adjustEncounterButtons(){
     case "Curse":
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
+      if (encounterUsed) document.getElementById('button_roll').innerHTML="👣 Walk";
       document.getElementById('button_pray').innerHTML="🧠 Endure";
+      if (encounterUsed) setButton('button_pray',"🧠 Endure",colorDarkGrey);
       setButton('button_sleep',"😵‍💫 Submit");
+      if (encounterUsed) setButton('button_sleep',playerSleepType+" Sleep");
+      if (encounterUsed) if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
+      if (encounterUsed) if (playerRested && (!enemyType.includes("Trap"))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
     case "Item":
