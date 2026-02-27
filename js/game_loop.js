@@ -16,7 +16,6 @@ var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inlin
 var savedCoins = parseInt(localStorage.getItem('coins'));
 if (isNaN(savedCoins)) {
   localStorage.setItem('coins', 0);
-  //savedCoins=0;
 }
 
 //Stats
@@ -59,6 +58,8 @@ var playerSpeakType = "💬";
 var playerCastType = "💫";
 var playerHealType = "❤️‍🩹";
 var playerCurseType = "🪬";
+var availableCoins=savedCoins;
+var spentCoins=0;
 
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
 var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
@@ -110,6 +111,7 @@ function renewPlayer(){ //Default values
   playerLove=0;
   seenLoot = [];
   adventureLog = [];
+  spentCoins=0;
 }
 
 //Global vars
@@ -642,7 +644,7 @@ function loadEncounter(index, fileLines = linesStory){
   enemyDesc = enemyDesc.replaceAll("((",":");
   if (enemyTeam=="Undertaker") {
     enemyDesc=getShopMessage();
-    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
   }
   if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
 
@@ -725,7 +727,7 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Shop": //I just did HAAAACKKKK, and it feelt sooo WRONG (really, needs fixing... later)
       if (!adventureLog.includes("Silhouette appeared:")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Silhouette appeared: <b>"+enemyName+"</b></text>")
-      if (savedCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke. I guess that's it for now...")
+      if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke. I guess that's it for now...")
       break;
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
@@ -786,10 +788,12 @@ function generateRandomItem(item=""){
 }
 
 function drachmaeBuy(price=1,item=""){
-  if (savedCoins>=price) {
+  var availableCoins=(savedCoins-spentCoins)
+
+  if (availableCoins>=price) {
     playerShopped=true;
-    savedCoins-=price;
-    localStorage.setItem('coins', savedCoins); //Remove from local storage as well (coins do not endlessly add up)
+    spentCoins+=price;
+    //DO NOT localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
 
@@ -808,7 +812,7 @@ function drachmaeBuy(price=1,item=""){
         displayPlayerGainedEffect();
         displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
-        savedCoins+=1; localStorage.setItem('coins', savedCoins); //Didn't spend a drachma when won
+        spentCoins-=2; //Get a temporary extra coin
         drachmaPrize[0]="area:"+areaName;
         pushEncounter(drachmaPrize);
         nextEncounter();
@@ -918,7 +922,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         }
       }
       drachmaCoin[0]="area:"+areaName;
-      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin);
+      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin); //TODO this means you can farm coins forever, perhaps I should add tracking where you already got a coin and do it just once?
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 
@@ -4381,24 +4385,25 @@ function adjustEncounterButtons(){
       break;
 
     case "Shop":
+      var availableCoins=savedCoins-spentCoins;
       setButton('button_attack',"1 🪙 Tarot",colorPaper);
         if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
-        if (savedCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+        if (availableCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
 
       setButton('button_roll',"👣 Leave",colorRed);
-      if (savedCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
+      if (availableCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
       setButton('button_grab',"1 🪙 Item",colorLightBlue);
-        if (savedCoins<1) setButton('button_grab',"1 🪙 Item",colorDarkGrey);
+        if (availableCoins<1) setButton('button_grab',"1 🪙 Item",colorDarkGrey);
 
       setButton('button_block',"1 🪙 Risk",colorPink);
-        if (savedCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
+        if (availableCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
 
       setButton('button_sleep',"2 🪙 Level",colorYellow);
-        if (savedCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
+        if (availableCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
 
       setButton('button_speak',"3 🪙 Artif.",colorOrange);
-        if (savedCoins<3) setButton('button_speak',"3 🪙 Artif.",colorDarkGrey);
+        if (availableCoins<3) setButton('button_speak',"3 🪙 Artif.",colorDarkGrey);
 
       setButton('button_cast',"‍-",colorDarkGrey);
       setButton('button_pray',"‍-",colorDarkGrey);
