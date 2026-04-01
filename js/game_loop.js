@@ -61,11 +61,11 @@ var playerCurseType = "🪬";
 var availableCoins=savedCoins;
 var spentCoins=0;
 
-var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
-var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
-var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling reward useful in the afterlife.<br>","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
-var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gambling risks turned out on the bad side.<br>","message:Released a long disappointed sigh..."]
 var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
+var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
+var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary gambling reward.<br>Might be addictive.","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
+var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gambling risks turned out on the bad side.<br>","message:Released a long disappointed sigh..."]
+var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"] //Unused
 var usedShopMessages=[];
 
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷","🪠","🗞️","🔱","🧹","🥏"])
@@ -812,7 +812,6 @@ function drachmaeBuy(price=1,item=""){
         displayPlayerGainedEffect();
         displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
-        spentCoins-=2; //Get a temporary extra coin
         drachmaPrize[0]="area:"+areaName;
         pushEncounter(drachmaPrize);
         nextEncounter();
@@ -2685,10 +2684,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyEmoji=="🪙"){
-              if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to shape your fate.",colorWhite),6);
-              savedCoins+=1;
+              if (enemyName.includes("Lucky")) {
+                spentCoins-=2; //Temporary coin for this run only, not persistent
+              } else {
+                if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to shape your fate.",colorWhite),6);
+                savedCoins+=1;
+                localStorage.setItem('coins', parseInt(savedCoins));
+              }
               displayPlayerEffect("🪙");
-              localStorage.setItem('coins', parseInt(savedCoins));
             }
 
             if (enemyEmoji=="💰"){
