@@ -6,10 +6,8 @@
 - [x] Swap "required big" for "took a rather"
 - [x] Forbidden apple desc too long
 - [x] Generate coins after boss limits: first area 2, then 4, 6, 8
-
-## Data Beautify
-
-- [ ] Scan dataset with GPT to improve low effort or non-matching texts
+- [x] Scan dataset to improve low effort or non-matching texts
+- [x] Replace all placeholders
 
 ## Small Ideas (new PR)
 
@@ -22,7 +20,6 @@
 
 ## BIG OLD DATA PUSH (extra PR)
 
-- [ ] Replace all placeholders
 - [ ] Increment meadows data (praised bath, no-effect encounters)
   - [ ] No-effect altars, curses etc with just observations
   - [ ] Clear sky, silent overcast
@@ -44,11 +41,6 @@
 - [ ] Mid-late game balance = high stamina, more low atk enemies
   - [ ] Pets in fairyland a lot more sta ~3
   - [ ] Bosses to have a lot of hp but not insta-kill dmg
-
-## Legendary (see boosts wip)
-
-- [ ] Voodoo Doll — all enemies have +1 HP lost / +sta variant
-- [ ] Sigils: ✳️ sta, 💟 hp, ☮️ int
 
 ## Big Ideas
 
