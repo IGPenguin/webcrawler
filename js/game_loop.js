@@ -114,7 +114,7 @@ function renewPlayer(){ //Default values
   playerKarma=1;
   playerLove=0;
   seenLoot = [];
-  adventureLog = [];
+  adventureLog = actionLog;
   spentCoins=0;
   initRunLog();
 }
@@ -277,7 +277,7 @@ function getShopMessage(){
 
 //Adventure logging
 var actionString; //Initial action log below
-var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>";
 var adventureLog = actionLog;
 var adventureEncounterCount = 1;
 var adventureEndReason = "";
@@ -1308,7 +1308,9 @@ function redraw(){
   }
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
-  document.getElementById('id_log').innerHTML = actionLog;
+  var logEl = document.getElementById('id_log');
+  logEl.innerHTML = adventureLog.split("<br>").filter(l => l.replace(/&nbsp;/g,"").trim()).reverse().join("<br>");
+  logEl.scrollTop = 0;
 
   versusTextUIElement = document.getElementById('id_versus');
   switch (enemyType){
@@ -2315,7 +2317,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Death"){
           shareLinkedIn();
-          logPlayerAction(actionString,"Copied! Paste it into LinkedIn.");
+          logPlayerAction(actionString,"Copied your run! Paste it into LinkedIn.");
           break;
         }
 
@@ -3559,7 +3561,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   //Fullscreen Curtain
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
-    if ((!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+    if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   redraw();
@@ -4147,19 +4149,11 @@ function logPlayerAction(actionString,message){
   }
   runLogAdd("log", {msg: actionString.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").replace("<br>","").trim()});
   adventureLog += actionString;
-  actionLog = actionString + actionLog;
-  if (actionLog.split("<br>").length > 3) {
-    actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
-  }
 }
 
 function logAction(message){
   runLogAdd("log", {msg: message.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").trim()});
-  actionLog = message + "<br>" + actionLog;
   adventureLog += message+"<br>";
-  if (actionLog.split("<br>").length > 3) {
-    actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
-  }
 }
 
 function getTime(){
