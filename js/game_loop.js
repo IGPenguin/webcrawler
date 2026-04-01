@@ -931,7 +931,8 @@ function generateNextEncounters(generatorID=0, logCall=true){
         }
       }
       drachmaCoin[0]="area:"+areaName;
-      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin); //TODO this means you can farm coins forever, perhaps I should add tracking where you already got a coin and do it just once?
+      var bossCoinsLimit = {"Fading Wildlands": 2, "Forsaken Village": 4, "Twisted Fairyland": 6, "River of Sorrows": 8};
+      if (!areaName.includes("Shrouded Necropolis") && savedCoins < (bossCoinsLimit[areaName] || 0)) pushEncounter(drachmaCoin); //Unrecognized area defaults to no coin (0)
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 

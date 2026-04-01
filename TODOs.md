@@ -5,7 +5,7 @@
 - [x] Fix risk to not edit spent coins var + adjust coin pickup not to add to saved when picking up "Lucky"
 - [x] Swap "required big" for "took a rather"
 - [x] Forbidden apple desc too long
-- [ ] Generate coins after boss limits: first area 3, then 5, 7, 9
+- [x] Generate coins after boss limits: first area 2, then 4, 6, 8
 
 ## Data Beautify
 
