@@ -810,11 +810,12 @@ Twisted Fairyland;🍭;Candy Wand;Item;0;0;0;0;2;0;0;<b>Artifact</b>;A rainbow-c
 Twisted Fairyland;👘;Warlock Robe;Item;0;0;0;0;-4;2;0;Artifact;Usually worn by the darkest of spellcasters.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;Felt a dark urge inside
 Twisted Fairyland;🪄;Warlock Wand;Item;0;0;0;-2;0;2;0;<b>Artifact</b>;Resonates with forsaken magical power.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Wielded a dangerous power.
 Twisted Fairyland;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> against <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
+Twisted Fairyland;📌;Voodoo Pin;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Enemies will suffer from the <b>☠️ Ancient Voodoo</b>.<br>Deal <b>-1 💔 Damage</b> when engaging in combat.;Gained ability <b>☠️ Ancient Voodoo</b>.
+Twisted Fairyland;📜;The Elder Scroll;Item;0;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Intellect</b> and an ancient insight.<br>n/a;Embraced the ancient knowledge.
 
 Twisted Fairyland;🏹;Sharpshooter Bow;Item;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;
-Twisted Fairyland;📜;Elder Scroll;Item;0;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Intellect</b> and an insight.<br>n/a;Embraced the elder knowledge.
 Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Intellect</b>.;Absorbed some magic knowledge
 
 Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;
