@@ -12,6 +12,10 @@ if (isLocalhost()) initialEncounterOverride=4;
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorSoftGreen = "#62a862ff"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorSoftRed = "#ef4646ff"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020"; var colorPaper = "#d1bd91"; var colorDarkPaper = "#8c7f61";
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; narrowSpace="&#8239;"; var arrowSymbol="▸";
 
+//Run logger (localhost only)
+var runLog = [];
+var runLogStart = "";
+
 //Savedata
 var savedCoins = parseInt(localStorage.getItem('coins'));
 if (isNaN(savedCoins)) {
@@ -112,6 +116,7 @@ function renewPlayer(){ //Default values
   seenLoot = [];
   adventureLog = [];
   spentCoins=0;
+  initRunLog();
 }
 
 //Global vars
@@ -778,6 +783,11 @@ function loadEncounter(index, fileLines = linesStory){
   if (playerLootString.includes("🐴")){
     enemyAtkBonus-=1;
   }
+  runLogAdd("encounter", {
+    area: areaName, emoji: enemyEmoji, name: enemyName, type: enemyType,
+    hp: enemyHp, atk: enemyAtk, sta: enemySta, lck: enemyLck,
+    int: enemyInt, mgk: enemyMgk, def: enemyDef, note: enemyTeam
+  });
 }
 
 function generateRandomItem(item=""){
@@ -1421,6 +1431,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     animateUIElement(buttonUIElement,"animate__pulse","0.15");
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
+    runLogAdd("action", {
+      btn: button, label: actionString.replaceAll(/<[^>]+>/g,"").trim(),
+      encounter: enemyName, encType: enemyType, area: areaName,
+      player: {hp: playerHp, hpMax: playerHpMax, sta: playerSta, staMax: playerStaMax,
+               mgk: playerMgk, atk: playerAtk, lck: playerLck, int: playerInt,
+               def: playerDef, level: playerLevel, xp: playerXP, karma: playerKarma}
+    });
 
     //Override boss type for action
     if (enemyType.includes("Boss")){
@@ -3138,6 +3155,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       console.log("Chance→int:"+temporaryIntellect);
       playerInt=temporaryIntellect;
     }
+    runLogAdd("action_result", {
+      player: {hp: playerHp, hpMax: playerHpMax, sta: playerSta, staMax: playerStaMax,
+               mgk: playerMgk, atk: playerAtk, lck: playerLck, int: playerInt,
+               def: playerDef, level: playerLevel, xp: playerXP, karma: playerKarma}
+    });
     redraw();
   };
 }
@@ -4081,6 +4103,8 @@ function gameOver(silent=false){
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
+  runLogAdd("run_end", {outcome: "death", killedBy: enemyName, killedByEmoji: enemyEmoji, area: areaName, time: adventureEndTime});
+  downloadRunLog();
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
@@ -4098,10 +4122,38 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
+  runLogAdd("run_end", {outcome: "win", area: areaName, time: adventureEndTime});
+  downloadRunLog();
 
   //Reset progress to game start
   resetSeenEncounters();
   processStoryData(storyData,false);
+}
+
+//Run Logger
+function initRunLog() {
+  if (!isLocalhost()) return;
+  runLog = [];
+  var now = new Date();
+  runLogStart = now.toISOString().slice(0,19).replaceAll(":","-");
+  runLogAdd("run_start", {name: playerName, version: versionCode, timestamp: now.toISOString()});
+}
+
+function runLogAdd(type, data) {
+  if (!isLocalhost()) return;
+  runLog.push(Object.assign({t: Date.now(), type: type}, data));
+}
+
+function downloadRunLog() {
+  if (!isLocalhost() || runLog.length === 0) return;
+  var fileName = "Stay-Dead-" + playerName.replaceAll(" ","-") + "-" + runLogStart + ".json";
+  var el = document.createElement('a');
+  el.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(runLog, null, 2)));
+  el.setAttribute('download', fileName);
+  el.style.display = 'none';
+  document.body.appendChild(el);
+  el.click();
+  document.body.removeChild(el);
 }
 
 //Logging
@@ -4112,6 +4164,7 @@ function logPlayerAction(actionString,message){
     actionString=actionString.slice(2);
     if (!actionString.includes("you actually won!")) actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
   }
+  runLogAdd("log", {msg: actionString.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").replace("<br>","").trim()});
   adventureLog += actionString;
   actionLog = actionString + actionLog;
   if (actionLog.split("<br>").length > 3) {
@@ -4120,6 +4173,7 @@ function logPlayerAction(actionString,message){
 }
 
 function logAction(message){
+  runLogAdd("log", {msg: message.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").trim()});
   actionLog = message + "<br>" + actionLog;
   adventureLog += message+"<br>";
   if (actionLog.split("<br>").length > 3) {
