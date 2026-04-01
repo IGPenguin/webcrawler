@@ -69,6 +69,7 @@ Fading Wildlands;🏕️;Silent Campsite;Container-3;0;0;0;0;0;0;0;Hastened Depa
 Fading Wildlands;🌻;Sunward Field;Container-3;0;0;0;0;0;0;0;Watching Field;Tall heads seem to follow your steps.<br>;Crossed right through.
 Fading Wildlands;🌾;Ensnaring Weeds;Container-3;0;0;-1;0;0;0;0;Natural Obstacle;Tangles clutch at your boots.<br>;Nearly tripped\ but caught yourself
 
+Fading Wildlands;🌠;Comet Painting;Altar;0;0;0;0;0;1;0;Wishbound Canvas;The falling star never reaches the ground.<br>;Your silent wish was fulfilled.
 Fading Wildlands;🍀️;Clover Shrine;Altar;0;0;0;1;0;0;0;Gentle Fortune;Four-leaf clusters lean toward you.<br>;You won't ever forget this.
 Fading Wildlands;🌸;Petal Shrine;Altar;0;0;0;1;0;0;0;Quiet Blessing;Color clings stubbornly to these blooms.<br>;The nature blessed you.
 Fading Wildlands;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;0;Unfinished Art;Seems like the author left in hurry.<br>;Hmm\ truly an interesting piece.
@@ -342,6 +343,8 @@ Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;0;0;0;0;0;Living Decay;Sp
 Forsaken Village;🔥;Burning Pile;Trap-Sleep;-3;0;0;0;0;0;0;Disaster Remnants;The fire is spreading all around.<br>;Burned alive screaming.
 Forsaken Village;🧶;Ensnaring Wool;Trap;0;0;-1;0;0;0;0;Strange Wiggle;Tangles clutch at your fingertips.<br>;Nearly got caught in tangle
 
+Forsaken Village;🔭;Cosmic Lens;Trap;0;0;0;1;0;0;0;Suspicious Device;Looks like it was abandoned in hurry.<br>;Spotted a shooting star!
+Forsaken Village;🔬;Scientific Lens;Trap;0;0;0;0;1;0;0;Abandoned Experiment;Looks like left behind in panic.<br>;Spotted an inspiring microcosmos!
 Forsaken Village;🔔;Golden Bell;Trap;0;0;0;1;0;0;0;Rally Spot;Makes loud sound when disturbed.<br>;Ringed the bell\ hoping for luck
 Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.
 Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;0;Training Spot;You should give it a shot!<br>;Improved your combat technique!
@@ -468,6 +471,7 @@ Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost 
 Forsaken Village;🐷;Pig Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>Food effects</b> (negative & positive) <b>are negated.</b>;Gained special skill <b>🐷 Pig Digestion</b>.
 Forsaken Village;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies have -1 ⚔️ Attack</b> until attacked.;Gained attribute <b>🐴 Prey's Appearance</b>.
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
+Forsaken Village;🎈;Floating Blob;Item;-1;0;2;0;0;0;0;<b>Artifact</b>;Floats peacefully just above the ground.<br><b>Gain +2 🟢 Energy</b> for <b>-1 💔 Health</b>.;Became nimble\ yet fragile.
 
 Forsaken Village;🗞️;Fly Swatter;Item;0;1;0;0;0;0;0;Makeshift Weapon;Effective but might not last for long.<br>Provides <b>+1 ⚔️ Attack</b>.;Grabbed a makeshift weapon.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
@@ -565,8 +569,9 @@ Twisted Fairyland;🪻;Flower Growth;Prop;0;0;0;0;0;0;0;Wild Flora;Compelling sm
 Twisted Fairyland;🪹;Empty Nest;Prop;0;0;0;0;0;0;0;Deserted Home;Looks long time abandoned.<br>;
 Twisted Fairyland;🪐;Clear Night;Prop;0;0;0;0;0;0;0;Weather Condition;Time for a well deserved rest.<br>;
 
+Twisted Fairyland;🏮;Eternal Lantern;Prop;1;0;0;0;0;0;0;Calming Glow;The candlelight flickers but never dies.<br>;Rested under a protective light.
 Twisted Fairyland;🎄;Starsparkle Spurce;Prop;0;0;0;0;0;1;0;Blessed Flora;Shimmers with overflowing magical energy.<br>;Woken up feeling blessed
-Twisted Fairyland;🍄;Glowcap Ring;Prop;0;0;0;0;2;0;0;Bioluminescent Circle;Soft light pulses gently around you.<br>;Woken up strangely optimistic
+Twisted Fairyland;🍄;Glowcap Ring;Prop;0;0;0;0;2;0;0;Luminescent Circle;Soft light pulses gently around you.<br>;Woken up strangely optimistic
 Twisted Fairyland;🍄‍🟫;Overgrown Shroom;Prop;0;0;1;0;0;0;0;Chill Spot;Throws shade protecting against burning sunlight.<br>;Rested well in the shade
 Twisted Fairyland;🌿;Soft Moss;Prop;0;0;1;0;0;0;0;Living Carpet;Your steps feel lighter here.<br>;Well rested on the soft ground
 Twisted Fairyland;🌸;Dreamblossom Patch;Prop;0;0;0;0;1;0;0;Soothing Spores;Sweet scent dulls anxious thoughts.<br>;Dreamed of a welcoming paradise
@@ -657,6 +662,7 @@ Twisted Fairyland;🥀;Knotted Vines;Altar;-1;0;0;0;4;0;0;Nature Totem;Tied deli
 Twisted Fairyland;🏛️;Ancient Temple;Altar;-1;0;0;0;0;1;0;Ritual Place;Blood-crying statues gaze upon the altar.<br>;Embraced ancient gods
 Twisted Fairyland;🕊️;Peace Dove;Altar;1;0;0;0;0;0;0;Sacred Sign;Beautiful warmth fills thy soul<br>;Received a powerful blessing
 Twisted Fairyland;🗿;Megalithic Statue;Altar;0;0;0;1;1;0;0;Ancient Monument;Must be thousands years old.<br>;Granted ancient blessing
+Twisted Fairyland;🖲️;Mysterious Altar;Altar;0;0;0;0;0;1;0;Powerful Monument;The orb resonates with disturbing power.<br>;Felt the reality bend around you
 
 Twisted Fairyland;🔥;Eternal Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
