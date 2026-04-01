@@ -3,28 +3,17 @@
 Fading Wildlands;🪽;Hermes Pinion;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides <b>10% chance</b> to perform an <b>extra action</b><br> <b>before the enemy</b> reacts <b>during combat</b>.;Gained skill <b>🪽 Burst of Speed</b>.
 => Swap this for regular 🪶
 
-Twisted Fairyland;⏱️;Stunning Ticker;Altar;0;0;0;0;0;1;0;Time Distortion;Seconds stretch and snap unpredictably.<br>Enemies have <b>10% chance to skip turns</b>.;Time bends to your favor.
-
-Forsaken Village;💈;Swirled Cylinder;Prop;0;0;0;0;0;1;0;Hypnotic Motion;Colors twist in endless loops.<br>;Mind wandered into strange clarity.
-Fading Wildlands;🎈;Lightening Blob;Item;-1;0;2;0;0;0;0;Strange Mass;It floats slightly above your hand.<br><b>+4 🟢 Energy</b> for <b>-1 💔 Health</b>.;You feel lighter\ but fragile.
-
-Forsaken Village;🎷;Boring Sax;Prop;0;0;0;0;-1;0;0;Dull Melody;A tune that drains all excitement.<br>;Motivation faded away.
-
-Forsaken Village;🎺;Rhythmic Trumpet;Altar;0;1;0;0;0;0;0;Battle Call;A sharp tune echoes loudly.<br>;You feel ready to fight.
-
-Forsaken Village;🪗;Annoying Accordion;Curse;0;0;0;0;-1;0;0;Endless Noise;The tune won’t stop repeating.<br>;It got stuck in your head.
-
 Fading Wildlands;🖍️;Red Marker;Item;0;1;0;0;0;0;0;Marking Tool;Everything it touches feels more dangerous.<br>Provides <b>+1 ⚔️ Attack</b>.;Marked your path in red.
-
-Twisted Fairyland;🧧;Mystic Letter;Consumable;0;0;0;0;2;0;0;Sealed Fortune;The message changes as you read it.<br><b>+2 🍀 Luck</b>.;You feel strangely fortunate.
-
+Twisted Fairyland;⏱️;Stunning Ticker;Altar;0;0;0;0;0;1;0;Time Distortion;Seconds stretch and snap unpredictably.<br>Enemies have <b>10% chance to skip turns</b>.;Time bends to your favor.
+Forsaken Village;🎷;Boring Sax;Item;0;0;0;0;-1;0;0;Dull Melody;A tune that drains all excitement.<br>;Motivation faded away.
+Forsaken Village;🎺;Rhythmic Trumpet;Item;0;1;0;0;0;0;0;Battle Call;A sharp tune echoes loudly.<br>;You feel ready to fight.
+Forsaken Village;🪗;Annoying Accordion;Item;0;0;0;0;-1;0;0;Endless Noise;The tune won’t stop repeating.<br>;It got stuck in your head.
+Twisted Fairyland;🧧;Mystic Letter;Item;0;0;0;0;2;0;0;Sealed Fortune;The message changes as you read it.<br><b>+2 🍀 Luck</b>.;You feel strangely fortunate.
 Forsaken Village;🎞️;Past Clues;Prop;0;0;0;0;1;0;0;Faded Memory;Moments replay in fragments.<br>;You recall something useful.
-
 Fading Wildlands;🧻;Useless Trash;Item;0;0;0;0;0;0;0;Worthless Junk;Barely holds together.<br>;Why did you pick this up?
-
 Fading Wildlands;🔦;Adventure Lantern;Item;0;0;0;0;1;0;0;Explorer Gear;Shines stronger in the dark.<br>Provides <b>+1 🧠 Intellect</b>.;Your path feels clearer.
 
-River of Sorrows;⭐️;Fallen Star;Consumable;1;0;0;0;1;0;0;Celestial Fragment;Still warm to the touch.<br>Restores <b>❤️ Health</b> and grants <b>+1 🍀 Luck</b>.;A piece of the sky embraced you.
+    ...
 
 Depths of Slumber;⚱️;Ming-dynasty Vase;Item;0;0;0;0;0;0;Artifact;Contents explode when violently disturbed.;???
 Shrouded Necropolis;🧩;Memory Fragment;Item;0;0;0;0;0;0;<b>Artifact</b>;Proves one's endless determination.<br>;Grabbed the <b>🧩 Memory Fragment</b>.

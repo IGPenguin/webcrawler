@@ -320,13 +320,13 @@ Forsaken Village;🫧;Murky Puddle;Fishing;0;0;0;0;0;0;0;Water Body;Smells absol
 Forsaken Village;🪷;Small Pond;Fishing;0;0;0;0;0;0;0;Water Body;Waves are dancing on the surface.<br>;
 Forsaken Village;🎏;Carp Pond;Fishing;0;0;0;0;0;0;0;Water Body;The fishes are visible under surface.<br>;
 
+Forsaken Village;💈;Swirled Cylinder;Curse;0;0;0;0;-2;0;0;Hypnotic Motion;Colors twist in endless loops.<br>;Mind wandered into the abyss.
 Forsaken Village;👁️‍🗨️;Haunting Echo;Curse;0;0;0;0;-1;0;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.
 Forsaken Village;🎶;Everlasting Melody;Curse;0;0;0;0;-1;0;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.
-Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling the chest.<br>;Suffered permanent damage.
+Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling your chest.<br>;Suffered permanent damage.
 Forsaken Village;🪞;Reflecting Gaze;Curse;0;0;0;0;-1;0;0;Misfortune;A thousand eyes stare back at you.<br>;Left haunted by that reflection.
 Forsaken Village;👁️‍🗨️;Lingering Fear;Curse;0;0;0;0;-1;0;0;Misfortune;Threads of paranoia coil around your mind.<br>;Drove themselves insane.
-Forsaken Village;💀;Memento Mori;Curse;0;0;0;0;-1;0;0;Misfortune;A constant reminder of mortality.<br>;Lost all hope.
-Forsaken Village;💨;Breath of Dread;Curse;0;0;0;0;-1;0;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.
+Forsaken Village;💨;Howling Dread;Curse;0;0;0;0;-1;0;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.
 
 Forsaken Village;🕹️;Strange Lever;Trap;-2;0;0;0;0;0;0;Ancient Mechanism;Someone clearly meant this to be found.<br>;Rusty blade punctured your chest.
 Forsaken Village;☢️;Sealed Container;Trap-Attack;-3;0;0;0;0;0;0;Toxic Garbage;There must be a reason why it's closed.<br>;Oops\ the lid came off.
@@ -352,6 +352,7 @@ Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;0;Party Prop;These a
 
 Forsaken Village;🛎️;Alert Bell;Trap-Attack;0;0;0;0;0;0;0;Loud Prop;This could probably cause some attention.<br>;Hmmm\ seems like nothing happened.
 
+Forsaken Village;💀;Memento Mori;Altar;1;0;0;0;0;0;0;Faded Statue;A constant reminder of the cycle of life.<br>;Reinforced your will to live.
 Forsaken Village;🔱;Altar of Hatred;Altar;0;0;0;-3;0;1;0;Ritual Place;There's a blood on the surface.<br>;Received a dark boon
 Forsaken Village;🪨;Stone Monolith;Altar;0;0;0;0;0;1;0;Ritual Place;Strange runes are carved deep within.<br>;Whispered secrets received
 Forsaken Village;📿;Prayer Beads;Altar;0;0;0;1;0;0;0;Sacred Offering;Each bead is worn smooth by devotion.<br>;Found peace in the quiet prayer
@@ -991,10 +992,11 @@ River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows t
 River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 River of Sorrows;❤️‍🩹;Heart Band-Aid;Item;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you\ made you stronger
 River of Sorrows;🔱;Titanslayer Trident;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!
+River of Sorrows;⭐️;Fallen Star;Item;0;0;0;2;0;1;0;<b>Celestial Artifact</b>;Radiating with power\ warm to the touch.<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🍀 Luck</b>.;The sky has embraced you.
 
 River of Sorrows;🪝;Captain's Hook;Item;0;2;0;-1;0;0;Cursed Tool;Pulled from the depths of torment.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.
 River of Sorrows;🪝;Rusty Hook;Item;0;1;0;0;0;0;0;Weathered Tool;Hangs uselessly from the eaves.<br>Provides <b>+1 ⚔️ Damage</b>.;Could still make a bloody mess.
-River of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;Feels a lot cooler.
+River of Sorrows;🕶;Cool Sunglasses;Item;0;0;0;2;0;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;You feel a lot cooler.
 River of Sorrows;👙;Sexy Bikini;Item;0;0;0;0;2;0;0;Swimming Equipment;Draws additional attention to the body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!
 River of Sorrows;👓;Reading Glasses;Item;0;0;0;0;2;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.
 River of Sorrows;🥽;Diving Goggles;Item;1;0;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.
