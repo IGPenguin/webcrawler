@@ -1433,8 +1433,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
     runLogAdd("action", {
-      btn: button, label: actionString.replaceAll(/<[^>]+>/g,"").trim(),
-      encounter: enemyName, encType: enemyType, area: areaName,
+      btn: button,
       player: {hp: playerHp, hpMax: playerHpMax, sta: playerSta, staMax: playerStaMax,
                mgk: playerMgk, atk: playerAtk, lck: playerLck, int: playerInt,
                def: playerDef, level: playerLevel, xp: playerXP, karma: playerKarma}
@@ -3156,11 +3155,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       console.log("Chance→int:"+temporaryIntellect);
       playerInt=temporaryIntellect;
     }
-    runLogAdd("action_result", {
-      player: {hp: playerHp, hpMax: playerHpMax, sta: playerSta, staMax: playerStaMax,
-               mgk: playerMgk, atk: playerAtk, lck: playerLck, int: playerInt,
-               def: playerDef, level: playerLevel, xp: playerXP, karma: playerKarma}
-    });
     redraw();
   };
 }
@@ -4142,14 +4136,14 @@ function initRunLog() {
 
 function runLogAdd(type, data) {
   if (!isLocalhost()) return;
-  runLog.push(Object.assign({t: Date.now(), type: type}, data));
+  runLog.push(Object.assign({type: type}, data));
 }
 
 function downloadRunLog() {
   if (!isLocalhost() || runLog.length === 0) return;
   var fileName = "Stay-Dead-" + playerName.replaceAll(" ","-") + "-" + runLogStart + ".json";
   var el = document.createElement('a');
-  el.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(runLog, null, 2)));
+  el.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(runLog)));
   el.setAttribute('download', fileName);
   el.style.display = 'none';
   document.body.appendChild(el);
