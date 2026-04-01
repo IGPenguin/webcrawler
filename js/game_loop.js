@@ -67,8 +67,8 @@ var spentCoins=0;
 
 var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
-var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary gambling reward\\ might be addictive.<br>","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
-var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gamble turned out on the bad side.<br>Perhaps better luck next time?","message:Released a long disappointed sigh..."]
+var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary reward for <b>one-time use only</b>.<br>Beware\\ gambling might be addictive.","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
+var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:Ooops! <b>The gamble did not pay off.</b><br>Perhaps better luck next time?","message:Released a long disappointed sigh..."]
 var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"] //Unused
 var usedShopMessages=[];
 
@@ -627,7 +627,7 @@ function loadEncounter(index, fileLines = linesStory){
     enemyDesc=getShopMessage();
     enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
   }
-  if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+  if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
 
   enemyMsg = String(selectedLine.split(",")[13].split(":")[1]).replaceAll("\\",",");
   enemyMsg = enemyMsg.replaceAll("((",":");
@@ -1202,6 +1202,10 @@ function redraw(){
       if (enemyEmoji=="🪙" || enemyEmoji=="💰"){
         enemyStatusString=decorateStatusText("🧬","Everlasting",colorLightShadeBlue);
         cardUIElement.style.background=colorShadeBlue;
+        if (enemyName.includes("Lucky")){
+          enemyStatusString=decorateStatusText("🍀","Fortune",colorSoftGreen);
+          cardUIElement.style.background=colorSoftGreen;
+        }
       }
       if (enemyName.includes("Tarot")){
         enemyStatusString=decorateStatusText("♣️","Prophecy",colorPaper);
@@ -1253,7 +1257,10 @@ function redraw(){
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Unsettling Anxiety",colorRed);
-
+      if (enemyName.includes("Regrets")) {
+        enemyStatusString=decorateStatusText("❌","Misfortune",colorSoftRed);
+        cardUIElement.style.background=colorSoftRed;
+      }
       break;
     case "Upgrade":
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
@@ -4058,6 +4065,8 @@ function playerReincarnate(){
     pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
     pushEncounter(bonusItem,2);
   }
+
+  spentCoins = 0; //Hack :shug:
   nextEncounter();
   curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
   renewPlayer();
@@ -4276,6 +4285,7 @@ function adjustEncounterButtons(){
       if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
       if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorGold);
       if (enemyEmoji=="🪙" || enemyEmoji=="💰") setButton('button_grab',"👋 Claim",colorLightShadeBlue);
+      if (enemyEmoji=="🪙" && enemyName.includes("Lucky")) setButton('button_grab',"👋 Claim",colorSoftGreen);
       if (enemyName.includes("Tarot Card:")) {
         setButton('button_grab',"👋 Accept",colorPaper);
         setButton('button_roll',"❌ Reject",colorRed);
@@ -4313,7 +4323,7 @@ function adjustEncounterButtons(){
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       setButton('button_sleep',"💤 Sleep",colorLightBlue);
-      if (enemyName.includes("Regrets")) setButton('button_sleep',"🙁 Accept",colorWhite);
+      if (enemyName.includes("Regrets")) setButton('button_sleep',"🙁 Accept",colorSoftRed);
       if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (areaName.includes("Shrouded")) setButton('button_sleep',"🧠 Think",colorRed);
       break;
