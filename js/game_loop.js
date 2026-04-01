@@ -355,15 +355,6 @@ $(document).ready(function() {
 
      $.ajax({
          type: "GET",
-         url: "data/fishing.csv",
-         dataType: "text",
-         success: function(data) {
-           processLoot(data);
-         }
-     });
-
-     $.ajax({
-         type: "GET",
          url: "data/encounters.csv",
          dataType: "text",
          success: function(data) {
@@ -413,41 +404,26 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   }
 }
 
-//Process csv into lines of loot
-function processLoot(allText){ //TODO: remove and reuse the fn above
+//Process csv into lines of encounters and fishing loot
+function processEncounterData(allText){
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
+  linesGenerator = [];
   linesLoot = [];
 
   for (var i=1; i<allTextLines.length; i++) {
       var data = allTextLines[i].split(';');
       if (data.length == headers.length) {
-
           var tarr = [];
           for (var j=0; j<headers.length; j++) {
               tarr.push(headers[j]+":"+data[j]);
           }
-        linesLoot.push(tarr);
-  }
-  }
-}
-
-//Process csv into lines of encounters for generator
-function processEncounterData(allText){ //TODO: remove and reuse the fn above
-  var allTextLines = allText.split(/\r\n|\n/);
-  var headers = allTextLines[0].split(';');
-  linesGenerator = [];
-
-  for (var i=1; i<allTextLines.length; i++) {
-      var data = allTextLines[i].split(';');
-      if (data.length == headers.length) {
-
-          var tarr = [];
-          for (var j=0; j<headers.length; j++) {
-              tarr.push(headers[j]+":"+data[j]);
+          if (data[0] === "Fishing") {
+            linesLoot.push(tarr);
+          } else {
+            linesGenerator.push(tarr);
           }
-        linesGenerator.push(tarr);
-  }
+      }
   }
 }
 
