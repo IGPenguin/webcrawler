@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**Stay Dead** is a browser-based text roguelike RPG, optimized for mobile. It runs on GitHub Pages (deployed from the `live` branch). The `experimental` branch is the development branch.
+**Stay Dead** is a browser-based text roguelike RPG, optimized for mobile. It runs on GitHub Pages (deployed from the `live` branch).
 
 ## Local Development
 
@@ -20,10 +20,10 @@ No build tools, no npm. Pure vanilla JavaScript served by Jekyll.
 The game has two layers:
 
 **Data layer** — CSV files in `/data/`:
-- `encounters.csv` — All enemies/obstacles (the largest file, ~2000+ entries). Columns: `area | emoji | name | type | hp | atk | sta | lck | int | mgk | def | note | desc | message`
+- `encounters.csv` — All enemies, obstacles, items, fishing rewards (~2000+ entries). Columns: `area | emoji | name | type | hp | atk | sta | lck | int | mgk | def | note | desc | message`
 - `story.csv` — Story progression and generator definitions
-- `fishing.csv` — Fishing rewards and artifacts
 - `wip_*.csv` — Work-in-progress content (threats, boosts, undos, misc)
+- `fishing.csv` is obsolete — fishing data was merged into `encounters.csv` (rows use `area:Fishing`)
 
 **Logic layer** — `js/game_loop.js` (~4800 lines, monolithic by design):
 - All game logic lives here — no modules, no splitting
@@ -38,15 +38,146 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 - **Encounter loading**: `loadEncounter(index)` parses CSV rows into the current encounter; `generateNextEncounters(generatorID)` builds dynamic sequences
 - **Combat**: `resolveAction(button)` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` resets a run
-- **Loot**: Items stored as an emoji string in the player inventory object; `processLoot()` parses CSV loot fields
+- **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
+
+## CSV Format Rules
+
+- Delimiter: `;` — never use commas inside fields, replace with `\`
+- `((` is intentional — gets replaced at runtime with `:` (workaround for colons in semicolon-delimited CSV)
+- HTML `<br>` used for line breaks in desc field
+- Bold tags `<b></b>` used only for game mechanic text in item/consumable desc — never in enemy desc fields
+- Empty fields must still include separators
+- One emoji per entry
+
+## Known Design Decisions
+
+- `🌊` wave emoji is reserved for Fishing encounter spots in River of Sorrows
+- River of Sorrows: player is on a boat — use "sail" not "walk" in flavor text
+- Boss coin farming limits (cumulative `savedCoins` cap per run): Fading Wildlands=2, Forsaken Village=4, Twisted Fairyland=6, River of Sorrows=8
+- Tough enemies (DEF stat) are endgame-only — do not add Tough type to early/mid areas
+- LinkedIn share: clipboard copy + `/shareArticle` URL; og:image is `assets/img/linked_in_swords.png`
 
 ## Branching & Deployment
 
-- `experimental` → development work
+- `experimental` → development work, kept alive between PRs
 - `live` → production, auto-deployed to GitHub Pages
 
-## Contributing Rules
+## PR Summaries
 
-- Submit only complete features and data — no partial or WIP content
-- Remove all debug/temporary code before submitting
-- Test all changes locally with Jekyll before opening a PR
+Title pattern: `[emoji] [Adjective] Update: short description` — e.g. `🤖 Vibecode Update: ...`
+
+Body order: user-facing changes first (new encounters, items, artifacts, gameplay), then technical/internal changes.
+
+## Working Style
+
+- Execute code and logic changes directly without asking
+- For new CSV content (encounter rows, descriptions, item text) — suggest first, wait for approval before writing
+- Max 10 new CSV entries per suggestion batch when doing data pushes, work area by area
+
+---
+
+## Game Design Reference
+
+### Tone & Writing
+
+Stay Dead is a dark fantasy text roguelike with a melancholic, slightly ironic tone — think Diablo 2 gravity, not whimsy. Never verbose.
+
+- Short desc fields: 7-15 words, declarative or poetic
+- Punchy message fields: 2-8 words
+- No modern slang, no generic filler phrases
+- Preferred adjectives: Forgotten, Broken, Starved, Cursed, Diseased, Corrupted, Desperate, Forsaken, Hollow, Blighted, Tainted, Withered
+
+**Good desc examples (enemies):**
+- "Stone watches the world fade."
+- "Capable of unfortunate headbutts."
+- "Something is deeply wrong with its eyes."
+- "Barely moves\ means no harm."
+
+**Good desc examples (items):**
+- "Must've been left behind by a true artist."
+- "Lying next to a corpse\ handle with care."
+
+**Good message examples:**
+- "Talons tore your throat apart." (death, direct)
+- "Felt a surge of godlike clarity." (positive, elevated)
+- "The temptation took its toll." (trade-off cost)
+- "Finally found peace?" (quirky/ironic, used sparingly)
+
+### Diablo 2 Vocabulary to Draw From
+
+**Corruption/decay:** corrupted, desecrated, tainted, forsaken, fallen, rotted, withered, hollowed
+**Ancient/lost:** remnants, unravelling, forgotten, buried, sealed, bound, ancient, faded
+**Threat/doom:** foul, banished, eternal, inescapable, condemned, wretched
+**Spiritual:** damned, unholy, sanctified, wicked, defiled, blighted, consecrated
+
+Sentence structures to apply:
+- Simple + final: "The beast has taken enough from us already."
+- Subject has fallen: "Once one of our finest — now the first corrupted."
+- Warning without over-explaining: "Beyond lies mortal danger for the likes of you."
+
+### Naming Conventions
+
+- **Enemies:** Adjective + Noun — e.g. Neurotic Sheep, Corrupted Golem, Pale Countess
+- **Bosses:** Epic 2-word title — e.g. Sky Tyrant, Alpha Bull, Depths Queen
+- **Items:** Material/object or Emotion/object — e.g. Frozen Teardrop, Starlight Amulet, Engraved Ring
+- **Artifacts:** Mythical/elemental words — Oracle, Starfall, Forbidden, Life-Stealing
+
+Area naming flavor:
+- Fading Wildlands: nature-rooted (Trail, Pond, Field, Wild)
+- Forsaken Village: decay (Rotten, Grave, Cultist, Possessed)
+- Twisted Fairyland: dark magic (Malevolent, Warlock, Daunting, Twisted)
+- River of Sorrows: water/grief (Depths, Drowned, Pale, Pearlescent)
+- Shrouded Necropolis: death (Crypt, Ghastly, Tainted, Grave)
+
+### Stat System
+
+Column order: `HP | ATK | STA | LCK | INT | MGK | DEF`
+
+Value priorities: HP = ATK = MGK (high) > STA (medium) > LCK (variable) > INT (utility/scaling)
+
+Trade ratios:
+- `-1 HP ≈ +2 minor stat OR +1 strong stat`
+- `-2 HP ≈ +3 strong stat`
+- `-1 INT` can fund aggressive bonuses
+
+Type-specific rules:
+- `INT = -1` on dumb creatures (animals, small critters) across all areas - cannot be communicated with
+- `MGK` only appears on Undead, Demon, Spirit types
+- `DEF` reserved for Tough type only — endgame areas only (value 1 mid-game, 2 late)
+- Boss stats mirror area enemies, slightly elevated; Boss HP rarely exceeds 4
+
+### Enemy Stat Ranges by Area
+
+| Area | HP | ATK | STA | INT | MGK |
+|------|----|-----|-----|-----|-----|
+| Fading Wildlands | 1-3 | 0-2 | 1-2 | -1 to 3 | 0 |
+| Forsaken Village | 1-3 | 0-2 | 1-3 | -1 to 2 | 0-1 (Undead/Demon) |
+| Twisted Fairyland | 2-5 | 2-4 | 1-4 | 1-5 | 0-1 |
+| River of Sorrows | 1-4 | 1-3 | 1-3 | -1 to 4 | 0-2 (Undead/Demon) |
+| Shrouded Necropolis | 1-4 | 2-4 | 1-4 | -1 to 10* | 0-3 |
+
+*INT spikes to 10 only on specific enemies that cannot be fooled — outlier, not the norm.
+
+### Item Balance Tiers
+
+| Tier | Effect | Examples |
+|------|--------|---------|
+| Common | +1 single minor stat or a tradeoff | Cool Hat, Hefty Hammer |
+| Uncommon | +2 minor stats or +1 strong stat| Lucky Gloves, Kitchen Knife |
+| Rare | +2 strong stat | Sharpshooter Bow (+2 Damage) |
+| Artifact | Passive skill or special mechanic | Cheat Death, 33% bait-save, Bonus damage vs Demons |
+
+Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyland = magic/INT/artifacts → Necropolis = cursed -HP for +MGK patterns.
+
+### Encounter Type Reference
+
+- **Prop**: environmental flavor, grants bonus/malus on rest
+- **Trap-Attack**: triggered by attacking (training dummies = positive, hazards = negative)
+- **Trap-Roll**: triggered by rolling/dodging
+- **Trap-Sleep**: auto-triggers, applies stat effect
+- **Trap-Big**: unavoidable, cannot be destroyed — moderate HP damage
+- **Trap-Obstacle**: blocks path, harmless, resolved by attacking
+- **Curse**: negative or trade-off, auto-applies
+- **Altar**: positive blessing or sacrifice mechanic
+- **Container / Container-2**: searchable, may contain loot
+- **Locked-Container**: requires key or Cast (-2 MGK) to open; force-unlockable by repeated attacks
