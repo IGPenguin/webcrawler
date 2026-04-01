@@ -63,8 +63,8 @@ var spentCoins=0;
 
 var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
-var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary gambling reward.<br>Might be addictive.","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
-var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gambling risks turned out on the bad side.<br>","message:Released a long disappointed sigh..."]
+var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary gambling reward\\ might be addictive.<br>","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
+var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gamble turned out on the bad side.<br>Perhaps better luck next time?","message:Released a long disappointed sigh..."]
 var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"] //Unused
 var usedShopMessages=[];
 
