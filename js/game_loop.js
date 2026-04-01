@@ -2339,7 +2339,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Death"){
           shareLinkedIn();
-          logPlayerAction(actionString,"Shared your story to LinkedIn!");
+          logPlayerAction(actionString,"Copied! Paste it into LinkedIn.");
           break;
         }
 
@@ -4798,9 +4798,9 @@ function redirectToTweet(){
 }
 
 function shareLinkedIn(){
-  var gameUrl = "https://igpenguin.github.io/stay-dead";
-  var shareText = "I just finished another Stay Dead playthrough!"+"\nIt's a data-driven roguelike RPG written in JS.\nCheck it out at: "+gameUrl+"\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","");
-  window.open("https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent(gameUrl)+"&summary="+encodeURIComponent(shareText));
+  var shareText = "I just finished another Stay Dead playthrough!"+"\nIt's a data-driven roguelike RPG written in JS.\nCheck it out at: https://igpenguin.github.io/stay-dead\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","");
+  navigator.clipboard.writeText(shareText);
+  window.open("https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent("https://igpenguin.github.io/stay-dead"));
 }
 
 function visitLinkedIn(){
