@@ -2,7 +2,7 @@
 //Note: This game was not planned for 2+ years of development 💀
 
 //Debug
-var versionCode = "ver. 02/27/2026 @ 11:55 PM"
+var versionCode = "ver. 04/02/2026 @ 01:09 AM"
 var initialEncounterOverride=0; //6 skips tutorial
 
 function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}
@@ -11,6 +11,10 @@ if (isLocalhost()) initialEncounterOverride=4;
 //Colors & Symbols
 var colorWhite = "#FFFFFF"; var colorGold = "#FFD940"; var colorDarkGold = "#4d4112"; var colorGreen = "#22BF22"; var colorSoftGreen = "#62a862ff"; var colorDarkGreen = "#509920"; var colorLime="#91bf08"; var colorGrapefruit="#db432c"; var colorRed = "#FF0000"; var colorSoftRed = "#ef4646ff"; var colorDarkRed = "#690000"; var colorGrey = "#CCCCCC"; var colorDarkGrey = "#888888"; var colorSemiDarkGrey = "#999999"; var colorOrange = "orange"; var colorDarkOrange = "#523501"; var colorYellow = "#F7D147"; var colorDarkYellow = "#d6b53c"; var colorBlue = "#1059AA"; var colorLightBlue = "#487bb5"; var colorDarkBlue = "#072a52"; var colorPurple = "#BF40BF"; var colorDarkPurple = "#381338"; var colorPink = "#c9594f"; var colorLightPink = "#e38aac"; var colorDarkPink = "#a1111a"; var colorShadeBlue = "#556f90"; var colorLightShadeBlue = "#7193bf"; var colorCardBackground = "#202020"; var colorPaper = "#d1bd91"; var colorDarkPaper = "#8c7f61";
 var fullSymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">●</p>"; var emptySymbol = "<p style=\"color:"+colorGrey+";"+"font-size:18px;display:inline;\">○</p>"; var enemyStatusString = ""; var newline="<br>"; var emptySpace="&nbsp"; narrowSpace="&#8239;"; var arrowSymbol="▸";
+
+//Run logger (localhost only)
+var runLog = [];
+var runLogStart = "";
 
 //Savedata
 var savedCoins = parseInt(localStorage.getItem('coins'));
@@ -61,11 +65,11 @@ var playerCurseType = "🪬";
 var availableCoins=savedCoins;
 var spentCoins=0;
 
-var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
-var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
-var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling reward useful in the afterlife.<br>","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
-var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:The gambling risks turned out on the bad side.<br>","message:Released a long disappointed sigh..."]
 var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
+var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
+var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary reward for <b>one-time use only</b>.<br>Beware\\ gambling might be addictive.","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
+var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:Ooops! <b>The gamble did not pay off.</b><br>Perhaps better luck next time?","message:Released a long disappointed sigh..."]
+var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"] //Unused
 var usedShopMessages=[];
 
 var attackTypes=(["🔪","🗡️","🔧","⛏️","🪚","🔨","🪓","🪛","🖋️","✂️","🪃","🪨","🌂","🦯","🥊","🪝","🦷","🪠","🗞️","🔱","🧹","🥏"])
@@ -110,8 +114,9 @@ function renewPlayer(){ //Default values
   playerKarma=1;
   playerLove=0;
   seenLoot = [];
-  adventureLog = [];
+  adventureLog = actionLog;
   spentCoins=0;
+  initRunLog();
 }
 
 //Global vars
@@ -249,7 +254,7 @@ function getLuckyName(name=playerName){
 }
 
 function getGameTip(){
-  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","Always <b>💤 Sleep</b> when you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> rises the chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b> later.","<b>💌 Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help to  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Cook</b> bad food to remove negative effects.","<b>🍀 Luck</b> affects your chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","Non-deadly options always award more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to get a <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by the <b>⇡</b> symbol.","No one likes to be called a <i><b>✏️ Cheater</b></i>.","<b>⚔️ Attack</b> locks repedately to smash them open.","<b>💔 Recalling</b> memories hurts first, helps later.","Carefully consider where you <b>💤 Sleep</b>.","Spend <b>🪙 Drachmae</b> to improve your chances.","Risking <b>🪙 Drachmae</b> has a ~50% success rate.","<b>🍀 Luck</b> affects various random chances.","Renaming to <b><i>✏️ Poco Dinero</b></i> counts as cheating.","<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
+  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","Always <b>💤 Sleep</b> when you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> rises the chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b> later.","<b>💌 Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help you  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Cook</b> bad food to remove negative effects.","<b>🍀 Luck</b> affects your chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","Non-deadly options always award more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to get a <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by the <b>⇡</b> symbol.","No one likes to be called a <i><b>✏️ Cheater</b></i>.","<b>⚔️ Attack</b> locks repedately to smash them open.","<b>💔 Recalling</b> memories hurts first, helps later.","Carefully consider where you <b>💤 Sleep</b>.","Spend <b>🪙 Drachmae</b> to improve your chances.","Risking <b>🪙 Drachmae</b> has a ~50% success rate.","<b>🍀 Luck</b> affects various random chances.","Renaming to <b><i>✏️ Poco Dinero</b></i> counts as cheating.","<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
 
@@ -272,7 +277,7 @@ function getShopMessage(){
 
 //Adventure logging
 var actionString; //Initial action log below
-var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>&nbsp;<br>&nbsp;";
+var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>";
 var adventureLog = actionLog;
 var adventureEncounterCount = 1;
 var adventureEndReason = "";
@@ -350,15 +355,6 @@ $(document).ready(function() {
 
      $.ajax({
          type: "GET",
-         url: "data/fishing.csv",
-         dataType: "text",
-         success: function(data) {
-           processLoot(data);
-         }
-     });
-
-     $.ajax({
-         type: "GET",
          url: "data/encounters.csv",
          dataType: "text",
          success: function(data) {
@@ -408,41 +404,26 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
   }
 }
 
-//Process csv into lines of loot
-function processLoot(allText){ //TODO: remove and reuse the fn above
+//Process csv into lines of encounters and fishing loot
+function processEncounterData(allText){
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(';');
+  linesGenerator = [];
   linesLoot = [];
 
   for (var i=1; i<allTextLines.length; i++) {
       var data = allTextLines[i].split(';');
       if (data.length == headers.length) {
-
           var tarr = [];
           for (var j=0; j<headers.length; j++) {
               tarr.push(headers[j]+":"+data[j]);
           }
-        linesLoot.push(tarr);
-  }
-  }
-}
-
-//Process csv into lines of encounters for generator
-function processEncounterData(allText){ //TODO: remove and reuse the fn above
-  var allTextLines = allText.split(/\r\n|\n/);
-  var headers = allTextLines[0].split(';');
-  linesGenerator = [];
-
-  for (var i=1; i<allTextLines.length; i++) {
-      var data = allTextLines[i].split(';');
-      if (data.length == headers.length) {
-
-          var tarr = [];
-          for (var j=0; j<headers.length; j++) {
-              tarr.push(headers[j]+":"+data[j]);
+          if (data[0] === "Fishing") {
+            linesLoot.push(tarr);
+          } else {
+            linesGenerator.push(tarr);
           }
-        linesGenerator.push(tarr);
-  }
+      }
   }
 }
 
@@ -646,7 +627,7 @@ function loadEncounter(index, fileLines = linesStory){
     enemyDesc=getShopMessage();
     enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
   }
-  if (enemyEmoji=="🪙") enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+  if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
 
   enemyMsg = String(selectedLine.split(",")[13].split(":")[1]).replaceAll("\\",",");
   enemyMsg = enemyMsg.replaceAll("((",":");
@@ -666,6 +647,10 @@ function loadEncounter(index, fileLines = linesStory){
     case "Toxic":
       if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
         logAction("💢 ▸ "+enemyEmoji+" Engaged an enemy: <b>"+enemyName+"</b>")
+        if (playerLootString.includes("📌")) {
+          enemyHit(1,false,false,true)
+          logAction("📌 ▸ "+enemyEmoji+" Inflicted the <b>☠️ Ancient Voodoo</b> -1 💔")
+        }
       } else {
         logAction("👁️ ▸ "+enemyEmoji+" Spotted a critter: <b>"+enemyName+"</b>")
       }
@@ -730,7 +715,13 @@ function loadEncounter(index, fileLines = linesStory){
       if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke. I guess that's it for now...")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) {
+        logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
+        if (playerLootString.includes("📌") && ((enemyAtk+enemyAtkBonus)>0)) {
+          enemyHit(1,false,false,true)
+          logAction("📌 ▸ "+enemyEmoji+" Inflicted the <b>☠️ Ancient Voodoo</b> -1 💔")
+        }
+      }
       break;
   }
 
@@ -778,6 +769,11 @@ function loadEncounter(index, fileLines = linesStory){
   if (playerLootString.includes("🐴")){
     enemyAtkBonus-=1;
   }
+  runLogAdd("encounter", {
+    area: areaName, emoji: enemyEmoji, name: enemyName, type: enemyType,
+    hp: enemyHp, atk: enemyAtk, sta: enemySta, lck: enemyLck,
+    int: enemyInt, mgk: enemyMgk, def: enemyDef, note: enemyTeam
+  });
 }
 
 function generateRandomItem(item=""){
@@ -812,7 +808,6 @@ function drachmaeBuy(price=1,item=""){
         displayPlayerGainedEffect();
         displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
-        spentCoins-=2; //Get a temporary extra coin
         drachmaPrize[0]="area:"+areaName;
         pushEncounter(drachmaPrize);
         nextEncounter();
@@ -922,7 +917,8 @@ function generateNextEncounters(generatorID=0, logCall=true){
         }
       }
       drachmaCoin[0]="area:"+areaName;
-      if (!areaName.includes("Shrouded Necropolis")) pushEncounter(drachmaCoin); //TODO this means you can farm coins forever, perhaps I should add tracking where you already got a coin and do it just once?
+      var bossCoinsLimit = {"Fading Wildlands": 2, "Forsaken Village": 4, "Twisted Fairyland": 6, "River of Sorrows": 8};
+      if (!areaName.includes("Shrouded Necropolis") && savedCoins < (bossCoinsLimit[areaName] || 0)) pushEncounter(drachmaCoin); //Unrecognized area defaults to no coin (0)
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
 
@@ -1206,6 +1202,10 @@ function redraw(){
       if (enemyEmoji=="🪙" || enemyEmoji=="💰"){
         enemyStatusString=decorateStatusText("🧬","Everlasting",colorLightShadeBlue);
         cardUIElement.style.background=colorShadeBlue;
+        if (enemyName.includes("Lucky")){
+          enemyStatusString=decorateStatusText("🍀","Fortune",colorSoftGreen);
+          cardUIElement.style.background=colorSoftGreen;
+        }
       }
       if (enemyName.includes("Tarot")){
         enemyStatusString=decorateStatusText("♣️","Prophecy",colorPaper);
@@ -1257,7 +1257,10 @@ function redraw(){
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Unsettling Anxiety",colorRed);
-
+      if (enemyName.includes("Regrets")) {
+        enemyStatusString=decorateStatusText("❌","Misfortune",colorSoftRed);
+        cardUIElement.style.background=colorSoftRed;
+      }
       break;
     case "Upgrade":
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
@@ -1312,7 +1315,9 @@ function redraw(){
   }
 
   document.getElementById('id_stats').innerHTML = enemyStatusString;
-  document.getElementById('id_log').innerHTML = actionLog;
+  var logEl = document.getElementById('id_log');
+  logEl.innerHTML = adventureLog.split("<br>").filter(l => l.replace(/&nbsp;/g,"").trim()).reverse().join("<br>");
+  logEl.scrollTop = 0;
 
   versusTextUIElement = document.getElementById('id_versus');
   switch (enemyType){
@@ -1422,6 +1427,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     animateUIElement(buttonUIElement,"animate__pulse","0.15");
     actionString = buttonUIElement.innerHTML;
     actionVibrateFeedback(button);
+    runLogAdd("action", {
+      btn: button,
+      player: {hp: playerHp, hpMax: playerHpMax, sta: playerSta, staMax: playerStaMax,
+               mgk: playerMgk, atk: playerAtk, lck: playerLck, int: playerInt,
+               def: playerDef, level: playerLevel, xp: playerXP, karma: playerKarma}
+    });
 
     //Override boss type for action
     if (enemyType.includes("Boss")){
@@ -2313,7 +2324,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Death"){
           shareLinkedIn();
-          logPlayerAction(actionString,"Shared your story to LinkedIn!");
+          logPlayerAction(actionString,"Copied your run! Paste it into LinkedIn.");
           break;
         }
 
@@ -2685,10 +2696,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyEmoji=="🪙"){
-              if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to shape your fate.",colorWhite),6);
-              savedCoins+=1;
+              if (enemyName.includes("Lucky")) {
+                spentCoins-=2; //Temporary coin for this run only, not persistent
+              } else {
+                if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to shape your fate.",colorWhite),6);
+                savedCoins+=1;
+                localStorage.setItem('coins', parseInt(savedCoins));
+              }
               displayPlayerEffect("🪙");
-              localStorage.setItem('coins', parseInt(savedCoins));
             }
 
             if (enemyEmoji=="💰"){
@@ -3553,7 +3568,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   //Fullscreen Curtain
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
     curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
-    if ((!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+    if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   redraw();
@@ -4050,6 +4065,8 @@ function playerReincarnate(){
     pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
     pushEncounter(bonusItem,2);
   }
+
+  spentCoins = 0; //Hack :shug:
   nextEncounter();
   curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
   renewPlayer();
@@ -4078,6 +4095,8 @@ function gameOver(silent=false){
   if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
+  runLogAdd("run_end", {outcome: "death", killedBy: enemyName, killedByEmoji: enemyEmoji, area: areaName, time: adventureEndTime});
+  downloadRunLog();
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
@@ -4095,10 +4114,38 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
+  runLogAdd("run_end", {outcome: "win", area: areaName, time: adventureEndTime});
+  downloadRunLog();
 
   //Reset progress to game start
   resetSeenEncounters();
   processStoryData(storyData,false);
+}
+
+//Run Logger
+function initRunLog() {
+  if (!isLocalhost()) return;
+  runLog = [];
+  var now = new Date();
+  runLogStart = now.toISOString().slice(0,19).replaceAll(":","-");
+  runLogAdd("run_start", {name: playerName, version: versionCode, timestamp: now.toISOString()});
+}
+
+function runLogAdd(type, data) {
+  if (!isLocalhost()) return;
+  runLog.push(Object.assign({type: type}, data));
+}
+
+function downloadRunLog() {
+  if (!isLocalhost() || runLog.length === 0) return;
+  var fileName = "Stay-Dead-" + playerName.replaceAll(" ","-") + "-" + runLogStart + ".json";
+  var el = document.createElement('a');
+  el.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(runLog)));
+  el.setAttribute('download', fileName);
+  el.style.display = 'none';
+  document.body.appendChild(el);
+  el.click();
+  document.body.removeChild(el);
 }
 
 //Logging
@@ -4109,19 +4156,13 @@ function logPlayerAction(actionString,message){
     actionString=actionString.slice(2);
     if (!actionString.includes("you actually won!")) actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
   }
+  runLogAdd("log", {msg: actionString.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").replace("<br>","").trim()});
   adventureLog += actionString;
-  actionLog = actionString + actionLog;
-  if (actionLog.split("<br>").length > 3) {
-    actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
-  }
 }
 
 function logAction(message){
-  actionLog = message + "<br>" + actionLog;
+  runLogAdd("log", {msg: message.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").trim()});
   adventureLog += message+"<br>";
-  if (actionLog.split("<br>").length > 3) {
-    actionLog = actionLog.split("<br>").slice(0,3).join("<br>");
-  }
 }
 
 function getTime(){
@@ -4244,6 +4285,7 @@ function adjustEncounterButtons(){
       if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
       if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorGold);
       if (enemyEmoji=="🪙" || enemyEmoji=="💰") setButton('button_grab',"👋 Claim",colorLightShadeBlue);
+      if (enemyEmoji=="🪙" && enemyName.includes("Lucky")) setButton('button_grab',"👋 Claim",colorSoftGreen);
       if (enemyName.includes("Tarot Card:")) {
         setButton('button_grab',"👋 Accept",colorPaper);
         setButton('button_roll',"❌ Reject",colorRed);
@@ -4281,7 +4323,7 @@ function adjustEncounterButtons(){
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       setButton('button_sleep',"💤 Sleep",colorLightBlue);
-      if (enemyName.includes("Regrets")) setButton('button_sleep',"🙁 Accept",colorWhite);
+      if (enemyName.includes("Regrets")) setButton('button_sleep',"🙁 Accept",colorSoftRed);
       if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (areaName.includes("Shrouded")) setButton('button_sleep',"🧠 Think",colorRed);
       break;
@@ -4736,8 +4778,9 @@ function redirectToTweet(){
 }
 
 function shareLinkedIn(){
-  var linkedInUrl = "https://www.linkedin.com/feed/?shareActive&mini=true&text=";
-  window.open(linkedInUrl+encodeURIComponent("I just finished another Stay Dead playthrough!"+"\nIt's a data-driven roguelike RPG written in JS.\nCheck it out at: https://igpenguin.github.io/stay-dead\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")));
+  var shareText = "I just finished another Stay Dead playthrough!"+"\nIt's a data-driven roguelike RPG written in JS.\nCheck it out at: https://igpenguin.github.io/stay-dead\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","");
+  navigator.clipboard.writeText(shareText);
+  window.open("https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent("https://igpenguin.github.io/stay-dead"));
 }
 
 function visitLinkedIn(){

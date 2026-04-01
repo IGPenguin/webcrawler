@@ -196,7 +196,9 @@ layout: default
 <h4 id = "id_log" style="margin-top:0px;
                           padding-left:8px;
                           margin-bottom:12px;
-                          text-align:left;"/>
+                          text-align:left;
+                          height:4.5em;
+                          overflow-y:auto;"/>
 </div>
 <h3 id = "id_player_party_loot" style="text-align:left;
                                         text-overflow: cut;

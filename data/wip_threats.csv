@@ -339,3 +339,58 @@ Forsaken Village;🦴;Cracked Bones;Curse;-1;0;0;0;0;0;Health Condition;Aching j
 Forsaken Village;💤;Endless Sleep;Curse;0;0;0;0;-1;0;Misfortune;The weight of dreams drags you under.<br>;Never woke again.
 Forsaken Village;👣;Ghostly Footsteps;Curse;0;0;0;0;-1;0;Misfortune;Faint steps echo just behind you.<br>;Sanity slipped away.
 Forsaken Village;🩸;Blood Price;Curse;-1;0;0;0;0;0;Health Condition;A price paid in crimson.<br>;Life drained out.
+
+Fading Wildlands;🐀;Field Scavenger;Small;1;1;2;0;-1;0;0;Tiny Rodent;Sniffs toward the darker horizon\ not the grain.<br>;Contracted a deadly disease.
+Fading Wildlands;🐁;Pale Forager;Small;1;1;2;0;-1;0;0;Tiny Rodent;Red eyes track something behind you.\ <br>;Contracted a deadly disease.
+Fading Wildlands;🦎;Fleeing Skink;Small;1;1;1;0;0;0;0;Sneaky Reptile;Bolts away from the Meadows\ not toward them.<br>;Lost sight of it\ paid the price.
+Fading Wildlands;🪳;Grave-Twitch Roach;Small;1;1;1;0;-1;0;0;Annoying Insect;Keeps crawling toward where the ground dips.<br>;Crawled in the ear and ended it all.
+Fading Wildlands;🪰;Gravebound Gnat;Small;1;1;1;0;-1;0;0;Tiny Annoyance;Already drunk on the smell downstream.<br>;Couldn’t take the endless buzzing.
+Fading Wildlands;🦗;Skittish Hopper;Small;1;1;1;0;-1;0;0;Lively Insect;Jumps away from you\ and something behind you.<br>;Got too close and fell.
+Fading Wildlands;🐝;Frantic Forager Bee;Small;1;1;1;0;-1;0;0;Flying Insect;Buzzes in tight\ panicked spirals.<br>;Stung in the eye and fell.
+Fading Wildlands;🦋;Ashdusted Butterfly;Small;1;0;1;0;-1;0;0;Nature's Beauty;Blue wings flecked with grey\ like smoke.<br>;How come this happened?
+Fading Wildlands;🐌;Hollowtrail Snail;Small;1;0;1;0;-1;0;0;Slow Insect;Leaves a murky streak that smells wrong.<br>;How come this happened?
+Fading Wildlands;🪱;Surface-Wary Grub;Small;1;1;0;0;-1;0;0;Arthropod;Keeps trying to burrow back underground.\ <br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Upturned Grub;Small;1;1;0;0;-1;0;0;Arthropod;Rolls on the surface\ like it forgot how to dig.<br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Lost Tunnel Worm;Small;1;1;0;0;-1;0;0;Arthropod;Wriggles in circles\ never finding the soil.<br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Tremor-Wary Worm;Small;1;1;1;0;-1;0;0;Arthropod;Shivers whenever the earth sighs.<br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Restless Earthworm;Small;1;1;1;0;-1;0;0;Arthropod;Crowded with others fleeing the river’s pull.<br>;Got destroyed by a worm.
+Fading Wildlands;🪱;Rainless Worm;Small;2;1;1;0;-1;0;0;Arthropod;Surfaced for storms that never came.<br>;Got destroyed by a worm.
+Fading Wildlands;🐛;Harbinger Grub;Small;1;1;1;0;-1;0;0;Innocent Critter;Harmless\ but drawn to your footsteps.<br>;This was a disaster.
+Fading Wildlands;🪰;Carrion-Calling Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Already trained on the scent of endings.<br>;Contracted a deadly disease.
+Fading Wildlands;🐜;Ashline Ant;Small;1;1;0;0;-1;0;0;Insect;Carries crumbs from a long-dead firepit.<br>;How could this happen?
+Fading Wildlands;🐜;Bonechip Ant;Small;1;1;1;0;-1;0;0;Insect;Drags something white and brittle behind it.<br>;How could this happen?
+Fading Wildlands;🦗;Ceaseless Chirper;Small;1;1;0;0;-1;0;0;Annoying Insect;Falls silent whenever you look behind you.<br>;The noise exploded your head!
+
+Fading Wildlands;🐓;Watchful Yardcock;Pet;1;1;2;0;0;0;0;Feathery Friend;Crows at the road out of the Meadows.<br>;Convinced it to join you.
+Fading Wildlands;🐦‍⬛;Omen-Tongued Raven;Pet;1;1;1;1;0;0;0;Mysterious Bird;Croaks softly whenever you face the wrong way.<br>;The bird has joined your side.
+Fading Wildlands;🦦;Troublemirth Otter;Pet;1;1;1;0;0;0;0;Playful Critter;Splashes happily\ but never in still water.<br>;Slipped into your party.
+Fading Wildlands;🐈;Field-Stalker Cat;Pet;1;0;2;0;0;0;0;Cute Animal;Eyes fixed on a horizon you can’t yet see.<br>;Gained powerful follower.
+Fading Wildlands;🦎;Pathshadow Gecko;Pet;1;0;2;1;0;0;0;Beautiful Lizard;Keeps to your side\ avoiding open spaces.<br>;Got a new travel buddy!
+Fading Wildlands;🐞;Wanderlost Ladybug;Pet;1;0;1;1;0;0;0;Pelicular Insect;Crawls in circles on your gauntlet like a ward.<br>;Got a new travel buddy!
+Fading Wildlands;🐥;Meadow Orphan Chick;Pet;1;0;1;0;-1;0;0;Cute Animal;Peeping at fields that will never be home again.<br>;Got a new travel buddy!
+Fading Wildlands;🕊️;Harbinger Dove;Pet;1;0;2;1;0;0;0;Symbol of Peace;Lands only where the ground still feels kind.\ <br>;Follows your shadow.
+
+Fading Wildlands;🐐;Bramblehorn Goat;Standard;2;1;1;0;10;0;0;Wild Beast;Keeps its back to the river\ eyes on you.<br>;Impaled by its horns.
+Fading Wildlands;🦫;Gnarltooth Gnawer;Standard;2;1;1;0;2;0;0;Wild Beast;Builds dams\ then stares downstream like it hears cries.<br>;Dragged you to a dam of bones.
+Fading Wildlands;🦃;Paniccrest Turkey;Standard;2;1;1;0;10;0;0;Domestic Animal;Startles at nothing\ charges at everything.<br>;Defeated by an angry bird.
+Fading Wildlands;🐓;Bloodwake Rooster;Standard;2;1;2;0;10;0;0;Crazed Animal;Shrieks like a warning siren at dawn.<br>;Got your brain pecked out.
+Fading Wildlands;🐑;Uneasy Ewe;Standard;2;0;1;0;10;0;0;Domestic Animal;Keeps edging away from the village\ not you.<br>;Head-butted to death.
+Fading Wildlands;🦥;Doom-Drowsy Sloth;Standard;2;0;1;1;1;0;0;Innocent Critter;Too calm\ even with the sky dimming.\ <br>;Oh\ that is really unfortunate.
+
+Fading Wildlands;🦨;Blightscent Skunk;Toxic;2;0;2;0;1;0;0;Wild Animal;Tail twitching toward the wind from downstream.<br>;Suffered a terrible stench.
+Fading Wildlands;🦔️;Thorncurl Hedgehog;Stingy;1;0;1;1;0;0;0;Innocent Critter;Spines rise whenever the river sighs.\ <br>;Ouch\ that stings!
+Fading Wildlands;🐝;Wanderlost Stinger;Stingy;1;1;1;0;-1;0;0;Confused Insect;Searching for flowers that already died.<br>;Ouch\ that stings!
+
+Fading Wildlands;🦆;Riverscorn Duck;Swift;1;1;2;0;0;0;0;Wild Animal;Snaps at ankles\ then glares toward the distant current.<br>;Defeated by an angry bird.
+Fading Wildlands;🐄;Bristlehorn Cow;Heavy;3;0;1;0;1;0;0;Domestic Animal;Docile until pushed\ then terrifyingly solid.<br>;Impaled by its horns.
+Fading Wildlands;🦌;Edgewatch Stag;Heavy;2;0;2;0;3;0;0;Wild Animal;Hooves planted between green fields and gloom.<br>;Rammed till the last breath.
+
+Fading Wildlands;🪿;Unruly Goose;Boss-Pet;1;1;3;0;2;0;0;Feathered Menace;Guards the last peaceful water like a tyrant.<br>;Honked its way into your party.
+Fading Wildlands;🦢;Pond Sovereign;Boss-Standard;2;2;2;0;3;0;0;Feathered Fury;Graceful surface\ heavy eyes that know what’s coming.<br>;Choked by the long neck.
+Fading Wildlands;🦅;Meadow Apex;Boss-Swift;1;3;1;0;3;0;0;Winged Horror;Circles the only road leading deeper in.<br>;Talons tore your throat apart.
+Fading Wildlands;🐍;Gloomshed Viper;Boss-Swift;1;3;1;0;-1;0;0;Fearsome Reptile;Lurks where grass thins into barren earth.<br>;Got injected with deadly venom.
+Fading Wildlands;🦡;Graveway Badger;Boss-Swift;2;2;2;0;4;0;0;Wild Animal;Snarls at anything walking toward the village.\ <br>;Got freaking destroyed.
+Fading Wildlands;🐏;Pathwarden Ram;Boss-Heavy;3;1;1;0;2;0;0;Wild Animal;Plants itself in the last open meadow.\ <br>;Rammed till releasing the last breath.
+Fading Wildlands;🦬;Thunderstep Bison;Boss-Heavy;3;2;1;0;3;0;0;Wild Animal;Each stomp sounds like a warning drum.<br>;Suffered a fatal blunt trauma.
+Fading Wildlands;🐗;Broodguard Sow;Boss-Heavy;2;2;1;0;-1;0;0;Wild Animal;Keeps her young far from the river’s pull.<br>;Got torn apart by tusks.
+Fading Wildlands;🐂;Spent Plowbull;Boss-Heavy;3;0;1;0;1;0;0;Domestic Animal;Too tired to go on\ too stubborn to flee the coming dark.<br>;Got impaled by both horns at once.
