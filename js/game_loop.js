@@ -4788,8 +4788,9 @@ function redirectToTweet(){
 }
 
 function shareLinkedIn(){
-  var linkedInUrl = "https://www.linkedin.com/feed/?shareActive&mini=true&text=";
-  window.open(linkedInUrl+encodeURIComponent("I just finished another Stay Dead playthrough!"+"\nIt's a data-driven roguelike RPG written in JS.\nCheck it out at: https://igpenguin.github.io/stay-dead\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","")));
+  var gameUrl = "https://igpenguin.github.io/stay-dead";
+  var shareText = "I just finished another Stay Dead playthrough!"+"\nIt's a data-driven roguelike RPG written in JS.\nCheck it out at: "+gameUrl+"\n\n"+generateCharacterShareString().replaceAll("&nbsp"," ").replaceAll("<b>","").replaceAll("</b>","");
+  window.open("https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent(gameUrl)+"&summary="+encodeURIComponent(shareText));
 }
 
 function visitLinkedIn(){
