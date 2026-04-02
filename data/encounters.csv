@@ -125,6 +125,8 @@ Fading Wildlands;🦥;Slow Watcher;Standard;2;0;1;1;1;0;0;Gentle Observer;Barely
 Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings to skin and soul.<br>;Suffered a terrible stench.
 Fading Wildlands;🦔️;Curled Bristle;Stingy;1;0;1;1;0;0;0;Spined Bundle;Harmless until you reach for it.<br>;Ouch\ that stings!
 Fading Wildlands;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Wandering Threat;Doesn’t know where it’s going\ only that it hurts.<br>;Ouch\ that stings!
+Fading Wildlands;🐸;Glassy Frog;Reflective;1;0;2;0;1;0;0;Woodland Oddity;Its skin catches every hit and returns the insult.<br>;Drowned in a sorry puddle.
+Fading Wildlands;🦉;Fevered Owl;Toxic;2;1;1;0;2;0;0;Diseased Hunter;Sick with something that spreads by touch.<br>;Suffered a nasty disease.
 
 Fading Wildlands;🦆;Spooked Drake;Swift;1;1;2;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
 Fading Wildlands;🐺;Stray Whelp;Swift;2;1;1;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Defeated by an angry bird.
@@ -401,6 +403,8 @@ Forsaken Village;🐑;Blight Sheep;Standard;3;0;2;0;0;0;0;Diseased Livestock;She
 Forsaken Village;🕵️‍♂️;Grave Robber;Standard;2;2;2;0;2;0;0;Profane Human;Smells of soil and rotten decay.<br>;Buried in a shallow grave.
 Forsaken Village;🧙‍♀️;Lunatic Hermit;Standard;2;1;1;0;2;1;0;Reclusive Human;Does not care about the decaying world.<br>;Choked with bare hands.
 
+Forsaken Village;🪞;Cracked Mirror;Reflective;2;0;0;0;-1;0;0;Haunted Object;The reflection in it is not yours.<br>;Couldn't take your reflection.
+
 Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
 Forsaken Village;🦂;Fierce Scorpion;Stingy;1;2;2;0;-1;0;0;Extremely Venomous;Dangerous tail ready for action.<br>;Deadly venom entered the body.
@@ -410,6 +414,7 @@ Forsaken Village;🐝;Busy Hornet;Stingy;1;1;2;0;-1;0;0;Annoying Insect;Oversens
 Forsaken Village;🦨;Sneaky Stinker;Toxic;2;1;3;0;1;0;0;Wild Animal;Seems having lightning reflexes.<br>;Suffered from a horrendous stench.
 Forsaken Village;🪴;Cursed Sprout;Toxic;2;0;1;1;0;0;0;Poisonous Plant;Steadily grows in silence.<br>;Suffered a toxin reaction.
 Forsaken Village;🐀;Bloated Vermin;Toxic;2;2;1;0;-1;0;0;Plagued Critter;Visibly sick with a nasty disease.<br>;Contracted a deadly disease.
+Forsaken Village;🐈;Mangy Stray;Toxic;1;2;2;0;1;0;0;Diseased Stray;Its fur tells a story you don't want to hear.<br>;Suffered a deadly disease.
 
 Forsaken Village;🦎;Ashen Lizard;Hot;2;2;2;0;0;0;0;Charred Reptile;Sheds soot wherever it slinks.<br>;Its stare froze your breath.
 
@@ -427,6 +432,8 @@ Forsaken Village;🐐;Crazed Goat;Swift;1;0;3;0;0;0;0;Unstable Livestock;Foam dr
 Forsaken Village;🤖;Corrupted Golem;Heavy;2;1;2;0;2;0;0;Automatron;Sparkles and flashing diodes indicate problems.<br>;Torn into two halves.
 Forsaken Village;🐖;Massive Porkchop;Heavy;3;1;1;0;-1;0;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Devoured by a porkchop.
 
+Forsaken Village;🪲;Dead Beetle;Undead;1;1;1;0;-1;1;0;Risen Insect;Should not be moving. Is moving.<br>;Bugs got into your brain.
+Forsaken Village;🐝;Withered Drone;Undead;1;1;1;0;-1;0;0;Dead Insect;Still flying. Long since dead.<br>;Your buzzing stopped\ forever.
 Forsaken Village;🐖;Rotten Swine;Undead;3;1;1;0;-1;0;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Zombified by a porkchop.
 Forsaken Village;🧟‍♂️;Starving Walker;Undead;2;1;2;0;-1;0;0;Animated Remains;Hands shake as they reach out.<br>;Collapsed clutching your arm.
 Forsaken Village;🧟‍♀️;Crawling Revenant;Undead;1;2;1;0;-1;1;0;Animated Torso;Still looks almost human.<br>Better keep distance.;Got rotten to the bones
@@ -720,6 +727,7 @@ Twisted Fairyland;🔥;Dancing Flame;Hot;1;2;2;1;0;0;0;Elemental;Better not get 
 
 Twisted Fairyland;🦚;Pearlescent Bird;Reflective;2;2;3;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.
 Twisted Fairyland;🪲;Overgrown Beetle;Reflective;3;3;1;1;0;0;0;Pelicular Insect;Beautifully colored\ but seems deadly.<br>;Crushed by giant mandibles.
+Twisted Fairyland;🦎;Prismatic Gecko;Reflective;3;2;3;0;2;0;0;Magic Lizard;Changes color to match surroundings.<br>;Your colours faded forever.
 
 Twisted Fairyland;🐌;Oversized Snail;Tough;1;0;1;0;0;0;1;Armored Critter;Leave him be\ he means no harm!<br>;Covered in sticky goo.
 Twisted Fairyland;🐢;Fierce Tortoise;Tough;3;2;2;0;0;0;1;Armored Foe;Too hungry to leave you alone.<br>;Turned into a human cabbage.
@@ -760,6 +768,9 @@ Twisted Fairyland;👹;Little Devil;Demon;1;3;1;0;3;0;0;Imminent Threat;Laughs o
 Twisted Fairyland;🌚;Shadow Spirit;Demon;3;1;1;0;-1;1;0;Sinister Remnants;Slips between the shadows.<br>;No mercy for the wicked.
 Twisted Fairyland;👿;Malevolent Fiend;Demon;2;1;3;0;1;1;0;Sinister Shape;Appeared out of nowhere.<br>;Lost in endless darkness.
 
+Twisted Fairyland;🦋;Ash Wraith;Undead;2;2;2;0;-1;1;0;Dead Insect;Wings made of grave dust. Still beautiful.<br>;You were scattered into nothing.
+
+Twisted Fairyland;🐸;Hexed Toad;Spirit;2;0;2;0;4;1;0;Forest Spirit;Croaks in a language older than this forest.<br>;Your spirit was destroyed.
 Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;1;0;-1;1;0;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.
 Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;1;1;1;-1;0;0;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.
 Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;0;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.
@@ -1264,6 +1275,8 @@ Fishing;📔;Waterlogged Diary;Item;0;0;0;0;1;0;0;Knowledge Notes;Provides insig
 Fishing;🧢;Sailor's Cap;Item;0;0;0;2;-1;0;0;Headgear;Smells of moist seaweed and old tales.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Charisma</b>.;Set it snug on your head.
 Fishing;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the bad guys!
 Fishing;📘;Damned Book;Item;-1;0;0;0;0;1;0;Sinister Writing;Learn the art of the dark magic\ for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Joined the dark side!
+Fishing;🫙;Cracked Jar;Item;0;0;0;-1;0;0;0;Cursed Container;The smell coming out suggests a mistake.<br>;Immediately regretted opening it.
+Fishing;🪞;Splinter Mirror;Item;0;0;0;-1;0;0;0;Bad Omen;Seven years is a modest estimate.<br>;Cracks spread across your fortune.
 Fishing;🏺;Burial Urn;Item;0;0;0;-3;0;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.
 
 Fishing;🗝️;Rusty Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
@@ -1276,6 +1289,15 @@ Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;0;Arthropod;Perhaps could still be
 Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;0;Worthless Junk;Waterlogged and falling apart.<br>;Sifted through for scraps.
 Fishing;💵;Wet Cash;Item;0;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.
 Fishing;👞;Wet Shoe;Item;0;0;0;0;0;0;0;Worthless Trash;Thoroughly wet leather shoe.<br>;Why did you even pick this up?
+Fishing;🥾;Waterlogged Boot;Item;0;0;0;0;0;0;0;Worthless Trash;Soaked through. Still only one.<br>;No use for one boot.
+Fishing;🔩;Corroded Bolt;Item;0;0;0;0;0;0;0;Worthless Scrap;Has no business being in a river.<br>;Pocketed it out of habit.
+Fishing;📰;Pulped Chronicle;Item;0;0;0;0;0;0;0;Soggy Mess;Ink and paper merged into one sad lump.<br>;Couldn't make out a single word.
+Fishing;🎏;Torn Kite;Item;0;0;0;0;0;0;0;Lost Toy;A child's toy. No child to return it to.<br>;Left it in the current.
+Fishing;🔮;Shattered Orb;Item;0;0;0;0;0;0;0;Broken Relic;Once told futures. Now just glass.<br>;Pocketed the shards.
+
+Fishing;🧱;Sunken Brick;Prop;0;0;0;0;0;0;0;Dead Weight;Cannot dislodge it from the riverbed.<br>;Unhooked the unfortunate catch.
+Fishing;🪵;Waterlogged Log;Prop;0;0;0;0;0;0;0;River Debris;Snagged the hook and refused to budge.<br>;Cut the line and moved on.
+Fishing;⛓️;Rusted Chain;Prop;0;0;0;0;0;0;0;Submerged Hazard;Something is still attached to the other end.<br>;Left it alone.
 Fishing;⚓️;Rusty Anchor;Prop;0;0;0;0;0;0;0;Rubbish;Cannot really pull this thing out.<br>;Unhooked the unfortunate catch.
 
 Fishing;🪸;Radiating Coral;Consumable;-2;0;0;0;0;1;0;Questionable Snack;Malevolent glow covers its entire surface.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 💔 Health</b>;Suffered harsh spasms
