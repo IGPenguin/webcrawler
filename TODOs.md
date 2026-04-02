@@ -51,7 +51,7 @@
 - [ ] JS spaghetti monster joke boss after endgame
 - [ ] Negative friends — investigate
 - [ ] Necropolis optional areas
-- [ ] Scrolling in log list
+- [x] Scrolling in log list
 - [ ] Hit prop once to try spawning small (remember to go back)
   - [ ] Camp-Rest (Prop), spawn enemy on rest (log it)... camp-grab?
 - [ ] No 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
