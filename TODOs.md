@@ -1,5 +1,8 @@
 # Stay Dead — TODOs
 
+## Imminent
+- [ ] Decompose the project by executing the steps described in  "cleanup" folder
+
 ## Final Final Tweaks
 
 - [x] Fix risk to not edit spent coins var + adjust coin pickup not to add to saved when picking up "Lucky"
