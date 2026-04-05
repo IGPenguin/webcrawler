@@ -3,8 +3,9 @@
 ## Imminent
 - [ ] Decompose the project by executing the steps described in  "cleanup" folder
 	- create version_bump shell to update the version code to current time
-	- 
 
+## Bot player
+- open a playwright session againts live page to capture controls                                                                                    - setup a bot that can decide correct actions to resolve the encounters and complete the game
 
 ## Small Ideas (new PR)
 
