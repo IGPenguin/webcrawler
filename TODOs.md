@@ -2,15 +2,9 @@
 
 ## Imminent
 - [ ] Decompose the project by executing the steps described in  "cleanup" folder
+	- create version_bump shell to update the version code to current time
+	- 
 
-## Final Final Tweaks
-
-- [x] Fix risk to not edit spent coins var + adjust coin pickup not to add to saved when picking up "Lucky"
-- [x] Swap "required big" for "took a rather"
-- [x] Forbidden apple desc too long
-- [x] Generate coins after boss limits: first area 2, then 4, 6, 8
-- [x] Scan dataset to improve low effort or non-matching texts
-- [x] Replace all placeholders
 
 ## Small Ideas (new PR)
 
@@ -70,9 +64,19 @@
 - [ ] Mischievous legendary on bad karma
 - [ ] Hit/Dodge/Block minigame — tap > timer progress bar > hitzone
 
+
+## Recently fixed
+
+- [x] Fix risk to not edit spent coins var + adjust coin pickup not to add to saved when picking up "Lucky"
+- [x] Swap "required big" for "took a rather"
+- [x] Forbidden apple desc too long
+- [x] Generate coins after boss limits: first area 2, then 4, 6, 8
+- [x] Scan dataset to improve low effort or non-matching texts
+- [x] Replace all placeholders
+
 ---
 
-## Completed
+## Completed (History)
 
 - [x] Campfire bonus sleep trap
 - [x] A lot more positive traps
