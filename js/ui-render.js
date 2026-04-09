@@ -1,0 +1,382 @@
+//UI DRAW FUNCTIONS
+function redraw(){
+  //Version
+  versionIDUIElement = document.getElementById('id_version')
+  versionIDUIElement.innerHTML = versionCode+"<br>"+lastGeneratorName+" (#"+adventureEncounterCount+")";
+
+  //Player UI
+  playerInfoUIElement = document.getElementById('id_player_info');
+  toolbarCardUIElement = document.getElementById('id_toolbar_card');
+  document.getElementById('id_player_name').innerHTML = playerName;
+
+  playerLevelUIELement = document.getElementById('id_player_level');
+  var lvlSymbol= ""
+  if (playerXP>=playerXPThreshold) lvlSymbol="⇡ "
+  playerLevelUIELement.innerHTML = decorateStatusText("","Level "+playerLevel+lvlSymbol,colorGold);
+
+  var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp);
+  if ((playerHpMax-playerHp)>0) playerStatusString+=emptySymbol.repeat(playerHpMax-playerHp);
+
+  playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
+  if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
+
+  if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
+
+  if (playerMgkMax>0 || playerMgk>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk);}
+  if ((playerMgkMax-playerMgk)>0) playerStatusString += emptySymbol.repeat(playerMgkMax-playerMgk);
+
+  document.getElementById('id_player_status').innerHTML = playerStatusString;
+  document.getElementById('id_player_party_loot').innerHTML = "";
+  if (playerPartyString.length > 1) { //Now inicializes with [""]
+        document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;&nbsp;";
+  }
+  if (playerLootString.length > 1) { //Now inicializes with [""]
+    document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "+playerLootString;
+  }
+  if (playerPartyString.length+playerLootString.length == 2) {
+    document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
+  }
+
+  //Versus UI
+  versusTextUIElement = document.getElementById('id_versus');
+
+  //Encounter UI
+  areaUIElement = document.getElementById('id_area');
+  nameUIElement = document.getElementById('id_name');
+  cardUIElement = document.getElementById('id_card');
+  enemyInfoUIElement = document.getElementById('id_enemy_card_contents'); //This is just for animations, so :shrug:
+  emojiUIElement = document.getElementById('id_emoji');
+  emojiWrapperUIElement = document.getElementById('id_emoji_wrapper');
+  emojiFlipperUIElement = document.getElementById('id_emoji_flipper');
+  emojiFlipperUIElement.style.transform=enemyEmojiScaleX; //Visual variety ++
+  enemyTeamUIElement = document.getElementById('id_team');
+
+  emojiUIElement.innerHTML = enemyEmoji;
+  areaUIElement.innerHTML = areaName;
+  nameUIElement.innerHTML = enemyName;
+
+  var enemyDescUIElement = document.getElementById('id_desc')
+  enemyDescUIElement.innerHTML = enemyDesc;
+
+  //Hacky hacky hacky hack hack hack, hacky hacky hacky, yeah yeah
+  enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"» "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
+
+  //Encounter Statusbar UI
+  enemyTeamUIElement.innerHTML="";
+  cardUIElement.style.background=colorCardBackground;
+
+  switch(enemyType) {
+    case "Pet":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Minion",colorOrange);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Swift": //TODO: Perhaps there should also be "Flying"??
+      enemyTeamUIElement.innerHTML=decorateStatusText("💨","Swift",colorGreen);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Heavy":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔺","Strong",colorRed);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Spirit":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🎐","Spectral",colorWhite);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Friend":
+      enemyStatusString=decorateStatusText("💚","Friend",colorDarkGreen);
+      if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Adversary",colorRed);
+      if (areaName.includes("Shrouded")) {
+        enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
+        cardUIElement.style.background=colorDarkRed;
+      }
+
+      //Do not display stats = reward hidden
+      break;
+    case "Small":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small",colorWhite);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Recruit":
+    case "Standard":
+      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Standard",colorWhite);
+      if (areaName.includes("Depths of Slumber"))enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed); //Tutorial hack
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Demon":
+      enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Undead":
+      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Undead",colorGrey);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Stingy":
+      enemyTeamUIElement.innerHTML=decorateStatusText("📌","Stingy",colorGrapefruit);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Toxic":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🦠","Toxic",colorLime);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Tough":
+      var enemyDefString = "";
+      if (enemyDef>1) enemyDefString = romanNumber(enemyDef);
+      enemyTeamUIElement.innerHTML=decorateStatusText("🐚","Tough "+enemyDefString,colorSemiDarkGrey);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Hot":
+      enemyTeamUIElement.innerHTML=decorateStatusText("♨️","Blazing",colorGrapefruit);
+      enemyStatusString=appendEnemyStats();
+      break;
+    case "Reflective":
+      enemyTeamUIElement.innerHTML=decorateStatusText("🔹","Reflective",colorLightBlue);
+      enemyStatusString=appendEnemyStats();
+      break;
+
+    case "Shop": //Undertaker, Fatebound, Pactbound
+      enemyStatusString=decorateStatusText("⚖️","Fatekeeper",colorLightShadeBlue);
+      cardUIElement.style.background=colorShadeBlue;
+      break;
+
+    case "Item":
+      if ((totalBonus > 0) || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
+        enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
+        if (enemyMgk>0 || enemyAtk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
+          enemyStatusString=decorateStatusText("🔷","Magnificent",colorLightBlue);
+          cardUIElement.style.background=colorDarkBlue;
+        }
+        if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || ((enemyAtk>=1) && (parseInt(totalMalus)==0)) || enemySta>=2 || enemyMgk>=2 || ((enemyMgk>=1) && (parseInt(totalMalus)==0))){
+          enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
+          cardUIElement.style.background=colorDarkPurple;
+        }
+      } else {
+        enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
+      }
+      if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Questionable Drink")) {
+        enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
+        cardUIElement.style.background=colorDarkOrange;
+      }
+      if (enemyTeam.includes("Lover's Memento")) {
+        enemyStatusString=decorateStatusText("💔","Remembrance",colorPink);
+        cardUIElement.style.background=colorDarkPink;
+      }
+      if (enemyEmoji=="🪙" || enemyEmoji=="💰"){
+        enemyStatusString=decorateStatusText("🧬","Everlasting",colorLightShadeBlue);
+        cardUIElement.style.background=colorShadeBlue;
+        if (enemyName.includes("Lucky")){
+          enemyStatusString=decorateStatusText("🍀","Fortune",colorSoftGreen);
+          cardUIElement.style.background=colorSoftGreen;
+        }
+      }
+      if (enemyName.includes("Tarot")){
+        enemyStatusString=decorateStatusText("♣️","Prophecy",colorPaper);
+        cardUIElement.style.background=colorDarkPaper;
+      }
+      if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
+
+      grabColor=colorWhite;
+      if (enemyStatusString.includes("Valuable")||enemyStatusString.includes("Quest")) grabColor=colorYellow;
+      if (enemyStatusString.includes("Magnificent")) grabColor=colorLightBlue;
+      if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
+      if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
+      break;
+
+    case "Consumable":
+      eatColor=colorWhite;
+      enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
+      if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
+        enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+        eatColor=colorRed;
+      }
+      if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
+        enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
+        cardUIElement.style.background=colorDarkBlue;
+        eatColor=colorLightBlue;
+      }
+      if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=2){
+        enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
+        cardUIElement.style.background=colorDarkPurple;
+        eatColor=colorPurple;
+      }
+      if (enemyTeam.includes("Artifact") || enemyTeam.includes("Essence")){
+        enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
+        cardUIElement.style.background=colorDarkOrange;
+        eatColor=colorOrange;
+      }
+      break;
+
+    case "Trap":
+    case "Trap-Big":
+    case "Trap-Attack":
+    case "Trap-Roll":
+    case "Trap-Sleep":
+    case "Trap-Obstacle":
+      enemyStatusString=decorateStatusText("⚫️","Obstacle",colorSemiDarkGrey);
+      if (totalBonus>0) enemyStatusString=decorateStatusText("🎀","Curiosity",colorLightPink);
+      if (totalMalus<0) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+      break;
+    case "Dream":
+      enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
+      if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Unsettling Anxiety",colorRed);
+      if (enemyName.includes("Regrets")) {
+        enemyStatusString=decorateStatusText("❌","Misfortune",colorSoftRed);
+        cardUIElement.style.background=colorSoftRed;
+      }
+      break;
+    case "Upgrade":
+      enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
+      cardUIElement.style.background=colorDarkGold;
+      break;
+    case "Prop":
+      enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
+      if (totalBonus>0)enemyStatusString=decorateStatusText("🟢","Comfortable",colorSoftGreen);
+      if (totalMalus<0)enemyStatusString=decorateStatusText("🔴","Uncomfortable",colorSoftRed);
+      if (enemyName.includes("Bride")) enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
+      break;
+    case "Altar":
+      enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
+      if (totalBonus>0) enemyStatusString=decorateStatusText("🌙","Place of Worship",colorGold);
+      if (totalMalus<0) enemyStatusString=decorateStatusText("♦️","Sacrificial Altar",colorRed);
+      break;
+    case "Fishing":
+      enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
+      cardUIElement.style.background=colorDarkBlue;
+      //emojiWrapperUIElement.style.background=colorDarkBlue;
+      break;
+    case "Curse":
+      enemyStatusString=decorateStatusText("🔆","Condition",colorYellow);
+      if (parseInt(totalMalus)<0)enemyStatusString=decorateStatusText("♣️","Mystery",colorDarkGrey);
+      break;
+    case "Death":
+      enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
+      if (areaName.includes("Auxiliary")) {
+        enemyStatusString=decorateStatusText("🎉","Achievement",colorOrange);
+        cardUIElement.style.background=colorDarkOrange;
+      }
+      break;
+    case "Checkpoint":
+      enemyStatusString=decorateStatusText("🌙","Source of Power",colorGold);
+      cardUIElement.style.background=colorDarkOrange;
+      break;
+
+    default:
+      enemyStatusString=decorateStatusText("⚠️","No Details","red");
+      //Multi-match
+      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
+      if (enemyType.includes("Container")&&(parseInt(totalMalus)<0)) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+
+      if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
+
+      if (enemyBossType.includes("Boss")){
+        enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
+        enemyStatusString=appendEnemyStats();
+        cardUIElement.style.background=colorDarkRed;
+      }
+      break;
+  }
+
+  document.getElementById('id_stats').innerHTML = enemyStatusString;
+  var logEl = document.getElementById('id_log');
+  logEl.innerHTML = adventureLog.split("<br>").filter(l => l.replace(/&nbsp;/g,"").trim()).reverse().join("<br>");
+  logEl.scrollTop = 0;
+
+  versusTextUIElement = document.getElementById('id_versus');
+  switch (enemyType){
+    case "Dream":
+      displayPlayerState("Sleeping",colorBlue,"2.5")
+      if (areaName.includes("Shrouded")) displayPlayerState("Frightened",colorDarkGrey,"0.4");
+      break;
+
+    case "Curse":
+    case "Trap":
+    case "Trap-Big":
+    case "Trap-Roll":
+    case "Trap-Attack":
+    case "Trap-Sleep":
+    case "Trap-Obstacle":
+      displayPlayerState("Suspicious",colorOrange,"1")
+      break;
+
+    case "Shop":
+      displayPlayerState("Deciding",colorDarkYellow,"2.5")
+      break;
+
+    case "Death":
+      displayPlayerState(emptySpace,colorGrey,"0")
+      break;
+
+    default:
+      displayPlayerState(); //Cautious by default
+      if (enemyType.includes("Container") || enemyType.includes("Friend") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"||enemyType=="Fishing"){
+        if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
+        if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
+        if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
+        if ((enemyType==="Fishing" && checkPlayerHasItem(validBaits)!="")) displayPlayerState("Bait Ready",colorPink,"0.8");
+        if (enemyStatusString.includes("Legendary") || enemyEmoji=="🪙" || enemyEmoji=="💰") displayPlayerState("Excited",colorDarkYellow,"0.4");
+        if (enemyName.includes("Tarot Card:")) displayPlayerState("Deciding",colorDarkYellow,"2.5")
+      }
+      if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
+      if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
+      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) displayPlayerState("Frightened",colorDarkGrey,"0.4");
+      if (enemyTeam.includes("Lover's Memento")&&encounterUsed) displayPlayerState("Reminiscing",colorPink,"2.5");
+      if (enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
+        displayPlayerState("In Combat",colorRed,"0.8");
+        setButton('button_sleep',"💤 Rest"); //Hack
+      }
+      break;
+  }
+
+  buttonsContainer = document.getElementById('id_buttons');
+  updateXPProgress();
+  adjustEncounterButtons();
+}
+
+function displayPlayerState(stateString="Cautious",color=colorGrey,time="3"){
+  versusTextUIElement.innerHTML = "<div style=\"color:"+color+";\">"+stateString+"</div>"
+  animateUIElement(versusTextUIElement,"animate__pulse",time,false,"",true);
+}
+
+function displayEnemyType(type){ //TODO Refactor usage or remove
+  if ((enemyStatusString.replaceAll("&nbsp;","")!="")&&(!enemyStatusString.includes("</i>"))){
+    enemyTeamUIElement.innerHTML=type;
+  } else {
+    enemyStatusString=type;
+  }
+}
+
+function appendEnemyStats(){
+  var enemyStats = "";
+  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp-enemyHpLost);}
+    if (enemyHpLost > 0) { enemyStats += emptySymbol.repeat(enemyHpLost); } //YOLO
+
+  if (enemyHp>0) enemyStats+="&nbsp;&nbsp;"
+
+  if (enemySta > 0) { enemyStats += "🟢 " + fullSymbol.repeat(enemySta-enemyStaLost);}
+    if (enemyStaLost > 0) { enemyStats += emptySymbol.repeat(enemyStaLost); } //YOLO
+
+  //if (enemyDef > 0) { enemyStats += "&nbsp;&nbsp;🔰 " + fullSymbol.repeat(enemyDef);} //Hmm... maybe not?
+    //if (enemyDefLost > 0) { enemyStats += emptySymbol.repeat(enemyDefLost); }
+
+  if ((enemyAtk+enemyAtkBonus)>0 || enemyAtk!=0) {
+    if (enemyHp>0) enemyStats += "&nbsp;&nbsp;"
+    enemyStats += "⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
+    if (enemyAtkBonus<0) enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
+  }
+
+    if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
+    if (enemyMgkLost > 0) { enemyStats += emptySymbol.repeat(enemyMgkLost); } //YOLO
+
+  return enemyStats;
+}
+
+function decorateStatusText(emoji,text,color="#FFFFFF",size=14){
+  if (emoji=="") return emoji+"<i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
+  return emoji+" <i style=\"font-weight:600;color:"+color+";font-size:"+size+"px; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;\">"+text+"</i>";
+}
+
+function updateXPProgress(){
+  var playerXpProgressUIElement = document.getElementById('id_xp_progress');
+  var progressbarWidth=(100/playerXPThreshold)*playerXP;
+  if (progressbarWidth>97) progressbarWidth=97;
+  playerXpProgressUIElement.style.width=progressbarWidth+"%";
+}

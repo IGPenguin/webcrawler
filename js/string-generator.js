@@ -1,0 +1,123 @@
+function renameCharacter(){
+  var newPlayerName = prompt("Rename your character: ", playerName);
+  if (newPlayerName==="") {
+    newPlayerName="Nameless";
+  } else if (newPlayerName) {
+    //Name changed
+  } else {
+    newPlayerName=playerName;
+  }
+  playerName=newPlayerName;
+  redraw();
+  return playerName;
+}
+
+//String generators
+function getFirstName(){
+  const random_firstnames = [
+    "Tattered",
+    "Hopeful",
+    "Hopeless",
+    "Lost",
+    "Silent",
+    "Faded",
+    "Grieving",
+    "Shadowed",
+    "Tired",
+    "Lone",
+    "Forsaken",
+    "Ashen",
+    "Nameless",
+    "Weary",
+    "Shrouded",
+    "Forgotten",
+    "Mourning",
+    "Veiled"];
+
+  const random_lastnames = [
+    "Explorer",
+    "Seeker",
+    "Wanderer",
+    "Shade",
+    "Pilgrim",
+    "Drifter",
+    "Stranger",
+    "Prophet",
+    "Redeemer",
+    "Nomad",
+    "Vagrant",
+    "Drifter",
+    "Outcast",
+    "Stranger",
+    "Vagabond"];
+  return random_firstnames[Math.floor(Math.random() * random_firstnames.length)]+" "+random_lastnames[Math.floor(Math.random() * random_lastnames.length)];
+}
+
+function getVitalName(name=playerName){
+  if (name.includes(" ")) return name;
+  const random_names = ["Big "+name,"Vital "+name,"Resilient "+name,"Strong "+name, "Vigorous "+name, "Muscular "+name, "Huge "+name, "Giant "+name, "Massive "+name, "Healthy "+name,name+" the Beast", name+" the Mighty"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getSwiftName(name=playerName){
+  if (name.includes(" ")) return name;
+  const random_names = ["Swift "+name, "Speedy "+name, "Fast "+name, "Athletic "+name, "Rushing "+name, "Reckless "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getFaithName(name=playerName){
+  if (name.includes(" ")) return name;
+
+  const random_names = ["Holy "+name, "Promising "+name, "Humble "+name, name+" the Believer",name+" Worshipper"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getSorceryName(name=playerName){
+  if (name.includes(" ")) return name;
+
+  const random_names = [name+" Acolyte","Mystic "+name, name+" the Magician"];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getCleverName(name=playerName){
+  if (name.includes(" ")) return name;
+
+  const random_names = ["Intelligent "+name,"Resolute "+name, "Thoughful "+name, "Clever "+name, "Ambitious "+name, "Curious "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getHatredName(name=playerName){
+  if (name.includes(" ")) return name;
+
+  const random_names = ["Mischievous "+name,"Bloody "+name, name+" the Warlock", "Spiteful "+name, "Withering "+name, "Ruthless "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getLuckyName(name=playerName){
+  if (name.includes(" ")) return name;
+
+  const random_names = ["Lucky "+name, "Indigent "+name,"Wholesome "+name];
+  return random_names[Math.floor(Math.random() * random_names.length)];
+}
+
+function getGameTip(){
+  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","Always <b>💤 Sleep</b> when you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> rises the chance for a critical hit.","<b>👋 Grab</b> bait 🪱 to do some <b>🎣 Fishing</b> later.","<b>💌 Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help you  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Cook</b> bad food to remove negative effects.","<b>🍀 Luck</b> affects your chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","Non-deadly options always award more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to get a <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by the <b>⇡</b> symbol.","No one likes to be called a <i><b>✏️ Cheater</b></i>.","<b>⚔️ Attack</b> locks repedately to smash them open.","<b>💔 Recalling</b> memories hurts first, helps later.","Carefully consider where you <b>💤 Sleep</b>.","Spend <b>🪙 Drachmae</b> to improve your chances.","Risking <b>🪙 Drachmae</b> has a ~50% success rate.","<b>🍀 Luck</b> affects various random chances.","Renaming to <b><i>✏️ Poco Dinero</b></i> counts as cheating.","<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
+  return random_quotes[Math.floor(Math.random() * random_quotes.length)];
+}
+
+function getPoem(){
+  const random_quotes = ["Please\\ be careful what you wish for\\ my love.<br>It might as well be exactly what you get.","Do not ever follow where I fell\\ my heart.<br>The ground has swallowed my beauty.","My vows outlived my breath\\ it seems.<br>They whisper still\\ beneath the soil.","The earth tried to keep me\\ but not anymore.<br>I rose with your name on my lips.","You whispered into the grave like a prayer.<br>And I came\\ half dream\\ half devotion.","I drank from the chalice of sorrow.<br>It tasted like you — and I awoke.","I stitched myself from bones and vows.<br>Just to stand where you once wept.","You said 'forever' with a mortal tongue.<br>I kept my promise — what's your excuse?","The mirror cracked when I passed.<br>It still shows me, just not the same way.","The bells no longer ring for weddings.<br>Not since you spoke my name.","The trees hum softly where I fell and rose.<br>No birds have sung there since.","I left a kiss upon the oak we carved.<br>The bark split down the middle.","Don't reach for the old book\\ my love.<br> Some secrets should remain hidden forever.","You'll want to fix what was never broken.<br>But disturbing the peace won't help.","You did this to me... did this to us!<br>Why wouldn't you let me go?","The world could remain peaceful.<br>If only you would listen to me.",  "I still wear your name like a veil.<br>Even the worms dare not touch it.","You called me back with love.<br>But love does not know mercy.","I waited in the soil so long.<br>The stars forgot my name.","Every petal you left on my grave<br>grew thorns when you turned away.","Your healing hands became my undoing.<br>But I am not fully gone.","The endless cold welcomed me first.<br>Then I remembered your warmth.","You begged the ancient gods to give me back.<br>They laughed and released the darkness.","I came the way you asked.<br>Not fully whole — but yours.","Our vow didn't end with my death.<br>Only my breathing did.","They buried me with lovely roses.<br>But I bloomed with something else.","You desperately prayed for an act of god.<br>I became one you could not bear.","Even now\\ I reach for you - nowhere to find you.<br>Only shadows take my hand.","The stars we used to watch together...\\\\ <br>They now turn their faces away.","Your twisted love outlived my breath.<br>Then cursed me forever.","You called me back with trembling hands.<br>Now tremble for what you've done.","I hoped you'd mourn me.<br>Not try to fix me.","You wanted me to never leave.<br>I'll soon fulfill your wish.","Love me as I am now.<br>Or rot beside me.", "You broke me with foul magic.<br>Now I return with justice.", "I died believing in your endless love.<br>Now I rise certain of your betrayal.","The wicked altar remembers what you forgot.<br>And so do I\\ my love."];
+  return "<i>"+random_quotes[Math.floor(Math.random() * random_quotes.length)]+"</i>";
+}
+
+function getShopMessage(){
+  var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free, my shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you'd be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient, I am not.","You look worse. My inventory looks better.","Failure is a habit and so is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
+.filter(item => !usedShopMessages.includes(item));
+  if (playerShopped) random_quotes = ["Sure sure, I got plenty more in stock.","Seems like you have more to spend.","There's no discount for returning customers.","Not done yet? Still got plenty more.","Ah, a spender. I totally approve.","Coins still rattling? I've got more for you.","Plenty of stock, pity about your skill.","Keep buying, maybe luck will notice you.","You live, you die, you shop. Cycle continues.","Still have coin? I can surely fix that.","Gear's heavier, purse is lighter. Balance restored.","Nothing like fresh regret in shiny packaging.","You buy it, I profit. Fair trade.","More trinkets, same doomed story.","You can't buy talent, but you're trying.","Still breathing and still paying. Good.","Spend now, regret later. Or not?","Don't worry, I won't mind when you're broke.","Stock's full, your fate is not.","Oh look, you found more currency to waste.","You must really believe this will help.","I admire your optimism. It's delicious.","Another shiny thing to die with.","You buy, they kill, I restock.","If preparation mattered, you'd be unstoppable.","I'll happily enable your next failure.","A wise investment… probably.","Good choice. Not good enough, but good.","Your purse bleeds, my shelves smile.","One step closer to being stylishly deceased.","Keep this up and I'll name a shelf after you.","Still have coin? Then we're not done."].filter(item => !usedShopMessages.includes(item));
+
+  if (random_quotes.length==0) random_quotes.push("Ugh, hate to see you here all the time.")
+  var message = random_quotes[Math.floor(Math.random() * random_quotes.length)]+"<br>";
+  usedShopMessages+=message;
+
+  return message
+}

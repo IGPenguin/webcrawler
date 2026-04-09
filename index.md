@@ -12,7 +12,19 @@ layout: default
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<script src="js/game_loop.js"></script>
+<script src="js/config.js"></script>
+<script src="js/logging.js"></script>
+<script src="js/string-generator.js"></script>
+<script src="js/game-state.js"></script>
+<script src="js/ui-effects.js"></script>
+<script src="js/ui-render.js"></script>
+<script src="js/enemy-skills.js"></script>
+<script src="js/player-skills.js"></script>
+<script src="js/data.js"></script>
+<script src="js/encounter.js"></script>
+<script src="js/social.js"></script>
+<script src="js/action-resolver.js"></script>
+<script src="js/ui-buttons.js"></script>
 
 <div class= "curtain" id="id_fullscreen_curtain" style="height:200%; pointer-events: none;" ></div>
 <div class= "fullScreenText" id="id_fullscreen_text" style="-webkit-text-stroke: 6.5px black;
