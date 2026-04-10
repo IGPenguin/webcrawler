@@ -119,14 +119,14 @@ var Menu = (function () {
 
     // Note: Disabled stats and party+loot display below to declutter main menu
 
-    // Stats bar wrapper + stats h3
-    // html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-    //   + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
-    //   + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
-    //   + 'font-size:14px; margin-bottom:-11px; margin-top:12px; font-family:sans; '
-    //   + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
-    //   + (stats || '&nbsp;') + '</h3>'
-    //   + '</div>';
+    //Stats bar wrapper + stats h3
+    html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+      + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
+      + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
+      + 'font-size:14px; margin-bottom:-11px; margin-top:13px; font-family:sans; '
+      + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
+      + (stats || '&nbsp;') + '</h3>'
+      + '</div>';
 
     // if (!skipLoot) {
     //   // Loot/party bar — matches id_player_party_loot exactly
@@ -175,8 +175,8 @@ var Menu = (function () {
 
       // Same level + name bar structure as _buildRunCardHTML (with the overlap trick)
       entry.innerHTML =
-        '<div style="background-color:rgb(40,40,40); overflow:hidden; padding-top:0px; padding-bottom:3px;">'
-          + '<h3 style="margin-top:4px; margin-bottom:-19px; margin-left:4px; position:relative; '
+        '<div style="background-color:rgb(40,40,40); overflow:hidden; padding-top:1px; padding-bottom:3px;">'
+          + '<h3 style="margin-top:3px; margin-bottom:-19px; margin-left:4px; position:relative; '
             + 'z-index:3; text-align:right; padding-right:10px; padding-bottom:2px">'
             + '<i style="font-weight:600; color:#FFD940; font-size:14px; '
             + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + (session.level || '?') + '</i>'
