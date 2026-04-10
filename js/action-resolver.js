@@ -1609,6 +1609,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
+          case "Small":
+            logPlayerAction(actionString,"Moved too far away from you.");
+            nextEncounter();
+            break;
+
           case "Standard": //You get hit if they have stamina
           case "Swift":
           case "Heavy":
@@ -1618,7 +1623,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
           case "Undead":
           case "Boss":
-          case "Small":
           case "Stingy":
           case "Toxic":
           case "Hot":

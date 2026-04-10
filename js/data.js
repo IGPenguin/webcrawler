@@ -48,7 +48,7 @@ function _doStartGame(isContinue) {
         SaveManager.restoreGameState(saved);
         // linesGenerator / linesLoot are rebuilt from encounters.csv on every load — no restore needed
         redraw();
-        registerClickListeners(!isLocalhost() ? 4000 : 0);
+        registerClickListeners(0);
         registerClickListenersTechnical();
         animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
         return;
@@ -56,7 +56,7 @@ function _doStartGame(isContinue) {
     }
 
     processStoryData(storyData);
-    if (!isLocalhost()) { registerClickListeners(4000); } else { registerClickListeners(0); }
+    registerClickListeners(0);
     registerClickListenersTechnical();
   });
 }

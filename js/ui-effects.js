@@ -134,7 +134,7 @@ function curtainFadeInAndOut(message="", duration=3) {
           textEl.classList.remove('animate__animated', 'animate__fadeOut');
           textEl.style.display = 'none';
         }
-        registerClickListeners(1000);
+        registerClickListeners(300);
       });
     }, duration * 500);
   });

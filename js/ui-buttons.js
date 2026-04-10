@@ -318,7 +318,7 @@ var callback_pray=resolveAction('button_pray');
 var callback_curse=resolveAction('button_curse');
 
 
-function registerClickListeners(delay=800){
+function registerClickListeners(delay=0){
   //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
   //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
   var eventType = 'click';

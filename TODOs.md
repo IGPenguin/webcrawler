@@ -31,12 +31,22 @@ then fade bar out. Test with min/max stat extremes to confirm thresholds feel fa
 ---
 
 unify and animate menu logo with animate.css
+display main menu progress preview also on "start new game?" screen
+
 fix: sessions list should not scale down when scrollable
 fix: fade animations timing breaks when going back to menu right after game loads
 
 manual: move the social buttons from death to main menu
+manual: fix drachmae buy price in log
 
 gkeep fixes?
+
+---
+
+action mechanic
+- fishing = Sta, also cost stamina
+
+change: 0 enemies to leave when you rest
 
 ---
 
