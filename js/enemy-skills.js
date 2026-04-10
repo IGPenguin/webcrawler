@@ -220,8 +220,8 @@ function enemyAttackOrRest(message="",isGrab=false){
 
   if ((enemySta>enemyStaLost)&&(enemyHp>enemyHpLost)) {
     if (playerLootString.includes("🖤") || playerLootString.includes("🪣") ) {
-      damageReceived--;
       displayPlayerEffect("🔰");
+      if ((enemyAtk+enemyAtkBonus)>0) playerHp++
     }
 
     if (enemyType!="Demon"){
@@ -233,7 +233,7 @@ function enemyAttackOrRest(message="",isGrab=false){
 
     displayEnemyAttackEffect();
 
-    if ((damageReceived<=0) && !(playerLootString.includes("🖤") || playerLootString.includes("🪣") )){
+    if ((damageReceived<=0)){
       staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around.","They seem to be very chill."])
       if (enemyCursed && (enemyAtk+enemyAtkBonus)<=0) staminaChangeMsg="They are too weak to do any harm."
       animateUIElement(emojiWrapperUIElement,"animate__headShake","0.8"); //Play chill animation
