@@ -67,6 +67,24 @@ h4 {
   padding: 4px;
 }
 
+#id_log {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 transparent;
+}
+
+#id_log::-webkit-scrollbar {
+  width: 3px;
+}
+
+#id_log::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#id_log::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 0;
+}
+
 h5 {
   font-size:12px;
   font-style: italic;
@@ -100,7 +118,7 @@ a:active, a:hover, a:focus {
     inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
   width: 332px;
-  height: 200px;
+  min-height: 200px;
   display: table-cell;
   vertical-align: middle;
 }
