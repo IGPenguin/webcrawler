@@ -8,27 +8,165 @@ function toggleUIElement(UIElement,opacity = "0"){
   }
 }
 
-function curtainFadeInAndOut(message="",duration=3){
-  var curtainUIElement = document.getElementById('id_fullscreen_curtain');
-  var fullscreenTextUIElement = document.getElementById('id_fullscreen_text');
+// Fades the curtain in over the current screen, calls callback() while fully
+// black (to swap menu → game), then fades the curtain out to reveal the game.
+function transitionToGame(callback) {
+  var curtain = document.getElementById('id_fullscreen_curtain');
 
-  //Force end any existing anim first
-  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",0,true,message);
-  animateUIElement(curtainUIElement,"animate__fadeIn",0,true);
+  curtain.style.pointerEvents = 'auto'; // block stray taps during transition
+  curtain.style.display = 'block';
+  void curtain.offsetWidth; // reflow so animate__fadeIn starts from opacity:0
 
-  //Actual animation
-  animateUIElement(fullscreenTextUIElement,"animate__fadeIn",(duration/2)+0.1,true,message,false,true);
-  animateUIElement(curtainUIElement,"animate__fadeIn",duration/2,true,"",false,true);
+  curtain.style.setProperty('--animate-duration', '0.4s');
+  curtain.classList.add('animate__animated', 'animate__fadeIn');
+
+  curtain.addEventListener('animationend', function onFadeIn() {
+    curtain.removeEventListener('animationend', onFadeIn);
+    curtain.classList.remove('animate__animated', 'animate__fadeIn');
+
+    callback(); // hide menu, set up game state, redraw — all while curtain is opaque
+
+    void curtain.offsetWidth;
+    curtain.style.setProperty('--animate-duration', '0.7s');
+    curtain.classList.add('animate__animated', 'animate__fadeOut');
+
+    curtain.addEventListener('animationend', function onFadeOut() {
+      curtain.removeEventListener('animationend', onFadeOut);
+      curtain.classList.remove('animate__animated', 'animate__fadeOut');
+      curtain.style.display = 'none';
+      curtain.style.pointerEvents = 'none';
+    });
+  });
+}
+
+// Fades the curtain in, runs callback() while fully black (load encounter /
+// redraw), shows area name text, holds briefly, then fades both out.
+function transitionArea(html, callback) {
+  var curtain = document.getElementById('id_fullscreen_curtain');
+  var textEl  = document.getElementById('id_fullscreen_text');
+
+  curtain.style.pointerEvents = 'auto';
+  curtain.style.display = 'block';
+  void curtain.offsetWidth;
+  curtain.style.setProperty('--animate-duration', '0.4s');
+  curtain.classList.add('animate__animated', 'animate__fadeIn');
+
+  curtain.addEventListener('animationend', function onIn() {
+    curtain.removeEventListener('animationend', onIn);
+    curtain.classList.remove('animate__animated', 'animate__fadeIn');
+
+    // Load encounter + redraw while curtain is fully opaque
+    callback();
+
+    // Fade in area name text on top of black curtain
+    textEl.innerHTML = html;
+    textEl.style.display = 'block';
+    void textEl.offsetWidth;
+    textEl.style.setProperty('--animate-duration', '0.3s');
+    textEl.classList.add('animate__animated', 'animate__fadeIn');
+
+    // Hold, then fade both out together
+    setTimeout(function () {
+      textEl.classList.remove('animate__animated', 'animate__fadeIn');
+      void curtain.offsetWidth;
+      curtain.style.setProperty('--animate-duration', '0.65s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '0.65s');
+      textEl.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.addEventListener('animationend', function onOut() {
+        curtain.removeEventListener('animationend', onOut);
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        curtain.style.display = 'none';
+        curtain.style.pointerEvents = 'none';
+        textEl.classList.remove('animate__animated', 'animate__fadeOut');
+        textEl.style.display = 'none';
+        registerClickListeners(300);
+      });
+    }, 900);
+  });
+}
+
+function curtainFadeInAndOut(message="", duration=3) {
+  var curtain = document.getElementById('id_fullscreen_curtain');
+  var textEl  = document.getElementById('id_fullscreen_text');
+
   removeClickListeners();
+  curtain.style.pointerEvents = 'auto';
+  curtain.style.display = 'block';
+  void curtain.offsetWidth;
+  curtain.style.setProperty('--animate-duration', '0.4s');
+  curtain.classList.add('animate__animated', 'animate__fadeIn');
 
-  var animationHandler = function(){
+  curtain.addEventListener('animationend', function onIn() {
+    curtain.removeEventListener('animationend', onIn);
+    curtain.classList.remove('animate__animated', 'animate__fadeIn');
+
     setBackground(areaName);
-    animateUIElement(curtainUIElement,"animate__fadeOut",duration/1.5,true,"",false,true);
-    animateUIElement(fullscreenTextUIElement,"animate__fadeOut",duration/1.5,true,message,false,true);
-    registerClickListeners(1000); //Ooopa, still hacking my way through
-    curtainUIElement.removeEventListener("animationend",animationHandler);
-  }
-  curtainUIElement.addEventListener('animationend',animationHandler);
+
+    if (message) {
+      textEl.innerHTML = message;
+      textEl.style.display = 'block';
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '0.3s');
+      textEl.classList.add('animate__animated', 'animate__fadeIn');
+    }
+
+    setTimeout(function () {
+      if (message) {
+        textEl.classList.remove('animate__animated', 'animate__fadeIn');
+        void textEl.offsetWidth;
+        textEl.style.setProperty('--animate-duration', '0.65s');
+        textEl.classList.add('animate__animated', 'animate__fadeOut');
+      }
+
+      void curtain.offsetWidth;
+      curtain.style.setProperty('--animate-duration', '0.7s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.addEventListener('animationend', function onOut() {
+        curtain.removeEventListener('animationend', onOut);
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        curtain.style.display = 'none';
+        curtain.style.pointerEvents = 'none';
+        if (message) {
+          textEl.classList.remove('animate__animated', 'animate__fadeOut');
+          textEl.style.display = 'none';
+        }
+        registerClickListeners(1000);
+      });
+    }, duration * 500);
+  });
+}
+
+// Quick black flash for menu screen transitions (no text, no game click listeners).
+function menuFade(callback) {
+  var curtain = document.getElementById('id_fullscreen_curtain');
+
+  curtain.style.pointerEvents = 'auto';
+  curtain.style.display = 'block';
+  void curtain.offsetWidth;
+  curtain.style.setProperty('--animate-duration', '0.18s');
+  curtain.classList.add('animate__animated', 'animate__fadeIn');
+
+  curtain.addEventListener('animationend', function onIn() {
+    curtain.removeEventListener('animationend', onIn);
+    curtain.classList.remove('animate__animated', 'animate__fadeIn');
+
+    callback();
+
+    void curtain.offsetWidth;
+    curtain.style.setProperty('--animate-duration', '0.25s');
+    curtain.classList.add('animate__animated', 'animate__fadeOut');
+
+    curtain.addEventListener('animationend', function onOut() {
+      curtain.removeEventListener('animationend', onOut);
+      curtain.classList.remove('animate__animated', 'animate__fadeOut');
+      curtain.style.display = 'none';
+      curtain.style.pointerEvents = 'none';
+    });
+  });
 }
 
 function displayEnemyEffect(message){

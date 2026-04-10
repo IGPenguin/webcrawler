@@ -38,25 +38,27 @@ function startGame(isContinue) {
 
 function _doStartGame(isContinue) {
   _pendingStart = null;
-  Menu.hide();
 
-  if (isContinue) {
-    var saved = SaveManager.loadGameState();
-    if (saved) {
-      SaveManager.restoreGameState(saved);
-      // linesGenerator / linesLoot are rebuilt from encounters.csv on every load — no restore needed
-      redraw();
-      registerClickListeners(!isLocalhost() ? 4000 : 0);
-      registerClickListenersTechnical();
-      curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;font-weight:700;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
-      animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
-      return;
+  transitionToGame(function() {
+    Menu.hide();
+
+    if (isContinue) {
+      var saved = SaveManager.loadGameState();
+      if (saved) {
+        SaveManager.restoreGameState(saved);
+        // linesGenerator / linesLoot are rebuilt from encounters.csv on every load — no restore needed
+        redraw();
+        registerClickListeners(!isLocalhost() ? 4000 : 0);
+        registerClickListenersTechnical();
+        animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
+        return;
+      }
     }
-  }
 
-  processStoryData(storyData);
-  if (!isLocalhost()) { registerClickListeners(4000); } else { registerClickListeners(0); }
-  registerClickListenersTechnical();
+    processStoryData(storyData);
+    if (!isLocalhost()) { registerClickListeners(4000); } else { registerClickListeners(0); }
+    registerClickListenersTechnical();
+  });
 }
 
 //Process csv into lines of encounters
@@ -95,7 +97,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
       logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
     }
     redraw();
-    curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;font-weight:700;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
+    //curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;font-weight:700;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }

@@ -1788,11 +1788,36 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
   encounterIndex = getNextEncounterIndex();
 
   encounterRenew();
+
+  // Peek at the area of the encounter about to be loaded so we can fade
+  // BEFORE loading rather than after (gives a clean black-screen transition).
+  var _peekLine = linesStory[encounterIndex] ? String(linesStory[encounterIndex]) : '';
+  var _peekArea = _peekLine.split(",")[0].split(":")[1] || '';
+  var _isAreaChange = previousArea !== undefined
+                   && previousArea !== _peekArea
+                   && _peekArea !== "Eternal Realm"
+                   && !enemyType.includes("Boss"); // boss has its own curtain already
+
+  if (_isAreaChange) {
+    var _areaHtml = "<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"
+                  + _peekArea
+                  + "</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>";
+    transitionArea(_areaHtml, function () {
+      loadEncounter(encounterIndex);
+      setBackground(areaName);
+      if (!areaName.includes("Fading") && !areaName.includes("Eternal") && !areaName.includes("Depths") && !adventureLog.includes("Arrived to area: <b>"+areaName+"</b>")) {
+        logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+      }
+      animateUIElement(cardUIElement,"animate__fadeIn","1.2");
+      redraw();
+    });
+    return;
+  }
+
   loadEncounter(encounterIndex);
 
-  //Fullscreen Curtain
-  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){ //Does not animate new area when killed
-    curtainFadeInAndOut("<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"+areaName+"</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>");
+  // Boss → new area: boss curtain handles bg swap via setBackground(areaName) while black
+  if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){
     if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");

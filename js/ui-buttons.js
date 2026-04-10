@@ -345,7 +345,7 @@ function registerClickListeners(delay=800){
     document.getElementById('button_pray').addEventListener(eventType, callback_pray);
     document.getElementById('button_curse').addEventListener(eventType, callback_curse);
 
-    document.getElementById('button_menu').addEventListener(eventType, function() { Menu.show(); });
+    document.getElementById('button_menu').addEventListener(eventType, function() { menuFade(function() { Menu.show(); }); });
   },delay)
 }
 

@@ -6,6 +6,8 @@ var Menu = (function () {
     'menu_confirm_screen'
   ];
 
+  var _menuInitialised = false;
+
   // ── Show / Hide ────────────────────────────────────────────────────────────
 
   function show() {
@@ -23,10 +25,19 @@ var Menu = (function () {
 
   // ── Screen routing ─────────────────────────────────────────────────────────
 
-  function _showScreen(id) {
+  function _doShowScreen(id) {
     SCREENS.forEach(function (s) {
       document.getElementById(s).style.display = (s === id) ? '' : 'none';
     });
+  }
+
+  function _showScreen(id) {
+    if (!_menuInitialised) {
+      _menuInitialised = true;
+      _doShowScreen(id);
+      return;
+    }
+    menuFade(function () { _doShowScreen(id); });
   }
 
   // ── Main ───────────────────────────────────────────────────────────────────
