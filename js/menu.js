@@ -1,5 +1,10 @@
 var Menu = (function () {
-  var SCREENS = ['menu_main_screen', 'menu_history_screen', 'menu_credits_screen'];
+  var SCREENS = [
+    'menu_main_screen',
+    'menu_history_screen',
+    'menu_credits_screen',
+    'menu_confirm_screen'
+  ];
 
   // ── Show / Hide ────────────────────────────────────────────────────────────
 
@@ -27,12 +32,35 @@ var Menu = (function () {
   // ── Main ───────────────────────────────────────────────────────────────────
 
   function _renderMain() {
-    var continueBtn = document.getElementById('menu_continue');
-    continueBtn.style.display = SaveManager.hasContinue() ? '' : 'none';
+    document.getElementById('menu_continue').style.display =
+      SaveManager.hasContinue() ? '' : 'none';
     _showScreen('menu_main_screen');
   }
 
+  // ── Confirm new game ────────────────────────────────────────────────────────
+
+  function _renderConfirm() {
+    _showScreen('menu_confirm_screen');
+  }
+
+  function _doNewGame() {
+    SaveManager.clearSave();
+    savedCoins = NaN; // NaN causes neither returning-player branch in processStoryData
+    startGame(false);
+  }
+
   // ── Session History ────────────────────────────────────────────────────────
+
+  var OUTCOME_ICON = { win: '👑', death: '💀', abandoned: '♻️' };
+
+  function _buildStatsString(session) {
+    var s = '';
+    if (session.playerHpMax  > 0) s += '❤️ '           + fullSymbol.repeat(session.playerHpMax);
+    if (session.playerStaMax > 0) s += '&nbsp;&nbsp;🟢 ' + fullSymbol.repeat(session.playerStaMax);
+    if (session.playerAtk    > 0) s += '&nbsp;&nbsp;⚔️ ' + fullSymbol.repeat(session.playerAtk);
+    if (session.playerMgkMax > 0) s += '&nbsp;&nbsp;🔵 ' + fullSymbol.repeat(session.playerMgkMax);
+    return s;
+  }
 
   function _renderHistory() {
     var list = document.getElementById('menu_history_list');
@@ -41,26 +69,34 @@ var Menu = (function () {
     if (sessions.length === 0) {
       list.innerHTML =
         '<h4 style="color:#888888; text-align:center; min-height:0; ' +
-        'padding:16px 0; margin:0;">No sessions recorded yet.</h4>';
+        'padding:16px 0; margin:0;">No runs recorded yet.</h4>';
       _showScreen('menu_history_screen');
       return;
     }
 
     list.innerHTML = '';
     sessions.forEach(function (session) {
-      var icon  = session.outcome === 'win' ? '👑' : '💀';
-      var label = icon + '&nbsp;' +
+      var icon  = OUTCOME_ICON[session.outcome] || '💀';
+      var label = '<b>' + icon + '&nbsp;' +
         (session.playerName || 'Unknown') +
         '&nbsp;&nbsp;·&nbsp;&nbsp;Lv.' + (session.level || '?') +
-        '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.area || '?');
+        '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.area || '?') + '</b>';
       var sub = (session.date || '') +
         (session.causeOfDeath ? '&nbsp;&nbsp;·&nbsp;&nbsp;' + session.causeOfDeath : '');
+      var stats = _buildStatsString(session);
+
+      var partyLoot = '';
+      if (session.playerPartyString) partyLoot += session.playerPartyString;
+      if (session.playerLootString)  partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + session.playerLootString;
 
       var entry = document.createElement('div');
       entry.className = 'menu-history-entry';
       entry.innerHTML =
-        '<h4 style="min-height:0; margin:0; padding:0; font-size:13px; ' +
-        'line-height:22px;">' + label + '</h4>' +
+        '<h4 style="min-height:0; margin:0; padding:0; font-size:13px; line-height:22px;">' +
+          label +
+        '</h4>' +
+        (stats ? '<h4 style="min-height:0; margin:0; padding:0; font-size:13px; line-height:22px;">' + stats + '</h4>' : '') +
+        (partyLoot ? '<h4 style="min-height:0; margin:0; padding:0; font-size:13px; line-height:22px;">' + partyLoot + '</h4>' : '') +
         '<h5 style="margin:0;">' + sub + '</h5>';
 
       var logDiv = document.createElement('div');
@@ -91,10 +127,19 @@ var Menu = (function () {
 
   function _bindButtons() {
     document.getElementById('menu_new_game').addEventListener('click', function () {
-      SaveManager.clearSave();
-      savedCoins = NaN; // NaN causes neither returning-player branch in processStoryData
-      startGame(false);
+      if (SaveManager.hasContinue()) {
+        _renderConfirm();
+      } else {
+        _doNewGame();
+      }
     });
+
+    document.getElementById('menu_confirm_yes').addEventListener('click', function () {
+      SaveManager.abandonCurrentRun();
+      _doNewGame();
+    });
+
+    document.getElementById('menu_confirm_cancel').addEventListener('click', _renderMain);
 
     document.getElementById('menu_continue').addEventListener('click', function () {
       startGame(true);

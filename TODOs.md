@@ -1,13 +1,8 @@
-Create a main menu screen that appears before the game starts.
-Use existing SCSS conventions in /_sass. The menu should feel native to the current game's 
-visual style. It might be smart to make the ui display and interaction logic more abstract to avoid duplicate code, but no game logic changes.
-The menu must have 4 options:
-1. New Game — clears save, starts fresh
-2. Continue — only shown if a valid save exists in localStorage (via save-manager.js)
-3. Session History — shows list of past sessions from save-manager.listSessionHistory(), 
-   each expandable to show its full action log
-4. Credits — static screen with attribution
+display log in reversed order in session history (same as in game)
+fix id_player_party_loot not being populated with "..." on session return if empty
+add separate "← Menu" button under character card - next to the version footer
 
+---
 
 New core mechanic - Action Bar Minigame
 Implement the action resolution minigame for all action buttons:
@@ -25,6 +20,14 @@ Implement the action resolution minigame for all action buttons:
 Write a pure function calcActionBarConfig(playerStats, encounterStats) in game-state.js that returns { speed, successMin, successMax } — expose it for input-handler to use. 
 Add visual polish: cursor snap animation on release, brief flash green/red based on outcome, 
 then fade bar out. Test with min/max stat extremes to confirm thresholds feel fair.
+
+---
+
+gkeep fixes?
+
+---
+
+achievements!
 
 ---
 

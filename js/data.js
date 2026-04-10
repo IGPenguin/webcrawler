@@ -36,9 +36,22 @@ function startGame(isContinue) {
   }
 }
 
-function _doStartGame() {
+function _doStartGame(isContinue) {
   _pendingStart = null;
   Menu.hide();
+
+  if (isContinue) {
+    var saved = SaveManager.loadGameState();
+    if (saved) {
+      SaveManager.restoreGameState(saved);
+      // linesGenerator / linesLoot are rebuilt from encounters.csv on every load — no restore needed
+      redraw();
+      registerClickListeners(0);
+      registerClickListenersTechnical();
+      return;
+    }
+  }
+
   processStoryData(storyData);
   if (!isLocalhost()) { registerClickListeners(4000); } else { registerClickListeners(0); }
   registerClickListenersTechnical();

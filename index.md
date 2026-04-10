@@ -51,11 +51,11 @@ layout: default
                text-align:center;">Stay Dead</h2>
     <p style="margin:32px;"></p>
     <div class="card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; min-height:0;">
+      <button class="menu-btn" id="menu_continue">➡️ Continue</button>
       <button class="menu-btn" id="menu_new_game">💀 New Game</button>
-      <button class="menu-btn" id="menu_continue">▸ Continue</button>
       <p style="margin:6px;"></p>
-      <button class="menu-btn" id="menu_history">📜 Session History</button>
-      <button class="menu-btn" id="menu_credits">📖 Credits</button>
+      <button class="menu-btn" id="menu_history">📜 History</button>
+      <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
   </div>
 
@@ -66,7 +66,7 @@ layout: default
                -webkit-text-stroke: 5px black;
                paint-order: stroke fill;
                margin-bottom:8px;
-               text-align:center;">📜 Session History</h2>
+               text-align:center;">📜 History</h2>
     <div class="card" style="background-color:#202020;
                              padding:8px;
                              min-height:0;
@@ -92,18 +92,33 @@ layout: default
                text-align:center;">Stay Dead</h2>
     <p style="margin:16px;"></p>
     <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:16px; min-height:0;">
-      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Made by</h5>
+      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Made by</h5>
       <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">IGPenguin</h4>
-      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Engine</h5>
+      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Engine</h5>
       <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Vanilla JS + Jekyll</h4>
-      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Art</h5>
+      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Art</h5>
       <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Emoji standard</h4>
-      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
+      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
       <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">animate.css</h4>
-      <h5 style="text-align:center; font-size:12px; margin-top:4px;">Thank you for playing.</h5>
+      <h5 style="text-align:center; font-size:12px; margin-top:4px;">Thank you for playing!</h5>
     </div>
     <p style="margin:6px;"></p>
     <button class="menu-btn" id="menu_credits_back" style="max-width:332px;">← Back</button>
+  </div>
+
+  <!-- Confirm new game screen -->
+  <div id="menu_confirm_screen" style="display:none;">
+    <h2 style="font-size:22px;
+               letter-spacing:1.5px;
+               -webkit-text-stroke: 5px black;
+               paint-order: stroke fill;
+               margin-bottom:8px;
+               text-align:center;">⚠️ Start New Game?</h2>
+    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
+      <h4 style="text-align:center; min-height:0; margin-bottom:14px; font-size:13px; color:#ccc;">Previous progress will be lost.</h4>
+      <button class="menu-btn" id="menu_confirm_yes">💀 Start Over</button>
+      <button class="menu-btn" id="menu_confirm_cancel" style="margin-top:8px;">← Cancel</button>
+    </div>
   </div>
 
   <!-- Always-visible version footer -->

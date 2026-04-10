@@ -329,6 +329,7 @@ function redraw(){
   buttonsContainer = document.getElementById('id_buttons');
   updateXPProgress();
   adjustEncounterButtons();
+  SaveManager.saveGameState();
 }
 
 function displayPlayerState(stateString="Cautious",color=colorGrey,time="3"){

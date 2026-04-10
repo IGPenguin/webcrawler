@@ -527,6 +527,7 @@ function playerWaive(){
 }
 
 function playerReincarnate(){
+  SaveManager.clearGameState(); // treat revive as a new run — wipe the death-screen snapshot
   playerNumber++;
   displayPlayerEffect("✨");
   encounterIndex=3; //Skip tutorial
@@ -556,6 +557,10 @@ function playerReincarnate(){
   nextEncounter();
   curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
   renewPlayer();
+  // Save the fresh run state now that both the encounter and player stats are fully reset.
+  // The redraw() inside nextEncounter() above fired before renewPlayer(), so its snapshot
+  // had stale death-screen stats — this call captures the correct new-run state.
+  SaveManager.saveGameState();
 }
 
 function checkPlayerHasItem(itemArray=validBaits){

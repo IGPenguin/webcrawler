@@ -1836,7 +1836,13 @@ function gameOver(silent=false){
     area: areaName,
     causeOfDeath: enemyEmoji + ' ' + enemyName,
     outcome: 'death',
-    actionLog: adventureLog
+    actionLog: adventureLog,
+    playerHpMax: playerHpMax,
+    playerStaMax: playerStaMax,
+    playerAtk: playerAtk,
+    playerMgkMax: playerMgkMax,
+    playerLootString: String(playerLootString),
+    playerPartyString: String(playerPartyString)
   });
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
@@ -1865,8 +1871,17 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
     area: areaName,
     causeOfDeath: 'Completed the adventure',
     outcome: 'win',
-    actionLog: adventureLog
+    actionLog: adventureLog,
+    playerHpMax: playerHpMax,
+    playerStaMax: playerStaMax,
+    playerAtk: playerAtk,
+    playerMgkMax: playerMgkMax,
+    playerLootString: String(playerLootString),
+    playerPartyString: String(playerPartyString)
   });
+
+  // Run is over — clear the active run so Continue is not offered after a win
+  SaveManager.clearGameState();
 
   //Reset progress to game start
   resetSeenEncounters();
