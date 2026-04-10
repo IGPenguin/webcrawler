@@ -30,7 +30,22 @@ gkeep fixes?
 
 ---
 
-achievements!
+add achievements:
+- add achievements section to main menu
+- add achievement popup to in game
+- add achievement trigger logic check after action, remember unlocking locally
+- achievemnt data: emoji, title, description, condition
+- first batch of simple achievements
+  - died for the first time
+  - reincarnated for the first time
+  - finished the game for the first time
+  - killed your first enemy
+  - killed 25 enemies
+  - killed 50 enemies
+  - killed your first boss
+  - killed 5 bosses
+  - killed 10 bosses
+  - Discrovered area: (for all areas from story.csv, except Depths of Slumber, Fading Widlands, Auxiliary Space)
 
 ---
 
