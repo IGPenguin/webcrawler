@@ -1,6 +1,3 @@
-- create version.sh shell to update the version code in config to current time
-- create deploy.sh shell to deploy to localhost (im currently using alias jekyll-serve-local)
-
 Create a main menu screen that appears before the game starts.
 Use existing SCSS conventions in /_sass. The menu should feel native to the current game's 
 visual style. It might be smart to make the ui display and interaction logic more abstract to avoid duplicate code, but no game logic changes.

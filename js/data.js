@@ -1,26 +1,48 @@
 //Load encounter data .csv file on page ready
-$(document).ready(function() {
-    $.ajax({
-        type: "GET",
-        url: "data/story.csv",
-        dataType: "text",
-        success: function(data) {
-          storyData = data;
-          processStoryData(storyData);
-          if (!isLocalhost()) {registerClickListeners(4000);} else {registerClickListeners(0);}
-          registerClickListenersTechnical();
-        }
-     });
+var _csvStoryLoaded = false;
+var _pendingStart   = null; // null | true (continue) | false (new game)
 
-     $.ajax({
-         type: "GET",
-         url: "data/encounters.csv",
-         dataType: "text",
-         success: function(data) {
-           processEncounterData(data);
-         }
-     });
+$(document).ready(function() {
+  Menu.init(); // show menu while CSVs load in background
+
+  $.ajax({
+    type: "GET",
+    url: "data/story.csv",
+    dataType: "text",
+    success: function(data) {
+      storyData = data;
+      _csvStoryLoaded = true;
+      if (_pendingStart !== null) _doStartGame(_pendingStart);
+    }
+  });
+
+  $.ajax({
+    type: "GET",
+    url: "data/encounters.csv",
+    dataType: "text",
+    success: function(data) {
+      processEncounterData(data);
+    }
+  });
 });
+
+function startGame(isContinue) {
+  if (_csvStoryLoaded) {
+    _doStartGame(isContinue);
+  } else {
+    _pendingStart = isContinue;
+    var btn = document.getElementById(isContinue ? 'menu_continue' : 'menu_new_game');
+    if (btn && !btn.innerHTML.includes('…')) btn.innerHTML += ' …';
+  }
+}
+
+function _doStartGame() {
+  _pendingStart = null;
+  Menu.hide();
+  processStoryData(storyData);
+  if (!isLocalhost()) { registerClickListeners(4000); } else { registerClickListeners(0); }
+  registerClickListenersTechnical();
+}
 
 //Process csv into lines of encounters
 function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
@@ -58,7 +80,7 @@ function processStoryData(allText, initNextEncounter=true,encounterIndex=0) {
       logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
     }
     redraw();
-    if (!isLocalhost()) curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
+    curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;font-weight:700;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
     animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
   }
 }

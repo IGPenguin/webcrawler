@@ -37,7 +37,9 @@ The game has two layers:
 | `ui-render.js` | `redraw()` and all UI rendering |
 | `enemy-skills.js` | Enemy skill resolution |
 | `player-skills.js` | Player skills; calls `renewPlayer()` on load to initialize state |
-| `data.js` | CSV loading via jQuery AJAX; populates global arrays |
+| `save-manager.js` | `SaveManager` — session history + localStorage save/clear |
+| `menu.js` | `Menu` — main menu UI; show/hide, screen routing, button wiring |
+| `data.js` | CSV loading via jQuery AJAX; `startGame()` / `_doStartGame()`; populates global arrays |
 | `encounter.js` | `loadEncounter()`, `generateNextEncounters()` |
 | `social.js` | Share / LinkedIn logic |
 | `action-resolver.js` | `resolveAction()` — dispatches all nine player actions |

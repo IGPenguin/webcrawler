@@ -1828,6 +1828,16 @@ function gameOver(silent=false){
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
   runLogAdd("run_end", {outcome: "death", killedBy: enemyName, killedByEmoji: enemyEmoji, area: areaName, time: adventureEndTime});
   downloadRunLog();
+  SaveManager.saveSession({
+    date: adventureStartTime,
+    playerName: playerName,
+    level: playerLevel,
+    kills: playerKills,
+    area: areaName,
+    causeOfDeath: enemyEmoji + ' ' + enemyName,
+    outcome: 'death',
+    actionLog: adventureLog
+  });
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
@@ -1847,6 +1857,16 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   adventureEndTime=getTime();
   runLogAdd("run_end", {outcome: "win", area: areaName, time: adventureEndTime});
   downloadRunLog();
+  SaveManager.saveSession({
+    date: adventureStartTime,
+    playerName: playerName,
+    level: playerLevel,
+    kills: playerKills,
+    area: areaName,
+    causeOfDeath: 'Completed the adventure',
+    outcome: 'win',
+    actionLog: adventureLog
+  });
 
   //Reset progress to game start
   resetSeenEncounters();

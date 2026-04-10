@@ -380,6 +380,52 @@ button {
   user-select: none;
 }
 
+// ── Main Menu ──────────────────────────────────────────────────────────────
+
+.menu-screen {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-btn {
+  width: 100%;
+  margin-top: 5px;
+  letter-spacing: 0.8px;
+}
+
+.menu-history-entry {
+  cursor: pointer;
+  padding: 6px 8px;
+  margin-bottom: 1px;
+  box-shadow: 0px 0px 0px 3px #000;
+  background-color: #272727;
+}
+
+.menu-history-entry:hover {
+  background-color: #303030;
+}
+
+.menu-history-log {
+  display: none;
+  padding: 6px 8px;
+  font-size: 12px;
+  line-height: 165%;
+  background-color: #1a1a1a;
+  box-shadow: 0px 0px 0px 2px #000;
+  margin-bottom: 3px;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+
+.menu-history-log::-webkit-scrollbar { width: 3px; }
+.menu-history-log::-webkit-scrollbar-track { background: transparent; }
+.menu-history-log::-webkit-scrollbar-thumb { background-color: #000; border-radius: 0; }
+
+// ── End Menu ───────────────────────────────────────────────────────────────
+
 select {
   padding:5px;
   padding-left:10px;

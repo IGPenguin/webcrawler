@@ -20,6 +20,8 @@ layout: default
 <script src="js/ui-render.js"></script>
 <script src="js/enemy-skills.js"></script>
 <script src="js/player-skills.js"></script>
+<script src="js/save-manager.js"></script>
+<script src="js/menu.js"></script>
 <script src="js/data.js"></script>
 <script src="js/encounter.js"></script>
 <script src="js/social.js"></script>
@@ -33,6 +35,87 @@ layout: default
 <center class="animate__animated animate__fadeIn animate__fast">
 
 <div class="game-viewport">
+
+<!-- ── Main Menu ──────────────────────────────────────────────────────── -->
+<div id="id_menu" class="menu-screen" style="display:none;">
+
+  <!-- Main screen -->
+  <div id="menu_main_screen">
+    <h2 style="font-size:74px;
+               letter-spacing:1.8px;
+               -webkit-text-stroke: 6.5px black;
+               paint-order: stroke fill;
+               color:red;
+               margin-bottom:0;
+               line-height:1px;
+               text-align:center;">Stay Dead</h2>
+    <p style="margin:32px;"></p>
+    <div class="card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; min-height:0;">
+      <button class="menu-btn" id="menu_new_game">💀 New Game</button>
+      <button class="menu-btn" id="menu_continue">▸ Continue</button>
+      <p style="margin:6px;"></p>
+      <button class="menu-btn" id="menu_history">📜 Session History</button>
+      <button class="menu-btn" id="menu_credits">📖 Credits</button>
+    </div>
+  </div>
+
+  <!-- Session History screen -->
+  <div id="menu_history_screen" style="display:none;">
+    <h2 style="font-size:22px;
+               letter-spacing:1.5px;
+               -webkit-text-stroke: 5px black;
+               paint-order: stroke fill;
+               margin-bottom:8px;
+               text-align:center;">📜 Session History</h2>
+    <div class="card" style="background-color:#202020;
+                             padding:8px;
+                             min-height:0;
+                             max-height:400px;
+                             overflow-y:auto;
+                             scrollbar-width:thin;
+                             scrollbar-color:#000 transparent;">
+      <div id="menu_history_list"></div>
+    </div>
+    <p style="margin:6px;"></p>
+    <button class="menu-btn" id="menu_history_back" style="max-width:332px;">← Back</button>
+  </div>
+
+  <!-- Credits screen -->
+  <div id="menu_credits_screen" style="display:none;">
+    <h2 style="font-size:42px;
+               letter-spacing:1.8px;
+               -webkit-text-stroke: 6.5px black;
+               paint-order: stroke fill;
+               color:red;
+               margin-bottom:0;
+               line-height:1px;
+               text-align:center;">Stay Dead</h2>
+    <p style="margin:16px;"></p>
+    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:16px; min-height:0;">
+      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Made by</h5>
+      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">IGPenguin</h4>
+      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Engine</h5>
+      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Vanilla JS + Jekyll</h4>
+      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Art</h5>
+      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Emoji standard</h4>
+      <h5 style="text-align:left; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
+      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">animate.css</h4>
+      <h5 style="text-align:center; font-size:12px; margin-top:4px;">Thank you for playing.</h5>
+    </div>
+    <p style="margin:6px;"></p>
+    <button class="menu-btn" id="menu_credits_back" style="max-width:332px;">← Back</button>
+  </div>
+
+  <!-- Always-visible version footer -->
+  <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
+    <h4 style="font-size:11px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+  </div>
+  <h4 id="menu_version" style="font-size:10px; margin-top:-4px; margin-bottom:0; opacity:0.4; box-shadow:none;"></h4>
+
+</div><!-- end id_menu -->
+
+<!-- ── Game ───────────────────────────────────────────────────────────── -->
+<div id="id_game" style="display:none;">
 
 <h2 id = "id_area" style="
     margin-bottom:-12px;
@@ -255,6 +338,8 @@ layout: default
 <div id="id_bug" style="cursor: pointer;">
 <h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
 </div>
+
+</div><!-- end id_game -->
 
 </div><!-- end game-viewport -->
 </center>
