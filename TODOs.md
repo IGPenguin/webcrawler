@@ -1,25 +1,36 @@
-fix version.sh
+New core mechanic - Action Bar Minigame.
 
----
-
-New core mechanic - Action Bar Minigame
-Implement the action resolution minigame for all action buttons:
-- On button PRESS: show a floating bar UI (full width, above the buttons). The bar displays 
-  a 0–100 range. A "|" cursor auto-scrolls continuously from 0→100→0 (ping-pong) at a base 
+Implement an "action sucess/fail minigame" for all player action buttons:
+- On button PRESS: show a floating bar UI (full width, above the buttons)
+The bar displays a 0–100 range, "|" cursor auto-scrolls horizontally from 0→100→0 (ping-pong)
   speed. Speed and the pass/fail threshold range are calculated from current player stats vs 
   encounter stats (e.g. higher player skill = wider success window, faster cursor).
 - The bar background uses a CSS gradient: green in the success zone, red outside it. The 
   success zone position and width are derived from the stat comparison.
-- On button RELEASE: cursor stops. The cursor's position (0–100) is the attempt value. 
-  Check if it falls in the success zone → pass or fail. Feed the result into the existing 
+- On button RELEASE: cursor stops. The cursor's position/value (0–100) is the the action attempt value. 
+- Check if it falls in the success zone → pass or fail, feed the result into the existing 
   game-state action resolution logic.
 - Encapsulate this entirely in /js/action-bar.js with: showActionBar(config), hideActionBar(), 
   getAttemptValue(). Config contains speed, successMin, successMax derived from game state. Style in /_sass consistent with existing UI.
-Write a pure function calcActionBarConfig(playerStats, encounterStats) in game-state.js that returns { speed, successMin, successMax } — expose it for input-handler to use. 
-Add visual polish: cursor snap animation on release, brief flash green/red based on outcome, 
+- Write a pure function calcActionBarConfig(playerStats, encounterStats) in game-state.js that returns { speed, successMin, successMax } — expose it for input-handler to use. 
+- success min and max is based on the player stats, encounters stats and its type:
+  - successMin & successMax bonus random by Luck
+  - Heavy = Stamina, hard to block
+  - Swift = Stamina, hard to dodga
+  - Spirit = Int, hard to hit physically
+  - Undead = Sta, hard to block, hurts on grab
+  - Tough = Attack, hard to deal physical damage
+  - Small = Sta, Hard to catch grab
+  - Food and items can be grabbed with no issues
+  - ...applies to all type of enemies, traps, curses, altars...
+  - for all player type actions calculate a meaningfull success interval
+  - Ask when unsure
+- Add visual polish: cursor snap animation on release, brief flash green/red based on outcome, 
 then fade bar out. Test with min/max stat extremes to confirm thresholds feel fair.
 
 ---
+
+unify and animate menu logo with animate.css
 
 gkeep fixes?
 

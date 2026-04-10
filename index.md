@@ -41,7 +41,7 @@ layout: default
 
   <!-- Main screen -->
   <div id="menu_main_screen">
-    <h2 style="font-size:74px;
+    <h2 style="font-size:68px;
                letter-spacing:1.8px;
                -webkit-text-stroke: 6.5px black;
                paint-order: stroke fill;
@@ -69,7 +69,7 @@ layout: default
 
   <!-- Session History screen -->
   <div id="menu_history_screen" style="display:none;">
-    <h2 style="font-size:74px;
+    <h2 style="font-size:68px;
                letter-spacing:1.8px;
                -webkit-text-stroke: 6.5px black;
                paint-order: stroke fill;
@@ -104,7 +104,7 @@ layout: default
 
   <!-- Credits screen -->
   <div id="menu_credits_screen" style="display:none;">
-    <h2 style="font-size:74px;
+    <h2 style="font-size:68px;
                letter-spacing:1.8px;
                -webkit-text-stroke: 6.5px black;
                paint-order: stroke fill;
@@ -140,7 +140,7 @@ layout: default
 
   <!-- Confirm new game screen -->
   <div id="menu_confirm_screen" style="display:none;">
-    <h2 style="font-size:74px;
+    <h2 style="font-size:68px;
                letter-spacing:1.8px;
                -webkit-text-stroke: 6.5px black;
                paint-order: stroke fill;

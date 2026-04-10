@@ -62,7 +62,7 @@ function transitionArea(html, callback) {
     textEl.innerHTML = html;
     textEl.style.display = 'block';
     void textEl.offsetWidth;
-    textEl.style.setProperty('--animate-duration', '0.3s');
+    textEl.style.setProperty('--animate-duration', '0.7s');
     textEl.classList.add('animate__animated', 'animate__fadeIn');
 
     // Hold, then fade both out together
@@ -147,7 +147,7 @@ function menuFade(callback) {
   curtain.style.pointerEvents = 'auto';
   curtain.style.display = 'block';
   void curtain.offsetWidth;
-  curtain.style.setProperty('--animate-duration', '0.18s');
+  curtain.style.setProperty('--animate-duration', '0.2s');
   curtain.classList.add('animate__animated', 'animate__fadeIn');
 
   curtain.addEventListener('animationend', function onIn() {
@@ -157,7 +157,7 @@ function menuFade(callback) {
     callback();
 
     void curtain.offsetWidth;
-    curtain.style.setProperty('--animate-duration', '0.25s');
+    curtain.style.setProperty('--animate-duration', '0.3s');
     curtain.classList.add('animate__animated', 'animate__fadeOut');
 
     curtain.addEventListener('animationend', function onOut() {
