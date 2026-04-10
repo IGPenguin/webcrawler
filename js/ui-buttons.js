@@ -9,6 +9,10 @@ function setButton(elementID,text,color=colorWhite){
 }
 
 function resetEncounterButtons(){
+  ['button_attack','button_roll','button_block','button_grab','button_sleep',
+   'button_speak','button_cast','button_pray','button_curse'].forEach(function(id){
+    document.getElementById(id).disabled = false;
+  });
   if (playerSta>0 && (!enemyType.includes("Dream"))){
     setButton('button_attack',playerAttackType+" Attack");
     setButton('button_block',"🔰 Block");
@@ -241,11 +245,12 @@ function adjustEncounterButtons(){
       break;
 
     case "Death":
-      setButton('button_grab',"💌 Review",colorPink);
-      setButton('button_speak',"‍👤 Meet",colorLightBlue);
-      setButton('button_curse',"‍🗣️ Share",colorLightBlue);
-      setButton('button_cast',"‍🦆 Tweet",colorLightBlue);
-      setButton('button_sleep',"📜 Legend",colorOrange);
+      ['button_attack','button_block','button_grab','button_speak',
+       'button_cast','button_pray','button_curse'].forEach(function(id){
+        setButton(id,"-",colorDarkGrey);
+        document.getElementById(id).disabled = true;
+      });
+      setButton('button_sleep',"💤 Give up",colorRed);
       setButton('button_roll',"✨ Revive",colorYellow);
       break;
 

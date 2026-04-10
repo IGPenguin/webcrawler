@@ -6,14 +6,13 @@ var Menu = (function () {
     'menu_confirm_screen'
   ];
 
-  var _menuInitialised = false;
-
   // ── Show / Hide ────────────────────────────────────────────────────────────
 
   function show() {
     document.getElementById('id_menu').style.display = 'flex';
     document.getElementById('id_game').style.display = 'none';
-    _renderMain();
+    _renderMain(true); // skipFade — outer curtain (transitionToGame / menuFade) handles the transition
+    _animateLogo();
   }
 
   function hide() {
@@ -21,6 +20,21 @@ var Menu = (function () {
     // display:contents makes #id_game transparent to its parent flex layout,
     // preserving the exact same centering as before the wrapper was added.
     document.getElementById('id_game').style.display = 'contents';
+  }
+
+  // ── Logo animation ─────────────────────────────────────────────────────────
+
+  function _animateLogo() {
+    var logo = document.getElementById('id_menu_logo');
+    if (!logo) return;
+    logo.classList.remove('animate__animated', 'animate__fadeInDown');
+    void logo.offsetWidth; // reflow
+    logo.style.setProperty('--animate-duration', '0.55s');
+    logo.classList.add('animate__animated', 'animate__fadeInDown');
+    logo.addEventListener('animationend', function onDone() {
+      logo.removeEventListener('animationend', onDone);
+      logo.classList.remove('animate__animated', 'animate__fadeInDown');
+    });
   }
 
   // ── Screen routing ─────────────────────────────────────────────────────────
@@ -31,18 +45,14 @@ var Menu = (function () {
     });
   }
 
+  // Always fades between screens (only used for in-menu navigation, never from show()).
   function _showScreen(id) {
-    if (!_menuInitialised) {
-      _menuInitialised = true;
-      _doShowScreen(id);
-      return;
-    }
     menuFade(function () { _doShowScreen(id); });
   }
 
   // ── Main ───────────────────────────────────────────────────────────────────
 
-  function _renderMain() {
+  function _renderMain(skipFade) {
     var hasSave = SaveManager.hasContinue();
     document.getElementById('menu_continue').style.display = hasSave ? '' : 'none';
 
@@ -62,12 +72,27 @@ var Menu = (function () {
       preview.style.display = 'none';
     }
 
-    _showScreen('menu_main_screen');
+    if (skipFade) { _doShowScreen('menu_main_screen'); } else { _showScreen('menu_main_screen'); }
   }
 
   // ── Confirm new game ────────────────────────────────────────────────────────
 
   function _renderConfirm() {
+    var confirmPreview = document.getElementById('menu_confirm_preview');
+    if (confirmPreview) {
+      var s = SaveManager.loadGameState();
+      if (s) {
+        var stats = _buildStats(s.playerHpMax, s.playerStaMax, s.playerAtk, s.playerMgkMax);
+        var partyLoot = '';
+        if (s.playerPartyString && s.playerPartyString !== 'undefined') partyLoot += s.playerPartyString;
+        if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + s.playerLootString;
+        var encounter = (s.enemyEmoji || '') + (s.enemyName ? ' ' + s.enemyName : '');
+        confirmPreview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null);
+        confirmPreview.style.display = '';
+      } else {
+        confirmPreview.style.display = 'none';
+      }
+    }
     _showScreen('menu_confirm_screen');
   }
 

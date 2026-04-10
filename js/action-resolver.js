@@ -214,6 +214,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
         if (enemyType=="Death"){
+          if (_skillOK === false) {
+            permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">Gone forever.</p>");
+            break;
+          }
           playerReincarnate();
           break;
         }
@@ -377,12 +381,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (enemyName.includes("Regrets")) msg="You cannot walk away from this."
               logPlayerAction(actionString,msg);
             } else {
+              if (_skillOK === false) {
+                playerSta = Math.max(0, playerSta - 1);
+                logPlayerAction(actionString, "Struggled to leave the dream -1 🟢");
+                displayPlayerCannotEffect();
+                nextEncounter();
+                break;
+              }
               logPlayerAction(actionString,enemyMsg);
               nextEncounter();
             }
             break;
           case "Prop":
             isFishing=false;
+            if (_skillOK === false) {
+              if (Math.random() < 0.25) {
+                logPlayerAction(actionString, "Lost footing — rough landing -1 💔");
+                playerHit(1);
+              } else {
+                playerSta = Math.max(0, playerSta - 1);
+                logPlayerAction(actionString, "Stepped badly, strained yourself -1 🟢");
+                displayPlayerCannotEffect();
+              }
+              if (playerHp > 0) nextEncounter();
+              break;
+            }
             if (enemyMsg!="" && totalBonus==0 && totalMalus==0){
               logPlayerAction(actionString,enemyMsg)
             } else {
@@ -977,6 +1000,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
+          // Reflective curse-back: failed skill check = curse snaps back onto the caster
+          if (_skillOK === false && enemyType === "Reflective") {
+            var reflectDmg = Math.max(1, playerMgk); //TODO this is how it should work for cast, curse lowers attack (yeah lower it)
+            logPlayerAction(actionString, "Curse reflected back "+reflectDmg+" 💔 -2 🔵");
+            displayEnemyEffect("🔷");
+            playerHit(reflectDmg);
+            break;
+          }
+
           if (_skillOK === false && enemyType!=="Upgrade" && enemyType!=="Death"
               && enemyType!=="Altar" && enemyType!=="Demon" && enemyType!=="Reflective") {
             logPlayerAction(actionString, "Curse dissolved without effect -2 🔵");
@@ -1097,6 +1129,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
                 logPlayerAction(actionString,"Unable to initiate a relationship ?? 🧠");
                 nextEncounter();
+                break;
+              }
+              if (_skillOK === false) {
+                logPlayerAction(actionString, "They flinched and ran away.");
+                displayEnemyEffect("💨");
+                animateFlipNextEncounter();
+                isFishing=false;
                 break;
               }
               enemyJoinedParty();
@@ -1229,6 +1268,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Item":
             displayEnemyEffect("👋");
+
+            if (_skillOK === false) {
+              logPlayerAction(actionString, "Stumbled and shattered it to pieces.");
+              displayEnemyCannotEffect();
+              isFishing=false;
+              nextEncounter();
+              break;
+            }
 
             if (enemyEmoji=="⚖️"){
               var halfHp = Math.floor(playerHpMax/2);
@@ -1372,6 +1419,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Small":
+            if (_skillOK === false) {
+              logPlayerAction(actionString, "Slipped through your fingers.");
+              displayEnemyEffect("💨");
+              if (enemyCastIfMgk()) break;
+              if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
+              break;
+            }
             if ((enemySta-enemyStaLost)==0 && (enemyMgk-enemyMgkLost)==0) {
               enemyGrabbedIntoLoot();
             } else {
@@ -1392,6 +1446,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Consumable":
+            if (_skillOK === false) {
+              logPlayerAction(actionString, "Slipped trough to the ground.");
+              displayEnemyCannotEffect();
+              isFishing=false;
+              nextEncounter();
+              break;
+            }
             playerConsumed();
             displayEnemyEffect("🍴");
             if (playerHp>0) nextEncounter();
@@ -1458,9 +1519,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           default:
             if (enemyType.includes("Container")){
               if (enemyType.includes("Locked")){
-                if (playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false)){
-                  playerGainXP(1,15*playerLevel,"");
-                  nextEncounter();
+                if (playerLootString.includes("🗝️")){
+                  if (_skillOK === false && Math.random() < 0.25) {
+                    playerLootString = playerLootString.replace("🗝️","");
+                    displayPlayerEffect("🗝️");
+                    displayEnemyCannotEffect();
+                    logPlayerAction(actionString,"Key snapped in the lock and was lost.");
+                  } else {
+                    playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false);
+                    playerGainXP(1,15*playerLevel,"");
+                    nextEncounter();
+                  }
+                  break;
                 } else if (playerLootString.includes("📎")) {
                   logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b> "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
                   playerGainXP(1,15*playerLevel,"");
@@ -1468,6 +1538,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 } else {
                   displayEnemyCannotEffect();
                 }
+                break;
+              }
+              if (_skillOK === false) {
+                logPlayerAction(actionString, "Did not find anything of value.");
+                displayEnemyCannotEffect();
+                isFishing=false;
+                nextEncounter();
                 break;
               }
               var openMessage = "Sucessfully found something.";
@@ -1508,6 +1585,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){
           case "Recruit": //If you are smarter they join you
             if (enemyInt < convinceInt){
+              if (_skillOK === false) {
+                logPlayerAction(actionString,"They hesitated and walked away.");
+                animateFlipNextEncounter();
+                isFishing=false;
+                break;
+              }
               displayPlayerEffect(enemyEmoji);
               playerPartyString+=enemyEmoji
               var gainedXP=playerGainXP(1.5,0,"");
@@ -1772,7 +1855,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            copyAdventureToClipboard();
+            menuFade(function() {
+              SaveManager.abandonCurrentRun();
+              Menu.show();
+            });
             break;
 
           case "Upgrade": //TODO refactor to something else

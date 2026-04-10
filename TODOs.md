@@ -1,52 +1,12 @@
-New core mechanic - Action Bar Minigame.
-
-Implement an "action sucess/fail minigame" for all player action buttons:
-- On button PRESS: show a floating bar UI (full width, above the buttons)
-The bar displays a 0–100 range, "|" cursor auto-scrolls horizontally from 0→100→0 (ping-pong)
-  speed. Speed and the pass/fail threshold range are calculated from current player stats vs 
-  encounter stats (e.g. higher player skill = wider success window, faster cursor).
-- The bar background uses a CSS gradient: green in the success zone, red outside it. The 
-  success zone position and width are derived from the stat comparison.
-- On button RELEASE: cursor stops. The cursor's position/value (0–100) is the the action attempt value. 
-- Check if it falls in the success zone → pass or fail, feed the result into the existing 
-  game-state action resolution logic.
-- Encapsulate this entirely in /js/action-bar.js with: showActionBar(config), hideActionBar(), 
-  getAttemptValue(). Config contains speed, successMin, successMax derived from game state. Style in /_sass consistent with existing UI.
-- Write a pure function calcActionBarConfig(playerStats, encounterStats) in game-state.js that returns { speed, successMin, successMax } — expose it for input-handler to use. 
-- success min and max is based on the player stats, encounters stats and its type:
-  - successMin & successMax bonus random by Luck
-  - Heavy = Stamina, hard to block
-  - Swift = Stamina, hard to dodga
-  - Spirit = Int, hard to hit physically
-  - Undead = Sta, hard to block, hurts on grab
-  - Tough = Attack, hard to deal physical damage
-  - Small = Sta, Hard to catch grab
-  - Food and items can be grabbed with no issues
-  - ...applies to all type of enemies, traps, curses, altars...
-  - for all player type actions calculate a meaningfull success interval
-  - Ask when unsure
-- Add visual polish: cursor snap animation on release, brief flash green/red based on outcome, 
-then fade bar out. Test with min/max stat extremes to confirm thresholds feel fair.
-
----
-
+display main menu player progress preview also on "Really want to restart?" screen
 unify and animate menu logo with animate.css
-display main menu progress preview also on "start new game?" screen
+fix: fade animations timing getting broken after back to menu from game
 
-fix: sessions list should not scale down when scrollable
-fix: fade animations timing breaks when going back to menu right after game loads
+/compact 
 
-manual: move the social buttons from death to main menu
 manual: fix drachmae buy price in log
 
 gkeep fixes?
-
----
-
-action mechanic
-- fishing = Sta, also cost stamina
-
-change: 0 enemies to leave when you rest
 
 ---
 
@@ -68,21 +28,50 @@ add achievements:
 
 ---
 
-- Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
+## Needs Repro
+
+- fix enemy recovered energy after killed (crazed goat)
+- fix engaged a boss showing again and again each step for fished out boss
 
 ---
 
 ## Small Ideas (new PR)
 
-- [ ] Legend phys dmg allowed to spirits (soulgem)
-- [ ] Dark MGK cost int items
+- [ ] Pray with no bonus (altar) = get exp
+- [ ] Fix Boss wife disengage when calmed = NaN xp
+- [ ] Fix cannot leave calm merciful bride, if calm bride (check texts)
+- Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
+- Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
+- Fix add vertical scroll in loot/party when overflowimg
+
+## Big Fixes
+- Fix animations glitching playing when launching another one without the first finishing (bug in animation functions?)
+
+## Big Ideas
+
+- [ ] 🪙 Drachmae options
+  - [ ] Buy fishing bait/key?
+  - [ ] Get coin for netative effect: +enemy dmg/hp/sta...
+- [ ] +1 Drachmae (one-time) for social interactions in credits
+- [ ] Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
+- [ ] New Type - Magic-container door, cast to unlock
+    - locked/magic 50% for artifact otherwise item (same should be for basic locked containers)
+- [ ] New Type: Camp spawn enemy on rest (log it)...
+  -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
+- [ ] Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
+- [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
+- [ ] Adopt pet for item similar to friend with quest item (give instead of speak)
+  - [ ] Give mouse/lizard to cat
+- [ ] Generate loot and consumable from kill/knockout — "They've dropped something"
+- [ ] "Enemy Stunned" mechanic (empty sta when getting hit)
+- [ ] Mischievous legendary/encounters on bad karma
+- [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
+
+## BIG OLD DATA PUSH
+
+- [ ] Legendary item allowing to physically damage spirits (soulgem)
 - [ ] Practice target variants for speak, cast... option to leave
-- [ ] Pray with no bonus = get exp
-- [ ] Boss wife disengage when calmed = NaN xp
-- [ ] Cannot leave calm merciful bride, disengage NaN xp, calm bride (bonus atk-==atk, swap text)
-
-## BIG OLD DATA PUSH (extra PR)
-
+- [ ] Magic items in the game should almost always carry some curse
 - [ ] Increment meadows data (praised bath, no-effect encounters)
   - [ ] No-effect altars, curses etc with just observations
   - [ ] Clear sky, silent overcast
@@ -104,28 +93,18 @@ add achievements:
 - [ ] Mid-late game balance = high stamina, more low atk enemies
   - [ ] Pets in fairyland a lot more sta ~3
   - [ ] Bosses to have a lot of hp but not insta-kill dmg
-
-## Big Ideas
-
-- [ ] 🪙 Drachmae options
-  - [ ] Buy fishing bait/key?
-  - [ ] Get coin: +enemy dmg, +enemy hp, +enemy sta?
-- [ ] Drachmae for social interactions and feedback — add to log and tips
-- [ ] JS spaghetti monster joke boss after endgame
-- [ ] Negative friends — investigate
 - [ ] Necropolis optional areas
-- [x] Scrolling in log list
-- [ ] Hit prop once to try spawning small (remember to go back)
-  - [ ] Camp-Rest (Prop), spawn enemy on rest (log it)... camp-grab?
-- [ ] No 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
-- [ ] Adopt pet for item similar to friend (give instead of speak)
-  - [ ] Give mouse/lizard to cat
-- [ ] Magic-container door: only cast to unlock, locked/magic 50% for artifact otherwise item
-- [ ] Stunning (empty sta when getting hit)
-- [ ] Main menu layout + swap btn (start/continue/achievements/credits/feedback/changelog - PR list)
-  - [ ] Achievements popup + list menu overlay
-- [ ] Generate loot or consumable from kill/knockout (not in generators) — "They've dropped something"
-- [ ] Food grab, food array, eat instead of speak; if food array not empty heal with latest food
-  - [ ] Eat instead of speak → food eat or grab (if grab, offer eat later? pop food)
-- [ ] Mischievous legendary on bad karma
-- [ ] Hit/Dodge/Block minigame — tap > timer progress bar > hitzone
+
+## Automation
+
+- Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
+
+## Massive Ideas
+
+- [ ] Inventory: consumable, items array
+
+## Low-Prio Fixes
+
+- Negative friends — investigate
+- add tiny shading at the bottom of the ingame log
+- fix: sessions list should not scale down when scrollable

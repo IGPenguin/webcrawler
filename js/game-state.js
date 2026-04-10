@@ -66,6 +66,28 @@ var castTypes=(["⚡️","☄️","🍭","🔥","🪄","🥢","🌙","🎐","�
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","🦐","🦂","🍤","🐙","🐛","🦑","🐌"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
+// Fishing bait quality: higher = wider success zone. Range roughly -2 to +3.
+var baitQuality = {
+  "🪱": 3,  // earthworm — great
+  "🦐": 3,  // shrimp — great
+  "🐙": 3,  // octopus — irresistible
+  "🪲": 2,  // beetle
+  "🦂": 2,  // scorpion
+  "🍤": 2,  // fried shrimp
+  "🦑": 2,  // squid
+  "🦋": 1,  // butterfly
+  "🐝": 1,  // bee
+  "🦗": 1,  // cricket
+  "🕷": 1,  // spider
+  "🐛": 1,  // caterpillar
+  "🐞": 0,  // ladybug — neutral
+  "🐌": 0,  // snail — neutral
+  "🦟": -1, // mosquito — bad
+  "🪰": -2, // fly — terrible
+  "🪳": -2, // cockroach — terrible
+  "🐜": -1, // ant — poor
+};
+
 //Adventure logging
 var actionString; //Initial action log below
 var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>";
@@ -148,7 +170,8 @@ var actionBarSuccess = null;
 
 // Returns { speed (units/s), successMin, successMax } derived from current global player+enemy state.
 // speed is on a 0–100 scale — at speed 60 the cursor crosses the full bar in ~1.67 s.
-function calcActionBarConfig(button) {
+// adjustment: optional ±integer added to zoneW before clamping (positive = easier, negative = harder).
+function calcActionBarConfig(button, adjustment) {
   var pAtk = Math.max(0, playerAtk  || 0);
   var pSta = Math.max(0, playerSta  || 0);
   var pMgk = Math.max(0, playerMgk  || 0);
@@ -173,6 +196,52 @@ function calcActionBarConfig(button) {
   var isTrap      = types.includes('Trap');
   var isAltar     = types.includes('Altar');
   var isCurse     = types === 'Curse';
+
+  // ── Special cases ────────────────────────────────────────────────────────
+  // Resurrection: very narrow, fast zone — last chance before permanent death
+  if (button === 'button_roll' && types.includes('Death')) {
+    return { speed: 95, successMin: 40, successMax: 52 };
+  }
+
+  // Prop walk: very wide zone — tiny stumble risk exists
+  if (button === 'button_roll' && types === 'Prop') {
+    return { speed: 32, successMin: 2, successMax: 97 };
+  }
+
+  // Dream walk: wide zone — small STA drain on fail
+  if (button === 'button_roll' && types.includes('Dream')) {
+    return { speed: 35, successMin: 5, successMax: 95 };
+  }
+
+  // Small grab: chance based on creature STA vs player STA
+  if (button === 'button_grab' && types === 'Small') {
+    var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
+    var smallW = Math.max(20, Math.min(85, Math.round(55 + pSta * 5 - eStaSmall * 12)));
+    var smallMid = 50;
+    return { speed: 44, successMin: Math.max(3, smallMid - Math.round(smallW/2)), successMax: Math.min(97, smallMid + Math.round(smallW/2)) };
+  }
+
+  // Container search: luck scales zone width — bad luck = high chance of finding nothing
+  if (button === 'button_grab' && types.includes('Container') && !types.includes('Locked')) {
+    var searchW = Math.max(25, Math.min(82, Math.round(40 + pLck * 9)));
+    return { speed: 30, successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
+  }
+
+  // Fishing: bait quality shifts zone width
+  if (button === 'button_grab' && types === 'Fishing') {
+    var fishBait = checkPlayerHasItem(validBaits);
+    var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 0;
+    var fishMin = Math.max(3, 22 - fishBQ * 8);
+    var fishMax = Math.min(97, 70 + fishBQ * 8);
+    return { speed: 36, successMin: fishMin, successMax: fishMax };
+  }
+
+  // Full-green: encounter has no ATK or MGK threat — automatic success
+  var eAtkFull = Math.max(0, (enemyAtk || 0) + (enemyAtkBonus || 0));
+  var eMgkFull = Math.max(0, (enemyMgk || 0) - (enemyMgkLost || 0));
+  if (eAtkFull === 0 && eMgkFull === 0) {
+    return { speed: 30, successMin: 0, successMax: 100 };
+  }
 
   var pStat, eStat, baseW, baseSpeed;
 
@@ -251,7 +320,7 @@ function calcActionBarConfig(button) {
 
   if (isBoss) eStat += 5;
 
-  var zoneW = Math.round(baseW + pStat * 6 - eStat * 4);
+  var zoneW = Math.round(baseW + pStat * 6 - eStat * 4 + (adjustment || 0));
   zoneW = Math.max(12, Math.min(72, zoneW));
 
   var speed = Math.round(baseSpeed + pStat * 5);

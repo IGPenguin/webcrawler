@@ -40,17 +40,11 @@ layout: default
 <!-- ── Main Menu ──────────────────────────────────────────────────────── -->
 <div id="id_menu" class="menu-screen" style="display:none;">
 
+  <!-- Shared logo — one element, animated on every menu show -->
+  <h2 id="id_menu_logo" style="font-size:68px; letter-spacing:1.8px; -webkit-text-stroke:6.5px black; paint-order:stroke fill; color:red; margin-bottom:32px; line-height:1px; text-align:center; z-index:1;">Stay Dead</h2>
+
   <!-- Main screen -->
   <div id="menu_main_screen">
-    <h2 style="font-size:68px;
-               letter-spacing:1.8px;
-               -webkit-text-stroke: 6.5px black;
-               paint-order: stroke fill;
-               color:red;
-               margin-bottom:32px;
-               line-height:1px;
-               text-align:center;
-               z-index:1;">Stay Dead</h2>
     <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px;">
       <h2 style="font-size:20px;
       letter-spacing:1.5px;
@@ -60,25 +54,16 @@ layout: default
       text-align:center;">⚙️ Main Menu</h2>
       <div id="menu_continue_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
       <button class="menu-btn" id="menu_continue">⚔️ Continue</button>
-      <button class="menu-btn" id="menu_new_game" style="color:red;">💀 New Game</button>
+      <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ New Game</button>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_challenges" style="color:grey;">🏆 Challenges</button>
-      <button class="menu-btn" id="menu_history">📜 Memories</button>
+      <button class="menu-btn" id="menu_challenges" style="color:grey;">🧬 Memories</button>
+      <button class="menu-btn" id="menu_history">🦴 Graveyard</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
   </div>
 
   <!-- Session History screen -->
   <div id="menu_history_screen" style="display:none;">
-    <h2 style="font-size:68px;
-               letter-spacing:1.8px;
-               -webkit-text-stroke: 6.5px black;
-               paint-order: stroke fill;
-               color:red;
-               margin-bottom:32px;
-               line-height:1px;
-               text-align:center;
-               z-index:1;">Stay Dead</h2>
     <div class="card menu-main-card" style="background-color:#202020;
                              padding:12px 16px 14px;">
       <h2 style="font-size:20px;
@@ -86,7 +71,7 @@ layout: default
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
             margin:8px 0 8px 0;
-            text-align:center;">📜 Memories</h2>
+            text-align:center;">💀 Graveyard</h2>
       <div style="flex:1;
                   min-height:0;
                   max-height:340px;
@@ -105,15 +90,6 @@ layout: default
 
   <!-- Credits screen -->
   <div id="menu_credits_screen" style="display:none;">
-    <h2 style="font-size:68px;
-               letter-spacing:1.8px;
-               -webkit-text-stroke: 6.5px black;
-               paint-order: stroke fill;
-               color:red;
-               margin-bottom:32px;
-               line-height:1px;
-               text-align:center;
-               z-index:1;">Stay Dead</h2>
     <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
           <h2 style="font-size:20px;
             letter-spacing:1.5px;
@@ -128,41 +104,32 @@ layout: default
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;">Terezka Svobodová</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Technology</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Vanilla JS</a> + <a href="https://jekyllrb.com/">Jekyll</a></h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Visuals</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://home.unicode.org/emoji/about-emoji/">Emoji standard</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://animate.style">animate.style</a></h4>
         <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:2px; padding-left:48px; padding-right:48px;">It took countless restless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a>, but it finally happened.</h5>
         <h4 style="min-height:0; margin-bottom:10px; margin-top:8px; padding:0 4px; font-size:14px; color:#FFD940; font-weight:600;">Thank you for playing!</h4>
       </div>
       <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_credits_contact" style="color:grey;">🗣️ Contact</button>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>
   </div>
 
   <!-- Confirm new game screen -->
   <div id="menu_confirm_screen" style="display:none;">
-    <h2 style="font-size:68px;
-               letter-spacing:1.8px;
-               -webkit-text-stroke: 6.5px black;
-               paint-order: stroke fill;
-               color:red;
-               margin-bottom:32px;
-               line-height:1px;
-               text-align:center;
-               z-index:1;">Stay Dead</h2>
     <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
         <h2 style="font-size:20px;
                letter-spacing:1.5px;
                -webkit-text-stroke: 5px black;
                paint-order: stroke fill;
                margin:8px 0 8px 0;
-               text-align:center;">⚠️ Start New Game?</h2>
-      <div style="background-color:#202020; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:13px; margin-bottom:0; color:#fff;">Your current progress will be lost forever!</h4>
+               text-align:center;">⚠️ Really want to restart?</h2>
+      <div id="menu_confirm_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
+      <div style="background-color:#202020; padding:6px 0 6px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
+        <h4 style="text-align:center; min-height:0; font-size:14px; margin-bottom:0; color:#fff;">This progress will be lost forever!</h4>
       </div>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">💀 Start Over</button>
+      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✨ New Game</button>
       <button class="menu-btn" id="menu_confirm_cancel">👈 Cancel</button>
     </div>
   </div>
@@ -380,7 +347,7 @@ layout: default
 
 <div style="position:relative; margin-top:8px;">
   <button type="button" id="button_menu" style="position:absolute; left:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⚙️</button>
-  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🏆</button>
+  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🧬</button>
   <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
     <h4 style="font-size:11px; opacity:0.6; margin-top:8px; letter-spacing:1px;box-shadow:none;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
   </div>

@@ -140,6 +140,60 @@ function curtainFadeInAndOut(message="", duration=3) {
   });
 }
 
+// Permanent death: fade to black, save & return to menu, show message, hold, fade out.
+function permanentDeath(htmlMsg) {
+  var curtain = document.getElementById('id_fullscreen_curtain');
+  var textEl  = document.getElementById('id_fullscreen_text');
+
+  removeClickListeners();
+  curtain.style.pointerEvents = 'auto';
+  curtain.style.display = 'block';
+  void curtain.offsetWidth;
+  curtain.style.setProperty('--animate-duration', '0.6s');
+  curtain.classList.add('animate__animated', 'animate__fadeIn');
+
+  curtain.addEventListener('animationend', function onIn() {
+    curtain.removeEventListener('animationend', onIn);
+    curtain.classList.remove('animate__animated', 'animate__fadeIn');
+
+    SaveManager.abandonCurrentRun();
+    SaveManager.clearSave();
+    Menu.show();
+
+    if (htmlMsg) {
+      textEl.innerHTML = htmlMsg;
+      textEl.style.display = 'block';
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '0.4s');
+      textEl.classList.add('animate__animated', 'animate__fadeIn');
+    }
+
+    setTimeout(function () {
+      if (htmlMsg) {
+        textEl.classList.remove('animate__animated', 'animate__fadeIn');
+        void textEl.offsetWidth;
+        textEl.style.setProperty('--animate-duration', '0.7s');
+        textEl.classList.add('animate__animated', 'animate__fadeOut');
+      }
+
+      void curtain.offsetWidth;
+      curtain.style.setProperty('--animate-duration', '0.8s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.addEventListener('animationend', function onOut() {
+        curtain.removeEventListener('animationend', onOut);
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        curtain.style.display = 'none';
+        curtain.style.pointerEvents = 'none';
+        if (htmlMsg) {
+          textEl.classList.remove('animate__animated', 'animate__fadeOut');
+          textEl.style.display = 'none';
+        }
+      });
+    }, 2500);
+  });
+}
+
 // Quick black flash for menu screen transitions (no text, no game click listeners).
 function menuFade(callback) {
   var curtain = document.getElementById('id_fullscreen_curtain');
