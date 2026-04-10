@@ -9,8 +9,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Local Development
 
 ```bash
-bundle exec jekyll serve
-# Visit http://127.0.0.1:4000
+bash deploy.sh        # installs gems, kills port 4000, serves, opens browser
+bash version.sh       # stamps current timestamp into versionCode in js/config.js
 ```
 
 No build tools, no npm. Pure vanilla JavaScript served by Jekyll.
@@ -25,19 +25,33 @@ The game has two layers:
 - `wip_*.csv` — Work-in-progress content (threats, boosts, undos, misc)
 - `fishing.csv` is obsolete — fishing data was merged into `encounters.csv` (rows use `area:Fishing`)
 
-**Logic layer** — `js/game_loop.js` (~4800 lines, monolithic by design):
-- All game logic lives here — no modules, no splitting
-- CSV data is loaded via jQuery AJAX on page load and stored in global arrays
-- Game state (player stats, inventory, area progress) lives in JS variables, with coins persisted to `localStorage`
-- UI is updated by calling `redraw()` which re-renders from current state
+**Logic layer** — 13 vanilla JS files in `js/`, loaded in order via `<script>` tags in `index.md` (no modules, no bundler — load order is the only dependency mechanism):
+
+| File | Responsibility |
+|------|----------------|
+| `config.js` | Version stamp, debug flags, colors, symbols |
+| `logging.js` | `getTime()`, `logGenerator()` |
+| `string-generator.js` | Name/string generation helpers |
+| `game-state.js` | All player state variables; initialized by `renewPlayer()` |
+| `ui-effects.js` | Animations, curtain, background, display toggles |
+| `ui-render.js` | `redraw()` and all UI rendering |
+| `enemy-skills.js` | Enemy skill resolution |
+| `player-skills.js` | Player skills; calls `renewPlayer()` on load to initialize state |
+| `data.js` | CSV loading via jQuery AJAX; populates global arrays |
+| `encounter.js` | `loadEncounter()`, `generateNextEncounters()` |
+| `social.js` | Share / LinkedIn logic |
+| `action-resolver.js` | `resolveAction()` — dispatches all nine player actions |
+| `ui-buttons.js` | Button setup, click listeners, `registerClickListeners()` |
+
+CSV data is stored in global arrays; game state lives in JS variables, with coins persisted to `localStorage`. UI is updated by calling `redraw()`.
 
 The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layouts/default.html`.
 
-## Key Systems in game_loop.js
+## Key Systems
 
-- **Encounter loading**: `loadEncounter(index)` parses CSV rows into the current encounter; `generateNextEncounters(generatorID)` builds dynamic sequences
-- **Combat**: `resolveAction(button)` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
-- **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` resets a run
+- **Encounter loading**: `loadEncounter(index)` in `encounter.js` parses CSV rows; `generateNextEncounters(generatorID)` builds dynamic sequences
+- **Combat**: `resolveAction(button)` in `action-resolver.js` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
+- **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
 - **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
 
 ## CSV Format Rules

@@ -13,9 +13,11 @@ Another text-based roguelike RPG, this one is written in JavaScript + driven by 
 
 ## 🏗 Development
 <b>⚠️ [Pull requests](https://github.com/IGPenguin/stay-dead/pulls)</b> must follow [contribution rules](https://github.com/IGPenguin/stay-dead/blob/live/.github/CONTRIBUTING.md "the contribution rules").<br><br>
-🏗️ Deploy locally ```bundle exec jekyll serve``` to test your changes at http://127.0.0.1:4000<br>
+🏗️ Deploy locally with `bash deploy.sh` — installs gems, frees port 4000, serves at http://127.0.0.1:4000, and opens the browser.<br>
+🔢 Bump the version stamp with `bash version.sh` before pushing.<br>
+<br>
+Game logic is split across 13 vanilla JS files in `js/` (no build step, no modules — load order in `index.md` is the dependency chain).<br>
 <br>
 
 <sup>⭐️ <strong>Hit the star button to make me smile!</strong><br></sup>
-<sup>🙈 Don't judge the .js spaghetti monster.<br></sup>
 <sup>📱 Check my other project: [mobile-toolkit](https://github.com/IGPenguin/mobile-toolkit)<br></sup>
