@@ -51,11 +51,12 @@ layout: default
                text-align:center;">Stay Dead</h2>
     <p style="margin:32px;"></p>
     <div class="card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; min-height:0;">
+      <h2 style="margin: 8px 0 8px 0px;">⚔️ Main Menu</h2>
       <div id="menu_continue_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
       <button class="menu-btn" id="menu_continue">➡️ Continue</button>
       <button class="menu-btn" id="menu_new_game">💀 New Game</button>
       <p style="margin:6px;"></p>
-      <button class="menu-btn" id="menu_achievements">🎖️ Challenges</button>
+      <button class="menu-btn" id="menu_achievements" style="color:grey;">🎖️ Challenges</button>
       <button class="menu-btn" id="menu_history">📜 History</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
@@ -63,15 +64,23 @@ layout: default
 
   <!-- Session History screen -->
   <div id="menu_history_screen" style="display:none;">
-    <h2 style="font-size:22px;
-               letter-spacing:1.5px;
-               -webkit-text-stroke: 5px black;
+    <h2 style="font-size:74px;
+               letter-spacing:1.8px;
+               -webkit-text-stroke: 6.5px black;
                paint-order: stroke fill;
-               margin-bottom:8px;
-               text-align:center;">📜 History</h2>
+               color:red;
+               margin-bottom:32px;
+               line-height:1px;
+               text-align:center;">Stay Dead</h2>
     <div class="card" style="background-color:#202020;
                              padding:8px;
                              min-height:0;">
+      <h2 style="font-size:22px;
+            letter-spacing:1.5px;
+            -webkit-text-stroke: 5px black;
+            paint-order: stroke fill;
+            margin:8px 0 8px 0;
+            text-align:center;">📜 History</h2>
       <div style="max-height:370px;
                   overflow-x:hidden;
                   overflow-y:auto;
@@ -87,40 +96,60 @@ layout: default
 
   <!-- Credits screen -->
   <div id="menu_credits_screen" style="display:none;">
-    <h2 style="font-size:42px;
+    <h2 style="font-size:74px;
                letter-spacing:1.8px;
                -webkit-text-stroke: 6.5px black;
                paint-order: stroke fill;
                color:red;
-               margin-bottom:0;
+               margin-bottom:32px;
                line-height:1px;
                text-align:center;">Stay Dead</h2>
     <p style="margin:16px;"></p>
     <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
-      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Made by</h5>
-      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">IGPenguin</h4>
-      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Engine</h5>
-      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Vanilla JS + Jekyll</h4>
-      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Art</h5>
-      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Emoji standard</h4>
-      <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
-      <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">animate.css</h4>
-      <h5 style="text-align:center; font-size:12px; margin-top:4px; margin-bottom:10px;">Thank you for playing!</h5>
-      <button class="menu-btn" id="menu_credits_back">👈 Back</button>
+          <h2 style="font-size:22px;
+            letter-spacing:1.5px;
+            -webkit-text-stroke: 5px black;
+            paint-order: stroke fill;
+            margin:8px 0 8px 0;
+            text-align:center;">🖤 Credits</h2>
+      <div class="card" style="background-color:#202020; padding-top:12px; min-height:0;">
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Developed by</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Adam Svoboda</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Eternal support</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Terezka Svobodová</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Technology</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Vanilla JS + Jekyll</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Visuals</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Emoji standard</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">animate.css</h4>
+        <h5 style="text-align:center; font-size:12px; margin-top:4px; margin-bottom:0px;">Thank you for playing!</h5>
+      </div>
+      <button class="menu-btn" id="menu_credits_back" style="margin-top:16px;">👈 Back</button>
     </div>
   </div>
 
   <!-- Confirm new game screen -->
   <div id="menu_confirm_screen" style="display:none;">
-    <h2 style="font-size:22px;
+    <h2 style="font-size:74px;
+               letter-spacing:1.8px;
+               -webkit-text-stroke: 6.5px black;
+               paint-order: stroke fill;
+               color:red;
+               margin-bottom:32px;
+               line-height:1px;
+               text-align:center;">Stay Dead</h2>
+    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
+        <h2 style="font-size:22px;
                letter-spacing:1.5px;
                -webkit-text-stroke: 5px black;
                paint-order: stroke fill;
-               margin-bottom:8px;
+               margin:8px 0 8px 0;
                text-align:center;">⚠️ Start New Game?</h2>
-    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
-      <h4 style="text-align:center; min-height:0; margin-bottom:14px; font-size:13px; color:#ccc;">Previous progress will be lost.</h4>
-      <button class="menu-btn" id="menu_confirm_yes">💀 Start Over</button>
+      <div class="card" style="background-color:#202020; padding-top:12px; min-height:0;">
+        <h4 style="text-align:center; min-height:0; font-size:13px; margin-bottom:0; color:#fff;">Your current progress will be lost forever!</h4>
+      </div>
+      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px;">💀 Start Over</button>
       <button class="menu-btn" id="menu_confirm_cancel" style="margin-top:8px;">👈 Cancel</button>
     </div>
   </div>
