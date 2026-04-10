@@ -87,7 +87,7 @@ Fading Wildlands;🎃;Field Scarecrow;Trap-Attack;0;1;0;0;0;0;0;Makeshift Defens
 Fading Wildlands;💩;Rotten Mound;Trap-Attack;0;0;0;0;-1;0;0;Foul Remains;Whatever died here didn’t rest clean.<br>;Suffered some nasty consequences.
 Fading Wildlands;🕸️;Clinging Web;Trap-Roll;0;0;-1;0;0;0;0;Snaring Threads;Sticky strands refuse to let go.<br>;Got some webs on your face
 
-Fading Wildlands;🌿;Fern Thicket;Trap-Obstacle;0;0;0;0;0;0;0;Quiet Flora;Dense vegetation blocks the way ahead.<br>;
+Fading Wildlands;🌿;Fern Thicket;Trap-Obstacle;0;0;0;0;0;0;0;Quiet Flora;Dense vegetation blocks the way ahead.<br>;Cannot push yourself trough!
 Fading Wildlands;🪵;Fallen Trunk;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;A heavy trunk denies the easy way forward.<br>;There's no other way ahead.
 Fading Wildlands;🪨;Collapsed Stones;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;The path ahead is choked with rubble.<br>;The way forward is blocked.
 
@@ -462,8 +462,8 @@ Forsaken Village;🐦‍⬛;Blood Raven;Undead;2;1;3;1;0;0;0;Thirsty Bird;Aims i
 Forsaken Village;🔥;Lingering Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;
 
 Forsaken Village;🪓;Titansteel Cleaver;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.
-Forsaken Village;🥊;Champion Glove;Item;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat attack and defense.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 ❤️ Health</b>.;Feeling more confident.
-Forsaken Village;🩼;Disposed Crutch;Item;0;1;1;0;0;0;0;<b>Artifact</b>;Best of both - support and attack power.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;This will come in handy!
+Forsaken Village;🥊;Enchanted Gloves;Item;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat technique.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+2 🟢 Energy</b>.;Feeling more confident.
+Forsaken Village;🩼;Disposed Crutch;Item;0;1;-1;0;0;0;0;<b>Artifact</b>;Best of both - support and attack power.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;This will come in handy!
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.
 Forsaken Village;🧼;Ancient Soap;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>🫧 Bubble Shield</b>.<br>Repels received damage - <b>once per combat</b>.;Gained attribute <b>🫧 Bubble Shield</b>.
 Forsaken Village;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>
@@ -481,14 +481,13 @@ Forsaken Village;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attri
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power
 Forsaken Village;🎈;Floating Blob;Item;-1;0;2;0;0;0;0;<b>Artifact</b>;Floats peacefully just above the ground.<br><b>Gain +2 🟢 Energy</b> for <b>-1 💔 Health</b>.;Became nimble\ yet fragile.
 
-Forsaken Village;🗞️;Fly Swatter;Item;0;1;0;0;0;0;0;Makeshift Weapon;Effective but might not last for long.<br>Provides <b>+1 ⚔️ Attack</b>.;Grabbed a makeshift weapon.
 Forsaken Village;🪚;Rusty Saw;Item;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.
 Forsaken Village;🦯;Telescopic Stick;Item;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
 Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.
-Forsaken Village;🔪;Kitchen Knife;Item;0;1;0;0;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.
 Forsaken Village;🔧;Metal Spanner;Item;0;1;0;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.
+Forsaken Village;🔪;Bloody Knife;Item;0;1;0;-1;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Got some blood on your hands!
 Forsaken Village;⛑️;Medic Helmet;Item;1;0;0;1;0;0;0;Head Protection;Robust protection for those who help others.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Protected and blessed
 Forsaken Village;📔;Holy Prayerbook;Item;0;0;0;1;0;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;Learned plenty of stuff
 
@@ -509,6 +508,7 @@ Forsaken Village;📕;First Aid 101;Item;1;0;0;0;0;0;0;Instructions Book;Contain
 Forsaken Village;🧢;Cool Hat;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Charisma</b>;Ready to rock\ let's do this!
 Forsaken Village;🪠;Waste Plunger;Item;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassing situations.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed a makeshift weapon.
 Forsaken Village;🧹;Sturdy Broom;Item;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but especially effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed a makeshift weapon.
+Forsaken Village;🗞️;Fly Swatter;Item;0;0;0;0;0;0;0;Makeshift Weapon;Not sure if it makes any difference.<br>;Picked up a makeshift weapon.
 
 Forsaken Village;📄;Rallying Call;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Morale</b> and a survival tip((<br>n/a;Embraced the new knowledge.
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Embraced the new knowledge.
