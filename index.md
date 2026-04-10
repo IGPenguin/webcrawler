@@ -51,12 +51,17 @@ layout: default
                text-align:center;
                z-index:1;">Stay Dead</h2>
     <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px;">
-      <h2 style="margin: 8px 0 8px 0px;">⚔️ Main Menu</h2>
+      <h2 style="font-size:20px;
+      letter-spacing:1.5px;
+      -webkit-text-stroke: 5px black;
+      paint-order: stroke fill;
+      margin:8px 0 8px 0;
+      text-align:center;">⚙️ Main Menu</h2>
       <div id="menu_continue_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
-      <button class="menu-btn" id="menu_continue" style="color:#FFD940;">➡️ Continue</button>
+      <button class="menu-btn" id="menu_continue">⚔️ Continue</button>
       <button class="menu-btn" id="menu_new_game" style="color:red;">💀 New Game</button>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_challenges" style="color:grey;">⭐️ Challenges</button>
+      <button class="menu-btn" id="menu_challenges" style="color:grey;">🏆 Challenges</button>
       <button class="menu-btn" id="menu_history">📜 Memories</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
@@ -383,8 +388,8 @@ layout: default
 </div>
 
 <div style="position:relative; margin-top:8px;">
-  <button type="button" id="button_menu" style="position:absolute; left:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⬅️</button>
-  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⭐️</button>
+  <button type="button" id="button_menu" style="position:absolute; left:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⚙️</button>
+  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🏆</button>
   <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
     <h4 style="font-size:11px; opacity:0.6; margin-top:8px; letter-spacing:1px;box-shadow:none;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
   </div>
