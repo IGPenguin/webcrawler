@@ -17,4 +17,4 @@ No build step, no modules — load order in `index.md` is the dependency chain.<
 ---
 
 <sup>⭐️ <strong>Slap that GitHub star button to make me happy!</strong><br></sup>
-<sup>📱 Check out my another project: [mobile-toolkit](https://github.com/IGPenguin/mobile-toolkit)<br></sup>
+<sup>📱 Check out my other project: [mobile-toolkit](https://github.com/IGPenguin/mobile-toolkit)<br></sup>
