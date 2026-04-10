@@ -2,7 +2,10 @@
 function redraw(){
   //Version
   versionIDUIElement = document.getElementById('id_version')
-  versionIDUIElement.innerHTML = versionCode+"<br>"+lastGeneratorName+" (#"+adventureEncounterCount+")";
+  versionIDUIElement.innerHTML = versionCode
+
+  //Disable debug show last generator below
+  //versionIDUIElement.innerHTML = versionCode+"<br>"+lastGeneratorName+" (#"+adventureEncounterCount+")";
 
   //Player UI
   playerInfoUIElement = document.getElementById('id_player_info');
