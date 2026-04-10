@@ -76,13 +76,15 @@ var Menu = (function () {
 
     list.innerHTML = '';
     sessions.forEach(function (session) {
-      var icon  = OUTCOME_ICON[session.outcome] || '💀';
+      //var icon  = OUTCOME_ICON[session.outcome] || '💀';
+      var icon = ""; // Unsure about this conflicting with special char icons, will disable for now
       var label = '<b>' + icon + '&nbsp;' +
         (session.playerName || 'Unknown') +
         '&nbsp;&nbsp;·&nbsp;&nbsp;Lv.' + (session.level || '?') +
         '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.area || '?') + '</b>';
-      var sub = (session.date || '') +
-        (session.causeOfDeath ? '&nbsp;&nbsp;·&nbsp;&nbsp;' + session.causeOfDeath : '');
+      var sub = (session.causeOfDeath ? "" + session.causeOfDeath : '')
+        + '&nbsp;&nbsp;·&nbsp;&nbsp;'
+        + (session.date || '') ;
       var stats = _buildStatsString(session);
 
       var partyLoot = '';

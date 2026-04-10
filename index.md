@@ -51,7 +51,7 @@ layout: default
                text-align:center;">Stay Dead</h2>
     <p style="margin:32px;"></p>
     <div class="card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; min-height:0;">
-      <button class="menu-btn" id="menu_continue">➡️ Continue</button>
+      <button class="menu-btn" id="menu_continue" style="margin-bottom:6px;">➡️ Continue</button>
       <button class="menu-btn" id="menu_new_game">💀 New Game</button>
       <p style="margin:6px;"></p>
       <button class="menu-btn" id="menu_history">📜 History</button>

@@ -1869,7 +1869,7 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
     level: playerLevel,
     kills: playerKills,
     area: areaName,
-    causeOfDeath: 'Completed the adventure',
+    causeOfDeath: '👑 Completed the adventure',
     outcome: 'win',
     actionLog: adventureLog,
     playerHpMax: playerHpMax,
