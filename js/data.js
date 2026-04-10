@@ -46,8 +46,10 @@ function _doStartGame(isContinue) {
       SaveManager.restoreGameState(saved);
       // linesGenerator / linesLoot are rebuilt from encounters.csv on every load — no restore needed
       redraw();
-      registerClickListeners(0);
+      registerClickListeners(!isLocalhost() ? 4000 : 0);
       registerClickListenersTechnical();
+      curtainFadeInAndOut("<p style=\"color:"+colorRed+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:1px;font-size:74px;font-weight:700;\">Stay Dead</p><p style=\"font-size:16px;line-height:18px;letter-spacing:1.2px\""+decorateStatusText("","<br>"+emptySpace.repeat(41)+"by IGPenguin",colorWhite),3.5);
+      animateUIElement(emojiUIElement,"animate__pulse","2",false,"",true);
       return;
     }
   }

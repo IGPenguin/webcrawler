@@ -61,8 +61,9 @@ var Menu = (function () {
   }
 
   function _doNewGame() {
+    renewPlayer();
     SaveManager.clearSave();
-    savedCoins = NaN; // NaN causes neither returning-player branch in processStoryData
+    //savedCoins = NaN; // NaN causes neither returning-player branch in processStoryData
     startGame(false);
   }
 
@@ -116,25 +117,27 @@ var Menu = (function () {
     html += '<div style="width:0%; height:1px; background:#FFD940; '
       + 'margin-top:1px; margin-bottom:0px; margin-left:4px;">&nbsp;</div>';
 
-    // Stats bar wrapper + stats h3
-    html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-      + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
-      + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
-      + 'font-size:14px; margin-bottom:-11px; margin-top:12px; font-family:sans; '
-      + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
-      + (stats || '&nbsp;') + '</h3>'
-      + '</div>';
+    // Note: Disabled stats and party+loot display below to declutter main menu
 
-    if (!skipLoot) {
-      // Loot/party bar — matches id_player_party_loot exactly
-      html += '<h3 style="text-align:left; text-overflow:ellipsis; overflow:hidden; '
-        + 'white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; '
-        + 'margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; '
-        + 'box-shadow:0px 0px 0px 3px #121212; background-color:#272727;">'
-        + (partyLoot || '<span style="color:#fff;">∙∙∙</span>') + '</h3>';
-      // Clear float before closing wrapper
-      html += '<div style="clear:both;"></div>';
-    }
+    // Stats bar wrapper + stats h3
+    // html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+    //   + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
+    //   + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
+    //   + 'font-size:14px; margin-bottom:-11px; margin-top:12px; font-family:sans; '
+    //   + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
+    //   + (stats || '&nbsp;') + '</h3>'
+    //   + '</div>';
+
+    // if (!skipLoot) {
+    //   // Loot/party bar — matches id_player_party_loot exactly
+    //   html += '<h3 style="text-align:left; text-overflow:ellipsis; overflow:hidden; '
+    //     + 'white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; '
+    //     + 'margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; '
+    //     + 'box-shadow:0px 0px 0px 3px #121212; background-color:#272727;">'
+    //     + (partyLoot || '<span style="color:#fff;">∙∙∙</span>') + '</h3>';
+    //   // Clear float before closing wrapper
+    //   html += '<div style="clear:both;"></div>';
+    // }
     html += '</div>';
 
     return html;
@@ -160,7 +163,7 @@ var Menu = (function () {
 
     if (sessions.length === 0) {
       list.innerHTML =
-        '<h4 style="color:#888888; text-align:center; min-height:0; ' +
+        '<h4 style="color:#fff; text-align:center; min-height:0; ' +
         'padding:16px 0; margin:0;">No runs recorded yet.</h4>';
       return;
     }
@@ -259,6 +262,12 @@ var Menu = (function () {
     _showScreen('menu_history_screen');
   }
 
+  // ── Challenges ────────────────────────────────────────────────────────────────
+
+  function _renderChallenges() {
+    // To be done
+  }
+
   // ── Credits ────────────────────────────────────────────────────────────────
 
   function _renderCredits() {
@@ -287,6 +296,7 @@ var Menu = (function () {
       startGame(true);
     });
 
+    document.getElementById('menu_challenges').addEventListener('click', _renderChallenges);
     document.getElementById('menu_history').addEventListener('click', _renderHistory);
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
     document.getElementById('menu_credits_back').addEventListener('click', _renderMain);

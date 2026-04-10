@@ -1,3 +1,15 @@
+Main menu
+- all pages fixed height
+
+Ensure that on new game:
+- log is reset as it should
+- new character is saved, overwritting existing one
+
+Ensure on back to menu
+- character info is refreshed
+
+Fix screen fade to be covering whole page
+
 fix version.sh
 
 ---

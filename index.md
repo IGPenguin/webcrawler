@@ -56,8 +56,8 @@ layout: default
       <button class="menu-btn" id="menu_continue">➡️ Continue</button>
       <button class="menu-btn" id="menu_new_game">💀 New Game</button>
       <p style="margin:6px;"></p>
-      <button class="menu-btn" id="menu_achievements" style="color:grey;">🎖️ Challenges</button>
-      <button class="menu-btn" id="menu_history">📜 History</button>
+      <button class="menu-btn" id="menu_challenges" style="color:grey;">👑 Challenges</button>
+      <button class="menu-btn" id="menu_history">📜 Memories</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
   </div>
@@ -73,19 +73,21 @@ layout: default
                line-height:1px;
                text-align:center;">Stay Dead</h2>
     <div class="card" style="background-color:#202020;
-                             padding:8px;
+                             padding:12px 16px 14px;
                              min-height:0;">
       <h2 style="font-size:22px;
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
             margin:8px 0 8px 0;
-            text-align:center;">📜 History</h2>
+            text-align:center;">📜 Memories</h2>
       <div style="max-height:370px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:thin;
                   scrollbar-color:#000 transparent;
+                  padding-top:4px;
+                  margin-top:-4px;
                   padding-bottom:4px;
                   margin-bottom:8px;">
         <div id="menu_history_list"></div>
