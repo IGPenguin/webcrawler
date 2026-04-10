@@ -2,7 +2,7 @@
 //Note: This game was not planned for 2+ years of development 💀
 
 //Debug
-var versionCode = "ver. 04/02/2026 @ 02:23 AM"
+var versionCode = "ver. 04/10/2026 @ 09:02 AM"
 var initialEncounterOverride=0; //6 skips tutorial
 
 function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}

@@ -1,6 +1,7 @@
 display log in reversed order in session history (same as in game)
 fix id_player_party_loot not being populated with "..." on session return if empty
 add separate "← Menu" button under character card - next to the version footer
+fix version.sh
 
 ---
 
