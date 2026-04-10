@@ -121,17 +121,18 @@ layout: default
             margin:8px 0 8px 0;
             text-align:center;">🖤 Credits</h2>
       <div style="background-color:#202020; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Developed by</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Adam Svoboda</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:2px; opacity:0.6;">Developed by</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Eternal support</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Terezka Svobodová</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Technology</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Vanilla JS + Jekyll</h4>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Vanilla JS</a> + <a href="https://jekyllrb.com/">Jekyll</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Visuals</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Emoji standard</h4>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://home.unicode.org/emoji/about-emoji/">Emoji standard</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">animate.css</h4>
-        <h5 style="text-align:center; font-size:12px; margin-top:4px; margin-bottom:0px;">Thank you for playing!</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://animate.style">animate.style</a></h4>
+        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:2px; padding-left:48px; padding-right:48px;">It took countless restless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a>, but it finally happened.</h5>
+        <h4 style="min-height:0; margin-bottom:10px; margin-top:8px; padding:0 4px; font-size:14px;">Thank you for playing!</h4>
       </div>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>

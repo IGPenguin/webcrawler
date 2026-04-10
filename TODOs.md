@@ -31,6 +31,10 @@ then fade bar out. Test with min/max stat extremes to confirm thresholds feel fa
 ---
 
 unify and animate menu logo with animate.css
+fix: sessions list should not scale down when scrollable
+fix: fade animations timing breaks when going back to menu right after game loads
+
+manual: move the social buttons from death to main menu
 
 gkeep fixes?
 
