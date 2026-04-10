@@ -88,6 +88,7 @@ layout: default
             text-align:center;">📜 Memories</h2>
       <div style="flex:1;
                   min-height:0;
+                  max-height:340px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:thin;
