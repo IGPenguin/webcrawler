@@ -396,26 +396,30 @@ button {
 
 .menu-history-entry {
   cursor: pointer;
-  padding: 6px 8px;
-  margin-bottom: 1px;
-  box-shadow: 0px 0px 0px 3px #000;
-  background-color: #272727;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  overflow: hidden;
+  background-color: #202020;
+  box-shadow: inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 
 .menu-history-entry:hover {
-  background-color: #303030;
+  opacity: 0.82;
 }
 
 .menu-history-log {
   display: none;
-  padding: 6px 8px;
+  padding-top: 4px;
+  padding-bottom: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
   font-size: 12px;
   line-height: 165%;
   text-align: left;
   color: #fff;
   background-color: #272727;
   box-shadow: 0px 0px 0px 3px #121212;
-  margin-bottom: 3px;
+  margin: 2px 3px 3px 3px;
   max-height: 200px;
   overflow-y: auto;
   scrollbar-width: thin;

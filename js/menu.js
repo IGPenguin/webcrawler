@@ -32,8 +32,25 @@ var Menu = (function () {
   // ── Main ───────────────────────────────────────────────────────────────────
 
   function _renderMain() {
-    document.getElementById('menu_continue').style.display =
-      SaveManager.hasContinue() ? '' : 'none';
+    var hasSave = SaveManager.hasContinue();
+    document.getElementById('menu_continue').style.display = hasSave ? '' : 'none';
+
+    var preview = document.getElementById('menu_continue_preview');
+    if (hasSave) {
+      var s = SaveManager.loadGameState();
+      var stats = _buildStats(s.playerHpMax, s.playerStaMax, s.playerAtk, s.playerMgkMax);
+
+      var partyLoot = '';
+      if (s.playerPartyString && s.playerPartyString !== 'undefined') partyLoot += s.playerPartyString;
+      if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + s.playerLootString;
+
+      var encounter = (s.enemyEmoji || '') + (s.enemyName ? ' ' + s.enemyName : '');
+      preview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null);
+      preview.style.display = '';
+    } else {
+      preview.style.display = 'none';
+    }
+
     _showScreen('menu_main_screen');
   }
 
@@ -49,20 +66,95 @@ var Menu = (function () {
     startGame(false);
   }
 
-  // ── Session History ────────────────────────────────────────────────────────
+  // ── Shared run card renderer ───────────────────────────────────────────────
 
-  var OUTCOME_ICON = { win: '👑', death: '💀', abandoned: '♻️' };
-
-  function _buildStatsString(session) {
+  function _buildStats(hpMax, staMax, atk, mgkMax) {
     var s = '';
-    if (session.playerHpMax  > 0) s += '❤️ '           + fullSymbol.repeat(session.playerHpMax);
-    if (session.playerStaMax > 0) s += '&nbsp;&nbsp;🟢 ' + fullSymbol.repeat(session.playerStaMax);
-    if (session.playerAtk    > 0) s += '&nbsp;&nbsp;⚔️ ' + fullSymbol.repeat(session.playerAtk);
-    if (session.playerMgkMax > 0) s += '&nbsp;&nbsp;🔵 ' + fullSymbol.repeat(session.playerMgkMax);
+    if (hpMax  > 0) s += '❤️ '            + fullSymbol.repeat(hpMax);
+    if (staMax > 0) s += '&nbsp;&nbsp;🟢 ' + fullSymbol.repeat(staMax);
+    if (atk    > 0) s += '&nbsp;&nbsp;⚔️ ' + fullSymbol.repeat(atk);
+    if (mgkMax > 0) s += '&nbsp;&nbsp;🔵 ' + fullSymbol.repeat(mgkMax);
     return s;
   }
 
-  function _renderHistory() {
+  // Builds an in-game-styled player card matching the in-game toolbar layout exactly.
+  // area + sub render as one h5 line; date renders as a second dimmer h5 (matches list item style).
+  function _buildRunCardHTML(name, level, area, stats, partyLoot, sub, date, skipLoot) {
+    var html = '';
+
+    // Outer wrapper — matches toolbar-card
+    html += '<div style="padding-top:0px; padding-bottom:3px;">';
+
+    // Level — negative margin-bottom overlaps the name bar below (must be directly before it)
+    html += '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; '
+      + 'z-index:3; text-align:right; padding-right:10px;">'
+      + '<i style="font-weight:600; color:#FFD940; font-size:14px; '
+      + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + level + '</i>'
+      + '</h3>';
+
+    // Name bar — directly after level so the overlap works
+    html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+      + 'padding-top:2px; padding-bottom:2px; background-color:#202020;">'
+      + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
+      + 'margin-top:0px; margin-bottom:4px; font-size:17px; font-weight:bold; '
+      + '-webkit-text-stroke:5px #121212; paint-order:stroke fill;">' + name + '</h3>'
+      + '</div>';
+
+    // Area + cause + date — one bordered div, two h5 lines (matches history list style)
+    var infoParts = [area && area !== '?' ? area : null, sub || null].filter(Boolean);
+    if (infoParts.length || date) {
+      html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+        + 'padding:2px 8px; background-color:#1a1a1a;">';
+      if (infoParts.length)
+        html += '<h5 style="margin:0;">' + infoParts.join('&nbsp;&nbsp;·&nbsp;&nbsp;') + '</h5>';
+      if (date)
+        html += '<h5 style="margin:0; opacity:0.6;">' + date + '</h5>';
+      html += '</div>';
+    }
+
+    // XP bar (static, width 0)
+    html += '<div style="width:0%; height:1px; background:#FFD940; '
+      + 'margin-top:1px; margin-bottom:0px; margin-left:4px;">&nbsp;</div>';
+
+    // Stats bar wrapper + stats h3
+    html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+      + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
+      + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
+      + 'font-size:14px; margin-bottom:-11px; margin-top:12px; font-family:sans; '
+      + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
+      + (stats || '&nbsp;') + '</h3>'
+      + '</div>';
+
+    if (!skipLoot) {
+      // Loot/party bar — matches id_player_party_loot exactly
+      html += '<h3 style="text-align:left; text-overflow:ellipsis; overflow:hidden; '
+        + 'white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; '
+        + 'margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; '
+        + 'box-shadow:0px 0px 0px 3px #121212; background-color:#272727;">'
+        + (partyLoot || '<span style="color:#fff;">∙∙∙</span>') + '</h3>';
+      // Clear float before closing wrapper
+      html += '<div style="clear:both;"></div>';
+    }
+    html += '</div>';
+
+    return html;
+  }
+
+  // ── Session History ────────────────────────────────────────────────────────
+
+  // Rebinds the history back button label and handler.
+  function _bindHistoryBack(label, fn) {
+    var btn = document.getElementById('menu_history_back');
+    var fresh = btn.cloneNode(true);
+    btn.parentNode.replaceChild(fresh, btn);
+    fresh.innerHTML = label;
+    fresh.addEventListener('click', fn);
+  }
+
+  // State 1: compact session list.
+  function _renderHistoryList() {
+    _bindHistoryBack('👈 Back', _renderMain);
+
     var list = document.getElementById('menu_history_list');
     var sessions = SaveManager.listSessionHistory();
 
@@ -70,52 +162,100 @@ var Menu = (function () {
       list.innerHTML =
         '<h4 style="color:#888888; text-align:center; min-height:0; ' +
         'padding:16px 0; margin:0;">No runs recorded yet.</h4>';
-      _showScreen('menu_history_screen');
       return;
     }
 
     list.innerHTML = '';
     sessions.forEach(function (session) {
-      //var icon  = OUTCOME_ICON[session.outcome] || '💀';
-      var icon = ""; // Unsure about this conflicting with special char icons, will disable for now
-      var label = '<b>' + icon + '&nbsp;' +
-        (session.playerName || 'Unknown') +
-        '&nbsp;&nbsp;·&nbsp;&nbsp;Lv.' + (session.level || '?') +
-        '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.area || '?') + '</b>';
-      var sub = (session.causeOfDeath ? "" + session.causeOfDeath : '')
-        + '&nbsp;&nbsp;·&nbsp;&nbsp;'
-        + (session.date || '') ;
-      var stats = _buildStatsString(session);
-
-      var partyLoot = '';
-      if (session.playerPartyString) partyLoot += session.playerPartyString;
-      if (session.playerLootString)  partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + session.playerLootString;
-
       var entry = document.createElement('div');
       entry.className = 'menu-history-entry';
+
+      // Same level + name bar structure as _buildRunCardHTML (with the overlap trick)
       entry.innerHTML =
-        '<h4 style="min-height:0; margin:0; padding:0; font-size:13px; line-height:22px;">' +
-          label +
-        '</h4>' +
-        (stats ? '<h4 style="min-height:0; margin:0; padding:0; font-size:13px; line-height:22px;">' + stats + '</h4>' : '') +
-        (partyLoot ? '<h4 style="min-height:0; margin:0; padding:0; font-size:13px; line-height:22px;">' + partyLoot + '</h4>' : '') +
-        '<h5 style="margin:0;">' + sub + '</h5>';
+        '<div style="background-color:rgb(40,40,40); overflow:hidden; padding-top:0px; padding-bottom:4px; '
+          + 'box-shadow:inset 0px 0px 0px 3px rgb(0,0,0), 0 4px 8px 0 rgba(0,0,0,0.5);">'
+          + '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; '
+            + 'z-index:3; text-align:right; padding-right:10px;">'
+            + '<i style="font-weight:600; color:#FFD940; font-size:14px; '
+            + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + (session.level || '?') + '</i>'
+          + '</h3>'
+          + '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+            + 'padding-top:2px; padding-bottom:2px; background-color:#202020;">'
+            + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
+            + 'margin-top:0px; margin-bottom:0px; font-size:17px; font-weight:bold; '
+            + '-webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
+            + (session.playerName || 'Unknown') + '</h3>'
+          + '</div>'
+        + '</div>'
+        + '<h5 style="margin:4px 0 0 4px;">' + (session.area || '?')
+          + '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
+        + '<h5 style="margin:1px 0 2px 4px; opacity:0.55;">' + (session.date || '') + '</h5>';
 
-      var logDiv = document.createElement('div');
-      logDiv.className = 'menu-history-log';
-      var logLines = (session.actionLog || '').split('<br>').filter(function (l) {
-        return l.replace(/&nbsp;/g, '').trim();
-      });
-      logDiv.innerHTML = logLines.length ? logLines.join('<br>') : '<i>No log.</i>';
-
-      entry.addEventListener('click', function () {
-        logDiv.style.display = logDiv.style.display === 'block' ? 'none' : 'block';
-      });
-
+      entry.addEventListener('click', function () { _renderHistoryDetail(session); });
       list.appendChild(entry);
-      list.appendChild(logDiv);
     });
+  }
 
+  // State 2: full in-game-style detail for a single session.
+  function _renderHistoryDetail(session) {
+    _bindHistoryBack('👈 Back', _renderHistoryList);
+
+    var stats = _buildStats(session.playerHpMax, session.playerStaMax, session.playerAtk, session.playerMgkMax);
+
+    var partyLoot = '';
+    if (session.playerPartyString && session.playerPartyString !== 'undefined') partyLoot += session.playerPartyString;
+    if (session.playerLootString  && session.playerLootString  !== 'undefined') partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + session.playerLootString;
+
+    var list = document.getElementById('menu_history_list');
+    list.innerHTML = '';
+
+    // Full player card
+    var card = document.createElement('div');
+    card.innerHTML = _buildRunCardHTML(
+      session.playerName || 'Unknown',
+      session.level || '?',
+      session.area  || '?',
+      stats, partyLoot,
+      session.causeOfDeath || null,
+      session.date || null,
+      true  // skipLoot — loot bar rendered below log
+    );
+    list.appendChild(card);
+
+    // Action log — styled like the in-game log box
+    var logLines = (session.actionLog || '').split('<br>').filter(function (l) {
+      return l.replace(/&nbsp;/g, '').trim();
+    }).reverse();
+
+    var logWrap = document.createElement('div');
+    logWrap.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
+
+    var logEl = document.createElement('h4');
+    // Fixed 3-line height: font-size 12px × line-height 1.65 × 3 lines = ~60px content + padding
+    logEl.style.cssText = 'margin: -8px 0 0 0; padding:4px 8px; text-align:left; '
+      + 'font-size:14.6px; line-height:165%; height:74px; overflow-y:auto; '
+      + 'scrollbar-width:thin; scrollbar-color:#000 transparent;';
+    logEl.innerHTML = logLines.length ? logLines.join('<br>') : '<i style="opacity:0.5;">No log.</i>';
+
+    logWrap.appendChild(logEl);
+    list.appendChild(logWrap);
+
+    // Loot/party bar — below the log
+    var lootBar = document.createElement('h3');
+    lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; '
+      + 'white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; '
+      + 'margin-left:3px; margin-bottom:0px; margin-top:8px; display:inline-block; width:95.8%; '
+      + 'box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
+    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">∙∙∙</span>';
+    list.appendChild(lootBar);
+
+    var clearDiv = document.createElement('div');
+    clearDiv.style.clear = 'both';
+    list.appendChild(clearDiv);
+  }
+
+  function _renderHistory() {
+    _renderHistoryList();
     _showScreen('menu_history_screen');
   }
 
@@ -149,7 +289,6 @@ var Menu = (function () {
 
     document.getElementById('menu_history').addEventListener('click', _renderHistory);
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
-    document.getElementById('menu_history_back').addEventListener('click', _renderMain);
     document.getElementById('menu_credits_back').addEventListener('click', _renderMain);
   }
 

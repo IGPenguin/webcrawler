@@ -344,6 +344,8 @@ function registerClickListeners(delay=800){
     document.getElementById('button_cast').addEventListener(eventType, callback_cast);
     document.getElementById('button_pray').addEventListener(eventType, callback_pray);
     document.getElementById('button_curse').addEventListener(eventType, callback_curse);
+
+    document.getElementById('button_menu').addEventListener(eventType, function() { Menu.show(); });
   },delay)
 }
 
@@ -361,6 +363,8 @@ function removeClickListeners(){
   document.getElementById('button_cast').removeEventListener(eventType, callback_cast);
   document.getElementById('button_pray').removeEventListener(eventType, callback_pray);
   document.getElementById('button_curse').removeEventListener(eventType, callback_curse);
+
+  document.getElementById('button_menu').removeEventListener(eventType, Menu.show);
 }
 
 function registerClickListenersTechnical(){

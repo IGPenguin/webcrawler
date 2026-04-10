@@ -26,16 +26,12 @@ function redraw(){
   if ((playerMgkMax-playerMgk)>0) playerStatusString += emptySymbol.repeat(playerMgkMax-playerMgk);
 
   document.getElementById('id_player_status').innerHTML = playerStatusString;
+  var _party = String(playerPartyString);
+  var _loot  = String(playerLootString);
   document.getElementById('id_player_party_loot').innerHTML = "";
-  if (playerPartyString.length > 1) { //Now inicializes with [""]
-        document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " +playerPartyString+"&nbsp;&nbsp;";
-  }
-  if (playerLootString.length > 1) { //Now inicializes with [""]
-    document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "+playerLootString;
-  }
-  if (playerPartyString.length+playerLootString.length == 2) {
-    document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
-  }
+  if (_party.length > 0) document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " + _party + "&nbsp;&nbsp;";
+  if (_loot.length  > 0) document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "  + _loot;
+  if (_party.length + _loot.length === 0) document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
 
   //Versus UI
   versusTextUIElement = document.getElementById('id_versus');

@@ -47,12 +47,12 @@ function logGenerator(generatorName="none"){
 }
 
 function getTime(){
-  var currentDate = new Date();
-  var time = currentDate.getDate() + "/"
-                  + currentDate.getMonth() + "/"
-                  + String(currentDate.getFullYear()).substr(-2) + " • "
-                  + currentDate.getHours() + ":"
-                  + currentDate.getMinutes()+ ":"
-                  + currentDate.getSeconds();
-  return time;
+  var d = new Date();
+  var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
+  return pad(d.getDate()) + '/'
+    + pad(d.getMonth() + 1) + '/'
+    + String(d.getFullYear()).substr(-2) + ' • '
+    + pad(d.getHours()) + ':'
+    + pad(d.getMinutes()) + ':'
+    + pad(d.getSeconds());
 }

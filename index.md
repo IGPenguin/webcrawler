@@ -51,9 +51,11 @@ layout: default
                text-align:center;">Stay Dead</h2>
     <p style="margin:32px;"></p>
     <div class="card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; min-height:0;">
-      <button class="menu-btn" id="menu_continue" style="margin-bottom:6px;">➡️ Continue</button>
+      <div id="menu_continue_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
+      <button class="menu-btn" id="menu_continue">➡️ Continue</button>
       <button class="menu-btn" id="menu_new_game">💀 New Game</button>
       <p style="margin:6px;"></p>
+      <button class="menu-btn" id="menu_achievements">🎖️ Challenges</button>
       <button class="menu-btn" id="menu_history">📜 History</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
@@ -69,15 +71,18 @@ layout: default
                text-align:center;">📜 History</h2>
     <div class="card" style="background-color:#202020;
                              padding:8px;
-                             min-height:0;
-                             max-height:400px;
-                             overflow-y:auto;
-                             scrollbar-width:thin;
-                             scrollbar-color:#000 transparent;">
-      <div id="menu_history_list"></div>
+                             min-height:0;">
+      <div style="max-height:370px;
+                  overflow-x:hidden;
+                  overflow-y:auto;
+                  scrollbar-width:thin;
+                  scrollbar-color:#000 transparent;
+                  padding-bottom:4px;
+                  margin-bottom:8px;">
+        <div id="menu_history_list"></div>
+      </div>
+      <button class="menu-btn" id="menu_history_back">👈 Back</button>
     </div>
-    <p style="margin:6px;"></p>
-    <button class="menu-btn" id="menu_history_back" style="max-width:332px;">← Back</button>
   </div>
 
   <!-- Credits screen -->
@@ -91,7 +96,7 @@ layout: default
                line-height:1px;
                text-align:center;">Stay Dead</h2>
     <p style="margin:16px;"></p>
-    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:16px; min-height:0;">
+    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
       <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Made by</h5>
       <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">IGPenguin</h4>
       <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Engine</h5>
@@ -100,10 +105,9 @@ layout: default
       <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Emoji standard</h4>
       <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
       <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">animate.css</h4>
-      <h5 style="text-align:center; font-size:12px; margin-top:4px;">Thank you for playing!</h5>
+      <h5 style="text-align:center; font-size:12px; margin-top:4px; margin-bottom:10px;">Thank you for playing!</h5>
+      <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>
-    <p style="margin:6px;"></p>
-    <button class="menu-btn" id="menu_credits_back" style="max-width:332px;">← Back</button>
   </div>
 
   <!-- Confirm new game screen -->
@@ -117,7 +121,7 @@ layout: default
     <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
       <h4 style="text-align:center; min-height:0; margin-bottom:14px; font-size:13px; color:#ccc;">Previous progress will be lost.</h4>
       <button class="menu-btn" id="menu_confirm_yes">💀 Start Over</button>
-      <button class="menu-btn" id="menu_confirm_cancel" style="margin-top:8px;">← Cancel</button>
+      <button class="menu-btn" id="menu_confirm_cancel" style="margin-top:8px;">👈 Cancel</button>
     </div>
   </div>
 
@@ -344,14 +348,14 @@ layout: default
 </div>
 </div>
 
-<p style="margin:10px"></p>
-
-<div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
-<h4 style="font-size:11px; opacity:0.6; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with love by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
-</div>
-
-<div id="id_bug" style="cursor: pointer;">
-<h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
+<div style="position:relative; margin-top:8px;">
+  <button type="button" id="button_menu" style="position:absolute; left:-82px; top:37%; transform:translateY(-50%); font-size:13px; min-height:36px; width:80px; padding:0 12px; letter-spacing:0.5px;">👈 Menu</button>
+  <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
+    <h4 style="font-size:11px; opacity:0.6; margin-top:-4px; letter-spacing:1px;box-shadow:none;">made with 🤍 by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+  </div>
+  <div id="id_bug" style="cursor: pointer;">
+    <h4 id="id_version" style="font-size:10px; margin-top:-20px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
+  </div>
 </div>
 
 </div><!-- end id_game -->
