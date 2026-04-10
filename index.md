@@ -88,7 +88,7 @@ layout: default
                   scrollbar-width:thin;
                   scrollbar-color:#000 transparent;
                   padding-top:4px;
-                  margin-top:-4px;
+                  margin-top:-6px;
                   padding-bottom:4px;">
         <div id="menu_history_list"></div>
       </div>

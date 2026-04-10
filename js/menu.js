@@ -95,7 +95,7 @@ var Menu = (function () {
 
     // Name bar — directly after level so the overlap works
     html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-      + 'padding-top:2px; padding-bottom:2px; background-color:#202020;">'
+      + 'padding-top:2px; padding-bottom:1px; background-color:#202020;">'
       + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
       + 'margin-top:0px; margin-bottom:4px; font-size:17px; font-weight:bold; '
       + '-webkit-text-stroke:5px #121212; paint-order:stroke fill; ">' + name + '</h3>'
@@ -107,7 +107,7 @@ var Menu = (function () {
       html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
         + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
-        html += '<h5 style="margin:4px 0 1px 0;">' + infoParts.join('&nbsp;&nbsp;·&nbsp;&nbsp;') + '</h5>';
+        html += '<h5 style="margin:2px 0 1px 0;">' + infoParts.join('&nbsp;&nbsp;·&nbsp;&nbsp;') + '</h5>';
       if (date)
         html += '<h5 style="margin:0 0 4px 0; opacity:0.6;">' + date + '</h5>';
       html += '</div>';
@@ -175,24 +175,23 @@ var Menu = (function () {
 
       // Same level + name bar structure as _buildRunCardHTML (with the overlap trick)
       entry.innerHTML =
-        '<div style="background-color:rgb(40,40,40); overflow:hidden; padding-top:0px; padding-bottom:4px; '
-          + 'box-shadow:inset 0px 0px 0px 3px rgb(0,0,0), 0 4px 8px 0 rgba(0,0,0,0.5);">'
-          + '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; '
-            + 'z-index:3; text-align:right; padding-right:10px;">'
+        '<div style="background-color:rgb(40,40,40); overflow:hidden; padding-top:0px; padding-bottom:3px;">'
+          + '<h3 style="margin-top:4px; margin-bottom:-19px; margin-left:4px; position:relative; '
+            + 'z-index:3; text-align:right; padding-right:10px; padding-bottom:2px">'
             + '<i style="font-weight:600; color:#FFD940; font-size:14px; '
             + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + (session.level || '?') + '</i>'
           + '</h3>'
           + '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-            + 'padding-top:2px; padding-bottom:2px; background-color:#202020;">'
+            + 'padding-top:3px; padding-bottom:2px; background-color:#202020;">'
             + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
-            + 'margin-top:0px; margin-bottom:0px; font-size:17px; font-weight:bold; '
+            + 'margin-top:-1px; margin-bottom:0px; font-size:17px; font-weight:bold; '
             + '-webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
             + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 0 4px;">' + (session.area || '?')
+        + '<h5 style="margin:4px 0 0 0;">' + (session.area || '?')
           + '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
-        + '<h5 style="margin:1px 0 2px 4px; opacity:0.55;">' + (session.date || '') + '</h5>';
+        + '<h5 style="margin:1px 0 0 0; opacity:0.55;">' + (session.date || '') + '</h5>';
 
       entry.addEventListener('click', function () { _renderHistoryDetail(session); });
       list.appendChild(entry);
