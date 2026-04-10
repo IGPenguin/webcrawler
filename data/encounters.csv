@@ -510,6 +510,7 @@ Forsaken Village;🧢;Cool Hat;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look
 Forsaken Village;🪠;Waste Plunger;Item;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassing situations.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed a makeshift weapon.
 Forsaken Village;🧹;Sturdy Broom;Item;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but especially effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed a makeshift weapon.
 
+Forsaken Village;📄;Rallying Call;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Morale</b> and a survival tip((<br>n/a;Embraced the new knowledge.
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Embraced the new knowledge.
 Forsaken Village;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Should help to remember.
 Forsaken Village;📓;Cultist Notes;Item;0;0;0;-3;0;1;0;Ritual Book;Contains endless pages of nonsense gibberish.<br>Provides <b>+1 🔵 Mana</b> for <b>-3 🍀 Luck</b>.;Eternal presence seen that.
@@ -518,7 +519,8 @@ Forsaken Village;🫙;Fart in a Jar;Item;-2;0;0;0;0;0;0;Garbage;Better not relea
 Forsaken Village;🗝️;Iron Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Bloody Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
 Forsaken Village;🗝️;Rusty Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;
-Forsaken Village;🫖;Cracked Teapot;Item;0;0;0;0;0;0;0;Worthless Junk;Someone probably lost it when fleeing.<br>;Holds up to no real value.
+Forsaken Village;🫖;Cracked Pot;Item;0;0;0;-1;0;0;0;Worthless Junk;Someone probably lost it when fleeing.<br>;Desecrated a genie home remains.
+Forsaken Village;📜;Wanted Poster;Item;0;0;0;0;-1;0;0;Note;The scribbled face resembles yours.<br>n/a;Became more notrious.
 
 Forsaken Village;💌;Cryptic Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember
 
@@ -928,7 +930,10 @@ River of Sorrows;🌪️;Violent Hurricane;Trap-Sleep;-6;0;0;0;0;0;0;Natural Dis
 River of Sorrows;🪵;Slick Driftwood;Trap-Obstacle;0;0;0;0;0;0;0;Floating Debris;Bobs lazily against the hull.<br>;Managed to push it aside
 River of Sorrows;🪅;Floating Piñata;Trap-Attack;0;1;0;0;0;0;0;Soggy Surprise;Drifting past\ begging to be smashed.<br>;Improved your attack accuracy!
 River of Sorrows;🛶;Wrecked Skiff;Trap-Obstacle;0;0;0;0;0;0;0;River Obstacle;Blocks the narrow passage completely.<br>;Managed to push it aside
-River of Sorrows;🌀;Sudden Whirlpool;Trap-Big;-2;0;0;0;0;0;0;Natural Disaster;Appeared without warning beneath the boat.<br>;Spun helplessly into the current
+River of Sorrows;🌀;Sudden Whirlpool;Trap-Big;-2;0;0;0;0;0;0;Imminent Danger;Appeared without warning beneath the boat.<br>;Spun helplessly into the current
+River of Sorrows;🪵;Speeding Logs;Trap;-2;0;0;0;0;0;0;Imminent Danger;Heastily heading your way!<br>;Broken few of your bones.
+River of Sorrows;🧊;Drifting Iceberg;Trap-Sleep;-1;0;0;0;0;0;0;Freezing Block;Cold crawls deep inside your bones.<br>;Sleep left you stiff and sore.
+River of Sorrows;🌧️;Cold Drizzle;Trap-Sleep;-1;0;0;0;0;0;0;Draining Rain;Soaks through anything you wear.<br>;You rested\ joints ache badly.
 
 River of Sorrows;🗣️;Muffled Screams;Curse;0;0;0;-2;0;0;0;Distant Noise;Disturbing voices begging for mercy.<br>;Depression intensified
 River of Sorrows;🌫️;River Mist;Curse;0;0;0;0;-1;0;0;Creeping Fog;Carries whispers of the long departed.<br>;Something cold passed right through you

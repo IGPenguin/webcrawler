@@ -139,3 +139,131 @@ var buttonsContainer;
 
 var grabColor=colorWhite;
 var eatColor=colorWhite;
+
+// Set by ActionBar before invoking each callback; read and cleared once at the top of resolveAction.
+// null  = no skill check (backwards compat)
+// true  = skill check passed
+// false = skill check failed
+var actionBarSuccess = null;
+
+// Returns { speed (units/s), successMin, successMax } derived from current global player+enemy state.
+// speed is on a 0–100 scale — at speed 60 the cursor crosses the full bar in ~1.67 s.
+function calcActionBarConfig(button) {
+  var pAtk = Math.max(0, playerAtk  || 0);
+  var pSta = Math.max(0, playerSta  || 0);
+  var pMgk = Math.max(0, playerMgk  || 0);
+  var pLck = Math.max(0, playerLck  || 0);
+  var pInt = Math.max(0, playerInt  || 0);
+
+  var eAtk = Math.max(0, (enemyAtk || 0) + (enemyAtkBonus || 0));
+  var eSta = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
+  var eMgk = Math.max(0, (enemyMgk || 0) - (enemyMgkLost || 0));
+  var eInt = enemyInt || 0;
+  var eDef = Math.max(0, enemyDef  || 0);
+  var types = String(enemyType || '');
+
+  var isHeavy     = types.includes('Heavy');
+  var isSwift     = types.includes('Swift');
+  var isSpirit    = types.includes('Spirit');
+  var isUndead    = types.includes('Undead');
+  var isTough     = types.includes('Tough');
+  var isSmall     = types.includes('Small');
+  var isBoss      = types.includes('Boss');
+  var isGrabbable = /Container|^Item$|Consumable|^Prop$/.test(types);
+  var isTrap      = types.includes('Trap');
+  var isAltar     = types.includes('Altar');
+  var isCurse     = types === 'Curse';
+
+  var pStat, eStat, baseW, baseSpeed;
+
+  switch (button) {
+    case 'button_attack':
+      pStat     = pAtk;
+      eStat     = (isTough  ? eDef * 3              : 0)
+                + (isSpirit ? Math.max(0, eInt)      : 0)
+                + eSta * 0.4;
+      baseW     = isTrap ? 65 : 40;
+      baseSpeed = 50;
+      break;
+
+    case 'button_roll':
+      pStat     = pSta;
+      eStat     = (isSwift ? eSta * 2 : 0) + eAtk * 0.5;
+      baseW     = 38;
+      baseSpeed = 55;
+      break;
+
+    case 'button_block':
+      pStat     = pAtk;
+      eStat     = (isHeavy  ? eSta * 2.5 : eSta)
+                + (isUndead ? 4           : 0)
+                + eAtk * 0.4;
+      baseW     = 42;
+      baseSpeed = 48;
+      break;
+
+    case 'button_grab':
+      pStat     = pAtk;
+      eStat     = (isSmall  ? eSta * 3 : 0)
+                + (isUndead ? 6        : 0);
+      baseW     = isGrabbable ? 78 : 35;
+      baseSpeed = isGrabbable ? 28 : 52;
+      break;
+
+    case 'button_sleep':
+      pStat     = pSta;
+      eStat     = eAtk * 0.25;
+      baseW     = 62;
+      baseSpeed = 32;
+      break;
+
+    case 'button_speak':
+      pStat     = pInt;
+      eStat     = (isSpirit ? Math.max(0, eInt) * 2 : Math.max(0, eInt));
+      baseW     = isAltar || isCurse ? 52 : 42;
+      baseSpeed = 40;
+      break;
+
+    case 'button_cast':
+      pStat     = pMgk;
+      eStat     = eMgk * 0.8;
+      baseW     = 40;
+      baseSpeed = 44;
+      break;
+
+    case 'button_pray':
+      pStat     = pLck;
+      eStat     = Math.max(0, eInt) * 0.4;
+      baseW     = isAltar ? 62 : 48;
+      baseSpeed = 36;
+      break;
+
+    case 'button_curse':
+      pStat     = pMgk + pLck * 0.5;
+      eStat     = eMgk + Math.max(0, eInt) * 0.35;
+      baseW     = 38;
+      baseSpeed = 46;
+      break;
+
+    default:
+      pStat = 1; eStat = 0; baseW = 50; baseSpeed = 42;
+  }
+
+  if (isBoss) eStat += 5;
+
+  var zoneW = Math.round(baseW + pStat * 6 - eStat * 4);
+  zoneW = Math.max(12, Math.min(72, zoneW));
+
+  var speed = Math.round(baseSpeed + pStat * 5);
+  speed = Math.max(28, Math.min(130, speed));
+
+  // Zone position: random, luck blends toward an easier left-centre placement
+  var maxStart   = 100 - zoneW;
+  var rawStart   = Math.random() * maxStart;
+  var luckTarget = 15 + Math.random() * 30;
+  var luckBlend  = Math.min(0.8, pLck * 0.12);
+  var zoneStart  = Math.round(rawStart * (1 - luckBlend) + luckTarget * luckBlend);
+  zoneStart = Math.max(4, Math.min(maxStart - 4, zoneStart));
+
+  return { speed: speed, successMin: zoneStart, successMax: zoneStart + zoneW };
+}

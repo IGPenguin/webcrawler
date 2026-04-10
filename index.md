@@ -26,6 +26,7 @@ layout: default
 <script src="js/encounter.js"></script>
 <script src="js/social.js"></script>
 <script src="js/action-resolver.js"></script>
+<script src="js/action-bar.js"></script>
 <script src="js/ui-buttons.js"></script>
 
 <div class= "curtain" id="id_fullscreen_curtain" style="pointer-events: none;" ></div>
@@ -357,22 +358,10 @@ layout: default
                           height:4.5em;
                           overflow-y:auto;"/>
 </div>
-<h3 id = "id_player_party_loot" style="text-align:left;
-                                        text-overflow: cut;
-                                        overflow: hidden;
-                                        white-space: nowrap;
-                                        float:left;
-                                        padding-top:3px;
-                                        padding-bottom:3px;
-                                        padding-left:8px;
-                                        margin-left:3px;
-                                        margin-bottom:0px;
-                                        margin-top:0px;
-                                        display:inline-block;                      
-                                        width:95.8%;
-                                        box-shadow:
-                                          0px 0px 0px 3px #121212;
-                                          background-color:#272727;"/>
+<div style="position:relative;">
+<h3 id="id_player_party_loot" style="text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;"></h3>
+<div id="id_action_bar"><div id="id_action_bar_track"><div id="id_action_bar_cursor"></div></div></div>
+</div>
 </div>
 <div id="id_buttons" style="margin:6px; margin-top:1px;">
   <button type = "button" id = "button_attack">🎯</button>&nbsp;

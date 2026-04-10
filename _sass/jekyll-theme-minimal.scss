@@ -242,6 +242,50 @@ dt {
   font-weight:700;
 }
 
+// ── Action Bar Minigame ────────────────────────────────────────────────────
+
+#id_action_bar {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;           // stretch to match loot bar height exactly
+  z-index: 10;
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+
+#id_action_bar_track {
+  position: relative;
+  height: 100%;        // fill the loot bar height
+  min-height: 24px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 0 0 3px #121212;
+  background: #3a1010;
+  transition: box-shadow 0.1s;
+
+  &.action-bar-flash-success {
+    box-shadow: 0 0 0 3px #27ae60, 0 0 14px rgba(39,174,96,0.8);
+  }
+  &.action-bar-flash-fail {
+    box-shadow: 0 0 0 3px #c0392b, 0 0 14px rgba(192,57,43,0.8);
+  }
+}
+
+#id_action_bar_cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0 0 7px rgba(255,255,255,0.85);
+  transform: translateX(-50%);
+  will-change: left;
+}
+
 th {
   color:#444;
 }

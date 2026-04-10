@@ -304,67 +304,67 @@ function adjustEncounterButtons(){
   enemyType=originalType;
 }
 
-//Button click listeners
-var callback_attack=resolveAction('button_attack');
-var callback_roll=resolveAction('button_roll');
-var callback_block=resolveAction('button_block');
+//Button action resolvers (raw — invoked by ActionBar after skill-check resolves)
+var callback_attack = resolveAction('button_attack');
+var callback_roll   = resolveAction('button_roll');
+var callback_block  = resolveAction('button_block');
+var callback_grab   = resolveAction('button_grab');
+var callback_sleep  = resolveAction('button_sleep');
+var callback_speak  = resolveAction('button_speak');
+var callback_cast   = resolveAction('button_cast');
+var callback_pray   = resolveAction('button_pray');
+var callback_curse  = resolveAction('button_curse');
 
-var callback_grab=resolveAction('button_grab');
-var callback_sleep=resolveAction('button_sleep');
-var callback_speak=resolveAction('button_speak');
+// Wrapped pointerdown handlers (stored for removal)
+var _abHandlers  = {};
+var _menuHandler = null;
 
-var callback_cast=resolveAction('button_cast');
-var callback_pray=resolveAction('button_pray');
-var callback_curse=resolveAction('button_curse');
-
+var _ACTION_BUTTONS = [
+  ['button_attack', function() { return callback_attack; }],
+  ['button_roll',   function() { return callback_roll;   }],
+  ['button_block',  function() { return callback_block;  }],
+  ['button_grab',   function() { return callback_grab;   }],
+  ['button_sleep',  function() { return callback_sleep;  }],
+  ['button_speak',  function() { return callback_speak;  }],
+  ['button_cast',   function() { return callback_cast;   }],
+  ['button_pray',   function() { return callback_pray;   }],
+  ['button_curse',  function() { return callback_curse;  }],
+];
 
 function registerClickListeners(delay=0){
-  //Essential, onTouchEnd event type usage is needed on mobile to enable vibration effects
-  //Breaks interactions on loading the page using Dev Tools "mobile preview" followed by switching it off
-  var eventType = 'click';
-
-  //Disabled: Event type switch needed for vibration feedback on Android
-  //This seems to be the cause why interactions stopped working recently on Android/Chrome
-  //if (String(navigator.userAgentData) != "undefined"){ //Any browser except Chrome needs this, it took only 3 hours to realize
-  //  if (navigator.userAgentData.mobile){
-  //    eventType = 'touchend';
-  //  }
-  //}
-
   setTimeout(function(){
-    //console.log("register-click-listeners");
-    document.getElementById('button_attack').addEventListener(eventType, callback_attack);
-    document.getElementById('button_roll').addEventListener(eventType, callback_roll);
-    document.getElementById('button_block').addEventListener(eventType, callback_block);
+    _ACTION_BUTTONS.forEach(function(pair) {
+      var id  = pair[0];
+      var raw = pair[1]();
+      var handler = function(e) {
+        e.preventDefault();
+        ActionBar.showActionBar(calcActionBarConfig(id), function(isSuccess) {
+          actionBarSuccess = isSuccess;
+          raw();
+        });
+      };
+      _abHandlers[id] = handler;
+      document.getElementById(id).addEventListener('pointerdown', handler);
+    });
 
-    document.getElementById('button_grab').addEventListener(eventType, callback_grab);
-    document.getElementById('button_sleep').addEventListener(eventType, callback_sleep);
-    document.getElementById('button_speak').addEventListener(eventType, callback_speak);
-
-    document.getElementById('button_cast').addEventListener(eventType, callback_cast);
-    document.getElementById('button_pray').addEventListener(eventType, callback_pray);
-    document.getElementById('button_curse').addEventListener(eventType, callback_curse);
-
-    document.getElementById('button_menu').addEventListener(eventType, function() { menuFade(function() { Menu.show(); }); });
-  },delay)
+    _menuHandler = function() { menuFade(function() { Menu.show(); }); };
+    document.getElementById('button_menu').addEventListener('click', _menuHandler);
+  }, delay);
 }
 
 function removeClickListeners(){
-  var eventType = 'click';
-
-  document.getElementById('button_attack').removeEventListener(eventType, callback_attack);
-  document.getElementById('button_roll').removeEventListener(eventType, callback_roll);
-  document.getElementById('button_block').removeEventListener(eventType, callback_block);
-
-  document.getElementById('button_grab').removeEventListener(eventType, callback_grab);
-  document.getElementById('button_sleep').removeEventListener(eventType, callback_sleep);
-  document.getElementById('button_speak').removeEventListener(eventType, callback_speak);
-
-  document.getElementById('button_cast').removeEventListener(eventType, callback_cast);
-  document.getElementById('button_pray').removeEventListener(eventType, callback_pray);
-  document.getElementById('button_curse').removeEventListener(eventType, callback_curse);
-
-  document.getElementById('button_menu').removeEventListener(eventType, Menu.show);
+  _ACTION_BUTTONS.forEach(function(pair) {
+    var id = pair[0];
+    if (_abHandlers[id]) {
+      document.getElementById(id).removeEventListener('pointerdown', _abHandlers[id]);
+      delete _abHandlers[id];
+    }
+  });
+  if (_menuHandler) {
+    document.getElementById('button_menu').removeEventListener('click', _menuHandler);
+    _menuHandler = null;
+  }
+  ActionBar.hideActionBar();
 }
 
 function registerClickListenersTechnical(){

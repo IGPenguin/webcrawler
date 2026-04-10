@@ -220,10 +220,6 @@ Twisted Fairyland;🎆;Fading Sparks;Trap-Sleep;-1;0;0;0;0;0;Leftover Magic;Last
 Twisted Fairyland;🎨;Paint Fumes;Trap-Sleep;-1;0;0;0;-1;0;Fairground Smell;Fresh murals never dried.<br>;You napped\ woke up dizzy.
 Twisted Fairyland;🎵;Looping Music Box;Trap-Sleep;-1;0;0;0;-1;0;Annoying Jingle;Never finishes the melody.<br>;Sleep broke\ mind felt dull.
 
-River of Sorrows;🌧️;Cold Drizzle;Trap-Sleep;-1;0;0;0;0;0;River Rain;Soaks through anything you wear.<br>;You rested\ joints ached badly.
-River of Sorrows;🧊;Chilled Fog;Trap-Sleep;-2;0;0;0;0;0;Bank Mist;Clings to skin like ice.<br>;Sleep left you stiff and sore.
-River of Sorrows;🪵;Dripping Log;Trap-Sleep;-1;0;0;0;0;0;Wet Shelter;Seems perfect to lean on.<br>;You woke freezing and weak.
-
 Shrouded Vale;💀;Whispering Skulls;Trap-Sleep;-1;0;0;0;-1;0;Grave Choir;Murmurs rise as you rest.<br>;You slept\ thoughts felt stolen.
 Shrouded Vale;🌫️;Funeral Haze;Trap-Sleep;-2;0;0;0;0;0;Thick Mist;Smells faintly of incense.<br>;Breathing it drained your strength.
 Shrouded Vale;🕯️;Candlelit Vigil;Trap-Sleep;-1;0;0;0;0;-1;Ritual Glow;Flames never quite stand still.<br>;You rested\ mind grew heavier.
@@ -237,7 +233,7 @@ Wildland Meadows;💧;Clear Spring;Trap-Sleep;1;0;0;0;0;0;Fresh Water;Cold and c
 Wildland Meadows;🌾;Soft Haypile;Trap-Sleep;1;0;0;0;0;0;Makeshift Bed;Dry and pleasantly warm.<br>;Sleep came easy and gentle.
 
 Forsaken Village;🛏️;Intact Cot;Trap-Sleep;1;0;0;0;0;0;Old Bedroom;Somehow survived the ruin.<br>;You wake less sore than before.
-Forsaken Village;📜;Training Poster;Trap-Attack;0;1;0;0;0;0;Combat Tips;Crude drawings of fighting stances.<br>;You mimic them and improve.
+Forsaken Village;📜;Wanted Poster;Item;0;1;0;0;0;0;Combat Tips;Crude drawings of fighting stances.<br>;You mimic them and improve.
 Forsaken Village;🧱;Sheltered Corner;Trap-Sleep;1;0;0;0;0;0;Wind Break;Walls block most of the chill.<br>;You rest without shivering.
 Forsaken Village;🥖;Village Shrine Shelf;Trap-Roll;1;0;0;0;0;0;Offering Spot;Old blessings linger in crumbs.<br>;Kneeling here eased your aches.
 Forsaken Village;📿;Forgotten Rosary;Trap-Attack;0;0;0;1;0;0;Tiny Devotion;Beads clicking calm your nerves.<br>;You feel luck on your side.

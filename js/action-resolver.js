@@ -1,6 +1,10 @@
 //Game logic
 function resolveAction(button){ //Yeah, this is bad, like really bad
   return function(){ //Well, stackoverflow comes to the rescue
+    // Consume the action-bar skill check result (null = no check, true/false = pass/fail)
+    var _skillOK = actionBarSuccess;
+    actionBarSuccess = null;
+
     var buttonUIElement = document.getElementById(button);
     animateUIElement(buttonUIElement,"animate__pulse","0.15");
     actionString = buttonUIElement.innerHTML;
@@ -124,6 +128,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Reflective":
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
+            if (_skillOK === false) {
+              logPlayerAction(actionString, "Your attack missed -1 🟢");
+              displayEnemyDodgeEffect();
+              if (!enemyAttacked) enemyAttackOrRest();
+              break;
+            }
+
             //if (enemyType=="Tough") enemyDef=1; //Hehe, should Tough have something špeci?
             enemyHit(playerAtk+playerAtkBonus-enemyDef);
 
@@ -134,6 +145,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Swift": //They hit you first if they have stamina
             if (enemyCastIfMgk(true)) enemyAttacked=true;
+
+            if (_skillOK === false) {
+              logPlayerAction(actionString, "Your attack missed -1 🟢");
+              displayEnemyDodgeEffect();
+              if (!enemyAttacked) enemyAttackOrRest();
+              break;
+            }
 
             if ((parseInt(enemySta)-parseInt(enemyStaLost) > 0) && !enemyAttacked) {
               displayEnemyEffect("🌀");
@@ -244,6 +262,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
                 displayEnemyCannotEffect();
                 displayPlayerEffect("🌀");
+                break;
+              }
+
+              if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
+                var _dodgeDmg = enemyAtk+enemyAtkBonus;
+                logPlayerAction(actionString, "Dodge failed, took the hit -"+_dodgeDmg+" 💔 -1 🟢");
+                displayPlayerCannotEffect();
+                playerHit(_dodgeDmg);
                 break;
               }
 
@@ -470,6 +496,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
+        if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0
+            && enemyType!=="Pet" && enemyType!=="Small" && enemyType!=="Friend") {
+          var _blockFailDmg = enemyAtk + enemyAtkBonus;
+          logPlayerAction(actionString, "Block overpowered -"+_blockFailDmg+" 💔 -1 🟢");
+          playerHit(_blockFailDmg);
+          break;
+        }
+
         switch (enemyType){
           case "Pet":
           case "Small":
@@ -585,6 +619,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType!="Death" && playerCooked!=true && (enemyType=="Consumable" && !playerLootString.includes("🧂"))) displayPlayerEffect("🪄"); //I'm lazy
+
+          if (_skillOK === false && !enemyType.includes("Locked") && !enemyType.includes("Container")
+              && enemyType!=="Consumable" && enemyType!=="Item" && enemyType!=="Altar"
+              && enemyType!=="Upgrade" && enemyType!=="Dream") {
+            playerMgk -= mkgCost;
+            logPlayerAction(actionString, "Spell fizzled -"+mkgCost+" 🔵");
+            displayEnemyCannotEffect();
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+          }
 
         switch (enemyType){
           case "Friend":
@@ -761,6 +806,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           if (enemyType!="Death" && enemyType!="Dream") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
+          if (_skillOK === false && enemyType!=="Altar" && enemyType!=="Upgrade"
+              && enemyType!=="Dream" && enemyType!=="Death") {
+            playerMgk--;
+            logPlayerAction(actionString, "Prayer went unanswered -1 🔵");
+            displayPlayerCannotEffect();
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+          }
+
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
             if (playerInt>=(-1*enemyInt)){
@@ -922,6 +977,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
+          if (_skillOK === false && enemyType!=="Upgrade" && enemyType!=="Death"
+              && enemyType!=="Altar" && enemyType!=="Demon" && enemyType!=="Reflective") {
+            logPlayerAction(actionString, "Curse dissolved without effect -2 🔵");
+            displayEnemyCannotEffect();
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+          }
+
       switch (enemyType){
         case "Reflective":
           displayEnemyEffect("🔷");
@@ -1054,6 +1118,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKnockedOut();
               isFishing=false;
             } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
+              if (_skillOK === false) {
+                enemyDodged("Missed, they slipped your grasp.");
+                if (enemyCastIfMgk()) break;
+                break;
+              }
               var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
               if ( touchChance <= playerLck ){ //Generous
                 var gainedXP=parseInt(playerGainXP(1,0,""));
@@ -1628,6 +1697,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Hot":
           case "Tough":
           case "Reflective":
+            if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
+              logPlayerAction(actionString, "Rest interrupted -"+(enemyAtk+enemyAtkBonus)+" 💔");
+              playerHit(enemyAtk+enemyAtkBonus);
+              break;
+            }
             if (playerHp>0){
               displayPlayerEffect("💤");
               playerGetStamina(1);
