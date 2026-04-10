@@ -1,15 +1,3 @@
-Main menu
-- all pages fixed height
-
-Ensure that on new game:
-- log is reset as it should
-- new character is saved, overwritting existing one
-
-Ensure on back to menu
-- character info is refreshed
-
-Fix screen fade to be covering whole page
-
 fix version.sh
 
 ---
@@ -38,10 +26,9 @@ gkeep fixes?
 ---
 
 add achievements:
-- add achievements section to main menu
-- add achievement popup to in game
-- add achievement trigger logic check after action, remember unlocking locally
-- achievemnt data: emoji, title, description, condition
+- add achievements (challenges) popup to in game
+- add achievement trigger logic check after action, remember unlocked locally
+- achievement data: emoji, title, description, condition
 - first batch of simple achievements
   - died for the first time
   - reincarnated for the first time

@@ -181,15 +181,14 @@ a:active, a:hover, a:focus {
 }
 
 .curtain {
-  left:50%;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 2;
-  height: 120%;
-  width:100%;
-  bottom:0%;
-  transform: translatex(-50%);
+  height: 100%;
+  width: 100%;
   background-color: rgba(0,0,0,0.95);
-  display:none;
+  display: none;
 }
 
 .fullScreenText {
@@ -383,9 +382,42 @@ button {
 // ── Main Menu ──────────────────────────────────────────────────────────────
 
 .menu-screen {
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+// Menu fills the game-viewport height (matches game-viewport min-height formula)
+#id_menu {
+  min-height: 364px;
+}
+
+// Each menu screen fills #id_menu as a flex column
+#menu_main_screen,
+#menu_history_screen,
+#menu_credits_screen,
+#menu_confirm_screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+// Top-level card in each menu screen: override .card's table-cell, use flex column
+.menu-main-card {
+  display: flex !important;
+  flex-direction: column;
+  width:364px;
+  min-height: 400px;
+  box-sizing: border-box;
+}
+
+// Flexible spacer: pushes following elements to the bottom of the card
+.menu-spacer {
+  flex: 1;
+  min-height: 8px;
 }
 
 .menu-btn {

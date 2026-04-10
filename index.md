@@ -28,7 +28,7 @@ layout: default
 <script src="js/action-resolver.js"></script>
 <script src="js/ui-buttons.js"></script>
 
-<div class= "curtain" id="id_fullscreen_curtain" style="height:200%; pointer-events: none;" ></div>
+<div class= "curtain" id="id_fullscreen_curtain" style="pointer-events: none;" ></div>
 <div class= "fullScreenText" id="id_fullscreen_text" style="-webkit-text-stroke: 6.5px black;
       paint-order: stroke fill;"></div>
 
@@ -46,17 +46,17 @@ layout: default
                -webkit-text-stroke: 6.5px black;
                paint-order: stroke fill;
                color:red;
-               margin-bottom:0;
+               margin-bottom:32px;
                line-height:1px;
-               text-align:center;">Stay Dead</h2>
-    <p style="margin:32px;"></p>
-    <div class="card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; min-height:0;">
+               text-align:center;
+               z-index:1;">Stay Dead</h2>
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px;">
       <h2 style="margin: 8px 0 8px 0px;">⚔️ Main Menu</h2>
       <div id="menu_continue_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
-      <button class="menu-btn" id="menu_continue">➡️ Continue</button>
-      <button class="menu-btn" id="menu_new_game">💀 New Game</button>
-      <p style="margin:6px;"></p>
-      <button class="menu-btn" id="menu_challenges" style="color:grey;">🎓 Challenges</button>
+      <button class="menu-btn" id="menu_continue" style="color:#FFD940;">➡️ Continue</button>
+      <button class="menu-btn" id="menu_new_game" style="color:red;">💀 New Game</button>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_challenges" style="color:grey;">⭐️ Challenges</button>
       <button class="menu-btn" id="menu_history">📜 Memories</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
@@ -71,25 +71,25 @@ layout: default
                color:red;
                margin-bottom:32px;
                line-height:1px;
-               text-align:center;">Stay Dead</h2>
-    <div class="card" style="background-color:#202020;
-                             padding:12px 16px 14px;
-                             min-height:0;">
+               text-align:center;
+               z-index:1;">Stay Dead</h2>
+    <div class="card menu-main-card" style="background-color:#202020;
+                             padding:12px 16px 14px;">
       <h2 style="font-size:22px;
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
             margin:8px 0 8px 0;
             text-align:center;">📜 Memories</h2>
-      <div style="max-height:370px;
+      <div style="flex:1;
+                  min-height:0;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:thin;
                   scrollbar-color:#000 transparent;
                   padding-top:4px;
                   margin-top:-4px;
-                  padding-bottom:4px;
-                  margin-bottom:8px;">
+                  padding-bottom:4px;">
         <div id="menu_history_list"></div>
       </div>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>
@@ -105,16 +105,16 @@ layout: default
                color:red;
                margin-bottom:32px;
                line-height:1px;
-               text-align:center;">Stay Dead</h2>
-    <p style="margin:16px;"></p>
-    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
+               text-align:center;
+               z-index:1;">Stay Dead</h2>
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
           <h2 style="font-size:22px;
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
             margin:8px 0 8px 0;
             text-align:center;">🖤 Credits</h2>
-      <div class="card" style="background-color:#202020; padding-top:12px; min-height:0;">
+      <div style="background-color:#202020; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">Adam Svoboda</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Eternal support</h5>
@@ -127,7 +127,8 @@ layout: default
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;">animate.css</h4>
         <h5 style="text-align:center; font-size:12px; margin-top:4px; margin-bottom:0px;">Thank you for playing!</h5>
       </div>
-      <button class="menu-btn" id="menu_credits_back" style="margin-top:16px;">👈 Back</button>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>
   </div>
 
@@ -140,27 +141,29 @@ layout: default
                color:red;
                margin-bottom:32px;
                line-height:1px;
-               text-align:center;">Stay Dead</h2>
-    <div class="card" style="background-color:#202020; padding-top:12px; padding-bottom:14px; min-height:0;">
-        <h2 style="font-size:22px;
+               text-align:center;
+               z-index:1;">Stay Dead</h2>
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
+        <h2 style="font-size:20px;
                letter-spacing:1.5px;
                -webkit-text-stroke: 5px black;
                paint-order: stroke fill;
                margin:8px 0 8px 0;
                text-align:center;">⚠️ Start New Game?</h2>
-      <div class="card" style="background-color:#202020; padding-top:12px; min-height:0;">
+      <div style="background-color:#202020; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
         <h4 style="text-align:center; min-height:0; font-size:13px; margin-bottom:0; color:#fff;">Your current progress will be lost forever!</h4>
       </div>
-      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px;">💀 Start Over</button>
-      <button class="menu-btn" id="menu_confirm_cancel" style="margin-top:8px;">👈 Cancel</button>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">💀 Start Over</button>
+      <button class="menu-btn" id="menu_confirm_cancel">👈 Cancel</button>
     </div>
   </div>
 
   <!-- Always-visible version footer -->
-  <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
-    <h4 style="font-size:11px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+  <div style="cursor: pointer; width:100%; text-align:center;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
+    <h4 style="font-size:11px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
   </div>
-  <h4 id="menu_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none;"></h4>
+  <h4 id="menu_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
 
 </div><!-- end id_menu -->
 
@@ -266,10 +269,10 @@ layout: default
 </div>
 
 <p style="margin:4px;"></p>
-<h3 id = "id_versus" style="margin-top:-13px;
-  margin-bottom:-13px;
+<h3 id = "id_versus" style="margin-top:-20px;
+  margin-bottom:-16px;
     color:red;
-    font-size:24px;
+    font-size:28px;
       letter-spacing:1.5px;
       -webkit-text-stroke: 5px black;
         paint-order: stroke fill;
@@ -380,13 +383,13 @@ layout: default
 </div>
 
 <div style="position:relative; margin-top:8px;">
-  <button type="button" id="button_menu" style="position:absolute; left:-82px; top:58%; transform:translateY(-50%); font-size:16px; min-height:36px; width:64px; padding:0 12px; letter-spacing:0.5px;">⬅️</button>
-  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:58%; transform:translateY(-50%); font-size:16px; min-height:36px; width:64px; padding:0 12px; letter-spacing:0.5px;">🎓</button>
+  <button type="button" id="button_menu" style="position:absolute; left:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⬅️</button>
+  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⭐️</button>
   <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
-    <h4 style="font-size:11px; opacity:0.6; margin-top:-4px; letter-spacing:1px;box-shadow:none;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+    <h4 style="font-size:11px; opacity:0.6; margin-top:8px; letter-spacing:1px;box-shadow:none;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
   </div>
   <div id="id_bug" style="cursor: pointer;">
-    <h4 id="id_version" style="font-size:10px; margin-top:-22px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
+    <h4 id="id_version" style="font-size:10px; margin-top:-26px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
   </div>
 </div>
 
