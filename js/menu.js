@@ -89,7 +89,7 @@ var Menu = (function () {
     // Level — negative margin-bottom overlaps the name bar below (must be directly before it)
     html += '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; '
       + 'z-index:3; text-align:right; padding-right:10px;">'
-      + '<i style="font-weight:600; color:#FFD940; font-size:14px; '
+      + '<i style="font-weight:600; color:#FFD940; font-size:14px;'
       + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + level + '</i>'
       + '</h3>';
 
@@ -98,18 +98,18 @@ var Menu = (function () {
       + 'padding-top:2px; padding-bottom:2px; background-color:#202020;">'
       + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
       + 'margin-top:0px; margin-bottom:4px; font-size:17px; font-weight:bold; '
-      + '-webkit-text-stroke:5px #121212; paint-order:stroke fill;">' + name + '</h3>'
+      + '-webkit-text-stroke:5px #121212; paint-order:stroke fill; ">' + name + '</h3>'
       + '</div>';
 
     // Area + cause + date — one bordered div, two h5 lines (matches history list style)
     var infoParts = [area && area !== '?' ? area : null, sub || null].filter(Boolean);
     if (infoParts.length || date) {
       html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-        + 'padding:2px 8px; background-color:#1a1a1a;">';
+        + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
-        html += '<h5 style="margin:0;">' + infoParts.join('&nbsp;&nbsp;·&nbsp;&nbsp;') + '</h5>';
+        html += '<h5 style="margin:4px 0 1px 0;">' + infoParts.join('&nbsp;&nbsp;·&nbsp;&nbsp;') + '</h5>';
       if (date)
-        html += '<h5 style="margin:0; opacity:0.6;">' + date + '</h5>';
+        html += '<h5 style="margin:0 0 4px 0; opacity:0.6;">' + date + '</h5>';
       html += '</div>';
     }
 

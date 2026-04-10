@@ -75,7 +75,7 @@ layout: default
                z-index:1;">Stay Dead</h2>
     <div class="card menu-main-card" style="background-color:#202020;
                              padding:12px 16px 14px;">
-      <h2 style="font-size:22px;
+      <h2 style="font-size:20px;
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
@@ -108,7 +108,7 @@ layout: default
                text-align:center;
                z-index:1;">Stay Dead</h2>
     <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
-          <h2 style="font-size:22px;
+          <h2 style="font-size:20px;
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
