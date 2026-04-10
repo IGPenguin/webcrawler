@@ -15,6 +15,6 @@ No build step, no modules — load order in `index.md` is the dependency chain.<
 <b>⚠️ [Pull requests](https://github.com/IGPenguin/stay-dead/pulls)</b> must follow [contribution rules](https://github.com/IGPenguin/stay-dead/blob/live/.github/CONTRIBUTING.md "the contribution rules").<br>
 
 ---
-<br>
+
 <sup>⭐️ <strong>Hit the star button to make me smile!</strong><br></sup>
 <sup>📱 Check my other project: [mobile-toolkit](https://github.com/IGPenguin/mobile-toolkit)<br></sup>
