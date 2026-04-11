@@ -31,7 +31,7 @@ function logPlayerAction(actionString,message){
     var price = actionString.split("&nbsp;")[0] //Very much HACKS... YOLO!!!
     console.log(price)
     actionString=actionString.slice(2);
-    if (!actionString.includes("you actually won!") && !actionString.includes("Lucky Drachma")) actionString = actionString.replace("<br>"," -"+price);
+    if (!actionString.includes("you actually won!") && !actionString.includes("Lucky Drachma")) actionString = actionString.replace("<br>"," -"+price+"<br>");
   }
   runLogAdd("log", {msg: actionString.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").replace("<br>","").trim()});
   adventureLog += actionString;
