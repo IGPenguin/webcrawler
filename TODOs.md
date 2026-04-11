@@ -1,13 +1,11 @@
 ## Action bar situations:
 
+/compat
+
 New action - result cases:
 - when interacting with trap, the succes interval should be small, no pentalty if sucess
 - grabbing stingy/toxic/undead should always have 0% success interval
 - ...?
-
-Low Prio:
-- cast/heal/curse with no mana should be full 0% chance
-- fail to speak "Gibberish", higher chance the lower player int is
 
 Legendary ideas:
 - ⏳ Strange Hourglass - 25% slower action bar speed

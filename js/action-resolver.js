@@ -1599,6 +1599,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           convinceInt=playerInt*2;
         }
 
+        // Gibberish: action-bar failure + low INT = player fumbles their words
+        // Chance: 90% at INT 0, ~0% at INT 7+; skips special non-combat encounter types
+        if (_skillOK === false) {
+          var _noGibberishTypes = /Upgrade|Death|Dream|Altar|Container|Item|Consumable|Fishing|Prop|Shop|Curse/.test(enemyType);
+          var _gibberishChance = Math.max(0, 0.9 - playerInt * 0.12);
+          if (!_noGibberishTypes && Math.random() < _gibberishChance) {
+            logPlayerAction(actionString, "It came out as gibberish.");
+            displayPlayerCannotEffect();
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+          }
+        }
+
         switch (enemyType){
           case "Altar": // Speak button is rebound to Pray on Altars
             if (playerMgk < 1) {

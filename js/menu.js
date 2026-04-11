@@ -67,10 +67,10 @@ var Menu = (function () {
 
       var encounter = (s.enemyEmoji || '') + (s.enemyName ? ' ' + s.enemyName : '');
       preview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null);
-      preview.style.display = '';
     } else {
-      preview.style.display = 'none';
+      preview.innerHTML = _buildRunCardHTML('Wandering Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifing Away', '⨯ ⨯ ⨯');
     }
+    preview.style.display = '';
 
     if (skipFade) { _doShowScreen('menu_main_screen'); } else { _showScreen('menu_main_screen'); }
   }
@@ -85,7 +85,7 @@ var Menu = (function () {
         var stats = _buildStats(s.playerHpMax, s.playerStaMax, s.playerAtk, s.playerMgkMax);
         var partyLoot = '';
         if (s.playerPartyString && s.playerPartyString !== 'undefined') partyLoot += s.playerPartyString;
-        if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + s.playerLootString;
+        if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += s.playerLootString;
         var encounter = (s.enemyEmoji || '') + (s.enemyName ? ' ' + s.enemyName : '');
         confirmPreview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null);
         confirmPreview.style.display = '';
@@ -143,7 +143,7 @@ var Menu = (function () {
       html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
         + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
-        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal;">' + infoParts.join('&nbsp;⨯&nbsp;') + '</h5>';
+        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400;">' + infoParts.join('&nbsp;❖&nbsp;') + '</h5>';
       if (date)
         html += '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + date + '</h5>';
       html += '</div>';
@@ -200,7 +200,7 @@ var Menu = (function () {
     if (sessions.length === 0) {
       list.innerHTML =
         '<h4 style="color:#fff; text-align:center; min-height:0; ' +
-        'padding:16px 0; margin:0;">No heroes have been buried yet.</h4>';
+        'padding:16px 0; margin:0;">No heroes have been buried yet.<br>⨯ ⨯ ⨯</h4>';
       return;
     }
 
@@ -225,8 +225,7 @@ var Menu = (function () {
             + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal;">' + (session.area || '?')
-          + '&nbsp;⨯&nbsp;' + (session.causeOfDeath || '') + '</h5>'
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400">' + (session.area || '?') + '&nbsp;&nbsp;❖&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
         + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '') + '</h5>';
 
       entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
@@ -242,7 +241,7 @@ var Menu = (function () {
 
     var partyLoot = '';
     if (session.playerPartyString && session.playerPartyString !== 'undefined') partyLoot += session.playerPartyString;
-    if (session.playerLootString  && session.playerLootString  !== 'undefined') partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + session.playerLootString;
+    if (session.playerLootString  && session.playerLootString  !== 'undefined') partyLoot += session.playerLootString;
 
     var list = document.getElementById('menu_history_list');
     list.innerHTML = '';

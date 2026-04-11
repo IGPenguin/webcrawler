@@ -97,17 +97,16 @@ layout: default
             margin:8px 0 8px 0;
             text-align:center;">🖤 Credits</h2>
       <div style="background-color:#202020; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:2px; opacity:0.6;">Developed by</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Blessed by</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;">Terezka Svobodová</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Technology</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Vanilla JS</a> + <a href="https://jekyllrb.com/">Jekyll</a></h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://animate.style">animate.style</a></h4>
-        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:2px; padding-left:48px; padding-right:48px;">This took countless restless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a>, is it finally over?</h5>
-        <h4 style="min-height:0; margin-bottom:0px; margin-top:8px; padding:0 4px; font-size:14px; color:#FFD940; font-weight:600;">Thank you for playing!</h4>
-      </div>
+        <h4 style="min-height:0; margin-bottom:16px; margin-top:12px; padding:0 4px; font-size:18px; color:#FFD940; font-weight:600;">Thank you for playing!</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:2px; opacity:0.6; font-size:14px;">Developed by</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Blessed by</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;">Terezka Svobodová</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Technology</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; margin-bottom:16px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a> + <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://animate.style">animate.style</a></h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Time sacrificed</h5>
+        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Countless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
+        </div>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Contact</button>

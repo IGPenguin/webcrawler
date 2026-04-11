@@ -290,6 +290,24 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(72 * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax };
   }
 
+  // Grab Stingy / Toxic / Undead — impossible (they bite back, you know it)
+  if (button === 'button_grab' && (types.includes('Stingy') || types.includes('Toxic') || types.includes('Undead'))) {
+    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Trap wrong-action: small zone — risk of triggering it, but no penalty if passed
+  // "Right" actions (Trap-Attack→attack, Trap-Roll→roll, Trap-Sleep→sleep, Trap-Obstacle→attack)
+  // get normal calc; every other button on that trap type is penalised here.
+  if (isTrap && types !== 'Trap' && types !== 'Trap-Big') {
+    var _trapRight = (types === 'Trap-Attack'   && button === 'button_attack')
+                  || (types === 'Trap-Roll'     && button === 'button_roll')
+                  || (types === 'Trap-Sleep'    && button === 'button_sleep')
+                  || (types === 'Trap-Obstacle' && button === 'button_attack');
+    if (!_trapRight) {
+      return { speed: Math.round(65 * ACTION_BAR_SPEED_MULT), successMin: 44, successMax: 56 };
+    }
+  }
+
   // Grab Prop — always succeeds, no skill required
   if (button === 'button_grab' && types === 'Prop') {
     return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
