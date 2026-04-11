@@ -1,21 +1,19 @@
 ## Efficiency checks:
 
 /rename <task>
-/compat when done!
-
----
-
-## Top prio fixes
-- block repeteaded sleep when fishing on the same spot
+/compat when done! (and will repeat in future)
+/clear when one-time task completed
 
 ---
 
 ## The Next Big Thing!
 
-add achievements (called "Memories") feature 
-- add "Memory Unlocked" toast to in game
-- add achievement trigger logic check after action, remember unlocked achievs locally
-- achievement data: emoji, title (optional), description, trigger condition
+add achievements (called "Memories") feature
+- display memories in a new screen (navigate from Main Menu using "Memories" button), clone Graveyard screen design, the list view holds all existing achievements (locked/unlocked state), if locked - display just emoji, description put ...?
+- display memories also in session history detail as a scroll list below log (if any memories were unlocked by that character)
+- add "Memory Unlocked" toast to in game (style to fit the rest of ui - card with content inside, card border should be golden color, with a flash effect on unlock - similar to success action bar flash)
+- add achievement trigger logic check call to action resolver, remember unlocked achievs locally (match to character)
+- achievement object data: emoji, title (optional), description, trigger condition
 - first batch of simple achievements:
   - 💀 Died for the first time
   - ✨ Reincarnated for the first time
@@ -82,9 +80,6 @@ add achievements (called "Memories") feature
   - on revive, get back to live (last encounter) with 1 HP
   - karma affects on action bar chances?
   - plus check, what changes karma, possibly adjust/expand
-
-- session detail add btns: Feedback, Share/Download
-  - stretch log to fit empty space
 
 - [ ] Pray with no bonus (altar) = get exp
 - [ ] Fix Boss wife disengage when calmed = NaN xp
