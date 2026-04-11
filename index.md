@@ -100,13 +100,13 @@ layout: default
       <div style="background-color:#202020; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:2px; opacity:0.6;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Eternal support</h5>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Blessed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;">Terezka Svobodová</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Technology</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Vanilla JS</a> + <a href="https://jekyllrb.com/">Jekyll</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://animate.style">animate.style</a></h4>
-        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:2px; padding-left:48px; padding-right:48px;">It took countless restless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a>, but it finally happened.</h5>
+        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:2px; padding-left:48px; padding-right:48px;">This took countless restless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a>, is it finally over?</h5>
         <h4 style="min-height:0; margin-bottom:10px; margin-top:8px; padding:0 4px; font-size:14px; color:#FFD940; font-weight:600;">Thank you for playing!</h4>
       </div>
       <div class="menu-spacer"></div>

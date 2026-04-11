@@ -1,4 +1,11 @@
-- 
+- the curtain fade outs still somehow glitch out to speed up above the set speed
+- dodge swift type enemy attack should be possible, but very hard
+  - similarly blocking heavy type enemy attack should be very hard
+- In Credits screen, substitute "Contact" button with 3 buttons in the same row:
+  - "📣 Review" = open prefilled google form using current implementation
+  - "🗣️ Contact" = Open https://www.linkedin.com/in/igpenguin/
+  - "🔗 Share" = Open linkedin with prefilled Stay Dead live url 
+  + disable the "-" buttons when dead
 
 ---
 
