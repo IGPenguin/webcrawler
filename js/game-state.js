@@ -365,7 +365,7 @@ function calcActionBarConfig(button, adjustment) {
 
   var zoneW = Math.round(baseW + pStat * 6 - eStat * 4 + (adjustment || 0));
   
-  // 100% * difficluty: 1 = unchanged, 0.75 = +%25 harder
+  // 100% * difficulty: 1 = unchanged, 0.75 = (-25% success zone width)
   zoneW = Math.round(zoneW * 0.75);
   zoneW = Math.max(12, Math.min(72, zoneW));
 

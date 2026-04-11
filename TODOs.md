@@ -1,21 +1,14 @@
 ## Action bar situations:
 
 New action - result cases:
-- fail to pray "altar" = angered the spirits, receive inverted bonus (malus)
-- grab "heavy" should be possible, but very very hard, on fail enrage enemy (+atk)
-- fail to walk away from toxic/spiky = get hurt (same as grab) "Fallen right onto it, inconvenient" 
-- fail to endure curse should give the curse effect (if negative)
-  - chance to endure should be based on how high is the player stat that the curse affects
-- fail when ditching an item, threw it unnecessarily far -1 sta
+- when interacting with trap, the succes interval should be small, no pentalty if sucess
+- grabbing stingy/toxic/undead should always have 0% success interval
 - ...?
 
 Low Prio:
 - cast/heal/curse with no mana should be full 0% chance
 - fail to speak "Gibberish", higher chance the lower player int is
 
-Questionable:
-- grabbing stingy enemy should be possible, but very hard
-- when interacting with trap, the succes interval should be small, no pentalty if sucess
 
 Legendary ideas:
 - ⏳ Strange Hourglass - 25% slower action bar speed
@@ -69,9 +62,8 @@ add achievements:
 
 ---
 
-## Feature enhancement
+## Action bar enhancement: critical success/fail
 
-Action bar critical success/fail intervals
 - add critical success and critical failure (very) slim intervals to action bar (not present when player has 0 stamina to do the action - if it requires sta)
 - crit success:
   - attack = extra 1 dmg
@@ -90,9 +82,6 @@ Action bar critical success/fail intervals
 
 ## Lower Prio Fixes
 
-- fix missing fade when:
-  - returning to main menu from: Really want to restart?, Graveyard, Credits
-  - opening history session detail
 - fix enemy recovered energy after killed (crazed goat)
 - fix engaged a boss showing again and again each step for fished out boss
 - change all "button_pray" references to "button_heal"

@@ -192,7 +192,7 @@ var Menu = (function () {
 
   // State 1: compact session list.
   function _renderHistoryList() {
-    _bindHistoryBack('👈 Back', _renderMain);
+    _bindHistoryBack('👈 Back', function () { _renderMain(); });
 
     var list = document.getElementById('menu_history_list');
     var sessions = SaveManager.listSessionHistory();
@@ -229,7 +229,7 @@ var Menu = (function () {
           + '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
         + '<h5 style="margin:1px 0 0 0; opacity:0.55;">' + (session.date || '') + '</h5>';
 
-      entry.addEventListener('click', function () { _renderHistoryDetail(session); });
+      entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
       list.appendChild(entry);
     });
   }
@@ -325,7 +325,7 @@ var Menu = (function () {
       _doNewGame();
     });
 
-    document.getElementById('menu_confirm_cancel').addEventListener('click', _renderMain);
+    document.getElementById('menu_confirm_cancel').addEventListener('click', function () { _renderMain(); });
 
     document.getElementById('menu_continue').addEventListener('click', function () {
       startGame(true);
@@ -339,7 +339,7 @@ var Menu = (function () {
       window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent('https://igpenguin.github.io/stay-dead'));
     });
     document.getElementById('menu_credits_review').addEventListener('click', function () { redirectToFeedback(); });
-    document.getElementById('menu_credits_back').addEventListener('click', _renderMain);
+    document.getElementById('menu_credits_back').addEventListener('click', function () { _renderMain(); });
   }
 
   // ── Public init ────────────────────────────────────────────────────────────
