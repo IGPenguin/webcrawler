@@ -1,11 +1,12 @@
 ## Action bar situations:
 
 New cases:
-- fail to walk away from toxic/spiky = get hurt (same as grab) "accidentally fallen onto that" 
 - fail to pray "altar" = angered the spirits, receive inverted bonus (malus)
+- grab "heavy" should be possible, but very very hard, on fail enrage enemy (+atk)
+- fail to walk away from toxic/spiky = get hurt (same as grab) "accidentally fallen onto that" 
 - fail to endure curse should give the curse effect (if negative)
   - chance to endure should be based on how high is the player stat that the curse affects
-- grab "heavy" should be possible, but very very hard
+- fail when ditching item, threw it unnecessarily far -1 sta
 - ...?
 
 Low Prio:
@@ -18,6 +19,12 @@ Questionable:
 
 Legendary ideas:
 - ⏳ Strange Hourglass - 25% slower action bar speed
+
+---
+
+## Top prio fixes
+- manual: fix log when buy level up, test all options
+- block repeteaded sleep when fishing on the same spot
 
 ---
 
@@ -51,10 +58,11 @@ add achievements:
   - killed 5 bosses
   - killed 10 bosses
   - killed 15 bosses
-  - successfuly fishing
-  - successfuly fishing 10x
-  - successfuly fishing 25x
-  - Discrovered area: (for all areas from story.csv, except Depths of Slumber, Fading Widlands, Auxiliary Space)
+  - successful fishing
+  - successful fishing 10x
+  - successful fishing 25x
+  - Discrovered area: (for all areas from story.csv, except Depths of Slumber, Fading Widlands, Auxiliary Spac
+  - Touched Grass (grab prop with "Grass in name")
 
 ---
 
@@ -77,12 +85,10 @@ Action bar critical success/fail intervals
 
 ---
 
-## Prio/Repro Fixes
+## Lower Prio Fixes
 
-- manual: fix drachmae buy price in log
 - fix enemy recovered energy after killed (crazed goat)
 - fix engaged a boss showing again and again each step for fished out boss
-- fix log you are ready to lvl uo when you are not
 - change all "button_pray" references to "button_heal"
   - ensure that pray logic affects pray action and not heal action
 
@@ -93,7 +99,6 @@ Action bar critical success/fail intervals
 - session detail, Feedback, Share/Download
 - karma affects on action bar chances
   - plus check, what changes karma, possibly adjust/expand
-- Display total drachame in main menu
 - [ ] Pray with no bonus (altar) = get exp
 - [ ] Fix Boss wife disengage when calmed = NaN xp
 - [ ] Fix cannot leave calm merciful bride, if calm bride (check texts)
