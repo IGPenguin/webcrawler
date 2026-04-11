@@ -102,6 +102,10 @@ layout: default
         <div id="menu_history_list"></div>
       </div>
       <div class="menu-spacer"></div>
+        <div style="display:flex; gap:4px; margin-top:5px;">
+        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share</button>
+        <button class="menu-btn" id="menu_history_review" style="flex:1; margin-top:0; color:#c9594f;">💌 Review</button>
+      </div>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>
     </div>
   </div>

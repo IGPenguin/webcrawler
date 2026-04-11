@@ -1827,6 +1827,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_sleep':
 
+        // Any sleep during an active fishing session locks the spot for this visit
+        if (isFishing) fishingRested = true;
+
         if (enemyType=="Shop") {
           drachmaeBuy(2,"Level");
           break;
@@ -1899,7 +1902,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Checkpoint":
           case "Altar":
+            playerRest();
+            break;
+
           case "Fishing":
+            if (fishingRested) {
+              logPlayerAction(actionString, "Already slept at this fishing spot.");
+              displayPlayerCannotEffect();
+              break;
+            }
+            fishingRested = true;
             playerRest();
             break;
 
@@ -1995,6 +2007,7 @@ function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
 }
 
 function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even generator encounters go through here :)
+  fishingRested = false; // leaving this encounter — reset fishing sleep limit
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     previousArea = areaName;
     markAsSeen(enemyName);

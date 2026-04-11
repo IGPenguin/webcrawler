@@ -32,6 +32,7 @@ var playerXPThreshold;
 var playerLove=0;
 var playerKarma=1;
 var playerRested = false;
+var fishingRested = false; // persists through getRandomFish/encounterRenew; reset only on nextEncounter or new run
 var playerCooked = false;
 var playerShopped = false;
 var playerDestined = false;
@@ -198,6 +199,11 @@ function calcActionBarConfig(button, adjustment) {
 
   // Sleep when already rested — impossible (bar all-red)
   if (button === 'button_sleep' && playerRested) {
+    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Sleep at fishing spot after already having rested this visit — impossible
+  if (button === 'button_sleep' && fishingRested && types === 'Fishing') {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 

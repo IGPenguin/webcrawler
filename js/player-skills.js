@@ -15,6 +15,7 @@ function renewPlayer(){ //Default values
   playerXPThreshold=300;
   playerMgk = playerMgkMax;
   playerRested = false;
+  fishingRested = false;
   playerCooked = false;
   playerShopped = false;
   playerDestined = false;
