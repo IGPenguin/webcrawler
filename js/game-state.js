@@ -321,9 +321,13 @@ function calcActionBarConfig(button, adjustment) {
   if (isBoss) eStat += 5;
 
   var zoneW = Math.round(baseW + pStat * 6 - eStat * 4 + (adjustment || 0));
+  
+  // 100% * difficluty: 1 = unchanged, 0.75 = +%25 harder
+  zoneW = Math.round(zoneW * 0.75);
   zoneW = Math.max(12, Math.min(72, zoneW));
 
-  var speed = Math.round(baseSpeed + pStat * 5);
+  // Default speed multiplier * 5
+  var speed = Math.round(baseSpeed + pStat * 20);
   speed = Math.max(28, Math.min(130, speed));
 
   // Zone position: random, luck blends toward an easier left-centre placement

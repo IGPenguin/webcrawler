@@ -125,10 +125,10 @@ layout: default
                margin:8px 0 8px 0;
                text-align:center;">⚠️ Really want to restart?</h2>
       <div id="menu_confirm_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
-      <div style="background-color:#202020; padding:6px 0 6px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:14px; margin-bottom:0; color:#fff;">This progress will be lost forever!</h4>
-      </div>
       <div class="menu-spacer"></div>
+      <div style="background-color:#202020; padding:6px 0 6px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
+        <h4 style="text-align:center; min-height:0; font-size:14px; margin-bottom:0; color:#fff;"><b style="font-weight:800;">Your progress will be lost forever!</b><br>Only <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> carry over.</h4>
+      </div>
       <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✨ New Game</button>
       <button class="menu-btn" id="menu_confirm_cancel">👈 Cancel</button>
     </div>

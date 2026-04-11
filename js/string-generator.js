@@ -109,7 +109,6 @@ function getFirstName(){
     "Echo",
     "Relic",
     "Carrier",
-    "Endling",
     "Nameless"];
   return random_firstnames[Math.floor(Math.random() * random_firstnames.length)]+" "+random_lastnames[Math.floor(Math.random() * random_lastnames.length)];
 }
