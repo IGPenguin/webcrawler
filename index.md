@@ -41,11 +41,11 @@ layout: default
 <div id="id_menu" class="menu-screen" style="display:none;">
 
   <!-- Shared logo — one element, animated on every menu show -->
-  <h2 id="id_menu_logo" style="font-size:72px; letter-spacing:1.8px; -webkit-text-stroke:6.5px black; paint-order:stroke fill; color:red; margin-bottom:32px; line-height:1px; text-align:center; z-index:1;">Stay Dead</h2>
+  <h2 id="id_menu_logo" style="font-size:72px; letter-spacing:1.8px; -webkit-text-stroke:6.5px black; paint-order:stroke fill; color:red; margin-top:40px; padding-top:42px margin-bottom:24px; line-height:1px; text-align:center; z-index:1;">Stay Dead</h2>
 
   <!-- Main screen -->
   <div id="menu_main_screen">
-    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
       <h2 style="font-size:20px;
       letter-spacing:1.5px;
       -webkit-text-stroke: 5px black;
@@ -64,7 +64,7 @@ layout: default
 
   <!-- Confirm new game screen -->
   <div id="menu_confirm_screen" style="display:none;">
-    <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
         <h2 style="font-size:20px;
                letter-spacing:1.5px;
                -webkit-text-stroke: 5px black;
@@ -83,8 +83,7 @@ layout: default
 
   <!-- Session History screen -->
   <div id="menu_history_screen" style="display:none;">
-    <div class="card menu-main-card" style="background-color:#202020;
-                             padding:12px 16px 14px;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
       <h2 style="font-size:20px;
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
@@ -93,7 +92,7 @@ layout: default
             text-align:center;">💀 Graveyard</h2>
       <div style="flex:1;
                   min-height:0;
-                  max-height:340px;
+                  max-height:405px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;
@@ -109,7 +108,7 @@ layout: default
 
   <!-- Credits screen -->
   <div id="menu_credits_screen" style="display:none;">
-    <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
           <h2 style="font-size:20px;
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
@@ -117,7 +116,7 @@ layout: default
             margin:8px 0 8px 0;
             text-align:center;">🖤 Credits</h2>
       <div style="background-color:#202020; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="min-height:0; margin-bottom:16px; margin-top:12px; padding:0 4px; font-size:18px; color:#FFD940; font-weight:600;">Thank you for playing!</h4>
+        <h4 style="min-height:0; margin-bottom:16px; margin-top:12px; padding:0 4px; font-size:22px; color:#FFD940; font-weight:600; -webkit-text-stroke:4px black; paint-order:stroke fill;">Thank you for playing!</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:2px; opacity:0.6; font-size:14px;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Blessed by</h5>
