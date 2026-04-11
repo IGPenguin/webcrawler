@@ -328,10 +328,10 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(100 * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
   }
 
-  // Sleep on passive mob (ATK=0, MGK=0 but a living creature) — not tired, resists sleep hard
-  // (~fishing without bait difficulty)
+  // Knockout on a not tired living creature — resists hard
+  // Uses base enemyAtk (not eAtk) to ignore anger bonuses from prior actions this encounter.
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
-  if (button === 'button_sleep' && eAtk === 0 && eMgk === 0 && _isCreatureMob) {
+  if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
     return { speed: Math.round(120 * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 
