@@ -26,8 +26,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         var enemyAttacked=false;
 
         if (enemyType=="Death") {
-          displayPlayerCannotEffect();
-          logPlayerAction(actionString,"There is nothing to attack anymore.");
+          if (_skillOK === false) {
+            permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">Gone forever.</p>");
+            break;
+          }
+          playerReincarnate();
           break;
         }
 
@@ -129,7 +132,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
             if (_skillOK === false) {
-              logPlayerAction(actionString, "Your attack missed -1 🟢");
+              logPlayerAction(actionString, "You missed your attack -1 🟢");
               displayEnemyDodgeEffect();
               if (!enemyAttacked) enemyAttackOrRest();
               break;
@@ -214,11 +217,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
         if (enemyType=="Death"){
-          if (_skillOK === false) {
-            permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">Gone forever.</p>");
-            break;
-          }
-          playerReincarnate();
+          menuFade(function() {
+            SaveManager.abandonCurrentRun();
+            Menu.show();
+          });
           break;
         }
 
@@ -396,11 +398,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             if (_skillOK === false) {
               if (Math.random() < 0.25) {
-                logPlayerAction(actionString, "Lost footing — rough landing -1 💔");
+                logPlayerAction(actionString, "Stepped badly and sprained an ankle -1 💔");
                 playerHit(1);
               } else {
                 playerSta = Math.max(0, playerSta - 1);
-                logPlayerAction(actionString, "Stepped badly, strained yourself -1 🟢");
+                logPlayerAction(actionString, "Stepped badly and strained yourself -1 🟢");
                 displayPlayerCannotEffect();
               }
               if (playerHp > 0) nextEncounter();
@@ -479,8 +481,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Death"){
-          displayPlayerCannotEffect();
-          logPlayerAction(actionString,"There's no point in blocking anymore.");
+          logPlayerAction(actionString,"Echoed a message to the universe.");
+          redirectToFeedback();
           break;
         }
 
@@ -602,8 +604,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Death"){
-            redirectToTweet();
-            logPlayerAction(actionString,"Echoed your story to the world!")
+            // redirectToTweet();
+            // logPlayerAction(actionString,"Echoed your story to the world!")
             break;
           }
 
@@ -798,8 +800,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Death"){
-            logPlayerAction(actionString,"It's kinda too late for healing now.");
-            displayPlayerCannotEffect();
+            // logPlayerAction(actionString,"It's kinda too late for healing now.");
+            // displayPlayerCannotEffect();
             break;
           }
 
@@ -979,8 +981,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Death"){
-          shareLinkedIn();
-          logPlayerAction(actionString,"Copied your run! Paste it into LinkedIn.");
+          // shareLinkedIn();
+          // logPlayerAction(actionString,"Copied your run! Paste it into LinkedIn.");
           break;
         }
 
@@ -1493,8 +1495,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            logPlayerAction(actionString,"Echoed a message to the universe.");
-            redirectToFeedback();
+            // logPlayerAction(actionString,"Echoed a message to the universe.");
+            // redirectToFeedback();
             break;
 
           case "Upgrade":
@@ -1541,7 +1543,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               if (_skillOK === false) {
-                logPlayerAction(actionString, "Did not find anything of value.");
+                logPlayerAction(actionString, "Failed to find anything of value.");
+                encounterIndex+=enemyContainerNumber;
                 displayEnemyCannotEffect();
                 isFishing=false;
                 nextEncounter();
@@ -1568,7 +1571,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         break;
 
       case 'button_speak':
-        if (enemyType!="Dream") displayPlayerEffect("💬");
+        if (enemyType!="Dream" && enemyType!="Death") displayPlayerEffect("💬");
 
         if (enemyType=="Shop") {
           drachmaeBuy(3,"Artifact");
@@ -1696,8 +1699,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            visitLinkedIn();
-            logPlayerAction(actionString,"Checked out IGPenguin on LinkedIn!");
+            // visitLinkedIn();
+            // logPlayerAction(actionString,"Checked out IGPenguin on LinkedIn!");
             break;
 
           case "Dream":
@@ -1781,7 +1784,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Tough":
           case "Reflective":
             if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
-              logPlayerAction(actionString, "Rest interrupted -"+(enemyAtk+enemyAtkBonus)+" 💔");
+              logPlayerAction(actionString, "Your attempt to rest was interrupted -"+(enemyAtk+enemyAtkBonus)+" 💔");
               playerHit(enemyAtk+enemyAtkBonus);
               break;
             }
@@ -1855,10 +1858,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            menuFade(function() {
-              SaveManager.abandonCurrentRun();
-              Menu.show();
-            });
+            // menuFade(function() {
+            //   SaveManager.abandonCurrentRun();
+            //   Menu.show();
+            // });
             break;
 
           case "Upgrade": //TODO refactor to something else
@@ -1925,7 +1928,7 @@ function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
   return true;
 }
 
-function nextEncounter(animateArea=true){ //Note: Even generator encounters go through here :)
+function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even generator encounters go through here :)
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     previousArea = areaName;
     markAsSeen(enemyName);
@@ -1962,7 +1965,7 @@ function nextEncounter(animateArea=true){ //Note: Even generator encounters go t
                    && _peekArea !== "Eternal Realm"
                    && !enemyType.includes("Boss"); // boss has its own curtain already
 
-  if (_isAreaChange) {
+  if (_isAreaChange && !skipAreaTransition) {
     var _areaHtml = "<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"
                   + _peekArea
                   + "</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>";

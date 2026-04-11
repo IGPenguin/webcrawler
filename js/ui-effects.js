@@ -1,4 +1,5 @@
 //UI Effects
+var _curtainGen = 0; // incremented on every curtain call; stale handlers self-abort
 function toggleUIElement(UIElement,opacity = "0"){
   var elementDisplayState = UIElement.style.opacity;
   if (elementDisplayState != "0"){
@@ -12,6 +13,7 @@ function toggleUIElement(UIElement,opacity = "0"){
 // black (to swap menu → game), then fades the curtain out to reveal the game.
 function transitionToGame(callback) {
   var curtain = document.getElementById('id_fullscreen_curtain');
+  var gen = ++_curtainGen;
 
   curtain.style.pointerEvents = 'auto'; // block stray taps during transition
   curtain.style.display = 'block';
@@ -22,6 +24,7 @@ function transitionToGame(callback) {
 
   curtain.addEventListener('animationend', function onFadeIn() {
     curtain.removeEventListener('animationend', onFadeIn);
+    if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
 
     callback(); // hide menu, set up game state, redraw — all while curtain is opaque
@@ -32,6 +35,7 @@ function transitionToGame(callback) {
 
     curtain.addEventListener('animationend', function onFadeOut() {
       curtain.removeEventListener('animationend', onFadeOut);
+      if (_curtainGen !== gen) return;
       curtain.classList.remove('animate__animated', 'animate__fadeOut');
       curtain.style.display = 'none';
       curtain.style.pointerEvents = 'none';
@@ -44,6 +48,7 @@ function transitionToGame(callback) {
 function transitionArea(html, callback) {
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
+  var gen = ++_curtainGen;
 
   curtain.style.pointerEvents = 'auto';
   curtain.style.display = 'block';
@@ -53,6 +58,7 @@ function transitionArea(html, callback) {
 
   curtain.addEventListener('animationend', function onIn() {
     curtain.removeEventListener('animationend', onIn);
+    if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
 
     // Load encounter + redraw while curtain is fully opaque
@@ -67,6 +73,7 @@ function transitionArea(html, callback) {
 
     // Hold, then fade both out together
     setTimeout(function () {
+      if (_curtainGen !== gen) return;
       textEl.classList.remove('animate__animated', 'animate__fadeIn');
       void curtain.offsetWidth;
       curtain.style.setProperty('--animate-duration', '0.65s');
@@ -77,6 +84,7 @@ function transitionArea(html, callback) {
 
       curtain.addEventListener('animationend', function onOut() {
         curtain.removeEventListener('animationend', onOut);
+        if (_curtainGen !== gen) return;
         curtain.classList.remove('animate__animated', 'animate__fadeOut');
         curtain.style.display = 'none';
         curtain.style.pointerEvents = 'none';
@@ -91,6 +99,7 @@ function transitionArea(html, callback) {
 function curtainFadeInAndOut(message="", duration=3) {
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
+  var gen = ++_curtainGen;
 
   removeClickListeners();
   curtain.style.pointerEvents = 'auto';
@@ -101,6 +110,7 @@ function curtainFadeInAndOut(message="", duration=3) {
 
   curtain.addEventListener('animationend', function onIn() {
     curtain.removeEventListener('animationend', onIn);
+    if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
 
     setBackground(areaName);
@@ -114,6 +124,7 @@ function curtainFadeInAndOut(message="", duration=3) {
     }
 
     setTimeout(function () {
+      if (_curtainGen !== gen) return;
       if (message) {
         textEl.classList.remove('animate__animated', 'animate__fadeIn');
         void textEl.offsetWidth;
@@ -127,6 +138,7 @@ function curtainFadeInAndOut(message="", duration=3) {
 
       curtain.addEventListener('animationend', function onOut() {
         curtain.removeEventListener('animationend', onOut);
+        if (_curtainGen !== gen) return;
         curtain.classList.remove('animate__animated', 'animate__fadeOut');
         curtain.style.display = 'none';
         curtain.style.pointerEvents = 'none';
@@ -144,6 +156,7 @@ function curtainFadeInAndOut(message="", duration=3) {
 function permanentDeath(htmlMsg) {
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
+  var gen = ++_curtainGen;
 
   removeClickListeners();
   curtain.style.pointerEvents = 'auto';
@@ -154,6 +167,7 @@ function permanentDeath(htmlMsg) {
 
   curtain.addEventListener('animationend', function onIn() {
     curtain.removeEventListener('animationend', onIn);
+    if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
 
     SaveManager.abandonCurrentRun();
@@ -169,6 +183,7 @@ function permanentDeath(htmlMsg) {
     }
 
     setTimeout(function () {
+      if (_curtainGen !== gen) return;
       if (htmlMsg) {
         textEl.classList.remove('animate__animated', 'animate__fadeIn');
         void textEl.offsetWidth;
@@ -182,6 +197,7 @@ function permanentDeath(htmlMsg) {
 
       curtain.addEventListener('animationend', function onOut() {
         curtain.removeEventListener('animationend', onOut);
+        if (_curtainGen !== gen) return;
         curtain.classList.remove('animate__animated', 'animate__fadeOut');
         curtain.style.display = 'none';
         curtain.style.pointerEvents = 'none';
@@ -197,6 +213,7 @@ function permanentDeath(htmlMsg) {
 // Quick black flash for menu screen transitions (no text, no game click listeners).
 function menuFade(callback) {
   var curtain = document.getElementById('id_fullscreen_curtain');
+  var gen = ++_curtainGen;
 
   curtain.style.pointerEvents = 'auto';
   curtain.style.display = 'block';
@@ -206,6 +223,7 @@ function menuFade(callback) {
 
   curtain.addEventListener('animationend', function onIn() {
     curtain.removeEventListener('animationend', onIn);
+    if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
 
     callback();
@@ -216,6 +234,7 @@ function menuFade(callback) {
 
     curtain.addEventListener('animationend', function onOut() {
       curtain.removeEventListener('animationend', onOut);
+      if (_curtainGen !== gen) return;
       curtain.classList.remove('animate__animated', 'animate__fadeOut');
       curtain.style.display = 'none';
       curtain.style.pointerEvents = 'none';

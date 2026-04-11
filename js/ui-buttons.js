@@ -245,13 +245,14 @@ function adjustEncounterButtons(){
       break;
 
     case "Death":
-      ['button_attack','button_block','button_grab','button_speak',
+      ['button_grab','button_sleep','button_speak',
        'button_cast','button_pray','button_curse'].forEach(function(id){
         setButton(id,"-",colorDarkGrey);
         document.getElementById(id).disabled = true;
       });
-      setButton('button_sleep',"💤 Give up",colorRed);
-      setButton('button_roll',"✨ Revive",colorYellow);
+      setButton('button_attack',"✨ Revive",colorGold);
+      setButton('button_roll',"💤 Give up",colorSemiDarkGrey);
+      setButton('button_block',"💌 Review",colorPink);
       break;
 
     case "Shop":

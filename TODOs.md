@@ -1,11 +1,13 @@
-- the curtain fade outs still somehow glitch out to speed up above the set speed
+- make the action bar value selector move faster by 30-50% (show me where to adjust)
+  - sometimes is moving very very slow
+  - in combat its mostly ok
+- missing an attack should be possible also on passive enemies/encounters
 - dodge swift type enemy attack should be possible, but very hard
   - similarly blocking heavy type enemy attack should be very hard
-- In Credits screen, substitute "Contact" button with 3 buttons in the same row:
-  - "📣 Review" = open prefilled google form using current implementation
-  - "🗣️ Contact" = Open https://www.linkedin.com/in/igpenguin/
-  - "🔗 Share" = Open linkedin with prefilled Stay Dead live url 
-  + disable the "-" buttons when dead
+- grab small should succed on first try (spending player sta) if hit success interval
+  - harder success window based on enemy unspent stamina
+  - if hit fail interval, spend both player and enemy sta
+
 
 ---
 

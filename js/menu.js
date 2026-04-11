@@ -236,7 +236,7 @@ var Menu = (function () {
 
   // State 2: full in-game-style detail for a single session.
   function _renderHistoryDetail(session) {
-    _bindHistoryBack('👈 Back', _renderHistoryList);
+    _bindHistoryBack('👈 Back', function () { menuFade(_renderHistoryList); });
 
     var stats = _buildStats(session.playerHpMax, session.playerStaMax, session.playerAtk, session.playerMgkMax);
 
@@ -334,6 +334,11 @@ var Menu = (function () {
     document.getElementById('menu_challenges').addEventListener('click', _renderChallenges);
     document.getElementById('menu_history').addEventListener('click', _renderHistory);
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
+    document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
+    document.getElementById('menu_credits_share').addEventListener('click', function () {
+      window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent('https://igpenguin.github.io/stay-dead'));
+    });
+    document.getElementById('menu_credits_review').addEventListener('click', function () { redirectToFeedback(); });
     document.getElementById('menu_credits_back').addEventListener('click', _renderMain);
   }
 

@@ -199,7 +199,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // ── Special cases ────────────────────────────────────────────────────────
   // Resurrection: very narrow, fast zone — last chance before permanent death
-  if (button === 'button_roll' && types.includes('Death')) {
+  if (button === 'button_attack' && types.includes('Death')) {
     return { speed: 95, successMin: 40, successMax: 52 };
   }
 

@@ -22,7 +22,7 @@ function generateCharacterLegend(logLength=0) {
   characterLegend = adventureLog.replaceAll("<br>","\n");
   var tempString = characterLegend.split("\n").slice(2);
   characterLegend = tempString.join("\n");
-  characterLegend = characterLegend.replaceAll("&nbsp;"," ").substring(1);
+  characterLegend = characterLegend.replaceAll("&nbsp;"," ").replace(/^\n/, '');
   if (parseInt(logLength)>0) {
     characterLegend="Limited to last "+logLength+" events...\n"+characterLegend.split("\n").slice(-logLength-1).join("\n");
   }

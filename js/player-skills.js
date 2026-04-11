@@ -554,7 +554,7 @@ function playerReincarnate(){
   }
 
   spentCoins = 0; //Hack :shug:
-  nextEncounter();
+  nextEncounter(true, true); // skip area transition — reincarnation owns its own curtain
   curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
   renewPlayer();
   // Save the fresh run state now that both the encounter and player stats are fully reset.
