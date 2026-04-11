@@ -1,14 +1,8 @@
-display main menu player progress preview also on "Really want to restart?" screen
-unify and animate menu logo with animate.css
-fix: fade animations timing getting broken after back to menu from game
-
-/compact 
-
-manual: fix drachmae buy price in log
-
-gkeep fixes?
+- 
 
 ---
+
+## The Next Big Thing!
 
 add achievements:
 - add achievements (challenges) popup to in game
@@ -17,32 +11,53 @@ add achievements:
 - first batch of simple achievements
   - died for the first time
   - reincarnated for the first time
+  - accepted destiny
+  - accepted destiny 10x
+  - accepted destiny 25x
+  - won a gamble for the first time
+  - lost gamble for the first time
+  - won gamble 10x
+  - won gamble 25x
+  - bought a tarto card for the first time
+  - bought an item for the first time
+  - bought an artifact for the first time
+  - bought level up for the first time
+  - spent 10 drachmae
+  - spent 25 drachmae
   - finished the game for the first time
   - killed your first enemy
+  - killed 10 enemies
   - killed 25 enemies
-  - killed 50 enemies
   - killed your first boss
   - killed 5 bosses
   - killed 10 bosses
+  - killed 15 bosses
+  - successfuly fishing
+  - successfuly fishing 10x
+  - successfuly fishing 25x
   - Discrovered area: (for all areas from story.csv, except Depths of Slumber, Fading Widlands, Auxiliary Space)
 
 ---
 
-## Needs Repro
+## Prio/Repro Fixes
 
+- manual: fix drachmae buy price in log
 - fix enemy recovered energy after killed (crazed goat)
 - fix engaged a boss showing again and again each step for fished out boss
+- fix log you are ready to lvl uo when you are not
 
 ---
 
 ## Small Ideas (new PR)
 
+- Display total drachame in main menu
 - [ ] Pray with no bonus (altar) = get exp
 - [ ] Fix Boss wife disengage when calmed = NaN xp
 - [ ] Fix cannot leave calm merciful bride, if calm bride (check texts)
 - Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
 - Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
 - Fix add vertical scroll in loot/party when overflowimg
+- if stat over 5, display numeric - 4/5
 
 ## Big Fixes
 - Fix animations glitching playing when launching another one without the first finishing (bug in animation functions?)
@@ -65,6 +80,7 @@ add achievements:
 - [ ] Generate loot and consumable from kill/knockout — "They've dropped something"
 - [ ] "Enemy Stunned" mechanic (empty sta when getting hit)
 - [ ] Mischievous legendary/encounters on bad karma
+- Rebalance drops vs enemy stats? (too easy if you pivkup everything)
 - [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
 
 ## BIG OLD DATA PUSH
