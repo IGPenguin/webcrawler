@@ -57,7 +57,7 @@ layout: default
       <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ New Game</button>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_challenges" style="color:grey;">🧩 Memories</button>
-      <button class="menu-btn" id="menu_history">🦴 Graveyard</button>
+      <button class="menu-btn" id="menu_history">💀 Graveyard</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
   </div>
@@ -77,8 +77,7 @@ layout: default
                   max-height:340px;
                   overflow-x:hidden;
                   overflow-y:auto;
-                  scrollbar-width:thin;
-                  scrollbar-color:#000 transparent;
+                  scrollbar-width:none;
                   padding-top:4px;
                   margin-top:-6px;
                   padding-bottom:4px;">
@@ -107,7 +106,7 @@ layout: default
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6;">Animations</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px;"><a href="https://animate.style">animate.style</a></h4>
         <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:2px; padding-left:48px; padding-right:48px;">This took countless restless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a>, is it finally over?</h5>
-        <h4 style="min-height:0; margin-bottom:10px; margin-top:8px; padding:0 4px; font-size:14px; color:#FFD940; font-weight:600;">Thank you for playing!</h4>
+        <h4 style="min-height:0; margin-bottom:0px; margin-top:8px; padding:0 4px; font-size:14px; color:#FFD940; font-weight:600;">Thank you for playing!</h4>
       </div>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
@@ -327,7 +326,8 @@ layout: default
                           margin-bottom:12px;
                           text-align:left;
                           height:4.5em;
-                          overflow-y:auto;"/>
+                          overflow-y:auto;
+                          scrollbar-width:none;"/>
 </div>
 <div style="position:relative;">
 <h3 id="id_player_party_loot" style="text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;"></h3>

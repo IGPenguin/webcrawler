@@ -225,6 +225,23 @@ function calcActionBarConfig(button, adjustment) {
     button = 'button_pray';
   }
 
+  // Heavy grab: very very hard — tiny zone, high speed; fail enrages them
+  if (button === 'button_grab' && isHeavy) {
+    return { speed: Math.round(130 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+  }
+
+  // Curse endure: zone scales with the player stat being affected by the curse
+  if (button === 'button_roll' && types === 'Curse') {
+    var resistScore = pLck;
+    if ((enemyHp  || 0) < 0) resistScore = Math.max(resistScore, Math.max(0, playerHpMax || 0));
+    if ((enemySta || 0) < 0) resistScore = Math.max(resistScore, pSta);
+    if ((enemyAtk || 0) < 0) resistScore = Math.max(resistScore, pAtk);
+    if ((enemyMgk || 0) < 0) resistScore = Math.max(resistScore, pMgk);
+    if ((enemyLck || 0) < 0) resistScore = Math.max(resistScore, pLck);
+    var curseW = Math.max(15, Math.min(70, 20 + resistScore * 9));
+    return { speed: Math.round(42 * ACTION_BAR_SPEED_MULT), successMin: Math.max(5, 50 - Math.round(curseW/2)), successMax: Math.min(95, 50 + Math.round(curseW/2)) };
+  }
+
   // Small grab: chance based on creature STA vs player STA
   if (button === 'button_grab' && types === 'Small') {
     var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));

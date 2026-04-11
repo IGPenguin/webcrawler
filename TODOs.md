@@ -90,6 +90,9 @@ Action bar critical success/fail intervals
 
 ## Lower Prio Fixes
 
+- fix missing fade when:
+  - returning to main menu from: Really want to restart?, Graveyard, Credits
+  - opening history session detail
 - fix enemy recovered energy after killed (crazed goat)
 - fix engaged a boss showing again and again each step for fished out boss
 - change all "button_pray" references to "button_heal"

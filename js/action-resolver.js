@@ -230,8 +230,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         switch (enemyType){ //Dodge attack or walk if they are harmless
           case "Curse":
             if (!encounterUsed) {
-              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
-              encounterUsed=true;
+              if (_skillOK === true) {
+                logPlayerAction(actionString,"Endured without any side-effect.");
+                displayEnemyCannotEffect();
+                displayPlayerEffect("✨");
+                encounterUsed=true;
+              } else {
+                playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+                encounterUsed=true;
+              }
             } else {
               logPlayerAction(actionString,"Continued on your adventure.");
               nextEncounter();
@@ -268,6 +275,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
               displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
+              break;
+            }
+
+            if (_skillOK === false && (enemyType === "Toxic" || enemyType === "Hot")) {
+              var _toxicDmg = Math.max(1, enemyAtk+enemyAtkBonus);
+              logPlayerAction(actionString, "Oops, fallen right onto them -"+_toxicDmg+" 💔 -1 🟢");
+              displayPlayerCannotEffect();
+              playerHit(_toxicDmg);
               break;
             }
 
@@ -355,6 +370,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerLove-=2;
                 playerKarma-=2;
                 logPlayerAction(actionString,"<text style=color:"+colorRed+";>You tossed it aside with hatred! +1 ⚔️</text>");
+                displayPlayerCannotEffect();
+                nextEncounter();
+                break;
+              }
+              if (_skillOK === false) {
+                if (playerSta > 0) playerSta--;
+                logPlayerAction(actionString,"Threw it unnecessarily far -1 🟢");
                 displayPlayerCannotEffect();
                 nextEncounter();
                 break;
@@ -1168,6 +1190,27 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Heavy":
+            if (enemyCastIfMgk()) break;
+            if ((enemySta - enemyStaLost) <= 0) { // Tired heavy — kick them
+              enemyKicked();
+              break;
+            }
+            // Active heavy: very hard, fail enrages (+ATK)
+            if (_skillOK === true) {
+              if (playerSta > 0) playerSta--;
+              logPlayerAction(actionString,"Managed to overpower them! -1 🟢");
+              displayEnemyEffect("💢");
+              enemyKnockedOut();
+              isFishing=false;
+            } else {
+              enemyAtkBonus++;
+              var _enrageAtk = enemyAtk + enemyAtkBonus;
+              logPlayerAction(actionString,"Enraged them, took the hit -"+_enrageAtk+" 💔");
+              displayEnemyEffect("💢");
+              playerHit(_enrageAtk);
+            }
+            break;
+
           case "Boss":
             if (enemyCastIfMgk()) break;
             if ((enemySta - enemyStaLost) > 0){ //Enemy hits extra hard if they got stamina
@@ -1183,7 +1226,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               logPlayerAction(actionString,overpowerMessage);
               displayPlayerCannotEffect();
-            } else { //Enemy has no stamina - asymetrical rest
+            } else {
               enemyKicked();
             }
             break;
@@ -1589,6 +1632,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString, "Your prayer had no further effect.");
                 displayPlayerEffect("🤲");
                 displayPlayerCannotEffect();
+                break;
+              }
+              if (_skillOK === false) {
+                displayPlayerCannotEffect();
+                displayEnemyEffect("⚡️");
+                playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Angered the mighty spirits!", true, false);
+                isFishing = false;
+                encounterUsed = true;
                 break;
               }
               playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
