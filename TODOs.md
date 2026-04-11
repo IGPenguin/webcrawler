@@ -1,61 +1,46 @@
-## Action bar situations:
+## Efficiency checks:
 
-/compat
-
-New action - result cases:
-- when interacting with trap, the succes interval should be small, no pentalty if sucess
-- grabbing stingy/toxic/undead should always have 0% success interval
-- ...?
-
-Legendary ideas:
-- ⏳ Strange Hourglass - 25% slower action bar speed
+/rename <task>
+/compat when done!
 
 ---
 
 ## Top prio fixes
-- manual: fix log when buy level up, test all options
 - block repeteaded sleep when fishing on the same spot
 
 ---
 
 ## The Next Big Thing!
 
-add achievements:
-- add achievements (challenges) popup to in game
-- add achievement trigger logic check after action, remember unlocked locally
-- achievement data: emoji, title, description, condition
-- first batch of simple achievements
-  - died for the first time
-  - reincarnated for the first time
-  - won a gamble for the first time
-  - lost gamble for the first time
-  - won gamble 10x
-  - won gamble 25x
-  - bought a tarot card for the first time
-    - accepted destiny for the first time
-    - accepted destiny 10x
-    - accepted destiny 25x
-  - bought an item for the first time
-  - bought an artifact for the first time
-  - bought level up for the first time
-  - spent 10 drachmae
-  - spent 25 drachmae
-  - finished the game for the first time
-  - killed your first enemy
-  - killed 10 enemies
-  - killed 25 enemies
-  - killed your first boss
-  - killed 5 bosses
-  - killed 10 bosses
-  - killed 15 bosses
-  - successful fishing (with bait) for the fist time
-  - successful fishing 10x
-  - successful fishing 25x
-  - successful fishing without bait for the fist time
-  - successful fishing without bait 10x
-  - successful fishing without bait 25x
-  - Discovered area: for all areas from story.csv, except Depths of Slumber, Fading Widlands, Auxiliary Space
-  - Touched Grass (grab prop with "Grass in name")
+add achievements (called "Memories") feature 
+- add "Memory Unlocked" toast to in game
+- add achievement trigger logic check after action, remember unlocked achievs locally
+- achievement data: emoji, title (optional), description, trigger condition
+- first batch of simple achievements:
+  - 💀 Died for the first time
+  - ✨ Reincarnated for the first time
+  - 🍀 Won a gamble for the first time
+  - 🥺 Lost gamble for the first time
+  - 🎰 Won gamble 10x
+  - 🃏 Bought a tarot card for the first time
+    - 👌 Accepted destiny for the first time
+    - 📿 Accepted destiny 10x
+  - 💰 Bought an item for the first time
+  - 💎 Bought an artifact for the first time
+  - ⭐️ Bought level up for the first time
+  - 💸 Spent 10 drachmae
+  - 👑 Finished the game for the first time
+  - 💔 Killed your first enemy
+  - 🔪 Killed 10 enemies
+  - 🎉 Killed your first boss
+  - 🎉 Killed 5 bosses
+  - 🎉 Killed 10 bosses
+  - 🎣 Caught something (with bait) for the fist time
+  - 🎣 Caught something 10x
+  - 🪝 Caught something without bait for the fist time
+  - 🪝 Caught something without bait 10x
+  - 👀 Discovered area - for all areas from story.csv, (except Depths of Slumber, Fading Widlands, Auxiliary Space)
+  - 🌿 Touched grass (a grab prop with "Grass in name")
 
 ---
 
@@ -81,6 +66,11 @@ add achievements:
 
 - fix enemy recovered energy after killed (crazed goat)
 - fix engaged a boss showing again and again each step for fished out boss
+
+---
+
+## Refactor
+
 - change all "button_pray" references to "button_heal"
   - ensure that pray logic affects pray action and not heal action
 
@@ -109,9 +99,6 @@ add achievements:
 
 - if stat over 5, display numeric - 4/5
 
-## Big Fixes
-- Fix animations glitching playing when launching another one without the first finishing (bug in animation functions?)
-
 ## Big Ideas
 
 - [ ] 🪙 Drachmae options
@@ -131,6 +118,7 @@ add achievements:
 - [ ] "Enemy Stunned" mechanic (empty sta when getting hit)
 - [ ] Mischievous legendary/encounters on bad karma
 - Rebalance drops vs enemy stats? (too easy if you pivkup everything)
+- (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed
 - [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
 
 ## Spells
