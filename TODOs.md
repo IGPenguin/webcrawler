@@ -37,14 +37,14 @@ add achievements:
 - first batch of simple achievements
   - died for the first time
   - reincarnated for the first time
-  - accepted destiny
-  - accepted destiny 10x
-  - accepted destiny 25x
   - won a gamble for the first time
   - lost gamble for the first time
   - won gamble 10x
   - won gamble 25x
-  - bought a tarto card for the first time
+  - bought a tarot card for the first time
+    - accepted destiny for the first time
+    - accepted destiny 10x
+    - accepted destiny 25x
   - bought an item for the first time
   - bought an artifact for the first time
   - bought level up for the first time
@@ -58,10 +58,13 @@ add achievements:
   - killed 5 bosses
   - killed 10 bosses
   - killed 15 bosses
-  - successful fishing
+  - successful fishing (with bait) for the fist time
   - successful fishing 10x
   - successful fishing 25x
-  - Discrovered area: (for all areas from story.csv, except Depths of Slumber, Fading Widlands, Auxiliary Spac
+  - successful fishing without bait for the fist time
+  - successful fishing without bait 10x
+  - successful fishing without bait 25x
+  - Discovered area: for all areas from story.csv, except Depths of Slumber, Fading Widlands, Auxiliary Space
   - Touched Grass (grab prop with "Grass in name")
 
 ---
