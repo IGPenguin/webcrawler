@@ -293,12 +293,11 @@ layout: default
 
 <div id="id_xp_progress" style="width:0%; height:1px; background:#FFD940; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
 
+<div style="position:relative; margin-bottom:14px;">
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
-                                          margin-bottom:14px;
-                                            position:relative;
-                                            box-shadow:
-                                              0px 0px 0px 3px #121212;">
+                                          box-shadow:
+                                            0px 0px 0px 3px #121212;">
 
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:2;"></div>
 
@@ -313,6 +312,7 @@ layout: default
                                     box-shadow:
                                       0px 0px 0px 3px #000000;
                                       position:relative; z-index:1;"/>
+</div>
 <div id="id_action_bar"><div id="id_action_bar_track"><div id="id_action_bar_cursor"></div></div></div>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
