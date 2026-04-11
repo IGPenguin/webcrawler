@@ -983,7 +983,7 @@ River of Sorrows;🐙;Vampiric Squid;Boss-Demon;3;1;2;0;-1;0;0;Bloodthisty Cepha
 River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;3;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.
 
 River of Sorrows;🥥;Drifting Shell;Consumable;1;0;1;0;0;0;0;<b>Artifact</b>;Natural health and energy booster\ lucky find.<br>Provides <b>+1 ❤️ Health & 🟢 Energy</b> bonus.;Yum yum\ very sweet!
-River of Sorrows;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy\ ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That took some serious guts!
+River of Sorrows;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy\ ...that's a truly ungodly stench.<br>Could cause some <b>unforseen side-effects</b>.;That took serious guts!
 
 River of Sorrows;🍬;Sugar Bomb;Consumable;0;0;1;0;0;0;0;Sweet Candy;Artificial energy booster.<br>Provides <b>+1 🟢 Energy</b> bonus.;
 River of Sorrows;🥤;Coke Cup;Consumable;0;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;
@@ -1263,8 +1263,8 @@ Fishing;👓;Reading Glasses;Item;0;0;0;0;1;0;0;Eyesight Boost;Usually improves 
 Fishing;💍;Engagement Ring;Item;1;0;0;0;1;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Felt a subtle surge in your chest.
 Fishing;🐒;Driftwood Totem;Item;0;0;0;2;0;0;0;Primitive Idol;Worn by the tide for years.<br>Provides <b>+2 🍀 Luck</b>;Radiates positive energy.
 
-Fishing;🦷;Piranha Jaw;Item;0;1;0;0;0;0;0;Sharp Bones;The remains of a river demon grin.<br>Provides <b>+1 ⚔️ Damage</b>.;Brandished it fiercely.
-Fishing;🔪;Rusty Knife;Item;0;1;0;0;0;0;0;Worn Tool;Still quite useful in combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Took it with themselves just in case.
+Fishing;🦷;Piranha Jaw;Item;0;1;0;0;0;0;0;Sharp Bones;The remains of a river demon grin.<br>Provides <b>+1 ⚔️ Damage</b>.;Looks sharp enough to hurt
+Fishing;🔪;Rusty Knife;Item;0;1;0;0;0;0;0;Worn Tool;Still quite useful in combat.<br>Provides <b>+1 ⚔️ Damage</b>.;Still sharp enough to hurt.
 Fishing;💍;Queen's Ring;Item;1;0;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.
 Fishing;💍;King's Ring;Item;0;1;0;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in your chest.
 Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.
@@ -1298,7 +1298,7 @@ Fishing;🥾;Waterlogged Boot;Item;0;0;0;0;0;0;0;Worthless Trash;Soaked through.
 Fishing;🔩;Corroded Bolt;Item;0;0;0;0;0;0;0;Worthless Scrap;Has no business being in a river.<br>;Pocketed it out of habit.
 Fishing;📰;Pulped Chronicle;Item;0;0;0;0;0;0;0;Soggy Mess;Ink and paper merged into one sad lump.<br>;Couldn't make out a single word.
 Fishing;🎏;Torn Kite;Item;0;0;0;0;0;0;0;Lost Toy;A child's toy. No child to return it to.<br>;Left it in the current.
-Fishing;🔮;Shattered Orb;Item;0;0;0;0;0;0;0;Broken Relic;Once told futures. Now just glass.<br>;Pocketed the shards.
+Fishing;📱;Shattered Slate;Item;0;0;0;0;0;0;0;Broken Relic;Once told futures\ now its a worthless junk.<br>;Pocketed that junk.
 
 Fishing;🧱;Sunken Brick;Prop;0;0;0;0;0;0;0;Dead Weight;Cannot dislodge it from the riverbed.<br>;Unhooked the unfortunate catch.
 Fishing;🪵;Waterlogged Log;Prop;0;0;0;0;0;0;0;River Debris;Snagged the hook and refused to budge.<br>;Cut the line and moved on.
