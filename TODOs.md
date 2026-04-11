@@ -91,6 +91,8 @@ Action bar critical success/fail intervals
 ## Small Ideas (new PR)
 
 - session detail, Feedback, Share/Download
+- karma affects on action bar chances
+  - plus check, what changes karma, possibly adjust/expand
 - Display total drachame in main menu
 - [ ] Pray with no bonus (altar) = get exp
 - [ ] Fix Boss wife disengage when calmed = NaN xp
