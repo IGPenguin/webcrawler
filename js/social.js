@@ -82,10 +82,3 @@ function redirectToFeedback(){
   var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+gameLog;
   window.open(googleFormUrl);
 }
-
-//Prevent data loss warning if not running on localhost
-if (!isLocalhost()){
-  window.onbeforeunload = function() {
-      return true;
-  };
-}
