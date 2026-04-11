@@ -353,10 +353,10 @@ layout: default
   <button type="button" id="button_menu" style="position:absolute; left:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⚙️</button>
   <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🧩</button>
   <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
-    <h4 style="font-size:11px; opacity:0.6; margin-top:8px; letter-spacing:1px;box-shadow:none;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+    <h4 style="font-size:11px; opacity:0.6; margin-top:8px; letter-spacing:1px; box-shadow:none; padding-top:0;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
   </div>
   <div id="id_bug" style="cursor: pointer;">
-    <h4 id="id_version" style="font-size:10px; margin-top:-26px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
+    <h4 id="id_version" style="font-size:10px; margin-top:-22px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
   </div>
 </div>
 

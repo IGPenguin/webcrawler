@@ -9,7 +9,6 @@ Low Prio:
 - cast/heal/curse with no mana should be full 0% chance
 - fail to speak "Gibberish", higher chance the lower player int is
 
-
 Legendary ideas:
 - ⏳ Strange Hourglass - 25% slower action bar speed
 
@@ -96,13 +95,15 @@ add achievements:
   - karma affects on action bar chances?
   - plus check, what changes karma, possibly adjust/expand
 
+- session detail add btns: Feedback, Share/Download
+  - stretch log to fit empty space
+
 - [ ] Pray with no bonus (altar) = get exp
 - [ ] Fix Boss wife disengage when calmed = NaN xp
 - [ ] Fix cannot leave calm merciful bride, if calm bride (check texts)
 - Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
 - Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
 - Fix add vertical scroll in loot/party when overflowimg
-- session detail add btns: Feedback, Share/Download
 
 - killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
   - 🧟 John Doe (Undead)

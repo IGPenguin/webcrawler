@@ -1,5 +1,5 @@
 //Debug
-var versionCode = "ver. 04/11/2026 @ 07:26 PM"
+var versionCode = "ver. 04/11/2026 @ 07:55 PM"
 var initialEncounterOverride=0; //6 skips tutorial
 
 function isLocalhost(){ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.includes("192.168")) return true;}
