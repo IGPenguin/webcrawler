@@ -72,7 +72,7 @@ Fading Wildlands;🌾;Ensnaring Weeds;Container-3;0;0;-1;0;0;0;0;Natural Obstacl
 Fading Wildlands;🌠;Comet Painting;Altar;0;0;0;0;0;1;0;Wishbound Canvas;The falling star never reaches the ground.<br>;Your silent wish was fulfilled.
 Fading Wildlands;🍀️;Clover Shrine;Altar;0;0;0;1;0;0;0;Gentle Fortune;Four-leaf clusters lean toward you.<br>;You won't ever forget this.
 Fading Wildlands;🌸;Petal Shrine;Altar;0;0;0;1;0;0;0;Quiet Blessing;Color clings stubbornly to these blooms.<br>;The nature blessed you.
-Fading Wildlands;🖼️️;Abandoned Painting;Altar;0;0;0;0;1;0;0;Unfinished Art;Seems like the author left in hurry.<br>;Hmm\ truly an interesting piece.
+Fading Wildlands;🖼️️;Ditched Painting;Altar;0;0;0;0;1;0;0;Unfinished Art;Seems like the author left in hurry.<br>;Hmm\ truly an interesting piece.
 Fading Wildlands;🍃;Whispering Grove;Altar;0;0;0;1;0;0;0;Soft Murmurs;Leaves rustle without wind.<br>;Luck gently shifted to your side.
 Fading Wildlands;🪔;Ashen Brazier;Altar;1;0;0;0;0;0;0;Radiating Warmth;Embers still glow of faint hope.<br>;Rallied a new self-determination
 
@@ -150,7 +150,7 @@ Fading Wildlands;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice
 Fading Wildlands;🎨;Painter's Palette;Item;0;0;0;0;3;0;0;<b>Artifact</b>;Must've been left behind by a true artist.<br>Provides <b>+4 🧠 Creativity</b>.;Felt a surge of creativity
 Fading Wildlands;🖌️;Painter's Brush;Item;0;0;0;0;0;1;0;<b>Artifact</b>;Enchanted tool radiating strange power.<br>Provides <b>+1 🔵 Mana</b>.;Got a hold of a powerful tool
 Fading Wildlands;🍀;Four-leaf Clover;Item;0;0;0;3;0;0;0;<b>Artifact</b>;Extremely rare growth\ might be beneficial.<br>Provides <b>+3 🍀 Luck</b>.;Feels so good to have it.
-Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b> - salt the food.<br>Add <b>+1 🟢 Energy</b> & <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.
+Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>(( season food.<br>Add <b>+1 🟢 Energy</b> & <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.
 Fading Wildlands;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 
 Fading Wildlands;💐;Flower Bouquet;Item;0;0;0;0;2;0;0;Floral Gift;Makes anyone look a lot friendlier.<br>Provides <b>+2 🧠 Charisma</b>.;Feels purposeful carrying that.
@@ -403,7 +403,7 @@ Forsaken Village;🐑;Blight Sheep;Standard;3;0;2;0;0;0;0;Diseased Livestock;She
 Forsaken Village;🕵️‍♂️;Grave Robber;Standard;2;2;2;0;2;0;0;Profane Human;Smells of soil and rotten decay.<br>;Buried in a shallow grave.
 Forsaken Village;🧙‍♀️;Lunatic Hermit;Standard;2;1;1;0;2;1;0;Reclusive Human;Does not care about the decaying world.<br>;Choked with bare hands.
 
-Forsaken Village;🪞;Cracked Mirror;Reflective;2;0;0;0;-1;0;0;Haunted Object;The reflection in it is not yours.<br>;Couldn't take your reflection.
+Forsaken Village;🪞;Cracked Mimic;Reflective;2;0;2;0;-1;0;0;Haunted Object;The reflection in it is not yours.<br>;Couldn't take your reflection.
 
 Forsaken Village;🪨;Animated Pebble;Tough;1;0;1;0;0;0;1;Cute Spell;Perhaps\ just leave it alone?<br>;The rock has bit your finger!
 
@@ -1236,7 +1236,7 @@ Fishing;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a ne
 Fishing;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>
 Fishing;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.
 Fishing;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.
-Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b> - salt the food.<br>Add <b>+1 🟢 Energy</b> & <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.
+Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>(( season food.<br>Add <b>+1 🟢 Energy</b> & <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.
 Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.
 Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.
 Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!
