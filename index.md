@@ -62,6 +62,25 @@ layout: default
     </div>
   </div>
 
+  <!-- Confirm new game screen -->
+  <div id="menu_confirm_screen" style="display:none;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
+        <h2 style="font-size:20px;
+               letter-spacing:1.5px;
+               -webkit-text-stroke: 5px black;
+               paint-order: stroke fill;
+               margin:8px 0 8px 0;
+               text-align:center;">⚠️ Really want to restart?</h2>
+                <div style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
+        <h4 style="text-align:center; min-height:0; font-size:14px; color:#fff; line-height:28px; margin-bottom:4px"><b style="font-weight:800;">Your progress will be irreversibly lost!</b><br>Only <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> stay forever.</h4>
+      </div>
+      <div id="menu_confirm_preview" style="display:none; margin-top:8px; margin-bottom:8px; overflow:hidden;"></div>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✨ New Game</button>
+      <button class="menu-btn" id="menu_confirm_cancel">👈 Cancel</button>
+    </div>
+  </div>
+
   <!-- Session History screen -->
   <div id="menu_history_screen" style="display:none;">
     <div class="card menu-main-card" style="background-color:#202020;
@@ -83,6 +102,7 @@ layout: default
                   padding-bottom:4px;">
         <div id="menu_history_list"></div>
       </div>
+      <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>
     </div>
   </div>
@@ -114,25 +134,6 @@ layout: default
         <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#c9594f;">💌 Review</button>
       </div>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
-    </div>
-  </div>
-
-  <!-- Confirm new game screen -->
-  <div id="menu_confirm_screen" style="display:none;">
-    <div class="card menu-main-card" style="background-color:#202020; padding-top:12px; padding-bottom:14px;">
-        <h2 style="font-size:20px;
-               letter-spacing:1.5px;
-               -webkit-text-stroke: 5px black;
-               paint-order: stroke fill;
-               margin:8px 0 8px 0;
-               text-align:center;">⚠️ Really want to restart?</h2>
-      <div id="menu_confirm_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
-      <div class="menu-spacer"></div>
-      <div style="background-color:#202020; padding:6px 0 6px 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:14px; margin-bottom:0; color:#fff;"><b style="font-weight:800;">Your progress will be lost forever!</b><br>Only <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> carry over.</h4>
-      </div>
-      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✨ New Game</button>
-      <button class="menu-btn" id="menu_confirm_cancel">👈 Cancel</button>
     </div>
   </div>
 

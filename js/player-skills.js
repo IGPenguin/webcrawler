@@ -533,12 +533,21 @@ function playerWaive(){
 }
 
 function playerReincarnate(){
-  SaveManager.clearGameState(); // treat revive as a new run — wipe the death-screen snapshot
-  playerNumber++;
+  //SaveManager.clearGameState(); // treat revive as a new run — wipe the death-screen snapshot
+  playerNumber++; //Tracks revives of the character
   displayPlayerEffect("✨");
-  encounterIndex=3; //Skip tutorial
-  playerSta=playerStaMax; //Renew stamina (its empty initially)
-  adventureEncounterCount = -1; //Death + tutorial
+  
+  //encounterIndex=3; //Skip tutorial
+  //adventureEncounterCount = -1; //Death + tutorial
+
+  //Ress where died
+  encounterIndex=lastEncounterIndex;
+  
+  playerHp=1; //Renew
+  playerSta=1; //Renew
+
+  playerName="Holy "+playerName
+
   logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
 
   if (savedCoins>0){
