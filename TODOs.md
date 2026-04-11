@@ -99,20 +99,24 @@ Action bar critical success/fail intervals
 
 ## Small Ideas (new PR)
 
-- session detail, Feedback, Share/Download
-- karma affects on action bar chances
+- make "Revive" interval based on karma
+  - on revive, get back to live (last encounter) with 1 HP
+  - karma affects on action bar chances?
   - plus check, what changes karma, possibly adjust/expand
+
 - [ ] Pray with no bonus (altar) = get exp
 - [ ] Fix Boss wife disengage when calmed = NaN xp
 - [ ] Fix cannot leave calm merciful bride, if calm bride (check texts)
 - Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
 - Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
 - Fix add vertical scroll in loot/party when overflowimg
-- if stat over 5, display numeric - 4/5
+- session detail add btns: Feedback, Share/Download
 
 - killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
   - 🧟 John Doe (Undead)
   - undead then have 0 base attack abainst you
+
+- if stat over 5, display numeric - 4/5
 
 ## Big Fixes
 - Fix animations glitching playing when launching another one without the first finishing (bug in animation functions?)

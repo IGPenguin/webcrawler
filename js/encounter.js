@@ -183,7 +183,7 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Shop": //I just did HAAAACKKKK, and it feelt sooo WRONG (really, needs fixing... later)
       if (!adventureLog.includes("Silhouette appeared:")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Silhouette appeared: <b>"+enemyName+"</b></text>")
-      if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke. I guess that's it for now...")
+      if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke, I guess that's it for now...")
       break;
     default:
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) {
