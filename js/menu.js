@@ -200,7 +200,7 @@ var Menu = (function () {
     if (sessions.length === 0) {
       list.innerHTML =
         '<h4 style="color:#fff; text-align:center; min-height:0; ' +
-        'padding:16px 0; margin:0;">No memories recorded yet.</h4>';
+        'padding:16px 0; margin:0;">No heroes have been buried yet.</h4>';
       return;
     }
 
