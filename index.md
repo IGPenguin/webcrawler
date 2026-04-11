@@ -295,6 +295,7 @@ layout: default
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                           margin-bottom:14px;
+                                            position:relative;
                                             box-shadow:
                                               0px 0px 0px 3px #121212;">
 
@@ -311,6 +312,7 @@ layout: default
                                     box-shadow:
                                       0px 0px 0px 3px #000000;
                                       position:relative; z-index:1;"/>
+<div id="id_action_bar"><div id="id_action_bar_track"><div id="id_action_bar_cursor"></div></div></div>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
@@ -328,10 +330,7 @@ layout: default
                           overflow-y:auto;
                           scrollbar-width:none;"/>
 </div>
-<div style="position:relative;">
 <h3 id="id_player_party_loot" style="text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;"></h3>
-<div id="id_action_bar"><div id="id_action_bar_track"><div id="id_action_bar_cursor"></div></div></div>
-</div>
 </div>
 <div id="id_buttons" style="margin:6px; margin-top:1px;">
   <button type = "button" id = "button_attack">🎯</button>&nbsp;

@@ -250,7 +250,7 @@ dt {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;           // stretch to match loot bar height exactly
+  bottom: 0;           // stretch to match player status bar height exactly
   z-index: 10;
   padding: 0 3px;
   box-sizing: border-box;
@@ -258,7 +258,7 @@ dt {
 
 #id_action_bar_track {
   position: relative;
-  height: 100%;        // fill the loot bar height
+  height: 100%;        // fill the player status bar height
   min-height: 24px;
   border-radius: 2px;
   overflow: hidden;
