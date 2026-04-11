@@ -60,10 +60,10 @@ add achievements (called "Memories") feature
 
 ---
 
-## Lower Prio Fixes
+## Lower-Repro Fixes
 
 - fix enemy recovered energy after killed (crazed goat)
-- fix engaged a boss showing again and again each step for fished out boss
+- fix engaged a boss showing again and again after each action after fishing gives a boss
 
 ---
 
