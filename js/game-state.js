@@ -202,21 +202,21 @@ function calcActionBarConfig(button, adjustment) {
 
   // Resurrection: very narrow, fast zone — last chance before permanent death
   if (button === 'button_attack' && types.includes('Death')) {
-    return { speed: Math.round(95 * ACTION_BAR_SPEED_MULT), successMin: 40, successMax: 52 };
+    return { speed: Math.round(95 * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
   }
 
   // Prop walk: very wide zone — tiny stumble risk exists
   if (button === 'button_roll' && types === 'Prop') {
-    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 2, successMax: 97 };
+    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
   // Dream walk: wide zone — small STA drain on fail
   if (button === 'button_roll' && types.includes('Dream')) {
-    return { speed: Math.round(35 * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
+    return { speed: Math.round(35 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Near-impossible attack/block/dodge at 0 stamina — tiny zone, always possible
-  if (pSta === 0 && (button === 'button_attack' || button === 'button_block' || button === 'button_roll')) {
+  if (pSta === 0 && enemyType!="Item" && enemyType!="Shop" && (button === 'button_attack' || button === 'button_block' || button === 'button_roll')) {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
@@ -239,9 +239,9 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
   }
 
-  // Shop: Gamble = 50% zone, very fast; all other shop actions = full success zone
-  if (types === 'Shop') {
-    if (button === 'button_block') {
+  // Shop: Gamble = 50% zone, very fast; all other shop actions = full success zone; Tarot 100% zone
+  if (types === 'Shop' || enemyName.includes("Tarot")) {
+    if (button === 'button_block' && !enemyName.includes("Tarot")) { //Yolo again - Tarots are special, all good...
       return { speed: Math.round(180 * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
     }
     return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
