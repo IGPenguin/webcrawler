@@ -108,41 +108,52 @@ Fading Wildlands;🐜;Trail Ant;Small;1;0;1;0;-1;0;0;Line Walker;One ant\ a whol
 Fading Wildlands;🐀;Field Scavenger;Small;1;0;2;0;-1;0;0;Disease Carrier;Tiny body\ filthy teeth.<br>;Contracted a deadly disease.
 Fading Wildlands;🐁;Pale Vermin;Small;1;0;2;0;-1;0;0;Sickly Rodent;Eyes too bright\ ribs too sharp.<br>;Contracted a deadly disease.
 Fading Wildlands;🦎;Skitter Lizard;Small;1;0;2;0;0;0;0;Quick Reptile;Darts just out of reach.<br>;Lost sight of it\ paid the price.
+Fading Wildlands;🐇;Panicked Hare;Small;1;0;3;0;10;0;0;Nervous Prey;The erratic jumps make it annoying.<br>;Trampled in confusion.
 
-Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;It has joined your side.
-Fading Wildlands;🦦;Stream Rascal;Pet;1;0;1;1;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.
-Fading Wildlands;🐈;Field Stray;Pet;1;0;2;1;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower
+Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;1;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;It has joined your side.
+Fading Wildlands;🦦;Stream Rascal;Pet;1;1;1;1;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.
+Fading Wildlands;🐈;Field Stray;Pet;1;1;2;1;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower
 Fading Wildlands;🦎;Grass Gecko;Pet;1;0;2;1;0;0;0;Wall Climber;Unbothered by anyone’s panic.<br>;Got a new travel buddy!
 Fading Wildlands;🐞;Spotted Wanderer;Pet;1;0;1;1;0;0;0;Tiny Traveler;Too small to fear\ too stubborn to stop.<br>;Got a new travel buddy!
 Fading Wildlands;🐥;Stray Chick;Pet;1;0;1;0;-1;0;0;Lost Hatchling;Looking for something that won’t answer back.<br>;Got a new travel buddy!
-Fading Wildlands;🕊️;Pale Dove;Pet;1;0;2;1;0;0;0;Fading Peace;Carries a hint of better days.<br>;Follows your shadow.
 
-Fading Wildlands;🐐;Wild Goat;Standard;2;0;2;0;10;0;0;Horned Temper;Capable of unfortunate headbutts.<br>;Impaled by its horns.
+Fading Wildlands;🦊;Fleeting Fox;Standard;2;0;3;0;2;0;0;Silent Hunter;Blasts through the undergrowth.<br>;Outplayed and bled out.
+Fading Wildlands;🦌;Thin Doe;Standard;2;0;3;0;2;0;0;Starved Grazer;Looks weak but kicks hard.<br>;Crushed by desperate hooves.
+Fading Wildlands;🐏;Scared Sheep;Standard;2;0;3;0;10;0;0;Fluffy Critter;Capable of unfortunate headbutts.<br>;Impaled by its horns.
+Fading Wildlands;🐐;Vengeful Ram;Standard;2;1;2;0;10;0;0;Horned Temper;Looking for its next victim.<br>;Impaled by its horns.
 Fading Wildlands;🦫;Timber Terror;Standard;2;1;1;0;2;0;0;Busy Maw;Teeth made for wood\ repurposed for bone.<br>;Dragged you to a dam of bones.
 Fading Wildlands;🦃;Riled Turkey;Standard;2;1;2;0;10;0;0;Feathered Fury;The closer you step\ the louder it rages.<br>;Defeated by an angry bird.
-Fading Wildlands;🦥;Slow Watcher;Standard;2;0;1;1;1;0;0;Gentle Observer;Barely moves\ means no harm.<br>;Oh\ that is really unfortunate.
 
-Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings to skin and soul.<br>;Suffered a terrible stench.
+Fading Wildlands;🐜;Biting Ant;Stingy;1;1;1;0;-1;0;0;Tiny Swarm;One is nothing\ many is death.<br>;Overrun by thousand bites.
+Fading Wildlands;🦂;Hidden Scorpion;Stingy;1;1;2;0;-1;0;0;Buried Threat;Getting ready to strike from beneath.<br>;Venom took over your body.
+Fading Wildlands;🦗;Thorn Cricket;Stingy;1;1;2;0;-1;0;0;Sharp-limbed;Its legs cut more than thin grass.<br>;Sliced by a sudden leap.
 Fading Wildlands;🦔️;Curled Bristle;Stingy;1;0;1;1;0;0;0;Spined Bundle;Harmless until you reach for it.<br>;Ouch\ that stings!
 Fading Wildlands;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Wandering Threat;Doesn’t know where it’s going\ only that it hurts.<br>;Ouch\ that stings!
-Fading Wildlands;🐸;Glassy Frog;Reflective;1;0;2;0;1;0;0;Woodland Oddity;Its skin catches every hit and returns the insult.<br>;Drowned in a sorry puddle.
-Fading Wildlands;🦉;Fevered Owl;Toxic;2;1;1;0;2;0;0;Diseased Hunter;Sick with something that spreads by touch.<br>;Suffered a nasty disease.
 
-Fading Wildlands;🦆;Spooked Drake;Swift;1;1;2;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Plucked by an angry bird.
-Fading Wildlands;🐺;Stray Whelp;Swift;2;1;1;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Torn apart by a whelp.
+Fading Wildlands;🦥;Slow Watcher;Toxic;2;0;1;1;1;0;0;Gentle Observer;Barely moves\ means no harm.<br>;Oh\ that is really unfortunate.
+Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings to skin and soul.<br>;Suffered a terrible stench.
+Fading Wildlands;🦉;Fevered Owl;Toxic;2;1;1;0;2;0;0;Diseased Hunter;Sick with something that spreads by touch.<br>;Suffered a nasty disease.
+Fading Wildlands;🕊️;Corrupted Dove;Toxic;1;0;2;1;0;0;0;Fading Peace;Carries a memory of better days.<br>;Cursed you and your shadow.
+Fading Wildlands;🐀;Field Rat;Toxic;2;1;2;0;-1;0;0;Disease Bearer;Scurries through unseen filth.<br>;Contracted a sickness.
+
+Fading Wildlands;🦇;Screeching Bat;Swift;1;1;3;1;0;0;0;Night Hunter;Foul stench clings to its wings.<br>;Worn down from above.
+Fading Wildlands;🦆;Spooked Drake;Swift;2;1;2;0;0;0;0;Wild Animal;Goes straight for your ankles.<br>;Plucked by an angry bird.
+Fading Wildlands;🐺;Stray Whelp;Swift;2;2;1;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Torn apart by a whelp.
 
 Fading Wildlands;🐏;Neurotic Sheep;Heavy;2;1;2;0;4;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Head-butted to death.
 Fading Wildlands;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;0;Guarded Bulk;Tolerates you right up until it doesn’t.<br>;Impaled by its horns.
 Fading Wildlands;🦌;Startled Stag;Heavy;2;0;2;0;2;0;0;Flee or Fight;Flight can turn to trampling in a heartbeat.<br>;Head-butted to death.
+Fading Wildlands;🐂;Tired Bull;Heavy;3;0;1;0;2;0;0;Unstoppable Force;Looks tired\ could fight as a last resort.<br>;Crushed under hooves.
+Fading Wildlands;🦬;Sickly Bison;Heavy;3;0;1;0;1;0;0;Ancient Bulk;Slow and nasty\ but still dangerous.<br>;Flattened by a monster.
 
-Fading Wildlands;🪿;Untitled Goose;Boss-Pet;2;1;2;0;2;0;0;Feathered Menace;Peace was never an option.<br>;Finally found peace?
+Fading Wildlands;🪿;Untitled Goose;Boss-Pet;2;1;3;0;2;0;0;Feathered Menace;Peace was never an option.<br>;Finally found peace?
 Fading Wildlands;🦢;Pond Queen;Boss-Standard;2;2;2;0;3;0;0;Feathered Fury;Still waters\ vicious wings.<br>;Choked by the long neck.
 Fading Wildlands;🦅;Sky Tyrant;Boss-Swift;1;3;2;0;3;0;0;Aerial Killer;Its eyes are locked your neck.<br>;Talons tore your throat apart.
-Fading Wildlands;🐍;Rush Viper;Boss-Swift;1;2;2;0;-1;0;0;Ambush Predator;Strikes as fast as a lightning.<br>;Got injected with deadly venom.
-Fading Wildlands;🦡;Burrow Fury;Boss-Swift;2;2;1;0;4;0;0;Relentless Savage;Afraid of nothing\ including you.<br>;Got freaking destroyed.
-Fading Wildlands;🦬;Risky Bison;Boss-Heavy;2;2;2;0;2;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.
-Fading Wildlands;🐗;Brood Matron;Boss-Heavy;2;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.
-Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;2;2;1;0;1;0;0;Broken Charge;Looks tired\ still hits like a last resort.<br>;Got impaled by both horns at once.
+Fading Wildlands;🐍;Rush Viper;Boss-Swift;1;3;2;0;-1;0;0;Ambush Predator;Strikes as fast as a lightning.<br>;Got injected with deadly venom.
+Fading Wildlands;🦡;Burrow Fury;Boss-Swift;2;2;2;0;4;0;0;Relentless Savage;Afraid of nothing\ including you.<br>;Got freaking destroyed.
+Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;2;0;2;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.
+Fading Wildlands;🐗;Brood Matron;Boss-Heavy;3;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.
+Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;1;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.
 
 Fading Wildlands;🏵️;Symbol of Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment\ provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.
@@ -370,10 +381,10 @@ Forsaken Village;🐖;Cursed Being;Friend;0;0;0;0;0;0;0;The Prophet;Always has a
 Forsaken Village;🐓;Patrolling Rooster;Pet;2;1;2;0;0;0;0;Noisy Escort;Always crows at too early hours.<br>;Convinced it to join you.
 Forsaken Village;🦝;Velvet Bandit;Pet;2;1;2;0;0;0;0;Wild Robber;Probably has a heart of gold.<br>;New buddy joined the gang
 Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;0;Cute Animal;Wants to initiate a contact.<br>;Received purrfect blessing
-Forsaken Village;🐩;Lost Doggo;Pet;1;1;1;0;0;0;0;Good Boy;Looks cute as hell.<br>;Became best friends!
-Forsaken Village;🐕;Shiba Doge;Pet;1;1;2;0;0;0;0;Good Boy;These are super rare.<br>;Doge joined the party
-Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;0;Cute Animal;These usually bring bad luck.<br>;Yeah it is bad luck
-Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Wild Animal;Born to race against the wind.<br>;Got a new travel buddy!
+Forsaken Village;🐩;Fragile Doggo;Pet;2;0;1;0;0;0;0;Companion;Looks healthy and cute.<br>;Became best friends!
+Forsaken Village;🐕;Lost Shiba;Pet;3;1;2;0;0;0;0;Companion;A rare good boy appeared.<br>;Doge joined the party
+Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;0;Companion;These usually bring bad luck.<br>;Yeah it is bad luck
+Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Spooked Animal;Appears to be racing the wind.<br>;Got a new travel buddy!
 
 Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;
 Forsaken Village;🪱;Tiny Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
@@ -435,6 +446,7 @@ Forsaken Village;🐖;Massive Porkchop;Heavy;3;1;1;0;-1;0;0;Wild Beast;Produces 
 Forsaken Village;🪲;Dead Beetle;Undead;1;1;1;0;-1;1;0;Risen Insect;Should not be moving. Is moving.<br>;Bugs got into your brain.
 Forsaken Village;🐝;Withered Drone;Undead;1;1;1;0;-1;0;0;Dead Insect;Still flying. Long since dead.<br>;Your buzzing stopped\ forever.
 Forsaken Village;🐖;Rotten Swine;Undead;3;1;1;0;-1;0;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Zombified by a porkchop.
+Forsaken Village;🐕;Cursed Hound;Undead;2;2;1;0;2;0;0;Feral Husk;Won't stop chasing you around.<br>;Bitten through the throat.
 Forsaken Village;🧟‍♂️;Starving Walker;Undead;2;1;2;0;-1;0;0;Animated Remains;Hands shake as they reach out.<br>;Collapsed clutching your arm.
 Forsaken Village;🧟‍♀️;Crawling Revenant;Undead;1;2;1;0;-1;1;0;Animated Torso;Still looks almost human.<br>Better keep distance.;Got rotten to the bones
 
@@ -950,10 +962,15 @@ River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfe
 River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;
 
 River of Sorrows;🐠;Depressed Angelfish;Reflective;2;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.
+River of Sorrows;🐸;Gleaming Frog;Reflective;1;0;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.
+
 River of Sorrows;🦞;Vengeful Lobster;Tough;3;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets\ never forgives.<br>;Pinched one too many times!
 River of Sorrows;🦀;Spider Crab;Tough;4;3;1;0;-1;0;1;Oversized Crustacean;What? It's the size of a dog?<br>;Pinched one too many times!
+River of Sorrows;🐌;Amphibious Snail;Tough;3;2;1;0;1;0;0;Hard Shell;Blows bounce off its hardened coil.<br>;Your strike turned on you.
+
 River of Sorrows;🐚;Cone Snail;Toxic;1;4;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops\ that was deadly!
 River of Sorrows;‍🪼;Box Jelly;Toxic;4;2;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.
+
 River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless to watch\ dangerous to touch.<br>;Killed by a mere touch.
 River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;2;3;2;0;-1;0;0;Spiky Ball;Looks funny\ but is lethal.<br>;Pierced by thousands spikes.
 
@@ -1136,8 +1153,9 @@ Shrouded Necropolis;💀;Skeleton Mage;Standard;2;1;1;0;-1;3;0;Restless Bones;It
 
 Shrouded Necropolis;🎭;Laughing Mask;Reflective;4;4;2;0;-1;0;0;Eerie Presence;Eyes seem to follow your every move.<br>;
 
-Shrouded Necropolis;💀;Crypt Guardian;Tough;3;3;2;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;
-Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;1;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.
+Shrouded Necropolis;💀;Crypt Guardian;Tough;1;2;3;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;
+Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;3;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.
+Shrouded Necropolis;🪲;Hardshell Beetle;Tough;3;2;2;0;1;0;2;Shiny Carapace;Reflects more than light.<br>;Reflected your own blow.
 
 Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.
 Shrouded Necropolis;🐍;Venomous Serpent;Toxic;3;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.
