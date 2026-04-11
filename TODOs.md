@@ -5,6 +5,7 @@ New cases:
 - fail to pray "altar" = angered the spirits, receive inverted bonus (malus)
 - fail to endure curse should give the curse effect (if negative)
   - chance to endure should be based on how high is the player stat that the curse affects
+- grab "heavy" should be possible, but very very hard
 - ...?
 
 Low Prio:
@@ -82,6 +83,8 @@ Action bar critical success/fail intervals
 - fix enemy recovered energy after killed (crazed goat)
 - fix engaged a boss showing again and again each step for fished out boss
 - fix log you are ready to lvl uo when you are not
+- change all "button_pray" references to "button_heal"
+  - ensure that pray logic affects pray action and not heal action
 
 ---
 
@@ -151,6 +154,7 @@ New Feature: spell & scrolls
 
 ## BIG OLD DATA PUSH
 
+- Curses with -1 atk (lategame)
 - [ ] Legendary item allowing to physically damage spirits (soulgem)
 - [ ] Practice target variants for speak, cast... option to leave
 - [ ] Magic items in the game should almost always carry some curse
