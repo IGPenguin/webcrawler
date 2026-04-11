@@ -387,11 +387,6 @@ function registerClickListenersTechnical(){
 
   document.getElementById('id_player_level').addEventListener(eventType, ()=>{
     var newName=renameCharacter();
-    try {
-      var nameNumber=newName.match(/\d+/)[0];
-    } catch (error){
-      console.log("try adding number");
-    }
     var cheatAmount=3;
 
     if (newName.includes("Cheater")){
@@ -406,22 +401,36 @@ function registerClickListenersTechnical(){
       playerHp=playerHpMax;
       playerSta=playerStaMax;
       playerMgk=playerMgkMax;
-      redraw();
+      logCheatUse(newName);
+      return
     }
 
     if (newName.includes("Mucho Dinero")){
       savedCoins=10;
       localStorage.setItem('coins', savedCoins);
+      logCheatUse(newName);
+      return
     }
 
     if (newName.includes("Poco Dinero")){
       savedCoins=3;
       localStorage.setItem('coins', savedCoins);
+      logCheatUse(newName);
+      return
     }
 
     if (newName.includes("Cleaner")){
       localStorage.removeItem('coins'); //Full wipe to even show tutorial
       savedCoins=0;
+      logCheatUse(newName);
+      return
     }
+    logAction("✏️ ▸ ✨ Renamed yourself: <b>"+newName+"</b>");
+    redraw();
   });
+}
+
+function logCheatUse(message){
+  logAction("✏️ ▸ ⚠️ You used a cheat! <b>"+message+"</b>");
+  redraw();
 }
