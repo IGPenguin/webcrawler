@@ -41,7 +41,7 @@ layout: default
 <div id="id_menu" class="menu-screen" style="display:none;">
 
   <!-- Shared logo — one element, animated on every menu show -->
-  <h2 id="id_menu_logo" style="font-size:68px; letter-spacing:1.8px; -webkit-text-stroke:6.5px black; paint-order:stroke fill; color:red; margin-bottom:32px; line-height:1px; text-align:center; z-index:1;">Stay Dead</h2>
+  <h2 id="id_menu_logo" style="font-size:72px; letter-spacing:1.8px; -webkit-text-stroke:6.5px black; paint-order:stroke fill; color:red; margin-bottom:32px; line-height:1px; text-align:center; z-index:1;">Stay Dead</h2>
 
   <!-- Main screen -->
   <div id="menu_main_screen">

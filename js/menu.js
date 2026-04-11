@@ -29,8 +29,8 @@ var Menu = (function () {
     if (!logo) return;
     logo.classList.remove('animate__animated', 'animate__fadeInDown');
     void logo.offsetWidth; // reflow
-    logo.style.setProperty('--animate-duration', '0.55s');
-    logo.classList.add('animate__animated', 'animate__fadeInDown');
+    logo.style.setProperty('--animate-duration', '2s');
+    logo.classList.add('animate__animated', 'animate__infinite', 'animate__pulse' );
     logo.addEventListener('animationend', function onDone() {
       logo.removeEventListener('animationend', onDone);
       logo.classList.remove('animate__animated', 'animate__fadeInDown');
@@ -63,7 +63,7 @@ var Menu = (function () {
 
       var partyLoot = '';
       if (s.playerPartyString && s.playerPartyString !== 'undefined') partyLoot += s.playerPartyString;
-      if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += (partyLoot ? '&nbsp;&nbsp;' : '') + s.playerLootString;
+      if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += s.playerLootString;
 
       var encounter = (s.enemyEmoji || '') + (s.enemyName ? ' ' + s.enemyName : '');
       preview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null);
@@ -143,9 +143,9 @@ var Menu = (function () {
       html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
         + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
-        html += '<h5 style="margin:2px 0 1px 0;">' + infoParts.join('&nbsp;&nbsp;·&nbsp;&nbsp;') + '</h5>';
+        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal;">' + infoParts.join('&nbsp;⨯&nbsp;') + '</h5>';
       if (date)
-        html += '<h5 style="margin:0 0 4px 0; opacity:0.6;">' + date + '</h5>';
+        html += '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + date + '</h5>';
       html += '</div>';
     }
 
@@ -225,9 +225,9 @@ var Menu = (function () {
             + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 0 0;">' + (session.area || '?')
-          + '&nbsp;&nbsp;·&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
-        + '<h5 style="margin:1px 0 0 0; opacity:0.55;">' + (session.date || '') + '</h5>';
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal;">' + (session.area || '?')
+          + '&nbsp;⨯&nbsp;' + (session.causeOfDeath || '') + '</h5>'
+        + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '') + '</h5>';
 
       entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
       list.appendChild(entry);
