@@ -27,10 +27,11 @@ function downloadRunLog() {
 //Logging
 function logPlayerAction(actionString,message){
   actionString = actionString.split(" ")[0] + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
-  if (actionString.includes(" 🪙")) { //Ahhh, yeah more hacks at 1 AM
-    var price = actionString.split(" ")[0] //Very much HACKS... YOLO!!!
+  if (actionString.includes("🪙&nbsp;")) { //Ahhh, yeah more hacks at 1 AM
+    var price = actionString.split("&nbsp;")[0] //Very much HACKS... YOLO!!!
+    console.log(price)
     actionString=actionString.slice(2);
-    if (!actionString.includes("you actually won!")) actionString = actionString.replace("<br>"," -"+price+" 🪙"+"<br>");
+    if (!actionString.includes("you actually won!") && !actionString.includes("Lucky Drachma")) actionString = actionString.replace("<br>"," -"+price);
   }
   runLogAdd("log", {msg: actionString.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").replace("<br>","").trim()});
   adventureLog += actionString;
