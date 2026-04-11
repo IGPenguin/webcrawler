@@ -595,10 +595,10 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
   var success = (randomRoll<=abilityChance)
 
   if (abilityEmoji!="") console.log("requires:"+abilityEmoji);
-  console.log("chance:"+abilityChance+"/100");
-  console.log("rolled:"+randomRoll);
-  console.log("success:"+success);
-  console.log("----");
+  // console.log("chance:"+abilityChance+"/100");
+  // console.log("rolled:"+randomRoll);
+  // console.log("success:"+success);
+  // console.log("----");
 
   return success;
 }

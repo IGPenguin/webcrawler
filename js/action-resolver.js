@@ -52,9 +52,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (enemyType!="Upgrade" && !playerUseStamina(1,"Too tired to attack anything.")){
-            break;
-          }
+        if (enemyType!="Upgrade") {
+          if (playerSta > 0) playerSta--;
+        }
 
         switch (enemyType){
           case "Item":
@@ -262,32 +262,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (playerUseStamina(1,noStaForRollMessage)){
+            if (playerSta > 0) playerSta--;
 
-              if (enemyCastIfMgk(false)){
-                logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
-                displayEnemyCannotEffect();
-                displayPlayerEffect("🌀");
-                break;
-              }
-
-              if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
-                var _dodgeDmg = enemyAtk+enemyAtkBonus;
-                logPlayerAction(actionString, "Dodge failed, took the hit -"+_dodgeDmg+" 💔 -1 🟢");
-                displayPlayerCannotEffect();
-                playerHit(_dodgeDmg);
-                break;
-              }
-
-              if ((enemyAtk+enemyAtkBonus)!=0){
-                rollMessage="Successfully dodged their attack -1 🟢";
-              } else {
-                rollMessage="They do not mean any harm -1 🟢";
-              }
-
-              enemyStaminaChangeMessage(-1,rollMessage,"Your roll was a waste of energy -1 🟢");
+            if (enemyCastIfMgk(false)){
+              logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+              displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
+              break;
             }
+
+            if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
+              var _dodgeDmg = enemyAtk+enemyAtkBonus;
+              logPlayerAction(actionString, "Dodge failed, took the hit -"+_dodgeDmg+" 💔 -1 🟢");
+              displayPlayerCannotEffect();
+              playerHit(_dodgeDmg);
+              break;
+            }
+
+            if ((enemyAtk+enemyAtkBonus)!=0){
+              rollMessage="Successfully dodged their attack -1 🟢";
+            } else {
+              rollMessage="They do not mean any harm -1 🟢";
+            }
+
+            enemyStaminaChangeMessage(-1,rollMessage,"Your roll was a waste of energy -1 🟢");
+            displayPlayerEffect("🌀");
             break;
 
           case "Swift":
@@ -307,7 +306,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (playerUseStamina(1,noStaForRollMessage)){
+            if (playerSta > 0) playerSta--;
+            if (_skillOK === true) {
+              enemyStaminaChangeMessage(-1,"Barely slipped a swift attack -1 🟢","Rolled out of the way -1 🟢");
+              displayEnemyCannotEffect();
+              displayPlayerEffect("🌀");
+            } else {
               enemyStaminaChangeMessage(-1,"Failed to dodge their attack -"+enemyAtk+" 💔","Rolled into a surprise attack -"+enemyAtk+" 💔");
               playerHit(enemyAtk);
             }
@@ -398,11 +402,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             if (_skillOK === false) {
               if (Math.random() < 0.25) {
-                logPlayerAction(actionString, "Stepped badly and sprained an ankle -1 💔");
+                logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
                 playerHit(1);
               } else {
                 playerSta = Math.max(0, playerSta - 1);
-                logPlayerAction(actionString, "Stepped badly and strained yourself -1 🟢");
+                logPlayerAction(actionString, "Stumbled, almost falling over -1 🟢");
                 displayPlayerCannotEffect();
               }
               if (playerHp > 0) nextEncounter();
@@ -506,9 +510,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (!playerUseStamina(1,"Not enough energy for that.")){
-            break;
-        }
+        if (playerSta > 0) playerSta--;
 
         if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
           enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
@@ -562,7 +564,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🔰");
             break;
 
-          case "Heavy": //Too heavy or spirit attack
+          case "Heavy": //Too heavy or spirit attack — can succeed but very hard
+            if (_skillOK === true) {
+              enemyStaminaChangeMessage(-1,"Barely blocked a heavy attack -1 🟢","They needed to catch a breath.");
+              displayPlayerEffect("🔰");
+              break;
+            }
             if (enemyStaminaChangeMessage(-1,"Could not block a heavy attack -"+enemyAtk+" 💔","They needed to catch a breath.")){
               playerHit(enemyAtk);
             } else {
@@ -1158,16 +1165,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerSta--;
               enemyKnockedOut();
               isFishing=false;
-            } else if (enemySta - enemyStaLost > 0){ //Enemy dodges if they got stamina
+            } else if (enemySta - enemyStaLost > 0){ //Enemy resists if they have stamina
               if (_skillOK === false) {
                 enemyDodged("Missed, they slipped your grasp.");
                 if (enemyCastIfMgk()) break;
                 break;
               }
-              var touchChance = Math.floor(Math.random(10) * luckInterval); // Chance to make enemy uncomfortable
-              if ( touchChance <= playerLck ){ //Generous
+              // Success — luck may spook them for free, otherwise strangle
+              var touchChance = Math.floor(Math.random(10) * luckInterval);
+              if ( touchChance <= playerLck ){
                 var gainedXP=parseInt(playerGainXP(1,0,""));
-
                 logAction("🍀 ▸ ✋ <b>Luckily</b>, they were spooked. "+ decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 displayEnemyEffect("💨");
                 displayPlayerEffect("🍀");
@@ -1175,10 +1182,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 isFishing=false;
                 break;
               }
-              else {
-                enemyDodged("Missed, they evaded your grasp.");
-                if (enemyCastIfMgk()) break;
-              }
+              logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
+              if (playerSta > 0) playerSta--;
+              enemyKnockedOut();
+              isFishing=false;
             } else { //Player and enemy have no stamina - asymetrical rest
               enemyKicked();
               if (enemyType=="Pet"){
@@ -1422,18 +1429,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Small":
             if (_skillOK === false) {
-              logPlayerAction(actionString, "Slipped through your fingers.");
+              // Both sides tire from the failed grab attempt
+              if (playerSta > 0) playerSta--;
+              if (enemyStaLost < enemySta) enemyStaLost++;
+              logPlayerAction(actionString, "Slipped through your fingers -1 🟢");
               displayEnemyEffect("💨");
               if (enemyCastIfMgk()) break;
               if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
               break;
             }
-            if ((enemySta-enemyStaLost)==0 && (enemyMgk-enemyMgkLost)==0) {
-              enemyGrabbedIntoLoot();
-            } else {
-              enemyDodged("Missed, they evaded your grasp.");
-              if (enemyCastIfMgk()) break;
-            }
+            // Success: spend 1 STA and pocket them
+            if (playerSta > 0) playerSta--;
+            enemyGrabbedIntoLoot();
             break;
 
           case "Friend":
@@ -1784,7 +1791,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Tough":
           case "Reflective":
             if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
-              logPlayerAction(actionString, "Your attempt to rest was interrupted -"+(enemyAtk+enemyAtkBonus)+" 💔");
+              logPlayerAction(actionString, "Your rest was interrupted -"+(enemyAtk+enemyAtkBonus)+" 💔");
               playerHit(enemyAtk+enemyAtkBonus);
               break;
             }

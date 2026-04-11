@@ -56,7 +56,7 @@ layout: default
       <button class="menu-btn" id="menu_continue">⚔️ Continue</button>
       <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ New Game</button>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_challenges" style="color:grey;">🧬 Memories</button>
+      <button class="menu-btn" id="menu_challenges" style="color:grey;">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">🦴 Graveyard</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
@@ -351,7 +351,7 @@ layout: default
 
 <div style="position:relative; margin-top:8px;">
   <button type="button" id="button_menu" style="position:absolute; left:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⚙️</button>
-  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🧬</button>
+  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🧩</button>
   <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
     <h4 style="font-size:11px; opacity:0.6; margin-top:8px; letter-spacing:1px;box-shadow:none;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
   </div>

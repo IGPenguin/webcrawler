@@ -251,7 +251,7 @@ function adjustEncounterButtons(){
         document.getElementById(id).disabled = true;
       });
       setButton('button_attack',"✨ Revive",colorGold);
-      setButton('button_roll',"💤 Give up",colorSemiDarkGrey);
+      setButton('button_roll',"🏴‍☠️ Give up",colorRed);
       setButton('button_block',"💌 Review",colorPink);
       break;
 

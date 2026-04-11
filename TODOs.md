@@ -1,12 +1,22 @@
-- make the action bar value selector move faster by 30-50% (show me where to adjust)
-  - sometimes is moving very very slow
-  - in combat its mostly ok
-- missing an attack should be possible also on passive enemies/encounters
-- dodge swift type enemy attack should be possible, but very hard
-  - similarly blocking heavy type enemy attack should be very hard
-- grab small should succed on first try (spending player sta) if hit success interval
-  - harder success window based on enemy unspent stamina
-  - if hit fail interval, spend both player and enemy sta
+## Action bar situations:
+
+New cases:
+- fail to walk away from toxic/spiky = get hurt (same as grab) "accidentally fallen onto that" 
+- fail to pray "altar" = angered the spirits, receive inverted bonus (malus)
+- fail to endure curse should give the curse effect (if negative)
+  - chance to endure should be based on how high is the player stat that the curse affects
+- ...?
+
+Low Prio:
+- cast/heal/curse with no mana should be full 0% chance
+- fail to speak "Gibberish", higher chance the lower player int is
+
+Questionable:
+- grabbing stingy enemy should be possible, but very hard
+- when interacting with trap, the succes interval should be small, no pentalty if sucess
+
+Legendary ideas:
+- ⏳ Strange Hourglass - 25% slower action bar speed
 
 ---
 
@@ -47,6 +57,25 @@ add achievements:
 
 ---
 
+## Feature enhancement
+
+Action bar critical success/fail intervals
+- add critical success and critical failure (very) slim intervals to action bar (not present when player has 0 stamina to do the action - if it requires sta)
+- crit success:
+  - attack = extra 1 dmg
+  - dodge/block = no stamina use
+  - cast = extra 1dmg
+  - heal = extra 1 hp healed
+  - curse = extra -1 atk to enemy
+- crit fail:
+  - attack = hurt/exposed yourself -1 dmg
+  - dodge/block = spend extra 1 sta
+  - cast = hit yourself 1 dmg
+  - heal = heal enemy
+  - curse = curse yourself
+
+---
+
 ## Prio/Repro Fixes
 
 - manual: fix drachmae buy price in log
@@ -58,6 +87,7 @@ add achievements:
 
 ## Small Ideas (new PR)
 
+- session detail, Feedback, Share/Download
 - Display total drachame in main menu
 - [ ] Pray with no bonus (altar) = get exp
 - [ ] Fix Boss wife disengage when calmed = NaN xp
@@ -66,6 +96,10 @@ add achievements:
 - Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
 - Fix add vertical scroll in loot/party when overflowimg
 - if stat over 5, display numeric - 4/5
+
+- killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
+  - 🧟 John Doe (Undead)
+  - undead then have 0 base attack abainst you
 
 ## Big Fixes
 - Fix animations glitching playing when launching another one without the first finishing (bug in animation functions?)

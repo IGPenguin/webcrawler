@@ -171,6 +171,8 @@ var actionBarSuccess = null;
 // Returns { speed (units/s), successMin, successMax } derived from current global player+enemy state.
 // speed is on a 0–100 scale — at speed 60 the cursor crosses the full bar in ~1.67 s.
 // adjustment: optional ±integer added to zoneW before clamping (positive = easier, negative = harder).
+// SPEED_MULT: global cursor speed multiplier — raise to make the bar harder everywhere.
+var ACTION_BAR_SPEED_MULT = 1.3;
 function calcActionBarConfig(button, adjustment) {
   var pAtk = Math.max(0, playerAtk  || 0);
   var pSta = Math.max(0, playerSta  || 0);
@@ -198,19 +200,29 @@ function calcActionBarConfig(button, adjustment) {
   var isCurse     = types === 'Curse';
 
   // ── Special cases ────────────────────────────────────────────────────────
+  // Exhausted grab: near-impossible without stamina (items/containers/fishing unaffected)
+  if (button === 'button_grab' && pSta === 0 && !isGrabbable) {
+    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+  }
+
   // Resurrection: very narrow, fast zone — last chance before permanent death
   if (button === 'button_attack' && types.includes('Death')) {
-    return { speed: 95, successMin: 40, successMax: 52 };
+    return { speed: Math.round(95 * ACTION_BAR_SPEED_MULT), successMin: 40, successMax: 52 };
   }
 
   // Prop walk: very wide zone — tiny stumble risk exists
   if (button === 'button_roll' && types === 'Prop') {
-    return { speed: 32, successMin: 2, successMax: 97 };
+    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 2, successMax: 97 };
   }
 
   // Dream walk: wide zone — small STA drain on fail
   if (button === 'button_roll' && types.includes('Dream')) {
-    return { speed: 35, successMin: 5, successMax: 95 };
+    return { speed: Math.round(35 * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
+  }
+
+  // Near-impossible attack/block/dodge at 0 stamina — tiny zone, always possible
+  if (pSta === 0 && (button === 'button_attack' || button === 'button_block' || button === 'button_roll')) {
+    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
   // Small grab: chance based on creature STA vs player STA
@@ -218,13 +230,13 @@ function calcActionBarConfig(button, adjustment) {
     var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
     var smallW = Math.max(20, Math.min(85, Math.round(55 + pSta * 5 - eStaSmall * 12)));
     var smallMid = 50;
-    return { speed: 44, successMin: Math.max(3, smallMid - Math.round(smallW/2)), successMax: Math.min(97, smallMid + Math.round(smallW/2)) };
+    return { speed: Math.round(44 * ACTION_BAR_SPEED_MULT), successMin: Math.max(3, smallMid - Math.round(smallW/2)), successMax: Math.min(97, smallMid + Math.round(smallW/2)) };
   }
 
   // Container search: luck scales zone width — bad luck = high chance of finding nothing
   if (button === 'button_grab' && types.includes('Container') && !types.includes('Locked')) {
     var searchW = Math.max(25, Math.min(82, Math.round(40 + pLck * 9)));
-    return { speed: 30, successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
+    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
   }
 
   // Fishing: bait quality shifts zone width
@@ -233,14 +245,14 @@ function calcActionBarConfig(button, adjustment) {
     var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 0;
     var fishMin = Math.max(3, 22 - fishBQ * 8);
     var fishMax = Math.min(97, 70 + fishBQ * 8);
-    return { speed: 36, successMin: fishMin, successMax: fishMax };
+    return { speed: Math.round(36 * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax };
   }
 
   // Full-green: encounter has no ATK or MGK threat — automatic success
   var eAtkFull = Math.max(0, (enemyAtk || 0) + (enemyAtkBonus || 0));
   var eMgkFull = Math.max(0, (enemyMgk || 0) - (enemyMgkLost || 0));
   if (eAtkFull === 0 && eMgkFull === 0) {
-    return { speed: 30, successMin: 0, successMax: 100 };
+    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
   var pStat, eStat, baseW, baseSpeed;
@@ -273,7 +285,7 @@ function calcActionBarConfig(button, adjustment) {
 
     case 'button_grab':
       pStat     = pAtk;
-      eStat     = (isSmall  ? eSta * 3 : 0)
+      eStat     = (isSmall  ? eSta * 3 : eSta * 2)   // unspent enemy STA scales grab difficulty
                 + (isUndead ? 6        : 0);
       baseW     = isGrabbable ? 78 : 35;
       baseSpeed = isGrabbable ? 28 : 52;
@@ -326,9 +338,9 @@ function calcActionBarConfig(button, adjustment) {
   zoneW = Math.round(zoneW * 0.75);
   zoneW = Math.max(12, Math.min(72, zoneW));
 
-  // Default speed multiplier * 5
-  var speed = Math.round(baseSpeed + pStat * 20);
-  speed = Math.max(28, Math.min(130, speed));
+  // Default speed multiplier * 5, scaled by ACTION_BAR_SPEED_MULT
+  var speed = Math.round((baseSpeed + pStat * 20) * ACTION_BAR_SPEED_MULT);
+  speed = Math.max(36, Math.min(169, speed));
 
   // Zone position: random, luck blends toward an easier left-centre placement
   var maxStart   = 100 - zoneW;
