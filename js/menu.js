@@ -213,8 +213,8 @@ var Menu = (function () {
       entry.innerHTML =
         '<div style="background-color:rgb(40,40,40); overflow:hidden; padding-top:1px; padding-bottom:3px;">'
           + '<h3 style="margin-top:3px; margin-bottom:-19px; margin-left:4px; position:relative; '
-            + 'z-index:3; text-align:right; padding-right:10px; padding-bottom:2px">'
-            + '<i style="font-weight:600; color:#FFD940; font-size:14px; '
+            + 'z-index:3; text-align:right; padding-right:10px; padding-bottom:2px;">'
+          + '<i style="font-weight:600; color:#FFD940; font-size:14px; position:relative; top:2px;'
             + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + (session.level || '?') + '</i>'
           + '</h3>'
           + '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
