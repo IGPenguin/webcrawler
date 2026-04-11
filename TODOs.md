@@ -8,7 +8,6 @@
   - harder success window based on enemy unspent stamina
   - if hit fail interval, spend both player and enemy sta
 
-
 ---
 
 ## The Next Big Thing!
@@ -91,6 +90,30 @@ add achievements:
 - [ ] Mischievous legendary/encounters on bad karma
 - Rebalance drops vs enemy stats? (too easy if you pivkup everything)
 - [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
+
+## Spells
+
+New Feature: spell & scrolls
+- change curse button to generic "📓Spell"
+- on click, action buttons overlay with known spells list (scrollable, max height to cover action buttons), row shows: emoji spell name: effect, cost
+- dismiss button at the end of the list
+- on click if enough mana (3) the spell cast begins (action bar)
+  - on critical success = costs -1 mkg
+  - on critical fail = apply spell to self (or special case: Harden = Deplete all stamina, Syphon = Just hurt yourself)
+- player knows no spells until learning some, log on action: "Cannot cast any spells ...yet?"
+- 📜 Spell Scroll: <emoji> <spell-name>
+- spell scrolls might be found similar to other items (create a a sample item in story.csv right after debug comment)
+- Scroll rolls what spell it is on encountering, roll from unknown spells only
+- "🧠 Learn" action (instead of speak) when seeing a spell scroll, sucess chance based on int, on fail - could not comprehend (no second chance)
+- Basic spells below:
+- 🐸 Hex - Change enemy to harmless 1/1 frog
+- 🔥 Burn - Deal 4 damage
+- 🧊 Freeze - Deplete enemy stamina
+- ⚡️ Surge - Restore own stamina full
+- 🪬 Curse - Lower enemy attack by 3
+- 🪨 Harden - 2 physical damage protect for player for rest of the fight
+- 🩸 Syphon - Damage enemy for 2, damage enemy for 2
+- ...more?
 
 ## BIG OLD DATA PUSH
 
