@@ -323,6 +323,12 @@ function setBackground(fileName="Depths.png"){
   bodyUIElement.style.backgroundImage = fileUrl;
 }
 
+(function preloadBackgrounds(){
+  var names = ['Auxiliary','Depths','Eternal','Fading','Forsaken','Freezing','Mournful','River','Shrouded','Twisted'];
+  var base = 'https://raw.githubusercontent.com/IGPenguin/stay-dead/refs/heads/live/assets/img/';
+  names.forEach(function(n){ new Image().src = base + n + '.png'; });
+})();
+
 //Mobile specific - vibrate
 function vibrateButtonPress(){
   if (!("vibrate" in window.navigator)){
