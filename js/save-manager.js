@@ -204,6 +204,14 @@ var SaveManager = (function () {
     return loadGameState() !== null;
   }
 
+  // Patches only playerName in the existing save — safe to call without linesStory loaded.
+  function patchPlayerName(newName) {
+    var s = loadGameState();
+    if (!s) return;
+    s.playerName = newName;
+    try { localStorage.setItem(STATE_KEY, JSON.stringify(s)); } catch (e) {}
+  }
+
   return {
     hasContinue:        hasContinue,
     saveGameState:      saveGameState,
@@ -214,6 +222,7 @@ var SaveManager = (function () {
     saveSession:        saveSession,
     listSessionHistory: listSessionHistory,
     clearSave:          clearSave,
-    clearAll:           clearAll
+    clearAll:           clearAll,
+    patchPlayerName:    patchPlayerName
   };
 })();

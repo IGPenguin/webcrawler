@@ -278,17 +278,17 @@ function displayPlayerRestedEffect(){
   animateUIElement(playerInfoUIElement,"animate__pulse","0.5"); //Animate player gain
 }
 
-function displayEffect(message,documentElement,time=2){
+function displayEffect(message,documentElement,time=3){
   animateUIElement(documentElement,"animate__fadeOut",time,true,message)
 }
 
   //Wow, this is nice - https://animate.style
+var _animateUIElementGen = new WeakMap();
 function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false){
-  var typeOfTime = typeof time; //To not forget anymore
-  if (typeof time != "string"){
-    time = String(time)
-    typeOfTime = typeof time
-  }
+  if (typeof time != "string") time = String(time);
+
+  var gen = (_animateUIElementGen.get(documentElement) || 0) + 1;
+  _animateUIElementGen.set(documentElement, gen);
 
   if (hidden){
     documentElement.innerHTML = message;
@@ -299,19 +299,19 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
 
   if (animateInfinite) {
     documentElement.classList.add("animate__infinite");
-    } else {
-      documentElement.classList.remove("animate__infinite");
-    }
+  } else {
+    documentElement.classList.remove("animate__infinite");
+  }
   documentElement.style.setProperty("--animate-duration","0.0001s");
   documentElement.classList.add("animate__animated",animation);
   if (time !="0s"){
     documentElement.style.setProperty("--animate-duration",time+"s");
   }
-  documentElement.addEventListener('animationend', () => {
-  if (hidden){
-    documentElement.style.display = "none";
-  }
-  documentElement.classList.remove("animate__animated",animation);
+  documentElement.addEventListener('animationend', function onEnd() {
+    documentElement.removeEventListener('animationend', onEnd);
+    if (_animateUIElementGen.get(documentElement) !== gen) return; // stale — newer animation took over
+    if (hidden) documentElement.style.display = "none";
+    documentElement.classList.remove("animate__animated", animation);
   });
 }
 

@@ -412,9 +412,9 @@ function registerClickListenersTechnical(){
     }
 
     if (newName.includes("Mucho Dinero")){
-      savedCoins=10;
+      savedCoins=9;
       localStorage.setItem('coins', savedCoins);
-      logCheatUse(newName+": +10 🪙");
+      logCheatUse(newName+": +9 🪙");
       return
     }
 
@@ -447,6 +447,6 @@ function registerClickListenersTechnical(){
 }
 
 function logCheatUse(message){
-  logAction("✏️ ▸ ⚠️ <b>You used a cheat - "+message+"</b>");
+  logAction("✏️ ▸ ⚠️ <b>You used a cheat: "+message+"</b>");
   redraw();
 }

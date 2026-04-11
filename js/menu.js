@@ -66,7 +66,10 @@ var Menu = (function () {
       if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += s.playerLootString;
 
       var encounter = (s.enemyEmoji || '') + (s.enemyName ? ' ' + s.enemyName : '');
-      preview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null);
+      preview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null, false, true);
+      document.getElementById('menu_card_rename').addEventListener('click', function () {
+        _renameCurrentRun(function () { _renderMain(true); });
+      });
     } else {
       preview.innerHTML = _buildRunCardHTML('Wandering Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifing Away', '⨯ ⨯ ⨯');
     }
@@ -87,13 +90,30 @@ var Menu = (function () {
         if (s.playerPartyString && s.playerPartyString !== 'undefined') partyLoot += s.playerPartyString;
         if (s.playerLootString  && s.playerLootString  !== 'undefined') partyLoot += s.playerLootString;
         var encounter = (s.enemyEmoji || '') + (s.enemyName ? ' ' + s.enemyName : '');
-        confirmPreview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null);
+        confirmPreview.innerHTML = _buildRunCardHTML(s.playerName || '?', s.playerLevel || '?', s.areaName || '?', stats, partyLoot, encounter || null, s.adventureStartTime || null, false, true);
+        document.getElementById('menu_card_rename').addEventListener('click', function () {
+          _renameCurrentRun(function () { _renderConfirm(); });
+        });
         confirmPreview.style.display = '';
       } else {
         confirmPreview.style.display = 'none';
       }
     }
     _showScreen('menu_confirm_screen');
+  }
+
+  // ── Rename current run ─────────────────────────────────────────────────────
+
+  function _renameCurrentRun(onDone) {
+    var s = SaveManager.loadGameState();
+    if (!s) return;
+    var current = s.playerName || playerName || '';
+    var newName = prompt('Rename your character: ', current);
+    if (newName === '') newName = 'Nameless';
+    else if (!newName) return; // cancelled — do nothing
+    playerName = newName;
+    SaveManager.patchPlayerName(playerName);
+    onDone();
   }
 
   function _doNewGame() {
@@ -116,7 +136,8 @@ var Menu = (function () {
 
   // Builds an in-game-styled player card matching the in-game toolbar layout exactly.
   // area + sub render as one h5 line; date renders as a second dimmer h5 (matches list item style).
-  function _buildRunCardHTML(name, level, area, stats, partyLoot, sub, date, skipLoot) {
+  // renameable=true adds a tap target on the name bar (id="menu_card_rename").
+  function _buildRunCardHTML(name, level, area, stats, partyLoot, sub, date, skipLoot, renameable) {
     var html = '';
 
     // Outer wrapper — matches toolbar-card
@@ -132,9 +153,12 @@ var Menu = (function () {
     // Name bar — directly after level so the overlap works
     html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
       + 'padding-top:2px; padding-bottom:1px; background-color:#202020;">'
-      + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
+      + '<h3 ' + (renameable ? 'id="menu_card_rename" ' : '') + 'style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
       + 'margin-top:0px; margin-bottom:4px; font-size:17px; font-weight:bold; '
-      + '-webkit-text-stroke:5px #121212; paint-order:stroke fill; ">' + name + '</h3>'
+      + '-webkit-text-stroke:5px #121212; paint-order:stroke fill; position:relative; z-index:10;'
+      + (renameable ? ' cursor:pointer; user-select:none;' : '') + '">'
+      + name
+      + '</h3>'
       + '</div>';
 
     // Area + cause + date — one bordered div, two h5 lines (matches history list style)
