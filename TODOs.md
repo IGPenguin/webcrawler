@@ -1,12 +1,12 @@
 ## Action bar situations:
 
-New cases:
+New action - result cases:
 - fail to pray "altar" = angered the spirits, receive inverted bonus (malus)
 - grab "heavy" should be possible, but very very hard, on fail enrage enemy (+atk)
-- fail to walk away from toxic/spiky = get hurt (same as grab) "accidentally fallen onto that" 
+- fail to walk away from toxic/spiky = get hurt (same as grab) "Fallen right onto it, inconvenient" 
 - fail to endure curse should give the curse effect (if negative)
   - chance to endure should be based on how high is the player stat that the curse affects
-- fail when ditching item, threw it unnecessarily far -1 sta
+- fail when ditching an item, threw it unnecessarily far -1 sta
 - ...?
 
 Low Prio:

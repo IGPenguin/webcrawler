@@ -254,7 +254,7 @@ function generateRandomItem(item=""){
   return randomItem;
 }
 
-function drachmaeBuy(price=1,item=""){
+function drachmaeBuy(price=1,item="",skillSuccess=null){
   var availableCoins=(savedCoins-spentCoins)
 
   if (availableCoins>=price) {
@@ -275,7 +275,7 @@ function drachmaeBuy(price=1,item=""){
       nextEncounter();
       pushEncounter(drachmaShop);
     } else if (item=="Gamble")  {
-      if (procAbilityChance("",50+playerLck)){
+      if (skillSuccess === true){
         displayPlayerGainedEffect();
         displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")

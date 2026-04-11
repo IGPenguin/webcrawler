@@ -97,9 +97,9 @@ var Menu = (function () {
   }
 
   function _doNewGame() {
-    renewPlayer();
+    savedCoins = parseInt(localStorage.getItem('coins'));
+    renewPlayer(); // sets spentCoins=0, availableCoins=savedCoins
     SaveManager.clearSave();
-    //savedCoins = NaN; // NaN causes neither returning-player branch in processStoryData
     startGame(false);
   }
 

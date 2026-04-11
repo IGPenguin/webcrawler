@@ -35,6 +35,12 @@ function renewPlayer(){ //Default values
   seenLoot = [];
   adventureLog = actionLog;
   spentCoins=0;
+  availableCoins=savedCoins;
+
+  console.log("saved:"+savedCoins)
+  console.log("spent:"+spentCoins)
+  console.log("available:"+availableCoins)
+  
   initRunLog();
 }
 
@@ -71,7 +77,7 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
 
   if (procAbilityChance("🎓",100)) gainedXP=parseInt(gainedXP*1.25);
 
-  if ((playerXP+gainedXP)>=playerXPThreshold) logAction(enemyEmoji+" ▸ 🎉 "+"<text style=color:"+colorGold+";>"+"You are ready to <b>level up!</b></text>")
+  if (playerXP>=playerXPThreshold) logAction(enemyEmoji+" ▸ 🎉 "+"<text style=color:"+colorGold+";>"+"You are ready to <b>level up!</b></text>")
 
   return parseInt(gainedXP);
 }

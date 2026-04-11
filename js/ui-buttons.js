@@ -158,9 +158,10 @@ function adjustEncounterButtons(){
     case "Fishing":
       document.getElementById('button_roll').innerHTML="👣 Walk";
       if (areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
-      setButton('button_grab',"🎣 Fish",colorDarkGrey);
+      setButton('button_grab',"🎣 Fish",colorWhite);
       var bait=checkPlayerHasItem(validBaits);
       if (bait!="" && playerLootString.includes(bait)) setButton('button_grab',"🎣 Fish",colorYellow);
+      if (playerSta<1) setButton('button_grab',"🎣 Fish",colorDarkGrey);
       break;
 
     case "Small":
@@ -387,6 +388,11 @@ function registerClickListenersTechnical(){
 
   document.getElementById('id_player_level').addEventListener(eventType, ()=>{
     var newName=renameCharacter();
+    try {
+      var nameNumber=newName.match(/\d+/)[0];
+    } catch (error){
+      //console.log("try adding number");
+    }
     var cheatAmount=3;
 
     if (newName.includes("Cheater")){
@@ -401,21 +407,21 @@ function registerClickListenersTechnical(){
       playerHp=playerHpMax;
       playerSta=playerStaMax;
       playerMgk=playerMgkMax;
-      logCheatUse(newName);
+      logCheatUse(newName+" ➔ Stats");
       return
     }
 
     if (newName.includes("Mucho Dinero")){
       savedCoins=10;
       localStorage.setItem('coins', savedCoins);
-      logCheatUse(newName);
+      logCheatUse(newName+": +10 🪙");
       return
     }
 
     if (newName.includes("Poco Dinero")){
       savedCoins=3;
       localStorage.setItem('coins', savedCoins);
-      logCheatUse(newName);
+      logCheatUse(newName+": +3 🪙");
       return
     }
 
@@ -425,12 +431,22 @@ function registerClickListenersTechnical(){
       logCheatUse(newName);
       return
     }
+
+    if (newName.includes("Bay Goblin")){
+      var extraBaits=[]
+      extraBaits+=chooseFrom(validBaits);
+      extraBaits+=chooseFrom(validBaits)
+      extraBaits+=chooseFrom(validBaits);
+      playerLootString+=extraBaits;
+      logCheatUse(newName+": "+extraBaits.toString());
+      return
+    }
     logAction("✏️ ▸ ✨ Renamed yourself: <b>"+newName+"</b>");
     redraw();
   });
 }
 
 function logCheatUse(message){
-  logAction("✏️ ▸ ⚠️ You used a cheat! <b>"+message+"</b>");
+  logAction("✏️ ▸ ⚠️ <b>You used a cheat - "+message+"</b>");
   redraw();
 }

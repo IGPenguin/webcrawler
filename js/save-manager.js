@@ -187,14 +187,14 @@ var SaveManager = (function () {
 
   // ── Meta-save (coins) ──────────────────────────────────────────────────────
 
-  // Wipes coins, fishing loot, and active run — triggers fresh tutorial on next start
+  // Wipes active run and fishing loot — coins are intentionally preserved
   function clearSave() {
-    localStorage.removeItem('coins');
     localStorage.removeItem('seenLoot');
     clearGameState();
   }
 
   function clearAll() {
+    localStorage.removeItem('coins'); // full wipe only
     clearSave();
     localStorage.removeItem(HISTORY_KEY);
   }

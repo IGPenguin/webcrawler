@@ -480,7 +480,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Gamble");
+          drachmaeBuy(1,"Gamble",_skillOK);
           break;
         }
 
@@ -1415,7 +1415,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
             if (_skillOK === false) {
-              logPlayerAction(actionString, "Slipped trough to the ground.");
+              logPlayerAction(actionString, "Oops, slammed it to the ground.");
               displayEnemyCannotEffect();
               isFishing=false;
               nextEncounter();
@@ -1428,22 +1428,27 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Fishing":
+            if (playerSta > 0) playerSta--;
             var bait=checkPlayerHasItem(validBaits);
-            if (bait!="" && playerUseItem(bait,"Fished out something using "+bait+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold),"Missing a viable fishing bait.")){
+            if (_skillOK === false) {
+              displayPlayerCannotEffect();
+              logPlayerAction(actionString, bait !== "" ? "The fish slipped off the hook -1 🟢" : "Nothing bit the hook -1 🟢");
+              break;
+            }
+            if (bait !== "") {
+              playerUseItem(bait,"Fished out something using "+bait+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold),"");
               playerGainXP(1,10*playerLevel,"");
-
               if (procAbilityChance("🧵",33)) {
                 logAction("🧵 ▸ "+bait+" Luckily the bait remained hooked.");
                 displayPlayerEffect("🧵");
                 playerLootString+=bait;
               }
-
-              displayEnemyEffect("🪝");
-              getRandomFish();
             } else {
-              displayPlayerCannotEffect();
-              logPlayerAction(actionString,"Missing a viable fishing bait.")
+              playerGainXP(1,10*playerLevel,"");
+              logPlayerAction(actionString,"Caught something with bare hook"+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold));
             }
+            displayEnemyEffect("🪝");
+            getRandomFish();
             break;
 
           case "Demon":
@@ -1774,7 +1779,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Small":
-            logPlayerAction(actionString,"Moved too far away from you.");
+            logPlayerAction(actionString,"Wandered too far away from you.");
             nextEncounter();
             break;
 

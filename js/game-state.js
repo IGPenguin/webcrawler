@@ -2,13 +2,7 @@
 var runLog = [];
 var runLogStart = "";
 
-//Savedata
-var savedCoins = parseInt(localStorage.getItem('coins'));
-if (!isNaN(savedCoins)) {
-  // savedCoins is valid, nothing to do
-} else {
-  localStorage.setItem('coins', 0);
-}
+var savedCoins = 0; // populated from localStorage in menu.js before each new game
 
 //Stats
 var adventureStartTime = getTime();
@@ -53,9 +47,9 @@ var playerCurseType = "🪬";
 var availableCoins=savedCoins;
 var spentCoins=0;
 
-var drachmaShop=["area:Wherever","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
+var drachmaShop=["area:Fading Wildlands","emoji:👤","name:Voidwatcher Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Undertaker","desc:Well met\\ what's it gonna be this time?<br>","message:Set out on another adventure!"]
+var drachmaPrize=["area:Fading Wildlands","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary reward for <b>one-time use only</b>.<br>Beware\\ gambling might be addictive.","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"]
-var drachmaPrize=["area:Wherever","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary reward for <b>one-time use only</b>.<br>Beware\\ gambling might be addictive.","message:Claimed a <b>Lucky Drachma +1 🪙</b>"]
 var gamblingLost=["area:Wherever","emoji:🥺","name:Worthless Regrets","type:Dream","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Unlucky Moment","desc:Ooops! <b>The gamble did not pay off.</b><br>Perhaps better luck next time?","message:Released a long disappointed sigh..."]
 var drachmaeBag=["area:Wherever","emoji:💰","name:Drachmae Reward","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Gambling winnings useful in the afterlife.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>"] //Unused
 var usedShopMessages=[];
@@ -168,11 +162,12 @@ var eatColor=colorWhite;
 // false = skill check failed
 var actionBarSuccess = null;
 
+// SPEED_MULT: global cursor speed multiplier — raise to make the bar harder everywhere.
+var ACTION_BAR_SPEED_MULT = 1.3;
+
 // Returns { speed (units/s), successMin, successMax } derived from current global player+enemy state.
 // speed is on a 0–100 scale — at speed 60 the cursor crosses the full bar in ~1.67 s.
 // adjustment: optional ±integer added to zoneW before clamping (positive = easier, negative = harder).
-// SPEED_MULT: global cursor speed multiplier — raise to make the bar harder everywhere.
-var ACTION_BAR_SPEED_MULT = 1.3;
 function calcActionBarConfig(button, adjustment) {
   var pAtk = Math.max(0, playerAtk  || 0);
   var pSta = Math.max(0, playerSta  || 0);
@@ -201,7 +196,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // ── Special cases ────────────────────────────────────────────────────────
   // Exhausted grab: near-impossible without stamina (items/containers/fishing unaffected)
-  if (button === 'button_grab' && pSta === 0 && !isGrabbable) {
+  if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing') {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
@@ -244,13 +239,27 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
   }
 
-  // Fishing: bait quality shifts zone width
+  // Shop: Gamble = 50% zone, very fast; all other shop actions = full success zone
+  if (types === 'Shop') {
+    if (button === 'button_block') {
+      return { speed: Math.round(180 * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
+    }
+    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  }
+
+  // Fishing: 0 STA = impossible; no bait = near-impossible; bait quality shifts zone width
   if (button === 'button_grab' && types === 'Fishing') {
+    if (pSta === 0) {
+      return { speed: Math.round(120 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    }
     var fishBait = checkPlayerHasItem(validBaits);
-    var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 0;
-    var fishMin = Math.max(3, 22 - fishBQ * 8);
-    var fishMax = Math.min(97, 70 + fishBQ * 8);
-    return { speed: Math.round(36 * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax };
+    if (fishBait === "") {
+      return { speed: Math.round(120 * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+    }
+    var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 1;
+    var fishMin = Math.max(3, 34 - fishBQ * 4);
+    var fishMax = Math.min(97, 58 + fishBQ * 4);
+    return { speed: Math.round(72 * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax };
   }
 
   // Full-green: encounter has no ATK or MGK threat — automatic success
