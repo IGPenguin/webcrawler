@@ -824,7 +824,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (playerMgk<1 && !isfreePrayEncounter()){
+          if (playerMgk<1){
             logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
             break;
@@ -929,54 +929,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            var isSacrifice = (enemyHp<0)
-
-            if (isSacrifice) {
-              var blade=checkPlayerHasItem(validBlades);
-              if (blade!=""){
-                playerLootString+=blade; //Blade is not lost
-                displayEnemyEffect("🩸");
-                playerHit(1,false,true);
-
-                if (encounterUsed){
-                  logPlayerAction(actionString,"Your sacrifice had no effect -1 💔")
-                  displayPlayerCannotEffect();
-                  break;
-                }
-
-                playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg+" -1 💔",true,false);
-                playerGainXP(1,10*playerLevel,"");
-
-                isFishing=false
-                encounterUsed=true;
-              } else {
-                logPlayerAction(actionString,"No effect, missing a viable <b>🔪 Blade</b>.")
-                displayPlayerCannotEffect();
-              }
-            } else {
-                if (encounterUsed){
-                  logPlayerAction(actionString,"Your prayer had no further effect.")
-                  displayPlayerEffect("🤲");
-                  displayPlayerCannotEffect();
-                  break;
-                }
-                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg,true,false);
-                displayPlayerEffect("✨")
-                displayPlayerGainedEffect();
-                displayEnemyCannotEffect();
-                isFishing=false
-                encounterUsed=true;
-            }
+            // Altar pray/offer is now on button_speak; button_pray acts as Heal here
+            playerHeal();
             break;
 
           default:
             var prayLogMessage="Your prayer had no visible effect."
-            if (!isfreePrayEncounter){
-              prayLogMessage.replace("."," -1 🔵");
-            } else {
-              playerHeal();
-              break;
-            }
+            playerHeal();
             logPlayerAction(actionString,prayLogMessage);
         }
         break;
@@ -1593,6 +1552,49 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         switch (enemyType){
+          case "Altar": // Speak button is rebound to Pray on Altars
+            if (playerMgk < 1) {
+              logPlayerAction(actionString, "Not enough mana, requires +1 🔵");
+              displayPlayerCannotEffect();
+              break;
+            }
+            displayPlayerEffect("🙏");
+            var isSacrifice = (enemyHp < 0);
+            if (isSacrifice) {
+              var blade = checkPlayerHasItem(validBlades);
+              if (blade != "") {
+                playerLootString += blade;
+                displayEnemyEffect("🩸");
+                playerHit(1, false, true);
+                if (encounterUsed) {
+                  logPlayerAction(actionString, "Your sacrifice had no effect -1 💔");
+                  displayPlayerCannotEffect();
+                  break;
+                }
+                playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg + " -1 💔", true, false);
+                playerGainXP(1, 10 * playerLevel, "");
+                isFishing = false;
+                encounterUsed = true;
+              } else {
+                logPlayerAction(actionString, "No effect, missing a viable <b>🔪 Blade</b>.");
+                displayPlayerCannotEffect();
+              }
+            } else {
+              if (encounterUsed) {
+                logPlayerAction(actionString, "Your prayer had no further effect.");
+                displayPlayerEffect("🤲");
+                displayPlayerCannotEffect();
+                break;
+              }
+              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
+              displayPlayerEffect("✨");
+              displayPlayerGainedEffect();
+              displayEnemyCannotEffect();
+              isFishing = false;
+              encounterUsed = true;
+            }
+            break;
+
           case "Recruit": //If you are smarter they join you
             if (enemyInt < convinceInt){
               if (_skillOK === false) {
@@ -1907,19 +1909,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 }
 
 //Encounters
-function isfreePrayEncounter(){
-  var returnValue = false;
-    switch (enemyType){
-      case "Death":
-      case "Altar":
-      case "Curse":
-        returnValue=true;
-      default:
-        //Nothing
-    }
-  return returnValue;
-}
-
 function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
   toggleUIElement(areaUIElement,1);
   animateUIElement(areaUIElement,"animate__bounce","1.2");

@@ -225,6 +225,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
+  // Altar: speak button acts as pray — redirect to pray config (LCK-based, wider zone)
+  if (button === 'button_speak' && isAltar) {
+    button = 'button_pray';
+  }
+
   // Small grab: chance based on creature STA vs player STA
   if (button === 'button_grab' && types === 'Small') {
     var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));

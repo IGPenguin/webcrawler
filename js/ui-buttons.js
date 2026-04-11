@@ -78,12 +78,13 @@ function adjustEncounterButtons(){
       break;
 
     case "Altar":
-      setButton('button_pray',"🙏 Pray",colorWhite);
-      if (!encounterUsed) setButton('button_pray',"🙏 Pray",colorYellow);
+      // Pray is rebound to button_speak on Altars; button_pray stays as ❤️‍🩹 Heal
+      setButton('button_speak', "🙏 Pray", colorWhite);
+      if (!encounterUsed) setButton('button_speak', "🙏 Pray", colorYellow);
       var blade=checkPlayerHasItem(validBlades);
       if (blade!=""&&enemyHp<0) {
-        setButton("button_pray","🩸 Offer",colorRed);
-        if (encounterUsed) setButton('button_pray',"🩸 Offer",colorDarkGrey);
+        setButton("button_speak", "🩸 Offer", colorRed);
+        if (encounterUsed) setButton('button_speak', "🩸 Offer", colorDarkGrey);
       }
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
