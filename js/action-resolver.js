@@ -2144,7 +2144,7 @@ function gameOver(silent=false){
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   AchievementManager.check('game_win');
-  var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
+  var winMessage="👤 ▸ 👑 You finished the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
   runLogAdd("run_end", {outcome: "win", area: areaName, time: adventureEndTime});
@@ -2155,7 +2155,7 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
     level: playerLevel,
     kills: playerKills,
     area: areaName,
-    causeOfDeath: '👑 Completed the adventure',
+    causeOfDeath: '👑 Finished!',
     outcome: 'win',
     actionLog: adventureLog,
     playerHpMax: playerHpMax,

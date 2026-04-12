@@ -172,7 +172,7 @@ var SaveManager = (function () {
       level:        saved.playerLevel,
       kills:        saved.playerKills,
       area:         saved.areaName,
-      causeOfDeath: '🫥 Given up trying...',
+      causeOfDeath: '❌ Given up',
       outcome:      'abandoned',
       actionLog:    saved.adventureLog,
       playerHpMax:       saved.playerHpMax,

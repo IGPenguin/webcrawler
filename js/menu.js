@@ -74,7 +74,7 @@ var Menu = (function () {
         _renameCurrentRun(function () { _renderMain(true); });
       });
     } else {
-      preview.innerHTML = _buildRunCardHTML('Damned Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifing Away', '⨯ ⨯ ⨯');
+      preview.innerHTML = _buildRunCardHTML('Damned Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifting Away', '⨯ ⨯ ⨯');
     }
     preview.style.display = '';
 
