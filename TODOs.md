@@ -4,20 +4,6 @@
 /compat when done! (and will repeat in future)
 /clear when one-time task completed
 
-logAction("🧩 ▸ 🎉 <b>New Memory:</b> (achiev-name))
-
-✅ Saved as a skill in Claude memory
-Add a new achievement in 4 steps:
-  1. Add { id, emoji, desc } to ACHIEVEMENTS in achievements.js
-  2. Add a stat counter to _defaultStats if needed
-  3. Add a case in check() that increments the stat and calls _unlock(id)
-  4. Call AchievementManager.check('trigger_name') from the right game file
-
-  - Suggest more unique/memorable ones
-    - Killed each enemy type
-    - Died by trap
-    - Died by each enemy type 
-
 ---
 
 ## High Score
@@ -133,6 +119,20 @@ add new dynamic layout with spells
   - E.g. Give mouse/lizard to cat
 - Rebalance drops vs enemy stats? (too easy if you pivkup everything)
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed
+
+## More achievements!
+
+✅ Saved as a skill in Claude memory
+Add a new achievement in 4 steps:
+  1. Add { id, emoji, desc } to ACHIEVEMENTS in achievements.js
+  2. Add a stat counter to _defaultStats if needed
+  3. Add a case in check() that increments the stat and calls _unlock(id)
+  4. Call AchievementManager.check('trigger_name') from the right game file
+
+  - Suggest more unique/memorable ones
+    - Killed each enemy type
+    - Died by trap
+    - Died by each enemy type 
 
 
 ## BIG OLD DATA PUSH
