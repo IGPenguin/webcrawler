@@ -88,8 +88,8 @@ add achievements (called "Memories") feature
 - Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
 - Fix add vertical scroll in loot/party when overflowimg
 
-- killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
-  - 🧟 John Doe (Undead)
+- Manual: killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
+  - Append zombie emoji before 🧟 John Doe (Undead)
   - undead then have 0 base attack abainst you
 
 - if stat over 5, display numeric - 4/5
@@ -116,10 +116,10 @@ add achievements (called "Memories") feature
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed
 - [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
 
-## Spells
+## New Feature: Spells
 
-New Feature: spell & scrolls
-- change curse button to generic "📓Spell"
+add new dynamic layout with spells
+- change curse button to generic "📓 Spell"
 - on click, action buttons overlay with known spells list (scrollable, max height to cover action buttons), row shows: emoji spell name: effect, cost
 - dismiss button at the end of the list
 - on click if enough mana (3) the spell cast begins (action bar)
