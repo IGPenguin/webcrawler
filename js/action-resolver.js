@@ -861,10 +861,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (enemyType!="Death" && enemyType!="Dream") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
           if (_skillOK === false && enemyType!=="Altar" && enemyType!=="Upgrade"
-              && enemyType!=="Dream" && enemyType!=="Death") {
+              && enemyType!=="Dream" && enemyType!=="Death" && enemyType!=="Curse") {
             playerMgk--;
-            logPlayerAction(actionString, "Prayer went unanswered -1 🔵");
-            displayPlayerCannotEffect();
+            logPlayerAction(actionString, "Failed to cast a healing spell -1 🔵");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
@@ -872,19 +871,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Curse": //Breaks only if mind is stronger
-            if (playerInt>=(-1*enemyInt)){
+            if (_skillOK){
               if (!encounterUsed) {
                 logPlayerAction(actionString,"Managed to keep it together +1 🧠");
                 playerInt++;
                 displayPlayerGainedEffect();
                 encounterUsed=true;
               } else {
-                logPlayerAction(actionString,"Seems like it this has no further effect.");
+                logPlayerAction(actionString,"Seems like that was it.");
                 displayPlayerCannotEffect();
                 displayPlayerEffect("");
               }
             } else {
-              logPlayerAction(actionString,"Giving your best, but no effect.");
+              playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,"Gave your best, but failed.",true,false);
+              encounterUsed=true;
               displayPlayerCannotEffect();
             }
             break;

@@ -212,7 +212,8 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Cast / Heal / Curse with no mana — impossible (bar all-red)
-  if ((button === 'button_cast' || button === 'button_pray' || button === 'button_curse') && pMgk <= 0) {
+  // button_pray is exempt on Curse type (action-resolver allows it without MGK)
+  if ((button === 'button_cast' || (button === 'button_pray' && !isCurse) || button === 'button_curse') && pMgk <= 0) {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
@@ -237,8 +238,8 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
-  // Prop walk: very wide zone — tiny stumble risk exists
-  if (button === 'button_roll' && types === 'Prop') {
+  // Prop / encounterUsed walk: very wide zone — tiny stumble risk exists
+  if (button === 'button_roll' && ( types === 'Prop'  ||  encounterUsed)) { 
     return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
@@ -252,26 +253,35 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
-  // Altar: speak button acts as pray — redirect to pray config (LCK-based, wider zone)
-  if (button === 'button_speak' && isAltar) {
-    button = 'button_pray';
-  }
-
   // Heavy grab: very very hard — tiny zone, high speed; fail enrages them
   if (button === 'button_grab' && isHeavy) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
+  // Curse submit / walk when unresolved - will hurt
+   if ((button === 'button_sleep' || (button === 'button_roll')  && types === 'Curse' && !encounterUsed)) {
+    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Curse 100% safe if already resolved
+  if (button === "button_pray" && encounterUsed) {
+    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  } 
+
   // Curse endure: zone scales with the player stat being affected by the curse
-  if (button === 'button_roll' && types === 'Curse') {
-    var resistScore = pLck;
+  if ((button === 'button_roll' || button === "button_pray") && types === 'Curse') {
+    var resistScore = 0;
     if ((enemyHp  || 0) < 0) resistScore = Math.max(resistScore, Math.max(0, playerHpMax || 0));
     if ((enemySta || 0) < 0) resistScore = Math.max(resistScore, pSta);
     if ((enemyAtk || 0) < 0) resistScore = Math.max(resistScore, pAtk);
-    if ((enemyMgk || 0) < 0) resistScore = Math.max(resistScore, pMgk);
     if ((enemyLck || 0) < 0) resistScore = Math.max(resistScore, pLck);
-    var curseW = Math.max(15, Math.min(70, 20 + resistScore * 9));
-    return { speed: Math.round(42 * ACTION_BAR_SPEED_MULT), successMin: Math.max(5, 50 - Math.round(curseW/2)), successMax: Math.min(95, 50 + Math.round(curseW/2)) };
+    if ((enemyInt || 0) < 0) resistScore = Math.max(resistScore, pInt);
+    if ((enemyMgk || 0) < 0) resistScore = Math.max(resistScore, pMgk);
+
+    // TODO make curse stats affect chance success
+    var curseW = Math.max(15, Math.min(70, 20 + resistScore * 10));
+
+    return { speed: Math.round(spdMedium * ACTION_BAR_SPEED_MULT), successMin: Math.max(5, 50 - Math.round(curseW/2)), successMax: Math.min(95, 50 + Math.round(curseW/2)) };
   }
 
   // Small grab: chance based on creature STA vs player STA

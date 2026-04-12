@@ -1,6 +1,6 @@
 ## Efficiency checks:
 
-/rename <task>
+/rename <task> - e.g. 1 Tab for Logic & 1 For UI
 /compat when done! (and will repeat in future)
 /clear when one-time task completed
 
@@ -10,7 +10,7 @@
 
 Score = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100
 - display at: dead/game end, menu char preview, session history
-- put "Best Character" (highest score) at the top of the session history
+- sort the session history by score top -> bottom
 
 ----
 
