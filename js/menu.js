@@ -3,6 +3,7 @@ var Menu = (function () {
 
   var SCREENS = [
     'menu_main_screen',
+    'menu_memories_screen',
     'menu_history_screen',
     'menu_credits_screen',
     'menu_confirm_screen'
@@ -121,6 +122,7 @@ var Menu = (function () {
   function _doNewGame() {
     savedCoins = parseInt(localStorage.getItem('coins'));
     renewPlayer(); // sets spentCoins=0, availableCoins=savedCoins
+    AchievementManager.resetSession();
     SaveManager.clearSave();
     startGame(false);
   }
@@ -319,6 +321,30 @@ var Menu = (function () {
     var clearDiv = document.createElement('div');
     clearDiv.style.clear = 'both';
     list.appendChild(clearDiv);
+
+    // Session achievements unlocked by this character
+    var achIds = session.sessionAchievements;
+    if (achIds && achIds.length > 0) {
+      var allAchs = AchievementManager.getAll();
+      var achMap = {};
+      allAchs.forEach(function (a) { achMap[a.id] = a; });
+
+      var achLabel = document.createElement('h5');
+      achLabel.style.cssText = 'text-align:left; padding-left:8px; margin:6px 3px 2px 3px; font-size:12px; opacity:0.55; letter-spacing:0.5px;';
+      achLabel.innerHTML = '🧩 Memories unlocked';
+      list.appendChild(achLabel);
+
+      var achWrap = document.createElement('div');
+      achWrap.style.cssText = 'margin:0 3px 3px 3px; background:#1a1a1a; box-shadow:0 0 0 3px #FFD940; padding:6px 8px;';
+      var achLines = achIds.map(function (id) {
+        var a = achMap[id];
+        return a ? (a.emoji + '&nbsp;' + a.desc) : id;
+      });
+      achWrap.innerHTML = '<h5 style="margin:0; font-size:13px; font-style:normal; line-height:190%; color:#FFD940;">'
+        + achLines.join('<br>')
+        + '</h5>';
+      list.appendChild(achWrap);
+    }
   }
 
   // ── History share / review ─────────────────────────────────────────────────
@@ -424,10 +450,54 @@ var Menu = (function () {
     _showScreen('menu_history_screen');
   }
 
-  // ── Challenges ────────────────────────────────────────────────────────────────
+  // ── Memories ──────────────────────────────────────────────────────────────────
 
-  function _renderChallenges() {
-    // To be done
+  function _renderMemoriesList() {
+    var list = document.getElementById('menu_memories_list');
+    var achievements = AchievementManager.getAll();
+    var unlockedCount = 0;
+
+    list.innerHTML = '';
+
+    achievements.forEach(function (a) {
+      var unlocked = AchievementManager.isUnlocked(a.id);
+      if (unlocked) unlockedCount++;
+    });
+
+    // Progress header
+    var header = document.createElement('div');
+    header.style.cssText = 'padding:4px 8px 6px 8px; text-align:center;';
+    header.innerHTML = '<h5 style="margin:0; font-size:12px; opacity:0.5; letter-spacing:0.8px;">'
+      + unlockedCount + ' / ' + achievements.length + ' Unlocked'
+      + '</h5>';
+    list.appendChild(header);
+
+    achievements.forEach(function (a) {
+      var unlocked = AchievementManager.isUnlocked(a.id);
+      var entry = document.createElement('div');
+      entry.className = 'menu-history-entry';
+
+      if (unlocked) {
+        entry.innerHTML =
+          '<div style="display:flex; align-items:center; gap:10px; padding:6px 8px; background-color:rgb(38,38,38);">'
+            + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:600; color:#FFD940; text-align:left;">' + a.desc + '</h5>'
+          + '</div>';
+      } else {
+        entry.innerHTML =
+          '<div style="display:flex; align-items:center; gap:10px; padding:6px 8px; background-color:rgb(22,22,22); opacity:0.38;">'
+            + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; color:#666; text-align:left;">. . . . . . . . . . . . . . . . . ?</h5>'
+          + '</div>';
+      }
+      list.appendChild(entry);
+    });
+  }
+
+  function _renderChallenges(skipFade) {
+    _renderMemoriesList();
+    if (skipFade) { _doShowScreen('menu_memories_screen'); }
+    else          { _showScreen('menu_memories_screen'); }
   }
 
   // ── Credits ────────────────────────────────────────────────────────────────
@@ -455,13 +525,15 @@ var Menu = (function () {
     document.getElementById('menu_confirm_cancel').addEventListener('click', function () { _renderMain(); });
 
     document.getElementById('menu_continue').addEventListener('click', function () {
+      AchievementManager.resetSession();
       startGame(true);
     });
 
     document.getElementById('menu_history_share').addEventListener('click', _shareSession);
     document.getElementById('menu_history_review').addEventListener('click', _reviewSession);
 
-    document.getElementById('menu_challenges').addEventListener('click', _renderChallenges);
+    document.getElementById('menu_memories_back').addEventListener('click', function () { _renderMain(); });
+    document.getElementById('menu_challenges').addEventListener('click', function () { _renderChallenges(); });
     document.getElementById('menu_history').addEventListener('click', _renderHistory);
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
     document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
@@ -480,5 +552,12 @@ var Menu = (function () {
     show();
   }
 
-  return { init: init, show: show, hide: hide };
+  function showMemories() {
+    document.getElementById('id_menu').style.display = 'flex';
+    document.getElementById('id_game').style.display = 'none';
+    _renderChallenges(true);
+    _animateLogo();
+  }
+
+  return { init: init, show: show, hide: hide, showMemories: showMemories };
 })();

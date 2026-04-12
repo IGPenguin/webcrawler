@@ -4,41 +4,14 @@
 /compat when done! (and will repeat in future)
 /clear when one-time task completed
 
----
+logAction("🧩 ▸ 🎉 <b>New Memory:</b> (achiev-name))
 
-## The Next Big Thing!
-
-add achievements (called "Memories") feature
-- display memories in a new screen (navigate from Main Menu using "Memories" button), clone Graveyard screen design, the list view holds all existing achievements (locked/unlocked state), if locked - display just emoji, description put ...?
-- display memories also in session history detail as a scroll list below log (if any memories were unlocked by that character)
-- add "Memory Unlocked" toast to in game (style to fit the rest of ui - card with content inside, card border should be golden color, with a flash effect on unlock - similar to success action bar flash)
-- add achievement trigger logic check call to action resolver, remember unlocked achievs locally (match to character)
-- achievement object data: emoji, title (optional), description, trigger condition
-- first batch of simple achievements:
-  - 💀 Died for the first time
-  - ✨ Reincarnated for the first time
-  - 🪙 Picked up your first Drachmae
-  - 🪙 Obtained 5 Drachmae
-  - 🍀 Won a gamble for the first time
-  - 🥺 Lost gamble for the first time
-  - 🎰 Won gamble 10x
-  - 🃏 Accepted destiny for the first time
-  - ♠️ Accepted destiny 10x
-  - 💰 Bought an item for the first time
-  - 💎 Bought an artifact for the first time
-  - ⭐️ Bought level up for the first time
-  - 💸 Spent 10 drachmae
-  - 👑 Finished the game for the first time
-  - 💔 Killed your first enemy
-  - 🔪 Killed 50 enemies
-  - 🎉 Killed your first boss
-  - 🎉 Killed 10 bosses
-  - 🎣 Caught something (with bait) for the fist time
-  - 🎣 Caught something 100x
-  - 🪝 Caught something without bait for the fist time
-  - 🪝 Caught something without bait 100x
-  - 👀 Discovered area - for all areas from story.csv, (except Depths of Slumber, Fading Widlands, Auxiliary Space)
-  - 🌿 Touched grass (grab prop with "Grass" in name)
+  ✅ Saved as a skill in Claude memory
+  Add a new achievement in 4 steps:
+  1. Add { id, emoji, desc } to ACHIEVEMENTS in achievements.js
+  2. Add a stat counter to _defaultStats if needed
+  3. Add a case in check() that increments the stat and calls _unlock(id)
+  4. Call AchievementManager.check('trigger_name') from the right game file
 
   - Suggest more unique/memorable ones
     - Killed each enemy type

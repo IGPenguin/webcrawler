@@ -95,6 +95,8 @@ function enemyKilled(){
 
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
   playerKills++;
+  AchievementManager.check('kill');
+  if (enemyBossType.includes('Boss')) AchievementManager.check('boss_kill');
 
   isFishing=false;
   animateFlipNextEncounter();

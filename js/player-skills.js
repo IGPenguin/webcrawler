@@ -532,6 +532,7 @@ function playerWaive(){
 function playerReincarnate(){
   //SaveManager.clearGameState(); // treat revive as a new run — wipe the death-screen snapshot
   playerNumber++; //Tracks revives of the character
+  AchievementManager.check('reincarnate');
   displayPlayerEffect("✨");
   
   //encounterIndex=3; //Skip tutorial

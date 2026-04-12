@@ -324,8 +324,9 @@ var callback_pray   = resolveAction('button_pray');
 var callback_curse  = resolveAction('button_curse');
 
 // Wrapped pointerdown handlers (stored for removal)
-var _abHandlers  = {};
-var _menuHandler = null;
+var _abHandlers      = {};
+var _menuHandler     = null;
+var _memoriesHandler = null;
 
 var _ACTION_BUTTONS = [
   ['button_attack', function() { return callback_attack; }],
@@ -357,6 +358,8 @@ function registerClickListeners(delay=0){
 
     _menuHandler = function() { menuFade(function() { Menu.show(); }); };
     document.getElementById('button_menu').addEventListener('click', _menuHandler);
+    _memoriesHandler = function() { menuFade(function() { Menu.showMemories(); }); };
+    document.getElementById('button_challenges').addEventListener('click', _memoriesHandler);
   }, delay);
 }
 
@@ -371,6 +374,10 @@ function removeClickListeners(){
   if (_menuHandler) {
     document.getElementById('button_menu').removeEventListener('click', _menuHandler);
     _menuHandler = null;
+  }
+  if (_memoriesHandler) {
+    document.getElementById('button_challenges').removeEventListener('click', _memoriesHandler);
+    _memoriesHandler = null;
   }
   ActionBar.hideActionBar();
 }

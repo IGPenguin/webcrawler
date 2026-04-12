@@ -22,6 +22,7 @@ layout: default
 <script src="js/enemy-skills.js"></script>
 <script src="js/player-skills.js"></script>
 <script src="js/save-manager.js"></script>
+<script src="js/achievements.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/data.js"></script>
 <script src="js/encounter.js"></script>
@@ -57,7 +58,7 @@ layout: default
       <button class="menu-btn" id="menu_continue">⚔️ Continue</button>
       <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ New Game</button>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_challenges" style="color:grey;">🧩 Memories</button>
+      <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">💀 Graveyard</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
@@ -79,6 +80,31 @@ layout: default
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✨ New Game</button>
       <button class="menu-btn" id="menu_confirm_cancel">👈 Cancel</button>
+    </div>
+  </div>
+
+  <!-- Memories screen -->
+  <div id="menu_memories_screen" style="display:none;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
+      <h2 style="font-size:20px;
+            letter-spacing:1.5px;
+            -webkit-text-stroke: 5px black;
+            paint-order: stroke fill;
+            margin:8px 0 8px 0;
+            text-align:center;">🧩 Memories</h2>
+      <div style="flex:1;
+                  min-height:0;
+                  max-height:405px;
+                  overflow-x:hidden;
+                  overflow-y:auto;
+                  scrollbar-width:none;
+                  padding-top:4px;
+                  margin-top:-6px;
+                  padding-bottom:4px;">
+        <div id="menu_memories_list"></div>
+      </div>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_memories_back">👈 Back</button>
     </div>
   </div>
 

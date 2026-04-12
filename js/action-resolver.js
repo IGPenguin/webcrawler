@@ -1408,6 +1408,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 if (savedCoins==0) curtainFadeInAndOut("<p style=\"color:"+colorLightShadeBlue+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:42px;\">Drachma claimed!</p><p style=\"font-size:20px;\""+decorateStatusText("","Returns on death to shape your fate.",colorWhite),6);
                 savedCoins+=1;
                 localStorage.setItem('coins', parseInt(savedCoins));
+                AchievementManager.check('coin_pickup', savedCoins);
               }
               displayPlayerEffect("🪙");
             }
@@ -1418,6 +1419,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect("🪙");
               localStorage.setItem('coins', parseInt(savedCoins));
               enemyMsg="Claimed <b>Ethereal Drachmae +"+coinNumber+" 🪙</b>";
+              AchievementManager.check('coin_pickup', savedCoins);
             }
 
             if (enemyEmoji=="🃏"){
@@ -1480,6 +1482,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             if (bait !== "") {
+              AchievementManager.check('fish_bait');
               playerUseItem(bait,"Fished out something using "+bait+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold),"");
               playerGainXP(1,10*playerLevel,"");
               if (procAbilityChance("🧵",33)) {
@@ -1488,6 +1491,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerLootString+=bait;
               }
             } else {
+              AchievementManager.check('fish_no_bait');
               playerGainXP(1,10*playerLevel,"");
               logPlayerAction(actionString,"Caught something with bare hook"+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold));
             }
@@ -1579,6 +1583,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
+            if (enemyType === "Prop" && enemyName && enemyName.includes("Grass")) {
+              AchievementManager.check('touch_grass');
+            }
             logPlayerAction(actionString,"Touched it, nothing happened.");
             displayEnemyCannotEffect();
             displayEnemyEffect("✋");
@@ -2055,6 +2062,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
       setBackground(areaName);
       if (!areaName.includes("Fading") && !areaName.includes("Eternal") && !areaName.includes("Depths") && !adventureLog.includes("Arrived to area: <b>"+areaName+"</b>")) {
         logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+        AchievementManager.check('discover_area', areaName);
       }
       animateUIElement(cardUIElement,"animate__fadeIn","1.2");
       redraw();
@@ -2066,7 +2074,10 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
 
   // Boss → new area: boss curtain handles bg swap via setBackground(areaName) while black
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){
-    if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+    if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) {
+      logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+      AchievementManager.check('discover_area', areaName);
+    }
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   redraw();
@@ -2089,6 +2100,7 @@ function animateFlipNextEncounter(){
 }
 
 function gameOver(silent=false){
+  AchievementManager.check('death');
   //Random death messages
   var deathMsg=["Your life has sliped into silence.","The last breath of life has faded.","You have ran out of blood.","Your adventure has ended.","Your life has ended, shadows remain.","Your life has withered away.","Your fate has been sealed forever.","The end has come\ darkness awaits.","Silence has taken the hold.","Your journey has ended here."]
   deathMsg=chooseFrom(deathMsg)
@@ -2115,7 +2127,8 @@ function gameOver(silent=false){
     playerAtk: playerAtk,
     playerMgkMax: playerMgkMax,
     playerLootString: String(playerLootString),
-    playerPartyString: String(playerPartyString)
+    playerPartyString: String(playerPartyString),
+    sessionAchievements: AchievementManager.getSessionUnlocked()
   });
   lastEncounterIndex = encounterIndex; //Save death position for reincarnation
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
@@ -2130,6 +2143,7 @@ function gameOver(silent=false){
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
+  AchievementManager.check('game_win');
   var winMessage="👤 ▸ 👑 Unbelievable, completed the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
@@ -2149,7 +2163,8 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
     playerAtk: playerAtk,
     playerMgkMax: playerMgkMax,
     playerLootString: String(playerLootString),
-    playerPartyString: String(playerPartyString)
+    playerPartyString: String(playerPartyString),
+    sessionAchievements: AchievementManager.getSessionUnlocked()
   });
 
   // Run is over — clear the active run so Continue is not offered after a win

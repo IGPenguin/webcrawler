@@ -180,7 +180,8 @@ var SaveManager = (function () {
       playerAtk:         saved.playerAtk,
       playerMgkMax:      saved.playerMgkMax,
       playerLootString:  String(saved.playerLootString  || ''),
-      playerPartyString: String(saved.playerPartyString || '')
+      playerPartyString: String(saved.playerPartyString || ''),
+      sessionAchievements: (typeof AchievementManager !== 'undefined' ? AchievementManager.getSessionUnlocked() : [])
     });
     clearGameState();
   }

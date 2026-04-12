@@ -260,11 +260,15 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
   if (availableCoins>=price) {
     playerShopped=true;
     spentCoins+=price;
+    AchievementManager.check('spend_coins', price);
     //DO NOT localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
 
     if ((item=="Item") || (item=="Artifact") || (item=="Tarot")) {
+      if (item=="Item")     AchievementManager.check('buy_item');
+      else if (item=="Artifact") AchievementManager.check('buy_artifact');
+      else if (item=="Tarot")    AchievementManager.check('destiny');
       displayPlayerGainedEffect();
       logPlayerAction(actionString,"Splendid choice, this ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
@@ -276,6 +280,7 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       pushEncounter(drachmaShop);
     } else if (item=="Gamble")  {
       if (skillSuccess === true){
+        AchievementManager.check('gamble_win');
         displayPlayerGainedEffect();
         displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
@@ -283,6 +288,7 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
         pushEncounter(drachmaPrize);
         nextEncounter();
       } else {
+        AchievementManager.check('gamble_lose');
         logPlayerAction(actionString,"<text style=color:"+colorRed+";>Ooops... you lost the gamble!</text>")
         gamblingLost[0]="area:"+areaName;
         displayPlayerCannotEffect();
@@ -293,6 +299,7 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       pushEncounter(drachmaShop);
       return;
     } else {
+      AchievementManager.check('buy_level');
       displayPlayerGainedEffect();
       logPlayerAction(actionString,"Sure, grow stronger as you need");
       playerXP+=playerXPThreshold;
