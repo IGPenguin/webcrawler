@@ -195,6 +195,13 @@ function calcActionBarConfig(button, adjustment) {
   var isAltar     = types.includes('Altar');
   var isCurse     = types === 'Curse';
 
+  // Prompt speed presets
+  var spdInsane = 120;
+  var spdHard = 90;
+  var spdMedium = 60;
+  var spdEasy = 30;
+
+
   // ── Special cases ────────────────────────────────────────────────────────
 
   // Sleep when already rested — impossible (bar all-red)
@@ -218,8 +225,9 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Resurrection: very narrow, fast zone — last chance before permanent death
+  // TODO spd-(playerKarma * ???)
   if (button === 'button_attack' && types.includes('Death')) {
-    return { speed: Math.round(95 * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
   }
 
    // Review on death: slow & green
@@ -244,7 +252,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // Near-impossible attack/block/dodge at 0 stamina — tiny zone, always possible
   if (pSta === 0 && enemyType!="Item" && enemyType!="Shop" && (button === 'button_attack' || button === 'button_block' || button === 'button_roll')) {
-    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
   // Altar: speak button acts as pray — redirect to pray config (LCK-based, wider zone)
@@ -254,7 +262,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // Heavy grab: very very hard — tiny zone, high speed; fail enrages them
   if (button === 'button_grab' && isHeavy) {
-    return { speed: Math.round(130 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
   // Curse endure: zone scales with the player stat being affected by the curse
@@ -294,11 +302,11 @@ function calcActionBarConfig(button, adjustment) {
   // Fishing: 0 STA = impossible; no bait = near-impossible; bait quality shifts zone width
   if (button === 'button_grab' && types === 'Fishing') {
     if (pSta === 0) {
-      return { speed: Math.round(120 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+      return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
     }
     var fishBait = checkPlayerHasItem(validBaits);
     if (fishBait === "") {
-      return { speed: Math.round(120 * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+      return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
     }
     var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 1;
     var fishMin = Math.max(3, 34 - fishBQ * 4);
@@ -348,7 +356,7 @@ function calcActionBarConfig(button, adjustment) {
   // Uses base enemyAtk (not eAtk) to ignore anger bonuses from prior actions this encounter.
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
   if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
-    return { speed: Math.round(120 * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 
   // Full-green: encounter has no ATK or MGK threat — automatic success
