@@ -163,9 +163,6 @@ var eatColor=colorWhite;
 // false = skill check failed
 var actionBarSuccess = null;
 
-// SPEED_MULT: global cursor speed multiplier — raise to make the bar harder everywhere.
-var ACTION_BAR_SPEED_MULT = 1.3;
-
 // Returns { speed (units/s), successMin, successMax } derived from current global player+enemy state.
 // speed is on a 0–100 scale — at speed 60 the cursor crosses the full bar in ~1.67 s.
 // adjustment: optional ±integer added to zoneW before clamping (positive = easier, negative = harder).
@@ -195,12 +192,12 @@ function calcActionBarConfig(button, adjustment) {
   var isAltar     = types.includes('Altar');
   var isCurse     = types === 'Curse';
 
-  // Prompt speed presets
+  // Cursor speed presets
+  var ACTION_BAR_SPEED_MULT = 1.3; // Global multiplier — raise to make the bar harder everywhere.
   var spdInsane = 120;
   var spdHard = 90;
   var spdMedium = 60;
   var spdEasy = 30;
-
 
   // ── Special cases ────────────────────────────────────────────────────────
 
