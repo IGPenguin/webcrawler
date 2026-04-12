@@ -1583,7 +1583,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (enemyType === "Prop" && enemyName && enemyName.includes("Grass")) {
+            if (enemyType === "Prop" && (enemyEmoji.includes("🌿"))) {
               AchievementManager.check('touch_grass');
             }
             logPlayerAction(actionString,"Touched it, nothing happened.");

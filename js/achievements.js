@@ -29,7 +29,7 @@ var AchievementManager = (function () {
     { id: 'discover_fairyland',  emoji: '👀', desc: 'Discovered Twisted Fairyland!' },
     { id: 'discover_river',      emoji: '👀', desc: 'Discovered River of Sorrows!' },
     { id: 'discover_necropolis', emoji: '👀', desc: 'Discovered Shrouded Necropolis!' },
-    { id: 'touch_grass',         emoji: '🌿', desc: 'You did it... you touched grass!' }
+    { id: 'touch_grass',         emoji: '🌿', desc: 'You you touched the grass!' }
   ];
 
   var _defaultStats = {
@@ -139,6 +139,12 @@ var AchievementManager = (function () {
         toast.style.boxShadow = '0 0 0 3px #FFD940';
       }, 280);
     }, 150);
+
+    // Add log
+    setTimeout(function () {
+      logAction("🧩 ▸ 🎉 <b>New Memory: </b>"+achievement.desc.substring(0,24)+"...");
+      redraw();
+    },1) //Hehehehe, hack to log after logging action done
 
     // Auto-dismiss after 4s, fade out over 2s
     setTimeout(function() {
