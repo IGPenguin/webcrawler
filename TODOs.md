@@ -6,8 +6,8 @@
 
 logAction("🧩 ▸ 🎉 <b>New Memory:</b> (achiev-name))
 
-  ✅ Saved as a skill in Claude memory
-  Add a new achievement in 4 steps:
+✅ Saved as a skill in Claude memory
+Add a new achievement in 4 steps:
   1. Add { id, emoji, desc } to ACHIEVEMENTS in achievements.js
   2. Add a stat counter to _defaultStats if needed
   3. Add a case in check() that increments the stat and calls _unlock(id)

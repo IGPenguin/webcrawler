@@ -29,7 +29,7 @@ var AchievementManager = (function () {
     { id: 'discover_fairyland',  emoji: '👀', desc: 'Discovered Twisted Fairyland!' },
     { id: 'discover_river',      emoji: '👀', desc: 'Discovered River of Sorrows!' },
     { id: 'discover_necropolis', emoji: '👀', desc: 'Discovered Shrouded Necropolis!' },
-    { id: 'touch_grass',         emoji: '🌿', desc: 'You did it... You touched grass!' }
+    { id: 'touch_grass',         emoji: '🌿', desc: 'You did it... you touched grass!' }
   ];
 
   var _defaultStats = {
@@ -90,38 +90,31 @@ var AchievementManager = (function () {
     var old = document.getElementById('achievement_toast');
     if (old) old.remove();
 
-    // Position over the log box — use the wrapping div (parent of id_log)
-    var logEl  = document.getElementById('id_log');
-    var logBox = logEl ? logEl.parentElement : null;
-    var rect   = logBox ? logBox.getBoundingClientRect() : null;
+    // Position over id_player_info
+    var infoEl = document.getElementById('id_log');
+    var rect   = infoEl ? infoEl.getBoundingClientRect() : null;
 
     var toast = document.createElement('div');
     toast.id = 'achievement_toast';
 
-    // Content: label + achievement line, styled to match game log/h4 typography
     toast.innerHTML =
-      '<div style="font-size:10px; color:#FFD940; letter-spacing:1.2px; font-weight:700;' +
-        ' -webkit-text-stroke:2px #121212; paint-order:stroke fill; margin-bottom:5px;">🧩 Memory Unlocked</div>' +
-      '<div style="font-size:14.6px; line-height:165%; color:#fff;' +
-        ' -webkit-text-stroke:3px #121212; paint-order:stroke fill;">' +
-        achievement.emoji + '&nbsp;' + achievement.desc +
-      '</div>';
+      '<div style="display:flex; align-items:center; gap:10px; padding:7px 0px 8px 12px; margin-bottom:-8px;">'
+        + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + achievement.emoji + '</span>'
+        + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc,colorGold + '</h5>'
+      + '</div>';
 
     if (rect && rect.width > 0) {
-      // Overlay the log box exactly
       toast.style.cssText =
         'position:fixed;' +
-        'top:'    + Math.round(rect.top)    + 'px;' +
-        'left:'   + Math.round(rect.left)   + 'px;' +
-        'width:'  + Math.round(rect.width)  + 'px;' +
-        'height:' + Math.round(rect.height) + 'px;' +
+        'top:'    + Math.round(rect.top-178)    + 'px;' +
+        'left:'   + Math.round(rect.left-37)   + 'px;' +
+        'width:'  + Math.round(rect.width-74)  + 'px;' +
+        'height:' + Math.round(rect.height-54) + 'px;' +
         'z-index:9999; pointer-events:none; box-sizing:border-box;' +
-        'background:#272727; padding:4px 8px;' +
-        'display:flex; flex-direction:column; justify-content:center;' +
+        'background:#272727; overflow:hidden;' +
         'box-shadow:0 0 0 3px #FFD940;' +
         'opacity:0; transition:opacity 0.3s;';
-    } else {
-      // Fallback if log element not found
+    } else { // TODO probably an unused block
       toast.style.cssText =
         'position:fixed; bottom:88px; left:50%; transform:translateX(-50%);' +
         'z-index:9999; pointer-events:none; text-align:center;' +
@@ -147,16 +140,16 @@ var AchievementManager = (function () {
       }, 280);
     }, 150);
 
-    // Auto-dismiss after 4 s, fade out over 0.5 s
+    // Auto-dismiss after 4s, fade out over 2s
     setTimeout(function() {
       if (document.getElementById('achievement_toast') !== toast) return;
-      toast.style.transition = 'opacity 0.5s';
+      toast.style.transition = 'opacity 2s';
       toast.style.opacity = '0';
       setTimeout(function() {
         if (document.getElementById('achievement_toast') === toast) toast.remove();
         _toastActive = false;
         _showNextToast();
-      }, 520);
+      }, 2300); // Show next toast 300ms after first
     }, 4000);
   }
 

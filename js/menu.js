@@ -467,8 +467,8 @@ var Menu = (function () {
     // Progress header
     var header = document.createElement('div');
     header.style.cssText = 'padding:4px 8px 6px 8px; text-align:center;';
-    header.innerHTML = '<h5 style="margin:0; font-size:12px; opacity:0.5; letter-spacing:0.8px;">'
-      + unlockedCount + ' / ' + achievements.length + ' Unlocked'
+    header.innerHTML = '<h5 style="margin:0; font-size:12px; opacity:1; letter-spacing:0.8px;">'
+      + 'Unlocked: '+ unlockedCount + ' / ' + achievements.length
       + '</h5>';
     list.appendChild(header);
 
@@ -481,13 +481,13 @@ var Menu = (function () {
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px;">'
             + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left;">' + decorateStatusText("",a.desc,colorGold) + '</h5>'
+            + '<h5 style="margin:0; font-size:16px; font-style:normal; font-weight:500; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc,colorGold + '</h5>'
           + '</div>';
       } else {
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
             + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; color:#666; text-align:left;"> ' + decorateStatusText("","Details  not discovered yet...",colorDarkGrey)+'</h5>'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:500; color:#666; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + "Details  not discovered yet..."+'</h5>'
           + '</div>';
       }
       list.appendChild(entry);
