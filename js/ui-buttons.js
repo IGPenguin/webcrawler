@@ -254,7 +254,7 @@ function adjustEncounterButtons(){
       });
       setButton('button_attack',"✨ Revive",colorGold);
       setButton('button_roll',"❌ Give up",colorRed);
-      setButton('button_block',"💌 Review",colorPink);
+      setButton('button_block',"💌 Rate",colorPink);
       break;
 
     case "Shop":

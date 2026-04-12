@@ -259,7 +259,7 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Curse submit / walk when unresolved - will hurt
-   if ((button === 'button_sleep' || (button === 'button_roll')  && types === 'Curse' && !encounterUsed)) {
+   if ((button === 'button_sleep' || button === 'button_roll') && ( types === 'Curse' && !encounterUsed)) {
     return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
