@@ -38,10 +38,6 @@ function renewPlayer(){ //Default values
   spentCoins=0;
   availableCoins=savedCoins;
 
-  console.log("saved:"+savedCoins)
-  console.log("spent:"+spentCoins)
-  console.log("available:"+availableCoins)
-  
   initRunLog();
 }
 

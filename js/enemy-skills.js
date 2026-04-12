@@ -134,7 +134,7 @@ function enemyDisengage(){
 }
 
 function enemyGrabbedIntoLoot(){
-  playerGainXP(1.25,0,"Grabbed it into your bag");
+  playerGainXP(1.25,0,"Grabbed it into your bag -1 🟢");
   playerLootString+=enemyEmoji;
   //No karma change
 
