@@ -47,6 +47,14 @@ add achievements (called "Memories") feature
 
 ---
 
+## High Score
+
+Score = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100
+- display at: dead/game end, menu char preview, session history
+- put "Best Character" (highest score) at the top of the session history
+
+----
+
 ## Action bar enhancement: critical success/fail
 
 - add critical success and critical failure (very) slim intervals to action bar (not present when player has 0 stamina to do the action - if it requires sta)
@@ -62,6 +70,7 @@ add achievements (called "Memories") feature
   - cast = hit yourself 1 dmg
   - heal = heal enemy
   - curse = curse yourself
+- Legendary for bigger crit chance interval
 
 ---
 
@@ -90,6 +99,7 @@ add achievements (called "Memories") feature
 
 ## Small Ideas (new PR)
 
+- Legendary negating bad karma
 - +1 Drachmae for review (one time)
 - Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
 - Altar with no bonus attribute, pray = get exp
@@ -129,8 +139,11 @@ add new dynamic layout with spells
 - Keep corpses, do not navigate right away
   - Chance to rest etc.
 - Inventory: consumable, items array
-  - You have to swap items in slots
-  - Prevents stacking power fast
+  - open on click loot/party bar
+  - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits)
+    - Prevents stacking power fast
+  - eat food intentionally
+
 - Generate loot and consumable from kill/knockout 
   - "They've dropped something"
 - Drachmae shop add options (unlock after special condition)
@@ -179,6 +192,17 @@ add new dynamic layout with spells
 - [ ] Necropolis optional areas
 
 ---
+
+## Crazy Ideas
+
+- Multiplayer features
+  - highscores via github actions
+  - free github server (use json)
+  - push/get data: highscore #, achievs %
+  - (ULTRA) find other player corpse (with one of their item), fight other players ghosts/zombies
+
+- Smart pets
+- Mount
 
 ## Automation
 
