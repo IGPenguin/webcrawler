@@ -17,28 +17,33 @@ add achievements (called "Memories") feature
 - first batch of simple achievements:
   - 💀 Died for the first time
   - ✨ Reincarnated for the first time
+  - 🪙 Picked up your first Drachmae
+  - 🪙 Obtained 5 Drachmae
   - 🍀 Won a gamble for the first time
   - 🥺 Lost gamble for the first time
   - 🎰 Won gamble 10x
-  - 🃏 Bought a tarot card for the first time
-    - 👌 Accepted destiny for the first time
-    - 📿 Accepted destiny 10x
+  - 🃏 Accepted destiny for the first time
+  - ♠️ Accepted destiny 10x
   - 💰 Bought an item for the first time
   - 💎 Bought an artifact for the first time
   - ⭐️ Bought level up for the first time
   - 💸 Spent 10 drachmae
   - 👑 Finished the game for the first time
   - 💔 Killed your first enemy
-  - 🔪 Killed 10 enemies
+  - 🔪 Killed 50 enemies
   - 🎉 Killed your first boss
-  - 🎉 Killed 5 bosses
   - 🎉 Killed 10 bosses
   - 🎣 Caught something (with bait) for the fist time
-  - 🎣 Caught something 10x
+  - 🎣 Caught something 100x
   - 🪝 Caught something without bait for the fist time
-  - 🪝 Caught something without bait 10x
+  - 🪝 Caught something without bait 100x
   - 👀 Discovered area - for all areas from story.csv, (except Depths of Slumber, Fading Widlands, Auxiliary Space)
-  - 🌿 Touched grass (a grab prop with "Grass in name")
+  - 🌿 Touched grass (grab prop with "Grass" in name)
+
+  - Suggest more unique/memorable ones
+    - Killed each enemy type
+    - Died by trap
+    - Died by each enemy type 
 
 ---
 
@@ -60,67 +65,46 @@ add achievements (called "Memories") feature
 
 ---
 
-## Lower-Repro Fixes
+## Karma update
 
-- fix enemy recovered energy after killed (crazed goat)
-- fix engaged a boss showing again and again after each action after fishing gives a boss
+- Make Karma Matter!
+  - make "Revive" interval based on karma (Todo in place)
+  - on revive, get back to live (last encounter) with 1 HP
+  - karma affects on action bar chances?
+  - plus check, what changes karma, possibly adjust/expand
+  - Mischievous encounters + bad drops/twisted legendaries on bad karma
 
 ---
 
-## Refactor
+## Lower-Repro Fixes
 
-- change all "button_pray" references to "button_heal"
-  - ensure that pray logic affects pray action and not heal action
+- Fix Boss wife disengage when calmed = NaN xp
+- fix enemy recovered energy after killed (crazed goat)
+- fix engaged a boss showing again and again after each action after fishing gives a boss
+- Fix cannot leave calm merciful bride, if calm bride (check texts)
+- Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
+- Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
+- Fix add vertical scroll in loot/party when overflowimg
 
 ---
 
 ## Small Ideas (new PR)
 
-- make "Revive" interval based on karma
-  - on revive, get back to live (last encounter) with 1 HP
-  - karma affects on action bar chances?
-  - plus check, what changes karma, possibly adjust/expand
-
-- [ ] Pray with no bonus (altar) = get exp
-- [ ] Fix Boss wife disengage when calmed = NaN xp
-- [ ] Fix cannot leave calm merciful bride, if calm bride (check texts)
-- Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
-- Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
-- Fix add vertical scroll in loot/party when overflowimg
-
+- +1 Drachmae for review (one time)
+- Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
+- Altar with no bonus attribute, pray = get exp
 - Manual: killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
   - Append zombie emoji before 🧟 John Doe (Undead)
   - undead then have 0 base attack abainst you
-
 - if stat over 5, display numeric - 4/5
-
-## Big Ideas
-
-- [ ] 🪙 Drachmae options
-  - [ ] Buy fishing bait/key?
-  - [ ] Get coin for netative effect: +enemy dmg/hp/sta...
-- [ ] +1 Drachmae (one-time) for social interactions in credits
-- [ ] Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
-- [ ] New Type - Magic-container door, cast to unlock
-    - locked/magic 50% for artifact otherwise item (same should be for basic locked containers)
-- [ ] New Type: Camp spawn enemy on rest (log it)...
-  -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
-- [ ] Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
-- [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
-- [ ] Adopt pet for item similar to friend with quest item (give instead of speak)
-  - [ ] Give mouse/lizard to cat
-- [ ] Generate loot and consumable from kill/knockout — "They've dropped something"
-- [ ] "Enemy Stunned" mechanic (empty sta when getting hit)
-- [ ] Mischievous legendary/encounters on bad karma
-- Rebalance drops vs enemy stats? (too easy if you pivkup everything)
-- (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed
-- [ ] JS spaghetti monster joke boss when hanging out in credits for 30 sec
+- JS spaghetti monster joke boss when?
+  - Hanging out in Menu for 5 minutes with live char?
 
 ## New Feature: Spells
 
 add new dynamic layout with spells
 - change curse button to generic "📓 Spell"
-- on click, action buttons overlay with known spells list (scrollable, max height to cover action buttons), row shows: emoji spell name: effect, cost
+- on click, overlay action buttons with list card with known spells (scrollable, max height to cover action buttons), row shows: emoji spell name: effect, cost
 - dismiss button at the end of the list
 - on click if enough mana (3) the spell cast begins (action bar)
   - on critical success = costs -1 mkg
@@ -139,6 +123,31 @@ add new dynamic layout with spells
 - 🪨 Harden - 2 physical damage protect for player for rest of the fight
 - 🩸 Syphon - Damage enemy for 2, damage enemy for 2
 - ...more?
+
+## Big Ideas
+
+- Keep corpses, do not navigate right away
+  - Chance to rest etc.
+- Inventory: consumable, items array
+  - You have to swap items in slots
+  - Prevents stacking power fast
+- Generate loot and consumable from kill/knockout 
+  - "They've dropped something"
+- Drachmae shop add options (unlock after special condition)
+  - Get coin for negative effect: +enemy dmg/hp/sta...
+  - Get coin for Big Karma--
+  - Get coin for ???
+- New Type - Magic-container, cast to unlock
+    - Contains item  (50% for artifact - same should be for regular locked containers)
+- New Type: Camp spawn enemy on rest (actionLog it)...
+  -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
+- Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
+- Adopt pet for item (similar to friend with quest items  
+  - give instead of speak)
+  - E.g. Give mouse/lizard to cat
+- Rebalance drops vs enemy stats? (too easy if you pivkup everything)
+- (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed
+
 
 ## BIG OLD DATA PUSH
 
@@ -169,13 +178,18 @@ add new dynamic layout with spells
   - [ ] Bosses to have a lot of hp but not insta-kill dmg
 - [ ] Necropolis optional areas
 
+---
+
 ## Automation
 
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
 
-## Massive Ideas
+## Refactor
 
-- [ ] Inventory: consumable, items array
+- change all "button_pray" references to "button_heal"
+  - ensure that pray logic affects pray action and not heal action
+
+---
 
 ## Low-Prio Fixes
 
