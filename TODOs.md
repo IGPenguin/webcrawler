@@ -4,6 +4,12 @@
 /compat when done! (and will repeat in future)
 /clear when one-time task completed
 
+## Top Priority
+
+- fix toast position = screen center x,y-20%
+- fail leave passive mob = sprain/step bad
+- allow hitting swift in action-resolver (hard, but possible)
+
 ---
 
 ## High Score

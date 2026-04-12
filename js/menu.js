@@ -492,7 +492,7 @@ var Menu = (function () {
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px;">'
             + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:500; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + tsLine + '</div>'
+            + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + tsLine + '</div>'
           + '</div>';
       } else {
         var hintText = (a.hint && a.hint.length > 0) ? a.hint : "Not discovered yet.";
