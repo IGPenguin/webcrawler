@@ -12,6 +12,7 @@ layout: default
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="js/config.js"></script>
 <script src="js/logging.js"></script>
 <script src="js/string-generator.js"></script>
@@ -102,8 +103,8 @@ layout: default
         <div id="menu_history_list"></div>
       </div>
       <div class="menu-spacer"></div>
-        <div style="display:flex; gap:4px; margin-top:5px;">
-        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share</button>
+        <div id="menu_history_actions" style="display:none; gap:4px; margin-top:5px;">
+        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share <i style="color:grey;">[Beta]</i></button>
         <button class="menu-btn" id="menu_history_review" style="flex:1; margin-top:0; color:#c9594f;">💌 Review</button>
       </div>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>

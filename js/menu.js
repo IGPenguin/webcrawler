@@ -1,4 +1,6 @@
 var Menu = (function () {
+  var _currentDetailSession = null; // set when history detail is open
+
   var SCREENS = [
     'menu_main_screen',
     'menu_history_screen',
@@ -71,7 +73,7 @@ var Menu = (function () {
         _renameCurrentRun(function () { _renderMain(true); });
       });
     } else {
-      preview.innerHTML = _buildRunCardHTML('Wandering Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifing Away', '⨯ ⨯ ⨯');
+      preview.innerHTML = _buildRunCardHTML('Damned Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifing Away', '⨯ ⨯ ⨯');
     }
     preview.style.display = '';
 
@@ -216,6 +218,8 @@ var Menu = (function () {
 
   // State 1: compact session list.
   function _renderHistoryList() {
+    _currentDetailSession = null;
+    document.getElementById('menu_history_actions').style.display = 'none';
     _bindHistoryBack('👈 Back', function () { _renderMain(); });
 
     var list = document.getElementById('menu_history_list');
@@ -259,6 +263,8 @@ var Menu = (function () {
 
   // State 2: full in-game-style detail for a single session.
   function _renderHistoryDetail(session) {
+    _currentDetailSession = session;
+    document.getElementById('menu_history_actions').style.display = 'flex';
     _bindHistoryBack('👈 Back', function () { menuFade(_renderHistoryList); });
 
     var stats = _buildStats(session.playerHpMax, session.playerStaMax, session.playerAtk, session.playerMgkMax);
@@ -315,6 +321,104 @@ var Menu = (function () {
     list.appendChild(clearDiv);
   }
 
+  // ── History share / review ─────────────────────────────────────────────────
+
+  function _stripHtml(s) {
+    return (s || '').replace(/<br\s*\/?>/gi, '\n').replace(/&nbsp;/g, ' ').replace(/<[^>]+>/g, '');
+  }
+
+  // Short summary text for clipboard.
+  function _buildSessionShareText(session) {
+    var t = _stripHtml(session.playerName || 'Unknown') + '  •  Lvl ' + (session.level || '?');
+    t += '\n❤️ ' + (session.playerHpMax || '?')
+       + '  🟢 ' + (session.playerStaMax || '?')
+       + '  ⚔️ ' + (session.playerAtk || '?');
+    if (session.playerMgkMax > 0) t += '  🔵 ' + session.playerMgkMax;
+    var partyLoot = '';
+    if (session.playerPartyString && session.playerPartyString !== 'undefined') partyLoot += session.playerPartyString;
+    if (session.playerLootString  && session.playerLootString  !== 'undefined') partyLoot += session.playerLootString;
+    if (partyLoot) t += '\n' + _stripHtml(partyLoot);
+    t += '\n' + _stripHtml(session.area || '?') + '  ❖  ' + _stripHtml(session.causeOfDeath || '');
+    t += '\n' + (session.date || '');
+    t += '\nhttps://igpenguin.github.io/stay-dead';
+    return t;
+  }
+
+  // Full legend: summary header + stripped action log reversed (for .txt and Google Form).
+  function _buildSessionFullText(session) {
+    var header = _buildSessionShareText(session);
+    var logLines = (session.actionLog || '').split('<br>').map(function (l) {
+      return _stripHtml(l).trim();
+    }).filter(Boolean).reverse();
+    return logLines.length ? header + '\n\n' + logLines.join('\n') : header;
+  }
+
+  function _downloadText(fileName, text) {
+    var a = document.createElement('a');
+    a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+    a.download = fileName;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function _shareSession() { // TODO Fix the .png
+    if (!_currentDetailSession) return;
+    var session = _currentDetailSession;
+    var safeName = _stripHtml(session.playerName || 'Unknown').replace(/\s+/g, '-');
+    var shareText = _buildSessionShareText(session);
+    var fullText  = _buildSessionFullText(session);
+
+    // 1. Copy summary to clipboard
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shareText).catch(function () {});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = shareText;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+
+    // 2. Download full log as .txt
+    _downloadText('Stay-Dead-' + safeName + '.txt', fullText);
+
+    // 3. Download PNG — capture the actual rendered card from the page.
+    if (typeof html2canvas !== 'undefined') {
+      var listEl   = document.getElementById('menu_history_list');
+      var scrollEl = listEl.parentElement;
+      var cardEl = listEl.parentElement.parentElement;         // the overflow:auto container
+
+      // Lift scroll clipping so html2canvas sees the full content height.
+      //var prevOverflow  = scrollEl.style.overflow;
+      //var prevMaxHeight = scrollEl.style.maxHeight;
+
+      /// TODO Hide buttons
+      //listEl.style.overflow  = 'visible';
+      //listEl.style.maxHeight = 'none';
+
+      html2canvas(cardEl, { scale: 2, logging: false, useCORS: true }).then(function (canvas) {
+        //scrollEl.style.overflow  = prevOverflow;
+        //scrollEl.style.maxHeight = prevMaxHeight;
+        var a = document.createElement('a');
+        a.download = 'Stay-Dead-' + safeName + '.png';
+        a.href = canvas.toDataURL('image/png');
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      });
+
+      // TODO Show buttons
+    }
+  }
+
+  function _reviewSession() {
+    if (!_currentDetailSession) return;
+    openFeedbackForm(_buildSessionFullText(_currentDetailSession));
+  }
+
   function _renderHistory() {
     _renderHistoryList();
     _showScreen('menu_history_screen');
@@ -353,6 +457,9 @@ var Menu = (function () {
     document.getElementById('menu_continue').addEventListener('click', function () {
       startGame(true);
     });
+
+    document.getElementById('menu_history_share').addEventListener('click', _shareSession);
+    document.getElementById('menu_history_review').addEventListener('click', _reviewSession);
 
     document.getElementById('menu_challenges').addEventListener('click', _renderChallenges);
     document.getElementById('menu_history').addEventListener('click', _renderHistory);

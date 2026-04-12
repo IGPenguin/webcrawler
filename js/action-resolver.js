@@ -27,7 +27,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Death") {
           if (_skillOK === false) {
-            permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">You are gone forever.</p>");
+            permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">Another soul damned.</p>");
             break;
           }
           playerReincarnate();
@@ -1149,6 +1149,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (enemySta - enemyStaLost > 0){ //Enemy resists if they have stamina
               if (_skillOK === false) {
                 enemyDodged("Missed, they slipped your grasp.");
+                displayEnemyCannotEffect();
                 if (enemyCastIfMgk()) break;
                 break;
               }
@@ -1435,7 +1436,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta > 0) playerSta--;
               if (enemyStaLost < enemySta) enemyStaLost++;
               logPlayerAction(actionString, "Slipped through your fingers -1 🟢");
-              displayEnemyEffect("💨");
+              displayEnemyCannotEffect();
               if (enemyCastIfMgk()) break;
               if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
               break;
@@ -1475,7 +1476,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var bait=checkPlayerHasItem(validBaits);
             if (_skillOK === false) {
               displayPlayerCannotEffect();
-              logPlayerAction(actionString, bait !== "" ? "The fish slipped off the hook -1 🟢" : "Nothing bit the hook -1 🟢");
+              logPlayerAction(actionString, bait !== "" ? "The fish slipped off the hook -1 🟢" : "Too tired to focus on the hook -1 🟢");
               break;
             }
             if (bait !== "") {
@@ -1866,7 +1867,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Tough":
           case "Reflective":
             if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
-              logPlayerAction(actionString, "Your rest was interrupted -"+(enemyAtk+enemyAtkBonus)+" 💔");
+              logPlayerAction(actionString, "They interrupted your rest -"+(enemyAtk+enemyAtkBonus)+" 💔");
+              displayPlayerCannotEffect();
               playerHit(enemyAtk+enemyAtkBonus);
               break;
             }
@@ -2115,6 +2117,7 @@ function gameOver(silent=false){
     playerLootString: String(playerLootString),
     playerPartyString: String(playerPartyString)
   });
+  lastEncounterIndex = encounterIndex; //Save death position for reincarnation
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
@@ -2122,10 +2125,8 @@ function gameOver(silent=false){
   curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite));
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
-
-  //Reset generated data
-  resetSeenEncounters();
-  processStoryData(storyData,false);
+  // linesStory intentionally NOT rebuilt here — reincarnation needs the index to stay valid.
+  // processStoryData is called by startGame() on a fresh new game instead.
 }
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!

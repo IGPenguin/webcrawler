@@ -198,12 +198,12 @@ function calcActionBarConfig(button, adjustment) {
   // ── Special cases ────────────────────────────────────────────────────────
 
   // Sleep when already rested — impossible (bar all-red)
-  if (button === 'button_sleep' && playerRested) {
+  if (button === 'button_sleep' && playerRested && types !== "Death") {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Sleep at fishing spot after already having rested this visit — impossible
-  if (button === 'button_sleep' && fishingRested && types === 'Fishing') {
+  if (button === 'button_sleep' && fishingRested && types === 'Fishing' && types !== "Death") {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
@@ -213,13 +213,23 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Exhausted grab: near-impossible without stamina (items/containers/fishing unaffected)
-  if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing') {
+  if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing' && types !== "Death") {
     return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
   // Resurrection: very narrow, fast zone — last chance before permanent death
   if (button === 'button_attack' && types.includes('Death')) {
     return { speed: Math.round(95 * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
+  }
+
+   // Review on death: slow & green
+  if (button === 'button_block' && types.includes('Death')) {
+    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  }
+
+   // Give up|inactive "-" on death: slow & red
+  if ((button === 'button_attack' || button === 'button_grab' || button === 'button_sleep' || button === 'button_speak') && types.includes('Death')) {
+    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Prop walk: very wide zone — tiny stumble risk exists

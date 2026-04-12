@@ -542,37 +542,30 @@ function playerReincarnate(){
   //adventureEncounterCount = -1; //Death + tutorial
 
   //Ress where died
-  encounterIndex=lastEncounterIndex;
+  encounterIndex=lastEncounterIndex-1;
   
   playerHp=1; //Renew
-  playerSta=1; //Renew
+  playerSta=playerStaMax; //Renew
 
-  playerName="Holy "+playerName
+  if (!playerName.includes("Holy")) playerName="Holy "+playerName
 
-  logPlayerAction("🫶","Reincarnated for a new adventure.<br>&nbsp;<br>&nbsp;");
-
-  if (savedCoins>0){
-    drachmaShop[0]="area:"+"Fading Wildlands"
-    linesStory.splice(encounterIndex+1,1); //RM Realization
-    pushEncounter(drachmaShop)
-  }
+  logPlayerAction("✨","Came back to live to continue.<br>&nbsp;<br>&nbsp;");
 
   if (playerKarma>0){ //TODO Revise this threshold
     var randomArea=chooseFrom(["Fading Wildlands","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame
     var bonusItem=getRandomEncounter(["Item"],["Artifact"],randomArea);
     bonusItem=bonusItem.replaceAll(randomArea,"Fading Wildlands")
 
-    var bonusWrapper=["area:Fading Wildlands","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for being a good boy!<br>","message:Opened the mysterious gift box."]
+    var bonusWrapper=["area:Fading Wildlands","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for staying out of trouble!<br>","message:Opened the mysterious gift box."]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
-    pushEncounter(bonusWrapper,1); //Adjust to tutorial length (below as well - increment if tut longer :sweat:
-    pushEncounter(bonusItem,2);
+    pushEncounter(bonusWrapper,2); //Push after the point of dising
+    pushEncounter(bonusItem,3);
   }
 
-  spentCoins = 0; //Hack :shug:
   nextEncounter(true, true); // skip area transition — reincarnation owns its own curtain
   curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
-  renewPlayer();
+
   // Save the fresh run state now that both the encounter and player stats are fully reset.
   // The redraw() inside nextEncounter() above fired before renewPlayer(), so its snapshot
   // had stale death-screen stats — this call captures the correct new-run state.

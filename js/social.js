@@ -74,11 +74,12 @@ function visitLinkedIn(){
   window.open(profileUrl);
 }
 
+// Shared entry point — accepts any pre-built plain text string.
+function openFeedbackForm(text) {
+  var gameLog = encodeURIComponent(text.replaceAll('<b>','').replaceAll('</b>','').replaceAll(emptySpace,'   '));
+  window.open('https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593=' + gameLog);
+}
+
 function redirectToFeedback(){
-  //var googleFormUrl="https://forms.gle/zekjajGcVztxwTdX9"
-  var characterLegend=generateCharacterLegend(50);
-  console.log(characterLegend);
-  var gameLog=encodeURIComponent(characterLegend.replaceAll("<b>","").replaceAll("</b>","").replaceAll(emptySpace,"   "));
-  var googleFormUrl="https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593="+gameLog;
-  window.open(googleFormUrl);
+  openFeedbackForm(generateCharacterLegend(50));
 }
