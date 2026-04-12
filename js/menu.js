@@ -479,15 +479,15 @@ var Menu = (function () {
 
       if (unlocked) {
         entry.innerHTML =
-          '<div style="display:flex; align-items:center; gap:10px; padding:6px 8px; background-color:rgb(38,38,38);">'
+          '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px;">'
             + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:600; color:#FFD940; text-align:left;">' + a.desc + '</h5>'
+            + '<h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left;">' + decorateStatusText("",a.desc,colorGold) + '</h5>'
           + '</div>';
       } else {
         entry.innerHTML =
-          '<div style="display:flex; align-items:center; gap:10px; padding:6px 8px; background-color:rgb(22,22,22); opacity:0.38;">'
+          '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
             + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; color:#666; text-align:left;">. . . . . . . . . . . . . . . . . ?</h5>'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; color:#666; text-align:left;"> ' + decorateStatusText("","Details  not discovered yet...",colorDarkGrey)+'</h5>'
           + '</div>';
       }
       list.appendChild(entry);
