@@ -49,11 +49,5 @@ function logGenerator(generatorName="none"){
 
 function getTime(){
   var d = new Date();
-  var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
-  return pad(d.getDate()) + '/'
-    + pad(d.getMonth() + 1) + '/'
-    + String(d.getFullYear()).substr(-2) + ' • '
-    + pad(d.getHours()) + ':'
-    + pad(d.getMinutes()) + ':'
-    + pad(d.getSeconds());
+  return d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
 }

@@ -477,17 +477,29 @@ var Menu = (function () {
       var entry = document.createElement('div');
       entry.className = 'menu-history-entry';
 
+      var tsLine = '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">'
+    + "Keep trying..."
+    + '</h5>';
+
       if (unlocked) {
+        var ts = AchievementManager.getUnlockTime(a.id);
+        if (ts) {
+          var d = new Date(ts);
+          tsLine = '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">'
+            + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
+            + '</h5>';
+        }
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px;">'
             + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<h5 style="margin:0; font-size:16px; font-style:normal; font-weight:500; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc,colorGold + '</h5>'
+            + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:500; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + tsLine + '</div>'
           + '</div>';
       } else {
+        var hintText = (a.hint && a.hint.length > 0) ? a.hint : "Not discovered yet.";
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
             + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:500; color:#666; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + "Details  not discovered yet..."+'</h5>'
+            + '<div><h5 style="margin:0; font-size:16px; font-style:itallic; font-weight:500; color:#CCCCCC; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + (hintText || '') + '</h5>' + tsLine + '</div>'
           + '</div>';
       }
       list.appendChild(entry);

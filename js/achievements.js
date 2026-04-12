@@ -3,34 +3,35 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
-    { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!' },
-    { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!' },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up your first Drachmae!' },
-    { id: 'coin_5',              emoji: '🪙', desc: 'Obtained 5 Drachmae!' },
-    { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won a gamble for the first time!' },
-    { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost a gamble for the first time!' },
-    { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won gamble 10 times!' },
-    { id: 'destiny_first',       emoji: '🃏', desc: 'Accepted destiny for the first time!' },
-    { id: 'destiny_10',          emoji: '♠️', desc: 'Accepted destiny 10 times!' },
-    { id: 'buy_item_first',      emoji: '💰', desc: 'Bought an item for the first time!' },
+    { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
+    { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!"},
+    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up your first Drachmae!', hint: "Unlock an eternal advantage." },
+    { id: 'coin_5',              emoji: '💰', desc: 'Set up for success with 5 Drachmae!' },
+    { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!' },
+    { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!' },
+    { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!' },
+    { id: 'destiny_first',       emoji: '🃏', desc: 'Accepted a destiny for the first time!', hint: "Finally get a purpose." },
+    { id: 'destiny_10',          emoji: '♠️', desc: 'Accepted a destiny 10 times!' },
+    { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item for the first time!' },
+    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Undertaker!' },
     { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact for the first time!' },
-    { id: 'buy_level_first',     emoji: '⭐️', desc: 'Bought level up for the first time!' },
-    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae!' },
+    { id: 'buy_level_first',     emoji: '⭐️', desc: 'Bought a level up for the first time!' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!' },
-    { id: 'kill_first',          emoji: '💔', desc: 'Killed your first enemy!' },
-    { id: 'kill_50',             emoji: '🔪', desc: 'Killed 50 enemies!' },
-    { id: 'boss_kill_first',     emoji: '🎉', desc: 'Killed your first boss!' },
-    { id: 'boss_kill_10',        emoji: '🎉', desc: 'Killed 10 bosses!' },
-    { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something with bait for the first time!' },
-    { id: 'fish_bait_100',       emoji: '🎣', desc: 'Caught something with bait 100 times!' },
-    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without bait for the first time!' },
-    { id: 'fish_no_bait_100',    emoji: '🪝', desc: 'Caught something without bait 100 times!' },
-    { id: 'discover_forsaken',   emoji: '👀', desc: 'Discovered Forsaken Village!' },
-    { id: 'discover_fairyland',  emoji: '👀', desc: 'Discovered Twisted Fairyland!' },
-    { id: 'discover_river',      emoji: '👀', desc: 'Discovered River of Sorrows!' },
-    { id: 'discover_necropolis', emoji: '👀', desc: 'Discovered Shrouded Necropolis!' },
-    { id: 'touch_grass',         emoji: '🌿', desc: 'You you touched the grass!' }
+    { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood (or not) for the first time." },
+    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!'  },
+    { id: 'boss_kill_first',     emoji: '🎉', desc: 'Defeated your first boss!', hint: "Defeat your first boss!"},
+    { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!' },
+    { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "There's fishing as well?" },
+    { id: 'fish_bait_100',       emoji: '🎏', desc: 'Caught something 100 times!' },
+    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without bait!', hint: "Who needs a bait anyway?" },
+    { id: 'fish_no_bait_100',    emoji: '😎', desc: 'Caught something without bait 100 times!' },
+    { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered Forsaken Village!' },
+    { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered Twisted Fairyland!' },
+    { id: 'discover_river',      emoji: '🌊', desc: 'Discovered River of Sorrows!' },
+    { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered Shrouded Necropolis!' },
+    { id: 'touch_grass',         emoji: '🌿', desc: 'You you touched the grass!', hint: 'Try going outside and then?' }
   ];
+  // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
 
   var _defaultStats = {
     totalDeaths:         0,
@@ -163,7 +164,7 @@ var AchievementManager = (function () {
 
   function _unlock(id) {
     if (_unlocked[id]) return;
-    _unlocked[id] = true;
+    _unlocked[id] = Date.now();
     _sessionUnlocked.push(id);
     _save();
     var achievement = null;
@@ -304,6 +305,12 @@ var AchievementManager = (function () {
     return !!_unlocked[id];
   }
 
+  function getUnlockTime(id) {
+    var ts = _unlocked[id];
+    if (!ts || ts === true) return null; // backwards-compat: old saves stored `true`
+    return ts;
+  }
+
   function getAll() {
     return ACHIEVEMENTS;
   }
@@ -321,6 +328,7 @@ var AchievementManager = (function () {
     resetSession:        resetSession,
     getSessionUnlocked:  getSessionUnlocked,
     isUnlocked:          isUnlocked,
+    getUnlockTime:       getUnlockTime,
     getAll:              getAll,
     clearAll:            clearAll
   };
