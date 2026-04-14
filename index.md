@@ -120,7 +120,7 @@ layout: default
             text-align:center;">💀 Graveyard</h2>
       <div style="flex:1;
                   min-height:0;
-                  max-height:405px;
+                  max-height:380px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;

@@ -46,6 +46,7 @@ var Menu = (function () {
     SCREENS.forEach(function (s) {
       document.getElementById(s).style.display = (s === id) ? '' : 'none';
     });
+    window.scrollTo(0, -128);
   }
 
   // Always fades between screens (only used for in-menu navigation, never from show()).
