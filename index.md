@@ -324,7 +324,7 @@ layout: default
 
 <div id="id_xp_progress" style="width:0%; height:1px; background:#FFD940; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
 
-<div style="position:relative; margin-bottom:14px;">
+<div id="id_action_bar_area" style="position:relative; margin-bottom:14px;">
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
                                           box-shadow:

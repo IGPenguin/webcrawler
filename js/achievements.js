@@ -91,40 +91,35 @@ var AchievementManager = (function () {
     var old = document.getElementById('achievement_toast');
     if (old) old.remove();
 
-    // Position over id_player_info
-    var infoEl = document.getElementById('id_log');
-    var rect   = infoEl ? infoEl.getBoundingClientRect() : null;
-
     var toast = document.createElement('div');
     toast.id = 'achievement_toast';
+
+    var ts = AchievementManager.getUnlockTime(achievement.id);
+    var tsLine = '';
+    if (ts) {
+      var d = new Date(ts);
+      tsLine = '<h5 style="margin:2px 0 0 0; opacity:0.6; font-size:12px; text-align:left;">'
+        + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
+        + '</h5>';
+    }
 
     toast.innerHTML =
       '<div style="display:flex; align-items:center; gap:10px; padding:7px 0px 8px 12px; margin-bottom:-8px;">'
         + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + achievement.emoji + '</span>'
-        + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc,colorGold + '</h5>'
+        + '<div>'
+          + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc,colorGold + '</h5>'
+          + tsLine
+        + '</div>'
       + '</div>';
 
-    if (rect && rect.width > 0) {
-      toast.style.cssText =
-        'position:fixed;' +
-        'top:'    + Math.round(rect.top-178)    + 'px;' +
-        'left:'   + Math.round(rect.left-37)   + 'px;' +
-        'width:'  + Math.round(rect.width-74)  + 'px;' +
-        'height:' + Math.round(rect.height-54) + 'px;' +
-        'z-index:9999; pointer-events:none; box-sizing:border-box;' +
-        'background:#272727; overflow:hidden;' +
-        'box-shadow:0 0 0 3px #FFD940;' +
-        'opacity:0; transition:opacity 0.3s;';
-    } else { // TODO probably an unused block
-      toast.style.cssText =
-        'position:fixed; bottom:88px; left:50%; transform:translateX(-50%);' +
-        'z-index:9999; pointer-events:none; text-align:center;' +
-        'background:#272727; padding:6px 12px; min-width:220px; max-width:340px;' +
-        'box-shadow:0 0 0 3px #FFD940;' +
-        'opacity:0; transition:opacity 0.3s;';
-    }
+    toast.style.cssText =
+      'position:absolute; top:0; left:0; right:0; bottom:0;' +
+      'z-index:9999; pointer-events:none; box-sizing:border-box;' +
+      'background:#272727; overflow:hidden;' +
+      'box-shadow:0 0 0 3px #FFD940;' +
+      'opacity:0; transition:opacity 0.3s;';
 
-    document.body.appendChild(toast);
+    document.getElementById('id_action_bar_area').appendChild(toast);
 
     // Fade in
     requestAnimationFrame(function() {
@@ -140,16 +135,6 @@ var AchievementManager = (function () {
         toast.style.boxShadow = '0 0 0 3px #FFD940';
       }, 280);
     }, 150);
-
-    // Add log
-    setTimeout(function () {
-      var MAX_LENGTH = 39;
-      var text = achievement.desc;
-      if (text.length > MAX_LENGTH) text = achievement.desc.substring(0,MAX_LENGTH)+"..."
-      
-      logAction("🧩 ▸ 🎉 <b style=\"color:"+colorGold+"\";>"+text+"</b>");
-      redraw();
-    },1) //Hehehehe, hack to log after logging action done
 
     // Auto-dismiss after 4s, fade out over 2s
     setTimeout(function() {
@@ -175,10 +160,22 @@ var AchievementManager = (function () {
     for (var i = 0; i < ACHIEVEMENTS.length; i++) {
       if (ACHIEVEMENTS[i].id === id) { achievement = ACHIEVEMENTS[i]; break; }
     }
-    if (achievement) {
-      _toastQueue.push(achievement);
-      if (!_toastActive) _showNextToast();
-    }
+
+    // Add log
+    if (achievement) setTimeout(function () {
+      var MAX_LENGTH = 39;
+      var text = achievement.desc;
+      if (text.length > MAX_LENGTH) text = achievement.desc.substring(0,MAX_LENGTH)+"..."
+      
+      logAction("🧩 ▸ "+achievement.emoji+" <b style=\"color:"+colorGold+"\";>"+text+"</b>");
+      redraw();
+    },1) //Hehehehe, hack to log after logging action done
+
+    // Show toast
+    // if (achievement) {
+    //   _toastQueue.push(achievement);
+    //   if (!_toastActive) _showNextToast();
+    // }
   }
 
   // ── Public API ────────────────────────────────────────────────────────────

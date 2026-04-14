@@ -448,12 +448,12 @@ function registerClickListenersTechnical(){
       logCheatUse(newName+": "+extraBaits.toString());
       return
     }
-    logAction("✏️ ▸ ✨ Renamed yourself: <b>"+newName+"</b>");
+    logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
     redraw();
   });
 }
 
 function logCheatUse(message){
-  logAction("✏️ ▸ ⚠️ <b>You used a cheat: "+message+"</b>");
+  logAction("✏️ ▸ ⚠️ <b>Used a cheat: "+message+"</b>");
   redraw();
 }
