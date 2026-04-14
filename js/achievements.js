@@ -143,7 +143,11 @@ var AchievementManager = (function () {
 
     // Add log
     setTimeout(function () {
-      logAction("🧩 ▸ 🎉 <b>New Memory: </b>"+achievement.desc.substring(0,24)+"...");
+      var MAX_LENGTH = 39;
+      var text = achievement.desc;
+      if (text.length > MAX_LENGTH) text = achievement.desc.substring(0,MAX_LENGTH)+"..."
+      
+      logAction("🧩 ▸ 🎉 <b style=\"color:"+colorGold+"\";>"+text+"</b>");
       redraw();
     },1) //Hehehehe, hack to log after logging action done
 

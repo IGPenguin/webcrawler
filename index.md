@@ -53,13 +53,14 @@ layout: default
       -webkit-text-stroke: 5px black;
       paint-order: stroke fill;
       margin:8px 0 8px 0;
-      text-align:center;">⚙️ Main Menu</h2>
+      text-align:center;">💀 Main Menu</h2>
       <div id="menu_continue_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
       <button class="menu-btn" id="menu_continue">⚔️ Continue</button>
       <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ New Game</button>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
-      <button class="menu-btn" id="menu_history">💀 Graveyard</button>
+      <button class="menu-btn" id="menu_history">🪦 Graveyard</button>
+      <button class="menu-btn" id="menu_challenges" style="color:grey;">⚙️ Options</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
   </div>

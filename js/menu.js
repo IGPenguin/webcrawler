@@ -184,13 +184,13 @@ var Menu = (function () {
     // Note: Disabled stats and party+loot display below to declutter main menu
 
     //Stats bar wrapper + stats h3
-    html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-      + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
-      + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
-      + 'font-size:14px; margin-bottom:-11px; margin-top:13px; font-family:sans; '
-      + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
-      + (stats || '&nbsp;') + '</h3>'
-      + '</div>';
+    // html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+    //   + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
+    //   + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
+    //   + 'font-size:14px; margin-bottom:-11px; margin-top:13px; font-family:sans; '
+    //   + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
+    //   + (stats || '&nbsp;') + '</h3>'
+    //   + '</div>';
 
     // if (!skipLoot) {
     //   // Loot/party bar — matches id_player_party_loot exactly
@@ -323,28 +323,28 @@ var Menu = (function () {
     list.appendChild(clearDiv);
 
     // Session achievements unlocked by this character
-    var achIds = session.sessionAchievements;
-    if (achIds && achIds.length > 0) {
-      var allAchs = AchievementManager.getAll();
-      var achMap = {};
-      allAchs.forEach(function (a) { achMap[a.id] = a; });
+    // var achIds = session.sessionAchievements;
+    // if (achIds && achIds.length > 0) {
+    //   var allAchs = AchievementManager.getAll();
+    //   var achMap = {};
+    //   allAchs.forEach(function (a) { achMap[a.id] = a; });
 
-      var achLabel = document.createElement('h5');
-      achLabel.style.cssText = 'text-align:left; padding-left:8px; margin:6px 3px 2px 3px; font-size:12px; opacity:0.55; letter-spacing:0.5px;';
-      achLabel.innerHTML = '🧩 Memories unlocked';
-      list.appendChild(achLabel);
+    //   var achLabel = document.createElement('h5');
+    //   achLabel.style.cssText = 'text-align:left; padding-left:8px; margin:6px 3px 2px 3px; font-size:12px; opacity:0.55; letter-spacing:0.5px;';
+    //   achLabel.innerHTML = '🧩 Memories unlocked';
+    //   list.appendChild(achLabel);
 
-      var achWrap = document.createElement('div');
-      achWrap.style.cssText = 'margin:0 3px 3px 3px; background:#1a1a1a; box-shadow:0 0 0 3px #FFD940; padding:6px 8px;';
-      var achLines = achIds.map(function (id) {
-        var a = achMap[id];
-        return a ? (a.emoji + '&nbsp;' + a.desc) : id;
-      });
-      achWrap.innerHTML = '<h5 style="margin:0; font-size:13px; font-style:normal; line-height:190%; color:#FFD940;">'
-        + achLines.join('<br>')
-        + '</h5>';
-      list.appendChild(achWrap);
-    }
+    //   var achWrap = document.createElement('div');
+    //   achWrap.style.cssText = 'margin:0 3px 3px 3px; background:#1a1a1a; box-shadow:0 0 0 3px #FFD940; padding:6px 8px;';
+    //   var achLines = achIds.map(function (id) {
+    //     var a = achMap[id];
+    //     return a ? (a.emoji + '&nbsp;' + a.desc) : id;
+    //   });
+    //   achWrap.innerHTML = '<h5 style="margin:0; font-size:13px; font-style:normal; line-height:190%; color:#FFD940;">'
+    //     + achLines.join('<br>')
+    //     + '</h5>';
+    //   list.appendChild(achWrap);
+    // }
   }
 
   // ── History share / review ─────────────────────────────────────────────────

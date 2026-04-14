@@ -268,7 +268,6 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
     if ((item=="Item") || (item=="Artifact") || (item=="Tarot")) {
       if (item=="Item")     AchievementManager.check('buy_item');
       else if (item=="Artifact") AchievementManager.check('buy_artifact');
-      else if (item=="Tarot")    AchievementManager.check('destiny');
       displayPlayerGainedEffect();
       logPlayerAction(actionString,"Splendid choice, this ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
