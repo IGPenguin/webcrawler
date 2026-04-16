@@ -578,9 +578,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0
-            && enemyType!=="Pet" && enemyType!=="Small" && enemyType!=="Friend") {
+            && enemyType!=="Pet" && enemyType!=="Small" && enemyType!=="Friend" && enemyType!=="Swift") {
           var _blockFailDmg = enemyAtk + enemyAtkBonus;
-          logPlayerAction(actionString, "Block overpowered -"+_blockFailDmg+" 💔 -1 🟢");
+          logPlayerAction(actionString, "They overpowered your block -"+_blockFailDmg+" 💔 -1 🟢");
           playerHit(_blockFailDmg);
           break;
         }
@@ -614,6 +614,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Swift":
+            if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
+              enemyStaminaChangeMessage(-1,"They hit you before you could react -"+(enemyAtk+enemyAtkBonus)+" 💔","Blocked just for the sake of it -1 🟢");
+              playerHit(enemyAtk+enemyAtkBonus);
+              break;
+            }
             enemyStaminaChangeMessage(-1,"Blocked a swift attack -1 🟢","Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
