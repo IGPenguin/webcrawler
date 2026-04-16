@@ -17,14 +17,23 @@ var AchievementManager = (function () {
     { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact for the first time!' },
     { id: 'buy_level_first',     emoji: '⭐️', desc: 'Bought a level up for the first time!' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!' },
-    { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood (or not) for the first time." },
+    { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time." },
     { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!'  },
     { id: 'boss_kill_first',     emoji: '🎉', desc: 'Defeated your first boss!', hint: "Defeat your first boss!"},
     { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!' },
-    { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "There's fishing as well?" },
-    { id: 'fish_bait_100',       emoji: '🎏', desc: 'Caught something 100 times!' },
-    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Who needs a bait anyway?" },
-    { id: 'fish_no_bait_100',    emoji: '😎', desc: 'Caught something without a bait 100 times!' },
+    { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.' },
+    { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!' },
+    { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?' },
+    { id: 'pet_first',           emoji: '🐾', desc: 'Got your first companion!', hint: 'Some creatures can be befriended.' },
+    { id: 'recruit_first',       emoji: '🤝', desc: 'Recruited your first ally!', hint: 'Be smarter. Be convincing.' },
+    { id: 'quest_first',         emoji: '⁉️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.' },
+    { id: 'spoke_boss',          emoji: '🗣️', desc: 'Spoke a Boss into submission!', hint: 'Could peace be an actual option?' },
+    { id: 'survive_trap',        emoji: '🪤', desc: 'Survived a deadly trap!', hint: 'Touch everything.' },
+    { id: 'full_party',          emoji: '👥', desc: 'Gathered a full party of three!', hint: 'The more, the merrier, always.' },
+    { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?" },
+    { id: 'fish_bait_50',       emoji: '🎏', desc: 'Caught something 50 times!' },
+    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Pffft. Who needs a bait anyway?" },
+    { id: 'fish_no_bait_50',    emoji: '😎', desc: 'Caught something without a bait 50 times!' },
     { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered Forsaken Village!' },
     { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered Twisted Fairyland!' },
     { id: 'discover_river',      emoji: '🌊', desc: 'Discovered River of Sorrows!' },
@@ -43,6 +52,14 @@ var AchievementManager = (function () {
     totalDestinyAccepts: 0,
     totalKills:          0,
     totalBossKills:      0,
+    totalKnockouts:      0,
+    calmedEnemy:         false,
+    gotPet:              false,
+    gotRecruit:          false,
+    completedQuest:      false,
+    spokeBoss:           false,
+    survivedTrap:        false,
+    fullParty:           false,
     totalFishBait:       0,
     totalFishNoBait:     0,
     boughtItem:          false,
@@ -98,7 +115,7 @@ var AchievementManager = (function () {
     var tsLine = '';
     if (ts) {
       var d = new Date(ts);
-      tsLine = '<h5 style="margin:2px 0 0 0; opacity:0.6; font-size:12px; text-align:left;">'
+      tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">'
         + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
         + '</h5>';
     }
@@ -106,14 +123,14 @@ var AchievementManager = (function () {
     toast.innerHTML =
       '<div style="display:flex; align-items:center; gap:10px; padding:7px 0px 8px 12px; margin-bottom:-8px;">'
         + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + achievement.emoji + '</span>'
-        + '<div>'
-          + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc,colorGold + '</h5>'
+        + '<div style="flex:1;">'
+          + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc + '</h5>'
           + tsLine
         + '</div>'
       + '</div>';
 
     toast.style.cssText =
-      'position:absolute; top:0; left:0; right:0; bottom:0;' +
+      'position:absolute; top:0; left:0; right:0;' +
       'z-index:9999; pointer-events:none; box-sizing:border-box;' +
       'background:#272727; overflow:hidden;' +
       'box-shadow:0 0 0 3px #FFD940;' +
@@ -254,18 +271,53 @@ var AchievementManager = (function () {
         if (_stats.totalBossKills >= 10)  _unlock('boss_kill_10');
         break;
 
+      case 'knockout':
+        _stats.totalKnockouts++;
+        _save();
+        if (_stats.totalKnockouts === 1)  _unlock('knockout_first');
+        if (_stats.totalKnockouts >= 50)  _unlock('knockout_50');
+        break;
+
+      case 'calm_enemy':
+        if (!_stats.calmedEnemy) { _stats.calmedEnemy = true; _save(); _unlock('calm_first'); }
+        break;
+
+      case 'get_pet':
+        if (!_stats.gotPet) { _stats.gotPet = true; _save(); _unlock('pet_first'); }
+        break;
+
+      case 'get_recruit':
+        if (!_stats.gotRecruit) { _stats.gotRecruit = true; _save(); _unlock('recruit_first'); }
+        break;
+
+      case 'quest_complete':
+        if (!_stats.completedQuest) { _stats.completedQuest = true; _save(); _unlock('quest_first'); }
+        break;
+
+      case 'calm_boss':
+        if (!_stats.spokeBoss) { _stats.spokeBoss = true; _save(); _unlock('spoke_boss'); }
+        break;
+
+      case 'survive_trap':
+        if (!_stats.survivedTrap) { _stats.survivedTrap = true; _save(); _unlock('survive_trap'); }
+        break;
+
+      case 'full_party':
+        if (!_stats.fullParty) { _stats.fullParty = true; _save(); _unlock('full_party'); }
+        break;
+
       case 'fish_bait':
         _stats.totalFishBait++;
         _save();
         if (_stats.totalFishBait === 1)   _unlock('fish_bait_first');
-        if (_stats.totalFishBait >= 100)  _unlock('fish_bait_100');
+        if (_stats.totalFishBait >= 50)  _unlock('fish_bait_50');
         break;
 
       case 'fish_no_bait':
         _stats.totalFishNoBait++;
         _save();
         if (_stats.totalFishNoBait === 1)   _unlock('fish_no_bait_first');
-        if (_stats.totalFishNoBait >= 100)  _unlock('fish_no_bait_100');
+        if (_stats.totalFishNoBait >= 50)  _unlock('fish_no_bait_50');
         break;
 
       case 'discover_area': {

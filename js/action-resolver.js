@@ -1312,6 +1312,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
             if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg,true,false);
+            if (enemyHp < 0 && playerHp > 0) AchievementManager.check('survive_trap');
             break;
 
           case "Stingy":
@@ -1738,6 +1739,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var gainedXP=playerGainXP(1.5,0,"");
               enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk, 0,"Joined forces together",false); //Cannot get health/sta/int/def from a recruit
               logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
+              AchievementManager.check('get_recruit');
+              if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
               break;
             }
 
@@ -1768,9 +1771,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if ((enemyAtk+enemyAtkBonus)>0){
                 enemyAtkBonus--;
                 logPlayerAction(actionString,"Managed to calm them down -1 ⚔️");
-                if ((enemyAtk+enemyAtkBonus)>0) enemyAttackOrRest();
+                if ((enemyAtk+enemyAtkBonus)>0) {
+                  enemyAttackOrRest();
+                } else {
+                  AchievementManager.check('calm_enemy');
+                  if (enemyType === 'Boss') AchievementManager.check('calm_boss');
+                }
                 displayEnemyCannotEffect();
               } else if (enemyAtk>0){
+                AchievementManager.check('calm_enemy');
+                if (enemyType === 'Boss') AchievementManager.check('calm_boss');
                 enemyDisengage();
               } else {
                 if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
@@ -1812,7 +1822,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 //This means filter by two = guarantee artifact
                 pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
                 playerLootString=playerLootString.replace(heldQuestItem,"");
-                displayPlayerEffect(heldQuestItem)
+                displayPlayerEffect(heldQuestItem);
+                AchievementManager.check('quest_complete');
               }
               //XP is even for interaction
               var gainedXP=playerGainXP(1,25*playerLevel,"");

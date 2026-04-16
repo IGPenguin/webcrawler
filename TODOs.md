@@ -6,29 +6,31 @@
 
 ## Top Priority
 
-- are there any cases where the outcame is unchanged if the plaer hits pass/fail = same outcome
-
----
-
-
+ímprove tutorial and make it bulletproof
+- make it impossible to ditch the shrimp (requred to learn about food)
+- better explain player actions and consequences
+- you may add few encounters, but make sure to properly skip it when not playing for the first time
+- propose your idea first, I`ll have to allow the changes
 
 ----
 
 ## Action bar enhancement: critical success/fail
 
 - add critical success and critical failure (very) slim intervals to action bar (not present when player has 0 stamina to do the action - if it requires sta)
-- crit success:
-  - attack = extra 1 dmg
-  - dodge/block = no stamina use
-  - cast = extra 1dmg
+- crit success (gold interval):
+  - attack = extra 1 dmg dealt
+  - dodge/block = no stamina used
+  - cast = extra 1dmg dealt
   - heal = extra 1 hp healed
   - curse = extra -1 atk to enemy
-- crit fail:
-  - attack = hurt/exposed yourself -1 dmg
-  - dodge/block = spend extra 1 sta
-  - cast = hit yourself 1 dmg
-  - heal = heal enemy
+- crit fail (very dark red/black interval):
+  - attack = hurt yourself -1 hp
+  - dodge/block = spend extra 1 sta and still fail
+  - cast = hit yourself with the spell
+  - heal = heal enemy with the spell
   - curse = curse yourself
+
+
 - Legendary for bigger crit chance interval
 
 ---

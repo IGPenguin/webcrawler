@@ -110,6 +110,8 @@ function enemyJoinedParty(){
   playerKarma++;
   enemyMsg=enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold)
   playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,0,enemyMsg); //Cannot get health/sta/int/def from a pet
+  AchievementManager.check('get_pet');
+  if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
 }
 
 function enemyKnockedOut(){
@@ -119,6 +121,7 @@ function enemyKnockedOut(){
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + knockoutString + decorateStatusText("","+"+gainedXP+" XP",colorGold));
   if (enemyAtk>0) playerKarma++;
   if (enemyAtk<=0) playerKarma--;
+  AchievementManager.check('knockout');
   //playerSta--;
 
   isFishing=false;
