@@ -295,6 +295,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
+            if (_skillOK === false && (enemySta-enemyStaLost) <= 0 && (enemyAtk+enemyAtkBonus) > 0) {
+              var _dodgeDmg = enemyAtk+enemyAtkBonus;
+              logPlayerAction(actionString, "Dodged so slowly they hit you -"+_dodgeDmg+" 💔 -1 🟢");
+              displayPlayerCannotEffect();
+              playerHit(_dodgeDmg);
+              break;
+            }
+
             if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
               var _dodgeDmg = enemyAtk+enemyAtkBonus;
               logPlayerAction(actionString, "Dodge failed, took the hit -"+_dodgeDmg+" 💔 -1 🟢");

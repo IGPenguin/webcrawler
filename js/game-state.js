@@ -249,9 +249,14 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
-  // Near-impossible attack/block/dodge at 0 stamina — tiny zone, always possible
-  if (pSta === 0 && enemyType!="Item" && enemyType!="Shop" && (button === 'button_attack' || button === 'button_block' || button === 'button_roll')) {
-    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+  // Attack / Block at zero player stamina — hard as fishing with no bait
+  if (pSta === 0 && enemyType!="Item" && enemyType!="Shop" && (button === 'button_attack' || button === 'button_block')) {
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+  }
+
+  // Roll against exhausted enemy — very easy, but humiliating to fail
+  if (button === 'button_roll' && (enemySta - enemyStaLost) <= 0 && enemyType!="Item" && enemyType!="Shop") {
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 10, successMax: 90 };
   }
 
   // Heavy grab: very very hard — tiny zone, high speed; fail enrages them

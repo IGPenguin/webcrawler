@@ -172,10 +172,10 @@ var AchievementManager = (function () {
     },1) //Hehehehe, hack to log after logging action done
 
     // Show toast
-    // if (achievement) {
-    //   _toastQueue.push(achievement);
-    //   if (!_toastActive) _showNextToast();
-    // }
+    if (achievement) {
+      _toastQueue.push(achievement);
+      if (!_toastActive) _showNextToast();
+    }
   }
 
   // ── Public API ────────────────────────────────────────────────────────────
