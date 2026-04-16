@@ -82,8 +82,6 @@ Fading Wildlands;🌬️;Howling Wind;Curse;0;0;1;0;-1;0;0;Calling Omen;Wind pus
 Fading Wildlands;💧;Dripping Spring;Curse;0;0;0;0;-1;0;0;Unsettling Aura;The atmosphere thickens with every drop.<br>;Chills went down your spine
 Fading Wildlands;🌗;Half-Moon Glow;Curse;0;0;0;0;-1;0;0;Eerie Moment;Moonlight lingers unnaturally long.<br>;Felt watched from afar
 
-Fading Wildlands;🎃;Field Scarecrow;Trap-Attack;0;1;0;0;0;0;0;Makeshift Defense;Silently watches over the area.<br>;Improved your combat technique!
-
 Fading Wildlands;💩;Rotten Mound;Trap-Attack;0;0;0;0;-1;0;0;Foul Remains;Whatever died here didn’t rest clean.<br>;Suffered some nasty consequences.
 Fading Wildlands;🕸️;Clinging Web;Trap-Roll;0;0;-1;0;0;0;0;Snaring Threads;Sticky strands refuse to let go.<br>;Got some webs on your face
 
@@ -356,12 +354,13 @@ Forsaken Village;🦠;Lingering Spores;Trap-Sleep;-1;0;0;0;0;0;0;Living Decay;Sp
 Forsaken Village;🔥;Burning Pile;Trap-Sleep;-3;0;0;0;0;0;0;Disaster Remnants;The fire is spreading all around.<br>;Burned alive screaming.
 Forsaken Village;🧶;Ensnaring Wool;Trap;0;0;-1;0;0;0;0;Strange Wiggle;Tangles clutch at your fingertips.<br>;Nearly got caught in tangle
 
+Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;0;Party Prop;These are made for smashing!<br>;Improved your attack accuracy!
+Forsaken Village;🎃;Field Scarecrow;Trap-Attack;0;1;0;0;0;0;0;Makeshift Defense;Silently watches over the area.<br>;Improved your combat technique!
+Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;0;Training Spot;You should give it a shot!<br>;Improved your combat technique!
 Forsaken Village;🔭;Cosmic Lens;Trap;0;0;0;1;0;0;0;Suspicious Device;Looks like it was abandoned in hurry.<br>;Spotted a shooting star!
 Forsaken Village;🔬;Scientific Lens;Trap;0;0;0;0;1;0;0;Abandoned Experiment;Looks like left behind in panic.<br>;Spotted an inspiring microcosmos!
 Forsaken Village;🔔;Golden Bell;Trap;0;0;0;1;0;0;0;Rally Spot;Makes loud sound when disturbed.<br>;Ringed the bell\ hoping for luck
 Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.
-Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;0;Training Spot;You should give it a shot!<br>;Improved your combat technique!
-Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;0;Party Prop;These are made for smashing!<br>;Improved your attack accuracy!
 
 Forsaken Village;🛎️;Alert Bell;Trap-Attack;0;0;0;0;0;0;0;Loud Prop;This could probably cause some attention.<br>;Hmmm\ seems like nothing happened.
 
