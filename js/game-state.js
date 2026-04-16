@@ -364,6 +364,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 
+  // Roll Heavy with stamina remaining — slow and telegraphed, easy to sidestep
+  if (button === 'button_roll' && isHeavy && eSta > 0) {
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82 };
+  }
+
   // Knockout on a not tired living creature — resists hard
   // Uses base enemyAtk (not eAtk) to ignore anger bonuses from prior actions this encounter.
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);

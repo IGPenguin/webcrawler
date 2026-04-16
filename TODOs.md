@@ -6,17 +6,11 @@
 
 ## Top Priority
 
-- fix toast position = screen center x,y-20%
-- fail leave passive mob = sprain/step bad
-- allow hitting swift in action-resolver (hard, but possible)
+- are there any cases where the outcame is unchanged if the plaer hits pass/fail = same outcome
 
 ---
 
-## High Score
 
-Score = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100
-- display at: dead/game end, menu char preview, session history
-- sort the session history by score top -> bottom
 
 ----
 
@@ -74,6 +68,12 @@ Score = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete g
 - if stat over 5, display numeric - 4/5
 - JS spaghetti monster joke boss when?
   - Hanging out in Menu for 5 minutes with live char?
+
+## High Score
+
+Score = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100
+- display at: dead/game end, menu char preview, session history
+- sort the session history by score top -> bottom
 
 ## New Feature: Spells
 

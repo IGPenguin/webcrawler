@@ -379,9 +379,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (playerUseStamina(1,noStaForRollMessage)){
-              enemyStaminaChangeMessage(-1,"Dodged a heavy attack -1 🟢","Rolled around wasting energy  -1 🟢");
-              displayEnemyCannotEffect();
-              displayPlayerEffect("🌀");
+              if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0 && (enemySta-enemyStaLost) > 0) {
+                enemyStaminaChangeMessage(-1,"Rolled so slow they hit you anyway -"+(enemyAtk+enemyAtkBonus)+" 💔","Rolled around wasting energy -1 🟢");
+                playerHit(enemyAtk+enemyAtkBonus);
+              } else {
+                enemyStaminaChangeMessage(-1,"Dodged a heavy attack -1 🟢","Rolled around wasting energy -1 🟢");
+                displayEnemyCannotEffect();
+                displayPlayerEffect("🌀");
+              }
             }
             break;
 
