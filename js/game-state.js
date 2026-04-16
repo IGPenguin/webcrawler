@@ -359,10 +359,15 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(100 * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
   }
 
+  // Attack Swift with stamina remaining — near-impossible, they dodge
+  if (button === 'button_attack' && isSwift && eSta > 0) {
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+  }
+
   // Knockout on a not tired living creature — resists hard
   // Uses base enemyAtk (not eAtk) to ignore anger bonuses from prior actions this encounter.
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
-  if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
+  if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 

@@ -261,11 +261,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
               if (enemyAtkBonus<0){
                 playerGainXP(1.5,0,"They let you walk away");
+              } else if (_skillOK === false) {
+                if (Math.random() < 0.25) {
+                  logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
+                  playerHit(1);
+                } else {
+                  playerSta = Math.max(0, playerSta - 1);
+                  logPlayerAction(actionString, "Stumbled, almost falling over -1 🟢");
+                  displayPlayerCannotEffect();
+                }
               } else {
                 logPlayerAction(actionString,"Walked away leaving them behind.");
               }
-              animateFlipNextEncounter();
               isFishing=false;
+              if (playerHp > 0) animateFlipNextEncounter();
               break;
             }
 
@@ -308,11 +317,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
               if (enemyAtkBonus<0){
                 playerGainXP(1.5,0,"They let you walk away");
+              } else if (_skillOK === false) {
+                if (Math.random() < 0.25) {
+                  logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
+                  playerHit(1);
+                } else {
+                  playerSta = Math.max(0, playerSta - 1);
+                  logPlayerAction(actionString, "Stumbled, almost falling over -1 🟢");
+                  displayPlayerCannotEffect();
+                }
               } else {
                 logPlayerAction(actionString,"Walked away leaving them behind.");
               }
-              nextEncounter();
               isFishing=false;
+              if (playerHp > 0) nextEncounter();
               break;
             }
 
@@ -336,11 +354,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
               if (enemyAtkBonus<0){
                 playerGainXP(1.5,0,"They let you walk away");
+              } else if (_skillOK === false) {
+                if (Math.random() < 0.25) {
+                  logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
+                  playerHit(1);
+                } else {
+                  playerSta = Math.max(0, playerSta - 1);
+                  logPlayerAction(actionString, "Stumbled, almost falling over -1 🟢");
+                  displayPlayerCannotEffect();
+                }
               } else {
                 logPlayerAction(actionString,"Walked away leaving them behind.");
               }
-              animateFlipNextEncounter();
               isFishing=false;
+              if (playerHp > 0) animateFlipNextEncounter();
               break;
             }
 
