@@ -194,32 +194,33 @@ function calcActionBarConfig(button, adjustment) {
 
   // Cursor speed presets
   var ACTION_BAR_SPEED_MULT = 1.3; // Global multiplier — raise to make the bar harder everywhere.
+  var spdUnreal = 150;
   var spdInsane = 120;
   var spdHard = 90;
-  var spdMedium = 60;
+  var spdNormal = 60;
   var spdEasy = 30;
 
   // ── Special cases ────────────────────────────────────────────────────────
 
   // Sleep when already rested — impossible (bar all-red)
   if (button === 'button_sleep' && playerRested && types !== "Death") {
-    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Sleep at fishing spot after already having rested this visit — impossible
   if (button === 'button_sleep' && fishingRested && types === 'Fishing' && types !== "Death") {
-    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Cast / Heal / Curse with no mana — impossible (bar all-red)
   // button_pray is exempt on Curse type (action-resolver allows it without MGK)
   if ((button === 'button_cast' || (button === 'button_pray' && !isCurse) || button === 'button_curse') && pMgk <= 0) {
-    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Exhausted grab: near-impossible without stamina (items/containers/fishing unaffected)
   if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing' && types !== "Death") {
-    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
   // Resurrection: very narrow, fast zone — last chance before permanent death
@@ -230,22 +231,22 @@ function calcActionBarConfig(button, adjustment) {
 
    // Review on death: slow & green
   if (button === 'button_block' && types.includes('Death')) {
-    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
    // Give up|inactive "-" on death: slow & red
   if ((button === 'button_attack' || button === 'button_grab' || button === 'button_sleep' || button === 'button_speak') && types.includes('Death')) {
-    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Prop / encounterUsed walk: very wide zone — tiny stumble risk exists
   if (button === 'button_roll' && ( types === 'Prop'  ||  encounterUsed)) { 
-    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
-  // Dream walk: wide zone — small STA drain on fail
+  // Dream walk: slow & green
   if (button === 'button_roll' && types.includes('Dream')) {
-    return { speed: Math.round(35 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Near-impossible attack/block/dodge at 0 stamina — tiny zone, always possible
@@ -260,12 +261,12 @@ function calcActionBarConfig(button, adjustment) {
 
   // Curse submit / walk when unresolved - will hurt
    if ((button === 'button_sleep' || button === 'button_roll') && ( types === 'Curse' && !encounterUsed)) {
-    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Curse 100% safe if already resolved
   if (button === "button_pray" && encounterUsed) {
-    return { speed: Math.round(32 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   } 
 
   // Curse endure: zone scales with the player stat being affected by the curse
@@ -281,7 +282,7 @@ function calcActionBarConfig(button, adjustment) {
     // TODO make curse stats affect chance success
     var curseW = Math.max(15, Math.min(70, 20 + resistScore * 10));
 
-    return { speed: Math.round(spdMedium * ACTION_BAR_SPEED_MULT), successMin: Math.max(5, 50 - Math.round(curseW/2)), successMax: Math.min(95, 50 + Math.round(curseW/2)) };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: Math.max(5, 50 - Math.round(curseW/2)), successMax: Math.min(95, 50 + Math.round(curseW/2)) };
   }
 
   // Small grab: chance based on creature STA vs player STA
@@ -289,21 +290,21 @@ function calcActionBarConfig(button, adjustment) {
     var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
     var smallW = Math.max(20, Math.min(85, Math.round(55 + pSta * 5 - eStaSmall * 12)));
     var smallMid = 50;
-    return { speed: Math.round(44 * ACTION_BAR_SPEED_MULT), successMin: Math.max(3, smallMid - Math.round(smallW/2)), successMax: Math.min(97, smallMid + Math.round(smallW/2)) };
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: Math.max(3, smallMid - Math.round(smallW/2)), successMax: Math.min(97, smallMid + Math.round(smallW/2)) };
   }
 
   // Container search: luck scales zone width — bad luck = high chance of finding nothing
   if (button === 'button_grab' && types.includes('Container') && !types.includes('Locked')) {
     var searchW = Math.max(25, Math.min(82, Math.round(40 + pLck * 9)));
-    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
   }
 
   // Shop: Gamble = 50% zone, very fast; all other shop actions = full success zone; Tarot 100% zone
   if (types === 'Shop' || enemyName.includes("Tarot")) {
     if (button === 'button_block' && !enemyName.includes("Tarot")) { //Yolo again - Tarots are special, all good...
-      return { speed: Math.round(180 * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
+      return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
     }
-    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Fishing: 0 STA = impossible; no bait = near-impossible; bait quality shifts zone width
@@ -313,17 +314,17 @@ function calcActionBarConfig(button, adjustment) {
     }
     var fishBait = checkPlayerHasItem(validBaits);
     if (fishBait === "") {
-      return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+      return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
     }
     var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 1;
     var fishMin = Math.max(3, 34 - fishBQ * 4);
     var fishMax = Math.min(97, 58 + fishBQ * 4);
-    return { speed: Math.round(72 * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax };
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax };
   }
 
   // Grab Stingy / Toxic / Undead — impossible (they bite back, you know it)
   if (button === 'button_grab' && (types.includes('Stingy') || types.includes('Toxic') || types.includes('Undead'))) {
-    return { speed: Math.round(52 * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Trap wrong-action: small zone — risk of triggering it, but no penalty if passed
@@ -335,28 +336,28 @@ function calcActionBarConfig(button, adjustment) {
                   || (types === 'Trap-Sleep'    && button === 'button_sleep')
                   || (types === 'Trap-Obstacle' && button === 'button_attack');
     if (!_trapRight) {
-      return { speed: Math.round(65 * ACTION_BAR_SPEED_MULT), successMin: 44, successMax: 56 };
+      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 44, successMax: 56 };
     }
   }
 
   // Grab Prop — always succeeds, no skill required
   if (button === 'button_grab' && types === 'Prop') {
-    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Speak Prop — always succeeds, no skill required
   if (button === 'button_speak' && types === 'Prop') {
-    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Tease (block on passive mob with stamina remaining) — hard, creature resists provocation
   if (button === 'button_block' && eAtk === 0 && eSta > 0 && !isGrabbable && !isTrap && !isAltar) {
-    return { speed: Math.round(90 * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
   }
 
   // Pet minion (grab on exhausted Pet) — hard, they won't hold still
   if (button === 'button_grab' && types.includes('Pet') && eSta <= 0) {
-    return { speed: Math.round(100 * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
   }
 
   // Attack Swift with stamina remaining — near-impossible, they dodge
@@ -371,6 +372,11 @@ function calcActionBarConfig(button, adjustment) {
 
   // Knockout on a not tired living creature — resists hard
   // Uses base enemyAtk (not eAtk) to ignore anger bonuses from prior actions this encounter.
+  // Grab Swift with stamina — absurdly hard, 2-wide zone
+  if (button === 'button_grab' && isSwift && eSta > 0) {
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 49, successMax: 51 };
+  }
+
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
   if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
@@ -380,7 +386,7 @@ function calcActionBarConfig(button, adjustment) {
   var eAtkFull = Math.max(0, (enemyAtk || 0) + (enemyAtkBonus || 0));
   var eMgkFull = Math.max(0, (enemyMgk || 0) - (enemyMgkLost || 0));
   if (eAtkFull === 0 && eMgkFull === 0) {
-    return { speed: Math.round(30 * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
   var pStat, eStat, baseW, baseSpeed;
@@ -392,14 +398,14 @@ function calcActionBarConfig(button, adjustment) {
                 + (isSpirit ? Math.max(0, eInt)      : 0)
                 + eSta * 0.4;
       baseW     = isTrap ? 65 : 40;
-      baseSpeed = 50;
+      baseSpeed = spdNormal;
       break;
 
     case 'button_roll':
       pStat     = pSta;
       eStat     = (isSwift ? eSta * 2 : 0) + eAtk * 0.5;
       baseW     = 38;
-      baseSpeed = 55;
+      baseSpeed = spdNormal;
       break;
 
     case 'button_block':
@@ -408,7 +414,7 @@ function calcActionBarConfig(button, adjustment) {
                 + (isUndead ? 4           : 0)
                 + eAtk * 0.4;
       baseW     = 42;
-      baseSpeed = 48;
+      baseSpeed = spdNormal;
       break;
 
     case 'button_grab':
@@ -416,42 +422,42 @@ function calcActionBarConfig(button, adjustment) {
       eStat     = (isSmall  ? eSta * 3 : eSta * 2)   // unspent enemy STA scales grab difficulty
                 + (isUndead ? 6        : 0);
       baseW     = isGrabbable ? 78 : 35;
-      baseSpeed = isGrabbable ? 28 : 52;
+      baseSpeed = isGrabbable ? spdNormal : spdHard;
       break;
 
     case 'button_sleep':
       pStat     = pSta;
       eStat     = eAtk * 0.25;
       baseW     = 62;
-      baseSpeed = 32;
+      baseSpeed = spdNormal;
       break;
 
     case 'button_speak':
       pStat     = pInt;
       eStat     = (isSpirit ? Math.max(0, eInt) * 2 : Math.max(0, eInt));
       baseW     = isAltar || isCurse ? 52 : 42;
-      baseSpeed = 40;
+      baseSpeed = spdNormal;
       break;
 
     case 'button_cast':
       pStat     = pMgk;
       eStat     = eMgk * 0.8;
       baseW     = 40;
-      baseSpeed = 44;
+      baseSpeed = spdNormal;
       break;
 
     case 'button_pray':
       pStat     = pLck;
       eStat     = Math.max(0, eInt) * 0.4;
       baseW     = isAltar ? 62 : 48;
-      baseSpeed = 36;
+      baseSpeed = spdNormal;
       break;
 
     case 'button_curse':
       pStat     = pMgk + pLck * 0.5;
       eStat     = eMgk + Math.max(0, eInt) * 0.35;
       baseW     = 38;
-      baseSpeed = 46;
+      baseSpeed = spdNormal;
       break;
 
     default:
@@ -468,7 +474,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // Default speed multiplier * 5, scaled by ACTION_BAR_SPEED_MULT
   var speed = Math.round((baseSpeed + pStat * 20) * ACTION_BAR_SPEED_MULT);
-  speed = Math.max(36, Math.min(169, speed));
+  speed = Math.max(spdEasy, Math.min(spdUnreal, speed));
 
   // Zone position: random, luck blends toward an easier left-centre placement
   var maxStart   = 100 - zoneW;

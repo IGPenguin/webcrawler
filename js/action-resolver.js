@@ -1218,6 +1218,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKicked();
               break;
             }
+            if (_skillOK === true) {
+              if (playerSta > 0) playerSta--;
+              enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
+              logPlayerAction(actionString, "Snatched them, but they slipped away -1 🟢");
+              displayEnemyCannotEffect();
+              break;
+            }
             enemyAttackOrRest("They dodged that and retaliated -"+parseInt(enemyAtk+enemyAtkBonus)+" 💔");
             if (!enemyAttacked && enemyCastIfMgk()) break;
             break;
