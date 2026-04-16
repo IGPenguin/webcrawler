@@ -141,7 +141,7 @@ if (playerCheckLevelUp()){
   }
 }
 
-function playerHeal(){
+function playerHeal(critBonus){
   var missingHp=playerHpMax-playerHp;
   if (missingHp<0) missingHp=0;
 
@@ -149,10 +149,15 @@ function playerHeal(){
     var healAmount=missingHp;
     if (healAmount>(playerMgk)) healAmount=(playerMgk);
     if (healAmount>2) healAmount=2;
-    playerHp+=healAmount;
+    var bonusHeal = (critBonus && (playerHp+healAmount) < playerHpMax) ? 1 : 0;
+    playerHp+=healAmount+bonusHeal;
     playerMgk-=healAmount;
 
-    logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell for -"+healAmount+" 🔵");
+    if (bonusHeal) {
+      logPlayerAction(actionString,"Felt a divine overflow. +"+(healAmount+bonusHeal)+" ❤️‍🩹 -"+healAmount+" 🔵");
+    } else {
+      logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell for -"+healAmount+" 🔵");
+    }
     displayPlayerGainedEffect();
   } else {
     logPlayerAction(actionString,"Wasted a healing spell -1 🔵");

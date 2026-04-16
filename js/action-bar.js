@@ -11,6 +11,10 @@ var ActionBar = (function () {
   var _lastTs    = null;
   var _running   = false;
   var _onResolve = null;
+  var _hasCrits  = false;  // whether crit zones are active this bar
+  var _csMin     = -1;     // crit success zone min
+  var _csMax     = -1;     // crit success zone max
+  var _cfw       = 0;      // crit fail edge width (each side)
 
   var _elBar, _elTrack, _elCursor;
 
@@ -31,17 +35,39 @@ var ActionBar = (function () {
     _running   = true;
     _lastTs    = null;
 
-    // Gradient: fail | success zone | fail
-    _elTrack.style.background =
-      'linear-gradient(to right,'
-      + ' #621010 0%,          #621010 '  + config.successMin + '%,'
-      + ' #1a6b2e '                        + config.successMin + '%, #1a6b2e ' + config.successMax + '%,'
-      + ' #621010 '                        + config.successMax + '%, #621010 100%)';
+    // Determine crit zones
+    _csMin    = (config.critSuccessMin !== undefined) ? config.critSuccessMin : -1;
+    _csMax    = (config.critSuccessMax !== undefined) ? config.critSuccessMax : -1;
+    _cfw      = (config.critFailW      !== undefined) ? config.critFailW      : 0;
+    _hasCrits = _csMin >= 0 && _csMax > _csMin && _cfw > 0
+                && config.successMin > _cfw && config.successMax < (100 - _cfw);
+
+    // Build gradient: [crit-fail] fail | success [crit-success] success | fail [crit-fail]
+    var sm = config.successMin, sx = config.successMax;
+    var bg;
+    if (_hasCrits) {
+      var cfL = _cfw, cfR = 100 - _cfw;
+      bg = 'linear-gradient(to right,'
+        + ' #200808 0%, #200808 ' + cfL + '%,'
+        + ' #621010 ' + cfL + '%, #621010 ' + sm + '%,'
+        + ' #1a6b2e ' + sm + '%, #1a6b2e ' + _csMin + '%,'
+        + ' #b89000 ' + _csMin + '%, #b89000 ' + _csMax + '%,'
+        + ' #1a6b2e ' + _csMax + '%, #1a6b2e ' + sx + '%,'
+        + ' #621010 ' + sx + '%, #621010 ' + cfR + '%,'
+        + ' #200808 ' + cfR + '%, #200808 100%)';
+    } else {
+      bg = 'linear-gradient(to right,'
+        + ' #621010 0%, #621010 ' + sm + '%,'
+        + ' #1a6b2e ' + sm + '%, #1a6b2e ' + sx + '%,'
+        + ' #621010 ' + sx + '%, #621010 100%)';
+    }
+    _elTrack.style.background = bg;
 
     _elCursor.style.transition = 'none';
     _elCursor.style.left = '0%';
     _elCursor.classList.remove('action-bar-snap');
-    _elTrack.classList.remove('action-bar-flash-success', 'action-bar-flash-fail');
+    _elTrack.classList.remove('action-bar-flash-success', 'action-bar-flash-fail',
+                               'action-bar-flash-crit-success', 'action-bar-flash-crit-fail');
 
     _elBar.style.opacity = '0';
     _elBar.style.display = 'block';
@@ -79,23 +105,37 @@ var ActionBar = (function () {
     var val       = _value;
     var isSuccess = val >= _config.successMin && val <= _config.successMax;
 
+    // Detect crit zone
+    var critResult = null;
+    if (_hasCrits) {
+      if (isSuccess && val >= _csMin && val <= _csMax) {
+        critResult = 'success';
+      } else if (!isSuccess && (val <= _cfw || val >= (100 - _cfw))) {
+        critResult = 'fail';
+      }
+    }
+
     vibrateButtonPress();
 
     // Snap cursor in place
     _elCursor.style.transition = 'left 0.07s ease-out';
     _elCursor.classList.add('action-bar-snap');
 
-    // Flash track border
-    _elTrack.classList.add(isSuccess ? 'action-bar-flash-success' : 'action-bar-flash-fail');
+    // Flash track border — gold on crit success, near-black on crit fail
+    var flashClass = isSuccess
+      ? (critResult === 'success' ? 'action-bar-flash-crit-success' : 'action-bar-flash-success')
+      : (critResult === 'fail'    ? 'action-bar-flash-crit-fail'    : 'action-bar-flash-fail');
+    _elTrack.classList.add(flashClass);
 
     setTimeout(function () {
-      _elTrack.classList.remove('action-bar-flash-success', 'action-bar-flash-fail');
+      _elTrack.classList.remove('action-bar-flash-success', 'action-bar-flash-fail',
+                                 'action-bar-flash-crit-success', 'action-bar-flash-crit-fail');
       _elBar.style.transition = 'opacity 0.22s';
       _elBar.style.opacity    = '0';
       setTimeout(function () {
         _elBar.style.display = 'none';
         _elCursor.classList.remove('action-bar-snap');
-        if (_onResolve) _onResolve(isSuccess, val);
+        if (_onResolve) _onResolve(isSuccess, val, critResult);
       }, 220);
     }, 300);
   }

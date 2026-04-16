@@ -163,6 +163,9 @@ var eatColor=colorWhite;
 // false = skill check failed
 var actionBarSuccess = null;
 
+// null = no crit, 'success' = critical success zone hit, 'fail' = critical fail zone hit
+var actionBarCrit = null;
+
 // Returns { speed (units/s), successMin, successMax } derived from current global player+enemy state.
 // speed is on a 0–100 scale — at speed 60 the cursor crosses the full bar in ~1.67 s.
 // adjustment: optional ±integer added to zoneW before clamping (positive = easier, negative = harder).
@@ -472,7 +475,7 @@ function calcActionBarConfig(button, adjustment) {
   if (isBoss) eStat += 5;
 
   var zoneW = Math.round(baseW + pStat * 6 - eStat * 4 + (adjustment || 0));
-  
+
   // 100% * difficulty: 1 = unchanged, 0.75 = (-25% success zone width)
   zoneW = Math.round(zoneW * 0.75);
   zoneW = Math.max(12, Math.min(72, zoneW));
@@ -489,5 +492,25 @@ function calcActionBarConfig(button, adjustment) {
   var zoneStart  = Math.round(rawStart * (1 - luckBlend) + luckTarget * luckBlend);
   zoneStart = Math.max(4, Math.min(maxStart - 4, zoneStart));
 
-  return { speed: speed, successMin: zoneStart, successMax: zoneStart + zoneW };
+  // Crit zones — disabled when action requires stamina but player has none
+  var _requiresSta = (button === 'button_attack' || button === 'button_roll' || button === 'button_block');
+  var _noCrits = _requiresSta && pSta === 0;
+
+  if (_noCrits) {
+    return { speed: speed, successMin: zoneStart, successMax: zoneStart + zoneW };
+  }
+
+  // Crit zone widths: more luck/positive karma → wider success zone, narrower fail zone
+  var karmaAdj = (playerKarma || 1) - 1;
+  var critSuccessW = Math.min(14, Math.max(2, Math.round(4 + pLck * 1.2 + karmaAdj * 0.8)));
+  var critFailW    = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - karmaAdj * 0.5)));
+
+  // Crit success: centered inside the success zone
+  var csCenter = zoneStart + Math.round(zoneW / 2);
+  var csMin = Math.max(zoneStart + 1, csCenter - Math.floor(critSuccessW / 2));
+  var csMax = Math.min(zoneStart + zoneW - 1, csMin + critSuccessW);
+  if (csMax - csMin < 2) { csMin = -1; csMax = -1; }
+
+  return { speed: speed, successMin: zoneStart, successMax: zoneStart + zoneW,
+           critSuccessMin: csMin, critSuccessMax: csMax, critFailW: critFailW };
 }

@@ -4,6 +4,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     // Consume the action-bar skill check result (null = no check, true/false = pass/fail)
     var _skillOK = actionBarSuccess;
     actionBarSuccess = null;
+    var _crit = actionBarCrit;
+    actionBarCrit = null;
 
     var buttonUIElement = document.getElementById(button);
     animateUIElement(buttonUIElement,"animate__pulse","0.15");
@@ -132,14 +134,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
             if (_skillOK === false) {
-              logPlayerAction(actionString, "You missed your attack -1 🟢");
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Swung wild — hit yourself -1 💔 -1 🟢");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "You missed your attack -1 🟢");
+              }
               displayEnemyDodgeEffect();
               if (!enemyAttacked) enemyAttackOrRest();
               break;
             }
 
             //if (enemyType=="Tough") enemyDef=1; //Hehe, should Tough have something špeci?
-            enemyHit(playerAtk+playerAtkBonus-enemyDef);
+            if (_crit === 'success') {
+              logPlayerAction(actionString, "Your attack hit them extra hard.");
+              enemyHit(playerAtk+playerAtkBonus-enemyDef+1);
+            } else {
+              enemyHit(playerAtk+playerAtkBonus-enemyDef);
+            }
 
             if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) { //If they survive, they counterattack or regain stamina
               enemyAttackOrRest();
@@ -150,7 +162,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
             if (_skillOK === false) {
-              logPlayerAction(actionString, "Your attack missed -1 🟢");
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Swung wild — hit yourself -1 💔 -1 🟢");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "Your attack missed -1 🟢");
+              }
               displayEnemyDodgeEffect();
               if (!enemyAttacked) enemyAttackOrRest();
               break;
@@ -165,7 +182,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyStaminaChangeMessage(-1,"They barely dodged your attack.","They needed to catch a breath.");
               }
             } else {
-              enemyHit(playerAtk);
+              if (_crit === 'success') {
+                logPlayerAction(actionString, "Your attack hit them extra hard.");
+                enemyHit(playerAtk+1);
+              } else {
+                enemyHit(playerAtk);
+              }
               enemyAttackOrRest();
             }
             break;
@@ -278,7 +300,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (playerSta > 0) playerSta--;
+            if (playerSta > 0 && _crit !== 'success') playerSta--;
 
             if (enemyCastIfMgk(false)){
               logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
@@ -305,13 +327,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
               var _dodgeDmg = enemyAtk+enemyAtkBonus;
-              logPlayerAction(actionString, "Dodge failed, took the hit -"+_dodgeDmg+" 💔 -1 🟢");
+              if (_crit === 'fail') {
+                playerSta = Math.max(0, playerSta - 1);
+                logPlayerAction(actionString, "Tripped right into them -"+_dodgeDmg+" 💔 -2 🟢");
+              } else {
+                logPlayerAction(actionString, "Dodge failed, took the hit -"+_dodgeDmg+" 💔 -1 🟢");
+              }
               displayPlayerCannotEffect();
               playerHit(_dodgeDmg);
               break;
             }
 
-            if ((enemyAtk+enemyAtkBonus)!=0){
+            if (_crit === 'success') {
+              rollMessage="Glided past, untouched.";
+            } else if ((enemyAtk+enemyAtkBonus)!=0){
               rollMessage="Successfully dodged their attack -1 🟢";
             } else {
               rollMessage="They do not mean any harm -1 🟢";
@@ -347,13 +376,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (playerSta > 0) playerSta--;
+            if (playerSta > 0 && _crit !== 'success') playerSta--;
             if (_skillOK === true) {
-              enemyStaminaChangeMessage(-1,"Barely slipped a swift attack -1 🟢","Rolled out of the way -1 🟢");
+              enemyStaminaChangeMessage(-1,
+                _crit === 'success' ? "Glided past a swift attack." : "Barely slipped a swift attack -1 🟢",
+                "Rolled out of the way -1 🟢");
               displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
             } else {
-              enemyStaminaChangeMessage(-1,"Failed to dodge their attack -"+enemyAtk+" 💔","Rolled into a surprise attack -"+enemyAtk+" 💔");
+              if (_crit === 'fail') {
+                playerSta = Math.max(0, playerSta - 1);
+                enemyStaminaChangeMessage(-1,"Ran straight into their attack -"+enemyAtk+" 💔 -2 🟢","Rolled into a surprise attack -"+enemyAtk+" 💔");
+              } else {
+                enemyStaminaChangeMessage(-1,"Failed to dodge their attack -"+enemyAtk+" 💔","Rolled into a surprise attack -"+enemyAtk+" 💔");
+              }
               playerHit(enemyAtk);
             }
             break;
@@ -572,7 +608,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (playerSta > 0) playerSta--;
+        if (playerSta > 0 && _crit !== 'success') playerSta--;
 
         if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
           enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
@@ -588,7 +624,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0
             && enemyType!=="Pet" && enemyType!=="Small" && enemyType!=="Friend" && enemyType!=="Swift") {
           var _blockFailDmg = enemyAtk + enemyAtkBonus;
-          logPlayerAction(actionString, "They overpowered your block -"+_blockFailDmg+" 💔 -1 🟢");
+          if (_crit === 'fail') {
+            playerSta = Math.max(0, playerSta - 1);
+            logPlayerAction(actionString, "Block crumbled inward -"+_blockFailDmg+" 💔 -2 🟢");
+          } else {
+            logPlayerAction(actionString, "They overpowered your block -"+_blockFailDmg+" 💔 -1 🟢");
+          }
           playerHit(_blockFailDmg);
           break;
         }
@@ -617,7 +658,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Stingy":
           case "Tough":
           case "Reflective":
-            enemyStaminaChangeMessage(-1,"Blocked a regular attack -1 🟢","Blocked just for the sake of it -1 🟢");
+            enemyStaminaChangeMessage(-1,
+              _crit === 'success' ? "Deflected it flawlessly." : "Blocked a regular attack -1 🟢",
+              "Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
 
@@ -722,8 +765,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (_skillOK === false && !enemyType.includes("Locked") && !enemyType.includes("Container")
               && enemyType!=="Consumable" && enemyType!=="Item" && enemyType!=="Altar"
               && enemyType!=="Upgrade" && enemyType!=="Dream") {
+            var _backfireDmg = (_crit === 'fail') ? Math.max(1, playerMgk) : 0;
             playerMgk -= mkgCost;
-            logPlayerAction(actionString, "Spell fizzled -"+mkgCost+" 🔵");
+            if (_crit === 'fail') {
+              logPlayerAction(actionString, "Spell snapped back -"+_backfireDmg+" 💔 -"+mkgCost+" 🔵");
+              playerHit(_backfireDmg, false);
+            } else {
+              logPlayerAction(actionString, "Spell fizzled -"+mkgCost+" 🔵");
+            }
             displayEnemyCannotEffect();
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
@@ -782,7 +831,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
-              enemyHit(magicDamage+magicBonusDamage,true);
+              if (_crit === 'success') {
+                logPlayerAction(actionString, "Your spell was especially effective.");
+                enemyHit(magicDamage+magicBonusDamage+1,true);
+              } else {
+                enemyHit(magicDamage+magicBonusDamage,true);
+              }
             } else {
               logPlayerAction(actionString,"They resisted your spell -"+magicDamage+" 🔵");
               enemyMgkLost+=magicDamage;
@@ -908,7 +962,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (_skillOK === false && enemyType!=="Altar" && enemyType!=="Upgrade"
               && enemyType!=="Dream" && enemyType!=="Death" && enemyType!=="Curse") {
             playerMgk--;
-            logPlayerAction(actionString, "Failed to cast a healing spell -1 🔵");
+            if (_crit === 'fail' && (enemyHp - enemyHpLost) < enemyHp) {
+              enemyHpLost = Math.max(0, enemyHpLost - 1);
+              logPlayerAction(actionString, "Healed the wrong target -1 🔵");
+              displayEnemyEffect("❤️");
+            } else {
+              logPlayerAction(actionString, "Failed to cast a healing spell -1 🔵");
+            }
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
@@ -972,7 +1032,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
-            playerHeal();
+            playerHeal(_crit === 'success');
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
             break;
@@ -1046,7 +1106,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           if (_skillOK === false && enemyType!=="Upgrade" && enemyType!=="Death"
               && enemyType!=="Altar" && enemyType!=="Demon" && enemyType!=="Reflective") {
-            logPlayerAction(actionString, "Curse dissolved without effect -2 🔵");
+            if (_crit === 'fail') {
+              playerAtk = Math.max(0, playerAtk - 1);
+              logPlayerAction(actionString, "The curse turned on you -1 ⚔️ -2 🔵");
+            } else {
+              logPlayerAction(actionString, "Curse dissolved without effect -2 🔵");
+            }
             displayEnemyCannotEffect();
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
@@ -1105,8 +1170,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way (halves damage?)
             enemyAtkBonus-=enemyAtkChange;
             if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
+            if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
+              enemyAtkBonus--;
+              logPlayerAction(actionString,"The hex sank deep -"+(enemyAtkChange+1)+" ⚔️ weaker for -2 🔵");
+            } else {
+              logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
+            }
             enemyCursed=true;
-            logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
             logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
             break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
@@ -1664,6 +1734,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         // Chance: 90% at INT 0, ~0% at INT 7+; skips special non-combat encounter types
         if (_skillOK === false) {
           var _noGibberishTypes = /Upgrade|Death|Dream|Altar|Container|Item|Consumable|Fishing|Prop|Shop|Curse/.test(enemyType);
+          if (!_noGibberishTypes && _crit === 'fail') {
+            enemyAtkBonus = Math.min(enemyAtkBonus + 1, 3);
+            logPlayerAction(actionString, "Your words emboldened them +1 ⚔️");
+            displayPlayerCannotEffect();
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+          }
           var _gibberishChance = Math.max(0, 0.9 - playerInt * 0.12);
           if (!_noGibberishTypes && Math.random() < _gibberishChance) {
             logPlayerAction(actionString, "It came out as gibberish.");
@@ -1764,6 +1842,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect("💬");
               if (enemyCastIfMgk()) break;
               enemyAttackOrRest();
+              break;
+            }
+
+            if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
+              enemyAtkBonus--;
+              logPlayerAction(actionString,"Rattled them to the core -1 ⚔️");
+              displayEnemyCannotEffect();
+              if ((enemyAtkBonus+enemyAtk) > 0) enemyAttackOrRest();
               break;
             }
 

@@ -347,8 +347,9 @@ function registerClickListeners(delay=0){
       var raw = pair[1]();
       var handler = function(e) {
         e.preventDefault();
-        ActionBar.showActionBar(calcActionBarConfig(id), function(isSuccess) {
+        ActionBar.showActionBar(calcActionBarConfig(id), function(isSuccess, val, critResult) {
           actionBarSuccess = isSuccess;
+          actionBarCrit = critResult || null;
           raw();
         });
       };

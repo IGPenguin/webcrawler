@@ -6,32 +6,29 @@
 
 ## Top Priority
 
+???
+
+----
+
+## Critical success/fail - Follow Up
+
+  Two cases I'd suggest adding if you want full coverage: Sleep (crit success = free +2 sta, crit fail = enemy gets a free attack while
+  you're resting) and Grab (crit success = instant knockout, crit fail = they hit back harder). But those have a lot of special cases —
+  worth doing separately.
+
+
+- Legendary for bigger crit chance interval
+
+---
+
+## Improved tutorial
+
 ímprove tutorial and make it bulletproof
 - make it impossible to ditch the shrimp (requred to learn about food)
 - better explain player actions and consequences
 - you may add few encounters, but make sure to properly skip it when not playing for the first time
+- include crit pass/fail
 - propose your idea first, I`ll have to allow the changes
-
-----
-
-## Action bar enhancement: critical success/fail
-
-- add critical success and critical failure (very) slim intervals to action bar (not present when player has 0 stamina to do the action - if it requires sta)
-- crit success (gold interval):
-  - attack = extra 1 dmg dealt
-  - dodge/block = no stamina used
-  - cast = extra 1dmg dealt
-  - heal = extra 1 hp healed
-  - curse = extra -1 atk to enemy
-- crit fail (very dark red/black interval):
-  - attack = hurt yourself -1 hp
-  - dodge/block = spend extra 1 sta and still fail
-  - cast = hit yourself with the spell
-  - heal = heal enemy with the spell
-  - curse = curse yourself
-
-
-- Legendary for bigger crit chance interval
 
 ---
 
