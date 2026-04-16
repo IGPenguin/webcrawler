@@ -455,6 +455,7 @@ function registerClickListenersTechnical(){
 }
 
 function logCheatUse(message){
+  AchievementManager.check('use_cheat');
   logAction("✏️ ▸ ⚠️ <b>Used a cheat: "+message+"</b>");
   redraw();
 }

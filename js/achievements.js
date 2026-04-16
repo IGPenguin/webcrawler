@@ -34,11 +34,20 @@ var AchievementManager = (function () {
     { id: 'fish_bait_50',       emoji: '🎏', desc: 'Caught something 50 times!' },
     { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Pffft... who needs a bait anyway?" },
     { id: 'fish_no_bait_50',    emoji: '😎', desc: 'Caught something without a bait 50 times!' },
-    { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered Forsaken Village!' },
-    { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered Twisted Fairyland!' },
-    { id: 'discover_river',      emoji: '🌊', desc: 'Discovered River of Sorrows!' },
-    { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered Shrouded Necropolis!' },
-    { id: 'touch_grass',         emoji: '🌿', desc: 'You you touched the grass!', hint: 'Try going outside and then?' }
+    { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered: Forsaken Village!' },
+    { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!' },
+    { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!' },
+    { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!' },
+    { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?' },
+    { id: 'grab_artifact',       emoji: '🏺', desc: 'Found your first artifact!', hint: 'Some items are truly legendary.' },
+    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of quality.' },
+    { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.' },
+    { id: 'eat_hazardous',       emoji: '🚩', desc: 'Consumed something hazardous!', hint: 'Touch everything.' },
+    { id: 'eat_purple',          emoji: '💜', desc: 'Ate a premium refreshment!', hint: 'The finer things in death.' },
+    { id: 'eat_legendary',       emoji: '🟠', desc: 'Consumed a legendary refreshment!', hint: 'Rarities can be eaten too.' },
+    { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.' },
+    { id: 'level_5',             emoji: '🏆', desc: 'Reached level 5!', hint: 'The path ahead grows longer.' },
+    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat code!', hint: 'Try using a secret name...' }
   ];
   // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
 
@@ -66,7 +75,16 @@ var AchievementManager = (function () {
     boughtArtifact:      false,
     boughtLevel:         false,
     wonGame:             false,
-    discoveredAreas:     []
+    discoveredAreas:     [],
+    grabbedArtifact:     false,
+    grabbedExquisite:    false,
+    grabbedRubbish:      false,
+    ateHazardous:        false,
+    atePurple:           false,
+    ateLegendary:        false,
+    leveledFirst:        false,
+    reachedLevel5:       false,
+    usedCheat:           false
   };
 
   var _unlocked       = {};
@@ -335,6 +353,39 @@ var AchievementManager = (function () {
         }
         break;
       }
+
+      case 'grab_artifact':
+        if (!_stats.grabbedArtifact) { _stats.grabbedArtifact = true; _save(); _unlock('grab_artifact'); }
+        break;
+
+      case 'grab_exquisite':
+        if (!_stats.grabbedExquisite) { _stats.grabbedExquisite = true; _save(); _unlock('grab_exquisite'); }
+        break;
+
+      case 'grab_rubbish':
+        if (!_stats.grabbedRubbish) { _stats.grabbedRubbish = true; _save(); _unlock('grab_rubbish'); }
+        break;
+
+      case 'eat_hazardous':
+        if (!_stats.ateHazardous) { _stats.ateHazardous = true; _save(); _unlock('eat_hazardous'); }
+        break;
+
+      case 'eat_purple':
+        if (!_stats.atePurple) { _stats.atePurple = true; _save(); _unlock('eat_purple'); }
+        break;
+
+      case 'eat_legendary':
+        if (!_stats.ateLegendary) { _stats.ateLegendary = true; _save(); _unlock('eat_legendary'); }
+        break;
+
+      case 'level_up':
+        if (!_stats.leveledFirst) { _stats.leveledFirst = true; _save(); _unlock('level_first'); }
+        if ((value >= 5) && !_stats.reachedLevel5) { _stats.reachedLevel5 = true; _save(); _unlock('level_5'); }
+        break;
+
+      case 'use_cheat':
+        if (!_stats.usedCheat) { _stats.usedCheat = true; _save(); _unlock('use_cheat'); }
+        break;
 
       case 'game_win':
         if (!_stats.wonGame) { _stats.wonGame = true; _save(); _unlock('game_win_first'); }

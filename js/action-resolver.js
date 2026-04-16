@@ -1549,6 +1549,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (!playerName.includes("(")) playerName=playerName+" ("+enemyName.replace("Tarot Card: ","")+")"
               playerDestined=true;
             }
+            //Item quality achievements
+            if (enemyTeam.includes("Artifact") || enemyTeam.includes("Questionable Drink")) {
+              AchievementManager.check('grab_artifact');
+            } else if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || parseInt(enemyHp)>=2 || parseInt(enemyAtk)>=2 || (parseInt(enemyAtk)>=1 && parseInt(totalMalus)==0) || parseInt(enemySta)>=2 || parseInt(enemyMgk)>=2 || (parseInt(enemyMgk)>=1 && parseInt(totalMalus)==0)) {
+              AchievementManager.check('grab_exquisite');
+            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover")) {
+              AchievementManager.check('grab_rubbish');
+            }
             //Grab end
             isFishing=false;
             if (playerHp==0) break;
@@ -1589,6 +1597,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               isFishing=false;
               nextEncounter();
               break;
+            }
+            //Consumable quality achievements
+            if (enemyTeam.includes("Artifact") || enemyTeam.includes("Essence")) {
+              AchievementManager.check('eat_legendary');
+            } else if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || parseInt(enemyHp)>=2 || parseInt(enemyAtk)>=2 || parseInt(enemySta)>=2 || parseInt(enemyMgk)>=2) {
+              AchievementManager.check('eat_purple');
+            } else if (parseInt(enemyHp)<0 || parseInt(enemyAtk)<0 || parseInt(enemySta)<0 || parseInt(enemyLck)<0 || parseInt(enemyInt)<0 || parseInt(enemyMgk)<0) {
+              AchievementManager.check('eat_hazardous');
             }
             playerConsumed();
             displayEnemyEffect("🍴");

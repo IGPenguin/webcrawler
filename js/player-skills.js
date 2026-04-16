@@ -88,6 +88,7 @@ function playerCheckLevelUp(){
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
     playerLevel++;
+    AchievementManager.check('level_up', playerLevel);
     playerXP=playerXP-playerXPThreshold;
     playerXPThreshold=playerLevel*200;
     updateXPProgress();
