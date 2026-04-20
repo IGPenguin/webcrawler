@@ -945,7 +945,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (playerMgk<1 && enemyType!=="Curse"){
+          if (playerMgk<1 && enemyType!=="Curse" && enemyType!=="Altar"){
             logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
             break;
@@ -1617,7 +1617,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             var bait=checkPlayerHasItem(validBaits);
             if (_skillOK === false) {
               displayPlayerCannotEffect();
-              logPlayerAction(actionString, bait !== "" ? "The fish slipped off the hook -1 🟢" : "Too tired to focus on the hook -1 🟢");
+              logPlayerAction(actionString, bait !== "" ? "The fish slipped off the hook -1 🟢" : (playerSta <= 0 ? "Too tired to focus on the hook -1 🟢" : "Nothing bit the empty hook -1 🟢"));
               break;
             }
             if (bait !== "") {
