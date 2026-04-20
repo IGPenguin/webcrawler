@@ -94,11 +94,11 @@ function loadEncounter(index, fileLines = linesStory){
   }
   enemyDesc = enemyDesc.replaceAll("\\",",");
   enemyDesc = enemyDesc.replaceAll("((",":");
-  if (enemyTeam=="Undertaker") {
+  if (enemyName.includes("Undertaker")) {
     enemyDesc=getShopMessage();
-    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</i><b> 🪙";
+    enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</b></i> 🪙";
   }
-  if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</i><b> 🪙";
+  if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</b></i> 🪙";
 
   enemyMsg = String(selectedLine.split(",")[13].split(":")[1]).replaceAll("\\",",");
   enemyMsg = enemyMsg.replaceAll("((",":");
