@@ -440,6 +440,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (isFishing){
               isFishing=false;
               logPlayerAction(actionString,"Threw it back into the water.");
+              var _savedRested = playerRested;
+              nextEncounter();
+              playerRested = _savedRested;
+              break;
             } else {
               if (enemyTeam.includes("Lover's Memento")){
                 playerAtk++;
@@ -1558,9 +1562,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('grab_rubbish');
             }
             //Grab end
+            var _wasInFishing = isFishing;
             isFishing=false;
             if (playerHp==0) break;
+            var _savedRested = _wasInFishing ? playerRested : false;
             playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg);
+            if (_wasInFishing) playerRested = _savedRested;
             break;
 
           case "Small":
@@ -2176,7 +2183,9 @@ function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
   lastEncounterIndex = encounterIndex-1;
   lootEncounterIndex = getUnseenLootIndex();
   markAsSeenFishing(lootEncounterIndex);
+  var _savedRested = playerRested;
   encounterRenew();
+  playerRested = _savedRested;
   return true;
 }
 
