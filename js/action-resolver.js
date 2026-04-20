@@ -147,8 +147,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             //if (enemyType=="Tough") enemyDef=1; //Hehe, should Tough have something špeci?
             if (_crit === 'success') {
-              logPlayerAction(actionString, "Your attack hit them extra hard.");
-              enemyHit(playerAtk+playerAtkBonus-enemyDef+1);
+              logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+playerAtkBonus-enemyDef+1)+" 💔");
+              enemyHit(playerAtk+playerAtkBonus-enemyDef+1,false,true,true);
             } else {
               enemyHit(playerAtk+playerAtkBonus-enemyDef);
             }
@@ -163,10 +163,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Swung wild — hit yourself -1 💔 -1 🟢");
+                logPlayerAction(actionString, "Missed them, hit yourself -1 💔 -1 🟢");
                 playerHit(1, false);
               } else {
-                logPlayerAction(actionString, "Your attack missed -1 🟢");
+                logPlayerAction(actionString, "Your attack missed them -1 🟢");
               }
               displayEnemyDodgeEffect();
               if (!enemyAttacked) enemyAttackOrRest();
@@ -183,8 +183,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
             } else {
               if (_crit === 'success') {
-                logPlayerAction(actionString, "Your attack hit them extra hard.");
-                enemyHit(playerAtk+1);
+                logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+1)+" 💔");
+                enemyHit(playerAtk+1,false,true,true);
               } else {
                 enemyHit(playerAtk);
               }
