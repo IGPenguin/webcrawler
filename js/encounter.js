@@ -271,6 +271,20 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       pushEncounter(item);
       nextEncounter();
       pushEncounter(drachmaShop);
+    } else if (item=="Aspect") {
+      var aspectPool = [
+        { stat: "❤️",  apply: function() { playerHp++; playerHpMax++; } },
+        { stat: "🟢",  apply: function() { playerSta++; playerStaMax++; } },
+        { stat: "🍀",  apply: function() { playerLck++; } },
+        { stat: "🧠",  apply: function() { playerInt++; } }
+      ];
+      var picked = aspectPool[Math.floor(Math.random() * aspectPool.length)];
+      picked.apply();
+      displayPlayerGainedEffect();
+      displayPlayerEffect(picked.stat);
+      logPlayerAction(actionString, "Fate has shaped you to gain <b>+1 "+picked.stat+"</b>");
+      redraw();
+      return;
     } else if (item=="Gamble")  {
       if (skillSuccess === true){
         AchievementManager.check('gamble_win');

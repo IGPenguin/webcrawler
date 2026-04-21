@@ -17,8 +17,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 💀;Lich;0;0;-2;0;0;2;0;Gain <b>+2 🔵 Mana</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Traded the life essence for pure power.
 🪄;Wizard;0;-1;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, sacrifice <b>-1 ⚔️ Attack</b>.<br><i>Chosen magic over physical strength.
 🩸;Warlock;-1;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Blood is just another reagent.
-🕯️;Cleric;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, sacrifice <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than the body.
-🔷;Mage;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no apparent downside.<br><i>Talented by nature.
+🕯️;Cleric;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, sacrifice <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than their body.
+🔷;Mage;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no apparent downside.<br><i>Bears supernatural power by nature.
 
 👻;Wraith;0;-1;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, sacrifice <b>-1 ⚔️ Attack</b>.<br><i>Lighting fast, but effectively harmless.
 🥷;Ninja;-2;0;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, sacrifice <b>-2 💔 Health</b>.<br><i>The more agile the more fragile.

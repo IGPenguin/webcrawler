@@ -8,12 +8,6 @@
 
 ## Origins
 
-/compact
-
-- Replace "Tarot" option in the shop with something else 
-  - 🔮 Augury — +1 LCK for the rest of the run (stat boost, destiny flavor)
-  - 🕯️ Vigil — +1 to a random non-zero stat (surprise element)
-
 - Prepend the origin emoji to the player name instead of the postfix in brackets
  - Remember the emoji in special var alongside standard player stats
  - The emoji can have side effects in game
@@ -21,9 +15,10 @@
 
   ...
 
-- Create unique origins (similar to how items are legendary):
+- Create unique origins (very rare - similar to items legendary/artifact items work):
   - Low chance to roll these
   - These give special effects (Undead passive, Demons passive...) 
+  - Would make sense to unlock these by progressing the game story?
 
 ---
 
@@ -41,6 +36,22 @@ Grab (crit success = instant knockout, crit fail = they hit back harder). But th
 
 - Legendary item for bigger crit chance interval by ??%
 - Legendary item slowing down action bar speed by ??%
+
+---
+
+## Improved ending
+
+make endgame bosss very dramatic - with fade transitions
+
+make meaningfull branching based on love, karma...
+- kiss goodnight
+- mercy kill
+- unded ever after
+- tru revive
+- world rot end
+
+save char end wintype: pacific, killed..?
+achievements per ending type
 
 ---
 
@@ -120,17 +131,19 @@ add new dynamic layout with spells
 - 🩸 Syphon - Damage enemy for 2, damage enemy for 2
 - ...more?
 
+## New Feature: Inventory
+
+- Inventory: consumable, items array
+  - open on click loot/party bar
+  - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits) = Prevents stacking power fast
+  - eat food only intentionally, dont force/ditch
+
 ## Big Ideas
 
 - Take inspiration from: https://pixeldungeon.fandom.com/wiki/Main_Page
 
 - Keep corpses, do not navigate right away
   - Chance to rest etc.
-- Inventory: consumable, items array
-  - open on click loot/party bar
-  - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits)
-    - Prevents stacking power fast
-  - eat food intentionally
 
 - Generate loot and consumable from kill/knockout 
   - "They've dropped something"
@@ -149,9 +162,11 @@ add new dynamic layout with spells
 - Rebalance drops vs enemy stats? (too easy if you pivkup everything)
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed
 
+## Sequential Effects
+
 make actions seem more sequential in the ui so that player can notice one by one - eg delay 0,5s each log display and wait for effects to complete before firing another and unlocking UI for player actions?
 
-## Achievements update!
+## Achievements Update!
 
 achiev from game >> back to game
 

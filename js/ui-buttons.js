@@ -255,7 +255,8 @@ function adjustEncounterButtons(){
 
     case "Shop":
       var availableCoins=savedCoins-spentCoins;
-      setButton('button_attack',"— — —",colorDarkGrey);
+      setButton('button_attack',"1 🪙 Aspect",colorSoftGreen);
+        if (availableCoins<1) setButton('button_attack',"1 🪙 Aspect",colorDarkGrey);
 
       setButton('button_roll',"👣 Leave",colorRed);
       if (availableCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
