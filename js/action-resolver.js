@@ -772,7 +772,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           if (_skillOK === false && !enemyType.includes("Locked") && !enemyType.includes("Container")
               && enemyType!=="Consumable" && enemyType!=="Item" && enemyType!=="Altar"
-              && enemyType!=="Upgrade" && enemyType!=="Dream") {
+              && enemyType!=="Upgrade" && enemyType!=="Dream" && enemyType!=="Reflective") {
             var _backfireDmg = (_crit === 'fail') ? Math.max(1, playerMgk) : 0;
             playerMgk -= mkgCost;
             if (_crit === 'fail') {
@@ -793,22 +793,43 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyHit(magicDamage,true);
             break;
 
-          case "Reflective": //Copy pasted half of this shizz, damnnn
-            var magicDamage = playerMgk;
-            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
-            if (magicDamage > 2) {
-              magicDamage=2;
-            }
-            playerMgk-=magicDamage;
-            displayEnemyEffect("🔷");
-            displayEnemyCannotEffect();
-            if ((enemySta+enemyStaLost)==0){
-              atckmsg="They reflected your spell -"+magicDamage+" 🔵";
+          case "Reflective":
+            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1;
+            if (magicDamage > 2) magicDamage=2;
+            if (_skillOK === false) {
+              // Missed — spell reflects back
+              playerMgk-=magicDamage;
+              displayEnemyEffect("🔷");
+              displayEnemyCannotEffect();
+              if ((enemySta+enemyStaLost)==0){
+                atckmsg="They reflected your spell -"+magicDamage+" 🔵";
+              } else {
+                atckmsg="They reflected the spell and attacked -"+enemyAtk+" 💔";
+              }
+              if (enemyCastIfMgk(true)) enemyAttacked=true;
+              if (!enemyAttacked) enemyAttackOrRest(atckmsg);
             } else {
-              atckmsg="They reflected the spell and attacked -"+enemyAtk+" 💔";
+              // Landed — spell bypasses reflection
+              playerMgk-=magicDamage;
+              var magicBonusDamage=0;
+              if (procAbilityChance("💫",100)) magicBonusDamage=1;
+              if ((enemyMgk-enemyMgkLost)<=magicDamage){
+                if (_crit === 'success') {
+                  logPlayerAction(actionString,"Spell pierced their defenses.");
+                  enemyHit(magicDamage+magicBonusDamage+1,true);
+                } else {
+                  enemyHit(magicDamage+magicBonusDamage,true);
+                }
+              } else {
+                logPlayerAction(actionString,"They resisted your spell -"+magicDamage+" 🔵");
+                enemyMgkLost+=magicDamage;
+                if (enemyMgkLost>enemyMgk) enemyMgkLost=enemyMgk;
+              }
+              if (enemyHp-enemyHpLost > 0) {
+                if (enemyCastIfMgk()) break;
+                enemyAttackOrRest();
+              }
             }
-            if (enemyCastIfMgk(true)) enemyAttacked=true;
-            if (!enemyAttacked) enemyAttackOrRest(atckmsg);
             break;
 
           case "Recruit": //You should be faster if you have Mgk >= them
@@ -1128,15 +1149,29 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       switch (enemyType){
         case "Reflective":
-          displayEnemyEffect("🔷");
-          displayEnemyCannotEffect();
-          if ((enemySta+enemyStaLost)==0){
-            atckmsg="They reflected your curse -2 🔵";
+          // Curse landed (fail was caught above and broke early)
+          if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
+            displayEnemyCannotEffect();
+            displayEnemyEffect("🪬");
+            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2);
+            enemyAtkBonus-=enemyAtkChange;
+            if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
+              enemyAtkBonus--;
+              logPlayerAction(actionString,"The hex pierced their reflection -"+(enemyAtkChange+1)+" ⚔️ for -2 🔵");
+            } else {
+              logPlayerAction(actionString,"Curse bypassed their reflection -"+enemyAtkChange+" ⚔️ for -2 🔵");
+            }
+            enemyCursed=true;
+            logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
+          } else if (playerMgkMax <= enemyMgk) {
+            logPlayerAction(actionString,"They resisted your curse -2 🔵");
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
           } else {
-            atckmsg="They reflected it and attacked -"+enemyAtk+" 💔";
+            logPlayerAction(actionString,"Your curse had no effect on them -2 🔵");
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
           }
-          if (enemyCastIfMgk(true)) enemyAttacked=true;
-          if (!enemyAttacked) enemyAttackOrRest(atckmsg);
           break;
 
         case "Demon":
@@ -2050,14 +2085,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Tough":
           case "Reflective":
             if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
-              logPlayerAction(actionString, "They interrupted your rest -"+(enemyAtk+enemyAtkBonus)+" 💔");
+              var _atkTotal = enemyAtk + enemyAtkBonus;
+              var _interruptDmg = (_crit === 'fail') ? _atkTotal * 2 : _atkTotal;
+              logPlayerAction(actionString, (_crit === 'fail')
+                ? "Caught completely off guard. -" + _interruptDmg + " 💔"
+                : "They interrupted your rest -" + _atkTotal + " 💔");
               displayPlayerCannotEffect();
-              playerHit(enemyAtk+enemyAtkBonus);
+              playerHit(_interruptDmg);
               break;
             }
             if (playerHp>0){
               displayPlayerEffect("💤");
-              playerGetStamina(1);
+              playerGetStamina(1, _crit === 'success');
+            }
+            if (_crit === 'success') {
+              logPlayerAction(actionString, "Refreshed yourself exceptionally fast!");
+              break;
             }
             if (enemyCastIfMgk()){
               //
@@ -2087,7 +2130,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Checkpoint":
           case "Altar":
-            playerRest();
+            if (_crit === 'fail') {
+              if (playerSta < playerStaMax) playerSta++;
+              playerRested = true;
+              logPlayerAction(actionString, "Exhausted by trying to sleep.");
+              displayPlayerEffect("💤");
+            } else {
+              playerRest();
+              if (_crit === 'success') {
+                playerSta++;
+                logPlayerAction(actionString, "Rested exceptionally well.");
+                displayPlayerRestedEffect();
+              }
+            }
             break;
 
           case "Fishing":
@@ -2097,7 +2152,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             fishingRested = true;
-            playerRest();
+            if (_crit === 'fail') {
+              if (playerSta < playerStaMax) playerSta++;
+              playerRested = true;
+              logPlayerAction(actionString, "Exhausted by trying to sleep.");
+              displayPlayerEffect("💤");
+            } else {
+              playerRest();
+              if (_crit === 'success') {
+                playerSta++;
+                logPlayerAction(actionString, "Rested exceptionally well.");
+                displayPlayerRestedEffect();
+              }
+            }
             break;
 
           case "Trap-Sleep":

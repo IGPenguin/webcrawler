@@ -272,6 +272,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
+  // Reflective: spells and curses bounce back — very hard to land
+  if ((button === 'button_cast' || button === 'button_curse') && types === 'Reflective') {
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 40, successMax: 60 };
+  }
+
   // Curse submit / walk when unresolved - will hurt
    if ((button === 'button_sleep' || button === 'button_roll') && ( types === 'Curse' && !encounterUsed)) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
