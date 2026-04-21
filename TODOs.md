@@ -4,30 +4,31 @@
 /compat when done! (and will repeat in future)
 /clear when one-time task completed
 
-## Top Priority
+---
 
-???
+## Top Priority - Action Bar cases follow ups
 
-----
+I suspect that there are a lot of blind spots with action bar pass/fail/crit-pass/crit-fail for for various encounter types + action combos
+can you check that for me? e.g. should be super hard to physically hit Spirit, but not impossible (anymore, since we have the action bar)... I guess?
 
-## Critical success/fail - Follow Up
-
-  Two cases I'd suggest adding if you want full coverage: Sleep (crit success = free +2 sta, crit fail = enemy gets a free attack while
-  you're resting) and Grab (crit success = instant knockout, crit fail = they hit back harder). But those have a lot of special cases —
+Grab (crit success = instant knockout, crit fail = they hit back harder). But those have a lot of special cases —
   worth doing separately.
 
+---
 
-- Legendary for bigger crit chance interval
+## Items
+
+- Legendary item for bigger crit chance interval by ??%
+- Legendary item slowing down action bar speed by ??%
 
 ---
 
 ## Improved tutorial
 
-ímprove tutorial and make it bulletproof
-- make it impossible to ditch the shrimp (requred to learn about food)
+ímprove tutorial
 - better explain player actions and consequences
 - you may add few encounters, but make sure to properly skip it when not playing for the first time
-- include crit pass/fail
+- include crit success/fail info
 - propose your idea first, I`ll have to allow the changes
 
 ---
