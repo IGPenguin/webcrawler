@@ -48,7 +48,7 @@ var SaveManager = (function () {
         playerXPThreshold:  playerXPThreshold,
         playerLove:         playerLove,    playerKarma:       playerKarma,
         playerRested:       playerRested,  playerCooked:      playerCooked,
-        playerShopped:      playerShopped, playerDestined:    playerDestined,
+        playerShopped:      playerShopped, playerDestined:    playerDestined, playerEmoji: playerEmoji,
         bubblesUsed:        bubblesUsed,
         playerAttackType:   playerAttackType, playerRollType: playerRollType,
         playerBlockType:    playerBlockType,  playerSleepType: playerSleepType,
@@ -116,7 +116,7 @@ var SaveManager = (function () {
     playerXPThreshold = s.playerXPThreshold;
     playerLove        = s.playerLove;       playerKarma       = s.playerKarma;
     playerRested      = s.playerRested;     playerCooked      = s.playerCooked;
-    playerShopped     = s.playerShopped;    playerDestined    = s.playerDestined;
+    playerShopped     = s.playerShopped;    playerDestined    = s.playerDestined;    playerEmoji       = s.playerEmoji || '';
     bubblesUsed       = s.bubblesUsed;
     playerAttackType  = s.playerAttackType; playerRollType    = s.playerRollType;
     playerBlockType   = s.playerBlockType;  playerSleepType   = s.playerSleepType;

@@ -154,6 +154,16 @@ function curtainFadeInAndOut(message="", duration=3) {
 
 // Permanent death: fade to black, save & return to menu, show message, hold, fade out.
 function permanentDeath(htmlMsg) {
+  try {
+    var nextOrigins = Menu.rollOrigins();
+    if (nextOrigins && nextOrigins.length > 0) {
+      var emojiStr = nextOrigins.map(function(o) { return o.emoji; }).join('&nbsp;&nbsp;');
+      htmlMsg = (htmlMsg || '')
+        + 'New fates await:'
+        + '<p style="font-size:26px;letter-spacing:4px;margin-top:2px;">' + emojiStr + '</p>';
+    }
+  } catch(e) {}
+
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
   var gen = ++_curtainGen;

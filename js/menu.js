@@ -139,7 +139,8 @@ var Menu = (function () {
       playerInt    = playerInt + (origin.int || 0);
       playerMgkMax = Math.max(0, playerMgkMax + mgk);
       playerMgk    = playerMgkMax;
-      if (!playerName.includes('(')) playerName = playerName + ' (' + origin.originName + ')';
+      playerName = origin.emoji + ' ' + playerName;
+      playerEmoji = origin.emoji;
       playerDestined = true;
       AchievementManager.check('destiny');
     }
@@ -195,7 +196,7 @@ var Menu = (function () {
             + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940;'
             + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
             + origin.originName + '</h5>'
-            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; opacity:0.75; text-align:left; line-height:165%;">'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; opacity:0.75; text-align:left; line-height:165%; color:#fff;">'
             + origin.desc + '</h5>'
           + '</div>'
         + '</div>';
@@ -686,5 +687,5 @@ var Menu = (function () {
     _animateLogo();
   }
 
-  return { init: init, show: show, hide: hide, showMemories: showMemories };
+  return { init: init, show: show, hide: hide, showMemories: showMemories, rollOrigins: _rollOrigins };
 })();

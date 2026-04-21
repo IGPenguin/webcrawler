@@ -19,6 +19,7 @@ function renewPlayer(){ //Default values
   playerCooked = false;
   playerShopped = false;
   playerDestined = false;
+  playerEmoji = '';
   playerLootString = [""];
   playerPartyString = [""];
   playerAttackType = "⚔️";

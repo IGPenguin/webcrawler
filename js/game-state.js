@@ -36,6 +36,7 @@ var fishingRested = false; // persists through getRandomFish/encounterRenew; res
 var playerCooked = false;
 var playerShopped = false;
 var playerDestined = false;
+var playerEmoji = '';
 var bubblesUsed = false;
 var playerAttackType = "⚔️";
 var playerRollType = "🌀";
@@ -243,7 +244,7 @@ function calcActionBarConfig(button, adjustment) {
   }
 
    // Give up|inactive "-" on death: slow & red
-  if ((button === 'button_attack' || button === 'button_grab' || button === 'button_sleep' || button === 'button_speak') && types.includes('Death')) {
+  if ((button === 'button_attack' || button === 'button_roll' || button === 'button_grab' || button === 'button_sleep' || button === 'button_speak') && types.includes('Death')) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
