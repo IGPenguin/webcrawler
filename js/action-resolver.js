@@ -612,7 +612,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (playerSta > 0 && _crit !== 'success') playerSta--;
 
         if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
-          enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
+          if (_skillOK === true) {
+            enemyStaminaChangeMessage(-2,"Threw them off balance -1 🟢","They needed to catch a breath -1 🟢");
+          } else {
+            enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
+          }
           displayPlayerEffect("☝️");
           displayEnemyCannotEffect();
           break;
