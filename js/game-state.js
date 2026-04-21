@@ -298,6 +298,12 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: Math.max(5, 50 - Math.round(curseW/2)), successMax: Math.min(95, 50 + Math.round(curseW/2)) };
   }
 
+  // Tutorial safeguard: Dream Shrimp must always be consumable — eat is full green, ditch is all red
+  if (enemyName === 'Dream Shrimp') {
+    if (button === 'button_grab') return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    if (button === 'button_roll') return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
   // Small grab: chance based on creature STA vs player STA
   if (button === 'button_grab' && types === 'Small') {
     var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
@@ -331,8 +337,15 @@ function calcActionBarConfig(button, adjustment) {
     }
     var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 1;
     var fishMin = Math.max(3, 34 - fishBQ * 4);
-    var fishMax = Math.min(97, 58 + fishBQ * 4);
-    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax };
+    var fishMax = Math.min(90, 58 + fishBQ * 4);
+    var fishCritSuccessW = Math.max(2, Math.round(3 + pLck * 0.5));
+    var fishCritFailW = 4;
+    var fishCenter = Math.round((fishMin + fishMax) / 2);
+    var fishCsMin = Math.max(fishMin + 1, fishCenter - Math.floor(fishCritSuccessW / 2));
+    var fishCsMax = Math.min(fishMax - 1, fishCsMin + fishCritSuccessW);
+    if (fishCsMax - fishCsMin < 2) { fishCsMin = -1; fishCsMax = -1; }
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax,
+             critSuccessMin: fishCsMin, critSuccessMax: fishCsMax, critFailW: fishCritFailW };
   }
 
   // Grab Stingy / Toxic / Undead — impossible (they bite back, you know it)
@@ -500,7 +513,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // Crit zone widths: more luck/positive karma → wider success zone, narrower fail zone
   var karmaAdj = (playerKarma || 1) - 1;
-  var critSuccessW = Math.min(14, Math.max(2, Math.round(4 + pLck * 1.2 + karmaAdj * 0.8)));
+  var critSuccessW = Math.min(7, Math.max(1, Math.round(2 + pLck * 0.6 + karmaAdj * 0.4)));
   var critFailW    = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - karmaAdj * 0.5)));
 
   // Crit success: centered inside the success zone

@@ -170,7 +170,6 @@ function permanentDeath(htmlMsg) {
     if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
 
-    SaveManager.abandonCurrentRun();
     SaveManager.clearSave();
     Menu.show();
 

@@ -240,7 +240,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_roll': //Stamina not needed for non-enemies + dodge handling per enemy type
         if (enemyType=="Death"){
           menuFade(function() {
-            SaveManager.abandonCurrentRun();
             Menu.show();
           });
           break;
@@ -437,6 +436,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Item": //You'll simply skip ahead
           case "Consumable":
           case "Checkpoint":
+            if (enemyName === "Dream Shrimp") {
+              displayEnemyCannotEffect();
+              logPlayerAction(actionString, "Can't leave this behind.");
+              break;
+            }
             if (isFishing){
               isFishing=false;
               logPlayerAction(actionString,"Threw it back into the water.");
@@ -1642,7 +1646,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Caught something with bare hook"+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold));
             }
             displayEnemyEffect("🪝");
-            getRandomFish();
+            getRandomFish(_crit === 'success' ? getArtifactLootIndex() : undefined);
             break;
 
           case "Demon":
@@ -2172,7 +2176,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 }
 
 //Encounters
-function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
+function getRandomFish(forcedLootIndex){ //TODO refactor into encounters.csv (in the next life)
   toggleUIElement(areaUIElement,1);
   animateUIElement(areaUIElement,"animate__bounce","1.2");
   animateUIElement(cardUIElement,"animate__bounceInUp","1.2");
@@ -2181,7 +2185,7 @@ function getRandomFish(){ //TODO refactor into encounters.csv (in the next life)
   adventureEncounterCount+=1;
 
   lastEncounterIndex = encounterIndex-1;
-  lootEncounterIndex = getUnseenLootIndex();
+  lootEncounterIndex = (forcedLootIndex !== undefined) ? forcedLootIndex : getUnseenLootIndex();
   markAsSeenFishing(lootEncounterIndex);
   var _savedRested = playerRested;
   encounterRenew();

@@ -142,7 +142,7 @@ var Menu = (function () {
   // Builds an in-game-styled player card matching the in-game toolbar layout exactly.
   // area + sub render as one h5 line; date renders as a second dimmer h5 (matches list item style).
   // renameable=true adds a tap target on the name bar (id="menu_card_rename").
-  function _buildRunCardHTML(name, level, area, stats, partyLoot, sub, date, skipLoot, renameable) {
+  function _buildRunCardHTML(name, level, area, stats, partyLoot, sub, date, skipLoot, renameable, showStats) {
     var html = '';
 
     // Outer wrapper — matches toolbar-card
@@ -184,14 +184,15 @@ var Menu = (function () {
 
     // Note: Disabled stats and party+loot display below to declutter main menu
 
-    //Stats bar wrapper + stats h3
-    // html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-    //   + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
-    //   + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
-    //   + 'font-size:14px; margin-bottom:-11px; margin-top:13px; font-family:sans; '
-    //   + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
-    //   + (stats || '&nbsp;') + '</h3>'
-    //   + '</div>';
+    if (showStats) {
+      html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+        + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
+        + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
+        + 'font-size:14px; margin-bottom:-11px; margin-top:13px; font-family:sans; '
+        + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
+        + (stats || '&nbsp;') + '</h3>'
+        + '</div>';
+    }
 
     // if (!skipLoot) {
     //   // Loot/party bar — matches id_player_party_loot exactly
@@ -226,6 +227,7 @@ var Menu = (function () {
     _bindHistoryBack('👈 Back', function () { _renderMain(); });
 
     var list = document.getElementById('menu_history_list');
+    list.parentElement.style.overflowY = 'auto';
     var sessions = SaveManager.listSessionHistory();
 
     if (sessions.length === 0) {
@@ -277,6 +279,8 @@ var Menu = (function () {
     if (session.playerLootString  && session.playerLootString  !== 'undefined') partyLoot += session.playerLootString;
 
     var list = document.getElementById('menu_history_list');
+    var sc = list.parentElement;
+    sc.style.overflowY = 'hidden';
     list.innerHTML = '';
 
     // Full player card
@@ -288,7 +292,9 @@ var Menu = (function () {
       stats, partyLoot,
       session.causeOfDeath || null,
       session.date || null,
-      true  // skipLoot — loot bar rendered below log
+      true,  // skipLoot — loot bar rendered below log
+      null,  // renameable
+      true   // showStats
     );
     list.appendChild(card);
 
@@ -301,9 +307,8 @@ var Menu = (function () {
     logWrap.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
 
     var logEl = document.createElement('h4');
-    // Fixed 3-line height: font-size 12px × line-height 1.65 × 3 lines = ~60px content + padding
-    logEl.style.cssText = 'margin: -8px 0 0 0; padding:4px 8px; text-align:left; '
-      + 'font-size:14.6px; line-height:165%; height:74px; overflow-y:auto; '
+    logEl.style.cssText = 'margin:-8px 0 0 0; padding:4px 8px; text-align:left; '
+      + 'font-size:14.6px; line-height:165%; overflow-y:auto; '
       + 'scrollbar-width:thin; scrollbar-color:#000 transparent;';
     logEl.innerHTML = logLines.length ? logLines.join('<br>') : '<i style="opacity:0.5;">No log.</i>';
 
@@ -322,6 +327,13 @@ var Menu = (function () {
     var clearDiv = document.createElement('div');
     clearDiv.style.clear = 'both';
     list.appendChild(clearDiv);
+
+    // Size the log to fill remaining space — measured after layout so the
+    // height is exact regardless of card/loot-bar size.
+    requestAnimationFrame(function () {
+      var logH = sc.clientHeight - card.offsetHeight - lootBar.offsetHeight - 15;
+      logEl.style.height = Math.min(170, Math.max(74, logH)) + 'px';
+    });
 
     // Session achievements unlocked by this character
     // var achIds = session.sessionAchievements;

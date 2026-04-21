@@ -149,6 +149,17 @@ function getUnseenLootIndex() {
     return randomLootIndex;
 }
 
+function getArtifactLootIndex() {
+  var artifactIndices = [];
+  for (var i = 0; i < linesLoot.length; i++) {
+    if (String(linesLoot[i]).includes('note:<b>Artifact</b>')) artifactIndices.push(i);
+  }
+  if (artifactIndices.length === 0) return getUnseenLootIndex();
+  var unseen = artifactIndices.filter(function(i) { return !seenLoot.includes(i); });
+  var pool = unseen.length > 0 ? unseen : artifactIndices;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
 function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverride="", excludeStrings=[]) {
   var tempLinesGenerator = linesGenerator;
   var generatorAreaName=areaName;
