@@ -528,7 +528,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // Crit zone widths: more luck/positive karma → wider success zone, narrower fail zone
   var karmaAdj = (playerKarma || 1) - 1;
-  var critSuccessW = Math.min(7, Math.max(1, Math.round(2 + pLck * 0.6 + karmaAdj * 0.4)));
+  var critSuccessW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6 + karmaAdj * 0.4) * 1.25))); // 1.25 is the crit zone multiplier
   var critFailW    = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - karmaAdj * 0.5)));
 
   // Crit success: centered inside the success zone
