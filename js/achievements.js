@@ -47,7 +47,7 @@ var AchievementManager = (function () {
     { id: 'eat_legendary',       emoji: '🟠', desc: 'Consumed a legendary refreshment!', hint: 'Rarities can be eaten too.' },
     { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.' },
     { id: 'level_5',             emoji: '🏆', desc: 'Reached level 5!', hint: 'The path ahead grows longer.' },
-    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat code!', hint: 'Try using a secret name...' }
+    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...' }
   ];
   // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
 
@@ -211,6 +211,16 @@ var AchievementManager = (function () {
       _toastQueue.push(achievement);
       if (!_toastActive) _showNextToast();
     }
+  }
+
+  function dismissToast() {
+    var toast = document.getElementById('achievement_toast');
+    if (!toast) return;
+    toast.style.transition = 'opacity 0.25s';
+    toast.style.opacity = '0';
+    setTimeout(function() {
+      if (document.getElementById('achievement_toast') === toast) toast.remove();
+    }, 260);
   }
 
   // ── Public API ────────────────────────────────────────────────────────────
@@ -429,6 +439,7 @@ var AchievementManager = (function () {
 
   return {
     check:               check,
+    dismissToast:        dismissToast,
     resetSession:        resetSession,
     getSessionUnlocked:  getSessionUnlocked,
     isUnlocked:          isUnlocked,

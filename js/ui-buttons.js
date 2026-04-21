@@ -347,6 +347,7 @@ function registerClickListeners(delay=0){
       var raw = pair[1]();
       var handler = function(e) {
         e.preventDefault();
+        AchievementManager.dismissToast();
         ActionBar.showActionBar(calcActionBarConfig(id), function(isSuccess, val, critResult) {
           actionBarSuccess = isSuccess;
           actionBarCrit = critResult || null;
@@ -456,6 +457,6 @@ function registerClickListenersTechnical(){
 
 function logCheatUse(message){
   AchievementManager.check('use_cheat');
-  logAction("✏️ ▸ ⚠️ <b>Used a cheat: "+message+"</b>");
+  logAction("✏️ ▸ ⚠️ <b>Cheat used: "+message+"</b>");
   redraw();
 }
