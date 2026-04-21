@@ -6,6 +6,27 @@
 
 ---
 
+## Origins
+
+/compact
+
+- Replace "Tarot" option in the shop with something else 
+  - 🔮 Augury — +1 LCK for the rest of the run (stat boost, destiny flavor)
+  - 🕯️ Vigil — +1 to a random non-zero stat (surprise element)
+
+- Prepend the origin emoji to the player name instead of the postfix in brackets
+ - Remember the emoji in special var alongside standard player stats
+ - The emoji can have side effects in game
+- Roll the origins on death and tease them somehow? To improve the changes for the player to start yet another run (due to having different stats - eg low health and high stamina, might be high risk, high reward)
+
+  ...
+
+- Create unique origins (similar to how items are legendary):
+  - Low chance to roll these
+  - These give special effects (Undead passive, Demons passive...) 
+
+---
+
 ## Top Priority - Action Bar cases follow ups
 
 I suspect that there are a lot of blind spots with action bar pass/fail/crit-pass/crit-fail for for various encounter types + action combos
@@ -101,6 +122,8 @@ add new dynamic layout with spells
 
 ## Big Ideas
 
+- Take inspiration from: https://pixeldungeon.fandom.com/wiki/Main_Page
+
 - Keep corpses, do not navigate right away
   - Chance to rest etc.
 - Inventory: consumable, items array
@@ -125,6 +148,8 @@ add new dynamic layout with spells
   - E.g. Give mouse/lizard to cat
 - Rebalance drops vs enemy stats? (too easy if you pivkup everything)
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed
+
+make actions seem more sequential in the ui so that player can notice one by one - eg delay 0,5s each log display and wait for effects to complete before firing another and unlocking UI for player actions?
 
 ## Achievements update!
 

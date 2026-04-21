@@ -113,10 +113,6 @@ function adjustEncounterButtons(){
       if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorGold);
       if (enemyEmoji=="🪙" || enemyEmoji=="💰") setButton('button_grab',"👋 Claim",colorLightShadeBlue);
       if (enemyEmoji=="🪙" && enemyName.includes("Lucky")) setButton('button_grab',"👋 Claim",colorSoftGreen);
-      if (enemyName.includes("Tarot Card:")) {
-        setButton('button_grab',"👋 Accept",colorPaper);
-        setButton('button_roll',"❌ Reject",colorRed);
-      }
       break;
 
     case "Trap":
@@ -259,9 +255,7 @@ function adjustEncounterButtons(){
 
     case "Shop":
       var availableCoins=savedCoins-spentCoins;
-      setButton('button_attack',"1 🪙 Tarot",colorPaper);
-        if (playerDestined) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
-        if (availableCoins<1) setButton('button_attack',"1 🪙 Tarot",colorDarkGrey);
+      setButton('button_attack',"— — —",colorDarkGrey);
 
       setButton('button_roll',"👣 Leave",colorRed);
       if (availableCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);

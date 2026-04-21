@@ -362,10 +362,6 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
   if (enemyEmoji=="📣") playerSpeakType=enemyEmoji;
 
   if (logMessage) {
-    if (enemyEmoji=="🃏") {
-      gainedString="<text style=color:"+colorPaper+";>"+gainedString+"</text>";
-      AchievementManager.check('destiny');
-    }
     logPlayerAction(actionIcon,gainedString);
   }
   if (moveForward) nextEncounter();

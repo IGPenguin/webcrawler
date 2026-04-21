@@ -1,0 +1,38 @@
+emoji;name;hp;atk;sta;lck;int;mgk;def;desc
+🔮;Prodigy;-2;0;0;0;0;3;0;Sacrifice <b>-2 💔 Health</b> for <b>+3 🔵 Mana</b>.
+🪄;Wizard;0;-1;0;0;0;2;0;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+2 🔵 Mana</b>.
+⚗️;Warlock;-1;0;0;0;0;2;0;Sacrifice <b>-1 💔 Health</b> for <b>+2 🔵 Mana</b>.
+🕯️;Cleric;0;0;-1;0;0;1;0;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 🔵 Mana</b>.
+🔷;Mage;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no apparent downside.
+
+🗡️;Assassin;-2;2;0;0;0;0;0;Sacrifice <b>-2 💔 Health</b> for <b>+2 ⚔️ Attack</b>.
+🔱;Berserk;0;2;0;0;-6;0;0;Sacrifice <b>-6 🧠 Intellect</b> for <b>+2 ⚔️ Attack</b>.
+⚔️;Knight;0;1;-1;0;0;0;0;Sacrifice <b>-1 🟢 Energy</b> for <b>+1 ⚔️ Attack</b>.
+🐍;Serpent;-1;1;0;0;0;0;0;Sacrifice <b>-1 💔 Health</b> for <b>+1 ⚔️ Attack</b>.
+🔥;Choleric;0;1;0;0;-3;0;0;Sacrifice <b>-3 🧠 Intellect</b> for <b>+1 ⚔️ Attack</b>.
+🩸;Murderer;0;1;0;-3;0;0;0;Sacrifice <b>-3 🍀 Luck</b> for <b>+1 ⚔️ Attack</b>.
+🪓;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no apparent downside.
+
+🕊️;Angel;3;-1;0;0;0;0;0;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+3 ❤️ Health</b>.
+🛡️;Warden;2;0;-1;0;0;0;0;Sacrifice <b>-1 🟢 Energy</b> for <b>+2 ❤️ Health</b>.
+💘;Lover;1;0;0;0;-2;0;0;Sacrifice <b>-2 🧠 Intellect</b> for <b>+1 ❤️ Health</b>.
+🗿;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no apparent downside.
+
+👣;Stalker;-1;0;2;0;0;0;0;Sacrifice <b>-1 💔 Health</b> for <b>+2 🟢 Energy</b>.
+🥷;Ninja;-2;0;3;0;0;0;0;Sacrifice <b>-2 💔 Health</b> for <b>+3 🟢 Energy</b>.
+💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no apparent downside.
+
+👁️;Prophet;-2;0;0;0;6;0;0;Sacrifice <b>-2 💔 Health</b> for <b>+6 🧠 Intellect</b>.
+🏳️;Pacifist;0;-1;0;0;4;0;0;Sacrifice <b>-1 ⚔️ Attack</b> for <b>+4 🧠 Intellect</b>.
+🧠;Wiseman;-1;0;0;0;3;0;0;Sacrifice <b>-1 💔 Health</b> for <b>+3 🧠 Intellect</b>.
+🎭;Jinx;0;0;0;-1;2;0;0;Sacrifice <b>-1 🍀 Luck</b> for <b>+2 🧠 Intellect</b>.
+🎓;Scholar;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.
+
+🎲;Gambler;0;0;0;3;-3;0;0;Sacrifice <b>-3 🧠 Intellect</b> for <b>+3 🍀 Luck</b>.
+😈;Devil;-1;0;0;3;0;0;0;Sacrifice <b>-1 💔 Health</b> for <b>+3 🍀 Luck</b>.
+🃏;Fool;0;0;0;2;-2;0;0;Sacrifice <b>-2 🧠 Intellect</b> for <b>+2 🍀 Luck</b>.
+🌈;Blessed;0;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b> with no apparent downside.
+🍀;Lucky;0;0;0;1;0;0;0;Gain <b>+1 🍀 Luck</b> with no apparent downside.
+
+🎩;Noble;0;0;0;1;1;0;0;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.
+🎖️;Hero;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.

@@ -1,12 +1,14 @@
 var Menu = (function () {
   var _currentDetailSession = null; // set when history detail is open
+  var _selectedOrigin = null;
 
   var SCREENS = [
     'menu_main_screen',
     'menu_memories_screen',
     'menu_history_screen',
     'menu_credits_screen',
-    'menu_confirm_screen'
+    'menu_confirm_screen',
+    'menu_origin_screen'
   ];
 
   // ── Show / Hide ────────────────────────────────────────────────────────────
@@ -120,12 +122,101 @@ var Menu = (function () {
     onDone();
   }
 
-  function _doNewGame() {
+  function _doNewGame(origin) {
+    try { localStorage.removeItem('originRoll'); } catch(e) {}
     savedCoins = parseInt(localStorage.getItem('coins'));
     renewPlayer(); // sets spentCoins=0, availableCoins=savedCoins
+    if (origin) {
+      var hp  = origin.hp  || 0;
+      var sta = origin.sta || 0;
+      var mgk = origin.mgk || 0;
+      playerHpMax  = Math.max(1, playerHpMax  + hp);
+      playerHp     = playerHpMax;
+      playerAtk    = Math.max(0, playerAtk    + (origin.atk || 0));
+      playerStaMax = Math.max(1, playerStaMax + sta);
+      playerSta    = playerStaMax;
+      playerLck    = playerLck + (origin.lck || 0);
+      playerInt    = playerInt + (origin.int || 0);
+      playerMgkMax = Math.max(0, playerMgkMax + mgk);
+      playerMgk    = playerMgkMax;
+      if (!playerName.includes('(')) playerName = playerName + ' (' + origin.originName + ')';
+      playerDestined = true;
+      AchievementManager.check('destiny');
+    }
     AchievementManager.resetSession();
     SaveManager.clearSave();
     startGame(false);
+  }
+
+  function _rollOrigins() {
+    var cards = typeof getOrigins === 'function' ? getOrigins() : [];
+
+    // Return stored roll if still valid against current card pool
+    try {
+      var stored = localStorage.getItem('originRoll');
+      if (stored) {
+        var parsed = JSON.parse(stored);
+        var names = cards.map(function(c) { return c.originName; });
+        if (Array.isArray(parsed) && parsed.length > 0 &&
+            parsed.every(function(o) { return o && o.originName && names.indexOf(o.originName) >= 0; })) {
+          return parsed;
+        }
+      }
+    } catch(e) {}
+
+    // Fresh roll — shuffle and pick 3
+    var shuffled = cards.slice();
+    for (var i = shuffled.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
+    }
+    var roll = shuffled.slice(0, Math.min(3, shuffled.length));
+    try { localStorage.setItem('originRoll', JSON.stringify(roll)); } catch(e) {}
+    return roll;
+  }
+
+  function _renderOriginPicker() {
+    _selectedOrigin = null;
+    var origins = _rollOrigins();
+    if (origins.length === 0) { _doNewGame(null); return; }
+
+    var list = document.getElementById('menu_origin_list');
+    list.innerHTML = '';
+
+    origins.forEach(function(origin) {
+      var entry = document.createElement('div');
+      entry.className = 'menu-history-entry';
+      entry.style.cursor = 'pointer';
+      entry.style.userSelect = 'none';
+      entry.innerHTML =
+        '<div style="display:flex; align-items:center; gap:10px; padding:10px 12px 0 12px;">'
+          + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + origin.emoji + '</span>'
+          + '<div style="flex:1; min-width:0;">'
+            + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940;'
+            + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
+            + origin.originName + '</h5>'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; opacity:0.75; text-align:left;">'
+            + origin.desc + '</h5>'
+          + '</div>'
+        + '</div>';
+
+      entry.addEventListener('click', function() {
+        list.querySelectorAll('.menu-history-entry').forEach(function(el) { el.style.boxShadow = ''; });
+        entry.style.boxShadow = 'inset 0 0 0 2px #FFD940';
+        _selectedOrigin = origin;
+        var btn = document.getElementById('menu_origin_begin');
+        btn.innerHTML = '✨ Start as ' + origin.originName;
+        btn.style.color = '#FFD940';
+      });
+
+      list.appendChild(entry);
+    });
+
+    var beginBtn = document.getElementById('menu_origin_begin');
+    beginBtn.innerHTML = '⁉️ Select Origin...';
+    beginBtn.style.color = 'grey';
+
+    _showScreen('menu_origin_screen');
   }
 
   // ── Shared run card renderer ───────────────────────────────────────────────
@@ -504,14 +595,14 @@ var Menu = (function () {
         }
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px;">'
-            + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
+            + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
             + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + tsLine + '</div>'
           + '</div>';
       } else {
         var hintText = (a.hint && a.hint.length > 0) ? a.hint : "Not discovered yet.";
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:10px; padding:10px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
-            + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
+            + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
             + '<div><h5 style="margin:0; font-size:16px; font-style:itallic; font-weight:500; color:#CCCCCC; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + (hintText || '') + '</h5>' + tsLine + '</div>'
           + '</div>';
       }
@@ -537,17 +628,28 @@ var Menu = (function () {
     document.getElementById('menu_new_game').addEventListener('click', function () {
       if (SaveManager.hasContinue()) {
         _renderConfirm();
+      } else if (SaveManager.listSessionHistory().length > 0) {
+        _renderOriginPicker();
       } else {
-        _doNewGame();
+        _doNewGame(null);
       }
     });
 
     document.getElementById('menu_confirm_yes').addEventListener('click', function () {
       SaveManager.abandonCurrentRun();
-      _doNewGame();
+      _renderOriginPicker();
     });
 
     document.getElementById('menu_confirm_cancel').addEventListener('click', function () { _renderMain(); });
+
+    document.getElementById('menu_origin_begin').addEventListener('click', function () {
+      if (_selectedOrigin) _doNewGame(_selectedOrigin);
+    });
+
+    document.getElementById('menu_origin_cancel').addEventListener('click', function () {
+      _selectedOrigin = null;
+      _renderMain();
+    });
 
     document.getElementById('menu_continue').addEventListener('click', function () {
       AchievementManager.resetSession();

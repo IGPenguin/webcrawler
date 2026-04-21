@@ -167,10 +167,6 @@ function redraw(){
           cardUIElement.style.background=colorSoftGreen;
         }
       }
-      if (enemyName.includes("Tarot")){
-        enemyStatusString=decorateStatusText("♣️","Prophecy",colorPaper);
-        cardUIElement.style.background=colorDarkPaper;
-      }
       if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
 
       grabColor=colorWhite;
@@ -312,7 +308,6 @@ function redraw(){
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
         if ((enemyType==="Fishing" && checkPlayerHasItem(validBaits)!="")) displayPlayerState("Bait Ready",colorPink,"0.8");
         if (enemyStatusString.includes("Legendary") || enemyEmoji=="🪙" || enemyEmoji=="💰") displayPlayerState("Excited",colorDarkYellow,"0.4");
-        if (enemyName.includes("Tarot Card:")) displayPlayerState("Deciding",colorDarkYellow,"2.5")
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point")) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial

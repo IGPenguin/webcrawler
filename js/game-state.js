@@ -323,9 +323,9 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
   }
 
-  // Shop: Gamble = 50% zone, very fast; all other shop actions = full success zone; Tarot 100% zone
-  if (types === 'Shop' || enemyName.includes("Tarot")) {
-    if (button === 'button_block' && !enemyName.includes("Tarot")) { //Yolo again - Tarots are special, all good...
+  // Shop: Gamble (button_block) = 50% zone, very fast; all other shop actions = full success zone
+  if (types === 'Shop') {
+    if (button === 'button_block') {
       return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
     }
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };

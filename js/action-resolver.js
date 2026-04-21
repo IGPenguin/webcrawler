@@ -45,12 +45,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          if (!playerDestined) {
-            drachmaeBuy(1,"Tarot");
-          } else {
-            displayEnemyCannotEffect();
-            logAction("👤 ▸ ⁉️ <text style=color:"+colorRed+";>You've already accepted your destiny!</text>")
-          }
           break;
         }
 
@@ -1588,10 +1582,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('coin_pickup', savedCoins);
             }
 
-            if (enemyEmoji=="🃏"){
-              if (!playerName.includes("(")) playerName=playerName+" ("+enemyName.replace("Tarot Card: ","")+")"
-              playerDestined=true;
-            }
             //Item quality achievements
             if (enemyTeam.includes("Artifact") || enemyTeam.includes("Questionable Drink")) {
               AchievementManager.check('grab_artifact');

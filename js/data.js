@@ -1,6 +1,7 @@
 //Load encounter data .csv file on page ready
 var _csvStoryLoaded = false;
 var _pendingStart   = null; // null | true (continue) | false (new game)
+var linesOrigins    = [];
 
 $(document).ready(function() {
   Menu.init(); // show menu while CSVs load in background
@@ -22,6 +23,15 @@ $(document).ready(function() {
     dataType: "text",
     success: function(data) {
       processEncounterData(data);
+    }
+  });
+
+  $.ajax({
+    type: "GET",
+    url: "data/origins.csv",
+    dataType: "text",
+    success: function(data) {
+      processOriginsData(data);
     }
   });
 });
@@ -256,4 +266,37 @@ function markAsSeenFishing(seenID){  //TODO: remove and reuse the fn above?
 
 function resetSeenEncounters(){
   seenEncounters = [];
+}
+
+function processOriginsData(allText) {
+  var allTextLines = allText.split(/\r\n|\n/);
+  var headers = allTextLines[0].split(';').map(function(h) { return h.trim(); });
+  linesOrigins = [];
+  for (var i = 1; i < allTextLines.length; i++) {
+    var data = allTextLines[i].split(';');
+    if (data.length === headers.length) {
+      var row = {};
+      for (var j = 0; j < headers.length; j++) {
+        row[headers[j]] = data[j];
+      }
+      linesOrigins.push(row);
+    }
+  }
+}
+
+function getOrigins() {
+  return linesOrigins.map(function(row) {
+    return {
+      emoji:      row.emoji || '🃏',
+      originName: row.name  || '?',
+      desc:       row.desc  || '',
+      hp:  parseInt(row.hp)  || 0,
+      atk: parseInt(row.atk) || 0,
+      sta: parseInt(row.sta) || 0,
+      lck: parseInt(row.lck) || 0,
+      int: parseInt(row.int) || 0,
+      mgk: parseInt(row.mgk) || 0,
+      def: parseInt(row.def) || 0
+    };
+  });
 }

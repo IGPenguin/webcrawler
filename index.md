@@ -65,6 +65,32 @@ layout: default
     </div>
   </div>
 
+  <!-- Origin picker screen -->
+  <div id="menu_origin_screen" style="display:none;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
+      <h2 style="font-size:20px;
+             letter-spacing:1.5px;
+             -webkit-text-stroke: 5px black;
+             paint-order: stroke fill;
+             margin:8px 0 8px 0;
+             text-align:center;">✨ New Game</h2>
+      <div style="flex:1;
+                  min-height:0;
+                  max-height:300px;
+                  overflow-x:hidden;
+                  overflow-y:auto;
+                  scrollbar-width:none;
+                  padding-top:4px;
+                  margin-top:-6px;
+                  padding-bottom:4px;">
+        <div id="menu_origin_list"></div>
+      </div>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_origin_begin" style="margin-top:16px; color:grey;">✨ Choose an Origin</button>
+      <button class="menu-btn" id="menu_origin_cancel">👈 Cancel</button>
+    </div>
+  </div>
+
   <!-- Confirm new game screen -->
   <div id="menu_confirm_screen" style="display:none;">
     <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
@@ -75,11 +101,11 @@ layout: default
                margin:8px 0 8px 0;
                text-align:center;">⚠️ Really want to restart?</h2>
                 <div style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:14px; color:#fff; line-height:28px; margin-bottom:4px"><b style="font-weight:800;">Your progress will be irreversibly lost!</b><br>Only <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> stay forever.</h4>
+        <h4 style="text-align:center; min-height:0; font-size:14px; color:#fff; line-height:28px; margin-bottom:4px"><b style="font-weight:800;">Your progress will be irreversibly lost!</b><br>Only the <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> stay forever.</h4>
       </div>
       <div id="menu_confirm_preview" style="display:none; margin-top:8px; margin-bottom:8px; overflow:hidden;"></div>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✨ New Game</button>
+      <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">❌ Start Over</button>
       <button class="menu-btn" id="menu_confirm_cancel">👈 Cancel</button>
     </div>
   </div>

@@ -139,12 +139,7 @@ function loadEncounter(index, fileLines = linesStory){
            } else if (enemyEmoji== "🪙" || enemyEmoji=="💰") {
              if (!enemyName.includes("Lucky")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Found fortune: <b>"+enemyName+"</b></text>")
            } else {
-              if (enemyName.includes("Tarot")){
-                logAction("👁️‍🗨️ ▸ "+enemyEmoji+" Destiny calls you through a <b>Tarot Card</b>.")
-                displayPlayerEffect("👁️‍🗨️");
-              } else {
-                logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
-              }
+              logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
            }
          } else {
           logAction("🫀 ▸ "+enemyEmoji+" Found a clue: <b>"+enemyName+"</b>")
@@ -248,9 +243,8 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateRandomItem(item=""){
-  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Tarot","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
-  if (item=="Artifact")   var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]); //arg #2 = artifact only, arg #4 excludes specific texts
-  if (item=="Tarot")   var randomItem=getRandomEncounter(["Item"],["Tarot"],"ALL"); //Tarot cards from all areas
+  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
+  if (item=="Artifact") var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]);
   return randomItem;
 }
 
@@ -265,7 +259,7 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
 
-    if ((item=="Item") || (item=="Artifact") || (item=="Tarot")) {
+    if ((item=="Item") || (item=="Artifact")) {
       if (item=="Item")     AchievementManager.check('buy_item');
       else if (item=="Artifact") AchievementManager.check('buy_artifact');
       displayPlayerGainedEffect();
