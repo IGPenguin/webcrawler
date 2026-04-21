@@ -1,0 +1,12 @@
+emoji;name;hp;atk;sta;lck;int;mgk;def;desc
+🎴;Wanderer;0;0;-2;2;0;0;0;Gain <b>+2 🍀 Luck</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Never stopped moving. Never found rest.
+💀;Martyr;-2;0;0;3;0;0;0;Gain <b>+4 🍀 Luck</b>, sacrifice <b>-2 💔 Health</b>.<br><i>Suffering was the only prayer that worked.
+🌑;Void;0;-2;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, sacrifice <b>-2 ⚔️ Attack</b>.<br><i>Gave up the blade. Found something worse.
+⛓️;Condemned;-1;2;0;-2;0;0;0;Chains only made the rage worse.<br>Gain <b>+2 ⚔️ Attack</b>, sacrifice <b>-1 💔 Health</b> and <b>-2 🍀 Luck</b>.
+🩺;Mender;2;0;0;0;0;-1;0;Gain <b>+2 ❤️ Health</b>, sacrifice <b>-1 🔵 Mana</b>.<br><i>The gift of healing\ drawn from the marrow.
+🩻;Hollow;-1;0;0;0;5;-1;0;Gain <b>+5 🧠 Intellect</b>, sacrifice <b>-2 💔 Health</b> and <b>-1 🔵 Mana</b>.
+💀;Revenant;-2;1;0;0;0;1;0;Gain <b>+1 ⚔️ Attack</b> and <b>+1 🔵 Mana</b>, sacrifice <b>-2 💔 Health</b>.
+🔗;Thrall;0;1;1;0;-4;0;0;Gain <b>+1 ⚔️ Attack</b> and <b>+1 🟢 Energy</b>, sacrifice <b>-4 🧠 Intellect</b>.
+🪦;Gravedigger;-1;0;0;2;1;0;0;Gain <b>+2 🍀 Luck</b> and <b>+1 🧠 Intellect</b>, sacrifice <b>-1 💔 Health</b>.
+⚰️;Desecrated;0;-1;0;1;2;0;0;Gain <b>+2 🧠 Intellect</b> and <b>+1 🍀 Luck</b>, sacrifice <b>-1 ⚔️ Attack</b>.
+🕰️;Ancient;0;0;-2;1;2;0;0;Gain <b>+2 🧠 Intellect</b> and <b>+1 🍀 Luck</b>, sacrifice <b>-2 🟢 Energy</b>.

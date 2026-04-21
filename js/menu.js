@@ -195,7 +195,7 @@ var Menu = (function () {
             + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940;'
             + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
             + origin.originName + '</h5>'
-            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; opacity:0.75; text-align:left;">'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; opacity:0.75; text-align:left; line-height:165%;">'
             + origin.desc + '</h5>'
           + '</div>'
         + '</div>';

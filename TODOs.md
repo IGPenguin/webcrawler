@@ -83,9 +83,9 @@ Grab (crit success = instant knockout, crit fail = they hit back harder). But th
 - +1 Drachmae for review (one time)
 - Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
 - Altar with no bonus attribute, pray = get exp
-- Manual: killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
+- Killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
   - Append zombie emoji before 🧟 John Doe (Undead)
-  - undead then have 0 base attack abainst you
+  - undead then have 0 base attack against you
 - if stat over 5, display numeric - 4/5
 - JS spaghetti monster joke boss when?
   - Hanging out in Menu for 5 minutes with live char?
