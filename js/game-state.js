@@ -247,9 +247,14 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
-  // Dream walk: slow & green
-  if (button === 'button_roll' && types.includes('Dream')) {
-    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  // Dream: only sleep and walk are meaningful — all other actions are impossible
+  if (types.includes('Dream') && button !== 'button_sleep' && button !== 'button_roll') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Dream sleep/walk: normal speed, full success, no crits
+  if (types.includes('Dream') && (button === 'button_sleep' || button === 'button_roll')) {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Attack / Block at zero player stamina — hard as fishing with no bait
@@ -388,13 +393,6 @@ function calcActionBarConfig(button, adjustment) {
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
   if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
-  }
-
-  // Full-green: encounter has no ATK or MGK threat — automatic success
-  var eAtkFull = Math.max(0, (enemyAtk || 0) + (enemyAtkBonus || 0));
-  var eMgkFull = Math.max(0, (enemyMgk || 0) - (enemyMgkLost || 0));
-  if (eAtkFull === 0 && eMgkFull === 0) {
-    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
   var pStat, eStat, baseW, baseSpeed;

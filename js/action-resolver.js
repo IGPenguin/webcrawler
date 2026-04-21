@@ -135,7 +135,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Swung wild — hit yourself -1 💔 -1 🟢");
+                logPlayerAction(actionString, "Missed so bad you hit yourself -1 💔 -1 🟢");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "You missed your attack -1 🟢");

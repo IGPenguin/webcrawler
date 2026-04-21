@@ -396,6 +396,7 @@ function registerClickListenersTechnical(){
   });
 
   document.getElementById('id_player_level').addEventListener(eventType, ()=>{
+    var oldName=playerName;
     var newName=renameCharacter();
     try {
       var nameNumber=newName.match(/\d+/)[0];
@@ -450,7 +451,7 @@ function registerClickListenersTechnical(){
       logCheatUse(newName+": "+extraBaits.toString());
       return
     }
-    logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
+    if (oldName!=newName) logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
     redraw();
   });
 }
