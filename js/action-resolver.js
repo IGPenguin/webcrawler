@@ -661,7 +661,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Tough":
           case "Reflective":
             enemyStaminaChangeMessage(-1,
-              _crit === 'success' ? "Deflected it flawlessly." : "Blocked a regular attack -1 🟢",
+              _crit === 'success' ? "Blocked without breaking a sweat." : "Blocked a regular attack -1 🟢",
               "Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
@@ -672,13 +672,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerHit(enemyAtk+enemyAtkBonus);
               break;
             }
-            enemyStaminaChangeMessage(-1,"Blocked a swift attack -1 🟢","Blocked just for the sake of it -1 🟢");
+            enemyStaminaChangeMessage(-1,
+              _crit === 'success' ? "Blocked without breaking a sweat." : "Blocked a swift attack -1 🟢",
+              "Blocked just for the sake of it -1 🟢");
             displayPlayerEffect("🔰");
             break;
 
           case "Heavy": //Too heavy or spirit attack — can succeed but very hard
             if (_skillOK === true) {
-              enemyStaminaChangeMessage(-1,"Barely blocked a heavy attack -1 🟢","They needed to catch a breath.");
+              enemyStaminaChangeMessage(-1,
+                _crit === 'success' ? "Blocked without breaking a sweat." : "Barely blocked a heavy attack -1 🟢",
+                "They needed to catch a breath.");
               displayPlayerEffect("🔰");
               break;
             }

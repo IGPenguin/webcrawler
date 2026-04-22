@@ -519,9 +519,10 @@ function calcActionBarConfig(button, adjustment) {
   var zoneStart  = Math.round(rawStart * (1 - luckBlend) + luckTarget * luckBlend);
   zoneStart = Math.max(4, Math.min(maxStart - 4, zoneStart));
 
-  // Crit zones — disabled when action requires stamina but player has none
+  // Crit zones — disabled when action requires stamina but player has none, or for item/consumable pickup/ditch
   var _requiresSta = (button === 'button_attack' || button === 'button_roll' || button === 'button_block');
-  var _noCrits = _requiresSta && pSta === 0;
+  var _noCrits = (_requiresSta && pSta === 0)
+              || ((types === 'Item' || types === 'Consumable') && (button === 'button_grab' || button === 'button_roll'));
 
   if (_noCrits) {
     return { speed: speed, successMin: zoneStart, successMax: zoneStart + zoneW };
