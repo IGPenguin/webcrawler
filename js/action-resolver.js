@@ -858,8 +858,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
               if (_crit === 'success') {
-                logPlayerAction(actionString, "Your spell was especially effective.");
-                enemyHit(magicDamage+magicBonusDamage+1,true);
+                logPlayerAction(actionString, "Your spell was especially effective -"+(magicDamage+magicBonusDamage+1)+" 💔");
+                enemyHit(magicDamage+magicBonusDamage+1,true,true,true);
               } else {
                 enemyHit(magicDamage+magicBonusDamage,true);
               }
@@ -2093,7 +2093,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerGetStamina(1, _crit === 'success');
             }
             if (_crit === 'success') {
-              logPlayerAction(actionString, "Refreshed yourself exceptionally fast!");
+              logPlayerAction(actionString, "Refreshed exceptionally fast +1 🟢");
               break;
             }
             if (enemyCastIfMgk()){

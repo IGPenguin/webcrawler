@@ -3,7 +3,7 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
-    { id: 'all_achievements',    emoji: '🏆', desc: "You know it's your destiny.", hint: "Gotta catch them all!" },
+    { id: 'all_achievements',    emoji: '🏆', desc: "Completed every single memory!", hint: "Catch 'em all to be the very best!" },
     { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!"},
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up your first Drachmae!', hint: "Unlock an eternal advantage." },
@@ -12,9 +12,9 @@ var AchievementManager = (function () {
     { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!' },
     { id: 'destiny_first',       emoji: '⁉️', desc: 'Started over with a new origin!', hint: "Start over, but different." },
-    { id: 'destiny_10',          emoji: '♠️', desc: 'Started over with a new origin 10 times!' },
+    { id: 'destiny_10',          emoji: '♠️', desc: 'Started over again 10 times!' },
     { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item for the first time!' },
-    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Undertaker!' },
+    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Shade!' },
     { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact for the first time!' },
     { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up for the first time!' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!' },

@@ -532,6 +532,9 @@ function calcActionBarConfig(button, adjustment) {
   var critSuccessW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6 + karmaAdj * 0.4) * 1.25))); // 1.25 is the crit zone multiplier
   var critFailW    = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - karmaAdj * 0.5)));
 
+  // Ensure success zone doesn't overlap crit-fail edges — action-bar.js disables crits if it does
+  zoneStart = Math.max(critFailW + 1, Math.min(100 - zoneW - critFailW - 1, zoneStart));
+
   // Crit success: centered inside the success zone
   var csCenter = zoneStart + Math.round(zoneW / 2);
   var csMin = Math.max(zoneStart + 1, csCenter - Math.floor(critSuccessW / 2));
