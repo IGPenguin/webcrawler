@@ -3,6 +3,7 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
+    { id: 'all_achievements',    emoji: '🏆', desc: "You know it's your destiny.", hint: "Gotta catch them all!" },
     { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!"},
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up your first Drachmae!', hint: "Unlock an eternal advantage." },
@@ -10,8 +11,8 @@ var AchievementManager = (function () {
     { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!' },
     { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!' },
-    { id: 'destiny_first',       emoji: '⁉️', desc: 'Picked a new origin for the first time!', hint: "Start over, but different." },
-    { id: 'destiny_10',          emoji: '♠️', desc: 'Picked a new origin 10 times!' },
+    { id: 'destiny_first',       emoji: '⁉️', desc: 'Started over with a new origin!', hint: "Start over, but different." },
+    { id: 'destiny_10',          emoji: '♠️', desc: 'Started over with a new origin 10 times!' },
     { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item for the first time!' },
     { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Undertaker!' },
     { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact for the first time!' },
@@ -46,7 +47,7 @@ var AchievementManager = (function () {
     { id: 'eat_purple',          emoji: '💜', desc: 'Ate a premium refreshment!', hint: 'The finer things in death.' },
     { id: 'eat_legendary',       emoji: '🟠', desc: 'Consumed a legendary refreshment!', hint: 'Rarities can be eaten too.' },
     { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.' },
-    { id: 'level_5',             emoji: '🏆', desc: 'Reached level 5!', hint: 'The path ahead grows longer.' },
+    { id: 'level_5',             emoji: '🪅', desc: 'Reached level 5!', hint: 'The path ahead grows longer.' },
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...' }
   ];
   // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
@@ -186,6 +187,14 @@ var AchievementManager = (function () {
 
   // ── Unlock ────────────────────────────────────────────────────────────────
 
+  function _checkAllAchievements() {
+    if (_unlocked['all_achievements']) return;
+    var allDone = ACHIEVEMENTS.every(function(a) {
+      return a.id === 'all_achievements' || !!_unlocked[a.id];
+    });
+    if (allDone) _unlock('all_achievements');
+  }
+
   function _unlock(id) {
     if (_unlocked[id]) return;
     _unlocked[id] = Date.now();
@@ -211,6 +220,8 @@ var AchievementManager = (function () {
       _toastQueue.push(achievement);
       if (!_toastActive) _showNextToast();
     }
+
+    if (id !== 'all_achievements') _checkAllAchievements();
   }
 
   function dismissToast() {

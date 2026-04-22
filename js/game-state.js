@@ -232,10 +232,10 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
-  // Resurrection: very narrow, fast zone — last chance before permanent death
-  // TODO spd-(playerKarma * ???)
+  // Resurrection: gold-only strip — hit it or die permanently
   if (button === 'button_attack' && types.includes('Death')) {
-    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
+             critSuccessMin: 48, critSuccessMax: 52, critFailW: 5 };
   }
 
    // Review on death: slow & green
@@ -329,7 +329,7 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
   }
 
-  // Shop: Gamble (button_block) = 50% zone, very fast; all other shop actions = full success zone
+  // Shop: Gamble (button_block) = gold-only strip, same difficulty as reincarnate; all other shop actions = full success zone
   if (types === 'Shop') {
     if (button != 'button_roll') {
       var availableCoins = (savedCoins || 0) - (spentCoins || 0);
@@ -337,7 +337,8 @@ function calcActionBarConfig(button, adjustment) {
         return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
       }
     }
-    if (button === 'button_block') return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
+    if (button === 'button_block') return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
+                                            critSuccessMin: 48, critSuccessMax: 52, critFailW: 5 };
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
