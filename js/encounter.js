@@ -402,7 +402,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         }
       }
       drachmaCoin[0]="area:"+areaName;
-      var bossCoinsLimit = {"Fading Wildlands": 2, "Forsaken Village": 4, "Twisted Fairyland": 6, "River of Sorrows": 8};
+      var bossCoinsLimit = {"Fading Wildlands": 1, "Forsaken Village": 2, "Twisted Fairyland": 3, "River of Sorrows": 4}; //One coin per area (to balance out origins)
       if (!areaName.includes("Shrouded Necropolis") && savedCoins < (bossCoinsLimit[areaName] || 0)) pushEncounter(drachmaCoin); //Unrecognized area defaults to no coin (0)
       pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
       break;
