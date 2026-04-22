@@ -1,42 +1,42 @@
 emoji;name;hp;atk;sta;lck;int;mgk;def;desc
-💢;Berserk;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, sacrifice <b>-2 💔 Health</b>.<br><i>New wounds only make them angrier.
-🏹;Hunter;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Trained to be deadly but fragile.
-⚔️;Knight;0;1;-1;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, sacrifice <b>-1 🟢 Energy</b>.<br><i>Prefers high damage over agility.
-🐍;Serpent;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Venomous by nature, for a price.
-🔥;Choleric;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, sacrifice <b>-3 🧠 Intellect</b>.<br><i>Effective, but not the brightest.
-🔪;Murderer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, sacrifice <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.
-🪓;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no apparent downside.<br><i>Born for killing, nothing more.
+💢;Berserk;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.<br><i>New wounds only make them angrier.
+🏹;Hunter;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Trained to be deadly but fragile.
+⚔️;Knight;0;1;-1;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Prefers high damage over agility.
+🐍;Serpent;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 💔 Health</b>.<br><i>Venomous by nature, for a price.
+🔥;Choleric;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>Effective, but not the brightest.
+🔪;Murderer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.
+🪓;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no evident downside.<br><i>Born for killing, nothing more.
 
-🕊️;Angel;3;-1;0;0;0;0;0;Gain <b>+3 ❤️ Health</b>, sacrifice <b>-1 ⚔️ Attack</b>.<br><i>Good intentions, uncertain chances.
-🗿;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, sacrifice <b>-1 🟢 Energy</b>.<br><i>Rock solid, but less agile.
-💘;Lover;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, sacrifice <b>-2 🧠 Intellect</b>.<br><i>Would give up anything for attention.
-🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, sacrifice <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.
-🛡️;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no apparent downside.<br><i>Stands strong when everything is falling.
+🕊️;Angel;3;-1;0;0;0;0;0;Gain <b>+3 ❤️ Health</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Good intentions, uncertain chances.
+🗿;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Rock solid, but less agile.
+💘;Lover;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Would give up anything for attention.
+🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.
+🛡️;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no evident downside.<br><i>Stands strong when everything is falling.
 
-🔮;Prodigy;-2;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, sacrifice <b>-2 💔 Health</b>.<br><i>The gift came at birth and so did the cost.
-💀;Lich;0;0;-2;0;0;2;0;Gain <b>+2 🔵 Mana</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Traded the life essence for pure power.
-🪄;Wizard;0;-1;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, sacrifice <b>-1 ⚔️ Attack</b>.<br><i>Chosen magic over physical strength.
-🩸;Warlock;-1;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Blood is just another reagent.
-🕯️;Cleric;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, sacrifice <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than their body.
-🔷;Mage;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no apparent downside.<br><i>Bears supernatural power by nature.
+🔮;Prodigy;-2;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.<br><i>The gift came at birth and so did the cost.
+💀;Lich;0;0;-2;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Traded the life essence for pure power.
+🪄;Wizard;0;-1;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Chosen magic over physical strength.
+🩸;Warlock;-1;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>Blood is just another reagent.
+🕯️;Cleric;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than their body.
+🔷;Mage;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no evident downside.<br><i>Bears supernatural power by nature.
 
-👻;Wraith;0;-1;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, sacrifice <b>-1 ⚔️ Attack</b>.<br><i>Lighting fast, but effectively harmless.
-🥷;Ninja;-2;0;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, sacrifice <b>-2 💔 Health</b>.<br><i>The more agile the more fragile.
-👣;Stalker;-1;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Always one step ahead of their victim.
-🧬;Mutant;0;0;1;0;-3;0;0;Gain <b>+1 🟢 Energy</b>, sacrifice <b>-3 🧠 Intellect</b>.<br><i>The body remembered what the mind forgot.
-💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no apparent downside.<br><i>Spent their life staying fit.
+👻;Wraith;0;-1;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Lighting fast, but effectively harmless.
+🥷;Ninja;-2;0;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, suffer <b>-2 💔 Health</b>.<br><i>The more agile the more fragile.
+👣;Stalker;-1;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b>, suffer <b>-1 💔 Health</b>.<br><i>Always one step ahead of their victim.
+🧬;Mutant;0;0;1;0;-3;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>The body remembered what the mind forgot.
+💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no evident downside.<br><i>Spent their life staying fit.
 
-😈;Devil;-1;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Made a deal and has the scars to prove it.
-🎲;Gambler;0;0;0;3;-3;0;0;Gain <b>+3 🍀 Luck</b>, sacrifice <b>-3 🧠 Intellect</b>.<br><i>Traded certainty for something much better.
-🃏;Fool;0;0;0;2;-2;0;0;Gain <b>+2 🍀 Luck</b>, sacrifice <b>-2 🧠 Intellect</b>.<br><i>Doesn't know the odds. Wins anyway.
-🍀;Lucky;0;0;0;2;-1;0;0;Gain <b>+1 🍀 Luck</b>, sacrifice <b>-1 🧠 Intellect</b>.<br><i>Traded fortune for brainpower.
-🌈;Blessed;0;0;0;1;0;0;0;Gain <b>+1 🍀 Luck</b> with no apparent downside.<br><i>Things just always work out.
+😈;Devil;-1;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b>, suffer <b>-1 💔 Health</b>.<br><i>Made a deal and has the scars to prove it.
+🎲;Gambler;0;0;0;3;-3;0;0;Gain <b>+3 🍀 Luck</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>Traded certainty for something much better.
+🃏;Fool;0;0;0;2;-2;0;0;Gain <b>+2 🍀 Luck</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Doesn't know the odds. Wins anyway.
+🍀;Lucky;0;0;0;2;-1;0;0;Gain <b>+1 🍀 Luck</b>, suffer <b>-1 🧠 Intellect</b>.<br><i>Traded fortune for brainpower.
+🌈;Blessed;0;0;0;1;0;0;0;Gain <b>+1 🍀 Luck</b> with no evident downside.<br><i>Things just always work out.
 
-🏳️;Pacifist;0;-1;0;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, sacrifice <b>-1 ⚔️ Attack</b>.<br><i>Survived this long without agression.
-👁️;Prophet;-2;0;0;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, sacrifice <b>-2 💔 Health</b>.<br><i>Suffered many wounds, learned from them.
-🧠;Wiseman;-1;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Chosen wisdom over vitality.
-🔭;Seeker;0;0;-2;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Spent all their vigor searching.
-🎭;Jinx;0;0;0;-1;2;0;0;Gain <b>+2 🧠 Intellect</b>, sacrifice <b>-1 🍀 Luck</b>.<br><i>Clever enough to lose on purpose.
+🏳️;Pacifist;0;-1;0;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Survived this long without agression.
+👁️;Prophet;-2;0;0;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, suffer <b>-2 💔 Health</b>.<br><i>Suffered many wounds, learned from them.
+🧠;Wiseman;-1;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, suffer <b>-1 💔 Health</b>.<br><i>Chosen wisdom over vitality.
+🔭;Seeker;0;0;-2;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Spent all their vigor searching.
+🎭;Jinx;0;0;0;-1;2;0;0;Gain <b>+2 🧠 Intellect</b>, suffer <b>-1 🍀 Luck</b>.<br><i>Clever enough to lose on purpose.
 🎓;Scholar;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>The library was their second home.
 
 🎩;Noble;0;0;0;1;1;0;0;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Born to be clever and lucky.

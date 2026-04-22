@@ -45,7 +45,7 @@ function getOriginName(origin) {
       break;
     case 'mgk':
       adj  = chooseFrom(["Cursed","Veiled","Shrouded","Corrupted","Tainted","Haunted","Withered","Twisted","Ancient","Blighted","Unholy","Forsaken"]);
-      noun = chooseFrom(["Acolyte","Harbinger","Heretic","Relic","Shade","Whisper","Echo","Seer","Penitent","Ascetic","Seeker","Witness"]);
+      noun = chooseFrom(["Acolyte","Harbinger","Heretic","Relic","Shade","Whisperer","Seer","Penitent","Ascetic","Seeker","Witness"]);
       break;
     case 'sta':
       adj  = chooseFrom(["Lurking","Restless","Fleeting","Unseen","Drifting","Tireless","Silent","Fading","Cold","Hollow","Lost","Pale"]);
