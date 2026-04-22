@@ -76,7 +76,7 @@ layout: default
              text-align:center;">✨ New Game</h2>
       <div style="flex:1;
                   min-height:0;
-                  max-height:300px;
+                  max-height:326px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;

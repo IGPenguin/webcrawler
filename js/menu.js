@@ -177,28 +177,63 @@ var Menu = (function () {
     return roll;
   }
 
+  function _originNet(o) {
+    return (o.hp||0)+(o.atk||0)+(o.sta||0)+(o.lck||0)+(o.int||0)+(o.mgk||0)+(o.def||0);
+  }
+
+  function _originRarityBg(net) {
+    if (net >= 3) return colorDarkOrange;
+    if (net >= 2) return colorDarkPurple;
+    if (net >= 1) return colorDarkBlue;
+    return '';
+  }
+
+  function _originRarityColor(net) {
+    if (net >= 3) return colorOrange;
+    if (net >= 2) return colorPurple;
+    if (net >= 1) return colorLightBlue;
+    return colorGold;
+  }
+
   function _renderOriginPicker() {
     _selectedOrigin = null;
     var origins = _rollOrigins();
     if (origins.length === 0) { _doNewGame(null); return; }
 
+    // Sort best net stat first — roll is still random, only display order is sorted
+    origins = origins.slice().sort(function(a, b) { return _originNet(b) - _originNet(a); });
+
     var list = document.getElementById('menu_origin_list');
     list.innerHTML = '';
 
     origins.forEach(function(origin) {
+      var net = _originNet(origin);
+      var rarityBg    = _originRarityBg(net);
+      var rarityColor = _originRarityColor(net);
+
+      var descParts = origin.desc.split('<br>');
+      var descLine1 = descParts[0] || '';
+      var descLine2 = descParts.slice(1).join('<br>');
+
       var entry = document.createElement('div');
       entry.className = 'menu-history-entry';
       entry.style.cursor = 'pointer';
       entry.style.userSelect = 'none';
+      if (rarityBg) entry.style.background = rarityBg;
+
       entry.innerHTML =
-        '<div style="display:flex; align-items:center; gap:10px; padding:10px 12px 0 12px;">'
-          + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + origin.emoji + '</span>'
+        '<div style="display:flex; align-items:center; gap:10px; padding:10px 12px 8px 12px; margin-top:8px;">'
+          + '<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex-shrink:0; width:48px; gap:3px; align-self:center;">'
+            + '<span style="font-size:26px; line-height:1; margin-bottom:2px">' + origin.emoji + '</span>'
+            + '<h5 style="margin:0; font-size:10px; font-style:normal; font-weight:600; opacity:0.45; text-align:center; color:#fff; white-space:nowrap;">'+ origin.originName + '</h5>'
+          + '</div>'
           + '<div style="flex:1; min-width:0;">'
-            + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940;'
+            + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:' + rarityColor + ';'
             + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
-            + origin.originName + (origin.rolledName ? ': ' + origin.rolledName : '') + '</h5>'
-            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; opacity:0.75; text-align:left; line-height:165%; color:#fff;">'
-            + origin.desc + '</h5>'
+            + (origin.rolledName || origin.originName) + '</h5>'
+            + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; text-align:left; line-height:165%; color:#fff;">'
+            + descLine1 + '</h5>'
+            + (descLine2 ? '<h5 style="margin:0; font-size:12px; font-style:italic; font-weight:400; opacity:0.6; text-align:left; line-height:150%; color:#fff;">' + descLine2 + '</h5>' : '')
           + '</div>'
         + '</div>';
 
