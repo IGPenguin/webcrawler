@@ -550,8 +550,6 @@ function playerReincarnate(){
   playerHp=1; //Renew
   playerSta=playerStaMax; //Renew
 
-  if (!playerName.includes("Holy")) playerName="Holy "+playerName
-
   logPlayerAction("✨","Came back to live to continue.<br>&nbsp;<br>&nbsp;");
 
   if (playerKarma>0){ //TODO Revise this threshold

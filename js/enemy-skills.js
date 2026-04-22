@@ -277,7 +277,7 @@ function enemyAttackOrRest(message="",isGrab=false){
       return;
     }
     enemyStaminaChangeMessage(-1,staminaChangeMsg,"n/a","Shit happened.");
-  } else {
+  } else if (enemyHp > enemyHpLost) {
     if (message=="") {
       staminaChangeMsg="They recovered some energy.";
     } else {

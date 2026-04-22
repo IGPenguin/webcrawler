@@ -1,4 +1,9 @@
 //Cut content, needs more care
+Tarot Cards;🃏;Tarot Card(( Imbecile;Item;0;0;0;0;-1;0;0;Destiny Echo;Sacrifice <b>-1 🧠 Intellect</b> with nothing in return.<br>;Accepted destiny(( <b>Imbecile</b>
+Tarot Cards;🃏;Tarot Card(( Rotten;Item;-1;0;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> with nothing in return.<br>;Accepted destiny(( <b>Rotten</b>
+Tarot Cards;🃏;Tarot Card(( Monk;Item;0;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> with nothing in return.<br>;Accepted destiny(( <b>Monk</b>
+Tarot Cards;🃏;Tarot Card(( Fatso;Item;0;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> with nothing in return.<br>;Accepted destiny(( <b>Fatso</b>
+
 Fading Wildlands;🪙;Ethereal Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed an <b>Ethereal Drachma +1 🪙</b>
 Fading Wildlands;💰;Drachmae Pouch;Item;0;0;0;0;0;0;0;Transient Currency;Someone's misplaced savings for their afterlife.<br>Contains few <b>🪙 Ethereal Drachmae</b>.;Claimed a <b>Sunken Drachma +1 🪙</b>
 
@@ -36,11 +41,6 @@ Fishing;🪙;Old Coin;Item;0;0;0;1;0;0;0;Lucky Find;Might be worth a fortune.<br
 
 Twisted Fairyland;🪃;Haunting Boomerang;Item;0;1;0;0;0;0;0;Tribal Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+1 ⚔️ Damage</b>.;
 Shrouded Necropolis;🤖;Exhausted Golem;Friend⚙️\🔧\🔩\🪛;0;0;0;0;0;0;0;Hopeless Machine;You can hear its very faint voice.<br>;They gestured "OK" towards you.
-
-Tarot Cards;🃏;Tarot Card(( Imbecile;Item;0;0;0;0;-1;0;0;Destiny Echo;Sacrifice <b>-1 🧠 Intellect</b> with nothing in return.<br>;Accepted destiny(( <b>Imbecile</b>
-Tarot Cards;🃏;Tarot Card(( Rotten;Item;-1;0;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 💔 Health</b> with nothing in return.<br>;Accepted destiny(( <b>Rotten</b>
-Tarot Cards;🃏;Tarot Card(( Monk;Item;0;-1;0;0;0;0;0;Destiny Echo;Sacrifice <b>-1 ⚔️ Attack</b> with nothing in return.<br>;Accepted destiny(( <b>Monk</b>
-Tarot Cards;🃏;Tarot Card(( Fatso;Item;0;0;-1;0;0;0;0;Destiny Echo;Sacrifice <b>-1 🟢 Energy</b> with nothing in return.<br>;Accepted destiny(( <b>Fatso</b>
 
 River of Sorrows;️🏝️;Quiet Sandbank;Fishing;0;0;0;0;0;0;Natural Habitat;Peaceful place in the middle of nowhere.<br>;Something jumped the hook!
 River of Sorrows;🏖;Lonely Island;Fishing;0;0;0;0;0;0;Piece of Land;Place of rest in the middle of nowhere.<br>;Something jumped the hook!

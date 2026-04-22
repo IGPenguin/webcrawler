@@ -14,150 +14,56 @@ function renameCharacter(){
 
 //String generators
 function getFirstName(){
-  const random_firstnames = [
-    "Tattered",
-    "Hopeful",
-    "Hopeless",
-    "Lost",
-    "Silent",
-    "Faded",
-    "Grieving",
-    "Shadowed",
-    "Tired",
-    "Lone",
-    "Forsaken",
-    "Ashen",
-    "Nameless",
-    "Weary",
-    "Shrouded",
-    "Forgotten",
-    "Mourning",
-    "Veiled",
-    "Broken",
-    "Hollow",
-    "Doomed",
-    "Cursed",
-    "Wounded",
-    "Bleak",
-    "Dying",
-    "Wretched",
-    "Cold",
-    "Fallen",
-    "Burdened",
-    "Guiltbound",
-    "Sorrowful",
-    "Unseen",
-    "Restless",
-    "Withered",
-    "Damned",
-    "Bleeding",
-    "Sunken",
-    "Grim",
-    "Twisted",
-    "Shattered",
-    "Empty",
-    "Haunted",
-    "Bitter",
-    "Gravebound",
-    "Forsworn",
-    "Unbroken",
-    "Lurking",
-    "Last",
-    "Nameless"];
-
-  const random_lastnames = [
-    "Explorer",
-    "Seeker",
-    "Wanderer",
-    "Shade",
-    "Pilgrim",
-    "Drifter",
-    "Stranger",
-    "Prophet",
-    "Redeemer",
-    "Nomad",
-    "Vagrant",
-    "Drifter",
-    "Outcast",
-    "Stranger",
-    "Vagabond",
-    "Survivor",
-    "Witness",
-    "Bearer",
-    "Watcher",
-    "Remnant",
-    "Exile",
-    "Penitent",
-    "Heretic",
-    "Martyr",
-    "Bound",
-    "Hollow",
-    "Keeper",
-    "Harbinger",
-    "Wretch",
-    "Acolyte",
-    "Ascetic",
-    "Recluse",
-    "Forsworn",
-    "Unworthy",
-    "Gravewalker",
-    "Doombringer",
-    "Oathbreaker",
-    "One",
-    "Soul",
-    "Husk",
-    "Echo",
-    "Relic",
-    "Carrier",
-    "Nameless"];
-  return random_firstnames[Math.floor(Math.random() * random_firstnames.length)]+" "+random_lastnames[Math.floor(Math.random() * random_lastnames.length)];
+  return "Damned Soul";
 }
 
-function getVitalName(name=playerName){
-  if (name.includes(" ")) return name;
-  const random_names = ["Big "+name,"Vital "+name,"Resilient "+name,"Strong "+name, "Vigorous "+name, "Muscular "+name, "Huge "+name, "Giant "+name, "Massive "+name, "Healthy "+name,name+" the Beast", name+" the Mighty"];
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
+function getOriginName(origin) {
+  var stats = {
+    atk: origin.atk || 0,
+    hp:  origin.hp  || 0,
+    sta: origin.sta || 0,
+    lck: origin.lck || 0,
+    int: origin.int || 0,
+    mgk: origin.mgk || 0
+  };
 
-function getSwiftName(name=playerName){
-  if (name.includes(" ")) return name;
-  const random_names = ["Swift "+name, "Speedy "+name, "Fast "+name, "Athletic "+name, "Rushing "+name, "Reckless "+name];
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
+  var dominant = null;
+  var max = 0;
+  for (var s in stats) {
+    if (stats[s] > max) { max = stats[s]; dominant = s; }
+  }
 
-function getFaithName(name=playerName){
-  if (name.includes(" ")) return name;
+  var adj, noun;
+  switch (dominant) {
+    case 'atk':
+      adj  = chooseFrom(["Bloodied","Savage","Ruthless","Wrathful","Scarred","Relentless","Merciless","Vicious","Vengeful","Spiteful","Hardened","Ravaged"]);
+      noun = chooseFrom(["Slayer","Butcher","Ravager","Reaper","Killer","Predator","Blade","Brute","Marauder","Wretch","Fury","Raider"]);
+      break;
+    case 'hp':
+      adj  = chooseFrom(["Unbroken","Steadfast","Bound","Burdened","Weary","Sunken","Damned","Hollow","Forsaken","Immovable","Scarred","Enduring"]);
+      noun = chooseFrom(["Sentinel","Martyr","Remnant","Husk","Bearer","Warden","Vessel","Survivor","Anchor","Keeper","Stone","Pillar"]);
+      break;
+    case 'mgk':
+      adj  = chooseFrom(["Cursed","Veiled","Shrouded","Corrupted","Tainted","Haunted","Withered","Twisted","Ancient","Blighted","Unholy","Forsaken"]);
+      noun = chooseFrom(["Acolyte","Harbinger","Heretic","Relic","Shade","Whisper","Echo","Seer","Penitent","Ascetic","Seeker","Witness"]);
+      break;
+    case 'sta':
+      adj  = chooseFrom(["Lurking","Restless","Fleeting","Unseen","Drifting","Tireless","Silent","Fading","Cold","Hollow","Lost","Pale"]);
+      noun = chooseFrom(["Wanderer","Drifter","Pilgrim","Ghost","Vagrant","Phantom","Nomad","Exile","Recluse","Dancer","Runner","Shade"]);
+      break;
+    case 'lck':
+      adj  = chooseFrom(["Blessed","Fated","Charmed","Wayward","Tempted","Doomed","Fallen","Twisted","Last","Forsaken","Bound","Reckless"]);
+      noun = chooseFrom(["Fool","Gambler","Chaser","Believer","Stray","Outcast","Soul","Dreamer","Wretch","Prophet","Vagrant","One"]);
+      break;
+    case 'int':
+      adj  = chooseFrom(["Thoughtful","Quiet","Ancient","Nameless","Forgotten","Veiled","Grieving","Fallen","Hollow","Broken","Distant","Wise"]);
+      noun = chooseFrom(["Prophet","Scholar","Seeker","Witness","Watcher","Hermit","Sage","Recluse","Reader","Exile","Keeper","Pilgrim"]);
+      break;
+    default:
+      return getFirstName();
+  }
 
-  const random_names = ["Holy "+name, "Promising "+name, "Humble "+name, name+" the Believer",name+" Worshipper"];
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
-
-function getSorceryName(name=playerName){
-  if (name.includes(" ")) return name;
-
-  const random_names = [name+" Acolyte","Mystic "+name, name+" the Magician"];
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
-
-function getCleverName(name=playerName){
-  if (name.includes(" ")) return name;
-
-  const random_names = ["Intelligent "+name,"Resolute "+name, "Thoughful "+name, "Clever "+name, "Ambitious "+name, "Curious "+name];
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
-
-function getHatredName(name=playerName){
-  if (name.includes(" ")) return name;
-
-  const random_names = ["Mischievous "+name,"Bloody "+name, name+" the Warlock", "Spiteful "+name, "Withering "+name, "Ruthless "+name];
-  return random_names[Math.floor(Math.random() * random_names.length)];
-}
-
-function getLuckyName(name=playerName){
-  if (name.includes(" ")) return name;
-
-  const random_names = ["Lucky "+name, "Indigent "+name,"Wholesome "+name];
-  return random_names[Math.floor(Math.random() * random_names.length)];
+  return adj + ' ' + noun;
 }
 
 function getGameTip(){

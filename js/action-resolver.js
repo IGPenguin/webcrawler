@@ -192,7 +192,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
             displayPlayerGainedEffect();
             displayPlayerEffect("❤️");
-            playerName=getVitalName();
             playerHpMax+=1;
             playerHp+=1;
             isFishing=false;
@@ -549,7 +548,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Felt becoming faster <b>+1 🟢 Stamina</b>.");
             displayPlayerGainedEffect();
             displayPlayerEffect("💨");
-            playerName=getSwiftName();
             playerStaMax+=1;
             playerSta+=1;
             isFishing=false;
@@ -601,7 +599,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           logPlayerAction(actionString,"Gained <b>+1 🔵 Mana</b> permanently.");
           displayPlayerCannotEffect();
           displayPlayerEffect("✨");
-          playerName=getSorceryName();
           playerMgk+=1;
           playerMgkMax+=1;
           isFishing=false;
@@ -735,7 +732,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Got <b>+2 Mana</b> 🔵 for <b>-1 🟢 Stamina</b>.");
             displayPlayerCannotEffect();
             displayPlayerEffect("✨");
-            playerName=getSorceryName();
             playerMgkMax+=2;
             playerMgk+=2;
             playerStaMax-=1;
@@ -963,7 +959,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Granted gods blessing +1 🧠 +1 🍀");
             displayPlayerGainedEffect();
             displayPlayerEffect("🙏");
-            playerName=getFaithName();
             playerLck++;
             playerInt++;
             //playerKarma++; //Hmmm
@@ -1108,7 +1103,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Gained permanent bonus <b>+2 🍀 Luck</b>.");
             displayPlayerCannotEffect();
-            playerName=getLuckyName();
             playerChangeStats(0, 0, 0, 2, 0, 0,0,"n/a",false,false);
             isFishing=false;
             animateFlipNextEncounter();
@@ -1700,7 +1694,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             //Hatred
             logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+2 🔵 Mana</b>.");
             displayPlayerCannotEffect();
-            playerName=getHatredName();
             playerChangeStats(-1, 0, 0, 0, 0, 2,0,"n/a",false,false);
             playerHit(0,false,true);
             isFishing=false;
@@ -2006,7 +1999,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString,"Became considerably wiser +2 🧠");
             displayPlayerGainedEffect();
             displayPlayerEffect("🧠");
-            playerName=getCleverName();
             playerInt+=2;
             isFishing=false;
             animateFlipNextEncounter();

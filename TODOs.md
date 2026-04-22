@@ -8,17 +8,12 @@
 
 ## Origins
 
-- Prepend the origin emoji to the player name instead of the postfix in brackets
- - Remember the emoji in special var alongside standard player stats
- - The emoji can have side effects in game
-- Roll the origins on death and tease them somehow? To improve the changes for the player to start yet another run (due to having different stats - eg low health and high stamina, might be high risk, high reward)
-
   ...
 
 - Create unique origins (very rare - similar to items legendary/artifact items work):
   - Low chance to roll these
   - These give special effects (Undead passive, Demons passive...) 
-  - Would make sense to unlock these by progressing the game story?
+  - These should unlock gradually with the player progressing the game/or failing again and again (to make the game progressively easier)
 
 ---
 

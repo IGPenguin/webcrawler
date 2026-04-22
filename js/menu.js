@@ -139,7 +139,7 @@ var Menu = (function () {
       playerInt    = playerInt + (origin.int || 0);
       playerMgkMax = Math.max(0, playerMgkMax + mgk);
       playerMgk    = playerMgkMax;
-      playerName = origin.emoji + ' ' + playerName;
+      playerName = origin.emoji + ' ' + (origin.rolledName || getOriginName(origin));
       playerEmoji = origin.emoji;
       playerDestined = true;
       AchievementManager.check('destiny');
@@ -165,13 +165,14 @@ var Menu = (function () {
       }
     } catch(e) {}
 
-    // Fresh roll — shuffle and pick 3
+    // Fresh roll — shuffle, pick 3, attach a rolled name to each
     var shuffled = cards.slice();
     for (var i = shuffled.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
     }
     var roll = shuffled.slice(0, Math.min(3, shuffled.length));
+    roll.forEach(function(o) { o.rolledName = getOriginName(o); });
     try { localStorage.setItem('originRoll', JSON.stringify(roll)); } catch(e) {}
     return roll;
   }
@@ -195,7 +196,7 @@ var Menu = (function () {
           + '<div style="flex:1; min-width:0;">'
             + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940;'
             + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
-            + origin.originName + '</h5>'
+            + origin.originName + (origin.rolledName ? ': ' + origin.rolledName : '') + '</h5>'
             + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; opacity:0.75; text-align:left; line-height:165%; color:#fff;">'
             + origin.desc + '</h5>'
           + '</div>'
