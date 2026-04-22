@@ -192,7 +192,7 @@ var Menu = (function () {
     if (net >= 3) return colorOrange;
     if (net >= 2) return colorPurple;
     if (net >= 1) return colorLightBlue;
-    return colorGold;
+    return colorWhite;
   }
 
   function _renderOriginPicker() {
