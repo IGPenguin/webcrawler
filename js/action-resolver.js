@@ -222,6 +222,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyType=enemyType.replace("Locked-","");
                 enemyHp=0;
                 enemyMsg="Uncovered what was locked inside."
+                AchievementManager.check('smash_door_first');
                 redraw();
               }
               break;
@@ -751,6 +752,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
+          AchievementManager.check('cast_first');
+
           if (enemyType.includes("Locked")){
             if (playerMgk<mkgCost){
               logPlayerAction(actionString,"Not enough mana, requires +"+mkgCost+" 🔵");
@@ -760,6 +763,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerMgk-=mkgCost;
               var gainedXP=playerGainXP(1,15*playerLevel,"");
               logPlayerAction(actionString,"Unlocked it with a spell -"+mkgCost+" 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              AchievementManager.check('magic_unlock_first');
               nextEncounter();
               break;
             }
@@ -1117,6 +1121,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
+        AchievementManager.check('curse_first');
         if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
           // Reflective curse-back: failed skill check = curse snaps back onto the caster
@@ -1591,6 +1596,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover")) {
               AchievementManager.check('grab_rubbish');
             }
+            if (enemyEmoji!='🪙' && enemyEmoji!='💰') AchievementManager.check('loot_first');
+            if (enemyEmoji==='🗝️' || enemyEmoji==='🔑') AchievementManager.check('key_first');
             //Grab end
             var _wasInFishing = isFishing;
             isFishing=false;
@@ -1653,8 +1660,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerSta > 0) playerSta--;
             var bait=checkPlayerHasItem(validBaits);
             if (_skillOK === false) {
-              displayPlayerCannotEffect();
-              logPlayerAction(actionString, bait !== "" ? "The fish slipped off the hook -1 🟢" : (playerSta <= 0 ? "Too tired to focus on the hook -1 🟢" : "Nothing bit the empty hook -1 🟢"));
+              if (_crit === 'fail' && bait !== "") {
+                playerUseItem(bait, "Hook snagged — lost " + bait + " -1 🟢", "");
+              } else {
+                displayPlayerCannotEffect();
+                logPlayerAction(actionString, bait !== "" ? "The fish slipped off the hook -1 🟢" : (playerSta <= 0 ? "Too tired to focus on the hook -1 🟢" : "Nothing bit the empty hook -1 🟢"));
+              }
               break;
             }
             if (bait !== "") {
@@ -1724,12 +1735,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   } else {
                     playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false);
                     playerGainXP(1,15*playerLevel,"");
+                    AchievementManager.check('key_unlock_first');
                     nextEncounter();
                   }
                   break;
                 } else if (playerLootString.includes("📎")) {
                   logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b> "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
                   playerGainXP(1,15*playerLevel,"");
+                  AchievementManager.check('key_unlock_first');
                   nextEncounter();
                 } else {
                   displayEnemyCannotEffect();

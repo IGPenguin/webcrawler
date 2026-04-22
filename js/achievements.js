@@ -3,51 +3,78 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
-    { id: 'all_achievements',    emoji: '🏆', desc: "Completed every single memory!", hint: "Catch 'em all to be the very best!" },
-    { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
-    { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!"},
-    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up your first Drachmae!', hint: "Unlock an eternal advantage." },
-    { id: 'coin_5',              emoji: '💰', desc: 'Set up for success with 5 Drachmae!' },
-    { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!' },
-    { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!' },
-    { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!' },
-    { id: 'destiny_first',       emoji: '⁉️', desc: 'Started over with a new origin!', hint: "Start over, but different." },
-    { id: 'destiny_10',          emoji: '♠️', desc: 'Started over again 10 times!' },
-    { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item for the first time!' },
-    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Shade!' },
-    { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact for the first time!' },
-    { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up for the first time!' },
-    { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!' },
+    { id: 'all_achievements',    emoji: '🏆', desc: "<b>Completed every single memory!</b>", hint: "<b>Catch 'em all to appear in the Credits</b>!" },
+    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by defeating a first boss!', hint: "Defeat the first challenging enemy!" },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shop</b> by picking up a first Drachma!', hint: "Obtain the everlasting currency!" },
+
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time." },
-    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!'  },
-    { id: 'boss_kill_first',     emoji: '🎉', desc: 'Defeated your first boss!', hint: "Fell your first great enemy!"},
-    { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!' },
+    { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
+    { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!" },
+    { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.' },
+
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.' },
-    { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!' },
     { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?' },
+    { id: 'survive_trap',        emoji: '🪤', desc: 'Survived a deadly trap!', hint: 'Mistakes can happen.' },
+
+    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Some paths are not yet open.' },
+    { id: 'cast_first',          emoji: '💫', desc: 'Cast a spell for the first time!', hint: 'Magic answers to the willing.' },
+    { id: 'heal_first',          emoji: '❤️‍🩹', desc: 'Healed yourself for the first time!', hint: 'Mend what can still be mended.' },
+    { id: 'curse_first',         emoji: '🪬', desc: 'Cursed an enemy for the first time!', hint: 'Darkness may prove useful.' },
+
+    { id: 'loot_first',          emoji: '📦', desc: 'Picked up your first item!', hint: 'There is always something to find.' },
+    { id: 'key_first',           emoji: '🗝️', desc: 'Picked up a key for the first time!', hint: 'Some doors remain shut for now.' },
+    { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key for the first time!', hint: 'The right key for the right lock.' },
+    { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open for the first time!', hint: 'When keys fail, force prevails.' },
+    { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with magic for the first time!', hint: 'Magic opens more than minds.' },
+    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of quality.' },
+    { id: 'grab_artifact',       emoji: '🏺', desc: 'Found your first artifact!', hint: 'Some items are truly legendary.' },
+    { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.' },
+
+    { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Sure, suit yourself...' },
+    { id: 'eat_purple',          emoji: '💜', desc: 'Ate a premium refreshment!', hint: 'The finer things in death.' },
+    { id: 'eat_legendary',       emoji: '🟠', desc: 'Consumed a legendary refreshment!', hint: 'Rarities can be eaten too.' },
+
     { id: 'pet_first',           emoji: '🐾', desc: 'Got your first companion!', hint: 'Some creatures can be befriended.' },
     { id: 'recruit_first',       emoji: '🤝', desc: 'Recruited your first ally!', hint: 'Be smarter. Be convincing.' },
-    { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.' },
-    { id: 'spoke_boss',          emoji: '🗣️', desc: 'Spoke a Boss into submission!', hint: 'Could peace be an actual option?' },
-    { id: 'survive_trap',        emoji: '🪤', desc: 'Survived a deadly trap!', hint: 'Mistakes can happen.' },
     { id: 'full_party',          emoji: '👥', desc: 'Gathered a full party of three!', hint: 'The more, the merrier, always.' },
-    { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?" },
-    { id: 'fish_bait_50',       emoji: '🎏', desc: 'Caught something 50 times!' },
-    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Pffft... who needs a bait anyway?" },
-    { id: 'fish_no_bait_50',    emoji: '😎', desc: 'Caught something without a bait 50 times!' },
+
     { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered: Forsaken Village!' },
     { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!' },
     { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!' },
     { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!' },
+
+    { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.' },
+
+    { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item for the first time!' },
+    { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact for the first time!' },
+    { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up for the first time!' },
+    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Shade!' },
+
+    { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?" },
+    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Pffft... who needs a bait anyway?" },
+
+    { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!' },
+    { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!' },
+
+    { id: 'destiny_first',       emoji: '⁉️', desc: 'Started with an origin for the first time!', hint: "Start over, this time different." },
+
+    { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!' },
+    { id: 'spoke_boss',          emoji: '🗣️', desc: 'Spoke a Boss into submission!', hint: 'Could peace be an actual option?' },
+
+    { id: 'level_5',             emoji: '🎊', desc: 'Reached level 5!', hint: 'The path ahead grows longer.' },
+
+    { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!' },
+
+    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!' },
+    { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!' },
+    { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50 times!' },
+    { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something without a bait 50 times!' },
+    { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!' },
+    { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!' },
+
+    { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim." },
     { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?' },
-    { id: 'grab_artifact',       emoji: '🏺', desc: 'Found your first artifact!', hint: 'Some items are truly legendary.' },
-    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of quality.' },
-    { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.' },
-    { id: 'eat_hazardous',       emoji: '🚩', desc: 'Consumed something hazardous!', hint: 'Touch everything.' },
-    { id: 'eat_purple',          emoji: '💜', desc: 'Ate a premium refreshment!', hint: 'The finer things in death.' },
-    { id: 'eat_legendary',       emoji: '🟠', desc: 'Consumed a legendary refreshment!', hint: 'Rarities can be eaten too.' },
-    { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.' },
-    { id: 'level_5',             emoji: '🪅', desc: 'Reached level 5!', hint: 'The path ahead grows longer.' },
+
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...' }
   ];
   // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
@@ -80,6 +107,15 @@ var AchievementManager = (function () {
     grabbedArtifact:     false,
     grabbedExquisite:    false,
     grabbedRubbish:      false,
+    lootFirst:           false,
+    keyFirst:            false,
+    keyUnlockFirst:      false,
+    smashDoorFirst:      false,
+    magicUnlockFirst:    false,
+    manaFirst:           false,
+    castFirst:           false,
+    healFirst:           false,
+    curseFirst:          false,
     ateHazardous:        false,
     atePurple:           false,
     ateLegendary:        false,
@@ -255,7 +291,7 @@ var AchievementManager = (function () {
         // value = current savedCoins after pickup
         if (value > _stats.maxSavedCoins) { _stats.maxSavedCoins = value; _save(); }
         if (_stats.maxSavedCoins >= 1) _unlock('coin_first');
-        if (_stats.maxSavedCoins >= 5) _unlock('coin_5');
+        if (_stats.maxSavedCoins >= 3) _unlock('coin_3');
         break;
 
       case 'gamble_win':
@@ -385,6 +421,42 @@ var AchievementManager = (function () {
 
       case 'grab_rubbish':
         if (!_stats.grabbedRubbish) { _stats.grabbedRubbish = true; _save(); _unlock('grab_rubbish'); }
+        break;
+
+      case 'loot_first':
+        if (!_stats.lootFirst) { _stats.lootFirst = true; _save(); _unlock('loot_first'); }
+        break;
+
+      case 'key_first':
+        if (!_stats.keyFirst) { _stats.keyFirst = true; _save(); _unlock('key_first'); }
+        break;
+
+      case 'key_unlock_first':
+        if (!_stats.keyUnlockFirst) { _stats.keyUnlockFirst = true; _save(); _unlock('key_unlock_first'); }
+        break;
+
+      case 'smash_door_first':
+        if (!_stats.smashDoorFirst) { _stats.smashDoorFirst = true; _save(); _unlock('smash_door_first'); }
+        break;
+
+      case 'magic_unlock_first':
+        if (!_stats.magicUnlockFirst) { _stats.magicUnlockFirst = true; _save(); _unlock('magic_unlock_first'); }
+        break;
+
+      case 'mana_first':
+        if (!_stats.manaFirst) { _stats.manaFirst = true; _save(); _unlock('mana_first'); }
+        break;
+
+      case 'cast_first':
+        if (!_stats.castFirst) { _stats.castFirst = true; _save(); _unlock('cast_first'); }
+        break;
+
+      case 'heal_first':
+        if (!_stats.healFirst) { _stats.healFirst = true; _save(); _unlock('heal_first'); }
+        break;
+
+      case 'curse_first':
+        if (!_stats.curseFirst) { _stats.curseFirst = true; _save(); _unlock('curse_first'); }
         break;
 
       case 'eat_hazardous':

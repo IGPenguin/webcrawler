@@ -154,6 +154,7 @@ function playerHeal(critBonus){
     var bonusHeal = (critBonus && (playerHp+healAmount) < playerHpMax) ? 1 : 0;
     playerHp+=healAmount+bonusHeal;
     playerMgk-=healAmount;
+    AchievementManager.check('heal_first');
 
     if (bonusHeal) {
       logPlayerAction(actionString,"Felt a divine overflow. +"+(healAmount+bonusHeal)+" ❤️‍🩹 -"+healAmount+" 🔵");
@@ -279,6 +280,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
     playerMgkMax += parseInt(bonusMgk);
     playerMgk += parseInt(bonusMgk);
     if (playerMgk<0) playerMgk=0;
+    if (parseInt(bonusMgk) > 0) AchievementManager.check('mana_first');
     gainedString += changeSign+bonusMgk + " 🔵";
     displayPlayerEffect("🪬");
     displayPlayerGainedEffect();

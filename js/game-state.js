@@ -352,15 +352,15 @@ function calcActionBarConfig(button, adjustment) {
       return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
     }
     var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 1;
-    var fishMin = Math.max(3, 34 - fishBQ * 4);
-    var fishMax = Math.min(90, 58 + fishBQ * 4);
-    var fishCritSuccessW = Math.max(2, Math.round(3 + pLck * 0.5));
-    var fishCritFailW = 4;
+    var fishMin = Math.max(3, 35 - fishBQ * 4);
+    var fishMax = Math.min(90, 57 + fishBQ * 4);
+    var fishCritSuccessW = Math.max(1, Math.round((3 + pLck * 0.5) * 0.5));
+    var fishCritFailW = 6;
     var fishCenter = Math.round((fishMin + fishMax) / 2);
     var fishCsMin = Math.max(fishMin + 1, fishCenter - Math.floor(fishCritSuccessW / 2));
     var fishCsMax = Math.min(fishMax - 1, fishCsMin + fishCritSuccessW);
     if (fishCsMax - fishCsMin < 2) { fishCsMin = -1; fishCsMax = -1; }
-    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax,
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: fishMin, successMax: fishMax,
              critSuccessMin: fishCsMin, critSuccessMax: fishCsMax, critFailW: fishCritFailW };
   }
 

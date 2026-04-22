@@ -139,6 +139,7 @@ var Menu = (function () {
       playerInt    = playerInt + (origin.int || 0);
       playerMgkMax = Math.max(0, playerMgkMax + mgk);
       playerMgk    = playerMgkMax;
+      if (mgk > 0) AchievementManager.check('mana_first');
       playerName = origin.emoji + ' ' + (origin.rolledName || getOriginName(origin));
       playerEmoji = origin.emoji;
       playerDestined = true;
@@ -670,7 +671,7 @@ var Menu = (function () {
     document.getElementById('menu_new_game').addEventListener('click', function () {
       if (SaveManager.hasContinue()) {
         _renderConfirm();
-      } else if (SaveManager.listSessionHistory().length > 0) {
+      } else if (AchievementManager.isUnlocked('boss_kill_first')) {
         _renderOriginPicker();
       } else {
         _doNewGame(null);
@@ -679,7 +680,11 @@ var Menu = (function () {
 
     document.getElementById('menu_confirm_yes').addEventListener('click', function () {
       SaveManager.abandonCurrentRun();
-      _renderOriginPicker();
+      if (AchievementManager.isUnlocked('boss_kill_first')) {
+        _renderOriginPicker();
+      } else {
+        _doNewGame(null);
+      }
     });
 
     document.getElementById('menu_confirm_cancel').addEventListener('click', function () { _renderMain(); });

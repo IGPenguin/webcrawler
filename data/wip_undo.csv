@@ -1,5 +1,13 @@
 //Cut content, needs more care
 
+//Fishing drachmae - breaking progression
+Fishing;💰;Drachmae Pouch;Item;0;0;0;0;0;0;0;Transient Currency;Someone's misplaced savings for their afterlife.<br>Contains few <b>🪙 Ethereal Drachmae</b>.;Claimed a <b>Sunken Drachma +1 🪙</b>
+Fishing;🪙;Sunken Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Sunken Drachma +1 🪙</b>
+Fishing;🪙;Misplaced Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Misplaced Drachma +1 🪙</b>
+Fishing;🪙;Deserted Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Deserted Drachma +1 🪙</b>
+Fishing;🪙;Castaway Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Castaway Drachma +1 🪙</b>
+Fishing;🪙;Forgotten Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Forgotten Drachma +1 🪙</b>
+
 Fading Wildlands;🪙;Ethereal Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed an <b>Ethereal Drachma +1 🪙</b>
 Fading Wildlands;💰;Drachmae Pouch;Item;0;0;0;0;0;0;0;Transient Currency;Someone's misplaced savings for their afterlife.<br>Contains few <b>🪙 Ethereal Drachmae</b>.;Claimed a <b>Sunken Drachma +1 🪙</b>
 

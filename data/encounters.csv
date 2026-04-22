@@ -840,7 +840,7 @@ Twisted Fairyland;⚡️;Lightning Bolt;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Weapo
 Twisted Fairyland;🍭;Candy Wand;Item;0;0;0;0;2;0;0;<b>Artifact</b>;A rainbow-colored wand sparkling with power.<br>Provides <b>+2 🔵 Mana</b>.;The old hag won't be happy.
 Twisted Fairyland;👘;Warlock Robe;Item;0;0;0;0;-4;2;0;Artifact;Usually worn by the darkest of spellcasters.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;Felt a dark urge inside
 Twisted Fairyland;🪄;Warlock Wand;Item;0;0;0;-2;0;2;0;<b>Artifact</b>;Resonates with forsaken magical power.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Wielded a dangerous power.
-Twisted Fairyland;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> against <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
+Twisted Fairyland;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
 Twisted Fairyland;📌;Voodoo Pin;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Enemies will suffer from the <b>☠️ Ancient Voodoo</b>.<br>Deal <b>-1 💔 Damage</b> when engaging in combat.;Gained ability <b>☠️ Ancient Voodoo</b>.
 Twisted Fairyland;📜;The Elder Scroll;Item;0;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Intellect</b> and an ancient insight.<br>n/a;Embraced the ancient knowledge.
 
@@ -1017,7 +1017,7 @@ River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thorough
 
 //More or less matches fishing (needs retouching soon)
 River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.
-River of Sorrows;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> against <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
+River of Sorrows;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
 River of Sorrows;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.
@@ -1235,19 +1235,12 @@ Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;3;2;2;0;-1;0;0;Forgotten Lo
 Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.
 
 //Fishing
-Fishing;💰;Drachmae Pouch;Item;0;0;0;0;0;0;0;Transient Currency;Someone's misplaced savings for their afterlife.<br>Contains few <b>🪙 Ethereal Drachmae</b>.;Claimed a <b>Sunken Drachma +1 🪙</b>
-Fishing;🪙;Sunken Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Sunken Drachma +1 🪙</b>
-Fishing;🪙;Misplaced Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Misplaced Drachma +1 🪙</b>
-Fishing;🪙;Deserted Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Deserted Drachma +1 🪙</b>
-Fishing;🪙;Castaway Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Castaway Drachma +1 🪙</b>
-Fishing;🪙;Forgotten Drachma;Item;0;0;0;0;0;0;0;Transient Currency;Entangles with one's soul on touch.<br>;Claimed a <b>Forgotten Drachma +1 🪙</b>
-
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;
 Fishing;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;
 
 Fishing;🪣;Metal Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly could serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Not stupid\ if it works! <b>+1 🔰</b>
 Fishing;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 25% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.
-Fishing;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> against <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
+Fishing;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.
 Fishing;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.
 Fishing;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.
 Fishing;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>
