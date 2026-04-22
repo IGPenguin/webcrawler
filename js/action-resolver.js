@@ -2059,6 +2059,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Small":
+            playerRest(true);
             logPlayerAction(actionString,"Wandered too far away from you.");
             nextEncounter();
             break;

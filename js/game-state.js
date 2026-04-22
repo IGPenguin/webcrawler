@@ -331,13 +331,13 @@ function calcActionBarConfig(button, adjustment) {
 
   // Shop: Gamble (button_block) = 50% zone, very fast; all other shop actions = full success zone
   if (types === 'Shop') {
-    if (button === 'button_block') {
+    if (button != 'button_roll') {
       var availableCoins = (savedCoins || 0) - (spentCoins || 0);
       if (availableCoins < 1) {
         return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
       }
-      return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
     }
+    if (button === 'button_block') return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 45, successMax: 55 };
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 

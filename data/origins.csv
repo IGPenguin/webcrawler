@@ -1,5 +1,5 @@
 emoji;name;hp;atk;sta;lck;int;mgk;def;desc
-💢;Berserk;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, sacrifice <b>-2 💔 Health</b>.<br>New wounds only make them angrier.
+💢;Berserk;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, sacrifice <b>-2 💔 Health</b>.<br><i>New wounds only make them angrier.
 🏹;Hunter;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Trained to be deadly but fragile.
 ⚔️;Knight;0;1;-1;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, sacrifice <b>-1 🟢 Energy</b>.<br><i>Prefers high damage over agility.
 🐍;Serpent;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Venomous by nature, for a price.
@@ -10,7 +10,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🕊️;Angel;3;-1;0;0;0;0;0;Gain <b>+3 ❤️ Health</b>, sacrifice <b>-1 ⚔️ Attack</b>.<br><i>Good intentions, uncertain chances.
 🗿;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, sacrifice <b>-1 🟢 Energy</b>.<br><i>Rock solid, but less agile.
 💘;Lover;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, sacrifice <b>-2 🧠 Intellect</b>.<br><i>Would give up anything for attention.
-🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, sacrifice <b>-2 🍀 Luck</b>.<br><i>Given up soul for resilience.
+🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, sacrifice <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.
 🛡️;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no apparent downside.<br><i>Stands strong when everything is falling.
 
 🔮;Prodigy;-2;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, sacrifice <b>-2 💔 Health</b>.<br><i>The gift came at birth and so did the cost.
@@ -26,8 +26,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🧬;Mutant;0;0;1;0;-3;0;0;Gain <b>+1 🟢 Energy</b>, sacrifice <b>-3 🧠 Intellect</b>.<br><i>The body remembered what the mind forgot.
 💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no apparent downside.<br><i>Spent their life staying fit.
 
-😈;Devil;-1;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Made a deal. Has the scars to prove it.
-🎲;Gambler;0;0;0;3;-3;0;0;Gain <b>+3 🍀 Luck</b>, sacrifice <b>-3 🧠 Intellect</b>.<br><i>Traded certainty for something better.
+😈;Devil;-1;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Made a deal and has the scars to prove it.
+🎲;Gambler;0;0;0;3;-3;0;0;Gain <b>+3 🍀 Luck</b>, sacrifice <b>-3 🧠 Intellect</b>.<br><i>Traded certainty for something much better.
 🃏;Fool;0;0;0;2;-2;0;0;Gain <b>+2 🍀 Luck</b>, sacrifice <b>-2 🧠 Intellect</b>.<br><i>Doesn't know the odds. Wins anyway.
 🍀;Lucky;0;0;0;2;-1;0;0;Gain <b>+1 🍀 Luck</b>, sacrifice <b>-1 🧠 Intellect</b>.<br><i>Traded fortune for brainpower.
 🌈;Blessed;0;0;0;1;0;0;0;Gain <b>+1 🍀 Luck</b> with no apparent downside.<br><i>Things just always work out.
