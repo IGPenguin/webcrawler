@@ -6,14 +6,6 @@
 
 ---
 
-## Origins
-
-- Create unique origins (these should have no stat boosts, but special description and be considered always unique - per their emoji or origin name)):
-  - These give special effects (Undead passive, Demons passive...) - check the masks logic (👺, 🐴) and unify the checks so that origin works as well as later pickup of such mask
-  - Propose a new (achievement(s)?) to unlock these gradually with the player progressing the game (or failing again and again?)
-
----
-
 ## Top Priority - Action Bar cases follow ups
 
 I suspect that there are a lot of blind spots with action bar pass/fail/crit-pass/crit-fail for for various encounter types + action combos
@@ -24,10 +16,11 @@ Grab (crit success = instant knockout, crit fail = they hit back harder). But th
 
 ---
 
-## Items
+## Items / Origins
 
 - Legendary item for bigger crit chance interval by ??%
 - Legendary item slowing down action bar speed by ??%
+- More unique origins with gameplay implications
 
 ---
 

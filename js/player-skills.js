@@ -1,3 +1,7 @@
+function playerHas(emoji) {
+  return playerLootString.includes(emoji) || playerEmoji === emoji;
+}
+
 function renewPlayer(){ //Default values
   playerName = getFirstName();
   playerHpMax=3;
@@ -373,7 +377,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
 function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef at various places (not needed at the moment, but might be in future)
   //Works for both morph and mask, logs manipulated further down
-  if (playerName.includes("🐷") || playerLootString.includes("🐷")) {enemyHp=0; enemyAtk=0; enemySta=0; enemyLck=0; enemyInt=0; enemyMgk=0; enemyDef=0;}
+  if (playerHas("🐷")) {enemyHp=0; enemyAtk=0; enemySta=0; enemyLck=0; enemyInt=0; enemyMgk=0; enemyDef=0;}
 
   var consumedString="Replenished resources"
   var sign = "";
@@ -408,7 +412,7 @@ function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef 
   }
 
   //Pig morph and mask log tweak
-  if (playerName.includes("🐷") || playerLootString.includes("🐷")) consumedString="<b>Devoured</b> by <b>🐷 Pig Digestion</b>";
+  if (playerHas("🐷")) consumedString="<b>Devoured</b> by <b>🐷 Pig Digestion</b>";
 
   gainStamina+=parseInt(enemySta);
   if (gainStamina<0) sign=" "

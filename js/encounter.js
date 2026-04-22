@@ -226,14 +226,31 @@ function loadEncounter(index, fileLines = linesStory){
     pushEncounter(getRandomEncounter(["Friend"],[enemyEmoji]),randomSlot);
   }
 
-  if (playerLootString.includes("👺")){
+  if (playerHas("👺") || playerHas("😈")) {
     if (enemyType=="Demon") {
-      enemyAtkBonus=(-enemyAtk)
-      enemyMgkLost=(enemyMgk)
+      enemyAtkBonus=(-enemyAtk);
+      enemyMgkLost=(enemyMgk);
     }
   }
-  if (playerLootString.includes("🐴")){
+  if (playerHas("🐴")) {
     enemyAtkBonus-=1;
+  }
+  if (playerHas("💀") || playerHas("🧟‍♂️")) {
+    if (enemyType=="Undead") {
+      enemyAtkBonus=(-enemyAtk);
+      enemyMgkLost=(enemyMgk);
+    }
+  }
+  if (playerHas("👻")) {
+    if (enemyType=="Spirit") {
+      enemyAtkBonus=(-enemyAtk);
+      enemyMgkLost=(enemyMgk);
+    }
+  }
+  if (playerHas("🦧")) {
+    if (enemyType=="Small") {
+      enemyAtkBonus=(-enemyAtk);
+    }
   }
   runLogAdd("encounter", {
     area: areaName, emoji: enemyEmoji, name: enemyName, type: enemyType,

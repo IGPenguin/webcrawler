@@ -1559,7 +1559,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               if (enemyEmoji!="🪙" && enemyEmoji!="💰") playerLootString+=enemyEmoji;
-              if (enemyEmoji=="👺" || enemyEmoji=="🐴" || enemyEmoji=="🐷") playerName=enemyEmoji+" "+playerName;
+              if (enemyEmoji=="👺" || enemyEmoji=="🐴" || enemyEmoji=="🐷") {
+                if (playerEmoji && playerEmoji !== enemyEmoji) {
+                  playerName = playerName.replace(playerEmoji + " ", enemyEmoji + " ");
+                  playerEmoji = "";
+                } else if (!playerEmoji) {
+                  playerName = enemyEmoji + " " + playerName;
+                }
+              }
               displayPlayerGainedEffect();
             } else {
               playerKarma++;

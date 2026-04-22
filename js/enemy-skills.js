@@ -35,7 +35,7 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
-  if (playerLootString.includes("🐴")){
+  if (playerHas("🐴")){
     if (enemyHpLost==0) enemyAtkBonus+=1; //Revert mask effect, just the first time hit
   }
 

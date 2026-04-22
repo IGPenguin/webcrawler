@@ -11,7 +11,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 
 //Mana
 🔮;Prodigy;-2;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.<br><i>The gift came at birth and so did the cost.
-💀;Lich;0;0;-2;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Traded the life essence for pure power.
+🪬;Lich;0;0;-2;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Traded the life essence for pure power.
 🪄;Wizard;0;-1;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Chosen magic over physical strength.
 🩸;Warlock;-1;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>Blood is just another reagent.
 🕯️;Cleric;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than their body.
@@ -70,6 +70,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 //Negative
 📿;Monk;0;-1;0;0;0;0;0;Abstain <b>-1 ⚔️ Attack</b> with no evident benefit.<br><i>Blindly believes in peace.
 🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Suffer <b>-1 💔 Health</b> with no evident benefit.<br><i>Fits well with the tainted surroundings.
+💀;Brittle;-2;0;0;0;0;0;0;Suffer <b>-2 💔 Health</b> with no evident benefit.<br><i>No flesh to protect the bones.
 🍔;Fatso;0;0;-1;0;0;0;0;Suffer <b>-1 🟢 Energy</b> with no evident benefit.<br><i>Can not ever satify the hunger.
 🤪;Imbecile;0;0;0;0;-1;0;0;Suffer <b>-1 🧠 Intellect</b> with no evident benefit.<br><i>Not everyone can be blessed.
 🥺;Jinx;0;0;0;-1;0;0;0;Suffer <b>-1 🍀 Luck</b> with no evident benefit.<br><i>Misfortune follows their steps.
