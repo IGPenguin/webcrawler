@@ -178,20 +178,25 @@ var Menu = (function () {
   }
 
   function _originNet(o) {
-    return (o.hp||0)+(o.atk||0)+(o.sta||0)+(o.lck||0)+(o.int||0)+(o.mgk||0)+(o.def||0);
+    return (o.atk||0)*3   + (o.mgk||0)*2
+         + (o.hp||0)*1.5  + (o.sta||0)*1.5
+         + (o.lck||0)*0.5 + (o.int||0)*0.5
+         + (o.def||0);
   }
 
   function _originRarityBg(net) {
-    if (net >= 3) return colorDarkOrange;
-    if (net >= 2) return colorDarkPurple;
-    if (net >= 1) return colorDarkBlue;
+    if (net <  0)   return colorDarkRed;
+    if (net >= 3.0) return colorDarkOrange;
+    if (net >= 1.5) return colorDarkPurple;
+    if (net >= 0.5) return colorDarkBlue;
     return '';
   }
 
   function _originRarityColor(net) {
-    if (net >= 3) return colorOrange;
-    if (net >= 2) return colorPurple;
-    if (net >= 1) return colorLightBlue;
+    if (net <  0)   return colorSoftRed;
+    if (net >= 3.0) return colorOrange;
+    if (net >= 1.5) return colorPurple;
+    if (net >= 0.5) return colorLightBlue;
     return colorWhite;
   }
 
