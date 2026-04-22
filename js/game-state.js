@@ -331,11 +331,11 @@ function calcActionBarConfig(button, adjustment) {
 
   // Shop: Gamble (button_block) = gold-only strip, same difficulty as reincarnate; all other shop actions = full success zone
   if (types === 'Shop') {
-    if (button != 'button_roll') {
-      var availableCoins = (savedCoins || 0) - (spentCoins || 0);
-      if (availableCoins < 1) {
-        return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
-      }
+    var availableCoins = (savedCoins || 0) - (spentCoins || 0);
+    var shopPrices = { button_attack: 1, button_grab: 1, button_block: 1, button_sleep: 2, button_speak: 3 };
+    var price = shopPrices[button] || 0;
+    if (price > 0 && availableCoins < price) {
+      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
     }
     if (button === 'button_block') return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
                                             critSuccessMin: 48, critSuccessMax: 52, critFailW: 5 };

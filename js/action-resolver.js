@@ -1819,11 +1819,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         switch (enemyType){
           case "Altar": // Speak button is rebound to Pray on Altars
-            if (playerMgk < 1) {
-              logPlayerAction(actionString, "Not enough mana, requires +1 🔵");
-              displayPlayerCannotEffect();
-              break;
-            }
             displayPlayerEffect("🙏");
             var isSacrifice = (enemyHp < 0);
             if (isSacrifice) {
