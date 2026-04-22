@@ -611,7 +611,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
           if (_skillOK === true) {
-            enemyStaminaChangeMessage(-2,"Threw them off balance -1 🟢","They needed to catch a breath -1 🟢");
+            if (enemyStaminaChangeMessage(-2,"Threw them off balance -1 🟢","They needed to catch a breath -1 🟢")) {
+              logAction(enemyEmoji+"&nbsp;▸&nbsp;🌀 Scrambles to recover their footing.");
+            }
           } else {
             enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
           }

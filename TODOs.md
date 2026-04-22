@@ -8,6 +8,8 @@
 
 ## Top Priority - Action Bar cases follow ups
 
+add cancel selected action (remove action bar etc.) when releasing button press outside the button itself (to allow changing the decision and also mitigate scroll vs button collision cases)
+
 I suspect that there are a lot of blind spots with action bar pass/fail/crit-pass/crit-fail for for various encounter types + action combos
 can you check that for me? e.g. should be super hard to physically hit Spirit, but not impossible (anymore, since we have the action bar)... I guess?
 
