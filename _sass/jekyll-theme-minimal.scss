@@ -280,6 +280,26 @@ dt {
   }
 }
 
+#id_action_bar_cancel {
+  display: none;
+  position: absolute;
+  top: 0; left: 2px; right: 2px; bottom: -1px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: rgba(28, 6, 6, 0.93);
+  color: #b84040;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  z-index: 3;
+  pointer-events: none;
+
+  &.visible {
+    display: flex;
+  }
+}
+
 #id_action_bar_cursor {
   position: absolute;
   top: 0;

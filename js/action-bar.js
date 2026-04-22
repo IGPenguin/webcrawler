@@ -11,25 +11,30 @@ var ActionBar = (function () {
   var _lastTs    = null;
   var _running   = false;
   var _onResolve = null;
+  var _sourceEl  = null;   // button that triggered the bar (for out-of-bounds cancel)
+  var _isOutside = false;  // pointer currently outside the source button
   var _hasCrits  = false;  // whether crit zones are active this bar
   var _csMin     = -1;     // crit success zone min
   var _csMax     = -1;     // crit success zone max
   var _cfw       = 0;      // crit fail edge width (each side)
 
-  var _elBar, _elTrack, _elCursor;
+  var _elBar, _elTrack, _elCursor, _elCancel;
 
   function _init() {
     _elBar    = document.getElementById('id_action_bar');
     _elTrack  = document.getElementById('id_action_bar_track');
     _elCursor = document.getElementById('id_action_bar_cursor');
+    _elCancel = document.getElementById('id_action_bar_cancel');
   }
 
-  function showActionBar(config, onResolve) {
+  function showActionBar(config, onResolve, sourceEl) {
     if (!_elBar) _init();
     if (_running) return;          // already active — ignore double press
 
     _config    = config;
     _onResolve = onResolve;
+    _sourceEl  = sourceEl || null;
+    _isOutside = false;
     _value     = 0;
     _dir       = 1;
     _running   = true;
@@ -76,8 +81,9 @@ var ActionBar = (function () {
       _elBar.style.opacity    = '1';
     });
 
-    document.addEventListener('pointerup',     _onPointerUp, { once: true });
-    document.addEventListener('pointercancel', _onPointerUp, { once: true });
+    document.addEventListener('pointermove',   _onPointerMove);
+    document.addEventListener('pointerup',     _onPointerUp,     { once: true });
+    document.addEventListener('pointercancel', _onPointerCancel, { once: true });
 
     _raf = requestAnimationFrame(_tick);
   }
@@ -96,16 +102,65 @@ var ActionBar = (function () {
     _raf = requestAnimationFrame(_tick);
   }
 
-  function _onPointerUp() {
-    document.removeEventListener('pointercancel', _onPointerUp);
+  function _checkBounds(x, y) {
+    if (!_sourceEl) return false;
+    var rect = _sourceEl.getBoundingClientRect();
+    return x < rect.left || x > rect.right || y < rect.top || y > rect.bottom;
+  }
+
+  function _setOutside(outside) {
+    if (outside === _isOutside) return;
+    _isOutside = outside;
+    _elCancel.classList.toggle('visible', _isOutside);
+  }
+
+  // Normal pointer path (no scroll interference)
+  function _onPointerMove(e) {
+    if (!_running || !_sourceEl) return;
+    _setOutside(_checkBounds(e.clientX, e.clientY));
+  }
+
+  // Browser took over the touch (scroll) — pointer events die, switch to touch events
+  function _onPointerCancel() {
+    document.removeEventListener('pointermove', _onPointerMove);
+    document.removeEventListener('pointerup',   _onPointerUp);
+    _setOutside(true);
+    document.addEventListener('touchmove', _onTouchMove);
+    document.addEventListener('touchend',  _onTouchEnd, { once: true });
+  }
+
+  // Track finger position during scroll to allow returning to button
+  function _onTouchMove(e) {
+    if (!_running || !_sourceEl) return;
+    var t = e.changedTouches[0];
+    if (t) _setOutside(_checkBounds(t.clientX, t.clientY));
+  }
+
+  // Finger lifted after scroll — resolve or cancel based on final position
+  function _onTouchEnd(e) {
+    document.removeEventListener('touchmove', _onTouchMove);
     if (!_running) return;
+    var t = e.changedTouches[0];
+    if (t) _setOutside(_checkBounds(t.clientX, t.clientY));
+    if (_isOutside) { _cancel(); } else { _resolve(); }
+  }
+
+  function _onPointerUp(e) {
+    document.removeEventListener('pointermove',   _onPointerMove);
+    document.removeEventListener('pointercancel', _onPointerCancel);
+    if (!_running) return;
+    if (_isOutside) { _cancel(); return; }
+    _resolve();
+  }
+
+  function _resolve() {
     _running = false;
     cancelAnimationFrame(_raf);
+    if (_elCancel) _elCancel.classList.remove('visible');
 
     var val       = _value;
     var isSuccess = val >= _config.successMin && val <= _config.successMax;
 
-    // Detect crit zone
     var critResult = null;
     if (_hasCrits) {
       if (isSuccess && val >= _csMin && val <= _csMax) {
@@ -117,11 +172,9 @@ var ActionBar = (function () {
 
     vibrateButtonPress();
 
-    // Snap cursor in place
     _elCursor.style.transition = 'left 0.07s ease-out';
     _elCursor.classList.add('action-bar-snap');
 
-    // Flash track border — gold on crit success, near-black on crit fail
     var flashClass = isSuccess
       ? (critResult === 'success' ? 'action-bar-flash-crit-success' : 'action-bar-flash-success')
       : (critResult === 'fail'    ? 'action-bar-flash-crit-fail'    : 'action-bar-flash-fail');
@@ -140,11 +193,31 @@ var ActionBar = (function () {
     }, 300);
   }
 
+  function _cleanupListeners() {
+    document.removeEventListener('pointermove',   _onPointerMove);
+    document.removeEventListener('pointerup',     _onPointerUp);
+    document.removeEventListener('pointercancel', _onPointerCancel);
+    document.removeEventListener('touchmove',     _onTouchMove);
+    document.removeEventListener('touchend',      _onTouchEnd);
+  }
+
+  function _cancel() {
+    _running = false;
+    cancelAnimationFrame(_raf);
+    _cleanupListeners();
+    if (_elCancel) _elCancel.classList.remove('visible');
+    if (_elBar) {
+      _elBar.style.transition = 'opacity 0.15s';
+      _elBar.style.opacity    = '0';
+      setTimeout(function () { _elBar.style.display = 'none'; }, 150);
+    }
+  }
+
   function hideActionBar() {
     _running = false;
     cancelAnimationFrame(_raf);
-    document.removeEventListener('pointerup',     _onPointerUp);
-    document.removeEventListener('pointercancel', _onPointerUp);
+    _cleanupListeners();
+    if (_elCancel) _elCancel.classList.remove('visible');
     if (_elBar) { _elBar.style.opacity = '0'; _elBar.style.display = 'none'; }
   }
 

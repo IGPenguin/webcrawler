@@ -370,7 +370,7 @@ layout: default
                                       0px 0px 0px 3px #000000;
                                       position:relative; z-index:1;"/>
 </div>
-<div id="id_action_bar"><div id="id_action_bar_track"><div id="id_action_bar_cursor"></div></div></div>
+<div id="id_action_bar"><div id="id_action_bar_track"><div id="id_action_bar_cursor"></div></div><div id="id_action_bar_cancel">✕ Cancel</div></div>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;

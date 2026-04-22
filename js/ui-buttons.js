@@ -347,7 +347,7 @@ function registerClickListeners(delay=0){
           actionBarSuccess = isSuccess;
           actionBarCrit = critResult || null;
           raw();
-        });
+        }, document.getElementById(id));
       };
       _abHandlers[id] = handler;
       document.getElementById(id).addEventListener('pointerdown', handler);
