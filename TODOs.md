@@ -1,10 +1,8 @@
 ## Claude efficiency 101
 
-/rename <task> - e.g. 1 Tab for Logic & 1 For UI
-/compat when done! (and will repeat in future)
-/clear when one-time task completed
-
----
+- **/rename** [task] - e.g. 1 Tab for Logic & 1 For UI<br>
+- **/compat** when done! (and will repeat in future)<br>
+- **/clear** when one-time task completed
 
 # Claude
 - unolck/cast unlock should not navigate next (like smashto open)
@@ -86,8 +84,6 @@
 - Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
 - Fix add vertical scroll in loot/party when overflowimg
 
----
-
 # Parking lot
 
 - Take inspiration from: https://pixeldungeon.fandom.com/wiki/Main_Page
@@ -156,7 +152,6 @@ add new dynamic layout with spells
 - 🩸 Syphon - Damage enemy for 2, damage enemy for 2
 - ...more?
 
----
 
 # Playwright - Data Capture
 
@@ -177,8 +172,6 @@ add new dynamic layout with spells
 # Playwright - Automated Run
 
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
-
----
 
 # Crazy ideas
 
