@@ -22,6 +22,8 @@ function calcActionBarConfig(button, adjustment) {
   var isTough     = types.includes('Tough');
   var isSmall     = types.includes('Small');
   var isBoss      = types.includes('Boss');
+  var isHot       = types.includes('Hot');
+  var isToxic     = types.includes('Toxic');
   var isGrabbable = /Container|^Item$|Consumable|^Prop$/.test(types);
   var isTrap      = types.includes('Trap');
   var isAltar     = types.includes('Altar');
@@ -195,6 +197,11 @@ function calcActionBarConfig(button, adjustment) {
              critSuccessMin: fishCsMin, critSuccessMax: fishCsMax, critFailW: fishCritFailW };
   }
 
+  // Grab Spirit — physically impossible, untouchable by definition
+  if (button === 'button_grab' && isSpirit) {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
   // Grab Stingy / Toxic / Undead — impossible (they bite back, you know it)
   if (button === 'button_grab' && (types.includes('Stingy') || types.includes('Toxic') || types.includes('Undead'))) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
@@ -223,6 +230,16 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
+  // Block Spirit — impossible, spectral attacks pass through any physical guard
+  if (button === 'button_block' && isSpirit) {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Block Hot/Toxic — very hard but possible; success deflects instead of absorbing
+  if (button === 'button_block' && (isHot || isToxic)) {
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 40, successMax: 60 };
+  }
+
   // Tease (block on passive mob with stamina remaining) — hard, creature resists provocation
   if (button === 'button_block' && eAtk === 0 && eSta > 0 && !isGrabbable && !isTrap && !isAltar) {
     return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
@@ -231,6 +248,11 @@ function calcActionBarConfig(button, adjustment) {
   // Pet minion (grab on exhausted Pet) — hard, they won't hold still
   if (button === 'button_grab' && types.includes('Pet') && eSta <= 0) {
     return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
+  }
+
+  // Attack Spirit — physically impossible, no contact can be made
+  if (button === 'button_attack' && isSpirit) {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
   // Attack Swift with stamina remaining — near-impossible, they dodge
@@ -250,6 +272,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 49, successMax: 51 };
   }
 
+  // Boss grab with stamina remaining — very hard, same as Heavy
+  if (button === 'button_grab' && isBoss && eSta > 0) {
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+  }
+
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
   if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
@@ -260,8 +287,7 @@ function calcActionBarConfig(button, adjustment) {
   switch (button) {
     case 'button_attack':
       pStat     = pAtk;
-      eStat     = (isTough  ? eDef * 3              : 0)
-                + (isSpirit ? Math.max(0, eInt)      : 0)
+      eStat     = (isTough ? eDef * 3 : 0)
                 + eSta * 0.4;
       baseW     = isTrap ? 65 : 40;
       baseSpeed = spdNormal;

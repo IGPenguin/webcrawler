@@ -6,16 +6,6 @@
 
 ---
 
-## Top Priority - Action Bar cases follow ups
-
-I suspect that there are a lot of blind spots with action bar pass/fail/crit-pass/crit-fail for for various encounter types + action combos
-can you check that for me? 
-- e.g. should be super hard to physically hit Spirit, but not completely impossible (anymore, since we have the action bar)... I guess? - insane fast and extra slim changes 
-- also verify Grab (crit success = instant knockout, crit fail = they hit back harder)
-- basically give me overview of your perceived blind spots where there`s logic missing for handling pass/fail or crit pass/crit fail
-
----
-
 ## Items / Origins
 
 - Legendary item for bigger crit chance interval by ??%

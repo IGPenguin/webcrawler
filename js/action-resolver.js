@@ -697,18 +697,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Spirit":
           case "Hot":
           case "Toxic":
-            var attackMsg="Could not block a spectral attack";
-            if (enemyType=="Hot") attackMsg="Could not block a burning attack";
-            if (enemyType=="Toxic") attackMsg="Could not block a toxic attack";
-            if (enemyStaminaChangeMessage(-1,attackMsg+" -"+enemyAtk+" 💔","They needed to recover some energy.")){
-              playerHit(enemyAtk,true,true);
-            } else {
-              enemyStaminaChangeMessage(-1,"n/a","Blocked, but was not attacked -1 🟢");
-              displayPlayerEffect("🔰");
-            }
+            // _skillOK === false is caught by the early check above; reaching here means success
+            var _deflectMsg = enemyType === "Hot"
+              ? (_crit === 'success' ? "Perfectly deflected the heat." : "Deflected the heat -1 🟢")
+              : (_crit === 'success' ? "Perfectly blocked the fumes."  : "Covered your face, blocked the fumes -1 🟢");
+            enemyStaminaChangeMessage(-1, _deflectMsg, "Blocked, but was not attacked -1 🟢");
+            displayPlayerEffect("🔰");
             break;
 
           default:
@@ -1308,12 +1304,27 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               isFishing=false;
             } else if (enemySta - enemyStaLost > 0){ //Enemy resists if they have stamina
               if (_skillOK === false) {
-                enemyDodged("Missed, they slipped your grasp.");
+                if (_crit === 'fail' && (enemyAtk+enemyAtkBonus) > 0) {
+                  var _ctrAtk = enemyAtk + enemyAtkBonus;
+                  logPlayerAction(actionString, "They reversed the grab! -"+_ctrAtk+" 💔");
+                  displayEnemyEffect("💢");
+                  playerHit(_ctrAtk);
+                } else {
+                  enemyDodged("Missed, they slipped your grasp.");
+                }
                 displayEnemyCannotEffect();
                 if (enemyCastIfMgk()) break;
                 break;
               }
-              // Success — luck may spook them for free, otherwise strangle
+              if (_crit === 'success') {
+                // Guaranteed strangle, skip luck check
+                logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
+                if (playerSta > 0) playerSta--;
+                enemyKnockedOut();
+                isFishing=false;
+                break;
+              }
+              // Regular success — luck may spook them for free, otherwise strangle
               var touchChance = Math.floor(Math.random(10) * luckInterval);
               if ( touchChance <= playerLck ){
                 var gainedXP=parseInt(playerGainXP(1,0,""));
@@ -1348,8 +1359,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             if (_skillOK === true) {
               if (playerSta > 0) playerSta--;
-              enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
-              logPlayerAction(actionString, "Snatched them, but they slipped away -1 🟢");
+              if (_crit === 'success') {
+                enemyStaLost = enemySta; // Fully stagger — drain all remaining energy
+                logPlayerAction(actionString, "Staggered them, fully drained their energy -1 🟢");
+              } else {
+                enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
+                logPlayerAction(actionString, "Snatched them, but they slipped away -1 🟢");
+              }
               displayEnemyCannotEffect();
               break;
             }
@@ -1371,9 +1387,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKnockedOut();
               isFishing=false;
             } else {
-              enemyAtkBonus++;
-              var _enrageAtk = enemyAtk + enemyAtkBonus;
-              logPlayerAction(actionString,"Enraged them, took the hit -"+_enrageAtk+" 💔");
+              if (_crit === 'fail') {
+                enemyAtkBonus += 2;
+                var _enrageAtk = enemyAtk + enemyAtkBonus;
+                logPlayerAction(actionString,"Pissed them off immensely! -"+_enrageAtk+" 💔");
+              } else {
+                enemyAtkBonus++;
+                var _enrageAtk = enemyAtk + enemyAtkBonus;
+                logPlayerAction(actionString,"Enraged them, took the hit -"+_enrageAtk+" 💔");
+              }
               displayEnemyEffect("💢");
               playerHit(_enrageAtk);
             }
@@ -1381,19 +1403,27 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Boss":
             if (enemyCastIfMgk()) break;
-            if ((enemySta - enemyStaLost) > 0){ //Enemy hits extra hard if they got stamina
-              var damageReceived=(enemyAtk+enemyAtkBonus);
-              var overpowerMessage="They are too big to grasp!";
-              if (damageReceived>0) {
-                damageReceived+=2;
-                overpowerMessage="Got overpowered and hit hard -"+damageReceived+" 💔";
-                logPlayerAction(actionString,overpowerMessage);
-                playerHit(damageReceived);
-                enemyStaLost++;
-                break;
+            if ((enemySta - enemyStaLost) > 0){
+              if (_skillOK === true) {
+                if (playerSta > 0) playerSta--;
+                logPlayerAction(actionString,"Managed to overpower them! -1 🟢");
+                displayEnemyEffect("💢");
+                enemyKnockedOut();
+                isFishing=false;
+              } else {
+                var damageReceived=(enemyAtk+enemyAtkBonus);
+                if (damageReceived>0) {
+                  damageReceived += (_crit === 'fail') ? 3 : 2;
+                  logPlayerAction(actionString, (_crit === 'fail')
+                    ? "Completely overwhelmed! -"+damageReceived+" 💔"
+                    : "Got overpowered and hit hard -"+damageReceived+" 💔");
+                  playerHit(damageReceived);
+                  enemyStaLost++;
+                } else {
+                  logPlayerAction(actionString,"They are too big to grasp!");
+                  displayPlayerCannotEffect();
+                }
               }
-              logPlayerAction(actionString,overpowerMessage);
-              displayPlayerCannotEffect();
             } else {
               enemyKicked();
             }
@@ -1696,17 +1726,26 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Demon":
-            logPlayerAction(actionString,"Missed, they are faster than expected.");
-            displayEnemyEffect("🌀");
-            if (enemyCastIfMgk()) break;
-            enemyAttackOrRest();
-            break;
-
-          case "Spirit":
-            logPlayerAction(actionString,"Missed, they seem untouchable.");
-            displayEnemyEffect("🌀");
-            if (enemyCastIfMgk()) break;
-            enemyAttackOrRest();
+            if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) {
+              logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
+              if (playerSta > 0) playerSta--;
+              enemyKnockedOut();
+              isFishing=false;
+            } else if (enemySta - enemyStaLost > 0) {
+              if (_skillOK === false) {
+                logPlayerAction(actionString,"Missed, they are faster than expected.");
+                displayEnemyEffect("🌀");
+                if (enemyCastIfMgk()) break;
+                enemyAttackOrRest();
+                break;
+              }
+              logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
+              if (playerSta > 0) playerSta--;
+              enemyKnockedOut();
+              isFishing=false;
+            } else {
+              enemyKicked();
+            }
             break;
 
           case "Death":
