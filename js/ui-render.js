@@ -375,3 +375,60 @@ function updateXPProgress(){
   if (progressbarWidth>97) progressbarWidth=97;
   playerXpProgressUIElement.style.width=progressbarWidth+"%";
 }
+
+function showAchievementToast(achievement, unlockTimestamp, onDone) {
+  var old = document.getElementById('achievement_toast');
+  if (old) old.remove();
+
+  var toast = document.createElement('div');
+  toast.id = 'achievement_toast';
+
+  var tsLine = '';
+  if (unlockTimestamp) {
+    var d = new Date(unlockTimestamp);
+    tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">'
+      + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
+      + '</h5>';
+  }
+
+  toast.innerHTML =
+    '<div style="display:flex; align-items:center; gap:10px; padding:7px 0px 8px 12px; margin-bottom:-8px;">'
+      + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + achievement.emoji + '</span>'
+      + '<div style="flex:1;">'
+        + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc + '</h5>'
+        + tsLine
+      + '</div>'
+    + '</div>';
+
+  toast.style.cssText =
+    'position:absolute; top:0; left:0; right:0;' +
+    'z-index:9999; pointer-events:none; box-sizing:border-box;' +
+    'background:#272727; overflow:hidden;' +
+    'box-shadow:0 0 0 3px #FFD940;' +
+    'opacity:0; transition:opacity 0.3s;';
+
+  document.getElementById('id_action_bar_area').appendChild(toast);
+
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() { toast.style.opacity = '1'; });
+  });
+
+  setTimeout(function() {
+    if (document.getElementById('achievement_toast') !== toast) return;
+    toast.style.boxShadow = '0 0 0 3px #fff, 0 0 8px #FFD940';
+    setTimeout(function() {
+      if (document.getElementById('achievement_toast') !== toast) return;
+      toast.style.boxShadow = '0 0 0 3px #FFD940';
+    }, 280);
+  }, 150);
+
+  setTimeout(function() {
+    if (document.getElementById('achievement_toast') !== toast) return;
+    toast.style.transition = 'opacity 2s';
+    toast.style.opacity = '0';
+    setTimeout(function() {
+      if (document.getElementById('achievement_toast') === toast) toast.remove();
+      if (onDone) onDone();
+    }, 2300);
+  }, 4000);
+}

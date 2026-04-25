@@ -17,6 +17,7 @@ layout: default
 <script src="js/logging.js"></script>
 <script src="js/string-generator.js"></script>
 <script src="js/game-state.js"></script>
+<script src="js/action-config.js"></script>
 <script src="js/ui-effects.js"></script>
 <script src="js/ui-render.js"></script>
 <script src="js/enemy-skills.js"></script>
@@ -25,7 +26,9 @@ layout: default
 <script src="js/achievements.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/data.js"></script>
-<script src="js/encounter.js"></script>
+<script src="js/encounter-loader.js"></script>
+<script src="js/encounter-generator.js"></script>
+<script src="js/game-loop.js"></script>
 <script src="js/social.js"></script>
 <script src="js/action-resolver.js"></script>
 <script src="js/action-bar.js"></script>

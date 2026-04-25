@@ -31,24 +31,28 @@ The game has two layers:
 - `wip_*.csv` — Work-in-progress content (threats, boosts, undos, misc)
 - `fishing.csv` is obsolete — fishing data was merged into `encounters.csv` (rows use `area:Fishing`)
 
-**Logic layer** — 13 vanilla JS files in `js/`, loaded in order via `<script>` tags in `index.md` (no modules, no bundler — load order is the only dependency mechanism):
+**Logic layer** — 17 vanilla JS files in `js/`, loaded in order via `<script>` tags in `index.md` (no modules, no bundler — load order is the only dependency mechanism):
 
 | File | Responsibility |
 |------|----------------|
 | `config.js` | Version stamp, debug flags, colors, symbols |
 | `logging.js` | `getTime()`, `logGenerator()` |
 | `string-generator.js` | Name/string generation helpers |
-| `game-state.js` | All player state variables; initialized by `renewPlayer()` |
+| `game-state.js` | All player/enemy state variables |
+| `action-config.js` | `calcActionBarConfig()` — action bar difficulty calculations |
 | `ui-effects.js` | Animations, curtain, background, display toggles |
-| `ui-render.js` | `redraw()` and all UI rendering |
+| `ui-render.js` | `redraw()`, all UI rendering, `showAchievementToast()` |
 | `enemy-skills.js` | Enemy skill resolution |
 | `player-skills.js` | Player skills; calls `renewPlayer()` on load to initialize state |
 | `save-manager.js` | `SaveManager` — session history + localStorage save/clear |
 | `menu.js` | `Menu` — main menu UI; show/hide, screen routing, button wiring |
 | `data.js` | CSV loading via jQuery AJAX; `startGame()` / `_doStartGame()`; populates global arrays |
-| `encounter.js` | `loadEncounter()`, `generateNextEncounters()` |
+| `encounter-loader.js` | `loadEncounter()`, `encounterRenew()`, `drachmaeBuy()` — CSV parsing and shop |
+| `encounter-generator.js` | `generateNextEncounters()` — dynamic encounter sequence builder |
+| `game-loop.js` | `nextEncounter()`, `gameOver()`, `gameEnd()`, `getRandomFish()` |
 | `social.js` | Share / LinkedIn logic |
 | `action-resolver.js` | `resolveAction()` — dispatches all nine player actions |
+| `action-bar.js` | Skill-check action bar UI |
 | `ui-buttons.js` | Button setup, click listeners, `registerClickListeners()` |
 
 CSV data is stored in global arrays; game state lives in JS variables, with coins persisted to `localStorage`. UI is updated by calling `redraw()`.
@@ -57,7 +61,7 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 
 ## Key Systems
 
-- **Encounter loading**: `loadEncounter(index)` in `encounter.js` parses CSV rows; `generateNextEncounters(generatorID)` builds dynamic sequences
+- **Encounter loading**: `loadEncounter(index)` in `encounter-loader.js` parses CSV rows; `generateNextEncounters(generatorID)` in `encounter-generator.js` builds dynamic sequences
 - **Combat**: `resolveAction(button)` in `action-resolver.js` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
 - **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
