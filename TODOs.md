@@ -9,10 +9,10 @@
 ## Top Priority - Action Bar cases follow ups
 
 I suspect that there are a lot of blind spots with action bar pass/fail/crit-pass/crit-fail for for various encounter types + action combos
-can you check that for me? e.g. should be super hard to physically hit Spirit, but not impossible (anymore, since we have the action bar)... I guess?
-
-Grab (crit success = instant knockout, crit fail = they hit back harder). But those have a lot of special cases —
-  worth doing separately.
+can you check that for me? 
+- e.g. should be super hard to physically hit Spirit, but not completely impossible (anymore, since we have the action bar)... I guess? - insane fast and extra slim changes 
+- also verify Grab (crit success = instant knockout, crit fail = they hit back harder)
+- basically give me overview of your perceived blind spots where there`s logic missing for handling pass/fail or crit pass/crit fail
 
 ---
 
@@ -210,7 +210,23 @@ Add a new achievement in 4 steps:
 - Smart pets
 - Mount
 
-## Automation
+## Playwright - Data Capture
+
+### The Chronos Observer (Playwright Feedback Loop)
+- **Objective:** Create a high-fidelity "Flight Recorder" using Playwright/Chromium to bridge gameplay reality with AI interpretation.
+- **Passive Monitoring:**
+   - Initialize a passive session on localhost.
+   - Use `page.exposeFunction` to hook into `logging.js` (`runLogAdd`) to stream game logs to the terminal/filesystem in real-time.
+   - Implement a `MutationObserver` on `#id_card` and `#id_log` to trigger snapshots only when the UI state actually shifts, reducing data noise.
+- **Data Capture:**
+   - On every significant event (touch/click/scroll or log entry), capture a UI snapshot (HTML) and a Screenshot.
+   - Generate a "Semantic State" dump: a text-based (YAML/JSON) representation of visible elements for context-efficient AI analysis.
+- **The Ritual Shutdown:**
+   - Create a bash script (`playtest.sh`) to manage the session.
+   - On `SIGINT` (Ctrl+C), cleanly halt the browser and prompt the user for a "Post-Mortem" summary of their intent and findings.
+   - Organize all artifacts into a timestamped folder (`/playtests/YYYY-MM-DD_HH-MM/`) for Claude/Gemini ingestion.
+
+## Playwright - Automated Run
 
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
 
