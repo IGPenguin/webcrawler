@@ -98,7 +98,9 @@ function loadEncounter(index, fileLines = linesStory){
     enemyDesc=getShopMessage();
     enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</b></i> 🪙";
   }
-  if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</b></i> 🪙";
+  
+  //Disabled for now, there's very limited number of these now
+  //if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</b></i> 🪙";
 
   enemyMsg = String(selectedLine.split(",")[13].split(":")[1]).replaceAll("\\",",");
   enemyMsg = enemyMsg.replaceAll("((",":");
@@ -272,6 +274,9 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
     playerShopped=true;
     spentCoins+=price;
     AchievementManager.check('spend_coins', price);
+    if (enemyDesc.includes("Unspent Drachmae")) {
+      enemyDesc = enemyDesc.replace(/Unspent Drachmae: \d+/, "Unspent Drachmae: "+parseInt(savedCoins-spentCoins));
+    }
     //DO NOT localStorage.setItem('coins', availableCoins); //Remove from local storage as well (coins do not endlessly add up)
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
