@@ -626,6 +626,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
+        if (enemyType === "Spirit" && (enemyAtk+enemyAtkBonus) > 0) {
+          logPlayerAction(actionString, "Could not block a spectral attack -"+(enemyAtk+enemyAtkBonus)+" 💔");
+          playerHit(enemyAtk+enemyAtkBonus, true, true);
+          break;
+        }
+
         if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0
             && enemyType!=="Pet" && enemyType!=="Small" && enemyType!=="Friend" && enemyType!=="Swift") {
           var _blockFailDmg = enemyAtk + enemyAtkBonus;
@@ -1746,6 +1752,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               enemyKicked();
             }
+            break;
+
+          case "Spirit":
+            logPlayerAction(actionString,"Missed, they seem untouchable.");
+            displayEnemyEffect("🌀");
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
             break;
 
           case "Death":
