@@ -138,8 +138,8 @@ function enemyDisengage(){
   animateFlipNextEncounter();
 }
 
-function enemyGrabbedIntoLoot(){
-  playerGainXP(1.25,0,"Grabbed it into your bag -1 🟢");
+function enemyGrabbedIntoLoot(msg="Grabbed it into your bag -1 🟢"){
+  playerGainXP(1.25,0,msg);
   playerLootString+=enemyEmoji;
   //No karma change
 

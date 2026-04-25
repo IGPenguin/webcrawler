@@ -1663,7 +1663,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
               break;
             }
-            // Success: spend 1 STA and pocket them
+            if (_crit === 'success') {
+              // Perfect timing — grabbed without breaking a sweat, no stamina spent
+              enemyGrabbedIntoLoot("Snatched it without breaking a sweat.");
+              break;
+            }
+            // Normal success: spend 1 STA and pocket them
             if (playerSta > 0) playerSta--;
             enemyGrabbedIntoLoot();
             break;

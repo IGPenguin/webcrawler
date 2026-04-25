@@ -153,6 +153,17 @@ function calcActionBarConfig(button, adjustment) {
     var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
     var smallW = Math.max(20, Math.min(85, Math.round(55 + pSta * 5 - eStaSmall * 12)));
     var smallMid = 50;
+    if (eStaSmall > 0) {
+      // Enemy still has stamina — halve the success zone; add a narrow crit zone (free grab on perfect timing)
+      smallW = Math.max(10, Math.round(smallW / 2));
+      var sMin = Math.max(3, smallMid - Math.round(smallW / 2));
+      var sMax = Math.min(97, smallMid + Math.round(smallW / 2));
+      var csW = Math.max(1, Math.min(4, Math.round(1 + pLck * 0.4)));
+      var csMin = Math.max(sMin + 1, smallMid - Math.floor(csW / 2));
+      var csMax = Math.min(sMax - 1, csMin + csW);
+      if (csMax - csMin < 1) { csMin = -1; csMax = -1; }
+      return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: sMin, successMax: sMax, critSuccessMin: csMin, critSuccessMax: csMax };
+    }
     return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: Math.max(3, smallMid - Math.round(smallW/2)), successMax: Math.min(97, smallMid + Math.round(smallW/2)) };
   }
 
