@@ -3,8 +3,8 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
-    { id: 'all_achievements',    emoji: '🏆', desc: "<b>Completed every single memory!</b>", hint: "<b>Catch 'em all to appear in the Credits</b>!" },
-    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by defeating a boss!', hint: "Defeat the first challenging enemy!" },
+    { id: 'all_achievements',    emoji: '🏆', desc: "<b>Completed every single memory!</b>", hint: "<b>Gotta catch 'em all to get into Credits!</b>" },
+    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by beating a boss!', hint: "Defeat the first challenging enemy!" },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different." },
     { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shop</b> by picking up a Drachma!', hint: "Obtain the everlasting currency!" },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim." },
