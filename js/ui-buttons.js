@@ -412,28 +412,21 @@ function registerClickListenersTechnical(){
       playerHp=playerHpMax;
       playerSta=playerStaMax;
       playerMgk=playerMgkMax;
-      logCheatUse(newName+" ➔ Stats");
+      logCheatUse("Changed Stats ➔  "+cheatAmount);
       return
     }
 
     if (newName.includes("Mucho Dinero")){
       savedCoins=9;
       localStorage.setItem('coins', savedCoins);
-      logCheatUse(newName+": +9 🪙");
+      logCheatUse("Added Drachmae: +9 🪙");
       return
     }
 
     if (newName.includes("Poco Dinero")){
       savedCoins=3;
       localStorage.setItem('coins', savedCoins);
-      logCheatUse(newName+": +3 🪙");
-      return
-    }
-
-    if (newName.includes("Cleaner")){
-      localStorage.removeItem('coins'); //Full wipe to even show tutorial
-      savedCoins=0;
-      logCheatUse(newName);
+      logCheatUse("Added Drachmae: +3 🪙");
       return
     }
 
@@ -443,9 +436,23 @@ function registerClickListenersTechnical(){
       extraBaits+=chooseFrom(validBaits)
       extraBaits+=chooseFrom(validBaits);
       playerLootString+=extraBaits;
-      logCheatUse(newName+": "+extraBaits.toString());
+      logCheatUse("Added baits: "+extraBaits.toString());
       return
     }
+
+    if (newName.includes("Genesis")){
+      AchievementManager.check('boss_kill');
+      logCheatUse("Force-unlocked Origins.");
+      return
+    }
+
+    if (newName.includes("Cleaner")){ //Full wipe to even show tutorial
+      localStorage.removeItem('coins'); 
+      savedCoins=0;
+      logCheatUse("Force-wiped save data.");
+      return
+    }
+
     if (oldName!=newName) logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
     redraw();
   });

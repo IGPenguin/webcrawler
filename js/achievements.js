@@ -4,8 +4,8 @@ var AchievementManager = (function () {
 
   var ACHIEVEMENTS = [
     { id: 'all_achievements',    emoji: '🏆', desc: "<b>Completed every single memory!</b>", hint: "<b>Catch 'em all to appear in the Credits</b>!" },
-    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by defeating a first boss!', hint: "Defeat the first challenging enemy!" },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shop</b> by picking up a first Drachma!', hint: "Obtain the everlasting currency!" },
+    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by defeating a boss!', hint: "Defeat the first challenging enemy!" },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shop</b> by picking up a Drachma!', hint: "Obtain the everlasting currency!" },
 
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time." },
     { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
@@ -243,7 +243,7 @@ var AchievementManager = (function () {
 
     // Add log
     if (achievement) setTimeout(function () {
-      var MAX_LENGTH = 39;
+      var MAX_LENGTH = 45;
       var text = achievement.desc;
       if (text.length > MAX_LENGTH) text = achievement.desc.substring(0,MAX_LENGTH)+"..."
       
