@@ -186,9 +186,9 @@ layout: default
         </div>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
-        <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Meet</button>
-        <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
         <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#c9594f;">💌 Rate</button>
+        <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
+        <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Meet</button>
       </div>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>
