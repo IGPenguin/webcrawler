@@ -22,11 +22,8 @@
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
 - More unique origins with gameplay implications
-- options: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
-- Keep corpses, do not navigate right away (Chance to rest etc.)
-- Generate loot and consumable from kill/knockout: "They've dropped something"
 - New Type - Magic-container, cast to unlock - Contains item  (50% for artifact - same should already be for regular locked containers?)
 - new unlockable: a portal to fairyland
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
@@ -35,23 +32,27 @@
 - add tiny shading at the bottom of the ingame log
 
 # Hades
+- improve randomizer/story structure? (story.csv + generator.js logic), few ideas:
+  - Keep corpses, do not navigate right away (Chance to rest etc.)
+  - Generate loot and consumable from kill/knockout: "They've dropped something"
+- add/improve robust hook on start
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
+- better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
+- add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100 (or similar maths behind it)
+  - display at: dead/game end, menu char preview, session history
+  - sort the session history by score top -> bottom
+  - allow sharing and suggest a way to share it between players (can github actions somehow listen on highscore posts or google form or anything?)
+- options: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
+- programmers art refactor to similar style but polished and better readable/usable
+- ...
 - Make Karma Matter!
   - make "Revive" interval based on karma (Todo in place)
   - on revive, get back to live (last encounter) with 1 HP
   - karma affects on action bar chances?
   - plus check, what changes karma, possibly adjust/expand
   - Mischievous encounters + bad drops/twisted legendaries on bad karma
-- add/improve robust hook on start
-- improve randomizer/story structure? (story.csv + generator.js logic)
-- programmers art refactor to similar style but polished and better readable/usable
-- better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
-- add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100 (or similar maths behind it)
-  - display at: dead/game end, menu char preview, session history
-  - sort the session history by score top -> bottom
-  - allow sharing and suggest a way to share it between players (can github actions somehow listen on highscore posts or google form or anything?)
 - Drachmae shop add more options - game run modifiers? (unlock after special condition?)
   - Get coin for negative effect: +enemy dmg/hp/sta...
   - Get coin for Big Karma--
@@ -61,7 +62,6 @@
   - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits) = Prevents stacking power fast
   - eat food only intentionally, dont force/ditch
  - make actions seem more sequential in the ui so that player can notice one by one - eg delay 0,5s each log display and wait for effects to complete before firing another and unlocking UI for player actions?
-
 
 # Manual
 - snatched tham (rm but)
