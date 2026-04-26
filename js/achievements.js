@@ -206,6 +206,8 @@ var AchievementManager = (function () {
     toast.style.opacity = '0';
     setTimeout(function() {
       if (document.getElementById('achievement_toast') === toast) toast.remove();
+      _toastActive = false;
+      _showNextToast();
     }, 260);
   }
 
