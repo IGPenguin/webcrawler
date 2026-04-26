@@ -218,13 +218,13 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
   });
 
   var randomEncounterIndex = Math.floor(Math.random() * tempLinesGenerator.length);
-  var randomEncounter = String(tempLinesGenerator[randomEncounterIndex]);
+  var randomEncounter = tempLinesGenerator[randomEncounterIndex];
 
-  if (randomEncounter == "undefined") {
-    randomEncounter = String(["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"]);
+  if (!randomEncounter) {
+    randomEncounter = ["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"];
   }
 
-  console.log("Type:" + encounterTypes + "\nOpts:" + tempLinesGenerator.length + "→#" + randomEncounterIndex + ":\n" + randomEncounter.split(",t")[0].split("i:")[1]);
+  console.log("Type:" + encounterTypes + "\nOpts:" + tempLinesGenerator.length + "→#" + randomEncounterIndex + ":\n" + (randomEncounter[2] || "").split(":")[1]);
   return randomEncounter;
 }
 

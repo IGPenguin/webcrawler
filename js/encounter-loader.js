@@ -28,16 +28,15 @@ function encounterRenew(){
 //Load or generate encounter
 function loadEncounter(index, fileLines = linesStory){
   encounterIndex = index;
-  selectedLine = String(fileLines[index]);
+  var row = fileLines[index];
 
   //Encounter data initialization, details in encounters.csv
-  areaName = String(selectedLine.split(",")[0].split(":")[1]);
+  areaName = String(row[0].split(":").slice(1).join(":"));
   if (fileLines!=linesStory) areaName = previousArea
-  enemyEmoji = String(selectedLine.split(",")[1].split(":")[1]);
-  enemyName = String(selectedLine.split(",")[2].split(":")[1]);
-  enemyName = enemyName.replaceAll("((",":");
+  enemyEmoji = String(row[1].split(":").slice(1).join(":"));
+  enemyName = String(row[2].split(":").slice(1).join(":"));
   if (enemyName.includes("You are dead!")) enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
-  enemyType = String(selectedLine.split(",")[3].split(":")[1]);
+  enemyType = String(row[3].split(":").slice(1).join(":"));
   if (enemyType.includes("Boss")) {
     enemyBossType = enemyType; //I'll end up in hell for these hacks
     if (isNaN(savedCoins)) savedCoins=0;
@@ -60,13 +59,13 @@ function loadEncounter(index, fileLines = linesStory){
     if (number) enemyContainerNumber = parseInt(number[0],10);
   }
 
-  enemyHp = String(selectedLine.split(",")[4].split(":")[1]);
-  enemyAtk = parseInt(String(selectedLine.split(",")[5].split(":")[1]));
-  enemySta = String(selectedLine.split(",")[6].split(":")[1]);
-  enemyLck = String(selectedLine.split(",")[7].split(":")[1]);
-  enemyInt = String(selectedLine.split(",")[8].split(":")[1]);
-  enemyMgk = String(selectedLine.split(",")[9].split(":")[1]);
-  enemyDef = String(selectedLine.split(",")[10].split(":")[1]);
+  enemyHp = String(row[4].split(":")[1]);
+  enemyAtk = parseInt(row[5].split(":")[1]);
+  enemySta = String(row[6].split(":")[1]);
+  enemyLck = String(row[7].split(":")[1]);
+  enemyInt = String(row[8].split(":")[1]);
+  enemyMgk = String(row[9].split(":")[1]);
+  enemyDef = String(row[10].split(":")[1]);
 
   //Calculate total bonus/malus
   var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef];
@@ -78,8 +77,8 @@ function loadEncounter(index, fileLines = linesStory){
   if (totalBonus=="") totalBonus=0;
   //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
 
-  enemyTeam = String(selectedLine.split(",")[11].split(":")[1]);
-  enemyDesc = String(selectedLine.split(",")[12].split(":")[1]);
+  enemyTeam = String(row[11].split(":").slice(1).join(":"));
+  enemyDesc = String(row[12].split(":").slice(1).join(":"));
   if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
   if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
     enemyDesc=enemyDesc.replaceAll("n/a","");
@@ -97,8 +96,6 @@ function loadEncounter(index, fileLines = linesStory){
 
     enemyType="Friend";
   }
-  enemyDesc = enemyDesc.replaceAll("\\",",");
-  enemyDesc = enemyDesc.replaceAll("((",":");
   if (enemyName.includes("Undertaker")) {
     enemyDesc=getShopMessage();
     enemyDesc=enemyDesc+"<i><b>Unspent Drachmae: "+parseInt(savedCoins-spentCoins)+"</b></i> 🪙";
@@ -107,8 +104,7 @@ function loadEncounter(index, fileLines = linesStory){
   //Disabled for now, there's very limited number of these now
   //if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</b></i> 🪙";
 
-  enemyMsg = String(selectedLine.split(",")[13].split(":")[1]).replaceAll("\\",",");
-  enemyMsg = enemyMsg.replaceAll("((",":");
+  enemyMsg = String(row[13].split(":").slice(1).join(":"));
 
   switch (enemyType){
     case "Small":
@@ -292,9 +288,8 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       displayPlayerGainedEffect();
       logPlayerAction(actionString,"Splendid choice, this ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
-      var item=generateRandomItem(item).split(",");
+      var item=generateRandomItem(item);
       item[0]="area:"+areaName;
-      item=String(item);
       pushEncounter(item);
       nextEncounter();
       pushEncounter(drachmaShop);

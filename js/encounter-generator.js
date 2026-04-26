@@ -115,10 +115,10 @@ function generateNextEncounters(generatorID=0, logCall=true){
       }
 
       var possibleEncounters=["Recruit","Standard","Stingy","Toxic","Hot","Tough","Swift","Heavy","Demon","Spirit","Curse","Altar"];
-      var firstEncounter=[getRandomEncounter(possibleEncounters)];
+      var firstEncounter=getRandomEncounter(possibleEncounters);
       pushEncounter(firstEncounter);
 
-      var filterType=firstEncounter[0].split("type:")[1].split(",")[0];
+      var filterType=firstEncounter[3].split(":")[1];
       possibleEncounters = possibleEncounters.filter(string => string !== filterType); // Prevents duplicate encounter types twice in a row
 
       pushEncounter(getRandomEncounter(possibleEncounters)); // Push second encounter which is guaranteed different type
