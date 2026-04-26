@@ -5,30 +5,18 @@
 - **/clear** when one-time task completed
 
 # Priority 0
-1. Redo Tutorial ("The Dream")
+1. Redo Tutorial
   * Expand story.csv: I'll add more steps to the Depths of Slumber area.
   * Instructional Encounters: Instead of just a wall of text, each step will focus on one mechanic (e.g., "The Action Bar: Hit the green zone!").
   * Safety: I'll ensure returning players (with coins/history) skip this automatically, as they do now.
 
-2. Redo Endings (Branching & Logic)
+2. Redo Endings
   * Fix the Flakiness: Remove the encounterIndex++ hacks. Instead of the game just "ending" when the story list runs out, create a resolveEnding() function.
   * The Bride as a Gateway: When the Bride is defeated or calmed, it will trigger a transition to a final "Decision" encounter.
   * Branching Choices: Based on your playerLove and playerKarma, the buttons will change to your specific endings: Kiss her goodnight, Mercy kill, Truly Revive, etc.
 
-3. Highscore (The "Legs")
-  * The Formula: I'll implement your formula: Level + (Encounters/10) + (Pets*2) + Stats + Karma + WinBonus.
-  * Leaderboard UI: I'll add a "Top Score" display to the main menu and show your rank in the session history.
-  * Background Submission: I'll set up the fetch() logic so it's ready to post to a Google Form for a "Global" leaderboard.
-
-4. Options Screen
-   * Difficulty Picker: Easy = Easier action bar, altough lower drops; "Hardcore" = harder + no revive
-   * Report bug button: Simple redirect to the existing gform
-   * Save Management: A clear "Reset Data" button with a confirmation popup.
-
-# Claude
-- Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
-...
-- add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100, difficulty multiplier (or similar maths behind it)
+3. Highscore
+  - add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100, difficulty multiplier (or similar maths behind it)
   - display at: dead/game end, menu char preview, session history
   - sort the session history by score top -> bottom
   - on game end, use `fetch()` with `mode: 'no-cors'` to background-POST score data to a Google Form `formResponse` endpoint (silent submission).
@@ -39,9 +27,15 @@
   - hisghscore data should include the score, char name, stats, datetime, ending type (even death)... suggest more if any
   - Id also like to give players option to add their nickname for the highscore - they can set it the first time they die or change in options (once options are implemented), id like it can simply be a system popup to get a string validate to lenght 3+
   - since allowing custom character names and nicknames, the highscore job should censor some most common vulgarisms to protect people when viewing rankings
-...
-- add options screen: difficulty picker, local save reset (danger!! full saved data wipe - requires confirmation)
-  + new achiev for hardcore difficulty game completed
+  - add top score display to main menu and character score to session history
+
+4. Options Screen
+   * Difficulty Picker: Easy = Easier action bar, altough lower drops; "Hardcore" = harder + no revive
+      + new achiev for hardcore difficulty game completed
+   * Report bug button: Simple redirect to the existing gform
+   * Save Management: A clear "Reset Data" button with a confirmation popup.
+
+# Claude
 - new unique achievs: fish out a boss, fish out legendary item/food, cook food, salt food, letter interactions, Killed each enemy type, Died by trap
 - new unlockable: a portal to fairyland
 - refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
@@ -51,6 +45,7 @@
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
 - More unique origins with actual gameplay implications
   - examples??? 
+- Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
 - New Type - Magic-container, cast to unlock - Contains item  (50% for artifact - same should already be for regular locked containers?)
