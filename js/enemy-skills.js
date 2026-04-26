@@ -324,7 +324,7 @@ function enemyCastIfMgk(hit=true,customHitMessage=""){
   }
 }
 
-function enemyAttackOrRest(message="",isGrab=false){
+function enemyAttackOrRest(message="",isGrab=false,skipToxin=false){
   var damageReceived=enemyAtk+enemyAtkBonus;
   var staminaChangeMsg;
 

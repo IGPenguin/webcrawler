@@ -185,7 +185,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Swift": //They hit you first if they have stamina
+          case "Swift": //Dodge only on fail; player always hits on pass
             if (enemyCastIfMgk(true)) enemyAttacked=true;
 
             if (_skillOK === false) {
@@ -196,25 +196,27 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString, "Your attack missed them -1 🟢");
               }
               displayEnemyDodgeEffect();
-              if (!enemyAttacked) enemyAttackOrRest();
+              if ((parseInt(enemySta)-parseInt(enemyStaLost) > 0) && !enemyAttacked) {
+                displayEnemyEffect("🌀");
+                if ((enemyAtk+enemyAtkBonus)>0){
+                  enemyStaminaChangeMessage(-1,"They dodged that and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔","n/a");
+                  playerHit(enemyAtk+enemyAtkBonus);
+                } else {
+                  enemyStaminaChangeMessage(-1,"They barely dodged your attack.","They needed to catch a breath.");
+                }
+              } else if (!enemyAttacked) {
+                enemyAttackOrRest();
+              }
               break;
             }
 
-            if ((parseInt(enemySta)-parseInt(enemyStaLost) > 0) && !enemyAttacked) {
-              displayEnemyEffect("🌀");
-              if ((enemyAtk+enemyAtkBonus)>0){
-                enemyStaminaChangeMessage(-1,"They dodged that and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔","n/a");
-                playerHit(enemyAtk+enemyAtkBonus);
-              } else {
-                enemyStaminaChangeMessage(-1,"They barely dodged your attack.","They needed to catch a breath.");
-              }
+            if (_crit === 'success') {
+              logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+1)+" 💔");
+              enemyHit(playerAtk+1,false,true,true);
             } else {
-              if (_crit === 'success') {
-                logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+1)+" 💔");
-                enemyHit(playerAtk+1,false,true,true);
-              } else {
-                enemyHit(playerAtk);
-              }
+              enemyHit(playerAtk);
+            }
+            if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) {
               enemyAttackOrRest();
             }
             break;
@@ -641,7 +643,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (playerSta > 0 && _crit !== 'success') playerSta--;
 
-        if ((enemyAtk+enemyAtkBonus)<=0 && enemySta > 0 && enemyType!="Pet" && enemyType!="Small"){
+        if ((enemyAtk+enemyAtkBonus)<=0 && (enemySta-enemyStaLost) > 0 && enemyType!="Pet" && enemyType!="Small"){
           if (_skillOK === true) {
             if (enemyStaminaChangeMessage(-2,"Threw them off balance -1 🟢","They needed to catch a breath -1 🟢")) {
               logAction(enemyEmoji+"&nbsp;▸&nbsp;🌀 Scrambles to recover their footing.");
@@ -1471,8 +1473,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyCannotEffect();
               break;
             }
-            enemyAttackOrRest("They dodged that and retaliated -"+parseInt(enemyAtk+enemyAtkBonus)+" 💔");
-            if (!enemyAttacked && enemyCastIfMgk()) break;
+            displayEnemyEffect("🌀");
+            if ((enemyAtk+enemyAtkBonus) > 0) {
+              enemyAttackOrRest("Dodged that and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔");
+            } else {
+              enemyStaminaChangeMessage(-1, "Effortlessly dodged the grab.", "n/a");
+              displayEnemyCannotEffect();
+            }
             break;
 
           case "Heavy":
