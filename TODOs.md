@@ -16,6 +16,8 @@
   - Generate a simple HMAC/Hash in JS (e.g., `md5(name+score+salt)`) and verify it in the GitHub Action script to prevent basic spoofing.
   - add main menu "Leaderboard" section to display global highscore list
   - hisghscore data should include the score, char name, stats, datetime, ending type (even death)... suggest more if any
+  - Id also like to give players option to add their nickname for the highscore - they can set it the first time they die or change in options (once options are implemented), id like it can simply be a system popup to get a string validate to lenght 3+
+  - since allowing custom character names and nicknames, the highscore job should censor some most common vulgarisms to protect people when viewing rankings
 ...
 - add options screen: difficulty picker, local save reset (danger!! full saved data wipe - requires confirmation)
   + new achiev for hardcore difficulty game completed
