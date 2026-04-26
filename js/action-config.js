@@ -279,7 +279,7 @@ function calcActionBarConfig(button, adjustment) {
 
   // Roll Heavy with stamina remaining — slow and telegraphed, easy to sidestep
   if (button === 'button_roll' && isHeavy && eSta > 0) {
-    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82 };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82 };
   }
 
   // Knockout on a not tired living creature — resists hard

@@ -402,7 +402,7 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
     + '</div>';
 
   toast.style.cssText =
-    'position:absolute; top:0; left:0; right:0;' +
+    'position:absolute; top:0; left:3px; right:3px;' +
     'z-index:9999; pointer-events:none; box-sizing:border-box;' +
     'background:#272727; overflow:hidden;' +
     'box-shadow:0 0 0 3px #FFD940;' +
