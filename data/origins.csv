@@ -1,8 +1,21 @@
 emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 
+//Unique
+🦧;Primate;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Very furry and thats probably it.
+🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Suffer <b>-1 💔 Health</b> with no clear benefit.<br><i>Fits well with the tainted surroundings.
+💀;Brittle;-2;0;0;0;0;0;0;Suffer <b>-2 💔 Health</b> with no clear benefit.<br><i>No flesh to protect the bones.
+
+//Specials
+🪵;Lumberjack;1;0;1;0;0;0;0;Gain <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b><br><i>Used the axe long before anything fought back.
+🥩;Butcher;1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> and <b>+1 ❤️ Health</b>.<br><i>Grew stronger from fresh meat supply.
+🎖️;Hero;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Never hesitates to make a difference.
+⛓️‍💥;Fugitive;0;0;1;1;0;0;0;Gain <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Luck favors the well prepared.
+🎩;Noble;1;0;0;1;0;0;0;Inherit <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.
+🧬;Mutant;-1;0;2;0;-1;0;0;<b>+2 🟢 Energy</b> for <b>-1 💔 Health</b>, <b>-1 🧠 Intellect</b>.<br><i>The body remembered what the mind forgot.
+
 //Attack 
 💢;Berserk;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.<br><i>New wounds only make them angrier.
-🏹;Hunter;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Trained to be deadly but fragile.
+🏹;Ranger;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Trained to be deadly but fragile.
 ⚔️;Knight;0;1;-1;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Prefers high damage over agility.
 🐍;Serpent;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 💔 Health</b>.<br><i>Venomous by nature, for a price.
 🔥;Choleric;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>Effective, but not the brightest.
@@ -12,7 +25,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 //Mana
 🔮;Prodigy;-2;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.<br><i>The gift came at birth and so did the cost.
 🪬;Lich;0;0;-2;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Traded the life essence for pure power.
-🪄;Wizard;0;-1;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Chosen magic over physical strength.
+🧿;Wizard;0;-1;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Chosen magic over physical strength.
 🩸;Warlock;-1;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>Blood is just another reagent.
 🕯️;Cleric;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than their body.
 🔷;Mage;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no clear downside.<br><i>Bears supernatural power by nature.
@@ -21,8 +34,10 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🕊️;Divine;2;-1;0;0;0;0;0;Gain <b>+2 ❤️ Health</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Good intentions, uncertain chances.
 🗿;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Rock solid, but less agile.
 💘;Lover;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Would give up anything for attention.
+🍺;Boozer;1;0;0;0;-4;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-4 🧠 Intellect</b><br><i>Numb to the pain, blind to the truth.
 🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.
 🛡️;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Stands strong when everything is falling.
+💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br>Spent too long in the dark to fear it.
 
 //Stamina
 👻;Wraith;0;-1;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Lighting fast, but effectively harmless.
@@ -43,14 +58,14 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🏳️;Pacifist;0;-1;0;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Always choses wit over aggression.
 👁️;Prophet;-2;0;0;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, suffer <b>-2 💔 Health</b>.<br><i>Learned through willigness to suffer.
 🧠;Wiseman;-1;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, suffer <b>-1 💔 Health</b>.<br><i>Choses wisdom over vitality.
+🎓;Scholar;0;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b> with no downside.<br><i>The library was their second home.
 🔭;Seeker;0;0;-2;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Spent all their vigor searching.
-🎓;Scholar;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>The library was their second home.
+🛖;Hermit;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Loving a stoic life with no worries.
 🤓;Nerd;0;0;-1;0;2;0;0;Gain <b>+2 🧠 Intellect</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Big brain and bad reflexes.
 🎭;Trouper;0;0;0;-1;2;0;0;Gain <b>+2 🧠 Intellect</b>, suffer <b>-1 🍀 Luck</b>.<br><i>Clever enough to lose on purpose.
 🪶;Scribe;0;0;0;0;0;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that no one will ever read.
 
 //Neutral
-🦧;Primate;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Very furry and thats probably it.
 🦾;Veteran;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Endured through many inconveniences.
 🌾;Commoner;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>The most dangerous thing is being average.
 🧺;Refugee;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Left everything behind to escape the rot.
@@ -58,20 +73,18 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🧹;Janitor;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Used to dealing with others mess.
 🧳;Traveler;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Never stayed long enough to belong.
 ✉️;Courier;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Delivered messages never meant for him.
-
-//Specials
-🪵;Lumberjack;1;0;1;0;0;0;0;Gain <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b><br><i>Used the axe long before anything fought back.
-🥩;Butcher;1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> and <b>+1 ❤️ Health</b>.<br><i>Grew stronger from fresh meat supply.
-🎖️;Hero;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Never hesitates to make a difference.
-⛓️‍💥;Fugitive;0;0;1;1;0;0;0;Gain <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Luck favors the well prepared.
-🎩;Noble;1;0;0;1;0;0;0;Inherit <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.
-🧬;Mutant;-1;0;2;0;-1;0;0;<b>+2 🟢 Energy</b> for <b>-1 💔 Health</b>, <b>-1 🧠 Intellect</b>.<br><i>The body remembered what the mind forgot.
+👩‍🌾;Farmer;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Tilled the earth until it turned to dust.
+🥔;Peasant;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Accustomed to the weight of a heavy world.
+👞;Tramp;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Wandering is the only path they have left.
+🧥;Hobo;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Home is wherever the cold doesn't reach.
+🎒;Drifter;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Goes where the wind and misery blow.
+🥺;Beggar;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Asking for mercy and something to eat.
+🔔;Herder;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Lost the flock to the fog long ago.
+🦴;Survivor;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Surviving on scraps and desperate spite.
 
 //Negative
 📿;Monk;0;-1;0;0;0;0;0;Abstain <b>-1 ⚔️ Attack</b> with no clear benefit.<br><i>Blindly believes in peace.
-🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Suffer <b>-1 💔 Health</b> with no clear benefit.<br><i>Fits well with the tainted surroundings.
-💀;Brittle;-2;0;0;0;0;0;0;Suffer <b>-2 💔 Health</b> with no clear benefit.<br><i>No flesh to protect the bones.
 🍔;Fatso;0;0;-1;0;0;0;0;Suffer <b>-1 🟢 Energy</b> with no clear benefit.<br><i>Can not ever satify the hunger.
 🤪;Imbecile;0;0;0;0;-1;0;0;Suffer <b>-1 🧠 Intellect</b> with no clear benefit.<br><i>Not everyone can be blessed.
-🥺;Jinx;0;0;0;-1;0;0;0;Suffer <b>-1 🍀 Luck</b> with no clear benefit.<br><i>Misfortune follows their steps.
+☘️;Jinx;0;0;0;-1;0;0;0;Suffer <b>-1 🍀 Luck</b> with no clear benefit.<br><i>Misfortune follows their steps.
 🎃;Hollow;-1;0;-1;0;0;0;0;Suffer <b>-1 💔 Health</b> and <b>-1 🟢 Energy</b>.<br><i>Begins giving up their effort.
