@@ -1463,7 +1463,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString, "Staggered them, fully drained their energy -1 🟢");
               } else {
                 enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
-                logPlayerAction(actionString, "Snatched them, but they slipped away -1 🟢");
+                logPlayerAction(actionString, "Snatched at them, they slipped away -1 🟢");
               }
               displayEnemyCannotEffect();
               break;

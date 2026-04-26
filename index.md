@@ -13,7 +13,8 @@ layout: default
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="js/config.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/game-config.js"></script>
 <script src="js/logging.js"></script>
 <script src="js/string-generator.js"></script>
 <script src="js/game-state.js"></script>
@@ -25,7 +26,7 @@ layout: default
 <script src="js/save-manager.js"></script>
 <script src="js/achievements.js"></script>
 <script src="js/menu.js"></script>
-<script src="js/data.js"></script>
+<script src="js/data-loader.js"></script>
 <script src="js/encounter-loader.js"></script>
 <script src="js/encounter-generator.js"></script>
 <script src="js/game-loop.js"></script>

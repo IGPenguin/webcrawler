@@ -181,8 +181,13 @@ function transitionToCorpse(state) {
   enemyDef=0;
   totalBonus=0; totalMalus=0;
 
-  if (procAbilityChance("", 40+playerLck)) {
-    var _lootType = procAbilityChance("",50) ? ["Consumable"] : ["Item"];
+  var _lootType = null;
+  if (procAbilityChance("", GAME_CONFIG.killItemDropChance+playerLck)) {
+    _lootType = ["Item"];
+  } else if (procAbilityChance("", GAME_CONFIG.killConsumableDropChance+playerLck)) {
+    _lootType = ["Consumable"];
+  }
+  if (_lootType) {
     var _loot = getRandomEncounter(_lootType, [], "", ["Artifact","Lover's Memento","Lost Possesion"]);
     if (_loot) { corpseHasLoot=true; corpseLoot=_loot; }
   }

@@ -30,7 +30,7 @@ function calcActionBarConfig(button, adjustment) {
   var isCurse     = types === 'Curse';
 
   // Cursor speed presets
-  var ACTION_BAR_SPEED_MULT = 1.3; // Global multiplier — raise to make the bar harder everywhere.
+  var ACTION_BAR_SPEED_MULT = 1.3 * GAME_CONFIG.speedMult; // Base 1.3; difficulty multiplier applied on top (>1 = harder).
   var spdUnreal = 150;
   var spdInsane = 120;
   var spdHard = 90;
@@ -377,8 +377,8 @@ function calcActionBarConfig(button, adjustment) {
 
   var zoneW = Math.round(baseW + pStat * 6 - eStat * 4 + (adjustment || 0));
 
-  // 100% * difficulty: 1 = unchanged, 0.75 = (-25% success zone width)
-  zoneW = Math.round(zoneW * 0.75);
+  // Base 0.75 zone width; multiplied by difficulty zoneMult (0.8 = 20% narrower, 1.2 = 20% wider)
+  zoneW = Math.round(zoneW * 0.75 * GAME_CONFIG.zoneMult);
   zoneW = Math.max(12, Math.min(72, zoneW));
 
   // Default speed multiplier * 5, scaled by ACTION_BAR_SPEED_MULT
