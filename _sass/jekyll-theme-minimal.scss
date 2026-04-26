@@ -548,3 +548,17 @@ select {
   font-size: 15px;
   text-align: center;
 }
+
+// ── Logo blood drops ───────────────────────────────────────────────────────
+
+@keyframes drop-fall {
+  0%   { transform: translateY(0);    opacity: 0; }
+  6%   { transform: translateY(1px);  opacity: 1;   animation-timing-function: cubic-bezier(0.2,0,0.6,0.4); }
+  72%  { transform: translateY(34px); opacity: 0.1; animation-timing-function: linear; }
+  100% { transform: translateY(42px); opacity: 0; }
+}
+.logo-drop-1 { animation: drop-fall 2.8s ease-in infinite  0.0s backwards; }
+.logo-drop-2 { animation: drop-fall 3.3s ease-in infinite  0.9s backwards; }
+.logo-drop-3 { animation: drop-fall 2.4s ease-in infinite  1.7s backwards; }
+.logo-drop-4 { animation: drop-fall 3.0s ease-in infinite  1.2s backwards; }
+.logo-drop-5 { animation: drop-fall 2.6s ease-in infinite  0.4s backwards; }

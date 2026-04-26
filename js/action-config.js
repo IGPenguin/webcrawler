@@ -96,6 +96,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
+  // Dead / sleeping enemy — not moving, guaranteed hit or block
+  if (corpseState !== "" && (button === 'button_attack' || button === 'button_block')) {
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  }
+
   // Attack / Block at zero player stamina — hard as fishing with no bait
   if (pSta === 0 && enemyType!="Item" && enemyType!="Shop" && (button === 'button_attack' || button === 'button_block')) {
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };

@@ -188,9 +188,9 @@ function transitionToCorpse(state) {
   }
 
   if (state === "killed") {
-    enemyDesc = corpseHasLoot ? "Something remains among the bones.<br>Worth a closer look." : "Nothing but remains.<br>All quiet.";
+    enemyDesc = corpseHasLoot ? "There's something among the bones.<br>" : "Nothing but quiet remains.<br>";
   } else {
-    enemyDesc = corpseHasLoot ? "Lies motionless.<br>Something worth taking." : "Lies motionless.<br>Breathing faintly.";
+    enemyDesc = corpseHasLoot ? "There's something underneath them.<br>" : "Lies on the ground, breathing faintly.<br>";
   }
   enemyMsg = "";
 

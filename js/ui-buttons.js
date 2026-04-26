@@ -312,10 +312,6 @@ function adjustEncounterButtons(){
     } else {
       document.getElementById('button_grab').innerHTML="✋ Touch";
     }
-    if (corpseState === "killed") {
-      setButton('button_attack', playerAttackType+" Attack", colorDarkGrey);
-      document.getElementById('button_attack').disabled = true;
-    }
   }
 
   enemyType=originalType;

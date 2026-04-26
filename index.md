@@ -46,7 +46,29 @@ layout: default
 <div id="id_menu" class="menu-screen" style="display:none;">
 
   <!-- Shared logo — one element, animated on every menu show -->
-  <h2 id="id_menu_logo" style="font-size:72px; letter-spacing:1.8px; -webkit-text-stroke:6.5px black; paint-order:stroke fill; color:red; margin-top:40px; padding-top:42px margin-bottom:24px; line-height:1px; text-align:center; z-index:1;">Stay Dead</h2>
+  <!-- height:0 + overflow:visible mirrors the original h2 line-height:1px trick;
+       SVG margin-top:-50px pulls the text up to the same visual position -->
+  <div id="id_menu_logo" style="height:0; overflow:visible; margin-top:40px; margin-bottom:12px; text-align:center; position:relative; z-index:1;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 150" width="340" style="overflow:visible; display:block; margin:0 auto; margin-top:-50px;">
+      <!-- Drops spawn from letter bases, fall and fade, loop endlessly -->
+      <path class="logo-drop-1" d="M 70,82 C 69,85 62.5,90 62.5,96 C 62.5,103 77.5,103 77.5,96 C 77.5,90 71,85 70,82 Z"
+        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+      <path class="logo-drop-2" d="M 152,82 C 151,85 144.5,90 144.5,96 C 144.5,103 159.5,103 159.5,96 C 159.5,90 153,85 152,82 Z"
+        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+      <path class="logo-drop-3" d="M 200,82 C 199,85 192.5,90 192.5,96 C 192.5,103 207.5,103 207.5,96 C 207.5,90 201,85 200,82 Z"
+        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+      <path class="logo-drop-4" d="M 268,82 C 267,85 260.5,90 260.5,96 C 260.5,103 275.5,103 275.5,96 C 275.5,90 269,85 268,82 Z"
+        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+      <path class="logo-drop-5" d="M 338,82 C 337,85 330.5,90 330.5,96 C 330.5,103 345.5,103 345.5,96 C 345.5,90 339,85 338,82 Z"
+        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="190" y="76"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="72" font-weight="bold"
+        fill="#CC0000" stroke="#000000" stroke-width="6"
+        paint-order="stroke fill" letter-spacing="2">Stay Dead</text>
+    </svg>
+  </div>
 
   <!-- Main screen -->
   <div id="menu_main_screen">
@@ -279,9 +301,10 @@ layout: default
                                 padding-bottom:0px;
                                 padding-right:7px;
                                 margin-bottom:0px;
+                                margin-top:1px;
                                 display:inline;
                                 overflow:auto;
-                                line-height:24px"/>
+                                line-height:24px;"/>
 </div>
 <div class="box-border-dynamic" style="margin-top:3px;
   margin-right:0px;
