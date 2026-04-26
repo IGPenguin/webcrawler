@@ -57,6 +57,7 @@ function _doStartGame(isContinue) {
       }
     }
 
+    resetSeenEncounters();
     processStoryData(storyData);
     registerClickListeners(0);
     registerClickListenersTechnical();
