@@ -5,17 +5,9 @@
 - **/clear** when one-time task completed
 
 # Claude
-- unolck/cast unlock should not navigate next (like smashto open)
-- fix: failing comet changed cast action icon (even when not picked up as item)
-- debug why this encounter would attempt to be generated - leading to error: "standard stingy" (should be just "standard" or "stingy")
-- fish out achiev did not pop toast (overall toasts stop popping after a while?)
-- heavy enemy with no sta - no crit interval shoen (plaayer had sta)
-- fix area name sometimes missing (fails to animate and stay displayed?)
-- investigate: swift kick fail acts like pass??
-- investigate: swift attack pass does not hit??? (enemy should dodge just on fail)
-- investigate: tease cannot deplate passive mob energy?
-- fix: toxic should not damage on sucfess attck (when enemy rst?)
-- refine: Bump bar speeds for the super slow ones a bit?
+- debug: why this encounter would attempt to be generated - leading to error: "standard stingy" (should be just "standard" or "stingy")
+- debug: toasts seem to stop popping after a while? (fish out achiev toast did not pop when playing on phone - perhaps tied to long play or returning to the game/menu?)
+- debug: heavy enemy with no sta - no crit interval shoen (plaayer had sta)
 - readd emoji to player name on rename, change emojito ⚠️ when cheat, apply cheat logic also in main menu rename
 - ...
 - new unique achievs: fish out a boss, fish out legendary item/food, cook food, salt food, letter interactions, Killed each enemy type, Died by trap
@@ -25,17 +17,16 @@
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
 - New Type - Magic-container, cast to unlock - Contains item  (50% for artifact - same should already be for regular locked containers?)
-- new unlockable: a portal to fairyland
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
 - Rebalance drops vs enemy stats? (too easy if you pivkup everything) OR "simply" implement inventory with slots
 - Negative friends — investigate
 - add tiny shading at the bottom of the ingame log
 - ...
-- options: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
+- add options screen: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
 - refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
+- new unlockable: a portal to fairyland
 
 # Manual
-- snatched tham (rm but)
 - progress lost red text, charatcter will bost
 - non deadly options >> solutions
 - Disable total drachmae display on coin item
@@ -46,7 +37,7 @@
 - rm grind achievs
 
 # Low-repro bugs
-- fix engaged a boss showing again and again after each action after fishing gives a boss
+- fix engaged a boss showing again and again after each action after fishing rolls a boss
 - Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
 - Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
 - Fix add vertical scroll in loot/party when overflowimg
@@ -57,6 +48,11 @@
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
 - better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
+- add github action CI checks
+  - on push csv: all lines correct number of columns + right area name - no mixing (one area in csv after another), throw warnings for corrueted rows or mixed areas
+  - on PR open: check version is bumped
+  - in future it would be also great to have a "boot test"  to menu and to a new game
+...
 - add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100 (or similar maths behind it)
   - display at: dead/game end, menu char preview, session history
   - sort the session history by score top -> bottom
