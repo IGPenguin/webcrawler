@@ -18,6 +18,11 @@ function encounterRenew(){
 
   totalBonus=0;
   totalMalus=0;
+
+  corpseState="";
+  corpseSnapshot=null;
+  corpseHasLoot=false;
+  corpseLoot=null;
 }
 
 //Load or generate encounter

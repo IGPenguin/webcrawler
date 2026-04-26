@@ -304,6 +304,20 @@ function adjustEncounterButtons(){
     if (((enemyAtk+enemyAtkBonus)<=0)) setButton('button_block',"☝️ Tease")
     if (((enemyAtk+enemyAtkBonus)<=0) && playerSta<=0) setButton('button_block',"☝️ Tease",colorDarkGrey)
   }
+
+  // Corpse state overrides
+  if (corpseState !== "") {
+    if (corpseHasLoot) {
+      setButton('button_grab',"👀 Search",colorYellow);
+    } else {
+      document.getElementById('button_grab').innerHTML="✋ Touch";
+    }
+    if (corpseState === "killed") {
+      setButton('button_attack', playerAttackType+" Attack", colorDarkGrey);
+      document.getElementById('button_attack').disabled = true;
+    }
+  }
+
   enemyType=originalType;
 }
 

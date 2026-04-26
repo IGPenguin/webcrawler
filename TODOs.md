@@ -34,8 +34,9 @@
 # Hades
 - programmers art refactor to similar style but polished and better readable/usable
    - Take inspuration from the ultracool: https://github.com/IGPenguin/hades-gate/blob/chaos/assets/header.svg
-   - I'd focus on using simialr approach for the Stay Dead logo and at least the area backgrounds, they possibly no longer need to be ugly .png tiles (lets have some scalable animated svg)
+   - I'd focus on using simialr approach for the Stay Dead logo and at the area backgrounds, they possibly no longer need to be ugly .png tiles (lets have some scalable animated svg)
    - share the logo also to readme.md
+   - bonus points for using some animated svg swag in the action bar for the intervals, that would be very cool
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
 - better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
@@ -172,6 +173,10 @@ add new dynamic layout with spells
 # Playwright - Automated Run
 
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
+
+# Future
+
+- **Corpse variants**: ☠ Pile of Bones and 💤 Neutralized Creature could have named variants per enemy type (e.g. "Hollow Shell" for Undead, "Smoldering Remains" for Demon), with matching flavor desc text, to make death feel more world-specific.
 
 # Crazy ideas
 

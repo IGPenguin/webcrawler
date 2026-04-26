@@ -227,6 +227,7 @@ function redraw(){
       if (totalBonus>0)enemyStatusString=decorateStatusText("🟢","Comfortable",colorSoftGreen);
       if (totalMalus<0)enemyStatusString=decorateStatusText("🔴","Uncomfortable",colorSoftRed);
       if (enemyName.includes("Bride")) enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
+      if (corpseState!=="" && corpseHasLoot) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
       break;
     case "Altar":
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);

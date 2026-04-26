@@ -53,6 +53,38 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (playerSta > 0) playerSta--;
         }
 
+        // Corpse state — neutralized only (killed disables the button)
+        if (corpseState === "neutralized") {
+          if (_skillOK === false) {
+            if (_crit === 'fail') {
+              logPlayerAction(actionString,"Missed so badly you hit yourself -1 💔 -1 🟢");
+              playerHit(1,false);
+            } else {
+              logPlayerAction(actionString,"Missed the motionless target -1 🟢");
+            }
+            displayPlayerCannotEffect();
+            break;
+          }
+          var _cdmg = playerAtk + playerAtkBonus;
+          if (_crit === 'success') _cdmg++;
+          displayEnemyEffect("💢");
+          enemyHpLost = Math.min(parseInt(enemyHp), parseInt(enemyHpLost) + _cdmg);
+          if (parseInt(enemyHpLost) >= parseInt(enemyHp)) {
+            logPlayerAction(actionString, (_crit==='success')
+              ? "Struck them extra hard — a killing blow -"+_cdmg+" 💔"
+              : "Dealt a killing blow -"+_cdmg+" 💔");
+            var _kxp=parseInt(playerGainXP(1,0,""));
+            logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered"+decorateStatusText("","+"+_kxp+" XP",colorGold));
+            playerKarma--; playerKills++;
+            AchievementManager.check('kill');
+            transitionToCorpse("killed");
+          } else {
+            logPlayerAction(actionString,"Struck the helpless target -"+_cdmg+" 💔");
+            wakeUpEnemy();
+          }
+          break;
+        }
+
         switch (enemyType){
           case "Item":
           case "Consumable":
@@ -758,6 +790,47 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           AchievementManager.check('cast_first');
 
+          // Corpse state — neutralized cast deals magic damage; killed does nothing
+          if (corpseState !== "") {
+            if (corpseState === "killed") {
+              logPlayerAction(actionString,"Already dead.");
+              displayPlayerCannotEffect();
+              break;
+            }
+            // neutralized
+            if (_skillOK === false) {
+              playerMgk-=mkgCost;
+              if (_crit === 'fail') {
+                var _cbf=Math.max(1,magicDamage);
+                logPlayerAction(actionString,"Spell snapped back -"+_cbf+" 💔 -"+mkgCost+" 🔵");
+                playerHit(_cbf,false);
+              } else {
+                logPlayerAction(actionString,"Spell fizzled -"+mkgCost+" 🔵");
+              }
+              displayEnemyCannotEffect();
+              break;
+            }
+            playerMgk-=mkgCost;
+            var _cmdg=Math.min(magicDamage,2);
+            if (_crit==='success') _cmdg++;
+            displayEnemyEffect("💢");
+            enemyHpLost=Math.min(parseInt(enemyHp),parseInt(enemyHpLost)+_cmdg);
+            if (parseInt(enemyHpLost)>=parseInt(enemyHp)) {
+              logPlayerAction(actionString,(_crit==='success')
+                ? "Spell was especially effective — a killing blow -"+_cmdg+" 💔"
+                : "Spell delivered a killing blow -"+_cmdg+" 💔");
+              var _kxp2=parseInt(playerGainXP(1,0,""));
+              logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered"+decorateStatusText("","+"+_kxp2+" XP",colorGold));
+              playerKarma--; playerKills++;
+              AchievementManager.check('kill');
+              transitionToCorpse("killed");
+            } else {
+              logPlayerAction(actionString,"Struck the helpless target -"+_cmdg+" 💔");
+              wakeUpEnemy();
+            }
+            break;
+          }
+
           if (enemyType.includes("Locked")){
             if (playerMgk<mkgCost){
               logPlayerAction(actionString,"Not enough mana, requires +"+mkgCost+" 🔵");
@@ -1262,6 +1335,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Shop") {
           drachmaeBuy(1,"Item");
+          break;
+        }
+
+        // Corpse search
+        if (corpseState !== "") {
+          if (corpseHasLoot) {
+            displayEnemyEffect("👋");
+            logPlayerAction(actionString,"Searched through the remains.");
+            pushEncounter(corpseLoot);
+            corpseHasLoot=false; corpseLoot=null;
+            nextEncounter();
+          } else {
+            logPlayerAction(actionString,"Nothing left to take.");
+            displayPlayerCannotEffect();
+          }
           break;
         }
 
@@ -2143,6 +2231,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Shop") {
           drachmaeBuy(2,"Level");
+          break;
+        }
+
+        // Corpse rest — honor fishing restriction, otherwise delegate to playerRest()
+        if (corpseState !== "") {
+          if (fishingRested) {
+            logPlayerAction(actionString,"Already slept at this fishing spot.");
+            displayPlayerCannotEffect();
+            break;
+          }
+          playerRest(); // sets playerRested=true internally; no-op if already rested
           break;
         }
 

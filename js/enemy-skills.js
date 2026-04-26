@@ -98,8 +98,14 @@ function enemyKilled(){
   AchievementManager.check('kill');
   if (enemyBossType.includes('Boss')) AchievementManager.check('boss_kill');
 
+  var _wasFishing=isFishing;
   isFishing=false;
-  animateFlipNextEncounter();
+
+  if (_wasFishing || enemyBossType.includes('Boss')) {
+    animateFlipNextEncounter();
+  } else {
+    animateFlipToCorpse("killed");
+  }
 }
 
 function enemyJoinedParty(){
@@ -122,11 +128,105 @@ function enemyKnockedOut(){
   if (enemyAtk>0) playerKarma++;
   if (enemyAtk<=0) playerKarma--;
   AchievementManager.check('knockout');
-  //playerSta--;
 
+  var _wasFishing=isFishing;
   isFishing=false;
   displayEnemyEffect("💤");
-  animateFlipNextEncounter();
+
+  if (_wasFishing || enemyBossType.includes('Boss')) {
+    animateFlipNextEncounter();
+  } else {
+    animateFlipToCorpse("neutralized");
+  }
+}
+
+function animateFlipToCorpse(state) {
+  var animationHandler = function(){
+    transitionToCorpse(state);
+    registerClickListeners();
+    cardUIElement.removeEventListener("animationend", animationHandler);
+  }
+  cardUIElement.removeEventListener("animationend", animationHandler);
+  animateUIElement(areaUIElement,"animate__flipOutX","1.2");
+  animateUIElement(cardUIElement,"animate__flipOutY","1.2");
+  removeClickListeners();
+  cardUIElement.addEventListener('animationend', animationHandler);
+}
+
+function transitionToCorpse(state) {
+  var baseName  = (corpseSnapshot) ? corpseSnapshot.name  : enemyName;
+  var baseEmoji = (corpseSnapshot) ? corpseSnapshot.emoji : enemyEmoji;
+
+  corpseSnapshot = null;
+  if (state === "neutralized") {
+    corpseSnapshot = {
+      name: enemyName, emoji: enemyEmoji, type: enemyType,
+      hp: enemyHp, atk: enemyAtk, sta: enemySta,
+      lck: enemyLck, int: enemyInt, mgk: enemyMgk, def: enemyDef,
+      desc: enemyDesc, msg: enemyMsg
+    };
+  }
+
+  corpseState = state;
+  corpseHasLoot = false;
+  corpseLoot = null;
+
+  enemyEmoji = (state === "killed") ? "☠️" : "💤";
+  enemyName  = baseName + (state === "killed" ? " (Dead)" : " (Asleep)");
+  enemyType  = "Prop";
+
+  enemyAtk=0; enemyAtkBonus=0;
+  enemySta=0; enemyStaLost=0;
+  enemyMgk=0; enemyMgkLost=0;
+  enemyDef=0;
+  totalBonus=0; totalMalus=0;
+
+  if (procAbilityChance("", 40+playerLck)) {
+    var _lootType = procAbilityChance("",50) ? ["Consumable"] : ["Item"];
+    var _loot = getRandomEncounter(_lootType, [], "", ["Artifact","Lover's Memento","Lost Possesion"]);
+    if (_loot) { corpseHasLoot=true; corpseLoot=_loot; }
+  }
+
+  if (state === "killed") {
+    enemyDesc = corpseHasLoot ? "Something remains among the bones.<br>Worth a closer look." : "Nothing but remains.<br>All quiet.";
+  } else {
+    enemyDesc = corpseHasLoot ? "Lies motionless.<br>Something worth taking." : "Lies motionless.<br>Breathing faintly.";
+  }
+  enemyMsg = "";
+
+  animateUIElement(cardUIElement,"animate__fadeIn","1.2");
+  redraw();
+}
+
+function wakeUpEnemy() {
+  logAction(corpseSnapshot.emoji + " ▸ 💢 " + corpseSnapshot.name + " stirred awake from the blow.");
+
+  enemyEmoji = corpseSnapshot.emoji;
+  enemyName  = corpseSnapshot.name;
+  enemyType  = corpseSnapshot.type;
+  enemyAtk   = corpseSnapshot.atk;
+  enemySta   = corpseSnapshot.sta;
+  enemyLck   = corpseSnapshot.lck;
+  enemyInt   = corpseSnapshot.int;
+  enemyMgk   = corpseSnapshot.mgk;
+  enemyDef   = corpseSnapshot.def;
+  enemyDesc  = corpseSnapshot.desc;
+  enemyMsg   = corpseSnapshot.msg;
+  enemyStaLost=0;
+  enemyMgkLost=0;
+  enemyAtkBonus=0;
+
+  var ea=[enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef].map(Number);
+  totalBonus=ea.filter(function(x){return x>0}).reduce(function(s,a){return s+a},0);
+  totalMalus=ea.filter(function(x){return x<0}).reduce(function(s,a){return s+a},0);
+
+  corpseState="";
+  corpseSnapshot=null;
+  corpseHasLoot=false;
+  corpseLoot=null;
+
+  animateUIElement(emojiWrapperUIElement,"animate__bounce","0.8");
+  redraw();
 }
 
 function enemyDisengage(){

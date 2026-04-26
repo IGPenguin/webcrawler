@@ -141,6 +141,11 @@ var isFishing = false;
 var encounterUsed=false;
 var seenEncounters = [];
 
+var corpseState = ""; // "" | "killed" | "neutralized"
+var corpseSnapshot = null; // saved enemy data for neutralized wake-up
+var corpseHasLoot = false;
+var corpseLoot = null;
+
 //Global vars - UIElements
 var areaUIElement;
 var nameUIElement;
