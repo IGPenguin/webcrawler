@@ -5,33 +5,33 @@
 - **/clear** when one-time task completed
 
 # Claude
-- debug: why this encounter would attempt to be generated - leading to error: "standard stingy" (should be just "standard" or "stingy")
-- debug: toasts seem to stop popping after a while? (fish out achiev toast did not pop when playing on phone - perhaps tied to long play or returning to the game/menu?)
-- debug: heavy enemy with no sta - no crit interval shoen (plaayer had sta)
-- readd emoji to player name on rename, change emojito ⚠️ when cheat, apply cheat logic also in main menu rename
-- ...
-- better character name generation for neutral and negative origins
-- fix: support ":" and "," symbols in encounters.csv (you seem to support that in origins), update encounters.csv to have the normal symbols afterwards
-- ...
-- Add Github Actions CI Boot Test
-  - CI launches a headless Playwright instanc
-  - It "boots" `index.md` via a local server, waits for JavaScript to finish loading, and checks the console for any errors
-  - Requires minimal `package.json` for CI environment setup.
-- ...
+- Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
+...
+- add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100 (or similar maths behind it)
+  - display at: dead/game end, menu char preview, session history
+  - sort the session history by score top -> bottom
+  - on game end, use `fetch()` with `mode: 'no-cors'` to background-POST score data to a Google Form `formResponse` endpoint (silent submission).
+  - automation: github action runs every 30mins to pull google sheet csv (+ manual trigger option), sort scores and update a highscores.json
+  - highscores.json commits on a separate git branch "leaderboard" (or should that be a separate private repo?)
+  - Generate a simple HMAC/Hash in JS (e.g., `md5(name+score+salt)`) and verify it in the GitHub Action script to prevent basic spoofing.
+  - add main menu "Leaderboard" section to display global highscore list
+  - hisghscore data should include the score, char name, stats, datetime, ending type (even death)... suggest more if any
+...
+- add options screen: difficulty picker, local save reset (danger!! full saved data wipe - requires confirmation)
+  + new achiev for hardcore difficulty game completed
+- new unique achievs: fish out a boss, fish out legendary item/food, cook food, salt food, letter interactions, Killed each enemy type, Died by trap
+- new unlockable: a portal to fairyland
+- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
+- fix: readd emoji to player name on rename, change emojito ⚠️ when cheat, apply cheat logic also in main menu rename
+...
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
-- More unique origins with gameplay implications
+- More unique origins with actual gameplay implications
+  - examples??? 
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
 - New Type - Magic-container, cast to unlock - Contains item  (50% for artifact - same should already be for regular locked containers?)
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
-- Investigate: Negative friends - should simply decrement stats (opposite of friends)
-- ...
-- add tiny shading at the bottom of the ingame log?
-- add options screen: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
-- new unique achievs: fish out a boss, fish out legendary item/food, cook food, salt food, letter interactions, Killed each enemy type, Died by trap
-- new unlockable: a portal to fairyland
-- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
 
 # Manual
 - encounters.csv: fairyland enemies toi little hp
@@ -54,15 +54,6 @@
   - on PR open: check version is bumped
   - in future it would be also great to have a "boot test"  to menu and to a new game
 ...
-- add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100 (or similar maths behind it)
-  - display at: dead/game end, menu char preview, session history
-  - sort the session history by score top -> bottom
-  - allow sharing and suggest a way to share it between players:
-    - **Submission:** On game end, use `fetch()` with `mode: 'no-cors'` to background-POST score data to a Google Form `formResponse` endpoint (silent submission).
-    - **Automation:** GitHub Action runs on a schedule (e.g., every 15-60 mins) to pull Google Sheet CSV, sort scores, and update a `highscores.json`.
-    - **Syncing:** Commit `highscores.json` to a separate `leaderboard` branch (not `main`) to avoid local development merge conflicts.
-    - **Verification:** Generate a simple HMAC/Hash in JS (e.g., `md5(name+score+salt)`) and verify it in the GitHub Action script to prevent basic spoofing.
-- ...
 - improve generator/story structure (+gameplay if needed) - add/improve robust hook on start
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
 - Make Karma Matter!
