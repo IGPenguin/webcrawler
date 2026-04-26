@@ -57,7 +57,11 @@
 - add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100 (or similar maths behind it)
   - display at: dead/game end, menu char preview, session history
   - sort the session history by score top -> bottom
-  - allow sharing and suggest a way to share it between players (can github actions somehow listen on highscore posts or google form or anything?)
+  - allow sharing and suggest a way to share it between players:
+    - **Submission:** On game end, use `fetch()` with `mode: 'no-cors'` to background-POST score data to a Google Form `formResponse` endpoint (silent submission).
+    - **Automation:** GitHub Action runs on a schedule (e.g., every 15-60 mins) to pull Google Sheet CSV, sort scores, and update a `highscores.json`.
+    - **Syncing:** Commit `highscores.json` to a separate `leaderboard` branch (not `main`) to avoid local development merge conflicts.
+    - **Verification:** Generate a simple HMAC/Hash in JS (e.g., `md5(name+score+salt)`) and verify it in the GitHub Action script to prevent basic spoofing.
 - ...
 - improve generator/story structure (+gameplay if needed) - add/improve robust hook on start
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
