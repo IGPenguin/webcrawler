@@ -167,8 +167,8 @@ function loadEncounter(index, fileLines = linesStory){
     case "Trap-Attack":
     case "Trap-Roll":
     case "Trap-Sleep":
-      if (totalBonus==0 && totalMalus==0) logAction("⚫️ ▸ "+enemyEmoji+" Encountered obstacle: <b>"+enemyName+"</b>")
-      if (totalBonus>0 && totalMalus<0) logAction("🎀 ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
+      if (totalBonus==0 && totalMalus==0) logAction("⚫️ ▸ "+enemyEmoji+" Spotted obstacle: <b>"+enemyName+"</b>")
+      if (totalBonus>0 && totalMalus<0) logAction("🎀 ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
       if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed a hazard: <b>"+enemyName+"</b>")
       break;
     case "Curse":
@@ -178,7 +178,7 @@ function loadEncounter(index, fileLines = linesStory){
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
       break;
     case "Altar":
-      logAction("👁️ ▸ "+enemyEmoji+" Noticed a curiosity: <b>"+enemyName+"</b>")
+      logAction("👁️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
       break;
     case "Friend":
       if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Met a creature: <b>"+enemyName+"</b>")
