@@ -227,7 +227,8 @@ function calcActionBarConfig(button, adjustment) {
                   || (types === 'Trap-Sleep'    && button === 'button_sleep')
                   || (types === 'Trap-Obstacle' && button === 'button_attack');
     if (!_trapRight) {
-      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 44, successMax: 56 };
+      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 44, successMax: 56,
+               critSuccessMin: 49, critSuccessMax: 52, critFailW: 5 };
     }
   }
 
@@ -390,7 +391,8 @@ function calcActionBarConfig(button, adjustment) {
   // Crit zones — disabled when action requires stamina but player has none, or for item/consumable pickup/ditch
   var _requiresSta = (button === 'button_attack' || button === 'button_roll' || button === 'button_block');
   var _noCrits = (_requiresSta && pSta === 0)
-              || ((types === 'Item' || types === 'Consumable') && (button === 'button_grab' || button === 'button_roll'));
+              || ((types === 'Item' || types === 'Consumable') && (button === 'button_grab' || button === 'button_roll'))
+              || (button === 'button_grab' && types.includes('Locked'));
 
   if (_noCrits) {
     return { speed: speed, successMin: zoneStart, successMax: zoneStart + zoneW };

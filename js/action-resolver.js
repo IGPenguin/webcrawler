@@ -1346,6 +1346,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyKnockedOut();
               isFishing=false;
             } else { //Player and enemy have no stamina - asymetrical rest
+              if (_skillOK === false) {
+                logPlayerAction(actionString,"Too exhausted to grab them.");
+                displayPlayerCannotEffect();
+                break;
+              }
               enemyKicked();
               if (enemyType=="Pet"){
                 var gainedXP=parseInt(playerGainXP(1,0,""));
@@ -1441,11 +1446,35 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Attack":
-            if (totalBonus>0) {
+            if (totalBonus > 0) {
               displayEnemyCannotEffect();
-              logPlayerAction(actionString,"Touched it, nothing happened.")
+              logPlayerAction(actionString,"Touched it, nothing happened.");
               break;
             }
+            if (_skillOK === false) {
+              if (_crit === 'fail' && !encounterUsed) {
+                // Fumbled in — trigger the trap and take extra damage
+                if (enemyHp<=0) playerHpMax-=enemyHp;
+                if (enemySta<=0) playerStaMax-=enemySta;
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, "Fumbled right into it.",true,false);
+                playerHit(1, false);
+                if (enemyHp < 0 && playerHp > 0) AchievementManager.check('survive_trap');
+              } else {
+                logPlayerAction(actionString,"Pulled back just in time.");
+                displayPlayerCannotEffect();
+              }
+              break;
+            }
+            // Grab success: trigger the trap, spend 1 STA unless crit pass
+            if (encounterUsed) { logPlayerAction(actionString,"Seems like that was it for now."); displayPlayerCannotEffect(); break; }
+            if (_crit !== 'success' && playerSta > 0) playerSta--;
+            if (totalBonus<=0 && totalMalus>=0) displayPlayerCannotEffect();
+            if (enemyHp<=0) playerHpMax-=enemyHp;
+            if (enemySta<=0) playerStaMax-=enemySta;
+            playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg,true,false);
+            if (enemyHp < 0 && playerHp > 0) AchievementManager.check('survive_trap');
+            break;
+
           case "Trap": //Grabbing triggers the effect
           case "Trap-Big":
           case "Trap-Roll":

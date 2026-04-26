@@ -32,11 +32,10 @@
 - add tiny shading at the bottom of the ingame log
 
 # Hades
-- improve randomizer/story structure? (story.csv + generator.js logic), few ideas:
-  - Keep corpses, do not navigate right away (Chance to rest etc.)
-  - Generate loot and consumable from kill/knockout: "They've dropped something"
-- add/improve robust hook on start
-- Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
+- programmers art refactor to similar style but polished and better readable/usable
+   - Take inspuration from the ultracool: https://github.com/IGPenguin/hades-gate/blob/chaos/assets/header.svg
+   - I'd focus on using simialr approach for the Stay Dead logo and at least the area backgrounds, they possibly no longer need to be ugly .png tiles (lets have some scalable animated svg)
+   - share the logo also to readme.md
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
 - better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
@@ -45,8 +44,9 @@
   - sort the session history by score top -> bottom
   - allow sharing and suggest a way to share it between players (can github actions somehow listen on highscore posts or google form or anything?)
 - options: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
-- programmers art refactor to similar style but polished and better readable/usable
 - ...
+- improve generator/story structure (+gameplay if needed) - add/improve robust hook on start
+- Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
 - Make Karma Matter!
   - make "Revive" interval based on karma (Todo in place)
   - on revive, get back to live (last encounter) with 1 HP
