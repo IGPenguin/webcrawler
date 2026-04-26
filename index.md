@@ -63,7 +63,7 @@ layout: default
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">🪦 Graveyard</button>
-      <button class="menu-btn" id="menu_challenges" style="color:grey; display:none;">⚙️ Options</button>
+      <button class="menu-btn" id="menu_challenges" style="color:grey;">⚙️ Settings</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
   </div>
