@@ -30,13 +30,30 @@
 - Rebalance drops vs enemy stats? (too easy if you pivkup everything) OR "simply" implement inventory with slots
 - Negative friends — investigate
 - add tiny shading at the bottom of the ingame log
+- ...
+- options: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
+- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
+
+# Manual
+- snatched tham (rm but)
+- progress lost red text, charatcter will bost
+- non deadly options >> solutions
+- Disable total drachmae display on coin item
+- strong rolls speed too slow >> increase
+- encounters.csv: fairyland enemies toi little hp
+- rm "a first" from achievs
+- tweak achiev toast width -2px boh sides (+2?)
+- rm grind achievs
+
+# Low-repro bugs
+- fix engaged a boss showing again and again after each action after fishing gives a boss
+- Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
+- Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
+- Fix add vertical scroll in loot/party when overflowimg
+- (check after ending refactor) Fix Boss wife disengage when calmed = NaN xp
+- (check after ending refactor) Fix cannot leave calm merciful bride, if calm bride (check texts)
 
 # Hades
-- programmers art refactor to similar style but polished and better readable/usable
-   - Take inspuration from the ultracool: https://github.com/IGPenguin/hades-gate/blob/chaos/assets/header.svg
-   - I'd focus on using simialr approach for the Stay Dead logo and at the area backgrounds, they possibly no longer need to be ugly .png tiles (lets have some scalable animated svg)
-   - share the logo also to readme.md
-   - bonus points for using some animated svg swag in the action bar for the intervals, that would be very cool
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
 - better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
@@ -44,7 +61,6 @@
   - display at: dead/game end, menu char preview, session history
   - sort the session history by score top -> bottom
   - allow sharing and suggest a way to share it between players (can github actions somehow listen on highscore posts or google form or anything?)
-- options: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
 - ...
 - improve generator/story structure (+gameplay if needed) - add/improve robust hook on start
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
@@ -64,29 +80,7 @@
   - eat food only intentionally, dont force/ditch
  - make actions seem more sequential in the ui so that player can notice one by one - eg delay 0,5s each log display and wait for effects to complete before firing another and unlocking UI for player actions?
 
-# Manual
-- snatched tham (rm but)
-- progress lost red text, charatcter will bost
-- non deadly options >> solutions
-- Disable total drachmae display on coin item
-- strong rolls speed too slow >> increase
-- encounters.csv: fairyland enemies toi little hp
-- rm "a first" from achievs
-- tweak achiev toast width -2px boh sides (+2?)
-- rm grind achievs, 
-
-# Low-repro bugs
-
-- Fix Boss wife disengage when calmed = NaN xp
-- fix enemy recovered energy after killed (crazed goat)
-- fix engaged a boss showing again and again after each action after fishing gives a boss
-- Fix cannot leave calm merciful bride, if calm bride (check texts)
-- Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
-- Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
-- Fix add vertical scroll in loot/party when overflowimg
-
 # Parking lot
-
 - Take inspiration from: https://pixeldungeon.fandom.com/wiki/Main_Page
 - Legendary negating bad karma
 - +1 Drachmae for review (one time)
@@ -99,9 +93,7 @@
 - JS spaghetti monster joke boss when?
   - Hanging out in Menu for 5 minutes with live char?
 
-
 ## Data changes
-
 - Curses with -1 atk (lategame)
 - [ ] Legendary item allowing to physically damage spirits (soulgem)
 - [ ] Practice target variants for speak, cast... option to leave
@@ -130,8 +122,7 @@
 - [ ] Necropolis optional areas
 
 ## New feature: Spells
-
-add new dynamic layout with spells
+- add new dynamic layout with spells
 - change curse button to generic "📓 Spell"
 - on click, overlay action buttons with list card with known spells (scrollable, max height to cover action buttons), row shows: emoji spell name: effect, cost
 - dismiss button at the end of the list
@@ -174,17 +165,18 @@ add new dynamic layout with spells
 
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
 
-# Future
-
-- **Corpse variants**: ☠ Pile of Bones and 💤 Neutralized Creature could have named variants per enemy type (e.g. "Hollow Shell" for Undead, "Smoldering Remains" for Demon), with matching flavor desc text, to make death feel more world-specific.
-
 # Crazy ideas
-
 - Multiplayer features
   - highscores via github actions
   - free github server (use json)
   - push/get data: highscore #, achievs %
   - (ULTRA) find other player corpse (with one of their item), fight other players ghosts/zombies
+
+- SVG Vector Engine
+  - Create an `assets/img/vectors/` library of lightweight, animated SVG backgrounds for each area (e.g., flowing lines for River, jittery pulses for Necropolis)
+  - Refactor `ui-render.js` to inject these as dynamic background layers.
+  - All solid backgrounds should have shading, texts can be enhaced too, but no glow.
+  - Resolve "programmers art" permanently with a professional, scalable, and cohesive aesthetic that feels "alive" and premium.
 
 - Smart pets
 - Mount
