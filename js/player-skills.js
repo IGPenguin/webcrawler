@@ -362,7 +362,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
   if (hasAnyOf(attackTypes,enemyEmoji)&&enemyType=="Item") playerAttackType=enemyEmoji;
 
-  if (castTypes.includes(enemyEmoji)) playerCastType=enemyEmoji;
+  if (castTypes.includes(enemyEmoji)&&enemyType=="Item") playerCastType=enemyEmoji;
 
   if (enemyEmoji=="⛺️") playerSleepType=enemyEmoji;
 

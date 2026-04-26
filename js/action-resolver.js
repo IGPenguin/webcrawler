@@ -841,7 +841,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var gainedXP=playerGainXP(1,15*playerLevel,"");
               logPlayerAction(actionString,"Unlocked it with a spell -"+mkgCost+" 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               AchievementManager.check('magic_unlock_first');
-              nextEncounter();
+              enemyType=enemyType.replace("Locked-","");
+              enemyHp=0;
+              enemyMsg="Uncovered what was locked inside.";
+              redraw();
               break;
             }
           }
@@ -1919,14 +1922,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                     playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false);
                     playerGainXP(1,15*playerLevel,"");
                     AchievementManager.check('key_unlock_first');
-                    nextEncounter();
+                    enemyType=enemyType.replace("Locked-","");
+                    enemyHp=0;
+                    enemyMsg="Uncovered what was locked inside.";
+                    redraw();
                   }
                   break;
                 } else if (playerLootString.includes("📎")) {
                   logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b> "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
                   playerGainXP(1,15*playerLevel,"");
                   AchievementManager.check('key_unlock_first');
-                  nextEncounter();
+                  enemyType=enemyType.replace("Locked-","");
+                  enemyHp=0;
+                  enemyMsg="Uncovered what was locked inside.";
+                  redraw();
                 } else {
                   displayEnemyCannotEffect();
                 }

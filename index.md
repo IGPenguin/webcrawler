@@ -127,7 +127,7 @@ layout: default
                margin:8px 0 8px 0;
                text-align:center;">⚠️ Really want to restart?</h2>
                 <div style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:14px; color:#fff; line-height:28px; margin-bottom:4px"><b style="font-weight:800;">Your progress will be irreversibly lost!</b><br>Only the <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> stay forever.</h4>
+        <h4 style="text-align:center; min-height:0; font-size:14px; line-height:28px; margin-bottom:4px"><b style="font-weight:800; color:red; ">Your progress will be irreversibly lost!</b><br>Only the <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> stay forever.</h4>
       </div>
       <div id="menu_confirm_preview" style="display:none; margin-top:8px; margin-bottom:8px; overflow:hidden;"></div>
       <div class="menu-spacer"></div>
