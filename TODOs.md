@@ -13,6 +13,11 @@
 - better character name generation for neutral and negative origins
 - fix: support ":" and "," symbols in encounters.csv (you seem to support that in origins), update encounters.csv to have the normal symbols afterwards
 - ...
+- Add Github Actions CI Boot Test
+  - CI launches a headless Playwright instanc
+  - It "boots" `index.md` via a local server, waits for JavaScript to finish loading, and checks the console for any errors
+  - Requires minimal `package.json` for CI environment setup.
+- ...
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
 - More unique origins with gameplay implications
@@ -138,8 +143,7 @@
 
 
 # Playwright - Data Capture
-
-### The Chronos Observer (Playwright Feedback Loop)
+## The Chronos Observer (Playwright Feedback Loop)
 - **Objective:** Create a high-fidelity "Flight Recorder" using Playwright/Chromium to bridge gameplay reality with AI interpretation.
 - **Passive Monitoring:**
    - Initialize a passive session on localhost.
@@ -154,7 +158,6 @@
    - Organize all artifacts into a timestamped folder (`/playtests/YYYY-MM-DD_HH-MM/`) for Claude/Gemini ingestion.
 
 # Playwright - Automated Run
-
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
 
 # Crazy ideas

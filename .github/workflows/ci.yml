@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ live ]
+  pull_request:
+    branches: [ live ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Run CSV and Version Validation
+      run: |
+        # Get the base branch config if this is a PR
+        if [ "${{ github.event_name }}" == "pull_request" ]; then
+          git show origin/${{ github.base_ref }}:js/config.js > base_config.js
+          python csv-validator.py js/config.js base_config.js
+        else
+          # On live branch, just validate CSVs without version comparison
+          python csv-validator.py
+        fi
