@@ -6,7 +6,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 ⚔️;Knight;0;1;-1;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Prefers high damage over agility.
 🐍;Serpent;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 💔 Health</b>.<br><i>Venomous by nature, for a price.
 🔥;Choleric;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>Effective, but not the brightest.
-🔪;Murderer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.
+🔪;Killer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.
 🪓;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no clear downside.<br><i>Born for killing, nothing more.
 
 //Mana
@@ -18,7 +18,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🔷;Mage;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no clear downside.<br><i>Bears supernatural power by nature.
 
 //Health
-🕊️;Preacher;2;-1;0;0;0;0;0;Gain <b>+2 ❤️ Health</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Good intentions, uncertain chances.
+🕊️;Divine;2;-1;0;0;0;0;0;Gain <b>+2 ❤️ Health</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Good intentions, uncertain chances.
 🗿;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Rock solid, but less agile.
 💘;Lover;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Would give up anything for attention.
 🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.

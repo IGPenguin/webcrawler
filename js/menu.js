@@ -378,7 +378,7 @@ var Menu = (function () {
 
       // Same level + name bar structure as _buildRunCardHTML (with the overlap trick)
       entry.innerHTML =
-        '<div style="background-color:rgb(40,40,40); overflow:hidden; padding-top:1px; padding-bottom:3px;">'
+        '<div style="overflow:hidden;padding-bottom:3px;">'
           + '<h3 style="margin-top:3px; margin-bottom:-19px; margin-left:4px; position:relative; '
             + 'z-index:3; text-align:right; padding-right:10px; padding-bottom:2px;">'
           + '<i style="font-weight:600; color:#FFD940; font-size:14px; position:relative; top:2px;'
@@ -441,7 +441,7 @@ var Menu = (function () {
     logWrap.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
 
     var logEl = document.createElement('h4');
-    logEl.style.cssText = 'margin:-8px 0 0 0; padding:4px 8px; text-align:left; '
+    logEl.style.cssText = 'margin:-7px 0 0 0; padding:4px 8px; text-align:left; '
       + 'font-size:14.6px; line-height:165%; overflow-y:auto; '
       + 'scrollbar-width:thin; scrollbar-color:#000 transparent;';
     logEl.innerHTML = logLines.length ? logLines.join('<br>') : '<i style="opacity:0.5;">No log.</i>';
