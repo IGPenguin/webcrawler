@@ -10,7 +10,9 @@
 - debug: heavy enemy with no sta - no crit interval shoen (plaayer had sta)
 - readd emoji to player name on rename, change emojito ⚠️ when cheat, apply cheat logic also in main menu rename
 - ...
-- new unique achievs: fish out a boss, fish out legendary item/food, cook food, salt food, letter interactions, Killed each enemy type, Died by trap
+- better character name generation for neutral and negative origins
+- fix: support ":" and "," symbols in encounters.csv (you seem to support that in origins), update encounters.csv to have the normal symbols afterwards
+- ...
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
 - More unique origins with gameplay implications
@@ -18,22 +20,16 @@
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
 - New Type - Magic-container, cast to unlock - Contains item  (50% for artifact - same should already be for regular locked containers?)
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
-- Rebalance drops vs enemy stats? (too easy if you pivkup everything) OR "simply" implement inventory with slots
-- Negative friends — investigate
-- add tiny shading at the bottom of the ingame log
+- Investigate: Negative friends - should simply decrement stats (opposite of friends)
 - ...
+- add tiny shading at the bottom of the ingame log?
 - add options screen: difficulty (standard, easy - interval size and speed multiplier), reset save (danger!!), sounds?, waot for animation; tutorial  + achiev: complete story on Standard diff (extra better variant of just complete story)
-- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
+- new unique achievs: fish out a boss, fish out legendary item/food, cook food, salt food, letter interactions, Killed each enemy type, Died by trap
 - new unlockable: a portal to fairyland
+- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
 
 # Manual
-- progress lost red text, charatcter will bost
-- non deadly options >> solutions
-- Disable total drachmae display on coin item
-- strong rolls speed too slow >> increase
 - encounters.csv: fairyland enemies toi little hp
-- rm "a first" from achievs
-- tweak achiev toast width -2px boh sides (+2?)
 - rm grind achievs
 
 # Low-repro bugs
