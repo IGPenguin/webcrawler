@@ -2,10 +2,10 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message
 Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;0;End of the Line;Try to <b>✨ Revive</b> yourself to continue.<br>Send feedback using <b>💌 Rate</b>.</b>;
 
 //Tutorial Dreams
-Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;0;Deep Sleep;<b>Can't move a muscle</b>\ you're feeling too weak.<br>Try using <b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.;Caught off guard by a bad thought.
+Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;0;Deep Sleep;<b>Can't move a muscle</b>, you're feeling too weak.<br>Try using <b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.;Caught off guard by a bad thought.
 Depths of Slumber;👹;Vivid Nightmare;Standard;2;1;1;0;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> once they deplete <b>🟢 Energy</b>.;
 Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real
-Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind((<br>n/a;Woken up in(( <b>Fading Wildlands</b>
+Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> inside your mind:<br>n/a;Woken up in: <b>Fading Wildlands</b>
 
 //Debug
 
