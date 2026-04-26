@@ -2,40 +2,56 @@ name: CI
 
 on:
   push:
-    branches: [ live ]
+    branches: [live]
   pull_request:
-    branches: [ live ]
+    branches: [live]
 
 jobs:
-  validate:
+  validate-csv:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
-    - name: Run CSV and Version Validation
-      run: |
-        # Get the base branch config if this is a PR
-        if [ "${{ github.event_name }}" == "pull_request" ]; then
-          # Try to find where the version code was in the base branch (it moved around during refactoring)
-          if git show origin/${{ github.base_ref }}:js/constants.js > base_config.js 2>/dev/null; then
-            echo "Found version in js/constants.js on base branch"
-          elif git show origin/${{ github.base_ref }}:js/game_loop.js > base_config.js 2>/dev/null; then
-            echo "Found version in js/game_loop.js on base branch"
-          elif git show origin/${{ github.base_ref }}:js/config.js > base_config.js 2>/dev/null; then
-            echo "Found version in js/config.js on base branch"
-          else
-            echo "Warning: Could not find base version file on origin/${{ github.base_ref }}"
-            touch base_config.js
+      - name: Validate CSVs
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            changed=$(git diff --name-only HEAD~1 HEAD | grep '^data/' || true)
+            if [ -z "$changed" ]; then
+              echo "No data files changed, skipping."
+              exit 0
+            fi
           fi
-          python validator.py js/constants.js base_config.js
-        else
-          # On live branch, just validate CSVs without version comparison
           python validator.py
-        fi
+
+  validate-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check JS syntax
+        run: node --check js/*.js
+
+  check-version:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check version bump
+        run: |
+          git show origin/${{ github.base_ref }}:js/constants.js > base_constants.js
+          python validator.py js/constants.js base_constants.js
