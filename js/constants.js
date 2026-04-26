@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 04/27/2026 @ 12:55 AM"
+var versionCode = "ver. 04/27/2026 @ 01:26 AM"
 var initialEncounterOverride = 0; // set to 6 to skip tutorial
 
 function isLocalhost() {
