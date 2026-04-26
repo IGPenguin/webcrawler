@@ -23,9 +23,19 @@ jobs:
       run: |
         # Get the base branch config if this is a PR
         if [ "${{ github.event_name }}" == "pull_request" ]; then
-          git show origin/${{ github.base_ref }}:js/config.js > base_config.js
-          python csv-validator.py js/config.js base_config.js
+          # Try to find where the version code was in the base branch (it moved around during refactoring)
+          if git show origin/${{ github.base_ref }}:js/constants.js > base_config.js 2>/dev/null; then
+            echo "Found version in js/constants.js on base branch"
+          elif git show origin/${{ github.base_ref }}:js/game_loop.js > base_config.js 2>/dev/null; then
+            echo "Found version in js/game_loop.js on base branch"
+          elif git show origin/${{ github.base_ref }}:js/config.js > base_config.js 2>/dev/null; then
+            echo "Found version in js/config.js on base branch"
+          else
+            echo "Warning: Could not find base version file on origin/${{ github.base_ref }}"
+            touch base_config.js
+          fi
+          python validator.py js/constants.js base_config.js
         else
           # On live branch, just validate CSVs without version comparison
-          python csv-validator.py
+          python validator.py
         fi

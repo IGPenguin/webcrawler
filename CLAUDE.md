@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 bash deploy.sh        # installs gems, kills port 4000, serves, opens browser
-bash version.sh       # stamps current timestamp into versionCode in js/config.js
+bash version.sh       # stamps current timestamp into versionCode in js/constants.js
 ```
 
 No build tools, no npm. Pure vanilla JavaScript served by Jekyll.
