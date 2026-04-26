@@ -4,10 +4,31 @@
 - **/compat** when done! (and will repeat in future)<br>
 - **/clear** when one-time task completed
 
+# Priority 0
+1. Redo Tutorial ("The Dream")
+  * Expand story.csv: I'll add more steps to the Depths of Slumber area.
+  * Instructional Encounters: Instead of just a wall of text, each step will focus on one mechanic (e.g., "The Action Bar: Hit the green zone!").
+  * Safety: I'll ensure returning players (with coins/history) skip this automatically, as they do now.
+
+2. Redo Endings (Branching & Logic)
+  * Fix the Flakiness: Remove the encounterIndex++ hacks. Instead of the game just "ending" when the story list runs out, create a resolveEnding() function.
+  * The Bride as a Gateway: When the Bride is defeated or calmed, it will trigger a transition to a final "Decision" encounter.
+  * Branching Choices: Based on your playerLove and playerKarma, the buttons will change to your specific endings: Kiss her goodnight, Mercy kill, Truly Revive, etc.
+
+3. Highscore (The "Legs")
+  * The Formula: I'll implement your formula: Level + (Encounters/10) + (Pets*2) + Stats + Karma + WinBonus.
+  * Leaderboard UI: I'll add a "Top Score" display to the main menu and show your rank in the session history.
+  * Background Submission: I'll set up the fetch() logic so it's ready to post to a Google Form for a "Global" leaderboard.
+
+4. Options Screen
+   * Difficulty Picker: Easy = Easier action bar, altough lower drops; "Hardcore" = harder + no revive
+   * Report bug button: Simple redirect to the existing gform
+   * Save Management: A clear "Reset Data" button with a confirmation popup.
+
 # Claude
 - Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
 ...
-- add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100 (or similar maths behind it)
+- add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100, difficulty multiplier (or similar maths behind it)
   - display at: dead/game end, menu char preview, session history
   - sort the session history by score top -> bottom
   - on game end, use `fetch()` with `mode: 'no-cors'` to background-POST score data to a Google Form `formResponse` endpoint (silent submission).
