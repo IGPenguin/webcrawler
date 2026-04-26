@@ -33,6 +33,51 @@ function getOriginName(origin) {
     if (stats[s] > max) { max = stats[s]; dominant = s; }
   }
 
+  if (!dominant) {
+    var minVal = 0;
+    var weakest = null;
+    for (var s in stats) {
+      if (stats[s] < minVal) { minVal = stats[s]; weakest = s; }
+    }
+
+    var adj, noun;
+    if (!weakest) {
+      adj  = chooseFrom(["Forgotten","Weary","Nameless","Pale","Worn","Tired","Grey","Plain","Quiet","Lost","Faded","Hollow"]);
+      noun = chooseFrom(["Nobody","Commoner","Stranger","Remnant","Shade","Vagrant","Stray","Outcast","Wretch","Drifter","Soul","Castaway"]);
+      return adj + ' ' + noun;
+    }
+
+    switch (weakest) {
+      case 'hp':
+        adj  = chooseFrom(["Brittle","Frail","Rotted","Decaying","Crumbling","Withered","Ruined","Blighted","Broken","Tattered"]);
+        noun = chooseFrom(["Husk","Shade","Remnant","Castaway","Wretch","Exile","Vagrant","Pauper","Revenant","Specter"]);
+        break;
+      case 'sta':
+        adj  = chooseFrom(["Heavy","Sluggish","Winded","Spent","Leaden","Exhausted","Bloated","Withered","Lumbering","Plodding"]);
+        noun = chooseFrom(["Shambler","Straggler","Wretch","Sluggard","Plodder","Laggard","Lummox","Trudger","Clod","Castaway"]);
+        break;
+      case 'atk':
+        adj  = chooseFrom(["Meek","Feeble","Faltering","Timid","Wavering","Harmless","Reluctant","Yielding","Gentle","Soft"]);
+        noun = chooseFrom(["Penitent","Coward","Bystander","Martyr","Lamb","Witness","Appeaser","Shepherd","Supplicant","Wayfarer"]);
+        break;
+      case 'lck':
+        adj  = chooseFrom(["Cursed","Jinxed","Doomed","Forsaken","Ill-Fated","Blighted","Damned","Condemned","Wretched","Struck"]);
+        noun = chooseFrom(["Pariah","Scapegoat","Wretch","Castaway","Outcast","Victim","Fool","Stray","Shade","Wanderer"]);
+        break;
+      case 'int':
+        adj  = chooseFrom(["Senseless","Witless","Dull","Blank","Thoughtless","Vacant","Oblivious","Mindless","Dim","Empty"]);
+        noun = chooseFrom(["Brute","Dullard","Fool","Oaf","Lout","Thrall","Pawn","Hollow","Wretch","Simpleton","Drone","Cretin"]);
+        break;
+      case 'mgk':
+        adj  = chooseFrom(["Drained","Spent","Mundane","Voided","Depleted","Inert","Parched","Sunken","Hollowed","Empty"]);
+        noun = chooseFrom(["Husk","Shell","Castaway","Exile","Pauper","Remnant","Outcast","Vessel","Hollow","Wretch"]);
+        break;
+      default:
+        return getFirstName();
+    }
+    return adj + ' ' + noun;
+  }
+
   var adj, noun;
   switch (dominant) {
     case 'atk':
