@@ -6,7 +6,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 💀;Brittle;-2;0;0;0;0;0;0;Suffer <b>-2 💔 Health</b> with no clear benefit.<br><i>No flesh to protect the bones.
 
 //Specials
-🪵;Lumberjack;1;0;1;0;0;0;0;Gain <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b><br><i>Used the axe long before anything fought back.
+🪵;Logger;1;0;1;0;0;0;0;Gain <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b><br><i>Hardened long before anything fought back.
 🥩;Butcher;1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> and <b>+1 ❤️ Health</b>.<br><i>Grew stronger from fresh meat supply.
 🎖️;Hero;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Never hesitates to make a difference.
 ⛓️‍💥;Fugitive;0;0;1;1;0;0;0;Gain <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Luck favors the well prepared.
