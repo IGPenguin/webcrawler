@@ -210,7 +210,7 @@ function playerUseStamina(stamina, message = ""){
 }
 
 function playerUseMagic(magic, message = ""){
-  if (playerMgk <= 0) { //Cannot lose more
+  if (playerMgk < magic) { //Not enough mana for this cost
     if (message != ""){ //Display specific "too tired message"
       logPlayerAction(actionString,message);
     }
@@ -362,7 +362,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
   if (hasAnyOf(attackTypes,enemyEmoji)&&enemyType=="Item") playerAttackType=enemyEmoji;
 
-  if (castTypes.includes(enemyEmoji)&&enemyType=="Item") playerCastType=enemyEmoji;
+  if (castTypes.includes(enemyEmoji)&&enemyType=="Item"&&enemyMgk>0) playerCastType=enemyEmoji;
 
   if (enemyEmoji=="⛺️") playerSleepType=enemyEmoji;
 
