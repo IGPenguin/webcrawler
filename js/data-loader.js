@@ -90,13 +90,13 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
     if (savedCoins != NaN && savedCoins > 0) { // Returning player — skip tutorial, show shop
       logAction("♻️&nbsp;▸&nbsp;❤️ Seems like this is <b>not your first time.</b>");
       playerSta = playerStaMax;
-      loadEncounter(4);
+      loadEncounter(5);
       drachmaShop[0] = "area:" + "Fading Wildlands";
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
       pushEncounter(drachmaShop);
     }
     if (savedCoins == 0) {
-      loadEncounter(4);
+      loadEncounter(5);
       enemyName  = "Familiar Moment";
       enemyEmoji = "🤔";
       playerSta  = playerStaMax;
