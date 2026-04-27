@@ -28,7 +28,7 @@ jobs:
               exit 0
             fi
           fi
-          python validator.py
+          python automated-tests/validator.py
 
   validate-js:
     runs-on: ubuntu-latest
@@ -54,4 +54,4 @@ jobs:
       - name: Check version bump
         run: |
           git show origin/${{ github.base_ref }}:js/constants.js > base_constants.js
-          python validator.py js/constants.js base_constants.js
+          python automated-tests/validator.py js/constants.js base_constants.js
