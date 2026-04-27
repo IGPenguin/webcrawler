@@ -16,6 +16,8 @@ var AchievementManager = (function () {
     { id: 'survive_trap',        emoji: '🪤', desc: 'Survived a deadly trap!', hint: 'Mistakes can happen.' },
 
     { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
+    { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a trap!', hint: 'Watch where you step.' },
+    { id: 'death_sleep',         emoji: '💤', desc: 'Died in your sleep...', hint: 'Not the peaceful rest you hoped for.' },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!" },
     { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.' },
     { id: 'level_5',             emoji: '🎊', desc: 'Reached level 5!', hint: 'The path ahead grows longer.' },
@@ -57,6 +59,18 @@ var AchievementManager = (function () {
     { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up from the Shade!', hint: "Shortcut to power, at a cost." },
     { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Shade!', hint: "A loyal customer of the shadows." },
     
+    { id: 'letter_remember',     emoji: '💌', desc: 'Read a disturbing letter...', hint: 'Some things are better left in the past.' },
+    { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing letter with you.', hint: 'Could not bring yourself to leave it.' },
+    { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing letter aside.', hint: 'Letting go hurts more than holding on.' },
+    
+    { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.' },
+    { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.' },
+    { id: 'fish_legendary_first',emoji: '🏺', desc: 'Reeled in a legendary find!', hint: 'The best things are worth waiting for.' },
+    { id: 'fish_boss_first',     emoji: '🦕', desc: 'Fished out a legendary beast!', hint: 'The rumors were true after all.' },
+    { id: 'spoke_boss',          emoji: '🗣️', desc: 'Spoke a Boss into submission!', hint: 'Could peace be an actual option?' },
+    { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.' },
+    { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?' },
+
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again." },
     { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits." },
     { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!', hint: "Mercy becomes your second nature." },
@@ -64,10 +78,6 @@ var AchievementManager = (function () {
     { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50 times!', hint: "Master the haunted waters." },
     { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something with no bait 50 times!', hint: "Pure skill always beats the odds." },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!', hint: "Become a seasoned gambler." },
-
-    { id: 'spoke_boss',          emoji: '🗣️', desc: 'Spoke a Boss into submission!', hint: 'Could peace be an actual option?' },
-    { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.' },
-    { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?' },
 
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...' }
   ];
@@ -115,7 +125,16 @@ var AchievementManager = (function () {
     ateLegendary:        false,
     leveledFirst:        false,
     reachedLevel5:       false,
-    usedCheat:           false
+    usedCheat:           false,
+    fishedBoss:          false,
+    fishedLegendary:     false,
+    cookedFood:          false,
+    saltedFood:          false,
+    letterRemember:      false,
+    letterGrab:          false,
+    letterDitch:         false,
+    diedByTrap:          false,
+    diedBySleep:         false
   };
 
   var _unlocked       = {};
@@ -427,6 +446,42 @@ var AchievementManager = (function () {
 
       case 'touch_grass':
         _unlock('touch_grass');
+        break;
+
+      case 'fish_boss':
+        if (!_stats.fishedBoss) { _stats.fishedBoss = true; _save(); _unlock('fish_boss_first'); }
+        break;
+
+      case 'fish_legendary':
+        if (!_stats.fishedLegendary) { _stats.fishedLegendary = true; _save(); _unlock('fish_legendary_first'); }
+        break;
+
+      case 'cook_food':
+        if (!_stats.cookedFood) { _stats.cookedFood = true; _save(); _unlock('cook_food_first'); }
+        break;
+
+      case 'salt_food':
+        if (!_stats.saltedFood) { _stats.saltedFood = true; _save(); _unlock('salt_food_first'); }
+        break;
+
+      case 'letter_remember':
+        if (!_stats.letterRemember) { _stats.letterRemember = true; _save(); _unlock('letter_remember'); }
+        break;
+
+      case 'letter_grab':
+        if (!_stats.letterGrab) { _stats.letterGrab = true; _save(); _unlock('letter_grab'); }
+        break;
+
+      case 'letter_ditch':
+        if (!_stats.letterDitch) { _stats.letterDitch = true; _save(); _unlock('letter_ditch'); }
+        break;
+
+      case 'death_trap':
+        if (!_stats.diedByTrap) { _stats.diedByTrap = true; _save(); _unlock('death_trap'); }
+        break;
+
+      case 'death_sleep':
+        if (!_stats.diedBySleep) { _stats.diedBySleep = true; _save(); _unlock('death_sleep'); }
         break;
     }
   }

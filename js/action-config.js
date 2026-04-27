@@ -108,7 +108,12 @@ function calcActionBarConfig(button, adjustment) {
 
   // Roll against exhausted enemy — very easy, but humiliating to fail
   if (button === 'button_roll' && (enemySta - enemyStaLost) <= 0 && enemyType!="Item" && enemyType!="Shop") {
-    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 10, successMax: 90 };
+    var _ka = (playerKarma || 1) - 1;
+    var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6 + _ka * 0.4) * 1.25)));
+    var _csMin = 50 - Math.floor(_csW / 2);
+    var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - _ka * 0.5)));
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 10, successMax: 90,
+             critSuccessMin: _csMin, critSuccessMax: _csMin + _csW, critFailW: _cfW };
   }
 
   // Heavy grab: very very hard — tiny zone, high speed; fail enrages them
@@ -279,7 +284,12 @@ function calcActionBarConfig(button, adjustment) {
 
   // Roll Heavy with stamina remaining — slow and telegraphed, easy to sidestep
   if (button === 'button_roll' && isHeavy && eSta > 0) {
-    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82 };
+    var _ka = (playerKarma || 1) - 1;
+    var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6 + _ka * 0.4) * 1.25)));
+    var _csMin = 50 - Math.floor(_csW / 2);
+    var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - _ka * 0.5)));
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82,
+             critSuccessMin: _csMin, critSuccessMax: _csMin + _csW, critFailW: _cfW };
   }
 
   // Knockout on a not tired living creature — resists hard

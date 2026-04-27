@@ -480,6 +480,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerAtk++;
                 playerLove-=2;
                 playerKarma-=2;
+                AchievementManager.check('letter_ditch');
                 logPlayerAction(actionString,"<text style=color:"+colorRed+";>You tossed it aside with hatred! +1 ⚔️</text>");
                 displayPlayerCannotEffect();
                 nextEncounter();
@@ -643,7 +644,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (playerSta > 0 && _crit !== 'success') playerSta--;
 
-        if ((enemyAtk+enemyAtkBonus)<=0 && (enemySta-enemyStaLost) > 0 && enemyType!="Pet" && enemyType!="Small"){
+        if ((enemyAtk+enemyAtkBonus)<=0 && (enemySta-enemyStaLost) > 0 && enemyType!="Pet" && enemyType!="Small" && enemyType!="Toxic" && enemyType!="Hot"){
           if (_skillOK === true) {
             if (enemyStaminaChangeMessage(-2,"Threw them off balance -1 🟢","They needed to catch a breath -1 🟢")) {
               logAction(enemyEmoji+"&nbsp;▸&nbsp;🌀 Scrambles to recover their footing.");
@@ -739,12 +740,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Hot":
           case "Toxic":
-            // _skillOK === false is caught by the early check above; reaching here means success
-            var _deflectMsg = enemyType === "Hot"
-              ? (_crit === 'success' ? "Perfectly deflected the heat." : "Deflected the heat -1 🟢")
-              : (_crit === 'success' ? "Perfectly blocked the fumes."  : "Covered your face, blocked the fumes -1 🟢");
-            enemyStaminaChangeMessage(-1, _deflectMsg, "Blocked, but was not attacked -1 🟢");
-            displayPlayerEffect("🔰");
+            if (_skillOK === false) {
+              var _passiveDmg = Math.max(1, enemyAtk + enemyAtkBonus);
+              logPlayerAction(actionString, enemyType === "Hot"
+                ? "Stood too close, got singed -" + _passiveDmg + " 💔"
+                : "Breathed the fumes in -" + _passiveDmg + " 💔");
+              playerHit(_passiveDmg);
+            } else {
+              var _deflectMsg = enemyType === "Hot"
+                ? (_crit === 'success' ? "Perfectly deflected the heat." : "Deflected the heat -1 🟢")
+                : (_crit === 'success' ? "Perfectly blocked the fumes."  : "Covered your face, blocked the fumes -1 🟢");
+              enemyStaminaChangeMessage(-1, _deflectMsg, "Blocked, but was not attacked -1 🟢");
+              displayPlayerEffect("🔰");
+            }
             break;
 
           default:
@@ -996,12 +1004,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logMessage="Added a tiny pinch of salt.";
                 enemyName=enemyName+" (Salty)";
                 displayEnemyEffect("✨");
+                AchievementManager.check('salt_food');
               } else {
                 enemyName=enemyName+" (Crispy)";
                 playerMgk-=1;
               }
 
               playerCooked=true;
+              AchievementManager.check('cook_food');
               logPlayerAction(actionString,logMessage);
               animateUIElement(enemyInfoUIElement,"animate__pulse","0.4"); //Animate cooking
             } else {
@@ -1736,6 +1746,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               playerKarma++;
               playerLove++;
+              AchievementManager.check('letter_grab');
               enemyMsg="<text style=color:"+colorGold+";>You just had to take it with yourself.</text>";
             }
 
@@ -2223,6 +2234,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyTeam.includes("Lover's Memento")){
+              AchievementManager.check('letter_remember');
               logPlayerAction(actionString,"<text style=color:"+colorRed+";>"+enemyMsg+" -1 💔</text>");
               playerKarma++;
               playerLove++;
@@ -2434,11 +2446,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
     };
+    var _wasStillFishing = isFishing;
     if (isFishing && button!="button_cast") {
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
     if (enemyBossType!="") enemyType=enemyBossType;
+    if (_wasStillFishing && button!="button_cast") {
+      if (enemyType.includes('Boss')) AchievementManager.check('fish_boss');
+      else if (enemyTeam && enemyTeam.includes('Artifact')) AchievementManager.check('fish_legendary');
+    }
 
     //Set intellect 1-6 (Pure Chance)
     if (procAbilityChance("🎲",100)){

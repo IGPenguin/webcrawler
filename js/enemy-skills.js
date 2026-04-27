@@ -18,6 +18,7 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
     displayEnemyAttackEffect();
 
     enemyStaLost -= stamina;
+    if (enemyStaLost > enemySta) enemyStaLost = enemySta;
     return true;
   } else if (enemyHp - enemyHpLost > 0) { //Enemy rest if not dead
     logPlayerAction(actionString,failMessage);
