@@ -2310,6 +2310,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString, (_crit === 'fail')
                 ? "Caught completely off guard. -" + _interruptDmg + " 💔"
                 : "They interrupted your rest -" + _atkTotal + " 💔");
+              displayEnemyAttackEffect();
               displayPlayerCannotEffect();
               playerHit(_interruptDmg);
               break;

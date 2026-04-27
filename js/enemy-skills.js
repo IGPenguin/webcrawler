@@ -342,8 +342,6 @@ function enemyAttackOrRest(message="",isGrab=false,skipToxin=false){
         if (enemyHpLost >0) {enemyHpLost-=1;}
     }
 
-    displayEnemyAttackEffect();
-
     if ((damageReceived<=0)){
       staminaChangeMsg=chooseFrom(["They just hang around.","They do not seem to care.","They just wait around.","They seem to be very chill."])
       if (enemyCursed && (enemyAtk+enemyAtkBonus)<=0) staminaChangeMsg="They are too weak to do any harm."

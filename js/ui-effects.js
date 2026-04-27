@@ -304,7 +304,7 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
     documentElement.innerHTML = message;
     documentElement.style.display = "block";
   }
-  documentElement.classList.remove(animation);
+  documentElement.classList.remove("animate__animated", animation);
   void documentElement.offsetWidth; // trigger a DOM reflow
 
   if (animateInfinite) {
