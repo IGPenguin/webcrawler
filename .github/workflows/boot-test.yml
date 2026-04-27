@@ -2,9 +2,8 @@ name: Boot Test
 
 on:
   push:
-    branches: [experimental, live]
-  pull_request:
     branches: [live]
+  pull_request:
 
 jobs:
   boot-test:
