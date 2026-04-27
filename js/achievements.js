@@ -13,10 +13,10 @@ var AchievementManager = (function () {
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time." },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.' },
     { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?' },
-    { id: 'survive_trap',        emoji: '🪤', desc: 'Survived a deadly trap!', hint: 'Mistakes can happen.' },
+    { id: 'survive_trap',        emoji: '💥', desc: 'Survived a deadly trap!', hint: 'Watch where you step.' },
 
     { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable." },
-    { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a trap!', hint: 'Watch where you step.' },
+    { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a trap!', hint: 'Ooops... that was deadly.' },
     { id: 'death_sleep',         emoji: '💤', desc: 'Died in your sleep...', hint: 'Not the peaceful rest you hoped for.' },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!" },
     { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.' },

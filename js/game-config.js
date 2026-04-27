@@ -13,8 +13,8 @@ var DIFFICULTY_MODES = {
     zoneMult:                 1.0,
     spawnItemDropBonus:       0,
     spawnConsumableDropBonus: 0,
-    killItemDropChance:       20,
-    killConsumableDropChance: 20
+    killItemDropChance:       5,
+    killConsumableDropChance: 10
   },
 
   // Easy — forgiving bars, wider zones, better loot from generators and kills
@@ -25,8 +25,8 @@ var DIFFICULTY_MODES = {
     zoneMult:                 1.2,
     spawnItemDropBonus:       5,
     spawnConsumableDropBonus: 8,
-    killItemDropChance:       28,
-    killConsumableDropChance: 28
+    killItemDropChance:       5,
+    killConsumableDropChance: 10
   },
 
   // Hardcore — unlocked after completing a full run; punishing bars, scarce drops
@@ -37,7 +37,7 @@ var DIFFICULTY_MODES = {
     spawnItemDropBonus:       -4,
     spawnConsumableDropBonus: -4,
     killItemDropChance:       10,
-    killConsumableDropChance: 12
+    killConsumableDropChance: 15
   }
 };
 

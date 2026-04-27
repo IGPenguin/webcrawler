@@ -70,7 +70,7 @@
   - on PR open: check version is bumped
   - in future it would be also great to have a "boot test"  to menu and to a new game
 ...
-- improve generator/story structure (+gameplay if needed) - add/improve robust hook on start
+- improve generator/story structure (+gameplay if needed)
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
 - Make Karma Matter!
   - make "Revive" interval based on karma (Todo in place)
