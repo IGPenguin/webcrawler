@@ -5,11 +5,6 @@
 - **/clear** when one-time task completed
 
 # Priority 0
-1. Redo Tutorial
-  * Expand story.csv: I'll add more steps to the Depths of Slumber area.
-  * Instructional Encounters: Instead of just a wall of text, each step will focus on one mechanic (e.g., "The Action Bar: Hit the green zone!").
-  * Safety: I'll ensure returning players (with coins/history) skip this automatically, as they do now.
-
 2. Redo Endings
   * Fix the Flakiness: Remove the encounterIndex++ hacks. Instead of the game just "ending" when the story list runs out, create a resolveEnding() function.
   * The Bride as a Gateway: When the Bride is defeated or calmed, it will trigger a transition to a final "Decision" encounter.
@@ -28,23 +23,26 @@
   - Id also like to give players option to add their nickname for the highscore - they can set it the first time they die or change in options (once options are implemented), id like it can simply be a system popup to get a string validate to lenght 3+
   - since allowing custom character names and nicknames, the highscore job should censor some most common vulgarisms to protect people when viewing rankings
   - add top score display to main menu and character score to session history
-
-4. Options Screen
-   * Difficulty Picker: Easy = Easier action bar, altough lower drops; "Hardcore" = harder + no revive
-      + new achiev for hardcore difficulty game completed
-   * Report bug button: Simple redirect to the existing gform
-   * Save Management: A clear "Reset Data" button with a confirmation popup.
+  - Cheating prevents postinghighscore
+  - highscore data: difficulty, game version, playtime, origin
 
 # Claude
-- new unique achievs: fish out a boss, fish out legendary item/food, cook food, salt food, letter interactions, Killed each enemy type, Died by trap
-- new unlockable: a portal to fairyland
-- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
 - fix: readd emoji to player name on rename, change emojito ⚠️ when cheat, apply cheat logic also in main menu rename
+- add: new playwright test "encounter types" to load a random pick of all encounter types and verify it loads and displays in the UI - for CI and also for local test-encounters.sh (+ rename boot-test.sh to test-boot.sh)
 ...
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
 - More unique origins with actual gameplay implications
   - examples??? 
+- new unlockable: a portal to fairyland
+...
+- Options Screen
+   * Difficulty Picker: Easy = Easier action bar, altough lower drops; "Hardcore" = harder + no revive
+      + new achiev for hardcore difficulty game completed
+   * Report bug button: Simple redirect to the existing gform
+   * Save Management: A clear "Reset Data" button with a confirmation popup.
+...
+- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
 - Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
@@ -53,7 +51,7 @@
 
 # Manual
 - encounters.csv: fairyland enemies toi little hp
-- rm grind achievs
+- rm grind achievs??
 
 # Low-repro bugs
 - fix engaged a boss showing again and again after each action after fishing rolls a boss
@@ -93,8 +91,9 @@
 # Parking lot
 - Take inspiration from: https://pixeldungeon.fandom.com/wiki/Main_Page
 - Legendary negating bad karma
-- +1 Drachmae for review (one time)
+- +1 Drachmae for review/donate (one time)
 - Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
+  - kinde variant to the proposed "camp" encounter type
 - Altar with no bonus attribute, pray = get exp
 - Killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
   - Append zombie emoji before 🧟 John Doe (Undead)
@@ -154,9 +153,7 @@
 - 🩸 Syphon - Damage enemy for 2, damage enemy for 2
 - ...more?
 
-
 # Playwright - Data Capture
-## The Chronos Observer (Playwright Feedback Loop)
 - **Objective:** Create a high-fidelity "Flight Recorder" using Playwright/Chromium to bridge gameplay reality with AI interpretation.
 - **Passive Monitoring:**
    - Initialize a passive session on localhost.
@@ -175,16 +172,15 @@
 
 # Crazy ideas
 - Multiplayer features
-  - highscores via github actions
-  - free github server (use json)
-  - push/get data: highscore #, achievs %
-  - (ULTRA) find other player corpse (with one of their item), fight other players ghosts/zombies
+  - find other player corpse (with one of their items)
+  - fight other players ghosts/zombies
+  - these can be submitted to googleform similar to how highscore is handled
 
-- SVG Vector Engine
+- Programmer Art Upgrade: SVG Vector Engine
   - Create an `assets/img/vectors/` library of lightweight, animated SVG backgrounds for each area (e.g., flowing lines for River, jittery pulses for Necropolis)
   - Refactor `ui-render.js` to inject these as dynamic background layers.
   - All solid backgrounds should have shading, texts can be enhaced too, but no glow.
   - Resolve "programmers art" permanently with a professional, scalable, and cohesive aesthetic that feels "alive" and premium.
 
-- Smart pets
-- Mount
+- Smart pets (not just +stat)
+- Mount (slot for mount? - related to inventory system)
