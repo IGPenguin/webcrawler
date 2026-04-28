@@ -97,6 +97,21 @@ function playerCheckLevelUp(){
     playerXP=playerXP-playerXPThreshold;
     playerXPThreshold=playerLevel*200;
     updateXPProgress();
+    if (corpseState !== "") {
+      levelUpSavedCorpse = {
+        corpseState: corpseState, corpseSnapshot: corpseSnapshot,
+        corpseHasLoot: corpseHasLoot, corpseLoot: corpseLoot,
+        enemyEmoji: enemyEmoji, enemyName: enemyName, enemyType: enemyType, enemyBossType: enemyBossType,
+        enemyHp: enemyHp, enemyHpLost: enemyHpLost,
+        enemyAtk: enemyAtk, enemyAtkBonus: enemyAtkBonus,
+        enemySta: enemySta, enemyStaLost: enemyStaLost,
+        enemyLck: enemyLck, enemyInt: enemyInt, enemyIntBonus: enemyIntBonus,
+        enemyMgk: enemyMgk, enemyMgkLost: enemyMgkLost, enemyDef: enemyDef,
+        enemyDesc: enemyDesc, enemyMsg: enemyMsg,
+        totalBonus: totalBonus, totalMalus: totalMalus,
+        playerRested: playerRested
+      };
+    }
     pushEncounter(levelUp,0);
     encounterIndex=encounterIndex-1;
     nextEncounter();

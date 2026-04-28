@@ -49,7 +49,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (enemyType!="Upgrade") {
+        var _smashableTrap = (enemyType==="Trap" || enemyType==="Trap-Roll" || enemyType==="Trap-Obstacle");
+        if (enemyType!="Upgrade" && !(_smashableTrap && _crit==='success')) {
           if (playerSta > 0) playerSta--;
         }
 
@@ -99,7 +100,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap":
           case "Trap-Roll":
           case "Trap-Obstacle":
-            logPlayerAction(actionString,"Smashed it into tiny bits -1 🟢");
+            logPlayerAction(actionString, _crit==='success'
+              ? "Obliterated it without a flinch."
+              : "Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             isFishing=false;
@@ -1119,7 +1122,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Demon":
             if ((playerMgk>0)&&(enemyInt <= playerInt )){
               var gainedXP=playerGainXP(1.25,0,"")
-              logPlayerAction(actionString,"Banished them from this world! -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              logPlayerAction(actionString,"Banished them from this world -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               displayEnemyEffect("🔥");
               nextEncounter();
               break;
@@ -2058,11 +2061,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               if (_skillOK === false) {
-                displayPlayerCannotEffect();
-                displayEnemyEffect("⚡️");
-                playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Angered the mighty spirits!", true, false);
                 isFishing = false;
                 encounterUsed = true;
+                if (_crit === 'fail') {
+                  displayPlayerCannotEffect();
+                  displayEnemyEffect("⚡️");
+                  playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Angered the mighty spirits!", true, false);
+                } else {
+                  logPlayerAction(actionString, "Your prayer went unanswered.");
+                  displayPlayerCannotEffect();
+                }
                 break;
               }
               playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);

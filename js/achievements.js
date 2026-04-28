@@ -39,7 +39,7 @@ var AchievementManager = (function () {
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.' },
 
     { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...' },
-    { id: 'eat_purple',          emoji: '💜', desc: 'Ate a premium refreshment!', hint: 'The finer things in death.' },
+    { id: 'eat_purple',          emoji: '💜', desc: 'Consumed a premium refreshment!', hint: 'The finer things in death.' },
     { id: 'eat_legendary',       emoji: '🍔', desc: 'Consumed a legendary refreshment!', hint: 'Become a certified gourmet.' },
 
     { id: 'pet_first',           emoji: '🐾', desc: 'Got your first pet!', hint: 'Befriend a furry being.' },

@@ -39,8 +39,8 @@ function resetEncounterButtons(){
   if (playerMgk<=0){
     setButton('button_cast',playerCastType+" Cast",colorDarkGrey);
     setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
-    if (playerMgk<2) setButton('button_curse',"🪬 Curse",colorDarkGrey);
   }
+  if (playerMgk<2) setButton('button_curse',"🪬 Curse",colorDarkGrey);
 }
 
 function adjustEncounterButtons(){
@@ -250,7 +250,7 @@ function adjustEncounterButtons(){
       });
       setButton('button_attack',"✨ Revive",colorGold);
       setButton('button_roll',"❌ Resign",colorRed);
-      setButton('button_block',"💌 Rate",colorPink);
+      setButton('button_block',"💚 Rate",colorSoftGreen);
       break;
 
     case "Shop":
@@ -403,73 +403,8 @@ function registerClickListenersTechnical(){
   document.getElementById('id_player_level').addEventListener(eventType, ()=>{
     var oldName=playerName;
     var newName=renameCharacter();
-    try {
-      var nameNumber=newName.match(/\d+/)[0];
-    } catch (error){
-      //console.log("try adding number");
-    }
-    var cheatAmount=3;
-
-    if (newName.includes("Cheater")){
-      if (!isNaN(nameNumber) && nameNumber>0) cheatAmount=parseInt(nameNumber);
-      playerHpMax=cheatAmount;
-      playerAtk=cheatAmount;
-      playerStaMax=cheatAmount;
-      playerMgkMax=cheatAmount;
-      playerLck=cheatAmount;
-      playerInt=cheatAmount;
-
-      playerHp=playerHpMax;
-      playerSta=playerStaMax;
-      playerMgk=playerMgkMax;
-      logCheatUse("Changed Stats ➔  "+cheatAmount);
-      return
-    }
-
-    if (newName.includes("Mucho Dinero")){
-      savedCoins=9;
-      localStorage.setItem('coins', savedCoins);
-      logCheatUse("Added Drachmae: +9 🪙");
-      return
-    }
-
-    if (newName.includes("Poco Dinero")){
-      savedCoins=3;
-      localStorage.setItem('coins', savedCoins);
-      logCheatUse("Added Drachmae: +3 🪙");
-      return
-    }
-
-    if (newName.includes("Bay Goblin")){
-      var extraBaits=[]
-      extraBaits+=chooseFrom(validBaits);
-      extraBaits+=chooseFrom(validBaits)
-      extraBaits+=chooseFrom(validBaits);
-      playerLootString+=extraBaits;
-      logCheatUse("Added baits: "+extraBaits.toString());
-      return
-    }
-
-    if (newName.includes("Genesis")){
-      AchievementManager.check('boss_kill');
-      logCheatUse("Force-unlocked Origins.");
-      return
-    }
-
-    if (newName.includes("Cleaner")){ //Full wipe to even show tutorial
-      localStorage.removeItem('coins'); 
-      savedCoins=0;
-      logCheatUse("Force-wiped save data.");
-      return
-    }
-
+    if (_applyCheatName(newName)) return;
     if (oldName!=newName) logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
     redraw();
   });
-}
-
-function logCheatUse(message){
-  AchievementManager.check('use_cheat');
-  logAction("✏️ ▸ ⚠️ <b>Cheat used: "+message+"</b>");
-  redraw();
 }

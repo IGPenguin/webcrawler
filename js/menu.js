@@ -117,6 +117,18 @@ var Menu = (function () {
     var newName = prompt('Rename your character: ', current);
     if (newName === '') newName = 'Nameless';
     else if (!newName) return; // cancelled — do nothing
+
+    // Preserve emoji prefix
+    var currentEmoji = _getCurrentNameEmoji();
+    if (currentEmoji && newName.startsWith(currentEmoji + ' ')) {
+      newName = newName.slice(currentEmoji.length + 1);
+    }
+    if (currentEmoji) newName = currentEmoji + ' ' + newName;
+
+    if (_applyCheatName(newName)) {
+      SaveManager.patchPlayerName(playerName);
+      onDone(); return;
+    }
     playerName = newName;
     SaveManager.patchPlayerName(playerName);
     onDone();

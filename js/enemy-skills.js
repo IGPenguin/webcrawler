@@ -102,7 +102,7 @@ function enemyKilled(){
   var _wasFishing=isFishing;
   isFishing=false;
 
-  if (_wasFishing || enemyBossType.includes('Boss')) {
+  if (_wasFishing) {
     animateFlipNextEncounter();
   } else {
     animateFlipToCorpse("killed");
@@ -134,7 +134,7 @@ function enemyKnockedOut(){
   isFishing=false;
   displayEnemyEffect("💤");
 
-  if (_wasFishing || enemyBossType.includes('Boss')) {
+  if (_wasFishing) {
     animateFlipNextEncounter();
   } else {
     animateFlipToCorpse("neutralized");
@@ -172,6 +172,10 @@ function transitionToCorpse(state) {
   corpseHasLoot = false;
   corpseLoot = null;
 
+  if (enemyBossType.includes('Boss')) {
+    bossDefeatedSnapshot = { name: baseName, emoji: baseEmoji };
+  }
+
   enemyEmoji = (state === "killed") ? "☠️" : "💤";
   enemyName  = baseName + (state === "killed" ? " (Dead)" : " (Asleep)");
   enemyType  = "Prop";
@@ -202,6 +206,22 @@ function transitionToCorpse(state) {
 
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   redraw();
+}
+
+function restoreCorpseAfterLevelUp() {
+  var s = levelUpSavedCorpse;
+  levelUpSavedCorpse = null;
+  corpseState = s.corpseState; corpseSnapshot = s.corpseSnapshot;
+  corpseHasLoot = s.corpseHasLoot; corpseLoot = s.corpseLoot;
+  enemyEmoji = s.enemyEmoji; enemyName = s.enemyName; enemyType = s.enemyType; enemyBossType = s.enemyBossType;
+  enemyHp = s.enemyHp; enemyHpLost = s.enemyHpLost;
+  enemyAtk = s.enemyAtk; enemyAtkBonus = s.enemyAtkBonus;
+  enemySta = s.enemySta; enemyStaLost = s.enemyStaLost;
+  enemyLck = s.enemyLck; enemyInt = s.enemyInt; enemyIntBonus = s.enemyIntBonus;
+  enemyMgk = s.enemyMgk; enemyMgkLost = s.enemyMgkLost; enemyDef = s.enemyDef;
+  enemyDesc = s.enemyDesc; enemyMsg = s.enemyMsg;
+  totalBonus = s.totalBonus; totalMalus = s.totalMalus;
+  playerRested = s.playerRested;
 }
 
 function wakeUpEnemy() {

@@ -23,6 +23,7 @@ function encounterRenew(){
   corpseSnapshot=null;
   corpseHasLoot=false;
   corpseLoot=null;
+  bossDefeatedSnapshot=null;
 }
 
 //Load or generate encounter

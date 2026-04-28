@@ -1,13 +1,26 @@
-function renameCharacter(){
-  var newPlayerName = prompt("Rename your character: ", playerName);
-  if (newPlayerName==="") {
-    newPlayerName="Nameless";
-  } else if (newPlayerName) {
-    //Name changed
-  } else {
-    newPlayerName=playerName;
+function _getCurrentNameEmoji() {
+  if (playerEmoji) return playerEmoji;
+  var lootEmojis = ['👺','🐴','🐷'];
+  for (var i = 0; i < lootEmojis.length; i++) {
+    if (playerName.startsWith(lootEmojis[i] + ' ')) return lootEmojis[i];
   }
-  playerName=newPlayerName;
+  return '';
+}
+
+function renameCharacter(){
+  var currentEmoji = _getCurrentNameEmoji();
+  var newPlayerName = prompt("Rename your character: ", playerName);
+  if (newPlayerName === "") {
+    newPlayerName = "Nameless";
+  } else if (!newPlayerName) {
+    return playerName; // cancelled
+  }
+  // strip the emoji prefix the user may have kept from the prompt default
+  if (currentEmoji && newPlayerName.startsWith(currentEmoji + ' ')) {
+    newPlayerName = newPlayerName.slice(currentEmoji.length + 1);
+  }
+  if (currentEmoji) newPlayerName = currentEmoji + ' ' + newPlayerName;
+  playerName = newPlayerName;
   redraw();
   return playerName;
 }

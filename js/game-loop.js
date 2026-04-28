@@ -22,9 +22,13 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
     previousArea = areaName;
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
-    if (enemyType.includes("Boss") && !areaName.includes("Shrouded")) {
+    if (bossDefeatedSnapshot !== null && !areaName.includes("Shrouded")) {
+      var _bsnap = bossDefeatedSnapshot;
+      bossDefeatedSnapshot = null;
+      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",_bsnap.emoji+emptySpace+"<b>"+_bsnap.name+"</b>"+emptySpace+emptySpace,colorWhite),4);
+      logAction("👑 ▸ "+_bsnap.emoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+_bsnap.name+"</b></text>")
+    } else if (enemyType.includes("Boss") && !areaName.includes("Shrouded")) {
       curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+"<b>"+enemyName+"</b>"+emptySpace+emptySpace,colorWhite),4);
-
       logAction("👑 ▸ "+enemyEmoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+enemyName+"</b></text>")
     }
   }
@@ -60,6 +64,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
                   + "</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>";
     transitionArea(_areaHtml, function () {
       loadEncounter(encounterIndex);
+      if (levelUpSavedCorpse !== null && enemyType !== "Upgrade") restoreCorpseAfterLevelUp();
       setBackground(areaName);
       if (!areaName.includes("Fading") && !areaName.includes("Eternal") && !areaName.includes("Depths") && !adventureLog.includes("Arrived to area: <b>"+areaName+"</b>")) {
         logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
@@ -72,6 +77,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
   }
 
   loadEncounter(encounterIndex);
+  if (levelUpSavedCorpse !== null && enemyType !== "Upgrade") restoreCorpseAfterLevelUp();
 
   // Boss → new area: boss curtain handles bg swap via setBackground(areaName) while black
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){
