@@ -142,6 +142,20 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
                     n = check_length(msg, TEXT_LIMITS['encounter_msg'], 'Message', loc, row_id, warnings)
                     msg_lengths.append((n, loc, row_id))
 
+                # desc must contain <br> (po/em and Generator XXX placeholders are exempt)
+                if desc and '<br>' not in desc and 'po/em' not in desc and not (is_generator and desc.strip() == 'XXX'):
+                    warnings.append(f'Missing <br> - {loc} {row_id}: desc has no <br> tag')
+
+            # Warn on empty fields — two adjacent semicolons indicate a forgotten value.
+            # Message col (index 13) is legitimately blank for non-combat encounters; skip it.
+            MESSAGE_COL = 13
+            for col_i, val in enumerate(cols):
+                if col_i == MESSAGE_COL:
+                    continue
+                if val == '':
+                    col_name = header[col_i] if col_i < len(header) else str(col_i)
+                    warnings.append(f'Empty Field - {file_path}:{i} {row_id}: \'{col_name}\' column is empty')
+
             # Text length checks for origins
             if expected_columns == 11:
                 loc = f"{file_path}:{i}"
@@ -411,44 +425,51 @@ def check_tutorial_skip_index(story_csv_path, data_loader_path):
     return errors
 
 def main():
+    # Optional first arg: 'csv' or 'html' runs only that subset.
+    # Two file-path args trigger version-check mode (existing CI behaviour).
+    # No args (or unrecognised first arg) runs everything.
+    mode = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in ('csv', 'html') else None
+
     all_errors = []
     all_warnings = []
 
-    # Validate encounters.csv
-    if os.path.exists('data/encounters.csv'):
-        errs, warns = validate_csv('data/encounters.csv', 15, range(4, 11), check_sequence=True)
-        all_errors.extend(errs)
-        all_warnings.extend(warns)
+    if mode in (None, 'csv'):
+        # Validate encounters.csv
+        if os.path.exists('data/encounters.csv'):
+            errs, warns = validate_csv('data/encounters.csv', 15, range(4, 11), check_sequence=True)
+            all_errors.extend(errs)
+            all_warnings.extend(warns)
 
-    # Validate story.csv
-    if os.path.exists('data/story.csv'):
-        errs, warns = validate_csv('data/story.csv', 15, range(4, 11))
-        all_errors.extend(errs)
-        all_warnings.extend(warns)
+        # Validate story.csv
+        if os.path.exists('data/story.csv'):
+            errs, warns = validate_csv('data/story.csv', 15, range(4, 11))
+            all_errors.extend(errs)
+            all_warnings.extend(warns)
 
-    # Check tutorial skip index consistency
-    if os.path.exists('data/story.csv') and os.path.exists('js/data-loader.js'):
-        all_errors.extend(check_tutorial_skip_index('data/story.csv', 'js/data-loader.js'))
+        # Check tutorial skip index consistency
+        if os.path.exists('data/story.csv') and os.path.exists('js/data-loader.js'):
+            all_errors.extend(check_tutorial_skip_index('data/story.csv', 'js/data-loader.js'))
 
-    # Validate origins.csv
-    if os.path.exists('data/origins.csv'):
-        errs, _ = validate_csv('data/origins.csv', 11, range(2, 9))
-        all_errors.extend(errs)
+        # Validate origins.csv
+        if os.path.exists('data/origins.csv'):
+            errs, _ = validate_csv('data/origins.csv', 11, range(2, 9))
+            all_errors.extend(errs)
 
-    # Validate JS files
-    if os.path.exists('js'):
-        all_warnings.extend(validate_js_files('js'))
+        # JS file text-length checks
+        if os.path.exists('js'):
+            all_warnings.extend(validate_js_files('js'))
 
-    # Validate HTML structure and style attributes
-    if os.path.exists('index.md'):
-        errs, warns = validate_html_file('index.md')
-        all_errors.extend(errs)
-        all_warnings.extend(warns)
-    if os.path.exists('js'):
-        all_warnings.extend(validate_html_in_js('js'))
+    if mode in (None, 'html'):
+        # Validate HTML structure and style attributes
+        if os.path.exists('index.md'):
+            errs, warns = validate_html_file('index.md')
+            all_errors.extend(errs)
+            all_warnings.extend(warns)
+        if os.path.exists('js'):
+            all_warnings.extend(validate_html_in_js('js'))
 
-    # Version check if base config is provided
-    if len(sys.argv) > 2:
+    # Version check if base config is provided (no mode keyword — both args are file paths)
+    if mode is None and len(sys.argv) > 2:
         current_config_path = sys.argv[1]
         base_config_path = sys.argv[2]
 

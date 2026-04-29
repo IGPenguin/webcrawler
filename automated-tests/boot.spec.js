@@ -21,7 +21,6 @@ const RUN_DIR = SCREENSHOTS ? makeRunDir() : null;
 
 function log(msg) {
   console.log(msg);
-  if (RUN_DIR) fs.appendFileSync(`${RUN_DIR}/run.log`, msg + '\n');
 }
 
 async function shot(page, name) {

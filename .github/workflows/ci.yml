@@ -19,16 +19,39 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Validate CSVs and HTML
+      - name: Validate CSVs
         run: |
           if [ "${{ github.event_name }}" = "push" ]; then
-            changed=$(git diff --name-only HEAD~1 HEAD | grep -E '^(data/|index\.md|js/)' || true)
+            changed=$(git diff --name-only HEAD~1 HEAD | grep -E '^(data/|js/)' || true)
             if [ -z "$changed" ]; then
               echo "No relevant files changed, skipping."
               exit 0
             fi
           fi
-          python automated-tests/validator.py
+          python automated-tests/validator.py csv
+
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate HTML
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            changed=$(git diff --name-only HEAD~1 HEAD | grep -E '^(index\.md|js/)' || true)
+            if [ -z "$changed" ]; then
+              echo "No relevant files changed, skipping."
+              exit 0
+            fi
+          fi
+          python automated-tests/validator.py html
 
   validate-js:
     runs-on: ubuntu-latest
