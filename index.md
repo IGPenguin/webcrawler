@@ -31,6 +31,7 @@ layout: default
 <script src="js/encounter-loader.js"></script>
 <script src="js/encounter-generator.js"></script>
 <script src="js/game-loop.js"></script>
+<script src="js/score-manager.js"></script>
 <script src="js/social.js"></script>
 <script src="js/action-resolver.js"></script>
 <script src="js/action-bar.js"></script>
@@ -188,6 +189,7 @@ layout: default
         <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share <i style="color:grey;">[Beta]</i></button>
         <button class="menu-btn" id="menu_history_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
       </div>
+      <button class="menu-btn" id="menu_history_scorelink" style="display:none; margin-top:4px; color:#7193bf; font-size:13px;">🔗 Copy Score Link</button>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>
     </div>
   </div>
@@ -224,6 +226,31 @@ layout: default
     </div>
   </div>
 
+  <!-- Rankings screen -->
+  <div id="menu_rankings_screen" style="display:none;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
+      <h2 style="font-size:20px;
+            letter-spacing:1.5px;
+            -webkit-text-stroke: 5px black;
+            paint-order: stroke fill;
+            margin:8px 0 8px 0;
+            text-align:center;">⭐️ Rankings</h2>
+      <div style="flex:1;
+                  min-height:0;
+                  max-height:380px;
+                  overflow-x:hidden;
+                  overflow-y:auto;
+                  scrollbar-width:none;
+                  padding-top:4px;
+                  margin-top:-6px;
+                  padding-bottom:4px;">
+        <div id="menu_rankings_list"></div>
+      </div>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_rankings_back">👈 Back</button>
+    </div>
+  </div>
+
   <!-- Always-visible version footer -->
   <div style="cursor: pointer; width:100%; text-align:center;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
     <h4 style="font-size:11px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
@@ -231,6 +258,19 @@ layout: default
   <h4 id="menu_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
 
 </div><!-- end id_menu -->
+
+<!-- Nickname overlay — shown on first game end if no leaderboard nickname is set -->
+<div id="nickname_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+  <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
+    <h3 style="text-align:center; margin:0 0 6px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">Set leaderboard nickname</h3>
+    <h5 style="text-align:center; margin:0 0 14px 0; opacity:0.55; font-size:13px; font-weight:400;">Shown on global rankings. Can be changed later in settings.</h5>
+    <input id="nickname_input" type="text" maxlength="32" placeholder="Your nickname (3+ chars)"
+           style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
+    <h5 id="nickname_error" style="color:#ff4444; text-align:center; margin:6px 0 0 0; font-size:13px; display:none;">Minimum 3 characters required.</h5>
+    <button id="nickname_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Set Nickname &amp; Submit Score</button>
+    <button id="nickname_skip" class="menu-btn" style="margin-top:4px; color:grey; font-size:13px;">Skip — don't submit this run</button>
+  </div>
+</div>
 
 <!-- ── Game ───────────────────────────────────────────────────────────── -->
 <div id="id_game" style="display:none;">

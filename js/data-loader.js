@@ -9,6 +9,7 @@ var linesOrigins    = [];
 
 $(document).ready(function() {
   Menu.init();
+  ScoreManager.init();
 
   $.ajax({ type: "GET", url: "data/story.csv", dataType: "text",
     success: function(data) {

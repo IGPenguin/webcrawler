@@ -19,7 +19,9 @@ var SaveManager = (function () {
   function listSessionHistory() {
     try {
       var raw = localStorage.getItem(HISTORY_KEY);
-      return raw ? JSON.parse(raw) : [];
+      var sessions = raw ? JSON.parse(raw) : [];
+      sessions.sort(function (a, b) { return (b.score || 0) - (a.score || 0); });
+      return sessions;
     } catch (e) { return []; }
   }
 
@@ -59,6 +61,9 @@ var SaveManager = (function () {
         adventureStartTime:    adventureStartTime,
         adventureLog:          adventureLog,
         adventureEncounterCount: adventureEncounterCount,
+        encounterCount:        encounterCount,
+        runStartTimestamp:     runStartTimestamp,
+        playerOriginName:      playerOriginName,
         adventureEndReason:    adventureEndReason,
         seenLoot:              seenLoot,
         seenEncounters:        seenEncounters,
@@ -127,6 +132,9 @@ var SaveManager = (function () {
     adventureStartTime      = s.adventureStartTime;
     adventureLog            = s.adventureLog;
     adventureEncounterCount = s.adventureEncounterCount;
+    encounterCount          = s.encounterCount      || 0;
+    runStartTimestamp       = s.runStartTimestamp   || Date.now();
+    playerOriginName        = s.playerOriginName    || '';
     adventureEndReason      = s.adventureEndReason;
     seenLoot                = s.seenLoot       || [];
     seenEncounters          = s.seenEncounters || [];
@@ -181,7 +189,14 @@ var SaveManager = (function () {
       playerMgkMax:      saved.playerMgkMax,
       playerLootString:  String(saved.playerLootString  || ''),
       playerPartyString: String(saved.playerPartyString || ''),
-      sessionAchievements: (typeof AchievementManager !== 'undefined' ? AchievementManager.getSessionUnlocked() : [])
+      sessionAchievements: (typeof AchievementManager !== 'undefined' ? AchievementManager.getSessionUnlocked() : []),
+      score:          0,
+      endType:        'abandoned',
+      ghostLink:      null,
+      playerOriginName: saved.playerOriginName || '',
+      encounterCount: saved.encounterCount || 0,
+      difficulty:     'Standard',
+      playtime:       0
     });
     clearGameState();
   }

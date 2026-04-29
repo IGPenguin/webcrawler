@@ -10,23 +10,8 @@
   * The Bride as a Gateway: When the Bride is defeated or calmed, it will trigger a transition to a final "Decision" encounter.
   * Branching Choices: Based on your playerLove and playerKarma, the buttons will change to your specific endings: Kiss her goodnight, Mercy kill, Truly Revive, etc.
 
-3. Highscore
-  - add "High Score" = level+1, enc count /10, pets/recruits+1, stats +1, karma +/-, complete game +100, difficulty multiplier (or similar maths behind it)
-  - display at: dead/game end, menu char preview, session history
-  - sort the session history by score top -> bottom
-  - on game end, use `fetch()` with `mode: 'no-cors'` to background-POST score data to a Google Form `formResponse` endpoint (silent submission).
-  - automation: github action runs every 30mins to pull google sheet csv (+ manual trigger option), sort scores and update a highscores.json
-  - highscores.json commits on a separate git branch "leaderboard" (or should that be a separate private repo?)
-  - Generate a simple HMAC/Hash in JS (e.g., `md5(name+score+salt)`) and verify it in the GitHub Action script to prevent basic spoofing.
-  - add main menu "Leaderboard" section to display global highscore list
-  - hisghscore data should include the score, char name, stats, datetime, ending type (even death)... suggest more if any
-  - Id also like to give players option to add their nickname for the highscore - they can set it the first time they die or change in options (once options are implemented), id like it can simply be a system popup to get a string validate to lenght 3+
-  - since allowing custom character names and nicknames, the highscore job should censor some most common vulgarisms to protect people when viewing rankings
-  - add top score display to main menu and character score to session history
-  - Cheating prevents postinghighscore
-  - highscore data: difficulty, game version, playtime, origin
-
 # Claude
+- Legendary item increasing drop chances for higher than common rarity
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
 - More unique origins with actual gameplay implications

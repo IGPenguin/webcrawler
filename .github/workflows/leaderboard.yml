@@ -1,0 +1,42 @@
+name: Update Leaderboard
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-leaderboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history for branch switching)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Process leaderboard
+        env:
+          LEADERBOARD_SALT: ${{ secrets.LEADERBOARD_SALT }}
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
+        run: python .github/leaderboard_action.py
+
+      - name: Commit to rankings branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin rankings
+          git checkout rankings
+          cp /tmp/highscores.json highscores.json
+          git add highscores.json
+          if git diff --cached --quiet; then
+            echo "No changes — skipping commit."
+          else
+            git commit -m "update highscores $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push origin rankings
+          fi

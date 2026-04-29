@@ -8,7 +8,8 @@ var Menu = (function () {
     'menu_history_screen',
     'menu_credits_screen',
     'menu_confirm_screen',
-    'menu_origin_screen'
+    'menu_origin_screen',
+    'menu_rankings_screen'
   ];
 
   // ── Show / Hide ────────────────────────────────────────────────────────────
@@ -154,6 +155,7 @@ var Menu = (function () {
       if (mgk > 0) AchievementManager.check('mana_first');
       playerName = origin.emoji + ' ' + (origin.rolledName || getOriginName(origin));
       playerEmoji = origin.emoji;
+      playerOriginName = origin.originName || '';
       playerDestined = true;
       AchievementManager.check('destiny');
     }
@@ -392,6 +394,8 @@ var Menu = (function () {
   function _renderHistoryList() {
     _currentDetailSession = null;
     document.getElementById('menu_history_actions').style.display = 'none';
+    var _slBtn = document.getElementById('menu_history_scorelink');
+    if (_slBtn) _slBtn.style.display = 'none';
     _bindHistoryBack('👈 Back', function () { _renderMain(); });
 
     var list = document.getElementById('menu_history_list');
@@ -427,7 +431,8 @@ var Menu = (function () {
           + '</div>'
         + '</div>'
         + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400">' + (session.area || '?') + '&nbsp;&nbsp;❖&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
-        + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '') + '</h5>';
+        + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
+        + (session.score !== undefined ? '&nbsp;&nbsp;❖&nbsp;&nbsp;⭐ ' + session.score : '') + '</h5>';
 
       entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
       list.appendChild(entry);
@@ -495,6 +500,44 @@ var Menu = (function () {
     var clearDiv = document.createElement('div');
     clearDiv.style.clear = 'both';
     list.appendChild(clearDiv);
+
+    // Score + run info bar
+    if (session.score !== undefined) {
+      var scoreBar = document.createElement('div');
+      scoreBar.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
+      scoreBar.innerHTML =
+        '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">⭐ Score: <b>' + session.score + '</b>'
+        + (session.encounterCount ? '&nbsp;&nbsp;&nbsp;Encounters: ' + session.encounterCount : '') + '</h5>'
+        + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
+        + (session.playerOriginName ? 'Origin: ' + session.playerOriginName + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
+        + 'Playtime: ' + _formatPlaytime(session.playtime || 0) + '</h5>';
+      list.appendChild(scoreBar);
+    }
+
+    // Wire Copy Score Link button
+    var scoreLinkBtn = document.getElementById('menu_history_scorelink');
+    if (scoreLinkBtn) {
+      if (session.ghostLink) {
+        scoreLinkBtn.style.display = '';
+        scoreLinkBtn.onclick = function () {
+          var link = window.location.origin + window.location.pathname + '?ghost=' + session.ghostLink;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(link).catch(function () {});
+          } else {
+            var ta = document.createElement('textarea');
+            ta.value = link;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          scoreLinkBtn.innerHTML = '✅ Copied!';
+          setTimeout(function () { scoreLinkBtn.innerHTML = '🔗 Copy Score Link'; }, 2000);
+        };
+      } else {
+        scoreLinkBtn.style.display = 'none';
+      }
+    }
 
     // Size the log to fill remaining space — measured after layout so the
     // height is exact regardless of card/loot-bar size.
@@ -699,6 +742,122 @@ var Menu = (function () {
     _showScreen('menu_credits_screen');
   }
 
+  // ── Helpers ────────────────────────────────────────────────────────────────
+
+  function _formatPlaytime(seconds) {
+    var m = Math.floor(seconds / 60);
+    var s = seconds % 60;
+    return m + 'm ' + s + 's';
+  }
+
+  // ── Rankings ───────────────────────────────────────────────────────────────
+
+  function _bindRankingsBack(label, handler) {
+    var btn = document.getElementById('menu_rankings_back');
+    if (!btn) return;
+    btn.innerHTML = label;
+    btn.onclick = handler;
+  }
+
+  function _renderRankings() {
+    _bindRankingsBack('👈 Back', function () { _renderMain(); });
+    _showScreen('menu_rankings_screen');
+    var list = document.getElementById('menu_rankings_list');
+    list.innerHTML = '<h4 style="text-align:center; padding:20px 0; color:#fff; min-height:0; margin:0; opacity:0.5;">Loading...</h4>';
+
+    ScoreManager.fetchRankings(function (err, data) {
+      if (err || !data) {
+        list.innerHTML = '<h4 style="text-align:center; padding:20px 0; color:#ff4444; min-height:0; margin:0;">Could not load rankings.<br><span style="opacity:0.5; font-size:13px;">Check your connection.</span></h4>';
+        return;
+      }
+      if (!data.length) {
+        list.innerHTML = '<h4 style="text-align:center; padding:20px 0; min-height:0; margin:0; opacity:0.5;">No rankings yet.<br>Be the first!</h4>';
+        return;
+      }
+      list.innerHTML = '';
+      data.forEach(function (entry, i) {
+        var el = document.createElement('div');
+        el.className = 'menu-history-entry';
+        var rankColor = i === 0 ? '#FFD940' : i < 3 ? '#c0c0c0' : '#fff';
+        el.innerHTML =
+          '<div style="overflow:hidden;padding-bottom:3px;">'
+            + '<h3 style="margin-top:3px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px;">'
+            + '<i style="font-weight:600; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
+            + '#' + (i + 1) + '&nbsp;&nbsp;⭐ ' + (entry.score || 0)
+            + '</i></h3>'
+            + '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; padding-top:3px; padding-bottom:2px; background-color:#202020;">'
+            + '<h3 style="text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin-top:-1px; margin-bottom:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
+            + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
+            + '<h5 style="margin:4px 0 1px 0; font-size:14px; font-style:normal; font-weight:400;">'
+            + (entry.charName || '?') + '&nbsp;❖&nbsp;Lvl ' + (entry.level || '?') + '&nbsp;❖&nbsp;' + (entry.endType === 'win' ? '👑 Win' : '💀 Death') + '</h5>'
+            + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px;">'
+            + (entry.origin ? entry.origin + '&nbsp;&nbsp;' : '')
+            + (entry.datetime ? entry.datetime.slice(0, 10) : '')
+            + (entry.ghostLink ? '&nbsp;&nbsp;<span class="ranking-ghost-btn" style="color:#7193bf; cursor:pointer;">👁 View</span>' : '')
+            + '</h5>';
+        if (entry.ghostLink) {
+          el.querySelector('.ranking-ghost-btn').addEventListener('click', function (e) {
+            e.stopPropagation();
+            var ghost = ScoreManager.decodeGhostLink(entry.ghostLink);
+            if (ghost) menuFade(function () { _renderViewGhost(ghost); });
+          });
+        }
+        list.appendChild(el);
+      });
+    });
+  }
+
+  function _renderViewGhost(ghost) {
+    _bindRankingsBack('👈 Rankings', _renderRankings);
+    var list = document.getElementById('menu_rankings_list');
+    var sc = list.parentElement;
+    sc.style.overflowY = 'hidden';
+    list.innerHTML = '';
+
+    var statParts = (ghost.stats || '').split(';');
+    var hp  = parseInt(statParts[0]) || 0;
+    var atk = parseInt(statParts[1]) || 0;
+    var sta = parseInt(statParts[2]) || 0;
+    var mgk = parseInt(statParts[5]) || 0;
+    var stats = _buildStats(hp, sta, atk, mgk);
+    var partyLoot = String(ghost.inventory || '');
+
+    var card = document.createElement('div');
+    card.innerHTML = _buildRunCardHTML(
+      ghost.charName || '?',
+      ghost.level || '?',
+      (ghost.difficulty || 'Standard') + ' · ' + (ghost.encounterCount || 0) + ' encounters',
+      stats, partyLoot,
+      ghost.endType === 'win' ? '👑 Finished!' : '💀 ' + (ghost.endType || 'death'),
+      ghost.datetime ? ghost.datetime.slice(0, 10) : null,
+      true, null, true
+    );
+    list.appendChild(card);
+
+    var infoEl = document.createElement('div');
+    infoEl.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
+    infoEl.innerHTML =
+      '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">⭐ Score: <b>' + (ghost.score || 0) + '</b></h5>'
+      + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
+      + (ghost.origin ? 'Origin: ' + ghost.origin + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
+      + 'Playtime: ' + _formatPlaytime(ghost.playtime || 0) + '</h5>'
+      + '<h5 style="margin:2px 0; font-size:12px; opacity:0.5;">' + (ghost.gameVersion || '') + '</h5>';
+    list.appendChild(infoEl);
+
+    var lootBar = document.createElement('h3');
+    lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0; margin-top:8px; display:inline-block; width:95.8%; box-shadow:0 0 0 3px #121212; background-color:#272727;';
+    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">∙∙∙</span>';
+    list.appendChild(lootBar);
+    var clearDiv = document.createElement('div');
+    clearDiv.style.clear = 'both';
+    list.appendChild(clearDiv);
+
+    requestAnimationFrame(function () {
+      var logH = sc.clientHeight - card.offsetHeight - lootBar.offsetHeight - infoEl.offsetHeight - 20;
+      logH; // ghost view has no log — layout only
+    });
+  }
+
   // ── Button wiring ──────────────────────────────────────────────────────────
 
   function _bindButtons() {
@@ -744,6 +903,8 @@ var Menu = (function () {
     document.getElementById('menu_challenges').addEventListener('click', function () { _renderChallenges(); });
     document.getElementById('menu_history').addEventListener('click', _renderHistory);
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
+    document.getElementById('menu_leaderboard').addEventListener('click', _renderRankings);
+    document.getElementById('menu_leaderboard').style.color = '';
     document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
     document.getElementById('menu_credits_share').addEventListener('click', function () {
       window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent('https://igpenguin.github.io/stay-dead'));

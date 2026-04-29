@@ -18,6 +18,7 @@ function getRandomFish(forcedLootIndex){ //TODO refactor into encounters.csv (in
 
 function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even generator encounters go through here :)
   fishingRested = false; // leaving this encounter — reset fishing sleep limit
+  encounterCount++;
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
     previousArea = areaName;
     markAsSeen(enemyName);
@@ -122,6 +123,7 @@ function gameOver(silent=false){
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
   runLogAdd("run_end", {outcome: "death", killedBy: enemyName, killedByEmoji: enemyEmoji, area: areaName, time: adventureEndTime});
   downloadRunLog();
+  var _deathPayload = ScoreManager.buildPayload('death');
   SaveManager.saveSession({
     date: adventureStartTime,
     playerName: playerName,
@@ -137,8 +139,16 @@ function gameOver(silent=false){
     playerMgkMax: playerMgkMax,
     playerLootString: String(playerLootString),
     playerPartyString: String(playerPartyString),
-    sessionAchievements: AchievementManager.getSessionUnlocked()
+    sessionAchievements: AchievementManager.getSessionUnlocked(),
+    score:          _deathPayload.score,
+    endType:        'death',
+    ghostLink:      ScoreManager.encodeGhostLink(_deathPayload),
+    playerOriginName: playerOriginName || 'None',
+    encounterCount: encounterCount || 0,
+    difficulty:     _deathPayload.difficulty,
+    playtime:       _deathPayload.playtime
   });
+  ScoreManager.submitOrPrompt(_deathPayload);
   lastEncounterIndex = encounterIndex; //Save death position for reincarnation
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
@@ -158,6 +168,7 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   adventureEndTime=getTime();
   runLogAdd("run_end", {outcome: "win", area: areaName, time: adventureEndTime});
   downloadRunLog();
+  var _winPayload = ScoreManager.buildPayload('win');
   SaveManager.saveSession({
     date: adventureStartTime,
     playerName: playerName,
@@ -173,8 +184,16 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
     playerMgkMax: playerMgkMax,
     playerLootString: String(playerLootString),
     playerPartyString: String(playerPartyString),
-    sessionAchievements: AchievementManager.getSessionUnlocked()
+    sessionAchievements: AchievementManager.getSessionUnlocked(),
+    score:          _winPayload.score,
+    endType:        'win',
+    ghostLink:      ScoreManager.encodeGhostLink(_winPayload),
+    playerOriginName: playerOriginName || '',
+    encounterCount: encounterCount || 0,
+    difficulty:     _winPayload.difficulty,
+    playtime:       _winPayload.playtime
   });
+  ScoreManager.submitOrPrompt(_winPayload);
 
   // Run is over — clear the active run so Continue is not offered after a win
   SaveManager.clearGameState();

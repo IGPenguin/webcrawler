@@ -89,6 +89,9 @@ var actionString; //Initial action log below
 var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>";
 var adventureLog = actionLog;
 var adventureEncounterCount = 1;
+var encounterCount = 0;      // total encounters this run; incremented by nextEncounter()
+var runStartTimestamp = 0;   // Date.now() at run start; used for playtime calculation
+var playerOriginName = '';   // origin name applied at game start; '' = no origin
 var adventureEndReason = "";
 
 //Area init

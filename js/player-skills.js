@@ -42,6 +42,9 @@ function renewPlayer(){ //Default values
   adventureLog = actionLog;
   spentCoins=0;
   availableCoins=savedCoins;
+  encounterCount = 0;
+  runStartTimestamp = Date.now();
+  playerOriginName = '';
 
   initRunLog();
 }
