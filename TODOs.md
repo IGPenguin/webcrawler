@@ -27,8 +27,7 @@
   - highscore data: difficulty, game version, playtime, origin
 
 # Claude
-- fix: readd emoji to player name on rename, change emojito ⚠️ when cheat, apply cheat logic also in main menu rename
-- add: new playwright test "encounter types" to load a random pick of all encounter types and verify it loads and displays in the UI - for CI and also for local test-encounters.sh (+ rename boot-test.sh to test-boot.sh)
+- add: new playwright CI test + local bash launcher test-encounters.sh to load a random pick of all encounter types and verify it loads and displays in the UI (+ rename boot-test.sh to test-boot.sh)
 ...
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
@@ -74,10 +73,13 @@
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
 - Make Karma Matter!
   - make "Revive" interval based on karma (Todo in place)
-  - on revive, get back to live (last encounter) with 1 HP
   - karma affects on action bar chances?
   - plus check, what changes karma, possibly adjust/expand
   - Mischievous encounters + bad drops/twisted legendaries on bad karma
+  - should we make karma NOT reset between runs? (it could secretely affect the game)
+     - It would need to be subtle/fair so that everyone does not have bad experience just because the have no clue, possibly there could be encounter, that exposes the "Soul Standing" and hints what it does
+     - There should be proactive actions available to fix bad karma if players learn that they have bad standing
+     - killing enemies that are agressive should be fine, putting to sleep aggresive enemies should be considered good deed, killing non aggressive enemies should be considered bad, attacking friends should be bad etc.... suggest more hooks to karma?
 - Drachmae shop add more options - game run modifiers? (unlock after special condition?)
   - Get coin for negative effect: +enemy dmg/hp/sta...
   - Get coin for Big Karma--
