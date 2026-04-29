@@ -3,6 +3,7 @@ function logCheatUse(message) {
   var baseName = currentEmoji ? playerName.slice(currentEmoji.length + 1) : playerName;
   playerEmoji = '⚠️';
   playerName = '⚠️ ' + baseName;
+  cheatedThisRun = true;
   AchievementManager.check('use_cheat');
   logAction("✏️ ▸ ⚠️ <b>Cheat used: " + message + "</b>");
   redraw();

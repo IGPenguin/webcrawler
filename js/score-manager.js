@@ -99,30 +99,32 @@ var ScoreManager = (function () {
   async function _doSubmit(payload) {
     var hash = await _generateHash(payload);
     var ghost = encodeGhostLink(payload);
-    var fd = new FormData();
-    fd.append(ENTRY.score,          payload.score);
-    fd.append(ENTRY.nickname,       payload.nickname);
-    fd.append(ENTRY.charName,       payload.charName);
-    fd.append(ENTRY.origin,         payload.origin);
-    fd.append(ENTRY.level,          payload.level);
-    fd.append(ENTRY.encounterCount, payload.encounterCount);
-    fd.append(ENTRY.companions,     payload.companions);
-    fd.append(ENTRY.stats,          payload.stats);
-    fd.append(ENTRY.karma,          payload.karma);
-    fd.append(ENTRY.difficulty,     payload.difficulty);
-    fd.append(ENTRY.gameVersion,    payload.gameVersion);
-    fd.append(ENTRY.playtime,       payload.playtime);
-    fd.append(ENTRY.endType,        payload.endType);
-    fd.append(ENTRY.datetime,       payload.datetime);
-    fd.append(ENTRY.inventory,      payload.inventory);
-    fd.append(ENTRY.coins,          payload.coins);
-    fd.append(ENTRY.ghostLink,      ghost);
-    fd.append(ENTRY.hash,           hash);
-    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: fd }).catch(function () {});
+    // Google Forms requires application/x-www-form-urlencoded — URLSearchParams sends that format.
+    // FormData sends multipart/form-data which the formResponse endpoint silently rejects.
+    var params = new URLSearchParams();
+    params.append(ENTRY.score,          payload.score);
+    params.append(ENTRY.nickname,       payload.nickname);
+    params.append(ENTRY.charName,       payload.charName);
+    params.append(ENTRY.origin,         payload.origin);
+    params.append(ENTRY.level,          payload.level);
+    params.append(ENTRY.encounterCount, payload.encounterCount);
+    params.append(ENTRY.companions,     payload.companions);
+    params.append(ENTRY.stats,          payload.stats);
+    params.append(ENTRY.karma,          payload.karma);
+    params.append(ENTRY.difficulty,     payload.difficulty);
+    params.append(ENTRY.gameVersion,    payload.gameVersion);
+    params.append(ENTRY.playtime,       payload.playtime);
+    params.append(ENTRY.endType,        payload.endType);
+    params.append(ENTRY.datetime,       payload.datetime);
+    params.append(ENTRY.inventory,      payload.inventory);
+    params.append(ENTRY.coins,          payload.coins);
+    params.append(ENTRY.ghostLink,      ghost);
+    params.append(ENTRY.hash,           hash);
+    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: params }).catch(function () {});
   }
 
   function submitOrPrompt(payload) {
-    if (AchievementManager.isUnlocked('use_cheat')) return;
+    if (cheatedThisRun) return;
     if (getNickname()) {
       payload.nickname = getNickname();
       _doSubmit(payload);

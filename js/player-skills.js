@@ -45,6 +45,7 @@ function renewPlayer(){ //Default values
   encounterCount = 0;
   runStartTimestamp = Date.now();
   playerOriginName = '';
+  cheatedThisRun = false;
 
   initRunLog();
 }
