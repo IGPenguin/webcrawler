@@ -165,27 +165,57 @@ var Menu = (function () {
   function _rollOrigins() {
     var cards = typeof getOrigins === 'function' ? getOrigins() : [];
 
-    // Return stored roll if still valid against current card pool
+    // Filter achievement-locked origins
+    var available = cards.filter(function(o) {
+      var a = o.achiev || 'none';
+      return a === 'none' || AchievementManager.isUnlocked(a);
+    });
+
+    // Return stored roll if still valid against the unlocked pool
     try {
       var stored = localStorage.getItem('originRoll');
       if (stored) {
         var parsed = JSON.parse(stored);
-        var names = cards.map(function(c) { return c.originName; });
+        var unlockedNames = available.map(function(c) { return c.originName; });
         if (Array.isArray(parsed) && parsed.length > 0 &&
-            parsed.every(function(o) { return o && o.originName && names.indexOf(o.originName) >= 0; })) {
+            parsed.every(function(o) { return o && o.originName && unlockedNames.indexOf(o.originName) >= 0; })) {
           return parsed;
         }
       }
     } catch(e) {}
 
-    // Fresh roll — shuffle, pick 3, attach a rolled name to each
-    var shuffled = cards.slice();
-    for (var i = shuffled.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
+    if (available.length === 0) return [];
+
+    // Group unlocked origins by rarity tier
+    var tierBuckets = {};
+    available.forEach(function(o) {
+      var tier = RarityManager.getTierForNet(_originNet(o));
+      if (!tierBuckets[tier]) tierBuckets[tier] = [];
+      tierBuckets[tier].push(o);
+    });
+
+    // Roll 3 origins using rarity-weighted selection with deduplication.
+    // Each slot does an independent tier roll; falls back to any available origin
+    // if the rolled tier is exhausted.
+    var roll = [];
+    var usedNames = {};
+    for (var attempts = 0; roll.length < Math.min(3, available.length) && attempts < 30; attempts++) {
+      var tier = RarityManager.rollTier(playerLck, playerKarma);
+      var bucket = tierBuckets[tier] || [];
+      var candidates = bucket.filter(function(o) { return !usedNames[o.originName]; });
+      if (candidates.length === 0) {
+        console.log('OriginRarityRoll:' + tier + ' → no pool, flat fallback');
+        candidates = available.filter(function(o) { return !usedNames[o.originName]; });
+      } else {
+        console.log('OriginRarityRoll:' + tier);
+      }
+      if (candidates.length === 0) break;
+      var picked = candidates[Math.floor(Math.random() * candidates.length)];
+      picked.rolledName = getOriginName(picked);
+      usedNames[picked.originName] = true;
+      roll.push(picked);
     }
-    var roll = shuffled.slice(0, Math.min(3, shuffled.length));
-    roll.forEach(function(o) { o.rolledName = getOriginName(o); });
+
     try { localStorage.setItem('originRoll', JSON.stringify(roll)); } catch(e) {}
     return roll;
   }
@@ -198,19 +228,11 @@ var Menu = (function () {
   }
 
   function _originRarityBg(net) {
-    if (net <  0)   return colorDarkRed;
-    if (net >= 3.0) return colorDarkOrange;
-    if (net >= 1.5) return colorDarkPurple;
-    if (net >= 0.5) return colorDarkBlue;
-    return '';
+    return RarityManager.getBg(RarityManager.getTierForNet(net));
   }
 
   function _originRarityColor(net) {
-    if (net <  0)   return colorSoftRed;
-    if (net >= 3.0) return colorOrange;
-    if (net >= 1.5) return colorPurple;
-    if (net >= 0.5) return colorLightBlue;
-    return colorWhite;
+    return RarityManager.getColor(RarityManager.getTierForNet(net));
   }
 
   function _renderOriginPicker() {

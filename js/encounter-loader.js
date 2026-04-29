@@ -78,7 +78,7 @@ function loadEncounter(index, fileLines = linesStory){
   if (totalBonus=="") totalBonus=0;
   //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
 
-  enemyTeam = String(row[11].split(":").slice(1).join(":"));
+  enemyTeam = RarityManager.stripTagFromNote(String(row[11].split(":").slice(1).join(":")));
   enemyDesc = String(row[12].split(":").slice(1).join(":"));
   if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
   if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
@@ -264,8 +264,8 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateRandomItem(item=""){
-  var randomItem=getRandomEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]); //arg #2 empty = no required text; arg #4 excludes specific texts
-  if (item=="Artifact") var randomItem=getRandomEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]);
+  var randomItem=getWeightedEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]);
+  if (item=="Artifact") randomItem=getWeightedEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]);
   return randomItem;
 }
 

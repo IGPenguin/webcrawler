@@ -21,6 +21,7 @@ var colorGrapefruit    = "#db432c";
 var colorRed           = "#FF0000";
 var colorSoftRed       = "#ef4646ff";
 var colorDarkRed       = "#690000";
+var colorDarkRedSubtle = "#3d0404";
 var colorGrey          = "#CCCCCC";
 var colorDarkGrey      = "#888888";
 var colorSemiDarkGrey  = "#999999";

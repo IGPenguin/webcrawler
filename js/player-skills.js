@@ -86,7 +86,7 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
 
 //Player
 function playerCheckLevelUp(){
-  var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:"]
+  var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:","achiev:none"]
 
   if (playerXP>=playerXPThreshold){
     curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;font-weight:600;\">Level Up!</p><p style=\"font-size:20px;\""+decorateStatusText("","New perk available.",colorWhite));
@@ -578,7 +578,7 @@ function playerReincarnate(){
     var bonusItem=getRandomEncounter(["Item"],["Artifact"],randomArea);
     bonusItem=bonusItem.replaceAll(randomArea,"Fading Wildlands")
 
-    var bonusWrapper=["area:Fading Wildlands","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for staying out of trouble!<br>","message:Opened the mysterious gift box."]
+    var bonusWrapper=["area:Fading Wildlands","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for staying out of trouble!<br>","message:Opened the mysterious gift box.","achiev:none"]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     pushEncounter(bonusWrapper,2); //Push after the point of dising

@@ -26,8 +26,9 @@ No build tools, no npm. Pure vanilla JavaScript served by Jekyll.
 The game has two layers:
 
 **Data layer** — CSV files in `/data/`:
-- `encounters.csv` — All enemies, obstacles, items, fishing rewards (~2000+ entries). Columns: `area | emoji | name | type | hp | atk | sta | lck | int | mgk | def | note | desc | message`
-- `story.csv` — Story progression and generator definitions
+- `encounters.csv` — All enemies, obstacles, items, fishing rewards (~2000+ entries). Columns: `area | emoji | name | type | hp | atk | sta | lck | int | mgk | def | note | desc | message | achiev`
+- `story.csv` — Story progression and generator definitions. Columns: same 15 as encounters.csv
+- `origins.csv` — Player origin definitions. Columns: `emoji | name | hp | atk | sta | lck | int | mgk | def | desc | achiev`
 - `wip_*.csv` — Work-in-progress content (threats, boosts, undos, misc)
 - `fishing.csv` is obsolete — fishing data was merged into `encounters.csv` (rows use `area:Fishing`)
 
@@ -65,6 +66,35 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 - **Combat**: `resolveAction(button)` in `action-resolver.js` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
 - **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
+
+### Rarity System
+
+Rarity is **calculated** from stats — never stored in a CSV column — unless overridden with a bracket tag in the `note` field.
+
+**Tiers and base weights** (defined in `game-config.js` → `RARITY_TIERS`, weights sum to 100):
+
+| Tier | Weight | Net stat range |
+|------|--------|---------------|
+| Cursed | 3 | net < 0 |
+| Common | 60 | 0.0 – 0.49 |
+| Uncommon | 25 | 0.5 – 1.49 |
+| Rare | 10 | 1.5 – 2.99 |
+| Legendary | 2 | ≥ 3.0 |
+
+**Net stat formula** (used by `_netFromRow()` / `_originNet()`):
+`atk×3 + mgk×2 + hp×1.5 + sta×1.5 + lck×0.5 + int×0.5 + def`
+
+**Note-field tag override**: add `[Cursed|Common|Uncommon|Rare|Legendary]` anywhere in the `note` CSV field to force a tier and skip stat calculation. The tag is stripped from UI display automatically by `RarityManager.stripTagFromNote()`. Additionally, if the note contains the word `Artifact`, the row is treated as Legendary.
+
+**Rarity-aware pickers** (in `data-loader.js`):
+- `getWeightedEncounter(types, includes, areaOverride, excludes)` — use this for all item/consumable picks in generators
+- `getWeightedLootIndex(luck, karma)` — fishing loot; replaces the old flat `getRandomLootIndex`
+
+**Roll modifiers**: `RarityManager.rollTier(luck, karma)` applies `playerLck` and `playerKarma` on top of base weights. Each +1 luck shifts weight toward Uncommon/Rare (+1.0/+0.5), away from Common (-1.7) and Cursed (-0.3). Karma (baseline 1) applies a milder version of the same shift.
+
+**Per-difficulty bias**: each `DIFFICULTY_MODES` entry has a `rarityBias` object (`{ Cursed, Common, Uncommon, Rare, Legendary }`) that additively adjusts base weights before the roll. Pairing a bonus with an equal penalty (e.g. `Legendary:+2, Common:-2`) keeps the total at 100, making the shift a clean percentage-point change. Toggle karma weighting globally via `RARITY_KARMA_ENABLED`.
+
+**Achievement gating**: all three CSVs (`encounters.csv`, `story.csv`, `origins.csv`) have an `achiev` column (last column, index 14 / 10 respectively). A value of `none` means always available; any other value is an achievement ID that must be unlocked. Pickers fall back to the unfiltered pool if all entries of a type are locked, with a console warning.
 
 ## CSV Format Rules
 

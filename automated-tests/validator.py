@@ -96,15 +96,15 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
                 continue
 
             # Build row identity for use in all error messages
-            if expected_columns == 14:
+            if expected_columns == 15:
                 row_id = f'[{cols[1].strip()} {cols[2].strip()}]'
-            elif expected_columns == 10:
+            elif expected_columns == 11:
                 row_id = f'[{cols[1].strip()}]'
             else:
                 row_id = ''
 
             # Emoji check
-            emoji_idx = 1 if expected_columns == 14 else 0
+            emoji_idx = 1 if expected_columns == 15 else 0
             emoji_val = cols[emoji_idx].strip()
             if not emoji_val:
                 errors.append(f"Line {i} {row_id}: Missing emoji")
@@ -122,7 +122,7 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
                         errors.append(f"Line {i} {row_id}: '{col_name}' ('{val}') is not a number")
 
             # Text length checks for encounters/story
-            if expected_columns == 14:
+            if expected_columns == 15:
                 name = cols[2]
                 etype = cols[3]
                 desc = cols[12]
@@ -143,7 +143,7 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
                     msg_lengths.append((n, loc, row_id))
 
             # Text length checks for origins
-            if expected_columns == 10:
+            if expected_columns == 11:
                 loc = f"{file_path}:{i}"
                 n = check_length(cols[1], TEXT_LIMITS['origin_name'], 'Origin Name', loc, row_id, warnings)
                 origin_name_lengths.append((n, loc, row_id))
@@ -416,13 +416,13 @@ def main():
 
     # Validate encounters.csv
     if os.path.exists('data/encounters.csv'):
-        errs, warns = validate_csv('data/encounters.csv', 14, range(4, 11), check_sequence=True)
+        errs, warns = validate_csv('data/encounters.csv', 15, range(4, 11), check_sequence=True)
         all_errors.extend(errs)
         all_warnings.extend(warns)
 
     # Validate story.csv
     if os.path.exists('data/story.csv'):
-        errs, warns = validate_csv('data/story.csv', 14, range(4, 11))
+        errs, warns = validate_csv('data/story.csv', 15, range(4, 11))
         all_errors.extend(errs)
         all_warnings.extend(warns)
 
@@ -432,7 +432,7 @@ def main():
 
     # Validate origins.csv
     if os.path.exists('data/origins.csv'):
-        errs, _ = validate_csv('data/origins.csv', 10, range(2, 9))
+        errs, _ = validate_csv('data/origins.csv', 11, range(2, 9))
         all_errors.extend(errs)
 
     # Validate JS files

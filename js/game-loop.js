@@ -8,7 +8,7 @@ function getRandomFish(forcedLootIndex){ //TODO refactor into encounters.csv (in
   adventureEncounterCount+=1;
 
   lastEncounterIndex = encounterIndex-1;
-  lootEncounterIndex = (forcedLootIndex !== undefined) ? forcedLootIndex : getUnseenLootIndex();
+  lootEncounterIndex = (forcedLootIndex !== undefined) ? forcedLootIndex : getWeightedLootIndex(playerLck, playerKarma);
   markAsSeenFishing(lootEncounterIndex);
   var _savedRested = playerRested;
   encounterRenew();
@@ -34,7 +34,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
   }
 
   if (procAbilityChance("🥻",5)){
-    var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Curious Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Epiphany","desc:Stopped to think about the universe.<br>n/a","message:"]
+    var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Curious Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Epiphany","desc:Stopped to think about the universe.<br>n/a","message:","achiev:none"]
     linesStory.splice(encounterIndex+1,0,philosopherThoughts);
     logAction("🥻 ▸ <b>💭 Curious Thought</b> came on your mind.")
   }

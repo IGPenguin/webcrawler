@@ -217,15 +217,118 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
     });
   });
 
+  // Achievement filter — skip entries locked behind unearned achievements.
+  // Falls back to unfiltered pool to prevent hard blocks.
+  var _achievFiltered = tempLinesGenerator.filter(_achievUnlocked);
+  if (_achievFiltered.length > 0) tempLinesGenerator = _achievFiltered;
+
   var randomEncounterIndex = Math.floor(Math.random() * tempLinesGenerator.length);
   var randomEncounter = tempLinesGenerator[randomEncounterIndex];
 
   if (!randomEncounter) {
-    randomEncounter = ["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:"];
+    randomEncounter = ["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:","achiev:none"];
   }
 
   console.log("Type:" + encounterTypes + "\nOpts:" + tempLinesGenerator.length + "→#" + randomEncounterIndex + ":\n" + (randomEncounter[2] || "").split(":")[1]);
   return randomEncounter;
+}
+
+// Rarity-weighted encounter picker. Same filters as getRandomEncounter, then groups
+// the filtered pool by rarity tier and draws from a luck/karma-weighted tier roll.
+// Falls back to flat random if the rolled tier has no candidates in the pool.
+function getWeightedEncounter(encounterTypes, includeStrings, areaNameOverride, excludeStrings) {
+  includeStrings   = includeStrings   || [];
+  areaNameOverride = areaNameOverride || '';
+  excludeStrings   = excludeStrings   || [];
+
+  var tempLines = linesGenerator;
+  var generatorAreaName = areaNameOverride || areaName;
+
+  if (areaNameOverride !== 'ALL') {
+    tempLines = $.grep(tempLines, function (item) {
+      return item.indexOf('area:' + generatorAreaName) === 0;
+    });
+  }
+
+  var matchingTypeLines = [];
+  (encounterTypes || []).forEach(function (type) {
+    $.grep(tempLines, function (item) {
+      return item[3].includes('type:' + type);
+    }).forEach(function (line) { matchingTypeLines.push(line); });
+  });
+  tempLines = matchingTypeLines;
+
+  if (includeStrings.length > 0) {
+    var inclLines = [];
+    includeStrings.forEach(function (s) {
+      $.grep(tempLines, function (item) { return String(item).includes(s); })
+        .forEach(function (line) { inclLines.push(line); });
+    });
+    tempLines = inclLines;
+  }
+
+  if (excludeStrings.length > 0) {
+    tempLines = tempLines.filter(function (line) {
+      return !excludeStrings.some(function (s) { return String(line).includes(s); });
+    });
+  }
+
+  seenEncounters.forEach(function (seenName) {
+    tempLines = tempLines.filter(function (line) {
+      return line[2].split('name:')[1] !== seenName;
+    });
+  });
+
+  var unlockedLines = tempLines.filter(_achievUnlocked);
+  if (unlockedLines.length > 0) tempLines = unlockedLines;
+
+  if (tempLines.length === 0) return getRandomEncounter(encounterTypes, includeStrings, areaNameOverride, excludeStrings);
+
+  // Group by rarity tier
+  var buckets = {};
+  tempLines.forEach(function (line) {
+    var tier = _rarityFromRow(line);
+    if (!buckets[tier]) buckets[tier] = [];
+    buckets[tier].push(line);
+  });
+
+  var tier = RarityManager.rollTier(playerLck, playerKarma);
+  var bucket = buckets[tier];
+  if (!bucket || bucket.length === 0) {
+    console.log('RarityRoll:' + tier + ' → no pool, flat fallback');
+    return tempLines[Math.floor(Math.random() * tempLines.length)];
+  }
+  console.log('RarityRoll:' + tier);
+  return bucket[Math.floor(Math.random() * bucket.length)];
+}
+
+// Rarity-weighted fishing loot picker. Buckets linesLoot by tier, rolls a weighted
+// tier, then picks from that bucket (preferring unseen entries).
+function getWeightedLootIndex(luck, karma) {
+  var buckets = {};
+  linesLoot.forEach(function (line, idx) {
+    if (!_achievUnlocked(line)) return;
+    var tier = _rarityFromRow(line);
+    if (!buckets[tier]) buckets[tier] = [];
+    buckets[tier].push(idx);
+  });
+
+  var tier = RarityManager.rollTier(luck, karma);
+  var pool = buckets[tier];
+
+  // Fall back to full available pool if rolled tier has no entries
+  if (!pool || pool.length === 0) {
+    console.log('FishRarityRoll:' + tier + ' → no pool, flat fallback');
+    pool = Object.keys(buckets).reduce(function (acc, t) { return acc.concat(buckets[t]); }, []);
+  } else {
+    console.log('FishRarityRoll:' + tier);
+  }
+  if (pool.length === 0) return getUnseenLootIndex();
+
+  // Prefer unseen within pool
+  var unseen = pool.filter(function (i) { return !seenLoot.includes(i); });
+  var finalPool = unseen.length > 0 ? unseen : pool;
+  return finalPool[Math.floor(Math.random() * finalPool.length)];
 }
 
 // ── Loot Tracking ─────────────────────────────────────────────────────────────
@@ -286,7 +389,35 @@ function getOrigins() {
       lck: parseInt(row.lck) || 0,
       int: parseInt(row.int) || 0,
       mgk: parseInt(row.mgk) || 0,
-      def: parseInt(row.def) || 0
+      def: parseInt(row.def) || 0,
+      achiev: row.achiev || 'none'
     };
   });
+}
+
+// ── Rarity Helpers ─────────────────────────────────────────────────────────────
+
+// Compute weighted net stat value from a raw encounter row array.
+// Mirrors _originNet() in menu.js — keep in sync if weights change.
+function _netFromRow(row) {
+  function v(i) { return parseFloat((row[i] || '').split(':')[1]) || 0; }
+  // columns: 4=hp, 5=atk, 6=sta, 7=lck, 8=int, 9=mgk, 10=def
+  return v(5)*3 + v(9)*2 + v(4)*1.5 + v(6)*1.5 + v(7)*0.5 + v(8)*0.5 + v(10);
+}
+
+// Determine rarity tier for a raw encounter row: explicit [Tag] in note wins, then stat net, then Artifact fallback.
+function _rarityFromRow(row) {
+  var noteRaw = (row[11] || '').split(':').slice(1).join(':');
+  var tier = RarityManager.getTierFromNote(noteRaw);
+  if (tier) return tier;
+  if (noteRaw.toLowerCase().includes('artifact')) return 'Legendary';
+  return RarityManager.getTierForNet(_netFromRow(row));
+}
+
+// Achievement filter: returns true if the row's achiev field is unlocked (or none).
+function _achievUnlocked(row) {
+  var entry = row.length > 14 ? row[14] : null;
+  if (!entry) return true;
+  var id = entry.split(':').slice(1).join(':').trim();
+  return !id || id === 'none' || AchievementManager.isUnlocked(id);
 }
