@@ -27,8 +27,6 @@
   - highscore data: difficulty, game version, playtime, origin
 
 # Claude
-- add: new playwright CI test + local bash launcher test-encounters.sh to load a random pick of all encounter types and verify it loads and displays in the UI (+ rename boot-test.sh to test-boot.sh)
-...
 - Legendary item for bigger crit chance interval by ??%
 - (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
 - More unique origins with actual gameplay implications
@@ -80,6 +78,7 @@
      - It would need to be subtle/fair so that everyone does not have bad experience just because the have no clue, possibly there could be encounter, that exposes the "Soul Standing" and hints what it does
      - There should be proactive actions available to fix bad karma if players learn that they have bad standing
      - killing enemies that are agressive should be fine, putting to sleep aggresive enemies should be considered good deed, killing non aggressive enemies should be considered bad, attacking friends should be bad etc.... suggest more hooks to karma?
+     the good karma bonus encounter - available in player.skills.js - we should find a way to trigger it sometimes (not only when revived, that might be very uncommon situation)
 - Drachmae shop add more options - game run modifiers? (unlock after special condition?)
   - Get coin for negative effect: +enemy dmg/hp/sta...
   - Get coin for Big Karma--

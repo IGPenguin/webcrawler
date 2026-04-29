@@ -1,4 +1,4 @@
-name: Boot Test
+name: Encounter Test
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  boot-test:
+  encounter-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,13 +28,13 @@ jobs:
           playwright install --with-deps chromium
           echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
 
-      - name: Run boot test
-        run: playwright test automated-tests/boot.spec.js --config automated-tests/playwright.config.js
+      - name: Run encounter type test
+        run: playwright test automated-tests/encounters.spec.js --config automated-tests/playwright.config.js
 
       - name: Upload report on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-encounters
           path: playwright-report/
           retention-days: 7
