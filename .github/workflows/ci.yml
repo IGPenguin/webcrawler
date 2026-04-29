@@ -19,12 +19,12 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Validate CSVs
+      - name: Validate CSVs and HTML
         run: |
           if [ "${{ github.event_name }}" = "push" ]; then
-            changed=$(git diff --name-only HEAD~1 HEAD | grep '^data/' || true)
+            changed=$(git diff --name-only HEAD~1 HEAD | grep -E '^(data/|index\.md|js/)' || true)
             if [ -z "$changed" ]; then
-              echo "No data files changed, skipping."
+              echo "No relevant files changed, skipping."
               exit 0
             fi
           fi

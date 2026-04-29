@@ -254,6 +254,130 @@ def validate_js_files(js_dir):
 
     return warnings
 
+VOID_ELEMENTS = {
+    'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
+    'link', 'meta', 'param', 'source', 'track', 'wbr',
+}
+
+def _strip_jekyll_front_matter(raw):
+    if not raw.startswith('---'):
+        return raw
+    idx = raw.find('\n---', 3)
+    if idx == -1:
+        return raw
+    fm_end = idx + 4
+    return '\n' * raw[:fm_end].count('\n') + raw[fm_end:]
+
+def validate_html_file(file_path):
+    """Check tag balance, duplicate IDs (errors) and style trailing semicolons (warnings)."""
+    print(f"Validating HTML in {file_path}...")
+    errors = []
+    warnings = []
+
+    with open(file_path, 'r', encoding='utf-8') as f:
+        raw = f.read()
+    content = _strip_jekyll_front_matter(raw)
+
+    def line_of(pos):
+        return content.count('\n', 0, pos) + 1
+
+    # Style attribute values should end with ';' — warning, not a structural break
+    for m in re.finditer(r'style\s*=\s*"(.*?)"', content, re.DOTALL):
+        val = m.group(1).strip()
+        if val and not val.endswith(';'):
+            short = val.replace('\n', ' ')
+            short = ('...' + short[-57:]) if len(short) > 60 else short
+            warnings.append(
+                f"HTML Style - {file_path}:{line_of(m.start())}: "
+                f"style value does not end with ';': \"{short}\""
+            )
+
+    # Duplicate id attributes — error: breaks getElementById
+    seen_ids = {}
+    for m in re.finditer(r'\bid\s*=\s*"([^"]+)"', content, re.IGNORECASE):
+        id_val = m.group(1)
+        ln = line_of(m.start())
+        if id_val in seen_ids:
+            errors.append(
+                f"HTML IDs - {file_path}:{ln}: "
+                f"duplicate id=\"{id_val}\" (first at line {seen_ids[id_val]})"
+            )
+        else:
+            seen_ids[id_val] = ln
+
+    # Tag balance — error: broken structure
+    tag_re = re.compile(
+        r'<!--.*?-->'              # skip comments
+        r'|</(\w[\w:-]*)\s*>'     # close tag → group 1
+        r'|<(\w[\w:-]*)([^>]*)>', # open/self-close → group 2 (name), group 3 (attrs)
+        re.DOTALL
+    )
+    stack = []
+    for m in tag_re.finditer(content):
+        ln = line_of(m.start())
+        if m.group(1) is not None:
+            tag = m.group(1).lower()
+            if tag in VOID_ELEMENTS:
+                continue
+            if not stack:
+                errors.append(f"HTML Tags - {file_path}:{ln}: unexpected </{tag}> with nothing open")
+            elif stack[-1][0] != tag:
+                errors.append(
+                    f"HTML Tags - {file_path}:{ln}: "
+                    f"</{tag}> does not match open <{stack[-1][0]}> (line {stack[-1][1]})"
+                )
+            else:
+                stack.pop()
+        elif m.group(2) is not None:
+            tag = m.group(2).lower()
+            if tag in VOID_ELEMENTS:
+                continue
+            if (m.group(3) or '').rstrip().endswith('/'):
+                continue  # self-closing e.g. <h2 ... />
+            stack.append((tag, ln))
+    for tag, ln in stack:
+        errors.append(f"HTML Tags - {file_path}:{ln}: unclosed <{tag}>")
+
+    return errors, warnings
+
+def validate_html_in_js(js_dir):
+    """Check style trailing semicolons in HTML embedded in JS string literals (warnings only)."""
+    print(f"Validating HTML in JS files under {js_dir}...")
+    warnings = []
+
+    for root, _, files in os.walk(js_dir):
+        for fname in sorted(files):
+            if not fname.endswith('.js'):
+                continue
+            fpath = os.path.join(root, fname)
+            with open(fpath, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+
+            for i, line in enumerate(lines, 1):
+                if line.strip().startswith('//'):
+                    continue
+
+                # style="VALUE" in single-quoted JS strings — complete, not concatenated
+                # Lookahead (?!\s*"?\s*\+) excludes VALUE"+ (string-end then concat)
+                for m in re.finditer(r'style="([^"<>+]+)"(?!\s*"?\s*\+)', line):
+                    val = m.group(1).strip()
+                    if val and not val.endswith(';'):
+                        warnings.append(
+                            f"HTML Style - {fname}:{i}: "
+                            f"style value does not end with ';': \"{val[-60:]}\""
+                        )
+
+                # style=\"VALUE\" in double-quoted JS strings — complete, not concatenated
+                for m in re.finditer(r'style=\\"([^\\"]+)\\"(?!\s*"?\s*\+)', line):
+                    val = m.group(1).strip()
+                    if val and not val.endswith(';'):
+                        warnings.append(
+                            f"HTML Style - {fname}:{i}: "
+                            f"style value does not end with ';': \"{val[-60:]}\""
+                        )
+
+    return warnings
+
 def check_tutorial_skip_index(story_csv_path, data_loader_path):
     errors = []
 
@@ -314,6 +438,14 @@ def main():
     # Validate JS files
     if os.path.exists('js'):
         all_warnings.extend(validate_js_files('js'))
+
+    # Validate HTML structure and style attributes
+    if os.path.exists('index.md'):
+        errs, warns = validate_html_file('index.md')
+        all_errors.extend(errs)
+        all_warnings.extend(warns)
+    if os.path.exists('js'):
+        all_warnings.extend(validate_html_in_js('js'))
 
     # Version check if base config is provided
     if len(sys.argv) > 2:

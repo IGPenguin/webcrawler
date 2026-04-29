@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 04/27/2026 @ 11:08 PM"
+var versionCode = "ver. 04/29/2026 @ 06:15 AM"
 var initialEncounterOverride = 0; // set to 7 to skip tutorial (must equal Depths of Slumber row count + 2)
 
 function isLocalhost() {
