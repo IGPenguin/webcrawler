@@ -120,7 +120,11 @@ var ScoreManager = (function () {
     params.append(ENTRY.coins,          payload.coins);
     params.append(ENTRY.ghostLink,      ghost);
     params.append(ENTRY.hash,           hash);
-    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: params }).catch(function () {});
+    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: params })
+      .then(function () {
+        showAchievementToast({ emoji: '⭐', desc: 'Score submitted: ' + payload.score + ' pts' }, null, null);
+      })
+      .catch(function () {});
   }
 
   function submitOrPrompt(payload) {
@@ -130,6 +134,8 @@ var ScoreManager = (function () {
       _doSubmit(payload);
     } else {
       _pendingPayload = payload;
+      var scoreEl = document.getElementById('nickname_score_display');
+      if (scoreEl) scoreEl.textContent = '⭐ ' + payload.score + ' pts';
       var el = document.getElementById('nickname_overlay');
       if (el) el.style.display = 'flex';
     }

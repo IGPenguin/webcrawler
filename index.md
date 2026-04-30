@@ -262,7 +262,8 @@ layout: default
 <!-- Nickname overlay — shown on first game end if no leaderboard nickname is set -->
 <div id="nickname_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
   <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
-    <h3 style="text-align:center; margin:0 0 6px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">✏️ Enter your nickname:</h3>
+    <h3 style="text-align:center; margin:0 0 8px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">✏️ Enter your nickname:</h3>
+    <div id="nickname_score_display" style="text-align:center; margin:0 0 10px 0; color:#FFD940; font-size:22px; font-weight:bold; -webkit-text-stroke:3px black; paint-order:stroke fill;"></div>
     <h5 style="text-align:center; margin:0 0 14px 0; opacity:0.55; font-size:13px; font-weight:400;">It will be shown on global rankings.</h5>
     <input id="nickname_input" type="text" maxlength="32" placeholder="Your nickname (3+ chars)"
            style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
