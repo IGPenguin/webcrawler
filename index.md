@@ -51,7 +51,7 @@ layout: default
   <!-- Shared logo — one element, animated on every menu show -->
   <!-- height:0 + overflow:visible mirrors the original h2 line-height:1px trick;
        SVG margin-top:-50px pulls the text up to the same visual position -->
-  <div id="id_menu_logo" style="height:0; overflow:visible; margin-top:40px; margin-bottom:12px; text-align:center; position:relative; z-index:1;">
+  <div id="id_menu_logo" style="height:0; overflow:visible; margin-top:40px; margin-bottom:0px; text-align:center; position:relative; z-index:1;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 150" width="340" style="overflow:visible; display:block; margin:0 auto; margin-top:-50px;">
       <!-- Drops spawn from letter bases, fall and fade, loop endlessly -->
       <path class="logo-drop-1" d="M 70,82 C 69,85 62.5,90 62.5,96 C 62.5,103 77.5,103 77.5,96 C 77.5,90 71,85 70,82 Z"
