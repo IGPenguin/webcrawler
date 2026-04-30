@@ -62,26 +62,26 @@ var castTypes=(["⚡️","☄️","🍭","🔥","🪄","🥢","🌙","🎐","�
 var validBaits=(["🪱","🦋","🐝","🐞","🦟","🦗","🐜","🪲","🪰","🪳","🕷","🦐","🦂","🍤","🐙","🐛","🦑","🐌"])
 var validRess=["🫀","💾","♥️","🫁","🏵️","🛟","📼","💿"];
 
-// Fishing bait quality: higher = wider success zone. Range roughly -2 to +3.
+// Fishing bait quality: higher = wider success zone.
 var baitQuality = {
+  "🐞": 4,  // ladybug - awesome
   "🪱": 3,  // earthworm — great
   "🦐": 3,  // shrimp — great
-  "🐙": 3,  // octopus — irresistible
+  "🐙": 3,  // octopus — great
   "🪲": 2,  // beetle
   "🦂": 2,  // scorpion
   "🍤": 2,  // fried shrimp
   "🦑": 2,  // squid
+  "🪰": 1,  // fly
   "🦋": 1,  // butterfly
-  "🐝": 1,  // bee
-  "🦗": 1,  // cricket
-  "🕷": 1,  // spider
   "🐛": 1,  // caterpillar
-  "🐞": 0,  // ladybug — neutral
-  "🐌": 0,  // snail — neutral
-  "🦟": -1, // mosquito — bad
-  "🪰": -2, // fly — terrible
+  "🐝": 0,  // bee
+  "🦗": 0,  // cricket
+  "🕷": 0,  // spider
+  "🐜": -1, // ant - bad (small)
+  "🐌": -1, // snail - bad (slimy)
+  "🦟": -1, // mosquito — bad (small)
   "🪳": -2, // cockroach — terrible
-  "🐜": -1, // ant — poor
 };
 
 //Adventure logging
