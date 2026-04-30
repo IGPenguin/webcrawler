@@ -14,17 +14,11 @@
 - NEW: Legendary item increasing drop chances for higher than common rarity
   - + Origin
 - NEW: Legendary item for bigger crit chance interval by ??%
-- + Origin
+  - + Origin
 - NEW: ⏳ Strange Hourglass - 10% slower action bar speed (global)
+  - + Origin
 - More unique origins with actual gameplay implications
-  - examples??? 
-- new unlockable: a portal to fairyland
-...
-- Options Screen
-   * Difficulty Picker: Easy = Easier action bar, altough lower drops; "Hardcore" = harder + no revive
-      + new achiev for hardcore difficulty game completed
-   * Report bug button: Simple redirect to the existing gform
-   * Save Management: A clear "Reset Data" button with a confirmation popup.
+- New story progress unlockable: a portal to village? (Skip early game)
 ...
 - refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
 - Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
