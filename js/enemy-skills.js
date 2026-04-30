@@ -90,6 +90,15 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   }
 }
 
+function pushBossLoot() {
+  if (areaName.includes("Shrouded")) return;
+  if (procAbilityChance("", 25 + playerLck)) {
+    pushEncounter(getWeightedEncounter(["Item"], ["Artifact"]));
+  } else {
+    pushEncounter(getWeightedEncounter(["Item"], [], "", ["Artifact", "Lost Possesion"]));
+  }
+}
+
 function enemyKilled(){
   var gainedXP=parseInt(playerGainXP(1,0,""));
   logAction(enemyEmoji + " ▸ " + "☠️ They've received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
@@ -97,7 +106,10 @@ function enemyKilled(){
   playerKarma-=1; console.log("karma-- ("+playerKarma+")");
   playerKills++;
   AchievementManager.check('kill');
-  if (enemyBossType.includes('Boss')) AchievementManager.check('boss_kill');
+  if (enemyBossType.includes('Boss')) {
+    AchievementManager.check('boss_kill');
+    pushBossLoot();
+  }
 
   var _wasFishing=isFishing;
   isFishing=false;
@@ -129,6 +141,7 @@ function enemyKnockedOut(){
   if (enemyAtk>0) playerKarma++;
   if (enemyAtk<=0) playerKarma--;
   AchievementManager.check('knockout');
+  if (enemyBossType.includes('Boss')) pushBossLoot();
 
   var _wasFishing=isFishing;
   isFishing=false;
@@ -187,14 +200,16 @@ function transitionToCorpse(state) {
   totalBonus=0; totalMalus=0;
 
   var _lootType = null;
-  if (procAbilityChance("", GAME_CONFIG.killItemDropChance+playerLck)) {
-    _lootType = ["Item"];
-  } else if (procAbilityChance("", GAME_CONFIG.killConsumableDropChance+playerLck)) {
-    _lootType = ["Consumable"];
-  }
-  if (_lootType) {
-    var _loot = getRandomEncounter(_lootType, [], "", ["Artifact","Lover's Memento","Lost Possesion"]);
-    if (_loot) { corpseHasLoot=true; corpseLoot=_loot; }
+  if (!enemyBossType.includes('Boss')) {
+    if (procAbilityChance("", GAME_CONFIG.killItemDropChance+playerLck)) {
+      _lootType = ["Item"];
+    } else if (procAbilityChance("", GAME_CONFIG.killConsumableDropChance+playerLck)) {
+      _lootType = ["Consumable"];
+    }
+    if (_lootType) {
+      var _loot = getWeightedEncounter(_lootType, [], "", ["Lover's Memento","Lost Possesion"]);
+      if (_loot) { corpseHasLoot=true; corpseLoot=_loot; }
+    }
   }
 
   if (state === "killed") {

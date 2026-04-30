@@ -891,17 +891,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1;
             if (magicDamage > 2) magicDamage=2;
             if (_skillOK === false) {
-              // Missed — spell reflects back
-              playerMgk-=magicDamage;
+              // Spell reflects back as HP damage
+              playerMgk -= mkgCost;
               displayEnemyEffect("🔷");
               displayEnemyCannotEffect();
-              if ((enemySta+enemyStaLost)==0){
-                atckmsg="They reflected your spell -"+magicDamage+" 🔵";
-              } else {
-                atckmsg="They reflected the spell and attacked -"+enemyAtk+" 💔";
-              }
+              logPlayerAction(actionString, "Spell reflected back -"+magicDamage+" 💔 -"+mkgCost+" 🔵");
+              playerHit(magicDamage, false);
               if (enemyCastIfMgk(true)) enemyAttacked=true;
-              if (!enemyAttacked) enemyAttackOrRest(atckmsg);
+              if (!enemyAttacked) enemyAttackOrRest();
             } else {
               // Landed — spell bypasses reflection
               playerMgk-=magicDamage;
@@ -1221,10 +1218,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           // Reflective curse-back: failed skill check = curse snaps back onto the caster
           if (_skillOK === false && enemyType === "Reflective") {
-            var reflectDmg = Math.max(1, playerMgk); //TODO this is how it should work for cast, curse lowers attack (yeah lower it)
-            logPlayerAction(actionString, "Curse reflected back "+reflectDmg+" 💔 -2 🔵");
+            logPlayerAction(actionString, "Curse reflected back -1 ⚔️ -2 🔵");
             displayEnemyEffect("🔷");
-            playerHit(reflectDmg);
+            displayPlayerCannotEffect();
+            playerAtk = Math.max(0, playerAtk - 1);
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
             break;
           }
 

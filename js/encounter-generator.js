@@ -68,15 +68,6 @@ function generateNextEncounters(generatorID=0, logCall=true){
       //Prop or Contained Small after fight (not in Necropolis)
       if (!areaName.includes("Shrouded")) generateNextEncounters(0,false);
 
-      if (areaName.includes("Shrouded")) {
-        //No item
-      } else {
-        if (procAbilityChance("",20+playerLck)) { //20% Artifact
-          pushEncounter(getWeightedEncounter(["Item"],["Artifact"]));
-        } else {
-          pushEncounter(getWeightedEncounter(["Item"],[],"",["Artifact","Lost Possesion"])) //Any item, but not Artifact (didnt procc) and not quest item (too late)
-        }
-      }
       drachmaCoin[0]="area:"+areaName;
       var bossCoinsLimit = {"Fading Wildlands": 0, "Forsaken Village": 1, "Twisted Fairyland": 2, "River of Sorrows": 3}; //One coin per area (to balance out origins)
       if (!areaName.includes("Shrouded Necropolis") && savedCoins < (bossCoinsLimit[areaName] || 0)) pushEncounter(drachmaCoin); //Unrecognized area defaults to no coin (0)
