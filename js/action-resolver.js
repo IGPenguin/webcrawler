@@ -137,8 +137,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString,"Seems like that was it for now.")
                 break;
               }
-            if (totalBonus>0) {
-              encounterUsed=true;
+
+            if (totalBonus > 0) {
+              if (_skillOK === false) {
+                if (_crit === 'fail') {
+                  playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Terrible form — you set yourself back.", true, false);
+                } else {
+                  logPlayerAction(actionString, "Poor form, gained nothing. -1 🟢");
+                }
+                break;
+              }
+              encounterUsed = true;
             }
 
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
@@ -587,10 +596,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Roll": //Triggers when rolling into it
           case "Trap-Obstacle":
             if (!encounterUsed) {
+              if (totalBonus > 0) {
+                if (_skillOK === false) {
+                  if (_crit === 'fail') {
+                    playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Terrible form — you set yourself back.", true, false);
+                  } else {
+                    logPlayerAction(actionString, "Poor form, gained nothing. -1 🟢");
+                  }
+                  displayPlayerCannotEffect();
+                  break;
+                }
+                encounterUsed = true;
+              }
               if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
               if (enemySta<=0) playerStaMax-=enemySta; //Don't lose max sta
               playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk,enemyDef,enemyMsg,true,false);
-              }
+            }
             //nextEncounter(); //Blocks the path ahead
             displayPlayerCannotEffect();
             break;
@@ -1630,8 +1651,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerCannotEffect();
                 break;
             }
-            if (totalBonus>0) {
-              encounterUsed=true;
+
+            if (totalBonus > 0) {
+              if (_skillOK === false) {
+                if (_crit === 'fail') {
+                  playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Terrible form — you set yourself back.", true, false);
+                } else {
+                  logPlayerAction(actionString, "Poor form, gained nothing. -1 🟢");
+                }
+                displayPlayerCannotEffect();
+                break;
+              }
+              encounterUsed = true;
             }
 
             if (totalBonus<=0 && totalMalus>=0) displayPlayerCannotEffect();
@@ -2435,8 +2466,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerCannotEffect();
                 break;
               }
-            if (totalBonus>0) {
-              encounterUsed=true;
+
+            if (totalBonus > 0) {
+              if (_skillOK === false) {
+                playerRest();
+                if (_crit === 'fail') {
+                  playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Slept poorly, disturbed the energy.", true, false);
+                } else {
+                  logPlayerAction(actionString, "Rested nearby, but missed its power.");
+                }
+                break;
+              }
+              encounterUsed = true;
               playerRest(true);
             }
 
