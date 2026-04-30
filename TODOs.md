@@ -5,7 +5,10 @@
 - **/clear** when one-time task completed
 
 # Priority 0
-- none
+- Option C: The Dream Path (High Quality/Polished)
+What: Create a TelemetryManager that handles "Heartbeat" events. It triggers a specialized "Ascension" payload when all_achievements is detected, including the player's nickname, total playtime, and a cryptographically signed "Proof of Completion" for the credits list.
+Complexity: New file js/telemetry.js + hooks in achievements.js and save-manager.js.
+Benefit: Future-proofs telemetry for more than just achievements (e.g., error logs, balance data); ensures "Credits" candidates are verified.
 
 # Claude
 - NEW: Legendary item increasing drop chances for higher than common rarity
