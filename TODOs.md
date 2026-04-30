@@ -11,6 +11,21 @@ Complexity: New file js/telemetry.js + hooks in achievements.js and save-manager
 Benefit: Future-proofs telemetry for more than just achievements (e.g., error logs, balance data); ensures "Credits" candidates are verified.
 
 # Claude
+- shop: drachmae buy wheighted item fn call (chsnce for artifact)
+- shop: buy buttons per item base rarity
+- add: chance for a special fishing drachma (limited to only one ever)
+- modify: Settings, hold the initial delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", reset on release), then confirm with another click as currently)
+- ...
+- [Enemy] Fairyland HP Buff: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
+- generate more positive AND negative traps (all variants) and curses
+- ...
+- (failed 20k tokens) fix: cast crit zone not showing on attack - eg boss heavy when they are exhousted but player has sta
+- fix: on reincarnate remove the chronicle entry as the run continues, chronicle (game session history entry) should be just once per char, if tjey ressurect game continues (= no chronicle yet)
+- fix: crit dodge boss heavy was not handled as crit
+- fix cursed enemy achiev to only pop when actually applied to an enemy (not when simply casting curse)
+- ...
+- enemy loot drop chances per type? (small drops nothing, standard....), take also "danger" into consideration - the more dangerous, the higher/better drops
+- hardcoded "graveyard reminder" encounter after first and second boss (like in dream) that vaguely explains what just unlocked + reminds of the game theme
 - NEW: Legendary item increasing drop chances for higher than common rarity
   - + Origin
 - NEW: Legendary item for bigger crit chance interval by ??%
@@ -28,14 +43,26 @@ Benefit: Future-proofs telemetry for more than just achievements (e.g., error lo
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
 
 # Manual
-- encounters.csv: fairyland enemies toi little hp
-- rm grind achievs??
+- tweak ui for ranking popup - hint under field
+- tweak ui for ranking table
+- tweak ui for ranking list + detail
+- tweak session detail UI
+- score gets updated every half hour note to rankings screen
+- new origins, gated by achievs (thematic)
+- add spirit/reflective to Village and River (might be nerfed in village e.g.)
+- add: traps with multiple stat changes - swap x for y
 
-# Low-repro bugs
-- (check after ending refactor) Fix Boss wife disengage when calmed = NaN xp
-- (check after ending refactor) Fix cannot leave calm merciful bride, if calm bride (check texts)
+# Gemini
+- read all files under ideas folder, check for opportunities for unique data (compare with actually used stuff in data folder), output to ideas/curated.csv
+- [Bait] Flavour by name/description: Give e.g. the repeated many worms unique buffs (e.g., "Vigorous Worm" -> +5% Rarity chance).
+- [Loot] Tiered Trash: Make "Trash" items usable (e.g., Wet Cash +1 Int for "deciphering" it).
+- [Area] Limbo Theme: Finalize Auxiliary Space as a "Limbo" area with ghostly remnants of the player's past runs or even online-shared characters of other players finishing the game.
+- ...
+- obscure wiki, bestiary for github (no exact info or nmbers, just hints) link via button in menu
 
 # Hades
+- separrate bug report through a gform to a separate sheet, daily job to sync to github issues with tags
+- Fix the very flaky "Quest system" - friends might require a "quest item" to exchange it for artifact, the quest firend + item spawn logic is brittle, I imagine better way like spawning the quest item somwehere in the story and the friend somewhere else - independent of the area, also would be great to hide the exact item list of the things the friend is looking for (keep it under the hood) and display just a general description of things they are looking for
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
 - better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
