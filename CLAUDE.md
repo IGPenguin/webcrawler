@@ -2,8 +2,6 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## What This Is
-
 **Stay Dead** is a browser-based text roguelike RPG, optimized for mobile. It runs on GitHub Pages (deployed from the `live` branch).
 
 ## Local Development
@@ -34,28 +32,31 @@ The game has two layers:
 
 **Logic layer** — vanilla JS files in `js/`, loaded in order via `<script>` tags in `index.md` (no modules, no bundler — load order is the only dependency mechanism):
 
-| File | Responsibility |
-|------|----------------|
-| `config.js` | Version stamp, debug flags, colors, symbols |
-| `logging.js` | `getTime()`, `logGenerator()` |
-| `string-generator.js` | Name/string generation helpers |
+| File (load order ↓) | Responsibility |
+|---------------------|----------------|
+| `constants.js` | Version stamp, debug flags, `isLocalhost()` |
+| `game-config.js` | `GAME_CONFIG`, `DIFFICULTY_MODES`, `RARITY_TIERS`, `RARITY_KARMA_ENABLED` |
+| `logging.js` | `getTime()`, `logGenerator()`, `logAction()` |
+| `string-generator.js` | Name/string generation helpers; `getPoem()`, `getBridePoemByLove()` |
 | `game-state.js` | All player/enemy state variables |
 | `action-config.js` | `calcActionBarConfig()` — action bar difficulty calculations |
-| `ui-effects.js` | Animations, curtain, background, display toggles |
+| `ui-effects.js` | Animations, curtain, background, display toggles; `applyGatewayEffects()`, `playEndingCutscene()` |
 | `ui-render.js` | `redraw()`, all UI rendering, `showAchievementToast()` |
 | `enemy-skills.js` | Enemy skill resolution |
 | `player-skills.js` | Player skills; calls `renewPlayer()` on load to initialize state |
 | `save-manager.js` | `SaveManager` — session history + localStorage save/clear |
+| `achievements.js` | `AchievementManager` — unlock/check/toast for all achievements |
 | `menu.js` | `Menu` — main menu UI; show/hide, screen routing, button wiring |
-| `data.js` | CSV loading via jQuery AJAX; `startGame()` / `_doStartGame()`; populates global arrays |
+| `data-loader.js` | CSV loading via jQuery AJAX; `startGame()` / `_doStartGame()`; `getRandomEncounter()`, `getWeightedEncounter()`, `pushEncounter()`, `getNextEncounterIndex()` |
 | `encounter-loader.js` | `loadEncounter()`, `encounterRenew()`, `drachmaeBuy()` — CSV parsing and shop |
 | `encounter-generator.js` | `generateNextEncounters()` — dynamic encounter sequence builder |
-| `game-loop.js` | `nextEncounter()`, `gameOver()`, `gameEnd()`, `getRandomFish()` |
+| `game-loop.js` | `nextEncounter()`, `gameOver()`, `gameEnd()` / `_doGameEnd()`, `getRandomFish()`; ending system: `startBrideDialogue()`, `resolveEnding()`, `_ENDING_FRAMES` |
 | `score-manager.js` | `ScoreManager` — score formula, Google Forms submission, rankings fetch, nickname overlay |
+| `transfunctioner.js` | `logCheatUse()` — cheat detection and flagging |
 | `social.js` | Share / LinkedIn logic |
 | `action-resolver.js` | `resolveAction()` — dispatches all nine player actions |
-| `action-bar.js` | Skill-check action bar UI |
-| `ui-buttons.js` | Button setup, click listeners, `registerClickListeners()` |
+| `action-bar.js` | Skill-check action bar UI; supports `barStyle: 'dark'` for red zone |
+| `ui-buttons.js` | Button setup, click listeners, `registerClickListeners()`; `_setEndingButtons()` |
 
 CSV data is stored in global arrays; game state lives in JS variables, with coins persisted to `localStorage`. UI is updated by calling `redraw()`.
 
@@ -67,6 +68,26 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 - **Combat**: `resolveAction(button)` in `action-resolver.js` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
 - **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
+
+### Ending System
+
+The final encounter in Shrouded Necropolis (story.csv) triggers a branching ending instead of standard combat. Full design details are in the project memory file — only technical hooks documented here.
+
+**State flags** (game-state.js, all reset in `renewPlayer()`): `isEndingState`, `gatewayPassed`, `isKillEnding`, `brideDialogueActive`
+
+**Key functions:**
+- `applyGatewayEffects()` / `removeGatewayEffects()` — `ui-effects.js`; visual transition triggered by a specific Prop encounter before the final boss
+- `playEndingCutscene(frames, onComplete)` — `ui-effects.js`; chains `{emoji, text}` frames with curtain fades
+- `startBrideDialogue()` — `game-loop.js`; auto-roll dialogue sequence, fires via `setTimeout` from `loadEncounter()`
+- `resolveEnding(button)` — `game-loop.js`; dispatches each of the 9 button choices to their outcome
+- `_ENDING_FRAMES` — `game-loop.js`; frame data for all 9 cutscenes
+- `_doGameEnd()` — `game-loop.js`; actual win bookkeeping (split from `gameEnd()` to allow cutscene intercept)
+- `_setEndingButtons()` — `ui-buttons.js`; gates which of the 9 buttons are available based on `playerLove`, `playerKarma`, `playerMgk`
+- `getBridePoemByLove()` — `string-generator.js`; love-split subset of the existing poem pool
+
+**Action bar**: ending state handled at the top of `calcActionBarConfig()` in `action-config.js`. `barStyle: 'dark'` passed for morally negative choices — renders the success zone red instead of green via `_successFill`/`_failFill` in `action-bar.js`.
+
+**Kill path**: injects a random boss from encounters.csv filtered by `["Forgotten Love"]` note (6 variants); `isKillEnding` flag defers the cutscene until after the boss fight via `gameEnd()` intercept.
 
 ### Score & Leaderboard System
 
@@ -80,9 +101,9 @@ Scores are submitted to a Google Form (fire-and-forget `fetch` with `mode: 'no-c
 
 **Ghost link**: full run payload serialized as base64 (`btoa`), stored in the form submission and decoded for the "View" stat card in the Rankings screen.
 
-**Pipeline**: `.github/workflows/leaderboard.yml` runs every 30 min (and via `workflow_dispatch`) — only active after merging to `live`. Local testing before merge: run `update-rankings.sh` (gitignored, contains secrets).
+**Pipeline**: `.github/workflows/rankings.yml` runs every 30 min (and on `workflow_dispatch`). Pulls the Google Sheet CSV, verifies SHA-256 HMACs, filters profanity, dedupes, sorts by score, writes `highscores.json` to the `rankings` branch. Only active after merging to `live` (GitHub requires the workflow file on the default branch).
 
-**New globals** (game-state.js): `encounterCount`, `runStartTimestamp`, `playerOriginName`, `cheatedThisRun` — all reset in `renewPlayer()`.
+**Local testing before merge**: `bash update-rankings.sh` (gitignored — contains `LEADERBOARD_SALT` and `SHEET_CSV_URL` secrets). Runs the same Python pipeline locally and pushes the result to the `rankings` branch.
 
 ### Rarity System
 
@@ -139,152 +160,18 @@ Playwright config targets a mobile viewport (iPhone 14 Pro, 393×852) and reuses
 | `encounter-test.yml` | Playwright: encounter CSV rows load correctly |
 | `rarity-test.yml` | Playwright: rarity tier distribution end-to-end |
 
-## Score & Rankings
-
-See **Score & Leaderboard System** under Key Systems for the score formula and submission flow.
-
-**Rankings pipeline**: `.github/workflows/rankings.yml` runs every 30 min (and on `workflow_dispatch`). It pulls the Google Sheet CSV, verifies SHA-256 HMACs, filters profanity, dedupes, sorts by score, and writes `highscores.json` to the `rankings` branch. Only active after merging to `live` (GitHub requires the workflow file on the default branch).
-
-**Local testing before merge**: `bash update-rankings.sh` (gitignored — contains `LEADERBOARD_SALT` and `SHEET_CSV_URL` secrets). Runs the same Python pipeline locally and pushes the result to the `rankings` branch.
-
-## CSV Format Rules
-
-- Delimiter: `;` — never use commas inside fields, replace with `\`
-- `((` is intentional — gets replaced at runtime with `:` (workaround for colons in semicolon-delimited CSV)
-- HTML `<br>` used for line breaks in desc field
-- Bold tags `<b></b>` used only for game mechanic text in item/consumable desc — never in enemy desc fields
-- Empty fields must still include separators
-- One emoji per entry
-
-## Known Design Decisions
-
-- `🌊` wave emoji is reserved for Fishing encounter spots in River of Sorrows
-- River of Sorrows: player is on a boat — use "sail" not "walk" in flavor text
-- Boss coin farming limits (cumulative `savedCoins` cap per run): Fading Wildlands=2, Forsaken Village=4, Twisted Fairyland=6, River of Sorrows=8
-- Tough enemies (DEF stat) are endgame-only — do not add Tough type to early/mid areas
-- LinkedIn share: clipboard copy + `/shareArticle` URL; og:image is `assets/img/linked_in_swords.png`
-
 ## Branching & Deployment
 
-- `experimental` → development work, kept alive between PRs
 - `live` → production, auto-deployed to GitHub Pages
-
-## PR Summaries
-
-Title pattern: `[emoji] [Adjective] Update: short description` — e.g. `🤖 Vibecode Update: ...`
-
-Body order: user-facing changes first (new encounters, items, artifacts, gameplay), then technical/internal changes.
+- `rankings` → hosts only the global scoreboard data
 
 ## Working Style
 
-- Execute code and logic changes directly without asking
+- Always ask before starting token-expensive activities - never dig deep into git history or perform similar acts by yourself
+- Always ask before destructive actions with limited recovery options (never git reset without a permission etc.)
 - For new CSV content (encounter rows, descriptions, item text) — suggest first, wait for approval before writing
 - Max 10 new CSV entries per suggestion batch when doing data pushes, work area by area
 
 ---
 
-## Game Design Reference
-
-### Tone & Writing
-
-Stay Dead is a dark fantasy text roguelike with a melancholic, slightly ironic tone — think Diablo 2 gravity, not whimsy. Never verbose.
-
-- Short desc fields: 7-15 words, declarative or poetic
-- Punchy message fields: 2-8 words
-- No modern slang, no generic filler phrases
-- Preferred adjectives: Forgotten, Broken, Starved, Cursed, Diseased, Corrupted, Desperate, Forsaken, Hollow, Blighted, Tainted, Withered
-
-**Good desc examples (enemies):**
-- "Stone watches the world fade."
-- "Capable of unfortunate headbutts."
-- "Something is deeply wrong with its eyes."
-- "Barely moves\ means no harm."
-
-**Good desc examples (items):**
-- "Must've been left behind by a true artist."
-- "Lying next to a corpse\ handle with care."
-
-**Good message examples:**
-- "Talons tore your throat apart." (death, direct)
-- "Felt a surge of godlike clarity." (positive, elevated)
-- "The temptation took its toll." (trade-off cost)
-- "Finally found peace?" (quirky/ironic, used sparingly)
-
-### Diablo 2 Vocabulary to Draw From
-
-**Corruption/decay:** corrupted, desecrated, tainted, forsaken, fallen, rotted, withered, hollowed
-**Ancient/lost:** remnants, unravelling, forgotten, buried, sealed, bound, ancient, faded
-**Threat/doom:** foul, banished, eternal, inescapable, condemned, wretched
-**Spiritual:** damned, unholy, sanctified, wicked, defiled, blighted, consecrated
-
-Sentence structures to apply:
-- Simple + final: "The beast has taken enough from us already."
-- Subject has fallen: "Once one of our finest — now the first corrupted."
-- Warning without over-explaining: "Beyond lies mortal danger for the likes of you."
-
-### Naming Conventions
-
-- **Enemies:** Adjective + Noun — e.g. Neurotic Sheep, Corrupted Golem, Pale Countess
-- **Bosses:** Epic 2-word title — e.g. Sky Tyrant, Alpha Bull, Depths Queen
-- **Items:** Material/object or Emotion/object — e.g. Frozen Teardrop, Starlight Amulet, Engraved Ring
-- **Artifacts:** Mythical/elemental words — Oracle, Starfall, Forbidden, Life-Stealing
-
-Area naming flavor:
-- Fading Wildlands: nature-rooted (Trail, Pond, Field, Wild)
-- Forsaken Village: decay (Rotten, Grave, Cultist, Possessed)
-- Twisted Fairyland: dark magic (Malevolent, Warlock, Daunting, Twisted)
-- River of Sorrows: water/grief (Depths, Drowned, Pale, Pearlescent)
-- Shrouded Necropolis: death (Crypt, Ghastly, Tainted, Grave)
-
-### Stat System
-
-Column order: `HP | ATK | STA | LCK | INT | MGK | DEF`
-
-Value priorities: HP = ATK = MGK (high) > STA (medium) > LCK (variable) > INT (utility/scaling)
-
-Trade ratios:
-- `-1 HP ≈ +2 minor stat OR +1 strong stat`
-- `-2 HP ≈ +3 strong stat`
-- `-1 INT` can fund aggressive bonuses
-
-Type-specific rules:
-- `INT = -1` on dumb creatures (animals, small critters) across all areas - cannot be communicated with
-- `MGK` only appears on Undead, Demon, Spirit types
-- `DEF` reserved for Tough type only — endgame areas only (value 1 mid-game, 2 late)
-- Boss stats mirror area enemies, slightly elevated; Boss HP rarely exceeds 4
-
-### Enemy Stat Ranges by Area
-
-| Area | HP | ATK | STA | INT | MGK |
-|------|----|-----|-----|-----|-----|
-| Fading Wildlands | 1-3 | 0-2 | 1-2 | -1 to 3 | 0 |
-| Forsaken Village | 1-3 | 0-2 | 1-3 | -1 to 2 | 0-1 (Undead/Demon) |
-| Twisted Fairyland | 2-5 | 2-4 | 1-4 | 1-5 | 0-1 |
-| River of Sorrows | 1-4 | 1-3 | 1-3 | -1 to 4 | 0-2 (Undead/Demon) |
-| Shrouded Necropolis | 1-4 | 2-4 | 1-4 | -1 to 10* | 0-3 |
-
-*INT spikes to 10 only on specific enemies that cannot be fooled — outlier, not the norm.
-
-### Item Balance Tiers
-
-| Tier | Effect | Examples |
-|------|--------|---------|
-| Common | +1 single minor stat or a tradeoff | Cool Hat, Hefty Hammer |
-| Uncommon | +2 minor stats or +1 strong stat| Lucky Gloves, Kitchen Knife |
-| Rare | +2 strong stat | Sharpshooter Bow (+2 Damage) |
-| Artifact | Passive skill or special mechanic | Cheat Death, 33% bait-save, Bonus damage vs Demons |
-
-Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyland = magic/INT/artifacts → Necropolis = cursed -HP for +MGK patterns.
-
-### Encounter Type Reference
-
-- **Prop**: environmental flavor, grants bonus/malus on rest
-- **Trap-Attack**: triggered by attacking (training dummies = positive, hazards = negative)
-- **Trap-Roll**: triggered by rolling/dodging
-- **Trap-Sleep**: auto-triggers, applies stat effect
-- **Trap-Big**: unavoidable, cannot be destroyed — moderate HP damage
-- **Trap-Obstacle**: blocks path, harmless, resolved by attacking
-- **Curse**: negative or trade-off, auto-applies
-- **Altar**: positive blessing or sacrifice mechanic
-- **Container / Container-2**: searchable, may contain loot
-- **Locked-Container**: requires key or Cast (-2 MGK) to open; force-unlockable by repeated attacks
+See `DESIGN.md` for tone, writing rules, vocabulary, naming conventions, stat ranges, item tiers, and encounter type definitions.
