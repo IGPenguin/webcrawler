@@ -763,6 +763,9 @@ var Menu = (function () {
     _bindRankingsBack('👈 Back', function () { _renderMain(); });
     _showScreen('menu_rankings_screen');
     var list = document.getElementById('menu_rankings_list');
+    var sc = list.parentElement;
+    sc.style.overflowY = 'auto';
+    sc.scrollTop = 0;
     list.innerHTML = '<h4 style="text-align:center; padding:20px 0; color:#fff; min-height:0; margin:0; opacity:0.5;">Loading...</h4>';
 
     ScoreManager.fetchRankings(function (err, data) {
@@ -781,7 +784,7 @@ var Menu = (function () {
         var rankColor = i === 0 ? '#FFD940' : i < 3 ? '#c0c0c0' : '#fff';
         el.innerHTML =
           '<div style="overflow:hidden;padding-bottom:3px;">'
-            + '<h3 style="margin-top:3px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px;">'
+            + '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px;">'
             + '<i style="font-weight:600; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
             + '#' + (i + 1) + '&nbsp;&nbsp;⭐ ' + (entry.score || 0)
             + '</i></h3>'

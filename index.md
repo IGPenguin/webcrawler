@@ -89,7 +89,8 @@ layout: default
       <button class="menu-btn" id="menu_leaderboard" style="color:grey;">⭐️ Rankings</button>
       <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">📜 Chronicles</button>
-      <button class="menu-btn" id="menu_settings" style="color:grey; display:none;">⚙️ Settings</button>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_settings">⚙️ Settings</button>
       <button class="menu-btn" id="menu_credits">🖤 Credits</button>
     </div>
   </div>
