@@ -36,7 +36,7 @@ var fishingRested = false; // persists through getRandomFish/encounterRenew; res
 var playerCooked = false;
 var playerShopped = false;
 var playerDestined = false;
-var playerEmoji = '';
+var playerEmoji = '👤';
 var bubblesUsed = false;
 var playerAttackType = "⚔️";
 var playerRollType = "🌀";
@@ -174,6 +174,10 @@ var eatColor=colorWhite;
 // true  = skill check passed
 // false = skill check failed
 var actionBarSuccess = null;
+
+var vibrationEnabled = (function () {
+  try { return localStorage.getItem('sd_vibration') !== 'false'; } catch (e) { return true; }
+})();
 
 // null = no crit, 'success' = critical success zone hit, 'fail' = critical fail zone hit
 var actionBarCrit = null;

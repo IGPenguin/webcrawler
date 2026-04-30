@@ -1,6 +1,7 @@
 import sys
 import os
 import re
+import glob
 from datetime import datetime
 
 # --- Configuration: Manual Limits (Modify as needed) ---
@@ -268,6 +269,40 @@ def validate_js_files(js_dir):
 
     return warnings
 
+def _is_emoji(ch):
+    cp = ord(ch)
+    return (
+        0x1F000 <= cp <= 0x1FFFF or
+        0x2600  <= cp <= 0x27BF  or
+        0x2300  <= cp <= 0x23FF  or
+        0x1F900 <= cp <= 0x1FAFF or
+        ch in '❤🟢💔🔵🧠⚔🍀🪙💰🟣'
+    )
+
+def check_emoji_period(js_dir):
+    """Error if any string literal ends with an emoji but has a period just before the emoji run."""
+    print(f"Checking for period-before-emoji in {js_dir}...")
+    errors = []
+    for path in sorted(glob.glob(os.path.join(js_dir, '*.js'))):
+        with open(path, encoding='utf-8') as f:
+            content = f.read()
+        for m in re.finditer(r'"([^"\n]*)"|\'([^\'\n]*)\'', content):
+            s = m.group(1) if m.group(1) is not None else m.group(2)
+            if not s:
+                continue
+            rstripped = s.rstrip()
+            if not rstripped or not _is_emoji(rstripped[-1]):
+                continue
+            # Walk back past trailing emoji / stat run (digits, +, -, spaces)
+            i = len(rstripped) - 1
+            while i >= 0 and (_is_emoji(rstripped[i]) or rstripped[i] in ' \t0123456789+-'):
+                i -= 1
+            if i >= 0 and rstripped[i] == '.':
+                line_no = content.count('\n', 0, m.start()) + 1
+                fname = os.path.basename(path)
+                errors.append(f"Period before emoji: {fname}:{line_no}: \"{s.strip()}\"")
+    return errors
+
 VOID_ELEMENTS = {
     'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
     'link', 'meta', 'param', 'source', 'track', 'wbr',
@@ -461,7 +496,7 @@ def main():
     # Optional first arg: 'csv' or 'html' runs only that subset.
     # Two file-path args trigger version-check mode (existing CI behaviour).
     # No args (or unrecognised first arg) runs everything.
-    mode = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in ('csv', 'html') else None
+    mode = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in ('csv', 'html', 'js') else None
 
     all_errors = []
     all_warnings = []
@@ -491,6 +526,10 @@ def main():
         # JS file text-length checks
         if os.path.exists('js'):
             all_warnings.extend(validate_js_files('js'))
+
+    if mode in (None, 'js'):
+        if os.path.exists('js'):
+            all_errors.extend(check_emoji_period('js'))
 
     if mode in (None, 'html'):
         # Validate HTML structure and style attributes

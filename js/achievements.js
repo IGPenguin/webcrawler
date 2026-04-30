@@ -6,9 +6,10 @@ var AchievementManager = (function () {
     { id: 'all_achievements',    emoji: '🏆', desc: "<b>Completed every single memory!</b>", hint: "<b>Gotta catch 'em all to get into Credits!</b>" },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by beating a boss!', hint: "Defeat the first challenging enemy!" },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different." },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shade</b> by picking up a Drachma!', hint: "Obtain the everlasting currency!" },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shade</b> to spend Drachmae!', hint: "Obtain the everlasting currency!" },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim." },
-    { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how it all began."},
+    { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin."},
+    { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Hardcore difficulty!', hint: 'Prove your dedication and true skill.' },
 
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time." },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.' },
@@ -55,7 +56,7 @@ var AchievementManager = (function () {
     { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!', hint: "Luck smiles upon the bold." },
     { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!', hint: "The house always wins." },
     { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item from the Shade!', hint: "A fair trade for a fair price." },
-    { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact from the Shade!', hint: "An eye for the antiques." },
+    { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact from the Shade!', hint: "An eye for the unusual antiques." },
     { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up from the Shade!', hint: "Shortcut to power, at a cost." },
     { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Shade!', hint: "A loyal customer of the shadows." },
     
@@ -442,6 +443,10 @@ var AchievementManager = (function () {
 
       case 'game_win':
         if (!_stats.wonGame) { _stats.wonGame = true; _save(); _unlock('game_win_first'); }
+        break;
+
+      case 'hardcore_win':
+        _unlock('hardcore_win');
         break;
 
       case 'touch_grass':

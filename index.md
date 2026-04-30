@@ -147,11 +147,11 @@ layout: default
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
-            margin:8px 0 8px 0;
+            margin:8px 0 16px 0;
             text-align:center;">🧩 Memories</h2>
       <div style="flex:1;
                   min-height:0;
-                  max-height:380px;
+                  max-height:444px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;
@@ -172,11 +172,11 @@ layout: default
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
-            margin:8px 0 8px 0;
+            margin:8px 0 16px 0;
             text-align:center;">📜 Chronicles</h2>
       <div style="flex:1;
                   min-height:0;
-                  max-height:380px;
+                  max-height:444px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;
@@ -234,11 +234,11 @@ layout: default
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
-            margin:8px 0 8px 0;
+            margin:8px 0 16px 0;
             text-align:center;">⭐️ Rankings</h2>
       <div style="flex:1;
                   min-height:0;
-                  max-height:380px;
+                  max-height:444px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;
@@ -249,6 +249,21 @@ layout: default
       </div>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_rankings_back">👈 Back</button>
+    </div>
+  </div>
+
+  <!-- Settings screen -->
+  <div id="menu_settings_screen" style="display:none;">
+    <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
+      <h2 style="font-size:20px; letter-spacing:1.5px; -webkit-text-stroke:5px black; paint-order:stroke fill; margin:8px 0 8px 0; text-align:center;">⚙️ Settings</h2>
+      <div id="menu_settings_content" style="overflow-x:hidden; overflow-y:auto; max-height:444px; scrollbar-width:none; padding-top:2px; padding-bottom:2px;"></div>
+      <div class="menu-spacer"></div>
+      <button class="menu-btn" id="menu_settings_purge_1" style="color:red;">❌ Delete Saves</button>
+      <div id="menu_settings_purge_2" style="display:none; gap:4px;">
+        <button class="menu-btn" id="menu_settings_purge_cancel" style="flex:1; margin-top:0;">Cancel</button>
+        <button class="menu-btn" id="menu_settings_purge_confirm" style="flex:1; margin-top:0; color:red;">❌ Delete</button>
+      </div>
+      <button class="menu-btn" id="menu_settings_back">👈 Back</button>
     </div>
   </div>
 

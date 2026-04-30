@@ -1,11 +1,9 @@
 function logCheatUse(message) {
-  var currentEmoji = _getCurrentNameEmoji();
-  var baseName = currentEmoji ? playerName.slice(currentEmoji.length + 1) : playerName;
   playerEmoji = '⚠️';
-  playerName = '⚠️ ' + baseName;
   cheatedThisRun = true;
   AchievementManager.check('use_cheat');
-  logAction("✏️ ▸ ⚠️ <b>Cheat used: " + message + "</b>");
+  logAction("✏️ ▸ ⚠️ <text style='color:" + colorSoftRed + ";'><b>Cheat used: " + message + "</b></text>");
+  showAchievementToast({ emoji: '⚠️', desc: message, color: colorSoftRed }, 'Rankings disabled for your current run.', null);
   redraw();
 }
 
@@ -19,7 +17,7 @@ function _applyCheatName(name) {
     playerHpMax = cheatAmount; playerAtk = cheatAmount; playerStaMax = cheatAmount;
     playerMgkMax = cheatAmount; playerLck = cheatAmount; playerInt = cheatAmount;
     playerHp = playerHpMax; playerSta = playerStaMax; playerMgk = playerMgkMax;
-    logCheatUse("Changed Stats ➔  " + cheatAmount);
+    logCheatUse("Changed stats ➔  " + cheatAmount);
     return true;
   }
   if (name.includes("Mucho Dinero")) {
@@ -42,9 +40,10 @@ function _applyCheatName(name) {
     logCheatUse("Force-unlocked Origins.");
     return true;
   }
-  if (name.includes("Cleaner")) {
-    localStorage.removeItem('coins'); savedCoins = 0;
-    logCheatUse("Force-wiped save data.");
+  if (name.includes("Fragile")) {
+    try { localStorage.setItem('sd_picker_override', 'true'); } catch(e) {}
+    AchievementManager.check('game_win');
+    logCheatUse("Force-unlocked Hardcore.");
     return true;
   }
   return false;

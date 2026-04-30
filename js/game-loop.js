@@ -163,6 +163,9 @@ function gameOver(silent=false){
 
 function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   AchievementManager.check('game_win');
+  if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') {
+    AchievementManager.check('hardcore_win');
+  }
   var winMessage="👤 ▸ 👑 You finished the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();

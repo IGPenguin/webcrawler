@@ -10,7 +10,7 @@ function redraw(){
   //Player UI
   playerInfoUIElement = document.getElementById('id_player_info');
   toolbarCardUIElement = document.getElementById('id_toolbar_card');
-  document.getElementById('id_player_name').innerHTML = playerName;
+  document.getElementById('id_player_name').innerHTML = (playerEmoji ? playerEmoji + ' ' : '') + playerName;
 
   playerLevelUIELement = document.getElementById('id_player_level');
   var lvlSymbol= ""
@@ -384,19 +384,25 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
   var toast = document.createElement('div');
   toast.id = 'achievement_toast';
 
+  var toastColor = achievement.color || '#FFD940';
+
   var tsLine = '';
   if (unlockTimestamp) {
-    var d = new Date(unlockTimestamp);
-    tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">'
-      + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
-      + '</h5>';
+    if (typeof unlockTimestamp === 'string') {
+      tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">' + unlockTimestamp + '</h5>';
+    } else {
+      var d = new Date(unlockTimestamp);
+      tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">'
+        + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
+        + '</h5>';
+    }
   }
 
   toast.innerHTML =
     '<div style="display:flex; align-items:center; gap:10px; padding:7px 0px 8px 12px; margin-bottom:-8px;">'
       + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + achievement.emoji + '</span>'
       + '<div style="flex:1;">'
-        + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc + '</h5>'
+        + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:' + toastColor + '; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc + '</h5>'
         + tsLine
       + '</div>'
     + '</div>';
@@ -405,7 +411,7 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
     'position:absolute; top:0; left:3px; right:3px;' +
     'z-index:9999; pointer-events:none; box-sizing:border-box;' +
     'background:#272727; overflow:hidden;' +
-    'box-shadow:0 0 0 3px #FFD940;' +
+    'box-shadow:0 0 0 3px ' + toastColor + ';' +
     'opacity:0; transition:opacity 0.3s;';
 
   document.getElementById('id_action_bar_area').appendChild(toast);
@@ -414,14 +420,19 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
     requestAnimationFrame(function() { toast.style.opacity = '1'; });
   });
 
-  setTimeout(function() {
-    if (document.getElementById('achievement_toast') !== toast) return;
-    toast.style.boxShadow = '0 0 0 3px #fff, 0 0 8px #FFD940';
+  var _flashToast = function(n) {
+    if (n <= 0) return;
     setTimeout(function() {
       if (document.getElementById('achievement_toast') !== toast) return;
-      toast.style.boxShadow = '0 0 0 3px #FFD940';
-    }, 280);
-  }, 150);
+      toast.style.boxShadow = '0 0 0 3px #fff, 0 0 8px ' + toastColor;
+      setTimeout(function() {
+        if (document.getElementById('achievement_toast') !== toast) return;
+        toast.style.boxShadow = '0 0 0 3px ' + toastColor;
+        _flashToast(n - 1);
+      }, 350);
+    }, n === 3 ? 200 : 180);
+  };
+  _flashToast(3);
 
   setTimeout(function() {
     if (document.getElementById('achievement_toast') !== toast) return;

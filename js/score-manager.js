@@ -41,7 +41,12 @@ var ScoreManager = (function () {
   }
 
   function buildPayload(endType) {
-    var score = calculate() + (endType === 'win' ? 100 : 0);
+    var _mult = 1.0;
+    if (typeof GAME_CONFIG !== 'undefined') {
+      if (GAME_CONFIG.label === 'Easy')     _mult = 0.7;
+      else if (GAME_CONFIG.label === 'Hardcore') _mult = 1.5;
+    }
+    var score = Math.round((calculate() + (endType === 'win' ? 100 : 0)) * _mult);
     var companions = [...String(playerPartyString || '')].length;
     var playtime = Math.floor((Date.now() - (runStartTimestamp || Date.now())) / 1000);
     var statsStr = [playerHpMax, playerAtk, playerStaMax, playerLck, playerInt, playerMgkMax, playerDef].join(';');
@@ -129,6 +134,7 @@ var ScoreManager = (function () {
 
   function submitOrPrompt(payload) {
     if (cheatedThisRun) return;
+    if (isLocalhost()) return;
     if (getNickname()) {
       payload.nickname = getNickname();
       _doSubmit(payload);

@@ -99,13 +99,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Trap":
           case "Trap-Roll":
-          case "Trap-Obstacle":
             logPlayerAction(actionString, _crit==='success'
               ? "Obliterated it without a flinch."
               : "Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             isFishing=false;
+            nextEncounter();
+            break;
+
+          case "Trap-Obstacle":
+            displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
+            isFishing=false;
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "Couldn't break through -1 🟢");
+              }
+              break;
+            }
+            logPlayerAction(actionString, _crit==='success'
+              ? "Obliterated it without a flinch."
+              : "Smashed it into tiny bits -1 🟢");
             nextEncounter();
             break;
 
@@ -1421,7 +1439,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   displayEnemyEffect("💢");
                   playerHit(_ctrAtk);
                 } else {
-                  enemyDodged("Missed, they slipped your grasp.");
+                  if (playerSta > 0) playerSta--;
+                  enemyDodged("Missed, they slipped your grasp -1 🟢");
                 }
                 displayEnemyCannotEffect();
                 if (enemyCastIfMgk()) break;
@@ -1551,7 +1570,23 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Trap-Obstacle": //Removes from the way
-            logPlayerAction(actionString,"Cleared it from the way forward.")
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString,"So clumsy you hurt yourself -1 💔");
+                playerHit(1, false);
+              } else {
+                if (playerSta > 0) playerSta--;
+                logPlayerAction(actionString,"Tried but couldn't shift it -1 🟢");
+                displayPlayerCannotEffect();
+              }
+              break;
+            }
+            if (_crit === 'success') {
+              logPlayerAction(actionString,"Cleared it without a flinch.");
+            } else {
+              if (playerSta > 0) playerSta--;
+              logPlayerAction(actionString,"Cleared it from the way forward -1 🟢");
+            }
             nextEncounter();
             break;
 
@@ -1738,12 +1773,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (!enemyTeam.includes("Lover's Memento")) { //Add to loot
               if (enemyEmoji!="🪙" && enemyEmoji!="💰") playerLootString+=enemyEmoji;
               if (enemyEmoji=="👺" || enemyEmoji=="🐴" || enemyEmoji=="🐷") {
-                if (playerEmoji && playerEmoji !== enemyEmoji) {
-                  playerName = playerName.replace(playerEmoji + " ", enemyEmoji + " ");
-                  playerEmoji = "";
-                } else if (!playerEmoji) {
-                  playerName = enemyEmoji + " " + playerName;
-                }
+                playerEmoji = enemyEmoji;
               }
               displayPlayerGainedEffect();
             } else {
@@ -1885,7 +1915,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               isFishing=false;
             } else if (enemySta - enemyStaLost > 0) {
               if (_skillOK === false) {
-                logPlayerAction(actionString,"Missed, they are faster than expected.");
+                if (playerSta > 0) playerSta--;
+                logPlayerAction(actionString,"Missed, they are faster than expected -1 🟢");
                 displayEnemyEffect("🌀");
                 if (enemyCastIfMgk()) break;
                 enemyAttackOrRest();

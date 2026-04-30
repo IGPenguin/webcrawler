@@ -1,3 +1,10 @@
+// Set to true to unlock Easy/Hardcore difficulty selection for players.
+// When false, both options are visible but grayed out (except on localhost for testing).
+var DIFFICULTY_PICKER_ENABLED = false;
+
+// Set to true to skip the tutorial on localhost (sets initialEncounterOverride = 7).
+var TUTORIAL_SKIP_LOCALHOST = false;
+
 // ── Difficulty Presets ────────────────────────────────────────────────────────
 // speedMult:             action bar speed multiplier — >1 faster cursor (harder), <1 slower (easier)
 // zoneMult:              success zone width multiplier — 1.0 = standard, 0.8 = 20% narrower (harder), 1.2 = 20% wider (easier)

@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 04/30/2026 @ 07:59 AM"
+var versionCode = "ver. 04/30/2026 @ 04:51 PM"
 var initialEncounterOverride = 0; // set to 7 to skip tutorial (must equal Depths of Slumber row count + 2)
 
 function isLocalhost() {
@@ -7,7 +7,7 @@ function isLocalhost() {
       || location.hostname === "127.0.0.1"
       || location.hostname.includes("192.168");
 }
-if (isLocalhost()) initialEncounterOverride = 5;
+if (isLocalhost() && (typeof TUTORIAL_SKIP_LOCALHOST !== 'undefined') && TUTORIAL_SKIP_LOCALHOST) initialEncounterOverride = 7;
 
 // ── Colors ────────────────────────────────────────────────────────────────────
 var colorWhite         = "#FFFFFF";

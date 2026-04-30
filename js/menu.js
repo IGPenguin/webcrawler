@@ -9,7 +9,8 @@ var Menu = (function () {
     'menu_credits_screen',
     'menu_confirm_screen',
     'menu_origin_screen',
-    'menu_rankings_screen'
+    'menu_rankings_screen',
+    'menu_settings_screen'
   ];
 
   // ── Show / Hide ────────────────────────────────────────────────────────────
@@ -78,7 +79,7 @@ var Menu = (function () {
         _renameCurrentRun(function () { _renderMain(true); });
       });
     } else {
-      preview.innerHTML = _buildRunCardHTML('Damned Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifting Away', '⨯ ⨯ ⨯');
+      preview.innerHTML = _buildRunCardHTML('👤 Damned Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifting Away', '⨯ ⨯ ⨯');
     }
     preview.style.display = '';
 
@@ -115,16 +116,13 @@ var Menu = (function () {
     var s = SaveManager.loadGameState();
     if (!s) return;
     var current = s.playerName || playerName || '';
+    var currentEmoji = _getCurrentNameEmoji();
+    if (currentEmoji && current.startsWith(currentEmoji + ' ')) {
+      current = current.slice(currentEmoji.length + 1);
+    }
     var newName = prompt('Rename your character: ', current);
     if (newName === '') newName = 'Nameless';
     else if (!newName) return; // cancelled — do nothing
-
-    // Preserve emoji prefix
-    var currentEmoji = _getCurrentNameEmoji();
-    if (currentEmoji && newName.startsWith(currentEmoji + ' ')) {
-      newName = newName.slice(currentEmoji.length + 1);
-    }
-    if (currentEmoji) newName = currentEmoji + ' ' + newName;
 
     if (_applyCheatName(newName)) {
       SaveManager.patchPlayerName(playerName);
@@ -153,7 +151,7 @@ var Menu = (function () {
       playerMgkMax = Math.max(0, playerMgkMax + mgk);
       playerMgk    = playerMgkMax;
       if (mgk > 0) AchievementManager.check('mana_first');
-      playerName = origin.emoji + ' ' + (origin.rolledName || getOriginName(origin));
+      playerName = origin.rolledName || getOriginName(origin);
       playerEmoji = origin.emoji;
       playerOriginName = origin.originName || '';
       playerDestined = true;
@@ -810,7 +808,7 @@ var Menu = (function () {
   }
 
   function _renderViewGhost(ghost) {
-    _bindRankingsBack('👈 Rankings', _renderRankings);
+    _bindRankingsBack('👈 Back', _renderRankings);
     var list = document.getElementById('menu_rankings_list');
     var sc = list.parentElement;
     sc.style.overflowY = 'hidden';
@@ -858,6 +856,191 @@ var Menu = (function () {
       var logH = sc.clientHeight - card.offsetHeight - lootBar.offsetHeight - infoEl.offsetHeight - 20;
       logH; // ghost view has no log — layout only
     });
+  }
+
+  // ── Settings ───────────────────────────────────────────────────────────────
+
+  var _DIFF_FLAVOR = {
+    Easy:     'Easier action windows, better loot.',
+    Standard: 'The original intended experience.',
+    Hardcore: 'Death is final, glory is eternal.'
+  };
+
+  function _applyStoredDifficulty() {
+    var saved = null;
+    try { saved = localStorage.getItem('sd_difficulty'); } catch (e) {}
+    if (!saved || !DIFFICULTY_MODES[saved]) return;
+    if (saved === 'Standard') { GAME_CONFIG = DIFFICULTY_MODES.Standard; return; }
+    var isLocal = isLocalhost();
+    if (!DIFFICULTY_PICKER_ENABLED && !isLocal) return;
+    if (saved === 'Easy') {
+      GAME_CONFIG = DIFFICULTY_MODES.Easy;
+    } else if (saved === 'Hardcore' && AchievementManager.isUnlocked('game_win_first')) {
+      GAME_CONFIG = DIFFICULTY_MODES.Hardcore;
+    }
+  }
+
+  function _setDifficulty(key) {
+    if (!DIFFICULTY_MODES[key]) return;
+    GAME_CONFIG = DIFFICULTY_MODES[key];
+    try { localStorage.setItem('sd_difficulty', key); } catch (e) {}
+  }
+
+  // pendingKey: when set, a mid-run difficulty confirmation is being shown.
+  function _renderSettings(pendingKey) {
+    var isLocal = isLocalhost();
+    var _pickerOverride = false;
+    try { _pickerOverride = localStorage.getItem('sd_picker_override') === 'true'; } catch (e) {}
+    var pickerEnabled = (typeof DIFFICULTY_PICKER_ENABLED !== 'undefined' && DIFFICULTY_PICKER_ENABLED) || isLocal || _pickerOverride;
+    var hasWon = AchievementManager.isUnlocked('game_win_first');
+    var currentDiff = (typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard');
+    var currentNickname = ScoreManager.getNickname() || '';
+    var isVibOn = (typeof vibrationEnabled !== 'undefined' ? vibrationEnabled : true);
+    var hasRun = SaveManager.hasContinue();
+
+    var content = document.getElementById('menu_settings_content');
+    content.innerHTML = '';
+
+    var SECTION_LABEL = 'font-size:15px; font-weight:600; letter-spacing:0.6px;'
+      + ' -webkit-text-stroke:4px #121212; paint-order:stroke fill;'
+      + ' text-align:center; margin:0 0 10px 0; color:#fff;';
+    var SEG_TEXT = 'font-size:15px; font-weight:600; letter-spacing:0.4px;'
+      + ' -webkit-text-stroke:3px #121212; paint-order:stroke fill;';
+
+    // ── Nickname ────────────────────────────────────────────────────────────
+    var nickSection = document.createElement('div');
+    nickSection.style.cssText = 'margin:10px 3px 0 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
+
+    var nickLabel = document.createElement('h5');
+    nickLabel.style.cssText = SECTION_LABEL;
+    nickLabel.textContent = 'Rankings Nickname';
+    nickSection.appendChild(nickLabel);
+
+    var nickInput = document.createElement('input');
+    nickInput.type = 'text';
+    nickInput.maxLength = 32;
+    nickInput.placeholder = 'Your nickname (3+ chars)';
+    nickInput.value = currentNickname;
+    nickInput.style.cssText = 'width:100%; box-sizing:border-box; font-size:16px; padding:8px 10px; background:#2a2a2a; border:none; outline:2px solid #444; color:#fff; font-family:inherit;';
+    nickInput.addEventListener('blur', function () {
+      var val = nickInput.value.trim();
+      if (val.length >= 3) ScoreManager.setNickname(val);
+    });
+    nickSection.appendChild(nickInput);
+    content.appendChild(nickSection);
+
+    // ── Difficulty ──────────────────────────────────────────────────────────
+    var diffSection = document.createElement('div');
+    diffSection.style.cssText = 'margin:10px 3px 0 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
+
+    var diffLabel = document.createElement('h5');
+    diffLabel.style.cssText = SECTION_LABEL;
+    diffLabel.textContent = 'Game Difficulty';
+    diffSection.appendChild(diffLabel);
+
+    var segRow = document.createElement('div');
+    segRow.style.cssText = 'display:flex; gap:8px;';
+
+    var diffOptions = [
+      { key: 'Easy',     locked: !pickerEnabled,           lockHint: '🔒 Coming soon' },
+      { key: 'Standard', locked: false,                     lockHint: '' },
+      { key: 'Hardcore', locked: !pickerEnabled || !hasWon,
+                         lockHint: pickerEnabled ? '🔒 Finish a run first' : '🔒 Coming soon' }
+    ];
+
+    diffOptions.forEach(function (d) {
+      var isActive = d.key === currentDiff;
+      var btn = document.createElement('div');
+      btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center;'
+        + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
+        + ' background:' + (isActive ? '#2a2500' : '#252525') + ';'
+        + ' opacity:' + (d.locked ? '0.35' : '1') + ';'
+        + ' cursor:' + (d.locked ? 'default' : 'pointer') + '; user-select:none;';
+      var btnLabel = (d.locked ? '🔒 Locked' : d.key);
+      btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + btnLabel + '</div>';
+
+      if (!d.locked) {
+        btn.addEventListener('click', function () {
+          if (d.key === currentDiff) return;
+          if (hasRun) {
+            _renderSettings(d.key);
+          } else {
+            _setDifficulty(d.key);
+            _renderSettings();
+          }
+        });
+      }
+      segRow.appendChild(btn);
+    });
+
+    diffSection.appendChild(segRow);
+
+    // Inline mid-run confirmation
+    if (pendingKey) {
+      var warnEl = document.createElement('div');
+      warnEl.style.cssText = 'margin-top:10px; padding:8px 10px; background:#2a1010; box-shadow:0 0 0 2px #cc3333;';
+      warnEl.innerHTML = '<h5 style="margin:0 0 8px 0; font-size:14px; color:#ff6666; font-style:normal; font-weight:500; -webkit-text-stroke:3px #121212; paint-order:stroke fill; text-align:center;">⚠️ Changing this will end your current run!</h5>'
+        + '<div style="display:flex; gap:8px;">'
+        + '<div id="settings_diff_cancel" style="flex:1; padding:8px 4px; text-align:center; background:#252525; box-shadow:0 0 0 2px #444; cursor:pointer; user-select:none;">'
+        +   '<span style="font-size:14px; font-weight:600; color:#fff; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Cancel</span>'
+        + '</div>'
+        + '<div id="settings_diff_confirm" style="flex:1; padding:8px 4px; text-align:center; background:#3a1010; box-shadow:0 0 0 2px #cc3333; cursor:pointer; user-select:none;">'
+        +   '<span style="font-size:14px; font-weight:600; color:red; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">❌ Confirm</span>'
+        + '</div>'
+        + '</div>';
+      diffSection.appendChild(warnEl);
+
+      setTimeout(function () {
+        var confirmBtn = document.getElementById('settings_diff_confirm');
+        var cancelBtn  = document.getElementById('settings_diff_cancel');
+        if (confirmBtn) confirmBtn.addEventListener('click', function () {
+          SaveManager.abandonCurrentRun();
+          _setDifficulty(pendingKey);
+          _renderSettings();
+        });
+        if (cancelBtn) cancelBtn.addEventListener('click', function () { _renderSettings(); });
+      }, 0);
+    } else {
+      var flavorEl = document.createElement('h5');
+      flavorEl.style.cssText = 'margin:10px 0 0 0; font-size:14px; font-style:italic; opacity:0.6; text-align:center;';
+      flavorEl.textContent = _DIFF_FLAVOR[currentDiff] || '';
+      diffSection.appendChild(flavorEl);
+    }
+
+    content.appendChild(diffSection);
+
+    // ── Vibration ───────────────────────────────────────────────────────────
+    var vibSection = document.createElement('div');
+    vibSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
+
+    var vibLabel = document.createElement('h5');
+    vibLabel.style.cssText = SECTION_LABEL;
+    vibLabel.textContent = 'Vibration (Android)';
+    vibSection.appendChild(vibLabel);
+
+    var vibRow = document.createElement('div');
+    vibRow.style.cssText = 'display:flex; gap:8px;';
+
+    ['Off', 'On'].forEach(function (v) {
+      var isActive = (v === 'On') === isVibOn;
+      var btn = document.createElement('div');
+      btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none;'
+        + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
+        + ' background:' + (isActive ? '#2a2500' : '#252525') + ';';
+      btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + v + '</div>';
+      btn.addEventListener('click', function () {
+        var newVal = (v === 'On');
+        vibrationEnabled = newVal;
+        try { localStorage.setItem('sd_vibration', newVal ? 'true' : 'false'); } catch (e) {}
+        _renderSettings(pendingKey);
+      });
+      vibRow.appendChild(btn);
+    });
+
+    vibSection.appendChild(vibRow);
+    content.appendChild(vibSection);
+
+    _doShowScreen('menu_settings_screen');
   }
 
   // ── Button wiring ──────────────────────────────────────────────────────────
@@ -913,11 +1096,30 @@ var Menu = (function () {
     });
     document.getElementById('menu_credits_review').addEventListener('click', function () { redirectToFeedback(); });
     document.getElementById('menu_credits_back').addEventListener('click', function () { _renderMain(); });
+
+    document.getElementById('menu_settings').addEventListener('click', function () {
+      menuFade(function () { _renderSettings(); });
+    });
+    document.getElementById('menu_settings_back').addEventListener('click', function () { _renderMain(); });
+
+    document.getElementById('menu_settings_purge_1').addEventListener('click', function () {
+      document.getElementById('menu_settings_purge_1').style.display = 'none';
+      document.getElementById('menu_settings_purge_2').style.display = 'flex';
+    });
+    document.getElementById('menu_settings_purge_cancel').addEventListener('click', function () {
+      document.getElementById('menu_settings_purge_2').style.display = 'none';
+      document.getElementById('menu_settings_purge_1').style.display = '';
+    });
+    document.getElementById('menu_settings_purge_confirm').addEventListener('click', function () {
+      SaveManager.purgeAll();
+      location.reload();
+    });
   }
 
   // ── Public init ────────────────────────────────────────────────────────────
 
   function init() {
+    _applyStoredDifficulty();
     document.getElementById('menu_version').innerHTML = versionCode;
     _bindButtons();
     show();

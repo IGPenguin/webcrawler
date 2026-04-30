@@ -23,7 +23,7 @@ function renewPlayer(){ //Default values
   playerCooked = false;
   playerShopped = false;
   playerDestined = false;
-  playerEmoji = '';
+  playerEmoji = '👤';
   playerLootString = [""];
   playerPartyString = [""];
   playerAttackType = "⚔️";
@@ -503,12 +503,14 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
     }
 
     var ress="";
-    validRess.forEach((item, i) => {
-      if (playerLootString.includes(item)) {
-        ress=item;
-        return true
+    if (!(typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore')) {
+      validRess.forEach((item, i) => {
+        if (playerLootString.includes(item)) {
+          ress=item;
+          return true;
         }
-    });
+      });
+    }
     if (ress!="" && playerUseItem(ress,"n/a","n/a",true,true)){
       logAction("💀 ▸ "+ress+" Still alive thanks to <b>💀 Cheat Death</b>.");
       displayPlayerGainedEffect();
@@ -561,6 +563,7 @@ function playerWaive(){
 }
 
 function playerReincarnate(){
+  if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') return;
   //SaveManager.clearGameState(); // treat revive as a new run — wipe the death-screen snapshot
   playerNumber++; //Tracks revives of the character
   AchievementManager.check('reincarnate');

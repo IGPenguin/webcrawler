@@ -60,13 +60,38 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
-  // Exhausted grab: near-impossible without stamina (items/containers/fishing unaffected)
-  if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing' && types !== "Death") {
+  // Speak / Block / Roll at an obstacle — impossible, it's a wall
+  if ((button === 'button_speak' || button === 'button_block' || button === 'button_roll' ) && types === 'Trap-Obstacle') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Attack obstacle with no stamina — same difficulty as attacking an enemy exhausted
+  if (button === 'button_attack' && types === 'Trap-Obstacle' && pSta === 0) {
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+  }
+
+  // Attack obstacle with stamina — real skill check with crits
+  if (button === 'button_attack' && types === 'Trap-Obstacle') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 30, successMax: 70,
+             critSuccessMin: 48, critSuccessMax: 52, critFailW: 10 };
+  }
+
+  // Grab obstacle — same difficulty as attacking it
+  if (button === 'button_grab' && types === 'Trap-Obstacle') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 30, successMax: 70,
+             critSuccessMin: 48, critSuccessMax: 52, critFailW: 10 };
+  }
+
+  // Exhausted grab: near-impossible without stamina (items/containers/fishing/dream unaffected)
+  if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing' && types !== "Death" && !types.includes('Dream')) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
-  // Resurrection: gold-only strip — hit it or die permanently
+  // Resurrection: gold-only strip — hit it or die permanently; impossible on Hardcore
   if (button === 'button_attack' && types.includes('Death')) {
+    if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') {
+      return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    }
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
              critSuccessMin: 48, critSuccessMax: 52, critFailW: 5 };
   }
@@ -88,6 +113,11 @@ function calcActionBarConfig(button, adjustment) {
 
   // Dream: only sleep and walk are meaningful — all other actions are impossible
   if (types.includes('Dream') && button !== 'button_sleep' && button !== 'button_roll') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Dream walk with no stamina — impossible
+  if (types.includes('Dream') && button === 'button_roll' && pSta === 0) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 

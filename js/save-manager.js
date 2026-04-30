@@ -215,6 +215,18 @@ var SaveManager = (function () {
     localStorage.removeItem(HISTORY_KEY);
   }
 
+  // Wipes all gameplay data: run, history, coins, achievements, nickname.
+  // Settings (difficulty, vibration) are intentionally preserved.
+  function purgeAll() {
+    localStorage.removeItem('coins');
+    clearSave();
+    localStorage.removeItem(HISTORY_KEY);
+    localStorage.removeItem('achievements');
+    localStorage.removeItem('achievStats');
+    localStorage.removeItem('originRoll');
+    localStorage.removeItem('playerNickname');
+  }
+
   // Continue is available whenever an active run snapshot exists
   function hasContinue() {
     return loadGameState() !== null;
@@ -239,6 +251,7 @@ var SaveManager = (function () {
     listSessionHistory: listSessionHistory,
     clearSave:          clearSave,
     clearAll:           clearAll,
+    purgeAll:           purgeAll,
     patchPlayerName:    patchPlayerName
   };
 })();

@@ -9,17 +9,16 @@ function _getCurrentNameEmoji() {
 
 function renameCharacter(){
   var currentEmoji = _getCurrentNameEmoji();
-  var newPlayerName = prompt("Rename your character: ", playerName);
+  var displayName = playerName;
+  if (currentEmoji && displayName.startsWith(currentEmoji + ' ')) {
+    displayName = displayName.slice(currentEmoji.length + 1);
+  }
+  var newPlayerName = prompt("Rename your character: ", displayName);
   if (newPlayerName === "") {
     newPlayerName = "Nameless";
   } else if (!newPlayerName) {
     return playerName; // cancelled
   }
-  // strip the emoji prefix the user may have kept from the prompt default
-  if (currentEmoji && newPlayerName.startsWith(currentEmoji + ' ')) {
-    newPlayerName = newPlayerName.slice(currentEmoji.length + 1);
-  }
-  if (currentEmoji) newPlayerName = currentEmoji + ' ' + newPlayerName;
   playerName = newPlayerName;
   redraw();
   return playerName;
