@@ -5,10 +5,7 @@
 - **/clear** when one-time task completed
 
 # Priority 0
-**Redo Endings**
-  * Fix the Flakiness: Remove the encounterIndex++ hacks. Instead of the game just "ending" when the story list runs out, create a resolveEnding() function.
-  * The Bride as a Gateway: When the Bride is defeated or calmed, it will trigger a transition to a final "Decision" encounter.
-  * Branching Choices: Based on your playerLove and playerKarma, the buttons will change to your specific endings: Kiss her goodnight, Mercy kill, Truly Revive, etc.
+- none
 
 # Claude
 - NEW: Legendary item increasing drop chances for higher than common rarity
