@@ -686,13 +686,8 @@ var Menu = (function () {
       if (unlocked) unlockedCount++;
     });
 
-    // Progress header
-    var header = document.createElement('div');
-    header.style.cssText = 'padding:4px 8px 6px 8px; text-align:center;';
-    header.innerHTML = '<h5 style="margin:0; font-size:12px; opacity:1; letter-spacing:0.8px;">'
-      + 'Unlocked: '+ unlockedCount + ' / ' + achievements.length
-      + '</h5>';
-    list.appendChild(header);
+    var countEl = document.getElementById('menu_memories_count');
+    if (countEl) countEl.textContent = 'Recalling the past reshapes the cycle: ' + unlockedCount + ' / ' + achievements.length;
 
     achievements.forEach(function (a) {
       var unlocked = AchievementManager.isUnlocked(a.id);

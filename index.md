@@ -147,11 +147,12 @@ layout: default
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
-            margin:8px 0 16px 0;
+            margin:8px 0 6px 0;
             text-align:center;">🧩 Memories</h2>
+      <h5 id="menu_memories_count" style="margin:0 0 12px 0; font-size:12px; opacity:1; letter-spacing:0.8px; text-align:center;"></h5>
       <div style="flex:1;
                   min-height:0;
-                  max-height:444px;
+                  max-height:424px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;

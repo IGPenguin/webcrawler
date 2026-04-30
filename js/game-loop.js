@@ -92,7 +92,8 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
 }
 
 function animateFlipNextEncounter(){
-  var animationHandler = function(){
+  var animationHandler = function(e){
+    if (e.target !== cardUIElement) return; // ignore bubbled animationend from child elements
     nextEncounter();
     registerClickListeners();
     cardUIElement.removeEventListener("animationend",animationHandler);
