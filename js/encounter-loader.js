@@ -185,7 +185,7 @@ function loadEncounter(index, fileLines = linesStory){
       if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 You are broke, I guess that's it for now...")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride")) {
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged a boss: <b>"+enemyName+"</b>")) {
         logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
         if (playerLootString.includes("📌") && ((enemyAtk+enemyAtkBonus)>0)) {
           enemyHit(1,false,false,true)

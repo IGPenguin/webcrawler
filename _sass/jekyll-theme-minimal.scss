@@ -85,6 +85,14 @@ h4 {
   border-radius: 0;
 }
 
+#id_player_party_loot {
+  scrollbar-width: none;
+  overflow-x: auto;
+}
+#id_player_party_loot::-webkit-scrollbar {
+  display: none;
+}
+
 h5 {
   font-size:12px;
   font-style: italic;
