@@ -134,7 +134,7 @@ var ScoreManager = (function () {
 
   function submitOrPrompt(payload) {
     if (cheatedThisRun) return;
-    if (isLocalhost()) return;
+    if (isLocalhost() && RANKINGS_DISABLED_LOCALHOST) return;
     if (getNickname()) {
       payload.nickname = getNickname();
       _doSubmit(payload);

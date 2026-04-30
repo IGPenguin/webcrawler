@@ -1,9 +1,11 @@
-// Set to true to unlock Easy/Hardcore difficulty selection for players.
-// When false, both options are visible but grayed out (except on localhost for testing).
+// Set to true to unlock Easy/Hardcore difficulty selection for players (except on localhost for testing).
 var DIFFICULTY_PICKER_ENABLED = false;
 
 // Set to true to skip the tutorial on localhost (sets initialEncounterOverride = 7).
 var TUTORIAL_SKIP_LOCALHOST = false;
+
+// Set to true to disable global rankings submission on localhost.
+var RANKINGS_DISABLED_LOCALHOST = false;
 
 // ── Difficulty Presets ────────────────────────────────────────────────────────
 // speedMult:             action bar speed multiplier — >1 faster cursor (harder), <1 slower (easier)
