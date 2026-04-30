@@ -1,4 +1,5 @@
 *.DS_Store
+update-rankings.sh
 .jekyll-cache/
 .sass-cache/
 _site/
