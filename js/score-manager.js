@@ -60,7 +60,7 @@ var ScoreManager = (function () {
       companions:     companions,
       stats:          statsStr,
       karma:          playerKarma || 1,
-      difficulty:     (typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard'),
+      difficulty:     (typeof GAME_CONFIG !== 'undefined' ? (GAME_CONFIG.displayName || GAME_CONFIG.label) : '💔 Rough'),
       gameVersion:    (typeof versionCode !== 'undefined' ? versionCode : '?'),
       playtime:       playtime,
       endType:        endType,

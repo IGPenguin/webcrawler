@@ -22,6 +22,7 @@ var TUTORIAL_SKIP_LOCALHOST = false;
 var DIFFICULTY_MODES = {
   Standard: {
     label:                    "Standard",
+    displayName:              "💔 Rough",
     speedMult:                1.0,
     zoneMult:                 1.0,
     spawnItemDropBonus:       0,
@@ -32,9 +33,9 @@ var DIFFICULTY_MODES = {
   },
 
   // Easy — forgiving bars, wider zones, better loot from generators and kills
-  // Intended as a future optional mode accessible from the menu.
   Easy: {
     label:                    "Easy",
+    displayName:              "🕯️ Story",
     speedMult:                0.8,
     zoneMult:                 1.2,
     spawnItemDropBonus:       5,
@@ -47,6 +48,7 @@ var DIFFICULTY_MODES = {
   // Hardcore — unlocked after completing a full run; punishing bars, scarce drops
   Hardcore: {
     label:                    "Hardcore",
+    displayName:              "☠️ Fatal",
     speedMult:                1.2,
     zoneMult:                 0.8,
     spawnItemDropBonus:       -4,

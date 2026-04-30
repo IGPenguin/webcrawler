@@ -823,10 +823,16 @@ var Menu = (function () {
     var partyLoot = String(ghost.inventory || '');
 
     var card = document.createElement('div');
+    var displayDiff = ghost.difficulty || 'Standard';
+    if (DIFFICULTY_MODES[displayDiff]) displayDiff = DIFFICULTY_MODES[displayDiff].displayName;
+    else if (displayDiff === 'Standard') displayDiff = '💔 Rough';
+    else if (displayDiff === 'Easy')     displayDiff = '🕯️ Story';
+    else if (displayDiff === 'Hardcore') displayDiff = '☠️ Fatal';
+
     card.innerHTML = _buildRunCardHTML(
       ghost.charName || '?',
       ghost.level || '?',
-      (ghost.difficulty || 'Standard') + ' · ' + (ghost.encounterCount || 0) + ' encounters',
+      displayDiff + ' · ' + (ghost.encounterCount || 0) + ' encounters',
       stats, partyLoot,
       ghost.endType === 'win' ? '👑 Finished!' : '💀 ' + (ghost.endType || 'death'),
       ghost.datetime ? ghost.datetime.slice(0, 10) : null,
@@ -861,9 +867,9 @@ var Menu = (function () {
   // ── Settings ───────────────────────────────────────────────────────────────
 
   var _DIFF_FLAVOR = {
-    Easy:     'Easier action windows, better loot.',
-    Standard: 'The original intended experience.',
-    Hardcore: 'Death is final, glory is eternal.'
+    Easy:     'A flickering light in the dark.',
+    Standard: 'The intended satisfying struggle.',
+    Hardcore: 'No mercy, death is always fatal.'
   };
 
   function _applyStoredDifficulty() {
@@ -893,7 +899,7 @@ var Menu = (function () {
     try { _pickerOverride = localStorage.getItem('sd_picker_override') === 'true'; } catch (e) {}
     var pickerEnabled = (typeof DIFFICULTY_PICKER_ENABLED !== 'undefined' && DIFFICULTY_PICKER_ENABLED) || isLocal || _pickerOverride;
     var hasWon = AchievementManager.isUnlocked('game_win_first');
-    var currentDiff = (typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard');
+    var currentDiffLabel = (typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard');
     var currentNickname = ScoreManager.getNickname() || '';
     var isVibOn = (typeof vibrationEnabled !== 'undefined' ? vibrationEnabled : true);
     var hasRun = SaveManager.hasContinue();
@@ -949,19 +955,19 @@ var Menu = (function () {
     ];
 
     diffOptions.forEach(function (d) {
-      var isActive = d.key === currentDiff;
+      var isActive = d.key === currentDiffLabel;
       var btn = document.createElement('div');
       btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center;'
         + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
         + ' background:' + (isActive ? '#2a2500' : '#252525') + ';'
         + ' opacity:' + (d.locked ? '0.35' : '1') + ';'
         + ' cursor:' + (d.locked ? 'default' : 'pointer') + '; user-select:none;';
-      var btnLabel = (d.locked ? '🔒 Locked' : d.key);
+      var btnLabel = (d.locked ? '🔒 Locked' : DIFFICULTY_MODES[d.key].displayName);
       btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + btnLabel + '</div>';
 
       if (!d.locked) {
         btn.addEventListener('click', function () {
-          if (d.key === currentDiff) return;
+          if (d.key === currentDiffLabel) return;
           if (hasRun) {
             _renderSettings(d.key);
           } else {
@@ -1003,7 +1009,7 @@ var Menu = (function () {
     } else {
       var flavorEl = document.createElement('h5');
       flavorEl.style.cssText = 'margin:10px 0 0 0; font-size:14px; font-style:italic; opacity:0.6; text-align:center;';
-      flavorEl.textContent = _DIFF_FLAVOR[currentDiff] || '';
+      flavorEl.textContent = _DIFF_FLAVOR[currentDiffLabel] || '';
       diffSection.appendChild(flavorEl);
     }
 

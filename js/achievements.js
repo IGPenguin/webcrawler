@@ -9,7 +9,7 @@ var AchievementManager = (function () {
     { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shade</b> to spend Drachmae!', hint: "Obtain the everlasting currency!" },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim." },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin."},
-    { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Hardcore difficulty!', hint: 'Prove your dedication and true skill.' },
+    { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.' },
 
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time." },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.' },
