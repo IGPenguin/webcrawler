@@ -1729,7 +1729,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   playerAtk=0;
               }
 
-              playerName=polymorph+" "+playerName;
+              playerName=playerName;
+              playerEmoji=polymorph;
               displayPlayerCannotEffect();
               playerRest(true);
             }
