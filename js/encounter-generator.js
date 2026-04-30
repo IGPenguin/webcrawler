@@ -1,4 +1,5 @@
 function generateNextEncounters(generatorID=0, logCall=true){
+  if (logCall) _generationBuffer = []; // Reset per top-level generator call
   switch (generatorID) {
 
     case 0: //Prop/Small/Lockbox

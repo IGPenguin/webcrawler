@@ -161,9 +161,19 @@ function getNextEncounterIndex() {
   return nextItemIndex;
 }
 
+// Tracks encounter names being generated in the current generator session.
+// Cleared at the start of each top-level generateNextEncounters() call.
+// Prevents the same name from being picked twice within a single expansion.
+var _generationBuffer = [];
+
 // Inserts an encounter string array into linesStory at encounterIndex+index.
 function pushEncounter(encounterStringArray=[], index=1, areaNameOverride="") {
   if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Error","desc:Missing data for pushing new encounter.","message:"];
+
+  if (encounterStringArray[2]) {
+    var _genName = String(encounterStringArray[2]).split("name:")[1];
+    if (_genName && !_generationBuffer.includes(_genName)) _generationBuffer.push(_genName);
+  }
 
   if (areaNameOverride != "") {
     linesStory.splice(encounterIndex + index, 0, encounterStringArray, areaNameOverride);
@@ -215,6 +225,13 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
   seenEncounters.forEach(function(seenName) {
     tempLinesGenerator = tempLinesGenerator.filter(function(line) {
       return line[2].split("name:")[1] !== seenName;
+    });
+  });
+
+  // Remove names already generated in this generator session (prevents intra-session duplicates)
+  _generationBuffer.forEach(function(genName) {
+    tempLinesGenerator = tempLinesGenerator.filter(function(line) {
+      return line[2].split("name:")[1] !== genName;
     });
   });
 
@@ -277,6 +294,12 @@ function getWeightedEncounter(encounterTypes, includeStrings, areaNameOverride, 
   seenEncounters.forEach(function (seenName) {
     tempLines = tempLines.filter(function (line) {
       return line[2].split('name:')[1] !== seenName;
+    });
+  });
+
+  _generationBuffer.forEach(function (genName) {
+    tempLines = tempLines.filter(function (line) {
+      return line[2].split('name:')[1] !== genName;
     });
   });
 
