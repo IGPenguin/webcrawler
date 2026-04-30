@@ -1010,36 +1010,71 @@ var Menu = (function () {
 
     content.appendChild(diffSection);
 
-    // ── Vibration ───────────────────────────────────────────────────────────
-    var vibSection = document.createElement('div');
-    vibSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
+    // ── Font Type (All platforms except Android) ─────────────────────────
+    if (getPlatform() !== 'android') {
+      var fontSection = document.createElement('div');
+      fontSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
 
-    var vibLabel = document.createElement('h5');
-    vibLabel.style.cssText = SECTION_LABEL;
-    vibLabel.textContent = 'Vibration (Android)';
-    vibSection.appendChild(vibLabel);
+      var fontLabel = document.createElement('h5');
+      fontLabel.style.cssText = SECTION_LABEL;
+      fontLabel.textContent = 'Font Type';
+      fontSection.appendChild(fontLabel);
 
-    var vibRow = document.createElement('div');
-    vibRow.style.cssText = 'display:flex; gap:8px;';
+      var fontRow = document.createElement('div');
+      fontRow.style.cssText = 'display:flex; gap:8px;';
 
-    ['Off', 'On'].forEach(function (v) {
-      var isActive = (v === 'On') === isVibOn;
-      var btn = document.createElement('div');
-      btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none;'
-        + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
-        + ' background:' + (isActive ? '#2a2500' : '#252525') + ';';
-      btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + v + '</div>';
-      btn.addEventListener('click', function () {
-        var newVal = (v === 'On');
-        vibrationEnabled = newVal;
-        try { localStorage.setItem('sd_vibration', newVal ? 'true' : 'false'); } catch (e) {}
-        _renderSettings(pendingKey);
+      ['Native', 'Gelasio'].forEach(function (f) {
+        var isActive = (f === fontPreference);
+        var btn = document.createElement('div');
+        btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none;'
+          + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
+          + ' background:' + (isActive ? '#2a2500' : '#252525') + ';';
+        btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + f + '</div>';
+        btn.addEventListener('click', function () {
+          fontPreference = f;
+          try { localStorage.setItem('sd_font_pref', f); } catch (e) {}
+          applyFontPreference();
+          _renderSettings(pendingKey);
+        });
+        fontRow.appendChild(btn);
       });
-      vibRow.appendChild(btn);
-    });
 
-    vibSection.appendChild(vibRow);
-    content.appendChild(vibSection);
+      fontSection.appendChild(fontRow);
+      content.appendChild(fontSection);
+    }
+
+    // ── Vibration (Android only) ───────────────────────────────────────────
+    if (getPlatform() === 'android') {
+      var vibSection = document.createElement('div');
+      vibSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
+
+      var vibLabel = document.createElement('h5');
+      vibLabel.style.cssText = SECTION_LABEL;
+      vibLabel.textContent = 'Vibration';
+      vibSection.appendChild(vibLabel);
+
+      var vibRow = document.createElement('div');
+      vibRow.style.cssText = 'display:flex; gap:8px;';
+
+      ['Off', 'On'].forEach(function (v) {
+        var isActive = (v === 'On') === isVibOn;
+        var btn = document.createElement('div');
+        btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none;'
+          + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
+          + ' background:' + (isActive ? '#2a2500' : '#252525') + ';';
+        btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + v + '</div>';
+        btn.addEventListener('click', function () {
+          var newVal = (v === 'On');
+          vibrationEnabled = newVal;
+          try { localStorage.setItem('sd_vibration', newVal ? 'true' : 'false'); } catch (e) {}
+          _renderSettings(pendingKey);
+        });
+        vibRow.appendChild(btn);
+      });
+
+      vibSection.appendChild(vibRow);
+      content.appendChild(vibSection);
+    }
 
     _doShowScreen('menu_settings_screen');
   }
@@ -1121,6 +1156,7 @@ var Menu = (function () {
 
   function init() {
     _applyStoredDifficulty();
+    applyFontPreference();
     document.getElementById('menu_version').innerHTML = versionCode;
     _bindButtons();
     show();

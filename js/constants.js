@@ -2,11 +2,6 @@
 var versionCode = "ver. 04/30/2026 @ 11:53 PM"
 var initialEncounterOverride = 0; // set to 7 to skip tutorial (must equal Depths of Slumber row count + 2)
 
-function isLocalhost() {
-  return location.hostname === "localhost"
-      || location.hostname === "127.0.0.1"
-      || location.hostname.includes("192.168");
-}
 if (isLocalhost() && (typeof TUTORIAL_SKIP_LOCALHOST !== 'undefined') && TUTORIAL_SKIP_LOCALHOST) initialEncounterOverride = 7;
 
 // ── Colors ────────────────────────────────────────────────────────────────────
@@ -44,10 +39,37 @@ var colorPaper         = "#d1bd91";
 var colorDarkPaper     = "#8c7f61";
 
 // ── UI Symbols ────────────────────────────────────────────────────────────────
-var fullSymbol  = "<p style=\"color:"+colorGrey+";font-size:18px;display:inline;\">●</p>";
-var emptySymbol = "<p style=\"color:"+colorGrey+";font-size:18px;display:inline;\">○</p>";
+var fullSymbol  = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">●</p>";
+var emptySymbol = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">○</p>";
 var enemyStatusString = "";
 var newline    = "<br>";
 var emptySpace = "&nbsp";
 var narrowSpace = "&#8239;";
 var arrowSymbol = "▸";
+
+// -- Functions ────────────────────────────────────────────────────────────────
+function isLocalhost() {
+  return location.hostname === "localhost"
+      || location.hostname === "127.0.0.1"
+      || location.hostname.includes("192.168");
+}
+
+function getPlatform() {
+  var ua = navigator.userAgent || navigator.vendor || window.opera;
+  if (/android/i.test(ua)) return "android";
+  return "other";
+}
+
+var fontPreference = 'Native';
+try { fontPreference = localStorage.getItem('sd_font_pref') || 'Native'; } catch (e) {}
+
+function applyFontPreference() {
+  var isAndroid = (getPlatform() === 'android');
+  var useGelasio = isAndroid || (fontPreference === 'Gelasio');
+  
+  if (useGelasio) {
+    document.documentElement.classList.add('gelasio-font');
+  } else {
+    document.documentElement.classList.remove('gelasio-font');
+  }
+}

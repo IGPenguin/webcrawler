@@ -14,6 +14,10 @@ layout: default
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="js/constants.js"></script>
+<script>
+  if (getPlatform() === 'android') document.documentElement.classList.add('is-android');
+  applyFontPreference();
+</script>
 <script src="js/game-config.js"></script>
 <script src="js/logging.js"></script>
 <script src="js/string-generator.js"></script>
@@ -380,7 +384,7 @@ layout: default
   text-align:left;
   padding-top:6px;
   padding-left:8px;
-  padding-right:8px;
+  padding-right:4px;
   padding-bottom:2px;
   min-height:74px;
   margin-bottom:0px;

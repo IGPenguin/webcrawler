@@ -570,3 +570,39 @@ select {
 .logo-drop-3 { animation: drop-fall 2.4s ease-in infinite  1.7s backwards; }
 .logo-drop-4 { animation: drop-fall 3.0s ease-in infinite  1.2s backwards; }
 .logo-drop-5 { animation: drop-fall 2.6s ease-in infinite  0.4s backwards; }
+
+// ── Platform-specific Adjustments ──────────────────────────────────────────
+
+.gelasio-font {
+  &, button, select, input, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gelasio', Georgia, serif !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.1px !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  // Force Gelasio on big overlays and stats that used inline 'sans'
+  .enemyOverlay,
+  .playerOverlay,
+  #id_stats,
+  #id_player_status,
+  [style*="font-family:sans"],
+  [style*="font-family: sans"] {
+    font-family: 'Gelasio', Georgia, serif !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.1px !important;
+  }
+}
+
+.is-android {
+  // Make touch feedback more subtle (removes the default "aqua blue" box)
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08) !important;
+  }
+}
+
+// ── UI Symbols ─────────────────────────────────────────────────────────────
+
+.ui-symbol {
+  font-family: serif !important; // Force system serif for reliable circle glyphs on iOS/Android
+}
