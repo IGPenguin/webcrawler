@@ -32,7 +32,7 @@ The game has two layers:
 - `wip_*.csv` — Work-in-progress content (threats, boosts, undos, misc)
 - `fishing.csv` is obsolete — fishing data was merged into `encounters.csv` (rows use `area:Fishing`)
 
-**Logic layer** — 17 vanilla JS files in `js/`, loaded in order via `<script>` tags in `index.md` (no modules, no bundler — load order is the only dependency mechanism):
+**Logic layer** — vanilla JS files in `js/`, loaded in order via `<script>` tags in `index.md` (no modules, no bundler — load order is the only dependency mechanism):
 
 | File | Responsibility |
 |------|----------------|
@@ -51,6 +51,7 @@ The game has two layers:
 | `encounter-loader.js` | `loadEncounter()`, `encounterRenew()`, `drachmaeBuy()` — CSV parsing and shop |
 | `encounter-generator.js` | `generateNextEncounters()` — dynamic encounter sequence builder |
 | `game-loop.js` | `nextEncounter()`, `gameOver()`, `gameEnd()`, `getRandomFish()` |
+| `score-manager.js` | `ScoreManager` — score formula, Google Forms submission, rankings fetch, nickname overlay |
 | `social.js` | Share / LinkedIn logic |
 | `action-resolver.js` | `resolveAction()` — dispatches all nine player actions |
 | `action-bar.js` | Skill-check action bar UI |
@@ -66,6 +67,22 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 - **Combat**: `resolveAction(button)` in `action-resolver.js` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
 - **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
+
+### Score & Leaderboard System
+
+Scores are submitted to a Google Form (fire-and-forget `fetch` with `mode: 'no-cors'`) and aggregated by a GitHub Action that writes `highscores.json` to the `rankings` branch. The Rankings screen fetches that file directly from `raw.githubusercontent.com`.
+
+**Score formula**: `(level×15) + floor(encounters/5) + (companions×8) + floor(stats/2) + round((karma−1)×5)` + 100 bonus for a win. Companions = `[...playerPartyString].length` (pets + recruits).
+
+**Cheat guard**: `cheatedThisRun` (reset in `renewPlayer()`) blocks submission for the current run only. The lifetime `use_cheat` achievement does not block it.
+
+**Submission flow**: `ScoreManager.submitOrPrompt(payload)` — if no saved nickname, shows the nickname overlay first; otherwise calls `_doSubmit` directly. Hash is SHA-256 HMAC over `charName|score|datetime`.
+
+**Ghost link**: full run payload serialized as base64 (`btoa`), stored in the form submission and decoded for the "View" stat card in the Rankings screen.
+
+**Pipeline**: `.github/workflows/leaderboard.yml` runs every 30 min (and via `workflow_dispatch`) — only active after merging to `live`. Local testing before merge: run `update-rankings.sh` (gitignored, contains secrets).
+
+**New globals** (game-state.js): `encounterCount`, `runStartTimestamp`, `playerOriginName`, `cheatedThisRun` — all reset in `renewPlayer()`.
 
 ### Rarity System
 
@@ -95,6 +112,40 @@ Rarity is **calculated** from stats — never stored in a CSV column — unless 
 **Per-difficulty bias**: each `DIFFICULTY_MODES` entry has a `rarityBias` object (`{ Cursed, Common, Uncommon, Rare, Legendary }`) that additively adjusts base weights before the roll. Pairing a bonus with an equal penalty (e.g. `Legendary:+2, Common:-2`) keeps the total at 100, making the shift a clean percentage-point change. Toggle karma weighting globally via `RARITY_KARMA_ENABLED`.
 
 **Achievement gating**: all three CSVs (`encounters.csv`, `story.csv`, `origins.csv`) have an `achiev` column (last column, index 14 / 10 respectively). A value of `none` means always available; any other value is an achievement ID that must be unlocked. Pickers fall back to the unfiltered pool if all entries of a type are locked, with a console warning.
+
+## Automated Tests
+
+**Local scripts** (run from repo root, Jekyll must be serving on port 4000 — `bash deploy.sh` first):
+
+| Script | What it runs |
+|--------|-------------|
+| `bash test-all.sh` | All three Playwright specs (boot, encounters, rarity) |
+| `bash test-boot.sh` | Boot spec only |
+| `bash test-rarity.sh` | Rarity spec only |
+| `bash test-types.sh` | Types spec only |
+| `bash validate-all.sh` | All static validators (JS syntax, CSV, HTML) |
+| `bash validate-csv.sh` | CSV field counts, emoji, stat values, text lengths |
+| `bash validate-html.sh` | HTML tag balance, unclosed brackets, duplicate IDs |
+| `bash validate-js.sh` | JS syntax check (`node --check`) |
+
+Playwright config targets a mobile viewport (iPhone 14 Pro, 393×852) and reuses an existing server on port 4000 when not in CI.
+
+**CI workflows** (`.github/workflows/`, run on push/PR → `live`):
+
+| Workflow | What it checks |
+|----------|---------------|
+| `validate-data.yml` | CSV format, HTML tag structure + bracket integrity, JS syntax, version bump (PRs only) |
+| `boot-test.yml` | Playwright: game boots and title screen renders |
+| `encounter-test.yml` | Playwright: encounter CSV rows load correctly |
+| `rarity-test.yml` | Playwright: rarity tier distribution end-to-end |
+
+## Score & Rankings
+
+See **Score & Leaderboard System** under Key Systems for the score formula and submission flow.
+
+**Rankings pipeline**: `.github/workflows/rankings.yml` runs every 30 min (and on `workflow_dispatch`). It pulls the Google Sheet CSV, verifies SHA-256 HMACs, filters profanity, dedupes, sorts by score, and writes `highscores.json` to the `rankings` branch. Only active after merging to `live` (GitHub requires the workflow file on the default branch).
+
+**Local testing before merge**: `bash update-rankings.sh` (gitignored — contains `LEADERBOARD_SALT` and `SHEET_CSV_URL` secrets). Runs the same Python pipeline locally and pushes the result to the `rankings` branch.
 
 ## CSV Format Rules
 

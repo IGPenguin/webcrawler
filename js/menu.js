@@ -793,11 +793,10 @@ var Menu = (function () {
             + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px;">'
             + (entry.origin ? entry.origin + '&nbsp;&nbsp;' : '')
             + (entry.datetime ? entry.datetime.slice(0, 10) : '')
-            + (entry.ghostLink ? '&nbsp;&nbsp;<span class="ranking-ghost-btn" style="color:#7193bf; cursor:pointer;">👁 View</span>' : '')
             + '</h5>';
         if (entry.ghostLink) {
-          el.querySelector('.ranking-ghost-btn').addEventListener('click', function (e) {
-            e.stopPropagation();
+          el.style.cursor = 'pointer';
+          el.addEventListener('click', function () {
             var ghost = ScoreManager.decodeGhostLink(entry.ghostLink);
             if (ghost) menuFade(function () { _renderViewGhost(ghost); });
           });

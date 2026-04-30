@@ -158,7 +158,7 @@ Fading Wildlands;🎨;Painter's Palette;Item;0;0;0;0;3;0;0;<b>Artifact</b>;Must'
 Fading Wildlands;🖌️;Painter's Brush;Item;0;0;0;0;0;1;0;<b>Artifact</b>;Enchanted tool radiating strange power.<br>Provides <b>+1 🔵 Mana</b>.;Got a hold of a powerful tool;none
 Fading Wildlands;🍀;Four-leaf Clover;Item;0;0;0;3;0;0;0;<b>Artifact</b>;Extremely rare growth, might be beneficial.<br>Provides <b>+3 🍀 Luck</b>.;Feels so good to have it.;none
 Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;none
-Fading Wildlands;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
+Fading Wildlands;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
 
 Fading Wildlands;💐;Flower Bouquet;Item;0;0;0;0;2;0;0;Floral Gift;Makes anyone look a lot friendlier.<br>Provides <b>+2 🧠 Charisma</b>.;Feels purposeful carrying that.;none
 Fading Wildlands;🌹;Prickly Rose;Item;-1;0;0;0;2;0;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Ouch, sharp thorns!;none
@@ -1243,7 +1243,7 @@ Fishing;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experien
 Fishing;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;none
 Fishing;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.;none
 Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;none
-Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Questionable Drink</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
+Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
 Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;none
 Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;none
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.;none

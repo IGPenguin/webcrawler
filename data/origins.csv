@@ -11,7 +11,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🎖️;Hero;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Never hesitates to make a difference.;none
 ⛓️‍💥;Fugitive;0;0;1;1;0;0;0;Gain <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Luck favors the well prepared.;none
 🎩;Noble;1;0;0;1;0;0;0;Inherit <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.;none
-🧬;Mutant;-1;0;2;0;-1;0;0;<b>+2 🟢 Energy</b> for <b>-1 💔 Health</b>, <b>-1 🧠 Intellect</b>.<br><i>The body remembered what the mind forgot.;none
+🧬;Mutant;-1;0;2;0;-2;0;0;<b>+2 🟢 Energy</b>, <b>-1 💔 Health</b>, <b>-2 🧠 Intellect</b><br><i>The body remembered what the mind forgot.;none
 
 //Attack
 💢;Berserk;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.<br><i>New wounds only make them angrier.;none

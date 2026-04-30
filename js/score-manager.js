@@ -122,7 +122,7 @@ var ScoreManager = (function () {
     params.append(ENTRY.hash,           hash);
     fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: params })
       .then(function () {
-        showAchievementToast({ emoji: '⭐', desc: 'Score submitted: ' + payload.score + ' pts' }, null, null);
+        showAchievementToast({ emoji: '⭐', desc: 'Score submitted: ' + payload.score + ' pts' }, Date.now(), null);
       })
       .catch(function () {});
   }

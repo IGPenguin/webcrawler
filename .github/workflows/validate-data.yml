@@ -1,4 +1,4 @@
-name: CI
+name: Validate Data
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
               exit 0
             fi
           fi
-          python automated-tests/validator.py csv
+          python tests/validator.py csv
 
   validate-html:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
               exit 0
             fi
           fi
-          python automated-tests/validator.py html
+          python tests/validator.py html
 
   validate-js:
     runs-on: ubuntu-latest
@@ -77,4 +77,4 @@ jobs:
       - name: Check version bump
         run: |
           git show origin/${{ github.base_ref }}:js/constants.js > base_constants.js
-          python automated-tests/validator.py js/constants.js base_constants.js
+          python tests/validator.py js/constants.js base_constants.js

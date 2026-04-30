@@ -282,6 +282,36 @@ def _strip_jekyll_front_matter(raw):
     fm_end = idx + 4
     return '\n' * raw[:fm_end].count('\n') + raw[fm_end:]
 
+def _find_unclosed_brackets(content, file_path):
+    """Return errors for any '<' that starts a tag but has no matching '>'."""
+    errors = []
+    cleaned = re.sub(r'<!--.*?-->', lambda m: ' ' * len(m.group(0)), content, flags=re.DOTALL)
+    i = 0
+    n = len(cleaned)
+    while i < n:
+        if cleaned[i] == '<' and i + 1 < n and (cleaned[i + 1].isalpha() or cleaned[i + 1] == '/'):
+            k = i + 1
+            found_gt = False
+            while k < n:
+                if cleaned[k] == '>':
+                    found_gt = True
+                    i = k + 1
+                    break
+                if cleaned[k] == '<':
+                    break
+                k += 1
+            if not found_gt:
+                ln = content.count('\n', 0, i) + 1
+                snippet = content[i:min(i + 50, n)].replace('\n', ' ')
+                errors.append(
+                    f"HTML Tags - {file_path}:{ln}: "
+                    f"unclosed angle bracket (missing '>'): \"{snippet}\""
+                )
+                i = k
+                continue
+        i += 1
+    return errors
+
 def validate_html_file(file_path):
     """Check tag balance, duplicate IDs (errors) and style trailing semicolons (warnings)."""
     print(f"Validating HTML in {file_path}...")
@@ -318,6 +348,9 @@ def validate_html_file(file_path):
             )
         else:
             seen_ids[id_val] = ln
+
+    # Unclosed angle brackets — error: missing '>'
+    errors.extend(_find_unclosed_brackets(content, file_path))
 
     # Tag balance — error: broken structure
     tag_re = re.compile(

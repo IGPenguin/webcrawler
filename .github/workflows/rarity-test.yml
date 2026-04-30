@@ -29,7 +29,7 @@ jobs:
           echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
 
       - name: Run rarity tier test
-        run: playwright test automated-tests/rarity.spec.js --config automated-tests/playwright.config.js
+        run: playwright test tests/rarity.spec.js --config tests/playwright.config.js
 
       - name: Upload report on failure
         if: failure()
