@@ -37,6 +37,16 @@ function calcActionBarConfig(button, adjustment) {
   var spdNormal = 60;
   var spdEasy = 30;
 
+  // ── Ending state ─────────────────────────────────────────────────────────
+  if (isEndingState) {
+    if (document.getElementById(button) && document.getElementById(button).disabled) {
+      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    }
+    var _isDark = button === 'button_attack' || button === 'button_roll' || button === 'button_curse';
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100,
+             barStyle: _isDark ? 'dark' : undefined };
+  }
+
   // ── Special cases ────────────────────────────────────────────────────────
 
   // Upgrade encounter — all actions always succeed

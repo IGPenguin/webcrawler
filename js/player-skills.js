@@ -38,6 +38,10 @@ function renewPlayer(){ //Default values
   playerKills = 0;
   playerKarma=1;
   playerLove=0;
+  isEndingState = false;
+  gatewayPassed = false;
+  isKillEnding = false;
+  brideDialogueActive = false;
   seenLoot = [];
   adventureLog = actionLog;
   spentCoins=0;

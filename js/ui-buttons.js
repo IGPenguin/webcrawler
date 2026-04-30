@@ -43,7 +43,58 @@ function resetEncounterButtons(){
   if (playerMgk<2) setButton('button_curse',"🪬 Curse",colorDarkGrey);
 }
 
+function _setEndingButtons() {
+  var allIds = ['button_attack','button_roll','button_block','button_grab',
+                'button_sleep','button_speak','button_cast','button_pray','button_curse'];
+  allIds.forEach(function(id) {
+    setButton(id, '-', colorDarkGrey);
+    document.getElementById(id).disabled = true;
+  });
+
+  // During dialogue only Kill is active — choices unlock after the auto-roll completes
+  if (brideDialogueActive) {
+    setButton('button_attack', '🔪 Kill', colorRed);
+    document.getElementById('button_attack').disabled = false;
+    return;
+  }
+
+  setButton('button_attack', '🔪 Kill', colorRed);
+  document.getElementById('button_attack').disabled = false;
+
+  setButton('button_roll', '💔 Leave');
+  document.getElementById('button_roll').disabled = false;
+
+  setButton('button_block', '🔰 Guard');
+  document.getElementById('button_block').disabled = false;
+
+  if (playerLove >= 1) {
+    setButton('button_sleep', '💤 Sleep');
+    document.getElementById('button_sleep').disabled = false;
+  }
+  if (playerLove >= 4) {
+    setButton('button_grab', '🫂 Hold', colorPink);
+    document.getElementById('button_grab').disabled = false;
+  }
+  if (playerLove >= 6 && playerKarma >= 2) {
+    setButton('button_speak', '❤️ Name', colorGold);
+    document.getElementById('button_speak').disabled = false;
+  }
+  if (playerMgk >= 4) {
+    setButton('button_cast', '❤️‍🩹 Cure', colorLightBlue);
+    document.getElementById('button_cast').disabled = false;
+  }
+  if (playerKarma >= 4) {
+    setButton('button_pray', '🙏 Beg', colorSoftGreen);
+    document.getElementById('button_pray').disabled = false;
+  }
+  if (playerKarma <= -2) {
+    setButton('button_curse', '💀 Damn', colorRed);
+    document.getElementById('button_curse').disabled = false;
+  }
+}
+
 function adjustEncounterButtons(){
+  if (isEndingState) { _setEndingButtons(); return; }
   resetEncounterButtons();
   var originalType=enemyType;
   if (enemyType.includes("Boss")) {

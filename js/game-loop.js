@@ -161,7 +161,90 @@ function gameOver(silent=false){
   // processStoryData is called by startGame() on a fresh new game instead.
 }
 
-function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
+var _ENDING_FRAMES = {
+  button_attack: [{emoji:'⚔️', text:'The deed is done.'}, {emoji:'🩸', text:'She finally rests in peace.'}, {emoji:'🖤', text:'And you walk on. Alone.'}],
+  button_roll:   [{emoji:'💔', text:'You turn your back.'}, {emoji:'🥀', text:'The world slowly rots.'}, {emoji:'👰🏻‍♀️', text:'She still waits, always will.'}],
+  button_block:  [{emoji:'🔰', text:'You stand your ground.'}, {emoji:'🗿', text:'Slowly turning to stone.'}, {emoji:'💞', text:'Your hearts bound forever.'}],
+  button_grab:   [{emoji:'🫂', text:'You hold her close.'}, {emoji:'🌑', text:'The darkness takes you both.'}, {emoji:'🖤', text:'Together. At last.'}],
+  button_sleep:  [{emoji:'💤', text:'You lie beside her.'}, {emoji:'🌿', text:'The ground grows still.'}, {emoji:'🤍', text:'Your hearts make no sound.'}],
+  button_speak:  [{emoji:'❤️', text:'You say her name. Rosabel.'}, {emoji:'✨', text:'Something stirs inside.'}, {emoji:'💖', text:'She remembers who she was.'}],
+  button_cast:   [{emoji:'❤️‍🩹', text:'You unravel the curse.'}, {emoji:'✨', text:'The magic tears it apart.'}, {emoji:'🪽', text:'She is finally free.'}],
+  button_pray:   [{emoji:'🙏', text:'You beg for mercy.'}, {emoji:'🌩️', text:'Something hears your call.'}, {emoji:'🌪️', text:'The gods take her gently.'}],
+  button_curse:  [{emoji:'💀', text:'You seal the pact.'}, {emoji:'🌑', text:'The darkness claims you both.'}, {emoji:'👹', text:'None of you deserve peace.'}]
+};
+
+function startBrideDialogue() {
+  ['button_roll','button_block','button_grab','button_sleep',
+   'button_speak','button_cast','button_pray','button_curse'].forEach(function(id) {
+    document.getElementById(id).disabled = true;
+  });
+
+  var beat1 = playerLove >= 3
+    ? "👰🏻‍♀️ ▸ 💬 She turns to face you. <i>\"I knew you would come.\"</i>"
+    : "👰🏻‍♀️ ▸ 💬 She turns to face you. <i>\"You shouldn't have come.\"</i>";
+
+  setTimeout(function() {
+    if (!brideDialogueActive) return;
+    logAction(beat1); redraw();
+
+    setTimeout(function() {
+      if (!brideDialogueActive) return;
+      logAction("👰🏻‍♀️ ▸ 💬 " + getBridePoemByLove()); redraw();
+
+      setTimeout(function() {
+        if (!brideDialogueActive) return;
+        var beat3 = playerKarma >= 2
+          ? "😟 ▸ 💭 <i>You remember everything. There is still a chance.</i>"
+          : "😟 ▸ 💭 <i>You remember everything. Some things cannot be undone.</i>";
+        logAction(beat3);
+        brideDialogueActive = false;
+
+        ['button_roll','button_block','button_grab','button_sleep',
+         'button_speak','button_cast','button_pray','button_curse'].forEach(function(id) {
+          document.getElementById(id).disabled = false;
+        });
+        adjustEncounterButtons();
+        redraw();
+      }, 3500);
+    }, 3500);
+  }, 1500);
+}
+
+function resolveEnding(button) {
+  isEndingState = false;
+  brideDialogueActive = false;
+  removeClickListeners();
+
+  if (button === 'button_attack') {
+    isKillEnding = true;
+    logAction("🔪 ▸ 👰🏻‍♀️ <text style=color:" + colorRed + ";>The fight begins.</text>");
+    var brideBoss = getRandomEncounter(
+      ["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Toxic","Boss-Undead"],
+      ["Forgotten Love"], "Shrouded Necropolis"
+    );
+    pushEncounter(brideBoss, 1);
+    nextEncounter();
+    return;
+  }
+
+  var frames = _ENDING_FRAMES[button];
+  playEndingCutscene(frames, function() {
+    _doGameEnd();
+  });
+}
+
+function gameEnd() {
+  if (isKillEnding) {
+    isKillEnding = false;
+    playEndingCutscene(_ENDING_FRAMES['button_attack'], function() {
+      _doGameEnd();
+    });
+    return;
+  }
+  _doGameEnd();
+}
+
+function _doGameEnd() {
   AchievementManager.check('game_win');
   if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') {
     AchievementManager.check('hardcore_win');
@@ -198,10 +281,7 @@ function gameEnd(){ //TODO: Proper credits + legend download prompt!!!
   });
   ScoreManager.submitOrPrompt(_winPayload);
 
-  // Run is over — clear the active run so Continue is not offered after a win
   SaveManager.clearGameState();
-
-  //Reset progress to game start
   resetSeenEncounters();
   processStoryData(storyData,false);
 }

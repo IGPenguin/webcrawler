@@ -261,6 +261,16 @@ function loadEncounter(index, fileLines = linesStory){
     hp: enemyHp, atk: enemyAtk, sta: enemySta, lck: enemyLck,
     int: enemyInt, mgk: enemyMgk, def: enemyDef, note: enemyTeam
   });
+
+  if (enemyName === "Gloomy Gateway" && !gatewayPassed) {
+    gatewayPassed = true;
+    setTimeout(applyGatewayEffects, 600);
+  }
+  if (enemyName === "Dying Bride") {
+    isEndingState = true;
+    brideDialogueActive = true;
+    setTimeout(startBrideDialogue, 700);
+  }
 }
 
 function generateRandomItem(item=""){

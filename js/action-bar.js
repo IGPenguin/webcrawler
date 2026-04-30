@@ -49,22 +49,24 @@ var ActionBar = (function () {
 
     // Build gradient: [crit-fail] fail | success [crit-success] success | fail [crit-fail]
     var sm = config.successMin, sx = config.successMax;
+    var _successFill = (config.barStyle === 'dark') ? '#621010' : '#1a6b2e';
+    var _failFill    = (config.barStyle === 'dark') ? '#200808' : '#621010';
     var bg;
     if (_hasCrits) {
       var cfL = _cfw, cfR = 100 - _cfw;
       bg = 'linear-gradient(to right,'
         + ' #200808 0%, #200808 ' + cfL + '%,'
-        + ' #621010 ' + cfL + '%, #621010 ' + sm + '%,'
-        + ' #1a6b2e ' + sm + '%, #1a6b2e ' + _csMin + '%,'
+        + ' ' + _failFill + ' ' + cfL + '%, ' + _failFill + ' ' + sm + '%,'
+        + ' ' + _successFill + ' ' + sm + '%, ' + _successFill + ' ' + _csMin + '%,'
         + ' #b89000 ' + _csMin + '%, #b89000 ' + _csMax + '%,'
-        + ' #1a6b2e ' + _csMax + '%, #1a6b2e ' + sx + '%,'
-        + ' #621010 ' + sx + '%, #621010 ' + cfR + '%,'
+        + ' ' + _successFill + ' ' + _csMax + '%, ' + _successFill + ' ' + sx + '%,'
+        + ' ' + _failFill + ' ' + sx + '%, ' + _failFill + ' ' + cfR + '%,'
         + ' #200808 ' + cfR + '%, #200808 100%)';
     } else {
       bg = 'linear-gradient(to right,'
-        + ' #621010 0%, #621010 ' + sm + '%,'
-        + ' #1a6b2e ' + sm + '%, #1a6b2e ' + sx + '%,'
-        + ' #621010 ' + sx + '%, #621010 100%)';
+        + ' ' + _failFill + ' 0%, ' + _failFill + ' ' + sm + '%,'
+        + ' ' + _successFill + ' ' + sm + '%, ' + _successFill + ' ' + sx + '%,'
+        + ' ' + _failFill + ' ' + sx + '%, ' + _failFill + ' 100%)';
     }
     _elTrack.style.background = bg;
 

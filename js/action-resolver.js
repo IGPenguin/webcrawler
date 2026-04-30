@@ -7,6 +7,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     var _crit = actionBarCrit;
     actionBarCrit = null;
 
+    if (isEndingState) { resolveEnding(button); return; }
+
     var buttonUIElement = document.getElementById(button);
     animateUIElement(buttonUIElement,"animate__pulse","0.15");
     actionString = buttonUIElement.innerHTML;

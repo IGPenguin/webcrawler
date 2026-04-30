@@ -325,6 +325,92 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
   });
 }
 
+function applyGatewayEffects() {
+  if (!document.getElementById('id_gateway_fog_style')) {
+    var style = document.createElement('style');
+    style.id = 'id_gateway_fog_style';
+    style.textContent = '@keyframes fogPulse{0%,100%{opacity:0.55}50%{opacity:1}}';
+    document.head.appendChild(style);
+  }
+  document.body.style.transition = 'filter 3s ease';
+  document.body.style.filter = 'grayscale(65%) brightness(0.82)';
+  if (!document.getElementById('id_fog_overlay')) {
+    var fog = document.createElement('div');
+    fog.id = 'id_fog_overlay';
+    fog.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:4;background:radial-gradient(ellipse at 50% 110%,rgba(210,210,230,0.18) 0%,transparent 65%);animation:fogPulse 5s ease-in-out infinite;';
+    document.body.appendChild(fog);
+  }
+}
+
+function removeGatewayEffects() {
+  document.body.style.transition = 'filter 1.5s ease';
+  document.body.style.filter = '';
+  var fog = document.getElementById('id_fog_overlay');
+  if (fog) fog.remove();
+}
+
+function playEndingCutscene(frames, onComplete) {
+  if (!frames || frames.length === 0) { if (onComplete) onComplete(); return; }
+  var curtain = document.getElementById('id_fullscreen_curtain');
+  var textEl  = document.getElementById('id_fullscreen_text');
+  var gen = ++_curtainGen;
+
+  removeClickListeners();
+  curtain.style.pointerEvents = 'auto';
+  curtain.style.display = 'block';
+  void curtain.offsetWidth;
+  curtain.style.setProperty('--animate-duration', '0.5s');
+  curtain.classList.add('animate__animated', 'animate__fadeIn');
+
+  curtain.addEventListener('animationend', function onCurtainIn() {
+    curtain.removeEventListener('animationend', onCurtainIn);
+    if (_curtainGen !== gen) return;
+    curtain.classList.remove('animate__animated', 'animate__fadeIn');
+    removeGatewayEffects();
+    showFrame(0);
+  });
+
+  function showFrame(idx) {
+    if (_curtainGen !== gen) return;
+    if (idx >= frames.length) {
+      void curtain.offsetWidth;
+      curtain.style.setProperty('--animate-duration', '0.8s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+      curtain.addEventListener('animationend', function onOut() {
+        curtain.removeEventListener('animationend', onOut);
+        if (_curtainGen !== gen) return;
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        curtain.style.display = 'none';
+        curtain.style.pointerEvents = 'none';
+        textEl.style.display = 'none';
+        if (onComplete) onComplete();
+      });
+      return;
+    }
+    var frame = frames[idx];
+    textEl.innerHTML = '<div style="font-size:60px;margin-bottom:12px;line-height:1;">' + frame.emoji + '</div>'
+                     + '<div style="font-size:15px;letter-spacing:1.2px;color:#ccc;max-width:270px;margin:0 auto;line-height:1.5;">' + frame.text + '</div>';
+    textEl.style.display = 'block';
+    void textEl.offsetWidth;
+    textEl.style.setProperty('--animate-duration', '0.6s');
+    textEl.classList.add('animate__animated', 'animate__fadeIn');
+
+    setTimeout(function() {
+      if (_curtainGen !== gen) return;
+      textEl.classList.remove('animate__animated', 'animate__fadeIn');
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '0.55s');
+      textEl.classList.add('animate__animated', 'animate__fadeOut');
+      textEl.addEventListener('animationend', function onTextOut() {
+        textEl.removeEventListener('animationend', onTextOut);
+        if (_curtainGen !== gen) return;
+        textEl.classList.remove('animate__animated', 'animate__fadeOut');
+        showFrame(idx + 1);
+      });
+    }, 2800);
+  }
+}
+
 function setBackground(fileName="Depths.png"){
   var fileUrl='url(https://raw.githubusercontent.com/IGPenguin/stay-dead/refs/heads/live/assets/img/file.png)';
   fileUrl=fileUrl.replaceAll("file.png",fileName.split(" ")[0]+".png");

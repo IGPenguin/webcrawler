@@ -31,6 +31,10 @@ var playerLevel;
 var playerXPThreshold;
 var playerLove=0;
 var playerKarma=1;
+var isEndingState = false;
+var gatewayPassed = false;
+var isKillEnding = false;
+var brideDialogueActive = false;
 var playerRested = false;
 var fishingRested = false; // persists through getRandomFish/encounterRenew; reset only on nextEncounter or new run
 var playerCooked = false;

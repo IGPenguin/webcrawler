@@ -133,6 +133,35 @@ function getPoem(){
   return "<i>"+random_quotes[Math.floor(Math.random() * random_quotes.length)]+"</i>";
 }
 
+function getBridePoemByLove() {
+  var accusatory = [
+    "You did this to me... did this to us!<br>Why wouldn't you let me go?",
+    "You broke me with foul magic.<br>Now I return with justice.",
+    "I died believing in your endless love.<br>Now I rise certain of your betrayal.",
+    "Your twisted love outlived my breath.<br>Then cursed me forever.",
+    "You called me back with trembling hands.<br>Now tremble for what you've done.",
+    "I hoped you'd mourn me.<br>Not try to fix me.",
+    "Love me as I am now.<br>Or rot beside me.",
+    "You begged the ancient gods to give me back.<br>They laughed and released the darkness.",
+    "You wanted me to never leave.<br>I'll soon fulfill your wish.",
+    "The world could remain peaceful.<br>If only you would listen to me."
+  ];
+  var longing = [
+    "My vows outlived my breath, it seems.<br>They whisper still, beneath the soil.",
+    "I came the way you asked.<br>Not fully whole — but yours.",
+    "Our vow didn't end with my death.<br>Only my breathing did.",
+    "Even now, I reach for you — nowhere to find you.<br>Only shadows take my hand.",
+    "You whispered into the grave like a prayer.<br>And I came, half dream, half devotion.",
+    "I waited in the soil so long.<br>The stars forgot my name.",
+    "The endless cold welcomed me first.<br>Then I remembered your warmth.",
+    "I still wear your name like a veil.<br>Even the worms dare not touch it.",
+    "Every petal you left on my grave<br>grew thorns when you turned away.",
+    "The stars we used to watch together...<br>They now turn their faces away."
+  ];
+  var pool = (playerLove >= 3) ? longing : accusatory;
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
 function getShopMessage(){
   var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free, my shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you'd be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient, I am not.","You look worse. My inventory looks better.","Failure is a habit and so is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
 .filter(item => !usedShopMessages.includes(item));
