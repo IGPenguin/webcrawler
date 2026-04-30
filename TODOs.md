@@ -11,9 +11,11 @@
   * Branching Choices: Based on your playerLove and playerKarma, the buttons will change to your specific endings: Kiss her goodnight, Mercy kill, Truly Revive, etc.
 
 # Claude
-- Legendary item increasing drop chances for higher than common rarity
-- Legendary item for bigger crit chance interval by ??%
-- (Aftifact) ⏳ Strange Hourglass - 25% slower action bar speed (global)
+- NEW: Legendary item increasing drop chances for higher than common rarity
+  - + Origin
+- NEW: Legendary item for bigger crit chance interval by ??%
+- + Origin
+- NEW: ⏳ Strange Hourglass - 10% slower action bar speed (global)
 - More unique origins with actual gameplay implications
   - examples??? 
 - new unlockable: a portal to fairyland
