@@ -5,7 +5,7 @@
 - **/clear** when one-time task completed
 
 # Priority 0
-2. Redo Endings
+**Redo Endings**
   * Fix the Flakiness: Remove the encounterIndex++ hacks. Instead of the game just "ending" when the story list runs out, create a resolveEnding() function.
   * The Bride as a Gateway: When the Bride is defeated or calmed, it will trigger a transition to a final "Decision" encounter.
   * Branching Choices: Based on your playerLove and playerKarma, the buttons will change to your specific endings: Kiss her goodnight, Mercy kill, Truly Revive, etc.
@@ -36,10 +36,6 @@
 - rm grind achievs??
 
 # Low-repro bugs
-- fix engaged a boss showing again and again after each action after fishing rolls a boss
-- Fix curse reflect (-attack) + add cast reflect (-health), fail on heal (-hp)
-- Fix push iteam/artifact and/or drachma after fishing out a boss (after him)
-- Fix add vertical scroll in loot/party when overflowimg
 - (check after ending refactor) Fix Boss wife disengage when calmed = NaN xp
 - (check after ending refactor) Fix cannot leave calm merciful bride, if calm bride (check texts)
 
@@ -47,10 +43,6 @@
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
 - better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
-- add github action CI checks
-  - on push csv: all lines correct number of columns + right area name - no mixing (one area in csv after another), throw warnings for corrueted rows or mixed areas
-  - on PR open: check version is bumped
-  - in future it would be also great to have a "boot test"  to menu and to a new game
 ...
 - improve generator/story structure (+gameplay if needed)
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
@@ -90,31 +82,31 @@
 
 ## Data changes
 - Curses with -1 atk (lategame)
-- [ ] Legendary item allowing to physically damage spirits (soulgem)
-- [ ] Practice target variants for speak, cast... option to leave
-- [ ] Magic items in the game should almost always carry some curse
-- [ ] Increment meadows data (praised bath, no-effect encounters)
-  - [ ] No-effect altars, curses etc with just observations
-  - [ ] Clear sky, silent overcast
-- [ ] Trap-Big, Trap-Obstacle, Toxic, Hot, Reflective, Tough, Stingy... + bosses
-  - [ ] Revise village data (traps, special enemies)
-  - [ ] Revise fairyland data (special — Forest Fiend, various ghosts)
-  - [ ] Revise river (all types, very lacking regarding all encounter types)
-  - [ ] Revise necropolis (special, freezing/snowman)
-  - [ ] Animated objects, flora, unusual shades, effects...
-- [ ] Undead + vampires in fairyland and river (drowned zombie etc)
-- [ ] Ghosts etc in necro at least 1 atk; all enemies 3+ stamina, overall 2x longer (needs a lot of data!)
-- [ ] Lemon-like unique foods with perma boosts (1 good, 1 bad per area)
-  - [ ] Ensure bad foods in all areas
-  - [ ] Mixed stats foods and items — lose and gain at the same time
-- [ ] Touch lucky statue/chime etc... (positive traps?), Bubble bath...
-- [ ] Bloat fishing loot with items and threats (traps?)
-- [ ] Containers/traps costing stamina/lck etc. — Thorny patch (more like this)
-- [ ] Lategame traps/curses stealing mana/sta etc
-- [ ] Mid-late game balance = high stamina, more low atk enemies
-  - [ ] Pets in fairyland a lot more sta ~3
-  - [ ] Bosses to have a lot of hp but not insta-kill dmg
-- [ ] Necropolis optional areas
+- Legendary item allowing to physically damage spirits (soulgem)
+- Practice target variants for speak, cast... option to leave
+- Magic items in the game should almost always carry some curse
+- Increment meadows data (praised bath, no-effect encounters)
+  - No-effect altars, curses etc with just observations
+  - Clear sky, silent overcast
+- Trap-Big, Trap-Obstacle, Toxic, Hot, Reflective, Tough, Stingy... + bosses
+  - Revise village data (traps, special enemies)
+  - Revise fairyland data (special — Forest Fiend, various ghosts)
+  - Revise river (all types, very lacking regarding all encounter types)
+  - Revise necropolis (special, freezing/snowman)
+  - Animated objects, flora, unusual shades, effects...
+- Undead + vampires in fairyland and river (drowned zombie etc)
+- Ghosts etc in necro at least 1 atk; all enemies 3+ stamina, overall 2x longer (needs a lot of data!)
+- Lemon-like unique foods with perma boosts (1 good, 1 bad per area)
+  - Ensure bad foods in all areas
+  - Mixed stats foods and items — lose and gain at the same time
+- Touch lucky statue/chime etc... (positive traps?), Bubble bath...
+- Bloat fishing loot with items and threats (traps?)
+- Containers/traps costing stamina/lck etc. — Thorny patch (more like this)
+- Lategame traps/curses stealing mana/sta etc
+- Mid-late game balance = high stamina, more low atk enemies
+  - Pets in fairyland a lot more sta ~3
+  - Bosses to have a lot of hp but not insta-kill dmg
+- Necropolis optional areas
 
 ## New feature: Spells
 - add new dynamic layout with spells
@@ -167,6 +159,3 @@
   - Refactor `ui-render.js` to inject these as dynamic background layers.
   - All solid backgrounds should have shading, texts can be enhaced too, but no glow.
   - Resolve "programmers art" permanently with a professional, scalable, and cohesive aesthetic that feels "alive" and premium.
-
-- Smart pets (not just +stat)
-- Mount (slot for mount? - related to inventory system)
