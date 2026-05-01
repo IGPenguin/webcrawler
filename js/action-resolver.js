@@ -143,7 +143,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 if (_crit === 'fail') {
                   playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Terrible form — you set yourself back.", true, false);
                 } else {
-                  logPlayerAction(actionString, "Poor form, gained nothing. -1 🟢");
+                  logPlayerAction(actionString, "Poor form, gained nothing -1 🟢");
                 }
                 break;
               }
@@ -601,7 +601,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   if (_crit === 'fail') {
                     playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Terrible form — you set yourself back.", true, false);
                   } else {
-                    logPlayerAction(actionString, "Poor form, gained nothing. -1 🟢");
+                    logPlayerAction(actionString, "Poor form, gained nothing -1 🟢");
                   }
                   displayPlayerCannotEffect();
                   break;
@@ -1658,7 +1658,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 if (_crit === 'fail') {
                   playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Terrible form — you set yourself back.", true, false);
                 } else {
-                  logPlayerAction(actionString, "Poor form, gained nothing. -1 🟢");
+                  logPlayerAction(actionString, "Poor form, gained nothing -1 🟢");
                 }
                 displayPlayerCannotEffect();
                 break;

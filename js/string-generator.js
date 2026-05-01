@@ -190,28 +190,28 @@ function getPoem(){
 
 function getBridePoemByLove() {
   var accusatory = [
-    "You did this to me... did this to us!<br>Why wouldn't you let me go?",
+    "You did this to me... to us!<br>Why wouldn't you let me go?",
     "You broke me with foul magic.<br>Now I return with justice.",
-    "I died believing in your endless love.<br>Now I rise certain of your betrayal.",
-    "Your twisted love outlived my breath.<br>Then cursed me forever.",
-    "You called me back with trembling hands.<br>Now tremble for what you've done.",
+    "I died believing in your love.<br>Now I rise, sure of betrayal.",
+    "Your love outlived my breath.<br>Then cursed me forever.",
+    "You called me back, trembling.<br>Now tremble for what you did.",
     "I hoped you'd mourn me.<br>Not try to fix me.",
     "Love me as I am now.<br>Or rot beside me.",
-    "You begged the ancient gods to give me back.<br>They laughed and released the darkness.",
+    "You begged the gods for me.<br>They released the darkness.",
     "You wanted me to never leave.<br>I'll soon fulfill your wish.",
-    "The world could remain peaceful.<br>If only you would listen to me."
+    "The world could be peaceful.<br>If only you would listen."
   ];
   var longing = [
-    "My vows outlived my breath, it seems.<br>They whisper still, beneath the soil.",
+    "My vows outlived my breath.<br>They whisper beneath the soil.",
     "I came the way you asked.<br>Not fully whole — but yours.",
-    "Our vow didn't end with my death.<br>Only my breathing did.",
-    "Even now, I reach for you — nowhere to find you.<br>Only shadows take my hand.",
-    "You whispered into the grave like a prayer.<br>And I came, half dream, half devotion.",
+    "Vows don't end with death.<br>Only my breathing did.",
+    "I reach, but find shadows.<br>Only shadows take my hand.",
+    "Your whisper was like prayer.<br>I came: half dream, devotion.",
     "I waited in the soil so long.<br>The stars forgot my name.",
-    "The endless cold welcomed me first.<br>Then I remembered your warmth.",
-    "I still wear your name like a veil.<br>Even the worms dare not touch it.",
-    "Every petal you left on my grave<br>grew thorns when you turned away.",
-    "The stars we used to watch together...<br>They now turn their faces away."
+    "The cold welcomed me first.<br>Then I remembered your warmth.",
+    "I wear your name like a veil.<br>Even the worms won't touch it.",
+    "Every petal on my grave...<br>grew thorns as you turned away.",
+    "Stars we watched together...<br>They now turn their faces."
   ];
   var pool = (playerLove >= 3) ? longing : accusatory;
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';

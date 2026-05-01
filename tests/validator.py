@@ -2,6 +2,7 @@ import sys
 import os
 import re
 import glob
+import csv
 from datetime import datetime
 
 # --- Configuration: Manual Limits (Modify as needed) ---
@@ -12,7 +13,7 @@ TEXT_LIMITS = {
     'origin_name': 35,
     'origin_desc': 150,
     'achievement_desc': 60,
-    'achievement_hint': 80,
+    'achievement_hint': 60,
     'log_message': 100,
     'button_text': 30,
 }
@@ -20,6 +21,174 @@ TEXT_LIMITS = {
 # Warning threshold multiplier (warn if text is > average * multiplier)
 # Set to 0 to disable average-based warnings
 AVG_MULTIPLIER = 2.0
+
+def clean_html(text):
+    if not text: return ""
+    return re.sub(r'<[^>]+>', '', text)
+
+def validate_achievement_origins(warnings, errors):
+    print("Validating Achievement/Origin consistency...")
+    ach_file = 'js/achievements.js'
+    org_file = 'data/origins.csv'
+    if not os.path.exists(ach_file) or not os.path.exists(org_file):
+        return
+
+    with open(ach_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Extract ACHIEVEMENTS array: id and unlock text
+    ach_matches = re.findall(r'\{\s*id:\s*[\'"](.*?)[\'"],.*?unlock:\s*[\'"](.*?)[\'"]\s*\}', content, re.DOTALL)
+    ach_map = {id: unlock for id, unlock in ach_matches}
+
+    origins = []
+    with open(org_file, 'r', encoding='utf-8') as f:
+        lines = [line for line in f if line.strip() and not line.strip().startswith('//')]
+        reader = csv.DictReader(lines, delimiter=';')
+        for row in reader:
+            origins.append(row)
+
+    # Helper to clean origin names (strip emojis and common typos)
+    def clean_origin_name(name):
+        # Strip common tags and anything that looks like an emoji
+        name = clean_html(name)
+        # Remove emojis (crude but effective for our purpose)
+        name = "".join(c for c in name if ord(c) < 128 or c in ' /').strip()
+        # Remove leading/trailing punctuation/artifacts
+        name = re.sub(r'^[; ]+', '', name)
+        name = re.sub(r'[>/ ]+$', '', name).strip()
+        return name
+
+    # Check 1: Achievement unlock text -> Origin achievement ID
+    for ach_id, unlock in ach_map.items():
+        if re.search(r'\borigin\b', unlock.lower()):
+            # Extract origin name from <b>...</b>
+            match = re.search(r'<b>(.*?)</b>', unlock)
+            if match:
+                raw_name = match.group(1).strip()
+                origin_name = clean_origin_name(raw_name)
+                # Skip the "Origins feature" case
+                if origin_name == 'Origins': continue
+                
+                found = False
+                for origin in origins:
+                    if origin['name'].strip() == origin_name:
+                        found = True
+                        if origin['achiev'].strip() != ach_id:
+                            errors.append(f"Achievement Mismatch: '{ach_id}' unlocks '{origin_name}' but origin.csv says unlocked by '{origin['achiev']}'")
+                        break
+                if not found:
+                    errors.append(f"Achievement Error: '{ach_id}' claims to unlock unknown origin '{origin_name}' (raw: '{raw_name}')")
+
+    # Check 2: Origin achievement ID -> Achievement unlock text
+    for origin in origins:
+        ach_id = origin['achiev'].strip()
+        if ach_id and ach_id != 'none':
+            if ach_id not in ach_map:
+                errors.append(f"Origin Error: '{origin['name']}' refers to unknown achievement '{ach_id}'")
+            else:
+                unlock = ach_map[ach_id]
+                if origin['name'] not in unlock:
+                    errors.append(f"Achievement Mismatch: Origin '{origin['name']}' is unlocked by '{ach_id}', but achievement text doesn't mention it: '{unlock}'")
+
+def validate_origin_stats(warnings, errors):
+    print("Validating Origin attribute/description matching...")
+    org_file = 'data/origins.csv'
+    if not os.path.exists(org_file):
+        return
+
+    stat_map = {
+        '❤️ Health': 'hp', '💔 Health': 'hp',
+        '⚔️ Attack': 'atk', '🟢 Energy': 'sta',
+        '🍀 Luck': 'lck', '🧠 Intellect': 'int',
+        '🔵 Mana': 'mgk'
+    }
+
+    with open(org_file, 'r', encoding='utf-8') as f:
+        lines = [line for line in f if line.strip() and not line.strip().startswith('//')]
+        reader = csv.DictReader(lines, delimiter=';')
+        for row in reader:
+            desc = row['desc']
+            # Find patterns like +3 🔵 Mana or -1 💔 Health
+            matches = re.findall(r'([+-]\d+)\s*(?:<b>)?(.*?)(?:</b>)?', desc)
+            for val_str, stat_text in matches:
+                try:
+                    val = int(val_str)
+                    stat_key = None
+                    for key in stat_map:
+                        if key in stat_text:
+                            stat_key = stat_map[key]
+                            break
+                    if stat_key:
+                        csv_val = int(row[stat_key])
+                        if csv_val != val:
+                            errors.append(f"Stat Mismatch - {row['name']}: Desc says {val_str} for {stat_text}, but CSV stat '{stat_key}' is {csv_val}")
+                except ValueError:
+                    continue
+
+def validate_string_generator_lengths(warnings):
+    print("Validating String Generator lengths...")
+    sg_file = 'js/string-generator.js'
+    if not os.path.exists(sg_file):
+        return
+    
+    desc_limit = TEXT_LIMITS['encounter_desc'] # 120
+    
+    with open(sg_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    def get_max_line_length(pattern):
+        match = re.search(pattern, content, re.DOTALL)
+        if not match: return 0
+        max_l = 0
+        for m in re.finditer(r'"([^"]*)"|\'([^\']*)\'', match.group(1)):
+            msg = m.group(1) if m.group(1) is not None else m.group(2)
+            for line in msg.split('<br>'):
+                max_l = max(max_l, len(clean_html(line)))
+        return max_l
+
+    # Use RunStartMessage as the gold standard for line length
+    line_limit = get_max_line_length(r'function getRunStartMessage\(\) \{(.*?)\}')
+    print(f"  Dynamic line limit (from RunStartMessage): {line_limit} chars")
+
+    def check_pool(pool_name, pattern, limit, split_br=False):
+        match = re.search(pattern, content, re.DOTALL)
+        if not match: return
+        # Capture strings accurately regardless of internal quotes
+        messages = []
+        for m in re.finditer(r'"([^"]*)"|\'([^\']*)\'', match.group(1)):
+            messages.append(m.group(1) if m.group(1) is not None else m.group(2))
+
+        for msg in messages:
+            if split_br:
+                for line in msg.split('<br>'):
+                    clean = clean_html(line)
+                    if len(clean) > limit:
+                        warnings.append(f"Long Line - {pool_name}: \"{clean[:30]}...\" is {len(clean)} chars (limit {limit})")
+            else:
+                clean = clean_html(msg.replace('<br>', ' '))
+                if len(clean) > limit:
+                    warnings.append(f"Long Text - {pool_name}: \"{clean[:30]}...\" is {len(clean)} chars (limit {limit})")
+
+    # Run start and poems use stricter line limit
+    check_pool("RunStartMessage", r'function getRunStartMessage\(\) \{(.*?)\}', line_limit, split_br=True)
+    check_pool("BridePoem (Accusatory)", r'var accusatory = \[(.*?)\];', line_limit, split_br=True)
+    check_pool("BridePoem (Longing)", r'var longing = \[(.*?)\];', line_limit, split_br=True)
+    
+    # Shop messages use encounter description limit
+    shop_pattern = r'function getShopMessage\(\)\s*\{(.*?)\}'
+    shop_match = re.search(shop_pattern, content, re.DOTALL)
+    if shop_match:
+        shop_body = shop_match.group(1)
+        pools = re.findall(r'\[(.*?)\]', shop_body, re.DOTALL)
+        for i, pool in enumerate(pools):
+            messages = []
+            for m in re.finditer(r'"([^"]*)"|\'([^\']*)\'', pool):
+                messages.append(m.group(1) if m.group(1) is not None else m.group(2))
+            name = f"ShopMessage Pool {i+1}"
+            for msg in messages:
+                clean = clean_html(msg)
+                if len(clean) > desc_limit:
+                    warnings.append(f"Long Text - {name}: \"{clean[:30]}...\" is {len(clean)} chars (limit {desc_limit})")
 
 def parse_version_timestamp(content):
     match = re.search(r'var versionCode = "ver\. (\d{2}/\d{2}/\d{4} @ \d{2}:\d{2} [AP]M)"', content)
@@ -135,20 +304,26 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
                 n = check_length(name, TEXT_LIMITS['encounter_name'], 'Name', loc, row_id, warnings)
                 name_lengths.append((n, loc, row_id))
 
+                def check_html_lines(text, limit, category):
+                    max_len = 0
+                    for line in text.split('<br>'):
+                        ln = check_length(line, limit, category, loc, row_id, warnings)
+                        max_len = max(max_len, ln)
+                    return max_len
+
                 if not (is_generator and desc.strip() == "XXX"):
-                    n = check_length(desc, TEXT_LIMITS['encounter_desc'], 'Description', loc, row_id, warnings)
+                    n = check_html_lines(desc, TEXT_LIMITS['encounter_desc'], 'Description')
                     desc_lengths.append((n, loc, row_id))
 
                 if not (is_generator and msg.strip() == "XXX"):
-                    n = check_length(msg, TEXT_LIMITS['encounter_msg'], 'Message', loc, row_id, warnings)
+                    n = check_html_lines(msg, TEXT_LIMITS['encounter_msg'], 'Message')
                     msg_lengths.append((n, loc, row_id))
 
                 # desc must contain <br> (po/em and Generator XXX placeholders are exempt)
                 if desc and '<br>' not in desc and 'po/em' not in desc and not (is_generator and desc.strip() == 'XXX'):
                     warnings.append(f'Missing <br> - {loc} {row_id}: desc has no <br> tag')
 
-            # Warn on empty fields — two adjacent semicolons indicate a forgotten value.
-            # Message col (index 13) is legitimately blank for non-combat encounters; skip it.
+            # Warn on empty fields
             MESSAGE_COL = 13
             for col_i, val in enumerate(cols):
                 if col_i == MESSAGE_COL:
@@ -170,7 +345,6 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
                 area = cols[0].strip()
                 if area != last_area:
                     if area in seen_areas:
-                        # last_area is the blip interrupting this block — flag where it started
                         blip_line, blip_rid = area_first_row[last_area]
                         errors.append(f"Line {blip_line} {blip_rid}: Area '{last_area}' interrupts '{area}' block — misplaced row or typo")
                     else:
@@ -198,7 +372,6 @@ def validate_js_files(js_dir):
     enc_desc_lengths = []
     enc_msg_lengths = []
 
-    # Regexes
     ach_desc_re = re.compile(r'desc:\s*[\'"](.*?)[\'"]', re.IGNORECASE)
     ach_hint_re = re.compile(r'hint:\s*[\'"](.*?)[\'"]', re.IGNORECASE)
     log_action_re = re.compile(r'logAction\(\s*[\'"](.*?)[\'"]', re.IGNORECASE)
@@ -222,7 +395,6 @@ def validate_js_files(js_dir):
                 line_no = content.count('\n', 0, match.start()) + 1
                 return f"{file}:{line_no}"
 
-            # Achievements
             if 'achievements.js' in file:
                 for m in ach_desc_re.finditer(content):
                     loc, idf = get_loc(m), make_identifier(m.group(1))
@@ -231,7 +403,6 @@ def validate_js_files(js_dir):
                     loc, idf = get_loc(m), make_identifier(m.group(1))
                     ach_hint_lengths.append((check_length(m.group(1), TEXT_LIMITS['achievement_hint'], 'Achievement Hint', loc, idf, warnings), loc, idf))
 
-            # Logs
             for m in log_action_re.finditer(content):
                 loc, idf = get_loc(m), make_identifier(m.group(1))
                 log_lengths.append((check_length(m.group(1), TEXT_LIMITS['log_message'], 'Log Message', loc, idf, warnings), loc, idf))
@@ -239,7 +410,6 @@ def validate_js_files(js_dir):
                 loc, idf = get_loc(m), make_identifier(m.group(1))
                 log_lengths.append((check_length(m.group(1), TEXT_LIMITS['log_message'], 'Log Message', loc, idf, warnings), loc, idf))
 
-            # Buttons
             for m in button_set_re.finditer(content):
                 loc, idf = get_loc(m), make_identifier(m.group(1))
                 btn_lengths.append((check_length(m.group(1), TEXT_LIMITS['button_text'], 'Button Text', loc, idf, warnings), loc, idf))
@@ -248,7 +418,6 @@ def validate_js_files(js_dir):
                     loc, idf = get_loc(m), make_identifier(m.group(1))
                     btn_lengths.append((check_length(m.group(1), TEXT_LIMITS['button_text'], 'Button Text', loc, idf, warnings), loc, idf))
 
-            # Hardcoded Encounters
             for m in hc_name_re.finditer(content):
                 loc, idf = get_loc(m), make_identifier(m.group(1))
                 enc_name_lengths.append((check_length(m.group(1), TEXT_LIMITS['encounter_name'], 'Name', loc, idf, warnings), loc, idf))
@@ -280,7 +449,6 @@ def _is_emoji(ch):
     )
 
 def check_emoji_period(js_dir):
-    """Error if any string literal ends with an emoji but has a period just before the emoji run."""
     print(f"Checking for period-before-emoji in {js_dir}...")
     errors = []
     for path in sorted(glob.glob(os.path.join(js_dir, '*.js'))):
@@ -288,12 +456,9 @@ def check_emoji_period(js_dir):
             content = f.read()
         for m in re.finditer(r'"([^"\n]*)"|\'([^\'\n]*)\'', content):
             s = m.group(1) if m.group(1) is not None else m.group(2)
-            if not s:
-                continue
+            if not s: continue
             rstripped = s.rstrip()
-            if not rstripped or not _is_emoji(rstripped[-1]):
-                continue
-            # Walk back past trailing emoji / stat run (digits, +, -, spaces)
+            if not rstripped or not _is_emoji(rstripped[-1]): continue
             i = len(rstripped) - 1
             while i >= 0 and (_is_emoji(rstripped[i]) or rstripped[i] in ' \t0123456789+-'):
                 i -= 1
@@ -309,16 +474,13 @@ VOID_ELEMENTS = {
 }
 
 def _strip_jekyll_front_matter(raw):
-    if not raw.startswith('---'):
-        return raw
+    if not raw.startswith('---'): return raw
     idx = raw.find('\n---', 3)
-    if idx == -1:
-        return raw
+    if idx == -1: return raw
     fm_end = idx + 4
     return '\n' * raw[:fm_end].count('\n') + raw[fm_end:]
 
 def _find_unclosed_brackets(content, file_path):
-    """Return errors for any '<' that starts a tag but has no matching '>'."""
     errors = []
     cleaned = re.sub(r'<!--.*?-->', lambda m: ' ' * len(m.group(0)), content, flags=re.DOTALL)
     i = 0
@@ -332,207 +494,130 @@ def _find_unclosed_brackets(content, file_path):
                     found_gt = True
                     i = k + 1
                     break
-                if cleaned[k] == '<':
-                    break
+                if cleaned[k] == '<': break
                 k += 1
             if not found_gt:
                 ln = content.count('\n', 0, i) + 1
                 snippet = content[i:min(i + 50, n)].replace('\n', ' ')
-                errors.append(
-                    f"HTML Tags - {file_path}:{ln}: "
-                    f"unclosed angle bracket (missing '>'): \"{snippet}\""
-                )
+                errors.append(f"HTML Tags - {file_path}:{ln}: unclosed angle bracket: \"{snippet}\"")
                 i = k
                 continue
         i += 1
     return errors
 
 def validate_html_file(file_path):
-    """Check tag balance, duplicate IDs (errors) and style trailing semicolons (warnings)."""
     print(f"Validating HTML in {file_path}...")
     errors = []
     warnings = []
-
     with open(file_path, 'r', encoding='utf-8') as f:
         raw = f.read()
     content = _strip_jekyll_front_matter(raw)
-
-    def line_of(pos):
-        return content.count('\n', 0, pos) + 1
-
-    # Style attribute values should end with ';' — warning, not a structural break
+    def line_of(pos): return content.count('\n', 0, pos) + 1
     for m in re.finditer(r'style\s*=\s*"(.*?)"', content, re.DOTALL):
         val = m.group(1).strip()
         if val and not val.endswith(';'):
             short = val.replace('\n', ' ')
             short = ('...' + short[-57:]) if len(short) > 60 else short
-            warnings.append(
-                f"HTML Style - {file_path}:{line_of(m.start())}: "
-                f"style value does not end with ';': \"{short}\""
-            )
-
-    # Duplicate id attributes — error: breaks getElementById
+            warnings.append(f"HTML Style - {file_path}:{line_of(m.start())}: style does not end with ';': \"{short}\"")
     seen_ids = {}
     for m in re.finditer(r'\bid\s*=\s*"([^"]+)"', content, re.IGNORECASE):
         id_val = m.group(1)
         ln = line_of(m.start())
         if id_val in seen_ids:
-            errors.append(
-                f"HTML IDs - {file_path}:{ln}: "
-                f"duplicate id=\"{id_val}\" (first at line {seen_ids[id_val]})"
-            )
-        else:
-            seen_ids[id_val] = ln
-
-    # Unclosed angle brackets — error: missing '>'
+            errors.append(f"HTML IDs - {file_path}:{ln}: duplicate id=\"{id_val}\" (first at line {seen_ids[id_val]})")
+        else: seen_ids[id_val] = ln
     errors.extend(_find_unclosed_brackets(content, file_path))
-
-    # Tag balance — error: broken structure
-    tag_re = re.compile(
-        r'<!--.*?-->'              # skip comments
-        r'|</(\w[\w:-]*)\s*>'     # close tag → group 1
-        r'|<(\w[\w:-]*)([^>]*)>', # open/self-close → group 2 (name), group 3 (attrs)
-        re.DOTALL
-    )
+    tag_re = re.compile(r'<!--.*?-->|</(\w[\w:-]*)\s*>|<(\w[\w:-]*)([^>]*)>', re.DOTALL)
     stack = []
     for m in tag_re.finditer(content):
         ln = line_of(m.start())
         if m.group(1) is not None:
             tag = m.group(1).lower()
-            if tag in VOID_ELEMENTS:
-                continue
-            if not stack:
-                errors.append(f"HTML Tags - {file_path}:{ln}: unexpected </{tag}> with nothing open")
-            elif stack[-1][0] != tag:
-                errors.append(
-                    f"HTML Tags - {file_path}:{ln}: "
-                    f"</{tag}> does not match open <{stack[-1][0]}> (line {stack[-1][1]})"
-                )
-            else:
-                stack.pop()
+            if tag in VOID_ELEMENTS: continue
+            if not stack: errors.append(f"HTML Tags - {file_path}:{ln}: unexpected </{tag}>")
+            elif stack[-1][0] != tag: errors.append(f"HTML Tags - {file_path}:{ln}: </{tag}> does not match <{stack[-1][0]}> (line {stack[-1][1]})")
+            else: stack.pop()
         elif m.group(2) is not None:
             tag = m.group(2).lower()
-            if tag in VOID_ELEMENTS:
-                continue
-            if (m.group(3) or '').rstrip().endswith('/'):
-                continue  # self-closing e.g. <h2 ... />
+            if tag in VOID_ELEMENTS: continue
+            if (m.group(3) or '').rstrip().endswith('/'): continue
             stack.append((tag, ln))
-    for tag, ln in stack:
-        errors.append(f"HTML Tags - {file_path}:{ln}: unclosed <{tag}>")
-
+    for tag, ln in stack: errors.append(f"HTML Tags - {file_path}:{ln}: unclosed <{tag}>")
     return errors, warnings
 
 def validate_html_in_js(js_dir):
-    """Check style trailing semicolons in HTML embedded in JS string literals (warnings only)."""
     print(f"Validating HTML in JS files under {js_dir}...")
     warnings = []
-
     for root, _, files in os.walk(js_dir):
         for fname in sorted(files):
-            if not fname.endswith('.js'):
-                continue
+            if not fname.endswith('.js'): continue
             fpath = os.path.join(root, fname)
             with open(fpath, 'r', encoding='utf-8') as f:
                 lines = f.readlines()
-
             for i, line in enumerate(lines, 1):
-                if line.strip().startswith('//'):
-                    continue
-
-                # style="VALUE" in single-quoted JS strings — complete, not concatenated
-                # Lookahead (?!\s*"?\s*\+) excludes VALUE"+ (string-end then concat)
+                if line.strip().startswith('//'): continue
                 for m in re.finditer(r'style="([^"<>+]+)"(?!\s*"?\s*\+)', line):
                     val = m.group(1).strip()
                     if val and not val.endswith(';'):
-                        warnings.append(
-                            f"HTML Style - {fname}:{i}: "
-                            f"style value does not end with ';': \"{val[-60:]}\""
-                        )
-
-                # style=\"VALUE\" in double-quoted JS strings — complete, not concatenated
+                        warnings.append(f"HTML Style - {fname}:{i}: style does not end with ';': \"{val[-60:]}\"")
                 for m in re.finditer(r'style=\\"([^\\"]+)\\"(?!\s*"?\s*\+)', line):
                     val = m.group(1).strip()
                     if val and not val.endswith(';'):
-                        warnings.append(
-                            f"HTML Style - {fname}:{i}: "
-                            f"style value does not end with ';': \"{val[-60:]}\""
-                        )
-
+                        warnings.append(f"HTML Style - {fname}:{i}: style does not end with ';': \"{val[-60:]}\"")
     return warnings
 
 def check_tutorial_skip_index(story_csv_path, data_loader_path):
     errors = []
-
     dos_count = 0
     with open(story_csv_path, 'r', encoding='utf-8') as f:
         for line in f:
             stripped = line.strip()
-            if not stripped or stripped.startswith('//'):
-                continue
+            if not stripped or stripped.startswith('//'): continue
             cols = stripped.split(';')
-            if cols[0].strip() == 'Depths of Slumber':
-                dos_count += 1
-
+            if cols[0].strip() == 'Depths of Slumber': dos_count += 1
     with open(data_loader_path, 'r', encoding='utf-8') as f:
         content = f.read()
-
-    # Find all loadEncounter(N) calls with a literal integer — these are the tutorial skip calls
     skip_calls = [(m.group(1), int(m.group(1))) for m in re.finditer(r'loadEncounter\((\d+)\)', content)]
-
     if not skip_calls:
         errors.append(f"Tutorial Skip - no literal loadEncounter(N) calls found in {data_loader_path}")
         return errors
-
     for raw, idx in skip_calls:
         if idx != dos_count:
-            errors.append(
-                f"Tutorial Skip - data-loader.js: loadEncounter({idx}) but story.csv has "
-                f"{dos_count} 'Depths of Slumber' rows (expected loadEncounter({dos_count}))"
-            )
-
+            errors.append(f"Tutorial Skip - data-loader.js: loadEncounter({idx}) but story.csv has {dos_count} rows")
     return errors
 
 def main():
-    # Optional first arg: 'csv' or 'html' runs only that subset.
-    # Two file-path args trigger version-check mode (existing CI behaviour).
-    # No args (or unrecognised first arg) runs everything.
     mode = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in ('csv', 'html', 'js') else None
-
     all_errors = []
     all_warnings = []
 
     if mode in (None, 'csv'):
-        # Validate encounters.csv
         if os.path.exists('data/encounters.csv'):
             errs, warns = validate_csv('data/encounters.csv', 15, range(4, 11), check_sequence=True)
             all_errors.extend(errs)
             all_warnings.extend(warns)
-
-        # Validate story.csv
         if os.path.exists('data/story.csv'):
             errs, warns = validate_csv('data/story.csv', 15, range(4, 11))
             all_errors.extend(errs)
             all_warnings.extend(warns)
-
-        # Check tutorial skip index consistency
         if os.path.exists('data/story.csv') and os.path.exists('js/data-loader.js'):
             all_errors.extend(check_tutorial_skip_index('data/story.csv', 'js/data-loader.js'))
-
-        # Validate origins.csv
         if os.path.exists('data/origins.csv'):
             errs, _ = validate_csv('data/origins.csv', 11, range(2, 9))
             all_errors.extend(errs)
-
-        # JS file text-length checks
+        
+        validate_achievement_origins(all_warnings, all_errors)
+        validate_origin_stats(all_warnings, all_errors)
+        
         if os.path.exists('js'):
             all_warnings.extend(validate_js_files('js'))
+            validate_string_generator_lengths(all_warnings)
 
     if mode in (None, 'js'):
         if os.path.exists('js'):
             all_errors.extend(check_emoji_period('js'))
 
     if mode in (None, 'html'):
-        # Validate HTML structure and style attributes
         if os.path.exists('index.md'):
             errs, warns = validate_html_file('index.md')
             all_errors.extend(errs)
@@ -540,33 +625,20 @@ def main():
         if os.path.exists('js'):
             all_warnings.extend(validate_html_in_js('js'))
 
-    # Version check if base config is provided (no mode keyword — both args are file paths)
     if mode is None and len(sys.argv) > 2:
-        current_config_path = sys.argv[1]
-        base_config_path = sys.argv[2]
-
-        if os.path.exists(current_config_path) and os.path.exists(base_config_path):
-            with open(current_config_path, 'r') as f:
-                current_ts = parse_version_timestamp(f.read())
-            with open(base_config_path, 'r') as f:
-                base_ts = parse_version_timestamp(f.read())
-
-            if not current_ts:
-                all_errors.append(f"Could not parse version from {current_config_path}")
-            if not base_ts:
-                print(f"Warning: Could not parse version from base config {base_config_path}")
-            elif current_ts and current_ts <= base_ts:
-                all_errors.append(f"Version check failed: Current version ({current_ts}) is not newer than base version ({base_ts}). Run version.sh!")
+        cpath, bpath = sys.argv[1], sys.argv[2]
+        if os.path.exists(cpath) and os.path.exists(bpath):
+            with open(cpath, 'r') as f: cts = parse_version_timestamp(f.read())
+            with open(bpath, 'r') as f: bts = parse_version_timestamp(f.read())
+            if not cts: all_errors.append(f"Could not parse version from {cpath}")
+            elif bts and cts <= bts: all_errors.append("Version check failed: Current version not newer than base.")
 
     if all_warnings:
         print("\nWarnings:")
-        for warn in all_warnings:
-            print(f"  {warn}")
-
+        for warn in all_warnings: print(f"  {warn}")
     if all_errors:
         print("\nErrors:")
-        for err in all_errors:
-            print(f"  {err}")
+        for err in all_errors: print(f"  {err}")
         sys.exit(1)
     else:
         print("\nAll checks passed!")

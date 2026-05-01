@@ -1,7 +1,7 @@
 emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Unlockable
-💍;Groom;-1;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>The memory of her touch is keeping him alive.;game_win_first
+💍;Groom;-1;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>The memory of her is keeping him alive.;game_win_first
 💀;Brittle;-2;0;0;0;0;0;0;Suffer <b>-2 💔 Health</b> with no clear benefit.<br><i>No flesh to protect the bones.;hardcore_win
 🎓;Scholar;0;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b> with no downside.<br><i>The grind is his second nature.;level_5
 🔪;Slayer;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Born for killing, nothing more.;kill_50

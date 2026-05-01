@@ -12,12 +12,12 @@ var AchievementManager = (function () {
     { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.', unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
 
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time.", unlock: 'Unlocked the <b>🔪 Bloody Knife</b> item.' },
-    { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.', unlock: 'Unlocked the <b>🥋;Budo Kimono</b> item.' },
+    { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.', unlock: 'Unlocked the <b>🥋 Budo Kimono</b> item.' },
     { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?', unlock: 'Unlocked the <b>🏳️ Pacifist</b> origin.' },
     { id: 'survive_trap',        emoji: '💥', desc: 'Survived a deadly trap!', hint: 'Watch where you step.', unlock: 'Unlocked the <b>🤙 Careless</b> origin.' },
 
     { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable.", unlock: 'Unlocked the <b>🧟‍♂️ Rotten</b> origin.' },
-    { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a deadly trap!', hint: 'Ooops... that was deadly.', unlock: 'Unlocked the <b>💥;Clumsy</b> origin.' },
+    { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a deadly trap!', hint: 'Ooops... that was deadly.', unlock: 'Unlocked the <b>💥 Clumsy</b> origin.' },
     { id: 'death_sleep',         emoji: '💤', desc: 'Died in your sleep...', hint: 'Not the peaceful rest you hoped for.', unlock: 'Unlocked the <b>👻 Wraith</b> origin.' },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!", unlock: 'Unlocked the <b>♥️ Extra Life</b> item.' },
     { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.', unlock: 'Unlocked the <b>🥻 Philosopher Toga</b> item.' },
@@ -41,14 +41,13 @@ var AchievementManager = (function () {
 
     { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...', unlock: '' },
     { id: 'eat_purple',          emoji: '💜', desc: 'Consumed a premium refreshment!', hint: 'The finer things in death.', unlock: '' },
-    { id: 'eat_legendary',       emoji: '🍔', desc: 'Consumed a legendary refreshment!', hint: 'Become a certified gourmet.', unlock: 'Unlocked the <b>🤌 Gourmet></b> origin.' },
-
+    { id: 'eat_legendary',       emoji: '🍔', desc: 'Consumed a legendary refreshment!', hint: 'Become a certified gourmet.', unlock: 'Unlocked the <b>🤌 Gourmet</b> origin.' },
     { id: 'pet_first',           emoji: '🐾', desc: 'Got your first pet!', hint: 'Befriend a furry being.', unlock: 'Unlocked the <b>🦧 Furry</b> origin.' },
     { id: 'recruit_first',       emoji: '🤝', desc: 'Recruited your first ally!', hint: 'Talk someone to join your side.', unlock: 'Unlocked the <b>💬 Preacher</b> origin.' },
     { id: 'full_party',          emoji: '👥', desc: 'Got a party of three companions!', hint: 'The more, the merrier, always.', unlock: 'Unlocked the <b>💍 Engraved Ring</b> item.' },
 
     { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered: Forsaken Village!', hint: "Seek the long forgotten village.", unlock: 'Unlocked the <b>🥔 Peasant</b> origin.' },
-    { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!', hint: "Seek the home of supernatural beings.", unlock: 'Unlocked the <b>🎋 Shaman/b> origin.' },
+    { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!', hint: "Seek the home of supernatural beings.", unlock: 'Unlocked the <b>🎋 Shaman</b> origin.' },
     { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!', hint: "Sail the flows of eternal tears.", unlock: 'Unlocked the <b>⛵️ Sailor</b> origin.' },
     { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!', hint: "Where the deepest shadows dwell.", unlock: 'Unlocked the <b>🦴 Survivor</b> origin.' },
 
@@ -547,3 +546,4 @@ var AchievementManager = (function () {
     clearAll:            clearAll
   };
 })();
+
