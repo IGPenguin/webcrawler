@@ -60,7 +60,7 @@ function _doStartGame(isContinue) {
 
     resetSeenEncounters();
     if (typeof TelemetryManager !== 'undefined') {
-      TelemetryManager.send('run_start', playerName || '?');
+      TelemetryManager.send('run_start', '');
     }
     processStoryData(storyData);
     registerClickListeners(0);
@@ -432,12 +432,15 @@ function _netFromRow(row) {
   return v(5)*3 + v(9)*2 + v(4)*1.5 + v(6)*1.5 + v(7)*0.5 + v(8)*0.5 + v(10);
 }
 
-// Determine rarity tier for a raw encounter row: explicit [Tag] in note wins, then stat net, then Artifact fallback.
+// Determine rarity tier for a raw encounter row: explicit [Tag] in note wins, then Artifact keyword,
+// then achievement gate (gated content is always Legendary), then stat net.
 function _rarityFromRow(row) {
   var noteRaw = (row[11] || '').split(':').slice(1).join(':');
   var tier = RarityManager.getTierFromNote(noteRaw);
   if (tier) return tier;
   if (noteRaw.toLowerCase().includes('artifact')) return 'Legendary';
+  var achievId = row.length > 14 ? (row[14] || '').split(':').slice(1).join(':').trim() : '';
+  if (achievId && achievId !== 'none') return 'Legendary';
   return RarityManager.getTierForNet(_netFromRow(row));
 }
 

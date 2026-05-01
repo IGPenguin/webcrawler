@@ -189,7 +189,7 @@ var Menu = (function () {
     // Group unlocked origins by rarity tier
     var tierBuckets = {};
     available.forEach(function(o) {
-      var tier = RarityManager.getTierForNet(_originNet(o));
+      var tier = _originTier(o);
       if (!tierBuckets[tier]) tierBuckets[tier] = [];
       tierBuckets[tier].push(o);
     });
@@ -227,6 +227,15 @@ var Menu = (function () {
          + (o.def||0);
   }
 
+  // Explicit [Tag] in note wins; then achievement gate → Legendary; then stat net.
+  function _originTier(o) {
+    var noteTag = RarityManager.getTierFromNote(o.note || '');
+    if (noteTag) return noteTag;
+    var achievId = (o.achiev || '').trim();
+    if (achievId && achievId !== 'none') return 'Legendary';
+    return RarityManager.getTierForNet(_originNet(o));
+  }
+
   function _originRarityBg(net) {
     return RarityManager.getBg(RarityManager.getTierForNet(net));
   }
@@ -247,9 +256,10 @@ var Menu = (function () {
     list.innerHTML = '';
 
     origins.forEach(function(origin) {
-      var net = _originNet(origin);
-      var rarityBg    = _originRarityBg(net);
-      var rarityColor = _originRarityColor(net);
+      var net        = _originNet(origin);
+      var tier       = _originTier(origin);
+      var rarityBg    = RarityManager.getBg(tier);
+      var rarityColor = RarityManager.getColor(tier);
 
       var descParts = origin.desc.split('<br>');
       var descLine1 = descParts[0] || '';

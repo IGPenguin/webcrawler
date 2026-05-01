@@ -200,7 +200,7 @@ function transitionToCorpse(state) {
   totalBonus=0; totalMalus=0;
 
   var _lootType = null;
-  if (!enemyBossType.includes('Boss')) {
+  if (!enemyBossType.includes('Boss') && areaName !== "Depths of Slumber") {
     if (procAbilityChance("", GAME_CONFIG.killItemDropChance+playerLck)) {
       _lootType = ["Item"];
     } else if (procAbilityChance("", GAME_CONFIG.killConsumableDropChance+playerLck)) {

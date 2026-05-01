@@ -1,14 +1,11 @@
 // Set to true to unlock Easy/Hardcore difficulty selection for players (except on localhost for testing).
 var DIFFICULTY_PICKER_ENABLED = false;
 
-// Set to true to skip the tutorial on localhost (sets initialEncounterOverride = 7).
-var TUTORIAL_SKIP_LOCALHOST = false;
+// Set to false to suppress per-encounter enemy and loot telemetry events (keeps run_start, run_end, achievement, cheat_used).
+var TELEMETRY_DETAILS_ENABLED = false;
 
-// Set to true to disable global rankings submission on localhost.
-var RANKINGS_DISABLED_LOCALHOST = false;
-
-// Set to true to disable telemetry submission on localhost.
-var TELEMETRY_DISABLED_LOCALHOST = false;
+// When true, playerKarma (baseline 1, higher = more good actions this run) shifts weights toward better tiers.
+var RARITY_KARMA_ENABLED = false;
 
 // ── Difficulty Presets ────────────────────────────────────────────────────────
 // speedMult:             action bar speed multiplier — >1 faster cursor (harder), <1 slower (easier)
@@ -100,8 +97,7 @@ var RARITY_TIERS = {
   Legendary: { weight:  2, color: colorOrange,      bg: colorDarkOrange,    netMin:  3.0,      netMax:  Infinity }
 };
 
-// When true, playerKarma (baseline 1, higher = more good actions this run) shifts weights toward better tiers.
-var RARITY_KARMA_ENABLED = true;
+
 
 var RarityManager = (function () {
   var TIER_ORDER = ['Cursed', 'Common', 'Uncommon', 'Rare', 'Legendary'];

@@ -196,7 +196,7 @@ function loadEncounter(index, fileLines = linesStory){
   }
 
   // ── Encounter telemetry ───────────────────────────────────────────────────
-  if (typeof TelemetryManager !== 'undefined') {
+  if (typeof TelemetryManager !== 'undefined' && TELEMETRY_DETAILS_ENABLED) {
     var _statStr = [enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef].join(';');
     var _nameStr = enemyEmoji + ' ' + enemyName;
     var _genSrc  = (lastGeneratorName && lastGeneratorName !== 'none') ? ('gen:' + lastGeneratorName) : 'story';

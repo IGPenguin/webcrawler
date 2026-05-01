@@ -258,10 +258,10 @@ function redraw(){
     default:
       enemyStatusString=decorateStatusText("⚠️","No Details","red");
       //Multi-match
-      if (enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
-      if (enemyType.includes("Container")&&(parseInt(totalMalus)<0)) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
+      if (enemyType && enemyType.includes("Container")) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
+      if (enemyType && enemyType.includes("Container")&&(parseInt(totalMalus)<0)) enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
 
-      if (enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
+      if (enemyType && enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
 
       if (enemyBossType.includes("Boss")){
         enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
@@ -303,7 +303,7 @@ function redraw(){
 
     default:
       displayPlayerState(); //Cautious by default
-      if (enemyType.includes("Container") || enemyType.includes("Friend") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"||enemyType=="Fishing"){
+      if (enemyType && (enemyType.includes("Container") || enemyType.includes("Friend") || enemyType=="Prop" || enemyType=="Item"||enemyType=="Consumable"||enemyType=="Checkpoint"||enemyType=="Altar"||enemyType=="Fishing")){
         if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5"); //I need this to be overwritable by the below
         if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2"); //I need this to be overwritable by the below
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
@@ -399,10 +399,10 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
   }
 
   toast.innerHTML =
-    '<div style="display:flex; align-items:center; gap:10px; padding:7px 0px 8px 12px; margin-bottom:-8px;">'
-      + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + achievement.emoji + '</span>'
-      + '<div style="flex:1;">'
-        + '<h5 style="margin:-2px 0 0 0; font-size:16px; font-style:normal; font-weight:600; color:' + toastColor + '; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc + '</h5>'
+    '<div id="achievement_toast_inner" style="display:flex; align-items:center; gap:10px; padding:7px 0px 8px 12px; margin-bottom:-8px;">'
+      + '<span id="achievement_toast_emoji" style="font-size:22px; line-height:1; flex-shrink:0;">' + achievement.emoji + '</span>'
+      + '<div id="achievement_toast_text" style="flex:1;">'
+        + '<h5 style="margin:-2px 0 0 0; font-size:16px; line-height:1.2; font-style:normal; font-weight:600; color:' + toastColor + '; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + achievement.desc + '</h5>'
         + tsLine
       + '</div>'
     + '</div>';
@@ -434,7 +434,7 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
   };
   _flashToast(3);
 
-  setTimeout(function() {
+  var _fadeOutToast = function() {
     if (document.getElementById('achievement_toast') !== toast) return;
     toast.style.transition = 'opacity 2s';
     toast.style.opacity = '0';
@@ -442,5 +442,25 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
       if (document.getElementById('achievement_toast') === toast) toast.remove();
       if (onDone) onDone();
     }, 2300);
-  }, 4000);
+  };
+
+  if (achievement.unlock) {
+    var innerEl = document.getElementById('achievement_toast_inner');
+    var emojiEl = document.getElementById('achievement_toast_emoji');
+    var textEl  = document.getElementById('achievement_toast_text');
+    setTimeout(function() {
+      if (document.getElementById('achievement_toast') !== toast) return;
+      innerEl.style.transition = 'opacity 0.4s';
+      innerEl.style.opacity = '0';
+      setTimeout(function() {
+        if (document.getElementById('achievement_toast') !== toast) return;
+        emojiEl.textContent = '🔓';
+        textEl.innerHTML = '<h5 style="margin:-2px 0 0 0; font-size:16px; line-height:1.2; font-style:normal; font-weight:400; color:#ffffff; text-align:left;">' + achievement.unlock + '</h5>' + tsLine;
+        innerEl.style.opacity = '1';
+        setTimeout(_fadeOutToast, 3000);
+      }, 400);
+    }, 3000);
+  } else {
+    setTimeout(_fadeOutToast, 4000);
+  }
 }
