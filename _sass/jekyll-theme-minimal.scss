@@ -576,7 +576,6 @@ select {
 .gelasio-font {
   &, button, select, input, h1, h2, h3, h4, h5, h6 {
     font-family: 'Gelasio', Georgia, serif !important;
-    font-weight: 400 !important;
     letter-spacing: -0.1px !important;
     -webkit-font-smoothing: antialiased;
   }
@@ -589,7 +588,6 @@ select {
   [style*="font-family:sans"],
   [style*="font-family: sans"] {
     font-family: 'Gelasio', Georgia, serif !important;
-    font-weight: 400 !important;
     letter-spacing: -0.1px !important;
   }
 }
