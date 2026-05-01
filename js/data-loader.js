@@ -59,6 +59,9 @@ function _doStartGame(isContinue) {
     }
 
     resetSeenEncounters();
+    if (typeof TelemetryManager !== 'undefined') {
+      TelemetryManager.send('run_start', playerName || '?');
+    }
     processStoryData(storyData);
     registerClickListeners(0);
     registerClickListenersTechnical();

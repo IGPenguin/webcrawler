@@ -1,6 +1,7 @@
 function logCheatUse(message) {
   playerEmoji = '⚠️';
   cheatedThisRun = true;
+  if (typeof TelemetryManager !== 'undefined') TelemetryManager.send('cheat_used', message);
   AchievementManager.check('use_cheat');
   logAction("✏️ ▸ ⚠️ <text style='color:" + colorSoftRed + ";'><b>Cheat used: " + message + "</b></text>");
   showAchievementToast({ emoji: '⚠️', desc: message, color: colorSoftRed }, 'Rankings disabled for your current run.', null);

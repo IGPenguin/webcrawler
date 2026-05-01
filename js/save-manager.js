@@ -6,6 +6,9 @@ var SaveManager = (function () {
   // ── Session history ────────────────────────────────────────────────────────
 
   function saveSession(session) {
+    if (typeof TelemetryManager !== 'undefined') {
+      TelemetryManager.send('run_end', (session.causeOfDeath || '') + '|' + (session.endType || session.outcome || ''));
+    }
     var history = listSessionHistory();
     history.unshift(session);
     if (history.length > MAX_SESSIONS) history.length = MAX_SESSIONS;

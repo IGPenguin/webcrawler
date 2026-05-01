@@ -7,6 +7,9 @@ var TUTORIAL_SKIP_LOCALHOST = false;
 // Set to true to disable global rankings submission on localhost.
 var RANKINGS_DISABLED_LOCALHOST = false;
 
+// Set to true to disable telemetry submission on localhost.
+var TELEMETRY_DISABLED_LOCALHOST = false;
+
 // ── Difficulty Presets ────────────────────────────────────────────────────────
 // speedMult:             action bar speed multiplier — >1 faster cursor (harder), <1 slower (easier)
 // zoneMult:              success zone width multiplier — 1.0 = standard, 0.8 = 20% narrower (harder), 1.2 = 20% wider (easier)

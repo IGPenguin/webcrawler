@@ -1401,6 +1401,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (corpseHasLoot) {
             displayEnemyEffect("👋");
             logPlayerAction(actionString,"Searched through the remains.");
+            if (typeof TelemetryManager !== 'undefined') TelemetryManager.setLootSource('drop');
             pushEncounter(corpseLoot);
             corpseHasLoot=false; corpseLoot=null;
             nextEncounter();

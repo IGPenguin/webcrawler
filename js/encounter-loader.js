@@ -195,6 +195,24 @@ function loadEncounter(index, fileLines = linesStory){
       break;
   }
 
+  // ── Encounter telemetry ───────────────────────────────────────────────────
+  if (typeof TelemetryManager !== 'undefined') {
+    var _statStr = [enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef].join(';');
+    var _nameStr = enemyEmoji + ' ' + enemyName;
+    var _genSrc  = (lastGeneratorName && lastGeneratorName !== 'none') ? ('gen:' + lastGeneratorName) : 'story';
+
+    if (enemyType === 'Item' || enemyType === 'Consumable') {
+      var _lootSrc = isFishing ? 'fishing' : (TelemetryManager.popLootSource() || _genSrc);
+      TelemetryManager.send('loot', _lootSrc + '|' + enemyType + '|' + _nameStr + '|' + _statStr);
+    } else {
+      var _combatTypes = ['Small','Standard','Swift','Heavy','Recruit','Pet','Spirit','Demon','Undead','Stingy','Toxic'];
+      if (_combatTypes.indexOf(enemyType) !== -1 || enemyType.includes('Boss')) {
+        var _enemySrc = isFishing ? 'fishing' : _genSrc;
+        TelemetryManager.send('enemy', _enemySrc + '|' + enemyType + '|' + _nameStr + '|' + _statStr);
+      }
+    }
+  }
+
   //Specific encounter starts
   if (enemyType=="Dream" && (!enemyName.includes("Waking Moment")) && (!enemyName.includes("Terrific Realization")) && (!enemyName.includes("Horrific Realization"))) playerSta=0;
 

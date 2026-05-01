@@ -195,6 +195,7 @@ var AchievementManager = (function () {
     _unlocked[id] = Date.now();
     _sessionUnlocked.push(id);
     _save();
+    if (typeof TelemetryManager !== 'undefined') TelemetryManager.send('achievement', id);
     var achievement = null;
     for (var i = 0; i < ACHIEVEMENTS.length; i++) {
       if (ACHIEVEMENTS[i].id === id) { achievement = ACHIEVEMENTS[i]; break; }
