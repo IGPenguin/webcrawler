@@ -151,7 +151,17 @@ Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;2;0;2;0;0;Thundering Menace;Eac
 Fading Wildlands;🐗;Brood Matron;Boss-Heavy;3;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.;none
 Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;1;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.;none
 
-Fading Wildlands;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Fading Wildlands;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
+Fading Wildlands;🪣;Sturdy Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Fading Wildlands;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Fading Wildlands;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
+Fading Wildlands;📼;Rewind Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
+Fading Wildlands;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
+Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
+Fading Wildlands;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Fading Wildlands;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
+Fading Wildlands;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
+Fading Wildlands;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 
 Fading Wildlands;🏵️;Symbol of Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment, provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.;none
@@ -159,7 +169,6 @@ Fading Wildlands;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice
 Fading Wildlands;🎨;Painter's Palette;Item;0;0;0;0;3;0;0;<b>Artifact</b>;Must've been left behind by a true artist.<br>Provides <b>+4 🧠 Creativity</b>.;Felt a surge of creativity;none
 Fading Wildlands;🖌️;Painter's Brush;Item;0;0;0;0;0;1;0;<b>Artifact</b>;Enchanted tool radiating strange power.<br>Provides <b>+1 🔵 Mana</b>.;Got a hold of a powerful tool;none
 Fading Wildlands;🍀;Four-leaf Clover;Item;0;0;0;3;0;0;0;<b>Artifact</b>;Extremely rare growth, might be beneficial.<br>Provides <b>+3 🍀 Luck</b>.;Feels so good to have it.;none
-Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;none
 Fading Wildlands;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
 
 Fading Wildlands;💐;Flower Bouquet;Item;0;0;0;0;2;0;0;Floral Gift;Makes anyone look a lot friendlier.<br>Provides <b>+2 🧠 Charisma</b>.;Feels purposeful carrying that.;none
@@ -470,22 +479,29 @@ Forsaken Village;🪚;Haunted Saw;Boss-Stingy;3;2;1;1;-1;0;0;Cursed Tool;Metal t
 Forsaken Village;🐻;Urban Grizzly;Boss-Heavy;4;2;1;0;-1;0;0;Huge Beast;Packs a painful punch.<br>;Head slapped to the ground.;none
 Forsaken Village;🐦‍⬛;Blood Raven;Undead;2;1;3;1;0;0;0;Thirsty Bird;Aims its beak straight for your neck.<br>;Got your veins sucked dry.;none
 
-Forsaken Village;🔥;Lingering Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;;none
+Forsaken Village;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
-Forsaken Village;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
+Forsaken Village;🪣;Sturdy Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Forsaken Village;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
+Forsaken Village;📼;Rewind Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
+Forsaken Village;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
+Forsaken Village;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
+Forsaken Village;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
+Forsaken Village;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
+Forsaken Village;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 
 Forsaken Village;🪓;Titansteel Cleaver;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.;none
-Forsaken Village;🥊;Enchanted Gloves;Item;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat technique.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+2 🟢 Energy</b>.;Feeling more confident.;none
-Forsaken Village;🩼;Disposed Crutch;Item;0;1;-1;0;0;0;0;<b>Artifact</b>;Best of both - support and attack power.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;This will come in handy!;none
+Forsaken Village;🥊;Enchanted Glove;Item;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat technique.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 ❤️ Health</b>.;Feeling more confident.;none
+Forsaken Village;🩼;Disposed Crutch;Item;0;1;1;0;0;0;0;<b>Artifact</b>;Best of both - support and attack power.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;This will come in handy!;none
 Forsaken Village;🛡️;Unstable Shield;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.;none
 Forsaken Village;🧼;Ancient Soap;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>🫧 Bubble Shield</b>.<br>Repels received damage - <b>once per combat</b>.;Gained attribute <b>🫧 Bubble Shield</b>.;none
 Forsaken Village;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>;none
 Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
-Forsaken Village;📼;Cassette Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
-Forsaken Village;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Forsaken Village;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;none
-Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;none
 Forsaken Village;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.;none
 Forsaken Village;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;none
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight;none
@@ -499,7 +515,6 @@ Forsaken Village;🌂;Sturdy Umbrella;Item;0;1;0;0;0;0;0;Improvised Weapon;Might
 Forsaken Village;🖋️;Fountain Pen;Item;0;1;0;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.;none
 Forsaken Village;🔧;Metal Spanner;Item;0;1;0;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.;none
 Forsaken Village;🪛;Rusty Screwdiver;Item;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.;none
-Forsaken Village;🔪;Bloody Knife;Item;0;1;0;-1;0;0;0;Multi-tool;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Got some blood on your hands!;none
 Forsaken Village;⛑️;Medic Helmet;Item;1;0;0;1;0;0;0;Head Protection;Robust protection for those who help others.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Protected and blessed;none
 Forsaken Village;📔;Holy Prayerbook;Item;0;0;0;1;0;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;Learned plenty of stuff;none
 
@@ -829,7 +844,19 @@ Twisted Fairyland;🍐;Wild Pear;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Seems like
 Twisted Fairyland;🫐;Wild Berries;Consumable;0;0;0;0;0;0;0;Forest Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 
-Twisted Fairyland;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Twisted Fairyland;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
+
+Twisted Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
+Twisted Fairyland;🪣;Sturdy Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Twisted Fairyland;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Twisted Fairyland;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
+Twisted Fairyland;📼;Rewind Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
+Twisted Fairyland;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
+Twisted Fairyland;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
+Twisted Fairyland;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Twisted Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
+Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
+Twisted Fairyland;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 
 Twisted Fairyland;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Physical Defence</b>.;Who needs love anyway? <b>+1 🔰</b>;none
 Twisted Fairyland;👺;Devil Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>👺 Devil Appearance</b>.<br><b>Demon type enemies will be passive</b>.;Gained attribute <b>👺 Devil's Appearance</b>.;none
@@ -845,20 +872,18 @@ Twisted Fairyland;👘;Warlock Robe;Item;0;0;0;0;-4;2;0;Artifact;Usually worn by
 Twisted Fairyland;🪄;Warlock Wand;Item;0;0;0;-2;0;2;0;<b>Artifact</b>;Resonates with forsaken magical power.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Wielded a dangerous power.;none
 Twisted Fairyland;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.;none
 Twisted Fairyland;📌;Voodoo Pin;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Enemies will suffer from the <b>☠️ Ancient Voodoo</b>.<br>Deal <b>-1 💔 Damage</b> when engaging in combat.;Gained ability <b>☠️ Ancient Voodoo</b>.;none
-Twisted Fairyland;📜;The Elder Scroll;Item;0;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Intellect</b> and an ancient insight.<br>n/a;Embraced the ancient knowledge.;none
+Twisted Fairyland;📜;The Elder Scroll;Item;0;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Intellect</b> and a mythical insight:<br>n/a;Embraced the ancient knowledge.;none
 
 Twisted Fairyland;🏹;Sharpshooter Bow;Item;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!;none
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!;none
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;;none
 Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Intellect</b>.;Absorbed some magic knowledge;none
 
-Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Safety Measure;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;;none
 Twisted Fairyland;🧥;Protective Coat;Item;2;0;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;;none
 Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds;none
-Twisted Fairyland;🧭;Navigation Compass;Item;0;0;2;0;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b>.;;none
-Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;;none
-Twisted Fairyland;🪃;Haunted Boomerang;Item;0;1;0;-1;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;;none
-Twisted Fairyland;🧧;Crimson Medailon;Item;2;0;0;-1;0;0;0;Rare Trinket;Something feels off about this.<br>Provides <b>+2 ❤️ Health”</b> for <b>-1 🍀 Luck</b>.;;none
+Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;Felt a werid cold surge;none
+Twisted Fairyland;🪃;Haunted Boomerang;Item;0;1;0;-1;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;Something about it feels off;none
+Twisted Fairyland;🧧;Crimson Medailon;Item;2;0;0;-4;0;0;0;Rare Trinket;Something feels off about this.<br>Provides <b>+2 ❤️ Health”</b> for <b>-4 🍀 Luck</b>.;;none
 Twisted Fairyland;🥁;Treble Drum;Item;0;0;2;0;0;0;0;Rythmical Instrument;Helps staying alert in combat.<br>Provides <b>+2 🟢 Energy</b>.;Ba dum tss!;none
 Twisted Fairyland;🪇;Painted Maracas;Item;0;0;0;2;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+2 🍀 Luck</b>.;Shake it baby!;none
 
@@ -987,7 +1012,6 @@ River of Sorrows;🦅;River Harpy;Demon;2;1;3;0;2;0;0;Winged Threat;Swoops low o
 River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;2;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
 River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful, ...not anymore.<br>.;Got both eyes pecked out!;none
 
-River of Sorrows;‍🦈;The Megalodon;Boss-Swift;3;3;2;0;-1;0;0;Mythical Monster;One bite and it's likely over.<br>;Devoured by mythical creature!;none
 River of Sorrows;👤;Drowned Soul;Boss-Spirit;1;2;3;0;2;0;0;Unfinished Business;Lurks below the surface for another victim.<br>;Dragged into dark depths.;none
 River of Sorrows;🦀;Spider Crab;Boss-Tough;3;2;2;0;-1;0;1;Oversized Crustacean;Whaat? It's the size of a dog!<br>;Got pinched in half.;none
 River of Sorrows;🐚;Squatting Hermit;Boss-Tough;3;3;1;0;-1;0;1;Armored Crustacean;Better not stick your fingers inside.<br>;Oops, that was deadly!;none
@@ -1015,15 +1039,25 @@ River of Sorrows;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;0;Massive Catch;Convenie
 River of Sorrows;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not the best snack, hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;;none
 
-River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;;none
+River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
-River of Sorrows;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
+River of Sorrows;🪣;Sturdy Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+River of Sorrows;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+River of Sorrows;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
+River of Sorrows;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
+River of Sorrows;📼;Rewind Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
+River of Sorrows;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
+River of Sorrows;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
+River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
+River of Sorrows;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+River of Sorrows;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
+River of Sorrows;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
+River of Sorrows;👒;Fishing Hat;Item;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
 
 //More or less matches fishing (needs retouching soon)
 River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.;none
 River of Sorrows;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.;none
-River of Sorrows;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.;none
-River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;none
 River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.;none
 River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 River of Sorrows;❤️‍🩹;Heart Band-Aid;Item;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you, made you stronger;none
@@ -1203,9 +1237,19 @@ Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;0;Magic Creature;Asks fo
 Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;0;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.;none
 Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;0;Eerie Being;Dances on unseen breezes.<br>;;none
 
-Shrouded Necropolis;🔥;Mythical Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;;none
+Shrouded Necropolis;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
-Shrouded Necropolis;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Shrouded Necropolis;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
+Shrouded Necropolis;🪣;Sturdy Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Shrouded Necropolis;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Shrouded Necropolis;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
+Shrouded Necropolis;📼;Rewind Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
+Shrouded Necropolis;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
+Shrouded Necropolis;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
+Shrouded Necropolis;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
+Shrouded Necropolis;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Shrouded Necropolis;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
+Shrouded Necropolis;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 
 Shrouded Necropolis;⚖️;Offensive Scales;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.;none
 Shrouded Necropolis;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;;none
@@ -1243,28 +1287,32 @@ Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten L
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;;none
 Fishing;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;;none
 
-Fishing;🪣;Metal Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly could serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Not stupid, if it works! <b>+1 🔰</b>;none
+Fishing;🪣;Sturdy Bucket;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Fishing;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
+Fishing;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+Fishing;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
+Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
+Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
+Fishing;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
+Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Fishing;👒;Fishing Hat;Item;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
+
 Fishing;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 25% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.;none
 Fishing;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.;none
-Fishing;🧵;Lucky Fishing Line;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the bait 🪱 when fishing</b>.<br>;Reinforced your fishing pole.;none
 Fishing;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;none
 Fishing;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>;none
-Fishing;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;none
 Fishing;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.;none
-Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;none
 Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
 Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;none
-Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;none
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.;none
 Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fishing;❤️‍🩹;Heart Band-Aid;Item;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you, made you stronger;none
 Fishing;🔱;Titanslayer Trident;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;none
-Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;none
+Fishing;🏺;Ming-dynasty Vase;Item;0;0;-1;5;0;0;0;<b>Artifact</b>;Believed to have supernatural properties.<br>Provides <b>+5 🍀 Luck</b> for <b>-1 🟢 Energy</b>;Awkward to carry around.;none
 
 Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;<b>Artifact</b>;The ultimate source of immense brilliance.<br><b>+4 🧠 Intellect</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tastes literally like heaven.;none
 Fishing;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy, ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!;none
 
-Fishing;👒;Lucky Fishing Hat;Item;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Feels a bit less serious.;none
 Fishing;🏅;Olympic Gold;Item;0;0;0;0;0;2;0;Accessory;Awarded to the best of the best.<br>Provides <b>+2 🧠 Charisma</b>;;none
 
 Fishing;🩸;Blood-drop Compass;Item;-1;2;0;0;0;0;0;Hunting Relic;Always points towards possible pray.<br>Provides <b>+2 ⚔️ Attack</b> for <b> -1 💔 Health</b>.;It twitched in your palm.;none
@@ -1297,7 +1345,7 @@ Fishing;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;0;Warning Sign;Gives away al
 Fishing;📘;Damned Book;Item;-1;0;0;0;0;1;0;Sinister Writing;Learn the art of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Joined the dark side!;none
 Fishing;🫙;Cracked Jar;Item;0;0;0;-1;0;0;0;Cursed Container;The smell coming out suggests a mistake.<br>;Immediately regretted opening it.;none
 Fishing;🪞;Splinter Mirror;Item;0;0;0;-1;0;0;0;Bad Omen;Seven years is a modest estimate.<br>;Cracks spread across your fortune.;none
-Fishing;🏺;Burial Urn;Item;0;0;0;-3;0;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.;none
+Fishing;⚱️;Burial Urn;Item;0;0;0;-3;0;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.;none
 
 Fishing;🗝️;Rusty Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 Fishing;🗝️;Silver Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
@@ -1356,4 +1404,6 @@ Fishing;🐡;Small Pufferfish;Stingy;2;2;2;0;-1;0;0;Unpleasant Critter;Does not 
 Fishing;‍🐍;Water Serpent;Swift;2;2;2;0;0;0;0;Juvenile Predator;Slithers both out and in the water.<br>;Died off an ancient venom.;none
 Fishing;🦈;Young Shark;Swift;2;2;1;0;0;0;0;Fresh Predator;Still learning the gripes of hunting.<br>;Bled back into the stream.;none
 Fishing;‍🦑;Depths Squid;Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Got swallowed in one slurp!;none
-Fishing;🦕;The Nessie;Boss;4;3;2;0;-1;0;0;Legendary Threat;So the rumors were true after all.<br>;Swallowed in one slurp!;none
+
+Fishing;🦕;The Nessie;Boss;4;3;2;0;-1;0;0;Mythical Monster;So the rumors were true after all.<br>;Swallowed in one slurp!;none
+Fishing;‍🦈;The Megalodon;Boss-Swift;3;3;3;0;-1;0;0;Mythical Monster;One bite and it's probably over.<br>;Devoured by a mythical creature!;none

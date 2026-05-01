@@ -155,6 +155,9 @@ var Menu = (function () {
       playerEmoji = origin.emoji;
       playerOriginName = origin.originName || '';
       playerDestined = true;
+
+      if (origin.emoji.includes("🎣")) playerLootString += chooseFrom(validBaits); //Angler starts with a Bait
+      if (origin.emoji.includes("🤌")) playerLootString += "🧂"; //Gourmet starts with a Salt Shaker
       AchievementManager.check('destiny');
     }
     AchievementManager.resetSession();

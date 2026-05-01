@@ -4,18 +4,19 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 👾;Invader;0;0;0;0;0;0;0;???.<br><i>Simply cannot leave any corner unexplored.;all_achievements
 ⏳;Eternal;0;0;0;0;0;0;0;The action bar prompt moves 20% slower.<br><i>???;hardcore_win
 
-🎣;Fisherman;0;0;0;0;0;0;0;Starts with one random <b>🪱 Bait</b>.<br><i>Always ready to do some fishing.;hardcore_win
-
 🇨🇿;Czech;0;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b> with no downside.<br><i>Drinks beer, wears sandals with socks.;none
+🩹;Cripple;-2;0;0;3;0;0;0;Gain <b>+4 🍀 Luck</b>, sacrifice <b>-2 💔 Health</b>.<br><i>Suffering was the only prayer that worked.
 
-🎓;Scholar;0;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b> with no downside.<br><i>The library was their second home.;none
-🛖;Hermit;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Loving a stoic life with no worries.;none
-🪶;Scribe;0;0;0;0;0;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that no one will ever read.;none
+🪓;Killer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.;none
+🛡️;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Stands strong when everything is falling.;none
+💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br>Spent too long in the dark to fear it.;none
+💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no clear downside.<br><i>Spent his life staying fit.;none
+
 
 👽👾
 
 
-
+🪶;Scribe;0;0;0;0;2;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;destiny_first
 🎴;Wanderer;0;0;-2;2;0;0;0;Gain <b>+2 🍀 Luck</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Never stopped moving. Never found rest.
 💀;Martyr;-2;0;0;3;0;0;0;Gain <b>+4 🍀 Luck</b>, sacrifice <b>-2 💔 Health</b>.<br><i>Suffering was the only prayer that worked.
 🌑;Void;0;-2;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, sacrifice <b>-2 ⚔️ Attack</b>.<br><i>Gave up the blade. Found something worse.
