@@ -30,6 +30,61 @@ function getFirstName(){
 }
 
 function getOriginName(origin) {
+  // Prestige name pools for Familiar (relentless / won't stay dead) and Legendary (mythic / ancient / heroic).
+  // These tiers get exclusive vocabulary unavailable to lower tiers.
+  var _achievId = (origin.achiev || '').trim();
+  var _isFamiliar = !!(_achievId && _achievId !== 'none');
+  var _net = (origin.atk||0)*3   + (origin.mgk||0)*2
+           + (origin.hp||0)*1.5  + (origin.sta||0)*1.5
+           + (origin.lck||0)*0.5 + (origin.int||0)*0.5
+           + (origin.def||0);
+  var _tier = _isFamiliar ? 'Familiar' : RarityManager.getTierForNet(_net);
+
+  if (_tier === 'Familiar' || _tier === 'Legendary') {
+    var _s = { atk: origin.atk||0, hp: origin.hp||0, sta: origin.sta||0,
+               lck: origin.lck||0, int: origin.int||0, mgk: origin.mgk||0 };
+    var _dom = null, _domMax = 0;
+    for (var _k in _s) { if (_s[_k] > _domMax) { _domMax = _s[_k]; _dom = _k; } }
+
+    var adj, noun;
+    if (_tier === 'Familiar') {
+      switch (_dom) {
+        case 'atk': adj  = chooseFrom(["Relentless","Unyielding","Tenacious","Dogged","Undeterred"]);
+                    noun = chooseFrom(["Brawler","Stalwart","Slugger","Combatant","Scrapper"]); break;
+        case 'hp':  adj  = chooseFrom(["Enduring","Indomitable","Resolute","Persevering","Stubborn"]);
+                    noun = chooseFrom(["Cornerstone","Rampart","Bedrock","Foundation","Holdout"]); break;
+        case 'mgk': adj  = chooseFrom(["Devoted","Persistent","Faithful","Tireless","Stubborn"]);
+                    noun = chooseFrom(["Disciple","Zealot","Practitioner","Devotee","Adherent"]); break;
+        case 'sta': adj  = chooseFrom(["Ceaseless","Unyielding","Persistent","Unwavering","Undeterred"]);
+                    noun = chooseFrom(["Roamer","Strider","Trudger","Rover","Plodder"]); break;
+        case 'lck': adj  = chooseFrom(["Stubborn","Undying","Tenacious","Dogged","Unkillable"]);
+                    noun = chooseFrom(["Chancer","Revenant","Scrapper","Holdout","Contender"]); break;
+        case 'int': adj  = chooseFrom(["Patient","Weathered","Dogged","Tenacious","Undeterred"]);
+                    noun = chooseFrom(["Keeper","Witness","Watcher","Inquirer","Chronicler"]); break;
+        default:    adj  = chooseFrom(["Stubborn","Relentless","Dogged","Undying","Unkillable"]);
+                    noun = chooseFrom(["Revenant","Holdout","Contender","Scrapper","Remnant"]); break;
+      }
+    } else {
+      switch (_dom) {
+        case 'atk': adj  = chooseFrom(["Undying","Glorious","Immortal","Unconquered","Eternal"]);
+                    noun = chooseFrom(["Conqueror","Champion","Destroyer","Warlord","Scourge"]); break;
+        case 'hp':  adj  = chooseFrom(["Ancient","Immovable","Deathless","Eternal","Undying"]);
+                    noun = chooseFrom(["Colossus","Titan","Monolith","Bastion","Sentinel"]); break;
+        case 'mgk': adj  = chooseFrom(["Ancient","Exalted","Ascendant","Sacred","Archaic"]);
+                    noun = chooseFrom(["Archon","Oracle","Hierophant","Archmage","Sorcerer"]); break;
+        case 'sta': adj  = chooseFrom(["Eternal","Undying","Ancient","Deathless","Immortal"]);
+                    noun = chooseFrom(["Shade","Revenant","Phantom","Specter","Apparition"]); break;
+        case 'lck': adj  = chooseFrom(["Blessed","Divine","Exalted","Anointed","Sacred"]);
+                    noun = chooseFrom(["Prophet","Herald","Seer","Avatar","Vessel"]); break;
+        case 'int': adj  = chooseFrom(["Ancient","Eternal","Exalted","Undying","Omniscient"]);
+                    noun = chooseFrom(["Oracle","Augur","Loremaster","Sibyl","Visionary"]); break;
+        default:    adj  = chooseFrom(["Ancient","Eternal","Immortal","Undying","Exalted"]);
+                    noun = chooseFrom(["Legend","Titan","Champion","Archon","Hero"]); break;
+      }
+    }
+    return adj + ' ' + noun;
+  }
+
   var stats = {
     atk: origin.atk || 0,
     hp:  origin.hp  || 0,
