@@ -379,7 +379,7 @@ layout: default
   box-shadow:
     0px 0px 0px 3px #121212;
       position:relative; z-index:1;
-      overflow:auto;">
+      overflow:hidden;">
 
 <h4 id = "id_desc" style="float:left;
   text-align:left;
@@ -390,7 +390,6 @@ layout: default
   min-height:74px;
   margin-bottom:0px;
   line-height:165%;
-  width:95%;
   position:relative;"/>
 </div>
 </div>
