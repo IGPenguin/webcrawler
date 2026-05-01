@@ -340,7 +340,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Reflective":
             if (((enemyAtk+enemyAtkBonus)<=0) && ((enemyMgk-enemyMgkLost)<=0)){
               if (enemyAtkBonus<0){
-                playerGainXP(1.5,0,"They let you walk away");
+                playerGainXP(1.5,0,"They let you walk freely away");
               } else if (_skillOK === false) {
                 if (Math.random() < 0.25) {
                   logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
@@ -1406,7 +1406,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             corpseHasLoot=false; corpseLoot=null;
             nextEncounter();
           } else {
-            logPlayerAction(actionString,"Nothing left to take.");
+            logPlayerAction(actionString,"There is not anything interesting.");
             displayPlayerCannotEffect();
           }
           break;

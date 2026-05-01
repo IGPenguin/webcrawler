@@ -11,8 +11,10 @@ function toggleUIElement(UIElement,opacity = "0"){
 
 // Fades the curtain in over the current screen, calls callback() while fully
 // black (to swap menu → game), then fades the curtain out to reveal the game.
-function transitionToGame(callback) {
+// Optional message: fades in over the black curtain, holds briefly, then fades out with the curtain.
+function transitionToGame(callback, message) {
   var curtain = document.getElementById('id_fullscreen_curtain');
+  var textEl  = document.getElementById('id_fullscreen_text');
   var gen = ++_curtainGen;
 
   curtain.style.pointerEvents = 'auto'; // block stray taps during transition
@@ -29,17 +31,46 @@ function transitionToGame(callback) {
 
     callback(); // hide menu, set up game state, redraw — all while curtain is opaque
 
-    void curtain.offsetWidth;
-    curtain.style.setProperty('--animate-duration', '0.7s');
-    curtain.classList.add('animate__animated', 'animate__fadeOut');
+    if (message) {
+      textEl.innerHTML = message;
+      textEl.style.display = 'block';
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '0.5s');
+      textEl.classList.add('animate__animated', 'animate__fadeIn');
 
-    curtain.addEventListener('animationend', function onFadeOut() {
-      curtain.removeEventListener('animationend', onFadeOut);
-      if (_curtainGen !== gen) return;
-      curtain.classList.remove('animate__animated', 'animate__fadeOut');
-      curtain.style.display = 'none';
-      curtain.style.pointerEvents = 'none';
-    });
+      setTimeout(function () {
+        if (_curtainGen !== gen) return;
+        textEl.classList.remove('animate__animated', 'animate__fadeIn');
+        void curtain.offsetWidth;
+        curtain.style.setProperty('--animate-duration', '0.7s');
+        curtain.classList.add('animate__animated', 'animate__fadeOut');
+        void textEl.offsetWidth;
+        textEl.style.setProperty('--animate-duration', '0.7s');
+        textEl.classList.add('animate__animated', 'animate__fadeOut');
+
+        curtain.addEventListener('animationend', function onFadeOut() {
+          curtain.removeEventListener('animationend', onFadeOut);
+          if (_curtainGen !== gen) return;
+          curtain.classList.remove('animate__animated', 'animate__fadeOut');
+          curtain.style.display = 'none';
+          curtain.style.pointerEvents = 'none';
+          textEl.classList.remove('animate__animated', 'animate__fadeOut');
+          textEl.style.display = 'none';
+        });
+      }, 1800);
+    } else {
+      void curtain.offsetWidth;
+      curtain.style.setProperty('--animate-duration', '0.7s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.addEventListener('animationend', function onFadeOut() {
+        curtain.removeEventListener('animationend', onFadeOut);
+        if (_curtainGen !== gen) return;
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        curtain.style.display = 'none';
+        curtain.style.pointerEvents = 'none';
+      });
+    }
   });
 }
 

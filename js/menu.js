@@ -934,7 +934,7 @@ var Menu = (function () {
     var nickInput = document.createElement('input');
     nickInput.type = 'text';
     nickInput.maxLength = 32;
-    nickInput.placeholder = 'Your nickname (3+ chars)';
+    nickInput.placeholder = 'Your Nickname (3+ chars)';
     nickInput.value = currentNickname;
     nickInput.style.cssText = 'width:100%; box-sizing:border-box; font-size:16px; padding:8px 10px; background:#2a2a2a; border:none; outline:2px solid #444; color:#fff; font-family:inherit;';
     nickInput.addEventListener('blur', function () {
@@ -1092,10 +1092,10 @@ var Menu = (function () {
 
     // ── Privacy notice ─────────────────────────────────────────────────────
     var privSection = document.createElement('div');
-    privSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 10px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
-    privSection.innerHTML = '<h5 style="margin:0; font-size:11px; line-height:175%; opacity:0.45; color:#fff; text-align:center;">'
-      + '🔒 Anonymous gameplay telemetry and optional leaderboard scores are collected to improve the game. '
-      + 'No personal data. <a href="https://github.com/IGPenguin/stay-dead" style="color:#7193bf;">Open source.</a>'
+    //privSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 10px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
+    privSection.innerHTML = '<h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.45; color:#fff; text-align:center;">'
+      + '🔒 Anonymous telemetry is collected to improve the game.<br>'
+      + 'No personal data, everything is <a href="https://github.com/IGPenguin/stay-dead" style="color:#509920;">open source</a>.'
       + '</h5>';
     content.appendChild(privSection);
 

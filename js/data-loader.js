@@ -42,6 +42,7 @@ function startGame(isContinue) {
 function _doStartGame(isContinue) {
   _pendingStart = null;
 
+  var startMsg = isContinue ? null : getRunStartMessage();
   transitionToGame(function() {
     Menu.hide();
 
@@ -65,7 +66,7 @@ function _doStartGame(isContinue) {
     processStoryData(storyData);
     registerClickListeners(0);
     registerClickListenersTechnical();
-  });
+  }, startMsg);
 }
 
 // ── CSV Parsers ───────────────────────────────────────────────────────────────

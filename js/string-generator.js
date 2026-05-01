@@ -217,6 +217,26 @@ function getBridePoemByLove() {
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
 
+function getRunStartMessage() {
+  var pool = [
+    "Your destiny still awaits.<br>Do not fail again.",
+    "The corruption spreads.<br>Your love lingers.",
+    "You have died before.<br>You will die again.",
+    "Death was meant to set free.<br>Until it did not.",
+    "The whole world is dying.<br>Try to remember why.",
+    "The cursed do not rest.<br>Neither should you.",
+    "The world didn't ask for this.<br>Neither did she.",
+    "Every corpse you pass...<br>Whispers her name.",
+    "Whatever you finally find.<br> Take the right decision.",
+    "Your love broke something.<br>Your courage must answer.",
+    "The dead world remembers.<br>Resolve your sins.",
+    "The world is corrupted.<br>Only you can undo it.",
+    "The world decays every step.<br>Make haste to stop it.",
+    "Something brought you back.<br>It is about time to end it."
+  ];
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
 function getShopMessage(){
   var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free, my shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you'd be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient, I am not.","You look worse. My inventory looks better.","Failure is a habit and so is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
 .filter(item => !usedShopMessages.includes(item));
