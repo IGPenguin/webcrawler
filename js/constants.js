@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 05/02/2026 @ 01:54 AM"
+var versionCode = "ver. 05/02/2026 @ 01:59 AM"
 var initialEncounterOverride = 0; // set to 7 to skip tutorial (must equal Depths of Slumber row count + 2)
 var TUTORIAL_SKIP_LOCALHOST = false;
 var RANKINGS_DISABLED_LOCALHOST = false;
