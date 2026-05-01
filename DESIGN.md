@@ -1,6 +1,18 @@
 # Stay Dead — Design Reference
 
-Dark fantasy text roguelike with a melancholic, slightly ironic tone. Not whimsy. Never verbose.
+Dark fantasy text roguelike RPG with a melancholic, slightly ironic tone. Not whimsy. Never verbose.
+
+---
+
+## Lore Foundation
+
+The player character botched a resurrection spell attempting to revive his dead bride. The spell didn't bring her back — it corrupted the overworld instead. The player is now undead, reincarnating endlessly, pushing through a world warped by his own mistake to reach her.
+
+**This is not the underworld.** The areas are the corrupted overworld — familiar places (wildlands, a village, a fairyland, a river, a necropolis) twisted by the failed spell. The decay vocabulary exists because the world is literally falling apart around a singular act of desperate love.
+
+The journey ends in the **Shrouded Necropolis** with a branching finale: 9 endings determined by how much love, karma, and magic the player carried through the run. Rosabel is the reason for everything — the corruption, the reincarnation loop, the whole game.
+
+**Keep this in mind when writing content:** enemies aren't random fantasy creatures, they're things that belong in a world coming apart. Items aren't loot drops, they're remnants. The tone is grief wearing armor.
 
 ---
 
@@ -141,3 +153,33 @@ Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyl
 | Altar | Positive blessing or sacrifice mechanic |
 | Container / Container-2 | Searchable, may contain loot |
 | Locked-Container | Requires key or Cast (−2 MGK) to open; force-unlockable by repeated attacks |
+
+---
+
+## Telemetry — Design Data
+
+Anonymous gameplay events are submitted to a Google Sheet via Google Forms. Use this data to inform balancing and content decisions — not as ground truth, but as signal.
+
+**Tracked events and their payloads:**
+
+| Event | Payload format | Useful for |
+|-------|---------------|-----------|
+| `run_start` | `charName` | Run volume over time |
+| `run_end` | `causeOfDeath\|endType` | Death distribution, win rate, where runs end |
+| `achievement` | `achievement_id` | Which milestones players reach; which are never unlocked |
+| `cheat_used` | cheat message | Cheat popularity |
+| `loot` | `source\|type\|emoji name\|hp;atk;sta;lck;int;mgk;def` | Item encounter frequency, source split (drop/gen/fishing/story) |
+| `enemy` | `source\|type\|emoji name\|hp;atk;sta;lck;int;mgk;def` | Enemy encounter frequency, area reach |
+
+**Every event also includes:** `level`, `origin`, `difficulty`, `karma`, `stats`, `inventory`, `encounterCount`, `playtime`, `score`, `gameVersion`, `userId`, `sessionId`, `browserInfo`.
+
+**Balancing questions the data can answer:**
+- Which items appear most vs. their generator weight — spot overused/underused generators
+- Which enemies players encounter vs. area reach — dead zones in the world
+- Achievement unlock rates — calibrate difficulty gates and hint text
+- Run length (`encounterCount`, `playtime`) by difficulty and origin — pacing check
+- Death causes by area — identify stat walls or spike encounters
+- Loot source split (drop/gen/fishing/story) — generator weight tuning
+- `gameVersion` column — compare metrics across releases to catch regressions
+
+**Access:** Google Sheet linked to the telemetry form. Filter by `gameVersion` to isolate a specific build. CI and Playwright test runs are automatically excluded via the `sd_is_test` localStorage flag.
