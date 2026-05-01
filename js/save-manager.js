@@ -88,6 +88,7 @@ var SaveManager = (function () {
         enemyEmojiScaleX:      enemyEmojiScaleX,
         enemyBossType:         enemyBossType,
         enemyCursed:           enemyCursed,
+        enemyFamiliar:         enemyFamiliar,
         totalBonus:            totalBonus,  totalMalus:  totalMalus,
         isFishing:             isFishing,   encounterUsed: encounterUsed,
         // ── Area / story queue ───────────────────────────────────────────────
@@ -158,6 +159,7 @@ var SaveManager = (function () {
     enemyEmojiScaleX     = s.enemyEmojiScaleX;
     enemyBossType        = s.enemyBossType;
     enemyCursed          = s.enemyCursed;
+    enemyFamiliar        = !!s.enemyFamiliar;
     totalBonus           = s.totalBonus;   totalMalus         = s.totalMalus;
     isFishing            = s.isFishing;    encounterUsed      = s.encounterUsed;
     // Area / story

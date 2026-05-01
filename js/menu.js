@@ -186,10 +186,11 @@ var Menu = (function () {
 
     if (available.length === 0) return [];
 
-    // Group unlocked origins by rarity tier
+    // Group unlocked origins by rarity tier; Familiar shares the Common pool
     var tierBuckets = {};
     available.forEach(function(o) {
       var tier = _originTier(o);
+      if (tier === 'Familiar') tier = 'Common';
       if (!tierBuckets[tier]) tierBuckets[tier] = [];
       tierBuckets[tier].push(o);
     });
@@ -227,12 +228,12 @@ var Menu = (function () {
          + (o.def||0);
   }
 
-  // Explicit [Tag] in note wins; then achievement gate → Legendary; then stat net.
+  // Explicit [Tag] in note wins; then achievement gate → Familiar; then stat net.
   function _originTier(o) {
     var noteTag = RarityManager.getTierFromNote(o.note || '');
     if (noteTag) return noteTag;
     var achievId = (o.achiev || '').trim();
-    if (achievId && achievId !== 'none') return 'Legendary';
+    if (achievId && achievId !== 'none') return 'Familiar';
     return RarityManager.getTierForNet(_originNet(o));
   }
 

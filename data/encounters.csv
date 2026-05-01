@@ -151,6 +151,8 @@ Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;2;0;2;0;0;Thundering Menace;Eac
 Fading Wildlands;🐗;Brood Matron;Boss-Heavy;3;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.;none
 Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;1;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.;none
 
+Fading Wildlands;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+
 Fading Wildlands;🏵️;Symbol of Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment, provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.;none
 Fading Wildlands;🥀;Weeping Rose;Item;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by a physical attack.;Obtained <b>🥀 Thorns Payback</b>.;none
@@ -470,6 +472,8 @@ Forsaken Village;🐦‍⬛;Blood Raven;Undead;2;1;3;1;0;0;0;Thirsty Bird;Aims i
 
 Forsaken Village;🔥;Lingering Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;;none
 
+Forsaken Village;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+
 Forsaken Village;🪓;Titansteel Cleaver;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.;none
 Forsaken Village;🥊;Enchanted Gloves;Item;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat technique.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+2 🟢 Energy</b>.;Feeling more confident.;none
 Forsaken Village;🩼;Disposed Crutch;Item;0;1;-1;0;0;0;0;<b>Artifact</b>;Best of both - support and attack power.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;This will come in handy!;none
@@ -485,8 +489,7 @@ Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provid
 Forsaken Village;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.;none
 Forsaken Village;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;none
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight;none
-Forsaken Village;🐷;Pig Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>Food effects</b> (negative & positive) <b>are negated.</b>;Gained special skill <b>🐷 Pig Digestion</b>.;none
-Forsaken Village;🐴;Horse Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies have -1 ⚔️ Attack</b> until attacked.;Gained attribute <b>🐴 Prey's Appearance</b>.;none
+Forsaken Village;🐷;Pig Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>All food effects are totally negated.</b>;Gained special skill <b>🐷 Pig Digestion</b>.;none
 Forsaken Village;📘;Book of Spells;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power;none
 Forsaken Village;🎈;Floating Blob;Item;-1;0;2;0;0;0;0;<b>Artifact</b>;Floats peacefully just above the ground.<br><b>Gain +2 🟢 Energy</b> for <b>-1 💔 Health</b>.;Became nimble, yet fragile.;none
 
@@ -826,9 +829,11 @@ Twisted Fairyland;🍐;Wild Pear;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Seems like
 Twisted Fairyland;🫐;Wild Berries;Consumable;0;0;0;0;0;0;0;Forest Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;0;Raw Food;Beautiful texture wraps around it.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 
+Twisted Fairyland;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
+
 Twisted Fairyland;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Physical Defence</b>.;Who needs love anyway? <b>+1 🔰</b>;none
-Twisted Fairyland;👺;Devil Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>👺 Devil Appearance</b>.<br><b>Demon type enemies will be passive</b>.;Gained attribute <b>👺 Devil's Appearance</b>.;none
-Twisted Fairyland;💫;Starfall Circlet;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>✨ Fortify Magic</b>.<br>Your <b>💫 Cast</b> deals <b>+1 💔 Damage</b>.</b>;Gained special skill <b>✨ Fortify Magic</b>.;none
+Twisted Fairyland;👺;Devil Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>👺 Devil Appearance</b>.<br><b>Demon type enemies will be passive</b>.;Gained attribute <b>👺 Devil's Appearance</b>.;none
+Twisted Fairyland;💫;Starfall Circlet;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>✨ Fortify Magic</b>.<br>Your <b>💫 Cast</b> deals <b>+1 💔 Damage</b>.</b>;Gained special skill <b>✨ Fortify Magic</b>.;none
 Twisted Fairyland;💠;Crystal Shield;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.;none
 Twisted Fairyland;🪆;Sinister Idol;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🪬 Curse</b> gets 33% chance to <b>🧬 Polymorph</b>.<br>Transform the enemy to a random critter.;Gained skill <b>🧬 Polymorph</b>.;none
 Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>♻️ Quick Reflexes</b>.<br>33% chance to restore <b>🟢 Energy</b> on action.;Gained skill <b>♻️ Quick Reflexes</b>.;none
@@ -1011,6 +1016,8 @@ River of Sorrows;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;0;Rare Fish;Convenient
 River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not the best snack, hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;;none
 
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;;none
+
+River of Sorrows;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 
 //More or less matches fishing (needs retouching soon)
 River of Sorrows;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.;none
@@ -1197,6 +1204,8 @@ Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;0;Ethereal
 Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;0;Eerie Being;Dances on unseen breezes.<br>;;none
 
 Shrouded Necropolis;🔥;Mythical Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;;none
+
+Shrouded Necropolis;🐴;Horse Mask;Item;0;0;0;0;0;0;0;Camouflage;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 
 Shrouded Necropolis;⚖️;Offensive Scales;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Trade <b>1/2 ❤️ Health</b> for that much <b>⚔️ Attack</b>.<br>;Traded <b>1/2 ❤️ Health</b> for <b>⚔️ Attack</b>.;none
 Shrouded Necropolis;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;;none

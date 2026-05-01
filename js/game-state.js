@@ -120,6 +120,7 @@ var enemyTeam;
 var enemyDesc;
 var enemyMsg;
 var enemyQuestItems;
+var enemyFamiliar = false;
 
 var enemyHpLost = 0;
 var enemyStaLost = 0;

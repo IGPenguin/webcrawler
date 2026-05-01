@@ -168,12 +168,17 @@ function redraw(){
         }
       }
       if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
+      if (enemyFamiliar) {
+        enemyStatusString=decorateStatusText("🧩","Familiar",colorSoftGreen);
+        cardUIElement.style.background=colorFamiliarGreen;
+      }
 
       grabColor=colorWhite;
       if (enemyStatusString.includes("Valuable")||enemyStatusString.includes("Quest")) grabColor=colorYellow;
       if (enemyStatusString.includes("Magnificent")) grabColor=colorLightBlue;
       if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
       if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
+      if (enemyStatusString.includes("Familiar")) grabColor=colorSoftGreen;
       break;
 
     case "Consumable":
@@ -455,7 +460,8 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
       setTimeout(function() {
         if (document.getElementById('achievement_toast') !== toast) return;
         emojiEl.textContent = '🔓';
-        textEl.innerHTML = '<h5 style="margin:-2px 0 0 0; font-size:16px; line-height:1.2; font-style:normal; font-weight:400; color:#ffffff; text-align:left;">' + achievement.unlock + '</h5>' + tsLine;
+        var hintLine = achievement.hint ? '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left; font-style:italic;">' + achievement.hint + '</h5>' : '';
+        textEl.innerHTML = '<h5 style="margin:-2px 0 0 0; font-size:16px; line-height:1.2; font-style:normal; font-weight:400; color:#ffffff; text-align:left;">' + achievement.unlock + '</h5>' + hintLine;
         innerEl.style.opacity = '1';
         setTimeout(_fadeOutToast, 3000);
       }, 400);

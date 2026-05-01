@@ -3,20 +3,20 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
-    { id: 'all_achievements',    emoji: '🏆', desc: "Completed every single memory!", hint: "Gotta catch 'em all to get into Credits!", unlock: '' },
+    { id: 'all_achievements',    emoji: '🏆', desc: "Completed every single memory available!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon." },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by beating a boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
-    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🪶 Scribe</b> Origin.' },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shade</b> to spend Drachmae!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked <b>⚖️ Undertaker</b> shop.' },
-    { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: '' },
-    { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: '' },
-    { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.', unlock: '' },
+    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🪶 Scribe</b> origin.' },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shade</b> to spend Drachmae!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b> encounter.' },
+    { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
+    { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: 'Unlocked the <b>💍 Groom;</b> origin.' },
+    { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.', unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
 
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time.", unlock: '' },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.', unlock: '' },
     { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?', unlock: '' },
     { id: 'survive_trap',        emoji: '💥', desc: 'Survived a deadly trap!', hint: 'Watch where you step.', unlock: '' },
 
-    { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable.", unlock: '' },
+    { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable.", unlock: 'Unlocked the <b>🧟‍♂️ Rotten</b> origin.' },
     { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a trap!', hint: 'Ooops... that was deadly.', unlock: '' },
     { id: 'death_sleep',         emoji: '💤', desc: 'Died in your sleep...', hint: 'Not the peaceful rest you hoped for.', unlock: '' },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!", unlock: '' },
@@ -48,19 +48,19 @@ var AchievementManager = (function () {
     { id: 'full_party',          emoji: '👥', desc: 'Got a party of three companions!', hint: 'The more, the merrier, always.', unlock: '' },
 
     { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered: Forsaken Village!', hint: "Seek the long forgotten village.", unlock: '' },
-    { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!', hint: "Seek the home of supernatural beings.", unlock: '' },
-    { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!', hint: "Sail the flows of eternal tears.", unlock: '' },
-    { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!', hint: "Where the deepest shadows dwell.", unlock: '' },
+    { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!', hint: "Seek the home of supernatural beings.", unlock: 'Unlocked the <b>🦧 Primate</b> origin.' },
+    { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!', hint: "Sail the flows of eternal tears.", unlock: 'Unlocked the <b>⛵️ Sailor</b> origin.' },
+    { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!', hint: "Where the deepest shadows dwell.", unlock: 'Unlocked the <b>👻 Wraith</b> origin.' },
 
     //Missing "Aspect buy" achiev
-    { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!', hint: "Luck smiles upon the bold.", unlock: '' },
-    { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!', hint: "The house always wins.", unlock: '' },
+    { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!', hint: "Luck smiles upon the bold.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
+    { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!', hint: "But why the long face?", unlock: 'Unlocked the <b>🐴 Horse Mask</b> item.' },
     { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item from the Shade!', hint: "A fair trade for a fair price.", unlock: '' },
     { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact from the Shade!', hint: "An eye for the unusual antiques.", unlock: '' },
     { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up from the Shade!', hint: "Shortcut to power, at a cost.", unlock: '' },
     { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Shade!', hint: "A loyal customer of the shadows.", unlock: '' },
 
-    { id: 'letter_remember',     emoji: '💌', desc: 'Read a disturbing letter...', hint: 'Some things are better left in the past.', unlock: '' },
+    { id: 'letter_remember',     emoji: '💌', desc: 'Read a very disturbing letter.', hint: 'Some things are better left in the past.', unlock: '' },
     { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing letter with you.', hint: 'Could not bring yourself to leave it.', unlock: '' },
     { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing letter aside.', hint: 'Letting go hurts more than holding on.', unlock: '' },
 
@@ -70,7 +70,7 @@ var AchievementManager = (function () {
     { id: 'fish_boss_first',     emoji: '🦕', desc: 'Fished out a legendary beast!', hint: 'The rumors were true after all.', unlock: '' },
     { id: 'spoke_boss',          emoji: '🗣️', desc: 'Spoke a Boss into submission!', hint: 'Could peace be an actual option?', unlock: '' },
     { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: '' },
-    { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Gardener</b> Origin.' },
+    { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Gardener</b> origin.' },
 
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: '' },
     { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: '' },
@@ -80,7 +80,7 @@ var AchievementManager = (function () {
     { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something with no bait 50 times!', hint: "Pure skill always beats the odds.", unlock: '' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!', hint: "Become a seasoned gambler.", unlock: '' },
 
-    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: '' }
+    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: 'Unlocked the <b>🐼 Criminal</b> origin.' }
   ];
   // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
 
@@ -172,12 +172,18 @@ var AchievementManager = (function () {
   function _showNextToast() {
     if (_toastQueue.length === 0) { _toastActive = false; return; }
     _toastActive = true;
-    var achievement = _toastQueue.shift();
-    var ts = AchievementManager.getUnlockTime(achievement.id);
-    showAchievementToast(achievement, ts, function() {
+    var item = _toastQueue.shift();
+    var ts = ('_ts' in item) ? item._ts : AchievementManager.getUnlockTime(item.id);
+    showAchievementToast(item, ts, function() {
       _toastActive = false;
       _showNextToast();
     });
+  }
+
+  function queueToast(achievement, subtitleText) {
+    var item = Object.assign({}, achievement, { _ts: subtitleText || null });
+    _toastQueue.push(item);
+    if (!_toastActive) _showNextToast();
   }
 
   // ── Unlock ────────────────────────────────────────────────────────────────
@@ -524,6 +530,7 @@ var AchievementManager = (function () {
 
   return {
     check:               check,
+    queueToast:          queueToast,
     dismissToast:        dismissToast,
     resetSession:        resetSession,
     getSessionUnlocked:  getSessionUnlocked,

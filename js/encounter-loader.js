@@ -106,6 +106,8 @@ function loadEncounter(index, fileLines = linesStory){
   //if (enemyEmoji=="🪙" && !enemyName.includes("Lucky")) enemyDesc=enemyDesc+"<i><b>Total Drachmae: "+parseInt(savedCoins)+"</b></i> 🪙";
 
   enemyMsg = String(row[13].split(":").slice(1).join(":"));
+  var _achievField = row[14] ? String(row[14].split(":").slice(1).join(":")).trim() : 'none';
+  enemyFamiliar = (_achievField && _achievField !== 'none');
 
   switch (enemyType){
     case "Small":
@@ -254,8 +256,9 @@ function loadEncounter(index, fileLines = linesStory){
       enemyMgkLost=(enemyMgk);
     }
   }
-  if (playerHas("🐴")) {
-    enemyAtkBonus-=1;
+  if (playerHas("🐴")) { //Prey appearance, enemies passive
+    enemyAtkBonus-=enemyAtk;
+    enemyMgkLost=enemyMgk;
   }
   if (playerHas("💀") || playerHas("🧟‍♂️")) {
     if (enemyType=="Undead") {

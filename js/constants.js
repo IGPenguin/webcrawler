@@ -14,6 +14,7 @@ var colorDarkGold      = "#4d4112";
 var colorGreen         = "#22BF22";
 var colorSoftGreen     = "#62a862ff";
 var colorDarkGreen     = "#509920";
+var colorFamiliarGreen = "#608b43";
 var colorLime          = "#91bf08";
 var colorGrapefruit    = "#db432c";
 var colorRed           = "#FF0000";
