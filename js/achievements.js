@@ -68,7 +68,8 @@ var AchievementManager = (function () {
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: '' },
     { id: 'fish_legendary_first',emoji: '🏺', desc: 'Reeled in a legendary find!', hint: 'The best things are worth waiting for.', unlock: '' },
     { id: 'fish_boss_first',     emoji: '🦕', desc: 'Fished out a legendary beast!', hint: 'The rumors were true after all.', unlock: '' },
-    { id: 'spoke_boss',          emoji: '🗣️', desc: 'Spoke a Boss into submission!', hint: 'Could peace be an actual option?', unlock: '' },
+    { id: 'spoke_boss',          emoji: '🗣️', desc: 'Calmed a Boss into submission!', hint: 'Could peace be an actual option?', unlock: '' },
+    { id: 'spoke_demon',         emoji: '🤯', desc: 'Talked a Demon into submission!', hint: 'Try to make a deal with the devil.', unlock: 'Unlocked the <b>😈 Devil</b> origin.' },
     { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: '' },
     { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Gardener</b> origin.' },
 
@@ -100,6 +101,7 @@ var AchievementManager = (function () {
     gotRecruit:          false,
     completedQuest:      false,
     spokeBoss:           false,
+    spokeDemon:          false,
     survivedTrap:        false,
     fullParty:           false,
     totalFishBait:       0,
@@ -339,6 +341,10 @@ var AchievementManager = (function () {
 
       case 'calm_boss':
         if (!_stats.spokeBoss) { _stats.spokeBoss = true; _save(); _unlock('spoke_boss'); }
+        break;
+      
+      case 'calm_demon':
+        if (!_stats.spokeDemon) { _stats.spokeDemon = true; _save(); _unlock('spoke_demon'); }
         break;
 
       case 'survive_trap':

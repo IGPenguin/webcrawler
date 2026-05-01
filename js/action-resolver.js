@@ -2189,8 +2189,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
-              enemyAtkBonus--;
-              logPlayerAction(actionString,"Rattled them to the core -1 ⚔️");
+              enemyAtkBonus-=2;
+              logPlayerAction(actionString,"Rattled them to the core -2 ⚔️");
               displayEnemyCannotEffect();
               if ((enemyAtkBonus+enemyAtk) > 0) enemyAttackOrRest();
               break;
@@ -2205,11 +2205,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 } else {
                   AchievementManager.check('calm_enemy');
                   if (enemyType === 'Boss') AchievementManager.check('calm_boss');
+                  if (enemyType === 'Demon') AchievementManager.check('calm_demon');
                 }
                 displayEnemyCannotEffect();
               } else if (enemyAtk>0){
                 AchievementManager.check('calm_enemy');
                 if (enemyType === 'Boss') AchievementManager.check('calm_boss');
+                if (enemyType === 'Demon') AchievementManager.check('calm_demon');
                 enemyDisengage();
               } else {
                 if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}

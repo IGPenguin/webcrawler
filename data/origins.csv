@@ -3,9 +3,10 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 //Unlockable
 💍;Groom;-1;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>The memory of her touch is keeping him alive.;game_win_first
 💀;Brittle;-2;0;0;0;0;0;0;Suffer <b>-2 💔 Health</b> with no clear benefit.<br><i>No flesh to protect the bones.;hardcore_win
-🪶;Scribe;0;0;0;0;0;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;destiny_first
+😈;Devil;-1;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b>, suffer <b>-1 💔 Health</b>.<br><i>Made a deal with the scars to prove it.;spoke_demon
 🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Suffer <b>-1 💔 Health</b> with no clear benefit.<br><i>Fits well with the tainted surroundings.;died_first
 🦧;Primate;0;0;0;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no clear downside.<br><i>Very furry, lives in a forest.;discover_fairyland
+🪶;Scribe;0;0;0;0;0;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;destiny_first
 ⛵️;Sailor;0;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Very furry, lives in a forest.;discover_fairyland
 👻;Wraith;0;-1;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Lighting fast, but effectively harmless.;discover_necropolis
 🎲;Gambler;0;0;0;3;-3;0;0;Gain <b>+3 🍀 Luck</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>Traded certainty for something much better.;gamble_win_first
@@ -53,7 +54,6 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no clear downside.<br><i>Spent their life staying fit.;none
 
 //Luck
-😈;Devil;-1;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b>, suffer <b>-1 💔 Health</b>.<br><i>Made a deal and has the scars to prove it.;none
 🦴;Acrobat;-1;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Surely knows how to break a leg.;none
 🃏;Fool;0;0;0;2;-2;0;0;Gain <b>+2 🍀 Luck</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Doesn't know the odds. Wins anyway.;none
 🍀;Lucky;0;0;0;2;-1;0;0;Gain <b>+1 🍀 Luck</b>, suffer <b>-1 🧠 Intellect</b>.<br><i>Traded fortune for brainpower.;none
