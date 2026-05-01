@@ -218,7 +218,7 @@ function loadEncounter(index, fileLines = linesStory){
 
   //Decrase final bass attack/mana based on player love
   if (enemyName.includes("Bride") && playerLove>2) {
-    console.log("playerlove: "+playerLove);
+    dbg("playerlove: "+playerLove);
 
     //Meh, I just wanna consider this game finished now
     enemyMgk-=playerLove;
@@ -243,7 +243,7 @@ function loadEncounter(index, fileLines = linesStory){
     }
   }
   if (enemyTeam.includes("Lost Possesion")) { //Found quest item, spawn friend who wants it
-    console.log(enemyEmoji)
+    dbg(enemyEmoji)
     var randomSlot=chooseFrom([3,4,5])
     pushEncounter(getRandomEncounter(["Friend"],[enemyEmoji]),randomSlot);
   }

@@ -15,7 +15,7 @@ var SaveManager = (function () {
     try {
       localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
     } catch (e) {
-      console.log('SaveManager: history write failed', e);
+      console.error('SaveManager: history write failed', e);
     }
   }
 
@@ -98,7 +98,7 @@ var SaveManager = (function () {
         linesStory:            linesStory
       }));
     } catch (e) {
-      console.log('SaveManager: gameState write failed', e);
+      console.error('SaveManager: gameState write failed', e);
     }
   }
 
@@ -230,6 +230,17 @@ var SaveManager = (function () {
     localStorage.removeItem('playerNickname');
   }
 
+  // Removes the most-recently saved session for the given run start time.
+  // Used by playerReincarnate() to undo the death entry written by gameOver().
+  function removeLastDeathSession(startTime) {
+    var history = listSessionHistory();
+    var idx = history.findIndex(function (s) { return s.date === startTime; });
+    if (idx !== -1) {
+      history.splice(idx, 1);
+      try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch (e) {}
+    }
+  }
+
   // Continue is available whenever an active run snapshot exists
   function hasContinue() {
     return loadGameState() !== null;
@@ -250,8 +261,9 @@ var SaveManager = (function () {
     restoreGameState:   restoreGameState,
     clearGameState:     clearGameState,
     abandonCurrentRun:  abandonCurrentRun,
-    saveSession:        saveSession,
-    listSessionHistory: listSessionHistory,
+    saveSession:          saveSession,
+    listSessionHistory:   listSessionHistory,
+    removeLastDeathSession: removeLastDeathSession,
     clearSave:          clearSave,
     clearAll:           clearAll,
     purgeAll:           purgeAll,

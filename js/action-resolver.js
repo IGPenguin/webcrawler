@@ -2267,7 +2267,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerEffect("✨");
               }
             } else {
-              console.log(enemyQuestItems);
+              dbg(enemyQuestItems);
               if (String(enemyQuestItems)!=""){
                 logPlayerAction(actionString,"Bring me: "+String(enemyQuestItems).replaceAll(","," "));
               } else {
@@ -2544,7 +2544,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     //Set intellect 1-6 (Pure Chance)
     if (procAbilityChance("🎲",100)){
       var temporaryIntellect=chooseFrom([1,2,3,4,5,6]);
-      console.log("Chance→int:"+temporaryIntellect);
+      dbg("Chance→int:"+temporaryIntellect);
       playerInt=temporaryIntellect;
     }
     redraw();

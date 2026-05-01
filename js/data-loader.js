@@ -250,7 +250,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
     randomEncounter = ["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:","achiev:none"];
   }
 
-  console.log("Type:" + encounterTypes + "\nOpts:" + tempLinesGenerator.length + "→#" + randomEncounterIndex + ":\n" + (randomEncounter[2] || "").split(":")[1]);
+  dbg("Type:" + encounterTypes + "\nOpts:" + tempLinesGenerator.length + "→#" + randomEncounterIndex + ":\n" + (randomEncounter[2] || "").split(":")[1]);
   return randomEncounter;
 }
 
@@ -322,10 +322,10 @@ function getWeightedEncounter(encounterTypes, includeStrings, areaNameOverride, 
   var tier = RarityManager.rollTier(playerLck, playerKarma);
   var bucket = buckets[tier];
   if (!bucket || bucket.length === 0) {
-    console.log('RarityRoll:' + tier + ' → no pool, flat fallback');
+    dbg('RarityRoll:' + tier + ' → no pool, flat fallback');
     return tempLines[Math.floor(Math.random() * tempLines.length)];
   }
-  console.log('RarityRoll:' + tier);
+  dbg('RarityRoll:' + tier);
   return bucket[Math.floor(Math.random() * bucket.length)];
 }
 
@@ -345,10 +345,10 @@ function getWeightedLootIndex(luck, karma) {
 
   // Fall back to full available pool if rolled tier has no entries
   if (!pool || pool.length === 0) {
-    console.log('FishRarityRoll:' + tier + ' → no pool, flat fallback');
+    dbg('FishRarityRoll:' + tier + ' → no pool, flat fallback');
     pool = Object.keys(buckets).reduce(function (acc, t) { return acc.concat(buckets[t]); }, []);
   } else {
-    console.log('FishRarityRoll:' + tier);
+    dbg('FishRarityRoll:' + tier);
   }
   if (pool.length === 0) return getUnseenLootIndex();
 
@@ -367,7 +367,7 @@ function getUnseenLootIndex() {
   do {
     randomLootIndex = Math.floor(Math.random() * max);
     if (seenLoot.length >= max) {
-      console.log("ERROR: No more loot left.");
+      dbg("ERROR: No more loot left.");
       break;
     }
   } while (seenLoot.includes(randomLootIndex));

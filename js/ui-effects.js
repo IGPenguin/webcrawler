@@ -429,7 +429,7 @@ function setBackground(fileName="Depths.png"){
 function vibrateButtonPress(){
   if (typeof vibrationEnabled !== 'undefined' && !vibrationEnabled) return;
   if (!("vibrate" in window.navigator)){
-    console.log("WARNING: Vibrate not supported!");
+    dbg("WARNING: Vibrate not supported!");
     return;
   }
   window.navigator.vibrate([5,20,10]);

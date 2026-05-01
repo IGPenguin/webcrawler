@@ -204,10 +204,10 @@ var Menu = (function () {
       var bucket = tierBuckets[tier] || [];
       var candidates = bucket.filter(function(o) { return !usedNames[o.originName]; });
       if (candidates.length === 0) {
-        console.log('OriginRarityRoll:' + tier + ' → no pool, flat fallback');
+        dbg('OriginRarityRoll:' + tier + ' → no pool, flat fallback');
         candidates = available.filter(function(o) { return !usedNames[o.originName]; });
       } else {
-        console.log('OriginRarityRoll:' + tier);
+        dbg('OriginRarityRoll:' + tier);
       }
       if (candidates.length === 0) break;
       var picked = candidates[Math.floor(Math.random() * candidates.length)];

@@ -103,7 +103,7 @@ function enemyKilled(){
   var gainedXP=parseInt(playerGainXP(1,0,""));
   logAction(enemyEmoji + " ▸ " + "☠️ They've received a fatal blow " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
 
-  playerKarma-=1; console.log("karma-- ("+playerKarma+")");
+  playerKarma-=1; dbg("karma-- ("+playerKarma+")");
   playerKills++;
   AchievementManager.check('kill');
   if (enemyBossType.includes('Boss')) {

@@ -34,7 +34,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       var randomSlot=chooseFrom([3,4,5])
       pushEncounter(getRandomEncounter(["Item"],["Memento"]),randomSlot);
       if (chooseFrom([true,false])) pushEncounter(getRandomEncounter(["Container"]),randomSlot);
-      console.log("pushing letter at pos: "+randomSlot);
+      dbg("pushing letter at pos: "+randomSlot);
       break;
 
     case 2: //Easy Encounter
@@ -186,6 +186,6 @@ function generateNextEncounters(generatorID=0, logCall=true){
       break;
 
     default:
-      console.log("ERROR: Missing generator definition!");
+      dbg("ERROR: Missing generator definition!");
   }
 }

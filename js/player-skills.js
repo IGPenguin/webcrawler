@@ -83,7 +83,7 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
   playerXP+=gainedXP;
   if (message!="") logPlayerAction(actionString,message + decorateStatusText(""," +"+gainedXP+" XP",colorGold));
   var XPString = gainedXP + " ("+playerXP+"/"+playerXPThreshold+")"
-  console.log("XP +"+XPString+"\naction x"+multiplier+" type x" +typeMultiplier+" int x" +intBonus);
+  dbg("XP +"+XPString+"\naction x"+multiplier+" type x" +typeMultiplier+" int x" +intBonus);
 
   if (procAbilityChance("🎓",100)) gainedXP=parseInt(gainedXP*1.25);
 
@@ -568,6 +568,7 @@ function playerWaive(){
 
 function playerReincarnate(){
   if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') return;
+  SaveManager.removeLastDeathSession(adventureStartTime);
   //SaveManager.clearGameState(); // treat revive as a new run — wipe the death-screen snapshot
   playerNumber++; //Tracks revives of the character
   AchievementManager.check('reincarnate');
@@ -636,7 +637,7 @@ function procAbilityChance(abilityEmoji="",abilityChance=100) { //Congrats me!!!
   var randomRoll = (Math.floor(Math.random() * 100))
   var success = (randomRoll<=abilityChance)
 
-  if (abilityEmoji!="") console.log("requires:"+abilityEmoji);
+  if (abilityEmoji!="") dbg("requires:"+abilityEmoji);
   // console.log("chance:"+abilityChance+"/100");
   // console.log("rolled:"+randomRoll);
   // console.log("success:"+success);

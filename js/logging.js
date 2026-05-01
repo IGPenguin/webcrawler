@@ -1,3 +1,7 @@
+function dbg() {
+  if (isLocalhost()) console.log.apply(console, arguments);
+}
+
 //Run Logger
 function initRunLog() {
   if (!isLocalhost()) return;
@@ -29,7 +33,7 @@ function logPlayerAction(actionString,message){
   actionString = actionString.split(" ")[0] + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
   if (actionString.includes("🪙&nbsp;")) { //Ahhh, yeah more hacks at 1 AM
     var price = actionString.split("&nbsp;")[0] //Very much HACKS... YOLO!!!
-    console.log(price)
+    dbg(price)
     actionString=actionString.slice(2);
     if (!actionString.includes("you actually won!") && !actionString.includes("Lucky Drachma")) actionString = actionString.replace("<br>"," -"+price+"<br>");
   }
@@ -43,7 +47,7 @@ function logAction(message){
 }
 
 function logGenerator(generatorName="none"){
-  console.log("Gnrt:"+generatorName);
+  dbg("Gnrt:"+generatorName);
   lastGeneratorName=generatorName;
 }
 
