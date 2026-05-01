@@ -36,8 +36,11 @@ function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
 }
 
 function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
-  if (playerHas("🐴")){
-    if (enemyHpLost==0) enemyAtkBonus+=1; //Revert mask effect, just the first time hit
+  if (playerHas("🐴")){ //Revert mask effect, just the first time hit
+    if (enemyHpLost==0){
+        enemyAtkBonus=enemyAtk;
+        enemyMgkLost=0;
+    }  
   }
 
   animateUIElement(emojiWrapperUIElement,"animate__shakeX","0.5"); //Animate hitreact
