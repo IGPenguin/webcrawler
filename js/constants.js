@@ -60,6 +60,25 @@ function getPlatform() {
   return "other";
 }
 
+// ── Identity ──────────────────────────────────────────────────────────────────
+function _makeUUID() {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0;
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
+var userId = (function () {
+  try {
+    var stored = localStorage.getItem('sd_user_id');
+    if (stored) return stored;
+    var id = _makeUUID();
+    localStorage.setItem('sd_user_id', id);
+    return id;
+  } catch (e) { return _makeUUID(); }
+})();
+var sessionId = _makeUUID();
+
 var fontPreference = 'Native';
 try { fontPreference = localStorage.getItem('sd_font_pref') || 'Native'; } catch (e) {}
 

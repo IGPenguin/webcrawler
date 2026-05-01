@@ -1076,6 +1076,15 @@ var Menu = (function () {
       content.appendChild(vibSection);
     }
 
+    // ── Privacy notice ─────────────────────────────────────────────────────
+    var privSection = document.createElement('div');
+    privSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 10px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
+    privSection.innerHTML = '<h5 style="margin:0; font-size:11px; line-height:175%; opacity:0.45; color:#fff; text-align:center;">'
+      + '🔒 Anonymous gameplay telemetry and optional leaderboard scores are collected to improve the game. '
+      + 'No personal data. <a href="https://github.com/IGPenguin/stay-dead" style="color:#7193bf;">Open source.</a>'
+      + '</h5>';
+    content.appendChild(privSection);
+
     _doShowScreen('menu_settings_screen');
   }
 

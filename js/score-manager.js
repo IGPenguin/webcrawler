@@ -5,6 +5,8 @@ var ScoreManager = (function () {
   var RANKINGS_URL = 'https://raw.githubusercontent.com/IGPenguin/stay-dead/rankings/highscores.json';
 
   var ENTRY = {
+    userId:         'entry.1612912835',
+    sessionId:      'entry.1993758260',
     score:          'entry.1465451014',
     nickname:       'entry.1372787820',
     charName:       'entry.1616306744',
@@ -107,6 +109,8 @@ var ScoreManager = (function () {
     // Google Forms requires application/x-www-form-urlencoded — URLSearchParams sends that format.
     // FormData sends multipart/form-data which the formResponse endpoint silently rejects.
     var params = new URLSearchParams();
+    params.append(ENTRY.userId,          userId    || '');
+    params.append(ENTRY.sessionId,       sessionId || '');
     params.append(ENTRY.score,          payload.score);
     params.append(ENTRY.nickname,       payload.nickname);
     params.append(ENTRY.charName,       payload.charName);

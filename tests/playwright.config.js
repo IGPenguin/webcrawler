@@ -3,6 +3,7 @@ module.exports = {
   testIgnore: '**/_site/**',
   use: {
     baseURL: 'http://localhost:4000',
+    addInitScript: { content: "localStorage.setItem('sd_is_test', 'true');" },
     viewport: { width: 393, height: 852 },
     deviceScaleFactor: 3,
     isMobile: true,

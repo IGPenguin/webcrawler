@@ -3,6 +3,8 @@ var TelemetryManager = (function () {
   var NICKNAME_KEY = 'playerNickname';
 
   var ENTRY = {
+    userId:         'entry.532633489',
+    sessionId:      'entry.2096381360',
     event:          'entry.779158674',
     payload:        'entry.1070192513',
     score:          'entry.1465451014',
@@ -88,10 +90,13 @@ var TelemetryManager = (function () {
 
   function send(event, payload) {
     if (isLocalhost() && TELEMETRY_DISABLED_LOCALHOST) return;
+    try { if (localStorage.getItem('sd_is_test') === 'true') return; } catch (e) {}
     if (cheatedThisRun && event !== 'cheat_used') return;
 
     var ctx    = _buildContext();
     var params = new URLSearchParams();
+    params.append(ENTRY.userId,          userId    || '');
+    params.append(ENTRY.sessionId,       sessionId || '');
     params.append(ENTRY.event,          event);
     params.append(ENTRY.payload,        String(payload || ''));
     params.append(ENTRY.score,          ctx.score);
