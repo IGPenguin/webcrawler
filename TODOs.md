@@ -5,34 +5,27 @@
 - **/clear** when one-time task completed
 
 # Priority 0
-- ???
+- ME: complete the rest of the missing achievement unlocks
 
 # Claude
-- shop: drachmae buy wheighted item fn call (chsnce for artifact)
-- shop: buy buttons per item base rarity
+- imrpove corpse state presentation - keep og emoji, put 50% opacity overlay (skull/zzz) over it
+- shop: buy buttons per base item base rarity - colored btns (cheapest = all, but big pool)
 - add: chance for a special fishing drachma (limited to only one ever)
-- modify: Settings, hold the initial delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", reset on release), then confirm with another click as currently)
+- mod: hold the  delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)
+  - then confirm with another click as currently
 - ...
-- [Enemy] Fairyland HP Buff: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
-- generate more positive AND negative traps (all variants) and curses
-- ...
-- (failed 20k tokens) fix: cast crit zone not showing on attack - eg boss heavy when they are exhousted but player has sta
-- fix: on reincarnate remove the chronicle entry as the run continues, chronicle (game session history entry) should be just once per char, if tjey ressurect game continues (= no chronicle yet)
 - fix: crit dodge boss heavy was not handled as crit
-- fix cursed enemy achiev to only pop when actually applied to an enemy (not when simply casting curse)
+- fix: cursed enemy achiev to only pop when actually applied to an enemy (not when simply casting curse)
 - ...
-- enemy loot drop chances per type? (small drops nothing, standard....), take also "danger" into consideration - the more dangerous, the higher/better drops
-- hardcoded "graveyard reminder" encounter after first and second boss (like in dream) that vaguely explains what just unlocked + reminds of the game theme
-- NEW: Legendary item increasing drop chances for higher than common rarity
-  - + Origin
-- NEW: Legendary item for bigger crit chance interval by ??%
-  - + Origin
-- NEW: ⏳ Strange Hourglass - 10% slower action bar speed (global)
-  - + Origin
+- NEW: hardcoded "graveyard reminder" encounter after first and second boss - vague hints on the game story
+- NEW: Item/Origin increasing drop chances for higher than common rarity
+- NEW: Item/Origin for bigger crit chance interval by ??%
+- NEW: Item/Origin ⏳ Strange Hourglass - 10% slower action bar speed (global)
 - More unique origins with actual gameplay implications
 - New story progress unlockable: a portal to village? (Skip early game)
-...
-- refine readme to be very cool, check for reference: mobile-toolkit, hades-gate
+- ...
+- TELE: add userId and sessionId to feedback form payload
+- TELE: menu telemetry (screen_open: main menu... other screens as well?)
 - Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
@@ -45,9 +38,11 @@
 - tweak ui for ranking list + detail
 - tweak session detail UI
 - score gets updated every half hour note to rankings screen
-- new origins, gated by achievs (thematic)
+- Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
+- Add more positive AND negative traps (all variants) and curses
+  - with stat swaps - swap x for y
 - add spirit/reflective to Village and River (might be nerfed in village e.g.)
-- add: traps with multiple stat changes - swap x for y
+- add: traps 
 
 # Gemini
 - read all files under ideas folder, check for opportunities for unique data (compare with actually used stuff in data folder), output to ideas/curated.csv
@@ -58,12 +53,22 @@
 - obscure wiki, bestiary for github (no exact info or nmbers, just hints) link via button in menu
 
 # Hades
+- add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items) when spoken to or defeated.
+- add hidden stat visbility (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
+- full screen shake on crit interval hits (and more high-intensity global effects?)
+- implement a basic "Low Health" and "Low Stamina" visual pulses (to show urgency when player resources are very low = 1)
+- (possible only on android?) Add better vibration support to actionbar interactions:
+   - vibrate on button press and release   
+   - vibrate on transitioning between the fail/pass/crit zones
+   - vibrate when taking damage, cannot effects etc?
+   - use various vibration legth/pattern to match the related trigger 
+- ...
 - separrate bug report through a gform to a separate sheet, daily job to sync to github issues with tags
 - Fix the very flaky "Quest system" - friends might require a "quest item" to exchange it for artifact, the quest firend + item spawn logic is brittle, I imagine better way like spawning the quest item somwehere in the story and the friend somewhere else - independent of the area, also would be great to hide the exact item list of the things the friend is looking for (keep it under the hood) and display just a general description of things they are looking for
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
 - better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
-...
+- ...
 - improve generator/story structure (+gameplay if needed)
 - Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
 - Make Karma Matter!
@@ -169,13 +174,11 @@
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
 
 # Crazy ideas
-- Multiplayer features
-  - find other player corpse (with one of their items)
-  - fight other players ghosts/zombies
-  - these can be submitted to googleform similar to how highscore is handled
-
 - Programmer Art Upgrade: SVG Vector Engine
   - Create an `assets/img/vectors/` library of lightweight, animated SVG backgrounds for each area (e.g., flowing lines for River, jittery pulses for Necropolis)
   - Refactor `ui-render.js` to inject these as dynamic background layers.
   - All solid backgrounds should have shading, texts can be enhaced too, but no glow.
   - Resolve "programmers art" permanently with a professional, scalable, and cohesive aesthetic that feels "alive" and premium.
+
+# Trash
+- build a "Game Tip" system that triggers based on player state (e.g., first time dying, first time finding an Artifact, being low on Stamina). Uses the existing string-generator.js and ui-render.js toast system. 
