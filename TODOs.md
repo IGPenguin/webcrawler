@@ -5,13 +5,16 @@
 - **/clear** when one-time task completed
 
 # Priority 0
+- ME: Finish the game at least 3x, upload data to leaderboards, verify UI
+- ME: Tweak ui - values reposition Rankings and Chronicles ui (list+detail)
 - ME: complete the rest of the missing achievement unlocks
+- ME: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
 
 # Claude
 - imrpove corpse state presentation - keep og emoji, put 50% opacity overlay (skull/zzz) over it
 - shop: buy buttons per base item base rarity - colored btns (cheapest = all, but big pool)
 - add: chance for a special fishing drachma (limited to only one ever)
-- mod: hold the  delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)
+- mod: hold the delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)
   - then confirm with another click as currently
 - ...
 - fix: crit dodge boss heavy was not handled as crit
@@ -33,22 +36,12 @@
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
 
 # Manual
-- tweak ui for ranking popup - hint under field
-- tweak ui for ranking table
-- tweak ui for ranking list + detail
-- tweak session detail UI
-- score gets updated every half hour note to rankings screen
-- Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
-- Add more positive AND negative traps (all variants) and curses
-  - with stat swaps - swap x for y
-- add spirit/reflective to Village and River (might be nerfed in village e.g.)
-- add: traps 
+- ???
 
 # Gemini
 - read all files under ideas folder, check for opportunities for unique data (compare with actually used stuff in data folder), output to ideas/curated.csv
 - [Bait] Flavour by name/description: Give e.g. the repeated many worms unique buffs (e.g., "Vigorous Worm" -> +5% Rarity chance).
 - [Loot] Tiered Trash: Make "Trash" items usable (e.g., Wet Cash +1 Int for "deciphering" it).
-- [Area] Limbo Theme: Finalize Auxiliary Space as a "Limbo" area with ghostly remnants of the player's past runs or even online-shared characters of other players finishing the game.
 - ...
 - obscure wiki, bestiary for github (no exact info or nmbers, just hints) link via button in menu
 
@@ -106,6 +99,9 @@
   - Hanging out in Menu for 5 minutes with live char?
 
 ## Data changes
+- Add spirit/reflective to Village and River (might be nerfed in village e.g.)
+- Add more positive AND negative traps (all variants) and curses
+  - with stat swaps - swap x for y
 - Curses with -1 atk (lategame)
 - Legendary item allowing to physically damage spirits (soulgem)
 - Practice target variants for speak, cast... option to leave
