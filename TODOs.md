@@ -16,19 +16,18 @@
 - add: chance for a special fishing drachma (limited to only one ever)
 - mod: hold the delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)
   - then confirm with another click as currently
+- NEW: hardcoded "graveyard reminder" encounter after first and second boss - vague hints on the game story
+  - fullscreen fade like when game start (or endgame) 
 - ...
 - fix: crit dodge boss heavy was not handled as crit
 - fix: cursed enemy achiev to only pop when actually applied to an enemy (not when simply casting curse)
 - ...
-- NEW: hardcoded "graveyard reminder" encounter after first and second boss - vague hints on the game story
 - NEW: Item/Origin increasing drop chances for higher than common rarity
 - NEW: Item/Origin for bigger crit chance interval by ??%
 - NEW: Item/Origin ⏳ Strange Hourglass - 10% slower action bar speed (global)
 - More unique origins with actual gameplay implications
 - New story progress unlockable: a portal to village? (Skip early game)
 - ...
-- TELE: add userId and sessionId to feedback form payload
-- TELE: menu telemetry (screen_open: main menu... other screens as well?)
 - Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
