@@ -288,7 +288,7 @@ layout: default
     <h3 style="text-align:center; margin:0 0 8px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">✏️ Enter Nickname:</h3>
     <div id="nickname_score_display" style="text-align:center; margin:0 0 10px 0; color:#FFD940; font-size:22px; font-weight:bold; -webkit-text-stroke:3px black; paint-order:stroke fill;"></div>
     <input id="nickname_input" type="text" maxlength="32" placeholder="Your Nickname (3+ chars)" style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
-        <h5 style="text-align:center; margin:0 0 14px 0; opacity:0.55; font-size:13px; font-weight:400;">It will be shown on global rankings.</h5>
+        <h5 style="text-align:center; margin:8px 0 0 0; opacity:0.55; font-size:13px; font-weight:400;">It will be shown on global rankings.</h5>
     <h5 id="nickname_error" style="color:#ff4444; text-align:center; margin:6px 0 0 0; font-size:13px; display:none;">Minimum 3 characters required.</h5>
     <button id="nickname_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Submit</button>
     <button id="nickname_skip" class="menu-btn" style="margin-top:4px; color:red;">✕ Skip</button>

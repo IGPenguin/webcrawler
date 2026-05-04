@@ -164,7 +164,7 @@ function getOriginName(origin) {
       noun = chooseFrom(["Wanderer","Drifter","Pilgrim","Ghost","Vagrant","Phantom","Nomad","Exile","Recluse","Dancer","Runner","Shade"]);
       break;
     case 'lck':
-      adj  = chooseFrom(["Blessed","Fated","Charmed","Wayward","Tempted","Doomed","Fallen","Twisted","Last","Forsaken","Bound","Reckless"]);
+      adj  = chooseFrom(["Blessed","Fated","Charmed","Lucky","Tempted","Doomed","Fallen","Twisted","Last","Forsaken","Bound","Reckless"]);
       noun = chooseFrom(["Fool","Gambler","Chaser","Believer","Stray","Outcast","Soul","Dreamer","Wretch","Prophet","Vagrant","One"]);
       break;
     case 'int':

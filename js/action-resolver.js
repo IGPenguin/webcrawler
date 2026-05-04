@@ -676,7 +676,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType == "Upgrade"){
-          logPlayerAction(actionString,"Gained <b>+1 🔵 Mana</b> permanently.");
+          logPlayerAction(actionString,"Gained the power of <b>+1 🔵 Mana</b>.");
           displayPlayerCannotEffect();
           displayPlayerEffect("✨");
           playerMgk+=1;
@@ -1242,7 +1242,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Gained permanent bonus <b>+2 🍀 Luck</b>.");
+            logPlayerAction(actionString,"Got blessed with <b>+2 🍀 Luck</b>.");
             displayPlayerCannotEffect();
             playerChangeStats(0, 0, 0, 2, 0, 0,0,"n/a",false,false);
             isFishing=false;

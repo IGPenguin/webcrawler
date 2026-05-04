@@ -19,7 +19,6 @@ var TelemetryManager = (function () {
     difficulty:     'entry.1242759362',
     gameVersion:    'entry.1921806822',
     playtime:       'entry.25828477',
-    endType:        'entry.1003026246',
     datetime:       'entry.384732007',
     inventory:      'entry.1287444781',
     coins:          'entry.232215063',
@@ -81,7 +80,6 @@ var TelemetryManager = (function () {
       difficulty:     difficulty,
       gameVersion:    (typeof versionCode !== 'undefined') ? versionCode : '?',
       playtime:       playtime,
-      endType:        String(adventureEndReason || ''),
       datetime:       new Date().toISOString(),
       inventory:      String(playerLootString   || ''),
       coins:          savedCoins               || 0
@@ -91,16 +89,24 @@ var TelemetryManager = (function () {
   function send(event, payload) {
     if (isLocalhost() && TELEMETRY_DISABLED_LOCALHOST) return;
     try { if (localStorage.getItem('sd_is_test') === 'true') return; } catch (e) {}
-    if (cheatedThisRun && event !== 'cheat_used') return;
+    
+    // Always allow start/visit/cheat events; otherwise block if cheated
+    var criticalEvents = ['run_start', 'game_visit', 'cheat_used'];
+    if (cheatedThisRun && criticalEvents.indexOf(event) === -1) return;
 
     var ctx    = _buildContext();
     var params = new URLSearchParams();
-    params.append(ENTRY.userId,          userId    || '');
-    params.append(ENTRY.sessionId,       sessionId || '');
+    
+    // Safety check for identity globals
+    var uid = (typeof userId !== 'undefined') ? userId : 'anonymous';
+    var sid = (typeof sessionId !== 'undefined') ? sessionId : 'none';
+
+    params.append(ENTRY.userId,          uid);
+    params.append(ENTRY.sessionId,       sid);
     params.append(ENTRY.event,          event);
     params.append(ENTRY.payload,        String(payload || ''));
     params.append(ENTRY.score,          ctx.score);
-    params.append(ENTRY.nickname,       _getNickname());
+    params.append(ENTRY.nickname,       _getNickname() || '');
     params.append(ENTRY.charName,       ctx.charName);
     params.append(ENTRY.origin,         ctx.origin);
     params.append(ENTRY.level,          ctx.level);
@@ -111,13 +117,17 @@ var TelemetryManager = (function () {
     params.append(ENTRY.difficulty,     ctx.difficulty);
     params.append(ENTRY.gameVersion,    ctx.gameVersion);
     params.append(ENTRY.playtime,       ctx.playtime);
-    params.append(ENTRY.endType,        ctx.endType);
     params.append(ENTRY.datetime,       ctx.datetime);
     params.append(ENTRY.inventory,      ctx.inventory);
     params.append(ENTRY.coins,          ctx.coins);
     params.append(ENTRY.browserInfo,    _getBrowserInfo());
 
-    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: params }).catch(function () {});
+    if (navigator.sendBeacon) {
+      var blob = new Blob([params.toString()], { type: 'application/x-www-form-urlencoded' });
+      navigator.sendBeacon(FORM_URL, blob);
+    } else {
+      fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: params }).catch(function () {});
+    }
   }
 
   // Called before pushEncounter(corpseLoot) to tag the next item as an enemy drop.

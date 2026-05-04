@@ -377,7 +377,7 @@ function enemyAttackOrRest(message="",isGrab=false,skipToxin=false){
       staminaChangeMsg = "The enemy attacked you dealing -"+(enemyAtk+enemyAtkBonus)+" 💔"
     } else {
         staminaChangeMsg = "The enemy syphoned some health -"+(enemyAtk+enemyAtkBonus)+" 💔";
-        if (enemyHpLost >0) {enemyHpLost-=1;}
+        if ((enemyHpLost > 0) && (!areaName.includes("Depths of Slumber"))) {enemyHpLost-=1;}
     }
 
     if ((damageReceived<=0)){

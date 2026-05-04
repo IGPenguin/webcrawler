@@ -106,11 +106,14 @@ var ScoreManager = (function () {
   async function _doSubmit(payload) {
     var hash = await _generateHash(payload);
     var ghost = encodeGhostLink(payload);
+
+    var uid = (typeof userId !== 'undefined') ? userId : 'anonymous';
+    var sid = (typeof sessionId !== 'undefined') ? sessionId : 'none';
+
     // Google Forms requires application/x-www-form-urlencoded — URLSearchParams sends that format.
-    // FormData sends multipart/form-data which the formResponse endpoint silently rejects.
     var params = new URLSearchParams();
-    params.append(ENTRY.userId,          userId    || '');
-    params.append(ENTRY.sessionId,       sessionId || '');
+    params.append(ENTRY.userId,          uid);
+    params.append(ENTRY.sessionId,       sid);
     params.append(ENTRY.score,          payload.score);
     params.append(ENTRY.nickname,       payload.nickname);
     params.append(ENTRY.charName,       payload.charName);
@@ -129,11 +132,28 @@ var ScoreManager = (function () {
     params.append(ENTRY.coins,          payload.coins);
     params.append(ENTRY.ghostLink,      ghost);
     params.append(ENTRY.hash,           hash);
-    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: params })
-      .then(function () {
-        showAchievementToast({ emoji: '⭐', desc: 'Score submitted: ' + payload.score + ' pts' }, Date.now(), null);
-      })
-      .catch(function () {});
+
+    var success = false;
+    try {
+      // Primary: fetch with no-cors (most reliable for active session)
+      fetch(FORM_URL, { 
+        method: 'POST', 
+        mode: 'no-cors', 
+        body: params,
+        keepalive: true 
+      });
+      success = true;
+    } catch (e) {
+      // Fallback: sendBeacon
+      if (navigator.sendBeacon) {
+        success = navigator.sendBeacon(FORM_URL, params);
+      }
+    }
+
+    if (success) {
+      showAchievementToast({ emoji: '⭐', desc: 'Rankings score submitted: ' + payload.score + ' pts' }, Date.now(), null);
+      logAction("⭐ ▸ 🚀 Rankings score submitted: " + payload.score + ' pts')
+    }
   }
 
   function submitOrPrompt(payload) {

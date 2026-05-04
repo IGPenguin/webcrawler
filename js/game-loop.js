@@ -113,7 +113,7 @@ function gameOver(silent=false){
   if (enemyType && enemyType.includes('Trap')) AchievementManager.check('death_trap');
   if (enemyType && (enemyType === 'Consumable' || enemyType === 'Consumable-Container')) AchievementManager.check('death_sleep');
   //Random death messages
-  var deathMsg=["Your life has sliped into silence.","The last breath of life has faded.","You have ran out of blood.","Your adventure has ended.","Your life has ended, shadows remain.","Your life has withered away.","Your fate has been sealed forever.","The end has come\ darkness awaits.","Silence has taken the hold.","Your journey has ended here."]
+  var deathMsg=["Your life has sliped into silence.","The last breath of life has faded.","You have ran out of blood.","Your adventure has ended.","Your life has ended, shadows remain.","Your life has withered away.","Your fate has been sealed forever.","The end has come, the darkness awaits.","Silence has taken the hold.","Your journey has ended here."]
   deathMsg=chooseFrom(deathMsg)
 
   //Reset progress to death encounter

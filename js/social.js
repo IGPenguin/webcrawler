@@ -77,7 +77,16 @@ function visitLinkedIn(){
 // Shared entry point — accepts any pre-built plain text string.
 function openFeedbackForm(text) {
   var gameLog = encodeURIComponent(text.replaceAll('<b>','').replaceAll('</b>','').replaceAll(emptySpace,'   '));
-  window.open('https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url&entry.1788435593=' + gameLog);
+  var nickname = '';
+  try { nickname = localStorage.getItem('playerNickname') || ''; } catch (e) {}
+
+  var url = 'https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=pp_url' +
+            '&entry.1788435593=' + gameLog +
+            '&entry.1492415838=' + encodeURIComponent(nickname) +
+            '&entry.1255791188=' + encodeURIComponent(userId) +
+            '&entry.1345067948=' + encodeURIComponent(sessionId);
+
+  window.open(url);
 }
 
 function redirectToFeedback(){

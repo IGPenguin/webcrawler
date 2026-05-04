@@ -11,6 +11,10 @@ $(document).ready(function() {
   Menu.init();
   ScoreManager.init();
 
+  if (typeof TelemetryManager !== 'undefined') {
+    TelemetryManager.send('game_visit', '');
+  }
+
   $.ajax({ type: "GET", url: "data/story.csv", dataType: "text",
     success: function(data) {
       storyData = data;
