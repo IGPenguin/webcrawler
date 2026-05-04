@@ -26,13 +26,7 @@ var AchievementManager = (function () {
     { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
 
-    { id: 'cast_first',          emoji: '💫', desc: 'Cast a spell for the first time!', hint: 'Keep your distance for an advantage.', unlock: '' },
-    { id: 'heal_first',          emoji: '❤️‍🩹', desc: 'Healed yourself for the first time!', hint: 'Mend what can still be mended.', unlock: '' },
-    { id: 'curse_first',         emoji: '🪬', desc: 'Cursed an enemy for the first time!', hint: 'Darkness may prove useful.', unlock: '' },
-
-    { id: 'loot_first',          emoji: '📦', desc: 'Picked up your first item!', hint: 'There is always something to find.', unlock: '' },
-    { id: 'key_first',           emoji: '🗝️', desc: 'Picked up a key for the first time!', hint: 'Some doors remain shut for now.', unlock: '' },
-    { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key for the first time!', hint: 'The right key for the right lock.', unlock: '' },
+    { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key for the first time!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open for the first time!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
     { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with magic for the first time!', hint: 'Magic opens more than minds.', unlock: '' },
     { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of quality.', unlock: '' },
@@ -114,15 +108,10 @@ var AchievementManager = (function () {
     grabbedArtifact:     false,
     grabbedExquisite:    false,
     grabbedRubbish:      false,
-    lootFirst:           false,
-    keyFirst:            false,
     keyUnlockFirst:      false,
     smashDoorFirst:      false,
     magicUnlockFirst:    false,
     manaFirst:           false,
-    castFirst:           false,
-    healFirst:           false,
-    curseFirst:          false,
     ateHazardous:        false,
     atePurple:           false,
     ateLegendary:        false,
@@ -397,14 +386,6 @@ var AchievementManager = (function () {
         if (!_stats.grabbedRubbish) { _stats.grabbedRubbish = true; _save(); _unlock('grab_rubbish'); }
         break;
 
-      case 'loot_first':
-        if (!_stats.lootFirst) { _stats.lootFirst = true; _save(); _unlock('loot_first'); }
-        break;
-
-      case 'key_first':
-        if (!_stats.keyFirst) { _stats.keyFirst = true; _save(); _unlock('key_first'); }
-        break;
-
       case 'key_unlock_first':
         if (!_stats.keyUnlockFirst) { _stats.keyUnlockFirst = true; _save(); _unlock('key_unlock_first'); }
         break;
@@ -419,18 +400,6 @@ var AchievementManager = (function () {
 
       case 'mana_first':
         if (!_stats.manaFirst) { _stats.manaFirst = true; _save(); _unlock('mana_first'); }
-        break;
-
-      case 'cast_first':
-        if (!_stats.castFirst) { _stats.castFirst = true; _save(); _unlock('cast_first'); }
-        break;
-
-      case 'heal_first':
-        if (!_stats.healFirst) { _stats.healFirst = true; _save(); _unlock('heal_first'); }
-        break;
-
-      case 'curse_first':
-        if (!_stats.curseFirst) { _stats.curseFirst = true; _save(); _unlock('curse_first'); }
         break;
 
       case 'eat_hazardous':

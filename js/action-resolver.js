@@ -842,8 +842,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          AchievementManager.check('cast_first');
-
           // Corpse state — neutralized cast deals magic damage; killed does nothing
           if (corpseState !== "") {
             if (corpseState === "killed") {
@@ -1254,7 +1252,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-        AchievementManager.check('curse_first');
         if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
           // Reflective curse-back: failed skill check = curse snaps back onto the caster
@@ -1846,8 +1843,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover")) {
               AchievementManager.check('grab_rubbish');
             }
-            if (enemyEmoji!='🪙' && enemyEmoji!='💰') AchievementManager.check('loot_first');
-            if (enemyEmoji==='🗝️' || enemyEmoji==='🔑') AchievementManager.check('key_first');
             //Grab end
             var _wasInFishing = isFishing;
             isFishing=false;

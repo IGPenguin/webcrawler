@@ -492,6 +492,7 @@ Forsaken Village;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My
 Forsaken Village;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
 Forsaken Village;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Forsaken Village;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
+Forsaken Village;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 
 Forsaken Village;🪓;Titansteel Cleaver;Item;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.;none
 Forsaken Village;🥊;Enchanted Glove;Item;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat technique.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 ❤️ Health</b>.;Feeling more confident.;none
@@ -501,7 +502,6 @@ Forsaken Village;🧼;Ancient Soap;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants att
 Forsaken Village;🎓;Scholar's Hat;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>;none
 Forsaken Village;💿;Save Indicator;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Forsaken Village;💾;Floppy Disk;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
-Forsaken Village;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;none
 Forsaken Village;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.;none
 Forsaken Village;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;none
 Forsaken Village;📙;Mythic Tales;Item;0;0;0;0;4;0;0;<b>Artifact</b>;Long lost stories about ancient heroes.<br> Provides <b>+4 🧠 Knowledge</b>.;Gained an exceptional insight;none
@@ -857,6 +857,7 @@ Twisted Fairyland;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "M
 Twisted Fairyland;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
 Twisted Fairyland;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Twisted Fairyland;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
+Twisted Fairyland;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 
 Twisted Fairyland;🖤;Obsidian Pebble;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Physical Defence</b>.;Who needs love anyway? <b>+1 🔰</b>;none
 Twisted Fairyland;👺;Devil Mask;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>👺 Devil Appearance</b>.<br><b>Demon type enemies will be passive</b>.;Gained attribute <b>👺 Devil's Appearance</b>.;none
@@ -1053,6 +1054,7 @@ River of Sorrows;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provid
 River of Sorrows;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
 River of Sorrows;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 River of Sorrows;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
+River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 River of Sorrows;👒;Fishing Hat;Item;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
 
 //More or less matches fishing (needs retouching soon)
@@ -1246,7 +1248,6 @@ Shrouded Necropolis;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provide
 Shrouded Necropolis;📼;Rewind Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 Shrouded Necropolis;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Shrouded Necropolis;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
-Shrouded Necropolis;🥻;Philosopher Toga;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💭 Curious Thought</b>.<br>5% chance to <b>think (and rest) anywhere</b>.;Gained skill <b>💭 Curious Thought</b>.;level_first
 Shrouded Necropolis;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Shrouded Necropolis;🥋;Budo Kimono;Item;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Shrouded Necropolis;🔪;Bloody Knife;Item;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first

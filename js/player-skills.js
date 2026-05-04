@@ -181,7 +181,6 @@ function playerHeal(critBonus){
     var bonusHeal = (critBonus && (playerHp+healAmount) < playerHpMax) ? 1 : 0;
     playerHp+=healAmount+bonusHeal;
     playerMgk-=healAmount;
-    AchievementManager.check('heal_first');
 
     if (bonusHeal) {
       logPlayerAction(actionString,"Felt a divine overflow. +"+(healAmount+bonusHeal)+" ❤️‍🩹 -"+healAmount+" 🔵");
