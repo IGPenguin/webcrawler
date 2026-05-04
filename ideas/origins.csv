@@ -35,8 +35,6 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 ⚔️;Knight;0;1;-1;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Prefers high damage over agility.;none
 🐍;Serpent;-2;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.<br><i>Deadly dangerous but for a price.;none
 
-🦾;Veteran;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Endured through many inconveniences.;none
-
 //Generated
 🌾;Commoner;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>The most dangerous thing is being average.;none
 🪶;Scribe;0;0;0;0;2;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;destiny_first
@@ -51,7 +49,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🪦;Gravedigger;-1;0;0;2;1;0;0;Gain <b>+2 🍀 Luck</b> and <b>+1 🧠 Intellect</b>, sacrifice <b>-1 💔 Health</b>.
 ⚰️;Desecrated;0;-1;0;1;2;0;0;Gain <b>+2 🧠 Intellect</b> and <b>+1 🍀 Luck</b>, sacrifice <b>-1 ⚔️ Attack</b>.
 🕰️;Ancient;0;0;-2;1;2;0;0;Gain <b>+2 🧠 Intellect</b> and <b>+1 🍀 Luck</b>, sacrifice <b>-2 🟢 Energy</b>.
-🩸;Leach;-2;1;0;2;0;0;0;Gain <b>+1 ⚔️ Attack</b> and <b>+2 🍀 Luck</b>, suffer <b>-2 💔 Health</b>.<br><i>Feasts on the misfortune of others.
+🩸;Leech;-2;1;0;2;0;0;0;Gain <b>+1 ⚔️ Attack</b> and <b>+2 🍀 Luck</b>, suffer <b>-2 💔 Health</b>.<br><i>Feasts on the misfortune of others.
 🥀;Blighted;-2;0;0;0;0;4;0;Gain <b>+4 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.<br><i>A terrible power blooming from rot.
 🕯️;Acolyte;0;-2;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, suffer <b>-2 ⚔️ Attack</b>.<br><i>Too weak to lift a blade.
 🏚️;Hermit;0;0;-2;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Decades of silence sharpen the mind.
@@ -72,7 +70,6 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 
 📚;Archivist;0;0;0;0;1;0;-1;Gain <b>+1 🧠 Intellect</b>, suffer <b>-1 🔰 Defence</b>.<br><i>Knowledge over survival.
 🛠️;Tinkerer;0;1;0;0;0;0;-1;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 🔰 Defence</b>.<br><i>Builds fast, breaks faster.
-🧪;Experimenter;0;0;0;1;-1;0;0;Gain <b>+1 🍀 Luck</b>, suffer <b>-1 🧠 Intellect</b>.<br><i>Finds out the hard way.
 🪖;Militia;1;0;0;0;0;0;-1;Gain <b>+1 ❤️ Health</b>, suffer <b>-1 🔰 Defence</b>.<br><i>Untrained, but willing.
 🧍;Witness;0;0;0;1;0;0;-1;Gain <b>+1 🍀 Luck</b>, suffer <b>-1 🔰 Defence</b>.<br><i>Survived by chance alone.
 🪶;Messenger;0;0;1;0;0;0;-1;Gain <b>+1 🟢 Energy</b>, suffer <b>-1 🔰 Defence</b>.<br><i>Fast enough to arrive. Not to endure.
