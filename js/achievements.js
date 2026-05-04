@@ -20,12 +20,12 @@ var AchievementManager = (function () {
     { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a deadly trap!', hint: 'Ooops... that was deadly.', unlock: 'Unlocked the <b>💥 Clumsy</b> origin.' },
     { id: 'death_sleep',         emoji: '💤', desc: 'Died in your sleep...', hint: 'Not the peaceful rest you hoped for.', unlock: 'Unlocked the <b>👻 Wraith</b> origin.' },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!", unlock: 'Unlocked the <b>♥️ Extra Life</b> item.' },
-    { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.', unlock: 'Unlocked the <b>🥻 Philosopher Toga</b> item.' },
+    { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.', unlock: 'Unlocked the <b>🥻 Philosopher Toga</b>.' },
     { id: 'level_5',             emoji: '🎊', desc: 'Reached level 5!', hint: 'The path ahead grows longer.', unlock: 'Unlocked the <b>🎓 Scholar</b> origin.' },
     { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?", unlock: 'Unlocked the <b>🎣 Angler</b> origin.' },
     { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
+    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
 
-    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: '' },
     { id: 'cast_first',          emoji: '💫', desc: 'Cast a spell for the first time!', hint: 'Keep your distance for an advantage.', unlock: '' },
     { id: 'heal_first',          emoji: '❤️‍🩹', desc: 'Healed yourself for the first time!', hint: 'Mend what can still be mended.', unlock: '' },
     { id: 'curse_first',         emoji: '🪬', desc: 'Cursed an enemy for the first time!', hint: 'Darkness may prove useful.', unlock: '' },
@@ -46,7 +46,7 @@ var AchievementManager = (function () {
     { id: 'recruit_first',       emoji: '🤝', desc: 'Recruited your first ally!', hint: 'Talk someone to join your side.', unlock: 'Unlocked the <b>💬 Preacher</b> origin.' },
     { id: 'full_party',          emoji: '👥', desc: 'Got a party of three companions!', hint: 'The more, the merrier, always.', unlock: 'Unlocked the <b>💍 Engraved Ring</b> item.' },
 
-    { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered: Forsaken Village!', hint: "Seek the long forgotten village.", unlock: 'Unlocked the <b>🥔 Peasant</b> origin.' },
+    { id: 'discover_forsaken',   emoji: '🏚️', desc: 'Discovered: Forsaken Village!', hint: "Seek the long forgotten village.", unlock: 'Unlocked the <b>🧭 Guide</b> origin.' },
     { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!', hint: "Seek the home of supernatural beings.", unlock: 'Unlocked the <b>🎋 Shaman</b> origin.' },
     { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!', hint: "Sail the flows of eternal tears.", unlock: 'Unlocked the <b>⛵️ Sailor</b> origin.' },
     { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!', hint: "Where the deepest shadows dwell.", unlock: 'Unlocked the <b>🦴 Survivor</b> origin.' },
@@ -61,7 +61,7 @@ var AchievementManager = (function () {
 
     { id: 'letter_remember',     emoji: '💌', desc: 'Read a very disturbing letter.', hint: 'Some things are better left in the past.', unlock: 'Unlocked the <b>💘 Lover</b> origin.' },
     { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing letter with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
-    { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing letter aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Wounded</b> origin.' },
+    { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing letter aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💢 Berserk</b> origin.' },
 
     { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.', unlock: 'Unlocked the <b>🧂Salt Shaker</b> item.' },
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: 'Unlocked the <b>👨🏻‍🍳 Chef></b> origin.' },
@@ -81,7 +81,7 @@ var AchievementManager = (function () {
     { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something with no bait 50 times!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b> item.' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!', hint: "Become a seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
 
-    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: 'Unlocked the <b>🐼 Criminal</b> origin.' }
+    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
   ];
   // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
 
