@@ -1,21 +1,44 @@
 emoji;name;hp;atk;sta;lck;int;mgk;def;desc
+👽👾
 
-//Unlockable
+//Ideas
 👾;Invader;0;0;0;0;0;0;0;???.<br><i>Simply cannot leave any corner unexplored.;all_achievements
 ⏳;Eternal;0;0;0;0;0;0;0;The action bar prompt moves 20% slower.<br><i>???;hardcore_win
 
 🇨🇿;Czech;0;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b> with no downside.<br><i>Drinks beer, wears sandals with socks.;none
 🩹;Cripple;-2;0;0;3;0;0;0;Gain <b>+4 🍀 Luck</b>, sacrifice <b>-2 💔 Health</b>.<br><i>Suffering was the only prayer that worked.
 
+//Cut (for now?)
+🧭;Guide;0;0;1;0;-2;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Knows the way, not the reason.;none
 🪓;Killer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.;none
 🛡️;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Stands strong when everything is falling.;none
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br>Spent too long in the dark to fear it.;none
 💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no clear downside.<br><i>Spent his life staying fit.;none
 
+//Mana unlockables (+ also //-int //-luck)
+🪬;Lich;-2;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.<br><i>Traded the life essence for pure power.;mana_first
+🕯️;Hexer;0;-1;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-1 ⚔️ Attack</b>.<br><i>Chosen magic over physical strength.;mana_first
+🩸;Warlock;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>Blood is just another reagent.;mana_first
+🔮;Prodigy;-2;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.<br><i>The gift came at birth and so did the cost.;mana_first
++1/-int
++1/-luck
 
-👽👾
+⛓️‍💥;Fugitive;0;0;0;-2;2;0;0;Gain <b>+2 🧠 Intellect</b> and <b>-2 🍀 Luck</b>.<br><i>Luck favors the well prepared.;none
+🪵;Logger;1;0;1;0;0;0;0;Gain <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.<br><i>Hardened long before anything fought back.;none
+🥩;Butcher;1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> and <b>+1 ❤️ Health</b>.<br><i>Grew stronger from fresh meat supply.;none
 
+👁️;Prophet;-2;0;0;0;4;0;0;Gain <b>+4 🧠 Intellect</b>, suffer <b>-2 💔 Health</b>.<br><i>Learned through willigness to suffer.;none
+🔭;Seeker;0;0;-2;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Spent all his vigor searching.;none
+📿;Monk;0;-1;0;0;0;0;0;Abstain <b>-1 ⚔️ Attack</b> with no clear benefit.<br><i>Blindly believes in world peace.;none
 
+🏹;Ranger;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, suffer <b>-2 🟢 Energy</b>.<br><i>Trained to be deadly but fragile.;none
+⚔️;Knight;0;1;-1;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Prefers high damage over agility.;none
+🐍;Serpent;-2;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.<br><i>Deadly dangerous but for a price.;none
+
+🦾;Veteran;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Endured through many inconveniences.;none
+
+//Generated
+🌾;Commoner;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>The most dangerous thing is being average.;none
 🪶;Scribe;0;0;0;0;2;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;destiny_first
 🎴;Wanderer;0;0;-2;2;0;0;0;Gain <b>+2 🍀 Luck</b>, sacrifice <b>-2 🟢 Energy</b>.<br><i>Never stopped moving. Never found rest.
 💀;Martyr;-2;0;0;3;0;0;0;Gain <b>+4 🍀 Luck</b>, sacrifice <b>-2 💔 Health</b>.<br><i>Suffering was the only prayer that worked.
