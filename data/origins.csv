@@ -31,7 +31,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🧿;Wizard;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>Devotion stronger than his body.;mana_first
 👨🏻‍🍳;Chef;0;0;0;0;0;0;0;Starts with <b>🧂 Salt Shaker</b>.<br><i>Always uses just enough spices.;salt_food_first
 🦧;Furry;0;0;0;0;0;0;0;Critters do not mind your presence.<br><i>Lives a happy and peaceful life.;pet_first
-🎣;Angler;0;0;0;0;0;0;0;Start with one random <b>🪱 Bait</b>.<br><i>Always ready to do some fishing.;fish_bait_first
+🎣;Angler;0;0;0;0;0;0;0;Start with two random <b>🪱 Baits</b>.<br><i>Always ready to do some fishing.;fish_bait_first
 
 //Outstanding
 🎩;Noble;0;0;0;1;1;0;0;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.;none
