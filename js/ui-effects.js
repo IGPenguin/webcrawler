@@ -284,7 +284,29 @@ function menuFade(callback) {
 }
 
 function displayEnemyEffect(message){
-  displayEffect(message,document.getElementById('id_enemy_overlay'));
+  var el = document.getElementById('id_enemy_overlay');
+  el.style.opacity = '';
+  displayEffect(message, el);
+}
+
+function setPersistentEnemyEffect(icon) {
+  var el = document.getElementById('id_enemy_overlay');
+  var gen = (_animateUIElementGen.get(el) || 0) + 1;
+  _animateUIElementGen.set(el, gen);
+  el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__infinite');
+  el.innerHTML = icon;
+  el.style.opacity = '0.7';
+  el.style.display = 'block';
+}
+
+function clearPersistentEnemyEffect() {
+  var el = document.getElementById('id_enemy_overlay');
+  var gen = (_animateUIElementGen.get(el) || 0) + 1;
+  _animateUIElementGen.set(el, gen);
+  el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__infinite');
+  el.innerHTML = '';
+  el.style.opacity = '';
+  el.style.display = 'none';
 }
 
 function displayPlayerEffect(message){

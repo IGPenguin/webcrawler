@@ -4,9 +4,9 @@ var AchievementManager = (function () {
 
   var ACHIEVEMENTS = [
     { id: 'all_achievements',    emoji: '🏆', desc: "Completed every single memory available!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon." },
-    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Unlocked <b>Origins</b> by beating a boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
-    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b> encounter.' },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Unlocked <b>Shade</b> to spend Drachmae!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b> encounter.' },
+    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
+    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first everlasting Drachma!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
     { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.', unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },

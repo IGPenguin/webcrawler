@@ -24,6 +24,7 @@ function encounterRenew(){
   corpseHasLoot=false;
   corpseLoot=null;
   bossDefeatedSnapshot=null;
+  clearPersistentEnemyEffect();
 }
 
 //Load or generate encounter

@@ -323,7 +323,7 @@ layout: default
     background-color:#202020;"/>
   </div>
 
-<div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
+<div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:84px; position:absolute; z-index:4;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <div id = "id_emoji_flipper" style="margin-bottom:14px;

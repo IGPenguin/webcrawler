@@ -192,8 +192,9 @@ function transitionToCorpse(state) {
     bossDefeatedSnapshot = { name: baseName, emoji: baseEmoji };
   }
 
-  enemyEmoji = (state === "killed") ? "☠️" : "💤";
+  enemyEmoji = baseEmoji;
   enemyName  = baseName + (state === "killed" ? " (Dead)" : " (Asleep)");
+  setPersistentEnemyEffect(state === "killed" ? "☠️" : "💤");
   enemyType  = "Prop";
 
   enemyAtk=0; enemyAtkBonus=0;
@@ -243,7 +244,7 @@ function restoreCorpseAfterLevelUp() {
 }
 
 function wakeUpEnemy() {
-  logAction(corpseSnapshot.emoji + " ▸ 💢 " + corpseSnapshot.name + " stirred awake from the blow.");
+  logAction(corpseSnapshot.emoji + " ▸ 💢 Your attack disturbed their sleep.");
 
   enemyEmoji = corpseSnapshot.emoji;
   enemyName  = corpseSnapshot.name;
@@ -269,6 +270,7 @@ function wakeUpEnemy() {
   corpseHasLoot=false;
   corpseLoot=null;
 
+  clearPersistentEnemyEffect();
   animateUIElement(emojiWrapperUIElement,"animate__bounce","0.8");
   redraw();
 }
