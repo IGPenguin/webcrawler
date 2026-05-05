@@ -116,7 +116,7 @@ var enemyDef;
 var enemyType;
 var previousEnemyType;
 var enemyContainerNumber = 0;
-var enemyTeam;
+var enemyTeam = "";
 var enemyDesc;
 var enemyMsg;
 var enemyQuestItems;
