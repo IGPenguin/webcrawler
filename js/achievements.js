@@ -232,6 +232,10 @@ var AchievementManager = (function () {
   // ── Public API ────────────────────────────────────────────────────────────
 
   function check(trigger, value) {
+
+    //Prevent achievements in tutorial
+    if (areaName.includes("Depths of Slumber")) return;
+
     switch (trigger) {
 
       case 'death':

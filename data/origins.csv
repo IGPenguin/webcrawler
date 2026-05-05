@@ -47,7 +47,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Stamina
 👣;Stalker;0;-1;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Always in the shadows, harmless tough.;none
-🤸‍♀️;Acrobat;-1;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-1 💔 Health</b>.<br><i>Being swift makes you fragile.;none
+🤸‍♀️;Acrobat;-1;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-1 💔 Health</b>.<br><i>Focusing on swiftness makes him fragile.;none
 🧬;Mutant;0;0;1;0;-3;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>Body strong, mind no so much.;none
 ⛓️‍💥;Outlaw;0;0;1;-3;0;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-3 🍀 Luck</b>-<br><i>Chose to outrun his own fortune.;none
 

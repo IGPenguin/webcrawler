@@ -73,6 +73,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
       }
       animateUIElement(cardUIElement,"animate__fadeIn","1.2");
       redraw();
+      startEnemyEmojiPulse();
     });
     return;
   }
@@ -89,6 +90,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
   }
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   redraw();
+  startEnemyEmojiPulse();
 }
 
 function animateFlipNextEncounter(){

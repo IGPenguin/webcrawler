@@ -285,28 +285,47 @@ function menuFade(callback) {
 
 function displayEnemyEffect(message){
   var el = document.getElementById('id_enemy_overlay');
+  if (!el) return;
   el.style.opacity = '';
   displayEffect(message, el);
 }
 
-function setPersistentEnemyEffect(icon) {
+function setPersistentEnemyEffect(icon, pulse = false) {
   var el = document.getElementById('id_enemy_overlay');
+  if (!el) return;
   var gen = (_animateUIElementGen.get(el) || 0) + 1;
   _animateUIElementGen.set(el, gen);
-  el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__infinite');
+  el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__pulse', 'animate__infinite');
   el.innerHTML = icon;
-  el.style.opacity = '0.8';
-  el.style.display = 'block';
+  el.style.opacity = '0.9';
+  el.style.display = 'flex';
+  if (pulse) {
+    el.style.setProperty('--animate-duration', '2s');
+    el.classList.add('animate__animated', 'animate__infinite', 'animate__pulse');
+  }
 }
 
 function clearPersistentEnemyEffect() {
   var el = document.getElementById('id_enemy_overlay');
+  if (!el) return;
   var gen = (_animateUIElementGen.get(el) || 0) + 1;
   _animateUIElementGen.set(el, gen);
-  el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__infinite');
+  el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__pulse', 'animate__infinite');
   el.innerHTML = '';
   el.style.opacity = '';
   el.style.display = 'none';
+}
+
+function stopEnemyEmojiPulse() {
+  if (!emojiUIElement) return;
+  var gen = (_animateUIElementGen.get(emojiUIElement) || 0) + 1;
+  _animateUIElementGen.set(emojiUIElement, gen);
+  emojiUIElement.classList.remove('animate__animated', 'animate__pulse', 'animate__infinite');
+}
+
+function startEnemyEmojiPulse() {
+  if (!emojiUIElement) return;
+  animateUIElement(emojiUIElement, 'animate__pulse', '2', false, '', true);
 }
 
 function displayPlayerEffect(message){

@@ -58,7 +58,15 @@ function _doStartGame(isContinue) {
         redraw();
         registerClickListeners(0);
         registerClickListenersTechnical();
-        animateUIElement(emojiUIElement, "animate__pulse", "2", false, "", true);
+        if (corpseState === "killed") {
+          stopEnemyEmojiPulse();
+          setPersistentEnemyEffect("☠️");
+        } else if (corpseState === "neutralized") {
+          stopEnemyEmojiPulse();
+          setPersistentEnemyEffect("💤", true);
+        } else {
+          startEnemyEmojiPulse();
+        }
         return;
       }
     }

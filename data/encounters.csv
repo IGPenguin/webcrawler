@@ -566,7 +566,7 @@ Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;0;Lost Possesion;Part of so
 
 Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀;0;0;0;0;0;0;0;Serious Representative;Would very much like to barter with you.<br>It is looking for: n/a;Initiated contact!;none
 Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🦴\🍖;0;0;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in:n/a;You made them happy!;none
-Forsaken Village;🐧;Intergalactic Penguin;Friend🚀\🔭\👽\🛸\⚙️\🔩;0;0;0;0;0;1;0;Unusal Critter;Travelled from a galaxy far far away.<br>It is looking for: n/a;Received a special treat.;none
+Forsaken Village;🐧;Galactic Penguin;Friend🚀\🔭\👽\🛸\⚙️\🔩;0;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>It is looking for: n/a;Received a special treat.;none
 
 Forsaken Village;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;<b>Artifact</b>;Tastes like a proper vendetta — sweet and sour.<br><b>+1 ⚔️ Damage</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Ahhh, sweet and sour;none
 
@@ -1024,6 +1024,7 @@ River of Sorrows;🐸;Frogface Behemoth;Boss-Heavy;4;2;2;0;4;0;0;Amphibious Gian
 River of Sorrows;🐋;Massive Fintail;Boss-Heavy;4;3;1;0;4;0;0;Absurd-sized Monster;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.;none
 River of Sorrows;🐙;Vampiric Squid;Boss-Demon;3;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;Sucked dry bonemarrow-deep.;none
 River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;3;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.;none
+River of Sorrows;🦈;Ancient Megalodon;Boss-Swift;3;3;3;0;-1;0;0;Mythical Monster;One bite and it's probably over.<br>;Devoured by a mythical creature!;none
 
 River of Sorrows;🥥;Drifting Shell;Consumable;1;0;1;0;0;0;0;<b>Artifact</b>;Natural health and energy booster, lucky find.<br>Provides <b>+1 ❤️ Health & 🟢 Energy</b> bonus.;Yum yum, very sweet!;none
 River of Sorrows;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy, ...that's a truly ungodly stench.<br>Could cause some <b>unforseen side-effects</b>.;That took serious guts!;none
@@ -1407,4 +1408,3 @@ Fishing;🦈;Young Shark;Swift;2;2;1;0;0;0;0;Fresh Predator;Still learning the g
 Fishing;‍🦑;Depths Squid;Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Giant octopus from the deep ends.<br>;Got swallowed in one slurp!;none
 
 Fishing;🦕;The Nessie;Boss;4;3;2;0;-1;0;0;Mythical Monster;So the rumors were true after all.<br>;Swallowed in one slurp!;none
-Fishing;‍🦈;The Megalodon;Boss-Swift;3;3;3;0;-1;0;0;Mythical Monster;One bite and it's probably over.<br>;Devoured by a mythical creature!;none

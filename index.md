@@ -323,7 +323,6 @@ layout: default
     background-color:#202020;"/>
   </div>
 
-<div class= "enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:84px; position:absolute; z-index:4;"></div>
 <br style="clear:both" />
 <div class="box-border-dynamic">
 <div id = "id_emoji_flipper" style="margin-bottom:14px;
@@ -333,8 +332,9 @@ layout: default
                               padding-top:8px;
                               margin-top:0px;
                               background-color:#272727;">
-<div id = "id_emoji_wrapper">
-<h1 id = "id_emoji" style="position:relative; z-index:3 padding:4px"/>
+<div id = "id_emoji_wrapper" style="position:relative;">
+<h1 id = "id_emoji" style="position:relative; z-index:3; padding:4px;"></h1>
+<div class="enemyOverlay" id="id_enemy_overlay" style="font-family:sans; font-size:84px; position:absolute; top:-8px; width:100%; height:100%; display:none; align-items:center; justify-content:center; pointer-events:none; z-index:4;"></div>
 </div>
 </div>
 </div>

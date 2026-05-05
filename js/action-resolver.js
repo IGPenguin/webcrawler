@@ -696,7 +696,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           } else {
             enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
           }
-          displayPlayerEffect("☝️");
+          displayEnemyEffect("☝️");
           displayEnemyCannotEffect();
           break;
         }
@@ -729,13 +729,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Small":
             if (enemySta<=0){
               logPlayerAction(actionString,"They cannot do much about that.")
-              displayPlayerEffect("☝️");
+              displayEnemyEffect("☝️");
               displayEnemyCannotEffect();
               break;
             }
             if ((enemyAtk+enemyAtkBonus)<=0) {
               enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
-              displayPlayerEffect("☝️");
+              displayEnemyEffect("☝️");
             } else {
               enemyStaminaChangeMessage(-1,"Blocked a regular attack -1 🟢","Blocked just for the sake of it -1 🟢");
               displayPlayerEffect("🔰");
@@ -1603,10 +1603,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             if (_crit === 'success') {
-              logPlayerAction(actionString,"Cleared it without a flinch.");
+              logPlayerAction(actionString,"Cleared the way without a flinch.");
             } else {
               if (playerSta > 0) playerSta--;
-              logPlayerAction(actionString,"Cleared it from the way forward -1 🟢");
+              logPlayerAction(actionString,"Cleared the way forward -1 🟢");
             }
             nextEncounter();
             break;

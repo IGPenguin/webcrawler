@@ -91,6 +91,7 @@ var SaveManager = (function () {
         enemyFamiliar:         enemyFamiliar,
         totalBonus:            totalBonus,  totalMalus:  totalMalus,
         isFishing:             isFishing,   encounterUsed: encounterUsed,
+        corpseState:           corpseState, corpseSnapshot: corpseSnapshot,
         // ── Area / story queue ───────────────────────────────────────────────
         areaName:              areaName,    previousArea: previousArea,
         encounterIndex:        encounterIndex,
@@ -162,6 +163,8 @@ var SaveManager = (function () {
     enemyFamiliar        = !!s.enemyFamiliar;
     totalBonus           = s.totalBonus;   totalMalus         = s.totalMalus;
     isFishing            = s.isFishing;    encounterUsed      = s.encounterUsed;
+    corpseState          = s.corpseState    || '';
+    corpseSnapshot       = s.corpseSnapshot || null;
     // Area / story
     areaName           = s.areaName;      previousArea       = s.previousArea;
     encounterIndex     = s.encounterIndex;

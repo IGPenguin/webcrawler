@@ -1,7 +1,8 @@
 //Enemy
 function enemyRest(stamina){
   if (enemyHp - enemyHpLost > 0){
-    if (document.getElementById('id_enemy_overlay').innerHTML!= "💢") displayEnemyEffect("💤")
+    var _ol = document.getElementById('id_enemy_overlay');
+    if (_ol && _ol.innerHTML != "💢") displayEnemyEffect("💤")
     enemyStaLost-=stamina;
     if (enemyStaLost < 0) {
       enemyStaLost = 0;
@@ -194,7 +195,8 @@ function transitionToCorpse(state) {
 
   enemyEmoji = baseEmoji;
   enemyName  = baseName + (state === "killed" ? " (Dead)" : " (Asleep)");
-  setPersistentEnemyEffect(state === "killed" ? "☠️" : "💤");
+  stopEnemyEmojiPulse();
+  setPersistentEnemyEffect(state === "killed" ? "☠️" : "💤", state !== "killed");
   enemyType  = "Prop";
 
   enemyAtk=0; enemyAtkBonus=0;
@@ -273,6 +275,7 @@ function wakeUpEnemy() {
   clearPersistentEnemyEffect();
   animateUIElement(emojiWrapperUIElement,"animate__bounce","0.8");
   redraw();
+  startEnemyEmojiPulse();
 }
 
 function enemyDisengage(){
