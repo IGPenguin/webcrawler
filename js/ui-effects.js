@@ -295,7 +295,7 @@ function setPersistentEnemyEffect(icon) {
   _animateUIElementGen.set(el, gen);
   el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__infinite');
   el.innerHTML = icon;
-  el.style.opacity = '0.7';
+  el.style.opacity = '0.8';
   el.style.display = 'block';
 }
 
