@@ -677,6 +677,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType == "Upgrade"){
           logPlayerAction(actionString,"Gained the power of <b>+1 🔵 Mana</b>.");
+          AchievementManager.check('mana_first');
           displayPlayerCannotEffect();
           displayPlayerEffect("✨");
           playerMgk+=1;
@@ -825,6 +826,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           if (enemyType=="Upgrade"){
             logPlayerAction(actionString,"Got <b>+2 Mana</b> 🔵 for <b>-1 🟢 Stamina</b>.");
+            AchievementManager.check('mana_first');
             displayPlayerCannotEffect();
             displayPlayerEffect("✨");
             playerMgkMax+=2;
@@ -1403,7 +1405,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             corpseHasLoot=false; corpseLoot=null;
             nextEncounter();
           } else {
-            logPlayerAction(actionString,"There is not anything interesting.");
+            logPlayerAction(actionString,"There is nothing interesting.");
             displayPlayerCannotEffect();
           }
           break;
@@ -1975,6 +1977,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Upgrade":
             //Hatred
             logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+2 🔵 Mana</b>.");
+            AchievementManager.check('mana_first');
             displayPlayerCannotEffect();
             playerChangeStats(-1, 0, 0, 0, 0, 2,0,"n/a",false,false);
             playerHit(0,false,true);
@@ -2287,7 +2290,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            //Greed (speak)
             logPlayerAction(actionString,"Became considerably wiser +2 🧠");
             displayPlayerGainedEffect();
             displayPlayerEffect("🧠");
@@ -2511,7 +2513,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Upgrade": //TODO refactor to something else
             displayPlayerCannotEffect();
             logPlayerAction(actionString,"Decided against gaining a perk.");
-            playerName="Hardcore "+playerName;
             isFishing=false;
             animateFlipNextEncounter();
             break;

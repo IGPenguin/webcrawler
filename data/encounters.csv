@@ -439,8 +439,8 @@ Forsaken Village;🦎;Ashen Lizard;Hot;2;2;2;0;0;0;0;Charred Reptile;Sheds soot 
 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;0;0;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!;none
 Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;1;0;0;Humanoid;Trying to prove themselves.<br>;Got your heart ripped out!;none
-Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;3;1;2;0;2;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!;none
-Forsaken Village;💂;Cultist Guard;Recruit;2;1;3;0;3;0;0;Humanoid;Does not look very friendly.<br>;Stabbed repedately, bled out.;none
+Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;2;0;2;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!;none
+Forsaken Village;💂;Cultist Guard;Recruit;3;1;2;0;3;0;0;Humanoid;Does not look very friendly.<br>;Stabbed repedately, bled out.;none
 
 Forsaken Village;🐓;Yard Terror;Swift;1;1;3;0;10;0;0;Rabid Rooster;Looks ridiculous, hits like regret.<br>;Got your brain pecked out.;none
 Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.;none
@@ -1386,7 +1386,6 @@ Fishing;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not the best sn
 
 Fishing;🐸;Cursed Prince;Friend;0;0;0;0;0;1;0;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.;none
 Fishing;🦭;Lazy Seal;Friend;0;0;2;0;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.;none
-Fishing;🐧;Stranded Penguin;Friend;0;0;0;0;0;1;0;Intergalactic Traveller;Explorer from a galaxy far far away.<br>;Understood the secret of life.;none
 
 Fishing;🐌;Water Snail;Small;1;0;0;0;-1;0;0;Underwater Critter;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.;none
 Fishing;🪱;Tired Worm;Small;1;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;;none
