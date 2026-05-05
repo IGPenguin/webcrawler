@@ -394,10 +394,10 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
   var tsLine = '';
   if (unlockTimestamp) {
     if (typeof unlockTimestamp === 'string') {
-      tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">' + unlockTimestamp + '</h5>';
+      tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:14px; text-align:left;">' + unlockTimestamp + '</h5>';
     } else {
       var d = new Date(unlockTimestamp);
-      tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left;">'
+      tsLine = '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:14px; text-align:left;">'
         + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
         + '</h5>';
     }
@@ -460,7 +460,7 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
       setTimeout(function() {
         if (document.getElementById('achievement_toast') !== toast) return;
         emojiEl.textContent = '🔓';
-        var hintLine = achievement.hint ? '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:12px; text-align:left; font-style:italic;">' + achievement.hint + '</h5>' : '';
+        var hintLine = achievement.hint ? '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:14px; text-align:left; font-style:italic;">' + achievement.hint + '</h5>' : '';
         textEl.innerHTML = '<h5 style="margin:-2px 0 0 0; font-size:16px; line-height:1.2; font-style:normal; font-weight:400; color:#ffffff; text-align:left;">' + achievement.unlock + '</h5>' + hintLine;
         innerEl.style.opacity = '1';
         setTimeout(_fadeOutToast, 3000);

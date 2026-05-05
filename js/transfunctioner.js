@@ -4,7 +4,7 @@ function logCheatUse(message) {
   if (typeof TelemetryManager !== 'undefined') TelemetryManager.send('cheat_used', message);
   AchievementManager.check('use_cheat');
   logAction("✏️ ▸ ⚠️ <text style='color:" + colorSoftRed + ";'><b>Cheat used: " + message + "</b></text>");
-  AchievementManager.queueToast({ emoji: '⚠️', desc: message, color: colorSoftRed }, 'Rankings disabled for your current run.');
+  AchievementManager.queueToast({ emoji: '⚠️', desc: "Cheat used: "+message, color: colorSoftRed }, 'Rankings disabled for your current run.');
   redraw();
 }
 
@@ -32,8 +32,9 @@ function _applyCheatName(name) {
     return true;
   }
   if (name.includes("Bay Goblin")) {
-    playerLootString += chooseFrom(validBaits) + chooseFrom(validBaits) + chooseFrom(validBaits);
-    logCheatUse("Added baits");
+    var baits=chooseFrom(validBaits) + chooseFrom(validBaits) + chooseFrom(validBaits)
+    playerLootString += baits;
+    logCheatUse("Get fishing baits "+baits);
     return true;
   }
   if (name.includes("Genesis")) {
