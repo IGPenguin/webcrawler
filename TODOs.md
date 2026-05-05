@@ -12,7 +12,7 @@
 
 # Claude
 - shop: buy buttons per base item base rarity - colored btns (cheapest = all, but big pool)
-- add: chance for a special fishing drachma (limited to only one ever)
+- add: special fishing drachma for killing the fishing boss (limited to only one ever)
 - mod: hold the delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)
   - then confirm with another click as currently
 - NEW: hardcoded "graveyard reminder" encounter after first and second boss - vague hints on the game story
@@ -35,6 +35,9 @@
 
 # Manual
 - ???
+- ...
+- Groom origin with unique pwer/effect?
+- Origins with starting items (Legendary?)
 
 # Gemini
 - read all files under ideas folder, check for opportunities for unique data (compare with actually used stuff in data folder), output to ideas/curated.csv
