@@ -7,11 +7,10 @@
 # Priority 0
 - ME: Finish the game at least 3x, upload data to leaderboards, verify UI
 - ME: Tweak ui - values reposition Rankings and Chronicles ui (list+detail)
-- ME: complete the rest of the missing achievement unlocks
+- ME: complete the rest of the missing achievement unlocks, enhance origins list (add more rarities)
 - ME: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
 
 # Claude
-- imrpove corpse state presentation - keep og emoji, put 50% opacity overlay (skull/zzz) over it
 - shop: buy buttons per base item base rarity - colored btns (cheapest = all, but big pool)
 - add: chance for a special fishing drachma (limited to only one ever)
 - mod: hold the delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)

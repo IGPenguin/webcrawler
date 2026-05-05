@@ -21,16 +21,16 @@ var AchievementManager = (function () {
     { id: 'death_sleep',         emoji: '💤', desc: 'Died in your sleep...', hint: 'Not the peaceful rest you hoped for.', unlock: 'Unlocked the <b>👻 Wraith</b> origin.' },
     { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!", unlock: 'Unlocked the <b>♥️ Extra Life</b> item.' },
     { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.', unlock: 'Unlocked the <b>🥻 Philosopher Toga</b>.' },
-    { id: 'level_5',             emoji: '🎊', desc: 'Reached level 5!', hint: 'The path ahead grows longer.', unlock: 'Unlocked the <b>🎓 Scholar</b> origin.' },
+    { id: 'level_5',             emoji: '🎊', desc: 'Reached the character level 5!', hint: 'The path ahead grows longer.', unlock: 'Unlocked the <b>🎓 Scholar</b> origin.' },
     { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?", unlock: 'Unlocked the <b>🎣 Angler</b> origin.' },
-    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without a bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
+    { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
 
     { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key for the first time!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open for the first time!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
     { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with magic for the first time!', hint: 'Magic opens more than minds.', unlock: '' },
     { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of quality.', unlock: '' },
-    { id: 'grab_artifact',       emoji: '🏺', desc: 'Found your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
+    { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: '' },
 
     { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...', unlock: '' },
@@ -64,7 +64,7 @@ var AchievementManager = (function () {
     { id: 'fish_boss_first',     emoji: '🦕', desc: 'Fished out a legendary beast!', hint: 'The rumors were true after all.', unlock: 'Unlocked the <b>🔍 Surveyor</b> origin.' },
     { id: 'spoke_boss',          emoji: '🗣️', desc: 'Calmed a Boss into submission!', hint: 'Could peace be an actual option?', unlock: 'Unlocked the <b>📣 Loud Vocalizer</b> item.' },
     { id: 'spoke_demon',         emoji: '🤯', desc: 'Talked a Demon into submission!', hint: 'Try to make a deal with the devil.', unlock: 'Unlocked the <b>😈 Devil</b> origin.' },
-    { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: "Unlocked the <b>📦 Schrödinger's Box</b> item." },
+    { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: "Unlocked the <b>📦 Schrödinger's Box</b>." },
     { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Gardener</b> origin.' },
 
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: 'Unlocked the <b>📼 Rewind Tape</b> item.' },
@@ -72,7 +72,7 @@ var AchievementManager = (function () {
     { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
     { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!', hint: "Giant slayer, born in struggle.", unlock: 'Unlocked the <b>🎖️ Hero</b> origin.' },
     { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50 times!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
-    { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something with no bait 50 times!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b> item.' },
+    { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something without bait 50 times!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b> item.' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!', hint: "Become a seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
 
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
@@ -233,8 +233,8 @@ var AchievementManager = (function () {
 
   function check(trigger, value) {
 
-    //Prevent achievements in tutorial
-    if (areaName.includes("Depths of Slumber")) return;
+    //Prevent achievements in tutorial, except cheats
+    if (areaName && areaName.includes("Depths of Slumber") && !playerEmoji.includes("⚠️")) return;
 
     switch (trigger) {
 

@@ -94,7 +94,8 @@ function calcActionBarConfig(button, adjustment) {
 
   // Exhausted grab: near-impossible without stamina (items/containers/fishing/dream unaffected)
   if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing' && types !== "Death" && !types.includes('Dream')) {
-    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54,
+             critSuccessMin: 49, critSuccessMax: 51 };
   }
 
   // Resurrection: gold-only strip — hit it or die permanently; impossible on Hardcore
@@ -158,7 +159,8 @@ function calcActionBarConfig(button, adjustment) {
 
   // Heavy grab: very very hard — tiny zone, high speed; fail enrages them
   if (button === 'button_grab' && isHeavy) {
-    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54,
+             critSuccessMin: 49, critSuccessMax: 51 };
   }
 
   // Reflective: spells and curses always reflect — impossible to land

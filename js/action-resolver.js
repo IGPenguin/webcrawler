@@ -60,7 +60,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (corpseState === "neutralized") {
           if (_skillOK === false) {
             if (_crit === 'fail') {
-              logPlayerAction(actionString,"Missed so badly you hit yourself -1 💔 -1 🟢");
+              logPlayerAction(actionString,"Missed so bad you hit yourself -1 💔 -1 🟢");
               playerHit(1,false);
             } else {
               logPlayerAction(actionString,"Missed the motionless target -1 🟢");
@@ -77,7 +77,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               ? "Struck them extra hard — a killing blow -"+_cdmg+" 💔"
               : "Dealt a killing blow -"+_cdmg+" 💔");
             var _kxp=parseInt(playerGainXP(1,0,""));
-            logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered"+decorateStatusText("","+"+_kxp+" XP",colorGold));
+            logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered -"+_cdmg+" 💔 "+decorateStatusText("","+"+_kxp+" XP",colorGold));
             playerKarma--; playerKills++;
             AchievementManager.check('kill');
             transitionToCorpse("killed");
@@ -1492,13 +1492,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta > 0) playerSta--;
               enemyKnockedOut();
               isFishing=false;
-            } else { //Player and enemy have no stamina - asymetrical rest
+            } else { //Player and enemy have no stamina - kick
               if (_skillOK === false) {
-                logPlayerAction(actionString,"Too exhausted to grab them.");
+                logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
                 break;
               }
-              enemyKicked();
+              enemyKicked(_crit === 'success');
               if (enemyType=="Pet"){
                 var gainedXP=parseInt(playerGainXP(1,0,""));
 
@@ -1510,16 +1510,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Swift": //Player can only kick tired swift enemies
+          case "Swift":
             if (enemySta-enemyStaLost == 0){
-              enemyKicked();
+              if (playerSta <= 0 && _skillOK === false) {
+                logPlayerAction(actionString,"Too exhausted to kick them.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              enemyKicked(_crit === 'success');
               break;
             }
             if (_skillOK === true) {
               if (playerSta > 0) playerSta--;
               if (_crit === 'success') {
                 enemyStaLost = enemySta; // Fully stagger — drain all remaining energy
-                logPlayerAction(actionString, "Staggered them, fully drained their energy -1 🟢");
+                logPlayerAction(actionString, "Staggered them, draining their energy -1 🟢");
               } else {
                 enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
                 logPlayerAction(actionString, "Snatched them, they slipped away -1 🟢");
@@ -1529,9 +1534,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             displayEnemyEffect("🌀");
             if ((enemyAtk+enemyAtkBonus) > 0) {
-              enemyAttackOrRest("Dodged that and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔");
+              enemyAttackOrRest("They dodged that and retaliated -"+(enemyAtk+enemyAtkBonus)+" 💔");
             } else {
-              enemyStaminaChangeMessage(-1, "Effortlessly dodged the grab.", "n/a");
+              enemyStaminaChangeMessage(-1, "They effortlessly dodged the grab.", "n/a");
               displayEnemyCannotEffect();
             }
             break;
@@ -1539,7 +1544,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
             if (enemyCastIfMgk()) break;
             if ((enemySta - enemyStaLost) <= 0) { // Tired heavy — kick them
-              enemyKicked();
+              if (playerSta <= 0 && _skillOK === false) {
+                logPlayerAction(actionString,"Too exhausted to kick them.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              enemyKicked(_crit === 'success');
               break;
             }
             // Active heavy: very hard, fail enrages (+ATK)
@@ -1587,8 +1597,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   displayPlayerCannotEffect();
                 }
               }
-            } else {
-              enemyKicked();
+            } else { // Tired boss — kick them
+              if (playerSta <= 0 && _skillOK === false) {
+                logPlayerAction(actionString,"Too exhausted to kick them.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              enemyKicked(_crit === 'success');
             }
             break;
 
@@ -1842,7 +1857,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('grab_artifact');
             } else if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || parseInt(enemyHp)>=2 || parseInt(enemyAtk)>=2 || (parseInt(enemyAtk)>=1 && parseInt(totalMalus)==0) || parseInt(enemySta)>=2 || parseInt(enemyMgk)>=2 || (parseInt(enemyMgk)>=1 && parseInt(totalMalus)==0)) {
               AchievementManager.check('grab_exquisite');
-            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover")) {
+            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover") && !enemyTeam.includes("Lost Possesion")) {
               AchievementManager.check('grab_rubbish');
             }
             //Grab end
@@ -1932,7 +1947,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               AchievementManager.check('fish_no_bait');
               playerGainXP(1,10*playerLevel,"");
-              logPlayerAction(actionString,"Caught something with bare hook"+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold));
+              logPlayerAction(actionString,"Caught something without bait"+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold));
             }
             displayEnemyEffect("🪝");
             getRandomFish(_crit === 'success' ? getArtifactLootIndex() : undefined);
@@ -1957,8 +1972,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta > 0) playerSta--;
               enemyKnockedOut();
               isFishing=false;
-            } else {
-              enemyKicked();
+            } else { // Both tired — kick
+              if (_skillOK === false) {
+                logPlayerAction(actionString,"Too exhausted to kick them.");
+                displayPlayerCannotEffect();
+                break;
+              }
+              enemyKicked(_crit === 'success');
             }
             break;
 
@@ -2432,7 +2452,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerRest();
               if (_crit === 'success') {
                 playerSta++;
-                logPlayerAction(actionString, "Rested exceptionally well.");
+                logPlayerAction(actionString, "Rested exceptionally well +1 🟢");
                 displayPlayerRestedEffect();
               }
             }

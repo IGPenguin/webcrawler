@@ -297,12 +297,12 @@ function enemyGrabbedIntoLoot(msg="Grabbed it into your bag -1 🟢"){
   nextEncounter();
 }
 
-function enemyKicked(){
-  logPlayerAction(actionString,"Kicked them afar regaining +2 🟢");
+function enemyKicked(crit){
+  logPlayerAction(actionString, crit ? "Knocked them on the ground! +2 🟢" : "Kicked them afar regaining +2 🟢");
   displayEnemyCannotEffect();
   displayEnemyEffect("🦶");
   playerGetStamina(2,true);
-  enemyRest(1);
+  if (!crit) enemyRest(1);
   if (enemyAtk==0 && enemyAtkBonus<1) {
     enemyAtkBonus++
     logAction(enemyEmoji+" "+arrowSymbol+" 💢 They got enraged gaining +1 ⚔️");

@@ -112,7 +112,7 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
       pushEncounter(drachmaShop);
     }
-    if (savedCoins == 0) {
+    if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player — skip tutorial, no shop yet
       loadEncounter(5);
       enemyName  = "Familiar Moment";
       enemyEmoji = "🤔";

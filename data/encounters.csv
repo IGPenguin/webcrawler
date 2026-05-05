@@ -769,7 +769,7 @@ Twisted Fairyland;🕷️;Huge Tarantula;Stingy;3;2;1;0;-1;0;0;Imminent Danger;V
 Twisted Fairyland;🧀;Cheese Monster;Toxic;2;2;3;0;-1;0;0;Living Snack;Labeled with <i>"I <3 Ladoria"</i>, looks dangerous.<br>;Got poked with some new holes.;none
 Twisted Fairyland;🌼;Living Bloom;Toxic;3;2;2;0;-1;0;0;Unnatural Growth;Smells sweet and sour.<br>;Got lethally poisoned.;none
 Twisted Fairyland;🕷️;Black Widow;Toxic;1;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.;none
-Twisted Fairyland;🪱;Glowing Worm;Toxic;1;1;1;0;-1;1;0;Arthropod;Radiates a strange green aura.<br>;Suffered radiation damage.;none
+Twisted Fairyland;🪱;Glowing Worm;Toxic;1;1;1;0;-1;0;0;Arthropod;Radiates a strange green aura.<br>;Suffered radiation damage.;none
 
 Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;0;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.;none
 Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;0;Twisted Humanoid;Tried so hard, to not get spotted.<br>;Got your head put on a spike.;none
@@ -868,7 +868,7 @@ Twisted Fairyland;🪶;Raptor Feather;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provide
 Twisted Fairyland;🔮;Radiating Oracle;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>👁️ Vivid Dream</b>.<br>33% chance for +1 <b>🔵 Mana</b> on <b>💤 Sleep</b>.;Gained skill <b>👁️ Vivid Dream</b>.;none
 Twisted Fairyland;🀄️;Life-Stealing Rune;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 25% chance to restore<br><b>+1 ❤️ Health</b> whenever hitting an enemy.;Gained 25% chance to <b>🩸 Steal Life</b>.;none
 Twisted Fairyland;⚡️;Lightning Bolt;Item;0;0;0;0;0;2;0;<b>Artifact</b>;Weapon once wielded by the king of gods.<br><b>⚡️ Cast</b> lighting bolts</b>, <b>+2 🔵 Mana</b>.;Gained <b>⚡️ Lightning Bolt</b> and;none
-Twisted Fairyland;🍭;Candy Wand;Item;0;0;0;0;2;0;0;<b>Artifact</b>;A rainbow-colored wand sparkling with power.<br>Provides <b>+2 🔵 Mana</b>.;The old hag won't be happy.;none
+Twisted Fairyland;🍭;Candy Wand;Item;0;0;0;0;0;2;0;<b>Artifact</b>;A rainbow-colored wand sparkling with power.<br>Provides <b>+2 🔵 Mana</b>.;The old hag won't be happy.;none
 Twisted Fairyland;👘;Warlock Robe;Item;0;0;0;0;-4;2;0;Artifact;Usually worn by the darkest of spellcasters.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;Felt a dark urge inside;none
 Twisted Fairyland;🪄;Warlock Wand;Item;0;0;0;-2;0;2;0;<b>Artifact</b>;Resonates with forsaken magical power.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Wielded a dangerous power.;none
 Twisted Fairyland;📿;Banishing Necklace;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.;none
@@ -1198,7 +1198,7 @@ Shrouded Necropolis;🪲;Hardshell Beetle;Tough;3;2;2;0;1;0;2;Shiny Carapace;Ref
 
 Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
 Shrouded Necropolis;🐍;Venomous Serpent;Toxic;3;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.;none
-Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;2;1;1;0;-1;2;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
+Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;2;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
 
 Shrouded Necropolis;🗡️;Possesed Dagger;Stingy;1;3;1;0;-1;0;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat;none
 
