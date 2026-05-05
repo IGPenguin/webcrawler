@@ -50,6 +50,7 @@ function renewPlayer(){ //Default values
   runStartTimestamp = Date.now();
   playerOriginName = '';
   cheatedThisRun = false;
+  scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
 
   initRunLog();
 }

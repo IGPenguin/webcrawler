@@ -160,6 +160,7 @@ var Menu = (function () {
       if (origin.emoji.includes("🤌")) playerLootString += "🧂"; //Gourmet starts with a Salt Shaker
       AchievementManager.check('destiny');
     }
+    scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
     AchievementManager.resetSession();
     SaveManager.clearSave();
     startGame(false);

@@ -65,6 +65,7 @@ var SaveManager = (function () {
         adventureLog:          adventureLog,
         adventureEncounterCount: adventureEncounterCount,
         encounterCount:        encounterCount,
+        scoreBaselineStats:    scoreBaselineStats,
         runStartTimestamp:     runStartTimestamp,
         playerOriginName:      playerOriginName,
         adventureEndReason:    adventureEndReason,
@@ -138,6 +139,7 @@ var SaveManager = (function () {
     adventureLog            = s.adventureLog;
     adventureEncounterCount = s.adventureEncounterCount;
     encounterCount          = s.encounterCount      || 0;
+    scoreBaselineStats      = s.scoreBaselineStats  || 8;
     runStartTimestamp       = s.runStartTimestamp   || Date.now();
     playerOriginName        = s.playerOriginName    || '';
     adventureEndReason      = s.adventureEndReason;

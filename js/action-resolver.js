@@ -31,7 +31,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Death") {
           if (_skillOK === false) {
-            permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">Another damned soul.</p>");
+            var runEndMessage=getRunEndMessage();
+            permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">"+runEndMessage+"</p>");
             break;
           }
           playerReincarnate();

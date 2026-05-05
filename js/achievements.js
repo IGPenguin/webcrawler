@@ -55,7 +55,7 @@ var AchievementManager = (function () {
 
     { id: 'letter_remember',     emoji: '💌', desc: 'Read a very disturbing letter.', hint: 'Some things are better left in the past.', unlock: 'Unlocked the <b>💘 Lover</b> origin.' },
     { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing letter with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
-    { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing letter aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💢 Berserk</b> origin.' },
+    { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing letter aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Broken</b> origin.' },
 
     { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.', unlock: 'Unlocked the <b>🧂Salt Shaker</b> item.' },
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: 'Unlocked the <b>👨🏻‍🍳 Chef></b> origin.' },
@@ -65,7 +65,7 @@ var AchievementManager = (function () {
     { id: 'spoke_boss',          emoji: '🗣️', desc: 'Calmed a Boss into submission!', hint: 'Could peace be an actual option?', unlock: 'Unlocked the <b>📣 Loud Vocalizer</b> item.' },
     { id: 'spoke_demon',         emoji: '🤯', desc: 'Talked a Demon into submission!', hint: 'Try to make a deal with the devil.', unlock: 'Unlocked the <b>😈 Devil</b> origin.' },
     { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: "Unlocked the <b>📦 Schrödinger's Box</b>." },
-    { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Gardener</b> origin.' },
+    { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Hippie</b> origin.' },
 
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: 'Unlocked the <b>📼 Rewind Tape</b> item.' },
     { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },

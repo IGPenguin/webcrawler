@@ -30,15 +30,16 @@ var ScoreManager = (function () {
   var _pendingPayload = null;
 
   function calculate() {
+    if (!encounterCount) return 0;
     var stats = (playerHpMax || 0) + (playerAtk || 0) + (playerStaMax || 0)
               + (playerLck || 0) + (playerInt || 0) + (playerMgkMax || 0) + (playerDef || 0);
     var companions = [...String(playerPartyString || '')].length;
     return (
-      ((playerLevel || 1) * 15)
+      (Math.max(0, (playerLevel || 1) - 1) * 15)
       + Math.floor((encounterCount || 0) / 5)
       + (companions * 8)
-      + Math.floor(stats / 2)
-      + Math.round(((playerKarma || 1) - 1) * 5)
+      + Math.floor(Math.max(0, stats - scoreBaselineStats) / 2)
+      + Math.max(0, (playerKarma || 1) - 1)
     );
   }
 

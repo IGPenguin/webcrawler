@@ -97,6 +97,7 @@ var encounterCount = 0;      // total encounters this run; incremented by nextEn
 var runStartTimestamp = 0;   // Date.now() at run start; used for playtime calculation
 var playerOriginName = '';   // origin name applied at game start; '' = no origin
 var cheatedThisRun = false;  // set by logCheatUse(); reset each new run; blocks score submission
+var scoreBaselineStats = 0; // sum of stats at run start (after origin); subtracted from score formula
 var adventureEndReason = "";
 
 //Area init

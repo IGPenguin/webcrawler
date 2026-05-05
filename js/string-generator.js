@@ -226,13 +226,33 @@ function getRunStartMessage() {
     "The whole world is dying.<br>Try to remember why.",
     "The cursed do not rest.<br>Neither should you.",
     "The world didn't ask for this.<br>Neither did she.",
-    "Every corpse you pass...<br>Whispers her name.",
+    "Every corpse you pass<br>whispers her name.",
     "Whatever you finally find.<br> Take the right decision.",
     "Your love broke something.<br>Your courage must answer.",
     "The dead world remembers.<br>Resolve your sins.",
     "The world is corrupted.<br>Only you can undo it.",
     "The world decays every step.<br>Make haste to stop it.",
     "Something brought you back.<br>It is about time to end it."
+  ];
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
+function getRunEndMessage() {
+  var pool = [
+    "The loop continues.<br>She is still waiting.",
+    "Flesh returns to dust.<br>The sin remains.",
+    "Broken and forgotten.<br>Just like this world.",
+    "The darkness claims you.<br>The debt is unpaid.",
+    "Your light flickers out.<br>The world stays dead.",
+    "A desperate end for<br>a desperate soul.",
+    "Grief was your armor.<br>It wasn't enough.",
+    "The corruption wins.<br>It always does.",
+    "Silence falls again.<br>Listen to the decay.",
+    "Your bones will join<br>the ones you stepped on.",
+    "The failed spell echoes.<br>You are but a shadow.",
+    "Forsaken by the sun.<br>Bound to the rot.",
+    "The river flows cold.<br>Your story ends here.",
+    "One more ghost added<br>to the list of regrets."
   ];
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
