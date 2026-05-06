@@ -189,8 +189,9 @@ function transitionToCorpse(state) {
   corpseHasLoot = false;
   corpseLoot = null;
 
-  if (enemyBossType.includes('Boss')) {
-    bossDefeatedSnapshot = { name: baseName, emoji: baseEmoji };
+  if (enemyBossType.includes('Boss') && !areaName.includes("Shrouded")) {
+    logAction("👑 ▸ "+baseEmoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+baseName+"</b></text>");
+    curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",baseEmoji+emptySpace+"<b>"+baseName+"</b>"+emptySpace+emptySpace,colorWhite),4);
   }
 
   enemyEmoji = baseEmoji;

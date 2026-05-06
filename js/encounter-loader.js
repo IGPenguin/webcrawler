@@ -23,7 +23,6 @@ function encounterRenew(){
   corpseSnapshot=null;
   corpseHasLoot=false;
   corpseLoot=null;
-  bossDefeatedSnapshot=null;
   clearPersistentEnemyEffect();
 }
 

@@ -223,23 +223,22 @@ function calcActionBarConfig(button, adjustment) {
     if (button === 'button_roll') return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
-  // Small grab: chance based on creature STA vs player STA
+  // Small grab: zone shrinks proportionally with creature's remaining stamina
   if (button === 'button_grab' && types === 'Small') {
     var eStaSmall = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
-    var smallW = Math.max(20, Math.min(85, Math.round(55 + pSta * 5 - eStaSmall * 12)));
+    var smallBase = Math.max(20, Math.min(80, Math.round(50 + pSta * 6)));
+    var smallW = Math.max(8, Math.round(smallBase / (eStaSmall + 1)));
     var smallMid = 50;
+    var sMin = Math.max(3, smallMid - Math.round(smallW / 2));
+    var sMax = Math.min(97, smallMid + Math.round(smallW / 2));
     if (eStaSmall > 0) {
-      // Enemy still has stamina — halve the success zone; add a narrow crit zone (free grab on perfect timing)
-      smallW = Math.max(10, Math.round(smallW / 2));
-      var sMin = Math.max(3, smallMid - Math.round(smallW / 2));
-      var sMax = Math.min(97, smallMid + Math.round(smallW / 2));
       var csW = Math.max(1, Math.min(4, Math.round(1 + pLck * 0.4)));
       var csMin = Math.max(sMin + 1, smallMid - Math.floor(csW / 2));
       var csMax = Math.min(sMax - 1, csMin + csW);
       if (csMax - csMin < 1) { csMin = -1; csMax = -1; }
       return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: sMin, successMax: sMax, critSuccessMin: csMin, critSuccessMax: csMax };
     }
-    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: Math.max(3, smallMid - Math.round(smallW/2)), successMax: Math.min(97, smallMid + Math.round(smallW/2)) };
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: sMin, successMax: sMax };
   }
 
   // Container search: luck scales zone width — bad luck = high chance of finding nothing
@@ -393,6 +392,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 40, successMax: 60 };
   }
 
+  // Block Heavy with stamina remaining — near-impossible, crashes through any guard
+  if (button === 'button_block' && isHeavy && eSta > 0) {
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+  }
+
   // Tease (block on passive mob with stamina remaining) — hard, creature resists provocation
   if (button === 'button_block' && eAtk === 0 && eSta > 0 && !isGrabbable && !isTrap && !isAltar) {
     return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 42, successMax: 58 };
@@ -437,7 +441,10 @@ function calcActionBarConfig(button, adjustment) {
 
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
   if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
-    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+    var grabW = Math.max(4, Math.min(30, Math.round((18 + pAtk * 3) / eSta)));
+    var grabMin = Math.max(3, 50 - Math.round(grabW / 2));
+    var grabMax = Math.min(97, 50 + Math.round(grabW / 2));
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: grabMin, successMax: grabMax };
   }
 
   var pStat, eStat, baseW, baseSpeed;

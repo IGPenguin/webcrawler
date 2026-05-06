@@ -23,15 +23,6 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
     previousArea = areaName;
     markAsSeen(enemyName);
     previousEnemyType = enemyType;
-    if (bossDefeatedSnapshot !== null && !areaName.includes("Shrouded")) {
-      var _bsnap = bossDefeatedSnapshot;
-      bossDefeatedSnapshot = null;
-      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",_bsnap.emoji+emptySpace+"<b>"+_bsnap.name+"</b>"+emptySpace+emptySpace,colorWhite),4);
-      logAction("👑 ▸ "+_bsnap.emoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+_bsnap.name+"</b></text>")
-    } else if (enemyType.includes("Boss") && !areaName.includes("Shrouded")) {
-      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyEmoji+emptySpace+"<b>"+enemyName+"</b>"+emptySpace+emptySpace,colorWhite),4);
-      logAction("👑 ▸ "+enemyEmoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+enemyName+"</b></text>")
-    }
   }
 
   if (procAbilityChance("🥻",5)){

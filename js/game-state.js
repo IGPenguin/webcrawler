@@ -155,7 +155,6 @@ var corpseState = ""; // "" | "killed" | "neutralized"
 var corpseSnapshot = null; // saved enemy data for neutralized wake-up
 var corpseHasLoot = false;
 var corpseLoot = null;
-var bossDefeatedSnapshot = null; // name+emoji saved before corpse transition so nextEncounter can fire the boss curtain
 var levelUpSavedCorpse = null;  // full corpse state snapshot saved before level-up wipes it; restored after Upgrade resolves
 
 //Global vars - UIElements

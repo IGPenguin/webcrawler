@@ -1408,10 +1408,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_altarMissingHp > 0) {
               var _altarHeal = Math.min(2, _altarMissingHp);
               playerHp += _altarHeal;
-              logPlayerAction(actionString, "Healed at the altar +" + _altarHeal + " ❤️‍🩹");
+              logPlayerAction(actionString, "Healed at the altar +" + _altarHeal + " ❤️");
               displayPlayerGainedEffect();
             } else {
-              logPlayerAction(actionString, "Already at full ❤️, nothing to heal.");
+              logPlayerAction(actionString, "Already at full health, no effect.");
               displayPlayerCannotEffect();
             }
             break;
