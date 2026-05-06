@@ -94,20 +94,59 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Consumable":
           case "Container-Consume":
             isFishing=false;
+            displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "Your attack missed -1 🟢");
+              }
+              break;
+            }
+            logPlayerAction(actionString, "Smashed it to pieces -1 🟢");
+            nextEncounter();
+            break;
           case "Trap-Sleep":
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "Your attack missed harmlessly -1 🟢");
+              }
+            } else {
+              logPlayerAction(actionString, _crit === 'success'
+                ? "Hit it square — but it had no effect."
+                : "Your attack had no effect -1 🟢");
+            }
+            displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
+            break;
           case "Trap-Big":
-            logPlayerAction(actionString,"Your attack had no effect -1 🟢");
+            // Bar is impossible (all-red)
+            logPlayerAction(actionString, "Your attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             break;
           case "Trap":
           case "Trap-Roll":
-            logPlayerAction(actionString, _crit==='success'
-              ? "Obliterated it without a flinch."
-              : "Smashed it into tiny bits -1 🟢");
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
             isFishing=false;
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "Missed it completely -1 🟢");
+              }
+              break;
+            }
+            logPlayerAction(actionString, _crit === 'success'
+              ? "Obliterated it without breaking a sweat."
+              : "Smashed it into tiny bits -1 🟢");
             nextEncounter();
             break;
 
@@ -276,7 +315,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 openMessage = "Smashed the lock open! -1 🟢 "+decorateStatusText("","+"+gainedXP+" XP",colorGold);
                 enemyHp-=playerAtk;
               } else {
-                logPlayerAction(actionString,openMessage);
+                if (_skillOK === false) {
+                  if (_crit === 'fail') {
+                    logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                    playerHit(1, false);
+                  } else {
+                    logPlayerAction(actionString, "Your attack missed -1 🟢");
+                  }
+                  break;
+                }
+                openMessage = "Smashed it open! -1 🟢";
+                displayEnemyEffect("〽️");
+                logPlayerAction(actionString, openMessage);
                 nextEncounter();
                 break;
               }
@@ -352,7 +402,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   displayPlayerCannotEffect();
                 }
               } else {
-                logPlayerAction(actionString,"Walked away leaving them behind.");
+                if (_crit === 'success') {
+                  logPlayerAction(actionString, getWalkCritText());
+                } else {
+                  logPlayerAction(actionString,"Walked away leaving them behind.");
+                }
               }
               isFishing=false;
               if (playerHp > 0) animateFlipNextEncounter();
@@ -423,7 +477,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   displayPlayerCannotEffect();
                 }
               } else {
-                logPlayerAction(actionString,"Walked away leaving them behind.");
+                if (_crit === 'success') {
+                  logPlayerAction(actionString, getWalkCritText());
+                } else {
+                  logPlayerAction(actionString,"Walked away leaving them behind.");
+                }
               }
               isFishing=false;
               if (playerHp > 0) nextEncounter();
@@ -467,7 +525,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   displayPlayerCannotEffect();
                 }
               } else {
-                logPlayerAction(actionString,"Walked away leaving them behind.");
+                if (_crit === 'success') {
+                  logPlayerAction(actionString, getWalkCritText());
+                } else {
+                  logPlayerAction(actionString,"Walked away leaving them behind.");
+                }
               }
               isFishing=false;
               if (playerHp > 0) animateFlipNextEncounter();
@@ -481,12 +543,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (playerUseStamina(1,noStaForRollMessage)){
+            if (_crit === 'success' || playerUseStamina(1, noStaForRollMessage)) {
               if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0 && (enemySta-enemyStaLost) > 0) {
                 enemyStaminaChangeMessage(-1,"Rolled so slow they hit you anyway -"+(enemyAtk+enemyAtkBonus)+" 💔","Rolled around wasting energy -1 🟢");
                 playerHit(enemyAtk+enemyAtkBonus);
               } else {
-                enemyStaminaChangeMessage(-1,"Dodged a heavy attack -1 🟢","Rolled around wasting energy -1 🟢");
+                enemyStaminaChangeMessage(-1,
+                  _crit === 'success' ? "Glided past without a stumble." : "Dodged a heavy attack -1 🟢",
+                  "Rolled around wasting energy -1 🟢");
                 displayEnemyCannotEffect();
                 displayPlayerEffect("🌀");
               }
@@ -531,8 +595,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Fishing":
-            logPlayerAction(actionString,"Continued away from the water.");
-            nextEncounter();
+            isFishing=false;
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Tripped on the way out -1 💔");
+                playerHit(1);
+              } else {
+                if (playerSta > 0) playerSta--;
+                logPlayerAction(actionString, "Stumbled, almost dropped the rod -1 🟢");
+                displayPlayerCannotEffect();
+              }
+            } else {
+              logPlayerAction(actionString, _crit === 'success'
+                ? chooseFrom(["Left the waterside in a good mood.", "Walked away whistling a fishing tune.", "Strolled off from the water's edge."])
+                : "Left the waterside.");
+            }
+            if (playerHp > 0) nextEncounter();
             break;
           case "Altar":
             logPlayerAction(actionString,"Continued on your adventure.");
@@ -579,22 +657,63 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerHp > 0) nextEncounter();
               break;
             }
-            if (enemyMsg!="" && totalBonus==0 && totalMalus==0){
-              logPlayerAction(actionString,enemyMsg)
+            var _walkMsg;
+            if (_crit === 'success') {
+              _walkMsg = getWalkCritText();
+            } else if (enemyMsg!="" && totalBonus==0 && totalMalus==0){
+              _walkMsg = enemyMsg;
             } else {
-              logPlayerAction(actionString,"Continued on your adventure.");
+              _walkMsg = "Continued on your adventure.";
             }
+            logPlayerAction(actionString, _walkMsg);
             nextEncounter();
             break;
           case "Friend":
-            var msg="Walked away leaving them behind.";
-            if (areaName.includes("Shrouded")) msg="They did not let you leave!"
-            logPlayerAction(actionString,msg);
+            if (areaName.includes("Shrouded")) {
+              logPlayerAction(actionString,"They did not let you leave!");
+              isFishing=false;
+              break;
+            }
+            logPlayerAction(actionString, _crit === 'success'
+              ? chooseFrom(["Left with a warm farewell.", "Parted on good terms.", "Slipped away with a smile."])
+              : "Walked away leaving them behind.");
             isFishing=false;
             nextEncounter();
             break;
 
-          case "Trap-Roll": //Triggers when rolling into it
+          case "Trap-Roll": //Triggers when rolling into it — now bar-driven
+            if (!encounterUsed) {
+              if (_skillOK === false) {
+                // Trap triggers — walked straight into it
+                if (totalBonus > 0) {
+                  if (_crit === 'fail') {
+                    playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Terrible form — you set yourself back.", true, false);
+                  } else {
+                    logPlayerAction(actionString, "Poor form, triggered it instead -1 🟢");
+                    playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
+                  }
+                } else {
+                  if (enemyHp<=0) playerHpMax-=enemyHp;
+                  if (enemySta<=0) playerStaMax-=enemySta;
+                  playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
+                }
+                encounterUsed = true;
+              } else {
+                // Passed — walked away safely
+                logPlayerAction(actionString, _crit === 'success'
+                  ? chooseFrom(["Slipped past it effortlessly.", "Cleared it without a second thought.", "Avoided it perfectly."])
+                  : "Carefully walked around it -1 🟢");
+                if (playerSta > 0 && _crit !== 'success') playerSta--;
+                isFishing=false;
+                nextEncounter();
+              }
+            } else {
+              logPlayerAction(actionString, "Continued on your adventure.");
+              isFishing=false;
+              nextEncounter();
+            }
+            displayPlayerCannotEffect();
+            break;
           case "Trap-Obstacle":
             if (!encounterUsed) {
               if (totalBonus > 0) {
@@ -616,10 +735,42 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             //nextEncounter(); //Blocks the path ahead
             displayPlayerCannotEffect();
             break;
-          case "Trap":
           case "Trap-Big":
-          case "Trap-Attack":
+            isFishing=false;
+            if (_skillOK === false) {
+              if (enemyHp<=0) playerHpMax-=enemyHp;
+              if (enemySta<=0) playerStaMax-=enemySta;
+              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
+              if (enemyHp < 0 && playerHp > 0) AchievementManager.check('survive_trap');
+              encounterUsed = true;
+            } else {
+              logPlayerAction(actionString, _crit === 'success'
+                ? "Slipped through the danger effortlessly."
+                : "Carefully walked past it -1 🟢");
+              if (playerSta > 0 && _crit !== 'success') playerSta--;
+              nextEncounter();
+            }
+            break;
           case "Trap-Sleep":
+            isFishing=false;
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Stumbled, almost fell face-first -1 💔");
+                playerHit(1);
+              } else {
+                if (playerSta > 0) playerSta--;
+                logPlayerAction(actionString, "Stumbled walking past it -1 🟢");
+                displayPlayerCannotEffect();
+              }
+            } else {
+              logPlayerAction(actionString, _crit === 'success'
+                ? chooseFrom(["Walked away in a good mood.", "Strolled off without a care.", "Slipped past without a thought."])
+                : "Continued on your adventure.");
+            }
+            if (playerHp > 0) nextEncounter();
+            break;
+          case "Trap":
+          case "Trap-Attack":
             isFishing=false;
             logPlayerAction(actionString,"Continued on your adventure.");
             nextEncounter();
@@ -1018,6 +1169,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Sleep":
           case "Item":
             playerMgk--;
+            if (_skillOK === false) {
+              logPlayerAction(actionString, _crit === 'fail'
+                ? "Spell snapped back -1 🔵 -1 💔"
+                : "Spell fizzled without effect -1 🔵");
+              if (_crit === 'fail') playerHit(1, false);
+              displayEnemyCannotEffect();
+              break;
+            }
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
             displayEnemyEffect("🔥");
             isFishing=false;
@@ -1026,6 +1185,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Consumable":
           case "Consumable-Container":
+            if (_skillOK === false) {
+              playerMgk--;
+              logPlayerAction(actionString, _crit === 'fail'
+                ? "Spell snapped back -1 🔵 -1 💔"
+                : "Spell fizzled without effect -1 🔵");
+              if (_crit === 'fail') playerHit(1, false);
+              displayEnemyCannotEffect();
+              break;
+            }
             if (!playerCooked) {
               var logMessage="";
 
@@ -1063,8 +1231,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            logPlayerAction(actionString,"Trashed it with a spell -1 🔵");
             playerMgk--;
+            if (_skillOK === false) {
+              logPlayerAction(actionString, _crit === 'fail'
+                ? "Spell snapped back -1 🔵 -1 💔"
+                : "Spell fizzled without effect -1 🔵");
+              if (_crit === 'fail') playerHit(1, false);
+              displayEnemyCannotEffect();
+              break;
+            }
+            logPlayerAction(actionString,"Trashed it with a spell -1 🔵");
             isFishing=false;
             displayEnemyEffect("🔥");
             nextEncounter();
@@ -1072,8 +1248,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           default:
             if (enemyType.includes("Container") && !enemyType.includes("Locked")) {
-              logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
               playerMgk--;
+              if (_skillOK === false) {
+                logPlayerAction(actionString, _crit === 'fail'
+                  ? "Spell snapped back -1 🔵 -1 💔"
+                  : "Spell fizzled without effect -1 🔵");
+                if (_crit === 'fail') playerHit(1, false);
+                displayEnemyCannotEffect();
+                break;
+              }
+              logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
               displayEnemyEffect("🔥");
               isFishing=false;
               nextEncounter();
@@ -1219,8 +1403,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            // Altar pray/offer is now on button_speak; button_pray acts as Heal here
-            playerHeal();
+            // button_pray at Altar = heal (no mana cost; real altar prayer is on button_speak)
+            var _altarMissingHp = playerHpMax - playerHp;
+            if (_altarMissingHp > 0) {
+              var _altarHeal = Math.min(2, _altarMissingHp);
+              playerHp += _altarHeal;
+              logPlayerAction(actionString, "Healed at the altar +" + _altarHeal + " ❤️‍🩹");
+              displayPlayerGainedEffect();
+            } else {
+              logPlayerAction(actionString, "Already at full ❤️, nothing to heal.");
+              displayPlayerCannotEffect();
+            }
             break;
 
           default:
@@ -1379,9 +1572,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case "Altar":
-          logPlayerAction(actionString,"Your curse has angered the gods -1 🍀");
-          playerLck-=1;
+          if (_skillOK === false) {
+            logPlayerAction(actionString, "The curse dissolved without reaching the gods -2 🔵");
+            displayEnemyCannotEffect();
+          } else {
+            logPlayerAction(actionString,"Your curse has angered the gods -1 🍀");
+            playerLck-=1;
+            displayPlayerEffect("🪬");
+          }
+          break;
+
+        case "Fishing":
+          // Successful curse at a fishing spot summons the ancient water monster
+          logPlayerAction(actionString, "Angered the ancient water monster! -2 🔵");
+          displayEnemyEffect("🌊");
           displayPlayerEffect("🪬");
+          if (typeof AchievementManager !== 'undefined') AchievementManager.check('fish_boss');
+          var _fishBossEnc = getRandomEncounter(["Boss"]);
+          pushEncounter(_fishBossEnc);
+          nextEncounter();
           break;
 
         default:
@@ -2095,7 +2304,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         // Gibberish: action-bar failure + low INT = player fumbles their words
         // Chance: 90% at INT 0, ~0% at INT 7+; skips special non-combat encounter types
         if (_skillOK === false) {
-          var _noGibberishTypes = /Upgrade|Death|Dream|Altar|Container|Item|Consumable|Fishing|Prop|Shop|Curse/.test(enemyType);
+          var _noGibberishTypes = /Upgrade|Death|Dream|Altar|Shop|Curse/.test(enemyType);
           if (!_noGibberishTypes && _crit === 'fail') {
             enemyAtkBonus = Math.min(enemyAtkBonus + 1, 3);
             logPlayerAction(actionString, "Your words emboldened them +1 ⚔️");
@@ -2157,7 +2366,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
                 break;
               }
-              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
+              if (_crit === 'success') {
+                playerLck++;
+                var _altarCritMsg = (enemyMsg || "Prayer answered") + " +1 🍀";
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, _altarCritMsg, true, false);
+              } else {
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
+              }
               displayPlayerEffect("✨");
               displayPlayerGainedEffect();
               displayEnemyCannotEffect();
@@ -2275,10 +2490,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerEffect(heldQuestItem);
                 AchievementManager.check('quest_complete');
               }
-              //XP is even for interaction
-              var gainedXP=playerGainXP(1,25*playerLevel,"");
-
-              if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
+              var gainedXP=playerGainXP(_crit === 'success' ? 1.2 : 1, 25*playerLevel,"");
+              if (_crit === 'success') {
+                logPlayerAction(actionString, "Spoke with great conviction! " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
+              } else if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
                 logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 nextEncounter();
                 isFishing=false;
@@ -2287,15 +2502,35 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 isFishing=false;
                 displayPlayerEffect("✨");
               }
-            } else {
-              dbg(enemyQuestItems);
-              if (String(enemyQuestItems)!=""){
-                logPlayerAction(actionString,"Bring me: "+String(enemyQuestItems).replaceAll(","," "));
-              } else {
-                logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
-              }
-              displayPlayerCannotEffect();
+              break;
             }
+
+            // Bar-driven: crit fail = turns adversary, fail once = retry, fail twice = leaves
+            if (_crit === 'fail') {
+              enemyTurnAggressive("Your words provoked them into a fight!");
+              break;
+            }
+            if (_skillOK === false) {
+              if (encounterUsed) {
+                logPlayerAction(actionString, "They lost patience and walked away.");
+                isFishing=false;
+                nextEncounter();
+              } else {
+                encounterUsed = true;
+                logPlayerAction(actionString, "They seem unconvinced. Try once more.");
+                displayPlayerCannotEffect();
+                if (enemyCastIfMgk()) break;
+                enemyAttackOrRest();
+              }
+              break;
+            }
+
+            if (String(enemyQuestItems)!=""){
+              logPlayerAction(actionString,"Bring me: "+String(enemyQuestItems).replaceAll(","," "));
+            } else {
+              logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
+            }
+            displayPlayerCannotEffect();
             break;
 
           case "Death":
@@ -2410,7 +2645,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             if (playerHp>0){
               displayPlayerEffect("💤");
-              playerGetStamina(1, _crit === 'success');
+              playerGetStamina(_crit === 'success' ? 2 : 1, _crit === 'success');
             }
             if (_crit === 'success') {
               logPlayerAction(actionString, "Refreshed exceptionally fast +1 🟢");
@@ -2425,11 +2660,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Prop":
             if (!playerRested && (totalBonus>0 || totalMalus<0)){
-              playerRest(true);
-              if (totalBonus>0 && enemyMsg=="") enemyMsg="Rested very well, gaining extra"
-              if (totalMalus<0 && enemyMsg=="") enemyMsg="Did not rest well, somehow lost"
-              playerConsumed();
-              displayPlayerEffect("💤")
+              if (_skillOK === false && _crit !== 'fail') {
+                playerRestBadly();
+              } else if (_crit === 'fail') {
+                playerRested = true;
+                logPlayerAction(actionString, "Exhausted by trying to sleep.");
+                displayPlayerEffect("💤");
+              } else {
+                playerRest(true);
+                if (totalBonus>0 && enemyMsg=="") enemyMsg="Rested very well, gaining extra";
+                if (totalMalus<0 && enemyMsg=="") enemyMsg="Did not rest well, somehow lost";
+                playerConsumed();
+                displayPlayerEffect("💤");
+                if (_crit === 'success') {
+                  playerSta++;
+                  logPlayerAction(actionString, "Rested exceptionally well +1 🟢");
+                  displayPlayerRestedEffect();
+                }
+              }
             } else {
               playerRest();
             }
@@ -2445,10 +2693,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Checkpoint":
           case "Altar":
             if (_crit === 'fail') {
-              if (playerSta < playerStaMax) playerSta++;
+              playerSta++;
               playerRested = true;
               logPlayerAction(actionString, "Exhausted by trying to sleep.");
               displayPlayerEffect("💤");
+            } else if (_skillOK === false) {
+              playerRestBadly();
             } else {
               playerRest();
               if (_crit === 'success') {
@@ -2467,15 +2717,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             fishingRested = true;
             if (_crit === 'fail') {
-              if (playerSta < playerStaMax) playerSta++;
+              playerSta++;
               playerRested = true;
               logPlayerAction(actionString, "Exhausted by trying to sleep.");
               displayPlayerEffect("💤");
+            } else if (_skillOK === false) {
+              playerRestBadly();
             } else {
               playerRest();
               if (_crit === 'success') {
                 playerSta++;
-                logPlayerAction(actionString, "Rested exceptionally well.");
+                logPlayerAction(actionString, "Rested exceptionally well +1 🟢");
                 displayPlayerRestedEffect();
               }
             }

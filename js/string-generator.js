@@ -257,6 +257,14 @@ function getRunEndMessage() {
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
 
+function getRestBadlyText() {
+  return chooseFrom(["Slept poorly, waking up groggy.", "Tossed and turned, barely rested.", "Woke up early, not fully rested.", "Slept barely enough.", "Dreamed badly, woken up a bit tired."]);
+}
+
+function getWalkCritText() {
+  return chooseFrom(["Walked away in a good mood.", "Left whistling under their breath.", "Strolled off without a care.", "Walked away grinning to themselves.", "Continued with a spring in their step."]);
+}
+
 function getShopMessage(){
   var random_quotes = ["Well met, what's it gonna be this time?","Oh, its you again... take your pick carefully.","Back so soon? I guess you need a better gear.","You again? I guess you failed your quest then.","Out of lives again? Out of Drachmae soon too.","You really know how to keep me in business.","Failure suits you. My wares as well.","Back again? My prices stayed the same.","Another try, another tab to pay.","You fall, I profit. Circle of life.","The afterlife is free, my shop isn't.","You died. I survived. Let's trade.","Welcome back, my purse missed you already.","Still trying? Admirable... and profitable.","You again? Fate loves wasting time.","If effort was currency, you'd be rich.","No discount, no mercy, no refunds.","Your enemies hit hard. My prices hit harder.","You failed again. At least you're consistent.","You fall, they laugh, I charge full price.","Careful now. Dying gets expensive.","Try not to waste this investment too.","You keep dying. I keep stocking.","Another attempt? Hope your wallet holds up.","Progress is slow. My patience is slower.","You lost everything… except spending habits.","Back from the void? At least not empty handed.","The grave is patient, I am not.","You look worse. My inventory looks better.","Failure is a habit and so is buying.","You can't cheat death... or my prices.","Another reset, same old desperation.","At this rate, you'll haunt my shop forever."]
 .filter(item => !usedShopMessages.includes(item));

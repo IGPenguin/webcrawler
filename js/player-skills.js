@@ -232,6 +232,14 @@ function playerUseStamina(stamina, message = ""){
   }
 }
 
+function playerRestBadly() {
+  playerSta = Math.max(1, playerStaMax - 1);
+  playerMgk = Math.max(1, playerMgkMax - 1);
+  playerRested = true;
+  logPlayerAction(actionString, getRestBadlyText());
+  displayPlayerEffect("💤");
+}
+
 function playerUseMagic(magic, message = ""){
   if (playerMgk < magic) { //Not enough mana for this cost
     if (message != ""){ //Display specific "too tired message"

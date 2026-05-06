@@ -70,6 +70,14 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
+  // Sleep vs harmless creature (no ATK) — always succeeds, crit gives bonus STA
+  if (button === 'button_sleep' && /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types) && eAtk <= 0) {
+    var _csW = Math.min(8, Math.max(2, Math.round(2 + pLck * 0.8)));
+    var _csMin = 50 - Math.floor(_csW / 2);
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100,
+             critSuccessMin: _csMin, critSuccessMax: _csMin + _csW };
+  }
+
   // Speak / Block / Roll at an obstacle — impossible, it's a wall
   if ((button === 'button_speak' || button === 'button_block' || button === 'button_roll' ) && types === 'Trap-Obstacle') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
@@ -117,8 +125,23 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
-  // Prop / encounterUsed walk: very wide zone — tiny stumble risk exists
-  if (button === 'button_roll' && ( types === 'Prop'  ||  encounterUsed)) {
+  // Friend walk — always free to leave
+  if (button === 'button_roll' && types === 'Friend') {
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  }
+
+  // Trap-Roll walk — insanely hard to avoid triggering
+  if (button === 'button_roll' && types === 'Trap-Roll') {
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+  }
+
+  // Trap-Big walk — moderately hard, no crits
+  if (button === 'button_roll' && types === 'Trap-Big') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 36, successMax: 64 };
+  }
+
+  // Prop / encounterUsed / Fishing walk: very wide zone — tiny stumble risk exists
+  if (button === 'button_roll' && ( types === 'Prop' || types === 'Fishing' || encounterUsed)) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
@@ -260,6 +283,35 @@ function calcActionBarConfig(button, adjustment) {
              critSuccessMin: fishCsMin, critSuccessMax: fishCsMax, critFailW: fishCritFailW };
   }
 
+  // Trap-Big attack/cast — physically cannot be hit or burned
+  if ((button === 'button_attack' || button === 'button_cast') && types === 'Trap-Big') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Attack Item/Consumable — wide zone (smash to destroy)
+  if (button === 'button_attack' && (types === 'Item' || types === 'Consumable' || types === 'Consumable-Container')) {
+    var _itemW = Math.max(35, Math.min(75, Math.round(50 + pAtk * 4)));
+    var _itemMid = 50;
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT),
+             successMin: Math.max(4, _itemMid - Math.floor(_itemW/2)),
+             successMax: Math.min(96, _itemMid + Math.floor(_itemW/2)),
+             critSuccessMin: -1, critSuccessMax: -1, critFailW: 0 };
+  }
+
+  // Attack Container (unlocked) — wide zone (smashes it open)
+  if (button === 'button_attack' && types.includes('Container') && !types.includes('Locked')) {
+    var _ctnW = Math.max(35, Math.min(75, Math.round(50 + pAtk * 4)));
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT),
+             successMin: Math.max(4, 50 - Math.floor(_ctnW/2)),
+             successMax: Math.min(96, 50 + Math.floor(_ctnW/2)),
+             critSuccessMin: -1, critSuccessMax: -1, critFailW: 0 };
+  }
+
+  // Friend grab — they don't resist a touch
+  if (button === 'button_grab' && types === 'Friend') {
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  }
+
   // Grab Spirit — physically impossible, untouchable by definition
   if (button === 'button_grab' && isSpirit) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
@@ -267,6 +319,14 @@ function calcActionBarConfig(button, adjustment) {
 
   // Grab Stingy / Toxic / Undead — impossible (they bite back, you know it)
   if (button === 'button_grab' && (types.includes('Stingy') || types.includes('Toxic') || types.includes('Undead'))) {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Curse only works on living creatures, Friends, Altars, and Fishing (special)
+  // Everything else fizzles immediately
+  if (button === 'button_curse'
+      && !/Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types)
+      && types !== 'Altar' && types !== 'Fishing' && types !== 'Upgrade') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
@@ -289,10 +349,39 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
-  // Speak Prop — always succeeds, no skill required
-  if (button === 'button_speak' && types === 'Prop') {
-    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  // Friend speak — difficulty based on INT differential
+  if (button === 'button_speak' && types === 'Friend') {
+    var _fInt = Math.max(0, enemyInt || 0);
+    var _diff = _fInt - pInt;
+    var friendW;
+    var friendSpeed;
+    if (_diff > 2) {
+      // Friend much smarter — fishing-no-bait level
+      friendW = 6; friendSpeed = spdUnreal;
+    } else if (_diff > 0) {
+      friendW = Math.max(15, Math.round(25 - _diff * 5));
+      friendSpeed = spdHard;
+    } else if (_diff === 0) {
+      friendW = 40; friendSpeed = spdNormal;
+    } else {
+      // Player smarter — scales easier
+      friendW = Math.min(80, Math.round(45 + (-_diff) * 8));
+      friendSpeed = spdNormal;
+    }
+    var _fMid = 50;
+    var _fSMin = Math.max(3, _fMid - Math.floor(friendW / 2));
+    var _fSMax = Math.min(97, _fMid + Math.floor(friendW / 2));
+    var _fcSW = Math.max(2, Math.round(2 + pLck * 0.5));
+    var _fcSMin = Math.max(_fSMin + 1, _fMid - Math.floor(_fcSW / 2));
+    var _fcSMax = Math.min(_fSMax - 1, _fcSMin + _fcSW);
+    if (_fcSMax - _fcSMin < 2) { _fcSMin = -1; _fcSMax = -1; }
+    var _fcFW = _diff > 2 ? 8 : Math.max(3, Math.round(5 - pLck * 0.4));
+    return { speed: Math.round(friendSpeed * ACTION_BAR_SPEED_MULT),
+             successMin: _fSMin, successMax: _fSMax,
+             critSuccessMin: _fcSMin, critSuccessMax: _fcSMax, critFailW: _fcFW };
   }
+
+  // Prop speak now falls through to the standard stat-based speak calculation
 
   // Block Spirit — impossible, spectral attacks pass through any physical guard
   if (button === 'button_block' && isSpirit) {
