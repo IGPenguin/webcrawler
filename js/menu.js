@@ -1091,15 +1091,6 @@ var Menu = (function () {
       content.appendChild(vibSection);
     }
 
-    // ── Privacy notice ─────────────────────────────────────────────────────
-    var privSection = document.createElement('div');
-    //privSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 10px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
-    privSection.innerHTML = '<h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.65; color:#fff; text-align:center;">'
-      + '🔒 Anonymous telemetry is collected to improve the game.<br>'
-      + 'No personal data, everything is <a href="https://github.com/IGPenguin/stay-dead" style="color:#509920;">open source</a>.'
-      + '</h5>';
-    content.appendChild(privSection);
-
     // ── Data Persistence Notice ───────────────────────────────────────────
     var dataSection = document.createElement('div');
     dataSection.innerHTML = '<h5 style="margin:16px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.65; color:#fff; text-align:center;">'
