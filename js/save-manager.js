@@ -69,6 +69,11 @@ var SaveManager = (function () {
         runStartTimestamp:     runStartTimestamp,
         playerOriginName:      playerOriginName,
         adventureEndReason:    adventureEndReason,
+        fishingRested:         fishingRested,
+        isEndingState:         isEndingState,
+        gatewayPassed:         gatewayPassed,
+        isKillEnding:          isKillEnding,
+        brideDialogueActive:   brideDialogueActive,
         seenLoot:              seenLoot,
         seenEncounters:        seenEncounters,
         usedShopMessages:      usedShopMessages,
@@ -93,6 +98,7 @@ var SaveManager = (function () {
         totalBonus:            totalBonus,  totalMalus:  totalMalus,
         isFishing:             isFishing,   encounterUsed: encounterUsed,
         corpseState:           corpseState, corpseSnapshot: corpseSnapshot,
+        corpseHasLoot:         corpseHasLoot, corpseLoot:  corpseLoot,
         // ── Area / story queue ───────────────────────────────────────────────
         areaName:              areaName,    previousArea: previousArea,
         encounterIndex:        encounterIndex,
@@ -143,6 +149,11 @@ var SaveManager = (function () {
     runStartTimestamp       = s.runStartTimestamp   || Date.now();
     playerOriginName        = s.playerOriginName    || '';
     adventureEndReason      = s.adventureEndReason;
+    fishingRested           = !!s.fishingRested;
+    isEndingState           = !!s.isEndingState;
+    gatewayPassed           = !!s.gatewayPassed;
+    isKillEnding            = !!s.isKillEnding;
+    brideDialogueActive     = !!s.brideDialogueActive;
     seenLoot                = s.seenLoot       || [];
     seenEncounters          = s.seenEncounters || [];
     usedShopMessages        = s.usedShopMessages || [];
@@ -167,6 +178,8 @@ var SaveManager = (function () {
     isFishing            = s.isFishing;    encounterUsed      = s.encounterUsed;
     corpseState          = s.corpseState    || '';
     corpseSnapshot       = s.corpseSnapshot || null;
+    corpseHasLoot        = !!s.corpseHasLoot;
+    corpseLoot           = s.corpseLoot     || null;
     // Area / story
     areaName           = s.areaName;      previousArea       = s.previousArea;
     encounterIndex     = s.encounterIndex;
