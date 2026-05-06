@@ -1,0 +1,16 @@
+{
+  "name": "Stay Dead",
+  "short_name": "Stay Dead",
+  "description": "A browser-based text roguelike RPG about desperate love and the decaying world.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#202020",
+  "theme_color": "#202020",
+  "icons": [
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

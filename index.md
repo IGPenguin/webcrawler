@@ -12,11 +12,20 @@ layout: default
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="manifest" href="manifest.json">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="js/constants.js"></script>
 <script>
   if (getPlatform() === 'android') document.documentElement.classList.add('is-android');
   applyFontPreference();
+  
+  // Request persistent storage to prevent browsers from wiping data after inactivity
+  if (navigator.storage && navigator.storage.persist) {
+    navigator.storage.persist().then(function(persistent) {
+      if (persistent) console.log("Storage will not be cleared except by explicit user action");
+      else console.log("Storage may be cleared by the UA under storage pressure.");
+    });
+  }
 </script>
 <script src="js/game-config.js"></script>
 <script src="js/logging.js"></script>
