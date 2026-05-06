@@ -96,6 +96,12 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
 
 function pushBossLoot() {
   if (areaName.includes("Shrouded")) return;
+  if (areaName === "Fishing") {
+    var _firstKill = !AchievementManager.isUnlocked('fish_boss_kill');
+    AchievementManager.check('fish_boss_kill');
+    if (_firstKill) pushEncounter(drachmaCoin);
+    return;
+  }
   if (procAbilityChance("", 25 + playerLck)) {
     pushEncounter(getWeightedEncounter(["Item"], ["Artifact"]));
   } else {

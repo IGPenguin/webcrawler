@@ -62,6 +62,7 @@ var AchievementManager = (function () {
 
     { id: 'fish_legendary_first',emoji: '🏺', desc: 'Reeled in a legendary find!', hint: 'The best things are worth waiting for.', unlock: '' },
     { id: 'fish_boss_first',     emoji: '🦕', desc: 'Fished out a legendary beast!', hint: 'The rumors were true after all.', unlock: 'Unlocked the <b>🔍 Surveyor</b> origin.' },
+    { id: 'fish_boss_kill',      emoji: '🦴', desc: 'Defeated the ancient water monster!', hint: 'Calm the cursed waters forever.', unlock: 'Unlocked one extra <b>🪙 Drachma</b>.' },
     { id: 'spoke_boss',          emoji: '🗣️', desc: 'Calmed a Boss into submission!', hint: 'Could peace be an actual option?', unlock: 'Unlocked the <b>📣 Loud Vocalizer</b> item.' },
     { id: 'spoke_demon',         emoji: '🤯', desc: 'Talked a Demon into submission!', hint: 'Try to make a deal with the devil.', unlock: 'Unlocked the <b>😈 Devil</b> origin.' },
     { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: "Unlocked the <b>📦 Schrödinger's Box</b>." },
@@ -126,7 +127,8 @@ var AchievementManager = (function () {
     letterGrab:          false,
     letterDitch:         false,
     diedByTrap:          false,
-    diedBySleep:         false
+    diedBySleep:         false,
+    killedFishingBoss:   false
   };
 
   var _unlocked       = {};
@@ -441,6 +443,10 @@ var AchievementManager = (function () {
 
       case 'fish_boss':
         if (!_stats.fishedBoss) { _stats.fishedBoss = true; _save(); _unlock('fish_boss_first'); }
+        break;
+
+      case 'fish_boss_kill':
+        if (!_stats.killedFishingBoss) { _stats.killedFishingBoss = true; _save(); _unlock('fish_boss_kill'); }
         break;
 
       case 'fish_legendary':

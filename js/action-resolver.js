@@ -1583,6 +1583,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case "Fishing":
+          if (AchievementManager.isUnlocked('fish_boss_kill')) {
+            logPlayerAction(actionString, "The depths don't answer anymore -2 🔵");
+            displayEnemyEffect("🌊");
+            break;
+          }
           // Successful curse at a fishing spot summons the ancient water monster
           logPlayerAction(actionString, "Angered the ancient water monster! -2 🔵");
           displayEnemyEffect("🌊");

@@ -6,20 +6,19 @@
 
 # Priority 0
 - ME: Finish the game at least 3x, upload data to leaderboards, verify UI
+  - Pay attention to action chances and outcomes
+  - Check score calcualation - does it make sense?
+  - Summon fishing boss (curse), kill it to get drachma (then do it again and see if it errors out, also do it in another sesh to see if another drachma pops)
 - ME: Tweak ui - values reposition Rankings and Chronicles ui (list+detail)
 - ME: complete the rest of the missing achievement unlocks, enhance origins list (add more rarities)
 - ME: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
 
 # Claude
 - shop: buy buttons per base item base rarity - colored btns (cheapest = all, but big pool)
-- add: special fishing drachma for killing the fishing boss (limited to only one ever)
 - mod: hold the delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)
   - then confirm with another click as currently
 - NEW: hardcoded "graveyard reminder" encounter after first and second boss - vague hints on the game story
   - fullscreen fade like when game start (or endgame) 
-- ...
-- fix: crit dodge boss heavy was not handled as crit
-- fix: cursed enemy achiev to only pop when actually applied to an enemy (not when simply casting curse)
 - ...
 - NEW: Item/Origin increasing drop chances for higher than common rarity
 - NEW: Item/Origin for bigger crit chance interval by ??%
