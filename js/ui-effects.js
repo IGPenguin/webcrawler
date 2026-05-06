@@ -283,21 +283,33 @@ function menuFade(callback) {
   });
 }
 
+var _persistentEnemyEffect = null;
+
 function displayEnemyEffect(message){
   var el = document.getElementById('id_enemy_overlay');
   if (!el) return;
   el.style.opacity = '';
   displayEffect(message, el);
+  if (_persistentEnemyEffect) {
+    var snapshot = _persistentEnemyEffect;
+    var gen = _animateUIElementGen.get(el);
+    el.addEventListener('animationend', function onRestore() {
+      el.removeEventListener('animationend', onRestore);
+      if (_animateUIElementGen.get(el) !== gen) return;
+      if (_persistentEnemyEffect === snapshot) setPersistentEnemyEffect(snapshot.icon, snapshot.pulse);
+    });
+  }
 }
 
 function setPersistentEnemyEffect(icon, pulse = false) {
   var el = document.getElementById('id_enemy_overlay');
   if (!el) return;
+  _persistentEnemyEffect = { icon: icon, pulse: pulse };
   var gen = (_animateUIElementGen.get(el) || 0) + 1;
   _animateUIElementGen.set(el, gen);
   el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__pulse', 'animate__infinite');
   el.innerHTML = icon;
-  el.style.opacity = '0.9';
+  el.style.opacity = '0.8';
   el.style.display = 'flex';
   if (pulse) {
     el.style.setProperty('--animate-duration', '2s');
@@ -308,6 +320,7 @@ function setPersistentEnemyEffect(icon, pulse = false) {
 function clearPersistentEnemyEffect() {
   var el = document.getElementById('id_enemy_overlay');
   if (!el) return;
+  _persistentEnemyEffect = null;
   var gen = (_animateUIElementGen.get(el) || 0) + 1;
   _animateUIElementGen.set(el, gen);
   el.classList.remove('animate__animated', 'animate__fadeOut', 'animate__pulse', 'animate__infinite');

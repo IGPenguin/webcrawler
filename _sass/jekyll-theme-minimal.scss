@@ -174,8 +174,9 @@ a:active, a:hover, a:focus {
   font-size:76px;
   position: absolute;
   z-index: 1;
-  left:50%;
-  transform: translatex(-50%);
+  left:0;
+  right:0;
+  text-align:center;
   margin-top:8px;
 }
 
