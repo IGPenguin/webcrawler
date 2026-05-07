@@ -14,7 +14,7 @@
 - ME: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
 
 # Claude
-- shop: buy buttons per base item base rarity - colored btns (cheapest = all, but big pool)
+- Add "impact" frames when hitting (flash white) or being hit (red white).
 - ...
 - NEW: Item/Origin increasing drop chances for higher than common rarity
 - NEW: Item/Origin for bigger crit chance interval by ??%
@@ -42,7 +42,7 @@
 - obscure wiki, bestiary for github (no exact info or nmbers, just hints) link via button in menu
 
 # Hades
-- add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items) when spoken to or defeated.
+- add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items - roll item by emoji from local encounters.csv) when spoken to or defeated.
 - add hidden stat visbility (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
 - full screen shake on crit interval hits (and more high-intensity global effects?)
 - implement a basic "Low Health" and "Low Stamina" visual pulses (to show urgency when player resources are very low = 1)
@@ -87,7 +87,7 @@
 - Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
   - kinde variant to the proposed "camp" encounter type
 - Altar with no bonus attribute, pray = get exp
-- Killed by undead, become undead  with 1hp, 1/2 sta, no death state, until fully killed
+- Killed by undead, become undead  with 1hp, 1/2 sta, skip death state (until fully killed)
   - Append zombie emoji before 🧟 John Doe (Undead)
   - undead then have 0 base attack against you
 - if stat over 5, display numeric - 4/5
