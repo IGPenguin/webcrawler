@@ -321,6 +321,7 @@ function redraw(){
         displayPlayerState("In Combat",colorRed,"0.8");
         setButton('button_sleep',"💤 Rest"); //Hack
       }
+      if (playerHp === 1) displayPlayerState("Bleeding", colorRed, "0.4");
       break;
   }
 

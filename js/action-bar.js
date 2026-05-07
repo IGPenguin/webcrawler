@@ -19,6 +19,7 @@ var ActionBar = (function () {
   var _cfw       = 0;      // crit fail edge width (each side)
 
   var _elBar, _elTrack, _elCursor, _elCancel;
+  var _lastZone = 0; // 0=fail, 1=success, 2=crit
 
   function _init() {
     _elBar    = document.getElementById('id_action_bar');
@@ -39,6 +40,7 @@ var ActionBar = (function () {
     _dir       = 1;
     _running   = true;
     _lastTs    = null;
+    _lastZone  = 0;
 
     // Determine crit zones
     _csMin    = (config.critSuccessMin !== undefined) ? config.critSuccessMin : -1;
@@ -101,6 +103,19 @@ var ActionBar = (function () {
     if (_value <= 0)   { _value = 0;   _dir =  1; }
 
     _elCursor.style.left = _value.toFixed(1) + '%';
+
+    // Zone transition haptics
+    var curZone = 0; // 0=fail, 1=success, 2=crit
+    if (_value >= _config.successMin && _value <= _config.successMax) {
+      curZone = 1;
+      if (_hasCrits && _value >= _csMin && _value <= _csMax) curZone = 2;
+    }
+
+    if (curZone !== _lastZone) {
+      _lastZone = curZone;
+      if (typeof vibrateTick === 'function') vibrateTick();
+    }
+
     _raf = requestAnimationFrame(_tick);
   }
 

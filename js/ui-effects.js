@@ -525,6 +525,12 @@ async function actionVibrateFeedback(buttonID){
   await new Promise(resolve => setTimeout(resolve, 100)); // muhehe
 }
 
+function vibrateTick(){
+  if (typeof vibrationEnabled !== 'undefined' && !vibrationEnabled) return;
+  if (!("vibrate" in window.navigator)) return;
+  window.navigator.vibrate(8);
+}
+
 //Technical
 
 function hasAnyOf(array=[],item){
