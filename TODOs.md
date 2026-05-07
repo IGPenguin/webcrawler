@@ -15,10 +15,6 @@
 
 # Claude
 - shop: buy buttons per base item base rarity - colored btns (cheapest = all, but big pool)
-- mod: hold the delete button to show confirmation (just be updating the text "Hold for 3/2/1 sec..", cancel on release)
-  - then confirm with another click as currently
-- NEW: hardcoded "graveyard reminder" encounter after first and second boss - vague hints on the game story
-  - fullscreen fade like when game start (or endgame) 
 - ...
 - NEW: Item/Origin increasing drop chances for higher than common rarity
 - NEW: Item/Origin for bigger crit chance interval by ??%
@@ -176,5 +172,27 @@
   - All solid backgrounds should have shading, texts can be enhaced too, but no glow.
   - Resolve "programmers art" permanently with a professional, scalable, and cohesive aesthetic that feels "alive" and premium.
 
+# Technical Debt & Refactoring
+- **Logic & Balance**
+  - [ ] **Curse Scaling:** Make curse stats (negative values) affect the action bar success width. Currently, all curses are equally hard regardless of intensity. (`js/action-config.js`)
+  - [ ] **Karma Scaling:** Revise the reincarnation bonus threshold. Currently, any positive karma gives the same reward; should scale or have tiers. (`js/player-skills.js`)
+  - [ ] **Enemy Defense:** Ensure `enemyDef` is handled in all player skill calculations, including consumables. (`js/player-skills.js`)
+  - [ ] **Magic Finisher:** Refactor the "mercy" logic for finishing enemies with 1 HP using magic. (`js/action-resolver.js`)
+
+- **Architecture & Extensibility**
+  - [ ] **Generator State:** Cleanup the hacky logic in `nextEncounter` for "Generator" types to ensure area transitions and "seen" tracking are robust. (`js/game-loop.js`)
+  - [ ] **Boss Type Tracking:** Replace the `enemyBossType` global hack with a cleaner state management approach. (`js/encounter-loader.js`)
+  - [ ] **Action Type Cleanup:** Refactor or remove the "Upgrade" action type if it's redundant. (`js/action-resolver.js`, `js/ui-render.js`)
+
+- **UI/UX & Visuals**
+  - [ ] **Sharing System:** Fix the screenshot capture logic. Ensure buttons are hidden during capture and the full log is visible without clipping. (`js/menu.js`)
+  - [ ] **Coin Log Formatting:** Replace the brittle string-splitting hacks for coin costs in the log with a structured data approach. (`js/logging.js`)
+  - [ ] **Button Polish:** Invent a new "Perk" or state to replace the placeholder "Pain" label on the rest button. (`js/ui-buttons.js`)
+  - [ ] **Emoji Polish:** Finalize emoji assignments for unassigned types (🐅 > ⚔️ etc.). (`js/enemy-skills.js`, `js/action-resolver.js`)
+
+- **Internal Hacks**
+  - [ ] **Achievement Timing:** Fix the timing hack for logging achievements after actions. (`js/achievements.js`)
+  - [ ] **Team Rendering:** Refactor the "Hacky hacky hacky" team sorting/rendering logic. (`js/ui-render.js`)
+
 # Trash
-- build a "Game Tip" system that triggers based on player state (e.g., first time dying, first time finding an Artifact, being low on Stamina). Uses the existing string-generator.js and ui-render.js toast system. 
+- build a "Game Tip" system that triggers based on player state (e.g., first time dying, first time finding an Artifact, being low on Stamina). Uses the existing string-generator.js and ui-render.js toast system. (Would only appear for easy/story difficulty, can reuse achievement toasts)

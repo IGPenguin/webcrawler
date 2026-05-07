@@ -90,12 +90,12 @@ var GAME_CONFIG = DIFFICULTY_MODES.Standard;
 // playerLck and playerKarma further shift the slices at runtime (see RarityManager.rollTier).
 // A tier's effective weight is clamped to 0 minimum and the CDF re-normalises the remainder.
 var RARITY_TIERS = {
-  Cursed:    { weight:  3, color: colorSoftRed,     bg: colorDarkRedSubtle, netMin: -Infinity, netMax: -0.01 },
-  Common:    { weight: 60, color: colorWhite,       bg: '',                 netMin:  0,        netMax:  0.49 },
-  Uncommon:  { weight: 25, color: colorLightBlue,   bg: colorDarkBlue,      netMin:  0.5,      netMax:  1.49 },
-  Rare:      { weight: 10, color: colorPurple,      bg: colorDarkPurple,    netMin:  1.5,      netMax:  2.99 },
-  Legendary: { weight:  2, color: colorOrange,      bg: colorDarkOrange,    netMin:  3.0,      netMax:  Infinity },
-  Familiar:  { weight:  0, color: colorSoftGreen,   bg: colorFamiliarGreen, netMin:  0,        netMax:  0 }
+  Cursed:    { weight:  3, color: colorSoftRed,       bg: colorDarkRedSubtle, netMin: -Infinity, netMax: -0.01 },
+  Common:    { weight: 60, color: colorWhite,         bg: '',                 netMin:  0,        netMax:  0.49 },
+  Uncommon:  { weight: 25, color: colorLightBlue,     bg: colorDarkBlue,      netMin:  0.5,      netMax:  1.49 },
+  Rare:      { weight: 10, color: colorPurple,        bg: colorDarkPurple,    netMin:  1.5,      netMax:  2.99 },
+  Legendary: { weight:  2, color: colorOrange,        bg: colorDarkOrange,    netMin:  3.0,      netMax:  Infinity },
+  Familiar:  { weight:  0, color: colorFamiliarGreen, bg: colorSoftGreen,     netMin:  0,        netMax:  0 }
 };
 
 

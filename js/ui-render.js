@@ -69,7 +69,7 @@ function redraw(){
       enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Minion",colorOrange);
       enemyStatusString=appendEnemyStats();
       break;
-    case "Swift": //TODO: Perhaps there should also be "Flying"??
+    case "Swift":
       enemyTeamUIElement.innerHTML=decorateStatusText("💨","Swift",colorGreen);
       enemyStatusString=appendEnemyStats();
       break;
@@ -88,7 +88,6 @@ function redraw(){
         enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
         cardUIElement.style.background=colorDarkRed;
       }
-
       //Do not display stats = reward hidden
       break;
     case "Small":
@@ -98,7 +97,6 @@ function redraw(){
     case "Recruit":
     case "Standard":
       enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Standard",colorWhite);
-      if (areaName.includes("Depths of Slumber"))enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed); //Tutorial hack
       enemyStatusString=appendEnemyStats();
       break;
     case "Demon":
