@@ -55,6 +55,7 @@ function _doStartGame(isContinue) {
       if (saved) {
         SaveManager.restoreGameState(saved);
         // linesGenerator / linesLoot are rebuilt from encounters.csv on every load — no restore needed
+        setBackground(areaName);
         redraw();
         registerClickListeners(0);
         registerClickListenersTechnical();
