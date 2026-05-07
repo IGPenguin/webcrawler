@@ -7,6 +7,7 @@ var AchievementManager = (function () {
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first everlasting Drachma!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
+    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🧿 Wizard</b> and <b>🩸 Warlock</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
     { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.', unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
@@ -24,7 +25,6 @@ var AchievementManager = (function () {
     { id: 'level_5',             emoji: '🎊', desc: 'Reached the character level 5!', hint: 'The path ahead grows longer.', unlock: 'Unlocked the <b>🎓 Scholar</b> origin.' },
     { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?", unlock: 'Unlocked the <b>🎣 Angler</b> origin.' },
     { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
-    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
 
     { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key for the first time!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open for the first time!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
@@ -62,7 +62,7 @@ var AchievementManager = (function () {
 
     { id: 'fish_legendary_first',emoji: '🏺', desc: 'Reeled in a legendary find!', hint: 'The best things are worth waiting for.', unlock: '' },
     { id: 'fish_boss_first',     emoji: '🦕', desc: 'Fished out a legendary beast!', hint: 'The rumors were true after all.', unlock: 'Unlocked the <b>🔍 Surveyor</b> origin.' },
-    { id: 'fish_boss_kill',      emoji: '🦴', desc: 'Defeated the ancient water monster!', hint: 'Calm the cursed waters forever.', unlock: 'Unlocked one extra <b>🪙 Drachma</b>.' },
+    { id: 'fish_boss_kill',      emoji: '🦴', desc: 'Defeated the ancient water monster!', hint: 'Calm the cursed waters forever.', unlock: 'Unlocked a hidden <b>🪙 Drachma</b>.' },
     { id: 'spoke_boss',          emoji: '🗣️', desc: 'Calmed a Boss into submission!', hint: 'Could peace be an actual option?', unlock: 'Unlocked the <b>📣 Loud Vocalizer</b> item.' },
     { id: 'spoke_demon',         emoji: '🤯', desc: 'Talked a Demon into submission!', hint: 'Try to make a deal with the devil.', unlock: 'Unlocked the <b>😈 Devil</b> origin.' },
     { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: "Unlocked the <b>📦 Schrödinger's Box</b>." },
