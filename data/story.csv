@@ -1,16 +1,14 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
 Eternal Realm;💀;You are dead!;Death;0;0;0;0;0;0;0;End of the Line;Try to <b>✨ Revive</b> yourself to continue.<br>Send feedback using <b>💚 Rate</b>.</b>;;none
+
 //Tutorial Dreams
 Depths of Slumber;😴;Restless Dream;Dream;0;0;0;0;0;0;0;Deep Sleep;<b>Can't move a muscle</b>, you're feeling too weak.<br>Try using <b>💤 Sleep</b> to recover lost <b>🟢 Energy</b>.;Caught off guard by a bad thought.;none
 Depths of Slumber;👤;Hindering Shade;Trap-Obstacle;0;0;0;0;0;0;0;Transient Being;Somone blocks your way, <b>👋 Move</b> them away!<br><b>Press and hold</b>, release in the <b>✅ Green Zone</b>.;They are not letting you go.;none
 Depths of Slumber;👹;Vivid Nightmare;Demon;2;1;1;0;0;0;0;Imaginary Threat;<b>🔰 Block</b> or <b>🌀 Dodge</b> to avoid enemy strikes.<br><b>⚔️ Attack</b> once they deplete <b>🟢 Energy</b>.;Consumed by your own nightmare.;none
 Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real;none
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> in your mind:<br>n/a;Woken up in: <b>Fading Wildlands</b>;none
+
 //Debug
-Fading Wildlands;🌱;Strained Growth;Prop;0;0;0;0;0;0;0;Wild Flora;Too vibrant for a land this quiet.<br>;;none
-Forsaken Village;🧧;Wedding Invitation;Item;0;0;0;0;0;0;0;Piece of History;po/em;Your heart will always remember;none
-Twisted Fairyland;⛩️;Forsaken Arch;Memory;0;0;0;0;0;0;0;Piece of History;It stood before the world came apart.<br>Feels familiar on sight.;Left it behind without a word.;none
-River of Sorrows;💌;Soaked Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
 
 //Fading Wildlands
 Fading Wildlands;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You don't remember</b> what happened before.<br>Looks like there's <b>only one way to find out</b>.;Set out on a new adventure!;none
@@ -23,6 +21,7 @@ Fading Wildlands;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Fading Wildlands;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Fading Wildlands;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Fading Wildlands;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+
 //Forsaken Village
 Forsaken Village;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
@@ -35,9 +34,10 @@ Forsaken Village;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+
 //Twisted Fairyland
 Twisted Fairyland;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
-Twisted Fairyland;⛩️;Forsaken Arch;Memory;0;0;0;0;0;0;0;Piece of History;It stood before the world came apart.<br>Feels familiar on sight.;Left it behind without a word.;none
+Twisted Fairyland;⛩️;Forsaken Arch;Memory;0;0;0;0;0;0;0;Piece of History;It stood before the world came apart.<br>Feels familiar on sight.;Left it behind, perhaps forever.;none
 Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;❓;Mid Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX;none
@@ -49,6 +49,7 @@ Twisted Fairyland;❓;Hard Encounter;Generator-4;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough to keep you afloat.<br>;Paddled towards the horizon.;none
+
 //River of Sorrows
 River of Sorrows;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
@@ -56,6 +57,7 @@ River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+
 //Shrouded Necropolis
 Shrouded Necropolis;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
@@ -72,6 +74,7 @@ Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;0;Forgotten
 Shrouded Necropolis;😟;Intrusive Thoughts;Dream;0;0;0;0;0;0;0;Disturbing Feeling;The time has come to <b>acknowledge your sins</b>.<br>You cannot hide from your past anymore.;The inner thoughts took over.;none
 Shrouded Necropolis;😦;Tragic Realization;Dream;0;0;0;0;0;0;0;Breaking Point;Ohh... <b>You finally remember</b> what you've done.<br>That nefarious <b>witchery did not go well</b>.;Everything seems so clear now.;none
 Shrouded Necropolis;😱;Boneshaking Panic;Dream;0;0;0;0;0;0;0;Eternal Suffering;<b>You corrupted the whole world around you!</b><br>Why couldn't you just let her go in peace.;You've revealed the horrific truth.;none
+
 //Auxiliary Space
 Auxiliary Space;👾;Stack Overflow;Death;0;0;0;0;0;0;0;The End ...for now;<b>You just finished the "Stay Dead" beta!</b><br>Provide feedback using the <b>💌 Review</b> button.;;none
 Auxiliary Space;🚫;Overflow Hotfix;Hack;0;0;0;0;0;0;0;XXX;XXX<br>XXX;XXX;none
