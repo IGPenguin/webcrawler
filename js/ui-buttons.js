@@ -1,4 +1,44 @@
 //UI Buttons
+
+// Attach a hold-to-confirm behaviour to a button.
+// The user must hold for `seconds` seconds without releasing or leaving.
+// On completion, `onComplete` is called (e.g. reveal a confirm row).
+// Returns a cleanup function that resets the button to its original state.
+function holdToConfirm(btn, seconds, onComplete) {
+  var origHTML = btn.innerHTML;
+  var holdInterval = null;
+
+  function reset() {
+    if (!holdInterval) return;
+    clearInterval(holdInterval);
+    holdInterval = null;
+    btn.innerHTML = origHTML;
+    btn.removeEventListener('pointerup',     reset);
+    btn.removeEventListener('pointerleave',  reset);
+    btn.removeEventListener('pointercancel', reset);
+  }
+
+  btn.addEventListener('pointerdown', function (e) {
+    e.preventDefault();
+    if (holdInterval) return;
+    var count = seconds;
+    btn.innerHTML = '✕ Hold for ' + count + ' sec...';
+    btn.addEventListener('pointerup',     reset);
+    btn.addEventListener('pointerleave',  reset);
+    btn.addEventListener('pointercancel', reset);
+    holdInterval = setInterval(function () {
+      count--;
+      if (count > 0) {
+        btn.innerHTML = '✕ Hold for ' + count + ' sec...';
+      } else {
+        reset();
+        onComplete();
+      }
+    }, 1000);
+  });
+
+  return reset;
+}
 function setButton(elementID,text,color=colorWhite){
   document.getElementById(elementID).innerHTML=text.replace(" "," <b style=\"color:"+color+";\">")+"</b>";
   if (text.includes("🪙")) { //HAAAACKKKK!!!

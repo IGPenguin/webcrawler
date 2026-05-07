@@ -1161,7 +1161,7 @@ var Menu = (function () {
     });
     document.getElementById('menu_settings_back').addEventListener('click', function () { _renderMain(); });
 
-    document.getElementById('menu_settings_purge_1').addEventListener('click', function () {
+    holdToConfirm(document.getElementById('menu_settings_purge_1'), 3, function () {
       document.getElementById('menu_settings_purge_1').style.display = 'none';
       document.getElementById('menu_settings_purge_2').style.display = 'flex';
     });
