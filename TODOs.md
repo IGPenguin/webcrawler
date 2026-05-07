@@ -9,8 +9,9 @@
   - Pay attention to action chances and outcomes
   - Check score calcualation - does it make sense?
   - Summon fishing boss (curse), kill it to get drachma (then do it again and see if it errors out, also do it in another sesh to see if another drachma pops)
+- ...
 - ME: Tweak ui - values reposition Rankings and Chronicles ui (list+detail)
-- ME: complete the rest of the missing achievement unlocks, enhance origins list (add more rarities)
+- ME: complete the rest of the missing achievement unlocks
 - ME: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
 
 # Claude
