@@ -113,7 +113,7 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
       pushEncounter(drachmaShop);
     }
-    if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player — skip tutorial, no shop yet
+    else if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player — skip tutorial, no shop yet
       loadEncounter(5);
       enemyName  = "Familiar Moment";
       enemyEmoji = "🤔";
@@ -341,6 +341,79 @@ function getWeightedEncounter(encounterTypes, includeStrings, areaNameOverride, 
     return tempLines[Math.floor(Math.random() * tempLines.length)];
   }
   dbg('RarityRoll:' + tier);
+  return bucket[Math.floor(Math.random() * bucket.length)];
+}
+
+// Like getWeightedEncounter but uses a caller-supplied rarity tier instead of rolling one.
+// Falls back to flat random if the forced tier has no candidates in the filtered pool.
+function getWeightedEncounterByTier(forcedTier, encounterTypes, includeStrings, areaNameOverride, excludeStrings) {
+  includeStrings   = includeStrings   || [];
+  areaNameOverride = areaNameOverride || '';
+  excludeStrings   = excludeStrings   || [];
+
+  var tempLines = linesGenerator;
+  var generatorAreaName = areaNameOverride || areaName;
+
+  if (areaNameOverride !== 'ALL') {
+    tempLines = $.grep(tempLines, function (item) {
+      return item.indexOf('area:' + generatorAreaName) === 0;
+    });
+  }
+
+  var matchingTypeLines = [];
+  (encounterTypes || []).forEach(function (type) {
+    $.grep(tempLines, function (item) {
+      return item[3].includes('type:' + type);
+    }).forEach(function (line) { matchingTypeLines.push(line); });
+  });
+  tempLines = matchingTypeLines;
+
+  if (includeStrings.length > 0) {
+    var inclLines = [];
+    includeStrings.forEach(function (s) {
+      $.grep(tempLines, function (item) { return String(item).includes(s); })
+        .forEach(function (line) { inclLines.push(line); });
+    });
+    tempLines = inclLines;
+  }
+
+  if (excludeStrings.length > 0) {
+    tempLines = tempLines.filter(function (line) {
+      return !excludeStrings.some(function (s) { return String(line).includes(s); });
+    });
+  }
+
+  seenEncounters.forEach(function (seenName) {
+    tempLines = tempLines.filter(function (line) {
+      return line[2].split('name:')[1] !== seenName;
+    });
+  });
+
+  _generationBuffer.forEach(function (genName) {
+    tempLines = tempLines.filter(function (line) {
+      return line[2].split('name:')[1] !== genName;
+    });
+  });
+
+  var unlockedLines = tempLines.filter(_achievUnlocked);
+  if (unlockedLines.length > 0) tempLines = unlockedLines;
+
+  if (tempLines.length === 0) return getRandomEncounter(encounterTypes, includeStrings, areaNameOverride, excludeStrings);
+
+  var buckets = {};
+  tempLines.forEach(function (line) {
+    var tier = _rarityFromRow(line);
+    if (tier === 'Familiar') tier = 'Common';
+    if (!buckets[tier]) buckets[tier] = [];
+    buckets[tier].push(line);
+  });
+
+  var bucket = buckets[forcedTier];
+  if (!bucket || bucket.length === 0) {
+    dbg('ForcedTier:' + forcedTier + ' → no pool, flat fallback');
+    return tempLines[Math.floor(Math.random() * tempLines.length)];
+  }
+  dbg('ForcedTier:' + forcedTier);
   return bucket[Math.floor(Math.random() * bucket.length)];
 }
 

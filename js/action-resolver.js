@@ -53,7 +53,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Aspect");
+          drachmaeBuy(1,"Favor");
           break;
         }
 
@@ -843,7 +843,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_block':
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Gamble",_skillOK);
+          drachmaeBuy(2,"Body");
           break;
         }
 
@@ -1000,7 +1000,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (enemyType.includes("Locked")) mkgCost=2;
 
           if (enemyType=="Shop") {
-            displayPlayerCannotEffect();
+            drachmaeBuy(1,"Gamble",_skillOK);
             break;
           }
 
@@ -1310,7 +1310,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case 'button_pray':
           if (enemyType=="Shop") {
-            displayPlayerCannotEffect();
+            drachmaeBuy(3,"Level");
             break;
           }
 
@@ -1464,7 +1464,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_curse':
         if (enemyType=="Shop") {
-          displayPlayerCannotEffect();
+          drachmaeBuy(4,"Artifact");
           break;
         }
 
@@ -1645,7 +1645,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       case 'button_grab': //Player vs encounter stamina decides the success
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Item");
+          drachmaeBuy(1,"ItemCommon");
           break;
         }
 
@@ -2350,7 +2350,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType!="Dream" && enemyType!="Death") displayPlayerEffect("💬");
 
         if (enemyType=="Shop") {
-          drachmaeBuy(3,"Artifact");
+          drachmaeBuy(3,"ItemRare");
           displayPlayerEffect("");
           break;
         }
@@ -2646,7 +2646,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (isFishing) fishingRested = true;
 
         if (enemyType=="Shop") {
-          drachmaeBuy(2,"Level");
+          drachmaeBuy(2,"ItemUncommon");
           break;
         }
 

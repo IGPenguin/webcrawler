@@ -136,13 +136,14 @@ function redraw(){
       break;
 
     case "Item":
-      if ((totalBonus > 0) || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
+      var itemNet = enemyAtk*3 + enemyMgk*2 + enemyHp*1.5 + enemySta*1.5 + enemyLck*0.5 + enemyInt*0.5 + enemyDef;
+      if (itemNet > 0 || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
-        if (enemyMgk>0 || enemyAtk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
+        if (itemNet >= 0.5){
           enemyStatusString=decorateStatusText("🔷","Magnificent",colorLightBlue);
           cardUIElement.style.background=colorDarkBlue;
         }
-        if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || ((enemyAtk>=1) && (parseInt(totalMalus)==0)) || enemySta>=2 || enemyMgk>=2 || ((enemyMgk>=1) && (parseInt(totalMalus)==0))){
+        if (itemNet >= 1.5){
           enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
           cardUIElement.style.background=colorDarkPurple;
         }
@@ -180,18 +181,19 @@ function redraw(){
       break;
 
     case "Consumable":
+      var itemNet = enemyAtk*3 + enemyMgk*2 + enemyHp*1.5 + enemySta*1.5 + enemyLck*0.5 + enemyInt*0.5 + enemyDef;
       eatColor=colorWhite;
       enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
         enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
         eatColor=colorRed;
       }
-      if (enemyMgk>0 || (parseInt(totalBonus)+parseInt(totalMalus))>=1 || (parseInt(totalMalus)>=0 && parseInt(totalBonus>0))){
+      if (itemNet >= 0.5){
         enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
         cardUIElement.style.background=colorDarkBlue;
         eatColor=colorLightBlue;
       }
-      if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || enemyHp>=2 || enemyAtk>=2 || enemySta>=2 || enemyMgk>=2){
+      if (itemNet >= 1.5){
         enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
         cardUIElement.style.background=colorDarkPurple;
         eatColor=colorPurple;

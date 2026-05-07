@@ -66,7 +66,8 @@ function calcActionBarConfig(button, adjustment) {
 
   // Cast / Heal / Curse with no mana — impossible (bar all-red)
   // button_pray is exempt on Curse type (action-resolver allows it without MGK)
-  if ((button === 'button_cast' || (button === 'button_pray' && !isCurse) || button === 'button_curse') && pMgk <= 0) {
+  // Shop overrides this — mana is irrelevant there (coin is the gate)
+  if ((button === 'button_cast' || (button === 'button_pray' && !isCurse) || button === 'button_curse') && pMgk <= 0 && types !== 'Shop') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
@@ -247,16 +248,16 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
   }
 
-  // Shop: Gamble (button_block) = gold-only strip, same difficulty as reincarnate; all other shop actions = full success zone
+  // Shop: Risk (button_cast) = gold-only strip; Leave (button_roll) always free; all others gate on coin
   if (types === 'Shop') {
     var availableCoins = (savedCoins || 0) - (spentCoins || 0);
-    var shopPrices = { button_attack: 1, button_grab: 1, button_block: 1, button_sleep: 2, button_speak: 3 };
+    var shopPrices = { button_attack: 1, button_grab: 1, button_block: 2, button_sleep: 2, button_speak: 3, button_cast: 1, button_pray: 3, button_curse: 4 };
     var price = shopPrices[button] || 0;
     if (price > 0 && availableCoins < price) {
       return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
     }
-    if (button === 'button_block') return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
-                                            critSuccessMin: 48, critSuccessMax: 52, critFailW: 5 };
+    if (button === 'button_cast') return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
+                                           critSuccessMin: 48, critSuccessMax: 52, critFailW: 5 };
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 

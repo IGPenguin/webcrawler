@@ -303,6 +303,10 @@ function generateRandomItem(item=""){
   return randomItem;
 }
 
+function generateRandomItemByTier(tier){
+  return getWeightedEncounterByTier(tier,["Item"],[],"ALL",["Artifact","Lover's Memento","Piece of History","Lost Possesion"]);
+}
+
 function drachmaeBuy(price=1,item="",skillSuccess=null){
   var availableCoins=(savedCoins-spentCoins)
 
@@ -317,25 +321,27 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
     displayEnemyEffect("🪙");
     displayPlayerEffect("");
 
-    if ((item=="Item") || (item=="Artifact")) {
-      if (item=="Item")     AchievementManager.check('buy_item');
-      else if (item=="Artifact") AchievementManager.check('buy_artifact');
+    var _tierMap = { ItemCommon: "Common", ItemUncommon: "Uncommon", ItemRare: "Rare" };
+    var _forcedTier = _tierMap[item] || null;
+    var _isItemBuy = (item=="Item" || item=="Artifact" || _forcedTier);
+    if (_isItemBuy) {
+      if (item=="Artifact") AchievementManager.check('buy_artifact');
+      else AchievementManager.check('buy_item');
       displayPlayerGainedEffect();
       logPlayerAction(actionString,"Splendid choice, this ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
-      var item=generateRandomItem(item);
-      item[0]="area:"+areaName;
-      pushEncounter(item);
+      var genItem = _forcedTier ? generateRandomItemByTier(_forcedTier) : generateRandomItem(item=="Artifact" ? "Artifact" : "");
+      genItem[0]="area:"+areaName;
+      pushEncounter(genItem);
       nextEncounter();
       pushEncounter(drachmaShop);
-    } else if (item=="Aspect") {
-      var aspectPool = [
-        { stat: "❤️",  apply: function() { playerHp++; playerHpMax++; } },
-        { stat: "🟢",  apply: function() { playerSta++; playerStaMax++; } },
-        { stat: "🍀",  apply: function() { playerLck++; } },
-        { stat: "🧠",  apply: function() { playerInt++; } }
-      ];
-      var picked = aspectPool[Math.floor(Math.random() * aspectPool.length)];
+    } else if (item=="Favor" || item=="Body") {
+      var statPool = item=="Favor"
+        ? [{ stat: "🍀", apply: function() { playerLck++; } },
+           { stat: "🧠", apply: function() { playerInt++; } }]
+        : [{ stat: "❤️", apply: function() { playerHp++; playerHpMax++; } },
+           { stat: "🟢", apply: function() { playerSta++; playerStaMax++; } }];
+      var picked = statPool[Math.floor(Math.random() * statPool.length)];
       picked.apply();
       displayPlayerGainedEffect();
       displayPlayerEffect(picked.stat);

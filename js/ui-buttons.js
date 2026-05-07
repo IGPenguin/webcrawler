@@ -355,27 +355,32 @@ function adjustEncounterButtons(){
 
     case "Shop":
       var availableCoins=savedCoins-spentCoins;
-      setButton('button_attack',"1 🪙 Aspect",colorSoftGreen);
-        if (availableCoins<1) setButton('button_attack',"1 🪙 Aspect",colorDarkGrey);
+      setButton('button_attack',"1 🪙 Favor",colorSoftGreen);
+        if (availableCoins<1) setButton('button_attack',"1 🪙 Favor",colorDarkGrey);
 
       setButton('button_roll',"👣 Leave",colorRed);
       if (availableCoins<=0) setButton('button_roll',"👣 Leave",colorYellow);
 
-      setButton('button_grab',"1 🪙 Item",colorLightBlue);
+      setButton('button_grab',"1 🪙 Item",colorWhite);
         if (availableCoins<1) setButton('button_grab',"1 🪙 Item",colorDarkGrey);
 
-      setButton('button_block',"1 🪙 Risk",colorPink);
-        if (availableCoins<1) setButton('button_block',"1 🪙 Risk",colorDarkGrey);
+      setButton('button_block',"2 🪙 Body",colorSoftGreen);
+        if (availableCoins<2) setButton('button_block',"2 🪙 Body",colorDarkGrey);
 
-      setButton('button_sleep',"2 🪙 Level",colorYellow);
-        if (availableCoins<2) setButton('button_sleep',"2 🪙 Level",colorDarkGrey);
+      setButton('button_sleep',"2 🪙 Item",colorLightBlue);
+        if (availableCoins<2) setButton('button_sleep',"2 🪙 Item",colorDarkGrey);
 
-      setButton('button_speak',"3 🪙 Artif.",colorOrange);
-        if (availableCoins<3) setButton('button_speak',"3 🪙 Artif.",colorDarkGrey);
+      setButton('button_speak',"3 🪙 Item",colorPurple);
+        if (availableCoins<3) setButton('button_speak',"3 🪙 Item",colorDarkGrey);
 
-      setButton('button_cast',"‍-",colorDarkGrey);
-      setButton('button_pray',"‍-",colorDarkGrey);
-      setButton('button_curse',"-",colorDarkGrey);
+      setButton('button_cast',"1 🪙 Risk",colorPink);
+        if (availableCoins<1) setButton('button_cast',"1 🪙 Risk",colorDarkGrey);
+
+      setButton('button_pray',"3 🪙 Level",colorYellow);
+        if (availableCoins<3) setButton('button_pray',"3 🪙 Level",colorDarkGrey);
+
+      setButton('button_curse',"4 🪙 Artif.",colorOrange);
+        if (availableCoins<4) setButton('button_curse',"4 🪙 Artif.",colorDarkGrey);
       break;
 
     default:
@@ -432,6 +437,7 @@ var callback_curse  = resolveAction('button_curse');
 var _abHandlers      = {};
 var _menuHandler     = null;
 var _memoriesHandler = null;
+var _technicalHandler = null;
 
 var _ACTION_BUTTONS = [
   ['button_attack', function() { return callback_attack; }],
@@ -490,9 +496,10 @@ function removeClickListeners(){
 }
 
 function registerClickListenersTechnical(){
-    var eventType = 'click';
+  if (_technicalHandler) return;
+  var eventType = 'click';
 
-    versionIDUIElement.addEventListener(eventType, ()=> {
+  versionIDUIElement.addEventListener(eventType, ()=> {
     actionString="⚙️"
     adventureEndReason="\nDebug: "+enemyEmoji+" "+enemyName
     //copyAdventureToClipboard();
@@ -500,11 +507,12 @@ function registerClickListenersTechnical(){
     redraw();
   });
 
-  document.getElementById('id_player_level').addEventListener(eventType, ()=>{
+  _technicalHandler = ()=>{
     var oldName=playerName;
     var newName=renameCharacter();
     if (_applyCheatName(newName)) return;
     if (oldName!=newName) logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
     redraw();
-  });
+  };
+  document.getElementById('id_player_level').addEventListener(eventType, _technicalHandler);
 }
