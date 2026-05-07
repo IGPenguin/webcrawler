@@ -196,12 +196,21 @@ function adjustEncounterButtons(){
       if (encounterUsed) if (playerRested && (!enemyType.includes("Trap"))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       break;
 
+    case "Memory":
+      document.getElementById('button_attack').disabled = true;
+      document.getElementById('button_block').disabled = true;
+      setButton('button_grab', "🫲 Caress", encounterUsed ? colorDarkGrey : colorYellow);
+      setButton('button_roll', "🤜 Strike", colorRed);
+      setButton('button_speak', "💔 Recall", encounterUsed ? colorDarkGrey : colorRed);
+      break;
+
     case "Item":
       setButton('button_grab',"👋 Grab",grabColor);
       setButton('button_roll',"❌ Ditch",colorRed);
-      if (enemyTeam.includes("Lover's Memento")&&!encounterUsed) setButton('button_speak',"💔 Recall",colorRed);
-      if (enemyTeam.includes("Lover's Memento")&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
-      if (enemyTeam.includes("Lover's Memento")) setButton('button_grab',"👋 Grab",colorGold);
+      var _isMemento = enemyTeam.includes("Lover's Memento") || enemyTeam.includes("Piece of History");
+      if (_isMemento&&!encounterUsed) setButton('button_speak',"💔 Recall",colorRed);
+      if (_isMemento&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
+      if (_isMemento) setButton('button_grab',"👋 Grab",colorGold);
       if (enemyEmoji=="🪙" || enemyEmoji=="💰") setButton('button_grab',"👋 Claim",colorLightShadeBlue);
       if (enemyEmoji=="🪙" && enemyName.includes("Lucky")) setButton('button_grab',"👋 Claim",colorSoftGreen);
       break;

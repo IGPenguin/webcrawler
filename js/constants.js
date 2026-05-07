@@ -1,7 +1,7 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
 var versionCode = "ver. 05/07/2026 @ 07:06 PM"
 var initialEncounterOverride = 0; // set to 5 to skip tutorial
-var TUTORIAL_SKIP_LOCALHOST = false;
+var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
 var TELEMETRY_DISABLED_LOCALHOST = false;
 
@@ -14,7 +14,7 @@ var colorDarkGold      = "#4d4112";
 var colorGreen         = "#22BF22";
 var colorSoftGreen     = "#62a862ff";
 var colorDarkGreen     = "#509920";
-var colorFamiliarGreen = "#608b43";
+var colorFamiliarGreen = "#4b6c34";
 var colorLime          = "#91bf08";
 var colorGrapefruit    = "#db432c";
 var colorRed           = "#FF0000";

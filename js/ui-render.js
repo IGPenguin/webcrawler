@@ -58,7 +58,7 @@ function redraw(){
   enemyDescUIElement.innerHTML = enemyDesc;
 
   //Hacky hacky hacky hack hack hack, hacky hacky hacky, yeah yeah
-  enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px;\">"+"» "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
+  enemyDescUIElement.innerHTML+="<br><center><i style=\"color:"+colorGrey+";"+"font-size:13px; padding-right:8px;\">"+"» "+enemyTeam+" «"+"</i></center>"; //enemyTeamUIElement.innerHTML=enemyTeam;
 
   //Encounter Statusbar UI
   enemyTeamUIElement.innerHTML="";
@@ -153,7 +153,7 @@ function redraw(){
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.background=colorDarkOrange;
       }
-      if (enemyTeam.includes("Lover's Memento")) {
+      if (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History")) {
         enemyStatusString=decorateStatusText("💔","Remembrance",colorPink);
         cardUIElement.style.background=colorDarkPink;
       }
@@ -257,7 +257,10 @@ function redraw(){
       enemyStatusString=decorateStatusText("🌙","Source of Power",colorGold);
       cardUIElement.style.background=colorDarkOrange;
       break;
-
+    case "Memory":
+        enemyStatusString=decorateStatusText("💔","Remembrance",colorPink);
+        cardUIElement.style.background=colorDarkPink;
+        break;
     default:
       enemyStatusString=decorateStatusText("⚠️","No Details","red");
       //Multi-match
@@ -315,8 +318,8 @@ function redraw(){
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam && (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point"))) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-      if (enemyTeam && enemyTeam.includes("Lover's Memento")&&!encounterUsed) displayPlayerState("Frightened",colorDarkGrey,"0.4");
-      if (enemyTeam && enemyTeam.includes("Lover's Memento")&&encounterUsed) displayPlayerState("Reminiscing",colorPink,"2.5");
+      if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&!encounterUsed) displayPlayerState("Frightened",colorDarkGrey,"0.4");
+      if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&encounterUsed) displayPlayerState("Reminiscing",colorPink,"2.5");
       if (enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
         displayPlayerState("In Combat",colorRed,"0.8");
         setButton('button_sleep',"💤 Rest"); //Hack

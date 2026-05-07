@@ -32,7 +32,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
 
     case 1://Random story letter
       var randomSlot=chooseFrom([3,4,5])
-      pushEncounter(getRandomEncounter(["Item"],["Memento"]),randomSlot);
+      pushEncounter(getRandomEncounter(["Item"],["Memento","Piece of History"]),randomSlot);
       if (chooseFrom([true,false])) pushEncounter(getRandomEncounter(["Container"]),randomSlot);
       dbg("pushing letter at pos: "+randomSlot);
       break;

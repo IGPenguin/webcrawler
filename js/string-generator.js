@@ -179,12 +179,92 @@ function getOriginName(origin) {
 }
 
 function getGameTip(){
-  const random_quotes = ["<b>👀 Search</b> for loot in places of interest.","Always <b>💤 Sleep</b> when you get a chance.","<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.","<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.","<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.","<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.","<b>🧠 Intellect</b> helps befreinding companions.","<b>💫 Cast</b> spells always hit before retaliation.","<b>🍴 Eating</b> when relaxed provides a bonus.","Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.","<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.","<b>🍀 Luck</b> rises the chance for a critical hit.","<b>👋 Grab</b> sombe <b>🪱 Bait</b> to do <b>🎣 Fishing</b> later.","<b>💌 Report</b> any issues to make a difference.","<b>💬 Speaking</b> can sometimes stop the fight.","<b>🍀 Luck</b> may help you  survive a fatal hit.", "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.","<b>🎣 Fishing </b> provides a variety of unique items.", "<b>✏️ Rename</b> your hero by clicking their name.","<b>🐞 Report</b> issues by clicking the version code.","Pick up 🗝️ <b>Keys</b> to unlock secrets later.","🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.","🪬 <b>Curse</b> lowers the enemy damage by half.","Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.","<b>🟠 Legendary</b> items provide unique advantage.","🔥 <b>Cook</b> bad food to remove negative effects.","<b>🍀 Luck</b> affects your chances for getting loot.","Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵","Non-deadly solutions always award more "+decorateStatusText("","XP",colorGold)+".","Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.","<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.","<b>💀 Killing</b> enemies affects <b>karma negatively</b>.","<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.","You need to <b>💤 Sleep</b> to get a <b>🎉 Level Up</b>.","Pending <b>🎉 Level Up</b> is marked by the <b>⇡</b> symbol.","No one likes to be called a <i><b>✏️ Cheater</b></i>.","<b>⚔️ Attack</b> locks repedately to smash them open.","<b>💔 Recalling</b> memories hurts first, helps later.","Carefully consider where you <b>💤 Sleep</b>.","Spend <b>🪙 Drachmae</b> to improve your chances.","Risking <b>🪙 Drachmae</b> has a ~50% success rate.","<b>🍀 Luck</b> affects various random chances.","Renaming to <b><i>✏️ Poco Dinero</b></i> counts as cheating.","<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
+  const random_quotes = [
+    "<b>👀 Search</b> for loot in places of interest.",
+    "Always <b>💤 Sleep</b> when you get a chance.",
+    "<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.",
+    "<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.",
+    "<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.",
+    "<b>👋 Grab</b> exhausted enemies to <b>knock them out</b>.",
+    "<b>🧠 Intellect</b> helps befreinding companions.",
+    "<b>💫 Cast</b> spells always hit before retaliation.",
+    "<b>🍴 Eating</b> when relaxed provides a bonus.",
+    "Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.",
+    "<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.",
+    "<b>🍀 Luck</b> rises the chance for a critical hit.",
+    "<b>👋 Grab</b> sombe <b>🪱 Bait</b> to do <b>🎣 Fishing</b> later.",
+    "<b>💌 Report</b> any issues to make a difference.",
+    "<b>💬 Speaking</b> can sometimes stop the fight.",
+    "<b>🍀 Luck</b> may help you  survive a fatal hit.",
+    "Some <b>🔱 Altars</b> require 🔪  for a <b>Sacrifice<b>.",
+    "<b>🎣 Fishing </b> provides a variety of unique items.",
+    "<b>✏️ Rename</b> your hero by clicking their name.",
+    "<b>🐞 Report</b> issues by clicking the version code.",
+    "Pick up 🗝️ <b>Keys</b> to unlock secrets later.",
+    "🪄 <b>Cast</b> a spell to open lock for -2 🔵 <b>Mana</b>.",
+    "🪬 <b>Curse</b> lowers the enemy damage by half.",
+    "Casting ❤️‍🩹 <b>Heal</b> restores up to <b>+2 ❤️ Health</b>.",
+    "<b>🟠 Legendary</b> items provide unique advantage.",
+    "🔥 <b>Cook</b> bad food to remove negative effects.",
+    "<b>🍀 Luck</b> affects your chances for getting loot.",
+    "Open <b>🗝️ Locked</b> objects by <b>🪄 Cast</b> for -2 🔵",
+    "Non-deadly solutions always award more "+decorateStatusText("","XP",colorGold)+".",
+    "Gain "+decorateStatusText("","XP",colorGold)+" to <b>🎉 Level Up</b> and get stronger.",
+    "<b>🧠 Intellect</b> affects "+decorateStatusText("","XP",colorGold)+" gains both ways.",
+    "<b>💀 Killing</b> enemies affects <b>karma negatively</b>.",
+    "<b>Good karma</b> grants <b>🎁 Bonus</b> on <b>✨ Revival</b>.",
+    "You need to <b>💤 Sleep</b> to get a <b>🎉 Level Up</b>.",
+    "Pending <b>🎉 Level Up</b> is marked by the <b>⇡</b> symbol.",
+    "No one likes to be called a <i><b>✏️ Cheater</b></i>.",
+    "<b>⚔️ Attack</b> locks repedately to smash them open.",
+    "<b>💔 Recalling</b> memories hurts first, helps later.",
+    "Carefully consider where you <b>💤 Sleep</b>.",
+    "Spend <b>🪙 Drachmae</b> to improve your chances.",
+    "<b>🍀 Luck</b> affects various random chances.",
+    "Renaming to <b><i>✏️ Poco Dinero</b></i> counts as cheating.",
+    "<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
 
 function getPoem(){
-  const random_quotes = ["Please\\ be careful what you wish for\\ my love.<br>It might as well be exactly what you get.","Do not ever follow where I fell\\ my heart.<br>The ground has swallowed my beauty.","My vows outlived my breath\\ it seems.<br>They whisper still\\ beneath the soil.","The earth tried to keep me\\ but not anymore.<br>I rose with your name on my lips.","You whispered into the grave like a prayer.<br>And I came\\ half dream\\ half devotion.","I drank from the chalice of sorrow.<br>It tasted like you — and I awoke.","I stitched myself from bones and vows.<br>Just to stand where you once wept.","You said 'forever' with a mortal tongue.<br>I kept my promise — what's your excuse?","The mirror cracked when I passed.<br>It still shows me, just not the same way.","The bells no longer ring for weddings.<br>Not since you spoke my name.","The trees hum softly where I fell and rose.<br>No birds have sung there since.","I left a kiss upon the oak we carved.<br>The bark split down the middle.","Don't reach for the old book\\ my love.<br> Some secrets should remain hidden forever.","You'll want to fix what was never broken.<br>But disturbing the peace won't help.","You did this to me... did this to us!<br>Why wouldn't you let me go?","The world could remain peaceful.<br>If only you would listen to me.",  "I still wear your name like a veil.<br>Even the worms dare not touch it.","You called me back with love.<br>But love does not know mercy.","I waited in the soil so long.<br>The stars forgot my name.","Every petal you left on my grave<br>grew thorns when you turned away.","Your healing hands became my undoing.<br>But I am not fully gone.","The endless cold welcomed me first.<br>Then I remembered your warmth.","You begged the ancient gods to give me back.<br>They laughed and released the darkness.","I came the way you asked.<br>Not fully whole — but yours.","Our vow didn't end with my death.<br>Only my breathing did.","They buried me with lovely roses.<br>But I bloomed with something else.","You desperately prayed for an act of god.<br>I became one you could not bear.","Even now\\ I reach for you - nowhere to find you.<br>Only shadows take my hand.","The stars we used to watch together...\\\\ <br>They now turn their faces away.","Your twisted love outlived my breath.<br>Then cursed me forever.","You called me back with trembling hands.<br>Now tremble for what you've done.","I hoped you'd mourn me.<br>Not try to fix me.","You wanted me to never leave.<br>I'll soon fulfill your wish.","Love me as I am now.<br>Or rot beside me.", "You broke me with foul magic.<br>Now I return with justice.", "I died believing in your endless love.<br>Now I rise certain of your betrayal.","The wicked altar remembers what you forgot.<br>And so do I\\ my love."];
+  const random_quotes = [
+    "Please, be careful what you wish for, my love.<br>It might as well be exactly what you get.",
+    "Do not ever follow where I fell, my heart.<br>The ground has swallowed my beauty.",
+    "My vows outlived my breath, it seems.<br>They whisper still, beneath the soil.",
+    "The earth tried to keep me, but not anymore.<br>I rose with your name on my lips.",
+    "You whispered into the grave like a prayer.<br>And I came, half dream, half devotion.",
+    "I drank from the chalice of sorrow.<br>It tasted like you — and I awoke.",
+    "I stitched myself from bones and vows.<br>Just to stand where you once wept.",
+    "You said 'forever' with a mortal tongue.<br>I kept my promise — what's your excuse?",
+    "The mirror cracked when I passed.<br>It still shows me, just not the same way.",
+    "The bells no longer ring for weddings.<br>Not since you spoke my name.",
+    "The trees hum softly where I fell and rose.<br>No birds have sung there since.",
+    "I left a kiss upon the oak we carved.<br>The bark split down the middle.",
+    "Don't reach for the old book, my love.<br> Some secrets should remain hidden forever.",
+    "You'll want to fix what was never broken.<br>But disturbing the peace won't help.",
+    "You did this to me... did this to us!<br>Why wouldn't you let me go?",
+    "The world could remain peaceful.<br>If only you would listen to me.",
+    "I still wear your name like a veil.<br>Even the worms dare not touch it.",
+    "You called me back with love.<br>But love does not know mercy.",
+    "I have been waiting in the soil for so long.<br>The stars even forgot my name.",
+    "Every petal you left on my grave<br>grew thorns when you turned away.",
+    "Your healing hands became my undoing.<br>But I am not fully gone.",
+    "The endless cold welcomed me first.<br>Then I remembered your warmth.",
+    "You begged the ancient gods to give me back.<br>They laughed and released the darkness.",
+    "I came the way you asked.<br>Not fully whole — but yours.",
+    "Our vow didn't end with my death.<br>Only my breathing did.",
+    "They buried me with lovely roses.<br>But I bloomed with something else.",
+    "You desperately prayed for an act of god.<br>I became one you could not bear.",
+    "Even now, I reach for you - nowhere to find you.<br>Only shadows take my hand.",
+    "The stars we used to watch together...<br>They now turn their faces away.",
+    "Your twisted love outlived my breath.<br>Then cursed me forever.",
+    "You called me back with trembling hands.<br>Now tremble for what you've done.",
+    "I hoped you'd mourn me.<br>Not try to fix me.",
+    "You wanted me to never leave.<br>I'll soon fulfill your wish.",
+    "Love me as I am now.<br>Or rot beside me.",
+    "You broke me with foul magic.<br>Now I return with justice.",
+    "I died believing in your endless love.<br>Now I rise certain of your betrayal.",
+    "The wicked altar remembers what you forgot.<br>And so do I, my love."];
   return "<i>"+random_quotes[Math.floor(Math.random() * random_quotes.length)]+"</i>";
 }
 
@@ -253,6 +333,70 @@ function getRunEndMessage() {
     "Forsaken by the sun.<br>Bound to the rot.",
     "The river flows cold.<br>Your story ends here.",
     "One more ghost added<br>to the list of regrets."
+  ];
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
+function getWeddingInvitationPoem() {
+  var pool = [
+    "You sent this once with trembling hands.<br>She never stopped believing you'd come.",
+    "The date was circled in her handwriting.<br>The day passed. The oath stayed unsaid.",
+    "A dress was chosen. Flowers ordered.<br>Only one of you was ready.",
+    "She sealed it with her breath.<br>It stayed sealed forever.",
+    "She wrote your name at the top.<br>Even then, she already knew.",
+    "It said: arrive before sundown.<br>You arrived. Just not in time.",
+    "She held this the night before.<br>But couldn't hold it the day after.",
+    "A fold marks where she carried it.<br>Close to where it mattered.",
+    "You promised to be there.<br>You were, just not the way she was.",
+    "The envelope was never opened.<br>It stayed undelivered forever."
+  ];
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
+function getWeddingInvitationFade() {
+  var pool = [
+    "Sealed with a pressed flower.<br>She chose it herself.",
+    "Her name, written by her hand.<br>The deed was never done.",
+    "We were supposed to be there.<br>She is still to come.",
+    "Gold-edged and still unopened.<br>Unlike the gates of hell.",
+    "After all those days...<br>The wax holds her prints.",
+    "You carried this once.<br>The feeling has changed.",
+    "Still sealed. Still waiting.<br>Just like you and her.",
+    "The paper holds her perfume.<br>It is never gonna fade.",
+    "A promise folded into paper.<br>Yet still undelivered."
+  ];
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
+function getMeetingPlaceFade() {
+  var pool = [
+    "Something about this place.<br>You can't name it.",
+    "You have seen this before.<br>But not in this life.",
+    "The air here is different.<br>Feels heavier somehow.",
+    "You slow without meaning to.<br>Something holds you here.",
+    "This place feels familiar.<br>Something happened here.",
+    "You have stood here before.<br>But the world was different.",
+    "You stare at a familiar gate.<br>The feeling unsettles you.",
+    "Something is wrong here.<br>It feels too well known.",
+    "The corruption missed a spot.<br>Or perhaps spared it.",
+    "You had to stop walking.<br>This caught your attention."
+  ];
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
+function getMeetingPlaceRecall() {
+  var pool = [
+    "Saw her smile here the first time.<br>The world was still hwole.",
+    "She was standing right here.<br>You didn't know what to say.",
+    "The world felt different that day.<br>She made it that way.",
+    "She laughed here before.<br>You didn't see it.",
+    "She had flowers in her hair.<br>You never asked which kind.",
+    "You were just passing through.<br>She changed that forever.",
+    "She was sitting just there.<br>You almost walked past.",
+    "You didn't know her name yet.<br>You learned it quickly.",
+    "She was right there.<br>The world had not yet fallen.",
+    "This is where it began.<br>Before you broke it all.",
+    "You didn't know her name yet.<br>You were about to meet."
   ];
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }

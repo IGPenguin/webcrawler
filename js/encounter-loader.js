@@ -80,7 +80,7 @@ function loadEncounter(index, fileLines = linesStory){
 
   enemyTeam = RarityManager.stripTagFromNote(String(row[11].split(":").slice(1).join(":")));
   enemyDesc = String(row[12].split(":").slice(1).join(":"));
-  if (enemyDesc.includes("po/em")) enemyDesc=getPoem();
+  if (enemyDesc.includes("po/em")) enemyDesc = enemyTeam.includes("Piece of History") ? getWeddingInvitationPoem() : getPoem();
   if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
     enemyDesc=enemyDesc.replaceAll("n/a","");
     enemyDesc+="<i>"+getGameTip()+"</i>";
@@ -139,7 +139,7 @@ function loadEncounter(index, fileLines = linesStory){
         if (enemyTeam.includes("Possesion")) {
           logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
         } else {
-         if (!enemyTeam.includes("Lover's Memento")) {
+         if (!enemyTeam.includes("Lover's Memento") && !enemyTeam.includes("Piece of History")) {
            if (enemyName=="Ethereal Drachma"){
              logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";>" + " Shape spawned: <b>"+enemyName+"</b></text>")
            } else if (enemyEmoji== "🪙" || enemyEmoji=="💰") {
@@ -177,6 +177,9 @@ function loadEncounter(index, fileLines = linesStory){
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
       break;
     case "Altar":
+      logAction("👁️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
+      break;
+    case "Memory":
       logAction("👁️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
       break;
     case "Friend":
@@ -295,8 +298,8 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateRandomItem(item=""){
-  var randomItem=getWeightedEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Lost Possesion"]);
-  if (item=="Artifact") randomItem=getWeightedEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Lost Possesion"]);
+  var randomItem=getWeightedEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Piece of History","Lost Possesion"]);
+  if (item=="Artifact") randomItem=getWeightedEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Piece of History","Lost Possesion"]);
   return randomItem;
 }
 

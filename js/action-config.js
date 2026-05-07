@@ -348,6 +348,18 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
+  // Caress (grab Memory) — always succeeds
+  if (button === 'button_grab' && types === 'Memory') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  }
+
+  // Recall (speak Memory) — graceful pass zone, fishing-no-bait-width crit zone for skip
+  if (button === 'button_speak' && types === 'Memory') {
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT),
+             successMin: 15, successMax: 85,
+             critSuccessMin: 47, critSuccessMax: 53 };
+  }
+
   // Friend speak — difficulty based on INT differential
   if (button === 'button_speak' && types === 'Friend') {
     var _fInt = Math.max(0, enemyInt || 0);

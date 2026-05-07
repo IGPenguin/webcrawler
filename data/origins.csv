@@ -10,7 +10,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 😈;Devil;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, suffer <b>-1 💔 Health</b>.<br><i>Made a deal with the scars to prove it.;spoke_demon
 🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Suffer <b>-1 💔 Health</b>, blend with the undead.<br><i>Fits well with the tainted surroundings.;died_first
 💬;Preacher;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Told stories that he lived through first.;recruit_first
-🧭;Guide;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Never gets lost thanks to their wit.;discover_forsaken
+🧭;Guide;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Never gets lost thanks to his wit and memory.;discover_forsaken
 🎋;Shaman;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no downside.<br><i>Bears a supernatural power of the nature.;discover_fairyland
 ⛵️;Sailor;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Able to endure cosiderable discomfort.;discover_river
 🤙;Careless;0;0;0;1;-1;0;0;Gain <b>+1 🍀 Luck</b>, suffer <b>-1 🧠 Intellect</b>.<br><i>No time to lose, just do it!.;survive_trap
@@ -37,19 +37,19 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🎩;Noble;0;0;0;1;1;0;0;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.;none
 
 //Attack
-💢;Berserk;-2;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.<br><i>Deadly dangerous super fragile.;none
+💢;Berserk;-2;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.<br><i>Deadly dangerous, but super fragile.;none
 
 //Health
 🛖;Hermit;1;-1;0;0;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Good intentions, uncertain chances.;none
 🗿;Warden;1;0;-1;0;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Rock solid but less agile.;none
-🍺;Boozer;1;0;0;0;-3;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-3 🧠 Intellect</b><br><i>Numb to the pain, blind to the truth.;none
-🖤;Unholy;1;0;0;-3;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-3 🍀 Luck</b>.<br><i>Given up soul for extra resilience.;none
+🍺;Boozer;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🧠 Intellect</b><br><i>Numb to the pain, blind to the truth.;none
+🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.;none
 
 //Stamina
 👣;Stalker;0;-1;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Always in the shadows, harmless tough.;none
 🤸‍♀️;Acrobat;-1;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-1 💔 Health</b>.<br><i>Focusing on swiftness makes him fragile.;none
-🧬;Mutant;0;0;1;0;-3;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-3 🧠 Intellect</b>.<br><i>Body strong, mind no so much.;none
-⛓️‍💥;Outlaw;0;0;1;-3;0;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-3 🍀 Luck</b>.<br><i>Chose to outrun his own fortune.;none
+🧬;Mutant;0;0;1;0;-2;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Body strong, mind no so much.;none
+⛓️‍💥;Outlaw;0;0;1;-2;0;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Chose to outrun his own fortune.;none
 
 //Luck
 🧪;Chemist;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, suffer <b>-1 💔 Health</b>.<br><i>Survived numerous explosions, still alive.;none

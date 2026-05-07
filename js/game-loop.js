@@ -65,6 +65,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
       animateUIElement(cardUIElement,"animate__fadeIn","1.2");
       redraw();
       startEnemyEmojiPulse();
+      _fireRemembranceFade();
     });
     return;
   }
@@ -82,6 +83,16 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
   animateUIElement(cardUIElement,"animate__fadeIn","1.2");
   redraw();
   startEnemyEmojiPulse();
+  _fireRemembranceFade();
+}
+
+function _fireRemembranceFade() {
+  if (!enemyTeam) return;
+  if (enemyType === "Memory") {
+    setTimeout(function() { curtainFadeInAndOut(getMeetingPlaceFade(), 4); }, 300);
+  } else if (enemyTeam.includes("Remembrance") || enemyTeam.includes("Piece of History")) {
+    setTimeout(function() { curtainFadeInAndOut(getWeddingInvitationFade(), 4); }, 300);
+  }
 }
 
 function animateFlipNextEncounter(){

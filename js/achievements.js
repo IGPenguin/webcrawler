@@ -29,7 +29,7 @@ var AchievementManager = (function () {
     { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key for the first time!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open for the first time!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
     { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with magic for the first time!', hint: 'Magic opens more than minds.', unlock: '' },
-    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of quality.', unlock: '' },
+    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: '' },
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: '' },
 
@@ -53,9 +53,9 @@ var AchievementManager = (function () {
     { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up from the Shade!', hint: "Shortcut to power, at a cost.", unlock: '' },
     { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae at the Shade!', hint: "A loyal customer of the shadows.", unlock: '' },
 
-    { id: 'letter_remember',     emoji: '💌', desc: 'Read a very disturbing letter.', hint: 'Some things are better left in the past.', unlock: 'Unlocked the <b>💘 Lover</b> origin.' },
-    { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing letter with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
-    { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing letter aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Broken</b> origin.' },
+    { id: 'letter_remember',     emoji: '💌', desc: 'Read a very disturbing writing.', hint: 'Some things are better left in the past.', unlock: 'Unlocked the <b>💘 Lover</b> origin.' },
+    { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing writing with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
+    { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing writing aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Broken</b> origin.' },
 
     { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.', unlock: 'Unlocked the <b>🧂Salt Shaker</b> item.' },
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: 'Unlocked the <b>👨🏻‍🍳 Chef></b> origin.' },
@@ -78,7 +78,6 @@ var AchievementManager = (function () {
 
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
   ];
-  // hint: optional short clue shown on locked entries (omit or leave empty to show nothing)
 
   var _defaultStats = {
     totalDeaths:         0,
