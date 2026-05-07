@@ -7,6 +7,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
     var _crit = actionBarCrit;
     actionBarCrit = null;
 
+    if (_crit === 'success') {
+      var viewport = document.querySelector('.game-viewport');
+      if (viewport) animateUIElement(viewport, "animate__shakeX", "0.4");
+    }
+
     if (isEndingState) { resolveEnding(button); return; }
 
     var buttonUIElement = document.getElementById(button);
