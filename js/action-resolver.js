@@ -105,6 +105,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               break;
             }
+            if (enemyTeam.includes("Transient Currency")) {
+              logPlayerAction(actionString, "Your strike passed through it -1 🟢");
+              displayPlayerCannotEffect();
+              break;
+            }
             logPlayerAction(actionString, "Smashed it to pieces -1 🟢");
             nextEncounter();
             break;
@@ -573,6 +578,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerRested = _savedRested;
               break;
             } else {
+              if (enemyTeam.includes("Transient Currency")) {
+                logPlayerAction(actionString, "Bound to your soul, cannot be left behind.");
+                displayPlayerCannotEffect();
+                break;
+              }
               if (enemyTeam.includes("Lover's Memento")){
                 playerAtk++;
                 playerLove-=2;
@@ -1175,6 +1185,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 : "Spell fizzled without effect -1 🔵");
               if (_crit === 'fail') playerHit(1, false);
               displayEnemyCannotEffect();
+              break;
+            }
+            if (enemyTeam.includes("Transient Currency")) {
+              logPlayerAction(actionString, "The spell passed right through -1 🔵");
+              displayPlayerCannotEffect();
               break;
             }
             logPlayerAction(actionString,"Scorched it with a spell -1 🔵");
