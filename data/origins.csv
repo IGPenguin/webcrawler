@@ -25,8 +25,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🤥;Cheater;0;0;0;-2;2;0;0;Gain <b>-2 🍀 Luck</b> and <b>+2 🧠 Intellect</b>.<br><i>Unethical but always gets by.;use_cheat
 🔍;Surveyor;0;0;0;1;1;0;0;Gain <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b>.<br><i>Always finds what he's searching for.;fish_boss_first
 💘;Lover;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, suffer <b>-1 💔 Health</b>.<br><i>Would give up anything for true love.;letter_remember
-✉️;Courier;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Does not realize what he carries.;letter_grab
-💔;Broken;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 💔 Health</b><br><i>Does not realize what he carries.;letter_ditch
+✉️;Courier;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Never stops until he delivers.;letter_grab
+💔;Broken;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, suffer <b>-1 💔 Health</b><br><i>Cannot forget the grueling pain.;letter_ditch
 🤌;Gourmet;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br><i>Enjoys life to the fullest.;eat_legendary
 🧿;Wizard;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>Devotion stronger than his body.;mana_first
 👨🏻‍🍳;Chef;0;0;0;0;0;0;0;Starts with <b>🧂 Salt Shaker</b>.<br><i>Always uses just enough spices.;salt_food_first
@@ -80,5 +80,5 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 //Negative
 🎃;Hollow;-1;0;0;0;0;0;0;Suffer <b>-1 💔 Health</b> with no clear benefit.<br><i>Begins giving up his effort.;none
 🍔;Fatso;0;0;-1;0;0;0;0;Suffer <b>-1 🟢 Energy</b> with no clear benefit.<br><i>Cannot ever satify his hunger.;none
-🤪;Dummy;0;0;0;0;-1;0;0;Suffer <b>-1 🧠 Intellect</b> with no clear benefit.<br><i>Not everyone can be witty.;none
+🤪;Dummy;0;0;0;0;-1;0;0;Suffer <b>-1 🧠 Intellect</b> with no clear benefit.<br><i>Not everyone can be super witty.;none
 ☘️;Jinx;0;0;0;-1;0;0;0;Suffer <b>-1 🍀 Luck</b> with no clear benefit.<br><i>Misfortune follows his steps.;none

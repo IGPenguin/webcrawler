@@ -190,7 +190,7 @@ function permanentDeath(htmlMsg) {
       var nextOrigins = Menu.rollOrigins();
       if (nextOrigins && nextOrigins.length > 0) {
         var emojiStr = nextOrigins.map(function(o) { return o.emoji; }).join('&nbsp;&nbsp;');
-        htmlMsg = 'New fates await:'
+        htmlMsg = 'New fates await you:'
           + '<p style="font-size:26px;letter-spacing:4px;margin-top:2px;">' + emojiStr + '</p>';
       }
     }
@@ -402,7 +402,8 @@ function animateUIElement(documentElement,animation,time="0s",hidden = false,mes
   if (time !="0s"){
     documentElement.style.setProperty("--animate-duration",time+"s");
   }
-  documentElement.addEventListener('animationend', function onEnd() {
+  documentElement.addEventListener('animationend', function onEnd(e) {
+    if (e.target !== documentElement) return; // ignore bubbled animationend from children
     documentElement.removeEventListener('animationend', onEnd);
     if (_animateUIElementGen.get(documentElement) !== gen) return; // stale — newer animation took over
     if (hidden) documentElement.style.display = "none";

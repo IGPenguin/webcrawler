@@ -9,7 +9,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
     if (_crit === 'success') {
       var viewport = document.querySelector('.game-viewport');
-      if (viewport) animateUIElement(viewport, "animate__shakeX", "0.4");
+      if (viewport) animateUIElement(viewport, "animate__shakeX", "0.6");
     }
 
     if (isEndingState) { resolveEnding(button); return; }

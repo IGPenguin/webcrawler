@@ -221,7 +221,7 @@ function getGameTip(){
     "Carefully consider where you <b>💤 Sleep</b>.",
     "Spend <b>🪙 Drachmae</b> to improve your chances.",
     "<b>🍀 Luck</b> affects various random chances.",
-    "Renaming to <b><i>✏️ Poco Dinero</b></i> counts as cheating.",
+    "The name <b><i>✏️ Poco Dinero</b></i> counts as cheating.",
     "<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
@@ -339,8 +339,8 @@ function getRunEndMessage() {
 
 function getWeddingInvitationPoem() {
   var pool = [
-    "You sent this once with trembling hands.<br>She never stopped believing you'd come.",
-    "The date was circled in her handwriting.<br>The day passed. The oath stayed unsaid.",
+    "You sent this once trembling.<br>She never stopped believing.",
+    "The text held her handwriting.<br>The oath stayed unsaid.",
     "A dress was chosen. Flowers ordered.<br>Only one of you was ready.",
     "She sealed it with her breath.<br>It stayed sealed forever.",
     "She wrote your name at the top.<br>Even then, she already knew.",
