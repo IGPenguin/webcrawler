@@ -2902,7 +2902,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
-    if (enemyBossType!="") enemyType=enemyBossType;
+    if (enemyBossType!="" && corpseState==="") enemyType=enemyBossType;
     if (_wasStillFishing && button!="button_cast") {
       if (enemyType.includes('Boss')) AchievementManager.check('fish_boss');
       else if (enemyTeam && enemyTeam.includes('Artifact')) AchievementManager.check('fish_legendary');
