@@ -17,13 +17,6 @@
 ---
 
 # Claude
-- DATA: read the files in ideas folder, pick what seems useful, drop what does not, ouptut the result in /ideas/curated.csv, remove the old ideas files
- - use the curated ideas as an input source of inspiration for generating new content
- - also you can read TODOs.md, specifically the "Data changes" section, theres a lot of backlogged ideas for game data changes
- - propose surgical good-value + low-hanging fruit data changes/additions to improve the game variability and balancing
-- ...
-- impress me, check what is the weakest area content wise (I think its the river) and generate 10 new items for it 10 new enemies and 10 other (mix of
-- ...
 - fade wit text when fining invitation/letter - does it work??
 
 # Manual
@@ -64,7 +57,7 @@
   - undead then have 0 base attack against you
 - pinata positive trap: grab should be all red, block should be all red, rest should be easy as prop, avoid should be walk
 - ...
-- add hidden stat visbility (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
+- add more hidden sta visbility opportunities (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
 - refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
 - Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
   - kinde variant to the proposed "camp" encounter type
@@ -95,18 +88,20 @@
 
 ## New mechanics
 - add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items - roll item by emoji from local encounters.csv) when spoken to or defeated.
-- Make Karma Matter!
+- Make Karma Matter! (between runs?)
   - make "Revive" interval based on karma (Todo in place)
-  - karma affects on action bar chances?
-  - plus check, what changes karma, possibly adjust/expand
-  - Mischievous encounters + bad drops/twisted legendaries on bad karma
+  - Add a simple "Karma Hook" in action-resolver.js where "Speak" on aggressive enemies grants +1 karma, and "Attack" on neutral/friendly NPCs (checked via enemyAtk === 0) grants -2.
+  - implement "Karma Standing" inspectable via a new encounter type Mirror. This encounter uses string-generator.js to provide poetic descriptions of the player's hidden karma.
+  - Create a "Karma Decay" system where karma slowly trends toward 1 over multiple runs, preventing permanent "Evil" or "Saint" locks. Add "Mischievous" encounter variants that only trigger when karma < 0.
+  - Acheivement: Reaching approx. (not sure about exact numbers) +10 or -10 karma unlocks permanent "Perks" or "Flaws" (Origins/Items.., or even mechanics?)
+    - Positive milestones increase healing efficiency; negative milestones increase critical damage but decrease maximum stamina.
+  - bad/good karma high numbers to have chance on twisting/blessing the loot? (additional post-spawn edit - visual and stats)
+  - plus check what actions currently change karma, possibly adjust/expand
   - have meaningful impact, but not too punishing, with hints making it a bit more transparent
-  - should we make karma NOT reset between runs? (it could secretely affect the game)
-     - It would need to be subtle/fair so that everyone does not have bad experience just because the have no clue, possibly there could be encounter, that exposes the "Soul Standing" and hints what it does
-     - There should be proactive actions available to fix bad karma if players learn that they have bad standing
-     - killing enemies that are agressive should be fine, putting to sleep aggresive enemies should be considered good deed, killing non aggressive enemies should be considered bad, attacking friends should be bad etc.... suggest more hooks to karma?
-     the good karma bonus encounter - available in player.skills.js - we should find a way to trigger it sometimes (not only when revived, that might be very uncommon situation)
-- Inventory: consumable, items array
+  - There should be proactive actions available to fix bad karma if players learn that they have bad standing
+  - killing enemies that are agressive should be fine, putting to sleep aggresive enemies should be considered good deed, killing non aggressive enemies should be considered bad, attacking friends should be bad etc.... suggest more hooks to karma?
+  - the good karma bonus encounter - available in player.skills.js - we should find a way to edit/rething trigger it sometimes (not only when revived, that might be very uncommon situation)
+- Expand Inventory: consumables, items array
   - open on click loot/party bar?? (repalce buttons or overlay)
   - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits) = Prevents stacking power fast
   - eat food only intentionally, dont force/ditch
