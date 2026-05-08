@@ -13,6 +13,15 @@ bash version.sh       # stamps current timestamp into versionCode in js/constant
 
 No build tools, no npm. Pure vanilla JavaScript served by Jekyll.
 
+## Content Generation & Auditing
+
+Use the **`content-gen` skill** (`.claude/skills/content-gen.md`) as the default for:
+- Generating new CSV content (enemies, items, encounters, origins, fishing rows)
+- Auditing existing data for stat balance or tone outliers
+- Checking rarity math or writing voice on any row
+
+Load it at the start of any content task by reading `.claude/skills/content-gen.md`. It contains the full schema, area-calibrated stat ranges, rarity formula, writing voice rules, and calibration examples.
+
 ## Hades Gate Integration
 - **Context:** This project uses the Hades Gate framework for intent-to-execution.
 - **Workflow:** The user runs `hades ignite` to generate three proposals in `.hades/prions.md` (via Gemini). They then pick a path and ask Claude to implement it in the active session.

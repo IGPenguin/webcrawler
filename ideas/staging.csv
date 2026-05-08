@@ -1,0 +1,38 @@
+area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
+
+//Fading Wildlands (Power: Tier 0-1)
+Fading Wildlands;👕;Cotton Turban;Item-Head;1;0;0;0;0;0;0;Improvised Gear;Sun-bleached and smelling of ancient sweat.<br>Provides <b>+1 ❤️ Health</b>.;Wrapped in memories.;none
+Fading Wildlands;👚;Faded Tunic;Item-Chest;0;0;1;0;0;0;0;Simple Wear;A remnant of a simpler, brighter life.<br>Provides <b>+1 🟢 Energy</b>.;Comfort in the familiar.;none
+Fading Wildlands;⛏;Rusty Pickaxe;Item-Weapon;0;1;-1;0;0;0;0;Mining Tool;Meant for stone, now used for survival.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Swing it with effort.;none
+Fading Wildlands;👟;Tattered Sneakers;Item-Legs;0;0;0;1;0;0;0;Athletic Footwear;Must have been fast once.<br>Provides <b>+1 🍀 Luck</b>.;Lighter steps.;none
+
+//Forsaken Village (Power: Tier 1-2)
+Forsaken Village;💡;Filament Cap;Item-Head;0;0;0;0;1;0;0;Makeshift Gear;A hollowed-out bulb that flickers with static electricity.<br>Provides <b>+1 🧠 Intellect</b>.;A dim idea glows.;none
+Forsaken Village;👔;Office Shirt;Item-Chest;0;1;0;0;1;0;0;Formal Wear;The ink stains tell a story of interrupted work.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🧠 Intellect</b>.;Dressed for a meeting that won't happen.;none
+Forsaken Village;🗜️;Workbench Boxer;Item-Weapon;0;2;-1;0;0;0;0;Improvised Weapon;A heavy metal tool turned into a fist.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
+Forsaken Village;🩳;Cargo Shorts;Item-Legs;1;0;1;0;0;0;0;Sturdy Trousers;Pockets full of lint and lost hopes.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Functional but cold.;none
+
+//Twisted Fairyland (Power: Tier 2, Magic Focus)
+Twisted Fairyland;⚗️;Crystal Beaker;Item-Head;0;0;0;0;1;1;0;<b>Artifact</b>;Bubbles with a liquid that defies gravity.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🔵 Mana</b>.;The air smells of ozone.;none
+Twisted Fairyland;🩱;Iridescent Leotard;Item-Chest;0;0;1;0;0;1;0;Stretchy Wear;Moves as if floating on an unseen wind.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🔵 Mana</b>.;Elegance in the chaos.;none
+Twisted Fairyland;🎍;Sharp Bamboo;Item-Weapon;0;2;0;0;-1;0;0;Improvised Blade;Grows faster than you can bleed.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🧠 Intellect</b>.;Nature strikes back.;none
+Twisted Fairyland;🛼;Glide Skates;Item-Legs;0;0;2;-1;0;0;0;<b>Artifact</b>;They glide over the ground without touching it.<br>Provides <b>+2 🟢 Energy</b> for <b>-1 🍀 Luck</b>.;Moving with uncanny speed.;none
+
+//River of Sorrows (Power: Tier 2-3)
+River of Sorrows;🩺;Mariner's Ear;Item-Head;0;0;0;1;0;1;0;Diagnostic Tool;Allows you to hear the heartbeat of the river.<br>Provides <b>+1 🍀 Luck</b> and <b>+1 🔵 Mana</b>.;A steady, wet rhythm.;none
+River of Sorrows;🦺;Safety Vest;Item-Chest;2;0;0;0;0;0;0;Bright Gear;Supposed to keep you afloat in the dark waters.<br>Provides <b>+2 ❤️ Health</b>.;Visibility is key.;none
+River of Sorrows;🛒;Rusty Chassis;Item-Weapon;0;2;0;-1;0;0;0;Metal Frame;A twisted remnant of a consumerist era.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🍀 Luck</b>.;Pushing through the debris.;none
+River of Sorrows;🩴;Rubber Sliders;Item-Legs;1;0;1;0;0;0;0;Cheap Footwear;Surprisingly good for navigating slippery banks.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Squelch, squelch.;none
+
+//Shrouded Necropolis (Power: Tier 3-4, High Risk/Reward)
+Shrouded Necropolis;♠️;Grave-Marker Pin;Item-Head;0;0;0;0;0;3;0;<b>Artifact</b>;A cold, black spade that pins your thoughts to the earth.<br>Provides <b>+3 🔵 Mana</b>.;Grounded in death.;none
+Shrouded Necropolis;🩻;Exposed Ribcage;Item-Chest;-2;0;0;0;0;0;3;<b>Artifact</b>;The bone is cold, but the protection it offers is absolute.<br>Provides <b>+3 🔰 Defence</b> for <b>-2 💔 Health</b>.;Heart guarded by bone.;none
+Shrouded Necropolis;💉;Infected Needle;Item-Weapon;0;3;0;0;-1;0;0;<b>Artifact</b>;One prick is all it takes to share the rot.<br>Provides <b>+3 ⚔️ Attack</b> for <b>-1 🧠 Intellect</b>.;The rot spreads.;none
+Shrouded Necropolis;🦿;Bionic Piston;Item-Legs;-1;0;3;0;0;0;0;<b>Artifact</b>;Pumps with a rhythmic, mechanical hatred.<br>Provides <b>+3 🟢 Energy</b> for <b>-1 💔 Health</b>.;Driven by cold steel.;none
+
+//Fishing (Varied Utility)
+Fishing;🛟;Buoyant Ring;Item-Chest;1;0;0;1;0;0;0;Safety Gear;Keeps you from sinking into the darker thoughts.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Feeling more secure.;none
+Fishing;🤿;Scuba Mask;Item-Head;0;0;0;0;1;1;0;Diving Gear;Glass is fogged with ancient, trapped air.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🔵 Mana</b>.;The depths look different now.;none
+Fishing;🎿;Sunken Skis;Item-Legs;0;0;1;1;0;0;0;Sporting Gear;Useless for snow, but they provide strange stability.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Found your footing.;none
+Fishing;🎣;Reinforced Rod;Item-Weapon;0;1;0;1;0;0;0;Fishing Tool;Strong enough to pull secrets from the silt.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Hooked a good one.;none
+Fishing;⚓;Heavy Anchor;Item-Weapon;0;2;-1;0;0;0;1;<b>Artifact</b>;Solid iron that demands you stay exactly where you are.<br>Provides <b>+2 ⚔️ Attack</b> and <b>+1 🔰 Defence</b> for <b>-1 🟢 Energy</b>.;Staying grounded.;none

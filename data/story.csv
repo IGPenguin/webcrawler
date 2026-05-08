@@ -8,11 +8,7 @@ Depths of Slumber;👹;Vivid Nightmare;Demon;2;1;1;0;0;0;0;Imaginary Threat;<b>�
 Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real;none
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> in your mind:<br>n/a;Woken up in: <b>Fading Wildlands</b>;none
 
-//Debug (generators need static encounter first)
-Fading Wildlands;🖌️;Painter's Brush;Item-Weapon;0;0;0;0;0;1;0;<b>Artifact</b>;Enchanted tool radiating strange power.<br>Provides <b>+1 🔵 Mana</b>, leaves a glowing trail.;Got a hold of a powerful tool;none
-Fading Wildlands;🏹;Cursed Bow;Item-Weapon;-1;1;0;0;0;0;0;Malevolent Weapon;Lying next to a corpse, handle with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot yourself into the knee!;none
-Fading Wildlands;🥻;Philosopher Toga;Item;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
-
+//Debug (generator needs a static encounter before it)
 
 //Fading Wildlands
 Fading Wildlands;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You don't remember</b> what happened before.<br>Looks like there's <b>only one way to find out</b>.;Set out on a new adventure!;none
