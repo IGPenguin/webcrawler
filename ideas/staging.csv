@@ -1,5 +1,13 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
 
+//River of Sorrows — new enemies (Batch 1)
+River of Sorrows;🦛;Wallowing Hulk;Tough;4;0;3;0;-1;0;1;Sunken Giant;Its hide is slick with river-mud<br>.;It didn't pursue. Just kept walking.;none
+River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops<br>;Trampled without a sound.;none
+River of Sorrows;♨️;Scalding Elemental;Hot;4;3;2;0;0;0;0;Thermal Horror;Erupts where the riverbed has cracked.<br>;Boiled alive in sorrow's current.;none
+River of Sorrows;🫠;Fever Shade;Hot;4;2;3;0;0;1;0;Heat Specter;Dead warmth fills the cold air around it.<br>;The fever became your last dream.;none
+River of Sorrows;🐭;Silt Ratter;Pet;1;0;1;1;0;0;0;River Wretch;Shivers on the bank with nowhere left to run.<br>;Tucked itself inside your pack.;none
+River of Sorrows;💀;Hollow Fisherman;Friend;0;0;0;0;1;0;0;Mourning Man;Line in the water, eyes on the distance.<br>Not fishing for fish.;His silence told you more than words could.;none
+
 //Fading Wildlands (Power: Tier 0-1)
 Fading Wildlands;👕;Cotton Turban;Item-Head;1;0;0;0;0;0;0;Improvised Gear;Sun-bleached and smelling of ancient sweat.<br>Provides <b>+1 ❤️ Health</b>.;Wrapped in memories.;none
 Fading Wildlands;👚;Faded Tunic;Item-Chest;0;0;1;0;0;0;0;Simple Wear;A remnant of a simpler, brighter life.<br>Provides <b>+1 🟢 Energy</b>.;Comfort in the familiar.;none
