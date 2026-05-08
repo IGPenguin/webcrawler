@@ -200,6 +200,8 @@ net = (atk × 3) + (mgk × 2) + (hp × 1.5) + (sta × 1.5) + (lck × 0.5) + (int
 
 **The fundamental rule:** Write as if the world is already lost and the text knows it. Dark fantasy, melancholic, occasionally ironic. Never whimsy. Never generic. If it could appear in a standard fantasy game, it's wrong.
 
+**Pop culture references:** Subtle nods to the developer's favourite games/movies are welcome and desired — a Skyrim/Dark Souls/Elden Ring... reference, a classic RPG wink, a film quote twisted dark. Keep them rare, keep them subtle. Never explain the reference in the text itself.
+
 ### Enemy desc
 - The desc is an observation about the creature — what it *is*, not what it does.
 - Two lines joined by `<br>`. 7–15 words total. Declarative or poetic. No bold tags.
@@ -242,12 +244,12 @@ net = (atk × 3) + (mgk × 2) + (hp × 1.5) + (sta × 1.5) + (lck × 0.5) + (int
 - **Artifacts:** Mythical/elemental compound — *Soul Mirror, Life-Stealing Pendant, Forbidden Codex*
 
 **Good adjectives for enemies:** Stray, Lost, Pale, Startled, Wild, Riled, Neurotic, Corrupted, Rotten, Possessed, Ghastly, Hollow, Forsaken, Wretched, Blighted
-**Avoid:** Dark, Evil, Bad, Strong, Big — too generic
+**Good adjectives to avoid (too generic):** Bad, Strong, Big — pick something specific instead.
 
 ### Preferred vocabulary
 **Use:** corrupted, desecrated, tainted, forsaken, fallen, rotted, withered, hollowed, remnants, forgotten, buried, sealed, faded, condemned, wretched, damned, blighted, defiled
 
-**Never use:** literally, actually, basically, amazing, awesome, powerful, incredible, epic (casual), any exclamation mark in flavor text
+**Never use:** literally, actually, basically, amazing, awesome, incredible, epic (casual), any exclamation mark in flavor text
 
 ### Area flavor words
 | Area | Flavor |
@@ -357,7 +359,7 @@ bash validate-csv.sh
 - Adding MGK to non-Undead/Demon/Spirit enemies
 - Adding DEF to non-Tough enemies or early-area enemies
 - Writing INT as a positive value on Small animals (should be -1)
-- Using the word "underworld" — this is the corrupted overworld
+- Confusing this world with the underworld — it's the corrupted overworld. Lore details in project memory.
 - Naming bosses with generic adjectives ("Dark Lord", "Evil Master")
 - Writing item descs that don't include the mechanical effect in bold
 - Using exclamation marks anywhere in flavor text

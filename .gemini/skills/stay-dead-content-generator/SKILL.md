@@ -169,8 +169,9 @@ net = (atk × 3) + (mgk × 2) + (hp × 1.5) + (sta × 1.5) + (lck × 0.5) + (int
 ---
 
 ## Writing Voice — Non-Negotiable
+**The fundamental rule:** Write as if the world is already lost and the text knows it. Dark fantasy, melancholic, occasionally ironic. Never whimsy. Never generic. If it could appear in a standard fantasy game, it's wrong.
 
-**The fundamental rule:** Write as if the world is already lost. Dark fantasy, melancholic, occasionally ironic. Never whimsy.
+**Pop culture references:** Subtle nods to the developer's favourite games/movies are welcome and desired — a Skyrim/Dark Souls/Elden Ring... reference, a classic RPG wink, a film quote twisted dark. Keep them rare, keep them subtle. Never explain the reference in the text itself.
 
 ### Enemy desc
 - Two lines joined by `<br>`. 7–15 words total. No bold tags.
