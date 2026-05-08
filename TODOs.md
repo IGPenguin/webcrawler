@@ -14,8 +14,10 @@
 - ME: complete the rest of the missing achievement unlocks
 - ME: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
 
+---
+
 # Claude
-- Add "impact" frames when hitting (flash white) or being hit (red white).
+- Add "impact" frames when hitting (flash white) or being hit (red white) or getting tired (green fade out?) especially prominent when getting to 1 HP or 1/0 STA, make use of full screen shakes etc. (the existing render/effect toolkit should provid opportunities)
 - Visual Contrast: Ensure the crit/success zones in the gradient are easily distinguishable for colorblind players (e.g., using different patterns or very
      distinct brightness levels).
 - ...
@@ -46,8 +48,6 @@
 - add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items - roll item by emoji from local encounters.csv) when spoken to or defeated.
 - gameplay implications based on companions in the party
 - add hidden stat visbility (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
-- full screen shake on crit interval hits (and more high-intensity global effects?)
-- implement a basic "Low Health" and "Low Stamina" visual pulses (to show urgency when player resources are very low = 1)
 - (possible only on android?) Add better vibration support to actionbar interactions:
    - vibrate on button press and release   
    - vibrate on transitioning between the fail/pass/crit zones
