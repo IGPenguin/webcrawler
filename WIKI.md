@@ -1,11 +1,13 @@
 # 📕 Codex of the Damned
 
-*You did not mean for the ritual to end like this. The world got corrupted and you are still here, reincarnating again and again, pushing through what remains of it.*<br>
-There is no undoing it, no going back. There is only the way forward. **Don't give up, you need to fix it!**
+*You did not mean for the ritual to end like this. The world got corrupted and you are still here, reincarnating forever, pushing through what remains of it.<br>
+There is no undoing it, no going back. There is only the way forward. **Don't give up, you need to fix it!***
 
 ---
 
 ## 📊 Your Six Stats
+
+Paying attention to your and the enemy stats is the bread and butter of success.
 
 | Stat | What it does |
 |------|-------------|
@@ -16,7 +18,7 @@ There is no undoing it, no going back. There is only the way forward. **Don't gi
 | 🧠 **Intellect** | Accelerates XP gain and raises your speech skills. |
 | 🔵 **Mana** | Provides additional options outside the physical actions. |
 
-Stats grow through looting items and level-ups. Experience accumulates when solving encounters, but it only converts to levels when you **💤 Sleep**.
+Grow stronger through looting items and accumulating XP to level up using **💤 Sleep**.
 
 ---
 
@@ -36,62 +38,65 @@ Not every action works or is available on every encounter, there are variations.
 | ❤️‍🩹 **Heal** | Mana-powered health recovery. |
 | 🪬 **Curse** | Spend mana to weaken the enemies, or discover secrets. |
 
-Watch the button colours. They signal when an action is unavailable, risky, or particularly effective.
+Watch the action button colours. They signal when an action is unavailable, risky, or particularly effective.
 
 ---
 
 ## 🎯 The Action Bar
 
-Every meaningful action triggers a skill check: a bar sweeps across the screen. ✅ **Hold the action button, then release inside the green zone.**
+Every action triggers a skill check bar: ✅ **Hold the action button, then release inside the green zone.**
 
 - Release **inside the zone** — success.
 - Release **outside the zone** — failure.
 - There may also be zones for critical success and failure.
 
-The zones change size and the cursor changes speed based on your and the encounter stats. Luck always helps. Rushing always hurts.
+The zones change size and the cursor changes speed based on your vs the encounter stats. Luck always helps. Rushing always hurts.
 
 ---
 
 ## 🧩 Memories
 
-**Memories** are the achievement and reward system. They unlock as you play — first death, first kill, first discovery. Some unlock new Origins; others unlock new encounters, items, or other abilities inaccessible before. The world expands for those who have paid for its lessons.
+**Memories** are the achievement and reward system. They unlock as you play — first death, first kill, first discovery.<br>
+Completing them grants you access to advanced features and content.
 
 ---
 
 ## 👤 Choosing Origin
 
-Once you prove to be  a worthy challenger, you will unlock starting **Origins**. Before each run, you choose who your character used to be. This seeds the initial stats and shape which actions you should lean on.<br>
+Once you prove to be  a worthy challenger, you will unlock starting **Origins** feature.<br>
+Before each run, you choose the initial stats to shape which playstyle you should lean on.<br>
 
-A high **⚔️ Attack** build tears through enemies but is helpless against spirits. A high **🧠 Intellect** build navigates by dialogue and grows quicker, but struggles against things that cannot be reasoned with. **🔵 Mana** opens the door to magic, but someone always pays for it.
-
-New origins unlock as you play, alongside new items, game fatures and such.
+**⚔️ Attack** build tears through standard enemies fast, but is virtually helpless against spirits and fast enemies.<br>
+**🧠 Intellect** build solves problems using 💬 **Speak** and gets more XP, but struggles against things that cannot be reasoned with.<br>
+**🔵 Mana** opens the door to magic, offensive spells always hit first but have limited damage and number of uses in combat.
 
 ---
 
 ## ⚖️ Spending Coins
 
-The **👤 Undertaker Shade** appears at the start of each run (given you have something to pay him with) — a grim merchant offering upgrades, items and such. His prices are in **🪙 Drachmae**, a currency that always returns to you with each new run. 
+The **👤 Undertaker Shade** appears at the start of each run, offering upgrades, items and such.<br>
+His prices are in **🪙 Drachmae**, a currency that always returns to you with each death. 
 
 ---
 
 ## 🎣 Fishing
 
-Capture a **🪱 Bait** so that you can fish at certain points in the journey. Fishing can surface things above what the current area would normally offer. It is one of the few almost peaceful activities left in the world.
+👋 **Grab** criters to use as **🪱 Bait** so that you can fish at certain spots during your journey.<br>
+Fishing can surface things above what the current area would normally offer - both good and bad.
 
 
 ---
 
 ## ⭐️ Chronicles and Rankings
 
-Every action you take is recorded in **📜 Chronicles** — a full history of every run, every choice, every death. It is not for the squeamish.
-
-Your runs are submitted to the **⭐️ Rankings**, a global scoreboard updated several times a day. Score reflects how far you got and the choices you made on the way.
+Every action you take is recorded in **📜 Chronicles** — a full history of all events, every choice, every death.<br>
+Upload your runs to the global **⭐️ Rankings**. The score reflects how far you got and the choices you made on the way.
 
 ---
 
 ## 🌍 The World
 
-The corruption did not spread evenly. Each area has its own character.
+The corruption did not spread evenly, each area has its own character.
 
 **😴 Depths of Slumber** — Where you begin your journey. A dream-state  that teaches the essentials of this place before the real weight lands.
 
@@ -110,13 +115,13 @@ The corruption did not spread evenly. Each area has its own character.
 
 ## ❤️ Staying Alive
 
-A few things worth knowing early to improve your survival chances:
+A few final things worth knowing to improve your survival chances:
 
-- **Watch the 💤 Sleep button.** Blue means your resources need recovery. Gold means a level-up is waiting.
-- **Read the ✅ Action bar before releasing.** A miss usually costs more than just a setback, cancel action when uncertain.
+- **⁉️ Watch your character status.** When tired but out of combat, always 💤 **Sleep** to recover all resources.
+- **Read the ✅ Action bar before releasing.** Fail usually means more than just a setback, cancel the action when uncertain.
 - **☠️ Not all creatures need to be killed.** Knocking out or speaking to foes is harder, but lighter on your karma.
 - **It is easier to 👋 Grab and ⚔️ Attack enemies when they are tired.** Watch their energy, not just your own.
-- **🪙 Drachmae persist across runs.** Spending them is not a loss, they will always come back to you.
-- **The scattered 💌 Mementos are not just flavour.** What you do with them shapes what you find at the end.
+- **🪙 Drachmae persist across runs.** Spending them is never a loss, they will always come back to you.
+- **The scattered 💔 Mementos are not just for flavour.** What you do with them shapes what you find at the end.
 
-*Enjoy the journey!*
+***Enjoy the journey!***
