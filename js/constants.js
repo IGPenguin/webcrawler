@@ -5,7 +5,7 @@ var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
 var TELEMETRY_DISABLED_LOCALHOST = false;
 
-if (isLocalhost() && TUTORIAL_SKIP_LOCALHOST) initialEncounterOverride = 5;
+if (isLocalhost() && TUTORIAL_SKIP_LOCALHOST) initialEncounterOverride = 4;
 
 // ── Colors ────────────────────────────────────────────────────────────────────
 var colorWhite         = "#FFFFFF";

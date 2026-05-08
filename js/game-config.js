@@ -1,6 +1,9 @@
 // Set to true to unlock Easy/Hardcore difficulty selection for players (except on localhost for testing).
 var DIFFICULTY_PICKER_ENABLED = false;
 
+// Set to true to use animated SVG backgrounds. Set to false to use original static PNGs.
+var VECTOR_BACKGROUNDS_ENABLED = false;
+
 // Set to false to suppress per-encounter enemy and loot telemetry events (keeps run_start, run_end, achievement, cheat_used).
 var TELEMETRY_DETAILS_ENABLED = false;
 

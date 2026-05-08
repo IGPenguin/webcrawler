@@ -15,6 +15,7 @@ layout: default
 <link rel="manifest" href="manifest.json">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="js/constants.js"></script>
+<script src="js/game-config.js"></script>
 <script>
   if (getPlatform() === 'android') document.documentElement.classList.add('is-android');
   applyFontPreference();
@@ -26,8 +27,28 @@ layout: default
       else console.log("Storage may be cleared by the UA under storage pressure.");
     });
   }
+
+  // Apply initial background based on vector preference
+  (function() {
+    var isVector = (typeof VECTOR_BACKGROUNDS_ENABLED !== 'undefined') ? VECTOR_BACKGROUNDS_ENABLED : false;
+    var ext = isVector ? '.svg' : '.png';
+    var folder = isVector ? 'assets/svg/' : 'assets/img/';
+    var fileUrl = 'url("' + folder + 'Depths' + ext + '")';
+
+    var applyBg = function() {
+      var bodyEl = document.getElementsByTagName('body')[0];
+      if (!bodyEl) { setTimeout(applyBg, 50); return; }
+      bodyEl.style.backgroundImage = fileUrl;
+      if (isVector) {
+        bodyEl.style.backgroundRepeat = 'no-repeat';
+        bodyEl.style.backgroundSize = 'cover';
+        bodyEl.style.backgroundPosition = 'center bottom';
+        bodyEl.style.backgroundAttachment = 'fixed';
+      }
+    };
+    applyBg();
+  })();
 </script>
-<script src="js/game-config.js"></script>
 <script src="js/logging.js"></script>
 <script src="js/string-generator.js"></script>
 <script src="js/game-state.js"></script>

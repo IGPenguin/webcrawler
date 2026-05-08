@@ -1,0 +1,42 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fairyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b0a24"/>
+      <stop offset="50%" stop-color="#381338"/>
+      <stop offset="100%" stop-color="#1b0a24"/>
+    </linearGradient>
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.07"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="#1b0a24"/>
+  <rect width="400" height="400" fill="url(#fairyGrad)"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.5"/>
+
+  <style>
+    .shard { fill: #BF40BF; opacity: 0.3; filter: blur(2px); animation: shardFloat 10s infinite ease-in-out; }
+    @keyframes shardFloat {
+      0%, 100% { transform: translate(0,0) rotate(0deg); }
+      50% { transform: translate(15px, -20px) rotate(15deg); opacity: 0.5; }
+    }
+    .pulse { fill: none; stroke: #c9594f; stroke-width: 1; opacity: 0.2; animation: magicPulse 5s infinite ease-out; }
+    @keyframes magicPulse {
+      0% { transform: scale(0.5); opacity: 0.5; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
+  </style>
+
+  <!-- Arcane Pulses -->
+  <circle class="pulse" cx="200" cy="200" r="50"/>
+  <circle class="pulse" cx="100" cy="100" r="30" style="animation-delay: -2s;"/>
+
+  <!-- Shards -->
+  <polygon class="shard" points="50,50 70,40 80,60 60,70"/>
+  <polygon class="shard" points="300,80 330,70 340,100 310,110" style="animation-delay: -2s;"/>
+  <polygon class="shard" points="100,250 120,240 130,270 110,280" style="animation-delay: -4.5s;"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shroudedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="50%" stop-color="#1a0a1a"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="#050505"/>
+  <rect width="400" height="400" fill="url(#shroudedGrad)"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.6"/>
+
+  <style>
+    .wisp { fill: #381338; opacity: 0.2; filter: blur(15px); animation: wispMove 12s infinite ease-in-out; }
+    @keyframes wispMove {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(-40px, -20px) scale(1.5); opacity: 0.4; }
+    }
+    .skull-shape { fill: #000000; opacity: 0.6; }
+  </style>
+
+  <!-- Shadowy Wisps -->
+  <circle class="wisp" cx="200" cy="200" r="100"/>
+  <circle class="wisp" cx="50" cy="350" r="80" style="animation-delay: -4s;"/>
+
+  <!-- Distant Graves/Shapes -->
+  <rect class="skull-shape" x="100" y="320" width="30" height="50" rx="5"/>
+  <rect class="skull-shape" x="250" y="340" width="25" height="45" rx="5"/>
+</svg>

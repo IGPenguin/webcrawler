@@ -1,0 +1,33 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c0e"/>
+      <stop offset="50%" stop-color="#1a1c1e"/>
+      <stop offset="100%" stop-color="#0a0c0e"/>
+    </linearGradient>
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="#0a0c0e"/>
+  <rect width="400" height="400" fill="url(#rainGrad)"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.4"/>
+  
+  <style>
+    .rain-streak { stroke: #556f90; stroke-width: 1; opacity: 0.3; animation: rainPour 0.6s infinite linear; }
+    @keyframes rainPour {
+      0% { transform: translate(20px, -40px); }
+      100% { transform: translate(-20px, 400px); }
+    }
+  </style>
+
+  <!-- Rain Streaks -->
+  <line class="rain-streak" x1="50" y1="0" x2="45" y2="40"/>
+  <line class="rain-streak" x1="150" y1="0" x2="145" y2="40" style="animation-delay: -0.1s;"/>
+  <line class="rain-streak" x1="250" y1="0" x2="245" y2="40" style="animation-delay: -0.2s;"/>
+</svg>

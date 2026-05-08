@@ -503,18 +503,36 @@ function playEndingCutscene(frames, onComplete) {
   }
 }
 
-function setBackground(fileName="Depths.png"){
-  var fileUrl='url(https://raw.githubusercontent.com/IGPenguin/stay-dead/refs/heads/live/assets/img/file.png)';
-  fileUrl=fileUrl.replaceAll("file.png",fileName.split(" ")[0]+".png");
-  var bodyUIElement = document.getElementsByTagName('body')[0];
+function setBackground(areaName="Depths"){
+  var prefix = areaName.split(" ")[0].replace(".svg", "").replace(".png", "");
+  var isVector = (typeof VECTOR_BACKGROUNDS_ENABLED !== 'undefined') ? VECTOR_BACKGROUNDS_ENABLED : false;
+  var ext = isVector ? '.svg' : '.png';
+  var folder = isVector ? 'assets/svg/' : 'assets/img/';
+  var fileUrl = 'url("' + folder + prefix + ext + '")';
 
-  bodyUIElement.style.backgroundImage = fileUrl;
+  var bodyEl = document.getElementsByTagName('body')[0];
+  if (bodyEl) {
+    bodyEl.style.backgroundImage = fileUrl;
+    if (isVector) {
+      bodyEl.style.backgroundRepeat = 'no-repeat';
+      bodyEl.style.backgroundSize = 'cover';
+      bodyEl.style.backgroundPosition = 'center bottom';
+      bodyEl.style.backgroundAttachment = 'fixed';
+    } else {
+      bodyEl.style.backgroundRepeat = 'repeat';
+      bodyEl.style.backgroundSize = '';
+      bodyEl.style.backgroundPosition = '';
+      bodyEl.style.backgroundAttachment = '';
+    }
+  }
 }
 
 (function preloadBackgrounds(){
   var names = ['Auxiliary','Depths','Eternal','Fading','Forsaken','Freezing','Mournful','River','Shrouded','Twisted'];
-  var base = 'https://raw.githubusercontent.com/IGPenguin/stay-dead/refs/heads/live/assets/img/';
-  names.forEach(function(n){ new Image().src = base + n + '.png'; });
+  var isVector = (typeof VECTOR_BACKGROUNDS_ENABLED !== 'undefined') ? VECTOR_BACKGROUNDS_ENABLED : false;
+  var ext = isVector ? '.svg' : '.png';
+  var folder = isVector ? 'assets/svg/' : 'assets/img/';
+  names.forEach(function(n){ new Image().src = folder + n + ext; });
 })();
 
 //Mobile specific - vibrate

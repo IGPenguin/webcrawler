@@ -8,7 +8,7 @@ Depths of Slumber;👹;Vivid Nightmare;Demon;2;1;1;0;0;0;0;Imaginary Threat;<b>�
 Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>🍴 Eat</b> to restore <b>❤️ Health</b> and <b>🟢 Energy</b>.<br>Resources are <b>essential for your survival</b>.;Yummy! Tasted almost real;none
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> in your mind:<br>n/a;Woken up in: <b>Fading Wildlands</b>;none
 
-//Debug
+//Debug (generators need static encounter first)
 
 //Fading Wildlands
 Fading Wildlands;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You don't remember</b> what happened before.<br>Looks like there's <b>only one way to find out</b>.;Set out on a new adventure!;none

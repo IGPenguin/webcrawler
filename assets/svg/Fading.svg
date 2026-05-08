@@ -1,0 +1,82 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Darkened, Natural Green Gradient -->
+    <linearGradient id="forestGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e1c07"/>
+      <stop offset="50%" stop-color="#253d16"/>
+      <stop offset="100%" stop-color="#0e1c07"/>
+    </linearGradient>
+    
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+    </filter>
+
+    <path id="smallLeaf" d="M0,0 C2,-2 6,-2 8,0 C6,2 2,2 0,0" fill="currentColor"/>
+  </defs>
+
+  <rect width="400" height="400" fill="#0e1c07"/>
+  <rect width="400" height="400" fill="url(#forestGrad)"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.6"/>
+
+  <style>
+    .leaf { opacity: 0.5; animation: fall 24s infinite linear; }
+    @keyframes fall {
+      from { transform: translate(0,-20px) rotate(0deg); }
+      to { transform: translate(-40px, 420px) rotate(360deg); }
+    }
+    .grass { fill: none; opacity: 0.4; animation: grassSway 10s infinite ease-in-out; transform-origin: bottom; }
+    @keyframes grassSway {
+      0%, 100% { transform: skewX(-4deg); }
+      50% { transform: skewX(4deg); }
+    }
+  </style>
+
+  <!-- Grass blades kept within horizontal bounds -->
+  <path class="grass" d="M10,410 Q15,350 10,310" stroke="#0e1c07" stroke-width="1.2"/>
+  <path class="grass" d="M30,410 Q35,340 25,305" stroke="#0a1405" stroke-width="1.1" style="animation-delay: -1s;"/>
+  <path class="grass" d="M60,410 Q55,340 65,300" stroke="#0a1405" stroke-width="1.1" style="animation-delay: -3s;"/>
+  <path class="grass" d="M80,410 Q85,345 75,310" stroke="#0e1c07" stroke-width="1.2" style="animation-delay: -5s;"/>
+  <path class="grass" d="M110,410 Q120,355 105,315" stroke="#0e1c07" stroke-width="1.3" style="animation-delay: -2s;"/>
+  <path class="grass" d="M140,410 Q135,345 145,305" stroke="#0a1405" stroke-width="1.2" style="animation-delay: -7s;"/>
+  <path class="grass" d="M170,410 Q175,350 165,310" stroke="#0e1c07" stroke-width="1.2" style="animation-delay: -1s;"/>
+  <path class="grass" d="M220,410 Q210,345 230,305" stroke="#0a1405" stroke-width="1.2" style="animation-delay: -6s;"/>
+  <path class="grass" d="M250,410 Q255,350 245,310" stroke="#0e1c07" stroke-width="1.3" style="animation-delay: -4s;"/>
+  <path class="grass" d="M310,410 Q305,345 315,305" stroke="#0a1405" stroke-width="1.1" style="animation-delay: -2.5s;"/>
+  <path class="grass" d="M340,410 Q335,350 345,310" stroke="#0e1c07" stroke-width="1.1" style="animation-delay: -1.5s;"/>
+  <path class="grass" d="M370,410 Q375,345 365,310" stroke="#0a1405" stroke-width="1.2" style="animation-delay: -8s;"/>
+
+  <path class="grass" d="M20,410 Q35,370 15,340" stroke="#1c2e11" stroke-width="1.8" style="animation-delay: -2s;"/>
+  <path class="grass" d="M45,410 Q60,370 40,340" stroke="#253d16" stroke-width="1.6" style="animation-delay: -3s;"/>
+  <path class="grass" d="M70,410 Q85,375 65,345" stroke="#1c2e11" stroke-width="1.7" style="animation-delay: -0.5s;"/>
+  <path class="grass" d="M95,410 Q110,365 90,335" stroke="#253d16" stroke-width="1.6" style="animation-delay: -6.5s;"/>
+  <path class="grass" d="M120,410 Q135,375 115,345" stroke="#1c2e11" stroke-width="1.8" style="animation-delay: -4s;"/>
+  <path class="grass" d="M150,410 Q165,370 145,340" stroke="#253d16" stroke-width="1.6" style="animation-delay: -9s;"/>
+  <path class="grass" d="M185,410 Q200,375 180,345" stroke="#1c2e11" stroke-width="1.7" style="animation-delay: -1.5s;"/>
+  <path class="grass" d="M210,410 Q225,370 205,340" stroke="#253d16" stroke-width="1.6" style="animation-delay: -5s;"/>
+  <path class="grass" d="M240,410 Q255,375 235,345" stroke="#1c2e11" stroke-width="1.7" style="animation-delay: -7.5s;"/>
+  <path class="grass" d="M275,410 Q290,365 270,335" stroke="#253d16" stroke-width="1.8" style="animation-delay: -2.5s;"/>
+  <path class="grass" d="M300,410 Q315,370 295,340" stroke="#1c2e11" stroke-width="1.6" style="animation-delay: -3.8s;"/>
+  <path class="grass" d="M330,410 Q345,375 325,345" stroke="#253d16" stroke-width="1.7" style="animation-delay: -6s;"/>
+  <path class="grass" d="M360,410 Q375,370 355,340" stroke="#1c2e11" stroke-width="1.8" style="animation-delay: -1.2s;"/>
+  <path class="grass" d="M385,410 Q400,375 380,345" stroke="#253d16" stroke-width="1.6" style="animation-delay: -10s;"/>
+
+  <!-- Short Thick -->
+  <path class="grass" d="M15,410 Q20,385 15,370" stroke="#0a1405" stroke-width="2.5" style="animation-delay: -0.5s;"/>
+  <path class="grass" d="M55,410 Q60,380 50,365" stroke="#0e1c07" stroke-width="2.2" style="animation-delay: -3.5s;"/>
+  <path class="grass" d="M100,410 Q105,385 95,370" stroke="#0a1405" stroke-width="2.4" style="animation-delay: -1.5s;"/>
+  <path class="grass" d="M145,410 Q150,380 140,365" stroke="#0e1c07" stroke-width="2.3" style="animation-delay: -5.5s;"/>
+  <path class="grass" d="M190,410 Q195,385 185,370" stroke="#0a1405" stroke-width="2.5" style="animation-delay: -1s;"/>
+  <path class="grass" d="M235,410 Q240,380 230,365" stroke="#0e1c07" stroke-width="2.2" style="animation-delay: -4.5s;"/>
+  <path class="grass" d="M280,410 Q285,385 275,370" stroke="#0a1405" stroke-width="2.4" style="animation-delay: -2s;"/>
+  <path class="grass" d="M325,410 Q330,380 320,365" stroke="#0e1c07" stroke-width="2.3" style="animation-delay: -6.5s;"/>
+
+  <!-- Falling Leaves (Slower) -->
+  <use href="#smallLeaf" x="40" y="0" class="leaf" style="color: #3d6b1a; animation-delay: -2s; animation-duration: 20s;"/>
+  <use href="#smallLeaf" x="120" y="0" class="leaf" style="color: #253d16; animation-delay: -10s; animation-duration: 28s;"/>
+  <use href="#smallLeaf" x="200" y="0" class="leaf" style="color: #5b7505; animation-delay: -6s; animation-duration: 22s;"/>
+  <use href="#smallLeaf" x="280" y="0" class="leaf" style="color: #0e1c07; animation-delay: -16s; animation-duration: 26s;"/>
+</svg>

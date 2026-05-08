@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="riverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#072a52"/>
+      <stop offset="50%" stop-color="#1059AA"/>
+      <stop offset="100%" stop-color="#072a52"/>
+    </linearGradient>
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+    </filter>
+    <pattern id="waves" width="400" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0 50 Q100 20 200 50 T400 50" fill="none" stroke="#487bb5" stroke-width="2" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="400" fill="#072a52"/>
+  <rect width="400" height="400" fill="url(#riverGrad)"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.4"/>
+  
+  <style>
+    .wave-layer { animation: waveMove 15s infinite linear; }
+    @keyframes waveMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-400px); }
+    }
+    .bubble { fill: white; opacity: 0.1; animation: bubbleUp 10s infinite ease-in; }
+    @keyframes bubbleUp {
+      0% { transform: translate(0, 420px) scale(0.5); opacity: 0; }
+      50% { opacity: 0.3; }
+      100% { transform: translate(-20px, -20px) scale(1.2); opacity: 0; }
+    }
+  </style>
+
+  <rect width="800" height="400" fill="url(#waves)" class="wave-layer"/>
+
+  <!-- Bubbles -->
+  <circle class="bubble" cx="80" cy="0" r="3"/>
+  <circle class="bubble" cx="200" cy="0" r="5" style="animation-delay: -3s;"/>
+</svg>

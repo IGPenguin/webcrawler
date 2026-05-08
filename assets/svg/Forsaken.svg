@@ -1,0 +1,70 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Seamless Green-Brown Muddy Gradient -->
+    <linearGradient id="villageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141a12"/>
+      <stop offset="50%" stop-color="#26241c"/>
+      <stop offset="100%" stop-color="#141a12"/>
+    </linearGradient>
+    
+    <!-- Organic Noise for Grit -->
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- Mist Gradient -->
+    <radialGradient id="mistGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3d4235" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#141a12" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Rubble Shape Archetype -->
+    <path id="rubblePiece" d="M0,15 L5,0 L12,3 L15,18 L8,20 Z" fill="currentColor"/>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" fill="#141a12"/>
+  <rect width="400" height="400" fill="url(#villageGrad)"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.6"/>
+
+  <style>
+    .fog-cloud { fill: url(#mistGrad); animation: fogDrift 50s infinite ease-in-out; }
+    @keyframes fogDrift {
+      0%, 100% { transform: translate(0,0) scale(1); opacity: 0.2; }
+      50% { transform: translate(40px, 15px) scale(1.3); opacity: 0.5; }
+    }
+    .rubble { color: #0d120a; opacity: 0.4; }
+    .rubble-far { color: #080a07; opacity: 0.2; }
+    .orb { fill: #5b7505; filter: blur(2px); opacity: 0.15; animation: floatOrb 20s infinite ease-in-out; }
+    @keyframes floatOrb {
+      0%, 100% { transform: translate(0,0); }
+      50% { transform: translate(-15px, -40px); opacity: 0.3; }
+    }
+  </style>
+
+  <!-- Distant Rubble (In-bounds to prevent seams) -->
+  <use href="#rubblePiece" x="60" y="270" class="rubble-far" transform="scale(2.5) rotate(15)"/>
+  <use href="#rubblePiece" x="240" y="250" class="rubble-far" transform="scale(3) rotate(-10)"/>
+  <use href="#rubblePiece" x="130" y="230" class="rubble-far" transform="scale(2.2) rotate(45)"/>
+  
+  <!-- Fog Layers (Large circles, but kept within or centered to minimize tile artifacts) -->
+  <circle class="fog-cloud" cx="150" cy="350" r="200"/>
+  <circle class="fog-cloud" cx="350" cy="300" r="150" style="animation-delay: -15s;"/>
+  <circle class="fog-cloud" cx="50" cy="200" r="180" style="animation-delay: -30s;"/>
+
+  <!-- Midground Rubble (In-bounds) -->
+  <use href="#rubblePiece" x="30" y="330" class="rubble" transform="scale(1.5) rotate(5)"/>
+  <use href="#rubblePiece" x="90" y="350" class="rubble" transform="scale(1.2) rotate(-20)"/>
+  <use href="#rubblePiece" x="170" y="340" class="rubble" transform="scale(1.8) rotate(10)"/>
+  <use href="#rubblePiece" x="240" y="360" class="rubble" transform="scale(1.1) rotate(60)"/>
+  <use href="#rubblePiece" x="320" y="350" class="rubble" transform="scale(1.6) rotate(-35)"/>
+
+  <!-- Ghostly Orbs -->
+  <circle class="orb" cx="180" cy="220" r="3"/>
+  <circle class="orb" cx="300" cy="180" r="2" style="animation-delay: -10s;"/>
+  <circle class="orb" cx="70" cy="290" r="4" style="animation-delay: -15s;"/>
+</svg>
