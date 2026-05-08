@@ -45,6 +45,10 @@ def validate_achievement_origins(warnings, errors):
         lines = [line for line in f if line.strip() and not line.strip().startswith('//')]
         reader = csv.DictReader(lines, delimiter=';')
         for row in reader:
+            missing = [k for k, v in row.items() if v is None]
+            if missing:
+                errors.append(f"Wrong Column Count - origins.csv [{row.get('emoji', '').strip()} {row.get('name', '?').strip()}]: missing columns {missing}")
+                continue
             origins.append(row)
 
     # Helper to clean origin names (strip emojis and common typos)
@@ -107,6 +111,9 @@ def validate_origin_stats(warnings, errors):
         lines = [line for line in f if line.strip() and not line.strip().startswith('//')]
         reader = csv.DictReader(lines, delimiter=';')
         for row in reader:
+            if any(v is None for v in row.values()):
+                errors.append(f"Wrong Column Count - origins.csv [{row.get('emoji', '').strip()} {row.get('name', '?').strip()}]: skipping stat validation")
+                continue
             desc = row['desc']
             # Find patterns like +3 🔵 Mana or -1 💔 Health
             matches = re.findall(r'([+-]\d+)\s*(?:<b>)?(.*?)(?:</b>)?', desc)
