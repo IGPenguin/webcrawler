@@ -59,7 +59,7 @@ Fading Wildlands;🌾;Tall Weeds;Container-2;0;0;0;0;0;0;0;Overgrown Path;Weeds 
 Fading Wildlands;🌼;Fading Blooms;Container-2;0;0;0;0;0;0;0;Tired Color;Petals cling to life a little longer.<br>;;none
 Fading Wildlands;🌺;Withering Field;Container-2;0;0;0;0;0;0;0;Dying Beauty;Once vibrant, now almost gone.<br>;;none
 Fading Wildlands;🌸;Pale Orchard;Container-2;0;0;0;0;0;0;0;Silent Harvest;Branches wait for hands that never came.<br>;;none
-Fading Wildlands;🌹;Thorny Rosebush;Container-2;-1;0;0;0;0;0;0;Stinging Growth;Lovely at distance, punishing up close.<br>;Got stung real bad!;none
+Fading Wildlands;🌹;Thorny Rosebush;Container-2;-1;0;0;0;0;0;0;Stinging Growth;Lovely at distance, punishing up close.<br>;Drew blood on the way in.;none
 Fading Wildlands;🌹;Thorny Bramble;Container-2;-1;0;0;0;0;0;0;Natural Barrier;Sharp thorns suggest avoidance.<br>;Forced your way through.;none
 
 Fading Wildlands;🌿;Thick Growth;Container-3;0;0;0;0;0;0;0;Hidden Shapes;Something shifts where the grass is darkest.<br>;Crossed right through.;none
@@ -85,7 +85,7 @@ Fading Wildlands;🌗;Half-Moon Glow;Curse;0;0;0;0;-1;0;0;Eerie Moment;Moonlight
 Fading Wildlands;💩;Rotten Mound;Trap-Attack;0;0;0;0;-1;0;0;Foul Remains;Whatever died here didn’t rest clean.<br>;Suffered some nasty consequences.;none
 Fading Wildlands;🕸️;Clinging Web;Trap-Roll;0;0;-1;0;0;0;0;Snaring Threads;Sticky strands refuse to let go.<br>;Got some webs on your face;none
 
-Fading Wildlands;🌿;Fern Thicket;Trap-Obstacle;0;0;0;0;0;0;0;Quiet Flora;Dense vegetation blocks the way ahead.<br>;Cannot push yourself trough!;none
+Fading Wildlands;🌿;Fern Thicket;Trap-Obstacle;0;0;0;0;0;0;0;Quiet Flora;Dense vegetation blocks the way ahead.<br>;The thicket held its ground.;none
 Fading Wildlands;🪵;Fallen Trunk;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;A heavy trunk denies the easy way forward.<br>;There's no other way ahead.;none
 Fading Wildlands;🪨;Collapsed Stones;Trap-Obstacle;0;0;0;0;0;0;0;Blocking Mass;The path ahead is choked with rubble.<br>;The way forward is blocked.;none
 
@@ -124,8 +124,8 @@ Fading Wildlands;🦃;Riled Turkey;Standard;1;1;3;0;10;0;0;Feathered Fury;The cl
 Fading Wildlands;🐜;Biting Ant;Stingy;1;1;1;0;-1;0;0;Tiny Swarm;One is nothing, many is death.<br>;Overrun by thousand bites.;none
 Fading Wildlands;🦂;Hidden Scorpion;Stingy;1;1;2;0;-1;0;0;Buried Threat;Getting ready to strike from beneath.<br>;Venom took over your body.;none
 Fading Wildlands;🦗;Thorn Cricket;Stingy;1;1;2;0;-1;0;0;Sharp-limbed;Its legs cut more than thin grass.<br>;Sliced by a sudden leap.;none
-Fading Wildlands;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Wandering Threat;Doesn’t know where it’s going, only that it hurts.<br>;Ouch, that stings!;none
-Fading Wildlands;🦔️;Curled Bristle;Stingy;2;0;1;1;0;0;0;Spined Bundle;Harmless until you reach for it.<br>;Ouch, that stings!;none
+Fading Wildlands;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Wandering Threat;Doesn’t know where it’s going, only that it hurts.<br>;Got stung right away.;none
+Fading Wildlands;🦔️;Curled Bristle;Stingy;2;0;1;1;0;0;0;Spined Bundle;Harmless until you reach for it.<br>;Reached for the wrong thing.;none
 
 Fading Wildlands;🦥;Slow Watcher;Toxic;2;0;1;1;1;0;0;Gentle Observer;Barely moves, means no harm.<br>;Oh, that is really unfortunate.;none
 Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings to skin and soul.<br>;Suffered a terrible stench.;none
@@ -161,7 +161,7 @@ Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants abil
 Fading Wildlands;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Fading Wildlands;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Fading Wildlands;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
-Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
+Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;The blood wasn't yours. Not yet.;kill_first
 
 Fading Wildlands;🏵️;Symbol of Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment, provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.;none
@@ -172,8 +172,8 @@ Fading Wildlands;🍀;Four-leaf Clover;Item;0;0;0;3;0;0;0;<b>Artifact</b>;Extrem
 Fading Wildlands;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
 
 Fading Wildlands;💐;Flower Bouquet;Item;0;0;0;0;2;0;0;Floral Gift;Makes anyone look a lot friendlier.<br>Provides <b>+2 🧠 Charisma</b>.;Feels purposeful carrying that.;none
-Fading Wildlands;🌹;Prickly Rose;Item;-1;0;0;0;2;0;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Ouch, sharp thorns!;none
-Fading Wildlands;🌷;Pink Tulip;Item;1;0;0;0;1;0;0;Natural Beauty;Brings intense pleasure whenever looked at.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Just awesome!;none
+Fading Wildlands;🌹;Prickly Rose;Item;-1;0;0;0;2;0;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Beauty extracted its toll.;none
+Fading Wildlands;🌷;Pink Tulip;Item;1;0;0;0;1;0;0;Natural Beauty;Brings intense pleasure whenever looked at.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Something still soft in all this ruin.;none
 
 Fading Wildlands;🪨;Sharp Stone;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.;none
 Fading Wildlands;🧤;Lucky Gloves;Item;0;0;0;2;0;0;0;Blessed Gear;Deems both hands "the lucky hand".<br>Provides <b>+2 🍀 Luck</b>.;Became lucky handed;none
@@ -201,8 +201,8 @@ Fading Wildlands;🪁;Torn Kite;Item;0;0;0;0;0;0;0;Worthless Junk;Wouldn't fly, 
 
 Fading Wildlands;💌;Undelivered Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
 
-Fading Wildlands;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!;none
-Fading Wildlands;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Got something of a real value!;none
+Fading Wildlands;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Worth something, somewhere.;none
+Fading Wildlands;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Worth something, somewhere.;none
 
 Fading Wildlands;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for: n/a;Swapped your nuts for;none
 Fading Wildlands;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers something valuable in exchange for food.<br>It is looking for: n/a;Looks like it was worth it;none
@@ -752,24 +752,24 @@ Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;0;Crustacean;Boasts a p
 Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;0;Wild Beast;Probably has no soul.<br>;Got ripped apart and eaten.;none
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.;none
 
-Twisted Fairyland;🔥;Dancing Flame;Hot;1;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.;none
+Twisted Fairyland;🔥;Dancing Flame;Hot;3;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.;none
 
-Twisted Fairyland;🦚;Pearlescent Bird;Reflective;2;2;3;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.;none
+Twisted Fairyland;🦚;Pearlescent Bird;Reflective;3;2;3;0;2;0;0;Fancy Animal;Peace was never an option.<br>;Got your eyes pecked out.;none
 Twisted Fairyland;🪲;Overgrown Beetle;Reflective;3;3;1;1;0;0;0;Pelicular Insect;Beautifully colored, but seems deadly.<br>;Crushed by giant mandibles.;none
 Twisted Fairyland;🦎;Prismatic Gecko;Reflective;3;2;3;0;2;0;0;Magic Lizard;Changes color to match surroundings.<br>;Your colours faded forever.;none
 
-Twisted Fairyland;🐌;Oversized Snail;Tough;1;0;1;0;0;0;1;Armored Critter;Leave him be, he means no harm!<br>;Covered in sticky goo.;none
+Twisted Fairyland;🐌;Oversized Snail;Tough;2;0;1;0;0;0;1;Armored Critter;Leave him be, he means no harm!<br>;Covered in sticky goo.;none
 Twisted Fairyland;🐢;Fierce Tortoise;Tough;3;2;2;0;0;0;1;Armored Foe;Too hungry to leave you alone.<br>;Turned into a human cabbage.;none
 
 Twisted Fairyland;🌵;Thorn Avatar;Stingy;3;1;1;0;0;0;0;Moving Briar;Every brush takes more than fabric.<br>;Skin and flesh got torn apart.;none
-Twisted Fairyland;🐜;Bullet Ant;Stingy;1;3;2;0;-1;0;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.;none
-Twisted Fairyland;🦟;Oversized Mosquito;Stingy;2;2;2;0;-1;0;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.;none
+Twisted Fairyland;🐜;Bullet Ant;Stingy;2;3;2;0;-1;0;0;Tireless Worker;Able to carry 50x its weight.<br>;That bite hurt like hell.;none
+Twisted Fairyland;🦟;Oversized Mosquito;Stingy;3;2;2;0;-1;0;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.;none
 Twisted Fairyland;🕷️;Huge Tarantula;Stingy;3;2;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got lethally stung.;none
 
-Twisted Fairyland;🧀;Cheese Monster;Toxic;2;2;3;0;-1;0;0;Living Snack;Labeled with <i>"I <3 Ladoria"</i>, looks dangerous.<br>;Got poked with some new holes.;none
+Twisted Fairyland;🧀;Cheese Monster;Toxic;3;2;3;0;-1;0;0;Living Snack;Labeled with <i>"I <3 Ladoria"</i>, looks dangerous.<br>;Got poked with some new holes.;none
 Twisted Fairyland;🌼;Living Bloom;Toxic;3;2;2;0;-1;0;0;Unnatural Growth;Smells sweet and sour.<br>;Got lethally poisoned.;none
-Twisted Fairyland;🕷️;Black Widow;Toxic;1;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.;none
-Twisted Fairyland;🪱;Glowing Worm;Toxic;1;1;1;0;-1;0;0;Arthropod;Radiates a strange green aura.<br>;Suffered radiation damage.;none
+Twisted Fairyland;🕷️;Black Widow;Toxic;3;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.;none
+Twisted Fairyland;🪱;Glowing Worm;Toxic;3;1;1;0;-1;0;0;Arthropod;Radiates a strange green aura.<br>;Suffered radiation damage.;none
 
 Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;0;Rare Creature;Not happy about having a company.<br>;Turned you into goulash.;none
 Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;0;Twisted Humanoid;Tried so hard, to not get spotted.<br>;Got your head put on a spike.;none
@@ -778,7 +778,7 @@ Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;1;2;0;4;2;0;Twisted Huma
 Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;0;Crazed Maniac;Looks like one of those mythical creatures.<br>Something just feells off though.;Devoured by a giant mouth.;none
 
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.;none
-Twisted Fairyland;🦜;Annoying Parrot;Swift;2;1;4;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;;none
+Twisted Fairyland;🦜;Annoying Parrot;Swift;3;1;4;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;The beak found the eye first.;none
 Twisted Fairyland;🐝;Swarm of Bees;Swift;3;1;3;0;-1;0;0;Pesky Insects;A ton of bees swarmed the area.<br>;There was nowhere to run.;none
 Twisted Fairyland;🐆;Daunting Panther;Swift;3;3;2;0;5;0;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.;none
 Twisted Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;5;0;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.;none
@@ -786,18 +786,18 @@ Twisted Fairyland;🦅;Bald Eagle;Swift;3;4;1;0;-1;0;0;Wild Animal;Attacks from 
 
 Twisted Fairyland;🌴;Exotic Ent;Heavy;3;2;2;0;4;0;0;Living Wood;Does not like uninvited guests.<br>;Got broken in half.;none
 Twisted Fairyland;🌲;Disturbed Ent;Heavy;4;3;1;0;4;0;0;Living Wood;Does not like uninvited guests.<br>;Got broken in half.;none
-Twisted Fairyland;🐃;Frantic Horns;Heavy;4;2;2;0;5;0;0;Wild Beast;Its majestic antlers look rather deadly.<br>;;none
-Twisted Fairyland;🦍;Native Ape;Heavy;3;2;3;0;3;0;0;Wild Beast;Buffed and ready to fight.<br>;;none
-Twisted Fairyland;🦏;Bulky Rhino;Heavy;5;3;1;0;5;0;0;Wild Beast;Its majestic horn looks rather deadly.<br>;;none
+Twisted Fairyland;🐃;Frantic Horns;Heavy;4;2;2;0;5;0;0;Wild Beast;Its majestic antlers look rather deadly.<br>;Antlers found something vital.;none
+Twisted Fairyland;🦍;Native Ape;Heavy;3;2;3;0;3;0;0;Wild Beast;Buffed and ready to fight.<br>;Beaten into the ground.;none
+Twisted Fairyland;🦏;Bulky Rhino;Heavy;5;3;1;0;5;0;0;Wild Beast;Its majestic horn looks rather deadly.<br>;The horn went straight through.;none
 Twisted Fairyland;🐆;Muscular Sabertooth;Heavy;4;4;2;0;5;0;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner.;none
 Twisted Fairyland;🐊;Massive Aligator;Heavy;4;4;1;0;5;0;0;Alpha Predator;Beware its powerful pounce.<br>;Became a tasty dinner.;none
 
-Twisted Fairyland;👺;Wicked Imp;Demon;2;2;2;0;3;0;0;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.;none
-Twisted Fairyland;👹;Little Devil;Demon;1;3;1;0;3;0;0;Imminent Threat;Laughs out loud maniacally.<br>;;none
+Twisted Fairyland;👺;Wicked Imp;Demon;3;2;2;0;3;0;0;Mischief Incarnate;Eyes glint with cruel joy.<br>;Mocked your dying breath.;none
+Twisted Fairyland;👹;Little Devil;Demon;3;3;1;0;3;0;0;Imminent Threat;Laughs out loud maniacally.<br>;Still laughing as you fell.;none
 Twisted Fairyland;🌚;Shadow Spirit;Demon;3;1;1;0;-1;1;0;Sinister Remnants;Slips between the shadows.<br>;No mercy for the wicked.;none
-Twisted Fairyland;👿;Malevolent Fiend;Demon;2;1;3;0;1;1;0;Sinister Shape;Appeared out of nowhere.<br>;Lost in endless darkness.;none
+Twisted Fairyland;👿;Malevolent Fiend;Demon;3;1;3;0;1;1;0;Sinister Shape;Appeared out of nowhere.<br>;Lost in endless darkness.;none
 
-Twisted Fairyland;🦋;Ash Wraith;Undead;2;2;2;0;-1;1;0;Dead Insect;Wings made of grave dust. Still beautiful.<br>;You were scattered into nothing.;none
+Twisted Fairyland;🦋;Ash Wraith;Undead;3;2;2;0;-1;1;0;Dead Insect;Wings made of grave dust. Still beautiful.<br>;You were scattered into nothing.;none
 
 Twisted Fairyland;🐸;Hexed Toad;Spirit;2;0;2;0;4;1;0;Forest Spirit;Croaks in a language older than this forest.<br>;Your spirit was destroyed.;none
 Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;1;0;-1;1;0;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.;none
@@ -808,13 +808,13 @@ Twisted Fairyland;🐦‍🔥;Ashen Glider;Boss-Hot;3;3;2;0;4;0;0;Blazing Bird;I
 Twisted Fairyland;🦎;Komodo Dragon;Boss-Toxic;3;3;2;0;4;0;0;Venomous Lizard;Maw full of venomous teeth.<br>;Devoured by a hungry lizard.;none
 Twisted Fairyland;🪨;Animated Stone;Boss-Tough;3;2;1;0;-1;0;1;Malevolent Spell;This one seems pretty serious.<br>;Crushed into a fine dust.;none
 Twisted Fairyland;🐉;Faerie Dragon;Boss-Reflective;4;3;1;0;3;1;0;Mythical Creature;Pearlescent scales, maw full of teeth.<br>;Got their head chewed off.;none
-Twisted Fairyland;🐺;Prowling Wolf;Boss-Swift;2;3;2;0;3;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.;none
+Twisted Fairyland;🐺;Prowling Wolf;Boss-Swift;4;3;2;0;3;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.;none
 Twisted Fairyland;🧌;Troll Warmonger;Boss-Heavy;3;3;2;0;4;1;0;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.;none
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Heavy;4;3;1;0;-1;0;0;Mr. Funny Hands;Looks like a freakin' big problem.<br>;Got chewed with dozens of teeth.;none
 Twisted Fairyland;👽;Ancient Alien;Boss-Demon;3;1;3;0;4;0;0;Cursed Reflection;Copies your every move.<br>;Shattered in a mirror duel.;none
-Twisted Fairyland;🦟;Thirsty Mosquito;Boss-Demon;2;1;4;0;-1;0;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.;none
-Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;1;3;2;0;3;0;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the underworld.;none
-Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;1;2;3;0;3;0;0;Ethereal Cryptid;Shimmers like a hot air in the summer.<br>;Impaled by spectral horns.;none
+Twisted Fairyland;🦟;Thirsty Mosquito;Boss-Demon;4;1;4;0;-1;0;0;Vile Bloodsucker;Swarm of wings and needles.<br>;Drained to an empty husk.;none
+Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;2;0;3;0;0;Spirit Remains;Energy of a long gone guardian.<br>;Got taken to the underworld.;none
+Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;3;2;3;0;3;0;0;Ethereal Cryptid;Shimmers like a hot air in the summer.<br>;Impaled by spectral horns.;none
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;0;Unknown Liquid;Is that even drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power.;none
 Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;2;0;0;-4;0;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.;none
@@ -989,42 +989,42 @@ River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishi
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 
-River of Sorrows;🐠;Depressed Angelfish;Reflective;2;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
-River of Sorrows;🐸;Gleaming Frog;Reflective;1;0;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.;none
+River of Sorrows;🐠;Depressed Angelfish;Reflective;3;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
+River of Sorrows;🐸;Gleaming Frog;Reflective;3;0;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.;none
 
-River of Sorrows;🦞;Vengeful Lobster;Tough;3;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets, never forgives.<br>;Pinched one too many times!;none
+River of Sorrows;🦞;Vengeful Lobster;Tough;4;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets, never forgives.<br>;Pinched one too many times!;none
 River of Sorrows;🐌;Amphibious Snail;Tough;3;2;1;0;1;0;0;Hard Shell;Blows bounce off its hardened coil.<br>;Your strike turned on you.;none
 
-River of Sorrows;🐚;Cone Snail;Toxic;1;4;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops, that was deadly!;none
+River of Sorrows;🐚;Cone Snail;Toxic;3;4;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops, that was deadly!;none
 River of Sorrows;‍🪼;Box Jelly;Toxic;4;2;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.;none
 
 River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless to watch, dangerous to touch.<br>;Killed by a mere touch.;none
-River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;2;3;2;0;-1;0;0;Spiky Ball;Looks funny, but is lethal.<br>;Pierced by thousands spikes.;none
+River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;3;3;2;0;-1;0;0;Spiky Ball;Looks funny, but is lethal.<br>;Pierced by thousands spikes.;none
 
-River of Sorrows;‍🦈;White Shark;Heavy;3;2;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry shark!;none
+River of Sorrows;‍🦈;White Shark;Heavy;4;2;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry shark!;none
 
-River of Sorrows;🐍;Aquatic Snake;Swift;1;3;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.;none
-River of Sorrows;🐬;Laughing Scumbag;Swift;3;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.;none
+River of Sorrows;🐍;Aquatic Snake;Swift;4;3;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.;none
+River of Sorrows;🐬;Laughing Scumbag;Swift;4;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.;none
 
 River of Sorrows;👤;Water Phantom;Spirit;1;1;3;0;2;0;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.;none
 
 River of Sorrows;🦭;Possessed Seal;Demon;2;2;2;1;-1;0;0;Cursed Animal;Something is deeply wrong with its eyes.<br>;Got mauled by an angry seal;none
-River of Sorrows;🦅;River Harpy;Demon;2;1;3;0;2;0;0;Winged Threat;Swoops low over the water without a sound.<br>;Claws found their mark;none
-River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;2;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
+River of Sorrows;🦅;River Harpy;Demon;3;1;3;0;2;0;0;Winged Threat;Swoops low over the water without a sound.<br>;Claws found their mark;none
+River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;4;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
 River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful, ...not anymore.<br>.;Got both eyes pecked out!;none
 
 River of Sorrows;👤;Drowned Soul;Boss-Spirit;1;2;3;0;2;0;0;Unfinished Business;Lurks below the surface for another victim.<br>;Dragged into dark depths.;none
-River of Sorrows;🦀;Spider Crab;Boss-Tough;3;2;2;0;-1;0;1;Oversized Crustacean;Whaat? It's the size of a dog!<br>;Got pinched in half.;none
-River of Sorrows;🐚;Squatting Hermit;Boss-Tough;3;3;1;0;-1;0;1;Armored Crustacean;Better not stick your fingers inside.<br>;Oops, that was deadly!;none
-River of Sorrows;🧜;Depths Queen;Boss-Reflective;3;2;3;0;3;2;0;Abyssal Monarch;Veil of weeds covers her hair.<br>;Got kissed and pulled you below.;none
+River of Sorrows;🦀;Spider Crab;Boss-Tough;4;2;2;0;-1;0;1;Oversized Crustacean;Whaat? It's the size of a dog!<br>;Got pinched in half.;none
+River of Sorrows;🐚;Squatting Hermit;Boss-Tough;4;3;1;0;-1;0;1;Armored Crustacean;Better not stick your fingers inside.<br>;Oops, that was deadly!;none
+River of Sorrows;🧜;Depths Queen;Boss-Reflective;5;2;3;0;3;2;0;Abyssal Monarch;Veil of weeds covers her hair.<br>;Got kissed and pulled you below.;none
 River of Sorrows;🦈;Pearlescent Serrato;Boss-Reflective;4;3;1;0;4;0;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.;none
-River of Sorrows;‍🪼;Jellyfish Swarm;Boss-Toxic;3;3;3;0;-1;0;0;Lethal Threat;Squishy deathtraps spreading all around.<br>;Stung by a jellyfish.;none
-River of Sorrows;🦑;Depths Squid;Boss-Heavy;3;3;2;0;-1;0;0;Horrific Monster;Giant octopus from the deep ends.<br>;Got swallowed in one slurp.;none
+River of Sorrows;‍🪼;Jellyfish Swarm;Boss-Toxic;5;3;3;0;-1;0;0;Lethal Threat;Squishy deathtraps spreading all around.<br>;Stung by a jellyfish.;none
+River of Sorrows;🦑;Depths Squid;Boss-Heavy;5;3;2;0;-1;0;0;Horrific Monster;Giant octopus from the deep ends.<br>;Got swallowed in one slurp.;none
 River of Sorrows;🐸;Frogface Behemoth;Boss-Heavy;4;2;2;0;4;0;0;Amphibious Giant;Always lusts for blood.<br>;Got swallowed in one gulp.;none
 River of Sorrows;🐋;Massive Fintail;Boss-Heavy;4;3;1;0;4;0;0;Absurd-sized Monster;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.;none
-River of Sorrows;🐙;Vampiric Squid;Boss-Demon;3;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;Sucked dry bonemarrow-deep.;none
-River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;3;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.;none
-River of Sorrows;🦈;Ancient Megalodon;Boss-Swift;3;3;3;0;-1;0;0;Mythical Monster;One bite and it's probably over.<br>;Devoured by a mythical creature!;none
+River of Sorrows;🐙;Vampiric Squid;Boss-Demon;4;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;Sucked dry bonemarrow-deep.;none
+River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;5;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.;none
+River of Sorrows;🦈;Ancient Megalodon;Boss-Swift;5;3;3;0;-1;0;0;Mythical Monster;One bite and it's probably over.<br>;Devoured by a mythical creature!;none
 
 River of Sorrows;🥥;Drifting Shell;Consumable;1;0;1;0;0;0;0;<b>Artifact</b>;Natural health and energy booster, lucky find.<br>Provides <b>+1 ❤️ Health & 🟢 Energy</b> bonus.;Yum yum, very sweet!;none
 River of Sorrows;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy, ...that's a truly ungodly stench.<br>Could cause some <b>unforseen side-effects</b>.;That took serious guts!;none
@@ -1186,59 +1186,58 @@ Shrouded Necropolis;👤;Echoing Shade;Friend;0;0;0;0;0;0;0;Hopeless Soul;Their 
 Shrouded Necropolis;🗣️;Whispering Soul;Friend;0;0;0;0;0;0;0;Hopeless Soul;Their words fade like mist.<br>;;none
 Shrouded Necropolis;🧖🏻‍♀️;Guardian Angel;Friend;1;0;0;0;0;0;0;Sacred Being;Has understanding for all and everyone.<br>;Received a precious blessing.;none
 
-Shrouded Necropolis;💀;Brittle Skeleton;Standard;1;3;1;0;-1;0;0;Restless Bones;Looks like its gonna fall apart.<br>;;none
-Shrouded Necropolis;💀;Bone Sentinel;Standard;2;2;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;;none
-Shrouded Necropolis;💀;Skeleton Mage;Standard;2;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;;none
+Shrouded Necropolis;💀;Brittle Skeleton;Standard;3;3;1;0;-1;0;0;Restless Bones;Looks like its gonna fall apart.<br>;Rattling hands tore you apart.;none
+Shrouded Necropolis;💀;Bone Sentinel;Standard;5;2;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;Ground down by patient, silent blows.;none
+Shrouded Necropolis;💀;Skeleton Mage;Standard;4;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;The spell unraveled you completely.;none
 
-Shrouded Necropolis;🎭;Laughing Mask;Reflective;4;4;2;0;-1;0;0;Eerie Presence;Eyes seem to follow your every move.<br>;;none
+Shrouded Necropolis;🎭;Laughing Mask;Reflective;4;4;2;0;-1;0;0;Eerie Presence;Eyes seem to follow your every move.<br>;Died by your own hand.;none
 
-Shrouded Necropolis;💀;Crypt Guardian;Tough;1;2;3;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;;none
+Shrouded Necropolis;💀;Crypt Guardian;Tough;4;2;3;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;Silenced by an undead hand.;none
 Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;3;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.;none
 Shrouded Necropolis;🪲;Hardshell Beetle;Tough;3;2;2;0;1;0;2;Shiny Carapace;Reflects more than light.<br>;Reflected your own blow.;none
 
-Shrouded Necropolis;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
-Shrouded Necropolis;🐍;Venomous Serpent;Toxic;3;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.;none
-Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;2;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
+Twisted Fairyland;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
+Shrouded Necropolis;🐍;Venomous Serpent;Toxic;4;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.;none
+Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;3;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
 
-Shrouded Necropolis;🗡️;Possesed Dagger;Stingy;1;3;1;0;-1;0;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat;none
+Shrouded Necropolis;🗡️;Possesed Dagger;Stingy;3;3;1;0;-1;0;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat;none
 
 Shrouded Necropolis;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;0;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;;none
 Shrouded Necropolis;🧙‍♂️;Fallen Acolyte;Recruit;3;1;0;0;3;1;0;Forsaken;Eyes glow with an unnatural light.<br>;;none
 
-Shrouded Necropolis;🐀;Gigantic Vermin;Heavy;3;1;3;0;-1;0;0;Overgrown Vermin;Has a maw full of sharp teeth.<br>;;none
+Shrouded Necropolis;🐀;Gigantic Vermin;Heavy;5;1;3;0;-1;0;0;Overgrown Vermin;Has a maw full of sharp teeth.<br>;Teeth found everything, eventually.;none
 Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;0;Cursed Being;The silhouette changed to a human.<br>;;none
 
-Shrouded Necropolis;💀;Skeleton Ninja;Swift;3;3;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;;none
-Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;3;2;4;0;10;0;0;Unforgiving Opponent;Asks for an immediate attention.<br>;;none
-Shrouded Necropolis;🦇;Thirsty Bat;Swift;3;2;2;0;5;0;0;Flying Mammal;Its scream echoes around the crypt.<br>;;none
-Shrouded Necropolis;🦌;Stag Wraith;Swift;3;3;1;0;4;1;0;Ethereal Beast;Antlers glow with spectral fire.<br>;;none
-Shrouded Necropolis;🐺;Ghastly Wolf;Swift;3;4;1;0;10;3;0;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!;none
+Shrouded Necropolis;💀;Skeleton Ninja;Swift;4;3;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;Cut through before you moved.;none
+Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;4;2;4;0;10;0;0;Unforgiving Opponent;Asks for an immediate attention.<br>;Every move anticipated and countered.;none
+Shrouded Necropolis;🦇;Thirsty Bat;Swift;4;2;2;0;5;0;0;Flying Mammal;Its scream echoes around the crypt.<br>;The scream split the mind open.;none
+Shrouded Necropolis;🦌;Stag Wraith;Swift;4;3;1;0;4;1;0;Ethereal Beast;Antlers glow with spectral fire.<br>;Spectral antlers passed through you.;none
+Shrouded Necropolis;🐺;Ghastly Wolf;Swift;4;4;1;0;10;3;0;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!;none
 
-Shrouded Necropolis;🐼;Zombie Bear;Undead;3;3;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;;none
+Shrouded Necropolis;🐼;Zombie Bear;Undead;5;3;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Torn apart by rotting claws.;none
 Shrouded Necropolis;🧟;Ghoul Brute;Undead;2;3;1;0;-1;0;0;Cursed Creature;Reeking of death and decay.<br>;Ripped limb from limb.;none
 Shrouded Necropolis;🧟;Tainted Zombie;Undead;4;1;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones;none
 Shrouded Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;-1;0;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.;none
-Shrouded Necropolis;🪰;Necrotic Fly;Undead;1;2;3;0;-1;0;0;Pestilence;Buzzing wings promise disease.<br>;Suffered a painful death.;none
+Shrouded Necropolis;🪰;Necrotic Fly;Undead;2;2;3;0;-1;0;0;Pestilence;Buzzing wings promise disease.<br>;Suffered a painful death.;none
 
-Shrouded Necropolis;👗;Haunted Dress;Demon;2;1;2;0;-1;0;0;Animated Object;Probably a side-effect of a spell gone wild.<br>;Embraced the cold;none
-Shrouded Necropolis;🧛‍♀️;Pale Countess;Demon;2;2;1;0;4;0;0;Humanoid;Moves with deadly grace.<br>;Got their heart ripped out!;none
-Shrouded Necropolis;🧛🏽;Noble Vampire;Demon;3;2;1;0;5;0;0;Humanoid;Eyes glow with hunger.<br>;Got their heart ripped out!;none
-Shrouded Necropolis;🧛🏼;Thirsty Vampire;Demon;2;2;2;0;5;0;0;Humanoid;Charges furiously forward to attack.<br>;Got your heart ripped out!;none
-Shrouded Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;3;2;1;0;7;0;0;Humanoid;Slowly walks onwards.<br>;Got your heart ripped out!;none
-Shrouded Necropolis;🧛🏼;Ancient Vampire;Demon;2;2;1;0;-1;0;0;Humanoid;Looks like still got it.<br>;Got your heart ripped out!;none
+Shrouded Necropolis;👗;Haunted Dress;Demon;3;1;2;0;-1;0;0;Animated Object;Probably a side-effect of a spell gone wild.<br>;Embraced the cold;none
+Shrouded Necropolis;🧛‍♀️;Pale Countess;Demon;4;2;1;0;4;0;0;Humanoid;Moves with deadly grace.<br>;Got their heart ripped out!;none
+Shrouded Necropolis;🧛🏽;Noble Vampire;Demon;4;2;1;0;5;0;0;Humanoid;Eyes glow with hunger.<br>;Got their heart ripped out!;none
+Shrouded Necropolis;🧛🏼;Thirsty Vampire;Demon;4;2;2;0;5;0;0;Humanoid;Charges furiously forward to attack.<br>;Got your heart ripped out!;none
+Shrouded Necropolis;🧛🏼‍♂️;Zealous Vampire;Demon;4;2;1;0;7;0;0;Humanoid;Slowly walks onwards.<br>;Got your heart ripped out!;none
+Shrouded Necropolis;🧛🏼;Ancient Vampire;Demon;4;2;1;0;-1;0;0;Humanoid;Looks like still got it.<br>;Got your heart ripped out!;none
 Shrouded Necropolis;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;0;Master Necromancer;Cannot comprehend the words it speaks.<br>;Sacrificed in a dark ritual;none
-Shrouded Necropolis;👺;Haunting Spirit;Demon;3;1;1;0;4;3;0;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;;none
-Shrouded Necropolis;👺;Dread Spirit;Demon;3;2;2;0;4;0;0;Eerie Being;A form takes shape in the dark.<br>;;none
+Shrouded Necropolis;👺;Haunting Spirit;Demon;3;1;1;0;4;3;0;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;Your mind caved before your body.;none
+Shrouded Necropolis;👺;Dread Spirit;Demon;3;2;2;0;4;0;0;Eerie Being;A form takes shape in the dark.<br>;The dread became something physical.;none
 
-Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;0;Eerie Being;Dances on unseen breezes.<br>;;none
+Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;0;Eerie Being;Dances on unseen breezes.<br>;Something cold passed through you.;none
 Shrouded Necropolis;🦋;Eclipse Moth;Spirit;1;0;1;0;0;1;0;Eerie Being;Wings glow under the dark.<br>;Dust turned to whispers.;none
 Shrouded Necropolis;👁️;Judging Eye;Spirit;2;0;0;0;5;0;0;All-Seeing;Locks you in a gaze of eternity.<br>;Tore your secrets apart.;none
 Shrouded Necropolis;🌪️;Tempest Wraith;Spirit;2;2;2;0;-1;1;0;Ethereal Storm;Spirals in howling fury.<br>;Torn to pieces by the storm.;none
-Shrouded Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;0;Eerie Being;A little bit scary in this darkness.<br>;;none
-Shrouded Necropolis;🧞‍♂️;Malevolent Genie;Spirit;2;0;0;0;10;4;0;Magic Creature;Dark wishes bloom on its breath.<br>;;none
+Shrouded Necropolis;👻;Spooky Ghost;Spirit;1;0;0;0;3;2;0;Eerie Being;A little bit scary in this darkness.<br>;The cold never left after that.;none
+Shrouded Necropolis;🧞‍♂️;Malevolent Genie;Spirit;2;0;0;0;10;4;0;Magic Creature;Dark wishes bloom on its breath.<br>;The wish granted was not yours.;none
 Shrouded Necropolis;🧞;Evil Genie;Spirit;2;0;0;0;10;4;0;Magic Creature;Asks for an immediate attention.<br>;Granted a death wish.;none
 Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;0;Ethereal Being;Hums with distant grief.<br>;Torn to pieces by the storm.;none
-Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;0;Eerie Being;Dances on unseen breezes.<br>;;none
 
 Shrouded Necropolis;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
@@ -1260,7 +1259,7 @@ Shrouded Necropolis;👑;The Blessed Crown;Item-Head;2;0;0;0;2;0;0;<b>Artifact</
 Shrouded Necropolis;👑;The Cursed Crown;Item-Head;-2;0;0;0;0;3;0;<b>Malevolent Artifact</b>;You should probably leave this old relic alone.<br><b>+3 🔵 Mana</b>, might cause <b>serious side-effects</b>.;Syphoned your life energy!;none
 Shrouded Necropolis;🫀;Backup Heart;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Shrouded Necropolis;🫁;Second Breath;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
-Shrouded Necropolis;🗡️;Quicksilver Dagger;Ite-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Made for killing supernatural monsters.<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.;none
+Shrouded Necropolis;🗡️;Quicksilver Dagger;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Made for killing supernatural monsters.<br>Provides <b>+2 ⚔️ Damage</b>.;Became armed and dangerous.;none
 
 Shrouded Necropolis;🗡️;Thirsty Blade;Item-Weapon;-1;2;0;0;0;0;0;Cursed Weapon;Very deadly but wielding it takes a toll.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Felt strangely familiar.;none
 Shrouded Necropolis;🦴;Human Femur;Item-Weapon;0;1;0;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong;none

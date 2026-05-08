@@ -52,8 +52,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Health
 🗿;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Rock solid but less agile.;none
-🧱;Mason;1;0;-1;0;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-1 🟢 Energy</b><br><i>Built sturdy walls in his own tempo;none
-🍺;Boozer;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🧠 Intellect</b><br><i>Numb to the pain, blind to the truth.;none
+🧱;Mason;1;0;-1;0;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-1 🟢 Energy</b><.br><i>Built sturdy walls in his own tempo.;none
+🍺;Boozer;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Numb to the pain, blind to the truth.;none
 🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.;none
 
 //Stamina
