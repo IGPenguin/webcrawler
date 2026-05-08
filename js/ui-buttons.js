@@ -213,6 +213,13 @@ function adjustEncounterButtons(){
       if (_isMemento) setButton('button_grab',"👋 Grab",colorGold);
       if (enemyEmoji=="🪙" || enemyEmoji=="💰") setButton('button_grab',"👋 Claim",colorLightShadeBlue);
       if (enemyEmoji=="🪙" && enemyName.includes("Lucky")) setButton('button_grab',"👋 Claim",colorSoftGreen);
+      if (enemyItemSlot) {
+        if (getPlayerSlot(enemyItemSlot)) {
+          setButton('button_grab',"♻️ Swap",grabColor);
+        } else {
+          setButton('button_grab',"👋 Equip",grabColor);
+        }
+      }
       break;
 
     case "Trap":

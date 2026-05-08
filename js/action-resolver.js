@@ -2087,6 +2087,33 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerRest(true);
             }
 
+            // ── Slot equip/swap ───────────────────────────────────────────────
+            var _equipSlot = enemyItemSlot;
+            if (_equipSlot) {
+              var _oldSlotData = getPlayerSlot(_equipSlot);
+              if (_oldSlotData) {
+                // Remove old item emoji from lootString
+                playerLootString = String(playerLootString).replace(_oldSlotData.emoji, "");
+                if (!playerLootString.length) playerLootString = [""];
+                // Remove old item from inventory list
+                playerInventory = playerInventory.filter(function(i) { return i.slot !== _equipSlot; });
+                // Reverse old stats directly — no log/visual noise
+                // (new item stats arrive via playerChangeStats below and CAN kill normally)
+                playerLck    -= _oldSlotData.lck;
+                playerInt    -= _oldSlotData.int;
+                playerMgkMax -= _oldSlotData.mgk; playerMgk -= _oldSlotData.mgk; if (playerMgk < 0) playerMgk = 0;
+                playerStaMax -= _oldSlotData.sta; playerSta -= _oldSlotData.sta; if (playerSta < 0) playerSta = 0;
+                playerAtk    -= _oldSlotData.atk;
+                playerDef    -= _oldSlotData.def; if (playerDef < 0) playerDef = 0;
+                playerHpMax  -= _oldSlotData.hp;
+                playerHp     -= _oldSlotData.hp;
+                if (playerHp > playerHpMax) playerHp = playerHpMax;
+                if (playerHp < 1) playerHp = 1; // unequipping never kills — base HP always remains
+                logPlayerAction(actionString, "Replaced " + _oldSlotData.emoji + " <b>" + _oldSlotData.name + "</b>");
+              }
+            }
+            // ─────────────────────────────────────────────────────────────────
+
             if (!enemyTeam.includes("Lover's Memento") && !enemyTeam.includes("Piece of History")) { //Add to loot
               if (enemyEmoji!="🪙" && enemyEmoji!="💰") playerLootString+=enemyEmoji;
               if (enemyEmoji=="👺" || enemyEmoji=="🐴" || enemyEmoji=="🐷") {
@@ -2131,6 +2158,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('grab_rubbish');
             }
             //Grab end
+            // Snapshot BEFORE playerChangeStats — it calls nextEncounter() which resets all enemy globals.
+            // Slot and inventory must also be committed before playerChangeStats, because nextEncounter →
+            // loadEncounter is where the NEXT encounter's swap diff log fires. If the slot isn't set yet,
+            // an immediately-following slot item would show no diff.
+            var _grabSnap = buildItemSnapshot();
+            if (_equipSlot) {
+              setPlayerSlot(_equipSlot, _grabSnap);
+              playerInventory.push(_grabSnap);
+            } else if (_grabSnap.emoji !== '🪙' && _grabSnap.emoji !== '💰' &&
+                       !_grabSnap.note.includes("Lover's Memento") && !_grabSnap.note.includes("Piece of History")) {
+              playerInventory.push(_grabSnap);
+            }
             var _wasInFishing = isFishing;
             isFishing=false;
             if (playerHp==0) break;

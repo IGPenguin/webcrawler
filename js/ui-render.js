@@ -171,6 +171,14 @@ function redraw(){
         enemyStatusString=decorateStatusText("🧩","Familiar",colorSoftGreen);
         cardUIElement.style.background=colorFamiliarGreen;
       }
+      // Slot label: inject "(Head)" / "(Weapon)" / "(Chest)" after the tier word
+      if (enemyItemSlot) {
+        var _slotLabel = enemyItemSlot.charAt(0).toUpperCase() + enemyItemSlot.slice(1);
+        enemyStatusString = enemyStatusString.replace(
+          /(Rubbish|Valuable|Magnificent|Exquisite|Legendary|Familiar|Quest Item|Remembrance)/,
+          '$1 (' + _slotLabel + ')'
+        );
+      }
 
       grabColor=colorWhite;
       if (enemyStatusString.includes("Valuable")||enemyStatusString.includes("Quest")) grabColor=colorYellow;
@@ -317,6 +325,12 @@ function redraw(){
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2"); //I need this to be overwritable by the below
         if ((enemyType==="Fishing" && checkPlayerHasItem(validBaits)!="")) displayPlayerState("Bait Ready",colorPink,"0.8");
         if (enemyStatusString.includes("Legendary") || enemyEmoji=="🪙" || enemyEmoji=="💰") displayPlayerState("Excited",colorDarkYellow,"0.4");
+
+        //Slot conflict = deciding
+        if (enemyItemSlot && getPlayerSlot(enemyItemSlot)) {
+          displayPlayerState("Deciding",colorRed,"1")
+        }
+
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam && (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point"))) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial

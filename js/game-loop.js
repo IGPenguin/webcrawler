@@ -26,9 +26,9 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
   }
 
   if (procAbilityChance("🥻",5)){
-    var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Curious Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Epiphany","desc:Stopped to think about the universe.<br>n/a","message:","achiev:none"]
+    var philosopherThoughts = ["area:"+areaName,"emoji:💭","name:Deep Thought","type:Prop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Epiphany","desc:Stopped to think about the universe:<br>n/a","message:","achiev:none"]
     linesStory.splice(encounterIndex+1,0,philosopherThoughts);
-    logAction("🥻 ▸ <b>💭 Curious Thought</b> came on your mind.")
+    logAction("🥻 ▸ <b>💭 Deep Thought</b> came on your mind.")
   }
 
   if (animateArea) {

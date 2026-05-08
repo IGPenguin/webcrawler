@@ -43,6 +43,11 @@ var SaveManager = (function () {
         playerKills:        playerKills,
         playerLootString:   String(playerLootString),
         playerPartyString:  String(playerPartyString),
+        playerSlotHead:     playerSlotHead,
+        playerSlotWeapon:   playerSlotWeapon,
+        playerSlotChest:    playerSlotChest,
+        playerSlotLegs:     playerSlotLegs,
+        playerInventory:    playerInventory,
         playerHpMax:        playerHpMax,   playerStaMax:      playerStaMax,
         playerMgkMax:       playerMgkMax,
         playerHp:           playerHp,      playerSta:         playerSta,
@@ -84,6 +89,7 @@ var SaveManager = (function () {
         enemyInt:              enemyInt,    enemyMgk:    enemyMgk,
         enemyDef:              enemyDef,
         enemyType:             enemyType,   previousEnemyType: previousEnemyType,
+        enemyItemSlot:         enemyItemSlot,
         enemyContainerNumber:  enemyContainerNumber,
         enemyTeam:             String(enemyTeam),
         enemyDesc:             enemyDesc,   enemyMsg:    enemyMsg,
@@ -123,6 +129,11 @@ var SaveManager = (function () {
     playerName        = s.playerName;       playerNumber      = s.playerNumber;
     playerKills       = s.playerKills;
     playerLootString  = s.playerLootString; playerPartyString = s.playerPartyString;
+    playerSlotHead    = s.playerSlotHead   || null;
+    playerSlotWeapon  = s.playerSlotWeapon || null;
+    playerSlotChest   = s.playerSlotChest  || null;
+    playerSlotLegs    = s.playerSlotLegs   || null;
+    playerInventory   = s.playerInventory  || [];
     playerHpMax       = s.playerHpMax;      playerStaMax      = s.playerStaMax;
     playerMgkMax      = s.playerMgkMax;
     playerHp          = s.playerHp;         playerSta         = s.playerSta;
@@ -164,6 +175,7 @@ var SaveManager = (function () {
     enemyInt             = s.enemyInt;     enemyMgk           = s.enemyMgk;
     enemyDef             = s.enemyDef;
     enemyType            = s.enemyType;    previousEnemyType  = s.previousEnemyType;
+    enemyItemSlot        = s.enemyItemSlot || null;
     enemyContainerNumber = s.enemyContainerNumber;
     enemyTeam            = s.enemyTeam;    enemyDesc          = s.enemyDesc;
     enemyMsg             = s.enemyMsg;     enemyQuestItems    = s.enemyQuestItems;

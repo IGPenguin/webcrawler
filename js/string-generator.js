@@ -290,7 +290,7 @@ function getBridePoemByLove() {
     "I waited in the soil so long.<br>The stars forgot my name.",
     "The cold welcomed me first.<br>Then I remembered your warmth.",
     "I wear your name like a veil.<br>Even the worms won't touch it.",
-    "Every petal on my grave...<br>grew thorns as you turned away.",
+    "Every petal on my grave...<br>Has been filling with poison.",
     "Stars we watched together...<br>They now turn their faces."
   ];
   var pool = (playerLove >= 3) ? longing : accusatory;

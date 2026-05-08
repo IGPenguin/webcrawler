@@ -10,6 +10,7 @@ function encounterRenew(){
   enemyMgkLost = 0;
   enemyDef = 0;
   enemyBossType = "";
+  enemyItemSlot = null;
   enemyCursed=false;
   encounterUsed=false;
   bubblesUsed = false;
@@ -42,6 +43,10 @@ function loadEncounter(index, fileLines = linesStory){
     enemyBossType = enemyType; //I'll end up in hell for these hacks
     if (isNaN(savedCoins)) savedCoins=0;
     //enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
+  }
+  if (enemyType.startsWith("Item-")) {
+    enemyItemSlot = enemyType.slice(5).toLowerCase(); // "Item-Head" → "head"
+    enemyType = "Item";
   }
   if (enemyType.includes("Generator")) {
     var number = enemyType.match(/\d+$/);
@@ -152,10 +157,17 @@ function loadEncounter(index, fileLines = linesStory){
          }
         }
       }
+      // If this is a slot item and the slot is occupied, show swap diff
+      if (enemyItemSlot) {
+        var _occ = getPlayerSlot(enemyItemSlot);
+        if (_occ) {
+          logAction("⁉️ ▸ "+_occ.emoji+" <text style=color:"+colorOrange+";><b>Slot full, swap?</b></text> "+formatSlotDiff(_occ));
+        }
+      }
       break;
     case "Consumable":
       if (enemyTeam.includes("Artifact")){
-        logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" +" Unveiled artifact: <b>"+enemyName+"</b></text>")
+        logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorRed+";>" +" Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
         logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
       }

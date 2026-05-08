@@ -35,6 +35,12 @@ function renewPlayer(){ //Default values
   playerHealType = "❤️‍🩹";
   playerCurseType = "🪬";
 
+  playerSlotHead   = null;
+  playerSlotWeapon = null;
+  playerSlotChest  = null;
+  playerSlotLegs   = null;
+  playerInventory  = [];
+
   playerKills = 0;
   playerKarma=1;
   playerLove=0;
@@ -56,6 +62,64 @@ function renewPlayer(){ //Default values
 }
 
 renewPlayer();
+
+// ── Slot/inventory helpers ────────────────────────────────────────────────────
+
+function getPlayerSlot(slot) {
+  if (slot === 'head')   return playerSlotHead;
+  if (slot === 'weapon') return playerSlotWeapon;
+  if (slot === 'chest')  return playerSlotChest;
+  if (slot === 'legs')   return playerSlotLegs;
+  return null;
+}
+
+function setPlayerSlot(slot, data) {
+  if (slot === 'head')   playerSlotHead   = data;
+  if (slot === 'weapon') playerSlotWeapon = data;
+  if (slot === 'chest')  playerSlotChest  = data;
+  if (slot === 'legs')   playerSlotLegs   = data;
+}
+
+function buildItemSnapshot() {
+  return {
+    emoji: enemyEmoji, name: enemyName,
+    hp:  parseInt(enemyHp)  || 0,
+    atk: parseInt(enemyAtk) || 0,
+    sta: parseInt(enemySta) || 0,
+    lck: parseInt(enemyLck) || 0,
+    int: parseInt(enemyInt) || 0,
+    mgk: parseInt(enemyMgk) || 0,
+    def: parseInt(enemyDef) || 0,
+    slot: enemyItemSlot,
+    note: String(enemyTeam || '')
+  };
+}
+
+function formatSlotDiff(oldData) {
+  var newHp  = parseInt(enemyHp)  || 0;
+  var newAtk = parseInt(enemyAtk) || 0;
+  var newSta = parseInt(enemySta) || 0;
+  var newLck = parseInt(enemyLck) || 0;
+  var newInt = parseInt(enemyInt) || 0;
+  var newMgk = parseInt(enemyMgk) || 0;
+  var newDef = parseInt(enemyDef) || 0;
+  var pairs = [
+    [newAtk - oldData.atk, '⚔️'],
+    [newMgk - oldData.mgk, '🔵'],
+    [newHp  - oldData.hp,  '❤️'],
+    [newSta - oldData.sta, '🟢'],
+    [newLck - oldData.lck, '🍀'],
+    [newInt - oldData.int, '🧠'],
+    [newDef - oldData.def, '🔰']
+  ];
+  var parts = [];
+  pairs.forEach(function(p) {
+    if (p[0] !== 0) parts.push((p[0] > 0 ? '+' : '') + p[0] + ' ' + p[1]);
+  });
+  return parts.length ? parts.join(', ') : 'no stat change';
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight "){
   var intBonus=1+playerInt/20;
@@ -388,7 +452,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       playerHit(0,false,true);
       return;
     }
-    if (enemyType=="Item") displayPlayerEffect(enemyEmoji);
+    if (enemyType=="Item"||getItemSlot(enemyType)) displayPlayerEffect(enemyEmoji);
   }
 
   if (hasAnyOf(attackTypes,enemyEmoji)&&enemyType=="Item") playerAttackType=enemyEmoji;
