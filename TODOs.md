@@ -17,91 +17,125 @@
 ---
 
 # Claude
-- Add "impact" frames when hitting (flash white) or being hit (red white) or getting tired (green fade out?) especially prominent when getting to 1 HP or 1/0 STA, make use of full screen shakes etc. (the existing render/effect toolkit should provid opportunities)
-- Visual Contrast: Ensure the crit/success zones in the gradient are easily distinguishable for colorblind players (e.g., using different patterns or very
-     distinct brightness levels).
+- DATA: read the files in ideas folder, pick what seems useful, drop what does not, ouptut the result in /ideas/curated.csv, remove the old ideas files
+ - use the curated ideas as an input source of inspiration for generating new content
+ - also you can read TODOs.md, specifically the "Data changes" section, theres a lot of backlogged ideas for game data changes
+ - propose surgical good-value + low-hanging fruit data changes/additions to improve the game variability and balancing
 - ...
+- impress me, check what is the weakest area content wise (I think its the river) and generate 10 new items for it 10 new enemies and 10 other (mix of
+- ...
+- fade wit text when fining invitation/letter - does it work??
+
+# Manual
+- ???
+
+# Gemini
+- ???
+
+# Hades
+- improve generator/story structure (+gameplay if needed)
+- more unlockables/everlasting progression
+- easy interactivity expand? branching routes/crossoroads - select one way? (inscryption-style)
+
+# Ideas zone
+
+## Unique items/origins
+- Legendary item allowing to physically damage spirits (soulgem)
+- new items to the new slots (check ideas and remove them once and for all)
 - NEW: Item/Origin increasing drop chances for higher than common rarity
 - NEW: Item/Origin for bigger crit chance interval by ??%
 - NEW: Item/Origin ⏳ Strange Hourglass - 10% slower action bar speed (global)
 - More unique origins with actual gameplay implications
-- New story progress unlockable: a portal to village? (Skip early game)
+- (Already done with the gate!?) New story progress unlockable: a portal to village? (Skip early game)
+- Groom origin with unique pwer/effect?
+- Origins with starting items (Legendary?)
+- Legendary negating bad karma
+- JS spaghetti monster joke boss - when, how? after Hanging out in Menu for 5 minutes with live char?
+
+## Refined mechanics
+- Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
+- LUCK: Add some actual reason for encounters/enemies LCK stat (i think it does nothing now)
+  - it could possibly counter the players LCK to lower their crit chances and such?
+  - luck - or + could affect the fishing spot chances (interval sizes)
+  - other ideas?
+- Altar with no bonus attribute, pray = get exp
+- Killed by undead, become undead  with 1hp, 1/2 sta, skip death state (until fully killed)
+  - Append zombie emoji before 🧟 John Doe (Undead)
+  - undead then have 0 base attack against you
+- pinata positive trap: grab should be all red, block should be all red, rest should be easy as prop, avoid should be walk
 - ...
+- add hidden stat visbility (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
+- refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
+- Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
+  - kinde variant to the proposed "camp" encounter type
 - Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
 - New Type: "Camp" spawn enemy on rest (actionLog it)...
   -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
 - New Type - Magic-container, cast to unlock - Contains item  (50% for artifact - same should already be for regular locked containers?)
+- gameplay implications based on companions in the party
+- Fix the very flaky "Quest system" - friends might require a "quest item" to exchange it for artifact, the quest firend + item spawn logic is brittle, I imagine better way like spawning the quest item somwehere in the story and the friend somewhere else - independent of the area, also would be great to hide the exact item list of the things the friend is looking for (keep it under the hood) and display just a general description of things they are looking for
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
 
-# Manual
-- ???
-- ...
-- Groom origin with unique pwer/effect?
-- Origins with starting items (Legendary?)
-
-# Gemini
-- read all files under ideas folder, check for opportunities for unique data (compare with actually used stuff in data folder), output to ideas/curated.csv
-- [Bait] Flavour by name/description: Give e.g. the repeated many worms unique buffs (e.g., "Vigorous Worm" -> +5% Rarity chance).
-- [Loot] Tiered Trash: Make "Trash" items usable (e.g., Wet Cash +1 Int for "deciphering" it).
-
-# Hades
-- add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items - roll item by emoji from local encounters.csv) when spoken to or defeated.
-- gameplay implications based on companions in the party
-- add hidden stat visbility (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
-- (possible only on android?) Add better vibration support to actionbar interactions:
+## Visuals/platform-specific
+- if stat over 5, display numeric - 4/5
+- VISUAL: Add "impact" frames when hitting (flash white) or being hit (red white) or getting tired (green fade out?) especially prominent when getting to 1 HP or 1/0 STA, make use of full screen shakes etc. (the existing render/effect toolkit should provid opportunities)
+- VISUAL: Ensure the crit/success zones in the gradient are easily distinguishable for colorblind players (e.g., using different patterns or very
+     distinct brightness levels).
+- ANDROID: Add better vibration support to actionbar interactions:
    - vibrate on button press and release   
    - vibrate on transitioning between the fail/pass/crit zones
    - vibrate when taking damage, cannot effects etc?
-   - use various vibration legth/pattern to match the related trigger 
-- ...
-- separrate bug report through a gform to a separate sheet, daily job to sync to github issues with tags
-- Fix the very flaky "Quest system" - friends might require a "quest item" to exchange it for artifact, the quest firend + item spawn logic is brittle, I imagine better way like spawning the quest item somwehere in the story and the friend somewhere else - independent of the area, also would be great to hide the exact item list of the things the friend is looking for (keep it under the hood) and display just a general description of things they are looking for
-- refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
-- update tutorial: include actionbar explanation, add/refactor encounters (but ensure proper skip when playing for the first time vs not), include crit suces/fail info, hint how luck and int works, hint story... + revise game tips
-- better endings few variants (very dramatic/heart-breaking/satisfying), branching based on love (and karma?): kiss her goodnight, mercy kill her, undead together ever after, truly revive fixing the broken spell, world rots altogether... + create the corresponding achievs + save the game end type to the graveyard save data
-- ...
-- improve generator/story structure (+gameplay if needed)
-- Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
+   - use various vibration legth/pattern to match the related trigger
+   + double check if this is really impossible on iOS? any chance to get a permission? 
+- SOUNDS: Adding sounds effects and background music? (would that work for ios, android, mac and windows with no problems?)
+- Follow up and complete the vector backgrounds for all areas, make it default
+- Vectors/Emojis: support for "thing.svg" in the emoji column of encounters/story/origins
+  - the vectors would be in assets/encounters, they should displsy same/very similar as any emojis so far
+- support for https://slackmojis.com/ in emoji field (achiev/origin/emcounter/button)
+
+## New mechanics
+- add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items - roll item by emoji from local encounters.csv) when spoken to or defeated.
 - Make Karma Matter!
   - make "Revive" interval based on karma (Todo in place)
   - karma affects on action bar chances?
   - plus check, what changes karma, possibly adjust/expand
   - Mischievous encounters + bad drops/twisted legendaries on bad karma
+  - have meaningful impact, but not too punishing, with hints making it a bit more transparent
   - should we make karma NOT reset between runs? (it could secretely affect the game)
      - It would need to be subtle/fair so that everyone does not have bad experience just because the have no clue, possibly there could be encounter, that exposes the "Soul Standing" and hints what it does
      - There should be proactive actions available to fix bad karma if players learn that they have bad standing
      - killing enemies that are agressive should be fine, putting to sleep aggresive enemies should be considered good deed, killing non aggressive enemies should be considered bad, attacking friends should be bad etc.... suggest more hooks to karma?
      the good karma bonus encounter - available in player.skills.js - we should find a way to trigger it sometimes (not only when revived, that might be very uncommon situation)
-- Drachmae shop add more options - game run modifiers? (unlock after special condition?)
-  - Get coin for negative effect: +enemy dmg/hp/sta...
-  - Get coin for Big Karma--
-  - Get coin for ???
 - Inventory: consumable, items array
   - open on click loot/party bar?? (repalce buttons or overlay)
   - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits) = Prevents stacking power fast
   - eat food only intentionally, dont force/ditch
  - make actions seem more sequential in the ui so that player can notice one by one - eg delay 0,5s each log display and wait for effects to complete before firing another and unlocking UI for player actions?
+- Add game run modifiers? (unlock after special condition? activated trough Origins?)
+  - Demons passive but...
+  - Animals passive but...
+  - ???
+- ...
+- take inspiration from:
+  - https://pixeldungeon.fandom.com/wiki/Game_mechanics
+  - https://pixeldungeon.fandom.com/wiki/Items
+  - https://pixeldungeon.fandom.com/wiki/Enemies
+
+## Social
+- separrate bug report through a gform to a separate sheet, daily job to sync to github issues with tags
 
 # Parking lot
-- Take inspiration from: https://pixeldungeon.fandom.com/wiki/Main_Page
-- Legendary negating bad karma
-- +1 Drachmae for review/donate (one time)
-- Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
-  - kinde variant to the proposed "camp" encounter type
-- Altar with no bonus attribute, pray = get exp
-- Killed by undead, become undead  with 1hp, 1/2 sta, skip death state (until fully killed)
-  - Append zombie emoji before 🧟 John Doe (Undead)
-  - undead then have 0 base attack against you
-- if stat over 5, display numeric - 4/5
-- JS spaghetti monster joke boss when?
-  - Hanging out in Menu for 5 minutes with live char?
 
 ## Data changes
+- Bloat fishing loot with items and threats, traps, perhaps floating altars and such
+- distinguish fishing and river area somehow
+- ...
 - Add spirit/reflective to Village and River (might be nerfed in village e.g.)
+- new pets in mid/late game areas (drowned spirit, scared ghost, living mushroom, talking fly...)
+  - mostly for flavour xp, but can actually ad lck or smth, very rarely +1 atk
 - Add more positive AND negative traps (all variants) and curses
   - with stat swaps - swap x for y
 - Curses with -1 atk (lategame)
-- Legendary item allowing to physically damage spirits (soulgem)
 - Practice target variants for speak, cast... option to leave
 - Magic items in the game should almost always carry some curse
 - Increment meadows data (praised bath, no-effect encounters)
@@ -114,17 +148,12 @@
   - Revise necropolis (special, freezing/snowman)
   - Animated objects, flora, unusual shades, effects...
 - Undead + vampires in fairyland and river (drowned zombie etc)
-- Ghosts etc in necro at least 1 atk; all enemies 3+ stamina, overall 2x longer (needs a lot of data!)
 - Lemon-like unique foods with perma boosts (1 good, 1 bad per area)
   - Ensure bad foods in all areas
   - Mixed stats foods and items — lose and gain at the same time
 - Touch lucky statue/chime etc... (positive traps?), Bubble bath...
-- Bloat fishing loot with items and threats (traps?)
 - Containers/traps costing stamina/lck etc. — Thorny patch (more like this)
 - Lategame traps/curses stealing mana/sta etc
-- Mid-late game balance = high stamina, more low atk enemies
-  - Pets in fairyland a lot more sta ~3
-  - Bosses to have a lot of hp but not insta-kill dmg
 - Necropolis optional areas
 
 ## New feature: Spells
@@ -166,13 +195,6 @@
 
 # Playwright - Automated Run
 - Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
-
-# Crazy ideas
-- Programmer Art Upgrade: SVG Vector Engine
-  - Create an `assets/img/vectors/` library of lightweight, animated SVG backgrounds for each area (e.g., flowing lines for River, jittery pulses for Necropolis)
-  - Refactor `ui-render.js` to inject these as dynamic background layers.
-  - All solid backgrounds should have shading, texts can be enhaced too, but no glow.
-  - Resolve "programmers art" permanently with a professional, scalable, and cohesive aesthetic that feels "alive" and premium.
 
 # Technical Debt & Refactoring
 - **Logic & Balance**
