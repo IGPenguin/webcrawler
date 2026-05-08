@@ -123,6 +123,10 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 - `MGK > 0` on any enemy where it makes thematic sense (mages, possessed objects, fey creatures, etc.). By design, reserve MGK for **Twisted Fairyland onward** — no MGK in early areas.
 - `DEF > 0` only on Tough-type enemies, endgame areas only.
 - **Boss HP must exceed the area's standard HP midpoint** — bosses are longer fights by design. Exception: Shrouded Necropolis bosses (the Brides) are intentionally ~HP:4 because the fight is multi-stage (player faces her twice, total ≈ 8 effective HP). Do not inflate single-stage Necropolis bosses to match other area boss rules.
+- **Demon type regenerates HP on hit** — always give Demons ~1 HP lower than the area's standard floor. E.g., Twisted Fairyland floor 3 → Demons at 2; River of Sorrows floor 4 → Demons at 3; Shrouded Necropolis floor 4 → Demons at 3. Exception: Shrouded Necropolis vampires (actual vampire sub-type of Demon) may reach 4 HP given the endgame challenge level. Non-vampire Demons (spirits, haunted objects, liches) stay at 3.
+- **Small type:** HP 1–3 max. Low-threat flavor enemies, often used as fishing bait. Do not treat as combat threats — grabbing them is the intended interaction.
+- **Spirit type:** intentionally low HP — cannot be physically hit, must be defeated via Cast, Speak, or Curse. No HP floor applies to Spirit. Exception: **Boss-Spirit must be at least HP 3** — a single spell deals ~2 dmg and the fight must last more than one round.
+- **Stat variety within an area:** enemies should span archetypes (glass cannon, tank, stamina runner, etc.). The archetype must be consistent across emoji, name, desc, and message — a glass cannon's desc hints at ferocity, its death message reflects speed.
 
 | Area | HP | ATK | STA | LCK | INT | MGK | DEF |
 |------|----|-----|-----|-----|-----|-----|-----|
@@ -326,6 +330,8 @@ Before proposing any text, ask: *Does this read like it belongs to a world rotti
 
 ### Step 4 — Present for approval
 Format the proposal as a code block with the exact CSV rows. Never write to files first.
+
+**When proposing balance changes (HP/stat audits):** always show the full row — all stats AND desc/message — not just the changing column. The text context is essential for evaluating whether a stat change makes sense for that specific enemy. Use a table with columns: Emoji, Name, Type, HP, ATK, STA, LCK, INT, MGK, DEF, desc, message, proposed change.
 
 ### Step 5 — Write and validate
 After explicit approval:
