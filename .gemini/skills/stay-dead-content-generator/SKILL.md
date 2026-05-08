@@ -76,6 +76,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 | `Demon` | Standalone type. Hittable in combat. Calmed via Speak. Regenerates HP on hit. |
 | `Undead` | Standalone type. Hittable. Grab is risky. Speak does nothing. Weakened by Curse. |
 | `Spirit` | Standalone type. Cannot be hit physically. Best approached via Speak, Cast, or Curse. |
+| `Pet` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Grab** (passes an action bar check). If recruited, joins the party. Stats should reflect a real animal threat, not a passive creature. Message field = death message if the player loses the fight. |
+| `Recruit` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Speak** (INT + action bar check). If recruited, joins the party. Stats should reflect a capable humanoid. Message field = death message if the player loses the fight. |
 
 **Important:** `Demon`, `Undead`, and `Spirit` are full standalone types. Never write `Standard-Undead` or similar.
 
@@ -172,6 +174,8 @@ net = (atk × 3) + (mgk × 2) + (hp × 1.5) + (sta × 1.5) + (lck × 0.5) + (int
 **The fundamental rule:** Write as if the world is already lost and the text knows it. Dark fantasy, melancholic, occasionally ironic. Never whimsy. Never generic. If it could appear in a standard fantasy game, it's wrong.
 
 **Pop culture references:** Subtle nods to the developer's favourite games/movies are welcome and desired — a Skyrim/Dark Souls/Elden Ring... reference, a classic RPG wink, a film quote twisted dark. Keep them rare, keep them subtle. Never explain the reference in the text itself.
+
+**Never use:** literally, actually, basically, amazing, awesome, incredible, epic (casual), casual exclamation marks. `!` is acceptable for genuinely violent or high-impact moments ("Got your heart ripped out!") — not for generic enthusiasm ("Just awesome!", "Let's do this!", "Ouch, that stings!").
 
 ### Enemy desc
 - Two lines joined by `<br>`. 7–15 words total. No bold tags.

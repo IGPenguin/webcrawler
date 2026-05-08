@@ -108,8 +108,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 | Type string | Notes |
 |-------------|-------|
 | `Friend` | Friendly NPC; no combat |
-| `Pet` | Recruitable companion animal |
-| `Recruit` | Human NPC that can join party |
+| `Pet` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Grab** (passes an action bar check). If recruited, joins the party. Stats should reflect a real animal threat, not a passive creature. Message field = death message if the player loses the fight. |
+| `Recruit` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Speak** (INT + action bar check). If recruited, joins the party. Stats should reflect a capable humanoid. Message field = death message if the player loses the fight. |
 | `Upgrade` | Perk selection (loads on Sleep at level-up) |
 | `Checkpoint` | Forces level-up, rests player |
 | `Generator-N` | Spawns random content by category |
@@ -249,7 +249,7 @@ net = (atk × 3) + (mgk × 2) + (hp × 1.5) + (sta × 1.5) + (lck × 0.5) + (int
 ### Preferred vocabulary
 **Use:** corrupted, desecrated, tainted, forsaken, fallen, rotted, withered, hollowed, remnants, forgotten, buried, sealed, faded, condemned, wretched, damned, blighted, defiled
 
-**Never use:** literally, actually, basically, amazing, awesome, incredible, epic (casual), any exclamation mark in flavor text
+**Never use:** literally, actually, basically, amazing, awesome, incredible, epic (casual), casual exclamation marks. `!` is acceptable for genuinely violent or high-impact moments ("Got your heart ripped out!") — not for generic enthusiasm ("Just awesome!", "Let's do this!", "Ouch, that stings!").
 
 ### Area flavor words
 | Area | Flavor |
