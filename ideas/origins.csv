@@ -9,6 +9,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc
 🩹;Cripple;-2;0;0;3;0;0;0;Gain <b>+4 🍀 Luck</b>, sacrifice <b>-2 💔 Health</b>.<br><i>Suffering was the only prayer that worked.
 
 //Cut (for now?)
+📿;Monk;0;-1;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, abstain <b>-1 ⚔️ Attack</b>.<br><i>Blindly believes in the power of mind.;mana_first
 🛡️;Guard;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Stands strong when everything is falling.;none
 💨;Athlete;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no clear downside.<br><i>Spent his life staying fit.;none
 

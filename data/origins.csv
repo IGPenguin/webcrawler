@@ -30,7 +30,6 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🤌;Gourmet;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br><i>Enjoys his life to the fullest.;eat_legendary
 🩸;Warlock;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.<br><i>Bought his power by own blood.;mana_first
 🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, suffer <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;mana_first
-📿;Monk;0;-1;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, abstain <b>-1 ⚔️ Attack</b>.<br><i>Blindly believes in the power of mind.;mana_first
 👨🏻‍🍳;Chef;0;0;0;0;0;0;0;Starts with <b>🧂 Salt Shaker</b>.<br><i>Always uses just enough spices.;salt_food_first
 🦧;Furry;0;0;0;0;0;0;0;Critters do not mind your presence.<br><i>Lives a happy and peaceful life.;pet_first
 🎣;Angler;0;0;0;0;0;0;0;Start with two random <b>🪱 Baits</b>.<br><i>Always ready to do some fishing.;fish_bait_first
@@ -58,7 +57,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, suffer <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.;none
 
 //Stamina
-🍖;Hungry;-2;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b>, suffer <b>-2 💔 Health</b.<br><i>Desperately chases unsatisfiable needs.
+🍖;Hungry;-2;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b>, suffer <b>-2 💔 Health</b.<br><i>Desperately chases unsatisfiable needs.;none
 👣;Stalker;0;-1;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Always in the shadows, harmless tough.;none
 🤸‍♀️;Acrobat;-1;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-1 💔 Health</b>.<br><i>Focusing on swiftness makes him fragile.;none
 🧬;Mutant;0;0;1;0;-2;0;0;Gain <b>+1 🟢 Energy</b>, suffer <b>-2 🧠 Intellect</b>.<br><i>Body strong, mind no so much.;none

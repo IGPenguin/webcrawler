@@ -155,7 +155,6 @@ def validate_string_generator_lengths(warnings):
 
     # Use RunStartMessage as the gold standard for line length
     line_limit = get_max_line_length(r'function getRunStartMessage\(\) \{(.*?)\}')
-    print(f"  Dynamic line limit (from RunStartMessage): {line_limit} chars")
 
     def check_pool(pool_name, pattern, limit, split_br=False):
         match = re.search(pattern, content, re.DOTALL)
