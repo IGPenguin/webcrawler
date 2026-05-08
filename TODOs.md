@@ -16,6 +16,8 @@
 
 # Claude
 - Add "impact" frames when hitting (flash white) or being hit (red white).
+- Visual Contrast: Ensure the crit/success zones in the gradient are easily distinguishable for colorblind players (e.g., using different patterns or very
+     distinct brightness levels).
 - ...
 - NEW: Item/Origin increasing drop chances for higher than common rarity
 - NEW: Item/Origin for bigger crit chance interval by ??%
@@ -39,8 +41,6 @@
 - read all files under ideas folder, check for opportunities for unique data (compare with actually used stuff in data folder), output to ideas/curated.csv
 - [Bait] Flavour by name/description: Give e.g. the repeated many worms unique buffs (e.g., "Vigorous Worm" -> +5% Rarity chance).
 - [Loot] Tiered Trash: Make "Trash" items usable (e.g., Wet Cash +1 Int for "deciphering" it).
-- ...
-- obscure wiki, bestiary for github (no exact info or nmbers, just hints) link via button in menu
 
 # Hades
 - add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items - roll item by emoji from local encounters.csv) when spoken to or defeated.
