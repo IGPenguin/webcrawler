@@ -161,13 +161,13 @@ function loadEncounter(index, fileLines = linesStory){
       if (enemyItemSlot) {
         var _occ = getPlayerSlot(enemyItemSlot);
         if (_occ) {
-          logAction("⁉️ ▸ "+_occ.emoji+" <text style=color:"+colorOrange+";><b>Slot full, swap?</b></text> "+formatSlotDiff(_occ));
+          logAction("⁉️ ▸ "+_occ.emoji+" <text style=color:"+colorRed+";><b>Slot full, swap?</b></text> "+formatSlotDiff(_occ));
         }
       }
       break;
     case "Consumable":
       if (enemyTeam.includes("Artifact")){
-        logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorRed+";>" +" Unveiled artifact: <b>"+enemyName+"</b></text>")
+        logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" +" Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
         logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
       }
