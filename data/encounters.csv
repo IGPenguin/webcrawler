@@ -766,6 +766,7 @@ Twisted Fairyland;🐜;Bullet Ant;Stingy;2;3;2;0;-1;0;0;Tireless Worker;Able to 
 Twisted Fairyland;🦟;Oversized Mosquito;Stingy;3;2;2;0;-1;0;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.;none
 Twisted Fairyland;🕷️;Huge Tarantula;Stingy;3;2;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got lethally stung.;none
 
+Twisted Fairyland;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
 Twisted Fairyland;🧀;Cheese Monster;Toxic;3;2;3;0;-1;0;0;Living Snack;Labeled with <i>"I <3 Ladoria"</i>, looks dangerous.<br>;Got poked with some new holes.;none
 Twisted Fairyland;🌼;Living Bloom;Toxic;3;2;2;0;-1;0;0;Unnatural Growth;Smells sweet and sour.<br>;Got lethally poisoned.;none
 Twisted Fairyland;🕷️;Black Widow;Toxic;3;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.;none
@@ -1196,7 +1197,6 @@ Shrouded Necropolis;💀;Crypt Guardian;Tough;4;2;3;0;-1;0;2;Restless Bones;Sile
 Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;3;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.;none
 Shrouded Necropolis;🪲;Hardshell Beetle;Tough;3;2;2;0;1;0;2;Shiny Carapace;Reflects more than light.<br>;Reflected your own blow.;none
 
-Twisted Fairyland;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
 Shrouded Necropolis;🐍;Venomous Serpent;Toxic;4;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.;none
 Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;3;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
 
@@ -1359,7 +1359,7 @@ Fishing;📦;Soggy Box;Item;0;0;0;0;0;0;0;Worthless Junk;Waterlogged and falling
 Fishing;💵;Wet Cash;Item;0;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.;none
 Fishing;👞;Wet Shoe;Item-Legs;0;0;0;0;0;0;0;Worthless Trash;Thoroughly wet leather shoe.<br>;Why did you even pick this up?;none
 Fishing;🥾;Waterlogged Boot;Item-Legs;0;0;0;0;0;0;0;Worthless Trash;Soaked through. Still only one.<br>;No use for one boot.;none
-Fishing;🩲;Wet Underwear;Item-Legs;0;0;0;0;0;0;Embarassing Find;Probably belonged to someone else.<br>;This feels radically bizzare.;none
+Fishing;🩲;Wet Underwear;Item-Legs;0;0;0;0;0;0;0;Embarassing Find;Probably belonged to someone else.<br>;This feels radically bizzare.;none
 Fishing;🔩;Corroded Bolt;Item;0;0;0;0;0;0;0;Worthless Scrap;Has no business being in a river.<br>;Pocketed it out of habit.;none
 Fishing;📰;Pulped Chronicle;Item;0;0;0;0;0;0;0;Soggy Mess;Ink and paper merged into one sad lump.<br>;Couldn't make out a single word.;none
 Fishing;🎏;Torn Kite;Item;0;0;0;0;0;0;0;Lost Toy;A child's toy. No child to return it to.<br>;Left it in the current.;none
