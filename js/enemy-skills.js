@@ -165,7 +165,9 @@ function enemyKnockedOut(){
 }
 
 function animateFlipToCorpse(state) {
-  var animationHandler = function(){
+  var animationHandler = function(e){
+    if (e.target !== cardUIElement) return; // ignore bubbled animationend from child elements
+    if (e.animationName !== 'flipOutY') return; // ignore other animations completing on the card
     transitionToCorpse(state);
     registerClickListeners();
     cardUIElement.removeEventListener("animationend", animationHandler);

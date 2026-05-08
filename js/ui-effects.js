@@ -379,11 +379,17 @@ function displayEffect(message,documentElement,time=3){
 
   //Wow, this is nice - https://animate.style
 var _animateUIElementGen = new WeakMap();
+var _animateUIElementClass = new WeakMap();
 function animateUIElement(documentElement,animation,time="0s",hidden = false,message="",animateInfinite=false){
   if (typeof time != "string") time = String(time);
 
   var gen = (_animateUIElementGen.get(documentElement) || 0) + 1;
   _animateUIElementGen.set(documentElement, gen);
+
+  // Remove previous animation class to prevent orphaned classes holding fill-mode end state
+  var prevClass = _animateUIElementClass.get(documentElement);
+  if (prevClass && prevClass !== animation) documentElement.classList.remove(prevClass);
+  _animateUIElementClass.set(documentElement, animation);
 
   if (hidden){
     documentElement.innerHTML = message;

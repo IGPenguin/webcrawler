@@ -98,6 +98,7 @@ function _fireRemembranceFade() {
 function animateFlipNextEncounter(){
   var animationHandler = function(e){
     if (e.target !== cardUIElement) return; // ignore bubbled animationend from child elements
+    if (e.animationName !== 'flipOutY') return; // ignore other animations completing on the card
     nextEncounter();
     registerClickListeners();
     cardUIElement.removeEventListener("animationend",animationHandler);
