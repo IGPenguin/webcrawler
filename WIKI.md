@@ -1,9 +1,7 @@
 # 📕 Codex of the Damned
 
-*You did not mean for the ritual to end like this. The spell was supposed to bring her back. It did not, at least it did not do it right.<br>
-The world cracked at the seams and you are still here, reincarnating again and again, pushing through what remains of it.*
-
-There is no undoing it. There is no going back, only forward. **Don't give up!**
+*You did not mean for the ritual to end like this. The world got corrupted and you are still here, reincarnating again and again, pushing through what remains of it.*<br>
+There is no undoing it, no going back. There is only the way forward. **Don't give up, you need to fix it!**
 
 ---
 
@@ -115,10 +113,10 @@ The corruption did not spread evenly. Each area has its own character.
 A few things worth knowing early to improve your survival chances:
 
 - **Watch the 💤 Sleep button.** Blue means your resources need recovery. Gold means a level-up is waiting.
-- **Read the ✅ Action bar before releasing.** A miss usually costs more than just an action delay.
-- **Not every creature needs to be killed ☠️.** Knocking out or speaking to foes is harder, but lighter on your karma.
-- **It is easier to 👋 Grab enemies when they are tired.** Watch their energy, not just your own.
-- **🪙 Drachmae persist across runs.** Spending them is not a loss — they will always come back to you.
-- **The 💌 Mementos are not just flavour.** What you do with them shapes what you find at the end.
+- **Read the ✅ Action bar before releasing.** A miss usually costs more than just a setback, cancel action when uncertain.
+- **☠️ Not all creatures need to be killed.** Knocking out or speaking to foes is harder, but lighter on your karma.
+- **It is easier to 👋 Grab and ⚔️ Attack enemies when they are tired.** Watch their energy, not just your own.
+- **🪙 Drachmae persist across runs.** Spending them is not a loss, they will always come back to you.
+- **The scattered 💌 Mementos are not just flavour.** What you do with them shapes what you find at the end.
 
-*Enjoy the journey, don't give up!*
+*Enjoy the journey!*
