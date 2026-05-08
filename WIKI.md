@@ -1,20 +1,9 @@
-# 📕 The Codex for the Damned
+# 📕 Codex of the Damned
 
 *You did not mean for the ritual to end like this. The spell was supposed to bring her back. It did not, at least it did not do it right.<br>
 The world cracked at the seams and you are still here, reincarnating again and again, pushing through what remains of it.*
 
 There is no undoing it. There is no going back, only forward. **Don't give up!**
-
----
-
-## 👤 Choosing Who You Were
-
-Once you prove to be  a worthy challenger, you will unlock starting **Origins**.<br>
-Before each run, you choose who your character used to be. This seeds the initial stats and shape which actions you should lean on.
-
-A high **⚔️ Attack** build tears through enemies but is helpless against spirits. A high **🧠 Intellect** build navigates by dialogue and grows quicker, but struggles against things that cannot be reasoned with. **🔵 Mana** opens the door to magic, but someone always pays for it.
-
-New origins unlock as you play, alongside new items, game fatures and such.
 
 ---
 
@@ -29,19 +18,7 @@ New origins unlock as you play, alongside new items, game fatures and such.
 | 🧠 **Intellect** | Accelerates XP gain and raises your speech skills. |
 | 🔵 **Mana** | Provides additional options outside the physical actions. |
 
-Stats grow through looting items and level-ups. Experience accumulates when solving encounters, but it only converts when you **💤 Sleep**.
-
----
-
-## 🎯 The Action Bar
-
-Every meaningful action triggers a skill check: a bar sweeps across the screen. ✅ **Hold the action button, then release inside the green zone.**
-
-- Release **inside the zone** — success.
-- Release **outside the zone** — failure.
-- There may also be zones for critical success and failure.
-
-The zones change size and the cursor changes speed based on your and the encounter stats. Luck always helps. Rushing always hurts.
+Stats grow through looting items and level-ups. Experience accumulates when solving encounters, but it only converts to levels when you **💤 Sleep**.
 
 ---
 
@@ -65,31 +42,35 @@ Watch the button colours. They signal when an action is unavailable, risky, or p
 
 ---
 
-## 🌍 The World
+## 🎯 The Action Bar
 
-The corruption did not spread evenly. Each area has its own character.
+Every meaningful action triggers a skill check: a bar sweeps across the screen. ✅ **Hold the action button, then release inside the green zone.**
 
-**😴 Depths of Slumber** — Where you begin your journey. A dream-state  that teaches the essentials of this place before the real weight lands.
+- Release **inside the zone** — success.
+- Release **outside the zone** — failure.
+- There may also be zones for critical success and failure.
 
-**🌿 Fading Wildlands** — The first true test. The **Undertaker Shade** keeps his shop here. If you find bait, the waters hold more than just fish.
-
-**🏚️ Forsaken Village** — A place that remembers what it was. Houses hide things worth searching for as well as corrupted inhabitants.
-
-**🍄 Twisted Fairyland** — Nature warped into something malevolent. Magic runs thick and becomes a necessity.
-
-**🌊 River of Sorrows** — Only the best of the best cross the waters and venture beyond.
-
-*What lies further is for you to find for yourself...*
+The zones change size and the cursor changes speed based on your and the encounter stats. Luck always helps. Rushing always hurts.
 
 ---
 
 ## 🧩 Memories
 
-**Memories** are the achievement system. They unlock as you play — first death, first kill, first discovery. Some unlock new Origins; others unlock new encounters, items, or other abilities inaccessible before. The world expands for those who have paid for its lessons.
+**Memories** are the achievement and reward system. They unlock as you play — first death, first kill, first discovery. Some unlock new Origins; others unlock new encounters, items, or other abilities inaccessible before. The world expands for those who have paid for its lessons.
 
 ---
 
-## ⚖️ The Shop
+## 👤 Choosing Origin
+
+Once you prove to be  a worthy challenger, you will unlock starting **Origins**. Before each run, you choose who your character used to be. This seeds the initial stats and shape which actions you should lean on.<br>
+
+A high **⚔️ Attack** build tears through enemies but is helpless against spirits. A high **🧠 Intellect** build navigates by dialogue and grows quicker, but struggles against things that cannot be reasoned with. **🔵 Mana** opens the door to magic, but someone always pays for it.
+
+New origins unlock as you play, alongside new items, game fatures and such.
+
+---
+
+## ⚖️ Spending Coins
 
 The **👤 Undertaker Shade** appears at the start of each run (given you have something to pay him with) — a grim merchant offering upgrades, items and such. His prices are in **🪙 Drachmae**, a currency that always returns to you with each new run. 
 
@@ -110,6 +91,25 @@ Your runs are submitted to the **⭐️ Rankings**, a global scoreboard updated 
 
 ---
 
+## 🌍 The World
+
+The corruption did not spread evenly. Each area has its own character.
+
+**😴 Depths of Slumber** — Where you begin your journey. A dream-state  that teaches the essentials of this place before the real weight lands.
+
+**🌿 Fading Wildlands** — The first true test. The **Undertaker Shade** keeps his shop here. If you find bait, the waters hold more than just fish.
+
+**🏚️ Forsaken Village** — A place that remembers what it was. Houses hide things worth searching for as well as corrupted inhabitants.
+
+**🍄 Twisted Fairyland** — Nature warped into something malevolent. Magic runs thick and becomes a necessity.
+
+**🌊 River of Sorrows** — Only the best of the best cross the waters and venture beyond.
+
+*What lies further is for you to find for yourself...*
+
+---
+
+
 ## ❤️ Staying Alive
 
 A few things worth knowing early to improve your survival chances:
@@ -121,4 +121,4 @@ A few things worth knowing early to improve your survival chances:
 - **🪙 Drachmae persist across runs.** Spending them is not a loss — they will always come back to you.
 - **The 💌 Mementos are not just flavour.** What you do with them shapes what you find at the end.
 
-*Enjoy the journey!*
+*Enjoy the journey, don't give up!*
