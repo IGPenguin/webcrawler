@@ -66,8 +66,10 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 
 - **Encounter loading**: `loadEncounter(index)` in `encounter-loader.js` parses CSV rows; `generateNextEncounters(generatorID)` in `encounter-generator.js` builds dynamic sequences
 - **Combat**: `resolveAction(button)` in `action-resolver.js` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
+- **Corpse state**: enemies can be subdued without killing (via Grab, Speak, or exhaustion). `corpseState` is `"neutralized"` — the enemy is incapacitated but still present and can be attacked for a kill blow (costs karma) or looted. `transitionToCorpse("killed")` is called when the player deals a final blow.
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
 - **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
+- **Companions**: recruited NPCs and pets are stored in `playerPartyString` (emoji string); `[...playerPartyString].length` is the companion count used in the score formula
 
 ### Ending System
 

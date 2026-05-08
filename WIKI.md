@@ -1,58 +1,124 @@
-# 📖 The Vade Mecum for the Damned
+# 📕 The Codex for the Damned
 
-*“Death was meant to set you free. Until it did not. The world decays with every step; make haste to stop it, but tread softly upon the rot.”*
+*You did not mean for the ritual to end like this. The spell was supposed to bring her back. It did not, at least it did not do it right.<br>
+The world cracked at the seams and you are still here, reincarnating again and again, pushing through what remains of it.*
 
-## 🌀 The Dream-Walk (The Threshold)
-You do not begin by waking. You begin by dreaming. The **Depths of Slumber** are not a place, but a state of being—a restless echo where your mind prepares for the grueling weight of reality. 
+There is no undoing it. There is no going back, only forward. **Don't give up!**
 
-*   **The Weight of Will:** Every action you take—be it a strike or a conversation—demands a toll from your **🟢 Energy**. To move through the world is to slowly exhaust your soul.
-*   **The Necessity of Rest:** You cannot grow stronger while you are running. The **🎉 Level Up** you seek is a seed that only blooms when you surrender to **💤 Sleep**. Find a safe corner of the dream, close your eyes, and let your potential take root.
-*   **The Timing of the Soul:** The world moves in a pulse. To act too early or too late is to invite failure. Watch the bar, find the rhythm, and remember: even a missed strike can be a lesson, if you survive the retaliation.
+---
 
-## 🏺 The Six Echoes (Attributes)
-Your essence is not a single flame, but six flickering candles. Your **Origin** determines which of these will guide you through the dark:
+## 👤 Choosing Who You Were
 
-*   **❤️ Health:** The vessel of your presence. Once it shatters, you return to the beginning of the dream.
-*   **🟢 Energy:** Your capacity for struggle. Manage it carefully; an exhausted soul is a defenseless one.
-*   **🧠 Intellect:** The lens through which you see the world. It sharpens your learning (**XP**) and allows you to find common ground with those you might otherwise fear.
-*   **🍀 Luck:** The fickle grace of the void. It grants critical insights and can occasionally pull you back from the very edge of dissolution.
-*   **⚔️ Attack:** The edge of your resolve. Some things in the rot cannot be spoken to; they must be removed.
-*   **🔵 Mana:** The spark of the ancient world. It is the key to locks that have no holes and wounds that refuse to close.
+Once you prove to be  a worthy challenger, you will unlock starting **Origins**.<br>
+Before each run, you choose who your character used to be. This seeds the initial stats and shape which actions you should lean on.
 
-## 💎 The Essence of Things (Rarity)
-The rot does not treat all objects equally. Some bear a weight that transcends their form.
+A high **⚔️ Attack** build tears through enemies but is helpless against spirits. A high **🧠 Intellect** build navigates by dialogue and grows quicker, but struggles against things that cannot be reasoned with. **🔵 Mana** opens the door to magic, but someone always pays for it.
 
-*   **Net Essence:** An object’s power is calculated from its stats. Those that shine brightest are **Legendary**, while the most meager are **Cursed**.
-*   **The Branded:** Look for **[Tags]** in the notes of what you find. These are marks of a fixed destiny, overriding the natural order of stats. 
-*   **Artifacts:** When you see this word, you touch a piece of the world that was meant to be eternal.
-*   **The Familiar:** Items and Origins tied to your **Memories (Achievements)** are woven into your soul. They will appear more often, as they are part of your story now.
+New origins unlock as you play, alongside new items, game fatures and such.
 
-## ⚖️ The Unseen Ledger (Karma & Love)
-The world remembers what you do, even if you try to forget.
+---
 
-*   **Karma:** There is a difference between **💀 Killing** a shadow and **👋 Knocking it out**. To choose the path of least violence is to lighten your spirit, which the **Undertaker** may reward if you fall again.
-*   **Love:** Your heart holds a single name. How you treat the letters and relics *She* left behind will determine the voice that greets you at the final gate. Some paths require a heart full of devotion; others are paved with the bitterness of accusation.
+## 📊 Your Six Stats
 
-## 🗺️ A Map of Fading Echoes
+| Stat | What it does |
+|------|-------------|
+| ❤️ **Health** | Your life. Reach zero and the run ends. |
+| 🟢 **Energy** | Spent on almost every action. An exhausted soul cannot fight properly. |
+| ⚔️ **Attack** | Damage dealt to enemies. |
+| 🍀 **Luck** | Improves your survival odds, manifests in many ways. |
+| 🧠 **Intellect** | Accelerates XP gain and raises your speech skills. |
+| 🔵 **Mana** | Provides additional options outside the physical actions. |
 
-### 😴 Depths of Slumber
-The restless womb. Here, you learn the weight of your own hands while the world remains a blur of half-remembered shapes. Do not fear the Nightmares; they are merely teachers of the **✅ Green Zone**.
+Stats grow through looting items and level-ups. Experience accumulates when solving encounters, but it only converts when you **💤 Sleep**.
 
-### 🌿 Fading Wildlands
-The first taste of the rot. The **Undertaker Shade** waits here with his grim trades. If you find **🪱 Bait**, the waters here offer more than just fish—they offer relics of what was lost.
+---
 
-### 🏚️ Forsaken Village
-A skeletal remains of community. The houses hold **Pieces of History**. Search them well, for the past is the only map to the future.
+## 🎯 The Action Bar
 
-### 🍄 Twisted Fairyland
-A vibrant, poisonous lie. The nature here is thick with **🎋 Shamanic** power. It is a place of high magic and even higher danger.
+Every meaningful action triggers a skill check: a bar sweeps across the screen. ✅ **Hold the action button, then release inside the green zone.**
 
-### 🌊 River of Sorrows
-The flows of eternal tears. To cross is to admit your grief. The beasts beneath the waves are ancient, and the price of passage is often more than gold.
+- Release **inside the zone** — success.
+- Release **outside the zone** — failure.
+- There may also be zones for critical success and failure.
 
-***
+The zones change size and the cursor changes speed based on your and the encounter stats. Luck always helps. Rushing always hurts.
 
-### 🏹 Last-Minute Beta Tips
-*   **Cooking:** If a resource feels tainted, the **🔥 Fire** can purge its malice. A seasoned meal (**🧂 Salt**) is a luxury of the living that you can still enjoy.
-*   **The Merchant:** The Shade's prices are absolute, but his **🟠 Artifacts** can change the rules of your current run.
-*   **The Silent Path:** **💬 Speaking** and **👋 Grabbing** an exhausted foe are more difficult than striking, but they leave your soul lighter.
+---
+
+## 🤔 Nine Ways to Act
+
+Not every action works or is available on every encounter, there are variations. Read the room, experiment, learn, endure.
+
+| Action | Use |
+|--------|-----|
+| ⚔️ **Attack** | Damage an enemy. Costs energy. Reliable, leaves marks. |
+| 🌀 **Dodge** | Evade a strike, harder to do against fast enemies. |
+| 🔰 **Block** | Absorb a hit, harder to do against heavy enemies. |
+| 👋 **Grab** | Interact, pick-up loot, or knockout foes - lighter on karma, harder to land. |
+| 💤 **Sleep** | Recover resources - essential for survival, limited in combat. |
+| 💬 **Speak** | Negotiate, calm, or learn. Works better with high **🧠 Intellect**. |
+| 💫 **Cast** | Spend mana = safe ranged damage, affects ethereal beings. |
+| ❤️‍🩹 **Heal** | Mana-powered health recovery. |
+| 🪬 **Curse** | Spend mana to weaken the enemies, or discover secrets. |
+
+Watch the button colours. They signal when an action is unavailable, risky, or particularly effective.
+
+---
+
+## 🌍 The World
+
+The corruption did not spread evenly. Each area has its own character.
+
+**😴 Depths of Slumber** — Where you begin your journey. A dream-state  that teaches the essentials of this place before the real weight lands.
+
+**🌿 Fading Wildlands** — The first true test. The **Undertaker Shade** keeps his shop here. If you find bait, the waters hold more than just fish.
+
+**🏚️ Forsaken Village** — A place that remembers what it was. Houses hide things worth searching for as well as corrupted inhabitants.
+
+**🍄 Twisted Fairyland** — Nature warped into something malevolent. Magic runs thick and becomes a necessity.
+
+**🌊 River of Sorrows** — Only the best of the best cross the waters and venture beyond.
+
+*What lies further is for you to find for yourself...*
+
+---
+
+## 🧩 Memories
+
+**Memories** are the achievement system. They unlock as you play — first death, first kill, first discovery. Some unlock new Origins; others unlock new encounters, items, or other abilities inaccessible before. The world expands for those who have paid for its lessons.
+
+---
+
+## ⚖️ The Shop
+
+The **👤 Undertaker Shade** appears at the start of each run (given you have something to pay him with) — a grim merchant offering upgrades, items and such. His prices are in **🪙 Drachmae**, a currency that always returns to you with each new run. 
+
+---
+
+## 🎣 Fishing
+
+Capture a **🪱 Bait** so that you can fish at certain points in the journey. Fishing can surface things above what the current area would normally offer. It is one of the few almost peaceful activities left in the world.
+
+
+---
+
+## ⭐️ Chronicles and Rankings
+
+Every action you take is recorded in **📜 Chronicles** — a full history of every run, every choice, every death. It is not for the squeamish.
+
+Your runs are submitted to the **⭐️ Rankings**, a global scoreboard updated several times a day. Score reflects how far you got and the choices you made on the way.
+
+---
+
+## ❤️ Staying Alive
+
+A few things worth knowing early to improve your survival chances:
+
+- **Watch the 💤 Sleep button.** Blue means your resources need recovery. Gold means a level-up is waiting.
+- **Read the ✅ Action bar before releasing.** A miss usually costs more than just an action delay.
+- **Not every creature needs to be killed ☠️.** Knocking out or speaking to foes is harder, but lighter on your karma.
+- **It is easier to 👋 Grab enemies when they are tired.** Watch their energy, not just your own.
+- **🪙 Drachmae persist across runs.** Spending them is not a loss — they will always come back to you.
+- **The 💌 Mementos are not just flavour.** What you do with them shapes what you find at the end.
+
+*Enjoy the journey!*

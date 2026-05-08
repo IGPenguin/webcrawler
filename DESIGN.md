@@ -141,6 +141,8 @@ Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyl
 
 ## Encounter Types
 
+### Environmental
+
 | Type | Behavior |
 |------|---------|
 | Prop | Environmental flavor; grants bonus/malus on rest |
@@ -151,8 +153,52 @@ Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyl
 | Trap-Obstacle | Blocks path, harmless, resolved by attacking |
 | Curse | Negative or tradeoff, auto-applies |
 | Altar | Positive blessing or sacrifice mechanic |
-| Container / Container-2 | Searchable, may contain loot |
-| Locked-Container | Requires key or Cast (−2 MGK) to open; force-unlockable by repeated attacks |
+| Container | Searchable; contains loot. Variants: `Container-2` through `Container-5` for multi-search containers |
+| Locked-Container | Requires key or Cast (−2 MGK) to open; force-unlockable by repeated attacks. Variant: `Locked-Container-3` |
+
+### Loot
+
+| Type | Behavior |
+|------|---------|
+| Item | Equippable/stat-modifying item; picked up via Grab |
+| Consumable | Eat to restore Health and Energy |
+
+### Enemy Modifiers
+
+The `type` field on enemies combines a **base category** with an optional **modifier** (e.g. `Boss-Undead`). The modifier affects XP multipliers, action-resolver behavior, and what skills apply.
+
+| Modifier | Effect |
+|----------|--------|
+| Standard | No special modifier — baseline enemy |
+| Small | Lower weight; typically minor critters |
+| Heavy | Higher XP multiplier; harder to knock out |
+| Hot | Fire damage; fail on Roll/Block can burn |
+| Stingy | Sting damage; higher XP multiplier |
+| Swift | High evasion; higher XP multiplier |
+| Tough | Has DEF stat (damage absorption); endgame areas only |
+| Toxic | Applies damage on every turn |
+| Reflective | Can mirror certain actions back at the player |
+
+| Base Type | Effect |
+|-----------|--------|
+| Demon | +40% XP multiplier; MGK stat; vulnerable to specific items/artifacts |
+| Undead | +40% XP multiplier; MGK stat; interact with Curse action differently |
+| Spirit | +40% XP multiplier; MGK stat; ethereal behaviors |
+
+### NPCs
+
+| Type | Behavior |
+|------|---------|
+| Friend | Friendly NPC; no combat; emoji suffix defines required quest item |
+| Pet | Companion animal; recruitable via specific actions |
+| Recruit | Human NPC that can join the party |
+
+### Special
+
+| Type | Behavior |
+|------|---------|
+| Upgrade | Perk selection encounter — loads on Sleep when level up available |
+| Checkpoint | Forced level-up trigger — grants a full XP bar and rests the player |
 
 ---
 
@@ -168,8 +214,6 @@ Anonymous gameplay events are submitted to a Google Sheet via Google Forms. Use 
 | `run_end` | `causeOfDeath\|endType` | Death distribution, win rate, where runs end |
 | `achievement` | `achievement_id` | Which milestones players reach; which are never unlocked |
 | `cheat_used` | cheat message | Cheat popularity |
-| `loot` | `source\|type\|emoji name\|hp;atk;sta;lck;int;mgk;def` | Item encounter frequency, source split (drop/gen/fishing/story) |
-| `enemy` | `source\|type\|emoji name\|hp;atk;sta;lck;int;mgk;def` | Enemy encounter frequency, area reach |
 
 **Every event also includes:** `level`, `origin`, `difficulty`, `karma`, `stats`, `inventory`, `encounterCount`, `playtime`, `score`, `gameVersion`, `userId`, `sessionId`, `browserInfo`.
 
