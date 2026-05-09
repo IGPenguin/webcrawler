@@ -102,15 +102,15 @@
   - There should be proactive actions available to fix bad karma if players learn that they have bad standing
   - killing enemies that are agressive should be fine, putting to sleep aggresive enemies should be considered good deed, killing non aggressive enemies should be considered bad, attacking friends should be bad etc.... suggest more hooks to karma?
   - the good karma bonus encounter - available in player.skills.js - we should find a way to edit/rething trigger it sometimes (not only when revived, that might be very uncommon situation)
+- Add game run modifiers? (unlock after special condition? activated trough Origins?)
+  - Demons passive but...
+  - Animals passive but...
+  - ???
 - Expand Inventory: consumables, items array
   - open on click loot/party bar?? (repalce buttons or overlay)
   - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits) = Prevents stacking power fast
   - eat food only intentionally, dont force/ditch
  - make actions seem more sequential in the ui so that player can notice one by one - eg delay 0,5s each log display and wait for effects to complete before firing another and unlocking UI for player actions?
-- Add game run modifiers? (unlock after special condition? activated trough Origins?)
-  - Demons passive but...
-  - Animals passive but...
-  - ???
 - ...
 - take inspiration from:
   - https://pixeldungeon.fandom.com/wiki/Game_mechanics
