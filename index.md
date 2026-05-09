@@ -399,7 +399,7 @@ layout: default
                                 padding-right:7px;
                                 margin-bottom:0px;
                                 margin-top:1px;
-                                margin-left:-1px;
+                                margin-left:-4px;
                                 display:inline;
                                 overflow:auto;
                                 line-height:24px;"/>
