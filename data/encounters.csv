@@ -297,38 +297,38 @@ Forsaken Village;🌿;Thick Grass;Container-2;0;0;0;0;0;0;0;Wild Flora;Something
 Forsaken Village;🌳;Suspicious Trees;Container-2;0;0;0;0;0;0;0;Wild Flora;There's a strange shadow behind.<br>;There was something behind the trees.;none
 Forsaken Village;📦;Shipping Crate;Container-2;0;0;0;0;0;0;0;Container;Hefty and cumbersome.<br>;;none
 Forsaken Village;🪤;Elaborate Trap;Container-2;0;0;0;0;0;0;0;Trap;Something could be captured inside.<br>;There was something inside!;none
-Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.;none
-Forsaken Village;🏚️;Ruined Shed;Container-2;0;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.;none
+Forsaken Village;🏡;Small House;Container-2;0;0;0;0;0;0;0;Deserted Building;One room, the door already hanging open.<br>;Shouldered it open.;none
+Forsaken Village;🏚️;Ruined Shed;Container-2;0;0;0;0;0;0;0;Deserted Building;The walls held up better than the roof.<br>;Stepped through the gap.;none
 Forsaken Village;🏚️;Collapsed Barn;Container-2;0;0;0;0;0;0;0;Deserted Building;Walls barely hold together.<br>;Entered through the window.;none
-Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;0;Deserted Building;Wood planks barely hold together.<br>;Kicked the door open.;none
+Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;0;Deserted Building;Wood planks barely hold together.<br>;Pried the boards loose.;none
 
-Forsaken Village;🏚️;Abandoned Home;Container-3;0;0;0;0;0;0;0;Deserted Building;Barely holds standing.<br>;Entered through the window.;none
-Forsaken Village;🏚️;Barred House;Container-3;0;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.;none
-Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;0;Deserted Building;The roof has caved in.<br>;Kicked the door open.;none
-Forsaken Village;🏚️;Collapsed Mill;Container-3;0;0;0;0;0;0;0;Deserted Building;The wheel still groans in the wind.<br>;Entered through the broken door.;none
-Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;0;Deserted Building;Seems abandoned in a rush.<br>;Kicked the door open.;none
-Forsaken Village;🏚️;Neglected House;Container-3;0;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.;none
-Forsaken Village;🏚️;Unsettling Ruins;Container-3;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.;none
-Forsaken Village;🏡;Fancy Garden House;Container-3;0;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Kicked the door open.;none
+Forsaken Village;🏚️;Abandoned Home;Container-3;0;0;0;0;0;0;0;Full Household;Built for a family, not a passing stranger.<br>;Forced the back door open.;none
+Forsaken Village;🏚️;Barred House;Container-3;0;0;0;0;0;0;0;Sealed Interior;Someone went to the trouble of barring it from inside.<br>;Broke through the barricade.;none
+Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;0;Reclaimed by Nature;Moss has swallowed most of it, but the cellar holds.<br>;Found the cellar entrance.;none
+Forsaken Village;🏚️;Collapsed Mill;Container-3;0;0;0;0;0;0;0;Working Parts;The wheel still groans in the wind.<br>;Entered through the broken door.;none
+Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;0;Hasty Departure;Abandoned in a rush, things left where they fell.<br>;Sifted through what remained.;none
+Forsaken Village;🏚️;Neglected House;Container-3;0;0;0;0;0;0;0;Years of Neglect;Three floors, most of them still reachable.<br>;Stepped over the threshold.;none
+Forsaken Village;🏚️;Unsettling Ruins;Container-3;0;0;0;0;0;0;0;Troubled History;Blood drops on the threshold point the wrong direction.<br>;Went in regardless.;none
+Forsaken Village;🏡;Faded Manor;Container-3;0;0;0;0;0;0;0;Once Prosperous;Fancier than anything else on this road.<br>;Stepped through the garden gate.;none
 
-Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Unlocked the front door.;none
+Forsaken Village;🏚️;Locked Ruin;Locked-Container-3;0;0;0;0;0;0;0;Deserted Building;Something shifts inside the walls.<br>;Unlocked the front door.;none
 Forsaken Village;🏚️;Secured House;Locked-Container-3;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Unlocked the chained door.;none
 Forsaken Village;🏚️;Barred House;Locked-Container-3;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Unlocked the entrance.;none
 Forsaken Village;🏡;Garden Shed;Locked-Container-3;0;0;0;0;0;0;0;Deserted Building;Looks long time abandoned.<br>;Unlocked the front door.;none
 Forsaken Village;📚;Barred Library;Locked-Container-3;0;0;0;0;0;0;0;Deserted Building;Pages whisper in the stillness.<br>;Pulled open the heavy door.;none
 
 Forsaken Village;🎯;Archery Range;Container-4;0;0;0;0;0;0;0;Training Spot;Not a scratch on the target.<br>;Spot some clues nearby.;none
-Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.;none
-Forsaken Village;🏘️;Shady Backalley;Container-4;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.;none
+Forsaken Village;💒;Lovely Chapel;Container-4;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Slipped in through the side entrance.;none
+Forsaken Village;🏘️;Shady Backalley;Container-4;0;0;0;0;0;0;0;Deserted Building;Shadowed corners for as far as you can see.<br>;Found a gap in the back wall.;none
 Forsaken Village;🏤;Post Office;Container-4;0;0;0;0;0;0;0;Deserted Building;Could still have some never delivered letters.<br>;Entered through the cracked door.;none
 Forsaken Village;🍻;Silent Inn;Container-4;0;0;0;0;0;0;0;Deserted Building;Empty chairs at empty tables everywhere.<br>;Entered through the window.;none
 Forsaken Village;🍻;Lucky Inn;Container-4;0;0;0;1;0;0;0;Deserted Building;There is a four-leaf clover on the table.<br>;Reached for the clover.;none
 
-Forsaken Village;🛠️;Engineering Workshop;Container-5;0;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.;none
-Forsaken Village;⚒️;Blacksmith Workshop;Container-5;0;0;0;0;0;0;0;Deserted Building;Tools lie scattered and rusted.<br>;Kicked the door open.;none
+Forsaken Village;🛠️;Engineering Workshop;Container-5;0;0;0;0;0;0;0;Deserted Building;Blueprints still pinned to the walls.<br>;Forced the workshop door.;none
+Forsaken Village;⚒️;Blacksmith Workshop;Container-5;0;0;0;0;0;0;0;Deserted Building;The forge is cold, the work unfinished.<br>;Pushed through the heavy doors.;none
 Forsaken Village;🎭;Forsaken Theatre;Container-5;0;0;0;0;0;0;0;Deserted Building;Faded costumes hang like ghosts.<br>;Stepped onto the cracked tiles.;none
-Forsaken Village;🕰️;Clockhouse Tower;Container-5;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.;none
-Forsaken Village;🏫;Town Hall;Container-5;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.;none
+Forsaken Village;🕰️;Clockhouse Tower;Container-5;0;0;0;0;0;0;0;Deserted Building;The gears still tick inside, for nobody.<br>;Climbed through the open clock face.;none
+Forsaken Village;🏫;Town Hall;Container-5;0;0;0;0;0;0;0;Deserted Building;Papers still on the desks, decisions still pending.<br>;Pushed through the main doors.;none
 Forsaken Village;🎪;Abandoned Fairground;Container-5;0;0;0;0;0;0;0;Deserted Building;Bright colors faded to grey.<br>;Wandered into the eerie silence.;none
 Forsaken Village;🏟️;Forgotten Arena;Container-5;0;0;0;0;0;0;0;Killing Ground;Echoes of cheers linger still.<br>;Wandered into the eerie silence.;none
 Forsaken Village;🏥;Deserted Hospital;Container-5;0;0;0;0;0;0;0;Deserted Building;Faint echoes wander these walls.<br>;;none
@@ -416,7 +416,6 @@ Forsaken Village;🐁;Albino Mouse;Small;1;2;2;0;-1;0;0;Dangerous Critter;Probab
 Forsaken Village;🕷️;Cellar Spider;Small;1;1;2;0;-1;0;0;Basement Pest;Surfaced from ground rubble.<br>;Venom stopped your heart.;none
 
 Forsaken Village;🐖;Starving Porker;Standard;2;1;2;0;2;0;0;Wild Beast;Looking for anything to devour.<br>;Devoured by a porkchop.;none
-Forsaken Village;🦫;Savage Beaver;Standard;2;2;1;0;3;0;0;Wild Animal;Does not look too friendly.<br>;Became a part of a beaver dam.;none
 Forsaken Village;🐀;Starving Rat;Standard;2;2;1;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly disease.;none
 Forsaken Village;🐑;Blight Sheep;Standard;3;0;2;0;0;0;0;Diseased Livestock;Sheds its wool in crusty clumps.<br>;Suffocated under its weight.;none
 Forsaken Village;🕵️‍♂️;Grave Robber;Standard;2;2;2;0;2;0;0;Profane Human;Smells of soil and rotten decay.<br>;Buried in a shallow grave.;none
@@ -639,43 +638,43 @@ Twisted Fairyland;🕳️;Deep Hollow;Container-2;0;0;0;0;0;0;0;Dark Place;A big
 Twisted Fairyland;🪤;Primitive Trap;Container-2;0;0;0;0;0;0;0;Makeshift Trap;Something could be captured inside.<br>;There was something inside indeed.;none
 Twisted Fairyland;🌾;Rice Field;Container-2;0;-1;0;0;0;0;0;Uneasy Terrain;Farmland of the natives.<br>;;none
 Twisted Fairyland;🌾;Owergrown Reeds;Container-2;0;0;0;0;0;0;0;Wild Flora;Sunlight reflects through it.<br>;;none
-Twisted Fairyland;🏕️;Primitve Tent;Container-2;0;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.;none
-Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.;none
-Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something was hidden there.;none
+Twisted Fairyland;🏕️;Primitive Tent;Container-2;0;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden in the bedroll.;none
+Twisted Fairyland;🏕️;Withering Tent;Container-2;0;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Something left behind in a rush.;none
+Twisted Fairyland;⛳️️;Claimed Spot;Container-2;0;0;0;0;0;0;0;Suspense Area;Seems a bit neglected.<br>;Searched the area carefully.;none
 Twisted Fairyland;🪻;Hyacinth Grove;Container-2;0;0;0;0;0;0;0;Wild Flora;Compelling smell fills the air.<br>;;none
-Twisted Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;;none
+Twisted Fairyland;🛖;Simple Hut;Container-2;0;0;0;0;0;0;0;Primitive Housing;Barely counts as shelter.<br>;;none
 Twisted Fairyland;🌹;Briar Thicket;Container-2;-1;0;0;0;0;0;0;Natural Snare;Looks like something is hidden inside.<br>;Got cut by sharp torns;none
 
-Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;0;Tall Flora;This palce sounds way too quiet.<br>;;none
+Twisted Fairyland;🌳;Oak Grove;Container-3;0;0;0;0;0;0;0;Tall Flora;This place sounds way too quiet.<br>;;none
 Twisted Fairyland;🌲;Spruce Grove;Container-3;0;0;0;0;0;0;0;Tall Flora;It's harder to navigate between the trees.<br>;;none
-Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Something was hidden there.;none
-Twisted Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.;none
-Twisted Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;;none
-Twisted Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;;none
+Twisted Fairyland;🏕️;Tribal Campsite;Container-3;0;0;0;0;0;0;0;Suspense Area;Serves as a place of rest.<br>;Revealed something hidden nearby.;none
+Twisted Fairyland;🌲;Dark Wood;Container-3;0;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Found something in the undergrowth.;none
+Twisted Fairyland;🛖;Lone Hut;Container-3;0;0;0;0;0;0;0;Primitive Housing;Bigger than it looks from outside.<br>;;none
+Twisted Fairyland;🛖;Primitive Hut;Container-3;0;0;0;0;0;0;0;Primitive Housing;More effort went into this than expected.<br>;;none
 Twisted Fairyland;🛖;Witch’s Hut;Container-3;0;0;0;-1;0;0;0;Primitve Housing;Dark herbs hang from the rafters.<br>;Radiates some nasty feelings.;none
-Twisted Fairyland;🥀;Overgrown Campsite;Container-3;-1;0;0;0;0;0;0;Abandoned Spot;Strange noises are coming out of the bushes.<br>;Ouch! Thorns cut your skin.;none
+Twisted Fairyland;🥀;Overgrown Campsite;Container-3;-1;0;0;0;0;0;0;Abandoned Spot;The fire circle is cold but recent.<br>;Thorns cut through on the way in.;none
 
-Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;;none
-Twisted Fairyland;🛖;Barret Hut;Locked-Container-3;0;0;0;0;0;0;0;Primitve Housing;Built from branches and leaves.<br>;;none
+Twisted Fairyland;🛖;Locked Hut;Locked-Container-3;0;0;0;0;0;0;0;Primitive Housing;Someone padlocked the only door.<br>;;none
+Twisted Fairyland;🛖;Barred Hut;Locked-Container-3;0;0;0;0;0;0;0;Primitive Housing;Branches lashed over the entrance from inside.<br>;;none
 
 Twisted Fairyland;🕳️;Underworld Passage;Container-4;0;0;0;0;0;0;0;Endless Void;Who knows what lies inside?<br>;Stepped into the darkness.;none
-Twisted Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.;none
-Twisted Fairyland;🗻;Rocky Mountain;Container-4;0;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Climbed on the summit.;none
-Twisted Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;0;Observation;Cold and hostile place.<br>;Climbed on the summit.;none
-Twisted Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.;none
-Twisted Fairyland;🌲;Deep Forest;Container-4;0;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Someting was hidden there.;none
-Twisted Fairyland;🛕;Cult Monument;Container-4;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.;none
-Twisted Fairyland;🗼;Tribal Monument;Container-4;0;0;0;0;0;0;0;Primitve Housing;Living space of a local tribe leader.<br>;;none
+Twisted Fairyland;🏛️;Ancient Temple;Container-4;0;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrificial area.;none
+Twisted Fairyland;🗻;Rocky Mountain;Container-4;0;0;0;0;0;0;0;Mountaintop;Tough to navigate terrain.<br>;Scaled the loose rocks.;none
+Twisted Fairyland;🏔️;Snowy Mountain;Container-4;0;0;0;0;0;0;0;Observation;Cold and hostile place.<br>;Reached the frozen peak.;none
+Twisted Fairyland;⛰️;Forest Mountaintop;Container-4;0;0;0;0;0;0;0;Wilderness;Trees grow thick even at this height.<br>;Pushed through the canopy.;none
+Twisted Fairyland;🌲;Deep Forest;Container-4;0;0;0;0;0;0;0;Suspense Area;Nothing but endless trees in all directions.<br>;Found something among the branches.;none
+Twisted Fairyland;🛕;Cult Monument;Container-4;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Pushed through the ceremonial entrance.;none
+Twisted Fairyland;🗼;Tribal Monument;Container-4;0;0;0;0;0;0;0;Primitive Housing;Living space of a local tribe leader.<br>;;none
 
-Twisted Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;0;Wilderness;Tree-covered point of interest.<br>;Climbed on the summit.;none
-Twisted Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;0;Observation;Cold and hostile place.<br>;Climbed on the summit.;none
+Twisted Fairyland;⛰️;Rocky Mountaintop;Container-5;0;0;0;0;0;0;0;Wilderness;Something has made a nest at the summit.<br>;Made it to the top.;none
+Twisted Fairyland;🏔️;Permafrost Mountain;Container-5;0;0;0;0;0;0;0;Observation;Ice runs all the way down, through everything.<br>;The cold followed all the way down.;none
 Twisted Fairyland;🌋;Volcano Throat;Container-5;0;0;0;0;0;0;0;Mountaintop;Lava-laced rocky mountain.<br>;Floor is basically lava now.;none
-Twisted Fairyland;🏛️;Ancient Temple;Container-5;0;0;0;0;0;0;0;Ritual Place;Remains of a long gone civilization.<br>;Walked into the sacrifical area.;none
-Twisted Fairyland;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;0;Deserted Building;Massive stones suffered many battles.<br>;;none
-Twisted Fairyland;🏰;Fallen Fortress;Container-5;0;0;0;0;0;0;0;Ancient Ruins;Massive stones suffered many battles.<br>;;none
-Twisted Fairyland;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.;none
-Twisted Fairyland;🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;0;Deserted Building;There are blood drops leading outside.<br>;Kicked the door open.;none
-Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;0;Deserted Building;Strange noises are coming out.<br>;Entered through the window.;none
+Twisted Fairyland;🏛️;Grand Sanctum;Container-5;0;0;0;0;0;0;0;Ritual Place;Built on a scale that expected gods to visit.<br>;Descended into the lower chambers.;none
+Twisted Fairyland;🏰;Ancient Castle;Container-5;0;0;0;0;0;0;0;Deserted Building;Walls thick enough to have outlasted everything else.<br>;;none
+Twisted Fairyland;🏰;Fallen Fortress;Container-5;0;0;0;0;0;0;0;Ancient Ruins;The walls gave out, the foundation didn't.<br>;;none
+Twisted Fairyland;🏯️;Oriental Villa;Container-5;0;0;0;0;0;0;0;Deserted Building;Far more rooms than the outside suggests.<br>;Pried open the ornate door.;none
+Twisted Fairyland;🕍;Deserted Cathedral;Container-5;0;0;0;0;0;0;0;Deserted Building;The nave echoes with nothing.<br>;Passed under the broken arch.;none
+Twisted Fairyland;🕌;Opulent Temple;Container-5;0;0;0;0;0;0;0;Deserted Building;Gold leaf still clings to the pillars, somehow.<br>;Passed through the ritual gate.;none
 
 Twisted Fairyland;🌈;Fantastic Rainbow;Curse;0;0;0;2;0;0;0;Weather Phenomenon;Promise of a good luck moving forward.<br>;Got yourself a lucky blessing;none
 Twisted Fairyland;💫;Twirling Glow;Curse;0;0;1;0;0;0;0;Magic Aura;Dizzying light spins around your head.<br>;Let the good vibes dance within.;none
@@ -751,6 +750,7 @@ Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;0;Crustacean;Boasts a p
 
 Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;0;Wild Beast;Probably has no soul.<br>;Got ripped apart and eaten.;none
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.;none
+Twisted Fairyland;🦒;Zen Tallneck;Standard;3;0;3;0;5;0;0;Wild Beast;Looks unbothered by the widespread corruptuon.<br>;Trampled to your death.;none
 
 Twisted Fairyland;🔥;Dancing Flame;Hot;3;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.;none
 
@@ -780,9 +780,9 @@ Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;0;Crazed Maniac;L
 
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.;none
 Twisted Fairyland;🦜;Annoying Parrot;Swift;3;1;4;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;The beak found the eye first.;none
-Twisted Fairyland;🐝;Swarm of Bees;Swift;3;1;3;0;-1;0;0;Pesky Insects;A ton of bees swarmed the area.<br>;There was nowhere to run.;none
-Twisted Fairyland;🐆;Daunting Panther;Swift;3;3;2;0;5;0;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.;none
-Twisted Fairyland;🐅;Enraged Tiger;Swift;3;3;2;0;5;0;0;Wild Beast;Seems having lightning reflexes.<br>;Totally torn apart.;none
+Twisted Fairyland;🐝;Hornet Swarm;Swift;3;2;3;0;-1;0;0;Pesky Insects;A ton of bees swarmed the area.<br>;There was nowhere to run.;none
+Twisted Fairyland;🐆;Daunting Panther;Swift;3;3;2;0;5;0;0;Wild Beast;Seems to have lightning reflexes.<br>;Totally torn apart.;none
+Twisted Fairyland;🐅;Enraged Tiger;Swift;3;4;2;0;5;0;0;Wild Beast;Seems to have lightning reflexes.<br>;Totally torn apart.;none
 Twisted Fairyland;🦅;Bald Eagle;Swift;3;4;1;0;-1;0;0;Wild Animal;Attacks from high altitude.<br>;Got your brain pecked out.;none
 
 Twisted Fairyland;🌴;Exotic Ent;Heavy;3;2;2;0;4;0;0;Living Wood;Does not like uninvited guests.<br>;Got broken in half.;none
@@ -944,12 +944,12 @@ River of Sorrows;💨;Cold Currents;Prop;-1;0;0;0;0;0;0;Weather Condition;Icy gu
 River of Sorrows;🪸;Shallow Reef;Prop;0;0;-2;0;0;0;0;Hidden Danger;Threatens only the inattentive sailors.<br>;Had to force unstuck your paddle;none
 River of Sorrows;⚱️;Floating Urn;Prop;0;0;0;-1;0;0;0;Funerary Relic;The water hugs its base, waving it around.<br>;Got haunted by bad spirits;none
 
-River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;;none
-River of Sorrows;🍃;Floating Leaves;Container;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;;none
-River of Sorrows;📦;Floating Box;Container;0;0;0;0;0;0;0;Lost Container;Perhaps holds something of use inside.<br>;Oh, so this was inside!?;none
-River of Sorrows;🎁;Festive Box;Container;0;0;0;0;0;0;0;Lost Container;Perhaps holds something lovely inside.<br>;Oh, so this was inside!?;none
-River of Sorrows;💝;Chocolate Box;Container;0;0;0;0;0;0;0;Lost Container;Perhaps holds something sweet inside.<br>;Oh, so this was inside!?;none
-River of Sorrows;🛢️;Floating Barrel;Container;0;0;0;0;0;0;0;Lost Container;Who knows what it holds inside.<br>;The contents were surprising!;none
+River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;0;River's Cast-offs;They've been circling this same eddy for days.<br>;Fished through the debris.;none
+River of Sorrows;🍃;Pale Leaves;Container;0;0;0;0;0;0;0;River's Cast-offs;Carried from somewhere further upstream, before things fell apart.<br>;Something was caught among them.;none
+River of Sorrows;📦;Waterlogged Crate;Container;0;0;0;0;0;0;0;Drowned Cargo;Perhaps holds something of use inside.<br>;Contents still dry inside.;none
+River of Sorrows;🎁;Unopened Gift;Container;0;0;0;0;0;0;0;Undelivered;Never reached whoever was waiting for it.<br>;Found what was inside.;none
+River of Sorrows;🏺;Sealed Amphora;Container;0;0;0;0;0;0;0;Preserved Contents;Someone sealed this carefully, meant to outlast the crossing.<br>;The wax cracked open.;none
+River of Sorrows;🛢️;Adrift Barrel;Container;0;0;0;0;0;0;0;Drowned Cargo;Sealed tight, floating low, carrying more weight than expected.<br>;Weighed more than expected.;none
 
 River of Sorrows;🛢️;Chained Barrel;Locked-Container;0;0;0;0;0;0;0;Suspicious Container;Closed forever with a hefty chain and a lock.<br>;It finally clicked open.;none
 River of Sorrows;🧳;Sturdy Trunk;Locked-Container;0;0;0;0;0;0;0;Personal Belongings;Secured by lock, might hold something useful.<br>;Uncovered the contents.;none
@@ -990,8 +990,10 @@ River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishi
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 
+Fading Wildlands;🦫;Gnawing Terror;Standard;2;1;2;0;2;0;0;Busy Maw;Teeth made for wood, repurposed for bone.<br>;Dragged you to a dam of bones.;none
+
 River of Sorrows;🐠;Depressed Angelfish;Reflective;3;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
-River of Sorrows;🐸;Gleaming Frog;Reflective;3;0;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.;none
+River of Sorrows;🐸;Gleaming Croaker;Reflective;3;0;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.;none
 
 River of Sorrows;🦞;Vengeful Lobster;Tough;4;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets, never forgives.<br>;Pinched one too many times!;none
 River of Sorrows;🐌;Amphibious Snail;Tough;3;2;1;0;1;0;0;Hard Shell;Blows bounce off its hardened coil.<br>;Your strike turned on you.;none
@@ -1118,11 +1120,11 @@ Shrouded Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;0;Indestructible;H
 Shrouded Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;;none
 Shrouded Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.;none
 Shrouded Necropolis;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.;none
-Shrouded Necropolis;🦴;Pile of Bones;Container;0;0;0;-3;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;Got cursed for disturbing that;none
+Shrouded Necropolis;🦴;Pile of Bones;Container;0;0;0;-3;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;Something ancient noticed.;none
 Shrouded Necropolis;🦴;Scattered Bones;Container;-1;0;0;0;0;0;0;Uneasy Sight;Old bones lie scattered around.<br>;Stepped on something sharp.;none
-Shrouded Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;0;Questionable Stash;Something seems to be hidden there.<br>;Got cursed for disturbing that;none
+Shrouded Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;0;Questionable Stash;Something seems to be hidden there.<br>;The earth rejected the intrusion.;none
 Shrouded Necropolis;🪦;Toppled Headstone;Container;0;0;0;0;0;0;0;Resting Place;Something is sticking from below it.<br>;;none
-Shrouded Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;0;Place of Rest;Looks someone tampered with it recently.<br>;Got cursed for disturbing that;none
+Shrouded Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;0;Place of Rest;Looks someone tampered with it recently.<br>;Whoever rests here didn't appreciate it.;none
 Shrouded Necropolis;🥀;Trailing Vines;Container;-1;0;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.;none
 Shrouded Necropolis;🏺;Leech Jar;Container;-1;0;0;0;0;0;0;Creepy Container;They’re still alive in there.<br>.;Got some blood sucked.;none
 
