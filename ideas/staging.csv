@@ -8,6 +8,13 @@ River of Sorrows;🫠;Fever Shade;Hot;4;2;3;0;0;1;0;Heat Specter;Dead warmth fil
 River of Sorrows;🐭;Silt Ratter;Pet;1;0;1;1;0;0;0;River Wretch;Shivers on the bank with nowhere left to run.<br>;Tucked itself inside your pack.;none
 River of Sorrows;💀;Hollow Fisherman;Friend;0;0;0;0;1;0;0;Mourning Man;Line in the water, eyes on the distance.<br>Not fishing for fish.;His silence told you more than words could.;none
 
+//River of Sorrows — new enemies (Batch 2)
+River of Sorrows;🦁;River Stalker;Swift;4;3;2;0;0;0;0;Bank Predator;Paces the bank, each step soft as grief.<br>;Taken from behind like you were expected.;none
+River of Sorrows;🏊;Endless Swimmer;Standard;3;2;4;0;0;0;0;Lost Soul;Swims slow circles in the shallows, never tiring.<br>;Pulled you under mid-stroke.;none
+River of Sorrows;🚣;Stranded Ferryman;Recruit;3;1;2;0;2;0;0;River Wanderer;Rows in circles, compass gone, oars still moving.<br>;He ferried you somewhere. Not where you wanted.;none
+River of Sorrows;🌊;Tilting Current;Trap-Big;-4;0;0;0;0;0;0;River's Wrath;The water inverts without warning.<br>;Rock found your spine before you found footing.;none
+River of Sorrows;➿;Duelist's Glyph;Trap-Attack;0;1;0;0;0;0;0;Combat Mark;Carved into the riverside stone by a dead swordsman.<br>;You understood what they were trying to do.;none
+
 //Fading Wildlands (Power: Tier 0-1)
 Fading Wildlands;👕;Cotton Turban;Item-Head;1;0;0;0;0;0;0;Improvised Gear;Sun-bleached and smelling of ancient sweat.<br>Provides <b>+1 ❤️ Health</b>.;Wrapped in memories.;none
 Fading Wildlands;👚;Faded Tunic;Item-Chest;0;0;1;0;0;0;0;Simple Wear;A remnant of a simpler, brighter life.<br>Provides <b>+1 🟢 Energy</b>.;Comfort in the familiar.;none
@@ -31,6 +38,18 @@ River of Sorrows;🩺;Mariner's Ear;Item-Head;0;0;0;1;0;1;0;Diagnostic Tool;Allo
 River of Sorrows;🦺;Safety Vest;Item-Chest;2;0;0;0;0;0;0;Bright Gear;Supposed to keep you afloat in the dark waters.<br>Provides <b>+2 ❤️ Health</b>.;Visibility is key.;none
 River of Sorrows;🛒;Rusty Chassis;Item-Weapon;0;2;0;-1;0;0;0;Metal Frame;A twisted remnant of a consumerist era.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🍀 Luck</b>.;Pushing through the debris.;none
 River of Sorrows;🩴;Rubber Sliders;Item-Legs;1;0;1;0;0;0;0;Cheap Footwear;Surprisingly good for navigating slippery banks.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Squelch, squelch.;none
+
+//Shrouded Necropolis — new enemies (Batch 1)
+Shrouded Necropolis;🦎;Ashback Salamander;Hot;4;3;2;0;3;0;0;Cinder Crawler;Crawls between grave markers, leaving a trail of scorch.<br>;The heat found your lungs before the flames did.;none
+Shrouded Necropolis;🌚;Moon Wraith;Reflective;3;0;3;0;0;3;0;Night Specter;Absorbs light, returns only pain.<br>;Your own strike came back wrong.;none
+Shrouded Necropolis;🦂;Grave Scorpion;Stingy;4;3;3;0;0;0;0;Tomb Hunter;Nests beneath the flagstones, patient as the dead.<br>;The sting found the gap in everything.;none
+Shrouded Necropolis;🧟‍♂️;Barbed Penitent;Stingy;4;2;3;0;0;0;0;Cursed Dead;Wrapped in rusted wire, it staggers forward regardless.<br>Each touch costs more than the hit.;The barbs were patient. You weren't.;none
+Shrouded Necropolis;🦣;Bone Mammoth;Heavy;6;1;4;0;0;0;0;Ancient Horror;The bones shouldn't hold. They do.<br>;Weight is its own argument.;none
+Shrouded Necropolis;🫥;Hollow Presence;Spirit;3;0;3;0;0;3;0;Formless Shade;No shape to strike, no warmth to follow.<br>Only the feeling of being watched.;Nothing held it. Nothing held you.;none
+Shrouded Necropolis;🌒;Moonless Watch;Trap-Sleep;-1;0;0;0;-2;0;0;Dark Curse;Darkness thick enough to press behind the eyes.<br>Bad dreams follow you out.;You slept. The nightmares did not.;none
+//NOTE: 👗 conflicts with existing Haunted Dress Demon in SN — resolve before promoting to encounters.csv
+Shrouded Necropolis;👗;Widow's Shroud;Item-Chest;0;0;0;0;0;0;0;<b>Artifact</b> TBD;A grief too heavy to wear, but you wear it anyway.<br>Unique power TBD.;It fits like a wound.;none
+Shrouded Necropolis;👡;Widow's Heel;Item-Legs;0;0;0;0;0;0;0;<b>Artifact</b> TBD;She walked in these once.<br>Unique power TBD.;Left behind. Now yours.;none
 
 //Shrouded Necropolis (Power: Tier 3-4, High Risk/Reward)
 Shrouded Necropolis;♠️;Grave-Marker Pin;Item-Head;0;0;0;0;0;3;0;<b>Artifact</b>;A cold, black spade that pins your thoughts to the earth.<br>Provides <b>+3 🔵 Mana</b>.;Grounded in death.;none

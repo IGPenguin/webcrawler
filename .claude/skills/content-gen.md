@@ -25,7 +25,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
 
 - **Delimiter:** `;` (semicolon). Never a comma.
 - **Column 0** `area`: Exact area name (see area list below)
-- **Column 1** `emoji`: Single emoji, must be unique in the file
+- **Column 1** `emoji`: Single emoji. Reuse across areas is fine — avoid reusing the same emoji for the same type in the same area, but don't hard-block on global uniqueness.
 - **Column 2** `name`: 2–3 words, title-cased
 - **Column 3** `type`: Exact type string (see type list below)
 - **Columns 4–10** `hp atk sta lck int mgk def`: Integer stat values; 0 if not applicable
@@ -120,6 +120,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 **Hard rules:**
 - `INT = -1` only when communication is genuinely impossible for that creature. Ask: *would words land?* A stray dog might back off if spoken to; a mosquito, jellyfish, or possessed chair cannot understand language at all. Use judgment per creature — do not apply blanket -1 to all animals.
+- **Positive INT on enemies is a speech difficulty threshold.** `INT = 2` means the player needs INT above 2 to reliably succeed at Speak. `INT = 3` or higher makes Speak very difficult without specializing. Use this on enemies that are alien, psychically dense, or too far gone to reach normally. Do not treat INT as a binary "can/cannot talk" flag — it is a difficulty slider. Values of 2–3 are common; only reserve 10 for something truly impenetrable.
 - `MGK > 0` on any enemy where it makes thematic sense (mages, possessed objects, fey creatures, etc.). By design, reserve MGK for **Twisted Fairyland onward** — no MGK in early areas.
 - `DEF > 0` only on Tough-type enemies, endgame areas only.
 - **Boss HP must exceed the area's standard HP midpoint** — bosses are longer fights by design. Exception: Shrouded Necropolis bosses (the Brides) are intentionally ~HP:4 because the fight is multi-stage (player faces her twice, total ≈ 8 effective HP). Do not inflate single-stage Necropolis bosses to match other area boss rules.
@@ -318,10 +319,11 @@ Fishing;🦀;Forsaken Crab;Item;0;0;0;0;0;0;0;Bottom Dweller;Still snapping afte
 ## Generation Workflow
 
 ### Step 1 — Emoji check
-```bash
-grep -c "🐌" data/encounters.csv   # returns 0 = safe, >0 = already used
-```
-Check every proposed emoji before including it.
+Spot-check emojis that feel likely to already exist (common animals, fire, skulls, etc.). Reuse across areas is fine — just avoid giving two enemies the same emoji and type in the same area, as that's confusing in-game.
+
+**Emojis are displayed literally in the game UI.** The player sees the raw emoji on screen next to the encounter name. A pouring glass (🫗) does not read as "wild current" — it reads as a pouring glass. A weightlifter (🏋️) in a river trap breaks immersion immediately. Always ask: *would a player instantly understand what this is from the emoji alone, with no surrounding text?* If not, pick a different one. Reusing an emoji that already appears elsewhere in the file is acceptable — the game does it too.
+
+**Type can come from the description, not the emoji.** A 🧟‍♂️ zombie emoji can be type Stingy if the desc explains it is wrapped in barbed wire. A 🦎 lizard can be Hot if the desc says it trails scorch. The imaginative leap lives in the desc — the emoji just needs to not contradict the type. Never contort yourself to find an emoji that *looks like* a Stingy or Reflective — pick a recognizable creature and let the desc justify the mechanic.
 
 ### Step 2 — Stat calculation
 For items: compute `net = (atk×3) + (mgk×2) + (hp×1.5) + (sta×1.5) + (lck×0.5) + (int×0.5) + def`
@@ -363,4 +365,5 @@ bash validate-csv.sh
 - Naming bosses with generic adjectives ("Dark Lord", "Evil Master")
 - Writing item descs that don't include the mechanical effect in bold
 - Using exclamation marks anywhere in flavor text
+- Overusing em-dashes (—) as a crutch in desc/message fields. Use commas for natural pauses. An em-dash is fine for a single strong clause break per row — not as a replacement for every comma.
 - Forgetting `achiev` column — always ends with `;none` or `;achievement_id`

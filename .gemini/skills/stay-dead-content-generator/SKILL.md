@@ -1,6 +1,6 @@
 ---
 name: stay-dead-content-generator
-description: Generate new Stay Dead RPG content — enemies, items, encounters, origins, fishing rows. Enforces exact CSV schema, area-calibrated stat scaling, authentic writing voice, rarity math, and emoji uniqueness. Always suggests before writing.
+description: Generate new Stay Dead RPG content — enemies, items, encounters, origins, fishing rows. Enforces exact CSV schema, area-calibrated stat scaling, authentic writing voice, rarity math, and emoji uniqueness. Always suggests before writing. Read this fully before proposing anything.
 ---
 
 # Stay Dead Content Generator
@@ -9,10 +9,9 @@ You are writing content for a dark fantasy text roguelike where every word is a 
 
 **Before generating anything:**
 1. Identify the target area and content type from the user's request.
-2. Consult `ideas/misc.csv` and `ideas/boosts.csv` for unused emojis and concepts.
-3. Run `grep -c "EMOJI" data/encounters.csv` to verify each emoji is unique (replace EMOJI with the actual character). If it's already used, pick a different one.
-4. Draft the rows and **present them for approval** — never write to CSV files without the user saying yes.
-5. After approval, append rows to the correct CSV (maintaining area clustering) and run `bash validate-csv.sh`.
+2. Run `grep -c "EMOJI" data/encounters.csv` to verify each emoji is unique (replace EMOJI with the actual character). If it's already used, pick a different one.
+3. Draft the rows and **present them for approval** — never write to CSV files without the user saying yes.
+4. After approval, append rows to the correct CSV and run `bash validate-csv.sh`.
 
 ---
 
@@ -26,7 +25,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
 
 - **Delimiter:** `;` (semicolon). Never a comma.
 - **Column 0** `area`: Exact area name (see area list below)
-- **Column 1** `emoji`: Single emoji, must be unique in the file
+- **Column 1** `emoji`: Single emoji. Reuse across areas is fine — avoid reusing the same emoji for the same type in the same area, but don't hard-block on global uniqueness.
 - **Column 2** `name`: 2–3 words, title-cased
 - **Column 3** `type`: Exact type string (see type list below)
 - **Columns 4–10** `hp atk sta lck int mgk def`: Integer stat values; 0 if not applicable
@@ -54,7 +53,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 - `Shrouded Necropolis`
 - `Eternal Realm`
 - `Depths of Slumber`
-- `Fishing` (for fishing loot pool; aquatic/sunken themes)
+- `Fishing` (for fishing loot pool; used in encounters.csv)
 
 ---
 
@@ -73,26 +72,24 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 | `Toxic` | Damage every turn |
 | `Reflective` | Mirrors certain actions |
 | `Boss-Standard` / `Boss-Swift` / `Boss-Heavy` / `Boss-Pet` / etc. | Boss variants |
-| `Demon` | Standalone type. Hittable in combat. Calmed via Speak. Regenerates HP on hit. |
-| `Undead` | Standalone type. Hittable. Grab is risky. Speak does nothing. Weakened by Curse. |
-| `Spirit` | Standalone type. Cannot be hit physically. Best approached via Speak, Cast, or Curse. |
-| `Pet` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Grab** (passes an action bar check). If recruited, joins the party. Stats should reflect a real animal threat, not a passive creature. Message field = death message if the player loses the fight. |
-| `Recruit` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Speak** (INT + action bar check). If recruited, joins the party. Stats should reflect a capable humanoid. Message field = death message if the player loses the fight. |
+| `Demon` | Standalone type. Hittable in combat. Can be calmed via Speak (achievement). Curseable. The 📿 Holy Amulet grants +2 ATK against them. |
+| `Undead` | Standalone type. Hittable. Grab is risky. Speak does nothing — they don't care. Weakened by Curse. |
+| `Spirit` | Standalone type. Cannot be hit physically — Attack bounces off and they retaliate. Best approached via Speak, Cast, or Curse. |
 
-**Important:** `Demon`, `Undead`, and `Spirit` are full standalone types. Never write `Standard-Undead` or similar.
+**Important:** `Demon`, `Undead`, and `Spirit` are full standalone types, not suffixes or modifiers. Never write `Standard-Undead` or similar.
 
 ### Environmental
 | Type string | Notes |
 |-------------|-------|
 | `Prop` | Flavor; grants bonus/malus on rest |
-| `Trap-Attack` | Triggered by attacking. |
+| `Trap-Attack` | Triggered by attacking. Stats can be positive or negative. |
 | `Trap-Roll` | Triggered by rolling |
 | `Trap-Sleep` | Auto-triggers on rest |
 | `Trap-Big` | Unavoidable, moderate HP damage |
-| `Trap-Obstacle` | Blocks path. Primary resolution: **Grab**. |
-| `Curse` | Applies a stat penalty (endure with Roll). |
-| `Altar` | Usually a positive blessing. |
-| `Container` | Searchable loot. `Container-2` through `Container-5`. |
+| `Trap-Obstacle` | Blocks path. Primary resolution: **Grab** (move it aside). Attack can also smash through as a brute-force alternative. |
+| `Curse` | Applies a stat penalty, but **not** auto-apply. Player can attempt to endure it (Roll): success avoids the effect entirely; fail applies the stats. Can also be written with mild/tradeoff stats. |
+| `Altar` | Usually a positive blessing, but negative or sacrifice variants are valid design. |
+| `Container` | Searchable loot. `Container-2` through `Container-5` for multi-search |
 | `Locked-Container` | Requires key or Cast (−2 MGK) |
 
 **Design note — type is mechanic, not morality:** The encounter type defines *how* something triggers, not whether it helps or hurts. Any type can surprise the player.
@@ -101,8 +98,18 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 | Type string | Notes |
 |-------------|-------|
 | `Item` | Equippable; picked up via Grab |
-| `Item-Head` / `Chest` / `Weapon` / `Legs` | Specific equipment slots |
+| `Item-Head` / `Item-Chest` / `Item-Weapon` / `Item-Legs` | Specific equipment slots |
 | `Consumable` | Eaten to restore HP/STA |
+
+### NPCs & Special
+| Type string | Notes |
+|-------------|-------|
+| `Friend` | Friendly NPC; no combat |
+| `Pet` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Grab** (passes an action bar check). |
+| `Recruit` | Acts like a standard enemy — starts as a fight. Player can recruit by using **Speak** (INT + action bar check). |
+| `Upgrade` | Perk selection (loads on Sleep at level-up) |
+| `Checkpoint` | Forces level-up, rests player |
+| `Generator-N` | Spawns random content by category |
 
 ---
 
@@ -110,12 +117,13 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 **Hard rules:**
 - `INT = -1` only when communication is genuinely impossible (mosquito, jellyfish). Do not apply blanket -1 to all animals.
+- **Positive INT on enemies is a speech difficulty threshold.** `INT = 2` means the player needs INT above 2 to reliably succeed at Speak. `INT = 3` or higher makes Speak very difficult without specializing. Use this on enemies that are alien, psychically dense, or too far gone to reach normally. Do not treat INT as a binary "can/cannot talk" flag — it is a difficulty slider. Values of 2–3 are common; only reserve 10 for somethingtruly impenetrable.
 - `MGK > 0` reserve for **Twisted Fairyland onward**.
 - `DEF > 0` only on Tough-type enemies, endgame areas only.
-- **Boss HP must exceed the area's standard HP midpoint**. Exception: Shrouded Necropolis bosses (~HP:4) are multi-stage.
+- **Boss HP must exceed the area's standard HP midpoint**. Exception: Shrouded Necropolis bosses (the Brides) are multi-stage (~HP:4 per stage).
 - **Demon type regenerates HP on hit** — always give Demons ~1 HP lower than the area's standard floor.
 - **Small type:** HP 1–3 max. Do not treat as combat threats — grabbing them is intended.
-- **Spirit type:** intentionally low HP — cannot be physically hit. Boss-Spirit must be at least HP 3.
+- **Spirit type:** intentionally low HP — cannot be physically hit. Boss-Spirit must be at least HP 3. No HP floor applies to Spirit.
 - **Stat variety:** enemies should span archetypes (glass cannon, tank, etc.) consistent with their theme.
 
 | Area | HP | ATK | STA | LCK | INT | MGK | DEF |
@@ -144,6 +152,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 | River of Sorrows | +2 to +3 | +3 on one stat | −1 LCK or HP |
 | Shrouded Necropolis | +3 to +4 | +3–4 on one stat | −2 HP or MGK |
 
+**Equipment slot balance** — ensure roughly equal coverage across slots. `DEF` goes primarily on Head and Legs.
+
 **Item tiers:**
 | Tier | Note field value | Effect pattern |
 |------|-----------------|---------------|
@@ -160,25 +170,28 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 net = (atk × 3) + (mgk × 2) + (hp × 1.5) + (sta × 1.5) + (lck × 0.5) + (int × 0.5) + def
 ```
 
-| Tier | Net range |
-|------|-----------|
-| Cursed | < 0 |
-| Common | 0.0 – 0.49 |
-| Uncommon | 0.5 – 1.49 |
-| Rare | 1.5 – 2.99 |
-| Legendary | ≥ 3.0 |
+| Tier | Net range | Base weight |
+|------|-----------|-------------|
+| Cursed | < 0 | 3% |
+| Common | 0.0 – 0.49 | 60% |
+| Uncommon | 0.5 – 1.49 | 25% |
+| Rare | 1.5 – 2.99 | 10% |
+| Legendary | ≥ 3.0 | 2% |
+
+**Familiar tier:** Any row with an `achiev` value (not `none`) that the player has unlocked appears as Familiar.
 
 ---
 
 ## Writing Voice — Non-Negotiable
+
 **The fundamental rule:** Write as if the world is already lost and the text knows it. Dark fantasy, melancholic, occasionally ironic. Never whimsy. Never generic. If it could appear in a standard fantasy game, it's wrong.
 
 **Pop culture references:** Subtle nods to the developer's favourite games/movies are welcome and desired — a Skyrim/Dark Souls/Elden Ring... reference, a classic RPG wink, a film quote twisted dark. Keep them rare, keep them subtle. Never explain the reference in the text itself.
 
-**Never use:** literally, actually, basically, amazing, awesome, incredible, epic (casual), casual exclamation marks. `!` is acceptable for genuinely violent or high-impact moments ("Got your heart ripped out!") — not for generic enthusiasm ("Just awesome!", "Let's do this!", "Ouch, that stings!").
+**Never use:** literally, actually, basically, amazing, awesome, incredible, epic (casual), casual exclamation marks. `!` is acceptable for genuinely violent moments.
 
 ### Enemy desc
-- Two lines joined by `<br>`. 7–15 words total. No bold tags.
+- Two lines joined by `<br>`. 7–15 words total. One sentence each. No bold tags.
 - **Correct:** `"Stone watches the world fade.<br>"` / `"Something is deeply wrong with its eyes.<br>It cannot help what it became."`
 
 ### Item/consumable desc
@@ -188,15 +201,21 @@ net = (atk × 3) + (mgk × 2) + (hp × 1.5) + (sta × 1.5) + (lck × 0.5) + (int
 - **Correct:** `"Must've been left behind by a true artist.<br>Provides <b>+1 🔵 Mana</b>."`
 
 ### Message field
-- Enemy rows: how the player died — direct, physical, grim.
+- Enemy rows: how the player died — direct, physical, grim. 2–8 words.
 - Item/positive rows: what gaining it felt like.
 - **Correct:** `"Talons tore your throat apart."` / `"Obtained an improvised weapon."`
 
-### Naming rules
-- **Enemies:** Adjective + Noun — *Startled Doe, Forsaken Guard*
-- **Bosses:** Epic two-word title — *Sky Tyrant, Pale Countess*
-- **Items:** Material/object or Emotion/object — *Frozen Teardrop, Sharp Stone*
-- **Artifacts:** Mythical/elemental compound — *Soul Mirror, Forbidden Codex*
+### Preferred vocabulary
+**Use:** corrupted, desecrated, tainted, forsaken, fallen, rotted, withered, hollowed, remnants, forgotten, buried, sealed, faded, condemned, wretched, damned, blighted, defiled
+
+### Area flavor words
+| Area | Flavor |
+|------|--------|
+| Fading Wildlands | trail, pond, field, wild, withered, stray |
+| Forsaken Village | rotten, grave, cultist, possessed, hollow, crumbling |
+| Twisted Fairyland | malevolent, warlock, daunting, twisted, writhing |
+| River of Sorrows | depths, drowned, pale, pearlescent — **"sail" not "walk"** |
+| Shrouded Necropolis | crypt, ghastly, tainted, grave, sealed, eternal |
 
 ---
 
@@ -223,27 +242,42 @@ Fishing;🦀;Forsaken Crab;Item;0;0;0;0;0;0;0;Bottom Dweller;Still snapping afte
 ## Generation Workflow
 
 ### Step 1 — Emoji check
-`grep -c "EMOJI" data/encounters.csv` (must return 0)
+Spot-check emojis that feel likely to already exist (common animals, fire, skulls, etc.). Reuse across areas is fine — just avoid giving two enemies the same emoji and type in the same area, as that's confusing in-game.
+
+**Emojis are displayed literally in the game UI.** The player sees the raw emoji on screen next to the encounter name. A pouring glass (🫗) does not read as "wild current" — it reads as a pouring glass. A weightlifter (🏋️) in a river trap breaks immersion immediately. Always ask: *would a player instantly understand what this is from the emoji alone, with no surrounding text?* If not, pick a different one. Reusing an emoji that already appears elsewhere in the file is acceptable — the game does it too.
+
+**Type can come from the description, not the emoji.** A 🧟‍♂️ zombie emoji can be type Stingy if the desc explains it is wrapped in barbed wire. A 🦎 lizard can be Hot if the desc says it trails scorch. The imaginative leap lives in the desc — the emoji just needs to not contradict the type. Never contort yourself to find an emoji that *looks like* a Stingy or Reflective — pick a recognizable creature and let the desc justify the mechanic.
 
 ### Step 2 — Stat calculation
-For items: `net = (atk×3) + (mgk×2) + (hp×1.5) + (sta×1.5) + (lck×0.5) + (int×0.5) + def`
-Ensure net lands in the intended rarity tier.
+For items: compute `net = (atk×3) + (mgk×2) + (hp×1.5) + (sta×1.5) + (lck×0.5) + (int×0.5) + def`
+Confirm the net lands in the intended rarity tier. Adjust stats if it doesn't.
 
 ### Step 3 — Voice check
-*Does this read like it belongs to a world rotting from a single act of desperate love?*
+Before proposing any text, ask: *Does this read like it belongs to a world rotting from a single act of desperate love?* If it could appear in any fantasy game, revise it.
 
 ### Step 4 — Present for approval
-Format as code block with exact CSV rows. **For balance changes:** use a table with full context (Emoji, Name, Stats, Desc, Message, Proposed Change).
+Format the proposal as a code block with the exact CSV rows. Never write to files first.
+
+**When proposing balance changes (HP/stat audits):** always show the full row — all stats AND desc/message — not just the changing column. The text context is essential for evaluating whether a stat change makes sense for that specific enemy. Use a table with columns: Emoji, Name, Type, HP, ATK, STA, LCK, INT, MGK, DEF, desc, message, proposed change.
 
 ### Step 5 — Write and validate
-`bash validate-csv.sh` after appending.
+After explicit approval:
+```bash
+# Append to correct CSV (user confirms which)
+bash validate-csv.sh
+```
+
+---
+
+## Batch Limits
+- Max 10 new CSV rows per suggestion batch.
+- Work area by area.
 
 ---
 
 ## Common Mistakes
-- Forgetting the second `<br>` line on Props (leave line 2 empty)
+- Forgetting the second `<br>` line on Props (leave line 2 empty: `Flavor text.<br>`)
 - Using commas as delimiter (always `;`)
-- MGK in early areas (only Twisted Fairyland+)
-- INT on Small animals (usually -1)
-- Exclamation marks in flavor text (never)
-- Forgetting `achiev` column (always ends with `;none` or `;id`)
+- Overusing em-dashes (—) as a crutch; use commas for natural pauses.
+- Forgetting `achiev` column (always ends with `;none` or `;achievement_id`)
+- Confusing this world with the underworld — it's the corrupted overworld.
