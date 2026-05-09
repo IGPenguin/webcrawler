@@ -258,6 +258,8 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
             errors.append(f"Header has {len(header)} columns, expected {expected_columns}")
 
         last_area = None
+        last_area_start_line = None
+        last_area_start_rid = None
         seen_areas = set()
         area_first_row = {}  # area -> (line_num, row_id)
 
@@ -351,12 +353,13 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
                 area = cols[0].strip()
                 if area != last_area:
                     if area in seen_areas:
-                        blip_line, blip_rid = area_first_row[last_area]
-                        errors.append(f"Line {blip_line} {blip_rid}: Area '{last_area}' interrupts '{area}' block — misplaced row or typo")
+                        errors.append(f"Line {last_area_start_line} {last_area_start_rid}: Area '{last_area}' interrupts '{area}' block (previously seen at Line {area_first_row[area][0]}) — misplaced row or typo")
                     else:
                         seen_areas.add(area)
                         area_first_row[area] = (i, row_id)
                     last_area = area
+                    last_area_start_line = i
+                    last_area_start_rid = row_id
 
     check_average_outliers(name_lengths, 'Name', warnings)
     check_average_outliers(desc_lengths, 'Description', warnings)

@@ -990,29 +990,29 @@ River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishi
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 
-Fading Wildlands;🦫;Gnawing Terror;Standard;2;1;2;0;2;0;0;Busy Maw;Teeth made for wood, repurposed for bone.<br>;Dragged you to a dam of bones.;none
+River of Sorrows;🦫;Gnawing Terror;Standard;4;2;3;0;2;0;0;Busy Maw;Teeth made for wood, repurposed for bone.<br>;Dragged you to a dam of bones.;none
 
 River of Sorrows;🐠;Depressed Angelfish;Reflective;3;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
-River of Sorrows;🐸;Gleaming Croaker;Reflective;3;0;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.;none
+River of Sorrows;🐸;Gleaming Croaker;Reflective;3;2;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.;none
 
 River of Sorrows;🦞;Vengeful Lobster;Tough;4;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets, never forgives.<br>;Pinched one too many times!;none
 River of Sorrows;🐌;Amphibious Snail;Tough;3;2;1;0;1;0;0;Hard Shell;Blows bounce off its hardened coil.<br>;Your strike turned on you.;none
 
-River of Sorrows;🐚;Cone Snail;Toxic;3;4;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops, that was deadly!;none
-River of Sorrows;‍🪼;Box Jelly;Toxic;4;2;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.;none
+River of Sorrows;🐚;Cone Snail;Toxic;2;3;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops, that was deadly!;none
+River of Sorrows;‍🪼;Box Jelly;Toxic;2;3;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.;none
 
 River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless to watch, dangerous to touch.<br>;Killed by a mere touch.;none
 River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;3;3;2;0;-1;0;0;Spiky Ball;Looks funny, but is lethal.<br>;Pierced by thousands spikes.;none
 
-River of Sorrows;‍🦈;White Shark;Heavy;4;2;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry shark!;none
+River of Sorrows;‍🦈;White Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry shark!;none
 
-River of Sorrows;🐍;Aquatic Snake;Swift;4;3;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.;none
+River of Sorrows;🐍;Aquatic Snake;Swift;3;4;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.;none
 River of Sorrows;🐬;Laughing Scumbag;Swift;4;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.;none
 
-River of Sorrows;👤;Water Phantom;Spirit;1;1;3;0;2;0;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.;none
+River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.;none
 
-River of Sorrows;🦭;Possessed Seal;Demon;2;2;2;1;-1;0;0;Cursed Animal;Something is deeply wrong with its eyes.<br>;Got mauled by an angry seal;none
-River of Sorrows;🦅;River Harpy;Demon;3;1;3;0;2;0;0;Winged Threat;Swoops low over the water without a sound.<br>;Claws found their mark;none
+River of Sorrows;🦭;Possessed Seal;Demon;3;3;3;1;-1;0;0;Cursed Animal;Something is deeply wrong with its eyes.<br>;Got mauled by an angry seal;none
+River of Sorrows;🦅;River Harpy;Demon;3;3;2;0;2;0;0;Winged Threat;Swoops low over the water without a sound.<br>;Claws found their mark;none
 River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;4;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
 River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful, ...not anymore.<br>.;Got both eyes pecked out!;none
 
