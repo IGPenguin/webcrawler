@@ -78,12 +78,12 @@ function redraw(){
       enemyStatusString=appendEnemyStats();
       break;
     case "Spirit":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🎐","Spectral",colorWhite);
+      enemyTeamUIElement.innerHTML=decorateStatusText("👻","Spectral",colorWhite);
       enemyStatusString=appendEnemyStats();
       break;
     case "Friend":
       enemyStatusString=decorateStatusText("💚","Friend",colorDarkGreen);
-      if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Adversary",colorRed);
+      if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Remorseful",colorRed);
       if (areaName.includes("Shrouded")) {
         enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
         cardUIElement.style.background=colorDarkRed;

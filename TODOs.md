@@ -70,7 +70,7 @@
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
 
 ## Visuals/platform-specific
-- if stat over 5, display numeric - 4/5
+- if stat over 5, display numeric - e.g. ❤️ 4/5
 - VISUAL: Add "impact" frames when hitting (flash white) or being hit (red white) or getting tired (green fade out?) especially prominent when getting to 1 HP or 1/0 STA, make use of full screen shakes etc. (the existing render/effect toolkit should provid opportunities)
 - VISUAL: Ensure the crit/success zones in the gradient are easily distinguishable for colorblind players (e.g., using different patterns or very
      distinct brightness levels).
