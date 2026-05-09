@@ -133,9 +133,9 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 |------|----|-----|-----|-----|-----|-----|-----|
 | Fading Wildlands | 1–3 | 0–2 | 1–2 | 0–1 | −1 to 3 | 0 | 0 |
 | Forsaken Village | 1–4 | 0–2 | 1–3 | 0–1 | −1 to 2 | 0 | 0 |
-| Twisted Fairyland | 3–6 | 2–4 | 1–4 | 0–2 | 1–5 | 0–2 | 0 |
-| River of Sorrows | 4–6 | 2–4 | 1–4 | 0–1 | −1 to 4 | 0–2 | 0 |
-| Shrouded Necropolis | 4–8 | 2–5 | 1–4 | 0–2 | −1 to 10* | 0–3 | 0–2 (Tough only) |
+| Twisted Fairyland | 3–6 | 2–4 | 1–4 | 0–2 | 1–5 | 0–2 | 0-1 (Tough only) |
+| River of Sorrows | 4–6 | 2–4 | 1–4 | 0–1 | −1 to 4 | 0–2 | 0-1 (Tough only) |
+| Shrouded Necropolis | 4–8 | 2–5 | 1–4 | 0–2 | −1 to 10* | 0–3 | 0–2 (Tough mostly) |
 
 *INT=10 is an outlier reserved for specific enemies that cannot be fooled. Do not use routinely.
 
@@ -365,5 +365,6 @@ bash validate-csv.sh
 - Naming bosses with generic adjectives ("Dark Lord", "Evil Master")
 - Writing item descs that don't include the mechanical effect in bold
 - Using exclamation marks anywhere in flavor text
-- Overusing em-dashes (—) as a crutch in desc/message fields. Use commas for natural pauses. An em-dash is fine for a single strong clause break per row — not as a replacement for every comma.
+- Using em-dashes (—) as a crutch in desc/message fields. Use commas for natural pauses
+- Using weak/synthetic filler words like 'proper(ly)', 'robust', 'comprehensive'
 - Forgetting `achiev` column — always ends with `;none` or `;achievement_id`

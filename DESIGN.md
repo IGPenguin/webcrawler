@@ -101,10 +101,10 @@ Value priority: HP = ATK = MGK (high) > STA (medium) > LCK (variable) > INT (uti
 - `-1 INT` can fund aggressive bonuses
 
 **Type-specific rules:**
-- `INT = -1` on dumb creatures (animals, small critters) — they cannot be communicated with
-- `MGK` only appears on Undead, Demon, Spirit types
+- `INT = -1` only when communication is genuinely impossible — a mosquito or possessed chair cannot understand language; a stray dog might back off. Use judgment per creature, not a blanket rule for all animals. Positive INT on enemies = speech difficulty threshold for the player's Speak action.
+- `MGK > 0` on any enemy where it makes thematic sense (mages, possessed objects, fey creatures). Reserve MGK for Twisted Fairyland onward — no MGK in early areas.
 - `DEF` reserved for Tough type only — endgame areas only (value 1 mid-game, 2 late)
-- Boss stats mirror area enemies, slightly elevated; Boss HP rarely exceeds 4
+- Boss HP must exceed the area's standard HP midpoint — bosses are longer fights by design. Exception: Shrouded Necropolis brides are intentionally ~HP 4 because the fight is multi-stage (player faces her twice, ~8 total effective HP).
 
 ---
 
@@ -112,13 +112,13 @@ Value priority: HP = ATK = MGK (high) > STA (medium) > LCK (variable) > INT (uti
 
 Stat ranges by area:
 
-| Area | HP | ATK | STA | INT | MGK |
-|------|----|-----|-----|-----|-----|
-| Fading Wildlands | 1–3 | 0–2 | 1–2 | −1 to 3 | 0 |
-| Forsaken Village | 1–3 | 0–2 | 1–3 | −1 to 2 | 0–1 (Undead/Demon) |
-| Twisted Fairyland | 2–5 | 2–4 | 1–4 | 1–5 | 0–1 |
-| River of Sorrows | 1–4 | 1–3 | 1–3 | −1 to 4 | 0–2 (Undead/Demon) |
-| Shrouded Necropolis | 1–4 | 2–4 | 1–4 | −1 to 10* | 0–3 |
+| Area | HP | ATK | STA | LCK | INT | MGK | DEF |
+|------|----|-----|-----|-----|-----|-----|-----|
+| Fading Wildlands | 1–3 | 0–2 | 1–2 | 0–1 | −1 to 3 | 0 | 0 |
+| Forsaken Village | 1–4 | 0–2 | 1–3 | 0–1 | −1 to 2 | 0 | 0 |
+| Twisted Fairyland | 3–6 | 2–4 | 1–4 | 0–2 | 1–5 | 0–2 | 0-1 (Tough only) |
+| River of Sorrows | 4–6 | 2–4 | 1–4 | 0–1 | −1 to 4 | 0–2 | 0-1 (Tough only) |
+| Shrouded Necropolis | 4–8 | 2–5 | 1–4 | 0–2 | −1 to 10* | 0–3 | 0–2 (Tough mostly) |
 
 *INT spikes to 10 only on specific enemies that cannot be fooled — outlier, not the norm.
 
@@ -150,8 +150,8 @@ Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyl
 | Trap-Roll | Triggered by rolling/dodging |
 | Trap-Sleep | Auto-triggers, applies stat effect |
 | Trap-Big | Unavoidable, cannot be destroyed — moderate HP damage |
-| Trap-Obstacle | Blocks path, harmless, resolved by attacking |
-| Curse | Negative or tradeoff, auto-applies |
+| Trap-Obstacle | Blocks path. Primary resolution: Grab (move it aside). Attack can smash through as a brute-force alternative. |
+| Curse | Applies a stat penalty, but not auto-apply. Player can Roll to avoid entirely; failure applies the stats. Can also have tradeoff stats. |
 | Altar | Positive blessing or sacrifice mechanic |
 | Container | Searchable; contains loot. Variants: `Container-2` through `Container-5` for multi-search containers |
 | Locked-Container | Requires key or Cast (−2 MGK) to open; force-unlockable by repeated attacks. Variant: `Locked-Container-3` |
@@ -163,13 +163,13 @@ Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyl
 | Item | Equippable/stat-modifying item; picked up via Grab |
 | Consumable | Eat to restore Health and Energy |
 
-### Enemy Modifiers
+### Enemy Types
 
-The `type` field on enemies combines a **base category** with an optional **modifier** (e.g. `Boss-Undead`). The modifier affects XP multipliers, action-resolver behavior, and what skills apply.
+The `type` field is a single string. All types below are valid standalone values. The `Boss-` prefix can combine with any type to show the boss UI while keeping that type's behavior (e.g. `Boss-Swift`, `Boss-Undead`, `Boss-Demon`). The hyphen pattern also applies to Container variants (`Container-2` through `Container-5`, `Locked-Container`) and item slots (`Item-Head`, `Item-Chest`, `Item-Weapon`, `Item-Legs`).
 
-| Modifier | Effect |
-|----------|--------|
-| Standard | No special modifier — baseline enemy |
+| Type | Effect |
+|------|--------|
+| Standard | Baseline enemy |
 | Small | Lower weight; typically minor critters |
 | Heavy | Higher XP multiplier; harder to knock out |
 | Hot | Fire damage; fail on Roll/Block can burn |
@@ -178,12 +178,9 @@ The `type` field on enemies combines a **base category** with an optional **modi
 | Tough | Has DEF stat (damage absorption); endgame areas only |
 | Toxic | Applies damage on every turn |
 | Reflective | Can mirror certain actions back at the player |
-
-| Base Type | Effect |
-|-----------|--------|
-| Demon | +40% XP multiplier; MGK stat; vulnerable to specific items/artifacts |
-| Undead | +40% XP multiplier; MGK stat; interact with Curse action differently |
-| Spirit | +40% XP multiplier; MGK stat; ethereal behaviors |
+| Demon | +40% XP multiplier; regenerates HP on hit; vulnerable to specific items/artifacts |
+| Undead | +40% XP multiplier; interacts with Curse action differently |
+| Spirit | +40% XP multiplier; cannot be hit physically — must be defeated via Cast, Speak, or Curse |
 
 ### NPCs
 

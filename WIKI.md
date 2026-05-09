@@ -63,7 +63,7 @@ Completing them grants you access to advanced features and content.
 
 ## 👤 Choosing Origin
 
-Once you prove to be  a worthy challenger, you will unlock starting **Origins** feature.<br>
+Once you prove to be a worthy challenger, you will unlock the **Origins** feature.<br>
 Before each run, you choose the initial stats to shape which playstyle you should lean on.<br>
 
 **⚔️ Attack** build tears through standard enemies fast, but is virtually helpless against spirits and fast enemies.<br>
@@ -98,7 +98,7 @@ Upload your runs to the global **⭐️ Rankings**. The score reflects how far y
 
 The corruption did not spread evenly, each area has its own character.
 
-**😴 Depths of Slumber** — Where you begin your journey. A dream-state  that teaches the essentials of this place before the real weight lands.
+**😴 Depths of Slumber** — Where you begin your journey. A dream-state that teaches the essentials of this place before the real weight lands.
 
 **🌿 Fading Wildlands** — The first true test. The **Undertaker Shade** keeps his shop here. If you find bait, the waters hold more than just fish.
 

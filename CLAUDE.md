@@ -15,12 +15,12 @@ No build tools, no npm. Pure vanilla JavaScript served by Jekyll.
 
 ## Content Generation & Auditing
 
-Use the **`content-gen` skill** (`.claude/skills/content-gen.md`) as the default for:
+Use the **`content-design` skill** (`.claude/skills/content-design.md`) as the default for:
 - Generating new CSV content (enemies, items, encounters, origins, fishing rows)
 - Auditing existing data for stat balance or tone outliers
 - Checking rarity math or writing voice on any row
 
-Load it at the start of any content task by reading `.claude/skills/content-gen.md`. It contains the full schema, area-calibrated stat ranges, rarity formula, writing voice rules, and calibration examples.
+Load it at the start of any content task by reading `.claude/skills/content-design.md`. It contains the full schema, area-calibrated stat ranges, rarity formula, writing voice rules, and calibration examples.
 
 ## Hades Gate Integration
 - **Context:** This project uses the Hades Gate framework for intent-to-execution.
@@ -182,10 +182,10 @@ Playwright config targets a mobile viewport (iPhone 14 Pro, 393×852) and reuses
 ## Working Style
 
 - Always ask before starting token-expensive activities - never dig deep into git history or perform similar acts by yourself
-- Always ask before destructive actions with limited recovery options (never git reset without a permission etc.)
-- For new CSV content (encounter rows, descriptions, item text) — suggest first, wait for approval before writing
+- Before implementing inline, ask whether a feature should be a reusable utility, default to extracting shared helpers when the same pattern could appear elsewhere.
+- When fixing bugs, search the actual JS code path to trace from the symptom backwards through the call stack before considering exploring .csv data files or .md todo/design files
+- When making balance/config changes, audit ALL similar handlers (e.g., all four trap buttons: attack/roll/grab/sleep) rather than fixing only the reported case.
+- For new CSV content or CSV audits (encounter rows, descriptions, item text) — read DESIGN.md, use content-gen.md skill, suggest first, wait for approval before writing
 - Max 10 new CSV entries per suggestion batch when doing data pushes, work area by area
-
----
-
-See `DESIGN.md` for tone, writing rules, vocabulary, naming conventions, stat ranges, item tiers, and encounter type definitions.
+- Animation event handlers must guard against bubbling from child elements using `if (e.target !== e.currentTarget) return;` to avoid bugs from animationend/transitionend bubbling
+- Always ask before destructive actions with limited recovery options (never git reset without a permission etc.)
