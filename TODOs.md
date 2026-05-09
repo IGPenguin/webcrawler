@@ -9,15 +9,15 @@
   - Pay attention to action chances and outcomes
   - Check score calcualation - does it make sense?
   - Summon fishing boss (curse), kill it to get drachma (then do it again and see if it errors out, also do it in another sesh to see if another drachma pops)
+- fade wit text when fining invitation/letter - does it work??
 - ...
 - ME: Tweak ui - values reposition Rankings and Chronicles ui (list+detail)
 - ME: complete the rest of the missing achievement unlocks
-- ME: Increase HP for Fairyland enemies; they currently feel too "squishy" for a mid-game area.
 
 ---
 
 # Claude
-- fade wit text when fining invitation/letter - does it work??
+- ???
 
 # Manual
 - ???
@@ -26,9 +26,10 @@
 - ???
 
 # Hades
-- improve generator/story structure (+gameplay if needed)
+- easy interactivity expand?
+  - or the "Spells" feature described in TODOs.md?
+  - or something else to break the stereotypical approach to how each run looks like?
 - more unlockables/everlasting progression
-- easy interactivity expand? branching routes/crossoroads - select one way? (inscryption-style)
 
 # Ideas zone
 
@@ -70,7 +71,7 @@
 - Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
 
 ## Visuals/platform-specific
-- if stat over 5, display numeric - e.g. ❤️ 4/5
+- if stat over 5, display numeric - e.g. ❤️ 4/6 (the UI is limited, so yeah)
 - VISUAL: Add "impact" frames when hitting (flash white) or being hit (red white) or getting tired (green fade out?) especially prominent when getting to 1 HP or 1/0 STA, make use of full screen shakes etc. (the existing render/effect toolkit should provid opportunities)
 - VISUAL: Ensure the crit/success zones in the gradient are easily distinguishable for colorblind players (e.g., using different patterns or very
      distinct brightness levels).
@@ -122,6 +123,9 @@
 # Parking lot
 
 ## Data changes
+- River of Sorrows: add 1-2 static Memory-type story encounters for atmosphere (candidate ideas: Drifting Lanterns ritual, Wrecked Hull of a previous crossing, Shore Inscription that doesn't say "turn back").
+  - Needs custom type handling — Memory type is currently only wired for the Fairyland arch (teleport/speech skip). Needs non-trivial work.
+  - River of Sorrows: dock/harbor encounter AFTER the river boss — "docking the boat before stepping into Necropolis". Could use the fullscreen fad e text transition as a story scrap / area handoff beat. Low complexity if treated as a static Prop/Friend rather than a new Memory type.
 - Bloat fishing loot with items and threats, traps, perhaps floating altars and such
 - distinguish fishing and river area somehow
 - ...
