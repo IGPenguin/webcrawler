@@ -462,6 +462,7 @@ layout: default
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
+                                        margin-bottom:1px;
                                         background-color:#202020;">
 
 <h3 id = "id_player_name" style="display: flex;
@@ -479,7 +480,7 @@ layout: default
                                     paint-order: stroke fill;"/>
 
 </div>
-<div id="id_xp_progress" style="width:0%; height:1px; background:#FFD940; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
+<div id="id_xp_progress" style="width:0%; height:2px; background:#FFD940; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
 
 <div id="id_action_bar_area" style="position:relative; margin-bottom:14px;">
 <div class="box-border-dynamic" style="margin-left:3px;

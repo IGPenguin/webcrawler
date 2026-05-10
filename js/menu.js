@@ -355,7 +355,7 @@ var Menu = (function () {
       html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
         + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
-        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400;">' + infoParts.join('&nbsp;■&nbsp;') + '</h5>';
+        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400;">' + infoParts.join('&nbsp;•&nbsp;') + '</h5>';
       if (date)
         html += '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + date + '</h5>';
       html += '</div>';
@@ -443,9 +443,9 @@ var Menu = (function () {
             + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400">' + (session.area || '?') + '&nbsp;&nbsp;■&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400">' + (session.area || '?') + '&nbsp;&nbsp;•&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
         + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
-        + (session.score !== undefined ? '&nbsp;&nbsp;■&nbsp;&nbsp;⭐ ' + session.score : '') + '</h5>';
+        + (session.score !== undefined ? '&nbsp;&nbsp;•&nbsp;&nbsp;⭐ ' + session.score : '') + '</h5>';
 
       entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
       list.appendChild(entry);
@@ -601,7 +601,7 @@ var Menu = (function () {
     if (session.playerPartyString && session.playerPartyString !== 'undefined') partyLoot += session.playerPartyString;
     if (session.playerLootString  && session.playerLootString  !== 'undefined') partyLoot += session.playerLootString;
     if (partyLoot) t += '\n' + _stripHtml(partyLoot);
-    t += '\n' + _stripHtml(session.area || '?') + '  ■  ' + _stripHtml(session.causeOfDeath || '');
+    t += '\n' + _stripHtml(session.area || '?') + '  •  ' + _stripHtml(session.causeOfDeath || '');
     t += '\n' + (session.date || '');
     t += '\nhttps://igpenguin.github.io/stay-dead';
     return t;
@@ -800,7 +800,7 @@ var Menu = (function () {
             + '<h3 style="text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin-top:-1px; margin-bottom:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
             + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
             + '<h5 style="margin:4px 0 1px 0; font-size:14px; font-style:normal; font-weight:400;">'
-            + (entry.charName || '?') + '&nbsp;■&nbsp;Lvl ' + (entry.level || '?') + '&nbsp;■&nbsp;' + (entry.endType === 'win' ? '👑 Win' : '💀 Death') + '</h5>'
+            + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl ' + (entry.level || '?') + '&nbsp;•&nbsp;' + (entry.endType === 'win' ? '👑 Win' : '💀 Death') + '</h5>'
             + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px;">'
             + (entry.origin ? entry.origin + '&nbsp;&nbsp;' : '')
             + (entry.datetime ? entry.datetime.slice(0, 10) : '')
