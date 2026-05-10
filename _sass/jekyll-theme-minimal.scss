@@ -617,6 +617,34 @@ select {
   }
 }
 
+.pixel-font {
+  &, button, select, input, h1, h2, h3, h4, h5, h6, div, span, p:not(.ui-symbol) {
+    font-family: 'Pixelify Sans', sans-serif !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  // Remove forced global weight and size to let inline styles and tags rule
+  &, div, span, p:not(.ui-symbol) {
+    font-weight: 100; 
+  }
+
+  // Headings and buttons often need to be a bit thicker, but not too thick
+  h1, h2, h3, h4, h5, h6, button, b, strong {
+    font-weight: 100 !important;
+  }
+
+  // Specific overrides for overlays to ensure they stay large (84px/88px)
+  .enemyOverlay,
+  .playerOverlay,
+  [style*="font-family:sans"],
+  [style*="font-family: sans"],
+  [style*="font-family:inherit"],
+  [style*="font-family: inherit"] {
+    font-family: 'Pixelify Sans', sans-serif !important;
+    letter-spacing: -0.4px !important;
+  }
+}
+
 .is-android {
   // Make touch feedback more subtle (removes the default "aqua blue" box)
   * {
@@ -627,5 +655,39 @@ select {
 // ── UI Symbols ─────────────────────────────────────────────────────────────
 
 .ui-symbol {
-  font-family: serif !important; // Force system serif for reliable circle glyphs on iOS/Android
+  font-family: 'Gelasio', Georgia, serif !important;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  margin-bottom: 0px;
+  -webkit-text-size-adjust: none;
+}
+
+.ui-rect {
+  display: inline-block;
+  min-width: 10px;
+  width: 10px;
+  min-height: 10px;
+  height: 10px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin-right: 3px;
+  margin-left: 0px;
+  margin-bottom: 1px;
+  border-radius: 1px;
+}
+
+.ui-rect.full {
+  background-color: currentColor;
+}
+
+.ui-rect.empty {
+  border: 1.5px solid currentColor;
+}
+
+.ui-emoji {
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
 }

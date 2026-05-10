@@ -250,10 +250,10 @@ layout: default
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Technology</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; margin-bottom:16px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a> + <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://animate.style">animate.style</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Time sacrificed</h5>
-        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Countless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
+        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Many nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
         <h4 style="min-height:0; margin-bottom:16px; margin-top:12px; padding:0 4px; font-size:16px; color:#FFD940; font-weight:600; -webkit-text-stroke:4px black; paint-order:stroke fill;">Thank you for playing!</h4>
       </div>
-      <h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.65; color:#fff; text-align:center;">🔒 Anonymous telemetry is collected to improve the game.<br>No personal data, everything is <a href="https://github.com/IGPenguin/stay-dead" style="color:#509920;">open source</a>.</h5>
+      <h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.65; color:#fff; text-align:center;">🔒 Anonymous telemetry is being collected.<br>No personal data, see the <a href="https://github.com/IGPenguin/stay-dead" style="color:#509920;">open source</a>.</h5>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
@@ -374,21 +374,23 @@ layout: default
         box-shadow:
           0px 0px 0px 3px #000000;
             position:relative; z-index:2;
-            overflow:auto;
+            overflow:hidden;
             background-color:#202020;">
 
 
 <h3 id = "id_stats" style="float:left;
                             text-align:left;
                             font-size:14px;
+                            height:26px;
                             padding-left:8px;
                             padding-bottom:0px;
-                            line-height:24px;
+                            line-height:26px;
                             margin-top:0px;
-                            margin-bottom:0px;
+                            margin-bottom:-2px;
                             margin-right:0px;
                             font-family:sans;
                             display:inline;
+                            overflow:hidden;
                             width:70%;"/>
 
 <h5 id = "id_team" style="float:right;
@@ -397,11 +399,11 @@ layout: default
                                 font-size:14px;
                                 padding-bottom:0px;
                                 padding-right:7px;
-                                margin-bottom:0px;
+                                margin-bottom:-4px;
                                 margin-top:1px;
-                                margin-left:-4px;
+                                margin-left:-10px;
                                 display:inline;
-                                overflow:auto;
+                                overflow:hidden;
                                 line-height:24px;"/>
 </div>
 <div class="box-border-dynamic" style="margin-top:3px;
@@ -443,24 +445,29 @@ layout: default
     padding-top:6px;
       background-color:#202020;">
 
-<div class="toolbar" id = "id_player_info" style="padding-bottom:8px; padding-top:8px; max-width:340px;">
+<div class="toolbar" id = "id_player_info" style="padding-bottom:2px; padding-top:4px; max-width:340px;">
 
-<h3 id="id_player_level" style="margin-top:6px;
-  margin-bottom:-19px;
-    margin-left:4px;
-      position:relative;
-        z-index:3;
-          text-align:right;
-            padding-right:10px;
-              cursor:pointer;">Level</h3>
+<h3 id="id_player_level" style="display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 28px;
+  margin-top:6px;
+  margin-bottom:-28px;
+  margin-left:4px;
+  position:relative;
+  z-index:3;
+  text-align:right;
+  padding-right:10px;
+  cursor:pointer;">Level</h3>
 
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
-                                        padding-top:2px;
-                                        padding-bottom:2px;
-                                              background-color:#202020;">
+                                        background-color:#202020;">
 
-<h3 id = "id_player_name" style="text-align:left;
+<h3 id = "id_player_name" style="display: flex;
+                                  align-items: center;
+                                  height: 28px;
+                                  text-align:left;
                                   padding-left:8px;
                                   letter-spacing:0.8px;
                                   font-weight:5OO;
@@ -472,7 +479,6 @@ layout: default
                                     paint-order: stroke fill;"/>
 
 </div>
-
 <div id="id_xp_progress" style="width:0%; height:1px; background:#FFD940; margin-top:1px; margin-bottom:0px; margin-left:4px">&nbsp;</div>
 
 <div id="id_action_bar_area" style="position:relative; margin-bottom:14px;">
@@ -484,21 +490,24 @@ layout: default
 <div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:2;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
+                                    display: flex;
+                                    align-items: center;
+                                    height: 28px;
                                     padding-left:8px;
-                                    padding-top:2px;
-                                    padding-bottom:2px;
                                     font-size:14px;
-                                    margin-bottom:-11px;
+                                    margin-bottom: 4px;
                                     margin-top:12px;
                                     font-family:sans;
                                     box-shadow:
                                       0px 0px 0px 3px #000000;
-                                      position:relative; z-index:1;"/>
+                                      position:relative; z-index:1;
+                                      overflow: hidden;"/>
 </div>
 <div id="id_action_bar"><div id="id_action_bar_track"><div id="id_action_bar_cursor"></div><div id="id_action_bar_result"></div></div><div id="id_action_bar_cancel">✕ Cancel</div></div>
 </div>
 <div class="box-border-dynamic" style="margin-left:3px;
                                         margin-right:3px;
+                                        margin-top:-11px;
                                         padding-top:2px;
                                         padding-bottom:0px;
                                           box-shadow:
@@ -513,7 +522,7 @@ layout: default
                           overflow-y:auto;
                           scrollbar-width:none;"/>
 </div>
-<h3 id="id_player_party_loot" style="text-align:left; overflow-x:auto; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;"></h3>
+<h3 id="id_player_party_loot" style="text-align:left; overflow-x:auto; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:6px; margin-top:0px; display:inline-block; width:95.8%; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;"></h3>
 </div>
 <div id="id_buttons" style="margin:6px; margin-top:1px;">
   <button type = "button" id = "button_attack">🎯</button>&nbsp;

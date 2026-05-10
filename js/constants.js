@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 05/10/2026 @ 03:15 PM"
+var versionCode = "ver. 05/10/2026 @ 04:30 PM"
 var initialEncounterOverride = 0; // set to 5 to skip tutorial
 var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
@@ -43,8 +43,12 @@ var colorPaper         = "#d1bd91";
 var colorDarkPaper     = "#8c7f61";
 
 // ── UI Symbols ────────────────────────────────────────────────────────────────
-var fullSymbol  = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">●</p>";
-var emptySymbol = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">○</p>";
+var fullSymbol  = "<span class=\"ui-rect full\" style=\"color:"+colorGrey+"\"></span>";
+var emptySymbol = "<span class=\"ui-rect empty\" style=\"color:"+colorGrey+"\"></span>";
+//var fullSymbol  = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">●</p>";
+//var emptySymbol = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">○</p>";
+//var fullSymbol  = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">◼︎</p>";
+//var emptySymbol = "<p class=\"ui-symbol\" style=\"color:"+colorGrey+";font-size:18px;display:inline;\">◻︎</p>";
 var enemyStatusString = "";
 var newline    = "<br>";
 var emptySpace = "&nbsp";
@@ -89,10 +93,16 @@ try { fontPreference = localStorage.getItem('sd_font_pref') || 'Native'; } catch
 function applyFontPreference() {
   var isAndroid = (getPlatform() === 'android');
   var useGelasio = isAndroid || (fontPreference === 'Gelasio');
-  
+  var usePixel   = !isAndroid && (fontPreference === 'Pixel');
+
   if (useGelasio) {
     document.documentElement.classList.add('gelasio-font');
+    document.documentElement.classList.remove('pixel-font');
+  } else if (usePixel) {
+    document.documentElement.classList.add('pixel-font');
+    document.documentElement.classList.remove('gelasio-font');
   } else {
     document.documentElement.classList.remove('gelasio-font');
+    document.documentElement.classList.remove('pixel-font');
   }
 }

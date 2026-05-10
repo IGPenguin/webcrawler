@@ -17,15 +17,15 @@ function redraw(){
   if (playerXP>=playerXPThreshold) lvlSymbol="⇡ "
   playerLevelUIELement.innerHTML = decorateStatusText("","Level "+playerLevel+lvlSymbol,colorGold);
 
-  var playerStatusString = "❤️ " + fullSymbol.repeat(playerHp);
+  var playerStatusString = "<span class=\"ui-emoji\">❤️</span>&nbsp;" + fullSymbol.repeat(playerHp);
   if ((playerHpMax-playerHp)>0) playerStatusString+=emptySymbol.repeat(playerHpMax-playerHp);
 
-  playerStatusString += "&nbsp;&nbsp;🟢 " + fullSymbol.repeat(playerSta)
+  playerStatusString += "&nbsp;&nbsp;<span class=\"ui-emoji\">🟢</span>&nbsp;" + fullSymbol.repeat(playerSta)
   if ((playerStaMax-playerSta)>0) playerStatusString += emptySymbol.repeat(playerStaMax-playerSta);
 
-  if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;⚔️ " + fullSymbol.repeat(playerAtk);
+  if (playerAtk>0) playerStatusString += "&nbsp;&nbsp;<span class=\"ui-emoji\">⚔️</span>&nbsp;" + fullSymbol.repeat(playerAtk);
 
-  if (playerMgkMax>0 || playerMgk>0){ playerStatusString += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(playerMgk);}
+  if (playerMgkMax>0 || playerMgk>0){ playerStatusString += "&nbsp;&nbsp;<span class=\"ui-emoji\">🔵</span>&nbsp;" + fullSymbol.repeat(playerMgk);}
   if ((playerMgkMax-playerMgk)>0) playerStatusString += emptySymbol.repeat(playerMgkMax-playerMgk);
 
   document.getElementById('id_player_status').innerHTML = playerStatusString;
@@ -365,12 +365,12 @@ function displayEnemyType(type){ //TODO Refactor usage or remove
 
 function appendEnemyStats(){
   var enemyStats = "";
-  if (enemyHp > 0) { enemyStats += "❤️ " + fullSymbol.repeat(enemyHp-enemyHpLost);}
+  if (enemyHp > 0) { enemyStats += "<span class=\"ui-emoji\">❤️</span> " + fullSymbol.repeat(enemyHp-enemyHpLost);}
     if (enemyHpLost > 0) { enemyStats += emptySymbol.repeat(enemyHpLost); } //YOLO
 
   if (enemyHp>0) enemyStats+="&nbsp;&nbsp;"
 
-  if (enemySta > 0) { enemyStats += "🟢 " + fullSymbol.repeat(enemySta-enemyStaLost);}
+  if (enemySta > 0) { enemyStats += "<span class=\"ui-emoji\">🟢</span> " + fullSymbol.repeat(enemySta-enemyStaLost);}
     if (enemyStaLost > 0) { enemyStats += emptySymbol.repeat(enemyStaLost); } //YOLO
 
   //if (enemyDef > 0) { enemyStats += "&nbsp;&nbsp;🔰 " + fullSymbol.repeat(enemyDef);} //Hmm... maybe not?
@@ -378,11 +378,11 @@ function appendEnemyStats(){
 
   if ((enemyAtk+enemyAtkBonus)>0 || enemyAtk!=0) {
     if (enemyHp>0) enemyStats += "&nbsp;&nbsp;"
-    enemyStats += "⚔️ " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
+    enemyStats += "<span class=\"ui-emoji\">⚔️</span> " + fullSymbol.repeat(enemyAtk+enemyAtkBonus);
     if (enemyAtkBonus<0) enemyStats += emptySymbol.repeat(-1*enemyAtkBonus);
   }
 
-    if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;🔵 " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
+    if (enemyMgk > 0) {enemyStats += "&nbsp;&nbsp;<span class=\"ui-emoji\">🔵</span> " + fullSymbol.repeat(enemyMgk-enemyMgkLost);}
     if (enemyMgkLost > 0) { enemyStats += emptySymbol.repeat(enemyMgkLost); } //YOLO
 
   return enemyStats;
