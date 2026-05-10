@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 05/11/26 @ 12:42 AM"
+var versionCode = "ver. 05/11/26 @ 01:22 AM"
 var initialEncounterOverride = 0; // set to 5 to skip tutorial
 var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
