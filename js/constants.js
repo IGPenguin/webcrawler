@@ -87,13 +87,12 @@ var userId = (function () {
 })();
 var sessionId = _makeUUID();
 
-var fontPreference = 'Native';
-try { fontPreference = localStorage.getItem('sd_font_pref') || 'Native'; } catch (e) {}
+var fontPreference = 'Pixel';
+try { fontPreference = localStorage.getItem('sd_font_pref') || 'Pixel'; } catch (e) {}
 
 function applyFontPreference() {
-  var isAndroid = (getPlatform() === 'android');
-  var useGelasio = isAndroid || (fontPreference === 'Gelasio');
-  var usePixel   = !isAndroid && (fontPreference === 'Pixel');
+  var useGelasio = (fontPreference === 'Gelasio');
+  var usePixel   = (fontPreference === 'Pixel');
 
   if (useGelasio) {
     document.documentElement.classList.add('gelasio-font');

@@ -37,7 +37,7 @@ var Menu = (function () {
     logo.classList.remove('animate__animated', 'animate__fadeInDown');
     void logo.offsetWidth; // reflow
     logo.style.setProperty('--animate-duration', '2s');
-    logo.classList.add('animate__animated', 'animate__infinite', 'animate__pulse' );
+    logo.classList.add('animate__animated'); // Removed pulse
     logo.addEventListener('animationend', function onDone() {
       logo.removeEventListener('animationend', onDone);
       logo.classList.remove('animate__animated', 'animate__fadeInDown');
@@ -1025,8 +1025,8 @@ var Menu = (function () {
 
     content.appendChild(diffSection);
 
-    // ── Font Type (All platforms except Android) ─────────────────────────
-    if (getPlatform() !== 'android') {
+    // ── Font Type ────────────────────────────────────────────────────────
+    {
       var fontSection = document.createElement('div');
       fontSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
 
@@ -1094,7 +1094,7 @@ var Menu = (function () {
     // ── Data Persistence Notice ───────────────────────────────────────────
     var dataSection = document.createElement('div');
     dataSection.innerHTML = '<h5 style="margin:16px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.65; color:#fff; text-align:center;">'
-      + '⚠️ Browsers may wipe local data after 7 days.<br>'
+      + '⚠️ Browsers may wipe your local data after 7 days.<br>'
       + 'Protect saves by <b>"Add to Home Screen"</b>.'
       + '</h5>';
     content.appendChild(dataSection);

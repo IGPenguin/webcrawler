@@ -88,18 +88,24 @@ layout: default
        SVG margin-top:-50px pulls the text up to the same visual position -->
   <div id="id_menu_logo" style="height:0; overflow:visible; margin-top:40px; margin-bottom:0px; text-align:center; position:relative; z-index:1;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 150" width="340" style="overflow:visible; display:block; margin:0 auto; margin-top:-50px;">
-      <!-- Drops spawn from letter bases, fall and fade, loop endlessly -->
-      <path class="logo-drop-1" d="M 70,82 C 69,85 62.5,90 62.5,96 C 62.5,103 77.5,103 77.5,96 C 77.5,90 71,85 70,82 Z"
-        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
-      <path class="logo-drop-2" d="M 152,82 C 151,85 144.5,90 144.5,96 C 144.5,103 159.5,103 159.5,96 C 159.5,90 153,85 152,82 Z"
-        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
-      <path class="logo-drop-3" d="M 200,82 C 199,85 192.5,90 192.5,96 C 192.5,103 207.5,103 207.5,96 C 207.5,90 201,85 200,82 Z"
-        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
-      <path class="logo-drop-4" d="M 268,82 C 267,85 260.5,90 260.5,96 C 260.5,103 275.5,103 275.5,96 C 275.5,90 269,85 268,82 Z"
-        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
-      <path class="logo-drop-5" d="M 338,82 C 337,85 330.5,90 330.5,96 C 330.5,103 345.5,103 345.5,96 C 345.5,90 339,85 338,82 Z"
-        fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+      <!-- Smooth drops (shown in Native/Gelasio mode) -->
+      <g class="drops-smooth">
+        <path class="logo-drop-1" d="M 70,82 C 69,85 62.5,90 62.5,96 C 62.5,103 77.5,103 77.5,96 C 77.5,90 71,85 70,82 Z" fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+        <path class="logo-drop-2" d="M 152,82 C 151,85 144.5,90 144.5,96 C 144.5,103 159.5,103 159.5,96 C 159.5,90 153,85 152,82 Z" fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+        <path class="logo-drop-3" d="M 200,82 C 199,85 192.5,90 192.5,96 C 192.5,103 207.5,103 207.5,96 C 207.5,90 201,85 200,82 Z" fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+        <path class="logo-drop-4" d="M 268,82 C 267,85 260.5,90 260.5,96 C 260.5,103 275.5,103 275.5,96 C 275.5,90 269,85 268,82 Z" fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+        <path class="logo-drop-5" d="M 338,82 C 337,85 330.5,90 330.5,96 C 330.5,103 345.5,103 345.5,96 C 345.5,90 339,85 338,82 Z" fill="#9B0000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+      <!-- Pixelated drops (shown in Pixel mode) -->
+      <g class="drops-pixel" style="display:none;">
+        <path class="logo-drop-1" d="M 68,82 H 72 V 86 H 75 V 90 H 77 V 95 H 74 V 98 H 66 V 95 H 63 V 90 H 65 V 86 H 68 Z" fill="#9B0000" stroke="#000" stroke-width="1.5" />
+        <path class="logo-drop-2" d="M 150,82 H 154 V 86 H 157 V 90 H 159 V 95 H 156 V 98 H 148 V 95 H 145 V 90 H 147 V 86 H 150 Z" fill="#9B0000" stroke="#000" stroke-width="1.5" />
+        <path class="logo-drop-3" d="M 198,82 H 202 V 86 H 205 V 90 H 207 V 95 H 204 V 98 H 196 V 95 H 193 V 90 H 195 V 86 H 198 Z" fill="#9B0000" stroke="#000" stroke-width="1.5" />
+        <path class="logo-drop-4" d="M 266,82 H 270 V 86 H 273 V 90 H 275 V 95 H 272 V 98 H 264 V 95 H 261 V 90 H 263 V 86 H 266 Z" fill="#9B0000" stroke="#000" stroke-width="1.5" />
+        <path class="logo-drop-5" d="M 336,82 H 340 V 86 H 343 V 90 H 345 V 95 H 342 V 98 H 334 V 95 H 331 V 90 H 333 V 86 H 336 Z" fill="#9B0000" stroke="#000" stroke-width="1.5" />
+      </g>
       <text x="190" y="76"
+        id="id_logo_text"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-size="72" font-weight="bold"
@@ -242,7 +248,7 @@ layout: default
             text-align:center;">🖤 Credits</h2>
       <div style="background-color:rgb(26, 26, 26);; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000;">
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:8px; opacity:0.6; font-size:16px; color:#FFF;">Developed by</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:18px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Blessed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;">Terezka Svobodová</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Beta testers</h5>
@@ -250,10 +256,10 @@ layout: default
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Technology</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; margin-bottom:16px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a> + <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://animate.style">animate.style</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Time sacrificed</h5>
-        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Many nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
-        <h4 style="min-height:0; margin-bottom:16px; margin-top:12px; padding:0 4px; font-size:16px; color:#FFD940; font-weight:600; -webkit-text-stroke:4px black; paint-order:stroke fill;">Thank you for playing!</h4>
+        <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Countless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
+        <h4 style="min-height:0; margin-bottom:8px; margin-top:12px; padding:0 4px; font-size:18px; color:#FFD940; font-weight:600; -webkit-text-stroke:4px black; paint-order:stroke fill;">Thank you for playing!</h4>
       </div>
-      <h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.65; color:#fff; text-align:center;">🔒 Anonymous telemetry is being collected.<br>No personal data, see the <a href="https://github.com/IGPenguin/stay-dead" style="color:#509920;">open source</a>.</h5>
+      <h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.65; color:#fff; text-align:center;">🔒 Anonymous game telemetry is being collected.<br>No personal data, see the <a href="https://github.com/IGPenguin/stay-dead" style="color:#509920;">open source</a>.</h5>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
@@ -273,7 +279,7 @@ layout: default
             paint-order: stroke fill;
             margin:8px 0 6px 0;
             text-align:center;">⭐️ Rankings</h2>
-      <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The data is updated every ~15 minutes.</h5>
+      <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The data is updated approx. every 15 minutes.</h5>
       <div style="flex:1;
                   min-height:0;
                   max-height:444px;

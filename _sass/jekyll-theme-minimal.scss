@@ -520,7 +520,7 @@ button {
 // Flexible spacer: pushes following elements to the bottom of the card
 .menu-spacer {
   flex: 1;
-  min-height: 8px;
+  min-height: 0px;
 }
 
 .menu-btn {
@@ -590,11 +590,22 @@ select {
   72%  { transform: translateY(34px); opacity: 0.1; animation-timing-function: linear; }
   100% { transform: translateY(42px); opacity: 0; }
 }
+
+@keyframes drop-fall-pixel {
+  0%   { transform: translateY(0);    opacity: 0; }
+  6%   { transform: translateY(4px);  opacity: 1;   animation-timing-function: steps(8); }
+  72%  { transform: translateY(36px); opacity: 0.1; animation-timing-function: steps(8); }
+  100% { transform: translateY(44px); opacity: 0; }
+}
+
 .logo-drop-1 { animation: drop-fall 2.8s ease-in infinite  0.0s backwards; }
 .logo-drop-2 { animation: drop-fall 3.3s ease-in infinite  0.9s backwards; }
 .logo-drop-3 { animation: drop-fall 2.4s ease-in infinite  1.7s backwards; }
 .logo-drop-4 { animation: drop-fall 3.0s ease-in infinite  1.2s backwards; }
 .logo-drop-5 { animation: drop-fall 2.6s ease-in infinite  0.4s backwards; }
+
+.drops-pixel { display: none; }
+.drops-smooth { display: inline; }
 
 // ── Platform-specific Adjustments ──────────────────────────────────────────
 
@@ -604,6 +615,10 @@ select {
     letter-spacing: -0.1px !important;
     -webkit-font-smoothing: antialiased;
   }
+
+  // Use smooth drops for Gelasio
+  .drops-smooth { display: inline !important; }
+  .drops-pixel { display: none !important; }
 
   // Force Gelasio on big overlays and stats that used inline 'sans'
   .enemyOverlay,
@@ -619,8 +634,41 @@ select {
 
 .pixel-font {
   &, button, select, input, h1, h2, h3, h4, h5, h6, div, span, p:not(.ui-symbol) {
-    font-family: 'Pixelify Sans', sans-serif !important;
-    letter-spacing: 0.5px !important;
+    font-family: 'Tiny5', sans-serif !important;
+    letter-spacing: 0px !important;
+  }
+
+  // Use pixelated drops for Pixel mode
+  .drops-pixel { display: inline !important; }
+  .drops-smooth { display: none !important; }
+
+  // Pixelated animation for blood drops
+  .logo-drop-1, .logo-drop-2, .logo-drop-3, .logo-drop-4, .logo-drop-5 {
+    animation-name: drop-fall-pixel !important;
+    animation-timing-function: steps(8) !important;
+  }
+
+  // Force Tiny5 on logo text specifically in Pixel mode
+  #id_logo_text {
+    font-family: 'Tiny5', sans-serif !important;
+    font-size: 82px !important;
+    letter-spacing: 2px !important;
+  }
+
+  // Bump base size by 2px (13px -> 15px)
+  font-size: 14px !important;
+
+  h4 { font-size: 16px; } // 14.6 + 2
+  h5 { font-size: 14px; }   // 12 + 2
+
+  .ui-rect {
+    border-radius: 0px !important;
+    clip-path: polygon(
+      0% 25%, 25% 25%, 25% 0%, 
+      75% 0%, 75% 25%, 100% 25%, 
+      100% 75%, 75% 75%, 75% 100%, 
+      25% 100%, 25% 75%, 0% 75%
+    );
   }
 
   // Remove forced global weight and size to let inline styles and tags rule
@@ -640,7 +688,7 @@ select {
   [style*="font-family: sans"],
   [style*="font-family:inherit"],
   [style*="font-family: inherit"] {
-    font-family: 'Pixelify Sans', sans-serif !important;
+    font-family: 'Tiny5', sans-serif !important;
     letter-spacing: -0.4px !important;
   }
 }
