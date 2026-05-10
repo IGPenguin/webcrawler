@@ -386,7 +386,7 @@ function getMeetingPlaceFade() {
 
 function getMeetingPlaceRecall() {
   var pool = [
-    "Saw her smile here the first time.<br>The world was still hwole.",
+    "Saw her smile here the first time.<br>The world was still whole.",
     "She was standing right here.<br>You didn't know what to say.",
     "The world felt different that day.<br>She made it that way.",
     "She laughed here before.<br>You didn't see it.",
