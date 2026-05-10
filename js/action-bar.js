@@ -6,7 +6,7 @@
 var ActionBar = (function () {
 
   // ── UI Labels ───────────────────────────────────────────────────────────
-  var LABEL_SUCCESS     = 'Passed';
+  var LABEL_SUCCESS     = 'Success';
   var LABEL_FAIL        = 'Failed';
   var LABEL_CRIT_SUCESS = 'CRITICAL!';
   var LABEL_CRIT_FAIL   = 'FAILED!';
