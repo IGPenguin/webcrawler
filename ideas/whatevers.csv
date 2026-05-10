@@ -42,9 +42,6 @@
 
 //Neutral starting origins (no stat bonus/penalty — flavor only)
 🌾;Commoner;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>The most dangerous thing is being average.</i>;none
-🧂;Salt Gatherer;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Harvested what the sea left behind.</i>;none
-🛶;Fisher;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Knew patience better than survival.</i>;none
-🪓;Laborer;0;0;0;0;0;0;0;No apparent strengths or weaknesses.<br><i>Work was all they ever knew.</i>;none
 
 // ============================================================
 // FADING WILDLANDS — new variety content
@@ -236,7 +233,7 @@ Fishing;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;0;Handcarved Curio;Worn by sea 
 
 //Enemies / creatures worth designing around
 🫏 🐘 🦣 🦏 🐫 🦒 🐊 🦓 🦬 🐅 🐆 🦡 🐓 🦃 🦢 🪿 🦤 🦜
-🧕 👨‍🎨 👩‍🎨 🤵🏻‍♂️ 🤵🏻‍♀️ 👨‍🌾 👩‍🌾
+🧕 👨‍🎨 👩‍🎨 🤵🏻‍♂️ 🤵🏻‍♀️ 👨‍🌾 👩‍🌾 🦁
 
 //Items / objects
 🗜️ ⛏ 🪁 ⚙️ 🔗 🧭 ⚗️ 🩺 🧬 ❄️ 🌩️ ⛅️

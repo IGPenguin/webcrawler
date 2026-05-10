@@ -66,6 +66,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 //Luck
 🧪;Chemist;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 💔 Health</b>.<br><i>Survived numerous explosions, still alive.;none
 🦾;Veteran;0;0;-1;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 🟢 Energy</b>.<br><i>Already endured through many dangers.;none
+🇯🇲;Rasta;0;0;0;2;-1;0;0;Gain <b>+2 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.<br><i>Always chilled-out no matter what.</i>;none
 🃏;Fool;0;0;0;2;-2;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Doesn't know the odds, wins anyway.;none
 🥔;Peasant;0;0;0;1;-1;0;0;Gain <b>+1 🍀 Luck</b>, lose <b>-1 🧠 Intellect</b>.<br><i>Accustomed to the weight of the world.;none
 

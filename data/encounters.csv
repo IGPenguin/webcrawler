@@ -109,7 +109,6 @@ Fading Wildlands;🦎;Skitter Lizard;Small;1;0;2;0;0;0;0;Quick Reptile;Darts jus
 Fading Wildlands;🐇;Panicked Hare;Small;1;0;3;0;10;0;0;Nervous Prey;The erratic jumps make it annoying.<br>;Trampled in confusion.;none
 
 Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;It has joined your side.;none
-Fading Wildlands;🦦;Stream Rascal;Pet;1;0;1;1;0;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.;none
 Fading Wildlands;🐈;Field Stray;Pet;1;0;2;1;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower;none
 Fading Wildlands;🦎;Grass Gecko;Pet;1;0;2;1;0;0;0;Wall Climber;Unbothered by anyone’s panic.<br>;Got a new travel buddy!;none
 Fading Wildlands;🐞;Spotted Wanderer;Pet;1;0;1;1;0;0;0;Tiny Traveler;Too small to fear, too stubborn to stop.<br>;Got a new travel buddy!;none
@@ -530,8 +529,10 @@ Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;3;0;0;School Accessory;Co
 
 Forsaken Village;🔨;Hefty Hammer;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Kinda heavy to swing around with.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>.;Kinda tiring to carry.;none
 Forsaken Village;🪖;Trench Helmet;Item-Head;1;0;0;0;0;0;0;Head Protection;Robust protection for adverse conditions.<br>Provides <b>+1 ❤️ Health</b>.;Ready for battle!;none
-Forsaken Village;📕;First Aid 101;Item;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.;none
 Forsaken Village;🧢;Cool Hat;Item-Head;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Charisma</b>;Ready to rock, let's do this!;none
+Forsaken Village;📕;First Aid 101;Item;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.;none
+Forsaken Village;👕;Cotton Shirt;Item-Chest;0;0;1;0;0;0;0;Ancient Clothes;Sun-bleached but capable of removing sweat.<br>Provides <b>+1 🟢 Energy</b>.;Put it onto yourself.;none
+Forsaken Village;👚;Faded Blouse;Item-Chest;0;0;1;0;0;0;0;Woman's Wear;A remnant of the brighter days.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Charisma</b>.;Feels a bit uncanny.;none
 Forsaken Village;🪠;Waste Plunger;Item-Weapon;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassing situations.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed a makeshift weapon.;none
 Forsaken Village;🧹;Sturdy Broom;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but very effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed a makeshift weapon.;none
 Forsaken Village;🗞️;Fly Swatter;Item-Weapon;0;0;0;0;0;0;0;Makeshift Weapon;Not sure if it makes any difference.<br>;Picked up a makeshift weapon.;none
@@ -901,6 +902,7 @@ Twisted Fairyland;🎋;Wicked Staff;Item-Weapon;0;0;0;-2;0;1;0;Casting Tool;Ener
 Twisted Fairyland;🎎;Lucky Trinket;Item;0;0;0;1;0;0;0;Accessory;Traditional protection againts bad luck.<br>Provides <b>+1 🍀 Luck</b>.;;none
 Twisted Fairyland;🎗️;Vigor Scarf;Item-Head;1;0;0;0;0;0;0;Handmade Ornament;Improves ones' self-presevation reflexes.<br>Provides <b>+1 ❤️ Health</b>.;;none
 
+Twisted Fairyland;⛏;Rusty Pickaxe;Item-Weapon;0;1;-1;0;0;0;0;Mining Tool;Meant for stone, now used for survival.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Oof, that is heavy.;none
 Twisted Fairyland;🔪;Twisted Blade;Item-Weapon;0;1;0;0;-2;0;0;Ritual Tool;The sacrifical blade demands offering.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;;none
 Twisted Fairyland;🪞;Malevolent Mirror;Item;0;0;0;-2;0;1;0;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Reality itself fractured;none
 Twisted Fairyland;🪞;Soul Mirror;Item;0;0;0;-2;2;0;0;Mystical Relic;It's hard to face the horrors of truth.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth;none
@@ -971,6 +973,7 @@ River of Sorrows;🌪️;Violent Hurricane;Trap-Sleep;-6;0;0;0;0;0;0;Natural Dis
 River of Sorrows;🪵;Slick Driftwood;Trap-Obstacle;0;0;0;0;0;0;0;Floating Debris;Bobs lazily against the hull.<br>;Managed to push it aside;none
 River of Sorrows;🪅;Floating Piñata;Trap-Attack;0;1;0;0;0;0;0;Soggy Surprise;Drifting past, begging to be smashed.<br>;Improved your attack accuracy!;none
 River of Sorrows;🛶;Wrecked Skiff;Trap-Obstacle;0;0;0;0;0;0;0;River Obstacle;Blocks the narrow passage completely.<br>;Managed to push it aside;none
+River of Sorrows;🌊;Tilting Current;Trap-Big;-4;0;0;0;0;0;0;River's Wrath;The water inverts without warning.<br>;Rock found your spine before you found footing.;none
 River of Sorrows;🌀;Sudden Whirlpool;Trap-Big;-2;0;0;0;0;0;0;Imminent Danger;Appeared without warning beneath the boat.<br>;Spun helplessly into the current;none
 River of Sorrows;🪵;Speeding Logs;Trap;-2;0;0;0;0;0;0;Imminent Danger;Heastily heading your way!<br>;Broken few of your bones.;none
 River of Sorrows;🧊;Drifting Iceberg;Trap-Sleep;-1;0;0;0;0;0;0;Freezing Block;Cold crawls deep inside your bones.<br>;Sleep left you stiff and sore.;none
@@ -990,6 +993,10 @@ River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishi
 River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 
+River of Sorrows;🚣;Stranded Soul;Recruit;3;0;2;-1;2;0;0;River Wanderer;Rows in circles, looks confused.<br>;They brought your misfortune.;none
+River of Sorrows;🦦;Stream Rascal;Pet;2;0;3;1;2;0;0;River Mischief;Starts trouble where none exists.<br>;Slipped into your party.;none
+River of Sorrows;🐀;Silt Ratter;Pet;1;0;4;0;0;0;0;River Wretch;Shivers on the bank with nowhere left to run.<br>;Tucked itself inside your pack.;none
+
 River of Sorrows;🦫;Gnawing Terror;Standard;4;2;3;0;2;0;0;Busy Maw;Teeth made for wood, repurposed for bone.<br>;Dragged you to a dam of bones.;none
 
 River of Sorrows;🐠;Depressed Angelfish;Reflective;3;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
@@ -997,6 +1004,7 @@ River of Sorrows;🐸;Gleaming Croaker;Reflective;3;2;3;0;1;0;0;Woodland Oddity;
 
 River of Sorrows;🦞;Vengeful Lobster;Tough;4;2;2;0;-1;0;1;Hot-bath Survivor;Never forgets, never forgives.<br>;Pinched one too many times!;none
 River of Sorrows;🐌;Amphibious Snail;Tough;3;2;1;0;1;0;0;Hard Shell;Blows bounce off its hardened coil.<br>;Your strike turned on you.;none
+River of Sorrows;🦛;Wallowing Hulk;Tough;4;0;3;0;-1;0;1;Sunken Giant;Its hide is slick with river mud.<br>;Trampled to your death.;none
 
 River of Sorrows;🐚;Cone Snail;Toxic;2;3;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops, that was deadly!;none
 River of Sorrows;‍🪼;Box Jelly;Toxic;2;3;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.;none
@@ -1004,8 +1012,12 @@ River of Sorrows;‍🪼;Box Jelly;Toxic;2;3;1;0;-1;0;0;Aquatic Threat;Practical
 River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless to watch, dangerous to touch.<br>;Killed by a mere touch.;none
 River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;3;3;2;0;-1;0;0;Spiky Ball;Looks funny, but is lethal.<br>;Pierced by thousands spikes.;none
 
-River of Sorrows;‍🦈;White Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry shark!;none
+River of Sorrows;♨️;Scalding Elemental;Hot;4;3;2;0;0;0;0;Thermal Horror;Erupts where the riverbed has cracked.<br>;Boiled alive in sorrow's current.;none
 
+River of Sorrows;‍🦈;Great Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry predator!;none
+River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops<br>;Stampeded to your death.;none
+
+River of Sorrows;🐆;River Stalker;Swift;4;3;2;0;0;0;0;Bank Predator;Paces the bank, each step soft as grief.<br>;Taken from behind like you were expected.;none
 River of Sorrows;🐍;Aquatic Snake;Swift;3;4;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.;none
 River of Sorrows;🐬;Laughing Scumbag;Swift;4;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.;none
 
@@ -1015,6 +1027,8 @@ River of Sorrows;🦭;Possessed Seal;Demon;3;3;3;1;-1;0;0;Cursed Animal;Somethin
 River of Sorrows;🦅;River Harpy;Demon;3;3;2;0;2;0;0;Winged Threat;Swoops low over the water without a sound.<br>;Claws found their mark;none
 River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;4;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
 River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful, ...not anymore.<br>.;Got both eyes pecked out!;none
+
+River of Sorrows;💀;Hollow Fisherman;Friend;0;0;0;1;1;0;0;Mourning Man;Line in the water, eyes on the distance.<br>Not fishing for fish.;Gestured you a good fortune.;none
 
 River of Sorrows;👤;Drowned Soul;Boss-Spirit;1;2;3;0;2;0;0;Unfinished Business;Lurks below the surface for another victim.<br>;Dragged into dark depths.;none
 River of Sorrows;🦀;Spider Crab;Boss-Tough;4;2;2;0;-1;0;1;Oversized Crustacean;Whaat? It's the size of a dog!<br>;Got pinched in half.;none
@@ -1049,7 +1063,7 @@ River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thorough
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
 River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 River of Sorrows;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
-River of Sorrows;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
+River of Sorrows;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</b> when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
 River of Sorrows;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 River of Sorrows;📼;Rewind Tape;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 River of Sorrows;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
@@ -1152,6 +1166,7 @@ Shrouded Necropolis;🔮;Clouded Oraculum;Trap;-1;0;0;0;-1;0;0;Unholy Relic;It h
 Shrouded Necropolis;🕯️;Ritual Candle;Trap;-2;0;0;0;0;0;0;Light Source;You know the drill, don't play with fire.<br>;You have burned your hand.;none
 Shrouded Necropolis;🕸️;Sticky Web;Trap-Roll;0;0;-3;0;0;0;0;Minor Inconvenience;Unfortunately, it blocks the only way ahead.<br>;Got entangled in sticky webs;none
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers, but survived.;none
+Shrouded Necropolis;➿;Duelist's Glyph;Trap-Attack;0;1;0;0;0;0;0;Combat Mark;Carved into a gravestone, probably by a sword.<br>;Learned a new technique.;none
 
 Shrouded Necropolis;☠️;Cult Altar;Altar;-1;0;0;0;0;1;0;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power;none
 Shrouded Necropolis;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;0;Ritual Place;The stone feels cold to the touch.<br>;;none
