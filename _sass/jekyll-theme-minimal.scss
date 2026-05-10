@@ -633,7 +633,18 @@ select {
 }
 
 .pixel-font {
-  &, button, select, input, h1, h2, h3, h4, h5, h6, div, span, p:not(.ui-symbol) {
+  &, body {
+    // Force pixelated rendering on the root and body to handle backgrounds and zoom
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: -moz-crisp-edges !important;
+    image-rendering: crisp-edges !important;
+    image-rendering: pixelated !important;
+    
+    // Upscale the 250x250 background tiles to make pixels "chunky"
+    background-size: 1000px !important;
+  }
+
+  &, body, button, select, input, h1, h2, h3, h4, h5, h6, div, span, p:not(.ui-symbol) {
     font-family: 'Tiny5', sans-serif !important;
     letter-spacing: 0px !important;
   }
