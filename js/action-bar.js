@@ -4,6 +4,23 @@
 // getAttemptValue()                — current cursor position 0–100
 
 var ActionBar = (function () {
+
+  // ── UI Labels ───────────────────────────────────────────────────────────
+  var LABEL_SUCCESS     = 'Passed';
+  var LABEL_FAIL        = 'Failed';
+  var LABEL_CRIT_SUCESS = 'CRITICAL!';
+  var LABEL_CRIT_FAIL   = 'FAILED!';
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // ── Timing (ms) ───────────────────────────────────────────────────────────
+  var T_BAR_SHOW       =  120;  // bar fade-in when action bar opens
+  var T_CURSOR_SNAP    =   70;  // cursor glide to resting position on release
+  var T_RESULT_FADE_IN =  300;  // result overlay fade-in (longer = smoother reveal)
+  var T_RESULT_HOLD    =  750;  // how long the result stays fully visible
+  var T_BAR_FADEOUT    =  220;  // bar + result fade-out together after hold
+  var T_CANCEL_FADE    =  150;  // fade-out on cancel (no result shown)
+  // ──────────────────────────────────────────────────────────────────────────
+
   var _config    = null;
   var _raf       = null;
   var _value     = 0;      // 0–100
@@ -18,7 +35,7 @@ var ActionBar = (function () {
   var _csMax     = -1;     // crit success zone max
   var _cfw       = 0;      // crit fail edge width (each side)
 
-  var _elBar, _elTrack, _elCursor, _elCancel;
+  var _elBar, _elTrack, _elCursor, _elCancel, _elResult;
   var _lastZone = 0; // 0=fail, 1=success, 2=crit
 
   function _init() {
@@ -26,6 +43,7 @@ var ActionBar = (function () {
     _elTrack  = document.getElementById('id_action_bar_track');
     _elCursor = document.getElementById('id_action_bar_cursor');
     _elCancel = document.getElementById('id_action_bar_cancel');
+    _elResult = document.getElementById('id_action_bar_result');
   }
 
   function showActionBar(config, onResolve, sourceEl) {
@@ -81,7 +99,7 @@ var ActionBar = (function () {
     _elBar.style.opacity = '0';
     _elBar.style.display = 'block';
     requestAnimationFrame(function () {
-      _elBar.style.transition = 'opacity 0.12s';
+      _elBar.style.transition = 'opacity ' + T_BAR_SHOW + 'ms';
       _elBar.style.opacity    = '1';
     });
 
@@ -189,7 +207,7 @@ var ActionBar = (function () {
 
     vibrateButtonPress();
 
-    _elCursor.style.transition = 'left 0.07s ease-out';
+    _elCursor.style.transition = 'left ' + T_CURSOR_SNAP + 'ms ease-out';
     _elCursor.classList.add('action-bar-snap');
 
     var flashClass = isSuccess
@@ -197,17 +215,43 @@ var ActionBar = (function () {
       : (critResult === 'fail'    ? 'action-bar-flash-crit-fail'    : 'action-bar-flash-fail');
     _elTrack.classList.add(flashClass);
 
+    if (_elResult) {
+      var resultClass, resultText;
+      if (critResult === 'success') {
+        resultClass = 'result-crit-pass'; resultText = LABEL_CRIT_SUCESS;
+      } else if (critResult === 'fail') {
+        resultClass = 'result-crit-fail'; resultText = LABEL_CRIT_FAIL;
+      } else if (isSuccess) {
+        resultClass = 'result-pass'; resultText = LABEL_SUCCESS;
+      } else {
+        resultClass = 'result-fail'; resultText = LABEL_FAIL;
+      }
+      _elResult.textContent = resultText;
+      _elResult.classList.add(resultClass);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          _elResult.style.transition = 'opacity ' + T_RESULT_FADE_IN + 'ms ease';
+          _elResult.style.opacity = '1';
+        });
+      });
+    }
+
     setTimeout(function () {
       _elTrack.classList.remove('action-bar-flash-success', 'action-bar-flash-fail',
                                  'action-bar-flash-crit-success', 'action-bar-flash-crit-fail');
-      _elBar.style.transition = 'opacity 0.22s';
+      if (_elResult) {
+        _elResult.style.transition = 'opacity ' + T_BAR_FADEOUT + 'ms';
+        _elResult.style.opacity = '0';
+      }
+      _elBar.style.transition = 'opacity ' + T_BAR_FADEOUT + 'ms';
       _elBar.style.opacity    = '0';
       setTimeout(function () {
         _elBar.style.display = 'none';
         _elCursor.classList.remove('action-bar-snap');
+        _clearResult();
         if (_onResolve) _onResolve(isSuccess, val, critResult);
-      }, 220);
-    }, 300);
+      }, T_BAR_FADEOUT);
+    }, T_RESULT_HOLD);
   }
 
   function _cleanupListeners() {
@@ -218,15 +262,23 @@ var ActionBar = (function () {
     document.removeEventListener('touchend',      _onTouchEnd);
   }
 
+  function _clearResult() {
+    if (!_elResult) return;
+    _elResult.style.opacity = '';
+    _elResult.className = '';
+    _elResult.textContent = '';
+  }
+
   function _cancel() {
     _running = false;
     cancelAnimationFrame(_raf);
     _cleanupListeners();
+    _clearResult();
     if (_elCancel) _elCancel.classList.remove('visible');
     if (_elBar) {
-      _elBar.style.transition = 'opacity 0.15s';
+      _elBar.style.transition = 'opacity ' + T_CANCEL_FADE + 'ms';
       _elBar.style.opacity    = '0';
-      setTimeout(function () { _elBar.style.display = 'none'; }, 150);
+      setTimeout(function () { _elBar.style.display = 'none'; }, T_CANCEL_FADE);
     }
   }
 
@@ -234,6 +286,7 @@ var ActionBar = (function () {
     _running = false;
     cancelAnimationFrame(_raf);
     _cleanupListeners();
+    _clearResult();
     if (_elCancel) _elCancel.classList.remove('visible');
     if (_elBar) { _elBar.style.opacity = '0'; _elBar.style.display = 'none'; }
   }

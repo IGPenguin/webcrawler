@@ -310,6 +310,29 @@ dt {
   }
 }
 
+#id_action_bar_result {
+  display: flex;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 1000;
+  font-family: serif;
+  letter-spacing: 0.08em;
+  color: #fff;
+  -webkit-text-stroke: 4px #121212;
+  paint-order: stroke fill;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+
+  &.result-pass      { background: #1a6b2e; }
+  &.result-fail      { background: #621010; }
+  &.result-crit-pass { background: #b89000; color: #fff8cc; -webkit-text-stroke-color: #5a3a00; }
+  &.result-crit-fail { background: #200808; color: #cc4444; }
+}
+
 #id_action_bar_cursor {
   position: absolute;
   top: 0;
