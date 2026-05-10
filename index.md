@@ -223,10 +223,10 @@ layout: default
       </div>
       <div class="menu-spacer"></div>
         <div id="menu_history_actions" style="display:none; gap:4px; margin-top:5px;">
-        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share <i style="color:grey;">[Beta]</i></button>
+        <button class="menu-btn" id="menu_history_scorelink" style="flex:1; display:none; margin-top:0px; color:#7193bf;">🔗 Score Link</button>
+        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff; display:none">📎 Share <i style="color:grey;">[Beta]</i></button>
         <button class="menu-btn" id="menu_history_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
       </div>
-      <button class="menu-btn" id="menu_history_scorelink" style="display:none; margin-top:4px; color:#7193bf; font-size:13px;">🔗 Copy Score Link</button>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>
     </div>
   </div>

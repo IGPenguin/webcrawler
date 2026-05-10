@@ -355,9 +355,9 @@ var Menu = (function () {
       html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
         + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
-        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400;">' + infoParts.join('&nbsp;•&nbsp;') + '</h5>';
+        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400;">' + infoParts.join('<br>') + '</h5>';
       if (date)
-        html += '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + date + '</h5>';
+        html += '<h5 style="margin:0px 0 4px 0; opacity:0.6; font-size:14px;">' + date + '</h5>';
       html += '</div>';
     }
 
@@ -443,8 +443,8 @@ var Menu = (function () {
             + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400">' + (session.area || '?') + '&nbsp;&nbsp;•&nbsp;&nbsp;' + (session.causeOfDeath || '') + '</h5>'
-        + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + (session.causeOfDeath || '') + '</h5>'
+        + '<h5 style="margin:-4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
         + (session.score !== undefined ? '&nbsp;&nbsp;•&nbsp;&nbsp;⭐ ' + session.score : '') + '</h5>';
 
       entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
@@ -545,7 +545,7 @@ var Menu = (function () {
             document.body.removeChild(ta);
           }
           scoreLinkBtn.innerHTML = '✅ Copied!';
-          setTimeout(function () { scoreLinkBtn.innerHTML = '🔗 Copy Score Link'; }, 2000);
+          setTimeout(function () { scoreLinkBtn.innerHTML = '🔗 Score Link'; }, 2000);
         };
       } else {
         scoreLinkBtn.style.display = 'none';
@@ -556,7 +556,7 @@ var Menu = (function () {
     // height is exact regardless of card/loot-bar size.
     requestAnimationFrame(function () {
       var logH = sc.clientHeight - card.offsetHeight - lootBar.offsetHeight - 15;
-      logEl.style.height = Math.min(170, Math.max(74, logH)) + 'px';
+      logEl.style.height = Math.min(140, Math.max(74, logH)) + 'px';
     });
 
     // Session achievements unlocked by this character
