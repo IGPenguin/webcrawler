@@ -259,7 +259,7 @@ layout: default
         <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Countless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
         <h4 style="min-height:0; margin-bottom:8px; margin-top:12px; padding:0 4px; font-size:18px; color:#FFD940; font-weight:600; -webkit-text-stroke:4px black; paint-order:stroke fill;">Thank you for playing!</h4>
       </div>
-      <h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.65; color:#fff; text-align:center;">🔒 Anonymous game telemetry is being collected.<br>No personal data, see the <a href="https://github.com/IGPenguin/stay-dead" style="color:#509920;">open source</a>.</h5>
+      <h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Anonymous game telemetry is being collected.<br>No personal data, see the <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;">open source</a>.</h5>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>

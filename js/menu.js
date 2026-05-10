@@ -1093,10 +1093,8 @@ var Menu = (function () {
 
     // ── Data Persistence Notice ───────────────────────────────────────────
     var dataSection = document.createElement('div');
-    dataSection.innerHTML = '<h5 style="margin:16px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.65; color:#fff; text-align:center;">'
-      + '⚠️ Browsers may wipe your local data after 7 days.<br>'
-      + 'Protect saves by <b>"Add to Home Screen"</b>.'
-      + '</h5>';
+    dataSection.innerHTML = '<h5 style="margin:16px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">'
+      + '⚠️ Browsers may wipe your local data after 7 inactive days.<br></h5>';
     content.appendChild(dataSection);
 
     _doShowScreen('menu_settings_screen');
