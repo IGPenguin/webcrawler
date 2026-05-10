@@ -404,7 +404,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerGainXP(1.5,0,"They let you walk freely away");
               } else if (_skillOK === false) {
                 if (Math.random() < 0.25) {
-                  logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
+                  logPlayerAction(actionString, "Ouch, sprained your ankle -1 💔");
                   playerHit(1);
                 } else {
                   playerSta = Math.max(0, playerSta - 1);
@@ -426,7 +426,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerSta > 0 && _crit !== 'success') playerSta--;
 
             if (enemyCastIfMgk(false)){
-              logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+              logPlayerAction(actionString,"Dodged their spell -1 🟢");
               displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
               break;

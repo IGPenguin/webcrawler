@@ -58,8 +58,8 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
       loadEncounter(encounterIndex);
       if (levelUpSavedCorpse !== null && enemyType !== "Upgrade") restoreCorpseAfterLevelUp();
       setBackground(areaName);
-      if (!areaName.includes("Fading") && !areaName.includes("Eternal") && !areaName.includes("Depths") && !adventureLog.includes("Arrived to area: <b>"+areaName+"</b>")) {
-        logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+      if (!areaName.includes("Fading") && !areaName.includes("Eternal") && !areaName.includes("Depths") && !adventureLog.includes("Arrived to: <b>"+areaName+"</b>")) {
+        logAction("💭 ▸ 👣 Arrived to: <b>"+areaName+"</b>");
         AchievementManager.check('discover_area', areaName);
       }
       animateUIElement(cardUIElement,"animate__fadeIn","1.2");
@@ -75,8 +75,8 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
 
   // Boss → new area: boss curtain handles bg swap via setBackground(areaName) while black
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){
-    if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to area: <b>"+areaName+"</b>"))) {
-      logAction("💭 ▸ 👣 Arrived to area: <b>"+areaName+"</b>");
+    if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to: <b>"+areaName+"</b>"))) {
+      logAction("💭 ▸ 👣 Arrived to: <b>"+areaName+"</b>");
       AchievementManager.check('discover_area', areaName);
     }
   }
