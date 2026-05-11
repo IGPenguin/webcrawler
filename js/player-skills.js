@@ -162,13 +162,14 @@ function playerCheckLevelUp(){
   var levelUp = ["area:"+areaName,"emoji:🎉","name:Level Up!","type:Upgrade","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Character Upgrade","desc:<b>Choose a perk</b> to shape your character.<br>","message:","achiev:none"]
 
   if (playerXP>=playerXPThreshold){
+    playerXP=playerXP-playerXPThreshold;
+    playerXPThreshold=playerLevel*200;
+    playerLevel++;
+
     curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;font-weight:600;\">Level Up!</p><p style=\"font-size:20px;\""+decorateStatusText("","New perk available.",colorWhite));
     if (playerHp<playerHpMax) playerHp=playerHpMax;
     playerRest(true);
-    playerLevel++;
     AchievementManager.check('level_up', playerLevel);
-    playerXP=playerXP-playerXPThreshold;
-    playerXPThreshold=playerLevel*200;
     updateXPProgress();
     if (corpseState !== "") {
       levelUpSavedCorpse = {
