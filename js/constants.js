@@ -4,6 +4,7 @@ var initialEncounterOverride = 0; // set to 5 to skip tutorial
 var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
 var TELEMETRY_DISABLED_LOCALHOST = false;
+var SPLASH_DISABLED_LOCALHOST = false;
 
 if (isLocalhost() && TUTORIAL_SKIP_LOCALHOST) initialEncounterOverride = 4;
 

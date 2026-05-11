@@ -1,6 +1,7 @@
 var Menu = (function () {
   var _currentDetailSession = null; // set when history detail is open
   var _selectedOrigin = null;
+  var _isInitialLoad = true;
 
   var SCREENS = [
     'menu_main_screen',
@@ -18,8 +19,17 @@ var Menu = (function () {
   function show() {
     document.getElementById('id_menu').style.display = 'flex';
     document.getElementById('id_game').style.display = 'none';
-    _renderMain(true); // skipFade — outer curtain (transitionToGame / menuFade) handles the transition
-    _animateLogo();
+
+    var splashEnabled = !isLocalhost() || !SPLASH_DISABLED_LOCALHOST;
+    if (_isInitialLoad && splashEnabled) {
+      _isInitialLoad = false;
+      _renderMain(true);
+      _doInitialSplash();
+    } else {
+      _isInitialLoad = false;
+      _renderMain(true); // skipFade — outer curtain (transitionToGame / menuFade) handles the transition
+      //_animateLogo();
+    }
   }
 
   function hide() {
@@ -37,11 +47,65 @@ var Menu = (function () {
     logo.classList.remove('animate__animated', 'animate__fadeInDown');
     void logo.offsetWidth; // reflow
     logo.style.setProperty('--animate-duration', '2s');
-    logo.classList.add('animate__animated'); // Removed pulse
+    logo.classList.add('animate__animated', 'animate__fadeInDown');
     logo.addEventListener('animationend', function onDone() {
       logo.removeEventListener('animationend', onDone);
       logo.classList.remove('animate__animated', 'animate__fadeInDown');
     });
+  }
+
+  function _doInitialSplash() {
+    var curtain = document.getElementById('id_fullscreen_curtain');
+    var textEl  = document.getElementById('id_fullscreen_text');
+    var logoSource = document.getElementById('id_menu_logo');
+    if (!curtain || !textEl || !logoSource) return;
+
+    // 1. Immediate curtain
+    curtain.style.display = 'block';
+    curtain.style.opacity = '1';
+    curtain.style.pointerEvents = 'auto';
+
+    // 2. Prepare Logo clone for the curtain
+    var svg = logoSource.querySelector('svg');
+    if (!svg) return;
+    var svgClone = svg.cloneNode(true);
+    svgClone.style.marginTop = '0';
+    svgClone.style.display = 'block';
+    svgClone.style.margin = '0 auto';
+    
+    textEl.innerHTML = '';
+    textEl.appendChild(svgClone);
+    textEl.style.display = 'block';
+    textEl.style.opacity = '0';
+    textEl.style.webkitTextStroke = '0'; // Remove text stroke for the SVG logo
+
+    // 3. Fade in Logo
+    void textEl.offsetWidth;
+    textEl.style.setProperty('--animate-duration', '2s');
+    textEl.classList.add('animate__animated', 'animate__fadeIn');
+
+    // 4. Hold and Fade out both
+    setTimeout(function() {
+      textEl.classList.remove('animate__animated', 'animate__fadeIn');
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '1.2s');
+      textEl.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.style.setProperty('--animate-duration', '1.2s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.addEventListener('animationend', function onDone() {
+        curtain.removeEventListener('animationend', onDone);
+        curtain.style.display = 'none';
+        curtain.style.pointerEvents = 'none';
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        
+        textEl.style.display = 'none';
+        textEl.classList.remove('animate__animated', 'animate__fadeOut');
+        textEl.innerHTML = '';
+        textEl.style.webkitTextStroke = ''; // Restore original style
+      }, { once: true });
+    }, 3000);
   }
 
   // ── Screen routing ─────────────────────────────────────────────────────────
