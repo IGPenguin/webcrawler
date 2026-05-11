@@ -106,7 +106,7 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
     loadEncounter(1 + initialEncounterOverride + encounterIndex); // 0 is the death screen
 
     if (savedCoins != NaN && savedCoins > 0) { // Returning player — skip tutorial, show shop
-      logAction("♻️ ▸ ❤️ This is <b>not your first time.</b>");
+      //logAction("♻️ ▸ ❤️ This is <b>not your first time.</b>");
       playerSta = playerStaMax;
       loadEncounter(5);
       drachmaShop[0] = "area:" + "Fading Wildlands";
@@ -118,7 +118,7 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
       enemyName  = "Familiar Moment";
       enemyEmoji = "🤔";
       playerSta  = playerStaMax;
-      logAction("♻️ ▸ ❤️ This is <b>not your first time.</b>");
+      //logAction("♻️ ▸ ❤️ This is <b>not your first time.</b>");
     }
 
     redraw();
