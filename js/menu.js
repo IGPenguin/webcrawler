@@ -75,23 +75,30 @@ var Menu = (function () {
     
     textEl.innerHTML = '';
     textEl.appendChild(svgClone);
+
+    // 2b. Add subtitle
+    var sub = document.createElement('div');
+    sub.innerHTML = '<span style="color:#FFF; font-weight:600;">by IGPenguin</span>';
+    sub.style.cssText = 'margin-top: -46px; font-size: 22px; opacity: 0.6; letter-spacing: 1.5px; font-weight: 400;';
+    textEl.appendChild(sub);
+
     textEl.style.display = 'block';
     textEl.style.opacity = '0';
     textEl.style.webkitTextStroke = '0'; // Remove text stroke for the SVG logo
 
     // 3. Fade in Logo
     void textEl.offsetWidth;
-    textEl.style.setProperty('--animate-duration', '2s');
+    textEl.style.setProperty('--animate-duration', '3s');
     textEl.classList.add('animate__animated', 'animate__fadeIn');
 
     // 4. Hold and Fade out both
     setTimeout(function() {
       textEl.classList.remove('animate__animated', 'animate__fadeIn');
       void textEl.offsetWidth;
-      textEl.style.setProperty('--animate-duration', '1.2s');
+      textEl.style.setProperty('--animate-duration', '2.5s');
       textEl.classList.add('animate__animated', 'animate__fadeOut');
 
-      curtain.style.setProperty('--animate-duration', '1.2s');
+      curtain.style.setProperty('--animate-duration', '2.5s');
       curtain.classList.add('animate__animated', 'animate__fadeOut');
 
       curtain.addEventListener('animationend', function onDone() {
@@ -105,7 +112,7 @@ var Menu = (function () {
         textEl.innerHTML = '';
         textEl.style.webkitTextStroke = ''; // Restore original style
       }, { once: true });
-    }, 3000);
+    }, 4000);
   }
 
   // ── Screen routing ─────────────────────────────────────────────────────────
