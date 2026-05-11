@@ -33,10 +33,11 @@ var AchievementManager = (function () {
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: '' },
 
-    { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...', unlock: '' },
+    { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...', unlock: 'Unlocked the <b>🐷 Pig Mask</b>.' },
     { id: 'eat_purple',          emoji: '💜', desc: 'Consumed a premium refreshment!', hint: 'The finer things in death.', unlock: '' },
     { id: 'eat_legendary',       emoji: '🍔', desc: 'Consumed a legendary refreshment!', hint: 'Become a certified gourmet.', unlock: 'Unlocked the <b>🤌 Gourmet</b> origin.' },
-    { id: 'pet_first',           emoji: '🐾', desc: 'Got your first pet!', hint: 'Befriend a furry being.', unlock: 'Unlocked the <b>🦧 Furry</b> origin.' },
+    { id: 'pet_first',           emoji: '🐾', desc: 'Got your first furry companion!', hint: 'Befriend a cute furry being.', unlock: 'Unlocked the <b>🦧 Furry</b> origin.' },
+    { id: 'pet_parrot',          emoji: '🦜', desc: 'Acquired a talking companion!', hint: 'Pet a lone bird while saling, matey.', unlock: 'Unlocked the <b>🏴‍☠️ Pirate</b> origin.' },
     { id: 'recruit_first',       emoji: '🤝', desc: 'Recruited your first ally!', hint: 'Talk someone to join your side.', unlock: 'Unlocked the <b>💬 Preacher</b> origin.' },
     { id: 'full_party',          emoji: '👥', desc: 'Got a party of three companions!', hint: 'The more, the merrier, always.', unlock: 'Unlocked the <b>💍 Engraved Ring</b> item.' },
 
@@ -92,6 +93,7 @@ var AchievementManager = (function () {
     totalKnockouts:      0,
     calmedEnemy:         false,
     gotPet:              false,
+    pettedParrot:        false,
     gotRecruit:          false,
     completedQuest:      false,
     spokeBoss:           false,
@@ -323,6 +325,10 @@ var AchievementManager = (function () {
 
       case 'get_pet':
         if (!_stats.gotPet) { _stats.gotPet = true; _save(); _unlock('pet_first'); }
+        break;
+      
+      case 'pet_parrot':
+        if (!_stats.pettedParrot) { _stats.pettedParrot = true; _save(); _unlock('pet_parrot'); }
         break;
 
       case 'get_recruit':

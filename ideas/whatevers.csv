@@ -12,7 +12,6 @@
 //Achievement-gated / special
 👾;Invader;0;0;0;0;0;0;0;???.<br><i>Simply cannot leave any corner unexplored.</i>;all_achievements
 ⏳;Eternal;0;0;0;0;0;0;0;The action bar prompt moves 20% slower.<br><i>???</i>;hardcore_win
-🇨🇿;Czech;0;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b> with no downside.<br><i>Drinks beer, wears sandals with socks.</i>;none
 
 //Mana-unlockable origins
 🪬;Lich;-2;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.<br><i>Traded the life essence for pure power.</i>;mana_first

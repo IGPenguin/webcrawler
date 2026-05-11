@@ -927,8 +927,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             if ((enemyAtk+enemyAtkBonus)<=0) {
+              if (_skillOK === true) {
+                if (enemyStaminaChangeMessage(-2,"Enjoyed a playful moment -1 🟢","They needed to catch a breath -1 🟢")) {
+              }
+            } else {
               enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
-              displayEnemyEffect("☝️");
+            }
             } else {
               enemyStaminaChangeMessage(-1,"Blocked a regular attack -1 🟢","Blocked just for the sake of it -1 🟢");
               displayPlayerEffect("🔰");
@@ -1712,6 +1716,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               enemyJoinedParty();
+              if (enemyEmoji=="🦜") 
               break;
             }
 

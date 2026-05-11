@@ -140,6 +140,7 @@ function enemyJoinedParty(){
   enemyMsg=enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold)
   playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,0,enemyMsg); //Cannot get health/sta/int/def from a pet
   AchievementManager.check('get_pet');
+  AchievementManager.check('pet_parrot');
   if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
 }
 

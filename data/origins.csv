@@ -33,6 +33,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 👨🏻‍🍳;Chef;0;0;0;0;0;0;0;Starts with <b>🧂 Salt Shaker</b>.<br><i>Always uses just enough spices.;salt_food_first
 🦧;Furry;0;0;0;0;0;0;0;Critters do not mind your presence.<br><i>Lives a happy and peaceful life.;pet_first
 🎣;Angler;0;0;0;0;0;0;0;Start with two random <b>🪱 Baits</b>.<br><i>Always ready to do some fishing.;fish_bait_first
+🏴‍☠️;Pirate;0;0;0;0;0;0;0;Start with one extra <b>🪙 Drachma</b>.<br><i>That coin is totally not looted.</i>;pet_parrot
 
 //Outstanding
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br>Hardened long before anything fought back.;none
@@ -72,7 +73,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Intellect
 🛖;Hermit;0;0;-2;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, lose <b>-2 🟢 Energy</b>.<br><i>Good intentions, uncertain chances.;none
-🧠;Elder;-1;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b>, lose <b>-1 💔 Health</b>.<br><i>Time changes vitality to wisdom.;none
+🧠;Elder;-2;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, lose <b>-2 💔 Health</b>.<br><i>Time changes vitality to wisdom.;none
+🇨🇿;Czech;-1;0;0;0;2;0;0;Gain <b>+2 🧠 Cunning</b>, lose <b>-1 💔 Health</b>.<br><i>Drinks beer, wears sandals with socks.</i>;none
 🤓;Nerd;0;0;-1;0;2;0;0;Gain <b>+2 🧠 Intellect</b>, lose <b>-1 🟢 Energy</b>.<br><i>Big brain but bad reflexes.;none
 🎭;Plotter;0;0;0;-2;2;0;0;Gain <b>+2 🧠 Intellect</b>, lose <b>-2 🍀 Luck</b>.<br><i>Clever enough to lose on purpose.;none
 👁️‍🗨️;Seer;0;0;0;-1;1;0;0;Gain <b>+1 🧠 Intellect</b>, lose <b>-1 🍀 Luck</b>.<br><i>Anticipates the worst, but ready for it.;none

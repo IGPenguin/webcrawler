@@ -155,9 +155,12 @@ var Menu = (function () {
       playerEmoji = origin.emoji;
       playerOriginName = origin.originName || '';
       playerDestined = true;
-
+      
+      // Starting gifts
       if (origin.emoji.includes("🎣")) playerLootString += chooseFrom(validBaits) + chooseFrom(validBaits); //Angler starts with two baits
       if (origin.emoji.includes("🤌")) playerLootString += "🧂"; //Gourmet starts with a Salt Shaker
+      if (origin.emoji.includes("🏴‍☠️")) savedCoins++ //Pirate gets extra coin (one-time use)
+
       AchievementManager.check('destiny');
     }
     scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
