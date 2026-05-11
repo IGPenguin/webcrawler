@@ -145,6 +145,9 @@ layout: default
              paint-order: stroke fill;
              margin:8px 0 8px 0;
              text-align:center;">✨ New Game</h2>
+      <h5 id="menu_origin_subtitle" style="margin:0 0 12px 0;
+       font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">
+        This is a subtitle placeholder.</h5>
       <div style="flex:1;
                   min-height:0;
                   max-height:326px;

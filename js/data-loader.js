@@ -105,20 +105,21 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
   if (initNextEncounter) {
     loadEncounter(1 + initialEncounterOverride + encounterIndex); // 0 is the death screen
 
-    if (savedCoins != NaN && savedCoins > 0) { // Returning player — skip tutorial, show shop
-      //logAction("♻️ ▸ ❤️ This is <b>not your first time.</b>");
+    if (savedCoins != NaN && savedCoins > 0) { // Returning player (second boss killed) — skip tutorial, show shop
+      logAction("💤&nbsp;▸&nbsp;💭 This dream again, it never ends...<br><br>");
       playerSta = playerStaMax;
       loadEncounter(5);
       drachmaShop[0] = "area:" + "Fading Wildlands";
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
       pushEncounter(drachmaShop);
     }
-    else if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player — skip tutorial, no shop yet
-      loadEncounter(5);
-      enemyName  = "Familiar Moment";
-      enemyEmoji = "🤔";
+    else if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player (first boss killed) — skip tutorial, no shop yet
+      logAction("💤&nbsp;▸&nbsp;💭 This dream feels strangely familiar.<br><br>");
       playerSta  = playerStaMax;
-      //logAction("♻️ ▸ ❤️ This is <b>not your first time.</b>");
+      loadEncounter(5);
+      linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
+    } else { //Playing for the first time ever
+      logAction("💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br><br>");
     }
 
     redraw();

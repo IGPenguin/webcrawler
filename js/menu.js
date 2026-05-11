@@ -62,6 +62,7 @@ var Menu = (function () {
 
   function _renderMain(skipFade) {
     var hasSave = SaveManager.hasContinue();
+    savedCoins = parseInt(localStorage.getItem('coins'));
     document.getElementById('menu_continue').style.display = hasSave ? '' : 'none';
 
     var preview = document.getElementById('menu_continue_preview');
@@ -135,7 +136,6 @@ var Menu = (function () {
 
   function _doNewGame(origin) {
     try { localStorage.removeItem('originRoll'); } catch(e) {}
-    savedCoins = parseInt(localStorage.getItem('coins'));
     renewPlayer(); // sets spentCoins=0, availableCoins=savedCoins
     if (origin) {
       var hp  = origin.hp  || 0;
@@ -256,6 +256,12 @@ var Menu = (function () {
 
     // Sort best net stat first — roll is still random, only display order is sorted
     origins = origins.slice().sort(function(a, b) { return _originNet(b) - _originNet(a); });
+
+    var subtitle = document.getElementById('menu_origin_subtitle');
+    
+    var availableCoins=parseInt(savedCoins);
+    subtitle.innerHTML="These starting Origins are available:"
+    if (availableCoins>0) subtitle.innerHTML="Pick a starting Origin, you have " + availableCoins + " <b>🪙 Drachmae</b>."
 
     var list = document.getElementById('menu_origin_list');
     list.innerHTML = '';

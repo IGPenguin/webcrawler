@@ -90,7 +90,7 @@ var baitQuality = {
 
 //Adventure logging
 var actionString; //Initial action log below
-var actionLog = "💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br>";
+var actionLog = "";
 var adventureLog = actionLog;
 var adventureEncounterCount = 1;
 var encounterCount = 0;      // total encounters this run; incremented by nextEncounter()
