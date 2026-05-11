@@ -86,7 +86,7 @@ layout: default
   <!-- Shared logo — one element, animated on every menu show -->
   <!-- height:0 + overflow:visible mirrors the original h2 line-height:1px trick;
        SVG margin-top:-50px pulls the text up to the same visual position -->
-  <div id="id_menu_logo" style="height:0; overflow:visible; margin-top:40px; margin-bottom:0px; text-align:center; position:relative; z-index:1;">
+  <div id="id_menu_logo" style="height:0; overflow:visible; margin-top:40px; margin-bottom:-5px; text-align:center; position:relative; z-index:1;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 150" width="340" style="overflow:visible; display:block; margin:0 auto; margin-top:-50px;">
       <!-- Smooth drops (shown in Native/Gelasio mode) -->
       <g class="drops-smooth">
