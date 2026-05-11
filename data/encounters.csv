@@ -1221,6 +1221,7 @@ Shrouded Necropolis;💀;Bone Sentinel;Standard;5;2;2;0;-1;0;0;Restless Bones;Si
 Shrouded Necropolis;💀;Skeleton Mage;Standard;4;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;The spell unraveled you completely.;none
 
 Shrouded Necropolis;🎭;Laughing Mask;Reflective;4;4;2;0;-1;0;0;Eerie Presence;Eyes seem to follow your every move.<br>;Died by your own hand.;none
+Shrouded Necropolis;🌚;Moon Wraith;Reflective;3;0;3;0;0;3;0;Night Specter;Absorbs light, returns only pain.<br>;Scorched with endless stare.;none
 
 Shrouded Necropolis;💀;Crypt Guardian;Tough;4;2;3;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;Silenced by an undead hand.;none
 Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;3;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.;none
@@ -1229,11 +1230,13 @@ Shrouded Necropolis;🪲;Hardshell Beetle;Tough;3;2;2;0;1;0;2;Shiny Carapace;Ref
 Shrouded Necropolis;🐍;Venomous Serpent;Toxic;4;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.;none
 Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;3;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
 
+Shrouded Necropolis;🦎;Ashback Salamander;Hot;4;3;2;0;3;0;0;Cinder Crawler;Leaves a scorched trail behind.<br>;Burned by intense heat.;none
+Shrouded Necropolis;🦂;Grave Scorpion;Stingy;4;3;3;0;0;0;0;Tomb Hunter;Nests beneath the gravestones.<br>;The sting found your weakspot.;none
 Shrouded Necropolis;🗡️;Possesed Dagger;Stingy;3;3;1;0;-1;0;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat;none
 
-Shrouded Necropolis;🧙🏻‍♂️;Necromancer Acolyte;Recruit;3;1;0;0;3;1;0;Outcast;Your presence disturbed their ritual.<br><i>"Never should have come here!"</i>;;none
-Shrouded Necropolis;🧙‍♂️;Fallen Acolyte;Recruit;3;1;0;0;3;1;0;Forsaken;Eyes glow with an unnatural light.<br>;;none
+Shrouded Necropolis;🧙‍♂️;Fallen Acolyte;Recruit;3;1;1;0;3;3;0;Forsaken Outcast;Your presence disturbed their ritual.<br>;Sacrificed to the ancient gods;none
 
+Shrouded Necropolis;🦣;Bone Mammoth;Heavy;6;1;4;0;0;0;0;Ancient Horror;The bones shouldn't hold together.<br>;Trampled by hefty bones.;none
 Shrouded Necropolis;🐀;Gigantic Vermin;Heavy;5;1;3;0;-1;0;0;Overgrown Vermin;Has a maw full of sharp teeth.<br>;Teeth found everything, eventually.;none
 Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;0;Cursed Being;The silhouette changed to a human.<br>;;none
 
@@ -1243,9 +1246,10 @@ Shrouded Necropolis;🦇;Thirsty Bat;Swift;4;2;2;0;5;0;0;Flying Mammal;Its screa
 Shrouded Necropolis;🦌;Stag Wraith;Swift;4;3;1;0;4;1;0;Ethereal Beast;Antlers glow with spectral fire.<br>;Spectral antlers passed through you.;none
 Shrouded Necropolis;🐺;Ghastly Wolf;Swift;4;4;1;0;10;3;0;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!;none
 
-Shrouded Necropolis;🐼;Zombie Bear;Undead;5;3;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>Better keep distance.;Torn apart by rotting claws.;none
+Shrouded Necropolis;🐼;Zombie Bear;Undead;5;3;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>;Torn apart by rotting claws.;none
 Shrouded Necropolis;🧟;Ghoul Brute;Undead;2;3;1;0;-1;0;0;Cursed Creature;Reeking of death and decay.<br>;Ripped limb from limb.;none
 Shrouded Necropolis;🧟;Tainted Zombie;Undead;4;1;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>;Rotten to the bones;none
+Shrouded Necropolis;🧟‍♂️;Barbed Penitent;Undead;4;2;3;0;0;0;0;Cursed Dead;Staggers forward wrapped in rusted wire.<br>;Devoured by hungry undead.;none
 Shrouded Necropolis;🐦‍⬛;Undead Crow;Undead;3;1;3;0;-1;0;0;Wild Animal;Looks for a long lost mate.<br>;Got both eyes pecked out.;none
 Shrouded Necropolis;🪰;Necrotic Fly;Undead;2;2;3;0;-1;0;0;Pestilence;Buzzing wings promise disease.<br>;Suffered a painful death.;none
 
@@ -1259,6 +1263,7 @@ Shrouded Necropolis;🧙🏻‍♂️;Vengeful Lich;Demon;3;1;1;0;3;2;0;Master N
 Shrouded Necropolis;👺;Haunting Spirit;Demon;3;1;1;0;4;3;0;Eerie Being;A spirit appeared out of nowhere.<br>A little bit scary in this darkness.;Your mind caved before your body.;none
 Shrouded Necropolis;👺;Dread Spirit;Demon;3;2;2;0;4;0;0;Eerie Being;A form takes shape in the dark.<br>;The dread became something physical.;none
 
+Shrouded Necropolis;🫥;Hollow Presence;Spirit;3;0;3;0;0;3;0;Formless Shade;No shape to strike towards.<br>;Destroyed by sinister energy.;none
 Shrouded Necropolis;👻;Pale Wisp;Spirit;1;0;2;0;3;0;0;Eerie Being;Dances on unseen breezes.<br>;Something cold passed through you.;none
 Shrouded Necropolis;🦋;Eclipse Moth;Spirit;1;0;1;0;0;1;0;Eerie Being;Wings glow under the dark.<br>;Dust turned to whispers.;none
 Shrouded Necropolis;👁️;Judging Eye;Spirit;2;0;0;0;5;0;0;All-Seeing;Locks you in a gaze of eternity.<br>;Tore your secrets apart.;none
