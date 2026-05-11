@@ -423,7 +423,7 @@ layout: default
 
 <h4 id = "id_desc" style="float:left;
   text-align:left;
-  padding-top:6px;
+  padding-top:2px;
   padding-left:8px;
   padding-right:4px;
   padding-bottom:2px;
