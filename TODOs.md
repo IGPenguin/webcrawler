@@ -11,8 +11,9 @@
   - Summon fishing boss (curse), kill it to get drachma (then do it again and see if it errors out, also do it in another sesh to see if another drachma pops)
 - fade wit text when fining invitation/letter - does it work??
 - ...
-- ME: Tweak ui - values reposition Rankings and Chronicles ui (list+detail)
-- ME: complete the rest of the missing achievement unlocks
+- ME: Tweak UI: Rankings and Chronicles (list+detail)
+- ME: Complete the rest of the missing achievement unlocks
+- ME: Clean ideas folder
 
 ---
 
@@ -26,10 +27,21 @@
 - ???
 
 # Hades
-- easy interactivity expand?
-  - or the "Spells" feature described in TODOs.md?
-  - or something else to break the stereotypical approach to how each run looks like?
-- more unlockables/everlasting progression
+- invaders from highscore, comes small chamce to spawn heavy "undead" enemy based on the highscore characters - in "gen hard slots"
+ - name should match
+ - description should be: Reanimated dead body from a different world.<br>Bears tattoo: [nickname].
+ - normalize stats if too craz - limit to top stats per area for a boss
+ - trunctate nickname if too long
+ - show red background same as boss, shown type: 💔 Rival (or so, hint eternal player)
+ - do NOT spawn your own dead bodies - filter by nickname
+ - give double xp for kill
+ - special game end case if killed 💔 Slayed by rival (or so)
+ - special log on spot
+ - extrs fade on spot
+ - achievement for spot first time
+ - achiev for kill
+ - achiev for 10 kills
+ - 100% drops random item from their loot pool (filter by emoji from encounters.csv)
 
 # Ideas zone
 
