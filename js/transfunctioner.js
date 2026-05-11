@@ -13,7 +13,7 @@ function _applyCheatName(name) {
   try { var nameNumber = parseInt(name.match(/\d+/)[0]); } catch(e) { var nameNumber = NaN; }
   var cheatAmount = 3;
 
-  if (name.includes("Cheater")) {
+  if (name.includes("Lil Cheater")) {
     if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
     playerHpMax = cheatAmount; playerAtk = cheatAmount; playerStaMax = cheatAmount;
     playerMgkMax = cheatAmount; playerLck = cheatAmount; playerInt = cheatAmount;
@@ -21,38 +21,51 @@ function _applyCheatName(name) {
     logCheatUse("Changed stats ➔  " + cheatAmount);
     return true;
   }
+
   if (name.includes("Mucho Dinero")) {
     savedCoins = 9; localStorage.setItem('coins', savedCoins);
     logCheatUse("Added Drachmae: +9 🪙");
     return true;
   }
+
   if (name.includes("Poco Dinero")) {
     savedCoins = 3; localStorage.setItem('coins', savedCoins);
     logCheatUse("Added Drachmae: +3 🪙");
     return true;
   }
+
   if (name.includes("Bay Goblin")) {
     var baits=chooseFrom(validBaits) + chooseFrom(validBaits) + chooseFrom(validBaits)
     playerLootString += baits;
     logCheatUse("Get fishing baits "+baits);
     return true;
   }
+
   if (name.includes("Origin Genesis")) {
     AchievementManager.check('boss_kill');
     logCheatUse("Force-unlocked Origins.");
     return true;
   }
+
   if (name.includes("Not Fragile")) {
     try { localStorage.setItem('sd_picker_override', 'true'); } catch(e) {}
     AchievementManager.check('game_win');
     logCheatUse("Force-unlocked Hardcore.");
     return true;
   }
+
   if (name.includes("Bonafide Hustler")) {
     var XPforLevel=playerXPThreshold;
     playerGainXP(1,parseInt(XPforLevel),"");
     logCheatUse("Added "+XPforLevel+" XP for level up.");
     return true;
   }
+
+  if (name.includes("Total Recall")) {
+    AchievementManager.unlockAll();
+    logCheatUse("Unlocked ALL memories!");
+    return true;
+  }
+
   return false;
 }

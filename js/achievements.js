@@ -3,10 +3,10 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
-    { id: 'all_achievements',    emoji: '🏆', desc: "Completed every single memory available!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon." },
+    { id: 'all_achievements',    emoji: '🏆', desc: "Completed ALL available memories!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon™." },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first everlasting Drachma!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🧿 Wizard</b> and <b>🩸 Warlock</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
@@ -72,9 +72,9 @@ var AchievementManager = (function () {
     { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
     { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
     { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!', hint: "Giant slayer, born in struggle.", unlock: 'Unlocked the <b>🎖️ Hero</b> origin.' },
-    { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50 times!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
-    { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something without bait 50 times!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b> item.' },
-    { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the gamble 10 times!', hint: "Become a seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
+    { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
+    { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something with no bait 50x!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b>.' },
+    { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the shady gamble 10 times!', hint: "Become a well seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
 
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
   ];
@@ -510,6 +510,12 @@ var AchievementManager = (function () {
     _save();
   }
 
+  function unlockAll() {
+  ACHIEVEMENTS.forEach(function(a) {
+    _unlock(a.id);
+  });
+}
+
   _load();
 
   return {
@@ -521,7 +527,10 @@ var AchievementManager = (function () {
     isUnlocked:          isUnlocked,
     getUnlockTime:       getUnlockTime,
     getAll:              getAll,
-    clearAll:            clearAll
+    clearAll:            clearAll,
+
+    //cheat
+    unlockAll: unlockAll
   };
 })();
 
