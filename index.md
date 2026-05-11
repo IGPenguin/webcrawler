@@ -28,12 +28,13 @@ layout: default
     });
   }
 
-  // Apply initial background based on vector preference
+  // Apply initial background based on vector preference and preload others
+  var _preloadedImages = [];
   (function() {
     var isVector = (typeof VECTOR_BACKGROUNDS_ENABLED !== 'undefined') ? VECTOR_BACKGROUNDS_ENABLED : false;
     var ext = isVector ? '.svg' : '.png';
     var folder = isVector ? 'assets/svg/' : 'assets/img/';
-    var fileUrl = 'url("' + folder + 'Depths' + ext + '")';
+    var fileUrl = 'url(' + folder + 'Depths' + ext + ')';
 
     var applyBg = function() {
       var bodyEl = document.getElementsByTagName('body')[0];
@@ -47,6 +48,14 @@ layout: default
       }
     };
     applyBg();
+
+    // Preload all backgrounds to ensure offline availability
+    var names = ['Auxiliary','Depths','Eternal','Fading','Forsaken','Freezing','Mournful','River','Shrouded','Twisted'];
+    names.forEach(function(n) {
+      var img = new Image();
+      img.src = folder + n + ext;
+      _preloadedImages.push(img);
+    });
   })();
 </script>
 <script src="js/logging.js"></script>

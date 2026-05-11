@@ -508,7 +508,7 @@ function setBackground(areaName="Depths"){
   var isVector = (typeof VECTOR_BACKGROUNDS_ENABLED !== 'undefined') ? VECTOR_BACKGROUNDS_ENABLED : false;
   var ext = isVector ? '.svg' : '.png';
   var folder = isVector ? 'assets/svg/' : 'assets/img/';
-  var fileUrl = 'url("' + folder + prefix + ext + '")';
+  var fileUrl = 'url(' + folder + prefix + ext + ')';
 
   var bodyEl = document.getElementsByTagName('body')[0];
   if (bodyEl) {
@@ -526,14 +526,6 @@ function setBackground(areaName="Depths"){
     }
   }
 }
-
-(function preloadBackgrounds(){
-  var names = ['Auxiliary','Depths','Eternal','Fading','Forsaken','Freezing','Mournful','River','Shrouded','Twisted'];
-  var isVector = (typeof VECTOR_BACKGROUNDS_ENABLED !== 'undefined') ? VECTOR_BACKGROUNDS_ENABLED : false;
-  var ext = isVector ? '.svg' : '.png';
-  var folder = isVector ? 'assets/svg/' : 'assets/img/';
-  names.forEach(function(n){ new Image().src = folder + n + ext; });
-})();
 
 //Mobile specific - vibrate
 function vibrateButtonPress(){
