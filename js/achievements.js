@@ -5,7 +5,7 @@ var AchievementManager = (function () {
   var ACHIEVEMENTS = [
     { id: 'all_achievements',    emoji: '🏆', desc: "Completed every single memory available!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon." },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
-    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
+    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first everlasting Drachma!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🧿 Wizard</b> and <b>🩸 Warlock</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
@@ -26,9 +26,9 @@ var AchievementManager = (function () {
     { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?", unlock: 'Unlocked the <b>🎣 Angler</b> origin.' },
     { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
 
-    { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key for the first time!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
-    { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open for the first time!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
-    { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with magic for the first time!', hint: 'Magic opens more than minds.', unlock: '' },
+    { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
+    { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open with an attack!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
+    { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with a spell!', hint: 'Magic opens more than minds.', unlock: '' },
     { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: '' },
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: '' },

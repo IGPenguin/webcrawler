@@ -481,10 +481,10 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
         var hintLine = achievement.hint ? '<h5 style="margin:2px 0 4px 0; opacity:0.6; font-size:14px; text-align:left; font-style:italic;">' + achievement.hint + '</h5>' : '';
         textEl.innerHTML = '<h5 style="margin:-2px 0 0 0; font-size:16px; line-height:1.2; font-style:normal; font-weight:400; color:#ffffff; text-align:left;">' + achievement.unlock + '</h5>' + hintLine;
         innerEl.style.opacity = '1';
-        setTimeout(_fadeOutToast, 3000);
+        setTimeout(_fadeOutToast, 4000);
       }, 400);
     }, 3000);
   } else {
-    setTimeout(_fadeOutToast, 4000);
+    setTimeout(_fadeOutToast, 5000);
   }
 }
