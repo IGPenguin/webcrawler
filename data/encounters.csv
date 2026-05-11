@@ -1089,20 +1089,25 @@ River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows t
 River of Sorrows;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 River of Sorrows;❤️‍🩹;Heart Band-Aid;Item;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you, made you stronger;none
 River of Sorrows;🔱;Titanslayer Trident;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;none
-River of Sorrows;⭐️;Fallen Star;Item;0;0;0;2;0;1;0;<b>Celestial Artifact</b>;Radiating with power, warm to the touch.<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🍀 Luck</b>.;The sky has embraced you.;none
+River of Sorrows;⭐️;Fallen Star;Item;0;0;0;1;0;1;0;<b>Celestial Artifact</b>;Radiating with power, warm to the touch.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;The sky has embraced you.;none
 
 River of Sorrows;🪝;Captain's Hook;Item-Weapon;0;2;0;-1;0;0;0;Cursed Tool;Pulled from the depths of torment.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;;none
 River of Sorrows;🪝;Rusty Hook;Item-Weapon;0;1;0;0;0;0;0;Weathered Tool;Hangs uselessly from the eaves.<br>Provides <b>+1 ⚔️ Damage</b>.;Could still make a bloody mess.;none
+River of Sorrows;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;Felt a surge of power;none
+River of Sorrows;💧;Frozen Teardrop;Item;0;0;0;0;-2;1;0;Magical Pin;Tangible proof of previous sins.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Charisma</b>.;Felt a bitter memory;none
+River of Sorrows;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Manuscript;Secrets of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;You will never be the same.;none
+River of Sorrows;🩴;Rubber Sliders;Item-Legs;0;0;1;1;0;0;0;Cheap Footwear;Surprisingly good for navigating slippery banks.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Squelch, squelch.;none
 River of Sorrows;🕶;Cool Sunglasses;Item-Head;0;0;0;2;0;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;You feel a lot cooler.;none
-River of Sorrows;👙;Sexy Bikini;Item-Chest;0;0;0;0;2;0;0;Swimming Equipment;Draws special attention to your (male) body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!;none
+River of Sorrows;👙;Sexy Bikini;Item-Chest;0;0;2;0;-3;0;0;Swimming Equipment;Improves movement, draws attention a lot.<br>Provides <b>+2 🟢 Energy</b> for <b>-3 🧠 Charisma</b>.;All eyes are on you!;none
 River of Sorrows;👓;Reading Glasses;Item-Head;0;0;0;0;2;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.;none
 River of Sorrows;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
 River of Sorrows;🪢;Twisted Knot;Item;0;0;1;0;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the wild.;none
+
 River of Sorrows;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides an insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.;none
 River of Sorrows;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!;none
-River of Sorrows;👞;Wet Shoe;Item-Legs;0;0;0;0;0;0;0;Trash;Thoroughly wet leather shoe, probably useless.<br>;Well, it has no effect.;none
 River of Sorrows;🗝️;Rusty Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
-River of Sorrows;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Writing;Learn the art of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Pocketed a piece of trash.;none
+
+River of Sorrows;👞;Wet Shoe;Item-Legs;0;0;0;0;0;0;0;Trash;Thoroughly wet leather shoe, probably useless.<br>;Well, it has no effect.;none
 River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.;none
 
 River of Sorrows;💌;Soaked Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
@@ -1345,7 +1350,7 @@ Fishing;🪝;Lucky Hook;Item-Weapon;0;1;0;1;0;0;0;Fishing Gear;Increases (not on
 Fishing;✂️;Sharp Scissors;Item-Weapon;0;1;0;0;0;0;0;Makeshift Weapon;One can do a bloody mess with these.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained a violent weapon.;none
 Fishing;🕶;Cool Sunglasses;Item-Head;0;0;0;0;2;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🧠 Charisma</b>.;Feels a lot cooler.;none
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;0;Rare Souvenir;The previous inhabitant has moved away.<br>Provides <b>+2 🧠 Charisma</b>.;Picked up a shiny shell.;none
-Fishing;👙;Sexy Bikini;Item-Chest;0;0;0;0;2;0;0;Swimming Equipment;Draws special attention to your (male) body.<br>Provides <b>+2 🧠 Charisma</b>.;All eyes are on you!;none
+Fishing;👙;Sexy Bikini;Item-Chest;0;0;2;0;-3;0;0;Swimming Equipment;Improves movement, draws attention a lot.<br>Provides <b>+2 🟢 Energy</b> for <b>-3 🧠 Charisma</b>.;All eyes are on you!;none
 Fishing;👓;Reading Glasses;Item-Head;0;0;0;0;2;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.;none
 Fishing;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
 Fishing;💍;Engagement Ring;Item;1;0;0;0;1;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Felt a subtle surge in your chest.;none
@@ -1358,16 +1363,18 @@ Fishing;💍;King's Ring;Item;0;1;0;0;0;0;0;Accessory;Probably worn by a true le
 Fishing;🩶;Heart-shaped Pebble;Item;1;0;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.;none
 Fishing;🐚;Conch Shell;Item;0;0;1;0;0;0;0;Sea's Voice;Still carries an audible echo.<br>Provides <b>+1 🧠 Intellect</b>.;Listened to the song of the sea.;none
 Fishing;🪢;Twisted Knot;Item;0;0;1;0;0;0;0;Swiftness Trinket;Specially crafted for survival.<br>Provides <b>+1 🟢 Energy</b>.;Gained the power of the sea.;none
-Fishing;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;;none
+Fishing;🩴;Rubber Sliders;Item-Legs;0;0;1;1;0;0;0;Cheap Footwear;Surprisingly good for navigating slippery banks.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Squelch, squelch.;none
+Fishing;🎖️;Starlight Amulet;Item;0;0;0;0;0;1;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+1 🔵 Mana</b>.;Felt a surge of power;none
 Fishing;💧;Frozen Teardrop;Item;0;0;0;0;-2;1;0;Magical Pin;Tangible proof of previous sins.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Charisma</b>.;Felt a bitter memory;none
-Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner" ...kinda sad.<br>;Almost got the first place...;none
 
 Fishing;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Embraced the new knowledge.;none
 Fishing;📔;Waterlogged Diary;Item;0;0;0;0;1;0;0;Knowledge Notes;Provides insight and <b>+1 🧠 Intellect</b>.<br>n/a;Felt like it was written for you.;none
 
 Fishing;🧢;Sailor's Cap;Item-Head;0;0;0;2;-1;0;0;Headgear;Smells of moist seaweed and old tales.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Charisma</b>.;Set it snug on your head.;none
 Fishing;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the bad guys!;none
-Fishing;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Writing;Learn the art of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Joined the dark side!;none
+Fishing;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Manuscript;Secrets of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;You will never be the same.;none
+
+Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner" ...kinda sad.<br>;Almost got the first place...;none
 Fishing;🫙;Cracked Jar;Item;0;0;0;-1;0;0;0;Cursed Container;The smell coming out suggests a mistake.<br>;Immediately regretted opening it.;none
 Fishing;🪞;Splinter Mirror;Item;0;0;0;-1;0;0;0;Bad Omen;Seven years is a modest estimate.<br>;Cracks spread across your fortune.;none
 Fishing;⚱️;Burial Urn;Item;0;0;0;-3;0;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.;none
