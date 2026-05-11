@@ -137,9 +137,16 @@ function adjustEncounterButtons(){
   if (isEndingState) { _setEndingButtons(); return; }
   resetEncounterButtons();
   var originalType=enemyType;
+
+  //Dead/asleep override (LLM limit gone, hack it is!)
+  if (corpseState!=""){ 
+    enemyType="Prop"
+  }
+
   if (enemyType.includes("Boss")) {
     enemyType=enemyType.replace("Boss-","");
   }
+
   switch (enemyType){
     case "Upgrade":
       setButton('button_attack',"❤️ Health",colorPink);

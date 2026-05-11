@@ -454,7 +454,7 @@ function calcActionBarConfig(button, adjustment) {
 
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
   if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
-    var grabW = Math.max(4, Math.min(30, Math.round((18 + pAtk * 3) / eSta)));
+    var grabW = Math.max(4, Math.min(30, Math.round((18 + pSta * 3) / eSta)));
     var grabMin = Math.max(3, 50 - Math.round(grabW / 2));
     var grabMax = Math.min(97, 50 + Math.round(grabW / 2));
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: grabMin, successMax: grabMax };

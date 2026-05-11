@@ -25,6 +25,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                def: playerDef, level: playerLevel, xp: playerXP, karma: playerKarma}
     });
 
+    //Dead/asleep override (LLM limit gone, hack it is!)
+    var originalType=enemyType;
+    if (corpseState!=""){ 
+      enemyType="Prop"
+    }
+
     //Override boss type for action
     if (enemyType.includes("Boss")){
       enemyType=enemyType.replaceAll("Boss-","");
@@ -1765,6 +1771,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (_skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
+                enemyAttackOrRest("They recovered some energy.")
                 break;
               }
               enemyKicked(_crit === 'success');
@@ -1784,6 +1791,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta <= 0 && _skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
+                enemyAttackOrRest("They recovered some energy.")
                 break;
               }
               enemyKicked(_crit === 'success');
@@ -1793,10 +1801,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta > 0) playerSta--;
               if (_crit === 'success') {
                 enemyStaLost = enemySta; // Fully stagger — drain all remaining energy
-                logPlayerAction(actionString, "Staggered them, draining their energy -1 🟢");
+                logPlayerAction(actionString, "Thrown them off balance -1 🟢");
               } else {
                 enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
-                logPlayerAction(actionString, "Snatched them, they slipped away -1 🟢");
+                logPlayerAction(actionString, "They managed to slip away -1 🟢");
               }
               displayEnemyCannotEffect();
               break;
@@ -1816,6 +1824,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta <= 0 && _skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
+                enemyAttackOrRest("They recovered some energy.")
                 break;
               }
               enemyKicked(_crit === 'success');
@@ -1870,6 +1879,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta <= 0 && _skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
+                enemyAttackOrRest("They recovered some energy.")
                 break;
               }
               enemyKicked(_crit === 'success');
@@ -2285,6 +2295,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (_skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
+                enemyAttackOrRest("They recovered some energy.")
                 break;
               }
               enemyKicked(_crit === 'success');
@@ -2941,7 +2952,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       loadEncounter(lootEncounterIndex,linesLoot);
       encounterIndex=lastEncounterIndex;
     }
-    if (enemyBossType!="" && corpseState==="") enemyType=enemyBossType;
+    if (corpseState!="") enemyType=originalType;
+    if (enemyBossType!="") enemyType=enemyBossType;
     if (_wasStillFishing && button!="button_cast") {
       if (enemyType.includes('Boss')) AchievementManager.check('fish_boss');
       else if (enemyTeam && enemyTeam.includes('Artifact')) AchievementManager.check('fish_legendary');
