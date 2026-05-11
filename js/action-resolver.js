@@ -2978,7 +2978,7 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       if (item=="Artifact") AchievementManager.check('buy_artifact');
       else AchievementManager.check('buy_item');
       displayPlayerGainedEffect();
-      logPlayerAction(actionString,"Splendid choice, this ought to help");
+      logPlayerAction(actionString,"Splendid! This ought to help");
       drachmaShop[0]="area:"+"Fading Wildlands";
       var genItem = _forcedTier ? generateRandomItemByTier(_forcedTier) : generateRandomItem(item=="Artifact" ? "Artifact" : "");
       genItem[0]="area:"+areaName;

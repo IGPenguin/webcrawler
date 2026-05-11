@@ -206,14 +206,15 @@ function transitionToCorpse(state) {
   enemyName  = baseName + (state === "killed" ? " (Dead)" : " (Asleep)");
   stopEnemyEmojiPulse();
   setPersistentEnemyEffect(state === "killed" ? "☠️" : "💤", state !== "killed");
-  enemyType  = "Prop";
+  //enemyType  = "Prop";
 
-  enemyAtk=0; enemyAtkBonus=0;
-  enemySta=0; enemyStaLost=0;
+  //enemyAtk=0; enemyAtkBonus=0;
+  //enemySta=0; enemyStaLost=0;
+  //enemyDef=0;
+  //totalBonus=0; totalMalus=0;
   enemyMgk=0; enemyMgkLost=0;
-  enemyDef=0;
-  totalBonus=0; totalMalus=0;
-
+  enemyStaLost=enemySta;
+  
   var _lootType = null;
   if (!enemyBossType.includes('Boss') && areaName !== "Depths of Slumber") {
     if (procAbilityChance("", GAME_CONFIG.killItemDropChance+playerLck)) {
