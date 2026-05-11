@@ -37,15 +37,21 @@ function _applyCheatName(name) {
     logCheatUse("Get fishing baits "+baits);
     return true;
   }
-  if (name.includes("Genesis")) {
+  if (name.includes("Origin Genesis")) {
     AchievementManager.check('boss_kill');
     logCheatUse("Force-unlocked Origins.");
     return true;
   }
-  if (name.includes("Fragile")) {
+  if (name.includes("Not Fragile")) {
     try { localStorage.setItem('sd_picker_override', 'true'); } catch(e) {}
     AchievementManager.check('game_win');
     logCheatUse("Force-unlocked Hardcore.");
+    return true;
+  }
+  if (name.includes("Bonafide Hustler")) {
+    var XPforLevel=playerXPThreshold;
+    playerGainXP(1,parseInt(XPforLevel),"");
+    logCheatUse("Added "+XPforLevel+" XP for level up.");
     return true;
   }
   return false;
