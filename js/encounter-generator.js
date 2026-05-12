@@ -1,3 +1,10 @@
+var easyEnemies=["Standard","Stingy"];
+var mediumEnemies=["Standard","Stingy","Hot","Toxic"];
+var hardEnemies=["Toxic","Heavy","Swift","Reflective","Demon","Undead","Spirit","Tough"];
+var allEnemies=["Small","Standard","Stingy","Hot","Toxic","Heavy","Swift","Reflective","Demon","Undead","Spirit","Tough","Pet","Recruit"];
+var allBosses=["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet","Boss-Recruit"]
+var allTraps=["Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle","Curse"];
+
 function generateNextEncounters(generatorID=0, logCall=true){
   if (logCall) _generationBuffer = []; // Reset per top-level generator call
   switch (generatorID) {
@@ -8,7 +15,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (procAbilityChance("",10+playerLck)) type="Small"; //10% Small
 
       if (procAbilityChance("",5-playerLck)) { //5% Trap chance, lowers with luck
-        pushEncounter(getRandomEncounter(["Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
+        pushEncounter(getRandomEncounter(allTraps));
       } else { //No small, no trap
         if (procAbilityChance("",5-playerLck)){//5%- Bad flavoured prop
             pushEncounter(getRandomEncounter(["Prop"],["-1"])); //Only bad flavoured props
@@ -38,16 +45,16 @@ function generateNextEncounters(generatorID=0, logCall=true){
       break;
 
     case 2: //Easy Encounter
-      if (logCall) logGenerator("easy/pet");
-      var encounterPool=["Standard","Stingy"]
+      if (logCall) logGenerator("easy (5% pet)");
+      var encounterPool=easyEnemies;
       //generateNextEncounters(0,false); //Prop or Contained Small
       if (procAbilityChance("",5+playerLck)) encounterPool = ["Pet"]; //5% pet
       pushEncounter(getRandomEncounter(encounterPool));
       break;
 
     case 3: //Mid Encounter
-      if (logCall) logGenerator("mid");
-      var encounterPool=["Standard","Stingy","Toxic","Hot","Reflective"]
+      if (logCall) logGenerator("mid (10% recruit/pet)");
+      var encounterPool=mediumEnemies;
       if (procAbilityChance("",50+playerLck)) generateNextEncounters(0,false); //50% Prop or Contained Small
       if (procAbilityChance("",10+playerLck)) encounterPool = ["Recruit","Pet"]; // 10% recruit/pet
       if (procAbilityChance("",3+playerLck+GAME_CONFIG.spawnItemDropBonus)) pushEncounter(getWeightedEncounter(["Item"])) //3% item
@@ -60,7 +67,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (procAbilityChance("",70+playerLck)) generateNextEncounters(0,false); //70% Prop or Contained Small
       if (procAbilityChance("",5+playerLck+GAME_CONFIG.spawnItemDropBonus)) pushEncounter(getWeightedEncounter(["Item"])) //5% item
       if (procAbilityChance("",30+playerLck+GAME_CONFIG.spawnConsumableDropBonus)) pushEncounter(getWeightedEncounter(["Consumable"])); //30% consumable
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Reflective","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(hardEnemies));
       break;
 
     case 9: //Boss
@@ -73,7 +80,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       var _fishBonus = AchievementManager.isUnlocked('fish_boss_kill') ? 1 : 0; //Fishing boss gives a bonus drachma; raise area limits to compensate
       var bossCoinsLimit = {"Fading Wildlands": _fishBonus, "Forsaken Village": 1+_fishBonus, "Twisted Fairyland": 2+_fishBonus, "River of Sorrows": 3+_fishBonus}; //One coin per area (to balance out origins)
       if (!areaName.includes("Shrouded Necropolis") && savedCoins < (bossCoinsLimit[areaName] || 0)) pushEncounter(drachmaCoin); //Unrecognized area defaults to no coin (0)
-      pushEncounter(getRandomEncounter(["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet"]));
+      pushEncounter(getRandomEncounter(allBosses));
       break;
 
     case 11: //Any Enemy
@@ -81,7 +88,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       if (procAbilityChance("",50+playerLck)) generateNextEncounters(0,false); //50% Prop or Contained Small
       if (procAbilityChance("",5+playerLck+GAME_CONFIG.spawnItemDropBonus)) pushEncounter(getWeightedEncounter(["Item"])) //5% item
       if (procAbilityChance("",20+playerLck+GAME_CONFIG.spawnConsumableDropBonus)) pushEncounter(getWeightedEncounter(["Consumable"])); //20% consumable
-      pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet","Swift","Heavy","Tough","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(allEnemies));
       break;
 
     case 20: //House Small
@@ -93,7 +100,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
       } else {
         generateNextEncounters(0,false); //Prop or Contained Small
       }
-      pushEncounter(getRandomEncounter(["Standard","Recruit","Stingy","Toxic","Hot","Tough"]));
+      pushEncounter(getRandomEncounter(mediumEnemies));
       pushEncounter(getRandomEncounter(["Container-2"]));
       break;
 
@@ -107,7 +114,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         generateNextEncounters(0,false); //Prop or Contained Small
       }
 
-      var possibleEncounters=["Recruit","Standard","Stingy","Toxic","Hot","Tough","Swift","Heavy","Demon","Spirit","Curse","Altar"];
+      var possibleEncounters=[allEnemies];
       var firstEncounter=getRandomEncounter(possibleEncounters);
       pushEncounter(firstEncounter);
 
@@ -126,8 +133,8 @@ function generateNextEncounters(generatorID=0, logCall=true){
       } else {
         pushEncounter(getRandomEncounter([type,"Checkpoint"]));
       }
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
-      pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet","Swift","Heavy","Tough","Demon","Spirit"]));
+      pushEncounter(getRandomEncounter(allTraps));
+      pushEncounter(getRandomEncounter(allEnemies));
       pushEncounter(getRandomEncounter(["Locked-Container-3"]));
       break;
 
@@ -140,8 +147,7 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getRandomEncounter(["Altar"])); //80% altar, 100% consumable
         pushEncounter(getWeightedEncounter(["Consumable"]));
       }
-
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit","Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
+      pushEncounter(getRandomEncounter(allEnemies.concat(allTraps))); //All enemies + all traps pool
       pushEncounter(getRandomEncounter(["Container-3"]));
       break;
 
@@ -155,8 +161,8 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getWeightedEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
+      pushEncounter(getRandomEncounter(hardEnemies));
+      pushEncounter(getRandomEncounter(allTraps));
       pushEncounter(getRandomEncounter(["Container-4"]));
       break;
 
@@ -170,9 +176,9 @@ function generateNextEncounters(generatorID=0, logCall=true){
         pushEncounter(getWeightedEncounter(["Consumable"]));
       }
 
-      pushEncounter(getRandomEncounter(["Swift","Heavy","Tough","Demon","Spirit"]));
-      pushEncounter(getRandomEncounter(["Curse","Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle"]));
-      pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Recruit","Pet"]));
+      pushEncounter(getRandomEncounter(hardEnemies));
+      pushEncounter(getRandomEncounter(allTraps));
+      pushEncounter(getRandomEncounter(["Small","Standard","Stingy","Toxic","Hot","Undead","Recruit","Pet"]));
       pushEncounter(getRandomEncounter(["Container-5"]));
       break;
 

@@ -169,8 +169,8 @@ The `type` field is a single string. All types below are valid standalone values
 
 | Type | Effect |
 |------|--------|
-| Standard | Baseline enemy |
 | Small | Lower weight; typically minor critters |
+| Standard | Baseline enemy |
 | Heavy | Higher XP multiplier; harder to knock out |
 | Hot | Fire damage; fail on Roll/Block can burn |
 | Stingy | Sting damage; higher XP multiplier |
