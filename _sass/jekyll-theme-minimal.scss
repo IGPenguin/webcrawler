@@ -709,6 +709,18 @@ select {
   * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08) !important;
   }
+
+  #id_emoji {
+    font-size: 63px; // 10% smaller than 70px
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+
+  .enemyOverlay {
+    font-size: 67px !important; // 10% smaller than 74px
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
 }
 
 // ── UI Symbols ─────────────────────────────────────────────────────────────
