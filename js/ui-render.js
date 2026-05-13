@@ -52,7 +52,10 @@ function redraw(){
 
   emojiUIElement.innerHTML = enemyEmoji;
   areaUIElement.innerHTML = areaName;
-  nameUIElement.innerHTML = enemyName;
+  var _familiarBadge = enemyFamiliar
+    ? '<span style="float:right; margin-top:2px; line-height:1;">🧩 <i style="font-weight:600; color:' + colorSoftGreen + '; font-size:12px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Memory</i></span>'
+    : '';
+  nameUIElement.innerHTML = enemyName + _familiarBadge;
 
   var enemyDescUIElement = document.getElementById('id_desc')
   enemyDescUIElement.innerHTML = enemyDesc;
@@ -167,15 +170,11 @@ function redraw(){
         }
       }
       if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
-      if (enemyFamiliar) {
-        enemyStatusString=decorateStatusText("🧩","Familiar",colorSoftGreen);
-        cardUIElement.style.background=colorFamiliarGreen;
-      }
       // Slot label: inject "(Head)" / "(Weapon)" / "(Chest)" after the tier word
       if (enemyItemSlot) {
         var _slotLabel = enemyItemSlot.charAt(0).toUpperCase() + enemyItemSlot.slice(1);
         enemyStatusString = enemyStatusString.replace(
-          /(Rubbish|Valuable|Magnificent|Exquisite|Legendary|Familiar|Quest Item|Remembrance)/,
+          /(Rubbish|Valuable|Magnificent|Exquisite|Legendary|Quest Item|Remembrance)/,
           '$1 (' + _slotLabel + ')'
         );
       }
@@ -185,7 +184,6 @@ function redraw(){
       if (enemyStatusString.includes("Magnificent")) grabColor=colorLightBlue;
       if (enemyStatusString.includes("Exquisite")) grabColor=colorPurple;
       if (enemyStatusString.includes("Legendary")) grabColor=colorOrange;
-      if (enemyStatusString.includes("Familiar")) grabColor=colorSoftGreen;
       break;
 
     case "Consumable":

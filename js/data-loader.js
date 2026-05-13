@@ -326,11 +326,9 @@ function getWeightedEncounter(encounterTypes, includeStrings, areaNameOverride, 
 
   if (tempLines.length === 0) return getRandomEncounter(encounterTypes, includeStrings, areaNameOverride, excludeStrings);
 
-  // Group by rarity tier; Familiar shares the Common pool
   var buckets = {};
   tempLines.forEach(function (line) {
     var tier = _rarityFromRow(line);
-    if (tier === 'Familiar') tier = 'Common';
     if (!buckets[tier]) buckets[tier] = [];
     buckets[tier].push(line);
   });
@@ -404,7 +402,6 @@ function getWeightedEncounterByTier(forcedTier, encounterTypes, includeStrings, 
   var buckets = {};
   tempLines.forEach(function (line) {
     var tier = _rarityFromRow(line);
-    if (tier === 'Familiar') tier = 'Common';
     if (!buckets[tier]) buckets[tier] = [];
     buckets[tier].push(line);
   });
@@ -425,7 +422,6 @@ function getWeightedLootIndex(luck, karma) {
   linesLoot.forEach(function (line, idx) {
     if (!_achievUnlocked(line)) return;
     var tier = _rarityFromRow(line);
-    if (tier === 'Familiar') tier = 'Common';
     if (!buckets[tier]) buckets[tier] = [];
     buckets[tier].push(idx);
   });
@@ -523,14 +519,12 @@ function _netFromRow(row) {
 }
 
 // Determine rarity tier for a raw encounter row: explicit [Tag] in note wins, then Artifact keyword,
-// then achievement gate (gated content is Familiar — drops in the Common pool), then stat net.
+// then stat net. Familiar (achievement-gated) rows use the same stat-based rarity as unlocked rows.
 function _rarityFromRow(row) {
   var noteRaw = (row[11] || '').split(':').slice(1).join(':');
   var tier = RarityManager.getTierFromNote(noteRaw);
   if (tier) return tier;
   if (noteRaw.toLowerCase().includes('artifact')) return 'Legendary';
-  var achievId = row.length > 14 ? (row[14] || '').split(':').slice(1).join(':').trim() : '';
-  if (achievId && achievId !== 'none') return 'Familiar';
   return RarityManager.getTierForNet(_netFromRow(row));
 }
 

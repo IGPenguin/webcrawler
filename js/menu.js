@@ -264,11 +264,9 @@ var Menu = (function () {
 
     if (available.length === 0) return [];
 
-    // Group unlocked origins by rarity tier; Familiar shares the Common pool
     var tierBuckets = {};
     available.forEach(function(o) {
       var tier = _originTier(o);
-      if (tier === 'Familiar') tier = 'Common';
       if (!tierBuckets[tier]) tierBuckets[tier] = [];
       tierBuckets[tier].push(o);
     });
@@ -306,12 +304,13 @@ var Menu = (function () {
          + (o.def||0);
   }
 
-  // Explicit [Tag] in note wins; then achievement gate → Familiar; then stat net.
+  // Explicit [Tag] in note wins; achievement-gated origins with no stat changes are Legendary
+  // (they have hidden bonuses not reflected in stats); otherwise stat net.
   function _originTier(o) {
     var noteTag = RarityManager.getTierFromNote(o.note || '');
     if (noteTag) return noteTag;
     var achievId = (o.achiev || '').trim();
-    if (achievId && achievId !== 'none') return 'Familiar';
+    if (achievId && achievId !== 'none' && _originNet(o) <= 0) return 'Legendary';
     return RarityManager.getTierForNet(_originNet(o));
   }
 
@@ -328,8 +327,13 @@ var Menu = (function () {
     var origins = _rollOrigins();
     if (origins.length === 0) { _doNewGame(null); return; }
 
-    // Sort best net stat first — roll is still random, only display order is sorted
-    origins = origins.slice().sort(function(a, b) { return _originNet(b) - _originNet(a); });
+    // Legendary tier first, then by net stat descending — roll is still random, only display order is sorted
+    origins = origins.slice().sort(function(a, b) {
+      var aLeg = _originTier(a) === 'Legendary' ? 1 : 0;
+      var bLeg = _originTier(b) === 'Legendary' ? 1 : 0;
+      if (bLeg !== aLeg) return bLeg - aLeg;
+      return _originNet(b) - _originNet(a);
+    });
 
     var subtitle = document.getElementById('menu_origin_subtitle');
     
@@ -365,7 +369,9 @@ var Menu = (function () {
           + '<div style="flex:1; min-width:0;">'
             + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:' + rarityColor + ';'
             + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
-            + (origin.rolledName || origin.originName) + '</h5>'
+            + (origin.rolledName || origin.originName)
+            + ((origin.achiev && origin.achiev.trim() !== 'none') ? ' <span style="float:right; font-size:12px; -webkit-text-stroke:0; paint-order:stroke fill; padding-right:10px">🧩 <i style="font-weight:600; color:#62a862ff; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Memory</i></span>' : '')
+            + '</h5>'
             + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; text-align:left; line-height:165%; color:#fff;">'
             + descLine1 + '</h5>'
             + (descLine2 ? '<h5 style="margin:0; font-size:12px; font-style:italic; font-weight:400; opacity:0.6; text-align:left; line-height:150%; color:#fff;">' + descLine2 + '</h5>' : '')
