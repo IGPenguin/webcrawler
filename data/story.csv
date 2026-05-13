@@ -54,6 +54,9 @@ Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;0;Travel Opportunity;See
 River of Sorrows;❓;Memento Letter (rnd);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+River of Sorrows;🏝️;Island;Generator-98;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+River of Sorrows;❓;Very Hard Encounter;Generator-5;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+River of Sorrows;🏝️;Island;Generator-98;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
@@ -64,7 +67,7 @@ Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Shrouded Necropolis;🐟;Fishing;Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
-Shrouded Necropolis;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+Shrouded Necropolis;❓;Very Hard Encounter;Generator-5;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Shrouded Necropolis;🌫️;Gloomy Gateway;Prop;0;0;0;0;0;0;0;Obscuring Barrier;Something dangerous possibly lies ahead.<br>;Crossed right through.;none
 Shrouded Necropolis;👤;Lethargic Shade;Friend;0;0;0;0;0;0;0;Familiar Being;Looks like they have not noticed you... yet?<br>;"Oh... You finally came back.";none
 Shrouded Necropolis;👑;Boss;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
