@@ -76,6 +76,7 @@ function _doStartGame(isContinue) {
     if (typeof TelemetryManager !== 'undefined') {
       TelemetryManager.send('run_start', '');
     }
+    if (typeof RivalManager !== 'undefined') RivalManager.fetchPool();
     processStoryData(storyData);
     registerClickListeners(0);
     registerClickListenersTechnical();

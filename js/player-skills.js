@@ -58,6 +58,7 @@ function renewPlayer(){ //Default values
   cheatedThisRun = false;
   scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
 
+  if (typeof RivalManager !== 'undefined') RivalManager.resetRun();
   initRunLog();
 }
 

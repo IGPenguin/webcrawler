@@ -229,5 +229,9 @@
   - [ ] **Achievement Timing:** Fix the timing hack for logging achievements after actions. (`js/achievements.js`)
   - [ ] **Team Rendering:** Refactor the "Hacky hacky hacky" team sorting/rendering logic. (`js/ui-render.js`)
 
+# Rivals — Parked Features
+- [ ] **Rival Graveyard UI:** Show a "💔 Rivals Slain" section at the bottom of the Memories/achievements screen. Each entry shows rival name, area, level. Persist in localStorage under `rivalGraveyard` key. (`js/achievements.js`, `js/menu.js`)
+- [ ] **Fight Your Own Ghost:** When the leaderboard pool is empty or unavailable, spawn a rival based on your own last submitted run (`ghostLink` from localStorage). Use type "👁 Echo" and reframe the desc as "A reanimated corpse bearing your face." Purely local, no network dependency. (`js/rival-manager.js`)
+
 # Trash
 - build a "Game Tip" system that triggers based on player state (e.g., first time dying, first time finding an Artifact, being low on Stamina). Uses the existing string-generator.js and ui-render.js toast system. (Would only appear for easy/story difficulty, can reuse achievement toasts)

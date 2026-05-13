@@ -115,6 +115,7 @@ function animateFlipNextEncounter(){
 
 function gameOver(silent=false){
   AchievementManager.check('death');
+  if (_isRival) AchievementManager.check('rival_killed_by');
   if (enemyType && enemyType.includes('Trap')) AchievementManager.check('death_trap');
   if (enemyType && (enemyType === 'Consumable' || enemyType === 'Consumable-Container')) AchievementManager.check('death_sleep');
   //Random death messages
@@ -124,20 +125,28 @@ function gameOver(silent=false){
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container")||enemyType=="Prop"||enemyType=="Consumable")) enemyMsg=deathMsg;
   if (enemyTeam.includes("Lover's Memento")) enemyMsg="Killed by a severe heartbreak.";
-  if (!silent) logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
+  if (_isRival) enemyMsg = 'Slayed by ' + enemyName + '.';
+  if (!silent) {
+    if (_isRival) {
+      logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 <text style='color:"+colorRed+";'>"+enemyMsg+"</text>");
+    } else {
+      logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
+    }
+  }
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
-  runLogAdd("run_end", {outcome: "death", killedBy: enemyName, killedByEmoji: enemyEmoji, area: areaName, time: adventureEndTime});
+  runLogAdd("run_end", {outcome: _isRival ? "rival_death" : "death", killedBy: enemyName, killedByEmoji: enemyEmoji, area: areaName, time: adventureEndTime});
   downloadRunLog();
-  var _deathPayload = ScoreManager.buildPayload('death');
+  var _deathEndType = _isRival ? 'rival_death' : 'death';
+  var _deathPayload = ScoreManager.buildPayload(_deathEndType);
   SaveManager.saveSession({
     date: adventureStartTime,
     playerName: playerName,
     level: playerLevel,
     kills: playerKills,
     area: areaName,
-    causeOfDeath: enemyEmoji + ' ' + enemyName,
-    outcome: 'death',
+    causeOfDeath: _isRival ? ('💔 ' + enemyName + ' [Rival]') : (enemyEmoji + ' ' + enemyName),
+    outcome: _deathEndType,
     actionLog: adventureLog,
     playerHpMax: playerHpMax,
     playerStaMax: playerStaMax,
@@ -147,7 +156,7 @@ function gameOver(silent=false){
     playerPartyString: String(playerPartyString),
     sessionAchievements: AchievementManager.getSessionUnlocked(),
     score:          _deathPayload.score,
-    endType:        'death',
+    endType:        _deathEndType,
     ghostLink:      ScoreManager.encodeGhostLink(_deathPayload),
     playerOriginName: playerOriginName || 'None',
     encounterCount: encounterCount || 0,
@@ -160,7 +169,10 @@ function gameOver(silent=false){
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
 
-  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p><p style=\"font-size:20px;\""+decorateStatusText("",enemyMsg,colorWhite));
+  var _curtainDetail = _isRival
+    ? ('<p style="font-size:20px; color:' + colorRed + ';">' + enemyMsg + '</p>')
+    : ('<p style="font-size:20px;"' + decorateStatusText("", enemyMsg, colorWhite));
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p>" + _curtainDetail);
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
   // linesStory intentionally NOT rebuilt here — reincarnation needs the index to stay valid.

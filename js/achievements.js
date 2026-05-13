@@ -70,7 +70,12 @@ var AchievementManager = (function () {
     { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Hippie</b> origin.' },
 
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: 'Unlocked the <b>📼 Rewind Tape</b> item.' },
-    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
+    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: '' },
+
+    { id: 'rival_spot',       emoji: '👁️', desc: 'Encountered a rival from another world!',    hint: 'They wear the face of someone who fell.',    unlock: '' },
+    { id: 'rival_kill',       emoji: '💀', desc: 'Slayed a rival invader!',                    hint: 'The dead can die twice.',                     unlock: '' },
+    { id: 'rival_killed_by',  emoji: '💔', desc: 'Slayed by a rival from another world.',      hint: 'Their death echoed into yours.',              unlock: '' },
+    { id: 'rival_kills_10',   emoji: '🔪', desc: 'Slayed 10 rival invaders!',                  hint: 'The boundary between worlds grows thinner.',  unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
     { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
     { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!', hint: "Giant slayer, born in struggle.", unlock: 'Unlocked the <b>🎖️ Hero</b> origin.' },
     { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
@@ -106,6 +111,9 @@ var AchievementManager = (function () {
     boughtArtifact:      false,
     boughtLevel:         false,
     wonGame:             false,
+    rivalSpot:           false,
+    rivalKills:          0,
+    rivalKilledBy:       false,
     discoveredAreas:     [],
     grabbedArtifact:     false,
     grabbedExquisite:    false,
@@ -310,6 +318,21 @@ var AchievementManager = (function () {
         _save();
         if (_stats.totalBossKills === 1)  _unlock('boss_kill_first');
         if (_stats.totalBossKills >= 10)  _unlock('boss_kill_10');
+        break;
+
+      case 'rival_spot':
+        if (!_stats.rivalSpot) { _stats.rivalSpot = true; _save(); _unlock('rival_spot'); }
+        break;
+
+      case 'rival_kill':
+        _stats.rivalKills++;
+        _save();
+        if (_stats.rivalKills === 1)  _unlock('rival_kill');
+        if (_stats.rivalKills >= 10)  _unlock('rival_kills_10');
+        break;
+
+      case 'rival_killed_by':
+        if (!_stats.rivalKilledBy) { _stats.rivalKilledBy = true; _save(); _unlock('rival_killed_by'); }
         break;
 
       case 'knockout':

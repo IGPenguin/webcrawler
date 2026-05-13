@@ -278,7 +278,9 @@ function redraw(){
       if (enemyType && enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
 
       if (enemyBossType.includes("Boss")){
-        enemyTeamUIElement.innerHTML=decorateStatusText("💀","Boss",colorRed);
+        enemyTeamUIElement.innerHTML = _isRival
+          ? decorateStatusText("💔","Rival",colorRed)
+          : decorateStatusText("💀","Boss",colorRed);
         enemyStatusString=appendEnemyStats();
         cardUIElement.style.background=colorDarkRed;
       }

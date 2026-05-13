@@ -487,3 +487,13 @@ function getShopMessage(){
 
   return message
 }
+
+function getRivalDialogue() {
+  var pool = [
+    "You should have stayed dead.",
+    "My corpse remembers you.",
+    "I died so you wouldn't have to.",
+    "We were never that different."
+  ];
+  return pool[Math.floor(Math.random() * pool.length)];
+}

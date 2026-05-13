@@ -88,10 +88,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             logPlayerAction(actionString, (_crit==='success')
               ? "Struck them extra hard — a killing blow -"+_cdmg+" 💔"
               : "Dealt a killing blow -"+_cdmg+" 💔");
-            var _kxp=parseInt(playerGainXP(1,0,""));
+            var _kxp=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
             logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered -"+_cdmg+" 💔 "+decorateStatusText("","+"+_kxp+" XP",colorGold));
-            playerKarma--; playerKills++;
+            var _karmaSafe1 = _isRival || enemyType.includes('Demon') || enemyType.includes('Undead') || enemyType.includes('Spirit');
+            if (!_karmaSafe1) playerKarma--;
+            playerKills++;
             AchievementManager.check('kill');
+            if (_isRival) {
+              AchievementManager.check('rival_kill');
+              if (typeof RivalManager !== 'undefined') pushEncounter(RivalManager.getRivalItemDrop(_rivalInventory));
+            }
             transitionToCorpse("killed");
           } else {
             logPlayerAction(actionString,"Struck the helpless target -"+_cdmg+" 💔");
@@ -1071,10 +1077,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,(_crit==='success')
                 ? "Spell was especially effective — a killing blow -"+_cmdg+" 💔"
                 : "Spell delivered a killing blow -"+_cmdg+" 💔");
-              var _kxp2=parseInt(playerGainXP(1,0,""));
+              var _kxp2=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
               logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered"+decorateStatusText("","+"+_kxp2+" XP",colorGold));
-              playerKarma--; playerKills++;
+              var _karmaSafe2 = _isRival || enemyType.includes('Demon') || enemyType.includes('Undead') || enemyType.includes('Spirit');
+              if (!_karmaSafe2) playerKarma--;
+              playerKills++;
               AchievementManager.check('kill');
+              if (_isRival) {
+                AchievementManager.check('rival_kill');
+                if (typeof RivalManager !== 'undefined') pushEncounter(RivalManager.getRivalItemDrop(_rivalInventory));
+              }
               transitionToCorpse("killed");
             } else {
               logPlayerAction(actionString,"Struck the helpless target -"+_cmdg+" 💔");

@@ -11,7 +11,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Unlockable
 🎓;Scholar;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>The grind is his second nature.;level_5
-🔪;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no downside.<br><i>Born for killing, nothing more.;kill_50
+🔪;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no downside.<br><i>Born for killing, nothing more.;rival_kills_10
 🥷;Ninja;0;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b> with no downside.<br><i>The more agile the more fragile.;knockout_50
 🎖️;Hero;0;0;1;0;1;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b>.<br><i>Never hesitates to make a difference.;boss_kill_10
 😈;Devil;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 💔 Health</b>.<br><i>Made a deal with the scars to prove it.;spoke_demon

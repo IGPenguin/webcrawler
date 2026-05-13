@@ -25,6 +25,8 @@ function encounterRenew(){
   corpseHasLoot=false;
   corpseLoot=null;
   clearPersistentEnemyEffect();
+  _isRival = false;
+  _rivalInventory = '';
 }
 
 //Load or generate encounter
@@ -41,6 +43,8 @@ function loadEncounter(index, fileLines = linesStory){
   enemyType = String(row[3].split(":").slice(1).join(":"));
   if (enemyType.includes("Boss")) {
     enemyBossType = enemyType; //I'll end up in hell for these hacks
+    _isRival = (enemyType === 'Boss-Rival');
+    if (_isRival) _rivalInventory = row[15] ? String(row[15]) : '';
     if (isNaN(savedCoins)) savedCoins=0;
     //enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
   }
@@ -202,8 +206,12 @@ function loadEncounter(index, fileLines = linesStory){
       if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 No coin? I guess that's it for now.")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged a boss: <b>"+enemyName+"</b>")) {
-        logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>")
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged a boss: <b>"+enemyName+"</b>") && !adventureLog.includes("A rival emerged")) {
+        if (_isRival) {
+          logAction("💔 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>A rival emerged: <b>"+enemyName+"</b></text>");
+        } else {
+          logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>");
+        }
         if (playerLootString.includes("📌") && ((enemyAtk+enemyAtkBonus)>0)) {
           enemyHit(1,false,false,true)
           logAction("📌 ▸ "+enemyEmoji+" Inflicted the <b>☠️ Ancient Voodoo</b> -1 💔")
@@ -306,6 +314,18 @@ function loadEncounter(index, fileLines = linesStory){
     isEndingState = true;
     brideDialogueActive = true;
     setTimeout(startBrideDialogue, 700);
+  }
+
+  if (_isRival) {
+    AchievementManager.check('rival_spot');
+    var _rivalDialogue = typeof RivalManager !== 'undefined' ? RivalManager.getDialogue() : '';
+    setTimeout(function () {
+      curtainFadeInAndOut(
+        '<p style="font-size:20px; margin-bottom:4px;">' + enemyEmoji + ' ' + enemyName + '</p>' +
+        '<p style="font-size:15px; color:' + colorRed + ';"><i>"' + _rivalDialogue + '"</i></p>',
+        2
+      );
+    }, 600);
   }
 }
 

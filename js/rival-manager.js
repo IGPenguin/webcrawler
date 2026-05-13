@@ -1,0 +1,154 @@
+var RivalManager = (function () {
+
+  // ── Config ──────────────────────────────────────────────────────────────────
+  // ELIGIBLE_AREAS and SPAWN_CHANCE come from GAME_CONFIG.rivals at runtime.
+  var NAME_MAX_LEN = 30;
+  var RIVAL_EMOJIS = ['🧟', '🧟‍♀️', '🧟‍♂️'];
+
+  function _cfg() {
+    return (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.rivals) || {};
+  }
+
+  // Stat caps per area [hp, atk, sta, lck, int, mgk, def] — boss-level ceiling
+  var STAT_CAPS = {
+    'Forsaken Village':  [5, 4, 4, 2, 3, 2, 1],
+    'Twisted Fairyland': [6, 5, 5, 2, 6, 3, 2],
+    'River of Sorrows':  [5, 4, 4, 2, 5, 3, 2]
+  };
+
+  // Stat floors per area — rivals are always threatening
+  var STAT_FLOORS = {
+    'Forsaken Village':  [3, 2, 2, 0, 0, 0, 0],
+    'Twisted Fairyland': [4, 3, 3, 0, 0, 0, 0],
+    'River of Sorrows':  [4, 3, 3, 0, 0, 0, 0]
+  };
+
+
+  // ── State ───────────────────────────────────────────────────────────────────
+  var _pool                 = [];
+  var _rivalForcedArea      = null;
+  var _rivalSpawnedInArea   = {};
+  var _rivalScheduledThisRun = false;
+
+  // ── Public API ───────────────────────────────────────────────────────────────
+
+  function fetchPool() {
+    if (typeof ScoreManager === 'undefined') return;
+    ScoreManager.fetchRankings(function (err, data) {
+      if (err || !data || !data.length) return;
+      var myNick = ((ScoreManager.getNickname && ScoreManager.getNickname()) || '').toLowerCase().trim();
+      _pool = data.filter(function (entry) {
+        if (!entry || !entry.stats || !entry.charName) return false;
+        var nick = (entry.nickname || '').toLowerCase().trim();
+        return !myNick || nick !== myNick;
+      });
+    });
+  }
+
+  function resetRun() {
+    _rivalSpawnedInArea    = {};
+    _rivalScheduledThisRun = false;
+    var areas = _cfg().eligibleAreas || [];
+    _rivalForcedArea = areas.length ? areas[Math.floor(Math.random() * areas.length)] : null;
+  }
+
+  // Called from generateNextEncounters case 4 (Hard) for eligible areas.
+  function tryPushRival(area) {
+    var cfg = _cfg();
+    if (!cfg.enabled)                              return;
+    var areas = cfg.eligibleAreas || [];
+    if (!areas.includes(area))                     return;
+    if (_rivalSpawnedInArea[area])                 return;
+    if (_pool.length === 0)                        return;
+
+    var isForced = (area === _rivalForcedArea && !_rivalScheduledThisRun);
+    if (!isForced && !procAbilityChance('', cfg.spawnChance || 33)) return;
+
+    var entry = _pool[Math.floor(Math.random() * _pool.length)];
+    var row   = _buildRow(entry, area);
+    if (!row) return;
+
+    pushEncounter(row);
+    _rivalSpawnedInArea[area]  = true;
+    _rivalScheduledThisRun     = true;
+  }
+
+  function getDialogue() {
+    return typeof getRivalDialogue !== 'undefined' ? getRivalDialogue() : "You should have stayed dead.";
+  }
+
+  // Returns an encounter row for a random item from the rival's inventory.
+  // Falls back to getWeightedEncounter(['Item']) if nothing matches.
+  function getRivalItemDrop(inventory) {
+    var emojis = [...String(inventory || '')].filter(function (e) { return e.trim(); });
+    if (emojis.length) {
+      // Shuffle
+      for (var i = emojis.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = emojis[i]; emojis[i] = emojis[j]; emojis[j] = t;
+      }
+      for (var k = 0; k < emojis.length; k++) {
+        var picked = emojis[k];
+        var matches = linesGenerator.filter(function (row) {
+          return row[1] && row[1].split(':').slice(1).join(':') === picked
+              && row[3] && row[3].includes('type:Item');
+        });
+        if (matches.length) return matches[Math.floor(Math.random() * matches.length)];
+      }
+    }
+    return getWeightedEncounter(['Item']);
+  }
+
+  // ── Internal ─────────────────────────────────────────────────────────────────
+
+  function _buildRow(entry, area) {
+    var caps   = STAT_CAPS[area];
+    var floors = STAT_FLOORS[area];
+    if (!caps) return null;
+
+    // stats field: "hp;atk;sta;lck;int;mgk;def"
+    var raw = (entry.stats || '').split(';').map(Number);
+    while (raw.length < 7) raw.push(0);
+    var s = raw.map(function (v, i) {
+      return Math.max(floors[i], Math.min(Math.abs(v), caps[i]));
+    });
+
+    var name = String(entry.charName || 'Unknown').trim();
+    if (name.length > NAME_MAX_LEN) name = name.slice(0, NAME_MAX_LEN) + '…';
+
+    var nick = String(entry.nickname || name).trim();
+    if (nick.length > NAME_MAX_LEN) nick = nick.slice(0, NAME_MAX_LEN) + '…';
+
+    var emoji     = RIVAL_EMOJIS[Math.floor(Math.random() * RIVAL_EMOJIS.length)];
+    var desc      = 'Reanimated dead body from a different world.<br>Bears tattoo: ' + nick + '.';
+    var deathMsg  = 'Slayed by ' + name + '.';
+    var inventory = String(entry.inventory || '');
+
+    return [
+      'area:'   + area,
+      'emoji:'  + emoji,
+      'name:'   + name,
+      'type:Boss-Rival',
+      'hp:'     + s[0],
+      'atk:'    + s[1],
+      'sta:'    + s[2],
+      'lck:'    + s[3],
+      'int:'    + s[4],
+      'mgk:'    + s[5],
+      'def:'    + s[6],
+      'note:',
+      'desc:'   + desc,
+      'message:' + deathMsg,
+      'achiev:none',
+      inventory  // index 15 — rival's inventory for item drop; not parsed by loadEncounter
+    ];
+  }
+
+  return {
+    fetchPool:       fetchPool,
+    resetRun:        resetRun,
+    tryPushRival:    tryPushRival,
+    getDialogue:     getDialogue,
+    getRivalItemDrop: getRivalItemDrop
+  };
+})();

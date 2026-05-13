@@ -75,6 +75,7 @@ layout: default
 <script src="js/encounter-generator.js"></script>
 <script src="js/game-loop.js"></script>
 <script src="js/score-manager.js"></script>
+<script src="js/rival-manager.js"></script>
 <script src="js/telemetry.js"></script>
 <script src="js/social.js"></script>
 <script src="js/action-resolver.js"></script>

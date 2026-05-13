@@ -100,6 +100,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       if (logCall) logGenerator("hard");
       if (procAbilityChance("", 70+playerLck)) generateNextEncounters(0, false); // 70% Prop or Contained Small
       pushFieldLoot(5, 30);
+      if (typeof RivalManager !== 'undefined') RivalManager.tryPushRival(areaName);
       pushEncounter(getRandomEncounter(hardEnemies));
       break;
 

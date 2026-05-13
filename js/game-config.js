@@ -34,6 +34,11 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: 0,
     killItemDropChance:       5,
     killConsumableDropChance: 10,
+    rivals: {
+      enabled:       true,
+      spawnChance:   33,
+      eligibleAreas: ['Forsaken Village', 'Twisted Fairyland', 'River of Sorrows']
+    },
     rarityBias: { Cursed: 0, Common: 0, Uncommon: 0, Rare: 0, Legendary: 0 }
   },
 
@@ -47,6 +52,11 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: 8,
     killItemDropChance:       5,
     killConsumableDropChance: 10,
+    rivals: {
+      enabled:       false,
+      spawnChance:   0,
+      eligibleAreas: []
+    },
     rarityBias: { Cursed: -2, Common: -8, Uncommon: 4, Rare: 4, Legendary: 2 }
   },
 
@@ -60,6 +70,11 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: -4,
     killItemDropChance:       10,
     killConsumableDropChance: 15,
+    rivals: {
+      enabled:       true,
+      spawnChance:   50,
+      eligibleAreas: ['Forsaken Village', 'Twisted Fairyland', 'River of Sorrows']
+    },
     rarityBias: { Cursed: 3, Common: 7, Uncommon: -4, Rare: -4, Legendary: -2 }
   }
 };
