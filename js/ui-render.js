@@ -53,7 +53,7 @@ function redraw(){
   emojiUIElement.innerHTML = enemyEmoji;
   areaUIElement.innerHTML = areaName;
   var _familiarBadge = enemyFamiliar
-    ? '<span style="float:right; margin-top:2px; line-height:1;">🧩 <i style="font-weight:600; color:' + colorSoftGreen + '; font-size:12px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Memory</i></span>'
+    ? '<span style="float:right; margin-top:6px; line-height:1; font-size:14px;">🧩 <i style="font-weight:600; color:' + colorSoftGreen + ';font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill; padding-right:6px;">Memory</i></span>'
     : '';
   nameUIElement.innerHTML = enemyName + _familiarBadge;
 
