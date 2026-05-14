@@ -192,6 +192,7 @@ function pushEncounter(encounterStringArray=[], index=1, areaNameOverride="") {
   if (encounterStringArray[2]) {
     var _genName = String(encounterStringArray[2]).split("name:")[1];
     if (_genName && !_generationBuffer.includes(_genName)) _generationBuffer.push(_genName);
+    if (_genName) markAsSeen(_genName); // prevent future generators from picking the same name
   }
 
   if (areaNameOverride != "") {
