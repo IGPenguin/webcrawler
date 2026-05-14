@@ -289,6 +289,7 @@ var Menu = (function () {
       if (candidates.length === 0) break;
       var picked = candidates[Math.floor(Math.random() * candidates.length)];
       picked.rolledName = getOriginName(picked);
+      picked.tier = _originTier(picked);
       usedNames[picked.originName] = true;
       roll.push(picked);
     }

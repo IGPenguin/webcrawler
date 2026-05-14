@@ -189,9 +189,15 @@ function permanentDeath(htmlMsg) {
     if (typeof AchievementManager !== 'undefined' && AchievementManager.isUnlocked('boss_kill_first')) {
       var nextOrigins = Menu.rollOrigins();
       if (nextOrigins && nextOrigins.length > 0) {
-        var emojiStr = nextOrigins.map(function(o) { return o.emoji; }).join('&nbsp;&nbsp;');
+        var cards = nextOrigins.map(function(o) {
+          var color = RarityManager.getColor(o.tier || 'Common');
+          return '<div style="display:flex;flex-direction:column;align-items:center;gap:3px;">'
+            + '<span style="font-size:26px;">' + o.emoji + '</span>'
+            + '<span style="font-size:10px;color:' + color + ';letter-spacing:0.5px;white-space:nowrap;">' + o.originName + '</span>'
+            + '</div>';
+        }).join('');
         htmlMsg = 'New fates await you:'
-          + '<p style="font-size:26px;letter-spacing:4px;margin-top:2px;">' + emojiStr + '</p>';
+          + '<div style="display:flex;justify-content:center;gap:20px;margin-top:8px;">' + cards + '</div>';
       }
     }
   } catch(e) {}
