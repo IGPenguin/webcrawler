@@ -92,3 +92,76 @@ function openFeedbackForm(text) {
 function redirectToFeedback(){
   openFeedbackForm(generateCharacterLegend(50));
 }
+
+function showSharePopup() {
+  var shareUrl = 'https://igpenguin.github.io/stay-dead';
+
+  var existing = document.getElementById('share_popup_overlay');
+  if (existing) existing.parentNode.removeChild(existing);
+
+  var overlay = document.createElement('div');
+  overlay.id = 'share_popup_overlay';
+  overlay.style.cssText = 'position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column;';
+
+  var card = document.createElement('div');
+  card.style.cssText = 'background:#202020; padding:20px; max-width:290px; width:90%; box-shadow:0 0 0 3px #000; text-align:center;';
+
+  var title = document.createElement('h3');
+  title.style.cssText = 'margin:0 0 14px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;';
+  title.innerHTML = '🖤 Stay Dead';
+
+  var qr = document.createElement('img');
+  qr.src = 'assets/img/QR.png';
+  qr.alt = 'QR Code';
+  qr.style.cssText = 'width:156px; height:156px; image-rendering:pixelated; display:block; margin:0 auto 14px auto; box-shadow:0 0 0 3px #000;';
+
+  var urlInput = document.createElement('input');
+  urlInput.type = 'text';
+  urlInput.readOnly = true;
+  urlInput.value = shareUrl;
+  urlInput.style.cssText = 'width:100%; box-sizing:border-box; font-size:12px; padding:7px 8px; background:#2a2a2a; border:none; outline:2px solid #444; color:#aaa; font-family:inherit; margin-bottom:10px; text-align:center; cursor:text;';
+  urlInput.addEventListener('click', function () { this.select(); });
+
+  var btnRow = document.createElement('div');
+  btnRow.style.cssText = 'display:flex; gap:4px;';
+
+  var copyBtn = document.createElement('button');
+  copyBtn.className = 'menu-btn';
+  copyBtn.style.cssText = 'flex:1; margin-top:0; color:#FFD940;';
+  copyBtn.innerHTML = '📋 Copy Link';
+
+  var closeBtn = document.createElement('button');
+  closeBtn.className = 'menu-btn';
+  closeBtn.style.cssText = 'flex:0.6; margin-top:0; color:#ff6666;';
+  closeBtn.innerHTML = '✕ Close';
+
+  copyBtn.addEventListener('click', function () {
+    function _onCopied() {
+      copyBtn.innerHTML = '✓ Copied!';
+      setTimeout(function () { copyBtn.innerHTML = '📋 Copy Link'; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shareUrl).then(_onCopied).catch(function () {
+        urlInput.select(); document.execCommand('copy'); _onCopied();
+      });
+    } else {
+      urlInput.select(); document.execCommand('copy'); _onCopied();
+    }
+  });
+
+  function _closePopup() {
+    if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+  }
+
+  closeBtn.addEventListener('click', _closePopup);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) _closePopup(); });
+
+  btnRow.appendChild(copyBtn);
+  btnRow.appendChild(closeBtn);
+  card.appendChild(title);
+  card.appendChild(qr);
+  card.appendChild(urlInput);
+  card.appendChild(btnRow);
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+}
