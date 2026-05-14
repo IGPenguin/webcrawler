@@ -35,7 +35,7 @@
 - Effort: M | Gain: XL
 
 ### [SHARE-REVAMP] Feature: Share function revamp — clipboard, QR, textfield
-- Unified share in death state, credits, and chronicles run detail: copy link to clipboard, pixel-style QR popup, textfield showing the link for manual copy/paste.
+- Unified share in credits, and chronicles run detail: copy game link to clipboard, pixel-style QR code popup dialog (for camera scan - recycle the one for score nicnkanem submit), textfield showing the link for manual copy/paste., remove the "score link" button and the logic for "grabbing a picture from html" - just display popup with QR code and the game link: https://igpenguin.github.io/stay-dead/
 - Priority: P2 — social sharing is a core beta activation hook
 - Type: Feature
 - Effort: M | Gain: L
@@ -51,12 +51,6 @@
 - Priority: P2 — endgame screens are the social product; unfinished here reads as abandoned
 - Type: Improvement
 - Effort: M | Gain: L
-
-### [HIDST-LOG] Improvement: Occasional hidden-stat log messages mid-run
-- Poetic one-liner log entries tied to karma/love thresholds during a run — e.g. "Your choices leave a mark." Gives players a signal that unseen stats are accumulating.
-- Priority: P2 — directly addresses hidden stat opacity; small effort, meaningful player signal
-- Type: Improvement
-- Effort: S | Gain: L
 
 ### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
 - Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
@@ -80,14 +74,8 @@
 - Type: Improvement
 - Effort: S | Gain: M
 
-### [VIS-IMPACT] Improvement: Full visual impact frames — hit flash, damage flash, STA fade
-- Flash white when player hits; red-white flash when player takes damage; green fade when losing STA — especially prominent at 1 HP or 0 STA. Full-screen shakes for critical moments.
-- Priority: P3 — broader than .flash-crit; higher effort but higher feel impact
-- Type: Improvement
-- Effort: M | Gain: L
-
 ### [STORY-FADE] Improvement: Story fades — longer and smoother
-- Increase duration and smooth easing on game-start, memento, memory, and final boss fade transitions.
+- Increase duration and smooth easing on game-start, invader, memory, and final boss fade transitions.
 - Priority: P3 — polish; transitions are functional but thin
 - Type: Improvement
 - Effort: S | Gain: M
@@ -283,7 +271,7 @@
 - Effort: S | Gain: L
 - Needs: For each stat: what does +1 change in a typical run? Set weight relative to ATK×3 as the anchor. After adjusting, sample existing CSV entries to confirm the rarity distribution doesn't break.
 
-## P4 — Nice to Have / Parking Lot
+## P4 — Nice to Have
 
 ### [SOUL-GEM] Feature: Legendary soulgem — physical damage to spirits
 - Unique Legendary item enabling physical damage against spirit-type enemies.
@@ -343,59 +331,11 @@
 - Effort: S | Gain: S
 - Needs: Confirm whether the current gate encounter already implements this.
 
-### [SPELL-SYS] Feature: Spells system
-- Spell button replaces Curse; spell list overlay on click (scrollable, max height = action buttons); spells learned from Spell Scrolls via a Learn action (INT-based success). Basic spells: 🐸 Hex, 🔥 Burn, 🧊 Freeze, ⚡️ Surge, 🪬 Curse (−ATK), 🪨 Harden, 🩸 Syphon.
-- Priority: P4 — major new system; high concept value but XL scope
-- Type: Feature
-- Effort: XL | Gain: L
-
 ### [SFX-MUSIC] Feature: Sounds — SFX and background music
 - Investigate platform support (iOS, Android, Mac, Windows) and add sound effects and ambient music.
 - Priority: P4 — audio is transformative but large scope with platform risk
 - Type: Feature
 - Effort: L | Gain: L
-
-### [VEC-BG] Feature: Vector backgrounds for all areas
-- Complete and default to vector backgrounds for all areas.
-- Priority: P4 — significant atmosphere upgrade; L effort, not mobile-critical
-- Type: Feature
-- Effort: L | Gain: M
-
-### [SVG-EMOJI] Feature: SVG support in emoji column
-- Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
-- Priority: P4 — infra change for a niche use case
-- Type: Feature
-- Effort: M | Gain: S
-
-### [SLACK-EMOJI] Feature: Slackmojis.com URL support in emoji fields
-- Support slackmojis URLs across encounters/story/origins/buttons.
-- Priority: P4 — novelty, not worth the parsing complexity
-- Type: Feature
-- Effort: M | Gain: XS
-
-### [BLACK-HOLE] Feature: Black hole — new optional area + spaghetti monster boss
-- DLC-style optional area with spaghetti monster boss, modern props, items, tools. The JS spaghetti monster joke boss lives here.
-- Priority: P4 — fun/joke expansion; well outside current scope
-- Type: Feature
-- Effort: XL | Gain: S
-
-### [PW-BOT] Feature: Playwright — automated run bot
-- Playwright bot that reads controls and autonomously decides actions to complete a full run.
-- Priority: P4 — requires stable AI decision layer
-- Type: Feature
-- Effort: XL | Gain: S
-
-### [GHOST-MP] Feature: Pseudo-multiplayer ghosts
-- Hardcode 5–10 ghost encounters using highscore names (mocked if offline) — drop loot from the dead player's inventory. Largely superseded by the live Invaders system; keep as an offline-only fallback concept.
-- Priority: P4 — superseded by real Invaders; revisit only if pool is always empty
-- Type: Feature
-- Effort: M | Gain: S
-
-### [BUG-PIPE] Feature: Bug report → GitHub Issues pipeline
-- Separate bug report Google Form → sheet; daily GitHub Action syncs to Issues with tags.
-- Priority: P4 — dev infra; useful post-beta, not urgent now
-- Type: Feature
-- Effort: M | Gain: S
 
 ### [CLEAN-IDEAS] Chore: ME — Clean ideas folder
 - Review and archive or delete the ideas folder contents.
@@ -433,12 +373,6 @@
 - Type: Feature
 - Effort: M | Gain: S
 
-### [ENEMY-DATA] Chore: Revise enemy data per area
-- Village traps/special enemies; Fairyland (Forest Fiend, ghosts); River (all types — very lacking); Necropolis (special, freezing/snowman, animated objects, flora, unusual shades).
-- Priority: P4 — content breadth pass; post-beta
-- Type: Chore
-- Effort: L | Gain: M
-
 ### [MEADOW-ENCNTR] Feature: Meadows — increment no-effect encounters
 - Add no-effect altars, observations, clear sky, silent overcast encounters.
 - Priority: P4 — atmosphere; not blocking
@@ -451,12 +385,44 @@
 - Type: Feature
 - Effort: S | Gain: S
 
+## Backlog
+
+### [SPELL-SYS] Feature: Spells system
+- Spell button replaces Curse; spell list overlay on click (scrollable, max height = action buttons); spells learned from Spell Scrolls via a Learn action (INT-based success). Basic spells: 🐸 Hex, 🔥 Burn, 🧊 Freeze, ⚡️ Surge, 🪬 Curse (−ATK), 🪨 Harden, 🩸 Syphon.
+- change curse button to generic "📓 Spell"
+- player knows no spells until learning some, log on action: "Cannot cast any spells ...yet?"
+- on click if enough mana (3) the spell cast begins (action bar)
+  - on critical success = costs -1 mkg
+  - on critical fail = apply spell to self (or special case: Harden = Deplete all stamina, Syphon = Just hurt yourself)
+- 📜 Spell Scroll: <emoji> <spell-name>
+- spell scrolls might be found similar to other items (create a a sample item in story.csv right after debug comment)
+- Scroll rolls what spell it is on encountering, roll from unknown spells only
+- "🧠 Learn" action (instead of speak) when seeing a spell scroll, sucess chance based on int, on fail - could not comprehend (no second chance)
+- Basic spells below:
+- 🐸 Hex - Change enemy to harmless 1/1 frog
+- 🔥 Burn - Deal 4 damage
+- 🧊 Freeze - Deplete enemy stamina
+- ⚡️ Surge - Restore own stamina full
+- 🪬 Curse - Lower enemy attack by 3
+- 🪨 Harden - 2 physical damage protect for player for rest of the fight
+- 🩸 Syphon - Damage enemy for 2, damage enemy for 2
+- Priority: P4 — major new system; high concept value but XL scope
+- Type: Feature
+- Effort: XL | Gain: L
+
 ### [NECRO-OPT] Feature: Necropolis optional areas
 - Optional sub-areas for late-game variety inside Shrouded Necropolis.
 - Priority: P4 — content; post-beta
 - Type: Feature
 - Effort: L | Gain: M
 - Needs: Define what optional areas look like and how they gate before designing.
+
+### [SVG-EMOJI] Feature: SVG support in emoji column
+- Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
+- Priority: P4 — infra change for a niche use case
+- My note: would actually give ability to have endless content as we are running out of emojis
+- Type: Feature
+- Effort: M | Gain: S
 
 ### [DEF-STAT] Bug: Player DEF stat — wrong display, item support gaps, incorrect rarity
 - Consolidate damage log message to be a sigle message (not two as now - one for dmg, second for def) when player DEF is non-zero and had effect example "Hit by their attack -1💔 (1🔰); not all item types account for DEF; an item with DEF as its sole non-zero stat should resolve as Legendary (Artifact).
@@ -472,11 +438,37 @@
 - Type: Bug | Severity: Major
 - Effort: M | Gain: M
 
+### [HIDST-LOG] Improvement: Occasional hidden-stat log messages mid-run
+- Poetic one-liner log entries tied to karma/love thresholds during a run — e.g. "Your choices leave a mark." Gives players a signal that unseen stats are accumulating.
+- Priority: P2 — directly addresses hidden stat opacity; small effort, meaningful player signal
+- My note: P4 -> Id rather do the mirror encounters, that holds bigger value.
+- Type: Improvement
+- Effort: S | Gain: L
+
+### [VIS-IMPACT] Improvement: Full visual impact frames — hit flash, damage flash, STA fade
+- Flash white when player hits; red-white flash when player takes damage; green fade when losing STA — especially prominent at 1 HP or 0 STA. Full-screen shakes for critical moments.
+- Priority: P3 — broader than .flash-crit; higher effort but higher feel impact
+- My Note: -> P4 Such visual changes always take a long time to be good, parking lot this after beta, we have some visual feedback already.
+- Type: Improvement
+- Effort: M | Gain: L
+
 ### [TIPS-SYS] Idea: Game tips system (parked)
 - Tips that trigger on player state (first death, first Artifact, low STA) using existing toast system — easy/story difficulty only. Parked — tutorial revamp (P2) supersedes this.
 - Priority: P4 — superseded by tutorial revamp; keep as reference if tip-layer is needed later
 - Type: Idea
 - Effort: S | Gain: XS
+
+### [VEC-BG] Feature: Vector backgrounds for all areas
+- Complete and default to vector backgrounds for all areas.
+- Priority: P4 — significant atmosphere upgrade; L effort, not mobile-critical
+- Type: Feature
+- Effort: L | Gain: M
+
+### [BLACK-HOLE] Feature: Black hole — new optional area + spaghetti monster boss
+- DLC-style optional area with spaghetti monster boss, modern props, items, tools. The JS spaghetti monster joke boss lives here.
+- Priority: P4 — fun/joke expansion; well outside current scope
+- Type: Feature
+- Effort: XL | Gain: S
 
 ---
 
