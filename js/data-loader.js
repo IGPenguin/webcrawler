@@ -428,7 +428,7 @@ function getWeightedLootIndex(luck, karma) {
     buckets[tier].push(idx);
   });
 
-  var tier = RarityManager.rollTier(luck, karma);
+  var tier = RarityManager.rollTier(luck, 1); // karma effect disabled pending overhaul
   var pool = buckets[tier];
 
   // Fall back to full available pool if rolled tier has no entries
@@ -466,9 +466,9 @@ function getUnseenLootIndex() {
 function getArtifactLootIndex() {
   var artifactIndices = [];
   for (var i = 0; i < linesLoot.length; i++) {
-    if (String(linesLoot[i]).includes('note:<b>Artifact</b>')) artifactIndices.push(i);
+    if (String(linesLoot[i]).includes('note:<b>Artifact</b>') && _achievUnlocked(linesLoot[i])) artifactIndices.push(i);
   }
-  if (artifactIndices.length === 0) return getUnseenLootIndex();
+  if (artifactIndices.length === 0) return getWeightedLootIndex(playerLck, playerKarma);
   var unseen = artifactIndices.filter(function(i) { return !seenLoot.includes(i); });
   var pool = unseen.length > 0 ? unseen : artifactIndices;
   return pool[Math.floor(Math.random() * pool.length)];

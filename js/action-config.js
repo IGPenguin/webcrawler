@@ -173,10 +173,9 @@ function calcActionBarConfig(button, adjustment) {
 
   // Roll against exhausted enemy — very easy, but humiliating to fail
   if (button === 'button_roll' && (enemySta - enemyStaLost) <= 0 && enemyType!="Item" && enemyType!="Shop") {
-    var _ka = (playerKarma || 1) - 1;
-    var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6 + _ka * 0.4) * 1.25)));
+    var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
     var _csMin = 50 - Math.floor(_csW / 2);
-    var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - _ka * 0.5)));
+    var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 10, successMax: 90,
              critSuccessMin: _csMin, critSuccessMax: _csMin + _csW, critFailW: _cfW };
   }
@@ -432,10 +431,9 @@ function calcActionBarConfig(button, adjustment) {
 
   // Roll Heavy with stamina remaining — slow and telegraphed, easy to sidestep
   if (button === 'button_roll' && isHeavy && eSta > 0) {
-    var _ka = (playerKarma || 1) - 1;
-    var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6 + _ka * 0.4) * 1.25)));
+    var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
     var _csMin = 50 - Math.floor(_csW / 2);
-    var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - _ka * 0.5)));
+    var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82,
              critSuccessMin: _csMin, critSuccessMax: _csMin + _csW, critFailW: _cfW };
   }
@@ -564,10 +562,9 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: speed, successMin: zoneStart, successMax: zoneStart + zoneW };
   }
 
-  // Crit zone widths: more luck/positive karma → wider success zone, narrower fail zone
-  var karmaAdj = (playerKarma || 1) - 1;
-  var critSuccessW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6 + karmaAdj * 0.4) * 1.25))); // 1.25 is the crit zone multiplier
-  var critFailW    = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5 - karmaAdj * 0.5)));
+  // Crit zone widths: luck only — karma hook removed pending full karma overhaul
+  var critSuccessW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
+  var critFailW    = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
 
   // Ensure success zone doesn't overlap crit-fail edges — action-bar.js disables crits if it does
   zoneStart = Math.max(critFailW + 1, Math.min(100 - zoneW - critFailW - 1, zoneStart));

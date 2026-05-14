@@ -149,8 +149,7 @@ function enemyKnockedOut(){
   var knockoutString="💤 Harmlessly knocked them out "
   if ((enemyAtk+enemyAtkBonus)<=0) knockoutString="💤 Carefully put them to sleep "
   logAction(enemyEmoji + "&nbsp;▸&nbsp;" + knockoutString + decorateStatusText("","+"+gainedXP+" XP",colorGold));
-  if (enemyAtk>0) playerKarma++;
-  if (enemyAtk<=0) playerKarma--;
+  playerKarma++;
   AchievementManager.check('knockout');
   if (enemyBossType.includes('Boss')) pushBossLoot();
 

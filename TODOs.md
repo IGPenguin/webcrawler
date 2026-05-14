@@ -1,237 +1,617 @@
-## Claude efficiency 101
+# Styx Flow — 2026-05-14 — Stay Dead
 
-- **/rename** [task] - e.g. 1 Tab for Logic & 1 For UI<br>
-- **/compat** when done! (and will repeat in future)<br>
-- **/clear** when one-time task completed
+## P1 — Serious Issues & Big Wins
 
-# Priority 0
-- ME: Finish the game at least 3x, upload data to leaderboards, verify UI
-  - Pay attention to action chances and outcomes
-  - Check score calcualation - does it make sense?
-  - Summon fishing boss (curse), kill it to get drachma (then do it again and see if it errors out, also do it in another sesh to see if another drachma pops)
-- fade wit text when fining invitation/letter - does it work??
-- ...
-- ME: Tweak UI: Rankings and Chronicles (list+detail)
-- ME: Complete the rest of the missing achievement unlocks
-- ME: Clean ideas folder
+### [DMG-STA] Bug: Enemy damage not charging STA in all action types
+- Failed action bars that should cost STA don't apply consistently — confirmed missing on stingy-type block fail; audit all damage-dealing encounter and enemy type handlers.
+- Priority: P1 — broken combat economy undermines the core stamina tension
+- Type: Bug | Severity: Major
+- Effort: S | Gain: 4
+
+### [KICK-FAIL] Bug: Kick fail toward heavy sub-boss resolves as pass
+- A failed kick action bar check against a heavy sub-boss incorrectly passes — outcome dispatch likely using the wrong tier condition.
+- Priority: P1 — boss-tier combat bypass
+- Type: Bug | Severity: Major
+- Effort: S | Gain: 3
+
+### [DEF-STAT] Bug: Player DEF stat — wrong display, item support gaps, incorrect rarity
+- Consolidate damage log message to be a sigle message (not two as now - one for dmg, second for def) when player DEF is non-zero and had effect example "Hit by their attack -1💔 (1🔰); not all item types account for DEF; an item with DEF as its sole non-zero stat should resolve as Legendary (Artifact).
+- Priority: P1 — a live, UI-visible stat behaving incorrectly
+- Type: Bug | Severity: Major
+- Effort: S | Gain: 4
+
+### [PLAY-GATE] Chore: ME — Personal playtesting gate before beta
+- Finish the game at least 3x; upload data to leaderboard and confirm score appears within 35 min; test fishing boss summon via Curse in the same session (repeat) and across sessions; verify Rankings and Chronicles UI flow end-to-end.
+- Priority: P1 — hard gate; nothing ships to friends before this is done
+- Type: Chore
+- Effort: M | Gain: 5
 
 ---
 
-# Claude
-- ???
+## P2 — Release-Gating
 
-# Manual
-- ???
+### [INVAD-REBRAND] Feature: 👾 Invader rebrand — full UI overhaul
+- Rename "Rival" to "Invader" (👾) everywhere in UI; purple-reddish color palette (lighter for text, darker for card background); pixelated glitch-style animated pattern on the Invader card.
+- Priority: P2 — social identity feature must land before beta friends encounter rivals
+- Type: Feature
+- Effort: M | Gain: 4
+- Details: Extended Invader sub-features (double XP, "Slayed by Invader" end state, achievements, 100% loot drop) are separate P3 items.
 
-# Gemini
-- ???
+### [MIRR-ENCNTR] Feature: 🪞 Mirror encounter type — hidden stat reveal
+- New encounter type displaying one hidden stat's current value (mirror-luck, mirror-int, mirror-karma) + a contextual hint string about what the stat does (e.g., "3🍀 — Luck tips the scales"). Mirror can be broken for a negative effect, or spoken to at INT mirror for a +1 INT boost. Start by mimicking prop activity handling; expand per mirror variant.
+- Priority: P2 — directly addresses the single most-flagged design gap: players have no signal on hidden stats mid-run
+- Type: Feature
+- Effort: M | Gain: 5
 
-# Hades
-- invaders from highscore, comes small chamce to spawn heavy "undead" enemy based on the highscore characters - in "gen hard slots"
- - name should match
- - description should be: Reanimated dead body from a different world.<br>Bears tattoo: [nickname].
- - normalize stats if too craz - limit to top stats per area for a boss
- - trunctate nickname if too long
- - show red background same as boss, shown type: 💔 Rival (or so, hint eternal player)
- - do NOT spawn your own dead bodies - filter by nickname
- - give double xp for kill
- - special game end case if killed 💔 Slayed by rival (or so)
- - special log on spot
- - extrs fade on spot
- - achievement for spot first time
- - achiev for kill
- - achiev for 10 kills
- - 100% drops random item from their loot pool (filter by emoji from encounters.csv)
+### [TUTOR-REVAMP] Feature: Tutorial revamp
+- Current tutorial is hardcoded in story.csv — needs feature-level improvement: explain the action bar mechanic on first encounter, hint that moral choices accumulate, clarify drachma persistence across runs.
+- Priority: P2 — onboarding is the #1 beta risk; wrong mental models form in the first 3 minutes
+- Type: Feature
+- Effort: M | Gain: 5
 
-# Ideas zone
+### [PET-TAME] Feature: Pet taming via Speak — INT check + calmed/exhausted condition
+- Pets become tameable by Speak if player INT ≥ pet INT and the pet is calmed (no ATK) or exhausted (no STA). Conditioning mechanic: successful Speak brings the pet closer and costs the pet -1 STA. Consolidates both pet taming notes.
+- Priority: P2 — expands a beloved mechanic with a clear tactical condition
+- Type: Feature
+- Effort: S | Gain: 4
 
-## Unique items/origins
-- Legendary item allowing to physically damage spirits (soulgem)
-- new items to the new slots (check ideas and remove them once and for all)
-- NEW: Item/Origin increasing drop chances for higher than common rarity
-- NEW: Item/Origin for bigger crit chance interval by ??%
-- NEW: Item/Origin ⏳ Strange Hourglass - 10% slower action bar speed (global)
-- More unique origins with actual gameplay implications
-- (Already done with the gate!?) New story progress unlockable: a portal to village? (Skip early game)
-- Groom origin with unique pwer/effect?
-- Origins with starting items (Legendary?)
-- Legendary negating bad karma
-- JS spaghetti monster joke boss - when, how? after Hanging out in Menu for 5 minutes with live char?
+### [SHARE-REVAMP] Feature: Share function revamp — clipboard, QR, textfield
+- Unified share in death state, credits, and chronicles run detail: copy link to clipboard, pixel-style QR popup, textfield showing the link for manual copy/paste.
+- Priority: P2 — social sharing is a core beta activation hook
+- Type: Feature
+- Effort: M | Gain: 4
 
-## Refined mechanics
-- Minimize 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
-- LUCK: Add some actual reason for encounters/enemies LCK stat (i think it does nothing now)
-  - it could possibly counter the players LCK to lower their crit chances and such?
-  - luck - or + could affect the fishing spot chances (interval sizes)
-  - other ideas?
-- Altar with no bonus attribute, pray = get exp
-- Killed by undead, become undead  with 1hp, 1/2 sta, skip death state (until fully killed)
-  - Append zombie emoji before 🧟 John Doe (Undead)
-  - undead then have 0 base attack against you
-- pinata positive trap: grab should be all red, block should be all red, rest should be easy as prop, avoid should be walk
-- ...
-- add more hidden sta visbility opportunities (karma, love, int, luck)  - introduce a rare encounter or a "Mirror" item that vaguely exposes the player's hidden statas through poetic descriptions. This turns the "hidden" stats into a mysterious, sought-after gameplay element, this encouter type should naturally fall at the end of each area (i think)
-- refactor curses to have better branchign and corresponding button options per the stats they affect: howling wind endure should give, the action button to trigger that should not be endure (taht is for int-based curses) - suggest
-- Hit prop once (one chance only) to try spawning small (remember to push copy of the prop forward)
-  - kinde variant to the proposed "camp" encounter type
-- Investigate: Negative friends - should simply decrement stats (opposite of friends), add some to lategame
-- New Type: "Camp" spawn enemy on rest (actionLog it)...
-  -  Related New: Camp-Grab spawn enemy on grab... (e.g. investigate tent, box etc.)
-- New Type - Magic-container, cast to unlock - Contains item  (50% for artifact - same should already be for regular locked containers?)
-- gameplay implications based on companions in the party
-- Fix the very flaky "Quest system" - friends might require a "quest item" to exchange it for artifact, the quest firend + item spawn logic is brittle, I imagine better way like spawning the quest item somwehere in the story and the friend somewhere else - independent of the area, also would be great to hide the exact item list of the things the friend is looking for (keep it under the hood) and display just a general description of things they are looking for
-- Adopt pet for item (similar to friend with quest items - give instead of speak), E.g. Give mouse/lizard to cat
+### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
+- Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
+- Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it
+- Type: Feature
+- Effort: L | Gain: 4
 
-## Visuals/platform-specific
-- if stat over 5, display numeric - e.g. ❤️ 4/6 (the UI is limited, so yeah)
-- VISUAL: Add "impact" frames when hitting (flash white) or being hit (red white) or getting tired (green fade out?) especially prominent when getting to 1 HP or 1/0 STA, make use of full screen shakes etc. (the existing render/effect toolkit should provid opportunities)
-- VISUAL: Ensure the crit/success zones in the gradient are easily distinguishable for colorblind players (e.g., using different patterns or very
-     distinct brightness levels).
-- ANDROID: Add better vibration support to actionbar interactions:
-   - vibrate on button press and release   
-   - vibrate on transitioning between the fail/pass/crit zones
-   - vibrate when taking damage, cannot effects etc?
-   - use various vibration legth/pattern to match the related trigger
-   + double check if this is really impossible on iOS? any chance to get a permission? 
-- SOUNDS: Adding sounds effects and background music? (would that work for ios, android, mac and windows with no problems?)
-- Follow up and complete the vector backgrounds for all areas, make it default
-- Vectors/Emojis: support for "thing.svg" in the emoji column of encounters/story/origins
-  - the vectors would be in assets/encounters, they should displsy same/very similar as any emojis so far
-- support for https://slackmojis.com/ in emoji field (achiev/origin/emcounter/button)
+### [RANK-UI] Improvement: ME — Rankings and Chronicles UI tweak
+- Refine Rankings list + detail and Chronicles list + detail — layout, readability, endgame polish.
+- Priority: P2 — endgame screens are the social product; unfinished here reads as abandoned
+- Type: Improvement
+- Effort: M | Gain: 4
 
-## New mechanics
-- add "Pseudo-Multiplayer Ghosts" - Hardcode 5-10 "Ghost" encounters in encounters.csv that represent "Past Players." They use random names from the highscore list (mocked if offline) and drop loot the players held on the time of their death (one of the items - roll item by emoji from local encounters.csv) when spoken to or defeated.
-- Make Karma Matter! (between runs?)
-  - make "Revive" interval based on karma (Todo in place)
-  - Add a simple "Karma Hook" in action-resolver.js where "Speak" on aggressive enemies grants +1 karma, and "Attack" on neutral/friendly NPCs (checked via enemyAtk === 0) grants -2.
-  - implement "Karma Standing" inspectable via a new encounter type Mirror. This encounter uses string-generator.js to provide poetic descriptions of the player's hidden karma.
-  - Create a "Karma Decay" system where karma slowly trends toward 1 over multiple runs, preventing permanent "Evil" or "Saint" locks. Add "Mischievous" encounter variants that only trigger when karma < 0.
-  - Acheivement: Reaching approx. (not sure about exact numbers) +10 or -10 karma unlocks permanent "Perks" or "Flaws" (Origins/Items.., or even mechanics?)
-    - Positive milestones increase healing efficiency; negative milestones increase critical damage but decrease maximum stamina.
-  - bad/good karma high numbers to have chance on twisting/blessing the loot? (additional post-spawn edit - visual and stats)
-  - plus check what actions currently change karma, possibly adjust/expand
-  - have meaningful impact, but not too punishing, with hints making it a bit more transparent
-  - There should be proactive actions available to fix bad karma if players learn that they have bad standing
-  - killing enemies that are agressive should be fine, putting to sleep aggresive enemies should be considered good deed, killing non aggressive enemies should be considered bad, attacking friends should be bad etc.... suggest more hooks to karma?
-  - the good karma bonus encounter - available in player.skills.js - we should find a way to edit/rething trigger it sometimes (not only when revived, that might be very uncommon situation)
-- Add game run modifiers? (unlock after special condition? activated trough Origins?)
-  - Demons passive but...
-  - Animals passive but...
-  - ???
-- Expand Inventory: consumables, items array
-  - open on click loot/party bar?? (repalce buttons or overlay)
-  - You have to swap items in slots chest, head, hands (validchests, validheads... - like valid baits) = Prevents stacking power fast
-  - eat food only intentionally, dont force/ditch
- - make actions seem more sequential in the ui so that player can notice one by one - eg delay 0,5s each log display and wait for effects to complete before firing another and unlocking UI for player actions?
-- ...
-- take inspiration from:
-  - https://pixeldungeon.fandom.com/wiki/Game_mechanics
-  - https://pixeldungeon.fandom.com/wiki/Items
-  - https://pixeldungeon.fandom.com/wiki/Enemies
+### [HIDST-LOG] Improvement: Occasional hidden-stat log messages mid-run
+- Poetic one-liner log entries tied to karma/love thresholds during a run — e.g. "Your choices leave a mark." Gives players a signal that unseen stats are accumulating.
+- Priority: P2 — directly addresses hidden stat opacity; small effort, meaningful player signal
+- Type: Improvement
+- Effort: S | Gain: 4
 
-## Social
-- separrate bug report through a gform to a separate sheet, daily job to sync to github issues with tags
+### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
+- Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
+- Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system
+- Type: Improvement
+- Effort: M | Gain: 4
 
-# Parking lot
+### [TEASE-UI] Improvement: Run end tease fade UI — names, spacing, rarity colors
+- More horizontal space between origin emojis in the run-end tease; add origin name below each emoji; make name text color reflect the origin's rarity tier.
+- Priority: P2 — last thing players see before score submission; polish matters here
+- Type: Improvement
+- Effort: S | Gain: 4
 
-## Data changes
-- River of Sorrows: add 1-2 static Memory-type story encounters for atmosphere (candidate ideas: Drifting Lanterns ritual, Wrecked Hull of a previous crossing, Shore Inscription that doesn't say "turn back").
-  - Needs custom type handling — Memory type is currently only wired for the Fairyland arch (teleport/speech skip). Needs non-trivial work.
-  - River of Sorrows: dock/harbor encounter AFTER the river boss — "docking the boat before stepping into Necropolis". Could use the fullscreen fad e text transition as a story scrap / area handoff beat. Low complexity if treated as a static Prop/Friend rather than a new Memory type.
-- Bloat fishing loot with items and threats, traps, perhaps floating altars and such
-- distinguish fishing and river area somehow
-- ...
-- Add spirit/reflective to Village and River (might be nerfed in village e.g.)
-- new pets in mid/late game areas (drowned spirit, scared ghost, living mushroom, talking fly...)
-  - mostly for flavour xp, but can actually ad lck or smth, very rarely +1 atk
-- Add more positive AND negative traps (all variants) and curses
-  - with stat swaps - swap x for y
-- Curses with -1 atk (lategame)
-- Practice target variants for speak, cast... option to leave
-- Magic items in the game should almost always carry some curse
-- Increment meadows data (praised bath, no-effect encounters)
-  - No-effect altars, curses etc with just observations
-  - Clear sky, silent overcast
-- Trap-Big, Trap-Obstacle, Toxic, Hot, Reflective, Tough, Stingy... + bosses
-  - Revise village data (traps, special enemies)
-  - Revise fairyland data (special — Forest Fiend, various ghosts)
-  - Revise river (all types, very lacking regarding all encounter types)
-  - Revise necropolis (special, freezing/snowman)
-  - Animated objects, flora, unusual shades, effects...
-- Undead + vampires in fairyland and river (drowned zombie etc)
-- Lemon-like unique foods with perma boosts (1 good, 1 bad per area)
-  - Ensure bad foods in all areas
-  - Mixed stats foods and items — lose and gain at the same time
-- Touch lucky statue/chime etc... (positive traps?), Bubble bath...
-- Containers/traps costing stamina/lck etc. — Thorny patch (more like this)
-- Lategame traps/curses stealing mana/sta etc
-- Necropolis optional areas
+### [KNOCK-STA] Improvement: Knockout difficulty — STA-dependent
+- Knocking out an enemy should be nearly impossible while they have remaining STA; once STA hits 0, knockout difficulty drops to current behavior — action bar interval should reflect this split.
+- Priority: P2 — tactical depth + combat feel
+- Type: Improvement
+- Effort: M | Gain: 4
 
-## New feature: Spells
-- add new dynamic layout with spells
-- change curse button to generic "📓 Spell"
-- on click, overlay action buttons with list card with known spells (scrollable, max height to cover action buttons), row shows: emoji spell name: effect, cost
-- dismiss button at the end of the list
-- on click if enough mana (3) the spell cast begins (action bar)
-  - on critical success = costs -1 mkg
-  - on critical fail = apply spell to self (or special case: Harden = Deplete all stamina, Syphon = Just hurt yourself)
-- player knows no spells until learning some, log on action: "Cannot cast any spells ...yet?"
-- 📜 Spell Scroll: <emoji> <spell-name>
-- spell scrolls might be found similar to other items (create a a sample item in story.csv right after debug comment)
-- Scroll rolls what spell it is on encountering, roll from unknown spells only
-- "🧠 Learn" action (instead of speak) when seeing a spell scroll, sucess chance based on int, on fail - could not comprehend (no second chance)
-- Basic spells below:
-- 🐸 Hex - Change enemy to harmless 1/1 frog
-- 🔥 Burn - Deal 4 damage
-- 🧊 Freeze - Deplete enemy stamina
-- ⚡️ Surge - Restore own stamina full
-- 🪬 Curse - Lower enemy attack by 3
-- 🪨 Harden - 2 physical damage protect for player for rest of the fight
-- 🩸 Syphon - Damage enemy for 2, damage enemy for 2
-- ...more?
+### [ORIG-RARITY] Improvement: Origins rarity — achiev-required + no stats → Legendary + Familiar
+- Origins that require an achievement unlock and have no stat bonus should automatically resolve to Legendary (Familiar tier) — currently not enforced.
+- Priority: P2 — rarity display is visibly incorrect for achievement-gated origins
+- Type: Improvement
+- Effort: XS | Gain: 3
 
-# Playwright - Data Capture
-- **Objective:** Create a high-fidelity "Flight Recorder" using Playwright/Chromium to bridge gameplay reality with AI interpretation.
-- **Passive Monitoring:**
-   - Initialize a passive session on localhost.
-   - Use `page.exposeFunction` to hook into `logging.js` (`runLogAdd`) to stream game logs to the terminal/filesystem in real-time.
-   - Implement a `MutationObserver` on `#id_card` and `#id_log` to trigger snapshots only when the UI state actually shifts, reducing data noise.
-- **Data Capture:**
-   - On every significant event (touch/click/scroll or log entry), capture a UI snapshot (HTML) and a Screenshot.
-   - Generate a "Semantic State" dump: a text-based (YAML/JSON) representation of visible elements for context-efficient AI analysis.
-- **The Ritual Shutdown:**
-   - Create a bash script (`playtest.sh`) to manage the session.
-   - On `SIGINT` (Ctrl+C), cleanly halt the browser and prompt the user for a "Post-Mortem" summary of their intent and findings.
-   - Organize all artifacts into a timestamped folder (`/playtests/YYYY-MM-DD_HH-MM/`) for Claude/Gemini ingestion.
+### [TRAP-SLEEP] Bug: Sleep at trap should follow prop sleep rules
+- Sleeping at a trap encounter (unless it's a Trap-Sleep type) should follow the same action bar interval as prop sleep — currently behaves differently.
+- Priority: P2 — inconsistent rules break player intuition
+- Type: Bug | Severity: Minor
+- Effort: S | Gain: 3
 
-# Playwright - Automated Run
-- Playwright Bot: open a playwright session against live page to capture controls setup a bot that can decide correct actions to resolve the encounters and complete the game
+### [DEAD-TOUCH] Bug: Touch on dead (empty) enemy should be 100% pass
+- Interacting with an already-defeated enemy should always succeed — action bar interval not set to guaranteed pass for the empty corpse state.
+- Priority: P2 — failing at a dead enemy is confusing and unfair
+- Type: Bug | Severity: Minor
+- Effort: XS | Gain: 3
 
-# Technical Debt & Refactoring
-- **Logic & Balance**
-  - [ ] **Curse Scaling:** Make curse stats (negative values) affect the action bar success width. Currently, all curses are equally hard regardless of intensity. (`js/action-config.js`)
-  - [ ] **Karma Scaling:** Revise the reincarnation bonus threshold. Currently, any positive karma gives the same reward; should scale or have tiers. (`js/player-skills.js`)
-  - [ ] **Enemy Defense:** Ensure `enemyDef` is handled in all player skill calculations, including consumables. (`js/player-skills.js`)
-  - [ ] **Magic Finisher:** Refactor the "mercy" logic for finishing enemies with 1 HP using magic. (`js/action-resolver.js`)
+### [GRAB-LOCK] Bug: Grab on locked container — all red, add lock message
+- Grabbing a locked container without a key should show an all-red action bar and log "Cannot get inside, it's locked." — currently no feedback.
+- Priority: P2 — missing feedback on a common interaction
+- Type: Bug | Severity: Minor
+- Effort: XS | Gain: 3
 
-- **Architecture & Extensibility**
-  - [ ] **Generator State:** Cleanup the hacky logic in `nextEncounter` for "Generator" types to ensure area transitions and "seen" tracking are robust. (`js/game-loop.js`)
-  - [ ] **Boss Type Tracking:** Replace the `enemyBossType` global hack with a cleaner state management approach. (`js/encounter-loader.js`)
-  - [ ] **Action Type Cleanup:** Refactor or remove the "Upgrade" action type if it's redundant. (`js/action-resolver.js`, `js/ui-render.js`)
+### [MEMENTO-DROP] Bug: Lovers Memento dropped from wrong boss/area
+- Lovers Memento appeared from a boss in Fading Wildlands — story-locked items should only drop from their designated source; boss drops in this area should be artifacts or standard items only.
+- Priority: P2 — wrong loot breaks narrative coherence at a key story moment
+- Type: Bug | Severity: Minor
+- Effort: XS | Gain: 2
 
-- **UI/UX & Visuals**
-  - [ ] **Sharing System:** Fix the screenshot capture logic. Ensure buttons are hidden during capture and the full log is visible without clipping. (`js/menu.js`)
-  - [ ] **Coin Log Formatting:** Replace the brittle string-splitting hacks for coin costs in the log with a structured data approach. (`js/logging.js`)
-  - [ ] **Button Polish:** Invent a new "Perk" or state to replace the placeholder "Pain" label on the rest button. (`js/ui-buttons.js`)
-  - [ ] **Emoji Polish:** Finalize emoji assignments for unassigned types (🐅 > ⚔️ etc.). (`js/enemy-skills.js`, `js/action-resolver.js`)
+### [FADE-TEXT] Bug: Fade text on invitation/letter — verify it fires
+- The fade-with-text trigger on finding an invitation or letter is unverified — check that it fires correctly.
+- Priority: P2 — potentially broken story beat presentation
+- Type: Bug | Severity: Minor
+- Effort: XS | Gain: 3
 
-- **Internal Hacks**
-  - [ ] **Achievement Timing:** Fix the timing hack for logging achievements after actions. (`js/achievements.js`)
-  - [ ] **Team Rendering:** Refactor the "Hacky hacky hacky" team sorting/rendering logic. (`js/ui-render.js`)
+### [QUEST-SPAWN] Bug: Quest system — brittle friend + quest item spawn logic
+- Refactor to spawn friend and quest item independently in the story (not linked); hide exact item list from display (show general description only); keep matching logic internal.
+- Priority: P2 — brittle spawn logic is a live reliability risk at a key progression moment
+- Type: Bug | Severity: Major
+- Effort: M | Gain: 3
 
-# Rivals — Parked Features
-- [ ] **Rival Graveyard UI:** Show a "💔 Rivals Slain" section at the bottom of the Memories/achievements screen. Each entry shows rival name, area, level. Persist in localStorage under `rivalGraveyard` key. (`js/achievements.js`, `js/menu.js`)
-- [ ] **Fight Your Own Ghost:** When the leaderboard pool is empty or unavailable, spawn a rival based on your own last submitted run (`ghostLink` from localStorage). Use type "👁 Echo" and reframe the desc as "A reanimated corpse bearing your face." Purely local, no network dependency. (`js/rival-manager.js`)
+---
 
-# Trash
-- build a "Game Tip" system that triggers based on player state (e.g., first time dying, first time finding an Artifact, being low on Stamina). Uses the existing string-generator.js and ui-render.js toast system. (Would only appear for easy/story difficulty, can reuse achievement toasts)
+## P3 — Should-Fix
+
+### [FLASH-CRIT] Improvement: .flash-crit CSS animation on critical hits
+- Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
+- Priority: P3 — polish; XS effort with existing toolkit
+- Type: Improvement
+- Effort: XS | Gain: 3
+
+### [CRIT-SHAKE] Improvement: Crit attack shakes enemy card; crit walk bounces player card
+- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only.
+- Priority: P3 — targeted micro-feedback, lower scope than screen-shake
+- Type: Improvement
+- Effort: S | Gain: 3
+
+### [VIS-IMPACT] Improvement: Full visual impact frames — hit flash, damage flash, STA fade
+- Flash white when player hits; red-white flash when player takes damage; green fade when losing STA — especially prominent at 1 HP or 0 STA. Full-screen shakes for critical moments.
+- Priority: P3 — broader than .flash-crit; higher effort but higher feel impact
+- Type: Improvement
+- Effort: M | Gain: 4
+
+### [STORY-FADE] Improvement: Story fades — longer and smoother
+- Increase duration and smooth easing on game-start, memento, memory, and final boss fade transitions.
+- Priority: P3 — polish; transitions are functional but thin
+- Type: Improvement
+- Effort: S | Gain: 3
+
+### [CRIT-SLEEP] Improvement: Crit sleep outside combat → extra STA
+- A critical success on a sleep action outside combat (e.g., falling leaves) should grant bonus STA beyond the standard recovery.
+- Priority: P3 — small mechanical delight; extends crit reward to a new context
+- Type: Improvement
+- Effort: S | Gain: 3
+
+### [STAT-DISP] Improvement: Stat display — show numeric when over 5
+- If a stat value exceeds 5, display it as a number (e.g., ❤️ 4/6) instead of the icon-count style — UI space is limited.
+- Priority: P3 — clarity for high-stat builds; not common enough to block beta
+- Type: Improvement
+- Effort: S | Gain: 3
+
+### [NAME-QUAL] Improvement: Generator name rolls quality pass
+- Revise name generation to avoid "unliving" words on living enemies; consider adding actual proper names in Rosabel-style tone — believable styling takes priority over stat matching.
+- Priority: P3 — tonal immersion; name mismatch breaks the register
+- Type: Improvement
+- Effort: S | Gain: 3
+
+### [CURSE-REFAC] Improvement: Curse refactor — better branching per stat type
+- Curses should have branching button options matched to the stat they affect — e.g., "Howling Wind" endure should not share the action button with INT-based curses.
+- Priority: P3 — mechanical consistency; curses currently all feel the same
+- Type: Improvement
+- Effort: M | Gain: 3
+
+### [SEQ-DELAY] Improvement: Sequential action display — delay 0.5s per log entry
+- Add a 0.5s delay between log entries in multi-step action sequences; wait for effects to complete before re-enabling player input.
+- Priority: P3 — readability and feel; not blocking
+- Type: Improvement
+- Effort: S | Gain: 3
+
+### [COLOR-BLIND] Improvement: Colorblind-safe crit/success zones
+- Ensure crit and success zones on the action bar are distinguishable without color — brightness difference or pattern.
+- Priority: P3 — accessibility; not gating beta
+- Type: Improvement
+- Effort: S | Gain: 3
+
+### [MIN-CLICK] Improvement: Minimize 1-click encounters
+- Reduce encounters that resolve in a single click with no decision — use encounterUsed to create at least one action opportunity before resolution.
+- Priority: P3 — player agency; 1-click encounters feel like dead zones
+- Type: Improvement
+- Effort: M | Gain: 3
+
+### [BAR-RDZONE] Feature: Action bar red zones — random placement for prop encounters
+- For prop-type encounters (e.g., walking away from something), randomly place red danger intervals within the green zone instead of always at the edges — simulates "avoid the sharp stone."
+- Priority: P3 — mechanical depth and surprise; not beta-blocking
+- Type: Feature
+- Effort: M | Gain: 4
+
+### [AMB-FX] Feature: Area ambient UI effects — falling leaves, rain, fog per area
+- Pixel-styled, black-outlined ambient effects per area (falling leaves, blue/purple leaves, rain, fog). Expose per-area config: effect type, density, frequency, speed.
+- Priority: P3 — atmosphere; L effort and not blocking beta
+- Type: Feature
+- Effort: L | Gain: 4
+
+### [ORIG-UNIQ] Feature: More unique origins with gameplay implications
+- Add origins with real mechanical effects beyond stat distribution — passives, starting conditions, unique interactions.
+- Priority: P3 — origin depth; builds on the achiev-origin work in P2
+- Type: Feature
+- Effort: M | Gain: 3
+
+### [ITEM-RARITY] Feature: Item/Origin — increases higher rarity drop chance
+- New item or origin that shifts loot probability toward Uncommon/Rare/Legendary.
+- Priority: P3 — build variety; rarity system is already wired for this
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [ITEM-CRIT] Feature: Item/Origin — bigger crit chance interval
+- New item or origin that widens the crit success zone on the action bar.
+- Priority: P3 — build variety
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [HOUR-SLOW] Feature: ⏳ Strange Hourglass — 10% slower action bar
+- New item: globally slows action bar speed by 10%.
+- Priority: P3 — accessible build option; interesting tension with high-speed encounters
+- Type: Feature
+- Effort: XS | Gain: 2
+
+### [CAMP-TYPE] Feature: New encounter type — Camp (spawn enemy on rest)
+- Camp encounters spawn an enemy when the player rests (log the spawn). Camp-Grab variant triggers on grab (e.g., investigating a tent or box).
+- Priority: P3 — adds tension and encounter depth
+- Type: Feature
+- Effort: M | Gain: 3
+
+### [MAGIC-CONT] Feature: New encounter type — Magic Container (cast to unlock)
+- Container that requires Cast to open — contains an item (50% artifact chance, same as standard locked containers).
+- Priority: P3 — extends existing container design with a mana decision
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [PINATA-TRAP] Feature: Piñata positive trap — correct button handling
+- Grab and Block on a piñata trap should be all red; remaining buttons should be easy as prop; Avoid should follow walk rules.
+- Priority: P3 — existing encounter type behaving inconsistently
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [NEG-FRIEND] Feature: Negative friends — stat decrement encounters
+- "Negative friend" encounter variants that decrement stats (inverse of a standard friend boost) — add to late-game areas.
+- Priority: P3 — adds tension to a currently safe encounter type
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [PET-ADOPT] Feature: Adopt pet for item — give item to tame
+- Allow giving a specific item to adopt a pet (e.g., offer a mouse/lizard to a cat) — similar to friend quest item mechanic but for pet recruitment.
+- Priority: P3 — adds a resource decision to pet taming
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [COMP-PLAY] Feature: Companion gameplay implications
+- Companions in the party should have passive gameplay effects beyond score contribution.
+- Priority: P3 — currently companions are score-only; mechanical weight would make recruiting feel meaningful
+- Type: Feature
+- Effort: M | Gain: 3
+- Needs: Define what passive effects companions should grant before implementing.
+
+### [HAPTIC-BAR] Feature: Android vibration — action bar haptics
+- Vibrate on button press/release, on zone transitions (fail/pass/crit), on taking damage; vary pattern and length per trigger. Verify whether any iOS vibration permission is possible.
+- Priority: P3 — mobile game feel; significant on Android
+- Type: Feature
+- Effort: M | Gain: 3
+
+### [KARMA-OVRHL] Feature: Karma overhaul — full system
+- Revive interval scaled by karma; Speak on aggressive enemies = +1 karma; Attack on neutral/friendly = -2 karma; karma decay toward 1 across runs; tiered reincarnation bonus; mischievous encounter variants at karma < 0; perks/flaws unlocked at ±10 karma; good karma bonus encounter (not only on revive); proactive actions to repair bad karma. Expand all hooks; ensure hints make karma legible.
+- Priority: P3 — transformative system but XL scope; must not ship incomplete
+- Type: Feature
+- Effort: XL | Gain: 5
+
+### [INVAD-EXT] Feature: Invader extended features (post-rebrand)
+- After the P2 rebrand lands: double XP for Invader kill; special "💔 Slayed by Invader" end state with log and extra fade; achievement for first Invader spotted, first kill, and 10 kills; 100% item drop from Invader's loot pool. Invaders should spawn in gen hard slots specifically.
+- Priority: P3 — depth on top of the P2 base; each sub-feature is independent
+- Type: Feature
+- Effort: M | Gain: 4
+
+### [RIVAL-GRAVE] Feature: Rival Graveyard UI
+- "💔 Rivals Slain" section in Memories/achievements screen — name, area, level per entry, persisted under rivalGraveyard in localStorage.
+- Priority: P3 — social trophy moment; not blocking
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [FIGHT-GHOST] Feature: Fight Your Own Ghost
+- When leaderboard pool is empty/unavailable, spawn a rival from the player's own last submitted run (ghostLink localStorage) — type "👁 Echo," desc "A reanimated corpse bearing your face."
+- Priority: P3 — clean offline fallback for the rivals system
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [RUN-MOD] Feature: Game run modifiers
+- Unlockable run modifiers activated via Origins or special conditions (e.g., Demons passive, Animals passive).
+- Priority: P3 — build variety depth
+- Type: Feature
+- Effort: L | Gain: 3
+- Needs: Define unlock conditions and exact modifier effects before implementing.
+
+### [OFFHAND-SLOT] Question: Offhand/accessory slot — needed or stat creep?
+- Decide whether to add a dedicated offhand slot (talisman, yoyo, spellbook, shield...) or a generic accessory slot alongside the head/chest/hands system — purpose is to gatekeep stats and prevent runaway stat accumulation, not just add variety.
+- Priority: P3 — this design decision must be made before the inventory expansion (below) is architected; adding the slot after the fact changes the structure
+- Type: Question
+- Effort: S | Gain: 3
+- Needs: Answer: does adding a gatekeeping slot solve a real creep problem, or does it add complexity without payoff? Decision informs inventory expansion scope.
+
+### [INV-EXPND] Feature: Expand inventory — consumables + equipment slots
+- Add consumables array; head/chest/hands item slots with swap mechanic (prevents fast stacking); intentional food eating only (no auto-consume); open inventory on click of loot/party bar.
+- Priority: P3 — major architecture change; high gain but XL scope
+- Type: Feature
+- Effort: XL | Gain: 4
+
+### [STR-AUDIT] Chore: String writer skill + full CSV/JS string audit
+- Create a lightweight Claude skill for writing CSV and JS string fields — strict tone matching, length-optimized. Follow with a full audit pass using it.
+- Priority: P3 — dev velocity; string inconsistency is real but not beta-blocking
+- Type: Chore
+- Effort: S | Gain: 3
+
+### [ENEMY-STR] Chore: Enemy string quality pass
+- Audit all enemy desc and message fields for tone consistency and Rosabel-style voice — remove filler; flag area outliers.
+- Priority: P3 — content quality; tonal inconsistency is the Narrative Writer's top flag
+- Type: Chore
+- Effort: M | Gain: 3
+
+### [MISS-MSG] Chore: Missing messages pass
+- Identify and fill all enemy rows missing a message field (message = player death description).
+- Priority: P3 — content completeness; death descriptions are a visible gap
+- Type: Chore
+- Effort: S | Gain: 3
+
+### [PW-RECORD] Chore: Playwright — Data Capture flight recorder
+- Passive Playwright session: hook runLogAdd, MutationObserver on #id_card and #id_log, HTML snapshot + screenshot on state changes, YAML/JSON semantic dump, bash SIGINT post-mortem prompt, artifacts to /playtests/YYYY-MM-DD_HH-MM/.
+- Priority: P3 — dev tooling; improves AI-assisted debugging but not blocking
+- Type: Chore
+- Effort: L | Gain: 3
+
+### [STAT-NUDGE] Feature: Fractional "nudge" stat values for hidden stats — LCK, INT, karma, love
+- Allow sub-1 increments on hidden stats in CSV/origins (JS already supports decimals); display as human-readable labels rather than raw numbers — e.g. 0.5 = "Small bonus", 0.25 = "Tiny bonus" (exact tier labels TBD). Enables tighter balance control and a wider range of items/origins without pushing rarity up a full tier unnecessarily.
+- Priority: P3 — design space unlock with near-zero code cost; pairs well with the rarity weights audit below
+- Type: Feature
+- Effort: S | Gain: 3
+- Details: LCK at ×0.5 in the net formula means +0.5 LCK adds only 0.25 to net score — rarity-invisible by design, which is exactly right for a nudge. The UI label mapping (0.25 → "Tiny", 0.5 → "Small") is the main design decision still open.
+
+### [RARITY-WGHT] Question: Audit and redesign net stat rarity weights
+- The formula `atk×3 + mgk×2 + hp×1.5 + sta×1.5 + lck×0.5 + int×0.5 + def×1` was never designed — weights were guessed. LCK at ×0.5 feels especially off given it affects crits, loot quality, and action bar intervals. MGK at ×2 undervalues it relative to ATK once spells exist. Before changing any individual weight, define what +1 of each stat concretely changes in a run and set weights from that benchmark.
+- Priority: P3 — weights silently shape the entire loot feel; worth auditing before content volume makes it harder to rebalance
+- Type: Question
+- Effort: S | Gain: 4
+- Needs: For each stat: what does +1 change in a typical run? Set weight relative to ATK×3 as the anchor. After adjusting, sample existing CSV entries to confirm the rarity distribution doesn't break.
+
+### Technical Debt
+
+#### [SHARE-CLIP] Bug: Sharing — buttons not hidden during capture, log clips
+- Fix screenshot capture in menu.js: hide buttons during capture, ensure full log is visible without clipping.
+- Type: Bug | Severity: Minor | Effort: S | Gain: 3
+
+#### [ACHIEV-TIME] Bug: Achievement timing — fix post-action logging delay hack
+- Fix the timing hack for logging achievements after actions in achievements.js.
+- Type: Bug | Severity: Minor | Effort: S | Gain: 2
+
+#### [ENDEF-CALC] Bug: Enemy defense — enemyDef not applied in all skill calcs
+- Ensure enemyDef is used in all player skill calculations including consumables. (player-skills.js)
+- Type: Bug | Severity: Minor | Effort: S | Gain: 3
+
+#### [CURSE-SCALE] Chore: Curse scaling — curse stats should affect action bar width
+- Negative curse stat values should shrink the success zone — currently all curses are equally hard regardless of intensity. (action-config.js)
+- Type: Chore | Effort: S | Gain: 3
+
+#### [KARMA-SCALE] Improvement: Karma scaling — tiered reincarnation bonus
+- Any positive karma currently gives the same revive reward — should scale by tier. (player-skills.js)
+- Type: Improvement | Effort: S | Gain: 3
+
+#### [GEN-STATE] Chore: Generator state — clean up nextEncounter Generator-type logic
+- Clean up hacky logic in nextEncounter for Generator types; ensure area transitions and seen tracking are robust. (game-loop.js)
+- Type: Chore | Effort: S | Gain: 2
+
+#### [BOSS-TRACK] Chore: Boss type tracking — replace enemyBossType global hack
+- Replace the enemyBossType global with cleaner state management. (encounter-loader.js)
+- Type: Chore | Effort: M | Gain: 2
+
+#### [ACT-UPGRD] Chore: Action type cleanup — refactor or remove Upgrade type
+- Refactor or remove the Upgrade action type if redundant. (action-resolver.js, ui-render.js)
+- Type: Chore | Effort: S | Gain: 2
+
+#### [MAGIC-FNSH] Improvement: Magic finisher — refactor mercy logic for 1HP enemies
+- Refactor the magic "mercy kill" logic for finishing enemies at 1 HP. (action-resolver.js)
+- Type: Improvement | Effort: S | Gain: 2
+
+#### [COIN-LOG] Improvement: Coin log formatting — replace string-split hack
+- Replace brittle string-splitting for coin costs in logging.js with a structured data approach.
+- Type: Improvement | Effort: S | Gain: 2
+
+#### [REST-PAIN] Improvement: Rest button "Pain" label — replace with real state
+- Invent a Perk or state to replace the placeholder "Pain" label on the rest button. (ui-buttons.js)
+- Type: Improvement | Effort: XS | Gain: 2
+
+#### [EMOJI-ASGN] Improvement: Emoji assignments — finalize unassigned types
+- Finalize emoji for unassigned encounter types (🐅 > ⚔️ etc.) in enemy-skills.js and action-resolver.js.
+- Type: Improvement | Effort: XS | Gain: 2
+
+#### [TEAM-RENDER] Chore: Team rendering — refactor hacky sort/render logic
+- Refactor the team sorting/rendering in ui-render.js ("Hacky hacky hacky").
+- Type: Chore | Effort: S | Gain: 2
+
+---
+
+## P4 — Nice to Have / Parking Lot
+
+### [DODGE-STR] Bug: "Successfully dodged" string too long
+- Shorten the success string for dodge — it reads long in the action log.
+- Priority: P4 — cosmetic; XS effort but low urgency
+- Type: Bug | Severity: Minor
+- Effort: XS | Gain: 2
+
+### [SOUL-GEM] Feature: Legendary soulgem — physical damage to spirits
+- Unique Legendary item enabling physical damage against spirit-type enemies.
+- Priority: P4 — niche mechanic; not enough demand to justify the slot now
+- Type: Feature
+- Effort: S | Gain: 2
+
+### [INV-ITEMS] Idea: New items for new inventory slots
+- Review ideas for items to fill new inventory slots once the expand-inventory system (P3) lands; clean out the ideas folder in the process.
+- Priority: P4 — depends on P3 inventory expansion; no design yet
+- Type: Idea
+- Effort: S | Gain: 2
+- Needs: Define which slots exist and what item archetypes make sense before designing.
+
+### [ORIG-ITEMS] Feature: Origins with starting items
+- Origins that begin the run with a Legendary item already equipped.
+- Priority: P4 — requires inventory slot system first
+- Type: Feature
+- Effort: S | Gain: 3
+
+### [GROOM-ORIG] Idea: Groom origin — unique power/effect
+- Add a Groom origin with a mechanical effect that matches the narrative role.
+- Priority: P4 — no concrete design yet; fun lore hook
+- Type: Idea
+- Effort: S | Gain: 2
+- Needs: Define what the Groom origin's power should be.
+
+### [KARMA-ITEM] Idea: Legendary item — negates bad karma effects
+- A Legendary that offsets karma penalties — requires karma overhaul (P3) to exist first.
+- Priority: P4 — blocks on the karma system
+- Type: Idea
+- Effort: S | Gain: 2
+
+### [ALTAR-PRAY] Idea: Altar — no stat bonus, Pray = XP
+- A simple altar encounter where Pray grants XP with no stat effect.
+- Priority: P4 — minor content addition
+- Type: Idea
+- Effort: XS | Gain: 2
+
+### [UNDEAD-RISE] Idea: Undead transformation — player killed by undead rises at 1HP
+- Being killed by an undead enemy causes the player to rise as undead: 1 HP, half STA, skip death state; append 🧟 before player name; undead enemies deal 0 base ATK against the transformed player.
+- Priority: P4 — interesting mechanic but significant state complexity
+- Type: Idea
+- Effort: M | Gain: 3
+
+### [PROP-SPAWN] Idea: Hit prop once to spawn a small encounter
+- Allow a single hit on a Prop to attempt spawning a small encounter — push a copy of the prop forward if unused.
+- Priority: P4 — variant of the Camp type; interesting but low clarity
+- Type: Idea
+- Effort: S | Gain: 2
+
+### [PORTAL-VLG] Idea: Portal to village — skip early game (verify if done)
+- Story-progress-unlockable portal skipping early areas. Marked as possibly already done with the gate.
+- Priority: P4 — verify before resurrecting
+- Type: Idea
+- Effort: S | Gain: 2
+- Needs: Confirm whether the current gate encounter already implements this.
+
+### [SPELL-SYS] Feature: Spells system
+- Spell button replaces Curse; spell list overlay on click (scrollable, max height = action buttons); spells learned from Spell Scrolls via a Learn action (INT-based success). Basic spells: 🐸 Hex, 🔥 Burn, 🧊 Freeze, ⚡️ Surge, 🪬 Curse (−ATK), 🪨 Harden, 🩸 Syphon.
+- Priority: P4 — major new system; high concept value but XL scope
+- Type: Feature
+- Effort: XL | Gain: 4
+
+### [SFX-MUSIC] Feature: Sounds — SFX and background music
+- Investigate platform support (iOS, Android, Mac, Windows) and add sound effects and ambient music.
+- Priority: P4 — audio is transformative but large scope with platform risk
+- Type: Feature
+- Effort: L | Gain: 4
+
+### [VEC-BG] Feature: Vector backgrounds for all areas
+- Complete and default to vector backgrounds for all areas.
+- Priority: P4 — significant atmosphere upgrade; L effort, not mobile-critical
+- Type: Feature
+- Effort: L | Gain: 3
+
+### [SVG-EMOJI] Feature: SVG support in emoji column
+- Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
+- Priority: P4 — infra change for a niche use case
+- Type: Feature
+- Effort: M | Gain: 2
+
+### [SLACK-EMOJI] Feature: Slackmojis.com URL support in emoji fields
+- Support slackmojis URLs across encounters/story/origins/buttons.
+- Priority: P4 — novelty, not worth the parsing complexity
+- Type: Feature
+- Effort: M | Gain: 1
+
+### [BLACK-HOLE] Feature: Black hole — new optional area + spaghetti monster boss
+- DLC-style optional area with spaghetti monster boss, modern props, items, tools. The JS spaghetti monster joke boss lives here.
+- Priority: P4 — fun/joke expansion; well outside current scope
+- Type: Feature
+- Effort: XL | Gain: 2
+
+### [PW-BOT] Feature: Playwright — automated run bot
+- Playwright bot that reads controls and autonomously decides actions to complete a full run.
+- Priority: P4 — requires stable AI decision layer
+- Type: Feature
+- Effort: XL | Gain: 2
+
+### [GHOST-MP] Feature: Pseudo-multiplayer ghosts
+- Hardcode 5–10 ghost encounters using highscore names (mocked if offline) — drop loot from the dead player's inventory. Largely superseded by the live Invaders system; keep as an offline-only fallback concept.
+- Priority: P4 — superseded by real Invaders; revisit only if pool is always empty
+- Type: Feature
+- Effort: M | Gain: 2
+
+### [BUG-PIPE] Social: Bug report → GitHub Issues pipeline
+- Separate bug report Google Form → sheet; daily GitHub Action syncs to Issues with tags.
+- Priority: P4 — dev infra; useful post-beta, not urgent now
+- Type: Feature
+- Effort: M | Gain: 2
+
+### [CLEAN-IDEAS] Chore: ME — Clean ideas folder
+- Review and archive or delete the ideas folder contents.
+- Priority: P4 — housekeeping
+- Type: Chore
+- Effort: S | Gain: 1
+
+### [RIVER-ATM] Data: River of Sorrows — atmosphere encounters + dock handoff
+- 1–2 static Memory-type story encounters (Drifting Lanterns, Wrecked Hull, Shore Inscription). Post-boss dock encounter as Necropolis area handoff using fullscreen fade. Memory type needs non-trivial work outside Fairyland context.
+- Priority: P4 — atmosphere; not beta-facing
+- Type: Feature
+- Effort: M | Gain: 3
+
+### [FISH-LOOT] Data: Bloat fishing loot — items, threats, floating altars
+- Add variety to fishing encounter pool: items, threats, traps, floating altars.
+- Priority: P4 — fishing is functional; this is content depth
+- Type: Feature
+- Effort: S | Gain: 2
+
+### [SPIRIT-ENEMY] Data: Add spirit/reflective enemies to Village and River
+- Spirit and reflective types underrepresented in early/mid areas.
+- Priority: P4 — content variety
+- Type: Feature
+- Effort: S | Gain: 2
+
+### [LATE-PETS] Data: New late-game pets
+- Drowned spirit, scared ghost, living mushroom, talking fly — flavor + occasional LCK, rarely +1 ATK.
+- Priority: P4 — content; fun but not blocking
+- Type: Feature
+- Effort: S | Gain: 2
+
+### [TRAP-VAR] Data: More positive and negative traps + curses (all variants)
+- Stat-swap traps, -ATK curses in late game, containers costing STA/LCK, lategame curses stealing mana/STA, practice target variants for Speak/Cast (with option to leave), magic items that almost always carry a curse.
+- Priority: P4 — content variety; not blocking
+- Type: Feature
+- Effort: M | Gain: 2
+
+### [ENEMY-DATA] Data: Revise enemy data per area
+- Village traps/special enemies; Fairyland (Forest Fiend, ghosts); River (all types — very lacking); Necropolis (special, freezing/snowman, animated objects, flora, unusual shades).
+- Priority: P4 — content breadth pass; post-beta
+- Type: Chore
+- Effort: L | Gain: 3
+
+### [MEADOW-ENCNTR] Data: Meadows — increment no-effect encounters
+- Add no-effect altars, observations, clear sky, silent overcast encounters.
+- Priority: P4 — atmosphere; not blocking
+- Type: Feature
+- Effort: S | Gain: 2
+
+### [FOOD-PERMA] Data: Lemon-unique foods — perma boosts per area
+- 1 good + 1 bad perma-boost food per area; mixed stat foods (lose and gain simultaneously); ensure bad foods in all areas.
+- Priority: P4 — content depth
+- Type: Feature
+- Effort: S | Gain: 2
+
+### [NECRO-OPT] Data: Necropolis optional areas
+- Optional sub-areas for late-game variety inside Shrouded Necropolis.
+- Priority: P4 — content; post-beta
+- Type: Feature
+- Effort: L | Gain: 3
+- Needs: Define what optional areas look like and how they gate before designing.
+
+### [TIPS-SYS] Idea: Game tips system (parked)
+- Tips that trigger on player state (first death, first Artifact, low STA) using existing toast system — easy/story difficulty only. Parked — tutorial revamp (P2) supersedes this.
+- Priority: P4 — superseded by tutorial revamp; keep as reference if tip-layer is needed later
+- Type: Idea
+- Effort: S | Gain: 1
+
+---
+
+*Styx Flow complete — 79 items processed*

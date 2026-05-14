@@ -224,10 +224,6 @@ function redraw(){
     case "Dream":
       enemyStatusString=decorateStatusText("💭","Guidance","#FFFFFF");
       if (areaName.includes("Shrouded")) enemyStatusString=decorateStatusText("⁉️","Unsettling Anxiety",colorRed);
-      if (enemyName.includes("Regrets")) {
-        enemyStatusString=decorateStatusText("❌","Misfortune",colorSoftRed);
-        cardUIElement.style.background=colorSoftRed;
-      }
       break;
     case "Upgrade":
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
@@ -239,6 +235,10 @@ function redraw(){
       if (totalMalus<0)enemyStatusString=decorateStatusText("🔴","Uncomfortable",colorSoftRed);
       if (enemyName.includes("Bride")) enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
       if (corpseState!=="" && corpseHasLoot) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
+      if (enemyName.includes("Regrets")) {
+        enemyStatusString=decorateStatusText("❌","Misfortune",colorSoftRed);
+        cardUIElement.style.background=colorSoftRed;
+      }
       break;
     case "Altar":
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
@@ -336,6 +336,7 @@ function redraw(){
       if (enemyTeam && (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point"))) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
       if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&!encounterUsed) displayPlayerState("Frightened",colorDarkGrey,"0.4");
       if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&encounterUsed) displayPlayerState("Reminiscing",colorPink,"2.5");
+      if (enemyTeam && enemyTeam.includes("Unlucky Moment")) displayPlayerState("Disappointed",colorRed,"2");
       if (enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
         displayPlayerState("In Combat",colorRed,"0.8");
         setButton('button_sleep',"💤 Rest"); //Hack

@@ -1,7 +1,9 @@
 *.DS_Store
 update-rankings.sh
+test-results/
 .jekyll-cache/
 .sass-cache/
 _site/
-.hades
-test-results/
+.hades/
+.perseus/
+.styx/
