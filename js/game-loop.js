@@ -145,7 +145,7 @@ function gameOver(silent=false){
     level: playerLevel,
     kills: playerKills,
     area: areaName,
-    causeOfDeath: _isRival ? ('💔 ' + enemyName + ' [Rival]') : (enemyEmoji + ' ' + enemyName),
+    causeOfDeath: _isRival ? ('👾 ' + enemyName + ' [Invader]') : (enemyEmoji + ' ' + enemyName),
     outcome: _deathEndType,
     actionLog: adventureLog,
     playerHpMax: playerHpMax,

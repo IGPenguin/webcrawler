@@ -11,16 +11,16 @@ var RivalManager = (function () {
 
   // Stat caps per area [hp, atk, sta, lck, int, mgk, def] — boss-level ceiling
   var STAT_CAPS = {
-    'Forsaken Village':  [5, 4, 4, 2, 3, 2, 1],
-    'Twisted Fairyland': [6, 5, 5, 2, 6, 3, 2],
-    'River of Sorrows':  [5, 4, 4, 2, 5, 3, 2]
+    'Forsaken Village':  [3, 2, 3, 0, -1, 1, 1],
+    'Twisted Fairyland': [4, 3, 4, 0, -1, 2, 2],
+    'River of Sorrows':  [5, 4, 4, 0, -1, 3, 2]
   };
 
   // Stat floors per area — rivals are always threatening
   var STAT_FLOORS = {
-    'Forsaken Village':  [3, 2, 2, 0, 0, 0, 0],
-    'Twisted Fairyland': [4, 3, 3, 0, 0, 0, 0],
-    'River of Sorrows':  [4, 3, 3, 0, 0, 0, 0]
+    'Forsaken Village':  [2, 1, 2, 0, -1, 0, 0],
+    'Twisted Fairyland': [3, 2, 3, 0, -1, 0, 0],
+    'River of Sorrows':  [4, 3, 3, 0, -1, 0, 0]
   };
 
 
@@ -168,7 +168,7 @@ var RivalManager = (function () {
     if (nick.length > NAME_MAX_LEN) nick = nick.slice(0, NAME_MAX_LEN) + '…';
 
     var emoji     = RIVAL_EMOJIS[Math.floor(Math.random() * RIVAL_EMOJIS.length)];
-    var desc      = 'Reanimated dead body from a different world.<br>Bears tattoo: ' + nick + '.';
+    var desc      = 'Reanimated dead body from a different world.<br>Bears a tattoo "' + nick + '".';
     var deathMsg  = 'Slayed by ' + name + '.';
     var inventory = String(entry.inventory || '');
 

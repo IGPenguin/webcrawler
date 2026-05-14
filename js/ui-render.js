@@ -66,6 +66,9 @@ function redraw(){
   //Encounter Statusbar UI
   enemyTeamUIElement.innerHTML="";
   cardUIElement.style.background=colorCardBackground;
+  cardUIElement.style.backgroundImage='';
+  cardUIElement.style.boxShadow='';
+  cardUIElement.classList.remove('invader-card');
 
   switch(enemyType) {
     case "Pet":
@@ -278,11 +281,18 @@ function redraw(){
       if (enemyType && enemyType.includes("Locked")) enemyStatusString=decorateStatusText("🗝️","Locked",colorGrey);
 
       if (enemyBossType.includes("Boss")){
-        enemyTeamUIElement.innerHTML = _isRival
-          ? decorateStatusText("💔","Rival",colorRed)
-          : decorateStatusText("💀","Boss",colorRed);
-        enemyStatusString=appendEnemyStats();
-        cardUIElement.style.background=colorDarkRed;
+        if (enemyBossType === 'Boss-Rival') {
+          enemyTeamUIElement.innerHTML = decorateStatusText("💔","Invader",colorRed);
+          enemyStatusString=appendEnemyStats();
+          cardUIElement.style.background=colorDarkRed;
+          cardUIElement.style.backgroundImage='';
+          cardUIElement.style.boxShadow='inset 0px 0px 0px 3px #cc2020, 0 0 18px rgba(200,32,32,0.7), 0 4px 8px rgba(0,0,0,0.5)';
+          cardUIElement.classList.add('invader-card');
+        } else {
+          enemyTeamUIElement.innerHTML = decorateStatusText("💀","Boss",colorRed);
+          enemyStatusString=appendEnemyStats();
+          cardUIElement.style.background=colorDarkRed;
+        }
       }
       break;
   }

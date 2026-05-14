@@ -1,5 +1,0 @@
-[ACHIEV-GATE] getArtifactLootIndex now filters achievement-locked fishing loot; fallback changed from getUnseenLootIndex to getWeightedLootIndex
-[GAMB-CRUPT] fix gamble loss corrupting player STA and state (Dream → Prop)
-[KARMA-CRIT] remove karma from crit chance calculation in action-config.js
-[KARMA-RARITY] disable karma effect on fishing loot rarity (neutral until overhaul)
-[KARMA-CRIT] refine karma logic: kill passive only costs karma, knockout always gains karma

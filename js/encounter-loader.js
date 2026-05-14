@@ -215,9 +215,9 @@ function loadEncounter(index, fileLines = linesStory){
       if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 No coin? I guess that's it for now.")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged a boss: <b>"+enemyName+"</b>") && !adventureLog.includes("A rival emerged")) {
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged a boss: <b>"+enemyName+"</b>") && !adventureLog.includes("Invaded by:")) {
         if (_isRival) {
-          logAction("💔 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>A rival emerged: <b>"+enemyName+"</b></text>");
+          logAction("💔 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>Invaded by: <b>"+enemyName+"</b></text>");
         } else {
           logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>");
         }
@@ -330,8 +330,7 @@ function loadEncounter(index, fileLines = linesStory){
     var _rivalDialogue = typeof RivalManager !== 'undefined' ? RivalManager.getDialogue() : '';
     setTimeout(function () {
       curtainFadeInAndOut(
-        '<p style="font-size:20px; margin-bottom:4px;">' + enemyEmoji + ' ' + enemyName + '</p>' +
-        '<p style="font-size:15px; color:' + colorRed + ';"><i>"' + _rivalDialogue + '"</i></p>',
+        '<i style="color:' + colorRed + ';">"' + _rivalDialogue + '"</i>',
         2
       );
     }, 600);

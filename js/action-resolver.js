@@ -31,6 +31,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       enemyType="Prop"
     }
 
+    //Override Rival type for action
+    if (enemyType.includes("Boss-Rival")){
+      enemyType="Standard"
+    }
+
     //Override boss type for action
     if (enemyType.includes("Boss")){
       enemyType=enemyType.replaceAll("Boss-","");
@@ -479,7 +484,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_crit === 'success') {
               rollMessage="Glided past, untouched.";
             } else if ((enemyAtk+enemyAtkBonus)!=0){
-              rollMessage="Successfully dodged their attack -1 🟢";
+              rollMessage="Dodged their attack -1 🟢";
             } else {
               rollMessage="They do not mean any harm -1 🟢";
             }
@@ -514,7 +519,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
-              logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+              logPlayerAction(actionString,"Dodged their spell -1 🟢");
               break;
             }
 
@@ -562,7 +567,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyCastIfMgk(false) && playerUseStamina(1,noStaForRollMessage)){
-              logPlayerAction(actionString,"Successfully dodged their spell -1 🟢");
+              logPlayerAction(actionString,"Dodged their spell -1 🟢");
               displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
               break;
@@ -1812,7 +1817,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Swift":
             if (enemySta-enemyStaLost == 0){
-              if (playerSta <= 0 && _skillOK === false) {
+              if (_skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
                 enemyAttackOrRest("They recovered some energy.")
@@ -1845,7 +1850,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Heavy":
             if (enemyCastIfMgk()) break;
             if ((enemySta - enemyStaLost) <= 0) { // Tired heavy — kick them
-              if (playerSta <= 0 && _skillOK === false) {
+              if (_skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
                 enemyAttackOrRest("They recovered some energy.")
@@ -1900,7 +1905,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
               }
             } else { // Tired boss — kick them
-              if (playerSta <= 0 && _skillOK === false) {
+              if (_skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
                 displayPlayerCannotEffect();
                 enemyAttackOrRest("They recovered some energy.")

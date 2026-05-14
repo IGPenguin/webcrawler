@@ -14,7 +14,7 @@ var ScoreManager = (function () {
     win_curse:   '👹 Cursed',
     win:         '👑 Finished',
     death:       '💀 Died',
-    rival_death: '💔 Rival Kill'
+    rival_death: '💔 Invader Kill'
   };
 
   function getEndingLabel(endType) {

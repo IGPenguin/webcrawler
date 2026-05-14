@@ -1,5 +1,6 @@
 *.DS_Store
 update-rankings.sh
+pending-commit.txt
 test-results/
 .jekyll-cache/
 .sass-cache/

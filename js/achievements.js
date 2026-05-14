@@ -58,6 +58,11 @@ var AchievementManager = (function () {
     { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing writing with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
     { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing writing aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Broken</b> origin.' },
 
+    { id: 'rival_spot',       emoji: '👾', desc: 'Invaded from another world!',                hint: 'See the face of someone who fell.',    unlock: '' },
+    { id: 'rival_kill',       emoji: '💀', desc: 'Slayed an Invader!',                         hint: 'The dead can die twice.',                     unlock: '' },
+    { id: 'rival_killed_by',  emoji: '💔', desc: 'Slayed by an Invader from another world.',   hint: 'Their death echoed into yours.',              unlock: '' },
+    { id: 'rival_kills_10',   emoji: '🔪', desc: 'Slayed 10 Invaders!',                        hint: 'The world boundary grows thinner.',  unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
+
     { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.', unlock: 'Unlocked the <b>🧂Salt Shaker</b> item.' },
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: 'Unlocked the <b>👨🏻‍🍳 Chef></b> origin.' },
 
@@ -72,10 +77,6 @@ var AchievementManager = (function () {
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: 'Unlocked the <b>📼 Rewind Tape</b> item.' },
     { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: '' },
 
-    { id: 'rival_spot',       emoji: '👁️', desc: 'Encountered a rival from another world!',    hint: 'They wear the face of someone who fell.',    unlock: '' },
-    { id: 'rival_kill',       emoji: '💀', desc: 'Slayed a rival invader!',                    hint: 'The dead can die twice.',                     unlock: '' },
-    { id: 'rival_killed_by',  emoji: '💔', desc: 'Slayed by a rival from another world.',      hint: 'Their death echoed into yours.',              unlock: '' },
-    { id: 'rival_kills_10',   emoji: '🔪', desc: 'Slayed 10 rival invaders!',                  hint: 'The boundary between worlds grows thinner.',  unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
     { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
     { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!', hint: "Giant slayer, born in struggle.", unlock: 'Unlocked the <b>🎖️ Hero</b> origin.' },
     { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },

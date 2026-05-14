@@ -143,6 +143,11 @@ function adjustEncounterButtons(){
     enemyType="Prop"
   }
 
+  //Override Rival type for action
+  if (enemyType.includes("Boss-Rival")){
+    enemyType="Standard"
+  }
+
   if (enemyType.includes("Boss")) {
     enemyType=enemyType.replace("Boss-","");
   }
@@ -419,7 +424,7 @@ function adjustEncounterButtons(){
       break;
   }
   //After all button manipulations
-  if (enemyHp>0 && enemySta>0) {
+  if (enemyHp>0 && enemySta>0 && corpseState==="") {
     if (((enemyAtk+enemyAtkBonus)<=0)) setButton('button_block',"☝️ Tease")
     if (((enemyAtk+enemyAtkBonus)<=0) && playerSta<=0) setButton('button_block',"☝️ Tease",colorDarkGrey)
   }

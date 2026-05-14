@@ -370,7 +370,7 @@ var Menu = (function () {
             + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:' + rarityColor + ';'
             + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
             + (origin.rolledName || origin.originName)
-            + ((origin.achiev && origin.achiev.trim() !== 'none') ? ' <span style="float:right; font-size:12px; -webkit-text-stroke:0; paint-order:stroke fill; padding-right:10px; padding-top:1px;">🧩 <i style="font-weight:600; color:#62a862ff; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Memory</i></span>' : '')
+            + ((origin.achiev && origin.achiev.trim() !== 'none') ? ' <span style="float:right; font-size:12px; -webkit-text-stroke:0; paint-order:stroke fill; padding-right:10px; margin-top:-2px;">🧩 <i style="font-weight:600; color:#62a862ff; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Memory</i></span>' : '')
             + '</h5>'
             + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; text-align:left; line-height:165%; color:#fff;">'
             + descLine1 + '</h5>'
