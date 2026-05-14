@@ -886,7 +886,7 @@ var Menu = (function () {
             + '<h3 style="text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin-top:-1px; margin-bottom:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
             + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
             + '<h5 style="margin:4px 0 1px 0; font-size:14px; font-style:normal; font-weight:400;">'
-            + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl ' + (entry.level || '?') + '&nbsp;•&nbsp;' + (entry.endType === 'win' ? '👑 Win' : entry.endType === 'rival_death' ? '💔 Rival' : '💀 Death') + '</h5>'
+            + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl ' + (entry.level || '?') + '&nbsp;•&nbsp;' + ScoreManager.getEndingLabel(entry.endType) + '</h5>'
             + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px;">'
             + (entry.origin ? entry.origin + '&nbsp;&nbsp;' : '')
             + (entry.datetime ? entry.datetime.slice(0, 10) : '')
@@ -930,7 +930,7 @@ var Menu = (function () {
       ghost.level || '?',
       displayDiff + ' · ' + (ghost.encounterCount || 0) + ' encounters',
       stats, partyLoot,
-      ghost.endType === 'win' ? '👑 Finished!' : ghost.endType === 'rival_death' ? '💔 Slayed by a Rival' : '💀 ' + (ghost.endType || 'death'),
+      ScoreManager.getEndingLabel(ghost.endType),
       ghost.datetime ? ghost.datetime.slice(0, 10) : null,
       true, null, true
     );

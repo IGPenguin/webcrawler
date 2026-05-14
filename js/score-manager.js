@@ -1,6 +1,25 @@
 var ScoreManager = (function () {
   var FORM_URL     = 'https://docs.google.com/forms/d/e/1FAIpQLScqmG98EkuIREvZIXq7PYC6-z2HrPU4UKB07ifoIxEVPfefsg/formResponse';
   var HMAC_SALT    = '@Pd`6aI3>Cb};XCco_Ol.~3._b*+iE?c}HMlJx>cQ>~Tv4h#bE#yif,dK<KlMq5C';
+
+  var ENDING_LABELS = {
+    win_kill:    '🗡 Slain',
+    win_walk:    '💔 Walked Away',
+    win_guard:   '🗿 Eternal Guard',
+    win_embrace: '🫂 Embraced',
+    win_sleep:   '💤 Lay Together',
+    win_speak:   '💖 Remembered',
+    win_free:    '🪽 Freed',
+    win_pray:    '🙏 Mercy',
+    win_curse:   '👹 Cursed',
+    win:         '👑 Finished',
+    death:       '💀 Died',
+    rival_death: '💔 Rival Kill'
+  };
+
+  function getEndingLabel(endType) {
+    return ENDING_LABELS[endType] || (endType && endType.startsWith('win_') ? '👑 ' + endType.slice(4) : '💀 Died');
+  }
   var NICKNAME_KEY = 'playerNickname';
   var RANKINGS_URL = 'https://raw.githubusercontent.com/IGPenguin/stay-dead/rankings/highscores.json';
 
@@ -49,7 +68,7 @@ var ScoreManager = (function () {
       if (GAME_CONFIG.label === 'Easy')     _mult = 0.7;
       else if (GAME_CONFIG.label === 'Hardcore') _mult = 1.5;
     }
-    var score = Math.round((calculate() + (endType === 'win' ? 100 : 0)) * _mult);
+    var score = Math.round((calculate() + (endType === 'win' || (typeof endType === 'string' && endType.startsWith('win_')) ? 100 : 0)) * _mult);
     var companions = [...String(playerPartyString || '')].length;
     var playtime = Math.floor((Date.now() - (runStartTimestamp || Date.now())) / 1000);
     var statsStr = [playerHpMax, playerAtk, playerStaMax, playerLck, playerInt, playerMgkMax, playerDef].join(';');
@@ -222,6 +241,7 @@ var ScoreManager = (function () {
     getNickname:     getNickname,
     setNickname:     setNickname,
     fetchRankings:   fetchRankings,
+    getEndingLabel:  getEndingLabel,
     init:            init
   };
 })();

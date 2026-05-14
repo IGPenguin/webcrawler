@@ -96,7 +96,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             AchievementManager.check('kill');
             if (_isRival) {
               AchievementManager.check('rival_kill');
-              if (typeof RivalManager !== 'undefined') pushEncounter(RivalManager.getRivalItemDrop(_rivalInventory));
+              if (typeof RivalManager !== 'undefined') {
+                logAction("💭 ▸ <i>" + RivalManager.getLastWord(_rivalEndType) + "</i>");
+                pushEncounter(RivalManager.getRivalItemDrop(_rivalInventory));
+              }
             }
             transitionToCorpse("killed");
           } else {
@@ -1085,7 +1088,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('kill');
               if (_isRival) {
                 AchievementManager.check('rival_kill');
-                if (typeof RivalManager !== 'undefined') pushEncounter(RivalManager.getRivalItemDrop(_rivalInventory));
+                if (typeof RivalManager !== 'undefined') {
+                  logAction("💭 ▸ <i>" + RivalManager.getLastWord(_rivalEndType) + "</i>");
+                  pushEncounter(RivalManager.getRivalItemDrop(_rivalInventory));
+                }
               }
               transitionToCorpse("killed");
             } else {

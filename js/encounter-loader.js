@@ -27,6 +27,7 @@ function encounterRenew(){
   clearPersistentEnemyEffect();
   _isRival = false;
   _rivalInventory = '';
+  _rivalEndType = '';
 }
 
 //Load or generate encounter
@@ -44,7 +45,10 @@ function loadEncounter(index, fileLines = linesStory){
   if (enemyType.includes("Boss")) {
     enemyBossType = enemyType; //I'll end up in hell for these hacks
     _isRival = (enemyType === 'Boss-Rival');
-    if (_isRival) _rivalInventory = row[15] ? String(row[15]) : '';
+    if (_isRival) {
+      _rivalInventory = row[15] ? String(row[15]) : '';
+      _rivalEndType   = row[16] ? String(row[16]) : '';
+    }
     if (isNaN(savedCoins)) savedCoins=0;
     //enemyName="<text style=color:"+colorRed+";>"+enemyName+"</text>";
   }
@@ -197,6 +201,11 @@ function loadEncounter(index, fileLines = linesStory){
       break;
     case "Memory":
       logAction("👁️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
+      break;
+    case "Prop":
+      if (enemyName === 'Whispering Stones') {
+        logAction("👁 ▸ 🪦 <i>" + (typeof getWhisperingStonesLog !== 'undefined' ? getWhisperingStonesLog() : 'Others have stood here before.') + "</i>");
+      }
       break;
     case "Friend":
       if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Met a creature: <b>"+enemyName+"</b>")

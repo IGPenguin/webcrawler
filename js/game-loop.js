@@ -179,6 +179,18 @@ function gameOver(silent=false){
   // processStoryData is called by startGame() on a fresh new game instead.
 }
 
+var _ENDING_TYPES = {
+  button_attack:  'win_kill',
+  button_roll:    'win_walk',
+  button_block:   'win_guard',
+  button_grab:    'win_embrace',
+  button_sleep:   'win_sleep',
+  button_speak:   'win_speak',
+  button_cast:    'win_free',
+  button_pray:    'win_pray',
+  button_curse:   'win_curse'
+};
+
 var _ENDING_FRAMES = {
   button_attack: [{emoji:'⚔️', text:'The deed is done.'}, {emoji:'🩸', text:'She finally rests in peace.'}, {emoji:'🖤', text:'And you walk on. Alone.'}],
   button_roll:   [{emoji:'💔', text:'You turn your back.'}, {emoji:'🥀', text:'The world slowly rots.'}, {emoji:'👰🏻‍♀️', text:'She still waits, always will.'}],
@@ -246,8 +258,9 @@ function resolveEnding(button) {
   }
 
   var frames = _ENDING_FRAMES[button];
+  var _endType = _ENDING_TYPES[button] || 'win';
   playEndingCutscene(frames, function() {
-    _doGameEnd();
+    _doGameEnd(_endType);
   });
 }
 
@@ -255,14 +268,15 @@ function gameEnd() {
   if (isKillEnding) {
     isKillEnding = false;
     playEndingCutscene(_ENDING_FRAMES['button_attack'], function() {
-      _doGameEnd();
+      _doGameEnd('win_kill');
     });
     return;
   }
   _doGameEnd();
 }
 
-function _doGameEnd() {
+function _doGameEnd(endType) {
+  endType = endType || 'win';
   AchievementManager.check('game_win');
   if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') {
     AchievementManager.check('hardcore_win');
@@ -270,9 +284,9 @@ function _doGameEnd() {
   var winMessage="👤 ▸ 👑 You finished the adventure!";
   logAction(winMessage);
   adventureEndTime=getTime();
-  runLogAdd("run_end", {outcome: "win", area: areaName, time: adventureEndTime});
+  runLogAdd("run_end", {outcome: endType, area: areaName, time: adventureEndTime});
   downloadRunLog();
-  var _winPayload = ScoreManager.buildPayload('win');
+  var _winPayload = ScoreManager.buildPayload(endType);
   SaveManager.saveSession({
     date: adventureStartTime,
     playerName: playerName,
@@ -280,7 +294,7 @@ function _doGameEnd() {
     kills: playerKills,
     area: areaName,
     causeOfDeath: '👑 Finished!',
-    outcome: 'win',
+    outcome: endType,
     actionLog: adventureLog,
     playerHpMax: playerHpMax,
     playerStaMax: playerStaMax,
@@ -290,7 +304,7 @@ function _doGameEnd() {
     playerPartyString: String(playerPartyString),
     sessionAchievements: AchievementManager.getSessionUnlocked(),
     score:          _winPayload.score,
-    endType:        'win',
+    endType:        endType,
     ghostLink:      ScoreManager.encodeGhostLink(_winPayload),
     playerOriginName: playerOriginName || '',
     encounterCount: encounterCount || 0,

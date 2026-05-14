@@ -43,6 +43,12 @@ function pushHouseHardLoot(itemChance) {
 
 function generateNextEncounters(generatorID=0, logCall=true) {
   if (logCall) _generationBuffer = [];
+
+  if (logCall && areaName === 'Shrouded Necropolis' && typeof RivalManager !== 'undefined') {
+    var _wallRow = RivalManager.buildWallPropRow();
+    if (_wallRow) pushEncounter(_wallRow);
+  }
+
   switch (generatorID) {
 
     case 0: // Prop / Small / Lockbox

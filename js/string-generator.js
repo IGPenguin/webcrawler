@@ -497,3 +497,34 @@ function getRivalDialogue() {
   ];
   return pool[Math.floor(Math.random() * pool.length)];
 }
+
+function getWhisperingStonesLog() {
+  var pool = [
+    "Names in the stone. Others have stood here before.",
+    "Someone else's grief, carved into the threshold.",
+    "The dead remember their choices. These are not yours.",
+    "Other worlds bled through here. Their marks remain.",
+    "You are not the first. The wall remembers."
+  ];
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+var _RIVAL_LAST_WORDS = {
+  win_speak:   ["Said her name once. She remembered.", "Called to her. She heard."],
+  win_free:    ["Freed her once. Not this time.", "The curse broke. Once."],
+  win_kill:    ["Killed her before. This time, different.", "Drew blood once. Old habit."],
+  win_embrace: ["Chose the dark before.", "Walked into it willingly. Once."],
+  win_pray:    ["The gods heard them once.", "Prayed hard enough. Once."],
+  win_walk:    ["Walked away before. No more.", "Turned their back once."],
+  win_guard:   ["Stood guard once. Now they fall.", "Chose to stay before."],
+  win_sleep:   ["Lay down before. This time for good.", "Found rest once. Briefly."],
+  win_curse:   ["The pact followed them here.", "Made a deal once. It remembers."],
+  death:       ["Died before reaching her. Died again.", "Never made it. Not then, not now.", "Fell short before. No closer now."],
+  rival_death: ["A rival ended them before. Again.", "Cut down once. Cut down again."],
+  win:         ["Finished it once. The ending is lost.", "Reached the end before. Which end?"]
+};
+
+function getRivalLastWord(endType) {
+  var pool = _RIVAL_LAST_WORDS[endType] || ["No echo. They left nothing behind."];
+  return pool[Math.floor(Math.random() * pool.length)];
+}

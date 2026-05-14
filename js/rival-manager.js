@@ -24,11 +24,33 @@ var RivalManager = (function () {
   };
 
 
+  var _WALL_TEMPLATES = {
+    win_speak:   '{name} said her name here. She remembered.',
+    win_free:    '{name} unraveled the curse at this threshold.',
+    win_kill:    '{name} settled it in blood.',
+    win_embrace: '{name} chose the dark together.',
+    win_pray:    '{name} begged the gods. They answered.',
+    win_walk:    '{name} walked away. The world rotted.',
+    win_guard:   '{name} stands guard. Still here.',
+    win_sleep:   '{name} lay down and never rose.',
+    win_curse:   '{name} sealed something terrible here.',
+    win:         '{name} reached the end. The way is lost.',
+    death:       '{name} fell before reaching her.',
+    rival_death: '{name} was cut down by another traveler.'
+  };
+
+  function _wallEpitaph(entry) {
+    var name = String(entry.charName || 'Unknown').trim().slice(0, 30);
+    var tpl = _WALL_TEMPLATES[entry.endType] || '{name} passed through here.';
+    return tpl.replace('{name}', '<b>' + name + '</b>');
+  }
+
   // ── State ───────────────────────────────────────────────────────────────────
   var _pool                 = [];
   var _rivalForcedArea      = null;
   var _rivalSpawnedInArea   = {};
   var _rivalScheduledThisRun = false;
+  var _wallShown            = false;
 
   // ── Public API ───────────────────────────────────────────────────────────────
 
@@ -48,6 +70,7 @@ var RivalManager = (function () {
   function resetRun() {
     _rivalSpawnedInArea    = {};
     _rivalScheduledThisRun = false;
+    _wallShown             = false;
     var areas = _cfg().eligibleAreas || [];
     _rivalForcedArea = areas.length ? areas[Math.floor(Math.random() * areas.length)] : null;
   }
@@ -75,6 +98,31 @@ var RivalManager = (function () {
 
   function getDialogue() {
     return typeof getRivalDialogue !== 'undefined' ? getRivalDialogue() : "You should have stayed dead.";
+  }
+
+  function buildWallPropRow() {
+    if (_wallShown || _pool.length === 0) return null;
+    _wallShown = true;
+
+    var shuffled = _pool.slice().sort(function() { return Math.random() - 0.5; });
+    var picks = shuffled.slice(0, Math.min(2, shuffled.length));
+    var desc = picks.map(_wallEpitaph).join('<br>');
+
+    return [
+      'area:Shrouded Necropolis',
+      'emoji:🪦',
+      'name:Whispering Stones',
+      'type:Prop',
+      'hp:0', 'atk:0', 'sta:0', 'lck:0', 'int:0', 'mgk:0', 'def:0',
+      'note:',
+      'desc:' + desc,
+      'message:',
+      'achiev:none'
+    ];
+  }
+
+  function getLastWord(endType) {
+    return typeof getRivalLastWord !== 'undefined' ? getRivalLastWord(endType) : "No echo. They left nothing behind.";
   }
 
   // Returns an encounter row for a random item from the rival's inventory.
@@ -140,15 +188,18 @@ var RivalManager = (function () {
       'desc:'   + desc,
       'message:' + deathMsg,
       'achiev:none',
-      inventory  // index 15 — rival's inventory for item drop; not parsed by loadEncounter
+      inventory,              // index 15 — rival's inventory for item drop
+      String(entry.endType || '') // index 16 — rival's ending type for last word
     ];
   }
 
   return {
-    fetchPool:       fetchPool,
-    resetRun:        resetRun,
-    tryPushRival:    tryPushRival,
-    getDialogue:     getDialogue,
-    getRivalItemDrop: getRivalItemDrop
+    fetchPool:        fetchPool,
+    resetRun:         resetRun,
+    tryPushRival:     tryPushRival,
+    getDialogue:      getDialogue,
+    getRivalItemDrop: getRivalItemDrop,
+    buildWallPropRow: buildWallPropRow,
+    getLastWord:      getLastWord
   };
 })();

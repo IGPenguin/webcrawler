@@ -37,6 +37,7 @@ var isKillEnding = false;
 var brideDialogueActive = false;
 var _isRival = false;
 var _rivalInventory = '';
+var _rivalEndType = '';
 var playerRested = false;
 var fishingRested = false; // persists through getRandomFish/encounterRenew; reset only on nextEncounter or new run
 var playerCooked = false;
