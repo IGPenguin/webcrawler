@@ -60,7 +60,8 @@ The game has two layers:
 | `encounter-loader.js` | `loadEncounter()`, `encounterRenew()`, `drachmaeBuy()` — CSV parsing and shop |
 | `encounter-generator.js` | `generateNextEncounters()` — dynamic encounter sequence builder |
 | `game-loop.js` | `nextEncounter()`, `gameOver()`, `gameEnd()` / `_doGameEnd()`, `getRandomFish()`; ending system: `startBrideDialogue()`, `resolveEnding()`, `_ENDING_FRAMES` |
-| `score-manager.js` | `ScoreManager` — score formula, Google Forms submission, rankings fetch, nickname overlay |
+| `score-manager.js` | `ScoreManager` — score formula, Google Forms submission, rankings fetch, nickname overlay, `getEndingLabel()` |
+| `rival-manager.js` | `RivalManager` — fetches rankings pool, injects rivals and Whispering Stones prop, provides last-word echoes |
 | `transfunctioner.js` | `logCheatUse()` — cheat detection and flagging |
 | `social.js` | Share / LinkedIn logic |
 | `action-resolver.js` | `resolveAction()` — dispatches all nine player actions |
@@ -106,6 +107,8 @@ Scores are submitted to a Google Form (fire-and-forget `fetch` with `mode: 'no-c
 
 **Score formula**: `(level×15) + floor(encounters/5) + (companions×8) + floor(stats/2) + round((karma−1)×5)` + 100 bonus for a win. Companions = `[...playerPartyString].length` (pets + recruits).
 
+**endType values**: `death`, `rival_death` for losses; `win_speak`, `win_free`, `win_kill`, `win_embrace`, `win_pray`, `win_walk`, `win_guard`, `win_sleep`, `win_curse` for the 9 endings (all prefixed `win_` get the +100 bonus). `ScoreManager.getEndingLabel(endType)` returns the display string. Legacy `'win'` from pre-named-endings runs is handled gracefully.
+
 **Cheat guard**: `cheatedThisRun` (reset in `renewPlayer()`) blocks submission for the current run only. The lifetime `use_cheat` achievement does not block it.
 
 **Submission flow**: `ScoreManager.submitOrPrompt(payload)` — if no saved nickname, shows the nickname overlay first; otherwise calls `_doSubmit` directly. Hash is SHA-256 HMAC over `charName|score|datetime`.
@@ -115,6 +118,17 @@ Scores are submitted to a Google Form (fire-and-forget `fetch` with `mode: 'no-c
 **Pipeline**: `.github/workflows/rankings.yml` runs every 30 min (and on `workflow_dispatch`). Pulls the Google Sheet CSV, verifies SHA-256 HMACs, filters profanity, dedupes, sorts by score, writes `highscores.json` to the `rankings` branch. Only active after merging to `live` (GitHub requires the workflow file on the default branch).
 
 **Local testing before merge**: `bash update-rankings.sh` (gitignored — contains `LEADERBOARD_SALT` and `SHEET_CSV_URL` secrets). Runs the same Python pipeline locally and pushes the result to the `rankings` branch.
+
+### Rivals & World Echoes
+
+Rivals are real players from `highscores.json` injected as `Boss-Rival` encounters. Managed by `rival-manager.js`:
+
+- `RivalManager.fetchPool()` — called on game start; filters out the local player's own nickname
+- `RivalManager.tryPushRival(area)` — called from `generateNextEncounters()`; one rival per area per run, one forced spawn per run
+- **Rival row format**: columns 0–14 are standard CSV fields; index 15 = rival's inventory emoji string; index 16 = rival's `endType` (for last word)
+- **Whispering Stones**: a synthetic `Prop` encounter (`buildWallPropRow()`) injected once per run on the first `generateNextEncounters()` call inside Shrouded Necropolis. Shows two epitaphs from pool entries using `_WALL_TEMPLATES`. Skipped silently if pool is empty (local dev / no live data).
+- **Rival's last word**: on rival kill, `RivalManager.getLastWord(_rivalEndType)` logs a flavored one-liner from `getRivalLastWord()` in `string-generator.js`. All endTypes have a pool including `death` and `rival_death`.
+- **String pools** for world echo text live in `string-generator.js`: `getWhisperingStonesLog()` (hint on Whispering Stones load), `getRivalLastWord(endType)` (post-kill echo).
 
 ### Rarity System
 

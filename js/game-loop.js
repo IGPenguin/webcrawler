@@ -293,7 +293,7 @@ function _doGameEnd(endType) {
     level: playerLevel,
     kills: playerKills,
     area: areaName,
-    causeOfDeath: '👑 Finished!',
+    causeOfDeath: ScoreManager.getEndingLabel(endType),
     outcome: endType,
     actionLog: adventureLog,
     playerHpMax: playerHpMax,
