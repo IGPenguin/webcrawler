@@ -330,7 +330,7 @@ function loadEncounter(index, fileLines = linesStory){
     var _rivalDialogue = typeof RivalManager !== 'undefined' ? RivalManager.getDialogue() : '';
     setTimeout(function () {
       curtainFadeInAndOut(
-        '<i style="color:' + colorRed + ';">"' + _rivalDialogue + '"</i>',
+        '<i style="color:' + colorRed + ';">' + _rivalDialogue + '</i>',
         2
       );
     }, 600);

@@ -12,12 +12,6 @@
 
 ## P1 — Serious Issues & Big Wins
 
-### [DEF-STAT] Bug: Player DEF stat — wrong display, item support gaps, incorrect rarity
-- Consolidate damage log message to be a sigle message (not two as now - one for dmg, second for def) when player DEF is non-zero and had effect example "Hit by their attack -1💔 (1🔰); not all item types account for DEF; an item with DEF as its sole non-zero stat should resolve as Legendary (Artifact).
-- Priority: P1 — a live, UI-visible stat behaving incorrectly
-- Type: Bug | Severity: Major
-- Effort: S | Gain: L
-
 ### [PLAY-GATE] Chore: ME — Personal playtesting gate before beta
 - Finish the game at least 3x; upload data to leaderboard and confirm score appears within 35 min; test fishing boss summon via Curse in the same session (repeat) and across sessions; verify Rankings and Chronicles UI flow end-to-end.
 - Priority: P1 — hard gate; nothing ships to friends before this is done
@@ -69,36 +63,6 @@
 - Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system
 - Type: Improvement
 - Effort: M | Gain: L
-
-### [KNOCK-STA] Improvement: Knockout difficulty — STA-dependent
-- Knocking out an enemy should be nearly impossible while they have remaining STA; once STA hits 0, knockout difficulty drops to current behavior — action bar interval should reflect this split.
-- Priority: P2 — tactical depth + combat feel
-- Type: Improvement
-- Effort: M | Gain: L
-
-### [ORIG-RARITY] Improvement: Origins rarity — achiev-required + no stats → Legendary + Familiar
-- Origins that require an achievement unlock and have no stat bonus should automatically resolve to Legendary (Familiar tier) — currently not enforced.
-- Priority: P2 — rarity display is visibly incorrect for achievement-gated origins
-- Type: Improvement
-- Effort: XS | Gain: M
-
-### [MEMENTO-DROP] Bug: Lovers Memento dropped from wrong boss/area
-- Lovers Memento appeared from a boss in Fading Wildlands — story-locked items should only drop from their designated source; boss drops in this area should be artifacts or standard items only.
-- Priority: P2 — wrong loot breaks narrative coherence at a key story moment
-- Type: Bug | Severity: Minor
-- Effort: XS | Gain: S
-
-### [FADE-TEXT] Bug: Fade text on invitation/letter — verify it fires
-- The fade-with-text trigger on finding an invitation or letter is unverified — check that it fires correctly.
-- Priority: P2 — potentially broken story beat presentation
-- Type: Bug | Severity: Minor
-- Effort: XS | Gain: M
-
-### [QUEST-SPAWN] Bug: Quest system — brittle friend + quest item spawn logic
-- Refactor to spawn friend and quest item independently in the story (not linked); hide exact item list from display (show general description only); keep matching logic internal.
-- Priority: P2 — brittle spawn logic is a live reliability risk at a key progression moment
-- Type: Bug | Severity: Major
-- Effort: M | Gain: M
 
 ---
 
@@ -255,12 +219,6 @@
 - Type: Feature
 - Effort: XL | Gain: XL
 
-### [INVAD-EXT] Feature: Invader extended features (post-rebrand)
-- After the P2 rebrand lands: double XP for Invader kill; special "💔 Slayed by Invader" end state with log and extra fade; achievement for first Invader spotted, first kill, and 10 kills; 100% item drop from Invader's loot pool. Invaders should spawn in gen hard slots specifically.
-- Priority: P3 — depth on top of the P2 base; each sub-feature is independent
-- Type: Feature
-- Effort: M | Gain: L
-
 ### [INVAD-GRAVE] Feature: Invader Graveyard UI
 - "👾 Kill List" section in Main Menu screen — name, area, level per entry, persisted under rivalGraveyard in localStorage.
 - Priority: P3 — social trophy moment; not blocking
@@ -310,12 +268,6 @@
 - Priority: P3 — content completeness; death descriptions are a visible gap
 - Type: Chore
 - Effort: S | Gain: M
-
-### [PW-RECORD] Chore: Playwright — Data Capture flight recorder
-- Passive Playwright session: hook runLogAdd, MutationObserver on #id_card and #id_log, HTML snapshot + screenshot on state changes, YAML/JSON semantic dump, bash SIGINT post-mortem prompt, artifacts to /playtests/YYYY-MM-DD_HH-MM/.
-- Priority: P3 — dev tooling; improves AI-assisted debugging but not blocking
-- Type: Chore
-- Effort: L | Gain: M
 
 ### [STAT-NUDGE] Feature: Fractional "nudge" stat values for hidden stats — LCK, INT, karma, love
 - Allow sub-1 increments on hidden stats in CSV/origins (JS already supports decimals); display as human-readable labels rather than raw numbers — e.g. 0.5 = "Small bonus", 0.25 = "Tiny bonus" (exact tier labels TBD). Enables tighter balance control and a wider range of items/origins without pushing rarity up a full tier unnecessarily.
@@ -505,6 +457,20 @@
 - Type: Feature
 - Effort: L | Gain: M
 - Needs: Define what optional areas look like and how they gate before designing.
+
+### [DEF-STAT] Bug: Player DEF stat — wrong display, item support gaps, incorrect rarity
+- Consolidate damage log message to be a sigle message (not two as now - one for dmg, second for def) when player DEF is non-zero and had effect example "Hit by their attack -1💔 (1🔰); not all item types account for DEF; an item with DEF as its sole non-zero stat should resolve as Legendary (Artifact).
+- Priority: P1 — a live, UI-visible stat behaving incorrectly
+- My note: ->P4: Can wait, theres intentionally only two items with Def stat, after beta we may revisit
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
+### [QUEST-SPAWN] Bug: Quest system — brittle friend + quest item spawn logic
+- Refactor to spawn friend and quest item independently in the story (not linked); hide exact item list from display (show general description only); keep matching logic internal.
+- Priority: P2 — brittle spawn logic is a live reliability risk at a key progression moment
+- My Note: P4 -> Good enough for Beta, ive seen it working well
+- Type: Bug | Severity: Major
+- Effort: M | Gain: M
 
 ### [TIPS-SYS] Idea: Game tips system (parked)
 - Tips that trigger on player state (first death, first Artifact, low STA) using existing toast system — easy/story difficulty only. Parked — tutorial revamp (P2) supersedes this.

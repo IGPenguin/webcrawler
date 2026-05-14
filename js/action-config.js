@@ -448,24 +448,22 @@ function calcActionBarConfig(button, adjustment) {
              critSuccessMin: _csMin, critSuccessMax: _csMin + _csW, critFailW: _cfW };
   }
 
-  // Knockout on a not tired living creature — resists hard
-  // Uses base enemyAtk (not eAtk) to ignore anger bonuses from prior actions this encounter.
-  // Grab Swift with stamina — absurdly hard, 2-wide zone
+  // Knockout while enemy has STA remaining — near-impossible regardless of type
+  // Swift and Boss get their own flavour of near-impossible; everything else is fishing-no-bait hard
   if (button === 'button_grab' && isSwift && eSta > 0) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 49, successMax: 51 };
   }
 
-  // Boss grab with stamina remaining — very hard, same as Heavy
   if (button === 'button_grab' && isBoss && eSta > 0) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54 };
   }
 
   var _isCreatureMob = /Standard|Swift|Heavy|Pet|Spirit|Demon|Undead|Boss|Small|Stingy|Toxic|Hot|Tough|Reflective|Recruit|Friend/.test(types);
   if (button === 'button_grab' && _isCreatureMob && eSta > 0) {
-    var grabW = Math.max(4, Math.min(30, Math.round((18 + pSta * 3) / eSta)));
+    var grabW = Math.max(6, Math.min(24, Math.round(6 + (pSta / Math.max(1, eSta)) * 4)));
     var grabMin = Math.max(3, 50 - Math.round(grabW / 2));
     var grabMax = Math.min(97, 50 + Math.round(grabW / 2));
-    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: grabMin, successMax: grabMax };
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: grabMin, successMax: grabMax };
   }
 
   var pStat, eStat, baseW, baseSpeed;
