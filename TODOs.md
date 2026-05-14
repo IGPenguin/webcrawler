@@ -94,24 +94,6 @@
 - Type: Improvement
 - Effort: XS | Gain: M
 
-### [TRAP-SLEEP] Bug: Sleep at trap should follow prop sleep rules
-- Sleeping at a trap encounter (unless it's a Trap-Sleep type) should follow the same action bar interval as prop sleep — currently behaves differently.
-- Priority: P2 — inconsistent rules break player intuition
-- Type: Bug | Severity: Minor
-- Effort: S | Gain: M
-
-### [DEAD-TOUCH] Bug: Touch on dead (empty) enemy should be 100% pass
-- Interacting with an already-defeated enemy should always succeed — action bar interval not set to guaranteed pass for the empty corpse state.
-- Priority: P2 — failing at a dead enemy is confusing and unfair
-- Type: Bug | Severity: Minor
-- Effort: XS | Gain: M
-
-### [GRAB-LOCK] Bug: Grab on locked container — all red, add lock message
-- Grabbing a locked container without a key should show an all-red action bar and log "Cannot get inside, it's locked." — currently no feedback.
-- Priority: P2 — missing feedback on a common interaction
-- Type: Bug | Severity: Minor
-- Effort: XS | Gain: M
-
 ### [MEMENTO-DROP] Bug: Lovers Memento dropped from wrong boss/area
 - Lovers Memento appeared from a boss in Fading Wildlands — story-locked items should only drop from their designated source; boss drops in this area should be artifacts or standard items only.
 - Priority: P2 — wrong loot breaks narrative coherence at a key story moment

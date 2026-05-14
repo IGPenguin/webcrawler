@@ -200,8 +200,8 @@ Fading Wildlands;🪁;Torn Kite;Item;0;0;0;0;0;0;0;Worthless Junk;Wouldn't fly, 
 
 Fading Wildlands;💌;Undelivered Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
 
-Fading Wildlands;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Worth something, somewhere.;none
-Fading Wildlands;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;0;Lost Possesion;May be traded for something valuable.<br>;Worth something, somewhere.;none
+Fading Wildlands;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;0;Lost Possession;May be traded for something valuable.<br>;Worth something, somewhere.;none
+Fading Wildlands;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;0;Lost Possession;May be traded for something valuable.<br>;Worth something, somewhere.;none
 
 Fading Wildlands;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for: n/a;Swapped your nuts for;none
 Fading Wildlands;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers something valuable in exchange for food.<br>It is looking for: n/a;Looks like it was worth it;none
@@ -552,18 +552,18 @@ Forsaken Village;📜;Wanted Poster;Item;0;0;0;0;-1;0;0;Note;The scribbled face 
 
 Forsaken Village;🧧;Wedding Invitation;Item;0;0;0;0;0;0;0;Piece of History;po/em;Your heart will always remember;none
 
-Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!;none
-Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!;none
-Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!;none
-Forsaken Village;👽;Toy Creature;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!;none
-Forsaken Village;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like someone might miss it.<br>;You should find the owner!;none
-Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;0;Lost Possesion;No practical use to a warrior.<br>;You should find the owner!;none
-Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;0;Lost Possesion;Perhaps the special shape is by design.<br>;You should find the owner!;none
-Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;0;Lost Possesion;Dirty and full of holes.<br>;You should find the owner!;none
-Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;You should find the owner!;none
-Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;0;Lost Possesion;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!;none
-Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;You should find the owner!;none
-Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;0;Lost Possesion;Part of something much bigger.<br>;You should find the owner!;none
+Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
+Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
+Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
+Forsaken Village;👽;Toy Creature;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
+Forsaken Village;🔭;Stargazing Telescope;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
+Forsaken Village;🪮;Hair Brush;Item;0;0;0;0;0;0;0;Lost Possession;No practical use to a warrior.<br>;You should find the owner!;none
+Forsaken Village;🥄;Bent Spoon;Item;0;0;0;0;0;0;0;Lost Possession;Perhaps the special shape is by design.<br>;You should find the owner!;none
+Forsaken Village;🧦;Worn Socks;Item;0;0;0;0;0;0;0;Lost Possession;Dirty and full of holes.<br>;You should find the owner!;none
+Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;0;Lost Possession;Must have been lost recently.<br>;You should find the owner!;none
+Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;0;Lost Possession;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!;none
+Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;0;Lost Possession;Part of something much bigger.<br>;You should find the owner!;none
+Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;0;Lost Possession;Part of something much bigger.<br>;You should find the owner!;none
 
 Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀;0;0;0;0;0;0;0;Serious Representative;Would very much like to barter with you.<br>It is looking for: n/a;Initiated contact!;none
 Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🦴\🍖;0;0;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in:n/a;You made them happy!;none
@@ -912,12 +912,12 @@ Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;0;Trace of Life;Rather do
 
 Twisted Fairyland;💌;Ominous Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
 
-Twisted Fairyland;🧸;Voodoo Teddy;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!;none
-Twisted Fairyland;🧶;Cotton Ball;Item;0;0;0;0;0;0;0;Lost Possesion;Must have been lost recently.<br>;You should find the owner!;none
-Twisted Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;0;Lost Possesion;Likely belongs to a beautiful girl.<br>;You should find the owner!;none
-Twisted Fairyland;🗿;Stone Figure;Item;0;0;0;0;0;0;0;Lost Possesion;A relic of the ancient times.<br>;You should find the owner!;none
-Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;0;Lost Possesion;Someone is likely missing it.<br>;You should find the owner!;none
-Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;0;Lost Possesion;Looks like it is missing someone.<br>;You should find the owner!;none
+Twisted Fairyland;🧸;Voodoo Teddy;Item;0;0;0;0;0;0;0;Lost Possession;Looks like it is missing someone.<br>;You should find the owner!;none
+Twisted Fairyland;🧶;Cotton Ball;Item;0;0;0;0;0;0;0;Lost Possession;Must have been lost recently.<br>;You should find the owner!;none
+Twisted Fairyland;👠;Princess Shoe;Item;0;0;0;0;0;0;0;Lost Possession;Likely belongs to a beautiful girl.<br>;You should find the owner!;none
+Twisted Fairyland;🗿;Stone Figure;Item;0;0;0;0;0;0;0;Lost Possession;A relic of the ancient times.<br>;You should find the owner!;none
+Twisted Fairyland;🦴;Human Femur;Item;0;0;0;0;0;0;0;Lost Possession;Someone is likely missing it.<br>;You should find the owner!;none
+Twisted Fairyland;🍖;Fleshy Bone;Item;0;0;0;0;0;0;0;Lost Possession;Looks like it is missing someone.<br>;You should find the owner!;none
 
 Twisted Fairyland;🦜;Colourful Songbird;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers some valuable in exchange for food.<br>It is looking for: n/a;Looks like it was worth it.;none
 Twisted Fairyland;🦊;Mystery Fox;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;Sits around waving its furry tail.<br>It is looking for: n/a;Received a poweful artifact;none

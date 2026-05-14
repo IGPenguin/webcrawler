@@ -141,8 +141,8 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 36, successMax: 64 };
   }
 
-  // Prop / encounterUsed / Fishing walk: very wide zone — tiny stumble risk exists
-  if (button === 'button_roll' && ( types === 'Prop' || types === 'Fishing' || encounterUsed)) {
+  // Prop / encounterUsed / Fishing / corpse walk: very wide zone — tiny stumble risk exists
+  if (button === 'button_roll' && ( types === 'Prop' || types === 'Fishing' || encounterUsed || corpseState !== '')) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
   }
 
@@ -161,8 +161,8 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
-  // Dead / sleeping enemy — not moving, guaranteed hit or block
-  if (corpseState !== "" && (button === 'button_attack' || button === 'button_block')) {
+  // Dead / neutralized enemy — physical touch guaranteed; roll handled above (wide Prop zone)
+  if (corpseState !== "" && (button === 'button_attack' || button === 'button_block' || button === 'button_grab')) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
@@ -245,6 +245,14 @@ function calcActionBarConfig(button, adjustment) {
   if (button === 'button_grab' && types.includes('Container') && !types.includes('Locked')) {
     var searchW = Math.max(25, Math.min(82, Math.round(40 + pLck * 9)));
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: Math.max(4, 50 - Math.round(searchW/2)), successMax: Math.min(96, 50 + Math.round(searchW/2)) };
+  }
+
+  // Locked Container grab with no key — impossible, all-red bar
+  if (button === 'button_grab' && types.includes('Locked') && types.includes('Container')) {
+    if (!playerLootString.includes("🗝️") && !playerLootString.includes("📎")) {
+      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    }
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Shop: Risk (button_cast) = gold-only strip; Leave (button_roll) always free; all others gate on coin
@@ -332,11 +340,13 @@ function calcActionBarConfig(button, adjustment) {
   // Trap wrong-action: small zone — risk of triggering it, but no penalty if passed
   // "Right" actions (Trap-Attack→attack, Trap-Roll→roll, Trap-Sleep→sleep, Trap-Obstacle→attack)
   // get normal calc; every other button on that trap type is penalised here.
+  // Sleep is always a right action — resting near a trap uses the same bar as Prop sleep.
   if (isTrap && types !== 'Trap' && types !== 'Trap-Big') {
     var _trapRight = (types === 'Trap-Attack'   && button === 'button_attack')
                   || (types === 'Trap-Roll'     && button === 'button_roll')
                   || (types === 'Trap-Sleep'    && button === 'button_sleep')
-                  || (types === 'Trap-Obstacle' && button === 'button_attack');
+                  || (types === 'Trap-Obstacle' && button === 'button_attack')
+                  || button === 'button_sleep';
     if (!_trapRight) {
       return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 44, successMax: 56,
                critSuccessMin: 49, critSuccessMax: 52, critFailW: 5 };

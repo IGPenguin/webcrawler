@@ -119,7 +119,14 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 9: // Boss
       if (logCall) logGenerator("boss");
-      if (!areaName.includes("Shrouded")) generateNextEncounters(0, false); // Prop/Small after fight (not Necropolis)
+      if (!areaName.includes("Shrouded")) {
+        generateNextEncounters(0, false); // Prop/Small after fight (not Necropolis)
+        if (procAbilityChance("", 20+playerLck)) {
+          pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+        } else {
+          pushEncounter(getWeightedEncounter(["Item"],[],"",["Artifact","Lost Possession"]));
+        }
+      }
 
       drachmaCoin[0] = "area:" + areaName;
       var _fishBonus = AchievementManager.isUnlocked('fish_boss_kill') ? 1 : 0;

@@ -276,7 +276,7 @@ function loadEncounter(index, fileLines = linesStory){
       logAction("♥️ ▸ "+enemyEmoji+" She is showing some signs of mercy -"+playerLove+" ⚔️")
     }
   }
-  if (enemyTeam.includes("Lost Possesion")) { //Found quest item, spawn friend who wants it
+  if (enemyTeam.includes("Lost Possession")) { //Found quest item, spawn friend who wants it
     dbg(enemyEmoji)
     var randomSlot=chooseFrom([3,4,5])
     pushEncounter(getRandomEncounter(["Friend"],[enemyEmoji]),randomSlot);
@@ -338,11 +338,11 @@ function loadEncounter(index, fileLines = linesStory){
 }
 
 function generateRandomItem(item=""){
-  var randomItem=getWeightedEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Piece of History","Lost Possesion"]);
-  if (item=="Artifact") randomItem=getWeightedEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Piece of History","Lost Possesion"]);
+  var randomItem=getWeightedEncounter(["Item"],[],"ALL",["Artifact","Lover's Memento","Piece of History","Lost Possession"]);
+  if (item=="Artifact") randomItem=getWeightedEncounter(["Item"],["Artifact"],"ALL",["Lover's Memento","Piece of History","Lost Possession"]);
   return randomItem;
 }
 
 function generateRandomItemByTier(tier){
-  return getWeightedEncounterByTier(tier,["Item"],[],"ALL",["Artifact","Lover's Memento","Piece of History","Lost Possesion"]);
+  return getWeightedEncounterByTier(tier,["Item"],[],"ALL",["Artifact","Lover's Memento","Piece of History","Lost Possession"]);
 }

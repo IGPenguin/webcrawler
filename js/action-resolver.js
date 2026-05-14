@@ -2193,7 +2193,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('grab_artifact');
             } else if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || parseInt(enemyHp)>=2 || parseInt(enemyAtk)>=2 || (parseInt(enemyAtk)>=1 && parseInt(totalMalus)==0) || parseInt(enemySta)>=2 || parseInt(enemyMgk)>=2 || (parseInt(enemyMgk)>=1 && parseInt(totalMalus)==0)) {
               AchievementManager.check('grab_exquisite');
-            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover") && !enemyTeam.includes("Lost Possesion")) {
+            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover") && !enemyTeam.includes("Lost Possession")) {
               AchievementManager.check('grab_rubbish');
             }
             //Grab end
@@ -2390,6 +2390,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   enemyMsg="Uncovered what was locked inside.";
                   redraw();
                 } else {
+                  logPlayerAction(actionString, "Cannot get inside, it's locked.");
                   displayEnemyCannotEffect();
                 }
                 break;
