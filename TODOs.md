@@ -70,12 +70,6 @@
 - Type: Improvement
 - Effort: M | Gain: L
 
-### [TEASE-UI] Improvement: Run end tease fade UI — names, spacing, rarity colors
-- More horizontal space between origin emojis in the run-end tease; add origin name below each emoji; make name text color reflect the origin's rarity tier.
-- Priority: P2 — last thing players see before score submission; polish matters here
-- Type: Improvement
-- Effort: S | Gain: L
-
 ### [KNOCK-STA] Improvement: Knockout difficulty — STA-dependent
 - Knocking out an enemy should be nearly impossible while they have remaining STA; once STA hits 0, knockout difficulty drops to current behavior — action bar interval should reflect this split.
 - Priority: P2 — tactical depth + combat feel
@@ -338,6 +332,10 @@
 - Needs: For each stat: what does +1 change in a typical run? Set weight relative to ATK×3 as the anchor. After adjusting, sample existing CSV entries to confirm the rarity distribution doesn't break.
 
 ### Technical Debt
+
+#### [HASH-ERR] Bug: Score hash "err" on some mobile submissions
+- One or more scores submitted with hash = "err" (caught exception in `_generateHash` in score-manager.js); Python verifier rejects these. Possibly `crypto.subtle` unavailable in certain Android browsers or in-app WebViews. Investigate by collecting more submissions during playtesting and checking whether "err" correlates with a specific device/browser. Fix path: explicit `crypto.subtle` availability check + console.error logging of the caught exception.
+- Type: Bug | Severity: Minor | Effort: S | Gain: M
 
 #### [SHARE-CLIP] Bug: Sharing — buttons not hidden during capture, log clips
 - Fix screenshot capture in menu.js: hide buttons during capture, ensure full log is visible without clipping.

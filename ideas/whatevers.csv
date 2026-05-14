@@ -122,32 +122,6 @@ Twisted Fairyland;🎠;Whispering Carousel;Trap-Sleep;-2;0;0;-1;0;0;0;Abandoned 
 // RIVER OF SORROWS — major gap fill (weakest area by row count)
 // ============================================================
 
-//Reflective
-River of Sorrows;🐟;Pale Mirrorfish;Reflective;4;1;2;0;-1;0;0;River Oddity;Scales like polished silver, returns what you give.<br>;Sank without a reflection.;none
-River of Sorrows;💿;Mirror Disc Phantom;Reflective;3;3;3;0;0;0;0;Reflective Spirit;Spinning plates of light orbit its hollow frame.<br>;Ray returned twice as bright.;none
-
-//Demon (HP capped at 3 per regen rule)
-River of Sorrows;🧜‍♂️;Drowned Tempter;Demon;3;2;2;0;2;1;0;Abyssal Charmer;Promises breath beneath the waves.<br>;You followed him under, and never surfaced.;none
-River of Sorrows;🧜‍♀️;Siren of Silt;Demon;3;1;3;0;3;1;0;Luring Shade;Voice muffled, eyes burning bright below.<br>;You leaned closer and the river took you.;none
-River of Sorrows;🐉;Brine Hellkite;Demon;3;3;2;0;1;2;0;Abyssal Drake;Scales drip seawater and spite.<br>;Its jaws closed and the tide rose inside you.;none
-
-//Undead
-River of Sorrows;🦠;Grave Plankton;Undead;4;2;1;0;-1;1;0;Dead Swarm;The river's dead linger even at this scale.<br>;Disturbed the water. Moved on.;none
-
-//Tough
-River of Sorrows;🦬;Stoneback Bison;Tough;6;3;3;0;0;0;3;Tough Charger;Mossy boulders cling to its spine like armor.<br>;Blade skidded with shrill screech.;none
-River of Sorrows;⚓;Rustbound Titan;Tough;6;4;2;0;0;0;2;Tough Relic;A drowned hulk of chains and anchor shards drags itself ashore.<br>;Strikes rang hollow on rust.;none
-
-//Hot
-River of Sorrows;🌋;Ventborn Stalker;Hot;4;4;2;0;0;0;0;Hot Beast;Steam hisses from cracks along its spine like tiny volcanoes.<br>;Shove ended in scalded bone.;none
-River of Sorrows;🔱;Boiling Depth Warden;Hot;4;3;3;0;0;0;0;Hot Guardian;Water hisses on its skin, forever on the brink of steam.<br>;Contact scalded you from within.;none
-
-//Stingy
-River of Sorrows;🐚;Spined Shell Wretch;Stingy;4;3;2;0;0;0;0;Stingy Beast;A hunched thing hiding in a shell lined with barbs.<br>;Hauling it out flayed hands.;none
-
-//Toxic
-River of Sorrows;🧫;Seeping Plaguehost;Toxic;4;4;2;0;0;0;0;Toxic Undead;Its skin drips a burning film that eats through steel.<br>;Rot chewed straight through bone.;none
-
 //Traps (TODOs: "Revise river — all types, very lacking")
 River of Sorrows;⚓;Loose Anchor Chain;Trap-Big;-2;0;0;0;0;0;0;Mooring Hazard;Half-buried in wet mud.<br>;Chain whipped and broke your ribs.;none
 River of Sorrows;🛶;Capsized Canoe;Trap-Big;-2;0;0;0;0;0;0;Sunken Wreck;Balanced badly on the bank.<br>;You slipped, canoe crushed you.;none

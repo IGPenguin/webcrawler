@@ -337,6 +337,21 @@ function getRunEndMessage() {
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
 
+function getResignMessage() {
+  var pool = [
+    "Another damned soul.",
+    "The world does not mourn.",
+    "Even ghosts can quit.",
+    "The rot claims another.",
+    "The gate closes quietly.",
+    "One fewer soul to mourn.",
+    "Some wounds choose to stay.",
+    "The darkness needed no help.",
+    "Grief takes many forms.",
+  ];
+  return chooseFrom(pool);
+}
+
 function getWeddingInvitationPoem() {
   var pool = [
     "You sent this once trembling.<br>She never stopped believing.",
