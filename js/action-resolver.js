@@ -2521,6 +2521,55 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
+          case "Pet":
+            if (enemyInt === -1) {
+              logPlayerAction(actionString, "They cannot comprehend any words.");
+              displayPlayerCannotEffect();
+              if (enemyCastIfMgk()) break;
+              enemyAttackOrRest();
+              break;
+            }
+            if (convinceInt >= enemyInt) {
+              if (_skillOK === false) {
+                logPlayerAction(actionString, "They flinched and bolted.");
+                displayEnemyEffect("💨");
+                animateFlipNextEncounter();
+                isFishing = false;
+                break;
+              }
+              // crit success and regular pass both tame; enemyJoinedParty handles XP
+              enemyJoinedParty();
+              break;
+            } else if ((enemyInt > (convinceInt + 2)) && enemyAtkBonus <= 3) {
+              if (_crit === 'success') {
+                var gainedXP = parseInt(playerGainXP(1, 0, ""));
+                logAction(enemyEmoji + " ▸ 😱 Startled them into fleeing! " + decorateStatusText("", "+" + gainedXP + " XP", colorGold));
+                displayEnemyEffect("💨");
+                animateFlipNextEncounter();
+                isFishing = false;
+                break;
+              }
+              logPlayerAction(actionString, "They got more agitated +1 ⚔️");
+              enemyAtkBonus += 1;
+            } else {
+              if (_crit === 'success') {
+                logAction("💬 ▸ " + enemyEmoji + " You convinced it to flee.");
+                nextEncounter();
+                break;
+              }
+              var _petSpeechChance = Math.floor(Math.random() * luckInterval);
+              if (_petSpeechChance <= playerLck) {
+                logAction("🍀 ▸ 💬 They relaxed and wandered off.");
+                nextEncounter();
+                break;
+              } else {
+                logPlayerAction(actionString, "They paid you no attention.");
+              }
+            }
+            if (enemyCastIfMgk()) break;
+            enemyAttackOrRest();
+            break;
+
           case "Recruit": //If you are smarter they join you
             if (enemyInt < convinceInt){
               if (_skillOK === false) {
@@ -2542,7 +2591,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Standard": //If they are dumber they will walk away
           case "Swift":
           case "Heavy":
-          case "Pet":
           case "Spirit":
           case "Demon":
           case "Boss":

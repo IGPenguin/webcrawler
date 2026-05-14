@@ -40,12 +40,6 @@
 - Type: Feature
 - Effort: M | Gain: XL
 
-### [PET-TAME] Feature: Pet taming via Speak — INT check + calmed/exhausted condition
-- Pets become tameable by Speak if player INT ≥ pet INT and the pet is calmed (no ATK) or exhausted (no STA). Conditioning mechanic: successful Speak brings the pet closer and costs the pet -1 STA. Consolidates both pet taming notes.
-- Priority: P2 — expands a beloved mechanic with a clear tactical condition
-- Type: Feature
-- Effort: S | Gain: L
-
 ### [SHARE-REVAMP] Feature: Share function revamp — clipboard, QR, textfield
 - Unified share in death state, credits, and chronicles run detail: copy link to clipboard, pixel-style QR popup, textfield showing the link for manual copy/paste.
 - Priority: P2 — social sharing is a core beta activation hook
