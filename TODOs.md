@@ -331,66 +331,6 @@
 - Effort: S | Gain: L
 - Needs: For each stat: what does +1 change in a typical run? Set weight relative to ATK×3 as the anchor. After adjusting, sample existing CSV entries to confirm the rarity distribution doesn't break.
 
-### Technical Debt
-
-#### [HASH-ERR] Bug: Score hash "err" on some mobile submissions
-- One or more scores submitted with hash = "err" (caught exception in `_generateHash` in score-manager.js); Python verifier rejects these. Possibly `crypto.subtle` unavailable in certain Android browsers or in-app WebViews. Investigate by collecting more submissions during playtesting and checking whether "err" correlates with a specific device/browser. Fix path: explicit `crypto.subtle` availability check + console.error logging of the caught exception.
-- Type: Bug | Severity: Minor | Effort: S | Gain: M
-
-#### [SHARE-CLIP] Bug: Sharing — buttons not hidden during capture, log clips
-- Fix screenshot capture in menu.js: hide buttons during capture, ensure full log is visible without clipping.
-- Type: Bug | Severity: Minor | Effort: S | Gain: M
-
-#### [ACHIEV-TIME] Bug: Achievement timing — fix post-action logging delay hack
-- Fix the timing hack for logging achievements after actions in achievements.js.
-- Type: Bug | Severity: Minor | Effort: S | Gain: S
-
-#### [ENDEF-CALC] Bug: Enemy defense — enemyDef not applied in all skill calcs
-- Ensure enemyDef is used in all player skill calculations including consumables. (player-skills.js)
-- Type: Bug | Severity: Minor | Effort: S | Gain: M
-
-#### [CURSE-SCALE] Chore: Curse scaling — curse stats should affect action bar width
-- Negative curse stat values should shrink the success zone — currently all curses are equally hard regardless of intensity. (action-config.js)
-- Type: Chore | Effort: S | Gain: M
-
-#### [KARMA-SCALE] Improvement: Karma scaling — tiered reincarnation bonus
-- Any positive karma currently gives the same revive reward — should scale by tier. (player-skills.js)
-- Type: Improvement | Effort: S | Gain: M
-
-#### [GEN-STATE] Chore: Generator state — clean up nextEncounter Generator-type logic
-- Clean up hacky logic in nextEncounter for Generator types; ensure area transitions and seen tracking are robust. (game-loop.js)
-- Type: Chore | Effort: S | Gain: S
-
-#### [BOSS-TRACK] Chore: Boss type tracking — replace enemyBossType global hack
-- Replace the enemyBossType global with cleaner state management. (encounter-loader.js)
-- Type: Chore | Effort: M | Gain: S
-
-#### [ACT-UPGRD] Chore: Action type cleanup — refactor or remove Upgrade type
-- Refactor or remove the Upgrade action type if redundant. (action-resolver.js, ui-render.js)
-- Type: Chore | Effort: S | Gain: S
-
-#### [MAGIC-FNSH] Improvement: Magic finisher — refactor mercy logic for 1HP enemies
-- Refactor the magic "mercy kill" logic for finishing enemies at 1 HP. (action-resolver.js)
-- Type: Improvement | Effort: S | Gain: S
-
-#### [COIN-LOG] Improvement: Coin log formatting — replace string-split hack
-- Replace brittle string-splitting for coin costs in logging.js with a structured data approach.
-- Type: Improvement | Effort: S | Gain: S
-
-#### [REST-PAIN] Improvement: Rest button "Pain" label — replace with real state
-- Invent a Perk or state to replace the placeholder "Pain" label on the rest button. (ui-buttons.js)
-- Type: Improvement | Effort: XS | Gain: S
-
-#### [EMOJI-ASGN] Improvement: Emoji assignments — finalize unassigned types
-- Finalize emoji for unassigned encounter types (🐅 > ⚔️ etc.) in enemy-skills.js and action-resolver.js.
-- Type: Improvement | Effort: XS | Gain: S
-
-#### [TEAM-RENDER] Chore: Team rendering — refactor hacky sort/render logic
-- Refactor the team sorting/rendering in ui-render.js ("Hacky hacky hacky").
-- Type: Chore | Effort: S | Gain: S
-
----
-
 ## P4 — Nice to Have / Parking Lot
 
 ### [SOUL-GEM] Feature: Legendary soulgem — physical damage to spirits
@@ -571,6 +511,66 @@
 - Priority: P4 — superseded by tutorial revamp; keep as reference if tip-layer is needed later
 - Type: Idea
 - Effort: S | Gain: XS
+
+---
+
+### Technical Debt
+
+#### [HASH-ERR] Bug: Score hash "err" on some mobile submissions
+- One or more scores submitted with hash = "err" (caught exception in `_generateHash` in score-manager.js); Python verifier rejects these. Possibly `crypto.subtle` unavailable in certain Android browsers or in-app WebViews. Investigate by collecting more submissions during playtesting and checking whether "err" correlates with a specific device/browser. Fix path: explicit `crypto.subtle` availability check + console.error logging of the caught exception.
+- Type: Bug | Severity: Minor | Effort: S | Gain: M
+
+#### [SHARE-CLIP] Bug: Sharing — buttons not hidden during capture, log clips
+- Fix screenshot capture in menu.js: hide buttons during capture, ensure full log is visible without clipping.
+- Type: Bug | Severity: Minor | Effort: S | Gain: M
+
+#### [ACHIEV-TIME] Bug: Achievement timing — fix post-action logging delay hack
+- Fix the timing hack for logging achievements after actions in achievements.js.
+- Type: Bug | Severity: Minor | Effort: S | Gain: S
+
+#### [ENDEF-CALC] Bug: Enemy defense — enemyDef not applied in all skill calcs
+- Ensure enemyDef is used in all player skill calculations including consumables. (player-skills.js)
+- Type: Bug | Severity: Minor | Effort: S | Gain: M
+
+#### [CURSE-SCALE] Chore: Curse scaling — curse stats should affect action bar width
+- Negative curse stat values should shrink the success zone — currently all curses are equally hard regardless of intensity. (action-config.js)
+- Type: Chore | Effort: S | Gain: M
+
+#### [KARMA-SCALE] Improvement: Karma scaling — tiered reincarnation bonus
+- Any positive karma currently gives the same revive reward — should scale by tier. (player-skills.js)
+- Type: Improvement | Effort: S | Gain: M
+
+#### [GEN-STATE] Chore: Generator state — clean up nextEncounter Generator-type logic
+- Clean up hacky logic in nextEncounter for Generator types; ensure area transitions and seen tracking are robust. (game-loop.js)
+- Type: Chore | Effort: S | Gain: S
+
+#### [BOSS-TRACK] Chore: Boss type tracking — replace enemyBossType global hack
+- Replace the enemyBossType global with cleaner state management. (encounter-loader.js)
+- Type: Chore | Effort: M | Gain: S
+
+#### [ACT-UPGRD] Chore: Action type cleanup — refactor or remove Upgrade type
+- Refactor or remove the Upgrade action type if redundant. (action-resolver.js, ui-render.js)
+- Type: Chore | Effort: S | Gain: S
+
+#### [MAGIC-FNSH] Improvement: Magic finisher — refactor mercy logic for 1HP enemies
+- Refactor the magic "mercy kill" logic for finishing enemies at 1 HP. (action-resolver.js)
+- Type: Improvement | Effort: S | Gain: S
+
+#### [COIN-LOG] Improvement: Coin log formatting — replace string-split hack
+- Replace brittle string-splitting for coin costs in logging.js with a structured data approach.
+- Type: Improvement | Effort: S | Gain: S
+
+#### [REST-PAIN] Improvement: Rest button "Pain" label — replace with real state
+- Invent a Perk or state to replace the placeholder "Pain" label on the rest button. (ui-buttons.js)
+- Type: Improvement | Effort: XS | Gain: S
+
+#### [EMOJI-ASGN] Improvement: Emoji assignments — finalize unassigned types
+- Finalize emoji for unassigned encounter types (🐅 > ⚔️ etc.) in enemy-skills.js and action-resolver.js.
+- Type: Improvement | Effort: XS | Gain: S
+
+#### [TEAM-RENDER] Chore: Team rendering — refactor hacky sort/render logic
+- Refactor the team sorting/rendering in ui-render.js ("Hacky hacky hacky").
+- Type: Chore | Effort: S | Gain: S
 
 ---
 
