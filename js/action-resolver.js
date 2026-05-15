@@ -1031,8 +1031,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Death"){
-            // redirectToTweet();
-            // logPlayerAction(actionString,"Echoed your story to the world!")
+            showSharePopup();
+            logPlayerAction(actionString,"Shared your story with the living.");
             break;
           }
 

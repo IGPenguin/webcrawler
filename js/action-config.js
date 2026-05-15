@@ -64,6 +64,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
+  // Share on death — cast is always green regardless of mana
+  if (button === 'button_cast' && types.includes('Death')) {
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+  }
+
   // Cast / Heal / Curse with no mana — impossible (bar all-red)
   // button_pray is exempt on Curse type (action-resolver allows it without MGK)
   // Shop overrides this — mana is irrelevant there (coin is the gate)

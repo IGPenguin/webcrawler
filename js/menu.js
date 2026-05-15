@@ -616,6 +616,7 @@ var Menu = (function () {
 
     // Wire Copy Score Link button
     var scoreLinkBtn = document.getElementById('menu_history_scorelink');
+    
     if (scoreLinkBtn) {
       if (session.ghostLink) {
         scoreLinkBtn.style.display = '';
@@ -632,12 +633,15 @@ var Menu = (function () {
             document.body.removeChild(ta);
           }
           scoreLinkBtn.innerHTML = '✅ Copied!';
-          setTimeout(function () { scoreLinkBtn.innerHTML = '🔗 Score Link'; }, 2000);
+          setTimeout(function () { scoreLinkBtn.innerHTML = ' Link'; }, 2000);
         };
       } else {
         scoreLinkBtn.style.display = 'none';
       }
     }
+
+    //Force-hide Score Link button (for now)
+    scoreLinkBtn.style.display = 'none';
 
     // Size the log to fill remaining space — measured after layout so the
     // height is exact regardless of card/loot-bar size.
@@ -713,55 +717,8 @@ var Menu = (function () {
     document.body.removeChild(a);
   }
 
-  function _shareSession() { // TODO Fix the .png
-    if (!_currentDetailSession) return;
-    var session = _currentDetailSession;
-    var safeName = _stripHtml(session.playerName || 'Unknown').replace(/\s+/g, '-');
-    var shareText = _buildSessionShareText(session);
-    var fullText  = _buildSessionFullText(session);
-
-    // 1. Copy summary to clipboard
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(shareText).catch(function () {});
-    } else {
-      var ta = document.createElement('textarea');
-      ta.value = shareText;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
-
-    // 2. Download full log as .txt
-    _downloadText('Stay-Dead-' + safeName + '.txt', fullText);
-
-    // 3. Download PNG — capture the actual rendered card from the page.
-    if (typeof html2canvas !== 'undefined') {
-      var listEl   = document.getElementById('menu_history_list');
-      var scrollEl = listEl.parentElement;
-      var cardEl = listEl.parentElement.parentElement;         // the overflow:auto container
-
-      // Lift scroll clipping so html2canvas sees the full content height.
-      //var prevOverflow  = scrollEl.style.overflow;
-      //var prevMaxHeight = scrollEl.style.maxHeight;
-
-      /// TODO Hide buttons
-      //listEl.style.overflow  = 'visible';
-      //listEl.style.maxHeight = 'none';
-
-      html2canvas(cardEl, { scale: 2, logging: false, useCORS: true }).then(function (canvas) {
-        //scrollEl.style.overflow  = prevOverflow;
-        //scrollEl.style.maxHeight = prevMaxHeight;
-        var a = document.createElement('a');
-        a.download = 'Stay-Dead-' + safeName + '.png';
-        a.href = canvas.toDataURL('image/png');
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      });
-
-      // TODO Show buttons
-    }
+  function _shareSession() {
+    showSharePopup();
   }
 
   function _reviewSession() {
@@ -1236,7 +1193,7 @@ var Menu = (function () {
     document.getElementById('menu_leaderboard').style.color = '';
     document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
     document.getElementById('menu_credits_share').addEventListener('click', function () {
-      window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent('https://igpenguin.github.io/stay-dead'));
+      showSharePopup();
     });
     document.getElementById('menu_credits_review').addEventListener('click', function () { redirectToFeedback(); });
     document.getElementById('menu_credits_back').addEventListener('click', function () { _renderMain(); });

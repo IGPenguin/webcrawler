@@ -108,18 +108,18 @@ function showSharePopup() {
 
   var title = document.createElement('h3');
   title.style.cssText = 'margin:0 0 14px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;';
-  title.innerHTML = '🖤 Stay Dead';
+  title.innerHTML = '🔗 Stay Dead';
 
   var qr = document.createElement('img');
   qr.src = 'assets/img/QR.png';
   qr.alt = 'QR Code';
-  qr.style.cssText = 'width:156px; height:156px; image-rendering:pixelated; display:block; margin:0 auto 14px auto; box-shadow:0 0 0 3px #000;';
+  qr.style.cssText = 'width:284px; height:284px; image-rendering:pixelated; display:block; margin:0 auto 14px auto; box-shadow:0 0 0 3px #000;';
 
   var urlInput = document.createElement('input');
   urlInput.type = 'text';
   urlInput.readOnly = true;
   urlInput.value = shareUrl;
-  urlInput.style.cssText = 'width:100%; box-sizing:border-box; font-size:12px; padding:7px 8px; background:#2a2a2a; border:none; outline:2px solid #444; color:#aaa; font-family:inherit; margin-bottom:10px; text-align:center; cursor:text;';
+  urlInput.style.cssText = 'width:286px; box-sizing:border-box; font-size:16px; padding:10px 10px; background:#2a2a2a; border:none; outline:2px solid #444; color:#aaa; font-family:inherit; margin-bottom:10px; text-align:center; cursor:text;';
   urlInput.addEventListener('click', function () { this.select(); });
 
   var btnRow = document.createElement('div');

@@ -243,7 +243,7 @@ layout: default
       <div class="menu-spacer"></div>
         <div id="menu_history_actions" style="display:none; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_history_scorelink" style="flex:1; display:none; margin-top:0px; color:#7193bf;">🔗 Score Link</button>
-        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff; display:none">📎 Share <i style="color:grey;">[Beta]</i></button>
+        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share</button>
         <button class="menu-btn" id="menu_history_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
       </div>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>
@@ -275,9 +275,9 @@ layout: default
       <h5 style="margin-top:16px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Anonymous game telemetry is being collected.<br>No personal data, see the <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;">open source</a>.</h5>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
-        <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
         <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
         <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Greet</button>
+        <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
       </div>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>

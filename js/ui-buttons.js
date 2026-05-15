@@ -363,13 +363,14 @@ function adjustEncounterButtons(){
 
     case "Death":
       ['button_grab','button_sleep','button_speak',
-       'button_cast','button_pray','button_curse'].forEach(function(id){
+       'button_pray','button_curse'].forEach(function(id){
         setButton(id,"-",colorDarkGrey);
         document.getElementById(id).disabled = true;
       });
       setButton('button_attack',"✨ Revive",colorGold);
       setButton('button_roll',"❌ Resign",colorRed);
       setButton('button_block',"💚 Rate",colorSoftGreen);
+      setButton('button_cast',"📎 Share",colorWhite);
       break;
 
     case "Shop":
