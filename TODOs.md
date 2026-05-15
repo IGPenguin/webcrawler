@@ -1,6 +1,109 @@
-# Styx Flow — 2026-05-14 — Stay Dead
+# Styx Flow — 2026-05-15 — Stay Dead
 
-*102 items sorted · Source: re-sort of existing TODOs.md — gain scale migrated to XS/S/M/L/XL*
+*107 items · SPRINT block added from Perseus creative session 2026-05-15 — 5 new items, 7 promoted from P3*
+
+---
+
+## SPRINT — Creative Polish Day *(one man, one day — max fun, max hook)*
+
+### [DEATH-MSG] Improvement: Feature enemy death message prominently on game-over screen
+- The `message` field on enemy rows describes how the player died and some are devastating — e.g. "You became the grief you were running from." — but it's buried in the log when the death screen has already transitioned.
+- In `gameOver()` (game-loop.js), grab `enemyMessage` and render it as hero text on the game-over screen — above the stat summary, below the enemy emoji; one new DOM element or repurpose an existing panel in `ui-render.js`.
+- Zero new writing required — the content is already in the CSV.
+- Priority: SPRINT — highest emotional punch per effort on the list; makes every death feel like a line from the game's soul.
+- Type: Improvement
+- Effort: S | Gain: XL
+- Source: Perseus creative sprint 2026-05-15 — Narrative Writer, confirmed by Hardcore Fan vote
+
+### [FLASH-CRIT] Improvement: .flash-crit CSS animation on critical hits
+- Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
+- Bundle with [CRIT-SHAKE] for full crit feedback; guard every `animationend` handler with `if (e.target !== e.currentTarget) return` to prevent child element bubbling bugs.
+- Priority: SPRINT — the action bar's crit moment is completely silent right now; highest-leverage feel fix for every encounter.
+- Type: Improvement
+- Effort: XS | Gain: M
+
+### [CRIT-SHAKE] Improvement: Crit attack shakes enemy card; crit walk bounces player card
+- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only.
+- Bundle with [FLASH-CRIT]; guard `animationend` with `if (e.target !== e.currentTarget) return`.
+- Priority: SPRINT — targeted micro-feedback that makes the skill check feel like it mattered; paired with FLASH-CRIT for full crit moment.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [COMP-PLAY] Feature: Companion passive gameplay effects
+- Companions in the party should have passive gameplay effects beyond score contribution; even one passive trigger per companion type transforms the party string from a trophy into a living team.
+- Start with 3 companion types: 🐱 cat = +1 LCK per encounter (`playerPartyString.includes('🐱')` check), 🧙 monk = small prayer success bonus, 🐶 dog = log hint before ambush trap encounters.
+- Pure `includes()` checks at existing decision points — no new state objects needed.
+- Priority: SPRINT — "my cat saved me" is a story the game currently cannot tell; this is a retention hook hiding in plain sight.
+- Type: Feature
+- Effort: M | Gain: M
+- Needs: Define what passive effects companions should grant before implementing.
+
+### [BAR-RDZONE] Feature: Action bar red zones — random placement for prop encounters
+- For prop-type encounters (e.g., walking away from something), randomly place red danger intervals within the green zone instead of always at the edges — simulates "avoid the sharp stone."
+- In `action-config.js` → `calcActionBarConfig()`, for `prop` type: add 1-2 narrow red intervals placed randomly inside the normal green zone; overall difficulty unchanged — just move where the danger hides. No new encounter rows needed.
+- Priority: SPRINT — half the encounter pool is props with known outcomes; this makes them skill checks with real stakes and extends action bar tension to every encounter type.
+- Type: Feature
+- Effort: M | Gain: L
+
+### [SEQ-DELAY] Improvement: Sequential action display — delay 0.5s per log entry
+- Add a 0.5s delay between log entries in multi-step action sequences; wait for effects to complete before re-enabling player input.
+- Wrap the `logAction()` call chain in a `setTimeout` queue; 500ms between entries; block player input until the chain resolves; scope to multi-step sequences only — single actions stay instant.
+- Priority: SPRINT — grab/speak/companion sequences currently dump as a text wall; staggering makes each beat land and companions saving the player become a moment rather than a footnote.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [STORY-FADE] Improvement: Story fades — longer and smoother
+- Increase duration and smooth easing on game-start, invader, memory, and final boss fade transitions.
+- Priority: SPRINT — transitions are functional but thin; polish here signals craft to first-time beta players.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [CRIT-PULSE] Improvement: Crit zone CSS pulse animation while action bar is active
+- While the action bar animates, add a slow CSS `@keyframes` brightness pulse (1s loop) on the crit zone element — telegraphs "hitting this is special" before the result lands; remove on bar stop.
+- Pure CSS change in `action-bar.js`; no logic changes.
+- Priority: SPRINT — trains players to chase crits without a tooltip; makes the skill check feel alive before they hit it.
+- Type: Improvement
+- Effort: XS | Gain: M
+- Source: Perseus creative sprint 2026-05-15 — VFX Artist, confirmed by Genre Fan vote
+
+### [ENEM-TELL] Improvement: Enemy tell — pre-attack log hint for high-ATK enemies
+- For enemies with ATK ≥ 4, log a brief flavor hint before their attack resolves — e.g. "The Revenant raises its arm..." — rewards veteran players who've learned to read it.
+- In `encounter-loader.js` or `enemy-skills.js`, add a pre-attack log entry before damage resolution; can be generic per enemy type or pull from a small flavor pool in `string-generator.js`.
+- Priority: SPRINT — veteran recognition loops drive replayability; doesn't change mechanics but makes experienced players feel smart.
+- Type: Improvement
+- Effort: S | Gain: M
+- Source: Perseus creative sprint 2026-05-15 — Game Design Lead + Game Director
+
+### [CRIT-SLEEP] Improvement: Crit sleep outside combat → extra STA
+- A critical success on a sleep action outside combat (e.g., falling leaves) should grant bonus STA beyond the standard recovery.
+- In `action-resolver.js` sleep case: if `result === 'crit-pass'` AND `!inCombat`, add `+1 STA` on top of standard recovery and log a flavor line — e.g. "You rest so deeply something comes loose."
+- Priority: SPRINT — small discovery moment that extends crit reward to a new emotional beat; players who find it will talk about it.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [STONE-HINT] Feature: Whispering Stone — one stone surfaces a true hint from player data *(fan wildcard)*
+- Currently both Whispering Stones show flavor epitaphs; make one of the two occasionally surface something true — a stat hint or next-area warning derived from real player submission data.
+- Infrastructure already in `rival-manager.js` (`buildWallPropRow()`); pull from the existing pool entries and filter for a "wisdom" subset rather than pure epitaph.
+- Priority: SPRINT — near-zero cost on existing infrastructure; the moment a player reads something true from the dead is unforgettable and shareable.
+- Type: Feature
+- Effort: S | Gain: L
+- Source: Perseus creative sprint 2026-05-15 — Hardcore Fan wildcard
+
+### [KILL-LINE] Improvement: Post-run kill summary line on game-over screen *(fan wildcard)*
+- Add one generated sentence on the game-over screen summarizing a notable run moment — e.g. "You killed 12 enemies. The Revenant was not among them." Pull from run encounter data; filter by encountered-but-survived enemies.
+- In `gameOver()` / `ui-render.js`: pull encounter history or equivalent run state; find a high-ATK enemy the player met but didn't kill; generate one flavor sentence via `string-generator.js`.
+- Note: this is the beta-tier delivery of the run summary feature. [RUN-IMPACT] (Backlog) is the full future version.
+- Priority: SPRINT — makes every run feel like a specific story that didn't quite finish; the unresolved enemy line is the kind of detail players screenshot.
+- Type: Improvement
+- Effort: S | Gain: M
+- Source: Perseus creative sprint 2026-05-15 — Genre Fan wildcard
+
+### [BOSS-TOLL] Improvement: Boss death counter — show area death toll on boss kill
+- On killing an area boss, display how many times the player died in that area before the kill — e.g. "After 3 deaths in the Twisted Fairyland." Zero deaths gets its own line — e.g. "First blood. Somehow." Bosses are drawn from a pool per area, so the counter is per area, not per specific enemy.
+- Track `areaDeathCount` (reset each area) in `gameOver()` keyed to current area; read and display on boss kill resolution in `action-resolver.js` or `game-loop.js`.
+- Priority: SPRINT — the DS accomplishment moment depends on the number being visible; reframes repeated death as paying the price for an area, not just failing.
+- Type: Improvement
+- Effort: S | Gain: L
 
 ---
 
@@ -21,6 +124,13 @@
 ---
 
 ## P2 — Release-Gating
+
+### [DEATH-HIST] Improvement: Death message in run history and online scoreboard
+- The enemy death message (how the player died) should be visible in the Chronicles run history detail view and on the online scoreboard entry — not just on the death screen.
+- Death message is already stored in telemetry (`causeOfDeath` in `run_end`); surface it in the Chronicles detail panel (`ui-render.js`) and in the scoreboard stat card (Rankings screen / `score-manager.js`). Rankings pipeline may need the field passed through `ghostLink` payload if not already present.
+- Priority: P2 — death messages are the game's best writing; burying them after the death screen wastes the asset and removes the social hook.
+- Type: Improvement
+- Effort: M | Gain: L
 
 ### [MIRR-ENCNTR] Feature: 🪞 Mirror encounter type — hidden stat reveal
 - New encounter type displaying one hidden stat's current value (mirror-luck, mirror-int, mirror-karma) + a contextual hint string about what the stat does (e.g., "3🍀 — Luck tips the scales"). Mirror can be broken for a negative effect, or spoken to at INT mirror for a +1 INT boost. Start by mimicking prop activity handling; expand per mirror variant.
@@ -56,29 +166,20 @@
 
 ## P3 — Should-Fix
 
-### [FLASH-CRIT] Improvement: .flash-crit CSS animation on critical hits
-- Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
-- Priority: P3 — polish; XS effort with existing toolkit
-- Type: Improvement
-- Effort: XS | Gain: M
+### [ACTN-FLAVOR] Feature: Action outcome flavor text — per-outcome log lines
+- Each action result (crit-pass / pass / fail / crit-fail) on an encounter should have a distinct flavor log line beyond the current generic text. Lines must hint at *why* the outcome happened — the stat or companion that tipped it — not just describe the result.
+- Add outcome-variant strings to `string-generator.js` or per-encounter-type pools; call from `action-resolver.js` after result resolution. Start with the highest-volume encounter types: Standard enemies and Props.
+- Priority: P3 — flavor text without causality hint is decoration; this is what closes the feedback loop between player stats and moment-to-moment feel.
+- Type: Feature
+- Effort: M | Gain: L
 
-### [CRIT-SHAKE] Improvement: Crit attack shakes enemy card; crit walk bounces player card
-- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only.
-- Priority: P3 — targeted micro-feedback, lower scope than screen-shake
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [STORY-FADE] Improvement: Story fades — longer and smoother
-- Increase duration and smooth easing on game-start, invader, memory, and final boss fade transitions.
-- Priority: P3 — polish; transitions are functional but thin
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [CRIT-SLEEP] Improvement: Crit sleep outside combat → extra STA
-- A critical success on a sleep action outside combat (e.g., falling leaves) should grant bonus STA beyond the standard recovery.
-- Priority: P3 — small mechanical delight; extends crit reward to a new context
-- Type: Improvement
-- Effort: S | Gain: M
+### [COMP-STAKES] Feature: Companion narrative stakes — full system (Hades Gate)
+- Full companion stakes design: companion individuation (a logged "named moment" when a companion joins), enemy steal/kill mechanic, rescue/revenge fight. Companions must feel like relationships with a story, not emoji bonuses.
+- Do NOT implement until [COMP-PLAY] is stable and companions have demonstrated passive gameplay value first. Design via Hades Gate when ready.
+- Priority: P3 — companion individuation before the steal/kill mechanic is a hard prerequisite; loss only lands if attachment was built.
+- Type: Feature
+- Effort: XL | Gain: XL
+- Needs: Full design via Hades Gate. Prerequisite: [COMP-PLAY] stable.
 
 ### [STAT-DISP] Improvement: Stat display — show numeric when over 5
 - If a stat value exceeds 5, display it as a number (e.g., ❤️ 4/6) instead of the icon-count style — UI space is limited.
@@ -98,12 +199,6 @@
 - Type: Improvement
 - Effort: M | Gain: M
 
-### [SEQ-DELAY] Improvement: Sequential action display — delay 0.5s per log entry
-- Add a 0.5s delay between log entries in multi-step action sequences; wait for effects to complete before re-enabling player input.
-- Priority: P3 — readability and feel; not blocking
-- Type: Improvement
-- Effort: S | Gain: M
-
 ### [COLOR-BLIND] Improvement: Colorblind-safe crit/success zones
 - Ensure crit and success zones on the action bar are distinguishable without color — brightness difference or pattern.
 - Priority: P3 — accessibility; not gating beta
@@ -115,12 +210,6 @@
 - Priority: P3 — player agency; 1-click encounters feel like dead zones
 - Type: Improvement
 - Effort: M | Gain: M
-
-### [BAR-RDZONE] Feature: Action bar red zones — random placement for prop encounters
-- For prop-type encounters (e.g., walking away from something), randomly place red danger intervals within the green zone instead of always at the edges — simulates "avoid the sharp stone."
-- Priority: P3 — mechanical depth and surprise; not beta-blocking
-- Type: Feature
-- Effort: M | Gain: L
 
 ### [AMB-FX] Feature: Area ambient UI effects — falling leaves, rain, fog per area
 - Pixel-styled, black-outlined ambient effects per area (falling leaves, blue/purple leaves, rain, fog). Expose per-area config: effect type, density, frequency, speed.
@@ -181,13 +270,6 @@
 - Priority: P3 — adds a resource decision to pet taming
 - Type: Feature
 - Effort: S | Gain: M
-
-### [COMP-PLAY] Feature: Companion gameplay implications
-- Companions in the party should have passive gameplay effects beyond score contribution.
-- Priority: P3 — currently companions are score-only; mechanical weight would make recruiting feel meaningful
-- Type: Feature
-- Effort: M | Gain: M
-- Needs: Define what passive effects companions should grant before implementing.
 
 ### [HAPTIC-BAR] Feature: Android vibration — action bar haptics
 - Vibrate on button press/release, on zone transitions (fail/pass/crit), on taking damage; vary pattern and length per trigger. Verify whether any iOS vibration permission is possible.
@@ -264,6 +346,8 @@
 - Type: Question
 - Effort: S | Gain: L
 - Needs: For each stat: what does +1 change in a typical run? Set weight relative to ATK×3 as the anchor. After adjusting, sample existing CSV entries to confirm the rarity distribution doesn't break.
+
+---
 
 ## P4 — Nice to Have
 
@@ -379,7 +463,17 @@
 - Type: Feature
 - Effort: S | Gain: S
 
+---
+
 ## Backlog
+
+### [RUN-IMPACT] Feature: Full run impact summary (Hades Gate)
+- End-of-run or game-over screen shows a narrative summary of what the player's choices and companions contributed — e.g. "Your dog warned you twice. Your karma cost you the ending you deserved." Goes well beyond [KILL-LINE]'s single sentence.
+- Requires tracking choice impact throughout the run (karma deltas, companion saves, key moments). Design via Hades Gate when the simpler beta tier ([KILL-LINE]) is proven and player data gives signal on what moments are most memorable.
+- Priority: P4 — [KILL-LINE] covers the beta tier; this is the full vision for a post-beta update.
+- Type: Feature
+- Effort: XL | Gain: XL
+- Needs: Full design via Hades Gate. Prerequisite: [KILL-LINE] shipped and validated.
 
 ### [SPELL-SYS] Feature: Spells system
 - Spell button replaces Curse; spell list overlay on click (scrollable, max height = action buttons); spells learned from Spell Scrolls via a Learn action (INT-based success). Basic spells: 🐸 Hex, 🔥 Burn, 🧊 Freeze, ⚡️ Surge, 🪬 Curse (−ATK), 🪨 Harden, 🩸 Syphon.
@@ -472,10 +566,6 @@
 - One or more scores submitted with hash = "err" (caught exception in `_generateHash` in score-manager.js); Python verifier rejects these. Possibly `crypto.subtle` unavailable in certain Android browsers or in-app WebViews. Investigate by collecting more submissions during playtesting and checking whether "err" correlates with a specific device/browser. Fix path: explicit `crypto.subtle` availability check + console.error logging of the caught exception.
 - Type: Bug | Severity: Minor | Effort: S | Gain: M
 
-#### [SHARE-CLIP] Bug: Sharing — buttons not hidden during capture, log clips
-- Fix screenshot capture in menu.js: hide buttons during capture, ensure full log is visible without clipping.
-- Type: Bug | Severity: Minor | Effort: S | Gain: M
-
 #### [ACHIEV-TIME] Bug: Achievement timing — fix post-action logging delay hack
 - Fix the timing hack for logging achievements after actions in achievements.js.
 - Type: Bug | Severity: Minor | Effort: S | Gain: S
@@ -526,4 +616,4 @@
 
 ---
 
-*Styx Flow complete — 102 items processed*
+*Styx Flow complete — 107 items processed*
