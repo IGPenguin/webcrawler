@@ -34,12 +34,6 @@
 - Type: Feature
 - Effort: M | Gain: XL
 
-### [SHARE-REVAMP] Feature: Share function revamp — clipboard, QR, textfield
-- Unified share in credits, and chronicles run detail: copy game link to clipboard, pixel-style QR code popup dialog (for camera scan - recycle the one for score nicnkanem submit), textfield showing the link for manual copy/paste., remove the "score link" button and the logic for "grabbing a picture from html" - just display popup with QR code and the game link: https://igpenguin.github.io/stay-dead/
-- Priority: P2 — social sharing is a core beta activation hook
-- Type: Feature
-- Effort: M | Gain: L
-
 ### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
 - Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
 - Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it
