@@ -16,6 +16,65 @@ The journey ends in the **Shrouded Necropolis** with a branching finale: 9 endin
 
 ---
 
+## Player Experience Philosophy
+
+Everything in the game points toward one question: *did you deserve her?* The emotional design serves that spine. Every mechanic, every text beat, every shareable moment should either build toward the final choice or make the run feel like it mattered.
+
+### Emotional Spine
+
+The journey is the approach to Rosabel. Progression means getting closer to her -- not just accumulating stats. Gear finds, boss kills, and companion bonds should feel like chapters in that approach, not neutral resource events.
+
+Every run ends in one of two states: you reached her, or you didn't. Both should feel earned. Failure should teach. The world should feel the weight of both outcomes.
+
+### Death as Story
+
+The death message field is the game's most powerful asset. It is the shareable unit -- not the score. A well-written message outlasts a number. Design rule: every enemy row must earn its death message the way a poem earns its last line.
+
+Death messages belong on the death screen, in the run history, and in the online scoreboard. If a player dies to something and the message is lost, the moment was wasted.
+
+### Companion Narrative Stakes
+
+Companions are relationships, not trophy emojis. A dog that barks before danger is a companion. A dog that sits in the party string boosting LCK is furniture.
+
+Rule: every companion needs a named moment before it can be lost. The emotional payload of loss scales with what was built first. The steal/kill/rescue loop only lands if the player already cares. Design companion encounters to build attachment before it can be tested.
+
+Long-term goal: enemies should be able to steal, injure, or kill companions, triggering a fight to recover or avenge them. This must be designed via Hades Gate when the companion system is otherwise stable.
+
+### Action Outcome Causality
+
+Flavor text on action outcomes (crit/pass/fail) is not decoration -- it is feedback. Each line should hint at *why* the outcome happened. "The dog saved you" is weaker than "Your bond sharpened its instincts." The stat that caused the result should be implied in the language, even when not stated directly.
+
+Rule: outcome flavor must connect to the player's state (stats, companions, karma, love). Generic "you succeeded" lines are never acceptable.
+
+### Accomplishment Loop
+
+Bosses must be genuinely threatening. Players should expect to die. When they finally kill a boss, they should feel like they paid for it.
+
+Design rules:
+- Boss death messages must hint at what the player should have done differently (teaching through death)
+- On boss kill, display how many times the player died in the area in total before
+- Each area boss should feel meaningfully harder than the preceding area
+
+### Progression as Proximity
+
+Stronger stats and better gear should feel like getting closer to Rosabel, not just stat accumulation. The moment of finding a Legendary item should be textually distinct -- the acquisition message should signal rarity, not just announce a pickup. Players should *feel* themselves getting stronger across a run.
+
+### Shareable Tragedy
+
+Players should want to tell their friends about their run -- but in the key of this game: bragging about how they failed, what cost them, how close they got, not about a high score. "A ghost stole my dog and I fought to get her back" is the target. "I scored 847" is not.
+
+Design test: for every major emotional beat (boss kill, companion event, death), ask what the one-sentence story is. If it takes more than one sentence, the text hook needs to be stronger.
+
+### World Memory
+
+The world should know you've been here before. Rivals, Whispering Stone epitaphs, and rival last words are the current implementation. This principle should expand: prior runs should cast shadows in the world, not disappear entirely on death.
+
+### Emotional Counterweight
+
+Strong negative emotions require counterweight. For every cluster of brutal encounters, the game should offer one moment of genuine stillness -- a memory that doesn't require combat, a prop that is simply beautiful, a log line that is quiet instead of threatening. Without this, the game becomes grimness without payoff.
+
+---
+
 ## Tone & Voice
 
 - desc fields: 7–15 words, declarative or poetic
