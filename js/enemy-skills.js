@@ -57,9 +57,9 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   var critChance = Math.floor(Math.random() * luckInterval);
   if ( (critChance <= playerLck) && applyLuck){
     logAction("🍀 ▸ "+actionString+" Your strike was blessed with luck.");
-    hitMsg="Attack hit them critically -"+(damage+2)+" 💔";
+    hitMsg="Attack hit them critically -"+(damage+1)+" 💔";
     displayPlayerEffect("🍀");
-    damage+=2;
+    damage+=1;
   }
 
   if (damage<=0) {
