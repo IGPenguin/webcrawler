@@ -82,6 +82,19 @@ var ActionBar = (function () {
         + ' ' + _successFill + ' ' + _csMax + '%, ' + _successFill + ' ' + sx + '%,'
         + ' ' + _failFill + ' ' + sx + '%, ' + _failFill + ' ' + cfR + '%,'
         + ' #200808 ' + cfR + '%, #200808 100%)';
+    } else if (config.dangerZones && config.dangerZones.length > 0) {
+      var _sorted = config.dangerZones.slice().sort(function(a, b) { return a.min - b.min; });
+      var _parts = [_failFill + ' 0%, ' + _failFill + ' ' + sm + '%'];
+      var _prev = sm;
+      for (var _di = 0; _di < _sorted.length; _di++) {
+        var _dz = _sorted[_di];
+        if (_dz.min > _prev) _parts.push(_successFill + ' ' + _prev + '%, ' + _successFill + ' ' + _dz.min + '%');
+        _parts.push(_failFill + ' ' + _dz.min + '%, ' + _failFill + ' ' + _dz.max + '%');
+        _prev = _dz.max;
+      }
+      if (_prev < sx) _parts.push(_successFill + ' ' + _prev + '%, ' + _successFill + ' ' + sx + '%');
+      _parts.push(_failFill + ' ' + sx + '%, ' + _failFill + ' 100%');
+      bg = 'linear-gradient(to right, ' + _parts.join(', ') + ')';
     } else {
       bg = 'linear-gradient(to right,'
         + ' ' + _failFill + ' 0%, ' + _failFill + ' ' + sm + '%,'
@@ -127,6 +140,10 @@ var ActionBar = (function () {
     if (_value >= _config.successMin && _value <= _config.successMax) {
       curZone = 1;
       if (_hasCrits && _value >= _csMin && _value <= _csMax) curZone = 2;
+      var _dzTick = _config.dangerZones || [];
+      for (var _dti = 0; _dti < _dzTick.length; _dti++) {
+        if (_value >= _dzTick[_dti].min && _value <= _dzTick[_dti].max) { curZone = 0; break; }
+      }
     }
 
     if (curZone !== _lastZone) {
@@ -193,8 +210,13 @@ var ActionBar = (function () {
     cancelAnimationFrame(_raf);
     if (_elCancel) _elCancel.classList.remove('visible');
 
-    var val       = _value;
-    var isSuccess = val >= _config.successMin && val <= _config.successMax;
+    var val = _value;
+    var _inDanger = false;
+    var _dzList = _config.dangerZones || [];
+    for (var _dri = 0; _dri < _dzList.length; _dri++) {
+      if (val >= _dzList[_dri].min && val <= _dzList[_dri].max) { _inDanger = true; break; }
+    }
+    var isSuccess = val >= _config.successMin && val <= _config.successMax && !_inDanger;
 
     var critResult = null;
     if (_hasCrits) {

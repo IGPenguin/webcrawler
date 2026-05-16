@@ -1729,8 +1729,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"Unable to initiate a relationship ?? 🧠");
-                nextEncounter();
+                logPlayerAction(actionString,"It sees right through you. 🧠");
+                displayEnemyEffect("👀");
+                redraw();
                 break;
               }
               if (_skillOK === false) {
@@ -2705,7 +2706,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 nextEncounter();
               } else {
                 encounterUsed = true;
-                logPlayerAction(actionString, "They seem unconvinced. Try once more.");
+                logPlayerAction(actionString, "They seem unconvinced, yet?");
                 displayPlayerCannotEffect();
                 if (enemyCastIfMgk()) break;
                 enemyAttackOrRest();
@@ -2716,7 +2717,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (String(enemyQuestItems)!=""){
               logPlayerAction(actionString,"Bring me: "+String(enemyQuestItems).replaceAll(","," "));
             } else {
-              logPlayerAction(actionString,"Unable to initiate conversation ?? 🧠");
+              logPlayerAction(actionString,"You don't meet their standards. 🧠");
+              redraw();
             }
             displayPlayerCannotEffect();
             break;

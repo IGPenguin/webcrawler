@@ -108,11 +108,10 @@ Fading Wildlands;🐁;Pale Vermin;Small;1;0;2;0;-1;0;0;Sickly Rodent;Eyes too br
 Fading Wildlands;🦎;Skitter Lizard;Small;1;0;2;0;0;0;0;Quick Reptile;Darts just out of reach.<br>;Lost sight of it, paid the price.;none
 Fading Wildlands;🐇;Panicked Hare;Small;1;0;3;0;10;0;0;Nervous Prey;The erratic jumps make it annoying.<br>;Trampled in confusion.;none
 
-Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;It has joined your side.;none
-Fading Wildlands;🐈;Field Stray;Pet;1;0;2;1;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower;none
 Fading Wildlands;🦎;Grass Gecko;Pet;1;0;2;1;0;0;0;Wall Climber;Unbothered by anyone’s panic.<br>;Got a new travel buddy!;none
 Fading Wildlands;🐞;Spotted Wanderer;Pet;1;0;1;1;0;0;0;Tiny Traveler;Too small to fear, too stubborn to stop.<br>;Got a new travel buddy!;none
-Fading Wildlands;🐥;Stray Chick;Pet;1;0;1;0;-1;0;0;Lost Hatchling;Looking for something that won’t answer back.<br>;Got a new travel buddy!;none
+Fading Wildlands;🐦‍⬛;Stray Raven;Pet;1;0;1;1;0;0;0;Omen Bird;Its croak sounds too much like laughter.<br>;It has joined your side.;none
+Fading Wildlands;🐈;Field Stray;Pet;1;0;2;1;0;0;0;Silent Hunter;Eyes locked on anything that moves.<br>;Gained powerful follower;none
 
 Fading Wildlands;🦌;Thin Doe;Standard;2;0;3;0;2;0;0;Starved Grazer;Looks weak but kicks hard.<br>;Crushed by desperate hooves.;none
 Fading Wildlands;🐏;Scared Sheep;Standard;2;0;3;0;10;0;0;Fluffy Critter;Capable of unfortunate headbutts.<br>;Impaled by its horns.;none
@@ -391,7 +390,7 @@ Forsaken Village;🐈;Friendly Cat;Pet;1;0;1;1;0;0;0;Cute Animal;Wants to initia
 Forsaken Village;🐩;Fragile Doggo;Pet;2;0;1;0;0;0;0;Companion;Looks healthy and cute.<br>;Became best friends!;none
 Forsaken Village;🐕;Lost Shiba;Pet;3;1;2;0;0;0;0;Companion;A rare good boy appeared.<br>;Doge joined the party;none
 Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;0;Companion;These usually bring bad luck.<br>;Yeah it is bad luck;none
-Forsaken Village;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Spooked Animal;Appears to be racing the wind.<br>;Got a new travel buddy!;none
+Forsaken Village;🐥;Stray Chick;Pet;1;0;1;0;-1;0;0;Lost Hatchling;Looking for something that won’t answer back.<br>;Got a new travel buddy!;none
 
 Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;;none
 Forsaken Village;🪱;Tiny Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
@@ -736,6 +735,7 @@ Twisted Fairyland;🪲;Pearlescent Bug;Pet;1;0;1;1;0;0;0;Pelicular Insect;The mo
 Twisted Fairyland;🦎;Blue-eyed Gecko;Pet;1;0;2;0;1;1;0;Beautiful Lizard;Eyes are glowing blue.<br>;Gained a new minion;none
 Twisted Fairyland;🦩;Baby Flamingo;Pet;1;0;1;1;0;0;0;Wild Bird;Small fancy bird in a need of help.<br>;Gained a new friend;none
 Twisted Fairyland;🦓;Wild Zebra;Pet;3;0;2;0;2;0;0;Mighty Animal;Strange horse approached.<br>;Gained a new travel buddy!;none
+Twisted Fairyland;🐎;Lucky Stallion;Pet;3;0;2;2;0;0;0;Spooked Animal;Appears to be racing the wind.<br>;Got a new travel buddy!;none
 
 Twisted Fairyland;🪱;Confused Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 Twisted Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none

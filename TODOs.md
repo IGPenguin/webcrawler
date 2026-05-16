@@ -1,6 +1,6 @@
 # Styx Flow — 2026-05-15 — Stay Dead
 
-*107 items · SPRINT block added from Perseus creative session 2026-05-15 — 5 new items, 7 promoted from P3*
+*109 items · SPRINT block added from Perseus creative session 2026-05-15 — 5 new items, 7 promoted from P3; 2 added 2026-05-15 (dog bark / encounter pre-gen)*
 
 ---
 
@@ -31,19 +31,12 @@
 
 ### [COMP-PLAY] Feature: Companion passive gameplay effects
 - Companions in the party should have passive gameplay effects beyond score contribution; even one passive trigger per companion type transforms the party string from a trophy into a living team.
-- Start with 3 companion types: 🐱 cat = +1 LCK per encounter (`playerPartyString.includes('🐱')` check), 🧙 monk = small prayer success bonus, 🐶 dog = log hint before ambush trap encounters.
+- Start with 3 companion types: 🐱 cat = +1 LCK per encounter (`playerPartyString.includes('🐱')` check), 🧙 monk = small prayer success bonus, 🐶 dog = barks a warning to the log when the next encounter is dangerous (high-ATK enemy, trap, boss) — requires the next encounter to already be resolved before navigation; see [ENC-PREGEN].
 - Pure `includes()` checks at existing decision points — no new state objects needed.
 - Priority: SPRINT — "my cat saved me" is a story the game currently cannot tell; this is a retention hook hiding in plain sight.
 - Type: Feature
 - Effort: M | Gain: M
 - Needs: Define what passive effects companions should grant before implementing.
-
-### [BAR-RDZONE] Feature: Action bar red zones — random placement for prop encounters
-- For prop-type encounters (e.g., walking away from something), randomly place red danger intervals within the green zone instead of always at the edges — simulates "avoid the sharp stone."
-- In `action-config.js` → `calcActionBarConfig()`, for `prop` type: add 1-2 narrow red intervals placed randomly inside the normal green zone; overall difficulty unchanged — just move where the danger hides. No new encounter rows needed.
-- Priority: SPRINT — half the encounter pool is props with known outcomes; this makes them skill checks with real stakes and extends action bar tension to every encounter type.
-- Type: Feature
-- Effort: M | Gain: L
 
 ### [SEQ-DELAY] Improvement: Sequential action display — delay 0.5s per log entry
 - Add a 0.5s delay between log entries in multi-step action sequences; wait for effects to complete before re-enabling player input.
@@ -347,6 +340,15 @@
 - Effort: S | Gain: L
 - Needs: For each stat: what does +1 change in a typical run? Set weight relative to ATK×3 as the anchor. After adjusting, sample existing CSV entries to confirm the rarity distribution doesn't break.
 
+### [ENC-PREGEN] Feature: Pre-generate encounter sequence so companions can peek ahead
+- Currently `generateNextEncounters()` in `encounter-generator.js` may populate encounters lazily — the next entry might not be resolved until the player navigates to it. To let the 🐶 dog (and future companions) react to what's ahead, the next encounter must be resolved before the player arrives.
+- First step: audit `generateNextEncounters()` and `getNextEncounterIndex()` in `data-loader.js` to confirm whether a one-step lookahead is already possible. If not, adjust generation to eagerly resolve at least the next entry in the queue on area entry.
+- Longer-term door this opens: resolve the entire run sequence on game start — simpler state, no lazy gaps, and enables branching paths (see [PATH-CHOICE]) where two pre-generated routes exist simultaneously.
+- Priority: P3 — structural prerequisite for [COMP-PLAY] dog bark and [PATH-CHOICE]; confirm lazy vs. eager behavior before estimating full scope
+- Type: Feature
+- Effort: M | Gain: L
+- Needs: Confirm generation timing before writing code.
+
 ---
 
 ## P4 — Nice to Have
@@ -474,6 +476,15 @@
 - Type: Feature
 - Effort: XL | Gain: XL
 - Needs: Full design via Hades Gate. Prerequisite: [KILL-LINE] shipped and validated.
+
+### [PATH-CHOICE] Feature: Branching encounter paths — companion route hints
+- At one or more moments in a run, present two pre-generated paths forward; a companion hints what lies down each — e.g. 🐶 dog barks at the dangerous branch, 🐱 cat paws toward the high-loot one. Design space: danger + high reward vs. easy + low reward.
+- Companion type determines what information is surfaced; a lone player gets no hint and must choose blind.
+- Requires [ENC-PREGEN]: both paths must be pre-resolved before the choice screen appears.
+- Priority: Backlog — high concept value; wait until [ENC-PREGEN] is stable and [COMP-PLAY] is proven
+- Type: Feature
+- Effort: L | Gain: XL
+- Needs: Full design via Hades Gate. Prerequisites: [ENC-PREGEN] stable, [COMP-PLAY] shipped.
 
 ### [SPELL-SYS] Feature: Spells system
 - Spell button replaces Curse; spell list overlay on click (scrollable, max height = action buttons); spells learned from Spell Scrolls via a Learn action (INT-based success). Basic spells: 🐸 Hex, 🔥 Burn, 🧊 Freeze, ⚡️ Surge, 🪬 Curse (−ATK), 🪨 Harden, 🩸 Syphon.

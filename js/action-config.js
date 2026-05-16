@@ -146,9 +146,22 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 36, successMax: 64 };
   }
 
-  // Prop / encounterUsed / Fishing / corpse walk: very wide zone — tiny stumble risk exists
+  // Prop / encounterUsed / Fishing / corpse walk: wide zone with 1-2 hidden danger slots ("avoid the sharp stone")
   if (button === 'button_roll' && ( types === 'Prop' || types === 'Fishing' || encounterUsed || corpseState !== '')) {
-    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95 };
+    var _dzCount = Math.random() < 0.5 ? 1 : 2;
+    var _dzW = 4, _dzGap = 8;
+    var _dz = [];
+    for (var _i = 0; _i < _dzCount; _i++) {
+      var _dzStart = Math.round(6 + Math.random() * 80);
+      var _noOverlap = true;
+      for (var _j = 0; _j < _dz.length; _j++) {
+        if (_dzStart < _dz[_j].max + _dzGap && _dzStart + _dzW > _dz[_j].min - _dzGap) {
+          _noOverlap = false; break;
+        }
+      }
+      if (_noOverlap) _dz.push({ min: _dzStart, max: _dzStart + _dzW });
+    }
+    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95, dangerZones: _dz };
   }
 
   // Dream: only sleep and walk are meaningful — all other actions are impossible

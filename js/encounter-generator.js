@@ -2,7 +2,7 @@
 var easyEnemies        = ["Standard","Stingy"];
 var mediumEnemies      = ["Standard","Stingy","Hot","Toxic"];
 var hardEnemies        = ["Toxic","Heavy","Swift","Reflective","Demon","Undead","Spirit","Tough"];
-var softEnemies        = ["Small","Standard","Stingy","Hot","Toxic","Undead","Recruit","Pet"]; // low-tier filler, no elites
+var softEnemies        = ["Small","Standard","Stingy","Hot","Toxic","Undead","Recruit","Pet"];
 var allEnemies         = ["Small","Standard","Stingy","Hot","Toxic","Heavy","Swift","Reflective","Demon","Undead","Spirit","Tough","Pet","Recruit"];
 var allBosses          = ["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Spirit","Boss-Undead","Boss-Toxic","Boss-Tough","Boss-Hot","Boss-Stingy","Boss-Reflective","Boss-Pet","Boss-Recruit"];
 var allTraps           = ["Trap","Trap-Big","Trap-Attack","Trap-Roll","Trap-Sleep","Trap-Obstacle","Curse"];
