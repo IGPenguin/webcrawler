@@ -312,6 +312,7 @@ function adjustEncounterButtons(){
       if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)) document.getElementById('button_grab').innerHTML="👋 Pet";
       if (enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
         setButton('button_speak',"💬 Defuse");
+        if ((enemySta - enemyStaLost) <= 0) setButton('button_speak',"💬 Soothe");
       } else if (playerLootString.includes("🏳️")) {
         setButton('button_speak',"🏳️ Waive");
       }

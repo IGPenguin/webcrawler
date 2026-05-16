@@ -1,6 +1,6 @@
 # Styx Flow — 2026-05-15 — Stay Dead
 
-*109 items · SPRINT block added from Perseus creative session 2026-05-15 — 5 new items, 7 promoted from P3; 2 added 2026-05-15 (dog bark / encounter pre-gen)*
+*111 items · 2026-05-16: +2 new items (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE) — pet interaction system, companion barks, crossroads; prior: SPRINT block from Perseus 2026-05-15, dog bark / encounter pre-gen*
 
 ---
 
@@ -33,6 +33,7 @@
 - Companions in the party should have passive gameplay effects beyond score contribution; even one passive trigger per companion type transforms the party string from a trophy into a living team.
 - Start with 3 companion types: 🐱 cat = +1 LCK per encounter (`playerPartyString.includes('🐱')` check), 🧙 monk = small prayer success bonus, 🐶 dog = barks a warning to the log when the next encounter is dangerous (high-ATK enemy, trap, boss) — requires the next encounter to already be resolved before navigation; see [ENC-PREGEN].
 - Pure `includes()` checks at existing decision points — no new state objects needed.
+- Recruit companion = human-pet variant: speech-style tips in the log instead of barks — same emoji check, different string pool. See [PET-ENCNTR] for the CSV-encounter approach (spawns actual encounter rows per party composition, parallel to this item's passive log effects).
 - Priority: SPRINT — "my cat saved me" is a story the game currently cannot tell; this is a retention hook hiding in plain sight.
 - Type: Feature
 - Effort: M | Gain: M
@@ -154,6 +155,17 @@
 - Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system
 - Type: Improvement
 - Effort: M | Gain: L
+
+### [PET-ENCNTR] Feature: Pet interaction encounter spawns — companion-triggered CSV encounters
+- If a pet emoji is in `playerPartyString`, enable a pool of pet-specific encounter rows to spawn in that area — purely an emoji `includes()` check, no new state objects.
+- Works like existing Toga artifact-style encounters: a random slot in the area encounter sequence can be a pet-interaction row matched to the party's pet type.
+- Dog example rows: "Kerberos requests belly rubs.<br>Shaking tail full of excitement." / "Kerberos barks loud a lot.<br>Seems like danger ahead." (boss-warning variant — requires [ENC-PREGEN] to peek at next encounter type).
+- Recruit companion (human type) = same system but speech-style: "The stranger pauses. 'Something doesn't feel right ahead.'" — actual words, not barks.
+- Start with dog and recruit; add cat/bird/lizard pools as a follow-up content pass.
+- Priority: P2 — quick beta win; companions go from trophy emojis to reactive characters with near-zero architecture; warmup for the full [PET-SLOT] vision.
+- Type: Feature
+- Effort: S | Gain: L
+- Needs: Write encounter CSV rows per pet type (dog belly rub, nuisance, boss-warning). Boss-warning variant gates on [ENC-PREGEN]. Long-term bark pool vision: see [PET-SLOT].
 
 ---
 
@@ -344,7 +356,7 @@
 - Currently `generateNextEncounters()` in `encounter-generator.js` may populate encounters lazily — the next entry might not be resolved until the player navigates to it. To let the 🐶 dog (and future companions) react to what's ahead, the next encounter must be resolved before the player arrives.
 - First step: audit `generateNextEncounters()` and `getNextEncounterIndex()` in `data-loader.js` to confirm whether a one-step lookahead is already possible. If not, adjust generation to eagerly resolve at least the next entry in the queue on area entry.
 - Longer-term door this opens: resolve the entire run sequence on game start — simpler state, no lazy gaps, and enables branching paths (see [PATH-CHOICE]) where two pre-generated routes exist simultaneously.
-- Priority: P3 — structural prerequisite for [COMP-PLAY] dog bark and [PATH-CHOICE]; confirm lazy vs. eager behavior before estimating full scope
+- Priority: P3 — structural prerequisite for [COMP-PLAY] dog bark, [PET-ENCNTR] boss-warning variant, and [PATH-CHOICE]; confirm lazy vs. eager behavior before estimating full scope
 - Type: Feature
 - Effort: M | Gain: L
 - Needs: Confirm generation timing before writing code.
@@ -477,14 +489,16 @@
 - Effort: XL | Gain: XL
 - Needs: Full design via Hades Gate. Prerequisite: [KILL-LINE] shipped and validated.
 
-### [PATH-CHOICE] Feature: Branching encounter paths — companion route hints
-- At one or more moments in a run, present two pre-generated paths forward; a companion hints what lies down each — e.g. 🐶 dog barks at the dangerous branch, 🐱 cat paws toward the high-loot one. Design space: danger + high reward vs. easy + low reward.
-- Companion type determines what information is surfaced; a lone player gets no hint and must choose blind.
+### [PATH-CHOICE] Feature: Branching encounter paths — Inscryption-style crossroads with companion hints
+- At one or more crossroads moments in a run, present two pre-generated paths forward — a genuine lock-in choice. Design space: dangerous + high reward vs. safe + low reward.
+- Companion type determines what intel is surfaced before the choice: 🐶 dog barks at the dangerous branch, 🐱 cat paws toward the high-loot one; a lone player gets no hint and must choose blind.
+- The dog's warning (from [PET-ENCNTR] or [COMP-PLAY]) is what makes the crossroads matter — it transforms a choice into a test of trust in your companion.
+- Addresses the gap of meaningful non-combat prep: a prep encounter (gear swap, skill check, rest) could appear before the locked path to reward the right read.
 - Requires [ENC-PREGEN]: both paths must be pre-resolved before the choice screen appears.
-- Priority: Backlog — high concept value; wait until [ENC-PREGEN] is stable and [COMP-PLAY] is proven
+- Priority: Backlog — high concept value; wait until [ENC-PREGEN] stable, [COMP-PLAY] shipped, [PET-ENCNTR] proven
 - Type: Feature
 - Effort: L | Gain: XL
-- Needs: Full design via Hades Gate. Prerequisites: [ENC-PREGEN] stable, [COMP-PLAY] shipped.
+- Needs: Full design via Hades Gate. Prerequisites: [ENC-PREGEN] stable, [COMP-PLAY] shipped, [PET-ENCNTR] shipped.
 
 ### [SPELL-SYS] Feature: Spells system
 - Spell button replaces Curse; spell list overlay on click (scrollable, max height = action buttons); spells learned from Spell Scrolls via a Learn action (INT-based success). Basic spells: 🐸 Hex, 🔥 Burn, 🧊 Freeze, ⚡️ Surge, 🪬 Curse (−ATK), 🪨 Harden, 🩸 Syphon.
@@ -571,6 +585,18 @@
 
 ---
 
+### [PET-SLOT] Idea: Long-term pet system — structured pet object with bark pools (Hades Gate)
+- Replace emoji-string pet tracking with a structured pet object: `{name, type, stats, personality}` — enabling named pets (Kerberos etc.), personality-driven bark pools, and per-pet stat contributions.
+- Each type (cat, dog, lizard, bird) + personality pairing gets its own bark pool — contextual reactions to enemy types, areas, traps, boss proximity.
+- Deep contextual tier: pet "sees" the run's story structure and generators; warns intelligently about danger types ahead (not just boss-is-next).
+- Design via Hades Gate when [PET-ENCNTR] is shipped and basic pet interaction is proven in the wild.
+- Priority: Backlog — architectural shift; [PET-ENCNTR] is the beta-tier delivery of this vision.
+- Type: Idea
+- Effort: XL | Gain: XL
+- Needs: Full design via Hades Gate. Prerequisites: [PET-ENCNTR] shipped, [COMP-PLAY] stable.
+
+---
+
 ### Technical Debt
 
 #### [HASH-ERR] Bug: Score hash "err" on some mobile submissions
@@ -627,4 +653,4 @@
 
 ---
 
-*Styx Flow complete — 107 items processed*
+*Styx Flow complete — 109 items processed*
