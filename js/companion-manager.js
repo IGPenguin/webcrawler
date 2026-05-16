@@ -13,13 +13,13 @@ function getRandomFollowerName() { return _FOLLOWER_NAMES[Math.floor(Math.random
 
 // ── Type Classification ───────────────────────────────────────────────────────
 
-var _COMPANION_DOGS    = ['🐶','🐕','🐩','🐺','🦮','🐕‍🦺'];
+var _COMPANION_DOGS    = ['🐶','🐕','🐩','🐺','🦮','🐕‍🦺','🦦'];
 var _COMPANION_CATS    = ['🐱','🐈','🐈‍⬛','🐅','🐆','🦁'];
 var _COMPANION_BIRDS   = ['🐓','🐦','🐦‍⬛','🦜','🦚','🦢','🦅','🦉','🐥','🦩'];
 var _COMPANION_LIZARDS = ['🦎','🐊','🦕'];
 var _COMPANION_CRITTERS= ['🐞','🐝','🪲','🐛','🦗','🪳','🦟'];
 var _COMPANION_RODENTS = ['🦝','🐀','🐇','🐹','🦔','🐭'];
-var _COMPANION_LARGE   = ['🦄','🦙','🦓','🐎','🦦','🐘','🦛','🦏'];
+var _COMPANION_LARGE   = ['🦄','🦙','🦓','🐎','🐘','🦛','🦏'];
 
 // ── Bark Pools ────────────────────────────────────────────────────────────────
 
@@ -125,7 +125,7 @@ var _BARK_POOLS = {
     { icon: '👀',  text: 'Rotates one eye independently.' },
     { icon: '🐾',  text: 'Climbs somewhere inaccessible.' },
     { icon: '💤',  text: 'Goes cold and still in shade.' },
-    { icon: '🪰', text: 'Devoures a tiny fly.' },
+    { icon: '🪰', text: 'Devours a tiny fly.' },
     { icon: '🐾',  text: 'Darts sideways at full speed.' },
     { icon: '👀',  text: 'Tracks a fly with precise focus.' },
     { icon: '👅',  text: 'Licks their own eye clean.' },
@@ -247,10 +247,124 @@ function _partyEmojis() {
   });
 }
 
+// ── Fetch Barks ───────────────────────────────────────────────────────────────
+// Log lines and icons for each type's 1% special fetch. 5 variations per type.
+
+var _FETCH_BARKS = {
+  dog: [
+    { icon: '🎁', text: 'Digs up something valuable.' },
+    { icon: '🎁', text: 'Zooms back with a rare find.' },
+    { icon: '🎁', text: 'Sniffed out something hidden.' },
+    { icon: '🎁', text: 'Drags something over with pride.' },
+    { icon: '🎁', text: 'Returns with something in their mouth.' },
+  ],
+  cat: [
+    { icon: '🎁', text: 'Bats something small toward you.' },
+    { icon: '🎁', text: 'Deposits a live catch at your feet.' },
+    { icon: '🎁', text: 'Drops something wriggling nearby.' },
+    { icon: '🎁', text: 'Presents a catch with indifference.' },
+    { icon: '🎁', text: 'Leaves something wiggling at your boot.' },
+  ],
+  bird: [
+    { icon: '🥚', text: 'Lays something small and warm.' },
+    { icon: '🥚', text: 'Deposits an egg without ceremony.' },
+    { icon: '🥚', text: 'Nests briefly, then stands again.' },
+    { icon: '🥚', text: 'Leaves something pale behind.' },
+    { icon: '🥚', text: 'Produces something round and quiet.' },
+  ],
+  humanoid: [
+    { icon: '🍞', text: 'Splits what little they had.' },
+    { icon: '🍞', text: 'Pulls something from their pack.' },
+    { icon: '🍞', text: 'Finds a forgotten stash nearby.' },
+    { icon: '🍞', text: 'Produces rations from somewhere.' },
+    { icon: '🍞', text: 'Offers what they were keeping.' },
+  ],
+  lizard: [
+    { icon: '🥚', text: 'Leaves something leathery here.' },
+    { icon: '🥚', text: 'Leaves a pale clutch behind.' },
+    { icon: '🥚', text: 'Digs shallow. Leaves something.' },
+    { icon: '🥚', text: 'Lays in silence, then walks on.' },
+    { icon: '🥚', text: 'Settles it somewhere warm.' },
+  ],
+  critter: [
+    { icon: '✨', text: 'Lands briefly on your open palm.' },
+    { icon: '✨', text: 'Lands on your wrist and lingers.' },
+    { icon: '✨', text: 'Crawls close in a moment of clarity.' },
+    { icon: '✨', text: 'Rests still long enough to matter.' },
+    { icon: '✨', text: 'Settles on your skin, then lifts off.' },
+  ],
+  rodent: [
+    { icon: '🎁', text: 'Returns with cheeks full of something.' },
+    { icon: '🎁', text: 'Drags something edible from a crack.' },
+    { icon: '🎁', text: 'Stuffs your pocket with a find.' },
+    { icon: '🎁', text: 'Surfaces with something to share.' },
+    { icon: '🎁', text: 'Leaves a small hoard at your feet.' },
+  ],
+  large: [
+    { icon: '💚', text: 'Stands still to ease your baggage.' },
+    { icon: '💚', text: 'Offers their side to rest against.' },
+    { icon: '💚', text: 'Breathes slow. So do you.' },
+    { icon: '💚', text: 'Steadies the moment with presence.' },
+    { icon: '💚', text: 'Lowers their weight. Lets you lean.' },
+  ],
+};
+
+// Dispatches the 1% special fetch per companion type:
+//   dog     — Item from current area (encounter-splice)
+//   cat / humanoid / rodent — Consumable from current area (encounter-splice)
+//   bird / lizard — hardcoded egg consumable (encounter-splice)
+//   critter — +1 LCK directly
+//   large   — +1 STA directly (capped at playerStaMax)
+function _companionFetch(_type, emoji, _name) {
+  if (!linesStory || !linesStory[encounterIndex]) return;
+  var _fb   = _FETCH_BARKS[_type] || _FETCH_BARKS.dog;
+  var _b    = _fb[Math.floor(Math.random() * _fb.length)];
+  var _area = linesStory[encounterIndex][0].split(':').slice(1).join(':');
+
+  if (_type === 'critter') {
+    playerLck++;
+    logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' ' + _name + ': <i>' + _b.text + ' +1 🍀</i>');
+    redraw();
+    return;
+  }
+  if (_type === 'large') {
+    playerSta = Math.min(playerSta + 1, playerStaMax + 1);
+    logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' ' + _name + ': <i>' + _b.text + ' +1 🟢</i>');
+    redraw();
+    return;
+  }
+  if (_type === 'bird' || _type === 'lizard') {
+    var _egg = [
+      'area:' + _area, 'emoji:🥚', "name:Bird's Egg", 'type:Consumable',
+      'hp:1', 'atk:0', 'sta:1', 'lck:0', 'int:0', 'mgk:0', 'def:0',
+      'note:', "desc:Warm. Unexpected. Still whole.<br>Something survived after all.",
+      'message:', 'achiev:none'
+    ];
+    logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' ' + _name + ': <i>' + _b.text + '</i>');
+    var _currentRow = linesStory[encounterIndex];
+    linesStory.splice(encounterIndex + 1, 0, _egg);
+    linesStory.splice(encounterIndex + 2, 0, _currentRow);
+    loadEncounter(encounterIndex + 1);
+    redraw();
+    return;
+  }
+
+  var _fetchTypes = (_type === 'dog') ? ['Item'] : ['Consumable'];
+  var _excludes   = ['Artifact', "Lover's Memento", "Piece of History", "Lost Possession"];
+  var _fetched    = getWeightedEncounter(_fetchTypes, [], _area, _excludes);
+  if (!_fetched) return;
+  logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' ' + _name + ': <i>' + _b.text + '</i>');
+  var _currentRow = linesStory[encounterIndex];
+  linesStory.splice(encounterIndex + 1, 0, _fetched);
+  linesStory.splice(encounterIndex + 2, 0, _currentRow);
+  loadEncounter(encounterIndex + 1);
+  redraw();
+}
+
 // ── companionBark ─────────────────────────────────────────────────────────────
 // Takes a companion emoji from the party. Classifies it as dog/cat/bird/humanoid,
 // then rolls:
-//   1%  — companion fetches a random item; current encounter is queued to follow
+//   1%  — type-specific fetch via _companionFetch()
 //   10% — ambient flavor bark logged to the action log
 // Both are no-ops when neither roll hits.
 function companionBark(emoji) {
@@ -273,21 +387,8 @@ function companionBark(emoji) {
     _type = 'humanoid'; _name = followerName || petName || 'companion';
   }
 
-  // 1% — companion fetches a random item; push item then return to current encounter
-  if (Math.random() < 0.01) {
-    if (!linesStory || !linesStory[encounterIndex]) return;
-    var _item = getWeightedEncounter(
-      ['Item'], [], 'ALL',
-      ['Artifact', "Lover's Memento", "Piece of History", "Lost Possession"]
-    );
-    logAction(emoji + '&nbsp;▸&nbsp;🎁 ' + _name + ': <i>Found something valuable.</i>');
-    var _currentRow = linesStory[encounterIndex];
-    linesStory.splice(encounterIndex + 1, 0, _item);
-    linesStory.splice(encounterIndex + 2, 0, _currentRow);
-    loadEncounter(encounterIndex + 1);
-    redraw();
-    return;
-  }
+  // 1% — type-specific companion fetch
+  if (Math.random() < 0.01) { _companionFetch(_type, emoji, _name); return; }
 
   // 10% — ambient companion moment
   if (Math.random() < 0.10) {
