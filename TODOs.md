@@ -605,6 +605,17 @@
 - Effort: XL | Gain: XL
 - Needs: Full design via Hades Gate. Prerequisites: [PET-ENCNTR] shipped, [COMP-PLAY] stable.
 
+### [LOOT-ANIM] Feature: Full loot reveal animation — roll → snap (Hades Gate)
+- Full loot reveal flow: an animated "rolling" state (cycling emoji shimmer, blurred or randomized placeholder) builds anticipation before everything lands with a visual snap — rarity-colored flash or pulse keyed to the tier revealed (Common = subtle, Legendary = full flash).
+- All three card elements are obscured during the roll: emoji, name, and desc. All three snap into place simultaneously.
+- Triggers: all loot sources — enemy kill drop, shop purchase, fishing, pre-generated loot navigation.
+- Rarity tie-in: snap animation intensity maps to tier; requires integration with `encounter-loader.js`, `ui-render.js`, CSS `@keyframes`, and the rarity system for snap color.
+- Design and implementation via Hades Gate as a standalone post-beta update; [LOOT-TEAS] is the beta-tier delivery.
+- Priority: Backlog — [LOOT-TEAS] covers the beta tier; this is the full gacha-feel vision.
+- Type: Feature
+- Effort: L | Gain: XL
+- Needs: Full design via Hades Gate. Prerequisite: [LOOT-TEAS] shipped and validated.
+
 ---
 
 ### Technical Debt
@@ -663,4 +674,4 @@
 
 ---
 
-*Styx Flow complete — 109 items processed*
+*Styx Flow complete — 113 items processed*

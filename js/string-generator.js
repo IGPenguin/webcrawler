@@ -7,7 +7,6 @@ function _getCurrentNameEmoji() {
   return '';
 }
 
-
 function renameCharacter(onDone) {
   var currentEmoji = _getCurrentNameEmoji();
   var displayName = playerName;
