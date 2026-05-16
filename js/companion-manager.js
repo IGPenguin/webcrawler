@@ -357,7 +357,7 @@ function _companionFetch(_type, emoji, _name) {
   }
 
   var _fetchTypes = (_type === 'dog') ? ['Item'] : ['Consumable'];
-  var _excludes   = ['Artifact', "Lover's Memento", "Piece of History", "Lost Possession"];
+  var _excludes   = ["Lover's Memento", "Piece of History", "Lost Possession"];
   var _fetched    = getWeightedEncounter(_fetchTypes, [], _area, _excludes);
   if (!_fetched) return;
   logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' ' + _name + ': <i>' + _b.text + '</i>');

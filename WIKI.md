@@ -123,5 +123,6 @@ A few final things worth knowing to improve your survival chances:
 - **It is easier to 👋 Grab and ⚔️ Attack enemies when they are tired.** Watch their energy, not just your own.
 - **🪙 Drachmae persist across runs.** Spending them is never a loss, they will always come back to you.
 - **The scattered 💔 Mementos are not just for flavour.** What you do with them shapes what you find at the end.
+- **🐕 Get companions for your party.** Between encounters they react to the world, and occasionally bring something back.
 
 ***Enjoy the journey!***

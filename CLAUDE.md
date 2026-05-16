@@ -57,6 +57,7 @@ The game has two layers:
 | `achievements.js` | `AchievementManager` — unlock/check/toast for all achievements |
 | `menu.js` | `Menu` — main menu UI; show/hide, screen routing, button wiring |
 | `data-loader.js` | CSV loading via jQuery AJAX; `startGame()` / `_doStartGame()`; `getRandomEncounter()`, `getWeightedEncounter()`, `pushEncounter()`, `getNextEncounterIndex()` |
+| `companion-manager.js` | Companion bark system — `companionBark()`, `_scheduledCompanionBark()`, `_companionFetch()`; type classification arrays, bark/fetch pools; `_clearCompanionBark()` called from `encounterRenew()` |
 | `encounter-loader.js` | `loadEncounter()`, `encounterRenew()`, `drachmaeBuy()` — CSV parsing and shop |
 | `encounter-generator.js` | `generateNextEncounters()` — dynamic encounter sequence builder |
 | `game-loop.js` | `nextEncounter()`, `gameOver()`, `gameEnd()` / `_doGameEnd()`, `getRandomFish()`; ending system: `startBrideDialogue()`, `resolveEnding()`, `_ENDING_FRAMES` |
@@ -79,7 +80,7 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 - **Corpse state**: enemies can be subdued without killing (via Grab, Speak, or exhaustion). `corpseState` is `"neutralized"` — the enemy is incapacitated but still present and can be attacked for a kill blow (costs karma) or looted. `transitionToCorpse("killed")` is called when the player deals a final blow.
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
 - **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
-- **Companions**: recruited NPCs and pets are stored in `playerPartyString` (emoji string); `[...playerPartyString].length` is the companion count used in the score formula
+- **Companions**: recruited NPCs and pets are stored in `playerPartyString` (emoji string); `[...playerPartyString].length` is the companion count used in the score formula. At non-combat encounters, `_scheduledCompanionBark()` fires 3 s after load — classifies each party emoji by type (dog/cat/bird/lizard/critter/rodent/large/humanoid), rolls `_FETCH_CHANCE` (2%) for a type-specific fetch (item/consumable/egg/stat) then `_BARK_CHANCE` (10%) for a flavour log line. Name pools: `_PET_NAMES` (animals) and `_FOLLOWER_NAMES` (humanoids), stored in `petName[emoji]` / `followerName[emoji]` maps.
 
 ### Ending System
 
@@ -199,7 +200,7 @@ Playwright config targets a mobile viewport (iPhone 14 Pro, 393×852) and reuses
 - Before implementing inline, ask whether a feature should be a reusable utility, default to extracting shared helpers when the same pattern could appear elsewhere.
 - When fixing bugs, search the actual JS code path to trace from the symptom backwards through the call stack before considering exploring .csv data files or .md todo/design files
 - When making balance/config changes, audit ALL similar handlers (e.g., all four trap buttons: attack/roll/grab/sleep) rather than fixing only the reported case.
-- For new CSV content or CSV audits (encounter rows, descriptions, item text) — read DESIGN.md, use content-gen.md skill, suggest first, wait for approval before writing
+- For new CSV content or CSV audits (encounter rows, descriptions, item text) — read DESIGN.md and CONTENT.md, use content-gen.md skill, suggest first, wait for approval before writing
 - Max 10 new CSV entries per suggestion batch when doing data pushes, work area by area
 - Animation event handlers must guard against bubbling from child elements using `if (e.target !== e.currentTarget) return;` to avoid bugs from animationend/transitionend bubbling
 - Always ask before destructive actions with limited recovery options (never git reset without a permission etc.)

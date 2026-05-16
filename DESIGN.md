@@ -1,7 +1,5 @@
 # Stay Dead — Design Reference
 
-*Grief wearing armor.*
-
 Dark fantasy text roguelike RPG with a melancholic, slightly ironic tone. Not whimsy. Never verbose.
 
 For stat tables, encounter types, enemy traits, and area data — see [CONTENT.md](CONTENT.md).
