@@ -503,6 +503,15 @@ function getShopMessage(){
   return message
 }
 
+function getEncounterUsedMessage() {
+  var pool = [
+    "Seems like that was it for now.",
+    "Nothing more to do here for now.",
+    "That's it, you've done what you can."
+  ];
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
 function getRivalDialogue() {
   var pool = [
     "You should have stayed dead.",

@@ -37,6 +37,8 @@ function calcActionBarConfig(button, adjustment) {
   var spdNormal = 60;
   var spdEasy = 30;
 
+  var DZ_W = 7; // default danger zone width (percentage points)
+
   // ── Ending state ─────────────────────────────────────────────────────────
   if (isEndingState) {
     if (document.getElementById(button) && document.getElementById(button).disabled) {
@@ -146,21 +148,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 36, successMax: 64 };
   }
 
-  // Prop / encounterUsed / Fishing / corpse walk: wide zone with 1-2 hidden danger slots ("avoid the sharp stone")
-  if (button === 'button_roll' && ( types === 'Prop' || types === 'Fishing' || encounterUsed || corpseState !== '')) {
-    var _dzCount = Math.random() < 0.5 ? 1 : 2;
-    var _dzW = 4, _dzGap = 8;
-    var _dz = [];
-    for (var _i = 0; _i < _dzCount; _i++) {
-      var _dzStart = Math.round(6 + Math.random() * 80);
-      var _noOverlap = true;
-      for (var _j = 0; _j < _dz.length; _j++) {
-        if (_dzStart < _dz[_j].max + _dzGap && _dzStart + _dzW > _dz[_j].min - _dzGap) {
-          _noOverlap = false; break;
-        }
-      }
-      if (_noOverlap) _dz.push({ min: _dzStart, max: _dzStart + _dzW });
-    }
+  // Prop / encounterUsed / Fishing / corpse walk: wide zone with one hidden danger slot
+  if (button === 'button_roll' && (types === 'Prop' || types === 'Fishing' || encounterUsed || corpseState !== '')) {
+    var _dzEdge = 15; // min distance from success-zone edge (5 and 95) to danger zone center
+    var _dzCenter = Math.round((5 + _dzEdge + DZ_W / 2) + Math.random() * (90 - 2 * (_dzEdge + DZ_W / 2)));
+    var _dz = [{ min: _dzCenter - DZ_W / 2, max: _dzCenter + DZ_W / 2 }];
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95, dangerZones: _dz };
   }
 

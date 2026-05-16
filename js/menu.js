@@ -17,6 +17,7 @@ var Menu = (function () {
   // ── Show / Hide ────────────────────────────────────────────────────────────
 
   function show() {
+    setBackground("Depths");
     document.getElementById('id_menu').style.display = 'flex';
     document.getElementById('id_game').style.display = 'none';
 

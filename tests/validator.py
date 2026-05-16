@@ -14,7 +14,7 @@ TEXT_LIMITS = {
     'origin_desc': 150,
     'achievement_desc': 60,
     'achievement_hint': 60,
-    'log_message': 100,
+    'log_message': 38,
     'button_text': 30,
 }
 
@@ -25,6 +25,17 @@ AVG_MULTIPLIER = 2.0
 def clean_html(text):
     if not text: return ""
     return re.sub(r'<[^>]+>', '', text)
+
+# Variation selectors and ZWJ that glue emoji sequences — strip before counting
+# so emoji+modifier counts as 1 visual character.
+_EMOJI_JOINER_RE = re.compile(r'[︎️‍]')
+
+def display_len(text):
+    """Length after stripping HTML tags and emoji joiners/variation-selectors."""
+    if not text: return 0
+    text = re.sub(r'<[^>]+>', '', text)
+    text = _EMOJI_JOINER_RE.sub('', text)
+    return len(text)
 
 def validate_achievement_origins(warnings, errors):
     print("Validating Achievement/Origin consistency...")
@@ -211,10 +222,10 @@ def make_identifier(text):
 def check_length(text, limit, category, location, identifier, warnings):
     if not text:
         return 0
-    clean_text = re.sub(r'<[^>]+>', '', text)
-    if len(clean_text) > limit:
-        warnings.append(f'Long Text - {category}: {location} - {identifier} is {len(clean_text)} chars (limit {limit})')
-    return len(clean_text)
+    n = display_len(text)
+    if n > limit:
+        warnings.append(f'Long Text - {category}: {location} - {identifier} is {n} chars (limit {limit})')
+    return n
 
 def check_average_outliers(lengths_data, category, warnings):
     if not lengths_data or AVG_MULTIPLIER <= 0:

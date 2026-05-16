@@ -204,7 +204,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyCannotEffect();
 
             if (encounterUsed){
-                logPlayerAction(actionString,"Seems like that was it for now.")
+                logPlayerAction(actionString,getEncounterUsedMessage())
                 break;
               }
 
@@ -1404,7 +1404,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerGainedEffect();
                 encounterUsed=true;
               } else {
-                logPlayerAction(actionString,"Seems like that was it.");
+                logPlayerAction(actionString,getEncounterUsedMessage());
                 displayPlayerCannotEffect();
                 displayPlayerEffect("");
               }
@@ -1729,7 +1729,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Pet": //Can become pet it when the player has higher current stamina
             if ((enemySta - enemyStaLost) <= 0 && (playerSta > 0)){
               if ((enemyInt+enemyIntBonus) > playerInt) { //Cannot become a party member if it has higher int than the player
-                logPlayerAction(actionString,"It sees right through you. 🧠");
+                logPlayerAction(actionString,"It sees right through you 🧠");
                 displayEnemyEffect("👀");
                 redraw();
                 break;
@@ -1958,7 +1958,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             // Grab success: trigger the trap, spend 1 STA unless crit pass
-            if (encounterUsed) { logPlayerAction(actionString,"Seems like that was it for now."); displayPlayerCannotEffect(); break; }
+            if (encounterUsed) { logPlayerAction(actionString,getEncounterUsedMessage()); displayPlayerCannotEffect(); break; }
             if (_crit !== 'success' && playerSta > 0) playerSta--;
             if (totalBonus<=0 && totalMalus>=0) displayPlayerCannotEffect();
             if (enemyHp<=0) playerHpMax-=enemyHp;
@@ -1971,7 +1971,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Big":
           case "Trap-Roll":
             if (encounterUsed){
-                logPlayerAction(actionString,"Seems like that was it for now.")
+                logPlayerAction(actionString,getEncounterUsedMessage())
                 displayPlayerCannotEffect();
                 break;
             }
@@ -2717,7 +2717,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (String(enemyQuestItems)!=""){
               logPlayerAction(actionString,"Bring me: "+String(enemyQuestItems).replaceAll(","," "));
             } else {
-              logPlayerAction(actionString,"You don't meet their standards. 🧠");
+              logPlayerAction(actionString,"You don't meet their standards 🧠");
               redraw();
             }
             displayPlayerCannotEffect();
