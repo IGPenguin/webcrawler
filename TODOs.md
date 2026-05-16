@@ -1,6 +1,6 @@
 # Styx Flow — 2026-05-15 — Stay Dead
 
-*111 items · 2026-05-16: +2 new items (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE) — pet interaction system, companion barks, crossroads; prior: SPRINT block from Perseus 2026-05-15, dog bark / encounter pre-gen*
+*113 items · 2026-05-16: +2 new items (LOOT-TEAS, LOOT-ANIM) — lootbox anticipation system; prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE) — pet interaction system, companion barks, crossroads; prior: SPRINT block from Perseus 2026-05-15, dog bark / encounter pre-gen*
 
 ---
 
@@ -98,6 +98,16 @@
 - Priority: SPRINT — the DS accomplishment moment depends on the number being visible; reframes repeated death as paying the price for an area, not just failing.
 - Type: Improvement
 - Effort: S | Gain: L
+
+### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
+- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
+- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
+- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
+- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
+- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
+- Type: Improvement
+- Effort: M | Gain: L
+- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
 
 ---
 

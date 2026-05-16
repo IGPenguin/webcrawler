@@ -1,5 +1,6 @@
 encounterRenew();
 function encounterRenew(){
+  _clearCompanionBark();
   playerRested=false;
   playerCooked=false;
 
@@ -335,6 +336,8 @@ function loadEncounter(index, fileLines = linesStory){
       );
     }, 600);
   }
+
+  _scheduledCompanionBark();
 }
 
 function generateRandomItem(item=""){

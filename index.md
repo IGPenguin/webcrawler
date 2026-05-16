@@ -71,6 +71,7 @@ layout: default
 <script src="js/transfunctioner.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/data-loader.js"></script>
+<script src="js/companion-manager.js"></script>
 <script src="js/encounter-loader.js"></script>
 <script src="js/encounter-generator.js"></script>
 <script src="js/game-loop.js"></script>

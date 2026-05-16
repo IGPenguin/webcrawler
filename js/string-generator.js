@@ -7,11 +7,6 @@ function _getCurrentNameEmoji() {
   return '';
 }
 
-var _PET_NAMES = ["Jekyll","Pluto","Kerberos","Deimos","Herakles","Perseus","Phobos","Atlas","Argos","Kratos","Morpheus"];
-var _FOLLOWER_NAMES = ["Orpheus","Aegeus","Icarus","Leander","Evander","Theron","Meleager","Lysander","Patroclus","Diomedes","Odysseus"];
-
-function getRandomPetName() { return _PET_NAMES[Math.floor(Math.random() * _PET_NAMES.length)]; }
-function getRandomFollowerName() { return _FOLLOWER_NAMES[Math.floor(Math.random() * _FOLLOWER_NAMES.length)]; }
 
 function renameCharacter(onDone) {
   var currentEmoji = _getCurrentNameEmoji();
