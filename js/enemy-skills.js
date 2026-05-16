@@ -132,16 +132,10 @@ function enemyKilled(){
 }
 
 function enemyJoinedParty(){
-  if (petName !== null) {
-    logPlayerAction(actionString, "You already have a companion.");
-    displayPlayerCannotEffect();
-    redraw();
-    return;
-  }
   var _emoji=enemyEmoji, _atk=enemyAtk, _lck=enemyLck, _mgk=enemyMgk, _msg=enemyMsg;
   var _actionStr=actionString;
   showCompanionNameDialog('pet', getRandomPetName(), function(chosenName) {
-    petName = chosenName;
+    petName[[..._emoji][0] || _emoji] = chosenName;
     displayPlayerEffect(_emoji);
     playerPartyString += _emoji;
     var gainedXP=playerGainXP(1.5,0,"");

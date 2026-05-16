@@ -15,8 +15,8 @@ var playerNumber = 1; //Increments on revival
 var playerKills = 0;
 var playerLootString;
 var playerPartyString;
-var petName = null;
-var followerName = null;
+var petName = {};
+var followerName = {};
 var playerHpMax;
 var playerStaMax;
 var playerMgkMax;

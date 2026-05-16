@@ -26,8 +26,8 @@ function renewPlayer(){ //Default values
   playerEmoji = '👤';
   playerLootString = [""];
   playerPartyString = [""];
-  petName = null;
-  followerName = null;
+  petName = {};
+  followerName = {};
   playerAttackType = "⚔️";
   playerRollType = "🌀";
   playerBlockType = "🔰";

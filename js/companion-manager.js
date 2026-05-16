@@ -11,6 +11,9 @@ var _FOLLOWER_NAMES = ["Orpheus","Aegeus","Icarus","Leander","Evander","Theron",
 function getRandomPetName()      { return _PET_NAMES[Math.floor(Math.random() * _PET_NAMES.length)]; }
 function getRandomFollowerName() { return _FOLLOWER_NAMES[Math.floor(Math.random() * _FOLLOWER_NAMES.length)]; }
 
+var _BARK_CHANCE  = 0.10;
+var _FETCH_CHANCE = 0.02;
+
 // ── Type Classification ───────────────────────────────────────────────────────
 
 var _COMPANION_DOGS    = ['🐶','🐕','🐩','🐺','🦮','🐕‍🦺','🦦'];
@@ -234,7 +237,10 @@ function _scheduledCompanionBark() {
     _companionBarkTimer = null;
     var _party = _partyEmojis();
     if (_party.length === 0) return;
-    companionBark(_party[Math.floor(Math.random() * _party.length)]);
+    var _shuffled = _party.slice().sort(function() { return Math.random() - 0.5; });
+    for (var i = 0; i < _shuffled.length; i++) {
+      if (companionBark(_shuffled[i])) return;
+    }
   }, 3000);
 }
 
@@ -362,39 +368,37 @@ function _companionFetch(_type, emoji, _name) {
 }
 
 // ── companionBark ─────────────────────────────────────────────────────────────
-// Takes a companion emoji from the party. Classifies it as dog/cat/bird/humanoid,
-// then rolls:
-//   1%  — type-specific fetch via _companionFetch()
-//   10% — ambient flavor bark logged to the action log
-// Both are no-ops when neither roll hits.
+// Takes a companion emoji from the party. Classifies it, looks up the name from
+// the petName/followerName maps, then rolls _FETCH_CHANCE and _BARK_CHANCE.
+// Returns true if any action fired (used by the scheduler to stop iteration).
 function companionBark(emoji) {
   var _type, _name;
   if (_COMPANION_DOGS.includes(emoji)) {
-    _type = 'dog';      _name = petName || 'companion';
+    _type = 'dog';      _name = petName[emoji] || 'companion';
   } else if (_COMPANION_CATS.includes(emoji)) {
-    _type = 'cat';      _name = petName || 'companion';
+    _type = 'cat';      _name = petName[emoji] || 'companion';
   } else if (_COMPANION_BIRDS.includes(emoji)) {
-    _type = 'bird';     _name = petName || 'companion';
+    _type = 'bird';     _name = petName[emoji] || 'companion';
   } else if (_COMPANION_LIZARDS.includes(emoji)) {
-    _type = 'lizard';   _name = petName || 'companion';
+    _type = 'lizard';   _name = petName[emoji] || 'companion';
   } else if (_COMPANION_CRITTERS.includes(emoji)) {
-    _type = 'critter';  _name = petName || 'companion';
+    _type = 'critter';  _name = petName[emoji] || 'companion';
   } else if (_COMPANION_RODENTS.includes(emoji)) {
-    _type = 'rodent';   _name = petName || 'companion';
+    _type = 'rodent';   _name = petName[emoji] || 'companion';
   } else if (_COMPANION_LARGE.includes(emoji)) {
-    _type = 'large';    _name = petName || 'companion';
+    _type = 'large';    _name = petName[emoji] || 'companion';
   } else {
-    _type = 'humanoid'; _name = followerName || petName || 'companion';
+    _type = 'humanoid'; _name = followerName[emoji] || petName[emoji] || 'companion';
   }
 
-  // 1% — type-specific companion fetch
-  if (Math.random() < 0.01) { _companionFetch(_type, emoji, _name); return; }
+  if (Math.random() < _FETCH_CHANCE) { _companionFetch(_type, emoji, _name); return true; }
 
-  // 10% — ambient companion moment
-  if (Math.random() < 0.10) {
+  if (Math.random() < _BARK_CHANCE) {
     var _pool = _BARK_POOLS[_type] || _BARK_POOLS.humanoid;
     var _b = _pool[Math.floor(Math.random() * _pool.length)];
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' ' + _name + ': <i>' + _b.text + '</i>');
     redraw();
+    return true;
   }
+  return false;
 }

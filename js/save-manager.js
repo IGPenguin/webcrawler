@@ -131,8 +131,8 @@ var SaveManager = (function () {
     playerName        = s.playerName;       playerNumber      = s.playerNumber;
     playerKills       = s.playerKills;
     playerLootString  = s.playerLootString; playerPartyString = s.playerPartyString;
-    petName           = s.petName      !== undefined ? s.petName      : null;
-    followerName      = s.followerName !== undefined ? s.followerName : null;
+    petName           = s.petName      !== undefined ? s.petName      : {};
+    followerName      = s.followerName !== undefined ? s.followerName : {};
     playerSlotHead    = s.playerSlotHead   || null;
     playerSlotWeapon  = s.playerSlotWeapon || null;
     playerSlotChest   = s.playerSlotChest  || null;
