@@ -13,6 +13,7 @@ function getRandomFollowerName() { return _FOLLOWER_NAMES[Math.floor(Math.random
 
 var _BARK_CHANCE  = 0.10;
 var _FETCH_CHANCE = 0.02;
+var _BARK_DELAY   = 2500;
 
 // ── Type Classification ───────────────────────────────────────────────────────
 
@@ -241,7 +242,7 @@ function _scheduledCompanionBark() {
     for (var i = 0; i < _shuffled.length; i++) {
       if (companionBark(_shuffled[i])) return;
     }
-  }, 3000);
+  }, _BARK_DELAY);
 }
 
 // Returns the party string split into individual emoji codepoints, stripping
