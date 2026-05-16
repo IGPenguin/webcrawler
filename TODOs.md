@@ -1,6 +1,6 @@
 # Styx Flow — 2026-05-15 — Stay Dead
 
-*113 items · 2026-05-16: +2 new items (LOOT-TEAS, LOOT-ANIM) — lootbox anticipation system; prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE) — pet interaction system, companion barks, crossroads; prior: SPRINT block from Perseus 2026-05-15, dog bark / encounter pre-gen*
+*114 items · 2026-05-16: +1 (BARK-CTX) — contextual companion barks; prior: +2 (LOOT-TEAS, LOOT-ANIM) — lootbox anticipation system; prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE) — pet interaction system, companion barks, crossroads; prior: SPRINT block from Perseus 2026-05-15, dog bark / encounter pre-gen*
 
 ---
 
@@ -176,6 +176,15 @@
 - Type: Feature
 - Effort: S | Gain: L
 - Needs: Write encounter CSV rows per pet type (dog belly rub, nuisance, boss-warning). Boss-warning variant gates on [ENC-PREGEN]. Long-term bark pool vision: see [PET-SLOT].
+
+### [BARK-CTX] Improvement: Contextual companion barks — split bark pools by encounter type
+- Refactor the bark system in `companion-manager.js` to fire different bark pools based on the current encounter context instead of generic barks regardless of situation.
+- Trigger mapping: negative trap/curse encounter → warn barks; neutral prop → standard barks; boss proximity → alert barks; positive encounter (passive mob, altar, friend) → wonder/curiosity barks; etc.
+- Flagged in multiple reviews as the single biggest gap in companion feel — generic barks break immersion and undercut the "companions as relationships" design principle in DESIGN.md.
+- Related items: [COMP-PLAY] (companion passives, SPRINT), [PET-ENCNTR] (companion encounter rows, P2); bark context is what makes both of those land emotionally.
+- Priority: P2 — multi-review flag; contextual firing is the difference between a companion that *reads* the world and one that just makes noise.
+- Type: Improvement
+- Effort: S | Gain: L
 
 ---
 
