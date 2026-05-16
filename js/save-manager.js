@@ -43,6 +43,8 @@ var SaveManager = (function () {
         playerKills:        playerKills,
         playerLootString:   String(playerLootString),
         playerPartyString:  String(playerPartyString),
+        petName:            petName,
+        followerName:       followerName,
         playerSlotHead:     playerSlotHead,
         playerSlotWeapon:   playerSlotWeapon,
         playerSlotChest:    playerSlotChest,
@@ -129,6 +131,8 @@ var SaveManager = (function () {
     playerName        = s.playerName;       playerNumber      = s.playerNumber;
     playerKills       = s.playerKills;
     playerLootString  = s.playerLootString; playerPartyString = s.playerPartyString;
+    petName           = s.petName      !== undefined ? s.petName      : null;
+    followerName      = s.followerName !== undefined ? s.followerName : null;
     playerSlotHead    = s.playerSlotHead   || null;
     playerSlotWeapon  = s.playerSlotWeapon || null;
     playerSlotChest   = s.playerSlotChest  || null;

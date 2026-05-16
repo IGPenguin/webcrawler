@@ -2579,13 +2579,25 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 isFishing=false;
                 break;
               }
-              displayPlayerEffect(enemyEmoji);
-              playerPartyString+=enemyEmoji
-              var gainedXP=playerGainXP(1.5,0,"");
-              enemyMsg=playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk, 0,"Joined forces together",false); //Cannot get health/sta/int/def from a recruit
-              logPlayerAction(actionString,enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold))
-              AchievementManager.check('get_recruit');
-              if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
+              if (followerName !== null) {
+                logPlayerAction(actionString, "You already have a follower.");
+                displayPlayerCannotEffect();
+                redraw();
+                break;
+              }
+              var _rEmoji=enemyEmoji, _rAtk=enemyAtk, _rLck=enemyLck, _rMgk=enemyMgk;
+              var _rActionStr=actionString;
+              showCompanionNameDialog('follower', getRandomFollowerName(), function(chosenName) {
+                followerName = chosenName;
+                displayPlayerEffect(_rEmoji);
+                playerPartyString += _rEmoji;
+                var gainedXP=playerGainXP(1.5,0,"");
+                var joinMsg="<b>"+chosenName+"</b> joined your cause!";
+                var statMsg=playerChangeStats(0, _rAtk, 0, _rLck, 0, _rMgk, 0, joinMsg, false, true, _rActionStr);
+                logPlayerAction(_rActionStr, statMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold));
+                AchievementManager.check('get_recruit');
+                if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
+              });
               break;
             }
 

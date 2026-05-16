@@ -193,17 +193,18 @@ var Menu = (function () {
     if (currentEmoji && current.startsWith(currentEmoji + ' ')) {
       current = current.slice(currentEmoji.length + 1);
     }
-    var newName = prompt('Rename your character: ', current);
-    if (newName === '') newName = 'Nameless';
-    else if (!newName) return; // cancelled — do nothing
-
-    if (_applyCheatName(newName)) {
+    showCompanionNameDialog('rename', current, function(chosenName) {
+      var newName = chosenName || 'Nameless';
+      if (_applyCheatName(newName)) {
+        SaveManager.patchPlayerName(playerName);
+        onDone(); return;
+      }
+      playerName = newName;
       SaveManager.patchPlayerName(playerName);
-      onDone(); return;
-    }
-    playerName = newName;
-    SaveManager.patchPlayerName(playerName);
-    onDone();
+      onDone();
+    }, function() {
+      // cancelled — do nothing
+    });
   }
 
   function _doNewGame(origin) {

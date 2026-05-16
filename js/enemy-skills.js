@@ -132,16 +132,26 @@ function enemyKilled(){
 }
 
 function enemyJoinedParty(){
-  displayPlayerEffect(enemyEmoji);
-  playerPartyString+=enemyEmoji;
-  //logPlayerAction(actionString,enemyName+" joined the party!");
-  var gainedXP=playerGainXP(1.5,0,"");
-  playerKarma++;
-  enemyMsg=enemyMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold)
-  playerChangeStats(0, enemyAtk, 0, enemyLck, 0, enemyMgk,0,enemyMsg); //Cannot get health/sta/int/def from a pet
-  AchievementManager.check('get_pet');
-  if (enemyEmoji=="🦜") AchievementManager.check('pet_parrot');
-  if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
+  if (petName !== null) {
+    logPlayerAction(actionString, "You already have a companion.");
+    displayPlayerCannotEffect();
+    redraw();
+    return;
+  }
+  var _emoji=enemyEmoji, _atk=enemyAtk, _lck=enemyLck, _mgk=enemyMgk, _msg=enemyMsg;
+  var _actionStr=actionString;
+  showCompanionNameDialog('pet', getRandomPetName(), function(chosenName) {
+    petName = chosenName;
+    displayPlayerEffect(_emoji);
+    playerPartyString += _emoji;
+    var gainedXP=playerGainXP(1.5,0,"");
+    playerKarma++;
+    var joinMsg="<b>"+chosenName+"</b> joined the party!";
+    playerChangeStats(0, _atk, 0, _lck, 0, _mgk, 0, joinMsg, true, true, _actionStr);
+    AchievementManager.check('get_pet');
+    if (_emoji=="🦜") AchievementManager.check('pet_parrot');
+    if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
+  });
 }
 
 function enemyKnockedOut(){

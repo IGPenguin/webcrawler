@@ -529,10 +529,11 @@ function registerClickListenersTechnical(){
 
   _technicalHandler = ()=>{
     var oldName=playerName;
-    var newName=renameCharacter();
-    if (_applyCheatName(newName)) return;
-    if (oldName!=newName) logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
-    redraw();
+    renameCharacter(function(newName) {
+      if (_applyCheatName(newName)) return;
+      if (oldName!=newName) logAction("✏️ ▸ ✨ Renamed to: <b>"+newName+"</b>");
+      redraw();
+    });
   };
   document.getElementById('id_player_level').addEventListener(eventType, _technicalHandler);
 }

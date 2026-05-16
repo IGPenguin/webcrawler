@@ -345,6 +345,16 @@ layout: default
   </div>
 </div>
 
+<!-- Companion / character name overlay -->
+<div id="companion_name_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+  <div class="card" style="background-color:#202020; padding:20px 20px 0px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
+    <h3 id="companion_name_title" style="text-align:center; margin:0 0 16px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">✏️ Name them:</h3>
+    <input id="companion_name_input" type="text" maxlength="32" placeholder="Enter a name..." style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
+    <button id="companion_name_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Confirm</button>
+    <button id="companion_name_skip" class="menu-btn" style="margin-top:4px; color:#888;">✕ Skip</button>
+  </div>
+</div>
+
 <!-- ── Game ───────────────────────────────────────────────────────────── -->
 <div id="id_game" style="display:none;">
 

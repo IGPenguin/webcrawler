@@ -42,10 +42,10 @@ function transitionToGame(callback, message) {
         if (_curtainGen !== gen) return;
         textEl.classList.remove('animate__animated', 'animate__fadeIn');
         void curtain.offsetWidth;
-        curtain.style.setProperty('--animate-duration', '0.7s');
+        curtain.style.setProperty('--animate-duration', '1s');
         curtain.classList.add('animate__animated', 'animate__fadeOut');
         void textEl.offsetWidth;
-        textEl.style.setProperty('--animate-duration', '0.7s');
+        textEl.style.setProperty('--animate-duration', '1s');
         textEl.classList.add('animate__animated', 'animate__fadeOut');
 
         curtain.addEventListener('animationend', function onFadeOut() {
@@ -60,7 +60,7 @@ function transitionToGame(callback, message) {
       }, 1800);
     } else {
       void curtain.offsetWidth;
-      curtain.style.setProperty('--animate-duration', '0.7s');
+      curtain.style.setProperty('--animate-duration', '1s');
       curtain.classList.add('animate__animated', 'animate__fadeOut');
 
       curtain.addEventListener('animationend', function onFadeOut() {
@@ -127,7 +127,7 @@ function transitionArea(html, callback) {
   });
 }
 
-function curtainFadeInAndOut(message="", duration=3) {
+function curtainFadeInAndOut(message="", duration=3, onComplete) {
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
   var gen = ++_curtainGen;
@@ -177,10 +177,52 @@ function curtainFadeInAndOut(message="", duration=3) {
           textEl.classList.remove('animate__animated', 'animate__fadeOut');
           textEl.style.display = 'none';
         }
-        registerClickListeners(300);
+        if (onComplete) onComplete(); else registerClickListeners(300);
       });
     }, duration * 500);
   });
+}
+
+function showCompanionNameDialog(type, defaultName, onConfirm, onCancel) {
+  function _openOverlay() {
+    var overlay    = document.getElementById('companion_name_overlay');
+    var titleEl    = document.getElementById('companion_name_title');
+    var input      = document.getElementById('companion_name_input');
+    var confirmBtn = document.getElementById('companion_name_confirm');
+    var skipBtn    = document.getElementById('companion_name_skip');
+
+    var titles = { pet: '🐾 Name your companion:', follower: '🤝 Name your follower:', rename: '✏️ Rename your character:' };
+    titleEl.textContent = titles[type] || '✏️ Name them:';
+    skipBtn.textContent = (type === 'rename') ? '✕ Cancel' : '✕ Skip';
+    input.value = defaultName;
+    overlay.style.display = 'flex';
+    setTimeout(function() { input.focus(); input.select(); }, 50);
+
+    function _done(name) {
+      overlay.style.display = 'none';
+      confirmBtn.onclick = null;
+      skipBtn.onclick = null;
+      onConfirm(name);
+    }
+    function _cancel() {
+      overlay.style.display = 'none';
+      confirmBtn.onclick = null;
+      skipBtn.onclick = null;
+      if (onCancel) onCancel(); else onConfirm(defaultName);
+    }
+
+    confirmBtn.onclick = function() { _done(input.value.trim() || defaultName); };
+    skipBtn.onclick = _cancel;
+  }
+
+  if (type === 'pet' || type === 'follower') {
+    var _fadeMsg = type === 'pet'
+      ? "<p style=\"color:#FFD940;letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;font-size:44px;line-height:20px;\">A companion joins!</p><p style=\"font-size:18px;color:#ddd;\">Pick their name carefully.</p>"
+      : "<p style=\"color:#FFD940;letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;font-size:44px;line-height:20px;\">They follow you.</p><p style=\"font-size:18px;color:#ddd;\">Pick their name carefully.</p>";
+    curtainFadeInAndOut(_fadeMsg, 3, _openOverlay);
+  } else {
+    _openOverlay();
+  }
 }
 
 // Permanent death: fade to black, save & return to menu, show message, hold, fade out.
