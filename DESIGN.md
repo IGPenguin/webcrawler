@@ -73,6 +73,32 @@ The world should know you've been here before. Rivals, Whispering Stone epitaphs
 
 Strong negative emotions require counterweight. For every cluster of brutal encounters, the game should offer one moment of genuine stillness -- a memory that doesn't require combat, a prop that is simply beautiful, a log line that is quiet instead of threatening. Without this, the game becomes grimness without payoff.
 
+### The Craving Loop
+
+Good features don't need to be explained -- they need to be felt first. The player reaches for the mechanic before they understand it. By the time they can name what they're chasing, it's already a habit.
+
+Design for desire, not for instruction.
+
+**What players crave without knowing it:**
+
+- **Closure they'll never quite get.** Something is always left unresolved -- a companion still in the party when they died, a rival they never faced, an ending they didn't unlock. The next run isn't a fresh start; it's an unanswered question. Keep one thing visible and just out of reach per run.
+
+- **Something to tell someone about.** Not a score -- a sentence. "I died to a goat. The message said *violently headbutted to your death.*" That's the game's best ad. Every major beat should compress to one story sentence that fits in a screenshot.
+
+- **One more thing, just barely in reach.** A locked origin one achievement away. A boss kill they almost pulled off. A companion they missed by two rooms. Never hide the carrot -- keep it visible, keep it credibly close. Players come back for things they can see.
+
+Rule: if a feature can be learned in the first run and ignored after, it's a tutorial, not a hook. Hooks reward the third run differently from the first. Design with that timeline in mind.
+
+### The Familiarity Bond
+
+The craving loop gets players back. Familiarity makes them stay -- and eventually feel like the world is theirs.
+
+- **Being recognized by the world.** Players name things they care about. When that name comes back -- in a death message, on a Whispering Stone, in a rival encounter -- the world sees them. That recognition lands harder than any stat bonus. Design for the moment of recognition, not just the moment of action.
+
+- **The feeling of knowing something.** A veteran player has read the world. They know what Speak does on INT-locked enemies, when to let karma drop, how to carry companions through the last area. That knowledge should feel earned and worth passing on -- the kind of thing you want to explain to a friend. Depth makes players want to teach others.
+
+Rule: familiarity should deepen across runs, not reset. Every system that reveals new behavior on the third or fifth playthrough earns its place. Systems that have nothing left to show after the first do not.
+
 ---
 
 ## Tone & Voice
