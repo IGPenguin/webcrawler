@@ -99,6 +99,34 @@ The craving loop gets players back. Familiarity makes them stay -- and eventuall
 
 Rule: familiarity should deepen across runs, not reset. Every system that reveals new behavior on the third or fifth playthrough earns its place. Systems that have nothing left to show after the first do not.
 
+### Anticipation and Heavy-Hitting Reveal
+
+The gap between hint and reveal is where investment lives. A loot drop in silence is a transaction. A loot drop after "something shifts inside" is a moment.
+
+Apply this everywhere the game delivers value. The log should earn its own reveal. Let the world telegraph before it delivers.
+
+**How to apply:**
+- Boss arrival: describe the threat before the encounter loads. "A terrible stillness hangs in the air." The encounter is the payoff, not the opening line.
+- Container loot: one line of discovery before the item surfaces. "Dust drifts as the lid gives way."
+- Enemy loot: log the win before surfacing what they dropped. The reward lands harder after the beat.
+- Rare item found: the acquisition line should feel heavier than a common pickup — phrasing should signal that something different just happened, without naming the tier.
+
+Rule: if the first log line is the reveal, the reveal is wasted. One line of weight before every significant delivery.
+
+### Reads Like a Book, Feeds the Imagination
+
+The game has no rendered world. Every scene exists only in the player's mind, assembled from a log line and an emoji. That makes the writing load-bearing in a way most games never are.
+
+Write every line as if it is the only thing that will exist of that moment — not a summary of what happened, but the moment itself. Players don't read flavor text in a text roguelike. They inhabit it.
+
+**What this means in practice:**
+- Log lines place the player inside the action, not outside it. "The cold reaches your bones" not "you feel cold."
+- Desc fields are the world seen through a traveler's eye — specific, economical, alive. One detail that earns the creature its existence.
+- Death messages close something. They are the last sentence of a short story about this run.
+- No mechanical language in flavor text. "You successfully attacked" is a tooltip. "The blow landed harder than you expected" is a sentence worth reading.
+
+Rule: if a line could appear unchanged in any other game's status bar, it is not good enough. If it reads like a sentence from a novel that happens to describe what just occurred — keep it.
+
 ---
 
 ## Tone & Voice
