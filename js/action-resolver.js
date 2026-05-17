@@ -1467,7 +1467,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (playerMgkMax < enemyMgk) {
               logPlayerAction(actionString,"They resisted your prayer -1 🔵");
             } else {
-              logPlayerAction(actionString,"Your prayer had no effect on them -1 🔵");
+              logPlayerAction(actionString,"Your prayer had no effect -1 🔵");
             }
             enemyAttackOrRest();
             break;

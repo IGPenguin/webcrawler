@@ -310,6 +310,7 @@ function redraw(){
   switch (enemyType){
     case "Dream":
       displayPlayerState("Sleeping",colorBlue,"2.5")
+      if (areaName.includes("Fading")) displayPlayerState();
       if (areaName.includes("Shrouded")) displayPlayerState("Frightened",colorDarkGrey,"0.4");
       break;
 
@@ -351,9 +352,14 @@ function redraw(){
       if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&!encounterUsed) displayPlayerState("Frightened",colorDarkGrey,"0.4");
       if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&encounterUsed) displayPlayerState("Reminiscing",colorPink,"2.5");
       if (enemyTeam && enemyTeam.includes("Unlucky Moment")) displayPlayerState("Disappointed",colorRed,"2");
-      if (enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
+      if (corpseState === "" && enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
         displayPlayerState("In Combat",colorRed,"0.8");
         setButton('button_sleep',"💤 Rest"); //Hack
+      }
+      if (corpseState !== "") {
+        if (playerSta>=playerStaMax) displayPlayerState("Relaxed",colorDarkGreen,"2.5");
+        if (playerSta<=(playerStaMax/2)) displayPlayerState("Fatigued",colorYellow,"2");
+        if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2");
       }
       if (playerHp === 1) displayPlayerState("Bleeding", colorRed, "0.4");
       break;
