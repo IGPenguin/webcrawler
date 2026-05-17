@@ -88,7 +88,8 @@ var ScoreManager = (function () {
       endType:        endType,
       datetime:       new Date().toISOString(),
       inventory:      String(playerLootString || ''),
-      coins:          savedCoins || 0
+      coins:          savedCoins || 0,
+      deathMessage:   typeof enemyMsg !== 'undefined' ? String(enemyMsg || '') : ''
     };
   }
 

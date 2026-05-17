@@ -4,6 +4,15 @@
 $color-border: rgb(0,0,0);
 $color-inner-border: #121212;
 
+@mixin chamfer($px: 3px) {
+  clip-path: polygon(
+    0% #{$px}, #{$px} #{$px}, #{$px} 0%,
+    calc(100% - #{$px}) 0%, calc(100% - #{$px}) #{$px}, 100% #{$px},
+    100% calc(100% - #{$px}), calc(100% - #{$px}) calc(100% - #{$px}), calc(100% - #{$px}) 100%,
+    #{$px} 100%, #{$px} calc(100% - #{$px}), 0% calc(100% - #{$px})
+  );
+}
+
 :root {
   user-select: none;
   -webkit-user-select: none;
@@ -136,6 +145,7 @@ a:active, a:hover, a:focus {
   min-height: 200px;
   display: table-cell;
   vertical-align: middle;
+  @include chamfer;
 }
 
 .box-border-dynamic{
@@ -163,6 +173,7 @@ a:active, a:hover, a:focus {
   box-shadow:
     inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
+  @include chamfer;
 }
 
 .toolbar {
@@ -483,6 +494,7 @@ button {
   min-height: 42px;
   width: 108.4px;
   background-color: rgb(40,40,40);
+  @include chamfer;
   background-image: linear-gradient(
     to bottom,
     rgba(255,255,255,0.13) 0px,
@@ -525,6 +537,7 @@ button:active {
     transparent 3px,
     transparent 6px
   );
+  @include chamfer;
 }
 
 // Menu card sub-elements — inset info/desc row (area, cause, date) below name bar
@@ -583,6 +596,7 @@ button:active {
 // box-shadow:inset 0 0 0 3px covers 0-3px and last 3px — strips must be offset to 3-6px to be visible
 // credits body: inset (dark top, light bottom — recessed content area feel)
 #menu_credits_body {
+  background-color: rgb(40,40,40);
   background-image: linear-gradient(
     to bottom,
     transparent 0px,
@@ -595,6 +609,7 @@ button:active {
     rgba(255,255,255,0.05) calc(100% - 3px),
     transparent calc(100% - 3px)
   );
+  @include chamfer;
 }
 
 // confirm warning: raised (light top, dark bottom — elevated box feel)

@@ -74,59 +74,53 @@ function transitionToGame(callback, message) {
   });
 }
 
-// Fades the curtain in, runs callback() while fully black (load encounter /
-// redraw), shows area name text, holds briefly, then fades both out.
+// Snaps curtain to black instantly, runs callback() while fully black (load
+// encounter / redraw), shows area name text with fade-in, holds, then fades out.
 function transitionArea(html, callback, onBeforeFadeOut) {
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
   var gen = ++_curtainGen;
 
+  // Snap to black instantly — no fade-in animation avoids Chrome compositing glitch
   curtain.style.pointerEvents = 'auto';
+  curtain.style.opacity = '1';
   curtain.style.display = 'block';
-  void curtain.offsetWidth;
-  curtain.style.setProperty('--animate-duration', '0.4s');
-  curtain.classList.add('animate__animated', 'animate__fadeIn');
 
-  curtain.addEventListener('animationend', function onIn() {
-    curtain.removeEventListener('animationend', onIn);
+  // Load encounter + redraw while curtain is fully opaque
+  callback();
+
+  // Fade in area name text on top of black curtain
+  textEl.innerHTML = html;
+  textEl.style.display = 'block';
+  void textEl.offsetWidth;
+  textEl.style.setProperty('--animate-duration', '0.5s');
+  textEl.classList.add('animate__animated', 'animate__fadeIn');
+
+  // Hold, then fade both out together
+  setTimeout(function () {
     if (_curtainGen !== gen) return;
-    curtain.classList.remove('animate__animated', 'animate__fadeIn');
-    curtain.style.opacity = '1'; // pin opacity — Chrome drops fill-mode on class removal
+    if (onBeforeFadeOut) onBeforeFadeOut();
+    textEl.classList.remove('animate__animated', 'animate__fadeIn');
+    curtain.style.opacity = '';
+    void curtain.offsetWidth;
+    curtain.style.setProperty('--animate-duration', '0.7s');
+    curtain.classList.add('animate__animated', 'animate__fadeOut');
+    void textEl.offsetWidth;
+    textEl.style.setProperty('--animate-duration', '0.7s');
+    textEl.classList.add('animate__animated', 'animate__fadeOut');
 
-    // Load encounter + redraw while curtain is fully opaque
-    callback();
-
-    // Fade in area name text on top of black curtain
-    textEl.innerHTML = html;
-    textEl.style.display = 'block';
-    textEl.style.setProperty('--animate-duration', '0.5s');
-    textEl.classList.add('animate__animated', 'animate__fadeIn');
-
-    // Hold, then fade both out together
-    setTimeout(function () {
+    curtain.addEventListener('animationend', function onOut() {
+      curtain.removeEventListener('animationend', onOut);
       if (_curtainGen !== gen) return;
-      if (onBeforeFadeOut) onBeforeFadeOut(); // e.g. setBackground — safe here, curtain still black
-      textEl.classList.remove('animate__animated', 'animate__fadeIn');
+      curtain.classList.remove('animate__animated', 'animate__fadeOut');
+      curtain.style.display = 'none';
       curtain.style.opacity = '';
-      void curtain.offsetWidth;
-      curtain.style.setProperty('--animate-duration', '0.7s');
-      curtain.classList.add('animate__animated', 'animate__fadeOut');
-      void textEl.offsetWidth;
-      textEl.style.setProperty('--animate-duration', '0.7s');
-      textEl.classList.add('animate__animated', 'animate__fadeOut');
-
-      curtain.addEventListener('animationend', function onOut() {
-        curtain.removeEventListener('animationend', onOut);
-        if (_curtainGen !== gen) return;
-        curtain.classList.remove('animate__animated', 'animate__fadeOut');
-        curtain.style.display = 'none';
-        curtain.style.pointerEvents = 'none';
-        textEl.classList.remove('animate__animated', 'animate__fadeOut');
-        textEl.style.display = 'none';
-        registerClickListeners(300);
-      });
-    }, 2000);
-  });
+      curtain.style.pointerEvents = 'none';
+      textEl.classList.remove('animate__animated', 'animate__fadeOut');
+      textEl.style.display = 'none';
+      registerClickListeners(300);
+    });
+  }, 2000);
 }
 
 function curtainFadeInAndOut(message="", duration=3, onComplete) {

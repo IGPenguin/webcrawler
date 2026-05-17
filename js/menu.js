@@ -418,22 +418,20 @@ var Menu = (function () {
     var html = '';
 
     // Outer wrapper — matches toolbar-card
-    html += '<div style="padding-top:0px; padding-bottom:0px;">';
+    html += '<div style="padding-top:3px; padding-bottom:3px;">';
 
-    // Level — negative margin-bottom overlaps the name bar below (must be directly before it)
-    html += '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; '
-      + 'z-index:3; text-align:right; padding-right:10px;">'
-      + '<i style="font-weight:600; color:#FFD940; font-size:14px;'
-      + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + level + '</i>'
-      + '</h3>';
-
-    // Name bar — directly after level so the overlap works
+    // Name bar with level badge absolutely positioned inside (no flow hack needed)
     html += '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; '
-      + 'padding-top:2px; padding-bottom:1px; background-color:#202020;">'
-      + '<h3 ' + (renameable ? 'id="menu_card_rename" ' : '') + 'style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
-      + 'margin-top:0px; margin-bottom:4px; font-size:17px; font-weight:bold; '
-      + '-webkit-text-stroke:5px #121212; paint-order:stroke fill; position:relative; z-index:10;'
-      + (renameable ? ' cursor:pointer; user-select:none;' : '') + '">'
+      + 'position:relative; background-color:#202020;">'
+      + '<h3 style="position:absolute; top:0; bottom:0; right:10px; display:flex; align-items:center; '
+        + 'z-index:3; margin:0; padding:0;">'
+        + '<i style="font-weight:600; margin-top:4px; color:#FFD940; font-size:14px; '
+        + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + level + '</i>'
+      + '</h3>'
+      + '<h3 ' + (renameable ? 'id="menu_card_rename" ' : '') + 'style="display:flex; align-items:center; height:28px; '
+        + 'text-align:left; padding-left:8px; letter-spacing:0.8px; font-size:17px; font-weight:bold; '
+        + 'margin:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;'
+        + (renameable ? ' cursor:pointer; user-select:none;' : '') + '">'
       + name
       + '</h3>'
       + '</div>';
@@ -532,23 +530,22 @@ var Menu = (function () {
       var entry = document.createElement('div');
       entry.className = 'menu-history-entry';
 
-      // Same level + name bar structure as _buildRunCardHTML (with the overlap trick)
       entry.innerHTML =
-        '<div style="overflow:hidden;padding-bottom:3px;">'
-          + '<h3 style="margin-top:3px; margin-bottom:-19px; margin-left:4px; position:relative; '
-            + 'z-index:3; text-align:right; padding-right:10px; padding-bottom:2px;">'
-          + '<i style="font-weight:600; color:#FFD940; font-size:14px; position:relative; top:2px;'
-            + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + (session.level || '?') + '</i>'
-          + '</h3>'
+        '<div style="overflow:hidden;padding-top:3px;padding-bottom:3px;">'
           + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; '
-            + 'padding-top:3px; padding-bottom:2px; background-color:#202020;">'
-            + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
-            + 'margin-top:-1px; margin-bottom:0px; font-size:17px; font-weight:bold; '
-            + '-webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
-            + (session.playerName || 'Unknown') + '</h3>'
+            + 'position:relative; background-color:#202020;">'
+            + '<h3 style="position:absolute; top:0; bottom:0; right:10px; display:flex; align-items:center; '
+              + 'z-index:3; margin:0; padding:0;">'
+              + '<i style="font-weight:600; margin-top:4px; color:#FFD940; font-size:14px; '
+                + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + (session.level || '?') + '</i>'
+            + '</h3>'
+            + '<h3 style="display:flex; align-items:center; height:28px; '
+              + 'text-align:left; padding-left:8px; letter-spacing:0.8px; font-size:17px; font-weight:bold; '
+              + 'margin:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
+              + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + (session.causeOfDeath || '') + '</h5>'
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + (session.deathMessage || session.causeOfDeath || '') + '</h5>'
         + '<h5 style="margin:-4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
         + (session.score !== undefined ? '&nbsp;&nbsp;•&nbsp;&nbsp;⭐ ' + session.score : '') + '</h5>';
 
@@ -581,7 +578,7 @@ var Menu = (function () {
       session.level || '?',
       session.area  || '?',
       stats, partyLoot,
-      session.causeOfDeath || null,
+      session.deathMessage || session.causeOfDeath || null,
       session.date || null,
       true,  // skipLoot — loot bar rendered below log
       null,  // renameable
@@ -712,7 +709,7 @@ var Menu = (function () {
     if (session.playerPartyString && session.playerPartyString !== 'undefined') partyLoot += session.playerPartyString;
     if (session.playerLootString  && session.playerLootString  !== 'undefined') partyLoot += session.playerLootString;
     if (partyLoot) t += '\n' + _stripHtml(partyLoot);
-    t += '\n' + _stripHtml(session.area || '?') + '  •  ' + _stripHtml(session.causeOfDeath || '');
+    t += '\n' + _stripHtml(session.area || '?') + '  •  ' + _stripHtml(session.deathMessage || session.causeOfDeath || '');
     t += '\n' + (session.date || '');
     t += '\nhttps://igpenguin.github.io/stay-dead';
     return t;
@@ -859,14 +856,14 @@ var Menu = (function () {
         el.className = 'menu-history-entry';
         var rankColor = i === 0 ? '#FFD940' : i < 3 ? '#c0c0c0' : '#fff';
         el.innerHTML =
-          '<div style="overflow:hidden;padding-bottom:3px;">'
-            + '<h3 style="margin-top:5px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px;">'
-            + '<i style="font-weight:600; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
-            + '#' + (i + 1) + '&nbsp;&nbsp;⭐ ' + (entry.score || 0)
-            + '</i></h3>'
-            + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; padding-top:3px; padding-bottom:2px; background-color:#202020;">'
-            + '<h3 style="text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin-top:-1px; margin-bottom:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
-            + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
+          '<div style="overflow:hidden;padding-top:3px;padding-bottom:3px;">'
+            + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; position:relative; background-color:#202020;">'
+              + '<h3 style="position:absolute; top:0; bottom:0; right:10px; display:flex; align-items:center; z-index:3; margin:0; padding:0;">'
+                + '<i style="font-weight:600; margin-top:4px; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
+                + '#' + (i + 1) + '&nbsp;&nbsp;⭐ ' + (entry.score || 0)
+                + '</i></h3>'
+              + '<h3 style="display:flex; align-items:center; height:28px; text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
+              + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
             + '<h5 style="margin:4px 0 1px 0; font-size:14px; font-style:normal; font-weight:400;">'
             + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl ' + (entry.level || '?') + '&nbsp;•&nbsp;' + ScoreManager.getEndingLabel(entry.endType) + '</h5>'
             + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px;">'
@@ -912,7 +909,7 @@ var Menu = (function () {
       ghost.level || '?',
       displayDiff + ' · ' + (ghost.encounterCount || 0) + ' encounters',
       stats, partyLoot,
-      ScoreManager.getEndingLabel(ghost.endType),
+      (ghost.deathMessage && ghost.endType && !ghost.endType.startsWith('win_')) ? ghost.deathMessage : ScoreManager.getEndingLabel(ghost.endType),
       ghost.datetime ? ghost.datetime.slice(0, 10) : null,
       true, null, true
     );

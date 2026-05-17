@@ -31,12 +31,6 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
     logAction("🥻 ▸ <b>💭 Deep Thought</b> came on your mind.")
   }
 
-  if (animateArea) {
-    toggleUIElement(areaUIElement,1);
-    animateUIElement(areaUIElement,"animate__flipInX","1.2");
-  }
-  animateUIElement(buttonsContainer,"animate__fadeIn","1.2");
-
   encounterIndex = getNextEncounterIndex();
 
   encounterRenew();
@@ -58,6 +52,11 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
     transitionArea(_areaHtml, function () {
       loadEncounter(encounterIndex);
       if (levelUpSavedCorpse !== null && enemyType !== "Upgrade") restoreCorpseAfterLevelUp();
+      if (animateArea) {
+        toggleUIElement(areaUIElement,1);
+        animateUIElement(areaUIElement,"animate__flipInX","1.2");
+      }
+      animateUIElement(buttonsContainer,"animate__fadeIn","1.2");
       if (!areaName.includes("Fading") && !areaName.includes("Eternal") && !areaName.includes("Depths") && !adventureLog.includes("Arrived to: <b>"+areaName+"</b>")) {
         logAction("💭 ▸ 👣 Arrived to: <b>"+areaName+"</b>");
         AchievementManager.check('discover_area', areaName);
@@ -70,6 +69,12 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
     });
     return;
   }
+
+  if (animateArea) {
+    toggleUIElement(areaUIElement,1);
+    animateUIElement(areaUIElement,"animate__flipInX","1.2");
+  }
+  animateUIElement(buttonsContainer,"animate__fadeIn","1.2");
 
   loadEncounter(encounterIndex);
   if (levelUpSavedCorpse !== null && enemyType !== "Upgrade") restoreCorpseAfterLevelUp();
@@ -147,6 +152,7 @@ function gameOver(silent=false){
     kills: playerKills,
     area: areaName,
     causeOfDeath: _isRival ? ('👾 ' + enemyName + ' [Invader]') : (enemyEmoji + ' ' + enemyName),
+    deathMessage: enemyMsg,
     outcome: _deathEndType,
     actionLog: adventureLog,
     playerHpMax: playerHpMax,
