@@ -152,7 +152,7 @@ var Menu = (function () {
         _renameCurrentRun(function () { _renderMain(true); });
       });
     } else {
-      preview.innerHTML = _buildRunCardHTML('👤 Damned Soul', '??', 'Depths of Slumber'," ⨯ ⨯ ⨯ ", '...', '💤 Drifting Away', '⨯ ⨯ ⨯');
+      preview.innerHTML = _buildRunCardHTML('👤 Damned Soul', '??', 'Depths of Slumber'," x x x ", '...', '💤 Drifting Away', '⨯ ⨯ ⨯');
     }
     preview.style.display = '';
 
@@ -418,7 +418,7 @@ var Menu = (function () {
     var html = '';
 
     // Outer wrapper — matches toolbar-card
-    html += '<div style="padding-top:0px; padding-bottom:3px;">';
+    html += '<div style="padding-top:0px; padding-bottom:0px;">';
 
     // Level — negative margin-bottom overlaps the name bar below (must be directly before it)
     html += '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; '
@@ -428,7 +428,7 @@ var Menu = (function () {
       + '</h3>';
 
     // Name bar — directly after level so the overlap works
-    html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+    html += '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; '
       + 'padding-top:2px; padding-bottom:1px; background-color:#202020;">'
       + '<h3 ' + (renameable ? 'id="menu_card_rename" ' : '') + 'style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
       + 'margin-top:0px; margin-bottom:4px; font-size:17px; font-weight:bold; '
@@ -441,7 +441,7 @@ var Menu = (function () {
     // Area + cause + date — one bordered div, two h5 lines (matches history list style)
     var infoParts = [area && area !== '?' ? area : null, sub || null].filter(Boolean);
     if (infoParts.length || date) {
-      html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+      html += '<div class="box-border-dynamic menu-card-info" style="margin-left:3px; margin-right:3px; '
         + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
         html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400;">' + infoParts.join('<br>') + '</h5>';
@@ -457,7 +457,7 @@ var Menu = (function () {
     // Note: Disabled stats and party+loot display below to declutter main menu
 
     if (showStats) {
-      html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+      html += '<div class="box-border-dynamic menu-card-stats" style="margin-left:3px; margin-right:3px; '
         + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212; background-color:#202020;">'
         + '<h3 style="text-align:left; padding-left:8px; font-size:14px; font-family:sans; '
         + 'height:26px; line-height:26px; margin:0; '
@@ -472,7 +472,7 @@ var Menu = (function () {
     //     + 'white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; '
     //     + 'margin-left:3px; margin-bottom:0px; margin-top:0px; display:inline-block; width:95.8%; '
     //     + 'box-shadow:0px 0px 0px 3px #121212; background-color:#272727;">'
-    //     + (partyLoot || '<span style="color:#fff;">∙∙∙</span>') + '</h3>';
+    //     + (partyLoot || '<span style="color:#fff;">x x x</span>') + '</h3>';
     //   // Clear float before closing wrapper
     //   html += '<div style="clear:both;"></div>';
     // }
@@ -524,7 +524,7 @@ var Menu = (function () {
           + '<i style="font-weight:600; color:#FFD940; font-size:14px; position:relative; top:2px;'
             + '-webkit-text-stroke:3px #121212; paint-order:stroke fill;">Level&nbsp;' + (session.level || '?') + '</i>'
           + '</h3>'
-          + '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
+          + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; '
             + 'padding-top:3px; padding-bottom:2px; background-color:#202020;">'
             + '<h3 style="text-align:left; padding-left:8px; letter-spacing:0.8px; font-weight:500; '
             + 'margin-top:-1px; margin-bottom:0px; font-size:17px; font-weight:bold; '
@@ -582,7 +582,7 @@ var Menu = (function () {
     logWrap.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
 
     var logEl = document.createElement('h4');
-    logEl.style.cssText = 'margin:-7px 0 0 0; padding:4px 8px; text-align:left; '
+    logEl.style.cssText = 'margin:-11px 0 0 0; padding:4px 8px; text-align:left; '
       + 'font-size:14.6px; line-height:165%; overflow-y:auto; '
       + 'scrollbar-width:thin; scrollbar-color:#000 transparent;';
     logEl.innerHTML = logLines.length ? logLines.join('<br>') : '<i style="opacity:0.5;">No log.</i>';
@@ -592,11 +592,12 @@ var Menu = (function () {
 
     // Loot/party bar — below the log
     var lootBar = document.createElement('h3');
+    lootBar.className = 'menu-loot-bar';
     lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; '
       + 'white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; '
-      + 'margin-left:3px; margin-bottom:0px; margin-top:8px; display:inline-block; width:95.8%; '
+      + 'margin-left:3px; margin-bottom:0px; margin-top:12px; display:inline-block; width:95.8%; '
       + 'box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
-    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">∙∙∙</span>';
+    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">x x x</span>';
     list.appendChild(lootBar);
 
     var clearDiv = document.createElement('div');
@@ -606,7 +607,8 @@ var Menu = (function () {
     // Score + run info bar
     if (session.score !== undefined) {
       var scoreBar = document.createElement('div');
-      scoreBar.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
+      scoreBar.className = 'menu-score-bar';
+      scoreBar.style.cssText = 'margin:14px 3px 0px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
       scoreBar.innerHTML =
         '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">⭐ Score: <b>' + session.score + '</b>'
         + (session.encounterCount ? '&nbsp;&nbsp;&nbsp;Encounters: ' + session.encounterCount : '') + '</h5>'
@@ -649,7 +651,7 @@ var Menu = (function () {
     // height is exact regardless of card/loot-bar size.
     requestAnimationFrame(function () {
       var logH = sc.clientHeight - card.offsetHeight - lootBar.offsetHeight - 15;
-      logEl.style.height = Math.min(140, Math.max(74, logH)) + 'px';
+      logEl.style.height = Math.min(128, Math.max(74, logH)) + 'px';
     });
 
     // Session achievements unlocked by this character
@@ -842,7 +844,7 @@ var Menu = (function () {
             + '<i style="font-weight:600; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
             + '#' + (i + 1) + '&nbsp;&nbsp;⭐ ' + (entry.score || 0)
             + '</i></h3>'
-            + '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; padding-top:3px; padding-bottom:2px; background-color:#202020;">'
+            + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; padding-top:3px; padding-bottom:2px; background-color:#202020;">'
             + '<h3 style="text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin-top:-1px; margin-bottom:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
             + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
             + '<h5 style="margin:4px 0 1px 0; font-size:14px; font-style:normal; font-weight:400;">'
@@ -896,8 +898,18 @@ var Menu = (function () {
     );
     list.appendChild(card);
 
+    var lootBar = document.createElement('h3');
+    lootBar.className = 'menu-loot-bar';
+    lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0; margin-top:2px; display:inline-block; width:95.8%; box-shadow:0 0 0 3px #121212; background-color:#272727;';
+    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">x x x</span>';
+    list.appendChild(lootBar);
+    var clearDiv = document.createElement('div');
+    clearDiv.style.clear = 'both';
+    list.appendChild(clearDiv);
+
     var infoEl = document.createElement('div');
-    infoEl.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
+    infoEl.className = 'menu-score-bar';
+    infoEl.style.cssText = 'margin:14px 3px 3px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
     infoEl.innerHTML =
       '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">⭐ Score: <b>' + (ghost.score || 0) + '</b></h5>'
       + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
@@ -905,14 +917,6 @@ var Menu = (function () {
       + 'Playtime: ' + _formatPlaytime(ghost.playtime || 0) + '</h5>'
       + '<h5 style="margin:2px 0; font-size:12px; opacity:0.5;">' + (ghost.gameVersion || '') + '</h5>';
     list.appendChild(infoEl);
-
-    var lootBar = document.createElement('h3');
-    lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0; margin-top:8px; display:inline-block; width:95.8%; box-shadow:0 0 0 3px #121212; background-color:#272727;';
-    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">∙∙∙</span>';
-    list.appendChild(lootBar);
-    var clearDiv = document.createElement('div');
-    clearDiv.style.clear = 'both';
-    list.appendChild(clearDiv);
 
     requestAnimationFrame(function () {
       var logH = sc.clientHeight - card.offsetHeight - lootBar.offsetHeight - infoEl.offsetHeight - 20;

@@ -91,7 +91,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           enemyHpLost = Math.min(parseInt(enemyHp), parseInt(enemyHpLost) + _cdmg);
           if (parseInt(enemyHpLost) >= parseInt(enemyHp)) {
             logPlayerAction(actionString, (_crit==='success')
-              ? "Struck them extra hard — a killing blow -"+_cdmg+" 💔"
+              ? "Struck them extra hard —"+_cdmg+" 💔"
               : "Dealt a killing blow -"+_cdmg+" 💔");
             var _kxp=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
             logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered -"+_cdmg+" 💔 "+decorateStatusText("","+"+_kxp+" XP",colorGold));
@@ -148,7 +148,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
             } else {
               logPlayerAction(actionString, _crit === 'success'
-                ? "Hit it square — but it had no effect."
+                ? "Hit hit hard, but with no effect."
                 : "Your attack had no effect -1 🟢");
             }
             displayEnemyEffect("〽️");
@@ -575,7 +575,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_crit === 'success' || playerUseStamina(1, noStaForRollMessage)) {
               if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0 && (enemySta-enemyStaLost) > 0) {
-                enemyStaminaChangeMessage(-1,"Rolled so slow they hit you anyway -"+(enemyAtk+enemyAtkBonus)+" 💔","Rolled around wasting energy -1 🟢");
+                enemyStaminaChangeMessage(-1,"Rolled so slow they hit you -"+(enemyAtk+enemyAtkBonus)+" 💔","Rolled around wasting energy -1 🟢");
                 playerHit(enemyAtk+enemyAtkBonus);
               } else {
                 enemyStaminaChangeMessage(-1,
@@ -1083,7 +1083,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyHpLost=Math.min(parseInt(enemyHp),parseInt(enemyHpLost)+_cmdg);
             if (parseInt(enemyHpLost)>=parseInt(enemyHp)) {
               logPlayerAction(actionString,(_crit==='success')
-                ? "Spell was especially effective — a killing blow -"+_cmdg+" 💔"
+                ? "Spell was especially effective -"+_cmdg+" 💔"
                 : "Spell delivered a killing blow -"+_cmdg+" 💔");
               var _kxp2=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
               logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered"+decorateStatusText("","+"+_kxp2+" XP",colorGold));
@@ -1214,7 +1214,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
               if (_crit === 'success') {
-                logPlayerAction(actionString, "Your spell was especially effective -"+(magicDamage+magicBonusDamage+1)+" 💔");
+                logPlayerAction(actionString, "Spell was especially effective -"+(magicDamage+magicBonusDamage+1)+" 💔");
                 enemyHit(magicDamage+magicBonusDamage+1,true,true,true);
               } else {
                 enemyHit(magicDamage+magicBonusDamage,true);

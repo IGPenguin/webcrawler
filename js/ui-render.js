@@ -34,7 +34,7 @@ function redraw(){
   document.getElementById('id_player_party_loot').innerHTML = "";
   if (_party.length > 0) document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " + _party + "&nbsp;&nbsp;";
   if (_loot.length  > 0) document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "  + _loot;
-  if (_party.length + _loot.length === 0) document.getElementById('id_player_party_loot').innerHTML = "∙∙∙";
+  if (_party.length + _loot.length === 0) document.getElementById('id_player_party_loot').innerHTML = "x x x";
 
   //Versus UI
   versusTextUIElement = document.getElementById('id_versus');

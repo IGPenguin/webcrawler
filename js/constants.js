@@ -2,8 +2,8 @@
 var versionCode = "ver. 05/17/26 @ 11:25 AM"
 var initialEncounterOverride = 0; // set to 5 to skip tutorial
 
-var SPLASH_DISABLED_LOCALHOST = false;
-var TUTORIAL_SKIP_LOCALHOST = false;
+var SPLASH_DISABLED_LOCALHOST = true;
+var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
 var TELEMETRY_DISABLED_LOCALHOST = false;
 

@@ -527,6 +527,107 @@ button:active {
   );
 }
 
+// Menu card sub-elements — inset info/desc row (area, cause, date) below name bar
+.menu-card-info {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0px,
+    rgba(0,0,0,0.18) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(255,255,255,0.05) calc(100% - 3px),
+    rgba(255,255,255,0.05) 100%
+  );
+}
+
+// Raised stats row in chronicle/rankings detail — target the inner h3 (outer div bg is covered by h3 bg-color)
+.menu-card-stats > h3 {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  ) !important;
+}
+
+// Raised loot/party bar in chronicle/rankings detail
+.menu-loot-bar {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  );
+}
+
+// Raised score/run-info bar in chronicle/rankings detail
+.menu-score-bar {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  );
+}
+
+// Inset confirm warning — recessed feel matching credits body
+// box-shadow:inset 0 0 0 3px covers 0-3px and last 3px — strips must be offset to 3-6px to be visible
+// credits body: inset (dark top, light bottom — recessed content area feel)
+#menu_credits_body {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,0,0,0.18) 3px,
+    rgba(0,0,0,0.18) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(255,255,255,0.05) calc(100% - 6px),
+    rgba(255,255,255,0.05) calc(100% - 3px),
+    transparent calc(100% - 3px)
+  );
+}
+
+// confirm warning: raised (light top, dark bottom — elevated box feel)
+#menu_confirm_warning {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255,255,255,0.13) 3px,
+    rgba(255,255,255,0.13) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(0,0,0,0.18) calc(100% - 6px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    transparent calc(100% - 3px)
+  );
+}
+
+// Menu card name bar — fixed 26px height (matches game-screen #id_name h2 rendered height)
+.menu-card-name {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 3px;
+
+  > h3 {
+    height: 26px;
+    line-height: 26px;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
 // ── Pixel UI treatments ────────────────────────────────────────────────────
 
 // Raised: name/stat headers + achievement toast — same elevation as buttons, 3px bands to fit tight rows
@@ -535,7 +636,7 @@ button:active {
 #id_player_status,
 #id_player_party_loot,
 #achievement_toast,
-#menu_card_rename,
+.menu-card-name,
 .box-border-dynamic:has(#id_stats) {
   background-image: linear-gradient(
     to bottom,

@@ -186,7 +186,7 @@ layout: default
                margin:8px 0 8px 0;
                text-align:center;">⚠️ Really want to restart?</h2>
         <div id="menu_confirm_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
-        <div style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
+        <div id="menu_confirm_warning" style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
         <h4 style="text-align:center; min-height:0; font-size:14px; line-height:26px; margin-bottom:6px"><b style="font-weight:600; color:red; font-size:16px; ">Your game progress will be lost forever!</b><br><b style="font-weight:800; color:#62a862ff">🧩 Memories</b> and <b style="font-weight:800; color:#7193bf;">🪙 Drachmae</b> are eternal.</h4>
       </div>
       <div class="menu-spacer"></div>
@@ -207,7 +207,7 @@ layout: default
       <h5 id="menu_memories_count" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;"></h5>
       <div style="flex:1;
                   min-height:0;
-                  max-height:424px;
+                  max-height:432px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;
@@ -233,7 +233,7 @@ layout: default
       <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The eternal remains of those who tried.</h5>
       <div style="flex:1;
                   min-height:0;
-                  max-height:444px;
+                  max-height:432px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;
@@ -261,7 +261,7 @@ layout: default
             paint-order: stroke fill;
             margin:8px 0 8px 0;
             text-align:center;">🖤 Credits</h2>
-      <div style="background-color:rgb(26, 26, 26);; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000;">
+      <div id="menu_credits_body" style="background-color:rgb(26, 26, 26);; padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000;">
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:8px; opacity:0.6; font-size:16px; color:#FFF;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:18px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Blessed by</h5>

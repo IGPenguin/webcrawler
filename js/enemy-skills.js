@@ -78,7 +78,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   enemyHpLost = enemyHpLost + damage;
 
   if (!magicType && procAbilityChance("🀄️",25) && playerHp<playerHpMax){
-      logAction("🀄️ "+arrowSymbol+" ✨ Your attack has syphoned health +1 ❤️");
+      logAction("🀄️ "+arrowSymbol+" ✨ Your syphoned their health +1 ❤️");
       playerHp+=1;
   }
 
@@ -393,9 +393,9 @@ function enemyAttackOrRest(message="",isGrab=false,skipToxin=false){
     }
 
     if (enemyType!="Demon"){
-      staminaChangeMsg = "The enemy attacked you dealing -"+(enemyAtk+enemyAtkBonus)+" 💔"
+      staminaChangeMsg = "They attacked you dealing -"+(enemyAtk+enemyAtkBonus)+" 💔"
     } else {
-        staminaChangeMsg = "The enemy syphoned some health -"+(enemyAtk+enemyAtkBonus)+" 💔";
+        staminaChangeMsg = "They syphoned your health -"+(enemyAtk+enemyAtkBonus)+" 💔";
         if ((enemyHpLost > 0) && (!areaName.includes("Depths of Slumber"))) {enemyHpLost-=1;}
     }
 
