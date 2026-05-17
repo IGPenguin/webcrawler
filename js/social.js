@@ -104,11 +104,12 @@ function showSharePopup() {
   overlay.style.cssText = 'position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column;';
 
   var card = document.createElement('div');
-  card.style.cssText = 'background:#202020; padding:20px; max-width:290px; width:90%; box-shadow:0 0 0 3px #000; text-align:center;';
+  card.id = 'share_popup_card';
+  card.style.cssText = 'background-color:#202020; padding:20px; max-width:290px; width:90%; box-shadow:0 0 0 3px #000; text-align:center;';
 
   var title = document.createElement('h3');
   title.style.cssText = 'margin:0 0 14px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;';
-  title.innerHTML = '🔗 Stay Dead';
+  title.innerHTML = '🔗 Share to your friends!';
 
   var qr = document.createElement('img');
   qr.src = 'assets/img/QR.png';

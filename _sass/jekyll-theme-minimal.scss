@@ -516,6 +516,17 @@ button:active {
   );
 }
 
+// Share popup card — scanlines matching .card treatment
+#share_popup_card {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.25) 0px,
+    rgba(0,0,0,0.25) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
 // ── Pixel UI treatments ────────────────────────────────────────────────────
 
 // Raised: name/stat headers + achievement toast — same elevation as buttons, 3px bands to fit tight rows
