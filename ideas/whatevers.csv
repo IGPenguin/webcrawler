@@ -5,6 +5,10 @@
 //⚠ "Wildland Meadows" in threats.csv = Fading Wildlands (earlier working name)
 //⚠ Origins go to origins.csv, not encounters.csv
 
+🐴🦌🐅🐆🐪🐫🦒🦓 pets to add
+
+ 🐘 🦣 🦏  🐊  🦬  🦡 🐓 🦃 🦢 🪿 🦤 🦜
+
 // ============================================================
 // ORIGINS (origins.csv format: emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev)
 // ============================================================
@@ -205,7 +209,6 @@ Fishing;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;0;Handcarved Curio;Worn by sea 
 // ============================================================
 
 //Enemies / creatures worth designing around
-🫏 🐘 🦣 🦏 🐫 🦒 🐊 🦓 🦬 🐅 🐆 🦡 🐓 🦃 🦢 🪿 🦤 🦜
 🧕 👨‍🎨 👩‍🎨 🤵🏻‍♂️ 🤵🏻‍♀️ 👨‍🌾 👩‍🌾 🦁
 
 //Traps?
