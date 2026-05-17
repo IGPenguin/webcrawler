@@ -153,7 +153,7 @@ function calcActionBarConfig(button, adjustment) {
     var _dzEdge = 15; // min distance from success-zone edge (5 and 95) to danger zone center
     var _dzCenter = Math.round((5 + _dzEdge + DZ_W / 2) + Math.random() * (90 - 2 * (_dzEdge + DZ_W / 2)));
     var _dz = [{ min: _dzCenter - DZ_W / 2, max: _dzCenter + DZ_W / 2 }];
-    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95, dangerZones: _dz };
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95, dangerZones: _dz };
   }
 
   // Dream: only sleep and walk are meaningful — all other actions are impossible

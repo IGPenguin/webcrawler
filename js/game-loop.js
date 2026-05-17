@@ -130,7 +130,7 @@ function gameOver(silent=false){
 
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container")||enemyType=="Prop"||enemyType=="Consumable")) enemyMsg=deathMsg;
-  if (enemyTeam.includes("Lover's Memento")) enemyMsg="Killed by a severe heartbreak.";
+  if (enemyTeam.includes("Lover's Memento" || enemyTeam.includes("Piece of History"))) enemyMsg="Killed by a severe heartbreak.";
   if (_isRival) enemyMsg = 'Slayed by ' + enemyName + '.';
   if (!silent) {
     if (_isRival) {

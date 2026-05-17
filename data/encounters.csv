@@ -203,6 +203,7 @@ Fading Wildlands;💌;Undelivered Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/e
 Fading Wildlands;🌰;Crunchy Chestnut;Item;0;0;0;0;0;0;0;Lost Possession;May be traded for something valuable.<br>;Worth something, somewhere.;none
 Fading Wildlands;🥜;Crunchy Peanut;Item;0;0;0;0;0;0;0;Lost Possession;May be traded for something valuable.<br>;Worth something, somewhere.;none
 
+//TODO 2 Friends with no quest
 Fading Wildlands;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for: n/a;Swapped your nuts for;none
 Fading Wildlands;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers something valuable in exchange for food.<br>It is looking for: n/a;Looks like it was worth it;none
 
@@ -1003,6 +1004,8 @@ River of Sorrows;🫧;Flooded Memory;Trap-Sleep;0;0;-2;0;0;0;0;Lingering Thought
 River of Sorrows;🪅;Floating Piñata;Trap-Attack;0;1;0;0;0;0;0;Soggy Surprise;Drifting past, begging to be smashed.<br>;Improved your attack accuracy!;none
 River of Sorrows;🪨;Meditation Rock;Trap-Sleep;0;0;0;0;1;0;0;Calm Focus;Flat stone facing the water.<br>;You sit, mind a little clearer.;none
 
+//TODO: 3+ Altars (otherwise they may trigger error)
+
 River of Sorrows;🗣️;Muffled Screams;Curse;0;0;0;-2;0;0;0;Distant Noise;Disturbing voices begging for mercy.<br>;Depression intensified;none
 River of Sorrows;🌫️;River Mist;Curse;0;0;0;0;-1;0;0;Creeping Fog;Carries whispers of the long departed.<br>;Something cold passed right through you;none
 River of Sorrows;⛵;Phantom Vessel;Curse;0;0;0;0;-1;0;0;Eerie Sighting;Appears on the horizon then simply isn't there.<br>;Unsure if it was ever real;none
@@ -1367,6 +1370,7 @@ Fishing;♥️;Extra Life;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skil
 Fishing;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
 Fishing;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
+Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 Fishing;💍;Engraved Ring;Item;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Fishing;👒;Fishing Hat;Item-Head;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
 
@@ -1376,12 +1380,11 @@ Fishing;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a ne
 Fishing;🎓;Scholar's Hat;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>;none
 Fishing;🎲;Gambling Die;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🎲 Pure Chance</b>.<br><b>🧠 Intellect</b> oscilates between <b>1-6 at random</b>.;Gained skill <b>Pure Chance</b>.;none
 Fishing;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
-Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;none
 Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.;none
 Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fishing;❤️‍🩹;Heart Band-Aid;Item;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you, made you stronger;none
 Fishing;🔱;Titanslayer Trident;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;none
-Fishing;🏺;Ming-dynasty Vase;Item;0;0;-1;4;0;0;0;<b>Artifact</b>;Believed to have supernatural properties.<br>Provides <b>+5 🍀 Luck</b> for <b>-1 🟢 Energy</b>;Awkward to carry around.;none
+Fishing;🏺;Ming-dynasty Vase;Item;0;0;-1;4;0;0;0;<b>Artifact</b>;Believed to have supernatural properties.<br>Provides <b>+4 🍀 Luck</b> for <b>-1 🟢 Energy</b>;Awkward to carry around.;none
 
 Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;<b>Artifact</b>;The ultimate source of immense brilliance.<br><b>+4 🧠 Intellect</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tastes literally like heaven.;none
 Fishing;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy, ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!;none
