@@ -950,7 +950,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,"They dodged out of your reach -1 🟢","They needed to catch a breath -1 🟢");
             }
             } else {
-              enemyStaminaChangeMessage(-1,"Blocked a regular attack -1 🟢","Blocked just for the sake of it -1 🟢");
+              enemyStaminaChangeMessage(-1,
+                _crit === 'success' ? "Blocked without breaking a sweat." : "Blocked a regular attack -1 🟢",
+                "Blocked just for the sake of it -1 🟢");
               displayPlayerEffect("🔰");
             }
             break;
