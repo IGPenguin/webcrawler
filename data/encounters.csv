@@ -63,11 +63,11 @@ Fading Wildlands;🌹;Thorny Rosebush;Container-2;-1;0;0;0;0;0;0;Stinging Growth
 Fading Wildlands;🌹;Thorny Bramble;Container-2;-1;0;0;0;0;0;0;Natural Barrier;Sharp thorns suggest avoidance.<br>;Forced your way through.;none
 
 Fading Wildlands;🌿;Thick Growth;Container-3;0;0;0;0;0;0;0;Hidden Shapes;Something shifts where the grass is darkest.<br>;Crossed right through.;none
-Fading Wildlands;🌾;Tangled Weeds;Container-3;0;0;0;0;0;0;0;Snaring Growth;Every step feels slightly unwelcome.<br>;Nearly tripped, but caught yourself.;none
+Fading Wildlands;🌾;Tangled Weeds;Container-3;0;0;0;0;0;0;0;Snaring Growth;Every step feels slightly unwelcome.<br>;Almost tripped and fell.;none
 Fading Wildlands;🌽;Whispering Cornfield;Container-3;0;0;0;0;0;0;0;Hidden Walkway;Stalks seem to be concealing more than soil.<br>;There was something hidden inside.;none
 Fading Wildlands;🏕️;Silent Campsite;Container-3;0;0;0;0;0;0;0;Hastened Departure;Bedrolls cold, fire long extinguished.<br>;Decided to investigate the tent.;none
 Fading Wildlands;🌻;Sunward Field;Container-3;0;0;0;0;0;0;0;Watching Field;Tall heads seem to follow your steps.<br>;Crossed right through.;none
-Fading Wildlands;🌾;Ensnaring Weeds;Container-3;0;0;-1;0;0;0;0;Natural Obstacle;Tangles clutch at your boots.<br>;Nearly tripped, but caught yourself;none
+Fading Wildlands;🌾;Ensnaring Weeds;Container-3;0;0;-1;0;0;0;0;Natural Obstacle;Tangles clutch at your boots.<br>;Almost tripped and fell.;none
 
 Fading Wildlands;🌠;Comet Painting;Altar;0;0;0;0;0;1;0;Wishbound Canvas;The falling star never reaches the ground.<br>;Your silent wish was fulfilled.;none
 Fading Wildlands;🍀️;Clover Shrine;Altar;0;0;0;1;0;0;0;Gentle Fortune;Four-leaf clusters lean toward you.<br>;You won't ever forget this.;none
@@ -140,14 +140,14 @@ Fading Wildlands;🦌;Startled Stag;Heavy;2;0;2;0;2;0;0;Flee or Fight;Flight can
 Fading Wildlands;🐂;Tired Bull;Heavy;3;0;1;0;2;0;0;Unstoppable Force;Looks tired, could fight as a last resort.<br>;Crushed under hooves.;none
 Fading Wildlands;🦬;Sickly Bison;Heavy;3;0;1;0;1;0;0;Ancient Bulk;Slow and nasty, but still dangerous.<br>;Flattened by a monster.;none
 
-Fading Wildlands;🪿;Untitled Goose;Boss-Pet;2;1;3;0;2;0;0;Feathered Menace;Peace was never an option.<br>;Finally found peace?;none
-Fading Wildlands;🦢;Pond Queen;Boss-Standard;2;2;2;0;3;0;0;Feathered Fury;Still waters, vicious wings.<br>;Choked by the long neck.;none
-Fading Wildlands;🦅;Sky Tyrant;Boss-Swift;1;3;2;0;3;0;0;Aerial Killer;Its eyes are locked your neck.<br>;Talons tore your throat apart.;none
-Fading Wildlands;🐍;Rush Viper;Boss-Swift;1;3;2;0;-1;0;0;Ambush Predator;Strikes as fast as a lightning.<br>;Got injected with deadly venom.;none
-Fading Wildlands;🦡;Burrow Fury;Boss-Swift;2;2;2;0;4;0;0;Relentless Savage;Afraid of nothing, including you.<br>;Got freaking destroyed.;none
+Fading Wildlands;🪿;Untitled Goose;Boss-Pet;3;1;3;0;2;0;0;Feathered Menace;Peace was never an option.<br>;Finally found peace?;none
+Fading Wildlands;🦢;Pond Queen;Boss-Standard;3;2;2;0;3;0;0;Feathered Fury;Still waters, vicious wings.<br>;Choked by the long neck.;none
+Fading Wildlands;🦅;Sky Tyrant;Boss-Swift;2;2;2;0;3;0;0;Aerial Killer;Its eyes are locked your neck.<br>;Talons tore your throat apart.;none
+Fading Wildlands;🐍;Rush Viper;Boss-Swift;2;2;2;0;-1;0;0;Ambush Predator;Strikes as fast as a lightning.<br>;Got injected with deadly venom.;none
+Fading Wildlands;🦡;Burrow Fury;Boss-Swift;3;2;1;0;4;0;0;Relentless Savage;Afraid of nothing, including you.<br>;Got freaking destroyed.;none
+Fading Wildlands;🐗;Brood Matron;Boss-Heavy;2;2;3;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.;none
 Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;2;0;2;0;0;Thundering Menace;Each stomp feels like earth protesting.<br>;Suffered a fatal blunt trauma.;none
-Fading Wildlands;🐗;Brood Matron;Boss-Heavy;3;2;1;0;-1;0;0;Tusken Guardian;Anything near her squeal is already dead.<br>;Got torn apart by tusks.;none
-Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;1;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.;none
+Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;2;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.;none
 
 Fading Wildlands;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
 Fading Wildlands;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
@@ -365,7 +365,7 @@ Forsaken Village;🪅;Paper Piňata;Trap-Attack;0;1;0;0;0;0;0;Party Prop;These a
 Forsaken Village;🎃;Field Scarecrow;Trap-Attack;0;1;0;0;0;0;0;Makeshift Defense;Silently watches over the area.<br>;Improved your combat technique!;none
 Forsaken Village;🎯;Practice Target;Trap-Attack;0;1;0;0;0;0;0;Training Spot;You should give it a shot!<br>;Improved your combat technique!;none
 Forsaken Village;🔭;Cosmic Lens;Trap;0;0;0;1;0;0;0;Suspicious Device;Looks like it was abandoned in hurry.<br>;Spotted a shooting star!;none
-Forsaken Village;🔬;Scientific Lens;Trap;0;0;0;0;1;0;0;Abandoned Experiment;Looks like left behind in panic.<br>;Spotted an inspiring microcosmos!;none
+Forsaken Village;🔬;Scientific Lens;Trap;0;0;0;0;1;0;0;Abandoned Experiment;Looks like left behind in panic.<br>;Spotted a cute microcosmos!;none
 Forsaken Village;🔔;Golden Bell;Trap;0;0;0;1;0;0;0;Rally Spot;Makes loud sound when disturbed.<br>;Ringed the bell, hoping for luck;none
 Forsaken Village;🧊;Ice Bath;Trap;1;0;0;0;0;0;0;Immunity Booster;Somehow the water is still uncomfortably cold.<br>;You feel sharper and more resilient.;none
 
@@ -1381,7 +1381,7 @@ Fishing;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳
 Fishing;🛟️;Lifeguard Ring;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fishing;❤️‍🩹;Heart Band-Aid;Item;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you, made you stronger;none
 Fishing;🔱;Titanslayer Trident;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;none
-Fishing;🏺;Ming-dynasty Vase;Item;0;0;-1;5;0;0;0;<b>Artifact</b>;Believed to have supernatural properties.<br>Provides <b>+5 🍀 Luck</b> for <b>-1 🟢 Energy</b>;Awkward to carry around.;none
+Fishing;🏺;Ming-dynasty Vase;Item;0;0;-1;4;0;0;0;<b>Artifact</b>;Believed to have supernatural properties.<br>Provides <b>+5 🍀 Luck</b> for <b>-1 🟢 Energy</b>;Awkward to carry around.;none
 
 Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;<b>Artifact</b>;The ultimate source of immense brilliance.<br><b>+4 🧠 Intellect</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tastes literally like heaven.;none
 Fishing;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy, ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!;none
