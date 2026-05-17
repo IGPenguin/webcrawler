@@ -361,7 +361,7 @@ var Menu = (function () {
       entry.className = 'menu-history-entry';
       entry.style.cursor = 'pointer';
       entry.style.userSelect = 'none';
-      if (rarityBg) entry.style.background = rarityBg;
+      if (rarityBg) entry.style.backgroundColor = rarityBg;
 
       entry.innerHTML =
         '<div style="display:flex; align-items:center; gap:8px; padding:10px 6px 8px 12px; margin-top:8px;">'
@@ -458,10 +458,10 @@ var Menu = (function () {
 
     if (showStats) {
       html += '<div class="box-border-dynamic" style="margin-left:3px; margin-right:3px; '
-        + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212;">'
-        + '<h3 style="text-align:left; padding-left:8px; padding-top:2px; padding-bottom:2px; '
-        + 'font-size:14px; margin-bottom:-11px; margin-top:13px; font-family:sans; '
-        + 'box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
+        + 'margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212; background-color:#202020;">'
+        + '<h3 style="text-align:left; padding-left:8px; font-size:14px; font-family:sans; '
+        + 'height:26px; line-height:26px; margin:0; '
+        + 'background-color:#202020; box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
         + (stats || '&nbsp;') + '</h3>'
         + '</div>';
     }
@@ -748,7 +748,7 @@ var Menu = (function () {
     });
 
     var countEl = document.getElementById('menu_memories_count');
-    if (countEl) countEl.textContent = 'Recalling the past reshapes the cycle: ' + unlockedCount + ' / ' + achievements.length;
+    if (countEl) countEl.textContent = 'Recalling the past reshapes the future: ' + unlockedCount + ' / ' + achievements.length;
 
     achievements.forEach(function (a) {
       var unlocked = AchievementManager.isUnlocked(a.id);
@@ -838,7 +838,7 @@ var Menu = (function () {
         var rankColor = i === 0 ? '#FFD940' : i < 3 ? '#c0c0c0' : '#fff';
         el.innerHTML =
           '<div style="overflow:hidden;padding-bottom:3px;">'
-            + '<h3 style="margin-top:6px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px;">'
+            + '<h3 style="margin-top:5px; margin-bottom:-19px; margin-left:4px; position:relative; z-index:3; text-align:right; padding-right:10px;">'
             + '<i style="font-weight:600; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
             + '#' + (i + 1) + '&nbsp;&nbsp;⭐ ' + (entry.score || 0)
             + '</i></h3>'
@@ -1001,7 +1001,7 @@ var Menu = (function () {
     diffSection.appendChild(diffLabel);
 
     var segRow = document.createElement('div');
-    segRow.style.cssText = 'display:flex; gap:8px;';
+    segRow.style.cssText = 'display:flex; gap:8px; line-height:16px;';
 
     var diffOptions = [
       { key: 'Easy',     locked: !pickerEnabled,           lockHint: '🔒 Coming soon' },
@@ -1087,7 +1087,7 @@ var Menu = (function () {
       ['Gelasio', 'Pixel', 'Native'].forEach(function (f) {
         var isActive = (f === fontPreference);
         var btn = document.createElement('div');
-        btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none;'
+        btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none; line-height:16px;'
           + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
           + ' background:' + (isActive ? '#2a2500' : '#252525') + ';';
         btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + f + '</div>';

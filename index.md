@@ -187,7 +187,7 @@ layout: default
                text-align:center;">⚠️ Really want to restart?</h2>
         <div id="menu_confirm_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
         <div style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:14px; line-height:26px; margin-bottom:4px"><b style="font-weight:600; color:red; font-size:16px; ">Your game progress will be lost forever!</b><br><b style="font-weight:800; color:#62a862ff">🧩 Memories</b> and <b style="font-weight:800; color:#7193bf">🪙 Drachmae</b> are eternal.</h4>
+        <h4 style="text-align:center; min-height:0; font-size:14px; line-height:26px; margin-bottom:6px"><b style="font-weight:600; color:red; font-size:16px; ">Your game progress will be lost forever!</b><br><b style="font-weight:800; color:#62a862ff">🧩 Memories</b> and <b style="font-weight:800; color:#7193bf;">🪙 Drachmae</b> are eternal.</h4>
       </div>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✕ Start Over</button>
@@ -228,8 +228,9 @@ layout: default
             letter-spacing:1.5px;
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
-            margin:8px 0 16px 0;
+            margin:8px 0 6px 0;
             text-align:center;">📜 Chronicles</h2>
+      <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The remains of those who tried.</h5>
       <div style="flex:1;
                   min-height:0;
                   max-height:444px;
