@@ -687,8 +687,10 @@ button:active {
   }
 }
 
-.menu-history-entry:hover {
-  filter: brightness(1.25);
+@media (hover: hover) {
+  .menu-history-entry:hover {
+    filter: brightness(1.25);
+  }
 }
 
 .menu-history-log {

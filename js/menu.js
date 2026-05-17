@@ -768,14 +768,14 @@ var Menu = (function () {
             + '</h5>';
         }
         entry.innerHTML =
-          '<div style="display:flex; align-items:center; gap:8px; padding:10px 0px 8px 12px; margin-bottom:-8px;">'
+          '<div style="display:flex; align-items:center; gap:8px; padding:12px 0px 8px 12px; margin-bottom:-8px;">'
             + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
             + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + tsLine + '</div>'
           + '</div>';
       } else {
         var hintText = (a.hint && a.hint.length > 0) ? a.hint : "Not discovered yet.";
         entry.innerHTML =
-          '<div style="display:flex; align-items:center; gap:8px; padding:10px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
+          '<div style="display:flex; align-items:center; gap:8px; padding:12px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
             + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
             + '<div><h5 style="margin:0; font-size:16px; font-style:itallic; font-weight:500; color:#CCCCCC; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + (hintText || '') + '</h5>' + tsLine + '</div>'
           + '</div>';
