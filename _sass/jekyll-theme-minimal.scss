@@ -485,12 +485,12 @@ button {
   background-color: rgb(40,40,40);
   background-image: linear-gradient(
     to bottom,
-    rgba(255,255,255,0.20) 0px,
-    rgba(255,255,255,0.20) 6px,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 6px,
     transparent 6px,
     transparent calc(100% - 6px),
-    rgba(0,0,0,0.28) calc(100% - 6px),
-    rgba(0,0,0,0.28) 100%
+    rgba(0,0,0,0.18) calc(100% - 6px),
+    rgba(0,0,0,0.18) 100%
   );
   color: #fff;
   padding-right: 4px;
@@ -507,13 +507,91 @@ button {
 button:active {
   background-image: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.28) 0px,
-    rgba(0,0,0,0.28) 6px,
+    rgba(0,0,0,0.18) 0px,
+    rgba(0,0,0,0.18) 6px,
     transparent 6px,
     transparent calc(100% - 6px),
-    rgba(255,255,255,0.14) calc(100% - 6px),
-    rgba(255,255,255,0.14) 100%
+    rgba(255,255,255,0.13) calc(100% - 6px),
+    rgba(255,255,255,0.13) 100%
   );
+}
+
+// ── Pixel UI treatments ────────────────────────────────────────────────────
+
+// Raised: name/stat headers — same elevation as buttons, 3px bands to fit tight rows
+#id_name,
+#id_player_name,
+#id_player_status,
+#id_player_party_loot,
+.box-border-dynamic:has(#id_stats) {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  ) !important;
+}
+
+// Inset: content areas — recessed feel
+#id_desc {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0px,
+    rgba(0,0,0,0.18) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(255,255,255,0.05) calc(100% - 3px),
+    rgba(255,255,255,0.05) 100%
+  ) !important;
+}
+
+// Vignette: emoji display box — radial dark edge, sits under emoji (z-index 3)
+#id_emoji_flipper {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 6%,
+        rgba(0,0,0,0.22) 6%,  rgba(0,0,0,0.22) 12%,
+        rgba(0,0,0,0.14) 12%, rgba(0,0,0,0.14) 18%,
+        rgba(0,0,0,0.07) 18%, rgba(0,0,0,0.07) 24%,
+        rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 30%,
+        transparent 30%
+      ),
+      linear-gradient(to top,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 6%,
+        rgba(0,0,0,0.22) 6%,  rgba(0,0,0,0.22) 12%,
+        rgba(0,0,0,0.14) 12%, rgba(0,0,0,0.14) 18%,
+        rgba(0,0,0,0.07) 18%, rgba(0,0,0,0.07) 24%,
+        rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 30%,
+        transparent 30%
+      ),
+      linear-gradient(to right,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 2%,
+        rgba(0,0,0,0.22) 2%,  rgba(0,0,0,0.22) 4%,
+        rgba(0,0,0,0.14) 4%,  rgba(0,0,0,0.14) 6%,
+        rgba(0,0,0,0.07) 6%,  rgba(0,0,0,0.07) 8%,
+        rgba(0,0,0,0.02) 8%,  rgba(0,0,0,0.02) 10%,
+        transparent 10%
+      ),
+      linear-gradient(to left,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 2%,
+        rgba(0,0,0,0.22) 2%,  rgba(0,0,0,0.22) 4%,
+        rgba(0,0,0,0.14) 4%,  rgba(0,0,0,0.14) 6%,
+        rgba(0,0,0,0.07) 6%,  rgba(0,0,0,0.07) 8%,
+        rgba(0,0,0,0.02) 8%,  rgba(0,0,0,0.02) 10%,
+        transparent 10%
+      );
+    pointer-events: none;
+    z-index: 2;
+  }
 }
 
 // ── Main Menu ──────────────────────────────────────────────────────────────

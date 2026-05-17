@@ -400,7 +400,7 @@ layout: default
 </div>
 </div>
 
-<div class="box-border-dynamic" style="margin-top:0px;
+<div id = "id_stats_wrapper" class="box-border-dynamic" style="margin-top:0px;
         box-shadow:
           0px 0px 0px 3px #000000;
             position:relative; z-index:2;
