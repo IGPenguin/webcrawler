@@ -76,7 +76,7 @@ function transitionToGame(callback, message) {
 
 // Fades the curtain in, runs callback() while fully black (load encounter /
 // redraw), shows area name text, holds briefly, then fades both out.
-function transitionArea(html, callback) {
+function transitionArea(html, callback, onBeforeFadeOut) {
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
   var gen = ++_curtainGen;
@@ -91,6 +91,7 @@ function transitionArea(html, callback) {
     curtain.removeEventListener('animationend', onIn);
     if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
+    curtain.style.opacity = '1'; // pin opacity — Chrome drops fill-mode on class removal
 
     // Load encounter + redraw while curtain is fully opaque
     callback();
@@ -98,14 +99,15 @@ function transitionArea(html, callback) {
     // Fade in area name text on top of black curtain
     textEl.innerHTML = html;
     textEl.style.display = 'block';
-    void textEl.offsetWidth;
     textEl.style.setProperty('--animate-duration', '0.5s');
     textEl.classList.add('animate__animated', 'animate__fadeIn');
 
     // Hold, then fade both out together
     setTimeout(function () {
       if (_curtainGen !== gen) return;
+      if (onBeforeFadeOut) onBeforeFadeOut(); // e.g. setBackground — safe here, curtain still black
       textEl.classList.remove('animate__animated', 'animate__fadeIn');
+      curtain.style.opacity = '';
       void curtain.offsetWidth;
       curtain.style.setProperty('--animate-duration', '0.7s');
       curtain.classList.add('animate__animated', 'animate__fadeOut');

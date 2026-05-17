@@ -58,7 +58,6 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
     transitionArea(_areaHtml, function () {
       loadEncounter(encounterIndex);
       if (levelUpSavedCorpse !== null && enemyType !== "Upgrade") restoreCorpseAfterLevelUp();
-      setBackground(areaName);
       if (!areaName.includes("Fading") && !areaName.includes("Eternal") && !areaName.includes("Depths") && !adventureLog.includes("Arrived to: <b>"+areaName+"</b>")) {
         logAction("💭 ▸ 👣 Arrived to: <b>"+areaName+"</b>");
         AchievementManager.check('discover_area', areaName);
@@ -66,6 +65,8 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
       redraw();
       startEnemyEmojiPulse();
       _fireRemembranceFade();
+    }, function () {
+      setBackground(areaName); // called right before curtain fades out — guaranteed black
     });
     return;
   }
