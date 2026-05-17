@@ -122,6 +122,13 @@ a:active, a:hover, a:focus {
   float: center;
   padding: 16px;
   background-color: rgb(40,40,40);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.25) 0px,
+    rgba(0,0,0,0.25) 3px,
+    transparent 3px,
+    transparent 6px
+  ) !important;
   box-shadow:
     inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
@@ -146,6 +153,13 @@ a:active, a:hover, a:focus {
 .toolbar-card{
   max-width: 364px;
   background-color: rgb(40,40,40);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.25) 0px,
+    rgba(0,0,0,0.25) 3px,
+    transparent 3px,
+    transparent 6px
+  ) !important;
   box-shadow:
     inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
@@ -293,7 +307,7 @@ dt {
 #id_action_bar_cancel {
   display: none;
   position: absolute;
-  top: 0; left: 2px; right: 2px; bottom: -1px;
+  top: -1px; left: 2px; right: 2px; bottom: -1px;
   align-items: center;
   justify-content: center;
   border-radius: 2px;
@@ -469,6 +483,15 @@ button {
   min-height: 42px;
   width: 108.4px;
   background-color: rgb(40,40,40);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.20) 0px,
+    rgba(255,255,255,0.20) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(0,0,0,0.28) calc(100% - 6px),
+    rgba(0,0,0,0.28) 100%
+  );
   color: #fff;
   padding-right: 4px;
   padding-left: 2px;
@@ -476,10 +499,21 @@ button {
   border: none;
   -webkit-text-stroke:4px #121212;
   paint-order: stroke fill;
-  //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   box-shadow:
     inset 0px 0px 0px 3px $color-border;
   user-select: none;
+}
+
+button:active {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.28) 0px,
+    rgba(0,0,0,0.28) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(255,255,255,0.14) calc(100% - 6px),
+    rgba(255,255,255,0.14) 100%
+  );
 }
 
 // ── Main Menu ──────────────────────────────────────────────────────────────

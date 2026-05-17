@@ -65,8 +65,13 @@ function redraw(){
 
   //Encounter Statusbar UI
   enemyTeamUIElement.innerHTML="";
-  cardUIElement.style.background=colorCardBackground;
-  cardUIElement.style.backgroundImage='';
+  cardUIElement.style.backgroundColor=colorCardBackground;
+  cardUIElement.style.backgroundPosition='';
+  cardUIElement.style.backgroundSize='';
+  cardUIElement.style.backgroundRepeat='';
+  cardUIElement.style.backgroundAttachment='';
+  cardUIElement.style.backgroundOrigin='';
+  cardUIElement.style.backgroundClip='';
   cardUIElement.style.boxShadow='';
   cardUIElement.classList.remove('invader-card');
 
@@ -92,7 +97,7 @@ function redraw(){
       if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Remorseful",colorRed);
       if (areaName.includes("Shrouded")) {
         enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
-        cardUIElement.style.background=colorDarkRed;
+        cardUIElement.style.backgroundColor=colorDarkRed;
       }
       //Do not display stats = reward hidden
       break;
@@ -138,7 +143,7 @@ function redraw(){
 
     case "Shop": //Undertaker, Fatebound, Pactbound
       enemyStatusString=decorateStatusText("⚖️","Fatekeeper",colorLightShadeBlue);
-      cardUIElement.style.background=colorShadeBlue;
+      cardUIElement.style.backgroundColor=colorShadeBlue;
       break;
 
     case "Item":
@@ -147,29 +152,29 @@ function redraw(){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
         if (itemNet >= 0.5){
           enemyStatusString=decorateStatusText("🔷","Magnificent",colorLightBlue);
-          cardUIElement.style.background=colorDarkBlue;
+          cardUIElement.style.backgroundColor=colorDarkBlue;
         }
         if (itemNet >= 1.5){
           enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
-          cardUIElement.style.background=colorDarkPurple;
+          cardUIElement.style.backgroundColor=colorDarkPurple;
         }
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
       if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Questionable Drink")) {
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
-        cardUIElement.style.background=colorDarkOrange;
+        cardUIElement.style.backgroundColor=colorDarkOrange;
       }
       if (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History")) {
         enemyStatusString=decorateStatusText("💔","Remembrance",colorPink);
-        cardUIElement.style.background=colorDarkPink;
+        cardUIElement.style.backgroundColor=colorDarkPink;
       }
       if (enemyEmoji=="🪙" || enemyEmoji=="💰"){
         enemyStatusString=decorateStatusText("🧬","Everlasting",colorLightShadeBlue);
-        cardUIElement.style.background=colorShadeBlue;
+        cardUIElement.style.backgroundColor=colorShadeBlue;
         if (enemyName.includes("Lucky")){
           enemyStatusString=decorateStatusText("🍀","Fortune",colorSoftGreen);
-          cardUIElement.style.background=colorSoftGreen;
+          cardUIElement.style.backgroundColor=colorSoftGreen;
         }
       }
       if (enemyTeam.includes("Possesion")) enemyStatusString=decorateStatusText("⭐️","Quest Item",colorYellow);
@@ -199,17 +204,17 @@ function redraw(){
       }
       if (itemNet >= 0.5){
         enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
-        cardUIElement.style.background=colorDarkBlue;
+        cardUIElement.style.backgroundColor=colorDarkBlue;
         eatColor=colorLightBlue;
       }
       if (itemNet >= 1.5){
         enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
-        cardUIElement.style.background=colorDarkPurple;
+        cardUIElement.style.backgroundColor=colorDarkPurple;
         eatColor=colorPurple;
       }
       if (enemyTeam.includes("Artifact") || enemyTeam.includes("Essence")){
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
-        cardUIElement.style.background=colorDarkOrange;
+        cardUIElement.style.backgroundColor=colorDarkOrange;
         eatColor=colorOrange;
       }
       break;
@@ -230,7 +235,7 @@ function redraw(){
       break;
     case "Upgrade":
       enemyStatusString=decorateStatusText("⭐️","Advancement",colorGold);
-      cardUIElement.style.background=colorDarkGold;
+      cardUIElement.style.backgroundColor=colorDarkGold;
       break;
     case "Prop":
       enemyStatusString=decorateStatusText("⚪️","Unremarkable",colorWhite);
@@ -240,7 +245,7 @@ function redraw(){
       if (corpseState!=="" && corpseHasLoot) enemyStatusString=decorateStatusText("🟡","Interesting",colorYellow);
       if (enemyName.includes("Regrets")) {
         enemyStatusString=decorateStatusText("❌","Misfortune",colorSoftRed);
-        cardUIElement.style.background=colorSoftRed;
+        cardUIElement.style.backgroundColor=colorSoftRed;
       }
       break;
     case "Altar":
@@ -250,7 +255,7 @@ function redraw(){
       break;
     case "Fishing":
       enemyStatusString=decorateStatusText("🪝","Fishing Spot",colorGold);
-      cardUIElement.style.background=colorDarkBlue;
+      cardUIElement.style.backgroundColor=colorDarkBlue;
       //emojiWrapperUIElement.style.background=colorDarkBlue;
       break;
     case "Curse":
@@ -261,16 +266,16 @@ function redraw(){
       enemyStatusString=decorateStatusText("🦴","Deceased","lightgrey");
       if (areaName.includes("Auxiliary")) {
         enemyStatusString=decorateStatusText("🎉","Achievement",colorOrange);
-        cardUIElement.style.background=colorDarkOrange;
+        cardUIElement.style.backgroundColor=colorDarkOrange;
       }
       break;
     case "Checkpoint":
       enemyStatusString=decorateStatusText("🌙","Source of Power",colorGold);
-      cardUIElement.style.background=colorDarkOrange;
+      cardUIElement.style.backgroundColor=colorDarkOrange;
       break;
     case "Memory":
         enemyStatusString=decorateStatusText("💔","Remembrance",colorPink);
-        cardUIElement.style.background=colorDarkPink;
+        cardUIElement.style.backgroundColor=colorDarkPink;
         break;
     default:
       enemyStatusString=decorateStatusText("⚠️","No Details","red");
@@ -284,14 +289,13 @@ function redraw(){
         if (enemyBossType === 'Boss-Rival') {
           enemyTeamUIElement.innerHTML = decorateStatusText("💔","Invader",colorRed);
           enemyStatusString=appendEnemyStats();
-          cardUIElement.style.background=colorDarkRed;
-          cardUIElement.style.backgroundImage='';
+          cardUIElement.style.backgroundColor=colorDarkRed;
           cardUIElement.style.boxShadow='inset 0px 0px 0px 3px #cc2020, 0 0 18px rgba(200,32,32,0.7), 0 4px 8px rgba(0,0,0,0.5)';
           cardUIElement.classList.add('invader-card');
         } else {
           enemyTeamUIElement.innerHTML = decorateStatusText("💀","Boss",colorRed);
           enemyStatusString=appendEnemyStats();
-          cardUIElement.style.background=colorDarkRed;
+          cardUIElement.style.backgroundColor=colorDarkRed;
         }
       }
       break;

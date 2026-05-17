@@ -518,7 +518,7 @@ layout: default
                                           box-shadow:
                                             0px 0px 0px 3px #121212;">
 
-<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:2;"></div>
+<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
                                     display: flex;
@@ -529,6 +529,7 @@ layout: default
                                     margin-bottom: 4px;
                                     margin-top:12px;
                                     font-family:sans;
+                                    background-color: #202020;
                                     box-shadow:
                                       0px 0px 0px 3px #000000;
                                       position:relative; z-index:1;
