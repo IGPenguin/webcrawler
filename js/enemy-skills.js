@@ -135,7 +135,7 @@ function enemyJoinedParty(){
   var _emoji=enemyEmoji, _atk=enemyAtk, _lck=enemyLck, _mgk=enemyMgk, _msg=enemyMsg;
   var _actionStr=actionString;
   showCompanionNameDialog('pet', getRandomPetName(), function(chosenName) {
-    petName[[..._emoji][0] || _emoji] = chosenName;
+    petName[_emoji] = chosenName;
     displayPlayerEffect(_emoji);
     playerPartyString += _emoji;
     var gainedXP=playerGainXP(1.5,0,"");

@@ -2552,7 +2552,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var _rEmoji=enemyEmoji, _rAtk=enemyAtk, _rLck=enemyLck, _rMgk=enemyMgk;
               var _rActionStr=actionString;
               showCompanionNameDialog('follower', getRandomFollowerName(), function(chosenName) {
-                followerName[[..._rEmoji][0] || _rEmoji] = chosenName;
+                followerName[_rEmoji] = chosenName;
                 displayPlayerEffect(_rEmoji);
                 playerPartyString += _rEmoji;
                 var gainedXP=playerGainXP(1.5,0,"");
