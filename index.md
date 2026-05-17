@@ -483,6 +483,7 @@ layout: default
   justify-content: flex-end;
   height: 28px;
   margin-top:6px;
+  margin-bottom:-28px;
   margin-left:4px;
   position:relative;
   z-index:3;
