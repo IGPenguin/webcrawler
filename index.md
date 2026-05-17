@@ -230,7 +230,7 @@ layout: default
             paint-order: stroke fill;
             margin:8px 0 6px 0;
             text-align:center;">📜 Chronicles</h2>
-      <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The remains of those who tried.</h5>
+      <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The eternal remains of those who tried.</h5>
       <div style="flex:1;
                   min-height:0;
                   max-height:444px;

@@ -666,12 +666,25 @@ button:active {
 }
 
 .menu-history-entry {
+  position: relative;
   cursor: pointer;
   margin-bottom: 10px;
   padding-bottom: 8px;
   overflow: hidden;
   background-color: #202020;
   box-shadow: inset 0px 0px 0px 3px #000;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #000;
+    z-index: 10;
+    pointer-events: none;
+  }
 }
 
 .menu-history-entry:hover {
