@@ -382,8 +382,8 @@ var Menu = (function () {
         + '</div>';
 
       entry.addEventListener('click', function() {
-        list.querySelectorAll('.menu-history-entry').forEach(function(el) { el.style.boxShadow = ''; });
-        entry.style.boxShadow = 'inset 0 0 0 2px #FFD940';
+        list.querySelectorAll('.menu-history-entry').forEach(function(el) { el.classList.remove('menu-history-selected'); });
+        entry.classList.add('menu-history-selected');
         _selectedOrigin = origin;
         var btn = document.getElementById('menu_origin_begin');
         btn.innerHTML = '✨ Start as ' + origin.originName;

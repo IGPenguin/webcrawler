@@ -693,6 +693,15 @@ button:active {
   }
 }
 
+.menu-history-entry.menu-history-selected {
+  box-shadow: inset 0px 0px 0px 3px #FFD940;
+
+  &::before {
+    background: #FFD940;
+    height: 3px;
+  }
+}
+
 .menu-history-log {
   display: none;
   padding-top: 4px;
