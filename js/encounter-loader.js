@@ -137,13 +137,13 @@ function loadEncounter(index, fileLines = linesStory){
     case "Stingy":
     case "Toxic":
       if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
-        logAction("💢 ▸ "+enemyEmoji+" Engaged an enemy: <b>"+enemyName+"</b>")
+        logAction("💢 ▸ "+enemyEmoji+" Engaged enemy: <b>"+enemyName+"</b>")
         if (playerLootString.includes("📌")) {
           enemyHit(1,false,false,true)
           logAction("📌 ▸ "+enemyEmoji+" Inflicted the <b>☠️ Ancient Voodoo</b> -1 💔")
         }
       } else {
-        logAction("👁️ ▸ "+enemyEmoji+" Spotted a critter: <b>"+enemyName+"</b>")
+        logAction("👁️ ▸ "+enemyEmoji+" Spotted critter: <b>"+enemyName+"</b>")
       }
       break;
     case "Item":
@@ -151,7 +151,7 @@ function loadEncounter(index, fileLines = linesStory){
         logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" + " Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
         if (enemyTeam.includes("Possesion")) {
-          logAction("⭐️ ▸ "+enemyEmoji+" Found a possesion: <b>"+enemyName+"</b>")
+          logAction("⭐️ ▸ "+enemyEmoji+" Found possesion: <b>"+enemyName+"</b>")
         } else {
          if (!enemyTeam.includes("Lover's Memento") && !enemyTeam.includes("Piece of History")) {
            if (enemyName=="Ethereal Drachma"){
@@ -162,7 +162,7 @@ function loadEncounter(index, fileLines = linesStory){
               logAction("🎉 ▸ "+enemyEmoji+" Found some loot: <b>"+enemyName+"</b>")
            }
          } else {
-          logAction("🫀 ▸ "+enemyEmoji+" Found a clue: <b>"+enemyName+"</b>")
+          logAction("🫀 ▸ "+enemyEmoji+" Found clue: <b>"+enemyName+"</b>")
          }
         }
       }
@@ -178,7 +178,7 @@ function loadEncounter(index, fileLines = linesStory){
       if (enemyTeam.includes("Artifact")){
         logAction("🟠 ▸ "+enemyEmoji+"<text style=color:"+colorOrange+";>" +" Unveiled artifact: <b>"+enemyName+"</b></text>")
       } else {
-        logAction("👁️ ▸ "+enemyEmoji+" Found a snack: <b>"+enemyName+"</b>")
+        logAction("👁️ ▸ "+enemyEmoji+" Found snack: <b>"+enemyName+"</b>")
       }
       break;
     case "Trap":
@@ -189,7 +189,7 @@ function loadEncounter(index, fileLines = linesStory){
     case "Trap-Sleep":
       if (totalBonus==0 && totalMalus==0) logAction("👁️ ▸ "+enemyEmoji+" Spotted obstacle: <b>"+enemyName+"</b>")
       if (totalBonus>0 && totalMalus<0) logAction("👁️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
-      if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed a hazard: <b>"+enemyName+"</b>")
+      if (totalMalus<0) logAction("⁉️ ▸ "+enemyEmoji+" Noticed hazard: <b>"+enemyName+"</b>")
       break;
     case "Curse":
       logAction("⁉️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
@@ -209,18 +209,18 @@ function loadEncounter(index, fileLines = linesStory){
       }
       break;
     case "Friend":
-      if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Met a creature: <b>"+enemyName+"</b>")
+      if (!enemyName.includes("Bride")) logAction("👁️ ▸ "+enemyEmoji+" Met creature: <b>"+enemyName+"</b>")
       break;
     case "Shop": //I just did HAAAACKKKK, and it feelt sooo WRONG (really, needs fixing... later)
       if (!adventureLog.includes("Something appeared:")) logAction("🌀 ▸ "+enemyEmoji+"<text style=color:"+colorLightShadeBlue+";> <b>"+enemyName+"</b> appeared. </text>")
       if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 No coin? I guess that's it for now.")
       break;
     default:
-      if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged a boss: <b>"+enemyName+"</b>") && !adventureLog.includes("Invaded by:")) {
+      if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged boss: <b>"+enemyName+"</b>") && !adventureLog.includes("Invaded by:")) {
         if (_isRival) {
           logAction("💔 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>Invaded by: <b>"+enemyName+"</b></text>");
         } else {
-          logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged a boss: <b>"+enemyName+"</b></text>");
+          logAction("💢 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>"+"Engaged boss: <b>"+enemyName+"</b></text>");
         }
         if (playerLootString.includes("📌") && ((enemyAtk+enemyAtkBonus)>0)) {
           enemyHit(1,false,false,true)
