@@ -23,50 +23,11 @@
 - Effort: XS | Gain: M
 
 ### [CRIT-SHAKE] Improvement: Crit attack shakes enemy card; crit walk bounces player card
-- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only.
+- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only. For other crit types, propose similar effect - for each action crit outcome possible.
 - Bundle with [FLASH-CRIT]; guard `animationend` with `if (e.target !== e.currentTarget) return`.
 - Priority: SPRINT — targeted micro-feedback that makes the skill check feel like it mattered; paired with FLASH-CRIT for full crit moment.
 - Type: Improvement
 - Effort: S | Gain: M
-
-### [COMP-PLAY] Feature: Companion passive gameplay effects
-- Companions in the party should have passive gameplay effects beyond score contribution; even one passive trigger per companion type transforms the party string from a trophy into a living team.
-- Start with 3 companion types: 🐱 cat = +1 LCK per encounter (`playerPartyString.includes('🐱')` check), 🧙 monk = small prayer success bonus, 🐶 dog = barks a warning to the log when the next encounter is dangerous (high-ATK enemy, trap, boss) — requires the next encounter to already be resolved before navigation; see [ENC-PREGEN].
-- Pure `includes()` checks at existing decision points — no new state objects needed.
-- Recruit companion = human-pet variant: speech-style tips in the log instead of barks — same emoji check, different string pool. See [PET-ENCNTR] for the CSV-encounter approach (spawns actual encounter rows per party composition, parallel to this item's passive log effects).
-- Priority: SPRINT — "my cat saved me" is a story the game currently cannot tell; this is a retention hook hiding in plain sight.
-- Type: Feature
-- Effort: M | Gain: M
-- Needs: Define what passive effects companions should grant before implementing.
-
-### [SEQ-DELAY] Improvement: Sequential action display — delay 0.5s per log entry
-- Add a 0.5s delay between log entries in multi-step action sequences; wait for effects to complete before re-enabling player input.
-- Wrap the `logAction()` call chain in a `setTimeout` queue; 500ms between entries; block player input until the chain resolves; scope to multi-step sequences only — single actions stay instant.
-- Priority: SPRINT — grab/speak/companion sequences currently dump as a text wall; staggering makes each beat land and companions saving the player become a moment rather than a footnote.
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [STORY-FADE] Improvement: Story fades — longer and smoother
-- Increase duration and smooth easing on game-start, invader, memory, and final boss fade transitions.
-- Priority: SPRINT — transitions are functional but thin; polish here signals craft to first-time beta players.
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [CRIT-PULSE] Improvement: Crit zone CSS pulse animation while action bar is active
-- While the action bar animates, add a slow CSS `@keyframes` brightness pulse (1s loop) on the crit zone element — telegraphs "hitting this is special" before the result lands; remove on bar stop.
-- Pure CSS change in `action-bar.js`; no logic changes.
-- Priority: SPRINT — trains players to chase crits without a tooltip; makes the skill check feel alive before they hit it.
-- Type: Improvement
-- Effort: XS | Gain: M
-- Source: Perseus creative sprint 2026-05-15 — VFX Artist, confirmed by Genre Fan vote
-
-### [ENEM-TELL] Improvement: Enemy tell — pre-attack log hint for high-ATK enemies
-- For enemies with ATK ≥ 4, log a brief flavor hint before their attack resolves — e.g. "The Revenant raises its arm..." — rewards veteran players who've learned to read it.
-- In `encounter-loader.js` or `enemy-skills.js`, add a pre-attack log entry before damage resolution; can be generic per enemy type or pull from a small flavor pool in `string-generator.js`.
-- Priority: SPRINT — veteran recognition loops drive replayability; doesn't change mechanics but makes experienced players feel smart.
-- Type: Improvement
-- Effort: S | Gain: M
-- Source: Perseus creative sprint 2026-05-15 — Game Design Lead + Game Director
 
 ### [CRIT-SLEEP] Improvement: Crit sleep outside combat → extra STA
 - A critical success on a sleep action outside combat (e.g., falling leaves) should grant bonus STA beyond the standard recovery.
@@ -74,14 +35,6 @@
 - Priority: SPRINT — small discovery moment that extends crit reward to a new emotional beat; players who find it will talk about it.
 - Type: Improvement
 - Effort: S | Gain: M
-
-### [STONE-HINT] Feature: Whispering Stone — one stone surfaces a true hint from player data *(fan wildcard)*
-- Currently both Whispering Stones show flavor epitaphs; make one of the two occasionally surface something true — a stat hint or next-area warning derived from real player submission data.
-- Infrastructure already in `rival-manager.js` (`buildWallPropRow()`); pull from the existing pool entries and filter for a "wisdom" subset rather than pure epitaph.
-- Priority: SPRINT — near-zero cost on existing infrastructure; the moment a player reads something true from the dead is unforgettable and shareable.
-- Type: Feature
-- Effort: S | Gain: L
-- Source: Perseus creative sprint 2026-05-15 — Hardcore Fan wildcard
 
 ### [KILL-LINE] Improvement: Post-run kill summary line on game-over screen *(fan wildcard)*
 - Add one generated sentence on the game-over screen summarizing a notable run moment — e.g. "You killed 12 enemies. The Revenant was not among them." Pull from run encounter data; filter by encountered-but-survived enemies.
@@ -99,28 +52,21 @@
 - Type: Improvement
 - Effort: S | Gain: L
 
-### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
-- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
-- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
-- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
-- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
-- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
-- Type: Improvement
-- Effort: M | Gain: L
-- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
-
 ---
 
 ## P0 — Hard Blockers *(drop everything)*
 
-*(none)*
+### [GAME-ENDS] Chore: ME - Game Ending is broken - throws (currently unknown) error, breaking showing the game finished screen
+- Need to debug this by skipping to endame + using cheat
+- Suppposedly the black & white filter is confusing and end buttons appear one by one is also confusing
+- Needs a manual review
 
 ---
 
 ## P1 — Serious Issues & Big Wins
 
 ### [PLAY-GATE] Chore: ME — Personal playtesting gate before beta
-- Finish the game at least 3x; upload data to leaderboard and confirm score appears within 35 min; test fishing boss summon via Curse in the same session (repeat) and across sessions; verify Rankings and Chronicles UI flow end-to-end.
+- Finish the game at least 3x; test fishing boss summon via Curse in the same session (repeat) and across sessions; verify Rankings and Chronicles UI flow end-to-end; once deployed to live - upload data to leaderboard and confirm score appears within 15 min;
 - Priority: P1 — hard gate; nothing ships to friends before this is done
 - Type: Chore
 - Effort: M | Gain: XL
@@ -143,7 +89,7 @@
 - Effort: M | Gain: XL
 
 ### [TUTOR-REVAMP] Feature: Tutorial revamp
-- Current tutorial is hardcoded in story.csv — needs feature-level improvement: explain the action bar mechanic on first encounter, hint that moral choices accumulate, clarify drachma persistence across runs.
+- Current tutorial is hardcoded in story.csv — needs feature-level improvement: explain the action bar "better", hint that moral choices accumulate, clarify drachma persistence across runs, clarify memories unlock features, clarify that there is a main menu below the game screen
 - Priority: P2 — onboarding is the #1 beta risk; wrong mental models form in the first 3 minutes
 - Type: Feature
 - Effort: M | Gain: XL
@@ -153,12 +99,6 @@
 - Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it
 - Type: Feature
 - Effort: L | Gain: L
-
-### [RANK-UI] Improvement: ME — Rankings and Chronicles UI tweak
-- Refine Rankings list + detail and Chronicles list + detail — layout, readability, endgame polish.
-- Priority: P2 — endgame screens are the social product; unfinished here reads as abandoned
-- Type: Improvement
-- Effort: M | Gain: L
 
 ### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
 - Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
@@ -196,14 +136,6 @@
 - Priority: P3 — flavor text without causality hint is decoration; this is what closes the feedback loop between player stats and moment-to-moment feel.
 - Type: Feature
 - Effort: M | Gain: L
-
-### [COMP-STAKES] Feature: Companion narrative stakes — full system (Hades Gate)
-- Full companion stakes design: companion individuation (a logged "named moment" when a companion joins), enemy steal/kill mechanic, rescue/revenge fight. Companions must feel like relationships with a story, not emoji bonuses.
-- Do NOT implement until [COMP-PLAY] is stable and companions have demonstrated passive gameplay value first. Design via Hades Gate when ready.
-- Priority: P3 — companion individuation before the steal/kill mechanic is a hard prerequisite; loss only lands if attachment was built.
-- Type: Feature
-- Effort: XL | Gain: XL
-- Needs: Full design via Hades Gate. Prerequisite: [COMP-PLAY] stable.
 
 ### [STAT-DISP] Improvement: Stat display — show numeric when over 5
 - If a stat value exceeds 5, display it as a number (e.g., ❤️ 4/6) instead of the icon-count style — UI space is limited.
@@ -271,12 +203,6 @@
 - Type: Feature
 - Effort: M | Gain: M
 
-### [MAGIC-CONT] Feature: New encounter type — Magic Container (cast to unlock)
-- Container that requires Cast to open — contains an item (50% artifact chance, same as standard locked containers).
-- Priority: P3 — extends existing container design with a mana decision
-- Type: Feature
-- Effort: S | Gain: M
-
 ### [PINATA-TRAP] Feature: Piñata positive trap — correct button handling
 - Grab and Block on a piñata trap should be all red; remaining buttons should be easy as prop; Avoid should follow walk rules.
 - Priority: P3 — existing encounter type behaving inconsistently
@@ -301,43 +227,12 @@
 - Type: Feature
 - Effort: M | Gain: M
 
-### [KARMA-OVRHL] Feature: Karma overhaul — full system
-- Revive interval scaled by karma; Speak on aggressive enemies = +1 karma; Attack on neutral/friendly = -2 karma; karma decay toward 1 across runs; tiered reincarnation bonus; mischievous encounter variants at karma < 0; perks/flaws unlocked at ±10 karma; good karma bonus encounter (not only on revive); proactive actions to repair bad karma. Expand all hooks; ensure hints make karma legible.
-- Priority: P3 — transformative system but XL scope; must not ship incomplete
-- Type: Feature
-- Effort: XL | Gain: XL
-
-### [INVAD-GRAVE] Feature: Invader Graveyard UI
-- "👾 Kill List" section in Main Menu screen — name, area, level per entry, persisted under rivalGraveyard in localStorage.
-- Priority: P3 — social trophy moment; not blocking
-- Type: Feature
-- Effort: S | Gain: M
-
-### [FIGHT-GHOST] Feature: Fight Your Own Ghost
-- When leaderboard pool is empty/unavailable, spawn a rival from the player's own last submitted run (ghostLink localStorage) — type "👁 Echo," desc "A reanimated corpse bearing your face."
-- Priority: P3 — clean offline fallback for the rivals system
-- Type: Feature
-- Effort: S | Gain: M
-
-### [RUN-MOD] Feature: Game run modifiers
-- Unlockable run modifiers activated via Origins or special conditions (e.g., Demons passive, Animals passive).
-- Priority: P3 — build variety depth
-- Type: Feature
-- Effort: L | Gain: M
-- Needs: Define unlock conditions and exact modifier effects before implementing.
-
-### [OFFHAND-SLOT] Question: Offhand/accessory slot — needed or stat creep?
-- Decide whether to add a dedicated offhand slot (talisman, yoyo, spellbook, shield...) or a generic accessory slot alongside the head/chest/hands system — purpose is to gatekeep stats and prevent runaway stat accumulation, not just add variety.
+### [OFFHAND-SLOT] Question: Trinket slot — needed or stat creep?
+- Decide whether to add a dedicated Trinket (talisman, yoyo, spellbook, shield...) alongside the head/chest/hands system — purpose is to gatekeep stats and prevent runaway stat accumulation, not just add variety.
 - Priority: P3 — this design decision must be made before the inventory expansion (below) is architected; adding the slot after the fact changes the structure
 - Type: Question
 - Effort: S | Gain: M
 - Needs: Answer: does adding a gatekeeping slot solve a real creep problem, or does it add complexity without payoff? Decision informs inventory expansion scope.
-
-### [INV-EXPND] Feature: Expand inventory — consumables + equipment slots
-- Add consumables array; head/chest/hands item slots with swap mechanic (prevents fast stacking); intentional food eating only (no auto-consume); open inventory on click of loot/party bar.
-- Priority: P3 — major architecture change; high gain but XL scope
-- Type: Feature
-- Effort: XL | Gain: L
 
 ### [STR-AUDIT] Chore: String writer skill + full CSV/JS string audit
 - Create a lightweight Claude skill for writing CSV and JS string fields — strict tone matching, length-optimized. Follow with a full audit pass using it.
@@ -380,6 +275,12 @@
 - Effort: M | Gain: L
 - Needs: Confirm generation timing before writing code.
 
+### [KARMA-OVRHL] Feature: Karma overhaul — full system
+- Revive interval scaled by karma; Speak on aggressive enemies = +1 karma; Attack on neutral/friendly = -2 karma; karma decay toward 1 across runs; tiered reincarnation bonus; mischievous encounter variants at karma < 0; perks/flaws unlocked at ±10 karma; good karma bonus encounter (not only on revive); proactive actions to repair bad karma. Expand all hooks; ensure hints make karma legible.
+- Priority: P3 — transformative system but XL scope; must not ship incomplete
+- Type: Feature
+- Effort: XL | Gain: XL
+
 ---
 
 ## P4 — Nice to Have
@@ -411,54 +312,17 @@
 - Effort: S | Gain: S
 - Needs: Define what the Groom origin's power should be.
 
-### [KARMA-ITEM] Idea: Legendary item — negates bad karma effects
-- A Legendary that offsets karma penalties — requires karma overhaul (P3) to exist first.
-- Priority: P4 — blocks on the karma system
-- Type: Idea
-- Effort: S | Gain: S
-
 ### [ALTAR-PRAY] Idea: Altar — no stat bonus, Pray = XP
 - A simple altar encounter where Pray grants XP with no stat effect.
 - Priority: P4 — minor content addition
 - Type: Idea
 - Effort: XS | Gain: S
 
-### [UNDEAD-RISE] Idea: Undead transformation — player killed by undead rises at 1HP
-- Being killed by an undead enemy causes the player to rise as undead: 1 HP, half STA, skip death state; append 🧟 before player name; undead enemies deal 0 base ATK against the transformed player.
-- Priority: P4 — interesting mechanic but significant state complexity
-- Type: Idea
-- Effort: M | Gain: M
-
 ### [PROP-SPAWN] Idea: Hit prop once to spawn a small encounter
-- Allow a single hit on a Prop to attempt spawning a small encounter — push a copy of the prop forward if unused.
+- Allow a single hit/touch on a Prop to attempt (% roll) spawning a small encounter — push a copy of the prop forward to reocurr after the small ecnounter.
 - Priority: P4 — variant of the Camp type; interesting but low clarity
 - Type: Idea
 - Effort: S | Gain: S
-
-### [PORTAL-VLG] Idea: Portal to village — skip early game (verify if done)
-- Story-progress-unlockable portal skipping early areas. Marked as possibly already done with the gate.
-- Priority: P4 — verify before resurrecting
-- Type: Idea
-- Effort: S | Gain: S
-- Needs: Confirm whether the current gate encounter already implements this.
-
-### [SFX-MUSIC] Feature: Sounds — SFX and background music
-- Investigate platform support (iOS, Android, Mac, Windows) and add sound effects and ambient music.
-- Priority: P4 — audio is transformative but large scope with platform risk
-- Type: Feature
-- Effort: L | Gain: L
-
-### [CLEAN-IDEAS] Chore: ME — Clean ideas folder
-- Review and archive or delete the ideas folder contents.
-- Priority: P4 — housekeeping
-- Type: Chore
-- Effort: S | Gain: XS
-
-### [RIVER-ATM] Feature: River of Sorrows — atmosphere encounters + dock handoff
-- 1–2 static Memory-type story encounters (Drifting Lanterns, Wrecked Hull, Shore Inscription). Post-boss dock encounter as Necropolis area handoff using fullscreen fade. Memory type needs non-trivial work outside Fairyland context.
-- Priority: P4 — atmosphere; not beta-facing
-- Type: Feature
-- Effort: M | Gain: M
 
 ### [FISH-LOOT] Feature: Bloat fishing loot — items, threats, floating altars
 - Add variety to fishing encounter pool: items, threats, traps, floating altars.
@@ -500,9 +364,20 @@
 
 ## Backlog
 
-### [RUN-IMPACT] Feature: Full run impact summary (Hades Gate)
+### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
+- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
+- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
+- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
+- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
+- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
+- Type: Improvement
+- Effort: M | Gain: L
+- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
+
+### [RUN-IMPACT] Feature: Full run impact summary + highscore calculation breakdown (Hades Gate)
 - End-of-run or game-over screen shows a narrative summary of what the player's choices and companions contributed — e.g. "Your dog warned you twice. Your karma cost you the ending you deserved." Goes well beyond [KILL-LINE]'s single sentence.
 - Requires tracking choice impact throughout the run (karma deltas, companion saves, key moments). Design via Hades Gate when the simpler beta tier ([KILL-LINE]) is proven and player data gives signal on what moments are most memorable.
+- Also give player insight into what exactly contributed toward/aginst their score.
 - Priority: P4 — [KILL-LINE] covers the beta tier; this is the full vision for a post-beta update.
 - Type: Feature
 - Effort: XL | Gain: XL
@@ -542,20 +417,6 @@
 - Type: Feature
 - Effort: XL | Gain: L
 
-### [NECRO-OPT] Feature: Necropolis optional areas
-- Optional sub-areas for late-game variety inside Shrouded Necropolis.
-- Priority: P4 — content; post-beta
-- Type: Feature
-- Effort: L | Gain: M
-- Needs: Define what optional areas look like and how they gate before designing.
-
-### [SVG-EMOJI] Feature: SVG support in emoji column
-- Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
-- Priority: P4 — infra change for a niche use case
-- My note: would actually give ability to have endless content as we are running out of emojis
-- Type: Feature
-- Effort: M | Gain: S
-
 ### [DEF-STAT] Bug: Player DEF stat — wrong display, item support gaps, incorrect rarity
 - Consolidate damage log message to be a sigle message (not two as now - one for dmg, second for def) when player DEF is non-zero and had effect example "Hit by their attack -1💔 (1🔰); not all item types account for DEF; an item with DEF as its sole non-zero stat should resolve as Legendary (Artifact).
 - Priority: P1 — a live, UI-visible stat behaving incorrectly
@@ -578,29 +439,17 @@
 - Effort: S | Gain: L
 
 ### [VIS-IMPACT] Improvement: Full visual impact frames — hit flash, damage flash, STA fade
-- Flash white when player hits; red-white flash when player takes damage; green fade when losing STA — especially prominent at 1 HP or 0 STA. Full-screen shakes for critical moments.
+- Flash white when player hits; red-white flash when player takes damage and is left with just 1 hp; green flash when losing STA and left with 1 sta.
 - Priority: P3 — broader than .flash-crit; higher effort but higher feel impact
 - My Note: -> P4 Such visual changes always take a long time to be good, parking lot this after beta, we have some visual feedback already.
 - Type: Improvement
 - Effort: M | Gain: L
-
-### [TIPS-SYS] Idea: Game tips system (parked)
-- Tips that trigger on player state (first death, first Artifact, low STA) using existing toast system — easy/story difficulty only. Parked — tutorial revamp (P2) supersedes this.
-- Priority: P4 — superseded by tutorial revamp; keep as reference if tip-layer is needed later
-- Type: Idea
-- Effort: S | Gain: XS
 
 ### [VEC-BG] Feature: Vector backgrounds for all areas
 - Complete and default to vector backgrounds for all areas.
 - Priority: P4 — significant atmosphere upgrade; L effort, not mobile-critical
 - Type: Feature
 - Effort: L | Gain: M
-
-### [BLACK-HOLE] Feature: Black hole — new optional area + spaghetti monster boss
-- DLC-style optional area with spaghetti monster boss, modern props, items, tools. The JS spaghetti monster joke boss lives here.
-- Priority: P4 — fun/joke expansion; well outside current scope
-- Type: Feature
-- Effort: XL | Gain: S
 
 ---
 
@@ -614,6 +463,14 @@
 - Effort: XL | Gain: XL
 - Needs: Full design via Hades Gate. Prerequisites: [PET-ENCNTR] shipped, [COMP-PLAY] stable.
 
+### [COMP-STAKES] Feature: Companion narrative stakes — full system (Hades Gate)
+- Full companion stakes design: companion individuation (a logged "named moment" when a companion joins), enemy steal/kill mechanic, rescue/revenge fight. Companions must feel like relationships with a story, not emoji bonuses.
+- Do NOT implement until [COMP-PLAY] is stable and companions have demonstrated passive gameplay value first. Design via Hades Gate when ready.
+- Priority: P3 — companion individuation before the steal/kill mechanic is a hard prerequisite; loss only lands if attachment was built.
+- Type: Feature
+- Effort: XL | Gain: XL
+- Needs: Full design via Hades Gate. Prerequisite: [COMP-PLAY] stable.
+
 ### [LOOT-ANIM] Feature: Full loot reveal animation — roll → snap (Hades Gate)
 - Full loot reveal flow: an animated "rolling" state (cycling emoji shimmer, blurred or randomized placeholder) builds anticipation before everything lands with a visual snap — rarity-colored flash or pulse keyed to the tier revealed (Common = subtle, Legendary = full flash).
 - All three card elements are obscured during the roll: emoji, name, and desc. All three snap into place simultaneously.
@@ -624,6 +481,83 @@
 - Type: Feature
 - Effort: L | Gain: XL
 - Needs: Full design via Hades Gate. Prerequisite: [LOOT-TEAS] shipped and validated.
+
+### [KARMA-ITEM] Idea: Legendary item — negates bad karma effects
+- A Legendary that offsets karma penalties — requires karma overhaul (P3) to exist first.
+- Priority: P4 — blocks on the karma system
+- Type: Idea
+- Effort: S | Gain: S
+
+### [UNDEAD-RISE] Idea: Undead transformation — player killed by undead rises at 1HP
+- Being killed by an undead enemy causes the player to rise as undead: 1 HP, half STA, skip death state; append 🧟 before player name; undead enemies deal 0 base ATK against the transformed player.
+- Priority: P4 — interesting mechanic but significant state complexity
+- Type: Idea
+- Effort: M | Gain: M
+
+### [PORTAL-VLG] Idea: Portal to village — skip early game (verify if done)
+- Story-progress-unlockable portal skipping early areas. Marked as possibly already done with the gate - possibly move the gate to village from the fairlyand, not sure if current placement is great.
+- Priority: P4 — verify before resurrecting
+- Type: Idea
+- Effort: S | Gain: S
+- Needs: Confirm whether the current gate encounter already implements this.
+
+### [NECRO-OPT] Feature: Necropolis optional areas
+- Optional sub-areas for late-game variety inside Shrouded Necropolis.
+- Priority: P4 — content; post-beta
+- Type: Feature
+- Effort: L | Gain: M
+- Needs: Define what optional areas look like and how they gate before designing.
+
+### [SVG-EMOJI] Feature: SVG support in emoji column
+- Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
+- Priority: P4 — infra change for a niche use case
+- My note: would actually give ability to have endless content as we are running out of emojis
+- Type: Feature
+- Effort: M | Gain: S
+
+### [MAGIC-CONT] Feature: New encounter type — Magic Container (cast to unlock)
+- Container that requires Cast to open — contains an item (50% artifact chance, same as standard locked containers).
+- This can be easily achieved with adding some MGK to any container (can be anywhere between 1-4), "magic barrier" until "casted upon"
+- Priority: P3 — extends existing container design with a mana decision
+- Type: Feature
+- Effort: S | Gain: M
+
+### [SFX-MUSIC] Feature: Sounds — SFX and background music
+- Investigate platform support (iOS, Android, Mac, Windows) and add sound effects and ambient music.
+- Priority: P4 — audio is transformative but large scope with platform risk
+- Type: Feature
+- Effort: L | Gain: L
+
+### [SEQ-DELAY] Improvement: Sequential action display — delay 0.5s per log entry
+- Add a 0.5s delay between log entries in multi-step action sequences; wait for effects to complete before re-enabling player input.
+- Wrap the `logAction()` call chain in a `setTimeout` queue; 500ms between entries; block player input until the chain resolves; scope to multi-step sequences only — single actions stay instant.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [INV-EXPND] Feature: Expand inventory — consumables + equipment slots
+- Add consumables array; head/chest/hands item slots with swap mechanic (prevents fast stacking); intentional food eating only (no auto-consume); open inventory on click of loot/party bar.
+- Priority: P3 — major architecture change; high gain but XL scope
+- Type: Feature
+- Effort: XL | Gain: L
+
+### [INVAD-GRAVE] Feature: Invader Graveyard UI
+- "👾 Kill List" section in Main Menu screen — name, area, level per entry, persisted under rivalGraveyard in localStorage.
+- Priority: P3 — social trophy moment; not blocking
+- Type: Feature
+- Effort: S | Gain: M
+
+### [RUN-MOD] Feature: Game run modifiers
+- Unlockable run modifiers activated via Origins or special conditions (e.g., Demons passive, Animals passive).
+- Priority: P3 — build variety depth
+- Type: Feature
+- Effort: L | Gain: M
+- Needs: Define unlock conditions and exact modifier effects before implementing.
+
+### [BLACK-HOLE] Feature: Black hole — new optional area + spaghetti monster boss
+- DLC-style optional area with spaghetti monster boss, modern props, items, tools. The JS spaghetti monster joke boss lives here.
+- Priority: P4 — fun/joke expansion; well outside current scope
+- Type: Feature
+- Effort: XL | Gain: S
 
 ---
 
