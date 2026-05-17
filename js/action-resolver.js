@@ -604,7 +604,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             } else {
               if (enemyTeam.includes("Transient Currency")) {
-                logPlayerAction(actionString, "Bound to your soul, cannot be left behind.");
+                logPlayerAction(actionString, "It is now bound to your soul.");
                 displayPlayerCannotEffect();
                 break;
               }

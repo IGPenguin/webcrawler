@@ -815,9 +815,9 @@ var Menu = (function () {
     btn.onclick = handler;
   }
 
-  function _renderRankings() {
+  function _renderRankings(skipFade) {
     _bindRankingsBack('👈 Back', function () { _renderMain(); });
-    _showScreen('menu_rankings_screen');
+    if (skipFade === true) { _doShowScreen('menu_rankings_screen'); } else { _showScreen('menu_rankings_screen'); }
     var list = document.getElementById('menu_rankings_list');
     var sc = list.parentElement;
     sc.style.overflowY = 'auto';
@@ -866,7 +866,7 @@ var Menu = (function () {
   }
 
   function _renderViewGhost(ghost) {
-    _bindRankingsBack('👈 Back', _renderRankings);
+    _bindRankingsBack('👈 Back', function () { menuFade(function () { _renderRankings(true); }); });
     var list = document.getElementById('menu_rankings_list');
     var sc = list.parentElement;
     sc.style.overflowY = 'hidden';
