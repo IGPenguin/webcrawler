@@ -187,7 +187,7 @@ layout: default
                text-align:center;">⚠️ Really want to restart?</h2>
         <div id="menu_confirm_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
         <div id="menu_confirm_warning" style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:14px; line-height:26px; margin-bottom:6px"><b style="font-weight:600; color:red; font-size:16px; ">Your game progress will be lost forever!</b><br><b style="font-weight:800; color:#62a862ff">🧩 Memories</b> and <b style="font-weight:800; color:#7193bf;">🪙 Drachmae</b> are eternal.</h4>
+        <h4 style="text-align:center; min-height:0; font-size:14px; line-height:26px; margin-bottom:6px"><b style="font-weight:600; color:red; font-size:16px; ">Your current game progress will be lost!</b><br><b style="font-weight:800; color:#62a862ff">🧩 Memories</b> and <b style="font-weight:800; color:#7193bf;">🪙 Drachmae</b> are forever.</h4>
       </div>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✕ Start Over</button>
@@ -353,7 +353,7 @@ layout: default
     <h3 id="companion_name_title" style="text-align:center; margin:0 0 16px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">✏️ Name them:</h3>
     <input id="companion_name_input" type="text" maxlength="32" placeholder="Enter a name..." style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
     <button id="companion_name_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Confirm</button>
-    <button id="companion_name_skip" class="menu-btn" style="margin-top:4px; color:#888;">✕ Skip</button>
+    <button id="companion_name_skip" class="menu-btn" style="margin-top:4px; color:#FF0000;">✕ Skip</button>
   </div>
 </div>
 

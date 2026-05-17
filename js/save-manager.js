@@ -1,8 +1,6 @@
 var SaveManager = (function () {
   var HISTORY_KEY  = 'sessionHistory';
   var STATE_KEY    = 'gameState';
-  var MAX_SESSIONS = 20;
-
   // ── Session history ────────────────────────────────────────────────────────
 
   function saveSession(session) {
@@ -11,7 +9,6 @@ var SaveManager = (function () {
     }
     var history = listSessionHistory();
     history.unshift(session);
-    if (history.length > MAX_SESSIONS) history.length = MAX_SESSIONS;
     try {
       localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
     } catch (e) {

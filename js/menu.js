@@ -504,6 +504,22 @@ var Menu = (function () {
     list.parentElement.style.overflowY = 'auto';
     var sessions = SaveManager.listSessionHistory();
 
+    var _note = document.getElementById('menu_rankings_note');
+    if (_note) {
+      if (sessions.length === 0) {
+        _note.innerHTML = 'No paths have been walked yet.';
+      } else {
+        var _wins = sessions.filter(function(s) {
+          return s.endType && s.endType.indexOf('win') === 0;
+        }).length;
+        var _losses = sessions.length - _wins;
+        _note.innerHTML = 'The paths of the '
+          + '<span style="color:#FFD940;">' + _wins + '&nbsp;Endured</span>'
+          + ' and the '
+          + '<span style="color:#E84040;">' + _losses + '&nbsp;Faded</span>.';
+      }
+    }
+
     if (sessions.length === 0) {
       list.innerHTML =
         '<h4 style="color:#fff; text-align:center; min-height:0; ' +
@@ -769,17 +785,21 @@ var Menu = (function () {
             + d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' })
             + '</h5>';
         }
+        var unlockLine = a.unlock
+          ? '<h5 style="margin:0px 0 4px 0; font-size:13px; font-weight:400; color:#ffffff; text-align:left;">' + a.unlock + '</h5>'
+          : '<h5 style="margin:0px 0 4px 0; opacity:0.6; font-size:13px; font-weight:400; color:#CCCCCC; text-align:left;">Carved into who you are.</h5>';
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:8px; padding:12px 0px 8px 12px; margin-bottom:-8px;">'
             + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + tsLine + '</div>'
+            + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + unlockLine + tsLine + '</div>'
           + '</div>';
       } else {
         var hintText = (a.hint && a.hint.length > 0) ? a.hint : "Not discovered yet.";
+        var lockedUnlockLine = '<h5 style="margin:4px 0 4px 0; font-size:13px; font-weight:400; color:#CCCCCC; text-align:left;">Something not yet remembered.</h5>';
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:8px; padding:12px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
             + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
-            + '<div><h5 style="margin:0; font-size:16px; font-style:itallic; font-weight:500; color:#CCCCCC; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + (hintText || '') + '</h5>' + tsLine + '</div>'
+            + '<div><h5 style="margin:0; font-size:16px; font-weight:500; color:#CCCCCC; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + (hintText || '') + '</h5>' + lockedUnlockLine + tsLine + '</div>'
           + '</div>';
       }
       list.appendChild(entry);

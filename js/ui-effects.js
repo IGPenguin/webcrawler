@@ -42,10 +42,10 @@ function transitionToGame(callback, message) {
         if (_curtainGen !== gen) return;
         textEl.classList.remove('animate__animated', 'animate__fadeIn');
         void curtain.offsetWidth;
-        curtain.style.setProperty('--animate-duration', '1s');
+        curtain.style.setProperty('--animate-duration', '0.7s');
         curtain.classList.add('animate__animated', 'animate__fadeOut');
         void textEl.offsetWidth;
-        textEl.style.setProperty('--animate-duration', '1s');
+        textEl.style.setProperty('--animate-duration', '0.7s');
         textEl.classList.add('animate__animated', 'animate__fadeOut');
 
         curtain.addEventListener('animationend', function onFadeOut() {
@@ -57,10 +57,10 @@ function transitionToGame(callback, message) {
           textEl.classList.remove('animate__animated', 'animate__fadeOut');
           textEl.style.display = 'none';
         });
-      }, 1800);
+      }, 3000);
     } else {
       void curtain.offsetWidth;
-      curtain.style.setProperty('--animate-duration', '1s');
+      curtain.style.setProperty('--animate-duration', '0.7s');
       curtain.classList.add('animate__animated', 'animate__fadeOut');
 
       curtain.addEventListener('animationend', function onFadeOut() {
@@ -99,7 +99,7 @@ function transitionArea(html, callback) {
     textEl.innerHTML = html;
     textEl.style.display = 'block';
     void textEl.offsetWidth;
-    textEl.style.setProperty('--animate-duration', '0.7s');
+    textEl.style.setProperty('--animate-duration', '0.5s');
     textEl.classList.add('animate__animated', 'animate__fadeIn');
 
     // Hold, then fade both out together
@@ -107,10 +107,10 @@ function transitionArea(html, callback) {
       if (_curtainGen !== gen) return;
       textEl.classList.remove('animate__animated', 'animate__fadeIn');
       void curtain.offsetWidth;
-      curtain.style.setProperty('--animate-duration', '0.65s');
+      curtain.style.setProperty('--animate-duration', '0.7s');
       curtain.classList.add('animate__animated', 'animate__fadeOut');
       void textEl.offsetWidth;
-      textEl.style.setProperty('--animate-duration', '0.65s');
+      textEl.style.setProperty('--animate-duration', '0.7s');
       textEl.classList.add('animate__animated', 'animate__fadeOut');
 
       curtain.addEventListener('animationend', function onOut() {
@@ -123,7 +123,7 @@ function transitionArea(html, callback) {
         textEl.style.display = 'none';
         registerClickListeners(300);
       });
-    }, 900);
+    }, 2000);
   });
 }
 
@@ -150,7 +150,7 @@ function curtainFadeInAndOut(message="", duration=3, onComplete) {
       textEl.innerHTML = message;
       textEl.style.display = 'block';
       void textEl.offsetWidth;
-      textEl.style.setProperty('--animate-duration', '0.3s');
+      textEl.style.setProperty('--animate-duration', '0.5s');
       textEl.classList.add('animate__animated', 'animate__fadeIn');
     }
 
@@ -159,7 +159,7 @@ function curtainFadeInAndOut(message="", duration=3, onComplete) {
       if (message) {
         textEl.classList.remove('animate__animated', 'animate__fadeIn');
         void textEl.offsetWidth;
-        textEl.style.setProperty('--animate-duration', '0.65s');
+        textEl.style.setProperty('--animate-duration', '0.7s');
         textEl.classList.add('animate__animated', 'animate__fadeOut');
       }
 
@@ -179,7 +179,7 @@ function curtainFadeInAndOut(message="", duration=3, onComplete) {
         }
         if (onComplete) onComplete(); else registerClickListeners(300);
       });
-    }, duration * 500);
+    }, duration * 1000);
   });
 }
 

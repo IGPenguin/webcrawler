@@ -63,7 +63,6 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
         logAction("💭 ▸ 👣 Arrived to: <b>"+areaName+"</b>");
         AchievementManager.check('discover_area', areaName);
       }
-      animateUIElement(cardUIElement,"animate__fadeIn","1.2");
       redraw();
       startEnemyEmojiPulse();
       _fireRemembranceFade();
@@ -90,9 +89,9 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
 function _fireRemembranceFade() {
   if (!enemyTeam) return;
   if (enemyType === "Memory") {
-    setTimeout(function() { curtainFadeInAndOut(getMeetingPlaceFade(), 4); }, 300);
+    setTimeout(function() { curtainFadeInAndOut(getMeetingPlaceFade(), 3); }, 300);
   } else if (enemyTeam.includes("Remembrance") || enemyTeam.includes("Piece of History")) {
-    setTimeout(function() { curtainFadeInAndOut(getWeddingInvitationFade(), 4); }, 300);
+    setTimeout(function() { curtainFadeInAndOut(getWeddingInvitationFade(), 3); }, 300);
   }
 }
 
