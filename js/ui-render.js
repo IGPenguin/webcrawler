@@ -448,7 +448,7 @@ function showAchievementToast(achievement, unlockTimestamp, onDone) {
   toast.style.cssText =
     'position:absolute; top:0; left:3px; right:3px;' +
     'z-index:9999; pointer-events:none; box-sizing:border-box;' +
-    'background:#272727; overflow:hidden;' +
+    'background-color:#272727; overflow:hidden;' +
     'box-shadow:0 0 0 3px ' + toastColor + ';' +
     'opacity:0; transition:opacity 0.3s;';
 

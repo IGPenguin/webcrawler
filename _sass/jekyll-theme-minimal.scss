@@ -518,11 +518,12 @@ button:active {
 
 // ── Pixel UI treatments ────────────────────────────────────────────────────
 
-// Raised: name/stat headers — same elevation as buttons, 3px bands to fit tight rows
+// Raised: name/stat headers + achievement toast — same elevation as buttons, 3px bands to fit tight rows
 #id_name,
 #id_player_name,
 #id_player_status,
 #id_player_party_loot,
+#achievement_toast,
 .box-border-dynamic:has(#id_stats) {
   background-image: linear-gradient(
     to bottom,
