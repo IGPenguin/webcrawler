@@ -2411,22 +2411,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           displayPlayerEffect("📣");
           convinceInt=playerInt*2;
         }
+        if (_crit === 'success') convinceInt += 2;
+        else if (!_skillOK && _crit === 'fail') convinceInt -= 2;
 
         // Gibberish: action-bar failure + low INT = player fumbles their words
         // Chance: 90% at INT 0, ~0% at INT 7+; skips special non-combat encounter types
         if (_skillOK === false) {
           var _noGibberishTypes = /Upgrade|Death|Dream|Altar|Shop|Curse|Memory/.test(enemyType);
-          if (!_noGibberishTypes && _crit === 'fail') {
-            enemyAtkBonus = Math.min(enemyAtkBonus + 1, 3);
-            logPlayerAction(actionString, "Your words emboldened them +1 ⚔️");
-            displayPlayerCannotEffect();
-            if (enemyCastIfMgk()) break;
-            enemyAttackOrRest();
-            break;
-          }
-          var _gibberishChance = Math.max(0, 0.9 - playerInt * 0.12);
+          var _gibberishChance = Math.min(1, Math.max(0, 0.9 - convinceInt * 0.12));
           if (!_noGibberishTypes && Math.random() < _gibberishChance) {
-            logPlayerAction(actionString, "It came out as gibberish.");
+            logPlayerAction(actionString, (_crit === 'fail') ? "Your words came out all wrong." : "It came out as gibberish.");
             displayPlayerCannotEffect();
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
@@ -2587,18 +2581,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
-              enemyAtkBonus-=2;
-              logPlayerAction(actionString,"Rattled them to the core -2 ⚔️");
-              displayEnemyCannotEffect();
-              if ((enemyAtkBonus+enemyAtk) > 0) enemyAttackOrRest();
-              break;
-            }
-
             if (enemyInt < convinceInt){
               if ((enemyAtk+enemyAtkBonus)>0){
                 enemyAtkBonus--;
-                logPlayerAction(actionString,"Managed to calm them down -1 ⚔️");
+                logPlayerAction(actionString, (_crit === 'success') ? "Found the right words -1 ⚔️" : "Managed to calm them down -1 ⚔️");
                 if ((enemyAtk+enemyAtkBonus)>0) {
                   enemyAttackOrRest();
                 } else {
@@ -2620,8 +2606,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             } else if ((enemyInt > (convinceInt+2)) && enemyAtkBonus <= maxEnemyAngryBoost) {
               if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
-              logPlayerAction(actionString,"They got more angry +1 ⚔️");
-              //enemyName=enemyName+" (Angry)";
+              logPlayerAction(actionString, (!_skillOK && _crit === 'fail') ? "Your fumbled words enraged them +1 ⚔️" : "They got more angry +1 ⚔️");
               enemyAtkBonus+=1;
             } else {
               var speechChance = Math.floor(Math.random() * luckInterval);
@@ -2631,7 +2616,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               } else {
                 if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
-                logPlayerAction(actionString,"They ignored whatever you said.");
+                logPlayerAction(actionString, (!_skillOK && _crit === 'fail') ? "Your words fell flat, ignored." : "They ignored whatever you said.");
               }
             }
             if (enemyCastIfMgk()) break;
