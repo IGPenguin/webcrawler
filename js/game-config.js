@@ -13,6 +13,7 @@ var RARITY_KARMA_ENABLED = false;
 // ── Difficulty Presets ────────────────────────────────────────────────────────
 // speedMult:             action bar speed multiplier — >1 faster cursor (harder), <1 slower (easier)
 // zoneMult:              success zone width multiplier — 1.0 = standard, 0.8 = 20% narrower (harder), 1.2 = 20% wider (easier)
+// bossPenalty:           added to eStat before zone calc for Boss-type enemies (higher = narrower zone = harder)
 // spawnItemDropBonus:    additive % bonus to item spawn chances in encounter generators
 // spawnConsumableDropBonus: additive % bonus to consumable spawn chances in encounter generators
 // killItemDropChance:    base % chance for an item to drop on kill/knockout (luck added at runtime)
@@ -30,6 +31,7 @@ var DIFFICULTY_MODES = {
     displayName:              "💔 Rough",
     speedMult:                1.0,
     zoneMult:                 1.0,
+    bossPenalty:              4,
     spawnItemDropBonus:       0,
     spawnConsumableDropBonus: 0,
     killItemDropChance:       5,
@@ -48,6 +50,7 @@ var DIFFICULTY_MODES = {
     displayName:              "🕯️ Story",
     speedMult:                0.8,
     zoneMult:                 1.2,
+    bossPenalty:              2,
     spawnItemDropBonus:       5,
     spawnConsumableDropBonus: 8,
     killItemDropChance:       5,
@@ -66,6 +69,7 @@ var DIFFICULTY_MODES = {
     displayName:              "☠️ Fatal",
     speedMult:                1.2,
     zoneMult:                 0.8,
+    bossPenalty:              6,
     spawnItemDropBonus:       -4,
     spawnConsumableDropBonus: -4,
     killItemDropChance:       10,

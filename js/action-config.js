@@ -550,7 +550,7 @@ function calcActionBarConfig(button, adjustment) {
       pStat = 1; eStat = 0; baseW = 50; baseSpeed = 42;
   }
 
-  if (isBoss) eStat += 5;
+  if (isBoss) eStat += (GAME_CONFIG.bossPenalty || 4.5);
 
   var zoneW = Math.round(baseW + pStat * 6 - eStat * 4 + (adjustment || 0));
 

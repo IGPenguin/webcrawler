@@ -349,11 +349,6 @@ function adjustEncounterButtons(){
     case "Undead":
     case "Spirit":
     case "Demon":
-      if (playerMgk>0) {
-        setButton('button_pray',"🔥 Banish");
-      } else {
-        setButton('button_pray',"🔥 Banish",colorDarkGrey);
-      }
       if (enemyType!="Undead" && enemyInt>-1 && enemyInt<playerInt && enemyAtk>0) {
         setButton('button_speak',"💬 Defuse");
       } else if (playerLootString.includes("🏳️")) {

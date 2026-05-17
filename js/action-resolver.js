@@ -1372,12 +1372,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
-          if (enemyType=="Spirit" || enemyType=="Demon" || enemyType=="Undead"){
-            if (!playerUseMagic(1,"Not enough mana, requires +2 🔵")) {
-              break;
-            }
-          }
-
           if (enemyType!="Death" && enemyType!="Dream") {displayPlayerEffect(actionString.substring(0,actionString.indexOf(" ")));}
 
           if (_skillOK === false && enemyType!=="Altar" && enemyType!=="Upgrade"
@@ -1415,21 +1409,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
-          case "Spirit":
-          case "Demon":
-            if ((playerMgk>0)&&(enemyInt <= playerInt )){
-              var gainedXP=playerGainXP(1.25,0,"")
-              logPlayerAction(actionString,"Banished them from this world -1 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
-              displayEnemyEffect("🔥");
-              nextEncounter();
-              break;
-            } else {
-              logPlayerAction(actionString,"Could not overpower this entity!");
-            }
-            if (enemyCastIfMgk()) break;
-            enemyAttackOrRest();
-            break;
-
           case "Consumable":
           case "Trap":
           case "Trap-Big":
@@ -1453,22 +1432,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
+          case "Spirit":
+          case "Demon":
+          case "Undead":
             playerHeal(_crit === 'success');
             if (enemyCastIfMgk()) break;
-            enemyAttackOrRest();
-            break;
-
-          case "Undead": //Reduce attack if possible
-            if (playerMgkMax >= enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
-              enemyAtkBonus-=1;
-              logPlayerAction(actionString,"Made them -1 ⚔️ weaker for -1 🔵");
-              enemyName=enemyName+" (Weakened)";
-              displayEnemyEffect("🔥");
-            } else if (playerMgkMax < enemyMgk) {
-              logPlayerAction(actionString,"They resisted your prayer -1 🔵");
-            } else {
-              logPlayerAction(actionString,"Your prayer had no effect -1 🔵");
-            }
             enemyAttackOrRest();
             break;
 
@@ -2194,7 +2162,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('grab_artifact');
             } else if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || parseInt(enemyHp)>=2 || parseInt(enemyAtk)>=2 || (parseInt(enemyAtk)>=1 && parseInt(totalMalus)==0) || parseInt(enemySta)>=2 || parseInt(enemyMgk)>=2 || (parseInt(enemyMgk)>=1 && parseInt(totalMalus)==0)) {
               AchievementManager.check('grab_exquisite');
-            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover") && !enemyTeam.includes("Lost Possession")) {
+            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover") && !enemyTeam.includes("Lost Possession") && !enemyTeam.includes("Piece of History")) {
               AchievementManager.check('grab_rubbish');
             }
             //Grab end
