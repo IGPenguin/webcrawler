@@ -535,6 +535,13 @@ button:active {
   ) !important;
 }
 
+// Nudge id_player_status text 2px down to match id_stats vertical rhythm
+// box-sizing: border-box ensures the height: 24px inline stays intact
+#id_player_status {
+  padding-top: 2px !important;
+  box-sizing: border-box !important;
+}
+
 // Inset: content areas — recessed feel
 #id_desc {
   background-image: linear-gradient(

@@ -361,6 +361,7 @@ layout: default
 
 <h2 id = "id_area" style="
     margin-bottom:-12px;
+    margin-top:-2px;
     font-size:28px;
     letter-spacing: 1.5px;
     -webkit-text-stroke: 6.5px black;
