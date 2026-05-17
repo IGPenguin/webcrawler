@@ -51,6 +51,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
                    && !enemyType.includes("Boss"); // boss has its own curtain already
 
   if (_isAreaChange && !skipAreaTransition) {
+    preloadBackground(_peekArea);
     var _areaHtml = "<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"
                   + _peekArea
                   + "</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>";

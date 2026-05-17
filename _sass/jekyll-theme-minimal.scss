@@ -210,7 +210,7 @@ a:active, a:hover, a:focus {
   z-index: 2;
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,0.95);
+  background-color: #000;
   display: none;
 }
 
@@ -535,6 +535,7 @@ button:active {
 #id_player_status,
 #id_player_party_loot,
 #achievement_toast,
+#menu_card_rename,
 .box-border-dynamic:has(#id_stats) {
   background-image: linear-gradient(
     to bottom,

@@ -556,17 +556,27 @@ function playEndingCutscene(frames, onComplete) {
   }
 }
 
-function setBackground(areaName="Depths"){
+function _bgUrl(areaName) {
   var prefix = areaName.split(" ")[0].replace(".svg", "").replace(".png", "");
   var isVector = (typeof VECTOR_BACKGROUNDS_ENABLED !== 'undefined') ? VECTOR_BACKGROUNDS_ENABLED : false;
   var ext = isVector ? '.svg' : '.png';
   var folder = isVector ? 'assets/svg/' : 'assets/img/';
-  var fileUrl = 'url(' + folder + prefix + ext + ')';
+  return { src: folder + prefix + ext, isVector: isVector };
+}
+
+function preloadBackground(areaName) {
+  var info = _bgUrl(areaName);
+  var img = new Image();
+  img.src = info.src;
+}
+
+function setBackground(areaName="Depths"){
+  var info = _bgUrl(areaName);
 
   var bodyEl = document.getElementsByTagName('body')[0];
   if (bodyEl) {
-    bodyEl.style.backgroundImage = fileUrl;
-    if (isVector) {
+    bodyEl.style.backgroundImage = 'url(' + info.src + ')';
+    if (info.isVector) {
       bodyEl.style.backgroundRepeat = 'no-repeat';
       bodyEl.style.backgroundSize = 'cover';
       bodyEl.style.backgroundPosition = 'center bottom';
