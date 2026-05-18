@@ -663,10 +663,12 @@ function playerReincarnate(){
 
   if (playerKarma>0){ //TODO Revise this threshold
     var randomArea=chooseFrom(["Fading Wildlands","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame
-    var bonusItem=getRandomEncounter(["Item"],["Artifact"],randomArea);
-    bonusItem=bonusItem.replaceAll(randomArea,"Fading Wildlands")
+    var giftType = ['Item'];
+    var excludes = ["Lover's Memento", "Piece of History", "Lost Possession"];
+    var bonusItem = getWeightedEncounter(giftType, ["Artifact"], randomArea, excludes);
+    bonusItem[0]="area:"+previousArea;
 
-    var bonusWrapper=["area:Fading Wildlands","emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for staying out of trouble!<br>","message:Opened the mysterious gift box.","achiev:none"]
+    var bonusWrapper=["area:"+previousArea,"emoji:🎁","name:Pleasant Surprise","type:Container","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Karma Bonus","desc:Received for staying out of trouble!<br>","message:Opened the mysterious gift box.","achiev:none"]
 
     logAction("💚 ▸ 🎁 Eligible for a good karma bonus!");
     pushEncounter(bonusWrapper,2); //Push after the point of dising
