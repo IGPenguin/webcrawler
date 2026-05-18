@@ -829,6 +829,13 @@ button:active {
   }
 }
 
+button:focus-visible,
+.menu-history-entry:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: none;
+  filter: brightness(1.2);
+}
+
 .menu-history-entry.menu-history-selected {
   box-shadow: inset 0px 0px 0px 3px #FFD940;
 

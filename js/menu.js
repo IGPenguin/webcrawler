@@ -354,6 +354,7 @@ var Menu = (function () {
 
       var entry = document.createElement('div');
       entry.className = 'menu-history-entry';
+      entry.setAttribute('tabindex', '0');
       entry.style.cursor = 'pointer';
       entry.style.userSelect = 'none';
       if (rarityBg) entry.style.backgroundColor = rarityBg;
@@ -1038,6 +1039,7 @@ var Menu = (function () {
       btn.innerHTML = '<div style="' + SEG_TEXT + ' color:' + (isActive ? '#FFD940' : '#fff') + ';">' + btnLabel + '</div>';
 
       if (!d.locked) {
+        btn.setAttribute('tabindex', '0');
         btn.addEventListener('click', function () {
           if (d.key === currentDiffLabel) return;
           if (hasRun) {
@@ -1103,6 +1105,7 @@ var Menu = (function () {
       ['Gelasio', 'Pixel', 'Native'].forEach(function (f) {
         var isActive = (f === fontPreference);
         var btn = document.createElement('div');
+        btn.setAttribute('tabindex', '0');
         btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none; line-height:16px;'
           + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
           + ' background:' + (isActive ? '#2a2500' : '#252525') + ';';
@@ -1136,6 +1139,7 @@ var Menu = (function () {
       ['Off', 'On'].forEach(function (v) {
         var isActive = (v === 'On') === isVibOn;
         var btn = document.createElement('div');
+        btn.setAttribute('tabindex', '0');
         btn.style.cssText = 'flex:1; padding:9px 4px; text-align:center; cursor:pointer; user-select:none;'
           + ' box-shadow:0 0 0 2px ' + (isActive ? '#FFD940' : '#333') + ';'
           + ' background:' + (isActive ? '#2a2500' : '#252525') + ';';

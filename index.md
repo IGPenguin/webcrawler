@@ -83,6 +83,7 @@ layout: default
 <script src="js/action-resolver.js"></script>
 <script src="js/action-bar.js"></script>
 <script src="js/ui-buttons.js"></script>
+<script src="js/keyboard.js"></script>
 
 <div class= "curtain" id="id_fullscreen_curtain" style="pointer-events: none;" ></div>
 <div class= "curtain curtain--fadein" id="id_curtain_fadein" style="pointer-events: none;" ></div>
