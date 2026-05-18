@@ -66,6 +66,11 @@ function isLocalhost() {
       || location.hostname.includes("192.168");
 }
 
+function isAuthorizedHost() {
+  return location.hostname === 'igpenguin.github.io'
+      || (typeof SD_LOCAL_AUTH !== 'undefined' && !!SD_LOCAL_AUTH);
+}
+
 function getPlatform() {
   var ua = navigator.userAgent || navigator.vendor || window.opera;
   if (/android/i.test(ua)) return "android";

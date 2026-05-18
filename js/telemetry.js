@@ -87,6 +87,7 @@ var TelemetryManager = (function () {
   }
 
   function send(event, payload) {
+    if (!isAuthorizedHost()) return;
     if (isLocalhost() && TELEMETRY_DISABLED_LOCALHOST) return;
     if (navigator.webdriver) return; // automated browser (Playwright / CI)
     try { if (localStorage.getItem('sd_is_test') === 'true') return; } catch (e) {}
