@@ -157,15 +157,16 @@ var encounterUsed=false;
 var seenEncounters = [];
 
 // Equipment slots — one item each; null when empty
-var playerSlotHead   = null; // { emoji, name, hp, atk, sta, lck, int, mgk, def, slot, note }
-var playerSlotWeapon = null;
-var playerSlotChest  = null;
-var playerSlotLegs   = null;
+var playerSlotHead    = null; // { emoji, name, hp, atk, sta, lck, int, mgk, def, slot, note, desc }
+var playerSlotWeapon  = null;
+var playerSlotChest   = null;
+var playerSlotLegs    = null;
+var playerSlotTrinket = null;
 // Full inventory list — all grabbed non-coin items with their original stat snapshot
-var playerInventory  = []; // array of snapshots (same shape as slot objects, slot: null for trinkets)
+var playerInventory  = []; // array of snapshots (same shape as slot objects)
 
 // Set by loadEncounter when enemyType starts with "Item-"; null for generic items
-var enemyItemSlot = null; // "head" | "weapon" | "chest" | null
+var enemyItemSlot = null; // "head" | "weapon" | "chest" | "legs" | "trinket" | null
 
 var corpseState = ""; // "" | "killed" | "neutralized"
 var corpseSnapshot = null; // saved enemy data for neutralized wake-up

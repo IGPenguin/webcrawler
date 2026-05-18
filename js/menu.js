@@ -300,12 +300,7 @@ var Menu = (function () {
     return roll;
   }
 
-  function _originNet(o) {
-    return (o.atk||0)*3   + (o.mgk||0)*2
-         + (o.hp||0)*1.5  + (o.sta||0)*1.5
-         + (o.lck||0)*0.5 + (o.int||0)*0.5
-         + (o.def||0);
-  }
+  function _originNet(o) { return RarityManager.calcNet(o); }
 
   // Explicit [Tag] in note wins; achievement-gated origins with no stat changes are Legendary
   // (they have hidden bonuses not reflected in stats); otherwise stat net.
@@ -342,7 +337,7 @@ var Menu = (function () {
     
     var availableCoins=parseInt(savedCoins);
     subtitle.innerHTML="These starting Origins are available:"
-    if (availableCoins>0) subtitle.innerHTML="Pick a starting Origin, you have " + availableCoins + " <b>🪙 Drachmae</b>."
+    if (availableCoins>0) subtitle.innerHTML='Pick a starting Origin, you have <b style="color:#7193bf;">' + availableCoins + ' 🪙 Drachmae</b>.'
 
     var list = document.getElementById('menu_origin_list');
     list.innerHTML = '';
@@ -512,9 +507,9 @@ var Menu = (function () {
         }).length;
         var _losses = sessions.length - _wins;
         _note.innerHTML = 'The paths of the '
-          + '<span style="color:#FFD940;">' + _wins + '&nbsp;Endured</span>'
+          + '<span style="color:#E84040;">' + _losses + '&nbsp;Faded</span>'
           + ' and the '
-          + '<span style="color:#E84040;">' + _losses + '&nbsp;Faded</span>.';
+          + '<span style="color:#FFD940;">' + _wins + '&nbsp;Endured</span>.';
       }
     }
 
@@ -763,7 +758,7 @@ var Menu = (function () {
     });
 
     var countEl = document.getElementById('menu_memories_count');
-    if (countEl) countEl.textContent = 'Recalling the past reshapes the future: ' + unlockedCount + ' / ' + achievements.length;
+    if (countEl) countEl.innerHTML = 'Recalling the past reshapes the future: <b style="color:#62a862ff;">' + unlockedCount + ' / ' + achievements.length + '</b>';
 
     achievements.forEach(function (a) {
       var unlocked = AchievementManager.isUnlocked(a.id);

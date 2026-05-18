@@ -74,13 +74,13 @@ function loadEncounter(index, fileLines = linesStory){
     if (number) enemyContainerNumber = parseInt(number[0],10);
   }
 
-  enemyHp = String(row[4].split(":")[1]);
+  enemyHp = parseInt(row[4].split(":")[1]);
   enemyAtk = parseInt(row[5].split(":")[1]);
-  enemySta = String(row[6].split(":")[1]);
-  enemyLck = String(row[7].split(":")[1]);
-  enemyInt = String(row[8].split(":")[1]);
-  enemyMgk = String(row[9].split(":")[1]);
-  enemyDef = String(row[10].split(":")[1]);
+  enemySta = parseInt(row[6].split(":")[1]);
+  enemyLck = parseInt(row[7].split(":")[1]);
+  enemyInt = parseInt(row[8].split(":")[1]);
+  enemyMgk = parseInt(row[9].split(":")[1]);
+  enemyDef = parseInt(row[10].split(":")[1]);
 
   //Calculate total bonus/malus
   var effectArray = [enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef];
@@ -166,11 +166,12 @@ function loadEncounter(index, fileLines = linesStory){
          }
         }
       }
-      // If this is a slot item and the slot is occupied, show swap diff
+      // If this is a slot item and the slot is occupied, show a preview diff
       if (enemyItemSlot) {
         var _occ = getPlayerSlot(enemyItemSlot);
         if (_occ) {
-          logAction("⁉️ ▸ "+_occ.emoji+" <text style=color:"+colorRed+";><b>Slot full, swap?</b></text> "+formatSlotDiff(_occ));
+          var capitalizedSlot = _occ.slot.charAt(0).toUpperCase()+ _occ.slot.slice(1);
+          logAction("⁉️ ▸ "+_occ.emoji+" <text style=color:"+colorRed+";><b>"+capitalizedSlot+" slot is full, want to swap?</b></text>");
         }
       }
       break;

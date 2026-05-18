@@ -66,6 +66,7 @@ layout: default
 <script src="js/ui-render.js"></script>
 <script src="js/enemy-skills.js"></script>
 <script src="js/player-skills.js"></script>
+<script src="js/inventory-manager.js"></script>
 <script src="js/save-manager.js"></script>
 <script src="js/achievements.js"></script>
 <script src="js/transfunctioner.js"></script>
@@ -357,6 +358,20 @@ layout: default
     <input id="companion_name_input" type="text" maxlength="32" placeholder="Enter a name..." style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
     <button id="companion_name_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Confirm</button>
     <button id="companion_name_skip" class="menu-btn" style="margin-top:4px; color:#FF0000;">✕ Skip</button>
+  </div>
+</div>
+
+<!-- Slot swap comparison overlay -->
+<div id="swap_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+  <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
+    <h3 style="text-align:center; margin:0 0 14px 0; font-size:17px; color:#fff; -webkit-text-stroke:4px black; paint-order:stroke fill;">⁉️ Replace the current item?</h3>
+    <div style="margin:0 0 4px 0; font-size:14px; text-transform:uppercase; letter-spacing:1px; color:#fff;">Current Item</div>
+    <div id="swap_current_row" class="menu-history-entry" style="margin-bottom:12px; cursor:default;"></div>
+    <div style="margin:0 0 4px 0; font-size:14px; text-transform:uppercase; letter-spacing:1px; color:#fff;">New Item</div>
+    <div id="swap_new_row" class="menu-history-entry" style="margin-bottom:12px; cursor:default;"></div>
+    <div id="swap_diff_row" style="text-align:center; font-size:14px; font-weight:bold; min-height:1.2em;"></div>
+    <button id="swap_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Equip New</button>
+    <button id="swap_cancel" class="menu-btn" style="margin-top:4px; color:#FF0000;">✕ Cancel</button>
   </div>
 </div>
 

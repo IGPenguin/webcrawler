@@ -512,12 +512,16 @@ function getOrigins() {
 
 // ── Rarity Helpers ─────────────────────────────────────────────────────────────
 
-// Compute weighted net stat value from a raw encounter row array.
-// Mirrors _originNet() in menu.js — keep in sync if weights change.
+// Parse weighted net stat value from a raw encounter row array.
+// columns: 4=hp, 5=atk, 6=sta, 7=lck, 8=int, 9=mgk, 10=def
 function _netFromRow(row) {
   function v(i) { return parseFloat((row[i] || '').split(':')[1]) || 0; }
-  // columns: 4=hp, 5=atk, 6=sta, 7=lck, 8=int, 9=mgk, 10=def
-  return v(5)*3 + v(9)*2 + v(4)*1.5 + v(6)*1.5 + v(7)*0.5 + v(8)*0.5 + v(10);
+  return RarityManager.calcNet({ atk: v(5), mgk: v(9), hp: v(4), sta: v(6), lck: v(7), int: v(8), def: v(10) });
+}
+
+function _consumableNetFromRow(row) {
+  function v(i) { return parseFloat((row[i] || '').split(':')[1]) || 0; }
+  return RarityManager.calcConsumableNet({ atk: v(5), mgk: v(9), hp: v(4), sta: v(6), lck: v(7), int: v(8), def: v(10) });
 }
 
 // Determine rarity tier for a raw encounter row: explicit [Tag] in note wins, then Artifact keyword,
@@ -527,7 +531,9 @@ function _rarityFromRow(row) {
   var tier = RarityManager.getTierFromNote(noteRaw);
   if (tier) return tier;
   if (noteRaw.toLowerCase().includes('artifact')) return 'Legendary';
-  return RarityManager.getTierForNet(_netFromRow(row));
+  var type = (row[3] || '').split(':').slice(1).join(':').trim();
+  var net = (type === 'Consumable') ? _consumableNetFromRow(row) : _netFromRow(row);
+  return RarityManager.getTierForItemNet(net);
 }
 
 // Achievement filter: returns true if the row's achiev field is unlocked (or none).

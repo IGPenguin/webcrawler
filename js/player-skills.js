@@ -37,11 +37,12 @@ function renewPlayer(){ //Default values
   playerHealType = "❤️‍🩹";
   playerCurseType = "🪬";
 
-  playerSlotHead   = null;
-  playerSlotWeapon = null;
-  playerSlotChest  = null;
-  playerSlotLegs   = null;
-  playerInventory  = [];
+  playerSlotHead    = null;
+  playerSlotWeapon  = null;
+  playerSlotChest   = null;
+  playerSlotLegs    = null;
+  playerSlotTrinket = null;
+  playerInventory   = [];
 
   playerKills = 0;
   playerKarma=1;
@@ -69,18 +70,20 @@ renewPlayer();
 // ── Slot/inventory helpers ────────────────────────────────────────────────────
 
 function getPlayerSlot(slot) {
-  if (slot === 'head')   return playerSlotHead;
-  if (slot === 'weapon') return playerSlotWeapon;
-  if (slot === 'chest')  return playerSlotChest;
-  if (slot === 'legs')   return playerSlotLegs;
+  if (slot === 'head')    return playerSlotHead;
+  if (slot === 'weapon')  return playerSlotWeapon;
+  if (slot === 'chest')   return playerSlotChest;
+  if (slot === 'legs')    return playerSlotLegs;
+  if (slot === 'trinket') return playerSlotTrinket;
   return null;
 }
 
 function setPlayerSlot(slot, data) {
-  if (slot === 'head')   playerSlotHead   = data;
-  if (slot === 'weapon') playerSlotWeapon = data;
-  if (slot === 'chest')  playerSlotChest  = data;
-  if (slot === 'legs')   playerSlotLegs   = data;
+  if (slot === 'head')    playerSlotHead    = data;
+  if (slot === 'weapon')  playerSlotWeapon  = data;
+  if (slot === 'chest')   playerSlotChest   = data;
+  if (slot === 'legs')    playerSlotLegs    = data;
+  if (slot === 'trinket') playerSlotTrinket = data;
 }
 
 function buildItemSnapshot() {
@@ -94,7 +97,8 @@ function buildItemSnapshot() {
     mgk: parseInt(enemyMgk) || 0,
     def: parseInt(enemyDef) || 0,
     slot: enemyItemSlot,
-    note: String(enemyTeam || '')
+    note: String(enemyTeam || ''),
+    desc: String(enemyDesc || '')
   };
 }
 

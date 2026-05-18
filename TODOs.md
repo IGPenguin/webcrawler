@@ -227,12 +227,11 @@
 - Type: Feature
 - Effort: M | Gain: M
 
-### [OFFHAND-SLOT] Question: Trinket slot — needed or stat creep?
-- Decide whether to add a dedicated Trinket (talisman, yoyo, spellbook, shield...) alongside the head/chest/hands system — purpose is to gatekeep stats and prevent runaway stat accumulation, not just add variety.
-- Priority: P3 — this design decision must be made before the inventory expansion (below) is architected; adding the slot after the fact changes the structure
-- Type: Question
-- Effort: S | Gain: M
-- Needs: Answer: does adding a gatekeeping slot solve a real creep problem, or does it add complexity without payoff? Decision informs inventory expansion scope.
+### [UI-DIALOGS] Chore: Consolidate all dialog overlays into ui-dialogs.js
+- Five modal overlays currently live in different files: QR share dialog, leaderboard nickname (score-manager.js), companion name + player rename (ui-effects.js), and slot swap (inventory-manager.js). Extract all into a single ui-dialogs.js with a consistent open/confirm/cancel pattern, loaded after ui-effects.js.
+- Priority: P3 — no user-visible impact; purely internal cleanliness
+- Type: Chore
+- Effort: S | Gain: S
 
 ### [STR-AUDIT] Chore: String writer skill + full CSV/JS string audit
 - Create a lightweight Claude skill for writing CSV and JS string fields — strict tone matching, length-optimized. Follow with a full audit pass using it.

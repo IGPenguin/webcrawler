@@ -34,10 +34,7 @@ function getOriginName(origin) {
   // These tiers get exclusive vocabulary unavailable to lower tiers.
   var _achievId = (origin.achiev || '').trim();
   var _isFamiliar = !!(_achievId && _achievId !== 'none');
-  var _net = (origin.atk||0)*3   + (origin.mgk||0)*2
-           + (origin.hp||0)*1.5  + (origin.sta||0)*1.5
-           + (origin.lck||0)*0.5 + (origin.int||0)*0.5
-           + (origin.def||0);
+  var _net = RarityManager.calcNet(origin);
   var _tier = _isFamiliar ? 'Familiar' : RarityManager.getTierForNet(_net);
 
   if (_tier === 'Familiar' || _tier === 'Legendary') {

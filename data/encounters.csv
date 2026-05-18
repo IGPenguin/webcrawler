@@ -514,6 +514,7 @@ Forsaken Village;🌂;Sturdy Umbrella;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapo
 Forsaken Village;🖋️;Fountain Pen;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.;none
 Forsaken Village;🔧;Metal Spanner;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.;none
 Forsaken Village;🪛;Rusty Screwdriver;Item-Weapon;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.;none
+Forsaken Village;🗜️;Workbench Boxer;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
 Forsaken Village;⛑️;Medic Helmet;Item-Head;1;0;0;1;0;0;0;Head Protection;Robust protection for those who help others.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Protected and blessed;none
 Forsaken Village;📔;Holy Prayerbook;Item;0;0;0;1;0;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;Learned plenty of stuff;none
 

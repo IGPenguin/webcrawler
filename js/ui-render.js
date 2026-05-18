@@ -147,21 +147,21 @@ function redraw(){
       break;
 
     case "Item":
-      var itemNet = enemyAtk*3 + enemyMgk*2 + enemyHp*1.5 + enemySta*1.5 + enemyLck*0.5 + enemyInt*0.5 + enemyDef;
+      var itemNet = RarityManager.calcNet({ atk: enemyAtk, mgk: enemyMgk, hp: enemyHp, sta: enemySta, lck: enemyLck, int: enemyInt, def: enemyDef });
       if (itemNet > 0 || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
-        if (itemNet >= 0.5){
+        if (itemNet >= ITEM_NET_THRESHOLDS.uncommon){
           enemyStatusString=decorateStatusText("🔷","Magnificent",colorLightBlue);
           cardUIElement.style.backgroundColor=colorDarkBlue;
         }
-        if (itemNet >= 1.5){
+        if (itemNet >= ITEM_NET_THRESHOLDS.rare){
           enemyStatusString=decorateStatusText("🟣","Exquisite",colorPurple);
           cardUIElement.style.backgroundColor=colorDarkPurple;
         }
       } else {
         enemyStatusString=decorateStatusText("🕸️","Rubbish","lightgrey");
       }
-      if (enemyTeam.includes("Artifact") ||  enemyTeam.includes("Questionable Drink")) {
+      if (itemNet >= ITEM_NET_THRESHOLDS.legendary || enemyTeam.includes("Artifact") || enemyTeam.includes("Questionable Drink")) {
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.backgroundColor=colorDarkOrange;
       }
@@ -195,24 +195,24 @@ function redraw(){
       break;
 
     case "Consumable":
-      var itemNet = enemyAtk*3 + enemyMgk*2 + enemyHp*1.5 + enemySta*1.5 + enemyLck*0.5 + enemyInt*0.5 + enemyDef;
+      var itemNet = RarityManager.calcConsumableNet({ atk: enemyAtk, mgk: enemyMgk, hp: enemyHp, sta: enemySta, lck: enemyLck, int: enemyInt, def: enemyDef });
       eatColor=colorWhite;
       enemyStatusString=decorateStatusText("❤️","Refreshment",colorWhite)
       if (enemyHp<0 || enemyAtk<0 || enemySta<0 || enemyLck<0 || enemyInt<0 || enemyMgk<0){
         enemyStatusString=decorateStatusText("🚩","Hazardous",colorRed);
         eatColor=colorRed;
       }
-      if (itemNet >= 0.5){
+      if (itemNet >= ITEM_NET_THRESHOLDS.uncommon){
         enemyStatusString=decorateStatusText("💙","Refreshment",colorLightBlue);
         cardUIElement.style.backgroundColor=colorDarkBlue;
         eatColor=colorLightBlue;
       }
-      if (itemNet >= 1.5){
+      if (itemNet >= ITEM_NET_THRESHOLDS.rare){
         enemyStatusString=decorateStatusText("💜","Refreshment",colorPurple);
         cardUIElement.style.backgroundColor=colorDarkPurple;
         eatColor=colorPurple;
       }
-      if (enemyTeam.includes("Artifact") || enemyTeam.includes("Essence")){
+      if (itemNet >= ITEM_NET_THRESHOLDS.legendary || enemyTeam.includes("Artifact") || enemyTeam.includes("Essence")){
         enemyStatusString=decorateStatusText("🟠","Legendary",colorOrange);
         cardUIElement.style.backgroundColor=colorDarkOrange;
         eatColor=colorOrange;

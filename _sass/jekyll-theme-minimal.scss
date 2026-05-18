@@ -805,6 +805,7 @@ button:active {
   overflow: hidden;
   background-color: #202020;
   box-shadow: inset 0px 0px 0px 3px #000;
+  @include chamfer;
 
   &::before {
     content: '';
@@ -822,6 +823,9 @@ button:active {
 @media (hover: hover) {
   .menu-history-entry:hover {
     filter: brightness(1.25);
+  }
+  button:hover {
+    filter: brightness(1.2);
   }
 }
 

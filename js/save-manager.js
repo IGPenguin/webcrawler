@@ -46,6 +46,7 @@ var SaveManager = (function () {
         playerSlotWeapon:   playerSlotWeapon,
         playerSlotChest:    playerSlotChest,
         playerSlotLegs:     playerSlotLegs,
+        playerSlotTrinket:  playerSlotTrinket,
         playerInventory:    playerInventory,
         playerHpMax:        playerHpMax,   playerStaMax:      playerStaMax,
         playerMgkMax:       playerMgkMax,
@@ -130,11 +131,12 @@ var SaveManager = (function () {
     playerLootString  = s.playerLootString; playerPartyString = s.playerPartyString;
     petName           = s.petName      !== undefined ? s.petName      : {};
     followerName      = s.followerName !== undefined ? s.followerName : {};
-    playerSlotHead    = s.playerSlotHead   || null;
-    playerSlotWeapon  = s.playerSlotWeapon || null;
-    playerSlotChest   = s.playerSlotChest  || null;
-    playerSlotLegs    = s.playerSlotLegs   || null;
-    playerInventory   = s.playerInventory  || [];
+    playerSlotHead    = s.playerSlotHead    || null;
+    playerSlotWeapon  = s.playerSlotWeapon  || null;
+    playerSlotChest   = s.playerSlotChest   || null;
+    playerSlotLegs    = s.playerSlotLegs    || null;
+    playerSlotTrinket = s.playerSlotTrinket || null;
+    playerInventory   = s.playerInventory   || [];
     playerHpMax       = s.playerHpMax;      playerStaMax      = s.playerStaMax;
     playerMgkMax      = s.playerMgkMax;
     playerHp          = s.playerHp;         playerSta         = s.playerSta;

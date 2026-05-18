@@ -546,6 +546,35 @@ var AchievementManager = (function () {
   });
 }
 
+  function _itemTier(snap) {
+    var noteTag = RarityManager.getTierFromNote(snap.note || '');
+    if (noteTag) return noteTag;
+    if ((snap.note || '').includes('Artifact')) return 'Legendary';
+    return RarityManager.getTierForItemNet(RarityManager.calcNet(snap));
+  }
+
+  function checkGrabAchievement(snap) {
+    var tier = _itemTier(snap);
+    var note = snap.note || '';
+    if (tier === 'Legendary') {
+      check('grab_artifact');
+    } else if (tier === 'Rare' || tier === 'Uncommon') {
+      check('grab_exquisite');
+    } else if (snap.emoji !== '🪙' && snap.emoji !== '💰' && snap.emoji !== '🗝️' && snap.emoji !== '🔑'
+               && !note.includes('Lover') && !note.includes('Lost Possession') && !note.includes('Piece of History')) {
+      check('grab_rubbish');
+    }
+  }
+
+  function checkEatAchievement(snap, note) {
+    var tier = RarityManager.getTierFromNote(note)
+      || ((note||'').includes('Artifact') || (note||'').includes('Essence') ? 'Legendary'
+      : RarityManager.getTierForNet(RarityManager.calcConsumableNet(snap)));
+    if (tier === 'Legendary') check('eat_legendary');
+    else if (tier === 'Rare' || tier === 'Uncommon') check('eat_purple');
+    else if (tier === 'Cursed') check('eat_hazardous');
+  }
+
   _load();
 
   return {
@@ -558,6 +587,9 @@ var AchievementManager = (function () {
     getUnlockTime:       getUnlockTime,
     getAll:              getAll,
     clearAll:            clearAll,
+
+    checkGrabAchievement: checkGrabAchievement,
+    checkEatAchievement:  checkEatAchievement,
 
     //cheat
     unlockAll: unlockAll

@@ -122,6 +122,16 @@ var RARITY_TIERS = {
 
 
 
+// Net thresholds for item rarity display and loot rolling.
+// Separate from origin thresholds in RARITY_TIERS.
+// Magnificent (Uncommon colors) at >=uncommon; Exquisite (Rare colors) at >=rare;
+// Legendary at >=legendary as a stat-based safeguard (Artifact note is the primary path).
+var ITEM_NET_THRESHOLDS = {
+  uncommon:  0.5,
+  rare:      2.0,
+  legendary: 6.0
+};
+
 var RarityManager = (function () {
   var TIER_ORDER = ['Cursed', 'Common', 'Uncommon', 'Rare', 'Legendary'];
   var TAG_RE = /\[(?:Cursed|Common|Uncommon|Rare|Legendary)\]/;
@@ -131,6 +141,16 @@ var RarityManager = (function () {
       var t = RARITY_TIERS[TIER_ORDER[i]];
       if (net >= t.netMin && net <= t.netMax) return TIER_ORDER[i];
     }
+    return 'Common';
+  }
+
+  // Item-specific tier from net. Used by both the loot roller and UI display.
+  // Legendary requires net ≥ 6.0 from stats alone (extreme items only); Artifact note is the normal path.
+  function getTierForItemNet(net) {
+    if (net >= ITEM_NET_THRESHOLDS.legendary) return 'Legendary';
+    if (net >= ITEM_NET_THRESHOLDS.rare)      return 'Rare';
+    if (net >= ITEM_NET_THRESHOLDS.uncommon)  return 'Uncommon';
+    if (net <  0)                             return 'Cursed';
     return 'Common';
   }
 
@@ -181,12 +201,27 @@ var RarityManager = (function () {
   function getColor(tier) { return (RARITY_TIERS[tier] || RARITY_TIERS.Common).color; }
   function getBg(tier)    { return (RARITY_TIERS[tier] || RARITY_TIERS.Common).bg; }
 
+  // Canonical net-stat formula for permanent items. Pass any object with {atk, mgk, hp, sta, lck, int, def}.
+  function calcNet(s) {
+    return (s.atk||0)*3 + (s.mgk||0)*2 + (s.hp||0)*1.5 + (s.sta||0)*1.5
+         + (s.lck||0)*0.5 + (s.int||0)*0.5 + (s.def||0)*3;
+  }
+
+  // Net formula for consumables. hp/sta are temporary so weighted much lower.
+  function calcConsumableNet(s) {
+    return (s.atk||0)*3 + (s.mgk||0)*2 + (s.hp||0)*0.2 + (s.sta||0)*0.2
+         + (s.lck||0)*0.5 + (s.int||0)*0.5 + (s.def||0)*3;
+  }
+
   return {
-    getTierForNet:    getTierForNet,
-    getTierFromNote:  getTierFromNote,
-    stripTagFromNote: stripTagFromNote,
-    rollTier:         rollTier,
-    getColor:         getColor,
-    getBg:            getBg
+    getTierForNet:        getTierForNet,
+    getTierForItemNet:    getTierForItemNet,
+    getTierFromNote:      getTierFromNote,
+    stripTagFromNote:     stripTagFromNote,
+    rollTier:             rollTier,
+    getColor:             getColor,
+    getBg:                getBg,
+    calcNet:              calcNet,
+    calcConsumableNet:    calcConsumableNet
   };
 })();

@@ -2102,24 +2102,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_equipSlot) {
               var _oldSlotData = getPlayerSlot(_equipSlot);
               if (_oldSlotData) {
-                // Remove old item emoji from lootString
-                playerLootString = String(playerLootString).replace(_oldSlotData.emoji, "");
-                if (!playerLootString.length) playerLootString = [""];
-                // Remove old item from inventory list
-                playerInventory = playerInventory.filter(function(i) { return i.slot !== _equipSlot; });
-                // Reverse old stats directly — no log/visual noise
-                // (new item stats arrive via playerChangeStats below and CAN kill normally)
-                playerLck    -= _oldSlotData.lck;
-                playerInt    -= _oldSlotData.int;
-                playerMgkMax -= _oldSlotData.mgk; playerMgk -= _oldSlotData.mgk; if (playerMgk < 0) playerMgk = 0;
-                playerStaMax -= _oldSlotData.sta; playerSta -= _oldSlotData.sta; if (playerSta < 0) playerSta = 0;
-                playerAtk    -= _oldSlotData.atk;
-                playerDef    -= _oldSlotData.def; if (playerDef < 0) playerDef = 0;
-                playerHpMax  -= _oldSlotData.hp;
-                playerHp     -= _oldSlotData.hp;
-                if (playerHp > playerHpMax) playerHp = playerHpMax;
-                if (playerHp < 1) playerHp = 1; // unequipping never kills — base HP always remains
-                logPlayerAction(actionString, "Replaced " + _oldSlotData.emoji + " <b>" + _oldSlotData.name + "</b>");
+                InventoryManager.tryEquip(_equipSlot, _oldSlotData, buildItemSnapshot(), isFishing);
+                break;
               }
             }
             // ─────────────────────────────────────────────────────────────────
@@ -2159,14 +2143,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               AchievementManager.check('coin_pickup', savedCoins);
             }
 
-            //Item quality achievements
-            if (enemyTeam.includes("Artifact") || enemyTeam.includes("Questionable Drink")) {
-              AchievementManager.check('grab_artifact');
-            } else if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || parseInt(enemyHp)>=2 || parseInt(enemyAtk)>=2 || (parseInt(enemyAtk)>=1 && parseInt(totalMalus)==0) || parseInt(enemySta)>=2 || parseInt(enemyMgk)>=2 || (parseInt(enemyMgk)>=1 && parseInt(totalMalus)==0)) {
-              AchievementManager.check('grab_exquisite');
-            } else if (parseInt(totalBonus)<=0 && enemyEmoji!='🪙' && enemyEmoji!='💰' && enemyEmoji!='🗝️' && enemyEmoji!='🔑' && !enemyTeam.includes("Lover") && !enemyTeam.includes("Lost Possession") && !enemyTeam.includes("Piece of History")) {
-              AchievementManager.check('grab_rubbish');
-            }
             //Grab end
             // Snapshot BEFORE playerChangeStats — it calls nextEncounter() which resets all enemy globals.
             // Slot and inventory must also be committed before playerChangeStats, because nextEncounter →
@@ -2180,6 +2156,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                        !_grabSnap.note.includes("Lover's Memento") && !_grabSnap.note.includes("Piece of History")) {
               playerInventory.push(_grabSnap);
             }
+            AchievementManager.checkGrabAchievement(_grabSnap);
             var _wasInFishing = isFishing;
             isFishing=false;
             if (playerHp==0) break;
@@ -2228,15 +2205,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               nextEncounter();
               break;
             }
-            //Consumable quality achievements
-            if (enemyTeam.includes("Artifact") || enemyTeam.includes("Essence")) {
-              AchievementManager.check('eat_legendary');
-            } else if ((parseInt(totalBonus)+parseInt(totalMalus))>=2 || parseInt(enemyHp)>=2 || parseInt(enemyAtk)>=2 || parseInt(enemySta)>=2 || parseInt(enemyMgk)>=2) {
-              AchievementManager.check('eat_purple');
-            } else if (parseInt(enemyHp)<0 || parseInt(enemyAtk)<0 || parseInt(enemySta)<0 || parseInt(enemyLck)<0 || parseInt(enemyInt)<0 || parseInt(enemyMgk)<0) {
-              AchievementManager.check('eat_hazardous');
-            }
             playerConsumed();
+            AchievementManager.checkEatAchievement(
+              { atk: enemyAtk||0, mgk: enemyMgk||0, hp: enemyHp||0,
+                sta: enemySta||0, lck: enemyLck||0, int: enemyInt||0, def: enemyDef||0 },
+              enemyTeam
+            );
             displayEnemyEffect("🍴");
             if (playerHp>0) nextEncounter();
             isFishing=false;
