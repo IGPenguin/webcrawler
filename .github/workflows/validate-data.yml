@@ -4,7 +4,6 @@ on:
   push:
     branches: [live]
   pull_request:
-    branches: [live]
 
 jobs:
   validate-csv:
