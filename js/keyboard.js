@@ -29,17 +29,34 @@
     return null;
   }
 
+  function _gridEnabled(id) {
+    var el = document.getElementById(id);
+    return el && !el.disabled && el.offsetParent !== null;
+  }
+
   function _gridMove(id, dr, dc) {
     var pos = _gridPos(id);
     if (!pos) return;
-    var el = document.getElementById(_GRID[(pos[0] + dr + 3) % 3][(pos[1] + dc + 3) % 3]);
-    if (el) el.focus();
+    var r = pos[0], c = pos[1];
+    for (var i = 0; i < 9; i++) {
+      r = (r + dr + 3) % 3;
+      c = (c + dc + 3) % 3;
+      if (_gridEnabled(_GRID[r][c])) { document.getElementById(_GRID[r][c]).focus(); return; }
+      if (r === pos[0] && c === pos[1]) break;
+    }
   }
 
   function _gridEnter(key) {
     var entry = _GRID_ENTRY[key];
-    var el = document.getElementById(_GRID[entry[0]][entry[1]]);
-    if (el) el.focus();
+    if (_gridEnabled(_GRID[entry[0]][entry[1]])) {
+      document.getElementById(_GRID[entry[0]][entry[1]]).focus();
+      return;
+    }
+    for (var r = 0; r < 3; r++) {
+      for (var c = 0; c < 3; c++) {
+        if (_gridEnabled(_GRID[r][c])) { document.getElementById(_GRID[r][c]).focus(); return; }
+      }
+    }
   }
 
   // ── Menu linear navigation ────────────────────────────────────────────────────
@@ -53,10 +70,10 @@
       if (screens[i].style.display !== 'none') { screen = screens[i]; break; }
     }
     var root = screen || menuEl;
-    // Include both <button> elements and focusable segment divs (tabindex="0")
-    var all = root.querySelectorAll('button, [tabindex="0"]');
+    // Include buttons, focusable segment divs, and text inputs
+    var all = root.querySelectorAll('button, [tabindex="0"], input, textarea');
     return Array.prototype.filter.call(all, function (el) {
-      return el.offsetParent !== null; // excludes hidden elements
+      return el.offsetParent !== null && !el.disabled; // excludes hidden/disabled elements
     });
   }
 
@@ -72,6 +89,7 @@
       target = btns[(idx + (goFwd ? 1 : -1) + btns.length) % btns.length];
     }
     target.focus();
+    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') target.select();
     target.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
@@ -86,6 +104,22 @@
     if (el) el.click();
   }
 
+  function _overlayNav(overlayId, key) {
+    var active = document.activeElement;
+    var el = document.getElementById(overlayId);
+    if (!el) return;
+    var items = Array.prototype.filter.call(el.querySelectorAll('button, input, textarea'), function (b) {
+      return b.offsetParent !== null && !b.disabled;
+    });
+    if (!items.length) return;
+    var idx = Array.prototype.indexOf.call(items, active);
+    var goFwd = key === 'ArrowDown';
+    var target = idx === -1 ? items[goFwd ? 0 : items.length - 1]
+                            : items[(idx + (goFwd ? 1 : -1) + items.length) % items.length];
+    target.focus();
+    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') target.select();
+  }
+
   // ── Keydown ───────────────────────────────────────────────────────────────────
   document.addEventListener('keydown', function (e) {
     var key = e.key;
@@ -93,18 +127,21 @@
 
     // Overlays — highest priority
     if (_overlayUp('swap_overlay')) {
-      if (key === 'Enter')  { e.preventDefault(); _click('swap_confirm'); }
-      if (key === 'Escape') { e.preventDefault(); _click('swap_cancel');  }
+      if (key === 'Enter')                          { e.preventDefault(); _click('swap_confirm'); }
+      if (key === 'Escape')                         { e.preventDefault(); _click('swap_cancel');  }
+      if (key === 'ArrowUp' || key === 'ArrowDown') { e.preventDefault(); _overlayNav('swap_overlay', key); }
       return;
     }
     if (_overlayUp('nickname_overlay')) {
-      if (key === 'Enter')  { e.preventDefault(); _click('nickname_confirm'); }
-      if (key === 'Escape') { e.preventDefault(); _click('nickname_skip');    }
+      if (key === 'Enter')                          { e.preventDefault(); _click('nickname_confirm'); }
+      if (key === 'Escape')                         { e.preventDefault(); _click('nickname_skip');    }
+      if (key === 'ArrowUp' || key === 'ArrowDown') { e.preventDefault(); _overlayNav('nickname_overlay', key); }
       return;
     }
     if (_overlayUp('companion_name_overlay')) {
-      if (key === 'Enter')  { e.preventDefault(); _click('companion_name_confirm'); }
-      if (key === 'Escape') { e.preventDefault(); _click('companion_name_skip');    }
+      if (key === 'Enter')                          { e.preventDefault(); _click('companion_name_confirm'); }
+      if (key === 'Escape')                         { e.preventDefault(); _click('companion_name_skip');    }
+      if (key === 'ArrowUp' || key === 'ArrowDown') { e.preventDefault(); _overlayNav('companion_name_overlay', key); }
       return;
     }
 
@@ -146,10 +183,10 @@
       return;
     }
 
-    // Arrow keys — always prevent scroll, but let inputs handle their own cursor
+    // Arrow keys — always prevent scroll; let inputs handle left/right cursor movement
     var isArrow = key === 'ArrowLeft' || key === 'ArrowRight' || key === 'ArrowUp' || key === 'ArrowDown';
     var tag = document.activeElement && document.activeElement.tagName;
-    if (isArrow && (tag === 'INPUT' || tag === 'TEXTAREA')) return;
+    if ((key === 'ArrowLeft' || key === 'ArrowRight') && (tag === 'INPUT' || tag === 'TEXTAREA')) return;
     if (isArrow) {
       e.preventDefault();
       var gameEl = document.getElementById('id_game');
@@ -175,6 +212,13 @@
         new PointerEvent('pointerdown', { bubbles: true, cancelable: true, isPrimary: true })
       );
     }
+    // Space / Enter on hold-to-confirm buttons → start hold (pointerdown on element)
+    if ((key === ' ' || key === 'Enter') && id === 'menu_settings_purge_1') {
+      e.preventDefault();
+      document.activeElement.dispatchEvent(
+        new PointerEvent('pointerdown', { bubbles: true, cancelable: true, isPrimary: true })
+      );
+    }
   });
 
   // ── Keyup ─────────────────────────────────────────────────────────────────────
@@ -186,6 +230,13 @@
     if ((key === ' ' || key === 'Enter') && _GRID_IDS[id]) {
       e.preventDefault();
       document.dispatchEvent(
+        new PointerEvent('pointerup', { bubbles: true, cancelable: true, isPrimary: true })
+      );
+    }
+    // Space / Enter on hold-to-confirm buttons → cancel/complete hold (pointerup on element)
+    if ((key === ' ' || key === 'Enter') && id === 'menu_settings_purge_1') {
+      e.preventDefault();
+      document.activeElement.dispatchEvent(
         new PointerEvent('pointerup', { bubbles: true, cancelable: true, isPrimary: true })
       );
     }
