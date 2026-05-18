@@ -67,5 +67,11 @@ function _applyCheatName(name) {
     return true;
   }
 
+  if (name.includes("Star Gate")) {
+    AchievementManager.check('gate_fairyland');
+    logCheatUse("Force-unlocked the Arch!");
+    return true;
+  }
+
   return false;
 }
