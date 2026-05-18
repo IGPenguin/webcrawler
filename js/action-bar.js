@@ -338,7 +338,9 @@ var ActionBar = (function () {
     if (_elBar) { _elBar.style.opacity = '0'; _elBar.style.display = 'none'; }
   }
 
+  function cancelActionBar() { if (_running) _cancel(); }
+
   function getAttemptValue() { return _value; }
 
-  return { showActionBar: showActionBar, hideActionBar: hideActionBar, getAttemptValue: getAttemptValue };
+  return { showActionBar: showActionBar, hideActionBar: hideActionBar, cancelActionBar: cancelActionBar, getAttemptValue: getAttemptValue };
 })();

@@ -108,6 +108,37 @@
       return;
     }
 
+    // Escape during active action bar → cancel
+    if (key === 'Escape' && _GRID_IDS[id]) {
+      ActionBar.cancelActionBar();
+      e.preventDefault();
+      return;
+    }
+
+    // Escape → toggle main menu
+    if (key === 'Escape') {
+      var curtainEl = document.getElementById('id_fullscreen_curtain');
+      if (curtainEl && curtainEl.style.display !== 'none') return; // transition in progress
+      var gameEl = document.getElementById('id_game');
+      var menuEl = document.getElementById('id_menu');
+      if (gameEl && gameEl.style.display !== 'none') {
+        // In game — open menu
+        e.preventDefault();
+        _click('button_menu');
+      } else if (menuEl && menuEl.style.display !== 'none') {
+        // In menu — back or resume
+        e.preventDefault();
+        var backBtn = menuEl.querySelector('[id$="_back"]:not([style*="display: none"]):not([style*="display:none"])');
+        if (backBtn && backBtn.offsetParent !== null) {
+          backBtn.click();
+        } else {
+          var cont = document.getElementById('menu_continue');
+          if (cont && cont.offsetParent !== null) _click('menu_continue');
+        }
+      }
+      return;
+    }
+
     // Enter / Space on focusable divs (tabindex="0") — treat like a click
     if ((key === 'Enter' || key === ' ') && document.activeElement && document.activeElement.getAttribute('tabindex') === '0') {
       e.preventDefault();
