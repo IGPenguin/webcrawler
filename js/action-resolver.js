@@ -64,7 +64,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(1,"Favor");
+          drachmaeBuy(2,"Favor");
           break;
         }
 
