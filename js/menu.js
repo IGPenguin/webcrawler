@@ -783,8 +783,8 @@ var Menu = (function () {
             + '</h5>';
         }
         var unlockLine = a.unlock
-          ? '<h5 style="margin:0px 0 4px 0; font-size:13px; font-weight:400; color:#ffffff; text-align:left;">' + a.unlock + '</h5>'
-          : '<h5 style="margin:0px 0 4px 0; opacity:0.6; font-size:13px; font-weight:400; color:#CCCCCC; text-align:left;">Carved into who you are.</h5>';
+          ? '<h5 style="margin:4px 0 4px 0; font-style:normal; font-size:13px; font-weight:400; color:#ffffff; text-align:left;">' + a.unlock + '</h5>'
+          : '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-style:normal; font-size:13px; font-weight:400; color:#CCCCCC; text-align:left;">Carved into who you are.</h5>';
         entry.innerHTML =
           '<div style="display:flex; align-items:center; gap:8px; padding:12px 0px 8px 12px; margin-bottom:-8px;">'
             + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'

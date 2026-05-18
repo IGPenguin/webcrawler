@@ -177,7 +177,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       if (procAbilityChance("", 20+playerLck*4)) { // ~20% base, scales to ~60% at lck 10
         pushEncounter(getRandomEncounter(["Friend","Checkpoint"]));
       } else {
-        pushEncounter(getRandomEncounter(["Altar"]));
+        pushEncounter(getRandomEncounter(["Altar","Curse"]));
         pushEncounter(getWeightedEncounter(["Consumable"]));
       }
       break;
