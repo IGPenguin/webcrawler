@@ -74,53 +74,74 @@ function transitionToGame(callback, message) {
   });
 }
 
-// Snaps curtain to black instantly, runs callback() while fully black (load
-// encounter / redraw), shows area name text with fade-in, holds, then fades out.
+// Two-element curtain approach: a dedicated fadein overlay handles the going-black
+// phase (smooth fade-in, no animationend glitch risk), then the main curtain takes
+// over solid-black for the hold + fade-out. The handoff is instant while both are
+// fully opaque, so the transition is invisible.
 function transitionArea(html, callback, onBeforeFadeOut) {
-  var curtain = document.getElementById('id_fullscreen_curtain');
-  var textEl  = document.getElementById('id_fullscreen_text');
+  var curtain  = document.getElementById('id_fullscreen_curtain');
+  var fadeInEl = document.getElementById('id_curtain_fadein');
+  var textEl   = document.getElementById('id_fullscreen_text');
   var gen = ++_curtainGen;
 
-  // Snap to black instantly — no fade-in animation avoids Chrome compositing glitch
-  curtain.style.pointerEvents = 'auto';
-  curtain.style.opacity = '1';
-  curtain.style.display = 'block';
+  // Phase 1: fade the fadein overlay to black
+  fadeInEl.style.pointerEvents = 'auto';
+  fadeInEl.style.display = 'block';
+  void fadeInEl.offsetWidth;
+  fadeInEl.style.setProperty('--animate-duration', '0.4s');
+  fadeInEl.classList.add('animate__animated', 'animate__fadeIn');
 
-  // Load encounter + redraw while curtain is fully opaque
-  callback();
-
-  // Fade in area name text on top of black curtain
-  textEl.innerHTML = html;
-  textEl.style.display = 'block';
-  void textEl.offsetWidth;
-  textEl.style.setProperty('--animate-duration', '0.5s');
-  textEl.classList.add('animate__animated', 'animate__fadeIn');
-
-  // Hold, then fade both out together
-  setTimeout(function () {
+  fadeInEl.addEventListener('animationend', function onFadeIn(e) {
+    if (e.target !== fadeInEl) return;
+    fadeInEl.removeEventListener('animationend', onFadeIn);
     if (_curtainGen !== gen) return;
-    if (onBeforeFadeOut) onBeforeFadeOut();
-    textEl.classList.remove('animate__animated', 'animate__fadeIn');
-    curtain.style.opacity = '';
-    void curtain.offsetWidth;
-    curtain.style.setProperty('--animate-duration', '0.7s');
-    curtain.classList.add('animate__animated', 'animate__fadeOut');
-    void textEl.offsetWidth;
-    textEl.style.setProperty('--animate-duration', '0.7s');
-    textEl.classList.add('animate__animated', 'animate__fadeOut');
+    fadeInEl.classList.remove('animate__animated', 'animate__fadeIn');
+    fadeInEl.style.opacity = '1'; // pin to prevent Chrome fill-mode glitch
 
-    curtain.addEventListener('animationend', function onOut() {
-      curtain.removeEventListener('animationend', onOut);
+    // Phase 2: snap main curtain solid black, load content under the fadein overlay
+    curtain.style.pointerEvents = 'auto';
+    curtain.style.opacity = '1';
+    curtain.style.display = 'block';
+    callback();
+
+    // Phase 3: fade in area name text, then instantly drop the fadein overlay
+    textEl.innerHTML = html;
+    textEl.style.display = 'block';
+    void textEl.offsetWidth;
+    textEl.style.setProperty('--animate-duration', '0.5s');
+    textEl.classList.add('animate__animated', 'animate__fadeIn');
+
+    fadeInEl.style.display = 'none';
+    fadeInEl.style.opacity = '';
+    fadeInEl.style.pointerEvents = 'none';
+
+    // Phase 4: hold, then fade curtain + text out together
+    setTimeout(function () {
       if (_curtainGen !== gen) return;
-      curtain.classList.remove('animate__animated', 'animate__fadeOut');
-      curtain.style.display = 'none';
+      if (onBeforeFadeOut) onBeforeFadeOut();
+      textEl.classList.remove('animate__animated', 'animate__fadeIn');
       curtain.style.opacity = '';
-      curtain.style.pointerEvents = 'none';
-      textEl.classList.remove('animate__animated', 'animate__fadeOut');
-      textEl.style.display = 'none';
-      registerClickListeners(300);
-    });
-  }, 2000);
+      void curtain.offsetWidth;
+      curtain.style.setProperty('--animate-duration', '0.7s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '0.7s');
+      textEl.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.addEventListener('animationend', function onOut(e) {
+        if (e.target !== curtain) return;
+        curtain.removeEventListener('animationend', onOut);
+        if (_curtainGen !== gen) return;
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        curtain.style.display = 'none';
+        curtain.style.opacity = '';
+        curtain.style.pointerEvents = 'none';
+        textEl.classList.remove('animate__animated', 'animate__fadeOut');
+        textEl.style.display = 'none';
+        registerClickListeners(300);
+      });
+    }, 2000);
+  });
 }
 
 function curtainFadeInAndOut(message="", duration=3, onComplete) {

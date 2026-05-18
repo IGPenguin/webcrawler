@@ -225,6 +225,10 @@ a:active, a:hover, a:focus {
   display: none;
 }
 
+.curtain--fadein {
+  z-index: 3;
+}
+
 .fullScreenText {
   font-size:30px;
   line-height:130%;

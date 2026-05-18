@@ -84,6 +84,7 @@ layout: default
 <script src="js/ui-buttons.js"></script>
 
 <div class= "curtain" id="id_fullscreen_curtain" style="pointer-events: none;" ></div>
+<div class= "curtain curtain--fadein" id="id_curtain_fadein" style="pointer-events: none;" ></div>
 <div class= "fullScreenText" id="id_fullscreen_text" style="-webkit-text-stroke: 6.5px black;
       paint-order: stroke fill;"></div>
 
