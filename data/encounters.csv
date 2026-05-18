@@ -174,11 +174,13 @@ Fading Wildlands;💐;Flower Bouquet;Item;0;0;0;0;2;0;0;Floral Gift;Makes anyone
 Fading Wildlands;🌹;Prickly Rose;Item;-1;0;0;0;2;0;0;Forest Flora;Beautiful but has very sharp thorns.<br>Provides <b>+2 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Beauty extracted its toll.;none
 Fading Wildlands;🌷;Pink Tulip;Item;1;0;0;0;1;0;0;Natural Beauty;Brings intense pleasure whenever looked at.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Something still soft in all this ruin.;none
 
-Fading Wildlands;🪨;Sharp Stone;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.;none
+Fading Wildlands;🦯;Riding Whip;Item-Weapon;0;1;0;0;1;0;0;Improvised Weapon;That horse must have had a lucky day.<br>Provides <b>+1 ⚔️ Damage</b> for <b>+1 🧠 Importance</b>.;There is no sugar, only the whip;none
+Fading Wildlands;🪨;Sharp Stone;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Shaped just right to use for offence.<br>Provides <b>+1 ⚔️ Damage</b>.;Picked up an improvised weapon.;none
 Fading Wildlands;🧤;Lucky Gloves;Item;0;0;0;2;0;0;0;Blessed Gear;Deems both hands "the lucky hand".<br>Provides <b>+2 🍀 Luck</b>.;Became lucky handed;none
 Fading Wildlands;📗;Camping Instructions;Item;0;0;1;0;0;0;0;Survival Manual;Explains essential survival instincts.<br>Provides <b>+2 🟢 Energy</b>.;Embraced the new knowledge.;none
 Fading Wildlands;📓;Mushroom Atlas;Item;0;0;0;1;1;0;0;Encyclopedia;Describes various species of forest growth.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.;none
 Fading Wildlands;🏹;Cursed Bow;Item-Weapon;-1;1;0;0;0;0;0;Malevolent Weapon;Lying next to a corpse, handle with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot yourself into the knee!;none
+Fading Wildlands;🪃;Basic Boomerang;Item-Weapon;-1;1;0;0;0;0;0;Weapon;Dropped on the ground out of the blue.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Thrown it, hit on return;none
 Fading Wildlands;🥏;Stray Disc;Item-Weapon;0;1;0;-1;0;0;0;Cursed Weapon;Effective in combat, but may be problematic.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🍀 Luck</b>.;Grabbed it for yourself;none
 
 Fading Wildlands;👢;Riding Boots;Item-Legs;0;0;1;0;0;0;0;Specialized Gear;Enables better stability in action.<br>Provides <b>+1 🟢 Energy</b>.;They fit you just perfectly.;none
@@ -210,8 +212,10 @@ Fading Wildlands;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋
 Fading Wildlands;🌸;Ambrosia Flower;Consumable;0;0;0;0;3;0;0;Spring's Essence;Thick, fragrant, and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>.;Felt a surge of clarity;none
 
 Fading Wildlands;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Very refreshing;none
+Fading Wildlands;🌽;Sweet KoЯn;Consumable;0;0;0;0;2;0;0;Vegetable;Sweet snack for every Children of the KoЯn.<br>Provides <b>+2 🧠 Intellect</b>.;Brighten not only your mood;none
 Fading Wildlands;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference;none
 Fading Wildlands;🧅;Wild Onion;Consumable;1;0;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity;none
+
 Fading Wildlands;🫑;Bell Pepper;Consumable;0;0;0;0;0;0;0;Standard Crop;Tastes not great, not terrible.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Fading Wildlands;🫛;Wild Peas;Consumable;0;0;0;0;0;0;0;Fresh Food;Probably packs some vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Fading Wildlands;🍇;Grape Vine;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
@@ -521,13 +525,13 @@ Forsaken Village;📔;Holy Prayerbook;Item;0;0;0;1;0;1;0;Unusual Book;Ancient to
 Forsaken Village;📒;Survival 101;Item;1;0;1;0;0;0;0;Manual;The ulimate guide with colorful illustrations.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.;none
 Forsaken Village;🥾;Heavy Boots;Item-Legs;1;0;1;0;0;0;0;Work Gear;Helps navigating through rough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.;none
 Forsaken Village;👖;Work Trousers;Item-Legs;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action;none
-Forsaken Village;🥼;Scientific Cloak;Item-Chest;0;0;0;0;3;0;0;Specialized Gear;Makes the wearer look very smart.<br>Provides <b>+3 🧠 Intellect</b>.;Ready for experimenting!;none
-Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;2;0;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+2 🧠 Intellect</b>;Let's do this!;none
+Forsaken Village;🥼;Scientific Cloak;Item-Chest;0;0;0;0;2;0;0;Specialized Gear;Makes the wearer look very smart.<br>Provides <b>+2 🧠 Intellect</b>.;Ready for experimenting!;none
+Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!;none
 Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;2;0;0;0;Lasting Hope;Brings pleasure whenever looked at.<br>Provides <b>+2 🍀 Luck</b>.;Feels good carrying that.;none
 Forsaken Village;🧤;Grappling Gloves;Item;0;0;2;0;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action;none
 Forsaken Village;🧸;Blessed Teddy;Item;0;0;0;2;0;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;;none
-Forsaken Village;🧷;Makeshift Piercing;Item;-1;0;0;0;4;0;0;Cool Accessory;Adjusts how others perceive your personality.<br>Provides <b>+4 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Stuck it into your ear.;none
-Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;3;0;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+3 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Got smarter, but also slower;none
+Forsaken Village;🧷;Makeshift Piercing;Item;-1;0;0;0;2;0;0;Cool Accessory;Adjusts how others perceive your personality.<br>Provides <b>+2 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Stuck it into your ear.;none
+Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;2;0;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Got smarter, but also slower;none
 Forsaken Village;🛼;Glide Skates;Item-Legs;-1;0;2;0;0;0;0;Uncanny Footwear;Takes a bit of (painful) practice to use them.<br>Provides <b>+2 🟢 Energy</b> for <b>-1 💔 Health</b>.;Dropped on your chin twice.;none
 
 Forsaken Village;🔨;Hefty Hammer;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Kinda heavy to swing around with.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>.;Kinda tiring to carry.;none
@@ -536,6 +540,7 @@ Forsaken Village;🧢;Cool Hat;Item-Head;0;0;0;0;1;0;0;Unusal Headgear;Makes one
 Forsaken Village;📕;First Aid 101;Item;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.;none
 Forsaken Village;👕;Cotton Shirt;Item-Chest;0;0;1;0;0;0;0;Ancient Clothes;Sun-bleached but capable of removing sweat.<br>Provides <b>+1 🟢 Energy</b>.;Put it onto yourself.;none
 Forsaken Village;👚;Faded Blouse;Item-Chest;0;0;1;0;0;0;0;Woman's Wear;A remnant of the brighter days.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Charisma</b>.;Feels a bit uncanny.;none
+Forsaken Village;🎈;Helium Balloon;Item-Trinket;0;0;1;0;-2;0;0;Funny Accessory;Makes your voice high-pitched and your body light.<br>Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Charisma</b>.;Laughter is the best medicine;none
 Forsaken Village;🪠;Waste Plunger;Item-Weapon;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassing situations.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed a makeshift weapon.;none
 Forsaken Village;🧹;Sturdy Broom;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but very effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed a makeshift weapon.;none
 Forsaken Village;🗞️;Fly Swatter;Item-Weapon;0;0;0;0;0;0;0;Makeshift Weapon;Not sure if it makes any difference.<br>;Picked up a makeshift weapon.;none
@@ -566,9 +571,10 @@ Forsaken Village;🧶;Cotton Ball;Item;0;0;0;0;0;0;0;Lost Possession;Must have b
 Forsaken Village;🎱;Eight Ball;Item;0;0;0;-1;0;0;0;Lost Possession;Supposedly brings <b>bad luck</b>.<br>;Oh shoot it does!;none
 Forsaken Village;⚙️;Broken Gear;Item;0;0;0;0;0;0;0;Lost Possession;Part of something much bigger.<br>;You should find the owner!;none
 Forsaken Village;🔩;Leftover Bolt;Item;0;0;0;0;0;0;0;Lost Possession;Part of something much bigger.<br>;You should find the owner!;none
+Forsaken Village;🎾;Lost Ball;Item;0;0;0;0;0;0;0;Lost Possession;Once so precious, now lost forever. Or not?<br>;Could bring happiness in the future.;none
 
 Forsaken Village;🦝;Raccoon Ambassador;Friend🎱\🧶\🧦\🥄\🪮\🔭\👽\🛸\🚀;0;0;0;0;0;0;0;Serious Representative;Would very much like to barter with you.<br>It is looking for: n/a;Initiated contact!;none
-Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🦴\🍖;0;0;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in:n/a;You made them happy!;none
+Forsaken Village;🐕;Nervous Doge;Friend🧶\👽\🦴\🍖\🎾;0;0;0;0;0;0;0;Wild Animal;Sniffed you and started <b>wiggling the tail!</b><br>Seems interested in:n/a;You made them happy!;none
 Forsaken Village;🐧;Galactic Penguin;Friend🚀\🔭\👽\🛸\⚙️\🔩;0;0;0;0;0;0;0;Unusal Critter;Travelled from a galaxy far far away.<br>It is looking for: n/a;Received a special treat.;none
 
 Forsaken Village;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;<b>Artifact</b>;Tastes like a proper vendetta — sweet and sour.<br><b>+1 ⚔️ Damage</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Ahhh, sweet and sour;none
@@ -881,6 +887,7 @@ Twisted Fairyland;📌;Voodoo Pin;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Enemies wil
 Twisted Fairyland;📜;The Elder Scroll;Item;0;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Intellect</b> and a mythical insight:<br>n/a;Embraced the ancient knowledge.;none
 
 Twisted Fairyland;🏹;Sharpshooter Bow;Item-Weapon;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!;none
+Twisted Fairyland;🪃;Haunted Boomerang;Item-Weapon;0;2;0;-1;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;Something about it feels off;none
 Twisted Fairyland;📯;Warlord Horn;Item;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!;none
 Twisted Fairyland;🪀;Jade Trinket;Item;0;0;1;1;0;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;;none
 Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Intellect</b>.;Absorbed some magic knowledge;none
@@ -888,7 +895,6 @@ Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The 
 Twisted Fairyland;🧥;Protective Coat;Item-Chest;2;0;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;;none
 Twisted Fairyland;🪈;Ratcatcher Flute;Item;0;0;0;-2;4;0;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds;none
 Twisted Fairyland;🧭;Cursed Compass;Item;0;0;2;-2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;Felt a werid cold surge;none
-Twisted Fairyland;🪃;Haunted Boomerang;Item-Weapon;0;1;0;-1;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;Something about it feels off;none
 Twisted Fairyland;㊙️;Crimson Medailon;Item;2;0;0;-4;0;0;0;Rare Trinket;Something feels off about this trinket.<br>Provides <b>+2 ❤️ Health</b> for <b>-4 🍀 Luck</b>.;;none
 Twisted Fairyland;🥁;Treble Drum;Item;0;0;2;0;0;0;0;Rythmical Instrument;Helps staying alert in combat.<br>Provides <b>+2 🟢 Energy</b>.;Ba dum tss!;none
 Twisted Fairyland;🪇;Painted Maracas;Item;0;0;0;2;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+2 🍀 Luck</b>.;Shake it baby!;none
