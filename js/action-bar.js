@@ -10,15 +10,18 @@ var ActionBar = (function () {
   var LABEL_FAIL        = 'Failed';
   var LABEL_CRIT_SUCESS = 'CRITICAL!';
   var LABEL_CRIT_FAIL   = 'FAILED!';
+  var LABEL_CANCEL      = 'Canceled';
   // ──────────────────────────────────────────────────────────────────────────
 
   // ── Timing (ms) ───────────────────────────────────────────────────────────
   var T_BAR_SHOW       =  120;  // bar fade-in when action bar opens
   var T_CURSOR_SNAP    =   70;  // cursor glide to resting position on release
   var T_RESULT_FADE_IN =  300;  // result overlay fade-in (longer = smoother reveal)
-  var T_RESULT_HOLD    =  750;  // how long the result stays fully visible
+  var T_RESULT_HOLD    =  800;  // how long the result stays fully visible
   var T_BAR_FADEOUT    =  220;  // bar + result fade-out together after hold
   var T_CANCEL_FADE    =  150;  // fade-out on cancel (no result shown)
+  var T_CANCEL_HOLD    =  800;  // how long "Canceled" result stays visible
+  var T_TAP_CANCEL     =  180;  // min hold time before release counts (tap-to-cancel guard)
   // ──────────────────────────────────────────────────────────────────────────
 
   var _config    = null;
@@ -26,6 +29,7 @@ var ActionBar = (function () {
   var _value     = 0;      // 0–100
   var _dir       = 1;      // 1 = right, -1 = left
   var _lastTs    = null;
+  var _startTs   = 0;      // timestamp when bar opened (for tap-cancel guard)
   var _running   = false;
   var _onResolve = null;
   var _sourceEl  = null;   // button that triggered the bar (for out-of-bounds cancel)
@@ -58,6 +62,7 @@ var ActionBar = (function () {
     _dir       = 1;
     _running   = true;
     _lastTs    = null;
+    _startTs   = Date.now();
     _lastZone  = 0;
 
     // Determine crit zones
@@ -194,14 +199,14 @@ var ActionBar = (function () {
     if (!_running) return;
     var t = e.changedTouches[0];
     if (t) _setOutside(_checkBounds(t.clientX, t.clientY));
-    if (_isOutside) { _cancel(); } else { _resolve(); }
+    if (_isOutside || Date.now() - _startTs < T_TAP_CANCEL) { _cancel(); } else { _resolve(); }
   }
 
   function _onPointerUp(e) {
     document.removeEventListener('pointermove',   _onPointerMove);
     document.removeEventListener('pointercancel', _onPointerCancel);
     if (!_running) return;
-    if (_isOutside) { _cancel(); return; }
+    if (_isOutside || Date.now() - _startTs < T_TAP_CANCEL) { _cancel(); return; }
     _resolve();
   }
 
@@ -295,13 +300,33 @@ var ActionBar = (function () {
     _running = false;
     cancelAnimationFrame(_raf);
     _cleanupListeners();
-    _clearResult();
     if (_elCancel) _elCancel.classList.remove('visible');
-    if (_elBar) {
-      _elBar.style.transition = 'opacity ' + T_CANCEL_FADE + 'ms';
-      _elBar.style.opacity    = '0';
-      setTimeout(function () { _elBar.style.display = 'none'; }, T_CANCEL_FADE);
+
+    if (_elResult) {
+      _elResult.textContent = LABEL_CANCEL;
+      _elResult.classList.add('result-cancel');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          _elResult.style.transition = 'opacity ' + T_RESULT_FADE_IN + 'ms ease';
+          _elResult.style.opacity = '1';
+        });
+      });
     }
+
+    setTimeout(function () {
+      if (_elResult) {
+        _elResult.style.transition = 'opacity ' + T_BAR_FADEOUT + 'ms';
+        _elResult.style.opacity = '0';
+      }
+      if (_elBar) {
+        _elBar.style.transition = 'opacity ' + T_BAR_FADEOUT + 'ms';
+        _elBar.style.opacity    = '0';
+      }
+      setTimeout(function () {
+        if (_elBar) _elBar.style.display = 'none';
+        _clearResult();
+      }, T_BAR_FADEOUT);
+    }, T_CANCEL_HOLD);
   }
 
   function hideActionBar() {

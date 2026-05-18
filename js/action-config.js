@@ -368,6 +368,14 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
+  // Item / Consumable grab — wide zone with one hidden danger slot
+  if (button === 'button_grab' && (types === 'Item' || types === 'Consumable')) {
+    var _idzEdge = 15;
+    var _idzCenter = Math.round((5 + _idzEdge + DZ_W / 2) + Math.random() * (90 - 2 * (_idzEdge + DZ_W / 2)));
+    var _idz = [{ min: _idzCenter - DZ_W / 2, max: _idzCenter + DZ_W / 2 }];
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95, dangerZones: _idz };
+  }
+
   // Caress (grab Memory) — always succeeds
   if (button === 'button_grab' && types === 'Memory') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
