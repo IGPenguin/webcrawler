@@ -311,7 +311,7 @@ function redraw(){
     case "Dream":
       displayPlayerState("Sleeping",colorBlue,"2.5")
       if (areaName.includes("Fading")) displayPlayerState();
-      if (areaName.includes("Shrouded")) displayPlayerState("Frightened",colorDarkGrey,"0.4");
+      if (areaName.includes("Shrouded")) displayPlayerState("Frightened",colorRed,"0.4");
       break;
 
     case "Curse":
@@ -349,7 +349,7 @@ function redraw(){
       }
       if (enemyType=="Upgrade") displayPlayerState("Excited",colorGold,"0.5"); //I need this to be overwritable by the below
       if (enemyTeam && (enemyTeam.includes("Imaginary") || enemyTeam.includes("Turning Point"))) displayPlayerState("Sleeping",colorBlue,"2.5"); //Shitty, I know, its the tutorial
-      if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&!encounterUsed) displayPlayerState("Frightened",colorDarkGrey,"0.4");
+      if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&!encounterUsed) displayPlayerState("Frightened",colorRed,"0.4");
       if (enemyTeam && (enemyTeam.includes("Lover's Memento")||enemyTeam.includes("Piece of History"))&&encounterUsed) displayPlayerState("Reminiscing",colorPink,"2.5");
       if (enemyTeam && enemyTeam.includes("Unlucky Moment")) displayPlayerState("Disappointed",colorRed,"2");
       if (corpseState === "" && enemyHp>0 && ((enemyAtk+enemyAtkBonus)>0 || enemyMgk>0)) {
