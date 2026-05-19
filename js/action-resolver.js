@@ -2924,7 +2924,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 if (_sa === 'Twisted Fairyland') { _skipIdx = _si; break; }
               }
               if (_skipIdx >= 0) {
-                if (!resolveGeneratorRow(_skipIdx)) encounterIndex = _skipIdx - 1;
+                encounterIndex = _skipIdx - 1;
               }
               playerRest(true);
               logPlayerAction(actionString, "<text style=color:"+colorFairy+";>Woken up somewhere else... ✨</text>");

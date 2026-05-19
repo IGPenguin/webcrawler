@@ -62,6 +62,7 @@ function loadEncounter(index, fileLines = linesStory){
     //console.log("Gen-type:"+number);
     if (number) number = parseInt(number[0],10);
 
+    previousArea = areaName; // generated encounters inherit this area — prevents double area transition
     generateNextEncounters(number);
     adventureEncounterCount-- //Remove the generator from the counter
     nextEncounter();
