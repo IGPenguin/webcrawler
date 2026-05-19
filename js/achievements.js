@@ -6,8 +6,9 @@ var AchievementManager = (function () {
     { id: 'all_achievements',    emoji: '🏆', desc: "Completed ALL available memories!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon™." },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency!", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🧿 Wizard</b> and <b>🩸 Warlock</b>.' },
+    { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
     { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.', unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
@@ -58,10 +59,10 @@ var AchievementManager = (function () {
     { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing writing with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
     { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing writing aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Broken</b> origin.' },
 
-    { id: 'rival_spot',       emoji: '👾', desc: 'Invaded from another world!',                hint: 'See the face of someone who fell.',    unlock: '' },
-    { id: 'rival_kill',       emoji: '💀', desc: 'Slayed an Invader!',                         hint: 'The dead can die twice.',                     unlock: '' },
-    { id: 'rival_killed_by',  emoji: '💔', desc: 'Slayed by an Invader from another world.',   hint: 'Their death echoed into yours.',              unlock: '' },
-    { id: 'rival_kills_10',   emoji: '🔪', desc: 'Slayed 10 Invaders!',                        hint: 'The world boundary grows thinner.',  unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
+    { id: 'rival_spot',          emoji: '👾', desc: 'Got invaded from another world!',         hint: 'See the face of someone who fell.',    unlock: '' },
+    { id: 'rival_kill',          emoji: '💀', desc: 'Slayed an Invader from another world!',   hint: 'The dead can die twice.',              unlock: '' },
+    { id: 'rival_killed_by',     emoji: '💔', desc: 'Slayed by Invader from another world.',   hint: 'Their death echoed into yours.',       unlock: '' },
+    { id: 'rival_kills_10',      emoji: '🔪', desc: 'Slayed 10 Invaders from anothe world!',   hint: 'The world boundary grows thinner.',    unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
 
     { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.', unlock: 'Unlocked the <b>🧂Salt Shaker</b> item.' },
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: 'Unlocked the <b>👨🏻‍🍳 Chef></b> origin.' },
@@ -83,7 +84,7 @@ var AchievementManager = (function () {
     { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something with no bait 50x!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b>.' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the shady gamble 10 times!', hint: "Become a well seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
 
-    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret name...', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
+    { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret special name.', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
   ];
 
   var _defaultStats = {
@@ -319,6 +320,10 @@ var AchievementManager = (function () {
         _save();
         if (_stats.totalBossKills === 1)  _unlock('boss_kill_first');
         if (_stats.totalBossKills >= 10)  _unlock('boss_kill_10');
+        break;
+
+      case 'gate_fairyland':
+        _unlock('gate_fairyland');
         break;
 
       case 'rival_spot':
