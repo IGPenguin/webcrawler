@@ -68,6 +68,9 @@ function _doStartGame(isContinue) {
         } else {
           startEnemyEmojiPulse();
         }
+        if (typeof TelemetryManager !== 'undefined') {
+          TelemetryManager.send('run_continue', '');
+        }
         return;
       }
     }
@@ -113,6 +116,7 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
       drachmaShop[0] = "area:" + "Fading Wildlands";
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
       pushEncounter(drachmaShop);
+      if (AchievementManager.isUnlocked("gate_fairyland")) pushEncounter(soulbindingArch, 2);
     }
     else if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player (first boss killed) — skip tutorial, no shop yet
       logAction("💤&nbsp;▸&nbsp;💭 This dream feels strangely familiar.<br><br>");

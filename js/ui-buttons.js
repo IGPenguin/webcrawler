@@ -88,7 +88,7 @@ function _setEndingButtons() {
                 'button_sleep','button_speak','button_cast','button_pray','button_curse'];
   allIds.forEach(function(id) {
     setButton(id, '-', colorDarkGrey);
-    document.getElementById(id).disabled = true;
+    //document.getElementById(id).disabled = true; //Do not disable buttons to allow keyboard navigation
   });
 
   // During dialogue only Kill is active — choices unlock after the auto-roll completes
@@ -209,20 +209,22 @@ function adjustEncounterButtons(){
       break;
 
     case "Memory":
-      document.getElementById('button_attack').disabled = true;
-      document.getElementById('button_block').disabled = true;
+      setButton('button_attack', "👊 Strike", colorRed);
+      setButton('button_roll', "👣 Leave");
+      setButton('button_sleep', '💤 Sleep', playerRested ? colorDarkGrey : colorFairy);
       setButton('button_grab', "🫲 Caress", encounterUsed ? colorDarkGrey : colorYellow);
-      setButton('button_roll', "🤜 Strike", colorRed);
-      setButton('button_speak', "💔 Recall", encounterUsed ? colorDarkGrey : colorRed);
+      setButton('button_speak', "💭 Recall", encounterUsed ? colorDarkGrey : colorGrapefruit);
       break;
 
     case "Item":
       setButton('button_grab',"👋 Grab",grabColor);
       setButton('button_roll',"❌ Ditch",colorRed);
       var _isMemento = enemyTeam.includes("Lover's Memento") || enemyTeam.includes("Piece of History");
-      if (_isMemento&&!encounterUsed) setButton('button_speak',"💔 Recall",colorRed);
-      if (_isMemento&&encounterUsed) setButton('button_speak',"💔 Recall",colorDarkGrey);
+      if (_isMemento&&!encounterUsed) setButton('button_speak',"💭 Recall",colorGrapefruit);
+      if (_isMemento&&encounterUsed) setButton('button_speak',"💭 Recall",colorDarkGrey);
       if (_isMemento) setButton('button_grab',"👋 Grab",colorGold);
+      if (_isMemento) setButton('button_attack',"💔 Shred",colorRed);
+      if (_isMemento) setButton('button_roll',"👣 Leave");
       if (enemyEmoji=="🪙" || enemyEmoji=="💰") setButton('button_grab',"👋 Claim",colorLightShadeBlue);
       if (enemyEmoji=="🪙" && enemyName.includes("Lucky")) setButton('button_grab',"👋 Claim",colorSoftGreen);
       if (enemyItemSlot) {
@@ -358,15 +360,16 @@ function adjustEncounterButtons(){
       break;
 
     case "Death":
-      ['button_grab','button_sleep','button_speak',
+      ['button_sleep','button_cast',
        'button_pray','button_curse'].forEach(function(id){
         setButton(id,"-",colorDarkGrey);
-        document.getElementById(id).disabled = true;
+        //document.getElementById(id).disabled = true; //Do not disable buttons to allow keyboard navigation
       });
       setButton('button_attack',"✨ Revive",colorGold);
       setButton('button_roll',"❌ Resign",colorRed);
       setButton('button_block',"💚 Rate",colorSoftGreen);
-      setButton('button_cast',"📎 Share",colorWhite);
+      setButton('button_speak',"📎 Share",colorWhite);
+      setButton('button_grab',"🗣️ Greet",colorLightBlue);
       break;
 
     case "Shop":

@@ -41,6 +41,24 @@ function pushHouseHardLoot(itemChance) {
 
 // ── Generator ─────────────────────────────────────────────────────────────────
 
+// Pre-expands a Generator row in linesStory without calling nextEncounter().
+// Use when you need to teleport past a generator and land on its first prop.
+// Returns true if expanded, false if the row isn't a generator.
+function resolveGeneratorRow(idx) {
+  var row = linesStory[idx];
+  if (!row) return false;
+  var type = String(row[3]).split(":").slice(1).join(":");
+  if (!type.includes("Generator")) return false;
+  var numMatch = type.match(/\d+$/);
+  var num = numMatch ? parseInt(numMatch[0], 10) : 0;
+  var savedArea = areaName;
+  areaName = String(row[0]).split(":").slice(1).join(":");
+  encounterIndex = idx;
+  generateNextEncounters(num);
+  areaName = savedArea;
+  return true;
+}
+
 function generateNextEncounters(generatorID=0, logCall=true) {
   if (logCall) _generationBuffer = [];
 
@@ -53,6 +71,9 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 0: // Prop / Small / Lockbox
       if (logCall) logGenerator("prop/small");
+
+      if (procAbilityChance("", 3)) generateNextEncounters(32, false); // ~4% shrine, flat — fires too often to scale with luck
+
       var type = "Prop";
       if (procAbilityChance("", 10+playerLck)) type = "Small"; // 10% Small
 
@@ -77,8 +98,6 @@ function generateNextEncounters(generatorID=0, logCall=true) {
         pushEncounter(getWeightedEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter(["Locked-Container"]));
       }
-
-      if (procAbilityChance("", 3)) generateNextEncounters(32, false); // ~4% shrine, flat — fires too often to scale with luck
       break;
 
     case 1: // Random story letter

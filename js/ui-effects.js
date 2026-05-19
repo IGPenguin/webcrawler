@@ -249,9 +249,12 @@ function permanentDeath(htmlMsg) {
       var nextOrigins = Menu.rollOrigins();
       if (nextOrigins && nextOrigins.length > 0) {
         var _tierRank = { Legendary: 0, Familiar: 1, Rare: 2, Uncommon: 3, Common: 4, Cursed: 5 };
+        var _hasStats = function(o) { return (o.atk||0)!==0||(o.hp||0)!==0||(o.sta||0)!==0||(o.lck||0)!==0||(o.int||0)!==0||(o.mgk||0)!==0||(o.def||0)!==0; };
         nextOrigins = nextOrigins.slice().sort(function(a, b) {
-          return (_tierRank[a.tier] !== undefined ? _tierRank[a.tier] : 4)
-               - (_tierRank[b.tier] !== undefined ? _tierRank[b.tier] : 4);
+          var td = (_tierRank[a.tier] !== undefined ? _tierRank[a.tier] : 4)
+                 - (_tierRank[b.tier] !== undefined ? _tierRank[b.tier] : 4);
+          if (td !== 0) return td;
+          return (_hasStats(b) ? 1 : 0) - (_hasStats(a) ? 1 : 0);
         });
         var cards = nextOrigins.map(function(o) {
           var color = RarityManager.getColor(o.tier || 'Common');

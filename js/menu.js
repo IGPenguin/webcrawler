@@ -301,6 +301,9 @@ var Menu = (function () {
   }
 
   function _originNet(o) { return RarityManager.calcNet(o); }
+  function _hasAnyStats(o) {
+    return (o.atk||0)!==0||(o.hp||0)!==0||(o.sta||0)!==0||(o.lck||0)!==0||(o.int||0)!==0||(o.mgk||0)!==0||(o.def||0)!==0;
+  }
 
   // Explicit [Tag] in note wins; achievement-gated origins with no stat changes are Legendary
   // (they have hidden bonuses not reflected in stats); otherwise stat net.
@@ -325,11 +328,14 @@ var Menu = (function () {
     var origins = _rollOrigins();
     if (origins.length === 0) { _doNewGame(null); return; }
 
-    // Legendary tier first, then by net stat descending — roll is still random, only display order is sorted
+    // Legendary tier first, then origins with any stat changes, then by net stat descending
     origins = origins.slice().sort(function(a, b) {
       var aLeg = _originTier(a) === 'Legendary' ? 1 : 0;
       var bLeg = _originTier(b) === 'Legendary' ? 1 : 0;
       if (bLeg !== aLeg) return bLeg - aLeg;
+      var aHas = _hasAnyStats(a) ? 1 : 0;
+      var bHas = _hasAnyStats(b) ? 1 : 0;
+      if (bHas !== aHas) return bHas - aHas;
       return _originNet(b) - _originNet(a);
     });
 
@@ -782,7 +788,7 @@ var Menu = (function () {
           ? '<h5 style="margin:4px 0 4px 0; font-style:normal; font-size:13px; font-weight:400; color:#ffffff; text-align:left;">' + a.unlock + '</h5>'
           : '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-style:normal; font-size:13px; font-weight:400; color:#CCCCCC; text-align:left;">Carved into who you are.</h5>';
         entry.innerHTML =
-          '<div style="display:flex; align-items:center; gap:8px; padding:12px 0px 8px 12px; margin-bottom:-8px;">'
+          '<div style="display:flex; align-items:center; gap:12px; padding:12px 0px 8px 16px; margin-bottom:-8px;">'
             + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
             + '<div><h5 style="margin:0; font-size:16px; font-style:normal; font-weight:600; color:#FFD940; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;">' + a.desc + '</h5>' + unlockLine + tsLine + '</div>'
           + '</div>';
@@ -790,7 +796,7 @@ var Menu = (function () {
         var hintText = (a.hint && a.hint.length > 0) ? a.hint : "Not discovered yet.";
         var lockedUnlockLine = '<h5 style="margin:4px 0 4px 0; font-size:13px; font-weight:400; color:#CCCCCC; text-align:left;">Something not yet remembered.</h5>';
         entry.innerHTML =
-          '<div style="display:flex; align-items:center; gap:8px; padding:12px 0px 8px 12px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
+          '<div style="display:flex; align-items:center; gap:12px; padding:12px 0px 8px 16px; margin-bottom:-8px; background-color:rgb(22,22,22); opacity:0.38;">'
             + '<span style="font-size:26px; line-height:1; flex-shrink:0;">' + a.emoji + '</span>'
             + '<div><h5 style="margin:0; font-size:16px; font-weight:500; color:#CCCCCC; text-align:left; -webkit-text-stroke: 3px #121212;paint-order: stroke fill;"> ' + (hintText || '') + '</h5>' + lockedUnlockLine + tsLine + '</div>'
           + '</div>';
@@ -1061,10 +1067,10 @@ var Menu = (function () {
       warnEl.style.cssText = 'margin-top:10px; padding:8px 10px; background:#2a1010; box-shadow:0 0 0 2px #cc3333;';
       warnEl.innerHTML = '<h5 style="margin:0 0 8px 0; font-size:14px; color:#ff6666; font-style:normal; font-weight:500; -webkit-text-stroke:3px #121212; paint-order:stroke fill; text-align:center;">⚠️ Changing this will end your current run!</h5>'
         + '<div style="display:flex; gap:8px;">'
-        + '<div id="settings_diff_cancel" style="flex:1; padding:8px 4px; text-align:center; background:#252525; box-shadow:0 0 0 2px #444; cursor:pointer; user-select:none;">'
+        + '<div id="settings_diff_cancel" tabindex="0" style="flex:1; padding:8px 4px; text-align:center; background:#252525; box-shadow:0 0 0 2px #444; cursor:pointer; user-select:none;">'
         +   '<span style="font-size:14px; font-weight:600; color:#fff; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Cancel</span>'
         + '</div>'
-        + '<div id="settings_diff_confirm" style="flex:1; padding:8px 4px; text-align:center; background:#3a1010; box-shadow:0 0 0 2px #cc3333; cursor:pointer; user-select:none;">'
+        + '<div id="settings_diff_confirm" tabindex="0" style="flex:1; padding:8px 4px; text-align:center; background:#3a1010; box-shadow:0 0 0 2px #cc3333; cursor:pointer; user-select:none;">'
         +   '<span style="font-size:14px; font-weight:600; color:red; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">✕ Confirm</span>'
         + '</div>'
         + '</div>';

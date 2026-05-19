@@ -58,6 +58,7 @@ var playerCurseType = "🪬";
 var availableCoins=savedCoins;
 var spentCoins=0;
 
+var soulbindingArch=["area:Fading Wildlands","emoji:⛩️","name:Soulbinding Arch","type:Memory","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Piece of History","desc:It stood before the world came apart.<br>Feels quite familiar on sight.","message:Left it behind, perhaps forever.","achiev:none"]
 var drachmaShop=["area:Fading Wildlands","emoji:👤","name:Undertaker Shade","type:Shop","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Voidwatcher","desc:Well met, what's it gonna be this time?<br>","message:Set out on another adventure!","achiev:none"]
 var drachmaPrize=["area:Fading Wildlands","emoji:🪙","name:Lucky Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Temporary reward for <b>one-time use only</b>.<br>Beware, gambling might be addictive.","message:Claimed a <b>Lucky Drachma +1 🪙</b>","achiev:none"]
 var drachmaCoin=["area:Wherever","emoji:🪙","name:Ethereal Drachma","type:Item","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Transient Currency","desc:Entangles with one's soul on touch.<br>","message:Claimed an <b>Ethereal Drachma +1 🪙</b>","achiev:none"]

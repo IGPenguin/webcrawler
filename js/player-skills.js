@@ -238,7 +238,7 @@ if (playerCheckLevelUp()){
 }
 
   } else {
-    if (!silent) logPlayerAction(actionString,"Not feeling sleepy at this time.");
+    if (!silent) logPlayerAction(actionString,"Not feeling sleepy anymore.");
     displayPlayerCannotEffect();
   }
 }
@@ -599,6 +599,7 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
       logAction("💀 ▸ "+ress+" Still alive thanks to <b>💀 Cheat Death</b>.");
       displayPlayerGainedEffect();
       playerHp+=1;
+      if (playerSlotTrinket && playerSlotTrinket.emoji === ress) playerSlotTrinket = null;
       return;
     }
 

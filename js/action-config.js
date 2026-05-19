@@ -66,8 +66,8 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
-  // Share on death — cast is always green regardless of mana
-  if (button === 'button_cast' && types.includes('Death')) {
+  // Share/greet on death — grab/speak is always green regardless of mana
+  if ((button === 'button_speak' || button === 'button_grab' ) && types.includes('Death')) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
@@ -376,16 +376,24 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 5, successMax: 95, dangerZones: _idz };
   }
 
-  // Caress (grab Memory) — always succeeds
+  // Caress (grab Memory) — always succeeds, unless used
   if (button === 'button_grab' && types === 'Memory') {
+    if (encounterUsed) {
+      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    }
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
-  // Recall (speak Memory) — graceful pass zone, fishing-no-bait-width crit zone for skip
-  if (button === 'button_speak' && types === 'Memory') {
+  // Recall (speak Memory or Item memento) — wide pass zone, narrow crit zones
+  var _isMementoRecall = (types === 'Memory') ||
+    (types === 'Item' && (String(enemyTeam || '').includes("Lover's Memento") || String(enemyTeam || '').includes("Piece of History")));
+  if (encounterUsed &&  button != "button_sleep" && button != "button_attack") {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+  if (button === 'button_speak' && _isMementoRecall) {
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT),
              successMin: 15, successMax: 85,
-             critSuccessMin: 47, critSuccessMax: 53 };
+             critSuccessMin: 47, critSuccessMax: 53, critFailW: 7 };
   }
 
   // Friend speak — difficulty based on INT differential

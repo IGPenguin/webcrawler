@@ -116,8 +116,9 @@ function enemyKilled(){
   playerKarma-=1; dbg("karma-- ("+playerKarma+")");
   playerKills++;
   AchievementManager.check('kill');
-  if (enemyBossType.includes('Boss')) {
+  if (enemyBossType.includes('Boss') && !_isRival) {
     AchievementManager.check('boss_kill');
+    if (areaName === 'Twisted Fairyland') AchievementManager.check('gate_fairyland');
     pushBossLoot();
   }
 

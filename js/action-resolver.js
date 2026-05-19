@@ -135,6 +135,24 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerCannotEffect();
               break;
             }
+            if (enemyTeam.includes("Lover's Memento") || enemyTeam.includes("Piece of History")) {
+              if (encounterUsed) {
+                logPlayerAction(actionString, "No more relief is coming from that -1 🟢");
+                break;
+              }
+              _crit === 'success'
+              ? playerAtk++ : "nothing happens"; //if crit add ++ atk 
+              playerLove-=2;
+              playerKarma-=2;
+              AchievementManager.check('letter_ditch');
+              logPlayerAction(actionString, _crit === 'success'
+                ? "<text style=color:"+colorRed+";>Shredded it with fury! +1 ⚔️ -1 💔</text>"
+                : "<text style=color:"+colorRed+";>Tore it apart with hatred -1 💔</text>");
+              displayPlayerCannotEffect();
+              if (playerHp>0) nextEncounter();
+              encounterUsed=true;
+              break;
+            }
             logPlayerAction(actionString, "Smashed it to pieces -1 🟢");
             nextEncounter();
             break;
@@ -332,6 +350,30 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerHp+=1;
             isFishing=false;
             animateFlipNextEncounter();
+            break;
+
+          case "Memory":
+            isFishing = false;
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "Pulled back at the last moment -1 🟢");
+              }
+              displayEnemyCannotEffect();
+              break;
+            }
+            _crit === 'success' ? playerAtk++ : "nothing happens"; //if crit add ++ atk 
+            playerLove--;
+            playerKarma--;
+            if ((playerHp-1)<=0) enemyMsg="Torn apart by severe heartbreak!"
+            logPlayerAction(actionString, _crit === 'success'
+              ? "<text style=color:"+colorRed+";>Struck it furiously +1 ⚔️ -1 💔</text>"
+              : "<text style=color:"+colorRed+";>Struck it full of anger -1 💔</text>");
+            displayEnemyEffect("👊");
+            displayPlayerEffect("💔");
+            playerHit(1);
             break;
 
           default:
@@ -609,12 +651,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               if (enemyTeam.includes("Lover's Memento") || enemyTeam.includes("Piece of History")){
-                playerAtk++;
-                playerLove-=2;
-                playerKarma-=2;
-                AchievementManager.check('letter_ditch');
-                logPlayerAction(actionString,"<text style=color:"+colorRed+";>You tossed it aside with hatred! +1 ⚔️</text>");
-                displayPlayerCannotEffect();
+                if (_skillOK === false) {
+                  if (playerSta > 0) playerSta--;
+                  logPlayerAction(actionString, "Walked away from it clumsily -1 🟢");
+                  displayPlayerCannotEffect();
+                  nextEncounter();
+                  break;
+                }
+                logPlayerAction(actionString, _crit === 'success'
+                  ? getWalkCritText()
+                  : "Left it where you found it.");
                 nextEncounter();
                 break;
               }
@@ -706,21 +752,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Memory":
             isFishing = false;
             if (_skillOK === false) {
-              playerSta = Math.max(0, playerSta - 1);
-              logPlayerAction(actionString, "Pulled back at the last moment -1 🟢");
-              displayPlayerCannotEffect();
+              if (Math.random() < 0.25) {
+                logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
+                playerHit(1);
+              } else {
+                playerSta = Math.max(0, playerSta - 1);
+                logPlayerAction(actionString, "Stumbled, almost falling over -1 🟢");
+                displayPlayerCannotEffect();
+              }
+              if (playerHp > 0) nextEncounter();
               break;
             }
-            playerAtk++;
-            playerLove--;
-            playerKarma--;
-            playerHit(1);
             logPlayerAction(actionString, _crit === 'success'
-              ? "<text style=color:"+colorRed+";>Destroyed something irreplaceable +1 ⚔️ -1 💔</text>"
-              : "<text style=color:"+colorRed+";>Struck it full of anger +1 ⚔️ -1 💔</text>");
-            displayEnemyEffect("🤜");
-            displayPlayerEffect("💔");
-            if (playerHp>0) nextEncounter();
+              ? getWalkCritText()
+              : "Left it behind you without flinching.");
+            nextEncounter();
             break;
           case "Friend":
             if (areaName.includes("Shrouded")) {
@@ -1033,8 +1079,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Death"){
-            showSharePopup();
-            logPlayerAction(actionString,"Shared your story with the living.");
             break;
           }
 
@@ -1691,7 +1735,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerLove++;
             playerKarma++;
             playerHit(1);
-            logPlayerAction(actionString, "<text style=color:"+colorGold+";>A quiet peace settles for a moment -1 💔</text>");
+            logPlayerAction(actionString, "<text style=color:"+colorGold+";>Felt something deep in your heart -1 💔</text>");
             displayPlayerRestedEffect();
             displayPlayerEffect("💔");
             break;
@@ -2284,8 +2328,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Death":
-            // logPlayerAction(actionString,"Echoed a message to the universe.");
-            // redirectToFeedback();
+            logPlayerAction(actionString,"Peeked at IGPenguin to say hi!");
+            visitLinkedIn();
             break;
 
           case "Upgrade":
@@ -2658,9 +2702,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             break;
 
-          case "Death":
-            // visitLinkedIn();
-            // logPlayerAction(actionString,"Checked out IGPenguin on LinkedIn!");
+          case "Death":  
+            logPlayerAction(actionString,"Shared Stay Dead with others!");  
+            showSharePopup();   
             break;
 
           case "Dream":
@@ -2679,6 +2723,37 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             animateFlipNextEncounter();
             break;
 
+          case "Memory":
+            isFishing = false;
+            if (encounterUsed) {
+              logPlayerAction(actionString, getEncounterUsedMessage());
+              displayPlayerCannotEffect();
+              break;
+            }
+            encounterUsed = true;
+            if (_crit === 'success') {
+              playerLove++;
+              playerKarma++;
+              displayPlayerRestedEffect();
+              displayPlayerEffect("💖");
+              logPlayerAction(actionString, "<text style=color:"+colorRed+";>" + getRecallCritPassText() + "</text>");
+            } else if (_crit === 'fail') {
+              playerLove -= 2;
+              displayPlayerEffect("💔");
+              logPlayerAction(actionString, "<text style=color:"+colorRed+";>" + getRecallCritFailText() + "</text>");
+            } else if (_skillOK === false) {
+              logPlayerAction(actionString, getRecallFailText());
+              displayPlayerCannotEffect();
+            } else {
+              playerKarma++;
+              playerLove++;
+              playerHit(1);
+              displayPlayerRestedEffect();
+              displayPlayerEffect("💔");
+              logPlayerAction(actionString, "<text style=color:"+colorRed+";>" + getRecallPassText() + "</text>");
+            }
+            break;
+
           case "Item":
             if (encounterUsed) {
               logPlayerAction(actionString,"It doesn't cause you any new feelings.");
@@ -2687,14 +2762,30 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (enemyTeam.includes("Lover's Memento") || enemyTeam.includes("Piece of History")){
+              isFishing = false;
+              encounterUsed = true;
               AchievementManager.check('letter_remember');
-              logPlayerAction(actionString,"<text style=color:"+colorRed+";>"+enemyMsg+" -1 💔</text>");
-              playerKarma++;
-              playerLove++;
-              playerHit(1);
-              displayPlayerRestedEffect();
-              displayPlayerEffect("💔")
-              encounterUsed=true;
+              if (_crit === 'success') {
+                playerLove++;
+                playerKarma++;
+                displayPlayerRestedEffect();
+                displayPlayerEffect("💖");
+                logPlayerAction(actionString, "<text style=color:"+colorRed+";>" + getRecallCritPassText() + "</text>");
+              } else if (_crit === 'fail') {
+                playerLove -= 2;
+                displayPlayerEffect("💔");
+                logPlayerAction(actionString, "<text style=color:"+colorRed+";>" + getRecallCritFailText() + "</text>");
+              } else if (_skillOK === false) {
+                logPlayerAction(actionString, getRecallFailText());
+                displayPlayerCannotEffect();
+              } else {
+                playerKarma++;
+                playerLove++;
+                displayPlayerRestedEffect();
+                displayPlayerEffect("💔");
+                logPlayerAction(actionString, "<text style=color:"+colorRed+";>" + getRecallPassText() + "</text>");
+                playerHit(1);
+              }
               break;
             }
 
@@ -2723,6 +2814,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
           playerRest(); // sets playerRested=true internally; no-op if already rested
+          break;
+        }
+
+        if (playerRested && !enemyType.includes("Trap") && enemyType !== "Fishing") {
+          logPlayerAction(actionString, "Not feeling sleepy anymore.");
+          displayPlayerCannotEffect();
           break;
         }
 
@@ -2809,39 +2906,30 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Memory":
-            if (encounterUsed) {
-              logPlayerAction(actionString, "The memory will not come back twice.");
-              displayPlayerCannotEffect();
-              break;
-            }
-            if (_skillOK === false) {
-              logPlayerAction(actionString, _crit === 'fail'
-                ? "You fumbled the words entirely."
-                : "You couldn't find the words.");
-              displayPlayerCannotEffect();
-              break;
-            }
-            encounterUsed = true;
-            playerLove++;
-            playerKarma++;
-            playerHit(1);
-            displayPlayerEffect("💔");
-            if (_crit === 'success') { //Skip through Fairyland directly to River on crit sucess
-              logPlayerAction(actionString, "<text style=color:"+colorGold+";>"+getMeetingPlaceRecall()+"</text>");
+            if (_crit === 'fail') {
+              logPlayerAction(actionString, "Exhausted by trying to sleep.");
+              displayPlayerEffect("💤");
+            } else if (_crit === 'success') {
               var _skipIdx = -1;
-              for (var _si = encounterIndex + 1; _si < linesStory.length; _si++) {
+              for (var _si = 0; _si < linesStory.length; _si++) {
                 var _sr = linesStory[_si];
                 if (!_sr) continue;
                 var _sa = String(_sr[0] || '').split(':')[1] || '';
-                if (_sa === 'River of Sorrows') { _skipIdx = _si; break; }
+                if (_sa === 'Twisted Fairyland') { _skipIdx = _si; break; }
               }
-              if (_skipIdx >= 0) encounterIndex = _skipIdx - 1;
-              enemyMsg="Fainted and woken up somewhere else."
-              if (playerHp>0) nextEncounter();
+              if (_skipIdx >= 0) {
+                if (!resolveGeneratorRow(_skipIdx)) encounterIndex = _skipIdx - 1;
+              }
+              playerRest(true);
+              logPlayerAction(actionString, "<text style=color:"+colorFairy+";>Woken up somewhere else... ✨</text>");
+              displayPlayerEffect("✨");
+              nextEncounter();
+            } else if (_skillOK === false) {
+              playerRestBadly();
             } else {
-              logPlayerAction(actionString, "<text style=color:"+colorRed+";>"+getMeetingPlaceRecall()+" -1 💔</text>");
-              displayPlayerRestedEffect();
+              playerRest();
             }
+            playerRested=true;
             break;
 
           case "Trap": //Rest to full if out of combat + mana
@@ -2854,7 +2942,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Checkpoint":
           case "Altar":
             if (_crit === 'fail') {
-              playerSta++;
               playerRested = true;
               logPlayerAction(actionString, "Exhausted by trying to sleep.");
               displayPlayerEffect("💤");
@@ -2878,7 +2965,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             fishingRested = true;
             if (_crit === 'fail') {
-              playerSta++;
               playerRested = true;
               logPlayerAction(actionString, "Exhausted by trying to sleep.");
               displayPlayerEffect("💤");

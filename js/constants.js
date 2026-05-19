@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 05/18/26 @ 04:55 PM"
+var versionCode = "ver. 05/19/26 @ 02:12 AM"
 var initialEncounterOverride = 0; // set to 5 to skip tutorial
 
 var SPLASH_DISABLED_LOCALHOST = true;
@@ -45,6 +45,7 @@ var colorLightShadeBlue = "#7193bf";
 var colorCardBackground = "#202020";
 var colorPaper         = "#d1bd91";
 var colorDarkPaper     = "#8c7f61";
+var colorFairy         = "#2cc176"
 
 // ── UI Symbols ────────────────────────────────────────────────────────────────
 var fullSymbol  = "<span class=\"ui-rect full\" style=\"color:"+colorGrey+"\"></span>";

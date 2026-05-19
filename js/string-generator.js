@@ -189,7 +189,7 @@ function getGameTip(){
     "Use <b>🔰 Block</b> or <b>🌀 Dodge</b> before <b>⚔️ Attack</b>.",
     "<b>💤 Sleep</b> recovers <b>🟢 Energy</b> and <b>🔵 Mana</b>.",
     "<b>🍀 Luck</b> rises the chance for a critical hit.",
-    "<b>👋 Grab</b> sombe <b>🪱 Bait</b> to do <b>🎣 Fishing</b> later.",
+    "<b>👋 Grab</b> some <b>🪱 Bait</b> to do <b>🎣 Fishing</b> later.",
     "<b>💌 Report</b> any issues to make a difference.",
     "<b>💬 Speaking</b> can sometimes stop the fight.",
     "<b>🍀 Luck</b> may help you  survive a fatal hit.",
@@ -219,7 +219,9 @@ function getGameTip(){
     "Spend <b>🪙 Drachmae</b> to improve your chances.",
     "<b>🍀 Luck</b> affects various random chances.",
     "The name <b><i>✏️ Poco Dinero</b></i> counts as cheating.",
-    "<b>🎣 Fishing</b> is dangerous, make sure to be rested."];
+    "<b>🎣 Fishing</b> is dangerous, make sure to be rested.",
+    "Try deep-sleeping at the <b>⛩️ Soulbinding Arch</b>.",
+  ];
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
 
@@ -229,7 +231,7 @@ function getPoem(){
     "Do not ever follow where I fell, my heart.<br>The ground has swallowed my beauty.",
     "My vows outlived my breath, it seems.<br>They whisper still, beneath the soil.",
     "The earth tried to keep me, but not anymore.<br>I rose with your name on my lips.",
-    "You whispered into the grave like a prayer.<br>And I came, half dream, half devotion.",
+    "You whispered into the grave like a prayer.<br>And I came, half hatred, half devotion.",
     "I drank from the chalice of sorrow.<br>It tasted like you — and I awoke.",
     "I stitched myself from bones and vows.<br>Just to stand where you once wept.",
     "You said 'forever' with a mortal tongue.<br>I kept my promise — what's your excuse?",
@@ -283,7 +285,7 @@ function getBridePoemByLove() {
     "I came the way you asked.<br>Not fully whole — but yours.",
     "Vows don't end with death.<br>Only my breathing did.",
     "I reach, but find shadows.<br>Only shadows take my hand.",
-    "Your whisper was like prayer.<br>I came: half dream, devotion.",
+    "Your whisper was like prayer.<br>I came half hatred, half devotion.",
     "I waited in the soil so long.<br>The stars forgot my name.",
     "The cold welcomed me first.<br>Then I remembered your warmth.",
     "I wear your name like a veil.<br>Even the worms won't touch it.",
@@ -353,7 +355,7 @@ function getWeddingInvitationPoem() {
   var pool = [
     "You sent this once trembling.<br>She never stopped believing.",
     "The text held her handwriting.<br>The oath stayed unsaid.",
-    "A dress was chosen. Flowers ordered.<br>Only one of you was ready.",
+    "A dress was chosen, flowers ordered.<br>Only one of you was ready.",
     "She sealed it with her breath.<br>It stayed sealed forever.",
     "She wrote your name at the top.<br>Even then, she already knew.",
     "It said: arrive before sundown.<br>You arrived. Just not in time.",
@@ -368,14 +370,28 @@ function getWeddingInvitationPoem() {
 function getWeddingInvitationFade() {
   var pool = [
     "Sealed with a pressed flower.<br>She chose it herself.",
-    "Her name, written by her hand.<br>The deed was never done.",
+    "A name, written by her hand.<br>The deed was never done.",
     "We were supposed to be there.<br>She is still to come.",
-    "Gold-edged and still unopened.<br>Unlike the gates of hell.",
+    "Gold-edged, still unopened.<br>Unlike the gates of hell.",
     "After all those days...<br>The wax holds her prints.",
     "You carried this once.<br>The feeling has changed.",
     "Still sealed. Still waiting.<br>Just like you and her.",
     "The paper holds her perfume.<br>It is never gonna fade.",
     "A promise folded into paper.<br>Yet still undelivered."
+  ];
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
+function getLoversMementoFade() {
+  var pool = [
+    "The ink held long enough.<br>The words never arrived.",
+    "Written in full, undeliveired.<br>Still smells of her perfume.",
+    "She would have read it twice.<br>You kept it instead.",
+    "Still folded the way she did it.<br>The crease has not softened.",
+    "Every word still there.<br>Still unsaid as far as she knows.",
+    "No address. No reply.<br>Sealed like a wound that held.",
+    "Her name was going to be first.<br>It still is.",
+    "Wind carried this a long way.<br>It still did not reach her."
   ];
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
@@ -498,6 +514,46 @@ function getShopMessage(){
   usedShopMessages+=message;
 
   return message
+}
+
+function getRecallPassText() {
+  return chooseFrom([
+    "It comes back slowly, sharp and real -1 💔",
+    "Something surfaced, it hurts to hold -1 💔",
+    "Familiar and painful, both at once -1 💔",
+    "A memory, didn't want to feel it -1 💔",
+    "She was there for you, remember? -1 💔"
+  ]);
+}
+
+function getRecallCritPassText() {
+  return chooseFrom([
+    "There was someone special, just for you.",
+    "You and her, bound together, forever.",
+    "All slowly comes back to you.",
+    "She was special, almost shed a tear.",
+    "Feels like a part of you is missing."
+  ]);
+}
+
+function getRecallFailText() {
+  return chooseFrom([
+    "Couldn't remember why this is familiar.",
+    "You felt something, but couldn't reach it.",
+    "Familiar shape, but no memory attached.",
+    "The feeling slipped before it formed.",
+    "Somewhere deep inside, you should know."
+  ]);
+}
+
+function getRecallCritFailText() {
+  return chooseFrom([
+    "Familiar shape with nothing attached.",
+    "Perhaps this was meant for someone else?",
+    "There's a price for forgetting love.",
+    "You refused your own memories.",
+    "Whatever you once felt is now gone."
+  ]);
 }
 
 function getEncounterUsedMessage() {

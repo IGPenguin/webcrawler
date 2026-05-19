@@ -98,6 +98,8 @@ function _fireRemembranceFade() {
     setTimeout(function() { curtainFadeInAndOut(getMeetingPlaceFade(), 3); }, 300);
   } else if (enemyTeam.includes("Remembrance") || enemyTeam.includes("Piece of History")) {
     setTimeout(function() { curtainFadeInAndOut(getWeddingInvitationFade(), 3); }, 300);
+  } else if (enemyTeam.includes("Lover's Memento")) {
+    setTimeout(function() { curtainFadeInAndOut(getLoversMementoFade(), 3); }, 300);
   }
 }
 

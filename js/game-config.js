@@ -207,9 +207,9 @@ var RarityManager = (function () {
          + (s.lck||0)*0.5 + (s.int||0)*0.5 + (s.def||0)*3;
   }
 
-  // Net formula for consumables. hp/sta are temporary so weighted much lower.
+  // Net formula for consumables. hp/sta are temporary so weighted lower than usual.
   function calcConsumableNet(s) {
-    return (s.atk||0)*3 + (s.mgk||0)*2 + (s.hp||0)*0.2 + (s.sta||0)*0.2
+    return (s.atk||0)*3 + (s.mgk||0)*2 + (s.hp||0)*0.5 + (s.sta||0)*0.5
          + (s.lck||0)*0.5 + (s.int||0)*0.5 + (s.def||0)*3;
   }
 
