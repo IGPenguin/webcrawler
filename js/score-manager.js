@@ -1,6 +1,21 @@
 var ScoreManager = (function () {
-  var FORM_URL     = 'https://docs.google.com/forms/d/e/1FAIpQLScqmG98EkuIREvZIXq7PYC6-z2HrPU4UKB07ifoIxEVPfefsg/formResponse';
-  var HMAC_SALT    = '@Pd`6aI3>Cb};XCco_Ol.~3._b*+iE?c}HMlJx>cQ>~Tv4h#bE#yif,dK<KlMq5C';
+  var FORM_URL  = 'https://docs.google.com/forms/d/e/1FAIpQLScqmG98EkuIREvZIXq7PYC6-z2HrPU4UKB07ifoIxEVPfefsg/formResponse';
+  var HMAC_SALT = '@Pd`6aI3>Cb};XCco_Ol.~3._b*+iE?c}HMlJx>cQ>~Tv4h#bE#yif,dK<KlMq5C';
+
+  // ── Score formula weights — tweak here ────────────────────────────────────
+  var SCORE_WEIGHTS = {
+    levelMult:     15,   // points per level
+    encounterDiv:   5,   // floor(encounters / encounterDiv)
+    companionMult:  8,   // points per companion
+    statDiv:        2,   // floor(net stats / statDiv)
+    winBonus:     100,   // flat bonus for any win ending
+  };
+  var DIFFICULTY_MULTS = {
+    Easy:      0.7,
+    Standard:  1.0,
+    Hardcore:  1.5,
+  };
+  // ─────────────────────────────────────────────────────────────────────────
 
   var ENDING_LABELS = {
     win_kill:    '🗡 Slain',
@@ -22,6 +37,12 @@ var ScoreManager = (function () {
   }
   var NICKNAME_KEY = 'playerNickname';
   var RANKINGS_URL = 'https://raw.githubusercontent.com/IGPenguin/stay-dead/rankings/highscores.json';
+  var _BANNED_NICKNAMES = ['igpenguin', 'blue2lip', 'perseus blade'];
+
+  function _isBannedNickname(name) {
+    if (typeof isLocalhost === 'function' && isLocalhost()) return false;
+    return _BANNED_NICKNAMES.indexOf((name || '').toLowerCase().trim()) !== -1;
+  }
 
   var ENTRY = {
     userId:         'entry.1612912835',
@@ -48,48 +69,61 @@ var ScoreManager = (function () {
 
   var _pendingPayload = null;
 
+  function _computeComponents(level, encounters, companions, totalStats, baseline, karma, isWin, diffLabel) {
+    var w = SCORE_WEIGHTS;
+    var levelBonus     = level * w.levelMult;
+    var encounterBonus = Math.floor(encounters / w.encounterDiv);
+    var companionBonus = companions * w.companionMult;
+    var statBonus      = Math.floor(Math.max(0, totalStats - baseline) / w.statDiv);
+    var karmaBonus     = Math.max(0, karma - 1);
+    var winBonus       = isWin ? w.winBonus : 0;
+    var mult           = DIFFICULTY_MULTS[diffLabel] || 1.0;
+    var raw            = levelBonus + encounterBonus + companionBonus + statBonus + karmaBonus;
+    return {
+      levelBonus: levelBonus, encounterBonus: encounterBonus, companionBonus: companionBonus,
+      statBonus: statBonus, karmaBonus: karmaBonus, winBonus: winBonus,
+      mult: mult, raw: raw, score: Math.round((raw + winBonus) * mult),
+      level: level, encounters: encounters, companions: companions
+    };
+  }
+
+  function _liveComponents(isWin) {
+    if (!encounterCount) return null;
+    var totalStats = (playerHpMax||0)+(playerAtk||0)+(playerStaMax||0)+(playerLck||0)+(playerInt||0)+(playerMgkMax||0)+(playerDef||0);
+    var companions  = [...String(playerPartyString||'')].length;
+    var diffLabel   = typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard';
+    return _computeComponents(playerLevel||1, encounterCount||0, companions, totalStats, scoreBaselineStats||0, playerKarma||1, !!isWin, diffLabel);
+  }
+
   function calculate() {
-    if (!encounterCount) return 0;
-    var stats = (playerHpMax || 0) + (playerAtk || 0) + (playerStaMax || 0)
-              + (playerLck || 0) + (playerInt || 0) + (playerMgkMax || 0) + (playerDef || 0);
-    var companions = [...String(playerPartyString || '')].length;
-    return (
-      (Math.max(0, (playerLevel || 1) - 1) * 15)
-      + Math.floor((encounterCount || 0) / 5)
-      + (companions * 8)
-      + Math.floor(Math.max(0, stats - scoreBaselineStats) / 2)
-      + Math.max(0, (playerKarma || 1) - 1)
-    );
+    var c = _liveComponents(false);
+    return c ? c.raw : 0;
   }
 
   function buildPayload(endType) {
-    var _mult = 1.0;
-    if (typeof GAME_CONFIG !== 'undefined') {
-      if (GAME_CONFIG.label === 'Easy')     _mult = 0.7;
-      else if (GAME_CONFIG.label === 'Hardcore') _mult = 1.5;
-    }
-    var score = Math.round((calculate() + (endType === 'win' || (typeof endType === 'string' && endType.startsWith('win_')) ? 100 : 0)) * _mult);
-    var companions = [...String(playerPartyString || '')].length;
-    var playtime = Math.floor((Date.now() - (runStartTimestamp || Date.now())) / 1000);
+    var isWin   = endType === 'win' || (typeof endType === 'string' && endType.startsWith('win_'));
+    var comps   = _liveComponents(isWin) || _computeComponents(playerLevel||1, 0, 0, 0, 0, playerKarma||1, isWin, typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard');
     var statsStr = [playerHpMax, playerAtk, playerStaMax, playerLck, playerInt, playerMgkMax, playerDef].join(';');
+    var playtime = Math.floor((Date.now() - (runStartTimestamp || Date.now())) / 1000);
     return {
-      score:          score,
-      nickname:       getNickname() || String(playerName || '?'),
-      charName:       String(playerName || '?'),
-      origin:         String(playerOriginName || ''),
-      level:          playerLevel || 1,
-      encounterCount: encounterCount || 0,
-      companions:     companions,
-      stats:          statsStr,
-      karma:          playerKarma || 1,
-      difficulty:     (typeof GAME_CONFIG !== 'undefined' ? (GAME_CONFIG.displayName || GAME_CONFIG.label) : '💔 Rough'),
-      gameVersion:    (typeof versionCode !== 'undefined' ? versionCode : '?'),
-      playtime:       playtime,
-      endType:        endType,
-      datetime:       new Date().toISOString(),
-      inventory:      String(playerLootString || ''),
-      coins:          savedCoins || 0,
-      deathMessage:   typeof enemyMsg !== 'undefined' ? String(enemyMsg || '') : ''
+      score:             comps.score,
+      nickname:          getNickname() || String(playerName || '?'),
+      charName:          String(playerName || '?'),
+      origin:            String(playerOriginName || ''),
+      level:             playerLevel || 1,
+      encounterCount:    encounterCount || 0,
+      companions:        comps.companions,
+      stats:             statsStr,
+      karma:             playerKarma || 1,
+      difficulty:        (typeof GAME_CONFIG !== 'undefined' ? (GAME_CONFIG.displayName || GAME_CONFIG.label) : '💔 Rough'),
+      gameVersion:       (typeof versionCode !== 'undefined' ? versionCode : '?'),
+      playtime:          playtime,
+      endType:           endType,
+      datetime:          new Date().toISOString(),
+      inventory:         String(playerLootString || ''),
+      coins:             savedCoins || 0,
+      deathMessage:      typeof enemyMsg !== 'undefined' ? String(enemyMsg || '') : '',
+      scoreBaselineStats: scoreBaselineStats || 0
     };
   }
 
@@ -186,6 +220,34 @@ var ScoreManager = (function () {
     try { localStorage.setItem(NICKNAME_KEY, s); } catch (e) {}
   }
 
+  function _getBreakdown(payload) {
+    var statArr    = (payload.stats || '').split(';').map(Number);
+    var totalStats = statArr.reduce(function(a, b) { return a + b; }, 0);
+    var isWin      = payload.endType && (payload.endType === 'win' || payload.endType.startsWith('win_'));
+    var diffLabel  = typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard';
+    return _computeComponents(payload.level||1, payload.encounterCount||0, payload.companions||0, totalStats, payload.scoreBaselineStats||0, payload.karma||1, !!isWin, diffLabel);
+  }
+
+  function _buildBreakdownHTML(payload) {
+    var b   = _getBreakdown(payload);
+    var ROW = 'display:flex;justify-content:space-between;margin:3px 0;';
+    var LBL = 'color:FFD940;';
+    var VAL = 'color:#FFD940;font-weight:bold;';
+    var rows = [
+      ['Level ' + b.level,           '+' + b.levelBonus],
+      ['Encounters ' + b.encounters, '+' + b.encounterBonus],
+      ['Companions ' + b.companions, '+' + b.companionBonus],
+      ['Stat Growth',                '+' + b.statBonus],
+      ['Karma',                      '+' + b.karmaBonus],
+    ];
+    if (b.winBonus)   rows.push(['Win Bonus',  '+' + b.winBonus]);
+    if (b.mult !== 1) rows.push(['Difficulty', '×' + b.mult]);
+    return rows.map(function(r) {
+      return '<div style="color:FFD940;' + ROW + '"><span style="' + LBL + '">' + r[0] + '</span>'
+           + '<span style="' + VAL + '">' + r[1] + '</span></div>';
+    }).join('');
+  }
+
   async function _doSubmit(payload) {
     if (!isAuthorizedHost()) return;
     var hash = await _generateHash(payload);
@@ -234,25 +296,40 @@ var ScoreManager = (function () {
       }
     }
 
-    if (success) {
-      showAchievementToast({ emoji: '⭐', desc: 'Rankings score submitted: ' + payload.score + ' pts' }, Date.now(), null);
-      logAction("⭐ ▸ 🚀 Rankings score submitted: " + payload.score + ' pts')
-    }
+    if (!success) { console.warn('ScoreManager: submission failed'); }
   }
 
   function submitOrPrompt(payload) {
     if (cheatedThisRun) return;
     if (isLocalhost() && RANKINGS_DISABLED_LOCALHOST) return;
-    if (getNickname()) {
-      payload.nickname = getNickname();
-      _doSubmit(payload);
-    } else {
-      _pendingPayload = payload;
-      var scoreEl = document.getElementById('nickname_score_display');
-      if (scoreEl) scoreEl.textContent = '⭐ ' + payload.score + ' pts';
-      var el = document.getElementById('nickname_overlay');
-      if (el) el.style.display = 'flex';
+    _pendingPayload = payload;
+
+    var isWin = payload.endType && (payload.endType === 'win' || payload.endType.startsWith('win_'));
+
+    var labelEl = document.getElementById('nickname_ending_label');
+    if (labelEl) {
+      labelEl.textContent = isWin
+        ? getEndingLabel(payload.endType)
+        : ("💀 "+payload.deathMessage || "👑"+ getEndingLabel(payload.endType));
+      labelEl.style.color = isWin ? '#FFD940' : '#FF0000';
     }
+
+    var scoreEl = document.getElementById('nickname_score_display');
+    if (scoreEl) scoreEl.textContent = payload.score + ' 🎖️ Valor';
+
+    var breakdownEl = document.getElementById('nickname_score_breakdown');
+    if (breakdownEl) breakdownEl.innerHTML = _buildBreakdownHTML(payload);
+
+    var input = document.getElementById('nickname_input');
+    if (input) input.value = getNickname() || '';
+
+    var errEl = document.getElementById('nickname_error');
+    if (errEl) errEl.style.display = 'none';
+    var banEl = document.getElementById('nickname_ban_error');
+    if (banEl) banEl.style.display = 'none';
+
+    var overlay = document.getElementById('nickname_overlay');
+    if (overlay) overlay.style.display = 'flex';
   }
 
   function fetchRankings(callback) {
@@ -267,28 +344,46 @@ var ScoreManager = (function () {
     var skipBtn    = document.getElementById('nickname_skip');
     var input      = document.getElementById('nickname_input');
     var errEl      = document.getElementById('nickname_error');
+    var banEl      = document.getElementById('nickname_ban_error');
     var overlay    = document.getElementById('nickname_overlay');
     if (!confirmBtn) return;
+
+    function _dismiss() {
+      var isWin = _pendingPayload
+        && _pendingPayload.endType
+        && (_pendingPayload.endType === 'win' || _pendingPayload.endType.startsWith('win_'));
+      _pendingPayload = null;
+      if (overlay) overlay.style.display = 'none';
+      if (isWin && typeof menuFade === 'function' && typeof Menu !== 'undefined') {
+        menuFade(function() { Menu.show(); });
+      }
+    }
 
     confirmBtn.addEventListener('click', function () {
       var val = (input.value || '').trim();
       if (val.length < 3) {
         if (errEl) errEl.style.display = '';
+        if (banEl) banEl.style.display = 'none';
+        return;
+      }
+      if (_isBannedNickname(val)) {
+        if (banEl) banEl.style.display = '';
+        if (errEl) errEl.style.display = 'none';
         return;
       }
       if (errEl) errEl.style.display = 'none';
+      if (banEl) banEl.style.display = 'none';
       setNickname(val);
       if (_pendingPayload) {
         _pendingPayload.nickname = val;
         _doSubmit(_pendingPayload);
-        _pendingPayload = null;
+        showAchievementToast({ emoji: '🪦', desc: 'Reckonings submitted: ' + _pendingPayload.score + ' 🎖️ Valor' }, Date.now(), null);
       }
-      if (overlay) overlay.style.display = 'none';
+      _dismiss();
     });
 
     skipBtn.addEventListener('click', function () {
-      _pendingPayload = null;
-      if (overlay) overlay.style.display = 'none';
+      _dismiss();
     });
 
     input.addEventListener('keydown', function (e) {

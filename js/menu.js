@@ -549,7 +549,7 @@ var Menu = (function () {
         + '</div>'
         + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + (session.deathMessage || session.causeOfDeath || '') + '</h5>'
         + '<h5 style="margin:-4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
-        + (session.score !== undefined ? '&nbsp;&nbsp;•&nbsp;&nbsp;⭐ ' + session.score : '') + '</h5>';
+        + (session.score !== undefined ? '&nbsp;&nbsp;•&nbsp;&nbsp;🎖️ ' + session.score : '') + '</h5>';
 
       entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
       list.appendChild(entry);
@@ -625,7 +625,7 @@ var Menu = (function () {
       scoreBar.className = 'menu-score-bar';
       scoreBar.style.cssText = 'margin:14px 3px 0px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
       scoreBar.innerHTML =
-        '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">⭐ Score: <b>' + session.score + '</b>'
+        '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">🎖️ Valor: <b>' + session.score + '</b>'
         + (session.encounterCount ? '&nbsp;&nbsp;&nbsp;Encounters: ' + session.encounterCount : '') + '</h5>'
         + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
         + (session.playerOriginName ? 'Origin: ' + session.playerOriginName + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
@@ -845,11 +845,11 @@ var Menu = (function () {
 
     ScoreManager.fetchRankings(function (err, data) {
       if (err || !data) {
-        list.innerHTML = '<h4 style="text-align:center; padding:20px 0; color:#ff4444; min-height:0; margin:0;">Could not load rankings.<br><span style="opacity:0.5; font-size:13px;">Check your connection.</span></h4>';
+        list.innerHTML = '<h4 style="text-align:center; padding:20px 0; color:#ff4444; min-height:0; margin:0;">Could not load reckonings.<br><span style="opacity:0.5; font-size:13px;">Check your connection.</span></h4>';
         return;
       }
       if (!data.length) {
-        list.innerHTML = '<h4 style="text-align:center; padding:20px 0; min-height:0; margin:0; opacity:0.5;">No rankings yet.<br>Be the first!</h4>';
+        list.innerHTML = '<h4 style="text-align:center; padding:20px 0; min-height:0; margin:0; opacity:0.5;">No reckonings yet.<br>Be the first!</h4>';
         return;
       }
       list.innerHTML = '';
@@ -862,7 +862,7 @@ var Menu = (function () {
             + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; position:relative; background-color:#202020;">'
               + '<h3 style="position:absolute; top:0; bottom:0; right:10px; display:flex; align-items:center; z-index:3; margin:0; padding:0;">'
                 + '<i style="font-weight:600; margin-top:4px; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
-                + '#' + (i + 1) + '&nbsp;&nbsp;⭐ ' + (entry.score || 0)
+                + '#' + (i + 1) + '&nbsp;&nbsp;🎖️ ' + (entry.score || 0)
                 + '</i></h3>'
               + '<h3 style="display:flex; align-items:center; height:28px; text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
               + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
@@ -930,7 +930,7 @@ var Menu = (function () {
     infoEl.className = 'menu-score-bar';
     infoEl.style.cssText = 'margin:14px 3px 3px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
     infoEl.innerHTML =
-      '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">⭐ Score: <b>' + (ghost.score || 0) + '</b></h5>'
+      '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">🎖️ Valor: <b>' + (ghost.score || 0) + '</b></h5>'
       + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
       + (ghost.origin ? 'Origin: ' + ghost.origin + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
       + 'Playtime: ' + _formatPlaytime(ghost.playtime || 0) + '</h5>'
@@ -998,7 +998,7 @@ var Menu = (function () {
 
     var nickLabel = document.createElement('h5');
     nickLabel.style.cssText = SECTION_LABEL;
-    nickLabel.textContent = 'Rankings Nickname';
+    nickLabel.textContent = 'Reckonings Nickname';
     nickSection.appendChild(nickLabel);
 
     var nickInput = document.createElement('input');

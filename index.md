@@ -139,14 +139,14 @@ layout: default
       text-align:center;">💀 Main Menu</h2>
       <div id="menu_continue_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
       <button class="menu-btn" id="menu_continue">⚔️ Continue</button>
-      <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ New Game</button>
+      <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ Rise Again</button>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_leaderboard" style="color:grey;">⭐️ Rankings</button>
+      <button class="menu-btn" id="menu_leaderboard" style="color:grey;">🪦 Reckonings</button>
       <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">📜 Chronicles</button>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_settings">⚙️ Settings</button>
-      <button class="menu-btn" id="menu_credits">🖤 Credits</button>
+      <button class="menu-btn" id="menu_credits">🖤 Makers</button>
     </div>
   </div>
 
@@ -158,7 +158,7 @@ layout: default
              -webkit-text-stroke: 5px black;
              paint-order: stroke fill;
              margin:8px 0 8px 0;
-             text-align:center;">✨ New Game</h2>
+             text-align:center;">✨ Rise Again</h2>
       <h5 id="menu_origin_subtitle" style="margin:0 0 12px 0;
        font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">
         This is a subtitle placeholder.</h5>
@@ -263,13 +263,13 @@ layout: default
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
             margin:8px 0 8px 0;
-            text-align:center;">🖤 Credits</h2>
+            text-align:center;">🖤 Makers</h2>
       <div id="menu_credits_body" style="padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000;">
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:8px; opacity:0.6; font-size:16px; color:#FFF;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:18px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Blessed by</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:16px;"><a href="https://www.linkedin.com/in/tereza-svobodov%C3%A1-857139154/?locale=en">Terezka Svobodová</a></h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Reviewed by</h5>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Co-designer</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:16px;">Terezka <a href="https://github.com/Blue2lip">"Blue2lip"</a> Svobodová</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Virtual team</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:16px;"><a href="https://github.com/IGPenguin/perseus-blade">Perseus Blade</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Beta testers</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;">None yet?!</h4>
@@ -298,7 +298,7 @@ layout: default
             -webkit-text-stroke: 5px black;
             paint-order: stroke fill;
             margin:8px 0 6px 0;
-            text-align:center;">⭐️ Rankings</h2>
+            text-align:center;">🪦 Reckonings</h2>
       <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The data is updated approx. every 15 minutes.</h5>
       <div style="flex:1;
                   min-height:0;
@@ -339,16 +339,18 @@ layout: default
 
 </div><!-- end id_menu -->
 
-<!-- Nickname overlay — shown on first game end if no leaderboard nickname is set -->
+<!-- Score submission overlay — shown on every game end -->
 <div id="nickname_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
-  <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
-    <h3 style="text-align:center; margin:0 0 8px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">✏️ Enter Nickname:</h3>
-    <div id="nickname_score_display" style="text-align:center; margin:0 0 10px 0; color:#FFD940; font-size:22px; font-weight:bold; -webkit-text-stroke:3px black; paint-order:stroke fill;"></div>
+  <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; max-height:88vh; overflow-y:auto; scrollbar-width:none; box-shadow:0 0 0 3px #000;">
+    <div id="nickname_ending_label" style="text-align:center; margin:0 0 4px 0; font-size:20px; font-weight:bold; -webkit-text-stroke:4px black; paint-order:stroke fill;"></div>
+    <div id="nickname_score_display" style="text-align:center; margin:0 0 10px 0; color:#FFD940; font-size:28px; font-weight:bold; -webkit-text-stroke:4px black; paint-order:stroke fill;"></div>
+    <div id="nickname_score_breakdown" class="menu-score-bar" style="margin:0 0 12px 0; padding:8px 10px; background-color:#272727; box-shadow:0px 0px 0px 3px #121212; font-size:14px;"></div>
     <input id="nickname_input" type="text" maxlength="32" placeholder="Your Nickname (3+ chars)" style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
-        <h5 style="text-align:center; margin:12px 0 0 0; opacity:0.55; font-size:13px; font-weight:400;">It will be shown on global rankings.</h5>
+    <h5 style="text-align:center; margin:12px 0 0 0; opacity:0.55; font-size:13px; font-weight:400;">Your Valor will be shown in the Reckonings.</h5>
     <h5 id="nickname_error" style="color:#ff4444; text-align:center; margin:6px 0 0 0; font-size:13px; display:none;">Minimum 3 characters required.</h5>
-    <button id="nickname_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Submit</button>
-    <button id="nickname_skip" class="menu-btn" style="margin-top:4px; color:red;">✕ Skip</button>
+    <h5 id="nickname_ban_error" style="color:#ff4444; text-align:center; margin:6px 0 0 0; font-size:13px; display:none;">That name is not allowed.</h5>
+    <button id="nickname_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Inscribe</button>
+    <button id="nickname_skip" class="menu-btn" style="margin-top:4px; color:#FF0000;">✕ Skip</button>
   </div>
 </div>
 

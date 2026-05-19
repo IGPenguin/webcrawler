@@ -144,7 +144,7 @@ function transitionArea(html, callback, onBeforeFadeOut) {
   });
 }
 
-function curtainFadeInAndOut(message="", duration=3, onComplete) {
+function curtainFadeInAndOut(message="", duration=3, onComplete, onFadeOutStart) {
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = document.getElementById('id_fullscreen_text');
   var gen = ++_curtainGen;
@@ -173,6 +173,7 @@ function curtainFadeInAndOut(message="", duration=3, onComplete) {
 
     setTimeout(function () {
       if (_curtainGen !== gen) return;
+      if (onFadeOutStart) onFadeOutStart();
       if (message) {
         textEl.classList.remove('animate__animated', 'animate__fadeIn');
         void textEl.offsetWidth;

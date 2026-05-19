@@ -967,13 +967,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0
             && enemyType!=="Pet" && enemyType!=="Small" && enemyType!=="Friend" && enemyType!=="Swift") {
           var _blockFailDmg = enemyAtk + enemyAtkBonus;
+          var _blockFailMsg;
           if (_crit === 'fail') {
             playerSta = Math.max(0, playerSta - 1);
-            logPlayerAction(actionString, "Block crumbled inward -"+_blockFailDmg+" 💔 -2 🟢");
+            _blockFailMsg = "Block crumbled inward -"+_blockFailDmg+" 💔 -2 🟢";
           } else {
-            logPlayerAction(actionString, "They broken your block -"+_blockFailDmg+" 💔 -1 🟢");
+            _blockFailMsg = "They broken your block -"+_blockFailDmg+" 💔 -1 🟢";
           }
-          playerHit(_blockFailDmg);
+          if (enemyStaminaChangeMessage(-1, _blockFailMsg, "Couldn't break through, caught their breath.")) {
+            playerHit(_blockFailDmg);
+          }
           break;
         }
 

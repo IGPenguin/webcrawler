@@ -133,11 +133,6 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
-  // Friend walk — always free to leave
-  if (button === 'button_roll' && types === 'Friend') {
-    return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
-  }
-
   // Trap-Roll walk — insanely hard to avoid triggering
   if (button === 'button_roll' && types === 'Trap-Roll') {
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
@@ -149,7 +144,7 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Prop / encounterUsed / Fishing / corpse walk: wide zone with one hidden danger slot
-  if (button === 'button_roll' && (types === 'Prop' || types === 'Fishing' || encounterUsed || corpseState !== '')) {
+  if (button === 'button_roll' && (types === 'Prop' || types === 'Fishing' || types === 'Memory' || types == 'Friend' || encounterUsed || corpseState !== '')) {
     var _dzEdge = 15; // min distance from success-zone edge (5 and 95) to danger zone center
     var _dzCenter = Math.round((5 + _dzEdge + DZ_W / 2) + Math.random() * (90 - 2 * (_dzEdge + DZ_W / 2)));
     var _dz = [{ min: _dzCenter - DZ_W / 2, max: _dzCenter + DZ_W / 2 }];

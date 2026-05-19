@@ -31,6 +31,7 @@ var ActionBar = (function () {
   var _lastTs    = null;
   var _startTs   = 0;      // timestamp when bar opened (for tap-cancel guard)
   var _running   = false;
+  var _busy      = false;  // true from bar open until onResolve fires (blocks double-press during result animation)
   var _onResolve = null;
   var _sourceEl  = null;   // button that triggered the bar (for out-of-bounds cancel)
   var _isOutside = false;  // pointer currently outside the source button
@@ -52,7 +53,7 @@ var ActionBar = (function () {
 
   function showActionBar(config, onResolve, sourceEl) {
     if (!_elBar) _init();
-    if (_running) return;          // already active — ignore double press
+    if (_running || _busy) return; // already active or result still animating — ignore double press
 
     _config    = config;
     _onResolve = onResolve;
@@ -61,6 +62,7 @@ var ActionBar = (function () {
     _value     = 0;
     _dir       = 1;
     _running   = true;
+    _busy      = true;
     _lastTs    = null;
     _startTs   = Date.now();
     _lastZone  = 0;
@@ -276,6 +278,7 @@ var ActionBar = (function () {
         _elBar.style.display = 'none';
         _elCursor.classList.remove('action-bar-snap');
         _clearResult();
+        _busy = false;
         if (_onResolve) _onResolve(isSuccess, val, critResult);
       }, T_BAR_FADEOUT);
     }, T_RESULT_HOLD);
@@ -325,12 +328,14 @@ var ActionBar = (function () {
       setTimeout(function () {
         if (_elBar) _elBar.style.display = 'none';
         _clearResult();
+        _busy = false;
       }, T_BAR_FADEOUT);
     }, T_CANCEL_HOLD);
   }
 
   function hideActionBar() {
     _running = false;
+    _busy    = false;
     cancelAnimationFrame(_raf);
     _cleanupListeners();
     _clearResult();

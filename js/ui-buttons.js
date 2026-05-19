@@ -182,7 +182,7 @@ function adjustEncounterButtons(){
 
     case "Altar":
       // Pray is rebound to button_speak on Altars; button_pray stays as ❤️‍🩹 Heal
-      setButton('button_speak', "🙏 Pray", colorWhite);
+      setButton('button_speak', "🙏 Pray", encounterUsed ? colorDarkGrey : colorWhite);
       if (!encounterUsed) setButton('button_speak', "🙏 Pray", colorYellow);
       var blade=checkPlayerHasItem(validBlades);
       if (blade!=""&&enemyHp<0) {
