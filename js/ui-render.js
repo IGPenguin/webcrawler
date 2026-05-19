@@ -53,8 +53,10 @@ function redraw(){
   emojiUIElement.innerHTML = enemyEmoji;
   areaUIElement.innerHTML = areaName;
   var _familiarBadge = enemyFamiliar
-    ? '<span style="float:right; margin-top:6px; line-height:1; font-size:14px;">🧩 <i style="font-weight:600; color:' + colorSoftGreen + ';font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill; padding-right:6px;">Memory</i></span>'
+    ? '<span style="float:right; margin-top:6px; line-height:1; font-size:14px;">🧩 <i style="font-weight:600; color:' + colorSoftGreen + ';font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill; padding-right:8px;">Memory</i></span>'
     : '';
+  var _mkBadge = function(e,l,c){ return '<span style="float:right;margin-top:6px;line-height:1;font-size:14px;padding-right:8px;">'+decorateStatusText(e,l,c)+'</span>'; };
+  var _typeBadge = '';
   nameUIElement.innerHTML = enemyName + _familiarBadge;
 
   var enemyDescUIElement = document.getElementById('id_desc')
@@ -77,19 +79,19 @@ function redraw(){
 
   switch(enemyType) {
     case "Pet":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔸","Minion",colorOrange);
+      _typeBadge=_mkBadge("🔸","Minion",colorOrange);
       enemyStatusString=appendEnemyStats();
       break;
     case "Swift":
-      enemyTeamUIElement.innerHTML=decorateStatusText("💨","Swift",colorGreen);
+      _typeBadge=_mkBadge("💨","Swift",colorGreen);
       enemyStatusString=appendEnemyStats();
       break;
     case "Heavy":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔺","Strong",colorRed);
+      _typeBadge=_mkBadge("🔺","Strong",colorRed);
       enemyStatusString=appendEnemyStats();
       break;
     case "Spirit":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👻","Spectral",colorWhite);
+      _typeBadge=_mkBadge("👻","Spectral",colorWhite);
       enemyStatusString=appendEnemyStats();
       break;
     case "Friend":
@@ -102,42 +104,42 @@ function redraw(){
       //Do not display stats = reward hidden
       break;
     case "Small":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔻","Small",colorWhite);
+      _typeBadge=_mkBadge("🔻","Small",colorWhite);
       enemyStatusString=appendEnemyStats();
       break;
     case "Recruit":
     case "Standard":
-      enemyTeamUIElement.innerHTML=decorateStatusText("▫️","Standard",colorWhite);
+      _typeBadge=_mkBadge("▫️","Standard",colorWhite);
       enemyStatusString=appendEnemyStats();
       break;
     case "Demon":
-      enemyTeamUIElement.innerHTML=decorateStatusText("👺","Demon",colorRed);
+      _typeBadge=_mkBadge("👺","Demon",colorRed);
       enemyStatusString=appendEnemyStats();
       break;
     case "Undead":
-      enemyTeamUIElement.innerHTML=decorateStatusText("💀","Undead",colorGrey);
+      _typeBadge=_mkBadge("💀","Undead",colorGrey);
       enemyStatusString=appendEnemyStats();
       break;
     case "Stingy":
-      enemyTeamUIElement.innerHTML=decorateStatusText("📌","Stingy",colorGrapefruit);
+      _typeBadge=_mkBadge("📌","Stingy",colorGrapefruit);
       enemyStatusString=appendEnemyStats();
       break;
     case "Toxic":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🦠","Toxic",colorLime);
+      _typeBadge=_mkBadge("🦠","Toxic",colorLime);
       enemyStatusString=appendEnemyStats();
       break;
     case "Tough":
       var enemyDefString = "";
       if (enemyDef>1) enemyDefString = romanNumber(enemyDef);
-      enemyTeamUIElement.innerHTML=decorateStatusText("🐚","Tough "+enemyDefString,colorSemiDarkGrey);
+      _typeBadge=_mkBadge("🐚","Tough "+enemyDefString,colorSemiDarkGrey);
       enemyStatusString=appendEnemyStats();
       break;
     case "Hot":
-      enemyTeamUIElement.innerHTML=decorateStatusText("♨️","Blazing",colorGrapefruit);
+      _typeBadge=_mkBadge("♨️","Blazing",colorGrapefruit);
       enemyStatusString=appendEnemyStats();
       break;
     case "Reflective":
-      enemyTeamUIElement.innerHTML=decorateStatusText("🔹","Reflective",colorLightBlue);
+      _typeBadge=_mkBadge("🔹","Reflective",colorLightBlue);
       enemyStatusString=appendEnemyStats();
       break;
 
@@ -287,13 +289,13 @@ function redraw(){
 
       if (enemyBossType.includes("Boss")){
         if (enemyBossType === 'Boss-Rival') {
-          enemyTeamUIElement.innerHTML = decorateStatusText("💔","Invader",colorRed);
+          _typeBadge=_mkBadge("💔","Invader",colorRed);
           enemyStatusString=appendEnemyStats();
           cardUIElement.style.backgroundColor=colorDarkRed;
           cardUIElement.style.boxShadow='inset 0px 0px 0px 3px #cc2020, 0 0 18px rgba(200,32,32,0.7), 0 4px 8px rgba(0,0,0,0.5)';
           cardUIElement.classList.add('invader-card');
         } else {
-          enemyTeamUIElement.innerHTML = decorateStatusText("💀","Boss",colorRed);
+          _typeBadge=_mkBadge("💀","Boss",colorRed);
           enemyStatusString=appendEnemyStats();
           cardUIElement.style.backgroundColor=colorDarkRed;
         }
@@ -301,6 +303,7 @@ function redraw(){
       break;
   }
 
+  if (_typeBadge) nameUIElement.innerHTML += _typeBadge;
   document.getElementById('id_stats').innerHTML = enemyStatusString;
   var logEl = document.getElementById('id_log');
   logEl.innerHTML = adventureLog.split("<br>").filter(l => l.replace(/&nbsp;/g,"").trim()).reverse().join("<br>");
