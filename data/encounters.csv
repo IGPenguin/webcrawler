@@ -512,23 +512,24 @@ Forsaken Village;📙;Mythic Tales;Item-Trinket;0;0;0;0;4;0;0;<b>Artifact</b>;Lo
 Forsaken Village;📘;Book of Spells;Item-Weapon;0;0;0;0;0;2;0;<b>Artifact</b>;Contains many spell-binding verses.</b><br>Provides <b>+2 🔵 Mana</b>.;Gained new magic power;none
 Forsaken Village;🎈;Floating Blob;Item-Trinket;-1;0;2;0;0;0;0;<b>Artifact</b>;Floats peacefully just above the ground.<br><b>Gain +2 🟢 Energy</b> for <b>-1 💔 Health</b>.;Became nimble, yet fragile.;none
 
+Forsaken Village;👔;Office Shirt;Item-Chest;0;1;0;0;0;0;0;Formal Wear;The ink stains tell a story of interrupted work.<br>Provides <b>+1 ⚔️ Frustration</b>.;Dressed for the final meeting.;none
 Forsaken Village;🪚;Rusty Saw;Item-Weapon;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.;none
 Forsaken Village;🦯;Telescopic Stick;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.;none
 Forsaken Village;🌂;Sturdy Umbrella;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.;none
 Forsaken Village;🖋️;Fountain Pen;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.;none
 Forsaken Village;🔧;Metal Spanner;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.;none
 Forsaken Village;🪛;Rusty Screwdriver;Item-Weapon;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.;none
+Forsaken Village;👖;Work Trousers;Item-Legs;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for anything to come;none
 Forsaken Village;🗜️;Workbench Boxer;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
 Forsaken Village;⛑️;Medic Helmet;Item-Head;1;0;0;1;0;0;0;Head Protection;Robust protection for those who help others.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Protected and blessed;none
 Forsaken Village;📔;Holy Prayerbook;Item-Weapon;0;0;0;1;0;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;Learned plenty of stuff;none
 
 Forsaken Village;📒;Survival 101;Item-Trinket;1;0;1;0;0;0;0;Manual;The ulimate guide with colorful illustrations.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Embraced the knowledge.;none
 Forsaken Village;🥾;Heavy Boots;Item-Legs;1;0;1;0;0;0;0;Work Gear;Helps navigating through rough terrain.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;They fit you just perfectly.;none
-Forsaken Village;👖;Work Trousers;Item-Legs;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action;none
-Forsaken Village;🥼;Scientific Cloak;Item-Chest;0;0;0;0;2;0;0;Specialized Gear;Makes the wearer look very smart.<br>Provides <b>+2 🧠 Intellect</b>.;Ready for experimenting!;none
-Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!;none
 Forsaken Village;🧤;Grappling Gloves;Item-Trinket;0;0;2;0;0;0;0;Specialized Gear;Makes the wearer more versatile.<br>Provides <b>+2 🟢 Energy</b>.;Ready for action;none
+Forsaken Village;🩳;Cargo Shorts;Item-Legs;0;0;1;0;1;0;0;Practical Bottom;Pockets full of lint and lost hopes.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b>.;Functional and vented;none
 Forsaken Village;🧸;Blessed Teddy;Item-Trinket;0;0;0;2;0;0;0;Sacred Toy;Protects from Malevolent spirits.<br>Provides <b>+2 🍀 Luck</b>.;;none
+Forsaken Village;🥼;Scientific Cloak;Item-Chest;0;0;0;0;2;0;0;Specialized Gear;Makes the wearer look very smart.<br>Provides <b>+2 🧠 Intellect</b>.;Ready for experimenting!;none
 Forsaken Village;🧷;Makeshift Piercing;Item-Trinket;-1;0;0;0;2;0;0;Cool Accessory;Adjusts how others perceive your personality.<br>Provides <b>+2 🧠 Charisma</b> for <b>-1 💔 Health</b>.;Stuck it into your ear.;none
 Forsaken Village;🎒;Burdening Backpack;Item;0;0;-1;0;2;0;0;School Accessory;Contains books of common knowledge.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 🟢 Energy</b>.;Got smarter, but also slower;none
 Forsaken Village;🛼;Glide Skates;Item-Legs;-1;0;2;0;0;0;0;Uncanny Footwear;Takes a bit of (painful) practice to use them.<br>Provides <b>+2 🟢 Energy</b> for <b>-1 💔 Health</b>.;Dropped on your chin twice.;none
@@ -538,12 +539,15 @@ Forsaken Village;🪖;Trench Helmet;Item-Head;1;0;0;0;0;0;0;Head Protection;Robu
 Forsaken Village;🧢;Cool Hat;Item-Head;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Charisma</b>;Ready to rock, let's do this!;none
 Forsaken Village;📕;Medical Manual;Item-Trinket;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.;none
 Forsaken Village;👕;Cotton Shirt;Item-Chest;0;0;1;0;0;0;0;Ancient Clothes;Sun-bleached but capable of removing sweat.<br>Provides <b>+1 🟢 Energy</b>.;Put it onto yourself.;none
+Forsaken Village;👟;Running Shoes;Item-Legs;0;0;0;1;0;0;0;Athletic Footwear;Must have been fast once.<br>Provides <b>+1 🟢 Energy</b>.;Your steps feel lighter;none
 Forsaken Village;👚;Faded Blouse;Item-Chest;0;0;1;0;0;0;0;Woman's Wear;A remnant of the brighter days.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Charisma</b>.;Feels a bit uncanny.;none
 Forsaken Village;🎈;Helium Balloon;Item-Trinket;0;0;1;0;-2;0;0;Funny Accessory;Makes your voice high-pitched and your body light.<br>Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Charisma</b>.;Laughter is the best medicine;none
 Forsaken Village;🪠;Waste Plunger;Item-Weapon;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassing situations.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed a makeshift weapon.;none
 Forsaken Village;🧹;Sturdy Broom;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but very effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed a makeshift weapon.;none
 Forsaken Village;🗞️;Fly Swatter;Item-Weapon;0;0;0;0;0;0;0;Makeshift Weapon;Not sure if it makes any difference.<br>;Picked up a makeshift weapon.;none
 
+Forsaken Village;💡;Miners Hat;Item-Head;0;0;0;0;1;0;0;Work Gear;The bulb still flickers with static electricity.<br>Provides <b>+1 🧠 Perception</b>.;A dim idea glows.;none
+Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!;none
 Forsaken Village;🎟️;Lottery Ticket;Item;0;0;0;1;0;0;0;Lasting Hope;Brings hope whenever looked at.<br>Provides <b>+1 🍀 Luck</b>.;Feels good carrying that.;none
 Forsaken Village;📄;Rallying Call;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Morale</b> and a survival tip:<br>n/a;Embraced the new knowledge.;none
 Forsaken Village;🔖;Strange Prophecy;Item;0;0;0;0;1;0;0;Note;Provides <b>+1 🧠 Intellect</b> and an insight.<br>n/a;Embraced the new knowledge.;none

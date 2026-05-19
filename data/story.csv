@@ -9,17 +9,6 @@ Depths of Slumber;🍤;Dream Shrimp;Consumable;0;0;0;0;0;0;0;Imaginary Food;<b>�
 Depths of Slumber;🥱;Waking Moment;Dream;0;0;0;0;0;0;0;Sudden Epiphany;<b>A distant memory surfaced</b> in your mind:<br>n/a;Woken up in: <b>Fading Wildlands</b>;none
 
 //Debug (generator needs a static encounter before it)
-Fading Wildlands;🌿;Grass Field;Prop;0;0;0;0;0;0;0;Wind-swept Blades;The grass sways like restless sleepers.<br>;;none
-Fading Wildlands;⛩️;Forsaken Arch;Memory;0;0;0;0;0;0;0;Piece of History;It stood before the world came apart.<br>Feels familiar on sight.;Left it behind, perhaps forever.;none
-Fading Wildlands;💌;Undelivered Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
-Forsaken Village;🧧;Wedding Invitation;Item;0;0;0;0;0;0;0;Piece of History;po/em;Your heart will always remember;none
-
-Forsaken Village;🗜️;Workbench Boxer;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
-Forsaken Village;👖;Work Trousers;Item-Legs;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for action;none
-Forsaken Village;👟;Tattered Sneakers;Item-Legs;0;0;0;1;0;0;0;Athletic Footwear;Must have been fast once.<br>Provides <b>+1 🍀 Luck</b>.;Lighter steps.;none
-Forsaken Village;💡;Miners Hat;Item-Head;0;0;0;0;1;0;0;Work Gear;The bulb still flickers with static electricity.<br>Provides <b>+1 🧠 Intellect</b>.;A dim idea glows.;none
-Forsaken Village;👔;Office Shirt;Item-Chest;0;1;0;0;1;0;0;Formal Wear;The ink stains tell a story of interrupted work.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🧠 Intellect</b>.;Dressed for a meeting that won't happen.;none
-Forsaken Village;🩳;Cargo Shorts;Item-Legs;1;0;1;0;0;0;0;Sturdy Trousers;Pockets full of lint and lost hopes.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Functional but cold.;none
 
 //Fading Wildlands
 Fading Wildlands;😳;Horrific Realization;Dream;0;0;0;0;0;0;0;Reality Check;<b>You don't remember</b> what happened before.<br>Looks like there's <b>only one way to find out</b>.;Set out on a new adventure!;none
