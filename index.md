@@ -444,7 +444,7 @@ layout: default
                             font-family:sans;
                             display:inline;
                             overflow:hidden;
-                            width:70%;"/>
+                            width:100%;"/>
 
 <h5 id = "id_team" style="float:right;
                                 text-align:right;
