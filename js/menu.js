@@ -444,7 +444,7 @@ var Menu = (function () {
       html += '<div class="box-border-dynamic menu-card-info" style="margin-left:3px; margin-right:3px; '
         + 'padding:2px 8px; background-color:#202020;">';
       if (infoParts.length)
-        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400;">' + infoParts.join('<br>') + '</h5>';
+        html += '<h5 style="margin:4px 0 1px 0; font-size:16px; line-height:24px; font-style: normal; font-weight:400;">' + infoParts.join('<br>') + '</h5>';
       if (date)
         html += '<h5 style="margin:0px 0 4px 0; opacity:0.6; font-size:14px;">' + date + '</h5>';
       html += '</div>';
@@ -483,6 +483,14 @@ var Menu = (function () {
 
   // ── Session History ────────────────────────────────────────────────────────
 
+  function _formatEndMessage(session) {
+    var msg = session.deathMessage || session.causeOfDeath || '';
+    if (!msg) return '';
+    var isWin = session.endType && session.endType.indexOf('win') === 0;
+    if (isWin)   return '<span style="color:#FFD940;">' + msg + '</span>';
+    return '<span style="color:#FF0000">' + msg + '</span>';
+  }
+
   // Rebinds the history back button label and handler.
   function _bindHistoryBack(label, fn) {
     var btn = document.getElementById('menu_history_back');
@@ -514,7 +522,7 @@ var Menu = (function () {
         }).length;
         var _losses = sessions.length - _wins;
         _note.innerHTML = 'The paths of the '
-          + '<span style="color:#E84040;">' + _losses + '&nbsp;Faded</span>'
+          + '<span style="color:#FF0000;">' + _losses + '&nbsp;Faded</span>'
           + ' and the '
           + '<span style="color:#FFD940;">' + _wins + '&nbsp;Endured</span>.';
       }
@@ -547,7 +555,7 @@ var Menu = (function () {
               + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + (session.deathMessage || session.causeOfDeath || '') + '</h5>'
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + _formatEndMessage(session) + '</h5>'
         + '<h5 style="margin:-4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
         + (session.score !== undefined ? '&nbsp;&nbsp;•&nbsp;&nbsp;🎖️ ' + session.score : '') + '</h5>';
 
@@ -580,7 +588,7 @@ var Menu = (function () {
       session.level || '?',
       session.area  || '?',
       stats, partyLoot,
-      session.deathMessage || session.causeOfDeath || null,
+      _formatEndMessage(session) || null,
       session.date || null,
       true,  // skipLoot — loot bar rendered below log
       null,  // renameable

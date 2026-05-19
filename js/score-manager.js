@@ -18,18 +18,18 @@ var ScoreManager = (function () {
   // ─────────────────────────────────────────────────────────────────────────
 
   var ENDING_LABELS = {
-    win_kill:    '🗡 Slain',
-    win_walk:    '💔 Walked Away',
-    win_guard:   '🗿 Eternal Guard',
-    win_embrace: '🫂 Embraced',
-    win_sleep:   '💤 Lay Together',
-    win_speak:   '💖 Remembered',
-    win_free:    '🪽 Freed',
-    win_pray:    '🙏 Mercy',
-    win_curse:   '👹 Cursed',
-    win:         '👑 Finished',
-    death:       '💀 Died',
-    rival_death: '💔 Slain by Invader'
+    win_kill:    '🗡 Ended what love could not.',
+    win_walk:    '💔 Let her wait forever.',
+    win_guard:   '🗿 Turned to stone beside her.',
+    win_embrace: '🫂 Held her until the dark came.',
+    win_sleep:   '💤 Let the world go cold.',
+    win_speak:   '💖 Finally remembered her name.',
+    win_free:    '🪽 Undid the spell that started it.',
+    win_pray:    '🙏 Asked the gods for their mercy.',
+    win_curse:   '👹 Made sure neither would find peace.',
+    win:         '👑 Finished.',
+    death:       '💀 Never made it back to her.',
+    rival_death: "💔 Slain by someone's shadow."
   };
 
   function getEndingLabel(endType) {
@@ -76,15 +76,16 @@ var ScoreManager = (function () {
     var levelBonus     = level * w.levelMult;
     var encounterBonus = Math.floor(encounters / w.encounterDiv);
     var companionBonus = companions * w.companionMult;
-    var statBonus      = Math.floor(Math.max(0, totalStats - baseline) / w.statDiv);
-    var karmaBonus     = Math.max(0, karma - 1);
+    var statDelta      = Math.max(0, totalStats - baseline);
+    var statBonus      = Math.floor(statDelta / w.statDiv);
+    var karmaBonus     = karma;
     var critBonus      = cs - cf;
     var winBonus       = isWin ? w.winBonus : 0;
     var mult           = DIFFICULTY_MULTS[diffLabel] || 1.0;
     var raw            = levelBonus + encounterBonus + companionBonus + statBonus + karmaBonus + critBonus;
     return {
       levelBonus: levelBonus, encounterBonus: encounterBonus, companionBonus: companionBonus,
-      statBonus: statBonus, karmaBonus: karmaBonus, critSuccesses: cs, critFails: cf, critBonus: critBonus, winBonus: winBonus,
+      statBonus: statBonus, statDelta: statDelta, karmaBonus: karmaBonus, critSuccesses: cs, critFails: cf, critBonus: critBonus, winBonus: winBonus,
       mult: mult, raw: raw, score: Math.round((raw + winBonus) * mult),
       level: level, encounters: encounters, companions: companions
     };
@@ -125,7 +126,7 @@ var ScoreManager = (function () {
       datetime:          new Date().toISOString(),
       inventory:         String(playerLootString || ''),
       coins:             savedCoins || 0,
-      deathMessage:      typeof enemyMsg !== 'undefined' ? String(enemyMsg || '') : '',
+      deathMessage:      (typeof enemyEmoji !== 'undefined' && enemyEmoji ? enemyEmoji + ' ' : '') + (typeof enemyMsg !== 'undefined' ? String(enemyMsg || '') : ''),
       scoreBaselineStats: scoreBaselineStats || 0,
       critSuccesses:     playerCritSuccesses || 0,
       critFails:         playerCritFails     || 0
@@ -245,15 +246,15 @@ var ScoreManager = (function () {
            + '<span style="color:' + c + ';font-weight:bold;">' + value + '</span></div>';
     }
 
-    var karmaColor = (payload.karma < 0) ? RED : GOLD;
-    var cfColor    = (b.critFails > 0)   ? RED : GOLD;
+    var karmaColor = (b.karmaBonus < 0) ? RED : GOLD;
+    var cfColor    = (b.critFails > 0)  ? RED : GOLD;
 
     var html = '';
-    html += makeRow('Level ' + b.level,           '+' + b.levelBonus);
-    html += makeRow('Encounters ' + b.encounters, '+' + b.encounterBonus);
-    html += makeRow('Companions ' + b.companions, '+' + b.companionBonus);
-    html += makeRow('Stat Growth',                '+' + b.statBonus);
-    html += makeRow('Karma',                      '+' + b.karmaBonus, karmaColor);
+    html += makeRow('Level ' + b.level,                    '+' + b.levelBonus);
+    html += makeRow('Encounters ' + b.encounters,          '+' + b.encounterBonus);
+    html += makeRow('Companions ' + b.companions,          '+' + b.companionBonus);
+    html += makeRow('Stat Growth +' + b.statDelta,         '+' + b.statBonus);
+    html += makeRow('Karma ' + payload.karma,              (b.karmaBonus >= 0 ? '+' : '') + b.karmaBonus, karmaColor);
     if (b.critSuccesses) html += makeRow('Crit Successes', '+' + b.critSuccesses);
     if (b.critFails)     html += makeRow('Crit Fails',     '-' + b.critFails, cfColor);
     if (b.winBonus)      html += makeRow('Win Bonus',      '+' + b.winBonus);
@@ -323,12 +324,12 @@ var ScoreManager = (function () {
     if (labelEl) {
       labelEl.textContent = isWin
         ? getEndingLabel(payload.endType)
-        : ("💀 "+payload.deathMessage || "👑"+ getEndingLabel(payload.endType));
-      labelEl.style.color = isWin ? '#FFD940' : '#FF0000';
+        : (payload.deathMessage || getEndingLabel(payload.endType));
+      labelEl.style.color = isWin ? colorGold : colorRed;
     }
 
     var scoreEl = document.getElementById('nickname_score_display');
-    if (scoreEl) scoreEl.textContent = payload.score + ' 🎖️ Valor';
+    if (scoreEl) scoreEl.textContent = '🎖️ Valor: '+payload.score;
 
     var breakdownEl = document.getElementById('nickname_score_breakdown');
     if (breakdownEl) breakdownEl.innerHTML = _buildBreakdownHTML(payload);
