@@ -539,7 +539,7 @@ layout: default
                                           box-shadow:
                                             0px 0px 0px 3px #121212;">
 
-<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:4;"></div>
+<div class= "playerOverlay" id="id_player_overlay" style="font-family:sans; font-size:88px; position:absolute; z-index:11;"></div>
 
 <h3 id = "id_player_status" style="text-align:left;
                                     display: flex;
