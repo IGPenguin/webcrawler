@@ -74,6 +74,8 @@ var SaveManager = (function () {
         runStartTimestamp:     runStartTimestamp,
         playerOriginName:      playerOriginName,
         adventureEndReason:    adventureEndReason,
+        playerCritSuccesses:   playerCritSuccesses,
+        playerCritFails:       playerCritFails,
         fishingRested:         fishingRested,
         isEndingState:         isEndingState,
         gatewayPassed:         gatewayPassed,
@@ -163,6 +165,8 @@ var SaveManager = (function () {
     runStartTimestamp       = s.runStartTimestamp   || Date.now();
     playerOriginName        = s.playerOriginName    || '';
     adventureEndReason      = s.adventureEndReason;
+    playerCritSuccesses     = s.playerCritSuccesses || 0;
+    playerCritFails         = s.playerCritFails     || 0;
     fishingRested           = !!s.fishingRested;
     isEndingState           = !!s.isEndingState;
     gatewayPassed           = !!s.gatewayPassed;

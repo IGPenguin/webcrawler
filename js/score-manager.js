@@ -29,7 +29,7 @@ var ScoreManager = (function () {
     win_curse:   '👹 Cursed',
     win:         '👑 Finished',
     death:       '💀 Died',
-    rival_death: '💔 Invader Kill'
+    rival_death: '💔 Slain by Invader'
   };
 
   function getEndingLabel(endType) {
@@ -69,19 +69,22 @@ var ScoreManager = (function () {
 
   var _pendingPayload = null;
 
-  function _computeComponents(level, encounters, companions, totalStats, baseline, karma, isWin, diffLabel) {
+  function _computeComponents(level, encounters, companions, totalStats, baseline, karma, isWin, diffLabel, critSuccesses, critFails) {
     var w = SCORE_WEIGHTS;
+    var cs             = critSuccesses || 0;
+    var cf             = critFails     || 0;
     var levelBonus     = level * w.levelMult;
     var encounterBonus = Math.floor(encounters / w.encounterDiv);
     var companionBonus = companions * w.companionMult;
     var statBonus      = Math.floor(Math.max(0, totalStats - baseline) / w.statDiv);
     var karmaBonus     = Math.max(0, karma - 1);
+    var critBonus      = cs - cf;
     var winBonus       = isWin ? w.winBonus : 0;
     var mult           = DIFFICULTY_MULTS[diffLabel] || 1.0;
-    var raw            = levelBonus + encounterBonus + companionBonus + statBonus + karmaBonus;
+    var raw            = levelBonus + encounterBonus + companionBonus + statBonus + karmaBonus + critBonus;
     return {
       levelBonus: levelBonus, encounterBonus: encounterBonus, companionBonus: companionBonus,
-      statBonus: statBonus, karmaBonus: karmaBonus, winBonus: winBonus,
+      statBonus: statBonus, karmaBonus: karmaBonus, critSuccesses: cs, critFails: cf, critBonus: critBonus, winBonus: winBonus,
       mult: mult, raw: raw, score: Math.round((raw + winBonus) * mult),
       level: level, encounters: encounters, companions: companions
     };
@@ -92,7 +95,7 @@ var ScoreManager = (function () {
     var totalStats = (playerHpMax||0)+(playerAtk||0)+(playerStaMax||0)+(playerLck||0)+(playerInt||0)+(playerMgkMax||0)+(playerDef||0);
     var companions  = [...String(playerPartyString||'')].length;
     var diffLabel   = typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard';
-    return _computeComponents(playerLevel||1, encounterCount||0, companions, totalStats, scoreBaselineStats||0, playerKarma||1, !!isWin, diffLabel);
+    return _computeComponents(playerLevel||1, encounterCount||0, companions, totalStats, scoreBaselineStats||0, playerKarma||1, !!isWin, diffLabel, playerCritSuccesses||0, playerCritFails||0);
   }
 
   function calculate() {
@@ -102,7 +105,7 @@ var ScoreManager = (function () {
 
   function buildPayload(endType) {
     var isWin   = endType === 'win' || (typeof endType === 'string' && endType.startsWith('win_'));
-    var comps   = _liveComponents(isWin) || _computeComponents(playerLevel||1, 0, 0, 0, 0, playerKarma||1, isWin, typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard');
+    var comps   = _liveComponents(isWin) || _computeComponents(playerLevel||1, 0, 0, 0, 0, playerKarma||1, isWin, typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard', playerCritSuccesses||0, playerCritFails||0);
     var statsStr = [playerHpMax, playerAtk, playerStaMax, playerLck, playerInt, playerMgkMax, playerDef].join(';');
     var playtime = Math.floor((Date.now() - (runStartTimestamp || Date.now())) / 1000);
     return {
@@ -123,7 +126,9 @@ var ScoreManager = (function () {
       inventory:         String(playerLootString || ''),
       coins:             savedCoins || 0,
       deathMessage:      typeof enemyMsg !== 'undefined' ? String(enemyMsg || '') : '',
-      scoreBaselineStats: scoreBaselineStats || 0
+      scoreBaselineStats: scoreBaselineStats || 0,
+      critSuccesses:     playerCritSuccesses || 0,
+      critFails:         playerCritFails     || 0
     };
   }
 
@@ -225,27 +230,35 @@ var ScoreManager = (function () {
     var totalStats = statArr.reduce(function(a, b) { return a + b; }, 0);
     var isWin      = payload.endType && (payload.endType === 'win' || payload.endType.startsWith('win_'));
     var diffLabel  = typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard';
-    return _computeComponents(payload.level||1, payload.encounterCount||0, payload.companions||0, totalStats, payload.scoreBaselineStats||0, payload.karma||1, !!isWin, diffLabel);
+    return _computeComponents(payload.level||1, payload.encounterCount||0, payload.companions||0, totalStats, payload.scoreBaselineStats||0, payload.karma||1, !!isWin, diffLabel, payload.critSuccesses||0, payload.critFails||0);
   }
 
   function _buildBreakdownHTML(payload) {
     var b   = _getBreakdown(payload);
     var ROW = 'display:flex;justify-content:space-between;margin:3px 0;';
-    var LBL = 'color:FFD940;';
-    var VAL = 'color:#FFD940;font-weight:bold;';
-    var rows = [
-      ['Level ' + b.level,           '+' + b.levelBonus],
-      ['Encounters ' + b.encounters, '+' + b.encounterBonus],
-      ['Companions ' + b.companions, '+' + b.companionBonus],
-      ['Stat Growth',                '+' + b.statBonus],
-      ['Karma',                      '+' + b.karmaBonus],
-    ];
-    if (b.winBonus)   rows.push(['Win Bonus',  '+' + b.winBonus]);
-    if (b.mult !== 1) rows.push(['Difficulty', '×' + b.mult]);
-    return rows.map(function(r) {
-      return '<div style="color:FFD940;' + ROW + '"><span style="' + LBL + '">' + r[0] + '</span>'
-           + '<span style="' + VAL + '">' + r[1] + '</span></div>';
-    }).join('');
+    var GOLD = colorGold;
+    var RED  = colorRed;
+
+    function makeRow(label, value, color) {
+      var c = color || GOLD;
+      return '<div style="' + ROW + '"><span style="color:' + c + ';">' + label + '</span>'
+           + '<span style="color:' + c + ';font-weight:bold;">' + value + '</span></div>';
+    }
+
+    var karmaColor = (payload.karma < 0) ? RED : GOLD;
+    var cfColor    = (b.critFails > 0)   ? RED : GOLD;
+
+    var html = '';
+    html += makeRow('Level ' + b.level,           '+' + b.levelBonus);
+    html += makeRow('Encounters ' + b.encounters, '+' + b.encounterBonus);
+    html += makeRow('Companions ' + b.companions, '+' + b.companionBonus);
+    html += makeRow('Stat Growth',                '+' + b.statBonus);
+    html += makeRow('Karma',                      '+' + b.karmaBonus, karmaColor);
+    if (b.critSuccesses) html += makeRow('Crit Successes', '+' + b.critSuccesses);
+    if (b.critFails)     html += makeRow('Crit Fails',     '-' + b.critFails, cfColor);
+    if (b.winBonus)      html += makeRow('Win Bonus',      '+' + b.winBonus);
+    if (b.mult !== 1)    html += makeRow('Difficulty',     '×' + b.mult);
+    return html;
   }
 
   async function _doSubmit(payload) {

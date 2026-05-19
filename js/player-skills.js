@@ -59,6 +59,8 @@ function renewPlayer(){ //Default values
   runStartTimestamp = Date.now();
   playerOriginName = '';
   cheatedThisRun = false;
+  playerCritSuccesses = 0;
+  playerCritFails     = 0;
   scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
 
   if (typeof RivalManager !== 'undefined') RivalManager.resetRun();

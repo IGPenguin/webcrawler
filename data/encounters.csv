@@ -212,7 +212,6 @@ Fading Wildlands;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐞\🦋
 Fading Wildlands;🌸;Ambrosia Flower;Consumable;0;0;0;0;3;0;0;Spring's Essence;Thick, fragrant, and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>.;Felt a surge of clarity;none
 
 Fading Wildlands;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Very refreshing;none
-Fading Wildlands;🌽;Sweet KoЯn;Consumable;0;0;0;0;2;0;0;Vegetable;Sweet snack for every Children of the KoЯn.<br>Provides <b>+2 🧠 Intellect</b>.;Brighten not only your mood;none
 Fading Wildlands;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference;none
 Fading Wildlands;🧅;Wild Onion;Consumable;1;0;0;0;0;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity;none
 
@@ -832,8 +831,10 @@ Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;3;2;3;0;3;0;0;Ethereal Crypt
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;0;Unknown Liquid;Is that even drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power.;none
 Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;2;0;0;-4;0;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.;none
+Twisted Fairyland;🍌;Mighty Banana;Consumable;0;1;0;0;0;0;0;<b>Artifact</b>;Packs an extra punch on top of being sweet.<br><b>+1 ⚔️ Damage</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Muscles surged with might;none
 
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;0;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;;none
+Twisted Fairyland;🌽;Sweet KoЯn;Consumable;0;0;0;0;2;0;0;Vegetable;Sweet snack for every Children of the KoЯn.<br>Provides <b>+2 🧠 Intellect</b>.;Brighten not only your mood;none
 Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;0;Brain Juice;Enhances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome;none
 Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity;none
 Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;1;0;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome;none
@@ -841,16 +842,14 @@ Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;0;Fantastic Food;Surro
 Twisted Fairyland;🍍;Sweet Pineapple;Consumable;1;0;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
 Twisted Fairyland;🥭;Sweet Mango;Consumable;1;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
 Twisted Fairyland;🍶;Ancient Sake;Consumable;-1;0;0;0;1;0;0;Forgotten Drink;Scratched but somehow still watertight.<br>Possibly causes some side-effects.;It had a metallic aftertaste;none
-
 Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides <b>+1 🟢 Energy</b> temporarily.;Got extra energy;none
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
 Twisted Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
+
 Twisted Fairyland;🍗;Raw Meat;Consumable;-1;0;0;0;0;0;0;Questionable Food;Could be remains of one of the villagers.<br>;That was a bit disgusting;none
 Twisted Fairyland;🍣;Stale Sushi;Consumable;-2;0;0;0;0;0;0;Fancy Food;Niclely arranged but looks old.<br>;Nauseauted by the smelly fish.;none
 Twisted Fairyland;🍏;Green Apple;Consumable;-3;0;0;0;0;0;0;Suspicious Fruit;Eating it is obviously not a good idea.<br>;Suffered a strong poisoning;none
 Twisted Fairyland;🍰;Polished Cake;Consumable;-5;0;0;0;0;0;0;Suspicious Sweet;There's a note: <i>"The cake is a lie!"</i><br>;Suffered an extreme poisoning;none
-
-Twisted Fairyland;🍌;Mighty Banana;Consumable;0;1;0;0;0;0;0;<b>Artifact</b>;Packs an extra punch on top of being sweet.<br><b>+1 ⚔️ Damage</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Muscles surged with might;none
 
 Twisted Fairyland;🍠;Sweet Root;Consumable;0;0;0;0;0;0;0;Common Dish;Earthy, but also suprisingly filling.<br>;;none
 Twisted Fairyland;🍊;Orange Citrus;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Seems like a sweet snack.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none

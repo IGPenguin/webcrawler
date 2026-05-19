@@ -204,3 +204,6 @@ var vibrationEnabled = (function () {
 
 // null = no crit, 'success' = critical success zone hit, 'fail' = critical fail zone hit
 var actionBarCrit = null;
+
+var playerCritSuccesses = 0;  // cumulative crit successes this run (+1 to score each)
+var playerCritFails     = 0;  // cumulative crit fails this run (-1 to score each)
