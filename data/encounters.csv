@@ -27,7 +27,7 @@ Fading Wildlands;🌾;Tall Grass;Prop;0;0;1;0;0;0;0;Natural Bedding;Good place f
 Fading Wildlands;🍁;Maple Haven;Prop;0;0;1;0;0;0;0;Sheltering Grove;Leaves whisper of older, safer days.<br>;Rested well in the soft leaves.;none
 
 Fading Wildlands;🕸️;Webbed Ground;Prop;0;0;0;0;-1;0;0;Haunting Spot;Better keep moving ahead.<br>;Woken up by a spider on your face;none
-Fading Wildlands;💦;Moisty Grass;Prop;0;0;-1;0;0;0;0;Natural Spring;Probably not the best spot for resting.<br>;Woken up wet and feeling cold;none
+Fading Wildlands;💦;Damp Hollow;Prop;0;0;-1;0;0;0;0;Waterlogged Ground;Too wet to rest in without consequence.<br>;Woken up soaked to the bone.;none
 Fading Wildlands;🌿;Pointy Hedge;Prop;-1;0;0;0;0;0;0;Natural Hazard;Probably not the best spot for laying down.<br>;Scratched by thorns when getting up;none
 Fading Wildlands;🪨;Bloody Stone;Prop;0;0;0;-1;0;0;0;Bad Omen;Carries some traces of a recent clash.<br>;Got tainted by a bad energy;none
 
@@ -71,10 +71,10 @@ Fading Wildlands;🌾;Ensnaring Weeds;Container-3;0;0;-1;0;0;0;0;Natural Obstacl
 
 Fading Wildlands;🌠;Comet Painting;Altar;0;0;0;0;0;1;0;Wishbound Canvas;The falling star never reaches the ground.<br>;Your silent wish was fulfilled.;none
 Fading Wildlands;🍀️;Clover Shrine;Altar;0;0;0;1;0;0;0;Gentle Fortune;Four-leaf clusters lean toward you.<br>;You won't ever forget this.;none
-Fading Wildlands;🌸;Petal Shrine;Altar;0;0;0;1;0;0;0;Quiet Blessing;Color clings stubbornly to these blooms.<br>;The nature blessed you.;none
+Fading Wildlands;🌸;Petal Shrine;Altar;0;0;0;1;0;0;0;Quiet Blessing;Color clings stubbornly to these blooms.<br>;Something older than prayer stirred.;none
 Fading Wildlands;🖼️️;Ditched Painting;Altar;0;0;0;0;1;0;0;Unfinished Art;Seems like the author left in hurry.<br>;Hmm, truly an interesting piece.;none
 Fading Wildlands;🍃;Whispering Grove;Altar;0;0;0;1;0;0;0;Soft Murmurs;Leaves rustle without wind.<br>;Luck gently shifted to your side.;none
-Fading Wildlands;🪔;Ashen Brazier;Altar;1;0;0;0;0;0;0;Radiating Warmth;Embers still glow of faint hope.<br>;Rallied a new self-determination;none
+Fading Wildlands;🪔;Ashen Brazier;Altar;1;0;0;0;0;0;0;Radiating Warmth;Embers still hold a trace of someone's will.<br>;The warmth steadied something inside.;none
 
 Fading Wildlands;🦋;Glimmering Swarm;Curse;0;0;0;0;-1;1;0;Soft Enchantment;Wings brush your skin, leaving a tingle.<br>;Suffered a surge of magic;none
 Fading Wildlands;🌀;Echoing Moment;Curse;0;0;0;1;-1;0;0;Time Slip;You swear you’ve taken this step before.<br>;Admitted the unending cycle;none
@@ -126,7 +126,7 @@ Fading Wildlands;🦗;Thorn Cricket;Stingy;1;1;2;0;-1;0;0;Sharp-limbed;Its legs 
 Fading Wildlands;🐝;Stray Bee;Stingy;1;1;1;0;-1;0;0;Wandering Threat;Doesn’t know where it’s going, only that it hurts.<br>;Got stung right away.;none
 Fading Wildlands;🦔️;Curled Bristle;Stingy;2;0;1;1;0;0;0;Spined Bundle;Harmless until you reach for it.<br>;Reached for the wrong thing.;none
 
-Fading Wildlands;🦥;Slow Watcher;Toxic;2;0;1;1;1;0;0;Gentle Observer;Barely moves, means no harm.<br>;Oh, that is really unfortunate.;none
+Fading Wildlands;🦥;Slow Watcher;Toxic;2;0;1;1;1;0;0;Gentle Observer;Barely moves, means no harm.<br>;The venom was always there.;none
 Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings to skin and soul.<br>;Suffered a terrible stench.;none
 Fading Wildlands;🐀;Field Rat;Toxic;2;1;2;0;-1;0;0;Disease Bearer;Scurries through unseen filth.<br>;Contracted a sickness.;none
 
@@ -151,7 +151,7 @@ Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;2;0;2;0;0;Thundering Menace;Eac
 Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;2;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.;none
 
 Fading Wildlands;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Fading Wildlands;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Fading Wildlands;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 Fading Wildlands;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Fading Wildlands;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Fading Wildlands;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -345,7 +345,7 @@ Forsaken Village;🎏;Carp Pond;Fishing;0;0;0;0;0;0;0;Water Body;The fishes are 
 
 Forsaken Village;💈;Swirled Cylinder;Curse;0;0;0;0;-2;0;0;Hypnotic Motion;Colors twist in endless loops.<br>;Mind wandered into the abyss.;none
 Forsaken Village;👁️‍🗨️;Haunting Echo;Curse;0;0;0;0;-1;0;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.;none
-Forsaken Village;🎶;Everlasting Melody;Curse;0;0;0;0;-1;0;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;Never gonna give that up.;none
+Forsaken Village;🎶;Everlasting Melody;Curse;0;0;0;0;-1;0;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;The tune won't leave your head.;none
 Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling your chest.<br>;Suffered permanent damage.;none
 Forsaken Village;🪞;Reflecting Gaze;Curse;0;0;0;0;-1;0;0;Misfortune;A thousand eyes stare back at you.<br>;Left haunted by that reflection.;none
 Forsaken Village;👁️‍🗨️;Lingering Fear;Curse;0;0;0;0;-1;0;0;Misfortune;Threads of paranoia coil around your mind.<br>;Drove themselves insane.;none
@@ -395,18 +395,18 @@ Forsaken Village;🐩;Fragile Doggo;Pet;2;0;1;0;0;0;0;Companion;Looks healthy an
 Forsaken Village;🐕;Lost Shiba;Pet;3;1;2;0;0;0;0;Companion;A rare good boy appeared.<br>;Doge joined the party;none
 Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;0;Companion;These usually bring bad luck.<br>;Yeah it is bad luck;none
 Forsaken Village;🐥;Stray Chick;Pet;1;0;1;0;-1;0;0;Lost Hatchling;Looking for something that won’t answer back.<br>;Got a new travel buddy!;none
-Forsaken Village;🫏;Simple Donkey;Pet;1;0;2;0;-1;0;0;Companion;Annoying sounds usually drive everyone away.<br>;Tramplet to your death;none
+Forsaken Village;🫏;Simple Donkey;Pet;1;0;2;0;-1;0;0;Companion;Annoying sounds usually drive everyone away.<br>;It brayed once and fell into step.;none
 
-Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;;none
-Forsaken Village;🪱;Tiny Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Forsaken Village;🪱;Confused Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Forsaken Village;🪱;Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Forsaken Village;🪱;Fruit Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Forsaken Village;🪱;Fly Larva;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Forsaken Village;🪱;Thirsty Tapeworm;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Forsaken Village;🦗;Restless Cricket;Small;1;0;2;0;-1;0;0;Jumpy Insect;Never stops moving, must've been startlet.<br>;Got too close and fell.;none
+Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;Killed by something too small to fear.;none
+Forsaken Village;🪱;Tiny Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Finished off by a worm.;none
+Forsaken Village;🪱;Confused Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Neither of you understood what happened.;none
+Forsaken Village;🪱;Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Found in the mouth afterward.;none
+Forsaken Village;🪱;Fruit Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Got burrowed through, the slow way.;none
+Forsaken Village;🪱;Fly Larva;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Became the host.;none
+Forsaken Village;🪱;Thirsty Tapeworm;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Eaten hollow from within.;none
+Forsaken Village;🦗;Restless Cricket;Small;1;0;2;0;-1;0;0;Jumpy Insect;Never stops moving, always one leap ahead.<br>;Got too close and fell.;none
 Forsaken Village;🦗;Careless Cricket;Small;1;0;1;0;-1;0;0;Noise Maker;The chirping never, ever stops.<br>;The noise exploded your head!;none
-Forsaken Village;🪳;Floor Crawler;Small;1;0;2;0;-1;0;0;Creeping Filth;You hear it before you see it.,n<br>;Crawled in the ear and ended it all.;none
+Forsaken Village;🪳;Floor Crawler;Small;1;0;2;0;-1;0;0;Creeping Filth;You hear it before you see it.<br>;Crawled in the ear and ended it all.;none
 Forsaken Village;🪳;Overgrown Cockroach;Small;2;0;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
 Forsaken Village;🪳;Aggresive Crawler;Small;1;2;1;0;-1;0;0;Annoying Insect;Has kind of a significant attitude.<br>;Contracted a deadly disease.;none
 Forsaken Village;🪳;Rot Beetle;Small;1;1;1;0;-1;0;0;Decay Feeder;Chewing something you hope isn’t important.<br>;Become its meal, unwillingly.;none
@@ -442,10 +442,10 @@ Forsaken Village;🦎;Ashen Lizard;Hot;2;2;2;0;0;0;0;Charred Reptile;Sheds soot 
 Forsaken Village;🧑‍🌾;Cultist Slave;Recruit;2;1;1;0;0;0;0;Humanoid;Does not really have a choice.<br>;Got your heart ripped out!;none
 Forsaken Village;🧝;Cultist Initiate;Recruit;2;1;2;0;1;0;0;Humanoid;Trying to prove themselves.<br>;Got your heart ripped out!;none
 Forsaken Village;🧝‍♂️;Cultist Adept;Recruit;2;1;2;0;2;0;0;Humanoid;On their way to exaltation.<br>;Got your heart ripped out!;none
-Forsaken Village;💂;Cultist Guard;Recruit;3;1;2;0;3;0;0;Humanoid;Does not look very friendly.<br>;Stabbed repedately, bled out.;none
+Forsaken Village;💂;Cultist Guard;Recruit;3;1;2;0;3;0;0;Humanoid;Does not look very friendly.<br>;Stabbed repeatedly, bled out.;none
 
 Forsaken Village;🐓;Yard Terror;Swift;1;1;3;0;10;0;0;Rabid Rooster;Looks ridiculous, hits like regret.<br>;Got your brain pecked out.;none
-Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;0;Dangerous Critter;Rarely seen vermint variant.<br>;Contracted a deadly disease.;none
+Forsaken Village;🐁;Albino Rat;Swift;2;1;2;0;10;0;0;Dangerous Critter;Rarely seen, dangerously fast variant.<br>;Contracted a deadly disease.;none
 Forsaken Village;🐕;Rabid Watchdog;Swift;2;1;2;0;1;0;0;Tainted Guard;Was trained once, now only bites.<br>;Mauled beyond recognition.;none
 Forsaken Village;🦝;Masked Bandit;Swift;2;2;1;0;2;0;0;Devious Animal;Kinda cute on the first glance.<br>;Died by contracting rabies.;none
 Forsaken Village;🐐;Crazed Goat;Swift;1;0;3;0;0;0;0;Unstable Livestock;Foam drips from its rotten mouth.<br>;Trampled without mercy.;none
@@ -484,7 +484,7 @@ Forsaken Village;🐦‍⬛;Blood Raven;Undead;2;1;3;1;0;0;0;Thirsty Bird;Aims i
 Forsaken Village;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Forsaken Village;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Forsaken Village;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 Forsaken Village;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Forsaken Village;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Forsaken Village;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -512,11 +512,11 @@ Forsaken Village;📘;Book of Spells;Item-Weapon;0;0;0;0;0;2;0;<b>Artifact</b>;C
 Forsaken Village;🎈;Floating Blob;Item-Trinket;-1;0;2;0;0;0;0;<b>Artifact</b>;Floats peacefully just above the ground.<br><b>Gain +2 🟢 Energy</b> for <b>-1 💔 Health</b>.;Became nimble, yet fragile.;none
 
 Forsaken Village;👔;Office Shirt;Item-Chest;0;1;0;0;0;0;0;Formal Wear;The ink stains tell a story of interrupted work.<br>Provides <b>+1 ⚔️ Frustration</b>.;Dressed for the final meeting.;none
-Forsaken Village;🪚;Rusty Saw;Item-Weapon;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained a makeshift weapon.;none
+Forsaken Village;🪚;Rusty Saw;Item-Weapon;0;1;0;0;0;0;0;Worn Tool;The blade looks stained with old memories.<br>Provides <b>+1 ⚔️ Attack</b>.;Obtained makeshift weapon.;none
 Forsaken Village;🦯;Telescopic Stick;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.;none
 Forsaken Village;🌂;Sturdy Umbrella;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Might be used for smacking others.<br>Provides <b>+1 ⚔️ Damage</b>.;Obtained an improvised weapon.;none
 Forsaken Village;🖋️;Fountain Pen;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;The tip surely looks very sharp.<br>Provides <b>+1 ⚔️ Damage</b>.;Surely makes a bloody mess.;none
-Forsaken Village;🔧;Metal Spanner;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;Usable as a makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.;none
+Forsaken Village;🔧;Metal Spanner;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;Usable as makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.;none
 Forsaken Village;🪛;Rusty Screwdriver;Item-Weapon;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.;none
 Forsaken Village;👖;Work Trousers;Item-Legs;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for anything to come;none
 Forsaken Village;🗜️;Workbench Boxer;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
@@ -541,9 +541,9 @@ Forsaken Village;👕;Cotton Shirt;Item-Chest;0;0;1;0;0;0;0;Ancient Clothes;Sun-
 Forsaken Village;👟;Running Shoes;Item-Legs;0;0;0;1;0;0;0;Athletic Footwear;Must have been fast once.<br>Provides <b>+1 🟢 Energy</b>.;Your steps feel lighter;none
 Forsaken Village;👚;Faded Blouse;Item-Chest;0;0;1;0;0;0;0;Woman's Wear;A remnant of the brighter days.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Charisma</b>.;Feels a bit uncanny.;none
 Forsaken Village;🎈;Helium Balloon;Item-Trinket;0;0;1;0;-2;0;0;Funny Accessory;Makes your voice high-pitched and your body light.<br>Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Charisma</b>.;Laughter is the best medicine;none
-Forsaken Village;🪠;Waste Plunger;Item-Weapon;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassing situations.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed a makeshift weapon.;none
-Forsaken Village;🧹;Sturdy Broom;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but very effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed a makeshift weapon.;none
-Forsaken Village;🗞️;Fly Swatter;Item-Weapon;0;0;0;0;0;0;0;Makeshift Weapon;Not sure if it makes any difference.<br>;Picked up a makeshift weapon.;none
+Forsaken Village;🪠;Waste Plunger;Item-Weapon;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassement.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed makeshift weapon.;none
+Forsaken Village;🧹;Sturdy Broom;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but very effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed makeshift weapon.;none
+Forsaken Village;🗞️;Fly Swatter;Item-Weapon;0;0;0;0;0;0;0;Makeshift Weapon;Not sure if it makes any difference.<br>;Picked up makeshift weapon.;none
 
 Forsaken Village;💡;Miners Hat;Item-Head;0;0;0;0;1;0;0;Work Gear;The bulb still flickers with static electricity.<br>Provides <b>+1 🧠 Perception</b>.;A dim idea glows.;none
 Forsaken Village;💼;Business Briefcase;Item;0;0;0;0;1;0;0;Unusal Headgear;Makes one look very professional.<br>Provides <b>+1 🧠 Intellect</b>;Let's do this!;none
@@ -748,15 +748,15 @@ Twisted Fairyland;🦎;Blue-eyed Gecko;Pet;1;0;2;0;1;1;0;Beautiful Lizard;Eyes a
 Twisted Fairyland;🦩;Baby Flamingo;Pet;1;0;1;1;0;0;0;Wild Bird;Small fancy bird in a need of help.<br>;Gained a new friend;none
 Twisted Fairyland;🦓;Wild Zebra;Pet;3;0;2;0;2;0;0;Mighty Animal;Strange horse approached.<br>;Gained a new travel buddy!;none
 
-Twisted Fairyland;🪱;Confused Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Twisted Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Twisted Fairyland;🪱;Starving Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
+Twisted Fairyland;🪱;Confused Earthworm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Neither of you understood what happened.;none
+Twisted Fairyland;🪱;Fly Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Became the host.;none
+Twisted Fairyland;🪱;Starving Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Eaten hollow from within.;none
 
-Twisted Fairyland;🪱;Stimulated Flatworm;Small;1;0;3;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Twisted Fairyland;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
+Twisted Fairyland;🪱;Stimulated Flatworm;Small;1;0;3;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Got invaded somewhere unreachable.;none
+Twisted Fairyland;🪱;Parasitic Maggot;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Became unwilling shelter.;none
 Twisted Fairyland;🪱;Overgrown Worm;Small;2;1;1;0;-1;0;0;Arthropod;Oh no. It fights back!<br>;;none
 Twisted Fairyland;🪱;Bee Larva;Small;1;1;1;0;-1;0;0;Harmless Insect;Seems angry of the disturbance.<br>;;none
-Twisted Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;0;Dangerous Insect;<br>;;none
+Twisted Fairyland;🪱;Bloodthirsty Worm;Small;1;3;1;0;-1;0;0;Dangerous Insect;Feeds like it has been starving for years.<br>;;none
 Twisted Fairyland;🐝;Confused Bee;Small;1;1;1;0;-1;0;0;Stray Insect;Flies in a weird pattern.<br>;There was nowhere to run.;none
 Twisted Fairyland;🦋;Bluesky Butterfly;Small;1;0;1;0;-1;1;0;Stunning Insect;Does not like being disturbed.<br>;How could this happen?;none
 Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;0;Crustacean;Boasts a pair of painful pinchers.<br>;Got pinched to death.;none
@@ -789,7 +789,7 @@ Twisted Fairyland;🧌;Aged Troll;Recruit;4;1;2;0;1;2;0;Rare Creature;Not happy 
 Twisted Fairyland;🧝🏽‍♀️;Cultist Scout;Recruit;2;1;3;0;2;2;0;Twisted Humanoid;Tried so hard, to not get spotted.<br>;Got your head put on a spike.;none
 Twisted Fairyland;🧝‍♀️;Cultist Priestess;Recruit;2;1;2;0;3;1;0;Twisted Humanoid;Searching for a sacrifice victim.<br>;Got your heart ripped out!;none
 Twisted Fairyland;🧙‍♂️;Cultist Elder;Recruit;2;1;2;0;4;2;0;Twisted Humanoid;His beliefs are rooted very deep.<br>;Sacrificed to the great evil.;none
-Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;0;Crazed Maniac;Looks like one of those mythical creatures.<br>Something just feells off though.;Devoured by a giant mouth.;none
+Twisted Fairyland;🐴‍;Reversed Centaur;Recruit;3;1;1;0;1;0;0;Crazed Maniac;Something about the proportions is deeply wrong.<br>;Devoured by a giant mouth.;none
 
 Twisted Fairyland;🐒;Tricky Monkey;Swift;3;3;3;0;2;0;0;Wild Animal;Seems having lightning reflexes.<br>;Devoured by a fierce monkey.;none
 Twisted Fairyland;🐝;Hornet Swarm;Swift;3;2;3;0;-1;0;0;Pesky Insects;A ton of bees swarmed the area.<br>;There was nowhere to run.;none
@@ -860,7 +860,7 @@ Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;0;Raw Food;Beautiful te
 Twisted Fairyland;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Twisted Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Twisted Fairyland;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Twisted Fairyland;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 Twisted Fairyland;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Twisted Fairyland;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Twisted Fairyland;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -1001,7 +1001,7 @@ River of Sorrows;🪵;Slick Driftwood;Trap-Obstacle;0;0;0;0;0;0;0;Floating Debri
 River of Sorrows;🛶;Wrecked Skiff;Trap-Obstacle;0;0;0;0;0;0;0;River Obstacle;Blocks the narrow passage completely.<br>;Managed to push it aside;none
 River of Sorrows;🌊;Tilting Current;Trap-Big;-4;0;0;0;0;0;0;River's Wrath;The water inverts without warning.<br>;Rock found your spine before you found footing.;none
 River of Sorrows;🌀;Sudden Whirlpool;Trap-Big;-2;0;0;0;0;0;0;Imminent Danger;Appeared without warning beneath the boat.<br>;Spun helplessly into the current;none
-River of Sorrows;🪵;Speeding Logs;Trap;-2;0;0;0;0;0;0;Imminent Danger;Heastily heading your way!<br>;Broken few of your bones.;none
+River of Sorrows;🪵;Speeding Logs;Trap;-2;0;0;0;0;0;0;River Hazard;Bearing down without warning.<br>;Broke several bones on impact.;none
 River of Sorrows;🧊;Drifting Iceberg;Trap-Sleep;-1;0;0;0;0;0;0;Freezing Block;Cold crawls deep inside your bones.<br>;Sleep left you stiff and sore.;none
 River of Sorrows;🌧️;Cold Drizzle;Trap-Sleep;-1;0;0;0;0;0;0;Draining Rain;Soaks through anything you wear.<br>;You rested, joints ache badly.;none
 River of Sorrows;⚓;Anchor Chain;Trap-Big;-2;0;0;0;0;0;0;Mooring Hazard;Half-buried in wet mud.<br>;Chain whipped and broke your ribs.;none
@@ -1021,14 +1021,14 @@ River of Sorrows;🌫️;River Mist;Curse;0;0;0;0;-1;0;0;Creeping Fog;Carries wh
 River of Sorrows;⛵;Phantom Vessel;Curse;0;0;0;0;-1;0;0;Eerie Sighting;Appears on the horizon then simply isn't there.<br>;Unsure if it was ever real;none
 River of Sorrows;🌑;Absent Reflection;Curse;0;0;0;0;-1;0;0;Eerie Sign;Your face does not appear in the water.<br>;Couldn't shake the awful feeling;none
 
-River of Sorrows;🕷️;Water Skipper;Small;1;0;3;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;0;Cephalopod;Wriggles with unsettling energy.<br>;;none
-River of Sorrows;🦐;Twisted Shrimp;Small;1;1;2;0;-1;0;0;Arthropod;Goes for your blood like crazy.<br>;;none
-River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
-River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
+River of Sorrows;🕷️;Water Skipper;Small;1;0;3;0;-1;0;0;Arthropod;Darts across the surface like a nervous thought.<br>;Punctured somewhere that wouldn't stop bleeding.;none
+River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;0;Cephalopod;Wriggles with unsettling energy.<br>;Ink in the lungs, current in the veins.;none
+River of Sorrows;🦐;Twisted Shrimp;Small;1;1;2;0;-1;0;0;Arthropod;Goes for your blood like crazy.<br>;A thousand small cuts from a small thing.;none
+River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;0;Arthropod;Longer than it has any right to be.<br>;Got crushed from the outside in.;none
+River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Became unwilling shelter.;none
+River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;Bled out too slowly to stop.;none
+River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Got sucked blood-dry.;none
+River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Drained to the last drop.;none
 River of Sorrows;🦠;Grave Swarm;Small;1;1;1;0;-1;0;0;Dead Plankton;Barely visible and absolutely everywhere.<br>;Consumed from the outside in.;none
 
 River of Sorrows;🌾;Tall Reeds;Trap-Obstacle;0;0;0;0;0;0;0;Dense Growth;Packed too tight to push through without effort.<br>;Pulled aside one by one.;none
@@ -1082,7 +1082,7 @@ River of Sorrows;🦭;Possessed Seal;Demon;3;3;3;1;-1;0;0;Cursed Animal;Somethin
 River of Sorrows;🦅;River Harpy;Demon;3;3;2;0;2;0;0;Winged Threat;Swoops low over the water without a sound.<br>;Claws found their mark;none
 
 River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;4;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
-River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful, ...not anymore.<br>.;Got both eyes pecked out!;none
+River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful — not anymore.<br>;Got both eyes pecked out.;none
 
 River of Sorrows;💀;Hollow Fisherman;Friend;0;0;0;1;1;0;0;Mourning Man;Line in the water, eyes on the distance.<br>Not fishing for fish.;Gestured you a good fortune.;none
 
@@ -1090,11 +1090,11 @@ River of Sorrows;👤;Drowned Soul;Boss-Spirit;1;2;3;0;2;0;0;Unfinished Business
 River of Sorrows;🦀;Spider Crab;Boss-Tough;4;2;2;0;-1;0;1;Oversized Crustacean;Whaat? It's the size of a dog!<br>;Got pinched in half.;none
 River of Sorrows;🐚;Squatting Hermit;Boss-Tough;4;3;1;0;-1;0;1;Armored Crustacean;Better not stick your fingers inside.<br>;Oops, that was deadly!;none
 River of Sorrows;🧜;Depths Queen;Boss-Reflective;5;2;3;0;3;2;0;Abyssal Monarch;Veil of weeds covers her hair.<br>;Got kissed and pulled you below.;none
-River of Sorrows;🦈;Pearlescent Serrato;Boss-Reflective;4;3;1;0;4;0;0;Too Clever One;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.;none
+River of Sorrows;🦈;Pearlescent Serrato;Boss-Reflective;4;3;1;0;4;0;0;Too Clever One;Makes a lot of squeaking noises.<br>;Got outsmarted by a dolphin.;none
 River of Sorrows;‍🪼;Jellyfish Swarm;Boss-Toxic;5;3;3;0;-1;0;0;Lethal Threat;Squishy deathtraps spreading all around.<br>;Stung by a jellyfish.;none
 River of Sorrows;🦑;Depths Squid;Boss-Heavy;5;3;2;0;-1;0;0;Horrific Monster;Giant octopus from the deep ends.<br>;Got swallowed in one slurp.;none
 River of Sorrows;🐸;Frogface Behemoth;Boss-Heavy;4;2;2;0;4;0;0;Amphibious Giant;Always lusts for blood.<br>;Got swallowed in one gulp.;none
-River of Sorrows;🐋;Massive Fintail;Boss-Heavy;4;3;1;0;4;0;0;Absurd-sized Monster;Makes a lot of squaking noises.<br>;Got outsmarted by a dlophin.;none
+River of Sorrows;🐋;Massive Fintail;Boss-Heavy;4;3;1;0;4;0;0;Absurd-sized Monster;A creature this vast shouldn't move this fast.<br>;Swallowed mid-sentence.;none
 River of Sorrows;🐙;Vampiric Squid;Boss-Demon;4;1;2;0;-1;0;0;Bloodthisty Cephalopod;Always lusts for blood.<br>;Sucked dry bonemarrow-deep.;none
 River of Sorrows;🧜🏼‍♀️;Pale Queen;Boss-Undead;5;3;2;0;3;2;0;Rotting Monarch;Sickly skin exposes rotten flesh.<br>;Infected by a deadly virus.;none
 River of Sorrows;🦈;Ancient Megalodon;Boss-Swift;5;3;3;0;-1;0;0;Mythical Monster;One bite and it's probably over.<br>;Devoured by a mythical creature!;none
@@ -1118,7 +1118,7 @@ River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not th
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 River of Sorrows;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 River of Sorrows;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</b> when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
 River of Sorrows;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
@@ -1151,7 +1151,7 @@ River of Sorrows;🩴;Rubber Sliders;Item-Legs;0;0;1;1;0;0;0;Cheap Footwear;Surp
 River of Sorrows;🕶;Cool Sunglasses;Item-Head;0;0;0;2;0;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;You feel a lot cooler.;none
 River of Sorrows;👙;Sexy Bikini;Item-Chest;0;0;2;0;-3;0;0;Swimming Equipment;Improves movement, draws attention a lot.<br>Provides <b>+2 🟢 Energy</b> for <b>-3 🧠 Charisma</b>.;All eyes are on you!;none
 River of Sorrows;👓;Reading Glasses;Item-Head;0;0;0;0;2;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.;none
-River of Sorrows;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
+River of Sorrows;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
 River of Sorrows;🪢;Twisted Knot;Item-Trinket;0;0;1;0;0;0;0;Endurance Symbol;Specially crafted for survival.<br>Provides <b>+2 🟢 Energy</b>.;Gained the power of the wild.;none
 
 River of Sorrows;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides an insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.;none
@@ -1177,7 +1177,7 @@ Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;0;Hopeless Souls;Look 
 Shrouded Necropolis;🌫️;Pale Mist;Prop;0;0;0;0;0;0;0;Unsettling Atmosphere;A veil of fog conceals the path.<br>;;none
 Shrouded Necropolis;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;;none
 Shrouded Necropolis;🌾;Dead Reeds;Prop;0;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;;none
-Shrouded Necropolis;⛓️‍💥;Broken Shakles;Prop;0;0;0;0;0;0;0;Suspicious Clue;Probably left behind by an escaped prisoner.<br>;Followed the way ahead.;none
+Shrouded Necropolis;⛓️‍💥;Broken Shackles;Prop;0;0;0;0;0;0;0;Suspicious Clue;Probably left behind by an escaped prisoner.<br>;Followed the way ahead.;none
 
 Shrouded Necropolis;✝️;Saint's Grave;Prop;0;0;0;3;0;0;0;Blessed Remains;The resting place of a blessed soul.<br>;Woke up feeling blessed;none
 Shrouded Necropolis;🎠;Horse Statue;Prop;0;0;2;0;0;0;0;Dashing Symbol;Eternal reminder of the royal breed.<br>;Woke up feeling extra fast;none
@@ -1243,7 +1243,7 @@ Shrouded Necropolis;🪲;Green Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Tiny 
 Shrouded Necropolis;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.;none
 Shrouded Necropolis;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.;none
 Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.;none
-Shrouded Necropolis;🪱;Mosqito Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
+Shrouded Necropolis;🪱;Mosquito Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
 Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
 Shrouded Necropolis;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
 Shrouded Necropolis;🪱;Grave Worm;Small;1;2;1;0;-1;0;0;Crawling Parasite;Nourished by the decay of ages.<br>;;none
@@ -1252,7 +1252,7 @@ Shrouded Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;0;Arthropod;Dangerous
 Shrouded Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
 Shrouded Necropolis;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.;none
 Shrouded Necropolis;🪰;Ceaseless Fly;Small;0;0;3;0;-1;0;0;Nagging Buzz;The hum drills straight into your skull.<br>;Couldn’t take the endless buzzing.;none
-Shrouded Necropolis;🦟;Bloodsucker Mosqito;Small;1;2;1;0;-1;0;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.;none
+Shrouded Necropolis;🦟;Bloodsucker Mosquito;Small;1;2;1;0;-1;0;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.;none
 Shrouded Necropolis;🦗;Grave Cricket;Small;1;1;1;0;-1;0;0;Chirping Insect;Echoes break the silence.<br>;;none
 Shrouded Necropolis;🪲;Crypt Scarab;Small;1;1;1;0;-1;0;0;Burrowing Insect;Wings shimmer faintly in the gloom.<br>;;none
 Shrouded Necropolis;🦋;Nocturnal Moth;Small;1;0;2;0;-1;0;0;Fluttering Insect;Drawn to the faintest flicker of light.<br>;;none
@@ -1289,13 +1289,13 @@ Shrouded Necropolis;🧙‍♂️;Fallen Acolyte;Recruit;3;1;1;0;3;3;0;Forsaken 
 
 Shrouded Necropolis;🦣;Bone Mammoth;Heavy;6;1;4;0;0;0;0;Ancient Horror;The bones shouldn't hold together.<br>;Trampled by hefty bones.;none
 Shrouded Necropolis;🐀;Gigantic Vermin;Heavy;5;1;3;0;-1;0;0;Overgrown Vermin;Has a maw full of sharp teeth.<br>;Teeth found everything, eventually.;none
-Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;0;Cursed Being;The silhouette changed to a human.<br>;;none
+Shrouded Necropolis;🎃;Overgrown Pumpkin;Heavy;4;4;2;0;-1;0;0;Cursed Being;The silhouette changed to a human.<br>;Hollowed out and left behind.;none
 
 Shrouded Necropolis;💀;Skeleton Ninja;Swift;4;3;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;Cut through before you moved.;none
 Shrouded Necropolis;🤺;Mysterious Blademaster;Swift;4;2;4;0;10;0;0;Unforgiving Opponent;Asks for an immediate attention.<br>;Every move anticipated and countered.;none
 Shrouded Necropolis;🦇;Thirsty Bat;Swift;4;2;2;0;5;0;0;Flying Mammal;Its scream echoes around the crypt.<br>;The scream split the mind open.;none
 Shrouded Necropolis;🦌;Stag Wraith;Swift;4;3;1;0;4;1;0;Ethereal Beast;Antlers glow with spectral fire.<br>;Spectral antlers passed through you.;none
-Shrouded Necropolis;🐺;Ghastly Wolf;Swift;4;4;1;0;10;3;0;Apex Predator;Winding up for a powerful attack.<br>Better avoid it.;Got totally ripped apart!;none
+Shrouded Necropolis;🐺;Ghastly Wolf;Swift;4;3;2;0;10;3;0;Apex Predator;Winding up for a powerful attack.<br>;Got totally ripped apart!;none
 
 Shrouded Necropolis;🐼;Zombie Bear;Undead;5;3;1;0;-1;1;0;Restless Body;It surely carries lot of diseases.<br>;Torn apart by rotting claws.;none
 Shrouded Necropolis;🧟;Ghoul Brute;Undead;2;3;1;0;-1;0;0;Cursed Creature;Reeking of death and decay.<br>;Ripped limb from limb.;none
@@ -1327,7 +1327,7 @@ Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;0;Ethereal
 Shrouded Necropolis;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Shrouded Necropolis;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Shrouded Necropolis;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Shrouded Necropolis;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 Shrouded Necropolis;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Shrouded Necropolis;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Shrouded Necropolis;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -1373,7 +1373,7 @@ Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten L
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;;none
 Fishing;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;;none
 
-Fishing;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as a makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Fishing;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 Fishing;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
 Fishing;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Fishing;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
@@ -1409,7 +1409,7 @@ Fishing;🕶;Cool Sunglasses;Item-Head;0;0;0;0;2;0;0;Flashy Accessory;Anyone can
 Fishing;🐚;Pearlescent Shell;Item;0;0;1;0;0;0;0;Rare Souvenir;The previous inhabitant has moved away.<br>Provides <b>+2 🧠 Charisma</b>.;Picked up a shiny shell.;none
 Fishing;👙;Sexy Bikini;Item-Chest;0;0;2;0;-3;0;0;Swimming Equipment;Improves movement, draws attention a lot.<br>Provides <b>+2 🟢 Energy</b> for <b>-3 🧠 Charisma</b>.;All eyes are on you!;none
 Fishing;👓;Reading Glasses;Item-Head;0;0;0;0;2;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.;none
-Fishing;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as a makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
+Fishing;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
 Fishing;💍;Engagement Ring;Item-Trinket;1;0;0;0;1;0;0;Lost Accessory;Worn by one of the lovers a long time ago.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Felt a subtle surge in your chest.;none
 Fishing;🐒;Driftwood Totem;Item-Trinket;0;0;0;2;0;0;0;Primitive Idol;Worn by the tide for years.<br>Provides <b>+2 🍀 Luck</b>;Radiates positive energy.;none
 
