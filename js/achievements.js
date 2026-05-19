@@ -7,7 +7,7 @@ var AchievementManager = (function () {
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
-    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🧿 Wizard</b> and <b>🩸 Warlock</b>.' },
+    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
     { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
@@ -29,7 +29,7 @@ var AchievementManager = (function () {
 
     { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open with an attack!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
-    { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with a spell!', hint: 'Magic opens more than minds.', unlock: '' },
+    { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with a spell!', hint: 'Magic opens more than minds.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
     { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: '' },
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: '' },
@@ -61,13 +61,13 @@ var AchievementManager = (function () {
 
     { id: 'rival_spot',          emoji: '👾', desc: 'Got invaded from another world!',         hint: 'See the face of someone who fell.',    unlock: '' },
     { id: 'rival_kill',          emoji: '💀', desc: 'Slayed an Invader from another world!',   hint: 'The dead can die twice.',              unlock: '' },
-    { id: 'rival_killed_by',     emoji: '💔', desc: 'Slayed by Invader from another world.',   hint: 'Their death echoed into yours.',       unlock: '' },
+    { id: 'rival_killed_by',     emoji: '💔', desc: 'Slayed by Invader from another world.',   hint: 'Their death echoed into yours.',       unlock: 'Unlocked the <b>🎯 Marked</b> origin.' },
     { id: 'rival_kills_10',      emoji: '🔪', desc: 'Slayed 10 Invaders from anothe world!',   hint: 'The world boundary grows thinner.',    unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
 
     { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.', unlock: 'Unlocked the <b>🧂Salt Shaker</b> item.' },
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: 'Unlocked the <b>👨🏻‍🍳 Chef></b> origin.' },
 
-    { id: 'fish_legendary_first',emoji: '🏺', desc: 'Reeled in a legendary find!', hint: 'The best things are worth waiting for.', unlock: '' },
+    { id: 'fish_legendary_first',emoji: '🏺', desc: 'Reeled in a legendary find!', hint: 'The best things are worth waiting for.', unlock: 'Unlocked the <b>🔱 Titanslayer Trident</b>.' },
     { id: 'fish_boss_first',     emoji: '🦕', desc: 'Fished out a legendary beast!', hint: 'The rumors were true after all.', unlock: 'Unlocked the <b>🔍 Surveyor</b> origin.' },
     { id: 'fish_boss_kill',      emoji: '🦴', desc: 'Defeated the ancient water monster!', hint: 'Calm the cursed waters forever.', unlock: 'Unlocked a hidden <b>🪙 Drachma</b>.' },
     { id: 'spoke_boss',          emoji: '🗣️', desc: 'Calmed a Boss into submission!', hint: 'Could peace be an actual option?', unlock: 'Unlocked the <b>📣 Loud Vocalizer</b> item.' },
@@ -76,8 +76,7 @@ var AchievementManager = (function () {
     { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Hippie</b> origin.' },
 
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: 'Unlocked the <b>📼 Rewind Tape</b> item.' },
-    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: '' },
-
+    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: 'Unlocked the <b>🥩 Butcher</b> origin.' },
     { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
     { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!', hint: "Giant slayer, born in struggle.", unlock: 'Unlocked the <b>🎖️ Hero</b> origin.' },
     { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },

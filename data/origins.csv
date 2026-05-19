@@ -36,7 +36,9 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 💔;Broken;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 💔 Health</b><br><i>Cannot forget the grueling pain.;letter_ditch
 🤌;Gourmet;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br><i>Enjoys his life to the fullest.;eat_legendary
 🩸;Warlock;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 💔 Health</b>.<br><i>Bought his power by own blood.;mana_first
-🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;mana_first
+🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;magic_unlock_first
+🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by
+🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_50
 
 //Outstanding
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br>Hardened long before anything fought back.;none
@@ -51,8 +53,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🏹;Ranger;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-2 💔 Health</b>.<br><i>Deadly dangerous, but super fragile.;none
 💢;Berserk;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🧠 Intellect</b>.<br><i>Unstable, blinded by his fury.;none
 🪓;Killer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.;none
-🎯;Soldier;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Follows orders with no thinking.;none
-🥩;Butcher;1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b><br><i>Killed for a living in a good faith.;none
+🪖;Soldier;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Follows orders with no thinking.;none
 
 //Health
 🗿;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, lose <b>-1 🟢 Energy</b>.<br><i>Rock solid but less agile.;none
