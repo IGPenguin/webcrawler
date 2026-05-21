@@ -127,19 +127,34 @@
 
     // Overlays — highest priority
     if (_overlayUp('swap_overlay')) {
-      if (key === 'Enter')                          { e.preventDefault(); _click('swap_confirm'); }
+      if (key === 'Enter' || key === ' ') {
+        e.preventDefault();
+        var _swapOl = document.getElementById('swap_overlay');
+        var _swapAe = document.activeElement;
+        if (_swapAe && _swapAe.tagName === 'BUTTON' && _swapOl && _swapOl.contains(_swapAe)) { _swapAe.click(); } else { _click('swap_confirm'); }
+      }
       if (key === 'Escape')                         { e.preventDefault(); _click('swap_cancel');  }
       if (key === 'ArrowUp' || key === 'ArrowDown') { e.preventDefault(); _overlayNav('swap_overlay', key); }
       return;
     }
     if (_overlayUp('nickname_overlay')) {
-      if (key === 'Enter')                          { e.preventDefault(); _click('nickname_confirm'); }
+      if (key === 'Enter' || (key === ' ' && document.activeElement && document.activeElement.tagName === 'BUTTON')) {
+        e.preventDefault();
+        var _nickOl = document.getElementById('nickname_overlay');
+        var _nickAe = document.activeElement;
+        if (_nickAe && _nickAe.tagName === 'BUTTON' && _nickOl && _nickOl.contains(_nickAe)) { _nickAe.click(); } else { _click('nickname_confirm'); }
+      }
       if (key === 'Escape')                         { e.preventDefault(); _click('nickname_skip');    }
       if (key === 'ArrowUp' || key === 'ArrowDown') { e.preventDefault(); _overlayNav('nickname_overlay', key); }
       return;
     }
     if (_overlayUp('companion_name_overlay')) {
-      if (key === 'Enter')                          { e.preventDefault(); _click('companion_name_confirm'); }
+      if (key === 'Enter' || (key === ' ' && document.activeElement && document.activeElement.tagName === 'BUTTON')) {
+        e.preventDefault();
+        var _compOl = document.getElementById('companion_name_overlay');
+        var _compAe = document.activeElement;
+        if (_compAe && _compAe.tagName === 'BUTTON' && _compOl && _compOl.contains(_compAe)) { _compAe.click(); } else { _click('companion_name_confirm'); }
+      }
       if (key === 'Escape')                         { e.preventDefault(); _click('companion_name_skip');    }
       if (key === 'ArrowUp' || key === 'ArrowDown') { e.preventDefault(); _overlayNav('companion_name_overlay', key); }
       return;
