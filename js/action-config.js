@@ -6,6 +6,7 @@ function calcActionBarConfig(button, adjustment) {
   var pSta = Math.max(0, playerSta  || 0);
   var pMgk = Math.max(0, playerMgk  || 0);
   var pLck = Math.max(0, playerLck  || 0);
+  var rawLck = playerLck || 0; // unclamped — used only for crit fail so negative luck expands the danger zone
   var pInt = Math.max(0, playerInt  || 0);
 
   var eAtk = Math.max(0, (enemyAtk || 0) + (enemyAtkBonus || 0));
@@ -120,8 +121,8 @@ function calcActionBarConfig(button, adjustment) {
              critSuccessMin: _gtoMin, critSuccessMax: _gtoMin + _gtoCs, critFailW: _gtoCf };
   }
 
-  // Exhausted grab: near-impossible without stamina (items/containers/fishing/dream unaffected)
-  if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing' && types !== "Death" && !types.includes('Dream')) {
+  // Exhausted grab: near-impossible without stamina (items/containers/fishing/dream/corpses unaffected)
+  if (button === 'button_grab' && pSta === 0 && !isGrabbable && corpseState === '' && types !== 'Fishing' && types !== "Death" && !types.includes('Dream')) {
     var _egCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54,
              critSuccessMin: 49, critSuccessMax: 51, critFailW: _egCf };
@@ -416,6 +417,10 @@ function calcActionBarConfig(button, adjustment) {
 
   // Friend speak — difficulty based on INT differential
   if (button === 'button_speak' && types === 'Friend') {
+    // Returning a lost possession — no silver tongue required, item does the talking
+    if (String(enemyQuestItems || '').length >= 1 && checkPlayerHasItem(enemyQuestItems) !== '') {
+      return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
+    }
     var _fInt = Math.max(0, enemyInt || 0);
     var _diff = _fInt - pInt;
     var friendW;
@@ -620,8 +625,8 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Crit zone widths: luck only — karma hook removed pending full karma overhaul
-  var critSuccessW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
-  var critFailW    = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
+  var critSuccessW = Math.min(7, Math.max(1, Math.round(2 + pLck * 0.625)));
+  var critFailW    = Math.min(10, Math.max(1, Math.round(5 - rawLck * (rawLck < 0 ? 1.25 : 0.5))));
 
   // Ensure success zone doesn't overlap crit-fail edges — action-bar.js disables crits if it does
   zoneStart = Math.max(critFailW + 1, Math.min(100 - zoneW - critFailW - 1, zoneStart));

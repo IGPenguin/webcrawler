@@ -1234,7 +1234,8 @@ var Menu = (function () {
 
   function _bindButtons() {
     document.getElementById('menu_new_game').addEventListener('click', function () {
-      if (SaveManager.hasContinue()) {
+      var _saved = SaveManager.loadGameState();
+      if (SaveManager.hasContinue() && !(_saved && _saved.playerWonThisRun)) {
         _renderConfirm();
       } else if (AchievementManager.isUnlocked('boss_kill_first')) {
         _renderOriginPicker();

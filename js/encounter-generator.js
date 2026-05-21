@@ -232,7 +232,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 69: // Fishing (random slot)
       if (logCall) logGenerator("fish");
-      pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([3, 4, 5, 6]));
+      pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([4, 5, 6]));
       break;
 
     case 70: // Island Small — shore cache, one soft enemy

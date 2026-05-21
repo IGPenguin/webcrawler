@@ -51,6 +51,7 @@ function renewPlayer(){ //Default values
   gatewayPassed = false;
   removeGatewayEffects();
   isKillEnding = false;
+  playerWonThisRun = false;
   seenLoot = [];
   adventureLog = actionLog;
   spentCoins=0;

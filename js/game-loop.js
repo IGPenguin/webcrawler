@@ -17,6 +17,13 @@ function getRandomFish(forcedLootIndex){ //TODO refactor into encounters.csv (in
 }
 
 function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even generator encounters go through here :)
+  // Kill ending: intercept when leaving the boss fight — play cutscene before Stack Overflow
+  if (isKillEnding) {
+    isKillEnding = false;
+    playEndingCutscene(ENDING_FRAMES['button_attack'], function() { _doGameEnd('win_kill'); });
+    return;
+  }
+
   fishingRested = false; // leaving this encounter — reset fishing sleep limit
   encounterCount++;
   if (!enemyType.includes("Generator")) { //Hacky hacky hack and mess on top of it
@@ -206,14 +213,12 @@ var _ENDING_TYPES = {
 // ENDING_FRAMES lives in string-generator.js
 
 function startBrideDialogue() {
-  var poem  = getBridePoemByLove().replace(/<\/?i>/g, '');
+  var poem  = getBrideDyingByLove().replace(/<\/?i>/g, '');
   var parts = poem.split('<br>');
   var line1 = (parts[0] || '').trim();
   var line2 = (parts[1] || '').trim();
   var fadeHtml =
-    '<p style="color:#FFD940;letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;font-size:40px;line-height:1.2;margin:0 0 8px;">' + line1 + '</p>'
-    + '<p style="font-size:17px;color:#ddd;letter-spacing:0.5px;-webkit-text-stroke:0;margin:0 0 20px;">' + line2 + '</p>'
-    + '<div style="font-size:54px;line-height:1;">👰🏻‍♀️</div>';
+    '<p style="letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;line-height:1.2;margin:0 0 8px;"><i>' + line1 +"<br>"+ line2 + '</i></p>'
   curtainFadeInAndOut(fadeHtml, 3.5, function() {
     adjustEncounterButtons();
     registerClickListeners(300);
@@ -226,14 +231,15 @@ function resolveEnding(button) {
   removeClickListeners();
 
   if (button === 'button_attack') {
-    isKillEnding = true;
-    logAction("🔪 ▸ 👰🏻‍♀️ <text style=color:" + colorRed + ";>The fight begins.</text>");
+    logAction("🔪 ▸ 👰🏻‍♀️ <text style=color:" + colorRed + ";>She freed from your grasp full of anger.</text>");
     var brideBoss = getRandomEncounter(
       ["Boss-Standard","Boss-Swift","Boss-Demon","Boss-Heavy","Boss-Toxic","Boss-Undead"],
       ["Forgotten Love"], "Shrouded Necropolis"
     );
     pushEncounter(brideBoss, 1);
-    nextEncounter();
+    nextEncounter(); // loads the boss; isKillEnding set AFTER so the intercept fires on exit
+    displayEnemyCannotEffect();
+    isKillEnding = true;
     return;
   }
 
@@ -245,13 +251,6 @@ function resolveEnding(button) {
 }
 
 function gameEnd() {
-  if (isKillEnding) {
-    isKillEnding = false;
-    playEndingCutscene(ENDING_FRAMES['button_attack'], function() {
-      _doGameEnd('win_kill');
-    });
-    return;
-  }
   _doGameEnd();
 }
 
@@ -291,10 +290,11 @@ function _doGameEnd(endType) {
     difficulty:     _winPayload.difficulty,
     playtime:       _winPayload.playtime
   });
-  ScoreManager.submitOrPrompt(_winPayload);
-
-  SaveManager.clearGameState();
-  resetSeenEncounters();
+  playerWonThisRun = true;
   removeGatewayEffects();
-  processStoryData(storyData,false);
+  var _wp = _winPayload;
+  setTimeout(function() {
+    curtainFadeInAndOut('', 2, function() { registerClickListeners(300); }, function() { ScoreManager.submitOrPrompt(_wp); });
+    if (encounterIndex + 1 < linesStory.length - 1) nextEncounter(true, true);
+  }, 50);
 }

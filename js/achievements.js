@@ -27,12 +27,12 @@ var AchievementManager = (function () {
     { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?", unlock: 'Unlocked the <b>🎣 Angler</b> origin.' },
     { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
 
-    { id: 'key_unlock_first',    emoji: '🔓', desc: 'Unlocked a door with a key!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
-    { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a door open with an attack!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
-    { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Unlocked a door with a spell!', hint: 'Magic opens more than minds.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
+    { id: 'key_unlock_first',    emoji: '🔓', desc: 'Opened a lock with a key!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
+    { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a lock open with an attack!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
+    { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Opened a lock with a spell!', hint: 'Magic opens more than minds.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
     { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: '' },
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
-    { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: '' },
+    { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
 
     { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...', unlock: 'Unlocked the <b>🐷 Pig Mask</b>.' },
     { id: 'eat_purple',          emoji: '💜', desc: 'Consumed a premium refreshment!', hint: 'The finer things in death.', unlock: '' },
@@ -562,7 +562,7 @@ var AchievementManager = (function () {
     var note = snap.note || '';
     if (tier === 'Legendary') {
       check('grab_artifact');
-    } else if (tier === 'Rare' || tier === 'Uncommon') {
+    } else if (tier === 'Rare') {
       check('grab_exquisite');
     } else if (snap.emoji !== '🪙' && snap.emoji !== '💰' && snap.emoji !== '🗝️' && snap.emoji !== '🔑'
                && !note.includes('Lover') && !note.includes('Lost Possession') && !note.includes('Piece of History')) {

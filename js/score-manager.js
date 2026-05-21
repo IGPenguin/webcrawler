@@ -266,11 +266,11 @@ var ScoreManager = (function () {
     html += makeRow('Karma ' + payload.karma,              (b.karmaBonus >= 0 ? '+' : '') + b.karmaBonus, karmaColor);
     if (b.encounters) html += makeRow('Encounters ' + b.encounters,          '+' + b.encounterBonus);
     if (b.companions) html += makeRow('Companions ' + b.companions,          '+' + b.companionBonus);
-    if (b.critSuccesses) html += makeRow('Crit Successes ×' + b.critSuccesses, '+' + b.critSuccessBonus);
-    if (b.critFails)     html += makeRow('Crit Fails ×' + b.critFails,         '-' + b.critFailPenalty, cfColor);
-    if (b.fishBonus)     html += makeRow('Caught along the way ×' + b.fishCatches, '+' + b.fishBonus);
-    if (b.sleepPenalty)  html += makeRow('Fell behind ×' + b.sleepPenalty,     '-' + b.sleepPenalty, RED);
-    if (b.winBonus)      html += makeRow('Win Bonus',      '+' + b.winBonus);
+    if (b.critSuccesses) html += makeRow('Crit Successes ' + b.critSuccesses, '+' + b.critSuccessBonus);
+    if (b.critFails)     html += makeRow('Crit Fails ' + b.critFails,         '-' + b.critFailPenalty, cfColor);
+    if (b.fishBonus)     html += makeRow('Fishing ' + b.fishCatches, '+' + b.fishBonus);
+    if (b.sleepPenalty)  html += makeRow('Oversleeping ' + b.sleepPenalty,     '-' + b.sleepPenalty, RED);
+    if (b.winBonus)      html += makeRow('Ending Bonus',      '+' + b.winBonus);
     if (b.mult !== 1)    html += makeRow('Difficulty',     '×' + b.mult);
     return html;
   }
@@ -376,14 +376,9 @@ var ScoreManager = (function () {
     if (!confirmBtn) return;
 
     function _dismiss() {
-      var isWin = _pendingPayload
-        && _pendingPayload.endType
-        && (_pendingPayload.endType === 'win' || _pendingPayload.endType.startsWith('win_'));
       _pendingPayload = null;
       if (overlay) overlay.style.display = 'none';
-      if (isWin && typeof menuFade === 'function' && typeof Menu !== 'undefined') {
-        menuFade(function() { Menu.show(); });
-      }
+      // Player stays on Stack Overflow; they can navigate to menu manually
     }
 
     confirmBtn.addEventListener('click', function () {

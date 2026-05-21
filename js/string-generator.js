@@ -178,7 +178,7 @@ function getOriginName(origin) {
 function getGameTip(){
   const random_quotes = [
     "<b>👀 Search</b> for loot in places of interest.",
-    "Always <b>💤 Sleep</b> when you get a chance.",
+    "<b>💤 Sleeping</b> too much bears consequences.",
     "<b>💨 Hasty</b> attacks can only be <b>🔰 Blocked</b>.",
     "<b>🔺 Heavy</b> attacks can only be <b>🌀 Dodged</b>.",
     "<b>🔻 Small</b> creatures can be <b>👋 Grabbed</b>.",
@@ -259,7 +259,7 @@ function getPoem(){
     "Your twisted love outlived my breath.<br>Then cursed me forever.",
     "You called me back with trembling hands.<br>Now tremble for what you've done.",
     "I hoped you'd mourn me.<br>Not try to fix me.",
-    "You wanted me to never leave.<br>I'll soon fulfill your wish.",
+    "You wanted me to stay.<br>I'll fulfill your wish.",
     "Love me as I am now.<br>Or rot beside me.",
     "You broke me with foul magic.<br>Now I return with justice.",
     "I died believing in your endless love.<br>Now I rise certain of your betrayal.",
@@ -267,27 +267,21 @@ function getPoem(){
   return "<i>"+random_quotes[Math.floor(Math.random() * random_quotes.length)]+"</i>";
 }
 
-function getBridePoemByLove() {
+function getBrideOpeningByLove() {
   var accusatory = [
-    "You did this to me... to us!<br>Why wouldn't you let me go?",
     "You broke me with foul magic.<br>Now I return with justice.",
-    "I died believing in your love.<br>Now I rise, sure of betrayal.",
+    "I died believing in your love.<br>Then I risen, sure of betrayal.",
     "Your love outlived my breath.<br>Then cursed me forever.",
     "You called me back, trembling.<br>Now tremble for what you did.",
-    "I hoped you'd mourn me.<br>Not try to fix me.",
-    "Love me as I am now.<br>Or rot beside me.",
     "You begged the gods for me.<br>They released the darkness.",
-    "You wanted me to never leave.<br>I'll soon fulfill your wish.",
+    "You wanted me to stay.<br>I have fulfilled your wish.",
     "The world could be peaceful.<br>If only you would listen."
   ];
   var longing = [
     "My vows outlived my breath.<br>They whisper beneath the soil.",
-    "I came the way you asked.<br>Not fully whole — but yours.",
-    "Vows don't end with death.<br>Only my breathing did.",
-    "I reach, but find shadows.<br>Only shadows take my hand.",
+    "I came the way you asked.<br>Not fully whole, but yours.",
     "Your whisper was like prayer.<br>I came half hatred, half devotion.",
     "I waited in the soil so long.<br>The stars forgot my name.",
-    "The cold welcomed me first.<br>Then I remembered your warmth.",
     "I wear your name like a veil.<br>Even the worms won't touch it.",
     "Every petal on my grave...<br>Has been filling with poison.",
     "Stars we watched together...<br>They now turn their faces."
@@ -296,21 +290,39 @@ function getBridePoemByLove() {
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
 
+function getBrideDyingByLove() {
+  var accusatory = [
+    "You did this to me... to us!<br>Why wouldn't you let me go?",
+    "Love me as I am now.<br>Or rot beside me.",
+    "I hoped you'd mourn me.<br>Not try to fix me.",
+  ];
+  var longing = [
+    "My vows outlived my breath.<br>They whisper beneath the soil.",
+    "Vows don't end with death.<br>Only my breathing did.",
+    "I reach, but find shadows.<br>Only shadows take my hand.",
+    "The cold welcomed me first.<br>Then I remembered your warmth.",
+    "I wear your name like a veil.<br>Even the worms won't touch it.",
+    "Every petal on my grave...<br>Has been filling with poison.",
+  ];
+  var pool = (playerLove >= 3) ? longing : accusatory;
+  return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
+}
+
 var ENDING_FRAMES = {
   button_attack: [
-    {emoji:'⚔️', text:'The deed is done.',            text2:'You will not be clean again.'},
-    {emoji:'🩸', text:'She finally rests in peace.',  text2:'She waited long enough for this.'},
-    {emoji:'🖤', text:'And you walk on. Alone.',       text2:'As you were always going to.'}
+    {emoji:'⚔️', text:'The deed is finally done.',    text2:'You will not be clean again.'},
+    {emoji:'🩸', text:'She finally rests in peace.',  text2:'She waited so long for this.'},
+    {emoji:'🖤', text:'And you walk on alone.',       text2:'As you were always going to.'}
   ],
   button_roll: [
-    {emoji:'💔', text:'You turn your back.',           text2:'She watches until you disappear.'},
+    {emoji:'💔', text:'You turn your back.',           text2:'She watches as you disappear.'},
     {emoji:'🥀', text:'The world slowly rots.',        text2:'No one is coming to stop it.'},
-    {emoji:'👰🏻‍♀️', text:'She still waits, always will.', text2:'Her patience outlived your courage.'}
+    {emoji:'👰🏻‍♀️', text:'She still waits, always will.', text2:'Her patience outlived your vow.'}
   ],
   button_block: [
-    {emoji:'🔰', text:'You stand your ground.',        text2:'Resolve never found you here.'},
-    {emoji:'🗿', text:'Slowly turning to stone.',      text2:'This is what devotion looks like.'},
-    {emoji:'💞', text:'Your hearts bound forever.',    text2:'Neither free. Neither gone.'}
+    {emoji:'🔰', text:'You stand your ground.',        text2:'Resolve never found you.'},
+    {emoji:'🗿', text:'Slowly turning to stone.',      text2:'This is a true devotion.'},
+    {emoji:'💞', text:'Your hearts bound forever.',    text2:'Neither free, neither gone.'}
   ],
   button_grab: [
     {emoji:'🫂', text:'You hold her close.',           text2:'She does not pull away.'},
@@ -319,13 +331,13 @@ var ENDING_FRAMES = {
   ],
   button_sleep: [
     {emoji:'💤', text:'You lie beside her.',           text2:'No armor. No grief. Just this.'},
-    {emoji:'🌿', text:'The ground grows still.',       text2:'Even the corruption holds its breath.'},
+    {emoji:'🌿', text:'The ground grows still.',       text2:'Even the corruption stands still.'},
     {emoji:'🤍', text:'Your hearts make no sound.',    text2:'The debt is not paid. Forgiven.'}
   ],
   button_speak: [
-    {emoji:'❤️', text:'You say her name. Rosabel.',    text2:'She did not expect you to know.'},
-    {emoji:'✨', text:'Something stirs inside.',        text2:'Not hope. Something older than hope.'},
-    {emoji:'💖', text:'She remembers who she was.',    text2:'Before the grave. Before your grief.'}
+    {emoji:'❤️', text:'You say her name: Rosabel!',    text2:'She did not expect you to know.'},
+    {emoji:'✨', text:'Something stirs inside her.',   text2:'Not hope, something older than that.'},
+    {emoji:'💖', text:'She remembers who she was.',    text2:'Before your grief, before the grave.'}
   ],
   button_cast: [
     {emoji:'❤️‍🩹', text:'You unravel the curse.',       text2:'Thread by thread. Year by year.'},
@@ -333,13 +345,13 @@ var ENDING_FRAMES = {
     {emoji:'🪽', text:'She is finally free.',          text2:'Not saved. Set free.'}
   ],
   button_pray: [
-    {emoji:'🙏', text:'You beg for mercy.',            text2:'You have no other currency left.'},
-    {emoji:'🌩️', text:'Something hears your call.',   text2:'Not mercy. Interest.'},
-    {emoji:'🌪️', text:'The gods take her gently.',    text2:'The gentleness you could not manage.'}
+    {emoji:'🙏', text:'You beg the gods for mercy.',  text2:'You have no other option left.'},
+    {emoji:'🌩️', text:'Something hears your call.',   text2:'Its not mercy, just pure interest.'},
+    {emoji:'🌪️', text:'The gods take her gently.',    text2:'She rises to the dark skies.'}
   ],
   button_curse: [
-    {emoji:'💀', text:'You seal the pact.',            text2:'No gods were consulted on this.'},
-    {emoji:'🌑', text:'The darkness claims you both.', text2:'It was patient. It always is.'},
+    {emoji:'💀', text:'You seal the pact forever.',    text2:'No gods were consulted on this.'},
+    {emoji:'🌑', text:'The darkness claims you both.', text2:'It was patient, it always is.'},
     {emoji:'👹', text:'None of you deserve peace.',    text2:'And so it will always be.'}
   ]
 };
@@ -488,22 +500,27 @@ function getLootDropLog() {
 }
 
 function getRestBadlyText() {
-  return chooseFrom(["Slept poorly, waking up groggy.", "Tossed and turned, barely rested.", "Woke up early, not fully rested.", "Slept barely enough.", "Dreamed badly, woken up a bit tired."]);
+  return chooseFrom([
+    "Slept poorly, waking up groggy.",
+    "Tossed and turned, barely rested.",
+    "Woke up early, not fully rested.",
+    "Slept barely enough to recover.",
+    "Dreamed badly, woken up tired."]);
 }
 
 function getSleepNearLimitLog() {
   return chooseFrom([
-    "The cold creeps in, rest is becoming a luxury.",
-    "Something stirs somewhere, do not linger.",
-    "She grows impatient, do not waste your time. "
+    "The cold creeps in as you sleep.",
+    "Something stirs ahead, do not hesitatate.",
+    "She grows impatient, do not waste time. "
   ]);
 }
 
 function getSleepOverLimitLog() {
   return chooseFrom([
-    "The world decays a little more while you sleep.",
-    "She slips further away wit your every rest.",
-    "The darkness deepens, hesitation has a price."
+    "The world decays a little while you sleep.",
+    "She slips further away with every sleep.",
+    "The darkness deepens, do not linger."
   ]);
 }
 

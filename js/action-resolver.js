@@ -740,8 +740,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Prop":
             isFishing=false;
-            if (corpseState === "neutralized" && areaName === "Shrouded Necropolis") {
+            if (corpseState != "" && areaName === "Shrouded Necropolis") {
               logPlayerAction(actionString, "Picked her up to caress one last time.");
+              nextEncounter();
               break;
             }
             if (_skillOK === false) {
@@ -1832,7 +1833,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 isFishing=false;
                 break;
               }
-              // Regular success — luck may spook them for free, otherwise strangle
+              // Regular success — luck may spook them for free, otherwise tire them
               var touchChance = Math.floor(Math.random(10) * luckInterval);
               if ( touchChance <= playerLck ){
                 var gainedXP=parseInt(playerGainXP(1,0,""));
@@ -1843,10 +1844,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 isFishing=false;
                 break;
               }
-              logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
               if (playerSta > 0) playerSta--;
-              enemyKnockedOut();
-              isFishing=false;
+              enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
+              logPlayerAction(actionString,"Wore them down, not finished yet -1 🟢");
+              displayEnemyCannotEffect();
+              if (enemyCastIfMgk()) break;
+              if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
             } else { //Player and enemy have no stamina - kick
               if (_skillOK === false) {
                 logPlayerAction(actionString,"Too exhausted to kick them.");
@@ -2253,7 +2256,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString, "Lost your grip and stumbled -2 🟢");
               } else {
                 if (playerSta > 0) playerSta--;
-                if (enemyStaLost < enemySta) enemyStaLost++;
                 logPlayerAction(actionString, "Slipped through your fingers -1 🟢");
               }
               displayEnemyCannotEffect();
@@ -2701,8 +2703,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll boost your stats
             var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
-            //Either they don't want an item, or player has it + has more or same int
-            if (((String(enemyQuestItems)=="")||(heldQuestItem!="")) && (convinceInt >= enemyInt)){
+            //Either they don't want an item and int check passes, or player has the quest item (no int required)
+            if (heldQuestItem !== "" || (String(enemyQuestItems) === "" && convinceInt >= enemyInt)) {
               if (String(enemyQuestItems).length>=1) { //Quest rewards
                 //This means filter by two = guarantee artifact
                 pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
@@ -2919,7 +2921,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             if (playerHp>0){
               displayPlayerEffect("💤");
-              playerGetStamina(_crit === 'success' ? 2 : 1, _crit === 'success');
+              playerGetStamina(_crit === 'success' ? 1 : 1, _crit === 'success');
+              // Refresh 1 on both pass and crit pass (crit pass skips enemy turn already)
             }
             if (_crit === 'success') {
               logPlayerAction(actionString, "Refreshed exceptionally fast +1 🟢");
@@ -3103,12 +3106,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (areaName !== "Depths of Slumber" && areaName !== "Shrouded Necropolis") {
           playerAreaSleepCount++;
           var _thr = (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.sleepAreaThreshold != null)
-            ? GAME_CONFIG.sleepAreaThreshold : 3;
+            ? GAME_CONFIG.sleepAreaThreshold : 5;
           if (playerAreaSleepCount === _thr - 1) {
-            logAction("💤 ▸ <i>" + getSleepNearLimitLog() + "</i>");
+            logAction('💤 ▸ 🍂 <i style="color:orange;">' + getSleepNearLimitLog() + '</i>');
           } else if (playerAreaSleepCount > _thr) {
             playerTotalSleepPenalty++;
-            logAction("💤 ▸ <i>" + getSleepOverLimitLog() + "</i>");
+            playerLove--;
+            logAction('💤 ▸ 💔 <i style="color:FF0000;">' + getSleepOverLimitLog() + '</i>');
           }
         }
     };

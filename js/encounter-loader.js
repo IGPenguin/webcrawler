@@ -318,10 +318,13 @@ function loadEncounter(index, fileLines = linesStory){
     int: enemyInt, mgk: enemyMgk, def: enemyDef, note: enemyTeam
   });
 
+  if (areaName.includes("Necropolis") && enemyType.includes("Boss")) {
+    setTimeout(startBrideDialogue(getBrideOpeningByLove()), 300);
+  }
 
   if (enemyName === "Dying Bride") {
     isEndingState = true;
-    setTimeout(startBrideDialogue, 300);
+    setTimeout(startBrideDialogue(getBrideDyingByLove()), 300);
   }
 
   if (_isRival) {

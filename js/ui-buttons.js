@@ -99,7 +99,7 @@ function _setEndingButtons() {
   setButton('button_grab',  '🫂 Hold',  playerLove >= 4                          ? colorPink      : colorDarkGrey);
   setButton('button_speak', '❤️ Name',  (playerLove >= 6 && playerKarma >= 2)    ? colorGold      : colorDarkGrey);
   setButton('button_cast',  '❤️‍🩹 Cure', playerMgk >= 4                           ? colorLightBlue : colorDarkGrey);
-  setButton('button_pray',  '🙏 Beg',   playerKarma >= 4                         ? colorSoftGreen : colorDarkGrey);
+  setButton('button_pray',  '🙏 Pray',   playerKarma >= 4                         ? colorSoftGreen : colorDarkGrey);
   setButton('button_curse', '💀 Damn',  playerKarma <= -2                        ? colorDarkRed       : colorDarkGrey);
 }
 
@@ -162,7 +162,7 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      if (corpseState === "neutralized" && areaName === "Shrouded Necropolis") setButton('button_roll', "🤲 Hold");
+      if (corpseState != "" && areaName === "Shrouded Necropolis") setButton('button_roll', "🤲 Hold", colorGold);
       if (isFishing) setButton('button_roll',"❌ Ditch");
       if (enemyEmoji=="🛶" || areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;

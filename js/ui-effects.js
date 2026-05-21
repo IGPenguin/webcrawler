@@ -539,6 +539,7 @@ function playEndingCutscene(frames, onComplete) {
   function showFrame(idx) {
     if (_curtainGen !== gen) return;
     if (idx >= frames.length) {
+      textEl.style.display = 'none'; // hide last frame before curtain fades out
       void curtain.offsetWidth;
       curtain.style.setProperty('--animate-duration', '0.8s');
       curtain.classList.add('animate__animated', 'animate__fadeOut');
@@ -548,14 +549,12 @@ function playEndingCutscene(frames, onComplete) {
         curtain.classList.remove('animate__animated', 'animate__fadeOut');
         curtain.style.display = 'none';
         curtain.style.pointerEvents = 'none';
-        textEl.style.display = 'none';
         if (onComplete) onComplete();
       });
       return;
     }
     var frame = frames[idx];
-    textEl.innerHTML = '<p style="color:#FFD940;letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;font-size:44px;line-height:1.2;margin:0 0 8px;">' + frame.text + '</p>'
-                     + '<p style="font-size:17px;color:#ddd;letter-spacing:0.5px;-webkit-text-stroke:0;margin:0 0 20px;">' + (frame.text2 || '') + '</p>'
+    textEl.innerHTML = '<p style=";letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;line-height:1.2;margin:0 0 8px;"><i>' + frame.text + "<br>" + (frame.text2 || "" )+ '</i></p>'
                      + '<div style="font-size:54px;line-height:1;">' + frame.emoji + '</div>';
     textEl.style.display = 'block';
     void textEl.offsetWidth;
@@ -574,7 +573,7 @@ function playEndingCutscene(frames, onComplete) {
         textEl.classList.remove('animate__animated', 'animate__fadeOut');
         showFrame(idx + 1);
       });
-    }, 2800);
+    }, 4000);
   }
 }
 

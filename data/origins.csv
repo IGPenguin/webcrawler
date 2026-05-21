@@ -39,6 +39,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;magic_unlock_first
 🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by
 🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_50
+🧥;Hobo;1;0;0;-1;0;0;0;<b>+1 ❤️ Health</b>, lose <b>-1 🍀 Luck</b>.<br><i>Naturally resistant to being hurt.;grab_rubbish
 
 //Outstanding
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br>Hardened long before anything fought back.;none
@@ -90,7 +91,6 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🧹;Butler;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Used to dealing with others mess.;none
 🧳;Pilgrim;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Never stayed long enough to belong.;none
 👞;Tramp;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Wandering is the only path they have left.;none
-🧥;Hobo;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Home is wherever the cold doesn't reach.;none
 🎒;Drifter;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Goes where the wind and misery blow.;none
 🥺;Beggar;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Asking for mercy and something to eat.;none
 🔔;Herder;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Lost the flock to the fog long ago.;none

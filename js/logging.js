@@ -37,11 +37,29 @@ function logPlayerAction(actionString,message){
     actionString=actionString.slice(2);
     if (!actionString.includes("you actually won!") && !actionString.includes("Lucky Drachma")) actionString = actionString.replace("<br>"," -"+price+"<br>");
   }
+
+  //Change references to "She/Her" for final Boss
+  if (enemyTeam.includes("Forgotten Love") && areaName.includes("Necropolis")) {
+    actionString=actionString.replaceAll("them","her")
+    actionString=actionString.replaceAll("their","her")
+    actionString=actionString.replaceAll("They've","She has")
+    actionString=actionString.replaceAll("They ","She ")
+  } 
+
   runLogAdd("log", {msg: actionString.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").replace("<br>","").trim()});
   adventureLog += actionString;
 }
 
 function logAction(message){
+
+  //Change references to "She/Her" for final Boss
+  if (enemyTeam.includes("Forgotten Love") && areaName.includes("Necropolis")) {
+    message=message.replaceAll("them","her")
+    message=message.replaceAll("their","her")
+    message=message.replaceAll("They've","She has")
+    message=message.replaceAll("They ","She ")
+  } 
+
   runLogAdd("log", {msg: message.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").trim()});
   adventureLog += message+"<br>";
 }

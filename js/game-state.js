@@ -36,6 +36,7 @@ var playerKarma=1;
 var isEndingState = false;
 var gatewayPassed = false;
 var isKillEnding = false;
+var playerWonThisRun = false;
 var _isRival = false;
 var _rivalInventory = '';
 var _rivalEndType = '';

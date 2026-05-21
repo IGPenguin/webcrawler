@@ -83,6 +83,7 @@ var SaveManager = (function () {
         isEndingState:         isEndingState,
         gatewayPassed:         gatewayPassed,
         isKillEnding:          isKillEnding,
+        playerWonThisRun:      playerWonThisRun,
         seenLoot:              seenLoot,
         seenEncounters:        seenEncounters,
         usedShopMessages:      usedShopMessages,
@@ -176,6 +177,7 @@ var SaveManager = (function () {
     isEndingState           = !!s.isEndingState;
     gatewayPassed           = !!s.gatewayPassed;
     isKillEnding            = !!s.isKillEnding;
+    playerWonThisRun        = !!s.playerWonThisRun;
     seenLoot                = s.seenLoot       || [];
     seenEncounters          = s.seenEncounters || [];
     usedShopMessages        = s.usedShopMessages || [];

@@ -362,6 +362,7 @@ function redraw(){
         if (playerSta==0) displayPlayerState("Exhausted",colorOrange,"2");
       }
       if (playerHp === 1) displayPlayerState("Bleeding", colorRed, "0.4");
+      if (enemyName.includes("Bride")) displayPlayerState("Frightened",colorRed,"0.4");
       break;
   }
 
@@ -386,7 +387,7 @@ function displayEnemyType(type){ //TODO Refactor usage or remove
 
 function buildStatsUI(hp, hpLost, sta, staLost, atk, atkLost, mgk, mgkLost) {
   var total = (hp + Math.max(hpLost, 0)) + (sta + Math.max(staLost, 0)) + (atk + Math.max(atkLost, 0)) + (mgk + Math.max(mgkLost, 0));
-  var numericAtk = total > 17;
+  var numericAtk = total > 16;
   function bar(cur, lost) {
     var s = cur > 0 ? fullSymbol.repeat(cur) : "";
     if (lost > 0) s += emptySymbol.repeat(lost);

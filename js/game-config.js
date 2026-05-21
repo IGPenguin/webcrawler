@@ -36,7 +36,7 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: 0,
     killItemDropChance:       5,
     killConsumableDropChance: 10,
-    sleepAreaThreshold:       3,
+    sleepAreaThreshold:       6,
     rivals: {
       enabled:       true,
       spawnChance:   33,
@@ -56,7 +56,7 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: 8,
     killItemDropChance:       5,
     killConsumableDropChance: 10,
-    sleepAreaThreshold:       5,
+    sleepAreaThreshold:       8,
     rivals: {
       enabled:       false,
       spawnChance:   0,
@@ -76,7 +76,7 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: -4,
     killItemDropChance:       10,
     killConsumableDropChance: 15,
-    sleepAreaThreshold:       2,
+    sleepAreaThreshold:       4,
     rivals: {
       enabled:       true,
       spawnChance:   50,

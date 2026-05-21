@@ -191,7 +191,7 @@ var _generationBuffer = [];
 
 // Inserts an encounter string array into linesStory at encounterIndex+index.
 function pushEncounter(encounterStringArray=[], index=1, areaNameOverride="") {
-  if (encounterStringArray == []) encounterStringArray = ["area:Encounter Error","emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Error","desc:Missing data for pushing new encounter.","message:"];
+  if (encounterStringArray == []) encounterStringArray = ["area:"+areaName,"emoji:⚠️","name:Missing Encounter","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Error","desc:Missing data for pushing new encounter.","message:"];
 
   if (encounterStringArray[2]) {
     var _genName = String(encounterStringArray[2]).split("name:")[1];
@@ -268,7 +268,7 @@ function getRandomEncounter(encounterTypes=[], includeStrings=[], areaNameOverri
   var randomEncounter = tempLinesGenerator[randomEncounterIndex];
 
   if (!randomEncounter) {
-    randomEncounter = ["area:Encounter Error","emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:","achiev:none"];
+    randomEncounter = ["area:"+areaName,"emoji:⚠️","name:Type Not Available","type:Error","hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0","note:Critical Error","desc:No encounters for types -> "+String(encounterTypes).replaceAll(","," ")+"<br>","message:","achiev:none"];
   }
 
   dbg("Type:" + encounterTypes + "\nOpts:" + tempLinesGenerator.length + "→#" + randomEncounterIndex + ":\n" + (randomEncounter[2] || "").split(":")[1]);

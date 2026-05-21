@@ -192,9 +192,6 @@ Fading Wildlands;🔔;Lucky Chime;Item;0;0;0;1;-1;0;0;Annoying Trinket;Makes ann
 Fading Wildlands;📃;Dirty Pamphlet;Item;0;0;0;0;1;0;0;Scribbled Note;Provides <b>+1 🧠 Intellect</b> and an insight:<br>n/a;Should help to remember.;none
 Fading Wildlands;🎀;Silly Bowtie;Item-Head;0;0;0;2;-1;0;0;Accessory;Grants extra luck, but looks cringe.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🧠 Charisma</b>.;That looks ridiculous;none
 Fading Wildlands;🗝️;Lost Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
-Fading Wildlands;🗝️;Shiny Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
-Fading Wildlands;🗝️;Silver Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
-Fading Wildlands;🗝️;Brass Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 Fading Wildlands;🗝️;Small Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 Fading Wildlands;🗝️;Shiny Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 
@@ -1362,12 +1359,12 @@ Shrouded Necropolis;🥔;Dry Potato;Consumable;0;0;0;0;0;0;0;Ancient Food;Looks 
 Shrouded Necropolis;🐀;Dried Rat;Consumable;0;0;0;0;-2;0;0;Disgusting Snack;Prepared by someone very very desperate.<br>Affects <b>🧠 Charisma</b>, ...no-one has to know.;;none
 Shrouded Necropolis;🥠;Misfortune Cookie;Consumable;0;0;0;-1;0;0;0;Cursed Snack;Delicious on first glance, suspicious on second.<br>Might have <b>unforseen consequences.</b>;Luck has been compromised.;none
 
-Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Standard;3;2;3;0;12;0;0;Forgotten Love;She's been crying for what feels like an eternity.<br>;Failed to face your true love.;none
-Shrouded Necropolis;👰🏻‍♀️;Rotten Bride;Boss-Toxic;3;2;2;0;6;3;0;Forgotten Love;She's whispering some ancient dark magic.<br>;Failed to face your true love.;none
-Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;3;4;2;0;12;0;0;Forgotten Love;She's obviously winding up for heavy blow.<br>;Failed to face your true love.;none
-Shrouded Necropolis;👰🏻‍♀️;Vengeful Bride;Boss-Swift;3;3;2;0;6;0;0;Forgotten Love;She's moving so fast, you struggle to keep up.<br>;Failed to face your true love.;none
-Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;3;2;2;0;-1;0;0;Forgotten Love;There's some strange glow in her eyes.<br>;Failed to face your true love.;none
-Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;3;2;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.;none
+Shrouded Necropolis;👰🏻‍♀️;Wailing Bride;Boss-Standard;5;3;3;0;12;0;0;Forgotten Love;She's been crying for what felt like an eternity.<br>;Failed to face your true love.;none
+Shrouded Necropolis;👰🏻‍♀️;Rotten Bride;Boss-Toxic;5;2;3;0;6;3;0;Forgotten Love;She's whispering some ancient dark magic.<br>;Failed to face your true love.;none
+Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;6;3;2;0;12;0;0;Forgotten Love;She's obviously winding up for heavy blow.<br>;Failed to face your true love.;none
+Shrouded Necropolis;👰🏻‍♀️;Vengeful Bride;Boss-Swift;5;3;4;0;6;0;0;Forgotten Love;She's moving so fast, you struggle to keep up.<br>;Failed to face your true love.;none
+Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;4;2;3;0;-1;0;0;Forgotten Love;There's some strange glow in her eyes.<br>;Failed to face your true love.;none
+Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;5;3;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.;none
 
 //Fishing
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;;none
@@ -1437,9 +1434,6 @@ Fishing;🪞;Splinter Mirror;Item;0;0;0;-1;0;0;0;Bad Omen;Seven years is a modes
 Fishing;⚱️;Burial Urn;Item;0;0;0;-3;0;0;0;Ancient Container;Water is splashing inside the sacred container.<br>;Spilled the ashes all around.;none
 
 Fishing;🗝️;Rusty Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
-Fishing;🗝️;Silver Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
-Fishing;🗝️;Bronze Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
-Fishing;🗝️;Iron Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 Fishing;🪱;Drowned Worm;Item;0;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;;none
 Fishing;🪱;Suffocated Worm;Item;0;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;;none
 
