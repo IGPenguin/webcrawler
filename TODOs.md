@@ -40,14 +40,6 @@
 - Type: Bug | Severity: Major
 - Effort: S | Gain: M
 
-### [END-ACHIEV] Feature: Per-ending-type achievements + rewards
-- Each of the 9 endings should unlock a dedicated achievement and optionally grant a tangible reward (origin unlock, item unlock, or cosmetic).
-- Reachable endings (Name, Cure, Beg, Damn) are high-effort unlocks — they deserve recognition beyond the score bonus.
-- The gated endings should have extra bonus for score (currently all endigns award 100)
-- Wire achievement triggers in `achievements.js` on each `endType` value (`win_speak`, `win_free`, `win_kill`, etc.); add rewards (origin unlock or Familiar-tier item) per ending. Check `AchievementManager` pattern for the trigger hook.
-- Priority: P2 — achievement hooks are the primary replay driver; knowing each ending unlocks something specific makes players attempt all 9.
-- Type: Feature
-- Effort: M | Gain: L
 
 ### [MIRR-ENCNTR] Feature: 🪞 Mirror encounter type — hidden stat reveal
 - New encounter type displaying one hidden stat's current value (mirror-luck, mirror-int, mirror-karma) + a contextual hint string about what the stat does (e.g., "3🍀 — Luck tips the scales"). Mirror can be broken for a negative effect, or spoken to at INT mirror for a +1 INT boost. Start by mimicking prop activity handling; expand per mirror variant.
@@ -119,7 +111,7 @@
 
 ### [HIDE-DRM] Improvement: Hide Necropolis dream encounters after the player has completed a run
 - Dream encounters in Shrouded Necropolis reveal lore/realizations about the player's past. Once a player has reached an ending, replaying through the dream sequence breaks immersion.
-- Gate dream encounter spawns on a flag (e.g., no completed endings in save data); or suppress them after the first completion; needs design decision on exact condition.
+- Suppress the "Deam" encounters after the first game completion - remove from story lines if game previously completed.
 - Priority: P3 — repeat-run immersion; veterans replaying for new endings don't need to re-live the tutorial revelation every time
 - Type: Improvement
 - Effort: S | Gain: M
@@ -147,12 +139,6 @@
 - Type: Feature
 - Effort: M | Gain: L
 
-### [STAT-DISP] Improvement: Stat display — show numeric when over 5
-- If a stat value exceeds 5, display it as a number (e.g., ❤️ 4/6) instead of the icon-count style — UI space is limited.
-- Priority: P3 — clarity for high-stat builds; not common enough to block beta
-- Type: Improvement
-- Effort: S | Gain: M
-
 ### [NAME-QUAL] Improvement: Generator name rolls quality pass
 - Revise name generation to avoid "unliving" words on living enemies; consider adding actual proper names in Rosabel-style tone — believable styling takes priority over stat matching.
 - Priority: P3 — tonal immersion; name mismatch breaks the register
@@ -167,6 +153,7 @@
 
 ### [COLOR-BLIND] Improvement: Colorblind-safe crit/success zones
 - Ensure crit and success zones on the action bar are distinguishable without color — brightness difference or pattern.
+- Toggleable in menu
 - Priority: P3 — accessibility; not gating beta
 - Type: Improvement
 - Effort: S | Gain: M
@@ -261,7 +248,7 @@
 - Type: Chore
 - Effort: S | Gain: M
 
-### [STAT-NUDGE] Feature: Fractional "nudge" stat values for hidden stats — LCK, INT, karma, love
+### [STAT-NUDGE] Feature: Fractional "nudge" stat values for hidden stats — LCK, INT
 - Allow sub-1 increments on hidden stats in CSV/origins (JS already supports decimals); display as human-readable labels rather than raw numbers — e.g. 0.5 = "Small bonus", 0.25 = "Tiny bonus" (exact tier labels TBD). Enables tighter balance control and a wider range of items/origins without pushing rarity up a full tier unnecessarily.
 - Priority: P3 — design space unlock with near-zero code cost; pairs well with the rarity weights audit below
 - Type: Feature
@@ -332,12 +319,6 @@
 - Type: Feature
 - Effort: S | Gain: M
 
-### [GROOM-ORIG] Idea: Groom origin — unique power/effect
-- Add a Groom origin with a mechanical effect that matches the narrative role.
-- Priority: P4 — no concrete design yet; fun lore hook
-- Type: Idea
-- Effort: S | Gain: S
-- Needs: Define what the Groom origin's power should be.
 
 ### [ALTAR-PRAY] Idea: Altar — no stat bonus, Pray = XP
 - A simple altar encounter where Pray grants XP with no stat effect.
@@ -390,15 +371,6 @@
 ---
 
 ## Backlog
-
-### [RUN-IMPACT] Feature: Full run impact summary + highscore calculation breakdown (Hades Gate)
-- End-of-run or game-over screen shows a narrative summary of what the player's choices and companions contributed — e.g. "Your dog warned you twice. Your karma cost you the ending you deserved." Goes well beyond [KILL-LINE]'s single sentence.
-- Requires tracking choice impact throughout the run (karma deltas, companion saves, key moments). Design via Hades Gate when the simpler beta tier ([KILL-LINE]) is proven and player data gives signal on what moments are most memorable.
-- Also give player insight into what exactly contributed toward/aginst their score.
-- Priority: P4 — [KILL-LINE] covers the beta tier; this is the full vision for a post-beta update.
-- Type: Feature
-- Effort: XL | Gain: XL
-- Needs: Full design via Hades Gate. Prerequisite: [KILL-LINE] shipped and validated.
 
 ### [PATH-CHOICE] Feature: Branching encounter paths — Inscryption-style crossroads with companion hints
 - At one or more crossroads moments in a run, present two pre-generated paths forward — a genuine lock-in choice. Design space: dangerous + high reward vs. safe + low reward.

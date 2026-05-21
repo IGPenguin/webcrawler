@@ -4,13 +4,6 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
 River of Sorrows;🫠;Fever Shade;Hot;4;2;3;0;0;1;0;Heat Specter;Dead warmth fills the cold air around it.<br>;The fever became your last dream.;none
 River of Sorrows;🏊;Endless Swimmer;Standard;3;2;4;0;0;0;0;Lost Soul;Swims slow circles in the shallows, never tiring.<br>;Pulled you under mid-stroke.;none
 
-//Forsaken Village
-Forsaken Village;👟;Tattered Sneakers;Item-Legs;0;0;0;1;0;0;0;Athletic Footwear;Must have been fast once.<br>Provides <b>+1 🍀 Luck</b>.;Lighter steps.;none
-Forsaken Village;💡;Filament Cap;Item-Head;0;0;0;0;1;0;0;Makeshift Gear;A hollowed-out bulb that flickers with static electricity.<br>Provides <b>+1 🧠 Intellect</b>.;A dim idea glows.;none
-Forsaken Village;👔;Office Shirt;Item-Chest;0;1;0;0;1;0;0;Formal Wear;The ink stains tell a story of interrupted work.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🧠 Intellect</b>.;Dressed for a meeting that won't happen.;none
-Forsaken Village;🗜️;Workbench Boxer;Item-Weapon;0;2;-1;0;0;0;0;Improvised Weapon;A heavy metal tool turned into a fist.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
-Forsaken Village;🩳;Cargo Shorts;Item-Legs;1;0;1;0;0;0;0;Sturdy Trousers;Pockets full of lint and lost hopes.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Functional but cold.;none
-
 //Twisted Fairyland
 Twisted Fairyland;⚗️;Crystal Beaker;Item-Head;0;0;0;0;1;1;0;<b>Artifact</b>;Bubbles with a liquid that defies gravity.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🔵 Mana</b>.;The air smells of ozone.;none
 Twisted Fairyland;🩱;Iridescent Leotard;Item-Chest;0;0;1;0;0;1;0;Stretchy Wear;Moves as if floating on an unseen wind.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🔵 Mana</b>.;Elegance in the chaos.;none
