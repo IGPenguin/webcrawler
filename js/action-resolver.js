@@ -19,9 +19,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       var _lockMsg = null;
       if (button === 'button_sleep' && playerLove < 1)                       _lockMsg = '💤 ▸ 💔 <i>She is shaking to avoid getting closer.</i>';
       if (button === 'button_grab'  && playerLove < 4)                       _lockMsg = '🫂 ▸ 💔 <i>She struggles to not let you closer.</i>';
-      if (button === 'button_speak' && (playerLove < 6 || playerKarma < 2))  _lockMsg = '❤️ ▸ 💔 <i>Her name does not come back to you.</i>';
-      if (button === 'button_cast'  && playerMgk < 4)                        _lockMsg = '❤️‍🩹 ▸ 💔 <i>You are too weak to break the spell.</i>';
-      if (button === 'button_pray'  && playerKarma < 4)                      _lockMsg = '🙏 ▸ 💔 <i>Noone is listening to your calls.</i>';
+      if (button === 'button_speak' && playerLove < 6 )                      _lockMsg = '❤️ ▸ 💔 <i>Her name does not come back to you.</i>';
+      if (button === 'button_pray'  && playerMgk < 4)                        _lockMsg = '❤️‍🩹 ▸ 💔 <i>You are too weak to break the spell.</i>';
+      if (button === 'button_cast'  && playerKarma < 4)                      _lockMsg = '🙏 ▸ 💔 <i>Noone is listening to your calls.</i>';
       if (button === 'button_curse' && playerKarma > -2)                     _lockMsg = '💀 ▸ 💔 <i>You don\'t have the darkness it takes.</i>';
       if (_lockMsg) { logAction(_lockMsg); redraw(); displayPlayerCannotEffect(); return; }
       resolveEnding(button);
@@ -60,6 +60,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         var enemyAttacked=false;
 
         if (enemyType=="Death") {
+
+          // Game won, no ress
+          if (areaName.includes("Auxiliary")) {displayPlayerCannotEffect(); break;}
+
           if (_skillOK === false) {
             var runEndMessage=getRunEndMessage();
             permanentDeath("<p style=\"color:#fff;-webkit-text-stroke:4px black;paint-order:stroke fill;\">"+runEndMessage+"</p>");
@@ -741,7 +745,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Prop":
             isFishing=false;
             if (corpseState != "" && areaName === "Shrouded Necropolis") {
-              logPlayerAction(actionString, "Picked her up to caress one last time.");
+              logPlayerAction(actionString, '<span style="color:#FFD940;">Picked her up to caress one last time.</span>');
               nextEncounter();
               break;
             }

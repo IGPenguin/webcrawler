@@ -57,7 +57,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
     preloadBackground(_peekArea);
     var _areaHtml = "<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"
                   + _peekArea
-                  + "</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>";
+                  //+ "</p><p style=\"font-size:20px;margin-top:-44px;z-index:-100;position:relative;\">____________________________________</p>";
     transitionArea(_areaHtml, function () {
       loadEncounter(encounterIndex);
       if (levelUpSavedCorpse !== null && enemyType !== "Upgrade") restoreCorpseAfterLevelUp();
@@ -145,11 +145,7 @@ function gameOver(silent=false){
   if (enemyTeam.includes("Lover's Memento" || enemyTeam.includes("Piece of History"))) enemyMsg="Killed by a severe heartbreak.";
   if (_isRival) enemyMsg = 'Slayed by ' + enemyName + '.';
   if (!silent) {
-    if (_isRival) {
-      logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 <text style='color:"+colorRed+";'>"+enemyMsg+"</text>");
-    } else {
-      logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 "+enemyMsg);
-    }
+    logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 <span style='color:"+colorRed+";'>"+enemyMsg+"</span>");
   }
   adventureEndTime=getTime();
   adventureEndReason="\nKilled by: "+enemyEmoji+" "+enemyName;
@@ -205,8 +201,8 @@ var _ENDING_TYPES = {
   button_grab:    'win_embrace',
   button_sleep:   'win_sleep',
   button_speak:   'win_speak',
-  button_cast:    'win_free',
-  button_pray:    'win_pray',
+  button_cast:    'win_pray', //Pray (just btn positioning)
+  button_pray:    'win_free', //Heal (just btn positioning)
   button_curse:   'win_curse'
 };
 
@@ -294,7 +290,12 @@ function _doGameEnd(endType) {
   removeGatewayEffects();
   var _wp = _winPayload;
   setTimeout(function() {
-    curtainFadeInAndOut('', 2, function() { registerClickListeners(300); }, function() { ScoreManager.submitOrPrompt(_wp); });
-    if (encounterIndex + 1 < linesStory.length - 1) nextEncounter(true, true);
+    curtainFadeInAndOut('', 0, function() {
+      if (encounterIndex + 1 < linesStory.length - 1) nextEncounter(true, true);
+      setBackground(areaName);
+      registerClickListeners(300);
+    }, function() {
+      ScoreManager.submitOrPrompt(_wp);
+    });
   }, 50);
 }

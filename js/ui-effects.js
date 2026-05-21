@@ -156,7 +156,8 @@ function curtainFadeInAndOut(message="", duration=3, onComplete, onFadeOutStart)
   curtain.style.setProperty('--animate-duration', '0.4s');
   curtain.classList.add('animate__animated', 'animate__fadeIn');
 
-  curtain.addEventListener('animationend', function onIn() {
+  curtain.addEventListener('animationend', function onIn(e) {
+    if (e.target !== curtain) return;
     curtain.removeEventListener('animationend', onIn);
     if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
@@ -185,7 +186,8 @@ function curtainFadeInAndOut(message="", duration=3, onComplete, onFadeOutStart)
       curtain.style.setProperty('--animate-duration', '0.7s');
       curtain.classList.add('animate__animated', 'animate__fadeOut');
 
-      curtain.addEventListener('animationend', function onOut() {
+      curtain.addEventListener('animationend', function onOut(e) {
+        if (e.target !== curtain) return;
         curtain.removeEventListener('animationend', onOut);
         if (_curtainGen !== gen) return;
         curtain.classList.remove('animate__animated', 'animate__fadeOut');

@@ -327,7 +327,6 @@ var ScoreManager = (function () {
   }
 
   function submitOrPrompt(payload) {
-    if (cheatedThisRun) return;
     if (isLocalhost() && RANKINGS_DISABLED_LOCALHOST) return;
     _pendingPayload = payload;
 
@@ -396,10 +395,10 @@ var ScoreManager = (function () {
       if (errEl) errEl.style.display = 'none';
       if (banEl) banEl.style.display = 'none';
       setNickname(val);
-      if (_pendingPayload) {
+      if (_pendingPayload && !cheatedThisRun) {
         _pendingPayload.nickname = val;
         _doSubmit(_pendingPayload);
-        showAchievementToast({ emoji: '🪦', desc: 'Reckonings submitted: ' + _pendingPayload.score + ' 🎖️ Valor' }, Date.now(), null);
+        showAchievementToast({ emoji: '🪦', desc: 'Reckoning submitted: ' + _pendingPayload.score + ' 🎖️ Valor' }, Date.now(), null);
       }
       _dismiss();
     });

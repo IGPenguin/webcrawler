@@ -44,9 +44,9 @@ function calcActionBarConfig(button, adjustment) {
   if (isEndingState) {
     var _endingLocked = (button === 'button_sleep' && playerLove < 1)
                      || (button === 'button_grab'  && playerLove < 4)
-                     || (button === 'button_speak' && (playerLove < 6 || playerKarma < 2))
-                     || (button === 'button_cast'  && playerMgk < 4)
-                     || (button === 'button_pray'  && playerKarma < 4)
+                     || (button === 'button_speak' && playerLove < 6)
+                     || (button === 'button_pray'  && playerMgk < 4)
+                     || (button === 'button_cast'  && playerKarma < 4)
                      || (button === 'button_curse' && playerKarma > -2);
     if (_endingLocked) {
       return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100, barStyle: 'dark' };
@@ -130,7 +130,8 @@ function calcActionBarConfig(button, adjustment) {
 
   // Resurrection: gold-only strip — hit it or die permanently; impossible on Hardcore
   if (button === 'button_attack' && types.includes('Death')) {
-    if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') {
+    if ((typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore')
+      || areaName.includes("Auxiliary")) { // Game won, no ress possible
       return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
     }
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
@@ -144,6 +145,7 @@ function calcActionBarConfig(button, adjustment) {
 
    // Give up|inactive "-" on death: slow & red
   if ((button === 'button_attack' || button === 'button_roll' || button === 'button_grab' || button === 'button_sleep' || button === 'button_speak') && types.includes('Death')) {
+    if (areaName.includes("Auxiliary")) return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: 100 }; //Game won, return to menu
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 

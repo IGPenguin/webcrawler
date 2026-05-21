@@ -306,7 +306,7 @@ var Menu = (function () {
 
   function _originNet(o) { return RarityManager.calcNet(o); }
   function _hasAnyStats(o) {
-    return (o.atk||0)!==0||(o.hp||0)!==0||(o.sta||0)!==0||(o.lck||0)!==0||(o.int||0)!==0||(o.mgk||0)!==0||(o.def||0)!==0;
+    return (o.atk||0)>0||(o.hp||0)>0||(o.sta||0)>0||(o.lck||0)>0||(o.int||0)>0||(o.mgk||0)>0||(o.def||0)>0;
   }
 
   // Explicit [Tag] in note wins; achievement-gated origins with no stat changes are Legendary

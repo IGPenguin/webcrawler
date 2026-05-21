@@ -278,11 +278,11 @@ function getBrideOpeningByLove() {
     "The world could be peaceful.<br>If only you would listen."
   ];
   var longing = [
-    "My vows outlived my breath.<br>They whisper beneath the soil.",
+    "My vows outlived my breath.<br>Now you see for yourself.",
     "I came the way you asked.<br>Not fully whole, but yours.",
-    "Your whisper was like prayer.<br>I came half hatred, half devotion.",
+    "Your whisper was like prayer.<br>Filled me hatred and devotion.",
     "I waited in the soil so long.<br>The stars forgot my name.",
-    "I wear your name like a veil.<br>Even the worms won't touch it.",
+    "I still wear your name like.<br>Even the worms won't touch it.",
     "Every petal on my grave...<br>Has been filling with poison.",
     "Stars we watched together...<br>They now turn their faces."
   ];
@@ -297,7 +297,6 @@ function getBrideDyingByLove() {
     "I hoped you'd mourn me.<br>Not try to fix me.",
   ];
   var longing = [
-    "My vows outlived my breath.<br>They whisper beneath the soil.",
     "Vows don't end with death.<br>Only my breathing did.",
     "I reach, but find shadows.<br>Only shadows take my hand.",
     "The cold welcomed me first.<br>Then I remembered your warmth.",
@@ -327,30 +326,30 @@ var ENDING_FRAMES = {
   button_grab: [
     {emoji:'🫂', text:'You hold her close.',           text2:'She does not pull away.'},
     {emoji:'🌑', text:'The darkness takes you both.',  text2:'You always knew it would.'},
-    {emoji:'🖤', text:'Together. At last.',             text2:'A cost you were willing to pay.'}
+    {emoji:'🖤', text:'Together, at last.',            text2:'Corrupted forever.'}
   ],
   button_sleep: [
-    {emoji:'💤', text:'You lie beside her.',           text2:'No armor. No grief. Just this.'},
-    {emoji:'🌿', text:'The ground grows still.',       text2:'Even the corruption stands still.'},
-    {emoji:'🤍', text:'Your hearts make no sound.',    text2:'The debt is not paid. Forgiven.'}
+    {emoji:'💤', text:'You slowly lie beside her.',    text2:'No love or grief, only resignation.'},
+    {emoji:'🌿', text:'The ground stays silent.',      text2:'Even the corruption stands still.'},
+    {emoji:'🤍', text:'Your hearts make no sound.',    text2:'The debt has been repaid in full.'}
   ],
   button_speak: [
     {emoji:'❤️', text:'You say her name: Rosabel!',    text2:'She did not expect you to know.'},
-    {emoji:'✨', text:'Something stirs inside her.',   text2:'Not hope, something older than that.'},
-    {emoji:'💖', text:'She remembers who she was.',    text2:'Before your grief, before the grave.'}
-  ],
-  button_cast: [
-    {emoji:'❤️‍🩹', text:'You unravel the curse.',       text2:'Thread by thread. Year by year.'},
-    {emoji:'✨', text:'The magic tears it apart.',     text2:'Nothing survives being unmade.'},
-    {emoji:'🪽', text:'She is finally free.',          text2:'Not saved. Set free.'}
+    {emoji:'✨', text:'Something stirs inside her.',   text2:'Not hope, something ancient.'},
+    {emoji:'💖', text:'She remembers who she was.',    text2:'Before the corruption took her.'}
   ],
   button_pray: [
+    {emoji:'❤️‍🩹', text:'You unravel the curse.',       text2:'Thread by thread. Year by year.'},
+    {emoji:'✨', text:'The magic tears it apart.',     text2:'Nothing survives being unmade.'},
+    {emoji:'🪽', text:'She is finally free.',          text2:'Not saved, set free.'}
+  ],
+  button_cast: [
     {emoji:'🙏', text:'You beg the gods for mercy.',  text2:'You have no other option left.'},
-    {emoji:'🌩️', text:'Something hears your call.',   text2:'Its not mercy, just pure interest.'},
+    {emoji:'🌩️', text:'Something hears your call.',   text2:'Its not mercy, just interest.'},
     {emoji:'🌪️', text:'The gods take her gently.',    text2:'She rises to the dark skies.'}
   ],
   button_curse: [
-    {emoji:'💀', text:'You seal the pact forever.',    text2:'No gods were consulted on this.'},
+    {emoji:'💀', text:'You seal the pact forever.',    text2:'With no remorse, no hesitation.'},
     {emoji:'🌑', text:'The darkness claims you both.', text2:'It was patient, it always is.'},
     {emoji:'👹', text:'None of you deserve peace.',    text2:'And so it will always be.'}
   ]
@@ -361,7 +360,7 @@ function getRunStartMessage() {
     "Your destiny still awaits.<br>Do not fail again.",
     "The corruption spreads.<br>Your love lingers.",
     "You have died before.<br>You will die again.",
-    "Death was meant to set free.<br>Until it did not.",
+    "Death was meant to free you.<br>But somehow it did not.",
     "The whole world is dying.<br>Try to remember why.",
     "The cursed do not rest.<br>Neither should you.",
     "The world didn't ask for this.<br>Neither did she.",

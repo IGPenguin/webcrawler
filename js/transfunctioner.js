@@ -25,6 +25,8 @@ function _applyCheatName(name) {
   if (name.includes("Lucky Number")) {
     cheatAmount = 7;
     if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    if (name.includes("-")) cheatAmount=(-cheatAmount)
+
     playerLck = cheatAmount;
     logCheatUse("Changed luck ➔  " + cheatAmount +" 🍀");
     return true;
@@ -33,14 +35,18 @@ function _applyCheatName(name) {
   if (name.includes("Albert Einstein")) {
     cheatAmount = 9;
     if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    if (name.includes("-")) cheatAmount=(-cheatAmount)
+
     playerInt = cheatAmount;
-    logCheatUse("Changed intellect ➔  " + cheatAmount +" 🧠");
+    logCheatUse("Changed brains ➔  " + cheatAmount +" 🧠");
     return true;
   }
 
   if (name.includes("Easy Lover")) {
     cheatAmount = 10;
     if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    if (name.includes("-")) cheatAmount=(-cheatAmount)
+
     playerLove = cheatAmount;
     logCheatUse("Changed love ➔  " + cheatAmount +" 💖");
     return true;
@@ -49,6 +55,8 @@ function _applyCheatName(name) {
   if (name.includes("Karma Chameleon")) {
     cheatAmount = 10;
     if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    if (name.includes("-")) cheatAmount=(-cheatAmount)
+      
     playerKarma = cheatAmount;
     logCheatUse("Changed karma ➔  " + cheatAmount +" 🎭");
     return true;

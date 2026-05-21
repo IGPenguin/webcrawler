@@ -95,7 +95,7 @@ function redraw(){
       enemyStatusString=decorateStatusText("💚","Friend",colorDarkGreen);
       if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Remorseful",colorRed);
       if (areaName.includes("Shrouded")) {
-        enemyStatusString=decorateStatusText("⁉️","Stranger",colorRed);
+        enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
         cardUIElement.style.backgroundColor=colorDarkRed;
       }
       //Do not display stats = reward hidden

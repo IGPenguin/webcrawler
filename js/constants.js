@@ -26,6 +26,7 @@ var colorDarkRedSubtle = "#3d0404";
 var colorGrey          = "#CCCCCC";
 var colorDarkGrey      = "#888888";
 var colorSemiDarkGrey  = "#999999";
+var colorSuperDarkGrey = "rgb(80, 80, 80)";
 var colorOrange        = "orange";
 var colorDarkOrange    = "#523501";
 var colorYellow        = "#F7D147";
