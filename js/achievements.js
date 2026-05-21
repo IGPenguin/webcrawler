@@ -10,7 +10,7 @@ var AchievementManager = (function () {
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
-    
+
     { id: 'game_win_first',  emoji: '👑', desc: 'Finished the game for the first time!',   hint: "Understand how did everything begin.",   unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
     { id: 'hardcore_win',   emoji: '☠️', desc: 'Finished the game on Fatal difficulty!',   hint: 'Prove your dedication and true skill.',   unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
     { id: 'ending_kill',    emoji: '🩸', desc: 'Chose the blade where mercy failed.',      hint: 'The blade knows only one language.',       unlock: 'Unlocked the <b>🩸 Traitor</b> origin.' },
@@ -23,7 +23,7 @@ var AchievementManager = (function () {
     { id: 'ending_free',   emoji: '🪽', desc: 'Undid what you made, thread by thread.',   hint: 'Unmaking your own curse is hardest.',       unlock: 'Unlocked the <b>❤️‍🩹 Absolver</b> origin.' },
     { id: 'ending_curse',  emoji: '👹', desc: 'Sealed the pact, without hesitation.',     hint: 'Some choose darkness without pause.',       unlock: 'Unlocked the <b>👹 Hexed</b> origin.' },
 
-    { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time.", unlock: 'Unlocked the <b>🔪 Bloody Knife</b> item.' },
+    { id: 'kill_first',          emoji: '🪓', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time.", unlock: 'Unlocked the <b>🔪 Bloody Knife</b> item.' },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.', unlock: 'Unlocked the <b>🥋 Budo Kimono</b> item.' },
     { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?', unlock: 'Unlocked the <b>🏳️ Pacifist</b> origin.' },
     { id: 'survive_trap',        emoji: '💥', desc: 'Survived a deadly trap!', hint: 'Watch where you step.', unlock: 'Unlocked the <b>🤙 Careless</b> origin.' },
@@ -57,7 +57,7 @@ var AchievementManager = (function () {
     { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!', hint: "Sail the flows of eternal tears.", unlock: 'Unlocked the <b>⛵️ Sailor</b> origin.' },
     { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!', hint: "Where the deepest shadows dwell.", unlock: 'Unlocked the <b>🦴 Survivor</b> origin.' },
 
-    //Missing "Aspect buy" achiev
+    //Missing "Favor/Body buy" achiev
     { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!', hint: "Luck smiles upon the bold.", unlock: 'Unlocked the <b>🍀 Lucky</b> origin.' },
     { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!', hint: "But why the long face?", unlock: 'Unlocked the <b>🐴 Horse Mask</b> item.' },
     { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item from the Shade!', hint: "A fair trade for a fair price.", unlock: '' },
@@ -68,11 +68,12 @@ var AchievementManager = (function () {
     { id: 'letter_remember',     emoji: '💌', desc: 'Read a very disturbing writing.', hint: 'Some things are better left in the past.', unlock: 'Unlocked the <b>💘 Lover</b> origin.' },
     { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing writing with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
     { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing writing aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Broken</b> origin.' },
+    //Missing teleported through gate first time
 
     { id: 'rival_spot',          emoji: '👾', desc: 'Got invaded from another world!',         hint: 'See the face of someone who fell.',    unlock: '' },
-    { id: 'rival_kill',          emoji: '💀', desc: 'Slayed an Invader from another world!',   hint: 'The dead can die twice.',              unlock: '' },
-    { id: 'rival_killed_by',     emoji: '💔', desc: 'Slayed by Invader from another world.',   hint: 'Their death echoed into yours.',       unlock: 'Unlocked the <b>🎯 Marked</b> origin.' },
-    { id: 'rival_kills_10',      emoji: '🔪', desc: 'Slayed 10 Invaders from anothe world!',   hint: 'The world boundary grows thinner.',    unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
+    { id: 'rival_kill',          emoji: '⚔️', desc: 'Slain an Invader from another world!',   hint: 'The dead can die twice.',              unlock: '' },
+    { id: 'rival_killed_by',     emoji: '⚰️', desc: 'Slain by Invader from another world.',   hint: 'Their death echoed into yours.',       unlock: 'Unlocked the <b>🎯 Marked</b> origin.' },
+    { id: 'rival_kills_10',      emoji: '🔪', desc: 'Slain 10 Invaders from another world!',   hint: 'The world boundary grows thinner.',    unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
 
     { id: 'cook_food_first',     emoji: '🔥', desc: 'Cooked your first meal!', hint: 'Sometimes survival requires creativity.', unlock: 'Unlocked the <b>🧂Salt Shaker</b> item.' },
     { id: 'salt_food_first',     emoji: '🧂', desc: 'Seasoned your first meal!', hint: 'A pinch of salt goes a long way.', unlock: 'Unlocked the <b>👨🏻‍🍳 Chef></b> origin.' },
