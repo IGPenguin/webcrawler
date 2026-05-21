@@ -30,6 +30,30 @@ function _applyCheatName(name) {
     return true;
   }
 
+  if (name.includes("Albert Einstein")) {
+    cheatAmount = 9;
+    if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    playerInt = cheatAmount;
+    logCheatUse("Changed intellect ➔  " + cheatAmount +" 🧠");
+    return true;
+  }
+
+  if (name.includes("Easy Lover")) {
+    cheatAmount = 10;
+    if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    playerLove = cheatAmount;
+    logCheatUse("Changed love ➔  " + cheatAmount +" 💖");
+    return true;
+  }
+
+  if (name.includes("Karma Chameleon")) {
+    cheatAmount = 10;
+    if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    playerKarma = cheatAmount;
+    logCheatUse("Changed karma ➔  " + cheatAmount +" 🎭");
+    return true;
+  }
+
   if (name.includes("Mucho Dinero")) {
     savedCoins = 9; localStorage.setItem('coins', savedCoins);
     logCheatUse("Added Drachmae: +9 🪙");
