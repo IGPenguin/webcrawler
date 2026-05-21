@@ -233,7 +233,8 @@ var Menu = (function () {
       playerOriginName = origin.originName || '';
       playerDestined = true;
       
-      // Starting gifts
+      // Origin starting gifts
+      if (origin.emoji.includes("💍")) playerLove += 2; //Groom starts with love
       if (origin.emoji.includes("🎣")) playerLootString += chooseFrom(validBaits) + chooseFrom(validBaits); //Angler starts with two baits
       if (origin.emoji.includes("🤌")) playerLootString += "🧂"; //Gourmet starts with a Salt Shaker
       if (origin.emoji.includes("🏴‍☠️")) savedCoins++ //Pirate gets extra coin (one-time use)
