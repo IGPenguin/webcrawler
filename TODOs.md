@@ -6,65 +6,13 @@
 
 ## SPRINT — Creative Polish Day *(one man, one day — max fun, max hook)*
 
-### [FLASH-CRIT] Improvement: .flash-crit CSS animation on critical hits
-- Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
-- Bundle with [CRIT-SHAKE] for full crit feedback; guard every `animationend` handler with `if (e.target !== e.currentTarget) return` to prevent child element bubbling bugs.
-- Priority: SPRINT — the action bar's crit moment is completely silent right now; highest-leverage feel fix for every encounter.
-- Type: Improvement
-- Effort: XS | Gain: M
-
-### [CRIT-SHAKE] Improvement: Crit attack shakes enemy card; crit walk bounces player card
-- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only. For other crit types, propose similar effect - for each action crit outcome possible.
-- Bundle with [FLASH-CRIT]; guard `animationend` with `if (e.target !== e.currentTarget) return`.
-- Priority: SPRINT — targeted micro-feedback that makes the skill check feel like it mattered; paired with FLASH-CRIT for full crit moment.
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [CRIT-SLEEP] Improvement: Crit sleep outside combat → extra STA
-- A critical success on a sleep action outside combat (e.g., falling leaves) should grant bonus STA beyond the standard recovery.
-- In `action-resolver.js` sleep case: if `result === 'crit-pass'` AND `!inCombat`, add `+1 STA` on top of standard recovery and log a flavor line — e.g. "You rest so deeply something comes loose."
-- Priority: SPRINT — small discovery moment that extends crit reward to a new emotional beat; players who find it will talk about it.
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [BOSS-TOLL] Improvement: Boss death counter — show area death toll on boss kill
-- On killing an area boss, display how many times the player died in that area before the kill — e.g. "After 3 deaths in the Twisted Fairyland." Zero deaths gets its own line — e.g. "First blood. Somehow." Bosses are drawn from a pool per area, so the counter is per area, not per specific enemy.
-- Track `areaDeathCount` (reset each area) in `gameOver()` keyed to current area; read and display on boss kill resolution in `action-resolver.js` or `game-loop.js`.
-- Priority: SPRINT — the DS accomplishment moment depends on the number being visible; reframes repeated death as paying the price for an area, not just failing.
-- Type: Improvement
-- Effort: S | Gain: L
-
-### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
-- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
-- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
-- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
-- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
-- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
-- Type: Improvement
-- Effort: M | Gain: L
-- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
-
 ---
 
 ## P0 — Hard Blockers *(drop everything)*
 
-### [END-DUPE] Bug: Double run_end event and JS error at game end — duplicate telemetry, score, and chronicle entries
-- Game end throws a JS error; simultaneously `run_end` is being dispatched twice — causing duplicate entries in telemetry, duplicate score submissions to Rankings, and duplicate chronicle run entries.
-- Investigate `gameEnd()` / `_doGameEnd()` in `game-loop.js` for double-call paths; check whether the ending cutscene intercept or the `isKillEnding` deferred path triggers `_doGameEnd()` a second time.
-- Duplicate score submissions are the highest-risk consequence — may create ghost entries on the live leaderboard visible to all players.
-- Priority: P0 — data corruption on every completed run; leaderboard and chronicle integrity compromised.
-- Type: Bug | Severity: Critical
-- Effort: S | Gain: XL
-
 ---
 
 ## P1 — Serious Issues & Big Wins
-
-### [PLAY-GATE] Chore: ME — Personal playtesting gate before beta
-- Finish the game at least 3x; test fishing boss summon via Curse in the same session (repeat) and across sessions; verify Rankings and Chronicles UI flow end-to-end; once deployed to live - upload data to leaderboard and confirm score appears within 15 min;
-- Priority: P1 — hard gate; nothing ships to friends before this is done
-- Type: Chore
-- Effort: M | Gain: XL
 
 ### [POOL-GAP] Bug: Thin or missing encounter pools in some areas — Desktop screenshots confirm gaps
 - Some area encounter pools are running thin or empty; encounters repeat too early or the generator runs dry.
@@ -77,15 +25,6 @@
 ---
 
 ## P2 — Release-Gating
-
-### [DEATH-HIST] Improvement: Death message and ending type in run history and online scoreboard
-- The enemy death message (how the player died) should be visible in the Chronicles run history detail view and on the online scoreboard entry — not just on the death screen. For win runs, the ending label (e.g. "Name" / "Beg" / "Kill") should also be displayed prominently.
-- Death message is already stored in telemetry (`causeOfDeath` in `run_end`); surface it in the Chronicles detail panel (`ui-render.js`) and in the scoreboard stat card (Rankings screen / `score-manager.js`). Rankings pipeline may need the field passed through `ghostLink` payload if not already present.
-- Win type display: `ScoreManager.getEndingLabel(endType)` already exists; wire it to the scoreboard stat card and Chronicles view.
-- Reconfirmed during playtesting 2026-05-21 as still outstanding.
-- Priority: P2 — death messages are the game's best writing; burying them after the death screen wastes the asset and removes the social hook.
-- Type: Improvement
-- Effort: M | Gain: L
 
 ### [UNDEAD-MGK] Bug: MGK on non-caster undead incorrectly triggers near-impossible block condition
 - Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
@@ -104,6 +43,7 @@
 ### [END-ACHIEV] Feature: Per-ending-type achievements + rewards
 - Each of the 9 endings should unlock a dedicated achievement and optionally grant a tangible reward (origin unlock, item unlock, or cosmetic).
 - Reachable endings (Name, Cure, Beg, Damn) are high-effort unlocks — they deserve recognition beyond the score bonus.
+- The gated endings should have extra bonus for score (currently all endigns award 100)
 - Wire achievement triggers in `achievements.js` on each `endType` value (`win_speak`, `win_free`, `win_kill`, etc.); add rewards (origin unlock or Familiar-tier item) per ending. Check `AchievementManager` pattern for the trigger hook.
 - Priority: P2 — achievement hooks are the primary replay driver; knowing each ending unlocks something specific makes players attempt all 9.
 - Type: Feature
@@ -571,19 +511,43 @@
 - Type: Idea
 - Effort: M | Gain: M
 
-### [PORTAL-VLG] Idea: Portal to village — skip early game (verify if done)
-- Story-progress-unlockable portal skipping early areas. Marked as possibly already done with the gate - possibly move the gate to village from the fairlyand, not sure if current placement is great.
-- Priority: P4 — verify before resurrecting
-- Type: Idea
-- Effort: S | Gain: S
-- Needs: Confirm whether the current gate encounter already implements this.
-
 ### [NECRO-OPT] Feature: Necropolis optional areas
 - Optional sub-areas for late-game variety inside Shrouded Necropolis.
 - Priority: P4 — content; post-beta
 - Type: Feature
 - Effort: L | Gain: M
 - Needs: Define what optional areas look like and how they gate before designing.
+
+### [FLASH-CRIT] Improvement: .flash-crit CSS animation on critical hits
+- Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
+- Bundle with [CRIT-SHAKE] for full crit feedback; guard every `animationend` handler with `if (e.target !== e.currentTarget) return` to prevent child element bubbling bugs.
+- Priority: P4 — polish; post-beta
+- Type: Improvement
+- Effort: XS | Gain: M
+
+### [CRIT-SHAKE] Improvement: Crit attack shakes enemy card; crit walk bounces player card
+- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only. For other crit types, propose similar effect - for each action crit outcome possible.
+- Bundle with [FLASH-CRIT]; guard `animationend` with `if (e.target !== e.currentTarget) return`.
+- Priority: P4 — polish; post-beta
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [BOSS-TOLL] Improvement: Boss death counter — show area death toll on boss kill
+- On killing an area boss, display how many times the player died in that area before the kill — e.g. "After 3 deaths in the Twisted Fairyland." Zero deaths gets its own line — e.g. "First blood. Somehow." Bosses are drawn from a pool per area, so the counter is per area, not per specific enemy.
+- Track `areaDeathCount` (reset each area) in `gameOver()` keyed to current area; read and display on boss kill resolution in `action-resolver.js` or `game-loop.js`.
+- Priority: P4 — polish; post-beta
+- Type: Improvement
+- Effort: S | Gain: L
+
+### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
+- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
+- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
+- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
+- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
+- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
+- Type: Improvement
+- Effort: M | Gain: L
+- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
 
 ### [SVG-EMOJI] Feature: SVG support in emoji column
 - Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
