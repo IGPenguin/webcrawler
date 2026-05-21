@@ -202,7 +202,7 @@ Three endings are always available regardless of what the player did. The other 
 | Guard | 🔰 | Nothing | Green |
 | Sleep | 💤 | Love ≥ 1 | Green |
 | Hold | 🫂 | Love ≥ 4 | Green |
-| Name | ❤️ | Love ≥ 6 and Karma ≥ 2 | Green |
+| Name | ❤️ | Love ≥ 6 | Green |
 | Cure | ❤️‍🩹 | MGK ≥ 4 | Green |
 | Beg | 🙏 | Karma ≥ 4 | Green |
 | Damn | 💀 | Karma ≤ -2 | Red zone |

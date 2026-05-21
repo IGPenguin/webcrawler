@@ -79,7 +79,7 @@ The HTML/UI is in `index.md` (a Jekyll template). The layout wraps it via `_layo
 - **Combat**: `resolveAction(button)` in `action-resolver.js` dispatches all nine player actions (Attack, Roll, Block, Grab, Sleep, Speak, Cast, Pray, Curse)
 - **Corpse state**: enemies can be subdued without killing (via Grab, Speak, or exhaustion). `corpseState` is `"neutralized"` — the enemy is incapacitated but still present and can be attacked for a kill blow (costs karma) or looted. `transitionToCorpse("killed")` is called when the player deals a final blow.
 - **Progression**: XP → level-up on sleep; coins (drachma) persist across runs as meta-currency; `renewPlayer()` in `player-skills.js` resets a run
-- **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows)
+- **Loot**: Items stored as an emoji string in the player inventory object; fishing loot parsed from `linesLoot` (populated from `encounters.csv` area=Fishing rows). Equipment occupies one of five named slots: `head`, `chest`, `weapon`, `legs`, `trinket` (stored in `playerSlotHead/Chest/Weapon/Legs/Trinket`). All slots are reset in `renewPlayer()` and persisted in `save-manager.js` — always update both when adding a slot.
 - **Companions**: recruited NPCs and pets are stored in `playerPartyString` (emoji string); `[...playerPartyString].length` is the companion count used in the score formula. At non-combat encounters, `_scheduledCompanionBark()` fires 3 s after load — classifies each party emoji by type (dog/cat/bird/lizard/critter/rodent/large/humanoid), rolls `_FETCH_CHANCE` (2%) for a type-specific fetch (item/consumable/egg/stat) then `_BARK_CHANCE` (10%) for a flavour log line. Name pools: `_PET_NAMES` (animals) and `_FOLLOWER_NAMES` (humanoids), stored in `petName[emoji]` / `followerName[emoji]` maps.
 
 ### Ending System
@@ -94,7 +94,7 @@ The final encounter in Shrouded Necropolis (story.csv) triggers a branching endi
 - `startBrideDialogue()` — `game-loop.js`; auto-roll dialogue sequence, fires via `setTimeout` from `loadEncounter()`
 - `resolveEnding(button)` — `game-loop.js`; dispatches each of the 9 button choices to their outcome
 - `_ENDING_FRAMES` — `game-loop.js`; frame data for all 9 cutscenes
-- `_doGameEnd()` — `game-loop.js`; actual win bookkeeping (split from `gameEnd()` to allow cutscene intercept)
+- `_doGameEnd()` — `game-loop.js`; actual win bookkeeping (split from `gameEnd()` to allow cutscene intercept); also fires per-ending achievement unlocks — add any new ending-linked achievements here
 - `_setEndingButtons()` — `ui-buttons.js`; gates which of the 9 buttons are available based on `playerLove`, `playerKarma`, `playerMgk`
 - `getBridePoemByLove()` — `string-generator.js`; love-split subset of the existing poem pool
 

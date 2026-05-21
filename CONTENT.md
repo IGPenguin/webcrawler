@@ -95,7 +95,7 @@ Items scale with area: Wildlands = mostly +1 → Village = +2 weapons → Fairyl
 
 ### Enemy Types
 
-The `type` field is a single string. All types below are valid standalone values. The `Boss-` prefix combines with any type (e.g., `Boss-Swift`, `Boss-Demon`) to show boss UI while keeping that type's behavior. The hyphen pattern also applies to Container variants (`Container-2` through `Container-5`, `Locked-Container`) and item slots (`Item-Head`, `Item-Chest`, `Item-Weapon`, `Item-Legs`).
+The `type` field is a single string. All types below are valid standalone values. The `Boss-` prefix combines with any type (e.g., `Boss-Swift`, `Boss-Demon`) to show boss UI while keeping that type's behavior. The hyphen pattern also applies to Container variants (`Container-2` through `Container-5`, `Locked-Container`) and item slots (`Item-Head`, `Item-Chest`, `Item-Weapon`, `Item-Legs`, `Item-Trinket`).
 
 | Type | Traits | How to approach |
 |------|--------|----------------|
