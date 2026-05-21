@@ -2,15 +2,15 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Unlockable-Endings
 💍;Groom;0;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b> and start with <b>+2 💕 Love</b>.<br><i>After all that happened, still loves her.;game_win_first
-🩸;Traitor;-1;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-1 💔 Health</b>.<br><i>Never hasitates to take another life.;ending_kill
+🩸;Traitor;-1;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-1 💔 Health</b>.<br><i>Never hesitates to take another life.;ending_kill
 🗿;Sentinel;2;0;0;0;0;0;0;Gain <b>+2 ❤️ Health</b> with no downside.<br><i>Stands unbroken, probably will forever.;ending_guard
 👣;Wanderer;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Minds his own business no matter what.;ending_walk
-❤️‍🩹;Healer;0;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b> with no downside.<br><i>Uses his magic with good intentions.;ending_free
+❤️‍🩹;Absolver;0;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b> with no downside.<br><i>Uses his magic with good intentions.;ending_free
 👤;Tainted;-1;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, lose <b>-1 💔 Health</b>.<br><i>Embraced the darkness, it took a toll.;ending_embrace
-🌿;Quiet;0;0;2;0;0;0;0;Gain +2 🟢 Energy</b> with no downside.<br><i>Laid down to finally find peace.;ending_sleep
+🌿;Quiet;0;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b> with no downside.<br><i>Laid down to finally find peace.;ending_sleep
 🌈;Blessed;0;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b> with no downside.<br><i>The gods listen when he calls.;ending_pray
 👹;Hexed;0;0;0;-2;0;3;0;Gain <b>+3 🔵 Mana</b>, lose <b>-2 🍀 Luck</b>.<br><i>Made a deal, no interest in undoing it.;ending_curse
-🕊️;Gifted;0;0;0;0;2;1;0;Gain <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.<br><i>Words where weapons failed.;ending_speak
+🕊️;Gifted;0;0;0;0;2;1;0;Gain <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.<br><i>Remembers everything he has lived through.;ending_speak
 
 //Unlockable-Unique (automatic legendary - if no stat change or negative + achiev requirement)
 💀;Brittle;-2;0;0;0;0;0;0;Lose <b>-2 💔 Health</b>, blend with the undead.<br><i>No flesh to protect the bones.;hardcore_win

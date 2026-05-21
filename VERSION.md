@@ -1,7 +1,8 @@
-## ver. 05/21/26 @ 10:56 PM
+## ver. 05/22/26 @ 00:51 PM
 💔 Fix game end handling and visuals, finally
 ♻️ Reorder and redesign game ending choices
 ✨ No longer require karma for "NAME" ending
+🕊️ Added 9 origins per ending + groom love
 💬 Updated various texts throughout story
 
 ## ver. 05/21/26 @ 05:43 PM
