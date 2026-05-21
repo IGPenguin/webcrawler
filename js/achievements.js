@@ -10,8 +10,17 @@ var AchievementManager = (function () {
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
-    { id: 'game_win_first',      emoji: '👑', desc: 'Finished the game for the first time!', hint: "Understand how did everything begin.", unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
-    { id: 'hardcore_win',        emoji: '☠️', desc: 'Finished the game on Fatal difficulty!', hint: 'Prove your dedication and true skill.', unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
+    { id: 'game_win_first',  emoji: '👑', desc: 'Finished the game for the first time!',   hint: "Understand how did everything begin.",   unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
+    { id: 'hardcore_win',   emoji: '☠️', desc: 'Finished the game on Fatal difficulty!',   hint: 'Prove your dedication and true skill.',   unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
+    { id: 'ending_kill',    emoji: '🩸', desc: 'Chose the blade where mercy failed.',      hint: 'The blade knows only one language.',       unlock: 'Unlocked the <b>🩸 Bloodsworn</b> origin.' },
+    { id: 'ending_walk',   emoji: '💔', desc: 'Turned your back. She watched you go.',    hint: 'Not every story ends at its threshold.',   unlock: 'Unlocked the <b>🌫️ Wanderer</b> origin.' },
+    { id: 'ending_guard',  emoji: '🔰', desc: 'Stayed still. That was the only answer.',  hint: 'Devotion without motion is its own end.',   unlock: 'Unlocked the <b>🛡️ Sentinel</b> origin.' },
+    { id: 'ending_embrace',emoji: '🌑', desc: 'Held her close. The dark took you both.',  hint: 'Together is not the same as saved.',        unlock: 'Unlocked the <b>🌑 Tainted</b> origin.' },
+    { id: 'ending_sleep',  emoji: '💤', desc: 'Lay down beside her. Called it enough.',   hint: 'Some debts are repaid in silence.',         unlock: 'Unlocked the <b>🌿 Quieted</b> origin.' },
+    { id: 'ending_speak',  emoji: '❤️', desc: 'Said her name. She remembered herself.',   hint: 'The right word at the last moment.',        unlock: 'Unlocked the <b>🕊️ Peacemaker</b> origin.' },
+    { id: 'ending_pray',   emoji: '🌪️', desc: 'Called to the gods. Something answered.',  hint: 'Some powers reward desperation.',           unlock: 'Unlocked the <b>🙏 Supplicant</b> origin.' },
+    { id: 'ending_free',   emoji: '🪽', desc: 'Undid what you made. Thread by thread.',   hint: 'Unmaking your own curse is hardest.',       unlock: 'Unlocked the <b>🪽 Angel Feather</b> item.' },
+    { id: 'ending_curse',  emoji: '👹', desc: 'Sealed the pact. Never hesitated.',        hint: 'Some choose darkness without pause.',       unlock: 'Unlocked the <b>👹 Hexed</b> origin.' },
 
     { id: 'kill_first',          emoji: '💔', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time.", unlock: 'Unlocked the <b>🔪 Bloody Knife</b> item.' },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.', unlock: 'Unlocked the <b>🥋 Budo Kimono</b> item.' },
@@ -112,6 +121,7 @@ var AchievementManager = (function () {
     boughtArtifact:      false,
     boughtLevel:         false,
     wonGame:             false,
+    endingsCompleted:    [],
     rivalSpot:           false,
     rivalKills:          0,
     rivalKilledBy:       false,
@@ -464,6 +474,27 @@ var AchievementManager = (function () {
 
       case 'game_win':
         if (!_stats.wonGame) { _stats.wonGame = true; _save(); _unlock('game_win_first'); }
+        break;
+
+      case 'game_win_ending':
+        if (!_stats.endingsCompleted) _stats.endingsCompleted = [];
+        if (value && !_stats.endingsCompleted.includes(value)) {
+          _stats.endingsCompleted.push(value);
+          _save();
+          var _endingAchievMap = {
+            'win_kill':    'ending_kill',
+            'win_walk':    'ending_walk',
+            'win_guard':   'ending_guard',
+            'win_embrace': 'ending_embrace',
+            'win_sleep':   'ending_sleep',
+            'win_speak':   'ending_speak',
+            'win_pray':    'ending_pray',
+            'win_free':    'ending_free',
+            'win_curse':   'ending_curse'
+          };
+          var _achId = _endingAchievMap[value];
+          if (_achId) _unlock(_achId);
+        }
         break;
 
       case 'hardcore_win':
