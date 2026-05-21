@@ -521,6 +521,16 @@ function getSleepOverLimitLog() {
   ]);
 }
 
+function getCritSleepLog() {
+  return chooseFrom([
+    "Woke up feeling uncannily whole. +1 🟢",
+    "Slept deeper than the world allowed. +1 🟢",
+    "Something carried you through the dark. +1 🟢",
+    "Rested far better than expected. +1 🟢",
+    "Woke up strangely renewed. +1 🟢"
+  ]);
+}
+
 function getWalkCritText() {
   return chooseFrom(["Walked away in a good mood.", "Left whistling under their breath.", "Strolled off without a care.", "Walked away grinning to themselves.", "Continued with a spring in their step."]);
 }

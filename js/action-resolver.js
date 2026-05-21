@@ -2955,7 +2955,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerEffect("💤");
                 if (_crit === 'success') {
                   playerSta++;
-                  logPlayerAction(actionString, "Rested exceptionally well +1 🟢");
+                  logPlayerAction(actionString, getCritSleepLog());
                   displayPlayerRestedEffect();
                 }
               }
@@ -3010,7 +3010,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerRest();
               if (_crit === 'success') {
                 playerSta++;
-                logPlayerAction(actionString, "Rested exceptionally well +1 🟢");
+                logPlayerAction(actionString, getCritSleepLog());
                 displayPlayerRestedEffect();
               }
             }
@@ -3033,7 +3033,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerRest();
               if (_crit === 'success') {
                 playerSta++;
-                logPlayerAction(actionString, "Rested exceptionally well +1 🟢");
+                logPlayerAction(actionString, getCritSleepLog());
                 displayPlayerRestedEffect();
               }
             }
