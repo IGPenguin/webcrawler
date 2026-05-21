@@ -49,8 +49,8 @@ function renewPlayer(){ //Default values
   playerLove=0;
   isEndingState = false;
   gatewayPassed = false;
+  removeGatewayEffects();
   isKillEnding = false;
-  brideDialogueActive = false;
   seenLoot = [];
   adventureLog = actionLog;
   spentCoins=0;
@@ -59,8 +59,11 @@ function renewPlayer(){ //Default values
   runStartTimestamp = Date.now();
   playerOriginName = '';
   cheatedThisRun = false;
-  playerCritSuccesses = 0;
-  playerCritFails     = 0;
+  playerCritSuccesses     = 0;
+  playerCritFails         = 0;
+  playerFishCatches       = 0;
+  playerAreaSleepCount    = 0;
+  playerTotalSleepPenalty = 0;
   scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
 
   if (typeof RivalManager !== 'undefined') RivalManager.resetRun();

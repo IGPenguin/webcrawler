@@ -74,13 +74,15 @@ var SaveManager = (function () {
         runStartTimestamp:     runStartTimestamp,
         playerOriginName:      playerOriginName,
         adventureEndReason:    adventureEndReason,
-        playerCritSuccesses:   playerCritSuccesses,
-        playerCritFails:       playerCritFails,
-        fishingRested:         fishingRested,
+        playerCritSuccesses:     playerCritSuccesses,
+        playerCritFails:         playerCritFails,
+        playerFishCatches:       playerFishCatches,
+        playerAreaSleepCount:    playerAreaSleepCount,
+        playerTotalSleepPenalty: playerTotalSleepPenalty,
+        fishingRested:           fishingRested,
         isEndingState:         isEndingState,
         gatewayPassed:         gatewayPassed,
         isKillEnding:          isKillEnding,
-        brideDialogueActive:   brideDialogueActive,
         seenLoot:              seenLoot,
         seenEncounters:        seenEncounters,
         usedShopMessages:      usedShopMessages,
@@ -165,13 +167,15 @@ var SaveManager = (function () {
     runStartTimestamp       = s.runStartTimestamp   || Date.now();
     playerOriginName        = s.playerOriginName    || '';
     adventureEndReason      = s.adventureEndReason;
-    playerCritSuccesses     = s.playerCritSuccesses || 0;
-    playerCritFails         = s.playerCritFails     || 0;
+    playerCritSuccesses     = s.playerCritSuccesses     || 0;
+    playerCritFails         = s.playerCritFails         || 0;
+    playerFishCatches       = s.playerFishCatches       || 0;
+    playerAreaSleepCount    = s.playerAreaSleepCount    || 0;
+    playerTotalSleepPenalty = s.playerTotalSleepPenalty || 0;
     fishingRested           = !!s.fishingRested;
     isEndingState           = !!s.isEndingState;
     gatewayPassed           = !!s.gatewayPassed;
     isKillEnding            = !!s.isKillEnding;
-    brideDialogueActive     = !!s.brideDialogueActive;
     seenLoot                = s.seenLoot       || [];
     seenEncounters          = s.seenEncounters || [];
     usedShopMessages        = s.usedShopMessages || [];

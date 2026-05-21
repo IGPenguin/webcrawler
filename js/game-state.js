@@ -36,7 +36,6 @@ var playerKarma=1;
 var isEndingState = false;
 var gatewayPassed = false;
 var isKillEnding = false;
-var brideDialogueActive = false;
 var _isRival = false;
 var _rivalInventory = '';
 var _rivalEndType = '';
@@ -205,5 +204,8 @@ var vibrationEnabled = (function () {
 // null = no crit, 'success' = critical success zone hit, 'fail' = critical fail zone hit
 var actionBarCrit = null;
 
-var playerCritSuccesses = 0;  // cumulative crit successes this run (+1 to score each)
-var playerCritFails     = 0;  // cumulative crit fails this run (-1 to score each)
+var playerCritSuccesses     = 0;  // cumulative crit successes this run (+1 to score each)
+var playerCritFails         = 0;  // cumulative crit fails this run (-1 to score each)
+var playerFishCatches       = 0;  // successful fish catches this run (+2 to score each)
+var playerAreaSleepCount    = 0;  // non-combat sleeps in the current area (resets on area change)
+var playerTotalSleepPenalty = 0;  // accumulated score penalty from oversleeping per area (-1 each)

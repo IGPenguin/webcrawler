@@ -87,50 +87,20 @@ function _setEndingButtons() {
   var allIds = ['button_attack','button_roll','button_block','button_grab',
                 'button_sleep','button_speak','button_cast','button_pray','button_curse'];
   allIds.forEach(function(id) {
+    document.getElementById(id).disabled = false;
     setButton(id, '-', colorDarkGrey);
-    //document.getElementById(id).disabled = true; //Do not disable buttons to allow keyboard navigation
   });
 
-  // During dialogue only Kill is active — choices unlock after the auto-roll completes
-  if (brideDialogueActive) {
-    setButton('button_attack', '🔪 Kill', colorRed);
-    document.getElementById('button_attack').disabled = false;
-    return;
-  }
-
   setButton('button_attack', '🔪 Kill', colorRed);
-  document.getElementById('button_attack').disabled = false;
+  setButton('button_roll',   '💔 Leave', colorRed);
+  setButton('button_block',  '🔰 Guard', colorGrey);
 
-  setButton('button_roll', '💔 Leave');
-  document.getElementById('button_roll').disabled = false;
-
-  setButton('button_block', '🔰 Guard');
-  document.getElementById('button_block').disabled = false;
-
-  if (playerLove >= 1) {
-    setButton('button_sleep', '💤 Sleep');
-    document.getElementById('button_sleep').disabled = false;
-  }
-  if (playerLove >= 4) {
-    setButton('button_grab', '🫂 Hold', colorPink);
-    document.getElementById('button_grab').disabled = false;
-  }
-  if (playerLove >= 6 && playerKarma >= 2) {
-    setButton('button_speak', '❤️ Name', colorGold);
-    document.getElementById('button_speak').disabled = false;
-  }
-  if (playerMgk >= 4) {
-    setButton('button_cast', '❤️‍🩹 Cure', colorLightBlue);
-    document.getElementById('button_cast').disabled = false;
-  }
-  if (playerKarma >= 4) {
-    setButton('button_pray', '🙏 Beg', colorSoftGreen);
-    document.getElementById('button_pray').disabled = false;
-  }
-  if (playerKarma <= -2) {
-    setButton('button_curse', '💀 Damn', colorRed);
-    document.getElementById('button_curse').disabled = false;
-  }
+  setButton('button_sleep', '💤 Sleep', playerLove >= 1                          ? colorWhite     : colorDarkGrey);
+  setButton('button_grab',  '🫂 Hold',  playerLove >= 4                          ? colorPink      : colorDarkGrey);
+  setButton('button_speak', '❤️ Name',  (playerLove >= 6 && playerKarma >= 2)    ? colorGold      : colorDarkGrey);
+  setButton('button_cast',  '❤️‍🩹 Cure', playerMgk >= 4                           ? colorLightBlue : colorDarkGrey);
+  setButton('button_pray',  '🙏 Beg',   playerKarma >= 4                         ? colorSoftGreen : colorDarkGrey);
+  setButton('button_curse', '💀 Damn',  playerKarma <= -2                        ? colorDarkRed       : colorDarkGrey);
 }
 
 function adjustEncounterButtons(){
@@ -192,6 +162,7 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
+      if (corpseState === "neutralized" && areaName === "Shrouded Necropolis") setButton('button_roll', "🤲 Hold");
       if (isFishing) setButton('button_roll',"❌ Ditch");
       if (enemyEmoji=="🛶" || areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;

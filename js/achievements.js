@@ -573,9 +573,9 @@ var AchievementManager = (function () {
   function checkEatAchievement(snap, note) {
     var tier = RarityManager.getTierFromNote(note)
       || ((note||'').includes('Artifact') || (note||'').includes('Essence') ? 'Legendary'
-      : RarityManager.getTierForNet(RarityManager.calcConsumableNet(snap)));
+      : RarityManager.getTierForConsumableNet(RarityManager.calcConsumableNet(snap)));
     if (tier === 'Legendary') check('eat_legendary');
-    else if (tier === 'Rare' || tier === 'Uncommon') check('eat_purple');
+    else if (tier === 'Rare') check('eat_purple');
     else if (tier === 'Cursed') check('eat_hazardous');
   }
 

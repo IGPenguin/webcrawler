@@ -41,8 +41,14 @@ function calcActionBarConfig(button, adjustment) {
 
   // ── Ending state ─────────────────────────────────────────────────────────
   if (isEndingState) {
-    if (document.getElementById(button) && document.getElementById(button).disabled) {
-      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+    var _endingLocked = (button === 'button_sleep' && playerLove < 1)
+                     || (button === 'button_grab'  && playerLove < 4)
+                     || (button === 'button_speak' && (playerLove < 6 || playerKarma < 2))
+                     || (button === 'button_cast'  && playerMgk < 4)
+                     || (button === 'button_pray'  && playerKarma < 4)
+                     || (button === 'button_curse' && playerKarma > -2);
+    if (_endingLocked) {
+      return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100, barStyle: 'dark' };
     }
     var _isDark = button === 'button_attack' || button === 'button_roll' || button === 'button_curse';
     return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100,
@@ -96,22 +102,29 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 
-  // Attack obstacle with stamina — real skill check with crits
+  // Attack obstacle with stamina — real skill check, luck-scaled crits
   if (button === 'button_attack' && types === 'Trap-Obstacle') {
+    var _atoCs = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
+    var _atoCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
+    var _atoMin = Math.max(31, 50 - Math.floor(_atoCs / 2));
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 30, successMax: 70,
-             critSuccessMin: 48, critSuccessMax: 52, critFailW: 10 };
+             critSuccessMin: _atoMin, critSuccessMax: _atoMin + _atoCs, critFailW: _atoCf };
   }
 
-  // Grab obstacle — same difficulty as attacking it
+  // Grab obstacle — same difficulty as attacking it, luck-scaled crits
   if (button === 'button_grab' && types === 'Trap-Obstacle') {
+    var _gtoCs = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
+    var _gtoCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
+    var _gtoMin = Math.max(31, 50 - Math.floor(_gtoCs / 2));
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 30, successMax: 70,
-             critSuccessMin: 48, critSuccessMax: 52, critFailW: 10 };
+             critSuccessMin: _gtoMin, critSuccessMax: _gtoMin + _gtoCs, critFailW: _gtoCf };
   }
 
   // Exhausted grab: near-impossible without stamina (items/containers/fishing/dream unaffected)
   if (button === 'button_grab' && pSta === 0 && !isGrabbable && types !== 'Fishing' && types !== "Death" && !types.includes('Dream')) {
+    var _egCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54,
-             critSuccessMin: 49, critSuccessMax: 51 };
+             critSuccessMin: 49, critSuccessMax: 51, critFailW: _egCf };
   }
 
   // Resurrection: gold-only strip — hit it or die permanently; impossible on Hardcore
@@ -120,7 +133,7 @@ function calcActionBarConfig(button, adjustment) {
       return { speed: Math.round(spdEasy * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
     }
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 48, successMax: 52,
-             critSuccessMin: 48, critSuccessMax: 52, critFailW: 5 };
+             critSuccessMin: 48, critSuccessMax: 52 };
   }
 
    // Review on death: slow & green
@@ -141,6 +154,11 @@ function calcActionBarConfig(button, adjustment) {
   // Trap-Big walk — moderately hard, no crits
   if (button === 'button_roll' && types === 'Trap-Big') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 36, successMax: 64 };
+  }
+
+  // Neutralized bride in Necropolis — hold her, guaranteed
+  if (button === 'button_roll' && corpseState === 'neutralized' && areaName === 'Shrouded Necropolis') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Prop / encounterUsed / Fishing / corpse walk: wide zone with one hidden danger slot
@@ -176,8 +194,8 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 
-  // Roll against exhausted enemy — very easy, but humiliating to fail
-  if (button === 'button_roll' && (enemySta - enemyStaLost) <= 0 && enemyType!="Item" && enemyType!="Shop") {
+  // Roll against exhausted enemy with no mana — very easy, but humiliating to fail
+  if (button === 'button_roll' && (enemySta - enemyStaLost) <= 0 && eMgk <= 0 && enemyType!="Item" && enemyType!="Shop") {
     var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
     var _csMin = 50 - Math.floor(_csW / 2);
     var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
@@ -187,8 +205,9 @@ function calcActionBarConfig(button, adjustment) {
 
   // Heavy grab: very very hard — tiny zone, high speed; fail enrages them
   if (button === 'button_grab' && isHeavy) {
+    var _hgCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54,
-             critSuccessMin: 49, critSuccessMax: 51 };
+             critSuccessMin: 49, critSuccessMax: 51, critFailW: _hgCf };
   }
 
   // Reflective: spells and curses always reflect — impossible to land
@@ -354,7 +373,7 @@ function calcActionBarConfig(button, adjustment) {
                   || button === 'button_sleep';
     if (!_trapRight) {
       return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 44, successMax: 56,
-               critSuccessMin: 49, critSuccessMax: 52, critFailW: 5 };
+               critFailW: 5 };
     }
   }
 
@@ -386,9 +405,13 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
   if (button === 'button_speak' && _isMementoRecall) {
+    var _mrCs = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
+    var _mrCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
+    var _mrCsMin = Math.max(16, 50 - Math.floor(_mrCs / 2));
+    var _mrCsMax = Math.min(84, _mrCsMin + _mrCs);
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT),
              successMin: 15, successMax: 85,
-             critSuccessMin: 47, critSuccessMax: 53, critFailW: 7 };
+             critSuccessMin: _mrCsMin, critSuccessMax: _mrCsMax, critFailW: _mrCf };
   }
 
   // Friend speak — difficulty based on INT differential
@@ -428,6 +451,11 @@ function calcActionBarConfig(button, adjustment) {
   // Block Spirit — impossible, spectral attacks pass through any physical guard
   if (button === 'button_block' && isSpirit) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+
+  // Block while enemy has remaining mana — physically shielding a spell is near-impossible
+  if (button === 'button_block' && eMgk > 0 && !isGrabbable && !isTrap && !isAltar) {
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 
   // Block Hot/Toxic — very hard but possible; success deflects instead of absorbing
@@ -500,7 +528,7 @@ function calcActionBarConfig(button, adjustment) {
 
     case 'button_roll':
       pStat     = pSta;
-      eStat     = (isSwift ? eSta * 2 : 0) + eAtk * 0.5;
+      eStat     = (isSwift ? eSta * 2 : 0) + eAtk * 0.5 + eMgk * 0.4;
       baseW     = 38;
       baseSpeed = spdNormal;
       break;

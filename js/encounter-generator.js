@@ -225,9 +225,14 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       pushEncounter(getRandomEncounter(["Container-5"]));
       break;
 
-    case 69: // Fishing
+    case 68: // Fishing (fixed)
       if (logCall) logGenerator("fish");
       linesStory.splice(encounterIndex+1, 0, getRandomEncounter(["Fishing"]));
+      break;
+
+    case 69: // Fishing (random slot)
+      if (logCall) logGenerator("fish");
+      pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([3, 4, 5, 6]));
       break;
 
     case 70: // Island Small — shore cache, one soft enemy

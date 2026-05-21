@@ -4,7 +4,7 @@ function logCheatUse(message) {
   if (typeof TelemetryManager !== 'undefined') TelemetryManager.send('cheat_used', message);
   AchievementManager.check('use_cheat');
   logAction("✏️ ▸ ⚠️ <text style='color:" + colorSoftRed + ";'><b>Cheat used: " + message + "</b></text>");
-  AchievementManager.queueToast({ emoji: '⚠️', desc: "Cheat used: "+message, color: colorSoftRed }, 'Reckonings disabled the current character.');
+  AchievementManager.queueToast({ emoji: '⚠️', desc: "Cheat used: "+message, color: colorSoftRed }, 'Reckonings disabled for the current character.');
   redraw();
 }
 
@@ -13,12 +13,20 @@ function _applyCheatName(name) {
   try { var nameNumber = parseInt(name.match(/\d+/)[0]); } catch(e) { var nameNumber = NaN; }
   var cheatAmount = 3;
 
-  if (name.includes("Lil Cheater")) {
+  if (name.includes("Dirty Cheater")) {
     if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
     playerHpMax = cheatAmount; playerAtk = cheatAmount; playerStaMax = cheatAmount;
     playerMgkMax = cheatAmount; playerLck = cheatAmount; playerInt = cheatAmount;
     playerHp = playerHpMax; playerSta = playerStaMax; playerMgk = playerMgkMax;
     logCheatUse("Changed stats ➔  " + cheatAmount);
+    return true;
+  }
+
+  if (name.includes("Lucky Number")) {
+    cheatAmount = 7;
+    if (!isNaN(nameNumber) && nameNumber > 0) cheatAmount = nameNumber;
+    playerLck = cheatAmount;
+    logCheatUse("Changed luck ➔  " + cheatAmount +" 🍀");
     return true;
   }
 

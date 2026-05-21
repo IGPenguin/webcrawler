@@ -2,6 +2,7 @@ var Menu = (function () {
   var _currentDetailSession = null; // set when history detail is open
   var _selectedOrigin = null;
   var _isInitialLoad = true;
+  var _changelogShownThisSession = false;
 
   var SCREENS = [
     'menu_main_screen',
@@ -30,6 +31,7 @@ var Menu = (function () {
       _isInitialLoad = false;
       _renderMain(true); // skipFade — outer curtain (transitionToGame / menuFade) handles the transition
       //_animateLogo();
+      _checkVersionChangelog();
     }
   }
 
@@ -107,11 +109,13 @@ var Menu = (function () {
         curtain.style.display = 'none';
         curtain.style.pointerEvents = 'none';
         curtain.classList.remove('animate__animated', 'animate__fadeOut');
-        
+
         textEl.style.display = 'none';
         textEl.classList.remove('animate__animated', 'animate__fadeOut');
         textEl.innerHTML = '';
         textEl.style.webkitTextStroke = ''; // Restore original style
+
+        _checkVersionChangelog();
       }, { once: true });
     }, 4000);
   }
@@ -954,7 +958,7 @@ var Menu = (function () {
   // ── Settings ───────────────────────────────────────────────────────────────
 
   var _DIFF_FLAVOR = {
-    Easy:     'A flickering light in the dark.',
+    Easy:     'The world is warmer than usual.',
     Standard: 'The intended satisfying struggle.',
     Hardcore: 'No mercy, death is always fatal.'
   };
@@ -1180,6 +1184,52 @@ var Menu = (function () {
     _doShowScreen('menu_settings_screen');
   }
 
+  // ── Version changelog ──────────────────────────────────────────────────────
+
+  function _checkVersionChangelog() {
+    if (_changelogShownThisSession) return;
+    var lastSeen = null;
+    try { lastSeen = localStorage.getItem('sd_last_seen_version'); } catch (e) {}
+    if (lastSeen === versionCode) return;
+
+    _changelogShownThisSession = true;
+    fetch('VERSION.md')
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+      .then(function (text) {
+        var lines = text.split('\n');
+        var inSection = false;
+        var items = [];
+        for (var i = 0; i < lines.length; i++) {
+          var trimmed = lines[i].trim();
+          if (trimmed === '## ' + versionCode) { inSection = true; continue; }
+          if (inSection) {
+            if (trimmed.startsWith('## ')) break;
+            if (trimmed) items.push(trimmed);
+          }
+        }
+        _showChangelog(items.length > 0 ? items : ['💭 No changelog details provided.']);
+      })
+      .catch(function () { _markVersionSeen(); });
+  }
+
+  function _markVersionSeen() {
+    try { localStorage.setItem('sd_last_seen_version', versionCode); } catch (e) {}
+  }
+
+  function _showChangelog(items) {
+    var overlay = document.getElementById('changelog_overlay');
+    if (!overlay) { _markVersionSeen(); return; }
+    var versionEl = document.getElementById('changelog_version');
+    if (versionEl) versionEl.textContent = versionCode;
+    var listEl = document.getElementById('changelog_list');
+    if (listEl) {
+      listEl.innerHTML = items.map(function (item) {
+        return '<h5 style="margin:0; padding:2px 0 0 4px; font-size:14px; font-style:normal; font-weight:400; text-align:left; line-height:150%; color:#fff;">' + item + '</h5>';
+      }).join('');
+    }
+    overlay.style.display = 'flex';
+  }
+
   // ── Button wiring ──────────────────────────────────────────────────────────
 
   function _bindButtons() {
@@ -1238,6 +1288,11 @@ var Menu = (function () {
       menuFade(function () { _renderSettings(); });
     });
     document.getElementById('menu_settings_back').addEventListener('click', function () { _renderMain(); });
+
+    document.getElementById('changelog_dismiss').addEventListener('click', function () {
+      _markVersionSeen();
+      document.getElementById('changelog_overlay').style.display = 'none';
+    });
 
     holdToConfirm(document.getElementById('menu_settings_purge_1'), 3, function () {
       document.getElementById('menu_settings_purge_1').style.display = 'none';

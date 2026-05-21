@@ -44,6 +44,8 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
                    && _peekArea !== "Eternal Realm"
                    && !enemyType.includes("Boss"); // boss has its own curtain already
 
+  if (_isAreaChange) playerAreaSleepCount = 0;
+
   if (_isAreaChange && !skipAreaTransition) {
     preloadBackground(_peekArea);
     var _areaHtml = "<p style=\"color:"+colorWhite+";letter-spacing: 1.6px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:40px;\">"
@@ -81,6 +83,7 @@ function nextEncounter(animateArea=true, skipAreaTransition=false){ //Note: Even
 
   // Boss → new area: boss curtain handles bg swap via setBackground(areaName) while black
   if ((previousArea!=undefined) && (previousArea != areaName) && (areaName != "Eternal Realm")){
+    playerAreaSleepCount = 0;
     if ((!areaName.includes("Fading")) && (!areaName.includes("Eternal")) && (!areaName.includes("Depths")) && (!adventureLog.includes("Arrived to: <b>"+areaName+"</b>"))) {
       logAction("💭 ▸ 👣 Arrived to: <b>"+areaName+"</b>");
       AchievementManager.check('discover_area', areaName);
@@ -154,7 +157,7 @@ function gameOver(silent=false){
     kills: playerKills,
     area: areaName,
     causeOfDeath: _isRival ? ('👾 ' + enemyName + ' [Invader]') : (enemyEmoji + ' ' + enemyName),
-    deathMessage: enemyMsg,
+    deathMessage: (enemyEmoji ? enemyEmoji + ' ' : '') + (enemyMsg || ''),
     outcome: _deathEndType,
     actionLog: adventureLog,
     playerHpMax: playerHpMax,
@@ -177,6 +180,7 @@ function gameOver(silent=false){
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
 
+  removeGatewayEffects();
   var _curtainDetail = _isRival
     ? ('<p style="font-size:20px; color:' + colorRed + ';">' + enemyMsg + '</p>')
     : ('<p style="font-size:20px;"' + decorateStatusText("", enemyMsg, colorWhite));
@@ -199,58 +203,26 @@ var _ENDING_TYPES = {
   button_curse:   'win_curse'
 };
 
-var _ENDING_FRAMES = {
-  button_attack: [{emoji:'⚔️', text:'The deed is done.'}, {emoji:'🩸', text:'She finally rests in peace.'}, {emoji:'🖤', text:'And you walk on. Alone.'}],
-  button_roll:   [{emoji:'💔', text:'You turn your back.'}, {emoji:'🥀', text:'The world slowly rots.'}, {emoji:'👰🏻‍♀️', text:'She still waits, always will.'}],
-  button_block:  [{emoji:'🔰', text:'You stand your ground.'}, {emoji:'🗿', text:'Slowly turning to stone.'}, {emoji:'💞', text:'Your hearts bound forever.'}],
-  button_grab:   [{emoji:'🫂', text:'You hold her close.'}, {emoji:'🌑', text:'The darkness takes you both.'}, {emoji:'🖤', text:'Together. At last.'}],
-  button_sleep:  [{emoji:'💤', text:'You lie beside her.'}, {emoji:'🌿', text:'The ground grows still.'}, {emoji:'🤍', text:'Your hearts make no sound.'}],
-  button_speak:  [{emoji:'❤️', text:'You say her name. Rosabel.'}, {emoji:'✨', text:'Something stirs inside.'}, {emoji:'💖', text:'She remembers who she was.'}],
-  button_cast:   [{emoji:'❤️‍🩹', text:'You unravel the curse.'}, {emoji:'✨', text:'The magic tears it apart.'}, {emoji:'🪽', text:'She is finally free.'}],
-  button_pray:   [{emoji:'🙏', text:'You beg for mercy.'}, {emoji:'🌩️', text:'Something hears your call.'}, {emoji:'🌪️', text:'The gods take her gently.'}],
-  button_curse:  [{emoji:'💀', text:'You seal the pact.'}, {emoji:'🌑', text:'The darkness claims you both.'}, {emoji:'👹', text:'None of you deserve peace.'}]
-};
+// ENDING_FRAMES lives in string-generator.js
 
 function startBrideDialogue() {
-  ['button_roll','button_block','button_grab','button_sleep',
-   'button_speak','button_cast','button_pray','button_curse'].forEach(function(id) {
-    document.getElementById(id).disabled = true;
+  var poem  = getBridePoemByLove().replace(/<\/?i>/g, '');
+  var parts = poem.split('<br>');
+  var line1 = (parts[0] || '').trim();
+  var line2 = (parts[1] || '').trim();
+  var fadeHtml =
+    '<p style="color:#FFD940;letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;font-size:40px;line-height:1.2;margin:0 0 8px;">' + line1 + '</p>'
+    + '<p style="font-size:17px;color:#ddd;letter-spacing:0.5px;-webkit-text-stroke:0;margin:0 0 20px;">' + line2 + '</p>'
+    + '<div style="font-size:54px;line-height:1;">👰🏻‍♀️</div>';
+  curtainFadeInAndOut(fadeHtml, 3.5, function() {
+    adjustEncounterButtons();
+    registerClickListeners(300);
+    redraw();
   });
-
-  var beat1 = playerLove >= 3
-    ? "👰🏻‍♀️ ▸ 💬 She turns to face you. <i>\"I knew you would come.\"</i>"
-    : "👰🏻‍♀️ ▸ 💬 She turns to face you. <i>\"You shouldn't have come.\"</i>";
-
-  setTimeout(function() {
-    if (!brideDialogueActive) return;
-    logAction(beat1); redraw();
-
-    setTimeout(function() {
-      if (!brideDialogueActive) return;
-      logAction("👰🏻‍♀️ ▸ 💬 " + getBridePoemByLove()); redraw();
-
-      setTimeout(function() {
-        if (!brideDialogueActive) return;
-        var beat3 = playerKarma >= 2
-          ? "😟 ▸ 💭 <i>You remember everything. There is still a chance.</i>"
-          : "😟 ▸ 💭 <i>You remember everything. Some things cannot be undone.</i>";
-        logAction(beat3);
-        brideDialogueActive = false;
-
-        ['button_roll','button_block','button_grab','button_sleep',
-         'button_speak','button_cast','button_pray','button_curse'].forEach(function(id) {
-          document.getElementById(id).disabled = false;
-        });
-        adjustEncounterButtons();
-        redraw();
-      }, 3500);
-    }, 3500);
-  }, 1500);
 }
 
 function resolveEnding(button) {
   isEndingState = false;
-  brideDialogueActive = false;
   removeClickListeners();
 
   if (button === 'button_attack') {
@@ -265,7 +237,7 @@ function resolveEnding(button) {
     return;
   }
 
-  var frames = _ENDING_FRAMES[button];
+  var frames = ENDING_FRAMES[button];
   var _endType = _ENDING_TYPES[button] || 'win';
   playEndingCutscene(frames, function() {
     _doGameEnd(_endType);
@@ -275,7 +247,7 @@ function resolveEnding(button) {
 function gameEnd() {
   if (isKillEnding) {
     isKillEnding = false;
-    playEndingCutscene(_ENDING_FRAMES['button_attack'], function() {
+    playEndingCutscene(ENDING_FRAMES['button_attack'], function() {
       _doGameEnd('win_kill');
     });
     return;
@@ -323,5 +295,6 @@ function _doGameEnd(endType) {
 
   SaveManager.clearGameState();
   resetSeenEncounters();
+  removeGatewayEffects();
   processStoryData(storyData,false);
 }

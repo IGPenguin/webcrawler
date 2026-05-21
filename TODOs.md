@@ -1,19 +1,10 @@
-# Styx Flow — 2026-05-15 — Stay Dead
+# Styx Flow — 2026-05-21 — Stay Dead
 
-*114 items · 2026-05-16: +1 (BARK-CTX) — contextual companion barks; prior: +2 (LOOT-TEAS, LOOT-ANIM) — lootbox anticipation system; prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE) — pet interaction system, companion barks, crossroads; prior: SPRINT block from Perseus 2026-05-15, dog bark / encounter pre-gen*
+*121 items · 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
 ## SPRINT — Creative Polish Day *(one man, one day — max fun, max hook)*
-
-### [DEATH-MSG] Improvement: Feature enemy death message prominently on game-over screen
-- The `message` field on enemy rows describes how the player died and some are devastating — e.g. "You became the grief you were running from." — but it's buried in the log when the death screen has already transitioned.
-- In `gameOver()` (game-loop.js), grab `enemyMessage` and render it as hero text on the game-over screen — above the stat summary, below the enemy emoji; one new DOM element or repurpose an existing panel in `ui-render.js`.
-- Zero new writing required — the content is already in the CSV.
-- Priority: SPRINT — highest emotional punch per effort on the list; makes every death feel like a line from the game's soul.
-- Type: Improvement
-- Effort: S | Gain: XL
-- Source: Perseus creative sprint 2026-05-15 — Narrative Writer, confirmed by Hardcore Fan vote
 
 ### [FLASH-CRIT] Improvement: .flash-crit CSS animation on critical hits
 - Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
@@ -36,15 +27,6 @@
 - Type: Improvement
 - Effort: S | Gain: M
 
-### [KILL-LINE] Improvement: Post-run kill summary line on game-over screen *(fan wildcard)*
-- Add one generated sentence on the game-over screen summarizing a notable run moment — e.g. "You killed 12 enemies. The Revenant was not among them." Pull from run encounter data; filter by encountered-but-survived enemies.
-- In `gameOver()` / `ui-render.js`: pull encounter history or equivalent run state; find a high-ATK enemy the player met but didn't kill; generate one flavor sentence via `string-generator.js`.
-- Note: this is the beta-tier delivery of the run summary feature. [RUN-IMPACT] (Backlog) is the full future version.
-- Priority: SPRINT — makes every run feel like a specific story that didn't quite finish; the unresolved enemy line is the kind of detail players screenshot.
-- Type: Improvement
-- Effort: S | Gain: M
-- Source: Perseus creative sprint 2026-05-15 — Genre Fan wildcard
-
 ### [BOSS-TOLL] Improvement: Boss death counter — show area death toll on boss kill
 - On killing an area boss, display how many times the player died in that area before the kill — e.g. "After 3 deaths in the Twisted Fairyland." Zero deaths gets its own line — e.g. "First blood. Somehow." Bosses are drawn from a pool per area, so the counter is per area, not per specific enemy.
 - Track `areaDeathCount` (reset each area) in `gameOver()` keyed to current area; read and display on boss kill resolution in `action-resolver.js` or `game-loop.js`.
@@ -52,14 +34,27 @@
 - Type: Improvement
 - Effort: S | Gain: L
 
+### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
+- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
+- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
+- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
+- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
+- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
+- Type: Improvement
+- Effort: M | Gain: L
+- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
+
 ---
 
 ## P0 — Hard Blockers *(drop everything)*
 
-### [GAME-ENDS] Chore: ME - Game Ending is broken - throws (currently unknown) error, breaking showing the game finished screen
-- Need to debug this by skipping to endame + using cheat
-- Suppposedly the black & white filter is confusing and end buttons appear one by one is also confusing
-- Needs a manual review
+### [END-DUPE] Bug: Double run_end event and JS error at game end — duplicate telemetry, score, and chronicle entries
+- Game end throws a JS error; simultaneously `run_end` is being dispatched twice — causing duplicate entries in telemetry, duplicate score submissions to Rankings, and duplicate chronicle run entries.
+- Investigate `gameEnd()` / `_doGameEnd()` in `game-loop.js` for double-call paths; check whether the ending cutscene intercept or the `isKillEnding` deferred path triggers `_doGameEnd()` a second time.
+- Duplicate score submissions are the highest-risk consequence — may create ghost entries on the live leaderboard visible to all players.
+- Priority: P0 — data corruption on every completed run; leaderboard and chronicle integrity compromised.
+- Type: Bug | Severity: Critical
+- Effort: S | Gain: XL
 
 ---
 
@@ -71,15 +66,47 @@
 - Type: Chore
 - Effort: M | Gain: XL
 
+### [POOL-GAP] Bug: Thin or missing encounter pools in some areas — Desktop screenshots confirm gaps
+- Some area encounter pools are running thin or empty; encounters repeat too early or the generator runs dry.
+- "Resolve lacking pools per screenshots on Desktop" — desktop viewport makes the pool exhaustion visible; audit which area pools are below minimum viable depth.
+- Check each area in `encounters.csv` / `story.csv` for row count; compare against how many encounters `generateNextEncounters()` requests per area pass; add rows to thin areas.
+- Priority: P1 — shallow pools break the core loop; encounter repetition is one of the fastest ways to lose a beta tester.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
 ---
 
 ## P2 — Release-Gating
 
-### [DEATH-HIST] Improvement: Death message in run history and online scoreboard
-- The enemy death message (how the player died) should be visible in the Chronicles run history detail view and on the online scoreboard entry — not just on the death screen.
+### [DEATH-HIST] Improvement: Death message and ending type in run history and online scoreboard
+- The enemy death message (how the player died) should be visible in the Chronicles run history detail view and on the online scoreboard entry — not just on the death screen. For win runs, the ending label (e.g. "Name" / "Beg" / "Kill") should also be displayed prominently.
 - Death message is already stored in telemetry (`causeOfDeath` in `run_end`); surface it in the Chronicles detail panel (`ui-render.js`) and in the scoreboard stat card (Rankings screen / `score-manager.js`). Rankings pipeline may need the field passed through `ghostLink` payload if not already present.
+- Win type display: `ScoreManager.getEndingLabel(endType)` already exists; wire it to the scoreboard stat card and Chronicles view.
+- Reconfirmed during playtesting 2026-05-21 as still outstanding.
 - Priority: P2 — death messages are the game's best writing; burying them after the death screen wastes the asset and removes the social hook.
 - Type: Improvement
+- Effort: M | Gain: L
+
+### [UNDEAD-MGK] Bug: MGK on non-caster undead incorrectly triggers near-impossible block condition
+- Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
+- Audit `encounters.csv` and `story.csv` for all Undead-type rows; remove MGK from non-caster undead (zombies, revenants, etc.); keep MGK only on actual caster subtypes (liches, banshees, wraiths — rows where spells are the intended threat).
+- Priority: P2 — live balance bug on late-game enemies; blocking an undead horde should be physically hard but possible, not mechanically near-impossible.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
+### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
+- Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.
+- Likely a CSS height/overflow issue on a container that conditionally expands; investigate `.game-container`, `body`, and any dynamically resized panels in `ui-render.js` and `ui-effects.js` for unconstrained height growth.
+- Priority: P2 — visually breaks the page and is jarring on mobile; intermittent but reproducible.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: M
+
+### [END-ACHIEV] Feature: Per-ending-type achievements + rewards
+- Each of the 9 endings should unlock a dedicated achievement and optionally grant a tangible reward (origin unlock, item unlock, or cosmetic).
+- Reachable endings (Name, Cure, Beg, Damn) are high-effort unlocks — they deserve recognition beyond the score bonus.
+- Wire achievement triggers in `achievements.js` on each `endType` value (`win_speak`, `win_free`, `win_kill`, etc.); add rewards (origin unlock or Familiar-tier item) per ending. Check `AchievementManager` pattern for the trigger hook.
+- Priority: P2 — achievement hooks are the primary replay driver; knowing each ending unlocks something specific makes players attempt all 9.
+- Type: Feature
 - Effort: M | Gain: L
 
 ### [MIRR-ENCNTR] Feature: 🪞 Mirror encounter type — hidden stat reveal
@@ -129,6 +156,49 @@
 ---
 
 ## P3 — Should-Fix
+
+### [SHOP-BOOST] Improvement: Expand shop 1-coin boost item pool
+- Add more Common boost items with +x/-x stat tradeoffs to the shop's 1-coin pool — e.g., +1 ATK / -1 LCK, +1 STA / -1 HP.
+- Currently the cheap shop tier is thin; players cycling the shop repeatedly see the same options.
+- Priority: P3 — shop feel; content gap but not release-gating
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [NECRO-PROP] Improvement: Necropolis prop variety — more atmospheric non-combat encounters
+- Add more prop encounter rows to Shrouded Necropolis — the area is combat-dense and could use quiet/atmospheric beats to contrast the final boss buildup.
+- Priority: P3 — emotional counterweight per DESIGN.md; a cluster of brutal encounters needs at least one moment of stillness
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [WEAP-CMBO] Feature: Weapon combo items — dual-stat (+ATK+MGK, etc.)
+- Add items that combine two offensive stats — e.g., +1 ATK +1 MGK, +1 ATK +1 STA — as a distinct item archetype that rewards hybrid builds.
+- Slot naturally into the existing rarity system; net stat formula already handles multi-stat items.
+- Priority: P3 — build variety; currently no items bridge ATK and MGK for hybrid combat/magic builds
+- Type: Feature
+- Effort: S | Gain: M
+
+### [HIDE-DRM] Improvement: Hide Necropolis dream encounters after the player has completed a run
+- Dream encounters in Shrouded Necropolis reveal lore/realizations about the player's past. Once a player has reached an ending, replaying through the dream sequence breaks immersion.
+- Gate dream encounter spawns on a flag (e.g., no completed endings in save data); or suppress them after the first completion; needs design decision on exact condition.
+- Priority: P3 — repeat-run immersion; veterans replaying for new endings don't need to re-live the tutorial revelation every time
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [BAL-AUDIT] Question: Blind spots review — encounter types vs action-config vs action-resolver coverage
+- Audit action-config.js and action-resolver.js for encounter types that have incomplete or inconsistent handling — buttons that silently pass/fail when they should have a dedicated case, or encounter types not covered by any special-case logic.
+- Start by mapping all `types` values to their action-config branches; flag any type+button combos that fall through to the default stat calc without a intentional rationale.
+- Priority: P3 — may surface silent balance bugs before beta; low urgency but high signal value
+- Type: Question
+- Effort: M | Gain: M
+- Needs: Decide scope — full audit or just the recently-added encounter types?
+
+### [END-SCORE] Question: Per-ending scoring — differentiate point rewards by ending difficulty
+- Currently all win endings give +100 regardless of difficulty (Name requires Love 6 + Karma 2; Guard requires nothing). Should harder endings give more points to reflect the run investment?
+- Design question: define a point bonus per ending tier (e.g., Guard +50, Sleep +75, Name +150) and wire into `ScoreManager` alongside existing `endType` handling.
+- Priority: P3 — scoring balance; not release-gating but affects leaderboard meaning
+- Type: Question
+- Effort: S | Gain: M
+- Needs: Design the point tiers per ending before implementing. Verify this doesn't break current highscore.json comparisons.
 
 ### [ACTN-FLAVOR] Feature: Action outcome flavor text — per-outcome log lines
 - Each action result (crit-pass / pass / fail / crit-fail) on an encounter should have a distinct flavor log line beyond the current generic text. Lines must hint at *why* the outcome happened — the stat or companion that tipped it — not just describe the result.
@@ -280,6 +350,24 @@
 - Type: Feature
 - Effort: XL | Gain: XL
 
+### [CRIT-LCK] Improvement: Action bar crit zone luck scaling redesign
+- Crit success and crit fail zone widths should scale smoothly with luck across the range -5 to +10, changing ~1pp per ±2 luck steps, with a non-zero floor on both zones at all times.
+- Current formulas (main path, action-config.js lines 606–607) cap out too early: crit success hits max at LCK 6, crit fail hits floor at LCK 8. Negative luck currently has no effect (pLck is clamped to 0 at line 8).
+- Crit success zone should always be a sliver inside the green success zone — cap it as a fraction of `zoneW`, not an absolute pp count, so it never dominates the bar at high luck.
+- **Also fix these specific hardcoded cases** (confirmed design intent per 2026-05-20 review):
+  - Lines 108/114 — Attack/Grab Trap-Obstacle: remove hardcoded crits, run through normal luck-scaled calc
+  - Lines 119–120 — Exhausted grab (no STA): keep ultra-hard zone, but ADD a crit fail zone (none currently)
+  - Line 129 — Resurrection: keep static narrow crit pass (intentional), but REMOVE crit fail (the critFailW: 5 there has no design reason)
+  - Line 197 — Heavy grab: ADD crit fail zone (grabbing a Heavy with STA remaining should be dangerous, not just hard)
+  - Lines 362–363 — Trap wrong-action: REMOVE crit pass entirely; keep crit fail (punishment, no reward)
+  - Lines 395–397 — Recall/speak Memory: de-hardcode; scale by luck like other speak variants
+- Priority: P3 — not broken enough to block beta; crit zones currently feel slightly too generous at LCK 4+ but the system works
+- Type: Improvement
+- Effort: M | Gain: M
+- Source: Balance Designer + Game Design Lead + Competitive Player review 2026-05-20; see .perseus/2026-05-20-2120-luck-crit-zones.md
+- **Main-path formulas finalized 2026-05-20** (implemented): `critSuccessW = 2 + pLck * 0.625` (max at luck 8); `critFailW = 5 - rawLck * (rawLck < 0 ? 1.25 : 0.5)` (negative luck expands danger zone, cap 10 at luck −4). Hardcoded special-case fixes remain as a separate future pass.
+- **Negative luck audit (future pass):** Every system where positive luck has a beneficial effect should have negative luck produce the opposite. Known candidates to audit: `RarityManager.rollTier` (luck shifts rarity up — negative should shift toward Cursed/Common); `getWeightedLootIndex` (fishing loot quality); zone position blend in `action-config.js` (`luckBlend = pLck * 0.12` — currently clamped, negative luck should push zone toward a harder right-edge placement); container search width (`40 + pLck * 9` — negative luck should narrow the search zone). Pattern: find every `Math.max(0, pLck)` or `pLck * positiveCoeff` and decide whether unclamping is safe in that context.
+
 ---
 
 ## P4 — Nice to Have
@@ -362,16 +450,6 @@
 ---
 
 ## Backlog
-
-### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
-- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
-- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
-- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
-- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
-- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
-- Type: Improvement
-- Effort: M | Gain: L
-- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
 
 ### [RUN-IMPACT] Feature: Full run impact summary + highscore calculation breakdown (Hades Gate)
 - End-of-run or game-over screen shows a narrative summary of what the player's choices and companions contributed — e.g. "Your dog warned you twice. Your karma cost you the ending you deserved." Goes well beyond [KILL-LINE]'s single sentence.
@@ -552,6 +630,14 @@
 - Effort: L | Gain: M
 - Needs: Define unlock conditions and exact modifier effects before implementing.
 
+### [SLEEP-PUNISH] Idea: Non-score punishment for oversleeping — love loss or harder enemies
+- Current oversleep penalty is score-only (−1 per sleep above threshold). Consider adding a mechanical consequence: −1 `playerLove` per penalized sleep (locks higher endings if abused), or giving the current enemy a free attack / skipping item pickup on penalized non-combat sleeps.
+- Love loss is the most thematically resonant option (delays cost connection to Rosabel) but needs a hint system first — players should see it coming before it gates an ending.
+- Source: Perseus review 2026-05-20 — deferred by design; score penalty alone is sufficient for now.
+- Priority: P4 — revisit after hints/transparency around the sleep system are established
+- Type: Idea
+- Effort: S | Gain: M
+
 ### [BLACK-HOLE] Feature: Black hole — new optional area + spaghetti monster boss
 - DLC-style optional area with spaghetti monster boss, modern props, items, tools. The JS spaghetti monster joke boss lives here.
 - Priority: P4 — fun/joke expansion; well outside current scope
@@ -616,4 +702,4 @@
 
 ---
 
-*Styx Flow complete — 113 items processed*
+*Styx Flow complete — 121 items processed*

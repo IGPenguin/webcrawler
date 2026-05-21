@@ -343,13 +343,13 @@ layout: default
 <div id="nickname_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
   <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; max-height:88vh; overflow-y:auto; scrollbar-width:none; box-shadow:0 0 0 3px #000;">
     <div id="nickname_ending_label" style="text-align:center; margin:0 0 4px 0; font-size:20px; font-weight:bold; -webkit-text-stroke:4px black; paint-order:stroke fill;"></div>
-    <div id="nickname_score_display" style="text-align:center; margin:0 0 10px 0; color:#FFD940; font-size:28px; font-weight:bold; -webkit-text-stroke:4px black; paint-order:stroke fill;"></div>
+    <div id="nickname_score_display" style="text-align:center; margin:0 0 10px 0; color:#FFD940; font-size:24px; font-weight:bold; -webkit-text-stroke:4px black; paint-order:stroke fill;"></div>
     <div id="nickname_score_breakdown" class="menu-score-bar" style="margin:0 0 12px 0; padding:8px 10px; background-color:#272727; box-shadow:0px 0px 0px 3px #121212; font-size:14px;"></div>
     <input id="nickname_input" type="text" maxlength="32" placeholder="Your Nickname (3+ chars)" style="width:100%; box-sizing:border-box; font-size:16px; padding:9px 10px; background:#2a2a2a; border:none; outline:2px solid #555; color:#fff; font-family:inherit; border-radius:0;">
     <h5 style="text-align:center; margin:12px 0 0 0; opacity:0.55; font-size:13px; font-weight:400;">Your Valor will be shown in the Reckonings.</h5>
     <h5 id="nickname_error" style="color:#ff4444; text-align:center; margin:6px 0 0 0; font-size:13px; display:none;">Minimum 3 characters required.</h5>
     <h5 id="nickname_ban_error" style="color:#ff4444; text-align:center; margin:6px 0 0 0; font-size:13px; display:none;">That name is not allowed.</h5>
-    <button id="nickname_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Inscribe</button>
+    <button id="nickname_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Submit</button>
     <button id="nickname_skip" class="menu-btn" style="margin-top:4px; color:#FF0000;">✕ Skip</button>
   </div>
 </div>
@@ -375,6 +375,16 @@ layout: default
     <div id="swap_diff_row" style="text-align:center; font-size:14px; font-weight:bold; min-height:1.2em;"></div>
     <button id="swap_confirm" class="menu-btn" style="margin-top:14px; color:#FFD940;">✓ Equip New</button>
     <button id="swap_cancel" class="menu-btn" style="margin-top:4px; color:#FF0000;">✕ Cancel</button>
+  </div>
+</div>
+
+<!-- Version changelog overlay — shown once when version changes -->
+<div id="changelog_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+  <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
+    <h3 style="text-align:center; margin:0 0 4px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">🎉 New version released!</h3>
+    <h5 id="changelog_version" style="text-align:center; margin:0 0 14px 0; opacity:0.75; font-size:12px; font-weight:400;"></h5>
+    <div id="changelog_list" class="menu-score-bar" style="max-height:50vh; min-height:68px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#000 transparent; margin-bottom:14px; background-color:#272727; box-shadow:0px 0px 0px 3px #121212; padding:8px; margin:4px 4px 12px 4px;"></div>
+    <button id="changelog_dismiss" class="menu-btn" style="color:#FFD940;">✓ Dismiss</button>
   </div>
 </div>
 

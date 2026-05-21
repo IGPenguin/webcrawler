@@ -8,6 +8,7 @@ var ScoreManager = (function () {
     encounterDiv:   5,   // floor(encounters / encounterDiv)
     companionMult:  8,   // points per companion
     statDiv:        2,   // floor(net stats / statDiv)
+    fishMult:       2,   // points per successful fish catch
     winBonus:     100,   // flat bonus for any win ending
   };
   var DIFFICULTY_MULTS = {
@@ -26,7 +27,7 @@ var ScoreManager = (function () {
     win_speak:   '💖 Finally remembered her name.',
     win_free:    '🪽 Undid the spell that started it.',
     win_pray:    '🙏 Asked the gods for their mercy.',
-    win_curse:   '👹 Made sure neither would find peace.',
+    win_curse:   '👺 Made sure neither finds peace.',
     win:         '👑 Finished.',
     death:       '💀 Never made it back to her.',
     rival_death: "💔 Slain by someone's shadow."
@@ -69,24 +70,32 @@ var ScoreManager = (function () {
 
   var _pendingPayload = null;
 
-  function _computeComponents(level, encounters, companions, totalStats, baseline, karma, isWin, diffLabel, critSuccesses, critFails) {
+  function _computeComponents(level, encounters, companions, totalStats, baseline, karma, isWin, diffLabel, critSuccesses, critFails, fishCatches, sleepPenalty) {
     var w = SCORE_WEIGHTS;
     var cs             = critSuccesses || 0;
     var cf             = critFails     || 0;
+    var fc             = fishCatches   || 0;
+    var sp             = sleepPenalty  || 0;
     var levelBonus     = level * w.levelMult;
     var encounterBonus = Math.floor(encounters / w.encounterDiv);
     var companionBonus = companions * w.companionMult;
     var statDelta      = Math.max(0, totalStats - baseline);
     var statBonus      = Math.floor(statDelta / w.statDiv);
     var karmaBonus     = karma;
-    var critBonus      = cs - cf;
+    var critSuccessBonus = cs * 3;
+    var critFailPenalty  = cf * 3;
+    var critBonus        = critSuccessBonus - critFailPenalty;
+    var fishBonus      = fc * w.fishMult;
     var winBonus       = isWin ? w.winBonus : 0;
     var mult           = DIFFICULTY_MULTS[diffLabel] || 1.0;
-    var raw            = levelBonus + encounterBonus + companionBonus + statBonus + karmaBonus + critBonus;
+    var raw            = levelBonus + encounterBonus + companionBonus + statBonus + karmaBonus + critBonus + fishBonus - sp;
     return {
       levelBonus: levelBonus, encounterBonus: encounterBonus, companionBonus: companionBonus,
-      statBonus: statBonus, statDelta: statDelta, karmaBonus: karmaBonus, critSuccesses: cs, critFails: cf, critBonus: critBonus, winBonus: winBonus,
-      mult: mult, raw: raw, score: Math.round((raw + winBonus) * mult),
+      statBonus: statBonus, statDelta: statDelta, karmaBonus: karmaBonus,
+      critSuccesses: cs, critFails: cf, critSuccessBonus: critSuccessBonus, critFailPenalty: critFailPenalty, critBonus: critBonus,
+      fishCatches: fc, fishBonus: fishBonus,
+      sleepPenalty: sp,
+      winBonus: winBonus, mult: mult, raw: raw, score: Math.round((raw + winBonus) * mult),
       level: level, encounters: encounters, companions: companions
     };
   }
@@ -96,7 +105,7 @@ var ScoreManager = (function () {
     var totalStats = (playerHpMax||0)+(playerAtk||0)+(playerStaMax||0)+(playerLck||0)+(playerInt||0)+(playerMgkMax||0)+(playerDef||0);
     var companions  = [...String(playerPartyString||'')].length;
     var diffLabel   = typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard';
-    return _computeComponents(playerLevel||1, encounterCount||0, companions, totalStats, scoreBaselineStats||0, playerKarma||1, !!isWin, diffLabel, playerCritSuccesses||0, playerCritFails||0);
+    return _computeComponents(playerLevel||1, encounterCount||0, companions, totalStats, scoreBaselineStats||0, playerKarma||1, !!isWin, diffLabel, playerCritSuccesses||0, playerCritFails||0, playerFishCatches||0, playerTotalSleepPenalty||0);
   }
 
   function calculate() {
@@ -106,7 +115,7 @@ var ScoreManager = (function () {
 
   function buildPayload(endType) {
     var isWin   = endType === 'win' || (typeof endType === 'string' && endType.startsWith('win_'));
-    var comps   = _liveComponents(isWin) || _computeComponents(playerLevel||1, 0, 0, 0, 0, playerKarma||1, isWin, typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard', playerCritSuccesses||0, playerCritFails||0);
+    var comps   = _liveComponents(isWin) || _computeComponents(playerLevel||1, 0, 0, 0, 0, playerKarma||1, isWin, typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard', playerCritSuccesses||0, playerCritFails||0, playerFishCatches||0, playerTotalSleepPenalty||0);
     var statsStr = [playerHpMax, playerAtk, playerStaMax, playerLck, playerInt, playerMgkMax, playerDef].join(';');
     var playtime = Math.floor((Date.now() - (runStartTimestamp || Date.now())) / 1000);
     return {
@@ -128,8 +137,10 @@ var ScoreManager = (function () {
       coins:             savedCoins || 0,
       deathMessage:      (typeof enemyEmoji !== 'undefined' && enemyEmoji ? enemyEmoji + ' ' : '') + (typeof enemyMsg !== 'undefined' ? String(enemyMsg || '') : ''),
       scoreBaselineStats: scoreBaselineStats || 0,
-      critSuccesses:     playerCritSuccesses || 0,
-      critFails:         playerCritFails     || 0
+      critSuccesses:     playerCritSuccesses      || 0,
+      critFails:         playerCritFails          || 0,
+      fishCatches:       playerFishCatches        || 0,
+      sleepPenalty:      playerTotalSleepPenalty  || 0
     };
   }
 
@@ -231,7 +242,7 @@ var ScoreManager = (function () {
     var totalStats = statArr.reduce(function(a, b) { return a + b; }, 0);
     var isWin      = payload.endType && (payload.endType === 'win' || payload.endType.startsWith('win_'));
     var diffLabel  = typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard';
-    return _computeComponents(payload.level||1, payload.encounterCount||0, payload.companions||0, totalStats, payload.scoreBaselineStats||0, payload.karma||1, !!isWin, diffLabel, payload.critSuccesses||0, payload.critFails||0);
+    return _computeComponents(payload.level||1, payload.encounterCount||0, payload.companions||0, totalStats, payload.scoreBaselineStats||0, payload.karma||1, !!isWin, diffLabel, payload.critSuccesses||0, payload.critFails||0, payload.fishCatches||0, payload.sleepPenalty||0);
   }
 
   function _buildBreakdownHTML(payload) {
@@ -251,12 +262,14 @@ var ScoreManager = (function () {
 
     var html = '';
     html += makeRow('Level ' + b.level,                    '+' + b.levelBonus);
-    html += makeRow('Encounters ' + b.encounters,          '+' + b.encounterBonus);
-    html += makeRow('Companions ' + b.companions,          '+' + b.companionBonus);
     html += makeRow('Stat Growth +' + b.statDelta,         '+' + b.statBonus);
     html += makeRow('Karma ' + payload.karma,              (b.karmaBonus >= 0 ? '+' : '') + b.karmaBonus, karmaColor);
-    if (b.critSuccesses) html += makeRow('Crit Successes', '+' + b.critSuccesses);
-    if (b.critFails)     html += makeRow('Crit Fails',     '-' + b.critFails, cfColor);
+    if (b.encounters) html += makeRow('Encounters ' + b.encounters,          '+' + b.encounterBonus);
+    if (b.companions) html += makeRow('Companions ' + b.companions,          '+' + b.companionBonus);
+    if (b.critSuccesses) html += makeRow('Crit Successes ×' + b.critSuccesses, '+' + b.critSuccessBonus);
+    if (b.critFails)     html += makeRow('Crit Fails ×' + b.critFails,         '-' + b.critFailPenalty, cfColor);
+    if (b.fishBonus)     html += makeRow('Caught along the way ×' + b.fishCatches, '+' + b.fishBonus);
+    if (b.sleepPenalty)  html += makeRow('Fell behind ×' + b.sleepPenalty,     '-' + b.sleepPenalty, RED);
     if (b.winBonus)      html += makeRow('Win Bonus',      '+' + b.winBonus);
     if (b.mult !== 1)    html += makeRow('Difficulty',     '×' + b.mult);
     return html;

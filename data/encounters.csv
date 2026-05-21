@@ -888,8 +888,9 @@ Twisted Fairyland;👘;Warlock Robe;Item-Chest;0;0;0;0;-4;2;0;Artifact;Usually w
 Twisted Fairyland;🪄;Warlock Wand;Item-Weapon;0;0;0;-2;0;2;0;<b>Artifact</b>;Resonates with forsaken magical power.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Wielded a dangerous power.;none
 Twisted Fairyland;📿;Witchbane Band;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.;none
 Twisted Fairyland;📌;Voodoo Pin;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Enemies will suffer from the <b>☠️ Ancient Voodoo</b>.<br>Deal <b>-1 💔 Damage</b> when engaging in combat.;Gained ability <b>☠️ Ancient Voodoo</b>.;none
-Twisted Fairyland;📜;The Elder Scroll;Item;0;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Intellect</b> and a mythical insight:<br>n/a;Embraced the ancient knowledge.;none
+Twisted Fairyland;📜;The Elder Scroll;Item;-1;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Knowledge</b>, syphons <b>-1 💔 Damage</b>.<br>n/a;Embraced the ancient knowledge.;none
 
+Twisted Fairyland;🥢;Magic Sticks;Item-Weapon;1;0;0;0;0;1;0;Spellcasting Tool;One is extra sharp, the other glows.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Embraced the energy surge.;none
 Twisted Fairyland;🏹;Sharpshooter Bow;Item-Weapon;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!;none
 Twisted Fairyland;🪃;Haunted Boomerang;Item-Weapon;0;2;0;-1;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;Something about it feels off;none
 Twisted Fairyland;📯;Warlord Horn;Item-Trinket;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!;none
@@ -903,12 +904,10 @@ Twisted Fairyland;㊙️;Crimson Medailon;Item-Trinket;2;0;0;-4;0;0;0;Rare Trink
 Twisted Fairyland;🥁;Treble Drum;Item-Trinket;0;0;2;0;0;0;0;Rythmical Instrument;Helps staying alert in combat.<br>Provides <b>+2 🟢 Energy</b>.;Ba dum tss!;none
 Twisted Fairyland;🪇;Painted Maracas;Item-Trinket;0;0;0;2;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+2 🍀 Luck</b>.;Shake it baby!;none
 
-Twisted Fairyland;🦷;Beast Fang;Item-Weapon;0;1;0;0;0;0;0;Trophy Weapon;Awkward to wield but still effective.<br>Provides <b>+1 ⚔️ Damage</b>.;;none
+Twisted Fairyland;🦷;Sabertooth Fang;Item-Weapon;0;2;0;0;0;0;0;Trophy Weapon;Awkward to wield but very effective.<br>Provides <b>+2 ⚔️ Damage</b>.;;none
 Twisted Fairyland;🪭;Sharp Fan;Item-Weapon;0;1;0;0;0;0;0;Inconspicious Weapon;No one would guess it's a deadly weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;;none
 Twisted Fairyland;🏹;Primitive Bow;Item-Weapon;0;1;0;0;0;0;0;Weapon;Standard tool for hunting prey.<br>Provides <b>+1 ⚔️ Damage</b>.;;none
 Twisted Fairyland;🔥;Frenzy Flame;Item-Weapon;-2;0;0;0;0;2;0;Dangerous Spell;Strange urge draws hands towards the heat.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 💔 Health</b>;Suffered severe burns!;none
-Twisted Fairyland;🌙;Sacred Moonstone;Item-Trinket;0;0;0;0;0;1;0;Lunar Gem;Gleams with inconspicuous light.<br>Provides <b>+1 🔵 Mana</b>.;Felt a surge of power.;none
-Twisted Fairyland;🥢;Magic Sticks;Item-Weapon;0;0;0;0;0;1;0;Spellcasting Tool;Glows with strong energy.<br>Provides <b>+1 🔵 Mana</b>.;Embraced the energy surge.;none
 Twisted Fairyland;🎐;Magic Chime;Item-Weapon;0;0;0;0;0;1;0;Spellcasting Tool;Looks nice, whatever purpose it has.<br>Provides <b>+1 🔵 Mana</b>.;Felt strange power surge.;none
 Twisted Fairyland;🎋;Wicked Staff;Item-Weapon;0;0;0;-2;0;1;0;Casting Tool;Energized by countless blood rituals.<br>Provides <b>+1 🔵 Mana</b> for Provides <b>-2 🍀 Luck</b>.;Felt a surge of power;none
 Twisted Fairyland;🎗️;Vigor Scarf;Item-Head;1;0;0;0;0;0;0;Handmade Ornament;Improves ones' self-presevation reflexes.<br>Provides <b>+1 ❤️ Health</b>.;Provides lovely warmth;none
@@ -1117,6 +1116,10 @@ River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not th
 
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
+//More or less matches fishing (NEEDS UNIQUE POOL - starts here)
+River of Sorrows;🌙;Moonstone Sickle;Item-Weapon;2;0;0;0;0;1;0;Lunar Gem;Gleams with inconspicuous light.<br>Provides <b>+2 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Felt a surge of power.;none
+
+// - ends here
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
 River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
 River of Sorrows;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
@@ -1133,13 +1136,11 @@ River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides 
 River of Sorrows;🐷;Pig Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>All food effects are totally negated.</b>;Gained skill <b>🐷 Pig Digestion</b>.;eat_hazardous
 River of Sorrows;👒;Fishing Hat;Item-Head;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
 
-//More or less matches fishing (needs retouching soon)
 River of Sorrows;🀄️;Life-Stealing Rune;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 33% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.;none
 River of Sorrows;📿;Witchbane Band;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.;none
 River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.;none
 River of Sorrows;🛟️;Lifeguard Ring;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 River of Sorrows;❤️‍🩹;Heart Band-Aid;Item-Trinket;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you, made you stronger;none
-River of Sorrows;🔱;Titanslayer Trident;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;none
 River of Sorrows;⭐️;Fallen Star;Item-Trinket;0;0;0;0;0;3;0;<b>Celestial Artifact</b>;Radiating with power, warm to the touch.<br>Provides <b>+3 🔵 Mana</b>.;The sky has embraced you.;none
 
 River of Sorrows;🪝;Captain's Hook;Item-Weapon;0;2;0;-1;0;0;0;Cursed Tool;Pulled from the depths of torment.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;;none
@@ -1171,16 +1172,15 @@ Shrouded Necropolis;🍂;Dying Fern;Prop;0;0;0;0;0;0;0;Silent Flora;Its colour s
 Shrouded Necropolis;🪧;Danger Sign;Prop;0;0;0;0;0;0;0;Warning;<i>Turn back if you wish to live!</i><br>;;none
 Shrouded Necropolis;🗿;Chiseled Face;Prop;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;;none
 Shrouded Necropolis;🌑;Silent Midnight;Prop;0;0;0;0;0;0;0;Unsettling Atmosphere;No living beings or growth around.<br>;;none
-Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Fresh Clue;Clear sign of recent activity.<br>;Followed the trail.;none
-Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unsettling Clue;Clear sign of recent activity.<br>;Followed the trail.;none
-Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;0;Hopeless Souls;Look completely uninterested in your presence.<br>;Left them behind.;none
-Shrouded Necropolis;🌫️;Pale Mist;Prop;0;0;0;0;0;0;0;Unsettling Atmosphere;A veil of fog conceals the path.<br>;;none
+Shrouded Necropolis;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Fresh Clue;Clear sign of recent activity.<br>;Followed the fresh trail.;none
+Shrouded Necropolis;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unsettling Clue;Clear sign of recent activity.<br>;Followed the fresh trail.;none
+Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;0;Hopeless Souls;Look completely unbothered by your presence.<br>;Left them far behind.;none
 Shrouded Necropolis;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;;none
 Shrouded Necropolis;🌾;Dead Reeds;Prop;0;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;;none
 Shrouded Necropolis;⛓️‍💥;Broken Shackles;Prop;0;0;0;0;0;0;0;Suspicious Clue;Probably left behind by an escaped prisoner.<br>;Followed the way ahead.;none
 
-Shrouded Necropolis;✝️;Saint's Grave;Prop;0;0;0;3;0;0;0;Blessed Remains;The resting place of a blessed soul.<br>;Woke up feeling blessed;none
-Shrouded Necropolis;🎠;Horse Statue;Prop;0;0;2;0;0;0;0;Dashing Symbol;Eternal reminder of the royal breed.<br>;Woke up feeling extra fast;none
+Shrouded Necropolis;✝️;Saint's Grave;Prop;0;0;0;1;0;0;0;Blessed Remains;The resting place of a blessed soul.<br>;Woke up feeling blessed;none
+Shrouded Necropolis;🎠;Horse Statue;Prop;0;0;1;0;0;0;0;Dashing Symbol;Eternal reminder of the royal breed.<br>;Woke up feeling extra fast;none
 Shrouded Necropolis;🗿;Stone Guardian;Prop;0;0;1;0;0;0;0;Hulking Authority;Tall statue provides calming comfort.<br>;Rested without a flinch;none
 Shrouded Necropolis;🌺;Blessed Ground;Prop;0;0;0;1;0;0;0;Safe Haven;Blooming flowers indicate comfort.<br>;Woke up feeling lucky;none
 

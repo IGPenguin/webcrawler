@@ -234,7 +234,7 @@ function transitionToCorpse(state) {
     }
     if (_lootType) {
       var _loot = getWeightedEncounter(_lootType, [], "", ["Lover's Memento","Lost Possession"]);
-      if (_loot) { corpseHasLoot=true; corpseLoot=_loot; }
+      if (_loot) { corpseHasLoot=true; corpseLoot=_loot; logAction(enemyEmoji+" ▸ 👀 "+getLootDropLog()); }
     }
   }
 

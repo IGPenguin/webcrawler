@@ -296,6 +296,54 @@ function getBridePoemByLove() {
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
 
+var ENDING_FRAMES = {
+  button_attack: [
+    {emoji:'⚔️', text:'The deed is done.',            text2:'You will not be clean again.'},
+    {emoji:'🩸', text:'She finally rests in peace.',  text2:'She waited long enough for this.'},
+    {emoji:'🖤', text:'And you walk on. Alone.',       text2:'As you were always going to.'}
+  ],
+  button_roll: [
+    {emoji:'💔', text:'You turn your back.',           text2:'She watches until you disappear.'},
+    {emoji:'🥀', text:'The world slowly rots.',        text2:'No one is coming to stop it.'},
+    {emoji:'👰🏻‍♀️', text:'She still waits, always will.', text2:'Her patience outlived your courage.'}
+  ],
+  button_block: [
+    {emoji:'🔰', text:'You stand your ground.',        text2:'Resolve never found you here.'},
+    {emoji:'🗿', text:'Slowly turning to stone.',      text2:'This is what devotion looks like.'},
+    {emoji:'💞', text:'Your hearts bound forever.',    text2:'Neither free. Neither gone.'}
+  ],
+  button_grab: [
+    {emoji:'🫂', text:'You hold her close.',           text2:'She does not pull away.'},
+    {emoji:'🌑', text:'The darkness takes you both.',  text2:'You always knew it would.'},
+    {emoji:'🖤', text:'Together. At last.',             text2:'A cost you were willing to pay.'}
+  ],
+  button_sleep: [
+    {emoji:'💤', text:'You lie beside her.',           text2:'No armor. No grief. Just this.'},
+    {emoji:'🌿', text:'The ground grows still.',       text2:'Even the corruption holds its breath.'},
+    {emoji:'🤍', text:'Your hearts make no sound.',    text2:'The debt is not paid. Forgiven.'}
+  ],
+  button_speak: [
+    {emoji:'❤️', text:'You say her name. Rosabel.',    text2:'She did not expect you to know.'},
+    {emoji:'✨', text:'Something stirs inside.',        text2:'Not hope. Something older than hope.'},
+    {emoji:'💖', text:'She remembers who she was.',    text2:'Before the grave. Before your grief.'}
+  ],
+  button_cast: [
+    {emoji:'❤️‍🩹', text:'You unravel the curse.',       text2:'Thread by thread. Year by year.'},
+    {emoji:'✨', text:'The magic tears it apart.',     text2:'Nothing survives being unmade.'},
+    {emoji:'🪽', text:'She is finally free.',          text2:'Not saved. Set free.'}
+  ],
+  button_pray: [
+    {emoji:'🙏', text:'You beg for mercy.',            text2:'You have no other currency left.'},
+    {emoji:'🌩️', text:'Something hears your call.',   text2:'Not mercy. Interest.'},
+    {emoji:'🌪️', text:'The gods take her gently.',    text2:'The gentleness you could not manage.'}
+  ],
+  button_curse: [
+    {emoji:'💀', text:'You seal the pact.',            text2:'No gods were consulted on this.'},
+    {emoji:'🌑', text:'The darkness claims you both.', text2:'It was patient. It always is.'},
+    {emoji:'👹', text:'None of you deserve peace.',    text2:'And so it will always be.'}
+  ]
+};
+
 function getRunStartMessage() {
   var pool = [
     "Your destiny still awaits.<br>Do not fail again.",
@@ -429,8 +477,34 @@ function getMeetingPlaceRecall() {
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
 
+function getLootDropLog() {
+  return chooseFrom([
+    "Seems like they dropped something.",
+    "Something fell from them.",
+    "There's something left behind.",
+    "They left something on the ground.",
+    "Something slipped on the ground."
+  ]);
+}
+
 function getRestBadlyText() {
   return chooseFrom(["Slept poorly, waking up groggy.", "Tossed and turned, barely rested.", "Woke up early, not fully rested.", "Slept barely enough.", "Dreamed badly, woken up a bit tired."]);
+}
+
+function getSleepNearLimitLog() {
+  return chooseFrom([
+    "The cold creeps in, rest is becoming a luxury.",
+    "Something stirs somewhere, do not linger.",
+    "She grows impatient, do not waste your time. "
+  ]);
+}
+
+function getSleepOverLimitLog() {
+  return chooseFrom([
+    "The world decays a little more while you sleep.",
+    "She slips further away wit your every rest.",
+    "The darkness deepens, hesitation has a price."
+  ]);
 }
 
 function getWalkCritText() {

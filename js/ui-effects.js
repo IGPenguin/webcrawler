@@ -554,8 +554,9 @@ function playEndingCutscene(frames, onComplete) {
       return;
     }
     var frame = frames[idx];
-    textEl.innerHTML = '<div style="font-size:60px;margin-bottom:12px;line-height:1;">' + frame.emoji + '</div>'
-                     + '<div style="font-size:15px;letter-spacing:1.2px;color:#ccc;max-width:270px;margin:0 auto;line-height:1.5;">' + frame.text + '</div>';
+    textEl.innerHTML = '<p style="color:#FFD940;letter-spacing:1.8px;-webkit-text-stroke:6.5px black;paint-order:stroke fill;font-size:44px;line-height:1.2;margin:0 0 8px;">' + frame.text + '</p>'
+                     + '<p style="font-size:17px;color:#ddd;letter-spacing:0.5px;-webkit-text-stroke:0;margin:0 0 20px;">' + (frame.text2 || '') + '</p>'
+                     + '<div style="font-size:54px;line-height:1;">' + frame.emoji + '</div>';
     textEl.style.display = 'block';
     void textEl.offsetWidth;
     textEl.style.setProperty('--animate-duration', '0.6s');

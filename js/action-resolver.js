@@ -15,7 +15,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       playerCritFails++;
     }
 
-    if (isEndingState) { resolveEnding(button); return; }
+    if (isEndingState) {
+      var _lockMsg = null;
+      if (button === 'button_sleep' && playerLove < 1)                       _lockMsg = '💤 ▸ 💔 <i>She is shaking to avoid getting closer.</i>';
+      if (button === 'button_grab'  && playerLove < 4)                       _lockMsg = '🫂 ▸ 💔 <i>She struggles to not let you closer.</i>';
+      if (button === 'button_speak' && (playerLove < 6 || playerKarma < 2))  _lockMsg = '❤️ ▸ 💔 <i>Her name does not come back to you.</i>';
+      if (button === 'button_cast'  && playerMgk < 4)                        _lockMsg = '❤️‍🩹 ▸ 💔 <i>You are too weak to break the spell.</i>';
+      if (button === 'button_pray'  && playerKarma < 4)                      _lockMsg = '🙏 ▸ 💔 <i>Noone is listening to your calls.</i>';
+      if (button === 'button_curse' && playerKarma > -2)                     _lockMsg = '💀 ▸ 💔 <i>You don\'t have the darkness it takes.</i>';
+      if (_lockMsg) { logAction(_lockMsg); redraw(); displayPlayerCannotEffect(); return; }
+      resolveEnding(button);
+      return;
+    }
 
     var buttonUIElement = document.getElementById(button);
     animateUIElement(buttonUIElement,"animate__pulse","0.15");
@@ -60,7 +71,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Dream") {
           displayPlayerCannotEffect();
-          var msg="Cannot attack while asleep."
+          var msg = (areaName === "Shrouded Necropolis") ? "Nothing to strike, only yourself." : "Cannot attack while asleep.";
           if (enemyName.includes("Regrets")) msg="Attacking wouldn't solve anything."
           logPlayerAction(actionString,msg);
           break;
@@ -729,6 +740,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           case "Prop":
             isFishing=false;
+            if (corpseState === "neutralized" && areaName === "Shrouded Necropolis") {
+              logPlayerAction(actionString, "Picked her up to caress one last time.");
+              break;
+            }
             if (_skillOK === false) {
               if (Math.random() < 0.25) {
                 logPlayerAction(actionString, "Stepped badly, sprained your ankle -1 💔");
@@ -750,6 +765,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               _walkMsg = "Continued on your adventure.";
             }
             logPlayerAction(actionString, _walkMsg);
+            if (enemyName === "Gloomy Gateway" && !gatewayPassed) { gatewayPassed = true; applyGatewayEffects(); }
             nextEncounter();
             break;
           case "Memory":
@@ -924,7 +940,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         if (enemyType=="Dream") {
           displayPlayerCannotEffect();
-          var msg="Cannot block while asleep."
+          var msg = (areaName === "Shrouded Necropolis") ? "Nothing to shield against here." : "Cannot block while asleep.";
           if (enemyName.includes("Regrets")) msg="You cannot block your regrets."
           logPlayerAction(actionString,msg);
           break;
@@ -1055,12 +1071,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               var _passiveDmg = Math.max(1, enemyAtk + enemyAtkBonus);
               logPlayerAction(actionString, enemyType === "Hot"
                 ? "Stood too close, got singed -" + _passiveDmg + " 💔"
-                : "Breathed the fumes in -" + _passiveDmg + " 💔");
+                : "Breathed the toxic fumes in -" + _passiveDmg + " 💔");
               playerHit(_passiveDmg);
             } else {
               var _deflectMsg = enemyType === "Hot"
-                ? (_crit === 'success' ? "Perfectly deflected the heat." : "Deflected the heat -1 🟢")
-                : (_crit === 'success' ? "Perfectly blocked the fumes."  : "Covered your face, blocked the fumes -1 🟢");
+                ? (_crit === 'success' ? "Perfectly deflected the heat." : "Deflected the burning heat -1 🟢")
+                : (_crit === 'success' ? "Perfectly covered your face."  : "Managed to cover your face  -1 🟢");
               enemyStaminaChangeMessage(-1, _deflectMsg, "Blocked, but was not attacked -1 🟢");
               displayPlayerEffect("🔰");
             }
@@ -1099,6 +1115,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (playerSta>0) playerSta-=1;
             isFishing=false;
             animateFlipNextEncounter();
+            break;
+          }
+
+          if (enemyType=="Dream") {
+            displayPlayerCannotEffect();
+            logPlayerAction(actionString, (areaName === "Shrouded Necropolis") ? "No spell will save you now." : "Cannot cast while asleep.");
             break;
           }
 
@@ -1418,6 +1440,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
 
+          if (enemyType=="Dream") {
+            displayPlayerCannotEffect();
+            logPlayerAction(actionString, (areaName === "Shrouded Necropolis") ? "This wound is beyond healing." : "Cannot heal while asleep.");
+            break;
+          }
+
           if (playerMgk<1 && enemyType!=="Curse" && enemyType!=="Altar"){
             logPlayerAction(actionString,"Not enough mana, requires +1 🔵");
             displayPlayerCannotEffect();
@@ -1492,10 +1520,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAttackOrRest();
             break;
 
-          case "Dream":
-            playerHeal();
-            break;
-
           case "Altar":
             // button_pray at Altar = heal (no mana cost; real altar prayer is on button_speak)
             var _altarMissingHp = playerHpMax - playerHp;
@@ -1536,6 +1560,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             animateFlipNextEncounter();
             break;
+        }
+
+        if (enemyType=="Dream") {
+          displayPlayerCannotEffect();
+          logPlayerAction(actionString, (areaName === "Shrouded Necropolis") ? "The darkness refuses to leave you." : "Cannot curse while asleep.");
+          break;
         }
 
         if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
@@ -1727,7 +1757,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Dream":
-            logPlayerAction(actionString,"Trying hard but cannot move.");
+            logPlayerAction(actionString, (areaName === "Shrouded Necropolis") ? "Nothing to reach for." : "Trying hard but cannot move.");
             displayPlayerCannotEffect();
             break;
 
@@ -2216,24 +2246,39 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Small":
+            var _sEStaStart = Math.max(0, (enemySta || 0) - (enemyStaLost || 0));
             if (_skillOK === false) {
-              // Both sides tire from the failed grab attempt
-              if (playerSta > 0) playerSta--;
-              if (enemyStaLost < enemySta) enemyStaLost++;
-              logPlayerAction(actionString, "Slipped through your fingers -1 🟢");
+              if (_crit === 'fail') {
+                playerSta = Math.max(0, playerSta - 2);
+                logPlayerAction(actionString, "Lost your grip and stumbled -2 🟢");
+              } else {
+                if (playerSta > 0) playerSta--;
+                if (enemyStaLost < enemySta) enemyStaLost++;
+                logPlayerAction(actionString, "Slipped through your fingers -1 🟢");
+              }
               displayEnemyCannotEffect();
               if (enemyCastIfMgk()) break;
               if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
               break;
             }
-            if (_crit === 'success') {
-              // Perfect timing — grabbed without breaking a sweat, no stamina spent
-              enemyGrabbedIntoLoot("Snatched it without breaking a sweat.");
-              break;
+            if (_sEStaStart > 0) {
+              if (_crit === 'success') {
+                if (playerSta > 0) playerSta--;
+                enemyGrabbedIntoLoot("Snatched it with perfect timing -1 🟢");
+                break;
+              }
+              // Regular pass with stamina — tire them, not pocketed yet
+              if (playerSta > 0) playerSta--;
+              enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
+              logPlayerAction(actionString, "Got a hold of it, not firmly -1 🟢");
+              displayEnemyCannotEffect();
+              if (enemyCastIfMgk()) break;
+              if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
+            } else {
+              // No stamina remaining — regular pass pockets them
+              if (playerSta > 0) playerSta--;
+              enemyGrabbedIntoLoot();
             }
-            // Normal success: spend 1 STA and pocket them
-            if (playerSta > 0) playerSta--;
-            enemyGrabbedIntoLoot();
             break;
 
           case "Friend":
@@ -2293,6 +2338,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Caught something without bait"+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold));
             }
             displayEnemyEffect("🪝");
+            playerFishCatches++;
             getRandomFish(_crit === 'success' ? getArtifactLootIndex() : undefined);
             break;
 
@@ -2715,7 +2761,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Dream":
             displayPlayerCannotEffect();
-            var msg="Cannot speak while asleep."
+            var msg = (areaName === "Shrouded Necropolis") ? "Your calling remains unanswered." : "Cannot speak while asleep.";
             if (enemyName.includes("Regrets")) msg="Your throat shakes as you sigh."
             logPlayerAction(actionString,msg);
             break;
@@ -3052,6 +3098,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerCannotEffect();
             displayPlayerEffect("👀");
             break;
+        }
+
+        if (areaName !== "Depths of Slumber" && areaName !== "Shrouded Necropolis") {
+          playerAreaSleepCount++;
+          var _thr = (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.sleepAreaThreshold != null)
+            ? GAME_CONFIG.sleepAreaThreshold : 3;
+          if (playerAreaSleepCount === _thr - 1) {
+            logAction("💤 ▸ <i>" + getSleepNearLimitLog() + "</i>");
+          } else if (playerAreaSleepCount > _thr) {
+            playerTotalSleepPenalty++;
+            logAction("💤 ▸ <i>" + getSleepOverLimitLog() + "</i>");
+          }
         }
     };
     var _wasStillFishing = isFishing;

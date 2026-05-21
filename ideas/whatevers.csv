@@ -220,3 +220,11 @@ Fishing;🪵;Driftwood Figurine;Item;1;0;0;0;0;0;0;Handcarved Curio;Worn by sea 
 
 //Environmental / fishing spots
 🏝️ 🏖 🌥️ 🌩️ 🫧 🌾 🌊 🎣
+
+// Cut final bossfight parts
+Shrouded Necropolis;👰🏻‍♀️;Defeated Bride;Friend;0;0;0;0;0;0;0;Forgotten Love;You were my whole world... I loved you!<br>How could you do this to me?;You never should have come here!;none
+Shrouded Necropolis;👰🏻‍♀️;Dying Bride;Friend;0;0;0;0;0;0;0;Forgotten Love;The last slivers of her life are slipping away.<br>Seems like you have <b>finally put her to rest</b>.;"Don't you... ever forget me.";none
+Shrouded Necropolis;👤;Lethargic Shade;Friend;0;0;0;0;0;0;0;Familiar Being;Looks like they have not noticed you... yet?<br>;"Oh... You finally came back.";none
+Shrouded Necropolis;😟;Intrusive Thoughts;Dream;0;0;0;0;0;0;0;Disturbing Feeling;The time has come to <b>acknowledge your sins</b>.<br>You cannot hide from your past anymore.;The inner thoughts took over.;none
+Shrouded Necropolis;😦;Tragic Realization;Dream;0;0;0;0;0;0;0;Breaking Point;Ohh... <b>You finally remember</b> what you've done.<br>That nefarious <b>witchery did not go well</b>.;Everything seems so clear now.;none
+Shrouded Necropolis;😱;Boneshaking Panic;Dream;0;0;0;0;0;0;0;Eternal Suffering;<b>You corrupted the whole world around you!</b><br>Why couldn't you just let her go in peace.;You've revealed the horrific truth.;none

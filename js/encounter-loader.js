@@ -251,7 +251,7 @@ function loadEncounter(index, fileLines = linesStory){
   }
 
   //Specific encounter starts
-  if (enemyType=="Dream" && (!enemyName.includes("Waking Moment")) && (!enemyName.includes("Terrific Realization")) && (!enemyName.includes("Horrific Realization"))) playerSta=0;
+  if (enemyType=="Dream" && areaName !== "Shrouded Necropolis" && (!enemyName.includes("Waking Moment")) && (!enemyName.includes("Terrific Realization")) && (!enemyName.includes("Horrific Realization"))) playerSta=0;
 
   //Decrase final bass attack/mana based on player love
   if (enemyName.includes("Bride") && playerLove>2) {
@@ -318,14 +318,10 @@ function loadEncounter(index, fileLines = linesStory){
     int: enemyInt, mgk: enemyMgk, def: enemyDef, note: enemyTeam
   });
 
-  if (enemyName === "Gloomy Gateway" && !gatewayPassed) {
-    gatewayPassed = true;
-    setTimeout(applyGatewayEffects, 600);
-  }
+
   if (enemyName === "Dying Bride") {
     isEndingState = true;
-    brideDialogueActive = true;
-    setTimeout(startBrideDialogue, 700);
+    setTimeout(startBrideDialogue, 300);
   }
 
   if (_isRival) {

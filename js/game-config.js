@@ -36,6 +36,7 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: 0,
     killItemDropChance:       5,
     killConsumableDropChance: 10,
+    sleepAreaThreshold:       3,
     rivals: {
       enabled:       true,
       spawnChance:   33,
@@ -55,6 +56,7 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: 8,
     killItemDropChance:       5,
     killConsumableDropChance: 10,
+    sleepAreaThreshold:       5,
     rivals: {
       enabled:       false,
       spawnChance:   0,
@@ -74,6 +76,7 @@ var DIFFICULTY_MODES = {
     spawnConsumableDropBonus: -4,
     killItemDropChance:       10,
     killConsumableDropChance: 15,
+    sleepAreaThreshold:       2,
     rivals: {
       enabled:       true,
       spawnChance:   50,
@@ -122,7 +125,7 @@ var RARITY_TIERS = {
 
 
 
-// Net thresholds for item rarity display and loot rolling.
+// Net thresholds for permanent item rarity display and loot rolling.
 // Separate from origin thresholds in RARITY_TIERS.
 // Magnificent (Uncommon colors) at >=uncommon; Exquisite (Rare colors) at >=rare;
 // Legendary at >=legendary as a stat-based safeguard (Artifact note is the primary path).
@@ -130,6 +133,14 @@ var ITEM_NET_THRESHOLDS = {
   uncommon:  0.5,
   rare:      2.0,
   legendary: 6.0
+};
+
+// Net thresholds for consumable rarity display and eat-achievement checks.
+// Lower than item thresholds because calcConsumableNet halves hp/sta (temporary effects).
+var CONSUMABLE_NET_THRESHOLDS = {
+  uncommon:  0.5,
+  rare:      1.0,
+  legendary: 3.0
 };
 
 var RarityManager = (function () {
@@ -151,6 +162,16 @@ var RarityManager = (function () {
     if (net >= ITEM_NET_THRESHOLDS.rare)      return 'Rare';
     if (net >= ITEM_NET_THRESHOLDS.uncommon)  return 'Uncommon';
     if (net <  0)                             return 'Cursed';
+    return 'Common';
+  }
+
+  // Consumable-specific tier from net. Paired with calcConsumableNet.
+  // Uses lower rare/legendary thresholds because hp/sta are halved in the formula (temporary effects).
+  function getTierForConsumableNet(net) {
+    if (net >= CONSUMABLE_NET_THRESHOLDS.legendary) return 'Legendary';
+    if (net >= CONSUMABLE_NET_THRESHOLDS.rare)      return 'Rare';
+    if (net >= CONSUMABLE_NET_THRESHOLDS.uncommon)  return 'Uncommon';
+    if (net <  0)                                   return 'Cursed';
     return 'Common';
   }
 
@@ -214,8 +235,9 @@ var RarityManager = (function () {
   }
 
   return {
-    getTierForNet:        getTierForNet,
-    getTierForItemNet:    getTierForItemNet,
+    getTierForNet:             getTierForNet,
+    getTierForItemNet:         getTierForItemNet,
+    getTierForConsumableNet:   getTierForConsumableNet,
     getTierFromNote:      getTierFromNote,
     stripTagFromNote:     stripTagFromNote,
     rollTier:             rollTier,
