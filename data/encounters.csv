@@ -157,7 +157,7 @@ Fading Wildlands;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Pr
 Fading Wildlands;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 Fading Wildlands;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
-Fading Wildlands;💍;Engraved Ring;Item-Trinket;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Fading Wildlands;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Fading Wildlands;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Fading Wildlands;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;The blood wasn't yours. Not yet.;kill_first
@@ -487,7 +487,7 @@ Forsaken Village;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Pr
 Forsaken Village;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 Forsaken Village;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Forsaken Village;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
-Forsaken Village;💍;Engraved Ring;Item-Trinket;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Forsaken Village;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Forsaken Village;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Forsaken Village;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Forsaken Village;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
@@ -863,7 +863,7 @@ Twisted Fairyland;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;P
 Twisted Fairyland;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 Twisted Fairyland;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Twisted Fairyland;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
-Twisted Fairyland;💍;Engraved Ring;Item-Trinket;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Twisted Fairyland;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Twisted Fairyland;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Twisted Fairyland;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Twisted Fairyland;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
@@ -1126,7 +1126,7 @@ River of Sorrows;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Pro
 River of Sorrows;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 River of Sorrows;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
 River of Sorrows;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
-River of Sorrows;💍;Engraved Ring;Item-Trinket;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+River of Sorrows;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 River of Sorrows;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 River of Sorrows;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
@@ -1330,7 +1330,7 @@ Shrouded Necropolis;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>
 Shrouded Necropolis;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 Shrouded Necropolis;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Shrouded Necropolis;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
-Shrouded Necropolis;💍;Engraved Ring;Item-Trinket;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Shrouded Necropolis;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Shrouded Necropolis;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Shrouded Necropolis;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 
@@ -1382,7 +1382,7 @@ Fishing;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you
 Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
 Fishing;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
-Fishing;💍;Engraved Ring;Item-Trinket;0;0;0;0;-4;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-4 🧠 Intellect</b>.;The temptation took its toll.;full_party
+Fishing;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Fishing;👒;Fishing Hat;Item-Head;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
 
 Fishing;🀄️;Life-Stealing Rune;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Melee <b>⚔️ Attacks</b> have 25% chance<br> to restore <b>+1 ❤️ Health</b> on a successful hit.;Gained 25% chance to <b>🩸 Steal Life</b>.;none
