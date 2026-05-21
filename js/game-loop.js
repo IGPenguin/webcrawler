@@ -253,6 +253,7 @@ function gameEnd() {
 function _doGameEnd(endType) {
   endType = endType || 'win';
   AchievementManager.check('game_win');
+  AchievementManager.check('game_win_ending', endType);
   if (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.label === 'Hardcore') {
     AchievementManager.check('hardcore_win');
   }
