@@ -225,23 +225,21 @@ function getGameTip(){
   return random_quotes[Math.floor(Math.random() * random_quotes.length)];
 }
 
-function getPoem(){
+function getPoem(){ //For the letters "Lover's Memento"
   const random_quotes = [
-    "Please, be careful what you wish for, my love.<br>It might as well be exactly what you get.",
-    "Do not ever follow where I fell, my heart.<br>The ground has swallowed my beauty.",
-    "My vows outlived my breath, it seems.<br>They whisper still, beneath the soil.",
-    "The earth tried to keep me, but not anymore.<br>I rose with your name on my lips.",
-    "You whispered into the grave like a prayer.<br>And I came, half hatred, half devotion.",
-    "I drank from the chalice of sorrow.<br>It tasted like you — and I awoke.",
+    "Please, be careful what you wish for.<br>It might be exactly what you get.",
+    "Do not follow where I fell, my heart.<br>The ground has swallowed my beauty.",
+    "My vows outlived my breath.<br>They now whisper beneath the soil.",
+    "The earth tried to keep me underneath.<br>I rose with your name on my lips.",
+    "You whispered into the grave.<br>I came, half hatred, half devotion.",
+    "I drank from the chalice of sorrow.<br>It tasted like you, and I awoke.",
     "I stitched myself from bones and vows.<br>Just to stand where you once wept.",
-    "You said 'forever' with a mortal tongue.<br>I kept my promise — what's your excuse?",
-    "The mirror cracked when I passed.<br>It still shows me, just not the same way.",
+    "You promised to love me forever.<br>I kept my promise, what's your excuse?",
+    "The mirror cracked when I passed.<br>Still shows me, just not the same way.",
     "The bells no longer ring for weddings.<br>Not since you spoke my name.",
     "The trees hum softly where I fell and rose.<br>No birds have sung there since.",
     "I left a kiss upon the oak we carved.<br>The bark split down the middle.",
-    "Don't reach for the old book, my love.<br> Some secrets should remain hidden forever.",
-    "You'll want to fix what was never broken.<br>But disturbing the peace won't help.",
-    "You did this to me... did this to us!<br>Why wouldn't you let me go?",
+    "Don't reach for the old book, my love.<br> Some secrets should remain hidden.",
     "The world could remain peaceful.<br>If only you would listen to me.",
     "I still wear your name like a veil.<br>Even the worms dare not touch it.",
     "You called me back with love.<br>But love does not know mercy.",
@@ -249,12 +247,12 @@ function getPoem(){
     "Every petal you left on my grave<br>grew thorns when you turned away.",
     "Your healing hands became my undoing.<br>But I am not fully gone.",
     "The endless cold welcomed me first.<br>Then I remembered your warmth.",
-    "You begged the ancient gods to give me back.<br>They laughed and released the darkness.",
-    "I came the way you asked.<br>Not fully whole — but yours.",
+    "You begged the gods to give me back.<br>And they released the darkness.",
+    "I came the way you asked.<br>Not fully whole, but yours.",
     "Our vow didn't end with my death.<br>Only my breathing did.",
     "They buried me with lovely roses.<br>But I bloomed with something else.",
-    "You desperately prayed for an act of god.<br>I became one you could not bear.",
-    "Even now, I reach for you - nowhere to find you.<br>Only shadows take my hand.",
+    "You desperately prayed for act of god.<br>I became one you could not bear.",
+    "Even now, I reach for you..<br>Only shadows take my hand.",
     "The stars we used to watch together...<br>They now turn their faces away.",
     "Your twisted love outlived my breath.<br>Then cursed me forever.",
     "You called me back with trembling hands.<br>Now tremble for what you've done.",
@@ -262,8 +260,8 @@ function getPoem(){
     "You wanted me to stay.<br>I'll fulfill your wish.",
     "Love me as I am now.<br>Or rot beside me.",
     "You broke me with foul magic.<br>Now I return with justice.",
-    "I died believing in your endless love.<br>Now I rise certain of your betrayal.",
-    "The wicked altar remembers what you forgot.<br>And so do I, my love."];
+    "I died believing in your love.<br>Now I rise certain of your betrayal.",
+    "The wicked altar remembers what you forgot.<br>And surely so do I, my love."];
   return "<i>"+random_quotes[Math.floor(Math.random() * random_quotes.length)]+"</i>";
 }
 
@@ -677,18 +675,18 @@ function getWhisperingStonesLog() {
 }
 
 var _RIVAL_LAST_WORDS = {
-  win_speak:   ["Said her name once. She remembered.", "Called to her. She heard."],
-  win_free:    ["Freed her once. Not this time.", "The curse broke. Once."],
-  win_kill:    ["Killed her before. This time, different.", "Drew blood once. Old habit."],
-  win_embrace: ["Chose the dark before.", "Walked into it willingly. Once."],
-  win_pray:    ["The gods heard them once.", "Prayed hard enough. Once."],
-  win_walk:    ["Walked away before. No more.", "Turned their back once."],
-  win_guard:   ["Stood guard once. Now they fall.", "Chose to stay before."],
-  win_sleep:   ["Lay down before. This time for good.", "Found rest once. Briefly."],
-  win_curse:   ["The pact followed them here.", "Made a deal once. It remembers."],
-  death:       ["Died before reaching her. Died again.", "Never made it. Not then, not now.", "Fell short before. No closer now."],
-  rival_death: ["A rival ended them before. Again.", "Cut down once. Cut down again."],
-  win:         ["Finished it once. The ending is lost.", "Reached the end before. Which end?"]
+  win_speak:   ["Said her name, she remembered.", "Called to her, she heard."],
+  win_free:    ["Freed her once, not this time.", "Broke the curse before, not now."],
+  win_kill:    ["Killed her before, now they pay.", "Drew blood once, karma remembers."],
+  win_embrace: ["Chose the dark before.", "Walked into it willingly."],
+  win_pray:    ["The gods heard them once.", "Prayed hard enough, once before."],
+  win_walk:    ["Walked away before, not this time.", "Turned their back once, not now."],
+  win_guard:   ["Stood guard once, now they fall.", "Chose to stay before, now forever."],
+  win_sleep:   ["Laid down before and now for good.", "Found rest once, but only briefly."],
+  win_curse:   ["The pact followed them here.", "Made a deal once, karma remembers."],
+  death:       ["Died before reaching her.", "Never made it. Not then, not now.", "Fell short before, not closer now."],
+  rival_death: ["Ended by rival before, now as well.", "Got cut down once and now again."],
+  win:         ["Finished once, but not this time.", "Reached the end before, not now though."]
 };
 
 function getRivalLastWord(endType) {

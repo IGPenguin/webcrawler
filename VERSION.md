@@ -1,7 +1,12 @@
+## ver. 05/21/26 @ 10:56 PM
+💔 Fix game end handling and visuals, finally
+♻️ Reorder and redesign game ending choices
+✨ No longer require karma for "NAME" ending
+💬 Updated various texts throughout story
+
 ## ver. 05/21/26 @ 05:43 PM
 🧡 Actionbar is 100% pass for quest items give
 🗝️ Number of keys in the loot pools reduced
-
 
 ## ver. 05/21/26 @ 12:51 PM
 🎣 Early fishing moved to boss, then spawn 4-6

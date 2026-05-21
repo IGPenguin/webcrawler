@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 05/21/26 @ 05:43 PM"
+var versionCode = "ver. 05/21/26 @ 10:56 PM"
 var initialEncounterOverride = 0; // set to 5 to skip tutorial
 
 var SPLASH_DISABLED_LOCALHOST = true;

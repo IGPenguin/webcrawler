@@ -120,7 +120,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_isRival) {
               AchievementManager.check('rival_kill');
               if (typeof RivalManager !== 'undefined') {
-                logAction("💭 ▸ <i>" + RivalManager.getLastWord(_rivalEndType) + "</i>");
+                logAction(enemyEmoji+" ▸ 🗯️ <i>" + RivalManager.getLastWord(_rivalEndType) + "</i>");
                 pushEncounter(RivalManager.getRivalItemDrop(_rivalInventory));
               }
             }
