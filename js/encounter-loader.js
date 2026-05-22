@@ -205,6 +205,10 @@ function loadEncounter(index, fileLines = linesStory){
     case "Memory":
       logAction("👁️ ▸ "+enemyEmoji+" Noticed something: <b>"+enemyName+"</b>")
       break;
+    case "Mirror":
+      enemyDesc = getMirrorDesc(enemyName);
+      logAction("👁️ ▸ " + enemyEmoji + " Spotted reflection: <b>" + enemyName + "</b>");
+      break;
     case "Prop":
       if (enemyName === 'Whispering Stones') {
         logAction("👁 ▸ 🪦 <i>" + (typeof getWhisperingStonesLog !== 'undefined' ? getWhisperingStonesLog() : 'Others have stood here before.') + "</i>");

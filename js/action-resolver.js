@@ -21,7 +21,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       if (button === 'button_grab'  && playerLove < 4)                       _lockMsg = '🫂 ▸ 💔 <i>She struggles to not let you closer.</i>';
       if (button === 'button_speak' && playerLove < 6 )                      _lockMsg = '❤️ ▸ 💔 <i>Her name does not come back to you.</i>';
       if (button === 'button_pray'  && playerMgk < 4)                        _lockMsg = '❤️‍🩹 ▸ 💔 <i>You are too weak to break the spell.</i>';
-      if (button === 'button_cast'  && playerKarma < 4)                      _lockMsg = '🙏 ▸ 💔 <i>Noone is listening to your calls.</i>';
+      if (button === 'button_cast'  && playerLck < 6)                        _lockMsg = '🙏 ▸ 💔 <i>Fate has not blessed this path.</i>';
       if (button === 'button_curse' && playerKarma > -2)                     _lockMsg = '💀 ▸ 💔 <i>You don\'t have the darkness it takes.</i>';
       if (_lockMsg) { logAction(_lockMsg); redraw(); displayPlayerCannotEffect(); return; }
       resolveEnding(button);
@@ -133,6 +133,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         switch (enemyType){
+          case "Mirror":
           case "Item":
           case "Consumable":
           case "Container-Consume":
@@ -144,7 +145,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
                 playerHit(1, false);
               } else {
-                logPlayerAction(actionString, "Your attack missed -1 🟢");
+                logPlayerAction(actionString, "Your attack missed it -1 🟢");
               }
               break;
             }
@@ -171,8 +172,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               encounterUsed=true;
               break;
             }
-            logPlayerAction(actionString, "Smashed it to pieces -1 🟢");
-            nextEncounter();
+            logPlayerAction(actionString, "Smashed it to many pieces -1 🟢");
+
+            if (enemyType === "Mirror") {
+              logPlayerAction(actionString, "Misfortune took a notice of you! -3 🍀", colorRed)
+              playerLck-=3;
+            }
+
+            animateFlipNextEncounter();
             break;
           case "Trap-Sleep":
             if (_skillOK === false) {
@@ -436,6 +443,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             logPlayerAction(actionString,"Your attack had no effect -1 🟢");
             displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
       }
       break;
 
@@ -742,6 +750,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               nextEncounter();
             }
             break;
+          case "Mirror":
           case "Prop":
             isFishing=false;
             if (corpseState != "" && areaName === "Shrouded Necropolis") {
@@ -2939,6 +2948,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
+          case "Mirror":
           case "Prop":
             if (!playerRested && (totalBonus>0 || totalMalus<0)){
               if (_skillOK === false && _crit !== 'fail') {

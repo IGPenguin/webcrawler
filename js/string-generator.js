@@ -703,3 +703,65 @@ function getRivalLastWord(endType) {
   var pool = _RIVAL_LAST_WORDS[endType] || ["No echo. They left nothing behind."];
   return pool[Math.floor(Math.random() * pool.length)];
 }
+
+// ── Mirror encounter text ─────────────────────────────────────────────────────
+
+var _MIRROR_SOUL_POOLS = [
+  // neg-0
+  ["A shadow lingers where your soul used to be.", "The reflection offers no warmth in return.", "The mirror shows absence of altruism."],
+  // low (1-3)
+  ["A flicker of conscience is barely visible.", "The mirror recognizes something warm inside you.", "Your soul seems present, if you're uncertain."],
+  // mid (4-6)
+  ["The mirror finds your soul clear and steady.", "Something righteous sparkles in your gaze.", "A warm light answers from within you."],
+  // high (7+)
+  ["The mirror blazes with your conviction.", "Few souls burn this bright among the dead.", "An ancient conscience stares back nodding."]
+];
+
+var _MIRROR_HEART_POOLS = [
+  // neg-0
+  ["The mirror shows your hollow and cold chest.", "Nothing passionate stirs behind your eyes.", "If love was ever there, it has since departed."],
+  // low (1-3)
+  ["A dim pulse, cautious, not quite trusting.", "It shows something fragile kept alive by habit.", "Love survives in you, barely, as a reflex."],
+  // mid (4-6)
+  ["It shows a heart still capable of warmth.", "Something tender holds its shape inside you.", "Love burns in your chest like a slow fire."],
+  // high (7+)
+  ["Affection burns hot in your chest.", "This much love is rare among the dead.", "The glass cracks slightly, overwhelmed by emotion."]
+];
+
+var _MIRROR_KISMET_POOLS = [
+  // neg-0
+  ["Nothing kind is written in your margin.", "Misfortune is coiled around your silhouette.", "Luck left a forwarding address somewhere else."],
+  // low (1-3)
+  ["The odds acknowledge you slightly.", "Fortune notices you, without enthusiasm.", "Something small is trying to help you."],
+  // mid (4-6)
+  ["Luck is on your side today.", "The chances are bending towards you.", "Fortune keeps a cautious eye on you."],
+  // high (7+)
+  ["The mirror blinks, then looks again.", "Tangible blessing follows you around.", "Chance and fate are on your side."]
+];
+
+var _MIRROR_PSYCHE_POOLS = [
+  // neg-0
+  ["The mirror reflects a vast empty mind.", "Thoughts move through like smoke through cracks.", "Whatever wisdom you had has gone quiet."],
+  // low (1-3)
+  ["A mind still forming, still testing its edges.", "Instinct is doing most of the work.", "The mirror sees potential behind the fog."],
+  // mid (4-6)
+  ["The mind reflected here is precise and awake.", "Clarity is something you have earned.", "Intelligence watches from behind with patience."],
+  // high (7+)
+  ["The mirror struggles to reflect of your mind.", "Few things are as sharp as what stares back.", "The intellect reflected warps the glass."]
+];
+
+var _MIRROR_CONFIG = {
+  'Soul Mirror':   { getStat: function() { return playerKarma; }, label: 'Karma',     emoji: '✨', pools: _MIRROR_SOUL_POOLS   },
+  'Heart Mirror':  { getStat: function() { return playerLove;  }, label: 'Love',      emoji: '💕', pools: _MIRROR_HEART_POOLS  },
+  'Kismet Mirror': { getStat: function() { return playerLck;   }, label: 'Luck',      emoji: '🍀', pools: _MIRROR_KISMET_POOLS },
+  'Psyche Mirror': { getStat: function() { return playerInt;   }, label: 'Intellect', emoji: '🧠', pools: _MIRROR_PSYCHE_POOLS }
+};
+
+function getMirrorDesc(mirrorName) {
+  var c = _MIRROR_CONFIG[mirrorName];
+  if (!c) return '';
+  var stat = c.getStat();
+  var tierIdx = stat <= 0 ? 0 : stat <= 3 ? 1 : stat <= 6 ? 2 : 3;
+  var header = chooseFrom(c.pools[tierIdx]);
+  return header + '<br><i>Your ' + c.label + ' is ' + stat + ' ' + c.emoji + '</i>';
+}

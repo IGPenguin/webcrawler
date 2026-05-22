@@ -276,6 +276,10 @@ function redraw(){
         enemyStatusString=decorateStatusText("💔","Remembrance",colorPink);
         cardUIElement.style.backgroundColor=colorDarkPink;
         break;
+    case "Mirror":
+        enemyStatusString=decorateStatusText("🌗","Reflection",colorDarkGrey);
+        cardUIElement.style.backgroundColor=colorSuperDarkGrey;
+        break;
     default:
       enemyStatusString=decorateStatusText("⚠️","No Details","red");
       //Multi-match

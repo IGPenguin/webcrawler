@@ -98,7 +98,7 @@ function _setEndingButtons() {
   setButton('button_grab',  '🫂 Hold',  playerLove >= 4                          ? colorPink      : colorDarkGrey);
   setButton('button_speak', '❤️ Name',  playerLove >= 6                          ? colorPink      : colorDarkGrey);
   setButton('button_pray',  '❤️‍🩹 Cure', playerMgk >= 4                           ? colorLightBlue : colorDarkGrey);
-  setButton('button_cast',  '🙏 Pray',   playerKarma >= 4                         ? colorYellow : colorDarkGrey);
+  setButton('button_cast',  '🙏 Pray',   playerLck >= 6                           ? colorYellow : colorDarkGrey);
   setButton('button_curse', '💀 Damn',  playerKarma <= -2                        ? colorDarkRed       : colorDarkGrey);
 }
 

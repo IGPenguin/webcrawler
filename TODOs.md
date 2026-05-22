@@ -35,10 +35,11 @@
 
 ### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
 - Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.
-- Likely a CSS height/overflow issue on a container that conditionally expands; investigate `.game-container`, `body`, and any dynamically resized panels in `ui-render.js` and `ui-effects.js` for unconstrained height growth.
+- iOS WebKit (Chrome/Safari on iPhone) has a known scroll-height doubling bug when `zoom` is applied to `<body>` — the scrollable area becomes 2× the content height, showing a grey blank region below.
+- Root fix: `overflow:hidden` on body kills legitimate menu scroll on short screens. Proper fix likely needs `html { overflow:hidden; height:100% }` + `body { overflow-y:auto; height:100% }` to confine scroll to body as its own container, or replacing `zoom` with `transform:scale` on a wrapper div.
 - Priority: P2 — visually breaks the page and is jarring on mobile; intermittent but reproducible.
 - Type: Bug | Severity: Major
-- Effort: S | Gain: M
+- Effort: M | Gain: M
 
 
 ### [MIRR-ENCNTR] Feature: 🪞 Mirror encounter type — hidden stat reveal

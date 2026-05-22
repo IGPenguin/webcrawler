@@ -25,7 +25,7 @@ function calcActionBarConfig(button, adjustment) {
   var isBoss      = types.includes('Boss');
   var isHot       = types.includes('Hot');
   var isToxic     = types.includes('Toxic');
-  var isGrabbable = /Container|^Item$|Consumable|^Prop$/.test(types);
+  var isGrabbable = /Container|^Item$|Consumable|^Prop$|^Mirror$/.test(types);
   var isTrap      = types.includes('Trap');
   var isAltar     = types.includes('Altar');
   var isCurse     = types === 'Curse';
@@ -46,7 +46,7 @@ function calcActionBarConfig(button, adjustment) {
                      || (button === 'button_grab'  && playerLove < 4)
                      || (button === 'button_speak' && playerLove < 6)
                      || (button === 'button_pray'  && playerMgk < 4)
-                     || (button === 'button_cast'  && playerKarma < 4)
+                     || (button === 'button_cast'  && playerLck < 6)
                      || (button === 'button_curse' && playerKarma > -2);
     if (_endingLocked) {
       return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100, barStyle: 'dark' };
@@ -165,7 +165,7 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Prop / encounterUsed / Fishing / corpse walk: wide zone with one hidden danger slot
-  if (button === 'button_roll' && (types === 'Prop' || types === 'Fishing' || types === 'Memory' || types == 'Friend' || encounterUsed || corpseState !== '')) {
+  if (button === 'button_roll' && (types === 'Prop' || types === 'Mirror' || types === 'Fishing' || types === 'Memory' || types == 'Friend' || encounterUsed || corpseState !== '')) {
     var _dzEdge = 15; // min distance from success-zone edge (5 and 95) to danger zone center
     var _dzCenter = Math.round((5 + _dzEdge + DZ_W / 2) + Math.random() * (90 - 2 * (_dzEdge + DZ_W / 2)));
     var _dz = [{ min: _dzCenter - DZ_W / 2, max: _dzCenter + DZ_W / 2 }];
@@ -380,8 +380,8 @@ function calcActionBarConfig(button, adjustment) {
     }
   }
 
-  // Grab Prop — always succeeds, no skill required
-  if (button === 'button_grab' && types === 'Prop') {
+  // Grab Prop / Mirror — always succeeds, no skill required
+  if (button === 'button_grab' && (types === 'Prop' || types === 'Mirror')) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 

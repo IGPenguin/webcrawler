@@ -1,3 +1,13 @@
+## ver. 05/22/26 @ 04:25 PM
+💔 Fix game end handling and visuals, finally
+♻️ Reorder and redesign game ending choices
+✨ No longer require karma for "NAME" ending
+🙏 Pray ending now requires luck, not karma
+🕊️ Added 9 achievs and origins per ending 
+🪞 Added mirrors to reflect hidden stats
+✏️ Updated various texts throughout the game
+🌈 Added support for coloring activity log
+
 ## ver. 05/22/26 @ 01:37 AM
 💔 Fix game end handling and visuals, finally
 ♻️ Reorder and redesign game ending choices

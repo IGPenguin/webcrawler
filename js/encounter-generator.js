@@ -235,6 +235,11 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([4, 5, 6]));
       break;
 
+    case 75: // Mirror (random slot, Twisted Fairyland)
+      if (logCall) logGenerator("mirror");
+      pushEncounter(getRandomEncounter(["Mirror"]), chooseFrom([2, 3, 4, 5, 6]));
+      break;
+
     case 70: // Island Small — shore cache, one soft enemy
       if (logCall) logGenerator("island-small");
       pushHouseLoot(10, 20);

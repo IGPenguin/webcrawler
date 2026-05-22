@@ -29,7 +29,7 @@ function downloadRunLog() {
 }
 
 //Logging
-function logPlayerAction(actionString,message){
+function logPlayerAction(actionString,message,color = "#FFF"){
   actionString = actionString.split(" ")[0] + "&nbsp;▸&nbsp;" + enemyEmoji + " " + message + "<br>";
   if (actionString.includes("🪙&nbsp;")) { //Ahhh, yeah more hacks at 1 AM
     var price = actionString.split("&nbsp;")[0] //Very much HACKS... YOLO!!!
@@ -46,11 +46,12 @@ function logPlayerAction(actionString,message){
     actionString=actionString.replaceAll("They ","She ")
   } 
 
+  if (color!="#FFF") actionString='<text style="color:'+color+';">' + actionString.replace(/<br>$/,"") + "</text><br>";
   runLogAdd("log", {msg: actionString.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").replace("<br>","").trim()});
   adventureLog += actionString;
 }
 
-function logAction(message){
+function logAction(message, color = "#FFF"){
 
   //Change references to "She/Her" for final Boss
   if (enemyTeam.includes("Forgotten Love") && areaName.includes("Necropolis")) {
@@ -58,8 +59,9 @@ function logAction(message){
     message=message.replaceAll("their","her")
     message=message.replaceAll("They've","She has")
     message=message.replaceAll("They ","She ")
-  } 
+  }
 
+  if (color !== "#FFF") message = '<text style="color:'+color+';">'+message+"</text>";
   runLogAdd("log", {msg: message.replaceAll("&nbsp;"," ").replaceAll(/<[^>]+>/g,"").trim()});
   adventureLog += message+"<br>";
 }
