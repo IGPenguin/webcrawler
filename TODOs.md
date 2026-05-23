@@ -41,12 +41,11 @@
 - Type: Bug | Severity: Major
 - Effort: M | Gain: M
 
-
 ### [MIRR-ENCNTR] Feature: 🪞 Mirror encounter type — hidden stat reveal
-- New encounter type displaying one hidden stat's current value (mirror-luck, mirror-int, mirror-karma) + a contextual hint string about what the stat does (e.g., "3🍀 — Luck tips the scales"). Mirror can be broken for a negative effect, or spoken to at INT mirror for a +1 INT boost. Start by mimicking prop activity handling; expand per mirror variant.
-- Priority: P2 — directly addresses the single most-flagged design gap: players have no signal on hidden stats mid-run
+- Spoken to at INT mirror for a +1 INT boost.
+- Priority: P?
 - Type: Feature
-- Effort: M | Gain: XL
+- Effort: S | Gain: S
 
 ### [TUTOR-REVAMP] Feature: Tutorial revamp
 - Current tutorial is hardcoded in story.csv — needs feature-level improvement: explain the action bar "better", hint that moral choices accumulate, clarify drachma persistence across runs, clarify memories unlock features, clarify that there is a main menu below the game screen
