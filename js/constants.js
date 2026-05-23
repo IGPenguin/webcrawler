@@ -1,9 +1,9 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 05/22/26 @ 04:25 PM"
-var TUTORIAL_SKIP_INDEX = 6; // linesStory index where returning players resume; update when tutorial rows change
+var versionCode = "ver. 05/23/26 @ 11:31 AM"
 
+var TUTORIAL_SKIP_INDEX = 6; // linesStory index where returning players resume; update when tutorial rows change
 var SPLASH_DISABLED_LOCALHOST = true;
-var TUTORIAL_SKIP_LOCALHOST = true;
+var TUTORIAL_SKIP_LOCALHOST = false;
 var RANKINGS_DISABLED_LOCALHOST = false;
 var TELEMETRY_DISABLED_LOCALHOST = false;
 
