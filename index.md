@@ -332,10 +332,10 @@ layout: default
   </div>
 
   <!-- Always-visible version footer -->
-  <div style="cursor: pointer; width:100%; text-align:center;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
-    <h4 style="font-size:11px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
+  <div id="version_warpper_menu" style="cursor: pointer; padding-right:24px; padding-left:24px; text-align:center;">
+    <h4 style="font-size:11px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by IGPenguin</h4>
+      <h4 id="menu_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
   </div>
-  <h4 id="menu_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
 
 </div><!-- end id_menu -->
 
@@ -603,14 +603,12 @@ layout: default
 </div>
 </div>
 
-<div style="position:relative; margin-top:8px;">
-  <button type="button" id="button_menu" style="position:absolute; left:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⚙️</button>
-  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:70%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🧩</button>
-  <div style="cursor: pointer;" onclick="window.location='https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed';">
-    <h4 style="font-size:11px; opacity:0.6; margin-top:8px; letter-spacing:1px; box-shadow:none; padding-top:0;">developed by <a href="https://github.com/IGPenguin/stay-dead/pulls?q=is%3Apr+is%3Aclosed">IGPenguin</a></h4>
-  </div>
-  <div id="id_bug" style="cursor: pointer;">
-    <h4 id="id_version" style="font-size:10px; margin-top:-22px; margin-bottom:-8px; opacity:0.4; box-shadow:none;"/>
+<div style="position:relative; margin-top:16px; display:flex; justify-content:center; align-items:center;">
+  <button type="button" id="button_menu" style="position:absolute; left:-82px; top:50%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⚙️</button>
+  <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:50%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🧩</button>
+  <div id="version_warpper" style="cursor: pointer; padding-right:4px; padding-left:4px; text-align:center;">
+    <h4 style="font-size:11px; opacity:0.6; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by IGPenguin</h4>
+      <h4 id="id_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
   </div>
 </div>
 

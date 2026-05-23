@@ -490,13 +490,13 @@ function registerClickListenersTechnical(){
   if (_technicalHandler) return;
   var eventType = 'click';
 
-  versionIDUIElement.addEventListener(eventType, ()=> {
-    actionString="⚙️"
-    adventureEndReason="\nDebug: "+enemyEmoji+" "+enemyName
-    //copyAdventureToClipboard();
-    redirectToFeedback();
-    redraw();
-  });
+  // versionIDUIElement.addEventListener(eventType, ()=> {
+  //   actionString="⚙️"
+  //   adventureEndReason="\nDebug: "+enemyEmoji+" "+enemyName
+  //   //copyAdventureToClipboard();
+  //   redirectToFeedback();
+  //   redraw();
+  // });
 
   _technicalHandler = ()=>{
     var oldName=playerName;

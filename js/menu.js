@@ -1187,13 +1187,7 @@ var Menu = (function () {
 
   // ── Version changelog ──────────────────────────────────────────────────────
 
-  function _checkVersionChangelog() {
-    if (_changelogShownThisSession) return;
-    var lastSeen = null;
-    try { lastSeen = localStorage.getItem('sd_last_seen_version'); } catch (e) {}
-    if (lastSeen === versionCode) return;
-
-    _changelogShownThisSession = true;
+  function _fetchAndShowChangelog() {
     fetch('VERSION.md')
       .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
       .then(function (text) {
@@ -1211,6 +1205,16 @@ var Menu = (function () {
         _showChangelog(items.length > 0 ? items : ['💭 No changelog details provided.']);
       })
       .catch(function () { _markVersionSeen(); });
+  }
+
+  function _checkVersionChangelog() {
+    if (_changelogShownThisSession) return;
+    var lastSeen = null;
+    try { lastSeen = localStorage.getItem('sd_last_seen_version'); } catch (e) {}
+    if (lastSeen === versionCode) return;
+
+    _changelogShownThisSession = true;
+    _fetchAndShowChangelog();
   }
 
   function _markVersionSeen() {
@@ -1294,6 +1298,11 @@ var Menu = (function () {
     document.getElementById('changelog_dismiss').addEventListener('click', function () {
       _markVersionSeen();
       document.getElementById('changelog_overlay').style.display = 'none';
+    });
+
+    ['version_warpper', 'version_warpper_menu'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('click', function () { _fetchAndShowChangelog(); });
     });
 
     holdToConfirm(document.getElementById('menu_settings_purge_1'), 3, function () {
