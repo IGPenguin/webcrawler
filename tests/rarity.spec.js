@@ -1,43 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { execSync } = require('child_process');
-const fs = require('fs');
-
-const SCREENSHOTS = process.env.SCREENSHOTS !== '0' && !process.env.CI;
-
-function makeRunDir() {
-  const ts = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
-  const gitInfo = execSync('git log -1 --format="%h %s"')
-    .toString().trim()
-    .replace(/[^a-zA-Z0-9 -]/g, '')
-    .trim()
-    .replace(/\s+/g, '-')
-    .slice(0, 48);
-  const dir = `test-results/${ts}_${gitInfo}`;
-  fs.mkdirSync(dir, { recursive: true });
-  return dir;
-}
-
-const RUN_DIR = SCREENSHOTS ? makeRunDir() : null;
-
-function log(msg) {
-  console.log(msg);
-}
-
-async function shot(page, name) {
-  if (RUN_DIR) await page.screenshot({ path: `${RUN_DIR}/${name}.png` });
-}
-
-async function bootGame(page) {
-  await page.goto('/');
-  await expect(page.locator('#menu_new_game')).toBeVisible({ timeout: 15_000 });
-  await page.waitForLoadState('networkidle');
-  await page.locator('#menu_new_game').click();
-  await expect(page.locator('#id_game')).toBeVisible({ timeout: 10_000 });
-  await page.waitForFunction(
-    () => typeof linesGenerator !== 'undefined' && linesGenerator.length > 0,
-    { timeout: 10_000 }
-  );
-}
+const { RUN_DIR, log, shot, bootGame } = require('./helpers');
 
 const TIER_ORDER = ['Cursed', 'Common', 'Uncommon', 'Rare', 'Legendary'];
 
@@ -47,6 +9,7 @@ test('one item per rarity tier loads and displays without errors', async ({ page
   page.on('pageerror', err => errors.push(err.message));
 
   await bootGame(page);
+  await page.evaluate(() => { previousArea = areaName; });
   log('[rarity] game started');
 
   // Use the game's own _rarityFromRow() to bucket Items and Consumables by tier.
