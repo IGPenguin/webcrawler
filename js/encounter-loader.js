@@ -255,7 +255,7 @@ function loadEncounter(index, fileLines = linesStory){
   }
 
   //Specific encounter starts
-  if (enemyType=="Dream" && areaName !== "Shrouded Necropolis" && (!enemyName.includes("Waking Moment")) && (!enemyName.includes("Terrific Realization")) && (!enemyName.includes("Horrific Realization"))) playerSta=0;
+  if (enemyType=="Dream" && areaName !== "Shrouded Necropolis" && (!enemyName.includes("Waking Moment")) && (!enemyName.includes("Terrific Realization")) && (!enemyName.includes("Horrific Realization") && (!enemyName.includes("Distant Vision")))) playerSta=0;
 
   //Decrase final bass attack/mana based on player love
   if (enemyName.includes("Bride") && playerLove>2) {
