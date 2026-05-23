@@ -107,12 +107,12 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
   }
 
   if (initNextEncounter) {
-    loadEncounter(1 + initialEncounterOverride + encounterIndex); // 0 is the death screen
+    loadEncounter((isLocalhost() && TUTORIAL_SKIP_LOCALHOST ? TUTORIAL_SKIP_INDEX : 1) + encounterIndex); // 0 is the death screen
 
     if (savedCoins != NaN && savedCoins > 0) { // Returning player (second boss killed) — skip tutorial, show shop
       logAction("💤&nbsp;▸&nbsp;💭 This dream again, it never ends...<br><br>");
       playerSta = playerStaMax;
-      loadEncounter(5);
+      loadEncounter(TUTORIAL_SKIP_INDEX);
       drachmaShop[0] = "area:" + "Fading Wildlands";
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
       pushEncounter(drachmaShop);
@@ -121,7 +121,7 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
     else if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player (first boss killed) — skip tutorial, no shop yet
       logAction("💤&nbsp;▸&nbsp;💭 This dream feels strangely familiar.<br><br>");
       playerSta  = playerStaMax;
-      loadEncounter(5);
+      loadEncounter(TUTORIAL_SKIP_INDEX);
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
     } else { //Playing for the first time ever
       logAction("💤&nbsp;▸&nbsp;💭 Fallen unconscious some time ago.<br><br>");
