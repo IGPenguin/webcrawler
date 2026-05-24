@@ -77,20 +77,25 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       var type = "Prop";
       if (procAbilityChance("", 10+playerLck)) type = "Small"; // 10% Small
 
+      var _propRow = null;
       if (procAbilityChance("", 5-playerLck)) { // 5% Trap, lowers with luck
         pushEncounter(getRandomEncounter(allTraps));
       } else {
         if (procAbilityChance("", 5-playerLck)) {
-          pushEncounter(getRandomEncounter(["Prop"],["-1"]));            // 5%-  Bad flavoured
+          _propRow = getRandomEncounter(["Prop"],["-1"]);
+          pushEncounter(_propRow);                                        // 5%-  Bad flavoured
         } else if (procAbilityChance("", 5+playerLck)) {
-          pushEncounter(getRandomEncounter(["Prop"],["1"]));             // 5%+  Good flavoured
+          _propRow = getRandomEncounter(["Prop"],["1"]);
+          pushEncounter(_propRow);                                        // 5%+  Good flavoured
         } else {
-          pushEncounter(getRandomEncounter(["Prop"],[],"",["-1","1"])); // Neutral
+          _propRow = getRandomEncounter(["Prop"],[],"",["-1","1"]);
+          pushEncounter(_propRow);                                        // Neutral
         }
       }
 
       if (type == "Small") {
         pushEncounter(getRandomEncounter(["Small"]));
+        if (_propRow) pushEncounter(_propRow); // prop reappears after the small is dealt with
         pushEncounter(getRandomEncounter(["Container"]));
       }
 
