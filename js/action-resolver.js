@@ -1819,6 +1819,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayEnemyCannotEffect();
                 break;
               }
+              if (_skillOK === false) {
+                logPlayerAction(actionString,"Reached for them, but they slipped free.");
+                displayPlayerCannotEffect();
+                enemyAttackOrRest("They stirred, recovering some energy.");
+                break;
+              }
               logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
               playerSta--;
               enemyKnockedOut();
