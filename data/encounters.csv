@@ -16,7 +16,7 @@ Fading Wildlands;🪵;Reclaimed Logs;Prop;0;0;0;0;0;0;0;Natural Debris;Moss eats
 Fading Wildlands;🪵;Carved Stump;Prop;0;0;0;0;0;0;0;Old Marker;Knife marks tell forgotten stories.<br>;;none
 Fading Wildlands;🪶;Fallen Feather;Prop;0;0;0;0;0;0;0;Quiet Remnant;Something once passed overhead.<br>;;none
 Fading Wildlands;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Fresh Clue;Clear sign of recent activity.<br>;Followed the trail.;none
-Fading Wildlands;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unsettling Clue;Clear sign of recent activity.<br>;Followed the trail.;none
+Fading Wildlands;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unse🪞ttling Clue;Clear sign of recent activity.<br>;Followed the trail.;none
 
 Fading Wildlands;✨;Lingering Starshine;Prop;0;0;0;0;0;1;0;Clear Sky;The stars shine bright like diamonds.<br>;Woke up with a strange power;none
 Fading Wildlands;🌼;Wildflower Bed;Prop;0;0;0;0;1;0;0;Gentle Ground;Flattened blooms form a soft nest.<br>;Slept peacefully among petals;none
@@ -559,6 +559,11 @@ Forsaken Village;📜;Wanted Poster;Item;0;0;0;0;-1;0;0;Note;The scribbled face 
 
 Forsaken Village;🧧;Wedding Invitation;Item;0;0;0;0;0;0;0;Piece of History;po/em;Your heart will always remember;none
 
+Forsaken Village;🪞;Soul Mirror;Mirror;0;0;0;0;0;0;0;Karmic Reflection;Placeholder.<br>;Turned away before it could answer.;none
+Forsaken Village;🪞;Heart Mirror;Mirror;0;0;0;0;0;0;0;Love Reflection;Placeholder.<br>;Looked away without a word.;none
+Forsaken Village;🪞;Kismet Mirror;Mirror;0;0;0;0;0;0;0;Luck Reflection;Placeholder.<br>;Stepped back from what it showed.;none
+Forsaken Village;🪞;Psyche Mirror;Mirror;0;0;0;0;0;0;0;Intellect Reflection;Placeholder.<br>;Moved on before it could reveal more.;none
+
 Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
 Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
 Forsaken Village;🛸;Toy Saucer;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
@@ -913,7 +918,6 @@ Twisted Fairyland;🎎;Lucky Chime;Item;0;0;0;1;0;0;0;Accessory;Traditional prot
 Twisted Fairyland;⛏;Rusty Pickaxe;Item-Weapon;0;1;-1;0;0;0;0;Mining Tool;Meant for stone, now used for survival.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Oof, that is heavy;none
 Twisted Fairyland;🔪;Twisted Blade;Item-Weapon;0;1;0;0;-2;0;0;Ritual Tool;The sacrifical blade demands offering.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;Felt a chill on your back;none
 Twisted Fairyland;🪞;Malevolent Mirror;Item-Trinket;0;0;0;-2;0;1;0;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Reality itself fractured;none
-Twisted Fairyland;🪞;Soul Mirror;Item-Trinket;0;0;0;-2;2;0;0;Mystical Relic;It's hard to face the horrors of truth.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth;none
 Twisted Fairyland;🪘;Tribal Drum;Item-Trinket;0;0;-1;0;2;0;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under your arm;none
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on your hands;none
 

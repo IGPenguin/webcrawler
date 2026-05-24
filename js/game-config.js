@@ -199,10 +199,10 @@ var RarityManager = (function () {
       var base = RARITY_TIERS[t].weight + (bias[t] || 0);
       var luckBonus = 0, karmaBonus = 0;
       switch (t) {
-        case 'Uncommon':  luckBonus =  lck * 1.0; karmaBonus =  k * 0.5; break;
-        case 'Rare':      luckBonus =  lck * 0.5; karmaBonus =  k * 0.3; break;
+        case 'Uncommon':  luckBonus =  lck * 1.0; break;
+        case 'Rare':      luckBonus =  lck * 0.5; break;
         case 'Legendary': luckBonus =  lck * 0.2; break;
-        case 'Common':    luckBonus = -lck * 1.7; karmaBonus = -k * 0.8; break;
+        case 'Common':    luckBonus = -lck * 1.7; break;
         case 'Cursed':    luckBonus = -lck * 0.3; break;
       }
       if (!RARITY_KARMA_ENABLED) karmaBonus = 0;

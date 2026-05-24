@@ -257,3 +257,4 @@ Fishing;🗝️;Silver Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b
 Fishing;🗝️;Bronze Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 Fishing;🗝️;Iron Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 River of Sorrows;🪽;Angel Feather;Item-Trinket;0;0;0;0;0;2;0;<b>Artifact</b>;Something pure she left behind.<br>Provides <b>+2 🔵 Mana</b>.;It is still warm.;ending_free
+Twisted Fairyland;🪞;Soul Mirror;Item-Trinket;0;0;0;-2;2;0;0;Mystical Relic;It's hard to face the horrors of truth.<br>Provides <b>+2 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Realized the dark truth;none
