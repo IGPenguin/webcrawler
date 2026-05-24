@@ -210,7 +210,7 @@ var _BARK_POOLS = {
 // ── Companion Bark Toast ───────────────────────────────────────────────────────
 // color = undefined/null → white border, no flash (ambient bark).
 // color = hex/css string → colored border + flash (fetch reward).
-function showCompanionBarkToast(barkIcon, name, text, color) {
+function showCompanionBarkToast(barkIcon, name, text, color, onDone) {
   var old = document.getElementById('achievement_toast');
   if (old) old.remove();
 
@@ -265,6 +265,7 @@ function showCompanionBarkToast(barkIcon, name, text, color) {
     toast.style.opacity = '0';
     setTimeout(function() {
       if (document.getElementById('achievement_toast') === toast) toast.remove();
+      if (onDone) onDone();
     }, 2300);
   }, 4000);
 }
@@ -402,14 +403,14 @@ function _companionFetch(_type, emoji, _name) {
   if (_type === 'critter') {
     playerLck++;
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + ' +1 🍀</i>');
-    showCompanionBarkToast(_b.icon, _name, _b.text + ' +1 🍀', colorSoftGreen);
+    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text + ' +1 🍀', colorSoftGreen);
     redraw();
     return;
   }
   if (_type === 'large') {
     playerSta = Math.min(playerSta + 1, playerStaMax + 1);
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + ' +1 🟢</i>');
-    showCompanionBarkToast(_b.icon, _name, _b.text + ' +1 🟢', colorSoftGreen);
+    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text + ' +1 🟢', colorSoftGreen);
     redraw();
     return;
   }
@@ -421,7 +422,7 @@ function _companionFetch(_type, emoji, _name) {
       'message:', 'achiev:none'
     ];
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
-    showCompanionBarkToast(_b.icon, _name, _b.text, RarityManager.getColor(_rarityFromRow(_egg)));
+    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text, RarityManager.getColor(_rarityFromRow(_egg)));
     var _currentRow = linesStory[encounterIndex];
     linesStory.splice(encounterIndex + 1, 0, _egg);
     linesStory.splice(encounterIndex + 2, 0, _currentRow);
@@ -435,7 +436,7 @@ function _companionFetch(_type, emoji, _name) {
   var _fetched    = getWeightedEncounter(_fetchTypes, [], _area, _excludes);
   if (!_fetched) return;
   logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
-  showCompanionBarkToast(_b.icon, _name, _b.text, RarityManager.getColor(_rarityFromRow(_fetched)));
+  AchievementManager.queueCompanionBark(_b.icon, _name, _b.text, RarityManager.getColor(_rarityFromRow(_fetched)));
   var _currentRow = linesStory[encounterIndex];
   linesStory.splice(encounterIndex + 1, 0, _fetched);
   linesStory.splice(encounterIndex + 2, 0, _currentRow);
@@ -473,7 +474,7 @@ function companionBark(emoji) {
     var _pool = _BARK_POOLS[_type] || _BARK_POOLS.humanoid;
     var _b = _pool[Math.floor(Math.random() * _pool.length)];
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
-    showCompanionBarkToast(_b.icon, _name, _b.text);
+    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text);
     redraw();
     return true;
   }

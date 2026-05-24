@@ -188,16 +188,23 @@ var AchievementManager = (function () {
     if (_toastQueue.length === 0) { _toastActive = false; return; }
     _toastActive = true;
     var item = _toastQueue.shift();
-    var ts = ('_ts' in item) ? item._ts : AchievementManager.getUnlockTime(item.id);
-    showAchievementToast(item, ts, function() {
-      _toastActive = false;
-      _showNextToast();
-    });
+    var done = function() { _toastActive = false; _showNextToast(); };
+    if (item._type === 'bark') {
+      showCompanionBarkToast(item.barkIcon, item.name, item.text, item.color, done);
+    } else {
+      var ts = ('_ts' in item) ? item._ts : AchievementManager.getUnlockTime(item.id);
+      showAchievementToast(item, ts, done);
+    }
   }
 
   function queueToast(achievement, subtitleText) {
     var item = Object.assign({}, achievement, { _ts: subtitleText || null });
     _toastQueue.push(item);
+    if (!_toastActive) _showNextToast();
+  }
+
+  function queueCompanionBark(barkIcon, name, text, color) {
+    _toastQueue.push({ _type: 'bark', barkIcon: barkIcon, name: name, text: text, color: color });
     if (!_toastActive) _showNextToast();
   }
 
@@ -617,6 +624,7 @@ var AchievementManager = (function () {
   return {
     check:               check,
     queueToast:          queueToast,
+    queueCompanionBark:  queueCompanionBark,
     dismissToast:        dismissToast,
     resetSession:        resetSession,
     getSessionUnlocked:  getSessionUnlocked,
