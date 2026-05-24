@@ -1,3 +1,14 @@
+## ver. 05/24/26 @ 10:47 PM
+🎬 Added rolling credits after act one
+🪞 Speaking to mirrors can alter your stats
+🌊 Added mirror shades to the River area
+💀 Companions now react to player deaths
+😡 Calmed enemies can turn angry again
+😴 Failed actions can wake sleeping enemies
+🎲 Expanded pool of possible character names
+💎 Rarity item pools drop changes rebalanced
+⚖️ Lowered long-running achievement targets
+
 ## ver. 05/23/26 @ 11:31 AM
 💐 Added tutorial beat hinting at the story
 💔 Fix game end handling and visuals, finally
