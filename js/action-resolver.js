@@ -326,6 +326,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) { //If they survive, they counterattack or regain stamina
+              if (enemyAtkBonus < 0) {
+                enemyAtkBonus++;
+                logAction(enemyEmoji+" ▸ 💢 Your attack angered them +1 ⚔️");
+              }
               enemyAttackOrRest();
             }
             break;
@@ -362,6 +366,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyHit(playerAtk);
             }
             if ((parseInt(enemyHp)-parseInt(enemyHpLost) > 0) && !enemyAttacked) {
+              if (enemyAtkBonus < 0) {
+                enemyAtkBonus++;
+                logAction(enemyEmoji+" ▸ 💢 Your attack angered them +1 ⚔️");
+              }
               enemyAttackOrRest();
             }
             break;
