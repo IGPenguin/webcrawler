@@ -8,6 +8,7 @@
 🎲 Expanded pool of possible character names
 💎 Rarity item pools drop changes rebalanced
 ⚖️ Lowered long-running achievement targets
+♻️ Replace Necropolis story beats on NG+
 
 ## ver. 05/23/26 @ 11:31 AM
 💐 Added tutorial beat hinting at the story
