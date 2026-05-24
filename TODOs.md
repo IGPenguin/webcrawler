@@ -41,18 +41,6 @@
 - Type: Bug | Severity: Major
 - Effort: M | Gain: M
 
-### [MIRR-ENCNTR] Feature: 🪞 Mirror encounter type — hidden stat reveal
-- Spoken to at INT mirror for a +1 INT boost.
-- Priority: P?
-- Type: Feature
-- Effort: S | Gain: S
-
-### [TUTOR-REVAMP] Feature: Tutorial revamp
-- Current tutorial is hardcoded in story.csv — needs feature-level improvement: explain the action bar "better", hint that moral choices accumulate, clarify drachma persistence across runs, clarify memories unlock features, clarify that there is a main menu below the game screen
-- Priority: P2 — onboarding is the #1 beta risk; wrong mental models form in the first 3 minutes
-- Type: Feature
-- Effort: M | Gain: XL
-
 ### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
 - Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
 - Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it
@@ -419,13 +407,6 @@
 - My Note: P4 -> Good enough for Beta, ive seen it working well
 - Type: Bug | Severity: Major
 - Effort: M | Gain: M
-
-### [HIDST-LOG] Improvement: Occasional hidden-stat log messages mid-run
-- Poetic one-liner log entries tied to karma/love thresholds during a run — e.g. "Your choices leave a mark." Gives players a signal that unseen stats are accumulating.
-- Priority: P2 — directly addresses hidden stat opacity; small effort, meaningful player signal
-- My note: P4 -> Id rather do the mirror encounters, that holds bigger value.
-- Type: Improvement
-- Effort: S | Gain: L
 
 ### [VIS-IMPACT] Improvement: Full visual impact frames — hit flash, damage flash, STA fade
 - Flash white when player hits; red-white flash when player takes damage and is left with just 1 hp; green flash when losing STA and left with 1 sta.
