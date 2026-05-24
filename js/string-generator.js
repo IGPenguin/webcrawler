@@ -886,3 +886,53 @@ function getMirrorDesc(mirrorName) {
   var header = chooseFrom(c.pools[tierIdx]);
   return header + '<br><i>Your ' + c.label + ' is ' + stat + ' ' + c.emoji + '</i>';
 }
+
+var _MIRROR_SPEAK_CRIT_PASS = {
+  'Karma':     ["Told the truth to the glass.",    "Said it plainly. The glass held."],
+  'Love':      ["Said her name. Meant it.",         "Spoke it clean. The glass shivered."],
+  'Luck':      ["Claimed it. Fortune held.",        "Insisted on your odds. Won."],
+  'Intellect': ["Found the thought and held it.",   "Named it before it left."]
+};
+var _MIRROR_SPEAK_PASS = {
+  'Karma':     ["Something almost honest surfaced.", "Close enough, just about."],
+  'Love':      ["Found a word for it, at least.",    "Almost said the real thing."],
+  'Luck':      ["Believed it for a moment.",         "Called yourself fortunate. Briefly."],
+  'Intellect': ["Almost had it. Let it go.",         "The thought was there. Gone now."]
+};
+var _MIRROR_SPEAK_FAIL = {
+  'Karma':     ["The mirror had heard this.",        "The reflection looked unconvinced."],
+  'Love':      ["The silence after said more.",      "Not the right word. Close, though."],
+  'Luck':      ["Didn't mean it. The glass knew.",   "Sounded hollow, even to you."],
+  'Intellect': ["The conclusion did not follow.",    "Said something. Meant nothing."]
+};
+var _MIRROR_SPEAK_CRIT_FAIL = {
+  'Karma':     ["Saw what you hoped to miss.",       "It showed you the honest count."],
+  'Love':      ["Couldn't finish the sentence.",     "The name came out wrong."],
+  'Luck':      ["The glass agreed, coldly.",         "Admitted your odds. Regretted it."],
+  'Intellect': ["Came out no wiser.",                "Lost the thread. Entirely."]
+};
+
+var _MIRROR_SHADE_SPEAK_CRIT_PASS = {
+  'Karma':     ["Confessed it. The shade moved.",    "Named the debt and the one deed."],
+  'Love':      ["Said the unsayable. It counted.",   "Said the thing you never could."],
+  'Luck':      ["Argued with the water. Won.",       "Made your case to the river."],
+  'Intellect': ["Reasoned to the end for once.",     "Followed the thought all the way."]
+};
+var _MIRROR_SHADE_SPEAK_PASS = {
+  'Karma':     ["The shade watched. You moved on.",  "It listened. Made no ruling."],
+  'Love':      ["Spoke her name. No reply.",         "The shade held it, quietly."],
+  'Luck':      ["The shade offered no verdict.",     "The river said nothing. Fair."],
+  'Intellect': ["The shade gave nothing back.",      "It heard you. Said nothing."]
+};
+var _MIRROR_SHADE_SPEAK_FAIL = {
+  'Karma':     ["The shade had your number.",        "The shade knew the count already."],
+  'Love':      ["True words. Not enough.",           "The shade turned away."],
+  'Luck':      ["Lost the argument. As expected.",   "The water was unconvinced."],
+  'Intellect': ["The shade knew more. Said so.",     "It had already worked this out."]
+};
+var _MIRROR_SHADE_SPEAK_CRIT_FAIL = {
+  'Karma':     ["Your debts, recounted exactly.",    "It tallied what you owe."],
+  'Love':      ["It had heard this story before.",   "The shade already knew the end."],
+  'Luck':      ["Assessed and found wanting.",       "The toll was clear. Came up short."],
+  'Intellect': ["Each sentence undid the last.",     "Came out considerably less."]
+};

@@ -2530,7 +2530,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         // Gibberish: action-bar failure + low INT = player fumbles their words
         // Chance: 90% at INT 0, ~0% at INT 7+; skips special non-combat encounter types
         if (_skillOK === false) {
-          var _noGibberishTypes = /Upgrade|Death|Dream|Altar|Shop|Curse|Memory/.test(enemyType);
+          var _noGibberishTypes = /Upgrade|Death|Dream|Altar|Shop|Curse|Memory|Mirror/.test(enemyType);
           var _gibberishChance = Math.min(1, Math.max(0, 0.9 - convinceInt * 0.12));
           if (!_noGibberishTypes && Math.random() < _gibberishChance) {
             logPlayerAction(actionString, (_crit === 'fail') ? "Your words came out all wrong." : "It came out as gibberish.");
@@ -2542,6 +2542,38 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         switch (enemyType){
+          case "Mirror": {
+            isFishing = false;
+            if (encounterUsed) { logPlayerAction(actionString, "Nothing more to say to it."); displayPlayerCannotEffect(); break; }
+            var _mc = (typeof _MIRROR_CONFIG !== 'undefined') ? _MIRROR_CONFIG[enemyName] : null;
+            if (!_mc) { displayPlayerCannotEffect(); nextEncounter(); break; }
+            var _isShade = (enemyEmoji === '👤');
+            var _delta   = _isShade ? 2 : 1;
+            var _pools   = _isShade ? { cp: _MIRROR_SHADE_SPEAK_CRIT_PASS, p: _MIRROR_SHADE_SPEAK_PASS, f: _MIRROR_SHADE_SPEAK_FAIL, cf: _MIRROR_SHADE_SPEAK_CRIT_FAIL }
+                                    : { cp: _MIRROR_SPEAK_CRIT_PASS,       p: _MIRROR_SPEAK_PASS,       f: _MIRROR_SPEAK_FAIL,       cf: _MIRROR_SPEAK_CRIT_FAIL };
+            var _lbl = _mc.label, _ico = _mc.emoji;
+            if (_crit === 'success') {
+              if (_lbl === 'Karma') playerKarma += _delta; else if (_lbl === 'Love') playerLove += _delta;
+              else if (_lbl === 'Luck') playerLck += _delta; else playerInt += _delta;
+              logPlayerAction(actionString, chooseFrom(_pools.cp[_lbl]) + ' +' + _delta + ' ' + _ico);
+              displayPlayerGainedEffect(); displayEnemyCannotEffect();
+            } else if (_skillOK) {
+              logPlayerAction(actionString, chooseFrom(_pools.p[_lbl]));
+              displayEnemyCannotEffect();
+            } else if (_crit === 'fail') {
+              if (_lbl === 'Karma') playerKarma -= _delta; else if (_lbl === 'Love') playerLove -= _delta;
+              else if (_lbl === 'Luck') playerLck -= _delta; else playerInt -= _delta;
+              logPlayerAction(actionString, chooseFrom(_pools.cf[_lbl]) + ' -' + _delta + ' ' + _ico);
+              displayPlayerCannotEffect(); displayEnemyEffect("💢");
+            } else {
+              logPlayerAction(actionString, chooseFrom(_pools.f[_lbl]));
+              displayPlayerCannotEffect();
+            }
+            encounterUsed = true;
+            nextEncounter();
+            break;
+          }
+
           case "Altar": // Speak button is rebound to Pray on Altars
             displayPlayerEffect("🙏");
             var isSacrifice = (enemyHp < 0);

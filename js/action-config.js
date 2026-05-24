@@ -407,6 +407,13 @@ function calcActionBarConfig(button, adjustment) {
   if (encounterUsed &&  button != "button_sleep" && button != "button_attack") {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
+  // Mirror Speak — hard crit pass, moderately easy crit fail
+  if (button === 'button_speak' && types === 'Mirror') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT),
+             successMin: 35, successMax: 65,
+             critSuccessMin: 48, critSuccessMax: 52, critFailW: 10 };
+  }
+
   if (button === 'button_speak' && _isMementoRecall) {
     var _mrCs = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
     var _mrCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
