@@ -2909,7 +2909,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
           }
           var _wasRested = playerRested;
-          playerRest();
+          playerRest(false, true);
           if (_crit === 'success' && !_wasRested) {
             playerSta++;
             logPlayerAction(actionString, getCritSleepLog());
@@ -2934,12 +2934,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerChangeStats(enemyHp,enemyAtk,enemySta,enemyLck,enemyInt,enemyMgk,enemyDef,enemyMsg,true,false);
               encounterUsed=true;
             } else {
-              playerRest();
+              playerRest(false, true);
             }
             break;
 
           case "Small":
-            playerRest(true);
+            playerRest(true, true);
             logPlayerAction(actionString,"Wandered too far away from you.");
             nextEncounter();
             break;
@@ -2989,13 +2989,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Prop":
             if (!playerRested && (totalBonus>0 || totalMalus<0)){
               if (_skillOK === false && _crit !== 'fail') {
-                playerRestBadly();
+                playerRestBadly(true);
               } else if (_crit === 'fail') {
                 playerRested = true;
                 logPlayerAction(actionString, "Exhausted by trying to sleep.");
                 displayPlayerEffect("💤");
               } else {
-                playerRest(true);
+                playerRest(true, true);
                 if (totalBonus>0 && enemyMsg=="") enemyMsg="Rested very well, gaining extra";
                 if (totalMalus<0 && enemyMsg=="") enemyMsg="Did not rest well, somehow lost";
                 playerConsumed();
@@ -3007,7 +3007,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
               }
             } else {
-              playerRest();
+              playerRest(false, true);
             }
             break;
 
@@ -3026,14 +3026,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (_skipIdx >= 0) {
                 encounterIndex = _skipIdx - 1;
               }
-              playerRest(true);
+              playerRest(true, true);
               logPlayerAction(actionString, "<text style=color:"+colorFairy+";>Woken up somewhere else... ✨</text>");
               displayPlayerEffect("✨");
               nextEncounter();
             } else if (_skillOK === false) {
-              playerRestBadly();
+              playerRestBadly(true);
             } else {
-              playerRest();
+              playerRest(false, true);
             }
             playerRested=true;
             break;
@@ -3052,9 +3052,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString, "Exhausted by trying to sleep.");
               displayPlayerEffect("💤");
             } else if (_skillOK === false) {
-              playerRestBadly();
+              playerRestBadly(true);
             } else {
-              playerRest();
+              playerRest(false, true);
               if (_crit === 'success') {
                 playerSta++;
                 logPlayerAction(actionString, getCritSleepLog());
@@ -3075,9 +3075,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString, "Exhausted by trying to sleep.");
               displayPlayerEffect("💤");
             } else if (_skillOK === false) {
-              playerRestBadly();
+              playerRestBadly(true);
             } else {
-              playerRest();
+              playerRest(false, true);
               if (_crit === 'success') {
                 playerSta++;
                 logPlayerAction(actionString, getCritSleepLog());
@@ -3095,16 +3095,16 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (totalBonus > 0) {
               if (_skillOK === false) {
-                playerRest();
+                playerRest(false, true);
                 if (_crit === 'fail') {
-                  playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Slept poorly, disturbed the energy.", true, false);
+                  playerChangeStats(-enemyHp, -enemyAtk, -enemySta, -enemyLck, -enemyInt, -enemyMgk, -enemyDef, "Slept disturbed the energy ", true, false);
                 } else {
                   logPlayerAction(actionString, "Rested nearby, but missed its power.");
                 }
                 break;
               }
               encounterUsed = true;
-              playerRest(true);
+              playerRest(true, true);
             }
 
             if (enemyHp<=0) playerHpMax-=enemyHp; //Don't lose max hp
@@ -3118,13 +3118,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               logPlayerAction(actionString,"Cannot fall asleep at the moment.")
               break;
             }
-            playerRest(true);
+            playerRest(true, true);
             logPlayerAction(actionString,enemyMsg)
             nextEncounter();
             break;
 
           case "Friend": //They'll leave if you'll rest
-            playerRest();
+            playerRest(false, true);
             logPlayerAction(actionString,"They got tired of waiting for you.");
             nextEncounter();
             break;
@@ -3145,7 +3145,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           default:
             if (enemyType.includes("Container")){
-              playerRest();
+              playerRest(false, true);
               break;
             }
             logPlayerAction(actionString,"Cannot rest, monsters are nearby.");
@@ -3154,18 +3154,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
         }
 
-        if (areaName !== "Depths of Slumber" && areaName !== "Shrouded Necropolis") {
-          playerAreaSleepCount++;
-          var _thr = (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.sleepAreaThreshold != null)
-            ? GAME_CONFIG.sleepAreaThreshold : 5;
-          if (playerAreaSleepCount === _thr - 1) {
-            logAction('💤 ▸ 🍂 <i style="color:orange;">' + getSleepNearLimitLog() + '</i>');
-          } else if (playerAreaSleepCount > _thr) {
-            playerTotalSleepPenalty++;
-            playerLove--;
-            logAction('💤 ▸ 💔 <i style="color:FF0000;">' + getSleepOverLimitLog() + '</i>');
-          }
-        }
     };
     var _wasStillFishing = isFishing;
     if (isFishing && button!="button_cast") {

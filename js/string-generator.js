@@ -508,15 +508,15 @@ function getRestBadlyText() {
 function getSleepNearLimitLog() {
   return chooseFrom([
     "The cold creeps in as you sleep.",
-    "Something stirs ahead, do not hesitatate.",
+    "Something stirs, do not hesitatate.",
     "She grows impatient, do not waste time. "
   ]);
 }
 
 function getSleepOverLimitLog() {
   return chooseFrom([
-    "The world decays a little while you sleep.",
-    "She slips further away with every sleep.",
+    "The world decays while you sleep.",
+    "She slips away with your every sleep.",
     "The darkness deepens, do not linger."
   ]);
 }
@@ -543,11 +543,11 @@ function getEnemyWakeLog() {
 
 function getCritSleepLog() {
   return chooseFrom([
-    "Woke up feeling uncannily whole. +1 🟢",
-    "Slept deeper than the world allowed. +1 🟢",
-    "Something carried you through the dark. +1 🟢",
-    "Rested far better than expected. +1 🟢",
-    "Woke up strangely renewed. +1 🟢"
+    "Woke up feeling uncannily whole +1 🟢",
+    "Slept deeper than expected +1 🟢",
+    "Slept well despite the darkness +1 🟢",
+    "Rested far better than expected +1 🟢",
+    "Woke up strangely renewed +1 🟢"
   ]);
 }
 

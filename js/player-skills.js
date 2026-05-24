@@ -206,7 +206,7 @@ function playerCheckLevelUp(){
   }
 }
 
-function playerRest(silent=false){
+function playerRest(silent=false, countThreshold=false){
   if (!playerRested || (enemyType.includes("Trap"))){
     if (((playerStaMax-playerSta)>0) || ((playerMgkMax-playerMgk)>0)){
       playerGetStamina(playerStaMax-playerSta,true);
@@ -246,6 +246,18 @@ if (playerCheckLevelUp()){
   } else {
     if (!silent) logPlayerAction(actionString,"Not feeling sleepy anymore.");
     displayPlayerCannotEffect();
+  }
+  if (countThreshold && areaName !== "Depths of Slumber" && areaName !== "Shrouded Necropolis") {
+    playerAreaSleepCount++;
+    var _thr = (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.sleepAreaThreshold != null)
+      ? GAME_CONFIG.sleepAreaThreshold : 5;
+    if (playerAreaSleepCount === _thr - 1) {
+      logAction('💤 ▸ 🍂 <i style="color:orange;">' + getSleepNearLimitLog() + '</i>');
+    } else if (playerAreaSleepCount > _thr) {
+      playerTotalSleepPenalty++;
+      playerLove--;
+      logAction('💤 ▸ 💔 <i style="color:#FF0000;">' + getSleepOverLimitLog() + '</i>');
+    }
   }
 }
 
@@ -310,12 +322,24 @@ function playerUseStamina(stamina, message = ""){
   }
 }
 
-function playerRestBadly() {
+function playerRestBadly(countThreshold=false) {
   playerSta = Math.max(1, playerStaMax - 1);
   playerMgk = Math.max(1, playerMgkMax - 1);
   playerRested = true;
   logPlayerAction(actionString, getRestBadlyText());
   displayPlayerEffect("💤");
+  if (countThreshold && areaName !== "Depths of Slumber" && areaName !== "Shrouded Necropolis") {
+    playerAreaSleepCount++;
+    var _thr = (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.sleepAreaThreshold != null)
+      ? GAME_CONFIG.sleepAreaThreshold : 5;
+    if (playerAreaSleepCount === _thr - 1) {
+      logAction('💤 ▸ 🍂 <i style="color:orange;">' + getSleepNearLimitLog() + '</i>');
+    } else if (playerAreaSleepCount > _thr) {
+      playerTotalSleepPenalty++;
+      playerLove--;
+      logAction('💤 ▸ 💔 <i style="color:#FF0000;">' + getSleepOverLimitLog() + '</i>');
+    }
+  }
 }
 
 function playerUseMagic(magic, message = ""){
