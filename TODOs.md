@@ -1,6 +1,6 @@
 # Styx Flow — 2026-05-21 — Stay Dead
 
-*121 items · 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
+*123 items · 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
@@ -354,6 +354,21 @@
 - 1 good + 1 bad perma-boost food per area; mixed stat foods (lose and gain simultaneously); ensure bad foods in all areas.
 - Priority: P4 — content depth
 - Type: Feature
+- Effort: S | Gain: S
+
+### [DAILY-QUST] Idea: Daily quest — recurring engagement hook
+- A daily challenge or quest objective that gives players a reason to return each day; what the quest targets (enemy type, action type, ending, etc.) is TBD.
+- Tagged "new hook?" — the engagement loop value is clear but the mechanic is undefined.
+- Priority: P4 — too vague to scope; park until the quest form is defined
+- Type: Idea
+- Effort: M | Gain: M
+- Needs: Define what the daily quest is — what does the player do, what do they earn, and how is progress tracked (localStorage? server-side?)?
+
+### [HALF-STAT] Improvement: Fractional stat display for visible stats — half symbol for HP/ATK/STA/MGK
+- Support 0.5-step values on visible combat stats (HP, ATK, STA, MGK) in CSV/origins; display as a half symbol rather than rounding or hiding the fraction.
+- Related to [STAT-NUDGE] (P3), which covers fractional nudges on hidden stats (LCK, INT) with label-based display; this extends that concept to visible stats with a symbol approach.
+- Priority: P4 — user-noted "low prio but possible"; display convention should align with whatever [STAT-NUDGE] lands on
+- Type: Improvement
 - Effort: S | Gain: S
 
 ---
