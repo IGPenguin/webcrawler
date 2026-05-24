@@ -603,7 +603,7 @@ function getShopMessage(){
     "Keep buying, maybe luck will notice you.",
     "You live, you die, you shop. Cycle continues.",
     "Still have coin? I can surely fix that.",
-    "Gear heavier, purse lighter. Everything balanced.",
+    "Gear heavier, purse lighter. Nicely balanced.",
     "Nothing like fresh regret in shiny packaging.",
     "You buy it, I profit. Fair trade.",
     "More trinkets, same doomed story.",
@@ -617,13 +617,13 @@ function getShopMessage(){
     "I admire your optimism. It's delicious.",
     "Another shiny thing to die with.",
     "You buy, they kill, I restock.",
-    "If preparation mattered, you'd be unstoppable.",
+    "If practice mattered, you'd be unstoppable.",
     "I'll happily delay your next failure.",
     "A wise investment… probably.",
     "Good choice. Not good enough, but good.",
     "Your purse bleeds, my shelves smile.",
     "One step closer to being stylishly deceased.",
-    "Keep this up and I'll name a shelf after you.",
+    "Keep it up and I'll name a shelf after you.",
     "Still have coin? Then we're not done."]
     .filter(item => !usedShopMessages.includes(item));
 
@@ -636,9 +636,9 @@ function getShopMessage(){
 
 function getRecallPassText() {
   return chooseFrom([
-    "It comes back slowly, sharp and real -1 💔",
-    "Something surfaced, it hurts to hold -1 💔",
-    "Familiar and painful, both at once -1 💔",
+    "It comes back, slowly hurting you -1 💔",
+    "You recalled something painful -1 💔",
+    "Familiar pain surfaced in you -1 💔",
     "A memory, didn't want to feel it -1 💔",
     "She was there for you, remember? -1 💔"
   ]);

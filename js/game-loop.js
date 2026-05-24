@@ -107,9 +107,9 @@ function _fireRemembranceFade() {
   if (enemyType === "Memory") {
     setTimeout(function() { curtainFadeInAndOut(getMeetingPlaceFade(), 3); }, 300);
   } else if (enemyTeam.includes("Remembrance") || enemyTeam.includes("Piece of History")) {
-    setTimeout(function() { curtainFadeInAndOut(getWeddingInvitationFade(), 3); }, 300);
+    setTimeout(function() { curtainFadeInAndOut(getWeddingInvitationFade(), 4); }, 300);
   } else if (enemyTeam.includes("Lover's Memento")) {
-    setTimeout(function() { curtainFadeInAndOut(getLoversMementoFade(), 3); }, 300);
+    setTimeout(function() { curtainFadeInAndOut(getLoversMementoFade(), 4); }, 300);
   }
 }
 
@@ -142,7 +142,7 @@ function gameOver(silent=false){
 
   //Reset progress to death encounter
   if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container")||enemyType=="Prop"||enemyType=="Consumable")) enemyMsg=deathMsg;
-  if (enemyTeam.includes("Lover's Memento" || enemyTeam.includes("Piece of History"))) enemyMsg="Killed by a severe heartbreak.";
+  if (enemyTeam.includes("Lover's Memento") || enemyTeam.includes("Piece of History")) enemyMsg="Killed by a severe heartbreak.";
   if (_isRival) enemyMsg = 'Slayed by ' + enemyName + '.';
   if (!silent) {
     logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 <span style='color:"+colorRed+";'>"+enemyMsg+"</span>");
