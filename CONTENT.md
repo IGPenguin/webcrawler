@@ -15,6 +15,12 @@ Value priority: HP = ATK = MGK (high) > STA (medium) > LCK (variable) > INT (uti
 - `-2 HP ≈ +3 strong stat`
 - `-1 INT` can fund aggressive bonuses
 
+**Minor boosts (0.5 values):**
+LCK and INT accept `0.5` values for incremental bumps that don't justify a full point. The UI logs them as **Minor +🍀** / **Minor +🧠** with no number. Use these for low-tier items, minor consumable bonuses, or small trap penalties.
+- In the `desc` field, put the formatted label on a second line after `<br>`: `A four-leaf clover. Still counts.<br><b>Minor +🍀</b>`
+- Avoid stacking multiple 0.5 values on one row - that is just a hidden full point
+- See `data/staging.csv` for authored examples
+
 **Type-specific rules:**
 - `INT = -1` only when communication is genuinely impossible — a mosquito or possessed chair cannot understand language; a stray dog might back off. Use judgment per creature, not a blanket rule for all animals. Positive INT on enemies = speech difficulty threshold for the player's Speak action.
 - `MGK > 0` on any enemy where it makes thematic sense (mages, possessed objects, fey creatures). Reserve MGK for Twisted Fairyland onward — no MGK in early areas.

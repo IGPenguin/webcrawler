@@ -78,8 +78,8 @@ function loadEncounter(index, fileLines = linesStory){
   enemyHp = parseInt(row[4].split(":")[1]);
   enemyAtk = parseInt(row[5].split(":")[1]);
   enemySta = parseInt(row[6].split(":")[1]);
-  enemyLck = parseInt(row[7].split(":")[1]);
-  enemyInt = parseInt(row[8].split(":")[1]);
+  enemyLck = parseFloat(row[7].split(":")[1]);
+  enemyInt = parseFloat(row[8].split(":")[1]);
   enemyMgk = parseInt(row[9].split(":")[1]);
   enemyDef = parseInt(row[10].split(":")[1]);
 

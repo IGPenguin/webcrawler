@@ -1452,11 +1452,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Granted gods blessing +1 🧠 +1 🍀");
+            logPlayerAction(actionString,"Granted <b>Minor +🍀 +🧠</b> gods blessing.");
             displayPlayerGainedEffect();
             displayPlayerEffect("🙏");
-            playerLck++;
-            playerInt++;
+            playerLck+=0.5;
+            playerInt+=0.5;
             //playerKarma++; //Hmmm
             animateFlipNextEncounter();
             break;
@@ -1576,9 +1576,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Got blessed with <b>+2 🍀 Luck</b>.");
+            logPlayerAction(actionString,"Got blessed with <b>+1 🍀 Luck</b>.");
             displayPlayerCannotEffect();
-            playerChangeStats(0, 0, 0, 2, 0, 0,0,"n/a",false,false);
+            playerChangeStats(0, 0, 0, 1, 0, 0,0,"n/a",false,false);
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -3207,15 +3207,15 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       pushEncounter(drachmaShop);
     } else if (item=="Favor" || item=="Body") {
       var statPool = item=="Favor"
-        ? [{ stat: "🍀", apply: function() { playerLck++; } },
-           { stat: "🧠", apply: function() { playerInt++; } }]
+        ? [{ stat: "🍀", apply: function() { playerLck+=0.5; } },
+           { stat: "🧠", apply: function() { playerInt+=0.5; } }]
         : [{ stat: "❤️", apply: function() { playerHp++; playerHpMax++; } },
            { stat: "🟢", apply: function() { playerSta++; playerStaMax++; } }];
       var picked = statPool[Math.floor(Math.random() * statPool.length)];
       picked.apply();
       displayPlayerGainedEffect();
       displayPlayerEffect(picked.stat);
-      logPlayerAction(actionString, "You received a blessing +1 "+picked.stat);
+      logPlayerAction(actionString, "You received a <b>Minor +"+picked.stat+"</b> blessing.");
       redraw();
       return;
     } else if (item=="Gamble")  {

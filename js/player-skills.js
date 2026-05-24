@@ -386,8 +386,8 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       changeSign=" +";
       displayPlayerGainedEffect();
     }
-    playerLck += parseInt(bonusLck);
-    gainedString += changeSign+bonusLck + " 🍀";
+    playerLck += +bonusLck;
+    gainedString += Math.abs(bonusLck)<1 ? " <b>Minor "+(bonusLck>0?"+":"-")+"🍀</b>" : changeSign+bonusLck + " 🍀";
     displayPlayerEffect("🍀");
     displayPlayerGainedEffect();
   }
@@ -400,8 +400,8 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       changeSign=" +";
       displayPlayerGainedEffect();
     }
-    playerInt += parseInt(bonusInt);
-    gainedString += changeSign+bonusInt + " 🧠";
+    playerInt += +bonusInt;
+    gainedString += Math.abs(bonusInt)<1 ? " <b>Minor "+(bonusInt>0?"+":"-")+"🧠</b>" : changeSign+bonusInt + " 🧠";
     displayPlayerEffect("🧠");
     displayPlayerGainedEffect();
   }

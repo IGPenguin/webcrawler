@@ -1,5 +1,9 @@
 area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
 
+//Examples of 0.5 Luck / Intellect - Display as <b>Minor</b>
+Fading Wildlands;🍀;Lucky Clover;Item-Trinket;0;0;0;0.5;0;0;0;Wild Trinket;A four-leaf clover. Still counts.<br>Provides <b>Minor +🍀 Luck</b> bonus.;;none
+Fading Wildlands;📜;Field Notes;Consumable;0;0;0;0;0.5;0;0;Scattered Notes;Cramped handwriting. Someone mapped this trail before you.<br>Provides <b>Minor +🧠 Intellect</b> bonus.;;none
+
 Twisted Fairyland;🎭;Masked Jester;Standard;4;2;3;1;2;0;0;Fae Trickster;Laughs through every blow it deals you.<br>;The joke landed harder than intended.;none
 Twisted Fairyland;🦌;Twisted Stag;Standard;5;3;2;0;1;0;0;Corrupted Beast;Antlers grown into impossible angles.<br>;Gored on an impossible tangle.;none
 Twisted Fairyland;🎪;Carnival Brute;Standard;5;3;2;0;2;0;0;Fallen Performer;Dressed for a festival that ended badly.<br>;Entertainment turned fatal.;none
