@@ -388,6 +388,11 @@ layout: default
   </div>
 </div>
 
+<!-- Rolling credits overlay — shown after win, before Stack Overflow reveals -->
+<div id="credits_roll" style="display:none; position:fixed; inset:0; z-index:9000; overflow:hidden; pointer-events:none; background:#000;">
+  <div id="credits_scroll_inner" style="position:absolute; top:0; left:0; right:0; text-align:center; padding:40px 32px; will-change:transform;"></div>
+</div>
+
 <!-- ── Game ───────────────────────────────────────────────────────────── -->
 <div id="id_game" style="display:none;">
 

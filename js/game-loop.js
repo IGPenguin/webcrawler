@@ -291,12 +291,14 @@ function _doGameEnd(endType) {
   removeGatewayEffects();
   var _wp = _winPayload;
   setTimeout(function() {
-    curtainFadeInAndOut('', 0, function() {
+    curtainFadeIn(function() {
       if (encounterIndex + 1 < linesStory.length - 1) nextEncounter(true, true);
       setBackground(areaName);
-      registerClickListeners(300);
-    }, function() {
-      ScoreManager.submitOrPrompt(_wp);
+      ScoreManager.submitOrPrompt(_wp, function() {
+        playCredits(function() {
+          curtainFadeOut(function() { registerClickListeners(300); });
+        });
+      });
     });
   }, 50);
 }

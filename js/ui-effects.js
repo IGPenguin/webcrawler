@@ -203,6 +203,84 @@ function curtainFadeInAndOut(message="", duration=3, onComplete, onFadeOutStart)
   });
 }
 
+// Fades curtain in and holds solid black — does NOT auto fade out.
+// Pair with curtainFadeOut() when ready to reveal the screen.
+function curtainFadeIn(onBlack) {
+  var curtain = document.getElementById('id_fullscreen_curtain');
+  var gen = ++_curtainGen;
+  removeClickListeners();
+  curtain.style.pointerEvents = 'auto';
+  curtain.style.display = 'block';
+  void curtain.offsetWidth;
+  curtain.style.setProperty('--animate-duration', '0.4s');
+  curtain.classList.add('animate__animated', 'animate__fadeIn');
+  curtain.addEventListener('animationend', function onIn(e) {
+    if (e.target !== curtain) return;
+    curtain.removeEventListener('animationend', onIn);
+    if (_curtainGen !== gen) return;
+    curtain.classList.remove('animate__animated', 'animate__fadeIn');
+    if (onBlack) onBlack();
+  });
+}
+
+// Fades the currently-solid curtain back out. Assumes curtain is already visible.
+function curtainFadeOut(onDone) {
+  var curtain = document.getElementById('id_fullscreen_curtain');
+  var gen = ++_curtainGen;
+  void curtain.offsetWidth;
+  curtain.style.setProperty('--animate-duration', '0.7s');
+  curtain.classList.add('animate__animated', 'animate__fadeOut');
+  curtain.addEventListener('animationend', function onOut(e) {
+    if (e.target !== curtain) return;
+    curtain.removeEventListener('animationend', onOut);
+    if (_curtainGen !== gen) return;
+    curtain.classList.remove('animate__animated', 'animate__fadeOut');
+    curtain.style.display = 'none';
+    curtain.style.pointerEvents = 'none';
+    if (onDone) onDone();
+  });
+}
+
+// Rolls credits (cloned from #menu_credits_body) from bottom to top over black.
+// Calls onDone once the last line scrolls off the top edge.
+function playCredits(onDone) {
+  var overlay = document.getElementById('credits_roll');
+  var inner   = document.getElementById('credits_scroll_inner');
+  if (!overlay || !inner) { if (onDone) onDone(); return; }
+
+  var source = document.getElementById('menu_credits_body');
+  inner.innerHTML = source ? source.innerHTML : '';
+
+  // The "Thank you for playing!" h4 is hidden in the static Makers screen — show it here
+  var h4s = inner.querySelectorAll('h4');
+  for (var i = 0; i < h4s.length; i++) {
+    if (h4s[i].style.display === 'none') h4s[i].style.display = '';
+  }
+
+  overlay.style.display = 'block';
+
+  var viewH    = window.innerHeight || 852;
+  var contentH = inner.offsetHeight;
+  var speed    = 80; // px/s
+  var startY   = viewH;
+  var endY     = -(contentH + 80);
+  var startTime = null;
+
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    var y = startY - (ts - startTime) / 1000 * speed;
+    inner.style.transform = 'translateY(' + y + 'px)';
+    if (y <= endY) {
+      overlay.style.display = 'none';
+      inner.innerHTML = '';
+      if (onDone) onDone();
+      return;
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 function showCompanionNameDialog(type, defaultName, onConfirm, onCancel) {
   function _openOverlay() {
     var overlay    = document.getElementById('companion_name_overlay');
