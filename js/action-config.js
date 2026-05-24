@@ -124,8 +124,8 @@ function calcActionBarConfig(button, adjustment) {
   // Exhausted grab: near-impossible without stamina (items/containers/fishing/dream/corpses unaffected)
   if (button === 'button_grab' && pSta === 0 && !isGrabbable && corpseState === '' && types !== 'Fishing' && types !== "Death" && !types.includes('Dream')) {
     var _egCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
-    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 46, successMax: 54,
-             critSuccessMin: 49, critSuccessMax: 51, critFailW: _egCf };
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 41, successMax: 59,
+             critSuccessMin: 47, critSuccessMax: 53, critFailW: _egCf };
   }
 
   // Resurrection: gold-only strip — hit it or die permanently; impossible on Hardcore
