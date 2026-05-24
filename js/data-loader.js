@@ -106,6 +106,34 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
     }
   }
 
+  // Replace Necropolis dream buildup with a single Familiar Memory for returning winners
+  var _winIds = ['game_win_first','hardcore_win','ending_kill','ending_walk','ending_guard',
+                 'ending_embrace','ending_sleep','ending_speak','ending_pray','ending_free','ending_curse'];
+  if (_winIds.some(function(id) { return AchievementManager.isUnlocked(id); })) {
+    var _firstDreamIdx = -1;
+    var _dreamCount = 0;
+    for (var _di = linesStory.length - 1; _di >= 0; _di--) {
+      var _dr = linesStory[_di];
+      if (String(_dr[0]).split(":").slice(1).join(":") === 'Shrouded Necropolis' &&
+          String(_dr[3]).split(":").slice(1).join(":") === 'Dream') {
+        linesStory.splice(_di, 1);
+        _firstDreamIdx = _di;
+        _dreamCount++;
+      }
+    }
+    if (_dreamCount > 0) {
+      linesStory.splice(_firstDreamIdx, 0, [
+        "area:Shrouded Necropolis","emoji:💭","name:Familiar Memory","type:Dream",
+        "hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0",
+        "note:Known Dread",
+        "desc:" + getFamiliarMemoryDesc(),
+        "message:" + getFamiliarMemoryMessage(),
+        "achiev:none"
+      ]);
+      console.log("[familiar-memory] replaced " + _dreamCount + " Necropolis dreams");
+    }
+  }
+
   if (initNextEncounter) {
     loadEncounter((isLocalhost() && TUTORIAL_SKIP_LOCALHOST ? TUTORIAL_SKIP_INDEX : 1) + encounterIndex); // 0 is the death screen
 

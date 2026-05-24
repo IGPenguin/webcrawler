@@ -936,3 +936,25 @@ var _MIRROR_SHADE_SPEAK_CRIT_FAIL = {
   'Luck':      ["Assessed and found wanting.",       "The toll was clear. Came up short."],
   'Intellect': ["Each sentence undid the last.",     "Came out considerably less."]
 };
+
+// ── Familiar Memory — NG+ Necropolis dream replacement ────────────────────────
+var _FAMILIAR_MEMORY_DESC = [
+  "The fog here knows your shape.<br>You have walked this before.",
+  "Her name forms before the thought.<br>You already know what waits ahead.",
+  "The dark at the end is familiar.<br>The dread settles before it should.",
+  "The stone holds your weight well.<br>It has done this before.",
+  "Something at the edge knows your face.<br>The grief here fits you exactly.",
+  "Old knowledge moves through you, quiet.<br>The bones remember what the mind forgot."
+];
+var _FAMILIAR_MEMORY_MSG = [
+  "Memory moves faster than grief.",
+  "The dread is familiar.",
+  "The bones remember.",
+  "It finds you before you find it.",
+  "Something here has been waiting.",
+  "Old weight, familiar shape.",
+  "The knowledge arrived without asking.",
+  "This was always going to happen."
+];
+function getFamiliarMemoryDesc()    { return chooseFrom(_FAMILIAR_MEMORY_DESC); }
+function getFamiliarMemoryMessage() { return chooseFrom(_FAMILIAR_MEMORY_MSG); }
