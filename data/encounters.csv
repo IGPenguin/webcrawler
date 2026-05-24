@@ -303,7 +303,7 @@ Forsaken Village;🏚️;Collapsed Barn;Container-2;0;0;0;0;0;0;0;Deserted Build
 Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;0;Deserted Building;Wood planks barely hold together.<br>;Pried the boards loose.;none
 
 Forsaken Village;🏚️;Abandoned Home;Container-3;0;0;0;0;0;0;0;Full Household;Built for a family, not a passing stranger.<br>;Forced the back door open.;none
-Forsaken Village;🏚️;Barred House;Container-3;0;0;0;0;0;0;0;Sealed Interior;Someone went to the trouble of barring it from inside.<br>;Broke through the barricade.;none
+Forsaken Village;🏚️;Barred House;Container-3;0;0;0;0;0;0;0;Sealed Interior;Someone barred it from the inside.<br>;Broke through the barricade.;none
 Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;0;Reclaimed by Nature;Moss has swallowed most of it, but the cellar holds.<br>;Found the cellar entrance.;none
 Forsaken Village;🏚️;Collapsed Mill;Container-3;0;0;0;0;0;0;0;Working Parts;The wheel still groans in the wind.<br>;Entered through the broken door.;none
 Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;0;Hasty Departure;Abandoned in a rush, things left where they fell.<br>;Sifted through what remained.;none
@@ -454,8 +454,8 @@ Forsaken Village;🪲;Dead Beetle;Undead;1;1;1;0;-1;1;0;Risen Insect;Should not 
 Forsaken Village;🐝;Withered Drone;Undead;1;1;1;0;-1;0;0;Dead Insect;Still flying. Long since dead.<br>;Your buzzing stopped, forever.;none
 Forsaken Village;🐖;Rotten Swine;Undead;3;1;1;0;-1;0;0;Wild Beast;Produces a variety of unpleasant noises.<br>;Zombified by a porkchop.;none
 Forsaken Village;🐕;Cursed Hound;Undead;2;2;1;0;2;0;0;Feral Husk;Won't stop chasing you around.<br>;Bitten through the throat.;none
-Forsaken Village;🧟‍♂️;Starving Walker;Undead;2;1;2;0;-1;0;0;Animated Remains;Hands shake as they reach out.<br>;Collapsed clutching your arm.;none
-Forsaken Village;🧟‍♀️;Crawling Revenant;Undead;1;2;1;0;-1;1;0;Animated Torso;Still looks almost human.<br>Better keep distance.;Got rotten to the bones;none
+Forsaken Village;🧟‍♂️;Starving Walker;Undead;2;2;2;0;-1;0;0;Animated Remains;Hands shake as they reach out.<br>;Collapsed clutching your arm.;none
+Forsaken Village;🧟‍♀️;Crawling Revenant;Undead;3;1;1;0;-1;0;0;Animated Torso;Still looks almost human.<br>;Got rotten to the bones;none
 
 Forsaken Village;🐈‍⬛;Possessed Cat;Demon;1;2;2;1;-1;0;0;Terrifying Animal;These usually bring bad luck.<br>;Got bitten into artery.;none
 Forsaken Village;🪓;Possessed Axe;Demon;1;2;2;0;-1;0;0;Cursed Tool;Thirsts for warm blood.<br>;Split your skull in two.;none
@@ -470,7 +470,7 @@ Forsaken Village;🦝;King of Bandits;Boss-Pet;3;2;3;0;3;0;0;Plague Beast;The ni
 Forsaken Village;🧙‍♂️;Cultist Warlock;Boss-Standard;3;1;2;1;3;2;0;Dark Summoner;Master of shadow’s pact.<br>;Soul torn to void by spell.;none
 Forsaken Village;🦹‍♀️;Cultist Fanatic;Boss-Swift;3;2;1;0;10;0;0;Humanoid;Furiously charging forward.<br>;Got your heart ripped out!;none
 Forsaken Village;🥷;Cultist Elite;Boss-Swift;2;2;2;0;5;0;0;Humanoid;Uncanny figure with ellegant moves.<br>;Got stabbed and bled out.;none
-Forsaken Village;🥋;Invisible Ninja;Boss-Swift;1;2;3;0;5;0;0;Humanoid;Thank got they are not naked.<br>;Stabbed by an invisible hand.;none
+Forsaken Village;🥋;Invisible Ninja;Boss-Swift;1;2;3;0;5;0;0;Humanoid;Thank god they are not naked.<br>;Stabbed by an invisible hand.;none
 Forsaken Village;🐀;Fetid Rat;Boss-Toxic;2;1;3;0;-1;0;0;Dangerous Critter;Probably carries some nasty diseases.<br>;Contracted a deadly infection.;none
 Forsaken Village;🤡;Cultist Madman;Boss-Toxic;4;1;2;0;-1;0;0;Crazed Humanoid;Screams and laughs maniacally.<br>;Got totally devoured alive.;none
 Forsaken Village;🎭;Cultist Masquerader;Boss-Reflective;3;1;2;0;3;0;0;Masked Betrayer;Swaps faces to trick you.<br>;Sliced by a hidden blade.;none

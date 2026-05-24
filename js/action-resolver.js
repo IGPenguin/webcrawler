@@ -1061,7 +1061,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Swift":
             if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0) {
-              enemyStaminaChangeMessage(-1,"They hit you before you could react -"+(enemyAtk+enemyAtkBonus)+" 💔","Blocked just for the sake of it -1 🟢");
+              enemyStaminaChangeMessage(-1,"You did not react fast enough -"+(enemyAtk+enemyAtkBonus)+" 💔","Blocked just for the sake of it -1 🟢");
               playerHit(enemyAtk+enemyAtkBonus);
               break;
             }
