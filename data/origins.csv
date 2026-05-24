@@ -22,7 +22,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 //Unlockable
 🎓;Scholar;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>The grind is his second nature.;level_5
 🔪;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no downside.<br><i>Born for killing, nothing more.;rival_kills_10
-🥷;Ninja;0;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b> with no downside.<br><i>The more agile the more fragile.;knockout_50
+🥷;Ninja;0;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b> with no downside.<br><i>The more agile the more fragile.;knockout_30
 🎖️;Hero;0;0;1;0;1;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b>.<br><i>Never hesitates to make a difference.;boss_kill_10
 😈;Devil;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 💔 Health</b>.<br><i>Made a deal with the scars to prove it.;spoke_demon
 🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Lose <b>-1 💔 Health</b>, blend with the undead.<br><i>Fits well with the tainted surroundings.;died_first
@@ -48,7 +48,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🩸;Warlock;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 💔 Health</b>.<br><i>Bought his power by own blood.;mana_first
 🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;magic_unlock_first
 🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by
-🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_50
+🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_30
 🧥;Hobo;1;0;0;-1;0;0;0;<b>+1 ❤️ Health</b>, lose <b>-1 🍀 Luck</b>.<br><i>Naturally resistant to any danger.;grab_rubbish
 
 //Outstanding

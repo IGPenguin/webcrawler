@@ -151,7 +151,7 @@ Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;2;0;2;0;0;Thundering Menace;Eac
 Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;2;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.;none
 
 Fading Wildlands;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Fading Wildlands;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Fading Wildlands;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Fading Wildlands;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Fading Wildlands;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Fading Wildlands;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -481,7 +481,7 @@ Forsaken Village;🐦‍⬛;Blood Raven;Undead;2;1;3;1;0;0;0;Thirsty Bird;Aims i
 Forsaken Village;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Forsaken Village;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Forsaken Village;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Forsaken Village;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Forsaken Village;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Forsaken Village;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -862,7 +862,7 @@ Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;0;Raw Food;Beautiful te
 Twisted Fairyland;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Twisted Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Twisted Fairyland;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Twisted Fairyland;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Twisted Fairyland;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Twisted Fairyland;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Twisted Fairyland;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -1127,9 +1127,9 @@ River of Sorrows;🌙;Moonstone Sickle;Item-Weapon;2;0;0;0;0;1;0;Lunar Gem;Gleam
 
 // - ends here
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 River of Sorrows;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
-River of Sorrows;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</b> when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
+River of Sorrows;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</b> when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_30
 River of Sorrows;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 River of Sorrows;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 River of Sorrows;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
@@ -1333,7 +1333,7 @@ Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;0;Ethereal
 Shrouded Necropolis;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Shrouded Necropolis;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Shrouded Necropolis;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
+Shrouded Necropolis;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Shrouded Necropolis;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Shrouded Necropolis;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Shrouded Necropolis;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -1382,8 +1382,8 @@ Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;
 Fishing;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;;none
 
 Fishing;🔱;Titanslayer Trident;Item-Weapon;0;3;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;fish_legendary_first
-Fishing;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_50
-Fishing;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_50
+Fishing;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
+Fishing;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_30
 Fishing;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Fishing;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Fishing;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10

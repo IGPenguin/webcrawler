@@ -87,11 +87,11 @@ var AchievementManager = (function () {
     { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Hippie</b> origin.' },
 
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: 'Unlocked the <b>📼 Rewind Tape</b> item.' },
-    { id: 'kill_50',             emoji: '🔪', desc: 'Defeated 50 enemies!', hint: "A growing trail of broken spirits.", unlock: 'Unlocked the <b>🥩 Butcher</b> origin.' },
-    { id: 'knockout_50',         emoji: '✌️', desc: 'Knocked out 50 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
+    { id: 'kill_30',             emoji: '🔪', desc: 'Defeated 30 enemies!', hint: "A growing trail of broken spirits.", unlock: 'Unlocked the <b>🥩 Butcher</b> origin.' },
+    { id: 'knockout_30',         emoji: '✌️', desc: 'Knocked out 30 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
     { id: 'boss_kill_10',        emoji: '🎖️', desc: 'Defeated 10 bosses!', hint: "Giant slayer, born in struggle.", unlock: 'Unlocked the <b>🎖️ Hero</b> origin.' },
-    { id: 'fish_bait_50',        emoji: '🎏', desc: 'Caught something 50x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
-    { id: 'fish_no_bait_50',     emoji: '😎', desc: 'Caught something with no bait 50x!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b>.' },
+    { id: 'fish_bait_30',        emoji: '🎏', desc: 'Caught something 30x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
+    { id: 'fish_no_bait_30',     emoji: '😎', desc: 'Caught something with no bait 30x!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b>.' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the shady gamble 10 times!', hint: "Become a well seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
 
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret special name.', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
@@ -323,7 +323,7 @@ var AchievementManager = (function () {
         _stats.totalKills++;
         _save();
         if (_stats.totalKills === 1)  _unlock('kill_first');
-        if (_stats.totalKills >= 50)  _unlock('kill_50');
+        if (_stats.totalKills >= 30)  _unlock('kill_30');
         break;
 
       case 'boss_kill':
@@ -356,7 +356,7 @@ var AchievementManager = (function () {
         _stats.totalKnockouts++;
         _save();
         if (_stats.totalKnockouts === 1)  _unlock('knockout_first');
-        if (_stats.totalKnockouts >= 50)  _unlock('knockout_50');
+        if (_stats.totalKnockouts >= 30)  _unlock('knockout_30');
         break;
 
       case 'calm_enemy':
@@ -399,14 +399,14 @@ var AchievementManager = (function () {
         _stats.totalFishBait++;
         _save();
         if (_stats.totalFishBait === 1)   _unlock('fish_bait_first');
-        if (_stats.totalFishBait >= 50)  _unlock('fish_bait_50');
+        if (_stats.totalFishBait >= 30)  _unlock('fish_bait_30');
         break;
 
       case 'fish_no_bait':
         _stats.totalFishNoBait++;
         _save();
         if (_stats.totalFishNoBait === 1)   _unlock('fish_no_bait_first');
-        if (_stats.totalFishNoBait >= 50)  _unlock('fish_no_bait_50');
+        if (_stats.totalFishNoBait >= 30)  _unlock('fish_no_bait_30');
         break;
 
       case 'discover_area': {
