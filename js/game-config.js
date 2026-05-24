@@ -105,21 +105,21 @@ var GAME_CONFIG = DIFFICULTY_MODES.Standard;
 //
 // Weights sum to exactly 100 — think of it as a pie chart with 100 slices.
 // Each tier owns some number of slices, and the roll picks which slice lands.
-//   Cursed    3 / 100 =  3 %
-//   Common   60 / 100 = 60 %
-//   Uncommon 25 / 100 = 25 %
-//   Rare     10 / 100 = 10 %
-//   Legendary 2 / 100 =  2 %
+//   Cursed    5 / 100 =  5 %
+//   Common   40 / 100 = 40 %
+//   Uncommon 35 / 100 = 35 %
+//   Rare     17 / 100 = 17 %
+//   Legendary 3 / 100 =  3 %
 //
 // rarityBias in each difficulty preset adds to (or subtracts from) these base weights.
 // playerLck and playerKarma further shift the slices at runtime (see RarityManager.rollTier).
 // A tier's effective weight is clamped to 0 minimum and the CDF re-normalises the remainder.
 var RARITY_TIERS = {
-  Cursed:    { weight:  3, color: colorSoftRed,       bg: colorDarkRedSubtle, netMin: -Infinity, netMax: -0.01 },
-  Common:    { weight: 60, color: colorWhite,         bg: '',                 netMin:  0,        netMax:  0.49 },
-  Uncommon:  { weight: 25, color: colorLightBlue,     bg: colorDarkBlue,      netMin:  0.5,      netMax:  0.99 },
-  Rare:      { weight: 10, color: colorPurple,        bg: colorDarkPurple,    netMin:  1,        netMax:  2.99 },
-  Legendary: { weight:  2, color: colorOrange,        bg: colorDarkOrange,    netMin:  3.0,      netMax:  Infinity },
+  Cursed:    { weight:  5, color: colorSoftRed,       bg: colorDarkRedSubtle, netMin: -Infinity, netMax: -0.01 },
+  Common:    { weight: 40, color: colorWhite,         bg: '',                 netMin:  0,        netMax:  0.49 },
+  Uncommon:  { weight: 35, color: colorLightBlue,     bg: colorDarkBlue,      netMin:  0.5,      netMax:  0.99 },
+  Rare:      { weight: 17, color: colorPurple,        bg: colorDarkPurple,    netMin:  1,        netMax:  2.99 },
+  Legendary: { weight:  3, color: colorOrange,        bg: colorDarkOrange,    netMin:  3.0,      netMax:  Infinity },
   Familiar:  { weight:  0, color: colorSoftGreen, bg: colorFamiliarGreen,     netMin:  0,        netMax:  0 }
 };
 

@@ -151,17 +151,17 @@ Rarity is **calculated** from stats — never stored in a CSV column — unless 
 
 **Note-field tag override**: add `[Cursed|Common|Uncommon|Rare|Legendary]` anywhere in the `note` CSV field to force a tier and skip stat calculation. The tag is stripped from UI display automatically by `RarityManager.stripTagFromNote()`. Additionally, if the note contains the word `Artifact`, the row is treated as Legendary.
 
-**Familiar tier**: origins and items with an `achiev` requirement that is unlocked automatically become **Familiar** instead of being stat-rolled. Familiar is not a rollable tier — it shares the Common pool in both weighted pickers, giving it Common-level drop probability (~60%). 
+**Familiar tier**: a display-only label for achievement-gated rows that are unlocked. Familiar is not a rollable tier and has no weight in `rollTier()` — unlocked achievement-gated rows are bucketed by their actual stat net just like any other row, so they drop at whatever rarity their stats earn. The `Familiar` entry in `RARITY_TIERS` exists only for its color/bg values used in UI display.
 
 **Rarity-aware pickers** (in `data-loader.js`):
 - `getWeightedEncounter(types, includes, areaOverride, excludes)` — use this for all item/consumable picks in generators
 - `getWeightedLootIndex(luck, karma)` — fishing loot; replaces the old flat `getRandomLootIndex`
 
-**Roll modifiers**: `RarityManager.rollTier(luck, karma)` applies `playerLck` and `playerKarma` on top of base weights. Each +1 luck shifts weight toward Uncommon/Rare (+1.0/+0.5), away from Common (-1.7) and Cursed (-0.3). Karma (baseline 1) applies a milder version of the same shift.
+**Roll modifiers**: `RarityManager.rollTier(luck, karma)` applies `playerLck` on top of base weights. Each +1 luck shifts weight toward Uncommon/Rare/Legendary (+1.0/+0.5/+0.2), away from Common (-1.7) and Cursed (-0.3). Negative luck reverses the shift. Karma is disabled (`RARITY_KARMA_ENABLED = false`).
 
-**Per-difficulty bias**: each `DIFFICULTY_MODES` entry has a `rarityBias` object (`{ Cursed, Common, Uncommon, Rare, Legendary }`) that additively adjusts base weights before the roll. Familiar rows are not affected by bias — they always ride the Common roll. Pairing a bonus with an equal penalty (e.g. `Legendary:+2, Common:-2`) keeps the total at 100, making the shift a clean percentage-point change. Toggle karma weighting globally via `RARITY_KARMA_ENABLED`.
+**Per-difficulty bias**: each `DIFFICULTY_MODES` entry has a `rarityBias` object (`{ Cursed, Common, Uncommon, Rare, Legendary }`) that additively adjusts base weights before the roll. Pairing a bonus with an equal penalty (e.g. `Legendary:+2, Common:-2`) keeps the total at 100, making the shift a clean percentage-point change. Toggle karma weighting globally via `RARITY_KARMA_ENABLED`.
 
-**Achievement gating**: all three CSVs (`encounters.csv`, `story.csv`, `origins.csv`) have an `achiev` column (last column, index 14 / 10 respectively). A value of `none` means always available; any other value is an achievement ID that must be unlocked. Locked rows are filtered out from pickers; if all entries of a type are locked, the picker falls back to the unfiltered pool with a console warning. Unlocked achievement-gated rows surface as **Familiar** tier — use this to reward players with exclusive content after reaching a milestone.
+**Achievement gating**: all three CSVs (`encounters.csv`, `story.csv`, `origins.csv`) have an `achiev` column (last column, index 14 / 10 respectively). A value of `none` means always available; any other value is an achievement ID that must be unlocked. Locked rows are filtered out from pickers; if all entries of a type are locked, the picker falls back to the unfiltered pool with a console warning. Unlocked achievement-gated rows drop at their stat-based rarity tier and display the Familiar badge in the UI.
 
 ## Automated Tests
 
