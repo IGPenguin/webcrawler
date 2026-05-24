@@ -46,19 +46,19 @@ function getOriginName(origin) {
     var adj, noun;
     if (_tier === 'Familiar') {
       switch (_dom) {
-        case 'atk': adj  = chooseFrom(["Relentless","Unyielding","Tenacious","Dogged","Undeterred"]);
-                    noun = chooseFrom(["Brawler","Stalwart","Slugger","Combatant","Scrapper"]); break;
-        case 'hp':  adj  = chooseFrom(["Enduring","Indomitable","Resolute","Persevering","Stubborn"]);
-                    noun = chooseFrom(["Cornerstone","Rampart","Bedrock","Foundation","Holdout"]); break;
-        case 'mgk': adj  = chooseFrom(["Devoted","Persistent","Faithful","Tireless","Stubborn"]);
-                    noun = chooseFrom(["Disciple","Zealot","Practitioner","Devotee","Adherent"]); break;
-        case 'sta': adj  = chooseFrom(["Ceaseless","Unyielding","Persistent","Unwavering","Undeterred"]);
-                    noun = chooseFrom(["Roamer","Strider","Trudger","Rover","Plodder"]); break;
-        case 'lck': adj  = chooseFrom(["Stubborn","Undying","Tenacious","Dogged","Unkillable"]);
-                    noun = chooseFrom(["Chancer","Revenant","Scrapper","Holdout","Contender"]); break;
-        case 'int': adj  = chooseFrom(["Patient","Weathered","Dogged","Tenacious","Undeterred"]);
-                    noun = chooseFrom(["Keeper","Witness","Watcher","Inquirer","Chronicler"]); break;
-        default:    adj  = chooseFrom(["Stubborn","Relentless","Dogged","Undying","Unkillable"]);
+        case 'atk': adj  = chooseFrom(["Relentless","Unyielding","Tenacious","Dogged","Iron","Unbroken","Dauntless","Scarred"]);
+                    noun = chooseFrom(["Brawler","Stalwart","Slugger","Combatant","Scrapper","Enforcer","Endurer","Ironside","Fighter"]); break;
+        case 'hp':  adj  = chooseFrom(["Enduring","Indomitable","Resolute","Persevering","Weathered","Unyielding","Unmoved","Iron"]);
+                    noun = chooseFrom(["Cornerstone","Rampart","Bedrock","Foundation","Holdout","Anchor","Pillar","Survivor","Bulwark"]); break;
+        case 'mgk': adj  = chooseFrom(["Devoted","Persistent","Faithful","Tireless","Driven","Enduring","Unwavering","Fixed"]);
+                    noun = chooseFrom(["Disciple","Zealot","Practitioner","Devotee","Adherent","Keeper","Seeker","Acolyte","Channeler"]); break;
+        case 'sta': adj  = chooseFrom(["Ceaseless","Persistent","Unwavering","Haggard","Lean","Restless","Worn"]);
+                    noun = chooseFrom(["Roamer","Strider","Trudger","Rover","Plodder","Runner","Pilgrim","Wanderer","Courier"]); break;
+        case 'lck': adj  = chooseFrom(["Undying","Tenacious","Dogged","Unkillable","Marked","Fortunate","Wily","Star-Crossed"]);
+                    noun = chooseFrom(["Chancer","Revenant","Scrapper","Holdout","Contender","Gambler","Survivor","Drifter","Believer"]); break;
+        case 'int': adj  = chooseFrom(["Patient","Weathered","Shrewd","Careful","Still","Measured"]);
+                    noun = chooseFrom(["Keeper","Witness","Watcher","Inquirer","Chronicler","Reader","Archivist","Sentinel","Counselor"]); break;
+        default:    adj  = chooseFrom(["Relentless","Dogged","Undying","Unkillable","Iron"]);
                     noun = chooseFrom(["Revenant","Holdout","Contender","Scrapper","Remnant"]); break;
       }
     } else {
@@ -69,12 +69,12 @@ function getOriginName(origin) {
                     noun = chooseFrom(["Colossus","Titan","Monolith","Bastion","Sentinel"]); break;
         case 'mgk': adj  = chooseFrom(["Ancient","Exalted","Ascendant","Sacred","Archaic"]);
                     noun = chooseFrom(["Archon","Oracle","Hierophant","Archmage","Sorcerer"]); break;
-        case 'sta': adj  = chooseFrom(["Eternal","Undying","Ancient","Deathless","Immortal"]);
-                    noun = chooseFrom(["Shade","Revenant","Phantom","Specter","Apparition"]); break;
+        case 'sta': adj  = chooseFrom(["Eternal","Undying","Ancient","Deathless","Immortal","Boundless","Ceaseless","Perpetual","Restless"]);
+                    noun = chooseFrom(["Shade","Pilgrim","Wayfarer","Courier","Wanderer"]); break;
         case 'lck': adj  = chooseFrom(["Blessed","Divine","Exalted","Anointed","Sacred"]);
-                    noun = chooseFrom(["Prophet","Herald","Seer","Avatar","Vessel"]); break;
-        case 'int': adj  = chooseFrom(["Ancient","Eternal","Exalted","Undying","Omniscient"]);
-                    noun = chooseFrom(["Oracle","Augur","Loremaster","Sibyl","Visionary"]); break;
+                    noun = chooseFrom(["Prophet","Herald","Seer","Vessel","Omen","Augur","Chosen"]); break;
+        case 'int': adj  = chooseFrom(["Ancient","Eternal","Exalted","Undying","Omniscient","Ageless","Primordial","Timeless"]);
+                    noun = chooseFrom(["Oracle","Augur","Loremaster","Sibyl","Visionary","Archivist","Architect","Chronicler","Philosopher"]); break;
         default:    adj  = chooseFrom(["Ancient","Eternal","Immortal","Undying","Exalted"]);
                     noun = chooseFrom(["Legend","Titan","Champion","Archon","Hero"]); break;
       }
@@ -145,28 +145,28 @@ function getOriginName(origin) {
   var adj, noun;
   switch (dominant) {
     case 'atk':
-      adj  = chooseFrom(["Bloodied","Savage","Ruthless","Wrathful","Scarred","Relentless","Merciless","Vicious","Vengeful","Spiteful","Hardened","Ravaged"]);
-      noun = chooseFrom(["Slayer","Butcher","Ravager","Reaper","Killer","Predator","Blade","Brute","Marauder","Wretch","Fury","Raider"]);
+      adj  = chooseFrom(["Bloodied","Savage","Ruthless","Wrathful","Scarred","Relentless","Merciless","Vicious","Vengeful","Hardened","Ravaged","Grim","Harrowed","Iron","Branded","Unrepentant","Bitter","Seasoned"]);
+      noun = chooseFrom(["Slayer","Butcher","Ravager","Reaper","Killer","Predator","Blade","Brute","Marauder","Fury","Raider","Cutthroat","Bane","Hound","Executioner"]);
       break;
     case 'hp':
-      adj  = chooseFrom(["Unbroken","Steadfast","Bound","Burdened","Weary","Sunken","Damned","Hollow","Forsaken","Immovable","Scarred","Enduring"]);
-      noun = chooseFrom(["Sentinel","Martyr","Remnant","Husk","Bearer","Warden","Vessel","Survivor","Anchor","Keeper","Stone","Pillar"]);
+      adj  = chooseFrom(["Unbroken","Steadfast","Bound","Burdened","Immovable","Scarred","Enduring","Weathered","Grieving","Iron","Petrified","Unyielding"]);
+      noun = chooseFrom(["Sentinel","Martyr","Remnant","Husk","Bearer","Warden","Survivor","Anchor","Keeper","Stone","Pillar","Bulwark","Obelisk","Rampart","Cornerstone"]);
       break;
     case 'mgk':
-      adj  = chooseFrom(["Cursed","Veiled","Shrouded","Corrupted","Tainted","Haunted","Withered","Twisted","Ancient","Blighted","Unholy","Forsaken"]);
-      noun = chooseFrom(["Acolyte","Harbinger","Heretic","Relic","Shade","Whisperer","Seer","Penitent","Ascetic","Seeker","Witness"]);
+      adj  = chooseFrom(["Cursed","Veiled","Shrouded","Corrupted","Tainted","Haunted","Withered","Twisted","Ancient","Blighted","Unholy","Forsaken","Marked","Fractured","Ashen","Spell-worn","Unraveled","Bleeding"]);
+      noun = chooseFrom(["Acolyte","Harbinger","Heretic","Relic","Shade","Whisperer","Seer","Penitent","Ascetic","Seeker","Witness","Channeler","Vessel","Hollow","Flicker","Arcanist"]);
       break;
     case 'sta':
-      adj  = chooseFrom(["Lurking","Restless","Fleeting","Unseen","Drifting","Tireless","Silent","Fading","Cold","Hollow","Lost","Pale"]);
-      noun = chooseFrom(["Wanderer","Drifter","Pilgrim","Ghost","Vagrant","Phantom","Nomad","Exile","Recluse","Dancer","Runner","Shade"]);
+      adj  = chooseFrom(["Restless","Fleeting","Drifting","Tireless","Fading","Cold","Hollow","Lost","Pale","Gaunt","Lean","Haggard","Ragged","Windswept"]);
+      noun = chooseFrom(["Wanderer","Drifter","Pilgrim","Vagrant","Nomad","Exile","Recluse","Dancer","Runner","Shade","Fugitive","Courier","Scout"]);
       break;
     case 'lck':
-      adj  = chooseFrom(["Blessed","Fated","Charmed","Lucky","Tempted","Doomed","Fallen","Twisted","Last","Forsaken","Bound","Reckless"]);
-      noun = chooseFrom(["Fool","Gambler","Chaser","Believer","Stray","Outcast","Soul","Dreamer","Wretch","Prophet","Vagrant","One"]);
+      adj  = chooseFrom(["Blessed","Fated","Charmed","Lucky","Tempted","Doomed","Fallen","Twisted","Last","Forsaken","Bound","Reckless","Hapless","Capricious","Star-Crossed","Hexed","Chosen"]);
+      noun = chooseFrom(["Fool","Gambler","Chaser","Believer","Soul","Dreamer","Prophet","One","Omen","Augur","Herald","Marked","Diviner"]);
       break;
     case 'int':
-      adj  = chooseFrom(["Thoughtful","Quiet","Ancient","Nameless","Forgotten","Veiled","Grieving","Fallen","Hollow","Broken","Distant","Wise"]);
-      noun = chooseFrom(["Prophet","Scholar","Seeker","Witness","Watcher","Hermit","Sage","Recluse","Reader","Exile","Keeper","Pilgrim"]);
+      adj  = chooseFrom(["Thoughtful","Quiet","Ancient","Nameless","Forgotten","Veiled","Grieving","Fallen","Hollow","Broken","Distant","Wise","Melancholic","Measured","Knowing","Careful","Still"]);
+      noun = chooseFrom(["Prophet","Scholar","Seeker","Witness","Watcher","Hermit","Sage","Recluse","Exile","Keeper","Pilgrim","Archivist","Chronicler","Cartographer","Scribe","Surveyor"]);
       break;
     default:
       return getFirstName();
