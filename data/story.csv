@@ -24,9 +24,9 @@ Fading Wildlands;🐟;Fishing;Generator-68;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Fading Wildlands;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 
 //Forsaken Village
-Forsaken Village;❓;Memento Letter (rnd 3-5);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
-Forsaken Village;🐟;Fishing (rnd 4-6);Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
-Forsaken Village;🪞;Mirror (rnd 2-6);Generator-75;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+Forsaken Village;🪞;Mirror (rnd 5-7);Generator-75;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+Forsaken Village;❓;Memento Letter (rnd 5-7);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+Forsaken Village;🐟;Fishing (rnd 5-7);Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX;none
@@ -38,9 +38,9 @@ Forsaken Village;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Forsaken Village;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 
 //Twisted Fairyland
-Twisted Fairyland;❓;Memento Letter (rnd 3-5);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
-Twisted Fairyland;🐟;Fishing (rnd 4-6);Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
-Twisted Fairyland;🪞;Mirror (rnd 2-6);Generator-75;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+Twisted Fairyland;🪞;Mirror (rnd 5-7);Generator-75;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+Twisted Fairyland;❓;Memento Letter (rnd 5-7);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+Twisted Fairyland;🐟;Fishing (rnd 5-7);Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;❓;Easy Encounter;Generator-2;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 Twisted Fairyland;❓;Random House;Generator-99;0;0;0;0;0;0;0;XXX;XXX;XXX;none
@@ -54,8 +54,9 @@ Twisted Fairyland;👑;Boss + Artifact;Generator-9;0;0;0;0;0;0;0;XXX;XXX;XXX;non
 Twisted Fairyland;🛶;Primitive Canoe;Prop;0;0;0;0;0;0;0;Travel Opportunity;Seem sturdy enough to keep you afloat.<br>;Paddled towards the horizon.;none
 
 //River of Sorrows
-River of Sorrows;❓;Memento Letter (rnd 3-5);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
-River of Sorrows;🐟;Fishing (rnd 4-6);Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+River of Sorrows;👤;Shade/Mirror (rnd 5-7);Generator-75;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+River of Sorrows;❓;Memento Letter (rnd 5-7);Generator-1;0;0;0;0;0;0;0;XXX;XXX;XXX;none
+River of Sorrows;🐟;Fishing (rnd 5-7);Generator-69;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;🌿;Prop/Small;Generator-0;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;❓;Any Enemy;Generator-11;0;0;0;0;0;0;0;XXX;XXX;XXX;none
 River of Sorrows;🏝️;Island;Generator-98;0;0;0;0;0;0;0;XXX;XXX;XXX;none

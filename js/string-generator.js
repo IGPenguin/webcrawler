@@ -770,11 +770,112 @@ var _MIRROR_PSYCHE_POOLS = [
   ["The mirror struggles to reflect of your mind.", "Few things are as sharp as what stares back.", "The intellect reflected warps the glass."]
 ];
 
+// Forsaken Village mirrors
+var _MIRROR_FV_SOUL_POOLS = [
+  // neg-0
+  ["Nothing redeemable stirs in the glass.", "Your sins have settled where warmth should be.", "The mirror finds no virtue left to name."],
+  // low (1-3)
+  ["A small conscience, doing what it can.", "Something guilty still holds its shape.", "The mirror finds you salvageable, barely."],
+  // mid (4-6)
+  ["Your conscience is steady and intact.", "Enough goodness to earn a reflection.", "The mirror finds no reason to look away."],
+  // high (7+)
+  ["Few sinners pass through this clean.", "The glass has rarely shown this much light.", "A clear conscience looks back at you."]
+];
+
+var _MIRROR_FV_HEART_POOLS = [
+  // neg-0
+  ["No warmth remains in what you show here.", "Whoever loved from here has long since gone.", "The mirror finds a chest long since emptied."],
+  // low (1-3)
+  ["Love survives here as a habit, no more.", "Something tender lingers in the glass.", "A dull warmth, old and half-forgotten."],
+  // mid (4-6)
+  ["The mirror finds a heart still giving.", "Warmth holds its shape inside you.", "Something honest beats behind the glass."],
+  // high (7+)
+  ["The widow's mirror has not seen this before.", "Your heart fills the glass to the edge.", "Love this strong leaves a mark on the glass."]
+];
+
+var _MIRROR_FV_KISMET_POOLS = [
+  // neg-0
+  ["The mirror clouds when it reads your fate.", "Misfortune trails you like an old debt.", "This omen has nothing good to offer."],
+  // low (1-3)
+  ["The odds haven't forgotten you, just barely.", "Fortune is present, though not generous.", "A cautious omen, neither gift nor warning."],
+  // mid (4-6)
+  ["The omen tilts in your direction today.", "Fortune keeps one eye open for you.", "The mirror bends in your favor here."],
+  // high (7+)
+  ["The omen trembles with good fortune.", "Few readings come out this favored.", "Your luck is written plainly in the glass."]
+];
+
+var _MIRROR_FV_PSYCHE_POOLS = [
+  // neg-0
+  ["The scholar's glass finds little to read.", "Whatever knowledge lived here has gone quiet.", "Thought moves through here without sticking."],
+  // low (1-3)
+  ["A mind still finding its edges.", "Something is forming behind the fog.", "Instinct carries more weight than thought."],
+  // mid (4-6)
+  ["The mirror finds a mind precise and awake.", "Your thinking is earned and it shows.", "The scholar's glass approves what it reads."],
+  // high (7+)
+  ["The glass strains to contain your mind.", "Few reach this clarity among the dead.", "Your intellect warps the mirror slightly."]
+];
+
+// River of Sorrows shades
+var _MIRROR_ROS_SOUL_POOLS = [
+  // neg-0
+  ["The shade turns away without a word.", "Found wanting. It offers nothing.", "Your sins are louder than your soul."],
+  // low (1-3)
+  ["The shade pauses, uncertain, then nods.", "A small record of goodness. It is enough.", "You have done just enough to be seen."],
+  // mid (4-6)
+  ["The shade reads you and steps aside.", "Your karma earns the crossing.", "Judged, and found passable."],
+  // high (7+)
+  ["The shade bows its head once.", "Few cross with a soul this clean.", "It has not seen this much light in years."]
+];
+
+var _MIRROR_ROS_HEART_POOLS = [
+  // neg-0
+  ["The shade looks for grief and finds quiet.", "No love left to weigh here.", "It recognizes nothing in your chest."],
+  // low (1-3)
+  ["A thin grief, still holding its shape.", "The shade sees love surviving on reflex.", "Something small still mourns in you."],
+  // mid (4-6)
+  ["The mourning shade knows this weight.", "Your grief is real enough to recognize.", "It sees love burning low but steady."],
+  // high (7+)
+  ["The shade stops. This grief is deep.", "It has not felt love this heavy before.", "Your heart is known here. It bows."]
+];
+
+var _MIRROR_ROS_KISMET_POOLS = [
+  // neg-0
+  ["The toll is steep. Fortune owes you nothing.", "Your luck dried up before the crossing.", "Fate has not been kind to your margin."],
+  // low (1-3)
+  ["The crossing is uncertain, but possible.", "Fate offers you a slim window.", "Your luck is thin, but it is there."],
+  // mid (4-6)
+  ["The toll shade nods and steps aside.", "Passage looks favorable from here.", "Your luck tips the crossing in your favor."],
+  // high (7+)
+  ["The toll is paid before it is asked.", "Fortune walks beside you at this crossing.", "Few cross this river with this much luck."]
+];
+
+var _MIRROR_ROS_PSYCHE_POOLS = [
+  // neg-0
+  ["The shade finds nothing worth reading.", "Thought passed through and left no mark.", "Your mind leaves no impression here."],
+  // low (1-3)
+  ["A dim awareness. The shade notes it.", "Something is forming. It registers.", "Instinct more than thought. It sees."],
+  // mid (4-6)
+  ["The knowing shade nods once, slowly.", "Your mind is clear enough to be read.", "It finds what it expected to find."],
+  // high (7+)
+  ["The shade goes still when it reads you.", "This clarity is rare among the crossing.", "Your mind unsettles it. It steps back."]
+];
+
 var _MIRROR_CONFIG = {
+  // Twisted Fairyland (original names, original pools)
   'Soul Mirror':   { getStat: function() { return playerKarma; }, label: 'Karma',     emoji: '✨', pools: _MIRROR_SOUL_POOLS   },
   'Heart Mirror':  { getStat: function() { return playerLove;  }, label: 'Love',      emoji: '💕', pools: _MIRROR_HEART_POOLS  },
   'Kismet Mirror': { getStat: function() { return playerLck;   }, label: 'Luck',      emoji: '🍀', pools: _MIRROR_KISMET_POOLS },
-  'Psyche Mirror': { getStat: function() { return playerInt;   }, label: 'Intellect', emoji: '🧠', pools: _MIRROR_PSYCHE_POOLS }
+  'Psyche Mirror': { getStat: function() { return playerInt;   }, label: 'Intellect', emoji: '🧠', pools: _MIRROR_PSYCHE_POOLS },
+  // Forsaken Village
+  "Sinner's Mirror": { getStat: function() { return playerKarma; }, label: 'Karma',     emoji: '✨', pools: _MIRROR_FV_SOUL_POOLS   },
+  "Widow's Mirror":  { getStat: function() { return playerLove;  }, label: 'Love',      emoji: '💕', pools: _MIRROR_FV_HEART_POOLS  },
+  'Omen Mirror':     { getStat: function() { return playerLck;   }, label: 'Luck',      emoji: '🍀', pools: _MIRROR_FV_KISMET_POOLS },
+  "Scholar's Mirror":{ getStat: function() { return playerInt;   }, label: 'Intellect', emoji: '🧠', pools: _MIRROR_FV_PSYCHE_POOLS },
+  // River of Sorrows
+  'Judging Shade':  { getStat: function() { return playerKarma; }, label: 'Karma',     emoji: '✨', pools: _MIRROR_ROS_SOUL_POOLS   },
+  'Mourning Shade': { getStat: function() { return playerLove;  }, label: 'Love',      emoji: '💕', pools: _MIRROR_ROS_HEART_POOLS  },
+  'Toll Shade':     { getStat: function() { return playerLck;   }, label: 'Luck',      emoji: '🍀', pools: _MIRROR_ROS_KISMET_POOLS },
+  'Knowing Shade':  { getStat: function() { return playerInt;   }, label: 'Intellect', emoji: '🧠', pools: _MIRROR_ROS_PSYCHE_POOLS }
 };
 
 function getMirrorDesc(mirrorName) {

@@ -106,7 +106,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       break;
 
     case 1: // Random story letter
-      var randomSlot = chooseFrom([3,4,5]);
+      var randomSlot = chooseFrom([5,6,7]);
       pushEncounter(getRandomEncounter(["Item"],["Memento","Piece of History"]), randomSlot);
       if (chooseFrom([true,false])) pushEncounter(getRandomEncounter(["Container"]), randomSlot);
       dbg("pushing letter at pos: " + randomSlot);
@@ -237,12 +237,12 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 69: // Fishing (random slot)
       if (logCall) logGenerator("fish");
-      pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([4, 5, 6]));
+      pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([5, 6, 7]));
       break;
 
     case 75: // Mirror (random slot, Twisted Fairyland)
       if (logCall) logGenerator("mirror");
-      if (procAbilityChance("",33)) pushEncounter(getRandomEncounter(["Mirror"]), chooseFrom([2, 3, 4, 5, 6]));
+      if (procAbilityChance("",33)) pushEncounter(getRandomEncounter(["Mirror"]), chooseFrom([5, 6, 7]));
       break;
 
     case 70: // Island Small — shore cache, one soft enemy

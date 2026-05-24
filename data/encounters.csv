@@ -131,9 +131,9 @@ Fading Wildlands;🦨;Musk Bandit;Toxic;2;0;2;0;1;0;0;Stench Bearer;Smell clings
 Fading Wildlands;🐀;Field Rat;Toxic;2;1;2;0;-1;0;0;Disease Bearer;Scurries through unseen filth.<br>;Contracted a sickness.;none
 
 Fading Wildlands;🦊;Fleeting Fox;Swift;2;0;2;0;2;0;0;Silent Hunter;Blasts through the undergrowth.<br>;Outplayed and bled out.;none
-Fading Wildlands;🦇;Screeching Bat;Swift;2;1;2;1;0;0;0;Night Hunter;Foul stench clings to its wings.<br>;Worn down from above.;none
+Fading Wildlands;🦇;Screeching Bat;Swift;2;1;2;0;1;0;0;Night Hunter;Foul stench clings to its wings.<br>;Worn down from above.;none
 Fading Wildlands;🦆;Spooked Drake;Swift;2;1;2;0;0;0;0;Wild Animal;Goes straight for your ankles.<br>;Plucked by an angry bird.;none
-Fading Wildlands;🐺;Stray Whelp;Swift;2;1;1;0;0;0;0;Wild Animal;Goes straight for the ankles.<br>;Torn apart and eaten.;none
+Fading Wildlands;🐺;Stray Whelp;Swift;2;1;1;0;1;0;0;Wild Animal;Goes straight for the ankles.<br>;Torn apart and eaten.;none
 
 Fading Wildlands;🐏;Neurotic Sheep;Heavy;2;1;2;0;4;0;0;Crested Charge;It's getting ready for serious ramming.<br>;Head-butted to death.;none
 Fading Wildlands;🐄;Grazing Cow;Heavy;3;0;1;0;1;0;0;Guarded Bulk;Tolerates you right up until it doesn’t.<br>;Impaled by its horns.;none
@@ -559,10 +559,10 @@ Forsaken Village;📜;Wanted Poster;Item;0;0;0;0;-1;0;0;Note;The scribbled face 
 
 Forsaken Village;🧧;Wedding Invitation;Item;0;0;0;0;0;0;0;Piece of History;po/em;Your heart will always remember;none
 
-Forsaken Village;🪞;Soul Mirror;Mirror;0;0;0;0;0;0;0;Karmic Reflection;Placeholder.<br>;Turned away before it could answer.;none
-Forsaken Village;🪞;Heart Mirror;Mirror;0;0;0;0;0;0;0;Love Reflection;Placeholder.<br>;Looked away without a word.;none
-Forsaken Village;🪞;Kismet Mirror;Mirror;0;0;0;0;0;0;0;Luck Reflection;Placeholder.<br>;Stepped back from what it showed.;none
-Forsaken Village;🪞;Psyche Mirror;Mirror;0;0;0;0;0;0;0;Intellect Reflection;Placeholder.<br>;Moved on before it could reveal more.;none
+Forsaken Village;🪞;Sinner's Mirror;Mirror;0;0;0;0;0;0;0;Karmic Reflection;Placeholder.<br>;Left before the verdict.;none
+Forsaken Village;🪞;Widow's Mirror;Mirror;0;0;0;0;0;0;0;Love Reflection;Placeholder.<br>;Walked away from the reflection.;none
+Forsaken Village;🪞;Omen Mirror;Mirror;0;0;0;0;0;0;0;Luck Reflection;Placeholder.<br>;Refused to read the omen.;none
+Forsaken Village;🪞;Scholar's Mirror;Mirror;0;0;0;0;0;0;0;Intellect Reflection;Placeholder.<br>;Closed the book before the lesson.;none
 
 Forsaken Village;🦴;Human Femur;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
 Forsaken Village;🚀;Toy Rocket;Item;0;0;0;0;0;0;0;Lost Possession;Looks like someone might miss it.<br>;You should find the owner!;none
@@ -1169,6 +1169,11 @@ River of Sorrows;👞;Wet Shoe;Item-Legs;0;0;0;0;0;0;0;Trash;Thoroughly wet leat
 River of Sorrows;💵;Wet Cash;Item;0;0;0;0;0;0;0;Worthless Junk;All letters already faded.<br>;Pocketed a piece of trash.;none
 
 River of Sorrows;💌;Soaked Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
+
+River of Sorrows;👤;Judging Shade;Mirror;0;0;0;0;0;0;0;Karmic Judgment;Placeholder.<br>;It watched you leave in silence.;none
+River of Sorrows;👤;Mourning Shade;Mirror;0;0;0;0;0;0;0;Love Reckoning;Placeholder.<br>;It watched you leave in silence.;none
+River of Sorrows;👤;Toll Shade;Mirror;0;0;0;0;0;0;0;Fate Reckoning;Placeholder.<br>;It watched you leave in silence.;none
+River of Sorrows;👤;Knowing Shade;Mirror;0;0;0;0;0;0;0;Psyche Reading;Placeholder.<br>;It watched you leave in silence.;none
 
 //Shrouded Necropolis
 Shrouded Necropolis;💀;Cracked Skull;Prop;0;0;0;0;0;0;0;Chilling Remnant;The remains of something long gone.<br>;Stepped carefully to avoid it.;none
