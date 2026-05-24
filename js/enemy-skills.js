@@ -265,8 +265,8 @@ function restoreCorpseAfterLevelUp() {
   playerRested = s.playerRested;
 }
 
-function wakeUpEnemy() {
-  logAction(corpseSnapshot.emoji + " ▸ 💢 Your attack disturbed their sleep.");
+function wakeUpEnemy(msg) {
+  logAction(corpseSnapshot.emoji + " ▸ 💢 " + (msg || getEnemyWakeLog()));
 
   enemyEmoji = corpseSnapshot.emoji;
   enemyName  = corpseSnapshot.name;

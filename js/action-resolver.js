@@ -1750,6 +1750,20 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         // Corpse search
         if (corpseState !== "") {
+          if (corpseState === "neutralized") {
+            if (corpseHasLoot && _skillOK !== false) {
+              displayEnemyEffect("👋");
+              logPlayerAction(actionString, getCorpseSearchLog());
+              if (typeof TelemetryManager !== 'undefined') TelemetryManager.setLootSource('drop');
+              pushEncounter(corpseLoot);
+              corpseHasLoot=false; corpseLoot=null;
+              nextEncounter();
+            } else {
+              wakeUpEnemy(getEnemyWakeLog());
+            }
+            break;
+          }
+          // killed
           if (corpseHasLoot) {
             displayEnemyEffect("👋");
             logPlayerAction(actionString,"Searched through the remains.");
@@ -2879,14 +2893,23 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        // Corpse rest — honor fishing restriction, otherwise delegate to playerRest()
+        // Corpse rest — honor fishing restriction; killed acts as Prop (crit +1 sta); neutralized wakes them
         if (corpseState !== "") {
           if (fishingRested) {
             logPlayerAction(actionString,"Already slept at this fishing spot.");
             displayPlayerCannotEffect();
             break;
           }
-          playerRest(); // sets playerRested=true internally; no-op if already rested
+          var _wasRested = playerRested;
+          playerRest();
+          if (_crit === 'success' && !_wasRested) {
+            playerSta++;
+            logPlayerAction(actionString, getCritSleepLog());
+            displayPlayerRestedEffect();
+          }
+          if (corpseState === "neutralized") {
+            wakeUpEnemy(getEnemyWakeLog());
+          }
           break;
         }
 

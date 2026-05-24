@@ -521,6 +521,26 @@ function getSleepOverLimitLog() {
   ]);
 }
 
+function getCorpseSearchLog() {
+  return chooseFrom([
+    "Went through what they carried.",
+    "Turned out their belongings.",
+    "Looked through what remained.",
+    "Searched what little they had.",
+    "Searched through their belongings."
+  ]);
+}
+
+function getEnemyWakeLog() {
+  return chooseFrom([
+    "They refuse to stay down.",
+    "Not as gone as they seemed.",
+    "They regained consciousness.",
+    "They recovered from the knockout.",
+    "You disturbed their sleep."
+  ]);
+}
+
 function getCritSleepLog() {
   return chooseFrom([
     "Woke up feeling uncannily whole. +1 🟢",
