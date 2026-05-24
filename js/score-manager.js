@@ -68,7 +68,8 @@ var ScoreManager = (function () {
     hash:           'entry.1370835727'
   };
 
-  var _pendingPayload = null;
+  var _pendingPayload    = null;
+  var _pendingOnDismissed = null;
 
   function _computeComponents(level, encounters, companions, totalStats, baseline, karma, isWin, diffLabel, critSuccesses, critFails, fishCatches, sleepPenalty) {
     var w = SCORE_WEIGHTS;
@@ -326,9 +327,13 @@ var ScoreManager = (function () {
     if (!success) { console.warn('ScoreManager: submission failed'); }
   }
 
-  function submitOrPrompt(payload) {
-    if (isLocalhost() && RANKINGS_DISABLED_LOCALHOST) return;
-    _pendingPayload = payload;
+  function submitOrPrompt(payload, onDismissed) {
+    if (isLocalhost() && RANKINGS_DISABLED_LOCALHOST) {
+      if (onDismissed) onDismissed();
+      return;
+    }
+    _pendingPayload     = payload;
+    _pendingOnDismissed = onDismissed || null;
 
     var isWin = payload.endType && (payload.endType === 'win' || payload.endType.startsWith('win_'));
 
@@ -377,7 +382,7 @@ var ScoreManager = (function () {
     function _dismiss() {
       _pendingPayload = null;
       if (overlay) overlay.style.display = 'none';
-      // Player stays on Stack Overflow; they can navigate to menu manually
+      if (_pendingOnDismissed) { var _cb = _pendingOnDismissed; _pendingOnDismissed = null; _cb(); }
     }
 
     confirmBtn.addEventListener('click', function () {

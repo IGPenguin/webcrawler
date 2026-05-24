@@ -207,6 +207,88 @@ var _BARK_POOLS = {
   ],
 };
 
+// ── Death Bark Pools ──────────────────────────────────────────────────────────
+
+var _DEATH_BARK_POOLS = {
+  dog: [
+    { icon: '🗯️', text: 'Whimpers once, then goes quiet.' },
+    { icon: '💤', text: 'Lies down beside you and stays.' },
+    { icon: '🐾', text: 'Nudges your hand with their nose.' },
+    { icon: '🗯️', text: 'Howls once. Nobody hears it.' },
+    { icon: '💧', text: 'Licks your face. You do not stir.' },
+  ],
+  cat: [
+    { icon: '🐾', text: 'Waits a bit, then starts eating your face.' },
+    { icon: '💤', text: 'Curls up on your corpse for warmth.' },
+    { icon: '👀', text: 'Sits on your chest. Stares into nothing.' },
+    { icon: '🗯️', text: 'Meows once at your body and leaves.' },
+    { icon: '🗯️', text: 'Meows at your body until something answers.' },
+  ],
+  bird: [
+    { icon: '🗯️', text: 'Shrieks once at the empty air.' },
+    { icon: '🎶', text: 'Sings your name to the silence.' },
+    { icon: '💨', text: 'Takes flight and does not return.' },
+    { icon: '🪶', text: 'Drops a feather on your chest.' },
+    { icon: '🎶', text: 'Calls out until the echo stops.' },
+  ],
+  lizard: [
+    { icon: '👀', text: 'Blinks once, then moves on.' },
+    { icon: '💤', text: 'Basks on your body in the warmth.' },
+    { icon: '🐾', text: 'Scurries over you without pause.' },
+    { icon: '👀', text: 'Does not appear to notice.' },
+    { icon: '💤', text: 'Presses flat against you for warmth.' },
+  ],
+  critter: [
+    { icon: '🐾', text: 'Crawls slowly across your face.' },
+    { icon: '💤', text: 'Settles near your hand and goes still.' },
+    { icon: '✨', text: 'Glows dimly above your body.' },
+    { icon: '🗯️', text: 'Buzzes once. Then stops.' },
+    { icon: '🌿', text: 'Makes a home in your coat pocket.' },
+  ],
+  rodent: [
+    { icon: '🐾', text: 'Steals something from your pocket.' },
+    { icon: '🗯️', text: 'Squeaks once at your body.' },
+    { icon: '💤', text: 'Curls up beside you and stays.' },
+    { icon: '🐾', text: 'Buries something small beside you.' },
+    { icon: '👀', text: 'Watches from a nearby shadow.' },
+  ],
+  large: [
+    { icon: '🗯️', text: 'Calls out once into the darkness.' },
+    { icon: '🐾', text: 'Stands over your body and does not move.' },
+    { icon: '💧', text: 'Nuzzles your hand and does not leave.' },
+    { icon: '💤', text: 'Lies down beside you in the dirt.' },
+    { icon: '🗯️', text: 'Stamps the ground. Once. Again.' },
+  ],
+  humanoid: [
+    { icon: '💬', text: 'Says nothing. Just stands there.' },
+    { icon: '💬', text: 'Tries to wake you.' },
+    { icon: '👀', text: 'Checks for a pulse. Finds none.' },
+    { icon: '💬', text: 'Closes your eyes with one hand.' },
+    { icon: '💬', text: 'Swears quietly. Then goes silent.' },
+    { icon: '👋', text: 'Holds your hand for a moment.' },
+    { icon: '💬', text: 'Says your name. No answer.' },
+    { icon: '🗡️', text: 'Picks up your weapon. Does not leave.' },
+  ],
+};
+
+function fireDeathBarks() {
+  if (!playerPartyString || playerPartyString.length === 0) return;
+  [...playerPartyString].forEach(function(emoji) {
+    var _type, _name;
+    if      (_COMPANION_DOGS.includes(emoji))     { _type = 'dog';      _name = petName[emoji] || 'companion'; }
+    else if (_COMPANION_CATS.includes(emoji))     { _type = 'cat';      _name = petName[emoji] || 'companion'; }
+    else if (_COMPANION_BIRDS.includes(emoji))    { _type = 'bird';     _name = petName[emoji] || 'companion'; }
+    else if (_COMPANION_LIZARDS.includes(emoji))  { _type = 'lizard';   _name = petName[emoji] || 'companion'; }
+    else if (_COMPANION_CRITTERS.includes(emoji)) { _type = 'critter';  _name = petName[emoji] || 'companion'; }
+    else if (_COMPANION_RODENTS.includes(emoji))  { _type = 'rodent';   _name = petName[emoji] || 'companion'; }
+    else if (_COMPANION_LARGE.includes(emoji))    { _type = 'large';    _name = petName[emoji] || 'companion'; }
+    else                                           { _type = 'humanoid'; _name = followerName[emoji] || petName[emoji] || 'companion'; }
+    var _pool = _DEATH_BARK_POOLS[_type] || _DEATH_BARK_POOLS.humanoid;
+    var _b = _pool[Math.floor(Math.random() * _pool.length)];
+    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text);
+  });
+}
+
 // ── Companion Bark Toast ───────────────────────────────────────────────────────
 // color = undefined/null → white border, no flash (ambient bark).
 // color = hex/css string → colored border + flash (fetch reward).

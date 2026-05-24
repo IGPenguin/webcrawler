@@ -187,7 +187,7 @@ function gameOver(silent=false){
   var _curtainDetail = _isRival
     ? ('<p style="font-size:20px; color:' + colorRed + ';">' + enemyMsg + '</p>')
     : ('<p style="font-size:20px;"' + decorateStatusText("", enemyMsg, colorWhite));
-  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p>" + _curtainDetail, 3, function() { registerClickListeners(300); }, function() { ScoreManager.submitOrPrompt(_deathPayload); });
+  curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">You died!</p>" + _curtainDetail, 3, function() { registerClickListeners(300); }, function() { ScoreManager.submitOrPrompt(_deathPayload, fireDeathBarks); });
   animateUIElement(emojiWrapperUIElement,"animate__flipInY","1.2");
   nextEncounter();
   // linesStory intentionally NOT rebuilt here — reincarnation needs the index to stay valid.
