@@ -285,8 +285,10 @@ function fireDeathBarks() {
     else                                           { _type = 'humanoid'; _name = followerName[emoji] || petName[emoji] || 'companion'; }
     var _pool = _DEATH_BARK_POOLS[_type] || _DEATH_BARK_POOLS.humanoid;
     var _b = _pool[Math.floor(Math.random() * _pool.length)];
+    logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
     AchievementManager.queueCompanionBark(_b.icon, _name, _b.text);
   });
+  redraw();
 }
 
 // ── Companion Bark Toast ───────────────────────────────────────────────────────
