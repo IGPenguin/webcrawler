@@ -496,7 +496,7 @@ Forsaken Village;🐷;Pig Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants sp
 
 Forsaken Village;🪓;Titansteel Cleaver;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.;none
 Forsaken Village;🥊;Enchanted Glove;Item-Weapon;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat technique.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 ❤️ Health</b>.;Feeling more confident.;none
-Forsaken Village;🩼;Disposed Crutch;Item-Weapon;0;1;1;0;0;0;0;<b>Artifact</b>;Best of both - support and attack power.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;This will come in handy!;none
+Forsaken Village;🛹;Sturdy Skateboard;Item-Weapon;0;1;1;0;0;0;0;<b>Artifact</b>;Doubles for transport and dealing damage.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Cool, fast and dangerous.;none
 Forsaken Village;🛡️;Unstable Shield;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🛡 Random Block</b>.<br>33% chance to <b>resist physical damage</b>.;Gained skill <b>🛡 Random Block</b>.;none
 Forsaken Village;🧼;Ancient Soap;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Grants attribute <b>🫧 Bubble Shield</b>.<br>Repels received damage - <b>once per combat</b>.;Gained attribute <b>🫧 Bubble Shield</b>.;none
 Forsaken Village;🎓;Scholar's Hat;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;<b>✏️ Experience</b> gains are <b>increased by 25%</b><br><i>Anyone looks way smarter wearing this.</i>;<b>Experience gains faster by 25%!</b>;none
@@ -516,7 +516,8 @@ Forsaken Village;🖋️;Fountain Pen;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;The t
 Forsaken Village;🔧;Metal Spanner;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;Usable as makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.;none
 Forsaken Village;🪛;Rusty Screwdriver;Item-Weapon;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.;none
 Forsaken Village;👖;Work Trousers;Item-Legs;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for anything to come;none
-Forsaken Village;🗜️;Workbench Boxer;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
+Forsaken Village;🩼;Disposed Crutch;Item-Weapon;0;1;-1;0;0;0;0;Accessbility Tool;Cumbersome but reliable for dealing damage.<br>Provides <b>+1 ⚔️ Damage</b> and <b>-1 🟢 Energy</b>.;This will come in handy!;none
+Forsaken Village;🗜️;Workbench Clamp;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
 Forsaken Village;⛑️;Medic Helmet;Item-Head;1;0;0;1;0;0;0;Head Protection;Robust protection for those who help others.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Protected and blessed;none
 Forsaken Village;📔;Holy Prayerbook;Item-Weapon;0;0;0;1;0;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;Learned plenty of stuff;none
 
@@ -822,7 +823,7 @@ Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;0;Negative En
 Twisted Fairyland;🐦‍🔥;Ashen Glider;Boss-Hot;3;3;2;0;4;0;0;Blazing Bird;Its eyes are glowing with anger.<br>;Turned into ash pile.;none
 Twisted Fairyland;🦎;Komodo Dragon;Boss-Toxic;3;3;2;0;4;0;0;Venomous Lizard;Maw full of venomous teeth.<br>;Devoured by a hungry lizard.;none
 Twisted Fairyland;🪨;Animated Stone;Boss-Tough;3;2;1;0;-1;0;1;Malevolent Spell;This one seems pretty serious.<br>;Crushed into a fine dust.;none
-Twisted Fairyland;🐉;Faerie Dragon;Boss-Reflective;4;3;1;0;3;1;0;Mythical Creature;Pearlescent scales, maw full of teeth.<br>;Got their head chewed off.;none
+Twisted Fairyland;🐉;Faerie Dragon;Boss-Reflective;4;3;1;0;3;1;0;Mythical Creature;Pearlescent scales, maw full of teeth.<br>;Got your head chewed off.;none
 Twisted Fairyland;🐺;Prowling Wolf;Boss-Swift;4;3;2;0;3;0;0;Apex Predator;Hunting for prey.<br>;Got ripped apart and eaten.;none
 Twisted Fairyland;🧌;Troll Warmonger;Boss-Heavy;3;3;2;0;4;1;0;Twisted Humanoid;Shakes the earth with every step.<br>;Pounded into dust.;none
 Twisted Fairyland;🦖;Ferocious Raptor;Boss-Heavy;4;3;1;0;-1;0;0;Mr. Funny Hands;Looks like a freakin' big problem.<br>;Got chewed with dozens of teeth.;none
@@ -890,11 +891,12 @@ Twisted Fairyland;👘;Warlock Robe;Item-Chest;0;0;0;0;-4;2;0;Artifact;Usually w
 Twisted Fairyland;🪄;Warlock Wand;Item-Weapon;0;0;0;-2;0;2;0;<b>Artifact</b>;Resonates with forsaken magical power.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Wielded a dangerous power.;none
 Twisted Fairyland;📿;Witchbane Band;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed by the ancient saint energy.<br><b>+2 ⚔️ Damage</b> to <b>💀 Undead</b> & <b>👺 Demon</b>.;Gained skill <b>📿 Blessed Attack</b>.;none
 Twisted Fairyland;📌;Voodoo Pin;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Enemies will suffer from the <b>☠️ Ancient Voodoo</b>.<br>Deal <b>-1 💔 Damage</b> when engaging in combat.;Gained ability <b>☠️ Ancient Voodoo</b>.;none
-Twisted Fairyland;📜;The Elder Scroll;Item;-1;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Knowledge</b>, syphons <b>-1 💔 Damage</b>.<br>n/a;Embraced the ancient knowledge.;none
+Twisted Fairyland;📜;The Elder Scroll;Item;-1;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Knowledge</b>, syphons <b>-1 💔 Health</b>.<br>n/a;Embraced the ancient knowledge.;none
 
 Twisted Fairyland;🥢;Magic Sticks;Item-Weapon;1;0;0;0;0;1;0;Spellcasting Tool;One is extra sharp, the other glows.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Embraced the energy surge.;none
 Twisted Fairyland;🏹;Sharpshooter Bow;Item-Weapon;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!;none
 Twisted Fairyland;🪃;Haunted Boomerang;Item-Weapon;0;2;0;-1;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;Something about it feels off;none
+Twisted Fairyland;🌵;Twisted Thorn;Item-Weapon;-1;2;0;0;0;0;0;Fae Edge;Hurts to both wield and to get hit by.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 💔 Damage</b>.;Drew few blood drops.;none
 Twisted Fairyland;📯;Warlord Horn;Item-Trinket;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!;none
 Twisted Fairyland;🪀;Jade Trinket;Item-Trinket;0;0;1;1;0;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;;none
 Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Intellect</b>.;Absorbed some magic knowledge;none
@@ -967,26 +969,39 @@ River of Sorrows;⚱️;Floating Urn;Prop;0;0;0;-1;0;0;0;Funerary Relic;The wate
 
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;0;River's Cast-offs;They've been circling here for days.<br>;Fished through the debris.;none
 River of Sorrows;🍃;Pale Leaves;Container;0;0;0;0;0;0;0;River's Cast-offs;Carried from somewhere before things fell apart.<br>;Something was caught among them.;none
+River of Sorrows;🪵;Floating Wreckage;Container;0;0;0;0;0;0;0;Drifting Salvage;Hull timbers floating on the woter.<br>;Picked through the wreackage.;none
 River of Sorrows;📦;Waterlogged Crate;Container;0;0;0;0;0;0;0;Drowned Cargo;Perhaps holds something of use inside.<br>;Contents still dry inside.;none
-River of Sorrows;🎁;Unopened Gift;Container;0;0;0;0;0;0;0;Undelivered;Never reached whoever was waiting for it.<br>;Found what was inside.;none
+River of Sorrows;🎁;Unopened Offering;Container;0;0;0;0;0;0;0;Undelivered;Never reached whoever was waiting for it.<br>;Revealed what was inside.;none
 River of Sorrows;🏺;Sealed Amphora;Container;0;0;0;0;0;0;0;Preserved Contents;Someone sealed this very carefully.<br>;The wax cracked open.;none
 River of Sorrows;🛢️;Adrift Barrel;Container;0;0;0;0;0;0;0;Drowned Cargo;Sealed tight, floating on the waves.<br>;Weighed more than expected.;none
+River of Sorrows;⚰️;Adrift Casket;Container;0;0;0;0;0;0;0;Burial Drift;Came untethered from wherever the ritual started.<br>;Broke the seal to look inside.;none
+River of Sorrows;🧺;Reed Basket;Container;0;0;0;0;0;0;0;River Drift;Woven tight enough to outlast whoever tied it off.<br>;Pulled it apart to see inside.;none
 
 River of Sorrows;🛢️;Chained Barrel;Locked-Container;0;0;0;0;0;0;0;Suspicious Container;Closed forever with a hefty chain and a lock.<br>;It finally clicked open.;none
 River of Sorrows;🧳;Sturdy Trunk;Locked-Container;0;0;0;0;0;0;0;Personal Belongings;Secured by lock, might hold something useful.<br>;Uncovered the contents.;none
 River of Sorrows;🧳;Travel Chest;Locked-Container;0;0;0;0;0;0;0;Abandoned Belongings;Left behind by someone fleeing in haste.<br>;The latch gave way at last.;none
 River of Sorrows;🎒;Waterproof Backpack;Locked-Container;0;0;0;0;0;0;0;Traveler’s Chest;Strapped shut, washed ashore long ago.<br>;The lock was brittle and gave in.;none
 River of Sorrows;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar, almost painful to touch.<br>;It clicks softly open.;none
+River of Sorrows;🕋;Sealed Reliquary;Locked-Container;0;0;0;0;0;0;0;Sacred Cache;Inscribed with unfamiliar glowing symbols.<br>;Finall clicked it open.;none
 
 River of Sorrows;🏝️;Palm Island;Container-2;0;0;0;0;0;0;0;Shore Find;Inhabited by a single palm tree.<br>;Sailed a bit closer.;none
 River of Sorrows;🏖️;Abandoned Isle;Container-2;0;0;0;0;0;0;0;Shore Find;Something seems to be lying in the shade.<br>;Sailed a bit closer.;none
+River of Sorrows;🏕️;Riverside Camp;Container-2;0;0;0;0;0;0;0;Temporary Shore;Set up by someone who planned to leave soon.<br>;Docked to take a closer look.;none
+
 River of Sorrows;🌾;Overgrown Reeds;Container-3;0;0;0;0;0;0;0;Woven Stash;Lashed together and hidden in the reeds.<br>;Parted the stalks.;none
 River of Sorrows;🪨;Hollow Cliffside;Container-3;0;0;0;0;0;0;0;Natural Vault;Carved by water, sealed by someone after.<br>;Reached inside to reveal something.;none
-River of Sorrows;🪨;Cliff Summit;Container-4;0;0;0;0;0;0;0;Hidden Haul;Carved into the rock face by the tide.<br>;Paddled closer to the cliff.;none
-River of Sorrows;🪵;Floating Wreckage;Container-4;0;0;0;0;0;0;0;Drifting Salvage;Hull timbers still above water, hold intact enough.<br>;Picked through what the river hadn't taken.;none
-River of Sorrows;🏝️;Booty Bay;Container-5;0;0;0;0;0;0;0;Island Haul;Marked by a rotted post, half-swallowed by sand.<br>;Sailed closer to the bank.;none
-River of Sorrows;🛖;Island Storehouse;Container-5;0;0;0;0;0;0;0;Abandoned Haul;Built once with intention, left without any.<br>;Cleared it out before the tide cut off.;none
+River of Sorrows;🛖;Island Storehouse;Container-3;0;0;0;0;0;0;0;Abandoned Haul;Built once with intention, left without any.<br>;Cleared it out before the tide cut off.;none
 
+River of Sorrows;🗿;Idol Alcove;Container-4;0;0;0;0;0;0;0;Riverbank Shrine;Offerings accumulated here over years.<br>;Paddled towards the alcove.;none
+River of Sorrows;🪨;Cliff Summit;Container-4;0;0;0;0;0;0;0;Hidden Haul;Carved into the rock face by the tide.<br>;Paddled closer to the cliff.;none
+River of Sorrows;🕯️;Vigil Ground;Container-4;0;0;0;0;0;0;0;Mourning Site;The offerings outlasted the people who brought them.<br>;Sailed to have a closer look.;none
+
+River of Sorrows;🪦;Riverside Cemetery;Container-5;0;0;0;0;0;0;0;Ancient Memorial;Built for souls the river took under.<br>;Investigated the cemetery closer.;none
+River of Sorrows;🏝️;Booty Bay;Container-5;0;0;0;0;0;0;0;Island Haul;Marked by a rotted post, half-swallowed by sand.<br>;Sailed closer to the bank.;none
+River of Sorrows;🛕;Shore Shrine;Container-5;0;0;0;0;0;0;0;Religious Site;Built when the river still carried the living.<br>;Sailed closer to have a look.;none
+River of Sorrows;🏴‍☠️;Pirate Cove;Container-5;0;0;0;0;0;0;0;Corsair Cache;Abandoned cargo boxes marked with skull and bones.<br>;Investigated the area closer.;none
+
+River of Sorrows;🧱;Sealed Mortuary;Locked-Container-3;0;0;0;0;0;0;0;Bricked Vault;Mortared shut to hide something forever.<br>;The mortar gave before the wall did.;none
 River of Sorrows;⛵️;Ghost Ship;Locked-Container-3;0;0;0;0;0;0;0;Sealed Hold;Bolt-locked from inside by someone long gone.<br>;Forced it open on the third heave.;none
 River of Sorrows;🏛️;Cliff Temple;Locked-Container-3;0;0;0;0;0;0;0;Sealed Shrine;Stone door, old inscription. Neither stopped you.<br>;Shouldered it open and stepped inside.;none
 River of Sorrows;🛖;Island Hut;Locked-Container-3;0;0;0;0;0;0;0;Abandoned Shelter;Door braced shut from outside. Whoever did it isn't coming back.<br>;Lifted the bar and went inside.;none
@@ -1019,7 +1034,11 @@ River of Sorrows;🫧;Flooded Memory;Trap-Sleep;0;0;-2;0;0;0;0;Lingering Thought
 River of Sorrows;🪅;Floating Piñata;Trap-Attack;0;1;0;0;0;0;0;Soggy Surprise;Drifting past, begging to be smashed.<br>;Improved your attack accuracy!;none
 River of Sorrows;🪨;Meditation Rock;Trap-Sleep;0;0;0;0;1;0;0;Calm Focus;Flat stone facing the water.<br>;You sit, mind a little clearer.;none
 
-//TODO: 3+ Altars (otherwise they may trigger error)
+River of Sorrows;🏛️;Sunken Shrine;Altar;0;0;0;0;0;1;0;Waterlogged Blessing;Still receiving prayers under the waterline.<br>;Something warm washed through you.;none
+River of Sorrows;🕯️;Mourning Candles;Altar;0;0;1;0;0;0;0;Floating Memorial;Someone placed these for someone who won't return.<br>;The flames held still;none
+River of Sorrows;🏮;Drowned Lantern;Altar;0;0;0;1;0;0;0;Pale Light;Burns beneath the surface as if the river is no obstacle.<br>;The light held longer than expected;none
+River of Sorrows;🖤;Grief Marker;Altar;1;0;0;0;0;0;0;Dark Memorial;Heart shape scraped into the shore rock.<br>;Shed a tear of lingering hope;none
+River of Sorrows;⛰️;Emerging Vista;Altar;0;0;0;0;1;0;0;Point of Interest;Provides a clear view towards the horizon.<br>;Got familiar with the surroundings;none
 
 River of Sorrows;🗣️;Muffled Screams;Curse;0;0;0;-2;0;0;0;Distant Noise;Disturbing voices begging for mercy.<br>;Depression intensified;none
 River of Sorrows;🌫️;River Mist;Curse;0;0;0;0;-1;0;0;Creeping Fog;Carries whispers of the long departed.<br>;Something cold passed right through you;none
@@ -1048,7 +1067,7 @@ River of Sorrows;🦜;Annoying Parrot;Pet;1;0;3;0;0;0;0;Abandonded Pet;Keeps tal
 
 River of Sorrows;🦫;Gnawing Terror;Standard;4;2;3;0;2;0;0;Busy Maw;Teeth made for wood, repurposed for bone.<br>;Dragged you to a dam of bones.;none
 
-River of Sorrows;🐟;Pale Mirrorfish;Reflective;4;1;2;0;-1;0;0;River Oddity;Scales like polished silver, returns what you give.<br>;Swallowed in one pale flash.;none
+River of Sorrows;🐟;Pale Mirrorfish;Reflective;4;1;2;0;-1;0;0;River Oddity;Scales like silver, returns what you give.<br>;Swallowed in one pale flash.;none
 River of Sorrows;🐠;Depressed Angelfish;Reflective;3;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
 River of Sorrows;🐸;Gleaming Croaker;Reflective;3;2;3;0;1;0;0;Woodland Oddity;Shimmers with pearlescent colours.<br>;Drowned in a sorry puddle.;none
 
@@ -1061,14 +1080,15 @@ River of Sorrows;🦬;Stoneback Bison;Tough;6;3;3;0;0;0;1;Tough Charger;Mossy bo
 River of Sorrows;🐚;Cone Snail;Toxic;2;3;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops, that was deadly!;none
 River of Sorrows;‍🪼;Box Jelly;Toxic;2;3;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.;none
 River of Sorrows;🦎;Blighted Newt;Toxic;4;3;2;0;-1;0;0;Toxic Crawler;Skin weeps something that doesn't wash off.<br>;Dissolved from the outside in.;none
-River of Sorrows;🧜🏾‍♀️;Murky Lurker;Toxic;5;2;2;0;2;0;1;Sunken Guardian;Covered with some slimy residue.<br>;Dragged in from behind, no warning.;none
+River of Sorrows;🧜🏾‍♀️;Murky Lurker;Toxic;5;2;2;0;2;0;0;Sunken Guardian;Covered with some slimy residue.<br>;Dragged into the depths.;none
 
 River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless to watch, dangerous to touch.<br>;Killed by a mere touch.;none
 River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;3;3;2;0;-1;0;0;Spiky Ball;Looks funny, but is lethal.<br>;Pierced by thousands spikes.;none
-River of Sorrows;🐚;Barbed Wretch;Stingy;4;3;2;0;0;0;0;Shell Lurker;A hunched thing hiding in a shell lined with barbs.<br>;Hauling it out flayed hands.;none
+River of Sorrows;🐚;Barbed Wretch;Stingy;4;3;2;0;0;0;1;Shell Lurker;A hunched thing hiding in a shell lined with barbs.<br>;Hauling it out flayed hands.;none
 
 River of Sorrows;♨️;Scalding Elemental;Hot;4;3;2;0;0;0;0;Thermal Horror;Erupts where the riverbed has cracked.<br>;Boiled alive in sorrow's current.;none
-River of Sorrows;🧜🏻‍♀️;Blazing Siren;Hot;4;3;2;0;3;1;0;Scalding Lure;Runs warm enough to blister the water around her.<br>;Got too close. Classic mistake.;none
+River of Sorrows;🧜🏻‍♀️;Blazing Siren;Hot;4;1;2;0;3;2;0;Scalding Lure;Runs warm enough to blister the water around her.<br>;Taken down by a siren.;none
+River of Sorrows;👤;Fever Shade;Hot;4;2;3;0;0;0;0;Heat Specter;Dead warmth fills the cold air around it.<br>;The fever became your last dream.;none
 
 River of Sorrows;‍🦈;Great Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry predator!;none
 River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops<br>;Stampeded to your death.;none
@@ -1079,7 +1099,7 @@ River of Sorrows;🐍;Aquatic Snake;Swift;3;4;2;0;-1;0;1;Fearless Predator;Charg
 River of Sorrows;🐬;Laughing Scumbag;Swift;4;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.;none
 River of Sorrows;🧜🏻‍♂️;Pale Drifter;Swift;4;3;2;0;2;0;0;Ghostly Current;Cuts through grief-thickened water without slowing.<br>;Gone before you hit the water.;none
 
-River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Feeds on your fear.<br>;Struck by thorough evil.;none
+River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Feeds on your fear and anxiety.<br>;Struck by thorough evil.;none
 
 River of Sorrows;🧜‍♂️;Drowned Tempter;Demon;3;2;2;0;2;1;0;Abyssal Charmer;Promises breath beneath the waves.<br>;You followed him under, and never surfaced.;none
 River of Sorrows;🧜‍♀️;Silt Siren;Demon;3;1;3;0;3;1;0;Luring Shade;Voice muffled, eyes burning bright below.<br>;You leaned closer and the river took you.;none
@@ -1113,7 +1133,7 @@ River of Sorrows;🥤;Coke Cup;Consumable;0;0;0;0;0;0;0;Someones' Trash;There is
 River of Sorrows;🧋;Floating Cup;Consumable;0;0;0;0;0;0;0;Someones' Trash;There is still a little bit inside.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 River of Sorrows;🧃;Juice Pouch;Consumable;0;0;0;0;0;0;0;Refreshment;Packs a burst of energy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 River of Sorrows;🦪;Giant Clam;Consumable;0;0;0;0;0;0;0;Seafood;A rare treat of the depths.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
-River of Sorrows;🦪;Brackish Oyster;Consumable;0;0;0;0;2;0;0;Seafood;A rare treat of the water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
+River of Sorrows;🦪;Brackish Oyster;Consumable;0;0;0;0;0;0;0;Seafood;A rare treat of the water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 River of Sorrows;🍤;Crunchy Shrimp;Consumable;0;0;0;0;0;0;0;Seafood;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 River of Sorrows;🦐;Crawfish Snack;Consumable;0;0;0;0;0;0;0;Seafood;A bite of the river’s life.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 River of Sorrows;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;0;Massive Catch;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
@@ -1123,9 +1143,10 @@ River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not th
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 //More or less matches fishing (NEEDS UNIQUE POOL - starts here)
+River of Sorrows;⭐️;Fallen Star;Item-Trinket;0;0;0;0;0;3;0;<b>Artifact</b>;Radiating with power, warm to the touch.<br>Provides <b>+3 🔵 Mana</b>.;The sky has embraced you.;none
 River of Sorrows;🌙;Moonstone Sickle;Item-Weapon;2;0;0;0;0;1;0;Lunar Gem;Gleams with inconspicuous light.<br>Provides <b>+2 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Felt a surge of power.;none
-
 // - ends here
+
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
 River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 River of Sorrows;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
@@ -1147,11 +1168,10 @@ River of Sorrows;📿;Witchbane Band;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed 
 River of Sorrows;🏳️;White Flag;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Alllows to <b>🏳️ Surrender</b> for <b>-3 🧠 Morale</b>.<br>This should usually be the last resort.;Gained an option to <b>🏳️ Surrender</b>.;none
 River of Sorrows;🛟️;Lifeguard Ring;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 River of Sorrows;❤️‍🩹;Heart Band-Aid;Item-Trinket;2;0;0;0;0;0;0;<b>Artifact</b>;Supposedly heals even a severe heartbreak.<br>Provides <b>+2 ❤️ Health</b> and that's it.;Didn't kill you, made you stronger;none
-River of Sorrows;⭐️;Fallen Star;Item-Trinket;0;0;0;0;0;3;0;<b>Celestial Artifact</b>;Radiating with power, warm to the touch.<br>Provides <b>+3 🔵 Mana</b>.;The sky has embraced you.;none
 
 River of Sorrows;🪝;Captain's Hook;Item-Weapon;0;2;0;-1;0;0;0;Cursed Tool;Pulled from the depths of torment.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;;none
 River of Sorrows;🪝;Rusty Hook;Item-Weapon;0;1;0;0;0;0;0;Weathered Tool;Hangs uselessly from the eaves.<br>Provides <b>+1 ⚔️ Damage</b>.;Could still make a bloody mess.;none
-River of Sorrows;🎖️;Starlight Amulet;Item-Trinket;0;0;0;0;0;2;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power;none
+River of Sorrows;🎖️;Starlight Amulet;Item-Trinket;0;0;0;0;0;2;0;Magical Accessory;The surface has a pearlescent finish.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power;none
 River of Sorrows;💧;Frozen Teardrop;Item;0;0;0;0;-2;2;0;Magical Pin;Tangible proof of the previous sins.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🧠 Charisma</b>.;Felt a bitter memory;none
 River of Sorrows;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Manuscript;Secrets of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;You will never be the same.;none
 River of Sorrows;🩴;Rubber Sliders;Item-Legs;0;0;1;1;0;0;0;Cheap Footwear;Surprisingly good for navigating slippery banks.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Squelch, squelch.;none
@@ -1189,6 +1209,7 @@ Shrouded Necropolis;🫂;Mourning Shades;Prop;0;0;0;0;0;0;0;Hopeless Souls;Look 
 Shrouded Necropolis;🦷;Jagged Tooth;Prop;0;0;0;0;0;0;0;Chilling Remnant;A tooth too large for any human.<br>;;none
 Shrouded Necropolis;🌾;Dead Reeds;Prop;0;0;0;0;0;0;0;Silent Flora;Shuffles softly in the stillness.<br>;;none
 Shrouded Necropolis;⛓️‍💥;Broken Shackles;Prop;0;0;0;0;0;0;0;Suspicious Clue;Probably left behind by an escaped prisoner.<br>;Followed the way ahead.;none
+Shrouded Necropolis;🏛️;Collapsed Mausoleum;Prop;0;0;0;0;0;0;0;Ancient Tomb;The days of its glory are long gone.<br>;Left it far behind yourself.;none
 
 Shrouded Necropolis;✝️;Saint's Grave;Prop;0;0;0;1;0;0;0;Blessed Remains;The resting place of a blessed soul.<br>;Woke up feeling blessed;none
 Shrouded Necropolis;🎠;Horse Statue;Prop;0;0;1;0;0;0;0;Dashing Symbol;Eternal reminder of the royal breed.<br>;Woke up feeling extra fast;none
@@ -1200,6 +1221,7 @@ Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;-1;0;0;0;Silent Relic;Its colou
 Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;-1;0;0;Final Destination;The text is almost fully faded.<br>;Haunted by the resident spirit;none
 Shrouded Necropolis;⏳;Frozen Hourglass;Prop;0;0;-1;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;Woke up with a sluggish aura;none
 Shrouded Necropolis;⚰️;Broken Coffin;Prop;0;0;0;0;-1;0;0;Ruins;Wood splinters litter the ground.<br>;Sleeping here took its toll;none
+
 Shrouded Necropolis;🏺;Ancient Urn;Container;0;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;;none
 Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;;none
 Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;0;Ruins;Nothing of particular interest.<br>;;none
@@ -1365,6 +1387,7 @@ Shrouded Necropolis;💍;Engagement Ring;Item-Trinket;2;0;0;0;0;0;0;Shiny Object
 Shrouded Necropolis;🔗;Shattered Shackles;Item-Trinket;0;0;0;2;0;0;0;Freedom Relic;Remnants of some lucky prisoner's captivity.<br>Provides <b>+3 🍀 Luck</b>.;Felt the chains of the past.;none
 Shrouded Necropolis;🪲;Cursed Scarab;Item-Trinket;-2;0;0;5;0;0;0;Shiny Object;An unauthorized loot from someone's tomb.<br>Provides <b>+5 🍀 Luck</b> for <b>-2 💔 Health</b>.;Ancient curse settled in you;none
 
+Shrouded Necropolis;💀;Skull Signet;Item-Trinket;0;1;0;-2;0;0;0;Death Mark;Made from some small creature remains.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🍀 Luck</b>.;Strange chill ran your spine.;none
 Shrouded Necropolis;🪞;Tarnished Locket;Item-Trinket;-1;0;0;0;4;0;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart almost skipped a beat.;none
 
 Shrouded Necropolis;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;0;Dark Elixir;Might have some mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.;none

@@ -69,7 +69,7 @@ function enemyHit(damage,magicType=false,applyLuck=true,silent=false) {
   if (enemyDef>0 && !magicType) {
     hitMsg=hitMsg+" ("+enemyDef+" 🔰)";
     if (damage<=0){
-      hitMsg="Your attack was fully repelled! ("+enemyDef+" ️🔰)";
+      hitMsg="Your attack was fully repelled! ("+enemyDef+" 🔰)";
       displayEnemyEffect("🔰");
     }
   }
@@ -254,7 +254,7 @@ function restoreCorpseAfterLevelUp() {
   levelUpSavedCorpse = null;
   corpseState = s.corpseState; corpseSnapshot = s.corpseSnapshot;
   corpseHasLoot = s.corpseHasLoot; corpseLoot = s.corpseLoot;
-  enemyEmoji = s.enemyEmoji; enemyName = s.enemyName; enemyType = s.enemyType; enemyBossType = s.enemyBossType;
+  enemyEmoji = s.enemyEmoji; enemyName = s.enemyName; enemyBossType = s.enemyBossType;
   enemyHp = s.enemyHp; enemyHpLost = s.enemyHpLost;
   enemyAtk = s.enemyAtk; enemyAtkBonus = s.enemyAtkBonus;
   enemySta = s.enemySta; enemyStaLost = s.enemyStaLost;

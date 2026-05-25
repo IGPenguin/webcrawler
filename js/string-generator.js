@@ -509,7 +509,7 @@ function getSleepNearLimitLog() {
   return chooseFrom([
     "The cold creeps in as you sleep.",
     "Something stirs, do not hesitatate.",
-    "She grows impatient, do not waste time. "
+    "She grows impatient while you sleep. "
   ]);
 }
 

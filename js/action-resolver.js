@@ -82,7 +82,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         }
 
         if (enemyType=="Shop") {
-          drachmaeBuy(2,"Favor");
+          drachmaeBuy(1,"Favor");
           break;
         }
 
@@ -530,7 +530,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_skillOK === false && (enemyType === "Toxic" || enemyType === "Hot")) {
               var _toxicDmg = Math.max(1, enemyAtk+enemyAtkBonus);
-              logPlayerAction(actionString, "Oops, fallen right onto them -"+_toxicDmg+" 💔 -1 🟢");
+              logPlayerAction(actionString, "Fallen right onto them -"+_toxicDmg+" 💔 -1 🟢");
               displayPlayerCannotEffect();
               playerHit(_toxicDmg);
               break;
@@ -604,7 +604,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               enemyStaminaChangeMessage(-1,
                 _crit === 'success' ? "Glided past a swift attack." : "Barely slipped a swift attack -1 🟢",
                 "Rolled out of the way -1 🟢");
-              displayEnemyCannotEffect();
               displayPlayerEffect("🌀");
             } else {
               if (_crit === 'fail') {
@@ -657,7 +656,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 enemyStaminaChangeMessage(-1,
                   _crit === 'success' ? "Glided past without a stumble." : "Dodged a heavy attack -1 🟢",
                   "Rolled around wasting energy -1 🟢");
-                displayEnemyCannotEffect();
                 displayPlayerEffect("🌀");
               }
             }
@@ -1452,7 +1450,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Granted <b>Minor +🍀 +🧠</b> gods blessing.");
+            logPlayerAction(actionString,"Granted <b>Minor +🍀 +🧠</b> gods blessing");
             displayPlayerGainedEffect();
             displayPlayerEffect("🙏");
             playerLck+=0.5;
@@ -1520,7 +1518,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Sleep":
           case "Item":
           case "Fishing":
-            playerHeal();
+            playerHeal(_crit === 'success');
             break;
           case "Standard":
           case "Recruit":
@@ -1557,9 +1555,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           default:
-            var prayLogMessage="Your prayer had no visible effect."
-            playerHeal();
-            logPlayerAction(actionString,prayLogMessage);
+            playerHeal(_crit === 'success');
         }
         break;
 
@@ -1807,7 +1803,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerLove++;
             playerKarma++;
             playerHit(1);
-            logPlayerAction(actionString, "<text style=color:"+colorGold+";>Felt something deep in your heart -1 💔</text>");
+            logPlayerAction(actionString, "<text style=color:"+colorGold+";>Remembered something deep inside -1 💔</text>");
             displayPlayerRestedEffect();
             displayPlayerEffect("💔");
             break;
@@ -3247,7 +3243,7 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       picked.apply();
       displayPlayerGainedEffect();
       displayPlayerEffect(picked.stat);
-      logPlayerAction(actionString, "You received a <b>Minor +"+picked.stat+"</b> blessing.");
+      logPlayerAction(actionString, "Received a <b>Minor +"+picked.stat+"</b> blessing");
       redraw();
       return;
     } else if (item=="Gamble")  {

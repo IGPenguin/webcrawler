@@ -95,7 +95,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
       if (type == "Small") {
         pushEncounter(getRandomEncounter(["Small"]));
-        if (_propRow) pushEncounter(_propRow); // prop reappears after the small is dealt with
+        if (_propRow && logCall) pushEncounter(_propRow); // logCall=false means sub-generator call — skip repeat
         pushEncounter(getRandomEncounter(["Container"]));
       }
 
