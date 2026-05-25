@@ -1,5 +1,15 @@
+## ver. 05/25/26 @ 05:06 PM
+⚔️ New encounters added across all areas
+🏛️ Soulbinding arch now spawns on slot 3-5
+🪙 Favor cost restored to 1 drachma
+💀 Fix companions barks on player death
+🧟 Fixed corpse state reset on level up
+🎲 Fixed roll missing enemy attack anim
+🔁 Fixed prop encounters repeating
+💚 Fixed heal crit bonus + log messages
+
 ## ver. 05/24/26 @ 10:47 PM
-🎬 Added rolling credits after act one
+🎬 Added rolling credits after final boss
 🪞 Speaking to mirrors can alter your stats
 🌊 Added mirror shades to the River area
 💀 Companions now react to player deaths
