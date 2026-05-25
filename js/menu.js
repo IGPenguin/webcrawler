@@ -870,6 +870,15 @@ var Menu = (function () {
         var el = document.createElement('div');
         el.className = 'menu-history-entry';
         var rankColor = i === 0 ? '#FFD940' : i < 3 ? '#c0c0c0' : '#fff';
+        var _isWin = entry.endType && entry.endType.startsWith('win_');
+        var _endColor = _isWin ? '#FFD940' : '#FF0000';
+        var _endLabel;
+        if (_isWin) {
+          _endLabel = ScoreManager.getEndingLabel(entry.endType);
+        } else {
+          var _decodedGhost = entry.ghostLink ? ScoreManager.decodeGhostLink(entry.ghostLink) : null;
+          _endLabel = (_decodedGhost && _decodedGhost.deathMessage) ? _decodedGhost.deathMessage : ScoreManager.getEndingLabel(entry.endType);
+        }
         el.innerHTML =
           '<div style="overflow:hidden;padding-top:3px;padding-bottom:3px;">'
             + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; position:relative; background-color:#202020;">'
@@ -879,10 +888,11 @@ var Menu = (function () {
                 + '</i></h3>'
               + '<h3 style="display:flex; align-items:center; height:28px; text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
               + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
-            + '<h5 style="margin:4px 0 1px 0; font-size:14px; font-style:normal; font-weight:400;">'
-            + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl ' + (entry.level || '?') + '&nbsp;•&nbsp;' + ScoreManager.getEndingLabel(entry.endType) + '</h5>'
-            + '<h5 style="margin:4px 0 4px 0; opacity:0.6; font-size:12px;">'
-            + (entry.origin ? entry.origin + '&nbsp;&nbsp;' : '')
+            + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style:normal; font-weight:400; line-height:24px;">'
+            + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl&nbsp;' + (entry.level || '?') + '<br>'
+            + '<span style="color:' + _endColor + ';">' + _endLabel + '</span></h5>'
+            + '<h5 style="margin:-4px 0 4px 0; opacity:0.6; font-size:14px;">'
+            + (entry.origin ? entry.origin + '&nbsp;&nbsp;•&nbsp;&nbsp;' : '')
             + (entry.datetime ? entry.datetime.slice(0, 10) : '')
             + '</h5>';
         if (entry.ghostLink) {
@@ -919,12 +929,17 @@ var Menu = (function () {
     else if (displayDiff === 'Easy')     displayDiff = '🕯️ Story';
     else if (displayDiff === 'Hardcore') displayDiff = '☠️ Fatal';
 
+    var _ghostIsWin = ghost.endType && ghost.endType.startsWith('win_');
+    var _ghostEndMsg = (!_ghostIsWin && ghost.deathMessage) ? ghost.deathMessage : ScoreManager.getEndingLabel(ghost.endType);
+    var _ghostEndColor = _ghostIsWin ? '#FFD940' : '#FF0000';
+    var _ghostSub = '<span style="color:' + _ghostEndColor + ';">' + _ghostEndMsg + '</span>';
+
     card.innerHTML = _buildRunCardHTML(
       ghost.charName || '?',
       ghost.level || '?',
       displayDiff + ' · ' + (ghost.encounterCount || 0) + ' encounters',
       stats, partyLoot,
-      (ghost.deathMessage && ghost.endType && !ghost.endType.startsWith('win_')) ? ghost.deathMessage : ScoreManager.getEndingLabel(ghost.endType),
+      _ghostSub,
       ghost.datetime ? ghost.datetime.slice(0, 10) : null,
       true, null, true
     );
