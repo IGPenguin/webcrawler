@@ -2,6 +2,7 @@
 ⚔️ New encounters added across all areas
 🏛️ Soulbinding arch now spawns on slot 3-5
 🪙 Favor cost restored to 1 drachma
+🪦 Unify Reckonings UI with Chronicles
 💀 Fix companions barks on player death
 🧟 Fixed corpse state reset on level up
 🎲 Fixed roll missing enemy attack anim
