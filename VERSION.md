@@ -1,8 +1,9 @@
 ## ver. 05/26/26 @ 05:58 PM
-⚖️ Rebalanced attack, hp, sta rarity
-🎣 Added 2 fishing-obtained weapons
+⚖️ Rebalanced attack, health, stamina rarity
+🎣 Added 2 fishing weapons: anchor, chain
 🏆 Moved win achievs to Memories bottom
-💤 Fixed fishing-related sleep crash
+💤 Fixed fishing reward-related sleep crash
+🪱 Shortened various texts to fit the UI
 
 ## ver. 05/25/26 @ 05:06 PM
 ⚔️ New encounters added across all areas
