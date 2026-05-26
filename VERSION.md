@@ -1,3 +1,9 @@
+## ver. 05/26/26 @ 05:58 PM
+⚖️ Rebalanced attack, hp, sta rarity
+🎣 Added 2 fishing-obtained weapons
+🏆 Moved win achievs to Memories bottom
+💤 Fixed fishing-related sleep crash
+
 ## ver. 05/25/26 @ 05:06 PM
 ⚔️ New encounters added across all areas
 🏛️ Soulbinding arch now spawns on slot 3-5

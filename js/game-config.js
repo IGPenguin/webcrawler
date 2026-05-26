@@ -224,13 +224,13 @@ var RarityManager = (function () {
 
   // Canonical net-stat formula for permanent items. Pass any object with {atk, mgk, hp, sta, lck, int, def}.
   function calcNet(s) {
-    return (s.atk||0)*3 + (s.mgk||0)*2 + (s.hp||0)*1.5 + (s.sta||0)*1.5
+    return (s.atk||0)*2 + (s.mgk||0)*2 + (s.hp||0)*1 + (s.sta||0)*1
          + (s.lck||0)*0.5 + (s.int||0)*0.5 + (s.def||0)*3;
   }
 
   // Net formula for consumables. hp/sta are temporary so weighted lower than usual.
   function calcConsumableNet(s) {
-    return (s.atk||0)*3 + (s.mgk||0)*2 + (s.hp||0)*0.5 + (s.sta||0)*0.5
+    return (s.atk||0)*2 + (s.mgk||0)*2 + (s.hp||0)*0.5 + (s.sta||0)*0.5
          + (s.lck||0)*0.5 + (s.int||0)*0.5 + (s.def||0)*3;
   }
 
