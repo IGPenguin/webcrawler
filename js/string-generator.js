@@ -636,7 +636,7 @@ function getShopMessage(){
 
 function getRecallPassText() {
   return chooseFrom([
-    "It comes back, slowly hurting you -1 💔",
+    "An old memory hurts you inside -1 💔",
     "You recalled something painful -1 💔",
     "Familiar pain surfaced in you -1 💔",
     "A memory, didn't want to feel it -1 💔",
