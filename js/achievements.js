@@ -11,18 +11,6 @@ var AchievementManager = (function () {
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
 
-    { id: 'game_win_first',  emoji: '👑', desc: 'Finished the game for the first time!',   hint: "Understand how did everything begin.",   unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
-    { id: 'hardcore_win',   emoji: '☠️', desc: 'Finished the game on Fatal difficulty!',   hint: 'Prove your dedication and true skill.',   unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
-    { id: 'ending_kill',    emoji: '🩸', desc: 'Chose the blade where mercy failed.',      hint: 'The blade knows only one language.',       unlock: 'Unlocked the <b>🩸 Traitor</b> origin.' },
-    { id: 'ending_walk',   emoji: '💔', desc: 'Turned your back, she watched you go.',    hint: 'Not every story ends at its threshold.',   unlock: 'Unlocked the <b>👣 Wanderer</b> origin.' },
-    { id: 'ending_guard',  emoji: '🔰', desc: 'Stayed still, that was the only answer.',  hint: 'Devotion without motion is its own end.',   unlock: 'Unlocked the <b>🗿 Sentinel</b> origin.' },
-    { id: 'ending_embrace',emoji: '🌑', desc: 'Held her close, the dark took you both.',  hint: 'Together is not the same as saved.',        unlock: 'Unlocked the <b>👤 Tainted</b> origin.' },
-    { id: 'ending_sleep',  emoji: '💤', desc: 'Laid down beside her, deemed it enough.',   hint: 'Some debts are repaid in silence.',         unlock: 'Unlocked the <b>🌿 Quiet</b> origin.' },
-    { id: 'ending_speak',  emoji: '❤️', desc: 'Said her name, she remembered herself.',   hint: 'The right word at the last moment.',        unlock: 'Unlocked the <b>🕊️ Gifted</b> origin.' },
-    { id: 'ending_pray',   emoji: '🌪️', desc: 'Called to the gods, something answered.',  hint: 'Some powers reward desperation.',           unlock: 'Unlocked the <b>🌈 Blessed</b> origin.' },
-    { id: 'ending_free',   emoji: '🪽', desc: 'Undid what you made, thread by thread.',   hint: 'Unmaking your own curse is hardest.',       unlock: 'Unlocked the <b>❤️‍🩹 Absolver</b> origin.' },
-    { id: 'ending_curse',  emoji: '👹', desc: 'Sealed the pact, without hesitation.',     hint: 'Some choose darkness without pause.',       unlock: 'Unlocked the <b>👹 Hexed</b> origin.' },
-
     { id: 'kill_first',          emoji: '🪓', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time.", unlock: 'Unlocked the <b>🔪 Bloody Knife</b> item.' },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.', unlock: 'Unlocked the <b>🥋 Budo Kimono</b> item.' },
     { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?', unlock: 'Unlocked the <b>🏳️ Pacifist</b> origin.' },
@@ -93,6 +81,18 @@ var AchievementManager = (function () {
     { id: 'fish_bait_30',        emoji: '🎏', desc: 'Caught something 30x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
     { id: 'fish_no_bait_30',     emoji: '😎', desc: 'Caught something with no bait 30x!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b>.' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the shady gamble 10 times!', hint: "Become a well seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
+
+    { id: 'game_win_first',  emoji: '👑', desc: 'Finished the game for the first time!',   hint: "Understand how did everything begin.",   unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
+    { id: 'ending_kill',    emoji: '🩸', desc: 'Chose the blade where mercy failed.',      hint: 'The blade knows only one language.',       unlock: 'Unlocked the <b>🩸 Traitor</b> origin.' },
+    { id: 'ending_walk',   emoji: '💔', desc: 'Turned your back, she watched you go.',    hint: 'Not every story ends at its threshold.',   unlock: 'Unlocked the <b>👣 Wanderer</b> origin.' },
+    { id: 'ending_guard',  emoji: '🔰', desc: 'Stayed still, that was the only answer.',  hint: 'Devotion without motion is its own end.',   unlock: 'Unlocked the <b>🗿 Sentinel</b> origin.' },
+    { id: 'ending_embrace',emoji: '🌑', desc: 'Held her close, the dark took you both.',  hint: 'Together is not the same as saved.',        unlock: 'Unlocked the <b>👤 Tainted</b> origin.' },
+    { id: 'ending_sleep',  emoji: '💤', desc: 'Laid down beside her, deemed it enough.',   hint: 'Some debts are repaid in silence.',         unlock: 'Unlocked the <b>🌿 Quiet</b> origin.' },
+    { id: 'ending_speak',  emoji: '❤️', desc: 'Said her name, she remembered herself.',   hint: 'The right word at the last moment.',        unlock: 'Unlocked the <b>🕊️ Gifted</b> origin.' },
+    { id: 'ending_pray',   emoji: '🌪️', desc: 'Called to the gods, something answered.',  hint: 'Some powers reward desperation.',           unlock: 'Unlocked the <b>🌈 Blessed</b> origin.' },
+    { id: 'ending_free',   emoji: '🪽', desc: 'Undid what you made, thread by thread.',   hint: 'Unmaking your own curse is hardest.',       unlock: 'Unlocked the <b>❤️‍🩹 Absolver</b> origin.' },
+    { id: 'ending_curse',  emoji: '👹', desc: 'Sealed the pact, without hesitation.',     hint: 'Some choose darkness without pause.',       unlock: 'Unlocked the <b>👹 Hexed</b> origin.' },
+    { id: 'hardcore_win',   emoji: '☠️', desc: 'Finished the game on Fatal difficulty!',   hint: 'Prove your dedication and true skill.',   unlock: 'Unlocked the <b>💀 Brittle</b> origin.' },
 
     { id: 'use_cheat',           emoji: '⚠️', desc: 'Used a cheat for the first time!', hint: 'Try using a secret special name.', unlock: 'Unlocked the <b>🤥 Cheater</b> origin.' }
   ];
