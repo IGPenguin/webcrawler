@@ -2921,9 +2921,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
       case 'button_sleep':
 
-        // Any sleep during an active fishing session locks the spot for this visit
-        if (isFishing) fishingRested = true;
-
         if (enemyType=="Shop") {
           drachmaeBuy(2,"ItemUncommon");
           break;

@@ -107,7 +107,7 @@ var SaveManager = (function () {
         enemyCursed:           enemyCursed,
         enemyFamiliar:         enemyFamiliar,
         totalBonus:            totalBonus,  totalMalus:  totalMalus,
-        isFishing:             isFishing,   encounterUsed: encounterUsed,
+        isFishing:             isFishing,   encounterUsed: encounterUsed,  lootEncounterIndex: lootEncounterIndex,
         corpseState:           corpseState, corpseSnapshot: corpseSnapshot,
         corpseHasLoot:         corpseHasLoot, corpseLoot:  corpseLoot,
         // ── Area / story queue ───────────────────────────────────────────────
@@ -200,7 +200,7 @@ var SaveManager = (function () {
     enemyCursed          = s.enemyCursed;
     enemyFamiliar        = !!s.enemyFamiliar;
     totalBonus           = s.totalBonus;   totalMalus         = s.totalMalus;
-    isFishing            = s.isFishing;    encounterUsed      = s.encounterUsed;
+    isFishing            = s.isFishing;    encounterUsed      = s.encounterUsed;  lootEncounterIndex = s.lootEncounterIndex;
     corpseState          = s.corpseState    || '';
     corpseSnapshot       = s.corpseSnapshot || null;
     corpseHasLoot        = !!s.corpseHasLoot;
