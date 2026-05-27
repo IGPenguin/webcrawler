@@ -70,6 +70,11 @@ function resetEncounterButtons(){
   if (enemyType=="Prop" && totalMalus<0) setButton('button_sleep',playerSleepType+" Sleep",colorSoftRed);
   if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
   if (playerXP>=playerXPThreshold) setButton('button_sleep',playerSleepType+" Sleep",colorGold);
+  var _sleepThr = (typeof GAME_CONFIG !== 'undefined' && GAME_CONFIG.sleepAreaThreshold != null) ? GAME_CONFIG.sleepAreaThreshold : 5;
+  if (areaName !== "Depths of Slumber" && areaName !== "Shrouded Necropolis") {
+    if (playerAreaSleepCount >= _sleepThr) setButton('button_sleep', playerSleepType+" Sleep", colorRed);
+    else if (playerAreaSleepCount >= _sleepThr - 1) setButton('button_sleep', playerSleepType+" Sleep", colorOrange);
+  }
   if (playerRested && (!enemyType.includes("Trap"))) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
 
   setButton('button_speak',playerSpeakType+" Speak");

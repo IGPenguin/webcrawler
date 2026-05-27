@@ -110,7 +110,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (parseInt(enemyHpLost) >= parseInt(enemyHp)) {
             logPlayerAction(actionString, (_crit==='success')
               ? "Struck them extra hard —"+_cdmg+" 💔"
-              : "Dealt a killing blow -"+_cdmg+" 💔");
+              : "Dealt a killing blow -"+_cdmg+" 💔", _crit==='success' ? colorYellow : "#FFF");
             var _kxp=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
             logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered -"+_cdmg+" 💔 "+decorateStatusText("","+"+_kxp+" XP",colorGold));
             var _karmaSafe1 = _isRival || enemyType.includes('Demon') || enemyType.includes('Undead') || enemyType.includes('Spirit');
@@ -192,7 +192,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString, _crit === 'success'
                 ? "Hit hit hard, but with no effect."
-                : "Your attack had no effect -1 🟢");
+                : "Your attack had no effect -1 🟢", _crit === 'success' ? colorYellow : "#FFF");
             }
             displayEnemyEffect("〽️");
             displayEnemyCannotEffect();
@@ -219,7 +219,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             logPlayerAction(actionString, _crit === 'success'
               ? "Obliterated it without breaking a sweat."
-              : "Smashed it into tiny bits -1 🟢");
+              : "Smashed it into tiny bits -1 🟢", _crit === 'success' ? colorYellow : "#FFF");
             nextEncounter();
             break;
 
@@ -238,7 +238,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             logPlayerAction(actionString, _crit==='success'
               ? "Obliterated it without a flinch."
-              : "Smashed it into tiny bits -1 🟢");
+              : "Smashed it into tiny bits -1 🟢", _crit==='success' ? colorYellow : "#FFF");
             nextEncounter();
             break;
 
@@ -692,7 +692,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
                 logPlayerAction(actionString, _crit === 'success'
                   ? getWalkCritText()
-                  : "Left it where you found it.");
+                  : "Left it where you found it.", _crit === 'success' ? colorYellow : "#FFF");
                 nextEncounter();
                 break;
               }
@@ -721,7 +721,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString, _crit === 'success'
                 ? chooseFrom(["Left the waterside in a good mood.", "Walked away whistling a fishing tune.", "Strolled off from the water's edge."])
-                : "Left the waterside.");
+                : "Left the waterside.", _crit === 'success' ? colorYellow : "#FFF");
             }
             if (playerHp > 0) nextEncounter();
             break;
@@ -804,7 +804,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             logPlayerAction(actionString, _crit === 'success'
               ? getWalkCritText()
-              : "Left it behind you without flinching.");
+              : "Left it behind you without flinching.", _crit === 'success' ? colorYellow : "#FFF");
             nextEncounter();
             break;
           case "Friend":
@@ -815,7 +815,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             logPlayerAction(actionString, _crit === 'success'
               ? chooseFrom(["Left with a warm farewell.", "Parted on good terms.", "Slipped away with a smile."])
-              : "Walked away leaving them behind.");
+              : "Walked away leaving them behind.", _crit === 'success' ? colorYellow : "#FFF");
             isFishing=false;
             nextEncounter();
             break;
@@ -841,7 +841,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 // Passed — walked away safely
                 logPlayerAction(actionString, _crit === 'success'
                   ? chooseFrom(["Slipped past it effortlessly.", "Cleared it without a second thought.", "Avoided it perfectly."])
-                  : "Carefully walked around it -1 🟢");
+                  : "Carefully walked around it -1 🟢", _crit === 'success' ? colorYellow : "#FFF");
                 if (playerSta > 0 && _crit !== 'success') playerSta--;
                 isFishing=false;
                 nextEncounter();
@@ -885,7 +885,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString, _crit === 'success'
                 ? "Slipped through the danger effortlessly."
-                : "Carefully walked past it -1 🟢");
+                : "Carefully walked past it -1 🟢", _crit === 'success' ? colorYellow : "#FFF");
               if (playerSta > 0 && _crit !== 'success') playerSta--;
               nextEncounter();
             }
@@ -904,7 +904,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString, _crit === 'success'
                 ? chooseFrom(["Walked away in a good mood.", "Strolled off without a care.", "Slipped past without a thought."])
-                : "Continued on your adventure.");
+                : "Continued on your adventure.", _crit === 'success' ? colorYellow : "#FFF");
             }
             if (playerHp > 0) nextEncounter();
             break;
@@ -1178,7 +1178,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (parseInt(enemyHpLost)>=parseInt(enemyHp)) {
               logPlayerAction(actionString,(_crit==='success')
                 ? "Spell was especially effective -"+_cmdg+" 💔"
-                : "Spell delivered a killing blow -"+_cmdg+" 💔");
+                : "Spell delivered a killing blow -"+_cmdg+" 💔", _crit==='success' ? colorYellow : "#FFF");
               var _kxp2=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
               logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered"+decorateStatusText("","+"+_kxp2+" XP",colorGold));
               var _karmaSafe2 = _isRival || enemyType.includes('Demon') || enemyType.includes('Undead') || enemyType.includes('Spirit');
@@ -2725,7 +2725,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (enemyInt < convinceInt){
               if ((enemyAtk+enemyAtkBonus)>0){
                 enemyAtkBonus--;
-                logPlayerAction(actionString, (_crit === 'success') ? "Found the right words -1 ⚔️" : "Managed to calm them down -1 ⚔️");
+                logPlayerAction(actionString, (_crit === 'success') ? "Found the right words -1 ⚔️" : "Managed to calm them down -1 ⚔️", _crit === 'success' ? colorYellow : "#FFF");
                 if ((enemyAtk+enemyAtkBonus)>0) {
                   enemyAttackOrRest();
                 } else {
