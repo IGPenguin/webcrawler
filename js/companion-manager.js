@@ -383,6 +383,7 @@ function _scheduledCompanionBark() {
 
   _companionBarkTimer = setTimeout(function() {
     _companionBarkTimer = null;
+    if (typeof ActionBar !== 'undefined') ActionBar.cancelActionBar();
     var _party = _partyEmojis();
     if (_party.length === 0) return;
     var _shuffled = _party.slice().sort(function() { return Math.random() - 0.5; });
