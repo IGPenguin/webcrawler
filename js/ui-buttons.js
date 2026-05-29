@@ -191,6 +191,10 @@ function adjustEncounterButtons(){
       setButton('button_speak', "💭 Recall", encounterUsed ? colorDarkGrey : colorGrapefruit);
       break;
 
+    case "Mirror":
+      setButton('button_speak', playerSpeakType + " Speak", encounterUsed ? colorDarkGrey : colorYellow);
+      break;
+
     case "Item":
       setButton('button_grab',"👋 Grab",grabColor);
       setButton('button_roll',"❌ Ditch",colorRed);

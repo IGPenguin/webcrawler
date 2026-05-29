@@ -2566,7 +2566,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerCannotEffect();
             }
             encounterUsed = true;
-            nextEncounter();
+            redraw();
             break;
           }
 
