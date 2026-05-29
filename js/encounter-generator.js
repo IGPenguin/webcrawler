@@ -12,17 +12,17 @@ var allEnemiesAndTraps = allEnemies.concat(allTraps);
 
 // Independent item + consumable checks — used by field encounters
 function pushFieldLoot(itemChance, consumableChance) {
-  if (procAbilityChance("", itemChance + playerLck + GAME_CONFIG.spawnItemDropBonus))
+  if (procAbilityChance("", itemChance + luckSpawnBonus() + GAME_CONFIG.spawnItemDropBonus))
     pushEncounter(getWeightedEncounter(["Item"]));
-  if (procAbilityChance("", consumableChance + playerLck + GAME_CONFIG.spawnConsumableDropBonus))
+  if (procAbilityChance("", consumableChance + luckSpawnBonus() + GAME_CONFIG.spawnConsumableDropBonus))
     pushEncounter(getWeightedEncounter(["Consumable"]));
 }
 
 // Exclusive item → consumable → prop/small fallback — used by house small/mid
 function pushHouseLoot(itemChance, consumableChance) {
-  if (procAbilityChance("", itemChance + playerLck + GAME_CONFIG.spawnItemDropBonus)) {
+  if (procAbilityChance("", itemChance + luckSpawnBonus() + GAME_CONFIG.spawnItemDropBonus)) {
     pushEncounter(getWeightedEncounter(["Item"]));
-  } else if (procAbilityChance("", consumableChance + playerLck + GAME_CONFIG.spawnConsumableDropBonus)) {
+  } else if (procAbilityChance("", consumableChance + luckSpawnBonus() + GAME_CONFIG.spawnConsumableDropBonus)) {
     pushEncounter(getWeightedEncounter(["Consumable"]));
   } else {
     generateNextEncounters(0, false); // Prop or Contained Small
@@ -31,7 +31,7 @@ function pushHouseLoot(itemChance, consumableChance) {
 
 // Item or altar fallback, always paired with a consumable — used by house hard/big
 function pushHouseHardLoot(itemChance) {
-  if (procAbilityChance("", itemChance + playerLck + GAME_CONFIG.spawnItemDropBonus)) {
+  if (procAbilityChance("", itemChance + luckSpawnBonus() + GAME_CONFIG.spawnItemDropBonus)) {
     pushEncounter(getWeightedEncounter(["Item"]));
   } else {
     pushEncounter(getRandomEncounter(["Altar"]));
@@ -75,16 +75,16 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       if (procAbilityChance("", 3)) generateNextEncounters(32, false); // ~4% shrine, flat — fires too often to scale with luck
 
       var type = "Prop";
-      if (procAbilityChance("", 10+playerLck)) type = "Small"; // 10% Small
+      if (procAbilityChance("", 10+luckSpawnBonus())) type = "Small"; // 10% Small
 
       var _propRow = null;
-      if (procAbilityChance("", 5-playerLck)) { // 5% Trap, lowers with luck
+      if (procAbilityChance("", 5-luckSpawnBonus())) { // 5% Trap, lowers with luck
         pushEncounter(getRandomEncounter(allTraps));
       } else {
-        if (procAbilityChance("", 5-playerLck)) {
+        if (procAbilityChance("", 5-luckSpawnBonus())) {
           _propRow = getRandomEncounter(["Prop"],["-1"]);
           pushEncounter(_propRow);                                        // 5%-  Bad flavoured
-        } else if (procAbilityChance("", 5+playerLck)) {
+        } else if (procAbilityChance("", 5+luckSpawnBonus())) {
           _propRow = getRandomEncounter(["Prop"],["1"]);
           pushEncounter(_propRow);                                        // 5%+  Good flavoured
         } else {
@@ -99,7 +99,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
         pushEncounter(getRandomEncounter(["Container"]));
       }
 
-      if (!areaName.includes("Fading") && procAbilityChance("", 3+playerLck)) { // 3% Artifact lockbox (not in Fading)
+      if (!areaName.includes("Fading") && procAbilityChance("", 3+luckSpawnBonus())) { // 3% Artifact lockbox (not in Fading)
         pushEncounter(getWeightedEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter(["Locked-Container"]));
       }
@@ -114,21 +114,21 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 2: // Easy Encounter
       if (logCall) logGenerator("easy (5% pet)");
-      var encounterPool = procAbilityChance("", 5+playerLck) ? ["Pet"] : easyEnemies;
+      var encounterPool = procAbilityChance("", 5+luckSpawnBonus()) ? ["Pet"] : easyEnemies;
       pushEncounter(getRandomEncounter(encounterPool));
       break;
 
     case 3: // Mid Encounter
       if (logCall) logGenerator("mid (10% recruit/pet)");
-      if (procAbilityChance("", 50+playerLck)) generateNextEncounters(0, false); // 50% Prop or Contained Small
+      if (procAbilityChance("", 50+luckSpawnBonus())) generateNextEncounters(0, false); // 50% Prop or Contained Small
       pushFieldLoot(3, 10);
-      var encounterPool = procAbilityChance("", 10+playerLck) ? ["Recruit","Pet"] : mediumEnemies;
+      var encounterPool = procAbilityChance("", 10+luckSpawnBonus()) ? ["Recruit","Pet"] : mediumEnemies;
       pushEncounter(getRandomEncounter(encounterPool));
       break;
 
     case 4: // Hard Encounter
       if (logCall) logGenerator("hard");
-      if (procAbilityChance("", 70+playerLck)) generateNextEncounters(0, false); // 70% Prop or Contained Small
+      if (procAbilityChance("", 70+luckSpawnBonus())) generateNextEncounters(0, false); // 70% Prop or Contained Small
       pushFieldLoot(5, 30);
       if (typeof RivalManager !== 'undefined') RivalManager.tryPushRival(areaName);
       pushEncounter(getRandomEncounter(hardEnemies));
@@ -136,7 +136,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 5: // Very Hard Encounter — no safety net, no item, high consumable chance
       if (logCall) logGenerator("very-hard");
-      if (procAbilityChance("", 50+playerLck+GAME_CONFIG.spawnConsumableDropBonus))
+      if (procAbilityChance("", 50+luckSpawnBonus()+GAME_CONFIG.spawnConsumableDropBonus))
         pushEncounter(getWeightedEncounter(["Consumable"])); // 50%+: you'll need it
       pushEncounter(getRandomEncounter(hardEnemies));
       break;
@@ -145,7 +145,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       if (logCall) logGenerator("boss");
       if (!areaName.includes("Shrouded")) {
         generateNextEncounters(0, false); // Prop/Small after fight (not Necropolis)
-        if (procAbilityChance("", 20+playerLck)) {
+        if (procAbilityChance("", 20+luckSpawnBonus())) {
           pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
         } else {
           pushEncounter(getWeightedEncounter(["Item"],[],"",["Artifact","Lost Possession"]));
@@ -161,7 +161,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 11: // Any Enemy
       if (logCall) logGenerator("any");
-      if (procAbilityChance("", 50+playerLck)) generateNextEncounters(0, false); // 50% Prop or Contained Small
+      if (procAbilityChance("", 50+luckSpawnBonus())) generateNextEncounters(0, false); // 50% Prop or Contained Small
       pushFieldLoot(5, 20);
       pushEncounter(getRandomEncounter(allEnemies));
       break;
@@ -198,7 +198,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 32: // Shrine — luck-gated Friend or Checkpoint; altar + consumable fallback
       if (logCall) logGenerator("shrine");
-      if (procAbilityChance("", 20+playerLck*4)) { // ~20% base, scales to ~60% at lck 10
+      if (procAbilityChance("", 20+luckSpawnBonus()*4)) { // ~20% base, scales to ~60% at lck 10
         pushEncounter(getRandomEncounter(["Friend","Checkpoint"]));
       } else {
         pushEncounter(getRandomEncounter(["Altar","Curse"]));
@@ -282,7 +282,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 98: // Random island — luck-gated shrine chance (~6% at lck 0, ~16% at lck 10)
       if (logCall) logGenerator("rand-island");
-      if (procAbilityChance("", 5+playerLck)) {
+      if (procAbilityChance("", 5+luckSpawnBonus())) {
         generateNextEncounters(32, false);
       } else {
         generateNextEncounters(chooseFrom([70,71,72,73]));
@@ -291,7 +291,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 99: // Random house — luck-gated shrine chance (~6% at lck 0, ~16% at lck 10)
       if (logCall) logGenerator("rand");
-      if (procAbilityChance("", 5+playerLck)) {
+      if (procAbilityChance("", 5+luckSpawnBonus())) {
         generateNextEncounters(32, false);
       } else {
         generateNextEncounters(chooseFrom([20,30,31,40,50,60]));

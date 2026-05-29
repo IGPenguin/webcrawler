@@ -44,6 +44,61 @@ Fading Wildlands = 0 · Forsaken Village = 1 · Twisted Fairyland = 2 · River o
 
 ---
 
+## Loot Balance
+
+All spawn checks use `luckSpawnBonus()` (defined in `game-config.js`) — a soft-capped version of `playerLck` that applies in full at ≤ 3, then grows at half rate above that. Combat luck (hit avoidance) and rarity tier rolls (`RarityManager.rollTier`) use raw `playerLck` — the cap only applies to spawn frequency.
+
+**Soft cap formula:** `playerLck ≤ 3 → full value; above 3 → 3 + floor((playerLck − 3) / 2)`
+At +3 luck: bonus = 3. At +5: bonus = 4. At +8: bonus = 5.
+
+**Field generator drop rates** (base% + luck bonus + difficulty bonus):
+
+| Generator | Drop type | Base chance |
+|-----------|-----------|------------|
+| Mid Encounter (3) | Item | 3% |
+| Mid Encounter (3) | Consumable | 10% |
+| Hard Encounter (4) | Item | 5% |
+| Hard Encounter (4) | Consumable | 30% |
+| Very Hard (5) | Consumable | 50% |
+| Any Enemy (11) | Item | 5% |
+| Any Enemy (11) | Consumable | 20% |
+| Prop/Small pre-enc (0) | Artifact lockbox | 3% (not in Fading Wildlands) |
+
+House/island generators use exclusive checks — item OR consumable, with fallback:
+
+| Generator | Item chance | Consumable |
+|-----------|-------------|-----------|
+| House/Island Small (20, 70) | 10% | 20% (exclusive OR) |
+| House Mid / Island Beach (30, 71) | 15% | 25% (exclusive OR) |
+| House Hard / Island Reeds (40, 73) | 20% | always added |
+| House Big (50) | 30% | always added |
+| House Huge (60) | 40% | always added |
+
+**Kill / knockout drop rates** (`killItemDropChance` / `killConsumableDropChance` from `GAME_CONFIG`):
+
+| Difficulty | Item | Consumable (fallback) |
+|-----------|------|----------------------|
+| Standard | 5% + luck | 10% + luck |
+| Easy | 5% + luck | 10% + luck |
+| Hardcore | 10% + luck | 15% + luck |
+
+Hardcore has higher kill-drop rates to partially compensate for its negative generator bonus.
+
+**Boss guaranteed drop** (case 9, not in Shrouded Necropolis):
+Always drops one item. 20% + luck chance it is an Artifact; otherwise a rarity-weighted item excluding Artifacts and Lost Possessions. Boss also fires a Prop/Small pre-encounter (case 0) before the fight.
+
+**Difficulty spawn modifiers** (additive on top of all generator checks):
+
+| Difficulty | `spawnItemDropBonus` | `spawnConsumableDropBonus` |
+|-----------|---------------------|--------------------------|
+| Standard | 0 | 0 |
+| Easy | +5 | +8 |
+| Hardcore | −4 | −4 |
+
+**To tune:** adjust base % values in `encounter-generator.js` generator cases, or the difficulty modifiers in `DIFFICULTY_MODES` in `game-config.js`. Never use raw `playerLck` in spawn checks — always use `luckSpawnBonus()`.
+
+---
+
 ## Enemy Design
 
 Stat ranges by area:

@@ -143,6 +143,14 @@ var CONSUMABLE_NET_THRESHOLDS = {
   legendary: 3.0
 };
 
+// Soft-capped luck contribution to spawn/drop frequency checks.
+// Full value at playerLck ≤ 3; above that grows at half rate so luck stacking
+// can't run away with the loot economy. Negative luck applies in full (penalties not capped).
+// Use this in every procAbilityChance spawn check — NOT in RarityManager.rollTier() (raw luck there is fine).
+function luckSpawnBonus() {
+  return playerLck <= 3 ? playerLck : 3 + Math.floor((playerLck - 3) / 2);
+}
+
 var RarityManager = (function () {
   var TIER_ORDER = ['Cursed', 'Common', 'Uncommon', 'Rare', 'Legendary'];
   var TAG_RE = /\[(?:Cursed|Common|Uncommon|Rare|Legendary)\]/;

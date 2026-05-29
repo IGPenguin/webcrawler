@@ -166,9 +166,9 @@ Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;Th
 Fading Wildlands;🏵️;Symbol of Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment, provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.;none
 Fading Wildlands;🥀;Weeping Rose;Item-Trinket;-1;0;0;0;0;0;0;<b>Artifact</b>;Sacrifice -1 ❤️ for <b>🥀 Thorns Payback</b>.<br><b>Deal -1 💔 when hit</b> by a physical attack.;Obtained <b>🥀 Thorns Payback</b>.;none
-Fading Wildlands;🎨;Painter's Palette;Item-Trinket;0;0;0;0;3;0;0;<b>Artifact</b>;Must've been left behind by a true artist.<br>Provides <b>+3 🧠 Creativity</b>.;Felt a surge of creativity;none
+Fading Wildlands;🎨;Painter's Palette;Item-Trinket;0;0;0;0;2;0;0;<b>Artifact</b>;Must've been left behind by a true artist.<br>Provides <b>+2 🧠 Creativity</b>.;Felt a surge of creativity;none
 Fading Wildlands;🖌️;Painter's Brush;Item-Weapon;0;0;0;0;0;1;0;<b>Artifact</b>;Enchanted tool radiating with strange power.<br>Provides <b>+1 🔵 Mana</b>, leaves a glowing trail.;Got a hold of a powerful tool;none
-Fading Wildlands;🍀;Four-leaf Clover;Item-Trinket;0;0;0;3;0;0;0;<b>Artifact</b>;Extremely rare growth, might be beneficial.<br>Provides <b>+3 🍀 Luck</b>.;Feels so good to have it.;none
+Fading Wildlands;🍀;Four-leaf Clover;Item-Trinket;0;0;0;2;0;0;0;<b>Artifact</b>;Extremely rare growth, might be beneficial.<br>Provides <b>+2 🍀 Luck</b>.;Feels so good to have it.;none
 Fading Wildlands;🧪;Unknown Elixir;Item;0;0;0;0;0;0;0;<b>Artifact</b>;<b>🧬 Polymorph</b> into a random creature.<br><i>Drink solely at your own risk.</i>;That feels very different.;none
 
 Fading Wildlands;🌷;Pink Tulip;Item-Trinket;1;0;0;0;1;0;0;Natural Beauty;Brings intense pleasure whenever looked at.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🧠 Charisma</b>.;Something still soft in all this ruin.;none
