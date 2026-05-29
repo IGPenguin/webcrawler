@@ -565,7 +565,7 @@ function _rarityFromRow(row) {
   if (noteRaw.toLowerCase().includes('artifact')) return 'Legendary';
   var type = (row[3] || '').split(':').slice(1).join(':').trim();
   var net = (type === 'Consumable') ? _consumableNetFromRow(row) : _netFromRow(row);
-  return RarityManager.getTierForItemNet(net);
+  return (type === 'Consumable') ? RarityManager.getTierForConsumableNet(net) : RarityManager.getTierForItemNet(net);
 }
 
 // Achievement filter: returns true if the row's achiev field is unlocked (or none).

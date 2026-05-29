@@ -286,7 +286,7 @@ function fireDeathBarks() {
     var _pool = _DEATH_BARK_POOLS[_type] || _DEATH_BARK_POOLS.humanoid;
     var _b = _pool[Math.floor(Math.random() * _pool.length)];
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
-    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text);
+    AchievementManager.queueCompanionBark(_b.icon, emoji + ' ' + _name, _b.text);
   });
   redraw();
 }
@@ -485,33 +485,33 @@ function _companionFetch(_type, emoji, _name) {
   var _b    = _fb[Math.floor(Math.random() * _fb.length)];
   var _area = linesStory[encounterIndex][0].split(':').slice(1).join(':');
 
+  var _displayName = emoji + ' ' + _name;
+
   if (_type === 'critter') {
     playerLck++;
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + ' +1 🍀</i>');
-    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text + ' +1 🍀', colorSoftGreen);
+    AchievementManager.queueCompanionBark(_b.icon, _displayName, _b.text + ' +1 🍀', colorSoftGreen);
     redraw();
     return;
   }
   if (_type === 'large') {
     playerSta = Math.min(playerSta + 1, playerStaMax + 1);
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + ' +1 🟢</i>');
-    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text + ' +1 🟢', colorSoftGreen);
+    AchievementManager.queueCompanionBark(_b.icon, _displayName, _b.text + ' +1 🟢', colorSoftGreen);
     redraw();
     return;
   }
   if (_type === 'bird' || _type === 'lizard') {
+    var _eggName = (_type === 'lizard') ? "Lizard's Egg" : "Bird's Egg";
     var _egg = [
-      'area:' + _area, 'emoji:🥚', "name:Bird's Egg", 'type:Consumable',
-      'hp:1', 'atk:0', 'sta:1', 'lck:0', 'int:0', 'mgk:0', 'def:0',
-      'note:', "desc:Warm. Unexpected. Still whole.<br>Something survived after all.",
+      'area:' + _area, 'emoji:🥚', 'name:' + _eggName, 'type:Consumable',
+      'hp:1', 'atk:0', 'sta:0', 'lck:0', 'int:0', 'mgk:0', 'def:0',
+      'note:', 'desc:Laid by ' + emoji + ' ' + _name + '.<br>Provides <b>+1 ❤️ Health</b>, restores <b>🟢 Energy</b>.',
       'message:', 'achiev:none'
     ];
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
-    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text, RarityManager.getColor(_rarityFromRow(_egg)));
-    var _currentRow = linesStory[encounterIndex];
+    AchievementManager.queueCompanionBark(_b.icon, _displayName, _b.text, RarityManager.getColor(_rarityFromRow(_egg)));
     linesStory.splice(encounterIndex + 1, 0, _egg);
-    linesStory.splice(encounterIndex + 2, 0, _currentRow);
-    loadEncounter(encounterIndex + 1);
     redraw();
     return;
   }
@@ -521,11 +521,8 @@ function _companionFetch(_type, emoji, _name) {
   var _fetched    = getWeightedEncounter(_fetchTypes, [], _area, _excludes);
   if (!_fetched) return;
   logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
-  AchievementManager.queueCompanionBark(_b.icon, _name, _b.text, RarityManager.getColor(_rarityFromRow(_fetched)));
-  var _currentRow = linesStory[encounterIndex];
+  AchievementManager.queueCompanionBark(_b.icon, _displayName, _b.text, RarityManager.getColor(_rarityFromRow(_fetched)));
   linesStory.splice(encounterIndex + 1, 0, _fetched);
-  linesStory.splice(encounterIndex + 2, 0, _currentRow);
-  loadEncounter(encounterIndex + 1);
   redraw();
 }
 
@@ -559,7 +556,7 @@ function companionBark(emoji) {
     var _pool = _BARK_POOLS[_type] || _BARK_POOLS.humanoid;
     var _b = _pool[Math.floor(Math.random() * _pool.length)];
     logAction(emoji + '&nbsp;▸&nbsp;' + _b.icon + ' <i>' + _b.text + '</i>');
-    AchievementManager.queueCompanionBark(_b.icon, _name, _b.text);
+    AchievementManager.queueCompanionBark(_b.icon, emoji + ' ' + _name, _b.text);
     redraw();
     return true;
   }
