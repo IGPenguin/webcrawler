@@ -2642,9 +2642,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 break;
               }
               if (_crit === 'success') {
-                playerLck++;
-                var _altarCritMsg = (enemyMsg || "Prayer answered") + " +1 🍀";
-                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, _altarCritMsg, true, false);
+                playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck + 1, enemyInt, enemyMgk, enemyDef, enemyMsg || "Prayer answered", true, false);
               } else {
                 playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
               }
