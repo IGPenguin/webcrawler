@@ -3261,15 +3261,15 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       pushEncounter(drachmaShop);
     } else if (item=="Favor" || item=="Body") {
       var statPool = item=="Favor"
-        ? [{ stat: "🍀", apply: function() { playerLck+=0.5; } },
-           { stat: "🧠", apply: function() { playerInt+=0.5; } }]
-        : [{ stat: "❤️", apply: function() { playerHp++; playerHpMax++; } },
-           { stat: "🟢", apply: function() { playerSta++; playerStaMax++; } }];
+        ? [{ stat: "🍀", amt: "Minor +", apply: function() { playerLck+=0.5; } },
+           { stat: "🧠", amt: "Minor +", apply: function() { playerInt+=0.5; } }]
+        : [{ stat: "❤️", amt: "+1 ", apply: function() { playerHp++; playerHpMax++; } },
+           { stat: "🟢", amt: "+1 ", apply: function() { playerSta++; playerStaMax++; } }];
       var picked = statPool[Math.floor(Math.random() * statPool.length)];
       picked.apply();
       displayPlayerGainedEffect();
       displayPlayerEffect(picked.stat);
-      logPlayerAction(actionString, "Received a <b>Minor +"+picked.stat+"</b> blessing");
+      logPlayerAction(actionString, "Received a <b>"+picked.amt+picked.stat+"</b> blessing");
       redraw();
       return;
     } else if (item=="Gamble")  {
