@@ -62,7 +62,7 @@ var TelemetryManager = (function () {
   function _buildContext() {
     var stats      = [playerHpMax || 0, playerAtk || 0, playerStaMax || 0,
                       playerLck   || 0, playerInt  || 0, playerMgkMax || 0, playerDef || 0].join(';');
-    var companions = [...String(playerPartyString || '')].length;
+    var companions = countEmoji(playerPartyString);
     var playtime   = Math.floor((Date.now() - (runStartTimestamp || Date.now())) / 1000);
     var score      = (typeof ScoreManager !== 'undefined') ? ScoreManager.calculate() : 0;
     var difficulty = (typeof GAME_CONFIG !== 'undefined')

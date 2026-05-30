@@ -60,6 +60,13 @@ var narrowSpace = "&#8239;";
 var arrowSymbol = "▸";
 
 // -- Functions ────────────────────────────────────────────────────────────────
+var _segmenter = (typeof Intl !== 'undefined' && Intl.Segmenter) ? new Intl.Segmenter() : null;
+function countEmoji(str) {
+  var s = String(str || '');
+  if (_segmenter) return [..._segmenter.segment(s)].length;
+  return [...s].length; // fallback: counts code points, not grapheme clusters
+}
+
 function isLocalhost() {
   return location.hostname.includes("localhost")
       || location.hostname.includes("127.0.0.1")

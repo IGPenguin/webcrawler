@@ -2722,7 +2722,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 var statMsg=playerChangeStats(0, _rAtk, 0, _rLck, 0, _rMgk, 0, joinMsg, false, true, _rActionStr);
                 logPlayerAction(_rActionStr, statMsg+decorateStatusText(""," +"+gainedXP+" XP",colorGold));
                 AchievementManager.check('get_recruit');
-                if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
+                if (countEmoji(playerPartyString) >= 3) AchievementManager.check('full_party');
               });
               break;
             }

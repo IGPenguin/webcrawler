@@ -104,7 +104,7 @@ var ScoreManager = (function () {
   function _liveComponents(isWin) {
     if (!encounterCount) return null;
     var totalStats = (playerHpMax||0)+(playerAtk||0)+(playerStaMax||0)+(playerLck||0)+(playerInt||0)+(playerMgkMax||0)+(playerDef||0);
-    var companions  = [...String(playerPartyString||'')].length;
+    var companions  = countEmoji(playerPartyString);
     var diffLabel   = typeof GAME_CONFIG !== 'undefined' ? GAME_CONFIG.label : 'Standard';
     return _computeComponents(playerLevel||1, encounterCount||0, companions, totalStats, scoreBaselineStats||0, playerKarma||1, !!isWin, diffLabel, playerCritSuccesses||0, playerCritFails||0, playerFishCatches||0, playerTotalSleepPenalty||0);
   }

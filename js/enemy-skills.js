@@ -145,7 +145,7 @@ function enemyJoinedParty(){
     playerChangeStats(0, _atk, 0, _lck, 0, _mgk, 0, joinMsg, true, true, _actionStr);
     AchievementManager.check('get_pet');
     if (_emoji=="🦜") AchievementManager.check('pet_parrot');
-    if ([...playerPartyString].length >= 3) AchievementManager.check('full_party');
+    if (countEmoji(playerPartyString) >= 3) AchievementManager.check('full_party');
   });
 }
 
