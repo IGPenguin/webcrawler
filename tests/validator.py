@@ -586,7 +586,7 @@ def validate_html_in_js(js_dir):
                         warnings.append(f"HTML Style - {fname}:{i}: style does not end with ';': \"{val[-60:]}\"")
     return warnings
 
-def check_tutorial_skip_index(story_csv_path, data_loader_path):
+def check_tutorial_skip_index(story_csv_path, data_loader_path, constants_path='js/constants.js'):
     errors = []
     dos_count = 0
     with open(story_csv_path, 'r', encoding='utf-8') as f:
@@ -595,15 +595,23 @@ def check_tutorial_skip_index(story_csv_path, data_loader_path):
             if not stripped or stripped.startswith('//'): continue
             cols = stripped.split(';')
             if cols[0].strip() == 'Depths of Slumber': dos_count += 1
-    with open(data_loader_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    skip_calls = [(m.group(1), int(m.group(1))) for m in re.finditer(r'loadEncounter\((\d+)\)', content)]
-    if not skip_calls:
-        errors.append(f"Tutorial Skip - no literal loadEncounter(N) calls found in {data_loader_path}")
-        return errors
-    for raw, idx in skip_calls:
-        if idx != dos_count:
-            errors.append(f"Tutorial Skip - data-loader.js: loadEncounter({idx}) but story.csv has {dos_count} rows")
+    # Prefer the named constant over literal call-site numbers
+    skip_index = None
+    if os.path.exists(constants_path):
+        with open(constants_path, 'r', encoding='utf-8') as f:
+            m = re.search(r'TUTORIAL_SKIP_INDEX\s*=\s*(\d+)', f.read())
+            if m:
+                skip_index = int(m.group(1))
+    if skip_index is None:
+        with open(data_loader_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        calls = [int(m.group(1)) for m in re.finditer(r'loadEncounter\((\d+)\)', content)]
+        if not calls:
+            errors.append(f"Tutorial Skip - TUTORIAL_SKIP_INDEX not found in {constants_path} and no literal loadEncounter(N) in {data_loader_path}")
+            return errors
+        skip_index = calls[0]
+    if skip_index != dos_count:
+        errors.append(f"Tutorial Skip - TUTORIAL_SKIP_INDEX={skip_index} but story.csv has {dos_count} Depths of Slumber rows")
     return errors
 
 def main():
