@@ -1,3 +1,14 @@
+## ver. 05/30/26 @ 11:56 PM
+🍀 Luck soft-cap for loot drop rates
+🪞 Mirror speak: color change, stays put
+🐣 Eggs have proper stats, names, descs
+🐾 Fix companion fetch double-firing
+🎨 Yellow crits, orange/red sleep logs
+⚔️ Improved skill checks per enemy type
+🔢 Fix emoji party count (ZWJ sequences)
+✏️ Fix missing texts, achiev validation
+🦔 Fix hedgehog accept-list, tutorial skip
+
 ## ver. 05/26/26 @ 05:58 PM
 ⚖️ Rebalanced attack, health, stamina rarity
 🎣 Added 2 fishing weapons: anchor, chain
