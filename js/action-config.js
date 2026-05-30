@@ -364,6 +364,15 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
+  // Curse Demon — dark energy feeds them; harder bar, but crit pass fully staggers them
+  if (button === 'button_curse' && types.includes('Demon')) {
+    var _dcCs = Math.min(7, Math.max(1, Math.round(2 + pLck * 0.625)));
+    var _dcCsMin = Math.max(37, 50 - Math.floor(_dcCs / 2));
+    var _dcCf = Math.min(10, Math.max(1, Math.round(5 - rawLck * (rawLck < 0 ? 1.25 : 0.5))));
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 36, successMax: 64,
+             critSuccessMin: _dcCsMin, critSuccessMax: _dcCsMin + _dcCs, critFailW: _dcCf };
+  }
+
   // Trap wrong-action: small zone — risk of triggering it, but no penalty if passed
   // "Right" actions (Trap-Attack→attack, Trap-Roll→roll, Trap-Sleep→sleep, Trap-Obstacle→attack)
   // get normal calc; every other button on that trap type is penalised here.
@@ -477,9 +486,27 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 40, successMax: 60 };
   }
 
+  // Block Undead with stamina remaining — decaying contact corrodes the guard; harder than Standard
+  if (button === 'button_block' && isUndead && eSta > 0) {
+    var _buCs = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
+    var _buCsMin = 50 - Math.floor(_buCs / 2);
+    var _buCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 38, successMax: 62,
+             critSuccessMin: _buCsMin, critSuccessMax: _buCsMin + _buCs, critFailW: _buCf };
+  }
+
   // Block Heavy with stamina remaining — near-impossible, crashes through any guard
   if (button === 'button_block' && isHeavy && eSta > 0) {
     return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+  }
+
+  // Block Swift with stamina remaining — fast light hits, easy to absorb behind a guard
+  if (button === 'button_block' && isSwift && eSta > 0) {
+    var _bsW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
+    var _bsMin = 50 - Math.floor(_bsW / 2);
+    var _bsCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82,
+             critSuccessMin: _bsMin, critSuccessMax: _bsMin + _bsW, critFailW: _bsCf };
   }
 
   // Tease (block on passive mob with stamina remaining) — hard, creature resists provocation
@@ -502,6 +529,11 @@ function calcActionBarConfig(button, adjustment) {
     return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
   }
 
+  // Roll Swift with stamina remaining — too fast to outrun, dodging is near-impossible
+  if (button === 'button_roll' && isSwift && eSta > 0) {
+    return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+  }
+
   // Roll Heavy with stamina remaining — slow and telegraphed, easy to sidestep
   if (button === 'button_roll' && isHeavy && eSta > 0) {
     var _csW = Math.min(7, Math.max(1, Math.round((2 + pLck * 0.6) * 1.25)));
@@ -509,6 +541,12 @@ function calcActionBarConfig(button, adjustment) {
     var _cfW = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 18, successMax: 82,
              critSuccessMin: _csMin, critSuccessMax: _csMin + _csW, critFailW: _cfW };
+  }
+
+  // Roll Hot/Toxic with stamina remaining — failure deals full eAtk with no mitigation; bar reflects the risk
+  if (button === 'button_roll' && (isHot || isToxic) && eSta > 0) {
+    var _rtCf = Math.min(10, Math.max(1, Math.round(5 - pLck * 0.5)));
+    return { speed: Math.round(spdHard * ACTION_BAR_SPEED_MULT), successMin: 35, successMax: 65, critFailW: _rtCf };
   }
 
   // Knockout while enemy has STA remaining — near-impossible regardless of type

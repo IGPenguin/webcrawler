@@ -159,7 +159,7 @@ Fading Wildlands;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Pro
 Fading Wildlands;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
 Fading Wildlands;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
-Fading Wildlands;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
+Fading Wildlands;🥻;Philosopher Toga;Item-Chest;0;0;0;0;2;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+2 🧠 Intellect</b>.<br><b>3% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Fading Wildlands;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;The blood wasn't yours. Not yet.;kill_first
 
@@ -489,7 +489,7 @@ Forsaken Village;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Pro
 Forsaken Village;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Forsaken Village;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
 Forsaken Village;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
-Forsaken Village;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
+Forsaken Village;🥻;Philosopher Toga;Item-Chest;0;0;0;0;2;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+2 🧠 Intellect</b>.<br><b>3% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Forsaken Village;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Forsaken Village;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 Forsaken Village;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
@@ -537,11 +537,11 @@ Forsaken Village;🪖;Trench Helmet;Item-Head;1;0;0;0;0;0;0;Head Protection;Robu
 Forsaken Village;🧢;Cool Hat;Item-Head;0;0;0;0;1;0;0;Unusal Headgear;Makes one look quite determined.<br>Provides <b>+1 🧠 Charisma</b>;Ready to rock, let's do this!;none
 Forsaken Village;📕;Medical Manual;Item-Trinket;1;0;0;0;0;0;0;Instructions Book;Contains instructions on how to save a life.<br>Provides <b>+1 ❤️ Health</b>.;Embraced the new knowledge.;none
 Forsaken Village;👕;Cotton Shirt;Item-Chest;0;0;1;0;0;0;0;Ancient Clothes;Sun-bleached but capable of removing sweat.<br>Provides <b>+1 🟢 Energy</b>.;Put it onto yourself.;none
-Forsaken Village;👟;Running Shoes;Item-Legs;0;0;0;1;0;0;0;Athletic Footwear;Must have been fast once.<br>Provides <b>+1 🟢 Energy</b>.;Your steps feel lighter;none
+Forsaken Village;👟;Running Shoes;Item-Legs;0;0;1;0;0;0;0;Athletic Footwear;Must have been fast once.<br>Provides <b>+1 🟢 Energy</b>.;Your steps feel lighter;none
 Forsaken Village;👚;Faded Blouse;Item-Chest;0;0;1;0;0;0;0;Woman's Wear;A remnant of the brighter days.<br>Provides <b>+1 🟢 Energy</b> for <b>-1 🧠 Charisma</b>.;Feels a bit uncanny.;none
 Forsaken Village;🎈;Helium Balloon;Item-Trinket;0;0;1;0;-2;0;0;Funny Accessory;Makes your voice high-pitched and your body light.<br>Provides <b>+1 🟢 Energy</b> for <b>-2 🧠 Charisma</b>.;Laughter is the best medicine;none
 Forsaken Village;🪠;Waste Plunger;Item-Weapon;0;1;0;0;-2;0;0;Makeshift Weapon;Originally used to prevent embrassement.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Charisma</b>.;Grabbed makeshift weapon.;none
-Forsaken Village;🧹;Sturdy Broom;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but very effective against humanoids.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed makeshift weapon.;none
+Forsaken Village;🧹;Sturdy Broom;Item-Weapon;0;1;-1;0;0;0;0;Makeshift Weapon;Cumbersome but very effective against enemies.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Grabbed makeshift weapon.;none
 Forsaken Village;🗞️;Fly Swatter;Item-Weapon;0;0;0;0;0;0;0;Makeshift Weapon;Not sure if it makes any difference.<br>;Picked up makeshift weapon.;none
 
 Forsaken Village;💡;Miners Hat;Item-Head;0;0;0;0;1;0;0;Work Gear;The bulb still flickers with static electricity.<br>Provides <b>+1 🧠 Perception</b>.;A dim idea glows.;none
@@ -871,7 +871,7 @@ Twisted Fairyland;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Pr
 Twisted Fairyland;📣;Loud Vocalizer;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Twisted Fairyland;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
 Twisted Fairyland;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
-Twisted Fairyland;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
+Twisted Fairyland;🥻;Philosopher Toga;Item-Chest;0;0;0;0;2;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+2 🧠 Intellect</b>.<br><b>3% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Twisted Fairyland;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 Twisted Fairyland;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 Twisted Fairyland;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
@@ -1156,7 +1156,7 @@ River of Sorrows;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Pr
 River of Sorrows;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 River of Sorrows;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 River of Sorrows;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
-River of Sorrows;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
+River of Sorrows;🥻;Philosopher Toga;Item-Chest;0;0;0;0;2;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+2 🧠 Intellect</b>.<br><b>3% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 River of Sorrows;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 River of Sorrows;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Feels neat and comfortable;knockout_first
 River of Sorrows;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
@@ -1418,7 +1418,7 @@ Fishing;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a 
 Fishing;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
 Fishing;📣;Loud Vocalizer;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Makes you kind of hard to ignore.<br><b>💬 Speak</b> gets <b>2x more effective</b>.;Your voice got <b>📣 Very Loud</b>!;spoke_boss
 Fishing;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants ability <b>🧂 Master Chef</b>: season food.<br>Add <b>+1 🟢 Energy</b>, <b>remove negative effects</b>.;Gained skill <b>🧂 Master Chef</b>.;cook_food_first
-Fishing;🥻;Philosopher Toga;Item-Chest;0;0;0;0;3;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+3 🧠 Intellect</b>.<br><b>5% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
+Fishing;🥻;Philosopher Toga;Item-Chest;0;0;0;0;2;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+2 🧠 Intellect</b>.<br><b>3% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Fishing;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 Fishing;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Fishing;👒;Fishing Hat;Item-Head;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
@@ -1435,7 +1435,7 @@ Fishing;❤️‍🩹;Heart Band-Aid;Item-Trinket;2;0;0;0;0;0;0;<b>Artifact</b>;
 Fishing;🏺;Ming-dynasty Vase;Item-Trinket;0;0;-1;4;0;0;0;<b>Artifact</b>;Believed to have supernatural properties.<br>Provides <b>+4 🍀 Luck</b> for <b>-1 🟢 Energy</b>;Awkward to carry around.;none
 
 Fishing;🍎;Forbidden Apple;Consumable;0;0;0;0;4;0;0;<b>Artifact</b>;The ultimate source of immense brilliance.<br><b>+4 🧠 Intellect</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Tastes literally like heaven.;none
-Fishing;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy, ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That required rather big balls!;none
+Fishing;🐟;Surströmming Can;Consumable;-1;1;0;0;0;0;0;<b>Artifact</b>;Ohhhh boy, ...that's a truly ungodly stench.<br>Probably causes <b>unforseen side-effects</b>.;That took rather big balls!;none
 
 Fishing;🪝;Lucky Hook;Item-Weapon;0;1;0;1;0;0;0;Fishing Gear;Increases (not only) the fishing luck.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Reeled in some fortune.;none
 Fishing;🏅;Olympic Gold;Item-Trinket;0;0;0;0;0;2;0;Accessory;Awarded to the best of the best.<br>Provides <b>+2 🧠 Charisma</b>;;none
@@ -1507,8 +1507,8 @@ Fishing;🐟;Fresh Tuna;Consumable;0;0;0;0;0;0;0;Massive Catch;Convenient snack 
 Fishing;🐠;Rainbow Fish;Consumable;0;0;0;0;0;0;0;Rare Fish;Convenient snack straight out of water.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Fishing;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not the best snack, hardly edible.<br>Restores <b>🟢 Energy</b> for <b>-1 💔 Health</b>.;;none
 
-Fishing;🐸;Cursed Prince;Friend;0;0;0;0;0;1;0;Magical Creature;He is willing to teach you some magic.<br>;Received magic training.;none
-Fishing;🦭;Lazy Seal;Friend;0;0;2;0;0;0;0;War Veteran;Still can teach you a thing or two.<br>;Received survival training.;none
+Fishing;🐸;Cursed Prince;Friend;0;0;0;0;0;1;0;Magical Creature;He is willing to teach you some magic.<br>;Learned the secret of magic.;none
+Fishing;🦭;Veteran Seal;Friend;0;0;1;0;0;0;0;Experienced Hunter;Still can teach you a thing or two.<br>;Received survival training.;none
 
 Fishing;🐌;Water Snail;Small;1;0;0;0;-1;0;0;Underwater Critter;Harmless fella just trailing around.<br>;Choked themselves on snail ooze.;none
 Fishing;🪱;Tired Worm;Small;1;0;0;0;0;0;0;Arthropod;Perhaps could still be a viable bait.<br>;;none

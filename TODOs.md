@@ -1,6 +1,6 @@
 # Styx Flow — 2026-05-21 — Stay Dead
 
-*123 items · 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
+*124 items · 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
@@ -580,6 +580,10 @@
 
 ### Technical Debt
 
+#### [ENC-DEDUP] Bug: Duplicate encounter name within a single run — root cause unconfirmed
+- Same enemy (Stray Whelp) observed twice in one run — once in a plain encounter, once in a generated house. `seenEncounters` dedup logic looks sound on paper; no regular code path found that bypasses it. Possible defense: on `run_continue`, backfill `seenEncounters` from already-queued `linesStory` rows (covers old saves that predate the field and any restore edge cases). Low gain because the symptom is rare and unrepro'd.
+- Type: Bug | Severity: Minor | Effort: L | Gain: S
+
 #### [HASH-ERR] Bug: Score hash "err" on some mobile submissions
 - One or more scores submitted with hash = "err" (caught exception in `_generateHash` in score-manager.js); Python verifier rejects these. Possibly `crypto.subtle` unavailable in certain Android browsers or in-app WebViews. Investigate by collecting more submissions during playtesting and checking whether "err" correlates with a specific device/browser. Fix path: explicit `crypto.subtle` availability check + console.error logging of the caught exception.
 - Type: Bug | Severity: Minor | Effort: S | Gain: M
@@ -634,4 +638,4 @@
 
 ---
 
-*Styx Flow complete — 121 items processed*
+*Styx Flow complete — 122 items processed*

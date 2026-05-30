@@ -95,7 +95,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (corpseState === "neutralized") {
           if (_skillOK === false) {
             if (_crit === 'fail') {
-              logPlayerAction(actionString,"Missed so bad you hit yourself -1 💔 -1 🟢");
+              logPlayerAction(actionString,"Missed so bad you hurt yourself -1 💔");
               playerHit(1,false);
             } else {
               logPlayerAction(actionString,"Missed the motionless target -1 🟢");
@@ -307,7 +307,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hit yourself -1 💔 -1 🟢");
+                logPlayerAction(actionString, "Missed so bad you hit yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "You missed your attack -1 🟢");
@@ -1003,6 +1003,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
+        if (_skillOK === false && enemyType === "Undead" && (enemyAtk+enemyAtkBonus) > 0) {
+          var _undeadBlockDmg = enemyAtk + enemyAtkBonus;
+          if (_crit === 'fail') {
+            playerSta = Math.max(0, playerSta - 1);
+            if (enemyStaminaChangeMessage(-1, "Rot tore through your guard -"+_undeadBlockDmg+" 💔 -2 🟢", "Couldn't break through, caught their breath.")) playerHit(_undeadBlockDmg);
+          } else {
+            if (enemyStaminaChangeMessage(-1, "The rot broke your block -"+_undeadBlockDmg+" 💔 -1 🟢", "Couldn't break through, caught their breath.")) playerHit(_undeadBlockDmg);
+          }
+          break;
+        }
+
         if (_skillOK === false && (enemyAtk+enemyAtkBonus) > 0
             && enemyType!=="Pet" && enemyType!=="Small" && enemyType!=="Friend" && enemyType!=="Swift") {
           var _blockFailDmg = enemyAtk + enemyAtkBonus;
@@ -1044,8 +1055,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerEffect("🔰");
             }
             break;
-          case "Standard":
           case "Undead":
+            enemyStaminaChangeMessage(-1,
+              _crit === 'success' ? "Held back the rot perfectly." : "Blocked through the stench -1 🟢",
+              "Blocked just for the sake of it -1 🟢");
+            displayPlayerEffect("🔰");
+            break;
+
+          case "Standard":
           case "Recruit":
           case "Demon":
           case "Stingy":
@@ -1645,10 +1662,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case "Demon":
-            logPlayerAction(actionString,"Your curse has made them stronger! -2 🔵");
-            enemyName=enemyName+" (Cursed)";
-            animateUIElement(enemyInfoUIElement,"animate__tada","1"); //Animate enemy gain
-            enemyAtkBonus+=1;
+            if (_skillOK === false) {
+              logPlayerAction(actionString,"Your curse has made them stronger! -2 🔵");
+              enemyName=enemyName+" (Cursed)";
+              animateUIElement(enemyInfoUIElement,"animate__tada","1");
+              enemyAtkBonus+=1;
+            } else if (_crit === 'success') {
+              enemyStaLost = enemySta;
+              enemyCursed = true;
+              logPlayerAction(actionString,"The hex overwhelmed their defenses -2 🔵");
+              logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
+            } else {
+              logPlayerAction(actionString,"The hex dissolved into them -2 🔵");
+              displayPlayerCannotEffect();
+              if (enemyCastIfMgk()) break;
+              enemyAttackOrRest();
+            }
             break;
 
         case "Standard": //Reduce enemy atk if mgk stronger then them
