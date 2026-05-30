@@ -99,7 +99,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
         pushEncounter(getRandomEncounter(["Container"]));
       }
 
-      if (!areaName.includes("Fading") && procAbilityChance("", 3+luckSpawnBonus())) { // 3% Artifact lockbox (not in Fading)
+      if (logCall && !areaName.includes("Fading") && procAbilityChance("", 3+luckSpawnBonus())) { // 3% Artifact lockbox (not in Fading, not in sub-generator calls)
         pushEncounter(getWeightedEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter(["Locked-Container"]));
       }
@@ -146,9 +146,9 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       if (!areaName.includes("Shrouded")) {
         generateNextEncounters(0, false); // Prop/Small after fight (not Necropolis)
         if (procAbilityChance("", 20+luckSpawnBonus())) {
-          pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
+          pushEncounter(getWeightedEncounter(["Item"],["Artifact"])); // guaranteed Artifact, rarity-weighted within pool
         } else {
-          pushEncounter(getWeightedEncounter(["Item"],[],"",["Artifact","Lost Possession"]));
+          pushEncounter(getWeightedEncounter(["Item"],[],"",["Lost Possession"])); // normal weighted roll; Artifact still possible via rarity
         }
       }
 
