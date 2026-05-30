@@ -30,7 +30,7 @@ var AchievementManager = (function () {
     { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Opened a lock with a spell!', hint: 'Magic opens more than minds.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
     { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: '' },
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
-    { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
+    { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: 'Unlocked the <b>🧥 Hobo</b> origin.' },
 
     { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...', unlock: 'Unlocked the <b>🐷 Pig Mask</b>.' },
     { id: 'eat_purple',          emoji: '💜', desc: 'Consumed a premium refreshment!', hint: 'The finer things in death.', unlock: '' },

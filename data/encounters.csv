@@ -16,7 +16,7 @@ Fading Wildlands;🪵;Reclaimed Logs;Prop;0;0;0;0;0;0;0;Natural Debris;Moss eats
 Fading Wildlands;🪵;Carved Stump;Prop;0;0;0;0;0;0;0;Old Marker;Knife marks tell forgotten stories.<br>;;none
 Fading Wildlands;🪶;Fallen Feather;Prop;0;0;0;0;0;0;0;Quiet Remnant;Something once passed overhead.<br>;;none
 Fading Wildlands;🐾;Animal Footprints;Prop;0;0;0;0;0;0;0;Fresh Clue;Clear sign of recent activity.<br>;Followed the trail.;none
-Fading Wildlands;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unse🪞ttling Clue;Clear sign of recent activity.<br>;Followed the trail.;none
+Fading Wildlands;👣;Humanoid Footprints;Prop;0;0;0;0;0;0;0;Unsettling Clue;Clear sign of recent activity.<br>;Followed the trail.;none
 
 Fading Wildlands;✨;Lingering Starshine;Prop;0;0;0;0;0;1;0;Clear Sky;The stars shine bright like diamonds.<br>;Woke up with a strange power;none
 Fading Wildlands;🌼;Wildflower Bed;Prop;0;0;0;0;1;0;0;Gentle Ground;Flattened blooms form a soft nest.<br>;Slept peacefully among petals;none
@@ -970,7 +970,7 @@ River of Sorrows;⚱️;Floating Urn;Prop;0;0;0;-1;0;0;0;Funerary Relic;The wate
 
 River of Sorrows;🍂;Dead Leaves;Container;0;0;0;0;0;0;0;River's Cast-offs;They've been circling here for days.<br>;Fished through the debris.;none
 River of Sorrows;🍃;Pale Leaves;Container;0;0;0;0;0;0;0;River's Cast-offs;Carried from somewhere before things fell apart.<br>;Something was caught among them.;none
-River of Sorrows;🪵;Floating Wreckage;Container;0;0;0;0;0;0;0;Drifting Salvage;Hull timbers floating on the woter.<br>;Picked through the wreackage.;none
+River of Sorrows;🪵;Floating Wreckage;Container;0;0;0;0;0;0;0;Drifting Salvage;Hull timbers floating on the water.<br>;Picked through the wreckage.;none
 River of Sorrows;📦;Waterlogged Crate;Container;0;0;0;0;0;0;0;Drowned Cargo;Perhaps holds something of use inside.<br>;Contents still dry inside.;none
 River of Sorrows;🎁;Unopened Offering;Container;0;0;0;0;0;0;0;Undelivered;Never reached whoever was waiting for it.<br>;Revealed what was inside.;none
 River of Sorrows;🏺;Sealed Amphora;Container;0;0;0;0;0;0;0;Preserved Contents;Someone sealed this very carefully.<br>;The wax cracked open.;none
@@ -983,7 +983,7 @@ River of Sorrows;🧳;Sturdy Trunk;Locked-Container;0;0;0;0;0;0;0;Personal Belon
 River of Sorrows;🧳;Travel Chest;Locked-Container;0;0;0;0;0;0;0;Abandoned Belongings;Left behind by someone fleeing in haste.<br>;The latch gave way at last.;none
 River of Sorrows;🎒;Waterproof Backpack;Locked-Container;0;0;0;0;0;0;0;Traveler’s Chest;Strapped shut, washed ashore long ago.<br>;The lock was brittle and gave in.;none
 River of Sorrows;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar, almost painful to touch.<br>;It clicks softly open.;none
-River of Sorrows;🕋;Sealed Reliquary;Locked-Container;0;0;0;0;0;0;0;Sacred Cache;Inscribed with unfamiliar glowing symbols.<br>;Finall clicked it open.;none
+River of Sorrows;🕋;Sealed Reliquary;Locked-Container;0;0;0;0;0;0;0;Sacred Cache;Inscribed with unfamiliar glowing symbols.<br>;Finally clicked it open.;none
 
 River of Sorrows;🏝️;Palm Island;Container-2;0;0;0;0;0;0;0;Shore Find;Inhabited by a single palm tree.<br>;Sailed a bit closer.;none
 River of Sorrows;🏖️;Abandoned Isle;Container-2;0;0;0;0;0;0;0;Shore Find;Something seems to be lying in the shade.<br>;Sailed a bit closer.;none
@@ -1050,10 +1050,10 @@ River of Sorrows;🕷️;Water Skipper;Small;1;0;3;0;-1;0;0;Arthropod;Darts acro
 River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;0;Cephalopod;Wriggles with unsettling energy.<br>;Ink in the lungs, current in the veins.;none
 River of Sorrows;🦐;Twisted Shrimp;Small;1;1;2;0;-1;0;0;Arthropod;Goes for your blood like crazy.<br>;A thousand small cuts from a small thing.;none
 River of Sorrows;🪱;Overgrown Seaworm;Small;2;1;1;0;-1;0;0;Arthropod;Longer than it has any right to be.<br>;Got crushed from the outside in.;none
-River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Became unwilling shelter.;none
-River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;Bled out too slowly to stop.;none
-River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Got sucked blood-dry.;none
-River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Drained to the last drop.;none
+River of Sorrows;🪱;Parasitic Maggot;Small;1;2;1;0;-1;0;0;Arthropod;Smaller than a thumb, persistent as a grudge.<br>;Became unwilling shelter.;none
+River of Sorrows;🪱;Nasty Leech;Small;2;3;1;0;-1;0;0;Arthropod;Attaches without warning and won't hear reason.<br>;Bled out too slowly to stop.;none
+River of Sorrows;🪱;Thirsty Leech;Small;1;2;1;0;-1;0;0;Arthropod;Follows warmth into waters that lost it long ago.<br>;Got sucked blood-dry.;none
+River of Sorrows;🪱;Bloodsucking Leech;Small;1;3;1;0;-1;0;0;Arthropod;Wraps around whatever it finds and waits.<br>;Drained to the last drop.;none
 River of Sorrows;🦠;Grave Swarm;Small;1;1;1;0;-1;0;0;Dead Plankton;Barely visible and absolutely everywhere.<br>;Consumed from the outside in.;none
 
 River of Sorrows;🌾;Tall Reeds;Trap-Obstacle;0;0;0;0;0;0;0;Dense Growth;Packed too tight to push through without effort.<br>;Pulled aside one by one.;none
@@ -1078,10 +1078,10 @@ River of Sorrows;🦛;Wallowing Hulk;Tough;4;0;3;0;-1;0;1;Sunken Giant;Its hide 
 River of Sorrows;🐉;Brine Hellkite;Tough;5;3;2;0;1;2;1;Abyssal Drake;Scales drip seawater and spite.<br>;Jaws closed, tide rose inside you.;none
 River of Sorrows;🦬;Stoneback Bison;Tough;6;3;3;0;0;0;1;Tough Charger;Mossy boulders cling to its spine like armor.<br>;Trampled into the riverbank.;none
 
-River of Sorrows;🐚;Cone Snail;Toxic;2;3;1;0;0;0;1;Venomous Crustacean;Better keep your distance!<br>;Oops, that was deadly!;none
-River of Sorrows;‍🪼;Box Jelly;Toxic;2;3;1;0;-1;0;0;Aquatic Threat;Practically cannot die - therefore undead?<br>;Killed by a mere touch.;none
+River of Sorrows;🐚;Cone Snail;Toxic;2;3;1;0;0;0;1;Venomous Crustacean;Smaller than anything this lethal should be.<br>;Venom reached the heart in seconds.;none
+River of Sorrows;‍🪼;Box Jelly;Toxic;2;3;1;0;-1;0;0;Aquatic Threat;Transparent as grief and twice as tenacious.<br>;Killed by a mere touch.;none
 River of Sorrows;🦎;Blighted Newt;Toxic;4;3;2;0;-1;0;0;Toxic Crawler;Skin weeps something that doesn't wash off.<br>;Dissolved from the outside in.;none
-River of Sorrows;🧜🏾‍♀️;Murky Lurker;Toxic;5;2;2;0;2;0;0;Sunken Guardian;Covered with some slimy residue.<br>;Dragged into the depths.;none
+River of Sorrows;🧜🏾‍♀️;Murky Lurker;Toxic;5;2;2;0;2;0;0;Sunken Guardian;Pale beneath the surface and watching.<br>;Dragged into the depths.;none
 
 River of Sorrows;‍🪸;Living Reef;Stingy;3;1;0;0;-1;0;0;Sea Growth;Harmless to watch, dangerous to touch.<br>;Killed by a mere touch.;none
 River of Sorrows;‍🐡;Anxious Pufferfish;Stingy;3;3;2;0;-1;0;0;Spiky Ball;Looks funny, but is lethal.<br>;Pierced by thousands spikes.;none
@@ -1091,8 +1091,8 @@ River of Sorrows;♨️;Scalding Elemental;Hot;4;3;2;0;0;0;0;Thermal Horror;Erup
 River of Sorrows;🧜🏻‍♀️;Blazing Siren;Hot;4;1;2;0;3;2;0;Scalding Lure;Runs warm enough to blister the water around her.<br>;Taken down by a siren.;none
 River of Sorrows;👤;Fever Shade;Hot;4;2;3;0;0;0;0;Heat Specter;Dead warmth fills the cold air around it.<br>;The fever became your last dream.;none
 
-River of Sorrows;‍🦈;Great Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Goes straight for your neck.<br>;Devoured by a hungry predator!;none
-River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops<br>;Stampeded to your death.;none
+River of Sorrows;‍🦈;Great Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Something displaced the water too early.<br>;Gone before the water settled.;none
+River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops.<br>;Stampeded to your death.;none
 River of Sorrows;🧜🏿‍♂️;Sunken Hauler;Heavy;5;3;3;0;1;0;0;River Brute;Drags things under until the struggling stops.<br>;Held down past any reasonable limit.;none
 
 River of Sorrows;🐆;River Stalker;Swift;4;3;2;0;0;0;0;Bank Predator;Paces the bank, each step soft as grief.<br>;Taken from behind like you were expected.;none
@@ -1100,7 +1100,7 @@ River of Sorrows;🐍;Aquatic Snake;Swift;3;4;2;0;-1;0;1;Fearless Predator;Charg
 River of Sorrows;🐬;Laughing Scumbag;Swift;4;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.;none
 River of Sorrows;🧜🏻‍♂️;Pale Drifter;Swift;4;3;2;0;2;0;0;Ghostly Current;Cuts through grief-thickened water without slowing.<br>;Gone before you hit the water.;none
 
-River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Feeds on your fear and anxiety.<br>;Struck by thorough evil.;none
+River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Something the River keeps instead of letting go.<br>;Hollowed out from the inside.;none
 
 River of Sorrows;🧜‍♂️;Drowned Tempter;Demon;3;2;2;0;2;1;0;Abyssal Charmer;Promises breath beneath the waves.<br>;You followed him under, and never surfaced.;none
 River of Sorrows;🧜‍♀️;Silt Siren;Demon;3;1;3;0;3;1;0;Luring Shade;Voice muffled, eyes burning bright below.<br>;You leaned closer and the river took you.;none
@@ -1229,15 +1229,15 @@ Shrouded Necropolis;🪨;Stone Mound;Container;0;0;0;0;0;0;0;Ruins;Nothing of pa
 Shrouded Necropolis;🧳;Abandoned Trunk;Container;0;0;0;0;0;0;0;Someone's Belongings;Hopefully has something valuable inside.<br>;;none
 Shrouded Necropolis;🕋;Burial Chamber;Container;0;0;0;0;0;0;0;Indestructible;Has a small keyhole on top.<br>;Revealed precious treasure.;none
 Shrouded Necropolis;🚪;Strange Door;Container;0;0;0;0;0;0;0;Unknown;Ornate door shimmering at the edges.<br>;;none
-Shrouded Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Ugh... That was disgusting.;none
-Shrouded Necropolis;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;0;Decomposing Pile;Does not seem safe to manipulate.<br>;Contracted a contageous disease.;none
+Shrouded Necropolis;🧠;Sticky Brains;Container;0;0;0;0;0;0;0;Mind Residence;Half-dry human remains.<br>;Something came back with it.;none
+Shrouded Necropolis;🍂;Rotten Leaves;Container;-1;0;0;0;0;0;0;Decomposing Pile;Wet rot, deeper than it looks.<br>;Contracted a contagious disease.;none
 Shrouded Necropolis;🦴;Pile of Bones;Container;0;0;0;-3;0;0;0;Disturbing Scenery;Doesn't look like an accident.<br>;Something ancient noticed.;none
 Shrouded Necropolis;🦴;Scattered Bones;Container;-1;0;0;0;0;0;0;Uneasy Sight;Old bones lie scattered around.<br>;Stepped on something sharp.;none
 Shrouded Necropolis;🪦;Disturbed Grave;Container;0;0;0;-2;0;0;0;Questionable Stash;Something seems to be hidden there.<br>;The earth rejected the intrusion.;none
 Shrouded Necropolis;🪦;Toppled Headstone;Container;0;0;0;0;0;0;0;Resting Place;Something is sticking from below it.<br>;;none
 Shrouded Necropolis;⚰️;Burial Coffin;Container;0;0;0;0;0;-3;0;Place of Rest;Looks someone tampered with it recently.<br>;Whoever rests here didn't appreciate it.;none
 Shrouded Necropolis;🥀;Trailing Vines;Container;-1;0;0;0;0;0;0;Cursed Flora;Vines creep low to snare the unwary.<br>;Tugged free but left bruises.;none
-Shrouded Necropolis;🏺;Leech Jar;Container;-1;0;0;0;0;0;0;Creepy Container;They’re still alive in there.<br>.;Got some blood sucked.;none
+Shrouded Necropolis;🏺;Leech Jar;Container;-1;0;0;0;0;0;0;Creepy Container;They’re still alive in there.<br>;Found the wound first.;none
 
 Shrouded Necropolis;🕋;Jewelry Box;Locked-Container;0;0;0;0;0;0;0;Mourning Keepsake;Somehow familiar, almost painful to touch.<br>;It clicks softly open.;none
 Shrouded Necropolis;⚰️;Locked Coffin;Locked-Container;0;0;0;0;0;0;0;Sealed Fate;The nails hold strong, the latch is locked.<br>;You found the hidden keyhole.;none
@@ -1271,19 +1271,19 @@ Shrouded Necropolis;🌌;Starlight Mural;Altar;0;0;0;0;0;2;0;Ritual Place;The sk
 
 Shrouded Necropolis;🕷️;Hollow Spider;Small;0;0;2;0;-1;0;0;Empty Shell;Seems long dead, but still crawling.<br>;Got webbed into sleep.;none
 Shrouded Necropolis;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.;none
-Shrouded Necropolis;🪳;Plague Roach;Small;2;1;1;0;-1;0;0;Annoying Insect;Legends speak of its resilience.<br>;Spread a terrible sickness.;none
-Shrouded Necropolis;🪰;Hungry Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Buzzes in circles above.<br>;Drove you completely mad.;none
+Shrouded Necropolis;🪳;Plague Roach;Small;2;1;1;0;-1;0;0;Annoying Insect;Survived everything the Necropolis tried.<br>;Spread a terrible sickness.;none
+Shrouded Necropolis;🪰;Hungry Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Drawn to something in you it cannot name.<br>;Driven mad by the buzzing.;none
 Shrouded Necropolis;🪲;Green Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.;none
 Shrouded Necropolis;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.;none
 Shrouded Necropolis;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.;none
-Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;0;Ominous Insect;Wings black as midnight.<br>;Cursed your luck forever.;none
-Shrouded Necropolis;🪱;Mosquito Larva;Small;1;1;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;;none
-Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
-Shrouded Necropolis;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
-Shrouded Necropolis;🪱;Grave Worm;Small;1;2;1;0;-1;0;0;Crawling Parasite;Nourished by the decay of ages.<br>;;none
-Shrouded Necropolis;🪱;Bloodsucking Worm;Small;1;2;2;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
-Shrouded Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
-Shrouded Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;0;Arthropod;Dangerous fishing bait.<br>;;none
+Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;0;Ominous Insect;Wings carrying something that should have stayed buried.<br>;Luck simply ran out.;none
+Shrouded Necropolis;🪱;Mosquito Larva;Small;1;1;1;0;-1;0;0;Arthropod;Found near still water and older burials.<br>;Infected through the bite.;none
+Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Long enough to loop a corpse twice over.<br>;Hollowed out from within.;none
+Shrouded Necropolis;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;0;Arthropod;Pale from years underground, still hungry.<br>;Burrowed somewhere vital.;none
+Shrouded Necropolis;🪱;Grave Worm;Small;1;2;1;0;-1;0;0;Crawling Parasite;Nourished by the decay of ages.<br>;Consumed from the inside.;none
+Shrouded Necropolis;🪱;Bloodsucking Worm;Small;1;2;2;0;-1;0;0;Arthropod;Drawn to warmth in a place that has none.<br>;Bled dry and still.;none
+Shrouded Necropolis;🪱;Venomous Larva;Small;1;3;1;0;-1;0;0;Arthropod;Hatched somewhere it shouldn't have.<br>;Swelled at the sting site.;none
+Shrouded Necropolis;🪱;Nasty Parasite;Small;1;3;1;0;-1;0;0;Arthropod;Settles into whatever is still warm.<br>;Found something vital and stayed.;none
 Shrouded Necropolis;🪰;Bloodsucker Fly;Small;1;2;2;0;-1;0;0;Annoying Insect;Sits on skin again and again.<br>;Contracted a deadly disease.;none
 Shrouded Necropolis;🪰;Ceaseless Fly;Small;0;0;3;0;-1;0;0;Nagging Buzz;The hum drills straight into your skull.<br>;Couldn’t take the endless buzzing.;none
 Shrouded Necropolis;🦟;Bloodsucker Mosquito;Small;1;2;1;0;-1;0;0;Annoying Insect;Draws blood bit by bit.<br>;Drained completely by the swarm.;none

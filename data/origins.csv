@@ -55,7 +55,8 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br>Hardened long before anything fought back.;none
 🪵;Logger;1;0;0;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Used to work hard with no time to rest.;none
 🎩;Noble;0;0;0;1;1;0;0;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.;none
-🪕;Bard;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Traveled the world, learned a lot.;none🪶;Scribe;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;none
+🪕;Bard;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Traveled the world, learned a lot.;none
+🪶;Scribe;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;none
 ✨;Favored;0;0;0;1;0;0;0;Gain <b>+1 🍀 Luck</b> with no downside.<br><i>Things always somehow work out.;none
 
 //Attack
