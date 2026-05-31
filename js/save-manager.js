@@ -20,7 +20,14 @@ var SaveManager = (function () {
     try {
       var raw = localStorage.getItem(HISTORY_KEY);
       var sessions = raw ? JSON.parse(raw) : [];
-      sessions.sort(function (a, b) { return (b.runStartTimestamp || 0) - (a.runStartTimestamp || 0); });
+      sessions.forEach(function (s, i) { s._rawIdx = i; });
+      sessions.sort(function (a, b) {
+        if (a.runEndTimestamp && b.runEndTimestamp) return b.runEndTimestamp - a.runEndTimestamp;
+        if (a.runEndTimestamp) return -1;
+        if (b.runEndTimestamp) return 1;
+        return a._rawIdx - b._rawIdx;
+      });
+      sessions.forEach(function (s) { delete s._rawIdx; });
       return sessions;
     } catch (e) { return []; }
   }
@@ -223,7 +230,8 @@ var SaveManager = (function () {
     var saved = loadGameState();
     if (!saved) return;
     saveSession({
-      date:         saved.adventureStartTime,
+      date:            saved.adventureEndTime || saved.adventureStartTime,
+      runEndTimestamp: Date.now(),
       playerName:   saved.playerName,
       level:        saved.playerLevel,
       kills:        saved.playerKills,

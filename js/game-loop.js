@@ -154,7 +154,8 @@ function gameOver(silent=false){
   var _deathEndType = _isRival ? 'rival_death' : 'death';
   var _deathPayload = ScoreManager.buildPayload(_deathEndType);
   SaveManager.saveSession({
-    date: adventureStartTime,
+    date:             adventureEndTime,
+    runEndTimestamp:  Date.now(),
     playerName: playerName,
     level: playerLevel,
     kills: playerKills,
@@ -264,7 +265,8 @@ function _doGameEnd(endType) {
   downloadRunLog();
   var _winPayload = ScoreManager.buildPayload(endType);
   SaveManager.saveSession({
-    date: adventureStartTime,
+    date:             adventureEndTime,
+    runEndTimestamp:  Date.now(),
     playerName: playerName,
     level: playerLevel,
     kills: playerKills,
