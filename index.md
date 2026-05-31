@@ -187,10 +187,10 @@ layout: default
                -webkit-text-stroke: 5px black;
                paint-order: stroke fill;
                margin:8px 0 8px 0;
-               text-align:center;">⚠️ Really want to restart?</h2>
+               text-align:center;">⚠️ Really want to start over?</h2>
         <div id="menu_confirm_preview" style="display:none; margin-bottom:8px; overflow:hidden;"></div>
         <div id="menu_confirm_warning" style="background-color:#202020; padding:6px 0 0 0; box-shadow:inset 0px 0px 0px 3px #000, 0 4px 8px 0 rgba(0,0,0,0.5);">
-        <h4 style="text-align:center; min-height:0; font-size:14px; line-height:26px; margin-bottom:6px"><b style="font-weight:600; color:red; font-size:16px; ">Your current game progress will be lost!</b><br><b style="font-weight:800; color:#62a862ff">🧩 Memories</b> and <b style="font-weight:800; color:#7193bf;">🪙 Drachmae</b> are forever.</h4>
+        <h4 style="text-align:center; min-height:0; font-size:14px; line-height:26px; margin-bottom:6px"><b style="font-weight:600; color:red; font-size:16px; ">Your current journey progress will be lost!</b><br><b style="font-weight:800; color:#62a862ff">🧩 Memories</b> and <b style="font-weight:800; color:#7193bf;">🪙 Drachmae</b> are forever.</h4>
       </div>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_confirm_yes" style="margin-top:16px; color:red;">✕ Start Over</button>
@@ -323,7 +323,7 @@ layout: default
       <h2 style="font-size:20px; letter-spacing:1.5px; -webkit-text-stroke:5px black; paint-order:stroke fill; margin:8px 0 8px 0; text-align:center;">⚙️ Settings</h2>
       <div id="menu_settings_content" style="overflow-x:hidden; overflow-y:auto; max-height:444px; scrollbar-width:none; padding-top:2px; padding-bottom:2px;"></div>
       <button class="menu-btn" id="menu_codex">📕 Codex of the Damned</button>
-      <h5 style="margin:8px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;"><b style="color:red;">↑</b> Read this if you keep struggling with staying alive.<br></h5>'
+      <h5 style="margin:8px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;"><b style="color:red;">↑</b> Read this if you keep struggling with staying alive.<br></h5>
       <div class="menu-spacer"></div>
       <h5 style="margin-top:12px; margin-bottom:-8px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Non personal telemetry <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;">data is being collected.</a></h5>
       <h5 style="margin:8px 3px -8px 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">⚠️ Browsers may wipe saved data after 7 inactive days.<br></h5>'
@@ -608,7 +608,7 @@ layout: default
   <button type = "button" id = "button_speak">💬</button>
     <p style="margin:8px;"></p>
   <button type = "button" id = "button_cast">🪄</button>&nbsp;
-  <button type = "button" id = "button_pray">🙏</button>&nbsp;
+  <button type = "button" id = "button_heal">🙏</button>&nbsp;
   <button type = "button" id = "button_curse">🪬</button>
 </div>
 </div>

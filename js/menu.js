@@ -1048,7 +1048,7 @@ var Menu = (function () {
 
     var diffLabel = document.createElement('h5');
     diffLabel.style.cssText = SECTION_LABEL;
-    diffLabel.textContent = 'Game Difficulty';
+    diffLabel.textContent = 'Journey Difficulty';
     diffSection.appendChild(diffLabel);
 
     var segRow = document.createElement('div');
