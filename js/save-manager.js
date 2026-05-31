@@ -20,7 +20,7 @@ var SaveManager = (function () {
     try {
       var raw = localStorage.getItem(HISTORY_KEY);
       var sessions = raw ? JSON.parse(raw) : [];
-      sessions.sort(function (a, b) { return (b.score || 0) - (a.score || 0); });
+      sessions.sort(function (a, b) { return (b.runStartTimestamp || 0) - (a.runStartTimestamp || 0); });
       return sessions;
     } catch (e) { return []; }
   }

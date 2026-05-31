@@ -517,8 +517,8 @@ Forsaken Village;🖋️;Fountain Pen;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;The t
 Forsaken Village;🔧;Metal Spanner;Item-Weapon;0;1;0;0;0;0;0;Multi-tool;Usable as makeshift weapon.<br>Provides <b>+1 ⚔️ Damage</b>.;Could make a bloody mess.;none
 Forsaken Village;🪛;Rusty Screwdriver;Item-Weapon;0;1;0;0;0;0;0;Writing Tool;Almost seems designed for stabbing.<br>Provides <b>+1 ⚔️ Damage</b>.;Let's make a bloody mess.;none
 Forsaken Village;👖;Work Trousers;Item-Legs;1;0;1;0;0;0;0;Specialized Gear;Versatile clothing with basic protection.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Ready for anything to come;none
-Forsaken Village;🩼;Disposed Crutch;Item-Weapon;0;1;-1;0;0;0;0;Accessbility Tool;Cumbersome but reliable for dealing damage.<br>Provides <b>+1 ⚔️ Damage</b> and <b>-1 🟢 Energy</b>.;This will come in handy!;none
-Forsaken Village;🗜️;Workbench Clamp;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach.;none
+Forsaken Village;🩼;Disposed Crutch;Item-Weapon;0;1;-1;0;0;0;0;Accessbility Tool;Cumbersome but reliable for dealing damage.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>.;Not stupid if it works;none
+Forsaken Village;🗜️;Workbench Clamp;Item-Weapon;0;1;-1;0;0;0;0;Improvised Weapon;A heavy metal tool usable as a fist weapon.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;A heavy-handed approach;none
 Forsaken Village;⛑️;Medic Helmet;Item-Head;1;0;0;1;0;0;0;Head Protection;Robust protection for those who help others.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Protected and blessed;none
 Forsaken Village;📔;Holy Prayerbook;Item-Weapon;0;0;0;1;0;1;0;Unusual Book;Ancient tome containing various incantations.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;Learned plenty of stuff;none
 
@@ -767,7 +767,7 @@ Twisted Fairyland;🦀;Ambitious Crab;Small;1;2;1;0;-1;0;0;Crustacean;Boasts a p
 
 Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;0;Wild Beast;Probably has no soul.<br>;Got ripped apart and eaten.;none
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.;none
-Twisted Fairyland;🦒;Zen Tallneck;Standard;3;0;3;0;5;0;0;Wild Beast;Looks unbothered by the widespread corruptuon.<br>;Trampled to your death.;none
+Twisted Fairyland;🦒;Zen Tallneck;Standard;3;0;3;0;5;0;0;Wild Beast;Unbothered by the widespread corruption.<br>;Trampled to your death.;none
 
 Twisted Fairyland;🔥;Dancing Flame;Hot;3;2;2;1;0;0;0;Elemental;Better not get too close.<br>;Got some severe burns.;none
 
@@ -783,7 +783,7 @@ Twisted Fairyland;🐜;Bullet Ant;Stingy;2;3;2;0;-1;0;0;Tireless Worker;Able to 
 Twisted Fairyland;🦟;Oversized Mosquito;Stingy;3;2;2;0;-1;0;0;Pesky Insect;Never seen anything like this.<br>;Got sucked totally dry.;none
 Twisted Fairyland;🕷️;Huge Tarantula;Stingy;3;2;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got lethally stung.;none
 
-Twisted Fairyland;🦠;Floating Spores;Toxic;0;2;0;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
+Twisted Fairyland;🦠;Spore Clump;Toxic;1;3;1;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
 Twisted Fairyland;🧀;Cheese Monster;Toxic;3;2;3;0;-1;0;0;Living Snack;Labeled with <i>"I <3 Ladoria"</i>, looks dangerous.<br>;Got poked with some new holes.;none
 Twisted Fairyland;🌼;Living Bloom;Toxic;3;2;2;0;-1;0;0;Unnatural Growth;Smells sweet and sour.<br>;Got lethally poisoned.;none
 Twisted Fairyland;🕷️;Black Widow;Toxic;3;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.;none
@@ -813,10 +813,10 @@ Twisted Fairyland;👺;Wicked Imp;Demon;3;2;2;0;3;0;0;Mischief Incarnate;Eyes gl
 Twisted Fairyland;👹;Little Devil;Demon;3;3;1;0;3;0;0;Imminent Threat;Laughs out loud maniacally.<br>;Still laughing as you fell.;none
 Twisted Fairyland;🌚;Shadow Spirit;Demon;3;1;1;0;-1;1;0;Sinister Remnants;Slips between the shadows.<br>;No mercy for the wicked.;none
 Twisted Fairyland;👿;Malevolent Fiend;Demon;3;1;3;0;1;1;0;Sinister Shape;Appeared out of nowhere.<br>;Lost in endless darkness.;none
+Twisted Fairyland;🐸;Hexed Toad;Demon;2;2;3;0;4;1;0;Unfortunate Soul;Croaks in a language older than this forest.<br>;Your spirit was destroyed.;none
 
 Twisted Fairyland;🦋;Ash Wraith;Undead;3;2;2;0;-1;1;0;Dead Insect;Wings made of grave dust. Still beautiful.<br>;You were scattered into nothing.;none
 
-Twisted Fairyland;🐸;Hexed Toad;Spirit;2;0;2;0;4;1;0;Forest Spirit;Croaks in a language older than this forest.<br>;Your spirit was destroyed.;none
 Twisted Fairyland;🌑;Lunar Phantom;Spirit;1;1;1;0;-1;1;0;Ethereal Wraith;Glows in moonlight’s curse.<br>;Flesh turned to dust.;none
 Twisted Fairyland;🌩️;Angry Cloud;Spirit;1;1;1;1;-1;0;0;Negative Energy;Strikes with power and precision.<br>;Zapped away from this world.;none
 Twisted Fairyland;⛈️️;Thunderstorm Cloud;Spirit;1;1;2;1;-1;0;0;Negative Energy;Strikes with extreme power and precision.<br>;Blazed away from this world.;none
@@ -845,7 +845,7 @@ Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;1;0;0;0;0;Healthy Treat;A bit o
 Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;0;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;;none
 Twisted Fairyland;🍍;Sweet Pineapple;Consumable;1;0;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
 Twisted Fairyland;🥭;Sweet Mango;Consumable;1;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
-Twisted Fairyland;🍶;Ancient Sake;Consumable;-1;0;0;0;1;0;0;Forgotten Drink;Scratched but somehow still watertight.<br>Possibly causes some side-effects.;It had a metallic aftertaste;none
+Twisted Fairyland;🍶;Ancient Sake;Consumable;-1;0;0;0;1;0;0;Forgotten Drink;Scratched but somehow still watertight.<br>Possibly causes some side-effects.;Left a metallic taste;none
 Twisted Fairyland;🥕;Fairy Carrot;Consumable;0;0;1;0;0;0;0;Vegetable;Packs a ton of sweet sweet energy.<br>Provides <b>+1 🟢 Energy</b> temporarily.;Got extra energy;none
 Twisted Fairyland;🥧;Suspicious Meatpie;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
 Twisted Fairyland;🥟;Suspicious Dumpling;Consumable;1;0;0;0;0;0;0;Questionable Treat;Filled with unidentifiable meat.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
@@ -1410,7 +1410,7 @@ Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;5;3;2;0;3;0;0;Forgotten L
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;;none
 Fishing;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;;none
 
-Fishing;🔱;Titanslayer Trident;Item-Weapon;0;3;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;fish_legendary_first
+Fishing;🔱;Titanslayer Trident;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;fish_legendary_first
 Fishing;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Fishing;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_30
 Fishing;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first

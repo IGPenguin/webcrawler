@@ -272,9 +272,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyEffect("💨");
             displayEnemyCannotEffect();
             if ((enemySta+enemyStaLost)==0){
-              atckmsg="Seems to be impossible to hit.";
+              atckmsg="Seems impossible to be hit.";
             } else {
-              atckmsg="Impossible to hit, they retaliated -"+enemyAtk+" 💔";
+              atckmsg="Cannot hit them, they retaliated -"+enemyAtk+" 💔";
             }
             if (enemyCastIfMgk(true)) enemyAttacked=true;
             if (!enemyAttacked) enemyAttackOrRest(atckmsg);

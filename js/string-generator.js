@@ -639,8 +639,8 @@ function getRecallPassText() {
     "An old memory hurts you inside -1 💔",
     "You recalled something painful -1 💔",
     "Familiar pain surfaced in you -1 💔",
-    "A memory, didn't want to feel it -1 💔",
-    "She was there for you, remember? -1 💔"
+    "A painful memory surfaced -1 💔",
+    "You remembered someone close -1 💔"
   ]);
 }
 
