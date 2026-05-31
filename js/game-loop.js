@@ -203,7 +203,7 @@ var _ENDING_TYPES = {
   button_sleep:   'win_sleep',
   button_speak:   'win_speak',
   button_cast:    'win_pray', //Pray (just btn positioning)
-  button_pray:    'win_free', //Heal (just btn positioning)
+  button_heal:    'win_free', //Heal (just btn positioning)
   button_curse:   'win_curse'
 };
 

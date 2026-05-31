@@ -6,7 +6,7 @@
   var _GRID = [
     ['button_attack', 'button_roll',  'button_block'],
     ['button_grab',   'button_sleep', 'button_speak'],
-    ['button_cast',   'button_pray',  'button_curse'],
+    ['button_cast',   'button_heal',  'button_curse'],
   ];
   var _GRID_IDS = _GRID.reduce(function (s, r) {
     r.forEach(function (id) { s[id] = true; });
@@ -16,7 +16,7 @@
   // Entry point per arrow direction when nothing is focused: land at the grid edge in that direction
   var _GRID_ENTRY = {
     ArrowUp:    [0, 1],  // top-center    = button_roll
-    ArrowDown:  [2, 1],  // bottom-center = button_pray
+    ArrowDown:  [2, 1],  // bottom-center = button_heal
     ArrowLeft:  [1, 0],  // middle-left   = button_grab
     ArrowRight: [1, 2],  // middle-right  = button_speak
   };

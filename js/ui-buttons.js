@@ -50,7 +50,7 @@ function setButton(elementID,text,color=colorWhite){
 
 function resetEncounterButtons(){
   ['button_attack','button_roll','button_block','button_grab','button_sleep',
-   'button_speak','button_cast','button_pray','button_curse'].forEach(function(id){
+   'button_speak','button_cast','button_heal','button_curse'].forEach(function(id){
     document.getElementById(id).disabled = false;
   });
   if (playerSta>0 && (!enemyType.includes("Dream"))){
@@ -80,17 +80,17 @@ function resetEncounterButtons(){
   setButton('button_speak',playerSpeakType+" Speak");
   setButton('button_cast',playerCastType+" Cast");
   setButton('button_curse',"🪬 Curse");
-  setButton('button_pray',"❤️‍🩹 Heal");
+  setButton('button_heal',"❤️‍🩹 Heal");
   if (playerMgk<=0){
     setButton('button_cast',playerCastType+" Cast",colorDarkGrey);
-    setButton('button_pray',"❤️‍🩹 Heal",colorDarkGrey);
+    setButton('button_heal',"❤️‍🩹 Heal",colorDarkGrey);
   }
   if (playerMgk<2) setButton('button_curse',"🪬 Curse",colorDarkGrey);
 }
 
 function _setEndingButtons() {
   var allIds = ['button_attack','button_roll','button_block','button_grab',
-                'button_sleep','button_speak','button_cast','button_pray','button_curse'];
+                'button_sleep','button_speak','button_cast','button_heal','button_curse'];
   allIds.forEach(function(id) {
     document.getElementById(id).disabled = false;
     setButton(id, '-', colorDarkGrey);
@@ -102,7 +102,7 @@ function _setEndingButtons() {
   setButton('button_sleep', '💤 Sleep', playerLove >= 1                          ? colorShadeBlue     : colorDarkGrey);
   setButton('button_grab',  '🫂 Hold',  playerLove >= 4                          ? colorPink      : colorDarkGrey);
   setButton('button_speak', '❤️ Name',  playerLove >= 6                          ? colorPink      : colorDarkGrey);
-  setButton('button_pray',  '❤️‍🩹 Cure', playerMgk >= 4                           ? colorLightBlue : colorDarkGrey);
+  setButton('button_heal',  '❤️‍🩹 Cure', playerMgk >= 4                           ? colorLightBlue : colorDarkGrey);
   setButton('button_cast',  '🙏 Pray',   playerLck >= 6                           ? colorYellow : colorDarkGrey);
   setButton('button_curse', '💀 Damn',  playerKarma <= -2                        ? colorDarkRed       : colorDarkGrey);
 }
@@ -135,7 +135,7 @@ function adjustEncounterButtons(){
       setButton('button_grab',"🩸 Hatred");
       setButton('button_curse',"🍀 Fortune");
       setButton('button_speak',"🧠 Psyche");
-      setButton('button_pray',"📿 Faith");
+      setButton('button_heal',"📿 Faith");
       setButton('button_sleep',"💀 Pain",colorDarkGrey); //TODO: Invent new perk
       break;
 
@@ -155,7 +155,7 @@ function adjustEncounterButtons(){
       break;
 
     case "Altar":
-      // Pray is rebound to button_speak on Altars; button_pray stays as ❤️‍🩹 Heal
+      // Pray is rebound to button_speak on Altars; button_heal stays as ❤️‍🩹 Heal
       setButton('button_speak', "🙏 Pray", encounterUsed ? colorDarkGrey : colorWhite);
       if (!encounterUsed) setButton('button_speak', "🙏 Pray", colorYellow);
       var blade=checkPlayerHasItem(validBlades);
@@ -175,8 +175,8 @@ function adjustEncounterButtons(){
       document.getElementById('button_grab').innerHTML="✋ Reach";
       document.getElementById('button_roll').innerHTML="👣 Ignore";
       if (encounterUsed) document.getElementById('button_roll').innerHTML="👣 Walk";
-      document.getElementById('button_pray').innerHTML="🧠 Endure";
-      if (encounterUsed) setButton('button_pray',"🧠 Endure",colorDarkGrey);
+      document.getElementById('button_heal').innerHTML="🧠 Endure";
+      if (encounterUsed) setButton('button_heal',"🧠 Endure",colorDarkGrey);
       setButton('button_sleep',"😵‍💫 Submit");
       if (encounterUsed) setButton('button_sleep',playerSleepType+" Sleep");
       if (encounterUsed) if (playerSta<playerStaMax || playerMgk<playerMgkMax) setButton('button_sleep',playerSleepType+" Sleep",colorLightBlue);
@@ -340,7 +340,7 @@ function adjustEncounterButtons(){
 
     case "Death":
       ['button_sleep','button_cast',
-       'button_pray','button_curse'].forEach(function(id){
+       'button_heal','button_curse'].forEach(function(id){
         setButton(id,"-",colorDarkGrey);
         //document.getElementById(id).disabled = true; //Do not disable buttons to allow keyboard navigation
       });
@@ -376,8 +376,8 @@ function adjustEncounterButtons(){
       setButton('button_cast',"1 🪙 Risk",colorPink);
         if (availableCoins<1) setButton('button_cast',"1 🪙 Risk",colorDarkGrey);
 
-      setButton('button_pray',"3 🪙 Level",colorYellow);
-        if (availableCoins<3) setButton('button_pray',"3 🪙 Level",colorDarkGrey);
+      setButton('button_heal',"3 🪙 Level",colorYellow);
+        if (availableCoins<3) setButton('button_heal',"3 🪙 Level",colorDarkGrey);
 
       setButton('button_curse',"4 🪙 Artif.",colorOrange);
         if (availableCoins<4) setButton('button_curse',"4 🪙 Artif.",colorDarkGrey);
@@ -430,7 +430,7 @@ var callback_grab   = resolveAction('button_grab');
 var callback_sleep  = resolveAction('button_sleep');
 var callback_speak  = resolveAction('button_speak');
 var callback_cast   = resolveAction('button_cast');
-var callback_pray   = resolveAction('button_pray');
+var callback_pray   = resolveAction('button_heal');
 var callback_curse  = resolveAction('button_curse');
 
 // Wrapped pointerdown handlers (stored for removal)
@@ -447,7 +447,7 @@ var _ACTION_BUTTONS = [
   ['button_sleep',  function() { return callback_sleep;  }],
   ['button_speak',  function() { return callback_speak;  }],
   ['button_cast',   function() { return callback_cast;   }],
-  ['button_pray',   function() { return callback_pray;   }],
+  ['button_heal',   function() { return callback_pray;   }],
   ['button_curse',  function() { return callback_curse;  }],
 ];
 

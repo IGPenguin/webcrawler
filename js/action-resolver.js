@@ -20,7 +20,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
       if (button === 'button_sleep' && playerLove < 1)                       _lockMsg = '💤 ▸ 💔 <i>She is shaking to avoid getting closer.</i>';
       if (button === 'button_grab'  && playerLove < 4)                       _lockMsg = '🫂 ▸ 💔 <i>She struggles to not let you closer.</i>';
       if (button === 'button_speak' && playerLove < 6 )                      _lockMsg = '❤️ ▸ 💔 <i>Her name does not come back to you.</i>';
-      if (button === 'button_pray'  && playerMgk < 4)                        _lockMsg = '❤️‍🩹 ▸ 💔 <i>You are too weak to break the spell.</i>';
+      if (button === 'button_heal'  && playerMgk < 4)                        _lockMsg = '❤️‍🩹 ▸ 💔 <i>You are too weak to break the spell.</i>';
       if (button === 'button_cast'  && playerLck < 6)                        _lockMsg = '🙏 ▸ 💔 <i>Fate has not blessed this path.</i>';
       if (button === 'button_curse' && playerKarma > -2)                     _lockMsg = '💀 ▸ 💔 <i>You don\'t have the darkness it takes.</i>';
       if (_lockMsg) { logAction(_lockMsg); redraw(); displayPlayerCannotEffect(); return; }
@@ -171,6 +171,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               encounterUsed=true;
               break;
             }
+            if (enemyType === "Mirror" && encounterUsed) {
+              logPlayerAction(actionString, "The shards hold no more secrets.");
+              displayPlayerCannotEffect();
+              break;
+            }
+
             logPlayerAction(actionString, "Smashed it to many pieces -1 🟢");
 
             if (enemyType === "Mirror") {
@@ -373,6 +379,30 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             break;
 
+          case "Altar":
+            displayEnemyEffect("〽️");
+            displayEnemyCannotEffect();
+            if (encounterUsed) {
+              logPlayerAction(actionString, getEncounterUsedMessage());
+              displayPlayerCannotEffect();
+              break;
+            }
+            if (_skillOK === false) {
+              if (_crit === 'fail') {
+                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                playerHit(1, false);
+              } else {
+                logPlayerAction(actionString, "Your attack missed it -1 🟢");
+              }
+              break;
+            }
+            logPlayerAction(actionString, _crit === 'success'
+              ? "Obliterated it without a second thought."
+              : "Smashed it to rubble -1 🟢", _crit === 'success' ? colorYellow : "#FFF");
+            isFishing = false;
+            animateFlipNextEncounter();
+            break;
+
           case "Upgrade":
             //Health
             logPlayerAction(actionString,"Got more resilient <b>+1 ❤️ Health</b>.");
@@ -396,7 +426,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyCannotEffect();
               break;
             }
-            _crit === 'success' ? playerAtk++ : "nothing happens"; //if crit add ++ atk 
+            _crit === 'success' ? playerAtk++ : "nothing happens"; //if crit add ++ atk
             playerLove--;
             playerKarma--;
             if ((playerHp-1)<=0) enemyMsg="Torn apart by severe heartbreak!"
@@ -1247,9 +1277,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           if (enemyType!="Death" && playerCooked!=true && (enemyType=="Consumable" && !playerLootString.includes("🧂"))) displayPlayerEffect("🪄"); //I'm lazy
 
+          if ((enemyType === "Mirror" || enemyType === "Prop" || enemyType === "Curse"
+              || enemyType === "Memory" || enemyType === "Checkpoint") && encounterUsed) {
+            logPlayerAction(actionString, getEncounterUsedMessage());
+            displayPlayerCannotEffect();
+            break;
+          }
+
           if (_skillOK === false && !enemyType.includes("Locked") && !enemyType.includes("Container")
               && enemyType!=="Consumable" && enemyType!=="Item" && enemyType!=="Altar"
-              && enemyType!=="Upgrade" && enemyType!=="Dream" && enemyType!=="Reflective") {
+              && enemyType!=="Upgrade" && enemyType!=="Dream" && enemyType!=="Reflective"
+              && enemyType!=="Prop") {
             var _backfireDmg = (_crit === 'fail') ? Math.max(1, playerMgk) : 0;
             playerMgk -= mkgCost;
             if (_crit === 'fail') {
@@ -1426,6 +1464,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
+            if (encounterUsed) {
+              logPlayerAction(actionString, getEncounterUsedMessage());
+              displayPlayerCannotEffect();
+              break;
+            }
             playerMgk--;
             if (_skillOK === false) {
               logPlayerAction(actionString, _crit === 'fail'
@@ -1464,7 +1507,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
           break;
 
-        case 'button_pray':
+        case 'button_heal':
           if (enemyType=="Shop") {
             drachmaeBuy(3,"Level");
             break;
@@ -1568,7 +1611,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Altar":
-            // button_pray at Altar = heal (no mana cost; real altar prayer is on button_speak)
+            // button_heal at Altar = heal (no mana cost; real altar prayer is on button_speak)
             var _altarMissingHp = playerHpMax - playerHp;
             if (_altarMissingHp > 0) {
               var _altarHeal = Math.min(2, _altarMissingHp);
@@ -1610,6 +1653,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (enemyType=="Dream") {
           displayPlayerCannotEffect();
           logPlayerAction(actionString, (areaName === "Shrouded Necropolis") ? "The darkness refuses to leave you." : "Cannot curse while asleep.");
+          break;
+        }
+
+        if (['Prop','Memory','Mirror','Checkpoint','Fishing','Item','Consumable'].indexOf(enemyType) !== -1
+            || enemyType.includes('Container')) {
+          logPlayerAction(actionString, getCurseNoTargetText());
+          displayPlayerCannotEffect();
+          break;
+        }
+
+        if (encounterUsed) {
+          logPlayerAction(actionString, getCurseNoTargetText());
+          displayPlayerCannotEffect();
           break;
         }
 
@@ -1743,7 +1799,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
 
         case "Friend": //They'll boost your stats
+          if (encounterUsed) {
+            logPlayerAction(actionString, getCurseNoTargetText());
+            displayPlayerCannotEffect();
+            break;
+          }
           if (playerMgk >= enemyMgk){
+            encounterUsed = true;
             var gainedXP=playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
             logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg);
@@ -2361,6 +2423,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend":
+            if (encounterUsed) {
+              logPlayerAction(actionString, "They have nothing more to offer.");
+              displayPlayerCannotEffect();
+              isFishing=false;
+              break;
+            }
             if ((enemyName.includes("Bride")||enemyName.includes("Lethargic")) && playerLove>2){
               var _comfortXP = parseInt(playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, ""));
               logPlayerAction(actionString, "Your touch has provided her comfort. " + decorateStatusText("", "+" + _comfortXP + " XP", colorGold));
@@ -2476,6 +2544,12 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Checkpoint": //LVL UP
+            if (encounterUsed) {
+              logPlayerAction(actionString, getEncounterUsedMessage());
+              displayPlayerCannotEffect();
+              break;
+            }
+            encounterUsed = true;
             playerXP+=playerXPThreshold;
             isFishing=false;
             logPlayerAction(actionString,"Praised the <b>"+enemyName+"</b>!")
@@ -2538,8 +2612,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            if (enemyType === "Prop" && (enemyEmoji.includes("🌿"))) {
-              AchievementManager.check('touch_grass');
+            if (enemyType === "Prop") {
+              if (enemyEmoji.includes("🌿")) AchievementManager.check('touch_grass');
+              if (encounterUsed) {
+                logPlayerAction(actionString, getEncounterUsedMessage());
+                displayPlayerCannotEffect();
+              } else {
+                encounterUsed = true;
+                logPlayerAction(actionString, "Touched it, nothing happened.");
+                displayEnemyCannotEffect();
+                displayEnemyEffect("✋");
+              }
+              break;
             }
             logPlayerAction(actionString,"Touched it, nothing happened.");
             displayEnemyCannotEffect();
@@ -2635,7 +2719,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
             } else {
               if (encounterUsed) {
-                logPlayerAction(actionString, "Your prayer had no further effect.");
+                logPlayerAction(actionString, getPrayNoTargetText());
                 displayPlayerEffect("🤲");
                 displayPlayerCannotEffect();
                 break;
@@ -2812,8 +2896,15 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend": //They'll boost your stats
             var heldQuestItem=checkPlayerHasItem(enemyQuestItems);
-            //Either they don't want an item and int check passes, or player has the quest item (no int required)
-            if (heldQuestItem !== "" || (String(enemyQuestItems) === "" && convinceInt >= enemyInt)) {
+            var _qualifies = heldQuestItem !== "" || (String(enemyQuestItems) === "" && convinceInt >= enemyInt);
+            // encounterUsed + qualifies = reward already given; encounterUsed alone = fail-retry in progress
+            if (encounterUsed && _qualifies) {
+              logPlayerAction(actionString, "They have nothing more to offer.");
+              displayPlayerCannotEffect();
+              break;
+            }
+            if (_qualifies) {
+              encounterUsed = true;
               if (String(enemyQuestItems).length>=1) { //Quest rewards
                 //This means filter by two = guarantee artifact
                 pushEncounter(getRandomEncounter(["Item"],["Artifact"]));
@@ -2955,8 +3046,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Curse":
             isFishing = false;
             if (encounterUsed) {
-              logPlayerAction(actionString, "Continued on your adventure.");
-              nextEncounter();
+              logPlayerAction(actionString, getEncounterUsedMessage());
+              displayPlayerCannotEffect();
               break;
             }
             if (_skillOK) {
@@ -2974,6 +3065,18 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               logPlayerAction(actionString, getSpeakCurseFailText());
               displayPlayerCannotEffect();
+            }
+            break;
+
+          case "Prop":
+            if (encounterUsed) {
+              logPlayerAction(actionString, getEncounterUsedMessage());
+              displayPlayerCannotEffect();
+            } else {
+              encounterUsed = true;
+              logPlayerAction(actionString, "Your voice echoes around the area.");
+              displayPlayerCannotEffect();
+              displayPlayerEffect("💬");
             }
             break;
 
@@ -3089,6 +3192,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 if (totalBonus>0 && enemyMsg=="") enemyMsg="Rested very well, gaining extra";
                 if (totalMalus<0 && enemyMsg=="") enemyMsg="Did not rest well, somehow lost";
                 playerConsumed();
+                encounterUsed = true;
                 displayPlayerEffect("💤");
                 if (_crit === 'success') {
                   playerSta++;
@@ -3215,6 +3319,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Friend": //They'll leave if you'll rest
+            if (encounterUsed) {
+              logPlayerAction(actionString, "They have nothing more to offer.");
+              displayPlayerCannotEffect();
+              break;
+            }
             playerRest(false, true);
             logPlayerAction(actionString,"They got tired of waiting for you.");
             nextEncounter();

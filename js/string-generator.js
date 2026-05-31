@@ -336,7 +336,7 @@ var ENDING_FRAMES = {
     {emoji:'✨', text:'Something stirs inside her.',   text2:'Not hope, something ancient.'},
     {emoji:'💖', text:'She remembers who she was.',    text2:'Before the corruption took her.'}
   ],
-  button_pray: [
+  button_heal: [
     {emoji:'❤️‍🩹', text:'You unravel the curse.',       text2:'Thread by thread. Year by year.'},
     {emoji:'✨', text:'The magic tears it apart.',     text2:'Nothing survives being unmade.'},
     {emoji:'🪽', text:'She is finally free.',          text2:'Not saved, set free.'}
@@ -733,6 +733,24 @@ function getEncounterUsedMessage() {
     "That's it, you've done what you can."
   ];
   return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function getPrayNoTargetText() {
+  return chooseFrom([
+    "Your prayer rises and finds no answer.",
+    "The gods take no interest in this.",
+    "A quiet moment, nothing more.",
+    "The silence does not pray back."
+  ]);
+}
+
+function getCurseNoTargetText() {
+  return chooseFrom([
+    "The hex has no one to haunt here.",
+    "Dark words land on deaf stone.",
+    "There is nothing here worth cursing.",
+    "The darkness finds nothing to cling to."
+  ]);
 }
 
 function getSpeakCursePassText() {

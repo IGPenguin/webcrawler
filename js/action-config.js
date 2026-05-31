@@ -45,7 +45,7 @@ function calcActionBarConfig(button, adjustment) {
     var _endingLocked = (button === 'button_sleep' && playerLove < 1)
                      || (button === 'button_grab'  && playerLove < 4)
                      || (button === 'button_speak' && playerLove < 6)
-                     || (button === 'button_pray'  && playerMgk < 4)
+                     || (button === 'button_heal'  && playerMgk < 4)
                      || (button === 'button_cast'  && playerLck < 6)
                      || (button === 'button_curse' && playerKarma > -2);
     if (_endingLocked) {
@@ -79,9 +79,9 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Cast / Heal / Curse with no mana — impossible (bar all-red)
-  // button_pray is exempt on Curse type (action-resolver allows it without MGK)
+  // button_heal is exempt on Curse type (action-resolver allows it without MGK)
   // Shop overrides this — mana is irrelevant there (coin is the gate)
-  if ((button === 'button_cast' || (button === 'button_pray' && !isCurse) || button === 'button_curse') && pMgk <= 0 && types !== 'Shop') {
+  if ((button === 'button_cast' || (button === 'button_heal' && !isCurse) || button === 'button_curse') && pMgk <= 0 && types !== 'Shop') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
@@ -224,12 +224,12 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Curse 100% safe if already resolved
-  if (button === "button_pray" && encounterUsed) {
+  if (button === "button_heal" && encounterUsed) {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: 0, successMax: 100 };
   }
 
   // Curse endure: zone scales with the player stat being affected by the curse
-  if ((button === 'button_roll' || button === "button_pray") && types === 'Curse') {
+  if ((button === 'button_roll' || button === "button_heal") && types === 'Curse') {
     var resistScore = 0;
     if ((enemyHp  || 0) < 0) resistScore = Math.max(resistScore, Math.max(0, playerHpMax || 0));
     if ((enemySta || 0) < 0) resistScore = Math.max(resistScore, pSta);
@@ -285,7 +285,7 @@ function calcActionBarConfig(button, adjustment) {
   // Shop: Risk (button_cast) = gold-only strip; Leave (button_roll) always free; all others gate on coin
   if (types === 'Shop') {
     var availableCoins = (savedCoins || 0) - (spentCoins || 0);
-    var shopPrices = { button_attack: 1, button_grab: 1, button_block: 2, button_sleep: 2, button_speak: 3, button_cast: 1, button_pray: 3, button_curse: 4 };
+    var shopPrices = { button_attack: 1, button_grab: 1, button_block: 2, button_sleep: 2, button_speak: 3, button_cast: 1, button_heal: 3, button_curse: 4 };
     var price = shopPrices[button] || 0;
     if (price > 0 && availableCoins < price) {
       return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
@@ -623,7 +623,7 @@ function calcActionBarConfig(button, adjustment) {
       baseSpeed = spdNormal;
       break;
 
-    case 'button_pray':
+    case 'button_heal':
       pStat     = pLck;
       eStat     = Math.max(0, eInt) * 0.4;
       baseW     = isAltar ? 62 : 48;
