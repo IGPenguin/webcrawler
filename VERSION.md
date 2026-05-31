@@ -1,3 +1,8 @@
+## ver. 05/31/26 @ 02:30 PM
+✏️ Shortened texts, fixed broken stats
+📅 Reordered Chronicles by date
+📕 Updated Codex of the Damned contents
+
 ## ver. 05/30/26 @ 11:56 PM
 🍀 Luck soft-cap for loot drop rates
 🪞 Mirror speak: color change, stays put
