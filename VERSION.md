@@ -1,16 +1,16 @@
-## ver. 06/01/26 @ 01:30 AM
-🎲 Fate perk replaces Sorcery: random +2/-1 across all stats
-🎣 Fishing perk replaces Hatred: widens skill-check zones
-💭 Remember perk replaces Psyche: +1 Love with lore log
-🧠 Psyche moved, now gives +1 INT
-⚙️ Difficulty picker now available to all players
+## ver. 06/01/26 @ 01:41 AM
+🎲 LVL UP: Sorcery >> Fate: rnd +2/-1 stats
+🎣 LVL UP: Hatred >> Fishing: better chances
+💭 LVL UP: Psyche >> Remember: +1 Love
+🧠 LVL UP: Psyche moved, now gives +1 INT
 ✨ New flavour messages for contextual actions
-⛩️ Altars can now be smashed with Attack
+🔥 Altars can now be smashed with Attack/Cast
 🪞 Mirror already-used guard with flavour text
-📝 Main menu text polish (start over, journey)
+📝 Menu UI + text polish (start over, journey)
 ✏️ Shortened texts, fixed broken stats
+📕 Linked Codex of the Damned in menu
+⚙️ Difficulty picker now available
 📅 Reordered Chronicles by date
-📕 Updated Codex of the Damned contents
 
 ## ver. 05/30/26 @ 11:56 PM
 🍀 Luck soft-cap for loot drop rates

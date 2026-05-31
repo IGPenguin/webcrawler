@@ -1,5 +1,5 @@
 // ── Debug / Version ───────────────────────────────────────────────────────────
-var versionCode = "ver. 06/01/26 @ 01:30 AM"
+var versionCode = "ver. 06/01/26 @ 01:41 AM"
 
 var TUTORIAL_SKIP_INDEX = 6; // linesStory index where returning players resume; update when tutorial rows change
 var SPLASH_DISABLED_LOCALHOST = true;
