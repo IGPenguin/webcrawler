@@ -1,6 +1,8 @@
 # 📕 Codex of the Damned
 
-*You did not mean for the ritual to end like this. The world got corrupted and you are still here, reincarnating forever, pushing through what remains of it. There is no undoing it, no going back. There is only the way forward. **Don't give up!***
+*You did not mean for the **ritual to end with the world getting corrupted**.*<br>
+*With you **reincarnating forever**, pushing through what remains of it.*<br>
+*No undoing it, no going back. **There is only the way forward**.*<br>
 
 ---
 
@@ -115,12 +117,14 @@ The corruption did not spread evenly, each area has its own character.
 
 A few final things worth knowing to improve your survival chances:
 
-- **Read the ✅ Action bar before releasing.** Fail usually means more than just a setback, cancel the action when uncertain.
+- **Releasing the ✅ Action bar requires careful timing.** Cancel the action (drag finger/cursor away while holding the button), then release.
 - **☠️ Not all creatures need to be killed.** Knocking out or speaking to foes is harder, but lighter on your karma.
-- **It is easier to 👋 Grab and ⚔️ Attack enemies when they are tired.** Watch their energy, not just your own.
-- **⁉️ Watch your character status.** When tired and out of combat, 💤 **Sleep** to recover all resources.
+- **It is easier to  ⚔️ Attack and 👋 Grab enemies when they are tired.** Watch their energy, not just your own.
 - **The scattered 💔 Mementos are not just for flavour.** What you do with them shapes what you find at the end.
-- **🐕 Get companions for your party.** Between encounters they react to the world, and occasionally bring something back.
+- **⁉️ Watch your character status.** When tired and out of combat, 💤 **Sleep** to recover all resources.
+- **🍂 Don't linger though.** There's something impatioent waiting tat the end of your journey.
+- **🐕 Get some companions.** Between encounters they react to the world, and occasionally help out.
 - **🪙 Drachmae persist across runs.** Spending them is never a loss, they will always come back to you.
+- **🧩 Memories and unlockables** carry over forever, expanding the repertoire of available content.
 
-***Enjoy the journey!***
+***Don't give up Skeleton!***
