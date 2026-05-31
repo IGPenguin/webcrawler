@@ -3,7 +3,7 @@
 <b>Stay Dead is a free browser roguelike RPG.</b> No installation ➞ 🕹️ <b>[Play instantly on any device!](https://igpenguin.github.io/stay-dead)</b><br>
 
 **⚔️ Fight**, **💬 Talk**, **🎣 Fish**, and more... to blunder your way through the corrupted world, growing stronger with every death.<br>
-Recall **🧩 Memories** each run to unlock new content. Dominate the online **⭐️ Rankings** and conquer **the branching story endgame**.<br>
+Recall **🧩 Memories** each run to unlock new content. Dominate the online **🪦 Reckonings** and conquer **the branching story endgame**.<br>
 
 ## 📕 Codex of the Damned
 **If you are stuggling**, read the **[📕 Codex of the Damned](WIKI.md)**.<br>
