@@ -1124,7 +1124,7 @@ var Menu = (function () {
     content.appendChild(diffSection);
 
     // ── Font Type ────────────────────────────────────────────────────────
-    {
+    if (false) { //HACK: Disable font picker altogether
       var fontSection = document.createElement('div');
       fontSection.style.cssText = 'margin:10px 3px 6px 3px; padding:10px 10px 12px 10px; background:#1a1a1a; box-shadow:0 0 0 3px #000;';
 
@@ -1190,12 +1190,6 @@ var Menu = (function () {
       vibSection.appendChild(vibRow);
       content.appendChild(vibSection);
     }
-
-    // ── Data Persistence Notice ───────────────────────────────────────────
-    var dataSection = document.createElement('div');
-    dataSection.innerHTML = '<h5 style="margin:16px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">'
-      + '⚠️ Browsers may wipe saved data after 7 inactive days.<br></h5>';
-    content.appendChild(dataSection);
 
     _doShowScreen('menu_settings_screen');
   }
@@ -1298,6 +1292,9 @@ var Menu = (function () {
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
     document.getElementById('menu_leaderboard').addEventListener('click', _renderRankings);
     document.getElementById('menu_leaderboard').style.color = '';
+    document.getElementById('menu_codex').addEventListener('click', function () {
+      window.open('https://github.com/IGPenguin/stay-dead/blob/live/WIKI.md', '_blank');
+    });
     document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
     document.getElementById('menu_credits_share').addEventListener('click', function () {
       showSharePopup();

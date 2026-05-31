@@ -144,7 +144,6 @@ layout: default
       <button class="menu-btn" id="menu_leaderboard" style="color:grey;">🪦 Reckonings</button>
       <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">📜 Chronicles</button>
-      <!-- <button class="menu-btn" id="menu_codex">📕 Codex</button> -->
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_settings">⚙️ Settings</button>
       <button class="menu-btn" id="menu_credits">🖤 Makers</button>
@@ -322,7 +321,9 @@ layout: default
     <div class="card menu-main-card" style="background-color:#202020; padding-top:10px; padding-bottom:14px; margin-top:42px">
       <h2 style="font-size:20px; letter-spacing:1.5px; -webkit-text-stroke:5px black; paint-order:stroke fill; margin:8px 0 8px 0; text-align:center;">⚙️ Settings</h2>
       <div id="menu_settings_content" style="overflow-x:hidden; overflow-y:auto; max-height:444px; scrollbar-width:none; padding-top:2px; padding-bottom:2px;"></div>
+      <button class="menu-btn" id="menu_codex">📕 Codex of the Damned</button>
       <div class="menu-spacer"></div>
+      <h5 style="margin:16px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">⚠️ Browsers may wipe saved data after 7 inactive days.<br></h5>'
       <button class="menu-btn" id="menu_settings_purge_1" style="color:red;">✕ Delete Saves</button>
       <div id="menu_settings_purge_2" style="display:none; gap:4px;">
         <button class="menu-btn" id="menu_settings_purge_cancel" style="flex:1; margin-top:0;">Cancel</button>
