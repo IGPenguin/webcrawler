@@ -1,5 +1,5 @@
 // Set to true to unlock Easy/Hardcore difficulty selection for players (except on localhost for testing).
-var DIFFICULTY_PICKER_ENABLED = false;
+var DIFFICULTY_PICKER_ENABLED = true;
 
 // Set to true to use animated SVG backgrounds. Set to false to use original static PNGs.
 var VECTOR_BACKGROUNDS_ENABLED = false;
