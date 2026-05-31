@@ -1,7 +1,6 @@
 # 📕 Codex of the Damned
 
-*You did not mean for the ritual to end like this. The world got corrupted and you are still here, reincarnating forever, pushing through what remains of it.<br>
-There is no undoing it, no going back. There is only the way forward. **Don't give up, you need to fix it!***
+*You did not mean for the ritual to end like this. The world got corrupted and you are still here, reincarnating forever, pushing through what remains of it. There is no undoing it, no going back. There is only the way forward. **Don't give up!***
 
 ---
 
@@ -54,10 +53,24 @@ The zones change size and the cursor changes speed based on your vs the encounte
 
 ---
 
+## 🎣 Fishing
+
+👋 **Grab** criters to use as **🪱 Bait** so that you can fish at certain spots during your journey.<br>
+Fishing can surface things above what the current area would normally offer - both good and bad.
+
+---
+
 ## 🧩 Memories
 
 **Memories** are the achievement and reward system. They unlock as you play — first death, first kill, first discovery.<br>
 Completing them grants you access to advanced features and content.
+
+---
+
+## 📜 Chronicles and Reckonings
+
+Every action you take is recorded in **📜 Chronicles** — a full history of all events, every choice, every death.<br>
+Upload your runs to the global **🪦 Reckonings**. The score reflects how far you got and the choices you made on the way.
 
 ---
 
@@ -76,21 +89,6 @@ Before each run, you choose the initial stats to shape which playstyle you shoul
 
 The **👤 Undertaker Shade** appears at the start of each run, offering upgrades, items and such.<br>
 His prices are in **🪙 Drachmae**, a currency that always returns to you with each death. 
-
----
-
-## 🎣 Fishing
-
-👋 **Grab** criters to use as **🪱 Bait** so that you can fish at certain spots during your journey.<br>
-Fishing can surface things above what the current area would normally offer - both good and bad.
-
-
----
-
-## ⭐️ Chronicles and Rankings
-
-Every action you take is recorded in **📜 Chronicles** — a full history of all events, every choice, every death.<br>
-Upload your runs to the global **⭐️ Rankings**. The score reflects how far you got and the choices you made on the way.
 
 ---
 
@@ -117,12 +115,12 @@ The corruption did not spread evenly, each area has its own character.
 
 A few final things worth knowing to improve your survival chances:
 
-- **⁉️ Watch your character status.** When tired but out of combat, always 💤 **Sleep** to recover all resources.
 - **Read the ✅ Action bar before releasing.** Fail usually means more than just a setback, cancel the action when uncertain.
 - **☠️ Not all creatures need to be killed.** Knocking out or speaking to foes is harder, but lighter on your karma.
 - **It is easier to 👋 Grab and ⚔️ Attack enemies when they are tired.** Watch their energy, not just your own.
-- **🪙 Drachmae persist across runs.** Spending them is never a loss, they will always come back to you.
+- **⁉️ Watch your character status.** When tired and out of combat, 💤 **Sleep** to recover all resources.
 - **The scattered 💔 Mementos are not just for flavour.** What you do with them shapes what you find at the end.
 - **🐕 Get companions for your party.** Between encounters they react to the world, and occasionally bring something back.
+- **🪙 Drachmae persist across runs.** Spending them is never a loss, they will always come back to you.
 
 ***Enjoy the journey!***
