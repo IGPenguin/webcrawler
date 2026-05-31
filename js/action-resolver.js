@@ -977,6 +977,13 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
+        if (['Prop','Memory','Mirror','Altar','Curse','Checkpoint','Fishing','Item','Consumable'].indexOf(enemyType) !== -1
+            || enemyType.includes('Container') || enemyType.includes('Trap')) {
+          logPlayerAction(actionString, encounterUsed ? "Nothing more to guard against." : "Nothing to block here.");
+          displayPlayerCannotEffect();
+          break;
+        }
+
         if (playerSta > 0 && _crit !== 'success') playerSta--;
 
         if ((enemyAtk+enemyAtkBonus)<=0 && (enemySta-enemyStaLost) > 0 && enemyType!="Pet" && enemyType!="Small" && enemyType!="Toxic" && enemyType!="Hot"){

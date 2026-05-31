@@ -107,5 +107,5 @@ var InventoryManager = (function() {
     }, null);
   }
 
-  return { tryEquip: tryEquip, showSwapDialog: showSwapDialog };
+  return { tryEquip: tryEquip, showSwapDialog: showSwapDialog, renderItemCard: _itemRowHtml };
 })();

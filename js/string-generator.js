@@ -486,6 +486,58 @@ function getMeetingPlaceRecall() {
   return '<i>' + pool[Math.floor(Math.random() * pool.length)] + '</i>';
 }
 
+function getLootChoiceLog(context, tier) {
+  var _corpseHigh = [
+    "This is what they were guarding.",
+    "One of these was worth dying for.",
+    "The darkness left something impossible behind.",
+    "Whatever they were — they carried something rare.",
+    "Take your time. You won't find this again."
+  ];
+  var _corpseMid = [
+    "Something in the wreckage caught your eye.",
+    "Not everything they carried was worthless.",
+    "They protected something worth protecting.",
+    "Whatever they carried — part of it mattered.",
+    "The remains held more than one surprise."
+  ];
+  var _corpseLow = [
+    "Three things worth taking from the remains.",
+    "Went through what they left behind.",
+    "Picked apart what little they had.",
+    "The body held more than it should have.",
+    "Searched what remained of them."
+  ];
+  var _propHigh = [
+    "Something forgotten is remembering you.",
+    "These don't appear by chance.",
+    "The world hasn't offered something like this in a long time.",
+    "One of these belongs to you. You'll know it when you see it.",
+    "Something rare surfaced. Take your time."
+  ];
+  var _propMid = [
+    "Something worth pausing for.",
+    "Not everything here was left by accident.",
+    "The corruption offered more than expected.",
+    "A moment's choice in a world coming apart.",
+    "Three things the world still holds."
+  ];
+  var _propLow = [
+    "Three things within reach.",
+    "Something here, maybe useful.",
+    "The world offered a choice.",
+    "Not everything left behind is worthless.",
+    "Take what serves the journey."
+  ];
+
+  var _isHigh = (tier === 'Legendary' || tier === 'Rare');
+  var _isMid  = (tier === 'Uncommon');
+  if (context === 'corpse') {
+    return chooseFrom(_isHigh ? _corpseHigh : _isMid ? _corpseMid : _corpseLow);
+  }
+  return chooseFrom(_isHigh ? _propHigh : _isMid ? _propMid : _propLow);
+}
+
 function getLootDropLog() {
   return chooseFrom([
     "Seems like they dropped something.",
