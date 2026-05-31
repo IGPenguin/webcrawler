@@ -1,4 +1,13 @@
-## ver. 05/31/26 @ 02:30 PM
+## ver. 06/01/26 @ 01:30 AM
+🎲 Fate perk replaces Sorcery: random +2/-1 across all stats
+🎣 Fishing perk replaces Hatred: widens skill-check zones
+💭 Remember perk replaces Psyche: +1 Love with lore log
+🧠 Psyche moved, now gives +1 INT
+⚙️ Difficulty picker now available to all players
+✨ New flavour messages for contextual actions
+⛩️ Altars can now be smashed with Attack
+🪞 Mirror already-used guard with flavour text
+📝 Main menu text polish (start over, journey)
 ✏️ Shortened texts, fixed broken stats
 📅 Reordered Chronicles by date
 📕 Updated Codex of the Damned contents

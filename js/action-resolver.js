@@ -1183,14 +1183,26 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           }
 
           if (enemyType=="Upgrade"){
-            logPlayerAction(actionString,"Got <b>+2 Mana</b> 🔵 for <b>-1 🟢 Stamina</b>.");
-            AchievementManager.check('mana_first');
-            displayPlayerCannotEffect();
-            displayPlayerEffect("✨");
-            playerMgkMax+=2;
-            playerMgk+=2;
-            playerStaMax-=1;
-            if (playerSta>0) playerSta-=1;
+            var _fateStats = [
+              { gain: function(){ playerHpMax+=2; playerHp+=2; },
+                lose: function(){ playerHpMax=Math.max(1,playerHpMax-1); if(playerHp>playerHpMax)playerHp=playerHpMax; }, icon:'❤️' },
+              { gain: function(){ playerStaMax+=2; playerSta+=2; },
+                lose: function(){ playerStaMax=Math.max(0,playerStaMax-1); if(playerSta>playerStaMax)playerSta=playerStaMax; }, icon:'🟢' },
+              { gain: function(){ playerMgkMax+=2; playerMgk+=2; },
+                lose: function(){ playerMgkMax=Math.max(0,playerMgkMax-1); if(playerMgk>playerMgkMax)playerMgk=playerMgkMax; }, icon:'🔵' },
+              { gain: function(){ playerLck+=2; },
+                lose: function(){ playerLck=Math.max(0,playerLck-1); }, icon:'🍀' },
+              { gain: function(){ playerInt+=2; },
+                lose: function(){ playerInt=Math.max(0,playerInt-1); }, icon:'🧠' }
+            ];
+            var _fGain = Math.floor(Math.random() * _fateStats.length);
+            var _fLose;
+            do { _fLose = Math.floor(Math.random() * _fateStats.length); } while (_fLose === _fGain);
+            _fateStats[_fGain].gain();
+            _fateStats[_fLose].lose();
+            logPlayerAction(actionString, getFateLog()+" <b>+2 "+_fateStats[_fGain].icon+" -1 "+_fateStats[_fLose].icon+"</b>");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("🎲");
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -2533,12 +2545,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            //Hatred
-            logPlayerAction(actionString,"Sacrificed <b>-1 💔</b> for <b>+2 🔵 Mana</b>.");
-            AchievementManager.check('mana_first');
-            displayPlayerCannotEffect();
-            playerChangeStats(-1, 0, 0, 0, 0, 2,0,"n/a",false,false);
-            playerHit(0,false,true);
+            playerFishSkillBonus++;
+            logPlayerAction(actionString,"Sharpened the craft. <b>+1 🎣 Fishing</b>");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("🎣");
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -2969,10 +2979,10 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Upgrade":
-            logPlayerAction(actionString,"Became considerably wiser +2 🧠");
-            displayPlayerGainedEffect();
-            displayPlayerEffect("🧠");
-            playerInt+=2;
+            playerLove++;
+            logPlayerAction(actionString,"<text style=color:"+colorRed+";>"+getRememberLog()+"</text>");
+            displayPlayerRestedEffect();
+            displayPlayerEffect("💭");
             isFishing=false;
             animateFlipNextEncounter();
             break;
@@ -3336,9 +3346,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             // });
             break;
 
-          case "Upgrade": //TODO refactor to something else
-            displayPlayerCannotEffect();
-            logPlayerAction(actionString,"Decided against gaining a perk.");
+          case "Upgrade":
+            logPlayerAction(actionString,"Grew more discerning. <b>+1 🧠 Psyche</b>");
+            displayPlayerGainedEffect();
+            displayPlayerEffect("🧠");
+            playerInt+=1;
             isFishing=false;
             animateFlipNextEncounter();
             break;

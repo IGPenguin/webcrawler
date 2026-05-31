@@ -296,18 +296,22 @@ function calcActionBarConfig(button, adjustment) {
   }
 
   // Fishing: 0 STA = impossible; no bait = near-impossible; bait quality shifts zone width
+  // playerFishSkillBonus (from level-up Fishing perk) widens pass zone +3/pt, crit +1/pt, and softens no-bait
   if (button === 'button_grab' && types === 'Fishing') {
     if (pSta === 0) {
       return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
     }
+    var _fsk = (typeof playerFishSkillBonus !== 'undefined') ? playerFishSkillBonus : 0;
     var fishBait = checkPlayerHasItem(validBaits);
     if (fishBait === "") {
-      return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT), successMin: 47, successMax: 53 };
+      return { speed: Math.round(spdUnreal * ACTION_BAR_SPEED_MULT),
+               successMin: Math.max(30, 47 - _fsk * 2),
+               successMax: Math.min(70, 53 + _fsk * 2) };
     }
     var fishBQ = baitQuality[fishBait] !== undefined ? baitQuality[fishBait] : 1;
-    var fishMin = Math.max(3, 35 - fishBQ * 4);
-    var fishMax = Math.min(90, 57 + fishBQ * 4);
-    var fishCritSuccessW = Math.max(1, Math.round((3 + pLck * 0.5) * 0.5));
+    var fishMin = Math.max(3, 35 - fishBQ * 4 - _fsk * 2);
+    var fishMax = Math.min(93, 57 + fishBQ * 4 + _fsk * 2);
+    var fishCritSuccessW = Math.max(1, Math.round((3 + pLck * 0.5 + _fsk) * 0.5));
     var fishCritFailW = 6;
     var fishCenter = Math.round((fishMin + fishMax) / 2);
     var fishCsMin = Math.max(fishMin + 1, fishCenter - Math.floor(fishCritSuccessW / 2));

@@ -211,5 +211,6 @@ var actionBarCrit = null;
 var playerCritSuccesses     = 0;  // cumulative crit successes this run (+1 to score each)
 var playerCritFails         = 0;  // cumulative crit fails this run (-1 to score each)
 var playerFishCatches       = 0;  // successful fish catches this run (+2 to score each)
+var playerFishSkillBonus    = 0;  // level-up fishing perk stacks — widens pass/crit zones
 var playerAreaSleepCount    = 0;  // non-combat sleeps in the current area (resets on area change)
 var playerTotalSleepPenalty = 0;  // accumulated score penalty from oversleeping per area (-1 each)

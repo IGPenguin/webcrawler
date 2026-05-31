@@ -131,12 +131,12 @@ function adjustEncounterButtons(){
       setButton('button_attack',"❤️ Health",colorPink);
       setButton('button_roll',"🟢 Energy",colorDarkGreen);
       setButton('button_block',"🔵 Mana",colorLightBlue);
-      setButton('button_cast',"🔮 Sorcery");
-      setButton('button_grab',"🩸 Hatred");
+      setButton('button_cast',"🎲 Fate");
+      setButton('button_grab',"🎣 Fishing");
       setButton('button_curse',"🍀 Fortune");
-      setButton('button_speak',"🧠 Psyche");
+      setButton('button_speak',"💭 Remember");
       setButton('button_heal',"📿 Faith");
-      setButton('button_sleep',"💀 Pain",colorDarkGrey); //TODO: Invent new perk
+      setButton('button_sleep',"🧠 Psyche");
       break;
 
     case "Consumable":

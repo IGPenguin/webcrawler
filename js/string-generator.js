@@ -548,6 +548,35 @@ function getLootDropLog() {
   ]);
 }
 
+function getRememberLog() {
+  return chooseFrom([
+    "Almsot recalled her name this time.",
+    "Long road ahead, already familiar.",
+    "Something shifted, almost familiar.",
+    "You recall a smell, whoever that was?",
+    "Something hurts you deep inside.",
+    "You held a memory, it faded slowly.",
+    "The world was right, for a moment.",
+    "You remembered and then forgot.",
+    "The grief. Still there. Still yours.",
+    "She would have known what to do here.",
+    "Her name almost came out. Almost."
+  ]);
+}
+
+function getFateLog() {
+  return chooseFrom([
+    "Taken. Given. No say in which.",
+    "Fate keeps its own accounts.",
+    "The balance tips the odds.",
+    "Something shifted the balance.",
+    "Debt follows this gift.",
+    "The world gives and collects.",
+    "Not all gains are for free.",
+    "The cost follows the reward."
+  ]);
+}
+
 function getRestBadlyText() {
   return chooseFrom([
     "Slept poorly, waking up groggy.",

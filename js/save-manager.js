@@ -84,6 +84,7 @@ var SaveManager = (function () {
         playerCritSuccesses:     playerCritSuccesses,
         playerCritFails:         playerCritFails,
         playerFishCatches:       playerFishCatches,
+        playerFishSkillBonus:    playerFishSkillBonus,
         playerAreaSleepCount:    playerAreaSleepCount,
         playerTotalSleepPenalty: playerTotalSleepPenalty,
         fishingRested:           fishingRested,
@@ -178,6 +179,7 @@ var SaveManager = (function () {
     playerCritSuccesses     = s.playerCritSuccesses     || 0;
     playerCritFails         = s.playerCritFails         || 0;
     playerFishCatches       = s.playerFishCatches       || 0;
+    playerFishSkillBonus    = s.playerFishSkillBonus    || 0;
     playerAreaSleepCount    = s.playerAreaSleepCount    || 0;
     playerTotalSleepPenalty = s.playerTotalSleepPenalty || 0;
     fishingRested           = !!s.fishingRested;

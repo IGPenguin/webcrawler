@@ -63,6 +63,7 @@ function renewPlayer(){ //Default values
   playerCritSuccesses     = 0;
   playerCritFails         = 0;
   playerFishCatches       = 0;
+  playerFishSkillBonus    = 0;
   playerAreaSleepCount    = 0;
   playerTotalSleepPenalty = 0;
   scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
