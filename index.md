@@ -144,6 +144,7 @@ layout: default
       <button class="menu-btn" id="menu_leaderboard" style="color:grey;">🪦 Reckonings</button>
       <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">📜 Chronicles</button>
+      <!-- <button class="menu-btn" id="menu_codex">📕 Codex</button> -->
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_settings">⚙️ Settings</button>
       <button class="menu-btn" id="menu_credits">🖤 Makers</button>
