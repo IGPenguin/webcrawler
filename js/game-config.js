@@ -255,3 +255,12 @@ var RarityManager = (function () {
     calcConsumableNet:    calcConsumableNet
   };
 })();
+
+// Returns true if killing the current enemy should not decrement karma.
+// Adversaries (any atk or mgk) and dark-typed entities are karma-safe kills.
+function isKarmaSafeKill() {
+  if (_isRival) return true;
+  if (enemyBossType.includes('Boss')) return true;
+  if (enemyType.includes('Demon') || enemyType.includes('Undead') || enemyType.includes('Spirit')) return true;
+  return (enemyAtk > 0 || enemyMgk > 0);
+}

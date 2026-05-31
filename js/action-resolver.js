@@ -113,8 +113,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               : "Dealt a killing blow -"+_cdmg+" 💔", _crit==='success' ? colorYellow : "#FFF");
             var _kxp=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
             logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered -"+_cdmg+" 💔 "+decorateStatusText("","+"+_kxp+" XP",colorGold));
-            var _karmaSafe1 = _isRival || enemyType.includes('Demon') || enemyType.includes('Undead') || enemyType.includes('Spirit');
-            if (!_karmaSafe1 && enemyAtk <= 0) playerKarma--;
+            if (!isKarmaSafeKill()) playerKarma--;
             playerKills++;
             AchievementManager.check('kill');
             if (_isRival) {
@@ -1198,8 +1197,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 : "Spell delivered a killing blow -"+_cmdg+" 💔", _crit==='success' ? colorYellow : "#FFF");
               var _kxp2=parseInt(playerGainXP(_isRival ? 2 : 1,0,""));
               logAction(corpseSnapshot.emoji+" ▸ ☠️ Final blow delivered"+decorateStatusText("","+"+_kxp2+" XP",colorGold));
-              var _karmaSafe2 = _isRival || enemyType.includes('Demon') || enemyType.includes('Undead') || enemyType.includes('Spirit');
-              if (!_karmaSafe2 && enemyAtk <= 0) playerKarma--;
+              if (!isKarmaSafeKill()) playerKarma--;
               playerKills++;
               AchievementManager.check('kill');
               if (_isRival) {
