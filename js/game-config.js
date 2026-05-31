@@ -18,6 +18,9 @@ var RARITY_KARMA_ENABLED = false;
 // spawnConsumableDropBonus: additive % bonus to consumable spawn chances in encounter generators
 // killItemDropChance:    base % chance for an item to drop on kill/knockout (luck added at runtime)
 // killConsumableDropChance: base % chance for a consumable to drop on kill/knockout if no item dropped
+// rewardXp:              base XP for standard non-combat actions (unlocks, containers), scaled by playerLevel
+// rewardXpSmall:         base XP for minor non-combat actions (fishing, altar sacrifice), scaled by playerLevel
+// teleportXpBonus:       XP awarded on Memory sleep-crit teleport, as a multiplier of playerXPThreshold (1.0 = one full level)
 // rarityBias:            additive weight modifier per rarity tier applied on top of RARITY_TIERS base weights.
 //                        Adding +1 to Legendary grows the total pie from 100 to 101 slices and gives
 //                        Legendary 3 of them (≈ 3% instead of 2%) — close to +1% but not exact because
@@ -37,6 +40,9 @@ var DIFFICULTY_MODES = {
     killItemDropChance:       5,
     killConsumableDropChance: 10,
     sleepAreaThreshold:       6,
+    rewardXp:                 15,
+    rewardXpSmall:            10,
+    teleportXpBonus:          1.0,
     rivals: {
       enabled:       true,
       spawnChance:   33,
@@ -57,6 +63,9 @@ var DIFFICULTY_MODES = {
     killItemDropChance:       5,
     killConsumableDropChance: 10,
     sleepAreaThreshold:       8,
+    rewardXp:                 20,
+    rewardXpSmall:            13,
+    teleportXpBonus:          1.5,
     rivals: {
       enabled:       false,
       spawnChance:   0,
@@ -77,6 +86,9 @@ var DIFFICULTY_MODES = {
     killItemDropChance:       10,
     killConsumableDropChance: 15,
     sleepAreaThreshold:       4,
+    rewardXp:                 10,
+    rewardXpSmall:            7,
+    teleportXpBonus:          0.75,
     rivals: {
       enabled:       true,
       spawnChance:   50,

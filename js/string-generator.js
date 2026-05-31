@@ -683,6 +683,42 @@ function getEncounterUsedMessage() {
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
+function getSpeakCursePassText() {
+  return chooseFrom([
+    "Denounced it aloud.",
+    "Refused its hold on you.",
+    "Spoke it away.",
+    "Your voice cut through the haze.",
+    "Defied it with steady words."
+  ]);
+}
+
+function getSpeakCurseCritPassText() {
+  return chooseFrom([
+    "Rebuked it entirely.",
+    "Broke its hold with conviction.",
+    "Drove it back with your voice.",
+    "Your declaration silenced it."
+  ]);
+}
+
+function getSpeakCurseFailText() {
+  return chooseFrom([
+    "Your words found no purchase.",
+    "The curse paid you no heed.",
+    "It did not listen.",
+    "The air swallowed your voice."
+  ]);
+}
+
+function getSpeakCurseCritFailText() {
+  return chooseFrom([
+    "Your words gave it strength.",
+    "Speaking drew its attention.",
+    "Your voice fed the darkness."
+  ]);
+}
+
 function getRivalDialogue() {
   var pool = [
     "You should have stayed dead.",

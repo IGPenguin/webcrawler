@@ -415,7 +415,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyCannotEffect();
 
               if (enemyType.includes("Locked")) {
-                var gainedXP=playerGainXP(1,15*playerLevel,""); //Same XP gain as for spell unlock
+                var gainedXP=playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
                 openMessage = "Smashed the lock open! -1 🟢 "+decorateStatusText("","+"+gainedXP+" XP",colorGold);
                 enemyHp-=playerAtk;
               } else {
@@ -1087,9 +1087,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Heavy": //Too heavy or spirit attack — can succeed but very hard
             if (_skillOK === true) {
-              enemyStaminaChangeMessage(-1,
-                _crit === 'success' ? "Blocked without breaking a sweat." : "Barely blocked a heavy attack -1 🟢",
-                "They needed to catch a breath.");
+              if (_crit === 'success') {
+                var _hvXP = parseInt(playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, ""));
+                enemyStaminaChangeMessage(-1,
+                  "Stood firm against the weight. " + decorateStatusText("", "+" + _hvXP + " XP", colorGold),
+                  "They needed to catch a breath.");
+              } else {
+                enemyStaminaChangeMessage(-1, "Barely blocked a heavy attack -1 🟢", "They needed to catch a breath.");
+              }
               displayPlayerEffect("🔰");
               break;
             }
@@ -1222,7 +1227,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             } else {
               playerMgk-=mkgCost;
-              var gainedXP=playerGainXP(1,15*playerLevel,"");
+              var gainedXP=playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
               logPlayerAction(actionString,"Unlocked it with a spell -"+mkgCost+" 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
               AchievementManager.check('magic_unlock_first');
               enemyType=enemyType.replace("Locked-","");
@@ -1697,7 +1702,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (procAbilityChance("🪆",33)){
               var animalEmoji = chooseFrom(["🐁","🦔","🐸","🦎","🐀","🪱","🪰","🪲","🪳","🐌"]);
-              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵");
+              var _polyXP = parseInt(playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, ""));
+              logAction("🪆 ▸ ‍🧬 <b>Polymorphed</b> them into a critter -2 🔵 " + decorateStatusText("", "+" + _polyXP + " XP", colorGold));
               displayEnemyCannotEffect();
               displayEnemyEffect("🧬");
 
@@ -1731,7 +1737,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case "Friend": //They'll boost your stats
           if (playerMgk >= enemyMgk){
-            var gainedXP=playerGainXP(1,25*playerLevel,"");
+            var gainedXP=playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
             logPlayerAction(actionString,"Forced revealed their secrets -2 🔵 "+decorateStatusText("","+"+gainedXP+" XP",colorGold));
             playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg);
           } else {
@@ -2349,7 +2355,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Friend":
             if ((enemyName.includes("Bride")||enemyName.includes("Lethargic")) && playerLove>2){
-              logPlayerAction(actionString,"You touch has provided her comfort.");
+              var _comfortXP = parseInt(playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, ""));
+              logPlayerAction(actionString, "Your touch has provided her comfort. " + decorateStatusText("", "+" + _comfortXP + " XP", colorGold));
             } else {
               logPlayerAction(actionString,"Your touch was not appreciated.");
             }
@@ -2391,8 +2398,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             if (bait !== "") {
               AchievementManager.check('fish_bait');
-              playerUseItem(bait,"Fished out something using "+bait+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold),"");
-              playerGainXP(1,10*playerLevel,"");
+              playerUseItem(bait,"Fished out something using "+bait+decorateStatusText(""," +"+(GAME_CONFIG.rewardXpSmall*playerLevel)+" XP",colorGold),"");
+              playerGainXP(1,GAME_CONFIG.rewardXpSmall*playerLevel,"");
               if (procAbilityChance("🧵",33)) {
                 logAction("🧵 ▸ "+bait+" Luckily the bait remained hooked.");
                 displayPlayerEffect("🧵");
@@ -2400,8 +2407,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
             } else {
               AchievementManager.check('fish_no_bait');
-              playerGainXP(1,10*playerLevel,"");
-              logPlayerAction(actionString,"Caught something without bait"+decorateStatusText(""," +"+(10*playerLevel)+" XP",colorGold));
+              playerGainXP(1,GAME_CONFIG.rewardXpSmall*playerLevel,"");
+              logPlayerAction(actionString,"Caught something without bait"+decorateStatusText(""," +"+(GAME_CONFIG.rewardXpSmall*playerLevel)+" XP",colorGold));
             }
             displayEnemyEffect("🪝");
             playerFishCatches++;
@@ -2479,8 +2486,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                     displayEnemyCannotEffect();
                     logPlayerAction(actionString,"Key snapped in the lock and was lost.");
                   } else {
-                    playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false);
-                    playerGainXP(1,15*playerLevel,"");
+                    playerUseItem("🗝️","Unlocked it with a key "+decorateStatusText("","+"+(GAME_CONFIG.rewardXp*playerLevel)+" XP",colorGold),"Cannot open, it is locked tight.",false);
+                    playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
                     AchievementManager.check('key_unlock_first');
                     enemyType=enemyType.replace("Locked-","");
                     enemyHp=0;
@@ -2489,8 +2496,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   }
                   break;
                 } else if (playerLootString.includes("📎")) {
-                  logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b> "+decorateStatusText("","+"+(15*playerLevel)+" XP",colorGold))
-                  playerGainXP(1,15*playerLevel,"");
+                  logPlayerAction(actionString,"Unlocked with <b>📎 Universal Key</b> "+decorateStatusText("","+"+(GAME_CONFIG.rewardXp*playerLevel)+" XP",colorGold))
+                  playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
                   AchievementManager.check('key_unlock_first');
                   enemyType=enemyType.replace("Locked-","");
                   enemyHp=0;
@@ -2612,7 +2619,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                   break;
                 }
                 playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg + " -1 💔", true, false);
-                playerGainXP(1, 10 * playerLevel, "");
+                playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, "");
                 isFishing = false;
                 encounterUsed = true;
               } else {
@@ -2777,7 +2784,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               var speechChance = Math.floor(Math.random() * luckInterval);
               if ( speechChance <= playerLck ){
-                logAction("🍀 ▸ 💬 They believed your lies and left.");
+                var _luckXP = parseInt(playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, ""));
+                logAction("🍀 ▸ 💬 They believed your lies and left." + decorateStatusText("", " +" + _luckXP + " XP", colorGold));
                 nextEncounter();
                 break;
               } else {
@@ -2806,7 +2814,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerEffect(heldQuestItem);
                 AchievementManager.check('quest_complete');
               }
-              var gainedXP=playerGainXP(_crit === 'success' ? 1.2 : 1, 25*playerLevel,"");
+              var gainedXP=playerGainXP(_crit === 'success' ? 1.2 : 1, GAME_CONFIG.rewardXp*playerLevel,"");
               if (_crit === 'success') {
                 logPlayerAction(actionString, "Spoke with great conviction! " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
               } else if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
@@ -2936,6 +2944,31 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               break;
             }
+
+          case "Curse":
+            isFishing = false;
+            if (encounterUsed) {
+              logPlayerAction(actionString, "Continued on your adventure.");
+              nextEncounter();
+              break;
+            }
+            if (_skillOK) {
+              encounterUsed = true;
+              var _cxp = parseInt(playerGainXP(_crit === 'success' ? 1.2 : 1, GAME_CONFIG.rewardXpSmall * playerLevel, ""));
+              logPlayerAction(actionString,
+                (_crit === 'success' ? getSpeakCurseCritPassText() : getSpeakCursePassText()) + " " + decorateStatusText("", "+" + _cxp + " XP", colorGold));
+              displayEnemyCannotEffect();
+              displayPlayerEffect("✨");
+              nextEncounter();
+            } else if (_crit === 'fail') {
+              encounterUsed = true;
+              playerChangeStats(enemyHp, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, getSpeakCurseCritFailText(), true, false);
+              displayPlayerCannotEffect();
+            } else {
+              logPlayerAction(actionString, getSpeakCurseFailText());
+              displayPlayerCannotEffect();
+            }
+            break;
 
           default:
             logPlayerAction(actionString,"Your voice echoes around the area.");
@@ -3077,7 +3110,8 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 encounterIndex = _skipIdx - 1;
               }
               playerRest(true, true);
-              logPlayerAction(actionString, "<text style=color:"+colorFairy+";>Woken up somewhere else... ✨</text>");
+              var _tpXP = parseInt(playerGainXP(1, Math.floor(playerXPThreshold * GAME_CONFIG.teleportXpBonus), ""));
+              logPlayerAction(actionString, "<text style=color:"+colorFairy+";>Woken up somewhere else... ✨</text> " + decorateStatusText("", "+" + _tpXP + " XP", colorGold));
               displayPlayerEffect("✨");
               nextEncounter();
             } else if (_skillOK === false) {

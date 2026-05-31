@@ -334,8 +334,8 @@ layout: default
 
   <!-- Always-visible version footer -->
   <div id="version_warpper_menu" style="cursor: pointer; padding-right:24px; padding-left:24px; text-align:center;">
-    <h4 style="font-size:11px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by IGPenguin</h4>
-      <h4 id="menu_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
+    <h4 style="font-size:14px; opacity:0.6; margin-top:6px; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by IGPenguin</h4>
+      <h4 id="menu_version" style="font-size:12px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
   </div>
 
 </div><!-- end id_menu -->
@@ -613,8 +613,8 @@ layout: default
   <button type="button" id="button_menu" style="position:absolute; left:-82px; top:50%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">⚙️</button>
   <button type="button" id="button_challenges" style="position:absolute; right:-82px; top:50%; transform:translateY(-50%); font-size:16px; min-height:42px; width:64px; padding:0 12px; letter-spacing:0.5px;">🧩</button>
   <div id="version_warpper" style="cursor: pointer; padding-right:4px; padding-left:4px; text-align:center;">
-    <h4 style="font-size:11px; opacity:0.6; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by IGPenguin</h4>
-      <h4 id="id_version" style="font-size:10px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
+    <h4 style="font-size:14px; opacity:0.6; margin-bottom:0; letter-spacing:1px; box-shadow:none; text-align:center;">developed by IGPenguin</h4>
+      <h4 id="id_version" style="font-size:12px; margin-top:-8px; margin-bottom:0; opacity:0.4; box-shadow:none; text-align:center; width:100%;"></h4>
   </div>
 </div>
 
