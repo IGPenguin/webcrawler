@@ -9,8 +9,8 @@
 📝 Menu UI + text polish (start over, journey)
 ✏️ Shortened texts, fixed broken stats
 📕 Linked Codex of the Damned in menu
-⚙️ Difficulty picker now available
-📅 Reordered Chronicles by date
+⚙️ Difficulty picker has been unlocked
+📅 Reordered Chronicles records by date
 
 ## ver. 05/30/26 @ 11:56 PM
 🍀 Luck soft-cap for loot drop rates
