@@ -248,8 +248,9 @@ layout: default
       <div class="menu-spacer"></div>
         <div id="menu_history_actions" style="display:none; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_history_scorelink" style="flex:1; display:none; margin-top:0px; color:#7193bf;">🔗 Score Link</button>
-        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share</button>
         <button class="menu-btn" id="menu_history_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
+        <button class="menu-btn" id="menu_history_donate" style="flex:1; margin-top:0; color:#BF40BF;">🎉 Praise</button>
+        <button class="menu-btn" id="menu_history_share" style="flex:1; margin-top:0; color:#fff;">📎 Share</button>
       </div>
       <button class="menu-btn" id="menu_history_back">👈 Back</button>
     </div>
@@ -267,25 +268,25 @@ layout: default
       <div id="menu_credits_body" style="padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000;">
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:8px; opacity:0.6; font-size:16px; color:#FFF;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:18px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Co-designer</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:16px;">Terezka <a href="https://github.com/Blue2lip">"Blue2lip"</a> Svobodová</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Virtual team</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:16px;"><a href="https://github.com/IGPenguin/perseus-blade">Perseus Blade</a></h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Beta testers</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;">None yet?!</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Technology</h5>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Co-designer, feedback</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:14px;">Terezka <a href="https://github.com/Blue2lip">"Blue2lip"</a> Svobodová</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Custom tools</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;"><a href="https://github.com/IGPenguin/perseus-blade">Perseus Blade</a>, <a href="https://github.com/IGPe<nguin/hades-gate">Hades Gate</a><br><a href="https://github.com/IGPenguin/styx-flow">Styx Flow</a>, <a href="https://github.com/IGPenguin/medusa-gaze">Medusa Gaze</a></h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:4px; opacity:0.6; font-size:14px;">Coding tech</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; margin-bottom:16px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a> + <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://animate.style">animate.style</a></h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Beta testers</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; color:yellow; font-weight:600;margin-bottom:16px;">Your time to shine here!</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Time sacrificed</h5>
         <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Countless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
         <h4 style="min-height:0; margin-bottom:8px; margin-top:12px; padding:0 4px; font-size:18px; color:#FFD940; font-weight:600; -webkit-text-stroke:4px black; paint-order:stroke fill; display:none;">Thank you for playing!</h4>
       </div>
-      <h5 style="margin-top:12px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Anonymous game telemetry is being collected.<br>No personal data, see the <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;">open source</a>.</h5>
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
-        <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
-        <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Greet</button>
         <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
+        <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Greet</button>
+        <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
       </div>
+      <button class="menu-btn" id="menu_credits_donate" style="flex:1; color:#2cc176;">☕️ Donate 1 Coffee!</button>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>
   </div>
@@ -322,8 +323,10 @@ layout: default
       <h2 style="font-size:20px; letter-spacing:1.5px; -webkit-text-stroke:5px black; paint-order:stroke fill; margin:8px 0 8px 0; text-align:center;">⚙️ Settings</h2>
       <div id="menu_settings_content" style="overflow-x:hidden; overflow-y:auto; max-height:444px; scrollbar-width:none; padding-top:2px; padding-bottom:2px;"></div>
       <button class="menu-btn" id="menu_codex">📕 Codex of the Damned</button>
+      <h5 style="margin:8px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;"><b style="color:red;">↑</b> Read this if you keep struggling with staying alive.<br></h5>'
       <div class="menu-spacer"></div>
-      <h5 style="margin:16px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">⚠️ Browsers may wipe saved data after 7 inactive days.<br></h5>'
+      <h5 style="margin-top:12px; margin-bottom:-8px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Non personal telemetry <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;">data is being collected.</a></h5>
+      <h5 style="margin:8px 3px -8px 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">⚠️ Browsers may wipe saved data after 7 inactive days.<br></h5>'
       <button class="menu-btn" id="menu_settings_purge_1" style="color:red;">✕ Delete Saves</button>
       <div id="menu_settings_purge_2" style="display:none; gap:4px;">
         <button class="menu-btn" id="menu_settings_purge_cancel" style="flex:1; margin-top:0;">Cancel</button>
