@@ -490,7 +490,7 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
       playerHit(0,false,true);
       return;
     }
-    if (enemyType=="Item"||getItemSlot(enemyType)) displayPlayerEffect(enemyEmoji);
+    if (enemyType=="Item") displayPlayerEffect(enemyEmoji);
   }
 
   if (hasAnyOf(attackTypes,enemyEmoji)&&enemyType=="Item") playerAttackType=enemyEmoji;
