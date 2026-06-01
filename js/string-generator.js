@@ -543,8 +543,9 @@ function getLootDropLog() {
     "Something fell from them.",
     "There's something left behind.",
     "They left something on the ground.",
-    "Something hit the ground when they went down.",
-    "A weight they no longer carry."
+    "Something droped when they went down.",
+    "Something is under the body.",
+    "They dropped something."
   ]);
 }
 
@@ -562,7 +563,8 @@ function getRememberLog() {
     "She would have known what to do here.",
     "Her name almost came out. Almost.",
     "An old pain called from inside you.",
-    "Not a memory. The shape of one."
+    "Not a memory. The shape of one.",
+    "Feels like a part of you is missing."
   ]);
 }
 
