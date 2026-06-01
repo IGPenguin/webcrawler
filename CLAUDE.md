@@ -200,7 +200,8 @@ Playwright config targets a mobile viewport (iPhone 14 Pro, 393×852) and reuses
 - Before implementing inline, ask whether a feature should be a reusable utility, default to extracting shared helpers when the same pattern could appear elsewhere.
 - When fixing bugs, search the actual JS code path to trace from the symptom backwards through the call stack before considering exploring .csv data files or .md todo/design files
 - When making balance/config changes, audit ALL similar handlers (e.g., all four trap buttons: attack/roll/grab/sleep) rather than fixing only the reported case.
-- For new CSV content or CSV audits (encounter rows, descriptions, item text) — read DESIGN.md and CONTENT.md, use content-gen.md skill, suggest first, wait for approval before writing
+- For new CSV content or CSV audits (encounter rows, descriptions, item text) — read DESIGN.md, CONTENT.md, and GENESIS.md, use content-gen.md skill, write directly to file (debug section of story.csv for quick testing, encounters.csv for permanent content)
 - Max 10 new CSV entries per suggestion batch when doing data pushes, work area by area
 - Animation event handlers must guard against bubbling from child elements using `if (e.target !== e.currentTarget) return;` to avoid bugs from animationend/transitionend bubbling
+- All player-facing log message text must live in `string-generator.js` as named functions returning `chooseFrom([...])` pools. Never write inline strings or literals directly in `action-resolver.js`, `player-skills.js`, or `enemy-skills.js` — those files contain logic, not text. This keeps all writing in one place for easy voice/polish passes.
 - Always ask before destructive actions with limited recovery options (never git reset without a permission etc.)
