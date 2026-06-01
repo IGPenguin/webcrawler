@@ -1,8 +1,9 @@
 ## ver. 06/02/26 @ 12:17 AM
 🗺️ New midgame encounter content added
 🔮 Origins: Transmute in new game picker
-🎨 Credits bacground + Recall in level-up
+🎨 Credits background + Recall in level-up
 ✏️ Action logs tone pass, text + case fixes
+🐍 Create and prove Medusa Gaze tool
 
 ## ver. 06/01/26 @ 01:34 PM
 🎲 LVL UP: Sorcery >> Fate: rnd +2/-1 stats

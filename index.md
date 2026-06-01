@@ -287,7 +287,7 @@ layout: default
         <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Greet</button>
         <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
       </div>
-      <button class="menu-btn" id="menu_credits_donate" style="flex:1; color:#2cc176; background-color:#115935;">☕️ Donate 1 Coffee!</button>
+      <button class="menu-btn" id="menu_credits_donate" style="flex:1; color:#F7D147; background-color:#4d4112;">☕️ Donate 1 Coffee!</button>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>
   </div>
