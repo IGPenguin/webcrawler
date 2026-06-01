@@ -22,7 +22,7 @@ No personal data is stored: no emails, no real names, no IP addresses.
 The core game logic is written in JavaScript, populated with .csv data and styled with Jekyll and CSS.<br>
 No build steps, no modules, the load order in `index.md` is the only dependency chain.<br>
 
-💻 Deploy with `deploy.sh` to install gems, free port 4000, serve and open the browser.<br>
+💻 Deploy with `scripts/deploy.sh` to install gems, free port 4000, serve and open the browser.<br>
 <b>⚠️ [Pull requests](https://github.com/IGPenguin/stay-dead/pulls)</b> must follow the [contribution rules](https://github.com/IGPenguin/stay-dead/blob/live/.github/CONTRIBUTING.md "the contribution rules").<br>
 
 ## 📜 License
