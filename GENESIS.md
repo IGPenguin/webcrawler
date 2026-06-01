@@ -118,8 +118,8 @@ Never repeats the name. Shown in-game as a tag.
 
 Write directly - no approval loop needed.
 
+- **Staging (default):** prepend new rows at the **top** of `data/staging.csv`. This is the review/distribution step — the user moves rows from staging into the correct area block of `encounters.csv` themselves.
 - **Quick testing:** insert rows into `data/story.csv` right after the `//Debug Section` comment (line 12) - they appear early in a run.
-- **Permanent content:** append to `data/encounters.csv` in the correct area block.
 - After writing, run `bash scripts/validate-csv.sh`.
 
 ---
