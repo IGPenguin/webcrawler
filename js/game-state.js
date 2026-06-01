@@ -176,6 +176,8 @@ var corpseLoot = null;
 
 // Loot choice context — set before pushing a corpse drop encounter so the overlay can pick the right string pool
 var _lootChoiceContext = 'prop'; // 'prop' | 'corpse'
+// Raw CSV row of the encounter currently loaded — captured in loadEncounter() for LootChoiceManager
+var _currentRawRow = null;
 var levelUpSavedCorpse = null;  // full corpse state snapshot saved before level-up wipes it; restored after Upgrade resolves
 
 //Global vars - UIElements
