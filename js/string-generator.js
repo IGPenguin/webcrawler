@@ -632,8 +632,8 @@ function getCritSleepLog() {
   ]);
 }
 
-function getWalkCritText() {
-  return chooseFrom(["Walked away in a good mood.", "Left whistling under their breath.", "Strolled off without a care.", "Walked away grinning to themselves.", "Continued with a spring in their step."]);
+function getWalkCritText() { //TODO check all logs that should talk to player: their -> your
+  return chooseFrom(["Walked away in a good mood.", "Left whistling under your breath.", "Strolled off without a care.", "Walked away grinning to themselves.", "Continued with a spring in their step."]);
 }
 
 function getShopMessage(){

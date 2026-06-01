@@ -265,7 +265,7 @@ layout: default
             paint-order: stroke fill;
             margin:8px 0 8px 0;
             text-align:center;">🖤 Makers</h2>
-      <div id="menu_credits_body" style="padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000;">
+      <div id="menu_credits_body" style="padding:12px 0 12px 0; box-shadow:inset 0px 0px 0px 3px #000; background-color:#272727;">
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:8px; opacity:0.6; font-size:16px; color:#FFF;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:18px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin">"IGPenguin"</a> Svoboda</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Co-designer, feedback</h5>
@@ -275,8 +275,8 @@ layout: default
         <h5 style="text-align:center; padding-left:4px; margin-bottom:4px; opacity:0.6; font-size:14px;">Coding tech</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; margin-bottom:16px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a> + <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://animate.style">animate.style</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Beta testers</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; color:yellow; font-weight:600;margin-bottom:16px;">Your time to shine here!</h4>
-        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Time sacrificed</h5>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; color:yellow; font-weight:600;margin-bottom:16px;">Your Nickname to shine here!</h4>
+        <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:12px;">Time sacrificed</h5>
         <h5 style="text-align:center; font-size:12px; line-height:20px; margin-top:2px; margin-bottom:8px; padding-left:48px; padding-right:48px; color:#fff;">Countless nights since <a href="https://github.com/IGPenguin/stay-dead/commit/d345a3bc8aefa1989b9c0354d8b32262091254f6#diff-f4fff32f05723c7a6fbc73dd7f920e2c3b85f600a5d4aa760854bc4900b9ced8">February 27, 2023</a></h5>
         <h4 style="min-height:0; margin-bottom:8px; margin-top:12px; padding:0 4px; font-size:18px; color:#FFD940; font-weight:600; -webkit-text-stroke:4px black; paint-order:stroke fill; display:none;">Thank you for playing!</h4>
       </div>

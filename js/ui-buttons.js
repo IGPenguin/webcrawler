@@ -134,7 +134,7 @@ function adjustEncounterButtons(){
       setButton('button_cast',"🎲 Fate", colorRed);
       setButton('button_grab',"🎣 Fishing", colorShadeBlue);
       setButton('button_curse',"🍀 Fortune", colorSoftGreen);
-      setButton('button_speak',"💭 Recall", colorFairy);
+      setButton('button_speak',"💖 Recall", colorFairy);
       setButton('button_heal',"📿 Faith", colorWhite);
       setButton('button_sleep',"🧠 Psyche", colorPink);
       break;
