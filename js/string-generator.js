@@ -363,7 +363,7 @@ function getRunStartMessage() {
     "The cursed do not rest.<br>Neither should you.",
     "The world didn't ask for this.<br>Neither did she.",
     "Every corpse you pass<br>whispers her name.",
-    "Whatever you finally find.<br> Take the right decision.",
+    "Whatever you finally find.<br>Make the right choice.",
     "Your love broke something.<br>Your courage must answer.",
     "The dead world remembers.<br>Resolve your sins.",
     "The world is corrupted.<br>Only you can undo it.",
@@ -540,27 +540,29 @@ function getLootChoiceLog(context, tier) {
 
 function getLootDropLog() {
   return chooseFrom([
-    "Seems like they dropped something.",
     "Something fell from them.",
     "There's something left behind.",
     "They left something on the ground.",
-    "Something slipped on the ground."
+    "Something hit the ground when they went down.",
+    "A weight they no longer carry."
   ]);
 }
 
 function getRememberLog() {
   return chooseFrom([
-    "Almsot recalled her name this time.",
+    "Almost recalled her name this time.",
     "Long road ahead, already familiar.",
     "Something shifted, almost familiar.",
-    "You recall a smell, whoever that was?",
+    "Caught and lost her scent again.",
     "Something hurts you deep inside.",
     "You held a memory, it faded slowly.",
     "The world was right, for a moment.",
     "You remembered and then forgot.",
     "The grief. Still there. Still yours.",
     "She would have known what to do here.",
-    "Her name almost came out. Almost."
+    "Her name almost came out. Almost.",
+    "An old pain called from inside you.",
+    "Not a memory. The shape of one."
   ]);
 }
 
@@ -579,18 +581,23 @@ function getFateLog() {
 
 function getRestBadlyText() {
   return chooseFrom([
-    "Slept poorly, waking up groggy.",
+    "Slept poorly, waking up tired.",
     "Tossed and turned, barely rested.",
     "Woke up early, not fully rested.",
     "Slept barely enough to recover.",
-    "Dreamed badly, woken up tired."]);
+    "Dreamed badly, woken up tired.",
+    "The dreams found you.",
+    "Woke with old weight still on the chest.",
+    "Sleep came and left without helping.",
+    "Rested but not restored.",
+    "Slept. It didn't take."]);
 }
 
 function getSleepNearLimitLog() {
   return chooseFrom([
-    "The cold creeps in as you sleep.",
-    "Something stirs, do not hesitatate.",
-    "She grows impatient while you sleep. "
+    "Dark cold creeps in as you sleep.",
+    "Something stirs, do not hesitate.",
+    "She grows impatient while you sleep."
   ]);
 }
 
@@ -616,9 +623,9 @@ function getEnemyWakeLog() {
   return chooseFrom([
     "They refuse to stay down.",
     "Not as gone as they seemed.",
-    "They regained consciousness.",
-    "They recovered from the knockout.",
-    "You disturbed their sleep."
+    "You disturbed their sleep.",
+    "Still alive. Somehow.",
+    "The ground didn't hold them."
   ]);
 }
 
@@ -632,8 +639,8 @@ function getCritSleepLog() {
   ]);
 }
 
-function getWalkCritText() { //TODO check all logs that should talk to player: their -> your
-  return chooseFrom(["Walked away in a good mood.", "Left whistling under your breath.", "Strolled off without a care.", "Walked away grinning to themselves.", "Continued with a spring in their step."]);
+function getWalkCritText() {
+  return chooseFrom(["Left whistling under your breath.", "Walked away clean.", "The road ahead felt briefly less heavy.", "Slipped away without a backward glance.", "Left nothing behind worth taking."]);
 }
 
 function getShopMessage(){
@@ -730,8 +737,9 @@ function getRecallCritPassText() {
     "There was someone special, just for you.",
     "You and her, bound together, forever.",
     "All slowly comes back to you.",
-    "She was special, almost shed a tear.",
-    "Feels like a part of you is missing."
+    "Her name, whole and clear, just for a moment.",
+    "The memory arrived complete. It hurt.",
+    "You remembered her voice. It did not stay."
   ]);
 }
 
@@ -748,10 +756,11 @@ function getRecallFailText() {
 function getRecallCritFailText() {
   return chooseFrom([
     "Familiar shape with nothing attached.",
-    "Perhaps this was meant for someone else?",
+    "The shape of her, gone before you could hold it.",
     "There's a price for forgetting love.",
     "You refused your own memories.",
-    "Whatever you once felt is now gone."
+    "Whatever you once felt is now gone.",
+    "Nothing came. The absence was complete."
   ]);
 }
 
@@ -1093,3 +1102,56 @@ var _FAMILIAR_MEMORY_MSG = [
 ];
 function getFamiliarMemoryDesc()    { return chooseFrom(_FAMILIAR_MEMORY_DESC); }
 function getFamiliarMemoryMessage() { return chooseFrom(_FAMILIAR_MEMORY_MSG); }
+
+// ── Inline message pools (called from action-resolver / player-skills) ─────────
+
+function getSpeakDefaultLog() {
+  return chooseFrom([
+    "The words fell into the silence.",
+    "Said something. Nothing answered.",
+    "Your voice dissolved into the ruin.",
+    "No answer. But something heard."
+  ]);
+}
+
+function getSleepFullLog() {
+  return chooseFrom([
+    "Rested well. Back at full strength.",
+    "Slept clean. Everything restored.",
+    "Sleep taken. Ready to continue.",
+    "Down and up. All resources recovered."
+  ]);
+}
+
+function getSleepWastedLog() {
+  return chooseFrom([
+    "Wasted some time sleeping.",
+    "Already rested. Cost nothing but time.",
+    "Sleep was spent here already."
+  ]);
+}
+
+function getRestCritLog() {
+  return chooseFrom([
+    "Caught your breath quickly. +1 🟢",
+    "Rested fast despite the danger. +1 🟢",
+    "Pulled back enough to recover. +1 🟢"
+  ]);
+}
+
+function getReincarnateLog() {
+  return chooseFrom([
+    "Woke again. The debt unchanged.",
+    "The world kept you. It always does.",
+    "Still not done, apparently.",
+    "Came back to life to continue."
+  ]);
+}
+
+function getStaminaWastedLog() {
+  return chooseFrom([
+    "Wasted a moment of your life.",
+    "Nothing left to recover.",
+    "Already at full energy."
+  ]);
+}

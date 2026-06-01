@@ -215,7 +215,7 @@ function playerRest(silent=false, countThreshold=false){
       playerRested=true;
 
       if (!silent) {
-        logPlayerAction(actionString,"Rested well, recovering all resources.");
+        logPlayerAction(actionString, getSleepFullLog());
         displayPlayerEffect("💤");
         displayPlayerRestedEffect();
       }
@@ -223,7 +223,7 @@ function playerRest(silent=false, countThreshold=false){
       playerRested=true;
 
       if (!silent) {
-        logPlayerAction(actionString,"Wasted some time sleeping.");
+        logPlayerAction(actionString, getSleepWastedLog());
         displayPlayerEffect("💤");
       }
     }
@@ -290,7 +290,7 @@ function playerHeal(critBonus){
 function playerGetStamina(stamina,silent = false){
   if (playerSta >= playerStaMax) { //Cannot get more
     if (!silent){
-      logPlayerAction(actionString,"Wasted a moment of your life.");
+      logPlayerAction(actionString, getStaminaWastedLog());
     }
     return false;
   } else {
@@ -695,7 +695,7 @@ function playerReincarnate(){
   playerHp=1; //Renew
   playerSta=playerStaMax; //Renew
 
-  logPlayerAction("✨","Came back to live to continue.<br>&nbsp;<br>&nbsp;");
+  logPlayerAction("✨", getReincarnateLog()+"<br>&nbsp;<br>&nbsp;");
 
   if (playerKarma>0){ //TODO Revise this threshold
     var randomArea=chooseFrom(["Fading Wildlands","Forsaken Village","Twisted Fairyland", "River of Sorrows"]) //Consider any artifact from all areas except endgame

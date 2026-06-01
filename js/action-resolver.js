@@ -95,7 +95,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
         if (corpseState === "neutralized") {
           if (_skillOK === false) {
             if (_crit === 'fail') {
-              logPlayerAction(actionString,"Missed so bad you hurt yourself -1 💔");
+              logPlayerAction(actionString,"Missed so badly, you hurt yourself -1 💔");
               playerHit(1,false);
             } else {
               logPlayerAction(actionString,"Missed the motionless target -1 🟢");
@@ -141,7 +141,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayEnemyCannotEffect();
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                logPlayerAction(actionString, "Missed so badly, you hurt yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "Your attack missed it -1 🟢");
@@ -189,7 +189,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Trap-Sleep":
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                logPlayerAction(actionString, "Missed so badly, you hurt yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "Your attack missed harmlessly -1 🟢");
@@ -215,7 +215,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                logPlayerAction(actionString, "Missed so badly, you hurt yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "Missed it completely -1 🟢");
@@ -234,7 +234,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing=false;
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                logPlayerAction(actionString, "Missed so badly, you hurt yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "Couldn't break through -1 🟢");
@@ -312,7 +312,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hit yourself -1 💔");
+                logPlayerAction(actionString, "Missed so badly, you hit yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "You missed your attack -1 🟢");
@@ -389,7 +389,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                logPlayerAction(actionString, "Missed so badly, you hurt yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "Your attack missed it -1 🟢");
@@ -418,7 +418,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             isFishing = false;
             if (_skillOK === false) {
               if (_crit === 'fail') {
-                logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                logPlayerAction(actionString, "Missed so badly, you hurt yourself -1 💔");
                 playerHit(1, false);
               } else {
                 logPlayerAction(actionString, "Pulled back at the last moment -1 🟢");
@@ -451,7 +451,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               } else {
                 if (_skillOK === false) {
                   if (_crit === 'fail') {
-                    logPlayerAction(actionString, "Missed so bad you hurt yourself -1 💔");
+                    logPlayerAction(actionString, "Missed so badly, you hurt yourself -1 💔");
                     playerHit(1, false);
                   } else {
                     logPlayerAction(actionString, "Your attack missed -1 🟢");
@@ -559,7 +559,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if (_skillOK === false && (enemyType === "Toxic" || enemyType === "Hot")) {
               var _toxicDmg = Math.max(1, enemyAtk+enemyAtkBonus);
-              logPlayerAction(actionString, "Fallen right onto them -"+_toxicDmg+" 💔 -1 🟢");
+              logPlayerAction(actionString, "Fell right onto them -"+_toxicDmg+" 💔 -1 🟢");
               displayPlayerCannotEffect();
               playerHit(_toxicDmg);
               break;
@@ -1058,7 +1058,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             playerSta = Math.max(0, playerSta - 1);
             _blockFailMsg = "Block crumbled inward -"+_blockFailDmg+" 💔 -2 🟢";
           } else {
-            _blockFailMsg = "They broken your block -"+_blockFailDmg+" 💔 -1 🟢";
+            _blockFailMsg = "They broke your block -"+_blockFailDmg+" 💔 -1 🟢";
           }
           if (enemyStaminaChangeMessage(-1, _blockFailMsg, "Couldn't break through, caught their breath.")) {
             playerHit(_blockFailDmg);
@@ -2075,7 +2075,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (_crit === 'fail') {
                 enemyAtkBonus += 2;
                 var _enrageAtk = enemyAtk + enemyAtkBonus;
-                logPlayerAction(actionString,"Pissed them off immensely! -"+_enrageAtk+" 💔");
+                logPlayerAction(actionString,"Drew their full fury -"+_enrageAtk+" 💔");
               } else {
                 enemyAtkBonus++;
                 var _enrageAtk = enemyAtk + enemyAtkBonus;
@@ -3084,14 +3084,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerCannotEffect();
             } else {
               encounterUsed = true;
-              logPlayerAction(actionString, "Your voice echoes around the area.");
+              logPlayerAction(actionString, getSpeakDefaultLog());
               displayPlayerCannotEffect();
               displayPlayerEffect("💬");
             }
             break;
 
           default:
-            logPlayerAction(actionString,"Your voice echoes around the area.");
+            logPlayerAction(actionString, getSpeakDefaultLog());
             displayPlayerCannotEffect();
             displayPlayerEffect("💬");
         }
@@ -3178,7 +3178,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               // Refresh 1 on both pass and crit pass (crit pass skips enemy turn already)
             }
             if (_crit === 'success') {
-              logPlayerAction(actionString, "Refreshed exceptionally fast +1 🟢");
+              logPlayerAction(actionString, getRestCritLog());
               break;
             }
             if (enemyCastIfMgk()){
