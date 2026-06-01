@@ -408,7 +408,7 @@ var Menu = (function () {
     if (rerollBtn) {
       var canReroll = parseInt(savedCoins) >= 1;
       rerollBtn.disabled = !canReroll;
-      rerollBtn.style.color = canReroll ? '' : 'grey';
+      rerollBtn.style.color = canReroll ? '#2cc176' : 'grey';
     }
 
     if (skipScreenSwitch) { _doShowScreen('menu_origin_screen'); } else { _showScreen('menu_origin_screen'); }

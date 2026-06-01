@@ -164,18 +164,18 @@ layout: default
         This is a subtitle placeholder.</h5>
       <div style="flex:1;
                   min-height:0;
-                  max-height:326px;
+                  max-height:310px;
                   overflow-x:hidden;
                   overflow-y:auto;
                   scrollbar-width:none;
                   padding-top:4px;
                   margin-top:-6px;
-                  padding-bottom:4px;">
+                  padding-bottom:0px;">
         <div id="menu_origin_list"></div>
       </div>
+      <button class="menu-btn" id="menu_origin_reroll" style="color:grey;" disabled>🔮 Transmute -1 🪙</button>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_origin_begin" style="margin-top:16px; color:grey;">✨ Choose an Origin</button>
-      <button class="menu-btn" id="menu_origin_reroll" style="color:grey;" disabled>🔮 Transmute</button>
       <button class="menu-btn" id="menu_origin_cancel">👈 Cancel</button>
     </div>
   </div>

@@ -2,16 +2,7 @@ area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
 
 //Ideas
 🦁 Lions Mane
-
 🐲 Dragon Mask
-🐍 Snake Band +1 sta
-🦂 Scorpion Pin +1 dmg
-🥌 Cumbersome Weight +2dmg -2sta
-⛸️ Skating Blade - Awkward to weild, effective to damage.
-🛰️ Sky Wreckage - Village
-🛸 - Fairyland (Curse)
-⚔️ Dual Swords
-🍕, 🍔 - Legendary food
 
 //Examples of 0.5 Luck / Intellect - Display as <b>Minor</b>
 Fading Wildlands;🍀;Lucky Clover;Item-Trinket;0;0;0;0.5;0;0;0;Wild Trinket;A four-leaf clover. Still counts.<br>Provides <b>Minor +🍀 Luck</b> bonus.;;none
