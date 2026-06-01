@@ -1,6 +1,6 @@
-## ver. 06/02/26 @ 12:17 AM
+## ver. 06/02/26 @ 01:19 AM
 🗺️ New midgame encounter content added
-🔮 Origins: Transmute in new game picker
+🔮 Add "Transmute" in new game Origins picker
 🎨 Credits background + Recall in level-up
 ✏️ Action logs tone pass, text + case fixes
 🐍 Create and prove Medusa Gaze tool
