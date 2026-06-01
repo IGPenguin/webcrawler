@@ -49,7 +49,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;magic_unlock_first
 🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by
 🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_30
-🧥;Hobo;1;0;0;-1;0;0;0;<b>+1 ❤️ Health</b>, lose <b>-1 🍀 Luck</b>.<br><i>Naturally resistant to any danger.;grab_rubbish
+🧥;Hobo;1;0;0;-1;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-1 🍀 Luck</b>.<br><i>Naturally resistant to any danger.;grab_rubbish
 
 //Outstanding
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br>Hardened long before anything fought back.;none

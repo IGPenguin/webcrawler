@@ -38,7 +38,7 @@ elif [ -t 0 ]; then
   echo ""
   echo "A) Version bump only"
   echo "B) Generate changelog with Claude"
-  read -rp "Choice [A/b]: " MODE_CHOICE
+  read -rp "Choice [A/B]: " MODE_CHOICE
   MODE_CHOICE="${MODE_CHOICE:-A}"
 else
   MODE_CHOICE="A"

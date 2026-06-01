@@ -1,7 +1,7 @@
-## ver. 06/01/26 @ 01:41 AM
+## ver. 06/01/26 @ 01:34 PM
 🎲 LVL UP: Sorcery >> Fate: rnd +2/-1 stats
 🎣 LVL UP: Hatred >> Fishing: better chances
-💭 LVL UP: Psyche >> Remember: +1 Love
+💭 LVL UP: Psyche >> Recall: +1 Love
 🧠 LVL UP: Psyche moved, now gives +1 INT
 ✨ New flavour messages for contextual actions
 🔥 Altars can now be smashed with Attack/Cast
@@ -11,6 +11,7 @@
 📕 Linked Codex of the Damned in menu
 ⚙️ Difficulty picker has been unlocked
 📅 Reordered Chronicles records by date
+🛠️ Shell scripts moved to scripts/
 
 ## ver. 05/30/26 @ 11:56 PM
 🍀 Luck soft-cap for loot drop rates
