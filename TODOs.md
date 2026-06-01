@@ -6,7 +6,7 @@
 
 ## P0 — Hard Blockers *(drop everything)*
 
----
+- none
 
 ## P1 — Serious Issues & Big Wins
 
@@ -17,8 +17,6 @@
 - Priority: P1 — shallow pools break the core loop; encounter repetition is one of the fastest ways to lose a beta tester.
 - Type: Bug | Severity: Major
 - Effort: S | Gain: L
-
----
 
 ## P2 — Release-Gating
 
@@ -148,8 +146,6 @@
 - Priority: P2 — public-facing text sets expectations before a player ever loads the game; beta launch is the right time to fix tone mismatches.
 - Type: Chore
 - Effort: S | Gain: M
-
----
 
 ## P3 — Should-Fix
 
@@ -399,8 +395,6 @@
 - Priority: P3 — origin picker feels sparse for new players; simple options are a low-friction on-ramp.
 - Type: Feature
 - Effort: S | Gain: M
-
----
 
 ## P4 — Nice to Have
 
