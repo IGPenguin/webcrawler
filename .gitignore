@@ -1,6 +1,6 @@
 *.DS_Store
 _data/local_auth.yml
-update-rankings.sh
+.rankings-secrets
 pending-commit.txt
 test-results/
 .jekyll-cache/
