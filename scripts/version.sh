@@ -4,47 +4,54 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
-TIMESTAMP=$(date "+%m/%d/%y @ %I:%M %p")
-NEW_VERSION="ver. $TIMESTAMP"
-
-# Stamp constants.js
-sed -i '' "s|var versionCode = \"ver\. [^\"]*\"|var versionCode = \"$NEW_VERSION\"|" js/constants.js
-grep -q "var versionCode = \"$NEW_VERSION\"" js/constants.js || {
-  echo "Error: version stamp failed — pattern not found in constants.js" >&2
-  exit 1
-}
-
-# Capture the previous version header before modifying VERSION.md
-PREV_HEADER=$(grep -m 1 "^## ver\." VERSION.md 2>/dev/null || true)
-
-# Prepend new version header
-HEADER="## $NEW_VERSION"
-if ! grep -qF "$HEADER" VERSION.md 2>/dev/null; then
-  TMPFILE=$(mktemp)
-  printf '%s\n\n' "$HEADER" > "$TMPFILE"
-  cat VERSION.md 2>/dev/null >> "$TMPFILE" || true
-  mv "$TMPFILE" VERSION.md
-fi
-
-echo "Version updated to: $NEW_VERSION"
+ARG="${1:-}"
+HEADER=""
+PREV_HEADER=""
 
 # ── Mode selection ─────────────────────────────────────────────────────────────
-ARG="${1:-}"
 if [[ "$ARG" =~ ^-[Aa]$ ]]; then
   MODE_CHOICE="A"
 elif [[ "$ARG" =~ ^-[Bb]$ ]]; then
   MODE_CHOICE="B"
+elif [[ "$ARG" =~ ^-[Cc]$ ]]; then
+  MODE_CHOICE="C"
 elif [ -t 0 ]; then
   echo ""
   echo "A) Version bump only"
-  echo "B) Generate changelog with Claude"
-  read -rp "Choice [A/B]: " MODE_CHOICE
+  echo "B) Bump version + generate changelog"
+  echo "C) Changelog only (no version bump)"
+  read -rp "Choice [A/B/C]: " MODE_CHOICE
   MODE_CHOICE="${MODE_CHOICE:-A}"
 else
   MODE_CHOICE="A"
 fi
 
-if [[ ! "$MODE_CHOICE" =~ ^[Bb]$ ]]; then
+# ── Version stamp (skipped in -c mode) ────────────────────────────────────────
+if [[ ! "$MODE_CHOICE" =~ ^[Cc]$ ]]; then
+  TIMESTAMP=$(date "+%m/%d/%y @ %I:%M %p")
+  NEW_VERSION="ver. $TIMESTAMP"
+
+  sed -i '' "s|var versionCode = \"ver\. [^\"]*\"|var versionCode = \"$NEW_VERSION\"|" js/constants.js
+  grep -q "var versionCode = \"$NEW_VERSION\"" js/constants.js || {
+    echo "Error: version stamp failed — pattern not found in constants.js" >&2
+    exit 1
+  }
+
+  # Capture the previous version header before modifying VERSION.md
+  PREV_HEADER=$(grep -m 1 "^## ver\." VERSION.md 2>/dev/null || true)
+
+  HEADER="## $NEW_VERSION"
+  if ! grep -qF "$HEADER" VERSION.md 2>/dev/null; then
+    TMPFILE=$(mktemp)
+    printf '%s\n\n' "$HEADER" > "$TMPFILE"
+    cat VERSION.md 2>/dev/null >> "$TMPFILE" || true
+    mv "$TMPFILE" VERSION.md
+  fi
+
+  echo "Version updated to: $NEW_VERSION"
+fi
+
+if [[ "$MODE_CHOICE" =~ ^[Aa]$ ]]; then
   exit 0
 fi
 
@@ -53,6 +60,16 @@ if ! command -v claude &>/dev/null; then
   echo "Error: claude CLI not found in PATH." >&2
   exit 1
 fi
+
+# In -c mode: latest header is the target, second header is the baseline
+if [[ "$MODE_CHOICE" =~ ^[Cc]$ ]]; then
+  HEADER=$(grep -m 1 "^## ver\." VERSION.md 2>/dev/null || true)
+  PREV_HEADER=$(grep -m 2 "^## ver\." VERSION.md 2>/dev/null | tail -1 || true)
+  if [ "$HEADER" = "$PREV_HEADER" ]; then
+    PREV_HEADER=""
+  fi
+fi
+
 if [ -z "$PREV_HEADER" ]; then
   echo "No previous version header found — cannot determine commit range."
   exit 0
@@ -124,11 +141,13 @@ else
 fi
 
 if [[ "$CHOICE" =~ ^[Yy]$ ]]; then
+  # Find the line number of the latest header and insert after it
+  HEADER_LINE=$(grep -n "^## ver\." VERSION.md | head -1 | cut -d: -f1)
   TMPFILE=$(mktemp)
   {
-    head -1 VERSION.md
+    head -n "$HEADER_LINE" VERSION.md
     echo "$SUGGESTIONS"
-    tail -n +2 VERSION.md
+    tail -n +"$((HEADER_LINE + 1))" VERSION.md
   } > "$TMPFILE"
   mv "$TMPFILE" VERSION.md
   echo "Inserted into VERSION.md."
