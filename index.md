@@ -173,7 +173,7 @@ layout: default
                   padding-bottom:0px;">
         <div id="menu_origin_list"></div>
       </div>
-      <button class="menu-btn" id="menu_origin_reroll" style="color:grey;" disabled>🔮 Transmute -1 🪙</button>
+      <button class="menu-btn" id="menu_origin_reroll" style="color:grey; background-color:rgb(40 57 79);" disabled>🌀 Transmute -1 🪙</button>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_origin_begin" style="margin-top:16px; color:grey;">✨ Choose an Origin</button>
       <button class="menu-btn" id="menu_origin_cancel">👈 Cancel</button>
