@@ -175,6 +175,7 @@ layout: default
       </div>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_origin_begin" style="margin-top:16px; color:grey;">✨ Choose an Origin</button>
+      <button class="menu-btn" id="menu_origin_reroll" style="color:grey;" disabled>🔮 Transmute</button>
       <button class="menu-btn" id="menu_origin_cancel">👈 Cancel</button>
     </div>
   </div>

@@ -328,7 +328,7 @@ var Menu = (function () {
     return RarityManager.getColor(RarityManager.getTierForNet(net));
   }
 
-  function _renderOriginPicker() {
+  function _renderOriginPicker(skipScreenSwitch) {
     _selectedOrigin = null;
     var origins = _rollOrigins();
     if (origins.length === 0) { _doNewGame(null); return; }
@@ -404,7 +404,14 @@ var Menu = (function () {
     beginBtn.innerHTML = '⁉️ Select Origin...';
     beginBtn.style.color = 'grey';
 
-    _showScreen('menu_origin_screen');
+    var rerollBtn = document.getElementById('menu_origin_reroll');
+    if (rerollBtn) {
+      var canReroll = parseInt(savedCoins) >= 1;
+      rerollBtn.disabled = !canReroll;
+      rerollBtn.style.color = canReroll ? '' : 'grey';
+    }
+
+    if (skipScreenSwitch) { _doShowScreen('menu_origin_screen'); } else { _showScreen('menu_origin_screen'); }
   }
 
   // ── Shared run card renderer ───────────────────────────────────────────────
@@ -1271,6 +1278,18 @@ var Menu = (function () {
 
     document.getElementById('menu_origin_begin').addEventListener('click', function () {
       if (_selectedOrigin) _doNewGame(_selectedOrigin);
+    });
+
+    document.getElementById('menu_origin_reroll').addEventListener('click', function () {
+      if (parseInt(savedCoins) < 1) return;
+      savedCoins--;
+      localStorage.setItem('coins', parseInt(savedCoins));
+      AchievementManager.check('transmute');
+      try { localStorage.removeItem('originRoll'); } catch(e) {}
+      menuFade(function () {
+        _selectedOrigin = null;
+        _renderOriginPicker(true);
+      });
     });
 
     document.getElementById('menu_origin_cancel').addEventListener('click', function () {

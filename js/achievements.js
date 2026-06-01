@@ -6,6 +6,7 @@ var AchievementManager = (function () {
     { id: 'all_achievements',    emoji: '🏆', desc: "Completed ALL available memories!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon™." },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
+    { id: 'transmute_first',     emoji: '🔮', desc: 'Sought a different hand from the fates.', hint: 'Spend a Drachma to Transmute your Origins.', unlock: '' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
@@ -150,7 +151,8 @@ var AchievementManager = (function () {
     letterDitch:         false,
     diedByTrap:          false,
     diedBySleep:         false,
-    killedFishingBoss:   false
+    killedFishingBoss:   false,
+    transmuteFirst:      false
   };
 
   var _unlocked       = {};
@@ -306,6 +308,10 @@ var AchievementManager = (function () {
         _save();
         if (_stats.totalDestinyAccepts === 1)  _unlock('destiny_first');
         if (_stats.totalDestinyAccepts >= 10)  _unlock('destiny_10');
+        break;
+
+      case 'transmute':
+        if (!_stats.transmuteFirst) { _stats.transmuteFirst = true; _save(); _unlock('transmute_first'); }
         break;
 
       case 'buy_item':
