@@ -1,14 +1,22 @@
-# EVOLUTION.md — Loot Choice System + Hardcore Dream Encounter
+# EPICS.md — Major Expansion Plans
 
-**Status:** Planning complete. Partial implementation in place (see "Files Already Changed" below). Ready for a focused implementation session.
-
-**Lineage:** Supersedes and absorbs [LOOT-TEAS] from TODOs.md. LOOT-TEAS proposed veiling the encounter card and snapping it open; this feature delivers a richer version of that same anticipation beat — three choices revealed sequentially, player picks one — and removes the need for LOOT-TEAS as a separate item.
+*7 epics · last updated 2026-06-01*
 
 ---
 
-## Feature 1: Loot Choice System
+## P1 — Active *(design complete, ready to implement)*
 
-### Design Brief (Perseus meeting 2026-05-31)
+### [LOOT-CHCE] Epic: Loot Choice System — 3-item pick overlay on all loot events
+- When a player picks up loot (enemy drops, generator items, fishing catches, shop purchases), a 3-choice overlay appears showing three weighted-random items. Items reveal in auto-sequence animation; the player selects one, and the chosen raw CSV row is pushed via `pushEncounter + nextEncounter`, loading normally through all existing handlers.
+- Design complete as of 2026-05-31 Perseus session. Partial implementation in place (`game-state.js`, `string-generator.js`, `inventory-manager.js`, first-draft `loot-choice.js`). Supersedes and absorbs [LOOT-TEAS].
+- Priority: P1 — design complete, partial implementation in place; ready for a focused implementation session.
+- Type: Epic
+- Effort: L | Gain: XL
+- Prerequisites: none
+
+#### Design Brief
+
+##### Overview (Perseus meeting 2026-05-31)
 
 When a player picks up loot (enemy drops, generator item encounters), instead of receiving one item automatically, a 3-choice overlay appears showing three weighted-random items. The items reveal in an auto-sequence animation. The player selects one and confirms. The others are discarded.
 
@@ -27,7 +35,7 @@ When a player picks up loot (enemy drops, generator item encounters), instead of
 
 ---
 
-### UI Design: Origins-Style Picker
+##### UI Design: Origins-Style Picker
 
 The overlay uses the same pattern as the origins list in `menu.js` (`_renderOriginPicker`). This means:
 
@@ -51,7 +59,7 @@ Check `row[14].split(":").slice(1).join(":").trim()` — badge shows if that val
 
 ---
 
-### Critical Flow Change vs. Earlier Design
+##### Critical Flow Change vs. Earlier Design
 
 **Old plan:** On pick, call `_applyChosenItem(snap)` — a helper that manually loads stats into enemy globals and calls `playerChangeStats()`.
 
@@ -65,7 +73,7 @@ Check `row[14].split(":").slice(1).join(":").trim()` — badge shows if that val
 
 ---
 
-### LootChoiceManager — Revised API
+##### LootChoiceManager — Revised API
 
 `LootChoiceManager.show(rows, context, onPick)`
 - `rows` — array of 3 raw CSV row arrays (not snapshots)
@@ -76,11 +84,11 @@ Check `row[14].split(":").slice(1).join(":").trim()` — badge shows if that val
 
 `_buildCard(row)` (internal) — builds a `menu-history-entry` div from a raw row using origins-style HTML. Reads `row[14]` for the familiar badge. Returns `{el, row, snap}`.
 
-**The current loot-choice.js was written with the old snapshot-based API.** It needs to be rewritten with the row-based API and origins-style HTML. See the "Files Still Needed" section.
+**The current loot-choice.js was written with the old snapshot-based API.** It needs to be rewritten with the row-based API and origins-style HTML before integration. See the "Files Still Needed" section.
 
 ---
 
-### `_currentRawRow` — New Global
+##### `_currentRawRow` — New Global
 
 Because the loot choice needs the current encounter's raw CSV row as one of the three choices, and that row is only available in `loadEncounter()` (not reconstructible from enemy globals), we need to capture it.
 
@@ -98,26 +106,26 @@ The intercept in action-resolver reads `_currentRawRow` as the first choice opti
 
 ---
 
-### Files Already Changed
+##### Files Already Changed
 
 **`js/game-state.js`**
 - `var _lootChoiceContext = 'prop';` — added. Tracks corpse vs prop context for the string pool.
-- `var _currentRawRow = null;` — added. (Done this session.)
+- `var _currentRawRow = null;` — added.
 
 **`js/string-generator.js`**
 - `getLootChoiceLog(context, tier)` — added before `getLootDropLog()`. Two contexts × three rarity tiers × 5 strings each = 30 pool strings. Already complete.
 
 **`js/inventory-manager.js`**
-- `renderItemCard: _itemRowHtml` added to public return. Not strictly needed by the new design (loot-choice.js builds its own HTML inline), but harmless and useful for future callers.
+- `renderItemCard: _itemRowHtml` added to public return. Harmless and useful for future callers.
 
 **`js/loot-choice.js`** (new file, but needs rewrite)
-- Currently written with the old snapshot-based API (`show(items, context, onPick)` where items = snapshots, 3 fixed card IDs). **Must be rewritten** with the row-based API and origins-style HTML before integration. See below.
+- Currently written with the old snapshot-based API (`show(items, context, onPick)` where items = snapshots, 3 fixed card IDs). **Must be rewritten** with the row-based API and origins-style HTML before integration.
 
 ---
 
-### Files Still Needed
+##### Files Still Needed
 
-#### `js/loot-choice.js` — **Full rewrite**
+###### `js/loot-choice.js` — Full rewrite
 
 Discard the current snapshot-based implementation. Write fresh with:
 
@@ -276,7 +284,7 @@ var LootChoiceManager = (function() {
 
 ---
 
-#### `index.md` — 3 additions
+###### `index.md` — 3 additions
 
 **1. HTML overlay** — add after the existing `swap_overlay` div (around line 380):
 ```html
@@ -290,14 +298,14 @@ var LootChoiceManager = (function() {
 </div>
 ```
 
-**2. CSS keyframe** — add inside the existing `<style>` block (search for it in index.md, or add a new one):
+**2. CSS keyframe** — add inside the existing `<style>` block:
 ```css
 @keyframes lootCardReveal {
   from { opacity: 0; transform: translateY(10px) scale(0.97); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 ```
-No `.loot-choice-card` class needed — cards use `menu-history-entry` which already has all hover/selected styles in the compiled CSS.
+No `.loot-choice-card` class needed — cards use `menu-history-entry` which already has all hover/selected styles.
 
 **3. Script tag** — add after `encounter-generator.js` (line 77):
 ```html
@@ -307,7 +315,7 @@ Must load before `action-resolver.js` (line 83). All dependencies (`RarityManage
 
 ---
 
-#### `js/encounter-loader.js` — 1 line
+###### `js/encounter-loader.js` — 1 line
 
 At the very start of `loadEncounter(index, fileLines)`, right after `var row = fileLines[index];`:
 ```js
@@ -316,7 +324,7 @@ _currentRawRow = row;
 
 ---
 
-#### `js/action-resolver.js` — 3 additions
+###### `js/action-resolver.js` — 3 additions
 
 **1. Set `_lootChoiceContext = 'corpse'`** before each `pushEncounter(corpseLoot)` call in `case 'button_grab':` (lines ~1793 and ~1807):
 ```js
@@ -356,37 +364,33 @@ if (!_skipChoice && _currentRawRow) {
 
 The existing slot equip / loot string / `playerChangeStats` code below is untouched — it only runs for items that skip the choice overlay (coins, special emojis).
 
-**No `_applyChosenItem` helper needed** — the `pushEncounter + nextEncounter` pattern handles everything through the normal encounter flow.
+**No `_applyChosenItem` helper needed** — `pushEncounter + nextEncounter` handles everything through the normal encounter flow.
 
 ---
 
----
+##### Additional Loot Choice Triggers
 
-### Additional Loot Choice Triggers
+###### Fishing Trigger
 
-#### Fishing Trigger
+Fishing is included. The overlay appears when the player grabs a fishing catch. The two alternate rows use `getWeightedLootIndex(playerLck, playerKarma)` to pull from `linesLoot`. The chosen row is pushed via `pushEncounter(chosenRow); nextEncounter();` — the fish still loads normally as an encounter, preserving all existing fishing item handling.
 
-Fishing is now included. The overlay appears when the player grabs a fishing catch. The two alternate rows use `getWeightedLootIndex(playerLck, playerKarma)` to pull from `linesLoot` (the fishing-specific pool from `encounters.csv` area=Fishing rows). The chosen row is pushed via `pushEncounter(chosenRow); nextEncounter();` — the fish still loads normally as an encounter, preserving all existing fishing item handling (fishing stats, fishingRested flag, etc.).
+Context string: `'prop'` (environmental find, not a body).
 
-Context string: `'prop'` (same as generator items — fishing is an environmental find, not a body).
+**No changes needed to `getRandomFish()` or `game-loop.js` fishing flow.** The intercept in `action-resolver.js` already fires on any `case "Item"` Grab regardless of `isFishing`.
 
-**No changes needed to `getRandomFish()` or `game-loop.js` fishing flow.** The intercept in `action-resolver.js` already fires on any `case "Item"` Grab regardless of `isFishing`. The only change is removing `isFishing` from the `_skipChoice` guard and generating alternates from `linesLoot` instead of `generateRandomItem()`.
+###### Shade Shop Trigger
 
-#### Shade Shop Trigger
+When the player buys an item or artifact from the drachma shop, instead of receiving a single randomly selected item, the 3-choice overlay appears with three weighted-random shop stock options.
 
-When the player buys an item or artifact from the drachma shop (the Undertaker Shade), instead of receiving a single randomly selected item, the 3-choice overlay appears with three weighted-random shop stock options.
+Implementation in `encounter-loader.js` → `drachmaeBuy()`: instead of directly calling `pushEncounter(row); nextEncounter();` for an item purchase, collect 3 candidate rows and call `LootChoiceManager.show(rows, 'prop', function(chosenRow) { pushEncounter(chosenRow); nextEncounter(); })`.
 
-Implementation in `encounter-loader.js` → `drachmaeBuy()` (or wherever the shop item row is resolved): instead of directly calling `pushEncounter(row); nextEncounter();` for an item purchase, collect 3 candidate rows and call `LootChoiceManager.show(rows, 'prop', function(chosenRow) { pushEncounter(chosenRow); nextEncounter(); })`.
+The two additional rows via `getWeightedEncounter(["Item", "Item-head", "Item-chest", "Item-weapon", "Item-legs", "Item-trinket"])`. Context string: `'prop'`.
 
-The two additional rows should be generated via `getWeightedEncounter(["Item", "Item-head", "Item-chest", "Item-weapon", "Item-legs", "Item-trinket"])` to match shop stock quality.
+**Note:** v2 scope — get the base loot overlay working first.
 
-Context string: `'prop'`.
+###### Friend Quest Reward Trigger
 
-**Note:** Coins/drachma purchases remain unchanged — only item/artifact shop choices use the overlay. Exactly how shop stock is assembled (which types are valid, whether consumables appear) is a scoping call for implementation day. This is v2 scope — get the base loot overlay working first.
-
-#### Friend Quest Reward Trigger
-
-When the player successfully Speaks to a Friend who wants a specific item (quest items listed in the `type` field, `/`-separated), the existing reward path at `action-resolver.js` line ~2920 fires:
+When the player successfully Speaks to a Friend who wants a specific item, the existing reward path at `action-resolver.js` line ~2920 fires:
 
 ```js
 pushEncounter(getRandomEncounter(["Item"],["Artifact"]));  // ← single artifact, replace with 3-choice
@@ -405,23 +409,28 @@ LootChoiceManager.show([_qa, _qb, _qc].filter(Boolean), 'prop', function(chosenR
 
 **Critical:** the XP gain and stat changes (`playerGainXP`, `playerChangeStats`) at lines 2925-2936 must run **before** calling `LootChoiceManager.show()` and then `break` — the overlay is async and those lines would never execute if placed after `show()`. Restructure the qualifying block so reward stats fire first, then the overlay, then `break`.
 
-Context string: `'prop'` (receiving a gift, not looting a body).
+Quest item removal and achievement check also run before `show()`.
 
-The quest item removal (`playerLootString = playerLootString.replace(heldQuestItem, "")`) and achievement check (`AchievementManager.check('quest_complete')`) also run before `show()`.
+Context string: `'prop'`.
 
 ---
 
-### Architecture Notes
+##### Architecture Notes
 
-- `pushEncounter` inserts at `encounterIndex + 1` — LIFO. Last pushed = first encountered. The intercept pushes the chosen row as the next encounter; nextEncounter() loads it. The player gets a fresh encounter interaction (Grab to equip/take, etc.).
-- `_currentRawRow` survives from `loadEncounter()` call to the Grab handler because no encounter transition happens between them — the player is still on the same encounter.
-- The shuffle in `show()` ensures the current-encounter item doesn't always appear first, preserving the slot-machine feel even for the "known" item.
+- `pushEncounter` inserts at `encounterIndex + 1` — LIFO. The intercept pushes the chosen row as the next encounter; `nextEncounter()` loads it. The player gets a fresh encounter interaction.
+- `_currentRawRow` survives from `loadEncounter()` to the Grab handler because no encounter transition happens between them.
+- The shuffle in `show()` ensures the current-encounter item doesn't always appear first.
 - If the chosen item has a slot conflict, `loadEncounter()` will show the slot-diff log on load, and the player's subsequent Grab will trigger the normal `InventoryManager.tryEquip()` swap dialog. Two interactions in sequence — expected and correct.
 - `generateRandomItem()` excludes Artifacts, Lover's Memento, Piece of History, Lost Possession. Good defaults.
 
----
+##### What Was NOT Changed (intentional scope)
 
-### Testing Checklist
+- The swap dialog (`showSwapDialog`) - unchanged; still shows on slot conflict after chosen item loads
+- `generateRandomItem()` - unchanged; used as-is for item/corpse loot alternate choices
+- `getRandomFish()` / `game-loop.js` fishing flow - unchanged; the intercept fires on Grab in action-resolver, not in the fish generation path
+- Consumables in choice pool - deferred; architecture supports it, not in v1 scope
+
+##### Testing Checklist
 
 - [ ] Generator Item encounter → Grab → 3-choice overlay appears with origins-style cards
 - [ ] All 3 cards reveal sequentially (80ms, 390ms, 700ms)
@@ -442,142 +451,154 @@ The quest item removal (`playerLootString = playerLootString.replace(heldQuestIt
 
 ---
 
-## Feature 2: Hardcore Pre-Boss Dream Sequence
+## P2 — Planned *(concept clear, design session needed)*
 
-### Design Brief
+### [SPELL-SYS] Epic: Spell System — scrolls, overlay, MGK-gated cast actions
+- Replace the Curse button with a generic Spell button. Players start knowing no spells; 📜 Spell Scrolls are found as encounters. Casting costs 3 MGK; opens a scrollable spell list overlay; action bar check resolves the outcome. Crit fail applies the spell to self.
+- Priority: P2 — concept is clear; full Hades Gate design session required before any implementation begins.
+- Type: Epic
+- Effort: XL | Gain: XL
+- Prerequisites: none
 
-On Hardcore difficulty only, inject a two-beat Dream sequence immediately before the final boss in Shrouded Necropolis. The sequence completely replaces the boss fight — the player never reaches Rosabel.
+#### Design Brief
 
-**Beat 1 — Lucid Descent `💭`:** The lore reveal. The corrupted world was never real — the player dreamed it into being. This explains reincarnation, loot agency, everything. Continue/Walk advances to Beat 2.
+##### Overview
 
-**Beat 2 — Curse Lifted `✨`:** The awakening. The spell breaks. Walking out triggers `gameEnd()` with a special `win_dream` endType — a full win, complete with score submission and the stack overflow screen. The boss encounter queued behind these two is never loaded.
+Replace the Curse button with a generic "📓 Spell" button. Players start knowing no spells. On click with no spells known, log: "Cannot cast any spells ...yet?"
 
-**Tone:** Game voice. Spare. One revelation, then the door opens.
+**Learning spells:** 📜 Spell Scrolls are found as encounters (add a sample row to story.csv right after the debug comment). On seeing a Scroll, the Speak button becomes "🧠 Learn" — success chance based on INT; on fail: "Could not comprehend" (no second chance). Each scroll rolls which spell it contains from the pool of currently unknown spells only.
 
----
+**Casting:** Costs 3 MGK. Opens a scrollable spell list overlay on click (max height = action buttons). Selecting a spell starts an action bar check. Crit success costs -1 MGK extra. Crit fail applies the spell to self (special cases: Harden = deplete all STA; Syphon = just hurt yourself).
 
-### Encounter Rows (hardcode in `js/game-state.js`)
+**Basic spells:**
+- 🐸 Hex - Change enemy to harmless 1/1 frog
+- 🔥 Burn - Deal 4 damage
+- 🧊 Freeze - Deplete enemy stamina
+- ⚡️ Surge - Restore own stamina to full
+- 🪬 Curse - Lower enemy attack by 3
+- 🪨 Harden - 2 physical damage protection for the rest of the fight
+- 🩸 Syphon - Damage enemy for 2, then again for 2
 
-```js
-var hardcoreDreamReveal = [
-  "area:Shrouded Necropolis",
-  "emoji:💭",
-  "name:Lucid Descent",
-  "type:Dream",
-  "hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0",
-  "note:Lore",
-  "desc:The corruption was never real. You dreamed it into being.<br>That is why you return. The dreamer does not die.",
-  "message:The spell broke the moment you understood.",
-  "achiev:none"
-];
-
-var hardcoreDreamWake = [
-  "area:Shrouded Necropolis",
-  "emoji:✨",
-  "name:Curse Lifted",
-  "type:Dream",
-  "hp:0","atk:0","sta:0","lck:0","int:0","mgk:0","def:0",
-  "note:Lore|HardcoreWin",
-  "desc:The fog falls away. The necropolis is empty.<br>You have been standing here a long time.",
-  "message:Walked out of the dream. Left the dead behind.",
-  "achiev:none"
-];
-```
-
-The `HardcoreWin` tag in the note field is how the Walk handler detects this specific dream and triggers the win path instead of `nextEncounter()`.
+**Scope:** XL effort. Design via Hades Gate before any implementation.
 
 ---
 
-### Implementation
+### [KARMA-OVR] Epic: Karma Overhaul — full run-shaping system with tiered mechanical effects
+- Karma as a full run-shaping force: tiered revive intervals, speak/attack-based gain/loss, cross-run decay, mischievous variants at negative karma, perks/flaws at ±10 thresholds, bonus encounters for good karma, proactive repair actions for recovery.
+- Must not ship incomplete — a half-implemented karma system is worse than the current one. Hint system required before mechanic expansions so players can see implications before actions lock them in.
+- Priority: P2 — concept is clear; Hades Gate session needed; hint/transparency UI is a hard prerequisite before most mechanical expansions.
+- Type: Epic
+- Effort: XL | Gain: XL
+- Prerequisites: karma hint/transparency UI (not yet in backlog — add before starting)
 
-#### `js/game-state.js`
-Add both rows near the other hardcoded rows (`soulbindingArch`, `drachmaShop`, etc.).
+#### Design Brief
 
-#### `js/encounter-generator.js` — `case 9: // Boss`
-After `pushEncounter(getRandomEncounter(allBosses))`, add:
+##### Design Points
 
-```js
-// Hardcore-only: two-beat dream sequence in Shrouded Necropolis
-// LIFO: boss pushed first (+1), then wake (+1→boss to +2), then reveal (+1→wake to +2→boss to +3)
-// Player encounters: reveal → wake → (boss never reached if win triggered)
-if (areaName.includes("Shrouded") && GAME_CONFIG.label === 'Hardcore') {
-  pushEncounter(hardcoreDreamWake);
-  pushEncounter(hardcoreDreamReveal);
-}
-```
+- Revive interval scaled by karma level
+- Speak on aggressive enemies = +1 karma; Attack on neutral/friendly = -2 karma
+- Karma decays toward neutral (1) across runs
+- Tiered reincarnation bonus (not flat — see [KARMA-SCALE] in TODOs for the short-term fix)
+- Mischievous encounter variants when karma < 0
+- Perks and flaws unlock at ±10 karma thresholds
+- Good karma triggers a bonus encounter (not only on revive)
+- Proactive repair actions for negative karma recovery
 
-**LIFO push order matters:** Push boss first, then wake, then reveal — each new push goes to +1, displacing the rest. Final queue: reveal at +1, wake at +2, boss at +3. Player encounters reveal → wake → (win fires, boss never loads).
-
-#### `js/action-resolver.js` — Dream Walk handler
-Locate the existing `case "Dream":` Walk handler. It currently logs `enemyMsg` and calls `nextEncounter()`. Add a check for the `HardcoreWin` note before that:
-
-```js
-case "Dream":
-  // button_walk
-  if (enemyType === "Dream") {
-    if ((enemyNoteRaw || '').includes('HardcoreWin')) {
-      // Hardcore dream win path — skip boss, award win
-      logPlayerAction(actionString, enemyMsg);
-      adventureEndReason = "dream";
-      gameEnd('win_dream');
-      break;
-    }
-    logPlayerAction(actionString, enemyMsg);
-    nextEncounter();
-    break;
-  }
-```
-
-Note: `enemyNoteRaw` needs to be the note field before `RarityManager.stripTagFromNote()` strips the bracket tags, OR check `enemyType === "Dream" && enemyName === "Curse Lifted"` as a simpler alternative. Either works; the name check is more robust against future note field changes.
-
-#### `js/score-manager.js` — New endType
-Add `win_dream` to `ScoreManager.getEndingLabel()`:
-```js
-case 'win_dream': return 'Woke Up';
-```
-The `win_` prefix means it automatically gets the +100 win bonus in the score formula (existing `endType.startsWith('win_')` check). No other score changes needed.
-
-#### `js/achievements.js` — Hardcore win achievement
-Add a new achievement ID (e.g. `hardcore_dream`). Unlock it in `_doGameEnd()` when `endType === 'win_dream'`:
-```js
-if (endType === 'win_dream') {
-  AchievementManager.unlock('hardcore_dream');
-}
-```
-
-Define the achievement entry in `achievements.js` with appropriate display name and icon. Suggested:
-- ID: `hardcore_dream`
-- Name: "The Dreamer"
-- Desc: "Woke up. Left the dream. Won Hardcore without the final fight."
-
-#### `js/save-manager.js`
-No changes needed. `win_dream` flows through `gameEnd()` → `_doGameEnd()` → `ScoreManager.submitOrPrompt()` exactly like all other win endTypes. The score dialog and stack overflow screen appear as normal.
+**Hint system required first:** Players must be able to see karma implications before actions lock them in. Hints and karma UI must ship before most mechanic expansions.
 
 ---
 
-### Testing Checklist
+### [INV-XPND] Epic: Inventory Expansion — consumables array, additional equipment slots
+- Major architecture expansion: consumables array (separate from the loot emoji string), head/chest/hands item slots with swap mechanic, intentional food eating only (no auto-consume on pickup), open inventory by clicking the loot/party bar.
+- Priority: P2 — concept is clear; full design via Hades Gate before implementation; enables [ORIG-ITEMS] and [INV-ITEMS] as downstream features.
+- Type: Epic
+- Effort: XL | Gain: L
+- Prerequisites: none (enables [ORIG-ITEMS], [INV-ITEMS])
 
-- [ ] Standard/Easy difficulty: no dream sequence before final boss, boss loads normally
-- [ ] Hardcore: `💭 Lucid Descent` appears as first dream before the boss
-- [ ] Walk on Lucid Descent → logs message → `✨ Curse Lifted` loads as next encounter
-- [ ] Walk on Curse Lifted → logs message → score dialog appears (win flow, not boss fight)
-- [ ] Score screen shows endType `win_dream` → label "Woke Up"
-- [ ] Win bonus (+100) applied to score
-- [ ] Achievement `hardcore_dream` ("The Dreamer") unlocks on win
-- [ ] Hardcore boss encounter never loads after the wake (queue discarded by gameEnd)
-- [ ] Other actions on either dream follow existing Dream handling in action-resolver.js
+#### Design Brief
 
----
+##### Design Points
 
-## What Was NOT Changed (intentional)
+- Consumables array (separate from the loot emoji string)
+- head/chest/hands item slots with swap mechanic (prevents fast stacking)
+- Intentional food eating only — no auto-consume on pickup
+- Open inventory by clicking the loot/party bar
 
-- The swap dialog (`showSwapDialog`) — unchanged; still shows on slot conflict after chosen item loads
-- `generateRandomItem()` — unchanged; used as-is for item/corpse loot alternate choices
-- `getRandomFish()` / `game-loop.js` fishing flow — unchanged; the intercept fires on Grab in action-resolver, not in the fish generation path
-- Consumables in choice pool — deferred; architecture supports it, not in v1 scope
-- Standard, Easy, Normal difficulty — no dream sequence before final boss
-- Bride endings (9 paths via `resolveEnding()`) — unchanged; Hardcore dream win skips them entirely, not replaces them
+**Connected work:** Enables [ORIG-ITEMS] (origins with starting items), [INV-ITEMS] (new items for new slots), and any future crafting or trading systems.
 
 ---
 
-*Written 2026-06-01. Features: Loot Choice System (absorbs [LOOT-TEAS]) + Hardcore Dream Win Sequence. This is the first post-beta release patch.*
+## P3 — Long-term Vision
+
+### [PET-SLOT] Epic: Structured Pet System — named pets with personality-driven contextual barks
+- Replace emoji-string pet tracking with a structured object: `{name, type, stats, personality}`. Enables named pets (Kerberos, etc.), personality-driven bark pools per type+personality pairing, per-pet stat contributions, and deep contextual reactions to enemy types, areas, traps, and boss proximity.
+- Priority: P3 — compelling long-term vision; gated on [PET-ENCNTR] shipping and validating in beta first.
+- Type: Epic
+- Effort: XL | Gain: XL
+- Prerequisites: [PET-ENCNTR] shipped and validated in beta
+
+#### Design Brief
+
+##### Design Points
+
+Replace emoji-string pet tracking with a structured object: `{name, type, stats, personality}`.
+
+Each type + personality pairing (cat+playful, dog+loyal, lizard+cold, bird+curious, etc.) gets its own bark pool with contextual reactions to enemy types, areas, traps, and boss proximity.
+
+**Deep contextual tier:** Pet "sees" the run's story structure and generators; warns intelligently about danger types ahead, not just "boss is next."
+
+**Named pets:** Kerberos for dogs, etc. Name maps persist between bark firings so the same pet has the same name throughout a run.
+
+---
+
+### [COMP-STAK] Epic: Companion Narrative Stakes — individuation, steal/kill mechanic, rescue arc
+- Give companions a story arc, not just a trophy slot. Three pillars: a logged "named moment" when a companion joins (individuation); enemies that can steal or kill companions; a follow-up rescue/revenge encounter when a companion is taken.
+- **Hard rule:** Do NOT implement steal/kill until individuation is in. Loss only lands after attachment is built.
+- Priority: P3 — long-term vision; requires [COMP-PLAY] confirmed shipped and companions proven in beta.
+- Type: Epic
+- Effort: XL | Gain: XL
+- Prerequisites: [COMP-PLAY] assumed shipped (not in backlog — verify); companions proven stable in beta
+
+#### Design Brief
+
+##### Three Pillars
+
+**Individuation:** A logged "named moment" when a companion joins — one line that establishes who they are to the player before they can be lost.
+
+**Steal/kill mechanic:** Enemies can target and take or kill companions. Must feel like a real loss, not a stat penalty.
+
+**Rescue/revenge fight:** A follow-up encounter when a companion is taken — the player can pursue.
+
+**Hard prerequisite:** Do NOT implement steal/kill until individuation is in. Loss only lands after attachment is built.
+
+---
+
+## P4 — Speculative / Shelved
+
+### [PATH-CHCE] Epic: Branching Encounter Paths — pre-generated two-path crossroads choices
+- At one or more crossroads per run, present two pre-generated paths forward as a genuine lock-in choice. Both paths must be pre-resolved before the choice screen appears. Companion type determines what hint is surfaced (dog barks at danger, cat paws toward loot, lone player is blind).
+- Priority: P4 — blocked on multiple unshipped prerequisites; the dog's warning is what makes the crossroads matter and requires [PET-ENCNTR] to already be proven.
+- Type: Epic
+- Effort: L | Gain: XL
+- Prerequisites: [ENC-PREGEN] stable, [PET-ENCNTR] shipped, [COMP-PLAY] confirmed shipped
+
+#### Design Brief
+
+##### Design Points
+
+At one or more crossroads moments per run, present two pre-generated paths forward — a genuine lock-in choice. Both paths must be pre-resolved before the choice screen appears.
+
+**Path shapes:** High-danger/high-reward vs. safe/low-reward. The exact design space is open; details via Hades Gate.
+
+**Companion intel:** Companion type determines what hint is surfaced before the choice:
+- 🐶 Dog barks at the dangerous branch
+- 🐱 Cat paws toward the high-loot one
+- Lone player: blind choice, no hint
+
+The dog's warning (from [PET-ENCNTR]) is what makes the crossroads matter — it becomes a test of trust in your companion.
+
+**Prerequisites:** [ENC-PREGEN] stable, [PET-ENCNTR] shipped. Full design via Hades Gate before implementation.
+
+---
+
+*EPICS.md — 7 epics*
