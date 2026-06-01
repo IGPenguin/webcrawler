@@ -31,7 +31,7 @@ This project is licensed under the **PolyForm Noncommercial License 1.0.0**.<br>
 It allows personal non-commercial use, modification, and distribution, but **strictly prohibits any commercial use** (using the software for profit) without the author's permission. See [LICENSE.md](LICENSE.md) for the full text, reach out trough [LinkedIn](https://www.linkedin.com/in/igpenguin/) or [Issues](https://github.com/IGPenguin/stay-dead/issues) to coordinate collaboration or ask licensing questions.
 
 ---
-<br>
+
 <sup>⭐️ <strong>Click the <u>GitHub star</u> button to express support make me very happy!</strong><br></sup>
 <sup>🔥 Check out my custom tools: [perseus-blade](https://github.com/IGPenguin/perseus-blade), [hades-gate](https://github.com/IGPenguin/hades-gate), [styx-flow](https://github.com/IGPenguin/styx-flow), [medusa-gaze](https://github.com/IGPenguin/medusa-gaze)<br></sup>
 <sup>📱 Or my app-dev project: [mobile-toolkit](https://github.com/IGPenguin/mobile-toolkit)<br></sup>
