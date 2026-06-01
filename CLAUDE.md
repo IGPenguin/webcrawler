@@ -7,8 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Local Development
 
 ```bash
-bash deploy.sh        # installs gems, kills port 4000, serves, opens browser
-bash version.sh       # stamps current timestamp into versionCode in js/constants.js
+bash scripts/deploy.sh        # installs gems, kills port 4000, serves, opens browser
+bash scripts/version.sh       # stamps current timestamp into versionCode in js/constants.js
 ```
 
 No build tools, no npm. Pure vanilla JavaScript served by Jekyll.
@@ -118,7 +118,7 @@ Scores are submitted to a Google Form (fire-and-forget `fetch` with `mode: 'no-c
 
 **Pipeline**: `.github/workflows/rankings.yml` runs every 30 min (and on `workflow_dispatch`). Pulls the Google Sheet CSV, verifies SHA-256 HMACs, filters profanity, dedupes, sorts by score, writes `highscores.json` to the `rankings` branch. Only active after merging to `live` (GitHub requires the workflow file on the default branch).
 
-**Local testing before merge**: `bash update-rankings.sh` (gitignored — contains `LEADERBOARD_SALT` and `SHEET_CSV_URL` secrets). Runs the same Python pipeline locally and pushes the result to the `rankings` branch.
+**Local testing before merge**: `bash scripts/update-rankings.sh` (gitignored — contains `LEADERBOARD_SALT` and `SHEET_CSV_URL` secrets). Runs the same Python pipeline locally and pushes the result to the `rankings` branch.
 
 ### Rivals & World Echoes
 
@@ -165,18 +165,18 @@ Rarity is **calculated** from stats — never stored in a CSV column — unless 
 
 ## Automated Tests
 
-**Local scripts** (run from repo root, Jekyll must be serving on port 4000 — `bash deploy.sh` first):
+**Local scripts** (in `scripts/`, callable from anywhere — Jekyll must be serving on port 4000 — `bash scripts/deploy.sh` first):
 
 | Script | What it runs |
 |--------|-------------|
-| `bash test-all.sh` | All three Playwright specs (boot, encounters, rarity) |
-| `bash test-boot.sh` | Boot spec only |
-| `bash test-rarity.sh` | Rarity spec only |
-| `bash test-types.sh` | Types spec only |
-| `bash validate-all.sh` | All static validators (JS syntax, CSV, HTML) |
-| `bash validate-csv.sh` | CSV field counts, emoji, stat values, text lengths |
-| `bash validate-html.sh` | HTML tag balance, unclosed brackets, duplicate IDs |
-| `bash validate-js.sh` | JS syntax check (`node --check`) |
+| `bash scripts/test-all.sh` | All three Playwright specs (boot, encounters, rarity) |
+| `bash scripts/test-boot.sh` | Boot spec only |
+| `bash scripts/test-rarity.sh` | Rarity spec only |
+| `bash scripts/test-types.sh` | Types spec only |
+| `bash scripts/validate-all.sh` | All static validators (JS syntax, CSV, HTML) |
+| `bash scripts/validate-csv.sh` | CSV field counts, emoji, stat values, text lengths |
+| `bash scripts/validate-html.sh` | HTML tag balance, unclosed brackets, duplicate IDs |
+| `bash scripts/validate-js.sh` | JS syntax check (`node --check`) |
 
 Playwright config targets a mobile viewport (iPhone 14 Pro, 393×852) and reuses an existing server on port 4000 when not in CI.
 
