@@ -1,10 +1,20 @@
-# Styx Flow — 2026-05-21 — Stay Dead
+# Styx Flow — 2026-06-01 — Stay Dead
 
-*124 items · 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
+*~149 items · 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
 ## SPRINT — Creative Polish Day *(one man, one day — max fun, max hook)*
+
+### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
+- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
+- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
+- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
+- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
+- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
+- Type: Improvement
+- Effort: M | Gain: L
+- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
 
 ---
 
@@ -26,32 +36,33 @@
 
 ## P2 — Release-Gating
 
-### [UNDEAD-MGK] Bug: MGK on non-caster undead incorrectly triggers near-impossible block condition
+### [UNDEAD-MGK] Bug: MGK on non-caster enemies incorrectly triggers near-impossible block condition
 - Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
 - Audit `encounters.csv` and `story.csv` for all Undead-type rows; remove MGK from non-caster undead (zombies, revenants, etc.); keep MGK only on actual caster subtypes (liches, banshees, wraiths — rows where spells are the intended threat).
+- Extend audit to ALL non-caster enemy types — any Standard warrior, beast, or physical boss carrying MGK > 0 silently makes block near-impossible; the fix is not limited to the Undead type.
 - Priority: P2 — live balance bug on late-game enemies; blocking an undead horde should be physically hard but possible, not mechanically near-impossible.
 - Type: Bug | Severity: Major
 - Effort: S | Gain: L
 
-### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
-- Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.
-- iOS WebKit (Chrome/Safari on iPhone) has a known scroll-height doubling bug when `zoom` is applied to `<body>` — the scrollable area becomes 2× the content height, showing a grey blank region below.
-- Root fix: `overflow:hidden` on body kills legitimate menu scroll on short screens. Proper fix likely needs `html { overflow:hidden; height:100% }` + `body { overflow-y:auto; height:100% }` to confine scroll to body as its own container, or replacing `zoom` with `transform:scale` on a wrapper div.
-- Priority: P2 — visually breaks the page and is jarring on mobile; intermittent but reproducible.
+### [FRIEND-MIN] Bug: Friend encounter pool error — areas missing minimum no-quest friends
+- Fairyland (and possibly other areas) errors when the generator tries to pull a friend-type encounter from a pool that is empty or too thin.
+- Add at least 3 no-quest friend encounter rows to every area — fairyland is the most critical gap; "no-quest friends" = friend encounters that resolve without a required quest item, serving as the generator's fallback.
+- Priority: P2 — runtime error in encounter generation; thin pools can cause silent failures during beta.
 - Type: Bug | Severity: Major
-- Effort: M | Gain: M
+- Effort: S | Gain: L
+
+### [COMP-PARTY] Bug: "Party of Three" achievement fires on total companions gained, not current count
+- Achievement should trigger when the player simultaneously holds 3+ companions in `playerPartyString`, not when 3 have been gained cumulatively over a run.
+- Fix the check in `achievements.js` to evaluate `[...playerPartyString].length >= 3` at the moment a companion joins, not a cumulative counter.
+- Priority: P2 — misfiring achievement gives the wrong signal; players will notice if it triggers after companions have been lost.
+- Type: Bug | Severity: Major
+- Effort: XS | Gain: M
 
 ### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
 - Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
-- Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it
+- Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it.
 - Type: Feature
 - Effort: L | Gain: L
-
-### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
-- Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
-- Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system
-- Type: Improvement
-- Effort: M | Gain: L
 
 ### [PET-ENCNTR] Feature: Pet interaction encounter spawns — companion-triggered CSV encounters
 - If a pet emoji is in `playerPartyString`, enable a pool of pet-specific encounter rows to spawn in that area — purely an emoji `includes()` check, no new state objects.
@@ -64,14 +75,93 @@
 - Effort: S | Gain: L
 - Needs: Write encounter CSV rows per pet type (dog belly rub, nuisance, boss-warning). Boss-warning variant gates on [ENC-PREGEN]. Long-term bark pool vision: see [PET-SLOT].
 
+### [CHEAT-SUBM] Feature: Disable score submit button if `cheatedThisRun` is true
+- When `cheatedThisRun` is set, render the score submission button as visually disabled (grayed out, non-interactive) rather than silently blocking on click.
+- Implement in `score-manager.js` or `ui-render.js`: check `cheatedThisRun` when rendering the nickname/submit overlay; apply `disabled` attribute and a muted visual style to the submit button.
+- Priority: P2 — current silent block is confusing for beta testers; clear feedback prevents repeated confused attempts.
+- Type: Feature
+- Effort: XS | Gain: M
+
+### [ITCH-WRPR] Feature: itch.io game wrapper and manual upload GitHub Action
+- Create an itch.io-compatible static build (HTML wrapper embedding or framing the game) and a `workflow_dispatch`-only GitHub Action that packages the build and uploads via the Butler CLI.
+- The action must never trigger automatically on push; itch.io release is always a deliberate manual step.
+- Priority: P2 — itch.io is the primary non-GitHub discovery channel; needed before public beta launch.
+- Type: Feature
+- Effort: M | Gain: L
+
+### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
+- Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
+- Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system.
+- Type: Improvement
+- Effort: M | Gain: L
+
+### [BOSS-TOUGH] Improvement: Toughen the final boss — raise stats or add combat mechanics
+- The final boss in Shrouded Necropolis feels undertuned relative to the encounter difficulty leading up to it.
+- Audit the boss pool (`encounters.csv`, note filter `Forgotten Love`); raise HP/ATK/DEF on boss variants; optionally add a special mechanic via `enemy-skills.js`.
+- Priority: P2 — a weak final boss deflates the ending climax; critical for beta first impressions.
+- Type: Improvement
+- Effort: S | Gain: L
+
+### [AREA-STATS] Improvement: Rebalance River and Necropolis enemy/item stats
+- River and Necropolis enemies and items need a stat calibration pass — confirm ranges match area difficulty relative to Forsaken Village and Fairyland.
+- Check stat ranges against CONTENT.md area calibration tables; flag any enemy or item row that is an outlier for its area and rarity tier.
+- Priority: P2 — late-game stat imbalance breaks difficulty curve; veterans will notice immediately.
+- Type: Improvement
+- Effort: M | Gain: L
+
 ### [BARK-CTX] Improvement: Contextual companion barks — split bark pools by encounter type
 - Refactor the bark system in `companion-manager.js` to fire different bark pools based on the current encounter context instead of generic barks regardless of situation.
 - Trigger mapping: negative trap/curse encounter → warn barks; neutral prop → standard barks; boss proximity → alert barks; positive encounter (passive mob, altar, friend) → wonder/curiosity barks; etc.
 - Flagged in multiple reviews as the single biggest gap in companion feel — generic barks break immersion and undercut the "companions as relationships" design principle in DESIGN.md.
-- Related items: [COMP-PLAY] (companion passives, SPRINT), [PET-ENCNTR] (companion encounter rows, P2); bark context is what makes both of those land emotionally.
+- Related items: [PET-ENCNTR] (companion encounter rows, P2); bark context is what makes both of those land emotionally.
 - Priority: P2 — multi-review flag; contextual firing is the difference between a companion that *reads* the world and one that just makes noise.
 - Type: Improvement
 - Effort: S | Gain: L
+
+### [CHEAT-TIPS] Improvement: Revise cheat hints — show only soft cheats, remove full unlocks
+- Audit the current cheat tip list and remove any hint that grants achievements or bypasses run progression; keep only soft/QoL cheats (stat resets, debug flags, test helpers).
+- Priority: P2 — full unlock hints undercut the achievement system before beta testers reach those milestones naturally.
+- Type: Improvement
+- Effort: XS | Gain: M
+
+### [VALID-ERR] Chore: Resolve all static validation errors before beta release
+- Run `bash validate-all.sh` (JS syntax, CSV format field counts/stats, HTML structure) and fix every reported error until the suite passes clean.
+- Priority: P2 — CI validates on push to `live`; any remaining error blocks the release pipeline.
+- Type: Chore
+- Effort: S | Gain: L
+
+### [VER-BUMP] Chore: Bump version and write beta launch changelog
+- Run `bash version.sh` to stamp the current timestamp; update `version.md` with a "Welcome to Beta" header and a summary of what beta means — goals, known issues, what's next.
+- Priority: P2 — version marker and changelog are the first thing returning players see; sets expectations for beta testers.
+- Type: Chore
+- Effort: XS | Gain: M
+
+### [PR-SUMRY] Chore: Update PR description — add beta intro sentence and 🚀/🏁 flag
+- Prepend the sentence "This is in fact making this project an actual game..." (or equivalent beta milestone framing) to the PR body; add 🚀 or 🏁 to the PR title or summary line.
+- Priority: P2 — PR description is the first thing collaborators see; beta milestone deserves distinct framing.
+- Type: Chore
+- Effort: XS | Gain: S
+
+### [CRED-TEST] Chore: Verify rolling credits sequence on a real playthrough
+- Manually reach a win ending and confirm rolling credits trigger correctly, display without errors, and don't block ending resolution or score submission.
+- Rolling credits were implemented 05/24/26 ("🎬 Added rolling credits after final boss"); needs first-pass live validation.
+- Priority: P2 — newly implemented path on the win route; breakage would mar the beta ending experience.
+- Type: Chore
+- Effort: XS | Gain: L
+
+### [TEST-RUNS] Chore: End-to-end test passes — finish twice, verify NG+ behavior, test on Android
+- Complete at least two full runs to any ending on desktop; verify NG+ behavior (story beat replacement in Necropolis, chronicle persistence, score reset).
+- Complete at least one full run on Android to surface mobile-specific rendering or logic bugs before beta.
+- Includes: verify that dream encounters in Necropolis are correctly suppressed/replaced after the first completion — HIDE-DRM check, likely implemented 05/24/26 "Replace Necropolis story beats on NG+"; confirm live behavior.
+- Priority: P2 — untested platform behavior on Android is high-risk for beta; NG+ path is newly wired and unverified.
+- Type: Chore
+- Effort: M | Gain: L
+
+### [PERS-REVW] Chore: Perseus review of public-facing docs and itch.io page
+- Run `/perseus` on the public README, itch.io description, and any player-facing documentation for tone, first-impression quality, and missing info for new players.
+- Priority: P2 — public-facing text sets expectations before a player ever loads the game; beta launch is the right time to fix tone mismatches.
+- Type: Chore
+- Effort: S | Gain: M
 
 ---
 
@@ -95,13 +185,6 @@
 - Slot naturally into the existing rarity system; net stat formula already handles multi-stat items.
 - Priority: P3 — build variety; currently no items bridge ATK and MGK for hybrid combat/magic builds
 - Type: Feature
-- Effort: S | Gain: M
-
-### [HIDE-DRM] Improvement: Hide Necropolis dream encounters after the player has completed a run
-- Dream encounters in Shrouded Necropolis reveal lore/realizations about the player's past. Once a player has reached an ending, replaying through the dream sequence breaks immersion.
-- Suppress the "Deam" encounters after the first game completion - remove from story lines if game previously completed.
-- Priority: P3 — repeat-run immersion; veterans replaying for new endings don't need to re-live the tutorial revelation every time
-- Type: Improvement
 - Effort: S | Gain: M
 
 ### [BAL-AUDIT] Question: Blind spots review — encounter types vs action-config vs action-resolver coverage
@@ -283,6 +366,54 @@
 - **Main-path formulas finalized 2026-05-20** (implemented): `critSuccessW = 2 + pLck * 0.625` (max at luck 8); `critFailW = 5 - rawLck * (rawLck < 0 ? 1.25 : 0.5)` (negative luck expands danger zone, cap 10 at luck −4). Hardcoded special-case fixes remain as a separate future pass.
 - **Negative luck audit (future pass):** Every system where positive luck has a beneficial effect should have negative luck produce the opposite. Known candidates to audit: `RarityManager.rollTier` (luck shifts rarity up — negative should shift toward Cursed/Common); `getWeightedLootIndex` (fishing loot quality); zone position blend in `action-config.js` (`luckBlend = pLck * 0.12` — currently clamped, negative luck should push zone toward a harder right-edge placement); container search width (`40 + pLck * 9` — negative luck should narrow the search zone). Pattern: find every `Math.max(0, pLck)` or `pLck * positiveCoeff` and decide whether unclamping is safe in that context.
 
+### [FAIR-PETS] Feature: Fairyland fishing pets — toad, water rat, otter, owl
+- Add toad (🐸), water rat (🐀), otter (🦦), and owl (🦉) as catchable pets in the Fairyland fishing pool (`encounters.csv`, area=Fishing, with fairyland-appropriate context in note or type).
+- Fairyland is the thematic home for small magical creatures; these fit the corrupted-overworld register without tonal conflict.
+- Priority: P3 — content depth for the fishing system; fairyland pet variety is thin.
+- Type: Feature
+- Effort: S | Gain: M
+
+### [BAIT-LOOT] Feature: Dried worms and insects as loot and valued bait
+- Add dried worm (🪱) and insect items (🪲, 🐛) to appropriate loot pools; if the item qualifies as valid fishing bait in the CSV, it should carry higher value (Uncommon or Rare tier) to reward carrying it to a fishing spot.
+- Priority: P3 — light bait economy layer; connects loot and fishing systems without new mechanics.
+- Type: Feature
+- Effort: S | Gain: S
+
+### [WHIP-ITEM] Feature: Riding Whip item — speed/action-bar effect
+- Add a "Riding Whip" item with a ">>" speed effect (faster action bar timing, sprint advance, or similar).
+- Note: if a desc or note field currently reads "there is no sugar," trim it — confirmed too long for the UI field.
+- Priority: P3 — introduces a speed archetype; currently no item modifies action bar timing.
+- Type: Feature
+- Effort: S | Gain: M
+- Needs: Confirm ">>" maps to an existing action-config.js speed modifier or define one first.
+
+### [MED-ITEMS] Feature: Mediocre items — zero net stat, Common rarity filler
+- Add a pool of items with balanced positive/negative stats netting to +0 — e.g., "+1 ATK / -1 LCK", "+1 HP / -1 STA" — to flesh out the Common tier loot pool.
+- Zero-net items give players genuine minor trade-off decisions without power creep.
+- Priority: P3 — Common tier is thin; mediocre items give the rarity curve a proper base without inflating stats.
+- Type: Feature
+- Effort: S | Gain: M
+
+### [FAIR-WORM] Feature: Add 🐛 worm/caterpillar encounters to Fairyland
+- Fairyland has almost no insect/worm-class encounters; add 3–5 rows (worm, caterpillar, grub) as Standard or Prop types in `encounters.csv`.
+- Priority: P3 — thematic gap; fairyland's magical ecosystem should include ground-level creatures.
+- Type: Feature
+- Effort: XS | Gain: S
+
+### [FAIR-MINST] Improvement: Raise minimum stamina on Fairyland enemies to 2
+- Audit all Standard enemy rows in Fairyland areas and raise any with `sta < 2` to `sta = 2`.
+- Enemies at 1 STA exhaust after a single Grab, making Grab trivially dominant in early-to-mid areas; minimum 2 STA ensures at least one contested Grab attempt.
+- Priority: P3 — balance nudge; Grab is overpowered in Fairyland against very low-STA enemies.
+- Type: Improvement
+- Effort: XS | Gain: M
+
+### [BASIC-ORIG] Feature: Simple starter origins — small +INT and/or +LCK bonus
+- Add 2–3 origins with minimal mechanics: just a +1 INT or +1 LCK bonus (or small combination) and a short flavor desc.
+- These fill the origin list with accessible starting points that don't require understanding the passive system — reduces decision paralysis for new players.
+- Priority: P3 — origin picker feels sparse for new players; simple options are a low-friction on-ramp.
+- Type: Feature
+- Effort: S | Gain: M
+
 ---
 
 ## P4 — Nice to Have
@@ -370,6 +501,27 @@
 - Priority: P4 — user-noted "low prio but possible"; display convention should align with whatever [STAT-NUDGE] lands on
 - Type: Improvement
 - Effort: S | Gain: S
+
+### [FISH-ABAR] Feature: Fishing items on action bar — rarity-based multi-choice layout
+- On a fishing reward encounter: roll 3 loot candidates from the eligible pool; scatter them across action bar buttons; surround two random-rarity candidates with a green skill-check interval and the Legendary/crit candidate with a yellow crit-pass interval.
+- Priority: P4 — high-design fishing mechanic; requires current fishing flow to be stable and validated first.
+- Type: Feature
+- Effort: L | Gain: L
+- Needs: Full design — how do 3 candidates map to buttons? What is the fallback if no Legendary candidate exists?
+
+### [TELE-ENHA] Improvement: Enhance score/telemetry payload — death message, companions, area
+- Add to submission/telemetry payloads: player death message or win-type message; companion list with names; area at the time of run-end and achievement-unlock events.
+- Implement in `score-manager.js` and telemetry hooks; include in both the Google Form submission and the base64 ghost link payload.
+- Priority: P4 — richer data for post-beta rebalancing; not needed for launch.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [ORIG-PET] Feature: Origin that begins with a pet companion
+- Add an origin whose starting condition places a specific pet emoji in `playerPartyString` at run start — e.g., a Shepherd origin that starts with 🐕.
+- Achievable via `_doNewGame()` in `menu.js` with minimal changes; see [ORIG-ITEMS] for the same pattern applied to starting items.
+- Priority: P4 — fun flavor origin; very low effort but post-beta content.
+- Type: Feature
+- Effort: XS | Gain: M
 
 ---
 
@@ -507,16 +659,6 @@
 - Type: Improvement
 - Effort: S | Gain: L
 
-### [LOOT-TEAS] Improvement: Pre-reveal anticipation moment for loot — obscured card + roll text + snap reveal
-- During the anticipation phase, the encounter card is fully veiled: placeholder emoji (e.g. `✨` or `?`), obscured name ("..."), no description visible. A brief flavored log line runs ("Searching through the remains...", "Reeling in..."). Then the snap reveals emoji, name, and desc all at once.
-- The veil is a transient UI state — likely a CSS class toggle (`.loot-veiled`) on the encounter card element in `ui-render.js`, removed after a `setTimeout` delay.
-- Triggers: enemy corpse loot (`encounter-loader.js`); shop buy; fishing pull (`game-loop.js` / `getRandomFish()`); navigating to a pre-generated loot encounter.
-- Roll text pool lives in `string-generator.js`; vary by source (enemy drop vs. fishing vs. shop).
-- Priority: SPRINT — hiding the outcome until the snap transforms every loot moment from a log update into an event; one of the oldest engagement tricks and it works.
-- Type: Improvement
-- Effort: M | Gain: L
-- Details: Beta-tier delivery of [LOOT-ANIM]; full animation version is Backlog/Hades Gate.
-
 ### [SVG-EMOJI] Feature: SVG support in emoji column
 - Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
 - Priority: P4 — infra change for a niche use case
@@ -580,6 +722,14 @@
 
 ### Technical Debt
 
+#### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
+- Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.
+- iOS WebKit (Chrome/Safari on iPhone) has a known scroll-height doubling bug when `zoom` is applied to `<body>` — the scrollable area becomes 2× the content height, showing a grey blank region below.
+- Root fix: `overflow:hidden` on body kills legitimate menu scroll on short screens. Proper fix likely needs `html { overflow:hidden; height:100% }` + `body { overflow-y:auto; height:100% }` to confine scroll to body as its own container, or replacing `zoom` with `transform:scale` on a wrapper div.
+- Priority: P2 — visually breaks the page and is jarring on mobile; intermittent but reproducible.
+- Type: Bug | Severity: Major
+- Effort: M | Gain: M
+
 #### [ENC-DEDUP] Bug: Duplicate encounter name within a single run — root cause unconfirmed
 - Same enemy (Stray Whelp) observed twice in one run — once in a plain encounter, once in a generated house. `seenEncounters` dedup logic looks sound on paper; no regular code path found that bypasses it. Possible defense: on `run_continue`, backfill `seenEncounters` from already-queued `linesStory` rows (covers old saves that predate the field and any restore edge cases). Low gain because the symptom is rare and unrepro'd.
 - Type: Bug | Severity: Minor | Effort: L | Gain: S
@@ -638,4 +788,4 @@
 
 ---
 
-*Styx Flow complete — 122 items processed*
+*Styx Flow complete — ~149 items processed*
