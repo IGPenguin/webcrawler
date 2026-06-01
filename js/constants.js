@@ -3,7 +3,7 @@ var versionCode = "ver. 06/01/26 @ 01:34 PM"
 
 var TUTORIAL_SKIP_INDEX = 6; // linesStory index where returning players resume; update when tutorial rows change
 var SPLASH_DISABLED_LOCALHOST = true;
-var TUTORIAL_SKIP_LOCALHOST = false;
+var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
 var TELEMETRY_DISABLED_LOCALHOST = false;
 
