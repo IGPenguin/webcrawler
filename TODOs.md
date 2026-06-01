@@ -10,62 +10,12 @@
 
 ## P1 — Serious Issues & Big Wins
 
-### [POOL-GAP] Bug: Thin or missing encounter pools in some areas — Desktop screenshots confirm gaps
-- Some area encounter pools are running thin or empty; encounters repeat too early or the generator runs dry.
-- "Resolve lacking pools per screenshots on Desktop" — desktop viewport makes the pool exhaustion visible; audit which area pools are below minimum viable depth.
-- Check each area in `encounters.csv` / `story.csv` for row count; compare against how many encounters `generateNextEncounters()` requests per area pass; add rows to thin areas.
-- Priority: P1 — shallow pools break the core loop; encounter repetition is one of the fastest ways to lose a beta tester.
-- Type: Bug | Severity: Major
-- Effort: S | Gain: L
-
-## P2 — Release-Gating
-
-### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
-- Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.
-- iOS WebKit (Chrome/Safari on iPhone) has a known scroll-height doubling bug when `zoom` is applied to `<body>` — the scrollable area becomes 2× the content height, showing a grey blank region below.
-- Root fix: `overflow:hidden` on body kills legitimate menu scroll on short screens. Proper fix likely needs `html { overflow:hidden; height:100% }` + `body { overflow-y:auto; height:100% }` to confine scroll to body as its own container, or replacing `zoom` with `transform:scale` on a wrapper div.
-- Priority: P2 — visually breaks the page and is jarring on mobile; intermittent but reproducible.
-- Type: Bug | Severity: Major
-- Effort: M | Gain: M
-
-### [UNDEAD-MGK] Bug: MGK on non-caster enemies incorrectly triggers near-impossible block condition
-- Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
-- Audit `encounters.csv` and `story.csv` for all Undead-type rows; remove MGK from non-caster undead (zombies, revenants, etc.); keep MGK only on actual caster subtypes (liches, banshees, wraiths — rows where spells are the intended threat).
-- Extend audit to ALL non-caster enemy types — any Standard warrior, beast, or physical boss carrying MGK > 0 silently makes block near-impossible; the fix is not limited to the Undead type.
-- Priority: P2 — live balance bug on late-game enemies; blocking an undead horde should be physically hard but possible, not mechanically near-impossible.
-- Type: Bug | Severity: Major
-- Effort: S | Gain: L
-
 ### [FRIEND-MIN] Bug: Friend encounter pool error — areas missing minimum no-quest friends
 - Fairyland (and possibly other areas) errors when the generator tries to pull a friend-type encounter from a pool that is empty or too thin.
 - Add at least 3 no-quest friend encounter rows to every area — fairyland is the most critical gap; "no-quest friends" = friend encounters that resolve without a required quest item, serving as the generator's fallback.
-- Priority: P2 — runtime error in encounter generation; thin pools can cause silent failures during beta.
+- Priority: P1 — runtime error in encounter generation; thin pools can cause failures during beta.
 - Type: Bug | Severity: Major
 - Effort: S | Gain: L
-
-### [COMP-PARTY] Bug: "Party of Three" achievement fires on total companions gained, not current count
-- Achievement should trigger when the player simultaneously holds 3+ companions in `playerPartyString`, not when 3 have been gained cumulatively over a run.
-- Fix the check in `achievements.js` to evaluate `[...playerPartyString].length >= 3` at the moment a companion joins, not a cumulative counter.
-- Priority: P2 — misfiring achievement gives the wrong signal; players will notice if it triggers after companions have been lost.
-- Type: Bug | Severity: Major
-- Effort: XS | Gain: M
-
-### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
-- Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
-- Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it.
-- Type: Feature
-- Effort: L | Gain: L
-
-### [PET-ENCNTR] Feature: Pet interaction encounter spawns — companion-triggered CSV encounters
-- If a pet emoji is in `playerPartyString`, enable a pool of pet-specific encounter rows to spawn in that area — purely an emoji `includes()` check, no new state objects.
-- Works like existing Toga artifact-style encounters: a random slot in the area encounter sequence can be a pet-interaction row matched to the party's pet type.
-- Dog example rows: "Kerberos requests belly rubs.<br>Shaking tail full of excitement." / "Kerberos barks loud a lot.<br>Seems like danger ahead." (boss-warning variant — requires [ENC-PREGEN] to peek at next encounter type).
-- Recruit companion (human type) = same system but speech-style: "The stranger pauses. 'Something doesn't feel right ahead.'" — actual words, not barks.
-- Start with dog and recruit; add cat/bird/lizard pools as a follow-up content pass.
-- Priority: P2 — quick beta win; companions go from trophy emojis to reactive characters with near-zero architecture; warmup for the full [PET-SLOT] vision.
-- Type: Feature
-- Effort: S | Gain: L
-- Needs: Write encounter CSV rows per pet type (dog belly rub, nuisance, boss-warning). Boss-warning variant gates on [ENC-PREGEN]. Long-term bark pool vision: see [PET-SLOT] in EPICS.md.
 
 ### [CHEAT-SUBM] Feature: Disable score submit button if `cheatedThisRun` is true
 - When `cheatedThisRun` is set, render the score submission button as visually disabled (grayed out, non-interactive) rather than silently blocking on click.
@@ -74,26 +24,28 @@
 - Type: Feature
 - Effort: XS | Gain: M
 
-### [ITCH-WRPR] Feature: itch.io game wrapper and manual upload GitHub Action
-- Create an itch.io-compatible static build (HTML wrapper embedding or framing the game) and a `workflow_dispatch`-only GitHub Action that packages the build and uploads via the Butler CLI.
-- The action must never trigger automatically on push; itch.io release is always a deliberate manual step.
-- Priority: P2 — itch.io is the primary non-GitHub discovery channel; needed before public beta launch.
-- Type: Feature
-- Effort: M | Gain: L
+## P2 — Release-Gating
 
-### [HCORE-END] Feature: Hardcore difficulty — Dream Boss ending
-- On Hardcore only: inject a pre-boss story beat in Shrouded Necropolis revealing the corrupted world was always a dream. The final boss fight is kept; the fight itself may carry a special mechanical twist (TBD). After the boss is defeated, a post-fight cutscene plays — Rosabel disintegrates and the dream unravels, reframing the entire run.
-- Three beats: (1) pre-boss dream revelation encounter 💭, (2) the boss fight with optional twist, (3) post-boss cutscene that triggers the win state.
-- New endType `win_dream`; wire `ScoreManager.getEndingLabel()` ("Woke Up"), +100 win bonus applies via `win_` prefix. New achievement: "The Dreamer" — won Hardcore via the dream path. Wire in `_doGameEnd()` when `endType === 'win_dream'`.
-- Note: an earlier design (EPICS.md, superseded) had the dream sequence skip the boss via a walk-away win. That design is replaced by this one - the boss fight must be kept.
-- Priority: P2 — missing story beat for Hardcore; intended for early post-beta.
-- Type: Feature | Effort: M | Gain: L
+### [FAIR-MINST] Balance: Raise minimum stamina on Fairyland enemies to 2
+- Audit all Standard enemy rows in Fairyland areas and raise any with `sta < 2` to `sta = 2`.
+- Enemies at 1 STA exhaust after a single Grab, making Grab trivially dominant in early-to-mid areas; minimum 2 STA ensures at least one contested Grab attempt.
+- Priority: P2 — balance nudge; Grab is overpowered in Fairyland against very low-STA enemies.
+- Type: Improvement
+- Effort: XS | Gain: M
 
-### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
-- Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
-- Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system.
+### [AREA-STATS] Balance: Rebalance River and Necropolis enemy/item stats
+- River and Necropolis enemies and items need a stat calibration pass — confirm ranges match area difficulty relative to Forsaken Village and Fairyland.
+- Check stat ranges against CONTENT.md area calibration tables; flag any enemy or item row that is an outlier for its area and rarity tier.
+- Priority: P2 — late-game stat imbalance breaks difficulty curve; veterans will notice immediately.
 - Type: Improvement
 - Effort: M | Gain: L
+
+### [WEAP-CMBO] Feature: Weapon combo items — dual-stat (+ATK+MGK, etc.)
+- Add items that combine two offensive stats — e.g., +1 ATK +1 MGK, +1 ATK +1 STA — as a distinct item archetype that rewards hybrid builds.
+- Slot naturally into the existing rarity system; net stat formula already handles multi-stat items.
+- Priority: P2 — build variety; currently no items bridge ATK and MGK for hybrid combat/magic builds
+- Type: Feature
+- Effort: S | Gain: M
 
 ### [BOSS-TOUGH] Improvement: Toughen the final boss — raise stats or add combat mechanics
 - The final boss in Shrouded Necropolis feels undertuned relative to the encounter difficulty leading up to it.
@@ -101,46 +53,6 @@
 - Priority: P2 — a weak final boss deflates the ending climax; critical for beta first impressions.
 - Type: Improvement
 - Effort: S | Gain: L
-
-### [AREA-STATS] Improvement: Rebalance River and Necropolis enemy/item stats
-- River and Necropolis enemies and items need a stat calibration pass — confirm ranges match area difficulty relative to Forsaken Village and Fairyland.
-- Check stat ranges against CONTENT.md area calibration tables; flag any enemy or item row that is an outlier for its area and rarity tier.
-- Priority: P2 — late-game stat imbalance breaks difficulty curve; veterans will notice immediately.
-- Type: Improvement
-- Effort: M | Gain: L
-
-### [BARK-CTX] Improvement: Contextual companion barks — split bark pools by encounter type
-- Refactor the bark system in `companion-manager.js` to fire different bark pools based on the current encounter context instead of generic barks regardless of situation.
-- Trigger mapping: negative trap/curse encounter → warn barks; neutral prop → standard barks; boss proximity → alert barks; positive encounter (passive mob, altar, friend) → wonder/curiosity barks; etc.
-- Flagged in multiple reviews as the single biggest gap in companion feel — generic barks break immersion and undercut the "companions as relationships" design principle in DESIGN.md.
-- Related items: [PET-ENCNTR] (companion encounter rows, P2); bark context is what makes both of those land emotionally.
-- Priority: P2 — multi-review flag; contextual firing is the difference between a companion that *reads* the world and one that just makes noise.
-- Type: Improvement
-- Effort: S | Gain: L
-
-### [CHEAT-TIPS] Improvement: Revise cheat hints — show only soft cheats, remove full unlocks
-- Audit the current cheat tip list and remove any hint that grants achievements or bypasses run progression; keep only soft/QoL cheats (stat resets, debug flags, test helpers).
-- Priority: P2 — full unlock hints undercut the achievement system before beta testers reach those milestones naturally.
-- Type: Improvement
-- Effort: XS | Gain: M
-
-### [VALID-ERR] Chore: Resolve all static validation errors before beta release
-- Run `bash validate-all.sh` (JS syntax, CSV format field counts/stats, HTML structure) and fix every reported error until the suite passes clean.
-- Priority: P2 — CI validates on push to `live`; any remaining error blocks the release pipeline.
-- Type: Chore
-- Effort: S | Gain: L
-
-### [VER-BUMP] Chore: Bump version and write beta launch changelog
-- Run `bash version.sh` to stamp the current timestamp; update `version.md` with a "Welcome to Beta" header and a summary of what beta means — goals, known issues, what's next.
-- Priority: P2 — version marker and changelog are the first thing returning players see; sets expectations for beta testers.
-- Type: Chore
-- Effort: XS | Gain: M
-
-### [PR-SUMRY] Chore: Update PR description — add beta intro sentence and 🚀/🏁 flag
-- Prepend the sentence "This is in fact making this project an actual game..." (or equivalent beta milestone framing) to the PR body; add 🚀 or 🏁 to the PR title or summary line.
-- Priority: P2 — PR description is the first thing collaborators see; beta milestone deserves distinct framing.
-- Type: Chore
-- Effort: XS | Gain: S
 
 ### [CRED-TEST] Chore: Verify rolling credits sequence on a real playthrough
 - Manually reach a win ending and confirm rolling credits trigger correctly, display without errors, and don't block ending resolution or score submission.
@@ -157,6 +69,45 @@
 - Type: Chore
 - Effort: M | Gain: L
 
+### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
+- Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
+- Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it.
+- Type: Feature
+- Effort: L | Gain: L
+
+### [VER-BUMP] Chore: Bump version and write beta launch changelog
+- Run `bash version.sh` to stamp the current timestamp; update `version.md` with a "Welcome to Beta" header and a summary of what beta means — goals, known issues, what's next.
+- Priority: P2 — version marker and changelog are the first thing returning players see; sets expectations for beta testers.
+- Type: Chore
+- Effort: XS | Gain: M
+
+### [UNDEAD-MGK] Bug: MGK on non-caster enemies incorrectly triggers near-impossible block condition
+- Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
+- Audit `encounters.csv` and `story.csv` for all Undead-type rows; remove MGK from non-caster undead (zombies, revenants, etc.); keep MGK only on actual caster subtypes (liches, banshees, wraiths — rows where spells are the intended threat).
+- Extend audit to ALL non-caster enemy types — any Standard warrior, beast, or physical boss carrying MGK > 0 silently makes block near-impossible; the fix is not limited to the Undead type.
+- Priority: P2 — live balance bug on late-game enemies; blocking an undead horde should be physically hard but possible, not mechanically near-impossible.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
+### [COMP-PARTY] Bug: "Party of Three" achievement fires on total companions gained, not current count
+- Achievement should trigger when the player simultaneously holds 3+ companions in `playerPartyString`, not when 3 have been gained cumulatively over a run.
+- Fix the check in `achievements.js` to evaluate `[...playerPartyString].length >= 3` at the moment a companion joins, not a cumulative counter.
+- Priority: P2 — misfiring achievement gives the wrong signal; players will notice if it triggers after companions have been lost.
+- Type: Bug | Severity: Major
+- Effort: XS | Gain: M
+
+### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
+- Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
+- Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system.
+- Type: Improvement
+- Effort: M | Gain: L
+
+### [CHEAT-TIPS] Improvement: Revise cheat hints — show only soft cheats, remove full unlocks
+- Audit the current cheat tip list and remove any hint that grants achievements or bypasses run progression; keep only soft/QoL cheats (stat resets, debug flags, test helpers).
+- Priority: P2 — full unlock hints undercut the achievement system before beta testers reach those milestones naturally.
+- Type: Improvement
+- Effort: XS | Gain: M
+
 ### [PERS-REVW] Chore: Perseus review of public-facing docs and itch.io page
 - Run `/perseus` on the public README, itch.io description, and any player-facing documentation for tone, first-impression quality, and missing info for new players.
 - Priority: P2 — public-facing text sets expectations before a player ever loads the game; beta launch is the right time to fix tone mismatches.
@@ -165,24 +116,10 @@
 
 ## P3 — Should-Fix
 
-### [HASH-ERR] Bug: Score hash "err" on some mobile submissions
-- One or more scores submitted with hash = "err" (caught exception in `_generateHash` in `score-manager.js`); Python verifier rejects these. Possibly `crypto.subtle` unavailable in certain Android browsers or in-app WebViews.
-- Investigate by collecting more submissions during playtesting and checking whether "err" correlates with a specific device/browser. Fix path: explicit `crypto.subtle` availability check + console.error logging of the caught exception.
-- Priority: P3 — affects score integrity for a subset of mobile users; not blocking beta but worth collecting data.
-- Type: Bug | Severity: Minor
-- Effort: S | Gain: M
-
 ### [ENDEF-CALC] Bug: Enemy defense — enemyDef not applied in all skill calcs
 - Ensure enemyDef is used in all player skill calculations including consumables. (`player-skills.js`)
 - Priority: P3 — silent balance issue; all attack paths should respect enemy DEF consistently.
 - Type: Bug | Severity: Minor
-- Effort: S | Gain: M
-
-### [WEAP-CMBO] Feature: Weapon combo items — dual-stat (+ATK+MGK, etc.)
-- Add items that combine two offensive stats — e.g., +1 ATK +1 MGK, +1 ATK +1 STA — as a distinct item archetype that rewards hybrid builds.
-- Slot naturally into the existing rarity system; net stat formula already handles multi-stat items.
-- Priority: P3 — build variety; currently no items bridge ATK and MGK for hybrid combat/magic builds
-- Type: Feature
 - Effort: S | Gain: M
 
 ### [ACTN-FLAVOR] Feature: Action outcome flavor text — per-outcome log lines
@@ -192,31 +129,25 @@
 - Type: Feature
 - Effort: M | Gain: L
 
-### [AMB-FX] Feature: Area ambient UI effects — falling leaves, rain, fog per area
-- Pixel-styled, black-outlined ambient effects per area (falling leaves, blue/purple leaves, rain, fog). Expose per-area config: effect type, density, frequency, speed.
-- Priority: P3 — atmosphere; L effort and not blocking beta
-- Type: Feature
-- Effort: L | Gain: L
-
-### [ORIG-UNIQ] Feature: More unique origins with gameplay implications
+### [ORIG-UNIQ] Content: More unique origins with gameplay implications
 - Add origins with real mechanical effects beyond stat distribution — passives, starting conditions, unique interactions.
 - Priority: P3 — origin depth; builds on the achiev-origin work in P2
 - Type: Feature
 - Effort: M | Gain: M
 
-### [ITEM-RARITY] Feature: Item/Origin — increases higher rarity drop chance
+### [ITEM-RARITY] Content: Item/Origin — increases higher rarity drop chance
 - New item or origin that shifts loot probability toward Uncommon/Rare/Legendary.
 - Priority: P3 — build variety; rarity system is already wired for this
 - Type: Feature
 - Effort: S | Gain: M
 
-### [ITEM-CRIT] Feature: Item/Origin — bigger crit chance interval
+### [ITEM-CRIT] Content: Item/Origin — bigger crit chance interval
 - New item or origin that widens the crit success zone on the action bar.
 - Priority: P3 — build variety
 - Type: Feature
 - Effort: S | Gain: M
 
-### [HOUR-SLOW] Feature: ⏳ Strange Hourglass — 10% slower action bar
+### [HOUR-SLOW] Content: ⏳ Strange Hourglass — 10% slower action bar
 - New item: globally slows action bar speed by 10%.
 - Priority: P3 — accessible build option; interesting tension with high-speed encounters
 - Type: Feature
@@ -246,63 +177,28 @@
 - Type: Feature
 - Effort: S | Gain: M
 
-### [HAPTIC-BAR] Feature: Android vibration — action bar haptics
+### [HAPTIC-BAR] Platforms: Android vibration — action bar haptics
 - Vibrate on button press/release, on zone transitions (fail/pass/crit), on taking damage; vary pattern and length per trigger. Verify whether any iOS vibration permission is possible.
 - Priority: P3 — mobile game feel; significant on Android
 - Type: Feature
 - Effort: M | Gain: M
 
 ### [STAT-NUDGE] Feature: Fractional "nudge" stat values for hidden stats — LCK, INT
-- Allow sub-1 increments on hidden stats in CSV/origins (JS already supports decimals); display as human-readable labels rather than raw numbers — e.g. 0.5 = "Small bonus", 0.25 = "Tiny bonus" (exact tier labels TBD). Enables tighter balance control and a wider range of items/origins without pushing rarity up a full tier unnecessarily.
+- Make use of sub-1 increments on hidden stats in CSV/origins (JS already supports decimals); display as human-readable labels rather than raw numbers — e.g. 0.5 = "Small bonus", 
 - Priority: P3 — design space unlock with near-zero code cost; pairs well with the rarity weights audit below
 - Type: Feature
 - Effort: S | Gain: M
-- Details: LCK at ×0.5 in the net formula means +0.5 LCK adds only 0.25 to net score — rarity-invisible by design, which is exactly right for a nudge. The UI label mapping (0.25 → "Tiny", 0.5 → "Small") is the main design decision still open.
+- Details: LCK at ×0.5 in the net formula means +0.5 LCK
+- Update the display logic to support tiny: The UI label mapping (0.25 → "Tiny", 0.5 → "Small")
 
-### [ENC-PREGEN] Feature: Pre-generate encounter sequence so companions can peek ahead
-- Currently `generateNextEncounters()` in `encounter-generator.js` may populate encounters lazily — the next entry might not be resolved until the player navigates to it. To let the 🐶 dog (and future companions) react to what's ahead, the next encounter must be resolved before the player arrives.
-- First step: audit `generateNextEncounters()` and `getNextEncounterIndex()` in `data-loader.js` to confirm whether a one-step lookahead is already possible. If not, adjust generation to eagerly resolve at least the next entry in the queue on area entry.
-- Longer-term door this opens: resolve the entire run sequence on game start — simpler state, no lazy gaps, and enables branching paths (see [PATH-CHCE] in EPICS.md) where two pre-generated routes exist simultaneously.
-- Priority: P3 — structural prerequisite for [PET-ENCNTR] boss-warning variant and [PATH-CHCE]; confirm lazy vs. eager behavior before estimating full scope
-- Type: Feature
-- Effort: M | Gain: L
-- Needs: Confirm generation timing before writing code.
-
-### [FAIR-PETS] Feature: Fairyland fishing pets — toad, water rat, otter, owl
-- Add toad (🐸), water rat (🐀), otter (🦦), and owl (🦉) as catchable pets in the Fairyland fishing pool (`encounters.csv`, area=Fishing, with fairyland-appropriate context in note or type).
-- Fairyland is the thematic home for small magical creatures; these fit the corrupted-overworld register without tonal conflict.
-- Priority: P3 — content depth for the fishing system; fairyland pet variety is thin.
-- Type: Feature
-- Effort: S | Gain: M
-
-### [BAIT-LOOT] Feature: Dried worms and insects as loot and valued bait
-- Add dried worm (🪱) and insect items (🪲, 🐛) to appropriate loot pools; if the item qualifies as valid fishing bait in the CSV, it should carry higher value (Uncommon or Rare tier) to reward carrying it to a fishing spot.
-- Priority: P3 — light bait economy layer; connects loot and fishing systems without new mechanics.
-- Type: Feature
-- Effort: S | Gain: S
-
-### [WHIP-ITEM] Feature: Riding Whip item — speed/action-bar effect
-- Add a "Riding Whip" item with a ">>" speed effect (faster action bar timing, sprint advance, or similar).
-- Note: if a desc or note field currently reads "there is no sugar," trim it — confirmed too long for the UI field.
-- Priority: P3 — introduces a speed archetype; currently no item modifies action bar timing.
-- Type: Feature
-- Effort: S | Gain: M
-- Needs: Confirm ">>" maps to an existing action-config.js speed modifier or define one first.
-
-### [MED-ITEMS] Feature: Mediocre items — zero net stat, Common rarity filler
+### [MED-ITEMS] Content: Mediocre items — zero net stat, Common rarity filler
 - Add a pool of items with balanced positive/negative stats netting to +0 — e.g., "+1 ATK / -1 LCK", "+1 HP / -1 STA" — to flesh out the Common tier loot pool.
 - Zero-net items give players genuine minor trade-off decisions without power creep.
 - Priority: P3 — Common tier is thin; mediocre items give the rarity curve a proper base without inflating stats.
 - Type: Feature
 - Effort: S | Gain: M
 
-### [FAIR-WORM] Feature: Add 🐛 worm/caterpillar encounters to Fairyland
-- Fairyland has almost no insect/worm-class encounters; add 3–5 rows (worm, caterpillar, grub) as Standard or Prop types in `encounters.csv`.
-- Priority: P3 — thematic gap; fairyland's magical ecosystem should include ground-level creatures.
-- Type: Feature
-- Effort: XS | Gain: S
-
-### [BASIC-ORIG] Feature: Simple starter origins — small +INT and/or +LCK bonus
+### [BASIC-ORIG] Content: Simple starter origins — small +INT and/or +LCK bonus
 - Add 2–3 origins with minimal mechanics: just a +1 INT or +1 LCK bonus (or small combination) and a short flavor desc.
 - These fill the origin list with accessible starting points that don't require understanding the passive system — reduces decision paralysis for new players.
 - Priority: P3 — origin picker feels sparse for new players; simple options are a low-friction on-ramp.
@@ -316,33 +212,20 @@
 - Type: Feature
 - Effort: S | Gain: M
 
-### [INVAD-GRAVE] Feature: Invader Graveyard UI
-- "👾 Kill List" section in Main Menu screen — name, area, level per entry, persisted under rivalGraveyard in localStorage.
-- Priority: P3 — social trophy moment; not blocking
-- Type: Feature
-- Effort: S | Gain: M
-
-### [RUN-MOD] Feature: Game run modifiers
-- Unlockable run modifiers activated via Origins or special conditions (e.g., Demons passive, Animals passive).
-- Priority: P3 — build variety depth
-- Type: Feature
-- Effort: L | Gain: M
-- Needs: Define unlock conditions and exact modifier effects before implementing.
-
-### [SHOP-BOOST] Improvement: Expand shop 1-coin boost item pool
+### [SHOP-BOOST] Content: Expand shop 1-coin boost item pool
 - Add more Common boost items with +x/-x stat tradeoffs to the shop's 1-coin pool — e.g., +1 ATK / -1 LCK, +1 STA / -1 HP.
 - Currently the cheap shop tier is thin; players cycling the shop repeatedly see the same options.
 - Priority: P3 — shop feel; content gap but not release-gating
 - Type: Improvement
 - Effort: S | Gain: M
 
-### [NECRO-PROP] Improvement: Necropolis prop variety — more atmospheric non-combat encounters
+### [NECRO-PROP] Content: Necropolis prop variety — more atmospheric non-combat encounters
 - Add more prop encounter rows to Shrouded Necropolis — the area is combat-dense and could use quiet/atmospheric beats to contrast the final boss buildup.
 - Priority: P3 — emotional counterweight per DESIGN.md; a cluster of brutal encounters needs at least one moment of stillness
 - Type: Improvement
 - Effort: S | Gain: M
 
-### [NAME-QUAL] Improvement: Generator name rolls quality pass
+### [NAME-QUAL] Texts: Generator name rolls quality pass
 - Revise name generation to avoid "unliving" words on living enemies; consider adding actual proper names in Rosabel-style tone — believable styling takes priority over stat matching.
 - Priority: P3 — tonal immersion; name mismatch breaks the register
 - Type: Improvement
@@ -354,25 +237,12 @@
 - Type: Improvement
 - Effort: M | Gain: M
 
-### [COLOR-BLIND] Improvement: Colorblind-safe crit/success zones
+### [COLOR-BLIND] Accessibility: Colorblind-safe crit/success zones
 - Ensure crit and success zones on the action bar are distinguishable without color — brightness difference or pattern.
 - Toggleable in menu
 - Priority: P3 — accessibility; not gating beta
 - Type: Improvement
 - Effort: S | Gain: M
-
-### [MIN-CLICK] Improvement: Minimize 1-click encounters
-- Reduce encounters that resolve in a single click with no decision — use encounterUsed to create at least one action opportunity before resolution.
-- Priority: P3 — player agency; 1-click encounters feel like dead zones
-- Type: Improvement
-- Effort: M | Gain: M
-
-### [FAIR-MINST] Improvement: Raise minimum stamina on Fairyland enemies to 2
-- Audit all Standard enemy rows in Fairyland areas and raise any with `sta < 2` to `sta = 2`.
-- Enemies at 1 STA exhaust after a single Grab, making Grab trivially dominant in early-to-mid areas; minimum 2 STA ensures at least one contested Grab attempt.
-- Priority: P3 — balance nudge; Grab is overpowered in Fairyland against very low-STA enemies.
-- Type: Improvement
-- Effort: XS | Gain: M
 
 ### [CRIT-LCK] Improvement: Action bar crit zone luck scaling redesign
 - Crit success and crit fail zone widths should scale smoothly with luck across the range -5 to +10, changing ~1pp per ±2 luck steps, with a non-zero floor on both zones at all times.
@@ -403,13 +273,7 @@
 - Type: Improvement
 - Effort: S | Gain: M
 
-### [KARMA-SCALE] Improvement: Karma scaling — tiered reincarnation bonus
-- Any positive karma currently gives the same revive reward — should scale by tier. (`player-skills.js`)
-- Priority: P3 — flat revive reward undermines the karma investment signal; easy fix, meaningful gain.
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [BAL-AUDIT] Question: Blind spots review — encounter types vs action-config vs action-resolver coverage
+### [BAL-AUDIT] Quality Pass: Blind spots review — encounter types vs action-config vs action-resolver coverage
 - Audit action-config.js and action-resolver.js for encounter types that have incomplete or inconsistent handling — buttons that silently pass/fail when they should have a dedicated case, or encounter types not covered by any special-case logic.
 - Start by mapping all `types` values to their action-config branches; flag any type+button combos that fall through to the default stat calc without a intentional rationale.
 - Priority: P3 — may surface silent balance bugs before beta; low urgency but high signal value
@@ -417,32 +281,11 @@
 - Effort: M | Gain: M
 - Needs: Decide scope — full audit or just the recently-added encounter types?
 
-### [END-SCORE] Question: Per-ending scoring — differentiate point rewards by ending difficulty
-- Currently all win endings give +100 regardless of difficulty (Name requires Love 6 + Karma 2; Guard requires nothing). Should harder endings give more points to reflect the run investment?
-- Design question: define a point bonus per ending tier (e.g., Guard +50, Sleep +75, Name +150) and wire into `ScoreManager` alongside existing `endType` handling.
-- Priority: P3 — scoring balance; not release-gating but affects leaderboard meaning
-- Type: Question
-- Effort: S | Gain: M
-- Needs: Design the point tiers per ending before implementing. Verify this doesn't break current highscore.json comparisons.
-
-### [RARITY-WGHT] Question: Audit and redesign net stat rarity weights
-- The formula `atk×3 + mgk×2 + hp×1.5 + sta×1.5 + lck×0.5 + int×0.5 + def×1` was never designed — weights were guessed. LCK at ×0.5 feels especially off given it affects crits, loot quality, and action bar intervals. MGK at ×2 undervalues it relative to ATK once spells exist. Before changing any individual weight, define what +1 of each stat concretely changes in a run and set weights from that benchmark.
-- Priority: P3 — weights silently shape the entire loot feel; worth auditing before content volume makes it harder to rebalance
-- Type: Question
-- Effort: S | Gain: L
-- Needs: For each stat: what does +1 change in a typical run? Set weight relative to ATK×3 as the anchor. After adjusting, sample existing CSV entries to confirm the rarity distribution doesn't break.
-
 ### [UI-DIALOGS] Chore: Consolidate all dialog overlays into ui-dialogs.js
 - Five modal overlays currently live in different files: QR share dialog, leaderboard nickname (score-manager.js), companion name + player rename (ui-effects.js), and slot swap (inventory-manager.js). Extract all into a single ui-dialogs.js with a consistent open/confirm/cancel pattern, loaded after ui-effects.js.
 - Priority: P3 — no user-visible impact; purely internal cleanliness
 - Type: Chore
 - Effort: S | Gain: S
-
-### [STR-AUDIT] Chore: String writer skill + full CSV/JS string audit
-- Create a lightweight Claude skill for writing CSV and JS string fields — strict tone matching, length-optimized. Follow with a full audit pass using it.
-- Priority: P3 — dev velocity; string inconsistency is real but not beta-blocking
-- Type: Chore
-- Effort: S | Gain: M
 
 ### [ENEMY-STR] Chore: Enemy string quality pass
 - Audit all enemy desc and message fields for tone consistency and Rosabel-style voice — remove filler; flag area outliers.
@@ -458,144 +301,69 @@
 
 ## P4 — Nice to Have
 
-### [SOUL-GEM] Feature: Legendary soulgem — physical damage to spirits
+### [SOUL-GEM] Content: Legendary soulgem — physical damage to spirits
 - Unique Legendary item enabling physical damage against spirit-type enemies.
 - Priority: P4 — niche mechanic; not enough demand to justify the slot now
 - Type: Feature
 - Effort: S | Gain: S
 
-### [FISH-LOOT] Feature: Bloat fishing loot — items, threats, floating altars
+### [FISH-LOOT] Content: Bloat fishing loot — items, threats, floating altars
 - Add variety to fishing encounter pool: items, threats, traps, floating altars.
 - Priority: P4 — fishing is functional; this is content depth
 - Type: Feature
 - Effort: S | Gain: S
 
-### [SPIRIT-ENEMY] Feature: Add spirit/reflective enemies to Village and River
+### [SPIRIT-ENEMY] Content: Add spirit/reflective enemies to Village and River
 - Spirit and reflective types underrepresented in early/mid areas.
 - Priority: P4 — content variety
 - Type: Feature
 - Effort: S | Gain: S
 
-### [LATE-PETS] Feature: New late-game pets
+### [LATE-PETS] Content: New late-game pets
 - Drowned spirit, scared ghost, living mushroom, talking fly — flavor + occasional LCK, rarely +1 ATK.
 - Priority: P4 — content; fun but not blocking
 - Type: Feature
 - Effort: S | Gain: S
 
-### [TRAP-VAR] Feature: More positive and negative traps + curses (all variants)
+### [TRAP-VAR] COntent: More positive and negative traps + curses (all variants)
 - Stat-swap traps, -ATK curses in late game, containers costing STA/LCK, lategame curses stealing mana/STA, practice target variants for Speak/Cast (with option to leave), magic items that almost always carry a curse.
 - Priority: P4 — content variety; not blocking
 - Type: Feature
 - Effort: M | Gain: S
 
-### [MEADOW-ENCNTR] Feature: Meadows — increment no-effect encounters
+### [MEADOW-ENCNTR] Content: Meadows — increment no-effect encounters
 - Add no-effect altars, observations, clear sky, silent overcast encounters.
 - Priority: P4 — atmosphere; not blocking
 - Type: Feature
 - Effort: S | Gain: S
 
-### [FOOD-PERMA] Feature: Lemon-unique foods — perma boosts per area
+### [FOOD-PERMA] Content: Lemon-unique foods — perma boosts per area
 - 1 good + 1 bad perma-boost food per area; mixed stat foods (lose and gain simultaneously); ensure bad foods in all areas.
 - Priority: P4 — content depth
 - Type: Feature
 - Effort: S | Gain: S
 
-### [FISH-ABAR] Feature: Fishing items on action bar — rarity-based multi-choice layout
-- On a fishing reward encounter: roll 3 loot candidates from the eligible pool; scatter them across action bar buttons; surround two random-rarity candidates with a green skill-check interval and the Legendary/crit candidate with a yellow crit-pass interval.
-- Priority: P4 — high-design fishing mechanic; requires current fishing flow to be stable and validated first.
-- Type: Feature
-- Effort: L | Gain: L
-- Needs: Full design — how do 3 candidates map to buttons? What is the fallback if no Legendary candidate exists?
 
-### [ORIG-PET] Feature: Origin that begins with a pet companion
+### [ORIG-PET] Content: Origin that begins with a pet companion
 - Add an origin whose starting condition places a specific pet emoji in `playerPartyString` at run start — e.g., a Shepherd origin that starts with 🐕.
 - Achievable via `_doNewGame()` in `menu.js` with minimal changes; see [ORIG-ITEMS] for the same pattern applied to starting items.
 - Priority: P4 — fun flavor origin; very low effort but post-beta content.
 - Type: Feature
 - Effort: XS | Gain: M
 
-### [ORIG-ITEMS] Feature: Origins with starting items
+### [ORIG-ITEMS] Content: Origins with starting items
 - Origins that begin the run with a Legendary item already equipped.
 - Priority: P4 — fun flavor mechanic; easier than it looks — see `_doNewGame()` in `menu.js`.
 - Type: Feature
 - Effort: S | Gain: M
 - Details: Earlier note confirmed this does NOT require the full inventory expansion — `_doNewGame()` in `menu.js` handles run-start state directly.
 
-### [VEC-BG] Feature: Vector backgrounds for all areas
-- Complete and default to vector backgrounds for all areas.
-- Priority: P4 — significant atmosphere upgrade; L effort, not mobile-critical
-- Type: Feature
-- Effort: L | Gain: M
-
-### [LOOT-ANIM] Feature: Full loot reveal animation — roll → snap (Hades Gate)
-- Full loot reveal flow: an animated "rolling" state (cycling emoji shimmer, blurred or randomized placeholder) builds anticipation before everything lands with a visual snap — rarity-colored flash or pulse keyed to the tier revealed (Common = subtle, Legendary = full flash).
-- All three card elements are obscured during the roll: emoji, name, and desc. All three snap into place simultaneously.
-- Triggers: all loot sources — enemy kill drop, shop purchase, fishing, pre-generated loot navigation.
-- Rarity tie-in: snap animation intensity maps to tier; requires integration with `encounter-loader.js`, `ui-render.js`, CSS `@keyframes`, and the rarity system for snap color.
-- Design and implementation via Hades Gate as a standalone post-beta update; [LOOT-CHCE] (EPICS.md) is the beta-tier delivery.
-- Priority: P4 — [LOOT-CHCE] covers the beta tier; this is the full gacha-feel vision.
-- Type: Feature
-- Effort: L | Gain: XL
-- Needs: Full design via Hades Gate. Prerequisite: [LOOT-CHCE] shipped and validated.
-
-### [NECRO-OPT] Feature: Necropolis optional areas
+### [NECRO-OPT] Content: Necropolis optional areas
 - Optional sub-areas for late-game variety inside Shrouded Necropolis.
 - Priority: P4 — content; post-beta
 - Type: Feature
 - Effort: L | Gain: M
 - Needs: Define what optional areas look like and how they gate before designing.
-
-### [SVG-EMOJI] Feature: SVG support in emoji column
-- Support thing.svg references in the emoji column (assets/encounters/); render same size/position as emoji.
-- Priority: P4 — infra change for a niche use case; would enable endless content as emojis run out
-- Type: Feature
-- Effort: M | Gain: S
-
-### [SFX-MUSIC] Feature: Sounds — SFX and background music
-- Investigate platform support (iOS, Android, Mac, Windows) and add sound effects and ambient music.
-- Priority: P4 — audio is transformative but large scope with platform risk
-- Type: Feature
-- Effort: L | Gain: L
-
-### [BLACK-HOLE] Feature: Black hole — new optional area + spaghetti monster boss
-- DLC-style optional area with spaghetti monster boss, modern props, items, tools. The JS spaghetti monster joke boss lives here.
-- Priority: P4 — fun/joke expansion; well outside current scope
-- Type: Feature
-- Effort: XL | Gain: S
-
-### [HALF-STAT] Improvement: Fractional stat display for visible stats — half symbol for HP/ATK/STA/MGK
-- Support 0.5-step values on visible combat stats (HP, ATK, STA, MGK) in CSV/origins; display as a half symbol rather than rounding or hiding the fraction.
-- Related to [STAT-NUDGE] (P3), which covers fractional nudges on hidden stats (LCK, INT) with label-based display; this extends that concept to visible stats with a symbol approach.
-- Priority: P4 — user-noted "low prio but possible"; display convention should align with whatever [STAT-NUDGE] lands on
-- Type: Improvement
-- Effort: S | Gain: S
-
-### [TELE-ENHA] Improvement: Enhance score/telemetry payload — death message, companions, area
-- Add to submission/telemetry payloads: player death message or win-type message; companion list with names; area at the time of run-end and achievement-unlock events.
-- Implement in `score-manager.js` and telemetry hooks; include in both the Google Form submission and the base64 ghost link payload.
-- Priority: P4 — richer data for post-beta rebalancing; not needed for launch.
-- Type: Improvement
-- Effort: S | Gain: M
-
-### [VIS-IMPACT] Improvement: Full visual impact frames — hit flash, damage flash, STA fade
-- Flash white when player hits; red-white flash when player takes damage and is left with just 1 hp; green flash when losing STA and left with 1 sta.
-- Priority: P4 — visual changes always take longer than expected to feel good; parking post-beta. Some visual feedback already exists.
-- Type: Improvement
-- Effort: M | Gain: L
-
-### [FLASH-CRIT] Improvement: .flash-crit CSS animation on critical hits
-- Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
-- Bundle with [CRIT-SHAKE] for full crit feedback; guard every `animationend` handler with `if (e.target !== e.currentTarget) return` to prevent child element bubbling bugs.
-- Priority: P4 — polish; post-beta
-- Type: Improvement
-- Effort: XS | Gain: M
-
-### [CRIT-SHAKE] Improvement: Crit attack shakes enemy card; crit walk bounces player card
-- On crit-pass Attack: shake enemy card only (not full screen). On crit-pass Walk: slight bounce on player card only. For other crit types, propose similar effect — for each action crit outcome possible.
-- Bundle with [FLASH-CRIT]; guard `animationend` with `if (e.target !== e.currentTarget) return`.
-- Priority: P4 — polish; post-beta
-- Type: Improvement
-- Effort: S | Gain: M
 
 ### [BOSS-TOLL] Improvement: Boss death counter — show area death toll on boss kill
 - On killing an area boss, display how many times the player died in that area before the kill — e.g. "After 3 deaths in the Twisted Fairyland." Zero deaths gets its own line — e.g. "First blood. Somehow." Bosses are drawn from a pool per area, so the counter is per area, not per specific enemy.
@@ -604,14 +372,14 @@
 - Type: Improvement
 - Effort: S | Gain: L
 
-### [INV-ITEMS] Idea: New items for new inventory slots
+### [INV-ITEMS] Content: New items for new inventory slots
 - Review ideas for items to fill new inventory slots once the expand-inventory system ([INV-XPND] in EPICS.md) lands; clean out the ideas folder in the process.
 - Priority: P4 — depends on P2 inventory expansion epic; no design yet
 - Type: Idea
 - Effort: S | Gain: S
 - Needs: Define which slots exist and what item archetypes make sense before designing.
 
-### [ALTAR-PRAY] Idea: Altar — no stat bonus, Pray = XP
+### [ALTAR-PRAY] Content: Altar — no stat bonus, Pray = XP
 - A simple altar encounter where Pray grants XP with no stat effect.
 - Priority: P4 — minor content addition
 - Type: Idea
@@ -622,14 +390,6 @@
 - Priority: P4 — variant of the Camp type; interesting but low clarity
 - Type: Idea
 - Effort: S | Gain: S
-
-### [DAILY-QUST] Idea: Daily quest — recurring engagement hook
-- A daily challenge or quest objective that gives players a reason to return each day; what the quest targets (enemy type, action type, ending, etc.) is TBD.
-- Tagged "new hook?" — the engagement loop value is clear but the mechanic is undefined.
-- Priority: P4 — too vague to scope; park until the quest form is defined
-- Type: Idea
-- Effort: M | Gain: M
-- Needs: Define what the daily quest is — what does the player do, what do they earn, and how is progress tracked (localStorage? server-side?)?
 
 ### [KARMA-ITEM] Idea: Legendary item — negates bad karma effects
 - A Legendary that offsets karma penalties — requires karma overhaul ([KARMA-OVR] in EPICS.md) to exist first.
@@ -642,14 +402,6 @@
 - Priority: P4 — interesting mechanic but significant state complexity
 - Type: Idea
 - Effort: M | Gain: M
-
-### [SLEEP-PUNISH] Idea: Non-score punishment for oversleeping — love loss or harder enemies
-- Current oversleep penalty is score-only (−1 per sleep above threshold). Consider adding a mechanical consequence: −1 `playerLove` per penalized sleep (locks higher endings if abused), or giving the current enemy a free attack / skipping item pickup on penalized non-combat sleeps.
-- Love loss is the most thematically resonant option (delays cost connection to Rosabel) but needs a hint system first — players should see it coming before it gates an ending.
-- Source: Perseus review 2026-05-20 — deferred by design; score penalty alone is sufficient for now.
-- Priority: P4 — revisit after hints/transparency around the sleep system are established
-- Type: Idea
-- Effort: S | Gain: M
 
 ### [DEF-STAT] Bug: Player DEF stat — wrong display, item support gaps, incorrect rarity
 - Consolidate damage log message to a single message (not two as now — one for dmg, second for def) when player DEF is non-zero and had effect example "Hit by their attack -1💔 (1🔰)"; not all item types account for DEF; an item with DEF as its sole non-zero stat should resolve as Legendary (Artifact).
@@ -681,12 +433,6 @@
 - Type: Chore
 - Effort: S | Gain: S
 
-### [BOSS-TRACK] Chore: Boss type tracking — replace enemyBossType global hack
-- Replace the enemyBossType global with cleaner state management. (`encounter-loader.js`)
-- Priority: P4 — internal cleanliness; M effort for S gain.
-- Type: Chore
-- Effort: M | Gain: S
-
 ### [ACT-UPGRD] Chore: Action type cleanup — refactor or remove Upgrade type
 - Refactor or remove the Upgrade action type if redundant. (`action-resolver.js`, `ui-render.js`)
 - Priority: P4 — likely dead code; verify before removing.
@@ -705,12 +451,6 @@
 - Type: Improvement
 - Effort: S | Gain: S
 
-### [REST-PAIN] Improvement: Rest button "Pain" label — replace with real state
-- Invent a Perk or state to replace the placeholder "Pain" label on the rest button. (`ui-buttons.js`)
-- Priority: P4 — placeholder label; visible but minor.
-- Type: Improvement
-- Effort: XS | Gain: S
-
 ### [EMOJI-ASGN] Improvement: Emoji assignments — finalize unassigned types
 - Finalize emoji for unassigned encounter types (🐅 > ⚔️ etc.) in `enemy-skills.js` and `action-resolver.js`.
 - Priority: P4 — cosmetic consistency; XS effort.
@@ -722,6 +462,14 @@
 - Priority: P4 — internal cleanliness; S effort for S gain.
 - Type: Chore
 - Effort: S | Gain: S
+
+### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
+- Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.
+- iOS WebKit (Chrome/Safari on iPhone) has a known scroll-height doubling bug when `zoom` is applied to `<body>` — the scrollable area becomes 2× the content height, showing a grey blank region below.
+- Root fix: `overflow:hidden` on body kills legitimate menu scroll on short screens. Proper fix likely needs `html { overflow:hidden; height:100% }` + `body { overflow-y:auto; height:100% }` to confine scroll to body as its own container, or replacing `zoom` with `transform:scale` on a wrapper div.
+- Priority: P2 — visually breaks the page and is jarring on mobile; intermittent but reproducible.
+- Type: Bug | Severity: Major
+- Effort: ? | Gain: S
 
 ---
 
