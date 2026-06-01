@@ -173,7 +173,7 @@ layout: default
                   padding-bottom:0px;">
         <div id="menu_origin_list"></div>
       </div>
-      <button class="menu-btn" id="menu_origin_reroll" style="color:grey; background-color:rgb(40 57 79);" disabled>🌀 Transmute -1 🪙</button>
+      <button class="menu-btn" id="menu_origin_reroll" style="color:grey; background-color:rgb(40 57 79);" disabled>🌀 Transmute <b style="font-size:14px;"> -1 🪙</b></button>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_origin_begin" style="margin-top:16px; color:grey;">✨ Choose an Origin</button>
       <button class="menu-btn" id="menu_origin_cancel">👈 Cancel</button>
@@ -287,7 +287,7 @@ layout: default
         <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Greet</button>
         <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
       </div>
-      <button class="menu-btn" id="menu_credits_donate" style="flex:1; color:#2cc176;">☕️ Donate 1 Coffee!</button>
+      <button class="menu-btn" id="menu_credits_donate" style="flex:1; color:#2cc176; background-color:#115935;">☕️ Donate 1 Coffee!</button>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
     </div>
   </div>

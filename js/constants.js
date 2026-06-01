@@ -41,10 +41,12 @@ var colorLightPink     = "#e38aac";
 var colorDarkPink      = "#a1111a";
 var colorShadeBlue     = "#556f90";
 var colorLightShadeBlue = "#7193bf";
+var colorDarkShadeBlue = "rgb(40,57,79)";
 var colorCardBackground = "#202020";
 var colorPaper         = "#d1bd91";
 var colorDarkPaper     = "#8c7f61";
-var colorFairy         = "#2cc176"
+var colorFairy         = "#2cc176";
+var colorDarkFairy = "#115935";
 
 // ── UI Symbols ────────────────────────────────────────────────────────────────
 var fullSymbol  = "<span class=\"ui-rect full\" style=\"color:"+colorGrey+"\"></span>";
