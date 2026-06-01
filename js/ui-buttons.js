@@ -131,12 +131,12 @@ function adjustEncounterButtons(){
       setButton('button_attack',"❤️ Health",colorPink);
       setButton('button_roll',"🟢 Energy",colorDarkGreen);
       setButton('button_block',"🔵 Mana",colorLightBlue);
-      setButton('button_cast',"🎲 Fate");
-      setButton('button_grab',"🎣 Fishing");
-      setButton('button_curse',"🍀 Fortune");
-      setButton('button_speak',"💭 Remember");
-      setButton('button_heal',"📿 Faith");
-      setButton('button_sleep',"🧠 Psyche");
+      setButton('button_cast',"🎲 Fate", colorRed);
+      setButton('button_grab',"🎣 Fishing", colorShadeBlue);
+      setButton('button_curse',"🍀 Fortune", colorSoftGreen);
+      setButton('button_speak',"💭 Recall", colorFairy);
+      setButton('button_heal',"📿 Faith", colorWhite);
+      setButton('button_sleep',"🧠 Psyche", colorPink);
       break;
 
     case "Consumable":
@@ -373,7 +373,7 @@ function adjustEncounterButtons(){
       setButton('button_speak',"3 🪙 Item",colorPurple);
         if (availableCoins<3) setButton('button_speak',"3 🪙 Item",colorDarkGrey);
 
-      setButton('button_cast',"1 🪙 Risk",colorPink);
+      setButton('button_cast',"1 🪙 Risk",colorRed);
         if (availableCoins<1) setButton('button_cast',"1 🪙 Risk",colorDarkGrey);
 
       setButton('button_heal',"3 🪙 Level",colorYellow);
