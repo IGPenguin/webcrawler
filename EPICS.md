@@ -1,6 +1,6 @@
 # EPICS.md — Major Expansion Plans
 
-*7 epics · last updated 2026-06-01*
+*27 epics · last updated 2026-06-02*
 
 ---
 
@@ -498,13 +498,20 @@ Replace the Curse button with a generic "📓 Spell" button. Players start knowi
 - Revive interval scaled by karma level
 - Speak on aggressive enemies = +1 karma; Attack on neutral/friendly = -2 karma
 - Karma decays toward neutral (1) across runs
-- Tiered reincarnation bonus (not flat — see [KARMA-SCALE] in TODOs for the short-term fix)
+- Tiered reincarnation bonus (not flat — see [KARMA-SCALE] below for the scoped fix)
 - Mischievous encounter variants when karma < 0
 - Perks and flaws unlock at ±10 karma thresholds
 - Good karma triggers a bonus encounter (not only on revive)
 - Proactive repair actions for negative karma recovery
 
 **Hint system required first:** Players must be able to see karma implications before actions lock them in. Hints and karma UI must ship before most mechanic expansions.
+
+##### Karma Scaling ([KARMA-SCALE])
+
+Any positive karma currently gives the same revive reward — should scale by tier. Implement in `player-skills.js`. This is the short-term, self-contained fix for the flat revive reward; ship it before the full [KARMA-OVR] overhaul rather than waiting.
+
+- Effort: S | Gain: M
+- Can ship independently as a standalone P3 task if the full overhaul is deferred.
 
 ---
 
@@ -528,7 +535,68 @@ Replace the Curse button with a generic "📓 Spell" button. Players start knowi
 
 ---
 
+### [HCORE-END] Epic: Hardcore difficulty — Dream Boss ending
+- On Hardcore only: inject a pre-boss story beat in Shrouded Necropolis revealing the corrupted world was always a dream. The final boss fight is kept; after the boss is defeated, a post-fight cutscene plays — Rosabel disintegrates and the dream unravels, reframing the entire run.
+- Three beats: (1) pre-boss dream revelation encounter 💭, (2) the boss fight (optional mechanical twist TBD), (3) post-boss cutscene that triggers the win state.
+- New endType `win_dream`; wire `ScoreManager.getEndingLabel()` ("Woke Up"), +100 win bonus applies via `win_` prefix.
+- New achievement: "The Dreamer" — won Hardcore via the dream path. Wire in `_doGameEnd()` when `endType === 'win_dream'`.
+- Note: an earlier design (superseded) had the dream sequence skip the boss via a walk-away win. That design is replaced — the boss fight must be kept.
+- Priority: P2 — missing story beat for Hardcore mode; intended for early post-beta.
+- Type: Epic
+- Effort: M | Gain: L
+- Prerequisites: none
+
+---
+
+### [ITCH-WRPR] Epic: itch.io game wrapper and manual upload GitHub Action
+- Create an itch.io-compatible static build (HTML wrapper embedding or framing the game) and a `workflow_dispatch`-only GitHub Action that packages the build and uploads via the Butler CLI.
+- The action must never trigger automatically on push; itch.io release is always a deliberate manual step.
+- Priority: P2 — itch.io is the primary non-GitHub discovery channel; needed before public beta launch.
+- Type: Epic
+- Effort: M | Gain: L
+- Prerequisites: none
+
+---
+
+### [PET-ENCNTR] ~Epic: Pet interaction encounter spawns — companion-triggered CSV encounters
+- If a pet emoji is in `playerPartyString`, enable a pool of pet-specific encounter rows to spawn in that area — purely an emoji `includes()` check, no new state objects.
+- Works like existing Toga artifact-style encounters: a random slot in the area encounter sequence can be a pet-interaction row matched to the party's pet type.
+- Dog example rows: "Kerberos requests belly rubs.<br>Shaking tail full of excitement." / "Kerberos barks loud a lot.<br>Seems like danger ahead." (boss-warning variant requires [ENC-PREGEN] to peek at next encounter type).
+- Recruit companion (human type) = same system but speech-style: "The stranger pauses. 'Something doesn't feel right ahead.'"
+- Start with dog and recruit; add cat/bird/lizard pools as a follow-up content pass.
+- Priority: ~P2 — consider demoting to TODOs.md — S effort, 2 systems (encounter-generator.js + new CSV rows); doesn't clearly meet epic threshold. Kept here per user intent; the content writing scope may expand it.
+- Type: Epic
+- Effort: S | Gain: L
+- Prerequisites: [ENC-PREGEN] for the boss-warning variant only; base belly-rub and nuisance rows ship independently
+- Details: Needs: write encounter CSV rows per pet type (dog belly rub, nuisance, boss-warning). Long-term bark pool vision: see [PET-SLOT].
+
+---
+
+### [BARK-CTX] ~Epic: Contextual companion barks — split bark pools by encounter type
+- Refactor the bark system in `companion-manager.js` to fire different bark pools based on the current encounter context instead of generic barks regardless of situation.
+- Trigger mapping: negative trap/curse encounter → warn barks; neutral prop → standard barks; boss proximity → alert barks; positive encounter (passive mob, altar, friend) → wonder/curiosity barks; etc.
+- Flagged in multiple reviews as the single biggest gap in companion feel — generic barks break immersion and undercut the "companions as relationships" design principle in DESIGN.md.
+- Priority: ~P2 — consider demoting to TODOs.md — S effort, single file (companion-manager.js), design is known; doesn't meet epic threshold. Kept here per user intent.
+- Type: Epic
+- Effort: S | Gain: L
+- Prerequisites: none
+- Details: Related: [PET-ENCNTR] (companion encounter rows, P2); bark context is what makes those land emotionally.
+
+---
+
 ## P3 — Long-term Vision
+
+### [ENC-PREGEN] Epic: Pre-generate encounter sequence so companions can peek ahead
+- Currently `generateNextEncounters()` in `encounter-generator.js` may populate encounters lazily — the next entry might not be resolved until the player navigates to it. To let the 🐶 dog (and future companions) react to what's ahead, the next encounter must be resolved before the player arrives.
+- First step: audit `generateNextEncounters()` and `getNextEncounterIndex()` in `data-loader.js` to confirm whether a one-step lookahead is already possible. If not, adjust generation to eagerly resolve at least the next entry in the queue on area entry.
+- Longer-term: resolve the entire run sequence on game start — simpler state, no lazy gaps, and enables branching paths (see [PATH-CHCE]) where two pre-generated routes exist simultaneously.
+- Priority: P3 — structural prerequisite for [PET-ENCNTR] boss-warning variant and [PATH-CHCE]; confirm lazy vs. eager behavior before estimating full scope.
+- Type: Epic
+- Effort: L | Gain: XL
+- Prerequisites: none (gates [PATH-CHCE], [PET-ENCNTR] boss-warning variant)
+- Details: Needs: confirm generation timing before writing code.
+
+---
 
 ### [PET-SLOT] Epic: Structured Pet System — named pets with personality-driven contextual barks
 - Replace emoji-string pet tracking with a structured object: `{name, type, stats, personality}`. Enables named pets (Kerberos, etc.), personality-driven bark pools per type+personality pairing, per-pet stat contributions, and deep contextual reactions to enemy types, areas, traps, and boss proximity.
@@ -573,6 +641,48 @@ Each type + personality pairing (cat+playful, dog+loyal, lizard+cold, bird+curio
 
 ---
 
+### [AMB-FX] Epic: Area ambient UI effects — falling leaves, rain, fog per area
+- Pixel-styled, black-outlined ambient effects per area: falling leaves (Fairyland), blue/purple leaves (Necropolis), rain (River), fog (Village). Expose per-area config: effect type, density, frequency, speed.
+- Crosses ui-effects.js, CSS/canvas animation layer, per-area config in game-config.js, and area transition hooks — new architectural layer for ambient rendering that doesn't currently exist.
+- Priority: P3 — strong atmosphere contribution; L effort and not blocking beta.
+- Type: Epic
+- Effort: L | Gain: L
+- Prerequisites: none
+- Details: Needs design discussion (VFX, engineering, creative direction, hardcore fan review) before implementation — /perseus or Hades Gate recommended.
+
+---
+
+### [RUN-MOD] Epic: Game run modifiers
+- Unlockable run modifiers activated via Origins or special conditions (e.g., Demons passive, Animals passive).
+- Crosses origins system, player-skills.js, game-state.js, and potentially encounter generation — new modifier layer touching multiple systems.
+- Priority: P3 — adds build variety depth; design gate is the hard blocker.
+- Type: Epic
+- Effort: L | Gain: M
+- Prerequisites: none
+- Details: Needs: define unlock conditions and exact modifier effects before implementing.
+
+---
+
+### [COMP-ATK] Epic: Companion attack contribution — companion ATK fires as follow-up on player attack
+- Companions with ATK > 0 do not contribute to player attack in the moment of acquiring; their ATK is stored. Any time the player attacks, the companion fires a 100% hit follow-up: a toast fires some ms after the player attack, an additional log line is added, and the enemy takes damage equal to the companion's stored ATK.
+- MVP scope — no full pet stats solution needed. Stamina cost for companions is optional scope expansion.
+- Crosses companion-manager.js (storing companion ATK, firing follow-up), action-resolver.js (triggering companion attack hook on player attack), and string-generator.js (companion attack bark pool).
+- Priority: P3 — adds companions as active combat contributors with near-zero new architecture; warmup for [PET-SLOT] full stat vision.
+- Type: Epic
+- Effort: M | Gain: M
+- Prerequisites: none
+
+---
+
+### [INVAD-GRAVE] ~Epic: Invader Graveyard UI
+- "👾 Kill List" section in Main Menu screen — name, area, and level per entry, persisted under `rivalGraveyard` in localStorage.
+- Priority: ~P3 — consider demoting to TODOs.md — S effort, 1-2 systems (menu.js + localStorage); doesn't meet epic threshold. Kept here per user intent.
+- Type: Epic
+- Effort: S | Gain: M
+- Prerequisites: none
+
+---
+
 ## P4 — Speculative / Shelved
 
 ### [PATH-CHCE] Epic: Branching Encounter Paths — pre-generated two-path crossroads choices
@@ -601,4 +711,122 @@ The dog's warning (from [PET-ENCNTR]) is what makes the crossroads matter — it
 
 ---
 
-*EPICS.md — 7 epics*
+### [LOOT-ANIM] Epic: Full loot reveal animation — roll → snap
+- Full loot reveal flow: an animated "rolling" state (cycling emoji shimmer, blurred or randomized placeholder) builds anticipation before everything lands with a visual snap — rarity-colored flash or pulse keyed to the tier revealed (Common = subtle, Legendary = full flash).
+- All three card elements are obscured during the roll: emoji, name, and desc. All three snap into place simultaneously.
+- Triggers: all loot sources — enemy kill drop, shop purchase, fishing, pre-generated loot navigation.
+- Rarity tie-in: snap animation intensity maps to tier; requires integration with `encounter-loader.js`, `ui-render.js`, CSS `@keyframes`, and the rarity system for snap color.
+- Design and implementation via Hades Gate as a standalone post-beta update; [LOOT-CHCE] is the beta-tier delivery.
+- Priority: P4 — [LOOT-CHCE] covers the beta tier; this is the full gacha-feel vision.
+- Type: Epic
+- Effort: L | Gain: XL
+- Prerequisites: [LOOT-CHCE] shipped and validated
+- Details: Needs full design via Hades Gate before implementation.
+
+---
+
+### [FISH-ABAR] Epic: Fishing items on action bar — rarity-based multi-choice layout
+- On a fishing reward encounter: roll 3 loot candidates from the eligible pool; scatter them across action bar intervals; surround two random-rarity candidates with a green skill-check interval and the Legendary/crit candidate with a yellow crit-pass interval.
+- Each reward is mapped to existing pass/crit zones.
+- Requires current fishing flow to be stable and validated first; crosses fishing flow, action-bar.js, rarity system, and encounter-loader.js.
+- Priority: P4 — high-design fishing mechanic; high-design fishing mechanic; parking until fishing flow is proven stable.
+- Type: Epic
+- Effort: L | Gain: L
+- Prerequisites: fishing flow stable and validated post-beta
+
+---
+
+### [SFX-MUSIC] Epic: Sounds — SFX and background music
+- Investigate platform support (iOS, Android, Mac, Windows) and add sound effects and ambient music.
+- iOS autoplay restrictions and Android audio context requirements make this a significant design and platform gate before any audio code is written.
+- Priority: P4 — audio is transformative but large scope with platform risk.
+- Type: Epic
+- Effort: L | Gain: L
+- Prerequisites: none
+- Details: Needs: platform investigation first (iOS autoplay policy, Android AudioContext, PWA audio limitations). Design session before implementation.
+
+---
+
+### [BLACK-HOLE] Epic: Black hole — new optional area + spaghetti monster boss
+- DLC-style optional area with spaghetti monster boss, modern props, items, and tools. The JS spaghetti monster joke boss lives here.
+- XL effort: new area generator config, new enemy/item CSV rows, new boss pool, story integration, and optional area entry mechanic — crosses 4+ systems.
+- Priority: P4 — fun/joke expansion; well outside current scope.
+- Type: Epic
+- Effort: XL | Gain: M
+- Prerequisites: none
+- Details: Design scope is entirely open; requires Hades Gate session.
+
+---
+
+### [VEC-BG] Epic: Vector backgrounds for all areas
+- Complete and default to vector backgrounds for all areas.
+- Priority: P4 — significant atmosphere upgrade; L effort, not mobile-critical.
+- Type: Epic
+- Effort: L | Gain: M
+- Prerequisites: none
+
+---
+
+### [DAILY-QUST] Epic: Daily quest — recurring engagement hook
+- A daily challenge or quest objective that gives players a reason to return each day; what the quest targets (enemy type, action type, ending, etc.) is entirely TBD.
+- Priority: P4 — too vague to scope; mechanic and reward loop undefined.
+- Type: Epic
+- Effort: M | Gain: M
+- Prerequisites: none
+- Details: Needs: define what the daily quest is — what does the player do, what do they earn, and how is progress tracked (localStorage? server-side?)?
+
+---
+
+### [SVG-EMOJI] Epic: SVG support in emoji column
+- Support `thing.svg` references in the emoji column (`assets/encounters/`); render same size/position as emoji.
+- Crosses encounter-loader.js (detect .svg references), ui-render.js (img tag vs emoji rendering), and potentially CSS layout changes.
+- Priority: P4 — infra change for a niche use case; would enable endless content as emojis run out.
+- Type: Epic
+- Effort: M | Gain: S
+- Prerequisites: none
+
+---
+
+### [VIS-IMPACT] Epic: Full visual impact frames — hit flash, damage flash, STA fade
+- Flash white when player hits; red-white flash when player takes damage and is left with just 1 HP; green flash when losing STA and left with 1 STA.
+- Crosses ui-effects.js, CSS keyframe animations, and action-resolver.js trigger hooks; visual changes always take longer to feel good than estimated.
+- Bundle with [FLASH-CRIT] for a unified VFX pass.
+- Guard every `animationend` handler with `if (e.target !== e.currentTarget) return` to prevent child element bubbling bugs.
+- Priority: P4 — polish; some visual feedback already exists; parking post-beta.
+- Type: Epic
+- Effort: M | Gain: L
+- Prerequisites: none
+
+---
+
+### [TELE-ENHA] ~Epic: Enhance score/telemetry payload — death message, companions, area
+- Add to submission/telemetry payloads: player death message or win-type message; companion list with names; area at the time of run-end and achievement-unlock events.
+- Implement in `score-manager.js` and telemetry hooks; include in both the Google Form submission and the base64 ghost link payload.
+- Priority: ~P4 — consider demoting to TODOs.md — S effort, 1-2 files (score-manager.js + telemetry hooks), design is known; doesn't meet epic threshold. Kept here per user intent.
+- Type: Epic
+- Effort: S | Gain: M
+- Prerequisites: none
+
+---
+
+### [FLASH-CRIT] ~Epic: .flash-crit CSS animation on critical hits
+- Brief card flash on critical hit — hook into existing ui-effects.js animation infrastructure.
+- Bundle with [VIS-IMPACT] for full crit feedback; guard every `animationend` handler with `if (e.target !== e.currentTarget) return` to prevent child element bubbling bugs.
+- Priority: ~P4 — consider demoting to TODOs.md — XS effort, 1-2 systems, design is known; clearly below epic threshold. Kept here per user intent as part of the VFX bundle.
+- Type: Epic
+- Effort: XS | Gain: M
+- Prerequisites: none
+
+---
+
+### [HALF-STAT] ~Epic: Fractional stat support for visible stats — half symbol for HP/ATK/STA/MGK
+- Support 0.5-step values on visible combat stats (HP, ATK, STA, MGK) in CSV/origins; display as a half symbol rather than rounding or hiding the fraction.
+- Related to [STAT-NUDGE] (TODOs P3), which covers fractional nudges on hidden stats (LCK, INT) with label-based display; this extends that concept to visible stats with a symbol approach. Display convention should align with whatever [STAT-NUDGE] lands on.
+- Priority: ~P4 — consider demoting to TODOs.md — S effort, S gain, primarily a display-convention change; doesn't meet epic threshold. Kept here per user intent.
+- Type: Epic
+- Effort: S | Gain: S
+- Prerequisites: [STAT-NUDGE] design decision (display convention alignment)
+
+---
+
+*EPICS.md — 27 epics*

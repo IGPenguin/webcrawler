@@ -8,7 +8,7 @@
 
 - none
 
-## P1 — Serious Issues & Big Wins
+## P1 — Release-Gating & Big Wins
 
 ### [FRIEND-MIN] Bug: Friend encounter pool error — areas missing minimum no-quest friends
 - Fairyland (and possibly other areas) errors when the generator tries to pull a friend-type encounter from a pool that is empty or too thin.
@@ -17,6 +17,12 @@
 - Type: Bug | Severity: Major
 - Effort: S | Gain: L
 
+### [NEG-FRIEND] Feature: Negative friends — stat decrement encounters
+- "Negative friend" encounter variants that decrement stats (inverse of a standard friend boost) — add to late-game areas.
+- Priority: P3 — adds tension to a currently safe encounter type
+- Type: Feature
+- Effort: S | Gain: M
+
 ### [CHEAT-SUBM] Feature: Disable score submit button if `cheatedThisRun` is true
 - When `cheatedThisRun` is set, render the score submission button as visually disabled (grayed out, non-interactive) rather than silently blocking on click.
 - Implement in `score-manager.js` or `ui-render.js`: check `cheatedThisRun` when rendering the nickname/submit overlay; apply `disabled` attribute and a muted visual style to the submit button.
@@ -24,7 +30,7 @@
 - Type: Feature
 - Effort: XS | Gain: M
 
-## P2 — Release-Gating
+## P2 — Serious Issues
 
 ### [FAIR-MINST] Balance: Raise minimum stamina on Fairyland enemies to 2
 - Audit all Standard enemy rows in Fairyland areas and raise any with `sta < 2` to `sta = 2`.
@@ -165,12 +171,6 @@
 - Type: Feature
 - Effort: S | Gain: M
 
-### [NEG-FRIEND] Feature: Negative friends — stat decrement encounters
-- "Negative friend" encounter variants that decrement stats (inverse of a standard friend boost) — add to late-game areas.
-- Priority: P3 — adds tension to a currently safe encounter type
-- Type: Feature
-- Effort: S | Gain: M
-
 ### [PET-ADOPT] Feature: Adopt pet for item — give item to tame
 - Allow giving a specific item to adopt a pet (e.g., offer a mouse/lizard to a cat) — similar to friend quest item mechanic but for pet recruitment.
 - Priority: P3 — adds a resource decision to pet taming
@@ -211,6 +211,7 @@
 - Priority: P3 — extends existing container design with a mana decision; low-effort extension of an existing pattern.
 - Type: Feature
 - Effort: S | Gain: M
+
 
 ### [SHOP-BOOST] Content: Expand shop 1-coin boost item pool
 - Add more Common boost items with +x/-x stat tradeoffs to the shop's 1-coin pool — e.g., +1 ATK / -1 LCK, +1 STA / -1 HP.
@@ -282,7 +283,7 @@
 - Needs: Decide scope — full audit or just the recently-added encounter types?
 
 ### [UI-DIALOGS] Chore: Consolidate all dialog overlays into ui-dialogs.js
-- Five modal overlays currently live in different files: QR share dialog, leaderboard nickname (score-manager.js), companion name + player rename (ui-effects.js), and slot swap (inventory-manager.js). Extract all into a single ui-dialogs.js with a consistent open/confirm/cancel pattern, loaded after ui-effects.js.
+- Six modal overlays currently live in different files: QR share dialog (`social.js`), donate dialog (`social.js`, added 2026-06-02), leaderboard nickname (`score-manager.js`), companion name + player rename (`ui-effects.js`), and slot swap (`inventory-manager.js`). Extract all into a single ui-dialogs.js with a consistent open/confirm/cancel pattern, loaded after ui-effects.js.
 - Priority: P3 — no user-visible impact; purely internal cleanliness
 - Type: Chore
 - Effort: S | Gain: S
