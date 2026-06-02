@@ -246,7 +246,10 @@ function adjustEncounterButtons(){
       if (playerSta==0) setButton('button_roll',"👣 Walk",colorDarkGrey);
       setButton('button_speak',"💬 Speak",colorDarkGrey);
       setButton('button_sleep',"💤 Sleep",colorLightBlue);
-      if (enemyName.includes("Regrets")) setButton('button_sleep',"🙁 Accept",colorSoftRed);
+      if (enemyName.includes("Regrets")) {
+        setButton('button_sleep',"🙁 Accept",colorSoftRed);
+        setButton('button_roll',"👐 Shrug",colorSoftRed);
+       }
       if (enemyName.includes("Waking Moment") || enemyName.includes("Horrific Realization")) setButton('button_sleep',"💤 Sleep",colorDarkGrey);
       if (areaName.includes("Shrouded")) setButton('button_sleep',"🧠 Think",colorRed);
       break;
