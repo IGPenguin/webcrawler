@@ -117,7 +117,7 @@ var Menu = (function () {
 
         _checkVersionChangelog();
       }, { once: true });
-    }, 4000);
+    }, 2000);
   }
 
   // ── Screen routing ─────────────────────────────────────────────────────────
