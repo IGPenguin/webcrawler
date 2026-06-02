@@ -1997,7 +1997,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               if (playerSta > 0) playerSta--;
               enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
-              logPlayerAction(actionString,"Wore them down, not finished yet -1 🟢");
+              logPlayerAction(actionString,"Wore them down -1 🟢");
               displayEnemyCannotEffect();
               if (enemyCastIfMgk()) break;
               if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();
@@ -2709,24 +2709,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             displayPlayerEffect("🙏");
             var isSacrifice = (enemyHp < 0);
             if (isSacrifice) {
-              var blade = checkPlayerHasItem(validBlades);
-              if (blade != "") {
-                playerLootString += blade;
-                displayEnemyEffect("🩸");
-                playerHit(1, false, true);
-                if (encounterUsed) {
-                  logPlayerAction(actionString, "Your sacrifice had no effect -1 💔");
-                  displayPlayerCannotEffect();
-                  break;
-                }
-                playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg + " -1 💔", true, false);
-                playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, "");
-                isFishing = false;
-                encounterUsed = true;
-              } else {
-                logPlayerAction(actionString, "No effect, missing a viable <b>🔪 Blade</b>.");
+              displayEnemyEffect("🩸");
+              playerHit(1, false, true);
+              if (encounterUsed) {
+                logPlayerAction(actionString, "Your sacrifice had no effect -1 💔");
                 displayPlayerCannotEffect();
+                break;
               }
+              playerChangeStats(0, enemyAtk, enemySta, enemyLck, enemyInt, enemyMgk, enemyDef, enemyMsg, true, false);
+              playerGainXP(1, GAME_CONFIG.rewardXpSmall * playerLevel, "");
+              isFishing = false;
+              encounterUsed = true;
             } else {
               if (encounterUsed) {
                 logPlayerAction(actionString, getPrayNoTargetText());
