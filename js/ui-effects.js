@@ -405,9 +405,11 @@ function permanentDeath(htmlMsg) {
   });
 }
 
-// Quick black flash for menu screen transitions (no text, no game click listeners).
-function menuFade(callback) {
+// Quick black flash for menu screen transitions. Pass optional `text` (HTML string) to show
+// a centred message during the curtain with a 700ms hold before fade-out.
+function menuFade(callback, text) {
   var curtain = document.getElementById('id_fullscreen_curtain');
+  var textEl  = text ? document.getElementById('id_fullscreen_text') : null;
   var gen = ++_curtainGen;
 
   curtain.style.pointerEvents = 'auto';
@@ -421,19 +423,37 @@ function menuFade(callback) {
     if (_curtainGen !== gen) return;
     curtain.classList.remove('animate__animated', 'animate__fadeIn');
 
+    if (textEl) {
+      textEl.innerHTML = text;
+      textEl.style.display = 'block';
+    }
+
     callback();
 
-    void curtain.offsetWidth;
-    curtain.style.setProperty('--animate-duration', '0.3s');
-    curtain.classList.add('animate__animated', 'animate__fadeOut');
-
-    curtain.addEventListener('animationend', function onOut() {
-      curtain.removeEventListener('animationend', onOut);
+    function _doFadeOut() {
       if (_curtainGen !== gen) return;
-      curtain.classList.remove('animate__animated', 'animate__fadeOut');
-      curtain.style.display = 'none';
-      curtain.style.pointerEvents = 'none';
-    });
+      void curtain.offsetWidth;
+      curtain.style.setProperty('--animate-duration', '0.3s');
+      curtain.classList.add('animate__animated', 'animate__fadeOut');
+
+      curtain.addEventListener('animationend', function onOut() {
+        curtain.removeEventListener('animationend', onOut);
+        if (_curtainGen !== gen) return;
+        curtain.classList.remove('animate__animated', 'animate__fadeOut');
+        curtain.style.display = 'none';
+        curtain.style.pointerEvents = 'none';
+        if (textEl) {
+          textEl.style.display = 'none';
+          textEl.innerHTML = '';
+        }
+      });
+    }
+
+    if (text) {
+      setTimeout(_doFadeOut, 700);
+    } else {
+      _doFadeOut();
+    }
   });
 }
 

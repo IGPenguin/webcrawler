@@ -212,6 +212,7 @@ var Menu = (function () {
   }
 
   function _doNewGame(origin) {
+    localStorage.setItem('transmuteRunStarted', 'true');
     try { localStorage.removeItem('originRoll'); } catch(e) {}
     renewPlayer(); // sets spentCoins=0, availableCoins=savedCoins
     if (origin) {
@@ -329,6 +330,17 @@ var Menu = (function () {
   }
 
   function _renderOriginPicker(skipScreenSwitch) {
+    // Refund transmute debt only after a run was actually started (not on page reload)
+    if (!skipScreenSwitch && localStorage.getItem('transmuteRunStarted')) {
+      var debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
+      if (debt > 0) {
+        savedCoins += debt;
+        localStorage.setItem('coins', parseInt(savedCoins));
+        try { localStorage.removeItem('transmuteDebt'); } catch(e) {}
+      }
+      try { localStorage.removeItem('transmuteRunStarted'); } catch(e) {}
+    }
+
     _selectedOrigin = null;
     var origins = _rollOrigins();
     if (origins.length === 0) { _doNewGame(null); return; }
@@ -345,10 +357,16 @@ var Menu = (function () {
     });
 
     var subtitle = document.getElementById('menu_origin_subtitle');
-    
-    var availableCoins=parseInt(savedCoins);
-    subtitle.innerHTML="These starting Origins are available:"
-    if (availableCoins>0) subtitle.innerHTML='Pick a starting Origin, you have <b style="color:#7193bf;">' + availableCoins + ' 🪙 Drachmae</b>.'
+
+    var availableCoins = parseInt(savedCoins);
+    var everHadCoins = AchievementManager.isUnlocked('coin_first');
+    if (availableCoins > 0) {
+      subtitle.innerHTML = 'Pick a starting Origin, you have <b style="color:#7193bf;">' + availableCoins + ' 🪙 Drachmae</b>.';
+    } else if (everHadCoins) {
+      subtitle.innerHTML = 'You have no more 🪙 Drachmae.';
+    } else {
+      subtitle.innerHTML = 'These starting Origins are available:';
+    }
 
     var list = document.getElementById('menu_origin_list');
     list.innerHTML = '';
@@ -409,6 +427,7 @@ var Menu = (function () {
       var canReroll = parseInt(savedCoins) >= 1;
       rerollBtn.disabled = !canReroll;
       rerollBtn.style.color = canReroll ? colorLightShadeBlue : 'grey';
+      rerollBtn.style.backgroundColor = canReroll ? 'rgb(40 57 79)' : '#2a2a2a';
     }
 
     if (skipScreenSwitch) { _doShowScreen('menu_origin_screen'); } else { _showScreen('menu_origin_screen'); }
@@ -1284,12 +1303,14 @@ var Menu = (function () {
       if (parseInt(savedCoins) < 1) return;
       savedCoins--;
       localStorage.setItem('coins', parseInt(savedCoins));
+      var debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
+      localStorage.setItem('transmuteDebt', debt + 1);
       AchievementManager.check('transmute');
       try { localStorage.removeItem('originRoll'); } catch(e) {}
       menuFade(function () {
         _selectedOrigin = null;
         _renderOriginPicker(true);
-      });
+      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">🌀 New origins await...</p>');
     });
 
     document.getElementById('menu_origin_cancel').addEventListener('click', function () {
@@ -1314,6 +1335,7 @@ var Menu = (function () {
     document.getElementById('menu_codex').addEventListener('click', function () {
       window.open('https://github.com/IGPenguin/stay-dead/blob/live/WIKI.md', '_blank');
     });
+    document.getElementById('menu_credits_donate').addEventListener('click', function () { showDonatePopup(); });
     document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
     document.getElementById('menu_credits_share').addEventListener('click', function () {
       showSharePopup();

@@ -93,6 +93,88 @@ function redirectToFeedback(){
   openFeedbackForm(generateCharacterLegend(50));
 }
 
+function showDonatePopup() {
+  var mockLink = 'revolut.me/[MY_HANDLE]';
+
+  var existing = document.getElementById('donate_popup_overlay');
+  if (existing) existing.parentNode.removeChild(existing);
+
+  var overlay = document.createElement('div');
+  overlay.id = 'donate_popup_overlay';
+  overlay.style.cssText = 'position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column;';
+
+  var card = document.createElement('div');
+  card.style.cssText = 'background-color:#202020; padding:20px; max-width:290px; width:90%; box-shadow:0 0 0 3px #000; text-align:center;';
+
+  var title = document.createElement('h3');
+  title.style.cssText = 'margin:0 0 6px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;';
+  title.innerHTML = "☕ Support IGPenguin's family!";
+
+  var subtitle = document.createElement('p');
+  subtitle.style.cssText = 'margin:8px 0 8px 0; font-size:13px; color:#888;';
+  subtitle.innerHTML = 'ℹ️ Voluntary donation, no extra content provided.';
+
+  var qrWrap = document.createElement('div');
+  qrWrap.style.cssText = 'position:relative; width:284px; height:284px; margin:0 auto 0 auto; background:#2a2a2a; box-shadow:0 0 0 3px #000; display:flex; align-items:center; justify-content:center;';
+
+  var qrLabel = document.createElement('span');
+  qrLabel.style.cssText = 'color:#555; font-size:16px; letter-spacing:0.03em;';
+  qrLabel.innerHTML = 'Coming soon';
+
+  qrWrap.appendChild(qrLabel);
+
+  var linkInput = document.createElement('input');
+  linkInput.type = 'text';
+  linkInput.readOnly = true;
+  linkInput.value = mockLink;
+  linkInput.style.cssText = 'width:286px; box-sizing:border-box; font-size:16px; padding:10px; background:#2a2a2a; border:none; outline:2px solid #444; color:#aaa; font-family:inherit; margin-bottom:10px; text-align:center; cursor:text;';
+  linkInput.addEventListener('click', function () { this.select(); });
+
+  var btnRow = document.createElement('div');
+  btnRow.style.cssText = 'display:flex; gap:4px;';
+
+  var copyBtn = document.createElement('button');
+  copyBtn.className = 'menu-btn';
+  copyBtn.style.cssText = 'flex:1; margin-top:0; color:#FFD940;';
+  copyBtn.innerHTML = '💸 Copy Link';
+
+  var closeBtn = document.createElement('button');
+  closeBtn.className = 'menu-btn';
+  closeBtn.style.cssText = 'flex:0.6; margin-top:0; color:#ff6666;';
+  closeBtn.innerHTML = '✕ Close';
+
+  copyBtn.addEventListener('click', function () {
+    function _onCopied() {
+      copyBtn.innerHTML = '✓ Copied!';
+      setTimeout(function () { copyBtn.innerHTML = '💸 Copy Link'; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(mockLink).then(_onCopied).catch(function () {
+        linkInput.select(); document.execCommand('copy'); _onCopied();
+      });
+    } else {
+      linkInput.select(); document.execCommand('copy'); _onCopied();
+    }
+  });
+
+  function _closePopup() {
+    if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+  }
+
+  closeBtn.addEventListener('click', _closePopup);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) _closePopup(); });
+
+  btnRow.appendChild(copyBtn);
+  btnRow.appendChild(closeBtn);
+  card.appendChild(title);
+  card.appendChild(qrWrap);
+  card.appendChild(subtitle);
+  card.appendChild(linkInput);
+  card.appendChild(btnRow);
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+}
+
 function showSharePopup() {
   var shareUrl = 'https://igpenguin.github.io/stay-dead';
 
