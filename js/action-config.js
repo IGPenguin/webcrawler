@@ -422,7 +422,7 @@ function calcActionBarConfig(button, adjustment) {
   }
   // Mirror Speak — hard crit pass, moderately easy crit fail
   if (button === 'button_speak' && types === 'Mirror') {
-    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT),
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT),
              successMin: 35, successMax: 65,
              critSuccessMin: 48, critSuccessMax: 52, critFailW: 10 };
   }
