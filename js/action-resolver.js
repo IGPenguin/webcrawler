@@ -1078,7 +1078,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if ((enemyAtk+enemyAtkBonus)<=0) {
               if (_skillOK === true) {
                 displayEnemyEffect("☝️");
-                if (enemyStaminaChangeMessage(-2,"Enjoyed a playful moment -1 🟢","They needed to catch a breath -1 🟢")) {
+                if (enemyStaminaChangeMessage(-2,getPlayfulMomentLog(),"They needed to catch a breath -1 🟢")) {
               }
             } else {
               displayEnemyEffect("☝️");
