@@ -565,7 +565,9 @@ function _rarityFromRow(row) {
   if (noteRaw.toLowerCase().includes('artifact')) return 'Legendary';
   var type = (row[3] || '').split(':').slice(1).join(':').trim();
   var net = (type === 'Consumable') ? _consumableNetFromRow(row) : _netFromRow(row);
-  return (type === 'Consumable') ? RarityManager.getTierForConsumableNet(net) : RarityManager.getTierForItemNet(net);
+  if (type === 'Consumable') return RarityManager.getTierForConsumableNet(net);
+  function v(i) { return parseFloat((row[i] || '').split(':')[1]) || 0; }
+  return RarityManager.getTierForItemNet(net, { atk: v(5), mgk: v(9), hp: v(4), sta: v(6), lck: v(7), int: v(8), def: v(10) });
 }
 
 // Achievement filter: returns true if the row's achiev field is unlocked (or none).
