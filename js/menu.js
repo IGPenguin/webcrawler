@@ -543,7 +543,7 @@ var Menu = (function () {
     list.parentElement.style.overflowY = 'auto';
     var sessions = SaveManager.listSessionHistory();
 
-    var _note = document.getElementById('menu_rankings_note');
+    var _note = document.getElementById('menu_chronicles_note');
     if (_note) {
       if (sessions.length === 0) {
         _note.innerHTML = 'No paths have been walked yet.';

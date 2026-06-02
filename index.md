@@ -234,7 +234,7 @@ layout: default
             paint-order: stroke fill;
             margin:8px 0 6px 0;
             text-align:center;">📜 Chronicles</h2>
-      <h5 id="menu_rankings_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The eternal remains of those who tried.</h5>
+      <h5 id="menu_chronicles_note" style="margin:0 0 12px 0; font-size:14px; opacity:1; letter-spacing:0.8px; text-align:center;">The eternal remains of those who tried.</h5>
       <div style="flex:1;
                   min-height:0;
                   max-height:432px;
@@ -272,7 +272,7 @@ layout: default
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Co-designer, feedback</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:14px;">Terezka <a href="https://github.com/Blue2lip">"Blue2lip"</a> Svobodová</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Custom tools</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;"><a href="https://github.com/IGPenguin/perseus-blade">Perseus Blade</a>, <a href="https://github.com/IGPe<nguin/hades-gate">Hades Gate</a><br><a href="https://github.com/IGPenguin/styx-flow">Styx Flow</a>, <a href="https://github.com/IGPenguin/medusa-gaze">Medusa Gaze</a>, <a href="https://github.com/IGPenguin/echo-skepsis">Echo Skepsis</a></h4>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;"><a href="https://github.com/IGPenguin/perseus-blade">Perseus Blade</a>, <a href="https://github.com/IGPenguin/hades-gate">Hades Gate</a><br><a href="https://github.com/IGPenguin/styx-flow">Styx Flow</a>, <a href="https://github.com/IGPenguin/medusa-gaze">Medusa Gaze</a>, <a href="https://github.com/IGPenguin/echo-skepsis">Echo Skepsis</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:4px; opacity:0.6; font-size:14px;">Coding tech</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; margin-bottom:16px;"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a> + <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://animate.style">animate.style</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Beta testers</h5>
