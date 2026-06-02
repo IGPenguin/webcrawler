@@ -31,7 +31,7 @@ var InventoryManager = (function() {
     var noteTag = RarityManager.getTierFromNote(data.note || '');
     if (noteTag) return noteTag;
     if ((data.note || '').includes('Artifact')) return 'Legendary';
-    return RarityManager.getTierForItemNet(RarityManager.calcNet(data));
+    return RarityManager.getTierForItemNet(RarityManager.calcNet(data), data);
   }
 
   function _itemRowHtml(data) {
@@ -41,7 +41,7 @@ var InventoryManager = (function() {
       var parts = String(data.desc).split(/<br\s*\/?>/i);
       descLine = parts.length > 1 ? parts[1].trim() : parts[0].trim();
     }
-    return '<div style="display:flex;align-items:center;gap:6px;padding:14px 10px 4px 12px;">'
+    return '<div style="display:flex;align-items:center;gap:6px;padding:14px 0px 4px 8px;">'
       + '<div style="display:flex;align-items:center;justify-content:center;flex-shrink:0;width:42px;align-self:center;">'
         + '<span style="font-size:28px;line-height:1;">' + data.emoji + '</span>'
       + '</div>'
