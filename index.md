@@ -1,14 +1,11 @@
 ---
 layout: default
+image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
 ---
 <!--Prevent auto-refresh on phone on resume-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="{{ page.title }}" />
-<meta name="twitter:title" content="{{ page.title }}" />
-<meta name="twitter:image" content="{{ page.title_image }}" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>

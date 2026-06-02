@@ -1,5 +1,6 @@
 theme: jekyll-theme-minimal
 title: Stay Dead
 description: Roguelike RPG
-title_image: "https://github.com/IGPenguin/sword/blob/live/assets/png/favicon.png?raw=true"
-image: /assets/img/linked_in_swords.png
+image: /assets/img/og-preview.png
+twitter:
+  card: summary_large_image
