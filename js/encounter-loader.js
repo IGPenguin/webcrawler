@@ -137,6 +137,7 @@ function loadEncounter(index, fileLines = linesStory){
     case "Small":
     case "Stingy":
     case "Toxic":
+      if (levelUpSavedCorpse !== null) break;
       if ((enemyAtk+enemyAtkBonus>0)||enemyMgk>0) {
         logAction("💢 ▸ "+enemyEmoji+" Engaged enemy: <b>"+enemyName+"</b>")
         if (playerLootString.includes("📌")) {
@@ -222,6 +223,7 @@ function loadEncounter(index, fileLines = linesStory){
       if (savedCoins-spentCoins==0) logAction(enemyEmoji+" ▸ 💬 No coin? I guess that's it for now.")
       break;
     default:
+      if (levelUpSavedCorpse !== null) break;
       if (enemyType.includes("Boss") && !adventureLog.includes("Bride") && !adventureLog.includes("Engaged boss: <b>"+enemyName+"</b>") && !adventureLog.includes("Invaded by:")) {
         if (_isRival) {
           logAction("💔 ▸ "+enemyEmoji+" <text style=color:"+colorRed+";>Invaded by: <b>"+enemyName+"</b></text>");
