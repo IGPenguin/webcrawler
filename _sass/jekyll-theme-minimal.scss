@@ -360,7 +360,7 @@ dt {
   &.result-fail      { background: #621010; }
   &.result-crit-pass { background: #b89000; color: #fff8cc; -webkit-text-stroke-color: #5a3a00; }
   &.result-crit-fail { background: #200808; color: #cc4444; }
-  &.result-cancel    { background: rgba(28, 6, 6); color: #b84040; font-size:16px; }
+  &.result-cancel    { background: rgba(28, 6, 6, 1); color: #b84040; font-size:16px; }
 }
 
 #id_action_bar_cursor {
