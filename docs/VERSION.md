@@ -1,3 +1,5 @@
+## ver. 06/02/26 @ 11:22 PM
+
 ## ver. 06/02/26 @ 07:45 AM
 Welcome to the Open Beta! 🤘
 ---
