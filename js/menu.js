@@ -363,7 +363,7 @@ var Menu = (function () {
     if (availableCoins > 0) {
       subtitle.innerHTML = 'Pick a starting Origin, you have <b style="color:#7193bf;">' + availableCoins + ' 🪙 Drachmae</b>.';
     } else if (everHadCoins) {
-      subtitle.innerHTML = 'You have no more 🪙 Drachmae.';
+      subtitle.innerHTML = "You don't have any more "+'<b style="color:#7193bf;">'+"🪙 Drachmae</b>.";
     } else {
       subtitle.innerHTML = 'These starting Origins are available:';
     }
@@ -1332,7 +1332,7 @@ var Menu = (function () {
       menuFade(function () {
         _selectedOrigin = null;
         _renderOriginPicker(true);
-      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">🌀 New origins await...</p>');
+      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">🌀 New Origins await...</p>', 2500, '0.8s');
     });
 
     document.getElementById('menu_origin_cancel').addEventListener('click', function () {
