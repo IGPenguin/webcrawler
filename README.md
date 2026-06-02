@@ -1,4 +1,5 @@
-# 💀 Stay Dead
+<p align="center"><img src="assets/img/logo.svg" width="560" alt="Stay Dead"></p>
+
 ## 🖤 About this project
 <b>Stay Dead is a free browser roguelike RPG.</b> No installation ➞ 🕹️ <b>[Play instantly on any device!](https://igpenguin.github.io/stay-dead)</b><br>
 
