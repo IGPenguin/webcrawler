@@ -401,7 +401,7 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
   <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
     <h3 style="text-align:center; margin:0 0 12px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">🗒️ Version History</h3>
     <div id="version_history_list" class="menu-score-bar" style="height:52vh; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#000 transparent; background-color:#272727; box-shadow:0px 0px 0px 3px #121212; padding:8px; margin:0 0 12px 0;"></div>
-    <button id="version_history_dismiss" class="menu-btn">✓ Dismiss</button>
+    <button id="version_history_dismiss" class="menu-btn" style="color:#FFD940;">✓ Dismiss</button>
   </div>
 </div>
 

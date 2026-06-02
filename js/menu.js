@@ -1299,11 +1299,11 @@ var Menu = (function () {
           var line = lines[i].trim();
           if (!line) continue;
           if (line.startsWith('## ')) {
-            html += '<h5 style="margin:' + (i === 0 ? '0' : '10px') + ' 0 2px 0; padding:2px 4px; font-size:13px; font-weight:700; color:#FFD940; font-style:normal; border-bottom:1px solid #444;">' + line.slice(3) + '</h5>';
+            html += '<h5 style="margin:' + (i === 0 ? '0' : '10px') + ' 0 2px 0; padding:2px 8px 2px 8px; font-size:13px; font-weight:700; color:#FFD940; font-style:normal; border-bottom:1px solid #444; text-align:left;">' + line.slice(3) + '</h5>';
           } else if (line === '---') {
             html += '<hr style="border:none; border-top:1px solid #333; margin:4px 0;">';
           } else {
-            html += '<h5 style="margin:0; padding:1px 4px; font-size:13px; font-weight:400; font-style:normal; line-height:150%; color:#fff;">' + line + '</h5>';
+            html += '<h5 style="margin:0; padding:1px 8px 1px 8px; font-size:13px; font-weight:400; font-style:normal; line-height:150%; color:#fff; text-align:left;">' + line + '</h5>';
           }
         }
         listEl.innerHTML = html || '<h5 style="margin:0; padding:2px 4px; opacity:0.5; font-size:12px; font-weight:400; color:#fff;">No history found.</h5>';
