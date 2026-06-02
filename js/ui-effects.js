@@ -406,8 +406,12 @@ function permanentDeath(htmlMsg) {
 }
 
 // Quick black flash for menu screen transitions. Pass optional `text` (HTML string) to show
-// a centred message during the curtain with a 700ms hold before fade-out.
-function menuFade(callback, text) {
+// a centred message during the curtain. `holdMs` (default 700) and `fadeOutSec` (default '0.3s')
+// control how long the text lingers and how slowly the curtain lifts.
+function menuFade(callback, text, holdMs, fadeOutSec) {
+  var _holdMs     = (text && holdMs    != null) ? holdMs    : 700;
+  var _fadeOutSec = (text && fadeOutSec != null) ? fadeOutSec : '0.3s';
+
   var curtain = document.getElementById('id_fullscreen_curtain');
   var textEl  = text ? document.getElementById('id_fullscreen_text') : null;
   var gen = ++_curtainGen;
@@ -433,7 +437,7 @@ function menuFade(callback, text) {
     function _doFadeOut() {
       if (_curtainGen !== gen) return;
       void curtain.offsetWidth;
-      curtain.style.setProperty('--animate-duration', '0.3s');
+      curtain.style.setProperty('--animate-duration', _fadeOutSec);
       curtain.classList.add('animate__animated', 'animate__fadeOut');
 
       curtain.addEventListener('animationend', function onOut() {
@@ -450,7 +454,7 @@ function menuFade(callback, text) {
     }
 
     if (text) {
-      setTimeout(_doFadeOut, 700);
+      setTimeout(_doFadeOut, _holdMs);
     } else {
       _doFadeOut();
     }

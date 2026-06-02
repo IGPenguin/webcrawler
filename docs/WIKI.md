@@ -1,8 +1,10 @@
 # 📕 Codex of the Damned
 
-*You did not mean for the **ritual to end with the world getting corrupted**.*<br>
-*With you **reincarnating forever**, pushing through what remains of it.*<br>
-*No undoing it, no going back. **There is only the way forward**.*<br>
+
+
+>*You did not mean for the **ritual to end with the world getting corrupted**.*<br>
+>*With you **reincarnating forever**, pushing through what remains of it.*<br>
+>*No undoing it, no going back. **There is only the way forward**.*<br>
 
 ---
 
@@ -45,13 +47,31 @@ Watch the action button colours. They signal when an action is unavailable, risk
 
 ## 🎯 The Action Bar
 
-Every action triggers a skill check bar: ✅ **Hold the action button, then release inside the green zone.**
+Every action triggers a skill check bar:<br>
 
-- Release **inside the zone** — success.
-- Release **outside the zone** — failure.
-- There may also be zones for critical success and failure.
+✅ **Hold the action button, release at the right time:**
+- **✅ Green Zone** - sucess
+- **💛 Golden Zone** — crit success
+- **🚫 Red Zone** - fail
+- **‼️ Dark Red Zone** — crit fail
 
-The zones change size and the cursor changes speed based on your vs the encounter stats. Luck always helps. Rushing always hurts.
+**Zones change size, cursor changes speed** based on your vs encounter stats.<br>
+**🍀 Luck** always helps. **💢 Rushing** always hurts.
+
+## ❤️ Staying Alive
+
+>***Don't give up Skeleton!***
+
+- **Releasing the ✅ Action bar requires careful timing.** Cancel the action (drag finger/cursor away while holding the button), then release.
+- **☠️ Not all creatures need to be killed.** Knocking out or speaking to foes is harder, but lighter on your karma.
+- **It is easier to  ⚔️ Attack and 👋 Grab enemies when they are tired.** Watch their energy, not just your own.
+- **The scattered 💔 Mementos are not just for flavour.** What you do with them shapes what you find at the end.
+- **⁉️ Watch your character status.** When tired and out of combat, 💤 **Sleep** to recover all resources.
+- **🍂 Don't linger though.** There's something impationt waiting at the end of your final journey.
+- **🐕 Get companions.** Between encounters they react to the world, and occasionally help out.
+- **🪙 Drachmae are forever.** Spending them is never a loss, they will always come back to you.
+- **🧩 Memories and unlockables are forever,** they expand the repertoire of your available content.
+
 
 ---
 
@@ -64,15 +84,15 @@ Fishing can surface things above what the current area would normally offer - bo
 
 ## 🧩 Memories
 
-**Memories** are the achievement and reward system. They unlock as you play — first death, first kill, first discovery.<br>
+**Memories** are the achievement and reward system. They unlock as you play: first death, first kill, first discovery.<br>
 Completing them grants you access to advanced features and content.
 
 ---
 
 ## 📜 Chronicles and Reckonings
 
-Every action you take is recorded in **📜 Chronicles** — a full history of all events, every choice, every death.<br>
-Upload your runs to the global **🪦 Reckonings**. The score reflects how far you got and the choices you made on the way.
+Every action you take is recorded in **📜 Chronicles**: a full history of all events, every choice, every death.<br>
+Upload your runs to the global **🪦 Reckonings**. The **🎖️ Valor** reflects on your journey and the choices you made.
 
 ---
 
@@ -81,8 +101,8 @@ Upload your runs to the global **🪦 Reckonings**. The score reflects how far y
 Once you prove to be a worthy challenger, you will unlock the **Origins** feature.<br>
 Before each run, you choose the initial stats to shape which playstyle you should lean on.<br>
 
-**⚔️ Attack** build tears through standard enemies fast, but is virtually helpless against spirits and fast enemies.<br>
-**🧠 Intellect** build solves problems using 💬 **Speak** and gets more XP, but struggles against things that cannot be reasoned with.<br>
+**⚔️ Attack** tears through standard enemies fast, but is virtually helpless against spirits.<br>
+**🧠 Intellect** solves problems using 💬 **Speak** and gets more XP, but struggles against things that cannot be reasoned with.<br>
 **🔵 Mana** opens the door to magic, offensive spells always hit first but have limited damage and number of uses in combat.
 
 ---
@@ -109,22 +129,3 @@ The corruption did not spread evenly, each area has its own character.
 **🌊 River of Sorrows** — Only the best of the best cross the waters and venture beyond.
 
 *What lies further is for you to find for yourself...*
-
----
-
-
-## ❤️ Staying Alive
-
-A few final things worth knowing to improve your survival chances:
-
-- **Releasing the ✅ Action bar requires careful timing.** Cancel the action (drag finger/cursor away while holding the button), then release.
-- **☠️ Not all creatures need to be killed.** Knocking out or speaking to foes is harder, but lighter on your karma.
-- **It is easier to  ⚔️ Attack and 👋 Grab enemies when they are tired.** Watch their energy, not just your own.
-- **The scattered 💔 Mementos are not just for flavour.** What you do with them shapes what you find at the end.
-- **⁉️ Watch your character status.** When tired and out of combat, 💤 **Sleep** to recover all resources.
-- **🍂 Don't linger though.** There's something impatioent waiting tat the end of your journey.
-- **🐕 Get some companions.** Between encounters they react to the world, and occasionally help out.
-- **🪙 Drachmae persist across runs.** Spending them is never a loss, they will always come back to you.
-- **🧩 Memories and unlockables** carry over forever, expanding the repertoire of available content.
-
-***Don't give up Skeleton!***

@@ -6,8 +6,8 @@ var AchievementManager = (function () {
     { id: 'all_achievements',    emoji: '🏆', desc: "Completed ALL available memories!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon™." },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
-    { id: 'transmute_first',     emoji: '🔮', desc: 'Sought a different hand from the fates.', hint: 'Spend a Drachma to Transmute your Origins.', unlock: '' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
+    { id: 'transmute_first',     emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rething who you are.', unlock: '' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
@@ -600,7 +600,7 @@ var AchievementManager = (function () {
     var noteTag = RarityManager.getTierFromNote(snap.note || '');
     if (noteTag) return noteTag;
     if ((snap.note || '').includes('Artifact')) return 'Legendary';
-    return RarityManager.getTierForItemNet(RarityManager.calcNet(snap));
+    return RarityManager.getTierForItemNet(RarityManager.calcNet(snap), snap);
   }
 
   function checkGrabAchievement(snap) {
@@ -623,6 +623,13 @@ var AchievementManager = (function () {
     if (tier === 'Legendary') check('eat_legendary');
     else if (tier === 'Rare') check('eat_purple');
     else if (tier === 'Cursed') check('eat_hazardous');
+    // Any food with at least one negative stat counts as hazardous regardless of net
+    if (tier !== 'Cursed') {
+      var _keys = ['atk','mgk','hp','sta','lck','int','def'];
+      for (var _i = 0; _i < _keys.length; _i++) {
+        if ((snap[_keys[_i]] || 0) < 0) { check('eat_hazardous'); break; }
+      }
+    }
   }
 
   _load();

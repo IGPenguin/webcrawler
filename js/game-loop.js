@@ -144,6 +144,8 @@ function gameOver(silent=false){
   if ((enemyMsg=="")||(enemyType=="Pet")||(enemyType=="Altar")||(enemyType.includes("Container")||enemyType=="Prop"||enemyType=="Consumable")) enemyMsg=deathMsg;
   if (enemyTeam.includes("Lover's Memento") || enemyTeam.includes("Piece of History")) enemyMsg="Killed by a severe heartbreak.";
   if (_isRival) enemyMsg = 'Slayed by ' + enemyName + '.';
+  enemyMsg = enemyMsg.replace(/\s*-\d+\s*💔/g, '').replace(/\s*-\d+\s*💔/g, '').trim();
+  if (enemyMsg && !enemyMsg.endsWith('.') && !enemyMsg.endsWith('!') && !enemyMsg.endsWith('?')) enemyMsg += '.';
   if (!silent) {
     logAction(enemyEmoji+"&nbsp;▸&nbsp;💀 <span style='color:"+colorRed+";'>"+enemyMsg+"</span>");
   }

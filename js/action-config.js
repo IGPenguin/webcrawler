@@ -259,7 +259,7 @@ function calcActionBarConfig(button, adjustment) {
     var sMin = Math.max(3, smallMid - Math.round(smallW / 2));
     var sMax = Math.min(97, smallMid + Math.round(smallW / 2));
     if (eStaSmall > 0) {
-      var csW = Math.max(1, Math.min(4, Math.round(1 + pLck * 0.4)));
+      var csW = Math.max(4, Math.min(10, Math.round(4 + pLck * 0.8)));
       var csMin = Math.max(sMin + 1, smallMid - Math.floor(csW / 2));
       var csMax = Math.min(sMax - 1, csMin + csW);
       if (csMax - csMin < 1) { csMin = -1; csMax = -1; }
@@ -422,7 +422,7 @@ function calcActionBarConfig(button, adjustment) {
   }
   // Mirror Speak — hard crit pass, moderately easy crit fail
   if (button === 'button_speak' && types === 'Mirror') {
-    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT),
+    return { speed: Math.round(spdInsane * ACTION_BAR_SPEED_MULT),
              successMin: 35, successMax: 65,
              critSuccessMin: 48, critSuccessMax: 52, critFailW: 10 };
   }

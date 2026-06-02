@@ -208,11 +208,12 @@ def validate_string_generator_lengths(warnings):
                     warnings.append(f"Long Text - {name}: \"{clean[:30]}...\" is {len(clean)} chars (limit {desc_limit})")
 
 def parse_version_timestamp(content):
-    match = re.search(r'var versionCode = "ver\. (\d{2}/\d{2}/\d{4} @ \d{2}:\d{2} [AP]M)"', content)
+    match = re.search(r'var versionCode = "ver\. (\d{2}/\d{2}/\d{2,4} @ \d{2}:\d{2} [AP]M)"', content)
     if not match:
         return None
     ts_str = match.group(1)
-    return datetime.strptime(ts_str, "%m/%d/%Y @ %I:%M %p")
+    fmt = "%m/%d/%Y @ %I:%M %p" if len(ts_str.split('/')[2].split(' ')[0]) == 4 else "%m/%d/%y @ %I:%M %p"
+    return datetime.strptime(ts_str, fmt)
 
 def make_identifier(text):
     clean = re.sub(r'<[^>]+>', '', text or '')

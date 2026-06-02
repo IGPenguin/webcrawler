@@ -363,7 +363,7 @@ var Menu = (function () {
     if (availableCoins > 0) {
       subtitle.innerHTML = 'Pick a starting Origin, you have <b style="color:#7193bf;">' + availableCoins + ' 🪙 Drachmae</b>.';
     } else if (everHadCoins) {
-      subtitle.innerHTML = 'You have no more 🪙 Drachmae.';
+      subtitle.innerHTML = "You don't have any more "+'<b style="color:#7193bf;">'+"🪙 Drachmae</b>.";
     } else {
       subtitle.innerHTML = 'These starting Origins are available:';
     }
@@ -425,6 +425,7 @@ var Menu = (function () {
     var rerollBtn = document.getElementById('menu_origin_reroll');
     if (rerollBtn) {
       var canReroll = parseInt(savedCoins) >= 1;
+      rerollBtn.style.display = canReroll ? '' : 'none';
       rerollBtn.disabled = !canReroll;
       rerollBtn.style.color = canReroll ? colorLightShadeBlue : 'grey';
       rerollBtn.style.backgroundColor = canReroll ? 'rgb(40 57 79)' : '#2a2a2a';
@@ -776,7 +777,20 @@ var Menu = (function () {
   }
 
   function _shareSession() {
-    showSharePopup();
+    if (!_currentDetailSession) { showSharePopup(); return; }
+    var text = _buildSessionShareText(_currentDetailSession);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(function () {});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    var btn = document.getElementById('menu_history_share');
+    if (btn) { var prev = btn.innerHTML; btn.innerHTML = '✅ Copied!'; setTimeout(function () { btn.innerHTML = prev; }, 2000); }
   }
 
   function _reviewSession() {
@@ -1223,7 +1237,7 @@ var Menu = (function () {
   // ── Version changelog ──────────────────────────────────────────────────────
 
   function _fetchAndShowChangelog() {
-    fetch('VERSION.md')
+    fetch('docs/VERSION.md')
       .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
       .then(function (text) {
         var lines = text.split('\n');
@@ -1270,6 +1284,35 @@ var Menu = (function () {
     overlay.style.display = 'flex';
   }
 
+  function _showVersionHistory() {
+    var overlay = document.getElementById('version_history_overlay');
+    var listEl  = document.getElementById('version_history_list');
+    if (!overlay || !listEl) return;
+    listEl.innerHTML = '<h5 style="margin:0; padding:2px 4px; opacity:0.5; font-size:12px; font-weight:400; color:#fff;">Loading…</h5>';
+    overlay.style.display = 'flex';
+    fetch('docs/VERSION.md')
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+      .then(function (text) {
+        var lines = text.split('\n');
+        var html = '';
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (!line) continue;
+          if (line.startsWith('## ')) {
+            html += '<h5 style="margin:' + (i === 0 ? '0' : '10px') + ' 0 2px 0; padding:2px 8px 2px 8px; font-size:13px; font-weight:700; color:#FFD940; font-style:normal; border-bottom:1px solid #444; text-align:left;">' + line.slice(3) + '</h5>';
+          } else if (line === '---') {
+            html += '<hr style="border:none; border-top:1px solid #333; margin:4px 0;">';
+          } else {
+            html += '<h5 style="margin:0; padding:1px 8px 1px 8px; font-size:13px; font-weight:400; font-style:normal; line-height:150%; color:#fff; text-align:left;">' + line + '</h5>';
+          }
+        }
+        listEl.innerHTML = html || '<h5 style="margin:0; padding:2px 4px; opacity:0.5; font-size:12px; font-weight:400; color:#fff;">No history found.</h5>';
+      })
+      .catch(function () {
+        listEl.innerHTML = '<h5 style="margin:0; padding:2px 4px; opacity:0.5; font-size:12px; font-weight:400; color:#fff;">Could not load version history.</h5>';
+      });
+  }
+
   // ── Button wiring ──────────────────────────────────────────────────────────
 
   function _bindButtons() {
@@ -1310,7 +1353,7 @@ var Menu = (function () {
       menuFade(function () {
         _selectedOrigin = null;
         _renderOriginPicker(true);
-      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">🌀 New origins await...</p>');
+      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">🌀 New Origins await...</p>', 2500, '0.8s');
     });
 
     document.getElementById('menu_origin_cancel').addEventListener('click', function () {
@@ -1332,8 +1375,14 @@ var Menu = (function () {
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
     document.getElementById('menu_leaderboard').addEventListener('click', _renderRankings);
     document.getElementById('menu_leaderboard').style.color = '';
+    document.getElementById('menu_report_bug').addEventListener('click', function () {
+      window.open('https://github.com/IGPenguin/stay-dead/issues/new', '_blank');
+    });
+    document.getElementById('menu_contribute').addEventListener('click', function () {
+      window.open('https://github.com/IGPenguin/stay-dead', '_blank');
+    });
     document.getElementById('menu_codex').addEventListener('click', function () {
-      window.open('https://github.com/IGPenguin/stay-dead/blob/live/WIKI.md', '_blank');
+      window.open('https://github.com/IGPenguin/stay-dead/blob/live/docs/WIKI.md', '_blank');
     });
     document.getElementById('menu_credits_donate').addEventListener('click', function () { showDonatePopup(); });
     document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
@@ -1345,6 +1394,10 @@ var Menu = (function () {
 
     document.getElementById('menu_settings').addEventListener('click', function () {
       menuFade(function () { _renderSettings(); });
+    });
+    document.getElementById('menu_version_history').addEventListener('click', _showVersionHistory);
+    document.getElementById('version_history_dismiss').addEventListener('click', function () {
+      document.getElementById('version_history_overlay').style.display = 'none';
     });
     document.getElementById('menu_settings_back').addEventListener('click', function () { _renderMain(); });
 

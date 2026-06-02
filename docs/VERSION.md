@@ -1,13 +1,33 @@
-## ver. 06/02/26 @ 07:45 AM
-Welcome to the Open Beta! 🤘
+## ver. 06/02/26 @ 11:22 PM
+Welcome to Open Beta! 🤘
 ---
-The world didn't stop when you died. Corruption spreads everywhere, you have to heal it.
+The world didn't stop when you died.
+Corruption spreads, you have to heal it.
 ---
-Send feedback when you are done. Enjoy! 
+Enjoy your journey! 
 
+## ver. 06/02/26 @ 11:21 PM
+✨ Transmute fades, hides at 0 drachma
+⚔️ Positive-stat items floor at Common
+💎 Mixed-stat items show Valuable tag
+🩸 Blood sacrifice needs no blade
+🪞 Mirror speak at instant speed
+🐛 Fix no loot after boss speak win
+🐾 Companions skip barks on loot
+🎣 Fishing restricted to later areas
+🎯 Fix crit pass without fail zone
+🏆 Fix achievement trigger bugs
+💀 Death log strips -hp signs
+📋 Chronicles share to clipboard
+✏️ Text pass: fate, sleep, moments
+👋 Beta welcome screen texts
+📕 Codex of the Damned updated
+⚙️ Report bug + version history
+📱 Social sharing preview added
+🔗 Credits links open in new tab
 
 ## ver. 06/02/26 @ 02:20 AM
-🔮 Add "Transmute" in new game Origins picker
+🌀 Add "Transmute" in new game Origins picker
 🗺️ New midgame encounter content added
 🎨 Credits background + Recall in level-up
 ✏️ Action logs tone pass, text + case fixes

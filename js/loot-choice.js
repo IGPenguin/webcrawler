@@ -27,7 +27,7 @@ var LootChoiceManager = (function() {
     var noteTag = RarityManager.getTierFromNote(data.note || '');
     if (noteTag) return noteTag;
     if ((data.note || '').includes('Artifact')) return 'Legendary';
-    return RarityManager.getTierForItemNet(RarityManager.calcNet(data));
+    return RarityManager.getTierForItemNet(RarityManager.calcNet(data), data);
   }
 
   function _highestTier(items) {

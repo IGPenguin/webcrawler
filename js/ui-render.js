@@ -146,8 +146,10 @@ function redraw(){
       break;
 
     case "Item":
-      var itemNet = RarityManager.calcNet({ atk: enemyAtk, mgk: enemyMgk, hp: enemyHp, sta: enemySta, lck: enemyLck, int: enemyInt, def: enemyDef });
-      if (itemNet > 0 || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
+      var _itemStats = { atk: enemyAtk, mgk: enemyMgk, hp: enemyHp, sta: enemySta, lck: enemyLck, int: enemyInt, def: enemyDef };
+      var itemNet = RarityManager.calcNet(_itemStats);
+      var _itemHasPositive = ['atk','mgk','hp','sta','lck','int','def'].some(function(k){ return (_itemStats[k]||0) > 0; });
+      if (itemNet > 0 || _itemHasPositive || (enemyEmoji=="🗝️") || (enemyEmoji=="🔑")){
         enemyStatusString=decorateStatusText("⚜️","Valuable",colorGold);
         if (itemNet >= ITEM_NET_THRESHOLDS.uncommon){
           enemyStatusString=decorateStatusText("🔷","Magnificent",colorLightBlue);

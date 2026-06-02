@@ -77,26 +77,22 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       var type = "Prop";
       if (procAbilityChance("", 10+luckSpawnBonus())) type = "Small"; // 10% Small
 
-      var _propRow = null;
-      if (procAbilityChance("", 5-luckSpawnBonus())) { // 5% Trap, lowers with luck
-        pushEncounter(getRandomEncounter(allTraps));
-      } else {
-        if (procAbilityChance("", 5-luckSpawnBonus())) {
-          _propRow = getRandomEncounter(["Prop"],["-1"]);
-          pushEncounter(_propRow);                                        // 5%-  Bad flavoured
-        } else if (procAbilityChance("", 5+luckSpawnBonus())) {
-          _propRow = getRandomEncounter(["Prop"],["1"]);
-          pushEncounter(_propRow);                                        // 5%+  Good flavoured
-        } else {
-          _propRow = getRandomEncounter(["Prop"],[],"",["-1","1"]);
-          pushEncounter(_propRow);                                        // Neutral
-        }
-      }
-
       if (type == "Small") {
+        // Small inside container: no prop, just Container → Small
         pushEncounter(getRandomEncounter(["Small"]));
-        if (_propRow && logCall) pushEncounter(_propRow); // logCall=false means sub-generator call — skip repeat
         pushEncounter(getRandomEncounter(["Container"]));
+      } else {
+        if (procAbilityChance("", 5-luckSpawnBonus())) { // 5% Trap, lowers with luck
+          pushEncounter(getRandomEncounter(allTraps));
+        } else {
+          if (procAbilityChance("", 5-luckSpawnBonus())) {
+            pushEncounter(getRandomEncounter(["Prop"],["-1"]));           // 5%-  Bad flavoured
+          } else if (procAbilityChance("", 5+luckSpawnBonus())) {
+            pushEncounter(getRandomEncounter(["Prop"],["1"]));            // 5%+  Good flavoured
+          } else {
+            pushEncounter(getRandomEncounter(["Prop"],[],"",["-1","1"])); // Neutral
+          }
+        }
       }
 
       if (logCall && !areaName.includes("Fading") && procAbilityChance("", 3+luckSpawnBonus())) { // 3% Artifact lockbox (not in Fading, not in sub-generator calls)
@@ -145,11 +141,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       if (logCall) logGenerator("boss");
       if (!areaName.includes("Shrouded")) {
         generateNextEncounters(0, false); // Prop/Small after fight (not Necropolis)
-        if (procAbilityChance("", 20+luckSpawnBonus())) {
-          pushEncounter(getWeightedEncounter(["Item"],["Artifact"])); // guaranteed Artifact, rarity-weighted within pool
-        } else {
-          pushEncounter(getWeightedEncounter(["Item"],[],"",["Lost Possession"])); // normal weighted roll; Artifact still possible via rarity
-        }
+        // Item loot is handled by pushBossLoot() in enemy-skills.js on kill/knockout
       }
 
       drachmaCoin[0] = "area:" + areaName;
@@ -237,7 +229,7 @@ function generateNextEncounters(generatorID=0, logCall=true) {
 
     case 69: // Fishing (random slot)
       if (logCall) logGenerator("fish");
-      pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([5, 6, 7]));
+      pushEncounter(getRandomEncounter(["Fishing"]), chooseFrom([6, 7]));
       break;
 
     case 75: // Mirror (random slot, Twisted Fairyland)

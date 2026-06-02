@@ -92,7 +92,7 @@ var _BARK_POOLS = {
     { icon: '🎶',  text: 'Sings a sad note of grief.' },
     { icon: '🪶',  text: 'Perches where the road ends.' },
     { icon: '👀',  text: 'Circles low, watching you closely.' },
-    { icon: '💤',  text: 'Falls quiet without reason.' },
+    { icon: '💤',  text: 'Falls quiet without a reason.' },
     { icon: '🎶',  text: 'Sings softer as the light fades.' },
   ],
   humanoid: [
@@ -272,7 +272,7 @@ var _DEATH_BARK_POOLS = {
 };
 
 function fireDeathBarks() {
-  if (!playerPartyString || playerPartyString.length === 0) return;
+  if (!playerPartyString || !String(playerPartyString).trim()) return;
   [...playerPartyString].forEach(function(emoji) {
     var _type, _name;
     if      (_COMPANION_DOGS.includes(emoji))     { _type = 'dog';      _name = petName[emoji] || 'companion'; }
@@ -376,7 +376,7 @@ var _BARK_SKIP_TYPES = [
 function _scheduledCompanionBark() {
   _clearCompanionBark();
   if (isEndingState) return;
-  if (_BARK_SKIP_TYPES.indexOf(enemyType) !== -1 || enemyType.includes('Boss')) return;
+  if (_BARK_SKIP_TYPES.indexOf(enemyType) !== -1 || enemyType.startsWith('Item') || enemyType.startsWith('Consumable') || enemyType.includes('Boss')) return;
 
   var _p = _partyEmojis();
   if (_p.length === 0) return;
@@ -408,7 +408,7 @@ function _partyEmojis() {
       return c !== 0x200D && c !== 0xFE0F;
     });
   }
-  return segs.filter(function(e) { return e.trim().length > 0; });
+  return segs.filter(function(e) { return e.trim().length > 0 && (petName[e] || followerName[e]); });
 }
 
 // ── Fetch Barks ───────────────────────────────────────────────────────────────

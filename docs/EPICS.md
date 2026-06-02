@@ -1,6 +1,6 @@
 # EPICS.md — Major Expansion Plans
 
-*27 epics · last updated 2026-06-02*
+*28 epics · last updated 2026-06-02*
 
 ---
 
@@ -554,6 +554,17 @@ Any positive karma currently gives the same revive reward — should scale by ti
 - Priority: P2 — itch.io is the primary non-GitHub discovery channel; needed before public beta launch.
 - Type: Epic
 - Effort: M | Gain: L
+- Prerequisites: none
+
+---
+
+### [PWA-DSKT] Epic: PWA Desktop Install — installable standalone app at 600×970
+- Enable Chrome/Edge "Install" prompt so players can add Stay Dead to their desktop as a standalone windowed app at 600×970 — no browser chrome, fixed window size.
+- What already exists: `manifest.json` with `display: standalone` is linked in `index.md`; `assets/img/favicon.png` (240×240) is declared as the icon.
+- What still needs doing: add `sw.js` (minimal service worker with fetch handler — Chrome requires this for the install prompt); add `assets/img/logo.svg` as a `"sizes": "any"` icon entry in `manifest.json` (satisfies Chrome's 512×512 requirement); register the SW from `index.md`; add `window.resizeTo(600, 970)` guarded by `window.matchMedia('(display-mode: standalone)').matches` in `constants.js`; optionally note the install option in the README "Play instantly" link.
+- Priority: P2 — implementation path is fully known; self-contained; pairs with [ITCH-WRPR] as the browser-native install channel.
+- Type: Epic
+- Effort: S | Gain: M
 - Prerequisites: none
 
 ---

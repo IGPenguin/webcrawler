@@ -71,7 +71,7 @@ var ActionBar = (function () {
     _csMin    = (config.critSuccessMin !== undefined) ? config.critSuccessMin : -1;
     _csMax    = (config.critSuccessMax !== undefined) ? config.critSuccessMax : -1;
     _cfw      = (config.critFailW      !== undefined) ? config.critFailW      : 0;
-    _hasCrits = _csMin >= 0 && _csMax > _csMin && _cfw > 0
+    _hasCrits = _csMin >= 0 && _csMax > _csMin
                 && config.successMin > _cfw && config.successMax < (100 - _cfw);
 
     // Build gradient: [crit-fail] fail | success [crit-success] success | fail [crit-fail]
