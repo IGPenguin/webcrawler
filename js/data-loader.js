@@ -524,12 +524,19 @@ function resetSeenEncounters() {
 
 // ── Origins ───────────────────────────────────────────────────────────────────
 
+var _ORIGIN_FORCE_NAME_RE = /\[Name:([^\]]+)\]/;
+
 function getOrigins() {
   return linesOrigins.map(function(row) {
+    var _rawName = row.name || '?';
+    var _nameMatch = _rawName.match(_ORIGIN_FORCE_NAME_RE);
+    var _rawDesc = row.desc || '';
     return {
       emoji:      row.emoji || '🃏',
-      originName: row.name  || '?',
-      desc:       row.desc  || '',
+      originName: _rawName.replace(_ORIGIN_FORCE_NAME_RE, '').trim(),
+      forcedName: _nameMatch ? _nameMatch[1] : null,
+      note:       _rawDesc,
+      desc:       RarityManager.stripTagFromNote(_rawDesc),
       hp:  parseInt(row.hp)  || 0,
       atk: parseInt(row.atk) || 0,
       sta: parseInt(row.sta) || 0,

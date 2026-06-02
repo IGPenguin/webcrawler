@@ -229,7 +229,7 @@ var Menu = (function () {
       playerMgkMax = Math.max(0, playerMgkMax + mgk);
       playerMgk    = playerMgkMax;
       if (mgk > 0) AchievementManager.check('mana_first');
-      playerName = origin.rolledName || getOriginName(origin);
+      playerName = origin.forcedName || origin.rolledName || getOriginName(origin);
       playerEmoji = origin.emoji;
       playerOriginName = origin.originName || '';
       playerDestined = true;
@@ -453,7 +453,7 @@ var Menu = (function () {
       var canReroll = parseInt(savedCoins) >= 1;
       rerollBtn.style.display = canReroll ? '' : 'none';
       rerollBtn.disabled = !canReroll;
-      rerollBtn.style.color = canReroll ? colorLightShadeBlue : 'grey';
+      rerollBtn.style.color = canReroll ? colorFairy : 'grey';
       rerollBtn.style.backgroundColor = canReroll ? 'rgb(40 57 79)' : '#2a2a2a';
     }
 

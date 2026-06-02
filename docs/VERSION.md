@@ -1,4 +1,4 @@
-## ver. 06/02/26 @ 11:22 PM
+## ver. 06/04/26 @ 07:00 AM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
