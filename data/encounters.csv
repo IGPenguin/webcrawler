@@ -161,7 +161,7 @@ Fading Wildlands;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants abil
 Fading Wildlands;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Fading Wildlands;🥻;Philosopher Toga;Item-Chest;0;0;0;0;2;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+2 🧠 Intellect</b>.<br><b>3% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Fading Wildlands;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Neat and comfortable;knockout_first
-Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;The blood wasn't yours. Not yet.;kill_first
+Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;The blood wasn't yours.;kill_first
 
 Fading Wildlands;🏵️;Symbol of Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment, provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.;none
@@ -180,7 +180,7 @@ Fading Wildlands;🪨;Sharp Stone;Item-Weapon;0;1;0;0;0;0;0;Improvised Weapon;Sh
 Fading Wildlands;🧤;Lucky Gloves;Item;0;0;0;2;0;0;0;Blessed Gear;Deems both hands "the lucky hand".<br>Provides <b>+2 🍀 Luck</b>.;Became lucky-handed;none
 Fading Wildlands;🗺;Lost Map;Item-Trinket;0;0;2;0;0;0;0;Adventure Guide;Stumbled upon an unknown map.<br>Provides <b>+2 🟢 Energy</b>.;Enhanced your area awareness.;none
 Fading Wildlands;📓;Mushroom Atlas;Item-Trinket;0;0;0;1;1;0;0;Encyclopedia;Describes various species of forest growth.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.;Embraced the knowledge.;none
-Fading Wildlands;🏹;Cursed Bow;Item-Weapon;-1;1;0;0;0;0;0;Malevolent Weapon;Lying next to a corpse, handle with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot yourself into the knee!;none
+Fading Wildlands;🏹;Cursed Bow;Item-Weapon;-1;1;0;0;0;0;0;Malevolent Weapon;Lying next to a corpse, handle with care.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Shot yourself into knee!;none
 Fading Wildlands;🪃;Basic Boomerang;Item-Weapon;-1;1;0;0;0;0;0;Weapon;Dropped on the ground out of the blue.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 💔 Health</b>.;Thrown it, hit on return;none
 Fading Wildlands;🥏;Stray Disc;Item-Weapon;0;1;0;-1;0;0;0;Cursed Weapon;Effective in combat, but may be problematic.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🍀 Luck</b>.;Grabbed it for yourself;none
 
@@ -306,7 +306,7 @@ Forsaken Village;🏚️;Boarded Cottage;Container-2;0;0;0;0;0;0;0;Deserted Buil
 
 Forsaken Village;🏚️;Abandoned Home;Container-3;0;0;0;0;0;0;0;Full Household;Built for a family, not a passing stranger.<br>;Forced the back door open.;none
 Forsaken Village;🏚️;Barred House;Container-3;0;0;0;0;0;0;0;Sealed Interior;Someone barred it from the inside.<br>;Broke through the barricade.;none
-Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;0;Reclaimed by Nature;Moss has swallowed most of it, but the cellar holds.<br>;Found the cellar entrance.;none
+Forsaken Village;🏚️;Mossy Homestead;Container-3;0;0;0;0;0;0;0;Reclaimed by Nature;Moss has swallowed most of it.<br>;Found the cellar entrance.;none
 Forsaken Village;🏚️;Collapsed Mill;Container-3;0;0;0;0;0;0;0;Working Parts;The wheel still groans in the wind.<br>;Entered through the broken door.;none
 Forsaken Village;🏚️;Ruined Home;Container-3;0;0;0;0;0;0;0;Hasty Departure;Abandoned in a rush, things left where they fell.<br>;Sifted through what remained.;none
 Forsaken Village;🏚️;Neglected House;Container-3;0;0;0;0;0;0;0;Years of Neglect;Three floors, most of them still reachable.<br>;Stepped over the threshold.;none
@@ -346,7 +346,6 @@ Forsaken Village;💈;Swirled Cylinder;Curse;0;0;0;0;-2;0;0;Hypnotic Motion;Colo
 Forsaken Village;👁️‍🗨️;Haunting Echo;Curse;0;0;0;0;-1;0;0;Misfortune;Eerie whispers are echoing around.<br>;Suffered mental damage.;none
 Forsaken Village;🎶;Everlasting Melody;Curse;0;0;0;0;-1;0;0;Misfortune;Intrusive thoughts take over involuntarily.<br>;The tune won't leave your head.;none
 Forsaken Village;🫀;Heart Attack;Curse;-1;0;0;0;0;0;0;Health Condition;Uncomfortable pressure is filling your chest.<br>;Suffered permanent damage.;none
-Forsaken Village;🪞;Reflecting Gaze;Curse;0;0;0;0;-1;0;0;Misfortune;A thousand eyes stare back at you.<br>;Left haunted by that reflection.;none
 Forsaken Village;👁️‍🗨️;Lingering Fear;Curse;0;0;0;0;-1;0;0;Misfortune;Threads of paranoia coil around your mind.<br>;Drove themselves insane.;none
 Forsaken Village;💨;Howling Dread;Curse;0;0;0;0;-1;0;0;Misfortune;Cold mist chills your very soul.<br>;Couldn’t warm up ever again.;none
 
@@ -615,7 +614,7 @@ Forsaken Village;🧀;Mouldy Cheese;Consumable;0;0;0;0;-1;0;0;Rare Delicacy;Smel
 
 Forsaken Village;🍅;Sweet Tomato;Consumable;0;0;0;0;0;0;0;Actually a Fruit;Likely packs some vitamins.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Forsaken Village;🍎;Ripe Apple;Consumable;0;0;0;0;0;0;0;Fresh Fruit;Looks all shiny and juicy.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
-Forsaken Village;🥐;Croissant;Consumable;0;0;0;0;0;0;0;Snack;Still suspiciously fresh.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
+Forsaken Village;🥐;Butter Croissant;Consumable;0;0;0;0;0;0;0;Snack;Still suspiciously fresh.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Forsaken Village;🥨;Salty Pretzel;Consumable;0;0;0;0;0;0;0;Snack;Still suspiciously fresh.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Forsaken Village;🥖;Herb Baguette;Consumable;0;0;0;0;0;0;0;Snack;Still suspiciously fresh.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
 Forsaken Village;🍞;Basic Bread;Consumable;0;0;0;0;0;0;0;Snack;Still suspiciously fresh.<br>Restores <b>❤️ Health</b> and <b>🟢 Energy</b>.;;none
@@ -785,7 +784,7 @@ Twisted Fairyland;🐛;Writhing Larva;Small;2;0;1;0;-1;0;0;Pale Spawn;Too aware 
 Twisted Fairyland;🐞;Crimson Crawler;Small;2;1;2;0;-1;0;0;Spotted Nuisance;The spots mean something in this place.<br>Nothing good.;Mandibles found the soft parts.;none
 Twisted Fairyland;🦋;Lost Shimmer;Small;2;1;2;0;1;1;0;Wandering Light;Follows whoever is most lost.<br>Does not mean to help.;Led astray until the end.;none
 
-Twisted Fairyland;🪲;Tainted Scarab;Standard;4;2;2;0;-1;1;0;Cursed Relic;Old enough to predate the corruption.<br>;Crushed flat under the carapace.;none
+Twisted Fairyland;🪲;Tainted Scarab;Standard;4;2;2;0;-1;0;0;Cursed Relic;Old enough to predate the corruption.<br>;Crushed flat under the carapace.;none
 Twisted Fairyland;🦧;Ginger Ape;Standard;3;2;3;0;3;0;0;Wild Beast;Probably has no soul.<br>;Got ripped apart and eaten.;none
 Twisted Fairyland;🦘;Savage Kangaroo;Standard;4;2;3;0;4;0;0;Wild Beast;Seems like this is personal.<br>;Suffered a deadly right hook.;none
 Twisted Fairyland;🦒;Zen Tallneck;Standard;3;0;3;0;5;0;0;Wild Beast;Unbothered by the widespread corruption.<br>;Trampled to your death.;none
@@ -859,7 +858,7 @@ Twisted Fairyland;🐆;Sabre Essence;Boss-Spirit;3;3;2;0;3;0;0;Spirit Remains;En
 Twisted Fairyland;🐃;Spectral Buffalo;Boss-Spirit;3;2;3;0;3;0;0;Ethereal Cryptid;Shimmers like a hot air in the summer.<br>;Impaled by spectral horns.;none
 
 Twisted Fairyland;⚗️;Potent Extract;Consumable;0;0;0;0;0;2;0;Unknown Liquid;Is that even drinkable? Wonder what it does.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power.;none
-Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;2;0;0;-4;0;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.;none
+Twisted Fairyland;🍄;Maddening Mushroom;Consumable;0;1;0;0;-4;0;0;Fungal Curse;Provides bestial thirst for blood.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-4 🧠 Intellect</b>.;Vision blurred with blood.;none
 Twisted Fairyland;🍌;Mighty Banana;Consumable;0;1;0;0;0;0;0;<b>Artifact</b>;Packs an extra punch on top of being sweet.<br><b>+1 ⚔️ Damage</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Muscles surged with might;none
 
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;0;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;;none
