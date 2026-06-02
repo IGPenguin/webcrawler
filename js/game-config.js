@@ -177,10 +177,17 @@ var RarityManager = (function () {
 
   // Item-specific tier from net. Used by both the loot roller and UI display.
   // Legendary requires net ≥ 6.0 from stats alone (extreme items only); Artifact note is the normal path.
-  function getTierForItemNet(net) {
+  // Items with any positive stat are bumped to Common minimum (mixed-stat items are never Cursed).
+  function getTierForItemNet(net, stats) {
     if (net >= ITEM_NET_THRESHOLDS.legendary) return 'Legendary';
     if (net >= ITEM_NET_THRESHOLDS.rare)      return 'Rare';
     if (net >= ITEM_NET_THRESHOLDS.uncommon)  return 'Uncommon';
+    if (net <  0 && stats) {
+      var _keys = ['atk','mgk','hp','sta','lck','int','def'];
+      for (var _i = 0; _i < _keys.length; _i++) {
+        if ((stats[_keys[_i]] || 0) > 0) return 'Common';
+      }
+    }
     if (net <  0)                             return 'Cursed';
     return 'Common';
   }
