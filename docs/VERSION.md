@@ -1,9 +1,10 @@
 ## ver. 06/02/26 @ 11:22 PM
-Welcome to the Open Beta! 🤘
+Welcome to Open Beta! 🤘
 ---
-The world didn't stop when you died. Corruption spreads everywhere, you have to heal it.
+The world didn't stop when you died.
+Corruption spreads, you have to heal it.
 ---
-Send feedback when you are done. Enjoy! 
+Enjoy your journey! 
 
 ## ver. 06/02/26 @ 11:21 PM
 ✨ Transmute fades, hides at 0 drachma
