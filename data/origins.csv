@@ -1,7 +1,7 @@
 emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Unlockable-Endings
-💍;Groom;0;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b> and start with <b>+2 💕 Love</b>.<br><i>After all that happened, still loves her.;game_win_first
+💍;Groom[Name:Kenneth];0;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b> and start with <b>+2 💖 Love</b>.<br><i>After all that happened, still loves her.;game_win_first
 🩸;Traitor;-1;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-1 💔 Health</b>.<br><i>Never hesitates to take another life.;ending_kill
 🗿;Sentinel;2;0;0;0;0;0;0;Gain <b>+2 ❤️ Health</b> with no downside.<br><i>Stands unbroken, probably will forever.;ending_guard
 👣;Wanderer;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Minds his own business no matter what.;ending_walk
