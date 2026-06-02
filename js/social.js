@@ -107,7 +107,7 @@ function showDonatePopup() {
   card.style.cssText = 'background-color:#202020; padding:20px; max-width:290px; width:90%; box-shadow:0 0 0 3px #000; text-align:center;';
 
   var title = document.createElement('h3');
-  title.style.cssText = 'margin:0 0 6px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;';
+  title.style.cssText = 'margin:-4px 0px 14px; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;';
   title.innerHTML = "☕ Support IGPenguin's family!";
 
   var subtitle = document.createElement('p');

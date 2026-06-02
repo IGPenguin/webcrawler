@@ -323,8 +323,7 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
       <button class="menu-btn" id="menu_codex">📕 Codex of the Damned</button>
       <h5 style="margin:8px 3px 0 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;"><b style="color:red;">↑</b> Read this if you keep struggling with staying alive.<br></h5>
       <div class="menu-spacer"></div>
-      <h5 style="margin-top:12px; margin-bottom:-8px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Non personal telemetry <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;">data is being collected.</a></h5>
-      <h5 style="margin:8px 3px -8px 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">⚠️ Browsers may wipe saved data after 7 inactive days.<br></h5>'
+      <h5 style="margin-top:12px; margin-bottom:8px 3px -8px 3px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Non-personal telemetry data <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;"> is being collected.</a></h5>
       <div style="display:flex; gap:2px;">
       <button class="menu-btn" id="menu_version_history" style="flex:1;">🗂️ History</button>
       <button class="menu-btn" id="menu_contribute" style="flex:1;">🏗️ Build</button>
