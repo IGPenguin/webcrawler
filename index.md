@@ -325,6 +325,11 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
       <div class="menu-spacer"></div>
       <h5 style="margin-top:12px; margin-bottom:-8px; font-size:12px; line-height:175%; opacity:0.75; color:#fff; text-align:center;">🔒 Non personal telemetry <a href="https://github.com/IGPenguin/stay-dead" style="color:#487bb5; opacity:0.9;">data is being collected.</a></h5>
       <h5 style="margin:8px 3px -8px 3px; font-size:12px; line-height:165%; opacity:0.75; color:#fff; text-align:center;">⚠️ Browsers may wipe saved data after 7 inactive days.<br></h5>'
+      <div style="display:flex; gap:2px;">
+      <button class="menu-btn" id="menu_version_history" style="flex:1;">🗂️ History</button>
+      <button class="menu-btn" id="menu_contribute" style="flex:1;">🏗️ Build</button>
+      <button class="menu-btn" id="menu_report_bug" style="flex:1;">🐞 Report</button>
+      </div>
       <button class="menu-btn" id="menu_settings_purge_1" style="color:red;">✕ Delete Saves</button>
       <div id="menu_settings_purge_2" style="display:none; gap:4px;">
         <button class="menu-btn" id="menu_settings_purge_cancel" style="flex:1; margin-top:0;">Cancel</button>
@@ -388,6 +393,15 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
     <h5 id="changelog_version" style="text-align:center; margin:0 0 14px 0; opacity:0.75; font-size:12px; font-weight:400;"></h5>
     <div id="changelog_list" class="menu-score-bar" style="max-height:50vh; min-height:68px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#000 transparent; margin-bottom:14px; background-color:#272727; box-shadow:0px 0px 0px 3px #121212; padding:8px; margin:4px 4px 12px 4px;"></div>
     <button id="changelog_dismiss" class="menu-btn" style="color:#FFD940;">✓ Dismiss</button>
+  </div>
+</div>
+
+<!-- Version history overlay — full VERSION.md shown on demand from Settings -->
+<div id="version_history_overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+  <div class="card" style="background-color:#202020; padding:20px 20px 14px 20px; max-width:320px; width:90%; box-shadow:0 0 0 3px #000;">
+    <h3 style="text-align:center; margin:0 0 12px 0; font-size:18px; -webkit-text-stroke:4px black; paint-order:stroke fill;">🗒️ Version History</h3>
+    <div id="version_history_list" class="menu-score-bar" style="height:52vh; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#000 transparent; background-color:#272727; box-shadow:0px 0px 0px 3px #121212; padding:8px; margin:0 0 12px 0;"></div>
+    <button id="version_history_dismiss" class="menu-btn">✓ Dismiss</button>
   </div>
 </div>
 

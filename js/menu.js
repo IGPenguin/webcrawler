@@ -1231,14 +1231,6 @@ var Menu = (function () {
       content.appendChild(vibSection);
     }
 
-    var contributeBtn = document.createElement('button');
-    contributeBtn.className = 'menu-btn';
-    contributeBtn.innerHTML = '🏗️ GitHub';
-    contributeBtn.addEventListener('click', function () {
-      window.open('https://github.com/IGPenguin/stay-dead', '_blank');
-    });
-    //content.appendChild(contributeBtn); //TODO unhide when clear where to put this
-
     _doShowScreen('menu_settings_screen');
   }
 
@@ -1290,6 +1282,35 @@ var Menu = (function () {
       }).join('');
     }
     overlay.style.display = 'flex';
+  }
+
+  function _showVersionHistory() {
+    var overlay = document.getElementById('version_history_overlay');
+    var listEl  = document.getElementById('version_history_list');
+    if (!overlay || !listEl) return;
+    listEl.innerHTML = '<h5 style="margin:0; padding:2px 4px; opacity:0.5; font-size:12px; font-weight:400; color:#fff;">Loading…</h5>';
+    overlay.style.display = 'flex';
+    fetch('docs/VERSION.md')
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+      .then(function (text) {
+        var lines = text.split('\n');
+        var html = '';
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (!line) continue;
+          if (line.startsWith('## ')) {
+            html += '<h5 style="margin:' + (i === 0 ? '0' : '10px') + ' 0 2px 0; padding:2px 4px; font-size:13px; font-weight:700; color:#FFD940; font-style:normal; border-bottom:1px solid #444;">' + line.slice(3) + '</h5>';
+          } else if (line === '---') {
+            html += '<hr style="border:none; border-top:1px solid #333; margin:4px 0;">';
+          } else {
+            html += '<h5 style="margin:0; padding:1px 4px; font-size:13px; font-weight:400; font-style:normal; line-height:150%; color:#fff;">' + line + '</h5>';
+          }
+        }
+        listEl.innerHTML = html || '<h5 style="margin:0; padding:2px 4px; opacity:0.5; font-size:12px; font-weight:400; color:#fff;">No history found.</h5>';
+      })
+      .catch(function () {
+        listEl.innerHTML = '<h5 style="margin:0; padding:2px 4px; opacity:0.5; font-size:12px; font-weight:400; color:#fff;">Could not load version history.</h5>';
+      });
   }
 
   // ── Button wiring ──────────────────────────────────────────────────────────
@@ -1354,6 +1375,12 @@ var Menu = (function () {
     document.getElementById('menu_credits').addEventListener('click', _renderCredits);
     document.getElementById('menu_leaderboard').addEventListener('click', _renderRankings);
     document.getElementById('menu_leaderboard').style.color = '';
+    document.getElementById('menu_report_bug').addEventListener('click', function () {
+      window.open('https://github.com/IGPenguin/stay-dead/issues/new', '_blank');
+    });
+    document.getElementById('menu_contribute').addEventListener('click', function () {
+      window.open('https://github.com/IGPenguin/stay-dead', '_blank');
+    });
     document.getElementById('menu_codex').addEventListener('click', function () {
       window.open('https://github.com/IGPenguin/stay-dead/blob/live/docs/WIKI.md', '_blank');
     });
@@ -1367,6 +1394,10 @@ var Menu = (function () {
 
     document.getElementById('menu_settings').addEventListener('click', function () {
       menuFade(function () { _renderSettings(); });
+    });
+    document.getElementById('menu_version_history').addEventListener('click', _showVersionHistory);
+    document.getElementById('version_history_dismiss').addEventListener('click', function () {
+      document.getElementById('version_history_overlay').style.display = 'none';
     });
     document.getElementById('menu_settings_back').addEventListener('click', function () { _renderMain(); });
 
