@@ -301,6 +301,7 @@ function wakeUpEnemy(msg) {
 function enemyDisengage(){
   playerGainXP(1.5,0,"Convinced them to disengage");
   playerKarma+=1;
+  if (enemyBossType.includes('Boss') && !_isRival) pushBossLoot();
 
   isFishing=false;
   displayPlayerEffect("💬");
@@ -331,7 +332,7 @@ function enemyKicked(crit){
 
 function enemyTurnAggressive(message="That has made them really upset!"){
   enemyType="Standard";
-  enemyDesc="It wanted be friends, not enemies.<br>But you asked for it..."
+  enemyDesc="It wanted to be friends, not enemies.<br>But you asked me to..."
   enemyHp=2+playerLevel;
   enemyAtk=Math.floor(1+playerLevel/2);
   enemySta=Math.floor(2+playerLevel/2);
