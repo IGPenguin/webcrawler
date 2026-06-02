@@ -528,7 +528,8 @@ function getOrigins() {
   return linesOrigins.map(function(row) {
     return {
       emoji:      row.emoji || '🃏',
-      originName: row.name  || '?',
+      originName: RarityManager.stripTagFromNote(row.name || '?'),
+      note:       row.name  || '',
       desc:       row.desc  || '',
       hp:  parseInt(row.hp)  || 0,
       atk: parseInt(row.atk) || 0,

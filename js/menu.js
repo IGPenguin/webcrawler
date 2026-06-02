@@ -453,7 +453,7 @@ var Menu = (function () {
       var canReroll = parseInt(savedCoins) >= 1;
       rerollBtn.style.display = canReroll ? '' : 'none';
       rerollBtn.disabled = !canReroll;
-      rerollBtn.style.color = canReroll ? colorLightShadeBlue : 'grey';
+      rerollBtn.style.color = canReroll ? colorFairy : 'grey';
       rerollBtn.style.backgroundColor = canReroll ? 'rgb(40 57 79)' : '#2a2a2a';
     }
 

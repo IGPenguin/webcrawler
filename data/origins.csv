@@ -63,7 +63,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🗡️;Hitman;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-2 🟢 Energy</b>.<br><i>One shot, one kill... hopefully.;none
 🏹;Ranger;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-2 💔 Health</b>.<br><i>Deadly dangerous, but super fragile.;none
 💢;Berserk;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🧠 Intellect</b>.<br><i>Unstable, blinded by his fury.;none
-🪓;Killer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.;none
+🪓;Killer[Rare];0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.;none
 🪖;Soldier;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Follows orders with no thinking.;none
 
 //Health
