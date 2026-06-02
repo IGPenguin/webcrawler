@@ -425,6 +425,7 @@ var Menu = (function () {
     var rerollBtn = document.getElementById('menu_origin_reroll');
     if (rerollBtn) {
       var canReroll = parseInt(savedCoins) >= 1;
+      rerollBtn.style.display = canReroll ? '' : 'none';
       rerollBtn.disabled = !canReroll;
       rerollBtn.style.color = canReroll ? colorLightShadeBlue : 'grey';
       rerollBtn.style.backgroundColor = canReroll ? 'rgb(40 57 79)' : '#2a2a2a';
@@ -776,7 +777,20 @@ var Menu = (function () {
   }
 
   function _shareSession() {
-    showSharePopup();
+    if (!_currentDetailSession) { showSharePopup(); return; }
+    var text = _buildSessionShareText(_currentDetailSession);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(function () {});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    var btn = document.getElementById('menu_history_share');
+    if (btn) { var prev = btn.innerHTML; btn.innerHTML = '✅ Copied!'; setTimeout(function () { btn.innerHTML = prev; }, 2000); }
   }
 
   function _reviewSession() {
@@ -1217,13 +1231,22 @@ var Menu = (function () {
       content.appendChild(vibSection);
     }
 
+    var contributeBtn = document.createElement('button');
+    contributeBtn.className = 'menu-btn';
+    contributeBtn.style.cssText = 'margin:10px 3px 6px 3px; width:calc(100% - 6px); box-sizing:border-box;';
+    contributeBtn.innerHTML = '🏗️ Contribute';
+    contributeBtn.addEventListener('click', function () {
+      window.open('https://github.com/IGPenguin/stay-dead', '_blank');
+    });
+    content.appendChild(contributeBtn);
+
     _doShowScreen('menu_settings_screen');
   }
 
   // ── Version changelog ──────────────────────────────────────────────────────
 
   function _fetchAndShowChangelog() {
-    fetch('VERSION.md')
+    fetch('docs/VERSION.md')
       .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
       .then(function (text) {
         var lines = text.split('\n');
@@ -1333,7 +1356,7 @@ var Menu = (function () {
     document.getElementById('menu_leaderboard').addEventListener('click', _renderRankings);
     document.getElementById('menu_leaderboard').style.color = '';
     document.getElementById('menu_codex').addEventListener('click', function () {
-      window.open('https://github.com/IGPenguin/stay-dead/blob/live/WIKI.md', '_blank');
+      window.open('https://github.com/IGPenguin/stay-dead/blob/live/docs/WIKI.md', '_blank');
     });
     document.getElementById('menu_credits_donate').addEventListener('click', function () { showDonatePopup(); });
     document.getElementById('menu_credits_contact').addEventListener('click', function () { visitLinkedIn(); });
