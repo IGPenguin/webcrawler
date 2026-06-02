@@ -7,7 +7,7 @@ Send feedback when you are done. Enjoy!
 
 
 ## ver. 06/02/26 @ 02:20 AM
-🔮 Add "Transmute" in new game Origins picker
+🌀 Add "Transmute" in new game Origins picker
 🗺️ New midgame encounter content added
 🎨 Credits background + Recall in level-up
 ✏️ Action logs tone pass, text + case fixes

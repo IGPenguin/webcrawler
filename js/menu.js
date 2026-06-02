@@ -1233,12 +1233,11 @@ var Menu = (function () {
 
     var contributeBtn = document.createElement('button');
     contributeBtn.className = 'menu-btn';
-    contributeBtn.style.cssText = 'margin:10px 3px 6px 3px; width:calc(100% - 6px); box-sizing:border-box;';
-    contributeBtn.innerHTML = '🏗️ Contribute';
+    contributeBtn.innerHTML = '🏗️ GitHub';
     contributeBtn.addEventListener('click', function () {
       window.open('https://github.com/IGPenguin/stay-dead', '_blank');
     });
-    content.appendChild(contributeBtn);
+    //content.appendChild(contributeBtn); //TODO unhide when clear where to put this
 
     _doShowScreen('menu_settings_screen');
   }
