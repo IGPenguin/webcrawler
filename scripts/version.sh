@@ -37,15 +37,15 @@ if [[ ! "$MODE_CHOICE" =~ ^[Cc]$ ]]; then
     exit 1
   }
 
-  # Capture the previous version header before modifying VERSION.md
-  PREV_HEADER=$(grep -m 1 "^## ver\." VERSION.md 2>/dev/null || true)
+  # Capture the previous version header before modifying docs/VERSION.md
+  PREV_HEADER=$(grep -m 1 "^## ver\." docs/VERSION.md 2>/dev/null || true)
 
   HEADER="## $NEW_VERSION"
-  if ! grep -qF "$HEADER" VERSION.md 2>/dev/null; then
+  if ! grep -qF "$HEADER" docs/VERSION.md 2>/dev/null; then
     TMPFILE=$(mktemp)
     printf '%s\n\n' "$HEADER" > "$TMPFILE"
-    cat VERSION.md 2>/dev/null >> "$TMPFILE" || true
-    mv "$TMPFILE" VERSION.md
+    cat docs/VERSION.md 2>/dev/null >> "$TMPFILE" || true
+    mv "$TMPFILE" docs/VERSION.md
   fi
 
   echo "Version updated to: $NEW_VERSION"
@@ -63,8 +63,8 @@ fi
 
 # In -c mode: latest header is the target, second header is the baseline
 if [[ "$MODE_CHOICE" =~ ^[Cc]$ ]]; then
-  HEADER=$(grep -m 1 "^## ver\." VERSION.md 2>/dev/null || true)
-  PREV_HEADER=$(grep -m 2 "^## ver\." VERSION.md 2>/dev/null | tail -1 || true)
+  HEADER=$(grep -m 1 "^## ver\." docs/VERSION.md 2>/dev/null || true)
+  PREV_HEADER=$(grep -m 2 "^## ver\." docs/VERSION.md 2>/dev/null | tail -1 || true)
   if [ "$HEADER" = "$PREV_HEADER" ]; then
     PREV_HEADER=""
   fi
@@ -97,7 +97,7 @@ if [ -z "$COMMITS" ]; then
 fi
 
 COMMIT_COUNT=$(echo "$COMMITS" | wc -l | tr -d ' ')
-STYLE_EXAMPLES=$(grep -A 10 "^## ver\." VERSION.md | grep -v "^## ver\." | grep -v "^--$" | grep -v "^$" | head -12)
+STYLE_EXAMPLES=$(grep -A 10 "^## ver\." docs/VERSION.md | grep -v "^## ver\." | grep -v "^--$" | grep -v "^$" | head -12)
 
 echo ""
 echo "Generating changelog from $COMMIT_COUNT commits..."
@@ -142,15 +142,15 @@ fi
 
 if [[ "$CHOICE" =~ ^[Yy]$ ]]; then
   # Find the line number of the latest header and insert after it
-  HEADER_LINE=$(grep -n "^## ver\." VERSION.md | head -1 | cut -d: -f1)
+  HEADER_LINE=$(grep -n "^## ver\." docs/VERSION.md | head -1 | cut -d: -f1)
   TMPFILE=$(mktemp)
   {
-    head -n "$HEADER_LINE" VERSION.md
+    head -n "$HEADER_LINE" docs/VERSION.md
     echo "$SUGGESTIONS"
-    tail -n +"$((HEADER_LINE + 1))" VERSION.md
+    tail -n +"$((HEADER_LINE + 1))" docs/VERSION.md
   } > "$TMPFILE"
-  mv "$TMPFILE" VERSION.md
-  echo "Inserted into VERSION.md."
+  mv "$TMPFILE" docs/VERSION.md
+  echo "Inserted into docs/VERSION.md."
 else
   echo "Skipped — add entries manually."
 fi

@@ -103,7 +103,7 @@ General pattern: `get[Context][Outcome]Log()` — always returns `chooseFrom([..
 
 ## Voice reference (quick)
 
-Before writing or reviewing any line, check against DESIGN.md. Key rules:
+Before writing or reviewing any line, check against docs/DESIGN.md. Key rules:
 
 - Second-person "you" throughout — never "they" or "their" referring to the player
 - Terse. One sentence. No conjunctions unless the line earns them.
