@@ -1,0 +1,33 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="snowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2226"/>
+      <stop offset="50%" stop-color="#333a42"/>
+      <stop offset="100%" stop-color="#1e2226"/>
+    </linearGradient>
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="#1e2226"/>
+  <rect width="400" height="400" fill="url(#snowGrad)"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.4"/>
+  
+  <style>
+    .snowflake { fill: white; opacity: 0.3; animation: snowFall 6s infinite linear; }
+    @keyframes snowFall {
+      0% { transform: translate(0, -20px) rotate(0deg); }
+      100% { transform: translate(30px, 420px) rotate(360deg); }
+    }
+  </style>
+
+  <!-- Snowflakes -->
+  <circle class="snowflake" cx="50" cy="0" r="1.5"/>
+  <circle class="snowflake" cx="150" cy="0" r="2" style="animation-delay: -1s;"/>
+  <circle class="snowflake" cx="250" cy="0" r="1.2" style="animation-delay: -2.5s;"/>
+</svg>

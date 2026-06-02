@@ -1,0 +1,178 @@
+area;emoji;name;type;hp;atk;sta;lck;int;mgk;def;note;desc;message;achiev
+
+//Ideas
+🦁 Lions Mane
+🐲 Dragon Mask
+
+//Examples of 0.5 Luck / Intellect - Display as <b>Minor</b>
+Fading Wildlands;🍀;Lucky Clover;Item-Trinket;0;0;0;0.5;0;0;0;Wild Trinket;A four-leaf clover. Still counts.<br>Provides <b>Minor +🍀 Luck</b> bonus.;;none
+Fading Wildlands;📜;Field Notes;Consumable;0;0;0;0;0.5;0;0;Scattered Notes;Cramped handwriting. Someone mapped this trail before you.<br>Provides <b>Minor +🧠 Intellect</b> bonus.;;none
+
+Twisted Fairyland;🎭;Masked Jester;Standard;4;2;3;1;2;0;0;Fae Trickster;Laughs through every blow it deals you.<br>;The joke landed harder than intended.;none
+Twisted Fairyland;🦌;Twisted Stag;Standard;5;3;2;0;1;0;0;Corrupted Beast;Antlers grown into impossible angles.<br>;Gored on an impossible tangle.;none
+Twisted Fairyland;🎪;Carnival Brute;Standard;5;3;2;0;2;0;0;Fallen Performer;Dressed for a festival that ended badly.<br>;Entertainment turned fatal.;none
+Twisted Fairyland;🐊;Scaled Wanderer;Standard;4;3;2;0;1;0;0;Ancient Reptile;Weathered and vicious in equal parts.<br>;Taken in one vicious, practiced snap.;none
+Twisted Fairyland;🪔;Living Witchlight;Hot;3;2;2;0;3;1;0;Twisted Flame;Burns with intent rather than fuel.<br>;Consumed from the inside out.;none
+Twisted Fairyland;🐉;Searing Drake;Hot;4;3;2;0;1;1;0;Hatchling Fury;Too small to respect, but too hot to dismiss.<br>;Reduced to a shadow on the ground.;none
+Twisted Fairyland;💀;Skulking Remnant;Undead;4;3;2;0;-1;0;0;Forgotten Dead;Moves through shadows like it owns the dark.<br>;Struck down without ceremony.;none
+Twisted Fairyland;⚰️;Risen Shade;Undead;5;3;3;0;-1;0;0;Persistent Dead;Should have stayed in the ground.<br>The corruption found it worth raising.;Fell to what wouldn't stay dead.;none
+Twisted Fairyland;🫥;Lingering Echo;Reflective;4;2;2;1;3;1;0;Fae Phantom;Copies your movements with unsettling accuracy.<br>;Defeated by your own reflection.;none
+Twisted Fairyland;🌺;Poison Petal;Stingy;3;2;1;0;1;0;0;Beautiful Hazard;Beautiful and unpleasant in equal measure.<br>The nectar burns long after contact.;Stung somewhere it mattered.;none
+
+//River of Sorrows
+River of Sorrows;🩺;Mariner's Ear;Item-Head;0;0;0;1;0;1;0;Diagnostic Tool;Allows you to hear the heartbeat of the river.<br>Provides <b>+1 🍀 Luck</b> and <b>+1 🔵 Mana</b>.;A steady, wet rhythm.;none
+River of Sorrows;🦺;Safety Vest;Item-Chest;2;0;0;0;0;0;0;Bright Gear;Supposed to keep you afloat in the dark waters.<br>Provides <b>+2 ❤️ Health</b>.;Visibility is key.;none
+River of Sorrows;🛒;Rusty Chassis;Item-Weapon;0;2;0;-1;0;0;0;Metal Frame;A twisted remnant of a consumerist era.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🍀 Luck</b>.;Pushing through the debris.;none
+
+//Shrouded Necropolis
+Shrouded Necropolis;🌒;Moonless Watch;Trap-Sleep;-1;0;0;0;-2;0;0;Dark Curse;Darkness thick enough to press behind the eyes.<br>Bad dreams follow you out.;You slept. The nightmares did not.;none
+
+//Shrouded Necropolis
+Shrouded Necropolis;♠️;Grave-Marker Pin;Item-Head;0;0;0;0;0;3;0;<b>Artifact</b>;A cold, black spade that pins your thoughts to the earth.<br>Provides <b>+3 🔵 Mana</b>.;Grounded in death.;none
+Shrouded Necropolis;🩻;Exposed Ribcage;Item-Chest;-2;0;0;0;0;0;3;<b>Artifact</b>;The bone is cold, but the protection it offers is absolute.<br>Provides <b>+3 🔰 Defence</b> for <b>-2 💔 Health</b>.;Heart guarded by bone.;none
+Shrouded Necropolis;💉;Infected Needle;Item-Weapon;0;3;0;0;-1;0;0;<b>Artifact</b>;One prick is all it takes to share the rot.<br>Provides <b>+3 ⚔️ Attack</b> for <b>-1 🧠 Intellect</b>.;The rot spreads.;none
+Shrouded Necropolis;🦿;Bionic Piston;Item-Legs;-1;0;3;0;0;0;0;<b>Artifact</b>;Pumps with a rhythmic, mechanical hatred.<br>Provides <b>+3 🟢 Energy</b> for <b>-1 💔 Health</b>.;Driven by cold steel.;none
+
+//Fishing
+Fishing;🛟;Buoyant Ring;Item-Chest;1;0;0;1;0;0;0;Safety Gear;Keeps you from sinking into the darker thoughts.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🍀 Luck</b>.;Feeling more secure.;none
+Fishing;🤿;Scuba Mask;Item-Head;0;0;0;0;1;1;0;Diving Gear;Glass is fogged with ancient, trapped air.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🔵 Mana</b>.;The depths look different now.;none
+Fishing;🎿;Sunken Skis;Item-Legs;0;0;1;1;0;0;0;Sporting Gear;Useless for snow, but they provide strange stability.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Found your footing.;none
+Fishing;🎣;Reinforced Rod;Item-Weapon;0;1;0;1;0;0;0;Fishing Tool;Strong enough to pull secrets from the silt.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Hooked a good one.;none
+Fishing;⚓;Heavy Anchor;Item-Weapon;0;2;-1;0;0;0;1;<b>Artifact</b>;Solid iron that demands you stay exactly where you are.<br>Provides <b>+2 ⚔️ Attack</b> and <b>+1 🔰 Defence</b> for <b>-1 🟢 Energy</b>.;Staying grounded.;none
+
+//Trap-Obstacles — Village / Fairyland / Necropolis
+Forsaken Village;🪵;Barricade Remnant;Trap-Obstacle;0;0;0;0;0;0;0;Street Debris;Built to keep something out, and it worked.<br>;Dismantled enough to pass.;none
+Forsaken Village;⛓️;Rusted Chain Gate;Trap-Obstacle;0;0;0;0;0;0;0;Old Iron;Locked with a chain that outlasted its key.<br>;Pulled until the rust gave first.;none
+Twisted Fairyland;🌿;Thorned Archway;Trap-Obstacle;0;0;0;0;0;0;0;Fae Barrier;The thorns arranged themselves deliberately.<br>;Pushed through, bleeding less than expected.;none
+Twisted Fairyland;💎;Crystal Formation;Trap-Obstacle;0;0;0;0;0;0;0;Petrified Magic;Grew overnight. Doesn't care that you need to pass.<br>;Broke what wouldn't move otherwise.;none
+Shrouded Necropolis;🦴;Bone Barricade;Trap-Obstacle;0;0;0;0;0;0;0;Grim Blockage;Someone stacked these here deliberately.<br>;Scattered them and kept moving.;none
+Shrouded Necropolis;🪨;Crypt Slab;Trap-Obstacle;0;0;0;0;0;0;0;Unmoved Stone;Hasn't moved since the last thing was buried here.<br>;Shifted it with everything you had.;none
+
+//Tradeoff items — plugging thin slots
+Fading Wildlands;🧥;Roughspun Coat;Item-Chest;0;1;0;0;0;-1;0;Field Wear;Cut for movement through bramble, not elegance.<br>Provides <b>+1 ⚔️ Attack</b>, suffer <b>-1 🔵 Mana</b>.;Smells of something tracked and abandoned.;none
+Fading Wildlands;🥿;Mudstained Wraps;Item-Legs;0;0;1;-1;0;0;0;Trail Wear;Still standing is what they're made for.<br>Provides <b>+1 🟢 Energy</b>, suffer <b>-1 🍀 Luck</b>.;Felt the ground differently.;none
+Twisted Fairyland;🧣;Silk Wraps;Item-Legs;0;-1;0;0;0;2;0;Fae Weave;Woven from something that doesn't exist in sunlight.<br>Provides <b>+2 🔵 Mana</b>, suffer <b>-1 ⚔️ Attack</b>.;The fabric moved before you did.;none
+Twisted Fairyland;🥾;Trampled Boots;Item-Legs;0;0;2;0;-1;0;0;Battered Footwear;Worn by something that didn't stop when it should have.<br>Provides <b>+2 🟢 Energy</b>, suffer <b>-1 🧠 Intellect</b>.;Kept moving despite everything.;none
+River of Sorrows;🩱;River Waders;Item-Legs;1;0;0;-1;0;0;0;River Gear;Waterlogged past the point of remembering dry land.<br>Provides <b>+1 ❤️ Health</b>, suffer <b>-1 🍀 Luck</b>.;Still afloat, somehow.;none
+River of Sorrows;🪝;Gaff Hook;Item-Weapon;0;1;0;-1;0;0;0;Repurposed Tool;Made to pull. Repurposed to tear.<br>Provides <b>+1 ⚔️ Attack</b>, suffer <b>-1 🍀 Luck</b>.;Found a use for it.;none
+Shrouded Necropolis;🧦;Pale Grave Wraps;Item-Legs;-1;0;1;0;0;2;0;Dark Garment;Woven from something that used to be warmer than this.<br>Provides <b>+2 🔵 Mana</b> and <b>+1 🟢 Energy</b>, suffer <b>-1 💔 Health</b>.;The cold settled in for good.;none
+Shrouded Necropolis;👖;Warlord's Remnant;Item-Legs;-2;3;0;0;0;0;0;Blood-Soaked;Whoever wore these last did not walk away.<br>Provides <b>+3 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.;Their rage became yours.;none
+Shrouded Necropolis;🛡️;Mourner's Plate;Item-Chest;-2;2;1;0;0;0;0;Heavy Armor;Heavier than it looks. Heavier than you wanted.<br>Provides <b>+2 ⚔️ Attack</b> and <b>+1 🟢 Energy</b>, suffer <b>-2 💔 Health</b>.;The weight felt earned.;none
+Shrouded Necropolis;⚔️;Forsaken Blade;Item-Weapon;-1;3;0;0;0;0;0;Cruel Edge;Cuts through everything it touches, including you.<br>Provides <b>+3 ⚔️ Attack</b>, suffer <b>-1 💔 Health</b>.;The cut goes both ways.;none
+
+//Tradeoff items batch 2 — 20 rows
+Fading Wildlands;🪖;Cracked Helm;Item-Head;1;0;0;-1;0;0;0;Damaged Protection;Protects the skull, barely. The crack runs deeper than it looks.<br>Provides <b>+1 ❤️ Health</b>, suffer <b>-1 🍀 Luck</b>.;Better than nothing.;none
+Fading Wildlands;🪓;Jagged Flint;Item-Weapon;0;1;-1;0;0;0;0;Crude Edge;Chips off more from your hand than from the enemy.<br>Provides <b>+1 ⚔️ Attack</b>, suffer <b>-1 🟢 Energy</b>.;Left a mark on both sides.;none
+Fading Wildlands;🐇;Lucky Foot;Item-Trinket;-1;0;0;2;0;0;0;Gambler's Charm;Luck taken from something that no longer needed it.<br>Provides <b>+2 🍀 Luck</b>, suffer <b>-1 💔 Health</b>.;Felt the odds shift.;none
+Forsaken Village;🎩;Cultist Hood;Item-Head;0;0;0;-1;2;0;0;Ceremonial Wear;Once ceremonial. Now desperate.<br>Provides <b>+2 🧠 Intellect</b>, suffer <b>-1 🍀 Luck</b>.;Read the runes on the inside.;none
+Forsaken Village;🩻;Hollow Corselet;Item-Chest;2;-1;0;0;0;1;0;Ritual Wear;Still warm from its last wearer, whoever that was.<br>Provides <b>+2 ❤️ Health</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 ⚔️ Attack</b>.;Slipped on something else's life.;none
+Forsaken Village;👖;Plague Leggings;Item-Legs;1;0;1;-1;0;0;0;Cursed Fabric;Came off something that died wearing them.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>, suffer <b>-1 🍀 Luck</b>.;They fit like they expected you.;none
+Forsaken Village;🔨;Grave Mallet;Item-Weapon;0;2;-1;0;0;0;0;Blunt Force;Heavier than grief and half as useful in conversation.<br>Provides <b>+2 ⚔️ Attack</b>, suffer <b>-1 🟢 Energy</b>.;Swung it once. Didn't need to swing it twice.;none
+Forsaken Village;📖;Torn Scripture;Item-Trinket;0;0;0;-1;2;0;0;Forbidden Text;Half the pages are missing. The remaining half are worse.<br>Provides <b>+2 🧠 Intellect</b>, suffer <b>-1 🍀 Luck</b>.;Read something you can't unread.;none
+Twisted Fairyland;🦚;Peacock Mantle;Item-Chest;-1;0;0;0;0;2;0;Vain Splendour;Gorgeous and absolutely untrustworthy.<br>Provides <b>+2 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.;Worth it, probably.;none
+Twisted Fairyland;🧿;Enchanted Eye;Item-Trinket;0;0;0;-1;2;1;0;Fae Relic;Sees things that haven't happened yet.<br>Provides <b>+2 🧠 Intellect</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 🍀 Luck</b>.;Saw too much at once.;none
+Twisted Fairyland;🎭;Painted Vizard;Item-Head;0;1;0;-1;1;0;0;Fae Disguise;Hides one face and reveals another.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🧠 Intellect</b>, suffer <b>-1 🍀 Luck</b>.;Felt the change happen.;none
+River of Sorrows;🐚;River Pearl;Item-Trinket;-1;0;0;1;0;1;0;Drowned Fortune;Found somewhere it had no right to be.<br>Provides <b>+1 🍀 Luck</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.;Small. Heavy for its size.;none
+River of Sorrows;🥾;Pale Wading Boots;Item-Legs;0;0;2;-1;0;1;0;River-Soaked;Whatever they waded through left a mark.<br>Provides <b>+2 🟢 Energy</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 🍀 Luck</b>.;Felt the current pulling less.;none
+River of Sorrows;🧥;Mariner's Coat;Item-Chest;2;-1;1;0;0;0;0;River Wear;Holds water in the worst possible way.<br>Provides <b>+2 ❤️ Health</b> and <b>+1 🟢 Energy</b>, suffer <b>-1 ⚔️ Attack</b>.;Heavy with everything that soaked in.;none
+Shrouded Necropolis;🩸;Martyr's Bandage;Item;-2;0;0;0;0;0;3;Desperate Defense [Rare];Someone wrapped this and kept fighting anyway.<br>Provides <b>+3 🔰 Defence</b>, suffer <b>-2 💔 Health</b>.;Protection at the only price left.;none
+Shrouded Necropolis;🪬;Warden's Vestment;Item-Chest;-2;0;1;0;0;3;0;Dark Binding;Bound with thread made from something you won't name.<br>Provides <b>+3 🔵 Mana</b> and <b>+1 🟢 Energy</b>, suffer <b>-2 💔 Health</b>.;The binding held. For now.;none
+Shrouded Necropolis;🌙;Crescent Cleaver;Item-Weapon;-2;2;0;0;0;2;0;Cursed Weapon;Beautiful and immediately untrustworthy.<br>Provides <b>+2 ⚔️ Attack</b> and <b>+2 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.;Cut something that wasn't meant to be cut.;none
+
+//River of Sorrows — enemies
+River of Sorrows;🦀;Tide Wretch;Standard;4;3;2;0;0;0;0;River Scavenger;Missing something vital and not adjusting.<br>Hunger brought it past the shallows.;Claws found the soft parts first.;none
+River of Sorrows;🐸;River Crawler;Standard;5;3;2;0;0;0;0;Mud Dweller;Patient in a way that is never benign.<br>Sits still until it doesn't.;Caught you mid-step.;none
+River of Sorrows;🧭;Wrecked Captain;Standard;5;2;3;0;2;0;0;Lost Authority;The ship is gone. He's still giving orders.<br>Nobody left to follow them but you.;Outranked you to death.;none
+River of Sorrows;🦑;Sunken Grasper;Standard;4;2;3;0;0;0;0;Ink Horror;Eight arms and it uses none of them graciously.<br>The ink went in your eyes first.;Couldn't see what finished it.;none
+River of Sorrows;🌊;Scalded Revenant;Hot;4;3;2;0;1;1;0;Heat Specter;The water around it shimmers with unnatural warmth.<br>Burns without flame.;Fever took hold and didn't let go.;none
+River of Sorrows;🌡️;Fever Leech;Hot;4;2;3;0;0;1;0;Burning Parasite;Clings to the hull. Clings to everything.<br>The heat spreads faster than the grip.;The warmth became unbearable.;none
+River of Sorrows;☠️;Pale Corsair;Undead;5;4;1;0;-1;0;0;Sunken Pirate;Sailed these waters long before they turned sad.<br>Still hasn't forgiven the tides.;Swords don't care who holds them.;none
+River of Sorrows;💧;Submerged Wail;Spirit;3;0;2;0;3;2;0;River Spirit;The sound arrives before it does.<br>Something under the water is still grieving.;Pulled under from the inside.;none
+River of Sorrows;🦄;Pale Kelpie;Reflective;4;3;2;1;2;0;0;Water Horse;Offered itself calmly, then changed its mind.<br>Reflects your hope back as something wrong.;Drowned before you saw the trick.;none
+River of Sorrows;🐋;Mire Hulk;Heavy;6;3;3;0;0;0;0;River Leviathan;Too large to avoid. Too slow to respect.<br>You were wrong about the second part.;Crushed flat against the current.;none
+
+//River of Sorrows — items
+River of Sorrows;🧢;Sailor's Cap;Item-Head;0;0;1;1;0;0;0;River Wear;Worn to the color of fog and river mud.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Sat it on like an old habit.;none
+River of Sorrows;🪸;Kelp Hood;Item-Head;0;0;0;-1;1;1;0;River Growth;Alive enough to move with the current.<br>Provides <b>+1 🧠 Intellect</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 🍀 Luck</b>.;The current picked your thoughts.;none
+River of Sorrows;🎽;River Cuirass;Item-Chest;2;-1;1;0;0;0;0;Salvaged Armor;Ripped from a boat that didn't make it.<br>Provides <b>+2 ❤️ Health</b> and <b>+1 🟢 Energy</b>, suffer <b>-1 ⚔️ Attack</b>.;Found something that would hold.;none
+River of Sorrows;🦺;Waterlogged Surcoat;Item-Chest;1;0;0;0;0;0;1;River Armor;Heavy with everything it absorbed.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔰 Defence</b>.;Heavier than it looked. Slower too.;none
+River of Sorrows;👟;Oarsman's Brace;Item-Legs;0;0;2;-1;0;0;0;River Gear;Worn by the ones who rowed until they couldn't.<br>Provides <b>+2 🟢 Energy</b>, suffer <b>-1 🍀 Luck</b>.;Kept moving. Mostly.;none
+River of Sorrows;🩲;Silt Walker's Wrap;Item-Legs;1;0;0;-1;0;0;1;Mud Gear;Waterproofed by every river it's been dragged through.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔰 Defence</b>, suffer <b>-1 🍀 Luck</b>.;The mud kept the rest out.;none
+River of Sorrows;🗡️;Harpoon Blade;Item-Weapon;0;1;0;-1;0;0;0;River Tool;Made for fish. Works on most things.<br>Provides <b>+1 ⚔️ Attack</b>, suffer <b>-1 🍀 Luck</b>.;Threw it. Didn't miss.;none
+River of Sorrows;⛏️;River Pickaxe;Item-Weapon;0;2;-2;0;0;0;0;Heavy Weapon;Pulled from the silt with someone else's grip still on it.<br>Provides <b>+2 ⚔️ Attack</b>, suffer <b>-2 🟢 Energy</b>.;The swing connected. You barely held on.;none
+River of Sorrows;🌊;Pale Tidal Ring;Item-Trinket;0;0;0;1;0;2;0;River Relic;Found in the shallows where the drowned forget themselves.<br>Provides <b>+1 🍀 Luck</b> and <b>+2 🔵 Mana</b>.;The current recognized you.;none
+River of Sorrows;🧭;Drifter's Compass;Item-Trinket;0;0;0;-1;2;0;0;River Tool;Points somewhere. Not necessarily where you want to go.<br>Provides <b>+2 🧠 Intellect</b>, suffer <b>-1 🍀 Luck</b>.;Found a direction. Not sure which one.;none
+
+//River of Sorrows — props
+River of Sorrows;🏺;Capsized Memory;Prop;0;0;0;0;0;0;0;Waterlogged Relic;A jar, sealed, still moving against the current.<br>Something inside presses against the glass.;Left it alone.;none
+River of Sorrows;🪨;Low Tide Mark;Prop;0;0;0;0;0;0;0;River Sign;The stone is stained where the water used to reach.<br>It hasn't been that high in years.;Measured the cost of it.;none
+River of Sorrows;🎏;Fisherman's Last Catch;Prop;0;0;0;0;0;0;0;River Detail;Strung on a line that goes nowhere now.<br>The fish are long gone but the line remains.;Passed without disturbing it.;none
+
+//River of Sorrows — traps
+River of Sorrows;🟠;Spiked Buoy;Trap-Attack;-2;0;0;0;0;0;0;Maritime Hazard;Bobs innocently. Retaliates with barbs.<br>Tempting to hit. Wrong move.;Punctured yourself on the response.;none
+River of Sorrows;🐍;Nest of Eels;Trap-Attack;-2;0;0;-1;0;0;0;River Trap;The water ripples before you can see them.<br>Attack first and find out how many there are.;Found out how many there were.;none
+River of Sorrows;🌀;Spinning Current;Trap-Roll;-1;0;-1;0;0;0;0;River Hazard;The water moves in ways rivers shouldn't.<br>Roll and you're part of the rotation.;Spun out of your footing.;none
+River of Sorrows;🧊;Slick Crossing;Trap-Roll;0;0;-2;0;0;0;0;Ice Hazard;A section of river locked solid at the wrong moment.<br>Roll and meet the ice at speed.;The ice ended the argument.;none
+River of Sorrows;🕸️;Ghost Net;Trap;-1;0;-1;0;0;0;0;Abandoned Snare;Left behind by whoever fished here last.<br>Still catches things.;Found the mesh before the exit.;none
+River of Sorrows;💦;Sinkholes;Trap;-2;0;0;0;0;0;0;River Hazard;The bank looked solid from the boat.<br>It never held anyone for long.;Swallowed before correcting course.;none
+River of Sorrows;🤿;Submerged Ram;Trap-Big;-3;0;0;0;0;0;0;Hidden Obstacle;The hull found it before you did.<br>The river forgave neither apology nor injury.;The impact wasn't forgiven.;none
+River of Sorrows;🌊;Flood Surge;Trap-Big;-2;0;-1;0;0;0;0;Flash Flood;The water rises without warning.<br>Speed has nothing to do with surviving this.;The surge had the final word.;none
+River of Sorrows;💭;Drowned Memory;Curse;0;0;0;-1;-1;0;0;Haunting Recollection;A face rises from the water that you recognize.<br>Better not to linger on it.;The recognition cost something.;none
+
+//Shrouded Necropolis — enemies
+Shrouded Necropolis;🪖;Hollow Warden;Standard;5;3;2;0;1;0;0;Grave Sentinel;Has guarded something here since before the rot set in.<br>No longer sure what.;Guarded you right out of the living.;none
+Shrouded Necropolis;🧎;Grave Pilgrim;Standard;4;2;3;0;2;0;0;Lost Faithful;Came here with purpose and stayed past it.<br>Still hasn't turned back.;The pilgrimage finished what you started.;none
+Shrouded Necropolis;☠️;Bone Revenant;Standard;5;3;2;0;0;0;0;Stubborn Dead;Doesn't know why it's still here. Hasn't asked.<br>The motion is all that's left.;Kept moving past you.;none
+Shrouded Necropolis;📜;Tainted Cleric;Standard;4;2;2;0;3;1;0;Fallen Servant;Once knew the words to keep things like this away.<br>Now leads the things it used to bind.;The last rite was yours.;none
+Shrouded Necropolis;🔥;Ash Howler;Hot;5;3;2;0;0;2;0;Burning Apparition;Feeds on pyres lit for other things.<br>The ash remembers the shape of what it was.;Burned from the inside out.;none
+Shrouded Necropolis;🎃;Smoldering Revenant;Hot;4;3;1;0;-1;1;0;Burning Remnant;The flame inside the skull hasn't gone out yet.<br>It lights nothing. It just burns.;Lit you up on the way out.;none
+Shrouded Necropolis;🦎;Barbed Lizard;Stingy;4;3;2;0;1;0;0;Scaled Menace;The spines grew in after the rest of it died.<br>Waits for you to look elsewhere.;Spines found the gap without looking.;none
+Shrouded Necropolis;🌫️;Plague Swarm;Toxic;4;2;3;0;-1;0;0;Contagion Cloud;Moves like weather. Behaves nothing like it.<br>No mouth, no eyes. Spreads anyway.;Breathed it in without realizing.;none
+Shrouded Necropolis;🧟;Putrid Shambler;Toxic;5;2;3;0;-1;0;0;Shambling Rot;Moves slow enough that you underestimate it.<br>The smell arrives first.;The rot spread through the wound.;none
+Shrouded Necropolis;🔮;Shifting Wraith;Reflective;4;3;2;0;2;0;0;Pale Echo;Shows you what you were doing wrong.<br>Immediately before applying the correction.;Your own move came back worse.;none
+
+//Shrouded Necropolis — items
+Shrouded Necropolis;🩱;Grave Silks;Item-Chest;2;0;0;0;0;1;0;Burial Wear;Stitched for someone's last occasion, never worn.<br>Provides <b>+2 ❤️ Health</b> and <b>+1 🔵 Mana</b>.;Someone else's ending became yours.;none
+Shrouded Necropolis;🧣;Burial Shroud;Item-Chest;-1;0;2;0;0;1;0;Grave Garment;Wrapped around things that didn't stay dead.<br>Provides <b>+2 🟢 Energy</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.;Wore a stranger's grief for a while.;none
+Shrouded Necropolis;🦺;Iron Vestments;Item-Chest;-2;2;0;0;0;0;1;Death's Armor;Hammered from crypt gates by someone with nothing to lose.<br>Provides <b>+2 ⚔️ Attack</b> and <b>+1 🔰 Defence</b>, suffer <b>-2 💔 Health</b>.;The weight was earned.;none
+Shrouded Necropolis;🦿;Burial Greaves;Item-Legs;-1;0;1;0;0;0;2;Grave Armor;Dug up still on someone else.<br>Provides <b>+2 🔰 Defence</b> and <b>+1 🟢 Energy</b>, suffer <b>-1 💔 Health</b>.;Put them on and kept moving.;none
+Shrouded Necropolis;🩳;Hollow Wrappings;Item-Legs;-2;0;2;0;0;1;0;Cursed Binding;Unwound from someone who didn't need them anymore.<br>Provides <b>+2 🟢 Energy</b> and <b>+1 🔵 Mana</b>, suffer <b>-2 💔 Health</b>.;The binding held where you didn't.;none
+Shrouded Necropolis;👟;Crypt Treads;Item-Legs;0;0;0;-1;0;0;2;Necropolis Gear;Worn flat on stone that doesn't forgive missteps.<br>Provides <b>+2 🔰 Defence</b>, suffer <b>-1 🍀 Luck</b>.;Stable on ground that wasn't.;none
+Shrouded Necropolis;🎓;Condemned Coif;Item-Head;-1;0;0;0;2;1;0;Death Scholar;Inscribed with the last lesson learned here.<br>Provides <b>+2 🧠 Intellect</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.;Read the inscription before wearing it.;none
+Shrouded Necropolis;👁️;Void Circlet;Item-Head;0;0;0;-1;0;3;0;Dark Relic;Opens something in the forehead that was better closed.<br>Provides <b>+3 🔵 Mana</b>, suffer <b>-1 🍀 Luck</b>.;Something looked back through it.;none
+Shrouded Necropolis;⛏️;Grave Reaver;Item-Weapon;-2;3;0;0;0;0;0;Death's Tool;Pulled from the stone with both hands because it required both.<br>Provides <b>+3 ⚔️ Attack</b>, suffer <b>-2 💔 Health</b>.;Took it from where it was buried.;none
+Shrouded Necropolis;🔱;Tainted Mace;Item-Weapon;0;2;0;-1;0;1;0;Blighted Weapon;Corrodes whatever it touches, including the hand holding it.<br>Provides <b>+2 ⚔️ Attack</b> and <b>+1 🔵 Mana</b>, suffer <b>-1 🍀 Luck</b>.;Used it before reconsidering.;none
+
+//Shrouded Necropolis — props
+Shrouded Necropolis;🔔;Hollow Bell;Prop;0;0;0;0;0;0;0;Silent Ritual;Hangs from a post with no rope to ring it.<br>The sound comes anyway.;Let it finish.;none
+Shrouded Necropolis;💐;Withered Wreath;Prop;0;0;0;0;0;0;0;Old Offering;Someone thought flowers would mean something here.<br>They still might.;Passed without disturbing it.;none
+Shrouded Necropolis;🎨;Sunken Mosaic;Prop;0;0;0;0;0;0;0;Buried Beauty;Visible through the grime if you stop long enough to look.<br>It shows something that no longer exists.;Stopped. Looked.;none
+Shrouded Necropolis;🌸;Scattered Petals;Prop;0;0;0;0;0;0;0;Faded Memorial;Too fresh to be old. Someone was here recently.<br>The petals are still soft.;Found something worth pausing for.;none
+
+//Shrouded Necropolis — traps
+Shrouded Necropolis;🕯️;Vigil Collapse;Trap-Sleep;-1;0;-1;0;0;0;0;Grave Exhaustion;The grief of watching something that doesn't move finally lands.<br>The knees give before the will does.;Fell where you were standing.;none
+Shrouded Necropolis;🌫️;Necrotic Mist;Trap-Sleep;-1;0;0;0;-2;0;0;Dark Fog;Rolls in from the crypts just before dawn.<br>Nobody who breathes it chooses to sleep — they just do.;Breathed the dark in and stopped.;none
+Shrouded Necropolis;🪦;Stone Cold;Trap-Sleep;0;0;-2;0;-1;0;0;Dark Curse;The silence presses in until the body gives up deciding.<br>Not peace. Just absence.;The cold made the choice for you.;none
+Shrouded Necropolis;⚰️;Coffin Collapse;Trap-Big;-3;0;0;0;0;0;0;Falling Tomb;The lid gave without warning.<br>The weight of the dead lands hard.;The lid found you first.;none
+Shrouded Necropolis;🕳️;Grave Sinkhole;Trap-Big;-2;0;-1;0;0;0;0;Open Earth;The ground gives between one step and the next.<br>No time to correct.;Fell before you could decide not to.;none
+Shrouded Necropolis;🏚️;Collapsed Arch;Trap-Obstacle;0;0;0;0;0;0;0;Crypt Rubble;Fell some time ago. Hasn't moved since.<br>Blocking the way with the authority of stone.;Moved it the hard way.;none
+Shrouded Necropolis;🌿;Root Overgrowth;Trap-Obstacle;0;0;0;0;0;0;0;Living Barrier;Grew through the stone while nothing was watching.<br>The roots don't care about your direction.;Pulled them back enough to pass.;none
+Shrouded Necropolis;🧱;Cursed Flagstone;Trap-Roll;-1;0;-1;0;0;0;0;Floor Trap;Looks like every other stone in the floor.<br>It isn't.;The floor didn't hold what you expected.;none
+Shrouded Necropolis;🖼️;Ancestral Portrait;Trap-Attack;0;0;0;-2;-1;0;0;Cursed Artwork;The painted eyes follow. Strike it and find out what's inside.<br>The frame shattered. Something didn't.;Struck something that remembered.;none
+Shrouded Necropolis;🦴;Bone Debt;Curse;-2;0;0;0;0;0;0;Dark Toll;The dead here expect a price for passage.<br>Roll to resist, or pay in health.;Paid what the dead demanded.;none
+
+//Backlog
+Shrouded Necropolis;👗;Widow's Shroud;Item-Chest;0;0;0;0;0;0;0;<b>Artifact</b>;A grief too heavy to wear, but you wear it anyway.<br>Unique power TBD.;It fits like a wound.;none
+Shrouded Necropolis;👡;Widow's Heel;Item-Legs;0;0;0;0;0;0;0;<b>Artifact</b>;She walked in these once.<br>Unique power TBD.;Left behind. Now yours.;none
+River of Sorrows;🚣;Pale Ferryman;Friend;0;0;0;1;1;0;0;Quiet Guide;Poles the boat without asking where you're going.<br>Glad for the company.;Pointed you toward calmer water.;none
+River of Sorrows;🦢;Silent Swan;Friend;0;0;0;1;0;0;0;River Omen;Keeps pace without effort.<br>Bad rivers don't make swans this pale.;The swan watched you go.;none
+
+
+//Low Quality
+Twisted Fairyland;🩱;Iridescent Leotard;Item-Chest;0;0;1;0;0;1;0;Stretchy Wear;Moves as if floating on an unseen wind.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🔵 Mana</b>.;Elegance in the chaos.;none
+Twisted Fairyland;🎍;Sharp Bamboo;Item-Weapon;0;2;0;0;-1;0;0;Improvised Blade;Grows faster than you can bleed.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🧠 Intellect</b>.;Nature strikes back.;none
+River of Sorrows;⚗️;Crystal Beaker;Item-Trinket;0;0;0;0;0;2;0;Portable Experiment;Bubbles with a liquid that defies physics.<br>Provides <b>+2 🔵 Mana</b>.;The air smells of ozone.;none
+River of Sorrows;🚤;Moored Skiff;Container-2;0;0;0;0;0;0;0;River Craft;Still tied, still afloat. No sign of where its owner went.<br>;Boarded and searched stem to stern.;none
+River of Sorrows;🫙;Sealed Crock;Locked-Container;0;0;0;0;0;0;0;Preserved Cache;The lid is waxed over and the clay still uncracked.<br>;The seal broke clean on the third strike.;none
+River of Sorrows;🏊;Endless Swimmer;Standard;3;2;4;0;0;0;0;Lost Soul;Swims slow circles in the shallows, never tiring.<br>;Pulled you under mid-stroke.;none
+

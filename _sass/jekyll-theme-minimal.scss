@@ -4,6 +4,15 @@
 $color-border: rgb(0,0,0);
 $color-inner-border: #121212;
 
+@mixin chamfer($px: 3px) {
+  clip-path: polygon(
+    0% #{$px}, #{$px} #{$px}, #{$px} 0%,
+    calc(100% - #{$px}) 0%, calc(100% - #{$px}) #{$px}, 100% #{$px},
+    100% calc(100% - #{$px}), calc(100% - #{$px}) calc(100% - #{$px}), calc(100% - #{$px}) 100%,
+    #{$px} 100%, #{$px} calc(100% - #{$px}), 0% calc(100% - #{$px})
+  );
+}
+
 :root {
   user-select: none;
   -webkit-user-select: none;
@@ -42,8 +51,8 @@ h1, h2, h3 {
   line-height:1.1;
 }
 
-h1 {
-  font-size:76px;
+h1 { //Encounter emoji
+  font-size:70px;
   margin: 0px 0 10px;
 }
 
@@ -65,6 +74,32 @@ h4 {
   margin-bottom: 14px;
   width: 100%;
   padding: 4px;
+}
+
+#id_log {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 transparent;
+}
+
+#id_log::-webkit-scrollbar {
+  width: 3px;
+}
+
+#id_log::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#id_log::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 0;
+}
+
+#id_player_party_loot {
+  scrollbar-width: none;
+  overflow-x: auto;
+}
+#id_player_party_loot::-webkit-scrollbar {
+  display: none;
 }
 
 h5 {
@@ -96,13 +131,21 @@ a:active, a:hover, a:focus {
   float: center;
   padding: 16px;
   background-color: rgb(40,40,40);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.25) 0px,
+    rgba(0,0,0,0.25) 3px,
+    transparent 3px,
+    transparent 6px
+  ) !important;
   box-shadow:
     inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
   width: 332px;
-  height: 200px;
+  min-height: 200px;
   display: table-cell;
   vertical-align: middle;
+  @include chamfer;
 }
 
 .box-border-dynamic{
@@ -120,9 +163,17 @@ a:active, a:hover, a:focus {
 .toolbar-card{
   max-width: 364px;
   background-color: rgb(40,40,40);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.25) 0px,
+    rgba(0,0,0,0.25) 3px,
+    transparent 3px,
+    transparent 6px
+  ) !important;
   box-shadow:
     inset 0px 0px 0px 3px $color-border,
     0 4px 8px 0 rgba(0,0,0,0.5);
+  @include chamfer;
 }
 
 .toolbar {
@@ -148,8 +199,9 @@ a:active, a:hover, a:focus {
   font-size:76px;
   position: absolute;
   z-index: 1;
-  left:50%;
-  transform: translatex(-50%);
+  left:0;
+  right:0;
+  text-align:center;
   margin-top:8px;
 }
 
@@ -163,19 +215,23 @@ a:active, a:hover, a:focus {
 }
 
 .curtain {
-  left:50%;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 2;
-  height: 120%;
-  width:100%;
-  bottom:0%;
-  transform: translatex(-50%);
-  background-color: rgba(0,0,0,0.95);
-  display:none;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  display: none;
+}
+
+.curtain--fadein {
+  z-index: 3;
 }
 
 .fullScreenText {
-  font-size:38px;
+  font-size:28px;
+  line-height:130%;
   letter-spacing: 0.1px;
   position: absolute;
   z-index: 2;
@@ -223,6 +279,100 @@ th, td {
 dt {
   color:#444;
   font-weight:700;
+}
+
+// ── Action Bar Minigame ────────────────────────────────────────────────────
+
+#id_action_bar {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;           // stretch to match player status bar height exactly
+  z-index: 10;
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+
+#id_action_bar_track {
+  position: relative;
+  height: 100%;        // fill the player status bar height
+  min-height: 24px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 0 0 3px #121212;
+  background: #3a1010;
+  transition: box-shadow 0.1s;
+
+  &.action-bar-flash-success {
+    box-shadow: 0 0 0 3px #27ae60, 0 0 14px rgba(39,174,96,0.8);
+  }
+  &.action-bar-flash-fail {
+    box-shadow: 0 0 0 3px #c0392b, 0 0 14px rgba(192,57,43,0.8);
+  }
+  &.action-bar-flash-crit-success {
+    box-shadow: 0 0 0 3px #c8a200, 0 0 18px rgba(200,162,0,0.95);
+  }
+  &.action-bar-flash-crit-fail {
+    box-shadow: 0 0 0 3px #1c0303, 0 0 18px rgba(100,0,0,0.95);
+  }
+}
+
+#id_action_bar_cancel {
+  display: none;
+  position: absolute;
+  top: -1px; left: 2px; right: 2px; bottom: -1px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: rgba(28, 6, 6, 0.93);
+  color: #b84040;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  z-index: 3;
+  pointer-events: none;
+
+  &.visible {
+    display: flex;
+  }
+}
+
+#id_action_bar_result {
+  display: flex;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: serif;
+  letter-spacing: 0.08em;
+  color: #fff;
+  -webkit-text-stroke: 4px #121212;
+  paint-order: stroke fill;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+
+  &.result-pass      { background: #1a6b2e; }
+  &.result-fail      { background: #621010; }
+  &.result-crit-pass { background: #b89000; color: #fff8cc; -webkit-text-stroke-color: #5a3a00; }
+  &.result-crit-fail { background: #200808; color: #cc4444; }
+  &.result-cancel    { background: rgba(28, 6, 6); color: #b84040; font-size:16px; }
+}
+
+#id_action_bar_cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0 0 7px rgba(255,255,255,0.85);
+  transform: translateX(-50%);
+  will-change: left;
 }
 
 th {
@@ -346,9 +496,19 @@ button {
   font-size: 18px;
   z-index: 999;
   padding-bottom: 2px;
-  min-height: 44px;
+  min-height: 42px;
   width: 108.4px;
   background-color: rgb(40,40,40);
+  @include chamfer;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(0,0,0,0.18) calc(100% - 6px),
+    rgba(0,0,0,0.18) 100%
+  );
   color: #fff;
   padding-right: 4px;
   padding-left: 2px;
@@ -356,11 +516,405 @@ button {
   border: none;
   -webkit-text-stroke:4px #121212;
   paint-order: stroke fill;
-  //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   box-shadow:
     inset 0px 0px 0px 3px $color-border;
   user-select: none;
 }
+
+button:active {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0px,
+    rgba(0,0,0,0.18) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(255,255,255,0.13) calc(100% - 6px),
+    rgba(255,255,255,0.13) 100%
+  );
+}
+
+// Share popup card — scanlines matching .card treatment
+#share_popup_card {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.25) 0px,
+    rgba(0,0,0,0.25) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  @include chamfer;
+}
+
+// Menu card sub-elements — inset info/desc row (area, cause, date) below name bar
+.menu-card-info {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0px,
+    rgba(0,0,0,0.18) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(255,255,255,0.05) calc(100% - 3px),
+    rgba(255,255,255,0.05) 100%
+  );
+}
+
+// Raised stats row in chronicle/rankings detail — target the inner h3 (outer div bg is covered by h3 bg-color)
+.menu-card-stats > h3 {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  ) !important;
+}
+
+// Raised loot/party bar in chronicle/rankings detail
+.menu-loot-bar {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  );
+}
+
+// Raised score/run-info bar in chronicle/rankings detail
+.menu-score-bar {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  );
+}
+
+// Inset confirm warning — recessed feel matching credits body
+// box-shadow:inset 0 0 0 3px covers 0-3px and last 3px — strips must be offset to 3-6px to be visible
+// credits body: inset (dark top, light bottom — recessed content area feel)
+#menu_credits_body {
+  background-color: rgb(40,40,40);
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,0,0,0.18) 3px,
+    rgba(0,0,0,0.18) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(255,255,255,0.05) calc(100% - 6px),
+    rgba(255,255,255,0.05) calc(100% - 3px),
+    transparent calc(100% - 3px)
+  );
+  @include chamfer;
+}
+
+// confirm warning: raised (light top, dark bottom — elevated box feel)
+#menu_confirm_warning {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255,255,255,0.13) 3px,
+    rgba(255,255,255,0.13) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(0,0,0,0.18) calc(100% - 6px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    transparent calc(100% - 3px)
+  );
+}
+
+// Menu card name bar — fixed 26px height (matches game-screen #id_name h2 rendered height)
+.menu-card-name {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 3px;
+
+  > h3 {
+    height: 26px;
+    line-height: 26px;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+// ── Pixel UI treatments ────────────────────────────────────────────────────
+
+// Raised: name/stat headers + achievement toast — same elevation as buttons, 3px bands to fit tight rows
+#id_name,
+#id_player_name,
+#id_player_status,
+#id_player_party_loot,
+#achievement_toast,
+.menu-card-name,
+.box-border-dynamic:has(#id_stats) {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.13) 0px,
+    rgba(255,255,255,0.13) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(0,0,0,0.18) calc(100% - 3px),
+    rgba(0,0,0,0.18) 100%
+  ) !important;
+}
+
+// Nudge id_player_status text 2px down to match id_stats vertical rhythm
+// box-sizing: border-box ensures the height: 24px inline stays intact
+#id_player_status {
+  padding-top: 2px !important;
+  box-sizing: border-box !important;
+}
+
+// Inset: content areas — recessed feel
+#id_desc {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0px,
+    rgba(0,0,0,0.18) 3px,
+    transparent 3px,
+    transparent calc(100% - 3px),
+    rgba(255,255,255,0.05) calc(100% - 3px),
+    rgba(255,255,255,0.05) 100%
+  ) !important;
+}
+
+// Vignette: emoji display box — radial dark edge, sits under emoji (z-index 3)
+#id_emoji_flipper {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 6%,
+        rgba(0,0,0,0.22) 6%,  rgba(0,0,0,0.22) 12%,
+        rgba(0,0,0,0.14) 12%, rgba(0,0,0,0.14) 18%,
+        rgba(0,0,0,0.07) 18%, rgba(0,0,0,0.07) 24%,
+        rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 30%,
+        transparent 30%
+      ),
+      linear-gradient(to top,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 6%,
+        rgba(0,0,0,0.22) 6%,  rgba(0,0,0,0.22) 12%,
+        rgba(0,0,0,0.14) 12%, rgba(0,0,0,0.14) 18%,
+        rgba(0,0,0,0.07) 18%, rgba(0,0,0,0.07) 24%,
+        rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 30%,
+        transparent 30%
+      ),
+      linear-gradient(to right,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 2%,
+        rgba(0,0,0,0.22) 2%,  rgba(0,0,0,0.22) 4%,
+        rgba(0,0,0,0.14) 4%,  rgba(0,0,0,0.14) 6%,
+        rgba(0,0,0,0.07) 6%,  rgba(0,0,0,0.07) 8%,
+        rgba(0,0,0,0.02) 8%,  rgba(0,0,0,0.02) 10%,
+        transparent 10%
+      ),
+      linear-gradient(to left,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 2%,
+        rgba(0,0,0,0.22) 2%,  rgba(0,0,0,0.22) 4%,
+        rgba(0,0,0,0.14) 4%,  rgba(0,0,0,0.14) 6%,
+        rgba(0,0,0,0.07) 6%,  rgba(0,0,0,0.07) 8%,
+        rgba(0,0,0,0.02) 8%,  rgba(0,0,0,0.02) 10%,
+        transparent 10%
+      );
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+#menu_credits_body {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 6%,
+        rgba(0,0,0,0.22) 6%,  rgba(0,0,0,0.22) 12%,
+        rgba(0,0,0,0.14) 12%, rgba(0,0,0,0.14) 18%,
+        rgba(0,0,0,0.07) 18%, rgba(0,0,0,0.07) 24%,
+        rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 30%,
+        transparent 30%
+      ),
+      linear-gradient(to top,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 6%,
+        rgba(0,0,0,0.22) 6%,  rgba(0,0,0,0.22) 12%,
+        rgba(0,0,0,0.14) 12%, rgba(0,0,0,0.14) 18%,
+        rgba(0,0,0,0.07) 18%, rgba(0,0,0,0.07) 24%,
+        rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 30%,
+        transparent 30%
+      ),
+      linear-gradient(to right,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 2%,
+        rgba(0,0,0,0.22) 2%,  rgba(0,0,0,0.22) 4%,
+        rgba(0,0,0,0.14) 4%,  rgba(0,0,0,0.14) 6%,
+        rgba(0,0,0,0.07) 6%,  rgba(0,0,0,0.07) 8%,
+        rgba(0,0,0,0.02) 8%,  rgba(0,0,0,0.02) 10%,
+        transparent 10%
+      ),
+      linear-gradient(to left,
+        rgba(0,0,0,0.32) 0%,  rgba(0,0,0,0.32) 2%,
+        rgba(0,0,0,0.22) 2%,  rgba(0,0,0,0.22) 4%,
+        rgba(0,0,0,0.14) 4%,  rgba(0,0,0,0.14) 6%,
+        rgba(0,0,0,0.07) 6%,  rgba(0,0,0,0.07) 8%,
+        rgba(0,0,0,0.02) 8%,  rgba(0,0,0,0.02) 10%,
+        transparent 10%
+      );
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+// Raised bevel on list cards — offset 3px to clear the inset box-shadow border
+.menu-history-entry {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255,255,255,0.16) 3px,
+    rgba(255,255,255,0.16) 6px,
+    transparent 6px,
+    transparent calc(100% - 6px),
+    rgba(0,0,0,0.22) calc(100% - 6px),
+    rgba(0,0,0,0.22) calc(100% - 3px),
+    transparent calc(100% - 3px)
+  );
+}
+
+// ── Main Menu ──────────────────────────────────────────────────────────────
+
+.menu-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+// Menu fills the game-viewport height (matches game-viewport min-height formula)
+#id_menu {
+  min-height: 440px;
+}
+
+// Each menu screen fills #id_menu as a flex column
+#menu_main_screen,
+#menu_history_screen,
+#menu_credits_screen,
+#menu_confirm_screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+// Top-level card in each menu screen: override .card's table-cell, use flex column
+.menu-main-card {
+  display: flex !important;
+  flex-direction: column;
+  width:364px;
+  min-height: 578px;
+  box-sizing: border-box;
+}
+
+// Flexible spacer: pushes following elements to the bottom of the card
+.menu-spacer {
+  flex: 1;
+  min-height: 0px;
+}
+
+.menu-btn {
+  width: 100%;
+  margin-top: 5px;
+  letter-spacing: 0.8px;
+}
+
+.menu-history-entry {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  overflow: hidden;
+  background-color: #202020;
+  box-shadow: inset 0px 0px 0px 3px #000;
+  @include chamfer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #000;
+    z-index: 10;
+    pointer-events: none;
+  }
+}
+
+@media (hover: hover) {
+  .menu-history-entry:hover {
+    filter: brightness(1.25);
+  }
+  button:hover {
+    filter: brightness(1.2);
+  }
+}
+
+button:focus-visible,
+.menu-history-entry:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: none;
+  filter: brightness(1.2);
+}
+
+.menu-history-entry.menu-history-selected {
+  box-shadow: inset 0px 0px 0px 3px #FFD940;
+
+  &::before {
+    background: #FFD940;
+    height: 3px;
+  }
+}
+
+.menu-history-log {
+  display: none;
+  padding-top: 4px;
+  padding-bottom: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 12px;
+  line-height: 165%;
+  text-align: left;
+  color: #fff;
+  background-color: #272727;
+  box-shadow: 0px 0px 0px 3px #121212;
+  margin: 2px 3px 3px 3px;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+
+.menu-history-log::-webkit-scrollbar { width: 3px; }
+.menu-history-log::-webkit-scrollbar-track { background: transparent; }
+.menu-history-log::-webkit-scrollbar-thumb { background-color: #000; border-radius: 0; }
+
+// ── End Menu ───────────────────────────────────────────────────────────────
 
 select {
   padding:5px;
@@ -375,4 +929,186 @@ select {
   min-height: 36px;
   font-size: 15px;
   text-align: center;
+}
+
+
+// ── Logo blood drops ───────────────────────────────────────────────────────
+
+@keyframes drop-fall {
+  0%   { transform: translateY(0);    opacity: 0; }
+  6%   { transform: translateY(1px);  opacity: 1;   animation-timing-function: cubic-bezier(0.2,0,0.6,0.4); }
+  72%  { transform: translateY(34px); opacity: 0.1; animation-timing-function: linear; }
+  100% { transform: translateY(42px); opacity: 0; }
+}
+
+@keyframes drop-fall-pixel {
+  0%   { transform: translateY(0);    opacity: 0; }
+  6%   { transform: translateY(4px);  opacity: 1;   animation-timing-function: steps(8); }
+  72%  { transform: translateY(36px); opacity: 0.1; animation-timing-function: steps(8); }
+  100% { transform: translateY(44px); opacity: 0; }
+}
+
+.logo-drop-1 { animation: drop-fall 2.8s ease-in infinite  0.0s backwards; }
+.logo-drop-2 { animation: drop-fall 3.3s ease-in infinite  0.9s backwards; }
+.logo-drop-3 { animation: drop-fall 2.4s ease-in infinite  1.7s backwards; }
+.logo-drop-4 { animation: drop-fall 3.0s ease-in infinite  1.2s backwards; }
+.logo-drop-5 { animation: drop-fall 2.6s ease-in infinite  0.4s backwards; }
+
+.drops-pixel { display: none; }
+.drops-smooth { display: inline; }
+
+// ── Platform-specific Adjustments ──────────────────────────────────────────
+
+.gelasio-font {
+  &, button, select, input, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gelasio', Georgia, serif !important;
+    letter-spacing: -0.1px !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  // Use smooth drops for Gelasio
+  .drops-smooth { display: inline !important; }
+  .drops-pixel { display: none !important; }
+
+  // Force Gelasio on big overlays and stats that used inline 'sans'
+  .enemyOverlay,
+  .playerOverlay,
+  #id_stats,
+  #id_player_status,
+  [style*="font-family:sans"],
+  [style*="font-family: sans"] {
+    font-family: 'Gelasio', Georgia, serif !important;
+    letter-spacing: -0.1px !important;
+  }
+}
+
+.pixel-font {
+  &, body {
+    // Force pixelated rendering on the root and body to handle backgrounds and zoom
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: -moz-crisp-edges !important;
+    image-rendering: crisp-edges !important;
+    image-rendering: pixelated !important;
+    
+    // Upscale the 250x250 background tiles to make pixels "chunky"
+    background-size: 1000px !important;
+  }
+
+  &, body, button, select, input, h1, h2, h3, h4, h5, h6, div, span, p:not(.ui-symbol) {
+    font-family: 'Tiny5', sans-serif !important;
+    letter-spacing: 0px !important;
+  }
+
+  // Use pixelated drops for Pixel mode
+  .drops-pixel { display: inline !important; }
+  .drops-smooth { display: none !important; }
+
+  // Pixelated animation for blood drops
+  .logo-drop-1, .logo-drop-2, .logo-drop-3, .logo-drop-4, .logo-drop-5 {
+    animation-name: drop-fall-pixel !important;
+    animation-timing-function: steps(8) !important;
+  }
+
+  // Force Tiny5 on logo text specifically in Pixel mode
+  #id_logo_text {
+    font-family: 'Tiny5', sans-serif !important;
+    font-size: 82px !important;
+    letter-spacing: 2px !important;
+  }
+
+  // Bump base size by 2px (13px -> 15px)
+  font-size: 14px !important;
+
+  h4 { font-size: 16px; } // 14.6 + 2
+  h5 { font-size: 14px; }   // 12 + 2
+
+  .ui-rect {
+    border-radius: 0px !important;
+    clip-path: polygon(
+      0% 25%, 25% 25%, 25% 0%, 
+      75% 0%, 75% 25%, 100% 25%, 
+      100% 75%, 75% 75%, 75% 100%, 
+      25% 100%, 25% 75%, 0% 75%
+    );
+  }
+
+  // Remove forced global weight and size to let inline styles and tags rule
+  &, div, span, p:not(.ui-symbol) {
+    font-weight: 100; 
+  }
+
+  // Headings and buttons often need to be a bit thicker, but not too thick
+  h1, h2, h3, h4, h5, h6, button, b, strong {
+    font-weight: 100 !important;
+  }
+
+  // Specific overrides for overlays to ensure they stay large (84px/88px)
+  .enemyOverlay,
+  .playerOverlay,
+  [style*="font-family:sans"],
+  [style*="font-family: sans"],
+  [style*="font-family:inherit"],
+  [style*="font-family: inherit"] {
+    font-family: 'Tiny5', sans-serif !important;
+    letter-spacing: -0.4px !important;
+  }
+}
+
+.is-android {
+  // Make touch feedback more subtle (removes the default "aqua blue" box)
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08) !important;
+  }
+
+  #id_emoji {
+    font-size: 63px; // 10% smaller than 70px
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+
+  .enemyOverlay {
+    font-size: 67px !important; // 10% smaller than 74px
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+}
+
+// ── UI Symbols ─────────────────────────────────────────────────────────────
+
+.ui-symbol {
+  font-family: 'Gelasio', Georgia, serif !important;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  margin-bottom: 0px;
+  -webkit-text-size-adjust: none;
+}
+
+.ui-rect {
+  display: inline-block;
+  min-width: 9px;
+  width: 9px;
+  min-height: 9px;
+  height: 9px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin-right: 3px;
+  margin-left: 0px;
+  margin-bottom: 1px;
+  border-radius: 1px;
+}
+
+.ui-rect.full {
+  background-color: currentColor;
+}
+
+.ui-rect.empty {
+  border: 1.5px solid currentColor;
+}
+
+.ui-emoji {
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
 }

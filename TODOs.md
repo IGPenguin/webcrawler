@@ -1,941 +1,477 @@
-# Stay Dead — TODOs
+# Styx Flow — 2026-06-01 — Stay Dead
 
-## Final Final Tweaks
-
-- [x] Fix risk to not edit spent coins var + adjust coin pickup not to add to saved when picking up "Lucky"
-- [x] Swap "required big" for "took a rather"
-- [x] Forbidden apple desc too long
-- [x] Generate coins after boss limits: first area 2, then 4, 6, 8
-- [x] Scan dataset to improve low effort or non-matching texts
-- [x] Replace all placeholders
-
-## Small Ideas (new PR)
-
-- [ ] Legend phys dmg allowed to spirits (soulgem)
-- [ ] Dark MGK cost int items
-- [ ] Practice target variants for speak, cast... option to leave
-- [ ] Pray with no bonus = get exp
-- [ ] Boss wife disengage when calmed = NaN xp
-- [ ] Cannot leave calm merciful bride, disengage NaN xp, calm bride (bonus atk-==atk, swap text)
-
-## BIG OLD DATA PUSH (extra PR)
-
-- [ ] Increment meadows data (praised bath, no-effect encounters)
-  - [ ] No-effect altars, curses etc with just observations
-  - [ ] Clear sky, silent overcast
-- [ ] Trap-Big, Trap-Obstacle, Toxic, Hot, Reflective, Tough, Stingy... + bosses
-  - [ ] Revise village data (traps, special enemies)
-  - [ ] Revise fairyland data (special — Forest Fiend, various ghosts)
-  - [ ] Revise river (all types, very lacking regarding all encounter types)
-  - [ ] Revise necropolis (special, freezing/snowman)
-  - [ ] Animated objects, flora, unusual shades, effects...
-- [ ] Undead + vampires in fairyland and river (drowned zombie etc)
-- [ ] Ghosts etc in necro at least 1 atk; all enemies 3+ stamina, overall 2x longer (needs a lot of data!)
-- [ ] Lemon-like unique foods with perma boosts (1 good, 1 bad per area)
-  - [ ] Ensure bad foods in all areas
-  - [ ] Mixed stats foods and items — lose and gain at the same time
-- [ ] Touch lucky statue/chime etc... (positive traps?), Bubble bath...
-- [ ] Bloat fishing loot with items and threats (traps?)
-- [ ] Containers/traps costing stamina/lck etc. — Thorny patch (more like this)
-- [ ] Lategame traps/curses stealing mana/sta etc
-- [ ] Mid-late game balance = high stamina, more low atk enemies
-  - [ ] Pets in fairyland a lot more sta ~3
-  - [ ] Bosses to have a lot of hp but not insta-kill dmg
-
-## Big Ideas
-
-- [ ] 🪙 Drachmae options
-  - [ ] Buy fishing bait/key?
-  - [ ] Get coin: +enemy dmg, +enemy hp, +enemy sta?
-- [ ] Drachmae for social interactions and feedback — add to log and tips
-- [ ] JS spaghetti monster joke boss after endgame
-- [ ] Negative friends — investigate
-- [ ] Necropolis optional areas
-- [x] Scrolling in log list
-- [ ] Hit prop once to try spawning small (remember to go back)
-  - [ ] Camp-Rest (Prop), spawn enemy on rest (log it)... camp-grab?
-- [ ] No 1-click encounters (Friend, puzzle, etc.) — use `encounterUsed` to stand around and do something
-- [ ] Adopt pet for item similar to friend (give instead of speak)
-  - [ ] Give mouse/lizard to cat
-- [ ] Magic-container door: only cast to unlock, locked/magic 50% for artifact otherwise item
-- [ ] Stunning (empty sta when getting hit)
-- [ ] Main menu layout + swap btn (start/continue/achievements/credits/feedback/changelog - PR list)
-  - [ ] Achievements popup + list menu overlay
-- [ ] Generate loot or consumable from kill/knockout (not in generators) — "They've dropped something"
-- [ ] Food grab, food array, eat instead of speak; if food array not empty heal with latest food
-  - [ ] Eat instead of speak → food eat or grab (if grab, offer eat later? pop food)
-- [ ] Mischievous legendary on bad karma
-- [ ] Hit/Dodge/Block minigame — tap > timer progress bar > hitzone
+*~106 items · 2026-06-01: +1 (ORIG-ROLL) — Origins picker reroll button, user-flagged P1 · prior: 2026-06-01: Styx re-sort — Backlog and Technical Debt integrated into P3/P4, [SCROLL-GAP] promoted to P2, [ORIG-ITEMS] cleaned, [COMP-PLAY] flagged (assumed shipped — not found in backlog) · prior: 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
-## Completed
+## P0 — Hard Blockers *(drop everything)*
 
-- [x] Campfire bonus sleep trap
-- [x] A lot more positive traps
-- [x] Fix breathing animation not working
-- [x] Fix "faced the truth" log appearing for tulip
-- [x] Fix hospital having post office emoji (split to two)
-- [x] Level up bold (instead of "increased")
-- [x] Boss killed fade bold name
-- [x] Noticed hazard → curiosity if good
-- [x] Boss defeated name bigger font
-- [x] Deserted post/hospital
-- [x] Komodo hp--
-- [x] Branching micro-endings
-  - [x] playerLove high = bride attack = 0
-- [x] Trickster stash gives +2 hp instead of -1 lck (just the log is wrong)
-- [x] Two love letters in village (should be just 1)
-- [x] Fix container kill log before action log (Splinter cache death debug)
-- [x] Approached creature text too long
-- [x] Stone container +hp (do not consume container if no bonus/malus)
-- [x] Pink log text — no burning or broken heart for letter logs
-- [x] Grab letter pink btn text
-- [x] Dead by thorny camp fade subtitle + move to fairyland
-- [x] Move sparkling torch to village
-- [x] "Fills the air" → "is filling the air"
-- [x] Dead by thorny camp no dead state
-- [x] Rename all to Stay Dead
-- [x] Fix containers with no msg
-- [x] "Faced old" → "the"
-- [x] Cati should be same trap type as web
-- [x] Cook broken (does not add bonus)
-- [x] Add friends — Adversaries
-- [x] Quest give item
-- [x] River of Sorrows
-- [x] Play button missing
-- [x] Fix friend encounter pass redraw
-- [x] Zajicek fix stats
-- [x] Boss leave when atk 0, get xp, + proper btn
-- [x] You died big font
-- [x] Spell scrolls
-- [x] Increase xp threshold per lvl (200?)
-- [x] Nerf sky tyrant
-- [x] Discovered: remove something
-- [x] Curious thought came on your mind
-- [x] Hurting container display hazard on card (as trap) + log spotted hazard
-- [x] New perk available — match subtext font size with boss defeated
-- [x] Better lvl up indicator, log ready to lvl up
-- [x] Fix fishing false after friend conversation (fished out friend)
-- [x] Give xp for leaving defused encounter
-- [x] Fix 🐛 not considered a bait
-- [x] No block for harmless enemies → Tease/Provoke — mean no harm
-- [x] Energy bonus only if not hurt
-- [x] Add prop after every boss
-- [x] Generate fishing encounters (remove duplicates from Sorrows river)
-- [x] Add quest items to friends in all areas (remember to remove other bonuses)
-  - [x] Ensure the items drop in the area/areas before
-- [x] Fix sloth tease (non-pet or small) → they should lose stamina
-- [x] Karma gift — fix to meadows area name, check possible items (all artifacts?)
-- [x] "Even when being still" → "every step you take"
-- [x] "Into their bag" → "your" (swap all "their" words in js)
-- [x] Lunar phantom make no mana
-- [x] Add (( to n/a encounters instead of . or :
-- [x] Purrfect blessing too long
-- [x] Generate fishing loot
-- [x] Remove pet give
-- [x] Letter scraps from bride (props with random text?) Poems
-- [x] Fix knockout
-- [x] Fix boss dead subtitle spacing + add emoji in front
-- [x] If river area, walk is sail
-- [x] Knotted vines → fairy
-- [x] Floating spider add sta
-- [x] Remove redundant "and also"
-- [x] Fog replace emoji with cloud
-- [x] Seal fishing msg too long
-- [x] Boss defeated fade newline name
-- [x] Forbidden apple too long (first pass)
-- [x] Crown 2 hp 2 intellect
-- [x] "Slipped into your party unannounced" too long
-- [x] Move meadow fishing forward one spot
-- [x] Ensure love letter in each area except meadows
-- [x] Is unlock for -2? If not fix the typo
-- [x] "They just hang around" no jump anim
-- [x] Bag → Loot
-- [x] Refined bow
-- [x] Enemy should bounce only when truly attacking, pulse on rest
-- [x] Quest item special display (decorate type or something)
-- [x] Drop container-friend
-- [x] Friend give loot (rand item) for quest (identifier -R)
-- [x] Unblock click-through fades
-- [x] Hotfix endless ocean
-- [x] Fix double death log on hurting container
-- [x] 🤡 Cultist fanatic
-- [x] Fix food heal when no bonus and just hp lost
-- [x] GetEncounter includes string arg (e.g. only legendary karma bonus)
-- [x] Wine desc too long
-- [x] Grab bait to do some fishing
-- [x] Legend change "deceased" to arrow
-- [x] Change "observe the details"
-- [x] Random thought × curious thought × mind + log
-- [x] Cannot cook msg / burned food
-- [x] Web add luck (positive + neg traps)
-- [x] Fix unlock/cast/heal with temp mana only
-- [x] Fix idol legendary desc: chance to polymorph — enemy transforms to a random critter
-- [x] Revert action string change
-- [x] Remove href from log
-- [x] Scholar's hat — increase exp gains by 25%
-- [x] "Embrace" btn text too long → Accept/Praise/Honor
-- [x] Fix not enough props in village
-- [x] Encounter error after first boss, no props; fix resistance heart log appearing before atk
-- [x] Revert food sta if not hp full? Or just + no numbers
-- [x] Bloodsucking fly add atk
-- [x] Enrage on kick — fix "got enraged" atk bonus stat
-- [x] Fix artifact drop post boss
-- [x] Lower loot drops a bit
-- [x] Enemy 0 atk should not waste energy unless attacked
-- [x] Turn friend into standard 3/2/1 when attacked
-- [x] Fix fish yellow when no bait
-- [x] Fix boss — instead of death, clear bosstype var on new encounter
-- [x] Base xp -100
-- [x] Calm down should lower base dmg
-- [x] Enemy type smaller right side padding
-- [x] Boss first area easier — snake 1 sta, elk 1 atk, remove second line
-- [x] Cock dmg 1
-- [x] No atk enemy grab — evade, tire them silently
-- [x] Fix background by absolute path
-- [x] No 2x curse early
-- [x] No "Arrived" log unless death or depths
-- [x] Friendly color dark like button color
-- [x] Mgk cook does not work
-- [x] Add log on already cooked mgk
-- [x] Log friend leave emoji fix
-- [x] Duck hp 1, turkey sta 1/hp 1
-- [x] Dot symbol font size
-- [x] Cook jalapeño gives cooked crispy
-- [x] Consumable log "found some food"
-- [x] Broccoli add hp not int
-- [x] Bull atk 1
-- [x] Nuts food in meadows
-- [x] Octopus boss fishing
-- [x] Webcrawler bigger font
-- [x] Successful grab drain sta
-- [x] Boss defeated log
-- [x] No sleep in combat
-- [x] Ghost too much stats
-- [x] Stats export just numbers
-- [x] Snail allowed bait
-- [x] Crackling spark too long
-- [x] Fix no encounter for type by pooling all available items for given types then selecting
-- [x] Stingy to touch + br, + grab custom msg
-- [x] Grab strangle sta--
-- [x] Exit zone from area
-- [x] Ghastly wolf has 2 lines
-- [x] Twisted fairyland palm with //
-- [x] Drowned worm has small w
-- [x] You died fade
-- [x] Reincarnated fade
-- [x] Enemy effect when attacking/casting + zz when resting
-- [x] Memory fragment remove first line
-- [x] Small animals/squirrels at the start, badger is boss
-- [x] Revived fade instead of area all caps
-- [x] Container stats pass
-- [x] New data (embrace modern) + text & variety pass
-  - [x] Add bonus/malus containers
-  - [x] Curse: sunny, noon, midnight, dull moon, rain
-- [x] Data + text pass = passable variety end to end
-- [x] Text pass: custom death, pray, pickup, open container msg
-- [x] 33% chance any prop container small
-- [x] Level up after sleep
-- [x] Lower base luck
-- [x] Heavy boots, help navigating through wilderness
-- [x] Leave when exhausted only mgk enemy
-- [x] Fishing legendaries and items unique (tools)
-- [x] Species of forest growth
-- [x] "Provides extra health" — remove "extra"
-- [x] Area transfer log msg based on new name
-- [x] Rest is gray when stamina is missing but mana is not
-- [x] Add newline at end of log export (revert remove?)
-- [x] Maid * (newline *italic for a price)
-- [x] Bow — remove "an" from "an arrow"
-- [x] Waking moment — "here is a random tip for better chances"
-- [x] Make speak lower dmg if just +1 or +2
-- [x] Convince to disengage when atk 0
-- [x] Lockpick with 📎 (legendary, open any door)
-- [x] Shorten "The words made them more upset"
-- [x] Feather: "chance to not spend" → "chance to generate"
-- [x] Shorten bag if long
-- [x] Enemy resist only if mgk >
-- [x] Allow vivid dream bonus only if not rested yet
-- [x] Tweak level up options — add atk, remove maluses?
-  - [x] Add boss variants to both areas
-- [x] Make enemies cast for 2 as well if they can
-- [x] Filter furniture inside houses
-- [x] Salt shaker — get boost when cooking food
-- [x] Food desc ++hp ++sta
-- [x] Do not consume knife on sacrifice; more +1 knives?
-- [x] Allow heat just once
-- [x] Fix mana cost when dealing 2 dmg
-- [x] Heal 2 for 2 if mgk is 2, else 1
-- [x] Die when curse lowers hp to 0 (playerHit won't game over)
-- [x] Animate enemy when they cast
-- [x] Remove wine extra space
-- [x] Black cat should only add lck, no atk
-- [x] Add bell item stat desc
-- [x] Fix jalapeño log 0 dmg if previously hurt
-- [x] Lower drop chances, do not guarantee consumables unless hard
-- [x] Remove item "fart in jar" → trap
-- [x] Pure chance adjust log (use emoji after arrow) — too long
-- [x] Remove props and consumables from story
-- [x] Add boost desc to fairyland food
-- [x] Fix emoji when resisted by pure chance
-- [x] Move most boost food to fairyland
-- [x] Tip: unlock locked doors using 2 mgk spell
-- [x] Player sleep animation
-- [x] Cook animation
-- [x] Curse make enemy skip attack on top, log effects
-- [x] Add props before enemies into generators
-- [x] Oracle proc undefined
-- [x] Cast a +2 healing spell -1🔵
-- [x] Mermaid remains in fishing post loot (isLooting=true)
-- [x] Limit cast power and cost to enemy hp left
-- [x] "Rested and regained" — remove "energy"
-- [x] If no mgkmax but has mgk, show mana UI
-- [x] Rabbit blessed by the pope
-- [x] Last generator under version
-- [x] Luck should not apply to scales
-- [x] Wrap karma gift in a box
-- [x] "Attacked, the strike was blessed" — fix text
-- [x] "Cute buddy joined the gang"
-- [x] Friend could not block their spell
-- [x] Fix gain energy bonus
-- [x] Extra stat change to foot desc
-- [x] Note extra stats in desc
-- [x] "Convinced them to join the party" too long
-- [x] "Haunting voice" desc too long
-- [x] Prowling wolf remove mana
-- [x] "My precious" add space before mana
-- [x] Display paddle on paddle encounter
-- [x] Barren shore update desc + fix walk forward from barren shore
-- [x] Fix grab small
-- [x] Lower legendary drops (or add other stuff)
-- [x] 33% chance to not use stamina
-- [x] 🔥 Cook consumable make enemy hp 0
-- [x] Grain upgrade should be +2
-- [x] Dangerous → hazard
-- [x] Archery range — container 2,3,4
-- [x] Survival 101 add stats text and br
-- [x] Cook parseint
-- [x] Recruits to standard pools; recruit type in data + generator
-- [x] More prophet friends
-- [x] Turkey 2 1 2
-- [x] Fix two searches before the pet
-- [x] "The words made them upset"
-- [x] Altar custom msg fix ritual candle
-- [x] Stag hp++ (heavy should have a lot)
-- [x] Comment out trunk before container small
-- [x] Curse custom msg
-- [x] Perm def item hp 11; if change stats hp>10, add def hp-10
-- [x] Int -1 = cannot comprehend
-- [x] Feedback: absolute blast 5⭐️ or waste 1⭐️
-- [x] Set mana lost to max on death
-- [x] Upgrade don't add second name if already have one (return "" in string gens)
-- [x] Check if food in village data is alright
-- [x] Eating when relaxed provides a bonus
-- [x] Enemy should shake when casting (as when attacking)
-- [x] Remove first prop
-- [x] "Initiate bond" remove "a" (synonym)
-- [x] Enemy effect when spooking them with attack
-- [x] Psychotic episode should not give mana
-- [x] Remove bricks and key, add random small container
-- [x] Archery range should be prop and before fishing
-- [x] Fire embraced — rest automatically (silent)
-- [x] Pickaxe should not be -int
-- [x] Possessed broom, axe, etc
-- [x] Poison applied to fairyland
-- [x] Do not move after pray
-- [x] Fix not relaxed on rest, consumable, checkpoint, altar
-- [x] Remove effect on praise fire
-- [x] If isLooting — ditch prop (e.g. anchor)
-- [x] Change GitHub link to closed pull requests
-- [x] Google Form prefill legend from link
-- [x] Speak feels useless — speak to disengage enemies when your int is higher
-- [x] Log lost knife on sacrifice
-- [x] Generator fishing
-- [x] ++hp or ++sta should be filled
-- [x] Embrace is too long
-- [x] Karma: -- for kill
-- [x] Move unicorn forward
-- [x] "Resting the body and mind, chances increase" — wake up walk switch + not a turning point, remove "feeling anxious"
-- [x] 3 stamina to easy start
-- [x] Dream reach btn + sleep to continue, demon banish button
-- [x] "They effortlessly" → "Missed the grab, enemy evaded" — check all
-- [x] Remove scum name
-- [x] Shrimp texts long and bad (gain mod to restore)
-- [x] Assign just firstname on birth
-- [x] "Got reconnected" — remove "got"
-- [x] Restore stamina on death grab
-- [x] Consumable — type food (not valuable)
-- [x] Boss displays as companion
-- [x] Heal does not work on raw meat
-- [x] Nice moment only if they have 0 atk
-- [x] "Granted you" — remove "you"
-- [x] "A good moment" → "a moment together"
-- [x] Offer does not work
-- [x] Cannot rest when enemy has no atk (e.g. cursed second crow)
-- [x] Offering → bleed
-- [x] Weaken → pray icon + fix zombie resisted
-- [x] Dog and cat pat should not join if -int
-- [x] Undead no status
-- [x] Good moment (no "together")
-- [x] Rest when full should be waste
-- [x] Raise int of all animals that shouldn't disengage
-- [x] "Touched them, not appreciated" → "just not appreciated"
-- [x] +hp trinket in village
-- [x] Zombie in the village (high int)
-- [x] Items support -1 stats + add such trapped items (perma decrease)
-- [x] Cast always shows "spell turned them adversary"
-- [x] Companions too soon — need stamina; if you go magic, you can't get them
-- [x] Flame embraced — add just the first symbol at the end
-- [x] Pile of skulls → pile of bones
-- [x] Remove second lines around troll hut
-- [x] "For a lovely embrace" — remove "together"
-- [x] "Suffered permanent changes" too long
-- [x] Remove "consumable at least once"
-- [x] Remove stamina for all but atk worms
-- [x] Lavender is not lavender
-- [x] Snake 2 hp (optional with loot)
-- [x] Goat vs drake stats
-- [x] 1/1/1 enemies at the start
-- [x] Add friend in fairyland and/or backwoods
-- [x] Grab vs consume in tutorial
-- [x] Container-Friend — a speech container
-- [x] Druid should have 0 atk
-- [x] All logs: "The hero has... Got killed. Moved forward. Dodged."
-- [x] Proper tutorial (magic, rest, grab, speak...) — more can be later in village
-  - [x] Not fight right away
-  - [x] Little info on screen, add later (stats mainly)
-  - [x] Demon 0 atk?
-- [x] "Unable to initiate a bond" missing newline
-- [x] "Unable to initiate a conversation" missing dot (likely due to <?)
-- [x] Loot letter spacing — use space
-- [x] Remove "as if something"
-- [x] Loot trinket — "gained powers of the forest"
-- [x] Unlock should require 2 mgk
-- [x] Loot remove "otherwise good to go"
-- [x] Wet bow should be item -1
-- [x] Tangible ghost 👻
-- [x] No msg when blocking by canoe
-- [x] "Enemy attacked dealing xy"
-- [x] Remove "sadly there's no fire"
-- [x] Remove "eerie atmosphere"
-- [x] Remove "scattered all around"
-- [x] "Curse has angered the gods" — not skip
-- [x] Twisted blade remove stats and note
-- [x] Curse — "Made them -1 ATK weaker"
-- [x] Ancient temple did not receive extra mgk with knife +1 hp
-- [x] Rose (trap-roll) unlocked using a spell
-- [x] Remove "almost stepped on it"
-- [x] Add container locked + key sooner than lategame; make use container locked double
-- [x] Support enemy mgk attack exhausting it as well, recovery?
-- [x] Last playtest before finally doing mgk atk (cast first if mana, only then spend sta to melee attack)
-- [x] Mgk enemy sta lost does not work
-- [x] Dog should be mid-end village
-- [x] Altar text too dark
-- [x] Pray at altar skipped bear
-- [x] Malevolent spirit — remove physical attack, lower mgk to 1
-- [x] Axe text too long; axe is +hp
-- [x] Fountain all broken — text, grab etc. Should be pray?
-- [x] "Wasted a moment of their life"
-- [x] Dragon atk 1+1
-- [x] A lot of diseases
-- [x] "Prayer made them" → "the spell"
-- [x] Heavy grab should say kick if enemy sta is 0
-- [x] Offer → offer, alive with 0 hp
-- [x] Lower luck chances
-- [x] Sleep on dream did not restore stamina
-- [x] No log msg when cursing psycho with 1 mana
-- [x] "Got overpowered" → "just overpowered"
-- [x] Fix reincarnated
-- [x] Add player gain effect on heal
-- [x] Remove "lost" from "replenished resource"
-- [x] Pile with bow should be prop
-- [x] "The attack hit them crit" — remove "the"
-- [x] Unicorn broken — should have stamina
-- [x] Badger hp--
-- [x] Hooves — remove "better not ask"
-- [x] Banish should require +2 mgk
-- [x] Feedback Google Form on death
-- [x] Ram -1 hp?, Dire rat -1 hp?
-- [x] Add food between the goose and ram
-- [x] Heavy+swift encounter grab should be kick when they have zero sta
-- [x] Full rest/recover mana just once outside combat (avoid rest+heal spam): playerRested=true, renewPlayer → false
-- [x] Healing spell +1/1
-- [x] "Not appreciated" too long
-- [x] Raw meat should be item or -1 food (trap is not valuable)
-- [x] Add double-containers; properly support negative gains = curses
-- [x] "Explore the surroundings" — type not dream
-- [x] Ruined house
-- [x] Cannot level faith
-- [x] Force no auto-refresh
-- [x] Altars support boosting/cursing all stats
-- [x] Cotton ball (container) → cat
-- [x] +1-2 human to village
-- [x] Random fishing loot (all loot?) — choose from another csv with just a loot table → Container-Locked & Container-Random
-- [x] First area completion (village, rats, dogs etc.)
-- [x] Altar should not hit, just display effect and remove maxhp-1
-- [x] All worms should have 1 atk
-- [x] Healing spell should not move encounter on item/traps/etc (fished out bow)
-- [x] Fishing spot should allow healing as normal item/prop
-- [x] "Discard" too long on phone → "Dismiss"?
-- [x] Slower animations
-- [x] Wet bow should not have pile of bones
-- [x] Swap "end of the line" and "deceased"
-- [x] "Means no harm" won't change stamina on block
-- [x] Golden trinket -1 -1 (screenshot)
-- [x] Altar/upgrade should take the empty heart if applicable
-- [x] Anchor change to item
-- [x] Item — switch "walk" to something else (leave/not pick up...)
-- [x] Small should have 0 sta before grabbing
-- [x] "Eat" should be bold in tutorial + replenish
-  - [x] Grove: duck pond, fish out magic trinket
-- [x] Loot: brings extra luck, someone, spiky fish desc
-- [x] Area — Necropolis
-- [x] Spiky fish disappeared on block
-- [x] Amphora disappeared on heal
-- [x] Humanbeing → Scumbag
-- [x] Area 2 — ancient temple (altar)
-- [x] Knife gives hp instead of atk
-- [x] Unicorn 2 3
-- [x] Overeating -1 (rephrase — digesting)
-- [x] Food boost does not work
-- [x] Flame does not restore mana
-- [x] "Walked away from the water body" (change)
-- [x] Roll surname on upgrade
-- [x] "Seems hidden" → "is hiding"
-- [x] Second area completion (magical forest, fairies, jar with genie, hut with witch etc.)
-- [x] Container-Locked: require key for chest (if contained in loot), drop when used
-  - [x] House, Door, Unlock instead of grab, "Failed to open, requires key"
-- [x] Missing bait displays hook
-- [x] Upgrade magic always just +1?? So prayer needs something else — Faith luck +2 -mind
-- [x] Part of the card, space around emoji
-- [x] "Stay dreaming" → "keep"
-- [x] "Does not" → "cannot cast spells yet"
-- [x] "Cannot cast now"
-- [x] "To shape the abilities" too long
-- [x] Demon kick btn
-- [x] Legend new window download txt
-- [x] "What happened" → "any memory"
-- [x] Jar should be in a container or fished
-- [x] Pets shouldn't add mind
-- [x] Dog joined the party
-- [x] Card rarity — visuals top right (basic, rare, epic, special, unique, boss, legendary → csv; switch case in js — colour the outline)
-- [x] Resurrect does not reset resources
-- [x] Dead cast requires mana, too late for healing
-- [x] Fix: altar could not block their spell
-- [x] Container limited by its stats
-- [x] Boss per area (Boss-Heavy, Boss-Swift... always just display boss)
-- [x] Eternal Flame card yellow
-- [x] Switch hazard for gray mystic
-- [x] Remove "meow meow"
-- [x] "Managed to keep it together"
-- [x] Add \n after reason of death, shorten year to two digits, remove "party" and "loot" word
-- [x] Fix legend html dark background
-- [x] Loot: remove "the" from shell
-- [x] Swift enemy as the first one is tough
-- [x] Tutorial for enemy types — swift cannot be blocked etc
-- [x] If enemy emoji is canoe — walk is sail
-- [x] Demon hand should not pass through
-- [x] Rename "Challenging web adventure"
-- [x] Sleep to recover energy in tutorial
-- [x] Fix legend on phone
-- [x] Remove bold name on tweet
-- [x] Combat text
-- [x] Unlimited container
-- [x] Prevent copy on touch hold
-- [x] Fix the one ring -0 (should be item)
-- [x] "Mysterious" → "mystery"
-- [x] Danger → Combat
-- [x] Remove "Still in a good condition"
-- [x] Arrow in the knee -1 hp +1 dmg
-- [x] Randomization system
-- [x] Debug generation — something's fishy (review gen js vs data)
-- [x] Move frightened log up (does not show); chance just 50%+lck
-- [x] "Suffered speedy tinnitus" too long
-- [x] Wet almanac desc fix (gives also tip)
-- [x] Background didn't refresh immediately on arrival, no fade happened (fixes after level up)
-- [x] Drop "crispy" or "salty" bracket from name when adding to seen list
-- [x] Boost sleep support for props
-- [x] Curse enemy skip turn or -2 for -2
-- [x] Devil's mask legendary, devils -atk atk
-- [x] 5+lck% chance for flavoured prop
-- [x] Fix snaring weeds when damaged
-- [x] Dmg when resting near toxic enemy
-- [x] Mighty banana +1 atk
-- [x] Circlet 💫 (+1 mgk dmg), restless crickets
-- [x] Broken mana → cook (NaN)
-- [x] "Smashed the lock in pieces" when no lock
-- [x] When unlocked, swap type instead of going inside right away
-- [x] Warming sunrise to wildlands
-- [x] Drachma boss loot table
-- [x] Salt and picnic baskets to meadows
-- [x] Siren call (prop)
-- [x] Implement bag array, unlucky array (prop)
-- [x] "Damage repelled" too long log
-- [x] Four-leaf fix txt, check for duplicity and fix msg
-- [x] Loot in shop blocks tarot
-- [x] Salt: remove negative build, skill name "Master Chef"
-- [x] Fish 2nd place medal — remove second line, -1 lck
-- [x] Helmet to village
-- [x] Spaceship curse to fairyland
-- [x] Allow only one tarot card pick
-- [x] Mage adds luck instead of mgk
-- [x] "That you didn't forget (me)"
-- [x] No drachma in necropolis
-- [x] Lemon too long
-- [x] Party string has spaces — remove them
-- [x] Less xp for unlocking by smash or cast
-- [x] Couldn't fish with snail when loot is: snail, scissors
-- [x] Breaking lock should give exp
-- [x] Destiny type, prophecy submsg
-- [x] Through a tarot card (bold)
-- [x] +tarot cards
-- [x] Drachmae coin fishing
-- [x] Drachmae pouch fishing
-- [x] +drops in river, necropolis
-- [x] Tarot separate area (no drops anywhere)
-- [x] Revise fishing loot
-- [x] Tarot card instead of food, 4 more cards, tarot unique colour and symbol
-- [x] Bug report Google Form on clicking version code — prefill all data
-- [x] Enough 🪙 drachmae msg
-- [x] Give 1 sta to all insects
-- [x] Spike hole should not be in wildlands, but some rotting stuff might be
-- [x] Shopper quotes
-- [x] Bull +1 atk
-- [x] Thinking — déjà vu (if returning)
-- [x] Fix coin wherever
-- [x] Fix first time coin NaN by setting 0 when NaN and meeting first boss
-- [x] Demon seem untouchable — "faster than expected"
-- [x] "Run fast" — "faster for a price"?
-- [x] "Peace in quiet" → "found peace"
-- [x] + encounter + house in fading land before fishing
-- [x] Corpses as props/traps/hurting containers (-1 hp or -1 lck or -1 sta)
-- [x] Tiny scorpion — "it is venomous, seems venomous", make spiky
-- [x] Big boulder as container that takes stamina
-- [x] Final coin shop logs on buy and no money msg
-- [x] Fix coin not saving to local data on buy
-- [x] Fix unable to sleep when new game/no coins/few coins
-- [x] Tweak log: split num, add at end
-- [x] Buy logic push and pull
-- [x] Cheat: Dinero (10), Pure (delete)
-- [x] If savedCoins > swap realization for shade shop
-- [x] Dark sailor — "What's it gonna be this time?", "So we meet again..." (random msg)
-- [x] Fix gecko sta vs atk, remove hound second line
-- [x] River bosses
-- [x] Generated 3 props at the start → clear generated encounters on reincarnation
-- [x] Total coins, spent coins
-- [x] 20% legendary, 80% item
-- [x] Slower game over animation
-- [x] Strawberry
-- [x] Prop after first small container
-- [x] A variety
-- [x] Slower next encounter animation
-- [x] Guarantee friend related to quest (in hiding) when picking up quest reward
-- [x] Lizard sta--
-- [x] Goat atk--
-- [x] Phil's notes int--
-- [x] Cultist notes should be item -3 luck, but another altar is needed
-- [x] Intellect helps befriending companions
-- [x] "Uncomfortable" → shorten
-- [x] Remove "give it a shot"
-- [x] Check OS is fine with Roman
-- [x] Do not display atk if 0
-- [x] Full moon altar (backwoods)
-- [x] Attack should not unlock
-- [x] Investigate broken navigation in early game (check generator setup in js and data for bad container setup)
-- [x] Revert/tweak the nextEncounter animation commit (area effect broken)
-- [x] Add name to seen on generation (seen enc names, drop seen by name in line — same as area)
-- [x] Generator friend/pet
-- [x] Generator captured pet
-- [x] Generator curse / cursed house
-- [x] Debug text encounter number
-- [x] Debug report bug — dump legend
-- [x] Feedback form
-- [x] Dump legend (opt)
-- [x] Exhaust by consumable (-2 sta)
-- [x] Fix walk locked ruin
-- [x] Could not get a handle of it (demon)
-- [x] Generator prop ++ brick wall, pile of stones
-- [x] Bitten → Poisoned
-- [x] Random thought → prophecy
-- [x] Switch to live and pull
-- [x] Flip lines "if only you would"
-- [x] "It feels strangely" — replace all
-- [x] Glowing bug add br
-- [x] Do not repeat letters
-- [x] Killed by fishing boss blocker
-- [x] Player dead fishing = false
-- [x] Pet chance max 10%
-- [x] Badger 1 atk heavy
-- [x] "Noticed danger" → "noticed something"
-- [x] Čtyřlístek legendary +4
-- [x] Possessed cat 1 hp
-- [x] Fresh grass → clover
-- [x] Add small/standard to meadows
-- [x] Remove moon from lvl up symbol
-- [x] Add symbol after lvl not before
-- [x] Stamina gets removed all and forever — fix
-- [x] Mystery fox quest
-- [x] Status tired if sta low 1, or exhausted 0
-- [x] Flip animation when leaving defused enemy
-- [x] Remove "this" from "though came to mind"
-- [x] Wildflower → Flower
-- [x] Fix encounter number on death (-2??)
-- [x] Cock fix pet msg
-- [x] Fishing spot village
-- [x] "Not bad" → "not great"
-- [x] Snail 0 sta
-- [x] Haunted saw boss — kick button not showing
-- [x] Lovely song desc, type
-- [x] New type "reflective" — immune to magic
-- [x] Disable protective bubble for consumables, traps, containers
-- [x] Lower loot drop rates by 5%, don't guarantee consumables
-- [x] Base lvl xp +100
-- [x] Urban grizzly lower atk to 2
-- [x] Unlock should cost 2 mana (3 even?)
-- [x] Animated stone — heavy
-- [x] White flag — Morale
-- [x] Buffalo a lot more hp
-- [x] Canoe — "to keep you afloat"
-- [x] Put actual diving goggles emoji on them
-- [x] Panther 3 atk
-- [x] Move altar of hatred to necropolis
-- [x] Make hedgehog peaceful
-- [x] Spiky type enemy grab hurts, break — hedgehog, dancing flame
-- [x] Tweak tutorial
-- [x] Pebble (kybl)
-- [x] Armor stat (enemy)
-- [x] Thorny patch to village + "The path ahead" (+ more like this)
-- [x] Block dodge and attack when "Dream"
-- [x] Resurrect fix longer tutorial
-- [x] "Looking for seeds" fix br
-- [x] Eat always somehow fails — perhaps due to armor?
-- [x] Fix trap proc chance
-- [x] Block "Sleep" when recovered in "Dream"
-- [x] Walk btn gold when realization
-- [x] "Died from the" → "Suffered a"
-- [x] Normal → Standard
-- [x] More vfx on sacrifice with no dmg
-- [x] 2x props (village, river, necro...) — perhaps enemies have own props?
-- [x] Extra exp from new enemy types
-- [x] Praised lingering flame error
-- [x] Remove "ghost appeared out of nowhere"
-- [x] "Ready to rock" missed /
-- [x] LinkedIn link on death
-- [x] Peacock swift
-- [x] "True love calmed her down" make gold
-- [x] Unlock door by attacking 3 times
-- [x] Bride add more atk
-- [x] Petit rat — toxic boss in village
-- [x] Bag of cash container
-- [x] Medal of valor — Charisma
-- [x] Ents
-- [x] Faced truth
-- [x] Beads log showed up on lucky blessed hit (without having the beads)
-- [x] Recall heartbreak effect player
-- [x] Check fishing kelp stats
-- [x] Fallen trunk should be no dmg atk trap with log emoji
-- [x] Engagement ring extra newline
-- [x] "Might have some side effects"
-- [x] Level up logs yellow
-- [x] Flute has no boost
-- [x] "Fished out something using xy"
-- [x] Attacking thunderstorm does nothing (no log)
-- [x] Floating log
-- [x] Floating package
-- [x] Wine bad consume lck++ int--
-- [x] Talking pig, desc about village history
-- [x] "A conversation" — remove "a"
-- [x] "You just had to take it"
-- [x] Rose charisma instead of intellect
-- [x] Strange horse ??
-- [x] "A freaking" (T-Rex)
-- [x] Trap encounter means suspicious
-- [x] "Glad you didn't forget" too long
-- [x] Seaworm add stamina
-- [x] "Got a temporary bonus"
-- [x] Crown → fix +3
-- [x] Blood wine too long desc
-- [x] Shrouded Vale + Dream — Sleep → Think (+ add msgs)
-- [x] Stack overflow text too long (remove "just")
-- [x] Empty nest should be empty in meadows; normal should be container
-- [x] "Few Peanuts" → rename
-- [x] Get normal xp on pet spook
-- [x] Check cheater overkill error log
-- [x] Fix double log on trap death (game over → silent if trap)
-- [x] Final boss
-- [x] Change flame to upgrade point (forget save)
-- [x] The Bride — more bosses in a row, different types
-- [x] Snail should be fishing bait, also squidling etc
-- [x] Generator container consumable
-- [x] No fade between them
-- [x] Log text from prop when leaving
-- [x] Driftwood totem desc missing
-- [x] Remove ng+, 👑 win instead
-- [x] Start with 2x2x1
-- [x] Walk away from shrimp misses the upgrade
-- [x] Rebalance lucky items in first area
-- [x] "Already feeling wiser" should show gained ability instead
-- [x] Free walk away from no atk==0 encounters instead of dodge
-- [x] 0 atk — enemy skip attack
-- [x] Rebalance river — enemies should be tough
-- [x] Logs container giving hp???
-- [x] "Ready for some ramming"
-- [x] Shrimp heal prayer has no effect — all wrong
-- [x] Fortune cookie does not display tip
-- [x] Switch the houses around
-- [x] Welded mailbox desc too long
-- [x] Slight outline to all texts? (status enemy, status note)
-- [x] "Twirling glow" desc too long
-- [x] Realization text too long
-- [x] Reincarnated does not show
-- [x] Add 1 base stamina
-- [x] Love calming should remove magic attack as well
-- [x] They "have" received a fatal blow
-- [x] Lusty mermaid — duplicate provides in desc
-- [x] Typestring set to note
-- [x] Small white, swift golden, lighter green, heavy red, neutral white
-- [x] "Horrible chills"
-- [x] "You are dead" — red card title
-- [x] Heal does not work by pine tree
-- [x] Rebalance: fairyland easier, ocean harder
-- [x] Seal just +2 sta
-- [x] "Provides (an) insight"
-- [x] Mechanism -3 instead of -9
-- [x] Extremely deadly bow should not shoot into knee
-- [x] Nasty rat rename
-- [x] Rabid rat -1 sta +1 atk
-- [x] Remove quotes in lvl up tip
-- [x] Pistachio ketchup +2 sta / +1 dmg
-- [x] Auxiliary space — no background
-- [x] Bucket: "got a new hat — makeshift hardhat"
-- [x] Dove: "Follows your shadow", 2 sta
-- [x] Stack overflow
-- [x] "Learned a powerful secret" (owl custom msg)
-- [x] Add trap sleep (toxic cloud)
-- [x] Walking hand, Egyptian gods etc
-- [x] Move the trading legendaries to late game
-- [x] Note/team set font size same as stats → align
-- [x] Move note to desc last line append `<center>br+note</center>`
-- [x] Boss defeated log gold
-- [x] "Discovered shrine" → shorten and less specific
-- [x] "Gained an exceptional insight"
-- [x] Tad bit longer enemy effect
-- [x] "Banished them from this world"
-- [x] Make T-Rex heavy and just 3 atk
-- [x] "Take letter" button + log make gold
-- [x] "Could not block" too long
-- [x] Container level 1 should not have big enemies hidden — only items/consumable/small
-- [x] Guarantee small in meadows
-- [x] Buddy → companion
-- [x] "Unable to initiate (a) relationship"
-- [x] Hungry dodo broken name (listed items)
-- [x] Fishing → Fish
-- [x] Prop encounter error ++ 1st area
-- [x] Log hazard spotted on malus container?
-- [x] Drop neg-only traits
-- [x] Cooler intro / early hook — dream decision (letter-like?)
-- [x] Lower prices in shop by 1
-- [x] "Covered by the blanket" — fix text
-- [x] No energy bonus from food if hurt
-- [x] "The voice echoes"
-- [x] New area underline using newline and spacing and line symbol
-- [x] Pet 0 atk should not say "too weak to do any harm" on grab
-- [x] "Perhaps there's"
-- [x] Abandoned house ruined, cotton still in good condition, cotton custom open msg "cat came"
-- [x] Wasted a healing spell when no mana (consumable)
-- [x] Fairyland missing furry ball friend — add multiple per quest items
-- [x] Block = play when pet has no atk (tires them)
-- [x] Make status decorated bold
-- [x] "Banished them" msg add -mgk
-- [x] Dog right after cat
-- [x] Clock very smart — make normal txt
-- [x] Worthless items (grass, bottle, wine, cheese etc)
-- [x] Fix always karma bonus
-- [x] "Dodged and retaliated"
-- [x] Autonomous hand — no mgk, just plenty sta
-- [x] Body sleeps
-- [x] By universal key — add space before xp
-- [x] River of Sorrows background a lot more dark, match fishing card background
-- [x] Risk → top right, item mid left, tarot top left
-- [x] Remove "you" refs from encounters csv
-- [x] "The universal" — drop "the" from data and js
-- [x] Succubus fix -hp
-- [x] "Consume" too long (spacing?)
-- [x] "Sail when distant boat" broken log
-- [x] Add 1px above enemy name
-- [x] Move drachmae from river to fishing
-- [x] Fishing animation pass args as fade etc
-- [x] "What happened before" — remove "to you"
-- [x] "Arrived to area" logs 3x
-- [x] +3 lighter gray in boxes
-- [x] Border z-index above effects
-- [x] -1-2px top padding && desktop bigger top padding
-- [x] Fix casting when dead (effect, should not need mana etc.)
-- [x] Cannot effects pass anim args
-- [x] "Morphed into" → rest
-- [x] "Heard above" → "heard"
-- [x] Fix attack, block etc shake effects
-- [x] Area name z-index + position fix
-- [x] Fished out food cannot be cooked
-- [x] Don't leave on curse, encounterUsed = true (check also other types)
-- [x] Painter's brush is low effort (text)
-- [x] Generate coins after boss limits — drachma claim fade, returns to you on death to influence your fate
-- [x] TIP: fishing may be dangerous, make sure to be well rested
-- [x] Platform, browser and resolution to exported data; export also luck and int
-- [x] Fix skipped rock when curse + kill the bird
-- [x] Rest in combat vs sleep outside of combat
-- [x] Unspent drachmae 0 log msg "guess you're done"
-- [x] Vs wild animation
-- [x] "Reached out too slowly"
-- [x] Animate btn container fade, same as area flip
-- [x] Prayer beads — permanent atk bonus against undead and demon
-  - [x] Positive/Negative: curses, traps, altars, friends
-  - [x] Flying skull, zombies, bones in necropolis
-- [x] Add tips on letter interactions
-- [x] Area switch outline
-- [x] Animations very flaky — revert changes, reintroduce buttons fade
-- [x] Beads dmg vs demon
-- [x] "Feedback using the" — remove "your"
-- [x] "Surrounding reflections" — remove "surrounding"
-- [x] Flavoured props (ensure 4x good + 4x bad per area + mixed flavor?)
-- [x] Fix "reality fractured" stats and length
-- [x] Survival 101 change subtitle
-- [x] "On a successful hit" → "when enemy gets hit"
-- [x] Lucky gloves fix msg
-- [x] Nerf early game, add traps and curses
-- [x] Magic square → circle
-- [x] Constant UI item animations (breathing emoji etc)
-- [x] Forest person — druid + mgk 2
-- [x] Tree → forest
-- [x] Cast msg variant (magic=true)
-- [x] Cast dmg ~ current mgk (before cast) — fix
-- [x] Stray dog stamina 1
-- [x] Forgotten church
-- [x] Get rid of "you/your" in log + align spacing with status (use "the" etc)
-- [x] Demolished house
-- [x] Generate name from selection
-- [x] Visual: enemy 0 atk = ATK ~
-- [x] Church prayer removed mgk — altar rather for healing than gain power
-- [x] Block emote in demon encounter
-- [x] Cannot cast on Demon? — it just siphons
-- [x] Living cheese monster (Ladoria)
-- [x] Better attack icon
-- [x] Fix displaying curse on DMG >1 — doubled curse
-- [x] Fix cast on druid
-- [x] Fix magic btns while dead
-- [x] Rename mgk buttons for upgrade
-- [x] Function block interactions
-- [x] Fix a ray from heaven (text + not healing)
-- [x] "They dodged and hit you back -0 💔"
-- [x] Animate whole inner part of enemy card
-- [x] Animate buttons on touch
-- [x] Skull with bones on dead
-- [x] "Hardship" too long
-- [x] Hero name font size mini bump
-- [x] Info text weight bump
-- [x] Area text outline
-- [x] Swift dodged — dodge effect on enemy
-- [x] Fix underline on iPhone
-- [x] Drachmae fade on first grab
-- [x] Allow repeated use of coins between runs
+- none
+
+## P1 — Release-Gating & Big Wins
+
+### [FRIEND-MIN] Bug: Friend encounter pool error — areas missing minimum no-quest friends
+- Fairyland (and possibly other areas) errors when the generator tries to pull a friend-type encounter from a pool that is empty or too thin.
+- Add at least 3 no-quest friend encounter rows to every area — fairyland is the most critical gap; "no-quest friends" = friend encounters that resolve without a required quest item, serving as the generator's fallback.
+- Priority: P1 — runtime error in encounter generation; thin pools can cause failures during beta.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
+### [NEG-FRIEND] Feature: Negative friends — stat decrement encounters
+- "Negative friend" encounter variants that decrement stats (inverse of a standard friend boost) — add to late-game areas.
+- Priority: P3 — adds tension to a currently safe encounter type
+- Type: Feature
+- Effort: S | Gain: M
+
+### [CHEAT-SUBM] Feature: Disable score submit button if `cheatedThisRun` is true
+- When `cheatedThisRun` is set, render the score submission button as visually disabled (grayed out, non-interactive) rather than silently blocking on click.
+- Implement in `score-manager.js` or `ui-render.js`: check `cheatedThisRun` when rendering the nickname/submit overlay; apply `disabled` attribute and a muted visual style to the submit button.
+- Priority: P2 — current silent block is confusing for beta testers; clear feedback prevents repeated confused attempts.
+- Type: Feature
+- Effort: XS | Gain: M
+
+## P2 — Serious Issues
+
+### [FAIR-MINST] Balance: Raise minimum stamina on Fairyland enemies to 2
+- Audit all Standard enemy rows in Fairyland areas and raise any with `sta < 2` to `sta = 2`.
+- Enemies at 1 STA exhaust after a single Grab, making Grab trivially dominant in early-to-mid areas; minimum 2 STA ensures at least one contested Grab attempt.
+- Priority: P2 — balance nudge; Grab is overpowered in Fairyland against very low-STA enemies.
+- Type: Improvement
+- Effort: XS | Gain: M
+
+### [AREA-STATS] Balance: Rebalance River and Necropolis enemy/item stats
+- River and Necropolis enemies and items need a stat calibration pass — confirm ranges match area difficulty relative to Forsaken Village and Fairyland.
+- Check stat ranges against CONTENT.md area calibration tables; flag any enemy or item row that is an outlier for its area and rarity tier.
+- Priority: P2 — late-game stat imbalance breaks difficulty curve; veterans will notice immediately.
+- Type: Improvement
+- Effort: M | Gain: L
+
+### [WEAP-CMBO] Feature: Weapon combo items — dual-stat (+ATK+MGK, etc.)
+- Add items that combine two offensive stats — e.g., +1 ATK +1 MGK, +1 ATK +1 STA — as a distinct item archetype that rewards hybrid builds.
+- Slot naturally into the existing rarity system; net stat formula already handles multi-stat items.
+- Priority: P2 — build variety; currently no items bridge ATK and MGK for hybrid combat/magic builds
+- Type: Feature
+- Effort: S | Gain: M
+
+### [BOSS-TOUGH] Improvement: Toughen the final boss — raise stats or add combat mechanics
+- The final boss in Shrouded Necropolis feels undertuned relative to the encounter difficulty leading up to it.
+- Audit the boss pool (`encounters.csv`, note filter `Forgotten Love`); raise HP/ATK/DEF on boss variants; optionally add a special mechanic via `enemy-skills.js`.
+- Priority: P2 — a weak final boss deflates the ending climax; critical for beta first impressions.
+- Type: Improvement
+- Effort: S | Gain: L
+
+### [CRED-TEST] Chore: Verify rolling credits sequence on a real playthrough
+- Manually reach a win ending and confirm rolling credits trigger correctly, display without errors, and don't block ending resolution or score submission.
+- Rolling credits were implemented 05/24/26 ("🎬 Added rolling credits after final boss"); needs first-pass live validation.
+- Priority: P2 — newly implemented path on the win route; breakage would mar the beta ending experience.
+- Type: Chore
+- Effort: XS | Gain: L
+
+### [TEST-RUNS] Chore: End-to-end test passes — finish twice, verify NG+ behavior, test on Android
+- Complete at least two full runs to any ending on desktop; verify NG+ behavior (story beat replacement in Necropolis, chronicle persistence, score reset).
+- Complete at least one full run on Android to surface mobile-specific rendering or logic bugs before beta.
+- Includes: verify that dream encounters in Necropolis are correctly suppressed/replaced after the first completion — HIDE-DRM check, likely implemented 05/24/26 "Replace Necropolis story beats on NG+"; confirm live behavior.
+- Priority: P2 — untested platform behavior on Android is high-risk for beta; NG+ path is newly wired and unverified.
+- Type: Chore
+- Effort: M | Gain: L
+
+### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
+- Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
+- Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it.
+- Type: Feature
+- Effort: L | Gain: L
+
+### [VER-BUMP] Chore: Bump version and write beta launch changelog
+- Run `bash version.sh` to stamp the current timestamp; update `version.md` with a "Welcome to Beta" header and a summary of what beta means — goals, known issues, what's next.
+- Priority: P2 — version marker and changelog are the first thing returning players see; sets expectations for beta testers.
+- Type: Chore
+- Effort: XS | Gain: M
+
+### [UNDEAD-MGK] Bug: MGK on non-caster enemies incorrectly triggers near-impossible block condition
+- Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
+- Audit `encounters.csv` and `story.csv` for all Undead-type rows; remove MGK from non-caster undead (zombies, revenants, etc.); keep MGK only on actual caster subtypes (liches, banshees, wraiths — rows where spells are the intended threat).
+- Extend audit to ALL non-caster enemy types — any Standard warrior, beast, or physical boss carrying MGK > 0 silently makes block near-impossible; the fix is not limited to the Undead type.
+- Priority: P2 — live balance bug on late-game enemies; blocking an undead horde should be physically hard but possible, not mechanically near-impossible.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
+### [COMP-PARTY] Bug: "Party of Three" achievement fires on total companions gained, not current count
+- Achievement should trigger when the player simultaneously holds 3+ companions in `playerPartyString`, not when 3 have been gained cumulatively over a run.
+- Fix the check in `achievements.js` to evaluate `[...playerPartyString].length >= 3` at the moment a companion joins, not a cumulative counter.
+- Priority: P2 — misfiring achievement gives the wrong signal; players will notice if it triggers after companions have been lost.
+- Type: Bug | Severity: Major
+- Effort: XS | Gain: M
+
+### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
+- Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
+- Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system.
+- Type: Improvement
+- Effort: M | Gain: L
+
+### [CHEAT-TIPS] Improvement: Revise cheat hints — show only soft cheats, remove full unlocks
+- Audit the current cheat tip list and remove any hint that grants achievements or bypasses run progression; keep only soft/QoL cheats (stat resets, debug flags, test helpers).
+- Priority: P2 — full unlock hints undercut the achievement system before beta testers reach those milestones naturally.
+- Type: Improvement
+- Effort: XS | Gain: M
+
+### [PERS-REVW] Chore: Perseus review of public-facing docs and itch.io page
+- Run `/perseus` on the public README, itch.io description, and any player-facing documentation for tone, first-impression quality, and missing info for new players.
+- Priority: P2 — public-facing text sets expectations before a player ever loads the game; beta launch is the right time to fix tone mismatches.
+- Type: Chore
+- Effort: S | Gain: M
+
+## P3 — Should-Fix
+
+### [ENDEF-CALC] Bug: Enemy defense — enemyDef not applied in all skill calcs
+- Ensure enemyDef is used in all player skill calculations including consumables. (`player-skills.js`)
+- Priority: P3 — silent balance issue; all attack paths should respect enemy DEF consistently.
+- Type: Bug | Severity: Minor
+- Effort: S | Gain: M
+
+### [ACTN-FLAVOR] Feature: Action outcome flavor text — per-outcome log lines
+- Each action result (crit-pass / pass / fail / crit-fail) on an encounter should have a distinct flavor log line beyond the current generic text. Lines must hint at *why* the outcome happened — the stat or companion that tipped it — not just describe the result.
+- Add outcome-variant strings to `string-generator.js` or per-encounter-type pools; call from `action-resolver.js` after result resolution. Start with the highest-volume encounter types: Standard enemies and Props.
+- Priority: P3 — flavor text without causality hint is decoration; this is what closes the feedback loop between player stats and moment-to-moment feel.
+- Type: Feature
+- Effort: M | Gain: L
+
+### [ORIG-UNIQ] Content: More unique origins with gameplay implications
+- Add origins with real mechanical effects beyond stat distribution — passives, starting conditions, unique interactions.
+- Priority: P3 — origin depth; builds on the achiev-origin work in P2
+- Type: Feature
+- Effort: M | Gain: M
+
+### [ITEM-RARITY] Content: Item/Origin — increases higher rarity drop chance
+- New item or origin that shifts loot probability toward Uncommon/Rare/Legendary.
+- Priority: P3 — build variety; rarity system is already wired for this
+- Type: Feature
+- Effort: S | Gain: M
+
+### [ITEM-CRIT] Content: Item/Origin — bigger crit chance interval
+- New item or origin that widens the crit success zone on the action bar.
+- Priority: P3 — build variety
+- Type: Feature
+- Effort: S | Gain: M
+
+### [HOUR-SLOW] Content: ⏳ Strange Hourglass — 10% slower action bar
+- New item: globally slows action bar speed by 10%.
+- Priority: P3 — accessible build option; interesting tension with high-speed encounters
+- Type: Feature
+- Effort: XS | Gain: S
+
+### [CAMP-TYPE] Feature: New encounter type — Camp (spawn enemy on rest)
+- Camp encounters spawn an enemy when the player rests (log the spawn). Camp-Grab variant triggers on grab (e.g., investigating a tent or box).
+- Priority: P3 — adds tension and encounter depth
+- Type: Feature
+- Effort: M | Gain: M
+
+### [PINATA-TRAP] Feature: Piñata positive trap — correct button handling
+- Grab and Block on a piñata trap should be all red; remaining buttons should be easy as prop; Avoid should follow walk rules.
+- Priority: P3 — existing encounter type behaving inconsistently
+- Type: Feature
+- Effort: S | Gain: M
+
+### [PET-ADOPT] Feature: Adopt pet for item — give item to tame
+- Allow giving a specific item to adopt a pet (e.g., offer a mouse/lizard to a cat) — similar to friend quest item mechanic but for pet recruitment.
+- Priority: P3 — adds a resource decision to pet taming
+- Type: Feature
+- Effort: S | Gain: M
+
+### [HAPTIC-BAR] Platforms: Android vibration — action bar haptics
+- Vibrate on button press/release, on zone transitions (fail/pass/crit), on taking damage; vary pattern and length per trigger. Verify whether any iOS vibration permission is possible.
+- Priority: P3 — mobile game feel; significant on Android
+- Type: Feature
+- Effort: M | Gain: M
+
+### [STAT-NUDGE] Feature: Fractional "nudge" stat values for hidden stats — LCK, INT
+- Make use of sub-1 increments on hidden stats in CSV/origins (JS already supports decimals); display as human-readable labels rather than raw numbers — e.g. 0.5 = "Small bonus", 
+- Priority: P3 — design space unlock with near-zero code cost; pairs well with the rarity weights audit below
+- Type: Feature
+- Effort: S | Gain: M
+- Details: LCK at ×0.5 in the net formula means +0.5 LCK
+- Update the display logic to support tiny: The UI label mapping (0.25 → "Tiny", 0.5 → "Small")
+
+### [MED-ITEMS] Content: Mediocre items — zero net stat, Common rarity filler
+- Add a pool of items with balanced positive/negative stats netting to +0 — e.g., "+1 ATK / -1 LCK", "+1 HP / -1 STA" — to flesh out the Common tier loot pool.
+- Zero-net items give players genuine minor trade-off decisions without power creep.
+- Priority: P3 — Common tier is thin; mediocre items give the rarity curve a proper base without inflating stats.
+- Type: Feature
+- Effort: S | Gain: M
+
+### [BASIC-ORIG] Content: Simple starter origins — small +INT and/or +LCK bonus
+- Add 2–3 origins with minimal mechanics: just a +1 INT or +1 LCK bonus (or small combination) and a short flavor desc.
+- These fill the origin list with accessible starting points that don't require understanding the passive system — reduces decision paralysis for new players.
+- Priority: P3 — origin picker feels sparse for new players; simple options are a low-friction on-ramp.
+- Type: Feature
+- Effort: S | Gain: M
+
+### [MAGIC-CONT] Feature: New encounter type — Magic Container (cast to unlock)
+- Container that requires Cast to open — contains an item (50% artifact chance, same as standard locked containers).
+- Can be easily achieved with adding some MGK to any container (anywhere between 1–4), "magic barrier" until "casted upon."
+- Priority: P3 — extends existing container design with a mana decision; low-effort extension of an existing pattern.
+- Type: Feature
+- Effort: S | Gain: M
+
+
+### [SHOP-BOOST] Content: Expand shop 1-coin boost item pool
+- Add more Common boost items with +x/-x stat tradeoffs to the shop's 1-coin pool — e.g., +1 ATK / -1 LCK, +1 STA / -1 HP.
+- Currently the cheap shop tier is thin; players cycling the shop repeatedly see the same options.
+- Priority: P3 — shop feel; content gap but not release-gating
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [NECRO-PROP] Content: Necropolis prop variety — more atmospheric non-combat encounters
+- Add more prop encounter rows to Shrouded Necropolis — the area is combat-dense and could use quiet/atmospheric beats to contrast the final boss buildup.
+- Priority: P3 — emotional counterweight per DESIGN.md; a cluster of brutal encounters needs at least one moment of stillness
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [NAME-QUAL] Texts: Generator name rolls quality pass
+- Revise name generation to avoid "unliving" words on living enemies; consider adding actual proper names in Rosabel-style tone — believable styling takes priority over stat matching.
+- Priority: P3 — tonal immersion; name mismatch breaks the register
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [CURSE-REFAC] Improvement: Curse refactor — better branching per stat type
+- Curses should have branching button options matched to the stat they affect — e.g., "Howling Wind" endure should not share the action button with INT-based curses.
+- Priority: P3 — mechanical consistency; curses currently all feel the same
+- Type: Improvement
+- Effort: M | Gain: M
+
+### [COLOR-BLIND] Accessibility: Colorblind-safe crit/success zones
+- Ensure crit and success zones on the action bar are distinguishable without color — brightness difference or pattern.
+- Toggleable in menu
+- Priority: P3 — accessibility; not gating beta
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [CRIT-LCK] Improvement: Action bar crit zone luck scaling redesign
+- Crit success and crit fail zone widths should scale smoothly with luck across the range -5 to +10, changing ~1pp per ±2 luck steps, with a non-zero floor on both zones at all times.
+- Current formulas (main path, action-config.js lines 606–607) cap out too early: crit success hits max at LCK 6, crit fail hits floor at LCK 8. Negative luck currently has no effect (pLck is clamped to 0 at line 8).
+- Crit success zone should always be a sliver inside the green success zone — cap it as a fraction of `zoneW`, not an absolute pp count, so it never dominates the bar at high luck.
+- **Also fix these specific hardcoded cases** (confirmed design intent per 2026-05-20 review):
+  - Lines 108/114 — Attack/Grab Trap-Obstacle: remove hardcoded crits, run through normal luck-scaled calc
+  - Lines 119–120 — Exhausted grab (no STA): keep ultra-hard zone, but ADD a crit fail zone (none currently)
+  - Line 129 — Resurrection: keep static narrow crit pass (intentional), but REMOVE crit fail (the critFailW: 5 there has no design reason)
+  - Line 197 — Heavy grab: ADD crit fail zone (grabbing a Heavy with STA remaining should be dangerous, not just hard)
+  - Lines 362–363 — Trap wrong-action: REMOVE crit pass entirely; keep crit fail (punishment, no reward)
+  - Lines 395–397 — Recall/speak Memory: de-hardcode; scale by luck like other speak variants
+- Priority: P3 — not broken enough to block beta; crit zones currently feel slightly too generous at LCK 4+ but the system works
+- Type: Improvement
+- Effort: M | Gain: M
+- Details: Source: Balance Designer + Game Design Lead + Competitive Player review 2026-05-20; see .perseus/2026-05-20-2120-luck-crit-zones.md. **Main-path formulas finalized 2026-05-20** (implemented): `critSuccessW = 2 + pLck * 0.625` (max at luck 8); `critFailW = 5 - rawLck * (rawLck < 0 ? 1.25 : 0.5)` (negative luck expands danger zone, cap 10 at luck −4). Hardcoded special-case fixes remain as a separate future pass. **Negative luck audit (future pass):** Every system where positive luck has a beneficial effect should have negative luck produce the opposite. Known candidates: `RarityManager.rollTier` (luck shifts rarity up — negative should shift toward Cursed/Common); `getWeightedLootIndex` (fishing loot quality); zone position blend in `action-config.js` (`luckBlend = pLck * 0.12` — currently clamped, negative luck should push zone toward a harder right-edge placement); container search width (`40 + pLck * 9` — negative luck should narrow the search zone). Pattern: find every `Math.max(0, pLck)` or `pLck * positiveCoeff` and decide whether unclamping is safe in that context.
+
+### [SEQ-DELAY] Improvement: Sequential action display — delay 0.5s per log entry
+- Add a 0.5s delay between log entries in multi-step action sequences; wait for effects to complete before re-enabling player input.
+- Wrap the `logAction()` call chain in a `setTimeout` queue; 500ms between entries; block player input until the chain resolves; scope to multi-step sequences only — single actions stay instant.
+- Priority: P3 — noticeably improves readability of multi-hit and multi-step sequences; S effort for real feel gain.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [CURSE-SCALE] Improvement: Curse scaling — curse stats should affect action bar width
+- Negative curse stat values should shrink the success zone — currently all curses are equally hard regardless of intensity. (`action-config.js`)
+- Priority: P3 — curses with heavier stats should feel heavier; the existing difficulty system already supports this.
+- Type: Improvement
+- Effort: S | Gain: M
+
+### [BAL-AUDIT] Quality Pass: Blind spots review — encounter types vs action-config vs action-resolver coverage
+- Audit action-config.js and action-resolver.js for encounter types that have incomplete or inconsistent handling — buttons that silently pass/fail when they should have a dedicated case, or encounter types not covered by any special-case logic.
+- Start by mapping all `types` values to their action-config branches; flag any type+button combos that fall through to the default stat calc without a intentional rationale.
+- Priority: P3 — may surface silent balance bugs before beta; low urgency but high signal value
+- Type: Question
+- Effort: M | Gain: M
+- Needs: Decide scope — full audit or just the recently-added encounter types?
+
+### [UI-DIALOGS] Chore: Consolidate all dialog overlays into ui-dialogs.js
+- Six modal overlays currently live in different files: QR share dialog (`social.js`), donate dialog (`social.js`, added 2026-06-02), leaderboard nickname (`score-manager.js`), companion name + player rename (`ui-effects.js`), and slot swap (`inventory-manager.js`). Extract all into a single ui-dialogs.js with a consistent open/confirm/cancel pattern, loaded after ui-effects.js.
+- Priority: P3 — no user-visible impact; purely internal cleanliness
+- Type: Chore
+- Effort: S | Gain: S
+
+### [ENEMY-STR] Chore: Enemy string quality pass
+- Audit all enemy desc and message fields for tone consistency and Rosabel-style voice — remove filler; flag area outliers.
+- Priority: P3 — content quality; tonal inconsistency is the Narrative Writer's top flag
+- Type: Chore
+- Effort: M | Gain: M
+
+### [MISS-MSG] Chore: Missing messages pass
+- Identify and fill all enemy rows missing a message field (message = player death description).
+- Priority: P3 — content completeness; death descriptions are a visible gap
+- Type: Chore
+- Effort: S | Gain: M
+
+## P4 — Nice to Have
+
+### [SOUL-GEM] Content: Legendary soulgem — physical damage to spirits
+- Unique Legendary item enabling physical damage against spirit-type enemies.
+- Priority: P4 — niche mechanic; not enough demand to justify the slot now
+- Type: Feature
+- Effort: S | Gain: S
+
+### [FISH-LOOT] Content: Bloat fishing loot — items, threats, floating altars
+- Add variety to fishing encounter pool: items, threats, traps, floating altars.
+- Priority: P4 — fishing is functional; this is content depth
+- Type: Feature
+- Effort: S | Gain: S
+
+### [SPIRIT-ENEMY] Content: Add spirit/reflective enemies to Village and River
+- Spirit and reflective types underrepresented in early/mid areas.
+- Priority: P4 — content variety
+- Type: Feature
+- Effort: S | Gain: S
+
+### [LATE-PETS] Content: New late-game pets
+- Drowned spirit, scared ghost, living mushroom, talking fly — flavor + occasional LCK, rarely +1 ATK.
+- Priority: P4 — content; fun but not blocking
+- Type: Feature
+- Effort: S | Gain: S
+
+### [TRAP-VAR] COntent: More positive and negative traps + curses (all variants)
+- Stat-swap traps, -ATK curses in late game, containers costing STA/LCK, lategame curses stealing mana/STA, practice target variants for Speak/Cast (with option to leave), magic items that almost always carry a curse.
+- Priority: P4 — content variety; not blocking
+- Type: Feature
+- Effort: M | Gain: S
+
+### [MEADOW-ENCNTR] Content: Meadows — increment no-effect encounters
+- Add no-effect altars, observations, clear sky, silent overcast encounters.
+- Priority: P4 — atmosphere; not blocking
+- Type: Feature
+- Effort: S | Gain: S
+
+### [FOOD-PERMA] Content: Lemon-unique foods — perma boosts per area
+- 1 good + 1 bad perma-boost food per area; mixed stat foods (lose and gain simultaneously); ensure bad foods in all areas.
+- Priority: P4 — content depth
+- Type: Feature
+- Effort: S | Gain: S
+
+
+### [ORIG-PET] Content: Origin that begins with a pet companion
+- Add an origin whose starting condition places a specific pet emoji in `playerPartyString` at run start — e.g., a Shepherd origin that starts with 🐕.
+- Achievable via `_doNewGame()` in `menu.js` with minimal changes; see [ORIG-ITEMS] for the same pattern applied to starting items.
+- Priority: P4 — fun flavor origin; very low effort but post-beta content.
+- Type: Feature
+- Effort: XS | Gain: M
+
+### [ORIG-ITEMS] Content: Origins with starting items
+- Origins that begin the run with a Legendary item already equipped.
+- Priority: P4 — fun flavor mechanic; easier than it looks — see `_doNewGame()` in `menu.js`.
+- Type: Feature
+- Effort: S | Gain: M
+- Details: Earlier note confirmed this does NOT require the full inventory expansion — `_doNewGame()` in `menu.js` handles run-start state directly.
+
+### [NECRO-OPT] Content: Necropolis optional areas
+- Optional sub-areas for late-game variety inside Shrouded Necropolis.
+- Priority: P4 — content; post-beta
+- Type: Feature
+- Effort: L | Gain: M
+- Needs: Define what optional areas look like and how they gate before designing.
+
+### [BOSS-TOLL] Improvement: Boss death counter — show area death toll on boss kill
+- On killing an area boss, display how many times the player died in that area before the kill — e.g. "After 3 deaths in the Twisted Fairyland." Zero deaths gets its own line — e.g. "First blood. Somehow." Bosses are drawn from a pool per area, so the counter is per area, not per specific enemy.
+- Track `areaDeathCount` (reset each area) in `gameOver()` keyed to current area; read and display on boss kill resolution in `action-resolver.js` or `game-loop.js`.
+- Priority: P4 — polish; post-beta
+- Type: Improvement
+- Effort: S | Gain: L
+
+### [INV-ITEMS] Content: New items for new inventory slots
+- Review ideas for items to fill new inventory slots once the expand-inventory system ([INV-XPND] in EPICS.md) lands; clean out the ideas folder in the process.
+- Priority: P4 — depends on P2 inventory expansion epic; no design yet
+- Type: Idea
+- Effort: S | Gain: S
+- Needs: Define which slots exist and what item archetypes make sense before designing.
+
+### [ALTAR-PRAY] Content: Altar — no stat bonus, Pray = XP
+- A simple altar encounter where Pray grants XP with no stat effect.
+- Priority: P4 — minor content addition
+- Type: Idea
+- Effort: XS | Gain: S
+
+### [PROP-SPAWN] Idea: Hit prop once to spawn a small encounter
+- Allow a single hit/touch on a Prop to attempt (% roll) spawning a small encounter — push a copy of the prop forward to reoccur after the small encounter.
+- Priority: P4 — variant of the Camp type; interesting but low clarity
+- Type: Idea
+- Effort: S | Gain: S
+
+### [KARMA-ITEM] Idea: Legendary item — negates bad karma effects
+- A Legendary that offsets karma penalties — requires karma overhaul ([KARMA-OVR] in EPICS.md) to exist first.
+- Priority: P4 — blocks on the karma system
+- Type: Idea
+- Effort: S | Gain: S
+
+### [UNDEAD-RISE] Idea: Undead transformation — player killed by undead rises at 1HP
+- Being killed by an undead enemy causes the player to rise as undead: 1 HP, half STA, skip death state; append 🧟 before player name; undead enemies deal 0 base ATK against the transformed player.
+- Priority: P4 — interesting mechanic but significant state complexity
+- Type: Idea
+- Effort: M | Gain: M
+
+### [DEF-STAT] Bug: Player DEF stat — wrong display, item support gaps, incorrect rarity
+- Consolidate damage log message to a single message (not two as now — one for dmg, second for def) when player DEF is non-zero and had effect example "Hit by their attack -1💔 (1🔰)"; not all item types account for DEF; an item with DEF as its sole non-zero stat should resolve as Legendary (Artifact).
+- Priority: ~P4 — user-deferred from P1; intentionally only two items with DEF stat, revisit post-beta.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
+### [QUEST-SPAWN] Bug: Quest system — brittle friend + quest item spawn logic
+- Refactor to spawn friend and quest item independently in the story (not linked); hide exact item list from display (show general description only); keep matching logic internal.
+- Priority: ~P4 — user-deferred from P2; "Good enough for Beta, seen it working well."
+- Type: Bug | Severity: Major
+- Effort: M | Gain: M
+
+### [ENC-DEDUP] Bug: Duplicate encounter name within a single run — root cause unconfirmed
+- Same enemy (Stray Whelp) observed twice in one run — once in a plain encounter, once in a generated house. `seenEncounters` dedup logic looks sound on paper; no regular code path found that bypasses it. Possible defense: on `run_continue`, backfill `seenEncounters` from already-queued `linesStory` rows (covers old saves that predate the field and any restore edge cases). Low gain because the symptom is rare and unrepro'd.
+- Priority: P4 — rare, unrepro'd, L effort for S gain; monitor during beta.
+- Type: Bug | Severity: Minor
+- Effort: L | Gain: S
+
+### [ACHIEV-TIME] Bug: Achievement timing — fix post-action logging delay hack
+- Fix the timing hack for logging achievements after actions in `achievements.js`.
+- Priority: P4 — Minor severity; workaround is stable for now.
+- Type: Bug | Severity: Minor
+- Effort: S | Gain: S
+
+### [GEN-STATE] Chore: Generator state — clean up nextEncounter Generator-type logic
+- Clean up hacky logic in nextEncounter for Generator types; ensure area transitions and seen tracking are robust. (`game-loop.js`)
+- Priority: P4 — internal cleanliness; no user-visible impact.
+- Type: Chore
+- Effort: S | Gain: S
+
+### [ACT-UPGRD] Chore: Action type cleanup — refactor or remove Upgrade type
+- Refactor or remove the Upgrade action type if redundant. (`action-resolver.js`, `ui-render.js`)
+- Priority: P4 — likely dead code; verify before removing.
+- Type: Chore
+- Effort: S | Gain: S
+
+### [MAGIC-FNSH] Improvement: Magic finisher — refactor mercy logic for 1HP enemies
+- Refactor the magic "mercy kill" logic for finishing enemies at 1 HP. (`action-resolver.js`)
+- Priority: P4 — minor refactor, negligible user impact.
+- Type: Improvement
+- Effort: S | Gain: S
+
+### [COIN-LOG] Improvement: Coin log formatting — replace string-split hack
+- Replace brittle string-splitting for coin costs in `logging.js` with a structured data approach.
+- Priority: P4 — brittle but stable; low impact if it breaks.
+- Type: Improvement
+- Effort: S | Gain: S
+
+### [EMOJI-ASGN] Improvement: Emoji assignments — finalize unassigned types
+- Finalize emoji for unassigned encounter types (🐅 > ⚔️ etc.) in `enemy-skills.js` and `action-resolver.js`.
+- Priority: P4 — cosmetic consistency; XS effort.
+- Type: Improvement
+- Effort: XS | Gain: S
+
+### [TEAM-RENDER] Chore: Team rendering — refactor hacky sort/render logic
+- Refactor the team sorting/rendering in `ui-render.js` ("Hacky hacky hacky").
+- Priority: P4 — internal cleanliness; S effort for S gain.
+- Type: Chore
+- Effort: S | Gain: S
+
+### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
+- Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.
+- iOS WebKit (Chrome/Safari on iPhone) has a known scroll-height doubling bug when `zoom` is applied to `<body>` — the scrollable area becomes 2× the content height, showing a grey blank region below.
+- Root fix: `overflow:hidden` on body kills legitimate menu scroll on short screens. Proper fix likely needs `html { overflow:hidden; height:100% }` + `body { overflow-y:auto; height:100% }` to confine scroll to body as its own container, or replacing `zoom` with `transform:scale` on a wrapper div.
+- Priority: P2 — visually breaks the page and is jarring on mobile; intermittent but reproducible.
+- Type: Bug | Severity: Major
+- Effort: ? | Gain: S
+
+---
+
+*Styx Flow complete — ~105 items processed*

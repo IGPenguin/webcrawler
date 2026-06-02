@@ -1,0 +1,40 @@
+name: Rarity Test
+
+on:
+  push:
+    branches: [live]
+  pull_request:
+
+jobs:
+  rarity-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install -g @playwright/test
+          playwright install --with-deps chromium
+          echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
+
+      - name: Run rarity tier test
+        run: playwright test tests/rarity.spec.js --config tests/playwright.config.js
+
+      - name: Upload report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-rarity
+          path: playwright-report/
+          retention-days: 7

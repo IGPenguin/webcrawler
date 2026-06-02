@@ -1,0 +1,79 @@
+name: Validate Data
+
+on:
+  push:
+    branches: [live]
+  pull_request:
+
+jobs:
+  validate-csv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate CSVs
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            changed=$(git diff --name-only HEAD~1 HEAD | grep -E '^(data/|js/)' || true)
+            if [ -z "$changed" ]; then
+              echo "No relevant files changed, skipping."
+              exit 0
+            fi
+          fi
+          python tests/validator.py csv
+
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate HTML
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            changed=$(git diff --name-only HEAD~1 HEAD | grep -E '^(index\.md|js/)' || true)
+            if [ -z "$changed" ]; then
+              echo "No relevant files changed, skipping."
+              exit 0
+            fi
+          fi
+          python tests/validator.py html
+
+  validate-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check JS syntax
+        run: node --check js/*.js
+
+  check-version:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check version bump
+        run: |
+          git show origin/${{ github.base_ref }}:js/constants.js > base_constants.js
+          python tests/validator.py js/constants.js base_constants.js

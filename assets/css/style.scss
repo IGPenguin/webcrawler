@@ -16,8 +16,9 @@ header {
 
 @media  (min-height: 820px) {
   body {
-    padding-top: 36px;
-    zoom: 1.18;
+    padding-top: 0px;
+    zoom: 1.25;
+    overflow: hidden;
     }
 }
 
@@ -25,4 +26,30 @@ header {
   body {
     zoom: 0.99;
     }
+}
+
+// Game viewport centering
+// min-height must divide by the active body zoom so the zoomed element
+// visually fills exactly one viewport height, centering content on screen.
+.game-viewport {
+  min-height: calc(100dvh / 1.18); // default: zoom 1.18 applies to nearly all screens
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@media (min-height: 820px) {
+  // body adds 36px padding-top here (rendered as 36×1.18=42px visual)
+  .game-viewport {
+    min-height: calc((100dvh - 42px) / 1.18);
+  }
+}
+
+@media (max-width: 420px) {
+  // zoom is ~1 (0.99) on narrow screens
+  .game-viewport {
+    min-height: 100dvh;
+  }
 }

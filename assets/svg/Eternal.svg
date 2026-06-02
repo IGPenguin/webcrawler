@@ -1,0 +1,36 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="naturalNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="#000000"/>
+  <rect width="400" height="400" filter="url(#naturalNoise)" opacity="0.3"/>
+  
+  <style>
+    .star { fill: white; opacity: 0.2; animation: twinkle 3s infinite ease-in-out; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.1; transform: scale(0.8); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+    .ascend { fill: #FFD940; opacity: 0.1; animation: ascend 15s infinite linear; }
+    @keyframes ascend {
+      from { transform: translateY(420px); }
+      to { transform: translateY(-20px); }
+    }
+  </style>
+
+  <!-- Twinkling Stars -->
+  <circle class="star" cx="50" cy="50" r="0.8"/>
+  <circle class="star" cx="150" cy="120" r="1" style="animation-delay: -1s;"/>
+  <circle class="star" cx="250" cy="80" r="0.7" style="animation-delay: -2s;"/>
+
+  <!-- Ascension Particles -->
+  <circle class="ascend" cx="80" cy="0" r="1.5"/>
+  <circle class="ascend" cx="200" cy="0" r="1" style="animation-delay: -4s;"/>
+</svg>

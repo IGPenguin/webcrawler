@@ -1,0 +1,113 @@
+emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
+
+//Unlockable-Endings
+💍;Groom;0;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b> and start with <b>+2 💕 Love</b>.<br><i>After all that happened, still loves her.;game_win_first
+🩸;Traitor;-1;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-1 💔 Health</b>.<br><i>Never hesitates to take another life.;ending_kill
+🗿;Sentinel;2;0;0;0;0;0;0;Gain <b>+2 ❤️ Health</b> with no downside.<br><i>Stands unbroken, probably will forever.;ending_guard
+👣;Wanderer;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Minds his own business no matter what.;ending_walk
+❤️‍🩹;Absolver;0;0;0;0;0;2;0;Gain <b>+2 🔵 Mana</b> with no downside.<br><i>Uses his magic with good intentions.;ending_free
+👤;Tainted;-1;0;0;0;0;3;0;Gain <b>+3 🔵 Mana</b>, lose <b>-1 💔 Health</b>.<br><i>Embraced the darkness, it took a toll.;ending_embrace
+🌿;Quiet;0;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b> with no downside.<br><i>Laid down to finally find peace.;ending_sleep
+🌈;Blessed;0;0;0;3;0;0;0;Gain <b>+3 🍀 Luck</b> with no downside.<br><i>The gods listen when he calls.;ending_pray
+👹;Hexed;0;0;0;-2;0;3;0;Gain <b>+3 🔵 Mana</b>, lose <b>-2 🍀 Luck</b>.<br><i>Made a deal, no interest in undoing it.;ending_curse
+🕊️;Gifted;0;0;0;0;2;1;0;Gain <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.<br><i>Remembers everything he has lived through.;ending_speak
+
+//Unlockable-Unique (automatic legendary - if no stat change or negative + achiev requirement)
+💀;Brittle;-2;0;0;0;0;0;0;Lose <b>-2 💔 Health</b>, blend with the undead.<br><i>No flesh to protect the bones.;hardcore_win
+👨🏻‍🍳;Chef;0;0;0;0;0;0;0;Starts with <b>🧂 Salt Shaker</b>.<br><i>Always uses just enough spices.;salt_food_first
+🦧;Furry;0;0;0;0;0;0;0;Critters do not mind your presence.<br><i>Lives a happy and peaceful life.;pet_first
+🎣;Angler;0;0;0;0;0;0;0;Start with two random <b>🪱 Baits</b>.<br><i>Always ready to do some fishing.;fish_bait_first
+🏴‍☠️;Pirate;0;0;0;0;0;0;0;Start with one extra <b>🪙 Drachma</b>.<br><i>That coin is totally not looted.</i>;pet_parrot
+
+//Unlockable
+🎓;Scholar;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>The grind is his second nature.;level_5
+🔪;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no downside.<br><i>Born for killing, nothing more.;rival_kills_10
+🥷;Ninja;0;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b> with no downside.<br><i>The more agile the more fragile.;knockout_30
+🎖️;Hero;0;0;1;0;1;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b>.<br><i>Never hesitates to make a difference.;boss_kill_10
+😈;Devil;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 💔 Health</b>.<br><i>Made a deal with the scars to prove it.;spoke_demon
+🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Lose <b>-1 💔 Health</b>, blend with the undead.<br><i>Fits well with the tainted surroundings.;died_first
+💬;Preacher;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Told stories that he lived through first.;recruit_first
+🧭;Guide;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Never gets lost thanks to his wit and memory.;discover_forsaken
+🎋;Shaman;0;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b> with no downside.<br><i>Bears a supernatural power of the nature.;discover_fairyland
+⛵️;Sailor;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Able to endure cosiderable discomfort.;discover_river
+🤙;Careless;0;0;0;2;-1;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 🧠 Intellect</b>.<br><i>No time to lose, just do it!.;survive_trap
+💥;Clumsy;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, sacrifice <b>-1 💔 Health</b>.<br><i>Always in trouble, but somehow clutches.;death_trap
+👻;Wraith;0;-1;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Lighting fast, but effectively harmless.;death_sleep
+🏳️;Pacifist;0;-1;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, give up <b>-1 ⚔️ Attack</b>.<br><i>Always choses wit over aggression.;calm_first
+😡;Choleric;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Effective but not the brightest.;smash_door_first
+🦴;Survivor;0;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Surviving on scraps and desperate spite.;discover_necropolis
+🍀;Lucky;0;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b> with no clear downside.<br><i>Traded fortune for his brainpower.;gamble_win_first
+🎲;Gambler;0;0;0;3;-3;0;0;Gain <b>+3 🍀 Luck</b>, lose <b>-3 🧠 Intellect</b>.<br><i>Traded certainty for something much better.;gamble_win_10
+🌻;Hippie;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Always dirty hands, one with the nature.;touch_grass
+🤥;Cheater;0;0;0;-2;2;0;0;Gain <b>-2 🍀 Luck</b> and <b>+2 🧠 Intellect</b>.<br><i>Unethical, always gets what he wants.;use_cheat
+🔍;Surveyor;0;0;0;1;1;0;0;Gain <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b>.<br><i>Always finds what he's searching for.;fish_boss_first
+💘;Lover;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 💔 Health</b>.<br><i>Would give up anything for true love.;letter_remember
+✉️;Courier;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Never stops until he delivers.;letter_grab
+💔;Broken;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 💔 Health</b><br><i>Cannot forget the grueling pain.;letter_ditch
+🤌;Gourmet;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br><i>Enjoys his life to the fullest.;eat_legendary
+🩸;Warlock;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 💔 Health</b>.<br><i>Bought his power by own blood.;mana_first
+🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;magic_unlock_first
+🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by
+🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_30
+🧥;Hobo;1;0;0;-1;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-1 🍀 Luck</b>.<br><i>Naturally resistant to any danger.;grab_rubbish
+
+//Outstanding
+💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br>Hardened long before anything fought back.;none
+🪵;Logger;1;0;0;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Used to work hard with no time to rest.;none
+🎩;Noble;0;0;0;1;1;0;0;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.;none
+🪕;Bard;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Traveled the world, learned a lot.;none
+🪶;Scribe;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;none
+✨;Favored;0;0;0;1;0;0;0;Gain <b>+1 🍀 Luck</b> with no downside.<br><i>Things always somehow work out.;none
+
+//Attack
+🗡️;Hitman;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-2 🟢 Energy</b>.<br><i>One shot, one kill... hopefully.;none
+🏹;Ranger;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-2 💔 Health</b>.<br><i>Deadly dangerous, but super fragile.;none
+💢;Berserk;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🧠 Intellect</b>.<br><i>Unstable, blinded by his fury.;none
+🪓;Killer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.;none
+🪖;Soldier;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Follows orders with no thinking.;none
+
+//Health
+🛡️;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, lose <b>-2 🟢 Energy</b>.<br><i>Stands so strong, he struggles to move.;none
+💝;Darling;2;-1;0;0;0;0;0;Gain <b>+2 ❤️ Health</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Resilient to being hurt, harmless though.;none
+🧱;Mason;1;0;-1;0;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-1 🟢 Energy</b>.<br><i>Built sturdy walls in his own tempo.;none
+🍺;Boozer;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Numb to the pain, blind to the truth.;none
+🖤;Unholy;1;0;0;-2;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-2 🍀 Luck</b>.<br><i>Given up soul for extra resilience.;none
+
+//Stamina
+🍖;Hungry;-2;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b>, lose <b>-2 💔 Health</b.<br><i>Desperately chases unsatisfiable needs.;none
+🐾;Stalker;0;-1;2;0;0;0;0;Gain <b>+2 🟢 Energy</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Always in the shadows, harmless tough.;none
+🤸‍♀️;Acrobat;-1;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b>, lose <b>-1 💔 Health</b>.<br><i>Focusing on swiftness makes him fragile.;none
+🧬;Mutant;0;0;1;0;-2;0;0;Gain <b>+1 🟢 Energy</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Body strong, mind no so much.;none
+⛓️‍💥;Outlaw;0;0;1;-2;0;0;0;Gain <b>+1 🟢 Energy</b>, lose <b>-2 🍀 Luck</b>.<br><i>Chose to outrun his own fortune.;none
+
+//Luck
+🧪;Chemist;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 💔 Health</b>.<br><i>Survived numerous explosions, still alive.;none
+🦾;Veteran;0;0;-1;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 🟢 Energy</b>.<br><i>Already endured through many dangers.;none
+🇯🇲;Rasta;0;0;0;2;-1;0;0;Gain <b>+2 🍀 Luck</b> for <b>-1 🧠 Intellect</b>.<br><i>Always chilled-out no matter what.</i>;none
+🃏;Fool;0;0;0;2;-2;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Doesn't know the odds, wins anyway.;none
+🥔;Peasant;0;0;0;1;-1;0;0;Gain <b>+1 🍀 Luck</b>, lose <b>-1 🧠 Intellect</b>.<br><i>Accustomed to the weight of the world.;none
+
+//Intellect
+🛖;Hermit;0;0;-2;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, lose <b>-2 🟢 Energy</b>.<br><i>Good intentions, uncertain chances.;none
+🧠;Elder;-2;0;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, lose <b>-2 💔 Health</b>.<br><i>Time changes vitality to wisdom.;none
+🇨🇿;Czech;-1;0;0;0;2;0;0;Gain <b>+2 🧠 Cunning</b>, lose <b>-1 💔 Health</b>.<br><i>Drinks beer, wears sandals with socks.</i>;none
+🤓;Nerd;0;0;-1;0;2;0;0;Gain <b>+2 🧠 Intellect</b>, lose <b>-1 🟢 Energy</b>.<br><i>Big brain but bad reflexes.;none
+🎭;Plotter;0;0;0;-2;2;0;0;Gain <b>+2 🧠 Intellect</b>, lose <b>-2 🍀 Luck</b>.<br><i>Clever enough to lose on purpose.;none
+👁️‍🗨️;Seer;0;0;0;-1;1;0;0;Gain <b>+1 🧠 Intellect</b>, lose <b>-1 🍀 Luck</b>.<br><i>Anticipates the worst, but ready for it.;none
+
+//Neutral
+🌾;Farmer;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Tilled the earth until it turned to dust.;none
+🧺;Refugee;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Left everything behind to escape the rot.;none
+🍞;Baker;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Knew warmth once, now only ash remains.;none
+🧹;Butler;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Used to dealing with others mess.;none
+🧳;Pilgrim;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Never stayed long enough to belong.;none
+👞;Tramp;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Wandering is the only path he has left.;none
+🎒;Drifter;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Goes where the wind and misery blow.;none
+🥺;Beggar;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Asking for mercy and something to eat.;none
+🔔;Herder;0;0;0;0;0;0;0;No clear strengths or weaknesses.<br><i>Lost the flock to the fog long ago.;none
+
+//Negative
+🎃;Hollow;-1;0;0;0;0;0;0;Lose <b>-1 💔 Health</b> with no clear benefit.<br><i>Begins giving up his effort.;none
+🍔;Fatso;0;0;-1;0;0;0;0;Lose <b>-1 🟢 Energy</b> with no clear benefit.<br><i>Cannot ever satify his hunger.;none
+🤪;Dummy;0;0;0;0;-1;0;0;Lose <b>-1 🧠 Intellect</b> with no clear benefit.<br><i>Not everyone can be super witty.;none
+☘️;Jinx;0;0;0;-1;0;0;0;Lose <b>-1 🍀 Luck</b> with no clear benefit.<br><i>Misfortune follows his steps.;none
