@@ -1144,9 +1144,9 @@ function getPlayfulMomentLog() {
 
 function getRestCritLog() {
   return chooseFrom([
-    "Caught your breath quickly. +1 🟢",
-    "Rested fast despite the danger. +1 🟢",
-    "Pulled back enough to recover. +1 🟢"
+    "Caught your breath quickly +1 🟢",
+    "Rested fast despite the danger +1 🟢",
+    "Pulled back enough to recover +1 🟢"
   ]);
 }
 
