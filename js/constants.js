@@ -5,7 +5,7 @@ var TUTORIAL_SKIP_INDEX = 6; // linesStory index where returning players resume;
 var SPLASH_DISABLED_LOCALHOST = true;
 var TUTORIAL_SKIP_LOCALHOST = true;
 var RANKINGS_DISABLED_LOCALHOST = false;
-var TELEMETRY_DISABLED_LOCALHOST = false;
+var TELEMETRY_DISABLED_LOCALHOST = true;
 
 // ── Colors ────────────────────────────────────────────────────────────────────
 var colorWhite         = "#FFFFFF";
