@@ -1,3 +1,11 @@
+## ver. 06/02/26 @ 07:45 AM
+Welcome to the Open Beta! 🤘
+---
+The world didn't stop when you died. Corruption spreads everywhere, you have to heal it.
+---
+Send feedback when you are done. Enjoy! 
+
+
 ## ver. 06/02/26 @ 02:20 AM
 🔮 Add "Transmute" in new game Origins picker
 🗺️ New midgame encounter content added
@@ -7,6 +15,8 @@
 🤲 Placeholder donate dialog added
 🐍 Create and prove Medusa Gaze tool
 🪶 Create and first use Echo Skepsis tool
+⚠️ Score submission clearly blocked when cheated
+📜 Removed a spoiler from loading tips
 
 ## ver. 06/01/26 @ 01:34 PM
 🎲 LVL UP: Sorcery >> Fate: rnd +2/-1 stats

@@ -361,6 +361,15 @@ var ScoreManager = (function () {
 
     var overlay = document.getElementById('nickname_overlay');
     if (overlay) overlay.style.display = 'flex';
+
+    var confirmBtn = document.getElementById('nickname_confirm');
+    if (confirmBtn) {
+      var blocked = typeof cheatedThisRun !== 'undefined' && cheatedThisRun;
+      confirmBtn.disabled = blocked;
+      confirmBtn.style.opacity = blocked ? '0.35' : '';
+      confirmBtn.style.pointerEvents = blocked ? 'none' : '';
+      confirmBtn.title = blocked ? '✕ Cheats used this journey.' : '';
+    }
   }
 
   function fetchRankings(callback) {

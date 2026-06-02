@@ -1,6 +1,6 @@
 # Styx Flow — 2026-06-01 — Stay Dead
 
-*~106 items · 2026-06-01: +1 (ORIG-ROLL) — Origins picker reroll button, user-flagged P1 · prior: 2026-06-01: Styx re-sort — Backlog and Technical Debt integrated into P3/P4, [SCROLL-GAP] promoted to P2, [ORIG-ITEMS] cleaned, [COMP-PLAY] flagged (assumed shipped — not found in backlog) · prior: 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
+*~103 items · 2026-06-02: -4 resolved (VER-BUMP, CHEAT-SUBM, CHEAT-TIPS, COMP-PARTY), +1 (BOSS-TELE) · prior: 2026-06-01: +1 (ORIG-ROLL) — Origins picker reroll button, user-flagged P1 · prior: 2026-06-01: Styx re-sort — Backlog and Technical Debt integrated into P3/P4, [SCROLL-GAP] promoted to P2, [ORIG-ITEMS] cleaned, [COMP-PLAY] flagged (assumed shipped — not found in backlog) · prior: 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
@@ -17,18 +17,19 @@
 - Type: Bug | Severity: Major
 - Effort: S | Gain: L
 
+### [BOSS-TELE] Feature: Wire boss_killed telemetry event
+- Fire a `boss_killed` event via `TelemetryManager.send()` after boss kill resolution in `action-resolver.js`, alongside the existing `boss_kill` achievement check.
+- Bosses are identified by "Boss-" prefix in `enemyBossType` (e.g. "Boss-Swift", "Boss-Undead").
+- Payload: `boss_name` (enemy name), `boss_type` (e.g. "Boss-Swift"), `area` (playerArea), `run_number` (playerDestiny), `inventory` (playerLootString), `stats` {hp: playerHp, sta: playerSta, atk: playerAtk, mgk: playerMgk, def: playerDef, lck: playerLck, int: playerInt}.
+- Priority: P1 — core beta signal; without this event area-clearing loadout data is blind during the beta window.
+- Type: Feature
+- Effort: S | Gain: L
+
 ### [NEG-FRIEND] Feature: Negative friends — stat decrement encounters
 - "Negative friend" encounter variants that decrement stats (inverse of a standard friend boost) — add to late-game areas.
 - Priority: P3 — adds tension to a currently safe encounter type
 - Type: Feature
 - Effort: S | Gain: M
-
-### [CHEAT-SUBM] Feature: Disable score submit button if `cheatedThisRun` is true
-- When `cheatedThisRun` is set, render the score submission button as visually disabled (grayed out, non-interactive) rather than silently blocking on click.
-- Implement in `score-manager.js` or `ui-render.js`: check `cheatedThisRun` when rendering the nickname/submit overlay; apply `disabled` attribute and a muted visual style to the submit button.
-- Priority: P2 — current silent block is confusing for beta testers; clear feedback prevents repeated confused attempts.
-- Type: Feature
-- Effort: XS | Gain: M
 
 ## P2 — Serious Issues
 
@@ -81,12 +82,6 @@
 - Type: Feature
 - Effort: L | Gain: L
 
-### [VER-BUMP] Chore: Bump version and write beta launch changelog
-- Run `bash version.sh` to stamp the current timestamp; update `version.md` with a "Welcome to Beta" header and a summary of what beta means — goals, known issues, what's next.
-- Priority: P2 — version marker and changelog are the first thing returning players see; sets expectations for beta testers.
-- Type: Chore
-- Effort: XS | Gain: M
-
 ### [UNDEAD-MGK] Bug: MGK on non-caster enemies incorrectly triggers near-impossible block condition
 - Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
 - Audit `encounters.csv` and `story.csv` for all Undead-type rows; remove MGK from non-caster undead (zombies, revenants, etc.); keep MGK only on actual caster subtypes (liches, banshees, wraiths — rows where spells are the intended threat).
@@ -95,24 +90,11 @@
 - Type: Bug | Severity: Major
 - Effort: S | Gain: L
 
-### [COMP-PARTY] Bug: "Party of Three" achievement fires on total companions gained, not current count
-- Achievement should trigger when the player simultaneously holds 3+ companions in `playerPartyString`, not when 3 have been gained cumulatively over a run.
-- Fix the check in `achievements.js` to evaluate `[...playerPartyString].length >= 3` at the moment a companion joins, not a cumulative counter.
-- Priority: P2 — misfiring achievement gives the wrong signal; players will notice if it triggers after companions have been lost.
-- Type: Bug | Severity: Major
-- Effort: XS | Gain: M
-
 ### [ENLCK-FUNC] Improvement: Make enemy LCK stat functional
 - Enemy LCK currently does nothing visible — wire it to counter player LCK on crit chance and/or action bar intervals; optionally affect fishing spot chances.
 - Priority: P2 — dead stat on a UI-visible field erodes trust in every other hidden system.
 - Type: Improvement
 - Effort: M | Gain: L
-
-### [CHEAT-TIPS] Improvement: Revise cheat hints — show only soft cheats, remove full unlocks
-- Audit the current cheat tip list and remove any hint that grants achievements or bypasses run progression; keep only soft/QoL cheats (stat resets, debug flags, test helpers).
-- Priority: P2 — full unlock hints undercut the achievement system before beta testers reach those milestones naturally.
-- Type: Improvement
-- Effort: XS | Gain: M
 
 ### [PERS-REVW] Chore: Perseus review of public-facing docs and itch.io page
 - Run `/perseus` on the public README, itch.io description, and any player-facing documentation for tone, first-impression quality, and missing info for new players.
