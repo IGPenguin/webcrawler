@@ -272,7 +272,7 @@ var _DEATH_BARK_POOLS = {
 };
 
 function fireDeathBarks() {
-  if (!playerPartyString || playerPartyString.length === 0) return;
+  if (!playerPartyString || !String(playerPartyString).trim()) return;
   [...playerPartyString].forEach(function(emoji) {
     var _type, _name;
     if      (_COMPANION_DOGS.includes(emoji))     { _type = 'dog';      _name = petName[emoji] || 'companion'; }
