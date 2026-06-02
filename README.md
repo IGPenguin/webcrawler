@@ -7,7 +7,7 @@
 Recall **🧩 Memories** to unlock new content. Dominate the **🪦 Reckonings** and conquer **the branching ending**.
 
 ## 📕 Codex of the Damned
-**If you are stuggling**, read the **[📕 Codex of the Damned](WIKI.md)**.<br>
+**If you are stuggling**, read the 📕 **[Codex of the Damned](WIKI.md)**.<br>
 It's a spoiler-free overview of the basic survival tips.
 
 
