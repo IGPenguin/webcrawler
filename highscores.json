@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "userId": "ec4cc0ac-b71b-47d6-94e2-bc601c329510",
+    "nickname": "Intergalactic Penguin",
+    "sessionId": "7b7064ab-5d1d-4ec7-a6f0-577b8a56a57e",
+    "score": 50,
+    "origin": "",
+    "charName": "Damned Soul",
+    "level": "1",
+    "stats": "4;2;3;-1;2;0;0",
+    "inventory": "🗝️🦎🥏💍📔",
+    "companions": "0",
+    "karma": "-1",
+    "coins": "0",
+    "difficulty": "💔 Rough",
+    "playtime": "42199",
+    "encounterCount": "52",
+    "endType": "death",
+    "ghostLink": "eyJzY29yZSI6NTAsIm5pY2tuYW1lIjoiSW50ZXJnYWxhY3RpYyBQZW5ndWluIiwiY2hhck5hbWUiOiJEYW1uZWQgU291bCIsIm9yaWdpbiI6IiIsImxldmVsIjoxLCJlbmNvdW50ZXJDb3VudCI6NTIsImNvbXBhbmlvbnMiOjAsInN0YXRzIjoiNDsyOzM7LTE7MjswOzAiLCJrYXJtYSI6LTEsImRpZmZpY3VsdHkiOiLwn5KUIFJvdWdoIiwiZ2FtZVZlcnNpb24iOiJ2ZXIuIDA2LzAyLzI2IEAgMDc6NDUgQU0iLCJwbGF5dGltZSI6NDIxOTksImVuZFR5cGUiOiJkZWF0aCIsImRhdGV0aW1lIjoiMjAyNi0wNi0wMlQxMjozMzoyNC43MjhaIiwiaW52ZW50b3J5Ijoi8J+Xne+4j/Cfpo7wn6WP8J+SjfCfk5QiLCJjb2lucyI6MCwiZGVhdGhNZXNzYWdlIjoi8J+Vs++4jyBHb3Qgc2NyYXRjaGVkIGJ5IGhpZGRlbiBzcGlrZXMgIC0xIPCfkpQiLCJzY29yZUJhc2VsaW5lU3RhdHMiOjgsImNyaXRTdWNjZXNzZXMiOjUsImNyaXRGYWlscyI6MCwiZmlzaENhdGNoZXMiOjUsInNsZWVwUGVuYWx0eSI6MH0=",
+    "gameVersion": "ver. 06/02/26 @ 07:45 AM",
+    "datetime": "2026-06-02T12:33:24.728Z",
+    "Timestamp": "02/06/2026 14:34:34"
+  }
+]
