@@ -1,9 +1,12 @@
-## ver. 06/02/26 @ 01:19 AM
+## ver. 06/02/26 @ 02:20 AM
 🗺️ New midgame encounter content added
 🔮 Add "Transmute" in new game Origins picker
 🎨 Credits background + Recall in level-up
 ✏️ Action logs tone pass, text + case fixes
 🐍 Create and prove Medusa Gaze tool
+🪙 Transmute refund waits until run starts
+🤲 Placeholder donate dialog added
+📝 Create and first use Echo Skepsis tool
 
 ## ver. 06/01/26 @ 01:34 PM
 🎲 LVL UP: Sorcery >> Fate: rnd +2/-1 stats
