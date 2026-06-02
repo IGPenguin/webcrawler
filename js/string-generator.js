@@ -569,7 +569,7 @@ function getRememberLog() {
 
 function getFateLog() {
   return chooseFrom([
-    "Taken. Given. No say in which.",
+    "Taken and given.",
     "Fate keeps its own accounts.",
     "The balance tips the odds.",
     "Something shifted the balance.",
@@ -738,7 +738,7 @@ function getRecallCritPassText() {
     "There was someone special, just for you.",
     "You and her, bound together, forever.",
     "All slowly comes back to you.",
-    "Her name, whole and clear, just for a moment.",
+    "Her name. Whole and clear.",
     "The memory arrived complete. It hurt.",
     "You remembered her voice. It did not stay."
   ]);
@@ -1128,7 +1128,17 @@ function getSleepWastedLog() {
   return chooseFrom([
     "Wasted some time sleeping.",
     "Already rested. Cost nothing but time.",
-    "Sleep was spent here already."
+    "Nothing to recover. Rest wasted."
+  ]);
+}
+
+function getPlayfulMomentLog() {
+  return chooseFrom([
+    "Enjoyed a playful moment -1 🟢",
+    "Traded harmless blows -1 🟢",
+    "A brief, cheerful scuffle -1 🟢",
+    "Sparred lightly, no real threat -1 🟢",
+    "Exchanged a playful swipe -1 🟢"
   ]);
 }
 
