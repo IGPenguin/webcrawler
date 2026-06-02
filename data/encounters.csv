@@ -162,6 +162,10 @@ Fading Wildlands;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;
 Fading Wildlands;🥻;Philosopher Toga;Item-Chest;0;0;0;0;2;0;0;<b>Artifact</b>;Adds skill <b>💭 Deep Thought</b> and <b>+2 🧠 Intellect</b>.<br><b>3% chance</b> for an idea to struck you anywhere.;Gained skill <b>💭 Deep Thought</b>.;level_first
 Fading Wildlands;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Neat and comfortable;knockout_first
 Fading Wildlands;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;The blood wasn't yours.;kill_first
+Fading Wildlands;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;transmute_first
+Fading Wildlands;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
+Fading Wildlands;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
+Fading Wildlands;🏷️;Merchant's Tag;Item-Trinket;0;0;0;0;2;0;0;Worn Label;Marked with a price that hasn't been settled.<br>Provides <b>+2 🧠 Intellect</b>.;Someone paid for this already.;buy_artifact_first
 
 Fading Wildlands;🏵️;Symbol of Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;none
 Fading Wildlands;⛺️;Camping Tent;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Portable equipment, provides extra comfort. <br>33% chance for <b>+1 🟢 Energy</b> on <b>💤 Sleep</b>.;Gained ability <b>⛺️ Portable Camp</b>.;none
@@ -495,7 +499,13 @@ Forsaken Village;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for m
 Forsaken Village;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 Forsaken Village;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 Forsaken Village;🐷;Pig Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>All food effects are totally negated.</b>;Gained skill <b>🐷 Pig Digestion</b>.;eat_hazardous
+Forsaken Village;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;transmute_first
+Forsaken Village;🫙;Brine Jar;Item-Trinket;0;0;1;0;1;0;0;<b>Artifact</b>;Preserves what most would call poison.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b>.;Tastes like the end of something.;none
+Forsaken Village;🏷️;Merchant's Tag;Item-Trinket;0;0;0;0;2;0;0;Worn Label;Marked with a price that hasn't been settled.<br>Provides <b>+2 🧠 Intellect</b>.;Someone paid for this already.;buy_artifact_first
+Forsaken Village;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
+Forsaken Village;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 
+Forsaken Village;🧲;Relic Magnet;Item-Trinket;0;0;0;1;1;0;0;Worn Curiosity;Draws the significant toward whoever survives.<br>Provides <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b>.;Something worth keeping pulled it toward you.;none
 Forsaken Village;🪓;Titansteel Cleaver;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Capable of making a bloody mess.<br>Provides <b>+2 ⚔️ Damage</b>.;Obtained a deadly weapon.;none
 Forsaken Village;🥊;Enchanted Glove;Item-Weapon;1;1;0;0;0;0;0;<b>Artifact</b>;Improves hand-to-hand combat technique.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 ❤️ Health</b>.;Feeling more confident.;none
 Forsaken Village;🛹;Sturdy Skateboard;Item-Weapon;0;1;1;0;0;0;0;<b>Artifact</b>;Doubles for transport and dealing damage.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Cool, fast and dangerous.;none
@@ -900,6 +910,9 @@ Twisted Fairyland;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for 
 Twisted Fairyland;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 Twisted Fairyland;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 Twisted Fairyland;🐷;Pig Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>All food effects are totally negated.</b>;Gained skill <b>🐷 Pig Digestion</b>.;eat_hazardous
+Twisted Fairyland;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;transmute_first
+Twisted Fairyland;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
+Twisted Fairyland;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 
 Twisted Fairyland;🖤;Obsidian Pebble;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Physical Defence</b>.;Who needs love anyway? <b>+1 🔰</b>;none
 Twisted Fairyland;👺;Devil Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>👺 Devil Appearance</b>.<br><b>Demon type enemies will be passive</b>.;Gained attribute <b>👺 Devil's Appearance</b>.;none
@@ -1197,6 +1210,9 @@ River of Sorrows;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for m
 River of Sorrows;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 River of Sorrows;🐷;Pig Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>All food effects are totally negated.</b>;Gained skill <b>🐷 Pig Digestion</b>.;eat_hazardous
+River of Sorrows;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;transmute_first
+River of Sorrows;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
+River of Sorrows;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 River of Sorrows;👒;Fishing Hat;Item-Head;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
 
 River of Sorrows;🀄️;Life-Stealing Rune;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>🩸 Steal Life</b>.<br>10% chance <b>⚔️ Attack</b> steals <b>+1 ❤️ Health</b>.;Gained 10% chance to <b>🩸 Steal Life</b>.;none
@@ -1405,6 +1421,9 @@ Shrouded Necropolis;🧂;Salt Shaker;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Grants a
 Shrouded Necropolis;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</b>;Says "My Precious" on the inside.<br>Provides <b>+2 🔵 Mana</b> for <b>-3 🧠 Intellect</b>.;The temptation took its toll.;full_party
 Shrouded Necropolis;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Neat and comfortable;knockout_first
 Shrouded Necropolis;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
+Shrouded Necropolis;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;transmute_first
+Shrouded Necropolis;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
+Shrouded Necropolis;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 
 //Unique
 Shrouded Necropolis;🗡️;Quicksilver Dagger;Item-Weapon;0;3;0;0;0;0;0;<b>Artifact</b>;Made for killing supernatural monsters.<br>Provides <b>+3 ⚔️ Damage</b>.;Became armed and dangerous.;none

@@ -229,7 +229,7 @@ var Menu = (function () {
       playerMgkMax = Math.max(0, playerMgkMax + mgk);
       playerMgk    = playerMgkMax;
       if (mgk > 0) AchievementManager.check('mana_first');
-      playerName = origin.rolledName || getOriginName(origin);
+      playerName = origin.forcedName || origin.rolledName || getOriginName(origin);
       playerEmoji = origin.emoji;
       playerOriginName = origin.originName || '';
       playerDestined = true;

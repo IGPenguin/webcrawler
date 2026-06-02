@@ -17,14 +17,6 @@
 - Type: Bug | Severity: Major
 - Effort: S | Gain: L
 
-### [BOSS-TELE] Feature: Wire boss_killed telemetry event
-- Fire a `boss_killed` event via `TelemetryManager.send()` after boss kill resolution in `action-resolver.js`, alongside the existing `boss_kill` achievement check.
-- Bosses are identified by "Boss-" prefix in `enemyBossType` (e.g. "Boss-Swift", "Boss-Undead").
-- Payload: `boss_name` (enemy name), `boss_type` (e.g. "Boss-Swift"), `area` (playerArea), `run_number` (playerDestiny), `inventory` (playerLootString), `stats` {hp: playerHp, sta: playerSta, atk: playerAtk, mgk: playerMgk, def: playerDef, lck: playerLck, int: playerInt}.
-- Priority: P1 — core beta signal; without this event area-clearing loadout data is blind during the beta window.
-- Type: Feature
-- Effort: S | Gain: L
-
 ### [NEG-FRIEND] Feature: Negative friends — stat decrement encounters
 - "Negative friend" encounter variants that decrement stats (inverse of a standard friend boost) — add to late-game areas.
 - Priority: P3 — adds tension to a currently safe encounter type
@@ -75,12 +67,6 @@
 - Priority: P2 — untested platform behavior on Android is high-risk for beta; NG+ path is newly wired and unverified.
 - Type: Chore
 - Effort: M | Gain: L
-
-### [ACHIEV-UNLCK] Feature: Complete missing achievement unlocks + unique origin powers
-- Wire all remaining achievement unlock triggers; for unlockable origins, add or replace flat stat grants with unique starting powers (e.g., starting Legendary item, passive ability — check head of origins.csv for candidates).
-- Priority: P2 — achievement system is a retention hook; broken unlocks and flat origins undermine it.
-- Type: Feature
-- Effort: L | Gain: L
 
 ### [UNDEAD-MGK] Bug: MGK on non-caster enemies incorrectly triggers near-impossible block condition
 - Zombies and other physical undead carry MGK > 0 in the CSV; `action-config.js` treats any enemy with `eMgk > 0` as a spell-caster and makes block near-impossible ("physically shielding a spell is near-impossible").
@@ -445,6 +431,14 @@
 - Priority: P4 — internal cleanliness; S effort for S gain.
 - Type: Chore
 - Effort: S | Gain: S
+
+### [BOSS-TELE] Feature: Wire boss_killed telemetry event
+- Fire a `boss_killed` event via `TelemetryManager.send()` after boss kill resolution in `action-resolver.js`, alongside the existing `boss_kill` achievement check.
+- Bosses are identified by "Boss-" prefix in `enemyBossType` (e.g. "Boss-Swift", "Boss-Undead").
+- Payload: `boss_name` (enemy name), `boss_type` (e.g. "Boss-Swift"), `area` (playerArea), `run_number` (playerDestiny), `inventory` (playerLootString), `stats` {hp: playerHp, sta: playerSta, atk: playerAtk, mgk: playerMgk, def: playerDef, lck: playerLck, int: playerInt}.
+- Priority: P3 - actually already tracked via achievements - who got how far, so chill out
+- Type: Feature
+- Effort: S | Gain: L
 
 ### [SCROLL-GAP] Bug: Intermittent mega-scrollable empty space appearing below page body
 - Occasionally a large blank scroll area appears below the game UI — the page becomes scrollable to a large empty region that should not exist.

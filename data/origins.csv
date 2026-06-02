@@ -23,7 +23,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🎓;Scholar;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>The grind is his second nature.;level_5
 🔪;Slayer;0;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b> with no downside.<br><i>Born for killing, nothing more.;rival_kills_10
 🥷;Ninja;0;0;2;0;0;0;0;Gain <b>+2 🟢 Energy</b> with no downside.<br><i>The more agile the more fragile.;knockout_30
-🎖️;Hero;0;0;1;0;1;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b>.<br><i>Never hesitates to make a difference.;boss_kill_10
+🎖️;Hero;0;0;1;0;2;0;0;Gain <b>+1 🟢 Energy</b> and <b>+2 🧠 Intellect</b>.<br><i>Never hesitates to make a difference.;boss_kill_10
 😈;Devil;-1;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b>, lose <b>-1 💔 Health</b>.<br><i>Made a deal with the scars to prove it.;spoke_demon
 🧟‍♂️;Rotten;-1;0;0;0;0;0;0;Lose <b>-1 💔 Health</b>, blend with the undead.<br><i>Fits well with the tainted surroundings.;died_first
 💬;Preacher;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Told stories that he lived through first.;recruit_first
@@ -45,11 +45,18 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 ✉️;Courier;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Never stops until he delivers.;letter_grab
 💔;Broken;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 💔 Health</b><br><i>Cannot forget the grueling pain.;letter_ditch
 🤌;Gourmet;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br><i>Enjoys his life to the fullest.;eat_legendary
+🍷;Vinekeeper;0;0;1;0;1;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b> with no downside.<br><i>Slow, deliberate. Still here.;eat_purple
 🩸;Warlock;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 💔 Health</b>.<br><i>Bought his power by own blood.;mana_first
 🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;magic_unlock_first
 🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by
 🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_30
 🧥;Hobo;1;0;0;-1;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-1 🍀 Luck</b>.<br><i>Naturally resistant to any danger.;grab_rubbish
+🧐;Appraiser;0;0;0;1;1;0;0;Gain <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b> with no downside.<br><i>Knows quality. Takes it before asking why it's there.;grab_exquisite
+🏺;Raider[Name:Tomb Raider];0;1;1;1;0;0;0;Gain <b>+1 ⚔️ Atk</b>, <b>+1 🟢 Energy</b>, <b>+1 🍀 Luck</b><br><i>Everything sacred is also portable.;grab_artifact
+⚗️;Alchemist;0;0;-1;0;1;1;0;Gain <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>, lose <b>-1 🟢 Energy</b>.<br><i>Turns one thing into another. Always at a cost.;transmute_10
+⚖️;Fence;0;0;0;1;1;0;0;Gain <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b> with no downside.<br><i>Knows a deal. Knows where the deals go.;buy_item_first
+💰;Profiteer;1;0;1;-2;0;0;0;Gain <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>, lose <b>-2 🍀 Luck</b>.<br><i>Paid someone else to grow stronger.;buy_level_first
+👁️;Haunted;0;0;0;3;-1;0;0;Gain <b>+3 🍀 Luck</b>, lose <b>-1 🧠 Intellect</b>.<br><i>Knows what it means to be watched by the dead.;rival_spot
 
 //Outstanding
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br>Hardened long before anything fought back.;none
@@ -63,7 +70,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🗡️;Hitman;0;2;-2;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-2 🟢 Energy</b>.<br><i>One shot, one kill... hopefully.;none
 🏹;Ranger;-2;2;0;0;0;0;0;Gain <b>+2 ⚔️ Attack</b>, lose <b>-2 💔 Health</b>.<br><i>Deadly dangerous, but super fragile.;none
 💢;Berserk;0;1;0;0;-3;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🧠 Intellect</b>.<br><i>Unstable, blinded by his fury.;none
-🪓;Killer[Rare];0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.;none
+🪓;Killer;0;1;0;-3;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-3 🍀 Luck</b>.<br><i>Luck is for those who hesitate.[Rare];none
 🪖;Soldier;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Follows orders with no thinking.;none
 
 //Health

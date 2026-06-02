@@ -3,11 +3,12 @@ var AchievementManager = (function () {
   var STATS_KEY   = 'achievStats';
 
   var ACHIEVEMENTS = [
-    { id: 'all_achievements',    emoji: '🏆', desc: "Completed ALL available memories!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon™." },
+    { id: 'all_achievements',    emoji: '🏆', desc: "Completed ALL available memories!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon™" },
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
-    { id: 'transmute_first',     emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rething who you are.', unlock: '' },
+    { id: 'transmute_first',     emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rethink who you are.', unlock: 'Unlocked the <b>🌀 Shedding Stone</b> item.' },
+    { id: 'transmute_10',        emoji: '⚗️', desc: 'Changed your fate 10 times!', hint: 'Some identities are harder to keep.', unlock: 'Unlocked the <b>⚗️ Alchemist</b> origin.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
@@ -29,12 +30,12 @@ var AchievementManager = (function () {
     { id: 'key_unlock_first',    emoji: '🔓', desc: 'Opened a lock with a key!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a lock open with an attack!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
     { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Opened a lock with a spell!', hint: 'Magic opens more than minds.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
-    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: '' },
-    { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: '' },
+    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: 'Unlocked the <b>🧐 Appraiser</b> origin.' },
+    { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: 'Unlocked the <b>🏺 Tomb Raider</b> origin.' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: 'Unlocked the <b>🧥 Hobo</b> origin.' },
 
     { id: 'eat_hazardous',       emoji: '🤢', desc: 'Consumed something hazardous!', hint: 'Are you sure? Suit yourself...', unlock: 'Unlocked the <b>🐷 Pig Mask</b>.' },
-    { id: 'eat_purple',          emoji: '💜', desc: 'Consumed a premium refreshment!', hint: 'The finer things in death.', unlock: '' },
+    { id: 'eat_purple',          emoji: '💜', desc: 'Consumed a premium refreshment!', hint: 'The finer things in death.', unlock: 'Unlocked the <b>🍷 Vinekeeper</b> origin.' },
     { id: 'eat_legendary',       emoji: '🍔', desc: 'Consumed a legendary refreshment!', hint: 'Become a certified gourmet.', unlock: 'Unlocked the <b>🤌 Gourmet</b> origin.' },
     { id: 'pet_first',           emoji: '🐾', desc: 'Got your first furry companion!', hint: 'Befriend a cute furry being.', unlock: 'Unlocked the <b>🦧 Furry</b> origin.' },
     { id: 'pet_parrot',          emoji: '🦜', desc: 'Acquired a talking companion!', hint: 'Pet a lone bird while saling, matey.', unlock: 'Unlocked the <b>🏴‍☠️ Pirate</b> origin.' },
@@ -49,18 +50,18 @@ var AchievementManager = (function () {
     //Missing "Favor/Body buy" achiev
     { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!', hint: "Luck smiles upon the bold.", unlock: 'Unlocked the <b>🍀 Lucky</b> origin.' },
     { id: 'gamble_lose_first',   emoji: '🥺', desc: 'Lost the gamble for the first time!', hint: "But why the long face?", unlock: 'Unlocked the <b>🐴 Horse Mask</b> item.' },
-    { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item from the Shade!', hint: "A fair trade for a fair price.", unlock: '' },
-    { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact from the Shade!', hint: "An eye for the unusual antiques.", unlock: '' },
-    { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up from the Shade!', hint: "Shortcut to power, at a cost.", unlock: '' },
-    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae in total already!', hint: "A loyal customer of the shadows.", unlock: '' },
+    { id: 'buy_item_first',      emoji: '⚖️', desc: 'Bought an item from the Shade!', hint: "A fair trade for a fair price.", unlock: 'Unlocked the <b>⚖️ Fence</b> origin.' },
+    { id: 'buy_artifact_first',  emoji: '💎', desc: 'Bought an artifact from the Shade!', hint: "An eye for the unusual antiques.", unlock: "Unlocked the <b>🏷️ Merchant's Tag</b>" },
+    { id: 'buy_level_first',     emoji: '📈', desc: 'Bought a level up from the Shade!', hint: "Shortcut to power, at a cost.", unlock: 'Unlocked the <b>💰 Profiteer</b> origin.' },
+    { id: 'spent_10',            emoji: '💸', desc: 'Spent 10 Drachmae in total already!', hint: "A loyal customer of the shadows.", unlock: 'Unlocked the <b>💸 Empty Pouch</b> item.' },
 
     { id: 'letter_remember',     emoji: '💌', desc: 'Read a very disturbing writing.', hint: 'Some things are better left in the past.', unlock: 'Unlocked the <b>💘 Lover</b> origin.' },
     { id: 'letter_grab',         emoji: '✉️', desc: 'Kept a disturbing writing with you.', hint: 'Could not bring yourself to leave it.', unlock: 'Unlocked the <b>✉️ Courier</b> origin' },
     { id: 'letter_ditch',        emoji: '💔', desc: 'Cast a disturbing writing aside.', hint: 'Letting go hurts more than holding on.', unlock: 'Unlocked the <b>💔 Broken</b> origin.' },
     //Missing teleported through gate first time
 
-    { id: 'rival_spot',          emoji: '👾', desc: 'Got invaded from another world!',         hint: 'See the face of someone who fell.',    unlock: '' },
-    { id: 'rival_kill',          emoji: '⚔️', desc: 'Slain an Invader from another world!',   hint: 'The dead can die twice.',              unlock: '' },
+    { id: 'rival_spot',          emoji: '👾', desc: 'Got invaded from another world!',         hint: 'See the face of someone who fell.',    unlock: 'Unlocked the <b>👁️ Haunted</b> origin.' },
+    { id: 'rival_kill',          emoji: '⚔️', desc: 'Slain an Invader from another world!',   hint: 'The dead can die twice.',              unlock: 'Unlocked the <b>〽️ Echo Blade</b> item.' },
     { id: 'rival_killed_by',     emoji: '⚰️', desc: 'Slain by Invader from another world.',   hint: 'Their death echoed into yours.',       unlock: 'Unlocked the <b>🎯 Marked</b> origin.' },
     { id: 'rival_kills_10',      emoji: '🔪', desc: 'Slain 10 Invaders from another world!',   hint: 'The world boundary grows thinner.',    unlock: 'Unlocked the <b>🔪 Slayer</b> origin.' },
 
@@ -152,7 +153,8 @@ var AchievementManager = (function () {
     diedByTrap:          false,
     diedBySleep:         false,
     killedFishingBoss:   false,
-    transmuteFirst:      false
+    transmuteFirst:      false,
+    totalTransmutes:     0
   };
 
   var _unlocked       = {};
@@ -311,7 +313,11 @@ var AchievementManager = (function () {
         break;
 
       case 'transmute':
-        if (!_stats.transmuteFirst) { _stats.transmuteFirst = true; _save(); _unlock('transmute_first'); }
+        if (!_stats.totalTransmutes) _stats.totalTransmutes = 0;
+        _stats.totalTransmutes++;
+        _save();
+        if (!_stats.transmuteFirst) { _stats.transmuteFirst = true; _unlock('transmute_first'); }
+        if (_stats.totalTransmutes >= 10) _unlock('transmute_10');
         break;
 
       case 'buy_item':
