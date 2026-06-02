@@ -248,7 +248,7 @@ var Menu = (function () {
     startGame(false);
   }
 
-  function _rollOrigins() {
+  function _rollOrigins(guaranteeAboveTier) {
     var cards = typeof getOrigins === 'function' ? getOrigins() : [];
 
     // Filter achievement-locked origins
@@ -302,6 +302,32 @@ var Menu = (function () {
       roll.push(picked);
     }
 
+    if (guaranteeAboveTier && roll.length > 0) {
+      var TIER_ORDER = ['Cursed', 'Common', 'Uncommon', 'Rare', 'Legendary'];
+      var baseIdx = TIER_ORDER.indexOf(guaranteeAboveTier);
+      var hasHigher = roll.some(function(o) { return TIER_ORDER.indexOf(o.tier) > baseIdx; });
+      if (!hasHigher) {
+        var weakestIdx = 0;
+        var weakestTierIdx = TIER_ORDER.indexOf(roll[0].tier);
+        for (var ri = 1; ri < roll.length; ri++) {
+          var rTierIdx = TIER_ORDER.indexOf(roll[ri].tier);
+          if (rTierIdx < weakestTierIdx) { weakestTierIdx = rTierIdx; weakestIdx = ri; }
+        }
+        for (var ti = baseIdx + 1; ti < TIER_ORDER.length; ti++) {
+          var otherNames = {};
+          roll.forEach(function(o, idx) { if (idx !== weakestIdx) otherNames[o.originName] = true; });
+          var bkt = (tierBuckets[TIER_ORDER[ti]] || []).filter(function(o) { return !otherNames[o.originName]; });
+          if (bkt.length > 0) {
+            var newPick = bkt[Math.floor(Math.random() * bkt.length)];
+            newPick.rolledName = getOriginName(newPick);
+            newPick.tier = _originTier(newPick);
+            roll[weakestIdx] = newPick;
+            break;
+          }
+        }
+      }
+    }
+
     try { localStorage.setItem('originRoll', JSON.stringify(roll)); } catch(e) {}
     return roll;
   }
@@ -329,7 +355,7 @@ var Menu = (function () {
     return RarityManager.getColor(RarityManager.getTierForNet(net));
   }
 
-  function _renderOriginPicker(skipScreenSwitch) {
+  function _renderOriginPicker(skipScreenSwitch, guaranteeAboveTier) {
     // Refund transmute debt only after a run was actually started (not on page reload)
     if (!skipScreenSwitch && localStorage.getItem('transmuteRunStarted')) {
       var debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
@@ -342,7 +368,7 @@ var Menu = (function () {
     }
 
     _selectedOrigin = null;
-    var origins = _rollOrigins();
+    var origins = _rollOrigins(guaranteeAboveTier);
     if (origins.length === 0) { _doNewGame(null); return; }
 
     // Legendary tier first, then origins with any stat changes, then by net stat descending
@@ -1349,11 +1375,26 @@ var Menu = (function () {
       var debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
       localStorage.setItem('transmuteDebt', debt + 1);
       AchievementManager.check('transmute');
+      var prevBestTier = (function () {
+        var TIER_ORDER = ['Cursed', 'Common', 'Uncommon', 'Rare', 'Legendary'];
+        try {
+          var stored = JSON.parse(localStorage.getItem('originRoll') || 'null');
+          if (Array.isArray(stored) && stored.length > 0) {
+            var best = 0;
+            stored.forEach(function (o) {
+              var idx = TIER_ORDER.indexOf(o.tier || _originTier(o));
+              if (idx > best) best = idx;
+            });
+            return TIER_ORDER[best];
+          }
+        } catch (e) {}
+        return null;
+      })();
       try { localStorage.removeItem('originRoll'); } catch(e) {}
       menuFade(function () {
         _selectedOrigin = null;
-        _renderOriginPicker(true);
-      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">🌀 New Origins await...</p>', 2500, '0.8s');
+        _renderOriginPicker(true, prevBestTier);
+      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">Shuffling new Origins...</p>', 2500, '0.8s');
     });
 
     document.getElementById('menu_origin_cancel').addEventListener('click', function () {
