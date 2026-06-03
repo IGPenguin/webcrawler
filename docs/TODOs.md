@@ -10,13 +10,6 @@
 
 ## P1 — Release-Gating & Big Wins
 
-### [FRIEND-MIN] Bug: Friend encounter pool error — areas missing minimum no-quest friends
-- Fairyland (and possibly other areas) errors when the generator tries to pull a friend-type encounter from a pool that is empty or too thin.
-- Add at least 3 no-quest friend encounter rows to every area — fairyland is the most critical gap; "no-quest friends" = friend encounters that resolve without a required quest item, serving as the generator's fallback.
-- Priority: P1 — runtime error in encounter generation; thin pools can cause failures during beta.
-- Type: Bug | Severity: Major
-- Effort: S | Gain: L
-
 ### [NEG-FRIEND] Feature: Negative friends — stat decrement encounters
 - "Negative friend" encounter variants that decrement stats (inverse of a standard friend boost) — add to late-game areas.
 - Priority: P3 — adds tension to a currently safe encounter type
