@@ -695,7 +695,7 @@ var Menu = (function () {
         + (session.encounterCount ? '&nbsp;&nbsp;&nbsp;Encounters: ' + session.encounterCount : '') + '</h5>'
         + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
         + (session.playerOriginName ? 'Origin: ' + session.playerOriginName + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
-        + 'Playtime: ' + _formatPlaytime(session.playtime || 0) + '</h5>';
+        + 'Lifetime: ' + _formatPlaytime(session.playtime || 0) + '</h5>';
       list.appendChild(scoreBar);
     }
 
@@ -899,6 +899,7 @@ var Menu = (function () {
   // ── Helpers ────────────────────────────────────────────────────────────────
 
   function _formatPlaytime(seconds) {
+    seconds = parseInt(seconds, 10) || 0;
     var m = Math.floor(seconds / 60);
     var s = seconds % 60;
     return m + 'm ' + s + 's';
@@ -935,7 +936,9 @@ var Menu = (function () {
       data.forEach(function (entry, i) {
         var el = document.createElement('div');
         el.className = 'menu-history-entry';
-        var rankColor = i === 0 ? '#FFD940' : i < 3 ? '#c0c0c0' : '#fff';
+        var rankColor = i === 0 ? '#FFD940' : i === 1 ? '#c0c0c0' : i === 2 ? '#cd7f32' : '#fff';
+        var rankBg    = i === 0 ? '#1e1900' : i === 1 ? '#181818' : i === 2 ? '#1c1100' : '#202020';
+        var medal     = i === 0 ? '👑 ' : i === 1 ? '🥈 ' : i === 2 ? '🥉 ' : (i + 1) + '. ';
         var _isWin = entry.endType && entry.endType.startsWith('win_');
         var _endColor = _isWin ? '#FFD940' : '#FF0000';
         var _endLabel;
@@ -947,13 +950,13 @@ var Menu = (function () {
         }
         el.innerHTML =
           '<div style="overflow:hidden;padding-top:3px;padding-bottom:3px;">'
-            + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; position:relative; background-color:#202020;">'
+            + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; position:relative; background-color:' + rankBg + ';">'
               + '<h3 style="position:absolute; top:0; bottom:0; right:10px; display:flex; align-items:center; z-index:3; margin:0; padding:0;">'
                 + '<i style="font-weight:600; margin-top:4px; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
-                + '#' + (i + 1) + '&nbsp;&nbsp;🎖️ ' + (entry.score || 0)
+                + '🎖️ ' + (entry.score || 0)
                 + '</i></h3>'
-              + '<h3 style="display:flex; align-items:center; height:28px; text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin:0; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
-              + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
+              + '<h3 style="display:flex; align-items:center; height:28px; text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin:0; color:' + rankColor + '; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
+              + medal + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
             + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style:normal; font-weight:400; line-height:24px;">'
             + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl&nbsp;' + (entry.level || '?') + '<br>'
             + '<span style="color:' + _endColor + ';">' + _endLabel + '</span></h5>'
@@ -1027,7 +1030,7 @@ var Menu = (function () {
       '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">🎖️ Valor: <b>' + (ghost.score || 0) + '</b></h5>'
       + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
       + (ghost.origin ? 'Origin: ' + ghost.origin + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
-      + 'Playtime: ' + _formatPlaytime(ghost.playtime || 0) + '</h5>'
+      + 'Lifetime: ' + _formatPlaytime(ghost.playtime || 0) + '</h5>'
       + '<h5 style="margin:2px 0; font-size:12px; opacity:0.5;">' + (ghost.gameVersion || '') + '</h5>';
     list.appendChild(infoEl);
 
