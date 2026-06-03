@@ -3,8 +3,7 @@
 ## 🖤 About this project
 >*A man. A dead bride. A world you broke trying to reach her.*<br>
 
-<b>Stay Dead is a free browser roguelike RPG.</b><br>
-No installation ➞ 🕹️ <b>[Play instantly on any device!](https://igpenguin.github.io/stay-dead)</b><br>
+<b>Stay Dead is a free browser roguelike RPG.</b> ➞ 🕹️ <b>[Play instantly on any device!](https://igpenguin.github.io/stay-dead)</b><br>
 
 **⚔️ Fight**, **💬 Talk**, **🎣 Fish**, and more... to push through a corrupted world, growing stronger with every death.<br>
 Recall **🧩 Memories** to unlock new content. Climb the **🪦 Rankings** and conquer **the branching ending**.
