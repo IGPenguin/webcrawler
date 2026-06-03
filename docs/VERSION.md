@@ -1,10 +1,16 @@
-## ver. 06/04/26 @ 07:00 AM
+## ver. 06/04/26 @ 07:14 AM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/03/26 @ 07:13 AM
+⚔️ New encounters across all areas
+🎣 Fishing rod and syringe usable as weapons
+🏆 Improved Reckonings rank UI layout
+✏️ Text and emoji fixes
 
 ## ver. 06/02/26 @ 11:21 PM
 ✨ Transmute fades, hides at 0 drachma
