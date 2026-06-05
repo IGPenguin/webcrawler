@@ -682,6 +682,8 @@ function calcActionBarConfig(button, adjustment) {
   // Crit zone widths: luck only — karma hook removed pending full karma overhaul
   var critSuccessW = Math.min(7, Math.max(1, Math.round(2 + pLck * 0.625)));
   var critFailW    = Math.min(10, Math.max(1, Math.round(5 - rawLck * (rawLck < 0 ? 1.25 : 0.5))));
+  // Memory sleep (teleport to Twisted Fairyland) — doubled crit window
+  if (button === 'button_sleep' && types === 'Memory') critSuccessW = Math.min(14, critSuccessW * 2);
 
   // Ensure success zone doesn't overlap crit-fail edges — action-bar.js disables crits if it does
   zoneStart = Math.max(critFailW + 1, Math.min(100 - zoneW - critFailW - 1, zoneStart));
