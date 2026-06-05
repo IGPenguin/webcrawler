@@ -1,10 +1,19 @@
-## ver. 06/04/26 @ 07:14 AM
+## ver. 06/05/26 @ 09:01 PM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/05/26 @ 09:00 PM
+🛡️ Fix DEF stat: combat, display, pips
+⚔️ New encounters added to late game
+🤲 Donate links added to credits
+🌀 Bigger teleport crit chance
+✨ Uncap Cast and Heal amounts
+⚗️ Transmute button in Origins picker
+🏆 Fix combine/reroll achievs
 
 ## ver. 06/03/26 @ 07:13 AM
 ⚔️ New encounters across all areas
