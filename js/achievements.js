@@ -8,7 +8,7 @@ var AchievementManager = (function () {
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
     { id: 'transmute_first',     emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rethink who you are.', unlock: 'Unlocked the <b>🌀 Shedding Stone</b> item.' },
-    { id: 'transmute_10',        emoji: '⚗️', desc: 'Changed your fate 10 times!', hint: 'Some identities are harder to keep.', unlock: 'Unlocked the <b>⚗️ Alchemist</b> origin.' },
+    { id: 'transmute_10',        emoji: '⚗️', desc: 'Changed your fate 10 times!', hint: 'Some identities are harder to keep.', unlock: 'Unlocked the <b>⚗️ Mystic</b> origin.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
@@ -30,7 +30,7 @@ var AchievementManager = (function () {
     { id: 'key_unlock_first',    emoji: '🔓', desc: 'Opened a lock with a key!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a lock open with an attack!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
     { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Opened a lock with a spell!', hint: 'Magic opens more than minds.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
-    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: 'Unlocked the <b>🧐 Appraiser</b> origin.' },
+    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: 'Unlocked the <b>🧐 Collector</b> origin.' },
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: 'Unlocked the <b>🏺 Tomb Raider</b> origin.' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: 'Unlocked the <b>🧥 Hobo</b> origin.' },
 

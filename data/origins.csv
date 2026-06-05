@@ -51,9 +51,9 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by
 🥩;Butcher;0;1;0;-1;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 🍀 Luck</b><br><i>Killed for a living in a good faith.;kill_30
 🧥;Hobo;1;0;0;-1;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-1 🍀 Luck</b>.<br><i>Naturally resistant to any danger.;grab_rubbish
-🧐;Appraiser;0;0;0;1;1;0;0;Gain <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b> with no downside.<br><i>Knows quality. Takes it before asking why it's there.;grab_exquisite
+🧐;Collector;0;0;0;1;1;0;0;Gain <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b>.<br><i>Knows quality. Takes it before asking why it's there.;grab_exquisite
 🏺;Raider[Name:Tomb Raider];0;1;1;1;0;0;0;Gain <b>+1 ⚔️ Atk</b>, <b>+1 🟢 Energy</b>, <b>+1 🍀 Luck</b><br><i>Everything sacred is also portable.;grab_artifact
-⚗️;Alchemist;0;0;-1;0;1;1;0;Gain <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>, lose <b>-1 🟢 Energy</b>.<br><i>Turns one thing into another. Always at a cost.;transmute_10
+⚗️;Mystic;0;0;-1;0;1;1;0;Gain <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>, lose <b>-1 🟢 Energy</b>.<br><i>Turns one thing into another. Always at a cost.;transmute_10
 ⚖️;Fence;0;0;0;1;1;0;0;Gain <b>+1 🍀 Luck</b> and <b>+1 🧠 Intellect</b> with no downside.<br><i>Knows a deal. Knows where the deals go.;buy_item_first
 💰;Profiteer;1;0;1;-2;0;0;0;Gain <b>+1 ❤️ HP</b>, <b>+1 🟢 Energy</b>, lose <b>-2 🍀 Luck</b>.<br><i>Paid someone else to grow stronger.;buy_level_first
 👁️;Haunted;0;0;0;3;-1;0;0;Gain <b>+3 🍀 Luck</b>, lose <b>-1 🧠 Intellect</b>.<br><i>Knows what it means to be watched by the dead.;rival_spot

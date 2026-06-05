@@ -152,7 +152,7 @@ Fading Wildlands;🦬;Risky Bison;Boss-Heavy;3;2;2;0;2;0;0;Thundering Menace;Eac
 Fading Wildlands;🐂;Alpha Bull;Boss-Heavy;3;2;2;0;1;0;0;Broken Charge;Charges ahead with no regrets.<br>;Got impaled by both horns at once.;none
 
 Fading Wildlands;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Fading Wildlands;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
+Fading Wildlands;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Fading Wildlands;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Fading Wildlands;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Fading Wildlands;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -494,7 +494,7 @@ Forsaken Village;🐦‍⬛;Blood Raven;Undead;2;1;3;1;0;0;0;Thirsty Bird;Aims i
 Forsaken Village;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Forsaken Village;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Forsaken Village;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
+Forsaken Village;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Forsaken Village;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Forsaken Village;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Forsaken Village;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -916,7 +916,7 @@ Twisted Fairyland;🥚;Lizard Egg;Consumable;0;0;0;0;0;0;0;Raw Food;Beautiful te
 Twisted Fairyland;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Twisted Fairyland;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Twisted Fairyland;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
+Twisted Fairyland;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Twisted Fairyland;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Twisted Fairyland;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Twisted Fairyland;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -932,7 +932,7 @@ Twisted Fairyland;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>
 Twisted Fairyland;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
 Twisted Fairyland;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 
-Twisted Fairyland;🖤;Obsidian Pebble;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Physical Defence</b>.;Who needs love anyway? <b>+1 🔰</b>;none
+Twisted Fairyland;🖤;Obsidian Pebble;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Supposedly turns one's heart to stone.<br>Provides <b>+1 🔰 Defence</b>.;Who needs love anyway? <b>+1 🔰</b>;none
 Twisted Fairyland;👺;Devil Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>👺 Devil Appearance</b>.<br><b>Demon type enemies will be passive</b>.;Gained attribute <b>👺 Devil's Appearance</b>.;none
 Twisted Fairyland;💫;Starfall Circlet;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>✨ Fortify Magic</b>.<br>Your <b>💫 Cast</b> deals <b>+1 💔 Damage</b>.</b>;Gained special skill <b>✨ Fortify Magic</b>.;none
 Twisted Fairyland;💠;Crystal Shield;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💠 Reflect Magic</b>.<br>33% chance to <b>resist enemy spells</b>.;Gained skill <b>💠 Reflect Magic</b>.;none
@@ -958,6 +958,7 @@ Twisted Fairyland;🪀;Jade Trinket;Item-Trinket;0;0;1;1;0;0;0;Handmade Ornament
 Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Intellect</b>.;Absorbed some magic knowledge;none
 
 Twisted Fairyland;🧥;Protective Coat;Item-Chest;2;0;0;0;0;0;0;Accessory;Designed for special protection.<br>Provides <b>+2 ❤️ Health</b>.;;none
+Twisted Fairyland;🦚;Peacock Pin;Item-Chest;-1;0;0;0;0;2;0;Vain Splendour;Gorgeous and absolutely untrustworthy.<br>Provides <b>+2 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.;Worth it, probably.;none
 Twisted Fairyland;🪈;Ratcatcher Flute;Item-Trinket;0;0;0;-2;4;0;0;Malevolent Instrument;Magical instrument for conquering minds.<br>Provides <b>+4 🧠 Intellect</b> for <b>-2 🍀 Luck</b>.;Makes captivating sounds;none
 Twisted Fairyland;🧭;Cursed Compass;Item-Trinket;0;0;2;-2;0;0;0;Navigation Tool;Always points towards the person holding it.<br>Provides <b>+2 🟢 Energy</b> for <b>-2 🍀 Luck</b>.;Felt a werid cold surge;none
 Twisted Fairyland;㊙️;Crimson Medailon;Item-Trinket;2;0;0;-4;0;0;0;Rare Trinket;Something feels off about this trinket.<br>Provides <b>+2 ❤️ Health</b> for <b>-4 🍀 Luck</b>.;;none
@@ -975,6 +976,7 @@ Twisted Fairyland;🎎;Lucky Chime;Item;0;0;0;1;0;0;0;Accessory;Traditional prot
 
 Twisted Fairyland;⛏;Rusty Pickaxe;Item-Weapon;0;1;-1;0;0;0;0;Mining Tool;Meant for stone, now used for survival.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-1 🟢 Energy</b>.;Oof, that is heavy;none
 Twisted Fairyland;🔪;Twisted Blade;Item-Weapon;0;1;0;0;-2;0;0;Ritual Tool;The sacrifical blade demands offering.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;Felt a chill on your back;none
+Twisted Fairyland;🧣;Silk Wraps;Item-Weapon;0;-1;0;0;0;2;0;Fae Weave;Woven from something that invisible in sunlight.<br>Provides <b>+2 🔵 Mana</b> for <b>-1 ⚔️ Attack</b>.;The fabric is warm..;none
 Twisted Fairyland;🪞;Malevolent Mirror;Item-Trinket;0;0;0;-2;0;1;0;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Reality itself fractured;none
 Twisted Fairyland;🪘;Tribal Drum;Item-Trinket;0;0;-1;0;2;0;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under your arm;none
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on your hands;none
@@ -983,7 +985,9 @@ Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;0;Trace of Life;Rather do
 Twisted Fairyland;🐍;Snake Band;Item-Trinket;0;0;1;0;0;0;0;Reptile Coil;Still warm from whatever wore it last.<br>Provides <b>+2 🟢 Energy</b>.;Coiled around your wrist without asking.;none
 Twisted Fairyland;🦂;Scorpion Pin;Item-Trinket;-1;1;0;0;0;0;0;Wicked Brooch;The legs are real. Were real.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 ❤️ Health</b>.;Drew blood on the way in.;none
 Twisted Fairyland;🩻;Cursed Lens;Item-Trinket;0;0;0;-2;0;2;0;Corrupted Visor;Exposes the hidden world under the skin.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Saps the good away;none
+Twisted Fairyland;🧿;Cursed Eye;Item-Trinket;0;0;0;-2;0;2;0;Fae Relic;Sees things that haven't happened yet.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Saw too much at once.;none
 Twisted Fairyland;🎭;Fused Masks;Item-Head;0;0;0;0;-2;2;0;Tainted Accessory;Provides maddening power.<br>Provides <b>+2 🔵 Mana</b>for <b>-2 🧠 Intellect</b>.;Lost clarity for power.;none
+Twisted Fairyland;🥾;Trampled Boots;Item-Legs;0;0;2;0;-1;0;0;Battered Footwear;Worn by something that didn't stop when it should have.<br>Provides <b>+2 🟢 Energy</b>, suffer <b>-1 🧠 Intellect</b>.;Kept moving despite everything.;none
 
 Twisted Fairyland;💌;Ominous Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
 
@@ -1006,6 +1010,8 @@ Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶\🗿;0;0;0;0;0;0
 Twisted Fairyland;🦤;Hungry Dodo;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Unusal Critter;Known for being selfish, maybe not this time.<br>It is looking for: n/a;Willingly shared something.;none
 
 //River of Sorrows
+River of Sorrows;🏺;Hollow Amphora;Prop;0;0;0;0;0;0;0;Waterlogged Relic;An empty jar, moving against the current.<br>.;Left it alone.;none
+River of Sorrows;🪨;Tide Mark;Prop;0;0;0;0;0;0;0;River Sign;Stained where the water used to reach.<br>;Measured the cost of it.;none
 River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.;none
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.;none
 River of Sorrows;🪵;Floating Logs;Prop;0;0;0;0;0;0;0;Scattered Rubble;Building remains dancing on the surface.<br>;Sailed through the debris.;none
@@ -1074,6 +1080,7 @@ River of Sorrows;🌊;Flowing Waves;Fishing;0;0;0;0;0;0;0;Water Condition;Water 
 River of Sorrows;🌊;Restless Waves;Fishing;0;0;0;0;0;0;0;Water Condition;Water waves splashing all around.<br>;Something jumped the hook!;none
 River of Sorrows;🌧️;Slight Rainfall;Fishing;0;0;0;0;0;0;0;Weather Condition;Small drops are hitting the surface.<br>;The rain has lured some prey!;none
 River of Sorrows;🌩️;Distant Storm;Fishing;0;0;0;0;0;0;0;Weather Condition;Peace always comes after the storm.<br>;Something jumped the hook!;none
+River of Sorrows;🎏;Fisherman's Marker;Fishing;0;0;0;0;0;0;0;River Detail;Strung on a line that goes nowhere now.<br>;Sailed towards the horizon.;none
 
 River of Sorrows;⛈️;Nasty Storm;Trap-Sleep;0;0;0;0;-2;0;0;Weather Condition;Rain lashes the deck without mercy.<br>;Morale broken by the weather;none
 River of Sorrows;⛈️;Severe Storm;Trap-Sleep;-3;0;0;0;0;0;0;Weather Condition;Better not linger .<br>;Got struck by lightning!;none
@@ -1085,11 +1092,14 @@ River of Sorrows;🛶;Wrecked Skiff;Trap-Obstacle;0;0;0;0;0;0;0;River Obstacle;B
 River of Sorrows;🌊;Tilting Current;Trap-Big;-4;0;0;0;0;0;0;River's Wrath;The water inverts without warning.<br>;Rock found your spine before you found footing.;none
 River of Sorrows;🌀;Sudden Whirlpool;Trap-Big;-2;0;0;0;0;0;0;Imminent Danger;Appeared without warning beneath the boat.<br>;Spun helplessly into the current;none
 River of Sorrows;🪵;Speeding Logs;Trap;-2;0;0;0;0;0;0;River Hazard;Bearing down without warning.<br>;Broke several bones on impact.;none
+River of Sorrows;🕸️;Ghost Net;Trap;-3;0;0;0;0;0;0;Abandoned Snare;Spectral fibers sparkle with dew.<br>;Got the life essence sapped.;none
 River of Sorrows;🧊;Drifting Iceberg;Trap-Sleep;-1;0;0;0;0;0;0;Freezing Block;Cold crawls deep inside your bones.<br>;Sleep left you stiff and sore.;none
 River of Sorrows;🌧️;Cold Drizzle;Trap-Sleep;-1;0;0;0;0;0;0;Draining Rain;Soaks through anything you wear.<br>;You rested, joints ache badly.;none
 River of Sorrows;⚓;Anchor Chain;Trap-Big;-2;0;0;0;0;0;0;Mooring Hazard;Half-buried in wet mud.<br>;Chain whipped and broke your ribs.;none
 River of Sorrows;🛶;Capsized Canoe;Trap-Big;-2;0;0;0;0;0;0;Sunken Wreck;Balanced badly on the bank.<br>;You slipped, canoe crushed you.;none
+River of Sorrows;🌊;Flood Surge;Trap-Big;-2;0;-1;0;0;0;0;Flash Flood;The water rises without warning.<br>Speed has nothing to do with surviving this.;The surge had the final word.;none
 River of Sorrows;🪝;Tangled Hook;Trap-Roll;-1;0;-1;0;0;0;0;Fishing Hazard;Hooks glint under shallow water.<br>;You stumbled, hooks bit deep.;none
+River of Sorrows;🌀;Spinning Current;Trap-Roll;-9;0;0;0;0;0;0;River Hazard;The water moves in ways rivers shouldn't.<br>;Spun out of this world.;none
 River of Sorrows;🕯️;Riverside Lantern;Trap-Sleep;1;0;0;0;0;0;0;Safe Light;Keeps the darkest thoughts away.<br>;Your rest feels guarded.;none
 River of Sorrows;💧;Tearfall Rain;Trap-Sleep;-1;0;-1;0;0;0;0;Silent Storm;It didn't wet your skin, just your soul.<br>;You woke already sobbing.;none
 River of Sorrows;🫧;Flooded Memory;Trap-Sleep;0;0;-2;0;0;0;0;Lingering Thought;Depths that show faces from another life.<br>;Mind staggered under its weight.;none
@@ -1107,6 +1117,7 @@ River of Sorrows;🗣️;Muffled Screams;Curse;0;0;0;-2;0;0;0;Distant Noise;Dist
 River of Sorrows;🌫️;River Mist;Curse;0;0;0;0;-1;0;0;Creeping Fog;Carries whispers of the long departed.<br>;Something cold passed right through you;none
 River of Sorrows;⛵;Phantom Vessel;Curse;0;0;0;0;-1;0;0;Eerie Sighting;Appears on the horizon then simply isn't there.<br>;Unsure if it was ever real;none
 River of Sorrows;🌑;Absent Reflection;Curse;0;0;0;0;-1;0;0;Eerie Sign;Your face does not appear in the water.<br>;Couldn't shake the awful feeling;none
+River of Sorrows;💭;Drowned Memory;Curse;0;0;0;0;-4;1;0;Haunting Recollection;The water takes a recognizable shape.<br>;The recognition cost something.;none
 
 River of Sorrows;🕷️;Water Skipper;Small;1;0;3;0;-1;0;0;Arthropod;Darts across the surface like a nervous thought.<br>;Punctured somewhere that wouldn't stop bleeding.;none
 River of Sorrows;🦑;Sinister Squidling;Small;1;2;1;0;-1;0;0;Cephalopod;Wriggles with unsettling energy.<br>;Ink in the lungs, current in the veins.;none
@@ -1128,10 +1139,14 @@ River of Sorrows;🐀;Silt Ratter;Pet;1;0;4;0;0;0;0;River Wretch;Shivers on the 
 River of Sorrows;🦜;Annoying Parrot;Pet;1;0;3;0;0;0;0;Abandonded Pet;Keeps talking shit back at you.<br>;The beak found the eye first.;none
 River of Sorrows;🐸;Pallid Toad;Pet;3;0;3;0;-1;1;0;Pond Familiar;Sits in water that stopped moving long ago.<br>;Accompanied by a toad.;none
 River of Sorrows;🦦;Hollow Otter;Pet;4;0;3;0;1;0;0;River Remnant;Moves like it remembers being happy.<br>;Dragged under without warning.;none
+River of Sorrows;🦄;Pale Kelpie;Pet;4;0;3;1;2;0;0;Water Horse;Offered itself calmly, then changed its mind.;Drowned before you saw the trick.;none
 
 River of Sorrows;👤;Stranded Soul;Recruit;2;0;2;-1;2;0;0;River Wanderer;Rows in circles, looks confused.<br>;They brought your misfortune.;none
 
 River of Sorrows;🦫;Gnawing Terror;Standard;4;2;3;0;2;0;0;Busy Maw;Teeth made for wood, repurposed for bone.<br>;Dragged you to a dam of bones.;none
+River of Sorrows;🦀;Tide Wretch;Standard;4;3;2;0;0;0;0;River Scavenger;Missing something vital and not adjusting.;Claws found the soft parts first.;none
+River of Sorrows;🐸;River Crawler;Standard;5;3;2;0;0;0;0;Mud Dweller;Patient in a way that is never benign.;Caught you mid-step.;none
+River of Sorrows;🦑;Sunken Grasper;Standard;4;2;3;0;0;0;0;Ink Horror;Eight arms and it uses none of them graciously.;Couldn't see what finished it.;none
 
 River of Sorrows;🐟;Pale Mirrorfish;Reflective;4;1;2;0;-1;0;0;River Oddity;Scales like silver, returns what you give.<br>;Swallowed in one pale flash.;none
 River of Sorrows;🐠;Depressed Angelfish;Reflective;3;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
@@ -1155,18 +1170,23 @@ River of Sorrows;🐚;Barbed Wretch;Stingy;4;3;2;0;0;0;1;Shell Lurker;A hunched 
 River of Sorrows;♨️;Scalding Elemental;Hot;4;3;2;0;0;0;0;Thermal Horror;Erupts where the riverbed has cracked.<br>;Boiled alive in sorrow's current.;none
 River of Sorrows;🧜🏻‍♀️;Blazing Siren;Hot;4;1;2;0;3;2;0;Scalding Lure;Runs warm enough to blister the water around her.<br>;Taken down by a siren.;none
 River of Sorrows;👤;Fever Shade;Hot;4;2;3;0;0;0;0;Heat Specter;Dead warmth fills the cold air around it.<br>;The fever became your last dream.;none
+River of Sorrows;👹;Scalded Revenant;Hot;4;3;2;0;1;1;0;Heat Specter;The water around it shimmers with unnatural warmth.;Fever took hold and didn't let go.;none
+River of Sorrows;🪱;Fever Leech;Hot;4;2;3;0;0;1;0;Burning Parasite;Clings to the hull. Clings to everything.;The warmth became unbearable.;none
 
 River of Sorrows;‍🦈;Great Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Something displaced the water too early.<br>;Gone before the water settled.;none
 River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops.<br>;Stampeded to your death.;none
 River of Sorrows;🧜🏿‍♂️;Sunken Hauler;Heavy;5;3;3;0;1;0;0;River Brute;Drags things under until the struggling stops.<br>;Held down past any reasonable limit.;none
+River of Sorrows;🐋;Mire Hulk;Heavy;6;3;3;0;0;0;0;River Leviathan;Too large to avoid. Too slow to respect.;Crushed flat against the current.;none
 
 River of Sorrows;🐆;River Stalker;Swift;4;3;2;0;0;0;0;Bank Predator;Paces the bank, each step soft as grief.<br>;Taken from behind like you were expected.;none
 River of Sorrows;🐍;Aquatic Snake;Swift;3;4;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.;none
 River of Sorrows;🐬;Laughing Scumbag;Swift;4;1;3;0;4;0;0;Sinister Mammal;Makes annoying squeaking noises.<br>;Outsmarted by a dolphin.;none
 River of Sorrows;🧜🏻‍♂️;Pale Drifter;Swift;4;3;2;0;2;0;0;Ghostly Current;Cuts through grief-thickened water without slowing.<br>;Gone before you hit the water.;none
+River of Sorrows;🐍;Sorrow Eel;Swift;5;3;3;0;-1;0;0;Tainted Snake;The water ripples before you can see it.<br>;Devoured by a water snake.;none
 
 River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Something the River keeps instead of letting go.<br>;Hollowed out from the inside.;none
 River of Sorrows;🗣️;Weeping Shade;Spirit;2;0;3;0;-1;0;0;Persistent Dead;Should have stayed underground.<br>;Fell to what wouldn't stay dead.;none
+River of Sorrows;👤;Submerged Wail;Spirit;3;0;2;0;3;2;0;River Spirit;The sound arrives before it does.;Pulled under from the inside.;none
 
 River of Sorrows;🧜‍♂️;Drowned Tempter;Demon;3;2;2;0;2;1;0;Abyssal Charmer;Promises breath beneath the waves.<br>;You followed him under, and never surfaced.;none
 River of Sorrows;🧜‍♀️;Silt Siren;Demon;3;1;3;0;3;1;0;Luring Shade;Voice muffled, eyes burning bright below.<br>;You leaned closer and the river took you.;none
@@ -1175,6 +1195,8 @@ River of Sorrows;🦅;River Harpy;Demon;3;3;2;0;2;0;0;Winged Threat;Swoops low o
 
 River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;4;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
 River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful — not anymore.<br>;Got both eyes pecked out.;none
+River of Sorrows;💀;Wrecked Captain;Undead;5;2;3;0;2;0;0;Lost Authority;The ship is gone. He's still giving orders.;Outranked you to death.;none
+River of Sorrows;☠️;Pale Corsair;Undead;5;4;1;0;-1;0;0;Sunken Pirate;Sailed these waters long before they turned sad.;Swords don't care who holds them.;none
 
 River of Sorrows;💀;Hollow Fisherman;Friend;0;0;0;1;1;0;0;Mourning Man;Line in the water, eyes on the distance.<br>Not fishing for fish.;Gestured you a good fortune.;none
 River of Sorrows;🧔;Lost Boatman;Friend;0;0;1;0;0;0;0;River Wanderer;No oar. Still moving upstream.<br>Been at this a long time.;Steadied your balance in the current.;none
@@ -1217,8 +1239,11 @@ River of Sorrows;⭐️;Fallen Star;Item-Trinket;0;0;0;0;0;3;0;<b>Artifact</b>;R
 River of Sorrows;🌙;Moonstone Sickle;Item-Weapon;2;0;0;0;0;1;0;Lunar Gem;Gleams with inconspicuous light.<br>Provides <b>+2 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Felt a surge of power.;none
 // - ends here
 
+River of Sorrows;🛡️;Mourner's Plate;Item-Trinket;-1;0;0;0;0;0;2;Heavy Protection;Heavier than it looks. Heavier than you wanted.<br>Provides <b>+2 🔰 Defence</b> for <b>-1 💔 Health</b>.;The weight felt earned.;none
+River of Sorrows;🪖;Cracked Helm;Item-Head;-1;0;0;0;0;0;1;Damaged Protection;Protects the skull, barely. The crack runs deeper than it looks.<br>Provides <b>+1 🔰 Defence</b> for <b>-1 💔 Health</b>.;Better than nothing.;none
+
 River of Sorrows;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
+River of Sorrows;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 River of Sorrows;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 River of Sorrows;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</b> when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_30
 River of Sorrows;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
@@ -1248,14 +1273,19 @@ River of Sorrows;🎖️;Starlight Amulet;Item-Trinket;0;0;0;0;0;2;0;Magical Acc
 River of Sorrows;💧;Frozen Teardrop;Item;0;0;0;0;-2;2;0;Magical Pin;Tangible proof of the previous sins.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🧠 Charisma</b>.;Felt a bitter memory;none
 River of Sorrows;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Manuscript;Secrets of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;You will never be the same.;none
 River of Sorrows;🩴;Rubber Sliders;Item-Legs;0;0;1;1;0;0;0;Cheap Footwear;Surprisingly good for navigating slippery banks.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Squelch, squelch.;none
+River of Sorrows;🥾;Wading Boots;Item-Legs;0;0;2;-1;0;1;0;River-Soaked;Whatever they waded through left a mark.<br>Provides <b>+2 🟢 Energy</b>, suffer <b>-1 🍀 Luck</b>.;Felt the current pulling less.;none
+River of Sorrows;👟;Sailor's Brace;Item-Legs;0;0;2;-1;0;0;0;River Gear;Worn by the ones who rowed until they couldn't.<br>Provides <b>+2 🟢 Energy</b> for <b>-1 🍀 Luck</b>.;Kept moving. Mostly.;none
 River of Sorrows;🕶;Cool Sunglasses;Item-Head;0;0;0;2;0;0;0;Flashy Accessory;Anyone can be a hero with these.<br>Provides <b>+2 🍀 Luck</b>.;You feel a lot cooler.;none
 River of Sorrows;👙;Sexy Bikini;Item-Chest;0;0;2;0;-3;0;0;Swimming Equipment;Improves movement, draws attention a lot.<br>Provides <b>+2 🟢 Energy</b> for <b>-3 🧠 Charisma</b>.;All eyes are on you!;none
 River of Sorrows;👓;Reading Glasses;Item-Head;0;0;0;0;2;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.;none
 River of Sorrows;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
 River of Sorrows;🪢;Twisted Knot;Item-Trinket;0;0;1;0;0;0;0;Endurance Symbol;Specially crafted for survival.<br>Provides <b>+2 🟢 Energy</b>.;Gained the power of the wild.;none
+River of Sorrows;🧭;Drifter's Compass;Item-Trinket;0;0;0;-1;2;0;0;River Tool;Points somewhere. Not necessarily where you want to go.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;Found a direction. Not sure which one.;none
 River of Sorrows;🩺;Mariner's Ear;Item-Head;0;0;0;1;0;1;0;Diagnostic Tool;Allows you to hear the heartbeat of the river.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;A steady, wet rhythm.;none
+River of Sorrows;🪸;Coral Crown;Item-Head;0;0;0;-2;0;2;0;River Growth;Alive enough to move with the current.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;The current picked your thoughts.;none
 River of Sorrows;🦺;Safety Vest;Item-Chest;2;0;0;0;0;0;0;Bright Gear;Supposed to keep you afloat in the dark waters.<br>Provides <b>+2 ❤️ Health</b>.;Visibility is key.;none
 River of Sorrows;🪝;Salvaged Hook;Item-Weapon;0;2;0;-1;0;0;0;Metal Tool;A twisted remnant of a consumerist era.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 🍀 Luck</b>.;Pushing through the debris.;none
+River of Sorrows;🪝;Gaff Hook;Item-Weapon;0;1;0;0;0;0;0;Repurposed Tool;Made to pull, repurposed to tear.<br>Provides <b>+1 ⚔️ Attack</b>.;Found a use for it.;none
 
 River of Sorrows;🔖;Wet Memo;Item;0;0;0;0;1;0;0;Note;Provides an insight and <b>+1 🧠 Intellect</b><br>n/a;Embraced the new knowledge.;none
 River of Sorrows;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;0;Warning Sign;Gives away all the bad intentions.<br>Provides <b>+2 🧠 Intimidation</b> for <b>-2 🍀 Luck</b>.;Joined the dark side!;none
@@ -1297,6 +1327,7 @@ Shrouded Necropolis;⚱️;Burial Urn;Prop;0;0;0;-1;0;0;0;Silent Relic;Its colou
 Shrouded Necropolis;🪦;Desolate Gave;Prop;0;0;0;0;-1;0;0;Final Destination;The text is almost fully faded.<br>;Haunted by the resident spirit;none
 Shrouded Necropolis;⏳;Frozen Hourglass;Prop;0;0;-1;0;0;0;0;Time Anomaly;Its sands stopped a while ago.<br>;Woke up with a sluggish aura;none
 Shrouded Necropolis;⚰️;Broken Coffin;Prop;0;0;0;0;-1;0;0;Ruins;Wood splinters litter the ground.<br>;Sleeping here took its toll;none
+Shrouded Necropolis;🔔;Hollow Bell;Prop;0;0;0;0;0;0;0;Silent Metal;Hangs from a post with no rope to ring it.<br>The sound comes anyway.;Continued your journey.;none
 
 Shrouded Necropolis;🏺;Ancient Urn;Container;0;0;0;0;0;0;0;Silent Memories;Sealed tight with cracked wax.<br>;;none
 Shrouded Necropolis;📚;Burnt Books;Container;0;0;0;0;0;0;0;Wasted Wisdom;Laying among a pile of ash.<br>;;none
@@ -1340,6 +1371,7 @@ Shrouded Necropolis;🕸️;Sticky Web;Trap-Roll;0;0;-3;0;0;0;0;Minor Inconvenie
 Shrouded Necropolis;🔥;Ember Pit;Trap-Attack;-1;0;0;0;0;0;0;Lingering Heat;A patch of still-warm coals.<br>;Scorched your fingers, but survived.;none
 Shrouded Necropolis;➿;Duelist's Glyph;Trap-Attack;0;1;0;0;0;0;0;Combat Mark;Carved into a gravestone, probably by a sword.<br>;Learned a new technique.;none
 Shrouded Necropolis;🌒;Moonless Watch;Trap-Sleep;-1;0;0;0;-2;0;0;Dark Curse;Darkness thick enough to press behind the eyes.<br>Bad dreams follow you out.;You slept. The nightmares did not.;none
+Shrouded Necropolis;🌫️;Necrotic Mist;Trap-Sleep;-3;0;0;0;0;0;0;Dark Fog;Rolls in from the crypts just before dawn.<br>;Breathed the dark in and stopped.;none
 Shrouded Necropolis;🧊;Frozen Block;Trap-Obstacle;0;0;-2;0;0;0;0;Petrified Magic;Doesn't care that you need to pass.<br>;Cold seeps into your bones.;none
 Shrouded Necropolis;🦴;Bone Barricade;Trap-Obstacle;0;0;0;-1;0;0;0;Grim Blockage;Someone stacked these here deliberately.<br>;Scattered them and kept moving.;none
 Shrouded Necropolis;🪦;Crypt Slab;Trap-Obstacle;0;0;0;0;0;0;0;Unmoved Stone;Hasn't moved since the last thing was buried here.<br>;Shifted it with everything you had.;none
@@ -1347,6 +1379,7 @@ Shrouded Necropolis;🪦;Crypt Slab;Trap-Obstacle;0;0;0;0;0;0;0;Unmoved Stone;Ha
 Shrouded Necropolis;☠️;Cult Altar;Altar;-1;0;0;0;0;1;0;Ritual Place;Sacrifice is still laying on the ground.<br>;Sacrificed blood for power;none
 Shrouded Necropolis;🌑;Darkened Altar;Altar;-1;0;0;0;0;2;0;Ritual Place;The stone feels cold to the touch.<br>;;none
 Shrouded Necropolis;🌌;Starlight Mural;Altar;0;0;0;0;0;2;0;Ritual Place;The skies will show you the way.<br>;Received celestial blessing;none
+Shrouded Necropolis;🌸;Scattered Petals;Altar;0;0;0;-1;0;1;0;Faded Memorial;Still fresh, someone was here recently.<br>;Found something worth pausing for.;none
 
 Shrouded Necropolis;🕷️;Hollow Spider;Small;0;0;2;0;-1;0;0;Empty Shell;Seems long dead, but still crawling.<br>;Got webbed into sleep.;none
 Shrouded Necropolis;🕷️;Shadow Spider;Small;1;2;1;0;-1;0;0;Venomous Insect;Lurks in the shadows.<br>;Fell into an eternal sleep.;none
@@ -1383,9 +1416,12 @@ Shrouded Necropolis;🧖🏻‍♀️;Guardian Angel;Friend;1;0;0;0;0;0;0;Sacred
 Shrouded Necropolis;💀;Brittle Skeleton;Standard;3;3;1;0;-1;0;0;Restless Bones;Looks like its gonna fall apart.<br>;Rattling hands tore you apart.;none
 Shrouded Necropolis;💀;Bone Sentinel;Standard;5;2;2;0;-1;0;0;Restless Bones;Silent guardian of this realm.<br>;Ground down by patient, silent blows.;none
 Shrouded Necropolis;💀;Skeleton Mage;Standard;4;1;1;0;-1;3;0;Restless Bones;It surely carries lot of diseases.<br>;The spell unraveled you completely.;none
+Shrouded Necropolis;☠️;Bone Revenant;Standard;5;3;2;0;0;0;0;Stubborn Dead;Doesn't know why it's still here.<br>;Kept moving past you.;none
+Shrouded Necropolis;🪖;Hollow Warden;Standard;5;3;2;0;1;0;0;Grave Sentinel;Has guarded something here since the rot set in.<br>;Guarded right out of the living.;none
 
 Shrouded Necropolis;🎭;Laughing Mask;Reflective;4;4;2;0;-1;0;0;Eerie Presence;Eyes seem to follow your every move.<br>;Died by your own hand.;none
 Shrouded Necropolis;🌚;Moon Wraith;Reflective;3;0;3;0;0;3;0;Night Specter;Absorbs light, returns only pain.<br>;Scorched with endless stare.;none
+Shrouded Necropolis;🔮;Shifting Sentry;Reflective;4;0;0;0;2;4;0;Burning Echo;Shoots searing projectiles.<br>;Scorched to ashes.;none
 
 Shrouded Necropolis;💀;Crypt Guardian;Tough;4;2;3;0;-1;0;2;Restless Bones;Silent watcher of forgotten paths.<br>;Silenced by an undead hand.;none
 Shrouded Necropolis;🪨;Cursed Boulder;Tough;3;3;1;0;0;0;2;Malevolent Spell;It won't let you go without a fight.<br>;Crushed by a giant rock.;none
@@ -1393,10 +1429,14 @@ Shrouded Necropolis;🪲;Hardshell Beetle;Tough;3;2;2;0;1;0;2;Shiny Carapace;Ref
 
 Shrouded Necropolis;🐍;Venomous Serpent;Toxic;4;3;1;0;-1;0;0;Coldblooded Predator;Scales glisten in the moonlight.<br>;Suffered a venomous bite.;none
 Shrouded Necropolis;🪳;Glowing Cockroach;Toxic;3;1;1;0;-1;0;0;Annoying Insect;Carries a giant pair of mandibles.<br>;Contracted a deadly disease.;none
+Shrouded Necropolis;🧟;Putrid Shambler;Toxic;5;2;3;0;-1;0;0;Shambling Rot;Moves slow enough that you underestimate it.<br>;The rot spread through the wound.;none
 
 Shrouded Necropolis;🦎;Ashback Salamander;Hot;4;3;2;0;3;0;0;Cinder Crawler;Leaves a scorched trail behind.<br>;Burned by intense heat.;none
+Shrouded Necropolis;🎃;Smoldering Revenant;Hot;4;3;1;0;-1;1;0;Burning Remnant;The flame inside the skull hasn't gone out.<br>;Lit you up on the way out.;none
+Shrouded Necropolis;🔥;Howling Flame;Hot;5;3;2;0;0;2;0;Burning Apparition;Feeds on pyres lit for other things.<br>;Burned from the inside out.;none
 Shrouded Necropolis;🦂;Grave Scorpion;Stingy;4;3;3;0;0;0;0;Tomb Hunter;Nests beneath the gravestones.<br>;The sting found your weakspot.;none
 Shrouded Necropolis;🗡️;Possesed Dagger;Stingy;3;3;1;0;-1;0;0;Deadly Weapon;Always deadly on the first touch.<br>;Cut your own throat;none
+Shrouded Necropolis;🦎;Barbed Lizard;Stingy;4;3;2;0;1;0;0;Scaled Menace;The spines grew in after the rest of it died.<br>;Spines found the gap without looking.;none
 
 Shrouded Necropolis;🧙‍♂️;Fallen Acolyte;Recruit;3;1;1;0;3;3;0;Forsaken Outcast;Your presence disturbed their ritual.<br>;Sacrificed to the ancient gods;none
 
@@ -1440,7 +1480,7 @@ Shrouded Necropolis;🧞‍♀️;Twilight Wraith;Spirit;2;2;1;0;-1;1;0;Ethereal
 Shrouded Necropolis;🔥;Eternal Bonefire;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Welcoming aura radiates all around.<br>Provides Instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 Shrouded Necropolis;📦;Schrödinger's Box;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>📦 Dead or Alive</b>.<br>50% chance to <b>avoid death</b> on fatal hit.;Gained skill <b>📦 Dead or Alive</b>.;quest_first
-Shrouded Necropolis;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
+Shrouded Necropolis;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Shrouded Necropolis;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Shrouded Necropolis;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
 Shrouded Necropolis;📼;Rewind Tape;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;destiny_10
@@ -1468,6 +1508,8 @@ Shrouded Necropolis;🗡️;Thirsty Blade;Item-Weapon;-1;3;0;0;0;0;0;Cursed Weap
 Shrouded Necropolis;🦴;Human Femur;Item-Weapon;0;1;0;0;0;0;0;Human Remains;May the previous owner rest in pieces.<br>Provides <b>+1 ⚔️ Damage</b>.;That is just plain wrong;none
 
 Shrouded Necropolis;🎩;Fancy Hat;Item-Head;0;0;0;0;3;0;0;Stylish Accessory;Still shines bright, just like old times.<br>Provides <b>+3 🧠 Charisma</b>.;You are feeling very fancy.;none
+Shrouded Necropolis;🧣;Burial Shroud;Item-Head;-1;0;0;0;0;2;0;Grave Garment;Wrapped around things that didn't stay dead.<br>Provides <b>+2 🔵 Mana</b> for <b>-1 💔 Health</b>.;Put on a stranger's grief;none
+Shrouded Necropolis;👁️;Void Circlet;Item-Head;-1;0;0;0;0;3;0;Dark Relic;Opens something in the forehead that was better closed.<br>Provides <b>+3 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.;Something looked back through it.;none
 Shrouded Necropolis;💍;Engagement Ring;Item-Trinket;2;0;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in your chest.;none
 Shrouded Necropolis;🔗;Shattered Shackles;Item-Trinket;0;0;0;2;0;0;0;Freedom Relic;Remnants of some lucky prisoner's captivity.<br>Provides <b>+3 🍀 Luck</b>.;Felt the chains of the past.;none
 Shrouded Necropolis;🪲;Cursed Scarab;Item-Trinket;-2;0;0;5;0;0;0;Shiny Object;An unauthorized loot from someone's tomb.<br>Provides <b>+5 🍀 Luck</b> for <b>-2 💔 Health</b>.;Ancient curse settled in you;none
@@ -1476,6 +1518,7 @@ Shrouded Necropolis;💀;Skull Signet;Item-Trinket;0;1;0;-2;0;0;0;Death Mark;Mad
 Shrouded Necropolis;🪞;Tarnished Locket;Item-Trinket;-1;0;0;0;4;0;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart almost skipped a beat.;none
 Shrouded Necropolis;♠️;Grave-Marker Pin;Item-Trinket;0;0;0;0;0;3;0;<b>Artifact</b>;A cold, black spade that pins your thoughts to the earth.<br>Provides <b>+3 🔵 Mana</b>.;Grounded in death.;none
 Shrouded Necropolis;💉;Infected Needle;Item-Weapon;-2;3;0;0;0;0;0;<b>Artifact</b>;One prick is all it takes to share the rot.<br>Provides <b>+3 ⚔️ Attack</b> for <b>-2 💔 Health</b>.;The rot spreads.;none
+Shrouded Necropolis;🩳;Hollow Wrappings;Item-Legs;-1;0;3;0;0;0;0;Cursed Binding;Makes one lose their will a little.<br>Provides <b>+3 🟢 Energy</b> for <b>-1 💔 Health</b>.;The binding held where you didn't.;none
 
 Shrouded Necropolis;🍷;Blood Wine;Consumable;1;0;0;-3;0;0;0;Dark Elixir;Might have some mysterious effects.<br><b>+1 ❤️ Health</b> temporarily for <b>-3 🍀 Luck</b>;Tastes of smoldering ash.;none
 Shrouded Necropolis;🧄;Spicy Garlic;Consumable;1;0;0;0;0;0;0;Vegetable;Keeps the harm at bay.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Increased immunity;none
@@ -1489,15 +1532,13 @@ Shrouded Necropolis;👰🏻‍♀️;Enraged Bride;Boss-Heavy;6;3;2;0;12;0;0;Fo
 Shrouded Necropolis;👰🏻‍♀️;Vengeful Bride;Boss-Swift;5;3;4;0;6;0;0;Forgotten Love;She's moving so fast, you struggle to keep up.<br>;Failed to face your true love.;none
 Shrouded Necropolis;👰🏻;Wicked Bride;Boss-Demon;4;2;3;0;-1;0;0;Forgotten Love;There's some strange glow in her eyes.<br>;Failed to face your true love.;none
 Shrouded Necropolis;👰🏻;Starved Bride;Boss-Undead;5;3;2;0;3;0;0;Forgotten Love;Almost like she is about to chew on you.<br>;Failed to face your true love.;none
-//ADD - Reflective
-//ADD - Hot
 
 //Fishing
 Fishing;🧜🏼‍♀️;Lusty Mermaid;Upgrade;0;0;0;0;0;0;0;Mythical Creature;Makes your wish happen just this one time.<br>Provides instant <b>🎉 Level Up!</b>;;none
 Fishing;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;;none
 
 Fishing;🔱;Titanslayer Trident;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Held by the ocean god a long time ago.<br>Provides <b>+2 ⚔️ Damage</b>.;Grabbed a legendary weapon!;fish_legendary_first
-Fishing;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Physical Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
+Fishing;🪣;Sturdy Bucket;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Possibly can serve as makeshift helmet.<br>Provides <b>+1 🔰 Defence</b>.;Its not stupid if it works! <b>+1 🔰</b>;fish_no_bait_30
 Fishing;🧵;Lucky Fishline;Item;0;0;0;0;0;0;0;<b>Artifact</b>;33% chance to <b>keep the <b> 🪱 Bait</>b when fishing</b>.<br>;Reinforced your fishing pole.;fish_bait_30
 Fishing;🐴;Horse Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special attribute <b>🐴 Prey Appearance</b>.<br><b>Enemies are passive</b> until attacked.;Gained attribute <b>🐴 Prey Appearance</b>.;gamble_lose_first
 Fishing;♥️;Extra Life;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Provides a new skill <b>💀 Cheat Death</b>.<br>Get a <b>second chance to live</b> upon dying.;Gained skill <b>💀 Cheat Death</b>.;reincarnated_first
@@ -1559,6 +1600,8 @@ Fishing;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Manuscript;Secrets 
 Fishing;🤿;Scuba Mask;Item-Head;0;0;0;0;3;0;0;Diving Gear;Glass is fogged with ancient, trapped air.<br>Provides <b>+3 🧠 Perception</b>.;The depths look different now.;none
 Fishing;🎣;Reinforced Rod;Item-Weapon;0;1;0;1;0;0;0;Fishing Tool;Strong enough to pull secrets from the silt.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Hooked a good one.;none
 Fishing;⚓;Heavy Anchor;Item-Weapon;0;3;-1;0;0;0;1;<b>Artifact</b>;Solid iron that demands you stay exactly where you are.<br>Provides <b>+3 ⚔️ Attack</b> <b>-2 🟢 Energy</b>.;Staying grounded.;none
+Fishing;🛡️;Mourner's Plate;Item-Trinket;-1;0;0;0;0;0;2;Heavy Protection;Heavier than it looks. Heavier than you wanted.<br>Provides <b>+2 🔰 Defence</b> for <b>-1 💔 Health</b>.;The weight felt earned.;none
+Fishing;🪖;Cracked Helm;Item-Head;-1;0;0;0;0;0;1;Damaged Protection;Protects the skull, barely. The crack runs deeper than it looks.<br>Provides <b>+1 🔰 Defence</b> for <b>-1 💔 Health</b>.;Better than nothing.;none
 
 Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner" ...kinda sad.<br>;Almost got the first place...;none
 Fishing;🫙;Cracked Jar;Item;0;0;0;-1;0;0;0;Cursed Container;The smell coming out suggests a mistake.<br>;Immediately regretted opening it.;none
