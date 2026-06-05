@@ -1241,7 +1241,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             playerMgk-=mkgCost;
-            var _cmdg=Math.min(magicDamage,2);
+            var _cmdg=magicDamage;
             if (_crit==='success') _cmdg++;
             displayEnemyEffect("💢");
             enemyHpLost=Math.min(parseInt(enemyHp),parseInt(enemyHpLost)+_cmdg);
@@ -1322,7 +1322,6 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
           case "Reflective":
             if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1;
-            if (magicDamage > 2) magicDamage=2;
             if (_skillOK === false) {
               // Spell reflects back as HP damage
               playerMgk -= mkgCost;
@@ -1371,10 +1370,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Toxic":
           case "Hot":
           case "Tough":
-            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1; //TODO: No time to do it better now
-            if (magicDamage > 2) {
-              magicDamage=2;
-            }
+            if ((parseInt(enemyHp)-parseInt(enemyHpLost))==1) magicDamage=1;
 
             playerMgk-=magicDamage;
             var magicBonusDamage=0;
@@ -1626,7 +1622,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             // button_heal at Altar = heal (no mana cost; real altar prayer is on button_speak)
             var _altarMissingHp = playerHpMax - playerHp;
             if (_altarMissingHp > 0) {
-              var _altarHeal = Math.min(2, _altarMissingHp);
+              var _altarHeal = _altarMissingHp;
               playerHp += _altarHeal;
               logPlayerAction(actionString, "Healed at the altar +" + _altarHeal + " ❤️");
               displayPlayerGainedEffect();

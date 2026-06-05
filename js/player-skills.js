@@ -269,7 +269,6 @@ function playerHeal(critBonus){
   if (missingHp>0) {
     var healAmount=missingHp;
     if (healAmount>(playerMgk)) healAmount=(playerMgk);
-    if (healAmount>2) healAmount=2;
     var bonusHeal = (critBonus && (playerHp+healAmount) < playerHpMax) ? 1 : 0;
     playerHp+=healAmount+bonusHeal;
     playerMgk-=healAmount;
