@@ -387,8 +387,8 @@ var Menu = (function () {
   function _buildComboDesc(combined) {
     var LONG_POS  = { hp: '❤️ Health', atk: '⚔️ Attack', sta: '🟢 Energy', lck: '🍀 Luck', int: '🧠 Intellect', mgk: '🔵 Mana', def: '🔰 Defense' };
     var LONG_NEG  = { hp: '💔 Health', atk: '⚔️ Attack', sta: '🟢 Energy', lck: '🍀 Luck', int: '🧠 Intellect', mgk: '🔵 Mana', def: '🔰 Defense' };
-    var SHORT_POS = { hp: '❤️ HP',     atk: '⚔️ Atk',    sta: '🟢 Enrg',   lck: '🍀 Lck',  int: '🧠 Int',       mgk: '🔵 Mana', def: '🔰 Def' };
-    var SHORT_NEG = { hp: '💔 HP',     atk: '⚔️ Atk',    sta: '🟢 Enrg',   lck: '🍀 Lck',  int: '🧠 Int',       mgk: '🔵 Mana', def: '🔰 Def' };
+    var SHORT_POS = { hp: '❤️ HP',     atk: '⚔️ Atk',    sta: '🟢 Eng',   lck: '🍀 Lck',  int: '🧠 Int',       mgk: '🔵 Man', def: '🔰 Def' };
+    var SHORT_NEG = { hp: '💔 HP',     atk: '⚔️ Atk',    sta: '🟢 Eng',   lck: '🍀 Lck',  int: '🧠 Int',       mgk: '🔵 Man', def: '🔰 Def' };
     var statKeys = ['hp', 'atk', 'sta', 'lck', 'int', 'mgk', 'def'];
     var nonZero = statKeys.filter(function(s) { return (combined[s] || 0) !== 0; });
     var POS = nonZero.length >= 3 ? SHORT_POS : LONG_POS;
@@ -400,8 +400,9 @@ var Menu = (function () {
       if (v < 0) losses.push('<b>' + v + ' ' + NEG[s] + '</b>');
     });
     var parts = [];
-    if (gains.length > 0) parts.push('Gain ' + gains.join(' and '));
-    if (losses.length > 0) parts.push('lose ' + losses.join(' and '));
+    var sep = nonZero.length >= 4 ? ', ' : ' and ';
+    if (gains.length > 0) parts.push((nonZero.length < 3 ? 'Gain ' : '') + gains.join(sep));
+    if (losses.length > 0) parts.push((nonZero.length < 4 ? 'lose ' : '') + losses.join(sep));
     var line1 = parts.length > 0 ? parts.join(', ') + '.' : 'No stat changes.';
     return line1 + '<br><i>Transmuted from two different fates.</i>';
   }

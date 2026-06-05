@@ -7,12 +7,12 @@ Corruption spreads, you have to heal it.
 Enjoy your journey! 
 
 ## ver. 06/05/26 @ 09:00 PM
-🛡️ Fix DEF stat: combat, display, pips
+⚗️ Transmute button in Origins picker
 ⚔️ New encounters added to late game
+🛡️ Fix DEF stat: combat, display, pips
 🤲 Donate links added to credits
 🌀 Bigger teleport crit chance
-✨ Uncap Cast and Heal amounts
-⚗️ Transmute button in Origins picker
+✨ Uncap Cast, Heal and Curse amounts
 🏆 Fix combine/reroll achievs
 
 ## ver. 06/03/26 @ 07:13 AM
