@@ -1,7 +1,7 @@
 <p align="center"><img src="assets/img/logo.svg" width="560" alt="Stay Dead"></p>
 
 ## 🖤 About this project
->*A man. A dead bride. A world you broke trying to reach her.*<br>
+>*A man and a bride, in a corrupted world you are trying to heal.*<br>
 
 <b>Stay Dead is a free browser roguelike RPG.</b> ➞ 🕹️ <b>[Play instantly on any device!](https://igpenguin.github.io/stay-dead)</b><br>
 
