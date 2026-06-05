@@ -75,7 +75,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 🪖;Soldier;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Follows orders with no thinking.;none
 
 //Health
-🛡️;Warden;2;0;-1;0;0;0;0;Gain <b>+2 ❤️ Health</b>, lose <b>-2 🟢 Energy</b>.<br><i>Stands so strong, he struggles to move.;none
+🛡️;Warden;2;0;-2;0;0;0;0;Gain <b>+2 ❤️ Health</b>, lose <b>-2 🟢 Energy</b>.<br><i>Stands so strong, he struggles to move.;none
 💝;Darling;2;-1;0;0;0;0;0;Gain <b>+2 ❤️ Health</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Resilient to being hurt, harmless though.;none
 🧱;Mason;1;0;-1;0;0;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-1 🟢 Energy</b>.<br><i>Built sturdy walls in his own tempo.;none
 🍺;Boozer;1;0;0;0;-2;0;0;Gain <b>+1 ❤️ Health</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Numb to the pain, blind to the truth.;none
