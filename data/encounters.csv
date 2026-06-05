@@ -929,7 +929,7 @@ Twisted Fairyland;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;T
 Twisted Fairyland;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 Twisted Fairyland;🐷;Pig Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>All food effects are totally negated.</b>;Gained skill <b>🐷 Pig Digestion</b>.;eat_hazardous
 Twisted Fairyland;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;meditate_first
-Twisted Fairyland;🧬;Fused Marrow;Item-Trinket;1;0;0;0;0;1;0;[Rare];Extracted from ten different bodies, condensed into something that refuses to die.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔵 Mana</b>.;The borrowed lives ran out.;transmute_first
+Twisted Fairyland;🧬;Fused Marrow;Item-Trinket;1;0;0;0;0;1;0;Identity Remnants;Extracted from two different bodies.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔵 Mana</b>.;The borrowed lives ran out.;transmute_first
 Twisted Fairyland;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
 Twisted Fairyland;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 
@@ -1140,14 +1140,14 @@ River of Sorrows;🐀;Silt Ratter;Pet;1;0;4;0;0;0;0;River Wretch;Shivers on the 
 River of Sorrows;🦜;Annoying Parrot;Pet;1;0;3;0;0;0;0;Abandonded Pet;Keeps talking shit back at you.<br>;The beak found the eye first.;none
 River of Sorrows;🐸;Pallid Toad;Pet;3;0;3;0;-1;1;0;Pond Familiar;Sits in water that stopped moving long ago.<br>;Accompanied by a toad.;none
 River of Sorrows;🦦;Hollow Otter;Pet;4;0;3;0;1;0;0;River Remnant;Moves like it remembers being happy.<br>;Dragged under without warning.;none
-River of Sorrows;🦄;Pale Kelpie;Pet;4;0;3;1;2;0;0;Water Horse;Offered itself calmly, then changed its mind.;Drowned before you saw the trick.;none
+River of Sorrows;🦄;Pale Kelpie;Pet;4;0;3;1;2;0;0;Water Horse;Offered itself calmly, then changed its mind.<br>;Drowned before you saw the trick.;none
 
 River of Sorrows;👤;Stranded Soul;Recruit;2;0;2;-1;2;0;0;River Wanderer;Rows in circles, looks confused.<br>;They brought your misfortune.;none
 
 River of Sorrows;🦫;Gnawing Terror;Standard;4;2;3;0;2;0;0;Busy Maw;Teeth made for wood, repurposed for bone.<br>;Dragged you to a dam of bones.;none
-River of Sorrows;🦀;Tide Wretch;Standard;4;3;2;0;0;0;0;River Scavenger;Missing something vital and not adjusting.;Claws found the soft parts first.;none
-River of Sorrows;🐸;River Crawler;Standard;5;3;2;0;0;0;0;Mud Dweller;Patient in a way that is never benign.;Caught you mid-step.;none
-River of Sorrows;🦑;Sunken Grasper;Standard;4;2;3;0;0;0;0;Ink Horror;Eight arms and it uses none of them graciously.;Couldn't see what finished it.;none
+River of Sorrows;🦀;Tide Wretch;Standard;4;3;2;0;0;0;0;River Scavenger;Missing something vital and not adjusting.<br>;Claws found the soft parts first.;none
+River of Sorrows;🐸;River Crawler;Standard;5;3;2;0;0;0;0;Mud Dweller;Patient in a way that is never benign.<br>;Caught you mid-step.;none
+River of Sorrows;🦑;Sunken Grasper;Standard;4;2;3;0;0;0;0;Ink Horror;Eight arms and it uses none of them graciously.<br>;Couldn't see what finished it.;none
 
 River of Sorrows;🐟;Pale Mirrorfish;Reflective;4;1;2;0;-1;0;0;River Oddity;Scales like silver, returns what you give.<br>;Swallowed in one pale flash.;none
 River of Sorrows;🐠;Depressed Angelfish;Reflective;3;0;1;0;-1;0;1;Lethargic Critter;Seems like it's lost will to live.<br>;Not really sure what happened.;none
@@ -1171,13 +1171,13 @@ River of Sorrows;🐚;Barbed Wretch;Stingy;4;3;2;0;0;0;1;Shell Lurker;A hunched 
 River of Sorrows;♨️;Scalding Elemental;Hot;4;3;2;0;0;0;0;Thermal Horror;Erupts where the riverbed has cracked.<br>;Boiled alive in sorrow's current.;none
 River of Sorrows;🧜🏻‍♀️;Blazing Siren;Hot;4;1;2;0;3;2;0;Scalding Lure;Runs warm enough to blister the water around her.<br>;Taken down by a siren.;none
 River of Sorrows;👤;Fever Shade;Hot;4;2;3;0;0;0;0;Heat Specter;Dead warmth fills the cold air around it.<br>;The fever became your last dream.;none
-River of Sorrows;👹;Scalded Revenant;Hot;4;3;2;0;1;1;0;Heat Specter;The water around it shimmers with unnatural warmth.;Fever took hold and didn't let go.;none
-River of Sorrows;🪱;Fever Leech;Hot;4;2;3;0;0;1;0;Burning Parasite;Clings to the hull. Clings to everything.;The warmth became unbearable.;none
+River of Sorrows;👹;Scalded Revenant;Hot;4;3;2;0;1;1;0;Heat Specter;The water around it shimmers with unnatural warmth.<br>;Fever took hold and didn't let go.;none
+River of Sorrows;🪱;Fever Leech;Hot;4;2;3;0;0;1;0;Burning Parasite;Clings to the hull. Clings to everything.<br>;The warmth became unbearable.;none
 
 River of Sorrows;‍🦈;Great Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Something displaced the water too early.<br>;Gone before the water settled.;none
 River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops.<br>;Stampeded to your death.;none
 River of Sorrows;🧜🏿‍♂️;Sunken Hauler;Heavy;5;3;3;0;1;0;0;River Brute;Drags things under until the struggling stops.<br>;Held down past any reasonable limit.;none
-River of Sorrows;🐋;Mire Hulk;Heavy;6;3;3;0;0;0;0;River Leviathan;Too large to avoid. Too slow to respect.;Crushed flat against the current.;none
+River of Sorrows;🐋;Mire Hulk;Heavy;6;3;3;0;0;0;0;River Leviathan;Too large to avoid. Too slow to respect.<br>;Crushed flat against the current.;none
 
 River of Sorrows;🐆;River Stalker;Swift;4;3;2;0;0;0;0;Bank Predator;Paces the bank, each step soft as grief.<br>;Taken from behind like you were expected.;none
 River of Sorrows;🐍;Aquatic Snake;Swift;3;4;2;0;-1;0;1;Fearless Predator;Charges forward no matter the consequences.<br>;Died of lethal venom.;none
@@ -1187,7 +1187,7 @@ River of Sorrows;🐍;Sorrow Eel;Swift;5;3;3;0;-1;0;0;Tainted Snake;The water ri
 
 River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Something the River keeps instead of letting go.<br>;Hollowed out from the inside.;none
 River of Sorrows;🗣️;Weeping Shade;Spirit;2;0;3;0;-1;0;0;Persistent Dead;Should have stayed underground.<br>;Fell to what wouldn't stay dead.;none
-River of Sorrows;👤;Submerged Wail;Spirit;3;0;2;0;3;2;0;River Spirit;The sound arrives before it does.;Pulled under from the inside.;none
+River of Sorrows;👤;Submerged Wail;Spirit;3;0;2;0;3;2;0;River Spirit;The sound arrives before it does.<br>;Pulled under from the inside.;none
 
 River of Sorrows;🧜‍♂️;Drowned Tempter;Demon;3;2;2;0;2;1;0;Abyssal Charmer;Promises breath beneath the waves.<br>;You followed him under, and never surfaced.;none
 River of Sorrows;🧜‍♀️;Silt Siren;Demon;3;1;3;0;3;1;0;Luring Shade;Voice muffled, eyes burning bright below.<br>;You leaned closer and the river took you.;none
@@ -1196,8 +1196,8 @@ River of Sorrows;🦅;River Harpy;Demon;3;3;2;0;2;0;0;Winged Threat;Swoops low o
 
 River of Sorrows;🧟‍♂️;Drowned Sailor;Undead;4;2;2;0;-1;1;0;Waterlogged Corpse;Still wanders the shallows, unable to rest.<br>;Pulled under by cold dead hands;none
 River of Sorrows;🦜;Rotten Polly;Undead;3;1;3;0;0;0;0;Forsaken Bird;Used to be beautiful — not anymore.<br>;Got both eyes pecked out.;none
-River of Sorrows;💀;Wrecked Captain;Undead;5;2;3;0;2;0;0;Lost Authority;The ship is gone. He's still giving orders.;Outranked you to death.;none
-River of Sorrows;☠️;Pale Corsair;Undead;5;4;1;0;-1;0;0;Sunken Pirate;Sailed these waters long before they turned sad.;Swords don't care who holds them.;none
+River of Sorrows;💀;Wrecked Captain;Undead;5;2;3;0;2;0;0;Lost Authority;The ship is gone. He's still giving orders.<br>;Outranked you to death.;none
+River of Sorrows;☠️;Pale Corsair;Undead;5;4;1;0;-1;0;0;Sunken Pirate;Sailed these waters long before they turned sad.<br>;Swords don't care who holds them.;none
 
 River of Sorrows;💀;Hollow Fisherman;Friend;0;0;0;1;1;0;0;Mourning Man;Line in the water, eyes on the distance.<br>Not fishing for fish.;Gestured you a good fortune.;none
 River of Sorrows;🧔;Lost Boatman;Friend;0;0;1;0;0;0;0;River Wanderer;No oar. Still moving upstream.<br>Been at this a long time.;Steadied your balance in the current.;none
@@ -1205,7 +1205,7 @@ River of Sorrows;👩;Pale Widow;Friend;0;0;0;0;1;0;0;Grieving Soul;Sits at the 
 
 River of Sorrows;👤;Drowned Soul;Boss-Spirit;1;2;3;0;2;0;0;Unfinished Business;Lurks below the surface for another victim.<br>;Dragged into dark depths.;none
 River of Sorrows;🦀;Spider Crab;Boss-Tough;4;2;2;0;-1;0;1;Oversized Crustacean;Whaat? It's the size of a dog!<br>;Got pinched in half.;none
-River of Sorrows;🐚;Squatting Hermit;Boss-Tough;4;;1;0;-1;0;1;Armored Crustacean;Better not stick your fingers inside.<br>;Oops, that was deadly!;none
+River of Sorrows;🐚;Squatting Hermit;Boss-Tough;4;2;1;0;-1;0;1;Armored Crustacean;Better not stick your fingers inside.<br>;Oops, that was deadly!;none
 River of Sorrows;🧜;Depths Queen;Boss-Reflective;5;2;3;0;3;2;0;Abyssal Monarch;Veil of weeds covers her hair.<br>;Got kissed and pulled you below.;none
 River of Sorrows;🦈;Pearlescent Serrato;Boss-Reflective;4;3;1;0;4;0;0;Too Clever One;Makes a lot of squeaking noises.<br>;Got outsmarted by a dolphin.;none
 River of Sorrows;‍🪼;Jellyfish Swarm;Boss-Toxic;5;3;3;0;-1;0;0;Lethal Threat;Squishy deathtraps spreading all around.<br>;Stung by a jellyfish.;none
@@ -1258,7 +1258,7 @@ River of Sorrows;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;Th
 River of Sorrows;📎;Universal Key;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Provides an ability to <b>🗝️ Unlock any lock</b>.<br>;Picked up <b>📎 Universal Key</b>.;key_unlock_first
 River of Sorrows;🐷;Pig Mask;Item-Head;0;0;0;0;0;0;0;<b>Artifact</b>;Grants special skill <b>🐷 Pig Digestion</b>.<br><b>All food effects are totally negated.</b>;Gained skill <b>🐷 Pig Digestion</b>.;eat_hazardous
 River of Sorrows;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;meditate_first
-River of Sorrows;🧬;Fused Marrow;Item-Trinket;1;0;0;0;0;1;0;[Rare];Extracted from ten different bodies, condensed into something that refuses to die.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔵 Mana</b>.;The borrowed lives ran out.;transmute_first
+River of Sorrows;🧬;Fused Marrow;Item-Trinket;1;0;0;0;0;1;0;Identity Remnants;Extracted from two different bodies.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔵 Mana</b>.;The borrowed lives ran out.;transmute_first
 River of Sorrows;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
 River of Sorrows;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 River of Sorrows;👒;Fishing Hat;Item-Head;0;0;0;2;0;0;0;Signature Piece;Originally comes from a goblin fishing event.<br>Provides <b>+2 🍀 Luck</b>.;Sweet old memories of the jungle;fish_no_bait_first
@@ -1492,7 +1492,7 @@ Shrouded Necropolis;💍;Engraved Ring;Item-Trinket;0;0;0;0;-3;2;0;<b>Artifact</
 Shrouded Necropolis;🥋;Budo Kimono;Item-Chest;1;0;1;0;0;0;0;Fancy Gown;Made for martial arts practice.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🟢 Energy</b>.;Neat and comfortable;knockout_first
 Shrouded Necropolis;🔪;Bloody Knife;Item-Weapon;0;1;0;-2;0;0;0;Evidence of Sin;The blade still looks sharp.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-2 🍀 Luck</b>.;Got blood on your hands!;kill_first
 Shrouded Necropolis;🌀;Shedding Stone;Item-Trinket;0;0;0;0;1;1;0;<b>Artifact</b>;Worn smooth by hands that kept changing.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🧠 Intellect</b>.;You feel slightly less fixed.;meditate_first
-Shrouded Necropolis;🧬;Fused Marrow;Item-Trinket;1;0;0;0;0;1;0;[Rare];Extracted from ten different bodies, condensed into something that refuses to die.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔵 Mana</b>.;The borrowed lives ran out.;transmute_first
+Shrouded Necropolis;🧬;Fused Marrow;Item-Trinket;1;0;0;0;0;1;0;Identity Remnants;Extracted from two different bodies.<br>Provides <b>+1 ❤️ Health</b> and <b>+1 🔵 Mana</b>.;The borrowed lives ran out.;transmute_first
 Shrouded Necropolis;💸;Empty Pouch;Item-Trinket;0;1;0;1;0;0;0;<b>Artifact</b>;Nothing left to lose. That's its own kind of freedom.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Nothing left. That's enough.;spent_10
 Shrouded Necropolis;〽️;Echo Blade;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Taken from a hand that already failed.<br>Provides <b>+2 ⚔️ Attack</b>.;It still remembers how to cut.;rival_kill
 
