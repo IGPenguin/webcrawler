@@ -7,8 +7,8 @@ var AchievementManager = (function () {
     { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
     { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
     { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
-    { id: 'transmute_first',     emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rethink who you are.', unlock: 'Unlocked the <b>🌀 Shedding Stone</b> item.' },
-    { id: 'transmute_10',        emoji: '⚗️', desc: 'Changed your fate 10 times!', hint: 'Some identities are harder to keep.', unlock: 'Unlocked the <b>⚗️ Alchemist</b> origin.' },
+    { id: 'meditate_first',      emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rethink who you are.', unlock: 'Unlocked the <b>🌀 Shedding Stone</b> item.' },
+    { id: 'transmute_first',     emoji: '🧬', desc: 'Combined two Origins for the first time!', hint: 'Some fates were never meant to stay separate.', unlock: 'Unlocked the <b>🧬 Fused Marrow</b> item.' },
     { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
     { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
     { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
@@ -30,7 +30,7 @@ var AchievementManager = (function () {
     { id: 'key_unlock_first',    emoji: '🔓', desc: 'Opened a lock with a key!', hint: 'The right key for the right lock.', unlock: 'Unlocked the <b>📎 Universal Key</b> item.' },
     { id: 'smash_door_first',    emoji: '🔨', desc: 'Smashed a lock open with an attack!', hint: 'When keys fail, force prevails.', unlock: 'Unlocked the <b>♨ Choleric</b> origin.' },
     { id: 'magic_unlock_first',  emoji: '🪄', desc: 'Opened a lock with a spell!', hint: 'Magic opens more than minds.', unlock: 'Unlocked the <b>🧿 Wizard</b> origin.' },
-    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: 'Unlocked the <b>🧐 Appraiser</b> origin.' },
+    { id: 'grab_exquisite',      emoji: '🟣', desc: 'Grabbed your first exquisite item!', hint: 'A mark of fine quality.', unlock: 'Unlocked the <b>🧐 Collector</b> origin.' },
     { id: 'grab_artifact',       emoji: '🏺', desc: 'Grabbed your first artifact!', hint: 'Some items are truly legendary.', unlock: 'Unlocked the <b>🏺 Tomb Raider</b> origin.' },
     { id: 'grab_rubbish',        emoji: '🕸️', desc: 'Picked up something useless!', hint: 'Nothing wrong with low standards.', unlock: 'Unlocked the <b>🧥 Hobo</b> origin.' },
 
@@ -83,6 +83,8 @@ var AchievementManager = (function () {
     { id: 'fish_bait_30',        emoji: '🎏', desc: 'Caught something 30x!', hint: "Master the haunted waters.", unlock: 'Unlocked the <b>🧵 Lucky Fishline</b> item.' },
     { id: 'fish_no_bait_30',     emoji: '😎', desc: 'Caught something with no bait 30x!', hint: "Pure skill always beats the odds.", unlock: 'Unlocked the <b>🪣 Sturdy Bucket</b>.' },
     { id: 'gamble_win_10',       emoji: '🎰', desc: 'Won the shady gamble 10 times!', hint: "Become a well seasoned gambler.", unlock: 'Unlocked the <b>🎲 Gambler</b> origin.' },
+    { id: 'meditate_10',         emoji: '⚗️', desc: 'Changed your fate 10 times!', hint: 'Some identities are harder to keep.', unlock: 'Unlocked the <b>⚗️ Mystic</b> origin.' },
+    { id: 'transmute_10',        emoji: '🔆', desc: 'Combined Origins ten times!', hint: 'You have mastered the art of becoming.', unlock: 'Unlocked the <b>🔆 Adept</b> origin.' },
 
     { id: 'game_win_first',  emoji: '👑', desc: 'Finished the game for the first time!',   hint: "Understand how did everything begin.",   unlock: 'Unlocked the <b>💍 Groom</b> origin.' },
     { id: 'ending_kill',    emoji: '🩸', desc: 'Chose the blade where mercy failed.',      hint: 'The blade knows only one language.',       unlock: 'Unlocked the <b>🩸 Traitor</b> origin.' },
@@ -153,8 +155,10 @@ var AchievementManager = (function () {
     diedByTrap:          false,
     diedBySleep:         false,
     killedFishingBoss:   false,
-    transmuteFirst:      false,
-    totalTransmutes:     0
+    meditateFirst:       false,
+    totalMeditations:    0,
+    combineFirst:        false,
+    totalCombines:       0
   };
 
   var _unlocked       = {};
@@ -312,12 +316,20 @@ var AchievementManager = (function () {
         if (_stats.totalDestinyAccepts >= 10)  _unlock('destiny_10');
         break;
 
-      case 'transmute':
-        if (!_stats.totalTransmutes) _stats.totalTransmutes = 0;
-        _stats.totalTransmutes++;
+      case 'meditate':
+        if (!_stats.totalMeditations) _stats.totalMeditations = 0;
+        _stats.totalMeditations++;
         _save();
-        if (!_stats.transmuteFirst) { _stats.transmuteFirst = true; _unlock('transmute_first'); }
-        if (_stats.totalTransmutes >= 10) _unlock('transmute_10');
+        if (!_stats.meditateFirst) { _stats.meditateFirst = true; _unlock('meditate_first'); }
+        if (_stats.totalMeditations >= 10) _unlock('meditate_10');
+        break;
+
+      case 'combine':
+        if (!_stats.totalCombines) _stats.totalCombines = 0;
+        _stats.totalCombines++;
+        _save();
+        if (!_stats.combineFirst) { _stats.combineFirst = true; _unlock('transmute_first'); }
+        if (_stats.totalCombines >= 10) _unlock('transmute_10');
         break;
 
       case 'buy_item':

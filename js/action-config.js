@@ -81,7 +81,11 @@ function calcActionBarConfig(button, adjustment) {
   // Cast / Heal / Curse with no mana — impossible (bar all-red)
   // button_heal is exempt on Curse type (action-resolver allows it without MGK)
   // Shop overrides this — mana is irrelevant there (coin is the gate)
-  if ((button === 'button_cast' || (button === 'button_heal' && !isCurse) || button === 'button_curse') && pMgk <= 0 && types !== 'Shop') {
+  // Curse requires at least 2 MGK (costs all available; 2→-1atk, 3→-2atk, etc.)
+  if ((button === 'button_cast' || (button === 'button_heal' && !isCurse)) && pMgk <= 0 && types !== 'Shop') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+  if (button === 'button_curse' && pMgk < 2 && types !== 'Shop') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 
@@ -678,6 +682,8 @@ function calcActionBarConfig(button, adjustment) {
   // Crit zone widths: luck only — karma hook removed pending full karma overhaul
   var critSuccessW = Math.min(7, Math.max(1, Math.round(2 + pLck * 0.625)));
   var critFailW    = Math.min(10, Math.max(1, Math.round(5 - rawLck * (rawLck < 0 ? 1.25 : 0.5))));
+  // Memory sleep (teleport to Twisted Fairyland) — doubled crit window
+  if (button === 'button_sleep' && types === 'Memory') critSuccessW = Math.min(14, critSuccessW * 2);
 
   // Ensure success zone doesn't overlap crit-fail edges — action-bar.js disables crits if it does
   zoneStart = Math.max(critFailW + 1, Math.min(100 - zoneW - critFailW - 1, zoneStart));

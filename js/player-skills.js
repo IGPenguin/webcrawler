@@ -269,7 +269,6 @@ function playerHeal(critBonus){
   if (missingHp>0) {
     var healAmount=missingHp;
     if (healAmount>(playerMgk)) healAmount=(playerMgk);
-    if (healAmount>2) healAmount=2;
     var bonusHeal = (critBonus && (playerHp+healAmount) < playerHpMax) ? 1 : 0;
     playerHp+=healAmount+bonusHeal;
     playerMgk-=healAmount;
@@ -604,8 +603,18 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
     return;
   }
 
+  var defended = 0;
+  if (playerDef > 0 && incomingDamage > 1) {
+    defended = Math.min(playerDef, incomingDamage - 1);
+    incomingDamage -= defended;
+  }
+
   playerHp = playerHp - incomingDamage;
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
+  if (defended > 0) {
+    logAction("🔰 ▸ 💢 -" + incomingDamage + " 💔 (" + defended + " 🔰)");
+    displayPlayerEffect("🔰");
+  }
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
 

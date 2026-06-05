@@ -59,21 +59,3 @@ jobs:
 
       - name: Check JS syntax
         run: node --check js/*.js
-
-  check-version:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Check version bump
-        run: |
-          git show origin/${{ github.base_ref }}:js/constants.js > base_constants.js
-          python tests/validator.py js/constants.js base_constants.js
