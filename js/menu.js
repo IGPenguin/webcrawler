@@ -1464,7 +1464,7 @@ var Menu = (function () {
       localStorage.setItem('coins', parseInt(savedCoins));
       var debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
       localStorage.setItem('transmuteDebt', debt + 1);
-      AchievementManager.check('transmute');
+      AchievementManager.check('meditate');
       var prevBestTier = (function () {
         var TIER_ORDER = ['Cursed', 'Common', 'Uncommon', 'Rare', 'Legendary'];
         try {
@@ -1496,6 +1496,7 @@ var Menu = (function () {
       localStorage.setItem('coins', parseInt(savedCoins));
       var debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
       localStorage.setItem('transmuteDebt', debt + 2);
+      AchievementManager.check('combine');
       var idxPool = [];
       for (var ci = 0; ci < currentRoll.length; ci++) idxPool.push(ci);
       var idxA = idxPool.splice(Math.floor(Math.random() * idxPool.length), 1)[0];
