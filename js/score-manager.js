@@ -38,7 +38,7 @@ var ScoreManager = (function () {
   }
   var NICKNAME_KEY = 'playerNickname';
   var RANKINGS_URL = 'https://raw.githubusercontent.com/IGPenguin/stay-dead/rankings/highscores.json';
-  var _BANNED_NICKNAMES = ['igpenguin', 'blue2lip', 'perseus blade'];
+  var _BANNED_NICKNAMES = ['perseus blade'];
 
   function _isBannedNickname(name) {
     if (typeof isLocalhost === 'function' && isLocalhost()) return false;
