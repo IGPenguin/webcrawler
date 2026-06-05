@@ -62,31 +62,35 @@ def validate_achievement_origins(warnings, errors):
                 continue
             origins.append(row)
 
-    # Helper to clean origin names (strip emojis and common typos)
     def clean_origin_name(name):
-        # Strip common tags and anything that looks like an emoji
         name = clean_html(name)
-        # Remove emojis (crude but effective for our purpose)
         name = "".join(c for c in name if ord(c) < 128 or c in ' /').strip()
-        # Remove leading/trailing punctuation/artifacts
         name = re.sub(r'^[; ]+', '', name)
         name = re.sub(r'[>/ ]+$', '', name).strip()
         return name
 
+    def get_origin_names(name):
+        """Return all name variants to match against: base name + any [Name:...] override content.
+        e.g. 'Raider[Name:Tomb Raider]' → ['Raider', 'Tomb Raider']
+             'Groom[Name:Kenneth]' → ['Groom', 'Kenneth']"""
+        base = re.sub(r'\[[^\]]*\]', '', name).strip()
+        bracket_match = re.search(r'\[Name:([^\]]+)\]', name)
+        if bracket_match:
+            return [base, bracket_match.group(1).strip()]
+        return [base]
+
     # Check 1: Achievement unlock text -> Origin achievement ID
     for ach_id, unlock in ach_map.items():
         if re.search(r'\borigin\b', unlock.lower()):
-            # Extract origin name from <b>...</b>
             match = re.search(r'<b>(.*?)</b>', unlock)
             if match:
                 raw_name = match.group(1).strip()
                 origin_name = clean_origin_name(raw_name)
-                # Skip the "Origins feature" case
                 if origin_name == 'Origins': continue
-                
+
                 found = False
                 for origin in origins:
-                    if origin['name'].strip() == origin_name:
+                    if origin_name in get_origin_names(origin['name'].strip()):
                         found = True
                         if origin['achiev'].strip() != ach_id:
                             errors.append(f"Achievement Mismatch: '{ach_id}' unlocks '{origin_name}' but origin.csv says unlocked by '{origin['achiev']}'")
@@ -102,7 +106,7 @@ def validate_achievement_origins(warnings, errors):
                 errors.append(f"Origin Error: '{origin['name']}' refers to unknown achievement '{ach_id}'")
             else:
                 unlock = ach_map[ach_id]
-                if origin['name'] not in unlock:
+                if not any(dn in unlock for dn in get_origin_names(origin['name'].strip())):
                     errors.append(f"Achievement Mismatch: Origin '{origin['name']}' is unlocked by '{ach_id}', but achievement text doesn't mention it: '{unlock}'")
 
 def validate_origin_stats(warnings, errors):
@@ -341,16 +345,20 @@ def validate_csv(file_path, expected_columns, stat_indices, check_sequence=False
 
                 # desc must contain <br> (po/em and Generator XXX placeholders are exempt)
                 if desc and '<br>' not in desc and 'po/em' not in desc and not (is_generator and desc.strip() == 'XXX'):
-                    warnings.append(f'Missing <br> - {loc} {row_id}: desc has no <br> tag')
+                    errors.append(f'Missing <br> - {loc} {row_id}: desc has no <br> tag')
 
-            # Warn on empty fields
+            # Stat columns must not be empty; other empty fields are warnings
             MESSAGE_COL = 13
+            stat_idx_set = set(stat_indices)
             for col_i, val in enumerate(cols):
                 if col_i == MESSAGE_COL:
                     continue
                 if val == '':
                     col_name = header[col_i] if col_i < len(header) else str(col_i)
-                    warnings.append(f'Empty Field - {file_path}:{i} {row_id}: \'{col_name}\' column is empty')
+                    if col_i in stat_idx_set:
+                        errors.append(f'Empty Stat - {file_path}:{i} {row_id}: \'{col_name}\' stat column is empty')
+                    else:
+                        warnings.append(f'Empty Field - {file_path}:{i} {row_id}: \'{col_name}\' column is empty')
 
             # Text length checks for origins
             if expected_columns == 11:
