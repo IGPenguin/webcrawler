@@ -81,7 +81,11 @@ function calcActionBarConfig(button, adjustment) {
   // Cast / Heal / Curse with no mana — impossible (bar all-red)
   // button_heal is exempt on Curse type (action-resolver allows it without MGK)
   // Shop overrides this — mana is irrelevant there (coin is the gate)
-  if ((button === 'button_cast' || (button === 'button_heal' && !isCurse) || button === 'button_curse') && pMgk <= 0 && types !== 'Shop') {
+  // Curse requires at least 2 MGK (costs all available; 2→-1atk, 3→-2atk, etc.)
+  if ((button === 'button_cast' || (button === 'button_heal' && !isCurse)) && pMgk <= 0 && types !== 'Shop') {
+    return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
+  }
+  if (button === 'button_curse' && pMgk < 2 && types !== 'Shop') {
     return { speed: Math.round(spdNormal * ACTION_BAR_SPEED_MULT), successMin: -1, successMax: -1 };
   }
 

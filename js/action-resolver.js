@@ -1677,15 +1677,19 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           break;
         }
 
-        if (!playerUseMagic(2,"Not enough mana, requires +2 🔵")) { //Curse is never free, upgrd handled above
-            break;
-          }
+        if (playerMgk < 2) { //Curse is never free, upgrd handled above
+          logPlayerAction(actionString, "Not enough mana, requires +2 🔵");
+          displayPlayerCannotEffect();
+          break;
+        }
+        var _mgkSpent = playerMgk;
+        playerMgk = 0;
 
         if (enemyType!="Death") {displayPlayerEffect("🪬");}
 
           // Reflective curse-back: failed skill check = curse snaps back onto the caster
           if (_skillOK === false && enemyType === "Reflective") {
-            logPlayerAction(actionString, "Curse reflected back -1 ⚔️ -2 🔵");
+            logPlayerAction(actionString, "Curse reflected back -1 ⚔️ -"+_mgkSpent+" 🔵");
             displayEnemyEffect("🔷");
             displayPlayerCannotEffect();
             playerAtk = Math.max(0, playerAtk - 1);
@@ -1698,9 +1702,9 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               && enemyType!=="Altar" && enemyType!=="Demon" && enemyType!=="Reflective") {
             if (_crit === 'fail') {
               playerAtk = Math.max(0, playerAtk - 1);
-              logPlayerAction(actionString, "The curse turned on you -1 ⚔️ -2 🔵");
+              logPlayerAction(actionString, "The curse turned on you -1 ⚔️ -"+_mgkSpent+" 🔵");
             } else {
-              logPlayerAction(actionString, "Curse dissolved without effect -2 🔵");
+              logPlayerAction(actionString, "Curse dissolved without effect -"+_mgkSpent+" 🔵");
             }
             displayEnemyCannotEffect();
             if (enemyCastIfMgk()) break;
@@ -1714,22 +1718,22 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           if (playerMgkMax > enemyMgk && (enemyAtkBonus+enemyAtk)>0) {
             displayEnemyCannotEffect();
             displayEnemyEffect("🪬");
-            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2);
+            var enemyAtkChange=Math.min(_mgkSpent-1, enemyAtk+enemyAtkBonus);
             enemyAtkBonus-=enemyAtkChange;
             if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
               enemyAtkBonus--;
-              logPlayerAction(actionString,"The hex pierced their reflection -"+(enemyAtkChange+1)+" ⚔️ for -2 🔵");
+              logPlayerAction(actionString,"The hex pierced their reflection -"+(enemyAtkChange+1)+" ⚔️ for -"+_mgkSpent+" 🔵");
             } else {
-              logPlayerAction(actionString,"Curse bypassed their reflection -"+enemyAtkChange+" ⚔️ for -2 🔵");
+              logPlayerAction(actionString,"Curse bypassed their reflection -"+enemyAtkChange+" ⚔️ for -"+_mgkSpent+" 🔵");
             }
             enemyCursed=true;
             logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
           } else if (playerMgkMax <= enemyMgk) {
-            logPlayerAction(actionString,"They resisted your curse -2 🔵");
+            logPlayerAction(actionString,"They resisted your curse -"+_mgkSpent+" 🔵");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
           } else {
-            logPlayerAction(actionString,"Your curse had no effect on them -2 🔵");
+            logPlayerAction(actionString,"Your curse had no effect on them -"+_mgkSpent+" 🔵");
             if (enemyCastIfMgk()) break;
             enemyAttackOrRest();
           }
@@ -1737,17 +1741,17 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
         case "Demon":
             if (_skillOK === false) {
-              logPlayerAction(actionString,"Your curse has made them stronger! -2 🔵");
+              logPlayerAction(actionString,"Your curse has made them stronger! -"+_mgkSpent+" 🔵");
               enemyName=enemyName+" (Cursed)";
               animateUIElement(enemyInfoUIElement,"animate__tada","1");
               enemyAtkBonus+=1;
             } else if (_crit === 'success') {
               enemyStaLost = enemySta;
               enemyCursed = true;
-              logPlayerAction(actionString,"The hex overwhelmed their defenses -2 🔵");
+              logPlayerAction(actionString,"The hex overwhelmed their defenses -"+_mgkSpent+" 🔵");
               logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
             } else {
-              logPlayerAction(actionString,"The hex dissolved into them -2 🔵");
+              logPlayerAction(actionString,"The hex dissolved into them -"+_mgkSpent+" 🔵");
               displayPlayerCannotEffect();
               if (enemyCastIfMgk()) break;
               enemyAttackOrRest();
@@ -1784,22 +1788,21 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
 
-            var enemyAtkChange=Math.floor((1+enemyAtk+enemyAtkBonus)/2); //WTF, no way (halves damage?)
+            var enemyAtkChange=Math.min(_mgkSpent-1, enemyAtk+enemyAtkBonus);
             enemyAtkBonus-=enemyAtkChange;
-            if (enemyAtkBonus>enemyAtk) enemyAtkBonus=enemyAtk;
             if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
               enemyAtkBonus--;
-              logPlayerAction(actionString,"The hex sank deep -"+(enemyAtkChange+1)+" ⚔️ weaker for -2 🔵");
+              logPlayerAction(actionString,"The hex sank deep -"+(enemyAtkChange+1)+" ⚔️ weaker for -"+_mgkSpent+" 🔵");
             } else {
-              logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -2 🔵");
+              logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -"+_mgkSpent+" 🔵");
             }
             enemyCursed=true;
             logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
             break; //Enemy does not attack if  cursed
           } else if (playerMgkMax <= enemyMgk) {
-            logPlayerAction(actionString,"They resisted your curse -2 🔵");
+            logPlayerAction(actionString,"They resisted your curse -"+_mgkSpent+" 🔵");
           } else {
-            logPlayerAction(actionString,"Your curse had no effect on them -2 🔵");
+            logPlayerAction(actionString,"Your curse had no effect on them -"+_mgkSpent+" 🔵");
           }
           procAbilityChance()
           if (enemyCastIfMgk()) break;
