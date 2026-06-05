@@ -18,6 +18,7 @@ function _applyCheatName(name) {
     playerHpMax = cheatAmount; playerAtk = cheatAmount; playerStaMax = cheatAmount;
     playerMgkMax = cheatAmount; playerLck = cheatAmount; playerInt = cheatAmount;
     playerHp = playerHpMax; playerSta = playerStaMax; playerMgk = playerMgkMax;
+    playerDef = cheatAmount;
     logCheatUse("Changed stats ➔  " + cheatAmount);
     return true;
   }

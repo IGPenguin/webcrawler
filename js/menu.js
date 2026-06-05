@@ -264,7 +264,7 @@ var Menu = (function () {
         var parsed = JSON.parse(stored);
         var unlockedNames = available.map(function(c) { return c.originName; });
         if (Array.isArray(parsed) && parsed.length > 0 &&
-            parsed.every(function(o) { return o && o.originName && unlockedNames.indexOf(o.originName) >= 0; })) {
+            parsed.every(function(o) { return o && o.originName && (o._synthetic || unlockedNames.indexOf(o.originName) >= 0); })) {
           return parsed;
         }
       }
@@ -296,7 +296,7 @@ var Menu = (function () {
       }
       if (candidates.length === 0) break;
       var picked = candidates[Math.floor(Math.random() * candidates.length)];
-      picked.rolledName = getOriginName(picked);
+      picked.rolledName = picked.forcedName || getOriginName(picked);
       picked.tier = _originTier(picked);
       usedNames[picked.originName] = true;
       roll.push(picked);
@@ -319,7 +319,7 @@ var Menu = (function () {
           var bkt = (tierBuckets[TIER_ORDER[ti]] || []).filter(function(o) { return !otherNames[o.originName]; });
           if (bkt.length > 0) {
             var newPick = bkt[Math.floor(Math.random() * bkt.length)];
-            newPick.rolledName = getOriginName(newPick);
+            newPick.rolledName = newPick.forcedName || getOriginName(newPick);
             newPick.tier = _originTier(newPick);
             roll[weakestIdx] = newPick;
             break;
@@ -353,6 +353,84 @@ var Menu = (function () {
 
   function _originRarityColor(net) {
     return RarityManager.getColor(RarityManager.getTierForNet(net));
+  }
+
+  function _spliceName(nameA, nameB) {
+    var wordA = nameA.slice(0, Math.ceil(nameA.length / 2));
+    var wordB = nameB.slice(Math.floor(nameB.length / 2));
+    var cap = function(s) { return s ? s[0].toUpperCase() + s.slice(1) : s; };
+    return cap(wordA) + wordB;
+  }
+
+  function _pickOneOrigin(excludeNames) {
+    var cards = typeof getOrigins === 'function' ? getOrigins() : [];
+    var available = cards.filter(function(o) {
+      var a = o.achiev || 'none';
+      return (a === 'none' || AchievementManager.isUnlocked(a)) && excludeNames.indexOf(o.originName) < 0;
+    });
+    if (available.length === 0) return null;
+    var tierBuckets = {};
+    available.forEach(function(o) {
+      var t = _originTier(o);
+      if (!tierBuckets[t]) tierBuckets[t] = [];
+      tierBuckets[t].push(o);
+    });
+    var tier = RarityManager.rollTier(playerLck, playerKarma);
+    var bucket = tierBuckets[tier] || [];
+    var candidates = bucket.length > 0 ? bucket : available;
+    var pick = candidates[Math.floor(Math.random() * candidates.length)];
+    pick.rolledName = pick.forcedName || getOriginName(pick);
+    pick.tier = _originTier(pick);
+    return pick;
+  }
+
+  function _buildComboDesc(combined) {
+    var LONG_POS  = { hp: '❤️ Health', atk: '⚔️ Attack', sta: '🟢 Energy', lck: '🍀 Luck', int: '🧠 Intellect', mgk: '🔵 Mana', def: '🔰 Defense' };
+    var LONG_NEG  = { hp: '💔 Health', atk: '⚔️ Attack', sta: '🟢 Energy', lck: '🍀 Luck', int: '🧠 Intellect', mgk: '🔵 Mana', def: '🔰 Defense' };
+    var SHORT_POS = { hp: '❤️ HP',     atk: '⚔️ Atk',    sta: '🟢 Enrg',   lck: '🍀 Lck',  int: '🧠 Int',       mgk: '🔵 Mana', def: '🔰 Def' };
+    var SHORT_NEG = { hp: '💔 HP',     atk: '⚔️ Atk',    sta: '🟢 Enrg',   lck: '🍀 Lck',  int: '🧠 Int',       mgk: '🔵 Mana', def: '🔰 Def' };
+    var statKeys = ['hp', 'atk', 'sta', 'lck', 'int', 'mgk', 'def'];
+    var nonZero = statKeys.filter(function(s) { return (combined[s] || 0) !== 0; });
+    var POS = nonZero.length >= 3 ? SHORT_POS : LONG_POS;
+    var NEG = nonZero.length >= 3 ? SHORT_NEG : LONG_NEG;
+    var gains = [], losses = [];
+    statKeys.forEach(function(s) {
+      var v = combined[s] || 0;
+      if (v > 0) gains.push('<b>+' + v + ' ' + POS[s] + '</b>');
+      if (v < 0) losses.push('<b>' + v + ' ' + NEG[s] + '</b>');
+    });
+    var parts = [];
+    if (gains.length > 0) parts.push('Gain ' + gains.join(' and '));
+    if (losses.length > 0) parts.push('lose ' + losses.join(' and '));
+    var line1 = parts.length > 0 ? parts.join(', ') + '.' : 'No stat changes.';
+    return line1 + '<br><i>Transmuted from two different fates.</i>';
+  }
+
+  function _buildComboOrigin(a, b) {
+    var statKeys = ['hp', 'atk', 'sta', 'lck', 'int', 'mgk', 'def'];
+    var combined = {};
+    statKeys.forEach(function(s) { combined[s] = (a[s] || 0) + (b[s] || 0); });
+    var cleanA = (a.originName || '').replace(/\[.*\]/g, '').trim();
+    var cleanB = (b.originName || '').replace(/\[.*\]/g, '').trim();
+    var name = Math.random() < 0.5 ? _spliceName(cleanA, cleanB) : _spliceName(cleanB, cleanA);
+    var rolledA = (a.rolledName || cleanA).replace(/\[.*\]/g, '').trim();
+    var rolledB = (b.rolledName || cleanB).replace(/\[.*\]/g, '').trim();
+    var partsA = rolledA.split(' '), partsB = rolledB.split(' ');
+    var firstA = partsA[0], surnameA = partsA[partsA.length - 1];
+    var firstB = partsB[0], surnameB = partsB[partsB.length - 1];
+    var combo = {
+      emoji: '🧬',
+      originName: name,
+      rolledName: Math.random() < 0.5 ? firstA + ' ' + surnameB : firstB + ' ' + surnameA,
+      hp: combined.hp, atk: combined.atk, sta: combined.sta,
+      lck: combined.lck, int: combined.int, mgk: combined.mgk, def: combined.def,
+      desc: _buildComboDesc(combined),
+      note: '',
+      achiev: 'none',
+      _synthetic: true
+    };
+    combo.tier = _originTier(combo);
+    return combo;
   }
 
   function _renderOriginPicker(skipScreenSwitch, guaranteeAboveTier) {
@@ -400,8 +478,8 @@ var Menu = (function () {
     origins.forEach(function(origin) {
       var net        = _originNet(origin);
       var tier       = _originTier(origin);
-      var rarityBg    = RarityManager.getBg(tier);
-      var rarityColor = RarityManager.getColor(tier);
+      var rarityBg    = origin._synthetic ? 'rgb(38,32,6)' : RarityManager.getBg(tier);
+      var rarityColor = origin._synthetic ? '#FFD940' : RarityManager.getColor(tier);
 
       var descParts = origin.desc.split('<br>');
       var descLine1 = descParts[0] || '';
@@ -424,7 +502,7 @@ var Menu = (function () {
             + '<h5 style="margin:0 0 3px 0; font-size:16px; font-style:normal; font-weight:600; color:' + rarityColor + ';'
             + ' text-align:left; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">'
             + (origin.rolledName || origin.originName)
-            + ((origin.achiev && origin.achiev.trim() !== 'none') ? ' <span style="float:right; font-size:12px; -webkit-text-stroke:0; paint-order:stroke fill; padding-right:10px; margin-top:-2px;">🧩 <i style="font-weight:600; color:#62a862ff; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Memory</i></span>' : '')
+            + (origin._synthetic ? ' <span style="float:right; font-size:12px; -webkit-text-stroke:0; paint-order:stroke fill; padding-right:10px; margin-top:-2px;">✨ <i style="font-weight:600; color:#FFD940; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Unique</i></span>' : (origin.achiev && origin.achiev.trim() !== 'none') ? ' <span style="float:right; font-size:12px; -webkit-text-stroke:0; paint-order:stroke fill; padding-right:10px; margin-top:-2px;">🧩 <i style="font-weight:600; color:#62a862ff; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">Memory</i></span>' : '')
             + '</h5>'
             + '<h5 style="margin:0; font-size:13px; font-style:normal; font-weight:400; text-align:left; line-height:165%; color:#fff;">'
             + descLine1 + '</h5>'
@@ -455,6 +533,15 @@ var Menu = (function () {
       rerollBtn.disabled = !canReroll;
       rerollBtn.style.color = canReroll ? colorFairy : 'grey';
       rerollBtn.style.backgroundColor = canReroll ? 'rgb(40 57 79)' : '#2a2a2a';
+    }
+
+    var combineBtn = document.getElementById('menu_origin_combine');
+    if (combineBtn) {
+      var canCombine = parseInt(savedCoins) >= 2;
+      combineBtn.style.display = canCombine ? '' : 'none';
+      combineBtn.disabled = !canCombine;
+      combineBtn.style.color = canCombine ? '#FFD940' : 'grey';
+      combineBtn.style.backgroundColor = canCombine ? 'rgb(40 57 79)' : '#2a2a2a';
     }
 
     if (skipScreenSwitch) { _doShowScreen('menu_origin_screen'); } else { _showScreen('menu_origin_screen'); }
@@ -1397,7 +1484,72 @@ var Menu = (function () {
       menuFade(function () {
         _selectedOrigin = null;
         _renderOriginPicker(true, prevBestTier);
-      }, '<p style="color:#7193bf;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">Shuffling new Origins...</p>', 2500, '0.8s');
+      }, '<p style="color:#2cc176;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">Shuffling new Origins...</p>', 1000, '0.6s');
+    });
+
+    document.getElementById('menu_origin_combine').addEventListener('click', function () {
+      if (parseInt(savedCoins) < 2) return;
+      var currentRoll;
+      try { currentRoll = JSON.parse(localStorage.getItem('originRoll') || 'null'); } catch(e) {}
+      if (!Array.isArray(currentRoll) || currentRoll.length < 2) return;
+      savedCoins -= 2;
+      localStorage.setItem('coins', parseInt(savedCoins));
+      var debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
+      localStorage.setItem('transmuteDebt', debt + 2);
+      var idxPool = [];
+      for (var ci = 0; ci < currentRoll.length; ci++) idxPool.push(ci);
+      var idxA = idxPool.splice(Math.floor(Math.random() * idxPool.length), 1)[0];
+      var idxB = idxPool.splice(Math.floor(Math.random() * idxPool.length), 1)[0];
+      var idxC = idxPool.length > 0 ? idxPool[0] : undefined;
+      var originA = currentRoll[idxA];
+      var originB = currentRoll[idxB];
+      var surviving = idxC !== undefined ? currentRoll[idxC] : null;
+      var cards = document.querySelectorAll('#menu_origin_list .menu-history-entry');
+      var sortedRoll = currentRoll.slice().sort(function(a, b) {
+        var aLeg = _originTier(a) === 'Legendary' ? 1 : 0;
+        var bLeg = _originTier(b) === 'Legendary' ? 1 : 0;
+        if (bLeg !== aLeg) return bLeg - aLeg;
+        var aHas = _hasAnyStats(a) ? 1 : 0;
+        var bHas = _hasAnyStats(b) ? 1 : 0;
+        if (bHas !== aHas) return bHas - aHas;
+        return _originNet(b) - _originNet(a);
+      });
+      var domIdxA = -1, domIdxB = -1;
+      for (var si = 0; si < sortedRoll.length; si++) {
+        if (sortedRoll[si].originName === originA.originName) domIdxA = si;
+        if (sortedRoll[si].originName === originB.originName) domIdxB = si;
+      }
+      var cardA = domIdxA >= 0 ? cards[domIdxA] : null;
+      var cardB = domIdxB >= 0 ? cards[domIdxB] : null;
+      var goldFrames = [
+        { boxShadow: 'inset 0 0 0 1000px rgba(255,217,64,0)' },
+        { boxShadow: 'inset 0 0 0 1000px rgba(255,217,64,0.55)' },
+        { boxShadow: 'inset 0 0 0 1000px rgba(255,217,64,0)' },
+        { boxShadow: 'inset 0 0 0 1000px rgba(255,217,64,0.55)' },
+        { boxShadow: 'inset 0 0 0 1000px rgba(255,217,64,0)' }
+      ];
+      var animOpts = { duration: 1120, easing: 'ease-in-out' };
+      function _afterFlash() {
+        var combo = _buildComboOrigin(originA, originB);
+        var excludeNames = [originA.originName, originB.originName];
+        if (surviving) excludeNames.push(surviving.originName);
+        var fill = _pickOneOrigin(excludeNames);
+        var newRoll = [];
+        if (surviving) newRoll.push(surviving);
+        newRoll.push(combo);
+        if (fill) newRoll.push(fill);
+        try { localStorage.setItem('originRoll', JSON.stringify(newRoll)); } catch(e) {}
+        menuFade(function () {
+          _selectedOrigin = null;
+          _renderOriginPicker(true);
+        }, '<p style="color:#FFD940;letter-spacing:1.5px;font-size:28px;-webkit-text-stroke:4px #121212;paint-order:stroke fill;">Fusing Origin fates...</p>', 900, '0.6s');
+      }
+      if (cardA) cardA.animate(goldFrames, animOpts);
+      if (cardB) {
+        cardB.animate(goldFrames, animOpts).onfinish = _afterFlash;
+      } else {
+        setTimeout(_afterFlash, 1120);
+      }
     });
 
     document.getElementById('menu_origin_cancel').addEventListener('click', function () {

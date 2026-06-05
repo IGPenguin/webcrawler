@@ -170,7 +170,10 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
                   padding-bottom:0px;">
         <div id="menu_origin_list"></div>
       </div>
-      <button class="menu-btn" id="menu_origin_reroll" style="color:#2cc176; background-color:rgb(40 57 79);">✨ Transmute <b style="font-size:14px; color:#7193bf;"> -1 🪙</b></button>
+      <div style="display:flex; gap:6px;">
+        <button class="menu-btn" id="menu_origin_reroll" style="flex:1; font-size:18px; color:#2cc176; background-color:rgb(40 57 79);"><b style="font-size:14px; color:#7193bf;"> 1 🪙</b> Meditate</button>
+        <button class="menu-btn" id="menu_origin_combine" style="flex:1; font-size:18px; color:#FFD940; background-color:rgb(40 57 79);"><b style="font-size:14px; color:#7193bf;"> 2 🪙</b> Transmute</button>
+      </div>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_origin_begin" style="margin-top:16px; color:grey;">✨ Choose an Origin</button>
       <button class="menu-btn" id="menu_origin_cancel">👈 Cancel</button>
