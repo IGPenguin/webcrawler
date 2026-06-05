@@ -94,7 +94,7 @@ function redirectToFeedback(){
 }
 
 function showDonatePopup() {
-  var mockLink = 'revolut.me/[MY_HANDLE]';
+  var mockLink = 'https://revolut.me/igpenguin?currency=EUR&amount=200&note=Stay%20Dead%20-%20Coffee';
 
   var existing = document.getElementById('donate_popup_overlay');
   if (existing) existing.parentNode.removeChild(existing);
@@ -115,13 +115,14 @@ function showDonatePopup() {
   subtitle.innerHTML = 'ℹ️ Voluntary donation, no extra content provided.';
 
   var qrWrap = document.createElement('div');
-  qrWrap.style.cssText = 'position:relative; width:284px; height:284px; margin:0 auto 0 auto; background:#2a2a2a; box-shadow:0 0 0 3px #000; display:flex; align-items:center; justify-content:center;';
+  qrWrap.style.cssText = 'width:284px; height:284px; margin:0 auto 0 auto; box-shadow:0 0 0 3px #000;';
 
-  var qrLabel = document.createElement('span');
-  qrLabel.style.cssText = 'color:#555; font-size:16px; letter-spacing:0.03em;';
-  qrLabel.innerHTML = 'Coming soon';
+  var qrImg = document.createElement('img');
+  qrImg.src = 'assets/img/Donate.jpg';
+  qrImg.alt = 'Revolut QR Code';
+  qrImg.style.cssText = 'width:284px; height:284px; display:block;';
 
-  qrWrap.appendChild(qrLabel);
+  qrWrap.appendChild(qrImg);
 
   var linkInput = document.createElement('input');
   linkInput.type = 'text';
