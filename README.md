@@ -9,12 +9,12 @@
 Recall **🧩 Memories** to unlock new content. Climb the **🪦 Rankings** and conquer **the branching ending**.
 
 ## 📕 Codex of the Damned
-**If you are struggling**, read the 📕 **[Codex of the Damned](WIKI.md)**.<br>
-It's a spoiler-free overview of the game with basic survival tips.
+**If you are struggling to survive**, read the 📕 **[Codex of the Damned](WIKI.md)**.<br>
+It's a spoiler-free overview of the game rules and survival tips.
 
 
 ## 🤘 Support
-⭐️ **Click the GitHub star button** to show support, it helps the project reach more players.<br>
+⭐️ **Click the GitHub star button**, it helps the project reach more players.<br>
 <b>💚 [Send rating](https://docs.google.com/forms/d/e/1FAIpQLSc46BJ-S_EBmXxZgzVYLCC8l2Wece0hWXJESiRMpuMlXTC3Cw/viewform?usp=header)</b> with your feedback and improvement suggestions.<br>
 <b>📝 [Report issues](https://github.com/IGPenguin/stay-dead/issues)</b> to report problems or request support.<br>
 
