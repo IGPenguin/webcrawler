@@ -604,8 +604,18 @@ function playerHit(incomingDamage,applyLuck=true,typeMagic=false) {
     return;
   }
 
+  var defended = 0;
+  if (playerDef > 0 && incomingDamage > 1) {
+    defended = Math.min(playerDef, incomingDamage - 1);
+    incomingDamage -= defended;
+  }
+
   playerHp = playerHp - incomingDamage;
   animateUIElement(playerInfoUIElement,"animate__shakeX","0.5"); //Animate hitreact
+  if (defended > 0) {
+    logAction("🔰 ▸ 💢 -" + incomingDamage + " 💔 (" + defended + " 🔰)");
+    displayPlayerEffect("🔰");
+  }
   if (playerHp <= 0){
     playerHp=0; //Prevent redraw issues post-overkill
 

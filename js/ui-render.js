@@ -22,7 +22,8 @@ function redraw(){
     playerHp,  playerHpMax - playerHp,
     playerSta, playerStaMax - playerSta,
     playerAtk > 0 ? playerAtk : 0, 0,
-    _hasMgk ? playerMgk : 0, _hasMgk ? playerMgkMax - playerMgk : 0
+    _hasMgk ? playerMgk : 0, _hasMgk ? playerMgkMax - playerMgk : 0,
+    playerDef > 0 ? playerDef : 0
   );
 
   document.getElementById('id_player_status').innerHTML = playerStatusString;
@@ -391,8 +392,9 @@ function displayEnemyType(type){ //TODO Refactor usage or remove
   }
 }
 
-function buildStatsUI(hp, hpLost, sta, staLost, atk, atkLost, mgk, mgkLost) {
-  var total = (hp + Math.max(hpLost, 0)) + (sta + Math.max(staLost, 0)) + (atk + Math.max(atkLost, 0)) + (mgk + Math.max(mgkLost, 0));
+function buildStatsUI(hp, hpLost, sta, staLost, atk, atkLost, mgk, mgkLost, def) {
+  def = def || 0;
+  var total = (hp + Math.max(hpLost, 0)) + (sta + Math.max(staLost, 0)) + (atk + Math.max(atkLost, 0)) + (mgk + Math.max(mgkLost, 0)) + def;
   var numericAtk = total > 16;
   function bar(cur, lost) {
     var s = cur > 0 ? fullSymbol.repeat(cur) : "";
@@ -404,6 +406,7 @@ function buildStatsUI(hp, hpLost, sta, staLost, atk, atkLost, mgk, mgkLost) {
   if (sta > 0 || staLost > 0) parts.push('<span class="ui-emoji">🟢</span>&nbsp;' + bar(sta, staLost));
   if (mgk > 0 || mgkLost > 0) parts.push('<span class="ui-emoji">🔵</span>&nbsp;' + bar(mgk, mgkLost));
   if (atk > 0 || atkLost > 0) parts.push('<span class="ui-emoji">⚔️</span>&nbsp;' + (numericAtk ? '<span style="font-size:16px;line-height:1;vertical-align:middle;">' + atk + '</span>' : bar(atk, atkLost)));
+  if (def > 0) parts.push('<span class="ui-emoji">🔰</span>&nbsp;' + (numericAtk ? '<span style="font-size:16px;line-height:1;vertical-align:middle;">' + def + '</span>' : bar(def, 0)));
   return parts.join('&nbsp;&nbsp;');
 }
 
@@ -414,7 +417,8 @@ function appendEnemyStats(){
     enemyHp  > 0    ? enemyHp  - enemyHpLost  : 0, enemyHp  > 0    ? enemyHpLost  : 0,
     enemySta > 0    ? enemySta - enemyStaLost  : 0, enemySta > 0    ? enemyStaLost : 0,
     _showAtk        ? _atkEff                  : 0, _showAtk && enemyAtkBonus < 0 ? -enemyAtkBonus : 0,
-    enemyMgk > 0   ? enemyMgk - enemyMgkLost  : 0, enemyMgk > 0    ? enemyMgkLost : 0
+    enemyMgk > 0   ? enemyMgk - enemyMgkLost  : 0, enemyMgk > 0    ? enemyMgkLost : 0,
+    enemyDef > 0   ? enemyDef                  : 0
   );
 }
 
