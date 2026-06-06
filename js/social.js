@@ -134,20 +134,29 @@ function showDonatePopup() {
   var btnRow = document.createElement('div');
   btnRow.style.cssText = 'display:flex; gap:4px;';
 
+  var donateBtn = document.createElement('button');
+  donateBtn.className = 'menu-btn';
+  donateBtn.style.cssText = 'flex:1; margin-top:0; color:#FFD940;';
+  donateBtn.innerHTML = '☕ Donate';
+
   var copyBtn = document.createElement('button');
   copyBtn.className = 'menu-btn';
-  copyBtn.style.cssText = 'flex:1; margin-top:0; color:#FFD940;';
-  copyBtn.innerHTML = '💸 Copy Link';
+  copyBtn.style.cssText = 'flex:1; margin-top:0; color:white;';
+  copyBtn.innerHTML = '🔗 Copy';
 
   var closeBtn = document.createElement('button');
   closeBtn.className = 'menu-btn';
-  closeBtn.style.cssText = 'flex:0.6; margin-top:0; color:#ff6666;';
+  closeBtn.style.cssText = 'flex:1; margin-top:0; color:#ff6666;';
   closeBtn.innerHTML = '✕ Close';
+
+  donateBtn.addEventListener('click', function () {
+    window.open(mockLink, '_blank');
+  });
 
   copyBtn.addEventListener('click', function () {
     function _onCopied() {
       copyBtn.innerHTML = '✓ Copied!';
-      setTimeout(function () { copyBtn.innerHTML = '💸 Copy Link'; }, 2000);
+      setTimeout(function () { copyBtn.innerHTML = '🔗 Link'; }, 2000);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(mockLink).then(_onCopied).catch(function () {
@@ -165,6 +174,7 @@ function showDonatePopup() {
   closeBtn.addEventListener('click', _closePopup);
   overlay.addEventListener('click', function (e) { if (e.target === overlay) _closePopup(); });
 
+  btnRow.appendChild(donateBtn);
   btnRow.appendChild(copyBtn);
   btnRow.appendChild(closeBtn);
   card.appendChild(title);
