@@ -109,19 +109,41 @@ def validate_achievement_origins(warnings, errors):
                 if not any(dn in unlock for dn in get_origin_names(origin['name'].strip())):
                     errors.append(f"Achievement Mismatch: Origin '{origin['name']}' is unlocked by '{ach_id}', but achievement text doesn't mention it: '{unlock}'")
 
+STAT_MAP = {
+    '❤️ Health': 'hp', '💔 Health': 'hp',
+    '⚔️ Attack': 'atk', '⚔️ Damage': 'atk',
+    '🟢 Energy': 'sta',
+    '🍀 Luck': 'lck', '🧠 Intellect': 'int', '🧠 INT': 'int',
+    '🔵 Mana': 'mgk'
+}
+
+def _check_desc_stats(desc, row, file_label, errors):
+    # Skip skill-granting items — their desc stats describe what the skill does, not direct grants
+    msg = row.get('message', '').strip()
+    if re.match(r'Gained (?:skill|ability|\d)', msg):
+        return
+    matches = re.findall(r'<b>([+-]\d+)\s+(.*?)</b>', desc)
+    for val_str, stat_text in matches:
+        try:
+            val = int(val_str)
+            stat_key = None
+            for key in STAT_MAP:
+                if key in stat_text:
+                    stat_key = STAT_MAP[key]
+                    break
+            if stat_key and stat_key in row:
+                csv_val = int(row[stat_key])
+                if csv_val != val:
+                    name = row.get('name', row.get('emoji', '?')).strip()
+                    errors.append(f"Stat Mismatch - {file_label} [{name}]: Desc says {val_str} for {stat_text}, but CSV '{stat_key}' is {csv_val}")
+        except ValueError:
+            continue
+
 def validate_origin_stats(warnings, errors):
     print("Validating Origin attribute/description matching...")
     org_file = 'data/origins.csv'
     if not os.path.exists(org_file):
         return
-
-    stat_map = {
-        '❤️ Health': 'hp', '💔 Health': 'hp',
-        '⚔️ Attack': 'atk', '🟢 Energy': 'sta',
-        '🍀 Luck': 'lck', '🧠 Intellect': 'int',
-        '🔵 Mana': 'mgk'
-    }
-
     with open(org_file, 'r', encoding='utf-8') as f:
         lines = [line for line in f if line.strip() and not line.strip().startswith('//')]
         reader = csv.DictReader(lines, delimiter=';')
@@ -129,23 +151,20 @@ def validate_origin_stats(warnings, errors):
             if any(v is None for v in row.values()):
                 errors.append(f"Wrong Column Count - origins.csv [{row.get('emoji', '').strip()} {row.get('name', '?').strip()}]: skipping stat validation")
                 continue
-            desc = row['desc']
-            # Find bold stat annotations like <b>+3 🔵 Mana</b> or <b>-1 💔 Health</b>
-            matches = re.findall(r'<b>([+-]\d+)\s+(.*?)</b>', desc)
-            for val_str, stat_text in matches:
-                try:
-                    val = int(val_str)
-                    stat_key = None
-                    for key in stat_map:
-                        if key in stat_text:
-                            stat_key = stat_map[key]
-                            break
-                    if stat_key:
-                        csv_val = int(row[stat_key])
-                        if csv_val != val:
-                            errors.append(f"Stat Mismatch - {row['name']}: Desc says {val_str} for {stat_text}, but CSV stat '{stat_key}' is {csv_val}")
-                except ValueError:
+            _check_desc_stats(row['desc'], row, 'origins.csv', errors)
+
+def validate_encounter_stats(warnings, errors):
+    print("Validating Encounter/Story attribute/description matching...")
+    for csv_file in ('data/encounters.csv', 'data/story.csv'):
+        if not os.path.exists(csv_file):
+            continue
+        with open(csv_file, 'r', encoding='utf-8') as f:
+            lines = [line for line in f if line.strip() and not line.strip().startswith('//')]
+            reader = csv.DictReader(lines, delimiter=';')
+            for row in reader:
+                if any(v is None for v in row.values()):
                     continue
+                _check_desc_stats(row.get('desc', ''), row, csv_file, errors)
 
 def validate_string_generator_lengths(warnings):
     print("Validating String Generator lengths...")
@@ -645,6 +664,7 @@ def main():
         
         validate_achievement_origins(all_warnings, all_errors)
         validate_origin_stats(all_warnings, all_errors)
+        validate_encounter_stats(all_warnings, all_errors)
         
         if os.path.exists('js'):
             all_warnings.extend(validate_js_files('js'))
