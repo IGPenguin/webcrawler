@@ -182,6 +182,10 @@ function gameOver(silent=false){
     playtime:       _deathPayload.playtime
   });
   lastEncounterIndex = encounterIndex; //Save death position for reincarnation
+  reincarnateEnemyHpLost  = enemyHpLost;
+  reincarnateEnemyStaLost = enemyStaLost;
+  reincarnateEnemyMgkLost = enemyMgkLost;
+  reincarnateEnemyAtkBonus = enemyAtkBonus;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;

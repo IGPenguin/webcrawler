@@ -134,6 +134,11 @@ var enemyStaLost = 0;
 var enemyAtkBonus = 0;
 var enemyIntBonus = 0;
 var enemyMgkLost = 0;
+
+var reincarnateEnemyHpLost = 0;
+var reincarnateEnemyStaLost = 0;
+var reincarnateEnemyMgkLost = 0;
+var reincarnateEnemyAtkBonus = 0;
 var currentProphercy;
 var enemyEmojiScaleX;
 var enemyBossType = "";
