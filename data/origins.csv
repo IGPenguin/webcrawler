@@ -35,7 +35,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 👻;Wraith;0;-1;3;0;0;0;0;Gain <b>+3 🟢 Energy</b>, lose <b>-1 ⚔️ Attack</b>.<br><i>Lighting fast, but effectively harmless.;death_sleep
 🏳️;Pacifist;0;-1;0;0;3;0;0;Gain <b>+3 🧠 Intellect</b>, give up <b>-1 ⚔️ Attack</b>.<br><i>Always choses wit over aggression.;calm_first
 😡;Choleric;0;1;0;0;-2;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🧠 Intellect</b>.<br><i>Effective but not the brightest.;smash_door_first
-🦴;Survivor;0;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Surviving on scraps and desperate spite.;discover_necropolis
+🦴;Survivor;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no clear downside.<br><i>Surviving on scraps and desperate spite.;discover_necropolis
 🍀;Lucky;0;0;0;2;0;0;0;Gain <b>+2 🍀 Luck</b> with no clear downside.<br><i>Traded fortune for his brainpower.;gamble_win_first
 🎲;Gambler;0;0;0;3;-3;0;0;Gain <b>+3 🍀 Luck</b>, lose <b>-3 🧠 Intellect</b>.<br><i>Traded certainty for something much better.;gamble_win_10
 🌻;Hippie;0;0;1;1;0;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.<br><i>Always dirty hands, one with the nature.;touch_grass
@@ -61,7 +61,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 
 //Outstanding
 💪;Miner;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br>Hardened long before anything fought back.;none
-🪵;Logger;1;0;0;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Used to work hard with no time to rest.;none
+🪵;Logger;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Used to work hard with no time to rest.;none
 🎩;Noble;0;0;0;1;1;0;0;Inherit <b>+1 🧠 Intellect</b> and <b>+1 🍀 Luck</b>.<br><i>Born to great comfort, how lucky.;none
 🪕;Bard;0;0;0;0;2;0;0;Gain <b>+2 🧠 Intellect</b> with no downside.<br><i>Traveled the world, learned a lot.;none
 🪶;Scribe;0;0;0;0;1;0;0;Gain <b>+1 🧠 Intellect</b> with no downside.<br><i>Wrote stories that he lived through first.;none

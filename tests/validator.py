@@ -130,8 +130,8 @@ def validate_origin_stats(warnings, errors):
                 errors.append(f"Wrong Column Count - origins.csv [{row.get('emoji', '').strip()} {row.get('name', '?').strip()}]: skipping stat validation")
                 continue
             desc = row['desc']
-            # Find patterns like +3 🔵 Mana or -1 💔 Health
-            matches = re.findall(r'([+-]\d+)\s*(?:<b>)?(.*?)(?:</b>)?', desc)
+            # Find bold stat annotations like <b>+3 🔵 Mana</b> or <b>-1 💔 Health</b>
+            matches = re.findall(r'<b>([+-]\d+)\s+(.*?)</b>', desc)
             for val_str, stat_text in matches:
                 try:
                     val = int(val_str)
