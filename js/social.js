@@ -128,7 +128,7 @@ function showDonatePopup() {
   linkInput.type = 'text';
   linkInput.readOnly = true;
   linkInput.value = mockLink;
-  linkInput.style.cssText = 'width:286px; box-sizing:border-box; font-size:16px; padding:10px; background:#2a2a2a; border:none; outline:2px solid #444; color:#aaa; font-family:inherit; margin-bottom:10px; text-align:center; cursor:text;';
+  linkInput.style.cssText = 'width:286px; box-sizing:border-box; font-size:12.2px; padding:10px; background:#2a2a2a; border:none; outline:2px solid #444; color:#aaa; font-family:inherit; margin-bottom:10px; text-align:center; cursor:text;';
   linkInput.addEventListener('click', function () { this.select(); });
 
   var btnRow = document.createElement('div');
@@ -142,7 +142,7 @@ function showDonatePopup() {
   var copyBtn = document.createElement('button');
   copyBtn.className = 'menu-btn';
   copyBtn.style.cssText = 'flex:1; margin-top:0; color:white;';
-  copyBtn.innerHTML = '🔗 Copy';
+  copyBtn.innerHTML = '🔗 Share';
 
   var closeBtn = document.createElement('button');
   closeBtn.className = 'menu-btn';
@@ -156,7 +156,7 @@ function showDonatePopup() {
   copyBtn.addEventListener('click', function () {
     function _onCopied() {
       copyBtn.innerHTML = '✓ Copied!';
-      setTimeout(function () { copyBtn.innerHTML = '🔗 Copy'; }, 2000);
+      setTimeout(function () { copyBtn.innerHTML = '🔗 Share'; }, 2000);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(mockLink).then(_onCopied).catch(function () {
