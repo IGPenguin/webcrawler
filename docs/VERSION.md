@@ -11,6 +11,7 @@ Enjoy your journey!
 💬 Speak crit: bonus XP on disengage
 ✨ Fix post-reincarnation encounter stats
 ✂️ Cut too long descriptions and log texts
+🗃️ Fix Chronicles and Reckonings UI, menu tweaks
 
 ## ver. 06/06/26 @ 08:40 AM
 🛒 Spawn Shop at every new area (if coin)
