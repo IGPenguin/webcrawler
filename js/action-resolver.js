@@ -3403,12 +3403,12 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       else AchievementManager.check('buy_item');
       displayPlayerGainedEffect();
       logPlayerAction(actionString,"Splendid! This ought to help");
-      drachmaShop[0]="area:"+areaName;
       var genItem = _forcedTier ? generateRandomItemByTier(_forcedTier) : generateRandomItem(item=="Artifact" ? "Artifact" : "");
       genItem[0]="area:"+areaName;
       pushEncounter(genItem);
       nextEncounter();
-      pushEncounter(drachmaShop);
+      var _shopBack = drachmaShop.slice(); _shopBack[0]="area:"+areaName;
+      pushEncounter(_shopBack);
     } else if (item=="Favor" || item=="Body") {
       var statPool = item=="Favor"
         ? [{ stat: "🍀", amt: "Minor +", apply: function() { playerLck+=0.5; } },
@@ -3440,7 +3440,8 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
         pushEncounter(_regrets);
         nextEncounter();
       }
-      pushEncounter(drachmaShop);
+      var _shop = drachmaShop.slice(); _shop[0]="area:"+areaName;
+      pushEncounter(_shop);
       return;
     } else {
       AchievementManager.check('buy_level');

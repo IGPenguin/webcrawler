@@ -161,7 +161,8 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       drachmaCoin[0] = "area:" + areaName;
       var _fishBonus = AchievementManager.isUnlocked('fish_boss_kill') ? 1 : 0;
       var bossCoinsLimit = {"Fading Wildlands": _fishBonus, "Forsaken Village": 1+_fishBonus, "Twisted Fairyland": 2+_fishBonus, "River of Sorrows": 3+_fishBonus};
-      if (!areaName.includes("Shrouded Necropolis") && savedCoins < (bossCoinsLimit[areaName] || 0)) pushEncounter(drachmaCoin);
+      var _totalCoins = savedCoins + parseInt(localStorage.getItem('transmuteDebt') || '0');
+      if (!areaName.includes("Shrouded Necropolis") && _totalCoins < (bossCoinsLimit[areaName] || 0)) pushEncounter(drachmaCoin);
       pushEncounter(getRandomEncounter(allBosses));
       break;
 
