@@ -135,15 +135,14 @@ function processStoryData(allText, initNextEncounter=true, encounterIndex=0) {
   }
 
   if (initNextEncounter) {
+    _shopInjectedArea = ''; // reset per run so shop can spawn in each area
     loadEncounter((isLocalhost() && TUTORIAL_SKIP_LOCALHOST ? TUTORIAL_SKIP_INDEX : 1) + encounterIndex); // 0 is the death screen
 
-    if (savedCoins != NaN && savedCoins > 0) { // Returning player (second boss killed) — skip tutorial, show shop
+    if (savedCoins != NaN && savedCoins > 0) { // Returning player (has coins) — skip tutorial
       logAction("💤&nbsp;▸&nbsp;💭 This dream again, it never ends...<br><br>");
       playerSta = playerStaMax;
       loadEncounter(TUTORIAL_SKIP_INDEX);
-      drachmaShop[0] = "area:" + "Fading Wildlands";
       linesStory.splice(encounterIndex + 1, 1); // Remove realization encounter
-      pushEncounter(drachmaShop);
       if (AchievementManager.isUnlocked("gate_fairyland")) pushEncounter(soulbindingArch, Math.floor(Math.random() * 3) + 4);
     }
     else if (AchievementManager.isUnlocked("boss_kill_first")) { // Returning player (first boss killed) — skip tutorial, no shop yet

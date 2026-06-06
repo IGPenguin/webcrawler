@@ -1,3 +1,6 @@
+// ── Shop spawn tracking ───────────────────────────────────────────────────────
+var _shopInjectedArea = ''; // tracks which area already received a shop this run
+
 // ── Enemy type pools ──────────────────────────────────────────────────────────
 var easyEnemies        = ["Standard","Stingy"];
 var mediumEnemies      = ["Standard","Stingy","Hot","Toxic"];
@@ -98,6 +101,17 @@ function generateNextEncounters(generatorID=0, logCall=true) {
       if (logCall && !areaName.includes("Fading") && procAbilityChance("", 3+luckSpawnBonus())) { // 3% Artifact lockbox (not in Fading, not in sub-generator calls)
         pushEncounter(getWeightedEncounter(["Item"],["Artifact"]));
         pushEncounter(getRandomEncounter(["Locked-Container"]));
+      }
+
+      // Inject shop as the first encounter of this area (pushed last = lands first)
+      if (logCall
+          && AchievementManager.isUnlocked('coin_first')
+          && (savedCoins - spentCoins) > 0
+          && _shopInjectedArea !== areaName) {
+        _shopInjectedArea = areaName;
+        var _shopRow = drachmaShop.slice();
+        _shopRow[0] = "area:" + areaName;
+        pushEncounter(_shopRow);
       }
       break;
 
