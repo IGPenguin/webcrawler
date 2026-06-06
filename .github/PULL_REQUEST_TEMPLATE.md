@@ -2,7 +2,7 @@
 - _Check the commit messages..._
 
 ## ❗️ Major TODOs
-- [ ] There is always more, see [TODOs.md](https://github.com/IGPenguin/stay-dead/blob/live/TODOs.md)...
+- [ ] There is always more, see [TODOS.md](https://github.com/IGPenguin/stay-dead/blob/live/docs/TODOS.md)...
 
 ## ⚠️ Review checklist
 **I declare that all requirements have been met:**
