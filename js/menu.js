@@ -701,8 +701,11 @@ var Menu = (function () {
               + (session.playerName || 'Unknown') + '</h3>'
           + '</div>'
         + '</div>'
-        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style: normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + _formatEndMessage(session) + '</h5>'
-        + '<h5 style="margin:-4px 0 4px 0; opacity:0.6; font-size:14px;">' + (session.date || '')
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style:normal; font-weight:400; line-height:24px;">' + (session.area || '?') + '<br>' + _formatEndMessage(session) + '</h5>'
+        + '<h5 style="margin:0px 0 4px 0; opacity:0.6; font-size:14px;">'
+        + (session.playerOriginEmoji ? session.playerOriginEmoji + '&nbsp;' : '')
+        + (session.playerOriginName && session.playerOriginName !== 'None' ? session.playerOriginName + '&nbsp;&nbsp;•&nbsp;&nbsp;' : '')
+        + (session.date || '')
         + (session.score !== undefined ? '&nbsp;&nbsp;•&nbsp;&nbsp;🎖️ ' + session.score : '') + '</h5>';
 
       entry.addEventListener('click', function () { menuFade(function () { _renderHistoryDetail(session); }); });
@@ -751,7 +754,7 @@ var Menu = (function () {
     logWrap.style.cssText = 'margin:4px 3px 3px 3px; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
 
     var logEl = document.createElement('h4');
-    logEl.style.cssText = 'margin:-11px 0 0 0; padding:4px 8px; text-align:left; '
+    logEl.style.cssText = 'margin:-18px 0 0 0; padding:4px 8px; text-align:left; '
       + 'font-size:14.6px; line-height:165%; overflow-y:auto; '
       + 'scrollbar-width:thin; scrollbar-color:#000 transparent;';
     logEl.innerHTML = logLines.length ? logLines.join('<br>') : '<i style="opacity:0.5;">No log.</i>';
@@ -759,14 +762,16 @@ var Menu = (function () {
     logWrap.appendChild(logEl);
     list.appendChild(logWrap);
 
-    // Loot/party bar — below the log
+    // Combined party + loot bar — matches in-game id_player_party_loot display
+    var _combined = String(session.playerPartyString || '').replace('undefined', '').trim()
+                  + String(session.playerLootString  || '').replace('undefined', '').trim();
     var lootBar = document.createElement('h3');
     lootBar.className = 'menu-loot-bar';
     lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; '
       + 'white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; '
       + 'margin-left:3px; margin-bottom:0px; margin-top:12px; display:inline-block; width:95.8%; '
       + 'box-shadow:0px 0px 0px 3px #121212; background-color:#272727;';
-    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">x x x</span>';
+    lootBar.innerHTML = _combined || '<span style="color:#fff;">x x x</span>';
     list.appendChild(lootBar);
 
     var clearDiv = document.createElement('div');
@@ -782,6 +787,7 @@ var Menu = (function () {
         '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">🎖️ Valor: <b>' + session.score + '</b>'
         + (session.encounterCount ? '&nbsp;&nbsp;&nbsp;Encounters: ' + session.encounterCount : '') + '</h5>'
         + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
+        + (session.difficulty ? session.difficulty + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
         + (session.playerOriginName ? 'Origin: ' + session.playerOriginName + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
         + 'Lifetime: ' + _formatPlaytime(session.playtime || 0) + '</h5>';
       list.appendChild(scoreBar);
@@ -1036,6 +1042,8 @@ var Menu = (function () {
           var _decodedGhost = entry.ghostLink ? ScoreManager.decodeGhostLink(entry.ghostLink) : null;
           _endLabel = (_decodedGhost && _decodedGhost.deathMessage) ? _decodedGhost.deathMessage : ScoreManager.getEndingLabel(entry.endType);
         }
+        var _listGhost = entry.ghostLink ? ScoreManager.decodeGhostLink(entry.ghostLink) : null;
+        var _areaLabel = (_listGhost && _listGhost.area) ? _listGhost.area : (entry.charName || '?');
         el.innerHTML =
           '<div style="overflow:hidden;padding-top:3px;padding-bottom:3px;">'
             + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; position:relative; background-color:' + rankBg + ';">'
@@ -1046,38 +1054,41 @@ var Menu = (function () {
               + '<h3 style="display:flex; align-items:center; height:28px; text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin:0; color:' + rankColor + '; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
               + medal + (entry.nickname || entry.charName || '?') + '</h3></div></div>'
             + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style:normal; font-weight:400; line-height:24px;">'
-            + (entry.charName || '?') + '&nbsp;•&nbsp;Lvl&nbsp;' + (entry.level || '?') + '<br>'
+            + _areaLabel + '&nbsp;•&nbsp;Lvl&nbsp;' + (entry.level || '?') + '<br>'
             + '<span style="color:' + _endColor + ';">' + _endLabel + '</span></h5>'
-            + '<h5 style="margin:-4px 0 4px 0; opacity:0.6; font-size:14px;">'
+            + '<h5 style="margin:0px 0 4px 0; opacity:0.6; font-size:14px;">'
+            + (entry.charName ? entry.charName + '&nbsp;&nbsp;•&nbsp;&nbsp;' : '')
+            + ((_listGhost && _listGhost.originEmoji) ? _listGhost.originEmoji + '&nbsp;' : '')
             + (entry.origin ? entry.origin + '&nbsp;&nbsp;•&nbsp;&nbsp;' : '')
             + (entry.datetime ? entry.datetime.slice(0, 10) : '')
             + '</h5>';
+
         if (entry.ghostLink) {
           el.style.cursor = 'pointer';
-          el.addEventListener('click', function () {
+          el.addEventListener('click', (function (rankIdx) { return function () {
             var ghost = ScoreManager.decodeGhostLink(entry.ghostLink);
-            if (ghost) menuFade(function () { _renderViewGhost(ghost); });
-          });
+            if (ghost) menuFade(function () { _renderViewGhost(ghost, rankIdx); });
+          }; })(i));
         }
         list.appendChild(el);
       });
     });
   }
 
-  function _renderViewGhost(ghost) {
+  function _renderViewGhost(ghost, rankIdx) {
     _bindRankingsBack('👈 Back', function () { menuFade(function () { _renderRankings(true); }); });
     var list = document.getElementById('menu_rankings_list');
     var sc = list.parentElement;
     sc.style.overflowY = 'hidden';
     list.innerHTML = '';
 
-    var statParts = (ghost.stats || '').split(';');
-    var hp  = parseInt(statParts[0]) || 0;
-    var atk = parseInt(statParts[1]) || 0;
-    var sta = parseInt(statParts[2]) || 0;
-    var mgk = parseInt(statParts[5]) || 0;
-    var stats = _buildStats(hp, sta, atk, mgk);
+    var _statParts = (ghost.stats || '').split(';');
+    var _ghostStats = _buildStats(parseInt(_statParts[0]) || 0, parseInt(_statParts[2]) || 0, parseInt(_statParts[1]) || 0, parseInt(_statParts[5]) || 0);
     var partyLoot = String(ghost.inventory || '');
+    rankIdx = (rankIdx !== undefined && rankIdx !== null) ? rankIdx : -1;
+    var rankColor = rankIdx === 0 ? '#FFD940' : rankIdx === 1 ? '#c0c0c0' : rankIdx === 2 ? '#cd7f32' : '#fff';
+    var rankBg    = rankIdx === 0 ? '#1e1900' : rankIdx === 1 ? '#181818' : rankIdx === 2 ? '#1c1100' : '#202020';
+    var medal     = rankIdx === 0 ? '👑 ' : rankIdx === 1 ? '🥈 ' : rankIdx === 2 ? '🥉 ' : rankIdx >= 0 ? (rankIdx + 1) + '. ' : '';
 
     var card = document.createElement('div');
     var displayDiff = ghost.difficulty || 'Standard';
@@ -1091,21 +1102,40 @@ var Menu = (function () {
     var _ghostEndColor = _ghostIsWin ? '#FFD940' : '#FF0000';
     var _ghostSub = '<span style="color:' + _ghostEndColor + ';">' + _ghostEndMsg + '</span>';
 
-    card.innerHTML = _buildRunCardHTML(
-      ghost.charName || '?',
-      ghost.level || '?',
-      displayDiff + ' · ' + (ghost.encounterCount || 0) + ' encounters',
-      stats, partyLoot,
-      _ghostSub,
-      ghost.datetime ? ghost.datetime.slice(0, 10) : null,
-      true, null, true
-    );
+    var _ghostAreaSlot = (ghost.area && ghost.area !== '?') ? ghost.area : (displayDiff + ' · ' + (ghost.encounterCount || 0) + ' encounters');
+    card.innerHTML =
+      '<div style="overflow:hidden;padding-top:3px;padding-bottom:3px;">'
+        + '<div class="box-border-dynamic menu-card-name" style="margin-left:3px; margin-right:3px; position:relative; background-color:' + rankBg + ';">'
+          + '<h3 style="position:absolute; top:0; bottom:0; right:10px; display:flex; align-items:center; z-index:3; margin:0; padding:0;">'
+            + '<i style="font-weight:600; margin-top:4px; color:' + rankColor + '; font-size:14px; -webkit-text-stroke:3px #121212; paint-order:stroke fill;">🎖️ ' + (ghost.score || 0) + '</i>'
+          + '</h3>'
+          + '<h3 style="display:flex; align-items:center; height:28px; text-align:left; padding-left:8px; font-size:17px; font-weight:bold; margin:0; color:' + rankColor + '; -webkit-text-stroke:5px #121212; paint-order:stroke fill;">'
+          + medal + (ghost.nickname || ghost.charName || '?') + '</h3>'
+        + '</div>'
+      + '</div>'
+      + '<div class="box-border-dynamic menu-card-info" style="margin-top:-3px;margin-left:3px; margin-right:3px; padding:2px 8px; background-color:#202020;">'
+        + '<h5 style="margin:4px 0 1px 0; font-size:16px; font-style:normal; font-weight:400; line-height:24px;">'
+        + _ghostAreaSlot + '&nbsp;•&nbsp;Lvl&nbsp;' + (ghost.level || '?') + '<br>'
+        + _ghostSub + '</h5>'
+        + '<h5 style="margin:0px 0 4px 0; opacity:0.6; font-size:14px;">'
+        + (ghost.charName ? ghost.charName + '&nbsp;&nbsp;•&nbsp;&nbsp;' : '')
+        + (ghost.originEmoji ? ghost.originEmoji + '&nbsp;' : '')
+        + (ghost.origin ? ghost.origin + '&nbsp;&nbsp;•&nbsp;&nbsp;' : '')
+        + (ghost.datetime ? ghost.datetime.slice(0, 10) : '')
+        + '</h5>'
+      + '</div>'
+      + '<div class="box-border-dynamic menu-card-stats" style="margin-top:3px;margin-left:3px; margin-right:3px; margin-bottom:14px; box-shadow:0px 0px 0px 3px #121212; background-color:#202020;">'
+        + '<h3 style="text-align:left; padding-left:8px; font-size:14px; font-family:sans; height:26px; line-height:26px; margin:0; background-color:#202020; box-shadow:0px 0px 0px 3px #000000; position:relative; z-index:1;">'
+        + (_ghostStats || '&nbsp;') + '</h3>'
+      + '</div>';
     list.appendChild(card);
 
+    // Combined party + loot bar — matches in-game id_player_party_loot display
+    var _ghostCombined = String(ghost.companionString || '').trim() + partyLoot;
     var lootBar = document.createElement('h3');
     lootBar.className = 'menu-loot-bar';
     lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0; margin-top:2px; display:inline-block; width:95.8%; box-shadow:0 0 0 3px #121212; background-color:#272727;';
-    lootBar.innerHTML = partyLoot || '<span style="color:#fff;">x x x</span>';
+    lootBar.innerHTML = _ghostCombined || '<span style="color:#fff;">x x x</span>';
     list.appendChild(lootBar);
     var clearDiv = document.createElement('div');
     clearDiv.style.clear = 'both';
@@ -1115,8 +1145,10 @@ var Menu = (function () {
     infoEl.className = 'menu-score-bar';
     infoEl.style.cssText = 'margin:14px 3px 3px 3px; box-shadow:0 0 0 3px #121212; background-color:#272727; padding:6px 10px;';
     infoEl.innerHTML =
-      '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">🎖️ Valor: <b>' + (ghost.score || 0) + '</b></h5>'
+      '<h5 style="margin:2px 0; font-size:14px; color:#FFD940;">🎖️ Valor: <b>' + (ghost.score || 0) + '</b>'
+      + (ghost.encounterCount ? '&nbsp;&nbsp;&nbsp;Encounters: ' + ghost.encounterCount : '') + '</h5>'
       + '<h5 style="margin:2px 0; font-size:12px; opacity:0.7;">'
+      + (ghost.difficulty ? ghost.difficulty + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
       + (ghost.origin ? 'Origin: ' + ghost.origin + '&nbsp;&nbsp;|&nbsp;&nbsp;' : '')
       + 'Lifetime: ' + _formatPlaytime(ghost.playtime || 0) + '</h5>'
       + '<h5 style="margin:2px 0; font-size:12px; opacity:0.5;">' + (ghost.gameVersion || '') + '</h5>';
