@@ -138,9 +138,9 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
       <button class="menu-btn" id="menu_continue">⚔️ Continue</button>
       <button class="menu-btn" id="menu_new_game" style="color:#FFD940;">✨ Rise Again</button>
       <div class="menu-spacer"></div>
-      <button class="menu-btn" id="menu_leaderboard" style="color:grey;">🪦 Reckonings</button>
       <button class="menu-btn" id="menu_challenges">🧩 Memories</button>
       <button class="menu-btn" id="menu_history">📜 Chronicles</button>
+      <button class="menu-btn" id="menu_leaderboard" style="color:grey;">🪦 Reckonings</button>
       <div class="menu-spacer"></div>
       <button class="menu-btn" id="menu_settings">⚙️ Settings</button>
       <button class="menu-btn" id="menu_credits">🖤 Makers</button>
@@ -270,7 +270,7 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; margin-top:8px; opacity:0.6; font-size:16px; color:#FFF;">Developed by</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:18px; font-weight:600; margin-bottom:12px;">Adam <a href="https://github.com/IGPenguin" target="_blank" rel="noopener">"IGPenguin"</a> Svoboda</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Co-designer, feedback</h5>
-        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:16px; font-weight:600;margin-bottom:14px;">Terezka <a href="https://github.com/Blue2lip" target="_blank" rel="noopener">"Blue2lip"</a> Svobodová</h4>
+        <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:15px; font-weight:600;margin-bottom:14px;">Terezka <a href="https://github.com/Blue2lip" target="_blank" rel="noopener">"Blue2lip"</a> Svobodová</h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:2px; opacity:0.6; font-size:14px;">Custom tools</h5>
         <h4 style="min-height:0; margin-bottom:10px; padding:0 4px; font-size:14px; font-weight:600;margin-bottom:16px;"><a href="https://github.com/IGPenguin/perseus-blade" target="_blank" rel="noopener">Perseus Blade</a>, <a href="https://github.com/IGPenguin/hades-gate" target="_blank" rel="noopener">Hades Gate</a><br><a href="https://github.com/IGPenguin/styx-flow" target="_blank" rel="noopener">Styx Flow</a>, <a href="https://github.com/IGPenguin/medusa-gaze" target="_blank" rel="noopener">Medusa Gaze</a>, <a href="https://github.com/IGPenguin/echo-skepsis" target="_blank" rel="noopener">Echo Skepsis</a></h4>
         <h5 style="text-align:center; padding-left:4px; margin-bottom:4px; opacity:0.6; font-size:14px;">Coding tech</h5>
@@ -284,8 +284,8 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
       <div class="menu-spacer"></div>
       <div style="display:flex; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_credits_review" style="flex:1; margin-top:0; color:#62a862ff;">💚 Rate</button>
-        <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Greet</button>
         <button class="menu-btn" id="menu_credits_share" style="flex:1; margin-top:0; color:#fff;">🔗 Share</button>
+        <button class="menu-btn" id="menu_credits_contact" style="flex:1; margin-top:0; color:#487bb5;">🗣️ Greet</button>
       </div>
       <button class="menu-btn" id="menu_credits_donate" style="flex:1; color:#F7D147; background-color:#4d4112;">☕️ Donate 1 Coffee!</button>
       <button class="menu-btn" id="menu_credits_back">👈 Back</button>
