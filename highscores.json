@@ -42,5 +42,27 @@
     "gameVersion": "ver. 06/02/26 @ 07:45 AM",
     "datetime": "2026-06-02T16:54:22.495Z",
     "Timestamp": "02/06/2026 18:54:32"
+  },
+  {
+    "userId": "ec4cc0ac-b71b-47d6-94e2-bc601c329510",
+    "nickname": "IGPenguin",
+    "sessionId": "9f922a5a-0b7c-44a4-8663-487c86dccb9c",
+    "score": 106,
+    "origin": "Lovrd",
+    "charName": "Marked Sage",
+    "level": "3",
+    "stats": "5;1;4;2;9;0;0",
+    "inventory": "🧧🔖🦿👕📿",
+    "companions": "0",
+    "karma": "2",
+    "coins": "1",
+    "difficulty": "💔 Rough",
+    "playtime": "6476",
+    "encounterCount": "87",
+    "endType": "death",
+    "ghostLink": "eyJzY29yZSI6MTA2LCJuaWNrbmFtZSI6IklHUGVuZ3VpbiIsImNoYXJOYW1lIjoiTWFya2VkIFNhZ2UiLCJvcmlnaW4iOiJMb3ZyZCIsImxldmVsIjozLCJlbmNvdW50ZXJDb3VudCI6ODcsImNvbXBhbmlvbnMiOjAsInN0YXRzIjoiNTsxOzQ7Mjs5OzA7MCIsImthcm1hIjoyLCJkaWZmaWN1bHR5Ijoi8J+SlCBSb3VnaCIsImdhbWVWZXJzaW9uIjoidmVyLiAwNi8wNi8yNiBAIDA4OjQxIEFNIiwicGxheXRpbWUiOjY0NzYsImVuZFR5cGUiOiJkZWF0aCIsImRhdGV0aW1lIjoiMjAyNi0wNi0wNlQwOTowNToxMS4yOTFaIiwiaW52ZW50b3J5Ijoi8J+np/CflJbwn6a/8J+RlfCfk78iLCJjb2lucyI6MSwiZGVhdGhNZXNzYWdlIjoi8J+miyBXaW5ncyBjbG9zZWQgYXJvdW5kIHlvdXIgZmFjZS4iLCJzY29yZUJhc2VsaW5lU3RhdHMiOjEwLCJjcml0U3VjY2Vzc2VzIjoxMSwiY3JpdEZhaWxzIjowLCJmaXNoQ2F0Y2hlcyI6Miwic2xlZXBQZW5hbHR5IjowfQ==",
+    "gameVersion": "ver. 06/06/26 @ 08:41 AM",
+    "datetime": "2026-06-06T09:05:11.291Z",
+    "Timestamp": "06/06/2026 11:05:20"
   }
 ]
