@@ -298,10 +298,18 @@ function wakeUpEnemy(msg) {
   startEnemyEmojiPulse();
 }
 
-function enemyDisengage(){
-  playerGainXP(1.5,0,"Convinced them to disengage");
+function enemyDisengage(crit){
+  var _xpMsg = crit ? "Convinced them to stand down" : "Convinced them to disengage";
+  var _gainedXP = playerGainXP(crit ? 2 : 1.5, 0, _xpMsg);
+  if (crit) logAction(enemyEmoji+" ▸ 💬 <text style=color:"+colorYellow+";>Played them to back down</text>");
   playerKarma+=1;
-  if (enemyBossType.includes('Boss') && !_isRival) pushBossLoot();
+  if (enemyBossType.includes('Boss') && !_isRival) {
+    pushBossLoot();
+    if (!areaName.includes("Shrouded")) {
+      logAction("👑 ▸ "+enemyEmoji+"<text style=color:"+colorGold+";> Boss convinced to leave: <b>"+enemyName+"</b></text>");
+      curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\">"+enemyEmoji+"&nbsp;&nbsp;<b>"+enemyName+"</b>&nbsp;&nbsp;</p>",4);
+    }
+  }
 
   isFishing=false;
   displayPlayerEffect("💬");

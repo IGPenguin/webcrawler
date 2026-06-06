@@ -445,8 +445,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayEnemyCannotEffect();
 
               if (enemyType.includes("Locked")) {
-                var gainedXP=playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
-                openMessage = "Smashed the lock open! -1 🟢 "+decorateStatusText("","+"+gainedXP+" XP",colorGold);
+                openMessage = "Smashed it, the lock still holds -1 🟢";
                 enemyHp-=playerAtk;
               } else {
                 if (_skillOK === false) {
@@ -466,10 +465,11 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
 
               if (enemyType.includes("Locked")&&(enemyHp>(-3))){
-                openMessage = "Smashed it, the lock still holds -1 🟢";
-                logPlayerAction(actionString,openMessage);
+                logPlayerAction(actionString, openMessage);
               } else {
-                logPlayerAction(actionString,openMessage);
+                var gainedXP=playerGainXP(1,GAME_CONFIG.rewardXp*playerLevel,"");
+                openMessage = "Smashed the lock open! -1 🟢 "+decorateStatusText("","+"+gainedXP+" XP",colorGold);
+                logPlayerAction(actionString, openMessage);
                 enemyType=enemyType.replace("Locked-","");
                 enemyHp=0;
                 enemyMsg="Uncovered what was locked inside."
@@ -744,7 +744,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 playerHit(1);
               } else {
                 if (playerSta > 0) playerSta--;
-                logPlayerAction(actionString, "Stumbled, almost dropped the rod -1 🟢");
+                logPlayerAction(actionString, getFishingStumbleText() + " -1 🟢");
                 displayPlayerCannotEffect();
               }
             } else {
@@ -2863,7 +2863,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 AchievementManager.check('calm_enemy');
                 if (enemyType === 'Boss') AchievementManager.check('calm_boss');
                 if (enemyType === 'Demon') AchievementManager.check('calm_demon');
-                enemyDisengage();
+                enemyDisengage(_crit === 'success');
               } else {
                 if (playerUseItem("🏳️","n/a","n/a",true,true)) {playerWaive(); break;}
                 logPlayerAction(actionString,"They do not seem to care at all.")
@@ -3224,7 +3224,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               playerRest(true, true);
               var _tpXP = parseInt(playerGainXP(1, Math.floor(playerXPThreshold * GAME_CONFIG.teleportXpBonus), ""));
-              logPlayerAction(actionString, "<text style=color:"+colorFairy+";>Woken up somewhere else... ✨</text> " + decorateStatusText("", "+" + _tpXP + " XP", colorGold));
+              logPlayerAction(actionString, "<text style=color:"+colorFairy+";>Woken up elsewhere... ✨</text> " + decorateStatusText("", "+" + _tpXP + " XP", colorGold));
               displayPlayerEffect("✨");
               nextEncounter();
             } else if (_skillOK === false) {
@@ -3428,16 +3428,16 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
         displayPlayerGainedEffect();
         displayPlayerEffect("🍀");
         logPlayerAction(actionString,"<text style=color:"+colorDarkGreen+";>Lucky bastard, you actually won!</text>")
-        drachmaPrize[0]="area:"+areaName;
-        pushEncounter(drachmaPrize);
+        var _prize = drachmaPrize.slice(); _prize[0]="area:"+areaName;
+        pushEncounter(_prize);
         nextEncounter();
       } else {
         AchievementManager.check('gamble_lose');
         logPlayerAction(actionString,"<text style=color:"+colorRed+";>Ooops... you lost the gamble!</text>")
-        gamblingLost[0]="area:"+areaName;
+        var _regrets = gamblingLost.slice(); _regrets[0]="area:"+areaName;
         displayPlayerCannotEffect();
         displayPlayerEffect("❌");
-        pushEncounter(gamblingLost);
+        pushEncounter(_regrets);
         nextEncounter();
       }
       pushEncounter(drachmaShop);
