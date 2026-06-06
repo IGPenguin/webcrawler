@@ -204,7 +204,7 @@ Fading Wildlands;🗝️;Shiny Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Un
 Fading Wildlands;☘️;Three-Leaf Clover;Item-Trinket;0;0;0;0.5;0;0;0;Wild Trinket;While not perfect, it still counts.<br>Provides <b>Minor +🍀 Luck</b> bonus.;;none
 Fading Wildlands;📜;Field Notes;Consumable;0;0;0;0;0.5;0;0;Cramped Notes;Someone mapped this trail before you.<br>Provides <b>Minor +🧠 Intellect</b> bonus.;;none
 
-Fading Wildlands;🪁;Torn Kite;Item;0;0;0;0;0;0;0;Worthless Junk;Wouldn't fly, it barely holds together.<br>;Holds up to no real value.;none
+Fading Wildlands;🪁;Torn Kite;Item;0;0;0;0;0;0;0;Worthless Junk;Wouldn't fly, it barely holds together.<br>;Just worthless junk.;none
 
 Fading Wildlands;💌;Undelivered Letter;Item;0;0;0;0;0;0;0;Lover's Memento;po/em;Your heart will always remember;none
 
@@ -217,7 +217,7 @@ Fading Wildlands;🐇;Withered Hare;Friend;1;0;0;0;0;0;0;Wild Animal;Froze on th
 Fading Wildlands;🐿️;Twitchy Squirrel;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;You surely <b>got its attention!</b><br>It is looking for: n/a;Swapped your nuts for;none
 Fading Wildlands;🦔;Confused Hedgehog;Friend🪳\🪰\🪲\🦗\🐝\🐛\🐜\🪱;0;0;0;0;0;0;0;Quirky Animal;Offers something valuable in exchange for food.<br>It is looking for: n/a;Looks like it was worth it;none
 
-Fading Wildlands;🌸;Ambrosia Flower;Consumable;0;0;0;0;3;0;0;Spring's Essence;Thick, fragrant, and almost impossibly sweet.<br><b>+3 🧠 Intellect</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>.;Felt a surge of clarity;none
+Fading Wildlands;🌸;Ambrosia Flower;Consumable;0;0;0;0;1;0;0;Spring's Essence;Thick, fragrant, and almost impossibly sweet.<br><b>+1 🧠 INT</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>.;Sharper now.;none
 
 Fading Wildlands;🍒;Sweet Cherries;Consumable;0;0;0;1;0;0;0;Fresh Fruit;Especially sweet and juicy.<br>Provides <b>+1 🍀 Luck</b>.;Very refreshing;none
 Fading Wildlands;🥕;Wild Carrot;Consumable;0;0;0;0;1;0;0;Vegetable;Packs plenty of vitamins.<br>Provides <b>+1 🧠 Intellect</b>.;Felt an actual difference;none
@@ -578,12 +578,12 @@ Forsaken Village;🫖;Cracked Pot;Item;0;0;0;-1;0;0;0;Worthless Junk;Someone pro
 Forsaken Village;📜;Wanted Poster;Item;0;0;0;0;-1;0;0;Note;The scribbled face resembles yours.<br>n/a;Became more self-aware.;none
 
 //New stuff - START
-Forsaken Village;🦿;Titanium Exoskeleton;Item-Legs;1;0;1;0;0;0;0;<b>Artifact</b>;Pumps with a rhythmic, mechanical hatred.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Driven by cold metal.;none
+Forsaken Village;🦿;Titanium Exoskelet;Item-Legs;0;1;1;0;0;0;0;<b>Artifact</b>;Pumps with a rhythmic, mechanical hatred.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🟢 Energy</b>.;Driven by cold metal.;none
 Forsaken Village;⚔️;Dual Swords;Item-Weapon;0;2;0;0;0;0;0;<b>Artifact</b>;Two blades, one reason to keep moving.<br>Provides <b>+2 ⚔️ Damage</b>.;Feeling like a slayer.;none
 Forsaken Village;🥌;Cumbersome Weight;Item-Weapon;0;2;-2;0;0;0;0;Dead Weight;Heavier than usual makeshift weapons.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-2🟢 Energy</b>.;Your arms accepted that;none
 Forsaken Village;⛸️;Skating Blade;Item-Weapon;0;1;0;-1;0;0;0;Improvised Weapon;Balanced for ice, not for this.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;Really awkward to hold.;none
 Forsaken Village;🔨;Blunt Hammer;Item-Weapon;0;1;-1;0;0;0;0;Dead Weight;Still warm from whatever job it interrupted.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 🟢 Energy</b>.;Heavy enough to matter.;none
-Forsaken Village;🪬;Draining Charm;Item-Trinket;-1;0;1;0;0;0;0;Double-Edged Relic;Worn smooth by hands that are no longer here.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Felt the trade immediately.;none
+Forsaken Village;🪬;Draining Charm;Item-Trinket;-1;0;0;0;0;1;0;Double-Edged Relic;Worn smooth by hands that are no longer here.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;Felt the trade immediately.;none
 Forsaken Village;🪱;Dried Worms;Item;0;0;0;0;0;0;0;[Uncommon] Bait;Still coiled from the last cast.<br><i>Decent bait for the patient kind.</i>;Ready to use.;none
 Forsaken Village;🦗;Dried Cricket;Item;0;0;0;0;0;0;0;[Uncommon] Bait;Brittle shell, preserved well enough.<br><i>Fish take it without hesitation.</i>;Pocketed for later.;none
 //New stuff - END
@@ -615,8 +615,8 @@ Forsaken Village;🐧;Galactic Penguin;Friend🚀\🔭\👽\🛸\⚙️\🔩;0;0
 
 Forsaken Village;🍋;Sicilian Lemon;Consumable;0;1;0;0;0;0;0;[Legendary] Perfect Fruit;Tastes like a proper vendetta — sweet and sour.<br><b>+1 ⚔️ Damage</b>, restore <b>❤️ Health</b> + <b>🟢 Energy</b>;Ahhh, sweet and sour;none
 
-Forsaken Village;🍕;Crusty Slice;Consumable;0;0;0;0;0;0;0;Last Supper;Still looks good to eat, as always.<br>Provides bonus <b>+2 ❤️ Health</b>.;Felt almost human again.;none
-Forsaken Village;🍔;Everlasting Burger;Consumable;0;0;0;0;0;0;0;Synthetic Junkfood;Grease-stained wrapper, contents still intact.<br>Provides bonus <b>+2 🟢 Energy</b>.;Tasted like a fresh one.;none
+Forsaken Village;🍕;Crusty Slice;Consumable;2;0;0;0;0;0;0;Last Supper;Still looks good to eat, as always.<br>Provides bonus <b>+2 ❤️ Health</b>.;Felt almost human again.;none
+Forsaken Village;🍔;Everlasting Burger;Consumable;0;0;2;0;0;0;0;Synthetic Junkfood;Grease-stained wrapper, contents still intact.<br>Provides bonus <b>+2 🟢 Energy</b>.;Tasted like a fresh one.;none
 
 Forsaken Village;🥠;Fortune Cookie;Consumable;0;0;0;1;0;0;0;Edible Prophecy;Provides guidance and <b>+1 🍀 Luck</b>.<br>n/a;Spit out the paper;none
 Forsaken Village;🥦;Healthy Broccoli;Consumable;1;0;0;0;0;0;0;Vegetable;Packs a great ton of vitamins.<br>Provides <b>+1 ❤️ Health</b>.;Felt an actual difference;none
@@ -892,8 +892,8 @@ Twisted Fairyland;🍌;Mighty Banana;Consumable;0;1;0;0;0;0;0;<b>Artifact</b>;Pa
 Twisted Fairyland;🍄;Magical Mushroom;Consumable;0;0;0;0;2;1;0;Strange Growth;It's beautiful. What could go wrong?<br>Provides <b>+1 🔵 Mana</b> and <b>+2 🧠 Intellect</b>.;;none
 Twisted Fairyland;🌽;Sweet KoЯn;Consumable;0;0;0;0;2;0;0;Vegetable;Sweet snack for every Children of the KoЯn.<br>Provides <b>+2 🧠 Intellect</b>.;Brighten not only your mood;none
 Twisted Fairyland;🧉;Empowering Tea;Consumable;0;0;0;0;2;0;0;Brain Juice;Enhances focus and reflexes.<br>Provides <b>+2 🧠 Intellect</b>.;Tasted just awesome;none
-Twisted Fairyland;🫚;Ginger Root;Consumable;1;0;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity;none
-Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;1;0;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome;none
+Twisted Fairyland;🫚;Ginger Root;Consumable;2;0;0;0;0;0;0;Healthy Plant;Smells just absolutely amazing.<br>Provides <b>+2 ❤️ Health</b> temporarily.;Increased immunity;none
+Twisted Fairyland;🥝;Sweet Kiwi;Consumable;0;0;2;0;0;0;0;Healthy Treat;A bit of both sweet and sour.<br>Provides <b>+2 🟢 Energy</b> temporarily.;Tasted just awesome;none
 Twisted Fairyland;🫘;Magic Beans;Consumable;0;0;0;0;0;1;0;Fantastic Food;Surrounded by a strange glow.<br>Provides <b>+1 🔵 Mana</b>.;;none
 Twisted Fairyland;🍍;Sweet Pineapple;Consumable;1;0;0;0;0;0;0;Healthy Treat;Supposedly eats you back.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
 Twisted Fairyland;🥭;Sweet Mango;Consumable;1;0;0;0;0;0;0;Fresh Fruit;Tasty snack for tough times.<br>Provides <b>+1 ❤️ Health</b> temporarily.;Tasted just awesome;none
@@ -950,11 +950,11 @@ Twisted Fairyland;📿;Witchbane Band;Item;0;0;0;0;0;0;0;<b>Artifact</b>;Blessed
 Twisted Fairyland;📌;Voodoo Pin;Item-Trinket;0;0;0;0;0;0;0;<b>Artifact</b>;Enemies will suffer from the <b>☠️ Ancient Voodoo</b>.<br>Deal <b>-1 💔 Damage</b> when engaging in combat.;Gained ability <b>☠️ Ancient Voodoo</b>.;none
 Twisted Fairyland;📜;The Elder Scroll;Item;-1;0;0;0;3;0;0;<b>Prophecy Artifact</b>;Provides <b>+3 🧠 Knowledge</b>, syphons <b>-1 💔 Health</b>.<br>n/a;Embraced the ancient knowledge.;none
 
-Twisted Fairyland;🥢;Magic Sticks;Item-Weapon;1;0;0;0;0;1;0;Spellcasting Tool;One is extra sharp, the other glows.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Embraced the energy surge.;none
+Twisted Fairyland;🥢;Magic Sticks;Item-Weapon;0;1;0;0;0;1;0;Spellcasting Tool;One is extra sharp, the other glows.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Embraced the energy surge.;none
 Twisted Fairyland;🏹;Sharpshooter Bow;Item-Weapon;0;2;0;0;0;0;0;Precise Weapon;Designed to be extremely deadly.<br>Provides <b>+2 ⚔️ Damage</b>.;Got ready for a wild hunt!;none
 Twisted Fairyland;🪃;Haunted Boomerang;Item-Weapon;0;2;0;-1;0;0;0;Weapon;Requires perfect handling to avoid injury.<br>Provides <b>+2 ⚔️ Damage</b> for <b>-1 🍀 Luck</b>.;Something about it feels off;none
 Twisted Fairyland;🌵;Twisted Thorn;Item-Weapon;-1;2;0;0;0;0;0;Fae Edge;Hurts to both wield and to get hit by.<br>Provides <b>+2 ⚔️ Attack</b> for <b>-1 💔 Damage</b>.;Drew few blood drops.;none
-Twisted Fairyland;📯;Warlord Horn;Item-Trinket;0;0;1;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!;none
+Twisted Fairyland;📯;Warlord Horn;Item-Trinket;0;1;0;1;0;0;0;Rythmical Instrument;Sounds of these cheer up anyone.<br>Provides <b>+1 ⚔️ Damage</b> and <b>+1 🍀 Luck</b>.;Called for battle!;none
 Twisted Fairyland;🪀;Jade Trinket;Item-Trinket;0;0;1;1;0;0;0;Handmade Ornament;Unfamiliar peace of ancient art.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;;none
 Twisted Fairyland;📜;Forsaken Scroll;Item;0;0;0;0;-2;1;0;Precious Writing;The letters are glowing with enchantment.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🧠 Intellect</b>.;Absorbed some magic knowledge;none
 
@@ -979,11 +979,11 @@ Twisted Fairyland;⛏;Rusty Pickaxe;Item-Weapon;0;1;-1;0;0;0;0;Mining Tool;Meant
 Twisted Fairyland;🔪;Twisted Blade;Item-Weapon;0;1;0;0;-2;0;0;Ritual Tool;The sacrifical blade demands offering.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🧠 Intellect</b>.;Felt a chill on your back;none
 Twisted Fairyland;🧣;Silk Wraps;Item-Weapon;0;-1;0;0;0;2;0;Fae Weave;Woven from something that invisible in sunlight.<br>Provides <b>+2 🔵 Mana</b> for <b>-1 ⚔️ Attack</b>.;The fabric is warm..;none
 Twisted Fairyland;🪞;Malevolent Mirror;Item-Trinket;0;0;0;-2;0;1;0;Cursed Relic;Shards of your reflection are lost.<br>Provides <b>+1 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Reality itself fractured;none
-Twisted Fairyland;🪘;Tribal Drum;Item-Trinket;0;0;-1;0;2;0;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under your arm;none
+Twisted Fairyland;🪘;Tribal Drum;Item-Trinket;0;0;-1;2;0;0;0;Musical Instrument;Excessively heavy and not really useful.<br>Provides <b>+2 🍀 Luck</b> for <b>-1 🟢 Energy</b>.;Took it under your arm;none
 Twisted Fairyland;💩;Steaming Pile;Item;0;0;0;0;-3;0;0;Trace of Life;Rather don't do anything stupid.<br>;Got some shit on your hands;none
 
 //New stuff
-Twisted Fairyland;🐍;Snake Band;Item-Trinket;0;0;1;0;0;0;0;Reptile Coil;Still warm from whatever wore it last.<br>Provides <b>+2 🟢 Energy</b>.;Coiled around your wrist without asking.;none
+Twisted Fairyland;🐍;Snake Band;Item-Trinket;0;0;2;0;0;0;0;Reptile Coil;Still warm from whatever wore it last.<br>Provides <b>+2 🟢 Energy</b>.;Coiled around your wrist without asking.;none
 Twisted Fairyland;🦂;Scorpion Pin;Item-Trinket;-1;1;0;0;0;0;0;Wicked Brooch;The legs are real. Were real.<br>Provides <b>+1 ⚔️ Damage</b> for <b>-1 ❤️ Health</b>.;Drew blood on the way in.;none
 Twisted Fairyland;🩻;Cursed Lens;Item-Trinket;0;0;0;-2;0;2;0;Corrupted Visor;Exposes the hidden world under the skin.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Saps the good away;none
 Twisted Fairyland;🧿;Cursed Eye;Item-Trinket;0;0;0;-2;0;2;0;Fae Relic;Sees things that haven't happened yet.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;Saw too much at once.;none
@@ -1235,9 +1235,9 @@ River of Sorrows;🍌;Rotten Banana;Consumable;-1;0;0;0;0;0;0;Soggy Snack;Not th
 River of Sorrows;🪔;Floating Flame;Checkpoint;0;0;0;0;0;0;0;Sanctuary;Thoroughly warms thy body and soul.<br>Provides instant <b>🎉 Level Up!</b>;This message never shows!;destiny_first
 
 //More or less matches fishing (NEEDS UNIQUE POOL - starts here)
-River of Sorrows;⚔️;Obsidian Blades;Item-Weapon;2;0;0;0;2;0;0;<b>Artifact</b>;Ultrasharp blades with perlescent finish.<br>Provides <b>+2 ⚔️ Damage</b> and <b>+2 🧠 Charisma</b>.;Picked updates the ancient blades.;none
+River of Sorrows;⚔️;Obsidian Blades;Item-Weapon;0;2;0;0;2;0;0;<b>Artifact</b>;Ultrasharp blades with perlescent finish.<br>Provides <b>+2 ⚔️ Damage</b> and <b>+2 🧠 Charisma</b>.;Picked updates the ancient blades.;none
 River of Sorrows;⭐️;Fallen Star;Item-Trinket;0;0;0;0;0;3;0;<b>Artifact</b>;Radiating with power, warm to the touch.<br>Provides <b>+3 🔵 Mana</b>.;The sky has embraced you.;none
-River of Sorrows;🌙;Moonstone Sickle;Item-Weapon;2;0;0;0;0;1;0;Lunar Gem;Gleams with inconspicuous light.<br>Provides <b>+2 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Felt a surge of power.;none
+River of Sorrows;🌙;Moonstone Sickle;Item-Weapon;0;2;0;0;0;1;0;Lunar Gem;Gleams with inconspicuous light.<br>Provides <b>+2 ⚔️ Damage</b> and <b>+1 🔵 Mana</b>.;Felt a surge of power.;none
 // - ends here
 
 River of Sorrows;🛡️;Mourner's Plate;Item-Trinket;-1;0;0;0;0;0;2;Heavy Protection;Heavier than it looks. Heavier than you wanted.<br>Provides <b>+2 🔰 Defence</b> for <b>-1 💔 Health</b>.;The weight felt earned.;none
@@ -1281,7 +1281,7 @@ River of Sorrows;🕶;Cool Sunglasses;Item-Head;0;0;0;2;0;0;0;Flashy Accessory;A
 River of Sorrows;👙;Sexy Bikini;Item-Chest;0;0;2;0;-3;0;0;Swimming Equipment;Improves movement, draws attention a lot.<br>Provides <b>+2 🟢 Energy</b> for <b>-3 🧠 Charisma</b>.;All eyes are on you!;none
 River of Sorrows;👓;Reading Glasses;Item-Head;0;0;0;0;2;0;0;Eyesight Boost;Usually improves one's perception.<br>Provides <b>+2 🧠 Intellect</b>.;Immediately felt a difference.;none
 River of Sorrows;🥽;Diving Goggles;Item-Head;1;0;0;0;0;0;0;Diving Equipment;May be used as makeshift protection.<br>Provides <b>+1 ❤️ Health</b>.;Put the goggles on.;none
-River of Sorrows;🪢;Twisted Knot;Item-Trinket;0;0;1;0;0;0;0;Endurance Symbol;Specially crafted for survival.<br>Provides <b>+2 🟢 Energy</b>.;Gained the power of the wild.;none
+River of Sorrows;🪢;Twisted Knot;Item-Trinket;0;0;2;0;0;0;0;Endurance Symbol;Specially crafted for survival.<br>Provides <b>+2 🟢 Energy</b>.;Gained the power of the wild.;none
 River of Sorrows;🧭;Drifter's Compass;Item-Trinket;0;0;0;-1;2;0;0;River Tool;Points somewhere. Not necessarily where you want to go.<br>Provides <b>+2 🧠 Intellect</b> for <b>-1 🍀 Luck</b>.;Found a direction. Not sure which one.;none
 River of Sorrows;🩺;Mariner's Ear;Item-Head;0;0;0;1;0;1;0;Diagnostic Tool;Allows you to hear the heartbeat of the river.<br>Provides <b>+1 🔵 Mana</b> and <b>+1 🍀 Luck</b>.;A steady, wet rhythm.;none
 River of Sorrows;🪸;Coral Crown;Item-Head;0;0;0;-2;0;2;0;River Growth;Alive enough to move with the current.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🍀 Luck</b>.;The current picked your thoughts.;none
@@ -1514,7 +1514,7 @@ Shrouded Necropolis;🎩;Fancy Hat;Item-Head;0;0;0;0;3;0;0;Stylish Accessory;Sti
 Shrouded Necropolis;🧣;Burial Shroud;Item-Head;-1;0;0;0;0;2;0;Grave Garment;Wrapped around things that didn't stay dead.<br>Provides <b>+2 🔵 Mana</b> for <b>-1 💔 Health</b>.;Put on a stranger's grief;none
 Shrouded Necropolis;👁️;Void Circlet;Item-Head;-1;0;0;0;0;3;0;Dark Relic;Opens something in the forehead that was better closed.<br>Provides <b>+3 🔵 Mana</b>, suffer <b>-1 💔 Health</b>.;Something looked back through it.;none
 Shrouded Necropolis;💍;Engagement Ring;Item-Trinket;2;0;0;0;0;0;0;Shiny Object;It could still warm someone's heart.<br>Provides <b>+2 ❤️ Health</b>.;Felt a surge in your chest.;none
-Shrouded Necropolis;🔗;Shattered Shackles;Item-Trinket;0;0;0;2;0;0;0;Freedom Relic;Remnants of some lucky prisoner's captivity.<br>Provides <b>+3 🍀 Luck</b>.;Felt the chains of the past.;none
+Shrouded Necropolis;🔗;Shattered Shackles;Item-Trinket;0;0;0;3;0;0;0;Freedom Relic;Remnants of some lucky prisoner's captivity.<br>Provides <b>+3 🍀 Luck</b>.;Felt the chains of the past.;none
 Shrouded Necropolis;🪲;Cursed Scarab;Item-Trinket;-2;0;0;5;0;0;0;Shiny Object;An unauthorized loot from someone's tomb.<br>Provides <b>+5 🍀 Luck</b> for <b>-2 💔 Health</b>.;Ancient curse settled in you;none
 
 Shrouded Necropolis;💀;Skull Signet;Item-Trinket;0;1;0;-2;0;0;0;Death Mark;Made from some small creature remains.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🍀 Luck</b>.;Strange chill ran your spine.;none
@@ -1588,8 +1588,8 @@ Fishing;🔪;Rusty Knife;Item-Weapon;0;1;0;0;0;0;0;Worn Tool;Still quite useful 
 Fishing;💍;Queen's Ring;Item-Trinket;1;0;0;0;0;0;0;Accessory;Probably worn by a noble lady a long time ago.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in your chest.;none
 Fishing;💍;King's Ring;Item-Trinket;0;1;0;0;0;0;0;Accessory;Probably worn by a true leader some time ago.<br>Provides <b>+1 ⚔️ Damage</b>.;Felt a surge in your chest.;none
 Fishing;🩶;Heart-shaped Pebble;Item-Trinket;1;0;0;0;0;0;0;Souvenir;Pleasantly warm to the touch.<br>Provides <b>+1 ❤️ Health</b>.;Felt a surge in the chest.;none
-Fishing;🐚;Conch Shell;Item;0;0;1;0;0;0;0;Sea's Voice;Still carries an audible echo.<br>Provides <b>+1 🧠 Intellect</b>.;Listened to the song of the sea.;none
-Fishing;🪢;Twisted Knot;Item-Trinket;0;0;1;0;0;0;0;Endurance Symbol;Specially crafted for survival.<br>Provides <b>+2 🟢 Energy</b>.;Gained the power of the wild.;none
+Fishing;🐚;Conch Shell;Item;0;0;0;0;1;0;0;Sea's Voice;Still carries an audible echo.<br>Provides <b>+1 🧠 Intellect</b>.;Listened to the song of the sea.;none
+Fishing;🪢;Twisted Knot;Item-Trinket;0;0;2;0;0;0;0;Endurance Symbol;Specially crafted for survival.<br>Provides <b>+2 🟢 Energy</b>.;Gained the power of the wild.;none
 Fishing;🩴;Rubber Sliders;Item-Legs;0;0;1;1;0;0;0;Cheap Footwear;Surprisingly good for navigating slippery banks.<br>Provides <b>+1 🟢 Energy</b> and <b>+1 🍀 Luck</b>.;Squelch, squelch.;none
 Fishing;🎖️;Starlight Amulet;Item-Trinket;0;0;0;0;0;2;0;Accessory;The surface has a pearlescent finish.<br>Provides <b>+2 🔵 Mana</b>.;Felt a surge of power;none
 Fishing;💧;Frozen Teardrop;Item-Trinket;0;0;0;0;-2;2;0;Magical Pin;Tangible proof of previous sins.<br>Provides <b>+2 🔵 Mana</b> for <b>-2 🧠 Charisma</b>.;Felt a bitter memory;none
@@ -1602,9 +1602,10 @@ Fishing;🏴‍☠️;Pirate Flag;Item;0;0;0;-2;2;0;0;Warning Sign;Gives away al
 Fishing;📘;Damned Book;Item-Weapon;-1;0;0;0;0;1;0;Sinister Manuscript;Secrets of the dark magic, for a price.<br>Provides <b>+1 🔵 Mana</b> for <b>-1 💔 Health</b>.;You will never be the same.;none
 Fishing;🤿;Scuba Mask;Item-Head;0;0;0;0;3;0;0;Diving Gear;Glass is fogged with ancient, trapped air.<br>Provides <b>+3 🧠 Perception</b>.;The depths look different now.;none
 Fishing;🎣;Reinforced Rod;Item-Weapon;0;1;0;1;0;0;0;Fishing Tool;Strong enough to pull secrets from the silt.<br>Provides <b>+1 ⚔️ Attack</b> and <b>+1 🍀 Luck</b>.;Hooked a good one.;none
-Fishing;⚓;Heavy Anchor;Item-Weapon;0;3;-1;0;0;0;1;<b>Artifact</b>;Solid iron that demands you stay exactly where you are.<br>Provides <b>+3 ⚔️ Attack</b> <b>-2 🟢 Energy</b>.;Staying grounded.;none
+Fishing;⚓;Heavy Anchor;Item-Weapon;0;3;-2;0;0;0;1;<b>Artifact</b>;Solid iron that demands you stay exactly where you are.<br>Provides <b>+3 ⚔️ Attack</b> <b>-2 🟢 Energy</b>.;Staying grounded.;none
 Fishing;🛡️;Mourner's Plate;Item-Trinket;-1;0;0;0;0;0;2;Heavy Protection;Heavier than it looks. Heavier than you wanted.<br>Provides <b>+2 🔰 Defence</b> for <b>-1 💔 Health</b>.;The weight felt earned.;none
 Fishing;🪖;Cracked Helm;Item-Head;-1;0;0;0;0;0;1;Damaged Protection;Protects the skull, barely. The crack runs deeper than it looks.<br>Provides <b>+1 🔰 Defence</b> for <b>-1 💔 Health</b>.;Better than nothing.;none
+Fishing;🔗;Chain Link;Item-Trinket;0;0;0;1;0;0;0;Rusty Trinket;A worn chain, rough to the touch.<br>Provides <b>+1 🍀 Luck</b>.;Coiled it around your wrist.;none
 
 Fishing;🥈;2nd Place Medal;Item;0;0;0;-1;0;0;0;Accessory;Prize for the "almost winner" ...kinda sad.<br>;Almost got the first place...;none
 Fishing;🫙;Cracked Jar;Item;0;0;0;-1;0;0;0;Cursed Container;The smell coming out suggests a mistake.<br>;Immediately regretted opening it.;none

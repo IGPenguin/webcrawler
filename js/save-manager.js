@@ -251,7 +251,8 @@ var SaveManager = (function () {
       score:          0,
       endType:        'abandoned',
       ghostLink:      null,
-      playerOriginName: saved.playerOriginName || '',
+      playerOriginName:  saved.playerOriginName  || '',
+      playerOriginEmoji: saved.playerEmoji       || '',
       encounterCount: saved.encounterCount || 0,
       difficulty:     'Standard',
       playtime:       0

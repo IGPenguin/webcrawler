@@ -1,10 +1,17 @@
-## ver. 06/06/26 @ 08:41 AM
+## ver. 06/06/26 @ 10:50 PM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/06/26 @ 10:49 PM
+⚔️ Fixed broken encounter stats, added items
+💬 Speak crit: bonus XP on disengage
+✨ Fix post-reincarnation encounter stats
+✂️ Cut too long descriptions and log texts
+🗃️ Fix Chronicles and Reckonings UI, menu tweaks
 
 ## ver. 06/06/26 @ 08:40 AM
 🛒 Spawn Shop at every new area (if coin)

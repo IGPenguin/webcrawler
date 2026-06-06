@@ -68,6 +68,7 @@ function renewPlayer(){ //Default values
   playerTotalSleepPenalty = 0;
   scoreBaselineStats = playerHpMax + playerAtk + playerStaMax + playerLck + playerInt + playerMgkMax + playerDef;
 
+  reincarnateEnemyHpLost = reincarnateEnemyStaLost = reincarnateEnemyMgkLost = reincarnateEnemyAtkBonus = 0;
   if (typeof RivalManager !== 'undefined') RivalManager.resetRun();
   initRunLog();
 }
@@ -721,6 +722,14 @@ function playerReincarnate(){
   }
 
   nextEncounter(true, true); // skip area transition — reincarnation owns its own curtain
+
+  enemyHpLost   = reincarnateEnemyHpLost;
+  enemyStaLost  = reincarnateEnemyStaLost;
+  enemyMgkLost  = reincarnateEnemyMgkLost;
+  enemyAtkBonus = reincarnateEnemyAtkBonus;
+  reincarnateEnemyHpLost = reincarnateEnemyStaLost = reincarnateEnemyMgkLost = reincarnateEnemyAtkBonus = 0;
+  redraw();
+
   curtainFadeInAndOut("<p style=\"color:"+colorGold+";-webkit-text-stroke: 6.5px black;paint-order: stroke fill;letter-spacing:1.8px;line-height:20px;font-size:52px;\">Reincarnated!</p><p style=\"font-size:20px;\""+decorateStatusText("","Remember what you've learned.",colorWhite),4);
 
   // Save the fresh run state now that both the encounter and player stats are fully reset.

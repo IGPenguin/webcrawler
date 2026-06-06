@@ -569,14 +569,22 @@ function getRememberLog() {
 
 function getFateLog() {
   return chooseFrom([
-    "Taken and given.",
-    "Fate keeps its own accounts.",
-    "The balance tips the odds.",
-    "Something shifted the balance.",
-    "Debt follows this gift.",
-    "The world gives and collects.",
-    "Not all gains are for free.",
-    "The cost follows the reward."
+    "Taken and given",
+    "The ledger never forgets",
+    "The balance tips the odds",
+    "Something shifted the balance",
+    "Debt follows this gift",
+    "The world gives and collects",
+    "Not all gains are for free",
+    "The cost follows the reward"
+  ]);
+}
+
+function getFishingStumbleText() {
+  return chooseFrom([
+    "Nearly dropped the rod",
+    "Fumbled, barely held on",
+    "Almost lost the rod"
   ]);
 }
 
@@ -725,12 +733,12 @@ function getShopMessage(){
 
 function getShopLeaveMessage() {
   return chooseFrom([
-    "The Shade dissolves back into nothing.",
+    "The Shade dissolves into the dark.",
     "He was already gone when you turned.",
     "Gone. Waiting for the next dead soul.",
     "Left him in his shadow. Good habit.",
     "Already gone. He doesn't do goodbyes.",
-    "The Undertaker steps back into nothing.",
+    "The Undertaker recedes.",
     "You walk on. The Shade watches still.",
     "He recedes. The dark takes him back.",
   ]);
@@ -908,7 +916,7 @@ var _MIRROR_HEART_POOLS = [
 
 var _MIRROR_KISMET_POOLS = [
   // neg-0
-  ["Nothing kind is written in your margin.", "Misfortune is coiled around your silhouette.", "Luck left a forwarding address somewhere else."],
+  ["Nothing kind is written in your margin.", "Misfortune is coiled around your silhouette.", "Luck left a forwarding address elsewhere."],
   // low (1-3)
   ["The odds acknowledge you slightly.", "Fortune notices you, without enthusiasm.", "Something small is trying to help you."],
   // mid (4-6)

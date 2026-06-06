@@ -1,6 +1,6 @@
 # Styx Flow — 2026-06-01 — Stay Dead
 
-*~103 items · 2026-06-02: -4 resolved (VER-BUMP, CHEAT-SUBM, CHEAT-TIPS, COMP-PARTY), +1 (BOSS-TELE) · prior: 2026-06-01: +1 (ORIG-ROLL) — Origins picker reroll button, user-flagged P1 · prior: 2026-06-01: Styx re-sort — Backlog and Technical Debt integrated into P3/P4, [SCROLL-GAP] promoted to P2, [ORIG-ITEMS] cleaned, [COMP-PLAY] flagged (assumed shipped — not found in backlog) · prior: 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
+*~104 items · 2026-06-06: -2 resolved (WEAP-CMBO done in commits, HIST-UI executed — dual-stat combo weapons added in commit b53ed63) · prior: 2026-06-02: -4 resolved (VER-BUMP, CHEAT-SUBM, CHEAT-TIPS, COMP-PARTY), +1 (BOSS-TELE) · prior: 2026-06-01: +1 (ORIG-ROLL) — Origins picker reroll button, user-flagged P1 · prior: 2026-06-01: Styx re-sort — Backlog and Technical Debt integrated into P3/P4, [SCROLL-GAP] promoted to P2, [ORIG-ITEMS] cleaned, [COMP-PLAY] flagged (assumed shipped — not found in backlog) · prior: 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
@@ -31,13 +31,6 @@
 - Priority: P2 — late-game stat imbalance breaks difficulty curve; veterans will notice immediately.
 - Type: Improvement
 - Effort: M | Gain: L
-
-### [WEAP-CMBO] Feature: Weapon combo items — dual-stat (+ATK+MGK, etc.)
-- Add items that combine two offensive stats — e.g., +1 ATK +1 MGK, +1 ATK +1 STA — as a distinct item archetype that rewards hybrid builds.
-- Slot naturally into the existing rarity system; net stat formula already handles multi-stat items.
-- Priority: P2 — build variety; currently no items bridge ATK and MGK for hybrid combat/magic builds
-- Type: Feature
-- Effort: S | Gain: M
 
 ### [BOSS-TOUGH] Improvement: Toughen the final boss — raise stats or add combat mechanics
 - The final boss in Shrouded Necropolis feels undertuned relative to the encounter difficulty leading up to it.
@@ -443,4 +436,4 @@
 
 ---
 
-*Styx Flow complete — ~105 items processed*
+*Styx Flow complete — ~104 items processed*

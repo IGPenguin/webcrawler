@@ -1,6 +1,6 @@
 # EPICS.md — Major Expansion Plans
 
-*28 epics · last updated 2026-06-02*
+*28 epics · last updated 2026-06-06*
 
 ---
 
@@ -840,4 +840,4 @@ The dog's warning (from [PET-ENCNTR]) is what makes the crossroads matter — it
 
 ---
 
-*EPICS.md — 27 epics*
+*EPICS.md — 28 epics*

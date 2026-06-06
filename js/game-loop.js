@@ -176,12 +176,17 @@ function gameOver(silent=false){
     score:          _deathPayload.score,
     endType:        _deathEndType,
     ghostLink:      ScoreManager.encodeGhostLink(_deathPayload),
-    playerOriginName: playerOriginName || 'None',
+    playerOriginName:  playerOriginName || 'None',
+    playerOriginEmoji: playerEmoji || '',
     encounterCount: encounterCount || 0,
     difficulty:     _deathPayload.difficulty,
     playtime:       _deathPayload.playtime
   });
   lastEncounterIndex = encounterIndex; //Save death position for reincarnation
+  reincarnateEnemyHpLost  = enemyHpLost;
+  reincarnateEnemyStaLost = enemyStaLost;
+  reincarnateEnemyMgkLost = enemyMgkLost;
+  reincarnateEnemyAtkBonus = enemyAtkBonus;
   encounterIndex=-1; //Must be index-1 due to nextEncounter() function
   playerSta=0; //You are just tired when dead :)
   playerMgk=0;
@@ -286,7 +291,8 @@ function _doGameEnd(endType) {
     score:          _winPayload.score,
     endType:        endType,
     ghostLink:      ScoreManager.encodeGhostLink(_winPayload),
-    playerOriginName: playerOriginName || '',
+    playerOriginName:  playerOriginName || '',
+    playerOriginEmoji: playerEmoji || '',
     encounterCount: encounterCount || 0,
     difficulty:     _winPayload.difficulty,
     playtime:       _winPayload.playtime
