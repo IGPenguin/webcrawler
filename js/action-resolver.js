@@ -960,7 +960,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             break;
 
           case "Shop":
-            logPlayerAction(actionString,enemyMsg);
+            logPlayerAction(actionString, getShopLeaveMessage());
             nextEncounter();
             break;
 
@@ -3403,7 +3403,7 @@ function drachmaeBuy(price=1,item="",skillSuccess=null){
       else AchievementManager.check('buy_item');
       displayPlayerGainedEffect();
       logPlayerAction(actionString,"Splendid! This ought to help");
-      drachmaShop[0]="area:"+"Fading Wildlands";
+      drachmaShop[0]="area:"+areaName;
       var genItem = _forcedTier ? generateRandomItemByTier(_forcedTier) : generateRandomItem(item=="Artifact" ? "Artifact" : "");
       genItem[0]="area:"+areaName;
       pushEncounter(genItem);

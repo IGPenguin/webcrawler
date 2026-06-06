@@ -1,10 +1,19 @@
-## ver. 06/05/26 @ 09:01 PM
+## ver. 06/06/26 @ 08:41 AM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/06/26 @ 08:40 AM
+🛒 Spawn Shop at every new area (if coin)
+🏆 Fix combine + reroll achievements
+✨ Combined Origin display update
+📊 Fix stat and desc mismatches for Origins
+📱 Fix fulscreen fade text on mobile
+🎭 Update Origin buttons disabled style
+💸 Add direct Donate button in popup
 
 ## ver. 06/05/26 @ 09:00 PM
 ⚗️ Transmute button in Origins picker

@@ -723,6 +723,19 @@ function getShopMessage(){
   return message
 }
 
+function getShopLeaveMessage() {
+  return chooseFrom([
+    "The Shade dissolves back into nothing.",
+    "He was already gone when you turned.",
+    "Gone. Waiting for the next dead soul.",
+    "Left him in his shadow. Good habit.",
+    "Already gone. He doesn't do goodbyes.",
+    "The Undertaker steps back into nothing.",
+    "You walk on. The Shade watches still.",
+    "He recedes. The dark takes him back.",
+  ]);
+}
+
 function getRecallPassText() {
   return chooseFrom([
     "An old memory hurts you inside -1 💔",

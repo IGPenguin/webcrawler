@@ -530,18 +530,18 @@ var Menu = (function () {
     var rerollBtn = document.getElementById('menu_origin_reroll');
     if (rerollBtn) {
       var canReroll = parseInt(savedCoins) >= 1;
-      rerollBtn.style.display = canReroll ? '' : 'none';
+      rerollBtn.style.display = (canReroll || everHadCoins) ? '' : 'none';
       rerollBtn.disabled = !canReroll;
-      rerollBtn.style.color = canReroll ? colorFairy : 'grey';
+      rerollBtn.style.color = canReroll ? colorFairy : colorDarkGrey;
       rerollBtn.style.backgroundColor = canReroll ? 'rgb(40 57 79)' : '#2a2a2a';
     }
 
     var combineBtn = document.getElementById('menu_origin_combine');
     if (combineBtn) {
       var canCombine = parseInt(savedCoins) >= 2;
-      combineBtn.style.display = canCombine ? '' : 'none';
+      combineBtn.style.display = (canCombine || everHadCoins) ? '' : 'none';
       combineBtn.disabled = !canCombine;
-      combineBtn.style.color = canCombine ? '#FFD940' : 'grey';
+      combineBtn.style.color = canCombine ? '#FFD940' : colorDarkGrey;
       combineBtn.style.backgroundColor = canCombine ? 'rgb(40 57 79)' : '#2a2a2a';
     }
 
