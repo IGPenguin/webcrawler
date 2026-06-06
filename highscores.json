@@ -66,6 +66,28 @@
     "Timestamp": "06/06/2026 11:05:20"
   },
   {
+    "userId": "ec4cc0ac-b71b-47d6-94e2-bc601c329510",
+    "nickname": "IGPenguin",
+    "sessionId": "4c0c85b2-358f-420c-b4de-46238c9bd26b",
+    "score": 84,
+    "origin": "Unhide",
+    "charName": "Shrewd Rampart",
+    "level": "3",
+    "stats": "5;2;3;-2;1;2;0",
+    "inventory": "🗝️⛓️🥽🪁💌",
+    "companions": "0",
+    "karma": "4",
+    "coins": "1",
+    "difficulty": "💔 Rough",
+    "playtime": "51562",
+    "encounterCount": "41",
+    "endType": "death",
+    "ghostLink": "eyJzY29yZSI6ODQsIm5pY2tuYW1lIjoiSUdQZW5ndWluIiwiY2hhck5hbWUiOiJTaHJld2QgUmFtcGFydCIsIm9yaWdpbiI6IlVuaGlkZSIsImxldmVsIjozLCJlbmNvdW50ZXJDb3VudCI6NDEsImNvbXBhbmlvbnMiOjAsInN0YXRzIjoiNTsyOzM7LTI7MTsyOzAiLCJrYXJtYSI6NCwiZGlmZmljdWx0eSI6IvCfkpQgUm91Z2giLCJnYW1lVmVyc2lvbiI6InZlci4gMDYvMDYvMjYgQCAxMDo1MCBQTSIsInBsYXl0aW1lIjo1MTU2MiwiZW5kVHlwZSI6ImRlYXRoIiwiZGF0ZXRpbWUiOiIyMDI2LTA2LTA2VDIzOjI3OjU3LjcyMVoiLCJpbnZlbnRvcnkiOiLwn5ed77iP4puT77iP8J+lvfCfqoHwn5KMIiwiY29tcGFuaW9uU3RyaW5nIjoiIiwiYXJlYSI6IlR3aXN0ZWQgRmFpcnlsYW5kIiwib3JpZ2luRW1vamkiOiLwn6esIiwiY29pbnMiOjEsImRlYXRoTWVzc2FnZSI6IvCfp4AgR290IHBva2VkIHdpdGggc29tZSBuZXcgaG9sZXMuIiwic2NvcmVCYXNlbGluZVN0YXRzIjo4LCJjcml0U3VjY2Vzc2VzIjo2LCJjcml0RmFpbHMiOjAsImZpc2hDYXRjaGVzIjo0LCJzbGVlcFBlbmFsdHkiOjB9",
+    "gameVersion": "ver. 06/06/26 @ 10:50 PM",
+    "datetime": "2026-06-06T23:27:57.721Z",
+    "Timestamp": "07/06/2026 01:28:10"
+  },
+  {
     "userId": "91e246fc-c076-423c-af84-ca6c79a49448",
     "nickname": "TesTerka",
     "sessionId": "60c661da-857f-4fa5-937c-86a35b39acd9",
