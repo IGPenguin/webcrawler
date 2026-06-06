@@ -64,5 +64,27 @@
     "gameVersion": "ver. 06/06/26 @ 08:41 AM",
     "datetime": "2026-06-06T09:05:11.291Z",
     "Timestamp": "06/06/2026 11:05:20"
+  },
+  {
+    "userId": "91e246fc-c076-423c-af84-ca6c79a49448",
+    "nickname": "TesTerka",
+    "sessionId": "60c661da-857f-4fa5-937c-86a35b39acd9",
+    "score": 19,
+    "origin": "Scribe",
+    "charName": "Wise Scholar",
+    "level": "1",
+    "stats": "3;1;3;0;2.5;0;0",
+    "inventory": "🗝️",
+    "companions": "0",
+    "karma": "2",
+    "coins": "2",
+    "difficulty": "💔 Rough",
+    "playtime": "157",
+    "encounterCount": "11",
+    "endType": "death",
+    "ghostLink": "eyJzY29yZSI6MTksIm5pY2tuYW1lIjoiVGVzVGVya2EiLCJjaGFyTmFtZSI6Ildpc2UgU2Nob2xhciIsIm9yaWdpbiI6IlNjcmliZSIsImxldmVsIjoxLCJlbmNvdW50ZXJDb3VudCI6MTEsImNvbXBhbmlvbnMiOjAsInN0YXRzIjoiMzsxOzM7MDsyLjU7MDswIiwia2FybWEiOjIsImRpZmZpY3VsdHkiOiLwn5KUIFJvdWdoIiwiZ2FtZVZlcnNpb24iOiJ2ZXIuIDA2LzAyLzI2IEAgMDc6NDUgQU0iLCJwbGF5dGltZSI6MTU3LCJlbmRUeXBlIjoiZGVhdGgiLCJkYXRldGltZSI6IjIwMjYtMDYtMDZUMTY6Mzk6MjYuMDI5WiIsImludmVudG9yeSI6IvCfl53vuI8iLCJjb2lucyI6MiwiZGVhdGhNZXNzYWdlIjoi8J+QgCBDb250cmFjdGVkIGEgc2lja25lc3MuIiwic2NvcmVCYXNlbGluZVN0YXRzIjo5LCJjcml0U3VjY2Vzc2VzIjowLCJjcml0RmFpbHMiOjAsImZpc2hDYXRjaGVzIjowLCJzbGVlcFBlbmFsdHkiOjB9",
+    "gameVersion": "ver. 06/02/26 @ 07:45 AM",
+    "datetime": "2026-06-06T16:39:26.029Z",
+    "Timestamp": "06/06/2026 18:39:33"
   }
 ]
