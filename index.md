@@ -333,7 +333,7 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
       <button class="menu-btn" id="menu_report_bug" style="flex:1;">🐞 Report</button>
       </div>
       <button class="menu-btn" id="menu_settings_purge_1" style="color:red;">✕ Delete Saves</button>
-      <div id="menu_settings_purge_2" style="display:none; gap:4px;">
+      <div id="menu_settings_purge_2" style="display:none; gap:4px; margin-top:5px;">
         <button class="menu-btn" id="menu_settings_purge_cancel" style="flex:1; margin-top:0;">Cancel</button>
         <button class="menu-btn" id="menu_settings_purge_confirm" style="flex:1; margin-top:0; color:red;">✕ Delete</button>
       </div>
