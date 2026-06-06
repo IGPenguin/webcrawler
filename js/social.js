@@ -156,7 +156,7 @@ function showDonatePopup() {
   copyBtn.addEventListener('click', function () {
     function _onCopied() {
       copyBtn.innerHTML = '✓ Copied!';
-      setTimeout(function () { copyBtn.innerHTML = '🔗 Link'; }, 2000);
+      setTimeout(function () { copyBtn.innerHTML = '🔗 Copy'; }, 2000);
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(mockLink).then(_onCopied).catch(function () {
