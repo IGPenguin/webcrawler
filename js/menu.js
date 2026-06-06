@@ -661,13 +661,13 @@ var Menu = (function () {
     var _note = document.getElementById('menu_chronicles_note');
     if (_note) {
       if (sessions.length === 0) {
-        _note.innerHTML = 'No paths have been walked yet.';
+        _note.innerHTML = 'No journeys have been walked yet.';
       } else {
         var _wins = sessions.filter(function(s) {
           return s.endType && s.endType.indexOf('win') === 0;
         }).length;
         var _losses = sessions.length - _wins;
-        _note.innerHTML = 'The paths of the '
+        _note.innerHTML = 'The journeys of the '
           + '<span style="color:#FF0000;">' + _losses + '&nbsp;Faded</span>'
           + ' and the '
           + '<span style="color:#FFD940;">' + _wins + '&nbsp;Endured</span>.';
@@ -677,7 +677,7 @@ var Menu = (function () {
     if (sessions.length === 0) {
       list.innerHTML =
         '<h4 style="color:#fff; text-align:center; min-height:0; ' +
-        'padding:16px 0; margin:0;">No heroes have been buried yet.<br>⨯ ⨯ ⨯</h4>';
+        'padding:16px 0; margin:0;">⨯ ⨯ ⨯</h4>';
       return;
     }
 
