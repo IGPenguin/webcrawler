@@ -137,7 +137,7 @@ function showDonatePopup() {
   var donateBtn = document.createElement('button');
   donateBtn.className = 'menu-btn';
   donateBtn.style.cssText = 'flex:1; margin-top:0; color:#FFD940;';
-  donateBtn.innerHTML = '☕ Donate';
+  donateBtn.innerHTML = '💸 Donate';
 
   var copyBtn = document.createElement('button');
   copyBtn.className = 'menu-btn';
