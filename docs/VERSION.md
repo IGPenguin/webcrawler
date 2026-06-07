@@ -1,10 +1,16 @@
-## ver. 06/06/26 @ 10:50 PM
+## ver. 06/07/26 @ 07:46 PM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/07/26 @ 07:45 PM
+🔧 Fix fades handler stacking blocking btns
+💬 Loot drop, wear down string updates
+✨ Update Unique origin bg color
+✂️ Fix double space in logs
 
 ## ver. 06/06/26 @ 10:49 PM
 ⚔️ Fixed broken encounter stats, added items
