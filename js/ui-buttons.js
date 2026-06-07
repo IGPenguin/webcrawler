@@ -456,6 +456,7 @@ var _ACTION_BUTTONS = [
 
 function registerClickListeners(delay=0){
   setTimeout(function(){
+    removeClickListeners();
     _ACTION_BUTTONS.forEach(function(pair) {
       var id  = pair[0];
       var raw = pair[1]();
