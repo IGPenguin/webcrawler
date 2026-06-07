@@ -2416,7 +2416,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_sEStaStart > 0) {
               if (_crit === 'success') {
                 if (playerSta > 0) playerSta--;
-                enemyGrabbedIntoLoot("Snatched it with perfect timing -1 🟢");
+                enemyGrabbedIntoLoot("Snatched with perfect timing -1 🟢");
                 break;
               }
               // Regular pass with stamina — tire them, not pocketed yet
