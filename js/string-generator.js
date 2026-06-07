@@ -542,7 +542,7 @@ function getLootDropLog() {
     "Something fell from them.",
     "There's something left behind.",
     "They left something on the ground.",
-    "Something droped when they went down.",
+    "Something droped on the ground.",
     "Something is under the body.",
     "They dropped something."
   ]);
@@ -1160,6 +1160,16 @@ function getPlayfulMomentLog() {
     "A brief, cheerful scuffle -1 🟢",
     "Sparred lightly, no real threat -1 🟢",
     "Exchanged a playful swipe -1 🟢"
+  ]);
+}
+
+function getWoreThemDownLog() {
+  return chooseFrom([
+    "Wore them down a bit -1 🟢",
+    "Kept the pressure on -1 🟢",
+    "Ground out every inch -1 🟢",
+    "Pushed until they buckled -1 🟢",
+    "Tired them a little bit -1 🟢"
   ]);
 }
 

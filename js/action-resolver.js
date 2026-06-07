@@ -1996,7 +1996,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               if (playerSta > 0) playerSta--;
               enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
-              logPlayerAction(actionString,"Wore them down -1 🟢");
+              logPlayerAction(actionString,getWoreThemDownLog());
               displayEnemyCannotEffect();
               if (enemyCastIfMgk()) break;
               if ((enemySta - enemyStaLost) > 0) enemyAttackOrRest();

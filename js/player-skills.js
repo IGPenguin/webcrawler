@@ -549,8 +549,8 @@ function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef 
   if (playerHas("🐷")) consumedString="<b>Devoured</b> by <b>🐷 Pig Digestion</b>";
 
   gainStamina+=parseInt(enemySta);
-  if (gainStamina<0) sign=" "
-  if (gainStamina>=0) sign=" +"
+  if (gainStamina<0) sign=""
+  if (gainStamina>=0) sign="+"
   if (gainStamina!=0) consumedString +=" "+sign+(parseInt(gainStamina)) + " 🟢";
   playerSta+=parseInt(gainStamina);
   if (playerSta<0) playerSta=0;
