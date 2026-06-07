@@ -479,7 +479,7 @@ var Menu = (function () {
     origins.forEach(function(origin) {
       var net        = _originNet(origin);
       var tier       = _originTier(origin);
-      var rarityBg    = origin._synthetic ? 'rgb(38,32,6)' : RarityManager.getBg(tier);
+      var rarityBg    = origin._synthetic ? 'rgb(72,56,8)' : RarityManager.getBg(tier);
       var rarityColor = origin._synthetic ? '#FFD940' : RarityManager.getColor(tier);
 
       var descParts = origin.desc.split('<br>');
