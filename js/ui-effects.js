@@ -301,12 +301,14 @@ function showCompanionNameDialog(type, defaultName, onConfirm, onCancel) {
       confirmBtn.onclick = null;
       skipBtn.onclick = null;
       onConfirm(name);
+      if (type === 'pet' || type === 'follower') registerClickListeners(300);
     }
     function _cancel() {
       overlay.style.display = 'none';
       confirmBtn.onclick = null;
       skipBtn.onclick = null;
       if (onCancel) onCancel(); else onConfirm(defaultName);
+      if (type === 'pet' || type === 'follower') registerClickListeners(300);
     }
 
     confirmBtn.onclick = function() { _done(input.value.trim() || defaultName); };
@@ -430,6 +432,9 @@ function menuFade(callback, text, holdMs, fadeOutSec) {
     if (textEl) {
       textEl.innerHTML = text;
       textEl.style.display = 'block';
+      void textEl.offsetWidth;
+      textEl.style.setProperty('--animate-duration', '0.4s');
+      textEl.classList.add('animate__animated', 'animate__fadeIn');
     }
 
     callback();
@@ -447,6 +452,7 @@ function menuFade(callback, text, holdMs, fadeOutSec) {
         curtain.style.display = 'none';
         curtain.style.pointerEvents = 'none';
         if (textEl) {
+          textEl.classList.remove('animate__animated', 'animate__fadeIn');
           textEl.style.display = 'none';
           textEl.innerHTML = '';
         }
