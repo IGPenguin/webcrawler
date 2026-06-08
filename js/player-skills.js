@@ -186,6 +186,10 @@ function playerCheckLevelUp(){
     playerRest(true);
     AchievementManager.check('level_up', playerLevel);
     updateXPProgress();
+    // When fishing, encounterIndex has been reset to lastEncounterIndex (one before the fishing
+    // spot). Restore it so the level-up inserts at the right queue position and the fishing
+    // spot resumes correctly after the perk is chosen.
+    if (isFishing) { isFishing = false; encounterIndex = lastEncounterIndex + 1; }
     if (corpseState !== "") {
       levelUpSavedCorpse = {
         corpseState: corpseState, corpseSnapshot: corpseSnapshot,
@@ -511,7 +515,11 @@ function playerChangeStats(bonusHp=enemyHp,bonusAtk=enemyAtk,bonusSta=enemySta,b
 
 function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef at various places (not needed at the moment, but might be in future)
   //Works for both morph and mask, logs manipulated further down
-  if (playerHas("🐷")) {enemyHp=0; enemyAtk=0; enemySta=0; enemyLck=0; enemyInt=0; enemyMgk=0; enemyDef=0;}
+  if (playerLootString.includes("🐷")) {
+    if (enemyHp < 0) enemyHp = 0; if (enemyAtk < 0) enemyAtk = 0; if (enemySta < 0) enemySta = 0;
+    if (enemyLck < 0) enemyLck = 0; if (enemyInt < 0) enemyInt = 0; if (enemyMgk < 0) enemyMgk = 0;
+    if (enemyDef < 0) enemyDef = 0;
+  }
 
   var consumedString="Replenished resources"
   var sign = "";
@@ -546,7 +554,7 @@ function playerConsumed(silent=false){ //TODO this seems to not handle enemyDef 
   }
 
   //Pig morph and mask log tweak
-  if (playerHas("🐷")) consumedString="<b>Devoured</b> by <b>🐷 Pig Digestion</b>";
+  if (playerLootString.includes("🐷")) consumedString="<b>Devoured</b> by <b>🐷 Pig Digestion</b>";
 
   gainStamina+=parseInt(enemySta);
   if (gainStamina<0) sign=""
