@@ -533,6 +533,29 @@ button:active {
   );
 }
 
+@keyframes btn-wiggle {
+  0%   { transform: rotate(0deg);    }
+  25%  { transform: rotate(-2.5deg); }
+  75%  { transform: rotate(2.5deg);  }
+  100% { transform: rotate(0deg);    }
+}
+
+button.btn-pressed {
+  animation: btn-wiggle 200ms ease-out;
+}
+
+@keyframes emoji-purr {
+  0%   { transform: scale(1.00) rotate(0deg);    }
+  25%  { transform: scale(1.05) rotate(1deg);    }
+  50%  { transform: scale(1.00) rotate(-0.8deg); }
+  75%  { transform: scale(1.04) rotate(0.6deg);  }
+  100% { transform: scale(1.00) rotate(0deg);    }
+}
+
+.emoji-purr {
+  animation-name: emoji-purr;
+}
+
 // Share popup card — scanlines matching .card treatment
 #share_popup_card {
   background-image: repeating-linear-gradient(
