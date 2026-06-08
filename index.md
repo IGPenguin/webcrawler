@@ -409,7 +409,7 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
 
 <!-- Rolling credits overlay — shown after win, before Stack Overflow reveals -->
 <div id="credits_roll" style="display:none; position:fixed; inset:0; z-index:9000; overflow:hidden; pointer-events:none; background:#000;">
-  <div id="credits_scroll_inner" style="position:absolute; top:0; left:0; right:0; text-align:center; padding:40px 32px; will-change:transform;"></div>
+  <div id="credits_scroll_inner" style="position:absolute; top:0; left:0; right:0; text-align:center; padding:40px 32px; will-change:transform; color:#fff; -webkit-text-stroke:4px #000; paint-order:stroke fill;"></div>
 </div>
 
 <!-- ── Game ───────────────────────────────────────────────────────────── -->
@@ -442,7 +442,7 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
   </div>
 
 <br style="clear:both" />
-<div class="box-border-dynamic">
+<div class="box-border-dynamic" style="position:relative; z-index:2;">
 <div id = "id_emoji_flipper" style="margin-bottom:14px;
                               box-shadow:
                                 0px 0px 0px 3px #121212;
