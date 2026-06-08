@@ -1128,7 +1128,9 @@ var Menu = (function () {
     list.appendChild(card);
 
     // Combined party + loot bar — matches in-game id_player_party_loot display
-    var _ghostCombined = String(ghost.companionString || '').trim() + partyLoot;
+    var _ghostParty = String(ghost.companionString || '').trim();
+    var _ghostLoot  = partyLoot.trim();
+    var _ghostCombined = [_ghostParty, _ghostLoot].filter(Boolean).join('&nbsp;|&nbsp;');
     var lootBar = document.createElement('h3');
     lootBar.className = 'menu-loot-bar';
     lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0; margin-top:2px; display:inline-block; width:95.8%; box-shadow:0 0 0 3px #121212; background-color:#272727;';
