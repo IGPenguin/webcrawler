@@ -1,6 +1,6 @@
 # Styx Flow — 2026-06-01 — Stay Dead
 
-*~104 items · 2026-06-06: -2 resolved (WEAP-CMBO done in commits, HIST-UI executed — dual-stat combo weapons added in commit b53ed63) · prior: 2026-06-02: -4 resolved (VER-BUMP, CHEAT-SUBM, CHEAT-TIPS, COMP-PARTY), +1 (BOSS-TELE) · prior: 2026-06-01: +1 (ORIG-ROLL) — Origins picker reroll button, user-flagged P1 · prior: 2026-06-01: Styx re-sort — Backlog and Technical Debt integrated into P3/P4, [SCROLL-GAP] promoted to P2, [ORIG-ITEMS] cleaned, [COMP-PLAY] flagged (assumed shipped — not found in backlog) · prior: 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
+*~107 items · 2026-06-08: -1 resolved (CRED-TEST — credits bug fixed in code), +3 (INV-FADE, DRAG-CNCL from medusa drift jar; SHOP-SPAWN user-flagged) · prior: 2026-06-06: -2 resolved (WEAP-CMBO done in commits, HIST-UI executed — dual-stat combo weapons added in commit b53ed63) · prior: 2026-06-02: -4 resolved (VER-BUMP, CHEAT-SUBM, CHEAT-TIPS, COMP-PARTY), +1 (BOSS-TELE) · prior: 2026-06-01: +1 (ORIG-ROLL) — Origins picker reroll button, user-flagged P1 · prior: 2026-06-01: Styx re-sort — Backlog and Technical Debt integrated into P3/P4, [SCROLL-GAP] promoted to P2, [ORIG-ITEMS] cleaned, [COMP-PLAY] flagged (assumed shipped — not found in backlog) · prior: 2026-06-01: +24 new items (FAIR-PETS, BAIT-LOOT, WHIP-ITEM, MED-ITEMS, FAIR-WORM, FAIR-MINST, BOSS-TOUGH, AREA-STATS, FRIEND-MIN, BASIC-ORIG, CHEAT-TIPS, CHEAT-SUBM, PERS-REVW, ITCH-WRPR, COMP-PARTY, CRED-TEST, TEST-RUNS, VALID-ERR, VER-BUMP, PR-SUMRY, FISH-ABAR, TELE-ENHA, ORIG-PET), LOOT-TEAS moved from Backlog to SPRINT, HIDE-DRM removed — likely resolved by 05/24/26 "Replace Necropolis story beats on NG+" commit (verify via TEST-RUNS), UNDEAD-MGK scope expanded to all non-caster enemy types · prior: 2026-05-24: +2 (DAILY-QUST, HALF-STAT) · prior: 2026-05-21: -3 done/resolved (DEATH-MSG, KILL-LINE, GAME-ENDS), +11 from post-playtest notes (END-DUPE, POOL-GAP, UNDEAD-MGK, SCROLL-GAP, END-ACHIEV, SHOP-BOOST, NECRO-PROP, WEAP-CMBO, HIDE-DRM, BAL-AUDIT, END-SCORE), LOOT-TEAS moved from Backlog to SPRINT · prior: 2026-05-16: +1 (BARK-CTX); prior: +2 (LOOT-TEAS, LOOT-ANIM); prior: +2 (PET-ENCNTR, PET-SLOT), 3 expanded (COMP-PLAY, ENC-PREGEN, PATH-CHOICE); prior: SPRINT block from Perseus 2026-05-15*
 
 ---
 
@@ -39,12 +39,6 @@
 - Type: Improvement
 - Effort: S | Gain: L
 
-### [CRED-TEST] Chore: Verify rolling credits sequence on a real playthrough
-- Manually reach a win ending and confirm rolling credits trigger correctly, display without errors, and don't block ending resolution or score submission.
-- Rolling credits were implemented 05/24/26 ("🎬 Added rolling credits after final boss"); needs first-pass live validation.
-- Priority: P2 — newly implemented path on the win route; breakage would mar the beta ending experience.
-- Type: Chore
-- Effort: XS | Gain: L
 
 ### [TEST-RUNS] Chore: End-to-end test passes — finish twice, verify NG+ behavior, test on Android
 - Complete at least two full runs to any ending on desktop; verify NG+ behavior (story beat replacement in Necropolis, chronicle persistence, score reset).
@@ -68,6 +62,21 @@
 - Type: Improvement
 - Effort: M | Gain: L
 
+### [SHOP-SPAWN] Bug: Shade shop (Undertaker) not spawning when player has unspent drachma
+- Players report the Undertaker shop failing to appear even when `savedCoins - spentCoins > 0`. Suspected areas include Fading Wildlands and possibly others.
+- Code path: shop injection in `generateNextEncounters` case 0 (`encounter-generator.js`) requires `AchievementManager.isUnlocked('coin_first')` AND unspent drachma AND area not already served. One or more conditions may silently fail.
+- Investigate: confirm `coin_first` unlock timing (should fire on first coin pickup — verify it's not firing too late or missing on some coin types); check `_shopInjectedArea` reset logic; verify all areas use Generator-0 in their sequence.
+- Priority: P2 — shop is a core meta-progression loop; if it silently fails, players lose access to upgrades with no feedback.
+- Type: Bug | Severity: Major
+- Effort: S | Gain: L
+
+### [INV-FADE] Bug: Extra curtain fade when sleeping to level up on an invader corpse
+- Sleeping on a dead invader and triggering a level-up produces an unexpected extra fade. Cause not identified via static analysis — the "Level Up!" `curtainFadeInAndOut` in `playerCheckLevelUp` is the only expected fade; no second code path found that should fire.
+- Needs live-playtest observation: reproduce by killing a rival invader, gaining enough XP to level up, then sleeping on the corpse.
+- Priority: P2 — visual glitch on an invader kill; feels like a double-fade bug that undermines the defeat moment.
+- Type: Bug | Severity: Minor
+- Effort: S | Gain: S
+
 ### [PERS-REVW] Chore: Perseus review of public-facing docs and itch.io page
 - Run `/perseus` on the public README, itch.io description, and any player-facing documentation for tone, first-impression quality, and missing info for new players.
 - Priority: P2 — public-facing text sets expectations before a player ever loads the game; beta launch is the right time to fix tone mismatches.
@@ -75,6 +84,13 @@
 - Effort: S | Gain: M
 
 ## P3 — Should-Fix
+
+### [DRAG-CNCL] Feature: Tutorial / hint for drag-off-button cancel
+- Drag-to-cancel is already implemented — sliding your finger/cursor off an action button before releasing cancels the pending action. Players discover this by accident; needs an in-game hint so it's a known affordance.
+- Add a one-time contextual tip (e.g. on the first action bar appearance, or in the tutorial encounter) explaining that releasing outside the button cancels the action.
+- Priority: P3 — discoverability gap; the mechanic exists but is invisible to new players.
+- Type: Feature
+- Effort: XS | Gain: M
 
 ### [ENDEF-CALC] Bug: Enemy defense — enemyDef not applied in all skill calcs
 - Ensure enemyDef is used in all player skill calculations including consumables. (`player-skills.js`)
