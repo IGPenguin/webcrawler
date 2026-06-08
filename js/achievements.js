@@ -4,26 +4,23 @@ var AchievementManager = (function () {
 
   var ACHIEVEMENTS = [
     { id: 'all_achievements',    emoji: '🏆', desc: "Completed ALL available memories!", hint: "Gotta catch 'em all to get into Credits!", unlock: "You'll appear in <b>🖤 Credits</b> soon™" },
-    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
-    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
-    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
-    { id: 'meditate_first',      emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rethink who you are.', unlock: 'Unlocked the <b>🌀 Shedding Stone</b> item.' },
-    { id: 'transmute_first',     emoji: '🧬', desc: 'Combined two Origins for the first time!', hint: 'Some fates were never meant to stay separate.', unlock: 'Unlocked the <b>🧬 Fused Marrow</b> item.' },
-    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
-    { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
-    { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
 
     { id: 'kill_first',          emoji: '🪓', desc: 'Defeated your first enemy!', hint: "Spill blood for the first time.", unlock: 'Unlocked the <b>🔪 Bloody Knife</b> item.' },
     { id: 'knockout_first',      emoji: '💤', desc: 'Knocked out your first enemy!', hint: 'It does not have to hurt.', unlock: 'Unlocked the <b>🥋 Budo Kimono</b> item.' },
     { id: 'calm_first',          emoji: '💬', desc: 'Talked an enemy into submission!', hint: 'How about trying de-escalation?', unlock: 'Unlocked the <b>🏳️ Pacifist</b> origin.' },
     { id: 'survive_trap',        emoji: '💥', desc: 'Survived a deadly trap!', hint: 'Watch where you step.', unlock: 'Unlocked the <b>🤙 Careless</b> origin.' },
-
     { id: 'died_first',          emoji: '💀', desc: 'Died for the first time!', hint: "Finally face the inevitable.", unlock: 'Unlocked the <b>🧟‍♂️ Rotten</b> origin.' },
     { id: 'death_trap',          emoji: '🪤', desc: 'Killed by a deadly trap!', hint: 'Ooops... that was deadly.', unlock: 'Unlocked the <b>💥 Clumsy</b> origin.' },
     { id: 'death_sleep',         emoji: '💤', desc: 'Died in your sleep...', hint: 'Not the peaceful rest you hoped for.', unlock: 'Unlocked the <b>👻 Wraith</b> origin.' },
-    { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!", unlock: 'Unlocked the <b>♥️ Extra Life</b> item.' },
     { id: 'level_first',         emoji: '🎉', desc: 'Leveled up for the first time!', hint: 'Gain experience. Grow stronger.', unlock: 'Unlocked the <b>🥻 Philosopher Toga</b>.' },
-    { id: 'level_5',             emoji: '🎊', desc: 'Reached the character level 5!', hint: 'The path ahead grows longer.', unlock: 'Unlocked the <b>🎓 Scholar</b> origin.' },
+    
+    { id: 'boss_kill_first',     emoji: '♠️', desc: 'Defeated the first area boss!', hint: "Defeat the first challenging enemy!", unlock: 'Unlocked the <b>♠️ Origins</b> feature.' },
+    { id: 'destiny_first',       emoji: '📜', desc: 'Picked an Origin for the first time!', hint: "Start over, this time different.", unlock: 'Unlocked the <b>🔥 Eternal Bonefire</b>.' },
+    { id: 'coin_first',          emoji: '🪙', desc: 'Picked up the first Drachma coin!', hint: "Obtain the everlasting currency.", unlock: 'Unlocked the <b>⚖️ Undertaker</b>.' },
+    { id: 'mana_first',          emoji: '🔵', desc: 'Gained mana for the first time!', hint: 'Magic answers to the willing.', unlock: 'Unlocked <b>🩸 Warlock</b> origin.' },
+    { id: 'gate_fairyland',      emoji: '⛩️', desc: 'Conquered the Twisted Fairyland!', hint: "Endure through the spells and hexes.", unlock: 'Unlocked the <b>⛩️ Soulbinding Arch</b>.' },
+    { id: 'coin_3',              emoji: '💰', desc: 'Set up for success with 3 Drachmae!', hint: "Fill your pouch to the brim.", unlock: 'Unlocked buy <b>🟠 Artifact</b> option.' },
+
     { id: 'fish_bait_first',     emoji: '🎣', desc: 'Caught something for the first time!', hint: "Whaaat? There's fishing?", unlock: 'Unlocked the <b>🎣 Angler</b> origin.' },
     { id: 'fish_no_bait_first',  emoji: '🪝', desc: 'Caught something without bait!', hint: "Pffft... who needs a bait anyway?", unlock: 'Unlocked the <b>👒 Fishing Hat</b> item.' },
 
@@ -46,6 +43,10 @@ var AchievementManager = (function () {
     { id: 'discover_fairyland',  emoji: '🍄', desc: 'Discovered: Twisted Fairyland!', hint: "Seek the home of supernatural beings.", unlock: 'Unlocked the <b>🎋 Shaman</b> origin.' },
     { id: 'discover_river',      emoji: '🌊', desc: 'Discovered: River of Sorrows!', hint: "Sail the flows of eternal tears.", unlock: 'Unlocked the <b>⛵️ Sailor</b> origin.' },
     { id: 'discover_necropolis', emoji: '🪦', desc: 'Discovered: Shrouded Necropolis!', hint: "Where the deepest shadows dwell.", unlock: 'Unlocked the <b>🦴 Survivor</b> origin.' },
+
+    { id: 'reincarnated_first',  emoji: '✨', desc: 'Reincarnated for the first time!', hint: "Don't give up skeleton!", unlock: 'Unlocked the <b>♥️ Extra Life</b> item.' },
+    { id: 'meditate_first',      emoji: '🌀', desc: 'Changed your fate with a coin.', hint: 'Spend coin to rethink who you are.', unlock: 'Unlocked the <b>🌀 Shedding Stone</b> item.' },
+    { id: 'transmute_first',     emoji: '🧬', desc: 'Combined two Origins for the first time!', hint: 'Some fates were never meant to stay separate.', unlock: 'Unlocked the <b>🧬 Fused Marrow</b> item.' },
 
     //Missing "Favor/Body buy" achiev
     { id: 'gamble_win_first',    emoji: '🍀', desc: 'Won the gamble for the first time!', hint: "Luck smiles upon the bold.", unlock: 'Unlocked the <b>🍀 Lucky</b> origin.' },
@@ -76,6 +77,7 @@ var AchievementManager = (function () {
     { id: 'quest_first',         emoji: '⭐️', desc: 'Completed your first quest!', hint: 'Bring them what they ask for.', unlock: "Unlocked the <b>📦 Schrödinger's Box</b>." },
     { id: 'touch_grass',         emoji: '🌿', desc: 'You finally touched the grass!', hint: 'Try going outside and then?', unlock: 'Unlocked the <b>🌻 Hippie</b> origin.' },
 
+    { id: 'level_5',             emoji: '🎊', desc: 'Reached the character level 5!', hint: 'The path ahead grows longer.', unlock: 'Unlocked the <b>🎓 Scholar</b> origin.' },
     { id: 'destiny_10',          emoji: '♻️', desc: 'Started over again 10 times!', hint: "Repeat the cycle again and again.", unlock: 'Unlocked the <b>📼 Rewind Tape</b> item.' },
     { id: 'kill_30',             emoji: '🔪', desc: 'Defeated 30 enemies!', hint: "A growing trail of broken spirits.", unlock: 'Unlocked the <b>🥩 Butcher</b> origin.' },
     { id: 'knockout_30',         emoji: '✌️', desc: 'Knocked out 30 enemies!', hint: "Mercy becomes your second nature.", unlock: 'Unlocked the <b>🥷 Ninja</b> origin.' },
