@@ -35,8 +35,8 @@ function calcActionBarConfig(button, adjustment) {
   var spdUnreal = 150;
   var spdInsane = 120;
   var spdHard = 90;
-  var spdNormal = 60;
-  var spdEasy = 30;
+  var spdNormal = 70;
+  var spdEasy = 50;
 
   var DZ_W = 7; // default danger zone width (percentage points)
 
