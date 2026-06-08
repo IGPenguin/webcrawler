@@ -136,7 +136,7 @@ function formatSlotDiff(oldData) {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight "){
+function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ", msgColor="#FFF"){
   var intBonus=1+playerInt/20;
   var statSum=0;
   var typeMultiplier=1;
@@ -161,7 +161,7 @@ function playerGainXP(multiplier=1,gainedXP=0, message="Improved your insight ")
   }
 
   playerXP+=gainedXP;
-  if (message!="") logPlayerAction(actionString,message + decorateStatusText(""," +"+gainedXP+" XP",colorGold));
+  if (message!="") logPlayerAction(actionString,message + decorateStatusText(""," +"+gainedXP+" XP",colorGold), msgColor);
   var XPString = gainedXP + " ("+playerXP+"/"+playerXPThreshold+")"
   dbg("XP +"+XPString+"\naction x"+multiplier+" type x" +typeMultiplier+" int x" +intBonus);
 
@@ -279,7 +279,7 @@ function playerHeal(critBonus){
     playerMgk-=healAmount;
 
     if (bonusHeal) {
-      logPlayerAction(actionString,"Felt a divine overflow. +"+(healAmount+bonusHeal)+" ❤️‍🩹 -"+healAmount+" 🔵");
+      logPlayerAction(actionString,"Felt a divine overflow. +"+(healAmount+bonusHeal)+" ❤️‍🩹 -"+healAmount+" 🔵", colorYellow);
     } else {
       logPlayerAction(actionString,"Cast a +"+healAmount+" ❤️‍🩹 healing spell for -"+healAmount+" 🔵");
     }
