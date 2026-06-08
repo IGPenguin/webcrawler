@@ -10,9 +10,9 @@ function enemyRest(stamina){
   }
 }
 
-function enemyStaminaChangeMessage(stamina,successMessage,failMessage){
+function enemyStaminaChangeMessage(stamina,successMessage,failMessage,color){
   if (enemyStaLost < enemySta) {
-    logPlayerAction(actionString,successMessage); //TODO: switch emojis around >> 🐅 > ⚔️
+    logPlayerAction(actionString,successMessage,color); //TODO: switch emojis around >> 🐅 > ⚔️
     //animateUIElement(enemyInfoUIElement,"animate__headShake","0.7");
 
     //Play attack animation
@@ -204,8 +204,8 @@ function transitionToCorpse(state) {
 
   if (enemyBossType.includes('Boss') && !areaName.includes("Shrouded")) {
     if (_isRival) {
-      logAction("💔 ▸ "+baseEmoji+"<text style=color:"+colorInvader+";>"+" Invader defeated: <b>"+baseName+"</b></text>");
-      curtainFadeInAndOut("<p style=\"color:"+colorInvader+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Invader defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",baseEmoji+emptySpace+"<b>"+baseName+"</b>"+emptySpace+emptySpace,colorWhite),4);
+      logAction("💔 ▸ "+baseEmoji+"<text style=color:"+colorRed+";>"+" Invader defeated: <b>"+baseName+"</b></text>");
+      curtainFadeInAndOut("<p style=\"color:"+colorRed+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:36px;line-height:20px;\">Invader defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",baseEmoji+emptySpace+"<b>"+baseName+"</b>"+emptySpace+emptySpace,colorWhite),4);
     } else {
       logAction("👑 ▸ "+baseEmoji+"<text style=color:"+colorGold+";>"+" Boss defeated: <b>"+baseName+"</b></text>");
       curtainFadeInAndOut("<p style=\"color:"+colorGold+";letter-spacing: 1.8px;-webkit-text-stroke: 6.5px black;paint-order: stroke fill;font-size:52px;line-height:20px;\">Boss defeated!</p><p style=\"font-size:20px;\""+decorateStatusText("",baseEmoji+emptySpace+"<b>"+baseName+"</b>"+emptySpace+emptySpace,colorWhite),4);

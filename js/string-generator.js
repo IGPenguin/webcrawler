@@ -572,11 +572,11 @@ function getFateLog() {
     "Taken and given",
     "The ledger never forgets",
     "The balance tips the odds",
-    "Something shifted the balance",
+    "Shifted your balance",
     "Debt follows this gift",
     "The world gives and collects",
     "Not all gains are for free",
-    "The cost follows the reward"
+    "The reward has a cost"
   ]);
 }
 
@@ -596,8 +596,8 @@ function getRestBadlyText() {
     "Slept barely enough to recover.",
     "Dreamed badly, woken up tired.",
     "The dreams found you.",
-    "Woke with old weight still on the chest.",
-    "Sleep came and left without helping.",
+    "Woke with weight on the chest.",
+    "Sleep just came and left.",
     "Rested but not restored.",
     "Slept. It didn't take."]);
 }
@@ -861,11 +861,11 @@ function getRivalDialogue() {
 
 function getWhisperingStonesLog() {
   var pool = [
-    "Names in the stone. Others have stood here before.",
-    "Someone else's grief, carved into the threshold.",
-    "The dead remember their choices. These are not yours.",
-    "Other worlds bled through here. Their marks remain.",
-    "You are not the first. The wall remembers."
+    "Names of those who stood here before.",
+    "Someone else carved into the stone.",
+    "The dead remember their choices.",
+    "Other worlds bled through here.",
+    "You are not the first one here."
   ];
   return pool[Math.floor(Math.random() * pool.length)];
 }
@@ -1132,16 +1132,16 @@ function getSpeakDefaultLog() {
     "The words fell into the silence.",
     "Said something. Nothing answered.",
     "Your voice dissolved into the ruin.",
-    "No answer. But something heard."
+    "No answer, but something heard."
   ]);
 }
 
 function getSleepFullLog() {
   return chooseFrom([
-    "Rested well. Back at full strength.",
-    "Slept clean. Everything restored.",
-    "Sleep taken. Ready to continue.",
-    "Down and up. All resources recovered."
+    "Rested well, back at full strength.",
+    "Slept clean, everything restored.",
+    "Slept well, ready to continue.",
+    "Down and up, resources recovered."
   ]);
 }
 

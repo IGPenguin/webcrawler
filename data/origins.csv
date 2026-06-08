@@ -45,7 +45,7 @@ emoji;name;hp;atk;sta;lck;int;mgk;def;desc;achiev
 ✉️;Courier;0;0;1;0;0;0;0;Gain <b>+1 🟢 Energy</b> with no downside.<br><i>Never stops until he delivers.;letter_grab
 💔;Broken;-1;1;0;0;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-1 💔 Health</b><br><i>Cannot forget the grueling pain.;letter_ditch
 🤌;Gourmet;1;0;0;0;0;0;0;Gain <b>+1 ❤️ Health</b> with no downside.<br><i>Enjoys his life to the fullest.;eat_legendary
-🍷;Vinekeeper;0;0;1;0;1;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b> with no downside.<br><i>Slow, deliberate. Still here.;eat_purple
+🍷;Vinekeeper;0;0;1;0;1;0;0;Gain <b>+1 🟢 Energy</b> and <b>+1 🧠 Intellect</b>.<br><i>Slow, deliberate. Still here.;eat_purple
 🩸;Warlock;-1;0;0;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 💔 Health</b>.<br><i>Bought his power by own blood.;mana_first
 🧿;Wizard;0;0;-1;0;0;1;0;Gain <b>+1 🔵 Mana</b>, lose <b>-1 🟢 Energy</b>.<br><i>Devotion stronger than his body.;magic_unlock_first
 🎯;Marked;0;1;0;-2;0;0;0;Gain <b>+1 ⚔️ Attack</b>, lose <b>-2 🍀 Luck</b>.<br><i>Cannot forget the grueling pain.;rival_killed_by

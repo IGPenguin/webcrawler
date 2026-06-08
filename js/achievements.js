@@ -92,7 +92,7 @@ var AchievementManager = (function () {
     { id: 'ending_guard',  emoji: '🔰', desc: 'Stayed still, that was the only answer.',  hint: 'Devotion without motion is its own end.',   unlock: 'Unlocked the <b>🗿 Sentinel</b> origin.' },
     { id: 'ending_embrace',emoji: '🌑', desc: 'Held her close, the dark took you both.',  hint: 'Together is not the same as saved.',        unlock: 'Unlocked the <b>👤 Tainted</b> origin.' },
     { id: 'ending_sleep',  emoji: '💤', desc: 'Laid beside her, deemed it enough.',   hint: 'Some debts are repaid in silence.',         unlock: 'Unlocked the <b>🌿 Quiet</b> origin.' },
-    { id: 'ending_speak',  emoji: '❤️', desc: 'Said her name, she remembered herself.',   hint: 'The right word at the last moment.',        unlock: 'Unlocked the <b>🕊️ Gifted</b> origin.' },
+    { id: 'ending_speak',  emoji: '❤️', desc: 'Said her name and she remembered.',   hint: 'The right word at the last moment.',        unlock: 'Unlocked the <b>🕊️ Gifted</b> origin.' },
     { id: 'ending_pray',   emoji: '🌪️', desc: 'Called the gods, something answered.',  hint: 'Some powers reward desperation.',           unlock: 'Unlocked the <b>🌈 Blessed</b> origin.' },
     { id: 'ending_free',   emoji: '🪽', desc: 'Undid what you made, thread by thread.',   hint: 'Unmaking your own curse is hardest.',       unlock: 'Unlocked the <b>❤️‍🩹 Absolver</b> origin.' },
     { id: 'ending_curse',  emoji: '👹', desc: 'Sealed the pact, without hesitation.',     hint: 'Some choose darkness without pause.',       unlock: 'Unlocked the <b>👹 Hexed</b> origin.' },

@@ -166,7 +166,7 @@ function adjustEncounterButtons(){
     case "Prop":
       document.getElementById('button_grab').innerHTML="✋ Touch";
       document.getElementById('button_roll').innerHTML="👣 Walk";
-      if (corpseState != "" && areaName === "Shrouded Necropolis") setButton('button_roll', "🤲 Hold", colorGold);
+      if (corpseState != "" && areaName === "Shrouded Necropolis" && enemyBossType.includes("Boss")) setButton('button_roll', "🤲 Hold", colorGold);
       if (isFishing) setButton('button_roll',"❌ Ditch");
       if (enemyEmoji=="🛶" || areaName=="River of Sorrows") setButton("button_roll","🛶 Sail");
       break;

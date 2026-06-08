@@ -1,10 +1,19 @@
-## ver. 06/07/26 @ 07:46 PM
+## ver. 06/08/26 @ 09:10 AM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/08/26 @ 09:09 AM
+⚔️ Rebalance first area boss stats
+💛 Yellow crit logs on block/roll/walk
+✨ Better pet name visibility in toasts
+🔧 Fix game end → score submission → credits
+🔧 Fix digestion + fishing lvl up navigate back
+🔧 Fix Hold action shown on wrong corpses
+🔧 Fix invader fade, font + note
 
 ## ver. 06/07/26 @ 07:45 PM
 🔧 Fix fades handler stacking blocking btns

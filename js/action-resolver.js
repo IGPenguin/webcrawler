@@ -538,7 +538,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
               } else {
                 if (_crit === 'success') {
-                  logPlayerAction(actionString, getWalkCritText());
+                  logPlayerAction(actionString, getWalkCritText(), colorYellow);
                 } else {
                   logPlayerAction(actionString,"Walked away leaving them behind.");
                 }
@@ -594,7 +594,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               rollMessage="They do not mean any harm -1 🟢";
             }
 
-            enemyStaminaChangeMessage(-1,rollMessage,"Your roll was a waste of energy -1 🟢");
+            enemyStaminaChangeMessage(-1,rollMessage,"Your roll was a waste of energy -1 🟢", _crit === 'success' ? colorYellow : undefined);
             displayPlayerEffect("🌀");
             break;
 
@@ -613,7 +613,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
               } else {
                 if (_crit === 'success') {
-                  logPlayerAction(actionString, getWalkCritText());
+                  logPlayerAction(actionString, getWalkCritText(), colorYellow);
                 } else {
                   logPlayerAction(actionString,"Walked away leaving them behind.");
                 }
@@ -632,7 +632,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_skillOK === true) {
               enemyStaminaChangeMessage(-1,
                 _crit === 'success' ? "Glided past a swift attack." : "Barely slipped a swift attack -1 🟢",
-                "Rolled out of the way -1 🟢");
+                "Rolled out of the way -1 🟢", _crit === 'success' ? colorYellow : undefined);
               displayPlayerEffect("🌀");
             } else {
               if (_crit === 'fail') {
@@ -660,7 +660,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 }
               } else {
                 if (_crit === 'success') {
-                  logPlayerAction(actionString, getWalkCritText());
+                  logPlayerAction(actionString, getWalkCritText(), colorYellow);
                 } else {
                   logPlayerAction(actionString,"Walked away leaving them behind.");
                 }
@@ -1087,14 +1087,14 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else {
               enemyStaminaChangeMessage(-1,
                 _crit === 'success' ? "Blocked without breaking a sweat." : "Blocked a regular attack -1 🟢",
-                "Blocked just for the sake of it -1 🟢");
+                "Blocked just for the sake of it -1 🟢", _crit === 'success' ? colorYellow : undefined);
               displayPlayerEffect("🔰");
             }
             break;
           case "Undead":
             enemyStaminaChangeMessage(-1,
               _crit === 'success' ? "Held back the rot perfectly." : "Blocked through the stench -1 🟢",
-              "Blocked just for the sake of it -1 🟢");
+              "Blocked just for the sake of it -1 🟢", _crit === 'success' ? colorYellow : undefined);
             displayPlayerEffect("🔰");
             break;
 
@@ -1106,7 +1106,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           case "Reflective":
             enemyStaminaChangeMessage(-1,
               _crit === 'success' ? "Blocked without breaking a sweat." : "Blocked a regular attack -1 🟢",
-              "Blocked just for the sake of it -1 🟢");
+              "Blocked just for the sake of it -1 🟢", _crit === 'success' ? colorYellow : undefined);
             displayPlayerEffect("🔰");
             break;
 
@@ -1118,7 +1118,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
             enemyStaminaChangeMessage(-1,
               _crit === 'success' ? "Blocked without breaking a sweat." : "Blocked a swift attack -1 🟢",
-              "Blocked just for the sake of it -1 🟢");
+              "Blocked just for the sake of it -1 🟢", _crit === 'success' ? colorYellow : undefined);
             displayPlayerEffect("🔰");
             break;
 
@@ -2416,7 +2416,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_sEStaStart > 0) {
               if (_crit === 'success') {
                 if (playerSta > 0) playerSta--;
-                enemyGrabbedIntoLoot("Snatched it with perfect timing -1 🟢");
+                enemyGrabbedIntoLoot("Snatched with perfect timing -1 🟢");
                 break;
               }
               // Regular pass with stamina — tire them, not pocketed yet
@@ -3107,7 +3107,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
           playerRest(false, true);
           if (_crit === 'success' && !_wasRested) {
             playerSta++;
-            logPlayerAction(actionString, getCritSleepLog());
+            logPlayerAction(actionString, getCritSleepLog(), colorYellow);
             displayPlayerRestedEffect();
           }
           if (corpseState === "neutralized") {
@@ -3198,7 +3198,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
                 displayPlayerEffect("💤");
                 if (_crit === 'success') {
                   playerSta++;
-                  logPlayerAction(actionString, getCritSleepLog());
+                  logPlayerAction(actionString, getCritSleepLog(), colorYellow);
                   displayPlayerRestedEffect();
                 }
               }
@@ -3254,7 +3254,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerRest(false, true);
               if (_crit === 'success') {
                 playerSta++;
-                logPlayerAction(actionString, getCritSleepLog());
+                logPlayerAction(actionString, getCritSleepLog(), colorYellow);
                 displayPlayerRestedEffect();
               }
             }
@@ -3277,7 +3277,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               playerRest(false, true);
               if (_crit === 'success') {
                 playerSta++;
-                logPlayerAction(actionString, getCritSleepLog());
+                logPlayerAction(actionString, getCritSleepLog(), colorYellow);
                 displayPlayerRestedEffect();
               }
             }
