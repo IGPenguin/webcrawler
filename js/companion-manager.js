@@ -308,7 +308,7 @@ function showCompanionBarkToast(barkIcon, name, text, color, onDone) {
       + '<span style="font-size:22px; line-height:1; flex-shrink:0;">' + barkIcon + '</span>'
       + '<div style="flex:1;">'
         + '<h5 style="margin:-2px 0 0 0; font-size:16px; line-height:1.2; font-style:italic; font-weight:400; color:#ffffff; text-align:left;">' + text + '</h5>'
-        + '<h5 style="margin:2px 0 4px 0; opacity:0.5; font-size:14px; text-align:left;">' + name + '</h5>'
+        + '<h5 style="margin:2px 0 4px 0; color:#aaaaaa; font-size:14px; text-align:left;">' + name + '</h5>'
       + '</div>'
     + '</div>';
 
