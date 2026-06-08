@@ -18,8 +18,12 @@ function _applyCheatName(name) {
     playerHpMax = cheatAmount; playerAtk = cheatAmount; playerStaMax = cheatAmount;
     playerMgkMax = cheatAmount; playerLck = cheatAmount; playerInt = cheatAmount;
     playerHp = playerHpMax; playerSta = playerStaMax; playerMgk = playerMgkMax;
+    return true;
+  }
+
+  if (name.includes("Massive Bulwark")) {
     playerDef = cheatAmount;
-    logCheatUse("Changed stats ➔  " + cheatAmount);
+    logCheatUse("Changed defense ➔  " + cheatAmount);
     return true;
   }
 
