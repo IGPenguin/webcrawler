@@ -469,11 +469,11 @@ function menuFade(callback, text, holdMs, fadeOutSec) {
 
 var _persistentEnemyEffect = null;
 
-function displayEnemyEffect(message){
+function displayEnemyEffect(message, time=3){
   var el = document.getElementById('id_enemy_overlay');
   if (!el) return;
   el.style.opacity = '';
-  displayEffect(message, el);
+  displayEffect(message, el, time);
   if (_persistentEnemyEffect) {
     var snapshot = _persistentEnemyEffect;
     var gen = _animateUIElementGen.get(el);
