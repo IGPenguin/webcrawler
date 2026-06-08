@@ -270,6 +270,8 @@ var SaveManager = (function () {
 
   function clearAll() {
     localStorage.removeItem('coins'); // full wipe only
+    localStorage.removeItem('transmuteDebt');
+    localStorage.removeItem('transmuteRunStarted');
     clearSave();
     localStorage.removeItem(HISTORY_KEY);
   }
@@ -278,6 +280,8 @@ var SaveManager = (function () {
   // Settings (difficulty, vibration) are intentionally preserved.
   function purgeAll() {
     localStorage.removeItem('coins');
+    localStorage.removeItem('transmuteDebt');
+    localStorage.removeItem('transmuteRunStarted');
     clearSave();
     localStorage.removeItem(HISTORY_KEY);
     localStorage.removeItem('achievements');

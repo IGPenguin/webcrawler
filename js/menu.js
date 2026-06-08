@@ -139,6 +139,18 @@ var Menu = (function () {
   function _renderMain(skipFade) {
     var hasSave = SaveManager.hasContinue();
     savedCoins = parseInt(localStorage.getItem('coins'));
+    if (isNaN(savedCoins)) savedCoins = 0;
+    // Refund transmute debt if a run was started but origin picker was bypassed
+    // (players without boss_kill_first go straight to _doNewGame, never through _renderOriginPicker)
+    if (localStorage.getItem('transmuteRunStarted')) {
+      var _debt = parseInt(localStorage.getItem('transmuteDebt') || '0');
+      if (_debt > 0) {
+        savedCoins += _debt;
+        localStorage.setItem('coins', parseInt(savedCoins));
+      }
+      try { localStorage.removeItem('transmuteDebt'); } catch(e) {}
+      try { localStorage.removeItem('transmuteRunStarted'); } catch(e) {}
+    }
     document.getElementById('menu_continue').style.display = hasSave ? '' : 'none';
 
     var preview = document.getElementById('menu_continue_preview');
