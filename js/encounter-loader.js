@@ -94,6 +94,7 @@ function loadEncounter(index, fileLines = linesStory){
   //console.log("bonus: "+totalBonus+" malus: "+totalMalus);
 
   enemyTeam = RarityManager.stripTagFromNote(String(row[11].split(":").slice(1).join(":")));
+  if (_isRival && !enemyTeam) enemyTeam = 'Outer Evil';
   enemyDesc = String(row[12].split(":").slice(1).join(":"));
   if (enemyDesc.includes("po/em")) enemyDesc = enemyTeam.includes("Piece of History") ? getWeddingInvitationPoem() : getPoem();
   if (enemyTeam.includes("Prophe") || enemyTeam.includes("Knowledge") || enemyTeam.includes("Epiphany") || enemyTeam.includes("Note")) {
