@@ -301,10 +301,10 @@ function _doGameEnd(endType) {
   removeGatewayEffects();
   var _wp = _winPayload;
   setTimeout(function() {
-    curtainFadeIn(function() {
-      if (encounterIndex + 1 < linesStory.length - 1) nextEncounter(true, true);
-      setBackground(areaName);
-      ScoreManager.submitOrPrompt(_wp, function() {
+    ScoreManager.submitOrPrompt(_wp, function() {
+      curtainFadeIn(function() {
+        if (encounterIndex + 1 < linesStory.length - 1) nextEncounter(true, true);
+        setBackground(areaName);
         playCredits(function() {
           curtainFadeOut(function() { registerClickListeners(300); });
         });
