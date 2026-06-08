@@ -324,7 +324,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             //if (enemyType=="Tough") enemyDef=1; //Hehe, should Tough have something špeci?
             if (_crit === 'success') {
-              logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+playerAtkBonus-enemyDef+1)+" 💔");
+              logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+playerAtkBonus-enemyDef+1)+" 💔", colorYellow);
               enemyHit(playerAtk+playerAtkBonus-enemyDef+1,false,true,true);
             } else {
               enemyHit(playerAtk+playerAtkBonus-enemyDef);
@@ -365,7 +365,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             }
 
             if (_crit === 'success') {
-              logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+1)+" 💔");
+              logPlayerAction(actionString, "Your attack hit them extra hard -"+(playerAtk+1)+" 💔", colorYellow);
               enemyHit(playerAtk+1,false,true,true);
             } else {
               enemyHit(playerAtk);
@@ -837,7 +837,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             nextEncounter();
             break;
           case "Friend":
-            if (areaName.includes("Shrouded")) {
+            if (areaName.includes("Shrouded") && !isFishing) {
               logPlayerAction(actionString,"They did not let you leave!");
               isFishing=false;
               break;
@@ -1338,7 +1338,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (procAbilityChance("💫",100)) magicBonusDamage=1;
               if ((enemyMgk-enemyMgkLost)<=magicDamage){
                 if (_crit === 'success') {
-                  logPlayerAction(actionString,"Spell pierced their defenses.");
+                  logPlayerAction(actionString,"Spell pierced their defenses.", colorYellow);
                   enemyHit(magicDamage+magicBonusDamage+1,true);
                 } else {
                   enemyHit(magicDamage+magicBonusDamage,true);
@@ -1381,7 +1381,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
 
             if ((enemyMgk-enemyMgkLost)<=magicDamage){
               if (_crit === 'success') {
-                logPlayerAction(actionString, "Spell was especially effective -"+(magicDamage+magicBonusDamage+1)+" 💔");
+                logPlayerAction(actionString, "Spell was especially effective -"+(magicDamage+magicBonusDamage+1)+" 💔", colorYellow);
                 enemyHit(magicDamage+magicBonusDamage+1,true,true,true);
               } else {
                 enemyHit(magicDamage+magicBonusDamage,true);
@@ -1722,7 +1722,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAtkBonus-=enemyAtkChange;
             if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
               enemyAtkBonus--;
-              logPlayerAction(actionString,"The hex pierced their reflection -"+(enemyAtkChange+1)+" ⚔️ for -"+_mgkSpent+" 🔵");
+              logPlayerAction(actionString,"The hex pierced their reflection -"+(enemyAtkChange+1)+" ⚔️ for -"+_mgkSpent+" 🔵", colorYellow);
             } else {
               logPlayerAction(actionString,"Curse bypassed their reflection -"+enemyAtkChange+" ⚔️ for -"+_mgkSpent+" 🔵");
             }
@@ -1748,7 +1748,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             } else if (_crit === 'success') {
               enemyStaLost = enemySta;
               enemyCursed = true;
-              logPlayerAction(actionString,"The hex overwhelmed their defenses -"+_mgkSpent+" 🔵");
+              logPlayerAction(actionString,"The hex overwhelmed their defenses -"+_mgkSpent+" 🔵", colorYellow);
               logAction(enemyEmoji+" ▸ 😱 They got terrified and couldn't react.");
             } else {
               logPlayerAction(actionString,"The hex dissolved into them -"+_mgkSpent+" 🔵");
@@ -1792,7 +1792,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             enemyAtkBonus-=enemyAtkChange;
             if (_crit === 'success' && (enemyAtkBonus+enemyAtk) > 0) {
               enemyAtkBonus--;
-              logPlayerAction(actionString,"The hex sank deep -"+(enemyAtkChange+1)+" ⚔️ weaker for -"+_mgkSpent+" 🔵");
+              logPlayerAction(actionString,"The hex sank deep -"+(enemyAtkChange+1)+" ⚔️ weaker for -"+_mgkSpent+" 🔵", colorYellow);
             } else {
               logPlayerAction(actionString,"Cursed them -"+enemyAtkChange+" ⚔️ weaker for -"+_mgkSpent+" 🔵");
             }
@@ -1977,7 +1977,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               if (_crit === 'success') {
                 // Guaranteed strangle, skip luck check
-                logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢");
+                logPlayerAction(actionString,"Grabbed them into stranglehold -1 🟢", colorYellow);
                 if (playerSta > 0) playerSta--;
                 enemyKnockedOut();
                 isFishing=false;
@@ -2034,7 +2034,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               if (playerSta > 0) playerSta--;
               if (_crit === 'success') {
                 enemyStaLost = enemySta; // Fully stagger — drain all remaining energy
-                logPlayerAction(actionString, "Thrown them off balance -1 🟢");
+                logPlayerAction(actionString, "Thrown them off balance -1 🟢", colorYellow);
               } else {
                 enemyStaLost = Math.min(enemySta, enemyStaLost + 2);
                 logPlayerAction(actionString, "They managed to slip away -1 🟢");
@@ -2132,7 +2132,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               break;
             }
             if (_crit === 'success') {
-              logPlayerAction(actionString,"Cleared the way without a flinch.");
+              logPlayerAction(actionString,"Cleared the way without a flinch.", colorYellow);
             } else {
               if (playerSta > 0) playerSta--;
               logPlayerAction(actionString,"Cleared the way forward -1 🟢");
@@ -2416,7 +2416,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_sEStaStart > 0) {
               if (_crit === 'success') {
                 if (playerSta > 0) playerSta--;
-                enemyGrabbedIntoLoot("Snatched with perfect timing -1 🟢");
+                enemyGrabbedIntoLoot("Snatched it flawlessly -1 🟢", colorYellow);
                 break;
               }
               // Regular pass with stamina — tire them, not pocketed yet
@@ -2685,7 +2685,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
             if (_crit === 'success') {
               if (_lbl === 'Karma') playerKarma += _delta; else if (_lbl === 'Love') playerLove += _delta;
               else if (_lbl === 'Luck') playerLck += _delta; else playerInt += _delta;
-              logPlayerAction(actionString, chooseFrom(_pools.cp[_lbl]) + ' +' + _delta + ' ' + _ico);
+              logPlayerAction(actionString, chooseFrom(_pools.cp[_lbl]) + ' +' + _delta + ' ' + _ico, colorYellow);
               displayPlayerGainedEffect(); displayEnemyCannotEffect();
             } else if (_skillOK) {
               logPlayerAction(actionString, chooseFrom(_pools.p[_lbl]));
@@ -2700,6 +2700,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               displayPlayerCannotEffect();
             }
             encounterUsed = true;
+            enemyDesc = getMirrorDesc(enemyName);
             redraw();
             break;
           }
@@ -2916,7 +2917,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               }
               var gainedXP=playerGainXP(_crit === 'success' ? 1.2 : 1, GAME_CONFIG.rewardXp*playerLevel,"");
               if (_crit === 'success') {
-                logPlayerAction(actionString, "Spoke with great conviction! " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
+                logPlayerAction(actionString, "Spoke with great conviction! " + decorateStatusText("","+"+gainedXP+" XP",colorGold), colorYellow);
               } else if (parseInt(enemyHp+enemyAtk+enemySta+enemyLck+enemyInt+enemyMgk+enemyMsg)==0) {
                 logPlayerAction(actionString,enemyMsg+" " + decorateStatusText("","+"+gainedXP+" XP",colorGold));
                 nextEncounter();
@@ -3170,7 +3171,7 @@ function resolveAction(button){ //Yeah, this is bad, like really bad
               // Refresh 1 on both pass and crit pass (crit pass skips enemy turn already)
             }
             if (_crit === 'success') {
-              logPlayerAction(actionString, getRestCritLog());
+              logPlayerAction(actionString, getRestCritLog(), colorYellow);
               break;
             }
             if (enemyCastIfMgk()){

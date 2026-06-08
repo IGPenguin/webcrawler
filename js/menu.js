@@ -550,13 +550,8 @@ var Menu = (function () {
 
   // ── Shared run card renderer ───────────────────────────────────────────────
 
-  function _buildStats(hpMax, staMax, atk, mgkMax) {
-    var s = '';
-    if (hpMax  > 0) s += '❤️ '            + fullSymbol.repeat(hpMax);
-    if (staMax > 0) s += '&nbsp;&nbsp;🟢 ' + fullSymbol.repeat(staMax);
-    if (atk    > 0) s += '&nbsp;&nbsp;⚔️ ' + fullSymbol.repeat(atk);
-    if (mgkMax > 0) s += '&nbsp;&nbsp;🔵 ' + fullSymbol.repeat(mgkMax);
-    return s;
+  function _buildStats(hpMax, staMax, atk, mgkMax, def) {
+    return buildStatsUI(hpMax || 0, 0, staMax || 0, 0, atk || 0, 0, mgkMax || 0, 0, def || 0);
   }
 
   // Builds an in-game-styled player card matching the in-game toolbar layout exactly.
@@ -719,7 +714,7 @@ var Menu = (function () {
     document.getElementById('menu_history_actions').style.display = 'flex';
     _bindHistoryBack('👈 Back', function () { menuFade(_renderHistoryList); });
 
-    var stats = _buildStats(session.playerHpMax, session.playerStaMax, session.playerAtk, session.playerMgkMax);
+    var stats = _buildStats(session.playerHpMax, session.playerStaMax, session.playerAtk, session.playerMgkMax, session.playerDef);
 
     var partyLoot = '';
     if (session.playerPartyString && session.playerPartyString !== 'undefined') partyLoot += session.playerPartyString;
@@ -763,8 +758,10 @@ var Menu = (function () {
     list.appendChild(logWrap);
 
     // Combined party + loot bar — matches in-game id_player_party_loot display
-    var _combined = String(session.playerPartyString || '').replace('undefined', '').trim()
-                  + String(session.playerLootString  || '').replace('undefined', '').trim();
+    var _partyStr = String(session.playerPartyString || '').replace('undefined', '').trim();
+    var _lootStr  = String(session.playerLootString  || '').replace('undefined', '').trim();
+    var _partsArr = [_partyStr, _lootStr].filter(Boolean);
+    var _combined = _partsArr.join('&nbsp;|&nbsp;');
     var lootBar = document.createElement('h3');
     lootBar.className = 'menu-loot-bar';
     lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; '
@@ -1083,7 +1080,7 @@ var Menu = (function () {
     list.innerHTML = '';
 
     var _statParts = (ghost.stats || '').split(';');
-    var _ghostStats = _buildStats(parseInt(_statParts[0]) || 0, parseInt(_statParts[2]) || 0, parseInt(_statParts[1]) || 0, parseInt(_statParts[5]) || 0);
+    var _ghostStats = _buildStats(parseInt(_statParts[0]) || 0, parseInt(_statParts[2]) || 0, parseInt(_statParts[1]) || 0, parseInt(_statParts[5]) || 0, parseInt(_statParts[6]) || 0);
     var partyLoot = String(ghost.inventory || '');
     rankIdx = (rankIdx !== undefined && rankIdx !== null) ? rankIdx : -1;
     var rankColor = rankIdx === 0 ? '#FFD940' : rankIdx === 1 ? '#c0c0c0' : rankIdx === 2 ? '#cd7f32' : '#fff';
@@ -1131,7 +1128,9 @@ var Menu = (function () {
     list.appendChild(card);
 
     // Combined party + loot bar — matches in-game id_player_party_loot display
-    var _ghostCombined = String(ghost.companionString || '').trim() + partyLoot;
+    var _ghostParty = String(ghost.companionString || '').trim();
+    var _ghostLoot  = partyLoot.trim();
+    var _ghostCombined = [_ghostParty, _ghostLoot].filter(Boolean).join('&nbsp;|&nbsp;');
     var lootBar = document.createElement('h3');
     lootBar.className = 'menu-loot-bar';
     lootBar.style.cssText = 'text-align:left; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:0; margin-top:2px; display:inline-block; width:95.8%; box-shadow:0 0 0 3px #121212; background-color:#272727;';

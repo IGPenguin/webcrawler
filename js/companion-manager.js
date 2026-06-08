@@ -455,10 +455,10 @@ var _FETCH_BARKS = {
     { icon: '✨', text: 'Lands on your wrist and lingers.' },
     { icon: '✨', text: 'Crawls close in a moment of clarity.' },
     { icon: '✨', text: 'Rests still long enough to matter.' },
-    { icon: '✨', text: 'Settles on your skin, then lifts off.' },
+    { icon: '✨', text: 'Settles on your skin to lift off.' },
   ],
   rodent: [
-    { icon: '🎁', text: 'Returns with cheeks full of something.' },
+    { icon: '🎁', text: 'Returns with full cheeks.' },
     { icon: '🎁', text: 'Drags something edible from a crack.' },
     { icon: '🎁', text: 'Stuffs your pocket with a find.' },
     { icon: '🎁', text: 'Surfaces with something to share.' },
@@ -469,7 +469,7 @@ var _FETCH_BARKS = {
     { icon: '💚', text: 'Offers their side to rest against.' },
     { icon: '💚', text: 'Breathes slow. So do you.' },
     { icon: '💚', text: 'Steadies the moment with presence.' },
-    { icon: '💚', text: 'Lowers their weight. Lets you lean.' },
+    { icon: '💚', text: 'Lowers their weight to you.' },
   ],
 };
 

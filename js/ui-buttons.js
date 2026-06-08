@@ -463,6 +463,20 @@ function registerClickListeners(delay=0){
       var handler = function(e) {
         e.preventDefault();
         AchievementManager.dismissToast();
+        var _pb  = document.getElementById(id);
+        var _pbb = _pb.querySelector('b');
+        var _pbc = _pbb ? _pbb.style.color : '';
+        _pb.classList.remove('btn-pressed');
+        void _pb.offsetWidth;
+        _pb.style.filter = (_pbc && _pbc.toUpperCase() !== '#FFFFFF')
+          ? 'brightness(1.2) drop-shadow(0 0 5px ' + _pbc + ')'
+          : 'brightness(1.2)';
+        _pb.classList.add('btn-pressed');
+        _pb.addEventListener('animationend', function _pbDone(ev) {
+          if (ev.target !== ev.currentTarget) return;
+          _pb.classList.remove('btn-pressed');
+          _pb.style.filter = '';
+        }, { once: true });
         ActionBar.showActionBar(calcActionBarConfig(id), function(isSuccess, val, critResult) {
           actionBarSuccess = isSuccess;
           actionBarCrit = critResult || null;

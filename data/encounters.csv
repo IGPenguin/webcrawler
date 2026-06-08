@@ -405,7 +405,7 @@ Forsaken Village;🐕;Lost Shiba;Pet;3;1;2;0;0;0;0;Companion;A rare good boy app
 Forsaken Village;🐈‍⬛;Shadow Hunteress;Pet;1;1;2;-1;0;0;0;Companion;These usually bring bad luck.<br>;Yeah it is bad luck;none
 Forsaken Village;🐥;Stray Chick;Pet;1;0;1;0;-1;0;0;Lost Hatchling;Looking for something that won’t answer back.<br>;Got a new travel buddy!;none
 Forsaken Village;🫏;Simple Donkey;Pet;1;0;2;0;-1;0;0;Companion;Annoying sounds usually drive everyone away.<br>;It brayed once and fell into step.;none
-Forsaken Village;🐀;Wretched Rat;Pet;2;1;2;0;-1;0;0;Waterside Vermin;Smarter than looks, teeth worn sharp.<br>.;Joined your company.;none
+Forsaken Village;🐀;Wretched Rat;Pet;2;1;2;0;-1;0;0;Waterside Vermin;Smarter than looks, teeth worn sharp.<br>;Joined your company.;none
 
 Forsaken Village;🪱;Scared Worm;Small;1;0;1;0;-1;0;0;Arthropod;Spooked by the sunlight.<br>;Killed by something too small to fear.;none
 Forsaken Village;🪱;Meat Worm;Small;1;0;1;0;-1;0;0;Arthropod;Makes a perfect fishing bait.<br>;Finished off by a worm.;none
@@ -825,7 +825,7 @@ Twisted Fairyland;🦟;Oversized Mosquito;Stingy;3;2;2;0;-1;0;0;Pesky Insect;Nev
 Twisted Fairyland;🕷️;Huge Tarantula;Stingy;3;2;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got lethally stung.;none
 
 Twisted Fairyland;🦠;Spore Clump;Toxic;1;3;1;0;-1;0;0;Strange Fungus;Drifts in the cold breeze.<br>;Choked on deadly spores.;none
-Twisted Fairyland;🧀;Cheese Monster;Toxic;3;2;3;0;-1;0;0;Living Snack;Labeled with <i>"I <3 Ladoria"</i>, looks dangerous.<br>;Got poked with some new holes.;none
+Twisted Fairyland;🧀;Cheese Monster;Toxic;3;2;3;0;-1;0;0;Living Snack;Labeled with tag <i>"Ladoria"</i>, looks dangerous.<br>;Got poked some new holes.;none
 Twisted Fairyland;🌼;Living Bloom;Toxic;3;2;2;0;-1;0;0;Unnatural Growth;Smells sweet and sour.<br>;Got lethally poisoned.;none
 Twisted Fairyland;🕷️;Black Widow;Toxic;3;4;1;0;-1;0;0;Imminent Danger;Venomous eight-legged menace.<br>;Got a lethal sting.;none
 Twisted Fairyland;🪱;Glowing Worm;Toxic;3;1;1;0;-1;0;0;Arthropod;Radiates a strange green aura.<br>;Suffered radiation damage.;none
@@ -1009,9 +1009,15 @@ Twisted Fairyland;🦊;Mystery Fox;Friend🌰\🥜;0;0;0;0;0;0;0;Wild Animal;Sit
 Twisted Fairyland;🦧;Confused Ape;Friend🪮\🥄\🧸\🧶\🗿;0;0;0;0;0;0;0;Troubles Animal;Looks like it has something to barter.<br>It is looking for: n/a;Received a poweful artifact;none
 Twisted Fairyland;🐒;Twitchy Monkey;Friend🪮\🥄\🧸\🧶\🗿;0;0;0;0;0;0;0;Troubled Animal;Looks like it has something to barter.<br>It is looking for: n/a;Received a poweful artifact;none
 Twisted Fairyland;🦤;Hungry Dodo;Friend🪳\🪰\🦗\🐝\🐞\🦋\🐛\🐜\🪱;0;0;0;0;0;0;0;Unusal Critter;Known for being selfish, maybe not this time.<br>It is looking for: n/a;Willingly shared something.;none
+Twisted Fairyland;🐐;Grinning Satyr;Friend;0;1;0;0;0;0;0;Fey Wanderer;Sharpens your grip with one deft motion.<br>Asks for nothing, which is suspicious.;Something clicked in the shoulder.;none
+Twisted Fairyland;🦅;Wilted Hawk;Friend;0;0;0;1;0;0;0;Lucky Omen;Lands on your shoulder for a breath.<br>Gone before you think to hold it.;Fortune shifted, just slightly.;none
+Twisted Fairyland;🧙‍♀️;Forest Druid;Friend;0;0;0;0;1;0;0;Twisted Hermit;Sits among the roots, speaking to no one.<br>;Left you sharper than before.;none
+Twisted Fairyland;🃏;Drifting Card;Friend;0;0;0;-1;0;1;0;Cursed Artifact;Floats at eye level, face-up, waiting.<br>;The warmth it took was yours.;none
+Twisted Fairyland;🪆;Grinning Effigy;Friend;-1;1;0;0;0;0;0;Fae Deceiver;Smiles the same smile no matter what you do.<br>;Hit harder. Bled for it.;none
+Twisted Fairyland;👺;Hollow Jester;Friend;-1;0;0;0;0;1;0;Hollow Trickster;Wears every expression at once, none of them real.<br>;The strings cut deep.;none
 
 //River of Sorrows
-River of Sorrows;🏺;Hollow Amphora;Prop;0;0;0;0;0;0;0;Waterlogged Relic;An empty jar, moving against the current.<br>.;Left it alone.;none
+River of Sorrows;🏺;Hollow Amphora;Prop;0;0;0;0;0;0;0;Waterlogged Relic;An empty jar, moving against the current.<br>;Left it drift afar.;none
 River of Sorrows;🪨;Tide Mark;Prop;0;0;0;0;0;0;0;River Sign;Stained where the water used to reach.<br>;Measured the cost of it.;none
 River of Sorrows;🍂;Dead Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.;none
 River of Sorrows;🍃;Floating Leaves;Prop;0;0;0;0;0;0;0;Scattered Growth;Peacefully dancing on the surface.<br>;Sailed through the debris.;none
@@ -1073,7 +1079,7 @@ River of Sorrows;🏴‍☠️;Pirate Cove;Container-5;0;0;0;0;0;0;0;Corsair Cac
 
 River of Sorrows;🧱;Sealed Mortuary;Locked-Container-3;0;0;0;0;0;0;0;Bricked Vault;Mortared shut to hide something forever.<br>;The mortar gave before the wall did.;none
 River of Sorrows;⛵️;Ghost Ship;Locked-Container-3;0;0;0;0;0;0;0;Sealed Hold;Bolt-locked from inside by someone long gone.<br>;Forced it open on the third heave.;none
-River of Sorrows;🏛️;Cliff Temple;Locked-Container-3;0;0;0;0;0;0;0;Sealed Shrine;Stone door, old inscription. Neither stopped you.<br>;Shouldered it open and stepped inside.;none
+River of Sorrows;🏛️;Cliff Temple;Locked-Container-3;0;0;0;0;0;0;0;Sealed Shrine;Stone door with an old inscription.<br>;Shouldered it open and stepped inside.;none
 River of Sorrows;🛖;Island Hut;Locked-Container-3;0;0;0;0;0;0;0;Abandoned Shelter;Door braced shut from outside. Whoever did it isn't coming back.<br>;Lifted the bar and went inside.;none
 
 River of Sorrows;🌊;Calm Waves;Fishing;0;0;0;0;0;0;0;Water Condition;The open water seems unusually calm.<br>;Something jumped the hook!;none
@@ -1112,7 +1118,7 @@ River of Sorrows;🏛️;Sunken Shrine;Altar;0;0;0;0;0;1;0;Waterlogged Blessing;
 River of Sorrows;🕯️;Mourning Candles;Altar;0;0;1;0;0;0;0;Floating Memorial;Someone placed these for someone who won't return.<br>;The flames held still;none
 River of Sorrows;🏮;Drowned Lantern;Altar;0;0;0;1;0;0;0;Pale Light;Burns beneath the surface as if the river is no obstacle.<br>;The light held longer than expected;none
 River of Sorrows;🖤;Grief Marker;Altar;1;0;0;0;0;0;0;Dark Memorial;Heart shape scraped into the shore rock.<br>;Shed a tear of lingering hope;none
-River of Sorrows;⛰️;Emerging Vista;Altar;0;0;0;0;1;0;0;Point of Interest;Provides a clear view towards the horizon.<br>;Got familiar with the surroundings;none
+River of Sorrows;⛰️;Emerging Vista;Altar;0;0;0;0;1;0;0;Point of Interest;Provides a clear view towards the horizon.<br>;Checked your surroundings;none
 
 River of Sorrows;🗣️;Muffled Screams;Curse;0;0;0;-2;0;0;0;Distant Noise;Disturbing voices begging for mercy.<br>;Depression intensified;none
 River of Sorrows;🌫️;River Mist;Curse;0;0;0;0;-1;0;0;Creeping Fog;Carries whispers of the long departed.<br>;Something cold passed right through you;none
@@ -1158,8 +1164,8 @@ River of Sorrows;🐌;Amphibious Snail;Tough;3;2;1;0;1;0;0;Hard Shell;Blows boun
 River of Sorrows;🦛;Wallowing Hulk;Tough;4;0;3;0;-1;0;1;Sunken Giant;Its hide is slick with river mud.<br>;Trampled to your death.;none
 River of Sorrows;🐉;Brine Hellkite;Tough;5;3;2;0;1;2;1;Abyssal Drake;Scales drip seawater and spite.<br>;Jaws closed, tide rose inside you.;none
 River of Sorrows;🦬;Stoneback Bison;Tough;6;3;3;0;0;0;1;Tough Charger;Mossy boulders cling to its spine like armor.<br>;Trampled into the riverbank.;none
+River of Sorrows;🐚;Cone Snail;Tough;2;3;1;0;0;0;1;Venomous Crustacean;Smaller than anything this lethal should be.<br>;Venom reached the heart in seconds.;none
 
-River of Sorrows;🐚;Cone Snail;Toxic;2;3;1;0;0;0;1;Venomous Crustacean;Smaller than anything this lethal should be.<br>;Venom reached the heart in seconds.;none
 River of Sorrows;‍🪼;Box Jelly;Toxic;2;3;1;0;-1;0;0;Aquatic Threat;Transparent as grief and twice as tenacious.<br>;Killed by a mere touch.;none
 River of Sorrows;🦎;Blighted Newt;Toxic;4;3;2;0;-1;0;0;Toxic Crawler;Skin weeps something that doesn't wash off.<br>;Dissolved from the outside in.;none
 River of Sorrows;🧜🏾‍♀️;Murky Lurker;Toxic;5;2;2;0;2;0;0;Sunken Guardian;Pale beneath the surface and watching.<br>;Dragged into the depths.;none
@@ -1172,7 +1178,7 @@ River of Sorrows;♨️;Scalding Elemental;Hot;4;3;2;0;0;0;0;Thermal Horror;Erup
 River of Sorrows;🧜🏻‍♀️;Blazing Siren;Hot;4;1;2;0;3;2;0;Scalding Lure;Runs warm enough to blister the water around her.<br>;Taken down by a siren.;none
 River of Sorrows;👤;Fever Shade;Hot;4;2;3;0;0;0;0;Heat Specter;Dead warmth fills the cold air around it.<br>;The fever became your last dream.;none
 River of Sorrows;👹;Scalded Revenant;Hot;4;3;2;0;1;1;0;Heat Specter;The water around it shimmers with unnatural warmth.<br>;Fever took hold and didn't let go.;none
-River of Sorrows;🪱;Fever Leech;Hot;4;2;3;0;0;1;0;Burning Parasite;Clings to the hull. Clings to everything.<br>;The warmth became unbearable.;none
+River of Sorrows;🪱;Fever Leech;Hot;3;3;3;0;0;0;0;Burning Parasite;Clings to the hull. Clings to everything.<br>;The warmth became unbearable.;none
 
 River of Sorrows;‍🦈;Great Shark;Heavy;4;3;2;0;-1;0;0;Aquatic Threat;Something displaced the water too early.<br>;Gone before the water settled.;none
 River of Sorrows;🐘;Grief Strider;Heavy;5;0;4;0;0;0;0;Sorrow Beast;Wades the shallows in slow loops.<br>;Stampeded to your death.;none
@@ -1186,7 +1192,7 @@ River of Sorrows;🧜🏻‍♂️;Pale Drifter;Swift;4;3;2;0;2;0;0;Ghostly Curr
 River of Sorrows;🐍;Sorrow Eel;Swift;5;3;3;0;-1;0;0;Tainted Snake;The water ripples before you can see it.<br>;Devoured by a water snake.;none
 
 River of Sorrows;👤;Water Phantom;Spirit;1;2;3;0;2;0;0;Haunting Whisper;Something the River keeps instead of letting go.<br>;Hollowed out from the inside.;none
-River of Sorrows;🗣️;Weeping Shade;Spirit;2;0;3;0;-1;0;0;Persistent Dead;Should have stayed underground.<br>;Fell to what wouldn't stay dead.;none
+River of Sorrows;🗣️;Weeping Shade;Spirit;2;0;3;0;-1;0;0;Persistent Dead;Screams the names of his loved ones.<br>;Fell to what wouldn't stay dead.;none
 River of Sorrows;👤;Submerged Wail;Spirit;3;0;2;0;3;2;0;River Spirit;The sound arrives before it does.<br>;Pulled under from the inside.;none
 
 River of Sorrows;🧜‍♂️;Drowned Tempter;Demon;3;2;2;0;2;1;0;Abyssal Charmer;Promises breath beneath the waves.<br>;You followed him under, and never surfaced.;none
@@ -1390,7 +1396,7 @@ Shrouded Necropolis;🪰;Hungry Fly;Small;1;1;2;0;-1;0;0;Annoying Insect;Drawn t
 Shrouded Necropolis;🪲;Green Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Tiny shell gleams with colors.<br>;Gave an itchy bite.;none
 Shrouded Necropolis;🪲;Clicking Beetle;Small;1;1;1;0;-1;0;0;Crawling Insect;Clicks ominously in the dark.<br>;Brought on a panic attack.;none
 Shrouded Necropolis;🦋;Gloomy Moth;Small;1;0;1;0;-1;0;0;Fluttering Insect;Drawn to faint light.<br>;Wings turned to dust.;none
-Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;0;Ominous Insect;Wings carrying something that should have stayed buried.<br>;Luck simply ran out.;none
+Shrouded Necropolis;🦋;Death’s Moth;Small;1;0;1;0;-1;0;0;Ominous Insect;Carrying something that should have stayed buried.<br>;Luck simply ran out.;none
 Shrouded Necropolis;🪱;Mosquito Larva;Small;1;1;1;0;-1;0;0;Arthropod;Found near still water and older burials.<br>;Infected through the bite.;none
 Shrouded Necropolis;🪱;Bloodsucking Tapeworm;Small;1;2;1;0;-1;0;0;Arthropod;Long enough to loop a corpse twice over.<br>;Hollowed out from within.;none
 Shrouded Necropolis;🪱;Parasitic Worm;Small;1;2;1;0;-1;0;0;Arthropod;Pale from years underground, still hungry.<br>;Burrowed somewhere vital.;none
@@ -1519,7 +1525,7 @@ Shrouded Necropolis;🪲;Cursed Scarab;Item-Trinket;-2;0;0;5;0;0;0;Shiny Object;
 
 Shrouded Necropolis;💀;Skull Signet;Item-Trinket;0;1;0;-2;0;0;0;Death Mark;Made from some small creature remains.<br>Provides <b>+1 ⚔️ Attack</b> for <b>-2 🍀 Luck</b>.;Strange chill ran your spine.;none
 Shrouded Necropolis;🪞;Tarnished Locket;Item-Trinket;-1;0;0;0;4;0;0;Lost Keepsake;A familiar face was once captured inside.<br>Provides <b>+4 🧠 Intellect</b> for <b>-1 💔 Health</b>.;Heart almost skipped a beat.;none
-Shrouded Necropolis;♠️;Grave-Marker Pin;Item-Trinket;0;0;0;0;0;3;0;<b>Artifact</b>;A cold, black spade that pins your thoughts to the earth.<br>Provides <b>+3 🔵 Mana</b>.;Grounded in death.;none
+Shrouded Necropolis;♠️;Grave-Marker Pin;Item-Trinket;0;0;0;0;0;3;0;<b>Artifact</b>;A cold, black spade that pins your thoughts.<br>Provides <b>+3 🔵 Mana</b>.;Grounded in death.;none
 Shrouded Necropolis;💉;Infected Needle;Item-Weapon;-2;3;0;0;0;0;0;<b>Artifact</b>;One prick is all it takes to share the rot.<br>Provides <b>+3 ⚔️ Attack</b> for <b>-2 💔 Health</b>.;The rot spreads.;none
 Shrouded Necropolis;🩳;Hollow Wrappings;Item-Legs;-1;0;3;0;0;0;0;Cursed Binding;Makes one lose their will a little.<br>Provides <b>+3 🟢 Energy</b> for <b>-1 💔 Health</b>.;The binding held where you didn't.;none
 

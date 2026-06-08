@@ -1,10 +1,20 @@
-## ver. 06/08/26 @ 09:10 AM
+## ver. 06/08/26 @ 10:41 PM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/08/26 @ 10:40 PM
+✨ New friends in Twisted Fairyland
+🪵 Pipe separator in party/loot bars
+💛 Yellow crit logs all missing actions
+🐾 Pet join animation before name dialog
+✨ Wiggle and purr pet animations
+👁 Better pet name toast visibility
+🔢 Stats display in numeric format in menus
+🔧 Fix game end score credits path
 
 ## ver. 06/08/26 @ 09:09 AM
 ⚔️ Rebalance first area boss stats

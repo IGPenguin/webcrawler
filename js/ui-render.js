@@ -29,10 +29,10 @@ function redraw(){
   document.getElementById('id_player_status').innerHTML = playerStatusString;
   var _party = String(playerPartyString);
   var _loot  = String(playerLootString);
-  document.getElementById('id_player_party_loot').innerHTML = "";
-  if (_party.length > 0) document.getElementById('id_player_party_loot').innerHTML += "<b>Party:</b> " + _party + "&nbsp;&nbsp;";
-  if (_loot.length  > 0) document.getElementById('id_player_party_loot').innerHTML += "<b>Loot:</b> "  + _loot;
-  if (_party.length + _loot.length === 0) document.getElementById('id_player_party_loot').innerHTML = "x x x";
+  var _partyLootParts = [];
+  if (_party.length > 0) _partyLootParts.push(_party);
+  if (_loot.length  > 0) _partyLootParts.push(_loot);
+  document.getElementById('id_player_party_loot').innerHTML = _partyLootParts.length > 0 ? _partyLootParts.join('&nbsp;|&nbsp;') : "x x x";
 
   //Versus UI
   versusTextUIElement = document.getElementById('id_versus');
@@ -95,7 +95,7 @@ function redraw(){
     case "Friend":
       enemyStatusString=decorateStatusText("💚","Friend",colorDarkGreen);
       if (totalMalus<0) enemyStatusString=decorateStatusText("💔","Remorseful",colorRed);
-      if (areaName.includes("Shrouded")) {
+      if (areaName.includes("Shrouded") && !isFishing) {
         enemyStatusString=decorateStatusText("💔","Stranger",colorRed);
         cardUIElement.style.backgroundColor=colorDarkRed;
       }
