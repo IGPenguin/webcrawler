@@ -1,4 +1,4 @@
-## ver. 06/08/26 @ 9:10 AM
+## ver. 06/08/26 @ 09:10 AM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
@@ -6,7 +6,7 @@ Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
 
-## ver. 06/08/26 @ 9:09 AM
+## ver. 06/08/26 @ 09:09 AM
 ⚔️ Rebalance first area boss stats
 💛 Yellow crit logs on block/roll/walk
 ✨ Better pet name visibility in toasts
