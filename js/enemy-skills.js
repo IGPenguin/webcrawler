@@ -135,17 +135,24 @@ function enemyKilled(){
 function enemyJoinedParty(){
   var _emoji=enemyEmoji, _atk=enemyAtk, _lck=enemyLck, _mgk=enemyMgk, _msg=enemyMsg;
   var _actionStr=actionString;
-  showCompanionNameDialog('pet', getRandomPetName(), function(chosenName) {
-    petName[_emoji] = chosenName;
-    displayPlayerEffect(_emoji);
-    playerPartyString += _emoji;
-    var gainedXP=playerGainXP(1.5,0,"");
-    playerKarma++;
-    var joinMsg="<b>"+chosenName+"</b> joined the party!";
-    playerChangeStats(0, _atk, 0, _lck, 0, _mgk, 0, joinMsg, true, true, _actionStr);
-    AchievementManager.check('get_pet');
-    if (_emoji=="🦜") AchievementManager.check('pet_parrot');
-    if (countEmoji(playerPartyString) >= 3) AchievementManager.check('full_party');
+  var _overlay = document.getElementById('id_enemy_overlay');
+  displayEnemyEffect("👋", 2.1);
+  animateUIElement(emojiWrapperUIElement, "emoji-purr", "0.56");
+  _overlay.addEventListener('animationend', function _petGrabDone(e) {
+    if (e.target !== e.currentTarget) return;
+    _overlay.removeEventListener('animationend', _petGrabDone);
+    showCompanionNameDialog('pet', getRandomPetName(), function(chosenName) {
+      petName[_emoji] = chosenName;
+      displayPlayerEffect(_emoji);
+      playerPartyString += _emoji;
+      var gainedXP=playerGainXP(1.5,0,"");
+      playerKarma++;
+      var joinMsg="<b>"+chosenName+"</b> joined the party!";
+      playerChangeStats(0, _atk, 0, _lck, 0, _mgk, 0, joinMsg, true, true, _actionStr);
+      AchievementManager.check('get_pet');
+      if (_emoji=="🦜") AchievementManager.check('pet_parrot');
+      if (countEmoji(playerPartyString) >= 3) AchievementManager.check('full_party');
+    });
   });
 }
 
@@ -316,8 +323,8 @@ function enemyDisengage(crit){
   animateFlipNextEncounter();
 }
 
-function enemyGrabbedIntoLoot(msg="Grabbed it into your bag -1 🟢"){
-  playerGainXP(1.25,0,msg);
+function enemyGrabbedIntoLoot(msg="Grabbed it into your bag -1 🟢", msgColor="#FFF"){
+  playerGainXP(1.25,0,msg,msgColor);
   playerLootString+=enemyEmoji;
   //No karma change
 
