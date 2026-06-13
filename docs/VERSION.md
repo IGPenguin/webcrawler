@@ -1,10 +1,14 @@
-## ver. 06/08/26 @ 10:41 PM
+## ver. 06/13/26 @ 08:58 PM
 Welcome to Open Beta! 🤘
 ---
 The world didn't stop when you died.
 Corruption spreads, you have to heal it.
 ---
 Enjoy your journey! 
+
+## ver. 06/13/26 @ 08:57 PM
+🔧 Fix game screen layout for small res.
+🔧 Fix minor bonus text formatting
 
 ## ver. 06/08/26 @ 10:40 PM
 ✨ New friends in Twisted Fairyland
