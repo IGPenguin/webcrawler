@@ -201,8 +201,8 @@ Fading Wildlands;🗝️;Small Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Un
 Fading Wildlands;🗝️;Shiny Key;Item;0;0;0;0;0;0;0;Utility Item;<b>🗝️ Unlocks</b> doors and containers.<br>;;none
 
 //Minor bonus. items
-Fading Wildlands;☘️;Three-Leaf Clover;Item-Trinket;0;0;0;0.5;0;0;0;Wild Trinket;While not perfect, it still counts.<br>Provides <b>Minor +🍀 Luck</b> bonus.;;none
-Fading Wildlands;📜;Field Notes;Consumable;0;0;0;0;0.5;0;0;Cramped Notes;Someone mapped this trail before you.<br>Provides <b>Minor +🧠 Intellect</b> bonus.;;none
+Fading Wildlands;☘️;Three-Leaf Clover;Item-Trinket;0;0;0;0.5;0;0;0;Wild Trinket;While not perfect, it still counts.<br>Provides minor <b>+🍀 Luck</b> bonus.;Put it to your pocket.;none
+Fading Wildlands;📜;Field Notes;Consumable;0;0;0;0;0.5;0;0;Cramped Notes;Someone mapped this trail before you.<br>Provides minor <b>+🧠 Intellect</b> bonus.;Put it to your pocket.;none
 
 Fading Wildlands;🪁;Torn Kite;Item;0;0;0;0;0;0;0;Worthless Junk;Wouldn't fly, it barely holds together.<br>;Just worthless junk.;none
 

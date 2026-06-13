@@ -16,8 +16,8 @@ Value priority: HP = ATK = MGK (high) > STA (medium) > LCK (variable) > INT (uti
 - `-1 INT` can fund aggressive bonuses
 
 **Minor boosts (0.5 values):**
-LCK and INT accept `0.5` values for incremental bumps that don't justify a full point. The UI logs them as **Minor +🍀** / **Minor +🧠** with no number. Use these for low-tier items, minor consumable bonuses, or small trap penalties.
-- In the `desc` field, put the formatted label on a second line after `<br>`: `A four-leaf clover. Still counts.<br><b>Minor +🍀</b>`
+LCK and INT accept `0.5` values for incremental bumps that don't justify a full point. The UI logs them as ** +🍀** / ** +🧠** with no number. Use these for low-tier items, minor consumable bonuses, or small trap penalties.
+- In the `desc` field, put the formatted label on a second line after `<br>`: `A four-leaf clover. Still counts.<br><b> +🍀</b>`
 - Avoid stacking multiple 0.5 values on one row - that is just a hidden full point
 - See `data/staging.csv` for authored examples
 
