@@ -3,7 +3,7 @@
 ## 🖤 About this project
 >*A man and a bride, in a corrupted world you are trying to heal.*<br>
 
-<b>Stay Dead is choice-based web RPG with a skill-check minigame.</b> ➞ 🕹️ <b>[Play instantly on any device!](https://igpenguin.github.io/stay-dead)</b><br>
+<b>Stay Dead is choice-based web RPG with a skill-check minigame.</b> ➞ 🕹️ <b>[Play HERE!](https://igpenguin.github.io/stay-dead)</b><br>
 
 **⚔️ Fight**, **💬 Talk**, **🎣 Fish**, and more... to push through a corrupted world, growing stronger with every death.<br>
 Recall **🧩 Memories** to unlock new content. Climb the **🪦 Rankings** and conquer **the branching ending**.
