@@ -198,28 +198,6 @@
     "Timestamp": "07/06/2026 21:22:41"
   },
   {
-    "userId": "815feae8-4a45-4277-835a-bd7fc41003da",
-    "nickname": "NOOB",
-    "sessionId": "fe4c0221-a1a2-467e-ae25-d3e3891de144",
-    "score": 33,
-    "origin": "",
-    "charName": "Damned Soul",
-    "level": "1",
-    "stats": "3;1;3;0;1;0;0",
-    "inventory": "🐀🐌🐇",
-    "companions": "0",
-    "karma": "3",
-    "coins": "2",
-    "difficulty": "💔 Rough",
-    "playtime": "238",
-    "encounterCount": "19",
-    "endType": "death",
-    "ghostLink": "eyJzY29yZSI6MzMsIm5pY2tuYW1lIjoiTk9PQiIsImNoYXJOYW1lIjoiRGFtbmVkIFNvdWwiLCJvcmlnaW4iOiIiLCJsZXZlbCI6MSwiZW5jb3VudGVyQ291bnQiOjE5LCJjb21wYW5pb25zIjowLCJzdGF0cyI6IjM7MTszOzA7MTswOzAiLCJrYXJtYSI6MywiZGlmZmljdWx0eSI6IvCfkpQgUm91Z2giLCJnYW1lVmVyc2lvbiI6InZlci4gMDYvMDcvMjYgQCAwNzo0NiBQTSIsInBsYXl0aW1lIjoyMzgsImVuZFR5cGUiOiJkZWF0aCIsImRhdGV0aW1lIjoiMjAyNi0wNi0wN1QxOToxNzowNy4zNzFaIiwiaW52ZW50b3J5Ijoi8J+QgPCfkIzwn5CHIiwiY29tcGFuaW9uU3RyaW5nIjoiIiwiYXJlYSI6IkZhZGluZyBXaWxkbGFuZHMiLCJvcmlnaW5FbW9qaSI6IvCfkaQiLCJjb2lucyI6MiwiZGVhdGhNZXNzYWdlIjoi8J+QjyBIZWFkLWJ1dHRlZCB0byBkZWF0aC4iLCJzY29yZUJhc2VsaW5lU3RhdHMiOjgsImNyaXRTdWNjZXNzZXMiOjQsImNyaXRGYWlscyI6MCwiZmlzaENhdGNoZXMiOjAsInNsZWVwUGVuYWx0eSI6MH0=",
-    "gameVersion": "ver. 06/07/26 @ 07:46 PM",
-    "datetime": "2026-06-07T19:17:07.371Z",
-    "Timestamp": "07/06/2026 21:17:46"
-  },
-  {
     "userId": "91e246fc-c076-423c-af84-ca6c79a49448",
     "nickname": "TesTerka",
     "sessionId": "5e311948-8d56-44a3-9614-6f5f776a10c5",
