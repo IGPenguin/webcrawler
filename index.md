@@ -612,18 +612,16 @@ image: "https://igpenguin.github.io/stay-dead/assets/img/og-preview.png"
 </div>
 <h3 id="id_player_party_loot" style="text-align:left; overflow-x:auto; white-space:nowrap; float:left; padding-top:3px; padding-bottom:3px; padding-left:8px; margin-left:3px; margin-bottom:6px; margin-top:0px; display:inline-block; width:95.8%; box-shadow:0px 0px 0px 3px #121212; background-color:#272727;"></h3>
 </div>
-<div id="id_buttons" style="margin:6px; margin-top:1px;">
-  <button type = "button" id = "button_attack">🎯</button>&nbsp;
-  <button type = "button" id = "button_roll">🌀</button>&nbsp;
-  <button type = "button" id = "button_block">🔰</button>
-    <p style="margin:8px;"></p>
-  <button type = "button" id = "button_grab">✋</button>&nbsp;
-  <button type = "button" id = "button_sleep">💤</button>&nbsp;
-  <button type = "button" id = "button_speak">💬</button>
-    <p style="margin:8px;"></p>
-  <button type = "button" id = "button_cast">🪄</button>&nbsp;
-  <button type = "button" id = "button_heal">🙏</button>&nbsp;
-  <button type = "button" id = "button_curse">🪬</button>
+<div id="id_buttons" style="margin:1px 12px 6px 12px; display:grid; grid-template-columns:repeat(3,1fr); gap:4px;">
+  <button type="button" id="button_attack">🎯</button>
+  <button type="button" id="button_roll">🌀</button>
+  <button type="button" id="button_block">🔰</button>
+  <button type="button" id="button_grab">✋</button>
+  <button type="button" id="button_sleep">💤</button>
+  <button type="button" id="button_speak">💬</button>
+  <button type="button" id="button_cast">🪄</button>
+  <button type="button" id="button_heal">🙏</button>
+  <button type="button" id="button_curse">🪬</button>
 </div>
 </div>
 

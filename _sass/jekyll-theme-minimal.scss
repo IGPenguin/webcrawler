@@ -521,6 +521,10 @@ button {
   user-select: none;
 }
 
+#id_buttons button {
+  width: 100%;
+}
+
 button:active {
   background-image: linear-gradient(
     to bottom,
