@@ -152,6 +152,11 @@ function enemyJoinedParty(){
       AchievementManager.check('get_pet');
       if (_emoji=="🦜") AchievementManager.check('pet_parrot');
       if (countEmoji(playerPartyString) >= 3) AchievementManager.check('full_party');
+      // Guarantee a safe breather after taming. Taming drains stamina and the
+      // generator can otherwise drop a hard enemy next while the player is tired,
+      // and a tamed pet leaves no restable corpse the way a knockout does.
+      var _breatherRow = getRandomEncounter(["Prop"], [], "", ["-1"]);
+      if (_breatherRow && !String(_breatherRow[3]).includes("type:Error")) pushEncounter(_breatherRow, 1);
     });
   });
 }
