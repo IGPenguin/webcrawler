@@ -22,6 +22,28 @@
     "Timestamp": "08/06/2026 22:18:08"
   },
   {
+    "userId": "14a6db2f-ea0f-4c91-a705-be1b17853581",
+    "nickname": "GHJ",
+    "sessionId": "12601da6-0c33-4465-8e38-b6b569ff0748",
+    "score": 302,
+    "origin": "",
+    "charName": "GHJ",
+    "level": "4",
+    "stats": "2;4;7;10;6.5;4;0",
+    "inventory": "🏅🛹🧧🥈🩴📱🗝️🔖🧪",
+    "companions": "4",
+    "karma": "7",
+    "coins": "1",
+    "difficulty": "💔 Rough",
+    "playtime": "2235",
+    "encounterCount": "118",
+    "endType": "death",
+    "ghostLink": "eyJzY29yZSI6MzAyLCJuaWNrbmFtZSI6IkdISiIsImNoYXJOYW1lIjoiR0hKIiwib3JpZ2luIjoiIiwibGV2ZWwiOjQsImVuY291bnRlckNvdW50IjoxMTgsImNvbXBhbmlvbnMiOjQsInN0YXRzIjoiMjs0Ozc7MTA7Ni41OzQ7MCIsImthcm1hIjo3LCJkaWZmaWN1bHR5Ijoi8J+SlCBSb3VnaCIsImdhbWVWZXJzaW9uIjoidmVyLiAwNi8xMy8yNiBAIDA4OjU4IFBNIiwicGxheXRpbWUiOjIyMzUsImVuZFR5cGUiOiJkZWF0aCIsImRhdGV0aW1lIjoiMjAyNi0wNy0wNFQxOTo0NDowNC44NDNaIiwiaW52ZW50b3J5Ijoi8J+PhfCfm7nwn6en8J+liPCfqbTwn5Ox8J+Xne+4j/CflJbwn6eqIiwiY29tcGFuaW9uU3RyaW5nIjoi8J+QiPCfkJ7wn5Cp8J+QpSIsImFyZWEiOiJUd2lzdGVkIEZhaXJ5bGFuZCIsIm9yaWdpbkVtb2ppIjoi8J+YviIsImNvaW5zIjoxLCJkZWF0aE1lc3NhZ2UiOiLwn6aCIFZlbm9tIHN0b3BwZWQgeW91ciBoZWFydC4iLCJzY29yZUJhc2VsaW5lU3RhdHMiOjgsImNyaXRTdWNjZXNzZXMiOjQ5LCJjcml0RmFpbHMiOjAsImZpc2hDYXRjaGVzIjoxMiwic2xlZXBQZW5hbHR5IjozfQ==",
+    "gameVersion": "ver. 06/13/26 @ 08:58 PM",
+    "datetime": "2026-07-04T19:44:04.843Z",
+    "Timestamp": "04/07/2026 21:44:20"
+  },
+  {
     "userId": "91e246fc-c076-423c-af84-ca6c79a49448",
     "nickname": "TesTerka",
     "sessionId": "6e8c37f9-1c1f-4fab-b550-6d237729cc43",
