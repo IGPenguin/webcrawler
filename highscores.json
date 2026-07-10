@@ -1,27 +1,5 @@
 [
   {
-    "userId": "14a6db2f-ea0f-4c91-a705-be1b17853581",
-    "nickname": "Great Hero J",
-    "sessionId": "12601da6-0c33-4465-8e38-b6b569ff0748",
-    "score": 1202,
-    "origin": "Scribe",
-    "charName": "GHJ",
-    "level": "26",
-    "stats": "9;7;10;9.5;2;5;0",
-    "inventory": "🔱❤️‍🩹🐚🩴🐚🔖💌🦺📔📎🎓📔📦🎲🐚",
-    "companions": "2",
-    "karma": "5",
-    "coins": "3",
-    "difficulty": "💔 Rough",
-    "playtime": "6752",
-    "encounterCount": "362",
-    "endType": "win_free",
-    "ghostLink": "eyJzY29yZSI6MTIwMiwibmlja25hbWUiOiJHcmVhdCBIZXJvIEoiLCJjaGFyTmFtZSI6IkdISiIsIm9yaWdpbiI6IlNjcmliZSIsImxldmVsIjoyNiwiZW5jb3VudGVyQ291bnQiOjM2MiwiY29tcGFuaW9ucyI6Miwic3RhdHMiOiI5Ozc7MTA7OS41OzI7NTswIiwia2FybWEiOjUsImRpZmZpY3VsdHkiOiLwn5KUIFJvdWdoIiwiZ2FtZVZlcnNpb24iOiJ2ZXIuIDA2LzEzLzI2IEAgMDg6NTggUE0iLCJwbGF5dGltZSI6Njc1MiwiZW5kVHlwZSI6Indpbl9mcmVlIiwiZGF0ZXRpbWUiOiIyMDI2LTA3LTA0VDIzOjA4OjIyLjEwMloiLCJpbnZlbnRvcnkiOiLwn5Sx4p2k77iP4oCN8J+pufCfkJrwn6m08J+QmvCflJbwn5KM8J+muvCfk5Twn5OO8J+Ok/Cfk5Twn5Om8J+OsvCfkJoiLCJjb21wYW5pb25TdHJpbmciOiLwn5CV8J+QiOKAjeKsmyIsImFyZWEiOiJTaHJvdWRlZCBOZWNyb3BvbGlzIiwib3JpZ2luRW1vamkiOiLwn6q2IiwiY29pbnMiOjMsImRlYXRoTWVzc2FnZSI6IvCfkbDwn4+74oCN4pmA77iPIFwiRG9uJ3QgeW91Li4uIGV2ZXIgZm9yZ2V0IG1lLlwiIiwic2NvcmVCYXNlbGluZVN0YXRzIjo5LCJjcml0U3VjY2Vzc2VzIjoxMTMsImNyaXRGYWlscyI6MCwiZmlzaENhdGNoZXMiOjEzNCwic2xlZXBQZW5hbHR5Ijo0fQ==",
-    "gameVersion": "ver. 06/13/26 @ 08:58 PM",
-    "datetime": "2026-07-04T23:08:22.102Z",
-    "Timestamp": "05/07/2026 01:08:37"
-  },
-  {
     "userId": "fe900698-6b9e-43d2-8a99-0d6d67d652bb",
     "nickname": "IGPenguin",
     "sessionId": "85a47439-f92a-48b0-9c6f-fb6fb88f9c78",
