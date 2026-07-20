@@ -308,6 +308,28 @@
     "Timestamp": "08/06/2026 10:27:41"
   },
   {
+    "userId": "c1ee4cdf-c825-46e7-a0c7-67676c6f178b",
+    "nickname": "Selina",
+    "sessionId": "655e0bb6-f56c-4a3f-9caf-c2033808fe80",
+    "score": 25,
+    "origin": "",
+    "charName": "Damned Soul",
+    "level": "1",
+    "stats": "3;1;3;0;1;0;0",
+    "inventory": "🪱",
+    "companions": "0",
+    "karma": "1",
+    "coins": "0",
+    "difficulty": "💔 Rough",
+    "playtime": "286",
+    "encounterCount": "19",
+    "endType": "death",
+    "ghostLink": "eyJzY29yZSI6MjUsIm5pY2tuYW1lIjoiU2VsaW5hIiwiY2hhck5hbWUiOiJEYW1uZWQgU291bCIsIm9yaWdpbiI6IiIsImxldmVsIjoxLCJlbmNvdW50ZXJDb3VudCI6MTksImNvbXBhbmlvbnMiOjAsInN0YXRzIjoiMzsxOzM7MDsxOzA7MCIsImthcm1hIjoxLCJkaWZmaWN1bHR5Ijoi8J+SlCBSb3VnaCIsImdhbWVWZXJzaW9uIjoidmVyLiAwNi8xMy8yNiBAIDA4OjU4IFBNIiwicGxheXRpbWUiOjI4NiwiZW5kVHlwZSI6ImRlYXRoIiwiZGF0ZXRpbWUiOiIyMDI2LTA3LTIwVDE2OjEwOjEzLjYwOFoiLCJpbnZlbnRvcnkiOiLwn6qxIiwiY29tcGFuaW9uU3RyaW5nIjoiIiwiYXJlYSI6IkZhZGluZyBXaWxkbGFuZHMiLCJvcmlnaW5FbW9qaSI6IvCfkaQiLCJjb2lucyI6MCwiZGVhdGhNZXNzYWdlIjoi8J+QgiBTaWxlbmNlIGhhcyB0YWtlbiB0aGUgaG9sZC4iLCJzY29yZUJhc2VsaW5lU3RhdHMiOjgsImNyaXRTdWNjZXNzZXMiOjIsImNyaXRGYWlscyI6MCwiZmlzaENhdGNoZXMiOjAsInNsZWVwUGVuYWx0eSI6MH0=",
+    "gameVersion": "ver. 06/13/26 @ 08:58 PM",
+    "datetime": "2026-07-20T16:10:13.608Z",
+    "Timestamp": "20/07/2026 18:10:37"
+  },
+  {
     "userId": "3fa66cf6-8136-4f22-96af-859761e9d8e1",
     "nickname": "mtsm",
     "sessionId": "8ae53ac5-d4ba-471a-bd27-e35ad21c398f",
