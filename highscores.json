@@ -44,6 +44,28 @@
     "Timestamp": "20/07/2026 18:55:38"
   },
   {
+    "userId": "83ca5ecd-f91b-449c-a76d-13b8c926c4e4",
+    "nickname": "RTH",
+    "sessionId": "ea65de48-ce01-41e9-a65b-f7f70647d772",
+    "score": 303,
+    "origin": "Favored",
+    "charName": "Fated Prophet",
+    "level": "6",
+    "stats": "3;6;4;1;5;0;0",
+    "inventory": "🗡️🍖👓🔖🩸🗝️",
+    "companions": "2",
+    "karma": "1",
+    "coins": "3",
+    "difficulty": "💔 Rough",
+    "playtime": "1914",
+    "encounterCount": "140",
+    "endType": "win_kill",
+    "ghostLink": "eyJzY29yZSI6MzAzLCJuaWNrbmFtZSI6IlJUSCIsImNoYXJOYW1lIjoiRmF0ZWQgUHJvcGhldCIsIm9yaWdpbiI6IkZhdm9yZWQiLCJsZXZlbCI6NiwiZW5jb3VudGVyQ291bnQiOjE0MCwiY29tcGFuaW9ucyI6Miwic3RhdHMiOiIzOzY7NDsxOzU7MDswIiwia2FybWEiOjEsImRpZmZpY3VsdHkiOiLwn5KUIFJvdWdoIiwiZ2FtZVZlcnNpb24iOiJ2ZXIuIDA2LzEzLzI2IEAgMDg6NTggUE0iLCJwbGF5dGltZSI6MTkxNCwiZW5kVHlwZSI6Indpbl9raWxsIiwiZGF0ZXRpbWUiOiIyMDI2LTA3LTMwVDAzOjAwOjU2LjI3NVoiLCJpbnZlbnRvcnkiOiLwn5eh77iP8J+NlvCfkZPwn5SW8J+puPCfl53vuI8iLCJjb21wYW5pb25TdHJpbmciOiLwn6aZ8J+QgCIsImFyZWEiOiJTaHJvdWRlZCBOZWNyb3BvbGlzIiwib3JpZ2luRW1vamkiOiLinKgiLCJjb2lucyI6MywiZGVhdGhNZXNzYWdlIjoi8J+RsPCfj7sgIiwic2NvcmVCYXNlbGluZVN0YXRzIjo5LCJjcml0U3VjY2Vzc2VzIjoxNSwiY3JpdEZhaWxzIjowLCJmaXNoQ2F0Y2hlcyI6OSwic2xlZXBQZW5hbHR5IjowfQ==",
+    "gameVersion": "ver. 06/13/26 @ 08:58 PM",
+    "datetime": "2026-07-30T03:00:56.275Z",
+    "Timestamp": "30/07/2026 05:01:03"
+  },
+  {
     "userId": "14a6db2f-ea0f-4c91-a705-be1b17853581",
     "nickname": "GHJ",
     "sessionId": "12601da6-0c33-4465-8e38-b6b569ff0748",
