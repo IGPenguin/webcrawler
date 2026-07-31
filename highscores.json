@@ -1,5 +1,27 @@
 [
   {
+    "userId": "c41781de-7f9b-46e8-a328-7aa7d99e813c",
+    "nickname": "bob",
+    "sessionId": "54db118a-d38e-4596-9bfa-620d4570aba0",
+    "score": 598,
+    "origin": "Collector",
+    "charName": "Dogged Contender",
+    "level": "10",
+    "stats": "5;5;4;3;14.5;3;0",
+    "inventory": "🦎🔱🧧🐚🦿🫙🀄️🔖🗝️📔💌🦺💌🏴‍☠️🐚💵️🪣📔📦",
+    "companions": "0",
+    "karma": "3",
+    "coins": "3",
+    "difficulty": "💔 Rough",
+    "playtime": "1970",
+    "encounterCount": "249",
+    "endType": "win_speak",
+    "ghostLink": "eyJzY29yZSI6NTk4LCJuaWNrbmFtZSI6ImJvYiIsImNoYXJOYW1lIjoiRG9nZ2VkIENvbnRlbmRlciIsIm9yaWdpbiI6IkNvbGxlY3RvciIsImxldmVsIjoxMCwiZW5jb3VudGVyQ291bnQiOjI0OSwiY29tcGFuaW9ucyI6MCwic3RhdHMiOiI1OzU7NDszOzE0LjU7MzswIiwia2FybWEiOjMsImRpZmZpY3VsdHkiOiLwn5KUIFJvdWdoIiwiZ2FtZVZlcnNpb24iOiJ2ZXIuIDA2LzEzLzI2IEAgMDg6NTggUE0iLCJwbGF5dGltZSI6MTk3MCwiZW5kVHlwZSI6Indpbl9zcGVhayIsImRhdGV0aW1lIjoiMjAyNi0wNy0zMVQwMDoyODoyMi40NjZaIiwiaW52ZW50b3J5Ijoi8J+mjvCflLHwn6en8J+QmvCfpr/wn6uZ8J+AhO+4j/CflJbwn5ed77iP8J+TlPCfkozwn6a68J+SjPCfj7TigI3imKDvuI/wn5Ca8J+Ste+4j/CfqqPwn5OU8J+TpiIsImNvbXBhbmlvblN0cmluZyI6IiIsImFyZWEiOiJTaHJvdWRlZCBOZWNyb3BvbGlzIiwib3JpZ2luRW1vamkiOiLwn6eQIiwiY29pbnMiOjMsImRlYXRoTWVzc2FnZSI6IvCfkbDwn4+74oCN4pmA77iPIFwiRG9uJ3QgeW91Li4uIGV2ZXIgZm9yZ2V0IG1lLlwiIiwic2NvcmVCYXNlbGluZVN0YXRzIjoxMCwiY3JpdFN1Y2Nlc3NlcyI6NTEsImNyaXRGYWlscyI6MCwiZmlzaENhdGNoZXMiOjY2LCJzbGVlcFBlbmFsdHkiOjF9",
+    "gameVersion": "ver. 06/13/26 @ 08:58 PM",
+    "datetime": "2026-07-31T00:28:22.466Z",
+    "Timestamp": "31/07/2026 02:28:32"
+  },
+  {
     "userId": "fe900698-6b9e-43d2-8a99-0d6d67d652bb",
     "nickname": "IGPenguin",
     "sessionId": "85a47439-f92a-48b0-9c6f-fb6fb88f9c78",
