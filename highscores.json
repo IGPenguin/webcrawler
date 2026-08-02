@@ -220,6 +220,28 @@
     "Timestamp": "02/06/2026 18:54:32"
   },
   {
+    "userId": "c41781de-7f9b-46e8-a328-7aa7d99e813c",
+    "nickname": "bob",
+    "sessionId": "07015270-047d-45b0-958a-9b7e059a4cc5",
+    "score": 156,
+    "origin": "Chemist",
+    "charName": "Forsaken Omen",
+    "level": "3",
+    "stats": "2;1;3;4;4;3;0",
+    "inventory": "💌🪞💍👞🧵🧧👓",
+    "companions": "2",
+    "karma": "7",
+    "coins": "3",
+    "difficulty": "💔 Rough",
+    "playtime": "249023",
+    "encounterCount": "69",
+    "endType": "death",
+    "ghostLink": "eyJzY29yZSI6MTU2LCJuaWNrbmFtZSI6ImJvYiIsImNoYXJOYW1lIjoiRm9yc2FrZW4gT21lbiIsIm9yaWdpbiI6IkNoZW1pc3QiLCJsZXZlbCI6MywiZW5jb3VudGVyQ291bnQiOjY5LCJjb21wYW5pb25zIjoyLCJzdGF0cyI6IjI7MTszOzQ7NDszOzAiLCJrYXJtYSI6NywiZGlmZmljdWx0eSI6IvCfkpQgUm91Z2giLCJnYW1lVmVyc2lvbiI6InZlci4gMDYvMTMvMjYgQCAwODo1OCBQTSIsInBsYXl0aW1lIjoyNDkwMjMsImVuZFR5cGUiOiJkZWF0aCIsImRhdGV0aW1lIjoiMjAyNi0wOC0wMlQyMTo0NTowNy4yMjdaIiwiaW52ZW50b3J5Ijoi8J+SjPCfqp7wn5KN8J+RnvCfp7Xwn6en8J+RkyIsImNvbXBhbmlvblN0cmluZyI6IvCfkI7wn5CIIiwiYXJlYSI6IkZvcnNha2VuIFZpbGxhZ2UiLCJvcmlnaW5FbW9qaSI6IvCfp6oiLCJjb2lucyI6MywiZGVhdGhNZXNzYWdlIjoi8J+nuCBTdHJhbmdsZWQgaW4gYSBzb2Z0IGVtYnJhY2UuIiwic2NvcmVCYXNlbGluZVN0YXRzIjo5LCJjcml0U3VjY2Vzc2VzIjoxNywiY3JpdEZhaWxzIjowLCJmaXNoQ2F0Y2hlcyI6MTAsInNsZWVwUGVuYWx0eSI6MH0=",
+    "gameVersion": "ver. 06/13/26 @ 08:58 PM",
+    "datetime": "2026-08-02T21:45:07.227Z",
+    "Timestamp": "02/08/2026 23:45:13"
+  },
+  {
     "userId": "14a6db2f-ea0f-4c91-a705-be1b17853581",
     "nickname": "GHJ",
     "sessionId": "12601da6-0c33-4465-8e38-b6b569ff0748",
